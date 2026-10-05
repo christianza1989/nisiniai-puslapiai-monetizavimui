@@ -20,6 +20,7 @@ async function directory(relative, predicate) {
 // Dynamic filenames are selected from these reviewed simulator-only libraries.
 await directory('assets/app-ui-v1', name => runtime.has(path.extname(name)) && !name.endsWith('index.html'));
 await directory('assets/simulator-v2', name => ['.js','.css','.webp','.wav'].includes(path.extname(name)));
+await directory('assets/experience-v1', name => runtime.has(path.extname(name)));
 await directory('tests', name => name.endsWith('.cjs'));
 const inspected = new Set();
 for (;;) {

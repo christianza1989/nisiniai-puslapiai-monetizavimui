@@ -109,3 +109,22 @@ controls and Gmail native overflow with 739px content / 199px viewport;
 [desktop screenshot](qa/no-duplicate-scrollbars.png). Snapshot verification
 PASS: 141 served + 7 verification files / 64,133,902 bytes. Physical captured
 input was not newly tested; previous integration test evidence remains scoped.
+
+## Six-card asset preparation — 2026-10-05
+
+Six 1536×1024 transparent ImageGen illustrations, 30 responsive WebP variants,
+15 reused/adapted SVG icons plus sprite, component CSS and English preview.
+Source masters visually reviewed; sixth illustration revised to Android camera
+cutouts. Every variant decodes with correct dimensions, RGBA transparency and
+transparent corner, and source/output hashes match; SVG XML parses correctly.
+Shared optimizeRaster used, responsive WebP total 1,565,626 bytes.
+
+Actual browser preview at desktop1280/content1265 and mobile390/content375:
+all six images and Manrope load, no horizontal overflow, mobile one-column grid
+and six >=44px buttons. Transfer preview button only updates its status text.
+Desktop/mobile proof in qa/section-assets-desktop.png and section-assets-mobile.png.
+Snapshot verification PASS: 189 runtime + 7 verification files / 65,717,174 bytes;
+original masters are kept in the application workspace and not copied to GitHub.
+Assets are ready for integration; the homepage and simulator action hooks were
+not changed. No new native, captured-input, full-site audit, core/backend/SEO or
+publication result is claimed for this asset-only increment.

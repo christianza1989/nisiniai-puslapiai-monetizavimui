@@ -13,9 +13,9 @@
   "files": [
     {
       "path": "app.js",
-      "bytes": 3597,
-      "sha256": "de16a25fb52ce3acc6603caa90935435c4b511d1f263cb7f4ebde807c67279e2",
-      "sourceSha256": "de16a25fb52ce3acc6603caa90935435c4b511d1f263cb7f4ebde807c67279e2"
+      "bytes": 3867,
+      "sha256": "34bb20f217b23366b3656d774963955d050ec772afeab64705b1776772b4d947",
+      "sourceSha256": "34bb20f217b23366b3656d774963955d050ec772afeab64705b1776772b4d947"
     },
     {
       "path": "apps.css",
@@ -499,9 +499,9 @@
     },
     {
       "path": "assets/homepage-v1.css",
-      "bytes": 25525,
-      "sha256": "ddb78260f13f2b70ffbec9d36b06a305404b8a1917f9b0ab4f3e135f3dc800fb",
-      "sourceSha256": "ddb78260f13f2b70ffbec9d36b06a305404b8a1917f9b0ab4f3e135f3dc800fb"
+      "bytes": 25983,
+      "sha256": "5d2f8a5295ced583ab52a72c71140da1ee39c03be2b7d580d62adafedf8177e3",
+      "sourceSha256": "5d2f8a5295ced583ab52a72c71140da1ee39c03be2b7d580d62adafedf8177e3"
     },
     {
       "path": "assets/phone-frame-v1.webp",
@@ -544,6 +544,12 @@
       "bytes": 17558,
       "sha256": "64ace23533a2c9f46074cab7284ba4ca85fe485ec18f0f176f1f1e16947fb74a",
       "sourceSha256": "64ace23533a2c9f46074cab7284ba4ca85fe485ec18f0f176f1f1e16947fb74a"
+    },
+    {
+      "path": "assets/simulator-v2/demo-experience.js",
+      "bytes": 4884,
+      "sha256": "c1ebb8a7787ff371a471e0f02ad6080a490ca889acf3cc55ac1bab4ee875a5d1",
+      "sourceSha256": "c1ebb8a7787ff371a471e0f02ad6080a490ca889acf3cc55ac1bab4ee875a5d1"
     },
     {
       "path": "assets/simulator-v2/doodle.svg",
@@ -739,15 +745,15 @@
     },
     {
       "path": "assets/simulator-v2/simulator.css",
-      "bytes": 51146,
-      "sha256": "060d3eb398527b531534137c5406785c912e3101d6412428acdc492ad5374819",
-      "sourceSha256": "060d3eb398527b531534137c5406785c912e3101d6412428acdc492ad5374819"
+      "bytes": 51722,
+      "sha256": "41d97fb25ac79b4c06aa9e47413918bea004b97f8ab9a02dc03c5d6215f1a5ea",
+      "sourceSha256": "41d97fb25ac79b4c06aa9e47413918bea004b97f8ab9a02dc03c5d6215f1a5ea"
     },
     {
       "path": "assets/simulator-v2/simulator.js",
-      "bytes": 64382,
-      "sha256": "e8bbc34115cfa0d4a8f96e9c1458da8c7410ef7438cc9e8585d6410a3342cffa",
-      "sourceSha256": "e8bbc34115cfa0d4a8f96e9c1458da8c7410ef7438cc9e8585d6410a3342cffa"
+      "bytes": 64498,
+      "sha256": "69e3601a9fa9374931ed7d6e81811b7050f1686c94b4771cdedb13752ff7f457",
+      "sourceSha256": "69e3601a9fa9374931ed7d6e81811b7050f1686c94b4771cdedb13752ff7f457"
     },
     {
       "path": "assets/simulator-v2/state.js",
@@ -811,15 +817,15 @@
     },
     {
       "path": "chrome.js",
-      "bytes": 14805,
-      "sha256": "0af26a9bab624bd8ac1a24f2f09591c3872eea49cfe56adb23c744f120996790",
-      "sourceSha256": "0af26a9bab624bd8ac1a24f2f09591c3872eea49cfe56adb23c744f120996790"
+      "bytes": 14806,
+      "sha256": "030908e150b15b497bd1e505ca1c58483fb532bc55078f21810ee5183f8cc6f6",
+      "sourceSha256": "030908e150b15b497bd1e505ca1c58483fb532bc55078f21810ee5183f8cc6f6"
     },
     {
       "path": "index.html",
-      "bytes": 48317,
-      "sha256": "6588369aa3ee10ba02ca6651564a679b08e1534281b53e3af7b1c5a34a308d20",
-      "sourceSha256": "ec335047ab6a5a8b9777310b68b16ffb445624349ebff25e92b857537acb5d01"
+      "bytes": 47846,
+      "sha256": "4819663a8778e4a75c36f82fec32bd47424a55aa38d5d3cef3bda8ae49b834bd",
+      "sourceSha256": "3330b927ca671d42830f02492c6d7affb9499f46bd4c6470dbd7027aab807944"
     },
     {
       "path": "simulation.css",
@@ -829,9 +835,9 @@
     },
     {
       "path": "simulation.js",
-      "bytes": 38113,
-      "sha256": "50c92108bac7ab5bf33ff70b73bc4ae40ae769f3bf41e9ac95ad56b145b1afe9",
-      "sourceSha256": "50c92108bac7ab5bf33ff70b73bc4ae40ae769f3bf41e9ac95ad56b145b1afe9"
+      "bytes": 37954,
+      "sha256": "d49bb554c721340f27e9f72c79b7ef39b3baf01cb517798839f0e8a6abec76da",
+      "sourceSha256": "d49bb554c721340f27e9f72c79b7ef39b3baf01cb517798839f0e8a6abec76da"
     },
     {
       "path": "styles.css",
@@ -866,10 +872,16 @@
       "sourceSha256": "17443d84fd01664ecd92116bb739dd132845d2dd52b5656efc97071f635383f4"
     },
     {
+      "path": "tests/demo-experience.cjs",
+      "bytes": 4698,
+      "sha256": "5087c1d2157b742e332691f3d2c56832f3e27c4fa50e70a2550319503ec05a28",
+      "sourceSha256": "5087c1d2157b742e332691f3d2c56832f3e27c4fa50e70a2550319503ec05a28"
+    },
+    {
       "path": "tests/locked-interactions.cjs",
-      "bytes": 21543,
-      "sha256": "0bff9e31e08e652e57e60ed64fd4371281a4cc7853350e56989bdb2a8234e10a",
-      "sourceSha256": "0bff9e31e08e652e57e60ed64fd4371281a4cc7853350e56989bdb2a8234e10a"
+      "bytes": 24057,
+      "sha256": "0cc9aaf37758acfa19152ba0a49c8fd18f73bac4f6de8c6886c55fe4a489b13a",
+      "sourceSha256": "0cc9aaf37758acfa19152ba0a49c8fd18f73bac4f6de8c6886c55fe4a489b13a"
     },
     {
       "path": "tests/pointer-transitions.cjs",

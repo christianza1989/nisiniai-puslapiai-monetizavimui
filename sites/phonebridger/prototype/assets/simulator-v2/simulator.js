@@ -8,7 +8,7 @@
   const observers={},contexts=new Map(),phones={},cache={left:{},right:{}},history={left:[],right:{}},recents={left:[],right:[]};history.right=[];
   let activePc='gmail',visible=true,rangeDrag=null,fileDrag=null,refreshPending=false,resetting=false,activityPaused=false;
   const defaults=app=>({app:app==='market'?'creators':app,page:app==='files'?'home':undefined,query:'',selected:[]});
-  const localPcApps=new Set(['photos','tasks','contacts','whatsapp']);
+  const localPcApps=new Set(['photos','tasks','contacts','whatsapp','files','docs','calendar']);
   const copyRoute=u=>JSON.parse(JSON.stringify({...u,modal:undefined}));
   function context(key,app){const id=key==='pc'?'pc:'+app:key;return contexts.get(id);}
   function ctxFor(el){return contexts.get(el.closest('[data-sim-context]')?.dataset.simContext);}
@@ -41,6 +41,7 @@
   }
   function scrollControls(c){
     c.surface.querySelectorAll('.sim-scroll-control,.sim-horizontal-control').forEach(el=>el.remove());
+    if(c.key!=='pc')return;
     const targets=[...c.surface.querySelectorAll('.sim-scroll,.sim-modal')].filter(el=>el.scrollHeight>el.clientHeight+5&&el.clientHeight>20);const el=targets.at(-1);
     if(el){const box=document.createElement('label');box.className='sim-scroll-control';box.innerHTML='<input type="range" min="0" max="1000" aria-label="Scroll app content" data-sim-input="scroll">';const input=box.firstElementChild;input.value=el.scrollTop/(el.scrollHeight-el.clientHeight)*1000;input._scrollTarget=el;el.addEventListener('scroll',()=>{input.value=el.scrollTop/(el.scrollHeight-el.clientHeight)*1000;},{passive:true});c.surface.append(box);}
     const grid=c.surface.querySelector('.sim-sheet-grid');if(grid&&grid.scrollWidth>grid.clientWidth){const box=document.createElement('label');box.className='sim-horizontal-control';box.innerHTML='<input type="range" min="0" max="1000" aria-label="Scroll spreadsheet horizontally" data-sim-input="scroll-x">';box.firstElementChild._scrollTarget=grid;box.firstElementChild.value=grid.scrollLeft/(grid.scrollWidth-grid.clientWidth)*1000;c.surface.append(box);}
@@ -75,6 +76,7 @@
   function mountVideo(c){const v=c.surface.querySelector('[data-sim-video]');if(!v)return;const item=window.PhoneBridgerVideoPlaylist[c.u.video||0];v.src=item.src;v.poster=item.poster;v.controls=true;v.muted=!!c.u.videoMuted;v.addEventListener('loadedmetadata',()=>{v.currentTime=Math.min(c.u.videoTime||0,v.duration);if(c.u.videoPaused===false)v.play().catch(()=>notify(c,'Press play to start video.'));},{once:true});v.addEventListener('timeupdate',()=>{const seek=c.surface.querySelector('[data-sim-input=side-seek]');if(seek)seek.value=v.currentTime/v.duration*100;});v.addEventListener('play',()=>{const b=c.surface.querySelector('[data-sim-action=side-play]');if(b){b.innerHTML=icon('pause');b.setAttribute('aria-label','Pause video');}});v.addEventListener('pause',()=>{const b=c.surface.querySelector('[data-sim-action=side-play]');if(b){b.innerHTML=icon('play');b.setAttribute('aria-label','Play video');}});}
   function setupPc(){
     const tabrow=pc.querySelector('.chrome-tab-strip'),meta={};
+    for(const app of localPcApps)delete demo.tabNames[app];
     ['market','gmail','drive','sheets','calendar','tasks','google','news','photos','files','docs','contacts','youtube','whatsapp'].forEach(app=>{
       const local=localPcApps.has(app);
       let page=pc.querySelector(local?`[data-pc-local="${app}"]`:`[data-pc-page="${app}"]`);if(!page){page=document.createElement('section');page.hidden=true;if(local){page.className='mini-window sim-explorer-window sim-local-window';page.dataset.pcLocal=app;page.dataset.simContext='pc:'+app;page.setAttribute('aria-label',brandNames[app]+' demo window');page.innerHTML=`<header>${logo(app)}<strong>${esc(brandNames[app])} · Demo</strong>${ib('local-window-close','Close '+brandNames[app],'close')}</header>`;page.addEventListener('click',handleClick);pc.append(page);}else{page.className='pc-page';page.dataset.pcPage=app;pc.querySelector('.pc-pages')?.append(page);if(!page.isConnected)pc.querySelector('[data-pc-page=gmail]').parentElement.append(page);}}

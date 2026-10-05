@@ -37,6 +37,10 @@
   }, { passive: true });
   header.addEventListener('focusin', showHeader);
   header.addEventListener('keydown', showHeader);
+  document.addEventListener('pointerlockchange', () => {
+    if (document.pointerLockElement?.classList.contains('demo-scene')) header.classList.add('header-hidden');
+    else { previousScroll = Math.max(0, window.scrollY); scrollDistance = 0; showHeader(); }
+  });
   root.dataset.theme = 'dark';
   document.querySelector('meta[name="theme-color"]').content = '#101114';
   const closeMenu = () => {

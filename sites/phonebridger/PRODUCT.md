@@ -6,7 +6,7 @@ Home screens with Home/Back/Recents, Google-style apps, chat/mail replies,
 Files/Drive transfers, editable Sheets and the eight-panel Creators dashboard.
 The upper landscape phone remains a local video player with the two owner
 clips. All interface and dummy content is English. Keep is excluded; Chrome
-does not offer Photos, Tasks, Contacts or WhatsApp tabs.
+does not offer Photos, Tasks, Contacts, WhatsApp, Files, Docs or Calendar tabs.
 
 Browser scenarios are isolated page-memory data. They do not read actual OS
 files, pair phones, authenticate to Google/WhatsApp, send messages, record
@@ -24,3 +24,7 @@ The future creator backend must live behind a distinct server adapter with
 authenticated creator ownership, idempotent order/refund events and audited
 payout settlement. The simulator's browser ledger is a UX model only. Shared
 core SEO, mail and interest APIs are not payment/affiliate APIs.
+
+## Focused simulator mode
+
+Captured wheel input scrolls the app under the demo cursor on PC and either side phone; reaching its limits never scrolls the website. Phones have no native or custom scrollbars. Activation smoothly aligns and fits the display group to the available viewport, with the website header hidden and inert. Esc restores normal page scrolling and header access. This is website presentation/wheel behavior; the accepted cursor transitions and native input engine are preserved.

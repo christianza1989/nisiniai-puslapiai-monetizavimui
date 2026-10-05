@@ -175,7 +175,7 @@
     const entry = captureEntry; captureEntry = null;
     const region = bounds(entry?.key || 'pc');
     setPoint(entry ? {x:region.left + entry.x * region.width,y:region.top + entry.y * region.height} : center(region), entry?.key || 'pc');
-    hint.textContent = 'Scroll to move the page. Click the video to play or pause. Press Esc to leave.';
+    hint.textContent = 'Scroll inside apps. Click the video to play or pause. Press Esc to leave.';
     workspace.querySelector('[data-action="mouse"]').textContent = 'Mouse control active · Esc to leave';
   }
   function stopDriving(suspend = true, force = false) {
@@ -198,7 +198,6 @@
     if (!scene.requestPointerLock) { capturePending = true; captureFailed(); return; }
     suspended = false; cancelTour(); clearDrag(); capturePending = true; captureEntry = entry;
     if (!entry) {
-      scene.scrollIntoView({ block: 'center', behavior: 'instant' });
       scene.focus({ preventScroll: true });
     }
     workspace.querySelector('[data-action="mouse"]').textContent = 'Starting mouse control…';
@@ -284,8 +283,7 @@
     if (captured || capturePending) {
       if (e.ctrlKey) return;
       e.preventDefault();
-      const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1;
-      window.scrollBy({ top: e.deltaY * unit, left: e.deltaX * unit, behavior: 'instant' });
+      if (captured) window.PhoneBridgerScroll?.scrollScreen(elementAtPoint(), screens[active], e);
       return;
     }
     cancelTour(); stopDriving();

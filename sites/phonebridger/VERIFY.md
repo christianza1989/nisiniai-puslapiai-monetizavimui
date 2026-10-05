@@ -64,11 +64,19 @@ No secret file or production binding is required. Native baseline checker is
 not applicable to this website-only snapshot: no native app work or packaging
 occurred.
 
+## Simulator follow-up — 2026-10-05
+
+Current snapshot: 141 runtime files + 7 private verification/licence files, 64,134,317 bytes; byte verifier PASS and simulator tests 60/60. Chrome has Creators, Sheets, Gmail, Drive, Google, News and YouTube; no removed tabs in its Search tabs menu. Phones retain all apps and show no native/custom scrollbars.
+
+Actual browser DOM fixture with simulated Pointer Lock exercises the real scene, controllers and styles: PC scrollTop 0-to160, left chat 84-to0, right Files 0-to160 while website scrollY stays444. All displays fit at1280x632 and1280x480, the header is hidden during capture, and Escape restores it and clears the fit constraint. This fixture substitutes only the capture API and emits test mouse/wheel events; it is not a physical Pointer Lock acceptance test. [Focused viewport screenshot](qa/focused-demo.png) is explicitly marked simulated capture. Failed physical capture leaves normal presentation untouched.
+
+Original core/studio/build/SEO results above describe the integration baseline; no shared core code changed and those broader checks were not rerun for this simulator-only follow-up.
+
 ## Limits
 
 The in-app browser cannot capture physical Pointer Lock; a pointer-click
 activation attempt did not navigate the creator panel. Keyboard navigation
-verified the panel and media. The existing 55 VM/input/state tests pass, but
+verified the panel and media. The original 55 tests and the current 60-test simulator suite pass, but
 physical captured-cursor acceptance is still unverified. No cursor engine was
 changed to make automation pass. A new mobile/Lighthouse/A–Z design audit was
 not run for this integration; earlier website QA is not relabelled as new QA.

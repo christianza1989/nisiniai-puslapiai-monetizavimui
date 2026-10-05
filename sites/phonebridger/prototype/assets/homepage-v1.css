@@ -245,3 +245,10 @@ summary:focus-visible{outline:3px solid var(--pink);outline-offset:4px;border-ra
  .section-heading h2,.connection-copy h2,.faq-heading h2{font-size:32px}.feature-story-copy{padding:25px}.feature-card{padding:24px}.supported-apps{gap:18px}.download-card{padding-inline:22px}.download-card h3{font-size:23px}
 }
 @media(prefers-reduced-motion:reduce){.details-plus{transition:none}}
+/* Keep the active demo's displays together on short laptop viewports. */
+@media(min-width:701px){
+ .demo-pointer-locked .scene-shell{max-width:var(--demo-fit-width,100%)}
+ .demo-pointer-locked .site-header{transform:translateY(-100%);visibility:hidden;pointer-events:none}
+ .demo-pointer-locked .demo-scene:focus{outline:none}
+ .demo-pointer-locked .mouse-lock-tip{top:12px;bottom:auto;left:auto;right:16px;transform:none;font-size:10px;padding:7px 10px}
+}

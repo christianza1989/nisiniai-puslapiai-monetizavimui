@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const {scrollScreen} = require('../assets/simulator-v2/demo-experience.js');
 
 // Execute the actual simulation and local media controller together.
 // Media loading is mocked; real decoding and controls are reviewed in the browser.
@@ -74,11 +75,29 @@ async function workspace({lockDenied = false, mobileView = false, desktop = unde
   scene.requestPointerLock = () => { lockRequests++; if (lockDenied) throw new Error('Capture unavailable'); page.pointerLockElement = scene; emit(page,'pointerlockchange'); };
   page.exitPointerLock = () => { page.pointerLockElement = null; emit(page,'pointerlockchange'); };
   const scrolls = [], mediaCalls = [], loads = [];
+  const appScroll = element();
+  Object.assign(appScroll, {parentElement:screens.pc, scrollTop:0, scrollLeft:0,
+    clientHeight:200, scrollHeight:1400, clientWidth:200, scrollWidth:600});
+  screens.pc.clientHeight = 330;
+  screens.pc.contains = target => target === appScroll || target === screens.pc;
+  const phoneScrolls = Object.fromEntries(['left','right'].map(key => {
+    const scroll = element();
+    Object.assign(scroll,{parentElement:screens[key],scrollTop:0,scrollLeft:0,
+      clientHeight:220,scrollHeight:1200,clientWidth:100,scrollWidth:100});
+    screens[key].clientHeight = 310;
+    screens[key].contains = target => target === scroll || target === screens[key];
+    return [key,scroll];
+  }));
+  const scrollTargets = [appScroll,...Object.values(phoneScrolls)];
+  const originalHit = page.elementFromPoint;
+  page.elementFromPoint = (x,y) => scrollTargets.includes(hit) ? hit : originalHit(x,y);
   Object.assign(media,{duration:NaN,currentTime:0,paused:true,ended:false,muted:false,buffered:{length:0}});
   media.load = () => { loads.push(media.src); media.duration = NaN; media.currentTime = 0; media.paused = true; media.ended = false; };
   media.play = () => { mediaCalls.push('play'); media.paused = false; media.ended = false; emit(media,'play'); return Promise.resolve(); };
   media.pause = () => { if (!media.paused) mediaCalls.push('pause'); media.paused = true; emit(media,'pause'); };
   const window = {innerHeight:900,scrollBy:amount => scrolls.push(amount),
+    PhoneBridgerScroll:{scrollScreen:(target,screen,event) => scrollScreen(target,screen,event,900,
+      node => scrollTargets.includes(node) ? {overflowX:'auto',overflowY:'auto'} : {})},
     PhoneBridgerDesktop:desktop,
     PhoneBridgerUtilities:{virtualUp() {},virtualMove() { return false; },virtualDown() { return false; }} };
   const context = vm.createContext({document:page,window,matchMedia:query => ({matches:mobileView && query.includes('max-width'),addEventListener() {}}),
@@ -97,9 +116,9 @@ async function workspace({lockDenied = false, mobileView = false, desktop = unde
     if (apps[key]) emit(apps[key],'click',e);
     emit(screens[key],'click',e);
   };
-  return {start,ready,videoPointer,click,down,up,wheel,scrolls,mediaCalls,loads,root,scene,page,apps,media,seek,volume,volumePanel,volumeValue,controls,title,count,status,elapsed,videoElements,
+  return {start,ready,videoPointer,click,down,up,wheel,scrolls,appScroll,phoneScrolls,mediaCalls,loads,root,scene,page,apps,media,seek,volume,volumePanel,volumeValue,controls,title,count,status,elapsed,videoElements,
     screenClick,
-    hit:name => {hit = name === 'seek' ? seek : name === 'volume-slider' ? volume : name === 'surface' ? media : controls[name];},
+    hit:name => {hit = name === 'pc-scroll' ? appScroll : name === 'left-scroll' ? phoneScrolls.left : name === 'right-scroll' ? phoneScrolls.right : name === 'seek' ? seek : name === 'volume-slider' ? volume : name === 'surface' ? media : controls[name];},
     move:(x,y=0) => emit(page,'mousemove',{movementX:x,movementY:y}),
     escape:() => emit(page,'keydown',{key:'Escape',target:scene}),leave:() => emit(hero,'pointerleave'),
     nativeClick:target => emit(apps.top,'click',{target}),input:value => {seek.value = String(value); emit(seek,'input');},
@@ -149,15 +168,36 @@ test('mobile playback remains a native touch action without requesting pointer c
   assert.deepEqual(demo.mediaCalls,['play']); assert.equal(demo.requests(),0); assert.equal(demo.page.pointerLockElement,null);
 });
 
-test('pixel, line and page wheels scroll the website while capture stays active', async () => {
-  const demo = await workspace(); demo.start(); demo.videoPointer();
+test('pixel, line and page wheels scroll the app under the demo cursor without moving the website', async () => {
+  const demo = await workspace(); demo.start(); demo.hit('pc-scroll');
   for (const properties of [{deltaX:4,deltaY:150},{deltaY:-3,deltaMode:1},{deltaY:1,deltaMode:2}]) assert.equal(demo.wheel(properties),true);
-  assert.deepEqual(JSON.parse(JSON.stringify(demo.scrolls)),[{top:150,left:4,behavior:'instant'},{top:-48,left:0,behavior:'instant'},{top:900,left:0,behavior:'instant'}]);
+  assert.equal(demo.appScroll.scrollTop,432); assert.equal(demo.appScroll.scrollLeft,4);
+  assert.equal(demo.scrolls.length,0);
+  demo.wheel({deltaY:9999}); assert.equal(demo.appScroll.scrollTop,1200);
+  demo.wheel({deltaY:9999}); assert.equal(demo.scrolls.length,0);
+  demo.wheel({shiftKey:true,deltaY:80}); assert.equal(demo.appScroll.scrollLeft,84);
+  demo.videoPointer(); demo.hit('surface'); demo.wheel({deltaY:120});
+  assert.equal(demo.scrolls.length,0); assert.equal(demo.appScroll.scrollTop,1200);
   assert.equal(demo.page.pointerLockElement,demo.scene);
 });
 test('browser zoom and released-mode wheel handling remain native', async () => {
   const demo = await workspace(); demo.start(); assert.equal(demo.wheel({ctrlKey:true,deltaY:120}),false);
   demo.escape(); assert.equal(demo.wheel({deltaY:120}),false); assert.equal(demo.scrolls.length,0);
+});
+
+test('both side phones receive wheel scrolling independently of the PC and website', async () => {
+  for (const key of ['left','right']) {
+    const demo = await workspace();
+    demo.screenClick(key,demo.apps[key],{x:key==='left'?200:1000,y:300});
+    demo.hit(key+'-scroll');
+    assert.equal(demo.wheel({deltaY:180}),true);
+    assert.equal(demo.phoneScrolls[key].scrollTop,180);
+    demo.wheel({deltaY:-2,deltaMode:1}); assert.equal(demo.phoneScrolls[key].scrollTop,148);
+    demo.wheel({deltaY:9999}); assert.equal(demo.phoneScrolls[key].scrollTop,980);
+    assert.equal(demo.appScroll.scrollTop,0); assert.equal(demo.scrolls.length,0);
+    assert.equal(demo.phoneScrolls[key==='left'?'right':'left'].scrollTop,0);
+    assert.equal(demo.page.pointerLockElement,demo.scene);
+  }
 });
 test('video button clicks play and pause exactly once without releasing mouse capture', async () => {
   const demo = await workspace(); demo.ready(); demo.start(); demo.videoPointer(); demo.hit('play');

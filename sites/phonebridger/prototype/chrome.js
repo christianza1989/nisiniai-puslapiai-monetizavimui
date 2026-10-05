@@ -3,7 +3,7 @@
   const demo=window.PhoneBridgerDemo, utilities=window.PhoneBridgerUtilities;
   const hero=document.querySelector('.interactive-hero'), pc=hero.querySelector('[data-screen=pc]');
   const scene=hero.querySelector('.demo-scene'), popover=pc.querySelector('.chrome-popover');
-  const titles={drive:'Drive',calendar:'Calendar',tasks:'Tasks',google:'Google'};
+  const titles={drive:'Drive',google:'Google'};
   const logo=name=>`<svg class="app-logo" aria-hidden="true"><use href="#app-${name}"/></svg>`;
   const samples=[{id:'sheets',name:'Team weekly recap',type:'Google Sheets',owner:'You',date:'10:12 AM'}, {id:'calendar',name:'Weekly planning',type:'Google Calendar',owner:'Alex',date:'Oct 4, 2026'}];
   let folders=[], mailFolder='Inbox', history=['market'], historyIndex=0, navigating=false;
@@ -26,7 +26,7 @@
   }
   function makeGoogle(){
     const app=element('div','google-replica google-app');app.innerHTML='<div class="google-links"><button type="button" data-navigate="gmail">Gmail</button><button type="button" data-navigate="drive">Drive</button><span>▦</span><span class="google-avatar">J</span></div><div class="google-wordmark" aria-label="Google">Google</div><form class="google-search-form"><span>⌕</span><input aria-label="Search Google demo" placeholder="Search Google or type a URL" maxlength="150" autocomplete="off"><button type="submit" aria-label="Search">↵</button></form><div class="google-shortcuts"></div><div class="google-results" hidden></div>';
-    const shortcuts=app.querySelector('.google-shortcuts');for(const name of ['sheets','gmail','drive','calendar']){const b=element('button');b.type='button';b.dataset.navigate=name;b.innerHTML=logo(name);b.append(element('span','',demo.tabNames[name].replace('Google ','')));shortcuts.append(b);}return app;
+    const shortcuts=app.querySelector('.google-shortcuts');for(const name of ['sheets','gmail','drive']){const b=element('button');b.type='button';b.dataset.navigate=name;b.innerHTML=logo(name);b.append(element('span','',demo.tabNames[name].replace('Google ','')));shortcuts.append(b);}return app;
   }
   function makeApp(name){
     if(name==='drive')return makeDrive();if(name==='google')return makeGoogle();
@@ -36,7 +36,7 @@
   }
   function rebuildPages(){for(const name of Object.keys(titles))pc.querySelector(`[data-pc-page=${name}]`).replaceChildren(makeApp(name));}
   function openPhone(name,key){if(window.PhoneBridgerSimulator){window.PhoneBridgerSimulator.open(key,name);return;}demo.openPhonePanel(key,demo.tabNames[name],makeApp(name));hero.querySelectorAll('.phone-launcher').forEach(el=>el.hidden=true);demo.notify(`${demo.tabNames[name]} opened on the ${key} phone.`);}
-  function go(name){if(!demo.tabNames[name])return;window.PhoneBridgerDesktop?.open('chrome');pc.classList.remove('browser-is-minimized');pc.querySelector('.browser-minimized').hidden=true;demo.selectTab(name);}
+  function go(name){if(!demo.tabNames[name])return window.PhoneBridgerSimulator?.open('pc',name);window.PhoneBridgerDesktop?.open('chrome');pc.classList.remove('browser-is-minimized');pc.querySelector('.browser-minimized').hidden=true;demo.selectTab(name);}
   function updateNavigation(){pc.querySelector('[data-chrome=back]').disabled=historyIndex<=0;pc.querySelector('[data-chrome=forward]').disabled=historyIndex>=history.length-1;const b=pc.querySelector('[data-chrome=bookmark]');b.textContent=bookmarks.has(demo.getTab())?'★':'☆';b.setAttribute('aria-pressed',String(bookmarks.has(demo.getTab())));}
   scene.addEventListener('demo-tab-change',e=>{if(!navigating&&history[historyIndex]!==e.detail){history=history.slice(0,historyIndex+1);history.push(e.detail);historyIndex=history.length-1;}popover.hidden=true;updateNavigation();});
   function showMenu(kind){

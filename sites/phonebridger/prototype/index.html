@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Control up to three Android phones with your Windows mouse and keyboard. Pair once, use USB or Wi-Fi, and try the interactive PhoneBridger demo.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PhoneBridger">
+  <meta property="og:title" content="PhoneBridger — Your mouse. Now on your phone.">
+  <meta property="og:description" content="One Windows mouse and keyboard. Up to three Android phones. Try your connected workspace.">
+  <meta property="og:image" content="assets/homepage-social-v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="PhoneBridger workspace with a laptop and Android phone in warm pink light">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#101114">
+  <title>PhoneBridger — Your mouse. Now on your phone.</title>
+  <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/manrope-800.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/surface-photo-frame-lossless-v1.svg" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="simulation.css">
+  <link rel="stylesheet" href="apps.css">
+  <link rel="stylesheet" href="assets/video-player.css">
+  <link rel="stylesheet" href="assets/homepage-v1.css">
+  <link rel="stylesheet" href="assets/app-ui-v1/controls.css">
+  <link rel="stylesheet" href="assets/app-ui-v1/desktop.css">
+  <link rel="stylesheet" href="assets/simulator-v2/simulator.css">
+  <link rel="stylesheet" href="assets/simulator-v2/creators.css">
+  <script src="app.js" defer></script>
+  <script src="simulation.js" defer></script>
+  <script src="utilities.js" defer></script>
+  <script src="chrome.js" defer></script>
+  <script src="assets/video/playlist.js" defer></script>
+  <script src="video.js" defer></script>
+  <script src="assets/app-ui-v1/desktop.js" defer></script>
+  <script src="assets/simulator-v2/stories.js"></script>
+  <script src="assets/simulator-v2/creator-model.js" defer></script>
+  <script src="assets/simulator-v2/data.js" defer></script>
+  <script src="assets/simulator-v2/state.js" defer></script>
+  <script src="assets/simulator-v2/ui.js" defer></script>
+  <script src="assets/simulator-v2/creator-ui.js" defer></script>
+  <script src="assets/simulator-v2/apps.js" defer></script>
+  <script src="assets/simulator-v2/simulator.js" defer></script>
+</head>
+<body>
+<aside id="integration-preview" style="padding:12px 20px;background:#23232b;color:#eee;text-align:center;font:14px system-ui">Private project preview · Demo earnings and transfers are fictional. Beta installers remain in the application repository.</aside>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 2v6"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24"><path d="M11 4 5 9H2v6h3l6 5V4Zm5 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-5 6-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 2 2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="i-usb" viewBox="0 0 24 24"><path d="M12 21V3m-3 3 3-3 3 3M12 16l-5-5V8m5 5 5-4V6"/><circle cx="7" cy="7" r="1"/><path d="M16 3h3v3h-3Z"/></symbol>
+    <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></symbol>
+    <symbol id="i-devices" viewBox="0 0 24 24"><rect x="2" y="4" width="13" height="11" rx="2"/><path d="M5 20h7m-4-5v5"/><rect x="16" y="8" width="6" height="13" rx="1.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 3v6c0 6-8 11-8 11S4 17 4 11V5Z"/><path d="m8 11 3 3 5-5"/></symbol>
+
+    <symbol id="app-brand" viewBox="0 0 24 24"><rect x="4" y="5" width="12" height="13" rx="3" fill="none" stroke="#ff2d9a" stroke-width="2"/><rect x="11" y="2" width="9" height="13" rx="2" fill="none" stroke="#ff2d9a" stroke-width="2"/></symbol>
+    <symbol id="app-gmail" viewBox="0 0 24 24"><path d="M3 19V7l4 3v9" fill="#4285f4"/><path d="M17 19V10l4-3v12" fill="#34a853"/><path d="M3 7V5q0-2 2-1l7 5 7-5q2-1 2 1v2l-9 7Z" fill="#ea4335"/><path d="M3 5v5l4 3V7Z" fill="#c5221f"/><path d="M21 5v5l-4 3V7Z" fill="#fbbc04"/></symbol>
+    <symbol id="app-sheets" viewBox="0 0 24 24"><path d="M5 2h10l5 5v15H5Z" fill="#0f9d58"/><path d="M15 2v5h5" fill="#87ceac"/><path d="M8 11h9v7H8Zm0 3h9m-5-3v7" fill="none" stroke="white" stroke-width="1.2"/></symbol>
+    <symbol id="app-drive" viewBox="0 0 24 24"><path d="m8 2 8 14H7L2 16Z" fill="#34a853"/><path d="m8 2 8 0 8 14h-8Z" fill="#fbbc04"/><path d="m2 16 5 7h13l4-7Z" fill="#4285f4"/></symbol>
+    <symbol id="app-calendar" viewBox="0 0 24 24"><path d="M3 3h18v18H3Z" fill="#4285f4"/><path d="M7 7h10v10H7Z" fill="#fff"/><path d="M3 3h5v5H3Z" fill="#1967d2"/><path d="m16 21 5-5v5" fill="#34a853"/><text x="12" y="15" text-anchor="middle" font-family="Arial" font-size="7" fill="#4285f4">31</text></symbol>
+    <symbol id="app-keep" viewBox="0 0 24 24"><path d="M4 2h16v20H4Z" fill="#fbbc04"/><path d="M9 16h6m-5 3h4" stroke="white" fill="none"/><path d="M8 9a4 4 0 1 1 8 0c0 3-2 3-2 5h-4c0-2-2-2-2-5" fill="white"/></symbol>
+    <symbol id="app-tasks" viewBox="0 0 24 24"><path d="M19 13a8 8 0 1 1-8-9" stroke="#4285f4" stroke-width="3" fill="none"/><path d="m8 10 4 4 9-10" stroke="#4285f4" stroke-width="3" fill="none"/></symbol>
+    <symbol id="app-google" viewBox="0 0 24 24"><path d="M21 12h-9v4h5a6 6 0 0 1-5 3" fill="none" stroke="#4285f4" stroke-width="4"/><path d="M12 20a8 8 0 0 1-7-4" fill="none" stroke="#34a853" stroke-width="4"/><path d="M5 16a8 8 0 0 1 0-8" fill="none" stroke="#fbbc04" stroke-width="4"/><path d="M5 8a8 8 0 0 1 13-2" fill="none" stroke="#ea4335" stroke-width="4"/></symbol>
+  </defs></svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#main" aria-label="PhoneBridger home"><img src="assets/brand-mark.svg" alt="" width="38" height="38"><span>PhoneBridger</span></a>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a class="nav-demo" href="#workspace">Live demo <span aria-hidden="true"></span></a><a href="#features">Features</a><a href="#setup">Setup</a><a href="#faq">FAQ</a></nav>
+      <div class="header-actions">
+        <a class="button primary header-cta" href="#downloads">Download beta <span aria-hidden="true">↗</span></a>
+        <button class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero interactive-hero" aria-labelledby="hero-title">
+      <div class="workspace" id="workspace" aria-label="Interactive PhoneBridger demonstration">
+        <div class="hero-heading">
+          <p class="hero-eyebrow"><span></span> WINDOWS + ANDROID <b>·</b> USB OR WI-FI</p>
+          <h1 id="hero-title">Your mouse.<br><span class="pink">Now on your phone.</span></h1>
+          <p class="hero-description">Control up to three Android phones with your Windows mouse and keyboard. Your own apps, connected over USB or Wi-Fi.</p>
+          <div class="hero-actions"><button class="button primary mouse-control" type="button" data-action="mouse"><svg class="icon" aria-hidden="true"><use href="#i-mouse"/></svg>Try mouse control <span aria-hidden="true">↗</span></button><a class="button primary mobile-demo-entry" href="#mobile-demo">Try the touch demo <span aria-hidden="true">↓</span></a><a class="button secondary" href="#downloads">Download beta <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a></div>
+          <div class="hero-reassurance"><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pair once</span><span><svg class="icon" aria-hidden="true"><use href="#i-usb"/></svg>USB or Wi-Fi</span><button class="watch-link" data-action="tour" type="button"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Watch it work</button></div>
+        </div>
+        <div class="demo-toolbar">
+          <div class="demo-title"><span class="live-dot"></span><strong>Your workspace, live</strong><span class="demo-badge">Interactive simulation</span></div>
+          <div class="demo-tools"><button class="connection-toggle" type="button" data-action="connection" aria-pressed="false"><svg class="icon" aria-hidden="true"><path d="M4 8a12 12 0 0 1 16 0M7 12a7 7 0 0 1 10 0M10 16a3 3 0 0 1 4 0"/><circle cx="12" cy="20" r=".6"/></svg><span data-connection-label>Wi-Fi</span><span class="switch-track"></span></button><button class="demo-reset" type="button" data-action="reset" aria-label="Reset demonstration">↻</button></div>
+        </div>
+        <div class="scene-shell">
+          <img class="workspace-backdrop" src="assets/reference-pink-background-v1.webp" alt="" aria-hidden="true" width="1463" height="1075" draggable="false">
+          <div class="demo-scene is-free" tabindex="0" aria-label="Demo workspace. Click any screen or Try mouse control to activate mouse simulation. Press Esc to leave.">
+            <div class="desk-shadow" aria-hidden="true"></div>
+            <svg class="connection-lines" aria-hidden="true" viewBox="0 0 1200 780"><path d="M305 370H274M897 370H925M600 198V162"/><circle cx="290" cy="370" r="3"/><circle cx="911" cy="370" r="3"/><circle cx="600" cy="180" r="3"/></svg>
+            <div class="device-mounts" aria-hidden="true">
+              <span class="device-mount mount-left"></span>
+              <span class="device-mount mount-right"></span>
+              <span class="device-mount mount-top"></span>
+            </div>
+
+            <div class="device laptop" data-device="pc">
+              <img class="hardware" src="assets/surface-photo-frame-lossless-v1.svg" alt="Black Surface Laptop from the supplied photograph" width="2292" height="1528" fetchpriority="high" draggable="false">
+              <div class="device-screen pc-screen" data-screen="pc">
+                <div class="browser-tabs"><button class="chrome-tab-search chrome-icon" type="button" data-chrome="tabs" aria-label="Search tabs" aria-expanded="false">⌄</button><div class="chrome-tab-strip"><button type="button" class="browser-tab active" data-link="market" aria-label="Creators tab" aria-pressed="true" title="Creators dashboard · Demo"><svg class="app-logo" aria-hidden="true"><use href="#app-brand"/></svg><span class="tab-title">Creators</span><span class="tab-close" data-close-tab="market" aria-hidden="true">×</span></button><button type="button" class="browser-tab" data-link="sheets" aria-label="Sheets tab" aria-pressed="false" title="Sheets — drag to a phone"><svg class="app-logo" aria-hidden="true"><use href="#app-sheets"/></svg><span class="tab-title">Sheets</span><span class="tab-close" data-close-tab="sheets" aria-hidden="true">×</span></button><button type="button" class="browser-tab" data-link="gmail" aria-label="Gmail tab" aria-pressed="false" title="Gmail — drag to a phone"><svg class="app-logo" aria-hidden="true"><use href="#app-gmail"/></svg><span class="tab-title">Gmail</span><span class="tab-close" data-close-tab="gmail" aria-hidden="true">×</span></button><button type="button" class="browser-tab" data-link="drive" aria-label="Drive tab" aria-pressed="false" title="Drive — drag to a phone"><svg class="app-logo" aria-hidden="true"><use href="#app-drive"/></svg><span class="tab-title">Drive</span><span class="tab-close" data-close-tab="drive" aria-hidden="true">×</span></button><button type="button" class="browser-tab" data-link="calendar" aria-label="Calendar tab" aria-pressed="false" title="Calendar — drag to a phone"><svg class="app-logo" aria-hidden="true"><use href="#app-calendar"/></svg><span class="tab-title">Calendar</span><span class="tab-close" data-close-tab="calendar" aria-hidden="true">×</span></button><button type="button" class="browser-tab" data-link="google" aria-label="Google tab" aria-pressed="false" title="Google — drag to a phone"><svg class="app-logo" aria-hidden="true"><use href="#app-google"/></svg><span class="tab-title">Google</span><span class="tab-close" data-close-tab="google" aria-hidden="true">×</span></button></div><button class="tab-plus chrome-icon" type="button" data-chrome="new" aria-label="New tab">+</button><div class="chrome-window-buttons"><button type="button" data-chrome="minimize" aria-label="Minimize demo browser">−</button><button type="button" data-chrome="maximize" aria-label="Maximize demo browser">□</button><button type="button" data-chrome="close" aria-label="Close demo browser">×</button></div></div>
+                <div class="browser-address"><button type="button" class="chrome-icon" data-chrome="back" aria-label="Chrome back" disabled>←</button><button type="button" class="chrome-icon" data-chrome="forward" aria-label="Chrome forward" disabled>→</button><button type="button" class="chrome-icon" data-chrome="reload" aria-label="Chrome reload">↻</button><form class="chrome-omnibox"><span aria-hidden="true">☷</span><input data-address aria-label="Chrome address or search" value="creators.phonebridger.demo" autocomplete="off" spellcheck="false"><button type="button" data-chrome="bookmark" aria-label="Bookmark this tab" aria-pressed="false">☆</button></form><button type="button" class="send-tab" data-action="send-tab" aria-expanded="false" title="Send this tab to a phone">Send tab ↗</button><button type="button" class="chrome-profile" data-chrome="profile" aria-label="Chrome profile">J</button><button type="button" class="chrome-icon" data-chrome="menu" aria-label="Chrome menu" aria-expanded="false">⋮</button></div>
+                <div class="chrome-popover" hidden></div><div class="browser-minimized" hidden><span>Chrome</span><button type="button" data-chrome="restore">Restore browser</button></div>
+                <div class="tab-destinations" hidden><span>Open on a phone</span><button type="button" data-send-to="left">Left phone</button><button type="button" data-send-to="right">Right phone</button><button type="button" data-send-to="top">Top phone</button></div>
+                <div class="pc-page market-page" data-pc-page="market">
+                  <aside class="market-sidebar"><img src="assets/brand-mark.svg" alt="" width="23" height="23"><span class="sidebar-active">▥</span><span>◷</span><span>▦</span><span>◇</span><span class="sidebar-bottom">⚙</span></aside>
+                  <div class="market-content"><div class="market-topline"><span>YOUR DAILY OVERVIEW</span><span class="sample-label">Sample data</span></div><div class="market-heading"><div><h2>A little more room.<br>A lot more flow.</h2><p>Everything you need. Right where you need it.</p></div><span class="avatar">JD</span></div><div class="market-stats"><div><span>Portfolio value</span><strong>$12,460.80</strong></div><div><span>This month</span><strong class="chart-green">↗ 12.48%</strong></div><div><span>Connected phones</span><strong>03 <small>ready</small></strong></div></div><div class="chart-heading"><span>Portfolio overview</span><div><button type="button" data-period="week">1W</button><button type="button" class="selected" data-period="month">1M</button><button type="button" data-period="year">1Y</button></div></div><svg class="market-chart" viewBox="0 0 520 140" role="img" aria-label="Illustrative portfolio chart"><defs><linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff2d9a" stop-opacity=".28"/><stop offset="100%" stop-color="#ff2d9a" stop-opacity="0"/></linearGradient></defs><g class="chart-grid"><path d="M0 20H520M0 55H520M0 90H520M0 125H520M65 0V140M195 0V140M325 0V140M455 0V140"/></g><path class="chart-area" d="M0 112 18 102 33 107 48 90 63 97 80 86 98 99 117 77 137 80 154 66 174 77 196 56 215 64 235 48 252 59 270 41 292 56 312 37 332 45 349 30 364 38 381 24 398 32 419 18 440 29 460 12 479 22 500 9 520 15V140H0Z"/><path class="chart-line" d="M0 112 18 102 33 107 48 90 63 97 80 86 98 99 117 77 137 80 154 66 174 77 196 56 215 64 235 48 252 59 270 41 292 56 312 37 332 45 349 30 364 38 381 24 398 32 419 18 440 29 460 12 479 22 500 9 520 15"/></svg><div class="chart-dates"><span>Apr 01</span><span>Apr 08</span><span>Apr 15</span><span>Apr 22</span><span>Apr 30</span></div></div>
+                </div>
+                <div class="pc-page sheet-page" data-pc-page="sheets" hidden><div class="sheet-title"><svg class="app-logo" aria-hidden="true"><use href="#app-sheets"/></svg><div><strong>Team weekly recap</strong><small>File &nbsp; Edit &nbsp; View &nbsp; Insert &nbsp; Format &nbsp; Data &nbsp; Tools &nbsp; Extensions &nbsp; Help</small></div><button class="sheet-share" type="button" data-action="send-tab">Share</button></div><div class="sheet-menu"><button type="button" data-sheet-tool="undo" aria-label="Undo cell edit">↶</button><button type="button" data-sheet-tool="redo" aria-label="Redo cell edit">↷</button><span>100% &nbsp; | &nbsp; $ &nbsp; % &nbsp; .0 &nbsp; | &nbsp; Arial &nbsp; 10</span><button type="button" data-sheet-tool="bold" aria-label="Bold selected cell"><b>B</b></button><button type="button" data-sheet-tool="italic" aria-label="Italic selected cell"><i>I</i></button><span>≡ &nbsp; ▦ &nbsp; ⋮</span></div><div class="sheet-formula">fx <span>Weekly recap — ready to share</span></div><table class="sheet-table"><thead><tr><th></th><th>A</th><th>B</th><th>C</th></tr></thead><tbody><tr><th>1</th><td>Project</td><td>Status</td><td>Owner</td></tr><tr><th>2</th><td>Website</td><td class="sheet-success">Ready</td><td>Alex</td></tr><tr><th>3</th><td>Mobile app</td><td class="sheet-success">Ready</td><td>Jamie</td></tr><tr><th>4</th><td>Launch plan</td><td>In progress</td><td>You</td></tr><tr><th>5</th><td></td><td></td><td></td></tr><tr><th>6</th><td></td><td></td><td></td></tr></tbody></table><div class="sheet-bottom"><span>+</span><span>☰</span><strong>Sheet1 ▾</strong><small>All changes saved</small></div></div>
+                <div class="pc-page pc-mail" data-pc-page="gmail" hidden><div class="gmail-topbar"><span class="gmail-menu-icon">☰</span><div class="pc-mail-logo"><svg class="app-logo" aria-hidden="true"><use href="#app-gmail"/></svg> Gmail</div><input class="mail-search" type="search" aria-label="Search mail" placeholder="Search mail"><span>⚙ &nbsp; ▦</span><span class="avatar">J</span></div><div class="gmail-layout"><aside class="gmail-sidebar"><button class="gmail-compose" type="button" data-gmail="compose">✎ &nbsp; Compose</button><button class="selected" type="button" data-mail-folder="Inbox">▣ &nbsp; Inbox <small>3</small></button><button type="button" data-mail-folder="Starred">☆ &nbsp; Starred</button><button type="button" data-mail-folder="Sent">➤ &nbsp; Sent</button><button type="button" data-mail-folder="Drafts">▤ &nbsp; Drafts <small>1</small></button><span>Labels &nbsp; +</span><span>◇ &nbsp; Work</span></aside><div class="gmail-inbox"><div class="inbox-tools">□ &nbsp; ↻ &nbsp; ⋮ <span>1–3 of 3 &nbsp; ‹ &nbsp; ›</span></div><div class="inbox-categories"><strong>▣ &nbsp; Primary</strong><span>♧ &nbsp; Promotions</span><span>♧ &nbsp; Social</span></div><button class="inbox-row" type="button" data-mail-id="alex"><span>□ &nbsp; ☆</span><strong>Alex</strong><span><b>Weekly recap</b> — Ready for our next step?</span><small>10:14</small></button><button class="inbox-row" type="button" data-mail-id="jamie"><span>□ &nbsp; ☆</span><strong>Jamie</strong><span><b>Website review</b> — The new layout looks great.</span><small>9:42</small></button><button class="inbox-row" type="button" data-mail-id="calendar"><span>□ &nbsp; ☆</span><strong>Google Calendar</strong><span><b>Weekly planning</b> — Tuesday at 10:00.</span><small>Yesterday</small></button><p class="mail-empty" hidden>No conversations found.</p></div><section class="gmail-compose-panel"><div class="compose-title"><span>New Message</span><button type="button" data-gmail="hide-compose" aria-label="Minimize email draft">−</button><button type="button" data-gmail="hide-compose" aria-label="Close email draft">×</button></div><div class="compose-recipient">To &nbsp; <span>alex@example.com</span></div><div class="compose-subject">Weekly recap</div><textarea aria-label="Desktop email draft" spellcheck="false">Hi Alex,
+
+Here’s the weekly recap.
+
+Everything is ready for our next step.</textarea><div class="compose-format">A &nbsp; | &nbsp; B &nbsp; I &nbsp; U &nbsp; ≡ &nbsp; ⋮</div><div class="pc-mail-footer"><button type="button" data-action="send-mail">Send &nbsp; ▾</button><span>♧ &nbsp; ♧ &nbsp; ☺</span><span data-draft-status>Draft saved</span></div></section></div></div>
+                <div class="pc-page web-app-page" data-pc-page="drive" hidden></div>
+                <div class="pc-page web-app-page" data-pc-page="calendar" hidden></div>
+                <div class="pc-page web-app-page" data-pc-page="tasks" hidden></div>
+                <div class="pc-page web-app-page" data-pc-page="google" hidden></div>
+                <div class="portal portal-left" aria-hidden="true"></div><div class="portal portal-right" aria-hidden="true"></div><div class="portal portal-top" aria-hidden="true"></div>
+              </div>
+              <span class="device-label pc-label">Windows PC <span>Mouse + keyboard</span></span>
+            </div>
+
+            <div class="device phone phone-left" data-device="left">
+              <img class="hardware" src="assets/phone-frame-v1.webp" alt="Android phone to the left of the laptop" width="1024" height="1536" draggable="false">
+              <div class="device-screen phone-screen" data-screen="left"><div class="phone-status"><span>10:15</span><span>▴ ▰</span></div><div class="phone-camera" aria-hidden="true"></div>
+                <div class="phone-app chat-app" data-phone-app="chat"><div class="chat-header"><span aria-hidden="true">‹</span><span class="chat-avatar">A</span><div><strong>Alex</strong><small>Online</small></div><span class="chat-call" aria-hidden="true">▣ &nbsp; ☎ &nbsp; ⋮</span></div><div class="chat-messages"><span class="chat-day">Today</span><div class="chat-bubble incoming">Can you send me the<br>weekly recap?<small>10:14</small></div><div class="chat-bubble outgoing">On it! I’ll send it shortly.<small>10:15 <span>✓✓</span></small></div></div><form class="chat-form"><input aria-label="Message to Alex" placeholder="Type a message…" maxlength="500" autocomplete="off"><button type="submit" aria-label="Send demo message">➤</button></form></div>
+                <div class="phone-app shared-app" hidden></div><span class="gesture-bar" aria-hidden="true"></span>
+              </div><span class="device-label">01 <span>Chat with Alex</span></span>
+            </div>
+
+            <div class="device phone phone-right" data-device="right">
+              <img class="hardware" src="assets/phone-frame-v1.webp" alt="Android phone to the right of the laptop" width="1024" height="1536" draggable="false">
+              <div class="device-screen phone-screen" data-screen="right"><div class="phone-status"><span>10:15</span><span>▴ ▰</span></div><div class="phone-camera" aria-hidden="true"></div>
+                <div class="phone-app gmail-app" data-phone-app="gmail"><div class="mail-header"><span aria-hidden="true">‹</span><strong>Compose</strong><span class="mail-attachment" aria-hidden="true">♧</span><button type="button" data-action="send-mail" aria-label="Send demo email">➤</button></div><div class="mail-field"><span>From</span><span>you@example.com</span></div><div class="mail-field"><span>To</span><span>alex@example.com</span></div><div class="mail-field"><span>Subject</span><span>Weekly recap</span></div><textarea aria-label="Email draft" spellcheck="false">Hi Alex,
+
+Here’s the weekly recap.
+
+Everything is ready for our next step.</textarea><div class="mail-format" aria-hidden="true">B &nbsp; I &nbsp; U &nbsp; ≡ &nbsp; ⋮</div></div>
+                <div class="phone-app shared-app" hidden></div><span class="gesture-bar" aria-hidden="true"></span>
+              </div><span class="device-label">02 <span>Write an email</span></span>
+            </div>
+
+            <div class="device phone phone-top" data-device="top">
+              <img class="hardware" src="assets/phone-frame-v1.webp" alt="Landscape Android phone above the laptop" width="1024" height="1536" draggable="false">
+              <div class="device-screen video-screen" data-screen="top">
+                <div class="phone-app video-app" data-phone-app="video" data-video-state="loading">
+                  <div class="demo-video-player" data-controls-visible="true">
+                    <video class="demo-video-media" preload="metadata" playsinline poster="assets/video/relax1-poster.jpg" aria-label="PhoneBridger demonstration video"></video>
+                    <div class="player-shade player-chrome" aria-hidden="true"></div>
+                    <div class="player-heading player-chrome"><strong data-video-title>Relax</strong><span data-video-author>@phonebridger · Demo playlist</span></div>
+                    <div class="player-center player-chrome" role="group" aria-label="Video playback controls">
+                      <button type="button" data-video-control="previous" aria-label="Previous video" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h3v14H5zM19 5v14L9 12z"/></svg></button>
+                      <button type="button" class="player-play" data-video-control="play" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true" data-play-icon><path d="M7 3v18l15-9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" data-pause-icon hidden><path d="M5 3h5v18H5zM14 3h5v18h-5z"/></svg></button>
+                      <button type="button" data-video-control="next" aria-label="Next video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h3v14h-3zM5 5l10 7-10 7z"/></svg></button>
+                    </div>
+                    <div class="player-footer player-chrome">
+                      <div class="player-time-row"><span><span data-video-time>0:00</span> <span class="player-time-divider">/</span> <span data-video-duration>0:00</span></span><div><span data-video-count>1 / 2</span>
+                        <div class="player-volume" data-video-volume-controls>
+                          <button type="button" data-video-control="volume" aria-label="Volume" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path class="sound-waves" d="M16 8c3 2 3 6 0 8M19 5c6 4 6 10 0 14"/><path class="sound-off" d="m16 9 6 6m0-6-6 6" hidden/></svg></button>
+                          <div class="player-volume-popover" data-video-volume-panel role="group" aria-label="Volume controls" hidden>
+                            <output data-video-volume-value>70%</output>
+                            <input class="player-volume-slider" data-video-volume type="range" min="0" max="100" step="1" value="70" aria-label="Video volume" aria-orientation="vertical" orient="vertical">
+                            <button type="button" data-video-control="mute" aria-label="Mute video" aria-pressed="false" title="Mute video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path class="sound-off" d="m16 9 6 6m0-6-6 6"/></svg></button>
+                          </div>
+                        </div>
+                      </div></div>
+                      <input class="player-seek" data-video-seek type="range" min="0" max="0" step="0.01" value="0" aria-label="Seek video" disabled>
+                    </div>
+                    <p class="player-status" role="status" data-video-status>Loading video…</p>
+                  </div>
+                </div>
+                <div class="phone-app shared-app" hidden></div>
+              </div><span class="device-label">03 <span>Take a little break</span></span>
+            </div>
+
+            <div class="demo-cursor" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M2 2v23l6-6 5 9 4-2-5-9h9Z"/></svg><span data-cursor-label>Demo</span></div>
+            <div class="drag-ghost" aria-hidden="true" hidden><span class="sheets-symbol">▦</span><span data-drag-name>Google Sheets</span><span>↗</span></div>
+          </div>
+        </div>
+        <div class="demo-bottom"><p class="demo-hint" aria-live="polite"><span class="hint-arrow" aria-hidden="true">↖</span><span data-hint>Click any screen or Try mouse control to begin. Press Esc to leave.</span></p><span class="escape-note"><kbd>Esc</kbd> to leave mouse control</span></div>
+        <div class="mouse-lock-tip" role="status">Mouse control active · Scroll the page <span>Esc to leave</span></div>
+        <div class="demo-mobile" id="mobile-demo"><div class="mobile-tabs" role="group" aria-label="Select a phone"><button type="button" data-mobile="left" aria-pressed="true">01 Left phone</button><button type="button" data-mobile="right" aria-pressed="false">02 Right phone</button><button type="button" data-mobile="top" aria-pressed="false">03 Video</button></div><div class="mobile-screen"></div><button class="mobile-send-tab" type="button" data-action="mobile-tab">Open Google Sheets on this phone ↗</button></div>
+        <ol class="demo-challenges" aria-label="Things to try in the demo"><li><span>01</span><div><strong>Move between screens</strong><p class="desktop-only">Start mouse control, then cross a PC screen edge.</p><p class="mobile-only">Choose Chat, Email or Video in the touch demo.</p></div></li><li><span>02</span><div><strong>Type on your phone</strong><p>Write a reply to Alex in the chat.</p></div></li><li><span>03</span><div><strong>Take a tab with you</strong><p class="desktop-only">Drag Sheets to a phone, or choose Send tab.</p><p class="mobile-only">Use Open Google Sheets to try a shared spreadsheet.</p></div></li></ol>
+        <p class="demo-footnote">An interactive simulation with sample data. The video player uses local preview clips.</p>
+        <div class="demo-toast" role="status" hidden></div>
+      </div>
+    </section>
+
+    <div class="hero-caption"><span><svg class="icon" aria-hidden="true"><use href="#i-mouse"/></svg>One mouse &amp; keyboard</span><span><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg>Up to three phones</span><span><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Your pairing stays saved</span></div>
+
+    <section class="features-section section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading section-heading-split"><div><p class="eyebrow">MAKE YOURSELF AT HOME</p><h2 id="features-title">Your favourite apps.<br><span class="pink">A little more connected.</span></h2></div><p>Keep your phone beside you. Use the mouse and keyboard already on your desk.</p></div>
+        <div class="feature-story">
+          <figure class="feature-photograph"><img src="assets/homepage-focus-v1.webp" alt="A black Surface laptop and Android phone on a gray desk with warm pink lighting" width="1536" height="1024" loading="lazy" decoding="async"><figcaption><span class="live-dot"></span> A workspace that makes room for your phone.</figcaption></figure>
+          <div class="feature-story-copy"><span class="feature-mark"><svg class="icon" aria-hidden="true"><use href="#i-mouse"/></svg></span><h3>Move over.<br>Carry on.</h3><p>Move through your chosen screen edge to enter your phone. Click, scroll and type in its own Android apps. Move back to continue on your PC.</p><a class="text-link" href="#workspace">Explore the live demo <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="feature-cards">
+          <article class="feature-card"><svg class="icon" aria-hidden="true"><use href="#i-keyboard"/></svg><h3>A real keyboard, everywhere</h3><p>Reply to a message or write an email on your phone with the keyboard you use all day.</p><div class="keycaps" aria-hidden="true"><span>H</span><span>E</span><span>L</span><span>L</span><span>O</span><span class="keycap-enter">↵</span></div></article>
+          <article class="feature-card"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg><h3>Take your Google tabs with you</h3><p>Move a Google link to your phone and continue in its matching installed app. Other links open in its browser.</p><div class="supported-apps" aria-label="Google Sheets, Gmail, Drive and Calendar"><svg class="app-logo" aria-hidden="true"><use href="#app-sheets"/></svg><svg class="app-logo" aria-hidden="true"><use href="#app-gmail"/></svg><svg class="app-logo" aria-hidden="true"><use href="#app-drive"/></svg><svg class="app-logo" aria-hidden="true"><use href="#app-calendar"/></svg><svg class="app-logo" aria-hidden="true"><use href="#app-keep"/></svg></div></article>
+          <article class="feature-card"><svg class="icon" aria-hidden="true"><use href="#i-audio"/></svg><h3>Listen through your PC</h3><p>Bring supported phone media audio to your computer. Enable audio sharing when you need it.</p><div class="audio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>Android 10+ · system approval required</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="connection-section section" id="connections" aria-labelledby="connection-title">
+      <div class="container connection-layout">
+        <div class="connection-copy"><p class="eyebrow">CONNECTED, YOUR WAY</p><h2 id="connection-title">Plug in.<br><span class="pink">Settle in.</span></h2><p class="section-intro">After your first setup, PhoneBridger chooses the connection for you.</p><div class="connection-options"><div><span class="option-icon"><svg class="icon" aria-hidden="true"><use href="#i-usb"/></svg></span><div><h3>USB takes priority</h3><p>Connect your paired phone with a data cable. Mouse, keyboard, audio and links use USB automatically.</p></div></div><div><span class="option-icon"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></span><div><h3>Wi-Fi keeps you connected</h3><p>Unplug the cable and PhoneBridger returns to your saved Wi-Fi connection. Your pairing and settings stay with you.</p></div></div></div><a class="text-link" href="#usb-setup">See the one-time USB setup <span aria-hidden="true">↗</span></a></div>
+        <figure class="connection-photograph"><img src="assets/homepage-usb-v1.webp" alt="An Android phone connected by a USB data cable to a black laptop on a pink-lit gray desk" width="1536" height="1024" loading="lazy" decoding="async"><figcaption><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Same features. Same saved workspace.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="setup-section section" id="setup" aria-labelledby="setup-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">ONE SMALL SETUP</p><h2 id="setup-title">Make room for<br><span class="pink">your phone.</span></h2><p>Pair once. Come back to your saved workspace.</p></div>
+        <ol class="steps">
+          <li class="step"><div class="step-visual install-visual" aria-hidden="true"><div class="mini-platform"><svg class="icon"><use href="#i-devices"/></svg><span>Windows</span><span class="mini-check">✓</span></div><span class="visual-plus">+</span><div class="mini-platform"><svg class="icon"><use href="#app-brand"/></svg><span>Android</span><span class="mini-check">✓</span></div></div><div class="step-heading"><span class="step-number">01</span><div><h3>Install both apps</h3><p>Extract the Windows ZIP and open PhoneBridger.exe. Install the companion APK on your Android phone.</p></div></div><a class="text-link" href="#downloads">Get the beta apps <span aria-hidden="true">↗</span></a></li>
+          <li class="step"><div class="step-visual pair-visual" aria-hidden="true"><div class="illustrative-qr"><svg viewBox="0 0 90 90"><path d="M5 5h24v24H5ZM61 5h24v24H61ZM5 61h24v24H5Z" fill="none" stroke="currentColor" stroke-width="6"/><path d="M13 13h8v8h-8M69 13h8v8h-8M13 69h8v8h-8M38 4h7v8h-7M36 20h12v9H36M48 35h9v9h-9M6 38h12v9H6M25 37h9v15h-9M39 44h7v10h-7M61 38h10v8H61M76 34h8v18h-8M57 54h9v9h-9M37 64h8v15h-8M50 77h11v8H50M72 64h12v9H72M68 78h8v7h-8"/></svg><span><svg class="app-logo"><use href="#app-brand"/></svg></span></div><div class="pair-check">✓<span>Computer approved</span></div></div><div class="step-heading"><span class="step-number">02</span><div><h3>Scan &amp; approve</h3><p>Use the same reachable Wi-Fi network for first pairing. Scan the PC’s QR in the phone app, then approve your computer.</p></div></div><span class="step-detail">QR shown above is an illustration.</span></li>
+          <li class="step"><div class="step-visual position-visual" aria-hidden="true"><span class="position-phone position-above"></span><span class="position-phone position-left"></span><span class="position-pc"><svg class="app-logo"><use href="#app-brand"/></svg></span><span class="position-phone position-right"></span><span class="position-line"></span></div><div class="step-heading"><span class="step-number">03</span><div><h3>Choose your screen edge</h3><p>Enable mouse control on Android. Place the phone left, right or above your PC and set the matching transition zone.</p></div></div><span class="step-detail"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Your pairing is saved for next time.</span></li>
+        </ol>
+        <details class="usb-setup" id="usb-setup"><summary><span class="usb-setup-title"><svg class="icon" aria-hidden="true"><use href="#i-usb"/></svg>Using a USB cable? Prepare it once.</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="usb-setup-content"><ol><li>Complete the Wi-Fi pairing above.</li><li>Enable <strong>USB debugging</strong> in Android’s Developer options.</li><li>Connect a <strong>data-capable USB cable</strong> and approve this computer on the phone.</li><li>Keep PhoneBridger open. It switches to USB automatically.</li></ol><p>The current beta supports one physical USB phone at a time. Other paired phones can use Wi-Fi. During a connection switch, control returns to Windows; cross your configured screen edge to enter the phone again.</p><a class="text-link" href="mailto:hello@phonebridger.com">Need a hand? hello@phonebridger.com <span aria-hidden="true">↗</span></a></div></details>
+      </div>
+    </section>
+
+    <section class="downloads-section section" id="downloads" aria-labelledby="downloads-title">
+      <div class="container"><div class="section-heading"><p class="eyebrow">YOUR NEXT WORKSPACE</p><h2 id="downloads-title">Bring your phone<br><span class="pink">into the flow.</span></h2><p>Start with the Windows app and Android companion.</p></div><div class="download-cards">
+        <article class="download-card"><div class="download-platform"><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span>Windows</span><span class="beta-tag">BETA</span></div><h3>PhoneBridger for PC</h3><p>Mouse, keyboard and your connected phones in one workspace.</p><dl><div><dt>Version</dt><dd>1.1.0-beta.3</dd></div><div><dt>Package</dt><dd>64-bit · ZIP · 59.2 MB</dd></div></dl><a class="button primary download-link" href="#integration-preview" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download for Windows</a><p class="download-instruction">Extract the entire ZIP. Keep PhoneBridger.exe beside its _internal folder.</p></article>
+        <article class="download-card"><div class="download-platform"><svg class="icon" aria-hidden="true"><use href="#app-brand"/></svg><span>Android</span><span class="beta-tag">BETA</span></div><h3>Your phone’s companion</h3><p>Pair with your PC and keep using the Android apps you know.</p><dl><div><dt>Version</dt><dd>1.1.0-beta.2</dd></div><div><dt>Requires</dt><dd>Android 8+ · APK · 3.8 MB</dd></div></dl><a class="button secondary download-link" href="#integration-preview" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download for Android</a><p class="download-instruction">Install on your phone, then follow the pairing steps. Updating keeps your saved pairing.</p></article>
+      </div><div class="beta-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><p>This is a preview release. The Windows beta is unsigned and may be blocked by Windows application control. Android is distributed as an APK. <a href="#beta-notes">Read the beta notes</a> or <a href="mailto:hello@phonebridger.com">ask us for help</a>.</p></div></div>
+    </section>
+
+    <section class="faq-section section" id="faq" aria-labelledby="faq-title"><div class="container faq-layout"><div class="faq-heading"><p class="eyebrow">GOOD TO KNOW</p><h2 id="faq-title">A few things<br><span class="pink">before you start.</span></h2><p>Still wondering about something?</p><a class="text-link" href="mailto:hello@phonebridger.com">hello@phonebridger.com <span aria-hidden="true">↗</span></a></div><div class="faq-list">
+      <details><summary>What devices can I use?<span class="details-plus" aria-hidden="true">+</span></summary><p>PhoneBridger connects a Windows PC to Android phones. The current Windows package is 64-bit; the companion requires Android 8 or newer. Phone audio sharing requires Android 10 or newer. This beta has no macOS or iPhone companion.</p></details>
+      <details><summary>How many phones can I connect?<span class="details-plus" aria-hidden="true">+</span></summary><p>Use up to three paired phones around your PC: left, right or above. The current USB discovery supports one physical USB phone at a time; additional phones can connect over Wi-Fi.</p></details>
+      <details><summary>Do I need to pair every time?<span class="details-plus" aria-hidden="true">+</span></summary><p>No. Pair once by scanning the PC’s QR and approving your computer on Android. Ordinary disconnection or a switch between USB and Wi-Fi keeps your pairing. Forget computer removes the app’s saved trust and requires pairing again.</p></details>
+      <details><summary>Does USB work automatically?<span class="details-plus" aria-hidden="true">+</span></summary><p>Yes, after the one-time setup. Pair over reachable Wi-Fi first, enable USB debugging on Android and authorize your PC. A data-capable cable then takes priority automatically. Unplugging restores Wi-Fi when your saved phone is reachable.</p></details>
+      <details><summary>Why does Android ask for permissions?<span class="details-plus" aria-hidden="true">+</span></summary><p>Android accessibility access lets the companion perform mouse and keyboard actions. Audio sharing has a separate Android system approval. The app guides you through the permissions needed for the features you turn on.</p></details>
+      <details><summary>Which links open in phone apps?<span class="details-plus" aria-hidden="true">+</span></summary><p>Supported Google service links try the matching installed app, such as Sheets, Gmail or Drive. If it is unavailable, the link opens in the phone’s browser. Chrome tab handoff uses the browser extension included in the Windows package.</p></details>
+      <details><summary>Is this demo connected to my accounts?<span class="details-plus" aria-hidden="true">+</span></summary><p>The website uses local sample apps and data. It does not connect to your Google account, send real messages or pair a phone. The video player uses local preview files with YouTube-style controls. Play, pause, drag the timeline, or switch clips with Previous / Next, including during mouse control. Press Esc to leave the simulation.</p></details>
+      <details id="beta-notes"><summary>What is included in this beta?<span class="details-plus" aria-hidden="true">+</span></summary><p>The current release includes mouse and keyboard control, supported phone audio, Google link handoff and automatic USB / Wi-Fi selection. File dragging is planned and is not included. Windows production signing and Google Play distribution are still pending.</p><p>For Chrome tab handoff, follow the extension setup included in the Windows ZIP. Audio availability depends on the phone app’s capture support.</p></details>
+    </div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-main"><div class="footer-brand"><a class="brand" href="#main"><img src="assets/brand-mark.svg" alt="" width="32" height="32"><span>PhoneBridger</span></a><p>Your phone.<br>A little more connected.</p><a class="footer-email" href="mailto:hello@phonebridger.com">hello@phonebridger.com</a></div><nav aria-label="Product links"><strong>Explore</strong><a href="#workspace">Live demo</a><a href="#features">Features</a><a href="#connections">USB &amp; Wi-Fi</a><a href="#downloads">Download beta</a></nav><nav aria-label="Help links"><strong>A little help</strong><a href="#setup">Setup guide</a><a href="#faq">Questions &amp; answers</a><a href="#beta-notes">Beta notes</a><button type="button" data-open-privacy>Privacy &amp; demo data</button></nav><div class="footer-signoff"><span class="live-dot"></span><strong>Made for your everyday desk.</strong><p>Windows + Android<br>One mouse. More room to work.</p></div></div><div class="footer-bottom"><span>© 2026 PhoneBridger</span><span>Windows 1.1.0-beta.3 <span aria-hidden="true">·</span> Android 1.1.0-beta.2</span><a href="#main">Back to top ↑</a></div></div></footer>
+  <dialog class="privacy-dialog" aria-labelledby="privacy-title"><div class="dialog-heading"><h2 id="privacy-title">Privacy &amp; demo data</h2><button class="icon-button" type="button" data-close-privacy aria-label="Close privacy information"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div><p>This website’s demonstration runs with sample data in your browser. Chat messages, email drafts, spreadsheet edits and notes stay in page memory and are cleared when you reset or reload the page.</p><p>The demo does not sign in to your accounts or control a physical phone. Its video player loads local preview clips from this website and does not connect to YouTube or any video account.</p><p>The page includes no contact form, checkout or analytics script. Email links open your email app. The downloaded companion apps request their own permissions during setup.</p><a class="text-link" href="mailto:hello@phonebridger.com">Questions? hello@phonebridger.com <span aria-hidden="true">↗</span></a></dialog>
+</body>
+</html>

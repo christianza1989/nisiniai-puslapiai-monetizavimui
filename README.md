@@ -16,6 +16,8 @@ Viešas core yra priklausomybė: studija tiesiogiai naudoja jo medijos ir paket�
 
 **Kitam AI, prijungiančiam savo projektą:** [INTEGRATING_A_PROJECT](docs/INTEGRATING_A_PROJECT.md) — kas bendra, kas nišos modulis, siteId, adapteriai ir priėmimo eiga.
 
+GitHub kopijų diegimo ir testų įrodymai bei ribos: [GITHUB_TRANSFER_REPORT](docs/GITHUB_TRANSFER_REPORT.md).
+
 ## Pagrindiniai moduliai
 
 - `content-studio/` — vietinis turinio GUI, planai, juodraščiai ir paketų eksportas. Node priklausomybės iš npm lock.

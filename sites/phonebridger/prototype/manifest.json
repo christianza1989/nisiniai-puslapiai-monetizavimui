@@ -547,9 +547,9 @@
     },
     {
       "path": "assets/simulator-v2/demo-experience.js",
-      "bytes": 4884,
-      "sha256": "c1ebb8a7787ff371a471e0f02ad6080a490ca889acf3cc55ac1bab4ee875a5d1",
-      "sourceSha256": "c1ebb8a7787ff371a471e0f02ad6080a490ca889acf3cc55ac1bab4ee875a5d1"
+      "bytes": 5593,
+      "sha256": "680916ce5310613bb93b3b8680704d8852739010305c9c4a7e65865fe9931c0f",
+      "sourceSha256": "680916ce5310613bb93b3b8680704d8852739010305c9c4a7e65865fe9931c0f"
     },
     {
       "path": "assets/simulator-v2/doodle.svg",
@@ -873,9 +873,9 @@
     },
     {
       "path": "tests/demo-experience.cjs",
-      "bytes": 4698,
-      "sha256": "5087c1d2157b742e332691f3d2c56832f3e27c4fa50e70a2550319503ec05a28",
-      "sourceSha256": "5087c1d2157b742e332691f3d2c56832f3e27c4fa50e70a2550319503ec05a28"
+      "bytes": 5664,
+      "sha256": "d740bd945a9479b67804a4ab0e5f38c3bd98fb8663233dd7048679ae59ea6d4d",
+      "sourceSha256": "d740bd945a9479b67804a4ab0e5f38c3bd98fb8663233dd7048679ae59ea6d4d"
     },
     {
       "path": "tests/locked-interactions.cjs",

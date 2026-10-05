@@ -49,7 +49,27 @@
   const header = document.querySelector('.site-header');
   if (!scene || !shell) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let frame = 0, headerWasInert = false;
+  let frame = 0, scrollFrame = 0, headerWasInert = false;
+  function stopAlignment() {
+    cancelAnimationFrame(frame);
+    cancelAnimationFrame(scrollFrame);
+    frame = scrollFrame = 0;
+  }
+  function scrollToPosition(top) {
+    if (reduced.matches) { window.scrollTo({top, behavior: 'instant'}); return; }
+    const from = window.scrollY;
+    let started;
+    function step(now) {
+      scrollFrame = 0;
+      if (document.pointerLockElement !== scene) return;
+      started ??= now;
+      const progress = Math.min(1, (now - started) / 1100);
+      const eased = progress * progress * (3 - 2 * progress);
+      window.scrollTo({top: from + (top - from) * eased, behavior: 'instant'});
+      if (progress < 1) scrollFrame = requestAnimationFrame(step);
+    }
+    scrollFrame = requestAnimationFrame(step);
+  }
   function align() {
     frame = 0;
     if (document.pointerLockElement !== scene) return;
@@ -63,21 +83,21 @@
     const fit = fitDisplays(width, window.innerHeight, (bottom - top) / scale, scene.offsetWidth);
     shell.style.setProperty('--demo-fit-width', `${fit}px`);
     // Let the existing scene ResizeObserver update its scale before measuring the scroll destination.
-    requestAnimationFrame(() => {
+    frame = requestAnimationFrame(() => {
+      frame = 0;
       if (document.pointerLockElement !== scene) return;
       const nextScale = scene.getBoundingClientRect().width / scene.offsetWidth;
       const edge = Math.min(...[...scene.querySelectorAll('[data-screen]')].map(el => el.getBoundingClientRect().top));
-      window.scrollTo({top: Math.max(0, window.scrollY + edge - 16 * nextScale - 16),
-        behavior: reduced.matches ? 'instant' : 'smooth'});
+      scrollToPosition(Math.max(0, window.scrollY + edge - 16 * nextScale - 16));
     });
   }
-  function schedule() { cancelAnimationFrame(frame); frame = requestAnimationFrame(align); }
+  function schedule() { stopAlignment(); frame = requestAnimationFrame(align); }
   document.addEventListener('pointerlockchange', () => {
     if (document.pointerLockElement === scene) {
       if (header) { headerWasInert = header.inert; header.inert = true; }
       schedule();
     } else {
-      cancelAnimationFrame(frame);
+      stopAlignment();
       shell.style.removeProperty('--demo-fit-width');
       if (header) header.inert = headerWasInert;
     }

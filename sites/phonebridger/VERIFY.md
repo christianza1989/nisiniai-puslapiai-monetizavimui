@@ -88,3 +88,13 @@ created. The build has no optional hosted bindings in this clean clone. Demo
 rows and monetary amounts are not business evidence. MIT runtime licence and
 Manrope OFL are included; production rights for supplied reference imagery and
 video remain a launch review item.
+
+## Slower alignment follow-up — 2026-10-05
+
+Automatic captured-demo page alignment now uses a 1100ms eased animation.
+The lifecycle test verifies intermediate positions, gentle start/finish, final
+alignment, reduced-motion instant positioning, viewport fit and cancellation
+on exit. Source and copied prototype suites both PASS 60/60; byte verification
+PASS for 141 served + 7 verification files / 64,135,992 bytes. Cursor engines,
+wheel routing and alignment destination are unchanged. No new physical Pointer
+Lock acceptance or core/studio/build/SEO run is claimed for this narrow change.

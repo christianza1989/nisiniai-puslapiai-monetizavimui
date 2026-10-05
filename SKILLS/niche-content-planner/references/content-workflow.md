@@ -2,7 +2,7 @@
 
 Read the project's `CONTENT_CORE.md` when orchestrating generation, review, approval or delivery. Do not create per-domain planners, media optimizers, schedulers or exporters.
 
-Before the first package set private `contentPolicy`: months, articlesPerMonth, localTime, timezone. Cadence choices are delegated to the agent. Prioritize useful distinct questions over quota; record unmet targets rather than filler. V1 generation adopts workflow v1; v2 text generation remains disabled to preserve rich content. Both versions' reviewed drafts use the common release path.
+Before the first package set private `contentPolicy`: months, cadence (monthly/weekly), articlesPerMonth or articlesPerWeek, localTime, timezone. Honour the owner's stated cadence; never silently replace 2–3/week with a generic 2/month default. Weekly horizons use actual dates and preparation lead, not a fixed monthly multiplier. Fewer useful topics may leave an explicit unmet target; do not disguise that by resetting policy. Cadence choices are delegated to the agent. Prioritize useful distinct questions over quota; record unmet targets rather than filler. V1 generation adopts workflow v1; v2 text generation remains disabled to preserve rich content. Both versions' reviewed drafts use the common release path.
 
 After drafts, generate/inspect actual media and verify claim sources, then call `finalizeInternalLinks` for the selected same-site graph. This attaches valid draft dependencies without approval or changing published snapshots. Unknown/revoked targets require an editorial decision. Don't attach every page or invent service/filter URLs.
 

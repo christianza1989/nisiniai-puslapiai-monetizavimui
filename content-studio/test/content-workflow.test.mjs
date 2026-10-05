@@ -36,6 +36,28 @@ test('local schedule preserves wall time across DST, validates dates and bounded
   assert.deepEqual(scheduled.map(p => p.publishAt),['2026-11-12T08:00:00.000Z','2026-11-13T08:00:00.000Z']);
 });
 
+test('weekly cadence fills spaced dates across batches without exceeding three articles in a calendar week', () => {
+  const now = Date.parse('2026-10-05T08:00Z'), policy = contentPolicy({months:6,cadence:'weekly',articlesPerWeek:3});
+  const window = planningWindow(policy,now); assert.equal(window.target,76);
+  assert.equal(contentPolicy().articlesPerMonth,2,'legacy monthly default stays compatible');
+  assert.throws(()=>contentPolicy({cadence:'weekly',articlesPerWeek:8}));
+  assert.throws(()=>contentPolicy({cadence:'daily'}));
+  let pages=[];
+  while(pages.length<window.target) {
+    const count=Math.min(24,window.target-pages.length);
+    const next=scheduledPlan(Array.from({length:count},()=>({type:'guide',publishDate:'2026-10-12'})),pages,policy,now);
+    pages.push(...next);
+  }
+  assert.equal(new Set(pages.map(p=>p.publishAt)).size,76);
+  const weekCounts=new Map();
+  for(const p of pages){const date=p.publishAt.slice(0,10),week=Math.floor((Date.parse(date+'T12:00Z')-Date.parse('1970-01-05T12:00Z'))/(7*86400000));weekCounts.set(week,(weekCounts.get(week)||0)+1);assert.ok(date<=window.end);}
+  assert.ok([...weekCounts.values()].every(n=>n<=3));
+  assert.deepEqual(pages.slice(0,3).map(p=>p.publishAt),['2026-10-12T07:00:00.000Z','2026-10-14T07:00:00.000Z','2026-10-16T07:00:00.000Z']);
+  const preexisting=[{type:'guide',publishAt:'2026-10-12T07:00Z'},{type:'guide',publishAt:'2026-10-14T07:00Z'},{type:'guide',publishAt:'2026-10-16T07:00Z'}];
+  const after=scheduledPlan([{type:'guide',publishDate:'2026-10-17'}],preexisting,policy,Date.parse('2026-10-06T08:00Z'));
+  assert.ok(after[0].publishAt.slice(0,10)>='2026-10-19','new run respects existing calendar-week capacity');
+});
+
 test('two sites keep distinct schedules; reciprocal drafts approve atomically and links open only when due', async () => {
   const a = await site('workflow-a.example'), b = await site('workflow-b.example');
   await model.editSite(a.id,{contentPolicy:{months:6,articlesPerMonth:4,localTime:'11:30'}});

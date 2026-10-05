@@ -11,6 +11,7 @@ import { writeFile } from 'node:fs/promises';
 let prompt='';for await(const chunk of process.stdin)prompt+=chunk;
 const data=JSON.parse(prompt.slice(prompt.lastIndexOf('\\n{\\n  "siteData"')+1)).siteData;
 const args=process.argv.slice(2),plan=args[args.indexOf('--output-schema')+1].endsWith('plan-result.schema.json');
+if(plan&&data.contentPolicy.cadence==='weekly'&&!prompt.includes(data.contentPolicy.articlesPerWeek+' articles/week'))throw new Error('Weekly prompt missing');
 const count=Number(prompt.match(/choose up to (\\d+)/)?.[1]||1);
 const result=plan?{pages:Array.from({length:count},(_,i)=>({type:'guide',slug:'gidas-'+(data.existingPages.length+i),title:'Izoliuotas klausimas '+(data.existingPages.length+i),description:'Tik generatoriaus kontrakto testas.',intent:'Skirtingas bandymo klausimas '+(data.existingPages.length+i),reason:'Sintetinė originalaus klausimo patikra.',cluster:'Testas',pillarSlug:'',sourceQueries:[],publishDate:'2001-01-01',seasonalHook:'',networkLinks:[]}))}:{title:'Izoliuotas juodraštis',description:'Sintetinis kontrakto testas.',blocks:[{type:'paragraph',text:'Tai tik izoliuoto generatoriaus bandymo tekstas, ne tikras viešas turinys.',level:0,items:[]},{type:'list',text:'',level:0,items:['Tik bandymo duomenys.']}],factChecks:[],internalLinks:[],externalSources:[],networkLinks:[]};
 await writeFile(args[args.indexOf('--output-last-message')+1],JSON.stringify(result));
@@ -28,4 +29,17 @@ test('configured calendar spans more than one CLI batch and all drafts stay priv
   assert.equal(after.pages.some(p=>p.publishedRevision),false);
   const detail=JSON.parse(result.detail);assert.equal(detail.plan.remainingArticles,0);assert.equal(detail.drafts.remaining,0);
   await assert.rejects(()=>model.approvePage(site.id,guides[0].id,'test'),/peržiūros|vaizdo/);
+});
+
+test('weekly policy reaches the actual CLI prompt and generates its calculated horizon target',async()=>{
+  const site=await model.createSite({canonicalHost:'weekly-calendar.example',name:'Tik savaitinis testas',offer:'Izoliuotas testas'});
+  await model.editSite(site.id,{contentPolicy:{months:1,cadence:'weekly',articlesPerWeek:3,localTime:'10:15'}});
+  await model.addPage(site.id,{type:'home',slug:'',title:'Pradžia',description:'Izoliuotas tekstas.',intent:'Tik testas',body:[{type:'paragraph',text:'Esamas home nepakeičiamas.'}]});
+  const target=(await model.getContentWorkflow(site.id)).window.target;
+  const result=await finish(await enqueue('autopilot',site.id));assert.equal(result.status,'complete',result.error);
+  const after=await model.getSite(site.id),guides=after.pages.filter(p=>p.type==='guide');
+  assert.equal(guides.length,target);assert.ok(guides.every(p=>p.body.length));
+  assert.equal(JSON.parse(result.detail).plan.remainingArticles,0);
+  assert.equal(after.contentPolicy.articlesPerWeek,3);assert.equal(after.contentPolicy.articlesPerMonth,undefined);
+  assert.equal(after.pages.some(p=>p.publishedRevision),false);
 });

@@ -1056,6 +1056,42 @@
       "sourceSha256": "847d20969c053d3f2181ee89409bbc9e841da332e6e14619691156ca0bc88633"
     },
     {
+      "path": "assets/setup-guide-v1/icons.svg",
+      "bytes": 938,
+      "sha256": "a849febc20790734495f123da765ddcb551ed237cd1c654ab6150cf02da95b1a",
+      "sourceSha256": "a849febc20790734495f123da765ddcb551ed237cd1c654ab6150cf02da95b1a"
+    },
+    {
+      "path": "assets/setup-guide-v1/pairing.svg",
+      "bytes": 26757,
+      "sha256": "65a86507653a74515adbda0cb9c8a5cf7dfa6690e478b3e54e20e267bc464786",
+      "sourceSha256": "65a86507653a74515adbda0cb9c8a5cf7dfa6690e478b3e54e20e267bc464786"
+    },
+    {
+      "path": "assets/setup-guide-v1/platforms.svg",
+      "bytes": 2505,
+      "sha256": "66955ee95b4fe2234cd052966532f862fb382e39bdc43b0db9e5fd4762c84b75",
+      "sourceSha256": "66955ee95b4fe2234cd052966532f862fb382e39bdc43b0db9e5fd4762c84b75"
+    },
+    {
+      "path": "assets/setup-guide-v1/positions.svg",
+      "bytes": 4267,
+      "sha256": "31fa4bb889b516e5727eb3a66499916aba44e6c6b67ffdb365fb52db8f1aa380",
+      "sourceSha256": "31fa4bb889b516e5727eb3a66499916aba44e6c6b67ffdb365fb52db8f1aa380"
+    },
+    {
+      "path": "assets/setup-guide-v1/section.css",
+      "bytes": 8196,
+      "sha256": "6003e5c3817c39c188a4f3819d01055b420ed7deb59500d6d550eaa8a8bdcb6e",
+      "sourceSha256": "6003e5c3817c39c188a4f3819d01055b420ed7deb59500d6d550eaa8a8bdcb6e"
+    },
+    {
+      "path": "assets/setup-guide-v1/surface-grain.svg",
+      "bytes": 323,
+      "sha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b",
+      "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
+    },
+    {
       "path": "assets/simulator-v2/apps.js",
       "bytes": 37417,
       "sha256": "47211215bf986815d5f57f28b40f722b2c5bf9f779edddbf63c370b537c9c202",
@@ -1363,9 +1399,9 @@
     },
     {
       "path": "index.html",
-      "bytes": 62138,
-      "sha256": "c951a9dbf5135bc06bcf7dfd4b763222fcc754739b8d69f8798a6437ee075105",
-      "sourceSha256": "b8b1ab3602eeea093fd1a2741f7a6f92a003506f2c8dd3960f8cc86244e27053"
+      "bytes": 61683,
+      "sha256": "5dc930138c77e3e3ae7b6f8c2481d873ac67860465895790838270e005f267af",
+      "sourceSha256": "1a62947922560cd3c74ab1f8963d36b78393e1072010f182a6d142cdff559860"
     },
     {
       "path": "simulation.css",

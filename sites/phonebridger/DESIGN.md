@@ -47,3 +47,14 @@ order. Existing Features navigation and Explore the demo → #workspace work.
 Runtime derivative bytes are copied unchanged. Original photographic masters,
 concepts and generation records remain in the owner's source workspace.
 See EVERYDAY_APPS_ASSETS.md and scoped actual homepage QA.
+
+## Setup guide integration — 2026-10-06
+
+Approved refined v6 three-card guide: Windows/Android platform tiles, detailed
+PC/Android QR scan illustration, screen-position map, subtle charcoal texture
+and rose lighting, numbered connecting rail and pink middle-card emphasis.
+Android robot belongs on the platform tile; existing PhoneBridger mark remains
+elsewhere. SVG illustrations and live HTML/CSS preserve crisp geometry/copy.
+Native USB disclosure and #setup/#usb-setup/#downloads anchors remain functional.
+Tablet rows and narrow stacked cards retain the full surface recipe.
+Source concept/provenance and asset recipe: SETUP_GUIDE_ASSETS.md.

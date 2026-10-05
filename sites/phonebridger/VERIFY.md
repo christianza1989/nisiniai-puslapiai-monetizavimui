@@ -180,3 +180,21 @@ everyday-apps files returned exact manifest bytes (26/26 requests PASS), recorde
 in qa/everyday-apps-core-http.json. No shared-core code changed or existing
 vinext process restarted. Native input and simulator engines are byte-unchanged;
 no new physical Pointer Lock, full-site audit or deployment acceptance claimed.
+
+## Setup guide integration — 2026-10-06
+
+Actual homepage at 1448/1280/1024/768/390/320px: three decoded SVG illustrations,
+unique setup/title/USB IDs, connections → setup → downloads order, no horizontal
+or text overflow, real gradients/grain and pink middle border PASS. CTA keyboard
+focus and download navigation PASS; native USB disclosure mouse/Enter and
+existing connection-section USB anchor opening PASS. No page/new asset errors.
+Desktop1280/mobile390/expandedUSB screenshots inspected; isolated captures hide
+only floating header/skip-link. Evidence: qa/setup-guide-homepage-review.json
+and qa/setup-guide-homepage-1280.png / qa/setup-guide-homepage-390.png.
+
+Snapshot: 237 runtime + 7 verification files, 72,865,664 bytes; all hashes PASS.
+Actual existing core preview middleware on an isolated loopback server returns
+exact manifest bytes for index plus all six setup runtime assets (7/7 PASS),
+recorded in qa/setup-guide-core-http.json. Existing vinext process not restarted.
+No native app, simulator engine or shared-core source changed; no new physical
+capture, deployment or full-site audit acceptance is claimed.

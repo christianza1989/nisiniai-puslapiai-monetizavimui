@@ -21,7 +21,8 @@ Private base: 0544d6a; core base: bb0a0e5. Implementation PRs are unmerged.
 | Browser desktop at 1265px | English; no broken loaded images, no horizontal overflow, no console errors |
 | Browser media | Relax 180.013s, Kato 180s; Play/Pause and Next keyboard actions verified |
 | Core-served creator UI | Payouts view and desktop Chrome reopening verified through keyboard controls |
-| Repository staged safety and fresh snapshot checkout | Recorded in the final PR evidence after exact blob review |
+| Exact staged safety | PASS: both repositories, zero findings |
+| Fresh Git checkout (e88b1da) | PASS: all146 byte hashes and55/55 simulator tests, with no dependency on original source directory |
 
 Actual core preview: http://127.0.0.1:5188/__projects/phonebridger/
 Own production smoke server: http://127.0.0.1:5189 (stopped after testing).
@@ -32,6 +33,10 @@ Exact staged-blob safety passed for 164 companion files / 64,335,570 bytes and
 files pass diff whitespace checking. The copied Manrope OFL line21 retains
 one upstream trailing space; that exact licence file is the sole documented
 diff-check exception rather than rewriting its source hash.
+
+Tested core implementation: 646345ce2252468d90d1b637f6f44a8396f3d616.
+Tested private implementation: e88b1da5892c36ea7045e8afe3f3dae23bf70dd2.
+Later verification documentation does not change those tested runtime bytes.
 
 ## Reproduce
 

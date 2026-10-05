@@ -162,3 +162,21 @@ an isolated loopback HTTP server returned exact hashed bytes for index plus
 17 conversion assets (all 18 requests 200). Existing vinext preview was not
 restarted; it retains its startup manifest until its owner restarts it.
 Evidence: qa/conversion-core-http.json. No shared-core source changed.
+
+## Everyday apps homepage integration — 2026-10-06
+
+Actual source homepage at 1448/1280/1024/768/390/320px: Features nav/hash,
+unique section/title IDs, conversion → features → connections order, all
+images decoded, no horizontal overflow/text clipping/header overlap, keyboard
+CTA focus and demo navigation PASS. Existing two-holder summary and Escape
+also PASS; no page errors or new asset HTTP failures. Desktop1280/mobile390
+screenshots inspected. Evidence: qa/everyday-apps-homepage-review.json and
+qa/everyday-apps-homepage-1280.png / qa/everyday-apps-homepage-390.png.
+
+Snapshot: 231 runtime + 7 verification files, 72,823,133 bytes; all hashes PASS.
+Reference discovery now includes external SVG fragment hrefs and retains the
+existing srcset handling. Isolated actual core middleware: index plus all 25
+everyday-apps files returned exact manifest bytes (26/26 requests PASS), recorded
+in qa/everyday-apps-core-http.json. No shared-core code changed or existing
+vinext process restarted. Native input and simulator engines are byte-unchanged;
+no new physical Pointer Lock, full-site audit or deployment acceptance claimed.

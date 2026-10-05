@@ -33,3 +33,17 @@ Scoped section.css/section.js and card-selection.js touch only this website
 section. CTA opens the selected offer summary until the separate shop exists;
 it creates no order. Private provenance/metadata is documented in
 CONVERSION_ASSETS.md; source PNG masters remain in the application workspace.
+
+## Everyday apps integration — 2026-10-06
+
+Owner-selected centered composition, refined v6, replaces the old #features
+story after conversion. Dark desk with restrained pink light, separate laptop
+and Android cutouts, exact authored sample screen vectors, two balanced side
+callouts and a three-column lower rail. Live English headline emphasizes less
+reaching/more flow; native SVG diagrams cover typing, links, audio and familiar
+apps. Small smooth cursor is decorative SVG. Mobile reflows into normal document
+order. Existing Features navigation and Explore the demo → #workspace work.
+
+Runtime derivative bytes are copied unchanged. Original photographic masters,
+concepts and generation records remain in the owner's source workspace.
+See EVERYDAY_APPS_ASSETS.md and scoped actual homepage QA.

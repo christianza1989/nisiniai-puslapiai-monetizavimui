@@ -564,6 +564,156 @@
       "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
     },
     {
+      "path": "assets/everyday-apps-v1/android-chat-demo-v1.svg",
+      "bytes": 5584,
+      "sha256": "31b68dcc22869e66b08e281f7f06640a3d8f1279cc04b4c137480f561bfdc114",
+      "sourceSha256": "31b68dcc22869e66b08e281f7f06640a3d8f1279cc04b4c137480f561bfdc114"
+    },
+    {
+      "path": "assets/everyday-apps-v1/audio-handoff.svg",
+      "bytes": 1988,
+      "sha256": "83b195b8143a8fcad62d430f07a438bc4d9da4b488cdc8a105e1824b0aba6d6e",
+      "sourceSha256": "83b195b8143a8fcad62d430f07a438bc4d9da4b488cdc8a105e1824b0aba6d6e"
+    },
+    {
+      "path": "assets/everyday-apps-v1/cursor-transition.svg",
+      "bytes": 474,
+      "sha256": "e001be40105dc29fd1174acc534708ce89b0383c81e3ef180c89ba1ac1dbaf7f",
+      "sourceSha256": "e001be40105dc29fd1174acc534708ce89b0383c81e3ef180c89ba1ac1dbaf7f"
+    },
+    {
+      "path": "assets/everyday-apps-v1/gmail-inbox-demo-v1.svg",
+      "bytes": 23009,
+      "sha256": "f01d6fcaf6001eb24466c7fe4ea8e2bba7074741665d9eebad3a7d7b6f38ee71",
+      "sourceSha256": "f01d6fcaf6001eb24466c7fe4ea8e2bba7074741665d9eebad3a7d7b6f38ee71"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons.svg",
+      "bytes": 1926,
+      "sha256": "a13ee809cd49a39dfb34b98145b22ee6015a6d1f7368638c0a7881e179eb3532",
+      "sourceSha256": "a13ee809cd49a39dfb34b98145b22ee6015a6d1f7368638c0a7881e179eb3532"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-drive.svg",
+      "bytes": 223,
+      "sha256": "a9c0816677b3cabe956e2e2df4e069ccd1aabfc682a8180865f7a83d54448fce",
+      "sourceSha256": "a9c0816677b3cabe956e2e2df4e069ccd1aabfc682a8180865f7a83d54448fce"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-gmail.svg",
+      "bytes": 316,
+      "sha256": "042a3c702a6b47b3eb26eb67e21ed360656b3b8cd9a5c286b0e1ea8c6b23d294",
+      "sourceSha256": "042a3c702a6b47b3eb26eb67e21ed360656b3b8cd9a5c286b0e1ea8c6b23d294"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-sheets.svg",
+      "bytes": 250,
+      "sha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b",
+      "sourceSha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-whatsapp.svg",
+      "bytes": 369,
+      "sha256": "8216db408324f265bf6f8ef92b44b6d962593d8d57a6fb0be3d230ee3d121cbc",
+      "sourceSha256": "8216db408324f265bf6f8ef92b44b6d962593d8d57a6fb0be3d230ee3d121cbc"
+    },
+    {
+      "path": "assets/everyday-apps-v1/keycaps-hello.svg",
+      "bytes": 2698,
+      "sha256": "55b2c66479b9cca94da508800bf96ffad42b35a15a09d16a9aa9adab16435e53",
+      "sourceSha256": "55b2c66479b9cca94da508800bf96ffad42b35a15a09d16a9aa9adab16435e53"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-1280.webp",
+      "bytes": 422394,
+      "sha256": "c76ea010f0e3a9fab43dd413b904ebd0eda3e345134f2f34aff08a90217bff12",
+      "sourceSha256": "c76ea010f0e3a9fab43dd413b904ebd0eda3e345134f2f34aff08a90217bff12"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-1536.webp",
+      "bytes": 623202,
+      "sha256": "1e980aec4e7393e5709846b49e38e663de106148e6abef1a0c62c1b4865bafff",
+      "sourceSha256": "1e980aec4e7393e5709846b49e38e663de106148e6abef1a0c62c1b4865bafff"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-640.webp",
+      "bytes": 114164,
+      "sha256": "6e53c6688cc05445e954476c5bc53da42c8cbb3f3a8019698c9c8e414661db2a",
+      "sourceSha256": "6e53c6688cc05445e954476c5bc53da42c8cbb3f3a8019698c9c8e414661db2a"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-960.webp",
+      "bytes": 254750,
+      "sha256": "33da8c6df6caf287c6f8843fabcd620114afad83c055b8a9a39c52005a81f17b",
+      "sourceSha256": "33da8c6df6caf287c6f8843fabcd620114afad83c055b8a9a39c52005a81f17b"
+    },
+    {
+      "path": "assets/everyday-apps-v1/link-handoff.svg",
+      "bytes": 1050,
+      "sha256": "1214125095e2408577573c0bab79b39ae92b3deb6c5f9f97d9da63bde8820a6c",
+      "sourceSha256": "1214125095e2408577573c0bab79b39ae92b3deb6c5f9f97d9da63bde8820a6c"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-240.webp",
+      "bytes": 22364,
+      "sha256": "37a803fb4cfe58f42fb884fcf7364e122a71135705d91bc7d01a1955d20072a7",
+      "sourceSha256": "37a803fb4cfe58f42fb884fcf7364e122a71135705d91bc7d01a1955d20072a7"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-480.webp",
+      "bytes": 49776,
+      "sha256": "b173c707f1da916cd942fccca680601555970a2f61fae8c0e6f7372bd07c003f",
+      "sourceSha256": "b173c707f1da916cd942fccca680601555970a2f61fae8c0e6f7372bd07c003f"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-720.webp",
+      "bytes": 102032,
+      "sha256": "ef4da2b737ef024f7605857c3a7189c314a859149ba0f09e59ec24ce1d2fc0bc",
+      "sourceSha256": "ef4da2b737ef024f7605857c3a7189c314a859149ba0f09e59ec24ce1d2fc0bc"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-866.webp",
+      "bytes": 334472,
+      "sha256": "7c22d9ba7234c2d9bd4210b7a50b26045b99c9d085312d2008d623c0f3c874d7",
+      "sourceSha256": "7c22d9ba7234c2d9bd4210b7a50b26045b99c9d085312d2008d623c0f3c874d7"
+    },
+    {
+      "path": "assets/everyday-apps-v1/section.css",
+      "bytes": 7721,
+      "sha256": "87c4777b6f18272814f7a9aec1c92ee6f1328de59832271bd8e11ba7c9377a20",
+      "sourceSha256": "87c4777b6f18272814f7a9aec1c92ee6f1328de59832271bd8e11ba7c9377a20"
+    },
+    {
+      "path": "assets/everyday-apps-v1/surface-grain.svg",
+      "bytes": 323,
+      "sha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b",
+      "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-1280.webp",
+      "bytes": 740280,
+      "sha256": "4b5c16e7b36c578c150cbcfe9c4333c49a14539e4bfd73c82617c305e314bb79",
+      "sourceSha256": "4b5c16e7b36c578c150cbcfe9c4333c49a14539e4bfd73c82617c305e314bb79"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-1672.webp",
+      "bytes": 1167356,
+      "sha256": "1c2a1c7b7f9ffc67b6e3f74010753d01abdecf4c0651cff783ab56ec192db9f5",
+      "sourceSha256": "1c2a1c7b7f9ffc67b6e3f74010753d01abdecf4c0651cff783ab56ec192db9f5"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-640.webp",
+      "bytes": 192466,
+      "sha256": "6f176ed6927764c403baebb43c4c60a3b682d74a83d4691155cfd649161beb0e",
+      "sourceSha256": "6f176ed6927764c403baebb43c4c60a3b682d74a83d4691155cfd649161beb0e"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-960.webp",
+      "bytes": 424174,
+      "sha256": "d6e02cc9a8e004fee5622f106e3b49fe476add93b6e537b673cd56a6a344b29d",
+      "sourceSha256": "d6e02cc9a8e004fee5622f106e3b49fe476add93b6e537b673cd56a6a344b29d"
+    },
+    {
       "path": "assets/experience-v1/01-move-screens-1200.webp",
       "bytes": 67412,
       "sha256": "76ee03150f2581f129a034feb4cb4d6b32dd2ab3162f4956a43c32dffa8b2b9f",
@@ -874,12 +1024,6 @@
       "bytes": 95688,
       "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950",
       "sourceSha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
-    },
-    {
-      "path": "assets/homepage-focus-v1.webp",
-      "bytes": 138684,
-      "sha256": "1388117348c87761d1d5bb15530013357f1d9c9737d7371e512b3f4d4f71bb58",
-      "sourceSha256": "1388117348c87761d1d5bb15530013357f1d9c9737d7371e512b3f4d4f71bb58"
     },
     {
       "path": "assets/homepage-social-v1.jpg",
@@ -1219,9 +1363,9 @@
     },
     {
       "path": "index.html",
-      "bytes": 60500,
-      "sha256": "c6a1b24f3f0e82d3b7832fa456f356f4694b18f203356ed7e9a8dd64423e0157",
-      "sourceSha256": "a0b327dcdcf6b3246f90351fe7566d99e9dd81727159274a7619687b5557a953"
+      "bytes": 62138,
+      "sha256": "c951a9dbf5135bc06bcf7dfd4b763222fcc754739b8d69f8798a6437ee075105",
+      "sourceSha256": "b8b1ab3602eeea093fd1a2741f7a6f92a003506f2c8dd3960f8cc86244e27053"
     },
     {
       "path": "simulation.css",

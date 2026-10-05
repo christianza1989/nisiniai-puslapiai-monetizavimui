@@ -6,6 +6,8 @@ import { normalizeNetworkSuggestions, targetCatalog, networkOverview, networkSta
 import { optimizeRaster } from './image-pipeline.mjs';
 import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,validateV2Package,bodyPlainText} from './content-package-v2.mjs';
 import { withStudioWriteLock } from './write-lock.mjs';
+import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
+import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
 
 export const ROOT = path.resolve(import.meta.dirname, '..');
 export const DATA = path.resolve(process.env.STUDIO_DATA_DIR || path.join(ROOT, 'data'));
@@ -240,6 +242,7 @@ export async function editSite(id, input) {
     if (input.contact) site.contact = { email: plain(input.contact.email, 250), phone: plain(input.contact.phone, 80) };
     if (input.brand?.accent && /^#[a-f\d]{6}$/i.test(input.brand.accent)) site.brand = { accent: input.brand.accent };
     if (input.stage && ['planning', 'ready', 'live', 'paused'].includes(input.stage)) site.stage = input.stage;
+    if ('contentPolicy' in input) { site.contentPolicy = contentPolicy(input.contentPolicy, site.timezone); site.contentWorkflowVersion = 1; }
     site.updatedAt = new Date().toISOString();
     await writeJson(siteFile(id), site);
     return site;
@@ -277,25 +280,10 @@ export async function mergePlan(siteId, proposals, months = 0) {
   return locked(async () => {
     const site = await getSite(siteId);
     let added = 0;
-    const candidates = proposals.slice(0, months ? 24 : 12);
-    const timed = candidates.filter(item => item.type !== 'home');
-    let scheduleIndex = 0;
-    const today = new Date();
-    const horizon = new Date(today); horizon.setUTCMonth(horizon.getUTCMonth() + months);
-    const usedDates = new Set(site.pages.map(page => page.publishAt.slice(0, 10)));
+    const incoming = proposals.slice(0, months ? 24 : 12).filter(input => !site.pages.some(page => page.slug === input.slug));
+    const candidates = months ? scheduledPlan(incoming, site.pages, contentPolicy({ ...site.contentPolicy, months }, site.timezone)) : incoming;
     for (const input of candidates) {
       const scheduledInput = { ...input };
-      if (months && input.type !== 'home') {
-        scheduleIndex++;
-        const proposed = /^\d{4}-\d{2}-\d{2}$/.test(input.publishDate || '') ? new Date(`${input.publishDate}T08:00:00.000Z`) : null;
-        const valid = proposed && !Number.isNaN(proposed.getTime()) && proposed.toISOString().slice(0, 10) === input.publishDate
-          && proposed.getTime() > Date.now() + 86400000 && proposed.getTime() <= horizon.getTime();
-        const date = valid ? proposed : new Date(Date.now() + Math.round((7 + (months * 30 - 7) * scheduleIndex / Math.max(timed.length, 1)) * 86400000));
-        date.setUTCHours(8, 0, 0, 0);
-        while (usedDates.has(date.toISOString().slice(0, 10)) && date.getTime() + 86400000 <= horizon.getTime()) date.setUTCDate(date.getUTCDate() + 1);
-        scheduledInput.publishAt = date.toISOString();
-        usedDates.add(date.toISOString().slice(0, 10));
-      }
       const page = makePage(site, scheduledInput);
       if (site.pages.some(item => item.slug === page.slug)) continue;
       site.pages.push(page); added++;
@@ -372,10 +360,8 @@ export async function deleteDraftPage(siteId, pageId) {
     return { deleted: pageId };
   });
 }
-export async function approvePage(siteId, pageId, actorId) {
-  return locked(async () => {
-    const site = await getSite(siteId);
-    const page = site.pages.find(item => item.id === pageId);
+async function approveDraft(site, page, actorId, batchIds = new Set()) {
+    const siteId = site.id;
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
     if (page.factChecks?.length) throw new Error('Išspręskite faktų patikros pastabas ir išsaugokite naują versiją prieš tvirtinimą.');
     if (!site.name || !site.offer || !site.facts?.trim() || !page.title || !page.description || !page.intent || !page.body.length) throw new Error('Patvirtinimui reikia patikrintų svetainės verslo faktų, pasiūlymo, puslapio antraštės, aprašymo, ketinimo ir turinio.');
@@ -395,7 +381,7 @@ export async function approvePage(siteId, pageId, actorId) {
     if(page.media.length>MAX_PAGE_MEDIA)throw new Error('Puslapyje telpa iki 60 medijos variantų.');
     for (const item of page.media) if (!item.alt || !item.rights || !item.width || !item.height) throw new Error('Vaizdams reikia alt teksto, matmenų ir naudojimo teisių.');
     for (const block of page.body) if (block.type === 'image' && !page.media.some(item => item.id === block.assetId)) throw new Error('Turinio vaizdas nėra priskirtas puslapio medijai.');
-    for (const link of page.links) if (!link.label || !site.pages.some(item => item.id === link.targetPageId && (page.contentVersion===2||item.publishedRevision))) throw new Error('Vidinė nuoroda nurodo nepatvirtintą arba nežinomą puslapį.');
+    for (const link of page.links) if (!link.label || !site.pages.some(item => item.id === link.targetPageId && (page.contentVersion===2||item.publishedRevision||batchIds.has(item.id)))) throw new Error('Vidinė nuoroda nurodo nepatvirtintą arba nežinomą puslapį.');
     const networkIndex = await networkCatalog();
     const networkDomains = new Set((await listSites()).map(item => item.canonicalHost));
     for (const source of page.externalLinks || []) {
@@ -413,9 +399,88 @@ export async function approvePage(siteId, pageId, actorId) {
     page.publishedRevision = structuredClone({ ...revisionPayload(page), id: page.id, revisionHash: hash, approval });
     for (const asset of site.assets) if (page.media.some(item => item.id === asset.id)) asset.metadataPublished = true;
     page.updatedAt = new Date().toISOString();
+    return page;
+}
+export async function approvePage(siteId, pageId, actorId) {
+  return locked(async () => {
+    const site = await getSite(siteId);
+    if (site.contentWorkflowVersion === 1) {
+      const current = site.pages.find(item => item.id === pageId);
+      if (!current) throw new Error('Puslapis nerastas.');
+      const ready = pageReadiness(site, current, revisionHash(current));
+      if (ready.blockers.length) throw new Error(ready.blockers.join(' '));
+      for (const item of current.media) await stat(path.join(MEDIA_DIR, site.id, path.basename(item.src)));
+    }
+    const page = await approveDraft(site, site.pages.find(item => item.id === pageId), actorId);
     await writeJson(siteFile(siteId), site);
     return page;
   });
+}
+const selectedPages = (site, ids) => {
+  if (!Array.isArray(ids) || !ids.length || ids.length > 200 || new Set(ids).size !== ids.length) throw new Error('Reikia 1–200 unikalių šios svetainės puslapių ID.');
+  return ids.map(id => { const page = site.pages.find(p => p.id === id && p.siteId === site.id && p.status !== 'revoked'); if (!page) throw new Error('Puslapis nepriklauso šiai svetainei arba atšauktas.'); return page; });
+};
+export async function finalizeInternalLinks(siteId, pageIds) {
+  return locked(async () => {
+    const site = await getSite(siteId), pages = selectedPages(site, pageIds);
+    let changed = 0;
+    for (const page of pages) {
+      const links = draftLinks(site, page);
+      if (stable(links) !== stable(page.links)) { page.links = links; page.approval = null; page.status = 'review'; page.updatedAt = new Date().toISOString(); changed++; }
+    }
+    await writeJson(siteFile(siteId), site);
+    return { siteId, changed, next: 'Review unchanged drafts before batch approval; approved snapshots were not edited.' };
+  });
+}
+export async function recordEditorialReview(siteId, pageId, input) {
+  return locked(async () => {
+    const site = await getSite(siteId), [page] = selectedPages(site, [pageId]);
+    page.editorialReview = editorialReview(site, page, revisionHash(page), input);
+    await writeJson(siteFile(siteId), site);
+    return page.editorialReview;
+  });
+}
+export async function getContentWorkflow(siteId) { return workflowOverview(await getSite(siteId), revisionHash); }
+export async function approveReviewedBatch(siteId, pageIds, actorId) {
+  return locked(async () => {
+    const site = await getSite(siteId), pages = selectedPages(site, pageIds), ids = new Set(pageIds);
+    for (const page of pages) {
+      const ready = pageReadiness(site, page, revisionHash(page), ids);
+      if (ready.blockers.length) throw new Error(`${page.slug || '/'}: ${ready.blockers.join(' ')}`);
+      for (const item of page.media) await stat(path.join(MEDIA_DIR, site.id, path.basename(item.src)));
+    }
+    for (const page of pages) await approveDraft(site, page, actorId, ids);
+    // All validation, including v2 inline dependency closure, happens before one atomic write.
+    packageForSite(site);
+    await writeJson(siteFile(siteId), site);
+    return { siteId, approved: pageIds, deployment: 'not-performed' };
+  });
+}
+export async function releaseContent(siteId) {
+  const site = await getSite(siteId), approved = site.pages.filter(p => p.publishedRevision);
+  assertReviewedSnapshot(site);
+  const result = await exportSiteSnapshot(site, path.join(OUTPUT, 'releases', siteId, randomUUID()));
+  const bytes = await readFile(result.path);
+  const assets = [];
+  for (const name of [...new Set(approved.flatMap(p => p.media.map(m => path.basename(m.src))))]) {
+    const assetBytes = await readFile(path.join(path.dirname(result.path), 'assets', name));
+    assets.push({ name, sha256: createHash('sha256').update(assetBytes).digest('hex') });
+  }
+  const manifest = { version: 1, siteId, canonicalHost: site.canonicalHost, packageSha256: createHash('sha256').update(bytes).digest('hex'), assets, createdAt: new Date().toISOString(),
+    pages: approved.map(page => ({ pageId: page.id, revisionHash: page.publishedRevision.revisionHash, publishAt: page.publishedRevision.publishAt, review: page.editorialReview })),
+    state: 'exported-not-deployed', next: 'Import and verify in public core; do not report deployment from this receipt.' };
+  const manifestPath = path.join(path.dirname(result.path), 'release-manifest.json');
+  await writeJson(manifestPath, manifest);
+  return { ...result, manifestPath, packageSha256: manifest.packageSha256, state: manifest.state };
+}
+function assertReviewedSnapshot(site) {
+  const approved = site.pages.filter(p => p.publishedRevision);
+  if (!approved.length) throw new Error('Nėra patvirtintų publikacijų.');
+  for (const page of approved) {
+    if (revisionHash(page) !== page.publishedRevision.revisionHash || !reviewCurrent(site, page, revisionHash(page))) throw new Error(`${page.slug || '/'}: prieš release reikia aktualios nepakitusios revizijos peržiūros.`);
+    const ready = pageReadiness(site, page, revisionHash(page));
+    if (ready.blockers.length) throw new Error(`${page.slug || '/'}: ${ready.blockers.join(' ')}`);
+  }
 }
 export async function revokePage(siteId, pageId) {
   return locked(async () => {
@@ -442,12 +507,11 @@ export function packageForSite(site) {
   if(pkg.schemaVersion===2)validateV2Package(pkg);
   return pkg;
 }
-export async function exportPackage(siteId) {
-  const site = await getSite(siteId);
+async function exportSiteSnapshot(site, target) {
+  const siteId = site.id;
   const content = packageForSite(site);
   if (!content.pages.length) throw new Error('Nėra patvirtintų puslapių eksportui.');
   if (!content.pages.some(page => page.type === 'home' && page.slug === '')) throw new Error('Eksportui reikia patvirtinto pagrindinio puslapio.');
-  const target = path.join(OUTPUT, siteId);
   await mkdir(path.join(target, 'assets'), { recursive: true });
   for (const page of content.pages) for (const media of page.media) {
     const file = path.basename(media.src);
@@ -458,6 +522,7 @@ export async function exportPackage(siteId) {
   await writeJson(path.join(target, 'content-package.json'), content);
   return { path: path.join(target, 'content-package.json'), pages: content.pages.length, assets: new Set(content.pages.flatMap(page => page.media.map(item => item.src))).size };
 }
+export async function exportPackage(siteId) { const site = await getSite(siteId); if (site.contentWorkflowVersion === 1) assertReviewedSnapshot(site); return exportSiteSnapshot(site, path.join(OUTPUT, siteId)); }
 export async function listJobs() { return (await readJson(JOB_FILE, [])).slice(-100).reverse(); }
 export async function createJob(type, siteId, pageId = null) {
   return locked(async () => {

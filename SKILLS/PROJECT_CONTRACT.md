@@ -6,6 +6,8 @@ Read this when using any project skill. The user's current request and project `
 
 ## Choose the relevant workflow
 
+All sites' editorial orchestration uses [CONTENT_CORE](../CONTENT_CORE.md): per-site policy, same-site draft link finalization, revision-bound agent evidence, atomic reviewed batch and immutable release. No per-domain publication clones. Agent evidence needs actual work; export isn't deployment and existing sites don't acquire retroactive audit PASS.
+
 - **Core:** `niche-site-builder` handles a complete domain build, `niche-content-planner` handles research/calendars/drafts, `niche-site-audit` handles A–Z acceptance, and `impeccable` handles art direction under its `PROJECT_ADAPTATION.md`. These four have installed discovery junctions; specialist helpers remain in the project library.
 - **Phase-one support:** use a helper for the actual research, writing, branding, link or review problem. It contributes to the core workflow; it cannot replace full delivery with a plan or a smaller checklist. Read only relevant helpers rather than injecting the whole catalog into every job.
 - **Business operations:** real mail, proposals, CRM, feedback and business reviews require real scoped records and an actual task. They are not automatically enabled by a new website. They may analyse phase-one demand when records exist; full operational systems require the domain's evidence-based expansion decision.

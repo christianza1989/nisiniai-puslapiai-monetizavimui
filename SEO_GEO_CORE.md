@@ -65,3 +65,7 @@ Gift SEO routes yra force-dynamic/revalidate0/no-store; canonical, sitemap ir ab
 Assets Workers `run_worker_first` apima content-assets ir legacy images. Originaliam URL reikia explicit approved-page/asset alias; nepatvirtinto mapping nesugalvoti pagal archive. Private/raw image URL neapeina datos. `.example` local-fixture admission visada noindex; tikro host cutover reikalauja exact package receipt ir atskirų production įrodymų. Actual9v1SEO smoke ir V2 fixture HTTP/LLM patikros: [M5](research/dovanos123-integration-2026-10-04/M5/QA.md). Jos nepriima Dovanos123 privataus turinio ar actual launch.
 
 `local-preview` actual canonical paketo testOnly peržiūra vyksta tik izoliuotoje output kopijoje ir loopback host. Realus host ir main importas neleidžiami; tai padeda patikrinti tikrą SEO/canonical turinį nepaskelbiant nepriimtų launch faktų. Preview noindex negalima išjungti dėl Lighthouse SEO balo.
+
+## Bendras turinio release — 2026-10-05
+
+Visų nišų planavimo/review/paketo sutartis [CONTENT_CORE.md](CONTENT_CORE.md). Planuotų ryšių įtraukimas vyksta į juodraštį prieš agento review ir atomic batch; patvirtintas source snapshot savavališkai nekinta. Naujas release turi paketo/media SHA ir lieka exported-not-deployed. Viešo clock/domain/hash/target projekcijos vartai nekinta. V2 admission receipt ir konkrečių adapterių actual SEO smoke nėra pakeičiami studijos manifestu.

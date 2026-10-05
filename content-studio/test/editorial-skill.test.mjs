@@ -88,6 +88,7 @@ test('an active instruction snapshot survives edits and the next load records a 
   await writeFile(path.join(directory, 'references/quality-review.md'), 'The quality review');
   await writeFile(path.join(directory, 'references/network-linking.md'), 'Contextual relationships from the actual inventory');
   await writeFile(path.join(directory, 'references/media-workflow.md'), 'Shared automatic media import and actual image review');
+  await writeFile(path.join(directory, 'references/content-workflow.md'), 'Shared scheduling and revision-bound review before release');
   const initial = await loadEditorialSkill('draft', directory);
   await writeFile(path.join(directory, 'SKILL.md'), 'Updated editorial instructions');
   const fresh = await loadEditorialSkill('draft', directory);
@@ -101,6 +102,11 @@ test('an active instruction snapshot survives edits and the next load records a 
   assert.match(initial.instructions, /Original shared project rules/);
   assert.doesNotMatch(initial.instructions, /Revised shared project rules/);
   assert.match(changedContract.instructions, /Revised shared project rules/);
+  await writeFile(path.join(directory, 'references/content-workflow.md'), 'Updated scheduling and actual review requirements');
+  const changedWorkflow = await loadEditorialSkill('draft', directory);
+  assert.notEqual(changedContract.metadata.fingerprint, changedWorkflow.metadata.fingerprint);
+  assert.match(changedWorkflow.instructions, /Updated scheduling and actual review requirements/);
+  assert.doesNotMatch(initial.instructions, /Updated scheduling and actual review requirements/);
   await assert.rejects(() => loadEditorialSkill('unknown'), /režimas/);
 });
 

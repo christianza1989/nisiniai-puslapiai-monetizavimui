@@ -4,6 +4,7 @@ import path from 'node:path';
 import { initialize, ROOT, getSite, listSites, listCalendar, createSite, editSite, addPage, editPage, deleteDraftPage, approvePage, revokePage, exportPackage, listJobs, saveResponsiveAsset, getAssetFile } from './model.mjs';
 import { enqueue } from './generator.mjs';
 import { listNetworkLinks } from './model.mjs';
+import { getContentWorkflow, finalizeInternalLinks, recordEditorialReview, approveReviewedBatch, releaseContent } from './model.mjs';
 import { imageSrcSet, visibleImageCredit } from '../../../dovanos-memorycasting/lib/niche-media.mjs';
 
 const PORT = Number(process.env.STUDIO_PORT || 4317);
@@ -70,7 +71,8 @@ export async function createServer() {
     try {
       // The studio is a local operator tool. Reject DNS rebinding and cross-origin writes.
       const host = request.headers.host || '';
-      if (!new RegExp(`^(127\\.0\\.0\\.1|localhost):${PORT}$`).test(host)) return json(response, 403, { error: 'Leidžiama tik vietinė studijos prieiga.' });
+      const listeningPort = server.address()?.port || PORT;
+      if (!new RegExp(`^(127\\.0\\.0\\.1|localhost):${listeningPort}$`).test(host)) return json(response, 403, { error: 'Leidžiama tik vietinė studijos prieiga.' });
       const origin = request.headers.origin;
       if (origin && origin !== `http://${host}`) return json(response, 403, { error: 'Netinkama užklausos kilmė.' });
       if (request.method !== 'GET' && request.headers['x-studio-request'] !== '1') return json(response, 403, { error: 'Trūksta studijos užklausos žymos.' });
@@ -84,6 +86,10 @@ export async function createServer() {
       if (request.method === 'GET' && url.pathname === '/api/jobs') return json(response, 200, await listJobs());
       if (parts[0] === 'api' && parts[1] === 'sites' && parts[2]) {
         const siteId = parts[2];
+        if (parts.length === 4 && parts[3] === 'workflow' && request.method === 'GET') return json(response, 200, await getContentWorkflow(siteId));
+        if (parts.length === 4 && parts[3] === 'finalize-links' && request.method === 'POST') return json(response, 200, await finalizeInternalLinks(siteId, (await readBody(request)).pageIds));
+        if (parts.length === 4 && parts[3] === 'approve-reviewed' && request.method === 'POST') { const input = await readBody(request); return json(response, 200, await approveReviewedBatch(siteId, input.pageIds, input.actorId)); }
+        if (parts.length === 4 && parts[3] === 'release' && request.method === 'POST') return json(response, 200, await releaseContent(siteId));
         if (parts.length === 3 && request.method === 'GET') return json(response, 200, await getSite(siteId));
         if (parts.length === 3 && request.method === 'PUT') return json(response, 200, await editSite(siteId, await readBody(request)));
         if (parts[3] === 'autopilot' && request.method === 'POST') { await getSite(siteId); return json(response, 202, await enqueue('autopilot', siteId)); }
@@ -100,6 +106,7 @@ export async function createServer() {
           if (parts.length === 4 && request.method === 'POST') return json(response, 201, await addPage(siteId, await readBody(request)));
           if (parts[4]) {
             const pageId = parts[4];
+            if (parts.length === 6 && parts[5] === 'review' && request.method === 'POST') return json(response, 200, await recordEditorialReview(siteId, pageId, await readBody(request)));
             if (parts.length === 5 && request.method === 'PUT') return json(response, 200, await editPage(siteId, pageId, await readBody(request)));
             if (parts.length === 5 && request.method === 'DELETE') return json(response, 200, await deleteDraftPage(siteId, pageId));
             if (parts[5] === 'approve' && request.method === 'POST') return json(response, 200, await approvePage(siteId, pageId, (await readBody(request)).actorId));

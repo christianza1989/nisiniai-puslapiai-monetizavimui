@@ -46,6 +46,8 @@ Numatytas kontaktas yra savininko patvirtintas `info@pinet.lt`, operatoriaus pav
 
 ## 3. Turinys ir įgyvendinimas
 
+Visų domenų planavimui ir publikavimo paruošimui taikyti [CONTENT_CORE.md](CONTENT_CORE.md): policy, ryšių finalizavimas, tikri agento peržiūros įrodymai, atominis patvirtinimas ir immutable release. Savininkas kalendoriaus nepildo. Senas approve/export pavyzdys naujai nišai nėra šių vartų pakaitalas.
+
 Medijos eiga visoms nišoms: [MEDIA_CORE.md](MEDIA_CORE.md). Įkelk originalų PNG/JPEG/WebP per bendrą importą; WebP variantai ruošiami automatiškai, jų šeima puslapiui priskiriama vienu pasirinkimu. Nekurk atskiro resize/Sharp/canvas skripto. Atvaizdavimui naudok core `imageSrcSet`, actual CSS plotį atitinkantį sizes ir tinkamą eager/lazy; tikrą source/prompt/teisių žurnalą saugok privačiai. Plannerio `references/media-workflow.md` pateikia vaizdo brief'o promptą ir tikras importo ribas.
 
 Dirbk per studijos modelį, ne rankiniu būdu suklastotu patvirtinimo hash. `content-studio/src/model.mjs` turi svetainių/puslapių redagavimą, medijos saugojimą, konkrečios peržiūrėtos versijos patvirtinimą ir eksportą. Kaip integracijos pavyzdį gali skaityti `content-studio/scripts/build-tractor-site.mjs`; jo pasiūlymo, tekstų ar vaizdų naujai nišai nekopijuok. Faktų peržiūrą gali atlikti agentas pagal patikrintus šaltinius; jos niekada nevadink savininko patvirtinimu.

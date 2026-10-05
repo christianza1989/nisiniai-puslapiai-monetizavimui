@@ -29,3 +29,7 @@ Mygtukai studijoje yra atsarginiai operatoriaus valdikliai; planavimo ir rašymo
 ## Matavimas
 
 Paieškos parodymai ir paspaudimai, lankytojai, formos serverio įrašai, faktiškai gauti laiškai ir atsiliepti skambučiai yra skirtingi rodikliai. `mailto:` arba `tel:` paspaudimas nėra gauta užklausa. Kiekvienos nišos rezultatus laikyti atskirai. SEO/GEO išvestys ir Lighthouse balai yra techninės patikros, ne pozicijų pažadas.
+
+## Įgyvendintas bendras inkrementas — 2026-10-05
+
+[CONTENT_CORE.md](CONTENT_CORE.md) įgyvendina policy/DST, daugia-partį V1 planavimą ir juodraščius, ryšių finalizavimą, review įrodymus, atomic reviewed batch ir nekintamą release. Tai visų nišų funkcijos, ne Madbeauty kopija. Šaltinių/pixels/rendered tikrinimą ir built-in ImageGen atlieka agentas; JSON CLI pats sustoja ties juodraščiais. Public import/build/deployment, V2 generator ir specifiniai CTA adapteriai lieka atskiri realūs darbai. Senų įrašų naujas review neatliktas šiuo bibliotekos pakeitimu.

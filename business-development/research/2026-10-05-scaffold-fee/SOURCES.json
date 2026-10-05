@@ -1,0 +1,26 @@
+{
+  "checkedOn": "2026-10-05",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.bark.com/en/gb/sellers/pricing/",
+      "kind": "primary_html",
+      "status": "opened",
+      "observation": "Payment for chosen contact, variable job-related pricing; not LT willingness to pay"
+    },
+    {
+      "id": "S2",
+      "url": "https://www.bark.com/en/gb/terms/",
+      "kind": "primary_html",
+      "status": "opened",
+      "observation": "Professional section 9: limited credit returns and conditional one-time first-pack exception; no universal job guarantee"
+    },
+    {
+      "id": "S3",
+      "url": "https://www.pilaitespastoliai.lt/paslaugos/",
+      "kind": "primary_html",
+      "status": "opened",
+      "observation": "Free manager help and scope-dependent rental/transport; provider claim, not actual sales"
+    }
+  ]
+}

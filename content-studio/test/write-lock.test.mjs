@@ -35,3 +35,11 @@ test('an abandoned or active lock fails within a bound and is never silently rem
     await assert.rejects(withStudioWriteLock(data,async()=>assert.fail(),100),/užraktas užimtas/);assert.equal(await readFile(path.join(data,'.model-write.lock'),'utf8'),bytes);
   }finally{await rm(data,{recursive:true,force:true});}
 });
+test('release refuses changed ownership and preserves the replacement lock',async()=>{
+  const data=await mkdtemp(path.join(tmpdir(),'studio-changed-lock-'));
+  const filename=path.join(data,'.model-write.lock'),bytes=JSON.stringify({token:'replacement-owner',pid:987654321});
+  try{
+    await assert.rejects(withStudioWriteLock(data,async()=>{await writeFile(filename,bytes);}),/savininkas pasikeitė/);
+    assert.equal(await readFile(filename,'utf8'),bytes);
+  }finally{await rm(data,{recursive:true,force:true});}
+});

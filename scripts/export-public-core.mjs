@@ -14,6 +14,6 @@ async function walk(dir,relative){for(const entry of await fs.readdir(dir,{withF
 for(const folder of folders){try{await walk(path.join(source,folder),folder);}catch(e){if(e.code!=='ENOENT')throw e;}}
 for(const entry of await fs.readdir(source,{withFileTypes:true}))if(entry.isFile()&&!blocked.test(entry.name)&&(/\.(?:json|ts|mjs|cjs|md)$/.test(entry.name)||['.gitignore','.npmrc'].includes(entry.name)))await copy(path.join(source,entry.name),entry.name);
 await fs.appendFile(path.join(dest,'.gitignore'),'\n# Clean multi-machine source snapshot; local state excluded.\nnode_modules/\noutput/\noutputs/\ndata/\nbuild/\nwork/\nartifacts/\nlogs/\nsecrets/\ncredentials/\n*.db\n*.sqlite3\n*.tsbuildinfo\n');
-await fs.writeFile(path.join(dest,'.gitattributes'),'* text=auto\n*.png binary\n*.webp binary\n*.jpg binary\n*.woff2 binary\n*.ttf binary\n');
+await fs.writeFile(path.join(dest,'.gitattributes'),'* text=auto\n*.md text eol=lf\n*.mjs text eol=lf\n*.js text eol=lf\n*.ts text eol=lf\n*.tsx text eol=lf\n*.json text eol=lf\n*.sh text eol=lf\n*.ps1 text eol=crlf\n*.cmd text eol=crlf\n*.png binary\n*.webp binary\n*.jpg binary\n*.woff2 binary\n*.ttf binary\n');
 await fs.writeFile(path.join(path.dirname(dest),'public-core-snapshot.json'),JSON.stringify({source,generatedAt:new Date().toISOString(),historyIncluded:false,files:rows.length,bytes:rows.reduce((s,r)=>s+r.bytes,0),rows},null,2)+'\n');
 console.log(JSON.stringify({files:rows.length,bytes:rows.reduce((s,r)=>s+r.bytes,0),historyIncluded:false}));

@@ -19,8 +19,16 @@ export async function withStudioWriteLock(data, task, timeout = 30000) {
   }finally{
     await handle.close();
     // Crashed writers leave a lock for explicit recovery. Never steal a lock on age alone.
-    const owner=JSON.parse(await readFile(filename,'utf8'));
-    if(owner.token!==token)throw new Error('Studijos rašymo užrakto savininkas pasikeitė.');
-    await unlink(filename);
+    for(let attempt=0;;attempt++){
+      const owner=JSON.parse(await readFile(filename,'utf8'));
+      if(owner.token!==token)throw new Error('Studijos rašymo užrakto savininkas pasikeitė.');
+      try{await unlink(filename);break;}
+      catch(error){
+        // Windows scanners/readers can briefly prevent removal after our handle closes.
+        // Retain the lock on permanent failure; recheck ownership on every retry.
+        if(process.platform!=='win32'||!['EPERM','EACCES','EBUSY'].includes(error.code)||attempt>=8)throw error;
+        await new Promise(resolve=>setTimeout(resolve,25*(attempt+1)));
+      }
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "siteId": "akmenas",
+  "date": "2026-10-01",
+  "scope": "Observed internal repairs before the first user-facing completion; not a pristine parent benchmark baseline.",
+  "repairs": [
+    {"issue":"JSON-LD double JSON serialization and breadcrumb path/url assumption","repair":"Use shared helper contract directly and name/path breadcrumb fields","evidence":"HTML-AUDIT.json:11pages,0findings"},
+    {"issue":"Inquiry props and unsupported Service schema for informational need page","repair":"Correct component type; studio edit/approve/export page as faq","evidence":"VERSION.json,HTML-AUDIT.json"},
+    {"issue":"Skip link did not reliably focus main","repair":"Main tabIndex=-1","evidence":"qa/keyboard-final.json:focus turinys,outline3px,mainTop0"},
+    {"issue":"768px hero title sat below excess empty space","repair":"761–960px title-first stacked opening","evidence":"FINISH-VERDICT.json:F2resolved"},
+    {"issue":"Initial font payload/late loading; variable local lab scores","repair":"Modern WOFF2 glyph subsets, inline font CSS and four preload links; fixed three serial home measurements after capture activity","evidence":"FONT-OPTIMIZATION.json,PERFORMANCE-SAMPLES.json"},
+    {"issue":"Sticky-top care screenshots and capture loop timeout","repair":"Discard invalid captures; settle native AX/screenshot after Home; recapture all three care widths","evidence":"qa/care-capture-state.json,FINISH-VERDICT.json:all17reopened"},
+    {"issue":"Original concept seed full output not persisted","repair":"Keep chosen index5; labelled current-catalog replay corroboration without claiming historical original","evidence":"CONCEPT-PROVENANCE.md,FINISH-VERDICT.json:F1reproduction-only"},
+    {"issue":"Isolated TypeScript QA input copy omitted declarations/hooks","repair":"Copy only cloudflare-env.d.ts and hooks source to isolated QA copy","evidence":"typecheck-isolated-missing-copy-inputs.log,typecheck-isolated.log"},
+    {"issue":"Interest test harness used unknown-host POST with body; subsequent local runtime response503","repair":"Use bodyless unknown-host negative test; no runtime change","evidence":"INTEREST-VERIFICATION.json"},
+    {"issue":"QA-only helper command mistakes: JS quoting, wrong smoke siteId and /.env concatenation","repair":"Correct own script/command arguments and rerun affected checks; no public behavior changed","evidence":"seo-smoke.log,SECURITY-VERIFICATION.json"}
+  ],
+  "performanceHistory": {"baseline":{"home":88,"guide":90},"intermediate":{"home":95,"guide":86},"finalConcurrentCapture":{"home":81,"guide":91},"finalFixedSerialHome":[92,99,90],"finalHomeMedian":92,"finalGuide":91,"note":"All reports retained; highest99was not selected as final result."},
+  "remaining": ["Actual200%enlargementR2/S2","Original historical concept full-hand provenance","Production domain/legal/privacy/D1/mail/recovery/access/abuse/backup gates","Field CWV and qualified real demand"],
+  "processLimits": ["Direct user run, not parent-created formal benchmark","Start-of-session instruction fingerprint was not captured","Direct agent source-reviewed authorship through real studio model; no Codex CLI draft job","Impeccable finish reviewer/documenter required by skill; no parent coaching or later parent score"],
+  "concurrentWork": "Shared TypeScript errors in auksarankiams optional externalLinks are outside own boundary. Isolated owned-source TypeScript passes. No other niche repair or process stop."
+}

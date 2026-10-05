@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "domain": "traktoriupadangos.lt",
+  "auditCheckedAt": "2026-09-30T11:48:43.163Z",
+  "reviewedAt": "2026-09-30",
+  "scope": "Selected phase-one decisions, not exhaustive inventory",
+  "publicChangesApplied": false,
+  "entries": [
+    {
+      "oldUrl": "http://www.traktoriupadangos.lt/",
+      "action": "keep-url-new-content",
+      "targetPath": "/",
+      "reason": "Ankstesnė padangų tema ir dabartinis originalus homepage turi bendrą nišos pristatymo paskirtį; ankstesni pažadai ar tekstai neperimami.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20130106114750/http://www.traktoriupadangos.lt/"
+      ],
+      "evidenceType": "snapshot-html-read",
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://traktoriupadangos.lt/traktoriu-padangos",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "CDX rodo siaurą kategorijos kelią, tačiau konkretus HTML ir ketinimo skirtumas nuo dabartinio homepage bei parinkimo gido dar neperžiūrėti.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20150222053849/http://traktoriupadangos.lt/traktoriu-padangos"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://traktoriupadangos.lt/kitos-zut-padangos",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Perskaityta platesnė ŽŪT kategorija; pirmo piloto pasiūlymas siauresnis, todėl naujas URL dabar neturi patvirtinto atskiro pasiūlymo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20150222064215/http://traktoriupadangos.lt/kitos-zut-padangos"
+      ],
+      "evidenceType": "snapshot-html-read",
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://traktoriupadangos.lt/produkto-kategorija/traktoriu-padangos/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Ankstesnio prekių katalogo adresas nėra lygiavertis informaciniam gidui. Prekybos pajėgumas nepatvirtintas; konkretus kategorijos HTML dar neperžiūrėtas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200921194253/https://traktoriupadangos.lt/produkto-kategorija/traktoriu-padangos/"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://traktoriupadangos.lt/shop/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Pirmos fazės pilotas nėra veikianti parduotuvė; konkretus snapshot dar neperžiūrėtas, todėl jokio semantinio redirect nedarome.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200925105144/https://traktoriupadangos.lt/shop/"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://traktoriupadangos.lt/kontaktai/",
+      "action": "redirect-301",
+      "targetPath": "/kontaktai",
+      "reason": "Kontaktų ketinimas tik numanomas iš kelio. Kandidatas laukia konkretaus snapshot, gyvo tikslo ir slash normalizavimo patikros; ankstesni kontaktai neperimami.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200925102257/https://traktoriupadangos.lt/kontaktai/"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "http://traktoriupadangos.lt/paslaugos",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Senų paslaugų turinys ir dabartinis vykdymo pajėgumas nepatvirtinti. Kelio buvimas nėra leidimas pažadėti paslaugas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20150222094243/http://traktoriupadangos.lt/paslaugos"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://traktoriupadangos.lt/autochemija",
+      "action": "remove-404",
+      "targetPath": null,
+      "reason": "Gretima tema nepatenka į pirmo traktorių padangų piloto pasiūlymą; lygiavertis tikslas nenustatytas. Jokio redirect į homepage.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20150222022333/http://traktoriupadangos.lt/autochemija"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://traktoriupadangos.lt/cart/",
+      "action": "remove-404",
+      "targetPath": null,
+      "reason": "Pirmos fazės pilotas neturi krepšelio. Šis techninis URL neatkuriamas kaip SEO turinys; vėlesnės prekybos funkcija vertinama atskirai.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200812214026/https://traktoriupadangos.lt/cart/"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://traktoriupadangos.lt/my-account/",
+      "action": "remove-404",
+      "targetPath": null,
+      "reason": "Pirmos fazės pilotas neturi kliento paskyros. Techninė paskirtis nesukuria turinio ar redirect į homepage poreikio.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200812205132/https://traktoriupadangos.lt/my-account/"
+      ],
+      "evidenceType": "cdx-metadata-only",
+      "confidence": "high",
+      "status": "agent-reviewed"
+    }
+  ]
+}

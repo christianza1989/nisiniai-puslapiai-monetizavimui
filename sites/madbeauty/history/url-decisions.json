@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "siteId": "madbeauty",
+  "domain": "madbeauty.lt",
+  "reviewedAt": "2026-10-05",
+  "status": "proposed_only",
+  "inventoryComplete": false,
+  "currentBacklinksVerified": false,
+  "redirectsApplied": false,
+  "contentRestored": false,
+  "scope": "selected_examples_and_url_families_not_all_300_urls",
+  "decisions": [
+    {"path": "/", "decision": "new_offer_at_root", "reason": "New beauty marketplace, historic cosmetics commerce is not the current offer.", "target": null, "implementation": "NOT_RUN"},
+    {"path": "/mad-beauty-squad-meistrai/", "decision": "defer_equivalence_review", "reason": "Former branded team is not our verified marketplace provider directory; no blind redirect.", "target": null, "implementation": "NOT_RUN"},
+    {"path": "/blog/", "decision": "defer_index_path_choice", "reason": "Only inventory entry reviewed; new guide index choice does not establish old article equivalence.", "target": null, "implementation": "NOT_RUN"},
+    {"path": "/parasykite-mad-beauty-squad-kevin-murphy/", "decision": "do_not_inherit_business_identity", "reason": "Brand-specific former contact intent is not a current MB Pinet service/provider.", "target": null, "implementation": "NOT_RUN"},
+    {"path": "/prekiu-pirkimo-pardavimo-taisykles/", "decision": "do_not_restore_old_terms", "reason": "Old product-store terms do not define the new marketplace contract.", "target": null, "implementation": "NOT_RUN"},
+    {"family": "/brand/*, /product-category/*, /product-tag/*, add-to-cart query variants", "decision": "no_bulk_revival_or_homepage_redirect", "reason": "Historic product commerce has no established equivalent in the chosen service marketplace.", "target": null, "implementation": "NOT_RUN"}
+  ]
+}

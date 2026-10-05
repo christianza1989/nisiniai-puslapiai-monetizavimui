@@ -1,0 +1,326 @@
+{
+  "date": "2026-10-03T13:44:02.725Z",
+  "months": 6,
+  "status": "private-plan-not-publication",
+  "proposals": [
+    {
+      "type": "guide",
+      "publishDate": "2026-10-17",
+      "slug": "trumpi-vaziavimai-akumuliatorius",
+      "title": "Trumpi važiavimai: kokią naudojimo eigą aprašyti",
+      "description": "Naudojimo aplinkybės, o ne įkrovimo pažadas",
+      "intent": "Naudojimo aplinkybės, o ne įkrovimo pažadas",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "akumuliatorius-issikrauna",
+      "seasonalHook": "Rudens miesto kelionės; VARTA bendras kontekstas patikrintas, prieš juodraštį atnaujinti",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-11-07",
+      "slug": "akumuliatorius-po-savaitgalio",
+      "title": "Po savaitgalio nebeužsiveda: stovėjimo įvykių lapas",
+      "description": "Kelių parų pasikartojimas, ne naujas gedimo sinonimo puslapis",
+      "intent": "Kelių parų pasikartojimas, ne naujas gedimo sinonimo puslapis",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "akumuliatorius-issikrauna",
+      "seasonalHook": "Ilgesnis stovėjimas, skirti nuo bendro išsikrovimo klausimo",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-11-21",
+      "slug": "papildoma-iranga-simptomai",
+      "title": "Papildoma įranga: ką pasakyti apie pakeitimų laiką",
+      "description": "Laiko sekos pateikimas be kaltinimo įrenginiui",
+      "intent": "Laiko sekos pateikimas be kaltinimo įrenginiui",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "akumuliatorius-issikrauna",
+      "seasonalHook": "Prieš žiemą: tikras papildomos įrangos laikotarpis",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-12-05",
+      "slug": "diagnostikos-isvada",
+      "title": "Ką turi paaiškinti diagnostikos išvada?",
+      "description": "Sutartas pirmo etapo rezultatas, ne sąmatos straipsnio kopija",
+      "intent": "Sutartas pirmo etapo rezultatas, ne sąmatos straipsnio kopija",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "diagnostikos-kaina",
+      "seasonalHook": "Realių vykdytojų išvadų formato tyrimas; pavyzdį aiškiai žymėti",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-12-19",
+      "slug": "pristatymas-diagnostikai",
+      "title": "Automobilio palikimas diagnostikai: klausimai prieš vizitą",
+      "description": "Pristatymo ir palikimo galimybės, be mūsų transportavimo pažado",
+      "intent": "Pristatymo ir palikimo galimybės, be mūsų transportavimo pažado",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "diagnostikos-kaina",
+      "seasonalHook": "Švenčių laikotarpis nėra darbo laiko garantija",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-01-09",
+      "slug": "ankstesniu-patikru-santrauka",
+      "title": "Kaip trumpai pateikti ankstesnes patikras",
+      "description": "Duomenų kiekio mažinimas ir tikrų patikrų laiko seka",
+      "intent": "Duomenų kiekio mažinimas ir tikrų patikrų laiko seka",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "automobilis-neuzsiveda",
+      "seasonalHook": "Žiemos pasikartojimo kontekstas; jokių dokumentų kopijų formoje",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-01-23",
+      "slug": "salcio-simptomo-aprasas",
+      "title": "Šaltą rytą nepavyko užvesti: aplinkybių aprašas",
+      "description": "Temperatūros ir ankstesnio važiavimo duomenys, be universalių ribų",
+      "intent": "Temperatūros ir ankstesnio važiavimo duomenys, be universalių ribų",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "automobilis-neuzsiveda",
+      "seasonalHook": "Prieš juodraštį tikrinti oficialius AA/gamintojo šaltinius",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-02-06",
+      "slug": "diagnostika-ar-remontas",
+      "title": "Kada diagnostikos pasiūlymas pereina į remonto susitarimą",
+      "description": "Papildomo sutikimo riba ir pasiūlymo dokumentavimas",
+      "intent": "Papildomo sutikimo riba ir pasiūlymo dokumentavimas",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "diagnostikos-kaina",
+      "seasonalHook": "Realios apimties formos tyrimas, teisinius teiginius patikrinti",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-02-20",
+      "slug": "simptomas-nepasikartojo",
+      "title": "Simptomas nepasikartojo per vizitą: kokį tęsinį aptarti",
+      "description": "Neatkartoto pasikartojimo komunikacija",
+      "intent": "Neatkartoto pasikartojimo komunikacija",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "akumuliatorius-issikrauna",
+      "seasonalHook": "Be atlikto darbo ar diagnostinio rezultato fikcijų",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-03-06",
+      "slug": "ikrovimo-ispejimo-aprasas",
+      "title": "Įkrovimo įspėjimas: kaip pateikti pastebėjimą",
+      "description": "Įspėjimo tekstas ir situacija, ne voltų skaičiuotuvas",
+      "intent": "Įspėjimo tekstas ir situacija, ne voltų skaičiuotuvas",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "automobilis-neuzsiveda",
+      "seasonalHook": "Pavasario naudojimas; reikalauti naujų pirminių šaltinių",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-03-20",
+      "slug": "pasiulymu-palyginimo-lapas",
+      "title": "Dviejų diagnostikos pasiūlymų palyginimo lapas",
+      "description": "Tik realūs vartotojo pasiūlymai ir vienodos darbų ribos",
+      "intent": "Tik realūs vartotojo pasiūlymai ir vienodos darbų ribos",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "diagnostikos-kaina",
+      "seasonalHook": "Naudingas užpildomas ruošinys be tariamų rinkos įkainių",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-04-02",
+      "slug": "poreikio-testo-metodika",
+      "title": "Kada poreikio tyrimas pagrindžia kitą etapą",
+      "description": "Užklausos kokybė ir vykdymas, ne SEO apsilankymų pažadas",
+      "intent": "Užklausos kokybė ir vykdymas, ne SEO apsilankymų pažadas",
+      "cluster": "Planinė elektros diagnostika",
+      "pillarSlug": "diagnostikos-kaina",
+      "seasonalHook": "Tik gavus tikrus rezultatus; kitaip netvirtinti ir neskelbti",
+      "reason": "Privatus kalendoriaus pasiūlymas. Naujas juodraštis, pirminiai šaltiniai ir redakcinė patikra privalomi; nėra viešos publikacijos.",
+      "body": []
+    }
+  ],
+  "studioPages": [
+    {
+      "id": "811a835b-b0e2-4c2a-80cf-f93f23973d48",
+      "slug": "",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "82b8cc62-16d5-4340-980b-8fba511783ea",
+      "slug": "diagnostikos-poreikis",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "7701585e-1e65-4877-b11b-eda032ee93dc",
+      "slug": "gidai",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "b6b35e2d-40fc-4e85-a772-499b4f83f639",
+      "slug": "akumuliatorius-issikrauna",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "29c1a3a2-8f6e-4ded-b544-b53fe84d1519",
+      "slug": "automobilis-neuzsiveda",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "9e1db76f-4bd0-47f9-a135-1963650c94d3",
+      "slug": "diagnostikos-kaina",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "3cb844a5-8591-4e0e-b3f2-b3393b18d2b3",
+      "slug": "kontaktai",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "dddd743a-1828-4208-9812-59a26c472315",
+      "slug": "apie-projekta",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "3708b573-849a-4ac6-ace3-9b05eb39db3f",
+      "slug": "redakcija",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "c4acb685-4d97-4b3b-8f06-77d577a18768",
+      "slug": "privatumas",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "d376c08c-8afb-4d5b-828b-0980c48020b6",
+      "slug": "naudojimo-salygos",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "ad15485b-1b04-4d77-91c1-552a90e64af8",
+      "slug": "trumpi-vaziavimai-akumuliatorius",
+      "status": "draft",
+      "publishAt": "2026-10-17T08:00:00.000Z",
+      "pillarPageId": "b6b35e2d-40fc-4e85-a772-499b4f83f639"
+    },
+    {
+      "id": "8e70a99e-8c32-485e-b375-57fea8d26955",
+      "slug": "akumuliatorius-po-savaitgalio",
+      "status": "draft",
+      "publishAt": "2026-11-07T08:00:00.000Z",
+      "pillarPageId": "b6b35e2d-40fc-4e85-a772-499b4f83f639"
+    },
+    {
+      "id": "8c21a72f-55ad-4043-ac1b-adf0ee5c6238",
+      "slug": "papildoma-iranga-simptomai",
+      "status": "draft",
+      "publishAt": "2026-11-21T08:00:00.000Z",
+      "pillarPageId": "b6b35e2d-40fc-4e85-a772-499b4f83f639"
+    },
+    {
+      "id": "b9a692d6-6716-4cfc-85da-25b711053924",
+      "slug": "diagnostikos-isvada",
+      "status": "draft",
+      "publishAt": "2026-12-05T08:00:00.000Z",
+      "pillarPageId": "9e1db76f-4bd0-47f9-a135-1963650c94d3"
+    },
+    {
+      "id": "764c1a94-7c24-482b-86ca-724f0d5c6996",
+      "slug": "pristatymas-diagnostikai",
+      "status": "draft",
+      "publishAt": "2026-12-19T08:00:00.000Z",
+      "pillarPageId": "9e1db76f-4bd0-47f9-a135-1963650c94d3"
+    },
+    {
+      "id": "fb376303-ae3b-44c5-8553-e2e996f90767",
+      "slug": "ankstesniu-patikru-santrauka",
+      "status": "draft",
+      "publishAt": "2027-01-09T08:00:00.000Z",
+      "pillarPageId": "29c1a3a2-8f6e-4ded-b544-b53fe84d1519"
+    },
+    {
+      "id": "1566d9ce-4c58-48c6-9707-41dc1d8b1c3b",
+      "slug": "salcio-simptomo-aprasas",
+      "status": "draft",
+      "publishAt": "2027-01-23T08:00:00.000Z",
+      "pillarPageId": "29c1a3a2-8f6e-4ded-b544-b53fe84d1519"
+    },
+    {
+      "id": "7aeb8fe2-4b1e-4f58-8625-f84221bd9dd6",
+      "slug": "diagnostika-ar-remontas",
+      "status": "draft",
+      "publishAt": "2027-02-06T08:00:00.000Z",
+      "pillarPageId": "9e1db76f-4bd0-47f9-a135-1963650c94d3"
+    },
+    {
+      "id": "3c5d4e9f-9342-4cc0-b264-9df66be33940",
+      "slug": "simptomas-nepasikartojo",
+      "status": "draft",
+      "publishAt": "2027-02-20T08:00:00.000Z",
+      "pillarPageId": "b6b35e2d-40fc-4e85-a772-499b4f83f639"
+    },
+    {
+      "id": "dcb4d046-fe86-4134-85f1-a7ddbd2848ea",
+      "slug": "ikrovimo-ispejimo-aprasas",
+      "status": "draft",
+      "publishAt": "2027-03-06T08:00:00.000Z",
+      "pillarPageId": "29c1a3a2-8f6e-4ded-b544-b53fe84d1519"
+    },
+    {
+      "id": "141c0200-43d0-4934-a57d-6916afe7f444",
+      "slug": "pasiulymu-palyginimo-lapas",
+      "status": "draft",
+      "publishAt": "2027-03-20T08:00:00.000Z",
+      "pillarPageId": "9e1db76f-4bd0-47f9-a135-1963650c94d3"
+    },
+    {
+      "id": "3ccb4df3-0e3a-4c2b-bfb6-d04dc90b058b",
+      "slug": "poreikio-testo-metodika",
+      "status": "draft",
+      "publishAt": "2027-04-02T08:00:00.000Z",
+      "pillarPageId": "9e1db76f-4bd0-47f9-a135-1963650c94d3"
+    }
+  ]
+}

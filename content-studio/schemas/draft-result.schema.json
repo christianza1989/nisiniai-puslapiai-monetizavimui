@@ -1,0 +1,144 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "description",
+    "blocks",
+    "factChecks",
+    "internalLinks",
+    "externalSources",
+    "networkLinks"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "text",
+          "level",
+          "items"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "paragraph",
+              "heading",
+              "list"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer",
+            "enum": [
+              0,
+              2,
+              3
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "factChecks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "internalLinks": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "targetPageId",
+          "label",
+          "reason"
+        ],
+        "properties": {
+          "targetPageId": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "externalSources": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "url",
+          "label",
+          "reason"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "networkLinks": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "targetSiteId",
+          "targetPageId",
+          "label",
+          "reason"
+        ],
+        "properties": {
+          "targetSiteId": {
+            "type": "string"
+          },
+          "targetPageId": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "planned_m4_acceptance_matrix",
+  "date": "2026-10-04",
+  "status": "planned_not_executed",
+  "owner": "voice_core",
+  "wire_contract_approved": false,
+  "live_profile_registered": false,
+  "external_channels_enabled": false,
+  "dependencies": [
+    "root_m1_v2_field_and_hash_fixture",
+    "unchanged_v1_fixture",
+    "gift_m0_source_id_url_and_field_inventory",
+    "accepted_m2_visible_projection_contract"
+  ],
+  "cases": [
+    {"id": "v1_unchanged", "group": "knowledge", "assertion": "Existing v1 payload, bytes, approval and projection behavior remain unchanged."},
+    {"id": "v2_semantic_projection", "group": "knowledge", "assertion": "Visible inline order, author/public source facts and exact accepted CTA targets agree with gift HTML; private/future targets do not leak."},
+    {"id": "thirty_one_pages", "group": "knowledge", "assertion": "A 31+ page source is fully represented by an accepted bounded contract or explicitly rejected; never silently sliced."},
+    {"id": "long_guide", "group": "knowledge", "assertion": "Over 18000 characters have declared complete-source semantics; a retrieval excerpt never claims full import."},
+    {"id": "publication_boundary", "group": "knowledge", "assertion": "T-1/T/T+1 and a prior cached response follow the accepted publication and revocation predicate."},
+    {"id": "revocation_batches", "group": "knowledge", "assertion": "Over 30 revoked hashes retain complete coverage, revision fencing and retry semantics across every batch."},
+    {"id": "gift_not_ready_six_sources_continue", "group": "readiness", "assertion": "An absent or invalid gift source does not prevent existing six accepted sources from refreshing."},
+    {"id": "registry_mapping_retry", "group": "readiness", "assertion": "A mapping retry preserves business_id; environment scope is distinct from the global business registry."},
+    {"id": "default_off", "group": "readiness", "assertion": "Registration alone grants no external channel, commerce or learning promotion; source ingest sends nothing."},
+    {"id": "learning_admission", "group": "readiness", "assertion": "Missing gift corpus/release prevents gift learning admission without disabling existing six niches."},
+    {"id": "legacy_type_conflict", "group": "source", "assertion": "Unsupported legacy ID, timestamp, name, message, consent or status is visible as a migration exception, never fabricated."},
+    {"id": "site_env_source_conflict", "group": "source", "assertion": "Wrong site/environment/stream identity is rejected without partial Case or checkpoint mutation."},
+    {"id": "same_time_order", "group": "source", "assertion": "Source ID normalization and reader ordering agree for records with the same timestamp."},
+    {"id": "concurrent_replay", "group": "source", "assertion": "Concurrent identical import creates one CaseSource/Case and no notification or voice session."},
+    {"id": "stream_cutover", "group": "source", "assertion": "Legacy and shared-form streams cannot accidentally share one independent cursor or duplicate migrated customers."},
+    {"id": "late_backfill", "group": "source", "assertion": "Older late inserts have an explicit reconciliation path; ordinary watermark scanning does not falsely claim they were imported."},
+    {"id": "retention_rollback", "group": "source", "assertion": "Rollback does not rewind the checkpoint, drop new leads or resurrect erased PII."},
+    {"id": "six_niches_unchanged", "group": "isolation", "assertion": "Existing policies, active/versions files, contacts and per-site behavior remain isolated and unchanged by gift onboarding."}
+  ]
+}

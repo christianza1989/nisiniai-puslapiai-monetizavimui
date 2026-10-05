@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T13:01:46Z",
+  "title": "Design System: miniekskavatoriai.lt",
+  "extensions": {
+    "colorMeta": {
+      "slate-ink": {
+        "role": "primary",
+        "displayName": "Slate ink",
+        "tonalRamp": [
+          "oklch(15% 0.02689 229.06)",
+          "oklch(26.43% 0.02689 229.06)",
+          "oklch(37.86% 0.02689 229.06)",
+          "oklch(49.29% 0.02689 229.06)",
+          "oklch(60.71% 0.02689 229.06)",
+          "oklch(72.14% 0.02689 229.06)",
+          "oklch(83.57% 0.02689 229.06)",
+          "oklch(95% 0.02689 229.06)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.00448 134.85)",
+          "oklch(26.43% 0.00448 134.85)",
+          "oklch(37.86% 0.00448 134.85)",
+          "oklch(49.29% 0.00448 134.85)",
+          "oklch(60.71% 0.00448 134.85)",
+          "oklch(72.14% 0.00448 134.85)",
+          "oklch(83.57% 0.00448 134.85)",
+          "oklch(95% 0.00448 134.85)"
+        ]
+      },
+      "clay-action": {
+        "role": "secondary",
+        "displayName": "Clay action",
+        "tonalRamp": [
+          "oklch(15% 0.12273 40.23)",
+          "oklch(26.43% 0.12273 40.23)",
+          "oklch(37.86% 0.12273 40.23)",
+          "oklch(49.29% 0.12273 40.23)",
+          "oklch(60.71% 0.12273 40.23)",
+          "oklch(72.14% 0.12273 40.23)",
+          "oklch(83.57% 0.12273 40.23)",
+          "oklch(95% 0.12273 40.23)"
+        ]
+      },
+      "pale-clay": {
+        "role": "secondary",
+        "displayName": "Pale clay",
+        "tonalRamp": [
+          "oklch(15% 0.11772 54.94)",
+          "oklch(26.43% 0.11772 54.94)",
+          "oklch(37.86% 0.11772 54.94)",
+          "oklch(49.29% 0.11772 54.94)",
+          "oklch(60.71% 0.11772 54.94)",
+          "oklch(72.14% 0.11772 54.94)",
+          "oklch(83.57% 0.11772 54.94)",
+          "oklch(95% 0.11772 54.94)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26.43% 0 0)",
+          "oklch(37.86% 0 0)",
+          "oklch(49.29% 0 0)",
+          "oklch(60.71% 0 0)",
+          "oklch(72.14% 0 0)",
+          "oklch(83.57% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "slate-hover": {
+        "role": "primary",
+        "displayName": "Slate hover",
+        "tonalRamp": [
+          "oklch(15% 0.02688 222.62)",
+          "oklch(26.43% 0.02688 222.62)",
+          "oklch(37.86% 0.02688 222.62)",
+          "oklch(49.29% 0.02688 222.62)",
+          "oklch(60.71% 0.02688 222.62)",
+          "oklch(72.14% 0.02688 222.62)",
+          "oklch(83.57% 0.02688 222.62)",
+          "oklch(95% 0.02688 222.62)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "tonalRamp": [
+          "oklch(15% 0.00914 179.56)",
+          "oklch(26.43% 0.00914 179.56)",
+          "oklch(37.86% 0.00914 179.56)",
+          "oklch(49.29% 0.00914 179.56)",
+          "oklch(60.71% 0.00914 179.56)",
+          "oklch(72.14% 0.00914 179.56)",
+          "oklch(83.57% 0.00914 179.56)",
+          "oklch(95% 0.00914 179.56)"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Field stroke",
+        "tonalRamp": [
+          "oklch(15% 0.01734 216.75)",
+          "oklch(26.43% 0.01734 216.75)",
+          "oklch(37.86% 0.01734 216.75)",
+          "oklch(49.29% 0.01734 216.75)",
+          "oklch(60.71% 0.01734 216.75)",
+          "oklch(72.14% 0.01734 216.75)",
+          "oklch(83.57% 0.01734 216.75)",
+          "oklch(95% 0.01734 216.75)"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted ink",
+        "tonalRamp": [
+          "oklch(15% 0.02062 229.39)",
+          "oklch(26.43% 0.02062 229.39)",
+          "oklch(37.86% 0.02062 229.39)",
+          "oklch(49.29% 0.02062 229.39)",
+          "oklch(60.71% 0.02062 229.39)",
+          "oklch(72.14% 0.02062 229.39)",
+          "oklch(83.57% 0.02062 229.39)",
+          "oklch(95% 0.02062 229.39)"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "tonalRamp": [
+          "oklch(15% 0.01948 219.83)",
+          "oklch(26.43% 0.01948 219.83)",
+          "oklch(37.86% 0.01948 219.83)",
+          "oklch(49.29% 0.01948 219.83)",
+          "oklch(60.71% 0.01948 219.83)",
+          "oklch(72.14% 0.01948 219.83)",
+          "oklch(83.57% 0.01948 219.83)",
+          "oklch(95% 0.01948 219.83)"
+        ]
+      },
+      "callout-ground": {
+        "role": "neutral",
+        "displayName": "Callout ground",
+        "tonalRamp": [
+          "oklch(15% 0.01000 155.09)",
+          "oklch(26.43% 0.01000 155.09)",
+          "oklch(37.86% 0.01000 155.09)",
+          "oklch(49.29% 0.01000 155.09)",
+          "oklch(60.71% 0.01000 155.09)",
+          "oklch(72.14% 0.01000 155.09)",
+          "oklch(83.57% 0.01000 155.09)",
+          "oklch(95% 0.01000 155.09)"
+        ]
+      },
+      "invalid": {
+        "role": "state",
+        "displayName": "Invalid",
+        "tonalRamp": [
+          "oklch(15% 0.17605 29.06)",
+          "oklch(26.43% 0.17605 29.06)",
+          "oklch(37.86% 0.17605 29.06)",
+          "oklch(49.29% 0.17605 29.06)",
+          "oklch(60.71% 0.17605 29.06)",
+          "oklch(72.14% 0.17605 29.06)",
+          "oklch(83.57% 0.17605 29.06)",
+          "oklch(95% 0.17605 29.06)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Homepage sentence",
+        "purpose": "Homepage h1; 46px at ≤900px and 39px at ≤700px."
+      },
+      "page-title": {
+        "displayName": "Inner-page title",
+        "purpose": "Inner h1; 38px at ≤700px and max-width 20ch."
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Section h2; context-specific article and contents overrides remain documented."
+      },
+      "title": {
+        "displayName": "Guide question",
+        "purpose": "Guide row and h3 hierarchy."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Shared reading text; article width 760px."
+      },
+      "lead": {
+        "displayName": "Intro lead",
+        "purpose": "Homepage and page intro; 19px mobile."
+      },
+      "label": {
+        "displayName": "Field label / action",
+        "purpose": "Visible form labels and primary action text."
+      },
+      "utility": {
+        "displayName": "Utility",
+        "purpose": "Form help, byline and source limits; contextual 14px breadcrumb / 13px panorama caption exceptions."
+      },
+      "volume": {
+        "displayName": "Measured volume",
+        "purpose": "Result only; tabular numerals and 40px at ≤700px."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "native-menu",
+        "value": "900px"
+      },
+      {
+        "name": "single-column",
+        "value": "700px"
+      }
+    ],
+    "focus": [
+      {
+        "name": "light-surface",
+        "value": "3px solid #994424",
+        "offset": "5px",
+        "purpose": "Links, buttons, input, textarea, summary and select."
+      },
+      {
+        "name": "dark-surface",
+        "value": "3px solid #f2a36c",
+        "offset": "5px",
+        "purpose": "Hero interactive controls and footer links."
+      }
+    ],
+    "tonalRampPolicy": "The 8-step OKLCH ramps are synthesized panel previews only, preserving source hue/chroma across stepped lightness. They are not shipped CSS tokens, normative colour changes, or colour fidelity evidence. Frontmatter owns the actual primitive values.",
+    "specimenPolicy": "Component CSS resolves shell-scoped variables to literals because those variables do not exist on :root. The examples show actual visual primitives without React runtime. No nonexistent chip/tag or modal was synthesized; guide raster is omitted from the guide-row specimen and remains governed by MEDIA_CORE.",
+    "documentationEvidence": {
+      "scanMode": "code and supplied final QA; no fresh browser/detector/audit in this documenter pass",
+      "sources": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/miniekskavatoriai-site.tsx",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/miniekskavatoriai-site.tools.tsx",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/miniekskavatoriai-site.module.css"
+      ],
+      "evidence": [
+        "PRODUCT.md",
+        "BUSINESS.md",
+        "MEDIA.json",
+        "QUALITY-BAR.md",
+        "FINISH-REVIEW.md",
+        "qa/verification-summary.json",
+        "qa/browser-layout-final.json",
+        "qa/html-final.json",
+        "qa/PALETTE-VERIFICATION.md",
+        "qa/palette-runtime.json",
+        "qa/performance-summary.json",
+        "research/concept-seed-original.txt",
+        "research/concept-seed-provenance.json"
+      ],
+      "historicPlan": "Original DESIGN plan lines retained unchanged. Normative frontmatter and current canonical sections appended after the preserved plan.",
+      "direction": {
+        "seed": "fd1be7bb",
+        "assignedIndex": 4,
+        "candidateCount": 7,
+        "rerolled": false,
+        "authority": "delegated agent code-led selection; not owner approval"
+      },
+      "reviewScope": "Latest disposition ship resolves only the two listed seed/palette findings, not the whole surface.",
+      "craft": {
+        "points": 12,
+        "possible": 14,
+        "score": 8.57,
+        "target": 9,
+        "targetMet": false
+      },
+      "limits": [
+        "Actual 200% browser zoom UNVERIFIED",
+        "Warm CUA/Chrome capture cause unknown; CSS/DOM and direct original Lighthouse palette corroborate target colours",
+        "Long guide rhythm and mobile result below first 844px remain craft caveats, not canonized rules",
+        "SMTP/voice off; no DNS/deploy/site-specific mail receipt or real demand"
+      ],
+      "mediaProjection": {
+        "home": 5,
+        "index": 3,
+        "eachInitialGuide": 1,
+        "tool": 0,
+        "purpose": 0,
+        "contactTrustLegal": 0,
+        "toolHeroFamily": "planned/deferred; not rendered"
+      },
+      "notCanonized": "Capture warmth, below-first-viewport mobile result and long-guide rhythm are not promoted to design-system rules. No craft-floor kicker, glyph icon system, hard offset shadow or system display face was found in the supplied review."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Native prepare or submit action; preview preserves the observed square silhouette.",
+      "html": "<button type=\"button\" class=\"ds-primary\">Paruošti tekstą formoje ↓</button>",
+      "css": ".ds-primary{font-family:MiniManrope,sans-serif;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 22px;background:#1b2c34;color:#ffffff;border:1px solid #1b2c34;font-size:16px;font-weight:650;line-height:1.65;text-decoration:none;cursor:pointer}.ds-primary:hover{background:#30434a}.ds-primary:focus-visible{outline:3px solid #994424;outline-offset:5px;}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Text action on light paper; the directional mark remains text rather than an icon package.",
+      "html": "<a href=\"#ruosinys\" class=\"ds-text-action\">Paruošti visą užklausos ruošinį <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-text-action{font-family:MiniManrope,sans-serif;font-size:17px;font-weight:650;line-height:1.65;color:#994424;display:inline-flex;align-items:center;gap:18px;min-height:44px;text-underline-offset:5px;}.ds-text-action:hover{text-decoration-thickness:2px}.ds-text-action:focus-visible{outline:3px solid #994424;outline-offset:5px;}"
+    },
+    {
+      "name": "Dimension field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Visible measurement label, decimal text input, normal or aria-invalid border.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-length\">Ilgis, m<input class=\"ds-field\" id=\"ds-length\" type=\"text\" inputmode=\"decimal\" placeholder=\"30\"></label>",
+      "css": ".ds-field-label{font-family:MiniManrope,sans-serif;display:block;color:#1b2c34;font-size:16px;font-weight:650;line-height:1.65}.ds-field{display:block;width:100%;min-height:48px;margin-top:8px;padding:10px 12px;font-family:MiniManrope,sans-serif;font-size:18px;line-height:1.65;border:1px solid #7f8d91;border-radius:0;background:#ffffff;color:#1b2c34}.ds-field::placeholder{color:#68777c;opacity:1}.ds-field[aria-invalid=true]{border:2px solid #b42a20}.ds-field:focus-visible{outline:3px solid #994424;outline-offset:5px;}"
+    },
+    {
+      "name": "Editable request field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Native textarea for reviewed conditions; this is a static specimen, not automatic submission.",
+      "html": "<label class=\"ds-request-label\" for=\"ds-request\">Vietovė, darbas, laikotarpis ir sąlygos<textarea class=\"ds-request\" id=\"ds-request\" rows=\"4\" placeholder=\"Planuoju tranšėją Kauno rajone. Matmenys dar preliminarūs.\"></textarea></label>",
+      "css": ".ds-request-label{font-family:MiniManrope,sans-serif;display:block;color:#1b2c34;font-size:16px;font-weight:650;line-height:1.65}.ds-request{display:block;width:100%;min-height:48px;margin-top:8px;padding:10px 12px;font-family:MiniManrope,sans-serif;font-size:18px;line-height:1.65;border:1px solid #7f8d91;border-radius:0;background:#ffffff;color:#1b2c34;resize:vertical}.ds-request::placeholder{color:#68777c;opacity:1}.ds-request:focus-visible{outline:3px solid #994424;outline-offset:5px;}"
+    },
+    {
+      "name": "Desktop navigation",
+      "kind": "nav",
+      "description": "Plain navigation uses the current-page underline and clay inquiry action.",
+      "html": "<nav aria-label=\"Pagrindinė navigacija\" class=\"ds-nav\"><a href=\"#turis\" aria-current=\"page\">Tūris ir ruošinys</a><a href=\"#gidai\">Gidai</a><a class=\"ds-nav-action\" href=\"#poreikis\">Aprašyti darbą →</a></nav>",
+      "css": ".ds-nav{font-family:MiniManrope,sans-serif;display:flex;align-items:center;gap:26px;font-size:16px;font-weight:600;line-height:1.65;color:#1b2c34;background:#f5f7f4}.ds-nav a{color:inherit;text-decoration:none;min-height:44px;display:flex;align-items:center;text-underline-offset:5px}.ds-nav a[aria-current]{text-decoration:underline}.ds-nav .ds-nav-action{color:#994424}.ds-nav a:hover{text-decoration-thickness:2px}.ds-nav a:focus-visible{outline:3px solid #994424;outline-offset:5px;}"
+    },
+    {
+      "name": "Mobile native menu",
+      "kind": "nav",
+      "description": "Details/summary menu below 900px; absolute placement is relative to this specimen wrapper.",
+      "html": "<div class=\"ds-menu-wrap\"><details class=\"ds-menu\"><summary>Meniu</summary><nav aria-label=\"Mobilioji navigacija\"><a href=\"#turis\">Tūris ir ruošinys</a><a href=\"#gidai\">Gidai</a><a href=\"#poreikis\">Aprašyti darbą →</a></nav></details></div>",
+      "css": ".ds-menu-wrap{position:relative;min-height:220px;color:#1b2c34}.ds-menu{font-family:MiniManrope,sans-serif;font-size:16px;line-height:1.65}.ds-menu summary{cursor:pointer;min-height:44px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:5px}.ds-menu nav{position:absolute;right:24px;top:80px;z-index:5;display:flex;flex-direction:column;padding:20px;background:#ffffff;border:1px solid #7f8d91;gap:10px;max-width:calc(100% - 48px)}.ds-menu a{color:inherit;min-height:44px;padding:8px;text-underline-offset:5px}.ds-menu a:hover{text-decoration-thickness:2px}.ds-menu :is(a,summary):focus-visible{outline:3px solid #994424;outline-offset:5px;}"
+    },
+    {
+      "name": "Volume worksheet surface",
+      "kind": "custom",
+      "refersTo": "worksheet-panel",
+      "description": "Square open calculation plane and blank-result state; static visual specimen has no calculation engine.",
+      "html": "<section class=\"ds-tool\"><h2>Tranšėjos tūris</h2><p>Matmenys metrais · V = ilgis × plotis × gylis</p><div class=\"ds-volume\"><span>Geometrinis tūris</span><strong>—</strong><p>Stačiakampės formos tūris. Ne išpureninto grunto kiekis.</p></div><a class=\"ds-tool-link\" href=\"#ruosinys\">Paruošti visą užklausos ruošinį →</a></section>",
+      "css": ".ds-tool{font-family:MiniManrope,sans-serif;background:#ffffff;color:#1b2c34;padding:36px;border-top:4px solid #f2a36c;line-height:1.65}.ds-tool h2{font-size:30px;font-weight:650;line-height:1.14;letter-spacing:-.035em;margin:0 0 14px}.ds-tool>p{font-size:15px;margin:0 0 24px}.ds-volume{margin-top:26px;border-top:1px solid #c8d0ce;padding-top:20px}.ds-volume span{display:block;font-size:16px}.ds-volume strong{font-size:46px;line-height:1.3;font-weight:650;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.ds-volume p{font-size:15px;margin:12px 0 20px}.ds-tool-link{font-family:MiniManrope,sans-serif;font-size:17px;font-weight:650;line-height:1.65;color:#994424;display:inline-flex;align-items:center;gap:18px;min-height:44px;text-underline-offset:5px;font-size:16px;gap:8px}.ds-tool-link:hover{text-decoration-thickness:2px}.ds-tool-link:focus-visible{outline:3px solid #994424;outline-offset:5px;}@media(max-width:700px){.ds-tool{padding:24px 20px}.ds-tool h2{font-size:30px}.ds-volume strong{font-size:40px}}"
+    },
+    {
+      "name": "Question-led guide row",
+      "kind": "custom",
+      "description": "The text portion of the actual vertical guide row; topic raster intentionally omitted from the shadow-DOM specimen.",
+      "html": "<article class=\"ds-guide\"><h2><a href=\"#prieiga\">Ar mini ekskavatorius pravažiuos pro vartus?</a></h2><p>Išmatuokite siauriausią vietą ir pažymėkite tai, ką dar reikia patikslinti.</p><a class=\"ds-guide-action\" href=\"#prieiga\">Skaityti gidą →</a></article>",
+      "css": ".ds-guide{font-family:MiniManrope,sans-serif;color:#1b2c34;background:#f5f7f4;border-top:1px solid #c8d0ce;padding:36px 0;font-size:18px;line-height:1.65}.ds-guide h2{font-size:28px;font-weight:650;line-height:1.14;letter-spacing:-.035em;margin:0 0 16px}.ds-guide h2 a{color:#1b2c34;text-decoration:none;text-underline-offset:5px}.ds-guide h2 a:hover{text-decoration:underline}.ds-guide p{max-width:62ch;margin:0 0 24px}.ds-guide-action{font-family:MiniManrope,sans-serif;font-size:17px;font-weight:650;line-height:1.65;color:#994424;display:inline-flex;align-items:center;gap:18px;min-height:44px;text-underline-offset:5px;font-size:16px}.ds-guide-action:hover{text-decoration-thickness:2px}.ds-guide a:focus-visible{outline:3px solid #994424;outline-offset:5px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Lauko darbų ruošinys",
+    "overview": "Faktinė sistema užfiksuota 2026-10-01 po paskutinės korekcijos. Tai aiškus skaitmeninis ruošinys: didelis sakinys, atviri matmenų laukai, įvardytos nežinomybės, santūrūs žemės darbų vaizdai ir taisomas užklausos tekstas. Tiesios ribos ir plokšti paviršiai išlaiko darbinį pobūdį; įrangos katalogo, fizinio popieriaus imitacijos ir dekoratyvaus gylio nėra.\n\nŠi aprašomoji dalis bei frontmatter yra dabartinės sistemos šaltinis. Aukščiau išsaugotas planas rodo sprendimo chronologiją ir pradinį direction contract; jo vertės nepakeistos atgaline data. Agentas pasirinko ir įgyvendino code-led kryptį pagal [projekto adaptaciją](../../SKILLS/impeccable/PROJECT_ADAPTATION.md). Tai nėra savininko approval. Originalus stdout [concept-seed-original.txt](research/concept-seed-original.txt) ir [provenance](research/concept-seed-provenance.json) patvirtina seed `fd1be7bb`, assigned 4/7; naujo roll nebuvo. Vaizdų generavimo prieš studijų ekranų palyginimą išlyga tebegalioja. [QUALITY-BAR.md](QUALITY-BAR.md) konsoliduota užbaigimo metu, ne prieš atranką patvirtinta kortelė.",
+    "keyCharacteristics": [
+      "Atvira, kvadratinė matmenų ir sąlygų forma.",
+      "Slate užduoties laukas, vėsus popierius ir balta skaičiavimo plokštuma.",
+      "Viena self-hosted Manrope šeima; dideli sakiniai ir išskirtas geometrinio tūrio skaičius.",
+      "Plokščios horizontalios ribos, native meniu ir vertikalios gidų eilutės.",
+      "Temos vaizdai ir tiksli SVG geometrija turi skirtingas paskirtis."
+    ],
+    "rules": [
+      {
+        "name": "The Surface Evidence Rule",
+        "body": "Paletės tiesa yra CSS ir DOM bei tiesioginis neperdažytas spalvą atitinkantis fiksavimas; šilto naršyklės JPEG poslinkio nekopijuoti į tokenus.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measured Number Rule",
+        "body": "Tabular numerals skirti tūrio rezultatui; matmenų vienetai lieka lauko etiketėje, rezultato `m³` lieka prie skaičiaus.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Worksheet Rule",
+        "body": "Darbiniai paviršiai lieka plokšti; ribos ir kontrastas skiria zonas, o šešėlis nėra šios realizacijos žodynas.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Field Rule",
+        "body": "Nauji šios sistemos laukai perima tiesias įvesties ribas ir skaitomą etiketę, o ne suapvalintą chip ar dekoratyvų katalogo tile.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** remtis šio failo faktiniu frontmatter ir galutiniu source; istorinį planą naudoti sprendimo kilmei.",
+      "**Do** išlaikyti tiesius laukus, matomas etiketes, 3 px focus kontūrą ir atskirą tekstinio ruošinio bei pateikimo veiksmą.",
+      "**Do** tūrio rezultatui naudoti tabular numerals, o nežinomą rezultatą palikti matomai nežinomą.",
+      "**Do** vaizdo paskirtį tikrinti pagal galutinį rendererį, jo `sizes`/crop ir pakrautą WebP, ne vien MEDIA įrašą.",
+      "**Do** skirti paletės įrodymus, topology peržiūrą, craft, browser zoom ir tikro paleidimo būseną."
+    ],
+    "donts": [
+      "**Don't** šilto CUA/Chrome capture poslinkio paversti palette tokenu ar dėl jo pertoninti teisingo CSS ir medijos.",
+      "**Don't** pradinio plano hero-family įrankyje vadinti renderinamu vaizdu; šio paviršiaus 0 img yra dabartinė projekcija, ne universalus visų ateities įrankių draudimas.",
+      "**Don't** iliustracijų, seed pasirinkimo, synthetic QA ar siauro `ship` verdikto vadinti tikrais darbais, savininko approval, paklausa ar visos svetainės kokybės patvirtinimu.",
+      "**Don't** esamų mobile-result ir long-guide craft kompromisų perkelti kaip pageidautinų naujų paviršių taisyklių."
+    ]
+  }
+}

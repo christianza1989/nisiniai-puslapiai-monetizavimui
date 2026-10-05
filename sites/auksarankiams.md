@@ -1,0 +1,15 @@
+# auksarankiams.lt — pirmos fazės vietinis rezultatas
+
+2026-10-01T05:10:43.194Z. Savininko patvirtinta smulkių namų darbų kryptis; pirmas rankdarbių bandymas atmestas iki užbaigimo, išsaugotas archyve. Pataisytas rezultatas turi savininko krypties intervenciją. Pilnas verslo tyrimas/atranka/prielaidos — auksarankiams/BUSINESS.md; dabartinė būklė — PHASE-1-AUDIT.md/JSON.
+
+Konkreti hipotezė: būsto gyventojo keli mokami baldų surinkimo, kabinimo ar smulkių baldų pataisymo darbai viename aiškiame sąraše. Patvirtinti tik MB Pinet/info@pinet.lt; telefonas/adresas/kodas/partneriai/teritorija/kaina/terminai nepaskelbti kaip mūsų faktai. Ateities partnerio mokestis už priimtą kvalifikuotą užklausą pasirinktas tik kaip validuotina hipotezė; commission/economics jautrumas BUSINESS, ne kainynas.
+
+Dabartinė svetainė: 13 exact-approved originalių puslapių, 3 naudingi skirtingi gidai, 4 originalūs vaizdai/20 WebP, 6 nauji tik privatūs planai. URL/intent planas CONTENT-PLAN; vietiniai/užsienio šaltiniai ir datuoti tikri ekranai RESEARCH/business-research; istorija30 URL ir sprendimai history/. Kontakto veiksmas „Registruoti poreikį“, ribos matomos, ne užsakymas/meistro ar kainos garantija. Redakcinis Organization profilis ir AI/iliustracijų/pataisų metodika prieinami.
+
+Veikia vietinė production peržiūra http://127.0.0.1:8890. Izoliuotas build be sekretų, paštas ir voice išjungti, realūs duomenys nerenkami. Native/server form validation, patvarus D1, notification-failure išlaikymas, per-site counters ir DNT/GPC/bot/site guards išbandyti; sintetiniai įrašai/skaičiai išvalyti/atkurti tiksliai. SMTP+matching INBOX bendro nepakitusio transporto įrodymai atskirai SHARED-MAIL-EVIDENCE; jie nėra auksarankiams production pristatymas.
+
+Galutiniai core19/19 ir visų6 nišų SEO smoke, 13 URL HTTP0 findings, typecheck/TSX lint, 39 viewport patikros, native200 % zoom/restore ir Lighthouse96/92. Tikslūs raw evidence, hashes, visų kriterijų statusai audite. Vizualinis verdiktas atskiras DESIGN; Lighthouse/heuristika negarantuoja ekonomikos ar WCAG.
+
+Sąnaudos: panaudoti esami local core/studio/free-font įrankiai, jokios naujos mokamos platformos/pardavimo integracijos nesukurtos. Faktinių AI sesijos/generavimo kreditų piniginė kaina nenustatyta; 4 generacijos užregistruotos prompts/originals. Viešo domeno hostingo/DNS/mokesčių faktinių sąnaudų nėra; nevadiname projekto 0 € verslu.
+
+Paleidimo data nenustatyta. PublishAt dabar tik parengtos versijos grafikas; pirmas realus deployment ir viešų datų suderinimas privalomas prieš domeną. Produkcijos legal identity/domain control, teisinis pagrindas/recipients/retention/delete, D1/mail/recovery/rate/abuse/backups/TLS dar neįrodyti. GSC/crawl/fieldCWV ir tikros kvalifikuotos užklausos nėra išmatuotos; sintetiniai testai jų neatstoja. Sprendimas: parengtas vietinis pilotas, jokios plėtros/voice/checkout/partners dar nesuteikta. Siūlomas 60–90 d realių duomenų intervalas ir plėtros slenksčiai BUSINESS, ne automatiškas plėtros patvirtinimas.

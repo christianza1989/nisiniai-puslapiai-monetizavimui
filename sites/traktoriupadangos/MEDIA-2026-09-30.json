@@ -1,0 +1,236 @@
+{
+  "at": "2026-09-30T18:18:31.232Z",
+  "tool": "built-in image_gen",
+  "inspected": true,
+  "review": "Subjects, plausible wheel geometry, absence of brands and the exact sidewall 650/60 R38 inspected. Construction pair is visual context, not a cutaway or proof of construction. No real client or stocked-product implication.",
+  "variants": [
+    {
+      "key": "selection-field",
+      "id": "eea374df-3fdc-4d2b-8208-6974d33e8144",
+      "width": 1200,
+      "height": 800,
+      "source": "media/selection-field-source.png",
+      "bytes": 173480,
+      "sha256": "324b7ec4008006084fc2226e8066d6487708e4baca1da8b808f047dfa5bc6b3f"
+    },
+    {
+      "key": "selection-field",
+      "id": "747fb545-fd1b-4017-8071-2025485ae2f2",
+      "width": 800,
+      "height": 533,
+      "source": "media/selection-field-source.png",
+      "bytes": 70556,
+      "sha256": "d51a542376fd55c60c88558dffe63ef5502fa355e0e525f499068d8a61a1f03e"
+    },
+    {
+      "key": "selection-field",
+      "id": "b2ea789a-84d0-42a7-9542-8e27a286b9d8",
+      "width": 640,
+      "height": 427,
+      "source": "media/selection-field-source.png",
+      "bytes": 63276,
+      "sha256": "c50473bbd0e645907d7cfefc3fe70cef814c3202c6ad1a440684d51ad76501a4"
+    },
+    {
+      "key": "selection-field",
+      "id": "31c451c6-b255-46cd-bdec-40a8f0f19dc1",
+      "width": 360,
+      "height": 240,
+      "source": "media/selection-field-source.png",
+      "bytes": 19540,
+      "sha256": "734cfea5905c2dfbc0a7a3383ff75d2f4829fbd755f2210860143cc626906532"
+    },
+    {
+      "key": "sidewall-marking",
+      "id": "571ae079-6133-44a6-a3d3-1d1b3efe9003",
+      "width": 1200,
+      "height": 800,
+      "source": "media/sidewall-marking-source.png",
+      "bytes": 147068,
+      "sha256": "df8de0f1b4778d3370bdfbfe1b8caed2c439d2d564e5d2efbb032113cf670bbc"
+    },
+    {
+      "key": "sidewall-marking",
+      "id": "6a5006f5-37f2-4f1b-8936-afb5b49edf9b",
+      "width": 800,
+      "height": 533,
+      "source": "media/sidewall-marking-source.png",
+      "bytes": 39902,
+      "sha256": "a9f68b40037728aac4388bac2a7b4702a0c8f71b7a3d6c9a40d8aaf866abfaea"
+    },
+    {
+      "key": "sidewall-marking",
+      "id": "951eab57-9fcf-4b74-ab87-40dcc5a86a13",
+      "width": 640,
+      "height": 427,
+      "source": "media/sidewall-marking-source.png",
+      "bytes": 35202,
+      "sha256": "eb64cc5924255c0f1948884c071bf423205acf032e4fce4a1cc083b1e61bfafa"
+    },
+    {
+      "key": "sidewall-marking",
+      "id": "aa2c697e-de0e-47c4-9764-2a931a484f5e",
+      "width": 360,
+      "height": 240,
+      "source": "media/sidewall-marking-source.png",
+      "bytes": 9140,
+      "sha256": "8cb1a7dfd9de23772f2efe7c691c7b607c2fb095e219942d4257ab2bdcc20212"
+    },
+    {
+      "key": "construction-pair",
+      "id": "ec6f7747-ccb3-4010-afca-8015bb3cbaeb",
+      "width": 1200,
+      "height": 800,
+      "source": "media/construction-pair-source.png",
+      "bytes": 80940,
+      "sha256": "65971c940fedbbb8427f2b4ca8caa234adbadb0e93e8f49cb41ff4239c2010cb"
+    },
+    {
+      "key": "construction-pair",
+      "id": "ac161669-0898-4655-9bb0-57b2f2f874ae",
+      "width": 800,
+      "height": 533,
+      "source": "media/construction-pair-source.png",
+      "bytes": 30850,
+      "sha256": "622e44a3e66335611935434cafd40ebd98ef1ce6963bbaec87991f3852036754"
+    },
+    {
+      "key": "construction-pair",
+      "id": "64e169c3-a00f-49ff-938b-be9146f1d70a",
+      "width": 640,
+      "height": 427,
+      "source": "media/construction-pair-source.png",
+      "bytes": 29720,
+      "sha256": "2afb00d04940f550daa44bba4d03adfa76072f20a184157ca14867ea79a51778"
+    },
+    {
+      "key": "construction-pair",
+      "id": "02d93893-31cc-4d14-8196-cffde211d2b3",
+      "width": 360,
+      "height": 240,
+      "source": "media/construction-pair-source.png",
+      "bytes": 10062,
+      "sha256": "638ecb53b9ad5d3f0281e7840518f62787bf4c33eb84af5d26a7fa2a25d1a236"
+    },
+    {
+      "key": "road-context",
+      "id": "dc1df6e3-96a2-40a8-a531-03a57bf99f64",
+      "width": 1200,
+      "height": 800,
+      "source": "media/road-context-source.png",
+      "bytes": 189838,
+      "sha256": "182de16796205958231516e5b4dc08eca66f95980069dc69405eb7a696e3e74a"
+    },
+    {
+      "key": "road-context",
+      "id": "406f1ad1-2661-45da-8f32-2929706fc891",
+      "width": 800,
+      "height": 533,
+      "source": "media/road-context-source.png",
+      "bytes": 71430,
+      "sha256": "bc81be723848224a63342272eff7c91e62d97cd32d23d329697d6588f3bf08bc"
+    },
+    {
+      "key": "road-context",
+      "id": "c9b3331d-fe6b-45af-876f-e3fc52c5d4d0",
+      "width": 640,
+      "height": 427,
+      "source": "media/road-context-source.png",
+      "bytes": 62344,
+      "sha256": "ee541a4b42b423d1ce1da3bd3773dd67de99ec76385d2414b5234c9ec8ac22cc"
+    },
+    {
+      "key": "road-context",
+      "id": "7d60c746-1495-4ee3-b9b9-fb20f9a2f70a",
+      "width": 360,
+      "height": 240,
+      "source": "media/road-context-source.png",
+      "bytes": 17208,
+      "sha256": "0296445de439e763284fbc68e7251cb7a1494a30ace6e6c7369f0aa5ef009692"
+    }
+  ],
+  "newAssetBytes": [
+    {
+      "key": "selection-field",
+      "source": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media/selection-field-source.png",
+      "id": "747fb545-fd1b-4017-8071-2025485ae2f2",
+      "width": 800,
+      "height": 533,
+      "bytes": 70556
+    },
+    {
+      "key": "sidewall-marking",
+      "source": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media/sidewall-marking-source.png",
+      "id": "6a5006f5-37f2-4f1b-8936-afb5b49edf9b",
+      "width": 800,
+      "height": 533,
+      "bytes": 39902
+    },
+    {
+      "key": "construction-pair",
+      "source": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media/construction-pair-source.png",
+      "id": "ac161669-0898-4655-9bb0-57b2f2f874ae",
+      "width": 800,
+      "height": 533,
+      "bytes": 30850
+    },
+    {
+      "key": "road-context",
+      "source": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media/road-context-source.png",
+      "id": "406f1ad1-2661-45da-8f32-2929706fc891",
+      "width": 800,
+      "height": 533,
+      "bytes": 71430
+    }
+  ],
+  "promptsFile": "media-prompts-2026-09-30.json",
+  "visibleGeneratorBadges": false,
+  "coverage": {
+    "/": {
+      "images": 5,
+      "reason": "Opening tyre, three guide previews and work-context photograph."
+    },
+    "/gidai": {
+      "images": 3,
+      "reason": "Correct guide previews."
+    },
+    "/gidas/kaip-issirinkti-traktoriaus-padangas": {
+      "images": 1,
+      "reason": "Topic-specific opening illustration; marking also has accurate HTML notation/worksheet."
+    },
+    "/gidas/traktoriaus-padangu-zymejimas": {
+      "images": 1,
+      "reason": "Topic-specific opening illustration; marking also has accurate HTML notation/worksheet."
+    },
+    "/gidas/radialines-ar-diagonalines-traktoriaus-padangos": {
+      "images": 1,
+      "reason": "Topic-specific opening illustration; marking also has accurate HTML notation/worksheet."
+    }
+  },
+  "textFocusedExceptions": [
+    {
+      "path": "/duk",
+      "reason": "Task-specific FAQ/contact/editorial/legal information. Decorative generated photographs add no decision value; readable text and real navigation take priority. No invented author portrait or client photograph."
+    },
+    {
+      "path": "/kontaktai",
+      "reason": "Task-specific FAQ/contact/editorial/legal information. Decorative generated photographs add no decision value; readable text and real navigation take priority. No invented author portrait or client photograph."
+    },
+    {
+      "path": "/privatumas",
+      "reason": "Task-specific FAQ/contact/editorial/legal information. Decorative generated photographs add no decision value; readable text and real navigation take priority. No invented author portrait or client photograph."
+    },
+    {
+      "path": "/apie-projekta",
+      "reason": "Task-specific FAQ/contact/editorial/legal information. Decorative generated photographs add no decision value; readable text and real navigation take priority. No invented author portrait or client photograph."
+    },
+    {
+      "path": "/redakcija",
+      "reason": "Task-specific FAQ/contact/editorial/legal information. Decorative generated photographs add no decision value; readable text and real navigation take priority. No invented author portrait or client photograph."
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "reason": "Task-specific FAQ/contact/editorial/legal information. Decorative generated photographs add no decision value; readable text and real navigation take priority. No invented author portrait or client photograph."
+    }
+  ]
+}

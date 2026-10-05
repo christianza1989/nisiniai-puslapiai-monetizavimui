@@ -1,0 +1,314 @@
+{
+  "at": "2026-09-30T18:29:43.732Z",
+  "method": "Rendered DOM computed foreground/background; nearest nontransparent ancestor; sample is not whole-site WCAG certification.",
+  "samples": [
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "58px",
+      "text": "TraktoriųpadangosPasirinkimas pagal jūsų techniką.",
+      "ratio": 13.66
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Supraskite padangų matmenis, konstrukciją ir pasirinkimo kla",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Užsirašykite visą padangos žymėjimą, traktoriaus modelį ir d",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "34px",
+      "text": "Nuo ko pradėti pasirinkimą?",
+      "ratio": 13.66
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Trys klausimai, kurie padeda atsirinkti informaciją prieš ži",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Traktoriaus modelis, ašis ir atliekami darbai suteikia dydži",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Ant padangos šono ieškokite ne vien matmenų. Nurašykite ir k",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Radialinė ir diagonalinė konstrukcija nėra tas pats. Palygin",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(39, 42, 36)",
+      "color": "rgb(248, 248, 243)",
+      "fontSize": "34px",
+      "text": "Matmuo — tik pradžia.",
+      "ratio": 13.66
+    },
+    {
+      "background": "rgb(39, 42, 36)",
+      "color": "rgb(210, 215, 203)",
+      "fontSize": "15px",
+      "text": "Dydžio kodą verta perskaityti dalimis. Tačiau jis nepakeičia",
+      "ratio": 9.93
+    },
+    {
+      "background": "rgb(39, 42, 36)",
+      "color": "rgb(219, 224, 212)",
+      "fontSize": "13px",
+      "text": "Pavyzdys žymėjimui perskaityti. Jis nėra tinkamumo rekomenda",
+      "ratio": 10.83
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "34px",
+      "text": "Kur ir kaip dirba jūsų technika?",
+      "ratio": 13.66
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Aprašykite padargus, naudojimo sąlygas ir tai, kokių duomenų",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Nurodykite transportavimo darbus ir greitį. Informacija apie",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Jei traktorius dirba ir lauke, ir kelyje, aprašykite abu sce",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "34px",
+      "text": "Klausimai prieš pasirenkant",
+      "ratio": 13.66
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Ne. Reikia konkrečios padangos techninių duomenų, ratlankio ",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Šiuo metu pateikiame informaciją ir priimame poreikio užklau",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Parašykite traktoriaus modelį ir matomą padangos žymėjimą. N",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(248, 248, 243)",
+      "color": "rgb(85, 90, 80)",
+      "fontSize": "15px",
+      "text": "Ne. Formoje aprašomas poreikis. Konkretaus padangos ir techn",
+      "ratio": 6.65
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "52px",
+      "text": "Kokių padangųieškote?",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "15px",
+      "text": "Pradėkite nuo žymėjimo ant padangos ir traktoriaus modelio. ",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "13px",
+      "text": "Tai poreikio užklausa. Ji nepatvirtina pirkimo ar padangos t",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "14px",
+      "text": "Užklausos operatorius: MB Pinet",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "13px",
+      "text": "Visi matomi formos laukai privalomi.",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "14px",
+      "text": "Jūsų vardas",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "14px",
+      "text": "El. paštas",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "14px",
+      "text": "Traktorius, matmenys ir jūsų klausimas",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "13px",
+      "text": "Nurodykite traktoriaus modelį, padangos žymėjimą, ašį, darbu",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "13px",
+      "text": "Sutinku, kad pateikti duomenys būtų naudojami mano užklausai",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "14px",
+      "text": "Palikite tuščią",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(230, 216, 136)",
+      "color": "rgb(39, 42, 36)",
+      "fontSize": "13px",
+      "text": "Ši forma neprenumeruoja reklaminių laiškų.",
+      "ratio": 10.08
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(242, 244, 233)",
+      "fontSize": "21px",
+      "text": "traktorių padangos.",
+      "ratio": 14.19
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(208, 214, 199)",
+      "fontSize": "14px",
+      "text": "Traktorių padangų pasirinkimo informacija ir poreikio užklau",
+      "ratio": 10.61
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "Visi padangų gidai",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "Dažniausi klausimai",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "Žymėjimo pavyzdys",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "info@pinet.lt",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "Kontaktai ir užklausa",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "Privatumo informacija",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "Apie traktorių padangų informacijos projektą",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "MB Pinet: turinio autorystė ir redakcinė metodika",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(215, 222, 206)",
+      "fontSize": "14px",
+      "text": "Informacinio projekto naudojimo sąlygos",
+      "ratio": 11.44
+    },
+    {
+      "background": "rgb(32, 36, 29)",
+      "color": "rgb(209, 217, 199)",
+      "fontSize": "12px",
+      "text": "verslomatika.lt",
+      "ratio": 10.86
+    }
+  ]
+}

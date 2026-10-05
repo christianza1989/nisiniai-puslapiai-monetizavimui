@@ -1,0 +1,6 @@
+async (page)=>{
+ const root='C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/fasadopastoliai/research/',out=[];
+ for(const [name,url]of [['pilaite','https://www.pilaitespastoliai.lt/paslaugos/'],['str','https://strscaffolding.co.uk/domestic-scaffolding'],['nexlift','https://www.nexliftscaffolding.ie/'],['network-mini','http://127.0.0.1:8793/']]){
+  try{await page.setViewportSize({width:1440,height:1000});const r=await page.goto(url,{waitUntil:'domcontentloaded',timeout:25000});if(name==='pilaite')await page.getByText('Sutikti tik su būtinaisiais',{exact:true}).click();await page.waitForTimeout(3000);await page.evaluate(async()=>{await document.fonts.ready;document.querySelectorAll('img').forEach(i=>i.loading='eager');await Promise.all([...document.images].filter(i=>i.getBoundingClientRect().top<1100).map(i=>i.decode().catch(()=>{})));});await page.screenshot({path:root+name+'-desktop-settled.png'});await page.setViewportSize({width:390,height:844});await page.screenshot({path:root+name+'-mobile-settled.png'});out.push({name,url:page.url(),status:r?.status(),title:await page.title(),text:(await page.locator('body').innerText()).slice(0,1300)})}catch(e){out.push({name,url,error:String(e)})}
+ }return out
+}

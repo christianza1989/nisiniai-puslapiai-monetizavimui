@@ -1,0 +1,154 @@
+{
+  "reviewedAt": "2026-10-01T11:46:09.475Z",
+  "actor": "AI agento redakcinė peržiūra; ne savininko ar atestuoto specialisto patvirtinimas",
+  "analysisAssisted": true,
+  "pages": [
+    {
+      "slug": "",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip pasiruošti nedidelės tranšėjos kasimui su mini ekskavatoriumi?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [
+        "hero",
+        "access"
+      ],
+      "sources": [],
+      "wordCount": 141
+    },
+    {
+      "slug": "gidai",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kurį mini ekskavatoriaus pasirinkimo klausimą reikia išspręsti pirmiausia?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [
+        "operator",
+        "access",
+        "transport"
+      ],
+      "sources": [],
+      "wordCount": 42
+    },
+    {
+      "slug": "su-operatoriumi",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip užregistruoti planuojamos tranšėjos kasimo su operatoriumi poreikį Kaune?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [
+        "hero"
+      ],
+      "sources": [],
+      "wordCount": 209
+    },
+    {
+      "slug": "transejos-kasimas",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip apskaičiuoti tranšėjos tūrį ir aprašyti konkrečią kasimo apimtį?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [
+        "hero"
+      ],
+      "sources": [
+        "https://www.eso.lt/namams/elektra/kasimo-darbai/3762"
+      ],
+      "wordCount": 180
+    },
+    {
+      "slug": "su-operatoriumi-ar-be",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kada rinktis mini ekskavatoriaus nuomą, o kada kasimo paslaugą su operatoriumi?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [
+        "operator"
+      ],
+      "sources": [
+        "https://www.technikoscentras.lt/",
+        "https://www.avesco-rent.lt/lt/nuomos-salygos/",
+        "https://hhmuckers.com/digger-hire",
+        "https://www.eso.lt/namams/elektra/kasimo-darbai/3762"
+      ],
+      "wordCount": 474
+    },
+    {
+      "slug": "pravaziavimo-plotis",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip patikrinti mini ekskavatoriaus prieigą į sklypą be klaidingos pravažiavimo garantijos?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [
+        "access"
+      ],
+      "sources": [
+        "https://www.avesco-rent.lt/lt/modelis/mini-ekskavatorius-cat-301-6/",
+        "https://www.eso.lt/namams/elektra/kasimo-darbai/3762"
+      ],
+      "wordCount": 456
+    },
+    {
+      "slug": "nuomos-kainos-sudetis",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip palyginti mini ekskavatoriaus nuomos ir kasimo pasiūlymų kainos apimtį?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [
+        "transport"
+      ],
+      "sources": [
+        "https://www.technikoscentras.lt/",
+        "https://www.avesco-rent.lt/lt/nuomos-salygos/",
+        "https://hhmuckers.com/digger-hire"
+      ],
+      "wordCount": 445
+    },
+    {
+      "slug": "kontaktai",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kur pateikti konkretų tranšėjos kasimo poreikį ar turinio pataisą?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [],
+      "sources": [],
+      "wordCount": 60
+    },
+    {
+      "slug": "apie-projekta",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kas atsako už projektą ir kokia paslauga realiai prieinama?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [],
+      "sources": [],
+      "wordCount": 119
+    },
+    {
+      "slug": "redakcija",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip patikrinti šių gidų kilmę ir pateikti pataisą?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [],
+      "sources": [],
+      "wordCount": 185
+    },
+    {
+      "slug": "privatumas",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip tvarkomi formos ir šios vietinės peržiūros duomenys?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [],
+      "sources": [
+        "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en"
+      ],
+      "wordCount": 282
+    },
+    {
+      "slug": "naudojimo-salygos",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kokios yra projekto įrankio ir poreikio registracijos naudojimo ribos?",
+      "scope": "No price, delivery, operator capacity or safety guarantee",
+      "images": [],
+      "sources": [],
+      "wordCount": 135
+    }
+  ],
+  "future": "six private unapproved drafts",
+  "result": {
+    "path": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\content-studio\\output\\miniekskavatoriai\\content-package.json",
+    "pages": 12,
+    "assets": 20
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "at": "2026-10-01T05:24:31.896Z",
+  "pipeline": "existing studio saveResponsiveAsset; four original illustrations, five variants per family",
+  "assets": [
+    {
+      "id": "16555c32-aab9-474a-8fcc-810eea0250e0",
+      "src": "/content-assets/laiptucentras/16555c32-aab9-474a-8fcc-810eea0250e0.webp",
+      "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+      "declared": {
+        "width": 1536,
+        "height": 1024
+      },
+      "actual": {
+        "width": 1536,
+        "height": 1024,
+        "format": "webp"
+      },
+      "bytes": 78446,
+      "sha256": "5f8b3b84809b2dc1780588276426b576996ace3e08c2ca838316bae050783845"
+    },
+    {
+      "id": "455595e1-770a-4a42-9d82-4ac4eac82731",
+      "src": "/content-assets/laiptucentras/455595e1-770a-4a42-9d82-4ac4eac82731.webp",
+      "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+      "declared": {
+        "width": 1200,
+        "height": 800
+      },
+      "actual": {
+        "width": 1200,
+        "height": 800,
+        "format": "webp"
+      },
+      "bytes": 52312,
+      "sha256": "fbf17f2de23eba8e5b579c6ad28de90fca1552f543653f7b0175d9945791b145"
+    },
+    {
+      "id": "767bec54-8d61-4052-b58b-d9703c333ae6",
+      "src": "/content-assets/laiptucentras/767bec54-8d61-4052-b58b-d9703c333ae6.webp",
+      "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+      "declared": {
+        "width": 800,
+        "height": 533
+      },
+      "actual": {
+        "width": 800,
+        "height": 533,
+        "format": "webp"
+      },
+      "bytes": 26956,
+      "sha256": "8c3e4013af8dd041960fabcb84fa5f64a6ce2b730982ad5d26cbbfc357794878"
+    },
+    {
+      "id": "f134df23-1e0c-4c98-963a-3967a870be7b",
+      "src": "/content-assets/laiptucentras/f134df23-1e0c-4c98-963a-3967a870be7b.webp",
+      "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+      "declared": {
+        "width": 640,
+        "height": 427
+      },
+      "actual": {
+        "width": 640,
+        "height": 427,
+        "format": "webp"
+      },
+      "bytes": 18954,
+      "sha256": "63dd8b229009ede6564aee97336dd7b5eff00e338942e137f3d198f075bb98ab"
+    },
+    {
+      "id": "51069deb-f932-42f7-8247-12978efe3580",
+      "src": "/content-assets/laiptucentras/51069deb-f932-42f7-8247-12978efe3580.webp",
+      "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+      "declared": {
+        "width": 360,
+        "height": 240
+      },
+      "actual": {
+        "width": 360,
+        "height": 240,
+        "format": "webp"
+      },
+      "bytes": 7790,
+      "sha256": "1f0359557d01303f7ef03ace9b055fdff404d97670e9afa9bc253db9686c08fd"
+    },
+    {
+      "id": "fe34d64f-8b3c-472a-be7d-9e1f7e48c78f",
+      "src": "/content-assets/laiptucentras/fe34d64f-8b3c-472a-be7d-9e1f7e48c78f.webp",
+      "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+      "declared": {
+        "width": 1536,
+        "height": 1024
+      },
+      "actual": {
+        "width": 1536,
+        "height": 1024,
+        "format": "webp"
+      },
+      "bytes": 132990,
+      "sha256": "f71f4e4055eb7798f2e0502cea2b6bb465db5f9d2c7feb69c4349efedef9f596"
+    },
+    {
+      "id": "c244d9bc-0a43-4918-a207-dd975ad3bd25",
+      "src": "/content-assets/laiptucentras/c244d9bc-0a43-4918-a207-dd975ad3bd25.webp",
+      "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+      "declared": {
+        "width": 1200,
+        "height": 800
+      },
+      "actual": {
+        "width": 1200,
+        "height": 800,
+        "format": "webp"
+      },
+      "bytes": 84526,
+      "sha256": "467397ce153fb809a7636d37e10325b252e8fe0fda822915c4d057cfa0884011"
+    },
+    {
+      "id": "33f63d79-59c0-47b7-b569-5d03ae37a7f8",
+      "src": "/content-assets/laiptucentras/33f63d79-59c0-47b7-b569-5d03ae37a7f8.webp",
+      "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+      "declared": {
+        "width": 800,
+        "height": 533
+      },
+      "actual": {
+        "width": 800,
+        "height": 533,
+        "format": "webp"
+      },
+      "bytes": 37292,
+      "sha256": "28e6147468765022168c13d4758ab85443c8c748f29c5c749bc1b6c0997090a8"
+    },
+    {
+      "id": "2d3eb5c5-cd19-4153-8894-36363776b082",
+      "src": "/content-assets/laiptucentras/2d3eb5c5-cd19-4153-8894-36363776b082.webp",
+      "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+      "declared": {
+        "width": 640,
+        "height": 427
+      },
+      "actual": {
+        "width": 640,
+        "height": 427,
+        "format": "webp"
+      },
+      "bytes": 23658,
+      "sha256": "249d5de0f4bc6094a072ebbf3f815d87a277019007066ea07e17a3b091a0b282"
+    },
+    {
+      "id": "4a5e1748-e235-48ae-8d8b-2937c35baf63",
+      "src": "/content-assets/laiptucentras/4a5e1748-e235-48ae-8d8b-2937c35baf63.webp",
+      "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+      "declared": {
+        "width": 360,
+        "height": 240
+      },
+      "actual": {
+        "width": 360,
+        "height": 240,
+        "format": "webp"
+      },
+      "bytes": 7710,
+      "sha256": "332aacf3c652db1ecdf50babab1faa17e0c36071fba57e9723e0e6b872fd0c36"
+    },
+    {
+      "id": "b96b14f4-7628-4895-bcac-6afe3b06d5c1",
+      "src": "/content-assets/laiptucentras/b96b14f4-7628-4895-bcac-6afe3b06d5c1.webp",
+      "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+      "declared": {
+        "width": 1536,
+        "height": 1024
+      },
+      "actual": {
+        "width": 1536,
+        "height": 1024,
+        "format": "webp"
+      },
+      "bytes": 106944,
+      "sha256": "fe3a79fe29a4b5ca00f0efa6a5ec37a6445d5eba5703943413ca4306806ddf8c"
+    },
+    {
+      "id": "9e6d9edf-8e0a-400e-ba34-2bdf28406b89",
+      "src": "/content-assets/laiptucentras/9e6d9edf-8e0a-400e-ba34-2bdf28406b89.webp",
+      "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+      "declared": {
+        "width": 1200,
+        "height": 800
+      },
+      "actual": {
+        "width": 1200,
+        "height": 800,
+        "format": "webp"
+      },
+      "bytes": 76798,
+      "sha256": "c4dc682ba9edfaffa5e535583a93de422e05eb531cb946ced637b3a28d234b5e"
+    },
+    {
+      "id": "1917dd47-c334-487b-a16d-e992c7707853",
+      "src": "/content-assets/laiptucentras/1917dd47-c334-487b-a16d-e992c7707853.webp",
+      "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+      "declared": {
+        "width": 800,
+        "height": 533
+      },
+      "actual": {
+        "width": 800,
+        "height": 533,
+        "format": "webp"
+      },
+      "bytes": 42146,
+      "sha256": "b9f1f278bac11b97ba24f3fd0df5a9ba20fe2813bef45c57908229bb2de7aad7"
+    },
+    {
+      "id": "73f27ec6-b930-45e7-b1cd-91c46a8fb6b2",
+      "src": "/content-assets/laiptucentras/73f27ec6-b930-45e7-b1cd-91c46a8fb6b2.webp",
+      "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+      "declared": {
+        "width": 640,
+        "height": 427
+      },
+      "actual": {
+        "width": 640,
+        "height": 427,
+        "format": "webp"
+      },
+      "bytes": 30112,
+      "sha256": "ae3a4fb29d45fac9b6c2299b42d81c9f89373e35aec5070bbb26ca656d0b304a"
+    },
+    {
+      "id": "3806da76-b51e-4635-988a-1d0a3b87dbd4",
+      "src": "/content-assets/laiptucentras/3806da76-b51e-4635-988a-1d0a3b87dbd4.webp",
+      "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+      "declared": {
+        "width": 360,
+        "height": 240
+      },
+      "actual": {
+        "width": 360,
+        "height": 240,
+        "format": "webp"
+      },
+      "bytes": 12370,
+      "sha256": "8eddc471e618075148a8557afa431b0116765cdf880a4fb71051840d698e751b"
+    },
+    {
+      "id": "1e84b0cf-e101-4954-a367-862c16b14049",
+      "src": "/content-assets/laiptucentras/1e84b0cf-e101-4954-a367-862c16b14049.webp",
+      "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+      "declared": {
+        "width": 1536,
+        "height": 1024
+      },
+      "actual": {
+        "width": 1536,
+        "height": 1024,
+        "format": "webp"
+      },
+      "bytes": 98934,
+      "sha256": "ba650050c9f9c890cf0999d3259fa2e7fb8aaef06ebfd2cf10bbea91de8c92d0"
+    },
+    {
+      "id": "cf7b4af3-cb71-4951-8436-cb80fc78577a",
+      "src": "/content-assets/laiptucentras/cf7b4af3-cb71-4951-8436-cb80fc78577a.webp",
+      "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+      "declared": {
+        "width": 1200,
+        "height": 800
+      },
+      "actual": {
+        "width": 1200,
+        "height": 800,
+        "format": "webp"
+      },
+      "bytes": 67882,
+      "sha256": "e2cf5b52b147b49667e2ff4c1fe0146b987764032bea770e1d496bc775aa7043"
+    },
+    {
+      "id": "a303d29a-4704-443b-b617-db705bf00b8e",
+      "src": "/content-assets/laiptucentras/a303d29a-4704-443b-b617-db705bf00b8e.webp",
+      "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+      "declared": {
+        "width": 800,
+        "height": 533
+      },
+      "actual": {
+        "width": 800,
+        "height": 533,
+        "format": "webp"
+      },
+      "bytes": 35684,
+      "sha256": "fcbbfbd7211849184f28267c944f175f65d0a11e43f460a524a99315c060fc28"
+    },
+    {
+      "id": "dd4b48e9-1c5f-41e8-96c0-60d73c39ae38",
+      "src": "/content-assets/laiptucentras/dd4b48e9-1c5f-41e8-96c0-60d73c39ae38.webp",
+      "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+      "declared": {
+        "width": 640,
+        "height": 427
+      },
+      "actual": {
+        "width": 640,
+        "height": 427,
+        "format": "webp"
+      },
+      "bytes": 24370,
+      "sha256": "54912a2303d704a8d09ea8fd5ae16c8c75120cac4583302a7d725b7fcd72f04f"
+    },
+    {
+      "id": "f310f4b3-352b-4f0c-9d74-cad0cfd352e5",
+      "src": "/content-assets/laiptucentras/f310f4b3-352b-4f0c-9d74-cad0cfd352e5.webp",
+      "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+      "declared": {
+        "width": 360,
+        "height": 240
+      },
+      "actual": {
+        "width": 360,
+        "height": 240,
+        "format": "webp"
+      },
+      "bytes": 8618,
+      "sha256": "d031d96cc3f5c43f83a33da6f3ff176be52cd81e603b930e0109f8d3583b8dd0"
+    }
+  ],
+  "coverage": [
+    {
+      "path": "/",
+      "mediaCount": 10,
+      "exception": null
+    },
+    {
+      "path": "/gidai",
+      "mediaCount": 15,
+      "exception": null
+    },
+    {
+      "path": "/vidaus-laiptu-irengimas",
+      "mediaCount": 5,
+      "exception": null
+    },
+    {
+      "path": "/laiptu-kaina",
+      "mediaCount": 5,
+      "exception": null
+    },
+    {
+      "path": "/laiptu-konstrukcijos",
+      "mediaCount": 5,
+      "exception": null
+    },
+    {
+      "path": "/laiptu-matavimas",
+      "mediaCount": 5,
+      "exception": null
+    },
+    {
+      "path": "/kontaktai",
+      "mediaCount": 0,
+      "exception": "Text serves inquiry, identity, editorial or policy task; decorative photography adds no evidence."
+    },
+    {
+      "path": "/apie-projekta",
+      "mediaCount": 0,
+      "exception": "Text serves inquiry, identity, editorial or policy task; decorative photography adds no evidence."
+    },
+    {
+      "path": "/redakcija",
+      "mediaCount": 0,
+      "exception": "Text serves inquiry, identity, editorial or policy task; decorative photography adds no evidence."
+    },
+    {
+      "path": "/privatumas",
+      "mediaCount": 0,
+      "exception": "Text serves inquiry, identity, editorial or policy task; decorative photography adds no evidence."
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "mediaCount": 0,
+      "exception": "Text serves inquiry, identity, editorial or policy task; decorative photography adds no evidence."
+    }
+  ],
+  "visualEvidence": [
+    "qa/home-desktop-full-final.png",
+    "qa/home-mobile-final.png",
+    "qa/gidai-desktop-final.png",
+    "qa/gidai-mobile-final.png",
+    "qa/desktop-guides.json",
+    "qa/mobile-guides.json"
+  ],
+  "provenance": "MEDIA.json; four inspected originals remain private, not sold products or client work",
+  "fonts": "Newsreader and Manrope licensed OFL files copied from existing core fonts; licenses preserved; qa/fonts.json verifies WOFF2 conversion and Lithuanian glyph coverage"
+}

@@ -1,0 +1,191 @@
+{
+  "kind": "planning_policy_not_runtime_implementation",
+  "updatedAt": "2026-10-05",
+  "siteId": "madbeauty",
+  "status": "PROPOSED_NOT_RUN",
+  "environments": {
+    "privatePreview": {
+      "authentication": "local_or_authenticated",
+      "robots": "noindex",
+      "productionDiscovery": false,
+      "demoAllowed": true
+    },
+    "production": {
+      "demoAllowed": false,
+      "indexRequires": "actual_approved_eligible_content",
+      "privateDataPublic": false
+    }
+  },
+  "stableIndexCandidates": [
+    "service_hub",
+    "city_hub",
+    "approved_service_city",
+    "approved_distinct_service_city_district",
+    "real_provider_profile",
+    "original_approved_guide",
+    "truthful_trust_page"
+  ],
+  "uiOnlyFacets": [
+    "date",
+    "time_window",
+    "price_min",
+    "price_max",
+    "sort",
+    "coordinates",
+    "radius",
+    "arbitrary_style",
+    "today",
+    "tomorrow"
+  ],
+  "filterState": {
+    "format": "URL_fragment",
+    "example": "/paslaugos/manikiuras/vilnius/#data=2026-10-06&nuo=17:00&iki=20:00",
+    "baseHtml": "same_approved_general_catalog_for_every_visitor",
+    "noEligibleCatalog": "/paieska#paslauga=manikiuras&miestas=vilnius",
+    "personalDataAllowed": false
+  },
+  "cases": [
+    {
+      "url": "/paslaugos/veido-masazas/vilnius/",
+      "assumption": "real approved eligible service-city",
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "self",
+      "sitemap": true
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/#data=2026-10-06&nuo=17:00&iki=20:00",
+      "assumption": "base real eligible; accepted availability for interactive state",
+      "status": 200,
+      "robots": "base:index,follow",
+      "canonical": "/paslaugos/manikiuras/vilnius/",
+      "sitemap": "base_only",
+      "dateIsIndexedPage": false
+    },
+    {
+      "url": "/paieska#paslauga=manikiuras&miestas=kaunas&data=2026-10-06",
+      "assumption": "UI selection no approved clean catalog",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "/paieska",
+      "sitemap": false
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/?page=2",
+      "assumption": "real approved eligible second page",
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "self_including_page2",
+      "sitemap": "optional_not_required",
+      "crawlablePagination": true
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/?page=1",
+      "assumption": "real eligible base",
+      "status": 301,
+      "target": "/paslaugos/manikiuras/vilnius/",
+      "sitemap": false
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/?page=999999",
+      "assumption": "beyond actual page count",
+      "status": 404,
+      "sitemap": false
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/?sort=price",
+      "assumption": "equivalent known duplicate adapter only if implemented",
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/paslaugos/manikiuras/vilnius/",
+      "sitemap": false,
+      "preferredForIndex": false,
+      "notes": "canonical hint not a guarantee of exclusion; primary filter UI uses hash"
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/?utm_source=example",
+      "assumption": "same real eligible body",
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "/paslaugos/manikiuras/vilnius/",
+      "sitemap": false
+    },
+    {
+      "url": "/paslaugos/neegzistuoja/vilnius/",
+      "assumption": "unknown service",
+      "status": 404,
+      "sitemap": false
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/neegzistuojantis-rajonas/",
+      "assumption": "invalid geographic relationship",
+      "status": 404,
+      "sitemap": false
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/naujamiestis/",
+      "assumption": "not approved distinct district catalog",
+      "status": 404,
+      "sitemap": false
+    },
+    {
+      "url": "/paslaugos/manikiuras/vilnius/",
+      "assumption": "formerly approved catalog loses all providers but still has reviewed honest useful content pending operator review",
+      "status": 200,
+      "robots": "noindex,follow",
+      "sitemap": false
+    },
+    {
+      "url": "/meistrai/demo-austeja/",
+      "assumption": "fixture targeted at production",
+      "status": 404,
+      "sitemap": false,
+      "publicSchema": false
+    },
+    {
+      "url": "/meistrai/tikras-stable-slug/",
+      "assumption": "actual approved public provider",
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "self",
+      "sitemap": true
+    },
+    {
+      "url": "/meistrai/panaikintas-slug/",
+      "assumption": "permanently removed without equivalent replacement",
+      "status": "404_or_410_by_lifecycle",
+      "sitemap": false
+    },
+    {
+      "url": "/mano/vizitai/",
+      "assumption": "production private unauthenticated",
+      "status": "authentication_gate",
+      "robots": "noindex",
+      "sitemap": false
+    },
+    {
+      "url": "/valdymas/turinys/",
+      "assumption": "non-operator authenticated visitor",
+      "status": 403,
+      "robots": "noindex",
+      "sitemap": false
+    },
+    {
+      "url": "/gidai/kaip-issirinkti-nagu-spalva/",
+      "assumption": "approved original production article",
+      "status": 200,
+      "robots": "index,follow",
+      "canonical": "self",
+      "sitemap": true
+    },
+    {
+      "url": "/gidai/kaip-issirinkti-nagu-spalva/",
+      "assumption": "private demo preview",
+      "status": "private_auth_or_local_200",
+      "robots": "noindex",
+      "sitemap": false,
+      "publicDiscovery": false
+    }
+  ],
+  "acceptanceStatus": "All_cases_PLANNED_NOT_RUN"
+}

@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-01T05:10:43.194Z",
+  "recipient": "info@pinet.lt",
+  "operator": "MB Pinet",
+  "sharedSmtpSelfTest": {
+    "date": "2026-09-30T08:47:49.594Z",
+    "tlsVerified": true,
+    "authenticated": true,
+    "acceptedBySmtp": true,
+    "testId": "4d94fcc1-3195-481d-8b03-74039afaab4b",
+    "recipient": "info@pinet.lt"
+  },
+  "sharedForm": {
+    "date": "2026-09-30T09:51:39.414Z",
+    "siteId": "traktoriupadangos",
+    "sourcePath": "/gidas/traktoriaus-padangu-zymejimas",
+    "leadId": "d2fe704c-012a-4489-b829-d674483d4b27",
+    "durableStored": true,
+    "smtpAccepted": true,
+    "ownInboxReceived": true,
+    "syntheticLeadRemoved": true
+  },
+  "matchingInbox": {
+    "date": "2026-09-30T09:51:39.377Z",
+    "tlsVerified": true,
+    "imapAuthenticated": true,
+    "mailbox": "INBOX",
+    "testId": "d2fe704c-012a-4489-b829-d674483d4b27",
+    "received": true
+  },
+  "matchingMessageId": "<d2fe704c-012a-4489-b829-d674483d4b27@pinet.lt>",
+  "currentTransportFingerprints": {
+    "lib/niche-mail.ts": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c",
+    "lib/smtp-protocol.mjs": "ebd4a84bf153017d2b502326a7851488f1c1c5a1ca82b0abe8b4793204de58ab"
+  },
+  "scope": "Reuse under MAIL_CORE: same notification implementation and info@pinet.lt recipient; actual 2026-09-30 marked tractor integration. Auksarankiams local D1/branch-failure tested separately; no auksarankiams production delivery or domain authentication claimed."
+}

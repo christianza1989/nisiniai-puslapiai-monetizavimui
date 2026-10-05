@@ -1,0 +1,32 @@
+[
+  {
+    "site_id": "traktoriupadangos",
+    "clients": 16,
+    "corpus_hash": "faec433f5bdfe68d5947ef5c979a42362e6576c67b965d5d5ba7ad1b772b4b20"
+  },
+  {
+    "site_id": "greitossvetaines",
+    "clients": 16,
+    "corpus_hash": "1aad0ad27e0a3b61bba3418f9f30c99983db0c5ffaa0b0528dddeb16077a0aba"
+  },
+  {
+    "site_id": "akmenas",
+    "clients": 16,
+    "corpus_hash": "869db6e997338e652df62b42e21a4251fd4e82f9aec0cc5ca5314d045e29b2a0"
+  },
+  {
+    "site_id": "roletaiklaipedoje",
+    "clients": 16,
+    "corpus_hash": "b5ffb4ef0465a22f3886e9c5cb7a80c3430c03b61dce6e3ae2c9ca0c59fd4726"
+  },
+  {
+    "site_id": "laiptucentras",
+    "clients": 16,
+    "corpus_hash": "bd7b4ccd1e50fc72a85c8f4b7aeeaf6ecbbe91c37aa79559f5052db7291d6ad9"
+  },
+  {
+    "site_id": "auksarankiams",
+    "clients": 16,
+    "corpus_hash": "b9246f65a05dc148a8242043c4d96db1da38480b6f39e5fb5391540f13d9461d"
+  }
+]

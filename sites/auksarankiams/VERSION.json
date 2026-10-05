@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-01T05:10:43.194Z",
+  "packageSha256": "5559ef64ae3e4c7e6a32b379aa31e374db4f77e2a0b7bef514c24a682b30f145",
+  "packageGeneratedAt": "2026-10-01T04:53:28.672Z",
+  "source": "C:/Users/lenovo/Documents/dovanos-memorycasting",
+  "build": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\output\\auksarankiams-production",
+  "preview": "http://127.0.0.1:8890",
+  "proxy": "http://127.0.0.1:8891",
+  "productionDeployed": false,
+  "voiceEnabled": false,
+  "smtpPreviewEnabled": false,
+  "fingerprints": {
+    "components/niche/auksarankiams-site.tsx": "bc34d891ac74b5d4500ce3f6b03e778c8aeb607a405dfdbfa283eac39c6d4e61",
+    "components/niche/auksarankiams-site.module.css": "18610e7bfc28425a5d392420a32b4c8962fe718127cba9b7dec31ed1246eee07",
+    "app/niche/[siteId]/[[...slug]]/page.tsx": "bfd0525e7288d66a222a9cc4f3c0f208c9a196e3159a7821230c9041d409db4b",
+    "lib/niche-links.mjs": "17e0087bd9b7abf3163801bc70472e94f79754f8baccda12b3d4d02c04e10b10",
+    "lib/niche-seo.ts": "a8047073804d5e1324c84deb375c5877e11d7fd99605e452c31eeedc235b818d",
+    "lib/niche-schema-core.mjs": "b75bc196b26be60f17146759b51d4108f1878d37107dd7084bfe0d1c527cc016",
+    "lib/niche-mail.ts": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c",
+    "lib/smtp-protocol.mjs": "ebd4a84bf153017d2b502326a7851488f1c1c5a1ca82b0abe8b4793204de58ab",
+    "app/niche/[siteId]/lead/route.ts": "47226be6c1a339a0ec6a01fc97c188d6114cb4410d2528de59d42754c4dd5ff8",
+    "config/niche-network.json": "15a135d464178c97fe4ccca2a82ed54350edb0abbd7d6281b077248170013a87",
+    "content-packages/auksarankiams/content-package.json": "5559ef64ae3e4c7e6a32b379aa31e374db4f77e2a0b7bef514c24a682b30f145",
+    "dist/server/index.js": "f0f35d0d1773404fc191142095f2203139493bb026cb12f77fb6384cb660ce1b"
+  }
+}

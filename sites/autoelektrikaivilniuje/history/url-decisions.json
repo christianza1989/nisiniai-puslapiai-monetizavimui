@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-03T13:20:27.420Z",
+  "publicChangesApplied": false,
+  "redirects": [],
+  "decisions": [
+    {
+      "path": "/",
+      "action": "keep-new-original-content",
+      "reason": "Teminė sąsaja išlieka, turinys ir operatorius nauji."
+    },
+    {
+      "path": "/atsiliepimai/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/autoelektriko-kontaktai-adresas-vilniuje/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/automobilis-ar-dviratis-ju-privalumai-ir-trukumai/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/automobiliu-aksesuarai-ir-priedai-kuriuos-turetumete-tureti/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/category/automobiliai/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/category/dviraciai/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/category/palyginimai/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/elektriniai-dviraciai-ar-verta-juos-pirkti/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/kas-geriau-elektrinis-ar-benzininis-automobilis-ka-verta-zinoti-pries-perkant/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/kokie-yra-patikimiausi-automobiliu-gamintojai/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/privatumo-politika/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/susisiekite/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    },
+    {
+      "path": "/vaziavimo-dviraciu-privalumai-kelias-i-sveikata-tvaruma-ir-gera-savijauta/",
+      "action": "no-redirect",
+      "reason": "Ankstesnis operatorius arba kita tema; tikro semantiškai lygiaverčio dabartinio vykdymo puslapio nėra. Istorinio kontakto ir atsiliepimų nepaveldime."
+    }
+  ]
+}

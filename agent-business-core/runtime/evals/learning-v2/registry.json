@@ -1,0 +1,17 @@
+{
+  "as_of": "2026-10-03",
+  "cases_per_site": 7,
+  "train": 3,
+  "reserve_holdout": 4,
+  "observed_case_becomes_training": true,
+  "minimum_unseen_holdout": 3,
+  "model_may_edit_corpus": false,
+  "corpus_hashes": {
+    "akmenas": "859622deb3b0fb182e81f0fb66d56181a25c86d60081cfb9ff6a530181617dc2",
+    "auksarankiams": "71c7954b3dfb272634d93da854eedbbe128701252217a728db297c49a47d7dd5",
+    "greitossvetaines": "03aad231141a9b90ac94fbc7a3c3527cad967b6ba78920e4b30add8830b1f109",
+    "laiptucentras": "883141eaec4cc163293e2a5a7eb4d0831b5dba853ba78abc10c4859696e8c66f",
+    "roletaiklaipedoje": "055fee7d197467bf66f39e0429fac971f4bdd6379d76a6bdd33f6e22d5ca0109",
+    "traktoriupadangos": "954ef7666ced7e199129603a777792db74bdb8753150d8c4a7462d450eca1a3a"
+  }
+}

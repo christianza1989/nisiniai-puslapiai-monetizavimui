@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-03T16:09:33.532Z",
+  "cssSource": "https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Source+Sans+3:wght@400;600&display=swap",
+  "licence": "SIL OFL 1.1; included full copyright/licence files",
+  "files": [
+    {
+      "name": "archivo-700-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q82sJaRE-NWIDdgffTT0zRZ-RdpF0s.woff2",
+      "bytes": 13272,
+      "sha256": "8affe3b4758ec03c7c1a8b40c119209cbb1815fd836160570f94935ce9a683ec"
+    },
+    {
+      "name": "archivo-700-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/archivo/v25/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q82sJaRE-NWIDdgffTT0zRZ9xdp.woff2",
+      "bytes": 14508,
+      "sha256": "abada6cd4c92a9a706f6d7ed3189f322ff43dd78b9402c7d1137465b861d2a04"
+    },
+    {
+      "name": "source-sans-3-400-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2",
+      "bytes": 60088,
+      "sha256": "a85a7459bdb3cdc1136751e151a506bae653fc29ada3ca86237477df6f1b59e6"
+    },
+    {
+      "name": "source-sans-3-400-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZQ.woff2",
+      "bytes": 28872,
+      "sha256": "19143dca075972bc84e3fd9eab7416dd40cc565dccb2435a044bdfabe060c7d5"
+    },
+    {
+      "name": "source-sans-3-600-latin-ext.woff2",
+      "source": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2",
+      "bytes": 60088,
+      "sha256": "a85a7459bdb3cdc1136751e151a506bae653fc29ada3ca86237477df6f1b59e6"
+    },
+    {
+      "name": "source-sans-3-600-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZQ.woff2",
+      "bytes": 28872,
+      "sha256": "19143dca075972bc84e3fd9eab7416dd40cc565dccb2435a044bdfabe060c7d5"
+    }
+  ]
+}

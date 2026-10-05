@@ -1,0 +1,111 @@
+{
+  "at": "2026-10-01T04:10:45.174Z",
+  "reviewer": "Codex agent; sequential source/logic/image review",
+  "ownerBusinessDirection": "handyman demand pilot approved 2026-10-01; not content/design/fulfilment approval",
+  "revoked": [
+    {
+      "id": "d5f8275c-97b8-4969-b5dd-44d507d98022",
+      "slug": "",
+      "wasApproved": false
+    },
+    {
+      "id": "920ad31d-de9a-44e7-bd83-4fcdf462bc4c",
+      "slug": "rankdarbiu-sablonai-pradedantiesiems",
+      "wasApproved": false
+    },
+    {
+      "id": "3e59d170-3ce3-41e0-bdd0-4d7c5b9239f7",
+      "slug": "kaip-atsispausdinti-ir-naudoti-sablona",
+      "wasApproved": false
+    },
+    {
+      "id": "fbfb41fb-cc37-4fc9-bdb7-cbd075e74119",
+      "slug": "kalediniai-rankdarbiai-dovanoms",
+      "wasApproved": false
+    },
+    {
+      "id": "4c21b433-b519-428b-8bcf-e97874a03856",
+      "slug": "kalediniu-dekoraciju-sablonai",
+      "wasApproved": false
+    },
+    {
+      "id": "e8788427-5e39-4d4d-aebf-2d26f8491d4b",
+      "slug": "ranku-darbo-atvirukai",
+      "wasApproved": false
+    },
+    {
+      "id": "4362c392-b1b5-4b38-b26d-7f6aa98e1947",
+      "slug": "valentino-dienos-rankdarbiai",
+      "wasApproved": false
+    },
+    {
+      "id": "e607e210-a99b-4cc9-948f-7f37b0d09362",
+      "slug": "rankdarbiu-priemoniu-sarasas-namuose",
+      "wasApproved": false
+    },
+    {
+      "id": "5644f8ca-c2a9-4fcd-8e95-3d21ee1b276f",
+      "slug": "velykiniai-rankdarbiai-vaikams-ir-namams",
+      "wasApproved": false
+    },
+    {
+      "id": "2ae472d6-d39f-477d-b508-8c5d7ec802cb",
+      "slug": "kaip-susiplanuoti-rankdarbiu-projekta",
+      "wasApproved": false
+    },
+    {
+      "id": "8a1f7663-e275-4977-a754-c9c11dfe640c",
+      "slug": "pavasario-dekoracijos-is-popieriaus",
+      "wasApproved": false
+    },
+    {
+      "id": "1cbb949f-b97f-42ed-aa53-7c4446ca5de5",
+      "slug": "sezoniniai-rankdarbiai",
+      "wasApproved": false
+    },
+    {
+      "id": "950912cb-f046-4e30-80d1-44348a61386c",
+      "slug": "gidai",
+      "wasApproved": false
+    },
+    {
+      "id": "f19f65eb-16cc-460e-a787-c233b0ff1db7",
+      "slug": "popieriaus-rankdarbiai-pradedantiesiems",
+      "wasApproved": false
+    },
+    {
+      "id": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+      "slug": "kontaktai",
+      "wasApproved": false
+    },
+    {
+      "id": "39b932c0-4a4f-4f63-8af4-d1c22c1075c9",
+      "slug": "apie-projekta",
+      "wasApproved": false
+    },
+    {
+      "id": "3cbf9d93-b5dc-4dc7-b466-c47eddc618f4",
+      "slug": "redakcija",
+      "wasApproved": false
+    },
+    {
+      "id": "e3549cb0-55f1-4a49-b169-f18aa5fda103",
+      "slug": "naudojimo-salygos",
+      "wasApproved": false
+    },
+    {
+      "id": "1f0efe68-e370-4b06-8fa3-db5bcd647576",
+      "slug": "privatumas",
+      "wasApproved": false
+    }
+  ],
+  "pages": 13,
+  "limitations": [
+    "No physical work performed",
+    "No partners/prices/territory/dispatch",
+    "Local dates only before deployment",
+    "Production legal inventory unresolved"
+  ],
+  "path": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\auksarankiams\\export-handyman\\auksarankiams\\content-package.json",
+  "assets": 20
+}

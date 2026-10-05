@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-01T14:19:25Z",
+  "scope": "Private research and proposed pilot documentation; no implementation acceptance",
+  "checks": {
+    "sourcesJsonParsed": true,
+    "sourceEntries": 8,
+    "openedPrimaryPages": 7,
+    "searchOnlyContraryEntry": 1,
+    "duplicateSourceUrls": 0,
+    "registryMarkdownFilesInspected": 9,
+    "localReferencesChecked": 55,
+    "brokenLocalReferences": 0,
+    "scenarioArithmeticChecked": true,
+    "scenarioContributionValuesEur": [224,104,-16],
+    "breakEvenEffectiveHours": 9.466666666666667,
+    "newIdeaIdAllocated": false
+  },
+  "evidenceLimits": [
+    "Provider price and deliverable claims are not verified transactions or our buyer demand",
+    "Free audit form not submitted or output tested",
+    "Marketplace eligibility for our actual assets not tested; one policy article is old",
+    "Prototype and commercial pilot not implemented or authorised by this research",
+    "Economics are assumptions; actual AI and human costs remain unknown"
+  ],
+  "actions": {"newSubscriptions":0,"formsSubmitted":0,"externalCustomerOrSupplierMessages":0,"accountAccessChanges":0,"runtimeChanges":0,"dnsChanges":0,"ownerApprovalClaimed":false}
+}

@@ -1,0 +1,19 @@
+{
+  "version": "2026-10-02-v5-quality",
+  "site_id": "laiptucentras",
+  "test_recipient": "owner@example.com",
+  "clients": [
+    {
+      "id": "saved_email_existing_tread_only",
+      "messages": [
+        "Noriu atnaujinti senų vidaus laiptų medines pakopas. Naujos konstrukcijos nereikia, turiu nuotraukas.",
+        "Pakopų matmenis pateiksiu vėliau. Dabar atidarykite el. pašto lauką ir atsiųskite tik pasiruošimo santrauką."
+      ],
+      "contact": true,
+      "contact_at": "during",
+      "expected_need": {},
+      "label": "saved_email_existing_tread_only",
+      "split": "blind"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "inspected": "2026-10-01",
+  "pipeline": "shared saveResponsiveAsset",
+  "originalsPrivate": true,
+  "items": [
+    {
+      "key": "hero",
+      "asset": "5c85e9e4-160c-4834-961e-efa853ac2adb",
+      "alt": "Mini ekskavatorius sklype prie būsimos tranšėjos vietos",
+      "source": "assets/hero.png",
+      "prompt": "assets/hero.prompt.txt",
+      "accepted": true,
+      "variants": [
+        {
+          "id": "5c85e9e4-160c-4834-961e-efa853ac2adb",
+          "groupId": "cc0ebbf5-524a-401a-8d8e-f0d90d09f883",
+          "src": "/content-assets/miniekskavatoriai/5c85e9e4-160c-4834-961e-efa853ac2adb.webp",
+          "alt": "Mini ekskavatorius sklype prie būsimos tranšėjos vietos",
+          "width": 1600,
+          "height": 900,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: wide environmental website image for a Lithuanian trench-digging planning pilot, not a real customer project. Scene: an ordinary rural residential plot in Lithuania in early autumn, natural subdued daylight, grassy foreground and freshly disturbed brown earth. Subject: a single unbranded compact mini excavator with muted orange body, rubber tracks, realistic boom and digging bucket, parked with bucket lowered on firm level ground, no people. Composition: landscape 16:9, camera at modest elevated distance, machine and ground in middle third with ample earth/grass context on each side; strong central focal area works on mobile crop. Restrained editorial photography, cool slate tones and rust earth, real imperfect outdoor textures. Avoid: logos, readable text, watermarks, hazardous trench work, person in a trench, invented safety diagram, multiple arms/buckets, showroom glamour. This is an illustrative concept scene, do not imply documentary evidence.",
+          "bytes": 208500,
+          "sha256": "8446dd119eb7834fb9d49f8f0e5111abeacbc35f292bee56e3efc8690be67e23"
+        },
+        {
+          "id": "7efc68c9-917b-4ca6-a93d-b8e0addd1191",
+          "groupId": "cc0ebbf5-524a-401a-8d8e-f0d90d09f883",
+          "src": "/content-assets/miniekskavatoriai/7efc68c9-917b-4ca6-a93d-b8e0addd1191.webp",
+          "alt": "Mini ekskavatorius sklype prie būsimos tranšėjos vietos",
+          "width": 1200,
+          "height": 675,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: wide environmental website image for a Lithuanian trench-digging planning pilot, not a real customer project. Scene: an ordinary rural residential plot in Lithuania in early autumn, natural subdued daylight, grassy foreground and freshly disturbed brown earth. Subject: a single unbranded compact mini excavator with muted orange body, rubber tracks, realistic boom and digging bucket, parked with bucket lowered on firm level ground, no people. Composition: landscape 16:9, camera at modest elevated distance, machine and ground in middle third with ample earth/grass context on each side; strong central focal area works on mobile crop. Restrained editorial photography, cool slate tones and rust earth, real imperfect outdoor textures. Avoid: logos, readable text, watermarks, hazardous trench work, person in a trench, invented safety diagram, multiple arms/buckets, showroom glamour. This is an illustrative concept scene, do not imply documentary evidence.",
+          "bytes": 140694,
+          "sha256": "5a0042976bbeab09dd103d9a4330c901d4204412e410db4c2c58a71c58201ef8"
+        },
+        {
+          "id": "78daf07f-a204-483c-b070-7b045432296e",
+          "groupId": "cc0ebbf5-524a-401a-8d8e-f0d90d09f883",
+          "src": "/content-assets/miniekskavatoriai/78daf07f-a204-483c-b070-7b045432296e.webp",
+          "alt": "Mini ekskavatorius sklype prie būsimos tranšėjos vietos",
+          "width": 800,
+          "height": 450,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: wide environmental website image for a Lithuanian trench-digging planning pilot, not a real customer project. Scene: an ordinary rural residential plot in Lithuania in early autumn, natural subdued daylight, grassy foreground and freshly disturbed brown earth. Subject: a single unbranded compact mini excavator with muted orange body, rubber tracks, realistic boom and digging bucket, parked with bucket lowered on firm level ground, no people. Composition: landscape 16:9, camera at modest elevated distance, machine and ground in middle third with ample earth/grass context on each side; strong central focal area works on mobile crop. Restrained editorial photography, cool slate tones and rust earth, real imperfect outdoor textures. Avoid: logos, readable text, watermarks, hazardous trench work, person in a trench, invented safety diagram, multiple arms/buckets, showroom glamour. This is an illustrative concept scene, do not imply documentary evidence.",
+          "bytes": 74822,
+          "sha256": "323d452b0b02a9a5f7a00436713d47c3d3b78a86bc95d3a557447222e4e5fda2"
+        },
+        {
+          "id": "15fa55c8-c882-485d-ad90-b876684ea611",
+          "groupId": "cc0ebbf5-524a-401a-8d8e-f0d90d09f883",
+          "src": "/content-assets/miniekskavatoriai/15fa55c8-c882-485d-ad90-b876684ea611.webp",
+          "alt": "Mini ekskavatorius sklype prie būsimos tranšėjos vietos",
+          "width": 640,
+          "height": 360,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: wide environmental website image for a Lithuanian trench-digging planning pilot, not a real customer project. Scene: an ordinary rural residential plot in Lithuania in early autumn, natural subdued daylight, grassy foreground and freshly disturbed brown earth. Subject: a single unbranded compact mini excavator with muted orange body, rubber tracks, realistic boom and digging bucket, parked with bucket lowered on firm level ground, no people. Composition: landscape 16:9, camera at modest elevated distance, machine and ground in middle third with ample earth/grass context on each side; strong central focal area works on mobile crop. Restrained editorial photography, cool slate tones and rust earth, real imperfect outdoor textures. Avoid: logos, readable text, watermarks, hazardous trench work, person in a trench, invented safety diagram, multiple arms/buckets, showroom glamour. This is an illustrative concept scene, do not imply documentary evidence.",
+          "bytes": 50896,
+          "sha256": "708f3b02799f261b99c0a85438c565f3c55728ef96a34800e8ad4a631a07b97c"
+        },
+        {
+          "id": "5a6025ef-8b07-425e-a84f-0ec0c3db46a2",
+          "groupId": "cc0ebbf5-524a-401a-8d8e-f0d90d09f883",
+          "src": "/content-assets/miniekskavatoriai/5a6025ef-8b07-425e-a84f-0ec0c3db46a2.webp",
+          "alt": "Mini ekskavatorius sklype prie būsimos tranšėjos vietos",
+          "width": 360,
+          "height": 203,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: wide environmental website image for a Lithuanian trench-digging planning pilot, not a real customer project. Scene: an ordinary rural residential plot in Lithuania in early autumn, natural subdued daylight, grassy foreground and freshly disturbed brown earth. Subject: a single unbranded compact mini excavator with muted orange body, rubber tracks, realistic boom and digging bucket, parked with bucket lowered on firm level ground, no people. Composition: landscape 16:9, camera at modest elevated distance, machine and ground in middle third with ample earth/grass context on each side; strong central focal area works on mobile crop. Restrained editorial photography, cool slate tones and rust earth, real imperfect outdoor textures. Avoid: logos, readable text, watermarks, hazardous trench work, person in a trench, invented safety diagram, multiple arms/buckets, showroom glamour. This is an illustrative concept scene, do not imply documentary evidence.",
+          "bytes": 17870,
+          "sha256": "c8e67a8f8707a500fdd71b712910c21482c974aad4c35c3ca84be8c394ebf62e"
+        }
+      ],
+      "crop": "wide landscape strip, mobile bucket/plot centre"
+    },
+    {
+      "key": "access",
+      "asset": "30f29aee-b66a-4c9a-b3aa-6bf3510ee908",
+      "alt": "Siauras įvažiavimas tarp vartų stulpų ir matavimo juosta",
+      "source": "assets/access.png",
+      "prompt": "assets/access.prompt.txt",
+      "accepted": true,
+      "variants": [
+        {
+          "id": "30f29aee-b66a-4c9a-b3aa-6bf3510ee908",
+          "groupId": "cdc6b68e-6100-48af-b4f4-5284a6f3387b",
+          "src": "/content-assets/miniekskavatoriai/30f29aee-b66a-4c9a-b3aa-6bf3510ee908.webp",
+          "alt": "Siauras įvažiavimas tarp vartų stulpų ir matavimo juosta",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: editorial guide image explaining access measurement before mini-excavator work. Scene: ordinary Lithuanian detached house side entrance, two concrete gate posts and an open simple metal gate, gravel path continuing into a grassy garden, overcast daylight. Subject: the narrow passage and full ground approach, a single yellow tape measure stretched at ground level between the two posts but no readable numbers and no person. Landscape 3:2, frontal eye-level camera from outside gate, posts frame middle, path clearly visible, both posts within the mobile safe center. Color: cool slate gray, earthy rust gravel, muted green. Real imperfect utility scene, crisp editorial photography. No logos, text, watermarks, excavator squeezing through, no suggested safe clearance or model specification, no fake diagram. An illustrative scene, not a measured customer property.",
+          "bytes": 284368,
+          "sha256": "2c9d5bf911697622253d30a1d1d2be8462ce5803173074bac1ee7102a8022e07"
+        },
+        {
+          "id": "78df1277-a813-4320-8a45-f8a9d6a52dde",
+          "groupId": "cdc6b68e-6100-48af-b4f4-5284a6f3387b",
+          "src": "/content-assets/miniekskavatoriai/78df1277-a813-4320-8a45-f8a9d6a52dde.webp",
+          "alt": "Siauras įvažiavimas tarp vartų stulpų ir matavimo juosta",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: editorial guide image explaining access measurement before mini-excavator work. Scene: ordinary Lithuanian detached house side entrance, two concrete gate posts and an open simple metal gate, gravel path continuing into a grassy garden, overcast daylight. Subject: the narrow passage and full ground approach, a single yellow tape measure stretched at ground level between the two posts but no readable numbers and no person. Landscape 3:2, frontal eye-level camera from outside gate, posts frame middle, path clearly visible, both posts within the mobile safe center. Color: cool slate gray, earthy rust gravel, muted green. Real imperfect utility scene, crisp editorial photography. No logos, text, watermarks, excavator squeezing through, no suggested safe clearance or model specification, no fake diagram. An illustrative scene, not a measured customer property.",
+          "bytes": 194092,
+          "sha256": "568aaa26e3fbfe9ce2b57390832bda67f27cdbfa7cc089bd2a627c1068b7ce40"
+        },
+        {
+          "id": "1f8ba0c2-da38-4c2f-9e7c-f6f12f050789",
+          "groupId": "cdc6b68e-6100-48af-b4f4-5284a6f3387b",
+          "src": "/content-assets/miniekskavatoriai/1f8ba0c2-da38-4c2f-9e7c-f6f12f050789.webp",
+          "alt": "Siauras įvažiavimas tarp vartų stulpų ir matavimo juosta",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: editorial guide image explaining access measurement before mini-excavator work. Scene: ordinary Lithuanian detached house side entrance, two concrete gate posts and an open simple metal gate, gravel path continuing into a grassy garden, overcast daylight. Subject: the narrow passage and full ground approach, a single yellow tape measure stretched at ground level between the two posts but no readable numbers and no person. Landscape 3:2, frontal eye-level camera from outside gate, posts frame middle, path clearly visible, both posts within the mobile safe center. Color: cool slate gray, earthy rust gravel, muted green. Real imperfect utility scene, crisp editorial photography. No logos, text, watermarks, excavator squeezing through, no suggested safe clearance or model specification, no fake diagram. An illustrative scene, not a measured customer property.",
+          "bytes": 99208,
+          "sha256": "45612d1bdfbed01d56578cab97729ef6de67e6f5cc7bd7d90d4730dc3f13d6d5"
+        },
+        {
+          "id": "0ff7fdfc-c425-40df-a75e-fd24bbb30cb9",
+          "groupId": "cdc6b68e-6100-48af-b4f4-5284a6f3387b",
+          "src": "/content-assets/miniekskavatoriai/0ff7fdfc-c425-40df-a75e-fd24bbb30cb9.webp",
+          "alt": "Siauras įvažiavimas tarp vartų stulpų ir matavimo juosta",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: editorial guide image explaining access measurement before mini-excavator work. Scene: ordinary Lithuanian detached house side entrance, two concrete gate posts and an open simple metal gate, gravel path continuing into a grassy garden, overcast daylight. Subject: the narrow passage and full ground approach, a single yellow tape measure stretched at ground level between the two posts but no readable numbers and no person. Landscape 3:2, frontal eye-level camera from outside gate, posts frame middle, path clearly visible, both posts within the mobile safe center. Color: cool slate gray, earthy rust gravel, muted green. Real imperfect utility scene, crisp editorial photography. No logos, text, watermarks, excavator squeezing through, no suggested safe clearance or model specification, no fake diagram. An illustrative scene, not a measured customer property.",
+          "bytes": 66556,
+          "sha256": "b142eb7c42bf56dc73d16566e2ff004ddd017ff00a2dbefdcdcaae76c4d669f2"
+        },
+        {
+          "id": "efbbc750-6938-4be7-8194-3103e6c28fd7",
+          "groupId": "cdc6b68e-6100-48af-b4f4-5284a6f3387b",
+          "src": "/content-assets/miniekskavatoriai/efbbc750-6938-4be7-8194-3103e6c28fd7.webp",
+          "alt": "Siauras įvažiavimas tarp vartų stulpų ir matavimo juosta",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: editorial guide image explaining access measurement before mini-excavator work. Scene: ordinary Lithuanian detached house side entrance, two concrete gate posts and an open simple metal gate, gravel path continuing into a grassy garden, overcast daylight. Subject: the narrow passage and full ground approach, a single yellow tape measure stretched at ground level between the two posts but no readable numbers and no person. Landscape 3:2, frontal eye-level camera from outside gate, posts frame middle, path clearly visible, both posts within the mobile safe center. Color: cool slate gray, earthy rust gravel, muted green. Real imperfect utility scene, crisp editorial photography. No logos, text, watermarks, excavator squeezing through, no suggested safe clearance or model specification, no fake diagram. An illustrative scene, not a measured customer property.",
+          "bytes": 21196,
+          "sha256": "395742ed1c6b32625a15809b395eb737e11688460135c247e4df1e79d9eee77c"
+        }
+      ],
+      "crop": "3:2 contextual whole image"
+    },
+    {
+      "key": "operator",
+      "asset": "1f3415de-387f-439c-8fb6-241079e620ac",
+      "alt": "Stovinčio mini ekskavatoriaus operatoriaus vieta ir valdymo svirtys",
+      "source": "assets/operator.png",
+      "prompt": "assets/operator.prompt.txt",
+      "accepted": true,
+      "variants": [
+        {
+          "id": "1f3415de-387f-439c-8fb6-241079e620ac",
+          "groupId": "5ac4f338-2512-458c-bc3d-38f914bf7ed0",
+          "src": "/content-assets/miniekskavatoriai/1f3415de-387f-439c-8fb6-241079e620ac.webp",
+          "alt": "Stovinčio mini ekskavatoriaus operatoriaus vieta ir valdymo svirtys",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian editorial guide illustration for choosing excavator service with operator versus self-operated rental. Subject: compact unbranded orange mini excavator parked on firm level gravel, engine off, bucket resting on the ground. Three-quarter close camera view from outside showing the empty operator seat, control joysticks, canopy and part of the excavator arm, correct realistic single mechanical structure. Scene: quiet outdoors equipment context, not showroom, cloudy daylight, cool slate structure and earthy colors. Landscape 3:2 with operator station within central mobile-safe area. No human, no logo, no text, no watermark, no action or procedural training, no dangerous trench, no misleading stocked machine. Editorial illustrative photograph, not our vehicle or a client's job.",
+          "bytes": 193918,
+          "sha256": "fa09c84ee75b285c23e267b9c876f848848a78f6709bee460787e1f39ef80233"
+        },
+        {
+          "id": "f0075e44-ebf9-44bb-b572-752aa046c60b",
+          "groupId": "5ac4f338-2512-458c-bc3d-38f914bf7ed0",
+          "src": "/content-assets/miniekskavatoriai/f0075e44-ebf9-44bb-b572-752aa046c60b.webp",
+          "alt": "Stovinčio mini ekskavatoriaus operatoriaus vieta ir valdymo svirtys",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian editorial guide illustration for choosing excavator service with operator versus self-operated rental. Subject: compact unbranded orange mini excavator parked on firm level gravel, engine off, bucket resting on the ground. Three-quarter close camera view from outside showing the empty operator seat, control joysticks, canopy and part of the excavator arm, correct realistic single mechanical structure. Scene: quiet outdoors equipment context, not showroom, cloudy daylight, cool slate structure and earthy colors. Landscape 3:2 with operator station within central mobile-safe area. No human, no logo, no text, no watermark, no action or procedural training, no dangerous trench, no misleading stocked machine. Editorial illustrative photograph, not our vehicle or a client's job.",
+          "bytes": 134784,
+          "sha256": "5ab476d8d6ea8868b59475bc73752e92d1a71ddcd061b59d4251f73738be095a"
+        },
+        {
+          "id": "41c3aacd-7318-4574-94f6-b4b8b5b207f3",
+          "groupId": "5ac4f338-2512-458c-bc3d-38f914bf7ed0",
+          "src": "/content-assets/miniekskavatoriai/41c3aacd-7318-4574-94f6-b4b8b5b207f3.webp",
+          "alt": "Stovinčio mini ekskavatoriaus operatoriaus vieta ir valdymo svirtys",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian editorial guide illustration for choosing excavator service with operator versus self-operated rental. Subject: compact unbranded orange mini excavator parked on firm level gravel, engine off, bucket resting on the ground. Three-quarter close camera view from outside showing the empty operator seat, control joysticks, canopy and part of the excavator arm, correct realistic single mechanical structure. Scene: quiet outdoors equipment context, not showroom, cloudy daylight, cool slate structure and earthy colors. Landscape 3:2 with operator station within central mobile-safe area. No human, no logo, no text, no watermark, no action or procedural training, no dangerous trench, no misleading stocked machine. Editorial illustrative photograph, not our vehicle or a client's job.",
+          "bytes": 74306,
+          "sha256": "8ddb75132002c6a5ce64724639a02e8f1f62e0d58057247e5e75bcd07b2291f9"
+        },
+        {
+          "id": "0dcb3e0c-1124-4e0d-a057-f4d52e62fad8",
+          "groupId": "5ac4f338-2512-458c-bc3d-38f914bf7ed0",
+          "src": "/content-assets/miniekskavatoriai/0dcb3e0c-1124-4e0d-a057-f4d52e62fad8.webp",
+          "alt": "Stovinčio mini ekskavatoriaus operatoriaus vieta ir valdymo svirtys",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian editorial guide illustration for choosing excavator service with operator versus self-operated rental. Subject: compact unbranded orange mini excavator parked on firm level gravel, engine off, bucket resting on the ground. Three-quarter close camera view from outside showing the empty operator seat, control joysticks, canopy and part of the excavator arm, correct realistic single mechanical structure. Scene: quiet outdoors equipment context, not showroom, cloudy daylight, cool slate structure and earthy colors. Landscape 3:2 with operator station within central mobile-safe area. No human, no logo, no text, no watermark, no action or procedural training, no dangerous trench, no misleading stocked machine. Editorial illustrative photograph, not our vehicle or a client's job.",
+          "bytes": 51756,
+          "sha256": "667b58887125924e87f0d189fe011c50c6d79672b2d4633f345111b69e451f50"
+        },
+        {
+          "id": "8c5b0b0d-6636-4b53-9b42-211c7719e3d4",
+          "groupId": "5ac4f338-2512-458c-bc3d-38f914bf7ed0",
+          "src": "/content-assets/miniekskavatoriai/8c5b0b0d-6636-4b53-9b42-211c7719e3d4.webp",
+          "alt": "Stovinčio mini ekskavatoriaus operatoriaus vieta ir valdymo svirtys",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian editorial guide illustration for choosing excavator service with operator versus self-operated rental. Subject: compact unbranded orange mini excavator parked on firm level gravel, engine off, bucket resting on the ground. Three-quarter close camera view from outside showing the empty operator seat, control joysticks, canopy and part of the excavator arm, correct realistic single mechanical structure. Scene: quiet outdoors equipment context, not showroom, cloudy daylight, cool slate structure and earthy colors. Landscape 3:2 with operator station within central mobile-safe area. No human, no logo, no text, no watermark, no action or procedural training, no dangerous trench, no misleading stocked machine. Editorial illustrative photograph, not our vehicle or a client's job.",
+          "bytes": 19356,
+          "sha256": "202c9febdea3e536fa84d44df49805805190fe06bc9d5b7edda2fb2c954a59fe"
+        }
+      ],
+      "crop": "3:2 contextual whole image"
+    },
+    {
+      "key": "transport",
+      "asset": "c928e6ce-05f7-470b-bfe8-9d2c11f59461",
+      "alt": "Mini ekskavatorius ant transportavimo priekabos",
+      "source": "assets/transport.png",
+      "prompt": "assets/transport.prompt.txt",
+      "accepted": true,
+      "variants": [
+        {
+          "id": "c928e6ce-05f7-470b-bfe8-9d2c11f59461",
+          "groupId": "3d337475-9c99-441d-beb8-edd459abcaef",
+          "src": "/content-assets/miniekskavatoriai/c928e6ce-05f7-470b-bfe8-9d2c11f59461.webp",
+          "alt": "Mini ekskavatorius ant transportavimo priekabos",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: topic image for a Lithuanian guide about complete mini excavator hire costs including transport. Scene: firm gravel lay-by in ordinary Lithuanian countryside under overcast daylight. Subject: a modest unbranded flatbed transport trailer carrying a compact orange mini excavator, bucket lowered and machine securely tied down with realistic visible straps, ramps folded; no towing car registration visible, no people. Landscape 3:2 composition, side three-quarter view, whole trailer and small machine in central area, enough context to show transport is separate from digging. Cool slate metal, muted rust/orange and brown gravel, crisp restrained documentary-style editorial illustration. No logos, readable text, price tags, watermarks, distorted extra wheels or arms, no claim of our equipment or real performed delivery.",
+          "bytes": 201066,
+          "sha256": "9ddc45f74df25145d7474af8fc64fefc20ef7788df94c9bce843776e2aa063d7"
+        },
+        {
+          "id": "0f7dcab1-04c5-4268-8327-2aaeea08b784",
+          "groupId": "3d337475-9c99-441d-beb8-edd459abcaef",
+          "src": "/content-assets/miniekskavatoriai/0f7dcab1-04c5-4268-8327-2aaeea08b784.webp",
+          "alt": "Mini ekskavatorius ant transportavimo priekabos",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: topic image for a Lithuanian guide about complete mini excavator hire costs including transport. Scene: firm gravel lay-by in ordinary Lithuanian countryside under overcast daylight. Subject: a modest unbranded flatbed transport trailer carrying a compact orange mini excavator, bucket lowered and machine securely tied down with realistic visible straps, ramps folded; no towing car registration visible, no people. Landscape 3:2 composition, side three-quarter view, whole trailer and small machine in central area, enough context to show transport is separate from digging. Cool slate metal, muted rust/orange and brown gravel, crisp restrained documentary-style editorial illustration. No logos, readable text, price tags, watermarks, distorted extra wheels or arms, no claim of our equipment or real performed delivery.",
+          "bytes": 138656,
+          "sha256": "c16d2ff3ab9f0f7ba938427832ce5d2046caeec0517c8a56fdac5c3a60872d6e"
+        },
+        {
+          "id": "3a95b281-b693-4c45-9126-4dd57b5ae20e",
+          "groupId": "3d337475-9c99-441d-beb8-edd459abcaef",
+          "src": "/content-assets/miniekskavatoriai/3a95b281-b693-4c45-9126-4dd57b5ae20e.webp",
+          "alt": "Mini ekskavatorius ant transportavimo priekabos",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: topic image for a Lithuanian guide about complete mini excavator hire costs including transport. Scene: firm gravel lay-by in ordinary Lithuanian countryside under overcast daylight. Subject: a modest unbranded flatbed transport trailer carrying a compact orange mini excavator, bucket lowered and machine securely tied down with realistic visible straps, ramps folded; no towing car registration visible, no people. Landscape 3:2 composition, side three-quarter view, whole trailer and small machine in central area, enough context to show transport is separate from digging. Cool slate metal, muted rust/orange and brown gravel, crisp restrained documentary-style editorial illustration. No logos, readable text, price tags, watermarks, distorted extra wheels or arms, no claim of our equipment or real performed delivery.",
+          "bytes": 72792,
+          "sha256": "bf70dabd3b4aca85a9411da8a8f8ebb0b4bc4fbf1e09b42b66938cbac1421304"
+        },
+        {
+          "id": "7985a7ad-2107-45aa-b6cc-766120fc81af",
+          "groupId": "3d337475-9c99-441d-beb8-edd459abcaef",
+          "src": "/content-assets/miniekskavatoriai/7985a7ad-2107-45aa-b6cc-766120fc81af.webp",
+          "alt": "Mini ekskavatorius ant transportavimo priekabos",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: topic image for a Lithuanian guide about complete mini excavator hire costs including transport. Scene: firm gravel lay-by in ordinary Lithuanian countryside under overcast daylight. Subject: a modest unbranded flatbed transport trailer carrying a compact orange mini excavator, bucket lowered and machine securely tied down with realistic visible straps, ramps folded; no towing car registration visible, no people. Landscape 3:2 composition, side three-quarter view, whole trailer and small machine in central area, enough context to show transport is separate from digging. Cool slate metal, muted rust/orange and brown gravel, crisp restrained documentary-style editorial illustration. No logos, readable text, price tags, watermarks, distorted extra wheels or arms, no claim of our equipment or real performed delivery.",
+          "bytes": 49980,
+          "sha256": "08a0edf3330280abedac4a7d22d418647ab9debd06830a169b68fa9dc2a77d7f"
+        },
+        {
+          "id": "79cf8432-b3c5-44aa-be33-06f1387b2001",
+          "groupId": "3d337475-9c99-441d-beb8-edd459abcaef",
+          "src": "/content-assets/miniekskavatoriai/79cf8432-b3c5-44aa-be33-06f1387b2001.webp",
+          "alt": "Mini ekskavatorius ant transportavimo priekabos",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali AI iliustracija, sukurta šiam projektui 2026-10-01. Ne mūsų technika, darbuotojai ar kliento darbas.",
+          "prompt": "Use case: photorealistic-natural. Asset type: topic image for a Lithuanian guide about complete mini excavator hire costs including transport. Scene: firm gravel lay-by in ordinary Lithuanian countryside under overcast daylight. Subject: a modest unbranded flatbed transport trailer carrying a compact orange mini excavator, bucket lowered and machine securely tied down with realistic visible straps, ramps folded; no towing car registration visible, no people. Landscape 3:2 composition, side three-quarter view, whole trailer and small machine in central area, enough context to show transport is separate from digging. Cool slate metal, muted rust/orange and brown gravel, crisp restrained documentary-style editorial illustration. No logos, readable text, price tags, watermarks, distorted extra wheels or arms, no claim of our equipment or real performed delivery.",
+          "bytes": 17182,
+          "sha256": "5978a07a79627233215a008c8827e9d69588129494bc963bf15597799b380a05"
+        }
+      ],
+      "crop": "3:2 contextual whole image"
+    }
+  ]
+}

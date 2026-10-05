@@ -1,0 +1,61 @@
+{
+  "generator": "built-in ImageGen",
+  "privateDemo": true,
+  "assets": [
+    {
+      "id": "nails-neutral",
+      "prompt": "Use case: photorealistic-natural. Create one premium editorial photograph for Lithuanian beauty booking brand Madbeauty, a close-up of two adult hands with immaculate short rounded neutral nude manicure, anatomically correct five fingers per hand, relaxed natural pose on a light warm limestone table. Soft daylight, honest skin texture, refined restrained magazine photography, ivory and sage palette, subtle warm coral detail, landscape 3:2 framing with crop room. No faces, no text, no logos, no collage, no watermarks. This is original illustrative imagery for a private fictional demo, not evidence of a real practitioner portfolio.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-da316cef-5e4a-41b9-8750-e8c25d6d1a7a.png"
+    },
+    {
+      "id": "nails-color",
+      "prompt": "Use case: photorealistic-natural. One refined editorial beauty photograph for Madbeauty: a single adult hand with five anatomically correct fingers, beautifully manicured medium-short oval nails with warm red-coral nail polish, gently holding a small ivory ceramic cup against sage linen. Tactile real skin, window daylight, contemporary Lithuanian beauty editorial, landscape 3:2 framing, distinctive intimate diagonal composition, clear nails. No text, no logos, no collage, no watermark. Original illustration for fictional private demo.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-ff025127-b8ea-4fcf-9e3f-292a61e4139a.png"
+    },
+    {
+      "id": "nails-french",
+      "prompt": "Use case: photorealistic-natural. One premium editorial photograph for Madbeauty: two naturally positioned adult hands with correct anatomy, elegant short almond French manicure with thin white tips, on folded ivory linen and pale olive background. Macro detail of nails, real skin texture, soft side daylight, understated beauty magazine photo, landscape 3:2 with room to crop. No jewelry overload, no text, no logos, no collage, no watermark. Original fictional demo illustration, not real portfolio evidence.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-db475cfb-3e27-4178-ae1d-a529eeb8ea9a.png"
+    },
+    {
+      "id": "studio",
+      "prompt": "Use case: photorealistic-natural. One original premium editorial interior photograph for Madbeauty private beauty marketplace demo. Small independent contemporary beauty studio in Lithuania, beautiful manicure station by a tall window, ivory plaster, natural oak, sage upholstered chair, subtle terracotta ceramics, tidy realistic professional instruments, no people, no signage. Warm natural daylight, architectural photography with believable proportions, wide landscape 3:2. No render look, no luxury hotel, no text, no logos, no collage, no watermark. Fictional interior not an actual venue.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-55e467b2-514a-4bdb-8cad-bcd32b3a3e1a.png"
+    },
+    {
+      "id": "hair",
+      "prompt": "Use case: photorealistic-natural. One premium editorial photograph for Madbeauty beauty booking platform private demo. A professional stylist's hands finishing an adult client's shoulder-length chestnut hair, view from behind, no recognizable face. Believable scissors held safely outside hair, clean light studio with sage and natural oak, authentic hair strand texture, soft window daylight, warm ivory background. Landscape 3:2 medium-close framing. No text, no logo, no collage, no watermark, no distorted tools. Original illustration, not a real client result.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-ad34dca1-5269-4f43-9599-9937c22aec23.png"
+    },
+    {
+      "id": "brows",
+      "prompt": "Use case: photorealistic-natural. One tasteful premium editorial photograph for Madbeauty private beauty demo: close-up of an adult woman's eye and natural eyebrow while a professional gently brushes brow hairs with a clean spoolie. Natural skin texture, correct hand anatomy, clean technique, calm daylight and warm ivory backdrop, subtle sage styling. Landscape 3:2 with generous crop space. No before-after layout, no medical promises, no text, no logos, no watermark. Original fictional demo illustration.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-6da7f317-3542-427c-bd4e-52bfbb2764fc.png"
+    },
+    {
+      "id": "massage",
+      "prompt": "Use case: photorealistic-natural. Create one editorial still-life photograph for a beauty booking website private demo, representing massage and relaxation without people: tidy professional treatment room with a neatly made fully covered massage bed, folded ivory towels, sage blanket, warm oak side table, small unbranded oil bottle, soft daylight through curtains. Real architectural photography, inviting clean restrained contemporary studio, landscape 3:2. No people, no text, no logos, no medical claims, no watermark.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-16cc78d6-1bd6-45b4-b83f-e0884f18b2f7.png"
+    },
+    {
+      "id": "workspace",
+      "prompt": "Use case: photorealistic-natural. One premium editorial photograph for Madbeauty business onboarding private demo: overhead oblique view of a small independent nail professional's tidy worktable, open unbranded blank-screen laptop (screen naturally dark without UI), elegant nail swatch fan with coral nude and burgundy shades, clean brush tools, appointment notebook with blank pages, ivory ceramic cup, sage linen, real oak. Natural side daylight, refined realistic magazine photography, landscape 3:2. No words, no calendar dates, no logos, no watermarks, no collage. Original fictional workspace illustration.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-a0ee174f-7b03-4314-9e51-5db65394bdfb.png"
+    },
+    {
+      "id": "pedicure",
+      "prompt": "Use case: photorealistic-natural. One original premium editorial still-life for a pedicure service on Madbeauty private demo: tidy professional pedicure station with white basin, neatly folded ivory towels, clean stainless nail tools on a tray, coral nail polish bottle without labels, sage chair. No people or body parts. Soft real daylight, oak and plaster, landscape 3:2, realistic modern studio. No logos, text, watermark or collage.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-59ccad2e-f7c0-4947-9fa5-1618e23f7324.png"
+    },
+    {
+      "id": "skincare",
+      "prompt": "Use case: photorealistic-natural. One original editorial photo for a facial skincare beauty service on Madbeauty private demo: adult woman reclining modestly with an ivory headband, tight head-and-shoulders framing, professional hand applying a thin cosmetic clay mask to her cheek using a clean brush. Visible face, calm expression, natural skin detail, softly lit clean salon, ivory and sage. Landscape 3:2. No medical equipment or claims, no text, no logos, no collage, no watermark.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-6484856d-cd43-4031-9c7f-762d5bec9497.png"
+    },
+    {
+      "id": "lashes",
+      "prompt": "Use case: photorealistic-natural. One original premium editorial photograph for eyelash care on Madbeauty private demo: close-up of adult woman's gently closed eye with neat natural-looking long eyelashes, professional hand lightly grooming lashes with clean spoolie, natural skin texture, correctly formed hand and tool, calm soft window light, warm ivory background, landscape 3:2. No invasive procedure, no medical claims, no text, logos, collage or watermark. Not a real practitioner's portfolio.",
+      "path": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-35d9bbad-a60f-4c49-9c66-390ac9093773.png"
+    }
+  ]
+}

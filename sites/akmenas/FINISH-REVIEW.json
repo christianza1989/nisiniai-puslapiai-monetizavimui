@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "siteId": "akmenas",
+  "reviewDate": "2026-10-01",
+  "reviewer": "impeccable_finish_reviewer",
+  "round": "initial",
+  "disposition": "fix",
+  "scope": "Subjective file-only finish/art-direction review. Not a WCAG, legal, SEO ranking, demand, production-launch or performance certification.",
+  "inputs": {
+    "product": "sites/akmenas/PRODUCT.md",
+    "direction": "sites/akmenas/DIRECTION.md",
+    "research": "sites/akmenas/research/RESEARCH.md",
+    "artifact": [
+      "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/akmenas-site.tsx",
+      "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/akmenas-site.module.css"
+    ],
+    "approvedContent": "content-studio/output/akmenas/content-package.json",
+    "buildMode": "code-led",
+    "approvedComp": null,
+    "qualityReferenceScope": "Inspected the four named Laminam/Marmuras captures. Laminam blank lazy-load regions and mobile cookie overlay limit its usable reference evidence to visible typography/ground."
+  },
+  "evidence": {
+    "status": "PASS",
+    "captures": [
+      {
+        "name": "home-desktop.png",
+        "width": 1425,
+        "height": 4459,
+        "sha256": "eb68a9bb4fb0d0bda0c8d88177f4b9b7b18e6d1b590e9d6930f2bedb455715d0",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "home-mobile.png",
+        "width": 375,
+        "height": 6557,
+        "sha256": "3b1c07199f8446570b48d67669bd323c3f0d92b2b8dee5e4e83ddcef3e792408",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "home-320.png",
+        "width": 305,
+        "height": 6750,
+        "sha256": "ea614090932b67622b613e4549a9caed051340c62e0e5e62801e1c19529c61f4",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "home-tablet.png",
+        "width": 753,
+        "height": 4830,
+        "sha256": "f19d3a4f57de552674bd4bfdd9c231bb84e6f89bb3cfc8b08cc25c18cb77f987",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "index-320.png",
+        "width": 305,
+        "height": 3523,
+        "sha256": "0a5b80b76bfa6533ccff4043b38e5abcb4eefbf3211523e4e9e2f44fc549af9d",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "form-mobile.png",
+        "width": 375,
+        "height": 3350,
+        "sha256": "5509cca97afe74e7f2b13f1d71e6fd5801b6e8198e91155302eb65d6a6059207",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "form-320.png",
+        "width": 305,
+        "height": 3755,
+        "sha256": "49b0cfed90ac3943f0a0fc0495423f16039ee91d4eb8d1fe610daf7fecb9708b",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "guide-tablet.png",
+        "width": 753,
+        "height": 5733,
+        "sha256": "82dd054046b032c61896839bc9e9863ce935e334edb74aec4a3cea3667f288ff",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "materials-1440.png",
+        "width": 1425,
+        "height": 4764,
+        "sha256": "f77979cee15beb38b10450877fd72c5054c5be82230f345ab83fa1278dd634fa",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "materials-390.png",
+        "width": 375,
+        "height": 6964,
+        "sha256": "cee8ff5d69e47057bdb07f52a2623cefb543c6c2fb34cf56b4b940338032f584",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "materials-320.png",
+        "width": 305,
+        "height": 8166,
+        "sha256": "1dcd3dc42ea66845cb9a39f40280b42e3ad310643b74e8c2066c5b970d891f53",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "planning-1440.png",
+        "width": 1425,
+        "height": 4551,
+        "sha256": "6adf5ae48aa7492080e3ea8ffd0ae3265c0212f99e558d5667c739ba0e3f8cf9",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "planning-390.png",
+        "width": 375,
+        "height": 6400,
+        "sha256": "7c94f96a27e5d04b568f7afcc54213a346a5d3e36647f8baa3dc12167a55b775",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "planning-320.png",
+        "width": 305,
+        "height": 7311,
+        "sha256": "94a3d0f7d05821a8e9d1a78f45473a97ec71b2608ba56512aaa0e841fe4a2aca",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "care-1440.png",
+        "width": 1425,
+        "height": 4645,
+        "sha256": "6131fb2f00ff32194bfa7acb11954da760220ea9a1390e6152c909fb705a7bb8",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "care-390.png",
+        "width": 375,
+        "height": 6678,
+        "sha256": "22d63fd1bb011613ed0ffa521e6a509b293d98518f438efabf5cb229d2dacfc7",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "care-320.png",
+        "width": 305,
+        "height": 7774,
+        "sha256": "de8dc493a7def3eb476625bd36b213f0542b1dc58a3fb8a99e8de4d6255009f7",
+        "valid": true,
+        "visuallyInspected": true
+      }
+    ],
+    "aliasesMatch": true,
+    "interventions": [
+      "Care desktop original full-page capture had misplaced sticky contents; replacement first inherited1280 viewport; final file recaptured at1440 and reopened with contents aligned."
+    ],
+    "limitations": [
+      "200% actual browser enlargement UNVERIFIED; narrow reflow is distinct.",
+      "No live browser use, tests re-run or new detector pass by reviewer.",
+      "Screenshot background colour differs from CSS token; cause unknown.",
+      "Original concept-roll tool output not persisted; recollection is not independent provenance."
+    ]
+  },
+  "persistence": {
+    "status": "PASS",
+    "detail": "PRODUCT exists; code-led build has no comp-round/state/diff obligations. New-world DESIGN persistence follows review. Seed evidence gap belongs to FORM contract, F1."
+  },
+  "fidelity": [
+    {
+      "element": "TYPE",
+      "status": "match",
+      "evidence": "Fraunces/Manrope in actual title, headings and body fit the home-material/editorial world. No imitation system-display face. The five detector warnings are repetitions of a generic font warning, not visible defects."
+    },
+    {
+      "element": "MATERIAL",
+      "status": "match",
+      "evidence": "Kitchen, four sample plates, planning sheet and daily-care images are visibly shipped raster media; CSS does not fake physical slabs, contours or texture."
+    },
+    {
+      "element": "GROUND",
+      "status": "match",
+      "evidence": "DIRECTION names a warm paper surface without an exact pixel target. Actual sample values are #fff3d9/#fff2d8; source token is #f5f1e9. Cause of this screenshot/token discrepancy is unknown; the qualitative warm-paper promise holds."
+    },
+    {
+      "element": "Desktop and narrow opening",
+      "status": "match",
+      "evidence": "1440 and 320/390 pair the two-part title with useful explanation/comparison action and tactile image; narrow order is title, explanation, actions, photograph."
+    },
+    {
+      "element": "Tablet first viewport",
+      "status": "contradicted",
+      "evidence": "home-tablet.png at 768: align-items:end holds the title substantially below the tall right-hand copy, weakening the title's first-viewport reading priority."
+    },
+    {
+      "element": "Material atlas / middle",
+      "status": "match",
+      "evidence": "Four sample plates accompany named line-separated material questions; parallel guide tiles correspond to three distinct questions."
+    },
+    {
+      "element": "Guides / source and next action",
+      "status": "match",
+      "evidence": "All three guides at 1440,390,320 and comparison at768 show relevant lead images, section navigation, source context and useful next steps. Recaptured care-1440 aligns contents with lead image."
+    },
+    {
+      "element": "Contact / footer / truth",
+      "status": "match",
+      "evidence": "Form instructions, consent and local-preview limits are visible. MB Pinet/info@pinet.lt are present; no phone, address, supplier, price, stock, fabrication or response deadline is invented."
+    },
+    {
+      "element": "Low-motion controls",
+      "status": "adaptation",
+      "evidence": "DIRECTION signature explicitly limits motion to actionable state feedback; native controls and quiet reading prioritize the actual informational product."
+    }
+  ],
+  "contract": {
+    "THESIS": "match: kitchen material choice and useful inquiry, not fabrication.",
+    "OWN_WORLD": "match: material atlas, warm paper, tactile images, serif editorial voice.",
+    "STORY": "match: compare, prepare, read care, then ask a concrete question.",
+    "FIRST_VIEWPORT": "contradicted at768; desktop and320/390 match.",
+    "FORM": "seed key present; original roll output UNVERIFIED, F1. Material rows, guide contents and quiet state feedback match."
+  },
+  "ceiling": {
+    "detail": "Material framing, editorial type and distinct section modes use the world's useful devices. A more explicit annotated comparison worksheet remains an optional ceiling opportunity, not a missing requirement; more ornament/depth/motion is not justified by this product. 768 opening requires F2.",
+    "criteria": [
+      {
+        "criterion": "niche recognition",
+        "points": 2,
+        "evidence": "home-desktop.png and home-mobile.png (390 viewport): kitchen worktop close-up, 'Akmuo virtuvei' title and four material samples identify the task immediately."
+      },
+      {
+        "criterion": "hierarchy",
+        "points": 2,
+        "evidence": "home-desktop.png, home-mobile.png, home-320.png: large serif title, smaller explanatory copy, filled material-comparison action and quieter inquiry link; guide headings remain distinct from body."
+      },
+      {
+        "criterion": "composition",
+        "points": 1,
+        "evidence": "home-desktop.png: aligned title/photo/material rows; home-tablet.png: bottom-aligned headline begins near y=414 while explanatory copy starts near y=176, leaving a large empty upper-left field."
+      },
+      {
+        "criterion": "full-page rhythm",
+        "points": 2,
+        "evidence": "home-desktop.png/home-mobile.png: wide kitchen image, material definitions, three justified parallel guide tiles, planning checklist and direct inquiry band; all guides use section spacing, sources and next-step rows."
+      },
+      {
+        "criterion": "mobile composition",
+        "points": 2,
+        "evidence": "home-320.png/home-mobile.png, all three *-320.png/*-390.png guides, index-320.png, form-320.png/form-mobile.png: readable single-column order, intact image framing, expanded native contents and visible form instructions/consent."
+      },
+      {
+        "criterion": "identity beyond hero",
+        "points": 2,
+        "evidence": "materials/planning/care captures, guide-tablet.png, index-320.png and form captures: serif headings, warm field, line-separated information, restrained brown actions and consistent footer."
+      },
+      {
+        "criterion": "craft/function",
+        "points": 2,
+        "evidence": "All 17 final captures show loaded relevant imagery and complete content; self-hosted fonts/SVG arrows/native links and form labels match artifact code. Parent reports keyboard, empty-form and D1 success/error checks; those were not re-run by this file-only reviewer."
+      }
+    ],
+    "points": 13,
+    "maxPoints": 14,
+    "score": 9.285714285714286,
+    "scoreFormula": "10 * points / 14",
+    "roundedScore": 9.29
+  },
+  "material_fixes": [
+    {
+      "id": "F1",
+      "check": "contract / FORM seed provenance",
+      "severity": "material",
+      "action": "Persist source-backed concept-roll output for seed aea5f86f, or reproduce the roll with the same seed and inputs and label that evidence as a reproduction; do not present DIRECTION/RESEARCH prose or recollection as independently corroborated original output.",
+      "evidence": "Parent explicitly reports no persisted CLI log, only notes/tool-output recollection. The key exists, but its printed roll cannot presently be corroborated."
+    },
+    {
+      "id": "F2",
+      "check": "fidelity / FIRST VIEWPORT / tablet composition",
+      "severity": "material",
+      "action": "At 768, give the title first-viewport reading priority with a tablet-specific stacked hero or top-aligned columns; remove the large empty field above the headline while preserving desktop and 320/390 composition, then recapture those same files.",
+      "evidence": "home-tablet.png top inspection: explanation near y=176, headline near y=414; .heroTop uses two columns and align-items:end until max-width760."
+    }
+  ],
+  "keep": "Keep the full-width tactile kitchen image, truthful material questions, distinct homepage section rhythm, self-hosted editorial type, narrow single-column readability and explicit local-form limits.",
+  "floor": {
+    "status": "PASS",
+    "detail": "No banned kickers, section-number decoration, gradient text, glyph icon substitute, hard block shadow, artificial organic mask or nested generic-card scaffold found. Brown SVG arrows and real imagery are coherent. Fraunces warning reviewed intentionally, not ignored."
+  }
+}

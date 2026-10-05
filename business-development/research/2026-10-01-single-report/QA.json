@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-01T08:32:17Z",
+  "timezone": "Europe/Vilnius",
+  "scope": "Research and registry consistency only; no runtime, commercial or website acceptance",
+  "result": "PASS",
+  "checks": {
+    "stateAndSourcesJsonParsed": true,
+    "sourceEntries": 12,
+    "uniqueSourceIds": 12,
+    "localMarkdownLinksChecked": 25,
+    "brokenLocalLinks": 0,
+    "newIdea": "BDEV-0002",
+    "newIdeaStatus": "proposed",
+    "nextIdeaNumber": 3,
+    "existingApprovedWorkPreserved": "BDEV-0001 / implementing / root executor",
+    "scenarioMargins": [150, -30, -270],
+    "scenarioBreakEvenHours": 13
+  },
+  "commercialEvidence": "Public historical buyer intent and competitor offers; no own BI requests, payment or fulfilment",
+  "implementationStatus": "not started",
+  "approvalStatus": "no new owner approval",
+  "writtenScope": ["business-development research, idea, index and continuity state", "One own coordination paragraph in WORKSTREAMS.md"],
+  "operationalActions": {"customerMessages": 0, "paidSubscriptions": 0, "liveCampaigns": 0, "runtimeChanges": 0}
+}

@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-01T12:19:32.537Z",
+  "evidence": [
+    {
+      "h1": "Laiptų kaina: kaip palyginti sąmatas",
+      "images": [
+        {
+          "alt": "Laiptų karkaso, medinių pakopų ir turėklo jungtys viename vaizde",
+          "currentSrc": "http://127.0.0.1:8899/content-assets/laiptucentras/e8bb300d-e92b-4b31-bcb8-a1d772912780.webp",
+          "loaded": true,
+          "sizes": "(max-width: 800px) calc(100vw - 44px), 740px"
+        }
+      ],
+      "scrollWidth": 375,
+      "tocOpen": false,
+      "url": "http://127.0.0.1:8899/laiptu-kaina",
+      "viewport": 390
+    },
+    {
+      "h1": "Medis, metalas ar betonas: ką iš tiesų renkatės?",
+      "images": [
+        {
+          "alt": "Ąžuolo pakopos, metalinio karkaso ir betoninio pagrindo detalės iš arti",
+          "currentSrc": "http://127.0.0.1:8899/content-assets/laiptucentras/4e86a067-8884-4f37-9bde-fb0edaa7c8d5.webp",
+          "loaded": true,
+          "sizes": "(max-width: 800px) calc(100vw - 44px), 740px"
+        }
+      ],
+      "scrollWidth": 375,
+      "tocOpen": false,
+      "url": "http://127.0.0.1:8899/laiptu-konstrukcijos",
+      "viewport": 390
+    },
+    {
+      "images": [
+        {
+          "alt": "Laiptų karkaso, medinių pakopų ir turėklo jungtys viename vaizde",
+          "currentSrc": "http://127.0.0.1:8899/content-assets/laiptucentras/e8bb300d-e92b-4b31-bcb8-a1d772912780.webp",
+          "loaded": true,
+          "sizes": "(max-width: 450px) calc(100vw - 44px), (max-width: 800px) calc(31vw - 13.64px), (max-width: 1600px) 23.4vw, 375px"
+        },
+        {
+          "alt": "Ąžuolo pakopos, metalinio karkaso ir betoninio pagrindo detalės iš arti",
+          "currentSrc": "http://127.0.0.1:8899/content-assets/laiptucentras/4e86a067-8884-4f37-9bde-fb0edaa7c8d5.webp",
+          "loaded": true,
+          "sizes": "(max-width: 450px) calc(100vw - 44px), (max-width: 800px) calc(31vw - 13.64px), (max-width: 1600px) 23.4vw, 375px"
+        },
+        {
+          "alt": "Neužbaigta betoninė laiptinė ir atvira viršutinio aukšto anga",
+          "currentSrc": "http://127.0.0.1:8899/content-assets/laiptucentras/56dfa21a-9733-4245-8456-cadebc460628.webp",
+          "loaded": true,
+          "sizes": "(max-width: 450px) calc(100vw - 44px), (max-width: 800px) calc(31vw - 13.64px), (max-width: 1600px) 23.4vw, 375px"
+        }
+      ],
+      "scrollWidth": 390,
+      "url": "http://127.0.0.1:8899/gidai",
+      "viewport": 390
+    },
+    {
+      "quoteResult": "Neaiškių eilučių: A – 6, B – 6.\n\nSkirtingai pažymėta apimtis: Pakopos. Prieš lygindami sumas paprašykite patikslinimo."
+    },
+    {
+      "afterReload": "Neaiškių eilučių: A – 7, B – 7."
+    },
+    {
+      "scrollWidth": 753,
+      "url": "http://127.0.0.1:8899/",
+      "viewport": 768
+    }
+  ],
+  "menu": "Actual native details opened and closed; four navigation destinations present",
+  "emptyForm": "Native required name/email/message/consent blocked submit; name focused",
+  "honeypot": "Offscreen website input is existing hidden trap, tabIndex=-1; not visible control overflow",
+  "captureLimit": "Viewport-only screenshot under device override produced a scaled artifact. Correct clip and fullPage captures saved separately; no image manually edited.",
+  "baselineZoom": "Not established; 200% remains UNVERIFIED"
+}

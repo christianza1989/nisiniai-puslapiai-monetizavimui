@@ -1,0 +1,1309 @@
+{
+  "schemaVersion": 1,
+  "siteId": "laiptucentras",
+  "canonicalHost": "laiptucentras.lt",
+  "locale": "lt-LT",
+  "site": {
+    "id": "laiptucentras",
+    "name": "Laiptų centras",
+    "canonicalHost": "laiptucentras.lt",
+    "locale": "lt-LT",
+    "timezone": "Europe/Vilnius",
+    "brand": {
+      "accent": "#293e34"
+    },
+    "offer": "Vidaus laiptų įrengimo poreikio registracija ir pasiruošimo užklausai gidai",
+    "contact": {
+      "email": "info@pinet.lt",
+      "phone": ""
+    }
+  },
+  "pages": [
+    {
+      "siteId": "laiptucentras",
+      "type": "home",
+      "slug": "",
+      "title": "Laiptai prasideda nuo gero plano.",
+      "description": "Vidaus laiptų pasirinkimas: konstrukcija, pakopos, darbų apimtis ir pasiruošimas užklausai. Gidai ir skaidri poreikio registracija.",
+      "intent": "Kaip pasiruošti individualių vidaus laiptų įrengimui?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Konstrukcija, pakopos, turėklai. Sudėkite juos į vieną aiškų planą – prieš lygindami kainas ir rinkdamiesi, kas įrengs jūsų laiptus."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu registruojame vidaus laiptų įrengimo poreikį. Gamybos partnerystės dar nesudarytos: registracija nėra užsakymas ir negarantuoja pasiūlymo ar meistro atvykimo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kokio darbo reikia jūsų namams?"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Nauji vidaus laiptai – kai reikia suderinti konstrukciją, pakopas, turėklus ir montavimą.",
+            "Pakopos ant betono – kai konstrukcija jau yra, o reikia suplanuoti medinę apdailą ir turėklus.",
+            "Keičiami laiptai – kai pirmiausia būtina įvertinti esamos konstrukcijos būklę ir keitimo apimtį."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Mediena matoma. Konstrukcija lemia sprendimą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ąžuolinė pakopa gali būti ant medžio, metalo ar betono. Todėl pirmiausia verta suprasti, kas jau yra jūsų objekte ir ką reikės įrengti. Konstrukcijų pasirinkimo gidas padeda atskirti pagrindą nuo apdailos."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Trys klausimai prieš pirmą pokalbį"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ką įrengsime? Atskirkite visus naujus laiptus nuo vien pakopų ar turėklų.",
+            "Kokia erdvė? Užrašykite angos ir grindų informaciją, turėkite planą.",
+            "Kas įeina į kainą? Lyginkite vienodą darbų apimtį, įskaitant matavimus ir montavimą."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Papasakokite apie planuojamus laiptus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nurodykite darbo rūšį, vietovę ir planavimo etapą. MB Pinet naudos šiuos duomenis poreikiui įvertinti ir susisiekti su jumis. Gamintojams automatiškai jų neperduodame."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [
+        {
+          "id": "16555c32-aab9-474a-8fcc-810eea0250e0",
+          "src": "/content-assets/laiptucentras/16555c32-aab9-474a-8fcc-810eea0250e0.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "455595e1-770a-4a42-9d82-4ac4eac82731",
+          "src": "/content-assets/laiptucentras/455595e1-770a-4a42-9d82-4ac4eac82731.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "767bec54-8d61-4052-b58b-d9703c333ae6",
+          "src": "/content-assets/laiptucentras/767bec54-8d61-4052-b58b-d9703c333ae6.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "f134df23-1e0c-4c98-963a-3967a870be7b",
+          "src": "/content-assets/laiptucentras/f134df23-1e0c-4c98-963a-3967a870be7b.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "51069deb-f932-42f7-8247-12978efe3580",
+          "src": "/content-assets/laiptucentras/51069deb-f932-42f7-8247-12978efe3580.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "fe34d64f-8b3c-472a-be7d-9e1f7e48c78f",
+          "src": "/content-assets/laiptucentras/fe34d64f-8b3c-472a-be7d-9e1f7e48c78f.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "c244d9bc-0a43-4918-a207-dd975ad3bd25",
+          "src": "/content-assets/laiptucentras/c244d9bc-0a43-4918-a207-dd975ad3bd25.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "33f63d79-59c0-47b7-b569-5d03ae37a7f8",
+          "src": "/content-assets/laiptucentras/33f63d79-59c0-47b7-b569-5d03ae37a7f8.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "2d3eb5c5-cd19-4153-8894-36363776b082",
+          "src": "/content-assets/laiptucentras/2d3eb5c5-cd19-4153-8894-36363776b082.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "4a5e1748-e235-48ae-8d8b-2937c35baf63",
+          "src": "/content-assets/laiptucentras/4a5e1748-e235-48ae-8d8b-2937c35baf63.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "2232d1fc-120b-4d78-abb2-17009cccc1ce",
+          "label": "Konstrukcijų pasirinkimo gidas"
+        },
+        {
+          "targetPageId": "f432760a-5746-4e9f-a3ae-47ceea9ba7ef",
+          "label": "Visi pasiruošimo gidai"
+        },
+        {
+          "targetPageId": "461ffd03-404b-4187-849f-7a4fcd809938",
+          "label": "Vidaus laiptų poreikio registracija"
+        }
+      ],
+      "id": "673ecd82-f98b-4fa2-af98-7e6fd6615a3c",
+      "revisionHash": "a38af10b00b34729d9ca2e5fdc2274240740c512de830e72f42bd898fbafb885",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "a38af10b00b34729d9ca2e5fdc2274240740c512de830e72f42bd898fbafb885",
+        "approvedAt": "2026-10-01T04:15:52.796Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "service",
+      "slug": "gidai",
+      "title": "Gidai prieš užsakant laiptus",
+      "description": "Trys skirtingi sprendimai: kaip palyginti laiptų kainą, išsirinkti konstrukciją ir surinkti informaciją prieš matavimą.",
+      "intent": "Kur rasti naudingus vidaus laiptų užsakymo pasiruošimo atsakymus?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Pradėkite nuo klausimo, kuris šiuo metu stabdo sprendimą. Gidai padeda susitarti dėl apimties ir pasiruošti pokalbiui su gamintoju; jie nepakeičia objekto matavimo ar konstrukcijos projekto."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jeigu jau turite sąmatą, rinkitės kainos palyginimą. Jei konstrukcija dar neaiški – konstrukcijų pasirinkimą. Prieš siunčiant planą ar užklausą pravers matavimo pasiruošimas."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [
+        {
+          "id": "b96b14f4-7628-4895-bcac-6afe3b06d5c1",
+          "src": "/content-assets/laiptucentras/b96b14f4-7628-4895-bcac-6afe3b06d5c1.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "9e6d9edf-8e0a-400e-ba34-2bdf28406b89",
+          "src": "/content-assets/laiptucentras/9e6d9edf-8e0a-400e-ba34-2bdf28406b89.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "1917dd47-c334-487b-a16d-e992c7707853",
+          "src": "/content-assets/laiptucentras/1917dd47-c334-487b-a16d-e992c7707853.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "73f27ec6-b930-45e7-b1cd-91c46a8fb6b2",
+          "src": "/content-assets/laiptucentras/73f27ec6-b930-45e7-b1cd-91c46a8fb6b2.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "3806da76-b51e-4635-988a-1d0a3b87dbd4",
+          "src": "/content-assets/laiptucentras/3806da76-b51e-4635-988a-1d0a3b87dbd4.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "fe34d64f-8b3c-472a-be7d-9e1f7e48c78f",
+          "src": "/content-assets/laiptucentras/fe34d64f-8b3c-472a-be7d-9e1f7e48c78f.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "c244d9bc-0a43-4918-a207-dd975ad3bd25",
+          "src": "/content-assets/laiptucentras/c244d9bc-0a43-4918-a207-dd975ad3bd25.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "33f63d79-59c0-47b7-b569-5d03ae37a7f8",
+          "src": "/content-assets/laiptucentras/33f63d79-59c0-47b7-b569-5d03ae37a7f8.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "2d3eb5c5-cd19-4153-8894-36363776b082",
+          "src": "/content-assets/laiptucentras/2d3eb5c5-cd19-4153-8894-36363776b082.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "4a5e1748-e235-48ae-8d8b-2937c35baf63",
+          "src": "/content-assets/laiptucentras/4a5e1748-e235-48ae-8d8b-2937c35baf63.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "1e84b0cf-e101-4954-a367-862c16b14049",
+          "src": "/content-assets/laiptucentras/1e84b0cf-e101-4954-a367-862c16b14049.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "cf7b4af3-cb71-4951-8436-cb80fc78577a",
+          "src": "/content-assets/laiptucentras/cf7b4af3-cb71-4951-8436-cb80fc78577a.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "a303d29a-4704-443b-b617-db705bf00b8e",
+          "src": "/content-assets/laiptucentras/a303d29a-4704-443b-b617-db705bf00b8e.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "dd4b48e9-1c5f-41e8-96c0-60d73c39ae38",
+          "src": "/content-assets/laiptucentras/dd4b48e9-1c5f-41e8-96c0-60d73c39ae38.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "f310f4b3-352b-4f0c-9d74-cad0cfd352e5",
+          "src": "/content-assets/laiptucentras/f310f4b3-352b-4f0c-9d74-cad0cfd352e5.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "80b5feac-482b-4e7a-b2ae-49fc3fb3c754",
+          "label": "Sąmatos palyginimo gidas"
+        },
+        {
+          "targetPageId": "2232d1fc-120b-4d78-abb2-17009cccc1ce",
+          "label": "Konstrukcijų pasirinkimo gidas"
+        },
+        {
+          "targetPageId": "221b8f30-5f8f-4d1a-a8d4-d96601ac1569",
+          "label": "Matavimo pasiruošimo gidas"
+        }
+      ],
+      "id": "f432760a-5746-4e9f-a3ae-47ceea9ba7ef",
+      "revisionHash": "9cb3604f04b6281bf83b590fa812045604025c7ea241cbdbf32cd5e873741216",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "9cb3604f04b6281bf83b590fa812045604025c7ea241cbdbf32cd5e873741216",
+        "approvedAt": "2026-10-01T04:15:52.862Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "service",
+      "slug": "vidaus-laiptu-irengimas",
+      "title": "Vidaus laiptų įrengimo poreikio registracija",
+      "description": "Aprašykite naujų laiptų, pakopų ant betono ar keičiamų laiptų poreikį. Išankstinė registracija be gamybos ir pasiūlymo garantijos.",
+      "intent": "Kaip užregistruoti konkretų planuojamų vidaus laiptų darbą?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Jei planuojate vidaus laiptus individualiame name, galite užregistruoti poreikį. Šis projektas kol kas tiria, kokių darbų žmonės ieško; MB Pinet nėra patvirtinusi laiptų gamybos ar montavimo partnerių. Dabar nesuteikiame laiptų kainos pasiūlymo, neatvykstame matuoti ir nepriimame užsakymų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kokius poreikius registruojame"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Nauji vidaus mediniai arba medžio ir metalo laiptai.",
+            "Medinės pakopos ir turėklai ant jau esančios betoninės konstrukcijos.",
+            "Esamų vidaus laiptų keitimas, kai norite aiškiau apsibrėžti darbų apimtį."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką parašyti"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pakanka darbo rūšies, miesto ar rajono, dabartinio įrengimo etapo ir pageidaujamo laikotarpio. Jei matmenų dar neturite, taip ir parašykite. Tikslus adresas, asmens kodas ir šeimos duomenys pirmai registracijai nereikalingi. Nuotraukų įkėlimo formoje nėra; jei norite jas pateikti, naudokite svetainės el. paštą ir nesiųskite jautrių dokumentų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kas vyksta po registracijos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Poreikio įrašas priimamas tada, kai jį pavyksta išsaugoti. Operatorius gali susisiekti jūsų nurodytu el. paštu dėl šio poreikio patikslinimo; konkretaus atsakymo laiko nežadame. Gamintojams kontaktų automatiškai neperduodame. Jei ateityje atsirastų tinkamas vykdytojas, perdavimą atskirai suderintume su jumis."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kada reikia kito kelio"
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei laiptai kliba, turėklai nestabilūs ar pastebite konstrukcijos pažeidimą, pirmiausia kreipkitės į kompetentingą vietinį specialistą. Ši forma netinka avariniam remontui, konstrukcijos saugumo patvirtinimui, komercinių pastatų ar evakuacijos laiptų projektavimui. Skubų darbą derinkite tiesiogiai su realiai pajėgiu vykdytoju."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [
+        {
+          "id": "16555c32-aab9-474a-8fcc-810eea0250e0",
+          "src": "/content-assets/laiptucentras/16555c32-aab9-474a-8fcc-810eea0250e0.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "455595e1-770a-4a42-9d82-4ac4eac82731",
+          "src": "/content-assets/laiptucentras/455595e1-770a-4a42-9d82-4ac4eac82731.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "767bec54-8d61-4052-b58b-d9703c333ae6",
+          "src": "/content-assets/laiptucentras/767bec54-8d61-4052-b58b-d9703c333ae6.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "f134df23-1e0c-4c98-963a-3967a870be7b",
+          "src": "/content-assets/laiptucentras/f134df23-1e0c-4c98-963a-3967a870be7b.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "51069deb-f932-42f7-8247-12978efe3580",
+          "src": "/content-assets/laiptucentras/51069deb-f932-42f7-8247-12978efe3580.webp",
+          "alt": "Iliustraciniai vidaus laiptai su ąžuolo pakopomis ir tamsiu metaliniu karkasu",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "221b8f30-5f8f-4d1a-a8d4-d96601ac1569",
+          "label": "Matavimo pasiruošimo gidas"
+        },
+        {
+          "targetPageId": "f741f725-b102-44a2-9a15-6c378d9aff4e",
+          "label": "Kontaktai ir registracijos forma"
+        }
+      ],
+      "id": "461ffd03-404b-4187-849f-7a4fcd809938",
+      "revisionHash": "31d028f0179544858f42f32a2ea213dde202d2be279532a0993c6e701c522e1d",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "31d028f0179544858f42f32a2ea213dde202d2be279532a0993c6e701c522e1d",
+        "approvedAt": "2026-10-01T04:15:53.195Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "guide",
+      "slug": "laiptu-kaina",
+      "title": "Laiptų kaina: kaip palyginti sąmatas",
+      "description": "Karkasas ar visas įrengimas? Praktinis sąmatos apimties sąrašas ir pavyzdys, padedantis palyginti vidaus laiptų pasiūlymus.",
+      "intent": "Kaip palyginti skirtingas vidaus laiptų sąmatas ir nepraleisti išlaidų?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Laiptų kainą lyginkite pagal vienodą darbų apimtį. Karkaso įkainis, medinių pakopų komplektas ir visi sumontuoti laiptai atsako į skirtingus klausimus. Prieš rinkdamiesi pigesnį pasiūlymą paprašykite atskirti konstrukciją, pakopas, turėklus, matavimą ir montavimą. Vieno patikimo universalaus įkainio visiems namams nėra."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pirmiausia apibrėžkite, ką perkate"
+        },
+        {
+          "type": "paragraph",
+          "text": "Naujai laiptinei gali reikėti visos konstrukcijos, o ant esančio betono – tik apdailos bei turėklų. Keičiamuose laiptuose atsiranda ardymo, išnešimo ir aplinkinių paviršių sutvarkymo klausimų. Net vienoda laiptų nuotrauka nereiškia vienodos darbų apimties: viename objekte atramos paruoštos, kitame dar reikės atskiro konstrukcinio sprendimo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Užklausoje aiškiai parašykite, kas objekte jau padaryta ir už ką norite, kad atsakytų tiekėjas. Venkite vien frazės „kiek kainuoja ąžuoliniai laiptai“: ji nepasako, ar kalbate apie pakopas ant betono, medinę konstrukciją, ar metalinį karkasą su medine apdaila."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Sąmatos eilutės, kurias verta sulyginti"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Matavimas ir projektas: kas tikrina galutinius matmenis, kokie brėžiniai pateikiami ir ar projektavimo kaina įtraukta.",
+            "Konstrukcija: tipas, medžiaga, paviršiaus paruošimas, tvirtinimai ir darbas objekte.",
+            "Pakopos: jų skaičius, matmenys, mediena, apdaila; ar įtrauktos vertikalios dalys tarp pakopų.",
+            "Turėklai ir porankiai: laiptų kraštas ir viršutinės aikštelės aptvėrimas; matavimo vienetas ir visas kiekis.",
+            "Pristatymas ir montavimas: kelionė į objektą, privažiavimo sąlygos, kėlimas bei etapų skaičius.",
+            "Papildomi darbai: esamų laiptų ardymas, atliekos, sienų ar grindų sutvarkymas, apsauga nuo kitų apdailos darbų.",
+            "Mokesčiai ir sąlygos: ar suma galutinė su taikomu PVM, apmokėjimo etapai, pakeitimų tvarka ir pasiūlymo galiojimas."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kodėl vienas „nuo“ skaičius nepakankamas"
+        },
+        {
+          "type": "paragraph",
+          "text": "„Nuo“ suma gali apimti paprastesnę formą ar tik vieną komponentą. Paklauskite, kokią konkrečią komplektaciją ji aprašo. Sukantys laiptai, aikštelė, papildomi turėklai ir sudėtingas tvirtinimas gali keisti apimtį; galutinį sprendimą nustato tiekėjo projektas ir objekto patikra. „Nebrangūs“ ir „premium“ nėra techninės specifikacijos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Style Stairs sąmatos sandara rodo, kodėl naudinga atskirti konstrukciją, pakopas, turėklus ir specialistų darbą. Tai britų gamintojo pavyzdys: jo piniginiai įkainiai, mokesčiai ir statybos normos Lietuvai neperkeliami. Čia pateikiame palyginimo metodą, o ne mūsų laiptų kainyną."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pavyzdys: dvi sumos, dvi skirtingos apimtys"
+        },
+        {
+          "type": "paragraph",
+          "text": "Iliustracinė situacija be išgalvotų kainų: A pasiūlymas apima metalinį karkasą ir jo montavimą. B pasiūlymas apima karkasą, medines pakopas, laiptų turėklus ir montavimą, tačiau ne viršutinės aikštelės aptvėrimą. Mažesnė A suma dar neparodo, kuris pilnas sprendimas pigesnis. Paprašykite A papildyti trūkstamas dalis, o B – aiškiai įvardyti aikštelės darbus. Tada sulyginkite medžiagas, apdailą ir atsakomybes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei abu pasiūlymai žada medines pakopas, dar patikrinkite medienos rūšį, pakopos sudėtį, krašto profilį ir apdailą. Neturėdami vienodo aprašymo negalite nuspręsti, ar kainos skirtumą lemia darbas, medžiaga, ar praleista eilutė."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Klausimai prieš patvirtinant pasiūlymą"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kas patvirtins galutinius objekto matmenis ir prisiims atsakomybę už projektą?",
+            "Kokie paruošiamieji darbai turi būti baigti iki matavimo ir iki montavimo?",
+            "Kuriuos darbus atliks tas pats tiekėjas, o kuriems reikės kito specialisto?",
+            "Kaip dokumentuojami medžiagų, apimties ar termino pakeitimai?",
+            "Kokios rašytinės garantijos ir priežiūros sąlygos taikomos būtent šiai komplektacijai?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Roberto laiptų gamybos procesas iliustruoja atskirus matavimo, projektavimo ir montavimo etapus. Mūsų projektas šių darbų šiuo metu neatlieka. Jei dar tik ruošiatės pokalbiui, matavimo pasiruošimo gidas padės aprašyti situaciją. Jei norite užregistruoti įrengimo poreikį, nurodykite darbą, vietovę ir laikotarpį."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [
+        {
+          "id": "b96b14f4-7628-4895-bcac-6afe3b06d5c1",
+          "src": "/content-assets/laiptucentras/b96b14f4-7628-4895-bcac-6afe3b06d5c1.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "9e6d9edf-8e0a-400e-ba34-2bdf28406b89",
+          "src": "/content-assets/laiptucentras/9e6d9edf-8e0a-400e-ba34-2bdf28406b89.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "1917dd47-c334-487b-a16d-e992c7707853",
+          "src": "/content-assets/laiptucentras/1917dd47-c334-487b-a16d-e992c7707853.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "73f27ec6-b930-45e7-b1cd-91c46a8fb6b2",
+          "src": "/content-assets/laiptucentras/73f27ec6-b930-45e7-b1cd-91c46a8fb6b2.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "3806da76-b51e-4635-988a-1d0a3b87dbd4",
+          "src": "/content-assets/laiptucentras/3806da76-b51e-4635-988a-1d0a3b87dbd4.webp",
+          "alt": "Laiptų pakopos pavyzdys, metalinė detalė ir sąmatos paruošimo priemonės",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "221b8f30-5f8f-4d1a-a8d4-d96601ac1569",
+          "label": "matavimo pasiruošimo gidas"
+        },
+        {
+          "targetPageId": "461ffd03-404b-4187-849f-7a4fcd809938",
+          "label": "Vidaus laiptų poreikio registracija"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://stylestairs.uk/bespoke-staircase-cost-breakdown-2026/",
+          "label": "Style Stairs sąmatos sandara",
+          "reason": "Patikrinta 2026-10-01. Britų gamintojas atskiria konstrukciją, pakopas, turėklus, projektą ir montavimą. Jo kainos ir britiškos normos Lietuvai netaikomos."
+        },
+        {
+          "url": "https://robertolaiptai.lt/laiptu-gamyba/",
+          "label": "Roberto laiptų gamybos procesas",
+          "reason": "Patikrinta 2026-10-01. Gamintojo aprašyta individualaus matavimo, konstrukcijos, pakopų ir montavimo darbų apimtis; tai jų paslauga, ne mūsų partnerystė."
+        }
+      ],
+      "id": "80b5feac-482b-4e7a-b2ae-49fc3fb3c754",
+      "revisionHash": "9187f6390bd6932c0cc0fe2ae763767f7b2a7ea05ba73cebbf5ba0a6b4dee257",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "9187f6390bd6932c0cc0fe2ae763767f7b2a7ea05ba73cebbf5ba0a6b4dee257",
+        "approvedAt": "2026-10-01T04:15:52.933Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "guide",
+      "slug": "laiptu-konstrukcijos",
+      "title": "Medis, metalas ar betonas: ką iš tiesų renkatės?",
+      "description": "Atskirkite laiptų konstrukciją nuo pakopų apdailos. Pasirinkimo kriterijai naujai laiptinei, esančiam betonui ir keičiamiems laiptams.",
+      "intent": "Kuo skiriasi vidaus laiptų konstrukcijos ir kaip apsibrėžti savo pasirinkimą?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Mediena, metalas ir betonas nebūtinai yra trys konkuruojantys laiptų vaizdai. Vieni laiptai gali turėti metalinį karkasą ir medines pakopas, kiti – medinę apdailą ant betono. Pirmas klausimas: kokia laikančioji konstrukcija jau yra arba bus jūsų name? Tik tada verta rinktis pakopos paviršių ir turėklų išvaizdą."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Konstrukcija, pakopa ir turėklas – atskiri sprendimai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Konstrukcija perduoda apkrovas į pastatą. Pakopa yra paviršius, ant kurio žengiate, o turėklas bei porankis sprendžia apsaugą ir atsirėmimą. Visos dalys turi būti suderintos viename projekte. Medžiagos pavadinimas ar graži nuotrauka nepatvirtina tvirtinimo, konstrukcijos laikomosios galios arba konkretaus objekto saugumo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Užklausoje aprašykite šias dalis atskirai. Pavyzdžiui: „betoniniai laiptai jau išlieti; reikia medinių pakopų ir laiptų bei aikštelės turėklų“. Tai aiškesnė užduotis nei „reikia medinių laiptų“. Tokį komponentų atskyrimą galima matyti ir gamintojų pasiūloje: Roberto laiptų gamybos procesas skiria pakopas ant betono nuo kitų konstrukcijų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kai laiptai statomi naujai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Jeigu laikančiosios konstrukcijos dar nėra, su projektuotoju išsiaiškinkite angą, atramas, planuojamą judėjimo kelią ir tvirtinimo galimybes. Paprašykite gamintojo parodyti, kuri detalė sudaro karkasą ir ką reikia paruošti pastate. Metalinis karkasas savaime nereiškia atvirų pakopų: išvaizdą lemia visa komplektacija. Medinė konstrukcija taip pat gali turėti skirtingas sijas, uždaras dalis ir apdailą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nepradėkite nuo taisyklės „mažai erdvei visada spiraliniai“. Laiptų forma turi tilpti į konkretų planą ir atitikti naudojimą. Pagalvokite apie kasdienį ėjimą, vaikų ir vyresnių žmonių poreikius bei baldų pernešimą. Čia nenurodome universalių pakopos matmenų, apkrovų ar turėklų specifikacijų: jas parenka ir patvirtina atsakingas specialistas pagal konkretų objektą."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kai betonas jau yra"
+        },
+        {
+          "type": "paragraph",
+          "text": "Betoninė konstrukcija gali tapti pagrindu medinėms pakopoms, tačiau prieš užsakymą reikia patikrinti jos būklę, geometriją ir galutinių grindų lygius. Apdaila keičia matomą bei naudojamą paviršių. Todėl pirmos ir paskutinės pakopos santykis su grindimis turi būti vertinamas kartu su visa laiptų apdaila, o ne tik pagal vienos pakopos storį."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Užrašykite, ar grindų danga apačioje ir viršuje jau įrengta.",
+            "Nurodykite, ar norite uždengti tik horizontalius paviršius, ar ir vertikalias dalis bei kraštus.",
+            "Aptarkite turėklų tvirtinimą ir aikštelės aptvėrimą prieš galutinę apdailą.",
+            "Gamintojui parodykite netolygumus ar pažeidimus; nuotrauka yra pirminė informacija, ne būklės patvirtinimas."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kai senus laiptus norisi atnaujinti"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pirmiausia atskirkite nusidėvėjusią apdailą nuo konstrukcinės problemos. Įbrėžimas pakopos paviršiuje ir klibanti sija reikalauja skirtingo vertinimo. Naujai uždengtas paviršius nepatvirtina seno pagrindo saugumo. Höping apie laiptų renovaciją aptaria skirtingas apdailos medžiagas ir individualias sąlygas, tačiau konkretus mūsų namas turi būti įvertintas vietoje."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jeigu norite keisti laiptų formą, patikrinkite, ar reikės keisti angą, atramas ar aplinkinius paviršius. Jei reikia tik apdailos, paprašykite aiškiai įvardyti, kas iš esamos konstrukcijos bus palikta ir kas patikrinta. Seni laiptai nėra automatiškai tinkamas naujų pakopų pagrindas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Medžiagos pavyzdį vertinkite savo aplinkoje"
+        },
+        {
+          "type": "paragraph",
+          "text": "Paklauskite apie pakopos apdailą, leidžiamą valymą, priežiūrą ir vietinio paviršiaus atnaujinimo galimybę. Atspalvio pavyzdį verta lyginti su grindimis ir apšvietimu jūsų namuose. Vien medienos rūšis neatsako, kaip atrodys galutinė apdaila; lyginkite konkretų pavyzdį ir tiekėjo aprašą. Tylumo ar priežiūros paprastumo nežadame pagal vien medžiagos pavadinimą."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Trumpa pasirinkimo užduotis"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Jei pagrindo nėra – pirmiausia apibrėžkite visą konstrukciją ir atramas.",
+            "Jei betonas yra – atskirkite jo būklės patikrą nuo naujos apdailos.",
+            "Jei keičiate senus laiptus – įtraukite išmontavimą ir aplinkinių paviršių klausimus.",
+            "Visais atvejais – aprašykite pakopas, turėklus, aikštelę ir montavimą kaip vieną suderintą apimtį."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Stadler konstrukcijų ir medžiagų pasirinkimas yra užsienio gamintojo pavyzdys, kaip šias dalis galima atskirti. Norėdami palyginti komplektacijų kainą, skaitykite sąmatos palyginimo gidą. Mūsų iliustracijos padeda suprasti medžiagų skirtumą ir nerodo parduodamų gaminių ar atliktų klientų darbų."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [
+        {
+          "id": "fe34d64f-8b3c-472a-be7d-9e1f7e48c78f",
+          "src": "/content-assets/laiptucentras/fe34d64f-8b3c-472a-be7d-9e1f7e48c78f.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "c244d9bc-0a43-4918-a207-dd975ad3bd25",
+          "src": "/content-assets/laiptucentras/c244d9bc-0a43-4918-a207-dd975ad3bd25.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "33f63d79-59c0-47b7-b569-5d03ae37a7f8",
+          "src": "/content-assets/laiptucentras/33f63d79-59c0-47b7-b569-5d03ae37a7f8.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "2d3eb5c5-cd19-4153-8894-36363776b082",
+          "src": "/content-assets/laiptucentras/2d3eb5c5-cd19-4153-8894-36363776b082.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "4a5e1748-e235-48ae-8d8b-2937c35baf63",
+          "src": "/content-assets/laiptucentras/4a5e1748-e235-48ae-8d8b-2937c35baf63.webp",
+          "alt": "Ąžuolo pakopos, tamsaus metalo ir betono medžiagų palyginimo iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "80b5feac-482b-4e7a-b2ae-49fc3fb3c754",
+          "label": "sąmatos palyginimo gidą"
+        },
+        {
+          "targetPageId": "461ffd03-404b-4187-849f-7a4fcd809938",
+          "label": "Vidaus laiptų poreikio registracija"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://robertolaiptai.lt/laiptu-gamyba/",
+          "label": "Roberto laiptų gamybos procesas",
+          "reason": "Patikrinta 2026-10-01. Gamintojo aprašyta individualaus matavimo, konstrukcijos, pakopų ir montavimo darbų apimtis; tai jų paslauga, ne mūsų partnerystė."
+        },
+        {
+          "url": "https://www.stadler.de/treppen/",
+          "label": "Stadler konstrukcijų ir medžiagų pasirinkimas",
+          "reason": "Patikrinta 2026-10-01. Vokietijos gamintojas atskirai pristato konstrukcijas, pakopas bei turėklus ir galutinį pasiūlymą sieja su konkrečiu projektu."
+        },
+        {
+          "url": "https://www.hoeping.de/treppenrenovierung/fragen-antworten.html",
+          "label": "Höping apie laiptų renovaciją",
+          "reason": "Patikrinta 2026-10-01. Renovacijos tiekėjas paaiškina individualių sąlygų ir skirtingų apdailos medžiagų svarbą; konkretaus mūsų objekto tinkamumo nepatvirtina."
+        }
+      ],
+      "id": "2232d1fc-120b-4d78-abb2-17009cccc1ce",
+      "revisionHash": "bcc95953c4c67dc14f033216c128e178795f82b58b387b7407611d1c86aa3734",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "bcc95953c4c67dc14f033216c128e178795f82b58b387b7407611d1c86aa3734",
+        "approvedAt": "2026-10-01T04:15:53.055Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "guide",
+      "slug": "laiptu-matavimas",
+      "title": "Ką paruošti prieš laiptų matavimą",
+      "description": "Grindų lygiai, anga, planas, nuotraukos ir įrengimo etapas. Praktinis informacijos sąrašas pirmai laiptų užklausai.",
+      "intent": "Kokią informaciją surinkti prieš laiptų gamintojo matavimą ir pirmą užklausą?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Pirmai laiptų užklausai paruoškite vietovę, darbų apimtį, įrengimo etapą, turimą planą ir informaciją apie būsimus grindų lygius. Pirminiai jūsų matmenys padeda paaiškinti situaciją, tačiau nepakeičia gamintojo matavimo ir suderinto projekto. Tikslumo, tinkamumo ar saugumo negalima patvirtinti vien internetu."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pradėkite nuo objekto etapo"
+        },
+        {
+          "type": "paragraph",
+          "text": "Parašykite, ar namas dar projektuojamas, yra neįrengta anga, jau išlieti betoniniai laiptai, ar keičiate naudojamus laiptus. Skirtingais etapais žinoma skirtinga informacija. Jei grindys dar neįrengtos, svarbu neapsimesti, kad šiuo metu matomas betono paviršius jau yra galutinis grindų lygis."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nurodykite, kuriuos aukštus laiptai jungs ir kaip šia erdve bus naudojamasi. Aprašykite, ar laiptai bus vienintelis kasdienis kelias į viršų, ar reikės pernešti didelius baldus. Vardyti šeimos narių asmeninių duomenų nereikia; pakanka bendro naudojimo poreikio."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Matmenys: kas turi būti aiškiai įvardyta"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Aukštų santykis: atskirkite dabartinius paviršius nuo planuojamų galutinių grindų. Jei apdailos sluoksniai dar neparinkti, pažymėkite nežinomybę.",
+            "Laiptinės anga: turimo plano matmenys, forma ir vieta; įvardykite, iš kurio dokumento ar matavimo jie paimti.",
+            "Aplink anga esanti erdvė: durys, langai, sienos ir vieta laiptų pradžiai bei pabaigai.",
+            "Esamos konstrukcijos: betonas, sijos ar atramos ir matomi pažeidimai. Paslėptos konstrukcijos nevertinamos pagal nuotrauką.",
+            "Grindų ir lubų darbai: kas jau baigta, kas planuojama ir kas dar gali pakeisti laiptų projektą."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Šis sąrašas skirtas informacijai surinkti, ne savarankiškai apskaičiuoti laiptų geometriją. Nenaudokite bendros internetinės formulės kaip patvirtinto konstrukcijos projekto. Angos keitimas, tvirtinimas ir laikančiosios dalys turi būti derinami su už objektą atsakingais specialistais."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kaip paruošti planą ir nuotraukas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei turite aktualų aukšto planą, pažymėkite laiptinės vietą ir nurodykite dokumento versiją. Nesiųskite visos namo dokumentacijos, kai pakanka vienos susijusios ištraukos. Uždenkite asmeninius duomenis, adresus ar kitus pokalbiui nereikalingus įrašus. Planas yra pirminė informacija: tiekėjas dar turi patikrinti jo atitikimą realiam objektui."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Bendras laiptinės vaizdas padeda suprasti erdvę ir įėjimo kryptį.",
+            "Vaizdas iš apačios ir viršaus padeda susieti angą su aplinkinėmis durimis ir sienomis.",
+            "Atskiri esamų pakopų, turėklų ar matomo pažeidimo vaizdai paaiškina, ką norite keisti.",
+            "Fotografuokite iš saugios prieinamos vietos; dėl nuotraukos neikite prie neapsaugoto angos krašto ir nelipkite ant nepatikrintos konstrukcijos."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką aptarti dėl darbų sekos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Gamintojo paklauskite, kurie grindų, sienų ir konstrukcijos darbai turi būti atlikti iki galutinio matavimo. Karkaso montavimo ir galutinės pakopų apdailos etapas gali skirtis. Atskirkite preliminarų įvertinimą nuo matavimo, kuriuo bus remiamasi gaminant. Taip pat iš anksto aptarkite įnešimą, privažiavimą ir kitų meistrų darbo grafiką."
+        },
+        {
+          "type": "paragraph",
+          "text": "Roberto laiptų gamybos procesas pateikia matavimo, projektavimo, gamybos ir montavimo seką. Tai vieno gamintojo eiga, o ne visiems projektams privalomas grafikas. Stadler konstrukcijų ir medžiagų pasirinkimas taip pat sieja konkretų pasiūlymą su individualiu projektu. Mūsų pilotas matavimo vizito šiuo metu nesiūlo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pirmos užklausos pavyzdys"
+        },
+        {
+          "type": "paragraph",
+          "text": "Iliustracinis tekstas: „Individualus namas Kauno rajone. Betoniniai vidaus laiptai jau išlieti; reikia medinių pakopų ir turėklų, įskaitant viršutinę aikštelę. Grindų danga dar neįrengta, jos sluoksnis nepatvirtintas. Turiu plano ištrauką ir bendras nuotraukas. Darbus planuoju kitų metų pirmą pusmetį. Norėčiau žinoti, kokius duomenis reikia patikslinti prieš galutinį matavimą.“ Tai nėra tikro kliento įrašas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei matmenų neturite, juos palikite nežinomus. Aiški tikra situacija yra naudingesnė už spėjamą tikslų skaičių. Prieš lygindami kainas patikrinkite, ar abiejų tiekėjų pasiūlymuose įtraukti tie patys matavimo ir projektavimo darbai; padės sąmatos palyginimo gidas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką galite padaryti dabar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Užregistruokite savo vidaus laiptų poreikį, nurodydami darbą, vietovę ir laikotarpį. Forma nepriima nuotraukų priedų; juos galima atsiųsti svetainės el. paštu. Registracija nėra užsakymas, kainos pasiūlymas ar matavimo rezervacija. Mūsų tikslas šiame etape – suprasti konkretų įrengimo poreikį."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [
+        {
+          "id": "1e84b0cf-e101-4954-a367-862c16b14049",
+          "src": "/content-assets/laiptucentras/1e84b0cf-e101-4954-a367-862c16b14049.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "cf7b4af3-cb71-4951-8436-cb80fc78577a",
+          "src": "/content-assets/laiptucentras/cf7b4af3-cb71-4951-8436-cb80fc78577a.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "a303d29a-4704-443b-b617-db705bf00b8e",
+          "src": "/content-assets/laiptucentras/a303d29a-4704-443b-b617-db705bf00b8e.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "dd4b48e9-1c5f-41e8-96c0-60d73c39ae38",
+          "src": "/content-assets/laiptucentras/dd4b48e9-1c5f-41e8-96c0-60d73c39ae38.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        },
+        {
+          "id": "f310f4b3-352b-4f0c-9d74-cad0cfd352e5",
+          "src": "/content-assets/laiptucentras/f310f4b3-352b-4f0c-9d74-cad0cfd352e5.webp",
+          "alt": "Neįrengta laiptų anga, grindų lygiai ir matavimo priemonės",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali šiam projektui sukurta AI iliustracija, 2026-10-01. Ne klientų darbas ar parduodamas gaminys."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "80b5feac-482b-4e7a-b2ae-49fc3fb3c754",
+          "label": "sąmatos palyginimo gidas"
+        },
+        {
+          "targetPageId": "461ffd03-404b-4187-849f-7a4fcd809938",
+          "label": "Vidaus laiptų poreikio registracija"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://robertolaiptai.lt/laiptu-gamyba/",
+          "label": "Roberto laiptų gamybos procesas",
+          "reason": "Patikrinta 2026-10-01. Gamintojo aprašyta individualaus matavimo, konstrukcijos, pakopų ir montavimo darbų apimtis; tai jų paslauga, ne mūsų partnerystė."
+        },
+        {
+          "url": "https://www.stadler.de/treppen/",
+          "label": "Stadler konstrukcijų ir medžiagų pasirinkimas",
+          "reason": "Patikrinta 2026-10-01. Vokietijos gamintojas atskirai pristato konstrukcijas, pakopas bei turėklus ir galutinį pasiūlymą sieja su konkrečiu projektu."
+        }
+      ],
+      "id": "221b8f30-5f8f-4d1a-a8d4-d96601ac1569",
+      "revisionHash": "7714342099073aa87aff45014e592eef1abec08e4b915354b342b5ddf8378d1a",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "7714342099073aa87aff45014e592eef1abec08e4b915354b342b5ddf8378d1a",
+        "approvedAt": "2026-10-01T04:15:53.126Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "service",
+      "slug": "kontaktai",
+      "title": "Kontaktai ir poreikio registracija",
+      "description": "Laiptų centro projekto operatorius MB Pinet, el. paštas info@pinet.lt. Aprašykite planuojamus vidaus laiptų darbus.",
+      "intent": "Kaip susisiekti su Laiptų centro operatoriumi ir pateikti poreikį?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Projektą administruoja MB Pinet. Kontaktas – info@pinet.lt. Šiai nišai telefono ir fizinės konsultacijų vietos nepateikiame. Registruojame vidaus laiptų įrengimo poreikius, tačiau neturime patvirtintų gamybos partnerių ir negarantuojame kainos pasiūlymo ar atvykimo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Formoje nurodykite darbą, miestą ar rajoną, dabartinį etapą ir planuojamą laiką. Neįrašykite asmens kodo, tikslaus adreso ar kitų pirmai registracijai nereikalingų duomenų. Duomenys skirti šiam poreikiui aptarti, ne rinkodaros prenumeratai."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Jei forma nepavyksta"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nesėkmės pranešimas reiškia, kad registracijos priimti nepavyko. Galite bandyti dar kartą arba parašyti nurodytu el. paštu. Formos sėkmė patvirtina įrašo išsaugojimą; atskiras pranešimas paaiškina, ar operatoriaus pašto serveris priėmė pranešimą."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [],
+      "links": [],
+      "id": "f741f725-b102-44a2-9a15-6c378d9aff4e",
+      "revisionHash": "8efe441799d45cbc0d8db67e3b187286788bead065b08173602578290c09f83c",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "8efe441799d45cbc0d8db67e3b187286788bead065b08173602578290c09f83c",
+        "approvedAt": "2026-10-01T04:15:52.307Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "service",
+      "slug": "apie-projekta",
+      "title": "Apie Laiptų centro projektą",
+      "description": "Vidaus laiptų poreikio pilotas: kam jis skirtas, kas veikia šiandien ir kuo skiriasi nuo laiptų gamintojo.",
+      "intent": "Kas yra Laiptų centras ir kokia yra jo dabartinė veikla?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Laiptų centras – MB Pinet vystomas naujas vidaus laiptų įrengimo poreikio projektas. Gidai padeda atskirti konstrukciją, pakopas, turėklus ir sąmatos apimtį; forma skirta registruoti konkretų planuojamą darbą. Tai pirmas etapas, kuriuo tikrinamas realus poreikis."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kas veikia dabar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Parengti pasirinkimo ir pasiruošimo gidai bei poreikio registracijos kelias. Šiuo metu nesame laiptų gamintojas, neturime patvirtintų gamybos partnerių, nesiūlome savo kainyno, matavimo vizitų ar montavimo terminų. Ateities galimybės priklausys nuo realių poreikių ir vykdymo susitarimų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Naujas projektas, atskira atsakomybė"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ši svetainė neperima ankstesnių šio domeno operatorių patirties, darbų, atsiliepimų ar garantijų. Rodomi interjero ir medžiagų vaizdai yra iliustracijos, o ne mūsų atlikti klientų projektai. Skirtingų gamintojų pavyzdžiai šaltiniuose nesuteikia jiems partnerio statuso."
+        },
+        {
+          "type": "paragraph",
+          "text": "Turinio rengimą, šaltinius ir taisymo kelią paaiškina redakcinė metodika. Dėl projekto arba klaidos galite rašyti info@pinet.lt."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "9bc7a91c-cf2f-43bc-82a2-f10ea22a6514",
+          "label": "redakcinė metodika"
+        }
+      ],
+      "id": "a60490d7-bfd1-4edb-b8fb-95d9d51bf32b",
+      "revisionHash": "5d1dc3a6cb5aeec09aee8c2f9fd2e9c6753929f528db8ce8c5feed22f7a6ec88",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "5d1dc3a6cb5aeec09aee8c2f9fd2e9c6753929f528db8ce8c5feed22f7a6ec88",
+        "approvedAt": "2026-10-01T04:15:53.267Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "service",
+      "slug": "redakcija",
+      "title": "MB Pinet redakcija ir šaltinių metodika",
+      "description": "Kas rengia Laiptų centro gidus, kaip tikrinami šaltiniai, naudojamas AI ir priimami patikslinimai.",
+      "intent": "Kas atsakingas už Laiptų centro informaciją ir kaip ji tikrinama?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Laiptų centro turinį rengia MB Pinet projekto redakcija, naudodama AI tyrimui, juodraščiams ir iliustracijoms. Organizacija nurodoma kaip turinio rengėja; neimituojame projektuotojo, konstruktoriaus ar meistro kvalifikacijos. Pradinę šaltinių ir teksto peržiūrą šiame etape atliko AI agentas pagal projekto redakcinius kriterijus; tai nėra savininko ar atestuoto specialisto techninis patvirtinimas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kaip pasirenkami šaltiniai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Gamintojų originalius puslapius naudojame jų pasiūlos, komponentų ir darbų eigos pavyzdžiams. Oficialios institucijos naudojamos privatumo ir kitų norminių klausimų paaiškinimams. Šaltinio data ir jo ribos nurodomos prie gido. Užsienio kainų ar normų neperkeliame į Lietuvos projektą kaip vietinių faktų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką tikriname prieš skelbdami"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ar puslapis atsako į vieną konkretų klausimą ir suteikia naudingą palyginimą ar sąrašą.",
+            "Ar teiginys remiasi perskaitytu šaltiniu, o mūsų pavyzdys aiškiai įvardytas kaip iliustracinis.",
+            "Ar nėra išgalvotų kainų, tiekėjų, atliktų darbų, kvalifikacijų arba universalių konstrukcijos saugumo nustatymų.",
+            "Ar tekstas, vaizdai, datos, šaltiniai ir nuorodos priklauso tai pačiai peržiūrėtai versijai."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Vaizdai ir atnaujinimai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Originalios temos iliustracijos kuriamos AI pagal konkretaus gido poreikį. Jos nėra dokumentiniai klientų darbai, parduodamų gaminių įrodymas ar statybai tinkami brėžiniai. Vaizdų kilmė, pateikti promptai ir peržiūra saugomi redakciniame žurnale. Šaltinių pasikeitimai ar svarbi nustatyta klaida lemia naujos turinio versijos peržiūrą."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kaip pranešti apie klaidą"
+        },
+        {
+          "type": "paragraph",
+          "text": "Rašykite info@pinet.lt, nurodykite puslapį, netikslų teiginį ir, jei turite, patikimą šaltinį. Gautą informaciją vertiname prieš taisydami. Reikšmingas pataisymas atnaujina peržiūros datą, o pirminė publikavimo data nekeičiama vien dėl kosmetinio pakeitimo. Techninius objekto sprendimus visada derinkite su atsakingu specialistu."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [],
+      "links": [],
+      "id": "9bc7a91c-cf2f-43bc-82a2-f10ea22a6514",
+      "revisionHash": "f2354f1febce4b8fbae2acd70e65193aaaeffc1c0f55feb3c6f99aa059eecad3",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "f2354f1febce4b8fbae2acd70e65193aaaeffc1c0f55feb3c6f99aa059eecad3",
+        "approvedAt": "2026-10-01T04:15:52.509Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "service",
+      "slug": "privatumas",
+      "title": "Privatumo informacija",
+      "description": "Kokie duomenys patenka į poreikio formą ir svetainės skaitiklius, kam jie naudojami ir kaip susisiekti dėl savo teisių.",
+      "intent": "Kaip Laiptų centro pilotas tvarko užklausų ir svetainės matavimo duomenis?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Projekto operatorius – MB Pinet, kontaktas privatumo klausimams – info@pinet.lt. Svetainė parengta kaip pirmos fazės poreikio pilotas. Viešas produkcinis paleidimas ir jo galutinės duomenų tvarkymo sąlygos dar nepatvirtinti; šiame vietiniame bandyme naudojami tik pažymėti sintetiniai įrašai."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Poreikio formos duomenys"
+        },
+        {
+          "type": "paragraph",
+          "text": "Forma priima vardą, el. paštą, jūsų žinutę ir patvirtinimą, kad duomenys būtų naudojami poreikiui įvertinti bei susisiekti. Kartu saugomas užklausos identifikatorius, svetainė, pateikimo laikas, pradinis puslapis ir apdorojimo būsena. Nesiųskite pirmai registracijai nereikalingų jautrių duomenų. Automatinio dokumentų ar nuotraukų įkėlimo nėra."
+        },
+        {
+          "type": "paragraph",
+          "text": "Duomenys pirmiausia išsaugomi užklausų duomenų bazėje. Kai įjungtas pristatymas, operatoriui siunčiamas el. pašto pranešimas; pašto serverio priėmimas ir faktinis dėžutės gavimas yra skirtingi dalykai. Vietinėje peržiūroje tikras siuntimas išjungtas. Užklausa nėra rinkodaros sutikimas, kontaktai automatiškai gamintojams neperduodami."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Svetainės naudojimo matavimas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Naudojame pirmosios šalies dienos skaitiklius pagal svetainę, puslapį ir įvykį: puslapio peržiūrą ar el. pašto nuorodos paspaudimą. Šie skaitikliai nesaugo formos turinio, vartotojo identifikatoriaus ar slapukų ir neskaičiuoja unikalių žmonių. Palaikomi Do Not Track ir Global Privacy Control signalai. Nenaudojame trečiųjų šalių reklamos sekimo ar rinkodaros prenumeratos. Techninis hostingas gali apdoroti ryšio duomenis nepriklausomai nuo šių skaitiklių."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Saugojimo ir paslaugų ribos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vietinio bandymo sintetinės užklausos pašalinamos po patikros. Automatinis tikrų klientų duomenų saugojimo terminas šiame vietiniame variante nenustatytas. Prieš viešą duomenų rinkimą būtina nustatyti galutinį teisinį pagrindą, saugojimo terminus, gavėjus ir tvarkytojus, produkcinio hostingo bei pašto sąlygas, galimus perdavimus ir duomenų ištrynimo eigą. Ši parengta peržiūra tokių nepatvirtintų sąlygų neįvardija kaip jau veikiančių garantijų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Jūsų teisės ir kontaktas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dėl duomenų, jų patikslinimo, prieigos, ištrynimo ar kitų taikomų teisių galite kreiptis į info@pinet.lt. Konkrečios teisės ir jų išimtys priklauso nuo tvarkymo pagrindo ir aplinkybių. Europos duomenų apsaugos valdybos paaiškinimas pateikia oficialią informaciją. Jei manote, kad tvarkymas pažeidžia jūsų teises, galite kreiptis į Valstybinę duomenų apsaugos inspekciją."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [],
+      "links": [],
+      "externalLinks": [
+        {
+          "url": "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en",
+          "label": "Europos duomenų apsaugos valdybos paaiškinimas",
+          "reason": "Patikrinta 2026-10-01. Oficiali informacija apie asmenų teises, prieigą prie duomenų, taisymą ir ištrynimą; galutinės piloto produkcinės sąlygos tikrinamos atskirai."
+        }
+      ],
+      "id": "aa1a8bfd-b4cf-4a71-ba1f-9d264b3bbeae",
+      "revisionHash": "112e27134db70a27a08ed1f13bb5b88a04e1722aac8c86b76b0b703ceacc6d60",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "112e27134db70a27a08ed1f13bb5b88a04e1722aac8c86b76b0b703ceacc6d60",
+        "approvedAt": "2026-10-01T04:15:52.644Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    },
+    {
+      "siteId": "laiptucentras",
+      "type": "service",
+      "slug": "naudojimo-salygos",
+      "title": "Svetainės naudojimo sąlygos",
+      "description": "Informacinių gidų ir poreikio registracijos ribos: techninis projektas, užsakymas ir gamybos garantijos šiuo etapu neteikiami.",
+      "intent": "Kokios yra Laiptų centro informacinio piloto naudojimo ribos?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Laiptų centro svetainę administruoja MB Pinet. Turinys skirtas padėti pasiruošti vidaus laiptų pasirinkimui ir aprašyti darbų poreikį. Jis nėra individualus konstrukcijos projektas, saugumo patvirtinimas ar specialistų patikra objekte."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Registracija ir paslaugos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Poreikio forma nėra užsakymas, rezervacija, mokama konsultacija ar sutartis dėl laiptų. Mokėjimų nepriimame. Gamintojų partnerystės dar nesudarytos, kainos pasiūlymo, atsakymo termino, matavimo vizito ar montavimo pajėgumo negarantuojame. Vėlesnę paslaugos apimtį ir vykdytoją reikėtų derinti atskirai."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Informacijos ribos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Gidai paaiškina pasirinkimo ir palyginimo klausimus. Konkrečią konstrukciją, jos tvirtinimą, matmenis, atitiktį ir montavimo seką turi patvirtinti už jūsų objektą atsakingi specialistai. Užsienio šaltinių normos bei kainos nėra Lietuvos objekto reikalavimai. Iliustracijos ir pažymėti pavyzdžiai nėra tikri klientų darbai."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Šaltiniai ir bendravimas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nuorodos į gamintojus yra informacijos šaltiniai, o ne partnerystės ar jų pasiūlymų garantija. Prašome formoje pateikti tik šiam poreikiui reikalingus duomenis. Dėl turinio klaidos ar svetainės veikimo rašykite info@pinet.lt. Duomenų tvarkymą atskirai paaiškina privatumo informacija."
+        }
+      ],
+      "publishAt": "2026-10-01T04:15:51.650Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "aa1a8bfd-b4cf-4a71-ba1f-9d264b3bbeae",
+          "label": "privatumo informacija"
+        }
+      ],
+      "id": "3efd2d1d-cd22-4227-b2e3-5212e7a46c25",
+      "revisionHash": "dbe388e94be55a99511c064f5b1c30a7d8f9f924b253060ec5e8cc512a26bc72",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "dbe388e94be55a99511c064f5b1c30a7d8f9f924b253060ec5e8cc512a26bc72",
+        "approvedAt": "2026-10-01T04:15:53.332Z",
+        "actorId": "laiptucentras-agent-source-review"
+      }
+    }
+  ],
+  "generatedAt": "2026-10-01T04:15:53.409Z"
+}

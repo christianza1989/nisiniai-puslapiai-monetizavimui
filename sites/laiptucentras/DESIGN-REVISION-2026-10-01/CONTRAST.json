@@ -1,0 +1,37 @@
+{
+  "method": "WCAG relative luminance for actual CSS palette; browser computed shell/header #f5f6f3 and no body filter verified. Not a complete WCAG certification.",
+  "contrastRows": [
+    {
+      "role": "text",
+      "fg": "#203140",
+      "bg": "#f5f6f3",
+      "ratio": 12.293206781232973,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "role": "muted",
+      "fg": "#4e606c",
+      "bg": "#f5f6f3",
+      "ratio": 6.024032514710176,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "role": "inverse",
+      "fg": "#fff",
+      "bg": "#203140",
+      "ratio": 13.335251746718393,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "role": "focus",
+      "fg": "#527d97",
+      "bg": "#f5f6f3",
+      "ratio": 4.084967251841607,
+      "min": 3,
+      "pass": true
+    }
+  ]
+}

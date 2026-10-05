@@ -1,0 +1,12 @@
+{
+  "checkedOn": "2026-10-04",
+  "method": "Primary HTML/PDF text inspection; linked-document provenance checked; no form submission or PDF visual inspection",
+  "sources": [
+    {"id":"S1","url":"https://www.cosentino.com/lt-lt/silestone/garantija/","kind":"primary_html","status":"opened","observation":"LT registration conditions and residential PDF link; access date is not document revision"},
+    {"id":"S2","url":"https://www.cosentino.com/warranty-registration/","kind":"primary_html","status":"opened","observation":"Material versus fabrication/install scope, different user routes; static thank-you text does not establish actual registration"},
+    {"id":"S3","url":"https://assetstools.cosentino.com/api/v1/bynder/doc/DA09366E-1D05-4054-AC39773E7056FBC3/warranty-cosentino-standard-en.pdf","kind":"primary_pdf","status":"text_read","revision":"REV 01 03/2026","pages":16,"observation":"Search-discovered version; shared document ID does not prove identical revision"},
+    {"id":"S4","url":"https://content.cosentino.com/alldocuments/cosentino/warranty/25/warranty-EN.pdf","kind":"primary_pdf","status":"text_read","revision":null,"pages":6,"observation":"60-day registration text; date and applicability to actual purchase unresolved"},
+    {"id":"S5","url":"https://assetstools.cosentino.com/api/v1/bynder/doc/DA09366E-1D05-4054-AC39773E7056FBC3/Warranty-Standard-EN.pdf","kind":"primary_pdf","status":"text_read","revision":"Rev.03 - 06/2026","pages":16,"discoveredVia":"S1 residential warranty link","observation":"Pages 5-6: registration evidence and limited material scope for third-party finished products; actual purchase applicability unverified"}
+  ],
+  "customerOrSupplierDataAccessed": false
+}

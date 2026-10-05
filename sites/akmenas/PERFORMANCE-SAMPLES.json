@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-01T03:36:10.905Z",
+  "runs": [
+    {
+      "i": 1,
+      "file": "qa/lighthouse-home-sample-1.report.json",
+      "date": "2026-10-01T03:35:21.236Z",
+      "performance": 92,
+      "cleanupError": false,
+      "metrics": {
+        "largest-contentful-paint": 3050.4312,
+        "total-blocking-time": 50.5,
+        "cumulative-layout-shift": 0
+      }
+    },
+    {
+      "i": 2,
+      "file": "qa/lighthouse-home-sample-2.report.json",
+      "date": "2026-10-01T03:35:40.215Z",
+      "performance": 99,
+      "cleanupError": false,
+      "metrics": {
+        "largest-contentful-paint": 2057.24025,
+        "total-blocking-time": 18,
+        "cumulative-layout-shift": 0
+      }
+    },
+    {
+      "i": 3,
+      "file": "qa/lighthouse-home-sample-3.report.json",
+      "date": "2026-10-01T03:36:00.038Z",
+      "performance": 90,
+      "cleanupError": false,
+      "metrics": {
+        "largest-contentful-paint": 3440.3374000000013,
+        "total-blocking-time": 57.5,
+        "cumulative-layout-shift": 0
+      }
+    }
+  ],
+  "median": 92,
+  "medianRun": 1,
+  "scope": "Fixed three serial mobile runs after own browser capture activity ended. Shared-machine lab, not field CWV. Earlier81 concurrent-capture result retained in PERFORMANCE-before-median.json."
+}

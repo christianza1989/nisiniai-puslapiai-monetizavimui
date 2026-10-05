@@ -1,0 +1,26 @@
+{
+  "createdAt": "2026-10-01T11:30:20.675Z",
+  "tool": "built-in image_gen",
+  "prompts": [
+    {
+      "key": "hero",
+      "alt": "Vidaus laiptinė su ąžuolo pakopomis, tamsiu metaliniu karkasu ir baltomis sienomis",
+      "prompt": "Use case: photorealistic-natural. Asset type: portrait architectural hero photograph for a Lithuanian indoor staircase planning website. Create a visually exceptional professional architectural editorial photograph, portrait 2:3. A real-looking tall narrow double-height stairwell in a contemporary house, pale cool-white plaster, charcoal powder-coated steel stringers and precise vertical balusters, natural lightly smoked oak stair treads, one straight flight with a generous rectangular upper landing, all structurally connected and a continuous handrail. View from low at the foot of the stairs diagonally upward, full stair flight and upper landing visible, strong angular composition, stairs occupy the central 65% for mobile cropping. Cool diffuse overcast daylight from a high window, balanced exposure, textured white walls and honest material texture. Mood is architectural and precise, not warm stock-home lifestyle. No plants, no props, no tools, no furniture, no documents, no people, no lettering, no logos, no watermark. No floating impossible steps or malformed railing. This is an original illustrative architecture scene, not a claimed customer project. One photograph only."
+    },
+    {
+      "key": "materials",
+      "alt": "Ąžuolo pakopos, metalinio karkaso ir betoninio pagrindo detalės iš arti",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 architectural material-detail photograph for an indoor staircase construction guide. A professional tight orthogonal close-up of one real-looking smoked oak stair tread seated on a precisely fabricated charcoal powder-coated steel stringer; an unfinished cast concrete landing edge is visible beside and beneath the connected steel stair. Show the three distinct materials clearly: cut oak end grain, smooth folded structural steel, textured gray cast concrete. All parts have plausible supports and joints, no impossible floating assembly. Camera at waist height, crisp detail, architectural studio-like even cool daylight, restrained white/gray/charcoal palette with subtle natural timber. Clean single composition, not a collage, no warm orange sunlight or houseplants, no table still-life, no tools, no labels or numeric dimensions, no text or watermark, no brand logos. Original illustrative scene, not a claimed real installation."
+    },
+    {
+      "key": "budget",
+      "alt": "Laiptų karkaso, medinių pakopų ir turėklo jungtys viename vaizde",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial architectural close-up for a guide about comparing staircase quote scope. Photograph a real-looking contemporary indoor stair viewed obliquely from the upper landing, showing distinct connected components in one tight frame: charcoal metal stringer below, several natural oak treads with clear edges, vertical charcoal balusters and continuous oak handrail with a clear corner onto the upper landing. The construction-to-tread-to-guard relationship is visible, precise plausible joinery. Quiet cool-white stairwell, broad overcast daylight, dark steel contrasts against neutral white walls, crisp architectural photography with natural texture, no fake artistic soft focus. Central composition remains legible in a 4:3 crop. No documents, no invented prices, no tape measures, no plants, no furniture, no people, no labels, no brand marks, no lettering or watermark. One coherent photo, not a grid or collage. An original illustrative interior, not portfolio evidence."
+    },
+    {
+      "key": "measure",
+      "alt": "Neužbaigta betoninė laiptinė ir atvira viršutinio aukšto anga",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 documentary architectural photograph for preparing information before indoor stair measurement. Photograph an unfinished modern house interior with one solid cast-concrete stair flight leading up to a clearly visible rectangular upper floor opening. Unfinished plaster walls, exposed concrete at the upper landing and a small visible floor finish sample at the lower floor edge, construction environment clean but genuinely incomplete with minor concrete texture and dust. View from the lower room, looking diagonally along the flight toward the opening, balanced cool daylight, natural professional building-survey photography, precise geometry with connected risers/treads and plausible floor levels. No readable measurements, no invented safety/engineering annotations, no plans or paperwork, no tool still-life, no people, no logos or watermark. No polished completed interior, no warm lifestyle lighting. Original illustrative scene supporting a planning guide, not a claimed inspected job."
+    }
+  ]
+}

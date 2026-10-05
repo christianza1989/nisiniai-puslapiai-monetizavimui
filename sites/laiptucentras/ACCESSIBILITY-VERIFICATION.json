@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-01T05:24:31.896Z",
+  "method": "Supported CUA browser actions and read-only DOM observations; IAB, Windows. Actual emulated viewports, not physical-device checks.",
+  "version": {
+    "components/niche/laiptucentras-site.tsx": "66f6e396e87905c27df2178c99fee7fdc7499186f29802e71b6ab3d46cb5c9f3",
+    "components/niche/laiptucentras-site.module.css": "c8845549b4fc379056d60dcccfa119b6cad826f84ca4ac93613ab8f25e865b3c",
+    "app/niche/[siteId]/[[...slug]]/page.tsx": "bfd0525e7288d66a222a9cc4f3c0f208c9a196e3159a7821230c9041d409db4b",
+    "content-packages/laiptucentras/content-package.json": "46bdfd45c5268029f9f10a1b27dcb96a09c88ae9e491ba1e95d9fa945b006127",
+    "lib/niche-mail.ts": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c",
+    "lib/smtp-protocol.mjs": "ebd4a84bf153017d2b502326a7851488f1c1c5a1ca82b0abe8b4793204de58ab",
+    "lib/niche-schema-core.mjs": "813bcf8d16460b3775fba78c46435474bf59ffa7871f478f9811f736e73a32fc",
+    "tests/niche-schema.test.mjs": "7ed830e0ed38dded81344c3dae7d2178434811c9ec702af4257dbad63f6f5d6d",
+    "app/niche/[siteId]/lead/route.ts": "47226be6c1a339a0ec6a01fc97c188d6114cb4410d2528de59d42754c4dd5ff8"
+  },
+  "viewports": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "screenshots": [
+    "qa/home-mobile-final.png",
+    "qa/gidai-mobile-final.png",
+    "qa/guide-320-body.png",
+    "qa/terms-320.png",
+    "qa/terms-768.png",
+    "qa/mobile-menu.png",
+    "qa/form-empty.png",
+    "qa/form-success.png"
+  ],
+  "contrasts": [
+    {
+      "name": "ink/paper",
+      "foreground": "#293e34",
+      "background": "#f3efe7",
+      "ratio": 9.99,
+      "normalTextPass": true
+    },
+    {
+      "name": "muted/paper",
+      "foreground": "#536153",
+      "background": "#f3efe7",
+      "ratio": 5.72,
+      "normalTextPass": true
+    },
+    {
+      "name": "button / dark section text",
+      "foreground": "#fffdf8",
+      "background": "#293e34",
+      "ratio": 11.27,
+      "normalTextPass": true
+    },
+    {
+      "name": "muted/footer",
+      "foreground": "#536153",
+      "background": "#e5e6dc",
+      "ratio": 5.21,
+      "normalTextPass": true
+    },
+    {
+      "name": "placeholder/input",
+      "foreground": "#606c60",
+      "background": "#fffdf8",
+      "ratio": 5.42,
+      "normalTextPass": true
+    }
+  ],
+  "keyboard": {
+    "evidence": [
+      "qa/keyboard.json",
+      "qa/skip-final.json"
+    ],
+    "finalSkip": "MAIN#turinys with tabindex=-1; initial BODY defect repaired",
+    "menu": "Native details opened with Enter and closed; four correct routes; 3px visible focus"
+  },
+  "form": {
+    "evidence": [
+      "qa/native-validation.json",
+      "qa/ui-d1.json"
+    ],
+    "nativeEmptyFocus": "name",
+    "requiredLabels": true,
+    "successStored": true,
+    "syntheticRecordRemoved": true
+  },
+  "zoom": {
+    "status": "UNVERIFIED",
+    "originalZoom": null,
+    "attemptedZoom": null,
+    "verifiedZoom": null,
+    "restoredZoom": null,
+    "reason": "Native app control disabled. IAB advertises viewport and visibility, no browser zoom capability. Chrome extension became unavailable during QA. No actual 200% browser zoom or enlarged-text proof was obtained; viewport width, CSS scaling and DPR are not treated as zoom."
+  },
+  "reflow": {
+    "evidence": "qa/responsive.json",
+    "allElevenPagesAt320And768": "no horizontal overflow"
+  },
+  "motion": {
+    "evidence": "qa/accessibility-styles.json",
+    "animatedElements": false,
+    "css": "prefers-reduced-motion disables transitions; no motion features"
+  },
+  "limitations": [
+    "R2 and S2 remain UNVERIFIED because the required enlargement test is incomplete.",
+    "Lighthouse accessibility 100 is not a WCAG conformity declaration.",
+    "Viewport override will be reset before handover; no browser preference changed."
+  ]
+}

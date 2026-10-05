@@ -1,0 +1,4 @@
+interface:
+  display_name: "Niche Site A-Z Audit"
+  short_description: "Audit phase-one sites with evidence and launch gates"
+  default_prompt: "Audit this phase-one niche site using $niche-site-audit. Repair authorized defects, inspect all guides and actual responsive imagery, verify the shared media import, retain evidence for every A-Z criterion, and separate local quality from launch readiness."

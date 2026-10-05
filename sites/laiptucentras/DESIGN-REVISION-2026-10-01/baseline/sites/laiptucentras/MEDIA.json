@@ -1,0 +1,50 @@
+[
+  {
+    "key": "hero",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0f598-a916-7480-a76e-7faebf7c1e64\\exec-35536d1f-52d4-49b7-88c5-a8e5a9e0a455.png",
+    "destination": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/laiptucentras/assets/hero-original.png",
+    "prompt": "Use case: stylized-concept. Create a wide architectural editorial visual for Lithuanian website Laiptų centras, 3:2 landscape. A believable residential oak staircase with continuous dark charcoal steel side stringers, closed oak risers, closely spaced vertical black balusters and oak handrail, leading from bottom left to upper right in a quiet warm off-white plaster interior. Full staircase shown with a landing and daylight from an unseen left window, pale limestone floor. Carefully articulated construction, realistic material grain, soft autumn midday shadows. Architectural photography quality, slightly illustrative editorial rendering, earthy warm oak and deep olive/charcoal. This is a conceptual illustration, not a real project or build-ready engineering diagram. No people, no lettering, no logos, no badges, no furniture distraction. No floating unsupported steps, no impossible railings. Safe focal area centered for a narrow mobile crop. Save finished image.",
+    "tool": "built-in ImageGen",
+    "review": "2026-10-01 visually inspected; conceptual illustration, no client/stock claim",
+    "dimensions": {
+      "width": 1536,
+      "height": 1024
+    }
+  },
+  {
+    "key": "budget",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0f598-a916-7480-a76e-7faebf7c1e64\\exec-3231ee93-aa0b-41d4-bd96-3e244573046b.png",
+    "destination": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/laiptucentras/assets/budget-original.png",
+    "prompt": "Use case: photorealistic-natural. Landscape 3:2 editorial still life about comparing a residential staircase quote. Neatly placed pale oak stair tread sample, small matte charcoal steel bracket sample, a plain unprinted paper stack, a graphite pencil and simple tape measure on a warm light stone work table. Side lighting, architectural workshop quality, close tangible textures, carefully separated parts rather than a finished client's job. Composition centered with useful breathing space. Olive and warm oak palette, no people, no visible text, no numerals, no brands, no logos, no watermarks. Conceptual illustrative photography for a guide, not evidence of products sold.",
+    "tool": "built-in ImageGen",
+    "review": "2026-10-01 visually inspected; conceptual illustration, no client/stock claim",
+    "dimensions": {
+      "width": 1536,
+      "height": 1024
+    }
+  },
+  {
+    "key": "materials",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0f598-a916-7480-a76e-7faebf7c1e64\\exec-3b03b5eb-12a6-4c48-8b00-782a7248d85c.png",
+    "destination": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/laiptucentras/assets/materials-original.png",
+    "prompt": "Use case: photorealistic-natural. Landscape 3:2 macro architectural material study: a thick unfinished pale oak stair tread rests on a dark matte steel stringer sample beside a clean pale grey concrete block; three materials visibly distinct, beautiful oak endgrain, smooth steel, porous concrete surface. In a warm neutral studio with soft oblique daylight, shadows give honest depth. Centered close composition suitable for mobile cropping. Subject is comparing staircase construction and tread material, a visual illustration only with no exact dimensions, no people, no printed text, no tools, no brand, no logo, no watermark, no fake engineering diagram.",
+    "tool": "built-in ImageGen",
+    "review": "2026-10-01 visually inspected; conceptual illustration, no client/stock claim",
+    "dimensions": {
+      "width": 1536,
+      "height": 1024
+    }
+  },
+  {
+    "key": "measure",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0f598-a916-7480-a76e-7faebf7c1e64\\exec-a8436533-2ee7-46b0-85bc-e7145d20b0fb.png",
+    "destination": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/laiptucentras/assets/measure-original.png",
+    "prompt": "Use case: stylized-concept. Landscape 3:2 editorial architectural illustration about preparing measurements for residential stairs: view of a clean unfinished interior stairwell opening, floor edge and upper concrete slab visible, unfinished plaster walls and a tape measure coiled safely on the near floor beside a clipboard with completely blank sheet and pencil. Clearly distinguish upper and lower floor level without any arrows or numeric labels. Calm soft daylight, grey concrete and warm oak pencil, earthy architectural visual quality. No person, no building client identity, no text, no numbers, no logos, no watermark. Concept illustration not build-ready structural advice; realistic opening and no hazardous human scene.",
+    "tool": "built-in ImageGen",
+    "review": "2026-10-01 visually inspected; conceptual illustration, no client/stock claim",
+    "dimensions": {
+      "width": 1536,
+      "height": 1024
+    }
+  }
+]

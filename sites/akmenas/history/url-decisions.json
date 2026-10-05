@@ -1,0 +1,62 @@
+{
+  "auditCheckedAt": "2026-10-01T02:20:01.207Z",
+  "domain": "akmenas.lt",
+  "entries": [
+    {
+      "oldUrl": "/",
+      "action": "keep-url-new-content",
+      "targetPath": "/",
+      "reason": "Naujas homepage ta pačia plačia akmens tema; originalus stalviršių piloto turinys.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20170911144731/http://akmenas.lt/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "/index.php/akmens-skalda",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Skaldos pirkimo ketinimas neturi stalviršio gido atitikmens.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20170911144731/http://akmenas.lt/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "/index.php/akmens-laiptai",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Laiptų tema nesuteikia teisės teigti montavimo pajėgumo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20170911144731/http://akmenas.lt/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "/index.php/akmens-mozaika",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Mozaikos gaminio ketinimas nepatenka į stalviršių pirmą fazę.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20170911144731/http://akmenas.lt/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "/akmuo/public/produktai.jsp",
+      "action": "remove-404",
+      "targetPath": null,
+      "reason": "Senas utility/katalogo kelias; nėra dabartinio lygiaverčio gaminio.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20170911144731/http://akmenas.lt/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    }
+  ],
+  "redirectsImplemented": false
+}

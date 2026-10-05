@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+    container_name: pinet-voice-postgres
+    environment:
+      POSTGRES_DB: pinet
+      POSTGRES_USER: pinet_admin
+      POSTGRES_PASSWORD: ${PINET_DB_ADMIN_PASSWORD:?run scripts/setup_local.py}
+    ports: ["127.0.0.1:15432:5432"]
+    volumes: ["pinet_pg:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pinet_admin -d pinet"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  pinet_pg:

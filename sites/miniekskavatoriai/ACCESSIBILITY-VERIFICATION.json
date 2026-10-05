@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-01T12:22:22.773Z",
+  "version": {
+    "packageSha256": "7f4bcc40fca41a7c2714dfea48fa9fc1eff36ff0235e3e96d9d8d24152fcac57",
+    "renderer": {
+      "miniekskavatoriai-site.tsx": "1d8df9305dfeeb23475730504e604941d5a62695ed42ce01eaa846761fde42ba",
+      "miniekskavatoriai-site.tools.tsx": "fb5a04285022f6de4a2af487761f40b070d0ddffe3c39d9f2ce93140cb413190",
+      "miniekskavatoriai-site.module.css": "a20c860233a1a03a48c2c875437170aa4fb8c5e3657a42884ab58d35ad889f08"
+    }
+  },
+  "method": "Actual Codex IAB viewport tests and native tab keys; not physical devices",
+  "screens": [
+    1440,
+    390,
+    320,
+    768
+  ],
+  "contrast": [
+    {
+      "role": "body",
+      "fg": "#1b2c34",
+      "bg": "#f5f7f4",
+      "ratio": 13.38
+    },
+    {
+      "role": "utility",
+      "fg": "#526067",
+      "bg": "#ffffff",
+      "ratio": 6.51
+    },
+    {
+      "role": "links",
+      "fg": "#994424",
+      "bg": "#f5f7f4",
+      "ratio": 6.08
+    },
+    {
+      "role": "hero link",
+      "fg": "#f2a36c",
+      "bg": "#1b2c34",
+      "ratio": 7.02
+    },
+    {
+      "role": "button",
+      "fg": "#ffffff",
+      "bg": "#1b2c34",
+      "ratio": 14.42
+    },
+    {
+      "role": "footer",
+      "fg": "#e3eae6",
+      "bg": "#1b2c34",
+      "ratio": 11.79
+    },
+    {
+      "role": "placeholder",
+      "fg": "#68777c",
+      "bg": "#ffffff",
+      "ratio": 4.65
+    }
+  ],
+  "keyboard": {
+    "firstFocus": {
+      "href": "#turinys",
+      "label": "Pereiti prie turinio",
+      "outline": "rgb(153, 68, 36) solid 3px"
+    },
+    "skip": {
+      "id": "turinys",
+      "tag": "MAIN"
+    },
+    "opened": true,
+    "closedByKeyboard": true
+  },
+  "zoom": {
+    "mechanism": "native tab ctrl+plus attempted once after viewport reset",
+    "baseline": {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "h1": "61.44px"
+    },
+    "after": {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "h1": "61.44px"
+    },
+    "established200Percent": false,
+    "originalZoom": "percentage not exposed",
+    "restoration": "No effective zoom change in either browser; IAB viewport override reset before handover, observed1280x720/DPR1; temporary Chrome tab closed"
+  },
+  "R2": "UNVERIFIED",
+  "S2": "UNVERIFIED",
+  "limits": "320px reflow, font/CSS measurements and Lighthouse100 are not proof of 200% browser enlargement. Native apps disabled; no workaround UI automation used. No physical-device/WCAG certification.",
+  "additionalChromeAttempt": "Native ctrl+plus had no effect: viewport1366x543,DPR1,H1 65.568px unchanged; see qa/palette-runtime.json"
+}

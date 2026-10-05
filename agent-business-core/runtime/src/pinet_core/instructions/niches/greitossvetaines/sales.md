@@ -1,0 +1,1 @@
+Aprašyk kliento tikslą, apimtį, reikalingą turinį, integracijas, priežiūrą ir priėmimo kriterijus. Atskirai įvardyk domeną/hostingą ir pasikartojančius mokesčius, jei jie patvirtinti. Nežadėk Google pozicijos, pardavimų augimo ar darbų termino be įrodymų. Į pardavimo etapą eik tik su šios nišos patvirtinta kainodara – padangų antkainis čia netaikomas.

@@ -1,0 +1,294 @@
+{
+  "at": "2026-10-01T05:10:43.194Z",
+  "reviewer": "One Codex agent, sequential original + rendered review; not expert/client photography",
+  "importer": "saveResponsiveAsset / responsive-webp-v1",
+  "families": [
+    {
+      "name": "hero",
+      "groupId": "a09fd650-06d5-4f44-9193-b3bba92ff2d7",
+      "reason": "Parodo laukiančius, dar neįvykdytus darbus; ne užbaigtą kliento projektą.",
+      "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė.",
+      "promptFile": "media-handyman/prompts.json",
+      "originalFile": "media-handyman/originals/hero.png",
+      "sourcePrivate": "content-studio/data/media-originals/auksarankiams",
+      "variants": [
+        {
+          "src": "/content-assets/auksarankiams/e8d9351d-9325-4b05-8beb-1b5cb9967367.webp",
+          "width": 1536,
+          "bytes": 111740,
+          "sha256": "8bd493e137f5324f00c5ae920152e83652cf1782f8f0cc024f9c5114a234850f"
+        },
+        {
+          "src": "/content-assets/auksarankiams/91a1a1a7-ce50-45c4-98d7-fe84ec921776.webp",
+          "width": 1200,
+          "bytes": 77936,
+          "sha256": "58ad09e3ea802b9a97fd95d4fe2b6de8966944fc5a4ae33e585cbc84da934987"
+        },
+        {
+          "src": "/content-assets/auksarankiams/82b9f53d-2076-46ff-b835-04406aec6ea7.webp",
+          "width": 800,
+          "bytes": 42686,
+          "sha256": "317c0dc53260cfed12c20f529611fadaebce3f649a846e0a2ea1f61f214e541e"
+        },
+        {
+          "src": "/content-assets/auksarankiams/b32a7c3a-5ece-4ff2-84a4-c1e8535f5542.webp",
+          "width": 640,
+          "bytes": 30294,
+          "sha256": "c97c96e4ea5dfdbd9f1d2ab77bb9578bf7a224112b4dc6b4dd72f84a452fa21c"
+        },
+        {
+          "src": "/content-assets/auksarankiams/e5aefb8c-a892-4400-97a4-9c009b57e1dc.webp",
+          "width": 360,
+          "bytes": 11410,
+          "sha256": "3dca982bed7ab58ca207cd9909cf4cc630157a557f9fae75770edbfe15c9863e"
+        }
+      ],
+      "accepted": true
+    },
+    {
+      "name": "baldai",
+      "groupId": "ce420334-7f87-43a6-b7fd-a78154d41635",
+      "reason": "Modelio, komplekto ir instrukcijos klausimų kontekstas. Generuoto brėžinio ženklai nėra techninė instrukcija.",
+      "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė.",
+      "promptFile": "media-handyman/prompts.json",
+      "originalFile": "media-handyman/originals/baldai.png",
+      "sourcePrivate": "content-studio/data/media-originals/auksarankiams",
+      "variants": [
+        {
+          "src": "/content-assets/auksarankiams/9392167c-3452-4061-a84b-1c7fd4c3c15e.webp",
+          "width": 1536,
+          "bytes": 123990,
+          "sha256": "c70d338e3aca86857c22a03b1524d12c5853e0e63a34b72077b156e7adbaaa79"
+        },
+        {
+          "src": "/content-assets/auksarankiams/0749f9e7-4067-476e-9b48-d3ca9bf50a58.webp",
+          "width": 1200,
+          "bytes": 85776,
+          "sha256": "721c44d38cfb5e889bfcdfee6e7a80ba925570fb1f38522dfb6568338b70d488"
+        },
+        {
+          "src": "/content-assets/auksarankiams/b8569d3f-cd71-4f9a-bdd7-7d6a351f7e7d.webp",
+          "width": 800,
+          "bytes": 45000,
+          "sha256": "1b95ec3bef5b4fbea71b1b9d7510655301300772513c470705580903de22f205"
+        },
+        {
+          "src": "/content-assets/auksarankiams/167ee4ba-0b3c-420a-b8df-f57930afa771.webp",
+          "width": 640,
+          "bytes": 31272,
+          "sha256": "b6be057e4c18444a49770518ce7a24d8d62e6994c8a6c060f5a9cdde682923aa"
+        },
+        {
+          "src": "/content-assets/auksarankiams/96921084-e4fd-4bcf-bb57-3eb6e3d5d16c.webp",
+          "width": 360,
+          "bytes": 12234,
+          "sha256": "2454d5946ac582be2a8baab75da7d5a7e90362ae284fe52e692edbc845f06a00"
+        }
+      ],
+      "accepted": true
+    },
+    {
+      "name": "sarasas",
+      "groupId": "6c942f09-8ccb-4047-935b-51b72ac84b8f",
+      "reason": "Kelių skirtingų daiktų/apimčių sąrašo kontekstas; lango/sienos iš vaizdo neidentifikuojame.",
+      "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė.",
+      "promptFile": "media-handyman/prompts.json",
+      "originalFile": "media-handyman/originals/sarasas.png",
+      "sourcePrivate": "content-studio/data/media-originals/auksarankiams",
+      "variants": [
+        {
+          "src": "/content-assets/auksarankiams/511c95a9-36ce-40a3-8b7e-70a1682181a4.webp",
+          "width": 1536,
+          "bytes": 110742,
+          "sha256": "aaf2c058a09eb536092df958d1bb3b4e77cbfae98dae32ccf01d4fb1fe2601e8"
+        },
+        {
+          "src": "/content-assets/auksarankiams/3ba975d1-5ffc-4419-b180-d1e138d24c5f.webp",
+          "width": 1200,
+          "bytes": 76328,
+          "sha256": "77f577202106c0e756de668a001272f67113dcf7527ce91e7c8c839dac6d66fd"
+        },
+        {
+          "src": "/content-assets/auksarankiams/653e8301-97ab-4a57-b1b6-1ed9704a074f.webp",
+          "width": 800,
+          "bytes": 41108,
+          "sha256": "45c919ed0d1ca201140010bfe73daee1b98782e193aec6f8727e9533ca0b71d9"
+        },
+        {
+          "src": "/content-assets/auksarankiams/91d02fba-7120-4bfd-a1d7-6b3388866da4.webp",
+          "width": 640,
+          "bytes": 28674,
+          "sha256": "e394200ec2e72bdcb44d5513e6eebe646bc15b20d987b141b2ab20fb220273df"
+        },
+        {
+          "src": "/content-assets/auksarankiams/29f82864-f409-4bbb-a1c9-ffbc9d064117.webp",
+          "width": 360,
+          "bytes": 11182,
+          "sha256": "d8ff8eea92da9472ddd6fae1b16bc358a73a62b99a14fd1061c55223e5c654fe"
+        }
+      ],
+      "accepted": true
+    },
+    {
+      "name": "detale",
+      "groupId": "3b2a0632-3be9-4321-aa47-d896425f9e97",
+      "reason": "Baldo furnitūros neaiškumai ir darbo vertinimas; matuoklio ženklai nėra matmenų ar apkrovos šaltinis.",
+      "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė.",
+      "promptFile": "media-handyman/prompts.json",
+      "originalFile": "media-handyman/originals/detale.png",
+      "sourcePrivate": "content-studio/data/media-originals/auksarankiams",
+      "variants": [
+        {
+          "src": "/content-assets/auksarankiams/7f2a853a-04a5-4808-ac27-be5ae1120db6.webp",
+          "width": 1536,
+          "bytes": 92244,
+          "sha256": "2cf6f352e6f7202a794732cb06940675031589dde27dd05f54dcc387c13dd842"
+        },
+        {
+          "src": "/content-assets/auksarankiams/e2afb5d5-bb0c-4f9e-88e8-257c6a7d2b89.webp",
+          "width": 1200,
+          "bytes": 65512,
+          "sha256": "47deb5db206228870be4fca424a0b9a40fd84765554e2ff61259132a031ee5db"
+        },
+        {
+          "src": "/content-assets/auksarankiams/45f0bc48-9cfc-482d-9ffb-c0b498164c1d.webp",
+          "width": 800,
+          "bytes": 35914,
+          "sha256": "a99c797c9b85d7217df74b74437d549c8d4a71400921f0168880e26cae46e4ce"
+        },
+        {
+          "src": "/content-assets/auksarankiams/d509c3f2-b7f0-467a-9ebe-38182d7e9192.webp",
+          "width": 640,
+          "bytes": 25486,
+          "sha256": "6d4dc0b15a34f48f2edf4f6df8babab8039d221f2f81d3b5b9f117765f71f196"
+        },
+        {
+          "src": "/content-assets/auksarankiams/6a927287-3244-4727-9c1b-378e434fb0fc.webp",
+          "width": 360,
+          "bytes": 9944,
+          "sha256": "d8f3b6366a4768bb8f5a3d8a34195665d77f5d47a02b1b224d8783548d946790"
+        }
+      ],
+      "accepted": true
+    }
+  ],
+  "coverage": [
+    {
+      "id": "d5f8275c-97b8-4969-b5dd-44d507d98022",
+      "slug": "",
+      "type": "home",
+      "primaryImage": "/content-assets/auksarankiams/e8d9351d-9325-4b05-8beb-1b5cb9967367.webp",
+      "variantCount": 20,
+      "verdict": "PASS",
+      "reason": "Teminis originalas ir realus browser srcset, crop, alt, indeksas bei Article image patikrinti."
+    },
+    {
+      "id": "950912cb-f046-4e30-80d1-44348a61386c",
+      "slug": "gidai",
+      "type": "faq",
+      "primaryImage": null,
+      "variantCount": 0,
+      "verdict": "PASS",
+      "reason": "Teksto/poreikio formos/pasitikėjimo puslapis: dekoratyvi foto nepadėtų patikrinti tapatybės, teisių ar pateikti duomenis."
+    },
+    {
+      "id": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+      "slug": "kontaktai",
+      "type": "faq",
+      "primaryImage": null,
+      "variantCount": 0,
+      "verdict": "PASS",
+      "reason": "Teksto/poreikio formos/pasitikėjimo puslapis: dekoratyvi foto nepadėtų patikrinti tapatybės, teisių ar pateikti duomenis."
+    },
+    {
+      "id": "39b932c0-4a4f-4f63-8af4-d1c22c1075c9",
+      "slug": "apie-projekta",
+      "type": "faq",
+      "primaryImage": null,
+      "variantCount": 0,
+      "verdict": "PASS",
+      "reason": "Teksto/poreikio formos/pasitikėjimo puslapis: dekoratyvi foto nepadėtų patikrinti tapatybės, teisių ar pateikti duomenis."
+    },
+    {
+      "id": "3cbf9d93-b5dc-4dc7-b466-c47eddc618f4",
+      "slug": "redakcija",
+      "type": "faq",
+      "primaryImage": null,
+      "variantCount": 0,
+      "verdict": "PASS",
+      "reason": "Teksto/poreikio formos/pasitikėjimo puslapis: dekoratyvi foto nepadėtų patikrinti tapatybės, teisių ar pateikti duomenis."
+    },
+    {
+      "id": "e3549cb0-55f1-4a49-b169-f18aa5fda103",
+      "slug": "naudojimo-salygos",
+      "type": "faq",
+      "primaryImage": null,
+      "variantCount": 0,
+      "verdict": "PASS",
+      "reason": "Teksto/poreikio formos/pasitikėjimo puslapis: dekoratyvi foto nepadėtų patikrinti tapatybės, teisių ar pateikti duomenis."
+    },
+    {
+      "id": "1f0efe68-e370-4b06-8fa3-db5bcd647576",
+      "slug": "privatumas",
+      "type": "faq",
+      "primaryImage": null,
+      "variantCount": 0,
+      "verdict": "PASS",
+      "reason": "Teksto/poreikio formos/pasitikėjimo puslapis: dekoratyvi foto nepadėtų patikrinti tapatybės, teisių ar pateikti duomenis."
+    },
+    {
+      "id": "4db76ef4-d1cd-4c0c-97e2-01791d1b31f2",
+      "slug": "baldu-surinkimas",
+      "type": "faq",
+      "primaryImage": "/content-assets/auksarankiams/9392167c-3452-4061-a84b-1c7fd4c3c15e.webp",
+      "variantCount": 5,
+      "verdict": "PASS",
+      "reason": "Teminis originalas ir realus browser srcset, crop, alt, indeksas bei Article image patikrinti."
+    },
+    {
+      "id": "09f02778-86e7-41d1-8643-72cf04f5c5cc",
+      "slug": "kabinimo-darbai",
+      "type": "faq",
+      "primaryImage": "/content-assets/auksarankiams/e8d9351d-9325-4b05-8beb-1b5cb9967367.webp",
+      "variantCount": 5,
+      "verdict": "PASS",
+      "reason": "Teminis originalas ir realus browser srcset, crop, alt, indeksas bei Article image patikrinti."
+    },
+    {
+      "id": "5e821e43-6830-455c-b816-b219068a0328",
+      "slug": "smulkus-baldu-pataisymai",
+      "type": "faq",
+      "primaryImage": "/content-assets/auksarankiams/7f2a853a-04a5-4808-ac27-be5ae1120db6.webp",
+      "variantCount": 5,
+      "verdict": "PASS",
+      "reason": "Teminis originalas ir realus browser srcset, crop, alt, indeksas bei Article image patikrinti."
+    },
+    {
+      "id": "5cd83534-ab8a-45f5-a7f7-c9d2f7aa1262",
+      "slug": "baldu-surinkimo-uzklausa",
+      "type": "guide",
+      "primaryImage": "/content-assets/auksarankiams/9392167c-3452-4061-a84b-1c7fd4c3c15e.webp",
+      "variantCount": 5,
+      "verdict": "PASS",
+      "reason": "Teminis originalas ir realus browser srcset, crop, alt, indeksas bei Article image patikrinti."
+    },
+    {
+      "id": "223dbe27-419c-4136-b273-0c850a8be39c",
+      "slug": "smulkiu-darbu-sarasas",
+      "type": "guide",
+      "primaryImage": "/content-assets/auksarankiams/511c95a9-36ce-40a3-8b7e-70a1682181a4.webp",
+      "variantCount": 5,
+      "verdict": "PASS",
+      "reason": "Teminis originalas ir realus browser srcset, crop, alt, indeksas bei Article image patikrinti."
+    },
+    {
+      "id": "4a69ab0c-b4a8-41b0-90dc-10ad4ae6672c",
+      "slug": "darbu-ivertinimas",
+      "type": "guide",
+      "primaryImage": "/content-assets/auksarankiams/7f2a853a-04a5-4808-ac27-be5ae1120db6.webp",
+      "variantCount": 5,
+      "verdict": "PASS",
+      "reason": "Teminis originalas ir realus browser srcset, crop, alt, indeksas bei Article image patikrinti."
+    }
+  ]
+}

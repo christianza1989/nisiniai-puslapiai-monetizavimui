@@ -1,0 +1,308 @@
+{
+  "at": "2026-10-01T03:19:30.697Z",
+  "siteId": "akmenas",
+  "packageSha256": "cd725179619baaef8ba022f44964339eab0f4030d0629c9f9113997e7a98214e",
+  "generatedAt": "2026-10-01T02:44:02.214Z",
+  "pages": [
+    {
+      "id": "dbeb80a8-6cda-4337-a9bc-efa483844f5f",
+      "slug": "",
+      "type": "home",
+      "title": "Akmens stalviršiai: pasirinkimo gidai ir aiški užklausa",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "b042257df7f7001d841483cba77b835d4031627424a6276aff2641ac8c5e3727",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "b042257df7f7001d841483cba77b835d4031627424a6276aff2641ac8c5e3727",
+        "approvedAt": "2026-10-01T02:34:38.259Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "f103c814-3dd8-48ef-a178-df927f8daa17",
+      "slug": "gidai",
+      "type": "faq",
+      "title": "Akmens stalviršių gidai",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "28752e1427e4bd54d0318ce661db322a875703bdb10a56551404b90ac7ed4ea2",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "28752e1427e4bd54d0318ce661db322a875703bdb10a56551404b90ac7ed4ea2",
+        "approvedAt": "2026-10-01T02:34:38.329Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "ceaa4a4f-dc52-4aec-9998-1d5a462ab9e0",
+      "slug": "gidas/stalvirsiu-medziagu-palyginimas",
+      "type": "guide",
+      "title": "Granitas, kvarcas, marmuras ar keramika: kaip palyginti stalviršius?",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "44046e713f8f262779bbfe87eaf44e31fb8dfa5e08e13a4c87588141d77834d8",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "44046e713f8f262779bbfe87eaf44e31fb8dfa5e08e13a4c87588141d77834d8",
+        "approvedAt": "2026-10-01T02:34:38.417Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "ab4c1f06-fd54-4ded-854f-198c929fe3cb",
+      "slug": "gidas/pasiruosimas-stalvirsio-uzklausai",
+      "type": "guide",
+      "title": "Ką paruošti akmens stalviršio užklausai?",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "6db1c05dd4d4151c539134b67fba51f4e719ccf0f0aa467173d225f331f4a6a0",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "6db1c05dd4d4151c539134b67fba51f4e719ccf0f0aa467173d225f331f4a6a0",
+        "approvedAt": "2026-10-01T02:34:38.504Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "8f4fec6e-3461-4f9d-a986-44576dc0230c",
+      "slug": "gidas/akmens-stalvirsio-prieziura",
+      "type": "guide",
+      "title": "Akmens stalviršio priežiūra: nuo ko pradėti kasdien?",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "9786200c65df079199af270f128118ee7093a90755c8ca5bcef84e0ac2c2e87d",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "9786200c65df079199af270f128118ee7093a90755c8ca5bcef84e0ac2c2e87d",
+        "approvedAt": "2026-10-01T02:34:38.579Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "0544f2e8-5a55-4943-8b89-7763e8b4e91b",
+      "slug": "stalvirsio-poreikis",
+      "type": "faq",
+      "title": "Aiškus stalviršio poreikis prieš konkretų pasiūlymą",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "f7bf593ee0d334cf76599b2ee44f864dc7e4f00cc2c5c6f063eb3cf1392e0864",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "f7bf593ee0d334cf76599b2ee44f864dc7e4f00cc2c5c6f063eb3cf1392e0864",
+        "approvedAt": "2026-10-01T02:44:02.206Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "32ff4030-2611-4835-8a2d-cd17cc04e98c",
+      "slug": "kontaktai",
+      "type": "faq",
+      "title": "Kontaktai ir jūsų stalviršio klausimas",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "96ee25b5557772392aabbd0aac20939a2559db3ee3754a2b1f5309cf67af4a40",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "96ee25b5557772392aabbd0aac20939a2559db3ee3754a2b1f5309cf67af4a40",
+        "approvedAt": "2026-10-01T02:34:38.758Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "1e91d16e-a10f-4472-a144-d250e8f2ca7d",
+      "slug": "apie-projekta",
+      "type": "faq",
+      "title": "Apie akmenas.lt projektą",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "7078c74e09edf7d42eae6a583c6303e774dc960d5b9771c9dae2a1d98e053813",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "7078c74e09edf7d42eae6a583c6303e774dc960d5b9771c9dae2a1d98e053813",
+        "approvedAt": "2026-10-01T02:34:38.825Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "175b6965-06a0-45c5-ac4e-fa969e085596",
+      "slug": "redakcija",
+      "type": "faq",
+      "title": "MB Pinet redakcija ir turinio metodika",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "d1508e27a4bdfea08299086907a6210101d6198ff098fd9f134a5e8137818b89",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "d1508e27a4bdfea08299086907a6210101d6198ff098fd9f134a5e8137818b89",
+        "approvedAt": "2026-10-01T02:34:38.885Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "2ab7b611-62fb-49c6-a76f-f5d2e47ab5cf",
+      "slug": "naudojimo-salygos",
+      "type": "faq",
+      "title": "Informacinio projekto naudojimo sąlygos",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "46ad440b6bf1426caccc055a60a8650d12f771c16a6e4f515a9ffd86ea90abf5",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "46ad440b6bf1426caccc055a60a8650d12f771c16a6e4f515a9ffd86ea90abf5",
+        "approvedAt": "2026-10-01T02:34:38.980Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    },
+    {
+      "id": "3a419846-4b3b-4444-a4bb-b70bc75b7c09",
+      "slug": "privatumas",
+      "type": "faq",
+      "title": "Privatumo informacija vietiniam pilotui",
+      "publishAt": "2026-10-01T02:34:37.256Z",
+      "revisionHash": "1d431b1f674c303e5549a5c38a88b35e22326f35cbbefe41668184081be1771c",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "1d431b1f674c303e5549a5c38a88b35e22326f35cbbefe41668184081be1771c",
+        "approvedAt": "2026-10-01T02:34:39.041Z",
+        "actorId": "codex-source-review-2026-10-01"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "377049e3-38a5-4051-940c-27219449d06c",
+      "src": "/content-assets/akmenas/377049e3-38a5-4051-940c-27219449d06c.webp",
+      "bytes": 100686,
+      "sha256": "37019887845787854107f724e6d58bb45fa3c99695e54f7b92752e48e38e8b3f"
+    },
+    {
+      "id": "d5ebfa17-df6f-42ee-bef4-071fc04539b3",
+      "src": "/content-assets/akmenas/d5ebfa17-df6f-42ee-bef4-071fc04539b3.webp",
+      "bytes": 70290,
+      "sha256": "394246ba9336fa7b1be48a01c045a6f80a721056360722e0112120e04331c76e"
+    },
+    {
+      "id": "98bb1456-a72d-4f13-bbd1-d56302e7c365",
+      "src": "/content-assets/akmenas/98bb1456-a72d-4f13-bbd1-d56302e7c365.webp",
+      "bytes": 36498,
+      "sha256": "24e2b6f185607d1ccc461158736a154dddc5c641a5fa4925762686a113e5e719"
+    },
+    {
+      "id": "3a22b4ba-1b00-4f50-96ee-638c19e6e917",
+      "src": "/content-assets/akmenas/3a22b4ba-1b00-4f50-96ee-638c19e6e917.webp",
+      "bytes": 25082,
+      "sha256": "7ecf548e247b16b569ad22d957e7f541b41b91b02f718fd3eaed3927a29e1f8a"
+    },
+    {
+      "id": "96d92e6b-4c93-4445-9100-d445f6dbada0",
+      "src": "/content-assets/akmenas/96d92e6b-4c93-4445-9100-d445f6dbada0.webp",
+      "bytes": 9190,
+      "sha256": "bae4a147234afaf6c0ed4075906bbe637dc835a3484d07d069c5fc0a537c8e11"
+    },
+    {
+      "id": "256e8f9d-52ba-4fde-b35b-6a710c1b3070",
+      "src": "/content-assets/akmenas/256e8f9d-52ba-4fde-b35b-6a710c1b3070.webp",
+      "bytes": 111704,
+      "sha256": "d43e363283ec53b4c7ebc791cf42723b04b28bb183e52719e3604b4f65cb2438"
+    },
+    {
+      "id": "35b0237f-6985-4ca7-bb7e-34f5434f0364",
+      "src": "/content-assets/akmenas/35b0237f-6985-4ca7-bb7e-34f5434f0364.webp",
+      "bytes": 75380,
+      "sha256": "d458d822b0c873f4dd640ba8249165b88e3ad66abdbfb3134de5f1365cb879b5"
+    },
+    {
+      "id": "01c2edc7-a550-40e9-adf1-eb7639f81b7c",
+      "src": "/content-assets/akmenas/01c2edc7-a550-40e9-adf1-eb7639f81b7c.webp",
+      "bytes": 38200,
+      "sha256": "c358b716005792309f7ce1efa5fad98eef3015639bc0b68eb07008140a216184"
+    },
+    {
+      "id": "d236203e-652b-4e1f-a833-90f40f8a69a8",
+      "src": "/content-assets/akmenas/d236203e-652b-4e1f-a833-90f40f8a69a8.webp",
+      "bytes": 25050,
+      "sha256": "38c918480f6b97ba7c5025d0f456d6a9fb55ae69984f29bca867e1ea7d57ce52"
+    },
+    {
+      "id": "801a9ba9-c180-4f08-a6db-910b8b542d30",
+      "src": "/content-assets/akmenas/801a9ba9-c180-4f08-a6db-910b8b542d30.webp",
+      "bytes": 8144,
+      "sha256": "6416eea62f4d4ef4fb945aa42ea86c741bb4506f961520e8807f6356a9fd7171"
+    },
+    {
+      "id": "1ac42ab1-1939-48ab-a8e7-38adb9eae7c5",
+      "src": "/content-assets/akmenas/1ac42ab1-1939-48ab-a8e7-38adb9eae7c5.webp",
+      "bytes": 159338,
+      "sha256": "0e0814e3401a6cedc73ce72a38728bf6ddaf5eb520b665cb89d0394e167531cd"
+    },
+    {
+      "id": "9f9f7585-577b-4256-8322-c7b9d94df68f",
+      "src": "/content-assets/akmenas/9f9f7585-577b-4256-8322-c7b9d94df68f.webp",
+      "bytes": 106890,
+      "sha256": "71b038c9858576453bcefa67fd2bb4385df0b0af7f4d13e1f14cfcaa0f823a9a"
+    },
+    {
+      "id": "551253c6-5571-4d6f-b99a-cc7b3532d5b8",
+      "src": "/content-assets/akmenas/551253c6-5571-4d6f-b99a-cc7b3532d5b8.webp",
+      "bytes": 51250,
+      "sha256": "0bba9525a3876b7b9661ee3928e4d1854e49923214f382009f3d237707cbc9b4"
+    },
+    {
+      "id": "1d89469f-0901-4734-8b24-42e0345158af",
+      "src": "/content-assets/akmenas/1d89469f-0901-4734-8b24-42e0345158af.webp",
+      "bytes": 33320,
+      "sha256": "68ee2d9a0a31029f46a1c42fcdf520b199f7345388a4cdd5b1867059f820362b"
+    },
+    {
+      "id": "25c6835e-d803-4af0-b35d-7142d41db629",
+      "src": "/content-assets/akmenas/25c6835e-d803-4af0-b35d-7142d41db629.webp",
+      "bytes": 11734,
+      "sha256": "4314d207d9eb4dc7ccd3b71b4114cc2dd4b81eef03aaa07fc5b91087463a1af8"
+    },
+    {
+      "id": "db4e1817-9e09-4ac6-a368-a882c4fdc6c1",
+      "src": "/content-assets/akmenas/db4e1817-9e09-4ac6-a368-a882c4fdc6c1.webp",
+      "bytes": 117762,
+      "sha256": "04a0d7a9d2ce51175da48b0eb17d752c7e0c3459aa70555b85a4cb02c50919b4"
+    },
+    {
+      "id": "7fbf908e-85f8-4006-955e-7b3279473c44",
+      "src": "/content-assets/akmenas/7fbf908e-85f8-4006-955e-7b3279473c44.webp",
+      "bytes": 83106,
+      "sha256": "d4f8a894369f8e83f8b710d1aebaf500ba234252abfafd2ce929267383b0d512"
+    },
+    {
+      "id": "7f1c33fa-6d52-45d0-bf00-58136962f1aa",
+      "src": "/content-assets/akmenas/7f1c33fa-6d52-45d0-bf00-58136962f1aa.webp",
+      "bytes": 45074,
+      "sha256": "a0041c9d996d7907c1f7a0dffad6a150e9872e355523b06dcd5649963fb3cd4d"
+    },
+    {
+      "id": "fa472956-ac9e-4d5a-b966-0d7e9dc90158",
+      "src": "/content-assets/akmenas/fa472956-ac9e-4d5a-b966-0d7e9dc90158.webp",
+      "bytes": 31130,
+      "sha256": "e42d0e2dc931c6de073c734d5f4bf1eda59fe598c678d63ec5c94aa543c1bf4e"
+    },
+    {
+      "id": "6862a6bd-c392-40c8-8b8b-0a3e5ba1b024",
+      "src": "/content-assets/akmenas/6862a6bd-c392-40c8-8b8b-0a3e5ba1b024.webp",
+      "bytes": 11344,
+      "sha256": "0a196ff1eec453e63969cf61cab6bc3b66b78e83a98ee3151baea0ab8e70c47d"
+    }
+  ],
+  "sourceFingerprints": {
+    "components/niche/akmenas-site.tsx": "815e2bf05d516886497ba50be2aff686470d5df6fa197f314d4ffdc9203e117a",
+    "components/niche/akmenas-site.module.css": "3431e6a6787e340c99dda1919e6be1efdbc92c134add02fe22d7e42c759e9307",
+    "app/niche/[siteId]/[[...slug]]/page.tsx": "ba0497a9af1f363997ec8072ea7082134e82d689bdf3fd49ab17a344e6d331b7",
+    "content-packages/akmenas/content-package.json": "cd725179619baaef8ba022f44964339eab0f4030d0629c9f9113997e7a98214e"
+  },
+  "unrelatedPackageFingerprints": {
+    "greitossvetaines": "386e259bc227a65514b0ef591d9a335fd17eca5ac52ee1866e9371fece552381",
+    "roletaiklaipedoje": "4b292fa660eb406a941f67adc987aee79cfdaa88c7a731fee608c0ed17027012",
+    "traktoriupadangos": "cdacd6d13bbd2cbe74791d392ba49687b688fd78443880aa5ddf2ecfa7104f04"
+  },
+  "instructionFingerprints": {
+    "AGENTS.md": "93f2d368f072341d4e34c990e002c5f17c42227c711826a8cfe470fa5fd3ae39",
+    "START_HERE.md": "4c008325d751cf60acb99f1740cb437087545b779b031e564bb2771919c6efc4",
+    "CORE_BUILD_CONTRACT.md": "c77e89e53e1d22da868f08ff3ab23fa74ba7037bc20286085d9b8e1f66ee0e8f",
+    "AUTONOMY_BENCHMARK.md": "1c4fa5729b86325e4bbf8ba216c222806e61186879a350ec5ebef6f7722b317c",
+    "SKILLS/niche-site-builder/SKILL.md": "1ca22d99b5893bd973f99153b2acf62e018488e6a9dd25e66302599242381acb",
+    "SKILLS/niche-content-planner/SKILL.md": "d3d8716e6238ad166f7e5e4d1d379f62eca97121705634ad18d95ec93a47d2d0",
+    "SKILLS/niche-site-audit/SKILL.md": "83394affd1ff12600284855870025972bd54238d17087240c3311e4e197dd629",
+    "SKILLS/impeccable/SKILL.md": "f753b1cdf89c37081520c1b6ebf24f96b0caea0f7cff701806f00fa8e11eb4c6",
+    "SKILLS/impeccable/PROJECT_ADAPTATION.md": "3f91060f78ff09726d8da762d69545b1ae35eb763c0e39d6cc6e851df0dc53ee"
+  },
+  "instructionCaptureScope": "Observed at handover, not asserted to be a start-of-session snapshot. Concurrent shared skill documentation changes are recorded in WORKSTREAMS.",
+  "secretScope": "Isolated copy whitelist excludes environment/credential files; no secrets are included in this inventory."
+}

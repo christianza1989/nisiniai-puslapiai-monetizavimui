@@ -1,0 +1,10 @@
+{
+  "checkedOn":"2026-10-05",
+  "scope":"Public i.SAF capabilities and eligibility, not actual company tax determination",
+  "sources":[
+    {"id":"S1","url":"https://imas.vmi.lt/isaf/aboutIsaf/","kind":"primary_html","status":"opened","observation":"Register import/export; payment data optional; individual issuance and legal-person receipt distinct"},
+    {"id":"S2","url":"https://www.vmi.lt/evmi/elektronines-pvm-saskaitos-fakturos-paslauga","kind":"primary_html","status":"opened","observation":"E-invoice service user restrictions; account and actual issuance not tested"},
+    {"id":"S3","url":"https://www.vmi.lt/evmi/duomenu-teikimas-tikslinimas","kind":"primary_html","status":"opened","observation":"KM1914 2025-07-10: SVS Lithuania exception; actual MB Pinet VAT/SVS status unknown"}
+  ],
+  "customerOrFinancialRecordsAccessed":false
+}

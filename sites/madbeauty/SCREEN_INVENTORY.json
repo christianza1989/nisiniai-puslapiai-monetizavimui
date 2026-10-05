@@ -1,0 +1,1137 @@
+{
+  "version": 1,
+  "privatePrototype": true,
+  "actualFullUI": false,
+  "screens": [
+    {
+      "id": "public-home",
+      "surface": "public",
+      "route": "/",
+      "label": "Homepage ir paieška",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-search",
+      "surface": "public",
+      "route": "/paieska",
+      "label": "Paieška, autocomplete, List/Map, filtras",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-services",
+      "surface": "public",
+      "route": "/paslaugos",
+      "label": "Paslaugų indeksas",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-service-hub",
+      "surface": "public",
+      "route": "/paslaugos/:service",
+      "label": "Paslaugos hub",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-city-hub",
+      "surface": "public",
+      "route": "/miestai/:city",
+      "label": "Miesto hub",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-catalog",
+      "surface": "public",
+      "route": "/paslaugos/:service/:city",
+      "label": "Atrinktas service/city katalogas",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-practitioner",
+      "surface": "public",
+      "route": "/meistrai/:slug",
+      "label": "Meistro profilis",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-venue",
+      "surface": "public",
+      "route": "/salonai/:slug",
+      "label": "Salono profilis",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-gallery",
+      "surface": "public",
+      "route": null,
+      "label": "Galerijos / portfolio panelė",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-service-option",
+      "surface": "public",
+      "route": null,
+      "label": "Variantai, priedai ir kainos",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "public-for-business",
+      "surface": "public",
+      "route": "/meistrams",
+      "label": "Meistrams landing",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-services-step",
+      "surface": "booking",
+      "route": "/registracija/paslauga",
+      "label": "Paslaugos ir priedai",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-staff-step",
+      "surface": "booking",
+      "route": "/registracija/meistras",
+      "label": "Meistro pasirinkimas kai reikia",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-time-step",
+      "surface": "booking",
+      "route": "/registracija/laikas",
+      "label": "Data ir laikas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-details-step",
+      "surface": "booking",
+      "route": "/registracija/duomenys",
+      "label": "Svečio kontaktas ir taisyklės",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-review-step",
+      "surface": "booking",
+      "route": "/registracija/perziura",
+      "label": "Visa santrauka",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-confirmation",
+      "surface": "booking",
+      "route": "/registracija/rezultatas",
+      "label": "Demo patvirtinimas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-inquiry",
+      "surface": "booking",
+      "route": null,
+      "label": "Užklausa be authoritative kalendoriaus",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-waitlist",
+      "surface": "booking",
+      "route": null,
+      "label": "Waitlist pasiūlymas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-reschedule",
+      "surface": "booking",
+      "route": null,
+      "label": "Pakeisti vizitą",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "booking-cancel",
+      "surface": "booking",
+      "route": null,
+      "label": "Atšaukimas ir priežastis",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-entry",
+      "surface": "customer",
+      "route": "/paskyra",
+      "label": "Demo role entry",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-appointments",
+      "surface": "customer",
+      "route": "/paskyra/vizitai",
+      "label": "Būsimi ir buvę vizitai",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-visit-detail",
+      "surface": "customer",
+      "route": "/paskyra/vizitai/:id",
+      "label": "Vizito detalės",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-favorites",
+      "surface": "customer",
+      "route": "/paskyra/issaugoti",
+      "label": "Išsaugoti meistrai",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-messages",
+      "surface": "customer",
+      "route": "/paskyra/pranesimai",
+      "label": "Su vizitu susieti pokalbiai",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-profile",
+      "surface": "customer",
+      "route": "/paskyra/profilis",
+      "label": "Asmeniniai duomenys",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-settings",
+      "surface": "customer",
+      "route": "/paskyra/nustatymai",
+      "label": "Komunikacijos ir privacy",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "customer-review",
+      "surface": "customer",
+      "route": null,
+      "label": "Atsiliepimas po atlikto demo vizito",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-onboarding",
+      "surface": "professional",
+      "route": "/meistrui/pradzia",
+      "label": "Organization ir profilio setup",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-overview",
+      "surface": "professional",
+      "route": "/meistrui",
+      "label": "Dienos apžvalga",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-calendar",
+      "surface": "professional",
+      "route": "/meistrui/kalendorius",
+      "label": "Diena / savaitė / mobile agenda",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-visit-drawer",
+      "surface": "professional",
+      "route": null,
+      "label": "Vizito panelė",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-manual-visit",
+      "surface": "professional",
+      "route": null,
+      "label": "Manual vizitas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-inquiries",
+      "surface": "professional",
+      "route": "/meistrui/uzklausos",
+      "label": "Užklausos ir būsenos",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-waitlist",
+      "surface": "professional",
+      "route": "/meistrui/laukiantieji",
+      "label": "Laukiančiųjų sąrašas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-clients",
+      "surface": "professional",
+      "route": "/meistrui/klientai",
+      "label": "Klientų sąrašas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-client-detail",
+      "surface": "professional",
+      "route": "/meistrui/klientai/:id",
+      "label": "Privati kliento kortelė",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-services",
+      "surface": "professional",
+      "route": "/meistrui/paslaugos",
+      "label": "Paslaugų sąrašas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-service-editor",
+      "surface": "professional",
+      "route": null,
+      "label": "Paslauga / variantai / priedai / kompetencija",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-shifts",
+      "surface": "professional",
+      "route": "/meistrui/grafikas",
+      "label": "Pamainos / pertraukos / uždarymai",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-resources",
+      "surface": "professional",
+      "route": "/meistrui/resursai",
+      "label": "Kabinetai ir įranga",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-team",
+      "surface": "professional",
+      "route": "/meistrui/komanda",
+      "label": "Darbuotojai ir rolės",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-profile",
+      "surface": "professional",
+      "route": "/meistrui/profilis",
+      "label": "Profile revisions",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-gallery",
+      "surface": "professional",
+      "route": "/meistrui/galerija",
+      "label": "Media importas ir kilmė",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-messages",
+      "surface": "professional",
+      "route": "/meistrui/pranesimai",
+      "label": "Delivery ir service/marketing skirtis",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-reports",
+      "surface": "professional",
+      "route": "/meistrui/ataskaitos",
+      "label": "Vizitų / inquiry įvykdymo duomenys",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-integrations",
+      "surface": "professional",
+      "route": "/meistrui/integracijos",
+      "label": "External booking ir scoped links",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-settings",
+      "surface": "professional",
+      "route": "/meistrui/nustatymai",
+      "label": "Booking taisyklės ir privacy",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "operator-queue",
+      "surface": "operator",
+      "route": "/operatorius",
+      "label": "Approvals",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "operator-provider-review",
+      "surface": "operator",
+      "route": null,
+      "label": "Revision ir grąžinimo priežastis",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "operator-catalog",
+      "surface": "operator",
+      "route": "/operatorius/katalogas",
+      "label": "Taxonomy / eligibility",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "operator-reports",
+      "surface": "operator",
+      "route": "/operatorius/skundai",
+      "label": "Media ir atsiliepimų pranešimai",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "operator-delivery",
+      "surface": "operator",
+      "route": "/operatorius/pristatymas",
+      "label": "Inquiry / outbox diagnostika",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "operator-content",
+      "surface": "operator",
+      "route": "/operatorius/turinys",
+      "label": "Publikavimo / nuorodų eilė",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "operator-metrics",
+      "surface": "operator",
+      "route": "/operatorius/rodikliai",
+      "label": "Atskiras siteId matavimas",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "content-guides",
+      "surface": "content",
+      "route": "/gidai",
+      "label": "Gidų indeksas ir klasteriai",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "content-guide",
+      "surface": "content",
+      "route": "/gidai/:slug",
+      "label": "Pilnas gidas / service CTA",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "content-editorial",
+      "surface": "content",
+      "route": "/redakcija",
+      "label": "Redakcija ir metodika",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "content-author",
+      "surface": "content",
+      "route": "/autoriai/:slug",
+      "label": "Tikras autoriaus profilis",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-about",
+      "surface": "trust",
+      "route": "/apie",
+      "label": "Apie platformą",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-contact",
+      "surface": "trust",
+      "route": "/kontaktai",
+      "label": "MB Pinet ir patikimas kelias",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-how",
+      "surface": "trust",
+      "route": "/kaip-veikia",
+      "label": "Etapo ir registracijos paaiškinimas",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-verification",
+      "surface": "trust",
+      "route": "/tikrinimas",
+      "label": "Tikrinimo metodika",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-help",
+      "surface": "trust",
+      "route": "/pagalba",
+      "label": "Pagalba ir taisyklės",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-privacy",
+      "surface": "trust",
+      "route": "/privatumas",
+      "label": "Privatumas",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-cookies",
+      "surface": "trust",
+      "route": "/slapukai",
+      "label": "Slapukai",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-terms",
+      "surface": "trust",
+      "route": "/taisykles",
+      "label": "Taisyklės",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-cancellation",
+      "surface": "trust",
+      "route": "/atsaukimas",
+      "label": "Atšaukimo principai",
+      "status": "PLANNED",
+      "indexableCandidate": true,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "trust-not-found",
+      "surface": "trust",
+      "route": null,
+      "label": "404 / unpublished / removed",
+      "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    }
+  ],
+  "excludedUntilSeparateStage": [
+    "payments",
+    "POS",
+    "wallet",
+    "gift-cards",
+    "loyalty",
+    "commerce-products",
+    "voice",
+    "paid-reviews"
+  ]
+}

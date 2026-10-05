@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-03T13:44:02.728Z",
+  "reviewer": "codex-editorial-review",
+  "ownerApproval": false,
+  "method": "Kiekvieno 11 puslapių teiginiai, kontaktai, kilmė ir šaltinių ribos peržiūrėti prieš modelio approvePage. Šaltiniai tik realūs atverti arba nurodyto riboto paieškos teksto, ne source-free AI. Vietinis teisinis tekstas privalo būti atnaujintas prieš realų paleidimą.",
+  "pages": [
+    {
+      "id": "811a835b-b0e2-4c2a-80cf-f93f23973d48",
+      "slug": "",
+      "intent": "Parengti planinės lengvojo automobilio elektros diagnostikos poreikį Vilniuje",
+      "words": 175,
+      "originalContribution": "Parengti planinės lengvojo automobilio elektros diagnostikos poreikį Vilniuje",
+      "sources": [],
+      "images": [
+        "hero",
+        "battery"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "82b8cc62-16d5-4340-980b-8fba511783ea",
+      "slug": "diagnostikos-poreikis",
+      "intent": "Suprasti konkretų bandomo pasiūlymo veiksmą ir vykdymo ribas",
+      "words": 214,
+      "originalContribution": "Suprasti konkretų bandomo pasiūlymo veiksmą ir vykdymo ribas",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "7701585e-1e65-4877-b11b-eda032ee93dc",
+      "slug": "gidai",
+      "intent": "Pasirinkti savo klausimą atitinkantį gidą",
+      "words": 70,
+      "originalContribution": "Pasirinkti savo klausimą atitinkantį gidą",
+      "sources": [],
+      "images": [
+        "battery",
+        "start",
+        "scope"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "b6b35e2d-40fc-4e85-a772-499b4f83f639",
+      "slug": "akumuliatorius-issikrauna",
+      "intent": "Surinkti pasikartojančio išsikrovimo aplinkybes prieš planinį tyrimą",
+      "words": 545,
+      "originalContribution": "Surinkti pasikartojančio išsikrovimo aplinkybes prieš planinį tyrimą",
+      "sources": [
+        {
+          "url": "https://www.varta-automotive.com/en-gb/knowledge/articles/article-details/which-is-the-right-battery-for-short-distance-driving",
+          "label": "VARTA: trumpi važiavimai ir akumuliatorius",
+          "reason": "Gamintojo bendras paaiškinimas apie trumpų kelionių ir papildomos elektros įrangos apkrovas. Jis nenustato konkretaus automobilio gedimo. Patikrinta 2026-10-03.",
+          "verified": true
+        },
+        {
+          "url": "https://www.boschcarservice.com/de/de/werkstattleistungen/elektronik-service/batterie-service/",
+          "label": "Bosch Car Service: akumuliatoriaus patikra",
+          "reason": "Viešas Vokietijos paslaugos aprašas atskiria patikrą ir tinkamą pakeitimą. Tai ne mūsų partnerystė, Lietuvos kaina ar pasiūlymas. Patikrinta 2026-10-03.",
+          "verified": true
+        }
+      ],
+      "images": [
+        "battery"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "29c1a3a2-8f6e-4ded-b544-b53fe84d1519",
+      "slug": "automobilis-neuzsiveda",
+      "intent": "Tiksliai aprašyti nepavykusio užvedimo simptomą ir pasirinkti planinį arba skubų kelią",
+      "words": 582,
+      "originalContribution": "Tiksliai aprašyti nepavykusio užvedimo simptomą ir pasirinkti planinį arba skubų kelią",
+      "sources": [
+        {
+          "url": "https://www.theaa.com/breakdown-cover/advice/starting-a-car",
+          "label": "The AA: kai automobilis neužsiveda",
+          "reason": "Techninės pagalbos organizacijos simptomo ir galimų priežasčių apžvalga. Šiame gide nėra perkelta užvedimo laidais instrukcija. Patikrinta 2026-10-03.",
+          "verified": true
+        }
+      ],
+      "images": [
+        "start"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "9e1db76f-4bd0-47f9-a135-1963650c94d3",
+      "slug": "diagnostikos-kaina",
+      "intent": "Palyginti realios planinės diagnostikos pasiūlymų apimtį be išgalvotų įkainių",
+      "words": 569,
+      "originalContribution": "Palyginti realios planinės diagnostikos pasiūlymų apimtį be išgalvotų įkainių",
+      "sources": [
+        {
+          "url": "https://www.kemi.lt/paslaugos/elektros-sistemu-diagnostika-ir-remontas",
+          "label": "Kemi: elektros sistemų diagnostika ir remontas",
+          "reason": "Vietinis paslaugų pavyzdys: kompiuterinė diagnostika, elektros diagnostika ir remontas pateikiami atskirai. Mūsų įkainio ar serviso registracijos nėra. Kainos gali keistis. Patikrinta 2026-10-03.",
+          "verified": true
+        },
+        {
+          "url": "https://www.boschcarservice.com/de/de/werkstattleistungen/elektronik-service/batterie-service/",
+          "label": "Bosch Car Service: akumuliatoriaus patikra",
+          "reason": "Viešas Vokietijos paslaugos aprašas atskiria patikrą ir tinkamą pakeitimą. Tai ne mūsų partnerystė, Lietuvos kaina ar pasiūlymas. Patikrinta 2026-10-03.",
+          "verified": true
+        }
+      ],
+      "images": [
+        "scope"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "3cb844a5-8591-4e0e-b3f2-b3393b18d2b3",
+      "slug": "kontaktai",
+      "intent": "Sąmoningai pateikti konkretų planinės diagnostikos poreikį",
+      "words": 151,
+      "originalContribution": "Sąmoningai pateikti konkretų planinės diagnostikos poreikį",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "dddd743a-1828-4208-9812-59a26c472315",
+      "slug": "apie-projekta",
+      "intent": "Suprasti operatorių, bandomą pasiūlymą ir dabartines ribas",
+      "words": 157,
+      "originalContribution": "Suprasti operatorių, bandomą pasiūlymą ir dabartines ribas",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "3708b573-849a-4ac6-ace3-9b05eb39db3f",
+      "slug": "redakcija",
+      "intent": "Patikrinti tikrą organizacinę autorystę ir turinio ribas",
+      "words": 226,
+      "originalContribution": "Patikrinti tikrą organizacinę autorystę ir turinio ribas",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "c4acb685-4d97-4b3b-8f06-77d577a18768",
+      "slug": "privatumas",
+      "intent": "Suprasti dabartinį duomenų kelią prieš pateikiant formą",
+      "words": 326,
+      "originalContribution": "Suprasti dabartinį duomenų kelią prieš pateikiant formą",
+      "sources": [
+        {
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679",
+          "label": "Bendrasis duomenų apsaugos reglamentas",
+          "reason": "Teisių, informavimo ir saugojimo trukmės principų šaltinis. Paieškos tekstas patikrintas 2026-10-03; tiesioginis HTML/PDF prieigos bandymas buvo ribotas robotų patikros.",
+          "verified": true
+        }
+      ],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    },
+    {
+      "id": "d376c08c-8afb-4d5b-828b-0980c48020b6",
+      "slug": "naudojimo-salygos",
+      "intent": "Suprasti ką reiškia svetainės turinys ir pateikta užklausa",
+      "words": 224,
+      "originalContribution": "Suprasti ką reiškia svetainės turinys ir pateikta užklausa",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt atitinka numatytą config",
+        "Nėra partnerio, kainos, adreso, telefono, remonto ar diagnozės pažado",
+        "Sintetiniai pavyzdžiai aiškūs; iliustracijos nėra realūs darbai"
+      ]
+    }
+  ]
+}

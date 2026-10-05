@@ -1,0 +1,911 @@
+{
+  "reports": [
+    {
+      "name": "home",
+      "url": "http://127.0.0.1:8887/",
+      "date": "2026-10-01T03:28:16.109Z",
+      "lighthouse": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "benchmarkIndex": 602,
+        "credits": {
+          "axe-core": "4.13.0"
+        }
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": null,
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 81,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": {
+          "value": 2898.6719999999996,
+          "display": "2.9 s"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.0006657373894979576,
+          "display": "0.001"
+        },
+        "total-blocking-time": {
+          "value": 483.8319999999994,
+          "display": "480 ms"
+        },
+        "first-contentful-paint": {
+          "value": 1919.3360000000002,
+          "display": "1.9 s"
+        },
+        "speed-index": {
+          "value": 2063.3571759999636,
+          "display": "2.1 s"
+        },
+        "total-byte-weight": {
+          "value": 429319,
+          "display": "Total size was 419 KiB"
+        }
+      },
+      "failedAccessibility": [],
+      "opportunities": [
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "3.4 s",
+          "savings": {
+            "TBT": 500
+          },
+          "items": [
+            {
+              "group": "styleLayout",
+              "groupLabel": "Style & Layout",
+              "duration": 1360.4520000000002
+            },
+            {
+              "group": "other",
+              "groupLabel": "Other",
+              "duration": 959.6119999999996
+            },
+            {
+              "group": "scriptEvaluation",
+              "groupLabel": "Script Evaluation",
+              "duration": 809.6120000000001
+            },
+            {
+              "group": "paintCompositeRender",
+              "groupLabel": "Rendering",
+              "duration": 162.56400000000008
+            },
+            {
+              "group": "scriptParseCompile",
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 45.824
+            },
+            {
+              "group": "parseHTML",
+              "groupLabel": "Parse HTML & CSS",
+              "duration": 38.696
+            }
+          ]
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "display": "2,900 ms",
+          "savings": {
+            "LCP": 400
+          },
+          "items": [
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "node",
+                  "valueType": "node",
+                  "label": "Element"
+                }
+              ],
+              "items": [
+                {
+                  "node": {
+                    "type": "node",
+                    "lhId": "page-3-IMG",
+                    "path": "1,HTML,1,BODY,0,DIV,2,MAIN,0,SECTION,1,FIGURE,0,IMG",
+                    "selector": "main#turinys > section._hero_1cylu_106 > figure._heroPhoto_1cylu_106 > img",
+                    "boundingRect": {
+                      "top": 635,
+                      "bottom": 932,
+                      "left": 20,
+                      "right": 392,
+                      "width": 372,
+                      "height": 298
+                    },
+                    "snippet": "<img src=\"http://127.0.0.1:8887/content-assets/akmenas/98bb1456-a72d-4f13-bbd1-d5630…\" srcset=\"/content-assets/akmenas/96d92e6b-4c93-4445-9100-d445f6dbada0.webp 360w, /c…\" sizes=\"(max-width: 760px) calc(100vw - 40px), (max-width: 1440px) calc(100vw - 11…\" width=\"1536\" height=\"1024\" alt=\"Šviesaus akmens stalviršio kraštas ir ąžuolinės spintelės iliustraciniame …\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\">",
+                    "nodeLabel": "Šviesaus akmens stalviršio kraštas ir ąžuolinės spintelės iliustraciniame virtu…"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "phase",
+                  "valueType": "text",
+                  "label": "Phase"
+                },
+                {
+                  "key": "percent",
+                  "valueType": "text",
+                  "label": "% of LCP"
+                },
+                {
+                  "key": "timing",
+                  "valueType": "ms",
+                  "label": "Timing"
+                }
+              ],
+              "items": [
+                {
+                  "phase": "TTFB",
+                  "timing": 537.168,
+                  "percent": "19%"
+                },
+                {
+                  "phase": "Load Delay",
+                  "timing": 508.4400525742759,
+                  "percent": "18%"
+                },
+                {
+                  "phase": "Load Time",
+                  "timing": 1626.6711540669676,
+                  "percent": "56%"
+                },
+                {
+                  "phase": "Render Delay",
+                  "timing": 226.39279335875608,
+                  "percent": "8%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "display": "Est savings of 150 ms",
+          "savings": {
+            "FCP": 150,
+            "LCP": 0
+          },
+          "items": [
+            {
+              "url": "http://127.0.0.1:8887/_next/static/css/niche-styles.D-f75NbR.css",
+              "totalBytes": 630,
+              "wastedMs": 237
+            },
+            {
+              "url": "http://127.0.0.1:8887/_next/static/css/akmenas-site.Dw0fNn17.css",
+              "totalBytes": 3996,
+              "wastedMs": 387
+            }
+          ]
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 60 KiB",
+          "savings": {
+            "FCP": 150,
+            "LCP": 300
+          },
+          "items": [
+            {
+              "url": "http://127.0.0.1:8887/_next/static/chunks/index-CQO41Mh7.js",
+              "totalBytes": 53493,
+              "wastedBytes": 36245,
+              "wastedPercent": 67.75575510884804
+            },
+            {
+              "url": "http://127.0.0.1:8887/_next/static/chunks/framework-D_rUT4EX.js",
+              "totalBytes": 59255,
+              "wastedBytes": 25518,
+              "wastedPercent": 43.06554756195044
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 122 KiB",
+          "savings": {
+            "FCP": 0,
+            "LCP": 150
+          },
+          "items": [
+            {
+              "url": "http://127.0.0.1:8887/content-assets/akmenas/551253c6-5571-4d6f-b99a-cc7b3532d5b8.webp",
+              "totalBytes": 51250,
+              "wastedBytes": 38930,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (771x533) for its displayed dimensions (385x257). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 38930
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://127.0.0.1:8887/content-assets/akmenas/7f1c33fa-6d52-45d0-bf00-58136962f1aa.webp",
+              "totalBytes": 45074,
+              "wastedBytes": 35316,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (800x533) for its displayed dimensions (372x248). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 35316
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://127.0.0.1:8887/content-assets/akmenas/01c2edc7-a550-40e9-adf1-eb7639f81b7c.webp",
+              "totalBytes": 38200,
+              "wastedBytes": 28044,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (748x533) for its displayed dimensions (399x266). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 28044
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://127.0.0.1:8887/content-assets/akmenas/98bb1456-a72d-4f13-bbd1-d56302e7c365.webp",
+              "totalBytes": 36498,
+              "wastedBytes": 22827,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (666x533) for its displayed dimensions (447x298). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 22827
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "savings": {
+            "LCP": 0
+          },
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "8D92C939F5DD7AF698C71421416D6F11": {
+                    "url": "http://127.0.0.1:8887/",
+                    "navStartToEndTime": 317,
+                    "transferSize": 11083,
+                    "isLongest": true,
+                    "children": {
+                      "11040.19": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/deployment-id-DFhHa9wO.js",
+                        "navStartToEndTime": 1664,
+                        "transferSize": 442,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "11040.20": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/navigation-errors-D5LMQqDL.js",
+                        "navStartToEndTime": 1567,
+                        "transferSize": 1965,
+                        "children": {}
+                      },
+                      "11040.11": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/framework-D_rUT4EX.js",
+                        "navStartToEndTime": 871,
+                        "transferSize": 59572,
+                        "children": {}
+                      },
+                      "11040.18": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/protocol-headers-B9-bVeat.js",
+                        "navStartToEndTime": 863,
+                        "transferSize": 516,
+                        "children": {}
+                      },
+                      "11040.17": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/headers-C_MtfdF4.js",
+                        "navStartToEndTime": 862,
+                        "transferSize": 1625,
+                        "children": {}
+                      },
+                      "11040.15": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/app-rsc-cache-busting-Z0Bw_u7X.js",
+                        "navStartToEndTime": 862,
+                        "transferSize": 2386,
+                        "children": {}
+                      },
+                      "11040.16": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/app-rsc-render-mode-CvTCGruk.js",
+                        "navStartToEndTime": 861,
+                        "transferSize": 685,
+                        "children": {}
+                      },
+                      "11040.14": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/record-uXSNv6cl.js",
+                        "navStartToEndTime": 798,
+                        "transferSize": 433,
+                        "children": {}
+                      },
+                      "11040.12": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/app-elements-H_Dr48wG.js",
+                        "navStartToEndTime": 622,
+                        "transferSize": 4570,
+                        "children": {}
+                      },
+                      "11040.13": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/hash-Cp347hhd.js",
+                        "navStartToEndTime": 621,
+                        "transferSize": 520,
+                        "children": {}
+                      },
+                      "11040.10": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 621,
+                        "transferSize": 762,
+                        "children": {}
+                      },
+                      "11040.59": {
+                        "url": "http://127.0.0.1:8887/ivykius",
+                        "navStartToEndTime": 547,
+                        "transferSize": 0,
+                        "children": {}
+                      },
+                      "11040.7": {
+                        "url": "http://127.0.0.1:8887/_next/static/css/niche-styles.D-f75NbR.css",
+                        "navStartToEndTime": 522,
+                        "transferSize": 630,
+                        "children": {}
+                      },
+                      "11040.8": {
+                        "url": "http://127.0.0.1:8887/_next/static/css/akmenas-site.Dw0fNn17.css",
+                        "navStartToEndTime": 518,
+                        "transferSize": 3996,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 1664
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "display": "Est savings of 150 ms",
+          "savings": {
+            "FCP": 150,
+            "LCP": 0
+          },
+          "items": [
+            {
+              "url": "http://127.0.0.1:8887/_next/static/css/niche-styles.D-f75NbR.css",
+              "totalBytes": 630,
+              "wastedMs": 235
+            },
+            {
+              "url": "http://127.0.0.1:8887/_next/static/css/akmenas-site.Dw0fNn17.css",
+              "totalBytes": 3996,
+              "wastedMs": 385
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "guide",
+      "url": "http://127.0.0.1:8887/gidas/stalvirsiu-medziagu-palyginimas",
+      "date": "2026-10-01T03:23:43.061Z",
+      "lighthouse": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "benchmarkIndex": 1018,
+        "credits": {
+          "axe-core": "4.13.0"
+        }
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": null,
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": {
+          "value": 3167.2562,
+          "display": "3.2 s"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "total-blocking-time": {
+          "value": 19.5,
+          "display": "20 ms"
+        },
+        "first-contentful-paint": {
+          "value": 1950.6281,
+          "display": "2.0 s"
+        },
+        "speed-index": {
+          "value": 2820.0906919798153,
+          "display": "2.8 s"
+        },
+        "total-byte-weight": {
+          "value": 297029,
+          "display": "Total size was 290 KiB"
+        }
+      },
+      "failedAccessibility": [],
+      "opportunities": [
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "display": "3,170 ms",
+          "savings": {
+            "LCP": 650
+          },
+          "items": [
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "node",
+                  "valueType": "node",
+                  "label": "Element"
+                }
+              ],
+              "items": [
+                {
+                  "node": {
+                    "type": "node",
+                    "lhId": "page-1-H1",
+                    "path": "1,HTML,1,BODY,0,DIV,2,MAIN,1,DIV,0,H1",
+                    "selector": "div._site_1cylu_102 > main#turinys > div._articleHeader_1cylu_109 > h1",
+                    "boundingRect": {
+                      "top": 208,
+                      "bottom": 379,
+                      "left": 20,
+                      "right": 392,
+                      "width": 372,
+                      "height": 170
+                    },
+                    "snippet": "<h1>",
+                    "nodeLabel": "Granitas, kvarcas, marmuras ar keramika: kaip palyginti stalviršius?"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "phase",
+                  "valueType": "text",
+                  "label": "Phase"
+                },
+                {
+                  "key": "percent",
+                  "valueType": "text",
+                  "label": "% of LCP"
+                },
+                {
+                  "key": "timing",
+                  "valueType": "ms",
+                  "label": "Timing"
+                }
+              ],
+              "items": [
+                {
+                  "phase": "TTFB",
+                  "timing": 491.81405,
+                  "percent": "16%"
+                },
+                {
+                  "phase": "Load Delay",
+                  "timing": 0,
+                  "percent": "0%"
+                },
+                {
+                  "phase": "Load Time",
+                  "timing": 0,
+                  "percent": "0%"
+                },
+                {
+                  "phase": "Render Delay",
+                  "timing": 2675.44215,
+                  "percent": "84%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 59 KiB",
+          "savings": {
+            "FCP": 150,
+            "LCP": 300
+          },
+          "items": [
+            {
+              "url": "http://127.0.0.1:8887/_next/static/chunks/index-CQO41Mh7.js",
+              "totalBytes": 53493,
+              "wastedBytes": 36239,
+              "wastedPercent": 67.7448103693589
+            },
+            {
+              "url": "http://127.0.0.1:8887/_next/static/chunks/framework-D_rUT4EX.js",
+              "totalBytes": 59255,
+              "wastedBytes": 24354,
+              "wastedPercent": 41.10080356767218
+            }
+          ]
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "display": "Est savings of 13 KiB",
+          "savings": {
+            "FCP": 0,
+            "LCP": 50
+          },
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-43-IMG",
+                "path": "1,HTML,1,BODY,0,DIV,2,MAIN,2,DIV,1,ARTICLE,0,FIGURE,0,IMG",
+                "selector": "div._readingLayout_1cylu_109 > article._article_1cylu_109 > figure._articlePhoto_1cylu_109 > img",
+                "boundingRect": {
+                  "top": 997,
+                  "bottom": 1245,
+                  "left": 20,
+                  "right": 392,
+                  "width": 372,
+                  "height": 248
+                },
+                "snippet": "<img src=\"http://127.0.0.1:8887/content-assets/akmenas/01c2edc7-a550-40e9-adf1-eb763…\" srcset=\"/content-assets/akmenas/801a9ba9-c180-4f08-a6db-910b8b542d30.webp 360w, /c…\" sizes=\"(max-width: 760px) calc(100vw - 40px), 760px\" width=\"1536\" height=\"1024\" alt=\"Keturi skirtingų faktūrų paviršių pavyzdžiai: tamsus grūdėtas, šviesus taš…\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\">",
+                "nodeLabel": "Keturi skirtingų faktūrų paviršių pavyzdžiai: tamsus grūdėtas, šviesus taškuota…"
+              },
+              "url": "http://127.0.0.1:8887/content-assets/akmenas/01c2edc7-a550-40e9-adf1-eb7639f81b7c.webp",
+              "totalBytes": 38200,
+              "wastedBytes": 12889,
+              "wastedPercent": 33.73968105065666
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 29 KiB",
+          "savings": {
+            "FCP": 0,
+            "LCP": 200
+          },
+          "items": [
+            {
+              "url": "http://127.0.0.1:8887/content-assets/akmenas/01c2edc7-a550-40e9-adf1-eb7639f81b7c.webp",
+              "totalBytes": 38200,
+              "wastedBytes": 29930,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (800x533) for its displayed dimensions (372x248). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 29930
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "savings": {
+            "LCP": 0
+          },
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "7209F9217AD1193F664E6CECCBC1786F": {
+                    "url": "http://127.0.0.1:8887/gidas/stalvirsiu-medziagu-palyginimas",
+                    "navStartToEndTime": 268,
+                    "transferSize": 12417,
+                    "isLongest": true,
+                    "children": {
+                      "19304.20": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/navigation-errors-D5LMQqDL.js",
+                        "navStartToEndTime": 482,
+                        "transferSize": 1965,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "19304.19": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/deployment-id-DFhHa9wO.js",
+                        "navStartToEndTime": 481,
+                        "transferSize": 442,
+                        "children": {}
+                      },
+                      "19304.17": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/headers-C_MtfdF4.js",
+                        "navStartToEndTime": 469,
+                        "transferSize": 1625,
+                        "children": {}
+                      },
+                      "19304.16": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/app-rsc-render-mode-CvTCGruk.js",
+                        "navStartToEndTime": 468,
+                        "transferSize": 685,
+                        "children": {}
+                      },
+                      "19304.18": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/protocol-headers-B9-bVeat.js",
+                        "navStartToEndTime": 468,
+                        "transferSize": 516,
+                        "children": {}
+                      },
+                      "19304.15": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/app-rsc-cache-busting-Z0Bw_u7X.js",
+                        "navStartToEndTime": 467,
+                        "transferSize": 2386,
+                        "children": {}
+                      },
+                      "19304.11": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/framework-D_rUT4EX.js",
+                        "navStartToEndTime": 467,
+                        "transferSize": 59572,
+                        "children": {}
+                      },
+                      "19304.10": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 466,
+                        "transferSize": 762,
+                        "children": {}
+                      },
+                      "19304.12": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/app-elements-H_Dr48wG.js",
+                        "navStartToEndTime": 465,
+                        "transferSize": 4570,
+                        "children": {}
+                      },
+                      "19304.14": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/record-uXSNv6cl.js",
+                        "navStartToEndTime": 465,
+                        "transferSize": 433,
+                        "children": {}
+                      },
+                      "19304.13": {
+                        "url": "http://127.0.0.1:8887/_next/static/chunks/hash-Cp347hhd.js",
+                        "navStartToEndTime": 464,
+                        "transferSize": 520,
+                        "children": {}
+                      },
+                      "19304.54": {
+                        "url": "http://127.0.0.1:8887/ivykius",
+                        "navStartToEndTime": 380,
+                        "transferSize": 0,
+                        "children": {}
+                      },
+                      "19304.8": {
+                        "url": "http://127.0.0.1:8887/_next/static/css/akmenas-site.Dw0fNn17.css",
+                        "navStartToEndTime": 360,
+                        "transferSize": 3996,
+                        "children": {}
+                      },
+                      "19304.7": {
+                        "url": "http://127.0.0.1:8887/_next/static/css/niche-styles.D-f75NbR.css",
+                        "navStartToEndTime": 359,
+                        "transferSize": 630,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 482
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "display": "Est savings of 150 ms",
+          "savings": {
+            "FCP": 150,
+            "LCP": 150
+          },
+          "items": [
+            {
+              "url": "http://127.0.0.1:8887/_next/static/css/akmenas-site.Dw0fNn17.css",
+              "totalBytes": 3996,
+              "wastedMs": 342
+            },
+            {
+              "url": "http://127.0.0.1:8887/_next/static/css/niche-styles.D-f75NbR.css",
+              "totalBytes": 630,
+              "wastedMs": 192
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Mobile simulated lab against isolated production build using an unmodified read-only canonical-host proxy; not real-domain field CWV."
+}

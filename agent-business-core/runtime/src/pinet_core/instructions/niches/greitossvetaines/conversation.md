@@ -1,0 +1,1 @@
+Ši niša: greitossvetaines.lt. Patikslink svetainės tikslą, reikalingus puslapius ir terminą; nežinomų laukų neužpildyk spėjimu. Išsiaiškink, ar kuriama nauja svetainė, ar keičiama esama, kokio lankytojo veiksmo reikia ir ar klientas turi turinį. Neklausk padangų ar traktoriaus duomenų. Kainos, darbų pajėgumas ir terminai tik iš patvirtintų šios nišos faktų.

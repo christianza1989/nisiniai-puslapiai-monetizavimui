@@ -1,0 +1,1161 @@
+{
+  "siteId": "miniekskavatoriai",
+  "canonicalHost": "miniekskavatoriai.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-10-01T13:14:39.593Z",
+  "evaluator": "AI agent site-specific A–Z evidence audit; separate fresh Impeccable reviewer for visual craft; no human/legal/engineering certification",
+  "environment": {
+    "preview": "http://127.0.0.1:8793/",
+    "isolatedRoot": "content-studio/output/miniekskavatoriai-production",
+    "SMTP": 0,
+    "voice": 0,
+    "viewports": [
+      1440,
+      390,
+      320,
+      768
+    ],
+    "actual200PercentZoom": "UNVERIFIED",
+    "physicalDevice": false,
+    "productionDeployed": false
+  },
+  "version": {
+    "packageSha256": "7f4bcc40fca41a7c2714dfea48fa9fc1eff36ff0235e3e96d9d8d24152fcac57",
+    "renderer": {
+      "miniekskavatoriai-site.tsx": "1d8df9305dfeeb23475730504e604941d5a62695ed42ce01eaa846761fde42ba",
+      "miniekskavatoriai-site.tools.tsx": "fb5a04285022f6de4a2af487761f40b070d0ddffe3c39d9f2ce93140cb413190",
+      "miniekskavatoriai-site.module.css": "a20c860233a1a03a48c2c875437170aa4fb8c5e3657a42884ab58d35ad889f08"
+    }
+  },
+  "verdict": {
+    "local": "FUNCTIONING LOCAL PILOT; NOT LOCAL-READY UNDER ALL AUDIT GATES",
+    "launch": "NOT LAUNCHED; NOT DOMAIN-READY",
+    "demand": "UNMEASURED: 0 verified real inquiries; synthetic QA excluded",
+    "visual": "Distinct coherent field worksheet; scoped craft8.57/10; ≥9 target not achieved; see fresh review and fixes-only verdict"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md: first-phase prerequest, no order/booking promise",
+        "qa/trust-pages.json: /su-operatoriumi, /apie-projekta visible boundaries"
+      ],
+      "notes": "Local pilot; no measured demand claim."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md: M1 accepted-qualified-lead payer hypothesis; alternatives, contradiction and unconfirmed fulfillment",
+        "qa/tool-interaction.json; qa/browser-form-result.json; qa/browser-d1-proof.json: real editable worksheet and synthetic native submission/storage"
+      ],
+      "notes": "Action tests planned trench work in Kaunas region. No stock, fleet, price, executor, offer or appointment invented; production collection remains closed."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "BUSINESS.md: six-week proposed decision policy"
+      ],
+      "notes": "No real qualified requests, accepted paid leads or measured contribution. No expansion decision made."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "evidence": [
+        "../miniekskavatoriai.md: confirmed MB Pinet / info@pinet.lt",
+        "qa/html-final.json; qa/trust-pages.json: same visible contacts and Organization identity",
+        "public core config/niche-network.json: default recipient info@pinet.lt, no niche override"
+      ],
+      "notes": "Recipient configuration inspected; mail receipt itself is not asserted (U2/U3)."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "evidence": [
+        "EDITORIAL-REVIEW.json: all12 local page claim scopes",
+        "qa/trust-pages.json: no fleet, phone, business-ID, address, operator experience or testimonials"
+      ],
+      "notes": "No other niche business details copied."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "../miniekskavatoriai.md: identity facts and unknowns"
+      ],
+      "notes": "Legal identifiers/address and actual domain control not established by this local task."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "history/audit.json; history/REPORT.md: bounded4 readable snapshots,2 URLs, periods and retrieval limits",
+        "history/ASSESSMENT.md: current agent assessment"
+      ],
+      "notes": "Successful snapshots do not establish ownership/continuity or full archive coverage."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "history/url-decisions.json: root keep for new current intent, utility no restore",
+        "qa/publication-isolation.json: legacy utility403, no restored content/redirect"
+      ],
+      "notes": "Cloudflare reserved utility path returns403, rather than planned404; actual result recorded. No mass home redirects."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "NA",
+      "evidence": [
+        "history/url-decisions.json: no legacy redirect implemented"
+      ],
+      "notes": "No implemented legacy redirect exists to validate. Root new content is not a redirect."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "PASS",
+      "evidence": [
+        "RESEARCH.md; DESIGN.md: LT/foreign original pages, URL-specific adopted/deferred/rejected decisions",
+        "research/technikos-*.jpg; avesco-*.jpg; avesco-detail-*.jpg; dozr-*.jpg; hh-*.jpg; paslaugos-*-list.jpg; ramirent-*.jpg"
+      ],
+      "notes": "Actual desktop/mobile. Paslaugos final list unobstructed; Ramirent cookie overlay restricts that evidence; Bobcat retrieval failed and supplies no facts."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md: no competitor rates or historical business facts borrowed",
+        "EDITORIAL-REVIEW.json; MEDIA.json: original contribution and illustrative assets",
+        "qa/trust-pages.json: no imaginary expertise/fulfillment"
+      ],
+      "notes": "Original supplier source facts remain qualified, not our commercial capacity."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md: search/intent and unit-economic unknowns",
+        "CONTENT-CALENDAR.md; ACQUISITION.md: seasonal/SEO hypotheses"
+      ],
+      "notes": "No search volume, rank, customer count or profit invented."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "PASS",
+      "evidence": [
+        "FINISH-REVIEW.md: fresh review of14 home/index/guide/tool/contact captures and nearest-network samples",
+        "qa/home-{desktop,mobile}-final.jpg; qa/gidai-*-final.jpg; qa/*-ar-be-*-final.jpg; qa/pravaziavimo-plotis-*-final.jpg; qa/nuomos-kainos-sudetis-*-final.jpg"
+      ],
+      "notes": "Coherent field worksheet, actual tools/prism/access and vertical guide rows. Scoped craft8.57/10; guide rhythm/mobile first feedback weaker, not ≥9 target achieved."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md; .impeccable/design.json; QUALITY-BAR.md: actual tokens, plan, code-led choice, compromises",
+        "qa/PALETTE-VERIFICATION.md; qa/palette-runtime.json; research/concept-seed-original.txt; research/concept-seed-provenance.json"
+      ],
+      "notes": "Fresh documenter reconciled actual colors/type/layout and image-free tool/purpose pages to the original plan. Captured warm cast distinguished from CSS/DOM and raw Lighthouse. Study/image timing deviation and late quality-card consolidation disclosed. Technical scores separate."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "evidence": [
+        "MEDIA.json; assets/*.prompt.txt; assets/*.png: private exact origin",
+        "qa/browser-layout-final.json: real loaded WebP images",
+        "qa/trust-pages.json: /redakcija truthful AI illustration method"
+      ],
+      "notes": "No public generator badge, borrowed machinery ownership, fake client work or stock claim. SVG is exact geometric formula diagram, not a safety profile."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json:12 pages and40 actual target requests,0 findings",
+        "qa/gidai-*-final.jpg; qa/trust-pages.json: all initial routes reachable"
+      ],
+      "notes": "Three guides through home/index/context; trust routes via footer, inquiry via nav/action."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "evidence": [
+        "qa/browser-layout-final.json; qa/keyboard-menu.json: desktop/mobile destinations and native menu",
+        "qa/browser-form-result.json: real native submission destination"
+      ],
+      "notes": "No placeholder navigation or dead CTA found."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "evidence": [
+        "EDITORIAL-REVIEW.json: unique originalContribution per URL",
+        "CONTENT-CALENDAR.json: distinct future intents kept private"
+      ],
+      "notes": "No city/synonym doorway pages; index helps choose the question."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "evidence": [
+        "qa/home-desktop-final.jpg; qa/home-mobile-final.jpg"
+      ],
+      "notes": "Trench planning, three dimensions, region/partner limits and actual next action visible. Mobile result below first viewport is a recorded compromise."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "qa/home-desktop-final.jpg; qa/home-mobile-final.jpg; DESIGN.md"
+      ],
+      "notes": "Middle distinguishes geometry, scope, access, networks and three guide questions, then explicit prerequest close."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "PASS",
+      "evidence": [
+        "qa/tool-interaction.json: empty/invalid/valid values, prepared text not automatically sent",
+        "qa/browser-form-result.json; qa/local-form-interest.json: native required fields, honest success and503 failure",
+        "qa/trust-pages.json: privacy linked"
+      ],
+      "notes": "Real behavior, including alternate email path on failure; SMTP remains off."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "evidence": [
+        "EDITORIAL-REVIEW.json: individual operator/access/price guide review and contributions",
+        "qa/html-final.json: three full Article pages rendered; source text individually read"
+      ],
+      "notes": "Guide usefulness judged from complete text and checklists, not minimum word count."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "PASS",
+      "evidence": [
+        "EDITORIAL-REVIEW.json; RESEARCH.md: each guide source/claim review",
+        "qa/html-final.json: visible source lists and limits"
+      ],
+      "notes": "No universal width/depth, safe digging, guaranteed price/time or operator credential claim. ESO original procedural limitations checked."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "PASS",
+      "evidence": [
+        "EDITORIAL-REVIEW.json: operator responsibilities, narrowest access checklist, total quote-comparison questions",
+        "qa/*-ar-be-*-final.jpg; qa/pravaziavimo-plotis-*-final.jpg; qa/nuomos-kainos-sudetis-*-final.jpg"
+      ],
+      "notes": "Concrete decisions and next routes; no nominal word-count filler."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: actual full guide article/lists/sources,577+ visible words on operator route",
+        "qa/browser-layout-final.json; qa/narrow-tablet.json: mobile/320/tablet rendering"
+      ],
+      "notes": "No body quietly dropped by renderer. Long captures downsampled; source and DOM supplement visual review."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "evidence": [
+        "MEDIA.json:4 original families and20 shared responsive WebP variants",
+        "qa/browser-layout-final.json: all home/index/guide images loaded",
+        "FINISH-REVIEW.md: each guide image present and suitable"
+      ],
+      "notes": "Contact/trust/legal and workflow pages use text/native controls instead of decorative photography; information/privacy/action is their task. Three guides, home panorama/access and index thumbnails have meaningful imagery."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: Article author MB Pinet linked to eligible public /redakcija",
+        "qa/trust-pages.json: /redakcija identifies responsibility and corrections contact"
+      ],
+      "notes": "Organization, not fictional Person."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: Organization/Article author/schema IDs",
+        "qa/trust-pages.json: no qualifications invented"
+      ],
+      "notes": "Attribution consistent; AI review not a qualified human approval."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: fixed visible publication/review and Article dates",
+        "qa/trust-pages.json: /redakcija explains local planned-publication meaning"
+      ],
+      "notes": "Dates do not refresh on requests. Package date is not evidence of a public launch."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/trust-pages.json: local version explicitly not public deployment"
+      ],
+      "notes": "No production deployment/first public availability occurred."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "evidence": [
+        "qa/trust-pages.json: full /apie-projekta and /redakcija texts"
+      ],
+      "notes": "Purpose, responsible operator, AI role, source method, limitations and corrections contact explicit."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "evidence": [
+        "EDITORIAL-REVIEW.json: AI agent review actor",
+        "qa/trust-pages.json: qualified approval not claimed"
+      ],
+      "notes": "No owner, engineer or construction specialist signoff inferred."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "PASS",
+      "evidence": [
+        "fix-reviewed-content.mjs: targeted corrections through studio edit/approval/export",
+        "qa/publication-isolation.json: altered approved body rejected; hash/revocation negative tests",
+        "qa/html-final.json: final approved text projected"
+      ],
+      "notes": "Includes tool position sentence and home ESO source correction; no direct post-approval public content edit."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: all12 routes, one H1,title,description,lt, canonical;0 findings"
+      ],
+      "notes": "Final production worker, not static mock."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json; qa/browser-layout-final.json: heading/alt/share metadata matches",
+        "qa/trust-pages.json: own data-SVG icon and own wordmark; renderer niche head override"
+      ],
+      "notes": "Own trench mark. Core base icon also exists in head; niche override is present, no borrowed visible wordmark."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: future/private unknown404",
+        "qa/html-final.json; qa/execution-proof.json: negative URLs,no homepage canonical"
+      ],
+      "notes": "Reserved Cloudflare utility403 is excluded from page URL claim."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: parsed Organization/WebSite/WebPage/Article appropriate types",
+        "qa/execution-proof.json: own SEO smoke"
+      ],
+      "notes": "Tool/inquiry remain WebPage; three editorial guides Article."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: BreadcrumbList names/path/URLs and author public target checked"
+      ],
+      "notes": "ArticleMeta uses shared visible byline/date, not hidden identity."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json; EDITORIAL-REVIEW.json"
+      ],
+      "notes": "No Product/Offer/Review/AggregateRating/LocalBusiness or rich-result guarantee."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/html-final.json: local schema evidence only"
+      ],
+      "notes": "No crawlable production site, Search Console verification or official rich-result inspection."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json:40 target requests, fragment destinations checked",
+        "qa/publication-isolation.json: real target-ID projection"
+      ],
+      "notes": "Context links help operator/access/quote/tool questions."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: actual future/revoked/hash projection removes guide and incoming links",
+        "qa/execution-proof.json: core publication negative tests24/24"
+      ],
+      "notes": "Incoming links withheld consistently; fixture manipulations not published."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "evidence": [
+        "CONTENT-CALENDAR.json; fix-reviewed-content.mjs: own pillar/related IDs",
+        "qa/html-final.json: actual related and contextual links"
+      ],
+      "notes": "No all-to-all network link scaffold."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "PASS",
+      "evidence": [
+        "RESEARCH.md; EDITORIAL-REVIEW.json: original official/supplier sources, reviewed2026-10-01",
+        "research/avesco-detail-*.jpg; hh-*.jpg; technikos-*.jpg; qa/html-final.json: visible source panels"
+      ],
+      "notes": "Supplier mention supplies comparison evidence, not partnership. Failed Bobcat source excluded."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "NA",
+      "evidence": [
+        "qa/html-final.json; own approved content-package.json: no owned editorial cross-domain link"
+      ],
+      "notes": "No editorial owned-domain link included. Mandatory footer attribution is assessed separately under N4, not a fake target-ID article relation."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json: contextual prose/source/related links render",
+        "qa/*-guide screenshots; qa/trust-pages.json"
+      ],
+      "notes": "No paid/sponsored/UGC arrangement; no invented rel sponsor."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/home-desktop-final.jpg: required verslomatika attribution; networkLiveDomains remains empty"
+      ],
+      "notes": "No live launch occurred; external attribution availability and actual launch destination must be checked then."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "evidence": [
+        "qa/execution-proof.json: own and seven-domain SEO smoke",
+        "qa/html-final.json: canonical/sitemap/robots",
+        "qa/publication-isolation.json: unavailable404/crosshost404; slash308 and query canonical tested"
+      ],
+      "notes": "Canonical https real domain retained even in local preview; loopback is not live-domain evidence."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json; qa/execution-proof.json: approved sitemap only,lastmod,robots tested"
+      ],
+      "notes": "Draft access is not secured by robots alone; draft source excluded from public export."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/verification-summary.json: isolated local worker only"
+      ],
+      "notes": "DNS/TLS/domain control/production host isolation not exercised."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: authoritative projection controls eligible pages/links/assets/LLM",
+        "qa/html-final.json; qa/execution-proof.json: sitemap/schema actual"
+      ],
+      "notes": "No niche SEO copy fork; shared projection reused."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: actual future/revoked/hash/cross-host negative cases",
+        "qa/execution-proof.json: core24/24"
+      ],
+      "notes": "Private future drafts never imported; unknown-host media blocked."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: changed approval rejected; six other package counts preserved",
+        "qa/execution-proof.json: compile/import and all seven SEO smoke"
+      ],
+      "notes": "Only own content/renderer and small registry/dispatch/import integration; no schema change."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: llmScope approved editorial facts only",
+        "qa/execution-proof.json: active niche LLM exports smoke"
+      ],
+      "notes": "Same contact/URLs, no private drafts, prompts, synthetic leads or hidden business facts. Client form state is not machine-only content."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "evidence": [
+        "qa/html-final.json; EDITORIAL-REVIEW.json: visible semantic qualified answers,lists,citations"
+      ],
+      "notes": "Definitions and prerequisites in HTML; no hidden model-specific assertions."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md; RESEARCH.md; ../miniekskavatoriai.md"
+      ],
+      "notes": "LLM index supplementary; no guaranteed rankings/AI traffic/rich-result capability."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "PASS",
+      "evidence": [
+        "qa/keyboard-menu.json; qa/skip-link-focus.jpg: native Tab/Return skip and menu",
+        "qa/browser-form-result.json; ACCESSIBILITY-VERIFICATION.json: labelled controls,3px focus"
+      ],
+      "notes": "Actual keyboard behavior, not Lighthouse alone."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "ACCESSIBILITY-VERIFICATION.json: computed contrast,touch targets,320 reflow",
+        "qa/palette-runtime.json: extra Chrome zoom attempt unchanged"
+      ],
+      "notes": "200% browser enlargement not established; native ctrl+plus had no effect in IAB or Chrome. Narrow layout/score100 cannot substitute."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "PASS",
+      "evidence": [
+        "qa/tool-interaction.json: aria-invalid and recovery",
+        "qa/browser-form-result.json: required field focused with native error",
+        "qa/browser-layout-final.json; own CSS: no entrance motion/animation"
+      ],
+      "notes": "Images/heading/menu disclosure and requirements usable; default visible content requires no reduced-motion workaround."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "evidence": [
+        "qa/browser-layout-final.json:1440/390 seven main routes; all loaded,no overflow",
+        "qa/trust-pages.json: five additional routes desktop/mobile",
+        "qa/narrow-tablet.json:320 main routes and768 home/guide/tool no overflow"
+      ],
+      "notes": "Real browser viewports."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/narrow-tablet.json; qa/keyboard-menu.json; ACCESSIBILITY-VERIFICATION.json"
+      ],
+      "notes": "Narrow content/byline/source/form/footer inspected, but actual enlarged text200% remains unproved."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "ACCESSIBILITY-VERIFICATION.md; FINISH-REVIEW.md"
+      ],
+      "notes": "IAB viewport and Lighthouse simulation explicitly distinguished from physical devices/touch certification."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "PASS",
+      "evidence": [
+        "qa/performance-summary.json; lighthouse-{home,guide,tool}.report.json/html: final mobile96/91/95, other categories100",
+        "qa/verification-summary.json: exact package/renderer hashes"
+      ],
+      "notes": "Production-built isolated worker, real WebP/Manrope; Lighthouse12.8.2 mobile simulated network/CPU. All chosen pages ≥90."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "qa/performance-summary.json: LCP2.5/3.1/2.5s,TBT90/60/60ms,CLS.00974/.0274/.002,total428/253/184KiB",
+        "MEDIA.json; own CSS: shared srcset/sizes,self-hosted fonts,plain tool"
+      ],
+      "notes": "Guide labLCP3.1s not portrayed as field-green. Prior material contrast/CTA correction documented; no repeat score fishing after target met."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/performance-summary.json: local lab only"
+      ],
+      "notes": "No live traffic/CrUX field CWV."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "PASS",
+      "evidence": [
+        "qa/local-form-interest.json:400 invalid/size,403origin,200honeypot without insert,503storage failure",
+        "qa/browser-d1-proof.json: actual native synthetic form retained in isolated D1, exact row removed"
+      ],
+      "notes": "D1 storage independent of optional mail/voice; disabled mail leaves statusnew. Live SMTP failure not freshly triggered in this task (U2/U3)."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/verification-summary.json: LEAD_SMTP_ENABLED=0",
+        "../../MAIL_CORE.md:2026-09-30 shared transport evidence is context only"
+      ],
+      "notes": "Task expressly keeps actual SMTP off. New niche recipient/acceptance test not performed; no client mail sent."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/verification-summary.json: no new Message-ID/INBOX proof",
+        "../../MAIL_CORE.md: earlier other-niche matching test"
+      ],
+      "notes": "SMTP authentication/old inbox proof cannot be relabelled as this niche receipt. QA records not demand."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/local-form-interest.json; qa/browser-d1-proof.json: isolated local D1 only"
+      ],
+      "notes": "Production D1/bindings/delivery/recovery/reconciliation/rate controls unverified."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "PASS",
+      "evidence": [
+        "qa/local-form-interest.json: DNT/GPC/bot no increment,valid event increment,origin/private-path/size rejection",
+        "qa/verification-summary.json: synthetic counters local only"
+      ],
+      "notes": "Pageviews/mail clicks separate from durable inquiries; QA counters excluded from demand ledger."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "PASS",
+      "evidence": [
+        "qa/trust-pages.json: /privatumas data inventory",
+        "qa/local-form-interest.json; qa/tool-interaction.json: query/form state not telemetry; only site/page/day event"
+      ],
+      "notes": "No analytics cookies/visitor ID or form content payload; server logging terms remain launch gate."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "BUSINESS.md; ACQUISITION.md: proposed measured decision interval",
+        "qa/verification-summary.json: voice off"
+      ],
+      "notes": "No GSC/real qualified demand data. No expansion or voice activation."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "PASS",
+      "evidence": [
+        "qa/trust-pages.json: /privatumas and /naudojimo-salygos individually read",
+        "RESEARCH.md: EDPB original and VDAI context reviewed2026-10-01"
+      ],
+      "notes": "Local synthetic-only notice matches actual pilot/data inventory. Public legal compliance not asserted."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "PASS",
+      "evidence": [
+        "qa/trust-pages.json: actual local purpose/contact/rights/deletion of synthetic records,unconfirmed public processor/retention terms explicit",
+        "qa/browser-d1-proof.json: marked record removed"
+      ],
+      "notes": "Unknown business-ID/address/retention/processors not invented. No public personal-data collection authorized before W3 launch checks."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/trust-pages.json: public launch conditions explicit"
+      ],
+      "notes": "Production basis,recipients/processors,transfers,retention and recovery/deletion procedure not established."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "evidence": [
+        "qa/trust-pages.json: inquiry purpose not newsletter/marketing",
+        "qa/tool-interaction.json; own native form source: explicit purpose checkbox, no tracking/marketing subscription"
+      ],
+      "notes": "No nonessential-cookie provider active; inquiry consent does not authorize outreach."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: package/bundle names exclude env/devvars/private prompt/original nichePNG; cross-host asset404",
+        "qa/local-form-interest.json: tenant/body boundaries",
+        "prepare-production.mjs: whitelist copy excludes private vars/secrets/runtime"
+      ],
+      "notes": "No secrets read/exported or synthetic leads in public package/LLM. Private source originals stay out of niche public media."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "qa/local-form-interest.json: deliberate storage503 with honest fallback; table restored",
+        "qa/publication-isolation.json: isolation/negative paths",
+        "qa/verification-summary.json: voice/mail off"
+      ],
+      "notes": "Assessed optional dependencies, honeypot/origin/body limits; actual production rate/backups/recovery still X3/U4 gates."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/verification-summary.json: local only"
+      ],
+      "notes": "Production access/rate/abuse/backups/restore/incident operation not proved."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "evidence": [
+        "qa/publication-isolation.json: all current packages preserved",
+        "own renderer files; shared dispatch/registry tiny integration; no schema mutation",
+        "qa/execution-proof.json: core tests"
+      ],
+      "notes": "Shared technical SEO/media/lead mechanism reused; only niche identity/content new."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "PASS",
+      "evidence": [
+        "qa/execution-proof.json: core24/24, all seven domain SEO smoke after import; final own smoke repeat",
+        "qa/verification-summary.json: tsc and own ESLint/build pass"
+      ],
+      "notes": "Other niches not redesigned or their existing dist rebuilt; own production copy."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "evidence": [
+        "../../START_HERE.md; ../../AGENTS.md; ../../CORE_BUILD_CONTRACT.md: current workflow read",
+        "../miniekskavatoriai.md: links to this audit/research/design/QA and open gates"
+      ],
+      "notes": "Own journal completes fresh-session handover without rewriting shared instructions or historical fingerprints."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "PHASE-1-AUDIT.md/json; PHASE-1-SCORE.json: all85 explicit site-specific criteria",
+        "qa/execution-proof.json; qa/verification-summary.json; FINISH-REVIEW.md: versions,bounds,baseline/corrections/screens"
+      ],
+      "notes": "Audit initialized with all85UNVERIFIED; no other niche PASS copied. First-run snapshot retained separately before final/parent feedback."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "PHASE-1-AUDIT.md/json; PHASE-1-SCORE.json: scorer contract and explicit open gates",
+        "FINISH-REVIEW.md:8.57 subjective craft separate from lab and A–Z"
+      ],
+      "notes": "No10/10, local-ready, domain-ready, ≥9 craft or proven demand claim."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PHASE-1-AUDIT.md/json: launch checks UNVERIFIED"
+      ],
+      "notes": "No actual launch handover; explicit deployment authorization, factual and operational evidence still required."
+    }
+  ],
+  "analysisInput": {
+    "path": "domain-sorter/output/top200-research-20261001/selected/analizes/miniekskavatoriai-lt.md",
+    "sourceAt": "2026-10-01T10:38:17Z",
+    "sha256": "1f1fbfc730a3a0b97f2d42e396e74775e09486f2dc3d1e882ebcc405aeeace8e",
+    "assisted": true
+  },
+  "findings": [
+    {
+      "priority": "P1",
+      "state": "UNVERIFIED",
+      "ids": [
+        "R2",
+        "S2"
+      ],
+      "finding": "Actual200% browser enlargement not established; narrow widths and score100 do not substitute."
+    },
+    {
+      "priority": "P1",
+      "state": "UNVERIFIED",
+      "ids": [
+        "U2",
+        "U3"
+      ],
+      "finding": "SMTP intentionallyoff; no new niche SMTP/Message-ID INBOX receipt."
+    },
+    {
+      "priority": "P1",
+      "state": "UNVERIFIED",
+      "ids": [
+        "B3",
+        "I4",
+        "O3",
+        "U4",
+        "W3",
+        "X3",
+        "Z3"
+      ],
+      "finding": "Actual domain/identity/production legal and operational launch not authorized or proved."
+    },
+    {
+      "priority": "P2",
+      "state": "TARGET NOT MET",
+      "ids": [
+        "E1",
+        "E2"
+      ],
+      "finding": "Fresh subjective craft12/14=8.57; guide rhythm/mobile feedback compromises remain. No benchmark or whole-surface perfection claim."
+    },
+    {
+      "priority": "P2",
+      "state": "DOCUMENTED",
+      "ids": [
+        "E2"
+      ],
+      "finding": "Topic asset generation preceded final study screenshot comparison. Formal quality bar consolidated at finish. Original seed recovered unchanged, no reroll."
+    },
+    {
+      "priority": "P2",
+      "state": "DOCUMENTED",
+      "ids": [
+        "E2"
+      ],
+      "finding": "CUA screenshots share a warm cast; actual DOM/CSS and raw Lighthouse colors match palette. Exact capture/environment cause unknown; no raster/CSS color compensation."
+    }
+  ],
+  "baselineAndRepairs": [
+    "Initial audit scaffold85/85UNVERIFIED; this manual record is independent of other niche audits.",
+    "Initial source lacked some final source/context/cluster wiring; corrected through studio revision approval/export. Twelve final pages tested.",
+    "Base/default link contrast and subsequent CTA inherited text were detected in actual render; scoped selectors corrected, final CTAwhite/dark confirmed.",
+    "One detector pass:2px pilot side-border corrected to1px; rounded-border flag documented as falsepositive on square controls. No second detector.",
+    "Legacy reserved-path assertion expected404; actual403 accepted as recorded no-restore result. Test expectation corrected, no runtime/redirect patch.",
+    "Fresh review14 captures valid; original seed evidence recovered and common capture warmcast investigated. Fix verdict recorded by same reviewer, no new implementation batch."
+  ],
+  "scoreSummary": {
+    "local": {
+      "passed": 67,
+      "applicable": 71,
+      "score": 9.43,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "R2",
+        "S2",
+        "U2",
+        "U3"
+      ]
+    },
+    "launch": {
+      "passed": 0,
+      "applicable": 10,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "B3",
+        "I4",
+        "O3",
+        "U4",
+        "W3",
+        "X3",
+        "Z3"
+      ]
+    },
+    "operations": {
+      "passed": 0,
+      "applicable": 2,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "A3",
+        "V3"
+      ]
+    }
+  }
+}

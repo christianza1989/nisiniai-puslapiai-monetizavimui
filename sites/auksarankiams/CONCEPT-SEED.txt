@@ -1,0 +1,129 @@
+DIRECTION CONCEPT SEED (key: 01be834d; mode: read; source: api; approved pool: c3b204a1eed6; 306/564 human-approved; rerun with --scope direction --mode read --from 01be834d --candidate-count 7 to reproduce this roll against this catalog revision)
+ASSIGNED INDEX: 4
+  After ordering the grounded directions by resonance, build candidate
+  4 of your own grounded list; the assignment never points at a
+  challenger. The assignment is the roll, not a suggestion: your top-ranked
+  direction is what every run would ship, so the script decides which grounded
+  direction gets built. Each direction joins a durable visual system to a
+  concrete expression for the requested first surface, decided as one. It must
+  survive the current task plus navigation, quiet and dense content,
+  interaction and state, and a substantially different future surface. In an
+  attended run, present the assigned direction fully committed and offer
+  re-roll. You may add ONE card for your top-ranked grounded candidate when
+  it is not the assigned direction, kicker IMPECCABLE’S PICK, with an honest risk line
+  naming its familiarity; one pick card, never a ranked lineup, and the pick
+  never takes the lead position. When the assignment IS your top candidate,
+  there is no pick card. Re-roll yourself only
+  on named factual grounds, when the assignment cannot carry the product's
+  truth or task; taste is never grounds.
+  The assignment exists to refuse the model's ranking rut, never to outrank
+  the user or the brief. Never expose assignment metadata in user-facing labels.
+CHALLENGERS:
+  1. A film cutting bench flattened into a sheet: a perforated select rail crossing a grain-orange field, each step a punched frame held between two pins, the place you stopped marked by a folded tape flag, and everything set aside still hanging on pins below the rail.
+     SOURCE ID: operate-a-cutting-bench-select-rail
+     CREATIVE SPARK: A work print strung between two pins under a bench lamp, white grease crosses struck across three frames, a folded orange tape flag doubled over the perforation where the editor stopped, and a dozen trims hanging on pins in the bin below.
+     SYSTEM GRAMMAR:
+       - Palette/material: one ink, flag orange in coarse film grain on true black; orange holds a third of any screen. Running copy and foreign images sit only in punched white windows.
+       - Type/composition: one size of condensed grotesk throughout, caps for labels; rank is cell count not size, a window may span twelve frame cells while edge ticks stay hairline.
+       - Topology/navigation: a perforated rail crosses every sheet at a fixed height; sections string along it as frames, and anything set aside hangs below on pins in an open bin.
+       - Controls/state: state is a mark, not a hue: grease cross done, punched corner unavailable, tape band committed, folded flag where you stopped, hung on a pin deferred.
+       - Responsive/motion: the strip scrubs with inertia and settles on perforation pitch, never between frames; hung trims swing and damp. Narrow screens drop frame count, not size.
+     WEB LEVERAGE: The rail is one virtual strip whose scrub snaps to a fixed frame pitch; the frame you left is persisted and re-flagged on return, and every discarded frame stays reachable on a pin below the rail.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail.webp · hero https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp
+  2. a data-sublime field, where dense barcode columns and sine lattices strobe in pure black and white
+     SOURCE ID: ikeda-datamatics
+     CREATIVE SPARK: A wall of hairline vertical bars, some black, some white, holds like a frozen barcode. Dense monospace numbers pack the margin. A single sine curve traces the lattice, and for one frame the whole field snaps to its negative.
+     SYSTEM GRAMMAR:
+       - Palette/material: Pure black and pure white only, no grey and no color; flat pixel-crisp bars, hairline rules, and monospace numerics; the occasional full-frame inversion.
+       - Type/composition: One monospace face at data density, set in tight tabular columns; barcode bar-fields and sine curves structure the page
+       - Topology/navigation: Move by data column, by frequency band, and by frame index.
+       - Controls/state: Scan, sample, and invert; selecting a column pulls its numbers into focus while the surrounding field drops to a faint bar pattern.
+       - Responsive/motion: Columns thin and drop from the edges as width shrinks; reduced-motion disables all strobing and holds a single high-contrast still.
+     WEB LEVERAGE: Render the barcode and sine lattice on canvas from a seeded sequence, stepping frames on requestAnimationFrame that halts entirely under prefers-reduced-motion.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/ikeda-datamatics.webp · hero https://impeccable.style/worlds/cards/ikeda-datamatics-hero.webp
+  3. a Wim Crouwel gridded type specimen, where letterforms are built cell by cell on a visible construction grid and the poster is the proof
+     SOURCE ID: crouwel-grid-specimen
+     CREATIVE SPARK: Faint blue gridlines cover the sheet like graph paper; enormous letterforms assemble themselves from its cells, and one diagonal is the only rebellion the system permits.
+     SYSTEM GRAMMAR:
+       - Palette/material: white or one stark saturated ground, faint construction-grid hairlines, one accent plane earned by the headline
+       - Type/composition: monumental grid-constructed letterforms over small neutral grotesk; the layout grid stays visible as part of the design
+       - Topology/navigation: Move by cell, by letter, and by catalog entry.
+       - Controls/state: Reveal construction, snap to cells, and toggle grid visibility as a real state.
+       - Responsive/motion: The page reflows by whole cells; letterforms rebuild cell by cell when content changes.
+     WEB LEVERAGE: CSS grid as the literal visible armature with display letterforms drawn from the same grid tokens
+     QUALITY BAR: board https://impeccable.style/worlds/cards/crouwel-grid-specimen.webp · hero https://impeccable.style/worlds/cards/crouwel-grid-specimen-hero.webp
+  4. a literary quarterly's plain interior taken off the press and laid on a lit desk: cream laid leaves squared to the frame on a deep oltremare ground, one raking light throwing every shadow parallel, and a vermilion titling numeral forty times body size printed on the ground beneath them and running off the frame
+     SOURCE ID: rw-botteghe-quarterly-interior
+     CREATIVE SPARK: an uncut signature of a quarterly lying on a blue-washed table under a low lamp, deckle showing along one edge, its shadow falling across a vermilion numeral printed on the table itself that runs off the table's edge
+     SYSTEM GRAMMAR:
+       - Palette/material: four colours only, deep oltremare ground, cream laid leaves, near-black ink, vermilion apparatus. The ground is procedural, chain and laid lines from a seed.
+       - Type/composition: Bembo alone. Body 10.5/14 at 62 to 68 characters, justified; titling capitals from 8pt small caps to ground numerals at 40x. Examples set as verse, ranged left.
+       - Topology/navigation: nothing touches the frame. Every element is a leaf on the ground, which shows on all four sides, and navigation lives in that margin in small caps.
+       - Controls/state: a leaf turns in place to its verso; face down, blank back showing, means gone. Rank lifts a leaf: wider ground reserve, longer shadow, one vermilion rule beneath.
+       - Responsive/motion: the measure is fixed, so width re-lays the leaves and the ground absorbs it. One drift: the wash migrates, the raking light swings every shadow off one angle.
+     WEB LEVERAGE: One fragment shader draws the ground: laid mould, chain lines, deckle and pigment wash from a seed, on a clock publishing two custom properties, rake angle and shadow length, that every leaf's box-shadow reads.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/rw-botteghe-quarterly-interior.webp · hero https://impeccable.style/worlds/cards/rw-botteghe-quarterly-interior-hero.webp
+  5. a brick build-instruction book, numbered exploded steps on sky-blue pages, 1:1 piece call-outs in a cornered box, a stud grid ruling every alignment, wordless arrows teaching assembly
+     SOURCE ID: games-toys-physics-play-brick-build-instructions
+     CREATIVE SPARK: You flatten the booklet on the carpet, tip the numbered bag out, and match a red brick to its 1:1 call-out against the page; the arrow shows the seat, the stud grid agrees, and the piece clicks down exactly where it must.
+     SYSTEM GRAMMAR:
+       - Palette/material: instruction-page sky blue as the ground, black keyline ink outlining every piece, brick red for the new part in each step, yellow held in the inventory
+       - Type/composition: oversized step numerals are almost the only text, wordless arrows do the teaching, and every element aligns to the stud grid module
+       - Topology/navigation: numbered spreads in strict sequence, a parts inventory up front, 1:1 call-out boxes zooming the pieces a step introduces
+       - Controls/state: prior assembly renders ghosted, the new pieces arrive bright with an arrow to their seat, done means clicked down flush on the studs
+       - Responsive/motion: spreads split into single step frames on small screens, call-outs pin to a corner; pieces animate down along their arrows
+     WEB LEVERAGE: svg exploded-step diagrams with dashed guide arrows, css grid locked to a stud-module unit, animation dropping new pieces along their arrows
+     QUALITY BAR: board https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions.webp · hero https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions-hero.webp
+  6. an industrial streetwear grammar, ordinary words set in straight quotation marks, zip-tie tags left on, diagonal hazard stripes crossing white cotton and black nylon
+     SOURCE ID: textiles-weave-drape-fashion-industrial-quote-grammar
+     CREATIVE SPARK: You lift a jacket and the zip-tie tag clacks against the hanger; across the back, giant caps in straight quotes name the obvious, and a hazard stripe runs diagonally under the fluorescent light of the stockroom.
+     SYSTEM GRAMMAR:
+       - Palette/material: stockroom white cotton and black nylon as ground and ink, black-on-white hazard diagonals for structure, safety orange zip-tie tags as the accent
+       - Type/composition: bold industrial caps inside straight quotation marks naming the obvious, label plates set square on the grid like stenciled crates
+       - Topology/navigation: every zone is labeled with its literal quoted name, wayfinding is reading, and the hazard stripe runs diagonally under whatever matters
+       - Controls/state: the active item keeps its orange zip tie on, toggles read "ON" and "OFF" in quotes, disabled things take the diagonal stripe across them
+       - Responsive/motion: stripes hold 45 degrees at every width while label plates stack; motion is a tag swinging once on selection
+     WEB LEVERAGE: css repeating-linear-gradient hazard stripes at 45deg, generated content wrapping every label in straight quotes via ::before and ::after
+     QUALITY BAR: board https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-industrial-quote-grammar.webp · hero https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-industrial-quote-grammar-hero.webp
+Fuse each challenger before judging it: the challenger supplies the form
+  and its system grammar, the product supplies every fact, and clarity wins
+  conflicts. Weigh the fused result against the assigned direction on exactly
+  two axes, audience identification and product clarity. Losing to strong
+  grounded material is a valid outcome; beating a thin or tool-monoculture
+  list is the point. A fused challenger that wins both axes becomes the build.
+  Close the weighing with a verdict per challenger, decided before any
+  borrowing is considered: wins (beats the assigned direction on both axes),
+  competitive (holds one axis), or declined (loses both). A declined
+  challenger is not spent: name the one discipline of its system the assigned
+  direction lacks, and raise the assigned direction to match before
+  presenting it. A donation transfers ambition and system discipline, never
+  the challenger's clothes; one world owns the page. Write each raise as its
+  own named line on the presented direction, and carry every verdict, kept
+  line, and raise into the decision page payload.
+When you can view images, open the QUALITY BAR board and hero for any
+challenger you weigh seriously and for the world you build. They exist as a
+craft bar, the finish level and commitment the build is expected to reach,
+never as a mockup to copy; your surface serves this product, not that render.
+PRODUCT.md and explicit incumbent brand commitments constrain every direction.
+The seed never chooses exact colors, fonts, tokens, or a user preference, and
+it never permits the world and first surface to be selected independently.
+The CREATIVE SPARK is a complete visual system, not a theme or decorative
+reference. Translate every supplied system rule into the product: palette and
+material, type and composition, topology, controls and states, and adaptation.
+Keep the source's visible character, scale, rhythm, and interaction instead of
+reducing vivid grammar to generic nouns. When the source is already a credible
+interface language, commit to it across navigation, content, controls, and
+states. Otherwise keep a literal carrier only when it becomes functional.
+Ambitious motion, spatial media, or interaction is welcome when it strengthens
+the product without weakening semantics, performance, or fallback behavior.
+TELEMETRY: after the user's choice resolves, rerun this script once with
+  --kind <assigned|pick|challenger|canon> --from 01be834d --scope direction --mode read,
+  adding --chosen <challenger-id> when a dealt challenger won and keeping
+  --register <safer|bolder> when the resolved round came from a steered hand.
+  One ping per resolved attended round. The ping is anonymous, the card kind
+  plus the catalog id when one won; your grounded candidates' names never
+  leave the machine, and the ping is skipped automatically when DO_NOT_TRACK
+  or IMPECCABLE_NO_TELEMETRY is set.
+A user- or brief-pinned decision beats the roll, always.
+ASSIGNED INDEX (restated for truncated readers): 4. Build candidate
+4 of your own grounded list; seed key 01be834d.

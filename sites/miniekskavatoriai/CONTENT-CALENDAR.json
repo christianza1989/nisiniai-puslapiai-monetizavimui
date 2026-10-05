@@ -1,0 +1,110 @@
+{
+  "private": true,
+  "seasonality": "Editorial hypotheses, no measured demand",
+  "initial": [
+    {
+      "slug": "",
+      "intent": "Kaip pasiruošti nedidelės tranšėjos kasimui su mini ekskavatoriumi?"
+    },
+    {
+      "slug": "gidai",
+      "intent": "Kurį mini ekskavatoriaus pasirinkimo klausimą reikia išspręsti pirmiausia?"
+    },
+    {
+      "slug": "su-operatoriumi",
+      "intent": "Kaip užregistruoti planuojamos tranšėjos kasimo su operatoriumi poreikį Kaune?"
+    },
+    {
+      "slug": "transejos-kasimas",
+      "intent": "Kaip apskaičiuoti tranšėjos tūrį ir aprašyti konkrečią kasimo apimtį?"
+    },
+    {
+      "slug": "su-operatoriumi-ar-be",
+      "intent": "Kada rinktis mini ekskavatoriaus nuomą, o kada kasimo paslaugą su operatoriumi?"
+    },
+    {
+      "slug": "pravaziavimo-plotis",
+      "intent": "Kaip patikrinti mini ekskavatoriaus prieigą į sklypą be klaidingos pravažiavimo garantijos?"
+    },
+    {
+      "slug": "nuomos-kainos-sudetis",
+      "intent": "Kaip palyginti mini ekskavatoriaus nuomos ir kasimo pasiūlymų kainos apimtį?"
+    },
+    {
+      "slug": "kontaktai",
+      "intent": "Kur pateikti konkretų tranšėjos kasimo poreikį ar turinio pataisą?"
+    },
+    {
+      "slug": "apie-projekta",
+      "intent": "Kas atsako už projektą ir kokia paslauga realiai prieinama?"
+    },
+    {
+      "slug": "redakcija",
+      "intent": "Kaip patikrinti šių gidų kilmę ir pateikti pataisą?"
+    },
+    {
+      "slug": "privatumas",
+      "intent": "Kaip tvarkomi formos ir šios vietinės peržiūros duomenys?"
+    },
+    {
+      "slug": "naudojimo-salygos",
+      "intent": "Kokios yra projekto įrankio ir poreikio registracijos naudojimo ribos?"
+    }
+  ],
+  "future": [
+    {
+      "slug": "grunto-paliekimas-ar-isvezimas",
+      "title": "Gruntas: palikti sklype ar išvežti?",
+      "date": "2026-10-22",
+      "hook": "Prieš lietingą laikotarpį planavimo klausimas; paklausos sezoniškumas nepatvirtintas.",
+      "status": "unapproved",
+      "pillar": "9a41d952-5665-4f98-b307-9fffd27f6880",
+      "gate": "actual source, useful answer, inspected image, approval; date alone never publishes"
+    },
+    {
+      "slug": "kasimo-laikotarpio-planavimas",
+      "title": "Kasimo laikotarpis: ką derinti su rangovu",
+      "date": "2026-11-12",
+      "hook": "Oro ir prieigos planavimo tema, be garantuotų žiemos darbų.",
+      "status": "unapproved",
+      "pillar": "9a41d952-5665-4f98-b307-9fffd27f6880",
+      "gate": "actual source, useful answer, inspected image, approval; date alone never publishes"
+    },
+    {
+      "slug": "transejos-ruosinys-rangovui",
+      "title": "Kaip perduoti tranšėjos ruošinį rangovui",
+      "date": "2026-12-03",
+      "hook": "Evergreen; ne atskiras miestų ar sinonimų puslapis.",
+      "status": "unapproved",
+      "pillar": "9a41d952-5665-4f98-b307-9fffd27f6880",
+      "gate": "actual source, useful answer, inspected image, approval; date alone never publishes"
+    },
+    {
+      "slug": "kasimo-pasiulymo-patikra",
+      "title": "Kasimo pasiūlymo patikra prieš susitarimą",
+      "date": "2027-01-21",
+      "hook": "Pasiruošimas būsimiems darbams; sezonas tik hipotezė.",
+      "status": "unapproved",
+      "pillar": "9a41d952-5665-4f98-b307-9fffd27f6880",
+      "gate": "actual source, useful answer, inspected image, approval; date alone never publishes"
+    },
+    {
+      "slug": "sklypo-prieiga-po-lietaus",
+      "title": "Prieiga į sklypą po lietaus: ką užrašyti",
+      "date": "2027-02-18",
+      "hook": "Tik aprašymo gidas; reikia aktualių specialistų šaltinių.",
+      "status": "unapproved",
+      "pillar": "9a41d952-5665-4f98-b307-9fffd27f6880",
+      "gate": "actual source, useful answer, inspected image, approval; date alone never publishes"
+    },
+    {
+      "slug": "transejos-atkurimo-apimtis",
+      "title": "Kas po tranšėjos: užpylimas ir atkūrimo apimtis",
+      "date": "2027-03-18",
+      "hook": "Pavasario planavimo hipotezė; ne techninė darbų instrukcija.",
+      "status": "unapproved",
+      "pillar": "9a41d952-5665-4f98-b307-9fffd27f6880",
+      "gate": "actual source, useful answer, inspected image, approval; date alone never publishes"
+    }
+  ]
+}

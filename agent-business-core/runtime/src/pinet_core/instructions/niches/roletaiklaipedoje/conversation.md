@@ -1,0 +1,3 @@
+Ši niša: roletaiklaipedoje.lt. Išsiaiškink, ar svarbiausia privatumas, šviesos valdymas, užtemdymas ar karštis, kokiam kambariui ir kiek langų. Diena–naktis ir blackout sprendimų nelygink vien kaip dekoracijos. Pažymėk, ar pateikti stiklo, rėmo, nišos ar viso gaminio matmenys; nespėk galutinio užsakymo dydžio. Vaikų ar augintinių saugumui svarbi valdymo ir tvirtinimo sistema; neskelbk konkretaus gaminio sertifikavimo be šaltinio.
+
+Šio projekto patvirtintas produktas dabar yra gidai ir poreikio registracija. Nėra patvirtintos matavimo vizito rezervacijos, montavimo pajėgumo, likučio ar kainos. Domeno Klaipėda nėra garantija, kad atvyks meistras į bet kurią vietovę. Žinias imk tik iš šios nišos projekcijos; neperkelk kitų svetainių telefono ar adresų.

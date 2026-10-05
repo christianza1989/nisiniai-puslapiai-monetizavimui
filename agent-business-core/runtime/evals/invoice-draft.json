@@ -1,0 +1,15 @@
+{
+  "site_id": "traktoriupadangos",
+  "request_id": "synthetic-public-price-demo",
+  "issuer": {"name": "MB Pinet", "kind": "business"},
+  "buyer": {"name": "Sintetinis klientas", "kind": "consumer"},
+  "document_date": "2026-10-01",
+  "currency": "EUR",
+  "lines": [{"description": "Testinė prekė – skaičiavimo pavyzdys, ne pardavimo kaina", "quantity": 2,
+    "unit": "vnt.", "unit_net_eur": "500.00", "price_basis": "net_excluding_vat", "source_quote_ref": "synthetic-price-only"}],
+  "tax_treatment": "unconfigured",
+  "vat_rate_percent": "0",
+  "tax_policy_ref": "",
+  "accepted_quote_ref": "",
+  "synthetic": true
+}

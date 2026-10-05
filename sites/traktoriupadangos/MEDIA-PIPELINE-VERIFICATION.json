@@ -1,0 +1,136 @@
+{
+  "at": "2026-09-30T19:25:29.551Z",
+  "policy": {
+    "version": "responsive-webp-v1",
+    "widths": [
+      360,
+      640,
+      800,
+      1200,
+      1600
+    ],
+    "quality": 75,
+    "alphaQuality": 100,
+    "maxInputBytes": 12582912,
+    "maxInputPixels": 40000000,
+    "maxInputEdge": 8192,
+    "maxOutputEdge": 1600
+  },
+  "studioTests": {
+    "passed": 14,
+    "failed": 0,
+    "log": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log"
+  },
+  "gui": {
+    "at": "2026-09-30T19:03:39.893Z",
+    "isolated": true,
+    "url": "http://127.0.0.1:4327",
+    "singleLibraryImage": true,
+    "singleEditorChoice": true,
+    "allFiveVariantsAttached": true,
+    "approvedOrPublished": false,
+    "sourceOriginalPrivate": true,
+    "variants": [
+      {
+        "id": "b1fd9203-4d42-465c-8de1-8664ee6cc6a5",
+        "width": 1600,
+        "height": 800,
+        "bytes": 2444,
+        "hasAlpha": true,
+        "sha256": "1a3da7b3f8a8567f1d649a61ee754384148e30cb403045e19b588d973c382b1c"
+      },
+      {
+        "id": "e4b08441-b7f3-4d94-bbd3-288daf618bf8",
+        "width": 1200,
+        "height": 600,
+        "bytes": 1440,
+        "hasAlpha": true,
+        "sha256": "3f5c1b411bad1abe1a984924a639d74043945468280eb6341edf75e7c243348e"
+      },
+      {
+        "id": "716dbcd6-7f9e-4a40-b58d-145a075091ac",
+        "width": 800,
+        "height": 400,
+        "bytes": 696,
+        "hasAlpha": true,
+        "sha256": "fdcf765ec6f9b38a2eec6cb4da8688bac5c9ca2fbc5b33275127778b87e9fd22"
+      },
+      {
+        "id": "6ff796ae-74c2-407b-bfcb-657db363ff3b",
+        "width": 640,
+        "height": 320,
+        "bytes": 482,
+        "hasAlpha": true,
+        "sha256": "a5ccad938d13158b0d71476fd0c57a6975ea7fe589885f90139cba169a699c0f"
+      },
+      {
+        "id": "1573f481-075f-4a75-880d-12df44a4cef4",
+        "width": 360,
+        "height": 180,
+        "bytes": 232,
+        "hasAlpha": true,
+        "sha256": "52bd08e01e2fc628437a68263c35206f87682161ffd5af0e360de3a8e81411a2"
+      }
+    ],
+    "artifacts": [
+      "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media-ui-browser.json",
+      "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media-ui-import.png",
+      "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media-ui-choice.png"
+    ]
+  },
+  "regressionCoverage": [
+    "HTTP PNG upload",
+    "actual decoded dimensions instead of supplied dimensions",
+    "one family choice expands all variants",
+    "other tenant rejected",
+    "original has no public endpoint",
+    "export only approved WebP variants, no group/prompt/source",
+    "immutable approval after extra import",
+    "five choices / 25 actual WebP approved and exported through the public validator",
+    "explicit >60 rejection without mutation, model/schema limit parity",
+    "alpha preservation",
+    "EXIF rotation/removal",
+    "no upscaling / tiny source dedup",
+    "invalid bytes/MIME/bytes/edge rejection"
+  ],
+  "promptInstructions": {
+    "plan": {
+      "name": "niche-content-planner",
+      "mode": "plan",
+      "files": [
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/niche-adaptation.md"
+      ],
+      "fingerprint": "4e419ac4a77a4cebd458b7d840792e7f5043386feaa26a7daeb4342eb6206242"
+    },
+    "draft": {
+      "name": "niche-content-planner",
+      "mode": "draft",
+      "files": [
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md"
+      ],
+      "fingerprint": "5182c81f56302b387427096ffd0ebee8f08f737d33ab9c30a6f2ceaaf2ad7296"
+    }
+  },
+  "publicTractor": {
+    "pages": 11,
+    "publicAssets": 19,
+    "existingApprovedAssetsUnchanged": true,
+    "htmlEvidence": "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+    "finalMobileIndex": "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-index-final.json"
+  },
+  "limitations": [
+    "GUI fixture is synthetic local QA, not real image generation or production",
+    "older immutable image assets retain their previous IDs",
+    "image quality and correct layout sizes still require visual review",
+    "no deployment, DNS, paid API, clients or production data changed"
+  ]
+}

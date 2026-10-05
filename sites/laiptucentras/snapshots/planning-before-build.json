@@ -1,0 +1,22 @@
+{
+  "id": "laiptucentras",
+  "canonicalHost": "laiptucentras.lt",
+  "name": "Laiptų centras",
+  "locale": "lt-LT",
+  "timezone": "Europe/Vilnius",
+  "brand": {
+    "accent": "#246f74"
+  },
+  "offer": "Laiptų projektavimo ir gamybos užklausos",
+  "audience": "",
+  "facts": "",
+  "contact": {
+    "email": "info@pinet.lt",
+    "phone": ""
+  },
+  "stage": "planning",
+  "pages": [],
+  "assets": [],
+  "createdAt": "2026-09-29T10:39:42.706Z",
+  "updatedAt": "2026-09-30T08:53:20.338Z"
+}

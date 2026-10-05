@@ -1,0 +1,13 @@
+import {cp,mkdir,writeFile,access} from 'node:fs/promises';
+import path from 'node:path';
+const core='C:/Users/lenovo/Documents/dovanos-memorycasting';
+const target=path.join(core,'output/laiptucentras-production');
+if(path.resolve(target)!==path.resolve(core,'output/laiptucentras-production'))throw Error('Invalid scoped target');
+await mkdir(target,{recursive:true});
+const folders=['app','build','components','config','content-packages','db','drizzle','hooks','lib','public','scripts','tests','vendor'];
+const files=['cloudflare-env.d.ts','components.json','drizzle.config.ts','eslint.config.mjs','next-env.d.ts','next.config.ts','package-lock.json','package.json','postcss.config.mjs','proxy.ts','tsconfig.json','vercel.json','vite.config.ts'];
+for(const item of [...folders,...files,'.openai/hosting.json'])await cp(path.join(core,item),path.join(target,item),{recursive:true,filter:p=>!/(?:^|[\\/])(?:\.env[^\\/]*|\.dev\.vars[^\\/]*|node_modules|\.git|\.wrangler|output)(?:[\\/]|$)/.test(path.relative(path.join(core,item),p))&&!/\.previous\.\d+\.json$/.test(p)});
+await mkdir(path.join(target,'.sites-runtime'),{recursive:true});
+await writeFile(path.join(target,'.sites-runtime/execution-profile.json'),JSON.stringify({executionProfile:'portable'}));
+await access(path.join(target,'package.json'));
+console.log(JSON.stringify({target,folders,files,secretsCopied:false}));

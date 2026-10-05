@@ -1,0 +1,13 @@
+{
+ "date":"2026-10-01","base":"http://127.0.0.1:8866","after":"Isolated build-favicon-fix.log exit0",
+ "test":"tests/seo-core-smoke.mjs actual Host headers; both favicon paths and unknown-host404",
+ "results":[
+  {"siteId":"akmenas","pages":11,"exitCode":0},
+  {"siteId":"auksarankiams","pages":13,"exitCode":0},
+  {"siteId":"greitossvetaines","pages":7,"exitCode":0},
+  {"siteId":"laiptucentras","pages":11,"exitCode":0},
+  {"siteId":"roletaiklaipedoje","pages":9,"exitCode":0},
+  {"siteId":"traktoriupadangos","pages":11,"exitCode":0}
+ ],
+ "scope":"Six packages in root isolated build. Seventh miniekskavatoriai and its build belong to new session; not claimed root runtime tested. Worker-first config must be included in later fresh builds."
+}

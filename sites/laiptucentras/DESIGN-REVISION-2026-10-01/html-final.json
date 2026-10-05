@@ -1,0 +1,211 @@
+{
+  "siteId": "laiptucentras",
+  "canonicalHost": "laiptucentras.lt",
+  "base": "http://127.0.0.1:8866",
+  "checkedAt": "2026-10-01T12:03:43.605Z",
+  "packageGeneratedAt": "2026-10-01T11:33:35.607Z",
+  "publicPages": 11,
+  "readOnly": true,
+  "requests": 38,
+  "pages": [
+    {
+      "path": "/",
+      "title": "Laiptai prasideda nuo gero plano.",
+      "h1": "Laiptai prasideda nuo gero plano.",
+      "canonical": "https://laiptucentras.lt/",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "articleWords": 22,
+      "anchors": 39,
+      "images": 5
+    },
+    {
+      "path": "/gidai",
+      "title": "Gidai prieš užsakant laiptus",
+      "h1": "Gidai prieš užsakant laiptus",
+      "canonical": "https://laiptucentras.lt/gidai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 22,
+      "anchors": 29,
+      "images": 3
+    },
+    {
+      "path": "/vidaus-laiptu-irengimas",
+      "title": "Vidaus laiptų įrengimo poreikio registracija",
+      "h1": "Vidaus laiptų įrengimo poreikio registracija",
+      "canonical": "https://laiptucentras.lt/vidaus-laiptu-irengimas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "articleWords": 196,
+      "anchors": 25,
+      "images": 1
+    },
+    {
+      "path": "/laiptu-kaina",
+      "title": "Laiptų kaina: kaip palyginti sąmatas",
+      "h1": "Laiptų kaina: kaip palyginti sąmatas",
+      "canonical": "https://laiptucentras.lt/laiptu-kaina",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 768,
+      "anchors": 37,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-01T04:15:51.650Z",
+        "modified": "2026-10-01T11:33:35.403Z"
+      }
+    },
+    {
+      "path": "/laiptu-konstrukcijos",
+      "title": "Medis, metalas ar betonas: ką iš tiesų renkatės?",
+      "h1": "Medis, metalas ar betonas: ką iš tiesų renkatės?",
+      "canonical": "https://laiptucentras.lt/laiptu-konstrukcijos",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 621,
+      "anchors": 39,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-01T04:15:51.650Z",
+        "modified": "2026-10-01T11:33:35.500Z"
+      }
+    },
+    {
+      "path": "/laiptu-matavimas",
+      "title": "Ką paruošti prieš laiptų matavimą",
+      "h1": "Ką paruošti prieš laiptų matavimą",
+      "canonical": "https://laiptucentras.lt/laiptu-matavimas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 595,
+      "anchors": 37,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-01T04:15:51.650Z",
+        "modified": "2026-10-01T11:33:35.586Z"
+      }
+    },
+    {
+      "path": "/kontaktai",
+      "title": "Kontaktai ir poreikio registracija",
+      "h1": "Kontaktai ir poreikio registracija",
+      "canonical": "https://laiptucentras.lt/kontaktai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 94,
+      "anchors": 23,
+      "images": 0
+    },
+    {
+      "path": "/apie-projekta",
+      "title": "Apie Laiptų centro projektą",
+      "h1": "Apie Laiptų centro projektą",
+      "canonical": "https://laiptucentras.lt/apie-projekta",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 126,
+      "anchors": 22,
+      "images": 0
+    },
+    {
+      "path": "/redakcija",
+      "title": "MB Pinet redakcija ir šaltinių metodika",
+      "h1": "MB Pinet redakcija ir šaltinių metodika",
+      "canonical": "https://laiptucentras.lt/redakcija",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ProfilePage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 229,
+      "anchors": 20,
+      "images": 0
+    },
+    {
+      "path": "/privatumas",
+      "title": "Privatumo informacija",
+      "h1": "Privatumo informacija",
+      "canonical": "https://laiptucentras.lt/privatumas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 313,
+      "anchors": 22,
+      "images": 0
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "title": "Svetainės naudojimo sąlygos",
+      "h1": "Svetainės naudojimo sąlygos",
+      "canonical": "https://laiptucentras.lt/naudojimo-salygos",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 146,
+      "anchors": 22,
+      "images": 0
+    }
+  ],
+  "externalUrls": [
+    "https://verslomatika.lt/",
+    "https://stylestairs.uk/bespoke-staircase-cost-breakdown-2026/",
+    "https://robertolaiptai.lt/laiptu-gamyba/",
+    "https://www.hoeping.de/treppenrenovierung/fragen-antworten.html",
+    "https://www.stadler.de/treppen/",
+    "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en"
+  ],
+  "urlVariants": {
+    "slash": {
+      "status": 308,
+      "location": "/gidai"
+    },
+    "query": {
+      "status": 200,
+      "canonical": "https://laiptucentras.lt/gidai"
+    }
+  },
+  "findings": []
+}

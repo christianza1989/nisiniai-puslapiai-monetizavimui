@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "researchedOn": "2026-10-01",
+  "ideaId": "BDEV-0003",
+  "experimentId": "BDEV-0003-P1",
+  "sources": [
+    {"id":"S1","url":"https://iwill.lt/","kind":"provider_offer","country":"LT","verified":"opened_primary_page","fact":"Process audit 0-300 EUR; free audit conditioned on automation purchase and permission to publicise success story","limit":"Published offer; no transaction or our demand verification"},
+    {"id":"S2","url":"https://oktoja.lt/sprendimai/procesu-auditas/","kind":"provider_offer","country":"LT","verified":"opened_primary_page","fact":"Mini audit of 1-2 processes from 900 EUR; page marks pricing excluding VAT","limit":"Broader scope and buyer segment than our proposal; no completed sale verified"},
+    {"id":"S3","url":"https://retos.lt/ai-auditas/","kind":"free_alternative","country":"LT","verified":"opened_primary_page","fact":"Free sector/team-size AI opportunity tool with indicative estimates","limit":"UI text inspected; no form submission or generated output tested"},
+    {"id":"S4","url":"https://runningstart.digital/ai-services/workflow-audit","kind":"provider_offer","country":"US","verified":"opened_primary_page","fact":"500 USD workflow audit with written deliverables and first-build quote","limit":"Provider offer; no delivery or buyer demand verification; no currency conversion"},
+    {"id":"S5","url":"https://samerhany.com/process-audit-blueprint","kind":"provider_offer","country":"EG_international","verified":"opened_primary_page","fact":"3000 USD single-process audit and standalone solution blueprint","limit":"Different positioning; no delivery or demand verification"},
+    {"id":"S6","url":"https://support.flippa.com/hc/en-us/articles/360000217435-Making-potential-revenue-claims-on-sites-without-revenue","kind":"marketplace_policy","verified":"opened_primary_page","publishedOn":"2018-05-29","fact":"Separates evidenced current results from potential; starter-site guidance requires transaction functionality","limit":"Old publicly available article; current category and our asset eligibility need rechecking before a listing"},
+    {"id":"S7","url":"https://help.acquire.com/what-pre-revenue-businesses-are-allowed","kind":"marketplace_policy","verified":"opened_primary_page","fact":"Pre-revenue eligibility limited to functional transferable SaaS/AI; identified other business categories need revenue","limit":"Category qualification not a guarantee; older general FAQ has inconsistent descriptions"},
+    {"id":"S8","url":"https://help.acquire.com/frequently-asked-questions-1","kind":"contrary_policy_text","verified":"search_result_text_only","fact":"General FAQ uses inconsistent pre-revenue descriptions relative to the specific guide","limit":"Not used as current eligibility decision; specific guide takes provisional precedence"}
+  ],
+  "actions": {"formsSubmitted":0,"messagesSent":0,"accountsCreated":0,"purchases":0,"ourBuyerDemandVerified":false}
+}

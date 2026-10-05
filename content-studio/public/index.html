@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Vietinė nišinių svetainių turinio studija: planuokite, redaguokite ir tvirtinkite SEO puslapius.">
+  <meta name="theme-color" content="#f5f6f2">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Turinio studija · Nišinių svetainių sistema</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Svetainių sąrašas">
+      <a class="brand" href="/" aria-label="Turinio studija – pradžia">
+        <span class="brand-mark">N<span>•</span></span>
+        <span><strong>Nišinių svetainių</strong><small>turinio studija</small></span>
+      </a>
+      <div class="sidebar-caption">PORTFELIS <span id="site-count">20</span></div>
+      <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="site-search" type="search" placeholder="Ieškoti domeno" aria-label="Ieškoti domeno"></label>
+      <nav id="site-list" class="site-list" aria-label="Domenai"></nav>
+      <button id="add-site-button" class="add-site" type="button"><span>＋</span> Nauja svetainė</button>
+      <div class="sidebar-foot"><span class="status-dot"></span> Vietinis redaktorius <small>Duomenys saugomi šiame kompiuteryje</small></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">SISTEMA <span>/</span> <strong id="crumb">Portfelis</strong></div>
+        <div class="topbar-actions"><span class="local-badge">● LOCAL WORKSPACE</span><button id="refresh-button" type="button" class="icon-button" title="Atnaujinti" aria-label="Atnaujinti duomenis">↻</button></div>
+      </header>
+      <main id="app" tabindex="-1"><div class="loading">Ruošiama turinio studija…</div></main>
+      <footer class="app-footer">Turinio juodraščiai lieka privatūs. Viešai iškeliamas tik patvirtintas turinio paketas.</footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

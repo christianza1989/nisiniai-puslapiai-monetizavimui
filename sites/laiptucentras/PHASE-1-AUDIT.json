@@ -1,0 +1,1405 @@
+{
+  "siteId": "laiptucentras",
+  "canonicalHost": "laiptucentras.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-10-01T12:30:55.555Z",
+  "evaluator": "Root later redesign acceptance, version-scoped same-domain evidence reuse; not independent human design rating or first-result score",
+  "environment": {
+    "preview": "http://127.0.0.1:8899/",
+    "runtime": "isolated production Worker8866, read-only canonical-host bridge8899",
+    "smtpEnabled": false,
+    "voiceEnabled": false,
+    "productionDeployed": false,
+    "newLeadPosts": 0,
+    "newEmails": 0
+  },
+  "version": {
+    "packageSha256": "332a7aa6cf39463b33b01ca50bf3f02a567d5d7d1ac1b822583de641c83a92d1",
+    "sourceCheck": "DESIGN-REVISION-2026-10-01/VERSION-CHECK.json",
+    "baseline": "DESIGN-REVISION-2026-10-01/BASELINE.json"
+  },
+  "verdict": {
+    "local": "NOT READY: R2/S2 UNVERIFIED",
+    "launch": "NOT READY",
+    "demand": "NOT MEASURED",
+    "visual": "Later repaired candidate; subjective craft separate"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\BUSINESS.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\ui-d1.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Concrete individual interior-stair need, payer hypothesis accepted qualified lead fee. Current registration is available locally, no manufacturing/quote/arrival guarantee; article interest is not demand. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\BUSINESS.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\ui-d1.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Concrete individual interior-stair need, payer hypothesis accepted qualified lead fee. Current registration is available locally, no manufacturing/quote/arrival guarantee; article interest is not demand. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\BUSINESS.md"
+      ],
+      "notes": "No qualified real inquiries, provider agreements, accepted-lead payments, GSC or measured positive unit economics. Voice remains off and no Phase2 decision made."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTACT-CONFIG.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "MB Pinet/info@pinet.lt agree across package/visible/schema/default recipient. No borrowed phone, address, old-domain UAB identity, reviews or qualifications. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTACT-CONFIG.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "MB Pinet/info@pinet.lt agree across package/visible/schema/default recipient. No borrowed phone, address, old-domain UAB identity, reviews or qualifications. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\BUSINESS.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "Authorized operator name/email do not prove full legal identifiers/address or domain control."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\history\\audit.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\history\\ASSESSMENT.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\history\\url-decisions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "41 HTML URL sample,4 replay3 readable, stair continuity/parking and access limits recorded. Old dynamic menu/calculator not blindly redirected or reused as current capability. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\history\\audit.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\history\\ASSESSMENT.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\history\\url-decisions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "41 HTML URL sample,4 replay3 readable, stair continuity/parking and access limits recorded. Old dynamic menu/calculator not blindly redirected or reused as current capability. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "NA",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\history\\url-decisions.json"
+      ],
+      "notes": "No legacy redirects implemented. Slash308 is normalization, not old-domain restoration."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\RESEARCH.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\research\\roberto-mobile.jpg",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\research\\style-desktop.jpg",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\research\\stadler-mobile.jpg",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\BUSINESS.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Original copy/imagery/OFL fonts. Buying intent, advantage, volumes and economic sensitivity are hypotheses; competitor prices, territory, projects and certification are not ours. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\BUSINESS.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Original copy/imagery/OFL fonts. Buying intent, advantage, volumes and economic sensitivity are hypotheses; competitor prices, territory, projects and certification are not ours. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\home-1440.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\home-390.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\laiptu-kaina-1440.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\CRAFT-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\DIRECTION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\CRAFT-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\home-desktop-crop-final.jpg",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\home-mobile-crop-final.jpg"
+      ],
+      "notes": "Substantive departure from the nearest auksarankiams composition: image-led architectural/navy hero, sans display, component rows, useful quote-scope tool, editorial guide rows, distinct material/unfinished-space imagery and own stair mark. This is later root repair, not the autonomous first result."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\DESIGN.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA-ACCEPTANCE.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\DIRECTION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\CRAFT-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\home-desktop-crop-final.jpg",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\home-mobile-crop-final.jpg"
+      ],
+      "notes": "Substantive departure from the nearest auksarankiams composition: image-led architectural/navy hero, sans display, component rows, useful quote-scope tool, editorial guide rows, distinct material/unfinished-space imagery and own stair mark. This is later root repair, not the autonomous first result."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\DESIGN.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA-ACCEPTANCE.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\DIRECTION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\CRAFT-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\home-desktop-crop-final.jpg",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\home-mobile-crop-final.jpg"
+      ],
+      "notes": "Substantive departure from the nearest auksarankiams composition: image-led architectural/navy hero, sans display, component rows, useful quote-scope tool, editorial guide rows, distinct material/unfinished-space imagery and own stair mark. This is later root repair, not the autonomous first result."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "11 reachable distinct public pages; all3 guides indexed/linked, genuine header/footer/contact/profile/policy routes, fragments resolve, no doorway variations. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\home-1440.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\home-390.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Opening identifies stairs and truthful registration. Middle distinguishes need/materials/questions/guides; no fake testimonial or decorative feature. Craft/mobile ordering remains weaker than target. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\home-1440.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\home-390.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Opening identifies stairs and truthful registration. Middle distinguishes need/materials/questions/guides; no fake testimonial or decorative feature. Craft/mobile ordering remains weaker than target. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\native-validation.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\ui-d1.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\form-success.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Parent tests real links/empty native validation; worker real UI submission stored exact synthetic record, removed it, SMTPoff result labelled. Error/limits inspected in handler/test source. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\EDITORIAL-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\EDITORIAL-MEDIA-REVIEW.json"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\EDITORIAL-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\EDITORIAL-MEDIA-REVIEW.json"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\EDITORIAL-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\EDITORIAL-MEDIA-REVIEW.json"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\laiptu-matavimas-390.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA-ACCEPTANCE.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\EDITORIAL-MEDIA-REVIEW.json"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\laiptu-matavimas-390.png",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\MEDIA-ACCEPTANCE.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\MEDIA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\EDITORIAL-MEDIA-REVIEW.json"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Organization MB Pinet public redakcija profile consistent with Article author/publisher; no invented specialist. Visible dates/schema use same publishAt and approval meanings, not request clock. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Organization MB Pinet public redakcija profile consistent with Article author/publisher; no invented specialist. Visible dates/schema use same publishAt and approval meanings, not request clock. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Organization MB Pinet public redakcija profile consistent with Article author/publisher; no invented specialist. Visible dates/schema use same publishAt and approval meanings, not request clock. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "Not deployed. Locally eligible schedule is not historical public publication."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\EDITORIAL-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\EDITORIAL-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\build-laiptucentras-site.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\content-packages\\laiptucentras\\content-package.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\tests\\niche-schema.test.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\tests\\niche-schema.test.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\tests\\niche-schema.test.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "No official live URL Inspection/rich-result report; local markup inspection distinct."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONSISTENCY.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "NA",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\content-packages\\laiptucentras\\content-package.json"
+      ],
+      "notes": "No owned editorial cross-domain links. Required verslomatika footer attribution is separate from network recommendation and has launch N4."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json"
+      ],
+      "notes": "Brand attribution/live destinations need production verification; networkLiveDomains[] and real hosting unavailable."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\html-audit.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\html-audit.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "Real domain/DNS/TLS/CDN/indexing directives/domain isolation not launched."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\HOST-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\accessibility-styles.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\native-validation.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\CONTRAST.json"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json"
+      ],
+      "notes": "Actual 320/390/768/1440 viewport evidence does not prove browser/text enlargement to 200%. Supported Browser API does not establish actual browser zoom; no unsupported shortcut or DPR inference used as PASS."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\accessibility-styles.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\native-validation.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\responsive.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\ACCESSIBILITY-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json"
+      ],
+      "notes": "Actual 320/390/768/1440 viewport evidence does not prove browser/text enlargement to 200%. Supported Browser API does not establish actual browser zoom; no unsupported shortcut or DPR inference used as PASS."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\responsive.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\ACCESSIBILITY-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\performance-summary.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\lighthouse-home-final.report.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\lighthouse-guide-final.report.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\performance-summary.json"
+      ],
+      "notes": "One mobile Lighthouse run per URL on the real isolated production renderer with images: home 91/100/100/100; price guide 93/100/100/100. CLS0, LCP3.1/2.9s. Measured before later favicon-only Worker precedence fix; renderer/CSS/package bytes unchanged. No production field CWV claim."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\performance-summary.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\lighthouse-home-final.report.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\lighthouse-guide-final.report.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\performance-summary.json"
+      ],
+      "notes": "One mobile Lighthouse run per URL on the real isolated production renderer with images: home 91/100/100/100; price guide 93/100/100/100. CLS0, LCP3.1/2.9s. Measured before later favicon-only Worker precedence fix; renderer/CSS/package bytes unchanged. No production field CWV claim."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "No production field CWV or real traffic yet."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\local-form-interest.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\ui-d1.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\app\\niche\\[siteId]\\lead\\route.ts",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Own HTTP/UI D1 validation, origin/payload/honeypot/new/source tests inspected. Optional-transport-failure evidence reused from identical route/mail hashes in completed auks review, explicitly scoped; no production recovery claim. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\core-form-mail-20260930.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\core-inbox-20260930.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Shared unchanged info@pinet transport:2026-09-30 tractor form d2fe704c Message-ID matched SMTPaccepted and INBOXreceived. Earlier separate SMTP ID not conflated. Not a new laipt/production receipt test. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\core-form-mail-20260930.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\core-inbox-20260930.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Shared unchanged info@pinet transport:2026-09-30 tractor form d2fe704c Message-ID matched SMTPaccepted and INBOXreceived. Earlier separate SMTP ID not conflated. Not a new laipt/production receipt test. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "Live production D1/mail/receipt, retry/reconciliation/rate protection not verified."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\local-form-interest.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Aggregate site/day/path/event counters exclude DNT/GPC/bot at backend; no cookies/unique identifiers/form text in counters. Clicks not leads. Parent JS event attempts under header-only signals noted; synthetic local increment not real demand. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\local-form-interest.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Aggregate site/day/path/event counters exclude DNT/GPC/bot at backend; no cookies/unique identifiers/form text in counters. Clicks not leads. Parent JS event attempts under header-only signals noted; synthetic local increment not real demand. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\BUSINESS.md"
+      ],
+      "notes": "No qualified real inquiries, provider agreements, accepted-lead payments, GSC or measured positive unit economics. Voice remains off and no Phase2 decision made."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Local-only pilot notice matches actual field inventory/SMTPoff/aggregate data and EDPB principles; purposes/rights/contact and unresolved production retention/basis/processors stated. No e-shop/marketing consent or invented legal facts. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Local-only pilot notice matches actual field inventory/SMTPoff/aggregate data and EDPB principles; purposes/rights/contact and unresolved production retention/basis/processors stated. No e-shop/marketing consent or invented legal facts. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "Live legal basis/recipients/processors/transfers/retention/delete and actual operator facts must be established before public collection; currentlocal notice cannot be blindly launched."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\BROWSER-READ.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\CONTROLS.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\local-form-interest.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\app\\niche\\[siteId]\\lead\\route.ts",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Sanitized scoped source/package/media snapshot, no secrets/client DB copied. Host/private/payload/error/optional transport boundaries inspected. Production spam/retry/backups/security controls remain launch gates. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\boundaries.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\local-form-interest.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\app\\niche\\[siteId]\\lead\\route.ts",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\SOURCE-REVIEW.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json"
+      ],
+      "notes": "Sanitized scoped source/package/media snapshot, no secrets/client DB copied. Host/private/payload/error/optional transport boundaries inspected. Production spam/retry/backups/security controls remain launch gates. Reuse is scoped to the same domain: all eleven prose bodies, titles and publishAt plus relevant backend hashes remain unchanged. No new SMTP/INBOX receipt or demand is claimed."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "Production access/abuse limits/backups/restore/incident controls unproved."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\tests\\niche-schema.test.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\core-tests.log",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\lib\\niche-schema-core.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\source\\tests\\niche-schema.test.mjs",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\core-tests.log",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\qa\\regressions.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\parent-evidence\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\SEO-SMOKE.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\core-tests-post-favicon.log"
+      ],
+      "notes": "Shared favicon precedence repair confirmed via actual HTTP for six isolated packages, both favicon URLs, unknown/mismatched host. 24 core tests passed. Seventh miniekskavatoriai was concurrently added by its owner; root does not claim its runtime tested. Its one added dispatch line is documented, remaining laipt branch/guards unchanged."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\START-METADATA.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\site-journal.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\REVIEW-PLAN.md",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\ORIGINAL-FINAL-FULL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\PARENT-AUDIT.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\CRAFT-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\ORIGINAL-FINAL-FULL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\FREEZE-MANIFEST.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\PARENT-AUDIT.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\CRAFT-REVIEW.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\VERSION-CHECK.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\html-final.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-FINAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\BROWSER-ADDITIONAL.json",
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\QA.md"
+      ],
+      "notes": "Current root redesign independently inspected: 11 real public URLs, all three initial guides, matching illustrations/srcset, truthful contacts/action, internal/external source links, schemas and native controls. Relevant details and limitations in revision QA; historical first-result judgment is preserved separately."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\research\\autonomy\\laiptucentras-review\\frozen\\documents\\QA-VERIFICATION.md"
+      ],
+      "notes": "Local preview has unresolved launch gates; domain-ready cannot be declared."
+    }
+  ]
+}

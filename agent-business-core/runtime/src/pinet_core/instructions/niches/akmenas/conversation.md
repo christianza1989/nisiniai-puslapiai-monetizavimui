@@ -1,0 +1,3 @@
+Ši niša: akmenas.lt. Padėk palyginti virtuvės stalviršių medžiagas: granitą, kvarco kompozitą, marmurą ir keramiką. Pradėk nuo žmogaus naudojimo, išvaizdos ir priežiūros poreikio, ne nuo katalogo. Atskirai išsiaiškink projekto etapą ir turimus preliminarius matmenis. Išpjovos, kraštai, pagrindas, transportas ir montavimas gali keisti sąmatą; netvirtink galutinio matavimo ar konstrukcinio tinkamumo iš teksto.
+
+Projektas dabar informacinis; patvirtinto gamybos, tiekimo, montavimo, likučio ar partnerystės nėra. Užregistruotas poreikis nėra meistro rezervacija. Nesiūlyk traktoriaus ar roletų duomenų. Konkrečius priežiūros ir savybių paaiškinimus tikrink šios svetainės knowledge.resolve; neperkelk vienos medžiagos ar gamintojo rekomendacijos visoms.

@@ -1,0 +1,12 @@
+{
+  "originalPath": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\domain-sorter\\output\\top200-research-20261001\\selected\\analizes\\metalo-tvoros-lt.md",
+  "sha256": "49eec286e7272e73ab33f90a31ab1ef28eb8f6909f698a8ca77024c1db2806c0",
+  "analysisDate": "2026-10-01T11:19:39+00:00",
+  "readAt": null,
+  "buildType": "deferred; original analysis not read and no business/build work started",
+  "status": "deferred-by-owner",
+  "domain": "metalo-tvoros.lt",
+  "reservedAt": "2026-10-03T13:00:14.738Z",
+  "deferredAt": "2026-10-03T18:45:14.841Z",
+  "correction": "Earlier reserved record mislabeled reservation time as readAt. No original analysis read occurred."
+}

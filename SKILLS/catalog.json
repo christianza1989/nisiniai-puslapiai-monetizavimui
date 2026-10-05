@@ -1,0 +1,1441 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-10-01",
+  "commonContract": "PROJECT_CONTRACT.md",
+  "scope": "This project only; no new global skill installs",
+  "skills": [
+    {
+      "id": "ai-follow-up-email-generator",
+      "role": "business-operations",
+      "entry": "ai-follow-up-email-generator/SKILL.md",
+      "prompt": "ai-follow-up-email-generator/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/ai-follow-up-email-generator/",
+      "originalOrigin": "page",
+      "legacyName": "client-follow-up-email",
+      "archives": [
+        {
+          "file": "ai-follow-up-email-generator/SOURCE_SKILL.md",
+          "sha256": "16528eaef063510bc29f731f81b2dbdeb7ab8be6852e4067a19ea859520de45d"
+        },
+        {
+          "file": "ai-follow-up-email-generator/SOURCE_PROMPT.md",
+          "sha256": "0a03892cafd40da60bb95780d1c94442588da6352162e03c68fda7e0e69d65fd"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "3. Use ONLY information the user supplies. Never invent conversations, deadlines, results, pricing, commitments, personal details, or documents the recipient supposedly reviewed.",
+        "- Never send the email or claim it has been scheduled. Produce a draft for human review.",
+        "- If key context is missing (who the recipient is, what happened, what response is needed), ask for it rather than guessing."
+      ],
+      "entrySha256": "789379b97b1dbed373a70f6fe818a9703ef9a718de433c751b367b12f53dd63e"
+    },
+    {
+      "id": "ai-news-agent",
+      "role": "utility",
+      "entry": "ai-news-agent/SKILL.md",
+      "prompt": "ai-news-agent/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/ai-news-agent/",
+      "originalOrigin": "page",
+      "legacyName": "ai-news-agent",
+      "archives": [
+        {
+          "file": "ai-news-agent/SOURCE_SKILL.md",
+          "sha256": "a34498e32798609db69e99b2d255b9134b1cc0359ad8466cee53b334d469f65c"
+        },
+        {
+          "file": "ai-news-agent/SOURCE_PROMPT.md",
+          "sha256": "d60da876644d99434a6d20cdf9fc8596ffcc503b598432ae63dceb0a80d6aff1"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- If a source cannot be accessed, say so clearly.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "6debd43de7ba7feca5c3056201251a66e01666f3d2093a4983fbcea4960dc966"
+    },
+    {
+      "id": "blog-post",
+      "role": "phase1-support",
+      "entry": "blog-post/SKILL.md",
+      "prompt": "blog-post/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/blog-post/",
+      "originalOrigin": "page",
+      "legacyName": "blog-post-expert",
+      "archives": [
+        {
+          "file": "blog-post/SOURCE_SKILL.md",
+          "sha256": "a0564c9d2c614332f5b7d084616ec07970aaa41999281c1fdf878ca075f7fd79"
+        },
+        {
+          "file": "blog-post/SOURCE_PROMPT.md",
+          "sha256": "8016d7268a3ae89a043e74302fe8d33a7b87a304100de4013d00ea4b8f276add"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "Ask for anything missing from these three:",
+        "- **The keyword or topic.** Required.",
+        "Then ask for one optional thing that matters more than people expect: **two or three paragraphs of their own writing**. It is the difference between a draft they edit and a draft they rewrite. If they decline, write plainly and say at the end that you did not match a voice.",
+        "- If the keyword's intent is genuinely unclear, ask before writing rather than guessing.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "d2e9a283f13c51ac581a4eaada9c491d3d09153ab27af59a6848c39946266dbc"
+    },
+    {
+      "id": "brand-style-guide",
+      "role": "phase1-support",
+      "entry": "brand-style-guide/SKILL.md",
+      "prompt": "brand-style-guide/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/brand-style-guide/",
+      "originalOrigin": "page",
+      "legacyName": "brand-style-guide",
+      "archives": [
+        {
+          "file": "brand-style-guide/SOURCE_SKILL.md",
+          "sha256": "c8f6304e1395165147e8170c3aeae236e6865696b0a31bccc6eb0256e614ce32"
+        },
+        {
+          "file": "brand-style-guide/SOURCE_PROMPT.md",
+          "sha256": "5d99a036dd2e1e9f80e28857f59fe32b88dc5bc185f27bae28b6bd4d7b03ba92"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "1. Read the business details and study the writing sample closely. The voice you define must come from how they already write, not from a generic template.",
+        "2. If there is no writing sample, or the business and audience are unclear, ask two or three short clarifying questions before writing anything. Ask no more than three.",
+        "- Use only what the user provides. Never invent an award, a client, a tagline, a founding story, or a statistic.",
+        "- You cannot generate a logo image or final artwork, and you cannot guarantee exact brand colors on screen. Give direction and describe it; tell the user where a designer or a final decision is still needed.",
+        "- Everything in the verbal half must be consistent with the writing sample. If the sample contradicts a \"best practice,\" follow the sample — it's their brand.",
+        "- You cannot browse the web or open a URL — work only from what the user pastes in.",
+        "Every real asset or decision still required (hex codes, logo file, tagline).",
+        "If the user has not given you the business and a writing sample, ask for those two before writing anything."
+      ],
+      "entrySha256": "a5e8a2199e9d33ee163d81f566255b7d92783af4a3865944614a8b5e83fc823f"
+    },
+    {
+      "id": "brand-voice-check",
+      "role": "phase1-support",
+      "entry": "brand-voice-check/SKILL.md",
+      "prompt": "brand-voice-check/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/brand-voice-check/",
+      "originalOrigin": "page",
+      "legacyName": "brand-voice-check",
+      "archives": [
+        {
+          "file": "brand-voice-check/SOURCE_SKILL.md",
+          "sha256": "73aa13c463028e39cc3f3aa26576284760a4df24b225e8bbbc98b7e588af3772"
+        },
+        {
+          "file": "brand-voice-check/SOURCE_PROMPT.md",
+          "sha256": "45c97d89bbc1f929260aa09d53f195f93f9fc5622bfaaef15813cd376d5a174d"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "1. Read the brand voice rules first. If the user did not provide any voice rules, ask for them before checking anything — do not invent a voice. Point them to the Brand Style Guide skill if they have none.",
+        "- Use only the voice rules the user gives you. If the rules and the draft conflict, the rules win — that is the point of a voice check.",
+        "- You cannot browse the web or open a URL — work only from the draft and rules the user pastes in.",
+        "If the user has not given you voice rules and a draft, ask for those two before checking anything."
+      ],
+      "entrySha256": "4be35be77f1059931aad86f8c76b0783cea7f0742b14e89f49df483071bca06e"
+    },
+    {
+      "id": "client-onboarding",
+      "role": "business-operations",
+      "entry": "client-onboarding/SKILL.md",
+      "prompt": "client-onboarding/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/client-onboarding/",
+      "originalOrigin": "local-package-from-public-prompt",
+      "legacyName": "client-onboarding",
+      "archives": [
+        {
+          "file": "client-onboarding/SOURCE_SKILL.md",
+          "sha256": "da6f0a56faef60ec41052a30da6491621096e2f54bb1377a9071558a404d82d3"
+        },
+        {
+          "file": "client-onboarding/SOURCE_PROMPT.md",
+          "sha256": "4b197c8bcaed58fe8dde41bb56ae9195d49242aa09d080fbe4878bdd9274aa91"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "2. Write a WELCOME EMAIL under 120 words. It must do four things: confirm what they bought, name their point of contact, give them the ONE thing they need to do this week, and tell them when they will next hear from you. No filler enthusiasm.",
+        "3. Write the INTAKE QUESTIONS the user needs answered BEFORE work starts. Prioritise the questions that prevent scope and timeline problems later: who signs off, what \"done\" looks like, what assets exist, what dates cannot move.",
+        "4. Write a KICKOFF CALL AGENDA with time boxes. The kickoff must confirm and align — it is not a second discovery call.",
+        "5. Build a FIRST 30 DAYS plan with milestones. For each milestone, say who owes what. Only use dates and durations the user actually provided.",
+        "7. List the GAPS — anything vague or missing that must be settled before this package is client-ready.",
+        "- Use ONLY what the user provides. NEVER invent pricing, payment terms, scope, deliverables, revision limits, deadlines, team names, or contract terms.",
+        "- You cannot see the user's CRM, contract, proposal, project tool, calendar, or files. You know nothing about their business beyond what is pasted in. Never imply otherwise.",
+        "- When something is vague (\"then we get started\"), do NOT smooth it into professional-sounding filler. Put it in Gaps and ask the exact question. A confident-sounding invented deliverable is how scope disputes start."
+      ],
+      "entrySha256": "7b228b2ae173c67d72fb844d7d2906f88c987521abbfc50c1e76402c7b46f597"
+    },
+    {
+      "id": "client-proposal",
+      "role": "business-operations",
+      "entry": "client-proposal/SKILL.md",
+      "prompt": "client-proposal/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/client-proposal/",
+      "originalOrigin": "page",
+      "legacyName": "client-proposal",
+      "archives": [
+        {
+          "file": "client-proposal/SOURCE_SKILL.md",
+          "sha256": "18caa49d351c9c416810c34da60092c1745e5fcaad1e98f43e8a45885f142986"
+        },
+        {
+          "file": "client-proposal/SOURCE_PROMPT.md",
+          "sha256": "cf29259c549fb1eeb325f4c9e7961283cad06f7b15f47e3bc623001f7611e7e9"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "4. List exact deliverables. Each one must be a thing the client receives, not an activity performed.",
+        "6. Lay out the timeline using ONLY dates or durations the user provided.",
+        "- Use ONLY what the user provides. Never invent pricing, rates, timelines, deliverables, team size, credentials, results, or case studies.",
+        "- You cannot see the user's CRM, past proposals, pricing sheet, or files. Never imply you can.",
+        "- Never promise a result you were not told the user can deliver. No \"guaranteed\", no invented percentages.",
+        "- Do not send anything. Produce a draft for human review.",
+        "If the user has not provided discovery notes, ask for them before writing anything."
+      ],
+      "entrySha256": "40777b236188821e072227474baf43bd21751f8e0d352c7d3d2a1e6bdd7f48c1"
+    },
+    {
+      "id": "cold-outreach-email",
+      "role": "business-operations",
+      "entry": "cold-outreach-email/SKILL.md",
+      "prompt": "cold-outreach-email/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/cold-outreach-email/",
+      "originalOrigin": "page",
+      "legacyName": "cold-outreach-email",
+      "archives": [
+        {
+          "file": "cold-outreach-email/SOURCE_SKILL.md",
+          "sha256": "570e51de06f57886a6cac125b44aea2ea2da480ef6df6040ad16504f662223ea"
+        },
+        {
+          "file": "cold-outreach-email/SOURCE_PROMPT.md",
+          "sha256": "1b642366addb294cb54c6a80587fb4268ba0e5ecdfc56080b1f0b8c39b436905"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "4. Write one cold email under 150 words. Open with something specific to this prospect, taken only from what the user provided.",
+        "7. Write two follow-ups for when there is no reply. Each one must add something new — a concrete example, a useful thought, or a genuine way out. Never write a \"just bumping this\" email.",
+        "- Use only the details the user provides about the prospect. Never invent a job title, company size, funding round, mutual connection, recent post, podcast appearance, or anything you cannot see in the input.",
+        "- You cannot look anyone up. Do not claim to browse LinkedIn, a company website, the web, or any contact database, and never guess an email address.",
+        "- Do not send anything. Produce drafts for human review only.",
+        "If the user has not described the prospect or the offer, ask for both before writing anything."
+      ],
+      "entrySha256": "eea7634220028da73c5ac652c1e7937212879654d171992fe98c02be538aa7ba"
+    },
+    {
+      "id": "competitor-research",
+      "role": "phase1-support",
+      "entry": "competitor-research/SKILL.md",
+      "prompt": "competitor-research/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/competitor-research/",
+      "originalOrigin": "local-package-from-public-prompt",
+      "legacyName": "competitor-research",
+      "archives": [
+        {
+          "file": "competitor-research/SOURCE_SKILL.md",
+          "sha256": "1ba33504592efd7851c0359c620d917788c3d7e9d8cbd8c063dc458f9d7681ca"
+        },
+        {
+          "file": "competitor-research/SOURCE_PROMPT.md",
+          "sha256": "79def2c1bb61aad93a06d4684b098d3e120d22c36ec41da4808824dc32bf4073"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "3. Note pricing and plans ONLY if the user provides or pastes them — never estimate, guess, or assume numbers.",
+        "- Use ONLY the information the user pastes in or clearly public knowledge they reference. Never invent pricing, customer counts, revenue, review scores, or specific claims.",
+        "- Do not claim to access live websites or pull real-time data. Work only from what the user supplies."
+      ],
+      "entrySha256": "38897b2d67c7417ac75ec2a73258d7caf2dff456709da7cc54dcd81b33c50cef"
+    },
+    {
+      "id": "content-repurposing",
+      "role": "phase1-support",
+      "entry": "content-repurposing/SKILL.md",
+      "prompt": "content-repurposing/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/content-repurposing/",
+      "originalOrigin": "page",
+      "legacyName": "content-repurposing",
+      "archives": [
+        {
+          "file": "content-repurposing/SOURCE_SKILL.md",
+          "sha256": "5218b23b9be1957387cdbad65ea1340d190b215940f014f53f408d37c96308cd"
+        },
+        {
+          "file": "content-repurposing/SOURCE_PROMPT.md",
+          "sha256": "58d6ab1319752216e57391b112ef405e9aeddd2602995e0ee581a3308f7b59aa"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "description: Turn one piece of source content into ready-to-edit posts for multiple channels — LinkedIn, X, Instagram, a newsletter, short-video hooks — keeping the user's voice and using only what's in the source. Use this when the user pastes a blog post, transcript, video, or long email and says repurpose this, turn this into social posts, or get more out of this content.",
+        "- Use ONLY what's in the source. Never invent a statistic, a study, a customer quote, a testimonial, a result, or a claim the user didn't make.",
+        "- Do not post or schedule anything. Produce drafts for human review.",
+        "If the user has not pasted any source content, ask for it before repurposing anything."
+      ],
+      "entrySha256": "269957480305d5e5a56c0fb9cd3f9f481d0017f25fcf37b38f10d06edbc4853e"
+    },
+    {
+      "id": "crm-update",
+      "role": "business-operations",
+      "entry": "crm-update/SKILL.md",
+      "prompt": "crm-update/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/crm-update/",
+      "originalOrigin": "page",
+      "legacyName": "crm-update",
+      "archives": [
+        {
+          "file": "crm-update/SOURCE_SKILL.md",
+          "sha256": "8744b77fd18e4aad23989d4acdd022706e6ada9e11ca3330005fd2c7a45d187c"
+        },
+        {
+          "file": "crm-update/SOURCE_PROMPT.md",
+          "sha256": "b68af965f38e5e7b0170979ef86010545a1aebf3cbae2965d8aeeea6ac6dea03"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- Use ONLY what the user pastes in. Never invent an email address, phone number, deal value, close date, or job title.",
+        "- You cannot see, log into, or write to the user's CRM. Never imply you can — you produce text to paste.",
+        "If the user has not pasted any notes, ask for them before writing the update."
+      ],
+      "entrySha256": "1469f8b117c272e393df71f66da5a192ea845f461a32895b6956d52e99abad33"
+    },
+    {
+      "id": "customer-feedback",
+      "role": "business-operations",
+      "entry": "customer-feedback/SKILL.md",
+      "prompt": "customer-feedback/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/customer-feedback/",
+      "originalOrigin": "page",
+      "legacyName": "customer-feedback-analysis",
+      "archives": [
+        {
+          "file": "customer-feedback/SOURCE_SKILL.md",
+          "sha256": "b23f4708c06ac3e6e1c42330e73cab19902312daba9c9765a4a529b4c4559c77"
+        },
+        {
+          "file": "customer-feedback/SOURCE_PROMPT.md",
+          "sha256": "ce6d8baa1e53211d9db34005509b37d0012f57646b985d400f5fb68681fc45bd"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- Use ONLY the feedback the user pastes in. Never invent reviews, quotes, star ratings, customer names, or exact percentages.",
+        "- You cannot connect to a review site, help desk, or survey tool. You only see what was pasted."
+      ],
+      "entrySha256": "0a4694fc4e1e34518ff42d167429a8845cf32379016fbe1b743ae513c9c0fd0a"
+    },
+    {
+      "id": "customer-support-reply",
+      "role": "business-operations",
+      "entry": "customer-support-reply/SKILL.md",
+      "prompt": "customer-support-reply/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/customer-support-reply/",
+      "originalOrigin": "page",
+      "legacyName": "customer-support-reply",
+      "archives": [
+        {
+          "file": "customer-support-reply/SOURCE_SKILL.md",
+          "sha256": "1b0a2adb6b2ce2efcc1552a4344223a0503ddecc653a291708166fc7762999b7"
+        },
+        {
+          "file": "customer-support-reply/SOURCE_PROMPT.md",
+          "sha256": "cf8c6c531e90b63c8cfa65afb2e938e0de8866d7bce2c58bf9c57175ec01aaab"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "description: Draft a clear, calm, on-brand reply to an inbound customer message — a question, complaint, or refund request — using only the facts the user provides, with placeholders for anything missing and a flag for anything to escalate. Use this when the user pastes a customer message and says draft a reply, help me respond to this customer, or how do I answer this complaint.",
+        "3. Answer using ONLY the facts the user provided. Where a fact is needed but not given, insert a clearly marked placeholder like [ORDER #] or [TRACKING STATUS].",
+        "- Use ONLY the facts the user gives you. Never invent an order status, a refund amount, a delivery date, a policy, or a discount.",
+        "- Never promise compensation, refunds, or exceptions the user did not say they can offer. If a resolution needs approval, mark it as a placeholder.",
+        "- You cannot access the user's help desk, order system, or inbox. Never imply you can.",
+        "- Escalate to a human if the message involves a chargeback, legal threat, a safety or health issue, or anything the provided facts can't answer.",
+        "- Do not send anything. Produce a draft for human review.",
+        "If the user has not pasted a customer message, ask for it (and any policy or order facts) before drafting."
+      ],
+      "entrySha256": "39009895960fd4422c91a37af3cf81132c32b44f336287da61e8ffb7e673109d"
+    },
+    {
+      "id": "daily-brief",
+      "role": "utility",
+      "entry": "daily-brief/SKILL.md",
+      "prompt": "daily-brief/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/daily-brief/",
+      "originalOrigin": "page",
+      "legacyName": "ai-daily-brief",
+      "archives": [
+        {
+          "file": "daily-brief/SOURCE_SKILL.md",
+          "sha256": "8ba90838b7ae99bf1295fc353c1735076ee8adef2956918392902211d8ee0e63"
+        },
+        {
+          "file": "daily-brief/SOURCE_PROMPT.md",
+          "sha256": "b81608c29963a9933578d2ac4b7d017622e3dfed6977fed59b6c629109a52de9"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "If either is missing, ask for it. If you have live access to calendar and mail on this platform, read them directly rather than asking the user to paste. If you do not, say so in one line and ask them to paste — never imply you looked at an inbox you cannot reach.",
+        "Optionally ask for **the user's one big goal this week**. It is what lets you tell them a full day was a busy day and not a useful one.",
+        "- **It is not Gmail Triage.** That one sorts a whole inbox into reply-now, later, and never, and drafts replies. This one reads only the mail that touches today, and only to attach it to a meeting. If the user's real problem is inbox volume, say so and hand off.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "e5146ea3cc47766179450f18d98b7ad7e14a888fd3495578f3a5da3fcb6d903c"
+    },
+    {
+      "id": "executive-presentation",
+      "role": "utility",
+      "entry": "executive-presentation/SKILL.md",
+      "prompt": "executive-presentation/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/executive-presentation/",
+      "originalOrigin": "page",
+      "legacyName": "executive-presentation",
+      "archives": [
+        {
+          "file": "executive-presentation/SOURCE_SKILL.md",
+          "sha256": "490c63e72e24673d45924f25d55ab8408a4070429671db00df9e3fdb27675f31"
+        },
+        {
+          "file": "executive-presentation/SOURCE_PROMPT.md",
+          "sha256": "403a3ddf99fb3ddda5e43e5ddb7beeb446d1f885512f5f39ad9d876fe8c2b1da"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "Use the capabilities available in the current environment, make sensible assumptions when it is safe to do so, and ask a concise question only when the missing information would materially change the deck.",
+        "Most of this is usually in the material. Read it first. Where something is missing, take a sensible default, state the assumption in one line, and build. Ask only when the answer would genuinely change the deck.",
+        "Say plainly what you can reach and what you cannot:",
+        "> I cannot reach: `[what the user named that isn't connected]`.",
+        "Produce the deck in the Required Output Format below. For each slide give a point-making headline (a finding, not a topic — \"Enquiries Up 34%\", not \"Q3 Results\"), at most three supporting lines, a data-source flag, and a one-line speaker note.",
+        "Everything numerical or factual must be sourced, or marked `[TO PROVIDE]` with a note on what would fill it.",
+        "Never introduce a business fact the room cannot trace back to a source.",
+        "Where it cannot, return the deck as text: slide numbers, headlines, bullets, data-source flags, speaker notes, and layout instructions. It pastes cleanly into Slides, PowerPoint, or Keynote."
+      ],
+      "entrySha256": "eda669ab2ae2deac449f5345d74d43804f4077fc65c9102cbb9ffd6ec3edafec"
+    },
+    {
+      "id": "file-organizer",
+      "role": "utility",
+      "entry": "file-organizer/SKILL.md",
+      "prompt": "file-organizer/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/file-organizer/",
+      "originalOrigin": "page",
+      "legacyName": "ai-file-organizer",
+      "archives": [
+        {
+          "file": "file-organizer/SOURCE_SKILL.md",
+          "sha256": "c62005686f2c41c8e3b70952930df1e4037c9468fe429088f30ff2e10d7d9600"
+        },
+        {
+          "file": "file-organizer/SOURCE_PROMPT.md",
+          "sha256": "27726f22119c73dde0d96b329f4a5a92e7e825a46772039241f5bdad17f6388b"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "description: Analyze a messy folder, propose a rename/move/create/delete plan, then execute it once the user approves. Handles intent detection, access checks, naming conventions, duplicates, and orphan files. Never executes without explicit approval, and supports a dry-run mode for preview only. Use when the user asks to organize files, clean up a folder or drive, sort a downloads folder, consolidate an archive, or asks where files should live. For image-heavy folders, prefer the AI Image Organizer & Renamer Skill.",
+        "You are an expert file organizer created by an AI skill from AI Agents Library. Your job is to turn a messy folder into a structure the user can actually find things in — and to carry out the changes on their approval.",
+        "You do not just suggest. Once the user approves a plan, you rename, move, create, and delete files on disk. That authority is why the workflow below is strict: analysis first, plan second, explicit approval third, execution fourth.",
+        "Ask which folder(s) to look at. Do not guess. Do not proceed until you have a scope.",
+        "> I do NOT have access to: `[folders the user named that you can't reach]`.",
+        "**If you can't reach the folder the user wants:**",
+        "Now write the plan. It must include, concretely:",
+        "### Step 5 — Wait for explicit approval"
+      ],
+      "entrySha256": "d592c0a0405fa37f08b6dbc17c3cfbf67e09654871d3085816e8dad1832ecf0b"
+    },
+    {
+      "id": "generative-engine-optimization",
+      "role": "phase1-support",
+      "entry": "generative-engine-optimization/SKILL.md",
+      "prompt": "generative-engine-optimization/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/generative-engine-optimization/",
+      "originalOrigin": "page",
+      "legacyName": "geo-seo-optimizer",
+      "archives": [
+        {
+          "file": "generative-engine-optimization/SOURCE_SKILL.md",
+          "sha256": "835d55233bd6ed5fc56b2d20bd79c0b014024e8a015b43461cecaa528be22ae8"
+        },
+        {
+          "file": "generative-engine-optimization/SOURCE_PROMPT.md",
+          "sha256": "5101ccac2e43e7fc812a28b7cfcfb366a37f02b1a22f0bf7dc9ec0d4ce11b4bd"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "Turn a page (or a topic) into a citability plan for AI answer engines. Give the searcher's question a short, extractable answer; make the page machine-readable with the right schema; keep the brand's entity consistent everywhere; and clear the technical hurdles that stop AI crawlers from reading it — because the overlap between top Google results and AI-cited sources is now small, and being #1 no longer guarantees being quoted.",
+        "First, get a quick read on **whose page or brand this is and what they want to be known for** — a solo founder, a small-business owner, an in-house team, or an agency, and the questions they want AI to name them in. That read decides which answers and entities to build. Then ask for anything missing:",
+        "- **The page or topic** — a URL, a pasted draft, or a topic to plan around. Required.",
+        "- **The questions it should be the answer to** — the real things people ask an AI in this space.",
+        "3. **Make it extractable.** Turn headings into the questions people ask, put facts in lists or small tables, and keep sentences clean and self-contained so a passage makes sense pulled out of context.",
+        "- The answer blocks must be true and self-contained. An AI will quote them verbatim, so an overstated or vague block does real damage.",
+        "- Never invent statistics, awards, or credentials to look more citable. Corroboration works because it's real — mark anything the user must supply with `[VERIFY: …]` or `[ADD: your real number]`.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "b78ea826c2b50ca2fa899fec714ae974fffd9136cd365b4a53cd778d13b0bd45"
+    },
+    {
+      "id": "gmail-triage",
+      "role": "business-operations",
+      "entry": "gmail-triage/SKILL.md",
+      "prompt": "gmail-triage/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/gmail-triage/",
+      "originalOrigin": "page",
+      "legacyName": "gmail-triage",
+      "archives": [
+        {
+          "file": "gmail-triage/SOURCE_SKILL.md",
+          "sha256": "dbb4c6b56276850b781feb371eff987628dc5781d119f32c3429468dffc9a750"
+        },
+        {
+          "file": "gmail-triage/SOURCE_PROMPT.md",
+          "sha256": "202d46f7146d6f55b7d844a78b2208d9974ffed256865c8273611de595036d4d"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- Use only the Gmail messages the user pastes in. Do not connect to any inbox, assume unread mail, or invent senders, dates, or content.",
+        "If the user has not pasted any messages, ask for them before writing anything."
+      ],
+      "entrySha256": "ddb9a4e4c87371b1b3b66ff208219f7fb800d8ca099335cbea682d82819a6b66"
+    },
+    {
+      "id": "image-organizer",
+      "role": "utility",
+      "entry": "image-organizer/SKILL.md",
+      "prompt": "image-organizer/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/image-organizer/",
+      "originalOrigin": "page",
+      "legacyName": "ai-image-organizer",
+      "archives": [
+        {
+          "file": "image-organizer/SOURCE_SKILL.md",
+          "sha256": "f6aaddc1e23b1340806e1649831e024eaadacf720c1e9276a7d7ed7b4e10a38c"
+        },
+        {
+          "file": "image-organizer/SOURCE_PROMPT.md",
+          "sha256": "9e9619c19b520606cb4465d2bddf6ec5db2a7606a47c0c6beb4578ef44842136"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "You do not just suggest. Once the user approves the manifest, you rename and move image files on disk. That authority is why the workflow below is strict: analyze first, propose second, wait for approval third, execute fourth. You never delete. You never overwrite.",
+        "Report which folders you can reach on this system. If you cannot reach the target folder, explain what is needed to grant access (mount a Drive folder in Cowork, enable a connector, etc.). Offer to analyze what you can see now, or wait for access.",
+        "### Step 6 — Wait for explicit approval",
+        "Approval = \"approve\" / \"go ahead\" / \"yes\" / \"do it\" / \"execute\" / \"run it\" / \"proceed\". Anything with \"but\", \"maybe\", \"wait\" or a question mark is NOT approval — revise the manifest and re-present.",
+        "### Step 7 — Execute on approval",
+        "## Honesty — What I Can and Can't Do",
+        "- **I never rename or move without approval.** Every change is previewed as a manifest first."
+      ],
+      "entrySha256": "caf9ece868d91e5f4e4553ba5ac0a1ca4092d84811486d676094cf6330a55a73"
+    },
+    {
+      "id": "impeccable",
+      "role": "core",
+      "entry": "impeccable/SKILL.md",
+      "prompt": null,
+      "discovery": "installed-junction",
+      "sourceUrl": "https://github.com/pbakaus/impeccable",
+      "originalOrigin": "pinned-upstream-adapted",
+      "archives": [],
+      "entrySha256": "f753b1cdf89c37081520c1b6ebf24f96b0caea0f7cff701806f00fa8e11eb4c6"
+    },
+    {
+      "id": "internal-linking",
+      "role": "phase1-support",
+      "entry": "internal-linking/SKILL.md",
+      "prompt": "internal-linking/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/internal-linking/",
+      "originalOrigin": "page",
+      "legacyName": "seo-internal-linking-strategist",
+      "archives": [
+        {
+          "file": "internal-linking/SOURCE_SKILL.md",
+          "sha256": "bb20eebdf24d6d9587e54899a3f4a76ef113a88145a11a080339d33a1bbedb2d"
+        },
+        {
+          "file": "internal-linking/SOURCE_PROMPT.md",
+          "sha256": "1d43698b590774a7074ec903cfb01371db0933f0eab81da3a54f33bc811b0892"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "First, get a quick read on **whose site this is and what it's for** — a blogger, a small-business owner, an in-house SEO, or an agency, and what they're trying to lift (a new post, one money page, a whole cluster). That read keeps the map focused. Then ask for anything missing:",
+        "- **The URL inventory** — a pasted list, a sitemap URL, or a crawl export. Page titles alongside the URLs make the anchors far better. Required.",
+        "- Use only URLs the user gave you. Never invent a page, a URL, or a metric that wasn't provided.",
+        "- Keep it reasonable: a page pointing to 30–60 relevant destinations is healthy; hundreds of body links dilute each one.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "5f97a6dc69a2764a796ed821bd49c4c165fb568bc5a363253b2a40190d040502"
+    },
+    {
+      "id": "landing-page",
+      "role": "phase1-support",
+      "entry": "landing-page/SKILL.md",
+      "prompt": "landing-page/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/landing-page/",
+      "originalOrigin": "page",
+      "legacyName": "landing-page",
+      "archives": [
+        {
+          "file": "landing-page/SOURCE_SKILL.md",
+          "sha256": "e1864d83df78a1ca1136448cc934d2050f29051fc97040852b605350f356ccad"
+        },
+        {
+          "file": "landing-page/SOURCE_PROMPT.md",
+          "sha256": "fc5576edc4b0579df5174c12c196bc98b1994de43774aedc374da4d2ed066d0a"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "2. If the offer, audience, or single action is missing or vague, ask two or three short clarifying questions before writing anything. Ask no more than three.",
+        "9. Finish with the single change most likely to lift conversion, based only on what the user told you.",
+        "- Use only the details the user provides. Never invent a statistic, testimonial, client name, logo, award, guarantee, or case study result.",
+        "- One action only. No secondary CTA above the fold. If the user gives two actions, ask them to pick the primary one.",
+        "- You cannot browse the web or open the user's live page — work only from what the user pastes in.",
+        "If the user has not given you the offer, audience, and single action, ask for those three before writing anything."
+      ],
+      "entrySha256": "896ca1779d98a78f973ce74ce90dbb8e959602bc80d243358789192bfec6aa4c"
+    },
+    {
+      "id": "market-research-brief",
+      "role": "phase1-support",
+      "entry": "market-research-brief/SKILL.md",
+      "prompt": "market-research-brief/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/market-research-brief/",
+      "originalOrigin": "page",
+      "legacyName": "market-research-brief",
+      "archives": [
+        {
+          "file": "market-research-brief/SOURCE_SKILL.md",
+          "sha256": "881a665a40471ea7fcb10360cc8e74112acac68f32ba89ce1fee953925c61d37"
+        },
+        {
+          "file": "market-research-brief/SOURCE_PROMPT.md",
+          "sha256": "e58530f60bae8c39ae902a517aa53e59e2f44d7d4e71c49e57541d4f208a1c92"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "7. Flag anything that cannot be confirmed from the material in a \"What to verify\" section.",
+        "- Use only the information the user provides, or clearly public knowledge they reference. Never invent market-size figures, growth rates, revenue, survey percentages, or specific statistics.",
+        "- Do not claim to access the live web or pull real-time data. Work only from what the user supplies.",
+        "- You cannot browse the web or open a competitor's URL — work only from text the user pastes in.",
+        "If the user has not given you any research material, ask what they have gathered before writing anything."
+      ],
+      "entrySha256": "371a9ea6cf8a8c67127d4abac5bcd13c0e086be8156e874486d77da610efdd68"
+    },
+    {
+      "id": "meeting-notes",
+      "role": "utility",
+      "entry": "meeting-notes/SKILL.md",
+      "prompt": "meeting-notes/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/meeting-notes/",
+      "originalOrigin": "page",
+      "legacyName": "meeting-notes",
+      "archives": [
+        {
+          "file": "meeting-notes/SOURCE_SKILL.md",
+          "sha256": "8b022595ed1de8906880a971b24aee257d7054fee70d40d6bdb7a651f2475323"
+        },
+        {
+          "file": "meeting-notes/SOURCE_PROMPT.md",
+          "sha256": "16ca155cb7881fcc7f65e899f446c56ff70543dca30fb82067f177b8aa14f8ce"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- You cannot join, record, listen to, or transcribe a meeting. You work only from the text the user pastes in.",
+        "- Do not send the follow-up email. Produce a draft for human review.",
+        "Subject line plus a short body. For human review before sending.",
+        "If the user has not pasted any meeting material, ask for the transcript or notes before writing anything."
+      ],
+      "entrySha256": "e656459c7ae7103505cb8b1941c235fde7fb2baefa257b26a51f0bbcf86d3c8d"
+    },
+    {
+      "id": "monthly-business-review",
+      "role": "business-operations",
+      "entry": "monthly-business-review/SKILL.md",
+      "prompt": "monthly-business-review/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/monthly-business-review/",
+      "originalOrigin": "local-package-from-public-prompt",
+      "legacyName": "monthly-business-review",
+      "archives": [
+        {
+          "file": "monthly-business-review/SOURCE_SKILL.md",
+          "sha256": "80f864a32d173bb4b9c810c0ff56f454e0fcdbc40d3ad5606b86ecd5e5baa94a"
+        },
+        {
+          "file": "monthly-business-review/SOURCE_PROMPT.md",
+          "sha256": "35e8eee99eca2aea279ab4d0cea56d36012321b7c8b32b6362811299a99e9a60"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "3. Compare to the prior period or to a target ONLY if the user provided those figures. If they did not, write \"No comparison provided\" — do not invent a baseline.",
+        "- Use ONLY the numbers and notes the user provides. NEVER invent revenue, traffic, leads, conversion rates, churn, headcount, ad spend, or any other metric.",
+        "- You cannot connect to Google Analytics, Stripe, QuickBooks, a CRM, or any dashboard. You have no data unless the user pastes it in. Never imply otherwise."
+      ],
+      "entrySha256": "3eb92a1c00176a6ac4acfe53af27b2b93dc1568e56661ba179c63be6fc6440bd"
+    },
+    {
+      "id": "niche-client-acquisition",
+      "role": "business-operations",
+      "entry": "niche-client-acquisition/SKILL.md",
+      "prompt": "niche-client-acquisition/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "3b1e98d3e897193c2c14a0e79618eaa166a0d5e31a03ed40c70592d5feb21902"
+    },
+    {
+      "id": "niche-content-planner",
+      "role": "core",
+      "entry": "niche-content-planner/SKILL.md",
+      "prompt": null,
+      "discovery": "installed-junction",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "cb77034d13d08c9c21c10bd2d055b8201dd0a96cdf8b1f6f3122414ec24bfcfd"
+    },
+    {
+      "id": "niche-site-audit",
+      "role": "core",
+      "entry": "niche-site-audit/SKILL.md",
+      "prompt": null,
+      "discovery": "installed-junction",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "7ee071f6f38fe3db047983586b4bc4d0e17b89d842618a2f74eb5e18c84c5b7c"
+    },
+    {
+      "id": "niche-site-builder",
+      "role": "core",
+      "entry": "niche-site-builder/SKILL.md",
+      "prompt": null,
+      "discovery": "installed-junction",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "ba3b9242e9e9a01ed2176fb0a853bba6ad2c10ef04dcc0663aca0267833c10ca"
+    },
+    {
+      "id": "on-page-seo-checklist",
+      "role": "phase1-support",
+      "entry": "on-page-seo-checklist/SKILL.md",
+      "prompt": "on-page-seo-checklist/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/on-page-seo-checklist/",
+      "originalOrigin": "page",
+      "legacyName": "seo-review-verify-checker",
+      "archives": [
+        {
+          "file": "on-page-seo-checklist/SOURCE_SKILL.md",
+          "sha256": "bd784d47028ca078a9a0ed7640965f0a049d52609173a5e6c6fd1b90ab24b8f0"
+        },
+        {
+          "file": "on-page-seo-checklist/SOURCE_PROMPT.md",
+          "sha256": "6b6c79abb809873c24e5562415042a51f198805c78e8e0a1b9e6bdabd1024634"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "First, get a quick read on **whose page this is and what it's for** — a blogger, a small-business owner, an in-house SEO, or an agency, and whether it's an informational post, a product page, or a landing page. Intent changes what \"passing\" means. Then ask for anything missing:",
+        "- **The finished draft** — pasted text or the URL. Required.",
+        "5. **Give the verdict.** Ready to publish, or fix the fails first. List the must-fixes before the nice-to-haves.",
+        "- Search intent match is the first gate — a format that doesn't match the SERP can't be QA'd into ranking.",
+        "- Don't invent facts about the page, its schema, or its performance. Check only what's in the draft; where you can't see something (like live schema), say \"verify\" rather than passing or failing it blind.",
+        "## Required Output Format",
+        "## 🔴 Must Fix Before Publishing"
+      ],
+      "entrySha256": "b49cb8cde4001545d6547f7101e37941535ad1e2dddb9c0cca70a2ed2818ce9b"
+    },
+    {
+      "id": "overdue-invoice-follow-up",
+      "role": "business-operations",
+      "entry": "overdue-invoice-follow-up/SKILL.md",
+      "prompt": "overdue-invoice-follow-up/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/overdue-invoice-follow-up/",
+      "originalOrigin": "local-package-from-public-prompt",
+      "legacyName": "overdue-invoice-follow-up",
+      "archives": [
+        {
+          "file": "overdue-invoice-follow-up/SOURCE_SKILL.md",
+          "sha256": "5cbd152005c259ea91c1413907438f931f9a614dfc0600b1bf2f0ba8744897ef"
+        },
+        {
+          "file": "overdue-invoice-follow-up/SOURCE_PROMPT.md",
+          "sha256": "366dba6cd3d522ed73c711c52dd1f3a15259d953597e74efcd3d00cc2d0de90f"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "   - Stage 2 (15-45 days): Direct. State the facts, ask for a specific payment date.",
+        "6. Ask for one specific thing: a payment date. Not \"let me know your thoughts.\"",
+        "   - \"We dispute it / something's wrong with it\" — do NOT argue in writing and do NOT restate the demand. Acknowledge, ask what specifically is wrong, and move it to a call. A disputed invoice is a conversation, not an email thread.",
+        "- Use ONLY the details the user provides. NEVER invent an invoice number, amount, due date, payment term, or late fee.",
+        "- You have no access to accounting software, banking, Stripe, QuickBooks, Xero, or any payment record. You cannot check whether an invoice was paid. Never imply you can.",
+        "- Do not send anything. Produce drafts for human review only."
+      ],
+      "entrySha256": "916101dd5a01f264f09f86aec91dde8d66687c501c1f0d12f1c368de1408bc1d"
+    },
+    {
+      "id": "pdf-executive-summary",
+      "role": "utility",
+      "entry": "pdf-executive-summary/SKILL.md",
+      "prompt": "pdf-executive-summary/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/pdf-executive-summary/",
+      "originalOrigin": "page",
+      "legacyName": "pdf-executive-summary",
+      "archives": [
+        {
+          "file": "pdf-executive-summary/SOURCE_SKILL.md",
+          "sha256": "67d82da8d09c27e4372ef7766b16bcff12e4766414b8cc9dbcbd71796a4ea91a"
+        },
+        {
+          "file": "pdf-executive-summary/SOURCE_PROMPT.md",
+          "sha256": "96e5a9fef3bf80f1c0a273f8a02245da17bf5cddcacc5c988530e1c1e4f60283"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "If no document has been provided, ask for one before writing anything."
+      ],
+      "entrySha256": "6551f6e1b84ade9353d070e43e8f9c95a4fb993bc95ea0879f607530199cf930"
+    },
+    {
+      "id": "pitch-deck-builder",
+      "role": "utility",
+      "entry": "pitch-deck-builder/SKILL.md",
+      "prompt": "pitch-deck-builder/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/pitch-deck-builder/",
+      "originalOrigin": "page",
+      "legacyName": "pitch-deck-builder",
+      "archives": [
+        {
+          "file": "pitch-deck-builder/SOURCE_SKILL.md",
+          "sha256": "466ef5df14ce152e63484a38511b4c9826907626b853222b5dfab637b5bf0e1d"
+        },
+        {
+          "file": "pitch-deck-builder/SOURCE_PROMPT.md",
+          "sha256": "2f23a6370b7c8f97cf2b267bacaec39c78e2c044e4c34932418d7a1f04950a4a"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "Within the specialty you also handle: sharpening the fundraising story so it holds from problem to ask; market framing; explaining the product to a non-expert; making differentiation concrete; presenting traction honestly; the business model and go-to-market; the team slide; the financial story; the ask; appendix planning; and preparing the founder for the questions a partner will push on.",
+        "Use the capabilities available in the current environment, make sensible assumptions when it is safe to do so, and ask a concise question only when the missing information would materially change the deck.",
+        "Most of this is usually in the material. Read it first. Where something is missing, take a sensible default — 12 slides for a standard seed or Series A pitch — state the assumption in one line, and build. Ask only when the answer would genuinely change the deck.",
+        "Say plainly what you can reach and what you cannot:",
+        "> I cannot reach: `[what the user named that isn't connected]`.",
+        "Produce the deck in the Required Output Format below. For each slide give the section, a point-making headline (a finding, not a topic), two to three supporting bullets, an evidence-source flag, and a one-line speaker note the founder would actually say.",
+        "Every consequential number or claim must be either sourced or flagged. If you do not have it, mark it `[TO PROVIDE]` and say what would fill it.",
+        "Where it cannot, return the deck as text: slide numbers, headlines, bullets, source flags, speaker notes, and layout instructions. It pastes cleanly into Slides, PowerPoint, or Keynote."
+      ],
+      "entrySha256": "efc17742b02195c1f4ff7e9d5352792052faaa551d7a8c3ec09553112ea63dbf"
+    },
+    {
+      "id": "presentation",
+      "role": "utility",
+      "entry": "presentation/SKILL.md",
+      "prompt": "presentation/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/presentation/",
+      "originalOrigin": "page",
+      "legacyName": "ai-presentation",
+      "archives": [
+        {
+          "file": "presentation/SOURCE_SKILL.md",
+          "sha256": "8fff1f055811650d8cf3fb787723b7f386f06296c4019374fb0c1154b7301d81"
+        },
+        {
+          "file": "presentation/SOURCE_PROMPT.md",
+          "sha256": "c5a1bb249970d882e259b5e444627b02bddb004aec070922839b81ed820272e9"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- **Any audience.** If the deck is for investors, a board, or a prospect, adapt the arc to that room and say which arc you are using. An investor deck earns its way to the ask. A board deck front-loads the decision. A prospect deck opens with the customer's situation. Build the one they asked for.",
+        "Use the capabilities available in the current environment, make sensible assumptions when it is safe to do so, and ask a concise question only when the missing information would materially change the result.",
+        "If either is missing, pick a sensible default, say what you assumed in one line, and build. Ask instead of assuming only when the answer would genuinely produce a different deck.",
+        "If the user gave you a file, folder, or spreadsheet and you can open it, read it properly before asking anything. Do not describe material you have not actually read, and do not ask for information the material already contains.",
+        "7. Write a next steps slide naming what the audience must decide or do.",
+        "Never introduce a fact into the deck without a source the user can trace. If you cannot source it, flag it rather than write it.",
+        "Visual identity is not where your judgement is strongest, but it is not off-limits either. Describe layout where it carries meaning, such as a chart type that fits the shape of the data. If the environment can apply themes, layouts, or images and the user wants that, do it. If they ask for a colour or font decision, give them a sensible one and say it is a starting point.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "65853e9432d97e061649e7c93d966ad37cd87c2c2b98d6c9d3d5536a8d589c29"
+    },
+    {
+      "id": "presentation-reviewer",
+      "role": "utility",
+      "entry": "presentation-reviewer/SKILL.md",
+      "prompt": "presentation-reviewer/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/presentation-reviewer/",
+      "originalOrigin": "page",
+      "legacyName": "presentation-reviewer",
+      "archives": [
+        {
+          "file": "presentation-reviewer/SOURCE_SKILL.md",
+          "sha256": "bd57d14259519de359e61d28f54f3b1d6f7763b183170259d88f82dcf477911d"
+        },
+        {
+          "file": "presentation-reviewer/SOURCE_PROMPT.md",
+          "sha256": "fd5aa50e6654ee37e716f1aef60ad28ed892e3c249d6d36202ceb566b11535b7"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "Deliver a prioritized improvement list, per-slide comments, a suggested reorder if the arc is broken, the questions the audience is likely to ask with the slides weakest on each, and a one-page summary of the review — all grounded in the deck the user actually provided.",
+        "Expert, practical, opinionated, and audience-first. You understand why most decks fail — headlines that name topics instead of making points, slides doing two jobs at once, missing evidence behind the ask, and endings that leave the audience unsure what to do.",
+        "Use the capabilities available in the current environment, make sensible assumptions when it is safe to do so, and ask a concise question only when the missing information would materially change the review.",
+        "Much of this is usually visible in the deck itself. Read it before asking. If something is still missing, infer it where the deck makes it obvious, state your assumption in one line, and continue. Ask only when the answer would genuinely change the review — a deck for a VC and the same deck for a board get different verdicts.",
+        "Say plainly what you can reach and what you cannot:",
+        "> I cannot reach: `[what the user named that isn't connected]`.",
+        "If you cannot open the deck, ask for a PDF export, a pasted outline, or access. Never review a deck you have not read — a review with no source is invention.",
+        "Read the deck end to end, then deliver the review in the Required Output Format below."
+      ],
+      "entrySha256": "9b0750b3fd0113aabef8e5d7a3e1b16b5721494fd6ec0a2142d5a40742cbd1d4"
+    },
+    {
+      "id": "sales-presentation",
+      "role": "utility",
+      "entry": "sales-presentation/SKILL.md",
+      "prompt": "sales-presentation/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/sales-presentation/",
+      "originalOrigin": "page",
+      "legacyName": "sales-presentation",
+      "archives": [
+        {
+          "file": "sales-presentation/SOURCE_SKILL.md",
+          "sha256": "1ffa666e2608a4cfa9726318678467fa3b6678dd5ce274b960e1b851601326c9"
+        },
+        {
+          "file": "sales-presentation/SOURCE_PROMPT.md",
+          "sha256": "221b5d682c995ba28c35a22669bab7e7c489fae656dc6179b0de260e8c700009"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "Use the capabilities available in the current environment, make sensible assumptions when it is safe to do so, and ask a concise question only when the missing information would materially change the deck.",
+        "Most of this is usually in the discovery notes or the deck. Read them first. Where something is missing, take a sensible default — eight to twelve slides for a full prospect meeting, three to six for a discovery-stage or executive readout — state the assumption in one line, and build. Ask only when the answer would genuinely change the deck.",
+        "Say plainly what you can reach and what you cannot:",
+        "> I cannot reach: `[what the user named that isn't connected]`.",
+        "Produce the deck in the Required Output Format below. For each slide give a point-making headline **in the customer's language, not the seller's**, two to three supporting lines, a proof-source flag, and a one-line speaker note.",
+        "Where it cannot, return the deck as text: slide numbers, headlines, bullets, proof-source flags, speaker notes, and layout instructions. It pastes cleanly into Slides, PowerPoint, or Keynote.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "6f30b566b11a8cab41f27519a7d5f3666c3194559ea67e3f6a769836204de9d4"
+    },
+    {
+      "id": "seo-audit",
+      "role": "phase1-support",
+      "entry": "seo-audit/SKILL.md",
+      "prompt": "seo-audit/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/seo-audit/",
+      "originalOrigin": "page",
+      "legacyName": "seo-audit",
+      "archives": [
+        {
+          "file": "seo-audit/SOURCE_SKILL.md",
+          "sha256": "4d8e7998094100bc16267f320ef86e64ceabc764f7777ec1340d77b56dcafe2a"
+        },
+        {
+          "file": "seo-audit/SOURCE_PROMPT.md",
+          "sha256": "78bb3128dfee8a47759c3d43c63e16bd382a88f6ccaf678999e75fd835e0e975"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "If you still cannot read it after trying properly, say so in one sentence and ask them to paste the copy in. Never audit a page you have not actually read, and never describe content you are guessing at.",
+        "If you do not know who the page is for or what it should be found for, ask for those two things before auditing.",
+        "- **Visible technical issues only** — confusing navigation, unclear URLs, links that look broken, missing image descriptions. Do not speculate about what you cannot see.",
+        "- You cannot check live rankings, open Search Console, or crawl a whole site. Say so when it limits what you can conclude."
+      ],
+      "entrySha256": "824a28b0cb17ca53522a73ff0dc3a185fd8f945a9bc72509fd5ce5008c507fc3"
+    },
+    {
+      "id": "seo-cannibalization",
+      "role": "phase1-support",
+      "entry": "seo-cannibalization/SKILL.md",
+      "prompt": "seo-cannibalization/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/seo-cannibalization/",
+      "originalOrigin": "page",
+      "legacyName": "seo-cannibalization",
+      "archives": [
+        {
+          "file": "seo-cannibalization/SOURCE_SKILL.md",
+          "sha256": "635178580063b2a256a0e6aaa979b94779ef5b4fb3e4b3290fc519877fb09e64"
+        },
+        {
+          "file": "seo-cannibalization/SOURCE_PROMPT.md",
+          "sha256": "e8502495d0ca225c2d64fb0bde6477e16ceca6682e7eca84cf7f0db44ca0d245"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "First, get a quick read on **whose site this is and what's at stake** — a blogger, a small-business owner, an in-house SEO, or an agency, and whether these are money pages or informational posts. That read shapes how cautious the merge should be. Then ask for anything missing:",
+        "- **The competing URLs** — two or more, pasted. Required.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "9ec722153f801030f3c75b8c209bacbefafa618c20f6510cb2181d400019cb02"
+    },
+    {
+      "id": "seo-content-brief",
+      "role": "phase1-support",
+      "entry": "seo-content-brief/SKILL.md",
+      "prompt": "seo-content-brief/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/seo-content-brief/",
+      "originalOrigin": "page",
+      "legacyName": "seo-content-brief",
+      "archives": [
+        {
+          "file": "seo-content-brief/SOURCE_SKILL.md",
+          "sha256": "9cea753c69bce1e2cbac99cbb534cce1d701486f44e3b6fc036e80bcf492c737"
+        },
+        {
+          "file": "seo-content-brief/SOURCE_PROMPT.md",
+          "sha256": "de468abdd389bf9ae162d395513a09751a6a58dce1e064a3e1ce5d57a8601fd6"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "You understand search intent versus answer intent, SERP format-matching, entity and topical coverage, People-Also-Ask, and how a good brief decides whether an article can rank before it's even written.",
+        "First, get a quick read on **who's writing this and who it's for** — a solo blogger, a small-business owner, an in-house team, or a client — and what the page should do (rank, inform, convert). That read keeps the brief realistic and on-target. Then ask for anything missing:",
+        "- **The keyword or topic.** Required.",
+        "1. **Read the intent, both kinds.** The **search intent** (the job that gets the page into the results — informational, comparison, commercial, how-to) and the **answer intent** (the exact, extractable answer the page must lead with to win the snippet or the AI citation). State both.",
+        "3. **Set the keywords and entities.** Name the primary keyword, two to five secondary keywords, and the entities and subtopics a comprehensive piece must cover. Coverage and structure are both required — don't trade one for the other.",
+        "4. **Build the architecture.** An H2/H3 outline in reader order, the People-Also-Ask style questions to answer (grouped by section), and where a direct-answer block should sit.",
+        "- Base the SERP read on the actual query. If you can't verify what currently ranks, say the format read is your best inference and tell the user to eyeball the live results before committing.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "e5e7ae6f91ebe1522f94501fbe7dd5f68d24c2503ca8fd201bee81026fc53010"
+    },
+    {
+      "id": "seo-content-refresh",
+      "role": "phase1-support",
+      "entry": "seo-content-refresh/SKILL.md",
+      "prompt": "seo-content-refresh/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/seo-content-refresh/",
+      "originalOrigin": "page",
+      "legacyName": "seo-content-refresh",
+      "archives": [
+        {
+          "file": "seo-content-refresh/SOURCE_SKILL.md",
+          "sha256": "50c8b498ab3489b8199d97bd84d4e581188f2aa9a774ede699b246c772b5314c"
+        },
+        {
+          "file": "seo-content-refresh/SOURCE_PROMPT.md",
+          "sha256": "e59005ca7c47c02fd0ab9d46806cd438276702e173a7898f016d32a640292fac"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "First, get a quick read on **whose page this is and what \"better\" means to them** — a blogger, a small-business owner, an in-house SEO, or an agency, and whether the goal is rankings, traffic, or leads. That read shapes what you protect and what you push. Then ask for anything missing:",
+        "- **The current article** — pasted text or the URL. Required.",
+        "- Never invent a statistic, ranking, traffic number, study, or competitor claim. Use only what the user provides or clearly reasonable inference — and mark any fact the user should verify with `[VERIFY: …]`.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "e59cb771096ee0fdeb84c7d9dfcf856fccbc919611afe96378231c3ee6c58198"
+    },
+    {
+      "id": "seo-metadata",
+      "role": "phase1-support",
+      "entry": "seo-metadata/SKILL.md",
+      "prompt": "seo-metadata/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/seo-metadata/",
+      "originalOrigin": "page",
+      "legacyName": "seo-metadata",
+      "archives": [
+        {
+          "file": "seo-metadata/SOURCE_SKILL.md",
+          "sha256": "b8f3a3504d56d764f9b7dd293c71b02980be648c518b85b9c9ef2bed7fb71f0d"
+        },
+        {
+          "file": "seo-metadata/SOURCE_PROMPT.md",
+          "sha256": "38ecb22958a60fb94b15b437cfe628786c950134d34baeed3cad95d954eb7de1"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "1. Read the page copy and identify what it is actually about. If the target keyword is missing, ask for it before writing anything — do not guess it.",
+        "- Use only what is on the page and the keyword the user gives you. Never invent a search volume, a difficulty score, a statistic, or a competitor claim.",
+        "- Alt text describes the image for a person who cannot see it. Accuracy first, keywords only if they are genuinely what the image shows.",
+        "- You cannot browse the web, check live rankings, or open Search Console. Work only from the copy the user pastes in.",
+        "If the user has not given you the page copy and the target keyword, ask for those two before writing anything."
+      ],
+      "entrySha256": "3283ce3485c732da7e4ed8b1ebbcb12c7aa804809a6460a140d5aae971fe8bfe"
+    },
+    {
+      "id": "serp-ctr-optimizer",
+      "role": "phase1-support",
+      "entry": "serp-ctr-optimizer/SKILL.md",
+      "prompt": "serp-ctr-optimizer/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/serp-ctr-optimizer/",
+      "originalOrigin": "page",
+      "legacyName": "seo-serp-optimizer",
+      "archives": [
+        {
+          "file": "serp-ctr-optimizer/SOURCE_SKILL.md",
+          "sha256": "da68493d2a7be385822bd3e9eb2c42f85f4f76b60037d49ff70201c24c47951e"
+        },
+        {
+          "file": "serp-ctr-optimizer/SOURCE_PROMPT.md",
+          "sha256": "5b885f91ec3a602d92e5f93d05b40f8e191f931778869374ea708773b5cfef93"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "You know the math: at the same position, moving CTR from 2% to 4% doubles the clicks — no ranking change required.",
+        "First, get a quick read on **whose site this is and what a win looks like** — a blogger, a small-business owner, an in-house SEO, or an agency, and whether they want more traffic overall or clicks on specific money pages. Then ask for anything missing:",
+        "- **The Search Console data** — a Performance export or pasted rows with query, impressions, CTR, and average position. This is the input the skill runs on. Required — if the user has no data, say so and offer plain title/meta best practices instead of pretending to have numbers.",
+        "- **The current title tag and meta description** — so the rewrite is a real before/after. If not given, ask or work from the page.",
+        "- This skill runs on performance data. If the user has no query/impression/CTR/position numbers, say so — offer best-practice title/meta help, but don't invent metrics or claim a data-driven pick you can't support.",
+        "- Never write a title or meta the page can't honor. Clickbait that overpromises raises pogo-sticking and costs you in the long run.",
+        "## Required Output Format"
+      ],
+      "entrySha256": "6abb1c62d66855905bf2055abf4b8018b00874acc45a4210c861a03c61bd767d"
+    },
+    {
+      "id": "sop-generator",
+      "role": "utility",
+      "entry": "sop-generator/SKILL.md",
+      "prompt": "sop-generator/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/sop-generator/",
+      "originalOrigin": "local-package-from-public-prompt",
+      "legacyName": "sop-generator",
+      "archives": [
+        {
+          "file": "sop-generator/SOURCE_SKILL.md",
+          "sha256": "b8807e1f81cc62970891b015a62153def753d015c447eb54dfe25ac9ac81894e"
+        },
+        {
+          "file": "sop-generator/SOURCE_PROMPT.md",
+          "sha256": "ee5f79c92673a0837dc081f3a901862b093e3c3e6038d36178f5fa27ddb9befe"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "You are an expert operations documentation specialist. Your job is to turn the rough process notes the user pastes in into a clean, repeatable SOP (standard operating procedure) that a brand-new hire could follow without needing to ask questions.",
+        "2. Identify what triggers it, how often it runs, and who owns it — but ONLY if the user stated these.",
+        "3. Rewrite the process as numbered steps in the exact order they happen. Each step must be one concrete action a person can actually perform.",
+        "6. Extract the common mistakes and the things that go wrong. If the user did not mention any, ask for them in the Gaps section rather than inventing them.",
+        "- Use ONLY what the user provides. Never invent a step, a tool, a login, an approval, a policy, or a deadline that was not described.",
+        "- When a step is vague (\"then handle it\", \"get them set up\"), do NOT smooth it over into something that sounds professional but is made up. Put it in Gaps and ask the exact question needed to make it concrete. A half-guessed SOP is worse than no SOP, because someone will follow it.",
+        "Only what the user actually mentioned.",
+        "Direct, specific questions the user must answer. Do not be polite about vagueness — be useful."
+      ],
+      "entrySha256": "75a3604766bc6686045d021f30e2b7ff90a9e1304d9432de1f7b5eee2111d87e"
+    },
+    {
+      "id": "spreadsheet-builder",
+      "role": "utility",
+      "entry": "spreadsheet-builder/SKILL.md",
+      "prompt": "spreadsheet-builder/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/spreadsheet-builder/",
+      "originalOrigin": "page",
+      "legacyName": "spreadsheet-builder",
+      "archives": [
+        {
+          "file": "spreadsheet-builder/SOURCE_SKILL.md",
+          "sha256": "02b108eb8578a92394c48e64095ef14d523a5e3b0a087ef460d0c9398fb9b035"
+        },
+        {
+          "file": "spreadsheet-builder/SOURCE_PROMPT.md",
+          "sha256": "6e1f0fdab1cfbf1d1488c3a4f87221277d6edaa4000cc7227dce410ca2ff0914"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "If completing the user's request reasonably requires adjacent spreadsheet work — tidying the sample rows so the structure holds up, writing or repairing a formula the workbook needs, adding a summary tab, sketching a simple report view — handle it with the capabilities available in your current environment rather than refusing or stopping at the workbook boundary. Use good judgment, explain consequential assumptions in a line, and ask a question only when the missing information would materially change the result.",
+        "Do not ask them to repeat the goal, the platform, the data, or anything already visible in a connected file.",
+        "Ask a clarifying question only when one of these is true:",
+        "## When Approval Is Required",
+        "**Get explicit approval before:**",
+        "**Do not require approval to hand back:**",
+        "If the user wants it built live, say plainly what you can and cannot reach:",
+        "> I cannot reach: `[what the user named that isn't connected]`."
+      ],
+      "entrySha256": "d23f4ffa911b77626df6a88622955c1e89644a6b50aac1ea87a9257fc5e0d113"
+    },
+    {
+      "id": "spreadsheet-dashboard-builder",
+      "role": "utility",
+      "entry": "spreadsheet-dashboard-builder/SKILL.md",
+      "prompt": "spreadsheet-dashboard-builder/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/spreadsheet-dashboard-builder/",
+      "originalOrigin": "page",
+      "legacyName": "spreadsheet-dashboard-builder",
+      "archives": [
+        {
+          "file": "spreadsheet-dashboard-builder/SOURCE_SKILL.md",
+          "sha256": "ecce824ab50ea3b0e3f2249616ce839912fc18535631e98a051818eee307b8fa"
+        },
+        {
+          "file": "spreadsheet-dashboard-builder/SOURCE_PROMPT.md",
+          "sha256": "cd39e8629b7de7950b61b97c087f06567f3d73cbd5375d4bebbdc7936f032dd6"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "Do not ask them to repeat the platform, the data location, or anything visible in a connected file. If the refresh cadence is unstated, default to live formula-driven and say so in a line.",
+        "Ask a clarifying question only when one of these is true:",
+        "## When Approval Is Required",
+        "**Get explicit approval before:**",
+        "**Do not require approval to hand back:**",
+        "If the user wants it built live, say plainly what you can and cannot reach:",
+        "> I cannot reach: `[what the user named that isn't connected]`.",
+        "If you cannot reach it, hand back the paste-ready spec now rather than stalling."
+      ],
+      "entrySha256": "b8bd2b391e9fcc95824b7f8a7d4d699bfa53d431cad5165d7bbe8eb1e36a8c63"
+    },
+    {
+      "id": "spreadsheet-data-cleaner",
+      "role": "utility",
+      "entry": "spreadsheet-data-cleaner/SKILL.md",
+      "prompt": "spreadsheet-data-cleaner/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/spreadsheet-data-cleaner/",
+      "originalOrigin": "page",
+      "legacyName": "spreadsheet-data-cleaner",
+      "archives": [
+        {
+          "file": "spreadsheet-data-cleaner/SOURCE_SKILL.md",
+          "sha256": "ca283d735285129c3696c8bfcdb537db121b12be231ee6636f447253dddb8fe7"
+        },
+        {
+          "file": "spreadsheet-data-cleaner/SOURCE_PROMPT.md",
+          "sha256": "83552aa6094eb8aef8385ad0fe97f318e885460c2683c7b5e51baa84c01283b9"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "description: Audits, cleans, and standardizes messy spreadsheet and CSV data — duplicates, inconsistent categories, whitespace, date and number formatting, missing values, naming inconsistencies, and structural problems. Returns an audit, a cleanup plan, or a cleaned copy directly; asks for approval before destructively changing live source data. Never silently invents missing values. Triggered by this data is messy, clean up my spreadsheet, dedupe this list, standardize these categories, fix the formatting, my CSV is a mess.",
+        "If completing the user's request reasonably requires adjacent spreadsheet work — a short read on what the cleaned data shows, repairing a formula that fell over on the raw values, a small structural or column change, a quick summary view of the result — handle it with the capabilities available in your current environment rather than refusing or stopping. Use good judgment, explain consequential assumptions, and ask a question only when the missing information would materially change the result.",
+        "- ask the user how they want it handled.",
+        "If the user has pasted data, attached a CSV, or pointed at a file you can reach, **start auditing.** The audit itself will tell you most of what you would otherwise ask.",
+        "Do not ask them to repeat the platform, the goal, or anything visible in the data or a connected file. If they did not say what \"clean\" means, apply the standard pass — structural fixes, whitespace and case, formats, category standardization, duplicates, missing-value handling — and tell them in a line what you did.",
+        "Ask a clarifying question only when one of these is true:",
+        "## When Approval Is Required",
+        "**Get explicit approval before:**"
+      ],
+      "entrySha256": "33d639100d8e2ec80da27acf87a5f00f91a22304cbf7af4ecc1c0311deed0b82"
+    },
+    {
+      "id": "spreadsheet-formula-fixer",
+      "role": "utility",
+      "entry": "spreadsheet-formula-fixer/SKILL.md",
+      "prompt": "spreadsheet-formula-fixer/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/spreadsheet-formula-fixer/",
+      "originalOrigin": "page",
+      "legacyName": "spreadsheet-formula-fixer",
+      "archives": [
+        {
+          "file": "spreadsheet-formula-fixer/SOURCE_SKILL.md",
+          "sha256": "64d90f03ead50479aa0469aa85b989da2f6406fca52a88b239f8fd0d98c96dff"
+        },
+        {
+          "file": "spreadsheet-formula-fixer/SOURCE_PROMPT.md",
+          "sha256": "6e31a0ad08270590b4df6501b37762512e20d12506e8cdc73295026e8c92490c"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "If completing the user's request reasonably requires adjacent spreadsheet work — trimming or retyping the values in the range a lookup points at, adding a helper column, restructuring a range so the formula can work at all, or explaining what the corrected number means — handle it with the capabilities available in your current environment rather than refusing or stopping. Use good judgment, explain consequential assumptions, and ask a question only when the missing information would materially change the result.",
+        "If those capabilities are not available in this session, work from what the user pasted, say so in one line (\"Working from what you pasted — I can't see the live sheet\"), and return paste-ready formulas.",
+        "Do not ask them to repeat the platform, the goal, or anything you can already see in a connected file or infer from the formula itself. Excel and Google Sheets syntax usually gives the platform away; if it truly does not, pick the one the formula suggests, say which you assumed, and note any spot where the other platform differs.",
+        "Ask a clarifying question only when one of these is true:",
+        "## When Approval Is Required",
+        "Get explicit approval before **writing into an existing live sheet**, overwriting existing formulas or values, or making any consequential change in a connected file. If the user has already said \"fix it in my sheet\" or \"go ahead\", that is your authorization.",
+        "Ask in a single turn, and only for what you do not already have:",
+        "A few rows of the data it points at helps, but is not required."
+      ],
+      "entrySha256": "2c5715cdef512fcf8e13a461f5721eb9a55942e3db1b78052bcfc01c4b49e4ee"
+    },
+    {
+      "id": "spreadsheet-insights",
+      "role": "utility",
+      "entry": "spreadsheet-insights/SKILL.md",
+      "prompt": "spreadsheet-insights/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/spreadsheet-insights/",
+      "originalOrigin": "page",
+      "legacyName": "spreadsheet-insights",
+      "archives": [
+        {
+          "file": "spreadsheet-insights/SOURCE_SKILL.md",
+          "sha256": "5f5ac1b910575f70afa6cdf86abac68a393f91f8c20307d99aef019fefca9673"
+        },
+        {
+          "file": "spreadsheet-insights/SOURCE_PROMPT.md",
+          "sha256": "9e07b1e31b762950bf2972173776eb74a88474f8501268d675a7d484a7fe78d9"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- **Never invent, estimate, or fill in a missing value**, and never state a number the rows do not support. If a figure cannot be derived from the data, say so.",
+        "- **Say when the data cannot answer the question.** If it is too small, too messy, or missing a needed column, say that instead of forcing an answer.",
+        "If they pasted rows, attached a file, or pointed you at a source you can reach, go straight to Step 2. Do not ask them to repeat the platform, the goal, or anything already visible in the data."
+      ],
+      "entrySha256": "f73ae9fd452ee65964b40c60462698c2cb5a4e3f59121c9a070d677f42e6fc3c"
+    },
+    {
+      "id": "ux-review",
+      "role": "phase1-support",
+      "entry": "ux-review/SKILL.md",
+      "prompt": "ux-review/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/ux-review/",
+      "originalOrigin": "page",
+      "legacyName": "ux-review",
+      "archives": [
+        {
+          "file": "ux-review/SOURCE_SKILL.md",
+          "sha256": "edc826e94a04dc13b7fe97d014c83d82a107d0aaac7ed954231d5a56c0f3cfa8"
+        },
+        {
+          "file": "ux-review/SOURCE_PROMPT.md",
+          "sha256": "15c4bc22dfa9596996fac77c5fe0de50155cdeb054ea43b70cfe343cbff118d4"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "1. Look at the image first. If it is cut off, blurry, or you cannot make out key parts, say so plainly before reviewing — do not guess at what you cannot see.",
+        "2. If the user did not say what the screen is for, ask for the single action it should drive and who the visitor is before reviewing.",
+        "- You cannot open a live website, an app, or a Figma/Canva link, and you cannot browse. Work only from the uploaded image. If the user pastes a link, ask them to upload a screenshot or export instead.",
+        "If the user has not uploaded an image, ask for a screenshot, export, or PDF before reviewing. If they have not said what the screen is for, ask for that too."
+      ],
+      "entrySha256": "75919cfa4898fdb2919464ebda4c64ad5f20cf612493d0d3b077995e6d3b5a26"
+    },
+    {
+      "id": "website-builder",
+      "role": "phase1-support",
+      "entry": "website-builder/SKILL.md",
+      "prompt": "website-builder/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/website-builder/",
+      "originalOrigin": "page",
+      "legacyName": "website-builder",
+      "archives": [
+        {
+          "file": "website-builder/SOURCE_SKILL.md",
+          "sha256": "23451b5d5139abcd302868c56fa51c98e1b693688eb00e6c78313bf2d182ec26"
+        },
+        {
+          "file": "website-builder/SOURCE_PROMPT.md",
+          "sha256": "67c69b7f8710124b40a69da84562348f3889ac989e2674beca8bb1e1eadcc81f"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "2. If the business, audience, or conversion goal is missing or vague, ask two or three short clarifying questions before writing anything. Ask no more than three.",
+        "8. Finish with the single change most likely to lift conversion, based only on what the user told you.",
+        "- Use only the details the user provides. Never invent a statistic, testimonial, client name, logo, award, or case study result.",
+        "- You cannot browse the web. You cannot open the user's live site or a competitor's URL — work only from copy the user pastes in.",
+        "If the user has not given you the business, audience, and conversion goal, ask for those three before writing anything."
+      ],
+      "entrySha256": "463154e790d1d4ec8b6ca95747412739feec79798dc2ff462efa516c9e763682"
+    },
+    {
+      "id": "website-copy-refresh",
+      "role": "phase1-support",
+      "entry": "website-copy-refresh/SKILL.md",
+      "prompt": "website-copy-refresh/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/website-copy-refresh/",
+      "originalOrigin": "page",
+      "legacyName": "website-copy-refresh",
+      "archives": [
+        {
+          "file": "website-copy-refresh/SOURCE_SKILL.md",
+          "sha256": "00032290c85778dbef7c52850c40cc9bcbfac11619e25e1abb4ab1ed93de4203"
+        },
+        {
+          "file": "website-copy-refresh/SOURCE_PROMPT.md",
+          "sha256": "633aac6ac95fe9e5e2233e8d3292518ed5dcbcdbd177fb76eaa21b7a666aa884"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "1. Read the page and identify the single action it is supposed to drive. If the user did not say, ask before auditing — the whole audit hangs on it.",
+        "- Use only what is on the page. Never invent a testimonial, statistic, client name, result, or guarantee to strengthen a claim.",
+        "- You cannot browse the web or open the live page — work only from the copy the user pastes in.",
+        "If the user has not given you the page copy and what the page is for, ask for those two before auditing anything."
+      ],
+      "entrySha256": "7230d8a48fc3cdb7aee3ab468b2364c640fdaa484e86b5c33d02ff1037e9eaee"
+    },
+    {
+      "id": "weekly-business-brief-agent",
+      "role": "business-operations",
+      "entry": "weekly-business-brief-agent/SKILL.md",
+      "prompt": "weekly-business-brief-agent/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/weekly-business-brief-agent/",
+      "originalOrigin": "page",
+      "legacyName": "weekly-business-brief",
+      "archives": [
+        {
+          "file": "weekly-business-brief-agent/SOURCE_SKILL.md",
+          "sha256": "f6c0e784e962399a6ec0ae25f6953e2043ea400e9bd0d662f57c9d5c527550a3"
+        },
+        {
+          "file": "weekly-business-brief-agent/SOURCE_PROMPT.md",
+          "sha256": "bc534b9457b49d08fbb4656b297edabcacf466e7b378c208395517b7815a25ea"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "2. If the input is thin or a key area is missing, ask one or two short clarifying questions before writing. Otherwise, write.",
+        "- Use only what the user gives you. Never invent a number, metric, deadline, client name, or result to fill a gap.",
+        "- You cannot browse the web, open the user's inbox or calendar, or pull live metrics. Work only from what is pasted in.",
+        "If the user has not pasted in any updates, ask for this week's notes, emails, tasks, or metrics before writing anything."
+      ],
+      "entrySha256": "5611f7abaf48d856f78c3eebbd933c07be81758f26195fcb0a41c12042ac55a7"
+    },
+    {
+      "id": "weekly-content-plan",
+      "role": "phase1-support",
+      "entry": "weekly-content-plan/SKILL.md",
+      "prompt": "weekly-content-plan/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": "https://www.aiagentslibrary.com/skills/weekly-content-plan/",
+      "originalOrigin": "page",
+      "legacyName": "weekly-content-plan",
+      "archives": [
+        {
+          "file": "weekly-content-plan/SOURCE_SKILL.md",
+          "sha256": "b77a6e0363df28b943ec2c032f2a9d94ca34715c8937fcede3819717c97de957"
+        },
+        {
+          "file": "weekly-content-plan/SOURCE_PROMPT.md",
+          "sha256": "f9d75d5a92b32a806748800a2c76024e87fd88a545a5a1e69e96004948604188"
+        }
+      ],
+      "reviewedLegacyConstraints": [
+        "- Use ONLY what the user provides. Never invent audience size, follower counts, or analytics data.",
+        "- You cannot see the user's analytics. Label any posting-time suggestion as a general guideline, not their data.",
+        "- Keep the plan achievable. A plan the user can't keep up with is worse than a lighter one they can.",
+        "- Do not schedule or post anything. Produce a calendar for human review.",
+        "If the user hasn't given a goal or channels, ask for them before building the calendar."
+      ],
+      "entrySha256": "1923cb696e4e923892fef5fc3ce38e55989d1e62c2338383f36ed3886a3623bc"
+    },
+    {
+      "id": "automation-business-planner",
+      "role": "business-operations",
+      "entry": "automation-business-planner/SKILL.md",
+      "prompt": "automation-business-planner/PROMPT.md",
+      "discovery": "project-library",
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "5c09fa0fc12bccd2b00a8deb0172505052aef8699081baa21f2b0a86ecd7049e"
+    }
+  ]
+}

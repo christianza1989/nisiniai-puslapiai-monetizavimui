@@ -1,0 +1,46 @@
+<!doctype html><html lang="lt"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Verslomatika · bendras paštas</title>
+<style>body{font:16px system-ui;background:#f5f5ef;color:#23352a;margin:0}main{max-width:1250px;padding:24px;margin:auto}header{display:flex;gap:20px;align-items:center;flex-wrap:wrap}input,select,button{font:inherit;padding:10px;border:1px solid #aab4a8;border-radius:7px}button{cursor:pointer;background:#31583c;color:white}#layout{display:grid;grid-template-columns:370px 1fr;gap:20px;margin-top:24px}#list button{display:block;text-align:left;width:100%;background:white;color:#23352a;margin:8px 0}#detail{background:white;padding:24px;border:1px solid #d0d8cd;border-radius:8px}pre{font:16px/1.6 system-ui;white-space:pre-wrap;overflow-wrap:anywhere}.muted{color:#667269}#status{min-height:24px}@media(max-width:760px){#layout{grid-template-columns:1fr}main{padding:14px}}</style>
+<main><header><h1>Bendras verslų paštas</h1><p>Siuntėjas: info@pinet.lt</p></header>
+<p class="muted">Kiekvieno verslo laiškai ir klientų užklausos vienoje vietoje.</p>
+<div id="login"><label>Operatoriaus prieiga <input id="key" type="password" autocomplete="off"></label> <button id="connect">Prisijungti</button></div>
+<div id="controls" hidden><label>Verslas <select id="site"></select></label> <label>Vaizdas <select id="view"><option value="customer">Klientų laiškai</option><option value="all">Visa istorija</option><option value="draft">Juodraščiai</option><option value="outbound">Išsiųsti / siuntimo būsena</option><option value="inbound">Gauti</option></select></label> <button id="refresh">Atnaujinti</button> <button id="sync">Tikrinti atsakymus pašte</button> <button id="logout">Atsijungti</button></div>
+<p id="status" role="status"></p><div id="layout"><div id="list"></div><section id="detail"><h2>Pasirinkite laišką</h2><p>Matysite tekstą, klientą, case ir siuntimo būseną.</p></section></div></main>
+<script>
+let token='',messages=[],routingRevision=0,routingSite='';
+const el=id=>document.getElementById(id);
+const routingControls=document.createElement('section');routingControls.hidden=true;
+routingControls.innerHTML='<p><label><input id="jev" type="checkbox" disabled> Jev pagalba šiam verslui</label> <span id="jev-state" role="status"></span></p>';
+el('controls').insertAdjacentElement('afterend',routingControls);
+const labels={draft:'Juodraštis',accepted_by_smtp:'Priimtas pašto serverio',received:'Gautas',superseded:'Pakeistas naujesniu',sending:'Siunčiamas',rejected:'Atmestas',delivery_unknown:'Siuntimo rezultatas neaiškus'};
+const stateName=value=>labels[value]||value;
+async function api(path,method='GET',body){
+ const r=await fetch(path,{method,headers:{Authorization:'Bearer '+token,...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})});
+ if(!r.ok)throw Error('Nepavyko: HTTP '+r.status);
+ return r.json();
+}
+function status(text){el('status').textContent=text}
+function render(){
+ el('list').replaceChildren();const filter=el('view').value;
+ for(const m of messages.filter(m=>filter==='customer'?m.customer_facing:filter==='all'||(filter==='draft'?m.state==='draft':m.direction===filter&&m.state!=='draft'&&m.state!=='superseded'))){
+  const b=document.createElement('button');b.textContent=m.subject+' · '+stateName(m.state);
+  b.onclick=()=>show(m.id).catch(e=>status(e.message));el('list').append(b);
+ }
+ if(!el('list').children.length)el('list').textContent='Šiame vaizde laiškų nėra.';
+}
+async function loadRouting(){const site=el('site').value;el('jev').disabled=true;const r=await api('/operator/sites/'+site+'/routing');if(site!==el('site').value)return;routingRevision=r.revision;routingSite=site;el('jev').checked=r.enabled;el('jev-state').textContent=(r.enabled?'Įjungta':'Išjungta')+(r.configured?' · API prijungta':' · API neprijungta');el('jev').disabled=false;routingControls.hidden=false}
+async function refresh(){messages=(await api('/operator/sites/'+el('site').value+'/mail')).messages;render();status('Atnaujinta. '+messages.length+' laiškų.');el('detail').replaceChildren();await loadRouting()}
+el('jev').onchange=async()=>{if(routingSite!==el('site').value){await loadRouting();return}el('jev').disabled=true;try{await api('/operator/sites/'+routingSite+'/routing','PUT',{base_revision:routingRevision,enabled:el('jev').checked});await loadRouting()}catch(e){status(e.message);await loadRouting().catch(()=>{})}};
+el('logout').addEventListener('click',()=>{routingControls.hidden=true;el('jev').disabled=true;routingSite=''});
+async function show(id){
+ const m=await api('/operator/sites/'+el('site').value+'/mail/'+id);const box=el('detail');box.replaceChildren();
+ for(const [tag,text] of [['h2',m.subject],['p',m.sender+' → '+m.recipient],['p','Būsena: '+stateName(m.state)+' · Užklausos kodas: '+m.case_id],['pre',m.body]]){const n=document.createElement(tag);n.textContent=text;box.append(n)}
+ for(const [index,a] of (m.attachments||[]).entries()){if(a.content_type!=='application/pdf')continue;const b=document.createElement('button');b.textContent='Atsisiųsti PDF';b.onclick=async()=>{try{const r=await fetch('/operator/sites/'+el('site').value+'/mail/'+id+'/attachments/'+index,{headers:{Authorization:'Bearer '+token}});if(!r.ok)throw Error('PDF neprieinamas');const u=URL.createObjectURL(await r.blob());const link=document.createElement('a');link.href=u;link.download=a.filename;link.click();setTimeout(()=>URL.revokeObjectURL(u),30000)}catch(e){status(e.message)}};box.append(b)}
+ if(m.state==='draft'&&m.synthetic){const b=document.createElement('button');b.textContent='Išsiųsti laišką';b.onclick=async()=>{b.disabled=true;try{const result=await api('/operator/sites/'+el('site').value+'/mail/'+id+'/send-test','POST');status(result.state);await refresh()}catch(e){status(e.message);b.disabled=false}};box.append(b)}
+}
+el('connect').onclick=async()=>{token=el('key').value;el('key').value='';try{const data=await api('/operator/mail/sites');el('site').replaceChildren();for(const site of data.sites){const o=document.createElement('option');o.value=site.site_id;o.textContent=site.canonical_host;el('site').append(o)}el('login').hidden=true;el('controls').hidden=false;await refresh()}catch(e){token='';status(e.message)}};
+el('site').onchange=()=>refresh().catch(e=>status(e.message));el('view').onchange=render;
+el('refresh').onclick=()=>refresh().catch(e=>status(e.message));
+el('sync').onclick=async()=>{try{const r=await api('/operator/mail/sync','POST');await refresh();status('Naujų susietų atsakymų: '+r.matched_replies)}catch(e){status(e.message)}};
+el('logout').onclick=()=>{token='';messages=[];el('controls').hidden=true;el('login').hidden=false;el('list').replaceChildren();el('detail').replaceChildren();status('Atsijungta.')};
+</script></html>

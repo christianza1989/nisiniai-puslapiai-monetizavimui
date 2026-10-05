@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-02",
+  "scope": "Bounded primary-source follow-up for an existing phase-one niche; not a new business validation",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://paslaugos.lt/mini-ekskavatoriaus-nuoma/kaune",
+      "publisher": "Paslaugos.lt",
+      "status": "opened_primary_html",
+      "observation": "Five visible public needs span other groundworks, unspecified equipment, trench digging and trench plus installation. Latest header shows 72; other returned snapshots show 71 and 69.",
+      "limits": "Nonrandom visible sample; unverified authenticity, transaction outcomes, counter period and refresh. No personal details or raw request text stored. Differences are not a daily arrival rate."
+    },
+    {
+      "id": "S2",
+      "url": "https://www.technikoscentras.lt/",
+      "publisher": "Technikos centras",
+      "status": "opened_primary_html",
+      "observation": "Separate operator/no-operator rental units and transport; direct positioning without intermediaries.",
+      "limits": "Provider claims and offers only; no agreement to buy our leads. No rate transferred to our offer."
+    },
+    {
+      "id": "S3",
+      "url": "https://www.avesco-rent.lt/lt/parko-kategorija/mini-ekskavatoriai/",
+      "publisher": "Avesco Rent",
+      "status": "opened_primary_html",
+      "observation": "Delivery quotation depends on distance and equipment weight; access depends on model.",
+      "limits": "No supplier confirmation, our capacity or trench-work price inferred."
+    }
+  ]
+}

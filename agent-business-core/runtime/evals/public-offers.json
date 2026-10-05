@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-01",
+  "purpose": "read-only public-price evidence for local synthetic lab",
+  "commercial_authority": false,
+  "offers": [
+    {
+      "id": "gtk-lt",
+      "seller": "Padangų zona",
+      "country": "LT",
+      "product": "GTK RS200 420/85 R28",
+      "unit_price": "584.05",
+      "currency": "EUR",
+      "price_basis": "VAT included as displayed; applied rate not independently verified",
+      "url": "https://padanguzona.lt/produktai/42085r28-gtk-169r28-rs200-139-a8-136-b-aLN7W",
+      "observed_stock_text": "2 vnt.",
+      "shipping_scope": "Page displays delivery terms; destination-specific delivery not independently confirmed",
+      "fitment": "unverified",
+      "data_issue": "Antraštėje nurodyta 139 A8/136 B, o charakteristikų lauke – 136 B. Prieš pasirinkimą reikia patikslinti su pardavėju.",
+      "evidence_excerpt": "584,05 € Kaina už 1 vnt. su PVM.",
+      "attributes": {
+        "tyre_marking": "420/85 R28"
+      },
+      "display_vat": "included"
+    },
+    {
+      "id": "ceat-de",
+      "seller": "BayWa",
+      "country": "DE",
+      "product": "CEAT Farmax R85 420/85 R28 139D/142A8 TL",
+      "unit_price": "619.95",
+      "currency": "EUR",
+      "price_basis": "VAT included as displayed; destination tax treatment unverified",
+      "url": "https://www.baywa.de/p/ceat-specialty-traktorreifen-420-85-r-28-farmax-r85-139d-142a8-radial-tl/p_32802342/2227868",
+      "observed_stock_text": "delivery estimate on page, no verified reservation",
+      "shipping_scope": "Free shipping / 4–5 working days displayed; Lithuania applicability unverified",
+      "fitment": "unverified",
+      "data_issue": "Pardavėjo pristatymo sąlygos šiame puslapyje nėra patvirtintas pristatymo į Lietuvą pažadas.",
+      "evidence_excerpt": "619,95 € / Stück | inkl. MwSt.",
+      "attributes": {
+        "tyre_marking": "420/85 R28"
+      },
+      "display_vat": "included"
+    }
+  ],
+  "site_id": "traktoriupadangos",
+  "required_match_fields": [
+    "tyre_marking"
+  ]
+}

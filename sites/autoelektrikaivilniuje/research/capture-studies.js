@@ -1,0 +1,1 @@
+async(page)=>{for(const k of ['a','b','c'])for(const [v,w,h]of [['desktop',1440,1000],['mobile',390,844]]){await page.setViewportSize({width:w,height:h});await page.goto('http://127.0.0.1:5198/'+k);await page.screenshot({path:'C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/autoelektrikaivilniuje/research/study-'+k+'-'+v+'.png',fullPage:true});}}

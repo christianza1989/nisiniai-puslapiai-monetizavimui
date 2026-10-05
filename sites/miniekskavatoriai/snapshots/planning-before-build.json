@@ -1,0 +1,22 @@
+{
+  "id": "miniekskavatoriai",
+  "canonicalHost": "miniekskavatoriai.lt",
+  "name": "Miniekskavatoriai",
+  "locale": "lt-LT",
+  "timezone": "Europe/Vilnius",
+  "brand": {
+    "accent": "#246f74"
+  },
+  "offer": "Planuojamos tranšėjos kasimo su operatoriumi poreikio registracija Kauno regione",
+  "audience": "",
+  "facts": "",
+  "contact": {
+    "email": "info@pinet.lt",
+    "phone": ""
+  },
+  "stage": "planning",
+  "pages": [],
+  "assets": [],
+  "createdAt": "2026-10-01T11:40:17.264Z",
+  "updatedAt": "2026-10-01T11:40:17.265Z"
+}

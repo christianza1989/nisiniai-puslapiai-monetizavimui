@@ -1,0 +1,16 @@
+name: Manual source safety
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # official v4, verified 2026-10-05
+      - name: Source safety (no external services)
+        run: node scripts/repository-safety.mjs .
+      - name: Domain history local tests
+        working-directory: domain-history
+        run: npm test

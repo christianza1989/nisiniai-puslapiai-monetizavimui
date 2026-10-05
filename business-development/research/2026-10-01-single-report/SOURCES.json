@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "researchDate": "2026-10-01",
+  "timezone": "Europe/Vilnius",
+  "researchQuestion": "Ar vienos pasikartojančios ataskaitos automatizavimo paslauga tinka mažam businessintelligence.lt komerciniam bandymui?",
+  "ideaId": "BDEV-0002",
+  "decisionStatus": "proposed",
+  "method": "Bounded primary-page inspection and current project source review; no contacts, raw ads, credentials or customer files collected",
+  "sources": [
+    {
+      "id": "BUYER-01",
+      "url": "https://paslaugos.lt/uzklausos/microsoft-office-excel-specialistai",
+      "role": "public buyer-intent examples",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["2026-08-24 Excel automation request marked closed after finding a provider", "2026-07-14 transformation/CRM request closed", "Category includes unrelated requests and repeated regional projections"],
+      "limitations": ["No contact list or raw advertisements retained", "Not our demand or payment evidence", "No inferred monthly market volume"]
+    },
+    {
+      "id": "BUYER-02",
+      "url": "https://paslaugos.lt/uzklausos/microsoft-office-excel-programavimas/vilniuje",
+      "role": "public historical buyer intent",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["2026-04-26 financial-control Excel automation need marked closed"],
+      "limitations": ["Also repeated on the general category; not a second buyer", "No active prospect or paid outcome established"]
+    },
+    {
+      "id": "LT-01",
+      "url": "https://analytics.bi/paslaugos/",
+      "role": "direct competitor",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["One-source report starts at 900 EUR", "Two to three sources starts at 1800 EUR", "Exports, reconciliation, refresh and handover offered; initial structure review free"],
+      "limitations": ["Vendor offer, not verified sale or outcome", "VAT basis not established", "Strong contrary evidence to uniqueness"]
+    },
+    {
+      "id": "LT-02",
+      "url": "https://analitika.lt/",
+      "role": "subscription substitute",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["25-report set advertised at 150 EUR per month", "No setup fee advertised"],
+      "limitations": ["VAT, license inclusion and customer fit require confirmation", "Not like-for-like with one custom report"]
+    },
+    {
+      "id": "LT-03",
+      "url": "https://www.analitika360.lt/verslo-analitikos-kainos/",
+      "role": "ERP-specific substitute and custom competitor",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Rivile/Finvalda Basic: 59 EUR monthly, eight reports", "PRO: 89 EUR monthly, 20 reports", "Custom projects advertised at 70 EUR/hour"],
+      "limitations": ["VAT and license inclusion not established", "Provider offer only"]
+    },
+    {
+      "id": "LT-04",
+      "url": "https://excelsolutions.store/lt",
+      "role": "competitor and possible fulfilment research",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Custom Excel tools, reports, training and maintenance offered"],
+      "limitations": ["No fixed package price established", "No partner agreement or willingness to subcontract established"]
+    },
+    {
+      "id": "LT-05",
+      "url": "https://www.rivile.lt/produktai/rivile-gama/moduliai/analitika-ataskaitos",
+      "role": "existing ERP alternative",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Built-in/additional reports, filtering and Excel/PDF export described"],
+      "limitations": ["Actual customer configuration unknown"]
+    },
+    {
+      "id": "FOREIGN-01",
+      "url": "https://www.lexalytic.com/",
+      "role": "UK productised-service example",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Excel/reporting starts at 300 GBP; Power BI starts at 550 GBP", "Written fixed scope, handover and payment after demonstration described"],
+      "limitations": ["UK offer not Lithuanian pricing evidence", "Vendor claims not independently verified", "Payment risk not adopted automatically"]
+    },
+    {
+      "id": "FOREIGN-02",
+      "url": "https://raporty24.pl/uslugi/automatyzacja-excel-power-query/",
+      "role": "Polish workflow-service example",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Recurring file preparation and Power Query offered", "Free initial analysis and NDA advertised"],
+      "limitations": ["Package price not established", "Not our capacity evidence"]
+    },
+    {
+      "id": "TECH-01",
+      "url": "https://support.microsoft.com/en-us/excel/import-data-from-a-folder-with-multiple-files-power-query",
+      "role": "official implementation contract",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Power Query combines files with the same schema from a folder"],
+      "limitations": ["No actual workbook or refresh tested in this research"]
+    },
+    {
+      "id": "TECH-02",
+      "url": "https://support.microsoft.com/en-gb/excel/power-query-data-sources-in-excel-versions?nochrome=true",
+      "role": "official environment prerequisites",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Windows Excel 2016 and later expose Power Query", "CSV, Excel and local folder connectors listed", "Mac/web/mobile feature support differs"],
+      "limitations": ["Specific customer edition/support status and actual refresh require verification", "Connector existence does not justify selecting unsupported software"]
+    },
+    {
+      "id": "TECH-03",
+      "url": "https://www.microsoft.com/en/power-platform/products/power-bi/pricing",
+      "role": "official licensing distinctions",
+      "checkedOn": "2026-10-01",
+      "access": "original_text_inspected",
+      "facts": ["Report creation and paid sharing features distinguished"],
+      "limitations": ["LT page could not be fetched", "International currency display ambiguous; no precise LT license price retained"]
+    }
+  ],
+  "excludedFromDecision": [
+    {"url": "https://tickboxanalytics.com/fixed-price-power-bi-dashboard/", "reason": "Original-body follow-up failed with timeouts; 795 GBP search excerpt not used"},
+    {"source": "Soltus Power BI PDF search excerpt", "reason": "Original not fully inspected; displayed historical license rate not used"}
+  ],
+  "hypotheses": [
+    "One-source bounded service could be viable at accepted price and measured delivery cost",
+    "450 EUR revenue, 30 EUR/hour time value and 60 EUR other variable costs are illustrative only",
+    "12-hour internal pilot and 21-day commercial experiment are proposed limits, not promises or approval"
+  ],
+  "unverified": ["Our qualified demand, willingness to pay and collected revenue", "Actual BI/Excel fulfilment", "Owner/customer Excel licensing and supported environment", "Domain control and launch", "Customer-data handling and actual service terms"]
+}

@@ -1,0 +1,209 @@
+{
+  "siteId": "akmenas",
+  "canonicalHost": "akmenas.lt",
+  "base": "http://127.0.0.1:8886",
+  "checkedAt": "2026-10-01T03:43:58.597Z",
+  "packageGeneratedAt": "2026-10-01T02:44:02.214Z",
+  "publicPages": 11,
+  "readOnly": true,
+  "requests": 39,
+  "pages": [
+    {
+      "path": "/",
+      "title": "Akmens stalviršiai: pasirinkimo gidai ir aiški užklausa",
+      "h1": "Akmuo virtuvei . Aiškumas pasirinkimui.",
+      "canonical": "https://akmenas.lt/",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "articleWords": 27,
+      "anchors": 33,
+      "images": 6
+    },
+    {
+      "path": "/gidai",
+      "title": "Akmens stalviršių gidai",
+      "h1": "Akmens stalviršių gidai",
+      "canonical": "https://akmenas.lt/gidai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 27,
+      "anchors": 30,
+      "images": 3
+    },
+    {
+      "path": "/gidas/stalvirsiu-medziagu-palyginimas",
+      "title": "Granitas, kvarcas, marmuras ar keramika: kaip palyginti stalviršius?",
+      "h1": "Granitas, kvarcas, marmuras ar keramika: kaip palyginti stalviršius?",
+      "canonical": "https://akmenas.lt/gidas/stalvirsiu-medziagu-palyginimas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 535,
+      "anchors": 42,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-01T02:34:37.256Z",
+        "modified": "2026-10-01T02:34:38.417Z"
+      }
+    },
+    {
+      "path": "/gidas/pasiruosimas-stalvirsio-uzklausai",
+      "title": "Ką paruošti akmens stalviršio užklausai?",
+      "h1": "Ką paruošti akmens stalviršio užklausai?",
+      "canonical": "https://akmenas.lt/gidas/pasiruosimas-stalvirsio-uzklausai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 498,
+      "anchors": 35,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-01T02:34:37.256Z",
+        "modified": "2026-10-01T02:34:38.504Z"
+      }
+    },
+    {
+      "path": "/gidas/akmens-stalvirsio-prieziura",
+      "title": "Akmens stalviršio priežiūra: nuo ko pradėti kasdien?",
+      "h1": "Akmens stalviršio priežiūra: nuo ko pradėti kasdien?",
+      "canonical": "https://akmenas.lt/gidas/akmens-stalvirsio-prieziura",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 502,
+      "anchors": 39,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-01T02:34:37.256Z",
+        "modified": "2026-10-01T02:34:38.579Z"
+      }
+    },
+    {
+      "path": "/stalvirsio-poreikis",
+      "title": "Aiškus stalviršio poreikis prieš konkretų pasiūlymą",
+      "h1": "Aiškus stalviršio poreikis prieš konkretų pasiūlymą",
+      "canonical": "https://akmenas.lt/stalvirsio-poreikis",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 130,
+      "anchors": 21,
+      "images": 1
+    },
+    {
+      "path": "/kontaktai",
+      "title": "Kontaktai ir jūsų stalviršio klausimas",
+      "h1": "Kontaktai ir jūsų stalviršio klausimas",
+      "canonical": "https://akmenas.lt/kontaktai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 108,
+      "anchors": 24,
+      "images": 0
+    },
+    {
+      "path": "/apie-projekta",
+      "title": "Apie akmenas.lt projektą",
+      "h1": "Apie akmenas.lt projektą",
+      "canonical": "https://akmenas.lt/apie-projekta",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 151,
+      "anchors": 22,
+      "images": 0
+    },
+    {
+      "path": "/redakcija",
+      "title": "MB Pinet redakcija ir turinio metodika",
+      "h1": "MB Pinet redakcija ir turinio metodika",
+      "canonical": "https://akmenas.lt/redakcija",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ProfilePage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 207,
+      "anchors": 21,
+      "images": 0
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "title": "Informacinio projekto naudojimo sąlygos",
+      "h1": "Informacinio projekto naudojimo sąlygos",
+      "canonical": "https://akmenas.lt/naudojimo-salygos",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 173,
+      "anchors": 22,
+      "images": 0
+    },
+    {
+      "path": "/privatumas",
+      "title": "Privatumo informacija vietiniam pilotui",
+      "h1": "Privatumo informacija vietiniam pilotui",
+      "canonical": "https://akmenas.lt/privatumas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 351,
+      "anchors": 23,
+      "images": 0
+    }
+  ],
+  "externalUrls": [
+    "https://www.naturalstoneinstitute.org/consumers/care/",
+    "https://www.cosentino.com/silestone/maintenance/",
+    "https://www.laminam.com/en/cleaning-and-maintenance/",
+    "https://assetstools.cosentino.com/api/v1/bynder/doc/9B9DD94B-E490-48E0-9AC2D9110A2FA4B1/integrity-installation-manual-en-es-fr-it-nl-se-de-pt.pdf",
+    "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng"
+  ],
+  "urlVariants": {
+    "slash": {
+      "status": 308,
+      "location": "/gidai"
+    },
+    "query": {
+      "status": 200,
+      "canonical": "https://akmenas.lt/gidai"
+    }
+  },
+  "findings": []
+}

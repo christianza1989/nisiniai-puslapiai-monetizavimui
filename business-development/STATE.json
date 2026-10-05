@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "createdOn": "2026-10-01",
+  "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
+  "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
+  "connectionEvidence": "CONNECTION.json",
+  "lastResearchAt": "2026-10-05T07:34:33Z",
+  "lastResearchDateLocal": "2026-10-05",
+  "lastResearchFile": "research/2026-10-05-accounting-input/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-05-accounting-input/QA.json",
+  "lastCycleOutcome": "evidence_only_no_new_proposal",
+  "lastNotifiedIdeaIds": [
+    "BDEV-0002",
+    "BDEV-0003"
+  ],
+  "lastNotifiedExperimentId": "BDEV-0003-P2",
+  "notifiedExperimentIds": [
+    "BDEV-0003-P1",
+    "BDEV-0003-P2"
+  ],
+  "nextIdeaNumber": 4,
+  "ownerVision": {
+    "ideaId": "BDEV-0003",
+    "file": "VISION.md",
+    "receivedOn": "2026-10-01",
+    "source": "Direct owner message in this registry chat",
+    "mainDomain": "verslomatika.lt",
+    "direction": "Four customer paths: own-domain audit, prepared business purchase, own-idea creation, selected available-domain business; shared multi-business management",
+    "status": "discussing",
+    "autonomyRequirement": {
+      "status": "owner_confirmed",
+      "confirmedOn": "2026-10-01",
+      "source": "Direct follow-up owner message in this registry chat",
+      "scope": "Strategic operating requirement: agents plan and execute niche businesses, create missing tools, source fulfilment partners and automate accounting preparation; owner approves new business ideas rather than routine tasks",
+      "accountingTarget": "Reconciled originals, document and payment links, summaries, supported accounting export and specific unresolved exceptions for the actual accountant",
+      "implementationEvidence": "Requirement recorded in VISION.md; no new operational runtime implemented by this update"
+    },
+    "implementationApprovalSource": null,
+    "implementationApprovalScope": null
+  },
+  "pendingOwnerDecisions": [
+    {
+      "id": "BDEV-0002",
+      "status": "proposed",
+      "approvalSource": null,
+      "approvalScope": null
+    },
+    {
+      "id": "BDEV-0003",
+      "experimentId": "BDEV-0003-P1",
+      "status": "proposed",
+      "file": "research/2026-10-01-first-path/PILOT.md",
+      "requestedScope": "Up to 8 agent-work hours for a private local single-process blueprint prototype with two synthetic cases; no new subscriptions or live sales",
+      "approvalSource": null,
+      "approvalScope": null
+    },
+    {
+      "id": "BDEV-0003",
+      "experimentId": "BDEV-0003-P2",
+      "status": "proposed",
+      "file": "research/2026-10-03-transfer/PILOT.md",
+      "requestedScope": "Up to 4 agent-work hours in an isolated private local lab: synthetic two-site leads/interest export and restore with tenant exclusion checks; no shared runtime, actual data, accounts, DNS or subscriptions",
+      "approvalSource": null,
+      "approvalScope": null
+    }
+  ],
+  "researchContinuity": {
+    "completed": "Three VMI primary HTML sources examined for i.SAF suitability as an accounting input. Payment data optional, e-invoice issuance differs by entity type, and SVS Lithuania register-reporting exception is explicitly stated. Actual MB Pinet VAT/SVS status unknown. Existing VISION/ARCHITECTURE already require originals, payment reconciliation and entity-specific adapter rules. Four future synthetic cases described, not executed; no new proposal/runtime. Latest accessible owner messages reviewed in root/core; pending scopes unchanged. Dovanos123 reports belong to other executors; histories preserved.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision",
+    "nextCandidateQuestion": "Review direct owner decisions first. Resume only explicitly approved work. Otherwise select one concrete demand or monetization question in an existing niche, with potential to change its experiment decision; avoid repeating generic supplier and accounting checklists. Preserve metalo-tvoros deferral and core executor ownership.",
+    "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
+    "executionScope": "Research and private registry only; BDEV-0003-P1 and P2 remain proposed. Strategic autonomy direction does not approve these experiment scopes; no local export/restore prototype executed"
+  },
+  "approvedWork": [
+    {
+      "id": "BDEV-0001",
+      "executor": "01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5",
+      "status": "implemented",
+      "implementationStage": "implemented_local_increment",
+      "scope": "Private local core increment only",
+      "executorReceiptReviewedOn": "2026-10-01",
+      "evidence": "../research/facebook-module-2026-10-01/QA.md",
+      "notVerified": [
+        "Live collector and Page access",
+        "Live send and reconciliation",
+        "Retention and continuous runner",
+        "Actual customer demand or profit"
+      ]
+    }
+  ],
+  "scope": "Private business-development registry; no blanket permission for proposed changes"
+}

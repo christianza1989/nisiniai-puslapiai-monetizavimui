@@ -1,0 +1,9 @@
+{
+  "version":1,
+  "checkedAt":"2026-10-03T14:07:33Z",
+  "scope":"Research and proposed experiment only",
+  "checks":{"jsonRecordsParsed":3,"sourcesJsonValid":true,"stateJsonValid":true,"qaJsonValid":true,"registryLocalMarkdownReferencesChecked":80,"brokenReferences":0,"pendingDecisionsAllProposed":3,"nextIdeaNumberUnchanged":4,"openedPrimaryHtmlPages":3,"existingPackageParsed":true,"observedPackagePages":12,"observedPackageUniqueMediaPaths":20,"observedPackageUniqueSiteIds":1,"newIdeaIdsAllocated":0,"syntheticExportRestoreScenariosExecuted":0},
+  "outcome":"new_proposed_experiment_BDEV-0003-P2",
+  "limits":["Read-only inspection is not a transfer test","No actual leak or customer data claimed","Initial guessed paths corrected using file inventory; no full repo audit","Existing M9/vision experiment refined, not duplicated as a new platform module","Public core/site/shared files untouched while three-site and learning workstreams active"],
+  "actions":{"purchases":0,"subscriptionsAdded":0,"liveDataRead":0,"accountChanges":0,"dnsChanges":0,"customerOrSupplierMessages":0,"formsSubmitted":0,"runtimeChanges":0,"siteChanges":0}
+}

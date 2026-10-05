@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-01T03:30:36.776Z",
+  "shared": true,
+  "recipient": "info@pinet.lt",
+  "evidence": {
+    "hostinger-smtp-verification": {
+      "date": "2026-09-30T08:47:49.594Z",
+      "tlsVerified": true,
+      "authenticated": true,
+      "acceptedBySmtp": true,
+      "testId": "4d94fcc1-3195-481d-8b03-74039afaab4b",
+      "recipient": "info@pinet.lt"
+    },
+    "hostinger-inbox-verification": {
+      "date": "2026-09-30T09:51:39.377Z",
+      "tlsVerified": true,
+      "imapAuthenticated": true,
+      "mailbox": "INBOX",
+      "testId": "d2fe704c-012a-4489-b829-d674483d4b27",
+      "received": true
+    },
+    "niche-form-verification": {
+      "date": "2026-09-30T09:51:39.414Z",
+      "siteId": "traktoriupadangos",
+      "sourcePath": "/gidas/traktoriaus-padangu-zymejimas",
+      "leadId": "d2fe704c-012a-4489-b829-d674483d4b27",
+      "durableStored": true,
+      "smtpAccepted": true,
+      "ownInboxReceived": true,
+      "syntheticLeadRemoved": true
+    }
+  },
+  "limits": "Existing unchanged shared recipient/transport evidence 2026-09-30. New akmenas local D1/origin validation has independent evidence. No akmenas production SMTP/INBOX delivery has been tested."
+}

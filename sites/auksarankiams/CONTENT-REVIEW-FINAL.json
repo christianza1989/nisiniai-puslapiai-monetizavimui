@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-01T05:10:43.194Z",
+  "ownerIntervention": "Handyman business direction only, before first completion; no human text/design/qualified approval claimed.",
+  "pages": [
+    {
+      "id": "d5f8275c-97b8-4969-b5dd-44d507d98022",
+      "slug": "",
+      "revisionHash": "07f959925d79242ae0070bbf97c77551dcb0b0dbf7ebda63c1292cb890a53e7c",
+      "approvedRevisionHash": "07f959925d79242ae0070bbf97c77551dcb0b0dbf7ebda63c1292cb890a53e7c",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:46.379Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "950912cb-f046-4e30-80d1-44348a61386c",
+      "slug": "gidai",
+      "revisionHash": "759bcc4e17aa3f307a25ab8056e3048a75dd7fce70c59c3203a9b7390b5c5fa7",
+      "approvedRevisionHash": "759bcc4e17aa3f307a25ab8056e3048a75dd7fce70c59c3203a9b7390b5c5fa7",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:46.646Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+      "slug": "kontaktai",
+      "revisionHash": "67ee271c2f204229b222082281a7a1ca93896136f23578a9aefc538dede78b51",
+      "approvedRevisionHash": "67ee271c2f204229b222082281a7a1ca93896136f23578a9aefc538dede78b51",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:46.923Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "39b932c0-4a4f-4f63-8af4-d1c22c1075c9",
+      "slug": "apie-projekta",
+      "revisionHash": "4e78d0561e4529549aa9a5907407e32c805773891644ed9425d67af8b3a221f4",
+      "approvedRevisionHash": "4e78d0561e4529549aa9a5907407e32c805773891644ed9425d67af8b3a221f4",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:46.985Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "3cbf9d93-b5dc-4dc7-b466-c47eddc618f4",
+      "slug": "redakcija",
+      "revisionHash": "677b7ea92cb23dbdae1a85ab9a71f5f90d1619f6e3b3c3c5aa94f4de4dbd9dfb",
+      "approvedRevisionHash": "677b7ea92cb23dbdae1a85ab9a71f5f90d1619f6e3b3c3c5aa94f4de4dbd9dfb",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:47.049Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "e3549cb0-55f1-4a49-b169-f18aa5fda103",
+      "slug": "naudojimo-salygos",
+      "revisionHash": "6cdce273d206db63eb0e13e37a8f556022c4e670f26ec0485202bb560dc48a7a",
+      "approvedRevisionHash": "6cdce273d206db63eb0e13e37a8f556022c4e670f26ec0485202bb560dc48a7a",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:47.104Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "1f0efe68-e370-4b06-8fa3-db5bcd647576",
+      "slug": "privatumas",
+      "revisionHash": "a4c3483a7cbf526885dab1a5a6fc6f42f164c7a30b013ae9bbe2546b3f831e2d",
+      "approvedRevisionHash": "a4c3483a7cbf526885dab1a5a6fc6f42f164c7a30b013ae9bbe2546b3f831e2d",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:47.169Z",
+      "review": "Checked actual D1 fields, measurement implementation, local-only data path, EDPB rights/principles and explicit unknown launch facts.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "4db76ef4-d1cd-4c0c-97e2-01791d1b31f2",
+      "slug": "baldu-surinkimas",
+      "revisionHash": "a3bbd1d96d65d468178dc200aa83f5c6054794477a098fd89f294d9be168f83f",
+      "approvedRevisionHash": "a3bbd1d96d65d468178dc200aa83f5c6054794477a098fd89f294d9be168f83f",
+      "actor": "codex-demand-page-schema-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:53:28.493Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "09f02778-86e7-41d1-8643-72cf04f5c5cc",
+      "slug": "kabinimo-darbai",
+      "revisionHash": "17f8ea8d7cc2fd982be9382cd611b5aeee09c4828eea168d446ceb0c1a5c326e",
+      "approvedRevisionHash": "17f8ea8d7cc2fd982be9382cd611b5aeee09c4828eea168d446ceb0c1a5c326e",
+      "actor": "codex-demand-page-schema-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:53:28.579Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "5e821e43-6830-455c-b816-b219068a0328",
+      "slug": "smulkus-baldu-pataisymai",
+      "revisionHash": "dc58d434996510c9cbcb80f4cb0e23127b4fc79ba312fe2d8bb3ddadf2f240b9",
+      "approvedRevisionHash": "dc58d434996510c9cbcb80f4cb0e23127b4fc79ba312fe2d8bb3ddadf2f240b9",
+      "actor": "codex-demand-page-schema-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:53:28.657Z",
+      "review": "Checked concrete page intent, MB Pinet contact, honest pilot limits, no invented supplier/client/price/identity, exact live links and media.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "5cd83534-ab8a-45f5-a7f7-c9d2f7aa1262",
+      "slug": "baldu-surinkimo-uzklausa",
+      "revisionHash": "c7efe18a65061a86556cfa561d2cdde91a2651a6a26f7f036a70cd5270c3a743",
+      "approvedRevisionHash": "c7efe18a65061a86556cfa561d2cdde91a2651a6a26f7f036a70cd5270c3a743",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:46.711Z",
+      "review": "Individually read original question, examples/checklist, primary-source scope, unsafe/fulfilment exclusions, rendered body and actual image.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "223dbe27-419c-4136-b273-0c850a8be39c",
+      "slug": "smulkiu-darbu-sarasas",
+      "revisionHash": "1dd4fe48914d7f622b3c2605bf6b1db59171855eabe3072b08c2bdbfa6367b56",
+      "approvedRevisionHash": "1dd4fe48914d7f622b3c2605bf6b1db59171855eabe3072b08c2bdbfa6367b56",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:46.783Z",
+      "review": "Individually read original question, examples/checklist, primary-source scope, unsafe/fulfilment exclusions, rendered body and actual image.",
+      "humanExpertApproval": false
+    },
+    {
+      "id": "4a69ab0c-b4a8-41b0-90dc-10ad4ae6672c",
+      "slug": "darbu-ivertinimas",
+      "revisionHash": "eb4d2e2e8a56c4ebe71755868572aca9cfa6645399a51cd1ca8ff9e5a83966f4",
+      "approvedRevisionHash": "eb4d2e2e8a56c4ebe71755868572aca9cfa6645399a51cd1ca8ff9e5a83966f4",
+      "actor": "codex-handyman-source-review-2026-10-01",
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "approvedAt": "2026-10-01T04:10:46.863Z",
+      "review": "Individually read original question, examples/checklist, primary-source scope, unsafe/fulfilment exclusions, rendered body and actual image.",
+      "humanExpertApproval": false
+    }
+  ],
+  "semanticRepair": "SCHEMA-SEMANTIC-REPAIR.json",
+  "oldApprovalSnapshot": "REJECTED-DIRECTION-2026-10-01/studio.json and package/content-package.json",
+  "privateRevocations": "Current real studio has approval/publishedRevision null for old unrelated pages; all private/revoked URL/media negatives passed."
+}

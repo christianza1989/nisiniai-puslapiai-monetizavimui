@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-01T04:53:28.773Z",
+  "reviewer": "Sequential Codex source review, not an operator/handyman capacity approval",
+  "repairs": [
+    {
+      "id": "4db76ef4-d1cd-4c0c-97e2-01791d1b31f2",
+      "slug": "baldu-surinkimas",
+      "before": {
+        "type": "service",
+        "revisionHash": "fbb198395f6fb7f45982d9e5d18298dfff098c8806cead90fa0a1fa0f91b5ac9",
+        "publishAt": "2026-10-01T04:10:45.174Z"
+      },
+      "change": "Informational need category: shared WebPage graph, no Service/provider promise. Body, media, links and original schedule retained."
+    },
+    {
+      "id": "09f02778-86e7-41d1-8643-72cf04f5c5cc",
+      "slug": "kabinimo-darbai",
+      "before": {
+        "type": "service",
+        "revisionHash": "bd74e32cf2ddcefbe1b45c9ae0fc92fa73d5370d9249098c9c162fc9e22db714",
+        "publishAt": "2026-10-01T04:10:45.174Z"
+      },
+      "change": "Informational need category: shared WebPage graph, no Service/provider promise. Body, media, links and original schedule retained."
+    },
+    {
+      "id": "5e821e43-6830-455c-b816-b219068a0328",
+      "slug": "smulkus-baldu-pataisymai",
+      "before": {
+        "type": "service",
+        "revisionHash": "e79db9a2da74b769455654154328aaea50884779bb3dd58b83f406c4b9d00295",
+        "publishAt": "2026-10-01T04:10:45.174Z"
+      },
+      "change": "Informational need category: shared WebPage graph, no Service/provider promise. Body, media, links and original schedule retained."
+    }
+  ]
+}

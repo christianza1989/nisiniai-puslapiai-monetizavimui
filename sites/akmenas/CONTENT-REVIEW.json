@@ -1,0 +1,78 @@
+{
+  "siteId": "akmenas",
+  "at": "2026-10-01T02:34:39.050Z",
+  "reviewer": "Codex agent",
+  "humanApproval": false,
+  "specs": [
+    {
+      "slug": "",
+      "intent": "Nuo ko pradėti renkantis akmens stalviršį virtuvei?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Inspected topic illustration"
+    },
+    {
+      "slug": "gidai",
+      "intent": "Kur rasti atsakymą apie stalviršio medžiagą, užklausą ar priežiūrą?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Inspected topic illustration"
+    },
+    {
+      "slug": "gidas/stalvirsiu-medziagu-palyginimas",
+      "intent": "Kaip palyginti stalviršio medžiagas pagal savo kasdienybę?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Inspected topic illustration"
+    },
+    {
+      "slug": "gidas/pasiruosimas-stalvirsio-uzklausai",
+      "intent": "Kokią informaciją pateikti, kad stalviršio poreikis būtų suprantamas?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Inspected topic illustration"
+    },
+    {
+      "slug": "gidas/akmens-stalvirsio-prieziura",
+      "intent": "Kaip saugiai prižiūrėti turimą stalviršį ir kada sustoti?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Inspected topic illustration"
+    },
+    {
+      "slug": "stalvirsio-poreikis",
+      "intent": "Ką reiškia poreikio užklausa šiame projekte?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Inspected topic illustration"
+    },
+    {
+      "slug": "kontaktai",
+      "intent": "Kaip pateikti klausimą ar poreikio aprašą projekto operatoriui?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Text-focused page; image would add decoration without helping the reader."
+    },
+    {
+      "slug": "apie-projekta",
+      "intent": "Kas yra akmenas.lt ir ką šiuo metu jis siūlo?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Text-focused page; image would add decoration without helping the reader."
+    },
+    {
+      "slug": "redakcija",
+      "intent": "Kaip rengiamas, peržiūrimas ir taisomas šio projekto turinys?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Text-focused page; image would add decoration without helping the reader."
+    },
+    {
+      "slug": "naudojimo-salygos",
+      "intent": "Kokiomis sąlygomis naudojama informacija ir poreikio forma?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Text-focused page; image would add decoration without helping the reader."
+    },
+    {
+      "slug": "privatumas",
+      "intent": "Kokius duomenis saugo ši peržiūra ir kokios jos ribos?",
+      "review": "Body individually reviewed against current primary sources and actual phase-1 capability.",
+      "image": "Text-focused page; image would add decoration without helping the reader."
+    }
+  ],
+  "privacyLaunchBlockers": [
+    "retention/legal basis/processor transfers/domain legal identifiers"
+  ],
+  "cost": "No new paid SaaS; built-in image generation usage, exact account charge unavailable."
+}

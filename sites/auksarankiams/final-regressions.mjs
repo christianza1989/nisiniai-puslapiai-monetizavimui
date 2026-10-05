@@ -1,0 +1,7 @@
+import{spawnSync}from'node:child_process';import{readFile,writeFile,readdir}from'node:fs/promises';import path from'node:path';
+const cwd=path.resolve(import.meta.dirname,'../../output/auksarankiams-production'),pkg=JSON.parse(await readFile(path.join(cwd,'lib/generated/content-packages.json'))),checks=[];let log='';
+for(const [name,args,extra]of [['core',['--test',...['content-package','niche-links','niche-media','niche-schema','smtp-protocol'].map(n=>'tests/'+n+'.test.mjs')],{}],...pkg.map(p=>['seo-'+p.siteId,['tests/seo-core-smoke.mjs'],{SEO_SMOKE_SITE_ID:p.siteId,SEO_SMOKE_BASE_URL:'http://127.0.0.1:8890'}])]){
+ const actualArgs=name==='core'?['--test',...(await readdir(path.join(cwd,'tests'))).filter(f=>f.endsWith('.test.mjs')).map(f=>'tests/'+f)]:args;
+ const r=spawnSync(process.execPath,actualArgs,{cwd,env:{...process.env,...extra},windowsHide:true,encoding:'utf8',timeout:60000});log+='\nCOMMAND '+name+' '+actualArgs.join(' ')+'\n'+r.stdout+r.stderr;checks.push({name,args:actualArgs,exit:r.status,error:r.error?.message});if(r.status!==0){await writeFile(path.join(import.meta.dirname,'qa/REGRESSION-FINAL.log'),log);console.log(log.slice(-3000));throw Error('Failed '+name);}
+}
+await writeFile(path.join(import.meta.dirname,'qa/REGRESSION-FINAL.log'),log);await writeFile(path.join(import.meta.dirname,'qa/REGRESSION-VERIFICATION.json'),JSON.stringify({at:new Date().toISOString(),cwd,checks,sites:pkg.map(p=>p.siteId),scope:'All six approved packages in final isolated snapshot; shared dist unchanged.'},null,2));console.log(JSON.stringify(checks));

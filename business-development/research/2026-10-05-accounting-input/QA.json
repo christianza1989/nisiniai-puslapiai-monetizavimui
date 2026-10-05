@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-05",
+  "scope": "Private bounded public-source research",
+  "checks": {
+    "jsonRecordsParsed": 3,
+    "registryLocalMarkdownReferencesChecked": 95,
+    "brokenReferences": 0,
+    "openedPrimaryHtmlPages": 3,
+    "documentedFutureCases": 4,
+    "futureCasesExecuted": 0,
+    "newIdeaIdsAllocated": 0,
+    "newExperimentApprovalsFound": 0
+  },
+  "outcome": "evidence_only_no_new_proposal",
+  "limits": [
+    "Company VAT/SVS status not established",
+    "No i.SAF API/schema/account test",
+    "Existing architecture already covers original/payment reconciliation",
+    "Runtime inspection was a bounded text search, not a full audit",
+    "Synthetic acceptance cases described but not executed"
+  ],
+  "actions": {
+    "runtimeChanges": 0,
+    "siteChanges": 0,
+    "financialRecordsAccessed": 0,
+    "messagesSent": 0,
+    "formsSubmitted": 0,
+    "purchases": 0,
+    "newSubscriptions": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0,
+    "ownerNotifications": 0
+  }
+}

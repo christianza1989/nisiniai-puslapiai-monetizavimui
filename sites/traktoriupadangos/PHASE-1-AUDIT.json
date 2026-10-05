@@ -1,0 +1,1377 @@
+{
+  "siteId": "traktoriupadangos",
+  "canonicalHost": "traktoriupadangos.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-09-30T20:21:06.569Z",
+  "evaluator": "Codex agent; scoped professional acceptance review, not certified legal/security audit",
+  "environment": {
+    "preview": "http://127.0.0.1:8787",
+    "canonicalAudit": "http://127.0.0.1:8790",
+    "smtp": false,
+    "voice": false,
+    "commercialDeployment": false,
+    "buildAt": "2026-09-30T18:19:42.588Z"
+  },
+  "version": {
+    "gitHead": "cc8462094a30c443eca8ed463964bd7c9f57610c",
+    "dirtySharedCheckout": true,
+    "packageGeneratedAt": "2026-09-30T18:18:31.178Z",
+    "packageSha256": "cdacd6d13bbd2cbe74791d392ba49687b688fd78443880aa5ddf2ecfa7104f04",
+    "fingerprints": {
+      "lib/niche-schema-core.mjs": "b75bc196b26be60f17146759b51d4108f1878d37107dd7084bfe0d1c527cc016",
+      "lib/niche-seo.ts": "a8047073804d5e1324c84deb375c5877e11d7fd99605e452c31eeedc235b818d",
+      "lib/niche-sites.ts": "c27be6a80c01e4aca5f1a386a7710d09fc8ebf7de5f78c25a790dd88e1e9eafe",
+      "lib/niche-links.mjs": "17e0087bd9b7abf3163801bc70472e94f79754f8baccda12b3d4d02c04e10b10",
+      "lib/niche-media.mjs": "633b3af3b83d84c825022265374084205060e752504df1730527ab50f68f5d61",
+      "components/niche/tractor-site.tsx": "f7dd7a4d8116794f7cf73478e355a03b040ea2110d9f35570aec4012facc5712",
+      "components/niche/tractor-site.module.css": "5c471b694ab86e4fa22cedd8ec6ce7cf6281a8391cccfb610cb4df1ef5cd45dc",
+      "components/niche/generic-site.tsx": "bab1edc0550f9caa6a59af89264d4637fbe01b07af39ca5ce403a46dd71d86e4",
+      "components/niche/article-meta.tsx": "0a0f1e297fbd9c72ac9fa060df604c2ff12b29536465f4f51eb9a3d15fe8205f",
+      "app/niche/[siteId]/lead/route.ts": "47226be6c1a339a0ec6a01fc97c188d6114cb4410d2528de59d42754c4dd5ff8",
+      "config/niche-network.json": "15a135d464178c97fe4ccca2a82ed54350edb0abbd7d6281b077248170013a87",
+      "scripts/content-package-core.mjs": "a6e4f8ef387a8a4586806c11770e73fa6f410b587a60e8fb31df61a5b5ad0f50"
+    },
+    "studioFingerprints": {
+      "content-studio/src/image-pipeline.mjs": "3eec79329477a390320ec478598f7f31eeb253d406382ec5c3d47f417855c91b",
+      "content-studio/src/model.mjs": "6c26404e7b25a13130e3a5a32388e7706243486da7de2ba93978f641acecf9eb",
+      "content-studio/src/server.mjs": "4e5c3f62c588d68d5159730f91749ea3dbcea8eb759fad4f7fb2c2ad97a1a4cd",
+      "content-studio/src/generator.mjs": "b558a525dc6840226f5c7795cd3267e342f7401ac8aca1845990023807e7a6ee",
+      "content-studio/src/editorial-skill.mjs": "8cf4a146da9e0deb0ab3f39ef58d4f17a9d20f9c6e2b0720e7df5023a020ac05",
+      "content-studio/public/app.js": "2dfd35191ea416ac5c5587b4c7e165b175ee13bfe43ebee990cd0cba894f9801",
+      "content-studio/package-lock.json": "b6f35d55e5a3900649928458e2dba76830734e646157c546a2ff6795f4ec4fc3",
+      "content-studio/schemas/content-package.schema.json": "dfaffd85d31eae0551f6831ba62d0e90010e668e25ad1b669849403037ed6a48",
+      "SKILLS/niche-content-planner/references/media-workflow.md": "4051cd8d76bad87beb6a7a699694d1c3685844da39e224b2e73ea8a37ae69cc0",
+      "MEDIA_CORE.md": "d15227664a9f3a7ebb4f712da02cfffe77121806693c322e5bd129c9f6f871a0"
+    },
+    "instructionFingerprints": {
+      "AGENTS.md": "f1b575f1ad6663d94dbf5ca2c26f0091b63ebb5ec89e021d42061afe18026dd0",
+      "START_HERE.md": "19e63f70b9ea7630f7c780b90aa85fa6f629faeaa9f9c93664fade3c1c7d1134",
+      "CORE_BUILD_CONTRACT.md": "c77e89e53e1d22da868f08ff3ab23fa74ba7037bc20286085d9b8e1f66ee0e8f",
+      "AUTONOMY_BENCHMARK.md": "1c4fa5729b86325e4bbf8ba216c222806e61186879a350ec5ebef6f7722b317c",
+      "MEDIA_CORE.md": "d15227664a9f3a7ebb4f712da02cfffe77121806693c322e5bd129c9f6f871a0",
+      "SEO_GEO_CORE.md": "58ef11a3f79e1e854a699a8b2c4b54cd81cd4c3c4d21c6325c959e09591288d5",
+      "MAIL_CORE.md": "087270ff6e004024a31f5f82fe1a0411e75790f4c098661e56c9a3ffadde3c9e",
+      "NETWORK_LINKING.md": "ce9049db57da9618e034d28a8f5099487082c5d7b3aa638c1619b62447ef28cb",
+      "SKILLS/README.md": "54ae511d31c735cdc6019609cd62586f1dec096de8d840f2b511000c314e95d4",
+      "SKILLS/niche-site-audit/SKILL.md": "98aae35f15b8e0bec3bda7091e1ef71b9f405893bcbb904cb28afaec1a2cd774",
+      "SKILLS/niche-site-audit/references/checklist.md": "3e54664a128c1cba1cd65de0165441e33b8ccafbcafa3f5fbede860116472c5c",
+      "SKILLS/niche-site-audit/references/report-contract.md": "42905afa186d99d70085d983e93d02c22f356e9d736109904ab137c673441cd5",
+      "SKILLS/niche-site-audit/references/accessibility-verification.md": "90d0283e7d5dc6c39a4c11b86edea3f1b10c119d945af0f9a057ca49b3ce6de7",
+      "SKILLS/niche-site-audit/scripts/init-audit.mjs": "a2b5912ed0ab3242610f2d3d780a0156bdd9f7183a6779298553c714e951d1e0",
+      "SKILLS/niche-site-builder/SKILL.md": "efb140ae76bb04bdc46f1e4a0ffa33c0aca3c1933eedf3ab90e99c9b63cf2370",
+      "SKILLS/niche-site-builder/references/design-delivery.md": "7dce3a37c2e54bbc45a9d2902af6e1f10afb62d8c088c443b28b1c8979f6d38d",
+      "SKILLS/niche-site-builder/references/art-direction.md": "ad2fcbc547b55c0e51d0d04ecbf2fb5d46ce15a5fc4beed6f3e94c0f8d8af699",
+      "SKILLS/niche-content-planner/SKILL.md": "67d8f1b4ed45b597068a77113fd4031c6134b8198f7860cd39a764ac9a368574",
+      "SKILLS/niche-content-planner/references/media-workflow.md": "4051cd8d76bad87beb6a7a699694d1c3685844da39e224b2e73ea8a37ae69cc0",
+      "SKILLS/impeccable/SKILL.md": "5cbea796e741615723af1c3e035b62b74599dec349ce2c223c533b435aecdffa",
+      "SKILLS/impeccable/PROJECT_ADAPTATION.md": "4b4919808eb848646e5afa04c39c127791540cab616ecc57b3b19e7bb0fabc0f"
+    }
+  },
+  "inventory": [
+    {
+      "path": "/",
+      "title": "Traktorių padangos: pasirinkimas pagal jūsų techniką",
+      "h1": "Traktorių padangos Pasirinkimas pagal jūsų techniką.",
+      "canonical": "https://traktoriupadangos.lt/",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "articleWords": 21,
+      "anchors": 35,
+      "images": 5
+    },
+    {
+      "path": "/gidas/kaip-issirinkti-traktoriaus-padangas",
+      "title": "Kaip išsirinkti traktoriaus padangas: nuo kokių duomenų pradėti?",
+      "h1": "Kaip išsirinkti traktoriaus padangas: nuo kokių duomenų pradėti?",
+      "canonical": "https://traktoriupadangos.lt/gidas/kaip-issirinkti-traktoriaus-padangas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 470,
+      "anchors": 51,
+      "images": 1,
+      "dates": {
+        "published": "2026-09-30T06:54:08.845Z",
+        "modified": "2026-09-30T18:18:30.984Z"
+      }
+    },
+    {
+      "path": "/gidas/traktoriaus-padangu-zymejimas",
+      "title": "Traktoriaus padangų žymėjimas: kaip skaityti šoninę sienelę?",
+      "h1": "Traktoriaus padangų žymėjimas: kaip skaityti šoninę sienelę?",
+      "canonical": "https://traktoriupadangos.lt/gidas/traktoriaus-padangu-zymejimas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 426,
+      "anchors": 47,
+      "images": 1,
+      "dates": {
+        "published": "2026-09-30T06:54:08.845Z",
+        "modified": "2026-09-30T18:18:31.055Z"
+      }
+    },
+    {
+      "path": "/gidas/radialines-ar-diagonalines-traktoriaus-padangos",
+      "title": "Radialinės ar diagonalinės traktoriaus padangos: kuo skiriasi?",
+      "h1": "Radialinės ar diagonalinės traktoriaus padangos: kuo skiriasi?",
+      "canonical": "https://traktoriupadangos.lt/gidas/radialines-ar-diagonalines-traktoriaus-padangos",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 415,
+      "anchors": 50,
+      "images": 1,
+      "dates": {
+        "published": "2026-09-30T06:54:08.845Z",
+        "modified": "2026-09-30T18:18:31.109Z"
+      }
+    },
+    {
+      "path": "/gidai",
+      "title": "Traktorių padangų pasirinkimo gidai",
+      "h1": "Traktorių padangų pasirinkimo gidai",
+      "canonical": "https://traktoriupadangos.lt/gidai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 123,
+      "anchors": 31,
+      "images": 3
+    },
+    {
+      "path": "/duk",
+      "title": "Dažniausi klausimai apie traktorių padangų pasirinkimą",
+      "h1": "Dažniausi klausimai apie traktorių padangų pasirinkimą",
+      "canonical": "https://traktoriupadangos.lt/duk",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 137,
+      "anchors": 39,
+      "images": 0
+    },
+    {
+      "path": "/kontaktai",
+      "title": "Kontaktai ir traktoriaus padangų poreikio užklausa",
+      "h1": "Kontaktai ir traktoriaus padangų poreikio užklausa",
+      "canonical": "https://traktoriupadangos.lt/kontaktai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 69,
+      "anchors": 31,
+      "images": 0
+    },
+    {
+      "path": "/privatumas",
+      "title": "Privatumo informacija",
+      "h1": "Privatumo informacija",
+      "canonical": "https://traktoriupadangos.lt/privatumas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 315,
+      "anchors": 35,
+      "images": 0
+    },
+    {
+      "path": "/apie-projekta",
+      "title": "Apie traktorių padangų informacijos projektą",
+      "h1": "Apie traktorių padangų informacijos projektą",
+      "canonical": "https://traktoriupadangos.lt/apie-projekta",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 171,
+      "anchors": 35,
+      "images": 0
+    },
+    {
+      "path": "/redakcija",
+      "title": "MB Pinet: turinio autorystė ir redakcinė metodika",
+      "h1": "MB Pinet: turinio autorystė ir redakcinė metodika",
+      "canonical": "https://traktoriupadangos.lt/redakcija",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ProfilePage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 242,
+      "anchors": 38,
+      "images": 0
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "title": "Informacinio projekto naudojimo sąlygos",
+      "h1": "Informacinio projekto naudojimo sąlygos",
+      "canonical": "https://traktoriupadangos.lt/naudojimo-salygos",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 167,
+      "anchors": 34,
+      "images": 0
+    }
+  ],
+  "measurements": {
+    "lighthouseAt": "2026-09-30T18:26:53.938Z",
+    "scores": {
+      "performance": 90,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "formAt": "2026-09-30T17:00:59.251Z",
+    "browserAt": "2026-09-30T18:29:43.720Z"
+  },
+  "verdict": {
+    "local": "NOT_YET_FULLY_ACCEPTED: R2/S2 enlarged text / actual zoom evidence missing",
+    "launch": "NOT_READY: no proven production gates",
+    "demand": "UNMEASURED",
+    "visual": "Coherent industrial candidate with useful article treatments; not an independently proven 10/10 design"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "notes": "Informacinis poreikio pilotas. Forma nėra pirkimas ar tinkamumo patvirtinimas; nėra kainų, atsargų, katalogo ar tiekimo pažado.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available; no fake commerce, stock or supplier claim.",
+      "status": "PASS",
+      "notes": "Informacinis poreikio pilotas. Forma nėra pirkimas ar tinkamumo patvirtinimas; nėra kainų, atsargų, katalogo ar tiekimo pažado.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "notes": "Tikras domenas nepaleistas; organinio srauto, kvalifikuotų klientų užklausų ir jų vertės duomenų nėra. Balsas išjungtas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos.md"
+      ]
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "notes": "MB Pinet / info@pinet.lt sutampa pakete, HTML, Organization ir bendro gavėjo konfigūracijoje. Traktorių nišai telefono, adreso, juridinio kodo ar eksperto biografijos nepriskirta.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/config/niche-network.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md"
+      ]
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "notes": "MB Pinet / info@pinet.lt sutampa pakete, HTML, Organization ir bendro gavėjo konfigūracijoje. Traktorių nišai telefono, adreso, juridinio kodo ar eksperto biografijos nepriskirta.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/config/niche-network.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md"
+      ]
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "notes": "Savininkas patvirtino pavadinimą ir paštą, bet šios nišos tikslūs juridiniai rekvizitai, registracijos/DNS valdymas ir atsakingas užklausų apdorojimas nepatvirtinti.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md"
+      ]
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "notes": "300 URL ribotas CDX mėginys, 4 HTML mėginiai, 3 skaitomi. Naujausias 2026 mėginys neįvertinamas; nepriskirta neegzistuojanti švari istorija.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/history/ASSESSMENT.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/history/audit.json"
+      ]
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "notes": "10 peržiūrėtų sprendimų: dabartinis root paliekamas, katalogas ir neištirti seni ketinimai atidedami, nereikšmingi keliai neatkuriami; automatinio homepage redirect nėra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/history/url-decisions.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/history/ASSESSMENT.md"
+      ]
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "NA",
+      "notes": "Individualių istorinių 301 šiame pilote neįgyvendinta. Bendras /gidai/ → /gidai normalizavimas tikrintas O1; atidėtos istorijos hipotezės nėra veikiantys redirects.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/history/url-decisions.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey.",
+      "status": "PASS",
+      "notes": "Vietinių kategorijų tyrimas ir tarptautinių analogų atranka; Agrar-Reifen ir All Terrain realūs desktop/mobile vaizdai. Kitų šaltinių prieigos ribojimai aiškiai įvardyti.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos-research.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-research/agrar-desktop.png",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-research/allterrain-mobile.png"
+      ]
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "notes": "Originalus tekstas ir penkios originalios ImageGen kompozicijos. PNG kilmė, teisių/alt/matmenų/SHA-256 įrašai ir prompt arba aiškiai pažymėti dizaino briefai išsaugoti. 3 naujų vaizdų briefai nelaikomi pažodiniu generavimo promptu. Nepageidaujami generatoriaus ženkleliai pašalinti; redakcinė metodika atvira. Diagramą sudaro patvirtintas Michelin paaiškinimas, ne generuota techninė geometrija.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/MEDIA-2026-09-30.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media-prompts-2026-09-30.json"
+      ]
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "notes": "URL turi skirtingus klausimus; sezonas, išskirtinumas ir paklausa laikomi hipotezėmis. Nėra miestų/sinonimų doorway puslapių.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage and guide have a coherent niche-specific identity, rhythm and meaningful imagery.",
+      "status": "PASS",
+      "notes": "Sava įrangos ekspozicijos kryptis, tipiška šios nišos padangos medžiaga, žymėjimo raktas ir praktinis ruošinys. Peržiūrėtas homepage, trys gidai, jų vidurys/pabaiga. Vizualinis sprendimas agento; ankstesnis 25/40 baseline nepriklausomai iš naujo neįvertintas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-home-desktop.jpg",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-guide-1-desktop.jpg"
+      ]
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "notes": "Sava įrangos ekspozicijos kryptis, tipiška šios nišos padangos medžiaga, žymėjimo raktas ir praktinis ruošinys. Peržiūrėtas homepage, trys gidai, jų vidurys/pabaiga. Vizualinis sprendimas agento; ankstesnis 25/40 baseline nepriklausomai iš naujo neįvertintas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-home-desktop.jpg",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-guide-1-desktop.jpg"
+      ]
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "notes": "Originalus tekstas ir penkios originalios ImageGen kompozicijos. PNG kilmė, teisių/alt/matmenų/SHA-256 įrašai ir prompt arba aiškiai pažymėti dizaino briefai išsaugoti. 3 naujų vaizdų briefai nelaikomi pažodiniu generavimo promptu. Nepageidaujami generatoriaus ženkleliai pašalinti; redakcinė metodika atvira. Diagramą sudaro patvirtintas Michelin paaiškinimas, ne generuota techninė geometrija.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/MEDIA-2026-09-30.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/media-prompts-2026-09-30.json"
+      ]
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "notes": "Visi 11 URL pasiekiami iš header, footer, indekso ar prasmingo konteksto. HTTP puslapių ir variantų patikrų, 0 radinių: vietinės nuorodos ir fragmentai turi tikrus tikslus; mobilus meniu ir vietinis CTA išbandyti.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "notes": "Visi 11 URL pasiekiami iš header, footer, indekso ar prasmingo konteksto. HTTP puslapių ir variantų patikrų, 0 radinių: vietinės nuorodos ir fragmentai turi tikrus tikslus; mobilus meniu ir vietinis CTA išbandyti.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "notes": "URL turi skirtingus klausimus; sezonas, išskirtinumas ir paklausa laikomi hipotezėmis. Nėra miestų/sinonimų doorway puslapių.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "notes": "Sava įrangos ekspozicijos kryptis, tipiška šios nišos padangos medžiaga, žymėjimo raktas ir praktinis ruošinys. Peržiūrėtas homepage, trys gidai, jų vidurys/pabaiga. Vizualinis sprendimas agento; ankstesnis 25/40 baseline nepriklausomai iš naujo neįvertintas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-home-desktop.jpg",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-guide-1-desktop.jpg"
+      ]
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "notes": "Sava įrangos ekspozicijos kryptis, tipiška šios nišos padangos medžiaga, žymėjimo raktas ir praktinis ruošinys. Peržiūrėtas homepage, trys gidai, jų vidurys/pabaiga. Vizualinis sprendimas agento; ankstesnis 25/40 baseline nepriklausomai iš naujo neįvertintas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-home-desktop.jpg",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/playwright/tractor-images-guide-1-desktop.jpg"
+      ]
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "PASS",
+      "notes": "Native tuščios formos validacija fokusuoja vardą. HTTP 400/403, honeypot 200, nežinomas host 404, sėkmė 200 su sąžininga vietine žinute ir D1 įrašu; forma neprenumeruoja marketingo.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-form-local.json"
+      ]
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "notes": "Kiekvienas iš 3 gidų perskaitytas atskirai: duomenų rinkimas ir palyginimas; žymėjimo skaitymas ir ruošinys; konstrukcija/PR ir pasirinkimo ribos. Michelin, Trelleborg ir Bridgestone pirminiai šaltiniai. Nėra universalaus slėgio, suderinamumo ar procentinės naudos pažadų. 470/426/415 article žodžių tik inventoriaus skaičius, ne kokybės įrodymas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/scripts/complete-tractor-editorial.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "PASS",
+      "notes": "Kiekvienas iš 3 gidų perskaitytas atskirai: duomenų rinkimas ir palyginimas; žymėjimo skaitymas ir ruošinys; konstrukcija/PR ir pasirinkimo ribos. Michelin, Trelleborg ir Bridgestone pirminiai šaltiniai. Nėra universalaus slėgio, suderinamumo ar procentinės naudos pažadų. 470/426/415 article žodžių tik inventoriaus skaičius, ne kokybės įrodymas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/scripts/complete-tractor-editorial.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "PASS",
+      "notes": "Kiekvienas iš 3 gidų perskaitytas atskirai: duomenų rinkimas ir palyginimas; žymėjimo skaitymas ir ruošinys; konstrukcija/PR ir pasirinkimo ribos. Michelin, Trelleborg ir Bridgestone pirminiai šaltiniai. Nėra universalaus slėgio, suderinamumo ar procentinės naudos pažadų. 470/426/415 article žodžių tik inventoriaus skaičius, ne kokybės įrodymas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/scripts/complete-tractor-editorial.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "notes": "Visi gidų heading/list/source blokai patikrinti realiame HTML ir mobile/desktop; žymėjimo figure, selectable ruošinys ir kiekvieno gido teminis vaizdas matomi. Antraštė/vaizdas desktop yra dviejose kolonose, mobile persirikiuoja.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/tractor-site.tsx"
+      ]
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "notes": "Homepage 5 vaizdai, indeksas 3 teisingos miniatiūros, kiekvienas iš 3 gidų po teminį vaizdą. Šeši FAQ/kontaktų/redakciniai/teisiniai puslapiai turi dokumentuotą teksto išimtį. Realūs variantų HTTP/srcset/Article image ir desktop/mobile pikseliai patikrinti; originalų kilmė bei ribos išsaugotos. Naujas bendras importas patikrintas HTTP/GUI: vienas PNG → penki WebP → vienas puslapio pasirinkimas; privatumas, alpha/EXIF/no-upscale ir 60 ribos ir penkių šeimų eksporto regresijos.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/MEDIA-2026-09-30.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-index-final.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MEDIA_CORE.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/MEDIA-PIPELINE-VERIFICATION.json"
+      ]
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "notes": "Matomas tikras organizacijos vardas MB Pinet ir /redakcija profilis; ProfilePage mainEntity ir Article author/publisher rodo tą pačią Organization. Atvirai aprašyta AI, šaltinių ir agento peržiūros rolė, ribos ir taisymo kontaktas; nevaidintas padangų ekspertas ar žmogaus patvirtinimas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs"
+      ]
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "notes": "Matomas tikras organizacijos vardas MB Pinet ir /redakcija profilis; ProfilePage mainEntity ir Article author/publisher rodo tą pačią Organization. Atvirai aprašyta AI, šaltinių ir agento peržiūros rolė, ribos ir taisymo kontaktas; nevaidintas padangų ekspertas ar žmogaus patvirtinimas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs"
+      ]
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "notes": "Publikavimo ir peržiūros time datetime sutampa su Article published/modified. modified = max(publishAt, konkretaus patvirtinimo approvedAt), nėra per-request datos. Kol svetainė vietinė, pirmasis laikas yra paruošto paketo data, ne buvusio viešo paleidimo įrodymas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/article-meta.tsx"
+      ]
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "notes": "Tikro pirmo deployment/publikavimo datos dar nėra. Prieš pirmą domeno paleidimą pradinė publikavimo data turi būti peržiūrėta per studiją ir perpatvirtintą paketą.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json"
+      ]
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "notes": "Matomas tikras organizacijos vardas MB Pinet ir /redakcija profilis; ProfilePage mainEntity ir Article author/publisher rodo tą pačią Organization. Atvirai aprašyta AI, šaltinių ir agento peržiūros rolė, ribos ir taisymo kontaktas; nevaidintas padangų ekspertas ar žmogaus patvirtinimas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs"
+      ]
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "notes": "Matomas tikras organizacijos vardas MB Pinet ir /redakcija profilis; ProfilePage mainEntity ir Article author/publisher rodo tą pačią Organization. Atvirai aprašyta AI, šaltinių ir agento peržiūros rolė, ribos ir taisymo kontaktas; nevaidintas padangų ekspertas ar žmogaus patvirtinimas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs"
+      ]
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "PASS",
+      "notes": "Pataisos atliktos per studijos editPage/approvePage/export ir import/compile; revisionHash neklastotas. Patvirtinta nekintama versija izoliuota nuo naujo juodraščio; 14 studijos ir 19 core testų praėjo. Išliko 3 kitų nišų paketai.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/scripts/complete-tractor-editorial.mjs",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/generated/content-packages.json"
+      ]
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "notes": "11 tikrų puslapių: vienas H1, savas title/description, lt kalba, canonical; heading seka, informatyvus vaizdų alt, OG/Twitter metadata ir realus teminis vaizdas. Dekoratyvios miniatiūros šalia pilno tekstinio link pavadinimo turi tuščią alt, kad screen reader nekartotų turinio.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/[[...slug]]/page.tsx"
+      ]
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content.",
+      "status": "PASS",
+      "notes": "11 tikrų puslapių: vienas H1, savas title/description, lt kalba, canonical; heading seka, informatyvus vaizdų alt, OG/Twitter metadata ir realus teminis vaizdas. Dekoratyvios miniatiūros šalia pilno tekstinio link pavadinimo turi tuščią alt, kad screen reader nekartotų turinio.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/[[...slug]]/page.tsx"
+      ]
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "notes": "Realus nežinomas URL ir vidinis /niche/ adresas grąžina 404 be homepage canonical; būsimų/privatų tikslų neatskleidimas tikrintas core ir SEO smoke.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-seo-traktoriupadangos.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log"
+      ]
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "notes": "JSON-LD iš realaus public projection: Organization/WebSite/WebPage, AboutPage, ContactPage, ProfilePage, 3 Article ir BreadcrumbList. Matomas 3 žingsnių gido kelias sutampa su schema. Product/Offer/reitingų/LocalBusiness imitacijų nėra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log"
+      ]
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "notes": "JSON-LD iš realaus public projection: Organization/WebSite/WebPage, AboutPage, ContactPage, ProfilePage, 3 Article ir BreadcrumbList. Matomas 3 žingsnių gido kelias sutampa su schema. Product/Offer/reitingų/LocalBusiness imitacijų nėra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log"
+      ]
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "notes": "JSON-LD iš realaus public projection: Organization/WebSite/WebPage, AboutPage, ContactPage, ProfilePage, 3 Article ir BreadcrumbList. Matomas 3 žingsnių gido kelias sutampa su schema. Product/Offer/reitingų/LocalBusiness imitacijų nėra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log"
+      ]
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "notes": "Google Rich Results / URL Inspection gyvo domeno rezultato nėra. Vietinis JSON parsing ir semantinis auditas nėra šių Google patikrų pakaitalas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "notes": "Visi 11 URL pasiekiami iš header, footer, indekso ar prasmingo konteksto. HTTP puslapių ir variantų patikrų, 0 radinių: vietinės nuorodos ir fragmentai turi tikrus tikslus; mobilus meniu ir vietinis CTA išbandyti.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "notes": "Vienas dueRevision/publicNichePages/projection valdo HTML, links, schema, sitemap ir LLM. Testai apima laiką, hash, revocation, host, neegzistuojantį ID ir kito domeno deployment. networkLiveDomains tuščias, todėl tarp-nišų redakcinių nuorodų nėra. Draft GUI klauso tik 127.0.0.1, turi noindex/no-store ir nėra viešame pakete.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-links.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/config/niche-network.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/src/server.mjs"
+      ]
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "notes": "Pasirinkimo ramstis nukreipia į žymėjimą ir konstrukciją, abu padeda pasiruošti kitam klausimui; /gidai indeksas ir susiję atsakymai veikia. Trust puslapių susiję keliai atskirai parinkti. Nėra all-to-all autoriteto kvotos.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "PASS",
+      "notes": "Matomos contextual HTTPS nuorodos ir šaltinių paneliai pagrindžia konkrečius teiginius. Šaltinių reason turi 2026-09-30 patikrą; pirminiai puslapiai atverti tyrime ir šio audito metu. Šiame turinyje nėra sponsored, UGC ar affiliate nuorodų, todėl tokio rel nepriskirta.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/SOURCE-REVIEW-2026-09-30.md"
+      ]
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "PASS",
+      "notes": "Vienas dueRevision/publicNichePages/projection valdo HTML, links, schema, sitemap ir LLM. Testai apima laiką, hash, revocation, host, neegzistuojantį ID ir kito domeno deployment. networkLiveDomains tuščias, todėl tarp-nišų redakcinių nuorodų nėra. Draft GUI klauso tik 127.0.0.1, turi noindex/no-store ir nėra viešame pakete.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-links.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/config/niche-network.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/src/server.mjs"
+      ]
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "notes": "Matomos contextual HTTPS nuorodos ir šaltinių paneliai pagrindžia konkrečius teiginius. Šaltinių reason turi 2026-09-30 patikrą; pirminiai puslapiai atverti tyrime ir šio audito metu. Šiame turinyje nėra sponsored, UGC ar affiliate nuorodų, todėl tokio rel nepriskirta.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/SOURCE-REVIEW-2026-09-30.md"
+      ]
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "notes": "Live paleidimo metu dar reikia patikrinti footer verslomatika.lt ir kitas išorines paskirties vietas. Footer savininko žyma nėra patvirtinta redakcinė tinklo nuoroda ar šio straipsnio autoriteto įrodymas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/NETWORK_LINKING.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "notes": "Canonical host/path nuoseklus: /gidai/ 308→/gidai, query 200 su /gidai canonical. sitemap tik 11 eligible URL, stabilus meaningful lastmod, robots canonical sitemap. Viešas ir vietinis preview režimas skirti; draft apsaugą užtikrina projection/host, ne robots.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SEO_GEO_CORE.md"
+      ]
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "notes": "Canonical host/path nuoseklus: /gidai/ 308→/gidai, query 200 su /gidai canonical. sitemap tik 11 eligible URL, stabilus meaningful lastmod, robots canonical sitemap. Viešas ir vietinis preview režimas skirti; draft apsaugą užtikrina projection/host, ne robots.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SEO_GEO_CORE.md"
+      ]
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "notes": "Tikro DNS/TLS/CDN ir domeno per-nišos deployment patikros nėra. Local canonical Host proxy nepaverčia localhost viešu domenu.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json"
+      ]
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "notes": "Vienas dueRevision/publicNichePages/projection valdo HTML, links, schema, sitemap ir LLM. Testai apima laiką, hash, revocation, host, neegzistuojantį ID ir kito domeno deployment. networkLiveDomains tuščias, todėl tarp-nišų redakcinių nuorodų nėra. Draft GUI klauso tik 127.0.0.1, turi noindex/no-store ir nėra viešame pakete.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-links.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/config/niche-network.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/src/server.mjs"
+      ]
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "notes": "Vienas dueRevision/publicNichePages/projection valdo HTML, links, schema, sitemap ir LLM. Testai apima laiką, hash, revocation, host, neegzistuojantį ID ir kito domeno deployment. networkLiveDomains tuščias, todėl tarp-nišų redakcinių nuorodų nėra. Draft GUI klauso tik 127.0.0.1, turi noindex/no-store ir nėra viešame pakete.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-links.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/config/niche-network.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/src/server.mjs"
+      ]
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "notes": "Pataisos atliktos per studijos editPage/approvePage/export ir import/compile; revisionHash neklastotas. Patvirtinta nekintama versija izoliuota nuo naujo juodraščio; 14 studijos ir 19 core testų praėjo. Išliko 3 kitų nišų paketai.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/scripts/complete-tractor-editorial.mjs",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/generated/content-packages.json"
+      ]
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "PASS",
+      "notes": "llms.txt/full iš to paties viešo domeno projekcijos turi tikrus URL, MB Pinet, info@pinet.lt, tekstą ir patikrintų šaltinių URL. Atsakymai su ribomis prieinami semantiniame serverio HTML; nėra paslėptų tik modeliui skirtų teiginių. LLM indeksas papildomas, ne AI reitingo garantija.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SEO_GEO_CORE.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-seo.ts"
+      ]
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "notes": "llms.txt/full iš to paties viešo domeno projekcijos turi tikrus URL, MB Pinet, info@pinet.lt, tekstą ir patikrintų šaltinių URL. Atsakymai su ribomis prieinami semantiniame serverio HTML; nėra paslėptų tik modeliui skirtų teiginių. LLM indeksas papildomas, ne AI reitingo garantija.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SEO_GEO_CORE.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-seo.ts"
+      ]
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "notes": "llms.txt/full iš to paties viešo domeno projekcijos turi tikrus URL, MB Pinet, info@pinet.lt, tekstą ir patikrintų šaltinių URL. Atsakymai su ribomis prieinami semantiniame serverio HTML; nėra paslėptų tik modeliui skirtų teiginių. LLM indeksas papildomas, ne AI reitingo garantija.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SEO_GEO_CORE.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-seo.ts"
+      ]
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "PASS",
+      "notes": "Native menu/details/ToC, vietinio fragmento action, tuščios formos focus ir reikalavimai išbandyti; skip-link fokusas patikrintas ankstesniu to paties UI build bandymu. 3px focus, labels, landmarks, alt ir reduced-motion CSS yra; LH a11y 100. Naujas body.press bandymas įrankyje timeout, tai ne patvirtintas svetainės keyboard gedimas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/lighthouse/tractor-images-mobile.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/tractor-site.module.css"
+      ]
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "notes": "320/390/768/1440 reflow, 14px byline/ToC, 44px reading actions, kontrasto poros ir formos/footer siauras maketas patikrinti. Tikras 200% browser zoom bei padidinto teksto elgesys lieka neįrodytas: IAB shortcut nedavė įrodymo, native Chrome bandymas nepatvirtino audito lango/didinimo procento ir buvo sustabdytas savininko fiziniu Esc. Po stop programų įvestis nebetęsta; atkūrimas ir galutinė zoom reikšmė nežinomi. Nežymima PASS dėl 100 Lighthouse.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/CONTRAST-2026-09-30.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/ACCESSIBILITY-VERIFICATION.json"
+      ]
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "PASS",
+      "notes": "Native menu/details/ToC, vietinio fragmento action, tuščios formos focus ir reikalavimai išbandyti; skip-link fokusas patikrintas ankstesniu to paties UI build bandymu. 3px focus, labels, landmarks, alt ir reduced-motion CSS yra; LH a11y 100. Naujas body.press bandymas įrankyje timeout, tai ne patvirtintas svetainės keyboard gedimas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/lighthouse/tractor-images-mobile.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/tractor-site.module.css"
+      ]
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "notes": "1440 desktop, 768 tablet ir 390/320 viewport bandymai su realiomis iliustracijomis; 3 gidų desktop/mobile, 320 žymėjimo ir 4 trust puslapių mobile vaizdai. Horizontalaus overflow nepastebėta. Tai viewport testai, ne fizinių iOS/Android įrenginių patikra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "notes": "320/390/768/1440 reflow, 14px byline/ToC, 44px reading actions, kontrasto poros ir formos/footer siauras maketas patikrinti. Tikras 200% browser zoom bei padidinto teksto elgesys lieka neįrodytas: IAB shortcut nedavė įrodymo, native Chrome bandymas nepatvirtino audito lango/didinimo procento ir buvo sustabdytas savininko fiziniu Esc. Po stop programų įvestis nebetęsta; atkūrimas ir galutinė zoom reikšmė nežinomi. Nežymima PASS dėl 100 Lighthouse.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/CONTRAST-2026-09-30.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/ACCESSIBILITY-VERIFICATION.json"
+      ]
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "notes": "1440 desktop, 768 tablet ir 390/320 viewport bandymai su realiomis iliustracijomis; 3 gidų desktop/mobile, 320 žymėjimo ir 4 trust puslapių mobile vaizdai. Horizontalaus overflow nepastebėta. Tai viewport testai, ne fizinių iOS/Android įrenginių patikra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-browser-local.json"
+      ]
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "PASS",
+      "notes": "Dabartinis LH 12.8.2 mobile production canonical-Host laboratorija su naujais vaizdais. Homepage {\"performance\":90,\"accessibility\":100,\"best-practices\":100,\"seo\":100}, gidas {\"performance\":91,\"accessibility\":100,\"best-practices\":100,\"seo\":100}. 6→4 font requests; naujas 800 px variantas sumažina mobilų failą. LCP home 3.4 s, guide 3.0 s; tai laboratorija, ne field CWV ar 100 garantija. Tikslas >=90 tikrinamas abiem pamatuotiems puslapiams.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/lighthouse/tractor-images-mobile.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/lighthouse/tractor-images-guide-mobile.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/MEDIA-2026-09-30.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md"
+      ]
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "notes": "Dabartinis LH 12.8.2 mobile production canonical-Host laboratorija su naujais vaizdais. Homepage {\"performance\":90,\"accessibility\":100,\"best-practices\":100,\"seo\":100}, gidas {\"performance\":91,\"accessibility\":100,\"best-practices\":100,\"seo\":100}. 6→4 font requests; naujas 800 px variantas sumažina mobilų failą. LCP home 3.4 s, guide 3.0 s; tai laboratorija, ne field CWV ar 100 garantija.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/lighthouse/tractor-images-mobile.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/lighthouse/tractor-images-guide-mobile.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/MEDIA-2026-09-30.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/DESIGN.md"
+      ]
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "notes": "CrUX / produkcinės lauko CWV imties dar nėra; vietinis Lighthouse nėra tokių duomenų pakaitalas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/lighthouse/tractor-images-mobile.json"
+      ]
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "PASS",
+      "notes": "Dabartinis HTTP bandymas: vardas 400, origin 403, 10010 baitų fixed ir chunked 400, honeypot 200, unknown host 404, tinkama forma 200. Į D1 išliko vienas teisingo site/source/status įrašas su SMTP/voice išjungtais; pašalintas tik tas sintetinis ID. Retained limit 10 KB, unretained bounded drain 64 KB; virš jo ryšys gali būti nutrauktas, o ne garantuoti gražų klaidos HTML.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-form-local.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/lead/route.ts",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-interest-tests.log"
+      ]
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "PASS",
+      "notes": "Pakartotinai nesiųsta. 2026-09-30 09:51 UTC ankstesnis tos pačios gavėjo/transporto konfigūracijos marked self-test patvirtino SMTP acceptance ir matching Message-ID Hostinger INBOX atskirai. D1 testas išvalytas. Tai vietinis integravimo, ne dabartinio production delivery įrodymas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/mail/niche-form-verification.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md"
+      ]
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "PASS",
+      "notes": "Pakartotinai nesiųsta. 2026-09-30 09:51 UTC ankstesnis tos pačios gavėjo/transporto konfigūracijos marked self-test patvirtino SMTP acceptance ir matching Message-ID Hostinger INBOX atskirai. D1 testas išvalytas. Tai vietinis integravimo, ne dabartinio production delivery įrodymas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/mail/niche-form-verification.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md"
+      ]
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "notes": "Tikros produkcinės D1 ir sekretų/bindingų, pristatymo, pranešimų recovery/reconciliation ir rate/abuse kontrolės dar neįdiegtos/nepatikrintos. Honeypot/origin/payload ribos nepakeičia production rate limiting.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/lead/route.ts"
+      ]
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "PASS",
+      "notes": "Tikri vietiniai HTTP/D1 testai patvirtino aggregate įvykius, DNT/GPC/bot ir draft/host atmetimą; testinis lead pašalintas, du click skaitiklio testai grąžinti. Saugomi site/day/path/event/count, be cookies/visitorID/IP ar formos teksto; click ≠ received inquiry. Marketingo/subscription/cookie provider nėra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-interest-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/interest-tracking.tsx",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/interest/route.ts",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json"
+      ]
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "PASS",
+      "notes": "Tikri vietiniai HTTP/D1 testai patvirtino aggregate įvykius, DNT/GPC/bot ir draft/host atmetimą; testinis lead pašalintas, du click skaitiklio testai grąžinti. Saugomi site/day/path/event/count, be cookies/visitorID/IP ar formos teksto; click ≠ received inquiry. Marketingo/subscription/cookie provider nėra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-interest-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/interest-tracking.tsx",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/interest/route.ts",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json"
+      ]
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "notes": "Tikras domenas nepaleistas; organinio srauto, kvalifikuotų klientų užklausų ir jų vertės duomenų nėra. Balsas išjungtas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos.md"
+      ]
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "PASS",
+      "notes": "Privatumo tekstas atspindi dabartinius formos/aggregate laukus, operatoriaus paštą, tikslą, teises ir Hostinger notification. Sąlygos skirtos informaciniam pilotui. Nesuformuluoti išgalvoti legalID, retention, transfer ar deletion pažadai; atvirai įvardyti iki production nustatytini faktai. Tai parengtas vietinis notice, ne patvirtinta pilna vieša politika.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/scripts/complete-tractor-editorial.mjs",
+        "https://www.edpb.europa.eu/sme/find-practical-info/faq_en"
+      ]
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "PASS",
+      "notes": "Privatumo tekstas atspindi dabartinius formos/aggregate laukus, operatoriaus paštą, tikslą, teises ir Hostinger notification. Sąlygos skirtos informaciniam pilotui. Nesuformuluoti išgalvoti legalID, retention, transfer ar deletion pažadai; atvirai įvardyti iki production nustatytini faktai. Tai parengtas vietinis notice, ne patvirtinta pilna vieša politika.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/scripts/complete-tractor-editorial.mjs",
+        "https://www.edpb.europa.eu/sme/find-practical-info/faq_en"
+      ]
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "notes": "Prieš tikrų lankytojų duomenis būtina nustatyti legal basis, operatoriaus rekvizitus, processors/recipients/transfers, terminą ir tikrą delete/recovery vykdymą, tada perpatvirtinti notice. Agento GDPR tyrimas šių verslo faktų nesukuria.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json"
+      ]
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "notes": "Tikri vietiniai HTTP/D1 testai patvirtino aggregate įvykius, DNT/GPC/bot ir draft/host atmetimą; testinis lead pašalintas, du click skaitiklio testai grąžinti. Saugomi site/day/path/event/count, be cookies/visitorID/IP ar formos teksto; click ≠ received inquiry. Marketingo/subscription/cookie provider nėra.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-interest-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/interest-tracking.tsx",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/interest/route.ts",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json"
+      ]
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "notes": "Pakete ir approved public išvestyse nėra prisijungimų ar tikrų klientų duomenų; privatūs secrets/D1 ignoruojami Git, studio data neeksportuoja drafts. Tikri host/payload/media/hash neigiami testai praėjo. Tai nagrinėtų viešų kelių ir failų ribų patikra, ne viso repo penetration testas.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/content-packages/traktoriupadangos/content-package.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/traktoriupadangos-html.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/.gitignore",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/.gitignore",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md"
+      ]
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "notes": "Įvertintas no-store/noindex/nosniff klaidų HTML, patvarus įrašymas prieš paštą, mail-failure honest response ir independence nuo voice core. Nėra pilno production rate limiter ar pranešimo retry/recovery; tai U4/X3 launch vartai. Vietinio unread-body 503 sutvarkytas normaliems bounded formos bandymams.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/audits/tractor-form-local.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/app/niche/[siteId]/lead/route.ts"
+      ]
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "notes": "Produkcinės access/backup/restore/incident/abuse kontrolės ir jų bandymų įrodymo nėra. Vietiniai testai ir planavimo dokumentai nėra vykdoma produkcinė operacijų sistema.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md"
+      ]
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "notes": "Shared schema/breadcrumb/dates/author, LLM source URLs ir bendras lead validator yra core; savitas tractor CSS/diagrama/turinys izoliuoti. schemaVersion/fields nekeisti; media riba 60 suderinta modelyje/JSON schemoje/public validatoriuje, penkių šeimų 25 WebP export e2e praėjo; senų ir kitų 3 paketų core/SEO testai praėjo.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-schema-core.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-links.mjs",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/lib/niche-seo.ts",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log"
+      ]
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "PASS",
+      "notes": "19/19 core; 14/14 studio; scorer/initializer 5/5. Ankstesni to paties nepakitusio public source/paketo build EXIT=0, targeted ESLint EXIT=0 ir tsc EXIT=0. SEO smoke visoms 3 nišoms: 11 tractor, 7 greitos, 9 roleta. Naujų dokumentų ir scaffold patikra neapsimeta pakartotiniu runtime/Lighthouse testu.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-core-tests.log",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/studio-tests.log",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/scorer-tests.log",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/NEW-AGENT-READINESS.json",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-seo-traktoriupadangos.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-seo-greitossvetaines.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-seo-roletaiklaipedoje.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-lint.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-audit-types.log",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/output/tractor-full-audit-build.log"
+      ]
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "notes": "AGENTS/START_HERE, builder/planner ir SKILLS README nukreipia į privalomą A–Z priėmimą. CORE_BUILD_CONTRACT nurodo faktines shared realizacijas ir visą pirmą fazę iš vieno sakinio. Bendras initializer kuria 85 UNVERIFIED ir išsaugo esamą auditą; 5 testai praėjo. 4 skills įdiegti junction, 3 niche quick_validate PASS ir 99 vietinės nuorodos patikrintos. 17 nepradėtų briefų kontaktai suderinti. Pirmo naujo agento rezultato protokolas parengtas, bandymas dar nepradėtas. Senas build-tractor bootstrap blokuoja patvirtinto turinio perrašymą.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/START_HERE.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/AGENTS.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SKILLS/niche-site-audit/SKILL.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/CORE_BUILD_CONTRACT.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/AUTONOMY_BENCHMARK.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/NEW-AGENT-READINESS.json"
+      ]
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "notes": "Ši pilna 85 kriterijų ataskaita ir JSON, fingerprint, baseline/remedies, realūs screenshots ir neišspręsti vartai išsaugoti. Scorer nereikalauja dirbtinio 10; local/launch/demand išskirti. Etalonas yra kandidatas iki likusių vartų, ne besąlygiškai domain-ready.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/PHASE-1-AUDIT.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/PHASE-1-AUDIT.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/PHASE-1-AUDIT-SCORE.json"
+      ]
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "notes": "Ši pilna 85 kriterijų ataskaita ir JSON, fingerprint, baseline/remedies, realūs screenshots ir neišspręsti vartai išsaugoti. Scorer nereikalauja dirbtinio 10; local/launch/demand išskirti. Etalonas yra kandidatas iki likusių vartų, ne besąlygiškai domain-ready.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/PHASE-1-AUDIT.json",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/PHASE-1-AUDIT.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/traktoriupadangos/PHASE-1-AUDIT-SCORE.json"
+      ]
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "notes": "Paleidimo vartai dar neįrodyti; svetainė neveikia patvirtintame tikrame domene, pilnos production operacijos ir privatumas nepatvirtinti.",
+      "evidence": [
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MAIL_CORE.md",
+        "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SEO_GEO_CORE.md"
+      ]
+    }
+  ]
+}

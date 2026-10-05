@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-02T06:09:56Z",
+  "scope": "Research and documented future cases, not runtime acceptance",
+  "checks": {
+    "sourcesJsonValid": true,
+    "casesJsonValid": true,
+    "sourceEntries": 7,
+    "openedPrimaryHtmlPages": 5,
+    "parsedSupplierAttachedPdf": 1,
+    "failedManufacturerPdfOpen": 1,
+    "documentedScenarios": 4,
+    "geometryCalculationsChecked": 2,
+    "geometryResultsCm": [535,200],
+    "runtimeScenariosExecuted": 0,
+    "registryLocalMarkdownReferencesChecked": 58,
+    "brokenReferences": 0,
+    "newIdeaIdsAllocated": 0
+  },
+  "evidenceLimits": [
+    "Destination-specific supplier delivery, packaging, price and timing remain unconfirmed",
+    "Product diameter is not actual package size",
+    "One carrier service profile cannot reject all services",
+    "No current Omniva business-route numerical profile accepted",
+    "PDF screenshot calls yielded no inspectable image; no visual PASS claimed",
+    "Initial nonexistent sales-directory lookup corrected to actual sales.py and sales_worker.py",
+    "No complete runtime audit or actual defect claimed"
+  ],
+  "outcome": "evidence_only_no_new_proposal",
+  "coordination": {"coreExecutorThreadId":"01a0f1fa-3e13-7ab0-867b-d0091e73e1b7","handoffSent":true,"scope":"Existing authorised supplier-process evidence; no new implementation mandate"},
+  "actions": {"supplierOrCustomerMessages":0,"formsSubmitted":0,"purchases":0,"subscriptionsAdded":0,"runtimeChanges":0,"dnsChanges":0,"accountChanges":0}
+}

@@ -1,0 +1,76 @@
+{
+  "reviewedAt": "2026-10-01T11:33:35.705Z",
+  "actor": "root AI agent; not owner or engineer approval",
+  "changes": [
+    {
+      "id": "673ecd82-f98b-4fa2-af98-7e6fd6615a3c",
+      "slug": "",
+      "mediaKeys": [
+        "hero",
+        "materials"
+      ],
+      "bodySha256": "984580dfbe98b75014bfe8ff7e52de3aa86936313307b54e31aad26fc462eca5",
+      "bodyChanged": false,
+      "publishAtChanged": false
+    },
+    {
+      "id": "f432760a-5746-4e9f-a3ae-47ceea9ba7ef",
+      "slug": "gidai",
+      "mediaKeys": [
+        "budget",
+        "materials",
+        "measure"
+      ],
+      "bodySha256": "70cf9c1bd5a3e49b7e92286d7bebe8b4c72e3ac1eb57cd11ce3a315caed23e7c",
+      "bodyChanged": false,
+      "publishAtChanged": false
+    },
+    {
+      "id": "461ffd03-404b-4187-849f-7a4fcd809938",
+      "slug": "vidaus-laiptu-irengimas",
+      "mediaKeys": [
+        "hero"
+      ],
+      "bodySha256": "9b417cc139be87ce204ff1ac88fd664306d07b2344fad9fc596d2c62dd4262be",
+      "bodyChanged": false,
+      "publishAtChanged": false
+    },
+    {
+      "id": "80b5feac-482b-4e7a-b2ae-49fc3fb3c754",
+      "slug": "laiptu-kaina",
+      "mediaKeys": [
+        "budget"
+      ],
+      "bodySha256": "5d50f4641ad657cbb2a3fbb35e87eda149dabf5ca9be9668fa7cc0064263bf89",
+      "bodyChanged": false,
+      "publishAtChanged": false
+    },
+    {
+      "id": "2232d1fc-120b-4d78-abb2-17009cccc1ce",
+      "slug": "laiptu-konstrukcijos",
+      "mediaKeys": [
+        "materials"
+      ],
+      "bodySha256": "c4e5bd59fadc3c3964d10d9032af7cbc8a816d0f0caa650df3a479f67f0c268d",
+      "bodyChanged": false,
+      "publishAtChanged": false
+    },
+    {
+      "id": "221b8f30-5f8f-4d1a-a8d4-d96601ac1569",
+      "slug": "laiptu-matavimas",
+      "mediaKeys": [
+        "measure"
+      ],
+      "bodySha256": "86f3b70c25b8e4fa1ca2bf96be04118b57b8023625444553224844a3744e19fe",
+      "bodyChanged": false,
+      "publishAtChanged": false
+    }
+  ],
+  "package": {
+    "path": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\content-studio\\output\\laiptucentras\\content-package.json",
+    "pages": 11,
+    "assets": 19
+  },
+  "historicalAssetsUnchanged": true,
+  "originalsPrivateOrLocalOnly": true
+}

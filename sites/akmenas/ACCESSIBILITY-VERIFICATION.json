@@ -1,0 +1,178 @@
+{
+  "siteId": "akmenas",
+  "at": "2026-10-01T04:02:42.327Z",
+  "packageSha256": "cd725179619baaef8ba022f44964339eab0f4030d0629c9f9113997e7a98214e",
+  "sourceFingerprints": {
+    "components/niche/akmenas-site.tsx": "3f516ab27c08ba033bd0e68fff15dfa43e0289f8003c3ba399e6dcbf3bfaa033",
+    "components/niche/akmenas-site.module.css": "046d5d7be4966010f19a0fbaef01cf196d4cb727e899cfc0ec9a4a0606ebb584",
+    "app/niche/[siteId]/[[...slug]]/page.tsx": "ba0497a9af1f363997ec8072ea7082134e82d689bdf3fd49ab17a344e6d331b7",
+    "content-packages/akmenas/content-package.json": "cd725179619baaef8ba022f44964339eab0f4030d0629c9f9113997e7a98214e"
+  },
+  "base": "http://127.0.0.1:8886",
+  "environment": "Isolated local production build; Codex IAB viewport overrides, simulated desktop/mobile, not physical devices.",
+  "enlargement": {
+    "status": "UNVERIFIED",
+    "mechanism": "No supported real browser zoom or existing text-size control exposed by this browser backend.",
+    "originalZoom": null,
+    "finalZoom": null,
+    "viewportOverrideRestored": true,
+    "reason": "320px reflow and Lighthouse cannot stand in for actual 200% enlargement. No global settings changed."
+  },
+  "viewports": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "contrastRows": [
+    {
+      "usage": "body",
+      "fg": "#29251f",
+      "bg": "#f5f1e9",
+      "ratio": 13.52,
+      "normalTextPass": true
+    },
+    {
+      "usage": "utility",
+      "fg": "#655d52",
+      "bg": "#f5f1e9",
+      "ratio": 5.75,
+      "normalTextPass": true
+    },
+    {
+      "usage": "guide utility",
+      "fg": "#655d52",
+      "bg": "#e8dfd2",
+      "ratio": 4.91,
+      "normalTextPass": true
+    },
+    {
+      "usage": "inline action",
+      "fg": "#87472f",
+      "bg": "#f5f1e9",
+      "ratio": 6.27,
+      "normalTextPass": true
+    },
+    {
+      "usage": "button",
+      "fg": "#f5f1e9",
+      "bg": "#87472f",
+      "ratio": 6.27,
+      "normalTextPass": true
+    },
+    {
+      "usage": "button hover",
+      "fg": "#f5f1e9",
+      "bg": "#693721",
+      "ratio": 8.59,
+      "normalTextPass": true
+    },
+    {
+      "usage": "inquiry body",
+      "fg": "#29251f",
+      "bg": "#e0c5b0",
+      "ratio": 9.27,
+      "normalTextPass": true
+    },
+    {
+      "usage": "field",
+      "fg": "#29251f",
+      "bg": "#fcfaf6",
+      "ratio": 14.61,
+      "normalTextPass": true
+    }
+  ],
+  "keyboard": {
+    "at": "2026-10-01T03:45:08.465Z",
+    "menu": {
+      "focus": "SUMMARY",
+      "open": true,
+      "width": 320
+    },
+    "skip": {
+      "focus": "turinys",
+      "mainTop": 0,
+      "visibleFocus": "rgb(135, 71, 47) solid 3px",
+      "width": 320
+    }
+  },
+  "runtime": {
+    "at": "2026-10-01T03:47:02.552Z",
+    "background": "rgb(245, 241, 233)",
+    "menuOpen": false,
+    "palette": {
+      "--accent": "#87472f",
+      "--ink": "#29251f",
+      "--muted": "#655d52",
+      "--paper": "#f5f1e9",
+      "--soft": "#e8dfd2"
+    },
+    "text": {
+      "body": "17px",
+      "breadcrumb": "13px mobile from CSS",
+      "byline": "13px mobile from CSS"
+    },
+    "touchScope": "Menu, actions, footer links and contents >=44px; brand 32px high, checkbox 21px inside large clickable label; inline prose links are inline-text exceptions.",
+    "viewport": {
+      "dpr": 1,
+      "height": 844,
+      "width": 320
+    }
+  },
+  "form": {
+    "focused": "vardas",
+    "invalid": [
+      {
+        "message": "Please fill out this field.",
+        "name": "name"
+      },
+      {
+        "message": "",
+        "name": "email"
+      },
+      {
+        "message": "Please fill out this field.",
+        "name": "message"
+      },
+      {
+        "message": "Please check this box if you want to proceed.",
+        "name": "consent"
+      }
+    ],
+    "labels": [
+      "Vardas (privaloma)",
+      "El. paštas (privaloma)",
+      "Jūsų situacija ir klausimas (privaloma)",
+      "Svetainė",
+      "Sutinku, kad pateikti duomenys būtų naudojami šiai užklausai apdoroti. Perskaičiau privatumo informaciją."
+    ],
+    "path": "/kontaktai",
+    "scroll": 375,
+    "width": 390
+  },
+  "evidence": [
+    "qa/responsive-evidence.json",
+    "qa/care-capture-state.json",
+    "FINISH-VERDICT.json",
+    "qa/keyboard-final.json",
+    "qa/runtime-a11y.json",
+    "qa/native-form.json"
+  ],
+  "scope": {
+    "narrow": "Homepage, index, form, all three entire guides, source lists, byline, breadcrumb, contents and footer inspected. No horizontal overflow observed in recorded DOM checks.",
+    "touch": "Menu, primary actions, contents and footer routes >=44px. Brand32px and checkbox21px inside a larger clickable label are recorded exceptions; inline text links remain inline. Not a universal target-size conformance claim.",
+    "utility": "Mobile body17px, actions16px, contents15px, source14px, breadcrumb/byline13px. Read at320/390; actual enlargement is still missing.",
+    "motion": "No timed entrance/scroll animations. Source prefers-reduced-motion rule removes the 1px active-button translation. Browser preference emulation not available, so this is source behavior evidence.",
+    "focus": "Menu activated and closed with Enter. Skip link focuses main#turinys with3px accent outline; mainTop0. Native empty form focuses name and exposes required constraints. Contents native details and valid fragment IDs recorded during viewport tests."
+  },
+  "repairs": [
+    "Skip target made focusable with tabIndex=-1.",
+    "768px hero reading order corrected with761–960px stacked grid.",
+    "Invalid/sticky-top care captures discarded and final17 captures independently reopened."
+  ],
+  "limitations": [
+    "No actual200% page/text enlargement; R2/S2 remain UNVERIFIED.",
+    "No physical phone, touch screen, screen reader or WCAG certification.",
+    "Screenshot pixels appear warmer than normative CSS; actual DOM background rgb(245,241,233) matches CSS, cause of capture difference unknown."
+  ]
+}

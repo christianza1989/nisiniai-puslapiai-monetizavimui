@@ -1,0 +1,31 @@
+{
+  "domain": "miniekskavatoriai.lt",
+  "auditCheckedAt": "2026-10-01T11:04:33.679Z",
+  "entries": [
+    {
+      "oldUrl": "http://miniekskavatoriai.lt/",
+      "action": "keep-url-new-content",
+      "targetPath": "/",
+      "reason": "Teminis nuomos/kasimo tęstinumas, originalus dabartinis poreikio testas be seno operatoriaus teiginių",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190717222939/http://miniekskavatoriai.lt/",
+        "https://web.archive.org/web/20220119003659/https://miniekskavatoriai.lt/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://miniekskavatoriai.lt/cdn-cgi/l/email-protection",
+      "action": "remove-no-restore",
+      "reason": "Senas techninis el. pašto utility, neturi dabartinio semantinio tikslo",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20220119012829/https://miniekskavatoriai.lt/cdn-cgi/l/email-protection"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "plannedAction": "remove-404",
+      "actualLocalStatus": 403,
+      "actualLocalReason": "Cloudflare reserved /cdn-cgi path denies access; no redirect or restored content. Ordinary removed/unknown content paths are404."
+    }
+  ]
+}

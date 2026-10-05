@@ -1,0 +1,71 @@
+{
+  "siteId": "akmenas",
+  "at": "2026-10-01T02:34:39.047Z",
+  "private": true,
+  "cluster": "Akmens stalviršio pasirinkimas",
+  "pillar": "gidai",
+  "pages": [
+    {
+      "date": "2026-10-22",
+      "slug": "gidas/stalvirsio-pasiulymo-apimtis",
+      "question": "Kaip palyginti du stalviršio pasiūlymus?",
+      "reason": "Tik atskiras detalesnis realių anonimizuotų pasiūlymų palyginimo pavyzdys papildytų esamą gidą; jei įrodymų nėra, plėsti esamą URL.",
+      "seasonalHook": "",
+      "sources": [
+        "actual vykdytojų pasiūlymų dokumentai su naudojimo teise"
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "slug": "gidas/matinis-ar-poliruotas-stalvirsis",
+      "question": "Kaip vertinti matinę ir poliruotą apdailą?",
+      "reason": "Reikia dviejų konkrečių produktų primary care dokumentų ir tikrų palyginamų pavyzdžių, be bendro atsparumo pažadų.",
+      "seasonalHook": "",
+      "sources": [
+        "Laminam finish care",
+        "Cosentino product-specific finish documentation"
+      ]
+    },
+    {
+      "date": "2026-12-10",
+      "slug": "gidas/stalvirsis-ir-sventinis-gaminimas",
+      "question": "Ką susiruošti stalviršio priežiūrai prieš intensyvesnį gaminimą?",
+      "reason": "Redakcinė gruodžio buitinio naudojimo hipotezė, ne išmatuotas paklausos pikas. Naujas puslapis tik jei atsakymas nedubliuos esamo care; kitaip atnaujinti esamą.",
+      "seasonalHook": "2026 m. gruodžio namų gaminimo planavimo hipotezė",
+      "sources": [
+        "konkrečių gamintojų heat/care guidance"
+      ]
+    },
+    {
+      "date": "2027-01-21",
+      "slug": "gidas/virtuves-salos-stalvirsio-klausimai",
+      "question": "Ką aptarti apie salos kraštus ir atramas?",
+      "reason": "Tik reikalavimų surinkimas, ne savarankiško konstrukcijos projektavimo instrukcija. Reikia produkto installation dokumento ir kompetentingo vykdytojo peržiūros.",
+      "seasonalHook": "",
+      "sources": [
+        "manufacturer worktop installation manuals"
+      ]
+    },
+    {
+      "date": "2027-02-18",
+      "slug": "gidas/plautuve-ir-stalvirsio-planas",
+      "question": "Kokių plautuvės duomenų reikia projektui?",
+      "reason": "Vienas konkretus modelis su patikrintu dokumentu. Bendras checklist jau yra; naujas gidas tik su originalia papildoma nauda.",
+      "seasonalHook": "",
+      "sources": [
+        "actual sink model templates"
+      ]
+    },
+    {
+      "date": "2027-03-18",
+      "slug": "gidas/stalvirsio-keitimo-paruosimas",
+      "question": "Ką surinkti prieš keičiant seną stalviršį?",
+      "reason": "Pavasario atnaujinimo interesas tik hipotezė. Demontavimas, baldų būklė ir įrangos suderinamumas — tik checklist, ne darbų instrukcija.",
+      "seasonalHook": "2027 m. pavasario atnaujinimo planavimo hipotezė",
+      "sources": [
+        "verified installation documents; rights-cleared actual example"
+      ]
+    }
+  ],
+  "publicationRule": "Plan is private; approval, exact revision and publishAt plus deployment required; dates are editorial assumptions."
+}

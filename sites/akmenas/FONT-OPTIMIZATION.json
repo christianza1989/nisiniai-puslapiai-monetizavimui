@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-01T03:03:11.553Z",
+  "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@48,400;48,500&display=swap",
+  "localOnly": true,
+  "files": [
+    {
+      "file": "fraunces-subset-0.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58ni71Ic1qv86Rg.woff2",
+      "bytes": 33840,
+      "sha256": "184902b57a250677248b8103b6adb9ae052691935cf6854ff98df17a689bf4d6"
+    },
+    {
+      "file": "fraunces-subset-1.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58ni71Ic7qv8.woff2",
+      "bytes": 37052,
+      "sha256": "ad12031d69b06dfbdd62d4a748d74d021d8fa404c2e98e7be4c48e91bec0c2c4"
+    }
+  ],
+  "change": "Modern WOFF2 Latin/Lithuanian subsets; @font-face in the scoped module removes a render-blocking stylesheet request; OFL retained."
+}

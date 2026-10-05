@@ -1,0 +1,576 @@
+{
+  "version": 2,
+  "domain": "auksarankiams.lt",
+  "checkedAt": "2026-10-01T03:21:33.855Z",
+  "terms": [
+    "rankdarb",
+    "popier",
+    "sablon"
+  ],
+  "coverage": "records-found",
+  "inventoryComplete": true,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 30,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 30,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": true,
+      "observedRows": 4,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": true,
+      "observedRows": 1,
+      "omitted": 0,
+      "truncated": false
+    }
+  ],
+  "inventory": [
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20160708110934",
+      "capturedAt": "2016-07-08T11:09:34.000Z",
+      "status": 200,
+      "digest": "2EHNPVRV2VYNRB4IMG6WIOIRS3Y3GFZO",
+      "replayUrl": "https://web.archive.org/web/20160708110934/http://www.auksarankiams.lt/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/author/auksarankis/",
+      "path": "/author/auksarankis/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150418",
+      "capturedAt": "2018-06-28T15:04:18.000Z",
+      "status": 200,
+      "digest": "AKO26TRD7X7LS467VJII2EPSGK7UWBV7",
+      "replayUrl": "https://web.archive.org/web/20180628150418/http://www.auksarankiams.lt/author/auksarankis/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/",
+      "path": "/darbui/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628093013",
+      "capturedAt": "2018-06-28T09:30:13.000Z",
+      "status": 200,
+      "digest": "UY252IWZSFYRKCFFESS3PWRU4PHOUPMV",
+      "replayUrl": "https://web.archive.org/web/20180628093013/http://www.auksarankiams.lt/darbui/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/",
+      "path": "/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150502",
+      "capturedAt": "2018-06-28T15:05:02.000Z",
+      "status": 200,
+      "digest": "DARU4M5N744O7C7CIPRNX72V2N5A56FR",
+      "replayUrl": "https://web.archive.org/web/20180628150502/http://www.auksarankiams.lt/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/attachment/elektrinio-greztuvo-dizainas/",
+      "path": "/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/attachment/elektrinio-greztuvo-dizainas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20191209103436",
+      "capturedAt": "2019-12-09T10:34:36.000Z",
+      "status": 200,
+      "digest": "IRIVAEUDHN2M6WKXURJULGXM2LDYHBJ6",
+      "replayUrl": "https://web.archive.org/web/20191209103436/http://www.auksarankiams.lt/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/attachment/elektrinio-greztuvo-dizainas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/attachment/elektrinis-greztuvas/",
+      "path": "/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/attachment/elektrinis-greztuvas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724000056",
+      "capturedAt": "2019-07-24T00:00:56.000Z",
+      "status": 200,
+      "digest": "EYSKKWDWZX42KN63ETOAI6LSXH74CMC4",
+      "replayUrl": "https://web.archive.org/web/20190724000056/http://www.auksarankiams.lt/darbui/akumuliatorinio-ir-elektrinio-greztuvo-gidas/attachment/elektrinis-greztuvas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/",
+      "path": "/darbui/diskinio-pjuklo-pirkimo-vadovas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180626221521",
+      "capturedAt": "2018-06-26T22:15:21.000Z",
+      "status": 200,
+      "digest": "USKBBZCWZOP5F2OXB6SS5NKDP27BIRBZ",
+      "replayUrl": "https://web.archive.org/web/20180626221521/http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/akumuliatorinis-diskinis-pjuklas/",
+      "path": "/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/akumuliatorinis-diskinis-pjuklas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190817112313",
+      "capturedAt": "2019-08-17T11:23:13.000Z",
+      "status": 200,
+      "digest": "EBZCLWSQAGTTPGZPLIU2L6JO2OPC2BG2",
+      "replayUrl": "https://web.archive.org/web/20190817112313/http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/akumuliatorinis-diskinis-pjuklas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/diskinis-pjuklas/",
+      "path": "/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/diskinis-pjuklas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150421",
+      "capturedAt": "2018-06-28T15:04:21.000Z",
+      "status": 200,
+      "digest": "L6LJXG4KSEASJL6GEKESCFBCUHFHYSBS",
+      "replayUrl": "https://web.archive.org/web/20180628150421/http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/diskinis-pjuklas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/elektrinis-diskinis-pjuklas/",
+      "path": "/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/elektrinis-diskinis-pjuklas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190817114216",
+      "capturedAt": "2019-08-17T11:42:16.000Z",
+      "status": 200,
+      "digest": "4P2FA7UQDCTETZ7BTHJES2PH4MBR6MJJ",
+      "replayUrl": "https://web.archive.org/web/20190817114216/http://www.auksarankiams.lt/darbui/diskinio-pjuklo-pirkimo-vadovas/attachment/elektrinis-diskinis-pjuklas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/kombinuotojo-skersinio-pjuklo-pirkimo-vadovas/",
+      "path": "/darbui/kombinuotojo-skersinio-pjuklo-pirkimo-vadovas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150427",
+      "capturedAt": "2018-06-28T15:04:27.000Z",
+      "status": 200,
+      "digest": "ETKVYMQVK4WU4JO7BD23KLW5NLU7IZ6G",
+      "replayUrl": "https://web.archive.org/web/20180628150427/http://www.auksarankiams.lt/darbui/kombinuotojo-skersinio-pjuklo-pirkimo-vadovas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/kombinuotojo-skersinio-pjuklo-pirkimo-vadovas/attachment/skersinis-pjuklas/",
+      "path": "/darbui/kombinuotojo-skersinio-pjuklo-pirkimo-vadovas/attachment/skersinis-pjuklas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724003707",
+      "capturedAt": "2019-07-24T00:37:07.000Z",
+      "status": 200,
+      "digest": "AFCOJIFOPOZSO5QWDKVMEPSTI3SV4G5Q",
+      "replayUrl": "https://web.archive.org/web/20190724003707/http://www.auksarankiams.lt/darbui/kombinuotojo-skersinio-pjuklo-pirkimo-vadovas/attachment/skersinis-pjuklas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/sukamuju-ir-svytuokliniu-irankiu-naudojimo-vadovas/",
+      "path": "/darbui/sukamuju-ir-svytuokliniu-irankiu-naudojimo-vadovas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20170421103150",
+      "capturedAt": "2017-04-21T10:31:50.000Z",
+      "status": 200,
+      "digest": "APBWLQJ423DZ2FVPEBZK5PBLS5SZJHE6",
+      "replayUrl": "https://web.archive.org/web/20170421103150/http://www.auksarankiams.lt/darbui/sukamuju-ir-svytuokliniu-irankiu-naudojimo-vadovas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/sukamuju-ir-svytuokliniu-irankiu-naudojimo-vadovas/attachment/sukamieji-ir-svytuokliniai-irankiai/",
+      "path": "/darbui/sukamuju-ir-svytuokliniu-irankiu-naudojimo-vadovas/attachment/sukamieji-ir-svytuokliniai-irankiai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724000719",
+      "capturedAt": "2019-07-24T00:07:19.000Z",
+      "status": 200,
+      "digest": "V342E3SZNBCP2N3GDZEW3243D6B35R7U",
+      "replayUrl": "https://web.archive.org/web/20190724000719/http://www.auksarankiams.lt/darbui/sukamuju-ir-svytuokliniu-irankiu-naudojimo-vadovas/attachment/sukamieji-ir-svytuokliniai-irankiai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/kontaktai/",
+      "path": "/kontaktai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150522",
+      "capturedAt": "2018-06-28T15:05:22.000Z",
+      "status": 200,
+      "digest": "N4MFFVHKCXXR5TX3XLNBJ7MJKAXECESS",
+      "replayUrl": "https://web.archive.org/web/20180628150522/http://www.auksarankiams.lt/kontaktai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/oro-reguliavimas/",
+      "path": "/oro-reguliavimas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628105431",
+      "capturedAt": "2018-06-28T10:54:31.000Z",
+      "status": 200,
+      "digest": "AKGI5H2VQCJNXZQVWVZCSWIAQ4LIOLXU",
+      "replayUrl": "https://web.archive.org/web/20180628105431/http://www.auksarankiams.lt/oro-reguliavimas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/oro-reguliavimas/dregmes-surinkejai/",
+      "path": "/oro-reguliavimas/dregmes-surinkejai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150432",
+      "capturedAt": "2018-06-28T15:04:32.000Z",
+      "status": 200,
+      "digest": "DC6ESPDOOKTLP3JTHMSA2UHXWACOSG36",
+      "replayUrl": "https://web.archive.org/web/20180628150432/http://www.auksarankiams.lt/oro-reguliavimas/dregmes-surinkejai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/oro-reguliavimas/dregmes-surinkejai/attachment/dregmes-surinkejas/",
+      "path": "/oro-reguliavimas/dregmes-surinkejai/attachment/dregmes-surinkejas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724011007",
+      "capturedAt": "2019-07-24T01:10:07.000Z",
+      "status": 200,
+      "digest": "UBS4SALMEEZBZ5SJUWXJRMSG6G43FIFF",
+      "replayUrl": "https://web.archive.org/web/20190724011007/http://www.auksarankiams.lt/oro-reguliavimas/dregmes-surinkejai/attachment/dregmes-surinkejas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/patarimai/",
+      "path": "/patarimai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628105451",
+      "capturedAt": "2018-06-28T10:54:51.000Z",
+      "status": 200,
+      "digest": "M4VWC55OGPB265ZD62LKXDU34SWC2BEQ",
+      "replayUrl": "https://web.archive.org/web/20180628105451/http://www.auksarankiams.lt/patarimai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/patarimai/naudingi-patarimai-kaip-saugiai-naudoti-elektros-laidus/attachment/elektros-laidai/",
+      "path": "/patarimai/naudingi-patarimai-kaip-saugiai-naudoti-elektros-laidus/attachment/elektros-laidai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724003922",
+      "capturedAt": "2019-07-24T00:39:22.000Z",
+      "status": 200,
+      "digest": "HQNUW5XNU3DY3WOMCLKT4WWLFGBZSU5E",
+      "replayUrl": "https://web.archive.org/web/20190724003922/http://www.auksarankiams.lt/patarimai/naudingi-patarimai-kaip-saugiai-naudoti-elektros-laidus/attachment/elektros-laidai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/sildymas/",
+      "path": "/sildymas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628105526",
+      "capturedAt": "2018-06-28T10:55:26.000Z",
+      "status": 200,
+      "digest": "6HVG7ZZBL2QBMIUWSJRNLUGZZO7O2Q2L",
+      "replayUrl": "https://web.archive.org/web/20180628105526/http://www.auksarankiams.lt/sildymas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/sildymas/garazu-ir-pramoniniu-sildytuvu-pirkimo-vadovas/",
+      "path": "/sildymas/garazu-ir-pramoniniu-sildytuvu-pirkimo-vadovas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150527",
+      "capturedAt": "2018-06-28T15:05:27.000Z",
+      "status": 200,
+      "digest": "OHKJS4NBFYA5CODM3GDPLSTCD4P46P45",
+      "replayUrl": "https://web.archive.org/web/20180628150527/http://www.auksarankiams.lt/sildymas/garazu-ir-pramoniniu-sildytuvu-pirkimo-vadovas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/sildymas/garazu-ir-pramoniniu-sildytuvu-pirkimo-vadovas/attachment/garazu-ir-pramoniniai-sildytuvai/",
+      "path": "/sildymas/garazu-ir-pramoniniu-sildytuvu-pirkimo-vadovas/attachment/garazu-ir-pramoniniai-sildytuvai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724011254",
+      "capturedAt": "2019-07-24T01:12:54.000Z",
+      "status": 200,
+      "digest": "ZRUVYGCNRNA5NOFZ7EECXXGOKXO5UTFA",
+      "replayUrl": "https://web.archive.org/web/20190724011254/http://www.auksarankiams.lt/sildymas/garazu-ir-pramoniniu-sildytuvu-pirkimo-vadovas/attachment/garazu-ir-pramoniniai-sildytuvai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/sildymas/nesiojami-sildytuvai-yra-puikus-budas-neefektyvaus-sildymo-pagerinimui/",
+      "path": "/sildymas/nesiojami-sildytuvai-yra-puikus-budas-neefektyvaus-sildymo-pagerinimui/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724000321",
+      "capturedAt": "2019-07-24T00:03:21.000Z",
+      "status": 200,
+      "digest": "IQX4LWYAQ2UTUSNSCR46X2A7CJOYUIZV",
+      "replayUrl": "https://web.archive.org/web/20190724000321/http://www.auksarankiams.lt/sildymas/nesiojami-sildytuvai-yra-puikus-budas-neefektyvaus-sildymo-pagerinimui/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/sildymas/nesiojami-sildytuvai-yra-puikus-budas-neefektyvaus-sildymo-pagerinimui/attachment/sildytuvai/",
+      "path": "/sildymas/nesiojami-sildytuvai-yra-puikus-budas-neefektyvaus-sildymo-pagerinimui/attachment/sildytuvai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724004512",
+      "capturedAt": "2019-07-24T00:45:12.000Z",
+      "status": 200,
+      "digest": "FZ4TBLB5XC5Z36UEQRTLQ72SY7BBEXEO",
+      "replayUrl": "https://web.archive.org/web/20190724004512/http://www.auksarankiams.lt/sildymas/nesiojami-sildytuvai-yra-puikus-budas-neefektyvaus-sildymo-pagerinimui/attachment/sildytuvai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/valymas/",
+      "path": "/valymas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628105530",
+      "capturedAt": "2018-06-28T10:55:30.000Z",
+      "status": 200,
+      "digest": "YBMOETV3YISXBXZJP24OLWVUFKTZIXY6",
+      "replayUrl": "https://web.archive.org/web/20180628105530/http://www.auksarankiams.lt/valymas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/",
+      "path": "/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150437",
+      "capturedAt": "2018-06-28T15:04:37.000Z",
+      "status": 200,
+      "digest": "CNP35TUEHPBAUUUUMWA5CDAMEAV6AM2A",
+      "replayUrl": "https://web.archive.org/web/20180628150437/http://www.auksarankiams.lt/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/attachment/dulkiu-siurbliai/",
+      "path": "/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/attachment/dulkiu-siurbliai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20191209110552",
+      "capturedAt": "2019-12-09T11:05:52.000Z",
+      "status": 200,
+      "digest": "RWBNIRBE5ORJMX2BIIGZCWQ5GA3N2OVC",
+      "replayUrl": "https://web.archive.org/web/20191209110552/http://www.auksarankiams.lt/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/attachment/dulkiu-siurbliai/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/attachment/dulkiu-siurbliai-2/",
+      "path": "/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/attachment/dulkiu-siurbliai-2/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20190724010959",
+      "capturedAt": "2019-07-24T01:09:59.000Z",
+      "status": 200,
+      "digest": "6QR2ZF5BUZUPBXXF2DVCTLF7EIGS7BFA",
+      "replayUrl": "https://web.archive.org/web/20190724010959/http://www.auksarankiams.lt/valymas/dulkiu-siurblio-pramoniniam-naudojimui-pirkimo-vadovas/attachment/dulkiu-siurbliai-2/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/valymas/vamzdynu-valymas-trys-budai-kaip-atkimsti-uzsikimsusia-kriaukle/",
+      "path": "/valymas/vamzdynu-valymas-trys-budai-kaip-atkimsti-uzsikimsusia-kriaukle/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20180628150532",
+      "capturedAt": "2018-06-28T15:05:32.000Z",
+      "status": 200,
+      "digest": "HSYZC5ETP45KO57Y3VRTEJTZTARN4FW2",
+      "replayUrl": "https://web.archive.org/web/20180628150532/http://www.auksarankiams.lt/valymas/vamzdynu-valymas-trys-budai-kaip-atkimsti-uzsikimsusia-kriaukle/"
+    }
+  ],
+  "roots": [
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20160708110934",
+      "capturedAt": "2016-07-08T11:09:34.000Z",
+      "status": 200,
+      "digest": "2EHNPVRV2VYNRB4IMG6WIOIRS3Y3GFZO",
+      "replayUrl": "https://web.archive.org/web/20160708110934/http://www.auksarankiams.lt/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20170709134441",
+      "capturedAt": "2017-07-09T13:44:41.000Z",
+      "status": 200,
+      "digest": "4HK7ZWXUYPEIYW75FPBT6LLXSWAIUOO5",
+      "replayUrl": "https://web.archive.org/web/20170709134441/http://www.auksarankiams.lt/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20180601214327",
+      "capturedAt": "2018-06-01T21:43:27.000Z",
+      "status": 200,
+      "digest": "ALFP5J5STU5AGERRZAHPUWSVKKIFAZWP",
+      "replayUrl": "https://web.archive.org/web/20180601214327/http://www.auksarankiams.lt/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20190122085418",
+      "capturedAt": "2019-01-22T08:54:18.000Z",
+      "status": 200,
+      "digest": "AZLQU45T6W4JPXX4USVM3PY6FU7VHLQH",
+      "replayUrl": "https://web.archive.org/web/20190122085418/http://www.auksarankiams.lt/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20191209103459",
+      "capturedAt": "2019-12-09T10:34:59.000Z",
+      "status": 200,
+      "digest": "JFNTQAQRFTZRHIIVABNLF6IWMXDKK5O5",
+      "replayUrl": "https://web.archive.org/web/20191209103459/http://www.auksarankiams.lt/"
+    }
+  ],
+  "snapshots": [
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "timestamp": "20191209103459",
+      "replayUrl": "https://web.archive.org/web/20191209103459/http://www.auksarankiams.lt/",
+      "ok": true,
+      "title": "Naudingų patarimų portalas | Auksarankiams.lt",
+      "headings": [
+        "Auksarankiams.lt"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 282,
+      "htmlSha256": "aeca2d2520dc7c496f7823180560f1bd6687561168072ffea838f97728535657",
+      "resolvedUrl": "https://web.archive.org/web/20191209103459id_/http://www.auksarankiams.lt/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "timestamp": "20160708110934",
+      "replayUrl": "https://web.archive.org/web/20160708110934/http://www.auksarankiams.lt/",
+      "ok": true,
+      "title": "Naudingų patarimų portalas | Auksarankiams.lt",
+      "headings": [
+        "Auksarankiams.lt"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 254,
+      "htmlSha256": "ab1bb3b5e47c895109cb97572ff3970ab9fc400478fcf79bf492fdab268508cc",
+      "resolvedUrl": "https://web.archive.org/web/20160708110934id_/http://www.auksarankiams.lt/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/darbui/",
+      "timestamp": "20180628093013",
+      "replayUrl": "https://web.archive.org/web/20180628093013/http://www.auksarankiams.lt/darbui/",
+      "ok": true,
+      "title": "Darbui | Auksarankiams.lt",
+      "headings": [
+        "Auksarankiams.lt",
+        "Darbui"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 141,
+      "htmlSha256": "d6748ebeae47102a084c355d1e4e2eda43d4b354b6c44c5bcda337ef5ef2ecc5",
+      "resolvedUrl": "https://web.archive.org/web/20180628093013id_/http://www.auksarankiams.lt/darbui/"
+    },
+    {
+      "original": "http://www.auksarankiams.lt/",
+      "timestamp": "20180601214327",
+      "replayUrl": "https://web.archive.org/web/20180601214327/http://www.auksarankiams.lt/",
+      "ok": true,
+      "title": "Naudingų patarimų portalas | Auksarankiams.lt",
+      "headings": [
+        "Auksarankiams.lt"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 282,
+      "htmlSha256": "94d624eebe39289f1d717638f7a19548426b8bf7146578d6a6906a7f324c7a93",
+      "resolvedUrl": "https://web.archive.org/web/20180601214327id_/http://www.auksarankiams.lt/"
+    }
+  ],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-01T03:21:33.863Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-01T03:21:35.168Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-01T03:21:37.140Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-01T03:21:38.043Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=auksarankiams.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20191209103459id_/http://www.auksarankiams.lt/",
+      "checkedAt": "2026-10-01T03:21:38.955Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20191209103459id_/http://www.auksarankiams.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20160708110934id_/http://www.auksarankiams.lt/",
+      "checkedAt": "2026-10-01T03:21:39.864Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20160708110934id_/http://www.auksarankiams.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20180628093013id_/http://www.auksarankiams.lt/darbui/",
+      "checkedAt": "2026-10-01T03:21:40.772Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20180628093013id_/http://www.auksarankiams.lt/darbui/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20180601214327id_/http://www.auksarankiams.lt/",
+      "checkedAt": "2026-10-01T03:21:41.679Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20180601214327id_/http://www.auksarankiams.lt/"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "auksarankiams",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

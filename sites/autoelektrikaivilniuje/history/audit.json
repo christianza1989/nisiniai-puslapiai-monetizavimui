@@ -1,0 +1,386 @@
+{
+  "version": 2,
+  "domain": "autoelektrikaivilniuje.lt",
+  "checkedAt": "2026-10-03T12:54:28.504Z",
+  "terms": [
+    "autoelektr",
+    "akumuliator",
+    "diagnost"
+  ],
+  "coverage": "records-found",
+  "inventoryComplete": true,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 14,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 14,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": true,
+      "observedRows": 2,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": true,
+      "observedRows": 1,
+      "omitted": 0,
+      "truncated": false
+    }
+  ],
+  "inventory": [
+    {
+      "original": "https://autoelektrikaivilniuje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20240520093017",
+      "capturedAt": "2024-05-20T09:30:17.000Z",
+      "status": 200,
+      "digest": "PRLNBLRL5SM7CJHAMALOPJUFWHGDIM3Y",
+      "replayUrl": "https://web.archive.org/web/20240520093017/https://autoelektrikaivilniuje.lt/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/atsiliepimai/",
+      "path": "/atsiliepimai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20240718041830",
+      "capturedAt": "2024-07-18T04:18:30.000Z",
+      "status": 200,
+      "digest": "BXKJZ6BEH5LKL5HSTSHTAFKCURAZIHLJ",
+      "replayUrl": "https://web.archive.org/web/20240718041830/https://autoelektrikaivilniuje.lt/atsiliepimai/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/autoelektriko-kontaktai-adresas-vilniuje/",
+      "path": "/autoelektriko-kontaktai-adresas-vilniuje/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20240718034605",
+      "capturedAt": "2024-07-18T03:46:05.000Z",
+      "status": 200,
+      "digest": "R2RA7K4WKZPGKP6AFQGUV4UFVAOODLRA",
+      "replayUrl": "https://web.archive.org/web/20240718034605/https://autoelektrikaivilniuje.lt/autoelektriko-kontaktai-adresas-vilniuje/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/automobilis-ar-dviratis-ju-privalumai-ir-trukumai/",
+      "path": "/automobilis-ar-dviratis-ju-privalumai-ir-trukumai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711174910",
+      "capturedAt": "2025-07-11T17:49:10.000Z",
+      "status": 200,
+      "digest": "MTKS3ZW2STUDQFFEOARA4OPXL6EJOPQJ",
+      "replayUrl": "https://web.archive.org/web/20250711174910/https://autoelektrikaivilniuje.lt/automobilis-ar-dviratis-ju-privalumai-ir-trukumai/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/automobiliu-aksesuarai-ir-priedai-kuriuos-turetumete-tureti/",
+      "path": "/automobiliu-aksesuarai-ir-priedai-kuriuos-turetumete-tureti/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711185858",
+      "capturedAt": "2025-07-11T18:58:58.000Z",
+      "status": 200,
+      "digest": "HYAIWKVOJZFREURSHJFO6WJHKGA4TNKQ",
+      "replayUrl": "https://web.archive.org/web/20250711185858/https://autoelektrikaivilniuje.lt/automobiliu-aksesuarai-ir-priedai-kuriuos-turetumete-tureti/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/category/automobiliai/",
+      "path": "/category/automobiliai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711183655",
+      "capturedAt": "2025-07-11T18:36:55.000Z",
+      "status": 200,
+      "digest": "Y65VK4YNURMIMNPYVTUXYAT2Y2HNS2SO",
+      "replayUrl": "https://web.archive.org/web/20250711183655/https://autoelektrikaivilniuje.lt/category/automobiliai/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/category/dviraciai/",
+      "path": "/category/dviraciai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711173614",
+      "capturedAt": "2025-07-11T17:36:14.000Z",
+      "status": 200,
+      "digest": "2BWND6PDHQLHE3FQQSBZAXSWUWD3K3N2",
+      "replayUrl": "https://web.archive.org/web/20250711173614/https://autoelektrikaivilniuje.lt/category/dviraciai/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/category/palyginimai/",
+      "path": "/category/palyginimai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711183344",
+      "capturedAt": "2025-07-11T18:33:44.000Z",
+      "status": 200,
+      "digest": "SCN6BBSLJAWTZ2ZSRZHWPE5FZBMXK6G5",
+      "replayUrl": "https://web.archive.org/web/20250711183344/https://autoelektrikaivilniuje.lt/category/palyginimai/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/elektriniai-dviraciai-ar-verta-juos-pirkti/",
+      "path": "/elektriniai-dviraciai-ar-verta-juos-pirkti/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711173938",
+      "capturedAt": "2025-07-11T17:39:38.000Z",
+      "status": 200,
+      "digest": "NRZQWLM5FOF6QBMFNOOL5LHY54ESIH4S",
+      "replayUrl": "https://web.archive.org/web/20250711173938/https://autoelektrikaivilniuje.lt/elektriniai-dviraciai-ar-verta-juos-pirkti/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/kas-geriau-elektrinis-ar-benzininis-automobilis-ka-verta-zinoti-pries-perkant/",
+      "path": "/kas-geriau-elektrinis-ar-benzininis-automobilis-ka-verta-zinoti-pries-perkant/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711171412",
+      "capturedAt": "2025-07-11T17:14:12.000Z",
+      "status": 200,
+      "digest": "66HIE7EE4DD46Q6WCFPYWTM75HLLQIJ5",
+      "replayUrl": "https://web.archive.org/web/20250711171412/https://autoelektrikaivilniuje.lt/kas-geriau-elektrinis-ar-benzininis-automobilis-ka-verta-zinoti-pries-perkant/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/kokie-yra-patikimiausi-automobiliu-gamintojai/",
+      "path": "/kokie-yra-patikimiausi-automobiliu-gamintojai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711185928",
+      "capturedAt": "2025-07-11T18:59:28.000Z",
+      "status": 200,
+      "digest": "VHEZVWRS3FRA4XLTFOJA6POAQO2GJH5L",
+      "replayUrl": "https://web.archive.org/web/20250711185928/https://autoelektrikaivilniuje.lt/kokie-yra-patikimiausi-automobiliu-gamintojai/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/privatumo-politika/",
+      "path": "/privatumo-politika/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711180547",
+      "capturedAt": "2025-07-11T18:05:47.000Z",
+      "status": 200,
+      "digest": "TD7C6IR3CYZXWEWIGW4HS252JMVUPCSB",
+      "replayUrl": "https://web.archive.org/web/20250711180547/https://autoelektrikaivilniuje.lt/privatumo-politika/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/susisiekite/",
+      "path": "/susisiekite/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711183313",
+      "capturedAt": "2025-07-11T18:33:13.000Z",
+      "status": 200,
+      "digest": "QDOFXYFBA7XVUIAWG4JAOETANULPYRGC",
+      "replayUrl": "https://web.archive.org/web/20250711183313/https://autoelektrikaivilniuje.lt/susisiekite/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/vaziavimo-dviraciu-privalumai-kelias-i-sveikata-tvaruma-ir-gera-savijauta/",
+      "path": "/vaziavimo-dviraciu-privalumai-kelias-i-sveikata-tvaruma-ir-gera-savijauta/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250711183923",
+      "capturedAt": "2025-07-11T18:39:23.000Z",
+      "status": 200,
+      "digest": "HZYHOYJNAD7MHJBUA276FGNUUFIAFKAV",
+      "replayUrl": "https://web.archive.org/web/20250711183923/https://autoelektrikaivilniuje.lt/vaziavimo-dviraciu-privalumai-kelias-i-sveikata-tvaruma-ir-gera-savijauta/"
+    }
+  ],
+  "roots": [
+    {
+      "original": "https://autoelektrikaivilniuje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20240520093017",
+      "capturedAt": "2024-05-20T09:30:17.000Z",
+      "status": 200,
+      "digest": "PRLNBLRL5SM7CJHAMALOPJUFWHGDIM3Y",
+      "replayUrl": "https://web.archive.org/web/20240520093017/https://autoelektrikaivilniuje.lt/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20250119121546",
+      "capturedAt": "2025-01-19T12:15:46.000Z",
+      "status": 200,
+      "digest": "N4FM5BF5WGXBFIAOUCDBJINWM2YSSGS4",
+      "replayUrl": "https://web.archive.org/web/20250119121546/https://autoelektrikaivilniuje.lt/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20250711182651",
+      "capturedAt": "2025-07-11T18:26:51.000Z",
+      "status": 200,
+      "digest": "CPCKWWOMHSWYUTKGYGOK5CQ4WZSMMHLI",
+      "replayUrl": "https://web.archive.org/web/20250711182651/https://autoelektrikaivilniuje.lt/"
+    }
+  ],
+  "snapshots": [
+    {
+      "original": "https://autoelektrikaivilniuje.lt/",
+      "timestamp": "20250711182651",
+      "replayUrl": "https://web.archive.org/web/20250711182651/https://autoelektrikaivilniuje.lt/",
+      "ok": true,
+      "title": "Autoelektrika Vilniuje – Automobiliai, Dviračiai ir Lyginamosios Įžvalgos",
+      "headings": [
+        "Važiavimo dviračiu privalumai: kelias į sveikatą, tvarumą ir gerą savijautą",
+        "Automobilis ar dviratis? Jų privalumai ir trūkumai",
+        "Automobilių aksesuarai ir priedai, kuriuos turėtumėte turėti",
+        "Elektriniai dviračiai: ar verta juos pirkti?"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 387,
+      "htmlSha256": "acae78a52e6145b0bf8d83a6f5df5884e85c7246e894b2755c4f1e03a1b44362",
+      "resolvedUrl": "https://web.archive.org/web/20250711182651id_/https://autoelektrikaivilniuje.lt/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/",
+      "timestamp": "20240520093017",
+      "replayUrl": "https://web.archive.org/web/20240520093017/https://autoelektrikaivilniuje.lt/",
+      "ok": true,
+      "title": "Autoelektrikas Vilniuje automobilių elektrikai ADC LT Skubu!",
+      "headings": [
+        "AUTOELEKTRIKAI VILNIUJE +3 ADC CENTRAS",
+        "1.",
+        "2.",
+        "3."
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 1644,
+      "htmlSha256": "d786507cd1b73a391f80bec76c3f5699a866f5777ba98e5fe397121214058380",
+      "resolvedUrl": "https://web.archive.org/web/20240520093017id_/https://autoelektrikaivilniuje.lt/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/autoelektriko-kontaktai-adresas-vilniuje/",
+      "timestamp": "20240718034605",
+      "replayUrl": "https://web.archive.org/web/20240718034605/https://autoelektrikaivilniuje.lt/autoelektriko-kontaktai-adresas-vilniuje/",
+      "ok": true,
+      "title": "Kontaktai elektrikas Vilniuje ADC LT",
+      "headings": [
+        "Vienintelis autoelektrikų servisas, kuris beveik visada padaro daugiau nei vien tik el. dalies remon"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 117,
+      "htmlSha256": "af98b53fe30bff8705f557706555648ff7dac563c44a2372d019620a46a5cde1",
+      "resolvedUrl": "https://web.archive.org/web/20240718034605id_/https://autoelektrikaivilniuje.lt/autoelektriko-kontaktai-adresas-vilniuje/"
+    },
+    {
+      "original": "https://autoelektrikaivilniuje.lt/",
+      "timestamp": "20250119121546",
+      "replayUrl": "https://web.archive.org/web/20250119121546/https://autoelektrikaivilniuje.lt/",
+      "ok": true,
+      "title": "Autoelektrikas Vilniuje automobilių elektrikai ADC LT Skubu!",
+      "headings": [
+        "AUTOELEKTRIKAI VILNIUJE +3 ADC CENTRAS",
+        "1.",
+        "2.",
+        "3."
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 1644,
+      "htmlSha256": "199577af1e073ade044e1dfba888c125321e1f7b0a3a25899ac807d7a07ddb70",
+      "resolvedUrl": "https://web.archive.org/web/20250119121546id_/https://autoelektrikaivilniuje.lt/"
+    }
+  ],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-03T12:54:28.511Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-03T12:54:32.942Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-03T12:54:36.757Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-03T12:54:41.496Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=autoelektrikaivilniuje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20250711182651id_/https://autoelektrikaivilniuje.lt/",
+      "checkedAt": "2026-10-03T12:54:42.397Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20250711182651id_/https://autoelektrikaivilniuje.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20240520093017id_/https://autoelektrikaivilniuje.lt/",
+      "checkedAt": "2026-10-03T12:54:43.303Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20240520093017id_/https://autoelektrikaivilniuje.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20240718034605id_/https://autoelektrikaivilniuje.lt/autoelektriko-kontaktai-adresas-vilniuje/",
+      "checkedAt": "2026-10-03T12:54:45.010Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20240718034605id_/https://autoelektrikaivilniuje.lt/autoelektriko-kontaktai-adresas-vilniuje/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20250119121546id_/https://autoelektrikaivilniuje.lt/",
+      "checkedAt": "2026-10-03T12:54:45.922Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20250119121546id_/https://autoelektrikaivilniuje.lt/"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "autoelektrikaivilniuje",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

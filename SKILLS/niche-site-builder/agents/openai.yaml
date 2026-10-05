@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nišų svetainių kūrėjas"
+  short_description: "Nišų tyrimas, savita kompozicija ir vizualinė patikra"
+  default_prompt: "Naudok $niche-site-builder ištirti užsienio svetaines ir sukurti šiai nišai savitą profesionalų pirmos fazės puslapį. Įgyvendink visą kelią, prasmingus vaizdus per bendrą MEDIA_CORE importą ir įrodymais pagrįstą A–Z auditą."

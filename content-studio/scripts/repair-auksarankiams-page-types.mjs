@@ -1,0 +1,5 @@
+import{writeFile,readFile}from'node:fs/promises';import{createHash}from'node:crypto';
+process.env.STUDIO_OUTPUT_DIR=new URL('../../sites/auksarankiams/export-handyman/',import.meta.url).pathname.replace(/^\/C:/,'C:');
+const{getSite,editPage,approvePage,exportPackage}=await import('../src/model.mjs');const site=await getSite('auksarankiams'),repairs=[];
+for(const p of site.pages.filter(p=>['baldu-surinkimas','kabinimo-darbai','smulkus-baldu-pataisymai'].includes(p.slug))){const before={type:p.type,revisionHash:p.revisionHash,publishAt:p.publishAt};await editPage(site.id,p.id,{type:'faq'});await approvePage(site.id,p.id,'codex-demand-page-schema-review-2026-10-01');repairs.push({id:p.id,slug:p.slug,before,change:'Informational need category: shared WebPage graph, no Service/provider promise. Body, media, links and original schedule retained.'});}
+await exportPackage(site.id);await writeFile(new URL('../../sites/auksarankiams/SCHEMA-SEMANTIC-REPAIR.json',import.meta.url),JSON.stringify({at:new Date().toISOString(),reviewer:'Sequential Codex source review, not an operator/handyman capacity approval',repairs},null,2));

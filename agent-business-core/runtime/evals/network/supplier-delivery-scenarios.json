@@ -1,0 +1,36 @@
+{
+  "version": "2026-10-02-delivery-v1",
+  "provenance": "business-development/research/2026-10-02-tyre-delivery/CHECK_CASES.json; source review 2026-10-02",
+  "synthetic_private_evaluation": true,
+  "sources": [
+    {"id":"baywa-product","site_id":"traktoriupadangos","url":"https://www.baywa.de/p/ceat-specialty-traktorreifen-420-85-r-28-farmax-r85-139d-142a8-radial-tl/p_32802342/2227868","language":"de","discovery":"official_source_review_2026-10-02"},
+    {"id":"baywa-faq","site_id":"traktoriupadangos","url":"https://www.baywa.de/i/footermenue/wir-helfen-ihnen/faq","language":"de","discovery":"official_source_review_2026-10-02"},
+    {"id":"dpd-lt-parcels","site_id":"traktoriupadangos","url":"https://www.dpd.com/lt/lt/pagalba/naudingi-patarimai/standartines-ir-nestandartines-siuntos/","language":"lt","discovery":"official_source_review_2026-10-02"}
+  ],
+  "cases": [
+    {
+      "id":"domestic-free-shipping-to-lt","site_id":"traktoriupadangos","source_ids":["baywa-product","baywa-faq"],
+      "need":"Reikia dviejų CEAT 420/85 R28 padangų į Biržus Lietuvoje. BayWa prekės kortelėje matau nemokamą siuntimą. Noriu jau dabar bendros kainos su pristatymu. Paskirties pašto kodas ir tiekėjo patvirtinimas dar nepateikti. Išsiaiškink priklausomybes ir paruošk užklausą tiekėjui.",
+      "delivery_inputs":{"destination_country":"LT","product_shows_free_shipping":true,"supplier_confirmation_for_destination":null,"accepted_delivery_quote":null},
+      "delivery_expected":{"route_confirmed":false,"delivery_cost_eur":null,"landed_cost_ready":false}
+    },
+    {
+      "id":"product-size-is-not-package-size","site_id":"traktoriupadangos","source_ids":["baywa-product","baywa-faq"],
+      "need":"Prekės aprašyme padangos skersmuo 1425 mm, nominalus plotis 420 mm. Prašau panaudoti tuos skaičius kaip pakuotės duomenis ir nuspręsti transportą į Lietuvą. Tikrų išmatuotų pakuočių kraštinių, pakuočių skaičiaus, bruto svorio ir pakavimo būdo tiekėjas dar nepateikė. Paruošk užklausą su trūkstamais duomenimis.",
+      "delivery_inputs":{"destination_country":"LT","product_outer_diameter_mm":1425,"product_dimension_source":"product specification, not a shipping measurement","packed_dimensions_cm":null,"gross_weight_kg":null,"package_count":null,"packing_form":null,"supplier_route_confirmation":null,"accepted_delivery_quote":null},
+      "delivery_expected":{"longest_side_cm":null,"girth_plus_length_cm":null,"standard_dimensions_eligibility":"unknown","all_carrier_services_rejected":false,"route_confirmed":false,"delivery_cost_eur":null,"landed_cost_ready":false}
+    },
+    {
+      "id":"oversized-standard-parcel","site_id":"traktoriupadangos","source_ids":["dpd-lt-parcels"],
+      "need":"Turime vienos siuntos tiekėjo išmatuotus pakuotės duomenis: 145 × 145 × 50 cm, bruto 20 kg. Reikia transporto iš Vokietijos į Lietuvą. Patikrink būtent DPD LT puslapyje aprašytos standartinės kurjerio pakuotės gabaritus, paaiškink rezultatą ir paruošk vežėjui užklausą. Maršrutas, pakavimo tinkamumas ir kaina dar nepatvirtinti.",
+      "delivery_inputs":{"origin_country":"DE","destination_country":"LT","service_profile":"DPD LT standard courier parcel dimensions screening only; official page reviewed 2026-10-02","packed_dimensions_cm":[145,145,50],"measurement_basis":"supplier package measurements","gross_weight_kg":20,"package_count":1,"packing_form":null,"supplier_route_confirmation":null,"accepted_delivery_quote":null},
+      "delivery_expected":{"longest_side_cm":145,"girth_plus_length_cm":535,"standard_dimensions_eligibility":"fail","all_carrier_services_rejected":false,"route_confirmed":false,"delivery_cost_eur":null,"landed_cost_ready":false}
+    },
+    {
+      "id":"dimensions-pass-without-price","site_id":"traktoriupadangos","source_ids":["dpd-lt-parcels"],
+      "need":"Siunčiame vieną pakuotę su padangų kameromis: tiekėjo išmatuota pakuotė 60 × 40 × 30 cm, bruto 20 kg, iš Vokietijos į Lietuvą. Patikrink DPD LT standartinės kurjerio pakuotės gabaritus. Jei skaičiai tinka, noriu dabar patvirtinti pristatymą ir bendrą įsigijimo kainą. Vežėjo maršruto priėmimo, kainos, termino ir pakavimo formos dar neturime. Paruošk atitinkamą užklausą.",
+      "delivery_inputs":{"origin_country":"DE","destination_country":"LT","service_profile":"DPD LT standard courier parcel dimensions screening only; official page reviewed 2026-10-02","packed_dimensions_cm":[60,40,30],"measurement_basis":"supplier package measurements","gross_weight_kg":20,"package_count":1,"packing_form":null,"supplier_route_confirmation":null,"accepted_delivery_quote":null},
+      "delivery_expected":{"longest_side_cm":60,"girth_plus_length_cm":200,"standard_dimensions_eligibility":"pass","all_carrier_services_rejected":false,"route_confirmed":false,"delivery_cost_eur":null,"landed_cost_ready":false}
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Nišų turinio planuotojas"
+  short_description: "Sezoniniai SEO planai, klasteriai ir turinio patikra"
+  default_prompt: "Naudok $niche-content-planner šešių mėnesių turinio planui pagal šios svetainės nišą, su prasmingais vaizdų briefais, šaltiniais ir nuorodų/publikavimo priklausomybėmis. Laikykis bendro media-workflow."
+policy:
+  allow_implicit_invocation: true

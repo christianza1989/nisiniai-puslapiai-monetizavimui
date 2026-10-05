@@ -1,0 +1,135 @@
+{
+  "reviewedAt": "2026-10-01T04:15:53.566Z",
+  "actor": "AI agentas, ne savininko ar atestuoto specialisto patvirtinimas",
+  "sourcesRetrieved": "BUSINESS.md ir RESEARCH.md; tik originalūs perskaityti puslapiai",
+  "pages": [
+    {
+      "slug": "",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip pasiruošti individualių vidaus laiptų įrengimui?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [
+        "hero",
+        "materials"
+      ],
+      "sources": []
+    },
+    {
+      "slug": "gidai",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kur rasti naudingus vidaus laiptų užsakymo pasiruošimo atsakymus?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [
+        "budget",
+        "materials",
+        "measure"
+      ],
+      "sources": []
+    },
+    {
+      "slug": "vidaus-laiptu-irengimas",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip užregistruoti konkretų planuojamų vidaus laiptų darbą?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [
+        "hero"
+      ],
+      "sources": []
+    },
+    {
+      "slug": "laiptu-kaina",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip palyginti skirtingas vidaus laiptų sąmatas ir nepraleisti išlaidų?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [
+        "budget"
+      ],
+      "sources": [
+        "https://stylestairs.uk/bespoke-staircase-cost-breakdown-2026/",
+        "https://robertolaiptai.lt/laiptu-gamyba/"
+      ]
+    },
+    {
+      "slug": "laiptu-konstrukcijos",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kuo skiriasi vidaus laiptų konstrukcijos ir kaip apsibrėžti savo pasirinkimą?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [
+        "materials"
+      ],
+      "sources": [
+        "https://robertolaiptai.lt/laiptu-gamyba/",
+        "https://www.stadler.de/treppen/",
+        "https://www.hoeping.de/treppenrenovierung/fragen-antworten.html"
+      ]
+    },
+    {
+      "slug": "laiptu-matavimas",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kokią informaciją surinkti prieš laiptų gamintojo matavimą ir pirmą užklausą?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [
+        "measure"
+      ],
+      "sources": [
+        "https://robertolaiptai.lt/laiptu-gamyba/",
+        "https://www.stadler.de/treppen/"
+      ]
+    },
+    {
+      "slug": "kontaktai",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip susisiekti su Laiptų centro operatoriumi ir pateikti poreikį?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [],
+      "sources": []
+    },
+    {
+      "slug": "apie-projekta",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kas yra Laiptų centras ir kokia yra jo dabartinė veikla?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [],
+      "sources": []
+    },
+    {
+      "slug": "redakcija",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kas atsakingas už Laiptų centro informaciją ir kaip ji tikrinama?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [],
+      "sources": []
+    },
+    {
+      "slug": "privatumas",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kaip Laiptų centro pilotas tvarko užklausų ir svetainės matavimo duomenis?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [],
+      "sources": [
+        "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en"
+      ]
+    },
+    {
+      "slug": "naudojimo-salygos",
+      "decision": "approved for local pilot",
+      "originalContribution": "Kokios yra Laiptų centro informacinio piloto naudojimo ribos?",
+      "scope": "Ne individualus techninis projektas; nepatvirtintų vykdymo pažadų nėra",
+      "image": [],
+      "sources": []
+    }
+  ],
+  "futureDrafts": [
+    "laiptu-tureklu-planavimas",
+    "pakopos-ant-betono",
+    "laiptu-montavimo-etapai",
+    "mediniu-pakopu-prieziura",
+    "laiptu-keitimo-apimtis",
+    "gamintojo-pasiulymo-patikra"
+  ],
+  "result": {
+    "path": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\content-studio\\output\\laiptucentras\\content-package.json",
+    "pages": 11,
+    "assets": 20
+  }
+}

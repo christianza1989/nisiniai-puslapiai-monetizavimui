@@ -1,0 +1,4 @@
+First isolated build: packages validated; readExecutionProfile threw "Invalid local execution profile".
+Cause: new root prepare helper wrote profile instead of executionProfile.
+Correction: prepare helper and only the new isolated .sites-runtime/execution-profile.json now use {"executionProfile":"portable"}.
+Public shared execution profile and previous build were not changed.

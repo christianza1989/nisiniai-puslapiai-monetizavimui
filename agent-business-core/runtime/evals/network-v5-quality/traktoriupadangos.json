@@ -1,0 +1,22 @@
+{
+  "version": "2026-10-02-v5-quality",
+  "site_id": "traktoriupadangos",
+  "test_recipient": "owner@example.com",
+  "clients": [
+    {
+      "id": "size_correction_information_only",
+      "messages": [
+        "Ieškau dviejų 420/85 R28 traktoriaus padangų. Turiu žymėjimo nuotrauką, bet dar nežinau apkrovos indekso.",
+        "Supainiojau nuotraukas: teisingas dydis 380/85 R24, kiekis lieka du. Atidarykite el. pašto lauką ir atsiųskite ką dar patikrinti, užsakymo dar nedarau."
+      ],
+      "contact": true,
+      "contact_at": "during",
+      "expected_need": {
+        "quantity": "2",
+        "tyre_marking": "380/85 R24"
+      },
+      "label": "size_correction_information_only",
+      "split": "blind"
+    }
+  ]
+}

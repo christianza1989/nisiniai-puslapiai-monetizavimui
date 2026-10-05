@@ -1,0 +1,38 @@
+[
+  {
+    "key": "selection-field",
+    "slug": "gidas/kaip-issirinkti-traktoriaus-padangas",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5/exec-bc223319-aafb-41cd-88d1-0bf0a9b9d9cc.png",
+    "alt": "Traktoriaus galinis ratas prie dirbamo lauko",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide editorial photograph-style illustration for a Lithuanian agricultural tyre selection guide and homepage. A grounded, premium agricultural editorial scene: a stationary unbranded modern olive-grey tractor at the edge of a cultivated Lithuanian field, seen low from the rear quarter, large realistic rear tyre the clear foreground subject, precise believable wheel and chassis geometry, soft natural early-autumn side light, dry grass and earth, a distant quiet farm landscape. Composition: landscape 3:2, close enough for tread and rim detail, tractor wheel dominates the left/middle two thirds, horizon low, restrained spacious right side. Art direction: sophisticated industrial photography, graphite rubber, warm chalk sky, subtle ochre grasses, matte natural materials, crisp texture with calm tonal control, no HDR. No people, no signage, no logos, no brand/model text, no watermark, no captions, no interface, no dramatic dust cloud, no equipment moving, no extra wheels, no glossy CGI. This is an illustrative context image, not evidence of an actual client vehicle or stocked product.",
+    "promptKind": "generation-prompt",
+    "promptNote": "Original generation request retained."
+  },
+  {
+    "key": "sidewall-marking",
+    "slug": "gidas/traktoriaus-padangu-zymejimas",
+    "alt": "Padangos šoninė sienelė su dydžio kodu 650/60 R38",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide macro editorial image for a tractor tyre sidewall marking guide. An exceptionally detailed close-up of a large clean agricultural tyre sidewall, black graphite rubber with a subtle pebbled texture and a curved ring of moulded rubber, lit with grazing soft warm light so the raised tyre size characters are clear. The ONLY visible inscription, perfectly spelled and correctly spaced, is '650/60 R38'. The inscription follows a gentle sidewall arc. Natural believable raised black-on-black characters, no bright painted letters. The edge of chunky agricultural tread enters the upper left and a small portion of the rim can sit at bottom right, beautifully composed as a tactile industrial still-life, landscape 3:2. Restrained warm grey/ochre studio background, soft shadow, precise material fidelity, premium photographic detail, no brands, no additional codes, no arrows, no explanatory labels, no UI, no watermark. Do not illustrate internal construction, compatibility or performance. This is an educational illustrative sidewall, not a photograph of stocked inventory.",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5/exec-c639faaf-3db1-4ae4-8e30-dae6ff4ee71c.png",
+    "promptKind": "design-brief",
+    "promptNote": "Saved full art-direction brief; generation used a shorter wording of this brief. This record does not claim verbatim generation input."
+  },
+  {
+    "key": "construction-pair",
+    "slug": "gidas/radialines-ar-diagonalines-traktoriaus-padangos",
+    "alt": "Dvi skirtingo protektoriaus žemės ūkio padangos",
+    "prompt": "Use case: product-mockup. Asset type: wide editorial image for an agricultural tyre construction comparison guide. A beautifully art-directed industrial still-life of two different unbranded agricultural tyres standing upright on a warm pale concrete studio floor. One larger tyre closer to camera at left three-quarter angle, another slightly smaller tyre behind at right, both whole, visually balanced with generous negative space. Realistic black rubber, different agricultural V tread blocks, accurate round circles, no exaggerated deformation, subtle accumulated rubber texture, soft daylight from upper left, gentle long shadows, quiet warm off-white background with a small muted ochre wall area. Landscape 3:2, restrained premium machinery magazine photography, graphite/chalk/ochre palette, sharp yet natural detail. No logos, no visible size codes, no price, no labels radial or diagonal, no technical cutaway, no anatomy or diagrams, no branding, no watermark, no UI. The illustration shows distinct models for visual context only; it must not imply construction can be determined from tread appearance.",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5/exec-6724b674-8407-4bf6-8541-66e2eaaa1f13.png",
+    "promptKind": "design-brief",
+    "promptNote": "Saved full art-direction brief; generation used a shorter wording of this brief. This record does not claim verbatim generation input."
+  },
+  {
+    "key": "road-context",
+    "slug": "",
+    "alt": "Traktorius ant ramaus ūkio kelio šalia laukų",
+    "prompt": "Use case: photorealistic-natural. Asset type: atmospheric wide editorial image for the work-conditions section of a Lithuanian tractor tyre website. A stationary unbranded muted olive-grey tractor viewed from the rear at a quiet narrow asphalt farm lane beside open cultivated fields, with its large agricultural tyres, textured asphalt edge and field furrows as the visual story. No driver or people. The composition is horizontal landscape 3:2, calm slightly elevated rear-quarter camera angle, machinery on the right two-thirds, open lane leading into the left background, real plausible tractor wheel/chassis geometry. Clear late-afternoon natural light, autumn ochre grass, restrained pale sky, graphite rubber and earthy green, tactile realistic surfaces, elegant machinery editorial photography. No logos, signs, visible registration plates, traffic, motion blur, dramatic rays, oversaturated colours, watermark, captions or text. Use as an illustrative field/road context, not proof of a client project or specific tyre recommendation.",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5/exec-a5dd22ba-c54d-400e-b99e-9229ceb2151b.png",
+    "promptKind": "design-brief",
+    "promptNote": "Saved full art-direction brief; generation used a shorter wording of this brief. This record does not claim verbatim generation input."
+  }
+]

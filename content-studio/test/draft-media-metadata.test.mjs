@@ -1,0 +1,46 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,readFile,readdir,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import sharp from 'sharp';
+const root=await mkdtemp(path.join(os.tmpdir(),'niche-draft-media-'));
+process.env.STUDIO_DATA_DIR=path.join(root,'data');process.env.STUDIO_OUTPUT_DIR=path.join(root,'output');
+const model=await import('../src/model.mjs');await model.initialize();
+test('private family correction preserves bytes/provenance, updates draft hashes, and cannot mutate an approved snapshot',async()=>{
+ const site=await model.createSite({schemaVersion:2,renderer:'gift',canonicalHost:'draft-media.example',name:'Private QA',offer:'Synthetic fixture only'});
+ await model.editSite(site.id,{facts:'Synthetic local test, not public facts.'});
+ const bytes=await sharp({create:{width:800,height:600,channels:3,background:'#665544'}}).png().toBuffer();
+ const asset=await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:'Old description',credit:'Old private credit',rights:'Synthetic QA only',prompt:'Private immutable prompt'},bytes);
+ const other=await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:'Other image',rights:'Synthetic QA only'},bytes);
+ const page=await model.addPage(site.id,{type:'home',slug:'',title:'Private QA',description:'Synthetic local test',intent:'Test only',body:[{type:'paragraph',text:'This isolated synthetic page exists to verify draft metadata corrections without rewriting immutable published snapshots or changing image binary and provenance files.'}]});
+ await model.editPage(site.id,page.id,{media:[{id:asset.id},{id:other.id}]});
+ const before=await model.getSite(site.id),oldHash=model.revisionHash(before.pages[0]);
+ const originals=path.join(root,'data/media-originals',site.id);
+ const files=await readdir(originals),originalBytes=await Promise.all(files.map(f=>readFile(path.join(originals,f))));
+ await assert.rejects(()=>model.editDraftAssetMetadata(site.id,asset.id,{src:'/changed.webp'}),/tik/);
+ await assert.rejects(()=>model.editDraftAssetMetadata(site.id,asset.id,{alt:' '}),/alt/);
+ const second=await model.createSite({canonicalHost:'other-draft.example',name:'Other'});
+ await assert.rejects(()=>model.editDraftAssetMetadata(second.id,asset.id,{alt:'Cross tenant'}),/nepriklauso/);
+ const receipt=await model.editDraftAssetMetadata(site.id,asset.variants.at(-1).id,{alt:'Topic-specific new description',credit:''},'independent-review');
+ assert.deepEqual(receipt.affectedPageIds,[page.id]);assert.equal(receipt.variantIds.length,asset.variants.length);
+ const after=await model.getSite(site.id);
+ for(const v of after.assets.filter(a=>a.groupId===asset.groupId)){
+  const previous=before.assets.find(a=>a.id===v.id);
+  for(const key of ['id','groupId','src','width','height','rights','prompt','sha256','bytes'])assert.equal(v[key],previous[key]);
+  assert.equal(v.alt,'Topic-specific new description');assert.equal(v.credit,'');assert.equal(v.metadataHistory[0].before.credit,'Old private credit');
+ }
+ assert.deepEqual(after.assets.filter(a=>a.groupId===other.groupId),before.assets.filter(a=>a.groupId===other.groupId));
+ assert.notEqual(model.revisionHash(after.pages[0]),oldHash);assert.equal(after.pages[0].revisionHash,model.revisionHash(after.pages[0]));
+ assert.equal(after.pages[0].approval,null);assert.equal(after.pages[0].status,'review');
+ assert.deepEqual(await Promise.all(files.map(f=>readFile(path.join(originals,f)))),originalBytes);
+ await model.approvePage(site.id,page.id,'reviewed-fixture');
+ const approved=await model.getSite(site.id);
+ await assert.rejects(()=>model.editDraftAssetMetadata(site.id,asset.id,{alt:'Would silently rewrite public text'}),/nekintami/);
+ assert.deepEqual(await model.getSite(site.id),approved);
+ const exported=JSON.parse(await readFile((await model.exportPackage(site.id)).path,'utf8'));
+ assert.doesNotMatch(JSON.stringify(exported),/metadataHistory|Private immutable prompt|Old private credit/);
+ await model.revokePage(site.id,page.id);
+ await assert.rejects(()=>model.editDraftAssetMetadata(site.id,asset.id,{alt:'Revocation must not reopen immutable media'}),/nekintami/);
+});
+test.after(async()=>{await rm(root,{recursive:true,force:true});});

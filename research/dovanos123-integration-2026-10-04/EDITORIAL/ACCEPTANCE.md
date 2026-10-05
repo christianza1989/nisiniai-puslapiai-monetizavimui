@@ -1,0 +1,11 @@
+# Ribotas local editorial priėmimas
+
+2026-10-05 Europe/Vilnius. Root nepriklausomai perskaitė visas11 initial revizijų, visus3 gidus, šaltinius ir3 originalų pikselius; išsaugojo kritiką prieš taisymą. Po gift savininko modelio API pataisų peržiūrėtos visos pakeistos pastraipos/title/intent/media bei dependency/loss delta. Naujos versijos source SHA `5a278fb160ee6e8abbd6cd43422cbd16a672a5631023d90ad803f27155f98ab5` ir kiekvieno puslapio hash tikrinti `corrected-checks.json`, immutable kopija `corrected-candidate.json`.
+
+**ACCEPTED_FOR_LOCAL_EDITORIAL** tik tų11 exact revisionHash tekstas ir jų15 media variantų turinio/kilmės aprašai. Tai leidžia gift savininkui per įprastą modelio API pašalinti įvykdytą independent-review factCheck ir patvirtinti būtent šias revizijas eksportui/shadow bei isolated loopback r2. Root actualDATA nerašė. Nėra production receipt, domeno cutover ar runtime source/learning admission.
+
+Pataisytas rankų gido pažadas atitinka pasirinkimo klausimą; process/safety nėra improvizuojamas. Tuščias couple H2 pašalintas, datos derinamos su gavėjais, gramatika sutvarkyta. Home disclosure teisingas portalui. Nuosavo produkto ryšys išlieka matomas, informacinis target nėra checkout pažadas. Kiti prekybininkai nėra išgalvoti partneriai. Originalų tool etiketės pašalintos iš alt/credit; rankų kompozicijos caption teminis, AI kilmė saugoma private ir aiškioje redakcinėje metodikoje. Nėra fiktyvių Person ekspertų ar asmeninių bandymų.
+
+Pirminių IKEA / Pegasas / MemoryCasting faktų tikrinimo šaltiniai ir apribojimai `INITIAL-REVIEW.md`. Visi15 WebP bytes SHA nepasikeitė. Visi page/related tikslai priklauso11candidate inventoriui; nepriimtų legacy tikslų withdrawal losses išsaugoti, nepadarytos fiktyvios future approval. Generic H2→H3 hierarchija nėra tuščia sekcija.
+
+Šis priėmimas nevertina 10/10 craft, actual renderer/SVG/HTML/schema tikslumo, srcset/crop/Lighthouse, actual pinet INBOX, DNS/HTTPS ar production privatumo. Form/analytics privalo likti OFF iki tikro privacy priėmimo. Privacy/cookies/terms, trys trumpi legacy ir visas likęs kalendorius lieka draft ir nėra šio priėmimo sąraše. Main compiled9v1 SHA unchanged. Bet kokia nauja hashed turinio/media/siteSnapshot delta reikalauja naujos peržiūros.

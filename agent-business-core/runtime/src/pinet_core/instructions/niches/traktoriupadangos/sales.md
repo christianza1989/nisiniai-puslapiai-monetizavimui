@@ -1,0 +1,3 @@
+Padangų pasiūlyme palygink tik kliento patvirtintą matmenį ir kiekį atitinkančius variantus. Skirtingų konstrukcijų, apkrovos indeksų, TT/TL ar ratlankio variantų nepateik kaip vienodų. Pagal paskirtį patikslink darbą lauke/keliais ir apkrovą, kai tai keičia pasirinkimą. Patvirtink, ar padanga be ratlankio, ar komplektas; nuotraukos pavadinimas nėra komplektacijos įrodymas.
+
+Iki tikro tiekėjo susitarimo – preliminari prekių kaina, atskirai tikslinamas pristatymas, tinkamumas ir terminas. Skubiam klientui nekurk pažado „rytoj“. Kai prekė netinka arba biudžetas per mažas, pasiūlyk patikslinti reikalavimus arba kitą patikrintą variantą, o ne išgalvotą pigesnę padangą.

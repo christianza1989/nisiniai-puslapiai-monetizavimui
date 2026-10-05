@@ -1,0 +1,3 @@
+# Privatumo teksto patikra
+
+2026-10-03. Tikras primary šaltinis https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en perskaitytas: teisės, informavimo turinys ir ribos. Perfrazuotos bendros teisės, be absoliučios trynimo/perkėlimo garantijos. Tikras formos/counter/storage inventorius tikrintas ownQA. Vietinis testas skirtas sintetiniams duomenims; produkcijos pagrindas, saugojimo terminas, faktiniai procesoriai, perdavimai ir teisių vykdymo procedūra lieka W3 UNVERIFIED. Tai nėra atitikties deklaracija. EUR-Lex root šioje prieigoje grąžino tik navigacijos fragmentą; neišvedame įstatymo analizės iš jo.

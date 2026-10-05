@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T13:17:12.950Z",
+  "title": "Design System: traktoriupadangos.lt",
+  "extensions": {
+    "colorMeta": {
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#272a24",
+        "tonalRamp": [
+          "oklch(15% 0.0116 128.93)",
+          "oklch(27% 0.0116 128.93)",
+          "oklch(39% 0.0116 128.93)",
+          "oklch(51% 0.0116 128.93)",
+          "oklch(63% 0.0116 128.93)",
+          "oklch(75% 0.0116 128.93)",
+          "oklch(87% 0.0116 128.93)",
+          "oklch(95% 0.0116 128.93)"
+        ]
+      },
+      "chalk": {
+        "role": "neutral",
+        "displayName": "Chalk",
+        "canonical": "#f8f8f3",
+        "tonalRamp": [
+          "oklch(15% 0.0066 106.52)",
+          "oklch(27% 0.0066 106.52)",
+          "oklch(39% 0.0066 106.52)",
+          "oklch(51% 0.0066 106.52)",
+          "oklch(63% 0.0066 106.52)",
+          "oklch(75% 0.0066 106.52)",
+          "oklch(87% 0.0066 106.52)",
+          "oklch(95% 0.0066 106.52)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Olive Grey",
+        "canonical": "#555a50",
+        "tonalRamp": [
+          "oklch(15% 0.0171 128.88)",
+          "oklch(27% 0.0171 128.88)",
+          "oklch(39% 0.0171 128.88)",
+          "oklch(51% 0.0171 128.88)",
+          "oklch(63% 0.0171 128.88)",
+          "oklch(75% 0.0171 128.88)",
+          "oklch(87% 0.0171 128.88)",
+          "oklch(95% 0.0171 128.88)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Technical Divider",
+        "canonical": "#d9dcd2",
+        "tonalRamp": [
+          "oklch(15% 0.0138 120.30)",
+          "oklch(27% 0.0138 120.30)",
+          "oklch(39% 0.0138 120.30)",
+          "oklch(51% 0.0138 120.30)",
+          "oklch(63% 0.0138 120.30)",
+          "oklch(75% 0.0138 120.30)",
+          "oklch(87% 0.0138 120.30)",
+          "oklch(95% 0.0138 120.30)"
+        ]
+      },
+      "stage-yellow": {
+        "role": "primary",
+        "displayName": "Stage Yellow",
+        "canonical": "#dec34c",
+        "tonalRamp": [
+          "oklch(15% 0.1391 96.34)",
+          "oklch(27% 0.1391 96.34)",
+          "oklch(39% 0.1391 96.34)",
+          "oklch(51% 0.1391 96.34)",
+          "oklch(63% 0.1391 96.34)",
+          "oklch(75% 0.1391 96.34)",
+          "oklch(87% 0.1391 96.34)",
+          "oklch(95% 0.1391 96.34)"
+        ]
+      },
+      "inquiry-yellow": {
+        "role": "primary",
+        "displayName": "Inquiry Yellow",
+        "canonical": "#e6d888",
+        "tonalRamp": [
+          "oklch(15% 0.1017 99.55)",
+          "oklch(27% 0.1017 99.55)",
+          "oklch(39% 0.1017 99.55)",
+          "oklch(51% 0.1017 99.55)",
+          "oklch(63% 0.1017 99.55)",
+          "oklch(75% 0.1017 99.55)",
+          "oklch(87% 0.1017 99.55)",
+          "oklch(95% 0.1017 99.55)"
+        ]
+      },
+      "field-paper": {
+        "role": "neutral",
+        "displayName": "Field Paper",
+        "canonical": "#faf8ed",
+        "tonalRamp": [
+          "oklch(15% 0.0146 98.28)",
+          "oklch(27% 0.0146 98.28)",
+          "oklch(39% 0.0146 98.28)",
+          "oklch(51% 0.0146 98.28)",
+          "oklch(63% 0.0146 98.28)",
+          "oklch(75% 0.0146 98.28)",
+          "oklch(87% 0.0146 98.28)",
+          "oklch(95% 0.0146 98.28)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Border",
+        "canonical": "#9c935d",
+        "tonalRamp": [
+          "oklch(15% 0.0740 99.95)",
+          "oklch(27% 0.0740 99.95)",
+          "oklch(39% 0.0740 99.95)",
+          "oklch(51% 0.0740 99.95)",
+          "oklch(63% 0.0740 99.95)",
+          "oklch(75% 0.0740 99.95)",
+          "oklch(87% 0.0740 99.95)",
+          "oklch(95% 0.0740 99.95)"
+        ]
+      },
+      "guide-leading": {
+        "role": "neutral",
+        "displayName": "Guide Leading",
+        "canonical": "#eceee5",
+        "tonalRamp": [
+          "oklch(15% 0.0121 116.81)",
+          "oklch(27% 0.0121 116.81)",
+          "oklch(39% 0.0121 116.81)",
+          "oklch(51% 0.0121 116.81)",
+          "oklch(63% 0.0121 116.81)",
+          "oklch(75% 0.0121 116.81)",
+          "oklch(87% 0.0121 116.81)",
+          "oklch(95% 0.0121 116.81)"
+        ]
+      },
+      "guide-hover": {
+        "role": "neutral",
+        "displayName": "Guide Hover",
+        "canonical": "#e1e5d5",
+        "tonalRamp": [
+          "oklch(15% 0.0218 118.25)",
+          "oklch(27% 0.0218 118.25)",
+          "oklch(39% 0.0218 118.25)",
+          "oklch(51% 0.0218 118.25)",
+          "oklch(63% 0.0218 118.25)",
+          "oklch(75% 0.0218 118.25)",
+          "oklch(87% 0.0218 118.25)",
+          "oklch(95% 0.0218 118.25)"
+        ]
+      },
+      "primary-hover": {
+        "role": "neutral",
+        "displayName": "Primary Hover",
+        "canonical": "#3c4035",
+        "tonalRamp": [
+          "oklch(15% 0.0191 123.62)",
+          "oklch(27% 0.0191 123.62)",
+          "oklch(39% 0.0191 123.62)",
+          "oklch(51% 0.0191 123.62)",
+          "oklch(63% 0.0191 123.62)",
+          "oklch(75% 0.0191 123.62)",
+          "oklch(87% 0.0191 123.62)",
+          "oklch(95% 0.0191 123.62)"
+        ]
+      },
+      "focus-light-surface": {
+        "role": "neutral",
+        "displayName": "Light-surface Focus",
+        "canonical": "#6c5a00",
+        "tonalRamp": [
+          "oklch(15% 0.0969 95.47)",
+          "oklch(27% 0.0969 95.47)",
+          "oklch(39% 0.0969 95.47)",
+          "oklch(51% 0.0969 95.47)",
+          "oklch(63% 0.0969 95.47)",
+          "oklch(75% 0.0969 95.47)",
+          "oklch(87% 0.0969 95.47)",
+          "oklch(95% 0.0969 95.47)"
+        ]
+      },
+      "focus-dark-surface": {
+        "role": "primary",
+        "displayName": "Dark-surface Focus Yellow",
+        "canonical": "#ead572",
+        "tonalRamp": [
+          "oklch(15% 0.1221 97.62)",
+          "oklch(27% 0.1221 97.62)",
+          "oklch(39% 0.1221 97.62)",
+          "oklch(51% 0.1221 97.62)",
+          "oklch(63% 0.1221 97.62)",
+          "oklch(75% 0.1221 97.62)",
+          "oklch(87% 0.1221 97.62)",
+          "oklch(95% 0.1221 97.62)"
+        ]
+      },
+      "footer-graphite": {
+        "role": "neutral",
+        "displayName": "Footer Graphite",
+        "canonical": "#20241d",
+        "tonalRamp": [
+          "oklch(15% 0.0141 131.76)",
+          "oklch(27% 0.0141 131.76)",
+          "oklch(39% 0.0141 131.76)",
+          "oklch(51% 0.0141 131.76)",
+          "oklch(63% 0.0141 131.76)",
+          "oklch(75% 0.0141 131.76)",
+          "oklch(87% 0.0141 131.76)",
+          "oklch(95% 0.0141 131.76)"
+        ]
+      },
+      "footer-text": {
+        "role": "neutral",
+        "displayName": "Footer Text",
+        "canonical": "#f2f4e9",
+        "tonalRamp": [
+          "oklch(15% 0.0147 115.04)",
+          "oklch(27% 0.0147 115.04)",
+          "oklch(39% 0.0147 115.04)",
+          "oklch(51% 0.0147 115.04)",
+          "oklch(63% 0.0147 115.04)",
+          "oklch(75% 0.0147 115.04)",
+          "oklch(87% 0.0147 115.04)",
+          "oklch(95% 0.0147 115.04)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(27% 0.0000 89.88)",
+          "oklch(39% 0.0000 89.88)",
+          "oklch(51% 0.0000 89.88)",
+          "oklch(63% 0.0000 89.88)",
+          "oklch(75% 0.0000 89.88)",
+          "oklch(87% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Homepage Display",
+        "purpose": "Uppercase homepage heading; desktop token with responsive overrides."
+      },
+      "display-mobile": {
+        "displayName": "Mobile Display",
+        "purpose": "Homepage heading at widths up to 760px; narrowest override is retained in CSS."
+      },
+      "guide-headline": {
+        "displayName": "Guide Headline",
+        "purpose": "Page titles with balanced wrapping."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Main section headings; inquiry has a larger local scale."
+      },
+      "title": {
+        "displayName": "Subordinate Title",
+        "purpose": "Subheadings; guide panels have their own measured overrides."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base reading and component inheritance."
+      },
+      "article": {
+        "displayName": "Article",
+        "purpose": "Longer prose at the capped reading measure."
+      },
+      "navigation": {
+        "displayName": "Navigation",
+        "purpose": "Compact desktop navigation text."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Primary hero action and bold compact link hierarchy."
+      },
+      "field": {
+        "displayName": "Field",
+        "purpose": "Text input and textarea content."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Native form labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "mobile-menu",
+        "value": "0 10px 24px #252b211a",
+        "purpose": "The only interface shadow: a floating native mobile navigation panel."
+      }
+    ],
+    "motion": [
+      {
+        "name": "guide-background",
+        "value": "background .15s",
+        "purpose": "Guide-panel hover background transition; removed under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "intermediate",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "narrow-mobile",
+        "value": "380px"
+      }
+    ],
+    "craftReview": {
+      "date": "2026-09-30",
+      "report": "../CRAFT-AUDIT-2026-09-30.md",
+      "status": "Scoped refinement; baseline A and B independent, confirmation by implementing agent. No after-repair independent score."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Inquiry Link",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Homepage inquiry action, with its built hover and light-surface focus.",
+      "html": "<a class=\"ds-primary\" href=\"#uzklausa\">Aprašyti padangų poreikį <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;gap:28px;align-items:center;justify-content:space-between;background:#272a24;color:#ffffff;padding:16px 20px;font:700 13px/1.65 'Manrope',sans-serif;text-decoration:none}.ds-primary:hover{background:#3c4035}@media(max-width:760px){.ds-primary{font-size:12px;padding:15px 17px;gap:30px}}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-nav summary:focus-visible,.ds-guide:focus-visible,.ds-faq summary:focus-visible,.ds-submit:focus-visible{outline:3px solid #6c5a00;outline-offset:5px}"
+    },
+    {
+      "name": "Secondary Reading Link",
+      "kind": "button",
+      "refersTo": "link-secondary",
+      "description": "Plain reading action with a downward SVG arrow.",
+      "html": "<a class=\"ds-secondary\" href=\"#pasirinkimas\">Nuo ko pradėti <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-secondary{display:inline-flex;gap:23px;color:#272a24;font:700 12px/1.65 'Manrope',sans-serif;text-decoration:none;padding:5px 0}.ds-secondary svg{transform:rotate(90deg)}@media(max-width:760px){.ds-secondary{font-size:11px;gap:12px}}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-nav summary:focus-visible,.ds-guide:focus-visible,.ds-faq summary:focus-visible,.ds-submit:focus-visible{outline:3px solid #6c5a00;outline-offset:5px}.ds-secondary{font-size:14px;min-height:44px}"
+    },
+    {
+      "name": "Native Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Labeled native input on the inquiry ground; no invented error state.",
+      "html": "<div class=\"ds-field-ground\"><label class=\"ds-field-label\">El. paštas<input class=\"ds-field\" type=\"email\" name=\"email\" autocomplete=\"email\" required></label></div>",
+      "css": ".ds-field-ground{background:#e6d888;padding:20px}.ds-field-label{display:grid;gap:7px;color:#272a24;font:600 12px/1.65 'Manrope',sans-serif}.ds-field{width:100%;border:1px solid #9c935d;background:#faf8ed;color:#272a24;padding:12px 14px;border-radius:0;font:400 14px/1.6 'Manrope',sans-serif;caret-color:#6c5a00}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-nav summary:focus-visible,.ds-guide:focus-visible,.ds-faq summary:focus-visible,.ds-submit:focus-visible{outline:3px solid #6c5a00;outline-offset:5px}.ds-field-label{font-size:14px}.ds-field{font-size:16px}"
+    },
+    {
+      "name": "Native Form Submit",
+      "kind": "button",
+      "refersTo": "form-submit",
+      "description": "Full-width inquiry submit; the source has no separate hover background.",
+      "html": "<button class=\"ds-submit\" type=\"submit\">Siųsti poreikio užklausą <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-submit{display:flex;width:100%;align-items:center;justify-content:space-between;background:#272a24;color:#ffffff;padding:17px 20px;border:0;font:700 13px 'Manrope',sans-serif;cursor:pointer}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-nav summary:focus-visible,.ds-guide:focus-visible,.ds-faq summary:focus-visible,.ds-submit:focus-visible{outline:3px solid #6c5a00;outline-offset:5px}@media(max-width:760px){.ds-submit{font-size:14px}}"
+    },
+    {
+      "name": "Native Mobile Navigation",
+      "kind": "nav",
+      "description": "The implemented native menu, with square panel and a single floating shadow.",
+      "html": "<details class=\"ds-nav\" open><summary>Meniu <svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" aria-hidden=\"true\"><path d=\"M2 5h14M2 9h14M2 13h14\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></summary><nav aria-label=\"Mobilioji navigacija\"><a href=\"/\">Pradžia</a><a href=\"/gidai\">Pasirinkimo gidai</a><a href=\"/#zymejimas\">Žymėjimas</a><a href=\"/duk\">Klausimai</a><a href=\"/#uzklausa\">Pateikti poreikį</a></nav></details>",
+      "css": ".ds-nav{position:relative;color:#272a24;font:400 12px/1.65 'Manrope',sans-serif}.ds-nav summary{display:flex;gap:14px;align-items:center;cursor:pointer;list-style:none;padding:12px 0 12px 15px}.ds-nav summary::-webkit-details-marker{display:none}.ds-nav nav{position:absolute;z-index:5;top:48px;right:-4px;min-width:250px;background:#f8f8f3;border:1px solid #d9dcd2;padding:12px 18px;box-shadow:0 10px 24px #252b211a}.ds-nav nav>a{display:block;color:inherit;padding:12px 0;text-decoration:none}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-nav summary:focus-visible,.ds-guide:focus-visible,.ds-faq summary:focus-visible,.ds-submit:focus-visible{outline:3px solid #6c5a00;outline-offset:5px}"
+    },
+    {
+      "name": "Leading Guide Panel",
+      "kind": "card",
+      "refersTo": "guide-panel-leading",
+      "description": "Heading-led linked guide container, with no eyebrow framing.",
+      "html": "<a class=\"ds-guide\" href=\"/gidas/traktoriaus-padangu-zymejimas\"><h3>Traktoriaus padangų žymėjimas: kaip skaityti šoninę sienelę?</h3><p>Praktinis sąrašas, ką nurašyti nuo padangos prieš siunčiant užklausą.</p><span>Skaityti gidą <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>",
+      "css": ".ds-guide{display:flex;flex-direction:column;padding:30px;text-decoration:none;color:#272a24;background:#eceee5;border:1px solid #d9dcd2;transition:background .15s;font:400 13px/1.65 'Manrope',sans-serif}.ds-guide:hover{background:#e1e5d5}.ds-guide h3{font:600 31px/1.12 'Barlow Condensed',sans-serif;letter-spacing:-.02em;margin:0 0 12px}.ds-guide p{font-size:13px;color:#555a50;margin:5px 0 25px}.ds-guide span{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:12px;font-weight:700}@media(max-width:1100px){.ds-guide{padding:24px}.ds-guide h3{font-size:28px}}@media(max-width:760px){.ds-guide{padding:27px}.ds-guide h3{font-size:32px}}@media(prefers-reduced-motion:reduce){.ds-guide{transition:none}}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-nav summary:focus-visible,.ds-guide:focus-visible,.ds-faq summary:focus-visible,.ds-submit:focus-visible{outline:3px solid #6c5a00;outline-offset:5px}.ds-guide span{font-size:14px;min-height:44px}"
+    },
+    {
+      "name": "Native FAQ Row",
+      "kind": "custom",
+      "description": "Ruled details disclosure with the built SVG plus open state.",
+      "html": "<details class=\"ds-faq\"><summary>Ar užklausa patvirtina padangos tinkamumą?<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" aria-hidden=\"true\"><path d=\"M2 9h14M9 2v14\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></summary><p>Užklausa nepatvirtina padangos tinkamumo.</p></details>",
+      "css": ".ds-faq{border-bottom:1px solid #d9dcd2;padding:22px 0;color:#272a24;font:400 14px/1.65 'Manrope',sans-serif}.ds-faq summary{display:flex;align-items:center;justify-content:space-between;gap:30px;list-style:none;cursor:pointer;font-size:15px;font-weight:600}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq p{color:#555a50;font-size:14px;margin:17px 28px 0 0}.ds-faq[open] summary svg{transform:rotate(45deg)}@media(max-width:760px){.ds-faq summary{font-size:14px;gap:18px}.ds-faq p{font-size:13px}}.ds-primary:focus-visible,.ds-secondary:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-nav summary:focus-visible,.ds-guide:focus-visible,.ds-faq summary:focus-visible,.ds-submit:focus-visible{outline:3px solid #6c5a00;outline-offset:5px}.ds-faq{padding:12px 0}.ds-faq summary{min-height:44px;padding:10px 0}@media(max-width:760px){.ds-faq p{font-size:15px}}"
+    },
+    {
+      "name": "Technical Marking",
+      "kind": "custom",
+      "description": "Approved notation tokens directly connected to their definitions; four columns on desktop, two on mobile. Same semantic figure in the marking guide.",
+      "html": "<figure class=\"ds-marking\"><figcaption>Žymėjimo skaitymo pavyzdys: 650/60 R38</figcaption><dl><div><dt>650</dt><dd>nominalus plotis milimetrais.</dd></div><div><dt>60</dt><dd>profilio santykis procentais.</dd></div><div><dt>R</dt><dd>radialinė konstrukcija.</dd></div><div><dt>38</dt><dd>nominalus ratlankio skersmuo coliais.</dd></div></dl><p>Pavyzdys žymėjimui perskaityti. Jis nėra tinkamumo rekomendacija.</p></figure>",
+      "css": ".ds-marking{margin:0;background:#272a24;color:#f8f8f3;padding:24px;font:400 13px/1.65 Manrope,sans-serif}.ds-marking dl{display:grid;grid-template-columns:1.2fr 1fr .7fr 1fr;gap:22px;margin:25px 0}.ds-marking dt{font:600 72px/1 \"Barlow Condensed\",sans-serif}.ds-marking dd{position:relative;margin:38px 0 0;padding-top:16px;border-top:1px solid #6e7861;color:#dbe0d4;font-size:14px}.ds-marking dd:before{content:\"\";position:absolute;left:0;bottom:100%;height:26px;border-left:1px solid currentColor}@media(max-width:760px){.ds-marking dl{grid-template-columns:1fr 1fr;gap:28px}.ds-marking dt{font-size:64px}.ds-marking dd{margin-top:24px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Agricultural Equipment Exhibition",
+    "overview": "A singular rubber object on a flat yellow stage gives the site its machinery character. Chalk reading surfaces, compressed headings, thin technical rules and plain native controls make the surrounding information feel useful and direct.\n\nThe visual system serves a first-phase Lithuanian tyre-information and inquiry site. The illustration is visibly disclosed as generated and is not inventory evidence; the technical example is explanatory rather than a compatibility recommendation. This document applies only to traktoriupadangos, not to the shared network brand.",
+    "keyCharacteristics": [
+      "One large unbranded tyre silhouette on a plain yellow stage.",
+      "Condensed display typography paired with open reading text.",
+      "Flat, square panels and thin technical dividers.",
+      "Native reading, navigation and inquiry controls with visible keyboard focus."
+    ],
+    "rules": [
+      {
+        "name": "Surface Contrast",
+        "body": "Use the dark focus outline on light surfaces and the light yellow outline on the graphite marking band and footer. A single outline color does not serve every surface.",
+        "section": "colors"
+      },
+      {
+        "name": "Two Voices",
+        "body": "Barlow Condensed carries the main headings and wordmark; Manrope carries explanations, metadata, navigation and controls, including utility headings in the sidebar and footer. Keep this role separation.",
+        "section": "typography"
+      },
+      {
+        "name": "Flat Stage",
+        "body": "Use flat fields and thin dividers for static content. The only implemented interface shadow belongs to the floating mobile navigation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the built palette and the heading/body font roles recorded above.",
+      "Do keep the tyre silhouette separate from its complete illustration disclosure, including on mobile.",
+      "Do begin guide panels with their descriptive heading, followed by explanation and reading action.",
+      "Do keep article prose within the observed reading measure and check real rendered wrapping.",
+      "Do preserve keyboard focus on both light and dark surfaces and native details/form semantics.",
+      "Do retain exact published media bytes under existing immutable IDs; create a new ID for a changed asset."
+    ],
+    "donts": [
+      "Don't inherit unused guide eyebrow styling as a component pattern.",
+      "Don't add ambient card shadows or rounded dashboard containers to this flat equipment world.",
+      "Don't represent generated imagery as a real product, customer project or available stock.",
+      "Don't introduce unconfirmed prices, stock, supplier relationships or compatibility promises into the visual presentation.",
+      "Don't treat the scoped reviewer verdict, a clean detector or Lighthouse as certification of the entire design."
+    ]
+  }
+}

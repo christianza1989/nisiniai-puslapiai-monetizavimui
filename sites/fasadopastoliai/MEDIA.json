@@ -1,0 +1,326 @@
+{
+  "hero": {
+    "id": "b5ac639d-bbff-4042-be73-71f00d759d65",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-86bca150-03e2-414d-ba00-b1877f8c7927.png",
+    "sha256": "fb50b1181f4f199baf6f5ce60d3dadf46e95508771fac88155e637f525ac92d1",
+    "alt": "Individualaus namo fasado su pastoliais konteksto iliustracija",
+    "promptFile": "research/hero-prompt.txt",
+    "role": "hero",
+    "review": {
+      "date": "2026-10-03T16:09:59.771Z",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Actual visas generated kadras peržiūrėtas prieš importą. Kontekstas, ne klientas / brigada / įranga ar techninės atitikties instrukcija. Scope lapas tuščias. Hero pateikia fasadą; iš iliustracijos nevertinama konstrukcijos sauga. Crop patikra atliekama realiame render."
+    },
+    "variants": [
+      {
+        "id": "b5ac639d-bbff-4042-be73-71f00d759d65",
+        "groupId": "5ab85f6c-f8c2-4af4-90f4-41b0ddf74410",
+        "src": "/content-assets/fasadopastoliai/b5ac639d-bbff-4042-be73-71f00d759d65.webp",
+        "alt": "Individualaus namo fasado su pastoliais konteksto iliustracija",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic architectural context photograph for a Lithuanian residential facade scaffolding planning site, landscape 3:2. A modest contemporary two storey detached house with plain light gray stucco walls and a simple pitched roof, a complete professionally assembled facade scaffold in front of the visible long wall. Empty worksite in soft bright overcast daylight, clearly recognizable continuous guard rails, toe boards and boarded platforms, closed access and a tidy separated ground area. Camera standing safely at ground level beyond the work area, wide natural lens, straight verticals. No people, no workers, no business logos, no brands, no address, no number plates, no text, no labels. Architectural realism and clear silhouette of the facade; neither an engineering diagram nor a training illustration. Compose the house and scaffold in the middle horizontal 60 percent of the frame so a wide 3.4:1 header crop retains the facade and ground context, with clean sky and garden at the top and bottom for a responsive 4:3 mobile crop. Color palette natural concrete grays, soft sage vegetation, silver steel, subtle warm windows. This is an original illustrative setting, not a real customer project or proof of technical compliance. No montage or website interface.",
+        "bytes": 185830,
+        "sha256": "1ea66fa233a4f5d896a396ef619319300ae255176afc7334ce6b16216dc047e8"
+      },
+      {
+        "id": "3785c11a-1380-47a1-b6c0-30e8b430da9e",
+        "groupId": "5ab85f6c-f8c2-4af4-90f4-41b0ddf74410",
+        "src": "/content-assets/fasadopastoliai/3785c11a-1380-47a1-b6c0-30e8b430da9e.webp",
+        "alt": "Individualaus namo fasado su pastoliais konteksto iliustracija",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic architectural context photograph for a Lithuanian residential facade scaffolding planning site, landscape 3:2. A modest contemporary two storey detached house with plain light gray stucco walls and a simple pitched roof, a complete professionally assembled facade scaffold in front of the visible long wall. Empty worksite in soft bright overcast daylight, clearly recognizable continuous guard rails, toe boards and boarded platforms, closed access and a tidy separated ground area. Camera standing safely at ground level beyond the work area, wide natural lens, straight verticals. No people, no workers, no business logos, no brands, no address, no number plates, no text, no labels. Architectural realism and clear silhouette of the facade; neither an engineering diagram nor a training illustration. Compose the house and scaffold in the middle horizontal 60 percent of the frame so a wide 3.4:1 header crop retains the facade and ground context, with clean sky and garden at the top and bottom for a responsive 4:3 mobile crop. Color palette natural concrete grays, soft sage vegetation, silver steel, subtle warm windows. This is an original illustrative setting, not a real customer project or proof of technical compliance. No montage or website interface.",
+        "bytes": 126292,
+        "sha256": "75f671c7fcd9dacc89f67e5e8be9131aa34e97365a91de06d81095662a401baa"
+      },
+      {
+        "id": "4c5a245f-823d-4a48-87fd-2a0600338667",
+        "groupId": "5ab85f6c-f8c2-4af4-90f4-41b0ddf74410",
+        "src": "/content-assets/fasadopastoliai/4c5a245f-823d-4a48-87fd-2a0600338667.webp",
+        "alt": "Individualaus namo fasado su pastoliais konteksto iliustracija",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic architectural context photograph for a Lithuanian residential facade scaffolding planning site, landscape 3:2. A modest contemporary two storey detached house with plain light gray stucco walls and a simple pitched roof, a complete professionally assembled facade scaffold in front of the visible long wall. Empty worksite in soft bright overcast daylight, clearly recognizable continuous guard rails, toe boards and boarded platforms, closed access and a tidy separated ground area. Camera standing safely at ground level beyond the work area, wide natural lens, straight verticals. No people, no workers, no business logos, no brands, no address, no number plates, no text, no labels. Architectural realism and clear silhouette of the facade; neither an engineering diagram nor a training illustration. Compose the house and scaffold in the middle horizontal 60 percent of the frame so a wide 3.4:1 header crop retains the facade and ground context, with clean sky and garden at the top and bottom for a responsive 4:3 mobile crop. Color palette natural concrete grays, soft sage vegetation, silver steel, subtle warm windows. This is an original illustrative setting, not a real customer project or proof of technical compliance. No montage or website interface.",
+        "bytes": 63542,
+        "sha256": "6125af9dd2eea3af746d3155d419cc34601be465778160a0ec21a5719043f750"
+      },
+      {
+        "id": "fb277936-53b7-4a09-9f03-1b92e4b35be0",
+        "groupId": "5ab85f6c-f8c2-4af4-90f4-41b0ddf74410",
+        "src": "/content-assets/fasadopastoliai/fb277936-53b7-4a09-9f03-1b92e4b35be0.webp",
+        "alt": "Individualaus namo fasado su pastoliais konteksto iliustracija",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic architectural context photograph for a Lithuanian residential facade scaffolding planning site, landscape 3:2. A modest contemporary two storey detached house with plain light gray stucco walls and a simple pitched roof, a complete professionally assembled facade scaffold in front of the visible long wall. Empty worksite in soft bright overcast daylight, clearly recognizable continuous guard rails, toe boards and boarded platforms, closed access and a tidy separated ground area. Camera standing safely at ground level beyond the work area, wide natural lens, straight verticals. No people, no workers, no business logos, no brands, no address, no number plates, no text, no labels. Architectural realism and clear silhouette of the facade; neither an engineering diagram nor a training illustration. Compose the house and scaffold in the middle horizontal 60 percent of the frame so a wide 3.4:1 header crop retains the facade and ground context, with clean sky and garden at the top and bottom for a responsive 4:3 mobile crop. Color palette natural concrete grays, soft sage vegetation, silver steel, subtle warm windows. This is an original illustrative setting, not a real customer project or proof of technical compliance. No montage or website interface.",
+        "bytes": 42320,
+        "sha256": "bac5b26d575b8f49a58e6253e824ed2ce492448e3897d783dda320d343d84587"
+      },
+      {
+        "id": "41ee0103-1d5c-4463-b333-1ba89a229bb3",
+        "groupId": "5ab85f6c-f8c2-4af4-90f4-41b0ddf74410",
+        "src": "/content-assets/fasadopastoliai/41ee0103-1d5c-4463-b333-1ba89a229bb3.webp",
+        "alt": "Individualaus namo fasado su pastoliais konteksto iliustracija",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic architectural context photograph for a Lithuanian residential facade scaffolding planning site, landscape 3:2. A modest contemporary two storey detached house with plain light gray stucco walls and a simple pitched roof, a complete professionally assembled facade scaffold in front of the visible long wall. Empty worksite in soft bright overcast daylight, clearly recognizable continuous guard rails, toe boards and boarded platforms, closed access and a tidy separated ground area. Camera standing safely at ground level beyond the work area, wide natural lens, straight verticals. No people, no workers, no business logos, no brands, no address, no number plates, no text, no labels. Architectural realism and clear silhouette of the facade; neither an engineering diagram nor a training illustration. Compose the house and scaffold in the middle horizontal 60 percent of the frame so a wide 3.4:1 header crop retains the facade and ground context, with clean sky and garden at the top and bottom for a responsive 4:3 mobile crop. Color palette natural concrete grays, soft sage vegetation, silver steel, subtle warm windows. This is an original illustrative setting, not a real customer project or proof of technical compliance. No montage or website interface.",
+        "bytes": 14450,
+        "sha256": "7164e80ad97a1b86592a983af29e14d731b88b44908a8d5c6a46555904bb328f"
+      }
+    ]
+  },
+  "measure": {
+    "id": "5a657433-74fc-417c-8596-b1bc453b345b",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-91863cd2-5103-4dcd-9f3f-690f62145b74.png",
+    "sha256": "45e4d97053861eb003ea6a6d558b9e99062527a8b1ac53357d08efd9676b00ff",
+    "alt": "Paprasta namo siena ir matmenų užrašymo priemonės",
+    "promptFile": "research/measure-prompt.txt",
+    "role": "measure",
+    "review": {
+      "date": "2026-10-03T16:10:01.533Z",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Actual visas generated kadras peržiūrėtas prieš importą. Kontekstas, ne klientas / brigada / įranga ar techninės atitikties instrukcija. Scope lapas tuščias. Hero pateikia fasadą; iš iliustracijos nevertinama konstrukcijos sauga. Crop patikra atliekama realiame render."
+    },
+    "variants": [
+      {
+        "id": "5a657433-74fc-417c-8596-b1bc453b345b",
+        "groupId": "458c2bb2-4d0c-4a39-9af2-554333f59843",
+        "src": "/content-assets/fasadopastoliai/5a657433-74fc-417c-8596-b1bc453b345b.webp",
+        "alt": "Paprasta namo siena ir matmenų užrašymo priemonės",
+        "width": 1448,
+        "height": 1086,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic residential renovation planning context, landscape 4:3. A simple rectangular side facade of a modest Lithuanian detached house, pale gray wall, two understated windows, flat ground, subtle pitched roof cropped partly above. View almost perpendicular from a safe ground-level position with straight verticals and recognizable wall edges; daylight, quiet clean garden. A person is absent. No scaffold to confuse the geometric facade area with scaffold equipment quantity. No measuring arrows, no numbers, no text, no brands, no address, no diagram, no website UI. A subtle closed tape measure rests near a blank clipboard on a small outdoor worktable at the lower left, out of the central wall silhouette; tools are only context, not a hazardous measuring instruction. Original illustrative scene for a guide about describing facade dimensions, never presented as a real customer project. Natural light grays and restrained greens, honest photographic detail, no HDR or dramatic sunset.",
+        "bytes": 188924,
+        "sha256": "0da006ef686acb285f15edffafe3b6a9da6b85a90a0967735aaacf345595391d"
+      },
+      {
+        "id": "73cddeeb-a19b-48e6-9216-5cf2fb136f5b",
+        "groupId": "458c2bb2-4d0c-4a39-9af2-554333f59843",
+        "src": "/content-assets/fasadopastoliai/73cddeeb-a19b-48e6-9216-5cf2fb136f5b.webp",
+        "alt": "Paprasta namo siena ir matmenų užrašymo priemonės",
+        "width": 1200,
+        "height": 900,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic residential renovation planning context, landscape 4:3. A simple rectangular side facade of a modest Lithuanian detached house, pale gray wall, two understated windows, flat ground, subtle pitched roof cropped partly above. View almost perpendicular from a safe ground-level position with straight verticals and recognizable wall edges; daylight, quiet clean garden. A person is absent. No scaffold to confuse the geometric facade area with scaffold equipment quantity. No measuring arrows, no numbers, no text, no brands, no address, no diagram, no website UI. A subtle closed tape measure rests near a blank clipboard on a small outdoor worktable at the lower left, out of the central wall silhouette; tools are only context, not a hazardous measuring instruction. Original illustrative scene for a guide about describing facade dimensions, never presented as a real customer project. Natural light grays and restrained greens, honest photographic detail, no HDR or dramatic sunset.",
+        "bytes": 137128,
+        "sha256": "4c9ae4087814f2b8e33c0ce18df7f3b03d714be406b3ea7b975f187a33cca226"
+      },
+      {
+        "id": "8640272b-3373-4c03-a34d-fd79f8908682",
+        "groupId": "458c2bb2-4d0c-4a39-9af2-554333f59843",
+        "src": "/content-assets/fasadopastoliai/8640272b-3373-4c03-a34d-fd79f8908682.webp",
+        "alt": "Paprasta namo siena ir matmenų užrašymo priemonės",
+        "width": 800,
+        "height": 600,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic residential renovation planning context, landscape 4:3. A simple rectangular side facade of a modest Lithuanian detached house, pale gray wall, two understated windows, flat ground, subtle pitched roof cropped partly above. View almost perpendicular from a safe ground-level position with straight verticals and recognizable wall edges; daylight, quiet clean garden. A person is absent. No scaffold to confuse the geometric facade area with scaffold equipment quantity. No measuring arrows, no numbers, no text, no brands, no address, no diagram, no website UI. A subtle closed tape measure rests near a blank clipboard on a small outdoor worktable at the lower left, out of the central wall silhouette; tools are only context, not a hazardous measuring instruction. Original illustrative scene for a guide about describing facade dimensions, never presented as a real customer project. Natural light grays and restrained greens, honest photographic detail, no HDR or dramatic sunset.",
+        "bytes": 65416,
+        "sha256": "74acc7206f39e7f1beb2ece22f46f04b8b53eb65a910f733870b5b4d52cb784c"
+      },
+      {
+        "id": "b87df4c7-8a8d-4a64-be95-c1399d613aea",
+        "groupId": "458c2bb2-4d0c-4a39-9af2-554333f59843",
+        "src": "/content-assets/fasadopastoliai/b87df4c7-8a8d-4a64-be95-c1399d613aea.webp",
+        "alt": "Paprasta namo siena ir matmenų užrašymo priemonės",
+        "width": 640,
+        "height": 480,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic residential renovation planning context, landscape 4:3. A simple rectangular side facade of a modest Lithuanian detached house, pale gray wall, two understated windows, flat ground, subtle pitched roof cropped partly above. View almost perpendicular from a safe ground-level position with straight verticals and recognizable wall edges; daylight, quiet clean garden. A person is absent. No scaffold to confuse the geometric facade area with scaffold equipment quantity. No measuring arrows, no numbers, no text, no brands, no address, no diagram, no website UI. A subtle closed tape measure rests near a blank clipboard on a small outdoor worktable at the lower left, out of the central wall silhouette; tools are only context, not a hazardous measuring instruction. Original illustrative scene for a guide about describing facade dimensions, never presented as a real customer project. Natural light grays and restrained greens, honest photographic detail, no HDR or dramatic sunset.",
+        "bytes": 42624,
+        "sha256": "71666bbdfbaed34f46d3020bc20a6abcccd7ddd174640c04a75559d768f8f0a8"
+      },
+      {
+        "id": "db48708c-2d7e-469c-b4ed-101179f6ec07",
+        "groupId": "458c2bb2-4d0c-4a39-9af2-554333f59843",
+        "src": "/content-assets/fasadopastoliai/db48708c-2d7e-469c-b4ed-101179f6ec07.webp",
+        "alt": "Paprasta namo siena ir matmenų užrašymo priemonės",
+        "width": 360,
+        "height": 270,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic residential renovation planning context, landscape 4:3. A simple rectangular side facade of a modest Lithuanian detached house, pale gray wall, two understated windows, flat ground, subtle pitched roof cropped partly above. View almost perpendicular from a safe ground-level position with straight verticals and recognizable wall edges; daylight, quiet clean garden. A person is absent. No scaffold to confuse the geometric facade area with scaffold equipment quantity. No measuring arrows, no numbers, no text, no brands, no address, no diagram, no website UI. A subtle closed tape measure rests near a blank clipboard on a small outdoor worktable at the lower left, out of the central wall silhouette; tools are only context, not a hazardous measuring instruction. Original illustrative scene for a guide about describing facade dimensions, never presented as a real customer project. Natural light grays and restrained greens, honest photographic detail, no HDR or dramatic sunset.",
+        "bytes": 14266,
+        "sha256": "e34423d45850f208148ed0ce72addf06a83fd0f38afb75ffef0e8fe188e22b33"
+      }
+    ]
+  },
+  "scope": {
+    "id": "7374b183-9b6f-47db-b8d9-f2479bb86e73",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-679e2320-f9ce-47e4-8996-97c8c15ca97f.png",
+    "sha256": "990bf25cb2fdf3c8d9fcf879045fd29ecb3d7b7eef985082292c942efc7cacb8",
+    "alt": "Tuščias pasiūlymo lapas su projekto aplanku ant planavimo stalo",
+    "promptFile": "research/scope-prompt.txt",
+    "role": "scope",
+    "review": {
+      "date": "2026-10-03T16:10:02.633Z",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Actual visas generated kadras peržiūrėtas prieš importą. Kontekstas, ne klientas / brigada / įranga ar techninės atitikties instrukcija. Scope lapas tuščias. Hero pateikia fasadą; iš iliustracijos nevertinama konstrukcijos sauga. Crop patikra atliekama realiame render."
+    },
+    "variants": [
+      {
+        "id": "7374b183-9b6f-47db-b8d9-f2479bb86e73",
+        "groupId": "41be16c6-3e07-4b29-b351-fbcbaa8a3991",
+        "src": "/content-assets/fasadopastoliai/7374b183-9b6f-47db-b8d9-f2479bb86e73.webp",
+        "alt": "Tuščias pasiūlymo lapas su projekto aplanku ant planavimo stalo",
+        "width": 1448,
+        "height": 1086,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic overhead planning photograph for a residential scaffold rental offer comparison guide, landscape 4:3. On a clean cool light-gray desk beside a window lie a completely blank white A4 sheet, a closed neutral gray project folder, a pencil and a closed compact tape measure. At the top edge a small tablet has a dark completely blank inactive screen. No readable text, no numbers, no price, no fake quotation, no branding, no logo, no human. A restrained lime-green paper clip and natural silver metal detail connect to an architectural planning visual world. The sheet fills the central right half leaving room for a responsive thumbnail crop. Soft daylight, distinct material textures, crisp grounded photography, no collage or interface. This is a generic original planning illustration, not a real contract or completed project.",
+        "bytes": 58222,
+        "sha256": "e5900375c9c444edb2e14d60ed8386de3ca316e6cf86d998881bd6f520ca3f7c"
+      },
+      {
+        "id": "dba73485-2b72-4769-9e74-e15a111f95a9",
+        "groupId": "41be16c6-3e07-4b29-b351-fbcbaa8a3991",
+        "src": "/content-assets/fasadopastoliai/dba73485-2b72-4769-9e74-e15a111f95a9.webp",
+        "alt": "Tuščias pasiūlymo lapas su projekto aplanku ant planavimo stalo",
+        "width": 1200,
+        "height": 900,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic overhead planning photograph for a residential scaffold rental offer comparison guide, landscape 4:3. On a clean cool light-gray desk beside a window lie a completely blank white A4 sheet, a closed neutral gray project folder, a pencil and a closed compact tape measure. At the top edge a small tablet has a dark completely blank inactive screen. No readable text, no numbers, no price, no fake quotation, no branding, no logo, no human. A restrained lime-green paper clip and natural silver metal detail connect to an architectural planning visual world. The sheet fills the central right half leaving room for a responsive thumbnail crop. Soft daylight, distinct material textures, crisp grounded photography, no collage or interface. This is a generic original planning illustration, not a real contract or completed project.",
+        "bytes": 42594,
+        "sha256": "da255d349c854d5eb5fdb0eaf0bcac178a186034814f67de16831bda77bcc703"
+      },
+      {
+        "id": "4fd9432f-3c84-481e-a87e-25a676a5823d",
+        "groupId": "41be16c6-3e07-4b29-b351-fbcbaa8a3991",
+        "src": "/content-assets/fasadopastoliai/4fd9432f-3c84-481e-a87e-25a676a5823d.webp",
+        "alt": "Tuščias pasiūlymo lapas su projekto aplanku ant planavimo stalo",
+        "width": 800,
+        "height": 600,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic overhead planning photograph for a residential scaffold rental offer comparison guide, landscape 4:3. On a clean cool light-gray desk beside a window lie a completely blank white A4 sheet, a closed neutral gray project folder, a pencil and a closed compact tape measure. At the top edge a small tablet has a dark completely blank inactive screen. No readable text, no numbers, no price, no fake quotation, no branding, no logo, no human. A restrained lime-green paper clip and natural silver metal detail connect to an architectural planning visual world. The sheet fills the central right half leaving room for a responsive thumbnail crop. Soft daylight, distinct material textures, crisp grounded photography, no collage or interface. This is a generic original planning illustration, not a real contract or completed project.",
+        "bytes": 23324,
+        "sha256": "94d06f3a2c7d189c27d6f2cad06d0357a0ab49d9d1a269b6ea3400d52e308d1e"
+      },
+      {
+        "id": "e34d7b5d-1bd4-4d1c-b6f2-25a80027ffcf",
+        "groupId": "41be16c6-3e07-4b29-b351-fbcbaa8a3991",
+        "src": "/content-assets/fasadopastoliai/e34d7b5d-1bd4-4d1c-b6f2-25a80027ffcf.webp",
+        "alt": "Tuščias pasiūlymo lapas su projekto aplanku ant planavimo stalo",
+        "width": 640,
+        "height": 480,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic overhead planning photograph for a residential scaffold rental offer comparison guide, landscape 4:3. On a clean cool light-gray desk beside a window lie a completely blank white A4 sheet, a closed neutral gray project folder, a pencil and a closed compact tape measure. At the top edge a small tablet has a dark completely blank inactive screen. No readable text, no numbers, no price, no fake quotation, no branding, no logo, no human. A restrained lime-green paper clip and natural silver metal detail connect to an architectural planning visual world. The sheet fills the central right half leaving room for a responsive thumbnail crop. Soft daylight, distinct material textures, crisp grounded photography, no collage or interface. This is a generic original planning illustration, not a real contract or completed project.",
+        "bytes": 17062,
+        "sha256": "32bbd0ab9b62ee7d7556493ab230716a4518a6c60d1a880f62f06c8fdf1c6de5"
+      },
+      {
+        "id": "f2c019ac-b1c2-41cf-8bb0-37bbe4b67ea4",
+        "groupId": "41be16c6-3e07-4b29-b351-fbcbaa8a3991",
+        "src": "/content-assets/fasadopastoliai/f2c019ac-b1c2-41cf-8bb0-37bbe4b67ea4.webp",
+        "alt": "Tuščias pasiūlymo lapas su projekto aplanku ant planavimo stalo",
+        "width": 360,
+        "height": 270,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic overhead planning photograph for a residential scaffold rental offer comparison guide, landscape 4:3. On a clean cool light-gray desk beside a window lie a completely blank white A4 sheet, a closed neutral gray project folder, a pencil and a closed compact tape measure. At the top edge a small tablet has a dark completely blank inactive screen. No readable text, no numbers, no price, no fake quotation, no branding, no logo, no human. A restrained lime-green paper clip and natural silver metal detail connect to an architectural planning visual world. The sheet fills the central right half leaving room for a responsive thumbnail crop. Soft daylight, distinct material textures, crisp grounded photography, no collage or interface. This is a generic original planning illustration, not a real contract or completed project.",
+        "bytes": 7834,
+        "sha256": "a0239db7a95bb497fb51b146d8fa463239c2ba4067d1e4e6a0b0391379621607"
+      }
+    ]
+  },
+  "mount": {
+    "id": "241a8fad-00d8-47ee-a7fd-0a85067c62a9",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-98ab772e-9a5d-43b0-8f17-61ea42851c71.png",
+    "sha256": "b3962dd7ac4f40e8225c3ad0bcb7ba7c0f15f1feae89e0ed6fbc42bcadb91c10",
+    "alt": "Namo pastolių ir atskirtos prieigos konteksto iliustracija",
+    "promptFile": "research/mount-prompt.txt",
+    "role": "mount",
+    "review": {
+      "date": "2026-10-03T16:10:04.100Z",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Actual visas generated kadras peržiūrėtas prieš importą. Kontekstas, ne klientas / brigada / įranga ar techninės atitikties instrukcija. Scope lapas tuščias. Hero pateikia fasadą; iš iliustracijos nevertinama konstrukcijos sauga. Crop patikra atliekama realiame render."
+    },
+    "variants": [
+      {
+        "id": "241a8fad-00d8-47ee-a7fd-0a85067c62a9",
+        "groupId": "87914ef8-9df5-42b5-ae48-16648cf46521",
+        "src": "/content-assets/fasadopastoliai/241a8fad-00d8-47ee-a7fd-0a85067c62a9.webp",
+        "alt": "Namo pastolių ir atskirtos prieigos konteksto iliustracija",
+        "width": 1448,
+        "height": 1086,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic completed residential facade scaffolding context seen from outside a closed work area, landscape 4:3. Side perspective of an ordinary two storey light stucco house, professionally assembled silver scaffold with fully boarded working platforms, visible continuous guard rails and toe boards, enclosed internal stair access, tied facade bays as realistic architectural context. Ground is tidy and the worksite perimeter is visibly separated with a simple barrier; no public pedestrian routed beneath platforms. Camera safely at ground level outside the barrier. No people at all, no action, no exposed incomplete erection sequence, no instructional closeups, no materials loading, no brands, no license plate, no text or signage. Bright overcast daylight, silver steel geometry and cool gray house, subdued green garden. Illustrative context for a guide distinguishing equipment rental from professional erection and handover, not a safety certification or an actual MB Pinet site. Compose scaffold access and house clearly within central 70 percent for mobile crops. Natural photographic realism, no dramatic effects, no website UI.",
+        "bytes": 253696,
+        "sha256": "f55e581185447162abdb964fa968505a8d270f3718a3c316241f18ff12dbef10"
+      },
+      {
+        "id": "a94a7756-cec8-46f7-8512-34a2143e9ba2",
+        "groupId": "87914ef8-9df5-42b5-ae48-16648cf46521",
+        "src": "/content-assets/fasadopastoliai/a94a7756-cec8-46f7-8512-34a2143e9ba2.webp",
+        "alt": "Namo pastolių ir atskirtos prieigos konteksto iliustracija",
+        "width": 1200,
+        "height": 900,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic completed residential facade scaffolding context seen from outside a closed work area, landscape 4:3. Side perspective of an ordinary two storey light stucco house, professionally assembled silver scaffold with fully boarded working platforms, visible continuous guard rails and toe boards, enclosed internal stair access, tied facade bays as realistic architectural context. Ground is tidy and the worksite perimeter is visibly separated with a simple barrier; no public pedestrian routed beneath platforms. Camera safely at ground level outside the barrier. No people at all, no action, no exposed incomplete erection sequence, no instructional closeups, no materials loading, no brands, no license plate, no text or signage. Bright overcast daylight, silver steel geometry and cool gray house, subdued green garden. Illustrative context for a guide distinguishing equipment rental from professional erection and handover, not a safety certification or an actual MB Pinet site. Compose scaffold access and house clearly within central 70 percent for mobile crops. Natural photographic realism, no dramatic effects, no website UI.",
+        "bytes": 191568,
+        "sha256": "9766a5d3ccbdfe25e8c22ef1581269730a21934708b90ea20de95a2e7851e550"
+      },
+      {
+        "id": "477a051b-5351-4603-8fee-2a7a0fcb7e2e",
+        "groupId": "87914ef8-9df5-42b5-ae48-16648cf46521",
+        "src": "/content-assets/fasadopastoliai/477a051b-5351-4603-8fee-2a7a0fcb7e2e.webp",
+        "alt": "Namo pastolių ir atskirtos prieigos konteksto iliustracija",
+        "width": 800,
+        "height": 600,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic completed residential facade scaffolding context seen from outside a closed work area, landscape 4:3. Side perspective of an ordinary two storey light stucco house, professionally assembled silver scaffold with fully boarded working platforms, visible continuous guard rails and toe boards, enclosed internal stair access, tied facade bays as realistic architectural context. Ground is tidy and the worksite perimeter is visibly separated with a simple barrier; no public pedestrian routed beneath platforms. Camera safely at ground level outside the barrier. No people at all, no action, no exposed incomplete erection sequence, no instructional closeups, no materials loading, no brands, no license plate, no text or signage. Bright overcast daylight, silver steel geometry and cool gray house, subdued green garden. Illustrative context for a guide distinguishing equipment rental from professional erection and handover, not a safety certification or an actual MB Pinet site. Compose scaffold access and house clearly within central 70 percent for mobile crops. Natural photographic realism, no dramatic effects, no website UI.",
+        "bytes": 98864,
+        "sha256": "f143ad8cefd005a06330f2ecbf3e148fb978d11bb6fc82c38b109d92df11dd81"
+      },
+      {
+        "id": "d4f2192e-3a82-40b4-9d01-be470911bf38",
+        "groupId": "87914ef8-9df5-42b5-ae48-16648cf46521",
+        "src": "/content-assets/fasadopastoliai/d4f2192e-3a82-40b4-9d01-be470911bf38.webp",
+        "alt": "Namo pastolių ir atskirtos prieigos konteksto iliustracija",
+        "width": 640,
+        "height": 480,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic completed residential facade scaffolding context seen from outside a closed work area, landscape 4:3. Side perspective of an ordinary two storey light stucco house, professionally assembled silver scaffold with fully boarded working platforms, visible continuous guard rails and toe boards, enclosed internal stair access, tied facade bays as realistic architectural context. Ground is tidy and the worksite perimeter is visibly separated with a simple barrier; no public pedestrian routed beneath platforms. Camera safely at ground level outside the barrier. No people at all, no action, no exposed incomplete erection sequence, no instructional closeups, no materials loading, no brands, no license plate, no text or signage. Bright overcast daylight, silver steel geometry and cool gray house, subdued green garden. Illustrative context for a guide distinguishing equipment rental from professional erection and handover, not a safety certification or an actual MB Pinet site. Compose scaffold access and house clearly within central 70 percent for mobile crops. Natural photographic realism, no dramatic effects, no website UI.",
+        "bytes": 64056,
+        "sha256": "b397f17f599b05b0c5420994825aae6a988e31793bd6b23b616a6149da32edf9"
+      },
+      {
+        "id": "a4fac329-2725-407f-ba34-23254961cac5",
+        "groupId": "87914ef8-9df5-42b5-ae48-16648cf46521",
+        "src": "/content-assets/fasadopastoliai/a4fac329-2725-407f-ba34-23254961cac5.webp",
+        "alt": "Namo pastolių ir atskirtos prieigos konteksto iliustracija",
+        "width": 360,
+        "height": 270,
+        "credit": "",
+        "rights": "Originali projekto konteksto iliustracija, sukurta integruotu ImageGen. Trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Photorealistic completed residential facade scaffolding context seen from outside a closed work area, landscape 4:3. Side perspective of an ordinary two storey light stucco house, professionally assembled silver scaffold with fully boarded working platforms, visible continuous guard rails and toe boards, enclosed internal stair access, tied facade bays as realistic architectural context. Ground is tidy and the worksite perimeter is visibly separated with a simple barrier; no public pedestrian routed beneath platforms. Camera safely at ground level outside the barrier. No people at all, no action, no exposed incomplete erection sequence, no instructional closeups, no materials loading, no brands, no license plate, no text or signage. Bright overcast daylight, silver steel geometry and cool gray house, subdued green garden. Illustrative context for a guide distinguishing equipment rental from professional erection and handover, not a safety certification or an actual MB Pinet site. Compose scaffold access and house clearly within central 70 percent for mobile crops. Natural photographic realism, no dramatic effects, no website UI.",
+        "bytes": 21066,
+        "sha256": "97bf188cbecfd4a9323fc3f681c0a52886107cbbcd811bfe8b07aeb5356f05a1"
+      }
+    ]
+  }
+}

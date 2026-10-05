@@ -1,0 +1,3 @@
+import http from 'node:http';
+// Read-only canonical-host transport for browser/lab checks. No HTML mutation.
+http.createServer((req,res)=>{if(req.method==='POST'&&req.url==='/ivykius'){res.writeHead(204);return res.end();}if(!['GET','HEAD'].includes(req.method)){res.writeHead(403);return res.end();}const upstream=http.request({hostname:'127.0.0.1',port:8886,path:req.url,method:req.method,headers:{...req.headers,host:'akmenas.lt'}},r=>{res.writeHead(r.statusCode,r.headers);r.pipe(res);});upstream.on('error',()=>{if(!res.headersSent)res.writeHead(502);res.end();});upstream.end();}).listen(8887,'127.0.0.1',()=>console.log('akmenas readonly canonical Host 8887'));

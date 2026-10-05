@@ -1,0 +1,37 @@
+{
+  "siteId": "traktoriupadangos",
+  "canonicalHost": "traktoriupadangos.lt",
+  "recordedAt": "2026-09-30T20:18:16.668Z",
+  "clientDate": "2026-09-30",
+  "packageSha256": "cdacd6d13bbd2cbe74791d392ba49687b688fd78443880aa5ddf2ecfa7104f04",
+  "buildAt": "2026-09-30T18:19:42.588Z",
+  "intendedUrls": [
+    "/",
+    "/gidai",
+    "/gidas/kaip-issirinkti-traktoriaus-padangas",
+    "/gidas/traktoriaus-padangu-zymejimas",
+    "/gidas/radialines-ar-diagonalines-traktoriaus-padangos",
+    "/kontaktai"
+  ],
+  "checks": {
+    "R2": "UNVERIFIED",
+    "S2": "UNVERIFIED"
+  },
+  "status": "INTERRUPTED_BY_USER_ESCAPE",
+  "mechanismAttempted": "Native Chrome zoom shortcut via supported Computer Use; true percentage not established.",
+  "originalZoom": null,
+  "finalZoom": null,
+  "viewportAtEnlargement": null,
+  "dprAtEnlargement": null,
+  "screenshotsAtVerifiedEnlargement": [],
+  "actionsVerifiedAtEnlargement": [],
+  "restoration": "UNVERIFIED; no confirmed zoom change or restoration",
+  "priorNarrowEvidence": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\output\\audits\\tractor-browser-local.json",
+  "limitations": [
+    "Native window activation/capture did not reliably establish the intended audit tab.",
+    "User physically pressed Escape; no more browser/app input issued after the stop.",
+    "Unrelated foreground content was not retained as audit evidence.",
+    "320/390/768/1440 narrow-layout evidence is retained separately; it is not proof of enlargement."
+  ],
+  "instructions": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\SKILLS\\niche-site-audit\\references\\accessibility-verification.md"
+}

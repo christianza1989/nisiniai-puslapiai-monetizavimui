@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-03",
+  "scope": "One existing niche's possible additional hosting commission, not a new business selection",
+  "sources": [
+    {"id":"S1","url":"https://www.hostinger.com/legal/referral-program-agreement","status":"opened_primary_html","pageRevision":"2026-09-02 00:06:43","observation":"Different regular/approved-agency rewards; participation, distribution and payout constraints.","limits":"No executed agreement, approval, account or attribution checked; no blanket agency distribution exception assumed."},
+    {"id":"S2","url":"https://www.hostinger.com/support/hostinger-partner-program/","status":"opened_primary_html","observation":"Agency registration criteria and review; directory and lead benefits offered.","limits":"No actual membership, ten hosted sites or received leads verified."},
+    {"id":"S3","url":"https://www.hostinger.com/legal/affiliate-program-agreement","status":"opened_primary_html","observation":"Separate initial-purchase commission rules, tracking and refund conditions.","limits":"Up-to rate is not our confirmed offer; no recurring income inferred."},
+    {"id":"S4","url":"https://www.hostinger.com/support/1583642-how-to-join-the-hostinger-affiliate-program/","status":"opened_primary_html","observation":"Established site/quality traffic or larger audience and relevant content criteria.","limits":"Our traffic and acceptance unverified."},
+    {"id":"S5","url":"https://www.hostinger.com/support/6080777-how-to-use-the-referral-program-at-hostinger/","status":"opened_primary_html","observation":"Account UI for plans, referrals and earnings.","limits":"Documentation read only; no dashboard/API execution or payout."},
+    {"id":"S6","url":"https://www.hostinger.com/referral-program","status":"opened_primary_html","observation":"Public program marketing inspected as supplementary source.","limits":"No eligibility or automation rights inferred from marketing."}
+  ]
+}

@@ -1,0 +1,12 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const renderer='C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/miniekskavatoriai-site.tsx';
+let s=await readFile(renderer,'utf8');
+s=s.replace('function GuideList({livePages}:Props){return','function GuideList({livePages,page}:Props){const Heading=page.slug===\'gidai\'?\'h2\':\'h3\';return').replace('<h3><a href={nichePagePath(p)}>{p.title}</a></h3>','<Heading><a href={nichePagePath(p)}>{p.title}</a></Heading>');
+const tool='{isTool&&<div className={styles.fullTool}><ExcavationTool email={pkg.site.contact.email}/></div>}';
+s=s.replace(tool,'').replace('</section>{isIndex?',`</section>${tool}{isIndex?`);
+await writeFile(renderer,s);
+const css=renderer.replace('.tsx','.module.css');
+let c=await readFile(css,'utf8');c=c.replace('.shell :where(a){color:inherit}', '.shell :where(a){color:inherit}\n.shell .textLink,.shell .navAction{color:var(--clay)}.hero .heroLink{color:var(--accent)}\n.guideList h2{font-size:28px;margin:0 0 16px}.guideList h2 a{color:var(--ink);text-decoration:none}.guideList h2 a:hover{text-decoration:underline}');
+await writeFile(css,c);
+const d='C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/miniekskavatoriai/DESIGN.md';
+let doc=await readFile(d,'utf8');doc=doc.replace('desktop/mobile palyginimas prieš final assets.','desktop/mobile palyginimas prieš production rendererį. Procedūrinė išlyga: temos final vaizdai buvo sugeneruoti po krypties/asetų plano ir tinklo apžiūros, bet prieš studijų screenshot palyginimą; to nepateikiame kaip nepriekaištingos sekos.');await writeFile(d,doc);

@@ -1,0 +1,268 @@
+{
+  "source": "domain-sorter/output/top200-research-20261001/selected",
+  "snapshotDate": "2026-10-05",
+  "generatedAt": "2026-10-05T13:09:25.019Z",
+  "recordsAreResearchNotDemandProof": true,
+  "rows": [
+    {
+      "file": "top200_su_dr.csv",
+      "bytes": 158218,
+      "sha256": "0415cef6fef3c7d8bd710d20a1214357a656409ea66d674cb8805b738a8d3f75"
+    },
+    {
+      "file": "top200_pilna_analize.csv",
+      "bytes": 158218,
+      "sha256": "0415cef6fef3c7d8bd710d20a1214357a656409ea66d674cb8805b738a8d3f75"
+    },
+    {
+      "file": "analizes/agroiranga-lt.md",
+      "bytes": 32345,
+      "sha256": "e93de7c936ca8d27de48df8282b9427b3834a3ed6bc9f28996f2c979f6d02a1c"
+    },
+    {
+      "file": "analizes/anglukalbospamokosinternete-lt.md",
+      "bytes": 27952,
+      "sha256": "10409d38da0a4001f2858a6b57fa565f8303b2c0909c2573136776c39b147eaa"
+    },
+    {
+      "file": "analizes/apsauganamui-lt.md",
+      "bytes": 28833,
+      "sha256": "c9757a464ad07a6d27321f18c24e872b84f4f292f690dddeef6c816ba71d5a7c"
+    },
+    {
+      "file": "analizes/atliekukonteineriai-lt.md",
+      "bytes": 29604,
+      "sha256": "60627000fe02d0261d40f4710e527aca8f1d00a6689abc73cd1494ee504162db"
+    },
+    {
+      "file": "analizes/auto-tralas-lt.md",
+      "bytes": 33260,
+      "sha256": "81408f9ef53bfa176fa647a58af300e72844492b2beb809d8eb4debe14f96007"
+    },
+    {
+      "file": "analizes/autoboksteliai-lt.md",
+      "bytes": 28102,
+      "sha256": "498b3e6f544ebf451b52ad250201e004a8a811489d1bd678398663b5eafdf4f6"
+    },
+    {
+      "file": "analizes/autoelektrikaivilniuje-lt.md",
+      "bytes": 33968,
+      "sha256": "7f75def5db2f95b8c71a301eb8839597da46b083f2e47effb9febbf0a0b72364"
+    },
+    {
+      "file": "analizes/autotikrinimas-lt.md",
+      "bytes": 28226,
+      "sha256": "c764871e809d725a50e69399f8d9f84a91058afc74e03f777fbcb17c2c801303"
+    },
+    {
+      "file": "analizes/baidarestaurageje-lt.md",
+      "bytes": 29238,
+      "sha256": "fbc204caaca060c68f31369fc1940ae2e276762eeb34f16ba43a33cd406c330f"
+    },
+    {
+      "file": "analizes/baldaikavinems-lt.md",
+      "bytes": 34459,
+      "sha256": "514627258cbb02973c80c91c68cac9cc5dd0a706c97adb665a906522f2ea9a11"
+    },
+    {
+      "file": "analizes/cncvilnius-lt.md",
+      "bytes": 28475,
+      "sha256": "18220336667218bc8fa47959df0aa5daa0bfaaf9ca8ffdff490a8223a555d92b"
+    },
+    {
+      "file": "analizes/darbaivairuotojams-lt.md",
+      "bytes": 30736,
+      "sha256": "0b5e4a1980c984d640b72ed4647875a221469232fe7b123dda2731bf543ef476"
+    },
+    {
+      "file": "analizes/darborubas-lt.md",
+      "bytes": 29467,
+      "sha256": "cc327f3adb5a372e67acfa02f3cd7a70e93a65daa3e886a408b5935cdbda8b40"
+    },
+    {
+      "file": "analizes/dumperiunuoma-lt.md",
+      "bytes": 27893,
+      "sha256": "39028d51c5469c20713939a2cd86f3bfd2f3afc443f9f6bc1a340c65a3f1428f"
+    },
+    {
+      "file": "analizes/elektros-varikliai-lt.md",
+      "bytes": 34319,
+      "sha256": "7b7f61146b560929eb3f1640431be1b7d798ea7185e3f3f21c954dbf2c3ed4a7"
+    },
+    {
+      "file": "analizes/fasadopastoliai-lt.md",
+      "bytes": 27738,
+      "sha256": "99d8c1948f17defae3b970c53311c07a11ffbd8e8aedb070c5abe911de5b5690"
+    },
+    {
+      "file": "analizes/fotoseimai-lt.md",
+      "bytes": 26825,
+      "sha256": "a2d2c88ff3a4155fef563dec88049418102ce5bd5298afcb6358ea7901ed1c9d"
+    },
+    {
+      "file": "analizes/issinuomokauto-lt.md",
+      "bytes": 31219,
+      "sha256": "d6f47c41e26abb828825bfd83d138cc05e188a8e3b1d9e445454783f6c6129a9"
+    },
+    {
+      "file": "analizes/jusukalve-lt.md",
+      "bytes": 30284,
+      "sha256": "df5d249fdf320905cecd1a892f6b6c1f401e730e253089379be9a0cc877996ab"
+    },
+    {
+      "file": "analizes/kelimoiranga-lt.md",
+      "bytes": 31579,
+      "sha256": "4d6567fbc27b68bb56bb02ef6e528d8d4a287d97110a7ce27c508b8fceb107d0"
+    },
+    {
+      "file": "analizes/kiemodanga-lt.md",
+      "bytes": 28715,
+      "sha256": "d43327564dd7f7ab95758c56906ab25fce5e43ce7cd2866ab0d5c039a5667a23"
+    },
+    {
+      "file": "analizes/klientuvaldymas-lt.md",
+      "bytes": 27865,
+      "sha256": "ee097248a74753d87146db307924f60d454aee3f222d133bb41ae2141b54b97d"
+    },
+    {
+      "file": "analizes/komerciniupatalpunuoma-lt.md",
+      "bytes": 31808,
+      "sha256": "2e693fc95bb84211700c8e9e183357f8a8df383bbb77ee8336fc8eb8fca26e19"
+    },
+    {
+      "file": "analizes/kompiuteriu-prieziura-lt.md",
+      "bytes": 30419,
+      "sha256": "531fa028af953781bb234e4f59e1b3da4b5d3bc778fd8a19c7205720efab1797"
+    },
+    {
+      "file": "analizes/lietausnuvedimosistemos-lt.md",
+      "bytes": 30972,
+      "sha256": "a8169213d11dd277c5d02870d9d9da78fdc8f48e5a37b2738e5c1156cc8b59d6"
+    },
+    {
+      "file": "analizes/medziostakles-lt.md",
+      "bytes": 37079,
+      "sha256": "ce8a4d12f1ae48068522f9fccb2fbeecf61179d9cb2afcb35f29cb992dba47e3"
+    },
+    {
+      "file": "analizes/medziuprieziura-lt.md",
+      "bytes": 27709,
+      "sha256": "edbb8f150ac526bef054eb9065930add65a6234922cc14827a3712239113e89b"
+    },
+    {
+      "file": "analizes/metalo-tvoros-lt.md",
+      "bytes": 29994,
+      "sha256": "49eec286e7272e73ab33f90a31ab1ef28eb8f6909f698a8ca77024c1db2806c0"
+    },
+    {
+      "file": "analizes/miniekskavatoriai-lt.md",
+      "bytes": 28824,
+      "sha256": "1f1fbfc730a3a0b97f2d42e396e74775e09486f2dc3d1e882ebcc405aeeace8e"
+    },
+    {
+      "file": "analizes/mininamas-lt.md",
+      "bytes": 30834,
+      "sha256": "dc30c81d3951aaba85d882726d2c5eec9068ea6f5baa4067678d8a2569c4533c"
+    },
+    {
+      "file": "analizes/mobiluspadanguservisas-lt.md",
+      "bytes": 31778,
+      "sha256": "afe18cd7a7d0fdfa4fb2dea8fee4a4d32df5fc4db5d6fa07fada8d3f33ce61a4"
+    },
+    {
+      "file": "analizes/namoautomatika-lt.md",
+      "bytes": 28915,
+      "sha256": "18021583d5109bf8c0e48f42aa9b1607109b8d32c8ca34cc253a52bd9148172e"
+    },
+    {
+      "file": "analizes/naujasstogas-lt.md",
+      "bytes": 28080,
+      "sha256": "a6d7efbfefa9698338d1820178f085f875959760462c2720e07371f7cdd877f1"
+    },
+    {
+      "file": "analizes/nestandartiniaivirtuvesbaldai-lt.md",
+      "bytes": 31117,
+      "sha256": "55c72534c99c29a6d11f6cda2e23d580faa8f9a7b526d418e598ba62b272629b"
+    },
+    {
+      "file": "analizes/noriuklientu-lt.md",
+      "bytes": 27935,
+      "sha256": "e570548ad83500518ac6beb4dba165ad99704e8d53b9f17d79370dc3a1050a68"
+    },
+    {
+      "file": "analizes/nupirksimautomobili-lt.md",
+      "bytes": 29199,
+      "sha256": "9beeb4478196e6bddaa16316da174daa9f1abd5925ad3f8b8df64a1fa45a4df6"
+    },
+    {
+      "file": "analizes/paruosta-eparduotuve-lt.md",
+      "bytes": 28864,
+      "sha256": "04053df73e612cd410c2042e69198204c87fdf26ebe97a5bed46b9639def13bd"
+    },
+    {
+      "file": "analizes/periodinisvalymas-lt.md",
+      "bytes": 25531,
+      "sha256": "759984453bfab6bb1582ea94c18e34eb0d74ba2eeb29f5052fdc1ee00085a4df"
+    },
+    {
+      "file": "analizes/pjovimasplazma-lt.md",
+      "bytes": 36266,
+      "sha256": "693ca6fd365bfa170e5524912c647b8cba9af601c3e0deabafb80972dae77789"
+    },
+    {
+      "file": "analizes/plieninestogodanga-lt.md",
+      "bytes": 26800,
+      "sha256": "cec64ceac0403ba90875a09fdc7ada0049b0cbe8b0628dad556c33aa192625d8"
+    },
+    {
+      "file": "analizes/praejimokontrolessistemos-lt.md",
+      "bytes": 28864,
+      "sha256": "c46f15ff23c0f6d2ac313f7b0dc43d05935952bcf98a78642c0165e3d1196fba"
+    },
+    {
+      "file": "analizes/rekuperacijosmeistrai-lt.md",
+      "bytes": 32845,
+      "sha256": "8d12297e6a303636b8e37b6e910dd3963afd51af15c769aaf70f6d6b305c9664"
+    },
+    {
+      "file": "analizes/rusuvertimai-lt.md",
+      "bytes": 28277,
+      "sha256": "7c32a59e44b5ec9d8396c461275542e1c938342ca6b11a51dd63a758f7f08d63"
+    },
+    {
+      "file": "analizes/santechnikupaslaugos-lt.md",
+      "bytes": 30253,
+      "sha256": "921dd2cbbbc1c587e7c47a40d9ba750484be25b66a542194cac6d7e955341382"
+    },
+    {
+      "file": "analizes/statybosmarketingas-lt.md",
+      "bytes": 31470,
+      "sha256": "763a0c32820e52e666983e3102b478e7392d6847151d1157bda36e55c6b26e8f"
+    },
+    {
+      "file": "analizes/svaraverslui-lt.md",
+      "bytes": 29906,
+      "sha256": "e1481f75212976da90d40dcb8d839951a7618410196f1889e8df970f156af3a4"
+    },
+    {
+      "file": "analizes/svetainesprieziura-lt.md",
+      "bytes": 26421,
+      "sha256": "cf85860607702837d26aa8621d08cda89109309d5d0f7021cc2edb791f9943c1"
+    },
+    {
+      "file": "analizes/ventiliacijossistemos-lt.md",
+      "bytes": 27395,
+      "sha256": "72fb706564661260680905ad89e20ca122c4a92a7cf5ab1e93e453a452f9c7c0"
+    },
+    {
+      "file": "analizes/virtualiadministratore-lt.md",
+      "bytes": 30084,
+      "sha256": "f6a123cc1c380e12ba38fdb880feecec89dae79f99f68d2640e147a8d5b68e3a"
+    },
+    {
+      "file": "analizes/visazisteskursai-lt.md",
+      "bytes": 28629,
+      "sha256": "4a6c4024bb6ff935f2f86cdedc3fa59226cb16b5e1cff96aabf9c3fe3e904be4"
+    }
+  ]
+}

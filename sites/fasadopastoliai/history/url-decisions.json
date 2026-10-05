@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-03T15:53:27.820Z",
+  "publicChangesApplied": false,
+  "redirects": [],
+  "decisions": [
+    {
+      "path": "/",
+      "action": "keep-new-original-content",
+      "reason": "Bendra paskirtis ta pati; naujas MB Pinet poreikio projektas, ne ankstesnio operatoriaus tęsinys."
+    },
+    {
+      "path": "/apie_mus",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    },
+    {
+      "path": "/atlikti_projektai",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    },
+    {
+      "path": "/eng/",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    },
+    {
+      "path": "/eng/apie_mus",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    },
+    {
+      "path": "/eng/kontaktai",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    },
+    {
+      "path": "/favicon.ico",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    },
+    {
+      "path": "/kontaktai",
+      "action": "keep-new-original-content",
+      "reason": "Bendra paskirtis ta pati; naujas MB Pinet poreikio projektas, ne ankstesnio operatoriaus tęsinys."
+    },
+    {
+      "path": "/technine_informacija",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    },
+    {
+      "path": "/content-bg3.gif",
+      "action": "do-not-restore-404",
+      "reason": "Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage."
+    }
+  ]
+}

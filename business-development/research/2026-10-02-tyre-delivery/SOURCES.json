@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "researchedOn": "2026-10-02",
+  "sources": [
+    {"id":"S1","url":"https://www.baywa.de/p/ceat-specialty-traktorreifen-420-85-r-28-farmax-r85-139d-142a8-radial-tl/p_32802342/2227868","kind":"supplier_product","access":"opened_primary_html","fact":"Free-shipping label; external tyre diameter 1425 mm","limit":"Product dimensions are not shipping package measurements; LT delivery not confirmed"},
+    {"id":"S2","url":"https://www.baywa.de/i/footermenue/wir-helfen-ihnen/faq","kind":"supplier_delivery_terms","access":"opened_primary_html","fact":"Unarranged deliveries limited to mainland Germany; foreign delivery requires enquiry and applies to selected products","limit":"No SKU-specific agreement, Lithuanian price or timing obtained"},
+    {"id":"S3","url":"https://www.dpd.com/lt/lt/pagalba/naudingi-patarimai/standartines-ir-nestandartines-siuntos/","kind":"carrier_service_profiles","access":"opened_primary_html","fact":"Different parcel and pallet classes; standard courier table uses 100 cm longest side, 290 cm circumference-plus-length, 25 kg; EU heavy-parcel surcharge exception up to 31.5 kg","limit":"Service screening is not a route quotation, contract or rejection of all carrier services"},
+    {"id":"S4","url":"https://www.omniva.lt/pagalba/siuntos-dydzio-ir-svorio-reikalavimai","kind":"carrier_help_pointer","access":"opened_primary_html","fact":"Points to sending page","limit":"No current business-route numerical profile accepted in this study"},
+    {"id":"S5","url":"https://www.omniva.lt/siusti-siunta/","kind":"carrier_sending_page","access":"opened_primary_html","fact":"Linked primary page inspected","limit":"Specific business service and conditions not established; no shipment created"},
+    {"id":"S6","url":"https://res.cloudinary.com/baywa-ag-p/raw/upload/A35056857.pdf","kind":"supplier_attached_manufacturer_pdf","access":"parsed_pdf_text","fact":"Inflated dimensions in the relevant size row corroborate 1425 mm diameter","limit":"Screenshot calls returned no inspectable pixels in this session; not used to validate load-index or packaging data"},
+    {"id":"S7","url":"https://www.ceatspecialty.com/content/dam/ceatspeciality/pdf/patternDetails/in/Technical_Specs_farmax-r85.pdf","kind":"manufacturer_pdf_attempt","access":"open_failed","fact":null,"limit":"Failure is not proof of absent specifications"}
+  ],
+  "actions": {"formsSubmitted":0,"supplierContacts":0,"purchases":0,"accountChanges":0,"ourDemandVerified":false}
+}

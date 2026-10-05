@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-01T03:02:14.331Z",
+  "base": "http://127.0.0.1:8886",
+  "siteId": "akmenas",
+  "synthetic": true,
+  "checks": {
+    "dnt": 204,
+    "gpc": 204,
+    "bot": 204,
+    "foreignOrigin": 403,
+    "futurePath": 404,
+    "size": 413,
+    "invalidEvent": 400,
+    "unknownHost": 404,
+    "accepted": 204
+  },
+  "privacyExclusionsDidNotStore": true,
+  "perSiteIncrement": true,
+  "testCountRestored": true,
+  "fields": [
+    "site_id",
+    "day",
+    "page_path",
+    "event",
+    "count"
+  ],
+  "noVisitorIdentifier": true,
+  "warning": "Browser QA and local totals are synthetic, not real demand."
+}

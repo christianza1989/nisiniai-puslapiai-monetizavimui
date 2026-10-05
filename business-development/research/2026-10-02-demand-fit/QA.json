@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-02T14:08:30Z",
+  "scope": "Private research records only; no runtime or demand acceptance",
+  "checks": {
+    "jsonRecordsParsed": 3,
+    "sourcesJsonValid": true,
+    "stateJsonValid": true,
+    "qaJsonValid": true,
+    "sourceEntries": 3,
+    "openedPrimaryHtmlPages": 3,
+    "visiblePublicNeedsManuallyReviewed": 5,
+    "rawContactOrRequestRecordsStored": 0,
+    "registryLocalMarkdownReferencesChecked": 63,
+    "brokenReferences": 0,
+    "newIdeaIdsAllocated": 0
+  },
+  "evidenceLimits": [
+    "Visible public sample is nonrandom and not our customer demand",
+    "Changing category counter snapshots do not establish a daily rate or market growth",
+    "Provider offers do not establish willingness to pay us for leads",
+    "Existing qualification criteria cover the observed distinctions; no new module justified",
+    "Planned one-hour review is an unmeasured time assumption",
+    "No runtime, UI, form delivery or live customer acceptance tested",
+    "Initial nonexistent per-site RESEARCH.md read corrected to actual BUSINESS and ACQUISITION files"
+  ],
+  "outcome": "evidence_only_no_new_proposal",
+  "actions": {
+    "customerOrSupplierMessages": 0,
+    "formsSubmitted": 0,
+    "purchases": 0,
+    "subscriptionsAdded": 0,
+    "runtimeChanges": 0,
+    "siteChanges": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0,
+    "ownerNotifications": 0
+  }
+}

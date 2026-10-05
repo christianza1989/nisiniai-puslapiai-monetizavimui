@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-10-05T09:22:48.3494618Z",
+  "tool": "built-in image_gen",
+  "promptFile": "PROMPTS.json",
+  "publicImported": false,
+  "implementationStatus": "not_implemented",
+  "files": [
+    {
+      "kind": "homepage",
+      "file": "homepage-v1.png",
+      "originalSource": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-60371ca4-a509-49b6-9faa-3ebd8ecb1e14.png",
+      "width": 793,
+      "height": 1983,
+      "bytes": 1838862,
+      "sha256": "9748dd474fb9ca0131495528d052f5ac63e2fe9cad8a66f23d4e68a2df416a5e",
+      "status": "private_raster_future_platform_mockup",
+      "mockData": true,
+      "copiedWithoutEditing": true
+    },
+    {
+      "kind": "public_profile",
+      "file": "public-profile-v1.png",
+      "originalSource": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-0fb198bc-d7e8-496d-a59a-04cb6f4fbac3.png",
+      "width": 793,
+      "height": 1983,
+      "bytes": 1779099,
+      "sha256": "83929f182efdaeeeaa7cdc0d2c9c582d05480c5dea03146dc56c17ec4ed6ff0e",
+      "status": "private_raster_future_platform_mockup",
+      "mockData": true,
+      "copiedWithoutEditing": true
+    },
+    {
+      "kind": "professional_account",
+      "file": "professional-account-v1.png",
+      "originalSource": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-a6794de1-4c86-4fec-a6d2-69fff3438324.png",
+      "width": 816,
+      "height": 1928,
+      "bytes": 1272844,
+      "sha256": "0a2760eee122bc4451f24bdf61db212448b694a8455f40aeb76be635a2f1752a",
+      "status": "private_raster_future_platform_mockup",
+      "mockData": true,
+      "copiedWithoutEditing": true
+    }
+  ],
+  "visualReview": "Reviewed all three actual generated images sequentially by root. Full-page structure and major controls visible. Not an independent review, browser screenshot, functional QA, mobile audit or design score.",
+  "limitations": [
+    "Generated dates differ across mockups and include historical examples; synchronize in implementation.",
+    "Mock specialist portraits differ between profile and workspace; one actual approved Provider identity must replace them before live.",
+    "Public navigation and footer variants need one final production contract.",
+    "Illustrative service durations and calendar block labels are not operational rules or verified provider prices.",
+    "Mock generated portfolio images are not evidence of completed client work.",
+    "Mock controls do not demonstrate reservation or notification behavior."
+  ]
+}

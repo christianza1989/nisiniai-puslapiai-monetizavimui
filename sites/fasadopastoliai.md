@@ -1,0 +1,41 @@
+# Fasadopastoliai.lt — svetainės žurnalas
+
+SiteId fasadopastoliai. 2026-10-03 analysis-informed pirmos fazės paklausos testas. Originali analizė visiškai perskaityta prieš verslo ir dizaino sprendimą; SHA/tikra data [INPUT-PROVENANCE](fasadopastoliai/INPUT-PROVENANCE.json). Originalas ir parent handoff nekeisti, tai ne cold-start benchmark. Savininkas vėliau atidėjo metalo-tvoros.lt; ši niša nepradėta.
+
+## Verslas ir faktai
+
+MB Pinet / info@pinet.lt pagal savininko nurodymą ir aktualią core config. Telefonas, adresas, ankstesnio domeno operatoriaus pajėgumas, sandėlis, brigada, įranga, kainos, partneriai ir rezervacijos neteigiami. [BUSINESS](fasadopastoliai/BUSINESS.md) prieš UI palygino M1 tiekėjo mokėjimą už jo priimtą tinkamą nedubliuotą užklausą, M2 atlygį po apmokėtos nuomos, tiesioginę nuomą ir leidybą/konsultaciją. Pasirinktas M1 tebėra hipotezė, vietinio mokėtojo/kainos susitarimo nėra. Namo savininko mokamas rezultatas — reali nuoma su jo reikalinga paslaugų apimtimi; tiekėjo sutarties suma nėra mūsų pajamos.
+
+Pirmas pirkėjas: Vilniaus/Vilniaus rajono individualaus namo savininkas, pats organizuojantis planinę fasado nuomą. Viešas veiksmas — vietovės, žinomų matmenų ar nežinomybės, laiko ir apimties pateikimas MB Pinet. Tai poreikio tyrimas, ne rezervacija, pasiūlymo, įrangos likučio ar profesionalaus vykdymo pažadas. Automatinio perdavimo tiekėjams nėra. Ekonomikos a/p/L/r/c/h/F nežinomos, 8 savaičių testas ir ≥10 tinkamų poreikių/rašytinis mokėtojas/≥3 mokėjimai/teigiama įmoka yra siūlomi būsimi vartai, ne dabartiniai rezultatai. [ACQUISITION](fasadopastoliai/ACQUISITION.md) atskiria buyer/signal/channel/usefuloffer/test nuo suppliers/referrers; outreach/ads/CRM/FB runtime neįjungti.
+
+## Tyrimas, istorija ir turinys
+
+Primary LT: Tvirtas sukibimas, Pilaitės pastoliai, datuotos Paslaugos.lt užklausos, Transrifus sutarties PDF ir VDI darbo aukštyje klausimynas. Užsienio Bark modelio tekstas, STR domestic ir Nexlift. 2026-10-03 actual URL/data/ribos BUSINESS/CONTENT/research. Vieši tarifai ne mūsų kainos; tariamas sienos plotas nėra techninė komplektacija; UK kvalifikacijos/taisyklės neperimtos. Counterevidence — tiesioginis nemokamas tiekėjų konsultavimas, rangovo įtraukta nuoma, logistikos ir atribucijos nežinomybė.
+
+[Istorija](fasadopastoliai/history/ASSESSMENT.md): official bounded helper10URL/4perskaitytiHTML, 2012/2017 ankstesnė nuomos/prekybos įmonė, 2024 brokenSQL. Archive web retrieval klaidos nėra istorijos nebuvimas. Root ir kontaktai nauji su dabartiniu operatoriumi, seni apie/projektų/technical/EN/utility404, legacy301neįgyvendinti. Dabartinis turinys nėra ankstesnio verslo tąsa ar teisių įrodymas.
+
+11 approved URL: /, /nuomos-poreikis, /gidai, /fasado-matmenys, /pastoliu-nuomos-kaina, /nuoma-su-montavimu, /kontaktai, /apie-projekta, /redakcija, /privatumas, /naudojimo-salygos. Trys atskiri gidai: geometrinio poreikio aprašas, realių pasiūlymų apimties palyginimas, profesionalaus montavimo atsakomybės. Kiekvienas perskaitytas, originalūs pavyzdžiai ir checklist, pirminiai šaltiniai, [EDITORIAL-REVIEW](fasadopastoliai/EDITORIAL-REVIEW.json). Agentas nėra inžinierius ar žmogaus approval. Organizacinė autorystė MB Pinet turi viešą redakcijos profilį. [Kalendorius](fasadopastoliai/CONTENT-CALENDAR.json)12privačių šešių mėnesių planų, nepublic/neapproved.
+
+## Dizainas ir medija
+
+[DESIGN](fasadopastoliai/DESIGN.md), [SURFACE](fasadopastoliai/SURFACE.md), research/QUALITY-BAR ir actual trys code-led studies prieš generavimą. Seed3043ac75 paskyrė5 dokumento kryptį; agento sprendimas nėra savininko comp approval. Vėsus pilkas pagrindas, įrėmintas baltas dokumentas, lime action, Archivo700 ir SourceSans3. Above-photo splitcopy, plati horizontali fasado scena, trys apimties klausimai, matavimo lapas ir illustratinės pasirinkimų eilutės. Savas geometrinis brand/favicon, nativeforma priešoptionalruošinį. Actual mini/laiptų archyvų ir auto preview palyginimas, panašumai atskirti nuo visos kompozicijos savitumo.
+
+Actual reference captures: TS neveikiančios media vietos ne media etalonas; Pilaitės cookie dalis uždengta, settled bandymas nesėkmingas; STR pradinis loader atmestas, settled tikras; Nexlift mobile kraštai/fixedcall neperimti; Bark browser403 todėl jokio UI vertinimo iš jo. Gyvas mini port refused — naudota actual archived QA, ne live claim.
+
+[MEDIA](fasadopastoliai/MEDIA.json): 4 originalūs built-in ImageGen kontekstai hero/measure/scope/mount, peržiūrėti prieš bendrą saveResponsiveAsset importą, 20 tikrų WebP360–1536. Ne klientų darbai, ne instrukcinė įrangos atitikties schema. Alt/crop/privateoriginal/prompt/sourcehash/rights žurnale, viešo generatorbadge nėra. Textfocused legal/profile išimtis: dekoratyvi nuotrauka nepadeda patikrinti teiginių/duomenų; gidai/home/index turi actual mediją. 6 selfhostWOFF2 su fullOFL, SourceSans3 400/600 vienodi failai, po tikroSHA patvirtinimo dalijasi URL; 4unikalūs resursai, tipografiniai weights išlaikyti.
+
+## Forma, ruošiniai ir matavimas
+
+Geometrijos ruošinys skaičiuoja įrašytų stačiakampių sienų ilgį×aukštį, ne kainą, dalis ar saugą. Nežinoma dalis netampa0; kablelis/taškas, neteisingi/negative/0/viršribių dydžiai atmesti ir kai kita dalis nežinoma. Edit clears stale result. Nieko neišsiunčia, neužrašo į URL/store. Native form name/email/message/consentyes/honeypot; neprivalomas ruošinys užpildo redaguojamą tekstą, focusįmessage, jokio POST kol vartotojas siunčia. Direct#zinute veikia keyboard/noJS.
+
+Local isolatedD1 užklausą patvariai išsaugo ir suSMTPoff; 18HTTPvalidacijos/origin/body/trap/measurement atvejų ir tikras nativePOST patikrinti. ExactsyntheticID pašalinti. Dienos/pageview/email-click perownsite, DNT/GPC/headless/LH ir neleistini/privateeventpayload neįtraukiami. Testai nėra paklausa. Ši peržiūra tiktik sintetiniais duomenimis, SMTP/voice/FBclientmessagesOFF. MatchingnaujoSMTP→INBOX įrodymo nėra; kitos nišos istorinis MAIL_CORE proof neperkeliamas. ProdD1/mail/recovery/rate/backup/retention/processors/teisėtas pagrindas lieka paleidimo vartais. Bendra EK teisių informacija patikrinta pirminiame šaltinyje, nėra atitikties deklaracijos.
+
+## Patikros, likusios ribos ir sprendimas
+
+[Peržiūra8911](http://127.0.0.1:8911/) — izoliuotas Vinextproductionbuild, viešasdist/sekretai nekopijuoti, hostlocalhostnoindex. 24/24 core,9/9 SEOallpackages, 11 viešų URL / 39 HTTP audito užklausos. Publication/hash/date/revoked/private/crosshost17 patikrų,12 būsimų privačių URL grąžina404. Actual39render1440/390/320 visiems11 ir768šešiemsprimary, nooverflow, images/fontsglyphloaded. Tikra200%zoom/physicaldeviceUNVERIFIED.
+
+Baigiamąjį rezultatą žr. [A–Z auditą](fasadopastoliai/PHASE-1-AUDIT.md), JSON/skillscorer bei [finish review](fasadopastoliai/qa/finish-review.md). Pradinės klaidos, pataisos, versijųSHA, prieš/po screenshots ir matuoti LH išsaugoti. Pradiniai mobileLHhome96/guide81 (A/BP100,SEO69); guide81 nėra targetPASS. Viena bounded freshreview batch: desktopfirstviewport ir authored SVGmeniu; performancebatch deduplicateidenticalfontURLs+Archivopreload. Galutinis mobilus lab: home97/guide91, A100/BP100, localSEO69. Fresh visual review pradinis8.0, ribotas F1/F2 estimate8.2, ne visos svetainės9/10 pervertinimas. A–Z local68/72=9.44; R2/S2/U2/U3UNVERIFIED ir gateReadyfalse. Finalmetrikos qa/lighthouse-summary.json, niekada nepakeičia fieldCWV/GSC/liveaudit. LocalSEO69 dėl noindex/robots, realcanonicalhostsmoke atskiras.
+
+Išlaidos nematuotos: 4ImageGenrastrai, esamas lokalusruntime/agenttime, hostingas/mail būsimi. Nėra naujų pirkimų/DNS/deployment. Pirmo tikro paleidimo data nėra; publishAt2026-10-03 yra localpackageplan. GSC/kokybiškas srautas/realios tinkamos užklausos/pajamos/įmoka UNMEASURED. Sprendimas: tik vietinis pirmos fazės poreikio testas; plėtra/pardavimas/stabdymas po tikro autorizuoto paleidimo ir ekonomikos įrodymo.
+
+Freshsession: [START_HERE](../START_HERE.md), [AGENTS](../AGENTS.md), [CORE_BUILD_CONTRACT](../CORE_BUILD_CONTRACT.md), [builder](../SKILLS/niche-site-builder/SKILL.md), [planner](../SKILLS/niche-content-planner/SKILL.md), [audit](../SKILLS/niche-site-audit/SKILL.md), [MAIL_CORE](../MAIL_CORE.md), [NETWORK_LINKING](../NETWORK_LINKING.md). Instrukcijų fingerprint po perskaitymo, ne dispatchbaseline. AutoFIRST-RUN neliečiamas; metalo-tvoros atidėtas.

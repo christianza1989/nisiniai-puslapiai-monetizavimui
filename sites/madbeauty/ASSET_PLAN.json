@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "date": "2026-10-05",
+  "fullUIStatus": "PLANNED",
+  "foundation": "IMPLEMENTED_LOCAL_UI_KIT",
+  "masterCount": 11,
+  "responsiveVariantCount": 55,
+  "pipeline": "existing content-studio/src/image-pipeline.mjs optimizeRaster; isolated private prototype, not a studio-approved public package",
+  "manifest": "prototype/ASSET_MANIFEST.json",
+  "prompts": "asset-inputs.json",
+  "icons": {
+    "path": "prototype/public/icons.svg",
+    "style": "26 original stroke icons 1.6px / 24px grid",
+    "ids": [
+      "search",
+      "calendar",
+      "clock",
+      "location",
+      "person",
+      "heart",
+      "filter",
+      "list",
+      "map",
+      "arrow",
+      "chevron",
+      "close",
+      "check",
+      "warning",
+      "email",
+      "message",
+      "upload",
+      "edit",
+      "team",
+      "resource",
+      "settings",
+      "star",
+      "image",
+      "download",
+      "refresh",
+      "more"
+    ]
+  },
+  "brand": {
+    "path": "prototype/public/wordmark.svg",
+    "format": "original code-native SVG lettering",
+    "fonts": [
+      "DM Sans"
+    ],
+    "license": "OFL files alongside local TTFs",
+    "fontSource": [
+      "https://api.github.com/repos/google/fonts/contents/ofl/dmsans",
+      "https://api.github.com/repos/google/fonts/contents/ofl/dmserifdisplay"
+    ],
+    "archivedFonts": [
+      "DM Serif Display"
+    ],
+    "palette": {
+      "ink": "#111114",
+      "paper": "#FFFFFF",
+      "accent": "#7040E8",
+      "soft": "#F1EDFF"
+    }
+  },
+  "tokens": "prototype/public/tokens.css",
+  "components": {
+    "prepared": [
+      "button hierarchy/default/hover/focus/active/disabled/loading",
+      "native input/select/switch",
+      "validation/error/empty/alert/status",
+      "service card/favorite/preview",
+      "date strip/time selection examples",
+      "segmented toggle",
+      "native dialog/focus return",
+      "table responsive container",
+      "toast",
+      "SVG avatar initials / typography / gallery",
+      "sticky transparent blur header with direction-based autohide and keyboard/reduced-motion handling"
+    ],
+    "fullScreenComponentsPlanned": [
+      "autocomplete grouped result panel",
+      "results List/Map with bounds and map fallback",
+      "full interval picker and effective availability",
+      "multi-stage reservation",
+      "day/week/agenda calendar with drag alternative",
+      "resource/shift editor",
+      "onboarding/revision/media import",
+      "role-scoped inbox and approvals"
+    ]
+  },
+  "slots": [
+    {
+      "id": "homepage-category-nails",
+      "assets": [
+        "nails-neutral",
+        "nails-color",
+        "nails-french"
+      ],
+      "ratio": "3/2",
+      "role": "Redakcinė kategorijų juosta; ne konkretaus teikėjo darbai"
+    },
+    {
+      "id": "homepage-category-other",
+      "assets": [
+        "hair",
+        "brows",
+        "pedicure",
+        "lashes",
+        "skincare",
+        "massage"
+      ],
+      "ratio": "3/2",
+      "role": "Pagrindinės procedūros / erdvės pagal tikrą temos atitikimą"
+    },
+    {
+      "id": "provider-gallery-demo",
+      "assets": [
+        "studio",
+        "nails-neutral",
+        "nails-color",
+        "nails-french"
+      ],
+      "ratio": "3/2",
+      "role": "Privataus demo profilio vieta ir darbų iliustracijos; prieš live tikra teikėjo media"
+    },
+    {
+      "id": "business-landing-photo",
+      "assets": [
+        "workspace",
+        "studio"
+      ],
+      "ratio": "3/2",
+      "role": "Meistro darbo kontekstas; tikras product screenshot iš mūsų UI vėliau"
+    },
+    {
+      "id": "guide-color",
+      "assets": [
+        "nails-color"
+      ],
+      "ratio": "3/2",
+      "role": "Nagų spalvos gido temos vaizdas"
+    },
+    {
+      "id": "guide-price",
+      "assets": [
+        "workspace"
+      ],
+      "ratio": "3/2",
+      "role": "Manikiūro kainą sudarančių darbų kontekstas"
+    },
+    {
+      "id": "guide-choose",
+      "assets": [
+        "nails-french",
+        "studio"
+      ],
+      "ratio": "3/2",
+      "role": "Kaip pasirinkti meistrą / portfolio vertinimo iliustracija"
+    },
+    {
+      "id": "result-illustration-demo",
+      "assets": [
+        "nails-neutral",
+        "nails-color",
+        "nails-french",
+        "hair",
+        "brows",
+        "pedicure",
+        "lashes",
+        "skincare",
+        "massage"
+      ],
+      "ratio": "3/2",
+      "role": "Tik private seed kategorijos; public kortelėms tik tikri patvirtinti teikėjo assets"
+    },
+    {
+      "id": "staff-avatar",
+      "assets": [],
+      "format": "initials component",
+      "role": "Nuoseklus atpažinimas be išgalvoto realaus žmogaus portreto"
+    },
+    {
+      "id": "map-fallback",
+      "assets": [],
+      "format": "future geometric schematic component",
+      "status": "PLANNED",
+      "role": "Sąrašas veikia be map; scheminė vieta nėra fake realus žemėlapis"
+    },
+    {
+      "id": "professional-ui-product-shot",
+      "assets": [],
+      "format": "future own HTML screenshot",
+      "status": "WAITING_FOR_FULL_UI",
+      "role": "Prieš generuojant promo product screenshot turi veikti pats mūsų kalendorius"
+    },
+    {
+      "id": "legal-trust",
+      "assets": [],
+      "format": "typography",
+      "role": "Pagrįsta išimtis: dekoratyvi fotografija nereikalinga"
+    }
+  ],
+  "deliveryGuards": [
+    "No competitor image/logo/text copied",
+    "Generated demo portfolio never real provider proof",
+    "No visible ImageGen badge; provenance in private manifest",
+    "Public provider assets need real rights/approval",
+    "No full screenshot as webpage background",
+    "srcset/sizes must match actual composition",
+    "No placeholder product screenshot claiming implemented backend"
+  ]
+}

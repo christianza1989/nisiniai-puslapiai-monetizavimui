@@ -1,0 +1,51 @@
+# Choose the business before the website
+
+Use for a new niche or an explicitly rejected business direction. This network tests demand for monetizable businesses. SEO content supports that test; an attractive publication and topic-submission form do not establish a commercial offer.
+
+Preserve the owner's chosen product and scope. A legacy brief, example calendar, domain pun or archive topic is a hypothesis to reassess, not an instruction to build that business. When the direction is open, compare a small set of plausible commercial angles using current local evidence and choose autonomously. Do not prescribe handyman services or any other example to every domain.
+
+## Decision evidence
+
+Record a compact `sites/<siteId>/BUSINESS.md` before art-direction studies, content generation or production code. Explain:
+
+- **Customer and trigger:** who needs what, in which situation, and whether that visitor is the payer or a source of demand for another payer.
+- **Paid outcome:** the specific product/service/result that could be sold. Identify who would pay us, for what and why; state the likely revenue mechanism. Advertising, affiliate links, subscriptions, downloads and lead fees each need a concrete acquisition/transaction path, not a list of possible future income streams.
+- **Market evidence:** actual competitor/service/product pages and retrieval dates. Check geography, pricing basis and what is actually offered. A competitor's price is their offer, not ours; search snippets, broad search volume assumptions and foreign success do not prove Lithuanian demand or our economics.
+- **Choice and alternative:** explain why the selected angle suits the domain, customer intent, plausible fulfilment and initial test better than the credible alternative. Consider existing network sites to avoid indistinguishable offers and duplicate intents. If the owner already chose the business, compare narrower scopes within it, not unrelated businesses.
+- **Phase-one offer and boundaries:** what visitors can actually receive now and what sending a request means. Record unknown suppliers, staff, availability, territory, prices, qualifications and operational responsibility. Missing fulfilment does not justify converting the site into an unrelated editorial project; use a transparent prelaunch demand enquiry if it is a meaningful test.
+- **Measurement and expansion:** which enquiry shows concrete product/service intent; what fields help qualify it; how to separate browsing, topic suggestions, clicks, synthetic submissions and received requests. Define a review interval and an evidence-based continuation rule, marking thresholds as proposed decision rules rather than discovered industry facts. Delivery cost/capacity and commercial viability must be checked before phase two.
+
+Write hypotheses as hypotheses. Revenue scenarios need stated assumptions; no invented margins, conversion rates, supplier contracts or measured demand. A source URL without an inspected supporting page is not verified evidence. A publisher/digital craft product can be a valid business when the owner chose it or the evidence supports a specific paid result and practical demand test; a hobby label alone is neither a reason to choose nor reject it.
+
+## Deep research for a new niche
+
+Complete the decision-critical research before selecting the offer. Reuse still-current research for routine drafts; repeat the relevant parts when the business direction or material facts change. Keep the evidence in BUSINESS.md or link the site's actual research records.
+
+1. **Demand and buying intent:** inspect local-language transactional queries, real result types and the customer's purchase/request path. Compare information-seeking with hiring/buying intent. Identify the customer's trigger, alternatives and objections. Record queries, locale, retrieval dates and inspected pages; without reliable data, search volume and demand magnitude remain unknown.
+2. **Local and international competition:** examine relevant providers, specialists and substitute solutions. Compare actual offers, pricing units, minimum orders/call-out fees, extras, territory, inquiry flow and differentiation. Use foreign markets for transferable models while checking local suitability. Retrieve the original pages and document access limits; snippets or one generic portal don't establish this analysis.
+3. **Monetization alternatives:** compare credible models for the chosen outcome, such as direct service/product sales, commission on completed jobs, accepted lead fees, documented affiliate arrangements, subscription or a real digital product. Identify the payer and transaction for each viable option, likely acquisition path, required capability and main downside. Select the best-supported model for the owner's phase-one objective; do not claim a universal best when important evidence is missing.
+4. **Fulfilment and partner feasibility:** desk-research who could provide the outcome, how geography/qualification/rights/supply affect it, and the likely bottleneck. A public directory is not a partner agreement. Supplier outreach, third-party messages and paid accounts need actual authorization; research can proceed without them. Record what must be established before operational launch or phase two.
+5. **Economics and sensitivity:** distinguish collected revenue from the full customer order value. Account for applicable fulfilment cost, fees, acquisition effort, support, refunds/rework and capacity. Use sourced prices where available and clearly labelled assumptions/ranges where not. Show how a plausible low/base/high case changes the decision when inputs permit; otherwise identify the unknown cost or price that makes profitability indeterminate. Never fabricate margins, conversion rates, organic traffic or cost-free staff/SEO labour to make a scenario work.
+6. **Initial experiment and falsification:** define the smallest meaningful commercial offer, what a qualified request contains, the actual current response/availability, and how to detect weak or unfulfillable demand. Specify the review window, indicative continuation/stop rules and the critical uncertainty the experiment resolves. These are proposed decision rules. Visits and specific requests still don't prove profitable fulfilment or willingness to pay a particular price.
+
+Challenge the preferred model with contrary evidence. Explain why the runner-up was rejected/deferred and what new fact would reverse the choice. Depth is satisfied when the critical questions above have evidence or explicit testable uncertainties and the choice is justified. Resolve ordinary research/strategy decisions autonomously; preserve real launch dependencies as unresolved facts rather than stretching the study indefinitely or manufacturing certainty.
+
+## Phase one can validate intent without pretending fulfilment
+
+Use a concrete product/service explanation, a useful request checklist, an actual enquiry/contact path and supporting decision guides. For a prelaunch pilot clearly disclose the current stage beside the action: a request is not a booking, order, price quote or guaranteed match. Do not claim immediate dispatch, checked partners, inventory, prices or guaranteed response unless established. Keep the enquiry proportional and use the implemented backend; don't invent uploads or new schema fields for the brief.
+
+For example, a handyman hypothesis could initially collect the desired job, city, approximate scope and timing through a transparent demand form. If no tradespeople are contracted, do not promise an arriving tradesperson or returned estimate. Later supplier matching and payment remain phase two. A tractor-tyre hypothesis collects the fitment/quantity/use requirements relevant to a future sale; it does not become a generic tractor news portal merely because stock is not yet connected.
+
+## Content follows the commercial question
+
+Pair the BUSINESS decision with a compact private `sites/<siteId>/ACQUISITION.md` using [ACQUISITION_CORE](../../../ACQUISITION_CORE.md) and the [acquisition skill](../../niche-client-acquisition/SKILL.md). Choose where actual buyers or stated needs can be reached, a truthful useful offer, a qualification signal and a bounded experiment; distinguish buyer, lead purchaser, fulfilment supplier and referral partner. A domain build prepares this plan but does not start messaging, buy data or implement a sales runtime. Acquisition plans complement SEO and must not replace public content / demand delivery with another planning-only result.
+
+Map the core offer before the article calendar. Each proposed page should have a distinct reader question and a documented contribution to understanding the offer, preparing a request, choosing an option or maintaining the product. Helpful informational pages need not contain a sales pitch, but the site's primary journey must still test the selected business. Do not generate a half-year hobby calendar and bolt on a contact link afterwards.
+
+Name the current main action and the qualified signal it creates. “Read articles”, “suggest a topic” and “join our newsletter” measure different things from a request for a named service/product. They cannot silently replace commercial demand measurement. An explicitly chosen publishing business needs its own payer and demand-test rationale.
+
+## Acceptance
+
+Before proceeding confirm that the selected direction has a customer, paid outcome, plausible revenue path, meaningful phase-one intent signal and truthful current capability. Fix ordinary strategy choices autonomously. If evidence is unavailable, record the provisional choice and narrow the claims; don't certify it as validated. An owner-rejected direction must be recorded as rejected and cannot count as a successful commercial build regardless of technical scores.
+
+Use the existing A–Z A/D/F/G/V criteria and score contract; this business review adds no invented SEO or profitability score. Structural skill validation does not prove business judgment. Keep later user steering and instruction changes visible in any first-result benchmark.

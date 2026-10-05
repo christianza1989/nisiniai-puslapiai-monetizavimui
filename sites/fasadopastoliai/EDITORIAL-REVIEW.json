@@ -1,0 +1,249 @@
+{
+  "date": "2026-10-03T18:53:41.250Z",
+  "reviewer": "codex-editorial-review",
+  "ownerApproval": false,
+  "method": "Kiekvieno11 puslapių originalūs teiginiai peržiūrėti prieš official approval: savininko kontaktai; realūs primary pasiūlymų/saugos šaltiniai su jų ribomis; jokių nuomos kainų, įrangos, brigados ar senos bendrovės pajėgumo fikcijų. Gidai individualiai skirti geometrijai, kainos apimčiai ir profesionalaus vykdymo atsakomybėms. Tai agento, ne inžinieriaus ar žmogaus approval.",
+  "pages": [
+    {
+      "id": "0a76a0ef-fc97-4e0a-bf80-b6f9f0efd246",
+      "slug": "",
+      "intent": "Suformuluoti realų namo fasado pastolių nuomos poreikį Vilniaus regione",
+      "words": 223,
+      "originalContribution": "Suformuluoti realų namo fasado pastolių nuomos poreikį Vilniaus regione",
+      "sources": [],
+      "images": [
+        "hero",
+        "measure"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "804de432-629a-4b47-aa2e-94fb43ec3688",
+      "slug": "nuomos-poreikis",
+      "intent": "Suprasti pirmo etapo nuomos užklausą ir vykdymo ribas",
+      "words": 256,
+      "originalContribution": "Suprasti pirmo etapo nuomos užklausą ir vykdymo ribas",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "4d957c71-cfd8-4e98-ac81-46a9be63222f",
+      "slug": "gidai",
+      "intent": "Pasirinkti konkretų nuomos pasirengimo klausimą",
+      "words": 58,
+      "originalContribution": "Pasirinkti konkretų nuomos pasirengimo klausimą",
+      "sources": [],
+      "images": [
+        "measure",
+        "scope",
+        "mount"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "2940b20e-da36-46b1-8a59-ce498a01bbde",
+      "slug": "fasado-matmenys",
+      "intent": "Aprašyti žinomas fasado sienų dimensijas be tariamo įrangos kiekio",
+      "words": 504,
+      "originalContribution": "Aprašyti žinomas fasado sienų dimensijas be tariamo įrangos kiekio",
+      "sources": [
+        {
+          "url": "https://tspastoliai.lt/fasadiniu-pastoliu-nuoma/",
+          "label": "Tvirtas sukibimas: fasadinės nuomos apimtis",
+          "reason": "Konkretaus tiekėjo viešas pasiūlymas. Matmenys, laikas ir vieta padeda aptarti projektą; tai ne mūsų kaina, partnerystė ar techninė komplektacijos taisyklė. Patikrinta 2026-10-03.",
+          "verified": true
+        },
+        {
+          "url": "https://www.pilaitespastoliai.lt/paslaugos/",
+          "label": "Pilaitės pastoliai: atskiros paslaugos",
+          "reason": "Viešas tiekėjo nuomos, transporto ir montavimo atskyrimas. Jo įkainiai bei matavimo sistema neperkeliami į mūsų pasiūlymą. Patikrinta 2026-10-03.",
+          "verified": true
+        }
+      ],
+      "images": [
+        "measure"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "888dd51f-0654-4f20-b6d9-fda5fbf4640e",
+      "slug": "pastoliu-nuomos-kaina",
+      "intent": "Palyginti realių nuomos pasiūlymų sąlygas be išgalvoto tarifo",
+      "words": 502,
+      "originalContribution": "Palyginti realių nuomos pasiūlymų sąlygas be išgalvoto tarifo",
+      "sources": [
+        {
+          "url": "https://www.pilaitespastoliai.lt/paslaugos/",
+          "label": "Pilaitės pastoliai: atskiros paslaugos",
+          "reason": "Viešas tiekėjo nuomos, transporto ir montavimo atskyrimas. Jo įkainiai bei matavimo sistema neperkeliami į mūsų pasiūlymą. Patikrinta 2026-10-03.",
+          "verified": true
+        },
+        {
+          "url": "https://strscaffolding.co.uk/domestic-scaffolding",
+          "label": "STR: namo projekto pasiūlymo apimtis",
+          "reason": "UK nuomotojo pasiūlymo pavyzdys; vietos apžiūra ir sutartas nuomos laikas. Tai nėra Lietuvos kaina ar Lietuvai taikoma teisinė taisyklė. Patikrinta 2026-10-03.",
+          "verified": true
+        },
+        {
+          "url": "https://www.transrifus.lt/documents/Pastoli%C5%B3%20nuomos%20taisykl%C4%97s%20%28kai%20montuoja%20Nuomotojas%29%202024.pdf",
+          "label": "Transrifus: 2024 nuomos taisyklių pavyzdys",
+          "reason": "Dviejų puslapių konkretaus nuomotojo sutartis, kai jis montuoja. Parodo priėmimo, nuomos ir grąžinimo ribas; jos tarifai ir terminai nėra mūsų ar universalūs. Aktualų pasiūlymą tikrinkite su tiekėju. Patikrinta 2026-10-03.",
+          "verified": true
+        }
+      ],
+      "images": [
+        "scope"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "40847c00-2164-4aba-ac8b-4acc0b262a77",
+      "slug": "nuoma-su-montavimu",
+      "intent": "Atskirti įrangos nuomą nuo profesionalaus montavimo ir priėmimo",
+      "words": 491,
+      "originalContribution": "Atskirti įrangos nuomą nuo profesionalaus montavimo ir priėmimo",
+      "sources": [
+        {
+          "url": "https://vdi.lrv.lt/media/viesa/saugykla/2023/12/wzrBu4Hhyn4.pdf",
+          "label": "VDI: statybviečių kontrolinis klausimynas",
+          "reason": "2023 kontrolinio klausimyno darbo aukštyje dalis (PDF 3 puslapis): projektas, priežiūra, specialiai apmokyti darbuotojai. Šis gidas nėra konkretaus objekto atitikties ar teisės konsultacija. Patikrinta 2026-10-03.",
+          "verified": true
+        },
+        {
+          "url": "https://www.transrifus.lt/documents/Pastoli%C5%B3%20nuomos%20taisykl%C4%97s%20%28kai%20montuoja%20Nuomotojas%29%202024.pdf",
+          "label": "Transrifus: 2024 nuomos taisyklių pavyzdys",
+          "reason": "Dviejų puslapių konkretaus nuomotojo sutartis, kai jis montuoja. Parodo priėmimo, nuomos ir grąžinimo ribas; jos tarifai ir terminai nėra mūsų ar universalūs. Aktualų pasiūlymą tikrinkite su tiekėju. Patikrinta 2026-10-03.",
+          "verified": true
+        }
+      ],
+      "images": [
+        "mount"
+      ],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "4701a920-6118-41fa-95a6-4020576b7493",
+      "slug": "kontaktai",
+      "intent": "Pateikti realų nuomos poreikį be užsakymo pažado",
+      "words": 114,
+      "originalContribution": "Pateikti realų nuomos poreikį be užsakymo pažado",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "e035fcba-bc7c-455a-a3d5-687212cc73aa",
+      "slug": "apie-projekta",
+      "intent": "Patikrinti projekto operatorių, tikslą ir istorijos ribą",
+      "words": 200,
+      "originalContribution": "Patikrinti projekto operatorių, tikslą ir istorijos ribą",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "22ede55b-c79c-4fd4-af30-81dccd73369e",
+      "slug": "redakcija",
+      "intent": "Patikrinti realią organizacinę autorystę ir metodiką",
+      "words": 229,
+      "originalContribution": "Patikrinti realią organizacinę autorystę ir metodiką",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "20c8b621-19df-4a3e-9a36-0b78e9de1f1d",
+      "slug": "privatumas",
+      "intent": "Suprasti dabartinį duomenų kelią prieš užklausą",
+      "words": 348,
+      "originalContribution": "Suprasti dabartinį duomenų kelią prieš užklausą",
+      "sources": [
+        {
+          "url": "https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en",
+          "label": "Europos Komisija: asmens duomenų teisės",
+          "reason": "Bendras teisių ir informavimo reikalavimų paaiškinimas, patikrintas 2026-10-03. Jis neįrodo šio projekto produkcijos teisinio pagrindo ar veikiančios komercinės tvarkos.",
+          "verified": true
+        }
+      ],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    },
+    {
+      "id": "9be42f20-d723-4dd7-9bb4-308b453b70f6",
+      "slug": "naudojimo-salygos",
+      "intent": "Suprasti kad turinys ir užklausa nėra sutartis ar techninis projektas",
+      "words": 205,
+      "originalContribution": "Suprasti kad turinys ir užklausa nėra sutartis ar techninis projektas",
+      "sources": [],
+      "images": [],
+      "factChecksResolved": [
+        "MB Pinet/info@pinet.lt",
+        "Geometrija nėra komplektacija ar saugos įvertinimas",
+        "Patvirtinto vykdytojo/kainos/likučio nėra",
+        "Pavyzdžiai ir iliustracijos originalūs, ne klientų darbai",
+        "Privatumas skirtas synthetic-only local; production vartai nežinomi"
+      ]
+    }
+  ]
+}

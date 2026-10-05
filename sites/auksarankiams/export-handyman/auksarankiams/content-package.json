@@ -1,0 +1,1652 @@
+{
+  "schemaVersion": 1,
+  "siteId": "auksarankiams",
+  "canonicalHost": "auksarankiams.lt",
+  "locale": "lt-LT",
+  "site": {
+    "id": "auksarankiams",
+    "name": "Auksarankiams",
+    "canonicalHost": "auksarankiams.lt",
+    "locale": "lt-LT",
+    "timezone": "Europe/Vilnius",
+    "brand": {
+      "accent": "#a94724"
+    },
+    "offer": "Smulkių namų darbų poreikio registracija: baldų surinkimas, kabinimas ir smulkūs baldų pataisymai.",
+    "contact": {
+      "email": "info@pinet.lt",
+      "phone": ""
+    }
+  },
+  "pages": [
+    {
+      "siteId": "auksarankiams",
+      "type": "home",
+      "slug": "",
+      "title": "Maži namų darbai. Aiškus sąrašas.",
+      "description": "Baldų surinkimo, lentynų ir karnizų kabinimo bei smulkių baldų pataisymų poreikis. Aprašykite darbus, vietą ir apimtį skaidrioje poreikio registracijoje.",
+      "intent": "Kur užregistruoti vieno ar kelių smulkių namų darbų poreikį?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Baldų surinkimas, lentynų ir karnizų kabinimas, smulkūs baldų pataisymai. Aprašykite, kokių darbų reikia jūsų namuose."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu tiriame smulkių namų darbų poreikį. Užklausa nėra užsakymas ar rezervacija. Meistro atvykimo, kainos pasiūlymo ir darbų atlikimo dar negarantuojame."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Nuo sąrašo iki aiškaus poreikio."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Surašykite darbus."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ką ir kiek norite sutvarkyti? Vienoje žinutėje galite aprašyti kelis mažus darbus."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Pažymėkite neaiškumus."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nežinote sienos medžiagos ar baldo modelio? Parašykite, ko dar reikėtų išsiaiškinti."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Registruokite poreikį."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nurodykite miestą, apimtį ir pageidaujamą laikotarpį. Tikslaus namų adreso šiame etape nereikia."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kokius darbus norite sutvarkyti?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pasirinkite darbų kryptį ir sužinokite, kokia informacija padeda suprasti jūsų poreikį."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kas lieka už šio bandymo ribų?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Avarinės pagalbos, elektros, dujų, santechnikos ir konstrukcijų darbų šiame pilote neorganizuojame. Keli skirtingi darbai ne visada tinka vienam vykdytojui. Net ir smulkiam kabinimui reikia įvertinti vietą bei gaminio reikalavimus."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prieš siunčiant — keli naudingi gidai."
+        },
+        {
+          "type": "paragraph",
+          "text": "Aiškus darbo aprašymas prasideda nuo konkrečių daiktų ir kiekių. Gidai padeda pasiruošti užklausą ir išvengti spėlionių apie apimtį ar kainą."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Papasakokite apie savo darbus."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reikia surinkti baldą, pakabinti lentyną ar sutvarkyti baldo dureles? Registruokite poreikį ir nurodykite, ką, kur ir kada norėtumėte sutvarkyti. Užklausa skirta paklausai suprasti; ji neužsako meistro."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [
+        {
+          "id": "e8d9351d-9325-4b05-8beb-1b5cb9967367",
+          "src": "/content-assets/auksarankiams/e8d9351d-9325-4b05-8beb-1b5cb9967367.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "91a1a1a7-ce50-45c4-98d7-fe84ec921776",
+          "src": "/content-assets/auksarankiams/91a1a1a7-ce50-45c4-98d7-fe84ec921776.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "82b9f53d-2076-46ff-b835-04406aec6ea7",
+          "src": "/content-assets/auksarankiams/82b9f53d-2076-46ff-b835-04406aec6ea7.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "b32a7c3a-5ece-4ff2-84a4-c1e8535f5542",
+          "src": "/content-assets/auksarankiams/b32a7c3a-5ece-4ff2-84a4-c1e8535f5542.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "e5aefb8c-a892-4400-97a4-9c009b57e1dc",
+          "src": "/content-assets/auksarankiams/e5aefb8c-a892-4400-97a4-9c009b57e1dc.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "9392167c-3452-4061-a84b-1c7fd4c3c15e",
+          "src": "/content-assets/auksarankiams/9392167c-3452-4061-a84b-1c7fd4c3c15e.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "0749f9e7-4067-476e-9b48-d3ca9bf50a58",
+          "src": "/content-assets/auksarankiams/0749f9e7-4067-476e-9b48-d3ca9bf50a58.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "b8569d3f-cd71-4f9a-bdd7-7d6a351f7e7d",
+          "src": "/content-assets/auksarankiams/b8569d3f-cd71-4f9a-bdd7-7d6a351f7e7d.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "167ee4ba-0b3c-420a-b8df-f57930afa771",
+          "src": "/content-assets/auksarankiams/167ee4ba-0b3c-420a-b8df-f57930afa771.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "96921084-e4fd-4bcf-bb57-3eb6e3d5d16c",
+          "src": "/content-assets/auksarankiams/96921084-e4fd-4bcf-bb57-3eb6e3d5d16c.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "511c95a9-36ce-40a3-8b7e-70a1682181a4",
+          "src": "/content-assets/auksarankiams/511c95a9-36ce-40a3-8b7e-70a1682181a4.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "3ba975d1-5ffc-4419-b180-d1e138d24c5f",
+          "src": "/content-assets/auksarankiams/3ba975d1-5ffc-4419-b180-d1e138d24c5f.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "653e8301-97ab-4a57-b1b6-1ed9704a074f",
+          "src": "/content-assets/auksarankiams/653e8301-97ab-4a57-b1b6-1ed9704a074f.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "91d02fba-7120-4bfd-a1d7-6b3388866da4",
+          "src": "/content-assets/auksarankiams/91d02fba-7120-4bfd-a1d7-6b3388866da4.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "29f82864-f409-4bbb-a1c9-ffbc9d064117",
+          "src": "/content-assets/auksarankiams/29f82864-f409-4bbb-a1c9-ffbc9d064117.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "7f2a853a-04a5-4808-ac27-be5ae1120db6",
+          "src": "/content-assets/auksarankiams/7f2a853a-04a5-4808-ac27-be5ae1120db6.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "e2afb5d5-bb0c-4f9e-88e8-257c6a7d2b89",
+          "src": "/content-assets/auksarankiams/e2afb5d5-bb0c-4f9e-88e8-257c6a7d2b89.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "45f0bc48-9cfc-482d-9ffb-c0b498164c1d",
+          "src": "/content-assets/auksarankiams/45f0bc48-9cfc-482d-9ffb-c0b498164c1d.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "d509c3f2-b7f0-467a-9ebe-38182d7e9192",
+          "src": "/content-assets/auksarankiams/d509c3f2-b7f0-467a-9ebe-38182d7e9192.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "6a927287-3244-4727-9c1b-378e434fb0fc",
+          "src": "/content-assets/auksarankiams/6a927287-3244-4727-9c1b-378e434fb0fc.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "4db76ef4-d1cd-4c0c-97e2-01791d1b31f2",
+          "label": "Baldų surinkimo poreikis"
+        },
+        {
+          "targetPageId": "09f02778-86e7-41d1-8643-72cf04f5c5cc",
+          "label": "Lentynų, karnizų ir paveikslų kabinimo poreikis"
+        },
+        {
+          "targetPageId": "5e821e43-6830-455c-b816-b219068a0328",
+          "label": "Smulkių baldų ir durelių pataisymų poreikis"
+        },
+        {
+          "targetPageId": "950912cb-f046-4e30-80d1-44348a61386c",
+          "label": "Kaip pasiruošti smulkių namų darbų užklausai"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "id": "d5f8275c-97b8-4969-b5dd-44d507d98022",
+      "revisionHash": "07f959925d79242ae0070bbf97c77551dcb0b0dbf7ebda63c1292cb890a53e7c",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "07f959925d79242ae0070bbf97c77551dcb0b0dbf7ebda63c1292cb890a53e7c",
+        "approvedAt": "2026-10-01T04:10:46.379Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "gidai",
+      "title": "Kaip pasiruošti smulkių namų darbų užklausai",
+      "description": "Trys praktiniai gidai: baldų surinkimo aprašymas, kelių namų darbų sąrašas ir kainos bei darbo apimties suderinimas.",
+      "intent": "Kuris gidas padės pasiruošti konkrečiai namų darbų užklausai?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Pasirinkite pagal tai, kas dar neaišku: baldo duomenys, kelių darbų apimtis ar būsimo pasiūlymo sąlygos. Gidai padeda aprašyti poreikį; jie nėra konkretaus gaminio remonto instrukcija ar vykdytojo patvirtinimas."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "5cd83534-ab8a-45f5-a7f7-c9d2f7aa1262",
+          "label": "baldų surinkimo užklausos gidą"
+        },
+        {
+          "targetPageId": "223dbe27-419c-4136-b273-0c850a8be39c",
+          "label": "kelių darbų sąrašo gidą"
+        },
+        {
+          "targetPageId": "4a69ab0c-b4a8-41b0-90dc-10ad4ae6672c",
+          "label": "darbų įvertinimo gidą"
+        }
+      ],
+      "id": "950912cb-f046-4e30-80d1-44348a61386c",
+      "revisionHash": "759bcc4e17aa3f307a25ab8056e3048a75dd7fce70c59c3203a9b7390b5c5fa7",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "759bcc4e17aa3f307a25ab8056e3048a75dd7fce70c59c3203a9b7390b5c5fa7",
+        "approvedAt": "2026-10-01T04:10:46.646Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "kontaktai",
+      "title": "Registruokite smulkių namų darbų poreikį",
+      "description": "Pateikite darbą, kiekį, miestą ir pageidaujamą laikotarpį MB Pinet. Skaidri poreikio registracija nėra meistro užsakymas ar kainos pasiūlymas.",
+      "intent": "Kaip užregistruoti konkretaus mokamo smulkaus namų darbo poreikį?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu tiriame smulkių namų darbų poreikį. Užklausa nėra užsakymas ar rezervacija. Meistro atvykimo, kainos pasiūlymo ir darbų atlikimo dar negarantuojame."
+        },
+        {
+          "type": "paragraph",
+          "text": "Operatorius — MB Pinet. Kontaktas — info@pinet.lt. Poreikio registracija skirta sužinoti, kokių mokamų darbų žmonėms reikia ir kokia jų apimtis. Veikiančio partnerių tinklo ar aptarnavimo teritorijos kol kas neskelbiame."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Žinutėje nurodykite"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Darbą ir kiekį: baldų surinkimas, kabinimas ar smulkus baldo pataisymas.",
+            "Gaminį, apytikrius matmenis ir svarbius neaiškumus.",
+            "Miestą arba rajoną; tikslaus namų adreso dabar nereikia.",
+            "Pageidaujamą laikotarpį ir lankstumą.",
+            "Jei norite, galite nurodyti savo biudžeto ribą; tai nėra mūsų pasiūlyta kaina."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Vietinės peržiūros patikra"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ši vietinė versija dar nepaleista tikru domenu. Formoje naudokite tik aiškiai pažymėtus bandymo duomenis: įrašas saugomas šiame kompiuteryje, o tikras pranešimas el. paštu nesiunčiamas. Prieš viešą paleidimą būtina patikrinti produkcijos duomenų politiką ir pristatymą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Formoje failų įkėlimo nėra. Nesiųskite durų kodų, slaptažodžių, mokėjimų ar dokumentų duomenų. Užklausa nelaikoma avarinės pagalbos prašymu. Apie duomenis skaitykite privatumo informaciją."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "1f0efe68-e370-4b06-8fa3-db5bcd647576",
+          "label": "privatumo informaciją"
+        }
+      ],
+      "id": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+      "revisionHash": "67ee271c2f204229b222082281a7a1ca93896136f23578a9aefc538dede78b51",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "67ee271c2f204229b222082281a7a1ca93896136f23578a9aefc538dede78b51",
+        "approvedAt": "2026-10-01T04:10:46.923Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "apie-projekta",
+      "title": "Apie Auksarankiams.lt",
+      "description": "MB Pinet smulkių namų darbų poreikio pilotas: dabartinis etapas, tikslas ir ribos.",
+      "intent": "Kas organizuoja projektą ir ar tai jau veikianti meistro paslauga?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Auksarankiams.lt — MB Pinet kuriamas smulkių namų darbų poreikio pilotas. Tiriame, ar žmonėms reikalinga aiškiai aprašyti kelis nedidelius darbus vienoje užklausoje: baldų surinkimą, kabinimą ir smulkius baldų pataisymus."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu tiriame smulkių namų darbų poreikį. Užklausa nėra užsakymas ar rezervacija. Meistro atvykimo, kainos pasiūlymo ir darbų atlikimo dar negarantuojame."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką galite padaryti dabar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Perskaityti darbų paaiškinimus, pasiruošti sąrašą ir registruoti konkretų poreikį. Gidai padeda suprasti užklausos apimtį. Jie nepakeičia gaminio instrukcijos, vietos įvertinimo ar kvalifikuoto specialisto darbo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kas atsakingas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Operatorius — MB Pinet, kontaktas — info@pinet.lt. Redakcijos puslapyje aprašyta turinio ir vaizdų rengimo metodika. Jokie išgalvoti meistrai, klientų darbai ar atsiliepimai neteikiami kaip projekto patirtis."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką vertinsime toliau"
+        },
+        {
+          "type": "paragraph",
+          "text": "Puslapio peržiūra ar el. pašto paspaudimas nėra gauta užklausa. Tikras konkretus poreikis dar nėra atliktas darbas ar patikrintas pelningumas. Paslaugos vykdymas galėtų būti organizuojamas tik patikrinus realią paklausą, vykdytojų pajėgumą ir sąlygas."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "3cbf9d93-b5dc-4dc7-b466-c47eddc618f4",
+          "label": "redakcijos puslapyje"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "id": "39b932c0-4a4f-4f63-8af4-d1c22c1075c9",
+      "revisionHash": "4e78d0561e4529549aa9a5907407e32c805773891644ed9425d67af8b3a221f4",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "4e78d0561e4529549aa9a5907407e32c805773891644ed9425d67af8b3a221f4",
+        "approvedAt": "2026-10-01T04:10:46.985Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "redakcija",
+      "title": "MB Pinet redakcija ir turinio metodika",
+      "description": "Kas atsakingas už Auksarankiams turinį, kaip tikrinami šaltiniai, naudojamas AI ir taisomos klaidos.",
+      "intent": "Kas rengia ir tikrina šios svetainės gidus?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Už Auksarankiams.lt projektą ir redakcinį turinį atsakinga MB Pinet. Tai organizacijos profilis, ne meistro kvalifikacijos ar darbo patirties biografija. Gidai skirti užklausai paruošti, ne universalios remonto instrukcijos."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Tekstas ir šaltiniai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Turinys rengiamas su AI, kiekvienam URL parenkant atskirą kliento klausimą. Agentas peržiūri teiginius, tikrina gamintojų dokumentus ir institucijų gaires. Šaltinio skyrius paaiškina, ką dokumentas pagrindžia ir kokios yra taikymo ribos. Konkretūs gaminio parametrai neperkeliami visoms sienoms ar baldams."
+        },
+        {
+          "type": "paragraph",
+          "text": "Užklausų ir situacijų pavyzdžiai yra redakciniai, ne klientų užsakymai. Agentas tikrina tekstą ir šaltinius; fiziniai darbai nėra atlikti kaip mūsų bandymas. Tai nėra savininko ar kvalifikuoto meistro individualaus patvirtinimo pareiškimas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Vaizdai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pradiniai originalūs vaizdai sukurti generatyviniu AI ir peržiūrėti agento. Jie iliustruoja pasiruošimą ir daiktus, bet nerodo atliktų klientų darbų, mūsų įrangos ar tiksliai išmatuoto tvirtinimo sprendimo. Kilmės ir peržiūros žurnalas saugomas; techninės detalės tikrinamos gaminio instrukcijoje."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Datos ir pataisos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Giduose matomos parengto paketo publikavimo ir peržiūrėtos versijos datos. Iki tikro domeno paleidimo jos nėra ankstesnio viešo prieinamumo įrodymas. Datos nekeičia prasmės vien dėl naujos peržiūros. Taisymas rengiamas nauja studijos revizija ir viešai pateikiamas tik ją peržiūrėjus bei patvirtinus."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pranešti klaidą"
+        },
+        {
+          "type": "paragraph",
+          "text": "Rašykite info@pinet.lt arba per kontaktų formą pažymėkite, kad tai turinio pataisa. Nurodykite puslapį, netikslų teiginį ir tinkamą šaltinį. Pataisų ir bendrų klausimų nelaikome mokamo darbo paklausos įrodymu."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "id": "3cbf9d93-b5dc-4dc7-b466-c47eddc618f4",
+      "revisionHash": "677b7ea92cb23dbdae1a85ab9a71f5f90d1619f6e3b3c3c5aa94f4de4dbd9dfb",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "677b7ea92cb23dbdae1a85ab9a71f5f90d1619f6e3b3c3c5aa94f4de4dbd9dfb",
+        "approvedAt": "2026-10-01T04:10:47.049Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "naudojimo-salygos",
+      "title": "Poreikio registracijos ir informacijos naudojimo sąlygos",
+      "description": "Auksarankiams.lt piloto apimtis, užklausos reikšmė, gidų ribos ir kontaktas.",
+      "intent": "Ką reiškia užklausa ir kokios informacijos taikymo ribos?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Auksarankiams.lt operatorius — MB Pinet, info@pinet.lt. Sąlygos peržiūrėtos 2026-10-01 ir aprašo parengtą vietinį smulkių namų darbų poreikio pilotą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu tiriame smulkių namų darbų poreikį. Užklausa nėra užsakymas ar rezervacija. Meistro atvykimo, kainos pasiūlymo ir darbų atlikimo dar negarantuojame."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Užklausa"
+        },
+        {
+          "type": "paragraph",
+          "text": "Šioje versijoje nėra užsakymo patvirtinimo, mokėjimo, partnerių katalogo ar vizito rezervavimo. Neprašome avanso. Jokie įkainiai, terminai, garantijos ar teritorija nepateikiami kaip patvirtintas mūsų paslaugos pasiūlymas. Jei ateityje bus siūlomas konkretus vykdytojas, jo sąlygos ir jūsų duomenų perdavimas turės būti suderinti atskirai."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Gidai ir saugumas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Gidai padeda aprašyti darbą ir pasiruošti klausimus. Gaminio instrukcijos bei tikras vietos įvertinimas svarbesni už bendrą pavyzdį. Puslapiai nepateikia universalios gręžimo, kaiščio, elektros ar laikančios konstrukcijos remonto instrukcijos. Avarinei ar pavojingai situacijai šis pilotas nėra pagalbos kanalas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Vaizdai ir išorinės nuorodos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Iliustracijos nėra atliktų darbų įrodymai ar mastelinės schemos. Pirminės šaltinių nuorodos leidžia patikrinti konkretų teiginį; jos nereiškia partnerystės. Svetimo teksto, vaizdo ar dokumento teisės priklauso jo teisių turėtojui."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Duomenys ir taisymai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nesiųskite perteklinių jautrių duomenų. Privatumo informacijoje aprašyta forma ir skaitikliai. Dėl turinio klaidos ar savo užklausos kreipkitės info@pinet.lt. Būsimo viešo aptarnavimo duomenų politika turi būti patikrinta prieš tikrą paleidimą."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "1f0efe68-e370-4b06-8fa3-db5bcd647576",
+          "label": "privatumo informaciją"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "id": "e3549cb0-55f1-4a49-b169-f18aa5fda103",
+      "revisionHash": "6cdce273d206db63eb0e13e37a8f556022c4e670f26ec0485202bb560dc48a7a",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "6cdce273d206db63eb0e13e37a8f556022c4e670f26ec0485202bb560dc48a7a",
+        "approvedAt": "2026-10-01T04:10:47.104Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "privatumas",
+      "title": "Privatumo informacija",
+      "description": "Poreikio formos duomenys, pirmosios šalies skaitikliai, teisių kontaktas ir vietinės peržiūros ribos.",
+      "intent": "Kokie duomenys renkami ir kaip kreiptis dėl jų?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Operatorius — MB Pinet, kontaktas duomenų klausimams — info@pinet.lt. Tekstas peržiūrėtas 2026-10-01 ir aprašo parengtą vietinę versiją. Tikro domeno viešas aptarnavimas dar nepaleistas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Forma ir tikslas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pateikiate vardą, el. paštą ir žinutę apie darbų poreikį. Įraše taip pat saugoma svetainė, pateikimo laikas, šaltinio puslapio kelias, formos žymos laikas ir apdorojimo būsena. Žinutėje gali būti miestas, darbai, apimtis ir pageidaujamas laikotarpis. Duomenys skirti konkrečiam poreikiui suprasti ir su jumis susisiekti dėl jo; tai nėra rinkodaros prenumerata."
+        },
+        {
+          "type": "paragraph",
+          "text": "Formos žyma patvirtina susipažinimą su informacija ir savanorišką duomenų pateikimą žinutei apdoroti. Be būtinų laukų forma nepriimama. Šiame etape neprašome tikslaus adreso, telefono, dokumentų, nuotraukų ar durų kodų. Užklausos automatiškai neperduodamos nepatvirtintiems partneriams."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Vietinis bandymas ir būsimas paleidimas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vietiniai įrašai saugomi šiame kompiuteryje; tikras pranešimas el. paštu peržiūros režimu nesiunčiamas. Naudokite tik pažymėtus bandymo duomenis. Patikrai sukurtas sintetinis įrašas pašalinamas ir nėra vertinamas kaip paklausa."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prieš viešą paleidimą operatorius turi nustatyti duomenų tvarkymo teisinį pagrindą, saugojimo terminus ar kriterijus, infrastruktūros/pašto gavėjus, perdavimo sąlygas bei ištrynimo ir atkūrimo procedūrą. Šių nepatvirtintų sąlygų nepakeičiame išgalvotu terminu. Ateities partnerio kontaktų perdavimui reikės aiškaus pagrindo ir atnaujintos informacijos."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Dienos skaitikliai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pirmoji šalis kaupia dienos peržiūrų ir el. pašto ar telefono nuorodų paspaudimų sumas. Skaitiklio laukai: svetainė, diena, viešo puslapio kelias, įvykis ir skaičius. Jame nėra IP adreso, asmens vardo, individualaus identifikatoriaus ar formos žinutės. Analitikos ir reklamos slapukų šioje versijoje nėra. Būsimo hostingo infrastruktūros žurnalai yra atskiras srautas, kurį reikia patikrinti prieš paleidimą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Do Not Track ir Global Privacy Control signalai sustabdo skaitiklį. Paspaudimas nėra gauta užklausa, o peržiūrų suma — ne unikalių žmonių skaičius. Atpažinti botai ir sintetiniai bandymai nevertinami kaip komercinė paklausa."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Teisės ir kontaktas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pagal taikomas BDAR sąlygas galite kreiptis dėl informacijos, prieigos, taisymo, ištrynimo, apribojimo ir kitų taikomų teisių. Rašykite info@pinet.lt, nurodydami žinutei naudotą el. paštą. Tapatybė tikrinama proporcingai; iš anksto nesiųskite dokumentų kopijų. Galite kreiptis į Valstybinę duomenų apsaugos inspekciją. Konkrečių teisių taikymas priklauso nuo pagrindo ir aplinkybių, kaip paaiškina EDPB."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en",
+          "label": "EDPB duomenų teisių gairės",
+          "reason": "Konkrečios teisės taikomos pagal tvarkymo pagrindą ir aplinkybes. Patikrinta 2026-10-01."
+        },
+        {
+          "url": "https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en",
+          "label": "EDPB duomenų tvarkymo principai",
+          "reason": "Duomenų kiekio ir saugojimo ribojimas; produkcijos politika turi būti nustatyta prieš paleidimą. Patikrinta 2026-10-01."
+        }
+      ],
+      "id": "1f0efe68-e370-4b06-8fa3-db5bcd647576",
+      "revisionHash": "a4c3483a7cbf526885dab1a5a6fc6f42f164c7a30b013ae9bbe2546b3f831e2d",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "a4c3483a7cbf526885dab1a5a6fc6f42f164c7a30b013ae9bbe2546b3f831e2d",
+        "approvedAt": "2026-10-01T04:10:47.169Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "baldu-surinkimas",
+      "title": "Baldų surinkimo poreikis",
+      "description": "Kaip aprašyti spintos, komodos, stalo ar kito standartinio baldo surinkimo darbą: modelis, kiekis, instrukcija, vieta ir terminas.",
+      "intent": "Reikia surinkti baldą: kokią užklausą galiu pateikti?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Nupirkote spintą, komodą, lovą ar stalą ir ieškote, kas galėtų surinkti? Šiame pilote galite užregistruoti konkretaus baldo arba kelių baldų surinkimo poreikį. Surinkimo vykdytojai ir aptarnavimo teritorija dar nepatvirtinti."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu tiriame smulkių namų darbų poreikį. Užklausa nėra užsakymas ar rezervacija. Meistro atvykimo, kainos pasiūlymo ir darbų atlikimo dar negarantuojame."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kokį poreikį galite aprašyti"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Standartinis baldas iš pakuočių: gamintojas, modelis ir kiekis.",
+            "Išardytas naudotas baldas: ar yra visos detalės ir instrukcija?",
+            "Surinktas baldas, kurį reikia pritvirtinti: tai atskiras darbo elementas, ne savaime įskaičiuotas veiksmas."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką nurodyti užklausoje"
+        },
+        {
+          "type": "paragraph",
+          "text": "Parašykite gaminio pavadinimą arba nuorodą, baldų skaičių, apytikrius surinkto baldo matmenis, miestą ir pageidaujamą laikotarpį. Nurodykite, ar pakuotės jau vietoje, ar yra instrukcijos, ar reikia išardyti seną baldą. Būtino tvirtinimo nepraleiskite; sprendžiama pagal konkretų gaminį ir vietą."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kur baigiasi paprastas surinkimas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Virtuvės planavimas, nestandartinio baldo gamyba, stalviršio pjovimas, įrangos pajungimas ir didesnis remontas nėra šio piloto patvirtintos paslaugos. Sienos ar detalės būklės iš aprašymo patikimai nustatyti negalima."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pasiruoškite aiškią užklausą"
+        },
+        {
+          "type": "paragraph",
+          "text": "Perskaitykite baldų surinkimo užklausos gidą ir registruokite poreikį. Gaminio instrukcija svarbesnė už bendrą pavyzdį. Nuotraukų įkėlimo ši forma neturi; jų vėliau galima prašyti tik susitarus."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [
+        {
+          "id": "9392167c-3452-4061-a84b-1c7fd4c3c15e",
+          "src": "/content-assets/auksarankiams/9392167c-3452-4061-a84b-1c7fd4c3c15e.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "0749f9e7-4067-476e-9b48-d3ca9bf50a58",
+          "src": "/content-assets/auksarankiams/0749f9e7-4067-476e-9b48-d3ca9bf50a58.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "b8569d3f-cd71-4f9a-bdd7-7d6a351f7e7d",
+          "src": "/content-assets/auksarankiams/b8569d3f-cd71-4f9a-bdd7-7d6a351f7e7d.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "167ee4ba-0b3c-420a-b8df-f57930afa771",
+          "src": "/content-assets/auksarankiams/167ee4ba-0b3c-420a-b8df-f57930afa771.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "96921084-e4fd-4bcf-bb57-3eb6e3d5d16c",
+          "src": "/content-assets/auksarankiams/96921084-e4fd-4bcf-bb57-3eb6e3d5d16c.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "5cd83534-ab8a-45f5-a7f7-c9d2f7aa1262",
+          "label": "baldų surinkimo užklausos gidą"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://www.ikea.com/lt/lt/customer-service/services/assembly/",
+          "label": "IKEA LT surinkimo paslaugos aprašymas",
+          "reason": "Gamintojo instrukcijų paieškos ir paslaugos apimties pavyzdys. Tai nėra mūsų partnerystė ar mūsų įkainiai. Patikrinta 2026-10-01."
+        },
+        {
+          "url": "https://www.ikea.com/lt/lt/files/pdf/0d/22/0d22da02/1754459806_721.pdf",
+          "label": "IKEA HEMNES pirkėjo gidas, saugumas (PDF)",
+          "reason": "Konkretaus baldo tvirtinimo instrukcijos ir sienai tinkamos detalės svarbios. Jo matmenys ar tvirtinimai nėra universalus sprendimas kitiems baldams. Patikrinta 2026-10-01."
+        }
+      ],
+      "id": "4db76ef4-d1cd-4c0c-97e2-01791d1b31f2",
+      "revisionHash": "a3bbd1d96d65d468178dc200aa83f5c6054794477a098fd89f294d9be168f83f",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "a3bbd1d96d65d468178dc200aa83f5c6054794477a098fd89f294d9be168f83f",
+        "approvedAt": "2026-10-01T04:53:28.493Z",
+        "actorId": "codex-demand-page-schema-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "kabinimo-darbai",
+      "title": "Lentynų, karnizų ir paveikslų kabinimo poreikis",
+      "description": "Ką nurodyti dėl lentynos, karnizo ar paveikslo kabinimo: gaminys, kiekis, vieta, pagrindo medžiaga ir neaiškumai.",
+      "intent": "Reikia pakabinti lentyną, karnizą ar paveikslą: kokia informacija svarbi?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Lentyna, karnizas ir paveikslas skiriasi ne tik dydžiu. Skirtingi yra jų tvirtinimo taškai, numatomas naudojimas ir pagrindas. Užregistruokite, ką norite pakabinti, tačiau iš žinutės nepažadame tinkamo tvirtinimo sprendimo ar vykdytojo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu tiriame smulkių namų darbų poreikį. Užklausa nėra užsakymas ar rezervacija. Meistro atvykimo, kainos pasiūlymo ir darbų atlikimo dar negarantuojame."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Užklausoje atskirkite gaminį ir vietą"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ką kabinsite ir kiek vienetų?",
+            "Kokie gaminio matmenys ir, jei žinote, svoris?",
+            "Siena ar lubos, apytikris aukštis, ar vieta lengvai pasiekiama?",
+            "Pagrindo medžiaga žinoma ar ne?",
+            "Ar yra gaminio instrukcija bei tvirtinimo detalės?"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Nežinomus dalykus įvardykite"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nereikia spėti, ar už dažų yra betonas, plyta ar gipso kartonas. Nurodykite, kad nežinote. Prieš gręžiant reikia įvertinti ir galimų paslėptų laidų, vamzdžių bei konstrukcijos riziką. Šis puslapis nėra instrukcija gręžti ar parinkti kaištį."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ko ši registracija nenustato"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nenurodome universalaus kaiščio, leidžiamos apkrovos, tvirtinimo aukščio ar kainos už skylę. Didelis veidrodis, sunkus ar aukštai montuojamas gaminys gali reikalauti papildomo specialisto ir įrangos. Elektros pajungimo ar avarinio nesaugaus gaminio sutvarkymo šis pilotas nesiūlo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Jei turite kelis darbus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Suskirstykite juos atskiromis sąrašo eilutėmis. Kelių darbų sąrašo gidas padės atskirti vienetus, vietas ir tai, ką dar reikia patikrinti. Tuomet registruokite poreikį."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [
+        {
+          "id": "e8d9351d-9325-4b05-8beb-1b5cb9967367",
+          "src": "/content-assets/auksarankiams/e8d9351d-9325-4b05-8beb-1b5cb9967367.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "91a1a1a7-ce50-45c4-98d7-fe84ec921776",
+          "src": "/content-assets/auksarankiams/91a1a1a7-ce50-45c4-98d7-fe84ec921776.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "82b9f53d-2076-46ff-b835-04406aec6ea7",
+          "src": "/content-assets/auksarankiams/82b9f53d-2076-46ff-b835-04406aec6ea7.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "b32a7c3a-5ece-4ff2-84a4-c1e8535f5542",
+          "src": "/content-assets/auksarankiams/b32a7c3a-5ece-4ff2-84a4-c1e8535f5542.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "e5aefb8c-a892-4400-97a4-9c009b57e1dc",
+          "src": "/content-assets/auksarankiams/e5aefb8c-a892-4400-97a4-9c009b57e1dc.webp",
+          "alt": "Darbo laukianti lentyna, paveikslas ir karnizas šviesiame kambaryje",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "223dbe27-419c-4136-b273-0c850a8be39c",
+          "label": "kelių darbų sąrašo gidą"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://www.fischer.co.uk/en-gb/products/standard-fixings/plastic-fixings/duopower",
+          "label": "fischer DuoPower gaminio techniniai duomenys",
+          "reason": "Lentelė atskiria pagrindo medžiagas ir tvirtinimo parametrus. Iš jos nenustatome jūsų sienos, tinkamo kaiščio ar leistinos lentynos apkrovos. Patikrinta 2026-10-01."
+        }
+      ],
+      "id": "09f02778-86e7-41d1-8643-72cf04f5c5cc",
+      "revisionHash": "17f8ea8d7cc2fd982be9382cd611b5aeee09c4828eea168d446ceb0c1a5c326e",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "17f8ea8d7cc2fd982be9382cd611b5aeee09c4828eea168d446ceb0c1a5c326e",
+        "approvedAt": "2026-10-01T04:53:28.579Z",
+        "actorId": "codex-demand-page-schema-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "faq",
+      "slug": "smulkus-baldu-pataisymai",
+      "title": "Smulkių baldų ir durelių pataisymų poreikis",
+      "description": "Stringantis stalčius, krypstanti baldo durelė ar atsilaisvinusi rankenėlė: kaip aprašyti simptomą, baldo būklę ir norimą rezultatą.",
+      "intent": "Baldo durelė ar stalčius neveikia sklandžiai: kaip aprašyti pataisymo poreikį?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Baldo durelė nesutampa su šalia esančia, stalčius stringa, rankenėlė atsipalaidavo? Aprašykite simptomą ir baldo būklę. Tai padeda suprasti poreikį, bet dar nenustato gedimo priežasties, dalių prieinamumo ar galimybės pataisyti."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiuo metu tiriame smulkių namų darbų poreikį. Užklausa nėra užsakymas ar rezervacija. Meistro atvykimo, kainos pasiūlymo ir darbų atlikimo dar negarantuojame."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką aprašyti vietoje spėjamos diagnozės"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kuris baldas ir kiek jo durelių ar stalčių turi problemą?",
+            "Kas tiksliai vyksta: kliūva, neužsidaro, iškrypę, atsilaisvinę?",
+            "Ar matomas įskilimas, išplėštas tvirtinimas ar kita pažeista vieta?",
+            "Ar žinomas gamintojas, modelis ar detalės žyma?",
+            "Kuriame mieste ir kokiu laikotarpiu norite sprendimo?"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pataisymas gali reikšti skirtingus darbus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vienam baldui pakaktų sureguliuoti veikiančią detalę; kitam gali reikėti keitimo arba korpuso remonto. Tai pavyzdžiai, ne nuotolinė diagnozė. Vien pagal nuotraukos išvaizdą nežadame konkrečios dalies ar rezultato."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ribos ir saugumas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nesaugaus, nestabilaus ar galinčio nuvirsti baldo nebandykite jėga išjudinti pagal bendrą interneto patarimą. Šis pilotas nėra avarinės pagalbos kanalas. Nesiūlome atstatyti laikančių konstrukcijų, spynų saugumo sistemų ar atlikti elektros darbų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Aiškus kitas žingsnis"
+        },
+        {
+          "type": "paragraph",
+          "text": "Aprašykite gedimo požymius ir norimą rezultatą, o ne vien „reikia meistro“. Darbų įvertinimo gidas paaiškina, ką vėliau verta suderinti su tikru vykdytoju. Registruokite poreikį be tikslaus namų adreso ar jautrių duomenų."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [
+        {
+          "id": "7f2a853a-04a5-4808-ac27-be5ae1120db6",
+          "src": "/content-assets/auksarankiams/7f2a853a-04a5-4808-ac27-be5ae1120db6.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "e2afb5d5-bb0c-4f9e-88e8-257c6a7d2b89",
+          "src": "/content-assets/auksarankiams/e2afb5d5-bb0c-4f9e-88e8-257c6a7d2b89.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "45f0bc48-9cfc-482d-9ffb-c0b498164c1d",
+          "src": "/content-assets/auksarankiams/45f0bc48-9cfc-482d-9ffb-c0b498164c1d.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "d509c3f2-b7f0-467a-9ebe-38182d7e9192",
+          "src": "/content-assets/auksarankiams/d509c3f2-b7f0-467a-9ebe-38182d7e9192.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "6a927287-3244-4727-9c1b-378e434fb0fc",
+          "src": "/content-assets/auksarankiams/6a927287-3244-4727-9c1b-378e434fb0fc.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "4a69ab0c-b4a8-41b0-90dc-10ad4ae6672c",
+          "label": "darbų įvertinimo gidą"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "id": "5e821e43-6830-455c-b816-b219068a0328",
+      "revisionHash": "dc58d434996510c9cbcb80f4cb0e23127b4fc79ba312fe2d8bb3ddadf2f240b9",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "dc58d434996510c9cbcb80f4cb0e23127b4fc79ba312fe2d8bb3ddadf2f240b9",
+        "approvedAt": "2026-10-01T04:53:28.657Z",
+        "actorId": "codex-demand-page-schema-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "guide",
+      "slug": "baldu-surinkimo-uzklausa",
+      "title": "Ką nurodyti baldų surinkimo užklausoje?",
+      "description": "Modelis, kiekis, instrukcijos, vieta ir tvirtinimas. Konkretus užklausos pavyzdys ir patikra, kad surinkimas nebūtų supainiotas su pristatymu ar kitu darbu.",
+      "intent": "Kaip parengti suprantamą baldų surinkimo užklausą?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Pradėkite nuo baldo, o ne nuo sakinio „reikia meistro“. Gaminio modelis, kiekis ir dabartinė būsena leidžia atskirti standartinį surinkimą nuo ardymo, tvirtinimo ar pažeisto baldo taisymo. Šis gidas padeda parengti aprašymą; mūsų forma šiuo metu registruoja poreikį ir negarantuoja surinkimo pasiūlymo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Suraskite gaminio duomenis"
+        },
+        {
+          "type": "paragraph",
+          "text": "Užrašykite gamintoją ir tikslų modelį. Jei pavadinimas bendras, pridėkite prekės nuorodą ar kodą. Gaminio puslapyje ieškokite instrukcijos ir surinkto baldo matmenų. IKEA paslaugos aprašyme instrukcijų paieška siejama su konkrečios prekės puslapiu. Kitų gamintojų informacijos vieta gali skirtis."
+        },
+        {
+          "type": "paragraph",
+          "text": "Baldų skaičius svarbus: viena spinta ir keturios kėdės nėra vienas darbas vien todėl, kad pirktos kartu. Komplektui atskirai išvardykite daiktus. Jei iš pateikto kodo negalima suprasti komplektacijos, ją trumpai aprašykite. Nepriskirkite gaminiui detalių, kurių neturite."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Aprašykite dabartinę būseną"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Naujas baldas uždarytose pakuotėse, dalys jau išpakuotos ar baldas išardytas?",
+            "Ar visos pakuotės jau darbo vietoje?",
+            "Ar instrukcija ir detalės yra? Jei netikrinote, taip ir parašykite.",
+            "Ar matomas pažeidimas, ar liko nebaigtas ankstesnis surinkimas?",
+            "Ar prieš darbą reikėtų išardyti ir išnešti kitą baldą?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Pristatymas, užnešimas, pakuočių išnešimas ir seno baldo utilizavimas yra atskiri veiksmai. Nelaikykite jų savaime įtrauktų į „surinkimą“. Su tikru vykdytoju reikėtų atskirai aptarti, kas tai darys ir kokiomis sąlygomis. Šio piloto forma neužsako nė vieno šių darbų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Nepamirškite tvirtinimo ir vietos"
+        },
+        {
+          "type": "paragraph",
+          "text": "Patikrinkite konkretaus baldo instrukcijos saugos reikalavimus. Kai kuriuos baldus reikia pritvirtinti prie sienos; vien surinktas korpusas dar nėra visa instrukcijoje numatyta užduotis. IKEA HEMNES gidas iliustruoja, kad svarbios baldo ir sienos tvirtinimo sąlygos. Nepersiimkite vieno modelio varžtų ar kaiščių rekomendacijos kitam baldui."
+        },
+        {
+          "type": "paragraph",
+          "text": "Parašykite, ar vieta surinkimui laisva, kuriame aukšte ji yra ir ar pakuotės jau ten. Miesto bei apytikrės miesto dalies poreikio tyrimui pakanka. Tikslaus adreso, durų kodo ir kitų privačių duomenų šiame etape nereikia. Sienos medžiagą nurodykite tik jei žinote; „nežinau“ geriau negu spėjimas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pavyzdys, kurį galite pritaikyti"
+        },
+        {
+          "type": "paragraph",
+          "text": "Iliustracinis aprašymas: „Kaune reikia surinkti vieną komodą ir vieną rašomąjį stalą. Modelių nuorodos: [mano gaminių nuorodos]. Pakuotės bute, instrukcijos yra, surinkimas nepradėtas. Komodos instrukcijoje numatytas tvirtinimas prie sienos; sienos medžiagos nežinau. Norėčiau per artimiausias dvi savaites, dienos lankščios. Seno baldo ardyti nereikia.“ Tai išgalvotas parengimo pavyzdys, ne kliento užsakymas ar mūsų aptarnavimo pažadas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jeigu pavyzdyje trūksta jūsų aplinkybių, jas papildykite: didelė spinta, ribota erdvė, neturimos detalės ar konkretus prieinamumo laikas gali keisti darbo apimtį. Nenurodykite tariamo darbo valandų skaičiaus kaip fakto, jei jo nenustatė vykdytojas."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Patikra prieš išsiunčiant"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kiekvienas baldas atskirai įvardytas ir suskaičiuotas.",
+            "Pridėti modeliai arba paaiškinta, kad jų nežinote.",
+            "Surinkimas atskirtas nuo pristatymo, ardymo ir tvirtinimo.",
+            "Nurodyta vieta ir pageidaujamas laikotarpis.",
+            "Nepateikti slaptažodžiai, durų kodai ar dokumentai."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei kartu norite kabinti lentyną ar taisyti stalčių, naudokite kelių darbų sąrašo gidą. Paruošę aprašymą registruokite poreikį. Užklausa nėra rezervacija, todėl skubiam ar saugumui svarbiam darbui nelaukite šio piloto kaip avarinio kanalo."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [
+        {
+          "id": "9392167c-3452-4061-a84b-1c7fd4c3c15e",
+          "src": "/content-assets/auksarankiams/9392167c-3452-4061-a84b-1c7fd4c3c15e.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "0749f9e7-4067-476e-9b48-d3ca9bf50a58",
+          "src": "/content-assets/auksarankiams/0749f9e7-4067-476e-9b48-d3ca9bf50a58.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "b8569d3f-cd71-4f9a-bdd7-7d6a351f7e7d",
+          "src": "/content-assets/auksarankiams/b8569d3f-cd71-4f9a-bdd7-7d6a351f7e7d.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "167ee4ba-0b3c-420a-b8df-f57930afa771",
+          "src": "/content-assets/auksarankiams/167ee4ba-0b3c-420a-b8df-f57930afa771.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "96921084-e4fd-4bcf-bb57-3eb6e3d5d16c",
+          "src": "/content-assets/auksarankiams/96921084-e4fd-4bcf-bb57-3eb6e3d5d16c.webp",
+          "alt": "Baldo plokštės, supakuotos detalės ir iliustracinė surinkimo instrukcija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "223dbe27-419c-4136-b273-0c850a8be39c",
+          "label": "kelių darbų sąrašo gidą"
+        },
+        {
+          "targetPageId": "4db76ef4-d1cd-4c0c-97e2-01791d1b31f2",
+          "label": "Baldų surinkimo poreikis"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://www.ikea.com/lt/lt/customer-service/services/assembly/",
+          "label": "IKEA LT surinkimo paslaugos aprašymas",
+          "reason": "Gamintojo instrukcijų paieškos ir paslaugos apimties pavyzdys. Tai nėra mūsų partnerystė ar mūsų įkainiai. Patikrinta 2026-10-01."
+        },
+        {
+          "url": "https://www.ikea.com/lt/lt/files/pdf/0d/22/0d22da02/1754459806_721.pdf",
+          "label": "IKEA HEMNES pirkėjo gidas, saugumas (PDF)",
+          "reason": "Konkretaus baldo tvirtinimo instrukcijos ir sienai tinkamos detalės svarbios. Jo matmenys ar tvirtinimai nėra universalus sprendimas kitiems baldams. Patikrinta 2026-10-01."
+        }
+      ],
+      "id": "5cd83534-ab8a-45f5-a7f7-c9d2f7aa1262",
+      "revisionHash": "c7efe18a65061a86556cfa561d2cdde91a2651a6a26f7f036a70cd5270c3a743",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "c7efe18a65061a86556cfa561d2cdde91a2651a6a26f7f036a70cd5270c3a743",
+        "approvedAt": "2026-10-01T04:10:46.711Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "guide",
+      "slug": "smulkiu-darbu-sarasas",
+      "title": "Kaip sudaryti kelių smulkių namų darbų sąrašą?",
+      "description": "Vienas darbas vienoje eilutėje: daiktas, kiekis, vieta, norimas rezultatas ir neaiškumai. Praktinis baldų, lentynų ir durelių užklausos pavyzdys.",
+      "intent": "Kaip vienoje užklausoje aiškiai aprašyti kelis mažus namų darbus?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Keli smulkūs darbai vienoje žinutėje turi būti išvardyti, o ne sulieti į „sutvarkyti butą“. Kiekvienai eilutei užrašykite daiktą, kiekį, norimą rezultatą ir tai, ko dar nežinote. Sąrašas padeda suprasti poreikį, bet savaime nepatvirtina, kad viską gali atlikti vienas meistras ar kad bendras darbas bus pigesnis."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pirmiausia surašykite visus daiktus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pereikite per kambarius ir užrašykite konkrečius neatliktus darbus. Atskirkite daiktą nuo veiksmo: „karnizas“ nėra pakankama eilutė; „sumontuoti vieną turimą karnizą virš lango“ jau apibrėžia tikslą. Jeigu nežinote, kokio sprendimo reikia, rašykite simptomą: „baldo durelė kliūva už kitos durelės“."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šio piloto sąrašą sudaro standartinių baldų surinkimas, lentynų/karnizų/paveikslų kabinimas ir smulkūs baldų pataisymai. Elektros, dujų, santechnikos, laikančių konstrukcijų ir avarinės pagalbos čia neorganizuojame. Toks darbas netampa tinkamas vien dėl to, kad įrašytas greta mažų darbų."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kiekvienai eilutei pridėkite keturis dalykus"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kiekis ir apimtis: kiek lentynų, kurių matmenų karnizas, kiek baldo durelių.",
+            "Vieta: kambarys, siena ar lubos, apytikris montavimo aukštis.",
+            "Turimos priemonės/gaminys: modelis, instrukcija, ar daiktas jau darbo vietoje.",
+            "Neaiškumai: pagrindo medžiaga, detalės trūkumas, matomas pažeidimas, nežinomas svoris."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Neperkelkite vaizde esančių matmenų į savo daiktą ir nespėkite sienos sandaros. Pavyzdžiui, tvirtinimo gamintojo lentelėse to paties gaminio parametrai siejami su skirtingais pagrindais. Tai paaiškina, kodėl užklausai svarbi vieta, tačiau iš bendro aprašymo neleidžia parinkti kaiščio ar leistinos apkrovos."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Sąrašo pavyzdys"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Surinkti vieną standartinį stalą: modelis ir instrukcija yra, pakuotė kambaryje.",
+            "Pakabinti dvi turimas lentynas: po 80 cm, numatytos knygoms; sienos medžiagos nežinau.",
+            "Pataisymo poreikis: viena virtuvinės spintelės durelė nesutampa su kita; modelio nežinau, matomo korpuso lūžio nepastebėjau."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Šios eilutės yra iliustracinės, ne atlikto darbo įrašas ar saugumo įvertinimas. „80 cm“ nėra leistina lentynos apkrova. Į savo žinutę įrašykite tik savo duomenis. Jei turite gaminio nuorodą, galite ją nurodyti; dabartinė forma nuotraukų ar dokumentų nepriima."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pažymėkite prioritetą ir laiką"
+        },
+        {
+          "type": "paragraph",
+          "text": "Išskirkite, kuris darbas jums svarbiausias ir kuriuos galite atidėti. Nurodykite pageidaujamą laikotarpį bei lankstumą, o ne numanomą laisvą meistro laiką. „Kitą savaitę, tinka trys popietės“ aiškiau negu „kuo greičiau“. Skubios pavojingos situacijos netinka paklausos piloto laukimui."
+        },
+        {
+          "type": "paragraph",
+          "text": "Miesto ir apytikrės vietos pradinei registracijai pakanka. Tikro vykdymo etape su pasirinktu specialistu atskirai būtų derinami tikslus adresas, patekimas, darbų valandos ir namo taisyklės. Nerašykite durų kodų, dokumentų numerių ar namuose esančių vertybių sąrašo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ko iš bendro sąrašo dar negalima spręsti"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vienas sąrašas neįrodo vieno vizito, vienos kompetencijos ar vieno įkainio. Dideliam baldui gali reikėti papildomo žmogaus, aukštai montuojamam gaminiui — tinkamos įrangos, pažeistam korpusui — kitokio remonto. Nuotolinis aprašymas padeda pasiruošti, bet neatstoja vietos ir gaminio įvertinimo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Patikra ir kitas žingsnis"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kiekvienas darbas turi savo eilutę ir kiekį.",
+            "Nežinomi faktai pažymėti, o ne atspėti.",
+            "Atskirtos išimtys ir svarbiausias darbas.",
+            "Nurodytas miestas ir pageidaujamas laikotarpis.",
+            "Suprantu, kad poreikio registracija neužsako meistro."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Paruošę sąrašą registruokite poreikį. Jei didžiausias klausimas yra būsimo pasiūlymo apimtis ar papildomi kaštai, pirmiausia perskaitykite darbų įvertinimo gidą. Jame kalbame apie tai, ką sutarti, o ne apie mūsų dar nepatvirtintą kainą."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [
+        {
+          "id": "511c95a9-36ce-40a3-8b7e-70a1682181a4",
+          "src": "/content-assets/auksarankiams/511c95a9-36ce-40a3-8b7e-70a1682181a4.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "3ba975d1-5ffc-4419-b180-d1e138d24c5f",
+          "src": "/content-assets/auksarankiams/3ba975d1-5ffc-4419-b180-d1e138d24c5f.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "653e8301-97ab-4a57-b1b6-1ed9704a074f",
+          "src": "/content-assets/auksarankiams/653e8301-97ab-4a57-b1b6-1ed9704a074f.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "91d02fba-7120-4bfd-a1d7-6b3388866da4",
+          "src": "/content-assets/auksarankiams/91d02fba-7120-4bfd-a1d7-6b3388866da4.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "29f82864-f409-4bbb-a1c9-ffbc9d064117",
+          "src": "/content-assets/auksarankiams/29f82864-f409-4bbb-a1c9-ffbc9d064117.webp",
+          "alt": "Trys nedideli namų darbai ir užrašų lapas jų sąrašui",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "4a69ab0c-b4a8-41b0-90dc-10ad4ae6672c",
+          "label": "darbų įvertinimo gidą"
+        },
+        {
+          "targetPageId": "09f02778-86e7-41d1-8643-72cf04f5c5cc",
+          "label": "Lentynų, karnizų ir paveikslų kabinimo poreikis"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://www.fischer.co.uk/en-gb/products/standard-fixings/plastic-fixings/duopower",
+          "label": "fischer DuoPower gaminio techniniai duomenys",
+          "reason": "Lentelė atskiria pagrindo medžiagas ir tvirtinimo parametrus. Iš jos nenustatome jūsų sienos, tinkamo kaiščio ar leistinos lentynos apkrovos. Patikrinta 2026-10-01."
+        }
+      ],
+      "id": "223dbe27-419c-4136-b273-0c850a8be39c",
+      "revisionHash": "1dd4fe48914d7f622b3c2605bf6b1db59171855eabe3072b08c2bdbfa6367b56",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "1dd4fe48914d7f622b3c2605bf6b1db59171855eabe3072b08c2bdbfa6367b56",
+        "approvedAt": "2026-10-01T04:10:46.783Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    },
+    {
+      "siteId": "auksarankiams",
+      "type": "guide",
+      "slug": "darbu-ivertinimas",
+      "title": "Kas lemia smulkių darbų įvertinimą ir ką suderinti?",
+      "description": "Darbo apimtis, atvykimas, medžiagos, papildomi darbai ir rezultato patikra. Kaip palyginti būsimo vykdytojo sąlygas nesiremiant vien valandiniu įkainiu.",
+      "intent": "Ką prieš tikrą meistro vizitą suderinti dėl kainos ir darbo apimties?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Vien valandinis įkainis nepasako, kiek kainuos jūsų darbų sąrašas. Svarbi apimtis, atvykimo sąlygos, tvirtinimai, atsarginės dalys ir neaiškumai vietoje. Šis gidas padeda pasiruošti pokalbiui su realiu vykdytoju. Auksarankiams.lt kol kas tik registruoja poreikį ir nepateikia meistro ar kainos pasiūlymo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pirmiausia sulyginkite darbo apimtį"
+        },
+        {
+          "type": "paragraph",
+          "text": "Lyginkite pasiūlymus tam pačiam sąrašui. Vienas gali apimti tik baldo korpusą, kitas — instrukcijoje reikalaujamą tvirtinimą ir pakuočių išnešimą. Jei apimtis skiriasi, pigesnė suma nebūtinai reiškia pigesnį tą patį rezultatą. Visus pageidaujamus veiksmus įrašykite, o ne laikykite savaime suprantamais."
+        },
+        {
+          "type": "paragraph",
+          "text": "Baldo durelės reguliavimas ir išplėšto tvirtinimo remontas nėra tas pats. Aprašykite simptomą, bet nereikalaukite iš anksto patvirtinti reguliavimo kaip vienintelio sprendimo. Dalies modelis, prieinamumas ir korpuso būklė gali paaiškėti tik įvertinus gaminį."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Išsiaiškinkite kainos pagrindą"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Už darbą, vienetą ar laiką skaičiuojamas atlygis?",
+            "Ar numatytas minimalus darbas, minimalus laikas arba minimali užsakymo suma?",
+            "Ar atvykimas įtrauktas ir kaip vertinama teritorija?",
+            "Ar suma apima mokesčius ir kokį atsiskaitymo dokumentą gausite?",
+            "Ar medžiagos ir dalių pirkimo laikas įskaičiuoti?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Šie klausimai nėra mūsų kainynas. Lietuvos teikėjų pasiūlymuose matomi skirtingi pagrindai; pavyzdžiui, IKEA surinkimo aprašymas atskiria iškvietimą nuo montavimo. Kito teikėjo ar gaminio sąlygų negalima automatiškai taikyti jūsų situacijai."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Atkreipkite dėmesį į medžiagas ir vietą"
+        },
+        {
+          "type": "paragraph",
+          "text": "Lentynos ar karnizo tvirtinimas priklauso nuo gaminio ir pagrindo. Gamintojo techninių parametrų lentelė neatstoja jūsų sienos įvertinimo. Nežinoma medžiaga, paslėptos komunikacijos, montavimo aukštis ar pažeistas pagrindas yra neaiškumai, kuriuos reikia įvardyti prieš priimant sprendimą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Suderinkite, kas parenka ir įsigyja konkrečiam darbui tinkamas medžiagas, ką daryti jų trūkstant ir ar reikalinga papildoma įranga. Jeigu tvirtinimo vieta ar gaminys kelia abejonių, negalima remtis vien sakiniu „čia tik kelios skylės“. Šis gidas nerekomenduoja patiems gręžti ar universaliai spręsti apkrovos."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Susitarkite dėl pokyčių prieš juos atliekant"
+        },
+        {
+          "type": "paragraph",
+          "text": "Paslėptas pažeidimas, trūkstama detalė ar papildomas klientui reikalingas darbas gali pakeisti apimtį. Su vykdytoju verta sutarti, kad naujas darbas ir jo kaina būtų patvirtinti prieš atliekant. Pradinę apimtį užrašykite; papildymas neturi likti dviprasmiškas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pavyzdys: prašėte sutvarkyti vieną stringantį stalčių, o įvertinus paaiškėjo, kad reikia keisti mechanizmą. Tuomet reikia iš naujo suderinti dalį, jos kainą, tiekimą, darbo apimtį ir laiką. Tai redakcinis pavyzdys, ne nuotolinė jūsų baldo diagnozė ar patvirtinimas, kad dalis bus prieinama."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką suderinti dėl būsimo vizito ir pabaigos"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kuri data tikrai patvirtinta, koks atvykimo intervalas ir atšaukimo sąlygos?",
+            "Kas suteikia patekimą, paruošia vietą ir pasirūpina namo darbo taisyklėmis?",
+            "Koks rezultatas laikomas atliktu ir kaip jį kartu patikrinsite?",
+            "Kokios konkretaus vykdytojo garantijos/taisymų sąlygos ir į ką kreiptis dėl trūkumo?",
+            "Kada atsiskaitoma, kokia suma ir kokį dokumentą išsaugote?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Neskubėkite laikyti susirašinėjimo galutiniu užsakymu, jei darbai, vykdytojas ir sąlygos dar nepatvirtinti. Poreikio piloto žinutė tuo labiau nepatvirtina vizito. Mes neskelbiame atvykimo termino, garantijos ar aptarnavimo tinklo, kol tam nėra realaus pagrindo."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kitas žingsnis"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pirmam kreipimuisi surašykite konkretų darbą, kiekį, miestą ir pageidaujamą laikotarpį. Jei turite kelis darbus, padės kelių darbų sąrašo gidas. Registruokite poreikį žinodami dabartinio etapo ribas. Kainos ir sutarties klausimai būtų derinami tik turint tikrą vykdytoją."
+        }
+      ],
+      "publishAt": "2026-10-01T04:10:45.174Z",
+      "media": [
+        {
+          "id": "7f2a853a-04a5-4808-ac27-be5ae1120db6",
+          "src": "/content-assets/auksarankiams/7f2a853a-04a5-4808-ac27-be5ae1120db6.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "e2afb5d5-bb0c-4f9e-88e8-257c6a7d2b89",
+          "src": "/content-assets/auksarankiams/e2afb5d5-bb0c-4f9e-88e8-257c6a7d2b89.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "45f0bc48-9cfc-482d-9ffb-c0b498164c1d",
+          "src": "/content-assets/auksarankiams/45f0bc48-9cfc-482d-9ffb-c0b498164c1d.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "d509c3f2-b7f0-467a-9ebe-38182d7e9192",
+          "src": "/content-assets/auksarankiams/d509c3f2-b7f0-467a-9ebe-38182d7e9192.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        },
+        {
+          "id": "6a927287-3244-4727-9c1b-378e434fb0fc",
+          "src": "/content-assets/auksarankiams/6a927287-3244-4727-9c1b-378e434fb0fc.webp",
+          "alt": "Nuimta baldo durelė su metaliniu vyriu ant apsauginio pagrindo",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originalus AI sukurtas redakcinis vaizdas. Iliustracija, ne klientų darbų įrodymas, gaminio instrukcija ar išmatuota detalė."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "223dbe27-419c-4136-b273-0c850a8be39c",
+          "label": "kelių darbų sąrašo gidą"
+        },
+        {
+          "targetPageId": "5e821e43-6830-455c-b816-b219068a0328",
+          "label": "Smulkių baldų ir durelių pataisymų poreikis"
+        },
+        {
+          "targetPageId": "88d1e918-c3f0-45d3-9892-5456f6316b8c",
+          "label": "registruokite poreikį"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://www.ikea.com/lt/lt/customer-service/services/assembly/",
+          "label": "IKEA LT surinkimo paslaugos aprašymas",
+          "reason": "Gamintojo instrukcijų paieškos ir paslaugos apimties pavyzdys. Tai nėra mūsų partnerystė ar mūsų įkainiai. Patikrinta 2026-10-01."
+        },
+        {
+          "url": "https://www.fischer.co.uk/en-gb/products/standard-fixings/plastic-fixings/duopower",
+          "label": "fischer DuoPower gaminio techniniai duomenys",
+          "reason": "Lentelė atskiria pagrindo medžiagas ir tvirtinimo parametrus. Iš jos nenustatome jūsų sienos, tinkamo kaiščio ar leistinos lentynos apkrovos. Patikrinta 2026-10-01."
+        }
+      ],
+      "id": "4a69ab0c-b4a8-41b0-90dc-10ad4ae6672c",
+      "revisionHash": "eb4d2e2e8a56c4ebe71755868572aca9cfa6645399a51cd1ca8ff9e5a83966f4",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "eb4d2e2e8a56c4ebe71755868572aca9cfa6645399a51cd1ca8ff9e5a83966f4",
+        "approvedAt": "2026-10-01T04:10:46.863Z",
+        "actorId": "codex-handyman-source-review-2026-10-01"
+      }
+    }
+  ],
+  "generatedAt": "2026-10-01T04:53:28.672Z"
+}

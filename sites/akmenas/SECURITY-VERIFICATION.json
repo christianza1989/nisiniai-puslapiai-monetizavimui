@@ -1,0 +1,92 @@
+{
+  "siteId": "akmenas",
+  "at": "2026-10-01T03:58:50.631Z",
+  "packageSha256": "cd725179619baaef8ba022f44964339eab0f4030d0629c9f9113997e7a98214e",
+  "ownedSourceMatches": {
+    "components/niche/akmenas-site.tsx": "3f516ab27c08ba033bd0e68fff15dfa43e0289f8003c3ba399e6dcbf3bfaa033",
+    "components/niche/akmenas-site.module.css": "046d5d7be4966010f19a0fbaef01cf196d4cb727e899cfc0ec9a4a0606ebb584",
+    "content-packages/akmenas/content-package.json": "cd725179619baaef8ba022f44964339eab0f4030d0629c9f9113997e7a98214e"
+  },
+  "publicAssetCount": 20,
+  "publicOriginals": false,
+  "excludedSecrets": {
+    ".env": true,
+    ".env.local": true,
+    ".dev.vars": true,
+    ".dev.vars.local": true
+  },
+  "responses": [
+    {
+      "path": "/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, no-store",
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "set-cookie": null
+      },
+      "secretPatternsFound": false
+    },
+    {
+      "path": "/.env",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, no-store",
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "set-cookie": null
+      },
+      "secretPatternsFound": false
+    },
+    {
+      "path": "/content-studio/data/sites/akmenas.json",
+      "status": 404,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, no-store",
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "set-cookie": null
+      },
+      "secretPatternsFound": false
+    },
+    {
+      "path": "/content-assets/akmenas/hero.png",
+      "status": 404,
+      "headers": {
+        "content-type": "text/plain;charset=UTF-8",
+        "cache-control": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "set-cookie": null
+      },
+      "secretPatternsFound": false
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "private, no-store",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": null,
+        "set-cookie": null
+      },
+      "secretPatternsFound": false
+    }
+  ],
+  "scope": "Own approved package, own20publicWebP, isolated secret-file exclusions and read-only render/LLM/private-path requests. Does not certify the unrelated repository or third-party dependencies.",
+  "controls": "Native/server validation, origin/host gates, body limits, honeypot, D1 before optional SMTP; evidence FORM-VERIFICATION/INTEREST-VERIFICATION/core tests.",
+  "syntheticData": "Exact test lead removed; counter increment restored. Browser QA totals are synthetic, not demand.",
+  "productionGaps": [
+    "Domain and legal identity verification",
+    "Production secrets and D1/mail bindings",
+    "Rate controls, alerting and mail reconciliation",
+    "Production backup/restore and incident/access procedure",
+    "Retention/legal basis/processors/transfer decision"
+  ],
+  "copyRepair": "Initial isolated TypeScript attempt lacked cloudflare-env.d.ts and hooks; only nonsecret declaration/source copied for complete type-check inputs. Build/renderer/media unchanged.",
+  "concurrentWork": "Current shared tsc reports optional externalLinks issues in auksarankiams-site.tsx, outside own boundary; no other niche files changed."
+}

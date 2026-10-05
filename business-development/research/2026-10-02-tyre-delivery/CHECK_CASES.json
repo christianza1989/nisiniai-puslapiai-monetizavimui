@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "status": "documented_scenarios_not_runtime_executed",
+  "scope": "Suggested cases for the existing authorised supplier simulation; not a new module or implementation approval",
+  "cases": [
+    {
+      "id": "domestic_free_shipping_to_lt",
+      "input": {"source":"BayWa product and FAQ","destinationCountry":"LT","productShowsFreeShipping":true,"supplierConfirmationForDestination":null},
+      "expected": {"finalQuoteReady":false,"deliveryCostEur":null,"nextNeed":"Supplier confirmation of export eligibility, complete delivery price and timing for this SKU and destination"}
+    },
+    {
+      "id": "product_size_is_not_package_size",
+      "input": {"productOuterDiameterMm":1425,"productDimensionSource":"Product HTML; not a shipping measurement","packedDimensionsCm":null,"grossWeightKg":null},
+      "expected": {"parcelEligibility":"unknown","nextNeed":"Actual supplier package dimensions, package count, gross weights and packing form"}
+    },
+    {
+      "id": "oversized_standard_parcel",
+      "synthetic": true,
+      "input": {"service":"DPD LT standard courier parcel screening only","packedDimensionsCm":[145,145,50],"grossWeightKg":20,"dimensionsAreActualPackageMeasurementsInScenario":true},
+      "expected": {"longestSideCm":145,"calculatedGirthPlusLengthCm":535,"standardParcelDimensionsPass":false,"allCarrierServicesRejected":false,"nextNeed":"An applicable freight/non-standard service and a route-specific accepted quotation"}
+    },
+    {
+      "id": "dimensions_pass_without_price",
+      "synthetic": true,
+      "input": {"service":"DPD LT standard courier parcel screening only","packedDimensionsCm":[60,40,30],"grossWeightKg":20,"supplierRouteConfirmation":null,"acceptedDeliveryQuote":null},
+      "expected": {"longestSideCm":60,"calculatedGirthPlusLengthCm":200,"standardParcelDimensionsPass":true,"finalQuoteReady":false,"deliveryCostEur":null,"nextNeed":"Route confirmation, accepted delivery price and timing; shape/packing checks still apply"}
+    }
+  ]
+}

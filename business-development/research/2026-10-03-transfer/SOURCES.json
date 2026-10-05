@@ -1,0 +1,18 @@
+{
+  "version":1,
+  "checkedOn":"2026-10-03",
+  "sources":[
+    {"id":"S1","url":"https://developers.cloudflare.com/d1/best-practices/import-export-data/","status":"opened_primary_html","observation":"SQL database/table export and import; schema/data switches; export blocks other queries.","limits":"No live database command run."},
+    {"id":"S2","url":"https://developers.cloudflare.com/api/resources/d1/subresources/database/methods/export/","status":"opened_primary_html","observation":"Documented dump_options expose table selection, not a tenant-row WHERE filter.","limits":"Inference about table selection only; does not rule out other per-site query/export approaches."},
+    {"id":"S3","url":"https://developers.cloudflare.com/fundamentals/manage-domains/move-domain/","status":"opened_primary_html","observation":"Domain transfer has registrar, DNS/settings and certificate requirements.","limits":"Our registrar/account/domain status unverified; no migration performed."}
+  ],
+  "localEvidence":{
+    "studioExporter":"content-studio/src/model.mjs: packageForSite/exportPackage",
+    "packageSchema":"content-studio/schemas/content-package.schema.json",
+    "inspectedPackage":"content-studio/output/miniekskavatoriai/content-package.json",
+    "packageObservation":{"schemaVersion":1,"siteId":"miniekskavatoriai","pages":12,"uniquePageSiteIds":["miniekskavatoriai"],"uniqueMediaPaths":20},
+    "publicCoreRoot":"C:/Users/lenovo/Documents/dovanos-memorycasting",
+    "publicCoreFiles":["db/schema.ts","drizzle/0004_niche_leads.sql","drizzle/0005_niche_interest_daily.sql","components/niche/miniekskavatoriai-site.tsx"],
+    "limits":"Read-only source inspection; no full dependency closure, content-hash verification, data extraction or restored runtime. Package counts do not certify readiness."
+  }
+}

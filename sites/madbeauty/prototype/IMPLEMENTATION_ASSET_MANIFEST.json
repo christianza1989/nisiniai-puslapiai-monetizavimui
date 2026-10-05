@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-05",
+  "assets": [
+    {
+      "id": "hero-violet",
+      "generator": "built-in ImageGen",
+      "prompt": "Use case: photorealistic-natural. Asset type: Madbeauty website photographic hero background, not a website mockup. Create an original premium beauty editorial photograph, wide landscape. Two anatomically correct adult female hands resting loosely on a soft ivory towel, short oval nails painted glossy saturated violet #7040E8, a simple silver ring, realistic skin texture. Hands and manicure occupy the center-right two thirds, with clean softly out-of-focus ivory and very pale lilac space on the left third for a separate HTML headline. Soft daylight from left, precise nail highlights, natural quiet contemporary salon mood. Framing close-up, substantial crop room above and below. No face, no people in background, no lettering, no logos, no watermark, no UI, no border, no collage. This is illustrative photography for a private fictional platform demo, not a real salon or customer result. Match a modern black/white/violet visual identity.",
+      "alt": "Violetinis manikiūras ant šviesaus rankšluosčio",
+      "use": "private-demo/editorial-illustration",
+      "rights": "Original AI illustration; not a real client result or provider portfolio.",
+      "source": {
+        "file": "private-originals/hero-violet-v1.png",
+        "width": 1850,
+        "height": 850,
+        "mime": "image/png",
+        "hasAlpha": false,
+        "bytes": 1783427,
+        "sha256": "8aa4bc36850ec65bde5b2c291e71ec4a712a195c73e20021b6cbfb76880f4d29"
+      },
+      "variants": [
+        {
+          "file": "images/hero-violet-1600.webp",
+          "width": 1600,
+          "height": 735,
+          "bytes": 38840,
+          "sha256": "0bed08695d04dc67a27e59e96d852afa195895e5a409fca01dff3c7eec48339a"
+        },
+        {
+          "file": "images/hero-violet-1200.webp",
+          "width": 1200,
+          "height": 551,
+          "bytes": 26078,
+          "sha256": "c15f9ceeeeb6d78026176c7cff3ec504fac7bd0d5b7fff66ce12f3ac29c74df6"
+        },
+        {
+          "file": "images/hero-violet-800.webp",
+          "width": 800,
+          "height": 368,
+          "bytes": 14698,
+          "sha256": "6f273168a890d144ac6d83e5516842cb517c62929c26f2db0dfa4d0c1b67f154"
+        },
+        {
+          "file": "images/hero-violet-640.webp",
+          "width": 640,
+          "height": 294,
+          "bytes": 11006,
+          "sha256": "c960cead44433b079d1ebd281aaad4e840d97c9053cae60fc6bfe53889f13db0"
+        },
+        {
+          "file": "images/hero-violet-360.webp",
+          "width": 360,
+          "height": 165,
+          "bytes": 4952,
+          "sha256": "54622f79c356035805bf49b4bd93868fb7d100cf13ad47226c4382cc3a52164e"
+        }
+      ],
+      "policy": "responsive-webp-v1",
+      "crop": {
+        "hero": "right center",
+        "mobile": "60% center"
+      },
+      "review": "Sequential agent pixel review 2026-10-05: intact hands, correct violet identity, left copy area."
+    }
+  ]
+}

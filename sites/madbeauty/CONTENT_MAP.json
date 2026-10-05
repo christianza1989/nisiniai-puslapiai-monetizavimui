@@ -1,0 +1,1112 @@
+{
+  "kind": "madbeauty_private_planning_contract_not_content_package_schema",
+  "updatedAt": "2026-10-05",
+  "status": "PROPOSED_NOT_GENERATED_OR_PUBLISHED",
+  "publications": {
+    "dates": "assign_by_agent_from_actual_stage_and_dependencies",
+    "relativeWeeks": "planning_order_within_first_six_months_not_fixed_publication_promises",
+    "initialArticleIds": [
+      "guide:kaip-issirinkti-nagu-spalva",
+      "guide:kas-ieina-i-manikiuro-kaina",
+      "guide:kaip-pasirinkti-manikiuro-meistra"
+    ]
+  },
+  "services": [
+    {
+      "id": "manikiuras",
+      "label": "Manikiūras",
+      "cluster": "nagai",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "gelinis-lakavimas",
+      "label": "Gelinis lakavimas",
+      "cluster": "nagai",
+      "parent": "manikiuras",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "pedikiuras",
+      "label": "Pedikiūras",
+      "cluster": "nagai",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "veido-masazas",
+      "label": "Veido masažas",
+      "cluster": "veidas",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "kobido",
+      "label": "Kobido",
+      "cluster": "veidas",
+      "parent": "veido-masazas",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "moteru-kirpimas",
+      "label": "Moterų kirpimas",
+      "cluster": "plaukai",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "plauku-dazymas",
+      "label": "Plaukų dažymas",
+      "cluster": "plaukai",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "antakiu-korekcija",
+      "label": "Antakių korekcija",
+      "cluster": "antakiai",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "antakiu-laminavimas",
+      "label": "Antakių laminavimas",
+      "cluster": "antakiai",
+      "status": "proposed_taxonomy_not_live_supply"
+    },
+    {
+      "id": "blakstienu-laminavimas",
+      "label": "Blakstienų laminavimas",
+      "cluster": "blakstienos",
+      "status": "proposed_taxonomy_not_live_supply"
+    }
+  ],
+  "articles": [
+    {
+      "articleId": "guide:kaip-issirinkti-nagu-spalva",
+      "canonicalPath": "/gidai/kaip-issirinkti-nagu-spalva/",
+      "title": "Kaip išsirinkti nagų spalvą",
+      "intent": "Pasirinkti spalvą pagal norimą efektą, ilgį, progą ir priežiūros kompromisus",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "gelinis-lakavimas"
+      ],
+      "originalContribution": "Originalūs spalvų pavyzdžiai ir sprendimo lentelė",
+      "wave": "initial",
+      "relativeWeek": 0,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kas-ieina-i-manikiuro-kaina",
+      "canonicalPath": "/gidai/kas-ieina-i-manikiuro-kaina/",
+      "title": "Kas įeina į manikiūro kainą",
+      "intent": "Atskirti bazinę procedūrą, nuėmimą ir papildomus darbus",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "gelinis-lakavimas"
+      ],
+      "originalContribution": "Variantų ir priedų palyginimo lentelė iš patvirtintų kainų arba aiškiai iliustracinio pavyzdžio",
+      "wave": "initial",
+      "relativeWeek": 0,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kaip-pasirinkti-manikiuro-meistra",
+      "canonicalPath": "/gidai/kaip-pasirinkti-manikiuro-meistra/",
+      "title": "Kaip pasirinkti manikiūro meistrą pagal darbų galeriją",
+      "intent": "Įvertinti portfolio ir paklausti tinkamų klausimų prieš vizitą",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [],
+      "originalContribution": "Galerijos skaitymo checklist; jokios fiktyvios meistro kvalifikacijos",
+      "wave": "initial",
+      "relativeWeek": 0,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:manikiuras-ar-gelinis-lakavimas",
+      "canonicalPath": "/gidai/manikiuras-ar-gelinis-lakavimas/",
+      "title": "Manikiūras ar gelinis lakavimas: ką pasirinkti registruojantis",
+      "intent": "Pasirinkti tinkamą paslaugos variantą",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "gelinis-lakavimas"
+      ],
+      "originalContribution": "Procedūrų apimties ir registracijos variantų schema",
+      "wave": "expansion",
+      "relativeWeek": 2,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:seno-lako-nuemimas-registruojantis",
+      "canonicalPath": "/gidai/seno-lako-nuemimas-registruojantis/",
+      "title": "Seno lako nuėmimas: ką pažymėti registruojantis",
+      "intent": "Teisingai pridėti paslaugą ir trukmę rezervacijoje",
+      "clusterId": "nagai",
+      "primaryServiceId": "gelinis-lakavimas",
+      "secondaryServiceIds": [],
+      "originalContribution": "Priedo įtakos laiko langui pavyzdys; ne namų šalinimo instrukcija",
+      "wave": "expansion",
+      "relativeWeek": 3,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti gelinio lakavimo meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/gelinis-lakavimas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:nagu-forma-ir-ilgis",
+      "canonicalPath": "/gidai/nagu-forma-ir-ilgis/",
+      "title": "Nagų forma ir ilgis: kaip aiškiai aptarti norimą rezultatą",
+      "intent": "Suderinti norimą formą ir ilgį su meistru",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "gelinis-lakavimas"
+      ],
+      "originalContribution": "Originalių iliustracijų palyginimas ir klausimų ruošinys",
+      "wave": "expansion",
+      "relativeWeek": 4,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:trumpu-nagu-dizaino-pasirinkimas",
+      "canonicalPath": "/gidai/trumpu-nagu-dizaino-pasirinkimas/",
+      "title": "Trumpų nagų dizainas: pasirinkimo idėjos ir jų skirtumai",
+      "intent": "Pasirinkti vizualinį stilių trumpiems nagams",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "gelinis-lakavimas"
+      ],
+      "originalContribution": "Originalūs skirtingų stilių vaizdai; ne specialistų gebėjimų išvada",
+      "wave": "expansion",
+      "relativeWeek": 5,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:prancuziskas-ar-vienos-spalvos-manikiuras",
+      "canonicalPath": "/gidai/prancuziskas-ar-vienos-spalvos-manikiuras/",
+      "title": "Prancūziškas ar vienos spalvos manikiūras: ką aptarti prieš vizitą",
+      "intent": "Palyginti du apdailos stilius ir jų paslaugos variantus",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "gelinis-lakavimas"
+      ],
+      "originalContribution": "Nuotraukos / kainos sąlygos tik iš teikėjo duomenų",
+      "wave": "expansion",
+      "relativeWeek": 6,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kaip-planuoti-manikiura-pries-rengini",
+      "canonicalPath": "/gidai/kaip-planuoti-manikiura-pries-rengini/",
+      "title": "Kaip suplanuoti manikiūrą prieš renginį",
+      "intent": "Parinkti laiką pagal asmeninį renginio planą ir teikėjo sąlygas",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [],
+      "originalContribution": "Laiko planavimo checklist be universalių procedūros pažadų",
+      "wave": "expansion",
+      "relativeWeek": 7,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:pedikiuro-paslaugos-variantai",
+      "canonicalPath": "/gidai/pedikiuro-paslaugos-variantai/",
+      "title": "Pedikiūro variantai: kaip pasirinkti teikėjo kainyne",
+      "intent": "Atskirti pedikiūro apimtį ir lakavimą",
+      "clusterId": "nagai",
+      "primaryServiceId": "pedikiuras",
+      "secondaryServiceIds": [],
+      "originalContribution": "Variantų palyginimas; jokių medicininio gydymo pažadų",
+      "wave": "expansion",
+      "relativeWeek": 8,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti pedikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/pedikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "pedikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kaip-pasirinkti-laisva-vizito-laika",
+      "canonicalPath": "/gidai/kaip-pasirinkti-laisva-vizito-laika/",
+      "title": "Kaip pasirinkti laiką, kuriame telpa visa procedūra",
+      "intent": "Suprasti priedus, trukmę ir valandų intervalą",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "gelinis-lakavimas",
+        "pedikiuras"
+      ],
+      "originalContribution": "Kalendoriaus paaiškinimas; F1 be live booking pažado",
+      "wave": "expansion",
+      "relativeWeek": 9,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "gelinis-lakavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "pedikiuras",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:grozio-vizito-keitimas-ir-atsaukimas",
+      "canonicalPath": "/gidai/grozio-vizito-keitimas-ir-atsaukimas/",
+      "title": "Vizito keitimas ir atšaukimas: ką patikrinti rezervuojant",
+      "intent": "Perskaityti konkretaus teikėjo atšaukimo / keitimo sąlygas",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [],
+      "originalContribution": "Tik actual platformos / provider taisyklių paaiškinimas",
+      "wave": "expansion",
+      "relativeWeek": 10,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:veido-masazo-variantu-palyginimas",
+      "canonicalPath": "/gidai/veido-masazo-variantu-palyginimas/",
+      "title": "Veido masažo variantai: kaip palyginti paslaugų aprašymus",
+      "intent": "Atskirti konkrečiai siūlomus procedūrų variantus",
+      "clusterId": "veidas",
+      "primaryServiceId": "veido-masazas",
+      "secondaryServiceIds": [
+        "kobido"
+      ],
+      "originalContribution": "Variantų apimtis iš patvirtintos pasiūlos; sveikatos claims nepakeičia medicininės peržiūros",
+      "wave": "supply_gated",
+      "relativeWeek": 11,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti veido masažo specialistą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/veido-masazas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "veido-masazas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "kobido",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:ka-paklausti-pries-veido-masaza",
+      "canonicalPath": "/gidai/ka-paklausti-pries-veido-masaza/",
+      "title": "Ką paklausti prieš registruojantis veido masažui",
+      "intent": "Surinkti paslaugos, trukmės, kvalifikacijos ir individualaus tinkamumo klausimus",
+      "clusterId": "veidas",
+      "primaryServiceId": "veido-masazas",
+      "secondaryServiceIds": [],
+      "originalContribution": "Klausimų checklist; jokios personalizuotos medicinos išvados",
+      "wave": "supply_gated",
+      "relativeWeek": 12,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti veido masažo specialistą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/veido-masazas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "veido-masazas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kobido-paslaugos-apimtis",
+      "canonicalPath": "/gidai/kobido-paslaugos-apimtis/",
+      "title": "Kobido paslaugos apimtis: trukmė, priedai ir kainos sąlygos",
+      "intent": "Palyginti konkrečių teikėjų Kobido variantus",
+      "clusterId": "veidas",
+      "primaryServiceId": "kobido",
+      "secondaryServiceIds": [
+        "veido-masazas"
+      ],
+      "originalContribution": "Lentelė iš actual approved paslaugų, ne universali trukmė",
+      "wave": "supply_gated",
+      "relativeWeek": 13,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti Kobido specialistą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/kobido/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "kobido",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "veido-masazas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kaip-skaityti-veido-masazo-kainyna",
+      "canonicalPath": "/gidai/kaip-skaityti-veido-masazo-kainyna/",
+      "title": "Kaip skaityti veido masažo kainyną",
+      "intent": "Atskirti vieną vizitą, paketą ir priedą",
+      "clusterId": "veidas",
+      "primaryServiceId": "veido-masazas",
+      "secondaryServiceIds": [],
+      "originalContribution": "Kainos vieneto / variantų patikra",
+      "wave": "supply_gated",
+      "relativeWeek": 14,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti veido masažo specialistą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/veido-masazas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "veido-masazas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kaip-pasirinkti-kirpimo-paslauga",
+      "canonicalPath": "/gidai/kaip-pasirinkti-kirpimo-paslauga/",
+      "title": "Kaip pasirinkti tinkamą kirpimo paslaugą registruojantis",
+      "intent": "Teisingai pasirinkti kainyno variantą ir apimtį",
+      "clusterId": "plaukai",
+      "primaryServiceId": "moteru-kirpimas",
+      "secondaryServiceIds": [],
+      "originalContribution": "Tik teikėjų apibrėžti variantai, pageidavimų ruošinys",
+      "wave": "supply_gated",
+      "relativeWeek": 15,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti kirpimo meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/moteru-kirpimas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "moteru-kirpimas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:plauku-dazymo-konsultacija",
+      "canonicalPath": "/gidai/plauku-dazymo-konsultacija/",
+      "title": "Plaukų dažymo konsultacija: kada kaina dar nėra galutinė",
+      "intent": "Suprasti konsultacijos ir binding kainos skirtumą",
+      "clusterId": "plaukai",
+      "primaryServiceId": "plauku-dazymas",
+      "secondaryServiceIds": [],
+      "originalContribution": "Pasiūlymo / kainos pagrindo checklist",
+      "wave": "supply_gated",
+      "relativeWeek": 16,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti plaukų dažymo meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/plauku-dazymas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "plauku-dazymas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:plauku-dazymo-registracijos-informacija",
+      "canonicalPath": "/gidai/plauku-dazymo-registracijos-informacija/",
+      "title": "Kokią informaciją pateikti registruojantis plaukų dažymui",
+      "intent": "Parengti klausimus ir norimo rezultato aprašymą",
+      "clusterId": "plaukai",
+      "primaryServiceId": "plauku-dazymas",
+      "secondaryServiceIds": [],
+      "originalContribution": "Kliento pageidavimų checklist, ne cheminių procedūrų instrukcija",
+      "wave": "supply_gated",
+      "relativeWeek": 17,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti plaukų dažymo meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/plauku-dazymas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "plauku-dazymas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:antakiu-korekcija-ar-laminavimas",
+      "canonicalPath": "/gidai/antakiu-korekcija-ar-laminavimas/",
+      "title": "Antakių korekcija ar laminavimas: kaip atskirti paslaugas",
+      "intent": "Pasirinkti paslaugos tipą, nepainioti variantų",
+      "clusterId": "antakiai",
+      "primaryServiceId": "antakiu-korekcija",
+      "secondaryServiceIds": [
+        "antakiu-laminavimas"
+      ],
+      "originalContribution": "Iliustracijos ir tikrų paslaugų apimties lentelė",
+      "wave": "supply_gated",
+      "relativeWeek": 18,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti antakių korekcijos meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/antakiu-korekcija/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "antakiu-korekcija",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "antakiu-laminavimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kas-ieina-i-antakiu-laminavima",
+      "canonicalPath": "/gidai/kas-ieina-i-antakiu-laminavima/",
+      "title": "Kas įeina į antakių laminavimo pasiūlymą",
+      "intent": "Suprasti ar korekcija / dažymas įeina į kainą",
+      "clusterId": "antakiai",
+      "primaryServiceId": "antakiu-laminavimas",
+      "secondaryServiceIds": [
+        "antakiu-korekcija"
+      ],
+      "originalContribution": "Priedų ir sąlygų palyginimas iš provider faktų",
+      "wave": "supply_gated",
+      "relativeWeek": 19,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti antakių laminavimo meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/antakiu-laminavimas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "antakiu-laminavimas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "antakiu-korekcija",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:blakstienu-laminavimo-variantai",
+      "canonicalPath": "/gidai/blakstienu-laminavimo-variantai/",
+      "title": "Blakstienų laminavimas: ką patikrinti kainyne",
+      "intent": "Pasirinkti konkretaus teikėjo variantą ir klausimus",
+      "clusterId": "blakstienos",
+      "primaryServiceId": "blakstienu-laminavimas",
+      "secondaryServiceIds": [],
+      "originalContribution": "Originali apimties / kainos lentelė, ne saugumo garantijos",
+      "wave": "supply_gated",
+      "relativeWeek": 20,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti blakstienų laminavimo meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/blakstienu-laminavimas/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "blakstienu-laminavimas",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kaip-palyginti-grozio-specialistus",
+      "canonicalPath": "/gidai/kaip-palyginti-grozio-specialistus/",
+      "title": "Kaip palyginti grožio specialistus, kai kainos skiriasi",
+      "intent": "Palyginti tos pačios apimties procedūras ir aktualius faktus",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [
+        "veido-masazas",
+        "moteru-kirpimas"
+      ],
+      "originalContribution": "Kriterijų ruošinys ir normalizuotas palyginimas",
+      "wave": "expansion",
+      "relativeWeek": 22,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "veido-masazas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        },
+        {
+          "targetType": "service_hub",
+          "serviceId": "moteru-kirpimas",
+          "reason": "Tik atitinkamame variantų palyginimo skyriuje"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    },
+    {
+      "articleId": "guide:kaip-pasirinkti-grozio-vizito-vieta",
+      "canonicalPath": "/gidai/kaip-pasirinkti-grozio-vizito-vieta/",
+      "title": "Kaip pasirinkti patogią grožio vizito vietą",
+      "intent": "Suplanuoti kelią, darbo vietą ir prieinamumą",
+      "clusterId": "nagai",
+      "primaryServiceId": "manikiuras",
+      "secondaryServiceIds": [],
+      "originalContribution": "Vietos / transporto / accessibility checklist be išgalvoto provider adreso",
+      "wave": "expansion",
+      "relativeWeek": 23,
+      "cta": {
+        "action": "discover_specialists",
+        "label": "Rasti manikiūro meistrą",
+        "targetType": "service_catalog_resolver",
+        "cityContext": "explicit_user_selection_only",
+        "unknownCityFallback": "/paslaugos/manikiuras/",
+        "preserveAvailabilityState": "hash_only_after_accepted_availability",
+        "missingPublicTarget": "block_or_use_an_actual_approved_nonbooking_fallback"
+      },
+      "internalLinks": [
+        {
+          "targetType": "service_hub",
+          "serviceId": "manikiuras",
+          "reason": "Tinkama konkretaus klausimo paslauga"
+        }
+      ],
+      "dependencies": [
+        "source-backed useful brief",
+        "reviewed original topic images",
+        "actual approved eligible service target or truthful accepted fallback",
+        "claim/link/CTA review",
+        "immutable approval and publishAt"
+      ],
+      "seasonalHook": "",
+      "generationStatus": "NOT_GENERATED",
+      "linkStatus": "PLANNED",
+      "publishAt": null
+    }
+  ]
+}

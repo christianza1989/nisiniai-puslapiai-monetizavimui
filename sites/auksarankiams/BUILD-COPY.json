@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-01T04:54:27.471Z",
+  "target": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\output\\auksarankiams-production",
+  "source": "C:/Users/lenovo/Documents/dovanos-memorycasting",
+  "whitelist": true,
+  "excludes": [
+    ".env*",
+    ".dev.vars*",
+    "credential/secret/prisijung files",
+    "all original .wrangler state"
+  ],
+  "nodeModules": "junction to existing dependencies",
+  "build": "npm run build",
+  "previewPort": 8890,
+  "smtp": 0,
+  "voice": 0
+}

@@ -1,0 +1,326 @@
+{
+  "hero": {
+    "id": "7ea460ea-6977-4ee1-b1b2-2d0d69257ce1",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-9eb62735-abd7-471f-8c70-0ade298d9a3b.png",
+    "sha256": "3b1d324abd6bee90c8f71d28fbedca5c34b7cb0ec80c7ee0cd2e4438c3cb8b9c",
+    "alt": "Mėlynas automobilis prie atvirų dirbtuvių vartų",
+    "promptFile": "research/hero-prompt.txt",
+    "role": "hero",
+    "review": {
+      "date": "2026-10-03",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Peržiūrėtas visas kadras: nebranduotas kontekstas, nėra tikro kliento ar mūsų dirbtuvių teiginio. Matomas diagnostikos ekranas tuščias; ne mokomoji jungimo schema."
+    },
+    "variants": [
+      {
+        "id": "7ea460ea-6977-4ee1-b1b2-2d0d69257ce1",
+        "groupId": "2b6fe7ee-1ba2-4185-bcf2-f791c8a56447",
+        "src": "/content-assets/autoelektrikaivilniuje/7ea460ea-6977-4ee1-b1b2-2d0d69257ce1.webp",
+        "alt": "Mėlynas automobilis prie atvirų dirbtuvių vartų",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. An unbranded dark blue compact passenger car seen front three-quarter, parked outside the open entrance of a modest clean urban automotive electrical workshop on an overcast northern European morning. Pale concrete, discreet tool storage visible in the distance, blue-gray and warm neutral palette, natural soft light, confident simple composition, car centered lower half, room around it for responsive crop. No people, no signs, no text, no logos, no readable licence plate, no city landmarks. Believable contemporary car geometry. This is a generic illustrative scene, not a documentary real business photo. Photograph texture and restrained color, no sci-fi, no dramatic sparks.",
+        "bytes": 139360,
+        "sha256": "60b2e5d66284ec262ccae14684ee4b355652e5b6aaf744d2d12daaa0631faab2"
+      },
+      {
+        "id": "91e37cef-6918-48c5-a405-6ddb5311be17",
+        "groupId": "2b6fe7ee-1ba2-4185-bcf2-f791c8a56447",
+        "src": "/content-assets/autoelektrikaivilniuje/91e37cef-6918-48c5-a405-6ddb5311be17.webp",
+        "alt": "Mėlynas automobilis prie atvirų dirbtuvių vartų",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. An unbranded dark blue compact passenger car seen front three-quarter, parked outside the open entrance of a modest clean urban automotive electrical workshop on an overcast northern European morning. Pale concrete, discreet tool storage visible in the distance, blue-gray and warm neutral palette, natural soft light, confident simple composition, car centered lower half, room around it for responsive crop. No people, no signs, no text, no logos, no readable licence plate, no city landmarks. Believable contemporary car geometry. This is a generic illustrative scene, not a documentary real business photo. Photograph texture and restrained color, no sci-fi, no dramatic sparks.",
+        "bytes": 95024,
+        "sha256": "c8ed452b7c15f69c66c11cb2fc5ae7fe0c85f205c36952f4517edca33a957e8c"
+      },
+      {
+        "id": "d3c09ecb-3c4c-4181-9a9b-4854e131b563",
+        "groupId": "2b6fe7ee-1ba2-4185-bcf2-f791c8a56447",
+        "src": "/content-assets/autoelektrikaivilniuje/d3c09ecb-3c4c-4181-9a9b-4854e131b563.webp",
+        "alt": "Mėlynas automobilis prie atvirų dirbtuvių vartų",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. An unbranded dark blue compact passenger car seen front three-quarter, parked outside the open entrance of a modest clean urban automotive electrical workshop on an overcast northern European morning. Pale concrete, discreet tool storage visible in the distance, blue-gray and warm neutral palette, natural soft light, confident simple composition, car centered lower half, room around it for responsive crop. No people, no signs, no text, no logos, no readable licence plate, no city landmarks. Believable contemporary car geometry. This is a generic illustrative scene, not a documentary real business photo. Photograph texture and restrained color, no sci-fi, no dramatic sparks.",
+        "bytes": 48176,
+        "sha256": "fea58dc2421eaf409b7f3caf34b801ce97625d4cb339e057407328c95bb26610"
+      },
+      {
+        "id": "1c79fcd6-a6ec-4f92-8f9b-a46e89ba05f6",
+        "groupId": "2b6fe7ee-1ba2-4185-bcf2-f791c8a56447",
+        "src": "/content-assets/autoelektrikaivilniuje/1c79fcd6-a6ec-4f92-8f9b-a46e89ba05f6.webp",
+        "alt": "Mėlynas automobilis prie atvirų dirbtuvių vartų",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. An unbranded dark blue compact passenger car seen front three-quarter, parked outside the open entrance of a modest clean urban automotive electrical workshop on an overcast northern European morning. Pale concrete, discreet tool storage visible in the distance, blue-gray and warm neutral palette, natural soft light, confident simple composition, car centered lower half, room around it for responsive crop. No people, no signs, no text, no logos, no readable licence plate, no city landmarks. Believable contemporary car geometry. This is a generic illustrative scene, not a documentary real business photo. Photograph texture and restrained color, no sci-fi, no dramatic sparks.",
+        "bytes": 33316,
+        "sha256": "f7cdadbf263e4f2d1fda53dde3ef14f4120d2899606b4493ba44d9e8a80d6b8a"
+      },
+      {
+        "id": "e8285f76-f1db-450e-90cc-275fa72fafd4",
+        "groupId": "2b6fe7ee-1ba2-4185-bcf2-f791c8a56447",
+        "src": "/content-assets/autoelektrikaivilniuje/e8285f76-f1db-450e-90cc-275fa72fafd4.webp",
+        "alt": "Mėlynas automobilis prie atvirų dirbtuvių vartų",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. An unbranded dark blue compact passenger car seen front three-quarter, parked outside the open entrance of a modest clean urban automotive electrical workshop on an overcast northern European morning. Pale concrete, discreet tool storage visible in the distance, blue-gray and warm neutral palette, natural soft light, confident simple composition, car centered lower half, room around it for responsive crop. No people, no signs, no text, no logos, no readable licence plate, no city landmarks. Believable contemporary car geometry. This is a generic illustrative scene, not a documentary real business photo. Photograph texture and restrained color, no sci-fi, no dramatic sparks.",
+        "bytes": 12018,
+        "sha256": "38421fd044b9d5f04e5d9b5f81c16201683465aefa0ef0488a233ef958a80f78"
+      }
+    ]
+  },
+  "battery": {
+    "id": "3c7cb84d-44c3-48d5-b34c-ae7bdf0d0bf8",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-b4b67fb6-4afd-4dce-9b62-4fa2ab91c2b5.png",
+    "sha256": "c09f2c1640ffaaf3fd1a3c5fca6cd10f4a78f32e694bdb80fe5694d9314bcce4",
+    "alt": "Automobilio akumuliatorius įprastai sumontuotas variklio skyriuje",
+    "promptFile": "research/battery-prompt.txt",
+    "role": "battery",
+    "review": {
+      "date": "2026-10-03",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Peržiūrėtas visas kadras: nebranduotas kontekstas, nėra tikro kliento ar mūsų dirbtuvių teiginio. Matomas diagnostikos ekranas tuščias; ne mokomoji jungimo schema."
+    },
+    "variants": [
+      {
+        "id": "3c7cb84d-44c3-48d5-b34c-ae7bdf0d0bf8",
+        "groupId": "80a52052-8094-4a4f-99fe-0ee7618cd5af",
+        "src": "/content-assets/autoelektrikaivilniuje/3c7cb84d-44c3-48d5-b34c-ae7bdf0d0bf8.webp",
+        "alt": "Automobilio akumuliatorius įprastai sumontuotas variklio skyriuje",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Medium close view of a modern passenger car engine bay with the closed automotive battery in its normal installed position, black case and understated cable terminals with protective covers. Blue-gray workshop background softly out of focus, soft daylight, real clean materials with slight use. Show a complete contextual battery and surrounding engine bay, not an instructional wiring diagram. No hands, no disconnected leads, no tools touching terminals, no logos, no text, no numbers, no illuminated diagnostic readouts. Subject central and easily cropped to 4:3. Generic illustration, not a customer job photograph.",
+        "bytes": 86854,
+        "sha256": "cf5520192f9b7f763457b4a8a80cb3ac7e37d5010e07969cc2dd34b58a42cfc7"
+      },
+      {
+        "id": "063e49fc-ed25-4d3b-8a0c-4c9e9a6c6700",
+        "groupId": "80a52052-8094-4a4f-99fe-0ee7618cd5af",
+        "src": "/content-assets/autoelektrikaivilniuje/063e49fc-ed25-4d3b-8a0c-4c9e9a6c6700.webp",
+        "alt": "Automobilio akumuliatorius įprastai sumontuotas variklio skyriuje",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Medium close view of a modern passenger car engine bay with the closed automotive battery in its normal installed position, black case and understated cable terminals with protective covers. Blue-gray workshop background softly out of focus, soft daylight, real clean materials with slight use. Show a complete contextual battery and surrounding engine bay, not an instructional wiring diagram. No hands, no disconnected leads, no tools touching terminals, no logos, no text, no numbers, no illuminated diagnostic readouts. Subject central and easily cropped to 4:3. Generic illustration, not a customer job photograph.",
+        "bytes": 64038,
+        "sha256": "b678f10ac3209b917780341b8a0c0a9551d658a495768ab87127a34e1d96ccf4"
+      },
+      {
+        "id": "9b975edb-6b1c-436e-b27e-18046c71e865",
+        "groupId": "80a52052-8094-4a4f-99fe-0ee7618cd5af",
+        "src": "/content-assets/autoelektrikaivilniuje/9b975edb-6b1c-436e-b27e-18046c71e865.webp",
+        "alt": "Automobilio akumuliatorius įprastai sumontuotas variklio skyriuje",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Medium close view of a modern passenger car engine bay with the closed automotive battery in its normal installed position, black case and understated cable terminals with protective covers. Blue-gray workshop background softly out of focus, soft daylight, real clean materials with slight use. Show a complete contextual battery and surrounding engine bay, not an instructional wiring diagram. No hands, no disconnected leads, no tools touching terminals, no logos, no text, no numbers, no illuminated diagnostic readouts. Subject central and easily cropped to 4:3. Generic illustration, not a customer job photograph.",
+        "bytes": 38064,
+        "sha256": "9b94b2cc58bf4fab6a056451a46a14e5e58b69e7595d20b15c2e48fe983deba2"
+      },
+      {
+        "id": "2f8944e0-1ad2-4aad-8ff4-ac433a00507c",
+        "groupId": "80a52052-8094-4a4f-99fe-0ee7618cd5af",
+        "src": "/content-assets/autoelektrikaivilniuje/2f8944e0-1ad2-4aad-8ff4-ac433a00507c.webp",
+        "alt": "Automobilio akumuliatorius įprastai sumontuotas variklio skyriuje",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Medium close view of a modern passenger car engine bay with the closed automotive battery in its normal installed position, black case and understated cable terminals with protective covers. Blue-gray workshop background softly out of focus, soft daylight, real clean materials with slight use. Show a complete contextual battery and surrounding engine bay, not an instructional wiring diagram. No hands, no disconnected leads, no tools touching terminals, no logos, no text, no numbers, no illuminated diagnostic readouts. Subject central and easily cropped to 4:3. Generic illustration, not a customer job photograph.",
+        "bytes": 28034,
+        "sha256": "7f5a3f3724d3000bd516619d6b6ca104d0973e185dfb81f24941d4deff9118f5"
+      },
+      {
+        "id": "af3166e5-12d0-4c34-a8ca-bc4262b3af20",
+        "groupId": "80a52052-8094-4a4f-99fe-0ee7618cd5af",
+        "src": "/content-assets/autoelektrikaivilniuje/af3166e5-12d0-4c34-a8ca-bc4262b3af20.webp",
+        "alt": "Automobilio akumuliatorius įprastai sumontuotas variklio skyriuje",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Medium close view of a modern passenger car engine bay with the closed automotive battery in its normal installed position, black case and understated cable terminals with protective covers. Blue-gray workshop background softly out of focus, soft daylight, real clean materials with slight use. Show a complete contextual battery and surrounding engine bay, not an instructional wiring diagram. No hands, no disconnected leads, no tools touching terminals, no logos, no text, no numbers, no illuminated diagnostic readouts. Subject central and easily cropped to 4:3. Generic illustration, not a customer job photograph.",
+        "bytes": 12922,
+        "sha256": "68a1be27397232836595c333fafe890ced0bcdee73b0d1f3e9d402dd462dfb7d"
+      }
+    ]
+  },
+  "start": {
+    "id": "bd1b9591-51ae-48ec-b306-88735305d5a4",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-29810869-f1e9-401d-9321-99abc6825b2a.png",
+    "sha256": "346a89a3cfd01bde40f6dbf00f601b1be111b164c795198d708afbf8a10c1c9a",
+    "alt": "Vairuotojo ranka prie automobilio užvedimo mygtuko",
+    "promptFile": "research/start-prompt.txt",
+    "role": "start",
+    "review": {
+      "date": "2026-10-03",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Peržiūrėtas visas kadras: nebranduotas kontekstas, nėra tikro kliento ar mūsų dirbtuvių teiginio. Matomas diagnostikos ekranas tuščias; ne mokomoji jungimo schema."
+    },
+    "variants": [
+      {
+        "id": "bd1b9591-51ae-48ec-b306-88735305d5a4",
+        "groupId": "4dfd3280-d754-4587-8ea1-822d8028c3ae",
+        "src": "/content-assets/autoelektrikaivilniuje/bd1b9591-51ae-48ec-b306-88735305d5a4.webp",
+        "alt": "Vairuotojo ranka prie automobilio užvedimo mygtuko",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Close view from outside through the open driver door of a modest unbranded modern car: a seated driver's hand resting near the ignition start button, steering wheel edge and dashboard in view. Dashboard dark and unlit, no readable symbols or numbers. Natural overcast daytime light, blue-gray and warm pale upholstery tones, restrained real photographic texture, central composition with breathing room. No face, no logo, no readable text or licence plate. Do not show smoke, sparks, repairs or a diagnosed fault. A generic illustration of noticing a car that will not start.",
+        "bytes": 59664,
+        "sha256": "ceb3f777fefcd514b23fa3027330cb2090be2a44718bb7c7b60f649ad2e33087"
+      },
+      {
+        "id": "d537753c-ad5c-484a-b283-207380f8354d",
+        "groupId": "4dfd3280-d754-4587-8ea1-822d8028c3ae",
+        "src": "/content-assets/autoelektrikaivilniuje/d537753c-ad5c-484a-b283-207380f8354d.webp",
+        "alt": "Vairuotojo ranka prie automobilio užvedimo mygtuko",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Close view from outside through the open driver door of a modest unbranded modern car: a seated driver's hand resting near the ignition start button, steering wheel edge and dashboard in view. Dashboard dark and unlit, no readable symbols or numbers. Natural overcast daytime light, blue-gray and warm pale upholstery tones, restrained real photographic texture, central composition with breathing room. No face, no logo, no readable text or licence plate. Do not show smoke, sparks, repairs or a diagnosed fault. A generic illustration of noticing a car that will not start.",
+        "bytes": 41724,
+        "sha256": "691332b352195be43db0c39e6d345d033c3ffff1b221f51862db42ecd7bdb584"
+      },
+      {
+        "id": "b4afe1d7-98b8-4f2b-ba60-2080eab71461",
+        "groupId": "4dfd3280-d754-4587-8ea1-822d8028c3ae",
+        "src": "/content-assets/autoelektrikaivilniuje/b4afe1d7-98b8-4f2b-ba60-2080eab71461.webp",
+        "alt": "Vairuotojo ranka prie automobilio užvedimo mygtuko",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Close view from outside through the open driver door of a modest unbranded modern car: a seated driver's hand resting near the ignition start button, steering wheel edge and dashboard in view. Dashboard dark and unlit, no readable symbols or numbers. Natural overcast daytime light, blue-gray and warm pale upholstery tones, restrained real photographic texture, central composition with breathing room. No face, no logo, no readable text or licence plate. Do not show smoke, sparks, repairs or a diagnosed fault. A generic illustration of noticing a car that will not start.",
+        "bytes": 23754,
+        "sha256": "81094cb70a711b972894ae0920dad9223e0012c994c98db1ee573fa1b32519a0"
+      },
+      {
+        "id": "403a52b4-55ea-4fac-a0c0-b91782c6a16a",
+        "groupId": "4dfd3280-d754-4587-8ea1-822d8028c3ae",
+        "src": "/content-assets/autoelektrikaivilniuje/403a52b4-55ea-4fac-a0c0-b91782c6a16a.webp",
+        "alt": "Vairuotojo ranka prie automobilio užvedimo mygtuko",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Close view from outside through the open driver door of a modest unbranded modern car: a seated driver's hand resting near the ignition start button, steering wheel edge and dashboard in view. Dashboard dark and unlit, no readable symbols or numbers. Natural overcast daytime light, blue-gray and warm pale upholstery tones, restrained real photographic texture, central composition with breathing room. No face, no logo, no readable text or licence plate. Do not show smoke, sparks, repairs or a diagnosed fault. A generic illustration of noticing a car that will not start.",
+        "bytes": 17662,
+        "sha256": "ff146d2ac3e3a2e095d0655be69487c4ff01a91745c24c75fab947615fe40089"
+      },
+      {
+        "id": "1dc986fc-d106-4dac-9183-e31d7f8843fa",
+        "groupId": "4dfd3280-d754-4587-8ea1-822d8028c3ae",
+        "src": "/content-assets/autoelektrikaivilniuje/1dc986fc-d106-4dac-9183-e31d7f8843fa.webp",
+        "alt": "Vairuotojo ranka prie automobilio užvedimo mygtuko",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial automotive illustration, landscape 3:2. Close view from outside through the open driver door of a modest unbranded modern car: a seated driver's hand resting near the ignition start button, steering wheel edge and dashboard in view. Dashboard dark and unlit, no readable symbols or numbers. Natural overcast daytime light, blue-gray and warm pale upholstery tones, restrained real photographic texture, central composition with breathing room. No face, no logo, no readable text or licence plate. Do not show smoke, sparks, repairs or a diagnosed fault. A generic illustration of noticing a car that will not start.",
+        "bytes": 8392,
+        "sha256": "62aed411b454147ca10da43bcbf88e411b68b104fd1980f278b0933091d3a1af"
+      }
+    ]
+  },
+  "scope": {
+    "id": "4822458f-a2c5-48bb-bfff-81f0d6cdb5ed",
+    "source": "C:/Users/lenovo/.codex/generated_images/01a101d2-0f39-7332-82c1-695771e16875/exec-c8f51241-84fa-4864-a3e8-36ceb8a194aa.png",
+    "sha256": "f5c7f964fc1467d5e9d15806e8fb1362cc27095ce697758b9def5b6ab9207eb0",
+    "alt": "Diagnostikos įrankis ir tuščias darbo aprašo lapas ant dirbtuvių stalo",
+    "promptFile": "research/scope-prompt.txt",
+    "role": "scope",
+    "review": {
+      "date": "2026-10-03",
+      "reviewer": "codex-editorial-review",
+      "accepted": true,
+      "notes": "Peržiūrėtas visas kadras: nebranduotas kontekstas, nėra tikro kliento ar mūsų dirbtuvių teiginio. Matomas diagnostikos ekranas tuščias; ne mokomoji jungimo schema."
+    },
+    "variants": [
+      {
+        "id": "4822458f-a2c5-48bb-bfff-81f0d6cdb5ed",
+        "groupId": "9360dc53-5a42-4ebe-8661-1b604ed08c13",
+        "src": "/content-assets/autoelektrikaivilniuje/4822458f-a2c5-48bb-bfff-81f0d6cdb5ed.webp",
+        "alt": "Diagnostikos įrankis ir tuščias darbo aprašo lapas ant dirbtuvių stalo",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial still life for an automotive diagnostic scope guide, landscape 3:2. A clean workshop desk, compact generic diagnostic tablet with a dark blank screen, neatly coiled cable beside it, blank white paper clipped to a simple board and a pencil. Soft blue-gray background with car workshop softly blurred. Natural side light, tactile paper and metal, concise uncluttered composition with subjects centered and crop safe. No people, no logos, no letters, no numbers, no prices, no charts, no electrical connections. Generic illustrative image; not a real invoice, test result or customer job.",
+        "bytes": 61604,
+        "sha256": "07765935b07a674846c8ea4d73e4b93a8ce7a13ee8e62c6114bd31498e46aebb"
+      },
+      {
+        "id": "aa8da38b-be6b-47ad-925c-1bcff2fa122e",
+        "groupId": "9360dc53-5a42-4ebe-8661-1b604ed08c13",
+        "src": "/content-assets/autoelektrikaivilniuje/aa8da38b-be6b-47ad-925c-1bcff2fa122e.webp",
+        "alt": "Diagnostikos įrankis ir tuščias darbo aprašo lapas ant dirbtuvių stalo",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial still life for an automotive diagnostic scope guide, landscape 3:2. A clean workshop desk, compact generic diagnostic tablet with a dark blank screen, neatly coiled cable beside it, blank white paper clipped to a simple board and a pencil. Soft blue-gray background with car workshop softly blurred. Natural side light, tactile paper and metal, concise uncluttered composition with subjects centered and crop safe. No people, no logos, no letters, no numbers, no prices, no charts, no electrical connections. Generic illustrative image; not a real invoice, test result or customer job.",
+        "bytes": 44438,
+        "sha256": "308b627112034bbcda3cd948ad4a63045d6c2532252311aa4f51901687648573"
+      },
+      {
+        "id": "728cfe29-25c4-4e26-8f81-1f53868169c9",
+        "groupId": "9360dc53-5a42-4ebe-8661-1b604ed08c13",
+        "src": "/content-assets/autoelektrikaivilniuje/728cfe29-25c4-4e26-8f81-1f53868169c9.webp",
+        "alt": "Diagnostikos įrankis ir tuščias darbo aprašo lapas ant dirbtuvių stalo",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial still life for an automotive diagnostic scope guide, landscape 3:2. A clean workshop desk, compact generic diagnostic tablet with a dark blank screen, neatly coiled cable beside it, blank white paper clipped to a simple board and a pencil. Soft blue-gray background with car workshop softly blurred. Natural side light, tactile paper and metal, concise uncluttered composition with subjects centered and crop safe. No people, no logos, no letters, no numbers, no prices, no charts, no electrical connections. Generic illustrative image; not a real invoice, test result or customer job.",
+        "bytes": 26522,
+        "sha256": "1a8bc8d2c814931770e2365039e39af0d550cf43610bedb89596ff90c578ee5a"
+      },
+      {
+        "id": "0c251a3c-a06b-4b54-be35-998cddb0ab50",
+        "groupId": "9360dc53-5a42-4ebe-8661-1b604ed08c13",
+        "src": "/content-assets/autoelektrikaivilniuje/0c251a3c-a06b-4b54-be35-998cddb0ab50.webp",
+        "alt": "Diagnostikos įrankis ir tuščias darbo aprašo lapas ant dirbtuvių stalo",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial still life for an automotive diagnostic scope guide, landscape 3:2. A clean workshop desk, compact generic diagnostic tablet with a dark blank screen, neatly coiled cable beside it, blank white paper clipped to a simple board and a pencil. Soft blue-gray background with car workshop softly blurred. Natural side light, tactile paper and metal, concise uncluttered composition with subjects centered and crop safe. No people, no logos, no letters, no numbers, no prices, no charts, no electrical connections. Generic illustrative image; not a real invoice, test result or customer job.",
+        "bytes": 19784,
+        "sha256": "d727c9026f1fa9fd323fa44206337ea8f695df5e60d02b997976a207d65eea3f"
+      },
+      {
+        "id": "f7be6f85-f17e-448f-bb5d-a21d277998ef",
+        "groupId": "9360dc53-5a42-4ebe-8661-1b604ed08c13",
+        "src": "/content-assets/autoelektrikaivilniuje/f7be6f85-f17e-448f-bb5d-a21d277998ef.webp",
+        "alt": "Diagnostikos įrankis ir tuščias darbo aprašo lapas ant dirbtuvių stalo",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originali projekto iliustracija, sukurta Codex integruotu ImageGen; trečiųjų šalių fotografija nenaudota.",
+        "prompt": "Create a photorealistic editorial still life for an automotive diagnostic scope guide, landscape 3:2. A clean workshop desk, compact generic diagnostic tablet with a dark blank screen, neatly coiled cable beside it, blank white paper clipped to a simple board and a pencil. Soft blue-gray background with car workshop softly blurred. Natural side light, tactile paper and metal, concise uncluttered composition with subjects centered and crop safe. No people, no logos, no letters, no numbers, no prices, no charts, no electrical connections. Generic illustrative image; not a real invoice, test result or customer job.",
+        "bytes": 9718,
+        "sha256": "57160a2a7a7ab7b5df3d3ad319e084fe5d737f040c12799a31a56fc7b603ed23"
+      }
+    ]
+  }
+}

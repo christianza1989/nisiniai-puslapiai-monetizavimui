@@ -1,0 +1,1400 @@
+{
+  "siteId": "auksarankiams",
+  "canonicalHost": "auksarankiams.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-10-01T05:16:10.892Z",
+  "evaluator": "Codex agent: sequential evidence/source/browser review, no independent expert/human approval",
+  "environment": {
+    "preview": "http://127.0.0.1:8890",
+    "build": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\output\\auksarankiams-production",
+    "realDomain": false,
+    "physicalDevice": false,
+    "nativeChromeZoom": true,
+    "mail": "Preview off; unchanged shared transport selftest receipt reused with exact scope",
+    "voice": "off",
+    "currentPackageCount": 6
+  },
+  "version": {
+    "at": "2026-10-01T05:10:43.194Z",
+    "packageSha256": "5559ef64ae3e4c7e6a32b379aa31e374db4f77e2a0b7bef514c24a682b30f145",
+    "packageGeneratedAt": "2026-10-01T04:53:28.672Z",
+    "source": "C:/Users/lenovo/Documents/dovanos-memorycasting",
+    "build": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\output\\auksarankiams-production",
+    "preview": "http://127.0.0.1:8890",
+    "proxy": "http://127.0.0.1:8891",
+    "productionDeployed": false,
+    "voiceEnabled": false,
+    "smtpPreviewEnabled": false,
+    "fingerprints": {
+      "components/niche/auksarankiams-site.tsx": "bc34d891ac74b5d4500ce3f6b03e778c8aeb607a405dfdbfa283eac39c6d4e61",
+      "components/niche/auksarankiams-site.module.css": "18610e7bfc28425a5d392420a32b4c8962fe718127cba9b7dec31ed1246eee07",
+      "app/niche/[siteId]/[[...slug]]/page.tsx": "bfd0525e7288d66a222a9cc4f3c0f208c9a196e3159a7821230c9041d409db4b",
+      "lib/niche-links.mjs": "17e0087bd9b7abf3163801bc70472e94f79754f8baccda12b3d4d02c04e10b10",
+      "lib/niche-seo.ts": "a8047073804d5e1324c84deb375c5877e11d7fd99605e452c31eeedc235b818d",
+      "lib/niche-schema-core.mjs": "b75bc196b26be60f17146759b51d4108f1878d37107dd7084bfe0d1c527cc016",
+      "lib/niche-mail.ts": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c",
+      "lib/smtp-protocol.mjs": "ebd4a84bf153017d2b502326a7851488f1c1c5a1ca82b0abe8b4793204de58ab",
+      "app/niche/[siteId]/lead/route.ts": "47226be6c1a339a0ec6a01fc97c188d6114cb4410d2528de59d42754c4dd5ff8",
+      "config/niche-network.json": "15a135d464178c97fe4ccca2a82ed54350edb0abbd7d6281b077248170013a87",
+      "content-packages/auksarankiams/content-package.json": "5559ef64ae3e4c7e6a32b379aa31e374db4f77e2a0b7bef514c24a682b30f145",
+      "dist/server/index.js": "f0f35d0d1773404fc191142095f2203139493bb026cb12f77fb6384cb660ce1b"
+    }
+  },
+  "verdict": {
+    "local": "LOCAL_RUBRIC_ACCEPTED",
+    "launch": "NOT_READY",
+    "demand": "UNMEASURED",
+    "visual": "Coherent task-list identity; subjective sequential review, not independent craft/conversion certification",
+    "benchmark": "Owner-rejected first direction before completion; repaired result includes direction intervention"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/qa/home-390.png",
+        "sites/auksarankiams/qa/kontaktai-390.png"
+      ],
+      "notes": "Homepage, kiekvienas inquiry ir kontaktai aiškiai įvardija poreikio pilotą: ne užsakymas, rezervacija ar meistro garantija."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/CONTENT-PLAN.md",
+        "sites/auksarankiams/qa/FORM-BROWSER-VERIFICATION.json"
+      ],
+      "notes": "Konkretus mokamo darbo poreikis (darbas/kiekis/miestas/laikas) per realią vietinę formą; BUSINESS dokumentuoja klientą, partnerio mokestį už priimtą užklausą ir nevaliduotą ekonomiką. Prelaunch aiškus, vykdymas/quote neįsipareigoja."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Dar nėra realių kvalifikuotų užklausų, jų vertės ir vykdytojų pajėgumo. Siūlomas testas BUSINESS nėra plėtros patvirtinimas."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/VERSION.json",
+        "sites/auksarankiams/SHARED-MAIL-EVIDENCE.json",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "MB Pinet ir info@pinet.lt sutampa config, package, contact/footer/Organization ir operatoriaus recipient. Naujos nišos phone tuščias; nėra išimties."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/BUSINESS.md"
+      ],
+      "notes": "Peržiūrėti visi 13 tekstų: jokio pasiskolinto telefono/adreso/juridinio kodo, fiktyvių meistrų/atsiliepimų/sertifikacijos. Iliustraciniai pavyzdžiai atskirti."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Owner patvirtino operatoriaus pavadinimą/contact, bet aktualūs juridiniai rekvizitai/adresas ir domeno kontrolė nenustatyti."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/history/audit.json",
+        "sites/auksarankiams/history/ASSESSMENT.md"
+      ],
+      "notes": "30 riboto CDX inventoriaus URL,4 samples, 2016–2019, retrieval/coverage ir teisės/sankcijos nežinomos. Archyvas ne verslo faktų šaltinis."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/history/url-decisions.json",
+        "sites/auksarankiams/history/ASSESSMENT.md"
+      ],
+      "notes": "Visos30 eilutės peržiūrėtos po pivot; senų įrankių/šildymo/valymo temų nemigruojame į poreikio homepage. Istorinių301 nėra."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "NA",
+      "evidence": [
+        "sites/auksarankiams/history/url-decisions.json"
+      ],
+      "notes": "Nė vieno istorinio redirect neįdiegta: visos30 eilutės turi decisions, nėra prasmingo oldtool→currentrequest 301. Naujo trailing-slash308 nėra istorijos migracija. DNS/livegates liekaunverified."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/business-research/retrieval.json",
+        "sites/auksarankiams/RESEARCH.md",
+        "sites/auksarankiams/DESIGN.md"
+      ],
+      "notes": "LT ir užsienio realūs 1440/390 atvėrimai, cookie/403 ribos įvardytos; kategorijų/modelių ir pasirinkto kelio pritaikymo matrica."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/MEDIA-REVIEW.json",
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/FONT-PROVENANCE-HANDYMAN.json"
+      ],
+      "notes": "Originalūs tekstai, primary šaltiniai, 4 originalai ir font OFL; konkurentų įkainiai/archyvo faktai nėra mūsų pasiūlymas."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/CONTENT-PLAN.md"
+      ],
+      "notes": "Search volume/conversion/GSC nežinomi. Kelių mažų darbų diferenciacija ir Vilniaus research hypothesis nėra aptarnavimo teritorijos ar paklausos faktas."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage and guide have a coherent niche-specific identity, rhythm and meaningful imagery.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/DESIGN.md",
+        "sites/auksarankiams/qa/home-1440.png",
+        "sites/auksarankiams/qa/home-390.png",
+        "sites/auksarankiams/qa/smulkiu-darbu-sarasas-1440.png"
+      ],
+      "notes": "Pilnas homepage ir trys gidai peržiūrėti desktop/mobile: šilta laukiančių darbų aplinka, atvira seka, darbų eilės, ramus skaitymas. Agento vizualinis verdiktas atskiras nuo LH."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/DESIGN.md",
+        "sites/auksarankiams/qa/CONTRAST-CONTROLS.json",
+        "sites/auksarankiams/PERFORMANCE.md"
+      ],
+      "notes": "DESIGN atitinka tikrus tokenus,1200 grid,body/display,photos,crops ir kompromisus. Detector0/LH nevadinami originalumo/konversijos įrodymu."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/MEDIA.md",
+        "sites/auksarankiams/MEDIA-REVIEW.json",
+        "sites/auksarankiams/qa/MEDIA-BINARY-VERIFICATION.json"
+      ],
+      "notes": "Originalai ir teisės/logai peržiūrėti; generated vaizdai ne klientų darbai/matmenys/instrukcija, nėra tool badges. OFL ir tikra TrueType kilmė atskirti nuo failo vardo."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/CONTENT-PLAN.md"
+      ],
+      "notes": "Visi13 URL pasiekiami per header/home/services/hub/context/footer; visi3 gids įtraukti, HTTP patikrino actual links/statusus."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/FORM-BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json"
+      ],
+      "notes": "Native desktop/mobile meniu, hub, footer, #darbai ir #forma realūs; keyboard ir nativePOST return patikrinti."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-PLAN.md",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "Atskiri ketinimai: kategorijos poreikio ribos ir trys parengimo klausimai. Jokio city doorway/duplicate synonym/pseudo marketplace."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/home-390.png",
+        "sites/auksarankiams/qa/home-320.png",
+        "sites/auksarankiams/DESIGN.md"
+      ],
+      "notes": "390/320 pirmame ekrane topic, poreikio CTA ir ribos; primary veiksmas nurodo formą, ne neįjungtą order."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/home-1440.png",
+        "sites/auksarankiams/qa/home-390.png",
+        "sites/auksarankiams/DESIGN.md"
+      ],
+      "notes": "Middle/end plėtoja naujus klausimus: apimtis/kategorija, išimtys, parengimo gidai, poreikis. Header/CTA kartojimas tik orientacijai."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/FORM-BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/form-server-error-390.png",
+        "sites/auksarankiams/qa/form-local-success-390.png",
+        "sites/auksarankiams/FORM-VERIFICATION.json"
+      ],
+      "notes": "#forma/#darbai/privacy ir empty/bad-email states, tikras server400→return ir200 local-success išbandyti; success nepretenduoja į išsiųstą laišką."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/CONTENT-PLAN.md",
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json"
+      ],
+      "notes": "Visi3 gidai individualiai perskaityti ir peržiūrėti: modelio/state duomenys, mixed-work sąrašas, darbų/kainos sąlygos. Realūs pavyzdžiai nėra klientų užsakymai."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json"
+      ],
+      "notes": "IKEA paslaugos/HEMNES ir fischer parametrai taikomi tik apimties/neaiškumų principui. Jokio universalaus kaiščio, apkrovos, diagnozės ar gręžimo instrukcijos."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/qa/smulkiu-darbu-sarasas-1440.png",
+        "sites/auksarankiams/qa/darbu-ivertinimas-1440.png"
+      ],
+      "notes": "Kiekvienas gidas turi konkretų naudojamą sąrašą/pavyzdį, atskirą klausimą, limits ir kitą parengimo žingsnį. Tai ne vien words/title kriterijus."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/ACCESSIBILITY-VERIFICATION.json",
+        "sites/auksarankiams/qa/darbu-ivertinimas-390.png"
+      ],
+      "notes": "39 patikrose tikrinti visi body paragraphs/list items; visas ilgiausias tekstas, source ir related/action renderinami narrow ir200%, ne išmetami."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/MEDIA-REVIEW.json",
+        "sites/auksarankiams/qa/MEDIA-BINARY-VERIFICATION.json",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json"
+      ],
+      "notes": "Visi3 gids turi skirtingą inspected teminį vaizdą, homepage4 šeimas, hub teisingas thumbnails. Kategorijų photo prasminga;5 text/form/trust exceptions pagrįstos. 20 actual variantų/hash/crop patikrinti."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/qa/redakcija-390.png"
+      ],
+      "notes": "Parengė MB Pinet atveda į tikrą Organization editorial/profile, ne išgalvotą Person."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "Schema/visible author/operator MB Pinet sutampa, qualifications/hands-on/client proof nepaskelbti."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/VERSION.json",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "Visible time ir Article dates sutampa su publishAt/approvedAt; request jų neperrašo. Vietinės parengtos versijos data nėra public-deployment įrodymas: I4 atskiras."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Tikras pirmas deployment nevykdytas; publishAt yra parengtos versijos grafikas, ne įrodytas viešas startas."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/qa/redakcija-390.png"
+      ],
+      "notes": "About/redakcija aprašo tikrą dabartinę paskirtį, AI/source method, illustrations/limits ir corrections info@pinet.lt."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/FIRST-RUN/STATUS.json",
+        "sites/auksarankiams/DESIGN.md"
+      ],
+      "notes": "Actor aiškiai agento source/schema review; owner direction approval nėra teksto/qualified review. Nuoseklus, ne nepriklausomų ekspertų vertinimas."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/SCHEMA-SEMANTIC-REPAIR.json",
+        "sites/auksarankiams/qa/REGRESSION-VERIFICATION.json",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Pivot/revocations ir trijų type pataisa per realų modelio edit/approve/export/import. Exact hashes aktualūs, LLMS/HTML projection ir tests pass."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json"
+      ],
+      "notes": "13 renderedURL200: vienasH1, useful title/description,lt,canonical atitinka; HTTP0findings."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/MEDIA-REVIEW.json",
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json"
+      ],
+      "notes": "Heading struktūra/readability ir informative alt tematika patikrinti; sharing uses real approved primary image. Nieko išgalvoto dėl social proof."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log"
+      ],
+      "notes": "18 private/revoked/future URL ir unknown/internal routes404, jokio canonical→home; assets/negatives nepublic."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/SCHEMA-SEMANTIC-REPAIR.json",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Bendras graph parsintas: Organization/WebSite/WebPage/Profile/About/Contact/Article, appropriate IDs. Kategorijos informacinės WebPage po studijos repair, ne Service/provider."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log"
+      ],
+      "notes": "Visible nav breadcrumb/schema path/name sutampa; gids author URL eligible redakcija."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/SCHEMA-SEMANTIC-REPAIR.json"
+      ],
+      "notes": "No Offer/Product/Review/AggregateRating/LocalBusiness ir jokio veikiantį pajėgumą implikuojančio Service graph. Nėra rich-results pažado."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Official Rich Results/URLInspection po realaus crawlable deployment neatlikta; local graph/LH ne productioncrawl."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json"
+      ],
+      "notes": "Prose/related links realūs same-site IDs; fragmentų statusus/IDs tikrino HTTP, keyboard ToC ir inquiryclick."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Authoritative projection mutations future/revoked/hash target pašalina tikslą ir links; SSR uses livePages for category/index/prose/footer, actual18private+oldassets404."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-PLAN.md",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json"
+      ],
+      "notes": "Hub/category→distinct-guide→request kelias, ne all-to-all cluster ar authority quota."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/BUSINESS.md"
+      ],
+      "notes": "IKEA,HEMNES,fischer,EDPB primary sources realiai patikrinti2026-10-01, reason/date matomi; competitor source nėra partneris."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "NA",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/CONTENT-PLAN.md"
+      ],
+      "notes": "Nėra savo tinklo editorialsource links ar jų targetpažadų. networkLiveDomains[], relatedtikowneligibleIDs. Savininko reikalaujama verslomatikafooterattribution yra atskiras brandlink, ne automatinis editorial all-to-all planas; N4launchunverified."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json"
+      ],
+      "notes": "Native prose exact-label/word-boundary links nepakeičia teksto; source/related panels actualstatus/fragments. Paid/UGC links nėra. Footer owner attribution nėra editorial link plan."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Tikrą live brand/attribution destinations po launch patikrinti; verslomatikafooter ownerrequired, networklive domains[]; neveikiantis būsimasiscore nepromised."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log"
+      ],
+      "notes": "Canonical host/path tested; /gidai/308→/gidai, query200 canonical bequery; unknown/internal404; allhostsmoke."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log"
+      ],
+      "notes": "13 eligible sitemap loc,lastmod iš meaningful approveddates; robotsallowcanonical/api/form disallow, draft nepriklauso tik robots."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Nėra actualdomain DNS/TLS/HTTPS/livehost/crawl isolation įrodymo."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/VERSION.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log",
+        "sites/auksarankiams/qa/HTTP-AUDIT.json"
+      ],
+      "notes": "Shared projectPublicPages/publicNichePages vienintelis HTML/schema/media/sitemap/LLM/link predicate. Nei naujas publisher, nei ownSEO copy nekurti."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log",
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json"
+      ],
+      "notes": "Core19 includes hash/date/revocation/cross-host/schema tests; actual studio private/revoked/media404 ir perhostprojection patikrinti. Local snapshot nėra draft-public domain deploy."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/SCHEMA-SEMANTIC-REPAIR.json",
+        "sites/auksarankiams/VERSION.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log"
+      ],
+      "notes": "Exact studio approvals→approved export→validate/import --replace→compile6 paketus; oldsitearchived, unrelatedpackages/dispatchpreserved. Changed-approved-content rejectioncorepassed."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/HTTP-AUDIT.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log"
+      ],
+      "notes": "LLMs tik active host13 eligible scope,visible content,sourceurls,operatorcontacts; all6site smokeisolation."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "Definitions/checklists/qualified answers/sources semantic paragraphs/headings/lists, links native; no hidden model-only business promise."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "AI/LLM techninė išvestis papildoma, SEO/traffic/ranking businesshipotezės ne paskelbtas rezultatas."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/CONTRAST-CONTROLS.json",
+        "sites/auksarankiams/qa/ACCESSIBILITY-VERIFICATION.json"
+      ],
+      "notes": "Skip→main, focus, native menu open/close, ToC fragment, labels/consent ir keyboard exercised."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/ACCESSIBILITY-VERIFICATION.md",
+        "sites/auksarankiams/qa/CONTRAST-CONTROLS.json",
+        "sites/auksarankiams/qa/ACCESSIBILITY-VERIFICATION.json"
+      ],
+      "notes": "ActualChrome200% control irviewport/DPR įrodyti/restored100%, contrasteachrole thresholdspass,utility>=16/controlsize. LH100 nevadinamas WCAG sertifikatu."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/FORM-BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/ACCESSIBILITY-VERIFICATION.md"
+      ],
+      "notes": "Images alt/decoding, H1/headings, details open state, native requirements/400 errors/success ir reduced-motion behavior matomi."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/home-320.png",
+        "sites/auksarankiams/qa/home-768.png"
+      ],
+      "notes": "Visi13×1440/390/320 ir3 tablet768: nooverflow, body/media matomi; jokio overflow-x:hidden spragų slėpimo."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/ACCESSIBILITY-VERIFICATION.md",
+        "sites/auksarankiams/qa/ACCESSIBILITY-VERIFICATION.json",
+        "sites/auksarankiams/qa/darbu-ivertinimas-390.png",
+        "sites/auksarankiams/qa/kontaktai-zoom200.png"
+      ],
+      "notes": "All3guideopenings, longestbody/byline/breadcrumb/ToC/sources ir form/footer inspected390/320/200%; DIP screenshot capture fixed, percentageconfirmed."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/ACCESSIBILITY-VERIFICATION.md",
+        "sites/auksarankiams/qa/BROWSER-VERIFICATION.json"
+      ],
+      "notes": "Viewport/lab/actualbrowserzoom atskirti nuo physical device. No real-phone/touch/completeWCAG claim."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/PERFORMANCE-VERIFICATION.json",
+        "sites/auksarankiams/PERFORMANCE.md"
+      ],
+      "notes": "Final production mobile realmedia LH12.8.2: homepage96 irlongestguide92 >=90,version/env/CPUwarning saved."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/PERFORMANCE.md",
+        "sites/auksarankiams/qa/PERFORMANCE-VERIFICATION.json",
+        "sites/auksarankiams/MEDIA.md"
+      ],
+      "notes": "LCP2.40/3.17,CLS.0439/.0025,TBT105.5/53.5 measured; responsive/lazy/font decisions and sharedJS/CSS/image budgetsdocumented. GidoLCP nėra field-good pažadas."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "FieldCWV/qualitytraffic nėra, tiklocalhostlab. Gido3.17sLCP nereiškia productiongoodCWV."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/FORM-VERIFICATION.json",
+        "sites/auksarankiams/qa/FORM-BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/qa/NOTIFICATION-FAILURE-VERIFICATION.json"
+      ],
+      "notes": "Native/server name/email/consent/origin/size/honeypot iractualD1 pass. Enabled notification branch with no credentials/binding failed, request retainednew; exact testcleanup. Voice off independent."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/SHARED-MAIL-EVIDENCE.json",
+        "sites/auksarankiams/VERSION.json",
+        "sites/auksarankiams/qa/NOTIFICATION-FAILURE-VERIFICATION.json"
+      ],
+      "notes": "info@pinet.lt recipient sutampa; reused actual2026-09-30 core SMTPacceptance underMAIL_CORE, unchangedtransport/samerecipient. Own current localD1 tested; ownproduction delivery neclaimed."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/SHARED-MAIL-EVIDENCE.json",
+        "sites/auksarankiams/FORM-VERIFICATION.json"
+      ],
+      "notes": "Distinct INBOXsearch exactMessage-ID <d2fe704c-012a-4489-b829-d674483d4b27@pinet.lt> matches sharedmarkedformLeadID, receivedtrue, syntheticdeleted. Scopeunchangedcore2026-09-30, notthisdomainproduction."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "ProductionD1/bindings/delivery/reconciliation/retry/rate/spam neįjungti/nepatikrinti. Localnewstatus išlikimas nėra workingproductionrecovery."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json",
+        "sites/auksarankiams/BUSINESS.md"
+      ],
+      "notes": "D1 actual2emailclicks ownsite/path;DNT/GPC/bot/wrongorigin/size/private/unknown guards noextra increment; fieldsday/site/path/event/countonly, exactcountsrestored. Click≠inquiry/demand."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json",
+        "sites/auksarankiams/qa/CONTRAST-CONTROLS.json",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "Privacycopy matches columns/no cookies/id/formtext; clientandserverDNT/GPC, hostlogginglaunchunknownexplicit. No new external analytics."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "GSC/realtraffic/qualifiedrequests/decisioninterval dar neprasidėjo; voiceoff. Testdata nėra paklausa."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/CONTENT-PLAN.md"
+      ],
+      "notes": "Information/request-onlypilotterms/privacy reviewed againstactualD1/storage/notification andEDPB2026-10-01 guidance. No ecommerce/paymentguarantee."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json",
+        "sites/auksarankiams/qa/privatumas-390.png"
+      ],
+      "notes": "Purposes/contact/rights/localstorage/no automaticpartnerforwarding stated. Productionbase/processors/transfers/retention/delete unknown explicitly, no inventedES-onlyorauto-delete."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Prieš publiccollection reikia truelegalbasis/recipients/processors/transfers/retention/delete/recovery ir atitinkamos approvedprivacyrevizijos."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/FORM-VERIFICATION.json",
+        "sites/auksarankiams/qa/CONTRAST-CONTROLS.json",
+        "sites/auksarankiams/CONTENT-REVIEW-FINAL.json"
+      ],
+      "notes": "Firstparty aggregate no nonessentialcookies/provider; inquirycheckbox onlythisrequest, no blanketmarketing. Nativeconsentrequired servervalidated."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/BUILD-COPY.json",
+        "sites/auksarankiams/qa/ISOLATION-MEASUREMENT.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log",
+        "sites/auksarankiams/qa/FORM-BROWSER-VERIFICATION.json"
+      ],
+      "notes": "Isolatedwhitelistexcludes secrets/env/state andread-onlynegativepaths forprivateoriginals/config/docs. ApprovedpublicLLM/media andhost/payloadboundarieschecked; syntheticdata removed, no credentials read/packaged. Scopedcheck, notsecuritycertification."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/FORM-VERIFICATION.json",
+        "sites/auksarankiams/qa/NOTIFICATION-FAILURE-VERIFICATION.json",
+        "sites/auksarankiams/qa/FORM-BROWSER-VERIFICATION.json",
+        "sites/auksarankiams/BUSINESS.md"
+      ],
+      "notes": "Validation/origin/size/honeypot/logs assessed; no-store/noindex response/error andmissingtransportretainednew. No productionrate limiter/retry/backups claim; gaps U4/X3."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Productionaccess/ratelimits/backups/restore/incidentcontrols dar nenustatyti."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/VERSION.json",
+        "sites/auksarankiams/SCHEMA-SEMANTIC-REPAIR.json",
+        "sites/auksarankiams/BUILD-COPY.json"
+      ],
+      "notes": "Onlyownrenderer/CSS/content; reusecoreSEO/media/mail/forms/counters. Nopackagefields/schema change; enumfaq alreadyallowedbothvalidators. Othernichesnotredesigned."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/qa/REGRESSION-VERIFICATION.json",
+        "sites/auksarankiams/qa/REGRESSION-FINAL.log",
+        "sites/auksarankiams/build-final-acceptance.log",
+        "sites/auksarankiams/typecheck-final.log",
+        "sites/auksarankiams/eslint-final.log"
+      ],
+      "notes": "Finalcore19/19 andall6currentpackages SEO smokeafterfinalschema/type repair; production isolatedbuildpassed,typecheck/ownTSXlint0."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/CONTENT-PLAN.md",
+        "sites/auksarankiams/FIRST-RUN/STATUS.json",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "CurrentAGENTS/START_HERE/PROJECT_CONTRACT/businessbuilder/planner/audit routes read; journal nowlinks actualBUSINESS/plan/history/audit/versions. Freshsessiondoesnotneedchat."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/BASELINE.md",
+        "sites/auksarankiams/VERSION.json",
+        "sites/auksarankiams/FIRST-RUN/STATUS.json",
+        "sites/auksarankiams/DESIGN.md"
+      ],
+      "notes": "85 freshcriteria,baseline/intervention/archive/repairs/currentversions/fullscreen/lab/formevidence andremaininggates saved; sharedscorer validates."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "sites/auksarankiams/FIRST-RUN/STATUS.json",
+        "sites/auksarankiams/BASELINE.md",
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Boundedlocalrubric only; launch/operations UNVERIFIED separate, no domainready/independentdesign/economicvalidation. Ownerpivot neverretoldas untouchedfirstresult."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "sites/auksarankiams/BUSINESS.md",
+        "sites/auksarankiams/VERSION.json"
+      ],
+      "notes": "Domenasnepaleistas; visiapplicablelaunch gates liekaunverified. Jokio domain-ready/demand/rankinggarantijos."
+    }
+  ],
+  "scores": {
+    "siteId": "auksarankiams",
+    "evaluatedAt": "2026-10-01T05:16:10.892Z",
+    "stages": {
+      "local": {
+        "passed": 71,
+        "applicable": 71,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "launch": {
+        "passed": 0,
+        "applicable": 10,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3",
+          "I4",
+          "O3",
+          "U4",
+          "W3",
+          "X3",
+          "Z3"
+        ]
+      },
+      "operations": {
+        "passed": 0,
+        "applicable": 2,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3",
+          "V3"
+        ]
+      }
+    },
+    "categories": {
+      "A": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3"
+        ]
+      },
+      "B": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3"
+        ]
+      },
+      "C": {
+        "passed": 2,
+        "applicable": 2,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "D": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "E": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "F": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "G": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "H": {
+        "passed": 5,
+        "applicable": 5,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "I": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "I4"
+        ]
+      },
+      "J": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "K": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "L": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "M": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "N": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "O": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "O3"
+        ]
+      },
+      "P": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Q": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "R": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "S": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "T": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "U": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "U4"
+        ]
+      },
+      "V": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "V3"
+        ]
+      },
+      "W": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "W3"
+        ]
+      },
+      "X": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "X3"
+        ]
+      },
+      "Y": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Z": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "Z3"
+        ]
+      }
+    }
+  }
+}

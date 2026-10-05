@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-03T15:48:23.671Z",
+  "requests": [
+    {
+      "operation": "semantic-replay",
+      "url": "https://web.archive.org/web/20241217223016id_/http://www.fasadopastoliai.lt/",
+      "checkedAt": "2026-10-03T15:48:19.604Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20241217223016id_/http://www.fasadopastoliai.lt/"
+    },
+    {
+      "operation": "semantic-replay",
+      "url": "https://web.archive.org/web/20120325190823id_/http://fasadopastoliai.lt/",
+      "checkedAt": "2026-10-03T15:48:21.477Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20120325190823id_/http://fasadopastoliai.lt/"
+    },
+    {
+      "operation": "semantic-replay",
+      "url": "https://web.archive.org/web/20120326211954id_/http://www.fasadopastoliai.lt/eng/",
+      "checkedAt": "2026-10-03T15:48:22.386Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20120326211954id_/http://www.fasadopastoliai.lt/eng/"
+    },
+    {
+      "operation": "semantic-replay",
+      "url": "https://web.archive.org/web/20170424141707id_/http://www.fasadopastoliai.lt/",
+      "checkedAt": "2026-10-03T15:48:23.286Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20170424141707id_/http://www.fasadopastoliai.lt/"
+    }
+  ],
+  "rows": [
+    {
+      "timestamp": "20241217223016",
+      "url": "https://web.archive.org/web/20241217223016/http://www.fasadopastoliai.lt/",
+      "extractedText": "http://fasadopastoliai.lt Apie mus Techninė informacija Atlikti projektai Kontaktai Fatal error : Uncaught Error: Call to undefined function mysql_connect() in /home/fasado/domains/fasadopastoliai.lt/public_html/includes/opendb.php:5 Stack trace: #0 /home/fasado/domains/fasadopastoliai.lt/public_html/index.php(116): dbconnect() #1 {main} thrown in /home/fasado/domains/fasadopastoliai.lt/public_html/includes/opendb.php on line 5"
+    },
+    {
+      "timestamp": "20120325190823",
+      "url": "https://web.archive.org/web/20120325190823/http://fasadopastoliai.lt/",
+      "extractedText": "http://fasadopastoliai.lt Apie mus Techninė informacija Atlikti projektai Kontaktai NAUJIENOS Informacija ruo&scaron;iama --> AB \"Fasado pastoliai\" specializuotai dirba pastolių nuomos rinkoje. Įmonė nuomoja voki&scaron;kus fasadinius ir modulinius plei&scaron;tinius pastolius (kitaip dar vadinamus kontūriniais pastoliais), taip pat parduoda&nbsp; naujus bei naudotus firmų MJ, PLETTAC, LAYHER, RUX pastolius. Įmonė siūlo pilną paslaugų kompleksą: pastolių nuomą, jų pristatymą&nbsp; į objektą, sumontavimą, i&scaron;montavimą bei i&scaron;vežimą i&scaron; objekto. Visa įranga yra sertifikuota. Dirbame tiek su juridiniais, tiek su fiziniais asmenimis, esame lankstūs ir dėmesingi kiekvienam klientui. Mūsų tikslas &ndash; ilgalaikė ir tvari partnerystė. Įmonė turi filialus Vilniuje, Alytuje ir Marijampolėje bei įrangos sandėlius Vilniuje ir Alytuje. Technologijos Atlikti projektai Kontaktai Informacija ruo&scaron;iama &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Informacija ruo&scaron;iama &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Vilnius: Dariaus ir Girėno g. 36 Kontaktinis asmuo: Deividas Oli&scaron;auskas Telefonas: +370 616 23 323 Elektroninis pa&scaron;tas: deividas@fasadopastoliai.lt Alytus: Putinų g. 23 Kontaktinis asmuo: Darius Jankauskas Telefonas: +370 685 23 323 Elektroninis pa&scaron;tas: darius@fasadopastoliai.lt Marijampolė: Stoties g.47 (PC &ldquo;Senukai&rdquo; aik&scaron;telė) Kontaktinis asmuo: Nerijus Markevičius Telefonas: +370 685 34 444 Elektroninis pa&scaron;tas: nerijus@fasadopastoliai.lt Daugiau informacijos © 2011 UAB FASADO. All rights reserved"
+    },
+    {
+      "timestamp": "20120326211954",
+      "url": "https://web.archive.org/web/20120326211954/http://www.fasadopastoliai.lt/eng/",
+      "extractedText": "http://fasadopastoliai.lt About us Technical information Done projects Contacts NEWS News --> UAB \"Fasado pastoliai\" specializes in the scaffolding hire market. Our company hires German facade and modular caned scaffolding (the so called contour scaffolding) and sells new and used scaffolding of the following companies: MJ, PLETTAC, LAYHER, RUX. Our company offers a full complex of services: scaffolding rent, their delivery to the object, their installation, de-installation and collection from the object. The equipment we work with is certified. We work both with legal and physical entities and we are flexible and considerate to every single client.&nbsp; Our mission is long-term sustainable partnership. The company has branches in Vilnius, Alytus and Marijampolė and equipment warehouses in Vilnius and Alytus. Technology Projects Contacts Under construction &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Under construction &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Vilnius: Dariaus ir Girėno St. 36 Contact person Deividas Oli&scaron;auskas, Cell phone: +370 616 23 323, E-mail: deividas@fasadopastoliai.lt Alytus: Putinų St. 23, Contact person: Darius Jankauskas, Cell phone: +370 685 23 323, E-mail: darius@fasadopastoliai.lt Marijampolė: Stoties St. 47 (in the pitch of the shopping centre &ldquo;Senukai&rdquo;), Contact person: Nerijus Markevičius, Cell phone: +370 685 34 444,&nbsp; E-mail: nerijus@fasadopastoliai.lt More information © 2011 UAB FASADO. All rights reserved"
+    },
+    {
+      "timestamp": "20170424141707",
+      "url": "https://web.archive.org/web/20170424141707/http://www.fasadopastoliai.lt/",
+      "extractedText": "http://fasadopastoliai.lt Apie mus Techninė informacija Atlikti projektai Kontaktai NAUJIENOS Informacija ruo&scaron;iama --> AB \"Fasado pastoliai\" specializuotai dirba pastolių nuomos rinkoje. Įmonė nuomoja voki&scaron;kus fasadinius ir modulinius plei&scaron;tinius pastolius (kitaip dar vadinamus kontūriniais pastoliais), taip pat parduoda&nbsp; naujus bei naudotus firmų MJ, PLETTAC, LAYHER, RUX pastolius. Įmonė siūlo pilną paslaugų kompleksą: pastolių nuomą, jų pristatymą&nbsp; į objektą, sumontavimą, i&scaron;montavimą bei i&scaron;vežimą i&scaron; objekto. Visa įranga yra sertifikuota. Dirbame tiek su juridiniais, tiek su fiziniais asmenimis, esame lankstūs ir dėmesingi kiekvienam klientui. Mūsų tikslas &ndash; ilgalaikė ir tvari partnerystė. Įmonės filialas bei sandėlys įsikūrę Vilniuje. Technologijos Atlikti projektai Kontaktai Informacija ruo&scaron;iama Informacija ruo&scaron;iama Vilnius: Dariaus ir Girėno g. 36 Kontaktinis asmuo: Deividas Oli&scaron;auskas Telefonas: +370 616 23 323 Elektroninis pa&scaron;tas: deividas@fasadopastoliai.lt Daugiau informacijos © 2012 UAB FASADO. All rights reserved"
+    }
+  ]
+}

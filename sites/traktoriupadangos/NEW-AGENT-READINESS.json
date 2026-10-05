@@ -1,0 +1,510 @@
+{
+  "recordedAt": "2026-09-30T20:18:16.668Z",
+  "clientDate": "2026-09-30",
+  "documentationStatus": "VERIFIED_SETUP_ONLY",
+  "benchmarkStatus": "PENDING_LOCAL_GATE",
+  "newThreadCreated": false,
+  "candidate": "akmenas.lt",
+  "exactFuturePrompt": "Sukurk naują puslapį domenui akmenas.lt.",
+  "catalogCriteria": 85,
+  "tests": {
+    "passed": 5,
+    "total": 5,
+    "log": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\traktoriupadangos\\scorer-tests.log",
+    "logSha256": "c5efa2722ff284e9de00da4d7063c0f80cebb3a3547ca0f1b86b730fb181e234"
+  },
+  "skillValidation": [
+    {
+      "name": "niche-site-audit",
+      "exitCode": 0,
+      "output": "Skill is valid!",
+      "entrySha256": "98aae35f15b8e0bec3bda7091e1ef71b9f405893bcbb904cb28afaec1a2cd774"
+    },
+    {
+      "name": "niche-site-builder",
+      "exitCode": 0,
+      "output": "Skill is valid!",
+      "entrySha256": "efb140ae76bb04bdc46f1e4a0ffa33c0aca3c1933eedf3ab90e99c9b63cf2370"
+    },
+    {
+      "name": "niche-content-planner",
+      "exitCode": 0,
+      "output": "Skill is valid!",
+      "entrySha256": "67d8f1b4ed45b597068a77113fd4031c6134b8198f7860cd39a764ac9a368574"
+    }
+  ],
+  "junctions": [
+    {
+      "name": "niche-site-audit",
+      "installed": "C:/Users/lenovo/.codex/skills/niche-site-audit",
+      "resolved": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\SKILLS\\niche-site-audit"
+    },
+    {
+      "name": "niche-site-builder",
+      "installed": "C:/Users/lenovo/.codex/skills/niche-site-builder",
+      "resolved": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\SKILLS\\niche-site-builder"
+    },
+    {
+      "name": "niche-content-planner",
+      "installed": "C:/Users/lenovo/.codex/skills/niche-content-planner",
+      "resolved": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\SKILLS\\niche-content-planner"
+    },
+    {
+      "name": "impeccable",
+      "installed": "C:/Users/lenovo/.codex/skills/impeccable",
+      "resolved": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\SKILLS\\impeccable"
+    }
+  ],
+  "checkedLocalLinks": [
+    {
+      "source": "AGENTS.md",
+      "href": "CORE_BUILD_CONTRACT.md"
+    },
+    {
+      "source": "AGENTS.md",
+      "href": "AUTONOMY_BENCHMARK.md"
+    },
+    {
+      "source": "AGENTS.md",
+      "href": "MEDIA_CORE.md"
+    },
+    {
+      "source": "START_HERE.md",
+      "href": "CORE_BUILD_CONTRACT.md"
+    },
+    {
+      "source": "START_HERE.md",
+      "href": "MEDIA_CORE.md"
+    },
+    {
+      "source": "CORE_BUILD_CONTRACT.md",
+      "href": "START_HERE.md"
+    },
+    {
+      "source": "CORE_BUILD_CONTRACT.md",
+      "href": "MEDIA_CORE.md"
+    },
+    {
+      "source": "CORE_BUILD_CONTRACT.md",
+      "href": "SEO_GEO_CORE.md"
+    },
+    {
+      "source": "CORE_BUILD_CONTRACT.md",
+      "href": "MAIL_CORE.md"
+    },
+    {
+      "source": "CORE_BUILD_CONTRACT.md",
+      "href": "NETWORK_LINKING.md"
+    },
+    {
+      "source": "CORE_BUILD_CONTRACT.md",
+      "href": "AUTONOMY_BENCHMARK.md"
+    },
+    {
+      "source": "AUTONOMY_BENCHMARK.md",
+      "href": "CORE_BUILD_CONTRACT.md"
+    },
+    {
+      "source": "AUTONOMY_BENCHMARK.md",
+      "href": "START_HERE.md"
+    },
+    {
+      "source": "AUTONOMY_BENCHMARK.md",
+      "href": "SKILLS/niche-site-builder/SKILL.md"
+    },
+    {
+      "source": "AUTONOMY_BENCHMARK.md",
+      "href": "SKILLS/niche-content-planner/SKILL.md"
+    },
+    {
+      "source": "AUTONOMY_BENCHMARK.md",
+      "href": "SKILLS/niche-site-audit/SKILL.md"
+    },
+    {
+      "source": "MEDIA_CORE.md",
+      "href": "sites/traktoriupadangos/MEDIA-PIPELINE-VERIFICATION.json"
+    },
+    {
+      "source": "MEDIA_CORE.md",
+      "href": "sites/traktoriupadangos/media-ui-import.png"
+    },
+    {
+      "source": "MEDIA_CORE.md",
+      "href": "sites/traktoriupadangos/PHASE-1-AUDIT.md"
+    },
+    {
+      "source": "MEDIA_CORE.md",
+      "href": "START_HERE.md"
+    },
+    {
+      "source": "MEDIA_CORE.md",
+      "href": "SKILLS/niche-site-builder/SKILL.md"
+    },
+    {
+      "source": "MEDIA_CORE.md",
+      "href": "SKILLS/niche-content-planner/references/media-workflow.md"
+    },
+    {
+      "source": "MEDIA_CORE.md",
+      "href": "SKILLS/niche-site-audit/SKILL.md"
+    },
+    {
+      "source": "SEO_GEO_CORE.md",
+      "href": "AUTONOMY_ROADMAP.md"
+    },
+    {
+      "source": "SEO_GEO_CORE.md",
+      "href": "SKILLS/niche-site-audit/SKILL.md"
+    },
+    {
+      "source": "SEO_GEO_CORE.md",
+      "href": "sites/traktoriupadangos/PHASE-1-AUDIT.md"
+    },
+    {
+      "source": "SEO_GEO_CORE.md",
+      "href": "MEDIA_CORE.md"
+    },
+    {
+      "source": "SEO_GEO_CORE.md",
+      "href": "NETWORK_LINKING.md"
+    },
+    {
+      "source": "SEO_GEO_CORE.md",
+      "href": "MAIL_CORE.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "niche-site-audit/SKILL.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "../CORE_BUILD_CONTRACT.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "niche-site-audit/scripts/init-audit.mjs"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "niche-site-audit/references/accessibility-verification.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "../AUTONOMY_BENCHMARK.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "niche-content-planner/SKILL.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "niche-site-builder/SKILL.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "niche-site-builder/references/art-direction.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "impeccable/SKILL.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "impeccable/PROJECT_ADAPTATION.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "../research/design-tools-2026-09-30/README.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "../MEDIA_CORE.md"
+    },
+    {
+      "source": "SKILLS/README.md",
+      "href": "niche-content-planner/references/media-workflow.md"
+    },
+    {
+      "source": "SKILLS/niche-site-audit/SKILL.md",
+      "href": "references/checklist.md"
+    },
+    {
+      "source": "SKILLS/niche-site-audit/SKILL.md",
+      "href": "references/report-contract.md"
+    },
+    {
+      "source": "SKILLS/niche-site-audit/SKILL.md",
+      "href": "references/accessibility-verification.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/art-direction.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/domain-history.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/international-research.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/design-delivery.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/art-direction.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "../../MEDIA_CORE.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "../niche-content-planner/references/media-workflow.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "../niche-site-audit/SKILL.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/art-direction.md#visual-acceptance"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/tooling.md"
+    },
+    {
+      "source": "SKILLS/niche-site-builder/SKILL.md",
+      "href": "references/art-direction.md#build-with-restraint-and-material-specificity"
+    },
+    {
+      "source": "SKILLS/niche-content-planner/SKILL.md",
+      "href": "references/niche-adaptation.md"
+    },
+    {
+      "source": "SKILLS/niche-content-planner/SKILL.md",
+      "href": "references/quality-review.md"
+    },
+    {
+      "source": "SKILLS/niche-content-planner/SKILL.md",
+      "href": "references/studio-contract.md"
+    },
+    {
+      "source": "SKILLS/niche-content-planner/SKILL.md",
+      "href": "references/network-linking.md"
+    },
+    {
+      "source": "SKILLS/niche-content-planner/SKILL.md",
+      "href": "references/media-workflow.md"
+    },
+    {
+      "source": "SKILLS/niche-content-planner/SKILL.md",
+      "href": "references/quality-review.md"
+    },
+    {
+      "source": "SKILLS/niche-content-planner/SKILL.md",
+      "href": "../niche-site-audit/SKILL.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "LICENSE"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "PROJECT_ADAPTATION.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/new-work.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/craft-floor.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/new-work.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/operate.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/craft.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/shape.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/init.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/document.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/extract.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/critique.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/audit.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/audit.native.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/polish.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/bolder.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/quieter.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/distill.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/harden.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/onboard.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/animate.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/colorize.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/typeset.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/layout.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/delight.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/overdrive.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/clarify.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/adapt.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/adapt.native.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/optimize.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/live.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/generate.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/routing.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/routing.md#workflow-questions"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/hooks.md"
+    },
+    {
+      "source": "SKILLS/impeccable/SKILL.md",
+      "href": "reference/doctor.md"
+    }
+  ],
+  "instructionFingerprints": {
+    "AGENTS.md": "f1b575f1ad6663d94dbf5ca2c26f0091b63ebb5ec89e021d42061afe18026dd0",
+    "START_HERE.md": "19e63f70b9ea7630f7c780b90aa85fa6f629faeaa9f9c93664fade3c1c7d1134",
+    "CORE_BUILD_CONTRACT.md": "c77e89e53e1d22da868f08ff3ab23fa74ba7037bc20286085d9b8e1f66ee0e8f",
+    "AUTONOMY_BENCHMARK.md": "1c4fa5729b86325e4bbf8ba216c222806e61186879a350ec5ebef6f7722b317c",
+    "MEDIA_CORE.md": "d15227664a9f3a7ebb4f712da02cfffe77121806693c322e5bd129c9f6f871a0",
+    "SEO_GEO_CORE.md": "58ef11a3f79e1e854a699a8b2c4b54cd81cd4c3c4d21c6325c959e09591288d5",
+    "MAIL_CORE.md": "087270ff6e004024a31f5f82fe1a0411e75790f4c098661e56c9a3ffadde3c9e",
+    "NETWORK_LINKING.md": "ce9049db57da9618e034d28a8f5099487082c5d7b3aa638c1619b62447ef28cb",
+    "SKILLS/README.md": "54ae511d31c735cdc6019609cd62586f1dec096de8d840f2b511000c314e95d4",
+    "SKILLS/niche-site-audit/SKILL.md": "98aae35f15b8e0bec3bda7091e1ef71b9f405893bcbb904cb28afaec1a2cd774",
+    "SKILLS/niche-site-audit/references/checklist.md": "3e54664a128c1cba1cd65de0165441e33b8ccafbcafa3f5fbede860116472c5c",
+    "SKILLS/niche-site-audit/references/report-contract.md": "42905afa186d99d70085d983e93d02c22f356e9d736109904ab137c673441cd5",
+    "SKILLS/niche-site-audit/references/accessibility-verification.md": "90d0283e7d5dc6c39a4c11b86edea3f1b10c119d945af0f9a057ca49b3ce6de7",
+    "SKILLS/niche-site-audit/scripts/init-audit.mjs": "a2b5912ed0ab3242610f2d3d780a0156bdd9f7183a6779298553c714e951d1e0",
+    "SKILLS/niche-site-builder/SKILL.md": "efb140ae76bb04bdc46f1e4a0ffa33c0aca3c1933eedf3ab90e99c9b63cf2370",
+    "SKILLS/niche-site-builder/references/design-delivery.md": "7dce3a37c2e54bbc45a9d2902af6e1f10afb62d8c088c443b28b1c8979f6d38d",
+    "SKILLS/niche-site-builder/references/art-direction.md": "ad2fcbc547b55c0e51d0d04ecbf2fb5d46ce15a5fc4beed6f3e94c0f8d8af699",
+    "SKILLS/niche-content-planner/SKILL.md": "67d8f1b4ed45b597068a77113fd4031c6134b8198f7860cd39a764ac9a368574",
+    "SKILLS/niche-content-planner/references/media-workflow.md": "4051cd8d76bad87beb6a7a699694d1c3685844da39e224b2e73ea8a37ae69cc0",
+    "SKILLS/impeccable/SKILL.md": "5cbea796e741615723af1c3e035b62b74599dec349ce2c223c533b435aecdffa",
+    "SKILLS/impeccable/PROJECT_ADAPTATION.md": "4b4919808eb848646e5afa04c39c127791540cab616ecc57b3b19e7bb0fabc0f"
+  },
+  "migratedPlanningBriefs": [
+    "akmenas",
+    "apartmentstrakai",
+    "auksarankiams",
+    "autoelektrikaivilniuje",
+    "businessintelligence",
+    "e-statybai",
+    "estrategija",
+    "klaidu-taisymas",
+    "laiptucentras",
+    "mtaisykla",
+    "namudekoravimas",
+    "pliusstatyba",
+    "rentbook",
+    "smulkusurmas",
+    "storyline",
+    "tiknamams",
+    "tvirti-pamatai"
+  ],
+  "publicSourcesUnchanged": true,
+  "packageSha256": "cdacd6d13bbd2cbe74791d392ba49687b688fd78443880aa5ddf2ecfa7104f04",
+  "contactDefaults": {
+    "operatorName": "MB Pinet",
+    "email": "info@pinet.lt"
+  },
+  "limitations": [
+    "No new-agent website result has been generated or evaluated.",
+    "No claim that instructions guarantee 9/10 design.",
+    "R2/S2 user-interrupted enlargement remains unverified; local 10/10 condition not met.",
+    "Live domain, production and demand are separate unverified gates."
+  ]
+}

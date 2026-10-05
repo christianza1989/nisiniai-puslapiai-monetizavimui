@@ -1,0 +1,1 @@
+Partneriui teik projekto apimtį, technologijas, terminą ir patvirtintus priėmimo kriterijus. Lygink darbų rezultatą, priežiūros sąlygas ir visą projekto kainą. Neperduok kliento prisijungimų ar viso pokalbio. Subrangovas ir jo kompetencija neturi būti išgalvoti.

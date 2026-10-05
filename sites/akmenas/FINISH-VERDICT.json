@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "siteId": "akmenas",
+  "reviewDate": "2026-10-01",
+  "reviewer": "impeccable_finish_reviewer",
+  "round": "verdict",
+  "reviewedFixes": [
+    "F1",
+    "F2"
+  ],
+  "disposition": "ship",
+  "dispositionScope": "Ship earned here covers the scored fixes, not the whole surface.",
+  "originalReviewPreserved": true,
+  "verdict": [
+    {
+      "id": "F1",
+      "status": "resolved",
+      "scope": "The permitted, explicitly labelled current-catalog replay alternative; original historical full-hand provenance is not recovered.",
+      "evidence": [
+        "concept-seed-reproduction-direction.log contains key aea5f86f, mode unscoped, source api, approved pool c3b204a1eed6 and ASSIGNED INDEX5.",
+        "CONCEPT-PROVENANCE.md distinguishes this actual replay output from the unpersisted original; differing challengers and both failed recovery commands are disclosed and excluded as accepted evidence."
+      ],
+      "detail": "The assignment is corroborated against the current catalog without fabricating original output or selecting a new direction. Original mode/catalog/full hand remains UNVERIFIED."
+    },
+    {
+      "id": "F2",
+      "status": "resolved",
+      "scope": "768 first-viewport composition plus regression check across recaptured existing viewports.",
+      "evidence": [
+        "home-tablet.png now places the title first in one column, followed by explanatory text, actions and tactile image; the former upper-left void is absent.",
+        "The final tablet top inspection and CSS761–960 rule confirm deliberate stacking. home-desktop.png, home-mobile.png and home-320.png retain their previous composition."
+      ],
+      "detail": "The title has first-viewport reading priority. All17 final capture files were reopened; dimensions/content/tops are valid and no material regression introduced by this batch is visible."
+    }
+  ],
+  "regressions": [],
+  "remaining": "clear for the two scored fixes",
+  "evidence": {
+    "status": "PASS",
+    "captures": [
+      {
+        "name": "home-desktop.png",
+        "width": 1425,
+        "height": 4459,
+        "sha256": "eb68a9bb4fb0d0bda0c8d88177f4b9b7b18e6d1b590e9d6930f2bedb455715d0",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "home-mobile.png",
+        "width": 375,
+        "height": 6557,
+        "sha256": "25bf9d10ce418f5cc8d9cfdfeb7a626368b24b76be894d2b608d025b506b8c3c",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "home-320.png",
+        "width": 305,
+        "height": 6750,
+        "sha256": "f0730974e8a8e4329f00022b1f0f519609367486002991080b6bdf16df526656",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "home-tablet.png",
+        "width": 753,
+        "height": 4754,
+        "sha256": "b2e14dc77e9d819e729661c82f5601aef7787dbb0142cf9afa3f38972f440ecc",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "index-320.png",
+        "width": 305,
+        "height": 3523,
+        "sha256": "e500b2790894df89d08a2b1bebf995f6e2868dd1036dab43edaa8f29c479b3a6",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "form-mobile.png",
+        "width": 375,
+        "height": 3350,
+        "sha256": "5509cca97afe74e7f2b13f1d71e6fd5801b6e8198e91155302eb65d6a6059207",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "form-320.png",
+        "width": 305,
+        "height": 3755,
+        "sha256": "49b0cfed90ac3943f0a0fc0495423f16039ee91d4eb8d1fe610daf7fecb9708b",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "guide-tablet.png",
+        "width": 753,
+        "height": 5733,
+        "sha256": "b6fa0028c819e1118ff6389c4edac6e90b3ea067258e681073d91ac4e459dc82",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "materials-1440.png",
+        "width": 1425,
+        "height": 4764,
+        "sha256": "57c6d655896f45cc085dc3a8cc72edaf0c4a0767086913f3a72518afadbf7be9",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "materials-390.png",
+        "width": 375,
+        "height": 6964,
+        "sha256": "91b944f3d159d19fb6247c248e8e6b9369c31035ae1e979e43062168870b871e",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "materials-320.png",
+        "width": 305,
+        "height": 8166,
+        "sha256": "4d867fdd6ac5d1875b04da43314ae8358151b0b069840eafb143e61316776565",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "planning-1440.png",
+        "width": 1425,
+        "height": 4551,
+        "sha256": "03c05fc7cb6922326a83e716c5134f9fa41261e9ba7ec1fc420fba8da17a7c57",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "planning-390.png",
+        "width": 375,
+        "height": 6400,
+        "sha256": "d5fa15fbcfd42b3f65548dae3fc47d3d7b1f786dba63853bb2ab65b5abe0dd09",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "planning-320.png",
+        "width": 305,
+        "height": 7311,
+        "sha256": "6d6941a4f3e8d58bc85b5c255155f01b94cf11adc90426284b79edeafcb1c788",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "care-1440.png",
+        "width": 1425,
+        "height": 4645,
+        "sha256": "b385e2edd2d4b17ab86bd414310a6a52bb37deb4791aea7ffedeb3b4eb2ae53f",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "care-390.png",
+        "width": 375,
+        "height": 6678,
+        "sha256": "932430b018e918f4be5e1ad144f236b47370c1276432ade99a5c3b6cf15784de",
+        "valid": true,
+        "visuallyInspected": true
+      },
+      {
+        "name": "care-320.png",
+        "width": 305,
+        "height": 7774,
+        "sha256": "abfe92a36b6aa6cde96c0387155f47f553911cec7d539d95d31cf08452d8d8e3",
+        "valid": true,
+        "visuallyInspected": true
+      }
+    ],
+    "aliasesMatch": true
+  },
+  "retainedScore": {
+    "points": 13,
+    "maxPoints": 14,
+    "score": 9.285714285714286,
+    "roundedScore": 9.29,
+    "rescored": false,
+    "scope": "Initial full subjective art-direction review; the narrowed verdict does not promote this score."
+  },
+  "limitations": [
+    "Original full hand/mode/catalog provenance remains UNVERIFIED; current-catalog replay is not an original historical log.",
+    "200% actual browser enlargement remains UNVERIFIED; narrow reflow is distinct.",
+    "No browser/test/detector run by this reviewer.",
+    "No performance, WCAG, legal, ranking, demand or production-launch all-pass is claimed."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "capturedAt": "2026-10-03T13:00:14.744Z",
+  "timing": "after initial instruction reading and reservation, before site content/design code; not a dispatch-time immutable snapshot",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "dbdb248860e29451ebf200ce40c2e5941062dbf95715b173e4c9bcd1b74976e6"
+    },
+    {
+      "path": "START_HERE.md",
+      "sha256": "debdc4c7ee49e5e9bb2b36627ed33d376b9d3359cc208dd7895a36e09f777e17"
+    },
+    {
+      "path": "CORE_BUILD_CONTRACT.md",
+      "sha256": "b598f8baeb9330a769851c5a8c39a4a851fa6da64451ff9ac598f1b6658c9a98"
+    },
+    {
+      "path": "WORKSTREAMS.md",
+      "sha256": "af3755056ad13a55e9e837e598958667085f911d82237708ed88a343248a8dbe"
+    },
+    {
+      "path": "RESEARCH_INPUTS.md",
+      "sha256": "4ae0782403e6369ddf3f8532bc0c46d7854e5d23d2a7793afb5a61c6edc2b312"
+    },
+    {
+      "path": "SKILLS/PROJECT_CONTRACT.md",
+      "sha256": "4868076c866d0162c856e64eb7633458c148ae9d0008ca263e5b570ce4794050"
+    },
+    {
+      "path": "SKILLS/niche-site-builder/SKILL.md",
+      "sha256": "ba3b9242e9e9a01ed2176fb0a853bba6ad2c10ef04dcc0663aca0267833c10ca"
+    },
+    {
+      "path": "SKILLS/niche-content-planner/SKILL.md",
+      "sha256": "cb77034d13d08c9c21c10bd2d055b8201dd0a96cdf8b1f6f3122414ec24bfcfd"
+    },
+    {
+      "path": "SKILLS/impeccable/SKILL.md",
+      "sha256": "f753b1cdf89c37081520c1b6ebf24f96b0caea0f7cff701806f00fa8e11eb4c6"
+    },
+    {
+      "path": "SKILLS/impeccable/PROJECT_ADAPTATION.md",
+      "sha256": "51574c4074386cffb9fb31a85d6e0d11bd615c7f703568989c7bea870d1abd14"
+    },
+    {
+      "path": "SKILLS/niche-site-audit/SKILL.md",
+      "sha256": "7ee071f6f38fe3db047983586b4bc4d0e17b89d842618a2f74eb5e18c84c5b7c"
+    }
+  ]
+}

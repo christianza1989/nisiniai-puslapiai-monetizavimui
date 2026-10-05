@@ -1,0 +1,403 @@
+{
+  "version": 2,
+  "domain": "fasadopastoliai.lt",
+  "checkedAt": "2026-10-03T15:37:29.474Z",
+  "terms": [
+    "pastol",
+    "nuom",
+    "fasad",
+    "mont"
+  ],
+  "coverage": "records-found",
+  "inventoryComplete": true,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 10,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 9,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": true,
+      "observedRows": 10,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": true,
+      "observedRows": 1,
+      "omitted": 0,
+      "truncated": false
+    }
+  ],
+  "inventory": [
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20120325190823",
+      "capturedAt": "2012-03-25T19:08:23.000Z",
+      "status": 200,
+      "digest": "KI3MKSESSXAVSCUODCMETHIYBO5KZECD",
+      "replayUrl": "https://web.archive.org/web/20120325190823/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/apie_mus",
+      "path": "/apie_mus",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20120326211827",
+      "capturedAt": "2012-03-26T21:18:27.000Z",
+      "status": 200,
+      "digest": "UOS6ZFKVOZDR6XGDAPHF56WFIA65YTKQ",
+      "replayUrl": "https://web.archive.org/web/20120326211827/http://www.fasadopastoliai.lt/apie_mus"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/atlikti_projektai",
+      "path": "/atlikti_projektai",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20120326211852",
+      "capturedAt": "2012-03-26T21:18:52.000Z",
+      "status": 200,
+      "digest": "QQBTIMF5O76CWKSKIAU2ALTCXRXYNLTW",
+      "replayUrl": "https://web.archive.org/web/20120326211852/http://www.fasadopastoliai.lt/atlikti_projektai"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/eng/",
+      "path": "/eng/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20120326211954",
+      "capturedAt": "2012-03-26T21:19:54.000Z",
+      "status": 200,
+      "digest": "NFVZCI3KODJEQD6P5DGZ272N2OXEZ727",
+      "replayUrl": "https://web.archive.org/web/20120326211954/http://www.fasadopastoliai.lt/eng/"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/eng/apie_mus",
+      "path": "/eng/apie_mus",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20170227110338",
+      "capturedAt": "2017-02-27T11:03:38.000Z",
+      "status": 200,
+      "digest": "IBT5YKAU3MEXEDIMTEA2YE442Y2UVRNA",
+      "replayUrl": "https://web.archive.org/web/20170227110338/http://www.fasadopastoliai.lt/eng/apie_mus"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/eng/kontaktai",
+      "path": "/eng/kontaktai",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20170227085228",
+      "capturedAt": "2017-02-27T08:52:28.000Z",
+      "status": 200,
+      "digest": "XAMELBQXPPLEGYJ4LXPFMZSCKYFW5RXJ",
+      "replayUrl": "https://web.archive.org/web/20170227085228/http://www.fasadopastoliai.lt/eng/kontaktai"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/favicon.ico",
+      "path": "/favicon.ico",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20130828220432",
+      "capturedAt": "2013-08-28T22:04:32.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20130828220432/http://fasadopastoliai.lt/favicon.ico"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/kontaktai",
+      "path": "/kontaktai",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20120326181427",
+      "capturedAt": "2012-03-26T18:14:27.000Z",
+      "status": 200,
+      "digest": "DGFRKPCSO3RIDJLOSPDNCVVQPQCNPT2A",
+      "replayUrl": "https://web.archive.org/web/20120326181427/http://www.fasadopastoliai.lt/kontaktai"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/technine_informacija",
+      "path": "/technine_informacija",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20120326211959",
+      "capturedAt": "2012-03-26T21:19:59.000Z",
+      "status": 200,
+      "digest": "HUZMGRX7TFHALWANPJPWPIDHNJ2Z7HOC",
+      "replayUrl": "https://web.archive.org/web/20120326211959/http://www.fasadopastoliai.lt/technine_informacija"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/content-bg3.gif",
+      "path": "/content-bg3.gif",
+      "kind": "utility",
+      "topicHint": false,
+      "timestamp": "20131219163249",
+      "capturedAt": "2013-12-19T16:32:49.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20131219163249/http://fasadopastoliai.lt/content-bg3.gif"
+    }
+  ],
+  "roots": [
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20120325190823",
+      "capturedAt": "2012-03-25T19:08:23.000Z",
+      "status": 200,
+      "digest": "KI3MKSESSXAVSCUODCMETHIYBO5KZECD",
+      "replayUrl": "https://web.archive.org/web/20120325190823/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20130529193832",
+      "capturedAt": "2013-05-29T19:38:32.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20130529193832/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20140106075922",
+      "capturedAt": "2014-01-06T07:59:22.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20140106075922/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20150215031237",
+      "capturedAt": "2015-02-15T03:12:37.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20150215031237/http://www.fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20160112044737",
+      "capturedAt": "2016-01-12T04:47:37.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20160112044737/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20170424141707",
+      "capturedAt": "2017-04-24T14:17:07.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20170424141707/http://www.fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20180118011957",
+      "capturedAt": "2018-01-18T01:19:57.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20180118011957/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20201027003047",
+      "capturedAt": "2020-10-27T00:30:47.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20201027003047/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20210515141940",
+      "capturedAt": "2021-05-15T14:19:40.000Z",
+      "status": 200,
+      "digest": "3FJCVYTJ5LYHBNDSMCSC33N7VGN62ELA",
+      "replayUrl": "https://web.archive.org/web/20210515141940/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20241217223016",
+      "capturedAt": "2024-12-17T22:30:16.000Z",
+      "status": 200,
+      "digest": "KX24VXQ322OMY4NSEFLED5HJEKOJ3632",
+      "replayUrl": "https://web.archive.org/web/20241217223016/http://www.fasadopastoliai.lt/"
+    }
+  ],
+  "snapshots": [
+    {
+      "original": "http://www.fasadopastoliai.lt/",
+      "timestamp": "20241217223016",
+      "replayUrl": "https://web.archive.org/web/20241217223016/http://www.fasadopastoliai.lt/",
+      "ok": true,
+      "title": "http://fasadopastoliai.lt",
+      "headings": [],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 33,
+      "htmlSha256": "c826a3c39e1f8d9d769fbe52ea308eacba05c4492b64e6f6a29f9eb385fe3d23",
+      "resolvedUrl": "https://web.archive.org/web/20241217223016id_/http://www.fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://fasadopastoliai.lt/",
+      "timestamp": "20120325190823",
+      "replayUrl": "https://web.archive.org/web/20120325190823/http://fasadopastoliai.lt/",
+      "ok": true,
+      "title": "http://fasadopastoliai.lt",
+      "headings": [],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 169,
+      "htmlSha256": "9138f801a1e4f91041d158649baf4a7b54c35896cce1b615aa1c18ea5cb2d3c8",
+      "resolvedUrl": "https://web.archive.org/web/20120325190823id_/http://fasadopastoliai.lt/"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/eng/",
+      "timestamp": "20120326211954",
+      "replayUrl": "https://web.archive.org/web/20120326211954/http://www.fasadopastoliai.lt/eng/",
+      "ok": true,
+      "title": "http://fasadopastoliai.lt",
+      "headings": [],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 192,
+      "htmlSha256": "0cd5555fb76c41224a734950fcc01661e05cc66c3449f381f88287ac019c37fe",
+      "resolvedUrl": "https://web.archive.org/web/20120326211954id_/http://www.fasadopastoliai.lt/eng/"
+    },
+    {
+      "original": "http://www.fasadopastoliai.lt/",
+      "timestamp": "20170424141707",
+      "replayUrl": "https://web.archive.org/web/20170424141707/http://www.fasadopastoliai.lt/",
+      "ok": true,
+      "title": "http://fasadopastoliai.lt",
+      "headings": [],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 128,
+      "htmlSha256": "fc5cad0a02e308ff359eebe975740e2d0efc44e1aa964c6e90542afccb0dba20",
+      "resolvedUrl": "https://web.archive.org/web/20170424141707id_/http://www.fasadopastoliai.lt/"
+    }
+  ],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-03T15:37:29.496Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-03T15:37:31.714Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-03T15:37:32.615Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-03T15:37:36.124Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=fasadopastoliai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20241217223016id_/http://www.fasadopastoliai.lt/",
+      "checkedAt": "2026-10-03T15:37:39.030Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20241217223016id_/http://www.fasadopastoliai.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20120325190823id_/http://fasadopastoliai.lt/",
+      "checkedAt": "2026-10-03T15:37:39.981Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20120325190823id_/http://fasadopastoliai.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20120326211954id_/http://www.fasadopastoliai.lt/eng/",
+      "checkedAt": "2026-10-03T15:37:40.885Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20120326211954id_/http://www.fasadopastoliai.lt/eng/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20170424141707id_/http://www.fasadopastoliai.lt/",
+      "checkedAt": "2026-10-03T15:37:41.792Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20170424141707id_/http://www.fasadopastoliai.lt/"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "fasadopastoliai",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

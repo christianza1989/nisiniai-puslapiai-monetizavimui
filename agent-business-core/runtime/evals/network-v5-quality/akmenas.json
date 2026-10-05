@@ -1,0 +1,25 @@
+{
+  "version": "2026-10-02-v5-quality",
+  "site_id": "akmenas",
+  "test_recipient": "owner@example.com",
+  "clients": [
+    {
+      "id": "phone_saved_without_callback",
+      "messages": [
+        "I am comparing granite for a kitchen worktop. I have approximate measurements and want to prepare a useful drawing.",
+        "Open the field now; I will enter my phone only. Please explain what details the drawing should include."
+      ],
+      "contact": true,
+      "contact_at": "during",
+      "contact_channels": [
+        "phone"
+      ],
+      "phone": "+37060000002",
+      "expected_need": {
+        "material": "granitas"
+      },
+      "label": "phone_saved_without_callback",
+      "split": "blind"
+    }
+  ]
+}

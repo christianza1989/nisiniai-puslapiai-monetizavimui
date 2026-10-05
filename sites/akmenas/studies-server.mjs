@@ -1,0 +1,3 @@
+import http from 'node:http';import{readFile}from'node:fs/promises';import path from'node:path';
+const base=path.join(import.meta.dirname,'studies');
+http.createServer(async(req,res)=>{const url=new URL(req.url,'http://localhost');const rel=url.pathname==='/'?'a.html':url.pathname.slice(1);if(!/^[a-z.]+$/.test(rel)){res.writeHead(404);return res.end();}try{const b=await readFile(path.join(base,rel));res.writeHead(200,{'content-type':rel.endsWith('.png')?'image/png':'text/html;charset=utf-8'});res.end(b);}catch{res.writeHead(404);res.end();}}).listen(8896,'127.0.0.1',()=>console.log('akmenas studies 8896'));

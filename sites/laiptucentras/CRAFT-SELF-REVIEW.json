@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-01T05:34:00.692Z",
+  "evaluator": "Implementation agent self-review, not parent/savininko benchmark",
+  "rubricSource": "SKILLS/niche-site-builder/references/art-direction.md and AUTONOMY_BENCHMARK.md",
+  "criteria": [
+    {
+      "criterion": "Nišos atpažįstamumas",
+      "points": 2,
+      "evidence": [
+        "qa/home-desktop-final.png",
+        "qa/gidai-desktop-final.png"
+      ],
+      "reason": "Laiptų panorama, konstrukcijos / pakopų / angos studijos ir originalus laiptų ženklas iškart nurodo temą be perkelto gamintojo portfelio."
+    },
+    {
+      "criterion": "Hierarchija",
+      "points": 2,
+      "evidence": [
+        "qa/home-desktop-final.png",
+        "qa/laiptu-kaina-desktop-final.png"
+      ],
+      "reason": "Aiškus pirmas klausimas, vienas registravimo veiksmas, didesnės serif antraštės ir ramesni paaiškinimai; gide turinys / šaltiniai atskirti."
+    },
+    {
+      "criterion": "Kompozicija",
+      "points": 2,
+      "evidence": [
+        "qa/home-desktop-full-final.png",
+        "research/study-b-desktop.jpg"
+      ],
+      "reason": "Dvi nevienodo mastelio įžangos kolonos ir panorama, sąrašo / medžiagos / tamsios juostos kaita; trijų konceptų palyginimu pasirinkta B."
+    },
+    {
+      "criterion": "Visas ritmas",
+      "points": 2,
+      "evidence": [
+        "qa/home-desktop-full-final.png",
+        "qa/laiptu-konstrukcijos-desktop-final.png"
+      ],
+      "reason": "Vidurys ir pabaiga atsako skirtingus klausimus; nuoseklūs tarpai, tipografija ir tekstinis footer, nėra vienodų dekoratyvių kortelių kiekvienam blokui."
+    },
+    {
+      "criterion": "Mobilus maketas",
+      "points": 1,
+      "evidence": [
+        "qa/home-mobile-final.png",
+        "qa/laiptu-matavimas-mobile-final.png",
+        "qa/guide-320-body.png"
+      ],
+      "reason": "Skaitoma viena kolona ir tinkami crop, native meniu bei tikras CTA. Išlyga: piloto paaiškinimas nustumia vaizdą žemyn, atvertas ilgas turinys virš gido užima daug vietos. Actual200% enlargement dar neįrodytas."
+    },
+    {
+      "criterion": "Tapatybė vidiniuose puslapiuose",
+      "points": 2,
+      "evidence": [
+        "qa/gidai-desktop-final.png",
+        "qa/laiptu-kaina-desktop-final.png",
+        "qa/form-empty.png"
+      ],
+      "reason": "Newsreader / Manrope, popierius / žaluma, tas pats ženklas, byline ir footer tęsiasi indekse, gide bei formoje; aktualus temos vaizdas kiekvienam gidui."
+    },
+    {
+      "criterion": "Funkcija",
+      "points": 2,
+      "evidence": [
+        "qa/skip-final.json",
+        "qa/native-validation.json",
+        "qa/ui-d1.json",
+        "qa/html-audit.json"
+      ],
+      "reason": "Naudingi tikri maršrutai ir anchor, veikiantis native meniu / fokusas ir įrašanti forma, be išgalvotų prekių / pažadų. 200% testas atskiras neišspręstas A–Z vartas."
+    }
+  ],
+  "points": 13,
+  "maximum": 14,
+  "score": 9.28,
+  "parentCraftScore": null,
+  "limitations": [
+    "Subjective local screenshots and tested function, not world rating or conversion result.",
+    "Technical local9.72 still has unverified R2/S2 critical gates."
+  ]
+}

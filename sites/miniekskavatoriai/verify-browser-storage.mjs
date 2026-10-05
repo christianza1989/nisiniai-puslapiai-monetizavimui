@@ -1,0 +1,7 @@
+import {execFile} from 'node:child_process';import {promisify} from 'node:util';import {writeFile} from 'node:fs/promises';import assert from 'node:assert/strict';
+const run=promisify(execFile),root='C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/content-studio/output/miniekskavatoriai-production';
+async function sql(command){const {stdout}=await run(process.execPath,['--import','./scripts/sites-env.mjs','./node_modules/wrangler/bin/wrangler.js','d1','execute','DB','--config','dist/server/wrangler.json','--local','--persist-to','.wrangler/state','--command',command,'--json'],{cwd:root,maxBuffer:512000});return JSON.parse(stdout).flatMap(x=>x.results??[])}
+const where="name='AUDIT-BROWSER-MINI-20261001' AND email='audit@example.invalid' AND site_id='miniekskavatoriai'";
+const rows=await sql(`SELECT id,site_id,source_path,status,message FROM niche_leads WHERE ${where}`);assert.equal(rows.length,1);assert.equal(rows[0].source_path,'/transejos-kasimas');assert.match(rows[0].message,/9,6 m³/);assert.equal(rows[0].status,'new');
+await sql(`DELETE FROM niche_leads WHERE id='${rows[0].id}' AND ${where}`);assert.equal((await sql(`SELECT COUNT(*) AS n FROM niche_leads WHERE ${where}`))[0].n,0);
+await writeFile(new URL('./qa/browser-d1-proof.json',import.meta.url),JSON.stringify({at:new Date().toISOString(),row:rows[0],syntheticRemoved:true,smtpDisabled:true},null,2));console.log('Native browser form → D1 exact source/message verified; only matching synthetic row removed.');

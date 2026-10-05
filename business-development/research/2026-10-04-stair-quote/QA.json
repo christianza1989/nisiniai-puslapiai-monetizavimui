@@ -1,0 +1,9 @@
+{
+  "version":1,
+  "checkedOn":"2026-10-04",
+  "scope":"Private commercial follow-up and source inspection",
+  "checks":{"jsonRecordsParsed":3,"sourcesJsonValid":true,"stateJsonValid":true,"qaJsonValid":true,"registryLocalMarkdownReferencesChecked":85,"brokenReferences":0,"nextIdeaNumberUnchanged":4,"pendingDecisionsAllProposed":3,"lastNotifiedExperimentUnchanged":"BDEV-0003-P2","openedPrimaryHtmlPages":4,"localEvidenceFilesInspected":5,"documentedFutureCases":2,"futureCasesExecuted":0,"newIdeaIdsAllocated":0,"newExperimentApprovalsFound":0},
+  "outcome":"evidence_only_no_new_proposal",
+  "limits":["Current qualification/supplier/quote-scope controls already cover this question","No actual supplier agreement or customer outcomes","No GUI, runtime or current content-package validation","Historical measuring-guide 403 not retroactively changed","Tool discovery metadata omitted read_thread; successful direct purpose-built calls supplied owner decisions"],
+  "actions":{"runtimeChanges":0,"siteChanges":0,"supplierOrCustomerMessages":0,"formsSubmitted":0,"purchases":0,"newSubscriptions":0,"dnsChanges":0,"accountChanges":0,"ownerNotifications":0}
+}

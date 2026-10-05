@@ -1,0 +1,42 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { targetCatalog, networkStatus, networkOverview, checkTarget, normalizeNetworkSuggestions } from '../src/network-links.mjs';
+const now = Date.now();
+const publicAt = (page, t) => page.approval?.status === 'approved' && page.approval.revisionHash === page.revisionHash && Date.parse(page.publishAt) <= t;
+const draft = { id: 't', title: 'Tikslinis atsakymas', slug: 'gidas', intent: 'Gretimas klausimas', publishAt: new Date(now-1000).toISOString(), revisionHash: 't', approval: { status: 'approved', revisionHash: 't' } };
+const source = { id: 's', publishAt: new Date(now).toISOString(), body: [{ type: 'paragraph', text: 'Apie gretimą klausimą skaitykite matavimo gidas ir grįžkite prie šio pasirinkimo.' }] };
+const site = { id: 'target', canonicalHost: 'target.example', stage: 'live', pages: [{ ...draft, status: 'approved', publishedRevision: draft }] };
+const link = { targetSiteId: 'target', targetPageId: 't', label: 'matavimo gidas', reason: 'Paaiškina tikslius pradinius matavimo duomenis skaitytojui.' };
+test('private, future, paused, missing and unverified destinations stay planned', () => {
+  const catalog = targetCatalog([site], publicAt, now);
+  assert.equal(networkStatus('source', source, link, catalog, now).status, 'needs-check');
+  assert.equal(networkStatus('source', source, link, [], now).status, 'missing');
+  assert.equal(networkStatus('source', source, link, [{ ...catalog[0], approved:false }], now).status, 'unapproved');
+  assert.equal(networkStatus('source', source, link, [{ ...catalog[0], publishAt:new Date(now+1000).toISOString() }], now).status, 'scheduled');
+  assert.equal(networkStatus('source', source, link, [{ ...catalog[0], stage:'paused' }], now).status, 'not-live');
+  assert.equal(networkStatus('target', source, link, catalog, now).status, 'internal');
+  assert.equal(networkStatus('source', { ...source,body:[] }, link, catalog, now).status, 'no-anchor');
+  const evidence = { checkedAt:new Date(now).toISOString(),revisionHash:'t',status:200,canonical:'https://target.example/gidas' };
+  assert.equal(networkStatus('source', source, { ...link,evidence }, catalog, now).status, 'ready');
+  assert.equal(networkStatus('source', source, { ...link,evidence:{...evidence,revisionHash:'old'} }, catalog, now).status, 'needs-check');
+  assert.equal(networkStatus('source', source, { ...link,evidence }, catalog, now+8*86400000).status, 'needs-check');
+});
+test('incoming/outgoing plan describes actual edges and never creates all-to-all links', () => {
+  const a={id:'source',canonicalHost:'source.example',pages:[{...source,networkLinkSuggestions:[link]}]};
+  const overview=networkOverview([a,site],publicAt,now);
+  assert.equal(overview.links.length,1);
+  assert.equal(overview.sites.find(s=>s.id==='target').incoming,1);
+  assert.equal(overview.sites.find(s=>s.id==='target').outgoing,0);
+  assert.equal(normalizeNetworkSuggestions([{...link,evidence:{forged:true}},link]).length,1);
+  assert.equal(normalizeNetworkSuggestions([link])[0].evidence,undefined);
+});
+test('availability verification rejects redirects, noindex and wrong canonical', async () => {
+  const target=targetCatalog([site],publicAt,now)[0];
+  const html='<html><head><link href="https://target.example/gidas" rel="canonical"></head><body>Naudingas tekstas.</body></html>';
+  const fake=async()=>new Response(html,{headers:{'content-type':'text/html; charset=utf-8'}});
+  assert.equal((await checkTarget(target,fake)).canonical,target.url);
+  await assert.rejects(()=>checkTarget(target,async()=>new Response('',{status:301})),/viešas HTML/);
+  await assert.rejects(()=>checkTarget(target,async()=>new Response(html,{headers:{'content-type':'text/html','x-robots-tag':'noindex'}})),/viešas HTML/);
+  await assert.rejects(()=>checkTarget(target,async()=>new Response(html.replace('target.example/gidas','target.example/kitas'),{headers:{'content-type':'text/html'}})),/canonical/);
+  await assert.rejects(()=>checkTarget({...target,url:'https://127.0.0.1/gidas',domain:'127.0.0.1'},fake),/domeno/);
+});

@@ -1,0 +1,23 @@
+{
+  "version": "2026-10-02-v5-quality",
+  "site_id": "roletaiklaipedoje",
+  "test_recipient": "owner@example.com",
+  "clients": [
+    {
+      "id": "shown_form_is_not_saved_contact",
+      "messages": [
+        "Klaipėdoje svarstau du roletus darbo kambariui. Matmenys dar apytiksliai.",
+        "Parodykite kontaktų lauką dabar, tik pasižiūrėsiu; duomenų kol kas neįvesiu.",
+        "Lauką paliksiu tuščią ir laiško nenoriu. Ką turiu pasitikslinti prieš galutinį matavimą?"
+      ],
+      "contact": false,
+      "refusal": true,
+      "refusal_at": 2,
+      "expected_need": {
+        "quantity": "2"
+      },
+      "label": "shown_form_is_not_saved_contact",
+      "split": "blind"
+    }
+  ]
+}

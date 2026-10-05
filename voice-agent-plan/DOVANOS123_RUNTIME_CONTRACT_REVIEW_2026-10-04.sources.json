@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-04",
+  "scope": "read-only code-contract review; not runtime tests or onboarding",
+  "files": {
+    "src/pinet_core/models.py": "614355d130667b86492caf2f68f061b50d73af96a3cf9160558d130e22ea4649",
+    "src/pinet_core/db.py": "4e34a3d9e0835c6df90834c01cc1119bdc2db7160aca9b051de69aaf74b1533f",
+    "src/pinet_core/profiles.py": "ed264407161adc0b09202e565df40558aeb6fbaf88c515d9ab745d15c5d2ddf7",
+    "src/pinet_core/contracts.py": "21d0ba333d312188f6be34a58d79d7370eef96e124ebd4e55e6e83175ef8d7b0",
+    "src/pinet_core/lead_import.py": "acd3f9aac602702275924ab4edb937e62a351f5eefb05b1cadd47eff524e9c5c",
+    "src/pinet_core/knowledge.py": "5b0218e26f170ad9396e46b7a91f12969b25d0cdbe3f038c890b35e1588205a1",
+    "src/pinet_core/agent_instructions.py": "096635572c6667d2cba1afc8991d0d04c7fe62fc6a785e9ab28c758020d9a761",
+    "src/pinet_core/adaptive_instructions.py": "e68ec6cb8f0aea691037d93304432d859b5431107afc5613e0de33135b10b899",
+    "src/pinet_core/learning_controller.py": "a198cef1ddee0f0539f9a2242d41004730b58be217f1aa145997fbbc1ca6245d",
+    "src/pinet_core/jobs.py": "5858d669ebfb3afe43fd1c59676f77bd19177e9c1afb7fdb2629dc3e8bc84494",
+    "src/pinet_core/service.py": "0c57cc337579305fa545ea94979d58be8d6b9c9bdf9c9912acb5995d9d3055de",
+    "scripts/network_bootstrap.py": "06c44253e88382a3ac4e95b2ba2f81f2951f13d28e413e9e1173a8e9d9e779cc",
+    "scripts/import_d1_sqlite.py": "1083ba46c4652dec8349a52a91412e4a963f0531c0b5c13e4d64ec62e87a0cb5",
+    "scripts/network_manifest.mjs": "eafb34f3dd833c1e1cc719484e64c77e7ee28a36677131622a4aefb038b22434",
+    "scripts/local_knowledge_sync.py": "641a1645ed27f9c007392c128ca877492b6cddfa687bac18b43a033b03ad74f2",
+    "tests/test_lead_import.py": "b61bdd5ba746d83b0952396aad548030a8d18a2684ae3fca3c3f5e75daa0b5a3"
+  },
+  "dovanos123_registered_by_this_review": false,
+  "runtime_or_policy_mutated": false
+}

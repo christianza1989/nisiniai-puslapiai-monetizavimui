@@ -1,0 +1,782 @@
+{
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "phase": 1,
+  "evaluatedAt": null,
+  "evaluator": "NOT YET REVIEWED",
+  "environment": {},
+  "version": {},
+  "verdict": {
+    "local": "UNREVIEWED",
+    "launch": "UNREVIEWED",
+    "demand": "UNMEASURED",
+    "visual": "UNREVIEWED"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Requires actual site-specific inspection; do not copy another site's PASS."
+    }
+  ]
+}

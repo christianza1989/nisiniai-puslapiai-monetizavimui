@@ -1,0 +1,298 @@
+{
+  "version": 2,
+  "domain": "miniekskavatoriai.lt",
+  "checkedAt": "2026-10-01T11:04:33.679Z",
+  "terms": [
+    "miniekskavator",
+    "transej",
+    "nuoma"
+  ],
+  "coverage": "records-found",
+  "inventoryComplete": true,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 2,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 2,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": true,
+      "observedRows": 7,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": true,
+      "observedRows": 1,
+      "omitted": 0,
+      "truncated": false
+    }
+  ],
+  "inventory": [
+    {
+      "original": "http://miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20190717222939",
+      "capturedAt": "2019-07-17T22:29:39.000Z",
+      "status": 200,
+      "digest": "QVNF26LPFMHOV3ZUOWVVTEUSVY4DBAPA",
+      "replayUrl": "https://web.archive.org/web/20190717222939/http://miniekskavatoriai.lt/"
+    },
+    {
+      "original": "https://miniekskavatoriai.lt/cdn-cgi/l/email-protection",
+      "path": "/cdn-cgi/l/email-protection",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20220119012829",
+      "capturedAt": "2022-01-19T01:28:29.000Z",
+      "status": 200,
+      "digest": "YP22YH4S3DJY4SDEWPOUXA7OZCTZWHYN",
+      "replayUrl": "https://web.archive.org/web/20220119012829/https://miniekskavatoriai.lt/cdn-cgi/l/email-protection"
+    }
+  ],
+  "roots": [
+    {
+      "original": "http://miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20190717222939",
+      "capturedAt": "2019-07-17T22:29:39.000Z",
+      "status": 200,
+      "digest": "QVNF26LPFMHOV3ZUOWVVTEUSVY4DBAPA",
+      "replayUrl": "https://web.archive.org/web/20190717222939/http://miniekskavatoriai.lt/"
+    },
+    {
+      "original": "http://www.miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20200815201223",
+      "capturedAt": "2020-08-15T20:12:23.000Z",
+      "status": 200,
+      "digest": "AV5YQRESUEN7JXYTYBYDJJ3L7RJM7TRY",
+      "replayUrl": "https://web.archive.org/web/20200815201223/http://www.miniekskavatoriai.lt/"
+    },
+    {
+      "original": "http://www.miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20210228055921",
+      "capturedAt": "2021-02-28T05:59:21.000Z",
+      "status": 200,
+      "digest": "AV5YQRESUEN7JXYTYBYDJJ3L7RJM7TRY",
+      "replayUrl": "https://web.archive.org/web/20210228055921/http://www.miniekskavatoriai.lt/"
+    },
+    {
+      "original": "https://miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20220119003659",
+      "capturedAt": "2022-01-19T00:36:59.000Z",
+      "status": 200,
+      "digest": "Z7TNII254WQYXZZ3PCYS3ZY2BEH5IGLA",
+      "replayUrl": "https://web.archive.org/web/20220119003659/https://miniekskavatoriai.lt/"
+    },
+    {
+      "original": "https://miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20240622015713",
+      "capturedAt": "2024-06-22T01:57:13.000Z",
+      "status": 200,
+      "digest": "RFYMBKKKZ2JYPUKFC7UGUI5GRXUFM3T3",
+      "replayUrl": "https://web.archive.org/web/20240622015713/https://miniekskavatoriai.lt/"
+    },
+    {
+      "original": "https://miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20250212170906",
+      "capturedAt": "2025-02-12T17:09:06.000Z",
+      "status": 200,
+      "digest": "DZAUL2Q3FK6PQAHWH7Z7WK3TJS7RKLR5",
+      "replayUrl": "https://web.archive.org/web/20250212170906/https://miniekskavatoriai.lt/"
+    },
+    {
+      "original": "http://www.miniekskavatoriai.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20260307235308",
+      "capturedAt": "2026-03-07T23:53:08.000Z",
+      "status": 200,
+      "digest": "UUNO3MEG75235WUSGWHB2NIY5Y765YCB",
+      "replayUrl": "https://web.archive.org/web/20260307235308/http://www.miniekskavatoriai.lt/"
+    }
+  ],
+  "snapshots": [
+    {
+      "original": "http://www.miniekskavatoriai.lt/",
+      "timestamp": "20260307235308",
+      "replayUrl": "https://web.archive.org/web/20260307235308/http://www.miniekskavatoriai.lt/",
+      "ok": true,
+      "title": "Domenas Parduodamas",
+      "headings": [
+        "Šis internetinis adresas (domenas) parduodamas:"
+      ],
+      "signals": [
+        "parking-or-domain-sale"
+      ],
+      "contentReadable": true,
+      "approximateWordCount": 13,
+      "htmlSha256": "1a66f13fda920047e675e53889f04d9c2d08dd675817a8f95bf6ae0e4cbd218d",
+      "resolvedUrl": "https://web.archive.org/web/20260307235308id_/http://www.miniekskavatoriai.lt/"
+    },
+    {
+      "original": "http://miniekskavatoriai.lt/",
+      "timestamp": "20190717222939",
+      "replayUrl": "https://web.archive.org/web/20190717222939/http://miniekskavatoriai.lt/",
+      "ok": true,
+      "title": "Mini Ekskavatoriai",
+      "headings": [
+        "Technikos nuoma",
+        "Kasimo ir gręžimo darbai",
+        "Kontaktai",
+        "Ekskavatoriai krautuvai"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 692,
+      "htmlSha256": "60470b50281b6bce8214efc21ee15f2ae5c26242f809556b39f712fc1f9b4d51",
+      "resolvedUrl": "https://web.archive.org/web/20190717222939id_/http://miniekskavatoriai.lt/"
+    },
+    {
+      "original": "https://miniekskavatoriai.lt/cdn-cgi/l/email-protection",
+      "timestamp": "20220119012829",
+      "replayUrl": "https://web.archive.org/web/20220119012829/https://miniekskavatoriai.lt/cdn-cgi/l/email-protection",
+      "ok": true,
+      "title": "Email Protection | Cloudflare",
+      "headings": [
+        "Email Protection",
+        "You are unable to access this email address miniekskavatoriai.lt"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 118,
+      "htmlSha256": "bb1de2c16074bf4933f1f8d099632b86b4cb7acfecf1777555bb8bb0ccd13106",
+      "resolvedUrl": "https://web.archive.org/web/20220119012829id_/https://miniekskavatoriai.lt/cdn-cgi/l/email-protection"
+    },
+    {
+      "original": "https://miniekskavatoriai.lt/",
+      "timestamp": "20220119003659",
+      "replayUrl": "https://web.archive.org/web/20220119003659/https://miniekskavatoriai.lt/",
+      "ok": true,
+      "title": "Mini Ekskavatoriai",
+      "headings": [
+        "Technikos nuoma",
+        "Kasimo ir gręžimo darbai",
+        "Kontaktai",
+        "Ekskavatoriai krautuvai"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 679,
+      "htmlSha256": "515d8735886a2a39ca4eef32e09e003694c4239f1fac495856a3a90915c89fde",
+      "resolvedUrl": "https://web.archive.org/web/20220119003659id_/https://miniekskavatoriai.lt/"
+    }
+  ],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-01T11:04:33.702Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-01T11:04:34.765Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-01T11:04:35.667Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-01T11:04:36.579Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=miniekskavatoriai.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20260307235308id_/http://www.miniekskavatoriai.lt/",
+      "checkedAt": "2026-10-01T11:04:37.491Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20260307235308id_/http://www.miniekskavatoriai.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20190717222939id_/http://miniekskavatoriai.lt/",
+      "checkedAt": "2026-10-01T11:04:38.391Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20190717222939id_/http://miniekskavatoriai.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20220119012829id_/https://miniekskavatoriai.lt/cdn-cgi/l/email-protection",
+      "checkedAt": "2026-10-01T11:04:39.299Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20220119012829id_/https://miniekskavatoriai.lt/cdn-cgi/l/email-protection"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20220119003659id_/https://miniekskavatoriai.lt/",
+      "checkedAt": "2026-10-01T11:04:41.435Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20220119003659id_/https://miniekskavatoriai.lt/"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "miniekskavatoriai",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

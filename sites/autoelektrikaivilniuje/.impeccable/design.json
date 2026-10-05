@@ -1,0 +1,816 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T15:31:03.884Z",
+  "title": "Design System: Autoelektrikai Vilniuje",
+  "extensions": {
+    "sourceOfTruth": {
+      "normativeTokens": "../DESIGN.md YAML frontmatter",
+      "actualImplementation": [
+        {
+          "path": "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/autoelektrikaivilniuje-site.tsx",
+          "sha256": "13a524b2f9c67e67a2aee3f6219bc66f8ad3c273cbd01eab41be8ce619d5c22b"
+        },
+        {
+          "path": "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/autoelektrikaivilniuje-site.module.css",
+          "sha256": "37d7359a34ae0e8c63807798eb9afe0b0461fc7baa9d8d7490012a57ec192cfe"
+        },
+        {
+          "path": "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/autoelektrikaivilniuje-site.tools.tsx",
+          "sha256": "8a6722b7aad145b8052080f528c3e302ba85868953af2119123e669f19f1c62a"
+        }
+      ],
+      "extraction": "Read-only CSS/TSX extraction plus representative actual final screenshots. No product source code changed.",
+      "cssScope": ".shell local CSS-module properties, not :root; preview snippets resolve these properties to source literals because the shadow-DOM preview does not inherit .shell.",
+      "precedence": "Current source and normative sections beat archival intended decisions. Decision history is preserved, not normalized retroactively."
+    },
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Informacinė mėlyna",
+        "source": "CSS:1 .shell --blue"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "source": "CSS:1 .shell --ink"
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Baltas skaitymo laukas",
+        "source": "CSS:1 .shell background; CSS:10 fields/form"
+      },
+      "pale": {
+        "role": "neutral",
+        "displayName": "Šviesus melsvas laukas",
+        "source": "CSS:1 .shell --pale"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "source": "CSS:1 .shell --muted"
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Geltonas veiksmas",
+        "source": "CSS:1 .shell --yellow"
+      },
+      "action-hover": {
+        "role": "state",
+        "displayName": "Šviesesnis geltonas hover",
+        "source": "CSS:6 .button:hover"
+      },
+      "route-hover": {
+        "role": "state",
+        "displayName": "Simptomų kelio hover",
+        "source": "CSS:7 .symptoms a:hover"
+      },
+      "line-soft": {
+        "role": "neutral",
+        "displayName": "Švelni skiriamoji linija",
+        "source": "CSS:5 .header; CSS:9 .contents nav a"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Faktų ir panelių linija",
+        "source": "CSS:8 .facts; CSS:10 .form; CSS:11 .footerBottom"
+      },
+      "line-on-blue": {
+        "role": "neutral",
+        "displayName": "Linija mėlyname lauke",
+        "source": "CSS:7 .symptoms"
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Įvesties kraštas",
+        "source": "CSS:10 input/textarea/select"
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Ruošinio placeholder",
+        "source": "CSS:10 input::placeholder"
+      },
+      "invalid": {
+        "role": "state",
+        "displayName": "Vartotojo paliesta netinkama įvestis",
+        "source": "CSS:10 input:user-invalid / textarea:user-invalid"
+      }
+    },
+    "tonalRamps": {
+      "status": "omitted",
+      "reason": "No ramp exists in source. Owner requires actual tokens; synthesized preview tones are not introduced as a system."
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Homepage h1",
+        "purpose": "Pagrindinis homepage pavadinimas.",
+        "source": "CSS:4/7/13"
+      },
+      "page-title": {
+        "displayName": "Vidinio puslapio h1",
+        "purpose": "Gidų, indekso ir kontaktų pavadinimas.",
+        "source": "CSS:9/13"
+      },
+      "headline": {
+        "displayName": "Pagrindinis h2",
+        "purpose": "Sekcijų hierarchija; signature components turi atskirus tikrus overrides.",
+        "source": "CSS:4/8/9/10/13"
+      },
+      "title": {
+        "displayName": "Prozos h3",
+        "purpose": "Trumpa subordinuota antraštė.",
+        "source": "CSS:4"
+      },
+      "body": {
+        "displayName": "Skaitoma proza",
+        "purpose": "720px iki straipsnio plotis.",
+        "source": "CSS:1/9"
+      },
+      "action": {
+        "displayName": "Veiksmas",
+        "purpose": "Primary ir secondary mygtukai.",
+        "source": "CSS:6/13"
+      },
+      "navigation": {
+        "displayName": "Desktop navigacija",
+        "purpose": "Pagrindinių kelių pasirinkimas.",
+        "source": "CSS:5"
+      },
+      "label": {
+        "displayName": "Matomas formos label",
+        "purpose": "Nepakeičiamas placeholder.",
+        "source": "CSS:10"
+      },
+      "caption": {
+        "displayName": "Iliustracijos antraštė",
+        "purpose": "14px teksto pagalbinė eilutė.",
+        "source": "CSS:4"
+      }
+    },
+    "contextualTypography": [
+      {
+        "name": "hero-lead",
+        "css": "font-size:23px;line-height:1.4;max-width:560px",
+        "mobile": "font-size:21px",
+        "source": "CSS:7/13"
+      },
+      {
+        "name": "intro-lead",
+        "css": "font-size:22px;line-height:1.5;max-width:70ch",
+        "mobile": "font-size:20px",
+        "source": "CSS:9/13"
+      },
+      {
+        "name": "pilot",
+        "css": "font-size:15px;line-height:1.6;max-width:580px",
+        "source": "CSS:7"
+      },
+      {
+        "name": "guide-title",
+        "css": "font-size:34px;max-width:550px",
+        "mobile": "font-size:32px",
+        "source": "CSS:8/13"
+      },
+      {
+        "name": "breadcrumb",
+        "css": "font-size:14px;line-height:1.6;max-width:85ch",
+        "source": "CSS:9"
+      },
+      {
+        "name": "byline",
+        "css": "font-size:14px;line-height:1.6;max-width:90ch",
+        "source": "CSS:9"
+      },
+      {
+        "name": "callout-h2",
+        "css": "font-size:clamp(42px,5vw,64px);max-width:460px",
+        "mobile": "font-size:48px",
+        "source": "CSS:8/13"
+      },
+      {
+        "name": "contents-h2",
+        "css": "font-size:28px",
+        "source": "CSS:9"
+      },
+      {
+        "name": "inquiry-h2",
+        "css": "font-size:38px",
+        "mobile": "font-size:34px",
+        "source": "CSS:10/13"
+      }
+    ],
+    "shadows": [
+      {
+        "name": "mobile-nav-overlay",
+        "value": "0 8px 16px #15233c1a",
+        "purpose": "Atverto native meniu atskyrimas nuo turinio.",
+        "source": "CSS:13 .mobileNav nav"
+      }
+    ],
+    "motion": [
+      {
+        "name": "link-button-state",
+        "value": "background-color 120ms, color 120ms",
+        "purpose": "Trumpas tikros hover/focus būsenos perėjimas; CSS numatytas ease.",
+        "source": "CSS:4"
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition:none",
+        "purpose": "prefers-reduced-motion:reduce nuorodoms/mygtukams.",
+        "source": "CSS:14",
+        "evidence": "../qa/ui-flow.json reduced motion transition 0s"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "container-gutters",
+        "value": "1240px",
+        "query": "(max-width:1240px)",
+        "purpose": "32px talpų tarpai ir mažesni grid gap.",
+        "source": "CSS:12"
+      },
+      {
+        "name": "single-column",
+        "value": "800px",
+        "query": "(max-width:800px)",
+        "purpose": "20px talpos, native menu, viena kolona, TOC prieš article.",
+        "source": "CSS:13"
+      }
+    ],
+    "focus": {
+      "standard": {
+        "css": "outline:3px solid var(--blue);outline-offset:5px",
+        "colorRef": "{colors.primary}",
+        "source": "CSS:3 .shell :focus-visible"
+      },
+      "blueSurface": {
+        "css": "outline-color:var(--yellow)",
+        "colorRef": "{colors.action}",
+        "contexts": [
+          "hero",
+          "callout"
+        ],
+        "source": "CSS:7/8"
+      },
+      "skipLink": {
+        "css": "top:-100px; left:20px; z-index:50; padding:12px; on :focus top:10px",
+        "source": "CSS:5",
+        "evidence": "../qa/ui-flow.json keyboard skip link"
+      },
+      "nativeFormAnchor": {
+        "id": "zinute",
+        "tabIndex": -1,
+        "css": "scroll-margin-top:24px",
+        "source": [
+          "site.tsx:28",
+          "site.tools.tsx:17/26",
+          "CSS:10"
+        ],
+        "evidence": "../qa/review-confirm-ui.json: keyboard Enter active form at top24px; no-JS #zinute"
+      },
+      "preparedMessage": {
+        "target": "message",
+        "source": "site.tools.tsx:12"
+      }
+    },
+    "selection": {
+      "css": "background:var(--yellow);color:var(--ink)",
+      "backgroundRef": "{colors.action}",
+      "textRef": "{colors.ink}",
+      "source": "CSS:2",
+      "seedDifference": "Provisional deep-blue selection was intended; yellow/ink is actual."
+    },
+    "caret": {
+      "css": "caret-color:var(--blue)",
+      "colorRef": "{colors.primary}",
+      "contexts": [
+        "input",
+        "textarea"
+      ],
+      "source": "CSS:3",
+      "computedEvidence": "../qa/review-confirm-ui.json INPUT caret rgb(25,73,184)",
+      "select": "No custom caret rule."
+    },
+    "placeholder": {
+      "css": "color:#526481;opacity:1;font-size:15px",
+      "colorRef": "{colors.placeholder}",
+      "contexts": [
+        "worksheet input"
+      ],
+      "source": "CSS:10",
+      "textarea": "No placeholder exists in actual native message field."
+    },
+    "controls": {
+      "field": {
+        "css": "min-height:48px;width:100%;border:1px solid #7891bd;padding:10px 12px;border-radius:0",
+        "source": "CSS:4/10"
+      },
+      "textarea": {
+        "css": "resize:vertical",
+        "rows": 11,
+        "source": [
+          "CSS:10",
+          "site.tools.tsx:30"
+        ]
+      },
+      "buttons": {
+        "css": "min-height:52px;border:1px solid var(--yellow)",
+        "source": "CSS:6"
+      },
+      "linksAndSummary": {
+        "css": "min-height:44px",
+        "source": "CSS:5/6/9/13"
+      },
+      "consent": {
+        "css": "width:22px;height:22px;min-height:22px;margin-top:2px;accent-color:var(--blue)",
+        "source": "CSS:10",
+        "colorRef": "{colors.primary}",
+        "labelCss": "display:flex;align-items:flex-start;gap:12px;min-height:44px;font-weight:400"
+      },
+      "invalid": {
+        "css": "border:2px solid #a32323",
+        "selector": "input:user-invalid, textarea:user-invalid",
+        "colorRef": "{colors.invalid}",
+        "source": "CSS:10"
+      },
+      "disabledWorksheetButton": {
+        "css": "opacity:.55;cursor:default",
+        "source": "CSS:6",
+        "condition": "Disabled until hydration: useSyncExternalStore ready is false on server."
+      },
+      "nativeSubmission": {
+        "action": "/uzklausa",
+        "method": "post",
+        "required": [
+          "name",
+          "email",
+          "message",
+          "consent"
+        ],
+        "source": "site.tools.tsx:26-33",
+        "scope": "Local synthetic test; no operational receipt or service proof."
+      },
+      "localPreparation": {
+        "source": "site.tools.tsx:8-12",
+        "unknownValue": "Nežinau / reikia aptarti",
+        "sends": false,
+        "storage": "React/browser state only; no hidden send or storage from prepare."
+      }
+    },
+    "hover": {
+      "primaryButton": {
+        "backgroundRef": "{colors.action-hover}",
+        "source": "CSS:6"
+      },
+      "secondaryButton": {
+        "backgroundRef": "{colors.pale}",
+        "source": "CSS:6"
+      },
+      "symptomRoute": {
+        "backgroundRef": "{colors.route-hover}",
+        "source": "CSS:7"
+      },
+      "links": {
+        "css": "text-decoration-thickness:2px",
+        "default": "1px",
+        "source": "CSS:3",
+        "note": "Visible only where text-decoration is present; no new underline is introduced for plain nav."
+      },
+      "field": "No custom hover rule.",
+      "active": "No custom :active variant is defined."
+    },
+    "responsive": {
+      "container": {
+        "maxWidth": "1200px",
+        "source": "CSS:5/7/8/9/10"
+      },
+      "article": {
+        "maxWidth": "720px",
+        "source": "CSS:9"
+      },
+      "gutters": {
+        "desktop": "centered max-width",
+        "tablet": "32px",
+        "mobile": "20px",
+        "source": "CSS:12/13"
+      },
+      "desktopHero": {
+        "columns": "1fr 1fr",
+        "gap": "64px",
+        "h1MaxWidth": "1000px",
+        "photoHeight": "282px",
+        "source": "CSS:7"
+      },
+      "tabletHero": {
+        "gap": "40px",
+        "source": "CSS:12"
+      },
+      "mobileHero": {
+        "h1": "clamp(48px,11.5vw,70px)",
+        "columns": "1fr",
+        "gap": "28px",
+        "photoHeight": "240px",
+        "order": [
+          "h1",
+          "lead + CTA",
+          "pilot boundary",
+          "illustration",
+          "symptom links"
+        ],
+        "source": [
+          "CSS:13",
+          "site.tsx:21"
+        ]
+      },
+      "mobilePageTitle": {
+        "fontSize": "46px",
+        "source": "CSS:13"
+      },
+      "symptomSection": {
+        "columns": "5fr 6fr",
+        "gap": "96px",
+        "tabletGap": "48px",
+        "mobileColumns": "1fr",
+        "mobileGap": "28px",
+        "source": "CSS:8/12/13"
+      },
+      "guideList": {
+        "desktopColumns": "1fr 1fr",
+        "gap": "48px 40px",
+        "firstItemGridRow": "span 2",
+        "mobileColumns": "1fr",
+        "mobileGap": "40px",
+        "mobileFirstItemGridRow": "auto",
+        "source": "CSS:8/13"
+      },
+      "guideLayout": {
+        "desktopColumns": "minmax(0,720px) minmax(200px,300px)",
+        "desktopGap": "80px",
+        "tabletGap": "48px",
+        "mobileDisplay": "flex;flex-direction:column;gap:32px",
+        "mobileContentsOrder": -1,
+        "source": "CSS:9/12/13"
+      },
+      "inquiry": {
+        "desktopColumns": "1fr 1fr",
+        "desktopGap": "64px",
+        "desktopPanelPadding": "36px",
+        "mobileColumns": "1fr",
+        "mobileGap": "28px",
+        "mobilePanelPadding": "24px",
+        "mobileButtons": "width:100%;padding-left:10px;padding-right:10px;font-size:17px",
+        "source": "CSS:10/13"
+      },
+      "indexChooserFirst": {
+        "source": "site.tsx:29",
+        "evidence": "../qa/review-confirm-ui.json first mobile guide image y421.98px"
+      },
+      "viewportEvidence": {
+        "desktop": [
+          1440,
+          1000
+        ],
+        "mobile": [
+          390,
+          844
+        ],
+        "narrow": [
+          320,
+          844
+        ],
+        "tablet": [
+          768,
+          1024
+        ],
+        "method": "Viewport emulation",
+        "physicalDevice": "UNVERIFIED",
+        "browserZoom200": "UNVERIFIED"
+      }
+    },
+    "crops": [
+      {
+        "role": "hero",
+        "css": "height:282px;object-fit:cover",
+        "mobile": "height:240px",
+        "sizes": "(max-width: 800px) calc(100vw - 40px), (max-width: 1240px) calc((100vw - 104px) / 2), 568px",
+        "source": [
+          "CSS:7/13",
+          "site.tsx:21"
+        ]
+      },
+      {
+        "role": "battery-supporting",
+        "css": "aspect-ratio:4/3;object-fit:cover",
+        "sizes": "(max-width: 800px) calc(100vw - 40px), (max-width: 1240px) calc((100vw - 112px) * 5 / 11), 502px",
+        "source": [
+          "CSS:8",
+          "site.tsx:22"
+        ]
+      },
+      {
+        "role": "guide-chooser-first",
+        "css": "aspect-ratio:4/3;object-fit:cover",
+        "mobile": "aspect-ratio:3/2",
+        "source": "CSS:8/13"
+      },
+      {
+        "role": "guide-chooser-other",
+        "css": "aspect-ratio:2.4/1;object-fit:cover",
+        "mobile": "aspect-ratio:3/2",
+        "source": "CSS:8/13"
+      },
+      {
+        "role": "guide-chooser-sizes",
+        "sizes": "(max-width: 760px) calc(100vw - 40px), (max-width: 1240px) 48vw, 580px",
+        "source": "site.tsx:18",
+        "note": "760px is the actual resource-size hint, not a CSS breakpoint; the layout changes at 800px."
+      },
+      {
+        "role": "article-opening",
+        "css": "aspect-ratio:3/2;object-fit:cover",
+        "sizes": "(max-width: 800px) calc(100vw - 40px), 720px",
+        "source": [
+          "CSS:9",
+          "site.tsx:29"
+        ]
+      }
+    ],
+    "provenance": {
+      "product": "../PRODUCT.md",
+      "business": "../BUSINESS.md",
+      "qualityBar": "../research/QUALITY-BAR.md",
+      "provisionalArchive": "../research/DESIGN-before-documentation.md",
+      "fullPreservedHistory": "../DESIGN.md Decision history appendix",
+      "seed": {
+        "id": "cd693bdb",
+        "candidate": 5,
+        "evidence": "../research/concept-seed.txt",
+        "limit": "Candidate list recorded after seed output and before studies/code; not an independent randomization benchmark."
+      },
+      "studies": [
+        "../research/study-b-desktop.png",
+        "../research/study-b-mobile.png"
+      ],
+      "media": "../MEDIA.json",
+      "mediaContract": "C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/MEDIA_CORE.md",
+      "mediaRoles": [
+        "hero",
+        "battery",
+        "start",
+        "scope"
+      ],
+      "mediaMeaning": "Original generated illustrative context; not our workshop, staff, customer or completed job.",
+      "privatePrompts": [
+        "../research/hero-prompt.txt",
+        "../research/battery-prompt.txt",
+        "../research/start-prompt.txt",
+        "../research/scope-prompt.txt"
+      ],
+      "publicRaster": "Shared importer responsive WebP families; no public generation badge or exact prompt embedding. Owner contract overrides upstream example.",
+      "objectPosition": "No custom object-position; CSS default central crop. No invented focal-point coordinates.",
+      "fonts": "../research/fonts.json",
+      "fontCss": "C:/Users/lenovo/Documents/dovanos-memorycasting/public/fonts/autoelektrikaivilniuje/fonts.css",
+      "licences": [
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/public/fonts/autoelektrikaivilniuje/barlow-OFL.txt",
+        "C:/Users/lenovo/Documents/dovanos-memorycasting/public/fonts/autoelektrikaivilniuje/barlowcondensed-OFL.txt"
+      ],
+      "licenceStatement": "Copyright 2017 The Barlow Project Authors; SIL Open Font License 1.1.",
+      "actualUsedWeights": {
+        "Barlow": [
+          400,
+          500,
+          600
+        ],
+        "BarlowCondensed": [
+          600
+        ]
+      },
+      "downloadedNotNormativeWeight": {
+        "BarlowCondensed": 700
+      },
+      "finalScreenshotsViewedByDocumenter": [
+        "../qa/home-desktop-top.jpg",
+        "../qa/home-mobile-top.jpg",
+        "../qa/home-desktop-final.jpg",
+        "../qa/gidai-desktop-top.jpg",
+        "../qa/gidai-mobile-top.jpg",
+        "../qa/gidai-mobile-final.jpg",
+        "../qa/automobilis-neuzsiveda-desktop-top.jpg",
+        "../qa/automobilis-neuzsiveda-mobile-top.jpg",
+        "../qa/kontaktai-desktop-top.jpg",
+        "../qa/kontaktai-message-mobile.jpg",
+        "../qa/kontaktai-mobile-final.jpg"
+      ],
+      "finishReview": "../qa/finish-review.json",
+      "fixes": "../qa/review-fixes.json",
+      "nativeAnchorEvidence": "../qa/review-confirm-ui.json",
+      "technicalEvidence": [
+        "../qa/lighthouse-summary.json",
+        "../qa/ui-flow.json"
+      ],
+      "detector": "../qa/detector.json",
+      "detectorAssessment": "../qa/DETECTOR-ASSESSMENT.md"
+    },
+    "reviewScope": {
+      "initialCraft": {
+        "score": 8.2,
+        "scale": 10,
+        "disposition": "fix",
+        "preservedIn": "../qa/finish-review.json initialReview"
+      },
+      "boundedConfirmation": {
+        "score": 8.6,
+        "scale": 10,
+        "subjective": true,
+        "disposition": "ship",
+        "wholeSurfaceRegrade": false,
+        "fixes": [
+          "F1 resolved",
+          "F2 resolved"
+        ],
+        "capturesReviewedByFreshReviewer": 14,
+        "source": "../qa/finish-review.json postFixVerdict"
+      },
+      "detector": {
+        "runs": 1,
+        "rerunByDocumenter": false,
+        "finding": "border-accent-on-rounded",
+        "disposition": "independently confirmed false-positive: straight rail border with no radius",
+        "wholeFloorPass": false
+      },
+      "limitations": [
+        "200% real browser zoom UNVERIFIED",
+        "Viewport emulation is not physical device",
+        "No whole-surface WCAG conformance determination",
+        "Local Lighthouse/UI is technical evidence, not craft verdict",
+        "Local SMTP and voice off; INBOX receipt unverified",
+        "Live DNS/TLS/deployment unverified",
+        "Partner/service/price/qualified demand unconfirmed"
+      ],
+      "notCanonized": "No craft-floor refusal was promoted into a house token. Historical intended values remain archival; code was not altered to match the document."
+    },
+    "previewPolicy": "Only actual distinctive component rules are shown, with ds- scoped classes and resolved source literals. Native fallback fonts and markers remain. Snippets do not supply the React worksheet handler, page data or POST runtime."
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Geltonas veiksmas; demonstracija type=button nieko nesiunčia. Šaltinyje tas pats variantas naudojamas anchor ir native submit.",
+      "html": "<button type=\"button\" class=\"ds-primary\">Pateikti išankstinį poreikį →</button>",
+      "css": ".ds-primary{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;font-size:18px;font-weight:600;text-decoration:none;cursor:pointer;background:#ffcf52;border:1px solid #ffcf52;color:#15233c}.ds-primary:hover{background:#ffde89}.ds-primary:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-primary{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}",
+      "source": [
+        "CSS:6",
+        "site.tools.tsx:33"
+      ],
+      "omittedStates": "Custom :active nėra šaltinyje; blue-surface focus override nurodytas extensions.focus."
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Neprivalomo ruošinio paruošimas; disabled prieš hidrataciją.",
+      "html": "<button type=\"button\" class=\"ds-secondary\">Paruošti žinutę →</button>",
+      "css": ".ds-secondary{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;font-size:18px;font-weight:600;text-decoration:none;cursor:pointer;background:#fff;border:1px solid #1949b8;color:#1949b8}.ds-secondary:hover{background:#eef3ff}.ds-secondary:disabled{opacity:.55;cursor:default}.ds-secondary:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-secondary{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}",
+      "source": [
+        "CSS:6",
+        "site.tools.tsx:23"
+      ]
+    },
+    {
+      "name": "Worksheet Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Label ir papildoma pagalba nepakeičiami placeholder; nulinis įvesties radius.",
+      "html": "<div class=\"ds-field-group\"><label class=\"ds-label\" for=\"ds-car\">Automobilis <span>Modelis ir apytikriai metai; be VIN ar numerio</span></label><input class=\"ds-field\" id=\"ds-car\" maxlength=\"180\" placeholder=\"Pvz., modelis, 2014 m., benzinas\"></div>",
+      "css": ".ds-field-group{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;color:#15233c}.ds-label{display:block;font-size:17px;font-weight:500;margin:24px 0 8px}.ds-label span{display:block;font-size:14px;line-height:1.5;font-weight:400}.ds-field{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;min-height:48px;width:100%;border:1px solid #7891bd;background:#fff;color:#15233c;padding:10px 12px;border-radius:0;caret-color:#1949b8}.ds-field::placeholder{color:#526481;opacity:1;font-size:15px}.ds-field:user-invalid{border:2px solid #a32323}.ds-field:focus-visible{outline:3px solid #1949b8;outline-offset:5px}",
+      "source": [
+        "CSS:3/4/10",
+        "site.tools.tsx:18"
+      ],
+      "omittedStates": "Custom hover įvestims nėra; select caret/placeholder taisyklės nenustatytos."
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "refersTo": "nav-action",
+      "description": "Dabartinis puslapis pabraukiamas, outline veiksmas atskirtas nuo paprastų nuorodų.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Pagrindinė navigacija\"><a class=\"ds-nav-link\" href=\"/diagnostikos-poreikis\">Poreikio tyrimas</a><a class=\"ds-nav-link\" href=\"/gidai\" aria-current=\"page\">Gidai</a><a class=\"ds-nav-link ds-nav-action\" href=\"/kontaktai#poreikis\">Aprašyti poreikį →</a></nav>",
+      "css": ".ds-nav{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;color:#15233c;display:flex;align-items:center;gap:28px;font-size:17px;font-weight:500}.ds-nav-link{display:flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px}.ds-nav-link[aria-current]{text-decoration:underline}.ds-nav-link:hover{text-decoration-thickness:2px}.ds-nav-action{padding:10px 16px;border:1px solid #1949b8;color:#1949b8}.ds-nav-link:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-nav-link{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-nav-link{transition:none}}",
+      "source": [
+        "CSS:3/5",
+        "site.tsx:17"
+      ]
+    },
+    {
+      "name": "Native Mobile Menu",
+      "kind": "nav",
+      "description": "Natyvus details/summary meniu; vienintelė ambient šešėlio vieta.",
+      "html": "<details class=\"ds-menu\"><summary class=\"ds-menu-summary\">Meniu</summary><nav class=\"ds-menu-nav\" aria-label=\"Mobilioji navigacija\"><a class=\"ds-menu-link\" href=\"/diagnostikos-poreikis\">Poreikio tyrimas</a><a class=\"ds-menu-link\" href=\"/gidai\">Gidai</a><a class=\"ds-menu-link ds-menu-action\" href=\"/kontaktai#poreikis\">Aprašyti poreikį →</a></nav></details>",
+      "css": ".ds-menu{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;font-size:16px;color:#15233c;position:relative}.ds-menu-summary{min-height:44px;padding:10px 6px;cursor:pointer}.ds-menu-nav{position:absolute;z-index:10;right:0;width:260px;max-width:calc(100vw - 40px);background:#fff;border:1px solid #1949b8;box-shadow:0 8px 16px #15233c1a;padding:14px;display:flex;flex-direction:column}.ds-menu-link{padding:12px;min-height:44px;color:inherit;text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px}.ds-menu-link:hover{text-decoration-thickness:2px}.ds-menu-action{border:1px solid #1949b8;color:#1949b8}.ds-menu-summary:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-menu-link:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-menu-link{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-menu-link{transition:none}}",
+      "source": [
+        "CSS:13",
+        "site.tsx:17"
+      ],
+      "previewNote": "Parodo mobile variantą be desktop media slėpimo; tai ne produkto papildomas breakpoint."
+    },
+    {
+      "name": "Native Form Panel",
+      "kind": "card",
+      "refersTo": "form-panel",
+      "description": "Balta panelė su realiomis piloto ir vietinio bandymo ribomis. Preview yra section, todėl jokio POST nėra.",
+      "html": "<section class=\"ds-form\" id=\"ds-native-message\" tabindex=\"-1\"><h2>Pateikite poreikį</h2><p>Išankstinis tyrimas. Tai nėra vizitas, pasiūlymas ar mokama paslauga.</p><p>Vietinis bandymas: naudokite tik sintetinius duomenis. Laiškų siuntimas išjungtas.</p></section>",
+      "css": ".ds-form{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;color:#15233c;background:#fff;border:1px solid #b5c5e3;padding:36px;scroll-margin-top:24px}.ds-form h2{font-family:\"Barlow Condensed\",Arial,sans-serif;font-weight:600;font-size:38px;line-height:1.05;letter-spacing:-.015em;margin:0 0 24px}.ds-form p{font-size:16px;line-height:1.6;margin:0 0 24px}.ds-form:focus-visible{outline:3px solid #1949b8;outline-offset:5px}@media(max-width:800px){.ds-form{padding:24px}.ds-form h2{font-size:34px}}",
+      "source": [
+        "CSS:10/13",
+        "site.tools.tsx:26/27"
+      ],
+      "omittedStates": "Nėra panelės hover ar custom active būsenos."
+    },
+    {
+      "name": "Guide Contents",
+      "kind": "nav",
+      "description": "Tiesi mėlyna rail linija ir natyvus details; mobile blokas persikelia prieš straipsnį.",
+      "html": "<aside class=\"ds-contents\"><h2>Šiame gide</h2><details><summary class=\"ds-contents-summary\">Gido turinys</summary><nav aria-label=\"Gido turinys\"><a class=\"ds-contents-link\" href=\"#section-1\">Ką užrašyti prieš diagnostiką</a><a class=\"ds-contents-link\" href=\"#saltiniai\">Šaltiniai</a></nav></details><a class=\"ds-contents-action\" href=\"/kontaktai#poreikis\">Aprašyti savo poreikį →</a></aside>",
+      "css": ".ds-contents{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;color:#15233c;font-size:15px;line-height:1.45;border-top:3px solid #1949b8;padding-top:24px}.ds-contents h2{font-family:\"Barlow Condensed\",Arial,sans-serif;font-weight:600;font-size:28px;line-height:1.05;letter-spacing:-.015em;margin:0 0 24px}.ds-contents-summary{min-height:44px;padding:10px 0;font-weight:600;cursor:pointer}.ds-contents nav{display:flex;flex-direction:column}.ds-contents-link{min-height:44px;padding:12px 0;border-bottom:1px solid #d8e0ed;color:inherit;text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px}.ds-contents-action{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:#1949b8;margin-top:22px;text-underline-offset:4px;text-decoration-thickness:1px}.ds-contents-link:hover,.ds-contents-action:hover{text-decoration-thickness:2px}.ds-contents-summary:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-contents-link:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-contents-action:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-contents-link{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-contents-link{transition:none}}.ds-contents-action{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-contents-action{transition:none}}@media(max-width:800px){.ds-contents h2{margin-bottom:8px}.ds-contents-action{margin-top:12px}}",
+      "source": [
+        "CSS:9/13",
+        "site.tsx:29"
+      ]
+    },
+    {
+      "name": "Contact Mark and Wordmark",
+      "kind": "custom",
+      "description": "Originali kontaktų SVG geometrija; tikras whitespace ir antra eilutė.",
+      "html": "<a class=\"ds-brand\" href=\"/\" aria-label=\"Autoelektrikai Vilniuje – pradžia\"><svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" aria-hidden=\"true\" fill=\"none\"><path d=\"M3 10h12v20H3M37 10H25v20h12M15 20h10\" stroke=\"currentColor\" stroke-width=\"3\"/><circle cx=\"20\" cy=\"20\" r=\"3\" fill=\"currentColor\"/></svg><span>Autoelektrikai <strong>Vilniuje</strong></span></a>",
+      "css": ".ds-brand{font-family:\"Barlow Condensed\",Arial,sans-serif;font-weight:600;letter-spacing:-.015em;line-height:1;display:inline-flex;align-items:center;gap:12px;font-size:27px;color:#1949b8;text-decoration:none}.ds-brand svg{flex:none}.ds-brand strong{display:block;font-weight:600}.ds-brand:focus-visible{outline:3px solid #1949b8;outline-offset:5px}.ds-brand{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-brand{transition:none}}@media(max-width:800px){.ds-brand{font-size:24px;gap:10px}.ds-brand svg{width:34px;height:34px}}",
+      "source": [
+        "CSS:4/5/13",
+        "site.tsx:14/17/32"
+      ]
+    },
+    {
+      "name": "Symptom Route",
+      "kind": "custom",
+      "description": "Informacinė nuorodos juosta mėlyname lauke. Tekstinė krypties rodyklė yra native navigacijos turinys.",
+      "html": "<nav class=\"ds-routes\" aria-label=\"Simptomo gidai\"><a class=\"ds-route\" href=\"/akumuliatorius-issikrauna\"><span>Po stovėjimo</span>Akumuliatorius išsikrauna <b aria-hidden=\"true\">↗</b></a><a class=\"ds-route\" href=\"/automobilis-neuzsiveda\"><span>Bandant užvesti</span>Automobilis neužsiveda <b aria-hidden=\"true\">↗</b></a></nav>",
+      "css": ".ds-routes{font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.65;color:#fff;background:#1949b8;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:36px;border-top:1px solid #7999df}.ds-route{position:relative;padding:18px 50px 22px 0;color:inherit;text-decoration:none;font-size:24px;font-weight:500}.ds-route+.ds-route{border-left:1px solid #7999df;padding-left:32px}.ds-route span{font-size:15px;display:block;font-weight:400}.ds-route b{position:absolute;right:28px;top:28px;font-size:30px;font-weight:400}.ds-route:hover{background:#214fac}.ds-route:focus-visible{outline:3px solid #ffcf52;outline-offset:5px}.ds-route{transition:background-color 120ms,color 120ms}@media(prefers-reduced-motion:reduce){.ds-route{transition:none}}@media(max-width:800px){.ds-routes{grid-template-columns:1fr;margin-top:28px}.ds-route{padding:16px 44px 20px 0}.ds-route+.ds-route{padding-left:0;border-left:none;border-top:1px solid #7999df}.ds-route b{right:4px}}",
+      "source": [
+        "CSS:7/13",
+        "site.tsx:21"
+      ]
+    }
+  ],
+  "narrative": {
+    "northStar": "Signalas ir aiški užduotis",
+    "overview": "Ryškios mėlynos informacinės juostos, baltas skaitymo laukas ir kondensuoti pavadinimai padeda vairuotojui pereiti nuo pastebėto simptomo prie tikslesnio aprašo. Originalus dviejų kontaktų SVG ženklas sieja šį pasaulį su elektra; realistiškos temos iliustracijos duoda kontekstą, o didelės antraštės ir atviri prozos plotai duoda orientaciją.\n\nSistema skirta dienos šviesoje telefonu skaitomam išankstinio poreikio pilotui. Ji rodo klausimus ir diagnostikos ribas, todėl jos negalima paversti veikiančio serviso, užsakymo ar automatinės diagnozės pažadu. Įprastus vizualinius sprendimus šioje sesijoje pasirinko agentas pagal projekto adaptaciją; žmogaus patvirtinto comp nėra.",
+    "keyCharacteristics": [
+      "Nenutrūkstantis mėlynas laukas ir šviesios prozos pertraukos.",
+      "Barlow Condensed pavadinimai su Barlow skaitymo tekstu.",
+      "Geltonas konkretus veiksmas, mėlynos tekstinės nuorodos.",
+      "Tiesūs kampai, dalijančios linijos ir nevienodas gidų nuotraukų ritmas.",
+      "Neprivalomas redaguojamas ruošinys ir tiesioginis kelias į natyvią formą."
+    ],
+    "rules": [
+      {
+        "name": "The Informacinės juostos Rule",
+        "body": "Mėlynas laukas sutelkia orientaciją ir veiksmą; ilga proza lieka baltame arba pale lauke.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sąžiningo signalo Rule",
+        "body": "Akcentas rodo navigaciją ir formos būseną, o ne išgalvotą gedimo diagnozę, kainą ar skubią serviso prieinamumo būseną.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dviejų balsų Rule",
+        "body": "Kondensuota šeima skirta pavadinimams ir ženklui; aplinkybes, ribas ir formos įvestį skaitome Barlow.",
+        "section": "typography"
+      },
+      {
+        "name": "The Pasirinkimo pirmumo Rule",
+        "body": "Gidų pasirinkimas seka trumpą įvadą, o formos tiesioginis kelias matomas prieš neprivalomą ruošinį.",
+        "section": "layout"
+      },
+      {
+        "name": "The Plokščio lauko Rule",
+        "body": "Įprastos sekcijos lieka plokščios; šešėlis skirtas tik mobiliojo meniu persidengimui.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** išlaikyti Barlow Condensed pavadinimų ir Barlow prozos vaidmenis.",
+      "**Do** išsaugoti piloto ribą greta pagrindinio veiksmo ir native formos.",
+      "**Do** gidų pasirinkimą rodyti po trumpo įvado, o tiesioginį formos kelią prieš neprivalomą ruošinį.",
+      "**Do** naudoti MEDIA_CORE responsive WebP šeimą su faktinį CSS plotį atitinkančiu sizes.",
+      "**Do** kiekvieną temos crop ir mažą ekraną peržiūrėti realioje ekrano nuotraukoje.",
+      "**Do** išsaugoti matomą keyboard fokusą, native details ir reduced-motion taisyklę."
+    ],
+    "donts": [
+      "**Don't** konteksto iliustracijų pateikti kaip mūsų serviso, darbuotojų ar klientų atliktų darbų.",
+      "**Don't** išankstinio poreikio formos stilizuoti kaip rezervacijos, diagnozės ar kainos pasiūlymo.",
+      "**Don't** tokenais įteisinti pridėtų dekoratyvių kortelių šešėlių, caps kicker ar glyph ikonų rinkinio.",
+      "**Don't** techninių balų, viewport emuliacijos ar vieno atmesto detector radinio vadinti visos dizaino sistemos PASS."
+    ]
+  }
+}

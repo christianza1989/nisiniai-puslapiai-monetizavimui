@@ -1,0 +1,21 @@
+{
+  "version": "2026-10-02-v5-quality",
+  "site_id": "auksarankiams",
+  "test_recipient": "owner@example.com",
+  "clients": [
+    {
+      "id": "retain_model_when_quantity_changes",
+      "messages": [
+        "Reikia surinkti dvi IKEA MALM komodas. Instrukcijas ir visus tvirtinimus turiu.",
+        "Pataisau kiekį: keturios tokios pačios MALM komodos. Parodykite el. pašto lauką dabar, noriu pasiruošimo santraukos."
+      ],
+      "contact": true,
+      "contact_at": "during",
+      "expected_need": {
+        "quantity": "4"
+      },
+      "label": "retain_model_when_quantity_changes",
+      "split": "blind"
+    }
+  ]
+}

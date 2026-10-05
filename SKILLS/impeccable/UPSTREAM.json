@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/pbakaus/impeccable",
+  "commit": "0d6b47ea19b63afe15e3f93a44d5d9fbbc6fd275",
+  "path": ".agents/skills/impeccable",
+  "retrievedAt": "2026-09-30",
+  "skillVersion": "4.4.0",
+  "engineVersion": "0.1.8",
+  "license": "Apache-2.0",
+  "localChanges": [
+    "SKILL.md adaptation entry",
+    "PROJECT_ADAPTATION.md",
+    "LICENSE and NOTICE.md retained",
+    "UPSTREAM.json",
+    "Windows launcher explicitly propagates engine exit status",
+    "2026-10-01 shared skill contract linked",
+    "Windows launcher resolved from actual skill base directory",
+    "Execution authority phrase reconciled with user/project scope",
+    "Additional verification limited to demonstrated unresolved defects",
+    "2026-10-01 asset-producer relative link and delegated review checkpoint corrected"
+  ],
+  "installation": "project source plus Codex discovery junction; no automatic edit hooks installed"
+}

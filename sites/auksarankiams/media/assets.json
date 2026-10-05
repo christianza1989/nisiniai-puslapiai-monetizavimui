@@ -1,0 +1,434 @@
+[
+  {
+    "name": "hero",
+    "id": "35d4b7ac-4bd7-42fd-9b7f-f9c266e37fee",
+    "groupId": "bc64f942-0b7c-4a19-9d7e-3404ce32807c",
+    "src": "/content-assets/auksarankiams/35d4b7ac-4bd7-42fd-9b7f-f9c266e37fee.webp",
+    "alt": "Popieriniai lapų motyvai ant kreminio atviruko, žirklės ir popieriaus atraižos",
+    "width": 1536,
+    "height": 1024,
+    "credit": "",
+    "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+    "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian paper craft editorial homepage, landscape 3:2. Original aspirational studio still life on warm ivory desk: an understated handmade cream greeting card with two simple overlapping terracotta and muted forest-green cut-paper leaves, matching paper offcuts, closed steel scissors, wooden ruler and pencil, neatly arranged but not sterile. Overhead with slightly diagonal strong composition, large folded card centered, natural side window light and tactile paper fibers. Palette ivory, rust, sage, deep ink. No text, brands, numbers, logos, watermark, hands, people or UI. It is an editorial illustration, not evidence of a sold product or client's work. Safe central crop for mobile.",
+    "bytes": 137420,
+    "sha256": "c8d1508af5e308a12991bafbaa97bc0801aa775f9c71394dbdb6a2b31eeba8a4",
+    "variants": [
+      {
+        "id": "35d4b7ac-4bd7-42fd-9b7f-f9c266e37fee",
+        "groupId": "bc64f942-0b7c-4a19-9d7e-3404ce32807c",
+        "src": "/content-assets/auksarankiams/35d4b7ac-4bd7-42fd-9b7f-f9c266e37fee.webp",
+        "alt": "Popieriniai lapų motyvai ant kreminio atviruko, žirklės ir popieriaus atraižos",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian paper craft editorial homepage, landscape 3:2. Original aspirational studio still life on warm ivory desk: an understated handmade cream greeting card with two simple overlapping terracotta and muted forest-green cut-paper leaves, matching paper offcuts, closed steel scissors, wooden ruler and pencil, neatly arranged but not sterile. Overhead with slightly diagonal strong composition, large folded card centered, natural side window light and tactile paper fibers. Palette ivory, rust, sage, deep ink. No text, brands, numbers, logos, watermark, hands, people or UI. It is an editorial illustration, not evidence of a sold product or client's work. Safe central crop for mobile.",
+        "bytes": 137420,
+        "sha256": "c8d1508af5e308a12991bafbaa97bc0801aa775f9c71394dbdb6a2b31eeba8a4"
+      },
+      {
+        "id": "9f37ed5c-7c94-4bf7-b989-c05eb5427dce",
+        "groupId": "bc64f942-0b7c-4a19-9d7e-3404ce32807c",
+        "src": "/content-assets/auksarankiams/9f37ed5c-7c94-4bf7-b989-c05eb5427dce.webp",
+        "alt": "Popieriniai lapų motyvai ant kreminio atviruko, žirklės ir popieriaus atraižos",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian paper craft editorial homepage, landscape 3:2. Original aspirational studio still life on warm ivory desk: an understated handmade cream greeting card with two simple overlapping terracotta and muted forest-green cut-paper leaves, matching paper offcuts, closed steel scissors, wooden ruler and pencil, neatly arranged but not sterile. Overhead with slightly diagonal strong composition, large folded card centered, natural side window light and tactile paper fibers. Palette ivory, rust, sage, deep ink. No text, brands, numbers, logos, watermark, hands, people or UI. It is an editorial illustration, not evidence of a sold product or client's work. Safe central crop for mobile.",
+        "bytes": 85446,
+        "sha256": "e158a62e255a3283bff301797506dd78a5d2fbcf62c9240d711ffa33f8def585"
+      },
+      {
+        "id": "998aa2b1-dca4-4ed1-8d5a-4a3dcad9320e",
+        "groupId": "bc64f942-0b7c-4a19-9d7e-3404ce32807c",
+        "src": "/content-assets/auksarankiams/998aa2b1-dca4-4ed1-8d5a-4a3dcad9320e.webp",
+        "alt": "Popieriniai lapų motyvai ant kreminio atviruko, žirklės ir popieriaus atraižos",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian paper craft editorial homepage, landscape 3:2. Original aspirational studio still life on warm ivory desk: an understated handmade cream greeting card with two simple overlapping terracotta and muted forest-green cut-paper leaves, matching paper offcuts, closed steel scissors, wooden ruler and pencil, neatly arranged but not sterile. Overhead with slightly diagonal strong composition, large folded card centered, natural side window light and tactile paper fibers. Palette ivory, rust, sage, deep ink. No text, brands, numbers, logos, watermark, hands, people or UI. It is an editorial illustration, not evidence of a sold product or client's work. Safe central crop for mobile.",
+        "bytes": 39046,
+        "sha256": "811711162673054d81fa71cdd4f85c75e63bf4bc8250361c7f53771aae484099"
+      },
+      {
+        "id": "a1a7d743-46b9-44af-ae1b-1945a2abd0d2",
+        "groupId": "bc64f942-0b7c-4a19-9d7e-3404ce32807c",
+        "src": "/content-assets/auksarankiams/a1a7d743-46b9-44af-ae1b-1945a2abd0d2.webp",
+        "alt": "Popieriniai lapų motyvai ant kreminio atviruko, žirklės ir popieriaus atraižos",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian paper craft editorial homepage, landscape 3:2. Original aspirational studio still life on warm ivory desk: an understated handmade cream greeting card with two simple overlapping terracotta and muted forest-green cut-paper leaves, matching paper offcuts, closed steel scissors, wooden ruler and pencil, neatly arranged but not sterile. Overhead with slightly diagonal strong composition, large folded card centered, natural side window light and tactile paper fibers. Palette ivory, rust, sage, deep ink. No text, brands, numbers, logos, watermark, hands, people or UI. It is an editorial illustration, not evidence of a sold product or client's work. Safe central crop for mobile.",
+        "bytes": 24612,
+        "sha256": "637df2df4157a8eef2976dc6658373c14b2f1be9f10c30ea8d5d5e11364fe2e7"
+      },
+      {
+        "id": "4288030c-46ae-4b26-aa44-655df6e5ff40",
+        "groupId": "bc64f942-0b7c-4a19-9d7e-3404ce32807c",
+        "src": "/content-assets/auksarankiams/4288030c-46ae-4b26-aa44-655df6e5ff40.webp",
+        "alt": "Popieriniai lapų motyvai ant kreminio atviruko, žirklės ir popieriaus atraižos",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: Lithuanian paper craft editorial homepage, landscape 3:2. Original aspirational studio still life on warm ivory desk: an understated handmade cream greeting card with two simple overlapping terracotta and muted forest-green cut-paper leaves, matching paper offcuts, closed steel scissors, wooden ruler and pencil, neatly arranged but not sterile. Overhead with slightly diagonal strong composition, large folded card centered, natural side window light and tactile paper fibers. Palette ivory, rust, sage, deep ink. No text, brands, numbers, logos, watermark, hands, people or UI. It is an editorial illustration, not evidence of a sold product or client's work. Safe central crop for mobile.",
+        "bytes": 9170,
+        "sha256": "c0497a6c673fcc1d669f496be79e9b2ca5a8675802ce3cc98ccb45abf0240ad7"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2859024,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 137420
+        },
+        {
+          "width": 1200,
+          "bytes": 85446
+        },
+        {
+          "width": 800,
+          "bytes": 39046
+        },
+        {
+          "width": 640,
+          "bytes": 24612
+        },
+        {
+          "width": 360,
+          "bytes": 9170
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  },
+  {
+    "name": "priemones",
+    "id": "98874be6-a4d4-41d1-98ae-b79203cbdec7",
+    "groupId": "1244e805-7979-4da4-b81b-71ba9182669e",
+    "src": "/content-assets/auksarankiams/98874be6-a4d4-41d1-98ae-b79203cbdec7.webp",
+    "alt": "Žirklės, liniuotė, pieštukas, klijų pieštukas ir spalvoto popieriaus lapai",
+    "width": 1536,
+    "height": 1024,
+    "credit": "",
+    "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+    "prompt": "Use case: photorealistic-natural. Asset type: beginner paper craft guide landscape 3:2. Overhead editorial photograph style of a small practical starter kit: ordinary closed steel scissors, wooden ruler with no readable numbering, graphite pencil, one unbranded glue stick closed, sheets of cream, terracotta and muted sage colored paper, a plain simple rectangular paper bookmark lying alongside. Warm ivory table, natural light, tangible materials, crisp purposeful composition with separated objects. No text, logos, watermark, hands, people, unsafe tools or commercial stock implication.",
+    "bytes": 64420,
+    "sha256": "5ee9a028106ac48cc1f731a0052b8dd81da12ad07e9883b7741a895d0d1c6389",
+    "variants": [
+      {
+        "id": "98874be6-a4d4-41d1-98ae-b79203cbdec7",
+        "groupId": "1244e805-7979-4da4-b81b-71ba9182669e",
+        "src": "/content-assets/auksarankiams/98874be6-a4d4-41d1-98ae-b79203cbdec7.webp",
+        "alt": "Žirklės, liniuotė, pieštukas, klijų pieštukas ir spalvoto popieriaus lapai",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: beginner paper craft guide landscape 3:2. Overhead editorial photograph style of a small practical starter kit: ordinary closed steel scissors, wooden ruler with no readable numbering, graphite pencil, one unbranded glue stick closed, sheets of cream, terracotta and muted sage colored paper, a plain simple rectangular paper bookmark lying alongside. Warm ivory table, natural light, tangible materials, crisp purposeful composition with separated objects. No text, logos, watermark, hands, people, unsafe tools or commercial stock implication.",
+        "bytes": 64420,
+        "sha256": "5ee9a028106ac48cc1f731a0052b8dd81da12ad07e9883b7741a895d0d1c6389"
+      },
+      {
+        "id": "cf67b00a-b086-436b-a75d-2f06571da607",
+        "groupId": "1244e805-7979-4da4-b81b-71ba9182669e",
+        "src": "/content-assets/auksarankiams/cf67b00a-b086-436b-a75d-2f06571da607.webp",
+        "alt": "Žirklės, liniuotė, pieštukas, klijų pieštukas ir spalvoto popieriaus lapai",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: beginner paper craft guide landscape 3:2. Overhead editorial photograph style of a small practical starter kit: ordinary closed steel scissors, wooden ruler with no readable numbering, graphite pencil, one unbranded glue stick closed, sheets of cream, terracotta and muted sage colored paper, a plain simple rectangular paper bookmark lying alongside. Warm ivory table, natural light, tangible materials, crisp purposeful composition with separated objects. No text, logos, watermark, hands, people, unsafe tools or commercial stock implication.",
+        "bytes": 44270,
+        "sha256": "9189ed207bd9e63fae583917980aa7b90da3223ac2e4f448c8ad42dca2cf3daf"
+      },
+      {
+        "id": "e84c0107-17c4-4162-a680-24a4b1074f16",
+        "groupId": "1244e805-7979-4da4-b81b-71ba9182669e",
+        "src": "/content-assets/auksarankiams/e84c0107-17c4-4162-a680-24a4b1074f16.webp",
+        "alt": "Žirklės, liniuotė, pieštukas, klijų pieštukas ir spalvoto popieriaus lapai",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: beginner paper craft guide landscape 3:2. Overhead editorial photograph style of a small practical starter kit: ordinary closed steel scissors, wooden ruler with no readable numbering, graphite pencil, one unbranded glue stick closed, sheets of cream, terracotta and muted sage colored paper, a plain simple rectangular paper bookmark lying alongside. Warm ivory table, natural light, tangible materials, crisp purposeful composition with separated objects. No text, logos, watermark, hands, people, unsafe tools or commercial stock implication.",
+        "bytes": 24012,
+        "sha256": "81c84eba0c2bc74a2ceec74a36c363e71fdd760ab3676c4f7aaac559832337ec"
+      },
+      {
+        "id": "117a126f-cbff-435e-9d9a-de348bccb0be",
+        "groupId": "1244e805-7979-4da4-b81b-71ba9182669e",
+        "src": "/content-assets/auksarankiams/117a126f-cbff-435e-9d9a-de348bccb0be.webp",
+        "alt": "Žirklės, liniuotė, pieštukas, klijų pieštukas ir spalvoto popieriaus lapai",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: beginner paper craft guide landscape 3:2. Overhead editorial photograph style of a small practical starter kit: ordinary closed steel scissors, wooden ruler with no readable numbering, graphite pencil, one unbranded glue stick closed, sheets of cream, terracotta and muted sage colored paper, a plain simple rectangular paper bookmark lying alongside. Warm ivory table, natural light, tangible materials, crisp purposeful composition with separated objects. No text, logos, watermark, hands, people, unsafe tools or commercial stock implication.",
+        "bytes": 17280,
+        "sha256": "f490c3b479d2d22389399a54099674b2e2433af37a83dfcd2652d354fd3c9918"
+      },
+      {
+        "id": "404ab416-0e35-4a6b-bf13-86676d412e9e",
+        "groupId": "1244e805-7979-4da4-b81b-71ba9182669e",
+        "src": "/content-assets/auksarankiams/404ab416-0e35-4a6b-bf13-86676d412e9e.webp",
+        "alt": "Žirklės, liniuotė, pieštukas, klijų pieštukas ir spalvoto popieriaus lapai",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: beginner paper craft guide landscape 3:2. Overhead editorial photograph style of a small practical starter kit: ordinary closed steel scissors, wooden ruler with no readable numbering, graphite pencil, one unbranded glue stick closed, sheets of cream, terracotta and muted sage colored paper, a plain simple rectangular paper bookmark lying alongside. Warm ivory table, natural light, tangible materials, crisp purposeful composition with separated objects. No text, logos, watermark, hands, people, unsafe tools or commercial stock implication.",
+        "bytes": 6826,
+        "sha256": "2b3c95d1fbc39778b16acba94813611f8b4d738a277b67f3d98af488809db420"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2356878,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 64420
+        },
+        {
+          "width": 1200,
+          "bytes": 44270
+        },
+        {
+          "width": 800,
+          "bytes": 24012
+        },
+        {
+          "width": 640,
+          "bytes": 17280
+        },
+        {
+          "width": 360,
+          "bytes": 6826
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  },
+  {
+    "name": "atvirukas",
+    "id": "9443c347-e7de-4873-ab80-da2ef186fb05",
+    "groupId": "b0b41992-e01a-4dd9-8cb0-366452ea280f",
+    "src": "/content-assets/auksarankiams/9443c347-e7de-4873-ab80-da2ef186fb05.webp",
+    "alt": "Pastatytas rankų darbo atvirukas su dviem popieriniais lapais",
+    "width": 1536,
+    "height": 1024,
+    "credit": "",
+    "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+    "prompt": "Use case: photorealistic-natural. Asset type: handmade card tutorial guide landscape 3:2. A simple folded warm ivory greeting card standing slightly open on an ivory table, decorated only with two flat overlapping paper leaf shapes, one rust and one muted sage, no lettering. Beside it lie a plain cream rectangle of paper and two matching offcuts. The card is the clear focal point, oblique close editorial still life, soft daylight, visible fold and paper texture. No text, logos, watermark, people, product brand or client work implication.",
+    "bytes": 53544,
+    "sha256": "88b24f0fa101b988aaeb508f4fa0ef0a027d0e8c2afe6aed1bfc42e1bd3c00af",
+    "variants": [
+      {
+        "id": "9443c347-e7de-4873-ab80-da2ef186fb05",
+        "groupId": "b0b41992-e01a-4dd9-8cb0-366452ea280f",
+        "src": "/content-assets/auksarankiams/9443c347-e7de-4873-ab80-da2ef186fb05.webp",
+        "alt": "Pastatytas rankų darbo atvirukas su dviem popieriniais lapais",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: handmade card tutorial guide landscape 3:2. A simple folded warm ivory greeting card standing slightly open on an ivory table, decorated only with two flat overlapping paper leaf shapes, one rust and one muted sage, no lettering. Beside it lie a plain cream rectangle of paper and two matching offcuts. The card is the clear focal point, oblique close editorial still life, soft daylight, visible fold and paper texture. No text, logos, watermark, people, product brand or client work implication.",
+        "bytes": 53544,
+        "sha256": "88b24f0fa101b988aaeb508f4fa0ef0a027d0e8c2afe6aed1bfc42e1bd3c00af"
+      },
+      {
+        "id": "197dc024-f76b-44d3-980d-97019a43c163",
+        "groupId": "b0b41992-e01a-4dd9-8cb0-366452ea280f",
+        "src": "/content-assets/auksarankiams/197dc024-f76b-44d3-980d-97019a43c163.webp",
+        "alt": "Pastatytas rankų darbo atvirukas su dviem popieriniais lapais",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: handmade card tutorial guide landscape 3:2. A simple folded warm ivory greeting card standing slightly open on an ivory table, decorated only with two flat overlapping paper leaf shapes, one rust and one muted sage, no lettering. Beside it lie a plain cream rectangle of paper and two matching offcuts. The card is the clear focal point, oblique close editorial still life, soft daylight, visible fold and paper texture. No text, logos, watermark, people, product brand or client work implication.",
+        "bytes": 35416,
+        "sha256": "f4c5d92dcb4e3d6f04d3412171a5ad2974a0ba5a6f8d07e2244ce9dbccdc96cd"
+      },
+      {
+        "id": "a993a182-3aae-4d56-aea3-cb4b955c0cfb",
+        "groupId": "b0b41992-e01a-4dd9-8cb0-366452ea280f",
+        "src": "/content-assets/auksarankiams/a993a182-3aae-4d56-aea3-cb4b955c0cfb.webp",
+        "alt": "Pastatytas rankų darbo atvirukas su dviem popieriniais lapais",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: handmade card tutorial guide landscape 3:2. A simple folded warm ivory greeting card standing slightly open on an ivory table, decorated only with two flat overlapping paper leaf shapes, one rust and one muted sage, no lettering. Beside it lie a plain cream rectangle of paper and two matching offcuts. The card is the clear focal point, oblique close editorial still life, soft daylight, visible fold and paper texture. No text, logos, watermark, people, product brand or client work implication.",
+        "bytes": 18268,
+        "sha256": "4a3e540f7518ff3986ec80e9ed3d7c2d258e768da9d8475f33ac914c6e44086b"
+      },
+      {
+        "id": "706ceb46-caec-4efe-a5bd-a2c17aac5540",
+        "groupId": "b0b41992-e01a-4dd9-8cb0-366452ea280f",
+        "src": "/content-assets/auksarankiams/706ceb46-caec-4efe-a5bd-a2c17aac5540.webp",
+        "alt": "Pastatytas rankų darbo atvirukas su dviem popieriniais lapais",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: handmade card tutorial guide landscape 3:2. A simple folded warm ivory greeting card standing slightly open on an ivory table, decorated only with two flat overlapping paper leaf shapes, one rust and one muted sage, no lettering. Beside it lie a plain cream rectangle of paper and two matching offcuts. The card is the clear focal point, oblique close editorial still life, soft daylight, visible fold and paper texture. No text, logos, watermark, people, product brand or client work implication.",
+        "bytes": 12718,
+        "sha256": "aa7767824cf56cd5ab27bc6c9b10905c2ada2eb73259510381c9a2b5b5ca3a9a"
+      },
+      {
+        "id": "2b9e5d39-4f2a-4411-9016-b4294e7db449",
+        "groupId": "b0b41992-e01a-4dd9-8cb0-366452ea280f",
+        "src": "/content-assets/auksarankiams/2b9e5d39-4f2a-4411-9016-b4294e7db449.webp",
+        "alt": "Pastatytas rankų darbo atvirukas su dviem popieriniais lapais",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: handmade card tutorial guide landscape 3:2. A simple folded warm ivory greeting card standing slightly open on an ivory table, decorated only with two flat overlapping paper leaf shapes, one rust and one muted sage, no lettering. Beside it lie a plain cream rectangle of paper and two matching offcuts. The card is the clear focal point, oblique close editorial still life, soft daylight, visible fold and paper texture. No text, logos, watermark, people, product brand or client work implication.",
+        "bytes": 5796,
+        "sha256": "4cc778196f094ca5cc553882a62f79d361b56634c1e0dab354f5f155553e626f"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2106550,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 53544
+        },
+        {
+          "width": 1200,
+          "bytes": 35416
+        },
+        {
+          "width": 800,
+          "bytes": 18268
+        },
+        {
+          "width": 640,
+          "bytes": 12718
+        },
+        {
+          "width": 360,
+          "bytes": 5796
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  },
+  {
+    "name": "mastelis",
+    "id": "5e4cc761-11cb-4052-89ae-3fa3ebcf8c50",
+    "groupId": "e0d4feef-ff17-4773-a17e-abcaab67f130",
+    "src": "/content-assets/auksarankiams/5e4cc761-11cb-4052-89ae-3fa3ebcf8c50.webp",
+    "alt": "Atspausdintas kontūras, liniuotė ir iškirpta popierinė lapo forma",
+    "width": 1536,
+    "height": 1024,
+    "credit": "",
+    "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+    "prompt": "Use case: photorealistic-natural. Asset type: printing craft template at actual scale guide, landscape 3:2. Overhead editorial still life of an unbranded white printed paper with one crisp black rectangular outline and one simple leaf outline, a physical wooden ruler laid beside the rectangle without readable numbering, pencil and one test-cut cream paper leaf nearby, on warm ivory desktop. Shows checking a paper pattern against a ruler without making a measurement claim. Restrained rust paper corner, natural soft window light, central crop safe. No text, visible numbers, logos, watermark, people, UI or printer brand.",
+    "bytes": 31270,
+    "sha256": "a5cb70ea4fcab13fcfa38a73af6e001a9596953e9e0238fbceba772878a8e525",
+    "variants": [
+      {
+        "id": "5e4cc761-11cb-4052-89ae-3fa3ebcf8c50",
+        "groupId": "e0d4feef-ff17-4773-a17e-abcaab67f130",
+        "src": "/content-assets/auksarankiams/5e4cc761-11cb-4052-89ae-3fa3ebcf8c50.webp",
+        "alt": "Atspausdintas kontūras, liniuotė ir iškirpta popierinė lapo forma",
+        "width": 1536,
+        "height": 1024,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: printing craft template at actual scale guide, landscape 3:2. Overhead editorial still life of an unbranded white printed paper with one crisp black rectangular outline and one simple leaf outline, a physical wooden ruler laid beside the rectangle without readable numbering, pencil and one test-cut cream paper leaf nearby, on warm ivory desktop. Shows checking a paper pattern against a ruler without making a measurement claim. Restrained rust paper corner, natural soft window light, central crop safe. No text, visible numbers, logos, watermark, people, UI or printer brand.",
+        "bytes": 31270,
+        "sha256": "a5cb70ea4fcab13fcfa38a73af6e001a9596953e9e0238fbceba772878a8e525"
+      },
+      {
+        "id": "cf674446-9fbd-4356-a35e-9f1d7045a32f",
+        "groupId": "e0d4feef-ff17-4773-a17e-abcaab67f130",
+        "src": "/content-assets/auksarankiams/cf674446-9fbd-4356-a35e-9f1d7045a32f.webp",
+        "alt": "Atspausdintas kontūras, liniuotė ir iškirpta popierinė lapo forma",
+        "width": 1200,
+        "height": 800,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: printing craft template at actual scale guide, landscape 3:2. Overhead editorial still life of an unbranded white printed paper with one crisp black rectangular outline and one simple leaf outline, a physical wooden ruler laid beside the rectangle without readable numbering, pencil and one test-cut cream paper leaf nearby, on warm ivory desktop. Shows checking a paper pattern against a ruler without making a measurement claim. Restrained rust paper corner, natural soft window light, central crop safe. No text, visible numbers, logos, watermark, people, UI or printer brand.",
+        "bytes": 20802,
+        "sha256": "c131ce3d273ddab8d6d7eae32539531a817782ed67bf5a88f5c5f1d303b1e4a0"
+      },
+      {
+        "id": "9073f62f-855d-4a8b-8cf2-cb3636c2ad34",
+        "groupId": "e0d4feef-ff17-4773-a17e-abcaab67f130",
+        "src": "/content-assets/auksarankiams/9073f62f-855d-4a8b-8cf2-cb3636c2ad34.webp",
+        "alt": "Atspausdintas kontūras, liniuotė ir iškirpta popierinė lapo forma",
+        "width": 800,
+        "height": 533,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: printing craft template at actual scale guide, landscape 3:2. Overhead editorial still life of an unbranded white printed paper with one crisp black rectangular outline and one simple leaf outline, a physical wooden ruler laid beside the rectangle without readable numbering, pencil and one test-cut cream paper leaf nearby, on warm ivory desktop. Shows checking a paper pattern against a ruler without making a measurement claim. Restrained rust paper corner, natural soft window light, central crop safe. No text, visible numbers, logos, watermark, people, UI or printer brand.",
+        "bytes": 11062,
+        "sha256": "bb4960dc6b05b262e9185bb12502e85dc0b26cf51fd2f196b3ba90c3616733d3"
+      },
+      {
+        "id": "7ece179e-d3d1-460e-ae67-c9fe6675e7ac",
+        "groupId": "e0d4feef-ff17-4773-a17e-abcaab67f130",
+        "src": "/content-assets/auksarankiams/7ece179e-d3d1-460e-ae67-c9fe6675e7ac.webp",
+        "alt": "Atspausdintas kontūras, liniuotė ir iškirpta popierinė lapo forma",
+        "width": 640,
+        "height": 427,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: printing craft template at actual scale guide, landscape 3:2. Overhead editorial still life of an unbranded white printed paper with one crisp black rectangular outline and one simple leaf outline, a physical wooden ruler laid beside the rectangle without readable numbering, pencil and one test-cut cream paper leaf nearby, on warm ivory desktop. Shows checking a paper pattern against a ruler without making a measurement claim. Restrained rust paper corner, natural soft window light, central crop safe. No text, visible numbers, logos, watermark, people, UI or printer brand.",
+        "bytes": 7904,
+        "sha256": "66e83994a461d1bc42b67495a9a314cdcbb19ee48974ccbfaa91ff3573be98bc"
+      },
+      {
+        "id": "742eb452-0174-4ddb-afb4-648ba2c71221",
+        "groupId": "e0d4feef-ff17-4773-a17e-abcaab67f130",
+        "src": "/content-assets/auksarankiams/742eb452-0174-4ddb-afb4-648ba2c71221.webp",
+        "alt": "Atspausdintas kontūras, liniuotė ir iškirpta popierinė lapo forma",
+        "width": 360,
+        "height": 240,
+        "credit": "",
+        "rights": "Originalus šiam projektui integruotu ImageGen sukurtas redakcinis vaizdas. Ne kliento darbas ir ne parduodama prekė.",
+        "prompt": "Use case: photorealistic-natural. Asset type: printing craft template at actual scale guide, landscape 3:2. Overhead editorial still life of an unbranded white printed paper with one crisp black rectangular outline and one simple leaf outline, a physical wooden ruler laid beside the rectangle without readable numbering, pencil and one test-cut cream paper leaf nearby, on warm ivory desktop. Shows checking a paper pattern against a ruler without making a measurement claim. Restrained rust paper corner, natural soft window light, central crop safe. No text, visible numbers, logos, watermark, people, UI or printer brand.",
+        "bytes": 3618,
+        "sha256": "4bd27736d460158dbed68f00b1162c8c11b2c267b6ea94f16f59493dbeabd97b"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 1961245,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 31270
+        },
+        {
+          "width": 1200,
+          "bytes": 20802
+        },
+        {
+          "width": 800,
+          "bytes": 11062
+        },
+        {
+          "width": 640,
+          "bytes": 7904
+        },
+        {
+          "width": 360,
+          "bytes": 3618
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  }
+]

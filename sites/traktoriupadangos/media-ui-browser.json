@@ -1,0 +1,24 @@
+{
+  "at": "2026-09-30T19:03:39.893Z",
+  "environment": "isolated localhost 4327, no publication, no actual contacts",
+  "library": {
+    "images": [
+      {
+        "alt": "Skaidrus žalias GUI bandymo vaizdas",
+        "loaded": true,
+        "src": "/api/media/media-ui-test/b1fd9203-4d42-465c-8de1-8664ee6cc6a5.webp"
+      }
+    ],
+    "text": "media-ui-test.invalid\nSVETAINĖ\nIzoliuotas vaizdų GUI bandymas\n\nSintetinis QA, ne veikiantis verslas\n\nVisų svetainių kalendorius\nVisas portfelis\nApžvalga\nPuslapiai\nKalendorius\nNuorodų planas\nVaizdai\nDarbai\nEksportas\nVaizdų biblioteka\n5 failai\nSkaidrus žalias GUI bandymo vaizdas\n1600 × 800 · 5 WebP dydžiai\nb1fd9203-4d42-465c-8de1-8664ee6cc6a5\nImageGen užduotis\n\nAutomatiniam paleidimui reikia OPENAI_API_KEY. Galite nukopijuoti užduotį ir naudoti Codex integruotą imagegen įrankį, tada importuoti rezultatą.\n\nVaizdo užduotis\nAlt tekstas\n✦ Generuoti vaizdą\nKopijuoti užduotį\nImportuoti vaizdą\nPNG, JPEG arba WebP · iki 12 MB\nAlt tekstas\nNaudojimo teisės / kilmė\nImportuoti ir optimizuoti WebP\n\nAutomatiškai paruošiami 360 / 640 / 800 / 1200 / 1600 px variantai pagal originalo dydį. Originalas saugomas privačiai; puslapiui pakanka pasirinkti vieną vaizdą."
+  },
+  "editor": {
+    "choices": [
+      {
+        "checked": true,
+        "id": "b1fd9203-4d42-465c-8de1-8664ee6cc6a5",
+        "label": "Skaidrus žalias GUI bandymo vaizdas\n1600 / 1200 / 800 / 640 / 360 px · visi dydžiai priskiriami kartu"
+      }
+    ],
+    "status": "Vaizdai ir nuorodos išsaugoti."
+  }
+}

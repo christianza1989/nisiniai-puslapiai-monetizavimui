@@ -1,0 +1,43 @@
+{
+  "capturedAt": "2026-10-01T11:22:04.661Z",
+  "files": [
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\components\\niche\\laiptucentras-site.tsx",
+      "snapshot": "baseline\\components\\niche\\laiptucentras-site.tsx",
+      "sha256": "66f6e396e87905c27df2178c99fee7fdc7499186f29802e71b6ab3d46cb5c9f3",
+      "bytes": 12826
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\components\\niche\\laiptucentras-site.module.css",
+      "snapshot": "baseline\\components\\niche\\laiptucentras-site.module.css",
+      "sha256": "c8845549b4fc379056d60dcccfa119b6cad826f84ca4ac93613ab8f25e865b3c",
+      "bytes": 11906
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\content-packages\\laiptucentras\\content-package.json",
+      "snapshot": "baseline\\content-packages\\laiptucentras\\content-package.json",
+      "sha256": "46bdfd45c5268029f9f10a1b27dcb96a09c88ae9e491ba1e95d9fa945b006127",
+      "bytes": 69921
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN.md",
+      "snapshot": "baseline\\sites\\laiptucentras\\DESIGN.md",
+      "sha256": "7a97da5bd48cfe1e43ffc6831838d62e5845ba886dd0f3f922f9ca64f48ecdb1",
+      "bytes": 5818
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\MEDIA.json",
+      "snapshot": "baseline\\sites\\laiptucentras\\MEDIA.json",
+      "sha256": "ba5c5423232913703f1ec1f88a0f4cc71d079557f73b281a40b258938baa38f4",
+      "bytes": 5124
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\MEDIA-ACCEPTANCE.json",
+      "snapshot": "baseline\\sites\\laiptucentras\\MEDIA-ACCEPTANCE.json",
+      "sha256": "49e21e9dbff9f83e31ef5817814602c017f0de0c1d8096a4ad6923424e7210cc",
+      "bytes": 12568
+    }
+  ],
+  "previousReview": "research/autonomy/laiptucentras-review/",
+  "historicalEvidenceModified": false
+}

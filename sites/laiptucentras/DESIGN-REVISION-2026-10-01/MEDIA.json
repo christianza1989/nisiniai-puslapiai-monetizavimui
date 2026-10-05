@@ -1,0 +1,306 @@
+[
+  {
+    "key": "hero",
+    "alt": "Vidaus laiptinė su ąžuolo pakopomis, tamsiu metaliniu karkasu ir baltomis sienomis",
+    "prompt": "Use case: photorealistic-natural. Asset type: portrait architectural hero photograph for a Lithuanian indoor staircase planning website. Create a visually exceptional professional architectural editorial photograph, portrait 2:3. A real-looking tall narrow double-height stairwell in a contemporary house, pale cool-white plaster, charcoal powder-coated steel stringers and precise vertical balusters, natural lightly smoked oak stair treads, one straight flight with a generous rectangular upper landing, all structurally connected and a continuous handrail. View from low at the foot of the stairs diagonally upward, full stair flight and upper landing visible, strong angular composition, stairs occupy the central 65% for mobile cropping. Cool diffuse overcast daylight from a high window, balanced exposure, textured white walls and honest material texture. Mood is architectural and precise, not warm stock-home lifestyle. No plants, no props, no tools, no furniture, no documents, no people, no lettering, no logos, no watermark. No floating impossible steps or malformed railing. This is an original illustrative architecture scene, not a claimed customer project. One photograph only.",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-d752c01e-e754-492b-ad61-885ce961127c.png",
+    "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\assets\\hero-v2-original.png",
+    "sourceSha256": "fb5d960f554874270c9964cf47e9cab27d951a993ed1b58111ce0ed88270bcdf",
+    "tool": "built-in image_gen",
+    "review": "Actual generated file visually reviewed before import; no logos/text, material relationships plausible; not build-ready engineering evidence.",
+    "variants": [
+      {
+        "id": "b6c3a839-1391-4d77-bb46-4089b2ea591e",
+        "src": "/content-assets/laiptucentras/b6c3a839-1391-4d77-bb46-4089b2ea591e.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 84074,
+        "sha256": "ce7227c3bdead1127eaf5f577b92702e766e210416ecc21256b60008802e7d36"
+      },
+      {
+        "id": "5555c628-9220-4de8-8c16-965ca1969640",
+        "src": "/content-assets/laiptucentras/5555c628-9220-4de8-8c16-965ca1969640.webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 52588,
+        "sha256": "b0163c08f29e287d5a655316ff4b802c280112ee3c26fc9507d4655394b53c84"
+      },
+      {
+        "id": "127449fe-0ef7-4772-8418-27f4b0831ed5",
+        "src": "/content-assets/laiptucentras/127449fe-0ef7-4772-8418-27f4b0831ed5.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 34646,
+        "sha256": "f7e4e9efe9b4473de5c4a3b1ae8f71ed686d10cba6f955a1090726f5bdf37741"
+      },
+      {
+        "id": "b660c0e2-579f-4e65-9f72-c258632061fa",
+        "src": "/content-assets/laiptucentras/b660c0e2-579f-4e65-9f72-c258632061fa.webp",
+        "width": 360,
+        "height": 540,
+        "bytes": 12368,
+        "sha256": "45b71beabdead4c20d601b1965fba242a1f3576a38b20d8afd701077053bfb81"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2533169,
+      "variantBytes": [
+        {
+          "width": 1024,
+          "bytes": 84074
+        },
+        {
+          "width": 800,
+          "bytes": 52588
+        },
+        {
+          "width": 640,
+          "bytes": 34646
+        },
+        {
+          "width": 360,
+          "bytes": 12368
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  },
+  {
+    "key": "materials",
+    "alt": "Ąžuolo pakopos, metalinio karkaso ir betoninio pagrindo detalės iš arti",
+    "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 architectural material-detail photograph for an indoor staircase construction guide. A professional tight orthogonal close-up of one real-looking smoked oak stair tread seated on a precisely fabricated charcoal powder-coated steel stringer; an unfinished cast concrete landing edge is visible beside and beneath the connected steel stair. Show the three distinct materials clearly: cut oak end grain, smooth folded structural steel, textured gray cast concrete. All parts have plausible supports and joints, no impossible floating assembly. Camera at waist height, crisp detail, architectural studio-like even cool daylight, restrained white/gray/charcoal palette with subtle natural timber. Clean single composition, not a collage, no warm orange sunlight or houseplants, no table still-life, no tools, no labels or numeric dimensions, no text or watermark, no brand logos. Original illustrative scene, not a claimed real installation.",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-7b2597c0-6295-4cbd-909c-1677a3b88777.png",
+    "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\assets\\materials-v2-original.png",
+    "sourceSha256": "a8a78ac467b291757d565b4d077f7fdde22f1acb9212dc9d63d269e94ae18c6d",
+    "tool": "built-in image_gen",
+    "review": "Actual generated file visually reviewed before import; no logos/text, material relationships plausible; not build-ready engineering evidence.",
+    "variants": [
+      {
+        "id": "32ab8117-cd6f-4996-9797-a29b6be56117",
+        "src": "/content-assets/laiptucentras/32ab8117-cd6f-4996-9797-a29b6be56117.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 91358,
+        "sha256": "f40d2e0089a7c405a3c83c6344f4c64d2157980d074a5896c263f303622be18f"
+      },
+      {
+        "id": "dfd1f344-41d4-44bc-a6d9-e0ac15c6b7b1",
+        "src": "/content-assets/laiptucentras/dfd1f344-41d4-44bc-a6d9-e0ac15c6b7b1.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 57874,
+        "sha256": "dc768631ae8ada7a93a6dccf04501b927187e2c105ce6c1118591f877f9dc728"
+      },
+      {
+        "id": "40acab0b-4f88-416b-b198-fcc016d6496c",
+        "src": "/content-assets/laiptucentras/40acab0b-4f88-416b-b198-fcc016d6496c.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 25500,
+        "sha256": "7c074c646f40c55e7c9ff7a1819697021adc52887d07c145300d749f2b004a28"
+      },
+      {
+        "id": "f0c4a62d-1315-426c-b5c3-2431da276f7f",
+        "src": "/content-assets/laiptucentras/f0c4a62d-1315-426c-b5c3-2431da276f7f.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 15746,
+        "sha256": "f05b76a26a4d33c078cb07d1e2355fdd99b472afeaff279611a7054119df6e2c"
+      },
+      {
+        "id": "4e86a067-8884-4f37-9bde-fb0edaa7c8d5",
+        "src": "/content-assets/laiptucentras/4e86a067-8884-4f37-9bde-fb0edaa7c8d5.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 5462,
+        "sha256": "f2569acd730ae42ad06a6b5a03ffb2a925894aada059e24f743acb85c688a28c"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2406457,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 91358
+        },
+        {
+          "width": 1200,
+          "bytes": 57874
+        },
+        {
+          "width": 800,
+          "bytes": 25500
+        },
+        {
+          "width": 640,
+          "bytes": 15746
+        },
+        {
+          "width": 360,
+          "bytes": 5462
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  },
+  {
+    "key": "budget",
+    "alt": "Laiptų karkaso, medinių pakopų ir turėklo jungtys viename vaizde",
+    "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial architectural close-up for a guide about comparing staircase quote scope. Photograph a real-looking contemporary indoor stair viewed obliquely from the upper landing, showing distinct connected components in one tight frame: charcoal metal stringer below, several natural oak treads with clear edges, vertical charcoal balusters and continuous oak handrail with a clear corner onto the upper landing. The construction-to-tread-to-guard relationship is visible, precise plausible joinery. Quiet cool-white stairwell, broad overcast daylight, dark steel contrasts against neutral white walls, crisp architectural photography with natural texture, no fake artistic soft focus. Central composition remains legible in a 4:3 crop. No documents, no invented prices, no tape measures, no plants, no furniture, no people, no labels, no brand marks, no lettering or watermark. One coherent photo, not a grid or collage. An original illustrative interior, not portfolio evidence.",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-40c43dda-eded-4798-a887-214e02f6af71.png",
+    "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\assets\\budget-v2-original.png",
+    "sourceSha256": "2aa3e656cb1bfb6548ec7e4d926ca2a44926035b328a0a73202f44c21a325dd6",
+    "tool": "built-in image_gen",
+    "review": "Actual generated file visually reviewed before import; no logos/text, material relationships plausible; not build-ready engineering evidence.",
+    "variants": [
+      {
+        "id": "bcb26277-baa0-46fe-b1a6-90825de371c8",
+        "src": "/content-assets/laiptucentras/bcb26277-baa0-46fe-b1a6-90825de371c8.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 89460,
+        "sha256": "42fb79cb63e69df323ba13f3807ef9163671b49fe0c325cb8cad53b63510a23f"
+      },
+      {
+        "id": "48939ca8-277e-42c9-8532-40e7131d06ee",
+        "src": "/content-assets/laiptucentras/48939ca8-277e-42c9-8532-40e7131d06ee.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 60908,
+        "sha256": "75a4964fb25b9f525161e921e55141f4bdaf697b7f591bf1647cbb0f9be54eb2"
+      },
+      {
+        "id": "acbeae5d-ca26-4775-a5f5-893969c9b361",
+        "src": "/content-assets/laiptucentras/acbeae5d-ca26-4775-a5f5-893969c9b361.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 31032,
+        "sha256": "e85f57b9926349bca3b351bad84c8c107fcf79006604ce4dc8fa9958d4eab0f5"
+      },
+      {
+        "id": "9eaa9a18-302e-4a70-b1b5-6ced61b15f38",
+        "src": "/content-assets/laiptucentras/9eaa9a18-302e-4a70-b1b5-6ced61b15f38.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 21532,
+        "sha256": "5d32c0da18a5233e1ff263f3cbc8563999cc80634a99a7c76bcc95866f29967e"
+      },
+      {
+        "id": "e8bb300d-e92b-4b31-bcb8-a1d772912780",
+        "src": "/content-assets/laiptucentras/e8bb300d-e92b-4b31-bcb8-a1d772912780.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 9272,
+        "sha256": "d8420e11385da08743d568dadb519a86482102c172c50195dd36e37699a5280b"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2320410,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 89460
+        },
+        {
+          "width": 1200,
+          "bytes": 60908
+        },
+        {
+          "width": 800,
+          "bytes": 31032
+        },
+        {
+          "width": 640,
+          "bytes": 21532
+        },
+        {
+          "width": 360,
+          "bytes": 9272
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  },
+  {
+    "key": "measure",
+    "alt": "Neužbaigta betoninė laiptinė ir atvira viršutinio aukšto anga",
+    "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 documentary architectural photograph for preparing information before indoor stair measurement. Photograph an unfinished modern house interior with one solid cast-concrete stair flight leading up to a clearly visible rectangular upper floor opening. Unfinished plaster walls, exposed concrete at the upper landing and a small visible floor finish sample at the lower floor edge, construction environment clean but genuinely incomplete with minor concrete texture and dust. View from the lower room, looking diagonally along the flight toward the opening, balanced cool daylight, natural professional building-survey photography, precise geometry with connected risers/treads and plausible floor levels. No readable measurements, no invented safety/engineering annotations, no plans or paperwork, no tool still-life, no people, no logos or watermark. No polished completed interior, no warm lifestyle lighting. Original illustrative scene supporting a planning guide, not a claimed inspected job.",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5\\exec-e32bb3f6-f932-40c1-af62-6678630a3e59.png",
+    "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\laiptucentras\\DESIGN-REVISION-2026-10-01\\assets\\measure-v2-original.png",
+    "sourceSha256": "6a0624c8f57f8bd2735b15f151f55b54fa3122d949b86a9da4bb25287c86913e",
+    "tool": "built-in image_gen",
+    "review": "Actual generated file visually reviewed before import; no logos/text, material relationships plausible; not build-ready engineering evidence.",
+    "variants": [
+      {
+        "id": "f1783280-2ec6-48a2-af40-ab07e1ad2564",
+        "src": "/content-assets/laiptucentras/f1783280-2ec6-48a2-af40-ab07e1ad2564.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 48522,
+        "sha256": "6464f264604038fb1ac0c61391e2b30a7a79c0bdd6bd5dc5955725833ebbf80b"
+      },
+      {
+        "id": "ed54438c-f85f-47f3-acd6-8f985fe581fb",
+        "src": "/content-assets/laiptucentras/ed54438c-f85f-47f3-acd6-8f985fe581fb.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 32056,
+        "sha256": "0bda295c58193a46215b8c63b877247f15ede7e667fb7a7949075bed4b4f8b98"
+      },
+      {
+        "id": "037fdb19-8689-4c02-b7a3-43284beebb89",
+        "src": "/content-assets/laiptucentras/037fdb19-8689-4c02-b7a3-43284beebb89.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 15332,
+        "sha256": "1bd247cfc44842027631856fbe7bb9d134d674a22a3eb6915fb8ceb04828888d"
+      },
+      {
+        "id": "276175e4-3ad5-47c6-b381-58d459b37861",
+        "src": "/content-assets/laiptucentras/276175e4-3ad5-47c6-b381-58d459b37861.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 10348,
+        "sha256": "d398798d9f19adb6e9f5ca792c82d8fbf35f8ec19a6078638b836426988df1ab"
+      },
+      {
+        "id": "56dfa21a-9733-4245-8456-cadebc460628",
+        "src": "/content-assets/laiptucentras/56dfa21a-9733-4245-8456-cadebc460628.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 3956,
+        "sha256": "bb79cd6cf74ee03aaf8ad93325ebbab728f066c27f31ce5c488cc0d9d1250a51"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2252131,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 48522
+        },
+        {
+          "width": 1200,
+          "bytes": 32056
+        },
+        {
+          "width": 800,
+          "bytes": 15332
+        },
+        {
+          "width": 640,
+          "bytes": 10348
+        },
+        {
+          "width": 360,
+          "bytes": 3956
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  }
+]

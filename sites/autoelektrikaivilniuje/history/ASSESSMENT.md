@@ -1,0 +1,5 @@
+# Domeno istorijos sprendimas
+
+2026-10-03 ribotas CDX/replay tyrimas: 14 kelių, 4/4 skaitomi snapshot. 2024 ir 2025 pradžios homepage rodė ADC autoelektrikų servisą; 2025 liepos root jau bendro automobilių ir dviračių turinio leidinys. Teminis tęstinumas dalinis. Tai nėra Google sankcijos, dabartinių backlinkų ar nuosavybės įrodymas. Senų verslo rekvizitų, darbuotojų, atsiliepimų, skubos pažadų ir autorystės teisių neturime.
+
+Sprendimas: kurti naują originalų diagnostikos poreikio pilotą root URL. Kontaktų istorinis kelias žada dirbtuvių adresą, kurio dabartinis pilotas neturi, todėl jo nepaversti klaidinančiu kontaktų 301. Atsiliepimų, dviračių ir bendrų automobilių temų nekurti. Senos privatumo sąlygos ir kontaktai aprašė kitą operatorių: nauji aktualūs tekstai atskirais švariais URL; viešų peradresavimų šiame pavedime nėra. Nežinomi keliai lieka tikri 404, sitemap jų nėra. Sprendimo įrašai `url-decisions.json` peržiūrėti agento. Archyvo turinys ir vaizdai nekopijuojami; SEO atkūrimas nepažadamas.

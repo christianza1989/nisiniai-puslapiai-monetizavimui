@@ -1,0 +1,14 @@
+{
+  "createdOn": "2026-10-01",
+  "threadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
+  "hostId": "local",
+  "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
+  "automationKind": "heartbeat",
+  "status": "ACTIVE",
+  "scheduleLocal": "Kasdien 09:00 ir 17:00 Europe/Vilnius",
+  "notificationIntent": "Only useful new ideas, completed approved work or actionable changed conditions",
+  "initialProgressVerified": true,
+  "ownerAuthorization": "2026-10-01 direct request to create ideas session and trigger it autonomously",
+  "runtimeRequirement": "Local computer and Codex app available; not an always-on hosted agent",
+  "handoff": "Registry session owns STATE/IDEAS after bootstrap; this connection file records root setup."
+}

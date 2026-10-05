@@ -1,0 +1,782 @@
+{
+  "version": 2,
+  "domain": "laiptucentras.lt",
+  "checkedAt": "2026-10-01T03:55:10.273Z",
+  "terms": [
+    "laipt",
+    "turekl",
+    "pakop"
+  ],
+  "coverage": "records-found",
+  "inventoryComplete": true,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 41,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 41,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": true,
+      "observedRows": 13,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": true,
+      "observedRows": 1,
+      "omitted": 0,
+      "truncated": false
+    }
+  ],
+  "inventory": [
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20051017212416",
+      "capturedAt": "2005-10-17T21:24:16.000Z",
+      "status": 200,
+      "digest": "6SO4UIWR6UBA7IMJPHVTIJYF3WM4PBMY",
+      "replayUrl": "https://web.archive.org/web/20051017212416/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/%20%20%C2%A0",
+      "path": "/%20%20%C2%A0",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231004041842",
+      "capturedAt": "2023-10-04T04:18:42.000Z",
+      "status": 200,
+      "digest": "OCFHIXOH2BOG3YBDNTAD42AVSNZMZF3A",
+      "replayUrl": "https://web.archive.org/web/20231004041842/http://www.laiptucentras.lt/%20%20%C2%A0"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php",
+      "path": "/index.php",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20050429203334",
+      "capturedAt": "2005-04-29T20:33:34.000Z",
+      "status": 200,
+      "digest": "UC6DJJ6KTCJLMZ6X5NWWZNRTKYEVUUDD",
+      "replayUrl": "https://web.archive.org/web/20050429203334/http://www.laiptucentras.lt/index.php"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en",
+      "path": "/index.php?kalba=en&menu=en",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20051225055350",
+      "capturedAt": "2005-12-25T05:53:50.000Z",
+      "status": 200,
+      "digest": "SOMF4MNVTHD7RFQP2S4LUTITLCJTJX3P",
+      "replayUrl": "https://web.archive.org/web/20051225055350/http://www.laiptucentras.lt/index.php?kalba=en&menu=en"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en2",
+      "path": "/index.php?kalba=en&menu=en2",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106223300",
+      "capturedAt": "2006-01-06T22:33:00.000Z",
+      "status": 200,
+      "digest": "4NJCEEQDJ62CY473M3NBYBD3X6A3I5FG",
+      "replayUrl": "https://web.archive.org/web/20060106223300/http://www.laiptucentras.lt/index.php?kalba=en&menu=en2"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en21",
+      "path": "/index.php?kalba=en&menu=en21",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000019",
+      "capturedAt": "2009-01-04T00:00:19.000Z",
+      "status": 200,
+      "digest": "L6IG2ZOE33YKOXTELR6I4EPK4QWMRUWE",
+      "replayUrl": "https://web.archive.org/web/20090104000019/http://www.laiptucentras.lt/index.php?kalba=en&menu=en21"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en22",
+      "path": "/index.php?kalba=en&menu=en22",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000536",
+      "capturedAt": "2009-01-04T00:05:36.000Z",
+      "status": 200,
+      "digest": "PFH6KF46STTFVXXCAH36ADITKFRMM46O",
+      "replayUrl": "https://web.archive.org/web/20090104000536/http://www.laiptucentras.lt/index.php?kalba=en&menu=en22"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en23",
+      "path": "/index.php?kalba=en&menu=en23",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000541",
+      "capturedAt": "2009-01-04T00:05:41.000Z",
+      "status": 200,
+      "digest": "ZSM7VA2N2SHOBYCJVODZ63YIMWOGVY6Z",
+      "replayUrl": "https://web.archive.org/web/20090104000541/http://www.laiptucentras.lt/index.php?kalba=en&menu=en23"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en24",
+      "path": "/index.php?kalba=en&menu=en24",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000546",
+      "capturedAt": "2009-01-04T00:05:46.000Z",
+      "status": 200,
+      "digest": "HAV6MX6SXKXK5N2ICFQOZ4YUMAHUU5YA",
+      "replayUrl": "https://web.archive.org/web/20090104000546/http://www.laiptucentras.lt/index.php?kalba=en&menu=en24"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en25",
+      "path": "/index.php?kalba=en&menu=en25",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000024",
+      "capturedAt": "2009-01-04T00:00:24.000Z",
+      "status": 200,
+      "digest": "C7S2JC6ZRTEZAHVIJUWRCLWBYGHF6UYN",
+      "replayUrl": "https://web.archive.org/web/20090104000024/http://www.laiptucentras.lt/index.php?kalba=en&menu=en25"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en3",
+      "path": "/index.php?kalba=en&menu=en3",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060524220406",
+      "capturedAt": "2006-05-24T22:04:06.000Z",
+      "status": 200,
+      "digest": "MLUY4TYZMW7UBXAEW25Z722U5DXKXE3F",
+      "replayUrl": "https://web.archive.org/web/20060524220406/http://www.laiptucentras.lt/index.php?kalba=en&menu=en3"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en4",
+      "path": "/index.php?kalba=en&menu=en4",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106224254",
+      "capturedAt": "2006-01-06T22:42:54.000Z",
+      "status": 200,
+      "digest": "RURIVXHYGCFY47PLU3XAFMAM23RG4Z4F",
+      "replayUrl": "https://web.archive.org/web/20060106224254/http://www.laiptucentras.lt/index.php?kalba=en&menu=en4"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=en&menu=en5",
+      "path": "/index.php?kalba=en&menu=en5",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106224024",
+      "capturedAt": "2006-01-06T22:40:24.000Z",
+      "status": 200,
+      "digest": "N5WNQMYSMOASVMOSN6FJSPBURCCNSUJX",
+      "replayUrl": "https://web.archive.org/web/20060106224024/http://www.laiptucentras.lt/index.php?kalba=en&menu=en5"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=no&menu=no",
+      "path": "/index.php?kalba=no&menu=no",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20120128072338",
+      "capturedAt": "2012-01-28T07:23:38.000Z",
+      "status": 200,
+      "digest": "ZL22WQSWJLDRCXI3ICF2PT2VCSPCGARD",
+      "replayUrl": "https://web.archive.org/web/20120128072338/http://www.laiptucentras.lt/index.php?kalba=no&menu=no"
+    },
+    {
+      "original": "http://laiptucentras.lt/index.php?kalba=no&menu=no2",
+      "path": "/index.php?kalba=no&menu=no2",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20160609141406",
+      "capturedAt": "2016-06-09T14:14:06.000Z",
+      "status": 200,
+      "digest": "UVVIC4QLGELAQYKTSBK3LNITUJWZ5XFR",
+      "replayUrl": "https://web.archive.org/web/20160609141406/http://laiptucentras.lt/index.php?kalba=no&menu=no2"
+    },
+    {
+      "original": "http://laiptucentras.lt/index.php?kalba=no&menu=no3",
+      "path": "/index.php?kalba=no&menu=no3",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20160610022000",
+      "capturedAt": "2016-06-10T02:20:00.000Z",
+      "status": 200,
+      "digest": "PXEFZWA7AXLHKJC4IB67RDGXEVK3KKTB",
+      "replayUrl": "https://web.archive.org/web/20160610022000/http://laiptucentras.lt/index.php?kalba=no&menu=no3"
+    },
+    {
+      "original": "http://laiptucentras.lt/index.php?kalba=no&menu=no4",
+      "path": "/index.php?kalba=no&menu=no4",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20160609212228",
+      "capturedAt": "2016-06-09T21:22:28.000Z",
+      "status": 200,
+      "digest": "N2MYKVYMDGWEB5HNE2R6I43YB42AZ67Y",
+      "replayUrl": "https://web.archive.org/web/20160609212228/http://laiptucentras.lt/index.php?kalba=no&menu=no4"
+    },
+    {
+      "original": "http://laiptucentras.lt/index.php?kalba=no&menu=no5",
+      "path": "/index.php?kalba=no&menu=no5",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20160609165716",
+      "capturedAt": "2016-06-09T16:57:16.000Z",
+      "status": 200,
+      "digest": "5GMDCI5WBAZN3PJU6GF2PVXRTWVRJSJZ",
+      "replayUrl": "https://web.archive.org/web/20160609165716/http://laiptucentras.lt/index.php?kalba=no&menu=no5"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru",
+      "path": "/index.php?kalba=ru&menu=ru",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20051225064723",
+      "capturedAt": "2005-12-25T06:47:23.000Z",
+      "status": 200,
+      "digest": "L47HKLKPPYKMV4U6AJMMRFCIWRMUNKLR",
+      "replayUrl": "https://web.archive.org/web/20051225064723/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru2",
+      "path": "/index.php?kalba=ru&menu=ru2",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106224708",
+      "capturedAt": "2006-01-06T22:47:08.000Z",
+      "status": 200,
+      "digest": "JLMZEWCHASXAE3ZGXUBXJD4CFCQTELLQ",
+      "replayUrl": "https://web.archive.org/web/20060106224708/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru2"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru21",
+      "path": "/index.php?kalba=ru&menu=ru21",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000552",
+      "capturedAt": "2009-01-04T00:05:52.000Z",
+      "status": 200,
+      "digest": "HEQQLFTULJSZDXY3ILFHUB6NRLLAOUFW",
+      "replayUrl": "https://web.archive.org/web/20090104000552/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru21"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru22",
+      "path": "/index.php?kalba=ru&menu=ru22",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000029",
+      "capturedAt": "2009-01-04T00:00:29.000Z",
+      "status": 200,
+      "digest": "V7WIRZEBA6NX7GALFWJB6PNZTVTN7SF6",
+      "replayUrl": "https://web.archive.org/web/20090104000029/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru22"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru23",
+      "path": "/index.php?kalba=ru&menu=ru23",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000557",
+      "capturedAt": "2009-01-04T00:05:57.000Z",
+      "status": 200,
+      "digest": "5ZDKAVFEDQYE7EPOPVPKQZFJIGVLE2BB",
+      "replayUrl": "https://web.archive.org/web/20090104000557/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru23"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru24",
+      "path": "/index.php?kalba=ru&menu=ru24",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000602",
+      "capturedAt": "2009-01-04T00:06:02.000Z",
+      "status": 200,
+      "digest": "WKFUZGRRZB6TKKZKMETK6QR7QGSKYEYG",
+      "replayUrl": "https://web.archive.org/web/20090104000602/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru24"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru25",
+      "path": "/index.php?kalba=ru&menu=ru25",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20090104000034",
+      "capturedAt": "2009-01-04T00:00:34.000Z",
+      "status": 200,
+      "digest": "CZXODMJQOT7DMR53SDCWTF4276C56IYI",
+      "replayUrl": "https://web.archive.org/web/20090104000034/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru25"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru3",
+      "path": "/index.php?kalba=ru&menu=ru3",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106222200",
+      "capturedAt": "2006-01-06T22:22:00.000Z",
+      "status": 200,
+      "digest": "PRPYRLLKYUMWILMVRMB4Z3Q7RRR3BRD4",
+      "replayUrl": "https://web.archive.org/web/20060106222200/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru3"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru4",
+      "path": "/index.php?kalba=ru&menu=ru4",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106230053",
+      "capturedAt": "2006-01-06T23:00:53.000Z",
+      "status": 200,
+      "digest": "UYK3Z6I2XVW3LX6DOWDXWZZZRWZ5NA5T",
+      "replayUrl": "https://web.archive.org/web/20060106230053/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru4"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru5",
+      "path": "/index.php?kalba=ru&menu=ru5",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106222132",
+      "capturedAt": "2006-01-06T22:21:32.000Z",
+      "status": 200,
+      "digest": "UCYQ4JNGKZQKVN7LQNC7DCK6T46V4UGL",
+      "replayUrl": "https://web.archive.org/web/20060106222132/http://www.laiptucentras.lt/index.php?kalba=ru&menu=ru5"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt2",
+      "path": "/index.php?menu=lt2",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20051225061917",
+      "capturedAt": "2005-12-25T06:19:17.000Z",
+      "status": 200,
+      "digest": "ZK4HPILYR73YI52WYWZ4O4S2VU7ZVJ3S",
+      "replayUrl": "https://web.archive.org/web/20051225061917/http://www.laiptucentras.lt/index.php?menu=lt2"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt21",
+      "path": "/index.php?menu=lt21",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106233105",
+      "capturedAt": "2006-01-06T23:31:05.000Z",
+      "status": 200,
+      "digest": "Z3T5K6NYTVOXPJAEFXZYB6QAF6K5BKJW",
+      "replayUrl": "https://web.archive.org/web/20060106233105/http://www.laiptucentras.lt/index.php?menu=lt21"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt22",
+      "path": "/index.php?menu=lt22",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20070523202627",
+      "capturedAt": "2007-05-23T20:26:27.000Z",
+      "status": 200,
+      "digest": "XD2GNKCU4Y7Q2KKY4PYHYVTIWN4K7C5Y",
+      "replayUrl": "https://web.archive.org/web/20070523202627/http://www.laiptucentras.lt/index.php?menu=lt22"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt23",
+      "path": "/index.php?menu=lt23",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20060106231934",
+      "capturedAt": "2006-01-06T23:19:34.000Z",
+      "status": 200,
+      "digest": "URFTWTLI7HXLYEM2Z62JWHMA7OCX6W4V",
+      "replayUrl": "https://web.archive.org/web/20060106231934/http://www.laiptucentras.lt/index.php?menu=lt23"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt24",
+      "path": "/index.php?menu=lt24",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20070523202507",
+      "capturedAt": "2007-05-23T20:25:07.000Z",
+      "status": 200,
+      "digest": "WZWFQKTUI2ZCUJGGMNR6CPH7EINQS2SY",
+      "replayUrl": "https://web.archive.org/web/20070523202507/http://www.laiptucentras.lt/index.php?menu=lt24"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt25",
+      "path": "/index.php?menu=lt25",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20070523202426",
+      "capturedAt": "2007-05-23T20:24:26.000Z",
+      "status": 200,
+      "digest": "GYRQ247TPUCN73JCZM4SHYBWDBFPIDNI",
+      "replayUrl": "https://web.archive.org/web/20070523202426/http://www.laiptucentras.lt/index.php?menu=lt25"
+    },
+    {
+      "original": "http://laiptucentras.lt/index.php?menu=lt26",
+      "path": "/index.php?menu=lt26",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20160610021955",
+      "capturedAt": "2016-06-10T02:19:55.000Z",
+      "status": 200,
+      "digest": "GZ5TAPRYU6W54OCYHPXEL6SDK4EUG2EA",
+      "replayUrl": "https://web.archive.org/web/20160610021955/http://laiptucentras.lt/index.php?menu=lt26"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt3",
+      "path": "/index.php?menu=lt3",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20051225051202",
+      "capturedAt": "2005-12-25T05:12:02.000Z",
+      "status": 200,
+      "digest": "U2MLQI6KKCZ6QA53YFCJYF3TU6CJ3SFH",
+      "replayUrl": "https://web.archive.org/web/20051225051202/http://www.laiptucentras.lt/index.php?menu=lt3"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt4",
+      "path": "/index.php?menu=lt4",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20051225065712",
+      "capturedAt": "2005-12-25T06:57:12.000Z",
+      "status": 200,
+      "digest": "5XPKHUW2GFO6NWAHL75EFSJAJN36KRHZ",
+      "replayUrl": "https://web.archive.org/web/20051225065712/http://www.laiptucentras.lt/index.php?menu=lt4"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/index.php?menu=lt5",
+      "path": "/index.php?menu=lt5",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20050429185624",
+      "capturedAt": "2005-04-29T18:56:24.000Z",
+      "status": 200,
+      "digest": "UE3CU5PPT34HGJXG3Q5VCTTQS3M7EB2O",
+      "replayUrl": "https://web.archive.org/web/20050429185624/http://www.laiptucentras.lt/index.php?menu=lt5"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/skaic/laiptai.html",
+      "path": "/skaic/laiptai.html",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20100921014639",
+      "capturedAt": "2010-09-21T01:46:39.000Z",
+      "status": 200,
+      "digest": "3X2LHAYSBUBJBQTYTEA5PXVRVVAOX6U4",
+      "replayUrl": "https://web.archive.org/web/20100921014639/http://www.laiptucentras.lt/skaic/laiptai.html"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/skaic/no/laiptai.html",
+      "path": "/skaic/no/laiptai.html",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20180105190554",
+      "capturedAt": "2018-01-05T19:05:54.000Z",
+      "status": 200,
+      "digest": "R26OPIUDF73C2FKMUHB2QKZKBGQ5MGXW",
+      "replayUrl": "https://web.archive.org/web/20180105190554/http://www.laiptucentras.lt/skaic/no/laiptai.html"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/skaic/no/laiptai.php",
+      "path": "/skaic/no/laiptai.php",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20180105185619",
+      "capturedAt": "2018-01-05T18:56:19.000Z",
+      "status": 200,
+      "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+      "replayUrl": "https://web.archive.org/web/20180105185619/http://www.laiptucentras.lt/skaic/no/laiptai.php"
+    }
+  ],
+  "roots": [
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20051017212416",
+      "capturedAt": "2005-10-17T21:24:16.000Z",
+      "status": 200,
+      "digest": "6SO4UIWR6UBA7IMJPHVTIJYF3WM4PBMY",
+      "replayUrl": "https://web.archive.org/web/20051017212416/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20060615173726",
+      "capturedAt": "2006-06-15T17:37:26.000Z",
+      "status": 200,
+      "digest": "VLSLBI24MZX56BDBW7QRMYDCHYTLL2HN",
+      "replayUrl": "https://web.archive.org/web/20060615173726/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20070104123547",
+      "capturedAt": "2007-01-04T12:35:47.000Z",
+      "status": 200,
+      "digest": "DWPXSN4U25WUARZOFOY56G6Z6P473OIV",
+      "replayUrl": "https://web.archive.org/web/20070104123547/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20081227005952",
+      "capturedAt": "2008-12-27T00:59:52.000Z",
+      "status": 200,
+      "digest": "DWPXSN4U25WUARZOFOY56G6Z6P473OIV",
+      "replayUrl": "https://web.archive.org/web/20081227005952/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20090130030519",
+      "capturedAt": "2009-01-30T03:05:19.000Z",
+      "status": 200,
+      "digest": "DWPXSN4U25WUARZOFOY56G6Z6P473OIV",
+      "replayUrl": "https://web.archive.org/web/20090130030519/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20120111215952",
+      "capturedAt": "2012-01-11T21:59:52.000Z",
+      "status": 200,
+      "digest": "7QRWKZE5YXQ2XWVIP5ZJV2RLYDCUFJ7J",
+      "replayUrl": "https://web.archive.org/web/20120111215952/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20130608110622",
+      "capturedAt": "2013-06-08T11:06:22.000Z",
+      "status": 200,
+      "digest": "IH4MZI36LNVJ5O7SB5FGC2WOU4RZLKKC",
+      "replayUrl": "https://web.archive.org/web/20130608110622/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20141018054413",
+      "capturedAt": "2014-10-18T05:44:13.000Z",
+      "status": 200,
+      "digest": "VNTHYYBPKSOO2FPKBVL6JQYJ5XTAAMCI",
+      "replayUrl": "https://web.archive.org/web/20141018054413/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20150412063414",
+      "capturedAt": "2015-04-12T06:34:14.000Z",
+      "status": 200,
+      "digest": "VNTHYYBPKSOO2FPKBVL6JQYJ5XTAAMCI",
+      "replayUrl": "https://web.archive.org/web/20150412063414/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20160110174634",
+      "capturedAt": "2016-01-10T17:46:34.000Z",
+      "status": 200,
+      "digest": "VNTHYYBPKSOO2FPKBVL6JQYJ5XTAAMCI",
+      "replayUrl": "https://web.archive.org/web/20160110174634/http://laiptucentras.lt/"
+    },
+    {
+      "original": "http://laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20170516151621",
+      "capturedAt": "2017-05-16T15:16:21.000Z",
+      "status": 200,
+      "digest": "VNTHYYBPKSOO2FPKBVL6JQYJ5XTAAMCI",
+      "replayUrl": "https://web.archive.org/web/20170516151621/http://laiptucentras.lt/"
+    },
+    {
+      "original": "http://laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20180513053616",
+      "capturedAt": "2018-05-13T05:36:16.000Z",
+      "status": 200,
+      "digest": "RRF7V7WCGJ65J5UHCEKMJS3TZQ46JKT4",
+      "replayUrl": "https://web.archive.org/web/20180513053616/http://laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20231130200424",
+      "capturedAt": "2023-11-30T20:04:24.000Z",
+      "status": 200,
+      "digest": "OCFHIXOH2BOG3YBDNTAD42AVSNZMZF3A",
+      "replayUrl": "https://web.archive.org/web/20231130200424/http://www.laiptucentras.lt/"
+    }
+  ],
+  "snapshots": [
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "timestamp": "20231130200424",
+      "replayUrl": "https://web.archive.org/web/20231130200424/http://www.laiptucentras.lt/",
+      "ok": true,
+      "title": "laiptucentras.lt - Užregistruotas domenas - Interneto vizija",
+      "headings": [
+        "laiptucentras.lt",
+        "Norite nukreipti laiptucentras.lt?",
+        "Ieškote kur patalpinti laiptucentras.lt?"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 227,
+      "htmlSha256": "f9cff345c1b311e8d3d35b01da813689463efffb078e78992f53d1a9b770cfff",
+      "resolvedUrl": "https://web.archive.org/web/20231130200424id_/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "timestamp": "20051017212416",
+      "replayUrl": "https://web.archive.org/web/20051017212416/http://www.laiptucentras.lt/",
+      "ok": true,
+      "title": "http://www.laiptai.net | http://www.laiptucentras.lt",
+      "headings": [],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 123,
+      "htmlSha256": "c95bc3bc3180021f8799035732449e9e9a5dc37956fd97996df84cae85261cf5",
+      "resolvedUrl": "https://web.archive.org/web/20051017212416id_/http://www.laiptucentras.lt/"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/skaic/laiptai.html",
+      "timestamp": "20100921014639",
+      "replayUrl": "https://web.archive.org/web/20100921014639/http://www.laiptucentras.lt/skaic/laiptai.html",
+      "ok": true,
+      "title": "",
+      "headings": [],
+      "signals": [
+        "opaque-or-empty-document"
+      ],
+      "contentReadable": false,
+      "approximateWordCount": 0,
+      "htmlSha256": "371b6eeb5c561aa9e9edcdd7fe475ff007ac25823938e9dc2a60f100cc68a238",
+      "resolvedUrl": "https://web.archive.org/web/20100921014639id_/http://www.laiptucentras.lt/skaic/laiptai.html"
+    },
+    {
+      "original": "http://www.laiptucentras.lt/",
+      "timestamp": "20130608110622",
+      "replayUrl": "https://web.archive.org/web/20130608110622/http://www.laiptucentras.lt/",
+      "ok": true,
+      "title": "UAB AUGTIS - laiptai, kabantys laiptai, medinės konstrukcijos laiptai, betono konstrukcijos laiptai, metalinės konstrukcijos laiptai, baldai | http://www.laipta",
+      "headings": [],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 121,
+      "htmlSha256": "9778a053ba74de4ad91569838c384389743a0af5704eb7ae1a9d22f9a68a9bdf",
+      "resolvedUrl": "https://web.archive.org/web/20130608110622id_/http://www.laiptucentras.lt/"
+    }
+  ],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-01T03:55:10.294Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-01T03:55:11.608Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-01T03:55:12.512Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-01T03:55:13.414Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=laiptucentras.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20231130200424id_/http://www.laiptucentras.lt/",
+      "checkedAt": "2026-10-01T03:55:18.719Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20231130200424id_/http://www.laiptucentras.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20051017212416id_/http://www.laiptucentras.lt/",
+      "checkedAt": "2026-10-01T03:55:19.621Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20051017212416id_/http://www.laiptucentras.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20100921014639id_/http://www.laiptucentras.lt/skaic/laiptai.html",
+      "checkedAt": "2026-10-01T03:55:20.524Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20100921014639id_/http://www.laiptucentras.lt/skaic/laiptai.html"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20130608110622id_/http://www.laiptucentras.lt/",
+      "checkedAt": "2026-10-01T03:55:21.429Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20130608110622id_/http://www.laiptucentras.lt/"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "laiptucentras",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

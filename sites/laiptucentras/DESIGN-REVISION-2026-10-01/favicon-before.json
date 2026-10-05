@@ -1,0 +1,223 @@
+{
+  "at": "2026-10-01T12:13:58.850Z",
+  "sourceChecks": [
+    {
+      "file": "components/niche/laiptucentras-site.tsx",
+      "prior": "66f6e396e87905c27df2178c99fee7fdc7499186f29802e71b6ab3d46cb5c9f3",
+      "current": "a0744d40a2bd876be78303892e7dba2482bfc554aa9927fecb083101c2bfa0b7",
+      "isolated": "a0744d40a2bd876be78303892e7dba2482bfc554aa9927fecb083101c2bfa0b7",
+      "unchanged": false,
+      "isolatedMatches": true
+    },
+    {
+      "file": "components/niche/laiptucentras-site.module.css",
+      "prior": "c8845549b4fc379056d60dcccfa119b6cad826f84ca4ac93613ab8f25e865b3c",
+      "current": "46a174282b25a5c806bb40f3591d34f3ebcc5e5bdf2ba9a52bda9953db0078cf",
+      "isolated": "46a174282b25a5c806bb40f3591d34f3ebcc5e5bdf2ba9a52bda9953db0078cf",
+      "unchanged": false,
+      "isolatedMatches": true
+    },
+    {
+      "file": "app/niche/[siteId]/[[...slug]]/page.tsx",
+      "prior": "bfd0525e7288d66a222a9cc4f3c0f208c9a196e3159a7821230c9041d409db4b",
+      "current": "347958e9dabbecf5abd02efc4273c5b7b6ea2e8ccf7b5bbb3f4ced3c5a592c38",
+      "isolated": "bfd0525e7288d66a222a9cc4f3c0f208c9a196e3159a7821230c9041d409db4b",
+      "unchanged": false,
+      "isolatedMatches": false
+    },
+    {
+      "file": "content-packages/laiptucentras/content-package.json",
+      "prior": "46bdfd45c5268029f9f10a1b27dcb96a09c88ae9e491ba1e95d9fa945b006127",
+      "current": "332a7aa6cf39463b33b01ca50bf3f02a567d5d7d1ac1b822583de641c83a92d1",
+      "isolated": "332a7aa6cf39463b33b01ca50bf3f02a567d5d7d1ac1b822583de641c83a92d1",
+      "unchanged": false,
+      "isolatedMatches": true
+    },
+    {
+      "file": "lib/niche-mail.ts",
+      "prior": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c",
+      "current": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c",
+      "isolated": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c",
+      "unchanged": true,
+      "isolatedMatches": true
+    },
+    {
+      "file": "lib/smtp-protocol.mjs",
+      "prior": "ebd4a84bf153017d2b502326a7851488f1c1c5a1ca82b0abe8b4793204de58ab",
+      "current": "ebd4a84bf153017d2b502326a7851488f1c1c5a1ca82b0abe8b4793204de58ab",
+      "isolated": "ebd4a84bf153017d2b502326a7851488f1c1c5a1ca82b0abe8b4793204de58ab",
+      "unchanged": true,
+      "isolatedMatches": true
+    },
+    {
+      "file": "lib/niche-schema-core.mjs",
+      "prior": "813bcf8d16460b3775fba78c46435474bf59ffa7871f478f9811f736e73a32fc",
+      "current": "813bcf8d16460b3775fba78c46435474bf59ffa7871f478f9811f736e73a32fc",
+      "isolated": "813bcf8d16460b3775fba78c46435474bf59ffa7871f478f9811f736e73a32fc",
+      "unchanged": true,
+      "isolatedMatches": true
+    },
+    {
+      "file": "tests/niche-schema.test.mjs",
+      "prior": "7ed830e0ed38dded81344c3dae7d2178434811c9ec702af4257dbad63f6f5d6d",
+      "current": "7ed830e0ed38dded81344c3dae7d2178434811c9ec702af4257dbad63f6f5d6d",
+      "isolated": "7ed830e0ed38dded81344c3dae7d2178434811c9ec702af4257dbad63f6f5d6d",
+      "unchanged": true,
+      "isolatedMatches": true
+    },
+    {
+      "file": "app/niche/[siteId]/lead/route.ts",
+      "prior": "47226be6c1a339a0ec6a01fc97c188d6114cb4410d2528de59d42754c4dd5ff8",
+      "current": "47226be6c1a339a0ec6a01fc97c188d6114cb4410d2528de59d42754c4dd5ff8",
+      "isolated": "47226be6c1a339a0ec6a01fc97c188d6114cb4410d2528de59d42754c4dd5ff8",
+      "unchanged": true,
+      "isolatedMatches": true
+    },
+    {
+      "file": "components/niche/laiptucentras-quote-check.tsx",
+      "current": "dc4dec1fe189e8f7933e38e8fa9302f8e91fd60e350e75a5d49cf533a23592d8",
+      "isolated": "dc4dec1fe189e8f7933e38e8fa9302f8e91fd60e350e75a5d49cf533a23592d8",
+      "isolatedMatches": true
+    },
+    {
+      "file": "lib/laiptucentras-quote-check.mjs",
+      "current": "59d6029708b0746651b65cdfc30066ffb09bf55899e73a68af46b8d3e5f72bd5",
+      "isolated": "59d6029708b0746651b65cdfc30066ffb09bf55899e73a68af46b8d3e5f72bd5",
+      "isolatedMatches": true
+    },
+    {
+      "file": "app/niche/[siteId]/brand-icon/route.ts",
+      "current": "39ee3cb00dae6ef6aa32072ce1f48e77a83bfbf2acf1d0d3598eca8d258d9ce6",
+      "isolated": "39ee3cb00dae6ef6aa32072ce1f48e77a83bfbf2acf1d0d3598eca8d258d9ce6",
+      "isolatedMatches": true
+    }
+  ],
+  "pages": [
+    {
+      "id": "673ecd82-f98b-4fa2-af98-7e6fd6615a3c",
+      "slug": "",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "f432760a-5746-4e9f-a3ae-47ceea9ba7ef",
+      "slug": "gidai",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "461ffd03-404b-4187-849f-7a4fcd809938",
+      "slug": "vidaus-laiptu-irengimas",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "80b5feac-482b-4e7a-b2ae-49fc3fb3c754",
+      "slug": "laiptu-kaina",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "2232d1fc-120b-4d78-abb2-17009cccc1ce",
+      "slug": "laiptu-konstrukcijos",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "221b8f30-5f8f-4d1a-a8d4-d96601ac1569",
+      "slug": "laiptu-matavimas",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "f741f725-b102-44a2-9a15-6c378d9aff4e",
+      "slug": "kontaktai",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "a60490d7-bfd1-4edb-b8fb-95d9d51bf32b",
+      "slug": "apie-projekta",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "9bc7a91c-cf2f-43bc-82a2-f10ea22a6514",
+      "slug": "redakcija",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "aa1a8bfd-b4cf-4a71-ba1f-9d264b3bbeae",
+      "slug": "privatumas",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "id": "3efd2d1d-cd22-4227-b2e3-5212e7a46c25",
+      "slug": "naudojimo-salygos",
+      "bodyUnchanged": true,
+      "titleUnchanged": true,
+      "publishAtUnchanged": true
+    }
+  ],
+  "favicons": [
+    {
+      "siteId": "akmenas",
+      "status": 200,
+      "svg": true,
+      "sha256": "3e8863288c2d43dd33d2a71de317dcf9198f09932ea8d61e0def1b846a865435",
+      "stairMark": false
+    },
+    {
+      "siteId": "auksarankiams",
+      "status": 200,
+      "svg": true,
+      "sha256": "3e8863288c2d43dd33d2a71de317dcf9198f09932ea8d61e0def1b846a865435",
+      "stairMark": false
+    },
+    {
+      "siteId": "greitossvetaines",
+      "status": 200,
+      "svg": true,
+      "sha256": "3e8863288c2d43dd33d2a71de317dcf9198f09932ea8d61e0def1b846a865435",
+      "stairMark": false
+    },
+    {
+      "siteId": "laiptucentras",
+      "status": 200,
+      "svg": true,
+      "sha256": "3e8863288c2d43dd33d2a71de317dcf9198f09932ea8d61e0def1b846a865435",
+      "stairMark": false
+    },
+    {
+      "siteId": "roletaiklaipedoje",
+      "status": 200,
+      "svg": true,
+      "sha256": "3e8863288c2d43dd33d2a71de317dcf9198f09932ea8d61e0def1b846a865435",
+      "stairMark": false
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "status": 200,
+      "svg": true,
+      "sha256": "3e8863288c2d43dd33d2a71de317dcf9198f09932ea8d61e0def1b846a865435",
+      "stairMark": false
+    }
+  ],
+  "unknownHostStatus": 200,
+  "mismatchedSiteStatus": 404,
+  "passed": false,
+  "scope": "Six packages frozen in isolated QA. Seventh miniekskavatoriai package concurrently added by its owner is not claimed as root tested.",
+  "packageSha256": "332a7aa6cf39463b33b01ca50bf3f02a567d5d7d1ac1b822583de641c83a92d1"
+}

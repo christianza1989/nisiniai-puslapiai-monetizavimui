@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-04",
+  "scope": "Private source research and continuity update",
+  "checks": {
+    "jsonRecordsParsed": 3,
+    "registryLocalMarkdownReferencesChecked": 91,
+    "brokenReferences": 0,
+    "openedPrimaryHtmlPages": 2,
+    "openedPrimaryPdfDocuments": 3,
+    "localEvidenceFilesInspected": 4,
+    "documentedFutureCases": 2,
+    "futureCasesExecuted": 0,
+    "newIdeaIdsAllocated": 0,
+    "newExperimentApprovalsFound": 0
+  },
+  "outcome": "evidence_only_no_new_proposal",
+  "limits": [
+    "No actual supplier agreement or customer purchase",
+    "PDF text inspection only",
+    "Source text scan is not a current public content or runtime audit",
+    "Existing supplier instruction already requests warranties and responsibilities"
+  ],
+  "actions": {
+    "runtimeChanges": 0,
+    "siteChanges": 0,
+    "supplierOrCustomerMessages": 0,
+    "formsSubmitted": 0,
+    "purchases": 0,
+    "newSubscriptions": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0,
+    "ownerNotifications": 0
+  }
+}

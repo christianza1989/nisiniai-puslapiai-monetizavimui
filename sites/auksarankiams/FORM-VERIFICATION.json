@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-01T04:22:21.955Z",
+  "siteId": "auksarankiams",
+  "synthetic": true,
+  "base": "http://127.0.0.1:8890",
+  "checks": {
+    "shortName": 400,
+    "origin": 403,
+    "size": 400,
+    "honeypot": 200,
+    "unknownHost": 404,
+    "badEmail": 400,
+    "missingConsent": 400,
+    "accepted": 200
+  },
+  "durableStored": true,
+  "storedStatus": "new",
+  "sourcePath": "/kontaktai",
+  "smtpDisabled": true,
+  "voiceCoreIndependent": true,
+  "syntheticRecordRemoved": true,
+  "mail": "This is a durable local test. Shared SMTP/INBOX evidence remains scoped to MAIL_CORE 2026-09-30, not an auksarankiams production delivery."
+}

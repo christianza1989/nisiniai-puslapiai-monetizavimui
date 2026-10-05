@@ -1,0 +1,1 @@
+Tiekėjui būtini matmuo, kiekis, konstrukcija ir aktualūs techniniai reikalavimai. Prašyk tikslaus gamintojo/modelio, LI/SI, TT/TL, leistino ratlankio ir 4WD atveju riedėjimo apimties; taip pat pagaminimo datos, garantijos, bendros transporto kainos ir likučio patvirtinimo. Neprisiimk, kad analogiškas colinis žymėjimas užtikrina tinkamumą.

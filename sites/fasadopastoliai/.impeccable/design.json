@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T19:02:21.792Z",
+  "title": "Design System: Fasado pastoliai",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Plieno rašalas",
+        "tonalRamp": [
+          "oklch(0.15 0.0279 211.01)",
+          "oklch(0.264 0.0279 211.01)",
+          "oklch(0.379 0.0279 211.01)",
+          "oklch(0.493 0.0279 211.01)",
+          "oklch(0.607 0.0279 211.01)",
+          "oklch(0.721 0.0279 211.01)",
+          "oklch(0.836 0.0279 211.01)",
+          "oklch(0.95 0.0279 211.01)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Antrinis plienas",
+        "tonalRamp": [
+          "oklch(0.15 0.0315 214.14)",
+          "oklch(0.264 0.0315 214.14)",
+          "oklch(0.379 0.0315 214.14)",
+          "oklch(0.493 0.0315 214.14)",
+          "oklch(0.607 0.0315 214.14)",
+          "oklch(0.721 0.0315 214.14)",
+          "oklch(0.836 0.0315 214.14)",
+          "oklch(0.95 0.0315 214.14)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Vėsus popierius",
+        "tonalRamp": [
+          "oklch(0.15 0.0000 89.88)",
+          "oklch(0.264 0.0000 89.88)",
+          "oklch(0.379 0.0000 89.88)",
+          "oklch(0.493 0.0000 89.88)",
+          "oklch(0.607 0.0000 89.88)",
+          "oklch(0.721 0.0000 89.88)",
+          "oklch(0.836 0.0000 89.88)",
+          "oklch(0.95 0.0000 89.88)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Lauko pilka",
+        "tonalRamp": [
+          "oklch(0.15 0.0045 214.33)",
+          "oklch(0.264 0.0045 214.33)",
+          "oklch(0.379 0.0045 214.33)",
+          "oklch(0.493 0.0045 214.33)",
+          "oklch(0.607 0.0045 214.33)",
+          "oklch(0.721 0.0045 214.33)",
+          "oklch(0.836 0.0045 214.33)",
+          "oklch(0.95 0.0045 214.33)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Skiriamoji linija",
+        "tonalRamp": [
+          "oklch(0.15 0.0175 215.48)",
+          "oklch(0.264 0.0175 215.48)",
+          "oklch(0.379 0.0175 215.48)",
+          "oklch(0.493 0.0175 215.48)",
+          "oklch(0.607 0.0175 215.48)",
+          "oklch(0.721 0.0175 215.48)",
+          "oklch(0.836 0.0175 215.48)",
+          "oklch(0.95 0.0175 215.48)"
+        ]
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Veiksmo laimas",
+        "tonalRamp": [
+          "oklch(0.15 0.1759 116.41)",
+          "oklch(0.264 0.1759 116.41)",
+          "oklch(0.379 0.1759 116.41)",
+          "oklch(0.493 0.1759 116.41)",
+          "oklch(0.607 0.1759 116.41)",
+          "oklch(0.721 0.1759 116.41)",
+          "oklch(0.836 0.1759 116.41)",
+          "oklch(0.95 0.1759 116.41)"
+        ]
+      },
+      "action-hover": {
+        "role": "primary",
+        "displayName": "Veiksmo hover",
+        "tonalRamp": [
+          "oklch(0.15 0.1415 114.87)",
+          "oklch(0.264 0.1415 114.87)",
+          "oklch(0.379 0.1415 114.87)",
+          "oklch(0.493 0.1415 114.87)",
+          "oklch(0.607 0.1415 114.87)",
+          "oklch(0.721 0.1415 114.87)",
+          "oklch(0.836 0.1415 114.87)",
+          "oklch(0.95 0.1415 114.87)"
+        ]
+      },
+      "secondary-hover": {
+        "role": "neutral",
+        "displayName": "Antrinio veiksmo hover",
+        "tonalRamp": [
+          "oklch(0.15 0.0090 214.34)",
+          "oklch(0.264 0.0090 214.34)",
+          "oklch(0.379 0.0090 214.34)",
+          "oklch(0.493 0.0090 214.34)",
+          "oklch(0.607 0.0090 214.34)",
+          "oklch(0.721 0.0090 214.34)",
+          "oklch(0.836 0.0090 214.34)",
+          "oklch(0.95 0.0090 214.34)"
+        ]
+      },
+      "dark-hover": {
+        "role": "neutral",
+        "displayName": "Tamsaus veiksmo hover",
+        "tonalRamp": [
+          "oklch(0.15 0.0376 214.13)",
+          "oklch(0.264 0.0376 214.13)",
+          "oklch(0.379 0.0376 214.13)",
+          "oklch(0.493 0.0376 214.13)",
+          "oklch(0.607 0.0376 214.13)",
+          "oklch(0.721 0.0376 214.13)",
+          "oklch(0.836 0.0376 214.13)",
+          "oklch(0.95 0.0376 214.13)"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Įvesties rėmas",
+        "tonalRamp": [
+          "oklch(0.15 0.0276 219.03)",
+          "oklch(0.264 0.0276 219.03)",
+          "oklch(0.379 0.0276 219.03)",
+          "oklch(0.493 0.0276 219.03)",
+          "oklch(0.607 0.0276 219.03)",
+          "oklch(0.721 0.0276 219.03)",
+          "oklch(0.836 0.0276 219.03)",
+          "oklch(0.95 0.0276 219.03)"
+        ]
+      },
+      "disabled": {
+        "role": "neutral",
+        "displayName": "Išjungto veiksmo fonas",
+        "tonalRamp": [
+          "oklch(0.15 0.0070 219.56)",
+          "oklch(0.264 0.0070 219.56)",
+          "oklch(0.379 0.0070 219.56)",
+          "oklch(0.493 0.0070 219.56)",
+          "oklch(0.607 0.0070 219.56)",
+          "oklch(0.721 0.0070 219.56)",
+          "oklch(0.836 0.0070 219.56)",
+          "oklch(0.95 0.0070 219.56)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Focus orientyras",
+        "tonalRamp": [
+          "oklch(0.15 0.0468 222.14)",
+          "oklch(0.264 0.0468 222.14)",
+          "oklch(0.379 0.0468 222.14)",
+          "oklch(0.493 0.0468 222.14)",
+          "oklch(0.607 0.0468 222.14)",
+          "oklch(0.721 0.0468 222.14)",
+          "oklch(0.836 0.0468 222.14)",
+          "oklch(0.95 0.0468 222.14)"
+        ]
+      },
+      "error": {
+        "role": "semantic",
+        "displayName": "Tekstinė klaida",
+        "tonalRamp": [
+          "oklch(0.15 0.1543 28.83)",
+          "oklch(0.264 0.1543 28.83)",
+          "oklch(0.379 0.1543 28.83)",
+          "oklch(0.493 0.1543 28.83)",
+          "oklch(0.607 0.1543 28.83)",
+          "oklch(0.721 0.1543 28.83)",
+          "oklch(0.836 0.1543 28.83)",
+          "oklch(0.95 0.1543 28.83)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Homepage pavadinimas",
+        "purpose": "Virš fotografijos juostos; mobilus dydis aprašytas DESIGN.md."
+      },
+      "page-title": {
+        "displayName": "Puslapio pavadinimas",
+        "purpose": "Vidinių puslapių intro."
+      },
+      "headline": {
+        "displayName": "Sekcijos pavadinimas",
+        "purpose": "Skaitymo ritmas ir darbo lapų pavadinimai."
+      },
+      "title": {
+        "displayName": "Mažas pavadinimas",
+        "purpose": "H3 ir apimties kontekstas."
+      },
+      "guide-title": {
+        "displayName": "Gido eilutė",
+        "purpose": "Iliustruoto sąrašo tema."
+      },
+      "body": {
+        "displayName": "Proza",
+        "purpose": "Straipsniai, intro ir laukų turinys."
+      },
+      "label": {
+        "displayName": "Etiketė",
+        "purpose": "Laukų vardai."
+      },
+      "button": {
+        "displayName": "Veiksmas",
+        "purpose": "Veiksmo mygtukai."
+      },
+      "metadata": {
+        "displayName": "Metaduomenys",
+        "purpose": "Figcaption, byline ir lauko pagalba."
+      }
+    },
+    "shadows": [
+      {
+        "name": "mobile-menu",
+        "value": "0 10px 28px rgb(24 45 49 / .12)",
+        "purpose": "Atvertas native meniu virš dokumento; kitos dalys plokščios."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-background",
+        "value": "background-color .15s ease-out",
+        "purpose": "Primary, secondary ir dark hover; reduced-motion išjungia."
+      },
+      {
+        "name": "menu-open",
+        "value": "rotate(90deg)",
+        "purpose": "16px SVG pasisukimas native details open; be papildomos animacijos."
+      },
+      {
+        "name": "focus-ring",
+        "value": "3px solid #183d49; outline-offset: 4px",
+        "purpose": "Matomas klaviatūros orientyras."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "inset-document",
+        "value": "1240px"
+      },
+      {
+        "name": "compact-columns",
+        "value": "900px"
+      },
+      {
+        "name": "single-reading-column",
+        "value": "800px"
+      },
+      {
+        "name": "stack-guide-rows",
+        "value": "600px"
+      }
+    ],
+    "tonalRampPurpose": "Synthesized OKLCH lightness ramps are panel visualization only. Frontmatter values and actual source remain normative.",
+    "sourceEvidence": {
+      "renderer": "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/fasadopastoliai-site.tsx",
+      "stylesheet": "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/fasadopastoliai-site.module.css",
+      "tools": "C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/fasadopastoliai-site.tools.tsx",
+      "fonts": "C:/Users/lenovo/Documents/dovanos-memorycasting/public/fonts/fasadopastoliai/fonts.css",
+      "screens": "qa/*-final.jpg; qa/*-top.jpg",
+      "scope": "fasadopastoliai.lt only; local production8911; no human/engineer approval",
+      "unverified": [
+        "deployment",
+        "partner",
+        "SMTP inbox receipt",
+        "physical device",
+        "actual 200% browser zoom"
+      ]
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pagrindinis tikro poreikio veiksmas.",
+      "html": "<button class=\"ds-primary\" type=\"button\">Aprašyti nuomos poreikį →</button>",
+      "css": ".ds-primary{font:600 18px/1.3 'Source Sans 3',Arial,sans-serif;padding:15px 22px;min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;text-align:center;cursor:pointer;transition:background-color .15s ease-out;border:0;background:#d4e84c;color:#182d31}.ds-primary:hover{background:#e5f37f}.ds-primary:focus-visible{outline:3px solid #183d49;outline-offset:4px}.ds-primary:disabled{background:#e3e9eb;color:#425b61;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Neprivalomas vietinis ruošinio veiksmas.",
+      "html": "<button class=\"ds-secondary\" type=\"button\">Pridėti sieną</button>",
+      "css": ".ds-secondary{font:600 18px/1.3 'Source Sans 3',Arial,sans-serif;padding:15px 22px;min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;text-align:center;cursor:pointer;transition:background-color .15s ease-out;border:1px solid #182d31;background:transparent;color:#182d31}.ds-secondary:hover{background:#e3ebed}.ds-secondary:focus-visible{outline:3px solid #183d49;outline-offset:4px}.ds-secondary:disabled{background:#e3e9eb;border-color:#b3c2c6;color:#425b61;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Kontrastingas veiksmas laimo užbaigimo juostoje.",
+      "html": "<button class=\"ds-dark\" type=\"button\">Aprašyti nuomos poreikį →</button>",
+      "css": ".ds-dark{font:600 18px/1.3 'Source Sans 3',Arial,sans-serif;padding:15px 22px;min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;text-align:center;cursor:pointer;transition:background-color .15s ease-out;border:0;background:#182d31;color:#fff}.ds-dark:hover{background:#2d4b52}.ds-dark:focus-visible{outline:3px solid #183d49;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-dark{transition:none}}"
+    },
+    {
+      "name": "Dimension Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Žinomas matmuo su etikete ir vienetu; placeholder nėra etiketė.",
+      "html": "<label class=\"ds-label\" for=\"ds-length\">Ilgis, m</label><input class=\"ds-field\" id=\"ds-length\" inputmode=\"decimal\" placeholder=\"Nežinau\" maxlength=\"12\">",
+      "css": ".ds-label{display:block;font:600 18px/1.6 'Source Sans 3',Arial,sans-serif;color:#182d31;margin-bottom:8px}.ds-field{font:400 18px/1.4 'Source Sans 3',Arial,sans-serif;font-variant-numeric:tabular-nums;background:#fff;color:#182d31;border:1px solid #6c8289;min-height:46px;padding:10px 12px;width:100%;border-radius:0;scroll-margin-top:24px}.ds-field::placeholder{color:#425b61;opacity:1}.ds-field:focus-visible{outline:3px solid #183d49;outline-offset:4px}"
+    },
+    {
+      "name": "Mobile Navigation",
+      "kind": "nav",
+      "refersTo": "nav-action",
+      "description": "Tikras native disclosure su autoriaus SVG ir outline kontakto keliu.",
+      "html": "<details class=\"ds-menu\"><summary><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/></svg>Meniu</summary><nav aria-label=\"Mobilioji navigacija\"><a href=\"/nuomos-poreikis\">Nuomos poreikis</a><a href=\"/gidai\">Gidai</a><a class=\"ds-nav-action\" href=\"/kontaktai#zinute\">Aprašyti projektą →</a></nav></details>",
+      "css": ".ds-menu{position:relative;font:400 16px/1.6 'Source Sans 3',Arial,sans-serif;color:#182d31}.ds-menu summary{min-height:44px;display:flex;align-items:center;cursor:pointer}.ds-menu summary svg{margin-right:8px;flex-shrink:0}.ds-menu[open] summary svg{transform:rotate(90deg)}.ds-menu nav{position:absolute;right:0;top:52px;background:#fff;color:#182d31;border:1px solid #b3c2c6;padding:16px;width:min(280px,calc(100vw - 40px));display:grid;gap:12px;z-index:20;box-shadow:0 10px 28px rgb(24 45 49 / .12)}.ds-menu a{color:inherit;text-decoration:none;min-height:44px;display:flex;align-items:center}.ds-menu a:hover{text-decoration:underline;text-underline-offset:.22em}.ds-menu .ds-nav-action{border:1px solid #182d31;padding:12px 18px;font-weight:600}.ds-menu :focus-visible{outline:3px solid #183d49;outline-offset:4px}"
+    },
+    {
+      "name": "Worksheet Surface",
+      "kind": "card",
+      "refersTo": "worksheet",
+      "description": "Vėsus geometrijos ar žinutės darbo lapas be kortelės šešėlio.",
+      "html": "<section class=\"ds-sheet\"><h2>Žinutės ruošinys</h2><p>Neprivalomas. Vietoje ruošinio galima rašyti tiesiai formoje. Paruošimas tik užpildo redaguojamą žinutę.</p></section>",
+      "css": ".ds-sheet{background:#edf1f2;color:#182d31;padding:28px;font:400 18px/1.6 'Source Sans 3',Arial,sans-serif}.ds-sheet h2{font:700 clamp(26px,2.6vw,34px)/1.15 Archivo,Arial,sans-serif;letter-spacing:-.025em;margin:0 0 20px;text-wrap:balance}.ds-sheet p{margin:0 0 20px}@media(max-width:800px){.ds-sheet{padding:20px}}@media(max-width:600px){.ds-sheet h2{font-size:27px}}"
+    },
+    {
+      "name": "Guide Row Copy",
+      "kind": "custom",
+      "refersTo": "guide-row",
+      "description": "Gido eilutės tekstas ir sprendimo stulpelis; tikras vaizdo crop dokumentuotas Layout.",
+      "html": "<article class=\"ds-guide\"><div><h2><a href=\"/pastoliu-nuomos-kaina\">Pastolių nuomos kaina: lyginkite apimtį ir laikotarpį</a></h2><p>Ką reiškia m², nuomos dienos, transportas ir grąžinimas? Klausimų lapas tikriems pasiūlymams palyginti.</p></div><div class=\"ds-decision\"><p>Kas įtraukta į sumą?</p><a href=\"/pastoliu-nuomos-kaina\">Skaityti gidą →</a></div></article>",
+      "css": ".ds-guide{display:grid;grid-template-columns:1fr 190px;gap:28px;align-items:center;padding:26px 0;border-top:1px solid #b3c2c6;color:#182d31;font:400 17px/1.6 'Source Sans 3',Arial,sans-serif}.ds-guide h2{font:700 23px/1.15 Archivo,Arial,sans-serif;letter-spacing:-.025em;margin:0 0 14px;max-width:26ch;text-wrap:balance}.ds-guide p{margin:0 0 14px}.ds-guide a{color:inherit;text-underline-offset:.22em}.ds-guide h2 a{text-decoration:none}.ds-guide h2 a:hover{text-decoration:underline}.ds-decision{border-left:1px solid #b3c2c6;padding-left:24px}.ds-decision p{font-size:16px;color:#425b61}.ds-decision a{font-weight:600;display:inline-flex;align-items:center;min-height:44px;line-height:1.4}.ds-guide :focus-visible{outline:3px solid #183d49;outline-offset:4px}@media(max-width:600px){.ds-guide{display:block}.ds-guide h2{max-width:none;font-size:25px}.ds-decision{border-left:0;padding-left:0;margin-top:16px}.ds-decision p{display:none}}"
+    },
+    {
+      "name": "Geometry Result",
+      "kind": "custom",
+      "refersTo": "worksheet",
+      "description": "Tekstinis statusas su mato vienetu ir aiškia rezultato riba.",
+      "html": "<div class=\"ds-result\" role=\"status\"><p>108 m² – įrašytų stačiakampių sienų geometrinė suma.\nSiena 1: 10 × 6 m\nSiena 2: 8 × 6 m\nNe pastolių kiekis, kaina ar montavimo projektas.</p></div>",
+      "css": ".ds-result{white-space:pre-line;font:400 18px/1.6 'Source Sans 3',Arial,sans-serif;font-variant-numeric:tabular-nums;color:#182d31;border-top:1px solid #b3c2c6;padding-top:20px;margin-top:20px}.ds-result p{margin:0 0 20px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Nuomos poreikio dokumentas",
+    "overview": "Vėsus baltas dokumentas su tvirtomis, įprasto pločio antraštėmis. Fotografija suteikia namo fasado kontekstą, o linijos ir atskiri laukų lapai padeda atskirti matmenis, laiką ir paslaugų apimtį. Nežinomybė yra skaitomas atsakymas, todėl jos nepakeičia tariama kaina, įrangos kiekis ar dekoratyvi statistika.\n\nSistema užfiksuota iš įgyvendinto rendererio ir jo stilių 2026-10-03, po vieno riboto peržiūros pataisymų rinkinio. Kryptį pasirinko agentas pagal deleguotą savininko taisyklę; tai nėra žmogaus ar inžinieriaus patvirtinimas. Produktinė riba – išankstinis poreikio tyrimas – lemia tiesioginius veiksmų vardus, redaguojamą ruošinį ir matomą paaiškinimą prieš formos pateikimą.",
+    "keyCharacteristics": [
+      "Baltas dokumentas vėsiame lauko fone.",
+      "Archivo antraštės ir Source Sans 3 proza.",
+      "Fotografijos juosta, linijomis atskirti klausimai ir gidų eilutės.",
+      "Ryškus gelsvai žalias veiksmas ir užbaigimo juosta.",
+      "Tikra forma prieš neprivalomą žinutės ruošinį."
+    ],
+    "rules": [
+      {
+        "name": "The Veiksmo vietos Rule",
+        "body": "Laimas žymi veiksmą arba užbaigimo dalį; juo neišdažomi visi informaciniai blokai.",
+        "section": "colors"
+      },
+      {
+        "name": "The Vienetų Rule",
+        "body": "Matmenys pateikiami su metrais, rezultatas su m² ir jo riba; tabular numerals naudojami laukams bei rezultatui, ne tariamiems verslo rodikliams.",
+        "section": "typography"
+      },
+      {
+        "name": "The Dokumento plokštumos Rule",
+        "body": "Informaciniai lapai lieka plokšti; meniu šešėlis neperkeliamas į gidų eilutes ar laukus.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** išlaikyti vėsų dokumento foną, balto lapo ribas ir tikras teksto pločio ribas.",
+      "**Do** žinomą dydį, mato vienetą ir nežinomą dalį rodyti atskirai.",
+      "**Do** naudoti veiksmą įvardijančius laukų bei mygtukų vardus ir palikti žinutę redaguojamą.",
+      "**Do** mobiliame išlaikyti 20px teksto kraštus, formą prieš neprivalomą ruošinį ir native navigaciją.",
+      "**Do** naudoti tos pačios temos 4:3 gido lead ir miniatiūros šeimą, tikrą srcset ir aiškią iliustracijos ribą.",
+      "**Do** išlaikyti matomą focus, tekstines klaidas ir reduced-motion elgesį."
+    ],
+    "donts": [
+      "**Don't** iliustracijos pateikti kaip kliento darbą, brigados ar įrangos saugos įrodymą.",
+      "**Don't** geometrijos rezultato vadinti kaina, pastolių komplektu ar montavimo projektu.",
+      "**Don't** ruošinio paruošimo stilizuoti kaip jau pateikto užsakymo ar rezervacijos.",
+      "**Don't** į gidų eiles perkelti meniu šešėlio, dekoratyvių ikonų kortelių ar viso kito domeno skin.",
+      "**Don't** grąžinti Unicode ikonų vietoje autoriaus SVG disclosure arba įteisinti nepatikrintą ekraną kaip normą."
+    ]
+  }
+}

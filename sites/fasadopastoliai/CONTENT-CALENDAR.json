@@ -1,0 +1,326 @@
+{
+  "date": "2026-10-03T18:53:41.249Z",
+  "months": 6,
+  "status": "private-plan-not-publication",
+  "proposals": [
+    {
+      "type": "guide",
+      "publishDate": "2026-10-17",
+      "slug": "nuomos-pratesimas",
+      "title": "Nuomos pratęsimas: kokią datą ir pagrindą sutarti",
+      "description": "Laikotarpio pokytis",
+      "intent": "Laikotarpio pokytis",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "pastoliu-nuomos-kaina",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-11-07",
+      "slug": "fasado-darbu-etapai",
+      "title": "Fasado darbų etapai: viena nuoma ar keli perstatymai?",
+      "description": "Etapų apimtis",
+      "intent": "Etapų apimtis",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "fasado-matmenys",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-11-21",
+      "slug": "nuomos-grazinimo-lapas",
+      "title": "Grąžinimo lapas: kiekių ir būklės klausimai",
+      "description": "Grąžinimo dokumentavimas",
+      "intent": "Grąžinimo dokumentavimas",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "nuoma-su-montavimu",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-12-05",
+      "slug": "objekto-prieigos-aprasas",
+      "title": "Objekto prieiga: kokią turimą informaciją pateikti",
+      "description": "Logistika iš turimų faktų",
+      "intent": "Logistika iš turimų faktų",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "nuoma-su-montavimu",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2026-12-19",
+      "slug": "rangovo-pastoliu-apimtis",
+      "title": "Ar fasado rangovas jau įtraukė pastolius?",
+      "description": "Dvigubo nuomos poreikio išvengimas",
+      "intent": "Dvigubo nuomos poreikio išvengimas",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "pastoliu-nuomos-kaina",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-01-09",
+      "slug": "pavasario-nuomos-laikotarpis",
+      "title": "Pavasario planas: pageidaujamas ir patvirtintas laikas",
+      "description": "Laiko planas be likučio pažado",
+      "intent": "Laiko planas be likučio pažado",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "pastoliu-nuomos-kaina",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-01-23",
+      "slug": "sienu-apraso-pavyzdys",
+      "title": "Sienų aprašas iš turimų planų: patikrinimo lapas",
+      "description": "Duomenų kilmė",
+      "intent": "Duomenų kilmė",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "fasado-matmenys",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-02-06",
+      "slug": "dvieju-pasiulymu-apimtis",
+      "title": "Du tikri nuomos pasiūlymai: vienodų eilučių lapas",
+      "description": "Realios vienodos apimties palyginimas",
+      "intent": "Realios vienodos apimties palyginimas",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "pastoliu-nuomos-kaina",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-02-20",
+      "slug": "montavimo-priemimo-klausimai",
+      "title": "Montavimo priėmimas: klausimai prieš susitarimą",
+      "description": "Dokumentų vaidmenys",
+      "intent": "Dokumentų vaidmenys",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "nuoma-su-montavimu",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-03-06",
+      "slug": "priestato-poreikio-aprasas",
+      "title": "Priestatas prie fasado: aprašyti kliūtį, ne projektuoti",
+      "description": "Nestandartinės geometrijos riba",
+      "intent": "Nestandartinės geometrijos riba",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "fasado-matmenys",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-03-20",
+      "slug": "transporto-dvi-kryptys",
+      "title": "Transportas į objektą ir atgal: kas sutarta?",
+      "description": "Logistikos įtrauktis",
+      "intent": "Logistikos įtrauktis",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "pastoliu-nuomos-kaina",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    },
+    {
+      "type": "guide",
+      "publishDate": "2027-04-02",
+      "slug": "nuomos-poreikio-testo-metodika",
+      "title": "Kada realios užklausos pagrindžia nuomos projekto plėtrą",
+      "description": "Tik realūs rezultatai ir ekonomika",
+      "intent": "Tik realūs rezultatai ir ekonomika",
+      "cluster": "Namo fasado nuomos apimtis",
+      "pillarSlug": "pastoliu-nuomos-kaina",
+      "seasonalHook": "Rudens/pavasario darbų planavimas yra redakcinė hipotezė, ne sezoninės paklausos matavimas.",
+      "reason": "Privatus6mėn pasiūlymas, ne publikacija. Prieš juodraštį nauji pirminiai šaltiniai, tikros taisyklės ir patikra. Nekurti sinonimų ar miestų kopijų.",
+      "body": []
+    }
+  ],
+  "studioPages": [
+    {
+      "id": "0a76a0ef-fc97-4e0a-bf80-b6f9f0efd246",
+      "slug": "",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "804de432-629a-4b47-aa2e-94fb43ec3688",
+      "slug": "nuomos-poreikis",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "4d957c71-cfd8-4e98-ac81-46a9be63222f",
+      "slug": "gidai",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "2940b20e-da36-46b1-8a59-ce498a01bbde",
+      "slug": "fasado-matmenys",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "888dd51f-0654-4f20-b6d9-fda5fbf4640e",
+      "slug": "pastoliu-nuomos-kaina",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "40847c00-2164-4aba-ac8b-4acc0b262a77",
+      "slug": "nuoma-su-montavimu",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "4701a920-6118-41fa-95a6-4020576b7493",
+      "slug": "kontaktai",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "e035fcba-bc7c-455a-a3d5-687212cc73aa",
+      "slug": "apie-projekta",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "22ede55b-c79c-4fd4-af30-81dccd73369e",
+      "slug": "redakcija",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "20c8b621-19df-4a3e-9a36-0b78e9de1f1d",
+      "slug": "privatumas",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "9be42f20-d723-4dd7-9bb4-308b453b70f6",
+      "slug": "naudojimo-salygos",
+      "status": "approved",
+      "publishAt": "2026-10-03T00:00:00.000Z",
+      "pillarPageId": ""
+    },
+    {
+      "id": "9797caac-f5e2-4b8c-a7ad-b2b26722d260",
+      "slug": "nuomos-pratesimas",
+      "status": "draft",
+      "publishAt": "2026-10-17T08:00:00.000Z",
+      "pillarPageId": "888dd51f-0654-4f20-b6d9-fda5fbf4640e"
+    },
+    {
+      "id": "5ef764ae-8158-4fd1-b2b2-8a1ec90898d6",
+      "slug": "fasado-darbu-etapai",
+      "status": "draft",
+      "publishAt": "2026-11-07T08:00:00.000Z",
+      "pillarPageId": "2940b20e-da36-46b1-8a59-ce498a01bbde"
+    },
+    {
+      "id": "d62e1508-87ad-4045-921d-72be0a1d4d42",
+      "slug": "nuomos-grazinimo-lapas",
+      "status": "draft",
+      "publishAt": "2026-11-21T08:00:00.000Z",
+      "pillarPageId": "40847c00-2164-4aba-ac8b-4acc0b262a77"
+    },
+    {
+      "id": "00fdc478-d421-453b-b841-d70c7df57361",
+      "slug": "objekto-prieigos-aprasas",
+      "status": "draft",
+      "publishAt": "2026-12-05T08:00:00.000Z",
+      "pillarPageId": "40847c00-2164-4aba-ac8b-4acc0b262a77"
+    },
+    {
+      "id": "503067ae-f061-4756-a5a2-0179f6a57c0d",
+      "slug": "rangovo-pastoliu-apimtis",
+      "status": "draft",
+      "publishAt": "2026-12-19T08:00:00.000Z",
+      "pillarPageId": "888dd51f-0654-4f20-b6d9-fda5fbf4640e"
+    },
+    {
+      "id": "812fdd3c-6b6c-4706-a87a-43d88d681387",
+      "slug": "pavasario-nuomos-laikotarpis",
+      "status": "draft",
+      "publishAt": "2027-01-09T08:00:00.000Z",
+      "pillarPageId": "888dd51f-0654-4f20-b6d9-fda5fbf4640e"
+    },
+    {
+      "id": "5ea43b6b-df40-4f3a-9bae-341f418a6bb7",
+      "slug": "sienu-apraso-pavyzdys",
+      "status": "draft",
+      "publishAt": "2027-01-23T08:00:00.000Z",
+      "pillarPageId": "2940b20e-da36-46b1-8a59-ce498a01bbde"
+    },
+    {
+      "id": "9b940159-3d25-4c59-84b9-9d62fe227bd0",
+      "slug": "dvieju-pasiulymu-apimtis",
+      "status": "draft",
+      "publishAt": "2027-02-06T08:00:00.000Z",
+      "pillarPageId": "888dd51f-0654-4f20-b6d9-fda5fbf4640e"
+    },
+    {
+      "id": "3d713b0f-add1-4201-979c-18de28a4c3ab",
+      "slug": "montavimo-priemimo-klausimai",
+      "status": "draft",
+      "publishAt": "2027-02-20T08:00:00.000Z",
+      "pillarPageId": "40847c00-2164-4aba-ac8b-4acc0b262a77"
+    },
+    {
+      "id": "ad8e8807-b357-4b56-bf51-1581a539e25a",
+      "slug": "priestato-poreikio-aprasas",
+      "status": "draft",
+      "publishAt": "2027-03-06T08:00:00.000Z",
+      "pillarPageId": "2940b20e-da36-46b1-8a59-ce498a01bbde"
+    },
+    {
+      "id": "c5cfc4a8-bfe5-4470-ab65-56e263cbf117",
+      "slug": "transporto-dvi-kryptys",
+      "status": "draft",
+      "publishAt": "2027-03-20T08:00:00.000Z",
+      "pillarPageId": "888dd51f-0654-4f20-b6d9-fda5fbf4640e"
+    },
+    {
+      "id": "584a44e8-c6f7-4d9b-a153-6ba1bcb27ce2",
+      "slug": "nuomos-poreikio-testo-metodika",
+      "status": "draft",
+      "publishAt": "2027-04-02T08:00:00.000Z",
+      "pillarPageId": "888dd51f-0654-4f20-b6d9-fda5fbf4640e"
+    }
+  ]
+}

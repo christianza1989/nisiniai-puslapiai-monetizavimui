@@ -1,0 +1,129 @@
+DIRECTION CONCEPT SEED (key: d375fdd3; mode: persuade; source: api; approved pool: c3b204a1eed6; 306/564 human-approved; rerun with --scope direction --mode persuade --from d375fdd3 --candidate-count 7 to reproduce this roll against this catalog revision)
+ASSIGNED INDEX: 5
+  After ordering the grounded directions by resonance, build candidate
+  5 of your own grounded list; the assignment never points at a
+  challenger. The assignment is the roll, not a suggestion: your top-ranked
+  direction is what every run would ship, so the script decides which grounded
+  direction gets built. Each direction joins a durable visual system to a
+  concrete expression for the requested first surface, decided as one. It must
+  survive the current task plus navigation, quiet and dense content,
+  interaction and state, and a substantially different future surface. In an
+  attended run, present the assigned direction fully committed and offer
+  re-roll. You may add ONE card for your top-ranked grounded candidate when
+  it is not the assigned direction, kicker IMPECCABLE’S PICK, with an honest risk line
+  naming its familiarity; one pick card, never a ranked lineup, and the pick
+  never takes the lead position. When the assignment IS your top candidate,
+  there is no pick card. Re-roll yourself only
+  on named factual grounds, when the assignment cannot carry the product's
+  truth or task; taste is never grounds.
+  The assignment exists to refuse the model's ranking rut, never to outrank
+  the user or the brief. Never expose assignment metadata in user-facing labels.
+CHALLENGERS:
+  1. a jacquard brocade woven from punched instructions, where thousands of binary thread choices resolve into a gold bird across midnight silk
+     SOURCE ID: textiles-weave-drape-fashion-jacquard-punched-brocade
+     CREATIVE SPARK: Rows of tiny holes pass above the loom; beneath them, gold weft slowly gathers into a bird whose wing spans hundreds of separate thread decisions.
+     SYSTEM GRAMMAR:
+       - Palette/material: midnight blue silk as ground, gold weft floats as the accent motif, punch-card cream for instruction rows, warp shadow in near-black ink
+       - Type/composition: monospaced ledger digits for card rows, motif titles in woven small caps, layout banded row by row like the loom's lift sequence
+       - Topology/navigation: Move between finished motif, weave row, card, and individual warp lift with full traceability.
+       - Controls/state: Punch, lift, throw, reverse, and compare with encoded, raised, woven, skipped, and corrected states.
+       - Responsive/motion: Present the loom as synchronized pattern and instruction rows and make every thread choice keyboard inspectable.
+     WEB LEVERAGE: A shared binary matrix can drive textile rendering, editing, and an exact accessible instruction representation.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade.webp · hero https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade-hero.webp
+  2. a night sea igniting with bioluminescent plankton, with every wake tracing motion, fading memory, and currents revealed by living light
+     SOURCE ID: reefs-bioluminescent-nocturnal-plankton-wake-stars
+     CREATIVE SPARK: A hand enters black water and draws a blue galaxy that survives for seconds before darkness closes.
+     SYSTEM GRAMMAR:
+       - Palette/material: black night sea as ground, electric-blue plankton light marking the active wake, cyan fading traces as body, darkness reclaiming everything at rest
+       - Type/composition: thin luminous letterforms glowing on black, wayfinding drawn as pointer trails across a dark field, text held bright enough to read over the void
+       - Topology/navigation: Navigate dark field, disturbance path, glowing eddy, fade history, and current direction.
+       - Controls/state: Draw wakes, change speed, and show dormant, excited, radiant, and fading states.
+       - Responsive/motion: Use touch trails on phones
+     WEB LEVERAGE: GPU particles react to pointer velocity and advect through a visible current field.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/reefs-bioluminescent-nocturnal-plankton-wake-stars.webp · hero https://impeccable.style/worlds/cards/reefs-bioluminescent-nocturnal-plankton-wake-stars-hero.webp
+  3. the seven-segment display family, bedside clocks, gas-station price totems, scoreboards, and microwave panels all speaking one eight-cell mask where unlit segments are designed too
+     SOURCE ID: signals-instruments-seven-segment-alarm-clock
+     CREATIVE SPARK: At 3am the bedroom hour hangs as four red digits; by noon the same alphabet quotes gasoline at two meters tall, and at the stadium the score slams from 98 to 100 with nothing sliding, segments simply dying and igniting.
+     SYSTEM GRAMMAR:
+       - Palette/material: lit segments in LED red, amber, or scoreboard green on matte near-black ground, unlit segments held as faint ghost cells; red glow owns the night register
+       - Type/composition: one eight-cell mask makes every glyph, digits ranked in fixed slots with the colon or decimal as its own cell; absence is drawn as deliberately as light
+       - Topology/navigation: the layout is a rigid mask of cells, from four bedside digits to a price totem's stack; place never moves, only which segments light
+       - Controls/state: modes cycle by held buttons, set digits blink while everything else holds; the flashing 12:00 of an unset clock is the canonical error state
+       - Responsive/motion: cells scale as whole units and never reflow mid-glyph; every change is an instant segment swap
+     WEB LEVERAGE: CSS grid and clip-path build a true segment mask with ghost cells, and a shared worker keeps blink phase synchronized across every open tab
+     QUALITY BAR: board https://impeccable.style/worlds/cards/signals-instruments-seven-segment-alarm-clock.webp · hero https://impeccable.style/worlds/cards/signals-instruments-seven-segment-alarm-clock-hero.webp
+  4. an algorave floor, where projected live code edits the music mid-dance and every thrown bracket changes what a hundred bodies do next
+     SOURCE ID: medium-native-algorave-source-floor
+     CREATIVE SPARK: The coder deletes half a line and the kick drops out; the crowd howls, the line comes back wrong on purpose, and the room lifts.
+     SYSTEM GRAMMAR:
+       - Palette/material: phosphor green and magenta syntax on projector black, the code buffer as ground; the pattern about to change flashes amber before it sounds
+       - Type/composition: monospaced terminal type at stage scale with hard line breaks as musical bars, the composition one code buffer whose cursor line is the downbeat
+       - Topology/navigation: the source is the stage; sections of code map to audible layers you can follow live.
+       - Controls/state: edits apply on the next cycle boundary; upcoming changes are visible before they sound.
+       - Responsive/motion: code and visuals share one clock; small screens follow a single highlighted pattern lane.
+     WEB LEVERAGE: Web Audio scheduling ties editable patterns to a shared clock with live evaluation in the page.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/medium-native-algorave-source-floor.webp · hero https://impeccable.style/worlds/cards/medium-native-algorave-source-floor-hero.webp
+  5. a Japanese contemporary high-density site, where tiny type, boxed modules, and utility-red accents pack far more onto one screen than a Western grid would dare
+     SOURCE ID: japanese-high-density-web
+     CREATIVE SPARK: Dozens of boxed modules tile a single scroll, each ruled with hairlines and headed by a small red tab; prices, badges, and nav rails crowd in at tiny sizes, and nothing wastes a pixel of the packed grid.
+     SYSTEM GRAMMAR:
+       - Palette/material: bright white ground, dense black text, a signal utility-red for tabs and prices, cool grays for module borders and fills
+       - Type/composition: a compact gothic sans at small sizes with tight leading; a mosaic of ruled rectangular modules, each with its own small header tab, packed edge to edge.
+       - Topology/navigation: Move by scanning the dense module mosaic, by a persistent multi-row nav rail, and by expandable category accordions in a left rail.
+       - Controls/state: Hovering a module raises its border and reveals secondary actions; tabs switch content in place; badges mark new, sale, and limited states.
+       - Responsive/motion: motion is minimal and functional, and reduced-motion keeps only instant state swaps.
+     WEB LEVERAGE: Build the module mosaic as a dense CSS grid with named template areas and a strict hairline border system, so hundreds of small blocks tile without the whitespace inflation of a default SaaS grid.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/japanese-high-density-web.webp · hero https://impeccable.style/worlds/cards/japanese-high-density-web-hero.webp
+  6. a generative brand identity, where a parametric mark reseeds from live inputs and its own seed derives the palette, motion, and layout of every surface around it
+     SOURCE ID: generative-parametric-identity
+     CREATIVE SPARK: A logo redraws itself from a few parameters, and the same seed spills outward: buttons, dividers, and headers borrow its palette and rhythm, so a refresh tunes the whole brand a few degrees off its last self.
+     SYSTEM GRAMMAR:
+       - Palette/material: a seed-derived palette generated from the mark's parameters as a base hue plus algorithmic harmonies, flat vector surfaces
+       - Type/composition: a neutral geometric sans holds the type voice steady while the parametric system varies color and form
+       - Topology/navigation: Move by scrolling seed-themed sections, by a nav whose mark animates live, and by a parameters panel that reseeds the identity on demand.
+       - Controls/state: Adjusting a parameter or reseeding regenerates the mark, palette, and accents together in real time; hover states pull from the active seed's harmony.
+       - Responsive/motion: the logo animates parametrically at idle, and reduced-motion renders one static seed frame.
+     WEB LEVERAGE: Generate the mark as parametric SVG or canvas from a seed, and derive CSS custom properties for palette, spacing, and accent from that same seed so buttons, dividers, and headers restyle in lockstep with the logo.
+     QUALITY BAR: board https://impeccable.style/worlds/cards/generative-parametric-identity.webp · hero https://impeccable.style/worlds/cards/generative-parametric-identity-hero.webp
+Fuse each challenger before judging it: the challenger supplies the form
+  and its system grammar, the product supplies every fact, and clarity wins
+  conflicts. Weigh the fused result against the assigned direction on exactly
+  two axes, audience identification and product clarity. Losing to strong
+  grounded material is a valid outcome; beating a thin or tool-monoculture
+  list is the point. A fused challenger that wins both axes becomes the build.
+  Close the weighing with a verdict per challenger, decided before any
+  borrowing is considered: wins (beats the assigned direction on both axes),
+  competitive (holds one axis), or declined (loses both). A declined
+  challenger is not spent: name the one discipline of its system the assigned
+  direction lacks, and raise the assigned direction to match before
+  presenting it. A donation transfers ambition and system discipline, never
+  the challenger's clothes; one world owns the page. Write each raise as its
+  own named line on the presented direction, and carry every verdict, kept
+  line, and raise into the decision page payload.
+When you can view images, open the QUALITY BAR board and hero for any
+challenger you weigh seriously and for the world you build. They exist as a
+craft bar, the finish level and commitment the build is expected to reach,
+never as a mockup to copy; your surface serves this product, not that render.
+PRODUCT.md and explicit incumbent brand commitments constrain every direction.
+The seed never chooses exact colors, fonts, tokens, or a user preference, and
+it never permits the world and first surface to be selected independently.
+The CREATIVE SPARK is a complete visual system, not a theme or decorative
+reference. Translate every supplied system rule into the product: palette and
+material, type and composition, topology, controls and states, and adaptation.
+Keep the source's visible character, scale, rhythm, and interaction instead of
+reducing vivid grammar to generic nouns. When the source is already a credible
+interface language, commit to it across navigation, content, controls, and
+states. Otherwise keep a literal carrier only when it becomes functional.
+Ambitious motion, spatial media, or interaction is welcome when it strengthens
+the product without weakening semantics, performance, or fallback behavior.
+TELEMETRY: after the user's choice resolves, rerun this script once with
+  --kind <assigned|pick|challenger|canon> --from d375fdd3 --scope direction --mode persuade,
+  adding --chosen <challenger-id> when a dealt challenger won and keeping
+  --register <safer|bolder> when the resolved round came from a steered hand.
+  One ping per resolved attended round. The ping is anonymous, the card kind
+  plus the catalog id when one won; your grounded candidates' names never
+  leave the machine, and the ping is skipped automatically when DO_NOT_TRACK
+  or IMPECCABLE_NO_TELEMETRY is set.
+A user- or brief-pinned decision beats the roll, always.
+ASSIGNED INDEX (restated for truncated readers): 5. Build candidate
+5 of your own grounded list; seed key d375fdd3.

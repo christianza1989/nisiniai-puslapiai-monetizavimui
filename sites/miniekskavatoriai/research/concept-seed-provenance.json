@@ -1,0 +1,19 @@
+{
+  "source": "original local Codex session CommandExecution stdout; extracted unchanged, no reroll",
+  "sourceSessionPath": "C:\\Users\\lenovo\\.codex\\sessions\\2026\\10\\01\\rollout-2026-10-01T13-57-04-01a0f71c-5550-7281-b240-14858d89f7bd.jsonl",
+  "sourceOrdinal": 200,
+  "sourceTimestamp": "2026-10-01T11:18:42.500Z",
+  "executionId": "exec-43e3f505-ff61-4444-a1d1-056eb0ccf0f2",
+  "command": [
+    "C:\\Users\\lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+    "-Command",
+    "& C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/SKILLS/impeccable/scripts/impeccable.cmd concept-seed --scope direction --mode operate"
+  ],
+  "cwd": "file:///C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/sites/miniekskavatoriai",
+  "stdoutSha256": "e74a9b44fb074d4f26235741fc0b30f9685370b7c6272c4df75e745bf26f19cd",
+  "extractedAt": "2026-10-01",
+  "assignedIndex": 4,
+  "groundedCandidateCount": 7,
+  "candidateListEvidence": "DESIGN.md seven-item direction list",
+  "notOwnerApproval": true
+}

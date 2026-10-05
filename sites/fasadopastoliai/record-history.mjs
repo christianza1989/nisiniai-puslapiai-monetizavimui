@@ -1,0 +1,3 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const dir=import.meta.dirname+'/history/',a=JSON.parse(await readFile(dir+'audit.json','utf8'));
+await writeFile(dir+'url-decisions.json',JSON.stringify({date:new Date().toISOString(),publicChangesApplied:false,redirects:[],decisions:a.inventory.map(x=>({path:x.path,action:['/','/kontaktai'].includes(x.path)?'keep-new-original-content':'do-not-restore-404',reason:['/','/kontaktai'].includes(x.path)?'Bendra paskirtis ta pati; naujas MB Pinet poreikio projektas, ne ankstesnio operatoriaus tęsinys.':'Ankstesnės įmonės, techninės komplektacijos, portfolio ar anglų paskirties lygiaverčio dabartinio turinio nėra; neperadresuoti į homepage.'}))},null,2)+'\n');

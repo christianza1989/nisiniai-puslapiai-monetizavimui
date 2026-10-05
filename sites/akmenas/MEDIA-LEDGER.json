@@ -1,0 +1,202 @@
+{
+  "siteId": "akmenas",
+  "at": "2026-10-01T02:34:39.048Z",
+  "generator": "built-in ImageGen",
+  "promptsFile": "media-prompts.json",
+  "inspected": true,
+  "notes": "Visos keturios originalios iliustracijos peržiūrėtos. planning juostoje yra generuotos mažos žymos: jos neinterpretuojamos kaip tikslūs matmenys; illustration nėra technical blueprint. Originalų ženklelio viešai nėra.",
+  "families": {
+    "hero": {
+      "id": "377049e3-38a5-4051-940c-27219449d06c",
+      "groupId": "a475d4f6-b3c1-44ef-bcc6-dbfc59b6f364",
+      "alt": "Šviesaus akmens stalviršio kraštas ir ąžuolinės spintelės iliustraciniame virtuvės interjere",
+      "rights": "Originali šiam projektui 2026-10-01 sukurta AI iliustracija. Ne kliento projektas, ne prekės ar gamintojo pavyzdys.",
+      "variants": [
+        {
+          "id": "377049e3-38a5-4051-940c-27219449d06c",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 100686,
+          "sha256": "37019887845787854107f724e6d58bb45fa3c99695e54f7b92752e48e38e8b3f",
+          "src": "/content-assets/akmenas/377049e3-38a5-4051-940c-27219449d06c.webp"
+        },
+        {
+          "id": "d5ebfa17-df6f-42ee-bef4-071fc04539b3",
+          "width": 1200,
+          "height": 800,
+          "bytes": 70290,
+          "sha256": "394246ba9336fa7b1be48a01c045a6f80a721056360722e0112120e04331c76e",
+          "src": "/content-assets/akmenas/d5ebfa17-df6f-42ee-bef4-071fc04539b3.webp"
+        },
+        {
+          "id": "98bb1456-a72d-4f13-bbd1-d56302e7c365",
+          "width": 800,
+          "height": 533,
+          "bytes": 36498,
+          "sha256": "24e2b6f185607d1ccc461158736a154dddc5c641a5fa4925762686a113e5e719",
+          "src": "/content-assets/akmenas/98bb1456-a72d-4f13-bbd1-d56302e7c365.webp"
+        },
+        {
+          "id": "3a22b4ba-1b00-4f50-96ee-638c19e6e917",
+          "width": 640,
+          "height": 427,
+          "bytes": 25082,
+          "sha256": "7ecf548e247b16b569ad22d957e7f541b41b91b02f718fd3eaed3927a29e1f8a",
+          "src": "/content-assets/akmenas/3a22b4ba-1b00-4f50-96ee-638c19e6e917.webp"
+        },
+        {
+          "id": "96d92e6b-4c93-4445-9100-d445f6dbada0",
+          "width": 360,
+          "height": 240,
+          "bytes": 9190,
+          "sha256": "bae4a147234afaf6c0ed4075906bbe637dc835a3484d07d069c5fc0a537c8e11",
+          "src": "/content-assets/akmenas/96d92e6b-4c93-4445-9100-d445f6dbada0.webp"
+        }
+      ]
+    },
+    "materials": {
+      "id": "256e8f9d-52ba-4fde-b35b-6a710c1b3070",
+      "groupId": "792ca8a0-9dab-4ba4-93eb-40b3f75f07a9",
+      "alt": "Keturi skirtingų faktūrų paviršių pavyzdžiai: tamsus grūdėtas, šviesus taškuotas, gyslotas ir matinis smėlio spalvos",
+      "rights": "Originali šiam projektui 2026-10-01 sukurta AI iliustracija. Ne kliento projektas, ne prekės ar gamintojo pavyzdys.",
+      "variants": [
+        {
+          "id": "256e8f9d-52ba-4fde-b35b-6a710c1b3070",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 111704,
+          "sha256": "d43e363283ec53b4c7ebc791cf42723b04b28bb183e52719e3604b4f65cb2438",
+          "src": "/content-assets/akmenas/256e8f9d-52ba-4fde-b35b-6a710c1b3070.webp"
+        },
+        {
+          "id": "35b0237f-6985-4ca7-bb7e-34f5434f0364",
+          "width": 1200,
+          "height": 800,
+          "bytes": 75380,
+          "sha256": "d458d822b0c873f4dd640ba8249165b88e3ad66abdbfb3134de5f1365cb879b5",
+          "src": "/content-assets/akmenas/35b0237f-6985-4ca7-bb7e-34f5434f0364.webp"
+        },
+        {
+          "id": "01c2edc7-a550-40e9-adf1-eb7639f81b7c",
+          "width": 800,
+          "height": 533,
+          "bytes": 38200,
+          "sha256": "c358b716005792309f7ce1efa5fad98eef3015639bc0b68eb07008140a216184",
+          "src": "/content-assets/akmenas/01c2edc7-a550-40e9-adf1-eb7639f81b7c.webp"
+        },
+        {
+          "id": "d236203e-652b-4e1f-a833-90f40f8a69a8",
+          "width": 640,
+          "height": 427,
+          "bytes": 25050,
+          "sha256": "38c918480f6b97ba7c5025d0f456d6a9fb55ae69984f29bca867e1ea7d57ce52",
+          "src": "/content-assets/akmenas/d236203e-652b-4e1f-a833-90f40f8a69a8.webp"
+        },
+        {
+          "id": "801a9ba9-c180-4f08-a6db-910b8b542d30",
+          "width": 360,
+          "height": 240,
+          "bytes": 8144,
+          "sha256": "6416eea62f4d4ef4fb945aa42ea86c741bb4506f961520e8807f6356a9fd7171",
+          "src": "/content-assets/akmenas/801a9ba9-c180-4f08-a6db-910b8b542d30.webp"
+        }
+      ]
+    },
+    "planning": {
+      "id": "1ac42ab1-1939-48ab-a8e7-38adb9eae7c5",
+      "groupId": "c7d710a5-e62d-4289-8157-61b4571fa17e",
+      "alt": "Iliustracinis virtuvės planas, matavimo juosta, pieštukas ir du akmens pavyzdžiai ant medinio stalo",
+      "rights": "Originali šiam projektui 2026-10-01 sukurta AI iliustracija. Ne kliento projektas, ne prekės ar gamintojo pavyzdys.",
+      "variants": [
+        {
+          "id": "1ac42ab1-1939-48ab-a8e7-38adb9eae7c5",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 159338,
+          "sha256": "0e0814e3401a6cedc73ce72a38728bf6ddaf5eb520b665cb89d0394e167531cd",
+          "src": "/content-assets/akmenas/1ac42ab1-1939-48ab-a8e7-38adb9eae7c5.webp"
+        },
+        {
+          "id": "9f9f7585-577b-4256-8322-c7b9d94df68f",
+          "width": 1200,
+          "height": 800,
+          "bytes": 106890,
+          "sha256": "71b038c9858576453bcefa67fd2bb4385df0b0af7f4d13e1f14cfcaa0f823a9a",
+          "src": "/content-assets/akmenas/9f9f7585-577b-4256-8322-c7b9d94df68f.webp"
+        },
+        {
+          "id": "551253c6-5571-4d6f-b99a-cc7b3532d5b8",
+          "width": 800,
+          "height": 533,
+          "bytes": 51250,
+          "sha256": "0bba9525a3876b7b9661ee3928e4d1854e49923214f382009f3d237707cbc9b4",
+          "src": "/content-assets/akmenas/551253c6-5571-4d6f-b99a-cc7b3532d5b8.webp"
+        },
+        {
+          "id": "1d89469f-0901-4734-8b24-42e0345158af",
+          "width": 640,
+          "height": 427,
+          "bytes": 33320,
+          "sha256": "68ee2d9a0a31029f46a1c42fcdf520b199f7345388a4cdd5b1867059f820362b",
+          "src": "/content-assets/akmenas/1d89469f-0901-4734-8b24-42e0345158af.webp"
+        },
+        {
+          "id": "25c6835e-d803-4af0-b35d-7142d41db629",
+          "width": 360,
+          "height": 240,
+          "bytes": 11734,
+          "sha256": "4314d207d9eb4dc7ccd3b71b4114cc2dd4b81eef03aaa07fc5b91087463a1af8",
+          "src": "/content-assets/akmenas/25c6835e-d803-4af0-b35d-7142d41db629.webp"
+        }
+      ]
+    },
+    "care": {
+      "id": "db4e1817-9e09-4ac6-a368-a882c4fdc6c1",
+      "groupId": "4fb38545-9c2c-4916-a26b-23882e7b6639",
+      "alt": "Minkšta šluostė, stiklinė vandens ir puodelis ant padėkliuko prie šviesaus stalviršio",
+      "rights": "Originali šiam projektui 2026-10-01 sukurta AI iliustracija. Ne kliento projektas, ne prekės ar gamintojo pavyzdys.",
+      "variants": [
+        {
+          "id": "db4e1817-9e09-4ac6-a368-a882c4fdc6c1",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 117762,
+          "sha256": "04a0d7a9d2ce51175da48b0eb17d752c7e0c3459aa70555b85a4cb02c50919b4",
+          "src": "/content-assets/akmenas/db4e1817-9e09-4ac6-a368-a882c4fdc6c1.webp"
+        },
+        {
+          "id": "7fbf908e-85f8-4006-955e-7b3279473c44",
+          "width": 1200,
+          "height": 800,
+          "bytes": 83106,
+          "sha256": "d4f8a894369f8e83f8b710d1aebaf500ba234252abfafd2ce929267383b0d512",
+          "src": "/content-assets/akmenas/7fbf908e-85f8-4006-955e-7b3279473c44.webp"
+        },
+        {
+          "id": "7f1c33fa-6d52-45d0-bf00-58136962f1aa",
+          "width": 800,
+          "height": 533,
+          "bytes": 45074,
+          "sha256": "a0041c9d996d7907c1f7a0dffad6a150e9872e355523b06dcd5649963fb3cd4d",
+          "src": "/content-assets/akmenas/7f1c33fa-6d52-45d0-bf00-58136962f1aa.webp"
+        },
+        {
+          "id": "fa472956-ac9e-4d5a-b966-0d7e9dc90158",
+          "width": 640,
+          "height": 427,
+          "bytes": 31130,
+          "sha256": "e42d0e2dc931c6de073c734d5f4bf1eda59fe598c678d63ec5c94aa543c1bf4e",
+          "src": "/content-assets/akmenas/fa472956-ac9e-4d5a-b966-0d7e9dc90158.webp"
+        },
+        {
+          "id": "6862a6bd-c392-40c8-8b8b-0a3e5ba1b024",
+          "width": 360,
+          "height": 240,
+          "bytes": 11344,
+          "sha256": "0a196ff1eec453e63969cf61cab6bc3b66b78e83a98ee3151baea0ab8e70c47d",
+          "src": "/content-assets/akmenas/6862a6bd-c392-40c8-8b8b-0a3e5ba1b024.webp"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version":1,
+  "checkedOn":"2026-10-04",
+  "sources":[
+    {"id":"S1","url":"https://robertolaiptai.lt/laiptu-gamyba/","status":"opened_primary_html","observation":"Price after consultation/measurement; supplier's own design/manufacture/install process.","limits":"Supplier claim, not our capacity or paid partnership."},
+    {"id":"S2","url":"https://www.stairbox.com/design","status":"opened_primary_html","observation":"Measurement precedes instant quote; ordering leads to delivery/collection.","limits":"Not our onsite survey, lead demand or order."},
+    {"id":"S3","url":"https://www.stairbox.com/terms-and-conditions.html","status":"opened_primary_html","observation":"Customer measurements and onsite drawing checks; standard mainland-UK delivery/kerbside scope.","limits":"No actual LT export offer or contractual/legal applicability accepted."},
+    {"id":"S4","url":"https://www.stairbox.com/metal-staircases.html","status":"opened_primary_html","observation":"Kit for site assembly, customer structural inputs, survey document and drawings.","limits":"Survey document is not evidence of an actual onsite visit; marketing assembly claim not endorsed."}
+  ],
+  "localEvidence":["sites/laiptucentras/BUSINESS.md","sites/laiptucentras/RESEARCH.md","agent-business-core/runtime/src/pinet_core/instructions/niches/laiptucentras/supplier.md","C:/Users/lenovo/Documents/dovanos-memorycasting/lib/laiptucentras-quote-check.mjs","C:/Users/lenovo/Documents/dovanos-memorycasting/components/niche/laiptucentras-quote-check.tsx"],
+  "limits":"Source inspection only, no new runtime acceptance; historic measuring-guide access failure retained."
+}

@@ -1,0 +1,15 @@
+{
+ "date":"2026-10-01","evaluator":"Root later redesign screenshot/source review; subjective rubric, not independent human rating",
+ "scope":"Later root repair; historical first-result parent11/14=7.85 unchanged.",
+ "criteria":[
+  {"criterion":"Nišos atpažįstamumas","points":2,"reason":"Architectural room, material joint and unfinished opening answer different buyer questions. Own mark and quote-scope journey depart from nearest warm auksarankiams design.","evidence":["home-desktop-crop-final.jpg","DIRECTION.md","MEDIA.json"]},
+  {"criterion":"Hierarchija","points":2,"reason":"Dominant title, one truthful registration action, calmer guide path; dates and source attribution in guides.","evidence":["home-desktop-crop-final.jpg","laiptu-kaina-mobile-full-final.jpg"]},
+  {"criterion":"Kompozicija","points":2,"reason":"Image-led architectural field, native comparison and horizontal guide rows replace text-columns-above-panorama and repeated cards. Structural distinction.","evidence":["home-complete-final.jpg","DIRECTION.md","gidai-mobile-full-final.jpg"]},
+  {"criterion":"Visas ritmas","points":2,"reason":"Room → job type → material joint → scope → preparation → guide → actual inquiry; meaningful visual roles.","evidence":["home-complete-final.jpg"]},
+  {"criterion":"Mobilus maketas","points":1,"reason":"Clean320/390reflow and native choices, collapsed TOC. Long guides/checklist remain substantial scroll, text precedes hero photo. Actual200% enlargement unknown.","evidence":["home-mobile-crop-final.jpg","BROWSER-FINAL.json","matavimas-mobile-full-final.jpg"]},
+  {"criterion":"Tapatybė vidiniuose puslapiuose","points":2,"reason":"Own mark/sans/architectural media/navy footer through index, all3guides/contact. Trust/legal remain readable text.","evidence":["gidai-mobile-full-final.jpg","laiptu-konstrukcijos-mobile-full-final.jpg","matavimas-mobile-full-final.jpg"]},
+  {"criterion":"Funkcija","points":2,"reason":"Menu/required form and HTTP links checked; scope tool gives aligned result and resets with no private input storage. Prior unchanged D1 evidence reused explicitly.","evidence":["BROWSER-ADDITIONAL.json","core-tests-post-favicon.log","VERSION-CHECK.json"]}
+ ],
+ "points":13,"maximum":14,"score":9.28,"target9Reached":true,"launch":"NOT READY","demand":"NOT MEASURED",
+ "limitation":"Local candidate does not establish superior conversion or success against every competitor."
+}

@@ -745,15 +745,15 @@
     },
     {
       "path": "assets/simulator-v2/simulator.css",
-      "bytes": 51722,
-      "sha256": "41d97fb25ac79b4c06aa9e47413918bea004b97f8ab9a02dc03c5d6215f1a5ea",
-      "sourceSha256": "41d97fb25ac79b4c06aa9e47413918bea004b97f8ab9a02dc03c5d6215f1a5ea"
+      "bytes": 50956,
+      "sha256": "328cfe9d1ddd7d8c24c0da5cf7bec8a3e9ffe10b3212da88a048b4c1c091db95",
+      "sourceSha256": "328cfe9d1ddd7d8c24c0da5cf7bec8a3e9ffe10b3212da88a048b4c1c091db95"
     },
     {
       "path": "assets/simulator-v2/simulator.js",
-      "bytes": 64498,
-      "sha256": "69e3601a9fa9374931ed7d6e81811b7050f1686c94b4771cdedb13752ff7f457",
-      "sourceSha256": "69e3601a9fa9374931ed7d6e81811b7050f1686c94b4771cdedb13752ff7f457"
+      "bytes": 63174,
+      "sha256": "64f823c707e9d373439ad643f75d91b5eab34da2bf7d0642b928c44ab1cb3b16",
+      "sourceSha256": "64f823c707e9d373439ad643f75d91b5eab34da2bf7d0642b928c44ab1cb3b16"
     },
     {
       "path": "assets/simulator-v2/state.js",

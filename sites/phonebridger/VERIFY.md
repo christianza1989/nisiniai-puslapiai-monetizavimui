@@ -98,3 +98,14 @@ on exit. Source and copied prototype suites both PASS 60/60; byte verification
 PASS for 141 served + 7 verification files / 64,135,992 bytes. Cursor engines,
 wheel routing and alignment destination are unchanged. No new physical Pointer
 Lock acceptance or core/studio/build/SEO run is claimed for this narrow change.
+
+## Duplicate scrollbar removal — 2026-10-05
+
+Removed generated vertical/horizontal range scrollbars and their CSS across
+all simulator apps and dialogs. Native PC content overflow remains; phone
+scrollbar hiding and wheel routing remain unchanged. Source syntax and all
+60 simulator tests PASS. Browser DOM confirms zero generated scrollbar
+controls and Gmail native overflow with 739px content / 199px viewport;
+[desktop screenshot](qa/no-duplicate-scrollbars.png). Snapshot verification
+PASS: 141 served + 7 verification files / 64,133,902 bytes. Physical captured
+input was not newly tested; previous integration test evidence remains scoped.

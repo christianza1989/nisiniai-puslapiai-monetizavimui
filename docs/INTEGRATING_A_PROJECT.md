@@ -6,10 +6,10 @@
 
 1. Root README → AGENTS → docs/MULTI_MACHINE → WORKSTREAMS.
 2. Nauja niša: START_HERE → CORE_BUILD_CONTRACT → SKILLS/PROJECT_CONTRACT ir builder/business-validation.
-3. Esamas projektas: `sites/<siteId>.md` ir tos nišos BUSINESS/PRODUCT/roadmap/DESIGN. Madbeauty atveju `sites/madbeauty/PROJECT_ROADMAP.md` ir jo nuorodos yra konkretaus pavedimo autoritetas.
+3. Esamas projektas: `sites/<siteId>.md` ir tos nišos BUSINESS/PRODUCT/roadmap/DESIGN. Didesnei savininko užsakytai platformai taikyti [PLATFORM_BUILD_CONTRACT](../PLATFORM_BUILD_CONTRACT.md). Madbeauty aktualų išplėstą pavedimą ir priėmimą skaityti `sites/madbeauty/IMPLEMENTATION_STATUS.md` / `BACKEND_DECISION.md`; PROJECT_ROADMAP istorinius etapus vertinti pagal jų apimtį.
 4. Bendros sutartys: SEO_GEO_CORE, MEDIA_CORE, MAIL_CORE, NETWORK_LINKING; reikalingiems būsimiems moduliais ACQUISITION_CORE ir VOICE_CORE_INTEGRATION. Dokumentus lyginti su aktualiu companion code.
 
-Nauja svetainė pradeda pirmoje fazėje. Madbeauty savininkas atskirai autorizavo pilną PRIVATŲ būsimos platformos frontend su dummy iki real backend; tai nėra blanket leidimas naujai nišai iškart įjungti commerce, booking, voice ar klientų kontaktavimą.
+Nauja svetainė pradeda pirmoje fazėje. Madbeauty savininkas 2026-10-05 praplėtė privatų frontend užsakymą iki veikiančio vietinio meistro / kliento backend su email-only testavimo registracija pagal DEMO_DATA_POLICY ir docs/MADBEAUTY_BACKEND_ACCEPTANCE. Ankstesnis frontend-only etapas šio pavedimo neberiboja; kitoms nišoms plėtra automatiškai nepridedama.
 
 ## Bendras branduolys ir verslo modulis
 

@@ -30,6 +30,7 @@ for (;;) {
   if (!['.html','.js','.css','.svg'].includes(path.extname(next))) continue;
   const text = await readFile(path.join(source, next), 'utf8');
   const candidates = [...text.matchAll(/(?:src|href)=["']([^"'#<>]+)["']|url\(["']?([^\s)'"<>]+)["']?\)|["']((?:assets\/|\.\/)[^"'`$\s<>]+\.(?:js|css|svg|webp|png|jpg|ttf|woff2|mp4|wav))["']/g)].map(m => m[1] || m[2] || m[3]);
+  candidates.push(...[...text.matchAll(/\bsrcset=["']([^"']+)["']/g)].flatMap(m => m[1].split(',').map(candidate => candidate.trim().split(/\s+/)[0])));
   for (let name of candidates) {
     name = name.split(/[?#]/)[0];
     if (!name || /^(?:[a-z]+:|\/)/i.test(name)) continue;

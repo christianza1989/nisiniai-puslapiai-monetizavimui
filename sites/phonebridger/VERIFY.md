@@ -136,3 +136,29 @@ Six responsive cards integrated below the laptop. Existing public APIs prepare m
 Source/copy 60 simulator tests PASS. Explicit synthetic app-action DOM fixture: 13 assertions PASS for the six scenarios, capture invitations and deferred transfer/selected folder/cancellation/top exclusions. Actual 390px homepage one-column/no overflow and Files/Audio/Sheets touch destinations PASS. Actual desktop six responsive images/h2-h3 structure/no overflow PASS. Screenshot qa/homepage-six-cards.png. Snapshot: 190 runtime + 7 private verification files / 65,729,170 bytes; hashes PASS. Physical Pointer Lock is not newly verified; existing core/studio/build/SEO audits are not relabelled as new evidence. Shared core remains unchanged.
 
 Holder photo plan only, following the owner's marked upper-face logo position. Preliminary shop layout was generated before holder references and is not a final product asset. No price, fulfilment, cart, checkout or shop backend is implemented.
+
+## Four-offer conversion integration — 2026-10-05
+
+Selected V8 hybrid implemented after the six demo cards. Integrated package
+photograph, editable English copy/icons, charcoal/rose card surfaces, equal-scale
+holder counts, finish legend and local selected-offer summary CTA.
+
+Actual original homepage at 1440/1280/768/390/320px: images decoded, no horizontal
+overflow or clipped artwork, correct 0/1/2/3 counts, all four mouse selections,
+keyboard wrap/End, matching CTA summary, Escape/focus restoration and beta-link
+navigation PASS. qa/conversion-homepage-review.json contains measured results.
+Section capture hides floating header/skip-link only for isolated evidence;
+no application styles are changed by this capture step.
+
+Copied simulator tests: 60 PASS. Snapshot/importer recognizes srcset candidates,
+so all photo widths travel with the prototype rather than only default src.
+No new physical Pointer Lock, full-site Lighthouse, deployment, real checkout
+or native application acceptance is claimed. Source masters/provenance remain
+private; this preview is still excluded from public production output.
+
+Final snapshot: 207 served runtime + 7 private verification files,
+68,466,818 bytes; manifest/byte hashes PASS. Actual core preview middleware on
+an isolated loopback HTTP server returned exact hashed bytes for index plus
+17 conversion assets (all 18 requests 200). Existing vinext preview was not
+restarted; it retains its startup manifest until its owner restarts it.
+Evidence: qa/conversion-core-http.json. No shared-core source changed.

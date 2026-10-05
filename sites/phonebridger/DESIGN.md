@@ -19,3 +19,17 @@ responsive families. Private dummy imagery remains in prototype namespace.
 All visible text remains English. Preview notices explicitly distinguish
 fictional earnings and transfers from native capabilities. The prototype is
 excluded from production output, SEO, sitemaps and LLM indexes.
+
+## Conversion integration — 2026-10-05
+
+Owner-selected V8 hybrid immediately after the six live demo cards: large
+package photograph on dark/pink-light floor, four textured charcoal cards,
+rose selected background/numeral/border, Black/Silver finish legend and pink
+CTA. HTML text, SVG icons and CSS surfaces stay editable. Repeated holder
+counts share one reviewed master and consistent scale. No new generic UI
+template replaces the owner's selection.
+
+Scoped section.css/section.js and card-selection.js touch only this website
+section. CTA opens the selected offer summary until the separate shop exists;
+it creates no order. Private provenance/metadata is documented in
+CONVERSION_ASSETS.md; source PNG masters remain in the application workspace.

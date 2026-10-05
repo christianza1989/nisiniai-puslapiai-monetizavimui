@@ -462,6 +462,108 @@
       "sourceSha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0"
     },
     {
+      "path": "assets/conversion-v1/card-selection.js",
+      "bytes": 981,
+      "sha256": "41b2bfd0a750a2c84caed309aec169c92ec0a90a4ae2048105ea2c0a24437433",
+      "sourceSha256": "41b2bfd0a750a2c84caed309aec169c92ec0a90a4ae2048105ea2c0a24437433"
+    },
+    {
+      "path": "assets/conversion-v1/components.css",
+      "bytes": 7219,
+      "sha256": "1fea3ec058019e37a4ab7a95c4c340315aab0aaf65f4cc30e6fcfce831f2fc60",
+      "sourceSha256": "1fea3ec058019e37a4ab7a95c4c340315aab0aaf65f4cc30e6fcfce831f2fc60"
+    },
+    {
+      "path": "assets/conversion-v1/holder-black-640.webp",
+      "bytes": 87132,
+      "sha256": "098da02c0783fffd9efa62dbdaf0d94dae76b502a87a8d4a4679d8eb6a8beba6",
+      "sourceSha256": "098da02c0783fffd9efa62dbdaf0d94dae76b502a87a8d4a4679d8eb6a8beba6"
+    },
+    {
+      "path": "assets/conversion-v1/icons/app-window.svg",
+      "bytes": 563,
+      "sha256": "6ce9cc3bce140b1b911c1153e9bc88e6c9a1f4b7ae807b5353196b91fcd7f188",
+      "sourceSha256": "6ce9cc3bce140b1b911c1153e9bc88e6c9a1f4b7ae807b5353196b91fcd7f188"
+    },
+    {
+      "path": "assets/conversion-v1/icons/arrow-right.svg",
+      "bytes": 250,
+      "sha256": "e1317a4e4f16043efa98d2830c92a478a8906d9d9129881029bddecf575a07f5",
+      "sourceSha256": "e1317a4e4f16043efa98d2830c92a478a8906d9d9129881029bddecf575a07f5"
+    },
+    {
+      "path": "assets/conversion-v1/icons/arrow-up-right.svg",
+      "bytes": 250,
+      "sha256": "58b8b9ffa2090193f20fdb1c9ceb3384bd0e2a4294fdc778dda4833122354ddf",
+      "sourceSha256": "58b8b9ffa2090193f20fdb1c9ceb3384bd0e2a4294fdc778dda4833122354ddf"
+    },
+    {
+      "path": "assets/conversion-v1/icons/cursor.svg",
+      "bytes": 320,
+      "sha256": "2e5f7f1b759b8fd4098ebb6bd9c6cbb1070cef24d74e424fc3acf6fbd0f07492",
+      "sourceSha256": "2e5f7f1b759b8fd4098ebb6bd9c6cbb1070cef24d74e424fc3acf6fbd0f07492"
+    },
+    {
+      "path": "assets/conversion-v1/icons/keyboard.svg",
+      "bytes": 442,
+      "sha256": "bd5ffc42f6758e67b5603cdf677d10ce2367869063ffe785083eca020bbce84f",
+      "sourceSha256": "bd5ffc42f6758e67b5603cdf677d10ce2367869063ffe785083eca020bbce84f"
+    },
+    {
+      "path": "assets/conversion-v1/icons/transfer.svg",
+      "bytes": 355,
+      "sha256": "b4797dc755104b4831fad4d1c86f45acc903813a46ed7b5e94bb6719e18531b2",
+      "sourceSha256": "b4797dc755104b4831fad4d1c86f45acc903813a46ed7b5e94bb6719e18531b2"
+    },
+    {
+      "path": "assets/conversion-v1/icons/windows.svg",
+      "bytes": 299,
+      "sha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610",
+      "sourceSha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610"
+    },
+    {
+      "path": "assets/conversion-v1/section.css",
+      "bytes": 5758,
+      "sha256": "8f38a639d052e48d54b551128cb0f690debccb7080d1c76e9b7fa09af24f0e6a",
+      "sourceSha256": "8f38a639d052e48d54b551128cb0f690debccb7080d1c76e9b7fa09af24f0e6a"
+    },
+    {
+      "path": "assets/conversion-v1/section.js",
+      "bytes": 1579,
+      "sha256": "8a9f88528659f8920ba51a810f57951a6f8272d96e3c954a4009a3a8e23112a2",
+      "sourceSha256": "8a9f88528659f8920ba51a810f57951a6f8272d96e3c954a4009a3a8e23112a2"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-1254.webp",
+      "bytes": 1332408,
+      "sha256": "d5b40e0295f708ba5db70c1f2dfa8023d190e6e29fdd457c23cec6b2a664f4f3",
+      "sourceSha256": "d5b40e0295f708ba5db70c1f2dfa8023d190e6e29fdd457c23cec6b2a664f4f3"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-320.webp",
+      "bytes": 92714,
+      "sha256": "d7ece13a290691ebfd3b83a8d7e68209fbeed5ce73ef857ee33eba4add331098",
+      "sourceSha256": "d7ece13a290691ebfd3b83a8d7e68209fbeed5ce73ef857ee33eba4add331098"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-640.webp",
+      "bytes": 369192,
+      "sha256": "bb9e264425a300bb1686b09f959c3f5760de55760e0c54a698e9923ea5d64923",
+      "sourceSha256": "bb9e264425a300bb1686b09f959c3f5760de55760e0c54a698e9923ea5d64923"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-960.webp",
+      "bytes": 831312,
+      "sha256": "7019dba7e37c9e391b6d52c5d2890010d6b3e620bffdd14113f322501e8e2b2c",
+      "sourceSha256": "7019dba7e37c9e391b6d52c5d2890010d6b3e620bffdd14113f322501e8e2b2c"
+    },
+    {
+      "path": "assets/conversion-v1/surface-grain.svg",
+      "bytes": 323,
+      "sha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b",
+      "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
+    },
+    {
       "path": "assets/experience-v1/01-move-screens-1200.webp",
       "bytes": 67412,
       "sha256": "76ee03150f2581f129a034feb4cb4d6b32dd2ab3162f4956a43c32dffa8b2b9f",
@@ -1117,9 +1219,9 @@
     },
     {
       "path": "index.html",
-      "bytes": 53949,
-      "sha256": "d78d758143524d68c511fd995936d643c6cb2932fd326036722ce366f3fd148c",
-      "sourceSha256": "8ea08560ed37857382155f4f94e325d89a704c74c8a38c1854a6ea5457c16ffd"
+      "bytes": 60500,
+      "sha256": "c6a1b24f3f0e82d3b7832fa456f356f4694b18f203356ed7e9a8dd64423e0157",
+      "sourceSha256": "a0b327dcdcf6b3246f90351fe7566d99e9dd81727159274a7619687b5557a953"
     },
     {
       "path": "simulation.css",

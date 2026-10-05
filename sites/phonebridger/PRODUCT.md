@@ -33,4 +33,10 @@ Captured wheel input scrolls the app under the demo cursor on PC and either side
 
 The section immediately below the laptop has six live scenario invitations. Desktop calls the existing capture API; touch view selects the appropriate phone app. PC-to-side-phone drops prepare a PhoneBridger receiving-folder dialog rather than immediately copying into a preset folder. Save here queues the selected folder, Cancel does not queue. The upper video phone is excluded. All files and transfers are fictional page-memory records.
 
-The owner confirmed four future shop choices: App only and App + 1/2/3 holders, in black/silver. Eight product photographs are planned in HOLDER_PHOTOGRAPHY_PLAN.md, with a recessed overlapping-square logo on the upper metal face. Holder photographs are not yet generated. Pricing, payment, app entitlement and physical fulfilment remain unimplemented/unconfirmed; the preliminary shop concept is not a factual product photograph.
+The owner confirmed four future shop choices: App only and App + 1/2/3 holders, in black/silver. The later product direction replaces the earlier recessed mark with flat laser engraving and two equal symmetrical overlapping squares. Selected black/silver front cutouts and a software-package artwork have been generated/reviewed in the owner's source workspace; the homepage uses the black holder and integrated package photograph. These conceptual product images do not establish manufactured dimensions, contents or stock.
+
+## Four-offer conversion section
+
+The selected English conversion section follows the six simulator invitations. Four semantic radio cards select App only or the app with 1/2/3 holders. Selection changes background, number and border in pink; mouse, arrow keys and Home/End work. The main image integrates the package, dark surface, pink flow and reflections while labels/icons remain editable.
+
+Choose my setup opens an honest local summary for the selected offer, with a coming-soon shop notice, close/Escape/focus restoration and working beta link. Black/Silver swatches are finish information, not a checkout or mixed-colour policy. No price, payment, stock, entitlement, fulfilment or real order is implemented.

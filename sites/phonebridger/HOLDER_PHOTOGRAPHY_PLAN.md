@@ -1,5 +1,14 @@
 # PhoneBridger holder photography — eight-image plan
 
+## Later owner direction — 2026-10-05
+
+The original recessed/upper-face mark proposal below is superseded by the
+owner's later flat laser-engraved mark: two equal symmetrical overlapping
+squares on the metal faces, not embossed. Selected black and silver straight
+front cutouts were prepared in the original workspace. The conversion section
+now repeats the selected black master for quantity cards; the complete eight
+shop photographs, measured product facts and real fulfilment remain pending.
+
 Status: references reviewed; no holder imagery generated yet. Website and product copy are English. The shop offers App only, App + 1 holder, App + 2 holders and App + 3 holders. Colours confirmed by the owner: black and silver.
 
 ## Construction to preserve

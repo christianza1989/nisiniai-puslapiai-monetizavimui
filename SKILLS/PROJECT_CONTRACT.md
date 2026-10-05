@@ -1,5 +1,7 @@
 # Shared skill contract for this niche network
 
+Builders may improve shared rules, skills, prompts and core helpers themselves under [CORE_IMPROVEMENT](../CORE_IMPROVEMENT.md), based on concrete implementation evidence, coordinated file ownership and proportionate validation. Record the finding/change in the site's CORE_FEEDBACK. Routine scoped repairs do not require mandatory root implementation or repeated owner approval; this does not expand business scope, change historical results or authorize external operations.
+
 Explicitly commissioned larger platforms also follow [PLATFORM_BUILD_CONTRACT](../PLATFORM_BUILD_CONTRACT.md): current scope/entrypoint, early end-to-end server-backed slice, shared/business boundaries and risk-based acceptance. Domain-only phase-one scope remains unchanged. Record concrete integration lessons in the site's CORE_FEEDBACK; a new instruction is not proof of adoption by existing sites.
 
 For explicitly requested platform prototypes/full platforms follow [DEMO_DATA_POLICY](../DEMO_DATA_POLICY.md): final product copy/design with replaceable test data. The owner's 2026-10-05 Madbeauty request authorizes a working local provider/client backend with email-only test registration, overriding its frontend-only plan. This exception does not expand ordinary phase-one tasks.

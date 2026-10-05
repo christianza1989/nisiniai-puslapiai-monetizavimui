@@ -51,6 +51,8 @@ Trūkstant šio kelio svetainė dar nėra vietiškai užbaigta. Tikras productio
 
 ## Kokybės kartelė
 
+Prieš užbaigiant peržiūrėti kūrimo metu rastas bendras spragas pagal [CORE_IMPROVEMENT.md](CORE_IMPROVEMENT.md). Savo CORE_FEEDBACK įrašyti įrodymais pagrįstus pataisymus / siūlymus ir jų būseną; nedidelį bendrą pataisymą agentas gali įgyvendinti pats laisvame suderintame lange. Šis žingsnis nereikalauja dirbtinio core pakeitimo ar didelės migracijos vien dėl svetainės užduoties.
+
 Tikslas — visi taikomi **local** kriterijai PASS, o vizualinis sprendimas įvertintas atskirai. Local 10/10 nėra tikro paleidimo, teisinės atitikties, pasaulinio dizaino reitingo ar paklausos pažadas. Tikros produkcinės/DNS/operatoriaus/privatumo ir paklausos spragos lieka launch/operations stulpeliuose. Neaiški didinimo patikra negali virsti PASS vien dėl nurodyto tikslo.
 
 Audito komandos iš projekto root:

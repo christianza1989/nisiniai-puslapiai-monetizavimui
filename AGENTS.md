@@ -1,5 +1,7 @@
 # Nišinių svetainių tinklo darbo taisyklės
 
+**Core gerinimas 2026-10-05:** svetaines kuriantys agentai turi fiksuoti praktines bendro core spragas ir gali patys taisyti taisykles, skills, promptus bei kodą pagal [CORE_IMPROVEMENT.md](CORE_IMPROVEMENT.md). Nedideliam pagrįstam pataisymui nereikia pakartotinio savininko patvirtinimo ar privalomo root vykdymo; bendrų failų langas, įrodymai ir Git perdavimas būtini. Vienos nišos sprendimų nepaversti visuotiniu šablonu.
+
 Savininko aiškiai užsakytai didesnei platformai papildomai taikyti [PLATFORM_BUILD_CONTRACT.md](PLATFORM_BUILD_CONTRACT.md): viena aktuali apimtis, ankstyvas viso serverinio kelio bandymas, bendro core ir verslo modulio sąsajos bei platformos priėmimas. Vien domeno užduoties F1 apimtis nesikeičia.
 
 **Platformos 2026-10-05:** [DEMO_DATA_POLICY.md](DEMO_DATA_POLICY.md) reikalauja final produkto tekstų ir atskirų testinių duomenų. Madbeauty savininkas tiesiogiai praplėtė iki veikiančio vietinio meistro paskyros / paslaugų / grafiko ir kliento rezervavimo backend; testavimo registracija tik el. paštu. Frontend-only planas pakeistas; kitoms nišoms F1 nesikeičia. [Backend priėmimas](docs/MADBEAUTY_BACKEND_ACCEPTANCE.md) atskirai nuo ankstesnio frontend testų.

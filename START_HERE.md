@@ -1,5 +1,7 @@
 # Sukurk svetainę pagal domeną
 
+Kūrimo metu rastas bendras spragas fiksuok ir pagrįstai taisyk pats pagal [CORE_IMPROVEMENT.md](CORE_IMPROVEMENT.md), laikydamasis bendrų failų rezervacijos. Prieš užbaigimą įrašyk CORE_FEEDBACK su radiniais / pataisymais arba pagrįstu įrašu, kad bendro pakeitimo nereikėjo.
+
 Didesnės savininko užsakytos platformos eiga ir papildomi priėmimo vartai: [PLATFORM_BUILD_CONTRACT.md](PLATFORM_BUILD_CONTRACT.md). Aktualią apimtį ir entrypoint skaityti jos IMPLEMENTATION_STATUS; ankstesnis maketo roadmap nėra naujesnio pavedimo ribojimas.
 
 Savininko užsakytai platformai skaityk [DEMO_DATA_POLICY.md](DEMO_DATA_POLICY.md): final produkto tekstai nuo pradžių, testiniai tik atskiri duomenys. **Madbeauty 2026-10-05 išimtis:** paprašytas veikiantis vietinis meistro/kliento backend, testavimo registracija tik email; frontend-only planas pakeistas. Kitų domenų F1 apimtis lieka.

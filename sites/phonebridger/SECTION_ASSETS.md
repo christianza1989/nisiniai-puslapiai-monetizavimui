@@ -1,7 +1,7 @@
 # Six-card experience section — asset pack v1
 
-Prepared for the owner's selected six-card ImageGen concept. Website and
-simulator behavior have not been changed by this asset-preparation step.
+Prepared for the owner's selected six-card ImageGen concept. The asset preparation was followed by homepage integration: all six cards now
+prepare their corresponding website-only simulator scenarios.
 
 ## Deliverables
 
@@ -35,9 +35,9 @@ the site's self-hosted Manrope files and their existing OFL licence.
 
 Preview: `/__projects/phonebridger/assets/experience-v1/preview.html` on the
 loopback core development server. Preview buttons only display their intended
-action; simulator hooks are pending. Desktop/mobile QA is saved in
+action; the actual homepage hooks are implemented in `scenarios.js`. Desktop/mobile QA is saved in
 `qa/section-assets-desktop.png` and `qa/section-assets-mobile.png`.
-Planned actions: enter mouse demo, open a chat, send Sheets, drag a desktop file
+Implemented homepage invitations: enter mouse demo, open a chat, send Sheets, drag a desktop file
 to a chosen phone and choose its destination folder, open audio, open PhoneBridger.
 In-image interfaces, toggles and file buttons are illustrative bitmap content;
 actual interactive controls belong to the simulator implementation.

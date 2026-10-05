@@ -43,9 +43,9 @@
     },
     {
       "path": "assets/app-ui-v1/desktop.js",
-      "bytes": 36450,
-      "sha256": "2c0029ed40608a6a0722cac69d55d059f4158e10b7914e31b5d8de6ebacb6819",
-      "sourceSha256": "2c0029ed40608a6a0722cac69d55d059f4158e10b7914e31b5d8de6ebacb6819"
+      "bytes": 36626,
+      "sha256": "319ded6ff8ce1e156c012d9782be0baf3cb3e34469c16f869f0acf9a48b73c5e",
+      "sourceSha256": "319ded6ff8ce1e156c012d9782be0baf3cb3e34469c16f869f0acf9a48b73c5e"
     },
     {
       "path": "assets/app-ui-v1/devices-group-v1.png",
@@ -643,9 +643,9 @@
     },
     {
       "path": "assets/experience-v1/components.css",
-      "bytes": 3589,
-      "sha256": "8e4b3b7f4496974788e944fa911dfbe0ea555faaf402425e8942d57c161c978d",
-      "sourceSha256": "8e4b3b7f4496974788e944fa911dfbe0ea555faaf402425e8942d57c161c978d"
+      "bytes": 4185,
+      "sha256": "5ad13a4b37af6e365c5a6f973a43b3c830fbbe87dc6788faf30b8bf52b16702b",
+      "sourceSha256": "5ad13a4b37af6e365c5a6f973a43b3c830fbbe87dc6788faf30b8bf52b16702b"
     },
     {
       "path": "assets/experience-v1/icons.svg",
@@ -748,6 +748,12 @@
       "bytes": 6368,
       "sha256": "2ce3bb7dc470113169f7f284db8d6ad2b2a0a9d176eefa91c76cab93c520ac21",
       "sourceSha256": "2ce3bb7dc470113169f7f284db8d6ad2b2a0a9d176eefa91c76cab93c520ac21"
+    },
+    {
+      "path": "assets/experience-v1/scenarios.js",
+      "bytes": 3144,
+      "sha256": "c812e50adb6a314cb87741696c8e5705721a0752c0151dd97e74615c020fa386",
+      "sourceSha256": "c812e50adb6a314cb87741696c8e5705721a0752c0151dd97e74615c020fa386"
     },
     {
       "path": "assets/fonts/manrope-400.ttf",
@@ -1033,15 +1039,15 @@
     },
     {
       "path": "assets/simulator-v2/simulator.css",
-      "bytes": 50956,
-      "sha256": "328cfe9d1ddd7d8c24c0da5cf7bec8a3e9ffe10b3212da88a048b4c1c091db95",
-      "sourceSha256": "328cfe9d1ddd7d8c24c0da5cf7bec8a3e9ffe10b3212da88a048b4c1c091db95"
+      "bytes": 51162,
+      "sha256": "96fb47dd0529f56046380beb76b861c2cd9098689fa6ad427240e809861c0f41",
+      "sourceSha256": "96fb47dd0529f56046380beb76b861c2cd9098689fa6ad427240e809861c0f41"
     },
     {
       "path": "assets/simulator-v2/simulator.js",
-      "bytes": 63174,
-      "sha256": "64f823c707e9d373439ad643f75d91b5eab34da2bf7d0642b928c44ab1cb3b16",
-      "sourceSha256": "64f823c707e9d373439ad643f75d91b5eab34da2bf7d0642b928c44ab1cb3b16"
+      "bytes": 64945,
+      "sha256": "8c179c11da07344e27a2fb34222a50f336561b01850c3c514b828d645e4e9e5e",
+      "sourceSha256": "8c179c11da07344e27a2fb34222a50f336561b01850c3c514b828d645e4e9e5e"
     },
     {
       "path": "assets/simulator-v2/state.js",
@@ -1111,9 +1117,9 @@
     },
     {
       "path": "index.html",
-      "bytes": 47846,
-      "sha256": "4819663a8778e4a75c36f82fec32bd47424a55aa38d5d3cef3bda8ae49b834bd",
-      "sourceSha256": "3330b927ca671d42830f02492c6d7affb9499f46bd4c6470dbd7027aab807944"
+      "bytes": 53949,
+      "sha256": "d78d758143524d68c511fd995936d643c6cb2932fd326036722ce366f3fd148c",
+      "sourceSha256": "8ea08560ed37857382155f4f94e325d89a704c74c8a38c1854a6ea5457c16ffd"
     },
     {
       "path": "simulation.css",

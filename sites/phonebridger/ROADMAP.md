@@ -22,3 +22,14 @@
 - [ ] Separately authorize deployment/DNS and a measurable creator demand pilot.
 
 Do not mark future items done based on demo clicks, local builds or cloning.
+
+## Homepage continuation
+
+- [x] Integrate six-card responsive section and simulator invitations.
+- [x] Add a receiving-folder confirmation to fictional PC-to-phone file drops.
+- [x] Review real holder references and document eight-photo plan/logo placement.
+- [ ] Generate and review matched black/silver holder product trials.
+- [ ] Generate remaining six product/detail/lifestyle images after trial review.
+- [ ] Implement bundle/colour/cart prototype with owner-confirmed commercial inputs.
+- [ ] Inspect/reuse actual shared order contracts; authenticate checkout, app entitlements, fulfilment, refunds and creator attribution.
+- [ ] Verify payment test mode and separately authorize production activation.

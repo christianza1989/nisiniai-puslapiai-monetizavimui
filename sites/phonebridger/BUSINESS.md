@@ -27,3 +27,5 @@ Public support contact approved by the owner: hello@phonebridger.com. Proposed
 canonical host: phonebridger.com. Domain control, legal seller/operator,
 production privacy/licence terms, final release distribution and fulfilment
 remain launch dependencies. Do not reuse another niche's legal identity.
+
+2026-10-05 owner-confirmed offer structure: App only, App + 1 holder, App + 2 holders, App + 3 holders. Physical holder finishes: black and silver. Owner-supplied reference photos reviewed; they do not establish final specifications, costs, stock or permission to republish supplier photography. Exact licence terms, price/currency, package contents, shipping, payment and order/referral contracts remain unresolved.

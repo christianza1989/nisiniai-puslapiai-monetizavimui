@@ -128,3 +128,11 @@ original masters are kept in the application workspace and not copied to GitHub.
 Assets are ready for integration; the homepage and simulator action hooks were
 not changed. No new native, captured-input, full-site audit, core/backend/SEO or
 publication result is claimed for this asset-only increment.
+
+## Six-card homepage integration — 2026-10-05
+
+Six responsive cards integrated below the laptop. Existing public APIs prepare movement, chat, Sheets handoff, PC File Explorer transfer, Audio and PhoneBridger scenarios. PC file drops to either side phone open a receiving-folder picker; Save here queues into that folder and Cancel leaves the queue unchanged. No input/cursor geometry changes or native files.
+
+Source/copy 60 simulator tests PASS. Explicit synthetic app-action DOM fixture: 13 assertions PASS for the six scenarios, capture invitations and deferred transfer/selected folder/cancellation/top exclusions. Actual 390px homepage one-column/no overflow and Files/Audio/Sheets touch destinations PASS. Actual desktop six responsive images/h2-h3 structure/no overflow PASS. Screenshot qa/homepage-six-cards.png. Snapshot: 190 runtime + 7 private verification files / 65,729,170 bytes; hashes PASS. Physical Pointer Lock is not newly verified; existing core/studio/build/SEO audits are not relabelled as new evidence. Shared core remains unchanged.
+
+Holder photo plan only, following the owner's marked upper-face logo position. Preliminary shop layout was generated before holder references and is not a final product asset. No price, fulfilment, cart, checkout or shop backend is implemented.

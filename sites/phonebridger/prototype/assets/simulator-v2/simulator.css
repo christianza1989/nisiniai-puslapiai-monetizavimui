@@ -40,3 +40,5 @@
 .demo-mobile .mobile-screen:has(.sim-android){height:560px;background:#080b13}.demo-mobile .shared-app:has(.sim-android){width:100%;height:100%;position:relative;inset:auto}.demo-mobile .sim-android-canvas{max-width:none}
 .demo-mobile .mobile-utilities{display:none!important}
 .chrome-tab-strip{overflow-x:auto;scrollbar-width:thin;scrollbar-color:#606368 transparent}.chrome-tab-strip .browser-tab{flex:0 0 70px;min-width:70px}.chrome-tab-strip .browser-tab.active{flex:0 0 86px}.chrome-tab-strip .browser-tab>.sim-logo{width:12px;height:12px}
+.sim-receive-folders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}
+.sim-receive-folders button[aria-pressed=true]{border-color:#ff279b;background:#ff279b20;color:#fff}

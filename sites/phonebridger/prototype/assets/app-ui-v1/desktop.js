@@ -219,6 +219,7 @@
   document.addEventListener('visibilitychange',()=>{rangeDrag=null;clearFileDrag();if(document.hidden&&transfer&&!transfer.done&&!transfer.paused){transfer.paused=true;stopTransferTimer();paintTransfer();}});
   window.PhoneBridgerDesktop={
     open,hide,raise,toggleSize,
+    showcase(page,phone='left'){if(!tabs.some(([id])=>id===page)||!names[phone])return;tab=page;selected=phone;folder=query='';chosen.clear();render();open('phonebridger');},
     syncFiles(entries){for(const key of ['left','right'])files[key]=entries[key].map(f=>({fileId:f.file,name:f.name,size:f.size>=1?f.size.toFixed(1)+' MB':Math.round(f.size*1000)+' KB',type:['image','zip'].includes(f.type)?f.type:'pdf',folder:f.folder}));if(tab==='files')renderFileList();},
     syncSettings(key,values){if(settings[key]){Object.assign(settings[key],values);if(selected===key)render();}},
     refreshTransfers:paintTransfer,

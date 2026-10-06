@@ -51,6 +51,12 @@ Target adapterio article/index/nuorodos/sitemap/schema/LLM/medija naudoja tą pa
 
 ## Priėmimas
 
+### Aiški domeno migracija
+
+Įprastas `editSite` hostname nekeičia. Patvirtintai domeno migracijai naudoti modelio `migrateSiteDomain(siteId, {expectedCanonicalHost, canonicalHost, actorId})`: bendras cross-process write lock tikrina aktualų seną host ir naujo host unikalumą. Stable siteId, puslapių ID, turinys, media, links ir publishAt išlieka; senos publishedRevision/review ir immutable release failai neperrašomi. V2 atnaujina tik dabartinio draft siteSnapshot. Privačiame site įraše saugoma domainMigrations istorija; revoked puslapiai neaktyvuojami.
+
+Pakeistas host panaikina ankstesnės review konteksto aktualumą; įjungtas workflow neleidžia release/export iki naujos tikros visų eksportuojamų puslapių review ir atomic approval. Peržiūrėti seną domeną tekste, absolute nuorodose bei privačiuose faktuose; ID nuorodos resolverio naujame host tikrinamos atskirai. Nekeičiama istorinė publikavimo data vien dėl host pokyčio ir ranka netaisomi approval hash ar paketų baitai. Naujas immutable export dar nėra DNS/TLS/deployment/auth-origin/redirect priėmimas. Ši funkcija yra explicit agento modelio API; GUI domain picker ar automatinės migracijos job nepridėta.
+
 `content-workflow.test.mjs`: dviejų nišų izoliacija, DST, atominė susietų draftų partija, prieš/po datos nuorodos, stale review po turinio/faktų pokyčių, missing/foreign/revoked targets, vaizdų/šaltinių vartai, V2 lossless ir privati HTTP sąsaja. `generator-policy.test.mjs`: 27 straipsniai per kelias tikro CLI proceso fixture partijas, datos ir visi juodraščiai privatūs. Fixture nėra live Codex tyrimo ar kokybės įrodymas.
 
 Paleisti studijos `npm test` ir public core `npm run test:core`. Viešo adapterio/SEO keitimas papildomai reikalauja actual `test:seo-smoke` ir prieš/po datos HTTP bandymo savo izoliuotoje peržiūroje. Šis inkrementas viešo rendererio ir schemos nekeičia.

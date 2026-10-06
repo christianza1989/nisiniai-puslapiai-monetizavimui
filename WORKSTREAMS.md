@@ -309,3 +309,7 @@ Root PR22 scope implemented: one planning-decisions checkpoint, plan-only loader
 
 Root owns only planning-decisions.md clarification and this workstream row: distinguish plan reconciliation from an explicitly requested native V2 editorial revision. Inspected Madbeauty current revise CLI/guard/model/docs; its adapter is separate pending work, so guidance is conditional on the maintained path being present. No writer/schema/approval/data changes.
 
+# 2026-10-07 planner revision clarification VERIFIED / CLOSED
+
+Planning reference now separates protected plan reconciliation from concrete authorized editorial revision, with conditional maintained-native-path/current-hash/history/new-review requirements. Existing task authority suffices; no new per-article owner approval gate. Actual revise guard/model/docs inspected read-only; unchanged plan/draft mode loading and diff/safety checks PASS. Root applied the same paragraph to primary; no runtime, content or historical approval mutation. Own doc window released with Git handoff.
+

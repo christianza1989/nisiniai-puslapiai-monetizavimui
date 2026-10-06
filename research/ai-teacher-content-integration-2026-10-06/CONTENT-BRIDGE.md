@@ -62,3 +62,11 @@ Privatus originalus release-manifest.json lieka studijoje; nėra studentų, orig
 - [ ] Actual Vercel import/deploy ir tikro domeno prijungimas atskirai; vaikų pilotas turi savo esamus išorinius vartus.
 
 Root export testų synthetic adapterio transporto įrodymai nėra AI_teacher svetainės užbaigimo, vaikų saugos, kontaktų pristatymo ar tikro domeno paleidimo patvirtinimas.
+
+## Actual vėlesnės patikros
+
+Target tikrai priėmė pirmą paketą, o root naršyklėje peržiūrėjo visus tris gidus, jų images/schema ir public trust puslapius. Source actual production-build HTTP11/11PASS patvirtino vieną prieš/po datos ribą straipsniui, vaizdui, indeksui, sitemap irLLM,15variantų exactWebP bei anoniminio privataus preview uždarumą. Tikras source Vitest import/projection rinkinys praėjo bendrame1421testo cikle. Pradinis fullQA turėjo lintFAIL; source atskirą lint pataisos PASS įvardija atskirai. Naujas tikrai reviewed/approved release su būsima18:30Z pradinio paskelbimo data importuotas; root patikrino exactSHA. Detalės ir likę realaus deployment, production managed editorial access, a11y/performance bei vaikų piloto vartai — [parent peržiūroje](PARENT-TARGET-REVIEW.md).
+
+Kalendoriaus policy6mėn./2per savaitę yra pasirinkta politika, ne jau parengti52gidai ar įjungtas periodinis generatorius. Actual adapterio vienas release yra ribotas100puslapių,200assetfailų,8MiB vienamassetui ir64MiB bendrai. Su5variantais kiekvienam temos vaizdui200assetai telpa daugiausia40 tokių vaizdų šeimų; vienas52gidų snapshot turi būti atskirai išplėstas/priimtas, limitas neišjungiamas dėl policy. Built-in ImageGen naudoja aktyvus Codex agentas; vien textCLI periodinių vaizdų savaime nekuria. Nauji paketai vis dar reikalauja atskiro importo/deployment, jau įkelto turinio data SSR tikrinama automatiškai.
+
+2026-10-06 galutinis šio viešo turinio inkremento rezultatas: atskiras Next/Vercel svetainės deployment READY prieš18:30Z, visi3gidai ir15WebP pasirodė actuallive pagal datą be papildomo deploy. Root patikrino importo SHA ir livebrowser; source1421testai/build/atskiraslintrepair ir11productionHTTPchecksPASS. BeforeliveXMLsitemap įrodymas buvo atšauktas dėl checker dekodavimo, jo nepaverčiame PASS; localbefore/after irliveafterXML patikrinti. Visos platformos/piloto priėmimas ir periodinis rengimo/publikavimo job nėra šio content-only prijungimo rezultatas.

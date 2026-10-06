@@ -1,5 +1,7 @@
 # Nišinių svetainių tinklo darbo taisyklės
 
+**Visa temų aprėptis 2026-10-06:** savininkas pakeitė savaitinio limito strategiją. Taikyti [TOPICAL_CONTENT_CORE.md](TOPICAL_CONTENT_CORE.md): iš karto pilnas nišos klausimų/URL žemėlapis, gylio ir originalios naudos patikra, susietų grupių užbaigimas kuo greičiau. Naujoms nišoms coverage be savaitinės/mėnesinės kvotos ir vieno straipsnio per dieną ribos; šaltinių, medijos ir revision-bound review vartai lieka. Pradinė produkto apimtis nepakeičia pilno apibrėžtos nišos turinio plano. Senuose dokumentuose likęs Madbeauty 2–3/sav. tikslas yra istorinis.
+
 **Core gerinimas 2026-10-05:** svetaines kuriantys agentai turi fiksuoti praktines bendro core spragas ir gali patys taisyti taisykles, skills, promptus bei kodą pagal [CORE_IMPROVEMENT.md](CORE_IMPROVEMENT.md). Nedideliam pagrįstam pataisymui nereikia pakartotinio savininko patvirtinimo ar privalomo root vykdymo; bendrų failų langas, įrodymai ir Git perdavimas būtini. Vienos nišos sprendimų nepaversti visuotiniu šablonu.
 
 Savininko aiškiai užsakytai didesnei platformai papildomai taikyti [PLATFORM_BUILD_CONTRACT.md](PLATFORM_BUILD_CONTRACT.md): viena aktuali apimtis, ankstyvas viso serverinio kelio bandymas, bendro core ir verslo modulio sąsajos bei platformos priėmimas. Vien domeno užduoties F1 apimtis nesikeičia.

@@ -25,7 +25,7 @@ Each page has exactly these required fields:
 - `publishDate`: valid local YYYY-MM-DD in runtime bounds. Initial home's date follows runtime instruction. Other pages follow horizon and dependencies.
 - `seasonalHook`: specific relevant timing rationale, including the event year where appropriate; empty for evergreen. Speculative buying/weather lead time must be recognizable as an assumption.
 
-The schema permits at most 24 pages per operation; runtime can request fewer. Prefer a smaller substantive plan over filler. Existing pages are supplied for reconciliation, not for re-emission as new pages. Changes to existing plans require the editing workflow, not duplicate new URLs.
+The schema permits at most 24 pages per operation; runtime can request fewer. This is a transport projection of a complete researched coverage map, not a limit per week/day/niche. Materialize the whole map in enough batches; mark partial exports honestly. Multiple dependency-ready pages may have the same date in coverage mode. Prefer a smaller substantive plan over filler. Existing pages are supplied for reconciliation, not for re-emission as new pages. Changes to existing plans require the editing workflow, not duplicate new URLs.
 
 ## Draft result
 

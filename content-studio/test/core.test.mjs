@@ -100,7 +100,8 @@ test('six-month calendar keeps drafts private and external sources require verif
   assert.equal(first.publishAt.slice(0, 10), chosenDate);
   assert.equal(first.seasonalHook, 'Ruošiantis sezono pradžiai');
   assert.ok(Date.parse(first.publishAt) > Date.now());
-  assert.ok(Date.parse(second.publishAt) > Date.parse(first.publishAt));
+  assert.ok(Date.parse(second.publishAt) >= Date.parse(first.publishAt),'supporting answers may release with their root, never before it');
+  assert.equal(third.publishAt,first.publishAt,'inferred cluster root also controls its supporting date');
   assert.equal(model.packageForSite(draftSite).pages.length, 1);
   assert.equal((await model.listCalendar()).find(item => item.pageId === first.id).status, 'planned');
   await model.editPage(site.id, first.id, { body: [{ type: 'paragraph', text: longText }], externalLinks: [{ url: 'https://example.com/gaires', label: 'Oficialios gairės', reason: 'Patikrinti konkretų teiginį', verified: false }] });

@@ -43,3 +43,29 @@ test('weekly policy reaches the actual CLI prompt and generates its calculated h
   assert.equal(after.contentPolicy.articlesPerWeek,3);assert.equal(after.contentPolicy.articlesPerMonth,undefined);
   assert.equal(after.pages.some(p=>p.publishedRevision),false);
 });
+
+test('coverage refuses an unknown or missing researched map instead of inventing filler',async()=>{
+  const site=await model.createSite({canonicalHost:'unmapped-coverage.example',name:'Tik testas',offer:'Izoliuotas testas'});
+  let result=await finish(await enqueue('autopilot',site.id));
+  assert.equal(result.status,'failed');assert.match(result.error,/temų žemėlapį/);
+  await model.editSite(site.id,{contentPolicy:{cadence:'coverage',coverageTarget:48}});
+  result=await finish(await enqueue('autopilot',site.id));
+  assert.equal(result.status,'failed');assert.match(result.error,/neprikuria/);
+  assert.equal((await model.getSite(site.id)).pages.length,0);
+});
+
+test('coverage drafts a whole supplied map through multiple transport batches without date spreading or approval',async()=>{
+  const site=await model.createSite({canonicalHost:'mapped-coverage.example',name:'Tik testas',offer:'Izoliuotas testas'});
+  await model.editSite(site.id,{contentPolicy:{cadence:'coverage',coverageTarget:49,preparationDays:0}});
+  const existing=await model.addPage(site.id,{type:'guide',slug:'retained',title:'Esamas atsakymas',description:'Tik testas',intent:'Esamas klausimas',publishAt:'2026-10-05T07:00:00Z',body:[{type:'paragraph',text:'Sintetinis esamas tekstas.'}]});
+  const proposals=Array.from({length:48},(_,i)=>({type:'guide',slug:'mapped-'+i,title:'Sintetinis žemėlapio klausimas '+i,intent:'Tik išankstinio plano bandymas '+i,description:'Ne viešas turinys.'}));
+  for(let i=0;i<48;i+=24)await model.mergePlan(site.id,proposals.slice(i,i+24),6);
+  const result=await finish(await enqueue('autopilot',site.id));assert.equal(result.status,'complete',result.error);
+  const after=await model.getSite(site.id);
+  assert.equal(after.pages.length,49);assert.equal(after.pages.find(p=>p.id===existing.id).publishAt,existing.publishAt);
+  assert.equal(new Set(after.pages.filter(p=>p.slug.startsWith('mapped-')).map(p=>p.publishAt)).size,1);
+  assert.equal(JSON.parse(result.detail).drafts.generated,48);
+  assert.equal(JSON.parse(result.detail).plan.status,'COUNT_TARGET_MATERIALIZED_REQUIRES_COVERAGE_REVIEW');
+  assert.equal(after.pages.some(p=>p.publishedRevision),false);
+  await assert.rejects(()=>model.approvePage(site.id,after.pages[1].id,'test'),/peržiūros|vaizdo/);
+});

@@ -59,9 +59,12 @@ const contextForSite = site => ({
 async function planSite(siteId, months = 0, skill, requestedCount = null) {
   const site = await getSite(siteId);
   const policy = contentPolicy({ ...site.contentPolicy, ...(months ? { months } : {}) }, site.timezone);
-  const count = requestedCount || (months ? Math.min(24, planningWindow(policy).target) : '5-10');
+  const count = requestedCount || (months ? Math.min(24, planningWindow(policy).target ?? 24) : '5-10');
   const localDate = scheduleDate(Date.now(), policy.timezone);
-  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? `a ${policy.months}-month calendar with target ${policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}` : 'an initial demand-test site'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; spread substantive pages across this horizon, respect existing dates and seasonal dependencies. Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
+  const coverage = policy.cadence === 'coverage';
+  const scope = coverage ? `the next projection of the complete researched topical coverage map (${policy.coverageTarget ?? 'not yet established'} total article intents, including retained articles). This 24-page operation is a transport batch, never the complete map or a publication quota. Cover missing distinct reader jobs, merge overlapping intents, and respect map dependencies. No weekly cap or requirement to spread evergreen content over months` : `a ${policy.months}-month calendar with target ${policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}`;
+  const timing = coverage ? `Tentative dates may be shared by a complete cluster. Use today or a realistic preparation date through ${planningWindow(policy).end}; never backdate. Set earlier dates for foundational content and its supporting answers together; seasonal material may have a later real date. Dates do not clear source, media, review or deployment gates.` : `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; respect existing dates and seasonal dependencies.`;
+  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? scope : 'an initial demand-test site with a full researched coverage map and a clearly identified first useful release subset'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? timing + ` Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
   const prompt = buildEditorialPrompt(skill, { mode: 'plan', instruction, siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() } });
   const result = await codexJson(prompt, 'plan-result.schema.json');
   if (!Array.isArray(result.pages)) throw new Error('Codex negrąžino puslapių plano.');
@@ -116,19 +119,22 @@ async function draftBatch(siteId, jobId, skill) {
 async function autopilot(siteId, jobId, skill) {
   let site = await getSite(siteId);
   const policy = contentPolicy(site.contentPolicy, site.timezone), window = planningWindow(policy);
-  const countUpcoming = value => value.pages.filter(page => ['guide','article'].includes(page.type) && page.status !== 'revoked' && Date.parse(page.publishAt) > Date.now() && scheduleDate(page.publishAt, policy.timezone) <= window.end).length;
+  if (policy.cadence === 'coverage' && window.target === null) throw new Error('Pirma parenkite pilną tyrimu pagrįstą temų žemėlapį ir coverageTarget. Autopilot nekuria savavališkos savaitinės kvotos ar pilnumo pažado.');
+  const countUpcoming = value => value.pages.filter(page => ['guide','article'].includes(page.type) && page.status !== 'revoked' && (policy.cadence === 'coverage' || Date.parse(page.publishAt) > Date.now()) && scheduleDate(page.publishAt, policy.timezone) <= window.end).length;
+  if (policy.cadence === 'coverage' && countUpcoming(site) < window.target) throw new Error('Pilnas ištirtas temų žemėlapis dar neįkeltas į planą. Įkelkite visas sutikrintas URL temas prieš juodraščius; autopilot neprikuria temų vien skaičiui pasiekti.');
   let plan = { added: 0, total: site.pages.length, targetArticles: window.target };
   // Bound work and stop on lack of progress; no repeated filler prompts to hit a quota.
-  for (let batch = 0; batch < Math.ceil(window.target / 24); batch++) {
+  for (let batch = 0; policy.cadence !== 'coverage' && batch < Math.ceil(window.target / 24); batch++) {
     const remaining = window.target - countUpcoming(site);
     if (remaining <= 0 && site.pages.some(page => page.type === 'home')) break;
-    await updateJob(jobId, { detail: `Planuojama partija ${batch + 1}; tikslas ${window.target} straipsnių per ${policy.months} mėn.` });
+    await updateJob(jobId, { detail: `Planuojama partija ${batch + 1}; ${policy.cadence === 'coverage' ? 'temų žemėlapio aprėptis' : 'kalendoriaus tikslas'} ${window.target} straipsnių.` });
     const next = await planSite(siteId, policy.months, skill, Math.min(24, Math.max(remaining, 1)));
     plan.added += next.added; plan.total = next.total;
     if (!next.added) break;
     site = await getSite(siteId);
   }
   plan.remainingArticles = Math.max(0, window.target - countUpcoming(site));
+  plan.status = plan.remainingArticles ? 'PARTIAL_PLAN' : 'COUNT_TARGET_MATERIALIZED_REQUIRES_COVERAGE_REVIEW';
   await updateJob(jobId, { detail: `Plane ${plan.total} puslapių, pridėta ${plan.added}; rengiami tušti juodraščiai.` });
   const drafts = { generated: 0, failed: 0, failures: [] };
   const emptyCount = (await getSite(siteId)).pages.filter(page => page.body.length === 0 && page.status !== 'revoked').length;

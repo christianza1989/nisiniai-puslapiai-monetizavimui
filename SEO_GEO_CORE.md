@@ -1,3 +1,7 @@
+# Aktualus turinio strategijos papildymas — 2026-10-06
+
+[TOPICAL_CONTENT_CORE](TOPICAL_CONTENT_CORE.md): pilnas tyrimu pagrįstas temų žemėlapis ir naudingų grupių užbaigimas be default publikavimo kvotų. Aprėptis nėra straipsnių skaičius; būtini originalūs, išsamūs, tikri atsakymai ir prasmingi ryšiai. Jokio Google topical-authority balo, keyword variacijų klonavimo ar ranking pažado. Techninio SEO/public eligibility sutartys žemiau nesikeičia.
+
 # Bendras SEO ir GEO pagrindas nišinėms svetainėms
 
 2026-10-01 faktinė laiptų v2 favicon pataisa: Cloudflare static assets pirmumas apeidavo `proxy.ts`, todėl visų nišų `/favicon.svg` realiai grąžino bendrą public failą nepaisant brand-icon kodo. `vite.config.ts` assets `run_worker_first` dabar apima `/content-assets/*`, `/favicon.svg`, `/favicon.ico`; domeno rewrite / host vartai vykdomi prieš šiuos failus. Savo laiptų SVG šaka yra brand-icon route, kitų nišų fallback išliko. Naujas `tests/seo-core-smoke.mjs` tikrina abi ikonas, jų neatitikimą shared static payload ir unknown-host404. Po isolated build6nišų faktinis smoke ir24corePASS; seventh miniekskavatoriai tuo metu kuriama atskirai ir root jos runtime nepatvirtino. Įtraukti aktualią config į kiekvieną naują build; vien route ar HTMLicon link nėra veikiančios domeno ikonos įrodymas. [QA](sites/laiptucentras/DESIGN-REVISION-2026-10-01/QA.md), [before/after](sites/laiptucentras/DESIGN-REVISION-2026-10-01/VERSION-CHECK.json).

@@ -41,6 +41,14 @@ Prieš importą paleisti `node content-studio/scripts/verify-content-release.mjs
 - V2 actual-host admission receipt išlieka; release manifest nėra jo pakaitalas. Demo exclusion, SMTP-INBOX, DNS, paklausa ir rankings nėra lokalaus release įrodymai.
 - Review manifest privatus; į viešą rendererį importuojami tik content-package ir assets, ne privačios patikros pastabos.
 
+## Nepriklausomo projekto turinio adapteris — 2026-10-06
+
+Savininko pasirinktas atskiras Next.js/Vercel ar kitas projektas gali naudoti tik studijos turinį. Tai nereikalauja jo homepage, hostingą, paskyras ar verslo runtime perkelti į nišų variklį. `createSite` leidžia optional stabilų `siteId`; jo nenurodžius lieka esamas domeno ID. Host pakeitimas nėra tyliai palaikoma migracija.
+
+Po įprastos review/approval/release vykdyti `node content-studio/scripts/export-external-content.mjs <release-directory> <NEW-bundle-directory> <siteId> <canonical-host>`. Helper tikrina esamą release, išsaugo exact approved baitus, optimizuotus assets ir dependency-complete common validator/projection/media SDK; privatus review lieka studijoje. Bundle yra eksportas, ne deployment. Importeriui būtinas trusted/pinned SDK šaltinis: upload pateikti SHA vieni kodo neautentifikuoja. Negalima atsinešti naujo approval hash ar publikavimo predikato.
+
+Target adapterio article/index/nuorodos/sitemap/schema/LLM/medija naudoja tą patį request-time eligibility ir host. Future/draft tekstas bei vaizdai neprieinami anonimiškai; SSR/cache tikrinami realiu prieš/po datos HTTP testu. V1 adapteris V2 aiškiai atmeta iki rich rendererio priėmimo. Konteksto home anchor neperrašo target homepage. Naujo bundle importas/deploy yra atskiras žingsnis; vietinė studija kompiuteriui neveikiant nėra hosted generatorius. [Superiora actual perdavimo pavyzdys](research/ai-teacher-content-integration-2026-10-06/CONTENT-BRIDGE.md).
+
 ## Priėmimas
 
 `content-workflow.test.mjs`: dviejų nišų izoliacija, DST, atominė susietų draftų partija, prieš/po datos nuorodos, stale review po turinio/faktų pokyčių, missing/foreign/revoked targets, vaizdų/šaltinių vartai, V2 lossless ir privati HTTP sąsaja. `generator-policy.test.mjs`: 27 straipsniai per kelias tikro CLI proceso fixture partijas, datos ir visi juodraščiai privatūs. Fixture nėra live Codex tyrimo ar kokybės įrodymas.

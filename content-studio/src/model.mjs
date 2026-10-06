@@ -127,11 +127,11 @@ const normalizeSlug = (value, type) => {
   if (!/^[a-z0-9]+(?:[-/][a-z0-9]+)*$/.test(slug) || slug.startsWith('niche/') || slug.startsWith('api/')) throw new Error('Netinkamas URL kelias. Naudokite mažąsias lotyniškas raides, skaičius ir vidinius brūkšnelius.');
   return slug;
 };
-const makeSite = (domain, name, offer = '') => ({
-  id: siteIdFromDomain(domain), canonicalHost: domain, name,
+const makeSite = (domain, name, offer = '', siteId = siteIdFromDomain(domain)) => ({
+  id: siteId, canonicalHost: domain, name,
   locale: 'lt-LT', timezone: 'Europe/Vilnius',
   brand: { accent: '#246f74' }, offer,
-  audience: '', facts: '', contact: defaultContact(siteIdFromDomain(domain)),
+  audience: '', facts: '', contact: defaultContact(siteId),
   stage: 'planning', pages: [], assets: [], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()
 });
 
@@ -226,7 +226,9 @@ export async function createSite(input) {
     const domain = normalizedHost(input.canonicalHost);
     const all = await listSites();
     if (all.some(site => site.canonicalHost === domain)) throw new Error('Domenas jau yra registre.');
-    const site = makeSite(domain, plain(input.name, 120) || domain, plain(input.offer, 500));
+    const siteId = input.siteId === undefined ? siteIdFromDomain(domain) : input.siteId;
+    if (input.siteId !== undefined && (typeof siteId !== 'string' || !/^[a-z0-9][a-z0-9-]{1,62}$/.test(siteId))) throw new Error('Netinkamas stabilus svetainės ID.');
+    const site = makeSite(domain, plain(input.name, 120) || domain, plain(input.offer, 500), siteId);
     if(input.schemaVersion===2){site.schemaVersion=2;site.renderer=input.renderer==='gift'?'gift':'niche';site.operatorName=JSON.parse(readFileSync(networkSettingsFile,'utf8')).contactsBySite?.[site.id]?.operatorName||JSON.parse(readFileSync(networkSettingsFile,'utf8')).operatorName;}
     if (all.some(item => item.id === site.id)) throw new Error('Svetainės ID jau naudojamas.');
     await writeJson(siteFile(site.id), site);

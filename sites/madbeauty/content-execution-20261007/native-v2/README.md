@@ -20,4 +20,12 @@ Patikra:
 node sites/madbeauty/content-execution-20261007/native-v2/verify-native-execution.mjs
 ```
 
-`EXECUTION.json` yra peržiūrėto eksporto įrodymas. Gyvas diegimas ir jo HTTP priėmimas registruojami atskirai `HOSTED-ACCEPTANCE.json`; vien eksportas nėra diegimas. Platformos sesijai perduotas tikslus immutable paketas, common shadow/build/canonical, medijos baitų ir laiko vartų priėmimui. SEO/klinikinė kompetencija, tikra vietinių teikėjų pasiūla, GSC/GA4 ir rezervacijos/pašto pristatymas šiuo paketu neįrodomi.
+`EXECUTION.json` išsaugo peržiūrėto eksporto etapą. Gyvas paketas jau įdiegtas į [madbeauty.lt](https://madbeauty.lt/gidai); Cloudflare versija `edf429e9-2409-49bb-bf2b-88b5d53628f8`. [HOSTED-ACCEPTANCE.json](HOSTED-ACCEPTANCE.json) susieja tikslų paketą su platformos 92/92 testais, izoliuotais publikavimo laiko bandymais ir faktine domeno patikra. [INDEPENDENT-HOSTED-CHECK.json](INDEPENDENT-HOSTED-CHECK.json) fiksuoja papildomas 43 nepriklausomas HTTP užklausas: 7 matomi puslapiai, 2 būsimi URL su 404, 25 tikslūs vieši WebP failai ir 5 iki datos paslėpti failai. Platformos sesijos gyvas vaizdas patikrintas 1280×720 ir 390×844; šioje sesijoje papildomai peržiūrėta jos tikra mobili ekrano nuotrauka.
+
+Abu nauji gidai automatiškai tampa matomi spalio 13 d. 10:00 Lietuvos laiku jau įdiegtame pakete. Tikslūs prieš/po datos bandymai atlikti izoliuotame runtime; tikras gyvas domenas po būsimos datos dar nepatikrintas. Diegimo šaltinis yra PR24, generatoriaus šaltinis PR10; abu šiame įraše neįvardijami kaip sujungti į main. Vietinė meistrų pasiūla, klinikinė kompetencija, GSC/GA4, rezervacijos bei pašto pristatymas šiuo turinio paketu neįrodomi.
+
+Nepriklausomos gyvo domeno patikros pakartojimas (tik skaitymas):
+
+```powershell
+node sites/madbeauty/content-execution-20261007/native-v2/check-hosted-release.mjs
+```

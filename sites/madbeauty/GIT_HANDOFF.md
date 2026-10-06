@@ -1,12 +1,12 @@
 # Madbeauty paleidimas iš Git
 
-**Aktualus perdavimas kitai sesijai:** [2026-10-06 startas ir Cloudflare/domeno darbų eilė](../../docs/NEXT_CODEX_HANDOFF_2026-10-06.md). Savininkas pavedė kitai sesijai užbaigti ir paleisti; šiame commit perduodamas vietinis kodas, ne jau įgyvendintas Workers/D1 adapteris.
+**Aktualus perdavimas kitai sesijai:** [2026-10-06 startas ir Cloudflare/domeno darbų eilė](../../docs/NEXT_CODEX_HANDOFF_2026-10-06.md). Abiejų repo aktualų kodą dabar galima imti iš `main`; root PR3–6 ir public core Dovanos PR3 / portable build PR4 sujungti. Savininkas pavedė kitai sesijai užbaigti ir paleisti; perduodamas vietinis kodas, ne jau įgyvendintas Workers/D1 adapteris.
 
 2026-10-06. Į Git perduotas V3 vietinės platformos kodas, naudojami WebP/fontų/ikonų failai, planai ir priėmimo dokumentacija. Vietinis funkcijų bei normalios desktop/mobile sąsajos etapas apima 69 paviršius su savininko sustabdyta demo galerijos peržiūra. Tai nėra viešas deployment ar production priėmimas.
 
 ## Naujas kompiuteris
 
-Pagal [bendrą dviejų repo instrukciją](../../docs/MULTI_MACHINE.md) abu checkout laikyti greta: `nisiniai_puslapiai_monetizavimui` ir `dovanos-memorycasting`. Ši platformos šaka remiasi PR3 → PR4 → PR5 bendromis sutartimis; iki jų sujungimo imti visą platformos šaką, ne vien seno main failus. Node rekomenduojamas bent 22.22 pagal bendrų priklausomybių reikalavimus.
+Pagal [bendrą dviejų repo instrukciją](../../docs/MULTI_MACHINE.md) abu checkout laikyti greta: `nisiniai_puslapiai_monetizavimui` ir `dovanos-memorycasting`. Aktualus `main` jau turi PR3 → PR4 → PR5 bendras sutartis ir PR6 Madbeauty. Node rekomenduojamas bent 22.22 pagal bendrų priklausomybių reikalavimus.
 
 Iš `dovanos-memorycasting` paleisti `npm run install:ci`. Tada iš nišų repo root:
 

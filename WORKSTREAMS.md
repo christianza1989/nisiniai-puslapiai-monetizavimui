@@ -8,6 +8,8 @@
 
 # Lygiagrečios sesijos
 
+2026-10-06 root savininko „pabaik viską“ Git main langas: reviewed root PR3/4/5/6 sujungti į main; public-core Dovanos PR3 ir 3 failų portable build PR4 sujungti. Own codex/github-finalize-20261006 tik START_HERE / PROJECT_STATUS / NEXT_CODEX_HANDOFF / Madbeauty GIT_HANDOFF ir own research/github-main-finalization-20261006/REVIEW.md bei ši eilutė. Actual9V1 hash/admission nekinta, gift staging lieka OFF; source/runtime/deploy/sekretai/kitų sesijų darbai neperimti. Savo QA8927 po SEO patikrų sustabdytas, svetimi procesai neliesti. Langas uždaromas po patikrinto dokumentų commit/main merge.
+
 2026-10-06 root savininko Git perdavimo papildymas: švari `ai/madbeauty-platform-20261006` šaka, tik `docs/NEXT_CODEX_HANDOFF_2026-10-06.md`, nuoroda `sites/madbeauty/GIT_HANDOFF.md`, du atrinkti root Git peržiūros MD ir ši eilutė. Runtime, kitų sesijų failai, schemos, DNS ir deployment nekinta. Kitas Codex gauna aktualią atkūrimo versiją ir aiškią Madbeauty Cloudflare/production priėmimo eilę; SQLite vietinis rezultatas nepervadinamas Workers priėmimu. Shared doc langas atlaisvinamas po commit/push.
 
 2026-10-03 autoelektrikaivilniuje mažas shared prijungimo langas: tik viena nauja savo dispatch šaka `app/niche/[siteId]/[[...slug]]/page.tsx`, viena savo ženklo šaka `app/niche/[siteId]/brand-icon/route.ts`, oficialus savo 11 puslapių / 20 WebP paketo importas ir bendras compile. Aktualios esamos šešios dispatch šakos ir brand-icon išimtys perskaitytos; jos išlaikomos. Network registry auto domeną jau turi, liveDomains tuščias ir nekinta. Bendras production dist nekeičiamas. Po lango savo izoliuota kopija `output/three-sites-20261003/autoelektrikaivilniuje/`; SMTP/LEAD_EMAIL/voice off, vietinė D1 tik sintetinė.

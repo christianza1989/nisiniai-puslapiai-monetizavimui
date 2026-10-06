@@ -1,5 +1,13 @@
 # Madbeauty — dabartinis įgyvendinimas
 
+## Aktualus katalogo atnaujinimo planas — 2026-10-06
+
+Savininkas paprašė platformos peržiūros ir pilno tobulinimo plano pagal Treatwell kategorijas bei Fresha. **Šio pavedimo režimas: auditas ir planas.** Parengtas [pilnas planas](upgrade-plan-20261006/PLAN.md), [interaktyvi peržiūra](upgrade-plan-20261006/index.html) ir [41 darbo eilė](upgrade-plan-20261006/BACKLOG.json): 14 pagrindinių sričių, 194 procedūros, 7 papildomi plėtiniai, kelių paslaugų pasirinkimas meistrui, variantų / paieškos / rezervavimo / migracijos sutartys. [Įrodymai ir ribos](upgrade-plan-20261006/AUDIT.md). Naujo katalogo runtime dar neįgyvendintas; šis paketas nekeičia gyvų paskyrų, mokėjimų ar turinio kalendoriaus.
+
+Planas remiasi `c6516b7` ir to paties domeno gyvu dropdown pataisymu: visi 10 esamų tipų bei bendri 103 Lietuvos miestai. Gyva pataisymo versija `402a0fb5-bd02-4a78-8a3b-de083aeb68e8`; [pataisymo kvitas](search-fix-20261006/RECEIPT.json). Ankstesniame gyvo release įraše žemiau nurodytas 119 assetų skaičius yra istorinis; paieškos pataisymo patikra apėmė 120. Naujų kategorijų, pilnos laisvo laiko paieškos ir meistro kelių procedūrų pasirinkimo šis senas PASS neapima.
+
+Failų atsakingasis: `ai/madbeauty-upgrade-plan-20261006`; tik `upgrade-plan-20261006/**`, ši pradžios nuoroda ir savi WORKSTREAMS įrašai. Planavimo paketo priėmimas — [VALIDATION](upgrade-plan-20261006/VALIDATION.md). Kitas įgyvendinimo rezultatas: PLAN skiltyje „Pirmasis konkretus įgyvendinimo paketas“ aprašytas taksonomijos → pasiūlymo → laiko → rezervacijos kelias. Mokėjimai, pranešimų kanalų plėtra, trečiųjų šalių kontaktavimas ir papildomų sričių aktyvavimas šio planavimo metu nejungiami. Žemiau išlaikoma ankstesnių įgyvendinimo etapų istorija.
+
 ## Gyvas Cloudflare paleidimas — 2026-10-06
 
 Veikia https://madbeauty.lt: Hostinger domenas prijungtas, Cloudflare DNS/TLS ir HTTP/www nukreipimai patikrinti. Produkcinis SQL Durable Object adapteris saugo paskyras, rezervavimus, privatų media ir laiškų eilę; realus info@pinet.lt OTP → operatorius → serverinis logout patikrintas, laiškas gautas pagrindiniame INBOX. Vieši17 puslapių/119 assetų/7 private404 ir canonical discovery PASS; desktop ir390px home/login vaizdai priimti. Pirmasis realių meistrų katalogas tuščias, užpildomas tik tikrais patvirtinamais profiliais.

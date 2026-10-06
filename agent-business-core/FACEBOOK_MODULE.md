@@ -1,5 +1,7 @@
 # Facebook acquisition core: local increment
 
+2026-10-07: the [current implementation roadmap](../FB_AGENT_ROADMAP.md) adds checkbox milestones, transport acceptance and a PhoneBridger acquisition experiment. It is a plan, not an enabled collector/sender, new API or repeat of this module's dated QA. Keep this document as the actual implementation contract until a scoped code change is accepted.
+
 2026-10-01. Implemented private per-niche policy, metadata/signal registry, durable preparation queue, operator GUI, bounded CLI drafting and database integration. This is not a running personal-profile browser collector, Page webhook or external sender. Actual acceptance: [QA](../research/facebook-module-2026-10-01/QA.md), [UI](../research/facebook-module-2026-10-01/UI-CHECK.json), [CLI](../research/facebook-module-2026-10-01/CLI-PROBE.json). Target architecture and real platform access: [FB_ACQUISITION_PLAN](../FB_ACQUISITION_PLAN.md).
 
 ## Use the existing core

@@ -35,4 +35,14 @@ Fresh visual/Lighthouse review repaired768px card framing, redundant eyebrows an
 
 The guide extension is verified locally; whole-site local/launch readiness is NOTREADY. Domain/public dates, full projection cutover, durable inquiry, mail receipt, measurement, operator/legal/hosted services remain specific gates. These changes are in scoped open PRs, not merged universal adoption.
 The account adapter is deliberately local and not a replacement for hosted auth.
+
+## Production boundary lessons — 2026-10-06
+
+The owner now authorized hosting and mailbox integration. A dedicated PhoneBridger Worker consumes the shared publication/SEO helpers and a committed, Studio-reviewed production edition. Build commands must consume reviewed content; they must never create approval as a side effect. Contact/privacy factual changes receive a new editorial revision before deployment, while nonvisual production transforms preserve the accepted prototype.
+
+Provider API credentials are typed capabilities: the supplied Hostinger Mail token authorizes its mailbox API, not the registrar/platform API. The optional shared Mail API adapter complements existing SMTP and is verified against the official OpenAPI. Document missing capabilities such as Reply-To rather than inventing request fields. Durable-save, API acceptance and actual inbox receipt are distinct evidence; match only the uniquely identified self-test, never browse unrelated mail. Ambiguous delivery failures require enquiry-ID reconciliation rather than blind retries.
+
+Free-plan CPU and static-file limits need actual production evidence. Local password hashing success is not edge acceptance; hashing strength must not be reduced to fit a plan. Preserve an existing installer byte-for-byte and stream bounded delivery parts rather than repackaging it or enabling paid storage without a budget. Nameserver migration follows a usable deployment and an exact mail-record inventory; account verification is a human provider gate, not a design or code defect.
+
+The launch remains blocked by Cloudflare account-email verification. Local checks, remote D1 creation, secret installation and successful Worker upload are recorded individually; none is relabelled as public activation. Shared helper regressions, actual HTTP tests and secret-safe staged-blob checks accompany the scoped GitHub update. These are reusable acceptance lessons, not universal niche visuals, prices or provider defaults.
 No other site's package/schema or historical test evidence was rewritten.

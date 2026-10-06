@@ -1,5 +1,7 @@
 # Madbeauty — V3 patirtos platformos pamokos
 
+2026-10-06 straipsnių / katalogo adapterio patirtis: [siauro pagrindo CORE_FEEDBACK](content-foundation-20261006/CORE_FEEDBACK.md). V2 projekcija naudojama iš esamo public core; shared studio langas lieka turinio PR10. Ankstesnės pamokos žemiau nekeistos.
+
 2026-10-06. Patirti defektai, jų vietinis sprendimas ir actual įrodymas: [DEFECTS](uiux/DEFECTS.json), [galutinis kvitas](../../research/madbeauty-implementation/uiux-functional-final-v3.json), [intervencijos](../../research/madbeauty-implementation/uiux-interventions-v3.json).
 
 Klientui trūko inquiry/waitlist istorijos: pridėta serverinė savo paskyros whitelist projekcija, paslaugos pavadinimas/būsena ir naujas izoliacijos testas. Waitlist redaktorius naudojo netinkamą status lauką: now state/offered išlieka. Moderavimo approval beprasmė privaloma priežastis pakeista conditional returned/rejected, whitespace required nepriimama. Staff radio rerender fokusas sutaisytas pagal pasirinktos reikšmės tapatybę. Fragmento popstate rerender naikino native scroll: route/structured-hash raktas ir deep-link atkūrimas tikrai retestuoti. Booking santrauka išlaiko kainą/trukmę ir nesitęsia per visą stulpelį.

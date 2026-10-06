@@ -1,0 +1,12 @@
+import {writeFile,mkdir} from 'node:fs/promises';
+import path from 'node:path';
+import {createAppServer} from '../prototype/app-server.mjs';
+import {openStore} from '../backend/store.mjs';
+import {createApiHandler} from '../backend/http.mjs';
+import {articleFixture,createApprovedOffer,FIXTURE_NOW} from './fixture.mjs';
+const port=Number(process.env.MADBEAUTY_FOUNDATION_PORT||8822),root=path.resolve(import.meta.dirname,'../runtime/output/content-foundation');
+await mkdir(root,{recursive:true});const packagePath=path.join(root,'fixture-package.json');await writeFile(packagePath,JSON.stringify(articleFixture()));
+const store=openStore({filename:':memory:',clock:()=>FIXTURE_NOW,secret:'local-isolated-fixture-not-production'.repeat(2)}),apiHandler=createApiHandler(store,{origin:'http://127.0.0.1:'+port});
+createApprovedOffer(store,apiHandler.platform,apiHandler.auth);
+const server=createAppServer({apiHandler,contentClock:()=>FIXTURE_NOW,contentPackagePath:packagePath,enabled:false});server.on('close',()=>store.close());
+server.listen(port,'127.0.0.1',()=>console.log(JSON.stringify({url:'http://127.0.0.1:'+port,mode:'isolated-fixture',publicDeployment:false,persistence:'memory-only'})));

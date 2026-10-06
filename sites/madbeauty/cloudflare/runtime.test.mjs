@@ -1,3 +1,4 @@
+import {articleFixture} from '../content-foundation-20261006/fixture.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,readFile} from 'node:fs/promises';
@@ -10,9 +11,32 @@ const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/li
 const {Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
 const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}});
 const script=bundle.outputFiles[0].text,origin='https://madbeauty.test';
-async function fixture(bindings={}){
+test('Workers V2 article→catalogue registry→SSR supply; withdrawal removes link, empty city404 and private data',async()=>{
+ const v2=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[{name:'isolated-v2-package',setup(b){b.onLoad({filter:/output[\\/]content-package\.json$/},()=>({contents:JSON.stringify(articleFixture()),loader:'json'}));}}]});
+ const f=await fixture({RELEASE_MODE:'production'},v2.outputFiles[0].text);try{
+  const articlePath='/gidai/katalogo-nuorodos-testas',targetPath='/paslaugos/lakavimas-gelinis-lakavimas/vilnius';
+  assert.doesNotMatch(await(await f.mf.dispatchFetch(origin+articlePath)).text(),/href="https:\/\/madbeauty.lt\/paslaugos\/lakavimas/);
+  const owner=f.browser(),operator=f.browser();await owner.login('article-provider@example.com');await operator.login('operator@example.com');
+  const org=(await owner.rpc('createOrganization',{name:'Izoliuoto testo meistrė',bio:'V2 Workers sąsajos patikra.',city:'Vilnius',kind:'solo'})).value.result,scope={role:'professional',organizationId:org.id},w=(await owner.rpc('workspace',scope)).value.result;
+  await owner.rpc('createService',{organizationId:org.id,practitionerId:w.practitioners[0].id,resourceId:w.resources[0].id,taxonomyServiceId:'gelinis-lakavimas',label:'Gelinis lakavimas',durationMin:60,priceMinor:2500,bufferBeforeMin:0,bufferAfterMin:0});
+  const revision=(await owner.rpc('submitRevision',{scope,name:org.name,bio:org.bio})).value.result;await operator.rpc('moderate',{id:revision.id,state:'approved'});
+  const target=await f.mf.dispatchFetch(origin+targetPath);assert.equal(target.status,200);assert.match(await target.text(),new RegExp('/meistrai/'+org.id));assert.match(target.headers.get('x-robots-tag'),/noindex/);
+  const registry=await(await f.mf.dispatchFetch(origin+'/content-targets.json')).json();assert.ok(registry.targets.some(t=>t.id==='mb:catalog:lakavimas-gelinis-lakavimas:vilnius'));assert.ok(registry.routes.every(r=>r.indexEligible===false));
+  const article=await f.mf.dispatchFetch(origin+articlePath);assert.equal(article.status,200);const html=await article.text();assert.match(html,/href="https:\/\/madbeauty.lt\/paslaugos\/lakavimas-gelinis-lakavimas\/vilnius"/);assert.match(html,/"@type":"Article"/);assert.doesNotMatch(html,/article-provider@example.com/);
+  for(const p of ['/paslaugos/nagai','/paslaugos/kirpimai-moteru-kirpimas'])assert.equal((await f.mf.dispatchFetch(origin+p)).status,200);
+  for(const p of ['/paslaugos/nagai/kaunas','/paslaugos/unknown','/paslaugos/kirpimai-moteru-kirpimas/vilnius'])assert.equal((await f.mf.dispatchFetch(origin+p)).status,404);
+  assert.equal((await f.mf.dispatchFetch('https://unknown.test'+articlePath)).status,404);
+  const query=await f.mf.dispatchFetch(origin+articlePath+'?sort=price');assert.match(query.headers.get('x-robots-tag'),/noindex/);
+  const sitemap=await(await f.mf.dispatchFetch(origin+'/sitemap.xml')).text();assert.match(sitemap,/katalogo-nuorodos-testas/);assert.doesNotMatch(sitemap,/\/paslaugos\/nagai/);
+  await f.restart();assert.equal((await f.mf.dispatchFetch(origin+targetPath)).status,200);
+  const edited=await operator.rpc('edit',{scope:{role:'operator'},table:'organizations',id:org.id,values:{approved:false}});assert.equal(edited.status,200,JSON.stringify(edited.value));
+  assert.equal((await f.mf.dispatchFetch(origin+targetPath)).status,404);assert.doesNotMatch(await(await f.mf.dispatchFetch(origin+articlePath)).text(),/href="https:\/\/madbeauty.lt\/paslaugos\/lakavimas/);
+  const current=await(await f.mf.dispatchFetch(origin+'/content-targets.json')).json();assert.ok(!current.targets.some(t=>t.id.endsWith(':vilnius')));
+ }finally{await f.close();}
+});
+async function fixture(bindings={},fixtureScript=script){
  const storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-workers-')),mails=[];let failMail=false;
- const start=()=>new Miniflare({modules:true,script,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true}},durableObjectsPersist:storage,images:{binding:'IMAGES'},bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',SESSION_SECRET:'local-test-only-secret-no-production-access',OPERATOR_EMAIL:'operator@example.com',...bindings},serviceBindings:{MAIL_TRANSPORT:async request=>{if(failMail)return new Response('Unavailable',{status:503});mails.push(await request.json());return new Response('Accepted');},ASSETS:async()=>new Response('Not found',{status:404})}});
+ const start=()=>new Miniflare({modules:true,script:fixtureScript,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true}},durableObjectsPersist:storage,images:{binding:'IMAGES'},bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',SESSION_SECRET:'local-test-only-secret-no-production-access',OPERATOR_EMAIL:'operator@example.com',...bindings},serviceBindings:{MAIL_TRANSPORT:async request=>{if(failMail)return new Response('Unavailable',{status:503});mails.push(await request.json());return new Response('Accepted');},ASSETS:async()=>new Response('Not found',{status:404})}});
  let mf=start();
  const browser=()=>{
   let cookie='',csrf='';

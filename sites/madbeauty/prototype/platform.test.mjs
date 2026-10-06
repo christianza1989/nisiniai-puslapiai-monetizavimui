@@ -125,8 +125,8 @@ test('All declared routes resolve; unknown service/city/guide and unavailable de
 });
 test('Private server refuses production, mutation, original assets, discovery; known and 404 responses noindex',async()=>{
   assert.throws(()=>createAppServer({deployment:'production'}),/forbidden/);const s=createAppServer({now:clock.now});await new Promise(r=>s.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+s.address().port;
-  try{for(const path of ['/','/paslaugos/manikiuras/vilnius','/meistrui/kalendorius','/gidai/kaip-pasirinkti-nagu-spalva']){const r=await fetch(base+path);assert.equal(r.status,200,path);assert.match(r.headers.get('x-robots-tag'),/noindex/);const body=await r.text();assert.equal(body.includes('application/ld+json'),path==='/'||path.startsWith('/gidai/'));assert.ok(!body.includes('demo-org-'));assert.ok(!body.includes('example.com'));}
-    for(const path of ['/missing','/gidai/future','/gidai/kaip-issirinkti-nagu-spalva','/sitemap.xml','/llms.txt','/private-originals/hero-violet-v1.png','/%2e%2e%2fBUSINESS.md','/paslaugos/manikiuras/vilnius?page=999999']){const r=await fetch(base+path);assert.equal(r.status,404,path);assert.match(r.headers.get('x-robots-tag'),/noindex/);}
+  try{for(const path of ['/','/paslaugos/nagai','/meistrui/kalendorius','/gidai/kaip-pasirinkti-nagu-spalva']){const r=await fetch(base+path);assert.equal(r.status,200,path);assert.match(r.headers.get('x-robots-tag'),/noindex/);const body=await r.text();assert.equal(body.includes('application/ld+json'),path==='/'||path.startsWith('/gidai/'));assert.ok(!body.includes('demo-org-'));assert.ok(!body.includes('example.com'));}
+    for(const path of ['/paslaugos/manikiuras/vilnius','/missing','/gidai/future','/gidai/kaip-issirinkti-nagu-spalva','/sitemap.xml','/llms.txt','/private-originals/hero-violet-v1.png','/%2e%2e%2fBUSINESS.md','/paslaugos/manikiuras/vilnius?page=999999']){const r=await fetch(base+path);assert.equal(r.status,404,path);assert.match(r.headers.get('x-robots-tag'),/noindex/);}
     assert.equal((await fetch(base,{method:'POST'})).status,405);
   }finally{await new Promise(r=>s.close(r));}
 });

@@ -8,7 +8,11 @@ Kandidato priėmimas: immutable export / common schema / domain-contact / produc
 
 Actual-time shadow: 7 due / 2 future puslapiai, 25 media200 / 5 unshared future404, discovery private404. `accept-reviewed-candidate.mjs` tikrina tą patį tikrą paketą izoliuotame compiled Workers runtime ties realiu laiku, T−1ms ir T=2026-10-13T07:00:00Z: atitinkamai 7/7/9 puslapiai, 25/25/30 media, paskutiniu laiku 14 tikrų typed catalogue commerce href. Tai nėra viešo hosto ateities datos įrodymas.
 
-Ankstyvos patikros rado du realius trūkumus: synthetic test fixture trūko nuosavų asset allowlist, o `/gidai` renderer nerodė approved paragraphs. Jie pataisyti; galutinės patikros PASS. Kandidato įrodymai `evidence/` yra vietiniai ir ignoruojami Git. Deployment ir actualhost priėmimas fiksuojamas atskirame RECEIPT.json po faktinio aktyvavimo.
+Ankstyvos patikros rado realius trūkumus: synthetic test fixture trūko nuosavų asset allowlist, o `/gidai` renderer nerodė approved paragraphs. Taip pat naujas featuredimage netilpo į prose plotį; CSS pataisytas. Galutinės patikros PASS. Įrodymai `evidence/` yra vietiniai ir ignoruojami Git.
+
+**Gyvas release:** Worker versija `edf429e9-2409-49bb-bf2b-88b5d53628f8`, runtime source `897ba831f27d42c88cf723e0b6c0abd22ac57d48`, PR24. [RECEIPT.json](RECEIPT.json) saugo sanitized actualhost priėmimą:17pages/134assets/7boundaries,7due/2futurepages,25eligible/5hiddenmedia ir exact byte hashes,257national routes/noindex/103cityoptions,48extensionsplanned/0localready. Ta pati DO / secrets tapatybė išlaikyta; rollback `3ef780b8-bfde-436d-ae01-f2cb1f842e80`. Nėra DB/mail/DNS migracijos.
+
+Actualhost desktop1280×720/mobile390×844 indeksas, retained straipsnis, autoriaus nuoroda ir approved home turinys PASS. Current gidas turi tikrą `https://madbeauty.lt/paslaugos/manikiuras` commerce href; ateities 14 nacionalinių href patikrinti tik izoliuotame exact-clock candidate, kol jų straipsnis neviešas. Būsimo viešo hosto patikra po tikros publishAt datos lieka atskiras neįrodytas etapas. Generatorius/review/approved export yra writer PR10 atsakomybė.
 
 Priėmimo eiga po faktinio paketo perdavimo:
 

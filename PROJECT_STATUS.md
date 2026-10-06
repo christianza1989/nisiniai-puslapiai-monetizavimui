@@ -1,5 +1,7 @@
 # Aktuali darbų būsena
 
+**2026-10-06 Git main užbaigimas:** root PR3–6 sujungti: bendras content workflow, platformos sutartys ir visas Madbeauty vietinis V3. Public core Dovanos staging PR3 ir portable build PR4 taip pat sujungti. Actual build/49 core/9 SEO smoke(96URL)/32 studio/74 Madbeauty PASS su dokumentuotu pirmojo studio timeout. Dovanos lieka staging, Madbeauty local; Cloudflare runtime/production ir domenai neįjungti. Naujam AI startas [NEXT_CODEX_HANDOFF](docs/NEXT_CODEX_HANDOFF_2026-10-06.md), įrodymai [root finalizavimo peržiūroje](research/github-main-finalization-20261006/REVIEW.md). Žemiau pateiktos ankstesnės datos išlaiko istorines ribas, ne naujesnio rezultato pakaitalas.
+
 2026-10-01 istorinis lentelės pagrindas; naujesni datuoti papildymai žemiau. Šis failas atskiria taisyklių / plano pataisą nuo veikiančio modulio, faktinio svetainės pagerinimo ir realaus verslo paleidimo. WORKSTREAMS ir konkrečios nišos įrodymai turi pirmenybę prieš seną santrauką.
 
 | Darbas | Padaryta | Dar nebaigta |

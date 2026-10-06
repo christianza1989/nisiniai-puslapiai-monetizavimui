@@ -1,5 +1,7 @@
 # Sukurk svetainę pagal domeną
 
+**Kitas kompiuteris / Madbeauty tęsinys 2026-10-06:** abiejų repo aktualūs pakeitimai sujungti į `main`. Pirmiausia skaityti [perdavimo instrukciją](docs/NEXT_CODEX_HANDOFF_2026-10-06.md): clone/atkūrimas, faktinės patikros ir dar įgyvendintinas Cloudflare runtime bei domeno priėmimas. Kodo perdavimas nėra viešas paleidimas.
+
 Kūrimo metu rastas bendras spragas fiksuok ir pagrįstai taisyk pats pagal [CORE_IMPROVEMENT.md](CORE_IMPROVEMENT.md), laikydamasis bendrų failų rezervacijos. Prieš užbaigimą įrašyk CORE_FEEDBACK su radiniais / pataisymais arba pagrįstu įrašu, kad bendro pakeitimo nereikėjo.
 
 Didesnės savininko užsakytos platformos eiga ir papildomi priėmimo vartai: [PLATFORM_BUILD_CONTRACT.md](PLATFORM_BUILD_CONTRACT.md). Aktualią apimtį ir entrypoint skaityti jos IMPLEMENTATION_STATUS; ankstesnis maketo roadmap nėra naujesnio pavedimo ribojimas.

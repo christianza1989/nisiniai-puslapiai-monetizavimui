@@ -32,10 +32,10 @@
     $('.pb-consent').hidden=!available;
     if(catalog?.mode==='test'){const input=$('[data-purchase-consent]');$('.pb-consent').replaceChildren(input,document.createTextNode(' I understand this is a sandbox simulation. No money, goods or licence will be supplied.'));}
     cta.firstChild.textContent=available?(catalog.mode==='test'?'Open test checkout ':'Buy now '):'Ask about this setup ';
-    cta.href='/contact?topic=setup&holders='+count+'&finish='+finish;
+    cta.dataset.enquiryUrl='/contact?topic=setup&holders='+count+'&finish='+finish;
     $('[data-gallery-tag]').textContent=view==='holder'?finishName+' holder':view==='placement'?'Your screen edges':'Your setup';
     $('[data-gallery-title]').textContent=view==='holder'?'A home for your phone.':view==='placement'?'Put your phone where it belongs.':'One app. Your kind of desk.';
-    $('[data-gallery-caption]').textContent=view==='holder'?'Foldable magnetic holder illustration. Final mounting details will be confirmed before sale.':view==='placement'?'Choose Left, Above or Right in the app to match your physical phone position.':'Software is a digital download. Box and holders shown as illustrations.';
+    $('[data-gallery-caption]').textContent=view==='holder'?'Foldable magnetic holder illustration. Check your phone or case and mounting surface before ordering.':view==='placement'?'Choose Left, Above or Right in the app to match your physical phone position.':'Software is a digital download. Box and holders shown as illustrations.';
     $('.pb-edge-diagram').hidden=view!=='placement';
     $$('[data-view-button]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.viewButton===view)));
   }
@@ -46,17 +46,17 @@
   $('[data-save-setup]').addEventListener('click',()=>{try{saveChoice();status.textContent='Your setup is saved in this browser.';}catch{status.textContent='This browser could not save the choice. You can bookmark this setup instead.';}});
   cta.addEventListener('click',async event=>{
     const {count,finish}=choice(),offer=catalog?.offers.find(o=>o.holders===count),available=offer?.available&&(!count||offer.finishes?.[finish]!==false);
-    if(!available)return;event.preventDefault();if(pending)return;
+    event.preventDefault();if(!available){location.assign(cta.dataset.enquiryUrl);return;}if(pending)return;
     if(!$('[data-purchase-consent]').checked){status.textContent=catalog.mode==='test'?'Confirm that you understand this is a test.':'Please read and accept the purchase terms before continuing.';$('[data-purchase-consent]').focus();return;}
     const selection=count+':'+finish;if(!requestId||requestSelection!==selection){requestId=crypto.randomUUID();requestSelection=selection;try{sessionStorage.setItem('phonebridger.checkout.v1',JSON.stringify({id:requestId,selection}));}catch{}}
-    pending=true;cta.setAttribute('aria-disabled','true');status.textContent='Opening secure checkout…';
+    pending=true;cta.disabled=true;cta.setAttribute('aria-disabled','true');status.textContent='Opening secure checkout…';
     try{
       const response=await fetch('/api/shop/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({holders:count,finish,requestId,consent:true})});const result=await response.json();
       if(response.status===401){try{saveChoice();}catch{}status.textContent='Sign in, then return to your saved setup.';location.href='/login?next=shop';return;}
       if(!response.ok){if(response.status===409){requestId=null;try{sessionStorage.removeItem('phonebridger.checkout.v1');}catch{}}throw Error(result.error||'Unable to open checkout.');}
       if(result.paid&&/^[a-f0-9]{32}$/.test(result.orderId)){location.assign('/checkout?order='+result.orderId);return;}
       const url=new URL(result.url);if(url.protocol!=='https:'||url.hostname!=='checkout.stripe.com')throw Error('Unexpected checkout destination.');location.assign(url.href);
-    }catch(error){status.textContent=error.message;}finally{pending=false;cta.removeAttribute('aria-disabled');}
+    }catch(error){status.textContent=error.message;}finally{pending=false;cta.disabled=false;cta.removeAttribute('aria-disabled');}
   });
   async function loadReviews(){
     try{

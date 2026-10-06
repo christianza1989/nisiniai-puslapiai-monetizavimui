@@ -1,5 +1,5 @@
 import {randomBytes,randomInt,timingSafeEqual} from 'node:crypto';
-import {randomId,reject} from './store.mjs';
+import {randomId,reject} from './primitives.mjs';
 const equal=(a,b)=>{const x=Buffer.from(String(a)),y=Buffer.from(String(b));return x.length===y.length&&timingSafeEqual(x,y);};
 export function createAuth(store){
   const {db,siteId,clock}=store;
@@ -39,6 +39,7 @@ export function createAuth(store){
       db.prepare('UPDATE email_challenges SET consumed=1 WHERE id=?').run(c.id);
       let u=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND email=?').get(siteId,c.email);
       if(!u){u={id:randomId('account'),email:c.email,name:'',operator:0};db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(u.id,siteId,u.email,u.name,clock());const d=store.read();d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
+      if(store.onVerifiedAccount)u=store.onVerifiedAccount(u);
       db.prepare('DELETE FROM sessions WHERE token_hash=? AND site_id=?').run(s.token_hash,siteId);
       const fresh=session(null);db.prepare('UPDATE sessions SET account_id=? WHERE token_hash=?').run(u.id,fresh.token_hash);fresh.account_id=u.id;
       return {session:fresh,user:u};

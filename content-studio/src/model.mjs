@@ -233,6 +233,44 @@ export async function createSite(input) {
     return site;
   });
 }
+// Restore existing public approval bytes, never create approval or assume the old
+// editorial review happened on this machine. A new release still needs a current
+// recordEditorialReview for every exact revision through the maintained workflow.
+export async function restoreApprovedV2Package(directory,expectedSha256){
+ const raw=await readFile(path.join(directory,'content-package.json'));
+ if(!/^[a-f0-9]{64}$/.test(expectedSha256)||createHash('sha256').update(raw).digest('hex')!==expectedSha256)throw new Error('Restore requires exact known package bytes');
+ const pkg=JSON.parse(raw);validateV2Package(pkg);
+ const assets=new Map();
+ for(const page of pkg.pages)for(const media of page.media){
+  const file=path.basename(media.src),bytes=await readFile(path.join(directory,'assets',file));
+  if(bytes.length>8*1024*1024)throw new Error('Restore asset exceeds limit');
+  const previous=assets.get(media.id);if(previous&&stable(previous.media)!==stable(media))throw new Error('Restore media ID collision');
+  assets.set(media.id,{media,bytes,file});
+ }
+ return locked(async()=>{
+  const all=await listSites();if(all.some(s=>s.id===pkg.siteId||s.canonicalHost===pkg.canonicalHost))throw new Error('Restore destination already exists');
+  const site={...makeSite(pkg.canonicalHost,pkg.site.name,pkg.site.offer),...structuredClone(pkg.site),schemaVersion:2,renderer:pkg.site.renderer,contentWorkflowVersion:1};
+  site.contentPolicy=contentPolicy(site.contentPolicy,site.timezone);
+  if(stable(publicSite(site))!==stable(pkg.site))throw new Error('Restore site snapshot mismatch');
+  site.pages=pkg.pages.map(page=>({...makePage(site,page),...structuredClone(page),status:'review',publishedRevision:structuredClone(page),editorialReview:null}));
+  site.assets=[...assets.values()].map(({media})=>structuredClone(media));
+    const files=new Map();
+    for(const {bytes,file}of assets.values()){
+     const previous=files.get(file);if(previous&&!previous.equals(bytes))throw new Error('Restore filename collision');
+     files.set(file,bytes);
+    }
+    const missing=[];
+    for(const [file,bytes]of files){
+     try{const existing=await readFile(path.join(MEDIA_DIR,site.id,file));if(!existing.equals(bytes))throw new Error('Restore asset destination changed');}
+     catch(error){if(error.code!=='ENOENT')throw error;missing.push([file,bytes]);}
+    }
+    await mkdir(path.join(MEDIA_DIR,site.id),{recursive:true});
+    // An interrupted copy can resume only when every existing byte still matches.
+    for(const [file,bytes]of missing)await writeFile(path.join(MEDIA_DIR,site.id,file),bytes,{flag:'wx'});
+  await writeJson(siteFile(site.id),site);
+  return {siteId:site.id,pages:site.pages.length,packageSha256:expectedSha256,state:'restored-existing-approvals-needs-current-review'};
+ });
+}
 export async function editSite(id, input) {
   return locked(async () => {
     const site = await getSite(id);

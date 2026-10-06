@@ -1,5 +1,5 @@
 import {localInstant,makeClock,visitFits} from '../prototype/demo-model.mjs';
-import {reject} from './store.mjs';
+import {reject} from './primitives.mjs';
 export const plus=(iso,min)=>new Date(Date.parse(iso)+min*60000).toISOString();
 export const overlaps=(a,b,c,d)=>Date.parse(a)<Date.parse(d)&&Date.parse(c)<Date.parse(b);
 export const find=(d,table,id)=>{const r=d[table]?.find(x=>x.id===id);if(!r)reject('NOT_FOUND','Įrašas nerastas.',404);return r;};

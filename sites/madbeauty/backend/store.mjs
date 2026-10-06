@@ -1,13 +1,9 @@
 import {DatabaseSync} from 'node:sqlite';
 import {readFileSync,mkdirSync,existsSync,writeFileSync,chmodSync} from 'node:fs';
 import path from 'node:path';
-import {randomBytes,createHmac,randomUUID} from 'node:crypto';
-import {TAXONOMY} from '../prototype/demo-model.mjs';
-export const SITE_ID='madbeauty';
-export const randomId=type=>type+'_'+randomUUID();
-export class ApiError extends Error{constructor(code,message,status=400){super(message);this.code=code;this.status=status;}}
-export const reject=(code,message,status=400)=>{throw new ApiError(code,message,status);};
-export const initialState=()=>Object.fromEntries(['organizations','locations','practitioners','resources','services','schedules','busyBlocks','clients','bookings','reviews','inquiries','waitlist','holds','messages','revisions','reports','preferences','events','memberships'].map(k=>[k,[]]).concat([['taxonomy',TAXONOMY],['idempotency',{}],['isDemo',false]]));
+import {randomBytes,createHmac} from 'node:crypto';
+import {SITE_ID,initialState,randomId,reject} from './primitives.mjs';
+export {SITE_ID,initialState,randomId,reject,ApiError} from './primitives.mjs';
 export function openStore({filename=path.resolve(import.meta.dirname,'../runtime/platform.sqlite'),secret=null,clock=()=>Date.now(),siteId=SITE_ID,fixturePreview=false}={}){
   if(siteId!==SITE_ID)reject('SITE_SCOPE','Nežinoma svetainė.',403);
   if(fixturePreview&&(filename===':memory:'||path.basename(filename)!=='platform-preview.sqlite'))throw Error('Fixture API requires its named private preview database');

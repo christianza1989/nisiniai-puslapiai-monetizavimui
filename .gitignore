@@ -82,3 +82,8 @@ browser-profile*/
 
 # Historical factory bundle has independent credentials/backups; keep local.
 /fabrikas-github-upload/
+
+/sites/madbeauty/cloudflare/output/
+/sites/madbeauty/cloudflare/.wrangler/
+/sites/madbeauty/cloudflare/.dev.vars*
+/sites/dovanos123/runtime/

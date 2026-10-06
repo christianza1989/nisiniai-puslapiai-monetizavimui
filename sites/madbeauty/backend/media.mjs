@@ -2,10 +2,10 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {optimizeRaster} from '../../../content-studio/src/image-pipeline.mjs';
-import {randomId,reject} from './store.mjs';
+import {randomId,reject} from './primitives.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 export const mediaRoot=store=>path.join(path.dirname(store.filename),'media');
-export function mediaPublic(a){return {id:a.id,alt:a.alt,variants:a.variants.map(v=>({file:'api/madbeauty/media/'+v.storageFile,width:v.width,height:v.height,bytes:v.bytes,sha256:v.sha256}))};}
+export {mediaPublic} from './primitives.mjs';
 export async function prepareMedia(store,{bytes,mime,alt,rights,usage,organizationId}){
  if(!['portrait','gallery'].includes(usage)||!alt?.trim()||alt.length>250||!rights?.trim()||rights.length>600)reject('INVALID_INPUT','Nurodykite vaizdo paskirtį, aprašą ir viešinimo teisę.');
  let output;try{output=await optimizeRaster(bytes,mime);}catch(e){reject('INVALID_IMAGE',e.message);}

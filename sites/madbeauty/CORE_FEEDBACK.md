@@ -81,3 +81,15 @@ Aktualizavimas po pirmo snapshot: priimti visi 120/120 atskirų ImageGen origina
 - **Acceptance:** maža versijuota matrica su fail + repair + retest įrodymais, measured viewport / auth / data-mode / source-version; istoriniai rezultatai nekinta. Ataskaita negali vadinti guest login puslapio workspace Lighthouse ar SMTP auth inbox pristatymu. Vietinė kokybė, produkcinis paleidimas ir paklausa atskiri.
 
 Šie pasiūlymai nėra įgyvendinti shared core pakeitimai. Platformos darbas tęsiamas pagal savininko autorizuotą apimtį.
+
+## Cloudflare release: patirti ir pritaikyti pataisymai — 2026-10-06
+
+Node HTTP/SQLite/fs importai neleido paleisti tikro platformos kelio Workers. Portable backend/{primitives,http-core}.mjs ir thin Node wrapper išlaiko tą patį dispatcher; cloudflare SQL adapteriai riboti šiam pilotui. Local74 ir Workers6 regressions, actual owner/mail/canonical checks PASS. Schema/version/storage tapatybė išlaikyta; kitų nišų platformos automatiškai nemigruotos.
+
+Bendras media policy ištrauktas į image-policy.mjs ir dalinamas Sharp/Cloudflare Images pipeline. Miniflare neorientuoja EXIF kaip actual Images; trys actual cloud fixtures parodė teisingą orientation/alpha/metadata/bounding. Immutable restoreApprovedV2Package validuoja approval/assetSHA prieš kopijavimą ir saugiai tęsia tik exact dalinį restore; studio33PASS. Istoriniai receipts nekinta.
+
+Actual gift client chunks/font404 ir Madbeauty encoded-fontredirect parodė asset precedence/pathdecode spragą. Own release deleguoja chunks/fonts į ASSETS; Madbeauty decoded allowlist ir decoded content guard kartu palaiko validų fontą bei uždaro encoded unpublished bypass. Canonical asset/negative checks PASS.
+
+Direct SMTP šiame Workers/provider derinyje blokuotas. Optional shared public lib/hostinger-transport.mjs naudoja authenticated HTTPS/manualredirect/timeout ir saugius retryable errors; own PHPMailer relay turi bounds/purpose guards/receipts/TLS. Public D1 lease/backoff/retention testai ir core51PASS; abi canonical primaryINBOX PASS. Vieno providerio workaround nėra tinklo default. Mailbox password iš Workers pašalintas.
+
+Būsena: patikrinta actual cloud ir vietiškai, pritaikyta gyvam pilotui; source draftPR8 ir companionPR5, main merge atskiras. Tiksli source versija research/cloudflare-release-20261006/SOURCE_COMMITS.json. Kitos istorinių auditų svetainės šių PASS automatiškai neperima.

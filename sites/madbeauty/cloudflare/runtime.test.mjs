@@ -1,0 +1,107 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,readFile} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {createRequire} from 'node:module';
+const core=path.resolve(import.meta.dirname,'../../../../dovanos-memorycasting');
+const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js')));
+const {Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
+const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}});
+const script=bundle.outputFiles[0].text,origin='https://madbeauty.test';
+async function fixture(bindings={}){
+ const storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-workers-')),mails=[];let failMail=false;
+ const start=()=>new Miniflare({modules:true,script,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true}},durableObjectsPersist:storage,images:{binding:'IMAGES'},bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',SESSION_SECRET:'local-test-only-secret-no-production-access',OPERATOR_EMAIL:'operator@example.com',...bindings},serviceBindings:{MAIL_TRANSPORT:async request=>{if(failMail)return new Response('Unavailable',{status:503});mails.push(await request.json());return new Response('Accepted');},ASSETS:async()=>new Response('Not found',{status:404})}});
+ let mf=start();
+ const browser=()=>{
+  let cookie='',csrf='';
+  async function send(endpoint,input,extra={}){
+   const r=await mf.dispatchFetch(origin+'/api/madbeauty/'+endpoint,{method:input===undefined?'GET':'POST',headers:{cookie,...(input===undefined?{}:{origin,'content-type':'application/json','x-csrf-token':csrf}),...extra.headers},...(input===undefined?{}:{body:JSON.stringify(input)}),...extra});
+   if(r.headers.get('set-cookie'))cookie=r.headers.get('set-cookie').split(';')[0];
+   const value=await r.json();if(value.csrf)csrf=value.csrf;return {status:r.status,value};
+  }
+  return {send,async upload(bytes,organizationId,mime='image/png'){const r=await mf.dispatchFetch(origin+'/api/madbeauty/upload',{method:'POST',headers:{cookie,origin,'content-type':mime,'x-csrf-token':csrf,'x-organization-id':organizationId,'x-asset-alt':'Testo vaizdas','x-asset-rights':'Testui sukurtas originalas','x-asset-usage':'gallery'},body:bytes});return {status:r.status,value:await r.json()};},async image(file){return mf.dispatchFetch(origin+'/'+file,{headers:{cookie}});},async rpc(method,input={}){return send('rpc',{method,input,siteId:'madbeauty'});},async login(email){await send('session');const c=await send('auth/start',{email});assert.equal(c.status,200,JSON.stringify(c.value));const mail=mails.findLast(m=>m.to===email),code=mail.text.match(/\b\d{6}\b/)[0];const verified=await send('auth/verify',{challengeId:c.value.challengeId,code});assert.equal(verified.status,200);return verified.value.user;}};
+ };
+ return {browser,mails,setMailFailure:value=>{failMail=value;},get mf(){return mf;},async restart(){await mf.dispose();mf=start();},close:()=>mf.dispose()};
+}
+test('Workers SQL runtime: email session, membership, concurrent booking, tenant isolation, durable restart and mail',async()=>{
+ const f=await fixture();try{
+  const owner=f.browser(),operator=f.browser(),one=f.browser(),two=f.browser();
+  await owner.login('provider@example.com');await operator.login('operator@example.com');const user=await one.login('client-one@example.com');await two.login('client-two@example.com');
+  const org=(await owner.rpc('createOrganization',{name:'Testo meistrė',bio:'Izoliuoto Workers testo profilis.',city:'Vilnius',kind:'solo'})).value.result;
+  assert.ok(org?.id);const scope={role:'professional',organizationId:org.id};
+  const workspace=(await owner.rpc('workspace',scope)).value.result;
+  const service=(await owner.rpc('createService',{organizationId:org.id,practitionerId:workspace.practitioners[0].id,resourceId:workspace.resources[0].id,taxonomyServiceId:'manikiuras',label:'Manikiūras',durationMin:60,priceMinor:2500,bufferBeforeMin:5,bufferAfterMin:10})).value.result;
+  const revision=(await owner.rpc('submitRevision',{scope,name:org.name,bio:org.bio})).value.result;
+  assert.equal((await operator.rpc('moderate',{id:revision.id,state:'approved'})).status,200);
+  assert.equal((await two.rpc('workspace',scope)).status,403);
+  let candidate;for(let dayOffset=1;dayOffset<8;dayOffset++){const r=await one.rpc('availability',{providerServiceId:service.id,dayOffset,from:900,to:1200,addons:[]});candidate=r.value.result?.slots?.[0];if(candidate)break;}assert.ok(candidate,'next week must include a slot');
+  const holds=await Promise.all([one.rpc('hold',candidate),two.rpc('hold',candidate)]);assert.deepEqual(holds.map(h=>h.status).sort(),[200,409]);
+  const index=holds.findIndex(h=>h.status===200),winner=[one,two][index],hold=holds[index].value.result;
+  const input={holdId:hold.id,name:'Testinė klientė',idempotencyKey:hold.id};
+  const confirmed=await winner.rpc('confirm',input);assert.equal(confirmed.status,200,JSON.stringify(confirmed.value));
+  const replay=await winner.rpc('confirm',input);assert.equal(replay.value.result.id,confirmed.value.result.id);
+  await f.mf.dispatchFetch(origin+'/api/madbeauty/session');
+  const before=await winner.rpc('workspace',{role:'customer'});assert.equal(before.value.result.bookings.length,1);
+  await f.restart();const after=await winner.rpc('workspace',{role:'customer'});assert.equal(after.status,200);assert.equal(after.value.result.bookings[0].id,confirmed.value.result.id);
+  assert.ok(f.mails.some(m=>m.to==='client-one@example.com'));assert.ok(!JSON.stringify((await one.rpc('catalog',{})).value).includes('client-one@example.com'));
+ }finally{await f.close();}
+});
+
+test('Mail failure reports unavailability without diagnostics and a new code works after provider recovery',async()=>{
+ const f=await fixture();try{
+  const client=f.browser();await client.send('session');f.setMailFailure(true);
+  const failed=await client.send('auth/start',{email:'mail-failure@example.com'});assert.equal(failed.status,503);assert.equal(failed.value.error.code,'MAIL_UNAVAILABLE');assert.ok(!('diagnostic' in failed.value.error));assert.equal(f.mails.length,0);
+  assert.equal((await client.send('recovery-status')).status,403);
+  f.setMailFailure(false);await client.login('mail-failure@example.com');assert.equal(f.mails.length,1);
+ }finally{await f.close();}
+});
+test('Workers media: real image transform, private original, pending owner access and durability',async()=>{
+ const f=await fixture();try{
+  const owner=f.browser(),guest=f.browser();await owner.login('media-owner@example.com');await guest.send('session');
+  const org=(await owner.rpc('createOrganization',{name:'Testo profilis',bio:'Izoliuoto vaizdo įkėlimo testas.',city:'Kaunas',kind:'solo'})).value.result;
+  const require=createRequire(path.resolve(import.meta.dirname,'../../../content-studio/package.json'));
+  const {default:sharp}=await import(pathToFileURL(require.resolve('sharp')));
+  const original=await sharp({create:{width:32,height:48,channels:4,background:{r:180,g:40,b:90,alpha:0.8}}}).png().toBuffer();
+  const upload=await owner.upload(original,org.id);assert.equal(upload.status,200,JSON.stringify(upload.value));
+  const media=upload.value.result;assert.equal(media.variants.length,1);assert.equal(media.variants[0].width,32);assert.ok(!JSON.stringify(media).includes('originals'));
+  const image=await owner.image(media.variants[0].file);assert.equal(image.status,200);assert.equal(image.headers.get('content-type'),'image/webp');assert.ok((await image.arrayBuffer()).byteLength>10);
+  const exif=await sharp({create:{width:32,height:48,channels:3,background:'#ba3456'}}).jpeg().withMetadata({orientation:6}).toBuffer();
+  const rotated=await owner.upload(exif,org.id,'image/jpeg');assert.equal(rotated.status,200,JSON.stringify(rotated.value));
+  const out=await owner.image(rotated.value.result.variants[0].file),meta=await sharp(Buffer.from(await out.arrayBuffer())).metadata();
+  // Miniflare's Images simulator omits automatic EXIF rotation. Rotation is
+  // asserted against the real binding by verify-images.mjs, not simulated here.
+  assert.equal(meta.exif,undefined,'public EXIF must be removed');
+  assert.equal((await guest.image(media.variants[0].file)).status,404);
+  await f.restart();assert.equal((await owner.image(media.variants[0].file)).status,200);
+ }finally{await f.close();}
+});
+test('Workers API origin/CSRF/OTP attempts, real empty catalog and preview isolation',async()=>{
+ const f=await fixture();try{
+  const client=f.browser();await client.send('session');assert.deepEqual((await client.rpc('catalog')).value.result,[]);
+  const originBad=await client.send('rpc',{method:'catalog'},{headers:{origin:'https://other.test','content-type':'application/json'}});assert.equal(originBad.status,403);
+  const c=await client.send('auth/start',{email:'otp@example.com'});assert.equal(c.status,200);
+  for(let n=0;n<5;n++)assert.equal((await client.send('auth/verify',{challengeId:c.value.challengeId,code:'not-a-code'})).status,400);
+  const code=f.mails.findLast(m=>m.to==='otp@example.com').text.match(/\b\d{6}\b/)[0];assert.equal((await client.send('auth/verify',{challengeId:c.value.challengeId,code})).status,400);
+  for(const p of ['/sitemap.xml','/backend/local-admin.mjs','/meistrai/demo-org-0','/runtime/platform.sqlite','/originals/asset_abc'])assert.equal((await f.mf.dispatchFetch(origin+p)).status,404,p);
+  const page=await f.mf.dispatchFetch(origin+'/gidai');assert.equal(page.status,200);assert.match(page.headers.get('x-robots-tag'),/noindex/);
+ }finally{await f.close();}
+});
+
+test('Production-mode discovery in isolated SQL runtime follows provider approval and excludes private accounts',async()=>{
+ const f=await fixture({RELEASE_MODE:'production'});try{
+  const owner=f.browser(),operator=f.browser();await owner.login('private-provider@example.com');await operator.login('operator@example.com');
+  const org=(await owner.rpc('createOrganization',{name:'Izoliuoto testo profilis',bio:'Priėmimo testo aprašymas.',city:'Kaunas',kind:'solo'})).value.result;
+  const scope={role:'professional',organizationId:org.id},workspace=(await owner.rpc('workspace',scope)).value.result;
+  await owner.rpc('createService',{organizationId:org.id,practitionerId:workspace.practitioners[0].id,resourceId:workspace.resources[0].id,taxonomyServiceId:'manikiuras',label:'Manikiūras',durationMin:30,priceMinor:2000,bufferBeforeMin:0,bufferAfterMin:0});
+  const path='/meistrai/'+org.id,url='https://madbeauty.lt'+path;
+  assert.equal((await f.mf.dispatchFetch(origin+path)).status,404);
+  assert.ok(!(await(await f.mf.dispatchFetch(origin+'/sitemap.xml')).text()).includes(url));
+  const submitted=await owner.rpc('submitRevision',{scope,name:org.name,bio:org.bio});assert.equal(submitted.status,200,JSON.stringify(submitted.value));const revision=submitted.value.result;
+  await operator.rpc('moderate',{id:revision.id,state:'approved'});
+  const response=await f.mf.dispatchFetch(origin+path),html=await response.text();assert.equal(response.status,200);assert.equal(response.headers.get('x-robots-tag'),null);assert.ok(html.includes('"@type":"LocalBusiness"'));assert.ok(!html.includes('private-provider@example.com'));
+  for(const output of ['/sitemap.xml','/llms.txt','/llms-full.txt']){const r=await f.mf.dispatchFetch(origin+output);assert.equal(r.status,200);const text=await r.text();assert.ok(text.includes(url),output+' profile');assert.ok(text.includes('https://madbeauty.lt/privatumas'),output+' privacy');assert.ok(!text.includes('private-provider@example.com'));}
+  await f.restart();assert.equal((await f.mf.dispatchFetch(origin+path)).status,200);
+ }finally{await f.close();}
+});

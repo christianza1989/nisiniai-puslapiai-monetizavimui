@@ -1,15 +1,16 @@
 {
-  "checkedAt": "2026-10-06",
+  "checkedAt": "2026-10-07",
   "status": "FULL_PLAN_BINDING_PASS_NOT_RUNTIME_ACCEPTANCE",
   "foundationCommit": "c1f159353620aed66e9c67a95306786646c7137c",
-  "articles": 300,
+  "articles": 292,
   "treatments": 225,
   "cities": 103,
   "actualActivation": false,
   "notAccepted": [
-    "Article texts or original media, not created",
-    "Qualified medical/legal review, not performed",
-    "Actual studio UUID binding, generation, V2 import or public deployment",
-    "Exact future traffic, full keyword universe, AI visibility, rankings or conversion results"
+    "All new article texts, media or clinical review; only one historical private pilot exists",
+    "Keyword candidate/backlog targeting, full keyword universe, mobile/city ranking or AI visibility",
+    "Private studio migration from303 to295 plans and any new public release",
+    "Current production full catalogue/resolver/provider supply and booking delivery",
+    "GSC/GA4, qualified leads, confirmed bookings, future traffic or Google rankings"
   ]
 }

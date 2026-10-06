@@ -20,46 +20,46 @@ Apimtis yra tiekėjo Google Ads / duomenų bazės įvertis, ne tikslus paieškų
 
 | Frazė | Įvertis / mėn. | Sprendimas / atsakymas |
 | --- | --- | --- |
-| spa | 9900 | SP-gidas |
-| pirtis | 4400 | SP-hamamas |
-| soliariumas | 3600 | IG-gidas |
-| burnos higiena | 2900 | OD-gidas |
 | limfodrenažinis masažas | 2400 | MS-limfodrenazinis |
 | spa vilniuje | 2400 | LOCAL_CATALOGUE_OWNER |
 | dermatologas vilnius | 2400 | LOCAL_CATALOGUE_OWNER |
-| manikiūras | 1900 | MN-gidas |
 | japoniškas manikiūras | 1900 | MN-japoniskas |
-| plaukų dažymas | 1600 | DZ-gidas |
-| veido kaukė | 1600 | VP-masazas-kauke |
-| plauku dazymas | 1600 | DZ-gidas |
-| masazas | 1600 | MS-gidas |
 | pilatesas vilnius | 1600 | LOCAL_CATALOGUE_OWNER |
 | pilates vilnius | 1600 | LOCAL_CATALOGUE_OWNER |
 | dermatologas kaunas | 1600 | LOCAL_CATALOGUE_OWNER |
-| pilatesas | 1300 | FX-gidas |
-| auskaru verimas | 1300 | AV-gidas |
-| tatuiruotes | 1300 | TT-gidas |
-| gelinis lakavimas | 1000 | GL-gidas |
-| antakiu laminavimas | 1000 | AN-laminavimas |
 | kirpykla klaipeda | 1000 | LOCAL_CATALOGUE_OWNER |
 | burnos higiena vilnius | 1000 | LOCAL_CATALOGUE_OWNER |
-| makiažas | 880 | MK-gidas |
-| meditacija | 880 | SV-gidas |
-| elektroepiliacija | 880 | LZ-elektroepiliacija |
-| biorevitalizacija | 880 | ES-mezoterapija-biorevitalizacija |
-| joga | 880 | FX-joga-pilatesas |
-| blakstienu priauginimas | 880 | BL-gidas |
-| makiazas | 880 | MK-gidas |
 | podologas vilniuje | 880 | LOCAL_CATALOGUE_OWNER |
 | vilnius grand resort spa | 880 | LOCAL_CATALOGUE_OWNER |
-| masažas | 720 | MS-gidas |
-| veido valymas | 720 | VP-gidas |
-| mezoterapija | 720 | ES-gidas |
 | masažas kaune | 720 | LOCAL_CATALOGUE_OWNER |
-| manikiuras | 720 | MN-gidas |
 | auskaru verimas vilnius | 720 | LOCAL_CATALOGUE_OWNER |
 | pilatesas klaipeda | 720 | LOCAL_CATALOGUE_OWNER |
-| nagų dizainas | 590 | ND-gidas |
+| prancūziškas manikiūras | 590 | ND-prancuziskas |
+| masažas vilniuje | 590 | LOCAL_CATALOGUE_OWNER |
+| burnos higiena kaunas | 590 | LOCAL_CATALOGUE_OWNER |
+| pilatesas kaune | 480 | LOCAL_CATALOGUE_OWNER |
+| kirpčiukai | 390 | KR-kirpciukai |
+| auskaru verimas kaune | 390 | LOCAL_CATALOGUE_OWNER |
+| barber klaipeda | 390 | LOCAL_CATALOGUE_OWNER |
+| pilates palanga | 390 | LOCAL_CATALOGUE_OWNER |
+| kineziterapija vilnius | 390 | LOCAL_CATALOGUE_OWNER |
+| nemokamas dermatologas kaune | 390 | LOCAL_CATALOGUE_OWNER |
+| bikini depiliacija | 320 | DP-bikini |
+| plauku dazymas sruogelemis | 320 | DZ-sruogos |
+| auskaru verimas klaipeda | 320 | LOCAL_CATALOGUE_OWNER |
+| psichologas klaipeda | 320 | LOCAL_CATALOGUE_OWNER |
+| joga kaune | 320 | LOCAL_CATALOGUE_OWNER |
+| veido valymas vilniuje | 260 | LOCAL_CATALOGUE_OWNER |
+| veido valymas kaune | 260 | LOCAL_CATALOGUE_OWNER |
+| auskarų vėrimas kaune | 260 | LOCAL_CATALOGUE_OWNER |
+| masazas vilniuje vyrams | 260 | LOCAL_CATALOGUE_OWNER |
+| pilates reformer vilnius | 260 | LOCAL_CATALOGUE_OWNER |
+| vaiku dermatologas vilnius | 260 | LOCAL_CATALOGUE_OWNER |
+| dermatovenerologas vilnius | 260 | LOCAL_CATALOGUE_OWNER |
+| dermatologas vilniuje nemokamai | 260 | LOCAL_CATALOGUE_OWNER |
+| dermatovenerologas kaunas | 260 | LOCAL_CATALOGUE_OWNER |
+| sunu kirpykla kaunas | 260 | LOCAL_CATALOGUE_OWNER |
+| masažas klaipėdoje | 210 | LOCAL_CATALOGUE_OWNER |
 
 Lentelė nėra prognozuojamo srauto suma. Tiekėjas susijusių frazių grafuose grąžina ir netinkamų rezultatų: SPA VILNIUS yra prekės ženklas; my pilates ir tattoo studijų vardai yra navigacija; priemonių rinkiniai — prekių pirkimas; studijos — mokymas; ankstesnių metų tendencijos — pasibaigęs sezonas. Jų neįterpti į tekstą vien dėl skaičiaus.
 

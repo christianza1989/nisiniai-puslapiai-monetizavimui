@@ -30,6 +30,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Kirpėjo peržiūra ir eigos patikra"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -821,6 +825,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Konkrečių sistemų protokolai, praktiko review, įtempimo teiginių sveikatos review"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -903,6 +911,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Barberio techninių terminų review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Barberio review; ne plaukų augimo gydymas"
         }
       ]
     },
@@ -931,6 +943,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Barberio techninių terminų review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Barberio review; ne plaukų augimo gydymas"
         }
       ]
     },
@@ -1473,6 +1489,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Originalūs vaizdai ir meistro technikų patikra"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -1724,6 +1744,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikras produktas ir teikėjo meniu, ne gydymo pažadas"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Produkto instrukcija ir kvalifikuota sveikatos review"
         }
       ]
     },
@@ -1751,6 +1775,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikras produktas ir teikėjo meniu, ne gydymo pažadas"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Produkto instrukcija ir kvalifikuota sveikatos review"
         }
       ]
     },
@@ -3564,6 +3592,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikro kosmetologo darbo eigos patikra"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "AAD ir kvalifikuota review; jokio universalaus tinkamumo testo"
         }
       ]
     },
@@ -3594,6 +3626,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikro kosmetologo darbo eigos patikra"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "AAD ir kvalifikuota review; jokio universalaus tinkamumo testo"
         }
       ]
     },
@@ -4208,6 +4244,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikro teikėjo meniu ir eigos review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Tikro teikėjo apimtis; nedubliuoti viso kūno palyginimo"
         }
       ]
     },
@@ -4218,7 +4258,7 @@
       "label": "Kaklo ir pečių masažas",
       "scope": "core",
       "decision": "ANSWER_IN_NAMED_SECTION",
-      "targetId": "MS-kaklas-peciai",
+      "targetId": "MS-nugara-ar-kunas",
       "section": "Kaklo ir pečių masažas: metodo paskirtis ir konkreti paslaugos apimtis",
       "requirements": [
         "Paaiškinti, ką „Kaklo ir pečių masažas“ reiškia atskirų sričių masažai kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
@@ -4268,6 +4308,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikro teikėjo meniu ir eigos review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Tikro teikėjo apimtis; nedubliuoti viso kūno palyginimo"
         }
       ]
     },
@@ -4298,6 +4342,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikro teikėjo meniu ir eigos review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Tikro teikėjo apimtis; nedubliuoti viso kūno palyginimo"
         }
       ]
     },
@@ -4328,6 +4376,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikro teikėjo meniu ir eigos review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Tikro teikėjo apimtis; nedubliuoti viso kūno palyginimo"
         }
       ]
     },
@@ -4566,6 +4618,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Teikėjų apimtis, taisyklės ir tikros kainos prieš rašymą"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Sveikatos specialisto review, jokių universalių sauna dozių"
         }
       ]
     },
@@ -4622,6 +4678,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Teikėjų apimtis, taisyklės ir tikros kainos prieš rašymą"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Sveikatos specialisto review, jokių universalių sauna dozių"
         }
       ]
     },
@@ -4734,6 +4794,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Teikėjų apimtis, taisyklės ir tikros kainos prieš rašymą"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Sveikatos specialisto review, jokių universalių sauna dozių"
         }
       ]
     },
@@ -4790,6 +4854,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Teikėjų apimtis, taisyklės ir tikros kainos prieš rašymą"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Sveikatos specialisto review, jokių universalių sauna dozių"
         }
       ]
     },
@@ -5021,6 +5089,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Tikras tatuiruotojo review, aktualios LT taisyklės"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -5477,6 +5549,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Ne visi produktai yra užpildai; kiekvienos priemonės dokumentai ir gydytojo review"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -5507,6 +5583,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Ne visi produktai yra užpildai; kiekvienos priemonės dokumentai ir gydytojo review"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -5681,6 +5761,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Instruktorių programos ir sveikatos teiginių review, ne universalaus metodo veiksmingumo reitingas"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -5709,6 +5793,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Instruktorių programos ir sveikatos teiginių review, ne universalaus metodo veiksmingumo reitingas"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },
@@ -6040,6 +6128,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Kiekvieno metodo šaltiniai ir kvalifikuota sveikatos review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Kvalifikuota review; ne garso gydymo pažadas"
         }
       ]
     },
@@ -6067,6 +6159,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Kiekvieno metodo šaltiniai ir kvalifikuota sveikatos review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Kvalifikuota review; ne garso gydymo pažadas"
         }
       ]
     },
@@ -6094,6 +6190,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Kiekvieno metodo šaltiniai ir kvalifikuota sveikatos review"
+        },
+        {
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+          "task": "Kvalifikuota review; ne garso gydymo pažadas"
         }
       ]
     },
@@ -6148,6 +6248,10 @@
         {
           "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
           "task": "Odontologų rūmų aktuali licencijų tvarka ir gydytojo odontologo review"
+        },
+        {
+          "task": "Naujų vardinių skyrių kainos / metodo / inventoriaus faktus patikrinti pirminiame dokumente arba realiame datuotame pasiūlyme; related phrase ar snippet to neįrodo.",
+          "status": "REQUIRED_BEFORE_DRAFT_APPROVAL"
         }
       ]
     },

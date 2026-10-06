@@ -1,13 +1,19 @@
 {
-  "checkedAt": "2026-10-06",
-  "status": "FULL_CATALOGUE_EDITORIAL_PLAN_STRUCTURE_PASS",
+  "checkedAt": "2026-10-07",
+  "artifactHashes": {
+    "PLAN.json": "8b3e618f371e070551cd5f8a3a72e6b10a098699feee969c235053a62b5b7fc9",
+    "SEMANTIC_REVIEW.json": "68dde0b6afcd5135064e6758ee4c264607ee1c9d539badc4a848fcf5fbaa1440",
+    "SEO_MAP.json": "5e0959e165755ef11bd41a82ee832ed6447c023ff69ac8871b95cfce765ebe26",
+    "RESEARCH_IMPORT_MANIFEST.json": "830088eec3b93489dc7c1473c99aa0b585ed56aa1e3d2a29cc183a7fedb1ae24"
+  },
+  "status": "FULL_CATALOGUE_PLAN_STRUCTURE_AND_RESEARCH_PROVENANCE_PASS",
   "totals": {
-    "newUrls": 300,
+    "newUrls": 292,
     "retainedArticleUrls": 3,
-    "coverageTarget": 303,
-    "evergreenNew": 296,
+    "coverageTarget": 295,
+    "evergreenNew": 288,
     "seasonalNew": 4,
-    "links": 940,
+    "links": 919,
     "sources": 84,
     "categoryBranches": 33,
     "referenceMenuItems": 49,
@@ -17,32 +23,62 @@
     "catalogueGroups": 59,
     "proceduresReconciled": 225
   },
+  "semanticMerges": 8,
+  "keywordOwnership": {
+    "reviewedAt": "2026-10-07",
+    "counts": {
+      "NATIONAL_CATALOGUE_OR_MIXED_SERVICE_OWNER": 289,
+      "EXCLUDE_AMBIGUOUS_GENERIC_QUERY": 5,
+      "RESEARCH_BACKLOG_NOT_AUTO_ARTICLE": 236,
+      "CANDIDATE_EXISTING_ANSWER_REVIEW_BEFORE_TARGETING": 293,
+      "EXCLUDE_EDUCATION_OR_EMPLOYMENT": 18,
+      "EXCLUDE_PRODUCT_SHOPPING": 24,
+      "REVIEW_MIXED_PRODUCT_OR_SERVICE": 3,
+      "ARTICLE_ANSWER_OWNER": 229,
+      "ANSWER_IN_NAMED_SECTION": 17,
+      "LOCAL_CATALOGUE_OWNER": 354,
+      "MERGE_EVERGREEN_OR_REJECT_EXPIRED_YEAR": 30,
+      "MERGE_AS_READER_CONSTRAINT": 8,
+      "EXCLUDE_COMPETITOR_OR_BRAND_NAVIGATION": 48,
+      "REVIEW_MIXED_TRAVEL_OR_SERVICE": 2,
+      "EXCLUDE_OUT_OF_SERVICE_SCOPE": 2,
+      "REVIEW_BRAND_OR_HOME_EXERCISE": 1,
+      "EXCLUDE_AUDIO_OR_TREATMENT_QUERY": 2,
+      "REVIEW_AUDIO_OR_LOCAL_CLASS": 1
+    },
+    "unresolved": 536,
+    "status": "OBSERVED_DISCOVERY_GRAPH_NOT_ALL_PHRASES_TARGETED",
+    "rule": "No new URL from unresolved candidate or missing volume alone"
+  },
+  "skillFingerprint": "87c068b149c46fd13194a51ddd9601eb069c094fb95385ae2b1208ed4b245b39",
   "keywordResearch": {
     "volumeKeywords": 730,
     "seeds": 33,
     "serpQueries": 60,
-    "chargedUsd": 0.71772
+    "historicalChargedUsd": 0.71772,
+    "newPaidUsd": 0
   },
   "checks": [
-    "All 225 authoritative treatments have explicit named article-section decisions",
-    "21 catalogue areas and 33 editorial branches × 8 planned reader dimensions",
-    "103 city IDs; every planned CTA comes from exact foundation registry and stays inactive",
-    "49 owner menu positions and 76 prior intents reconciled; 3 existing URLs/dates retained",
-    "300 unique slugs/IDs, chronological cycle-free hierarchy, Europe/Vilnius DST",
-    "296 evergreen + 4 seasonal dates and 12 review dates",
-    "300 individual outlines/contributions/evidence/media/source briefs",
-    "940 valid unique planned links and actual legacy functional destinations",
-    "84 READ content sources with limits; no fabricated text/expert/media approval",
-    "730 LT volume rows, 33 related searches, 60 Google organic snapshots and real cost receipts",
-    "300 distinct primary phrases, meta titles/descriptions and H1/H2 maps",
-    "13 schema-valid transport batches; all 300 exactly once, parent first",
-    "HTML includes every article once and the catalogue decisions",
-    "Immutable initial content package SHA unchanged"
+    "All 225 treatments retain explicit named article-section decisions after semantic merges",
+    "21 catalogue areas, 33 editorial branches, explicit shared preparation answer and 103 city IDs",
+    "Unpublished overlapping jobs merged with reasons, old private UUID migration explicit and not silently applied",
+    "49 menu positions and 76 old intents reconciled; 3 existing URLs/dates preserved",
+    "292 unique slugs/IDs, cycle-free hierarchy and Europe/Vilnius DST",
+    "288 evergreen + 4 seasonal dates and 12 reviews",
+    "919 unique valid planned links; no automatic href activation",
+    "84 historical READ source records; qualified clinical review still not performed",
+    "730 volume rows, 33 related responses, 60 original SERPs; both rank types retained",
+    "Related keywords are observed vendor rows, distinct from generated editorial concepts",
+    "Broad service heads assigned national/mixed catalogue role; mask query unresolved explicitly",
+    "13 schema-valid transport batches; every retained plan exactly once, parent first",
+    "New maintained SEO core included in actual planning instruction fingerprint",
+    "Historical pilot execution and original initial content package unchanged"
   ],
   "notAccepted": [
-    "Article texts or original media, not created",
-    "Qualified medical/legal review, not performed",
-    "Actual studio UUID binding, generation, V2 import or public deployment",
-    "Exact future traffic, full keyword universe, AI visibility, rankings or conversion results"
+    "All new article texts, media or clinical review; only one historical private pilot exists",
+    "Keyword candidate/backlog targeting, full keyword universe, mobile/city ranking or AI visibility",
+    "Private studio migration from303 to295 plans and any new public release",
+    "Current production full catalogue/resolver/provider supply and booking delivery",
+    "GSC/GA4, qualified leads, confirmed bookings, future traffic or Google rankings"
   ]
 }

@@ -5,6 +5,7 @@ import {categories,sharedRows,seasonalRows} from './topics.mjs';
 import {expandedCategories,extraRows,referenceMenu} from './expanded-scope.mjs';
 import {finalCategories,finalExtraRows,finalSources,groupAssignments} from './final-scope.mjs';
 import {enrichSeo} from './seo-plan.mjs';
+import {applySemanticReview} from './seo-review.mjs';
 categories.push(...expandedCategories,...finalCategories);
 const catalogue=JSON.parse(readFileSync(new URL('CATALOGUE_SNAPSHOT.json',import.meta.url)));
 const registry=JSON.parse(readFileSync(new URL('REGISTRY_PLANNED_SNAPSHOT.json',import.meta.url)));
@@ -169,11 +170,12 @@ plan.totals.platformGaps=plan.platformGaps.length;
 plan.research.method=`Kokybinis LT ir užsienio meniu bei pirminių institucijų/gamintojų tyrimas; ${sources.length} perskaityti šaltiniai. Raktinių žodžių apimčių tyrimas per treg laukia autentifikacijos; tikrų apimčių dar nėra.`;
 plan.scope='Visos 21 patvirtintos sritys, 59 grupės, 225 procedūros (194 core + 31 extension). Kiekviena procedūra sutikrinta su konkrečiu URL ir vardiniu skyriumi; plėtiniai suplanuoti iš karto, viešas aktyvavimas atskiras.';
 mkdirSync(dir+'batches',{recursive:true});
+await applySemanticReview(plan);
 enrichSeo(plan);
 writeFileSync(dir+'PLAN.json',JSON.stringify(plan,null,2)+'\n');
 writeFileSync(dir+'PROCEDURE_COVERAGE.json',JSON.stringify({checkedAt:plan.createdAt,foundationCommit:catalogue.foundationCommit,status:'ALL_225_HAVE_NAMED_PLANNED_ANSWERS',count:procedureCoverage.length,procedures:procedureCoverage},null,2)+'\n');
-writeFileSync(dir+'ARTICLE_CATALOGUE_TARGETS.json',JSON.stringify({checkedAt:plan.createdAt,status:'COMPLETE_PLAN_BINDINGS_NOT_DEPLOYED',articleCount:pages.length,articles:pages.map(p=>({articleId:p.id,title:p.title,catalogueTargets:p.catalogueTargets,reason:p.catalogueTargetReason??null})),cityIdsSource:'CITIES_SNAPSHOT.json;103 IDs; choose explicit reader city',activation:'Current fresh resolver; functional readiness and indexability are separate.'},null,2)+'\n');
-const ordered=pages.slice().sort((a,b)=>a.publishDate.localeCompare(b.publishDate)||Number(!a.id.endsWith('-gidas'))-Number(!b.id.endsWith('-gidas'))||a.id.localeCompare(b.id));
-for(let i=0;i<ordered.length;i+=24){const projected=ordered.slice(i,i+24).map(p=>({type:p.type,slug:p.slug,title:p.title,description:p.description,intent:p.intent,reason:`${p.outline.join('; ')}. Nauda: ${p.originalContribution}. Pilnas brief: topical-authority-20261006/PLAN.json#${p.id}`,cluster:p.cluster,pillarSlug:p.parentId?pages.find(q=>q.id===p.parentId).slug:'',sourceQueries:[p.title,...p.sourceIds.slice(0,3).map(id=>sources.find(s=>s.id===id).url)],publishDate:p.publishDate,seasonalHook:p.wave==='SEASONAL'?p.title:'',networkLinks:[]}));writeFileSync(dir+`batches/plan-${String(i/24+1).padStart(2,'0')}.json`,JSON.stringify({pages:projected},null,2)+'\n');}
+writeFileSync(dir+'ARTICLE_CATALOGUE_TARGETS.json',JSON.stringify({checkedAt:plan.updatedAt,status:'COMPLETE_PLAN_BINDINGS_NOT_DEPLOYED',articleCount:plan.pages.length,articles:plan.pages.map(p=>({articleId:p.id,title:p.title,catalogueTargets:p.catalogueTargets,reason:p.catalogueTargetReason??null})),cityIdsSource:'CITIES_SNAPSHOT.json;103 IDs; choose explicit reader city',activation:'Current fresh resolver; functional readiness and indexability are separate.'},null,2)+'\n');
+const ordered=plan.pages.slice().sort((a,b)=>a.publishDate.localeCompare(b.publishDate)||Number(!a.id.endsWith('-gidas'))-Number(!b.id.endsWith('-gidas'))||a.id.localeCompare(b.id));
+for(let i=0;i<ordered.length;i+=24){const projected=ordered.slice(i,i+24).map(p=>({type:p.type,slug:p.slug,title:p.title,description:p.description,intent:p.intent,reason:`${p.outline.join('; ')}. Nauda: ${p.originalContribution}. Pilnas brief: topical-authority-20261006/PLAN.json#${p.id}`,cluster:p.cluster,pillarSlug:p.parentId?plan.pages.find(q=>q.id===p.parentId).slug:'',sourceQueries:[p.title,...p.sourceIds.slice(0,3).map(id=>sources.find(s=>s.id===id).url)],publishDate:p.publishDate,seasonalHook:p.wave==='SEASONAL'?p.title:'',networkLinks:[]}));writeFileSync(dir+`batches/plan-${String(i/24+1).padStart(2,'0')}.json`,JSON.stringify({pages:projected},null,2)+'\n');}
 writeFileSync(dir+'SOURCE_LEDGER.md','# Perskaitytų šaltinių žurnalas\n\n2026-10-06. READ reiškia perskaitytą dokumentą, ne būsimų straipsnių faktų ar ekspertų review PASS. S01–S58 ankstesnis tyrimas; S59–S84 viso225katalogo papildymas. Teiginius prieš draft tikrinti konkrečiame kontekste.\n\n'+sources.map(s=>`## ${s.id} · ${s.title}\n\n[Šaltinis](${s.url}) · ${s.kind} · ${s.status} · ${s.checkedAt}\n\n${s.finding}\n\nRiba: ${s.limit}\n`).join('\n'));
 console.log(JSON.stringify(plan.totals));

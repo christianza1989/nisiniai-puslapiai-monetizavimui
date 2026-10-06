@@ -1,6 +1,6 @@
 # Madbeauty: pilno katalogo topical coverage tyrimas
 
-2026-10-06. Apimtis remiasi savininko pateiktu visų procedūrų katalogu ir platformos sesijos autoritetingu foundation c1f1593 eksportu. 21 sritis, 59 grupės, 225 procedūros (194 core + 31 plėtinių), 103 miestai. Iš jų sudarytos 33 redakcinės kryptys ir 300 individualių naujų gidų brief; 3 esami adresai palikti atnaujinimams. 84 pirminiai turinio šaltiniai perskaityti; papildomai atliktas realus LT raktažodžių / SERP tyrimas pagal KEYWORD_RESEARCH.md.
+2026-10-06. Apimtis remiasi savininko pateiktu visų procedūrų katalogu ir platformos sesijos autoritetingu foundation c1f1593 eksportu. 21 sritis, 59 grupės, 225 procedūros (194 core + 31 plėtinių), 103 miestai. Iš jų sudarytos 33 redakcinės kryptys ir 292 individualių naujų gidų brief; 3 esami adresai palikti atnaujinimams. 84 pirminiai turinio šaltiniai perskaityti; papildomai atliktas realus LT raktažodžių / SERP tyrimas pagal KEYWORD_RESEARCH.md.
 
 ## Kodėl nėra vien straipsnių skaičiaus ar savaitinės kvotos
 
@@ -38,6 +38,6 @@ Papildomo tyrimo metu ECHA tatuiravimo prieiga grąžino 403, dalis EUR-Lex HTML
 
 Informacinis tekstas veda į pagrindinį gidą, konkrečius susijusius klausimus ir tinkamą katalogo tikslą. Taikomas platformos centralizuotas ID / resolver kontraktas; būsimas URL neapeina jo kaip external nuoroda. Katalogo national → city selector → results kelias ir local indexEligible priimami atskirai. CONTENT_SEO_HANDOFF.md fiksuoja šios ir platformos sesijų darbų ribas.
 
-Penkios bangos spalio13,20,27 ir lapkričio10,24 numato pagrindus, metodų skirtumus, pasiruošimą / priežiūrą, sudėtingesnius sprendimus ir stipresnių įrodymų klausimus. Visų 296 evergreen temų parengimo tikslas 2026-11-24 priklauso nuo faktinės review. 4 sezoniniai gidai ir 12 peržiūrų pratęsia darbą iki 2027-04-06. Po pirmo tikro ciklo GSC query→landing, indeksavimas ir tikros paslaugų užklausos padeda koreguoti planą; dar neturime šių rezultatų.
+Penkios bangos spalio13,20,27 ir lapkričio10,24 numato pagrindus, metodų skirtumus, pasiruošimą / priežiūrą, sudėtingesnius sprendimus ir stipresnių įrodymų klausimus. Visų 288 evergreen temų parengimo tikslas 2026-11-24 priklauso nuo faktinės review. 4 sezoniniai gidai ir 12 peržiūrų pratęsia darbą iki 2027-04-06. Po pirmo tikro ciklo GSC query→landing, indeksavimas ir tikros paslaugų užklausos padeda koreguoti planą; dar neturime šių rezultatų.
 
 Pilnas planas neprilygsta užbaigtam viešam turiniui. Prieš masinį vykdymą lieka realių studijos ID roundtrip, V2 draft / medija / immutable release ir shadow import priėmimas. Rašymo kokybės standartas WRITING_PLAYBOOK.md taikomas kiekvienai revision.

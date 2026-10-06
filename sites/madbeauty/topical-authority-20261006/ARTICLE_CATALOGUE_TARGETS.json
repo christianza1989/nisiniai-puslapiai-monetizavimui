@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-10-06",
+  "checkedAt": "2026-10-07",
   "status": "COMPLETE_PLAN_BINDINGS_NOT_DEPLOYED",
-  "articleCount": 300,
+  "articleCount": 292,
   "articles": [
     {
       "articleId": "MN-gidas",
@@ -200,6 +200,24 @@
           "canonicalPath": "/paslaugos/manikiuras",
           "canonicalUrl": "https://madbeauty.lt/paslaugos/manikiuras",
           "label": "Manikiūras",
+          "status": "planned",
+          "deployed": false,
+          "reachable": false,
+          "indexEligible": false,
+          "citySelection": {
+            "mode": "EXPLICIT_READER_SELECTION",
+            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+            "preserveTaxonomyNodeId": true
+          },
+          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+        },
+        {
+          "taxonomyNodeId": "lakavimas-gelinis-lakavimas",
+          "cityId": null,
+          "routeRegistryId": "mb:catalog:lakavimas-gelinis-lakavimas",
+          "canonicalPath": "/paslaugos/lakavimas-gelinis-lakavimas",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/lakavimas-gelinis-lakavimas",
+          "label": "Gelinis lakavimas",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -443,31 +461,6 @@
           "canonicalPath": "/paslaugos/lakavimas-nagu-lakavimo-nuemimas",
           "canonicalUrl": "https://madbeauty.lt/paslaugos/lakavimas-nagu-lakavimo-nuemimas",
           "label": "Nagų lakavimo nuėmimas",
-          "status": "planned",
-          "deployed": false,
-          "reachable": false,
-          "indexEligible": false,
-          "citySelection": {
-            "mode": "EXPLICIT_READER_SELECTION",
-            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
-            "preserveTaxonomyNodeId": true
-          },
-          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
-      "articleId": "GL-pasiruosimas",
-      "title": "Prieš gelinį lakavimą: kokią informaciją apie nagus ir seną dangą perduoti?",
-      "catalogueTargets": [
-        {
-          "taxonomyNodeId": "lakavimas-gelinis-lakavimas",
-          "cityId": null,
-          "routeRegistryId": "mb:catalog:lakavimas-gelinis-lakavimas",
-          "canonicalPath": "/paslaugos/lakavimas-gelinis-lakavimas",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/lakavimas-gelinis-lakavimas",
-          "label": "Gelinis lakavimas",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -1164,31 +1157,6 @@
     {
       "articleId": "PD-kosmetinis-ar-sveikatos",
       "title": "Kosmetinis pedikiūras ar sveikatos konsultacija: kur paslaugos riba?",
-      "catalogueTargets": [
-        {
-          "taxonomyNodeId": "pedikiuras",
-          "cityId": null,
-          "routeRegistryId": "mb:catalog:pedikiuras",
-          "canonicalPath": "/paslaugos/pedikiuras",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/pedikiuras",
-          "label": "Pedikiūras",
-          "status": "planned",
-          "deployed": false,
-          "reachable": false,
-          "indexEligible": false,
-          "citySelection": {
-            "mode": "EXPLICIT_READER_SELECTION",
-            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
-            "preserveTaxonomyNodeId": true
-          },
-          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
-      "articleId": "PD-pazeista-oda",
-      "title": "Pažeista pėdų oda ar pakitęs nagas: kada grožio vizitą atidėti?",
       "catalogueTargets": [
         {
           "taxonomyNodeId": "pedikiuras",
@@ -2801,6 +2769,24 @@
             "preserveTaxonomyNodeId": true
           },
           "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+        },
+        {
+          "taxonomyNodeId": "srities-masazai-kaklo-ir-peciu-masazas",
+          "cityId": null,
+          "routeRegistryId": "mb:catalog:srities-masazai-kaklo-ir-peciu-masazas",
+          "canonicalPath": "/paslaugos/srities-masazai-kaklo-ir-peciu-masazas",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/srities-masazai-kaklo-ir-peciu-masazas",
+          "label": "Kaklo ir pečių masažas",
+          "status": "planned",
+          "deployed": false,
+          "reachable": false,
+          "indexEligible": false,
+          "citySelection": {
+            "mode": "EXPLICIT_READER_SELECTION",
+            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+            "preserveTaxonomyNodeId": true
+          },
+          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
         }
       ],
       "reason": null
@@ -3192,31 +3178,6 @@
       "reason": null
     },
     {
-      "articleId": "VP-odos-tipas",
-      "title": "Odos tipas, jautrumas ir dabartinė būklė: kokią informaciją perduoti kosmetologui?",
-      "catalogueTargets": [
-        {
-          "taxonomyNodeId": "veidas",
-          "cityId": null,
-          "routeRegistryId": "mb:catalog:veidas",
-          "canonicalPath": "/paslaugos/veidas",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/veidas",
-          "label": "Veido priežiūra",
-          "status": "planned",
-          "deployed": false,
-          "reachable": false,
-          "indexEligible": false,
-          "citySelection": {
-            "mode": "EXPLICIT_READER_SELECTION",
-            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
-            "preserveTaxonomyNodeId": true
-          },
-          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
       "articleId": "VP-konsultacija",
       "title": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas",
       "catalogueTargets": [
@@ -3245,6 +3206,24 @@
           "canonicalPath": "/paslaugos/veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
           "canonicalUrl": "https://madbeauty.lt/paslaugos/veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
           "label": "Veido procedūros parinkimo konsultacija",
+          "status": "planned",
+          "deployed": false,
+          "reachable": false,
+          "indexEligible": false,
+          "citySelection": {
+            "mode": "EXPLICIT_READER_SELECTION",
+            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+            "preserveTaxonomyNodeId": true
+          },
+          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+        },
+        {
+          "taxonomyNodeId": "veidas",
+          "cityId": null,
+          "routeRegistryId": "mb:catalog:veidas",
+          "canonicalPath": "/paslaugos/veidas",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/veidas",
+          "label": "Veido priežiūra",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -5834,21 +5813,14 @@
             "preserveTaxonomyNodeId": true
           },
           "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
-      "articleId": "BR-masinele-skutimas",
-      "title": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
-      "catalogueTargets": [
+        },
         {
-          "taxonomyNodeId": "barzda-skutimas",
+          "taxonomyNodeId": "barzda",
           "cityId": null,
-          "routeRegistryId": "mb:catalog:barzda-skutimas",
-          "canonicalPath": "/paslaugos/barzda-skutimas",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/barzda-skutimas",
-          "label": "Skutimas",
+          "routeRegistryId": "mb:catalog:barzda",
+          "canonicalPath": "/paslaugos/barzda",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/barzda",
+          "label": "Barzda ir skutimas",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -5864,16 +5836,16 @@
       "reason": null
     },
     {
-      "articleId": "BR-forma",
-      "title": "Barzdos forma: kaip sutarti kontūrą ir ilgį be „idealios veido formos“ pažado?",
+      "articleId": "BR-masinele-skutimas",
+      "title": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
       "catalogueTargets": [
         {
-          "taxonomyNodeId": "barzda",
+          "taxonomyNodeId": "barzda-skutimas",
           "cityId": null,
-          "routeRegistryId": "mb:catalog:barzda",
-          "canonicalPath": "/paslaugos/barzda",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/barzda",
-          "label": "Barzda ir skutimas",
+          "routeRegistryId": "mb:catalog:barzda-skutimas",
+          "canonicalPath": "/paslaugos/barzda-skutimas",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/barzda-skutimas",
+          "label": "Skutimas",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -6070,6 +6042,24 @@
             "preserveTaxonomyNodeId": true
           },
           "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+        },
+        {
+          "taxonomyNodeId": "spa",
+          "cityId": null,
+          "routeRegistryId": "mb:catalog:spa",
+          "canonicalPath": "/paslaugos/spa",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/spa",
+          "label": "SPA ir poilsis",
+          "status": "planned",
+          "deployed": false,
+          "reachable": false,
+          "indexEligible": false,
+          "citySelection": {
+            "mode": "EXPLICIT_READER_SELECTION",
+            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+            "preserveTaxonomyNodeId": true
+          },
+          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
         }
       ],
       "reason": null
@@ -6188,31 +6178,6 @@
     {
       "articleId": "SP-pasiruosimas",
       "title": "Kaip pasiruošti SPA: apranga, daiktai ir procedūrų seka",
-      "catalogueTargets": [
-        {
-          "taxonomyNodeId": "spa",
-          "cityId": null,
-          "routeRegistryId": "mb:catalog:spa",
-          "canonicalPath": "/paslaugos/spa",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/spa",
-          "label": "SPA ir poilsis",
-          "status": "planned",
-          "deployed": false,
-          "reachable": false,
-          "indexEligible": false,
-          "citySelection": {
-            "mode": "EXPLICIT_READER_SELECTION",
-            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
-            "preserveTaxonomyNodeId": true
-          },
-          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
-      "articleId": "SP-prieziura",
-      "title": "Po SPA ritualo: produkto priežiūra, pojūčiai ir pagalbos riba",
       "catalogueTargets": [
         {
           "taxonomyNodeId": "spa",
@@ -6918,6 +6883,24 @@
             "preserveTaxonomyNodeId": true
           },
           "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+        },
+        {
+          "taxonomyNodeId": "rankos-pedos",
+          "cityId": null,
+          "routeRegistryId": "mb:catalog:rankos-pedos",
+          "canonicalPath": "/paslaugos/rankos-pedos",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/rankos-pedos",
+          "label": "Rankų ir pėdų priežiūra",
+          "status": "planned",
+          "deployed": false,
+          "reachable": false,
+          "indexEligible": false,
+          "citySelection": {
+            "mode": "EXPLICIT_READER_SELECTION",
+            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+            "preserveTaxonomyNodeId": true
+          },
+          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
         }
       ],
       "reason": null
@@ -6951,31 +6934,6 @@
           "canonicalPath": "/paslaugos/rankos-pedos-parafino-procedura-pedoms",
           "canonicalUrl": "https://madbeauty.lt/paslaugos/rankos-pedos-parafino-procedura-pedoms",
           "label": "Parafino procedūra pėdoms",
-          "status": "planned",
-          "deployed": false,
-          "reachable": false,
-          "indexEligible": false,
-          "citySelection": {
-            "mode": "EXPLICIT_READER_SELECTION",
-            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
-            "preserveTaxonomyNodeId": true
-          },
-          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
-      "articleId": "RP-prieziura",
-      "title": "Po rankų ir pėdų SPA: odos priežiūra ir nepageidaujami pojūčiai",
-      "catalogueTargets": [
-        {
-          "taxonomyNodeId": "rankos-pedos",
-          "cityId": null,
-          "routeRegistryId": "mb:catalog:rankos-pedos",
-          "canonicalPath": "/paslaugos/rankos-pedos",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/rankos-pedos",
-          "label": "Rankų ir pėdų priežiūra",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -7473,21 +7431,14 @@
             "preserveTaxonomyNodeId": true
           },
           "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
-      "articleId": "SV-pasiruosimas",
-      "title": "Savijautos užsiėmimo pasirinkimas: aplinka, vedėjas ir individualūs poreikiai",
-      "catalogueTargets": [
+        },
         {
-          "taxonomyNodeId": "savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
+          "taxonomyNodeId": "savijauta",
           "cityId": null,
-          "routeRegistryId": "mb:catalog:savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
-          "canonicalPath": "/paslaugos/savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
-          "label": "Savijautos užsiėmimo konsultacija",
+          "routeRegistryId": "mb:catalog:savijauta",
+          "canonicalPath": "/paslaugos/savijauta",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/savijauta",
+          "label": "Savijautos užsiėmimai",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -7503,16 +7454,16 @@
       "reason": null
     },
     {
-      "articleId": "SV-testinumas",
-      "title": "Po atsipalaidavimo seanso: patirties vertinimas ir pagalbos riba",
+      "articleId": "SV-pasiruosimas",
+      "title": "Savijautos užsiėmimo pasirinkimas: aplinka, vedėjas ir individualūs poreikiai",
       "catalogueTargets": [
         {
-          "taxonomyNodeId": "savijauta",
+          "taxonomyNodeId": "savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
           "cityId": null,
-          "routeRegistryId": "mb:catalog:savijauta",
-          "canonicalPath": "/paslaugos/savijauta",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/savijauta",
-          "label": "Savijautos užsiėmimai",
+          "routeRegistryId": "mb:catalog:savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
+          "canonicalPath": "/paslaugos/savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
+          "canonicalUrl": "https://madbeauty.lt/paslaugos/savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
+          "label": "Savijautos užsiėmimo konsultacija",
           "status": "planned",
           "deployed": false,
           "reachable": false,
@@ -7903,31 +7854,6 @@
           "canonicalPath": "/paslaugos/kuno-masazai-aromaterapinis-masazas",
           "canonicalUrl": "https://madbeauty.lt/paslaugos/kuno-masazai-aromaterapinis-masazas",
           "label": "Aromaterapinis masažas",
-          "status": "planned",
-          "deployed": false,
-          "reachable": false,
-          "indexEligible": false,
-          "citySelection": {
-            "mode": "EXPLICIT_READER_SELECTION",
-            "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
-            "preserveTaxonomyNodeId": true
-          },
-          "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
-        }
-      ],
-      "reason": null
-    },
-    {
-      "articleId": "MS-kaklas-peciai",
-      "title": "Nugaros, kaklo ir pečių masažas: kaip apibrėžiama zona bei seanso apimtis?",
-      "catalogueTargets": [
-        {
-          "taxonomyNodeId": "srities-masazai-kaklo-ir-peciu-masazas",
-          "cityId": null,
-          "routeRegistryId": "mb:catalog:srities-masazai-kaklo-ir-peciu-masazas",
-          "canonicalPath": "/paslaugos/srities-masazai-kaklo-ir-peciu-masazas",
-          "canonicalUrl": "https://madbeauty.lt/paslaugos/srities-masazai-kaklo-ir-peciu-masazas",
-          "label": "Kaklo ir pečių masažas",
           "status": "planned",
           "deployed": false,
           "reachable": false,

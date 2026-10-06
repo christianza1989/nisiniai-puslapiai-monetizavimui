@@ -1,5 +1,6 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {seeds,primaryPhrase,normalize} from './keyword-seeds.mjs';
+import {overrides} from './keyword-review.mjs';
 const dir=new URL('./',import.meta.url);
 const clean=s=>s.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();
 const manual={
@@ -21,7 +22,23 @@ const manual={
  'KR-gidas':['kirpimas pagal veido forma','Kaip pasirinkti kirpimą: tekstūra, veido forma ir priežiūra','Rinkdamiesi kirpimą palyginkite plaukų tekstūrą, norimą kontūrą ir kasdienį formavimą. Sužinokite, kaip apibrėžti konsultacijos ir kirpimo užduotį.']
 };
 const brand=/spa vilnius(?!e)|makalius|my ?pilates|mypilates|sette|angis tattoo|vean|zoohotel|woof|stilinga leten|boho|jogos akademija|sunbysil|lusca|prusu usai|senukai|sizeer|akropolis|sypsenos akademija|babor|lsmu/;
-const cityRegex=/\b(vilniu\w*|kaun\w*|klaiped\w*|siauli\w*|panevez\w*|druskinink\w*|palang\w*|anyksc\w*|birston\w*)\b/;
+const cities=JSON.parse(readFileSync(new URL('CITIES_SNAPSHOT.json',dir),'utf8')).cities;
+const cityForms=cities.map(c=>({id:c.id,pattern:new RegExp('\\b'+normalize(c.label).replace(/(?:iai|ys|is|as|us|ai|a|e)$/,'')+'(?:as|is|us|ys|ai|iai|a|e|o|io|u|iu|os|es|oje|eje|uje|yje|uose|iuose|ams|iems)?\\b')}));
+const rootPhrases={manikiuras:'kas yra manikiūras','gelinis-lakavimas':'kas yra gelinis lakavimas','nagu-dizainas':'kaip pasirinkti nagų dizainą',pedikiuras:'kas įeina į pedikiūrą',kirpimas:'kirpimas pagal veido formą','plauku-dazymas':'plaukų dažymo būdai',antakiai:'antakių priežiūra',blakstienos:'blakstienų paslaugų skirtumai',masazas:'kaip pasirinkti masažą','veido-prieziura':'veido procedūrų pasirinkimas','nagu-priauginimas':'kas yra nagų priauginimas','plauku-formavimas':'plaukų formavimo paslaugų skirtumai','plauku-prieziura':'plaukų priežiūros procedūrų pasirinkimas',depiliacija:'depiliacijos metodų pasirinkimas','plauku-salinimas-lazeriu':'kaip veikia plaukų šalinimas lazeriu',makiazas:'makiažo paslaugų pasirinkimas','kuno-prieziura':'kūno procedūrų pasirinkimas','auskaru-verimas':'ką žinoti prieš auskarų vėrimą','barzda-vyrams':'vyrų grožio paslaugų pasirinkimas',spa:'spa paslaugų skirtumai','ilgalaikis-makiazas':'kas yra permanentinis makiažas',tatuiruotes:'kaip pasirinkti tatuiruotę',estetika:'estetinių procedūrų pasirinkimas','plauku-priauginimas':'plaukų priauginimo metodai','rankos-pedos-spa':'rankų ir pėdų spa paslaugų skirtumai',idegis:'purškiamas įdegis ir soliariumas','fizinis-aktyvumas':'treniruočių formatų palyginimas',kineziterapija:'kineziterapijos paslaugų skirtumai','psichologine-pagalba':'psichologinės pagalbos formatų skirtumai',savijauta:'meditacija ir atsipalaidavimo seansai',odontologija:'odontologijos paslaugų skirtumai',medicina:'dermatologo ir medicinos estetikos konsultacija',gyvunai:'gyvūnų kailio priežiūros paslaugos'};
+const snippets={
+ 'B-registracija':'Paslauga, sena danga ar ankstesnis darbas, laikas ir vieta: ką perduoti registruojantis grožio vizitui ir ką turi apimti tikras patvirtinimas.',
+ 'MN-pasiruosimas':'Kokią informaciją perduoti prieš manikiūrą ar gelinį lakavimą? Aptariame seną dangą, nežinomą sistemą, norimą ilgį ir ankstesnio darbo istoriją.',
+ 'MS-nugara-ar-kunas':'Kaip skiriasi nugaros, kaklo, pečių ir viso kūno masažo apimtis? Palyginkite įtrauktas zonas, darbo laiką ir viso vizito trukmę.',
+ 'BR-kirpimas-modeliavimas':'Kaip sutarti barzdos ilgį, kontūrą ir ūsų apimtį? Palyginame kirpimą bei modeliavimą ir parodome, kaip aprašyti norimą formą.',
+ 'PD-kosmetinis-ar-sveikatos':'Kosmetinė pėdų ir nagų priežiūra turi ribas. Sužinokite, kaip atskirti pedikiūro užduotį nuo sveikatos vertinimo ir aptarti vizito atidėjimą.',
+ 'VP-konsultacija':'Pirmoji veido priežiūros konsultacija: tikslas, odos pastebėjimai, naudojami produktai ir ankstesnės reakcijos. Ką turi paaiškinti siūlomas planas?',
+ 'ES-mezoterapija-biorevitalizacija':'Mezoterapija ir biorevitalizacija: kodėl reikia žinoti konkretų metodą, priemonę ir paskirtį? Aptariame konsultacijos klausimus bei įrodymų ribas.',
+ 'ES-gidas':'Kaip vertinti estetinės procedūros pasiūlymą? Atskirkite tikslą, poveikio būdą, priemonės paskirtį ir specialisto kompetenciją.',
+ 'SP-gidas':'SPA ritualas, pirtis ar privati erdvė? Palyginkite paketo komponentus, laiką, privatumo sąlygas ir atskiras naudojamų produktų instrukcijas.',
+ 'SP-hamamas':'Hamamas, garinė ir kiti pirties formatai: ką apima apsilankymas, erdvė ir ritualo darbai? Aptariame tikrą pasiūlymo sudėtį.',
+ 'RP-gidas':'Rankų ir pėdų SPA apimtis: odos priežiūra, parafinas ir atskiri nagų darbai. Kaip palyginti paketą ir jo produktų instrukcijas?',
+ 'SV-gidas':'Meditacija, kvėpavimo ar garso seansas: kuo skiriasi formatas ir sąlygos? Atskirai aptariame patirtį, gydymo pažadų įrodymus ir pagalbos ribas.'
+};
 const stopped=new Set(['ir','ar','kas','kaip','kuo','nuo','tai','bei','su','be','po','pries','gidas','paslaugos','paslauga','ko','kokio','kada']);
 const tokens=s=>normalize(s).split(/[^a-z0-9]+/).filter(x=>x.length>2&&!stopped.has(x)).map(x=>x.slice(0,5));
 export function enrichSeo(p){
@@ -30,39 +47,44 @@ export function enrichSeo(p){
  const all=[...measured,...related],exact=k=>all.find(v=>v.keyword===k&&v.searchVolume!==null)??all.find(v=>normalize(v.keyword)===normalize(k)&&v.searchVolume!==null)??all.find(v=>v.keyword===k);
  for(const page of p.pages){
   page.family??=seeds[page.categoryId]?p.pages.find(x=>x.categoryId===page.categoryId&&x.family)?.family??'Bendra':'Bendra';
-  const preset=manual[page.id],primary=preset?.[0]??(page.id.endsWith('-gidas')?seeds[page.categoryId]:clean(primaryPhrase(page)))??clean(primaryPhrase(page));
+  const preset=manual[page.id],primary=(page.id.endsWith('-gidas')?rootPhrases[page.categoryId]:null)??preset?.[0]??clean(primaryPhrase(page));
   // Keep an editorial answer intent even when its seed has mixed commercial demand.
-  const row=exact(primary),relatedKeywords=[...new Set([primary, ...(page.procedureSections?.map(x=>x.label.toLowerCase())??[]),...page.outline.slice(0,2).map(clean)])].slice(1,7);
+  const row=exact(primary),relatedRows=related.filter(r=>r.seed===seeds[page.categoryId]&&r.keyword!==primary&&!brand.test(normalize(r.keyword))&&!cityForms.some(c=>c.pattern.test(normalize(r.keyword)))).slice(0,6);
+  const relatedKeywords=[...new Set(relatedRows.map(x=>x.keyword))];
   let title=preset?.[1]??page.title.replace(/ gidas:/i,':').replace(/ gidas$/i,'');
   if(!preset&&title.length>75&&title.includes(':'))title=title.split(':')[0];
   const headings=page.outline.slice(0,3).map(h=>h.toLowerCase());
-  let description=preset?.[2]??`${title.replace(/[?!.]$/,'')}. Gide: ${headings.join('; ')}.`;
-  if(!preset&&description.length>180)description=`${title.replace(/[?!.]$/,'')}. Gide: ${headings.slice(0,2).join('; ')}.`;
-  page.seo={status:'DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE',primaryKeyword:primary,relatedKeywords,metaTitle:title,metaDescription:description,h1:page.title,h2:[...page.outline],intent:'INFORMATIONAL_READER_DECISION',monthlySearchVolume:row?.searchVolume??null,volumeKeyword:row?.keyword??null,volumeSource:row?{file:row.source,callId:row.callId,kind:row.kind,updatedAt:row.updatedAt}:null,volumeMeaning:'Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra.',lengthReview:{titleChars:title.length,descriptionChars:description.length,reviewIfLong:title.length>75||description.length>180,meaning:'Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai.'},canonicalArticleId:page.id,localTransactionOwner:'Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties.'};
+  let description=snippets[page.id]??preset?.[2]??`${title.replace(/[?!.]$/,'')}. Aptariamos temos: ${headings.slice(0,2).join('; ')}.`;
+  page.seo={status:'DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE',primaryKeyword:primary,relatedKeywords,relatedKeywordOrigin:'Actual vendor related rows from category seed; discovery candidates, not all page targets',relatedEvidence:relatedRows.map(x=>({keyword:x.keyword,source:x.source,callId:x.callId,updatedAt:x.updatedAt})),editorialConcepts:[...new Set([...(page.procedureSections?.map(x=>x.label)??[]),...page.outline.slice(0,2)])],metaTitle:title,metaDescription:description,h1:page.title,h2:[...page.outline],metadataAcceptance:'PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET',intent:'INFORMATIONAL_READER_DECISION',monthlySearchVolume:row?.searchVolume??null,volumeKeyword:row?.keyword??null,volumeSource:row?{file:row.source,callId:row.callId,kind:row.kind,updatedAt:row.updatedAt}:null,volumeMeaning:'Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.',keywordFamily:{term:seeds[page.categoryId]??null,observedVolume:exact(seeds[page.categoryId]??'')?.searchVolume??null,role:'Discovery context only; not primary query volume',commercialOwner:'Actual national/local catalogue when eligible; no editorial substitution for provider results'},lengthReview:{titleChars:title.length,descriptionChars:description.length,reviewIfLong:title.length>75||description.length>180,meaning:'Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai.'},canonicalArticleId:page.id,localTransactionOwner:'Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties.'};
   page.description=description;page.primarySearchIntent.query=primary;page.primarySearchIntent.volume=row?.searchVolume??null;
  }
  const decisions=[];
  const unique=[...new Map(all.map(v=>[v.keyword,v])).values()];
  for(const k of unique){
-  const n=normalize(k.keyword);let decision,articleId=null,reason;
-  if(brand.test(n)){decision='EXCLUDE_COMPETITOR_OR_BRAND_NAVIGATION';reason='Prekės ženklo ar teikėjo paieška; nesavinti jo navigacinio ketinimo.';}
+  const n=normalize(k.keyword);let decision,articleId=null,reason,catalogueTargets=[],cityId=null;
+  const reviewed=overrides.find(x=>normalize(x[0])===n);
+  if(reviewed){[,decision,articleId,reason]=reviewed;if(decision==='NATIONAL_CATALOGUE_OR_MIXED_SERVICE_OWNER')catalogueTargets=reviewed[4]?.map(id=>'mb:catalog:'+id)??p.pages.find(x=>x.id===articleId)?.catalogueTargets.map(t=>t.routeRegistryId)??[];}
+  else if(brand.test(n)){decision='EXCLUDE_COMPETITOR_OR_BRAND_NAVIGATION';reason='Prekės ženklo ar teikėjo paieška; nesavinti jo navigacinio ketinimo.';}
   else if(/\b(studij\w*|mokym\w*|kursai|darbo|atlyginim\w*)\b/.test(n)){decision='EXCLUDE_EDUCATION_OR_EMPLOYMENT';reason='Paslaugos užsakymo platforma; ne profesinis mokymas ar darbo portalas.';}
   else if(/\b(rinkin\w*|priemone\w*|priemoni\w*|aliejus|senukai|fotoepiliatorius|pasta|lempa)\b/.test(n)){decision='EXCLUDE_PRODUCT_SHOPPING';reason='Prekės paieška skiriasi nuo salono paslaugos. Produktas aptariamas tik jei reikalingas metodo paaiškinimui.';}
   else if(/\b202[0-6]\b/.test(n)){decision='MERGE_EVERGREEN_OR_REJECT_EXPIRED_YEAR';reason='Praėjusio sezono duomenys neprognozuoja 2027 m. atskiros frazės apimties; nekurti kasmetinio klono.';}
-  else if(cityRegex.test(n)){decision='LOCAL_CATALOGUE_OWNER';reason='Procedūra / paslauga ir vieta: patikrinti tikrą filtrą, pasiūlą ir indexEligible; atskiro miesto straipsnio nekurti.';}
+  else if(cityForms.some(c=>c.pattern.test(n))){decision='LOCAL_CATALOGUE_OWNER';cityId=cityForms.find(c=>c.pattern.test(n)).id;reason='Procedūra / paslauga ir vieta: patikrinti tikrą filtrą, pasiūlą ir indexEligible; atskiro miesto straipsnio nekurti. Procedūros mazgą sutikrinti semantiškai; miestas savaime neaktyvuoja URL.';}
+  else if(n==='veido kauke'){decision='REVIEW_MIXED_PRODUCT_OR_SERVICE';reason='Bendras terminas gali reikšti prekę, naudojimą namuose arba salono komponentą. Tikslus SERP nepaimtas; nepriskirti automatiškai VP-masazas-kauke.';}
   else{
    const exactPage=p.pages.find(x=>normalize(x.seo.primaryKeyword)===n);
    const procedure=p.procedureCoverage.find(x=>normalize(x.label)===n);
-   if(exactPage){articleId=exactPage.id;decision='ARTICLE_ANSWER_OWNER';reason='Vienas konkretus atsakymo gidas; plati komercinė variacija vis tiek turi katalogo kelią.';}
-   else if(procedure){articleId=procedure.targetId;decision='MERGE_IN_NAMED_SECTION';reason=procedure.section;}
+   const familyPage=p.pages.find(x=>seeds[x.categoryId]&&normalize(seeds[x.categoryId])===n);
+   if(procedure||familyPage){articleId=n==='mezoterapija'?'ES-mezoterapija-biorevitalizacija':n==='pirtis'?'SP-gidas':procedure?.targetId??familyPage.id;decision='NATIONAL_CATALOGUE_OR_MIXED_SERVICE_OWNER';catalogueTargets=procedure?[`mb:catalog:${procedure.taxonomyNodeId}`]:familyPage.catalogueTargets.map(t=>t.routeRegistryId);reason='Bendras paslaugos terminas nereiškia vien straipsnio ketinimo. Tikras paslaugų katalogas aptarnauja teikėjo pasirinkimą; articleId yra informacinis palaikantis atsakymas, ne išmatuotas šio termino SERP savininkas.';}
+   else if(exactPage){articleId=exactPage.id;decision='ARTICLE_ANSWER_OWNER';reason='Konkretus informacinio atsakymo brief; nėra pažado, kad bet kuris komercinis ar mišrus šios frazės rezultatas priklauso gidui.';}
    else{const keys=tokens(n);const scored=p.pages.map(x=>{const words=tokens(x.title+' '+x.outline.join(' '));const hits=keys.filter(t=>words.includes(t)).length;return{x,score:keys.length?hits/keys.length:0,hits};}).filter(x=>x.hits>=2&&x.score>=0.6).sort((a,b)=>b.score-a.score||b.hits-a.hits);if(scored.length){articleId=scored[0].x.id;decision='CANDIDATE_EXISTING_ANSWER_REVIEW_BEFORE_TARGETING';reason='Semantiškai artimas atsakymas; reikia redakcijos patvirtinimo, o ne automatinio raktažodžio įterpimo.';}else{decision='RESEARCH_BACKLOG_NOT_AUTO_ARTICLE';reason='Susijusių frazių grafas nebūtinai reiškia tinkamą ketinimą. Papildomo URL nedaryti be savarankiško atsakymo ir įrodymų.';}}
   }
-  decisions.push({...k,decision,articleId,reason});
+  decisions.push({...k,decision,articleId,catalogueTargets,cityId,reason,reviewedOverride:Boolean(reviewed),decisionEvidence:decision.startsWith('REVIEW_')||['CANDIDATE_EXISTING_ANSWER_REVIEW_BEFORE_TARGETING','RESEARCH_BACKLOG_NOT_AUTO_ARTICLE'].includes(decision)?'UNRESOLVED_NOT_TARGET_ACCEPTANCE':'BUSINESS_SCOPE_AND_READER_JOB_REVIEW_NOT_RANKING_PROOF',publicReady:false});
  }
  const summary=input.summary;
  p.keywordResearch=summary;p.research.method=`${p.sources.length} perskaityti turinio šaltiniai ir realus treg / DataForSEO LT raktažodžių bei SERP duomenų tyrimas; ribos RESEARCH.md ir KEYWORD_RESEARCH.md.`;
  p.research.limitations=p.research.limitations.map((s,i)=>i===0?'GSC ir patikimo Trends eksporto neturime. Treg / DataForSEO apimčių įverčiai ir susijusių frazių duomenys išsaugoti KEYWORD_DATA.json; reklamos konkurencija nėra organinis sunkumas.':i===1?'Patikrintos 60 Lietuvos Google rezultatų imčių (lt, desktop, depth 10). Tai nėra kontroliuotas Vilniaus ar visų įrenginių reitingų matavimas; rinkos spraga ir būsimas mūsų matomumas lieka hipotezėmis.':s);
  writeFileSync(new URL('KEYWORD_DATA.json',dir),JSON.stringify({summary,measured,related,decisions},null,2)+'\n');
- writeFileSync(new URL('SEO_MAP.json',dir),JSON.stringify({checkedAt:summary.checkedAt,status:'EDITORIAL_METADATA_AND_QUERY_OWNERSHIP_PLAN',articles:p.pages.map(x=>({articleId:x.id,slug:x.slug,...x.seo})),decisions,summary},null,2)+'\n');
+ const counts=Object.fromEntries([...new Set(decisions.map(x=>x.decision))].map(d=>[d,decisions.filter(x=>x.decision===d).length]));p.keywordOwnership={reviewedAt:'2026-10-07',counts,unresolved:decisions.filter(x=>x.decisionEvidence==='UNRESOLVED_NOT_TARGET_ACCEPTANCE').length,status:'OBSERVED_DISCOVERY_GRAPH_NOT_ALL_PHRASES_TARGETED',rule:'No new URL from unresolved candidate or missing volume alone'};
+ writeFileSync(new URL('SEO_MAP.json',dir),JSON.stringify({checkedAt:summary.checkedAt,reviewedAt:'2026-10-07',status:'EDITORIAL_METADATA_AND_QUERY_OWNERSHIP_PLAN',ownership:p.keywordOwnership,articles:p.pages.map(x=>({articleId:x.id,slug:x.slug,...x.seo})),decisions,summary},null,2)+'\n');
  return summary;
 }

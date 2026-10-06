@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-06T22:20:29.621Z",
+  "planVersion": "292 new / 3 retained / 225 procedures",
+  "desktop": {
+    "viewport": 1280,
+    "clientWidth": 1265,
+    "scrollWidth": 1265,
+    "search": "kaklo",
+    "visibleIds": [
+      "MS-nugara-ar-kunas"
+    ],
+    "internalLink": "MN-pasiruosimas → GL-gidas clears filters and opens target"
+  },
+  "mobile": {
+    "viewport": 390,
+    "clientWidth": 375,
+    "scrollWidth": 375,
+    "search": "MN-pasiruosimas",
+    "visibleIds": [
+      "MN-pasiruosimas"
+    ],
+    "keyboardLink": "Enter clears filters and opens GL-gidas",
+    "pointerLink": "INCONCLUSIVE_IN_IAB: click returned without clearing filter; desktop pointer and mobile keyboard succeeded. Do not claim mobile pointer acceptance."
+  },
+  "scope": "Local rendered plan, not production booking UI; temporary viewport reset.",
+  "status": "LAYOUT_SEARCH_DESKTOP_POINTER_MOBILE_KEYBOARD_VERIFIED_MOBILE_POINTER_UNRESOLVED"
+}

@@ -9,3 +9,11 @@ Two actual browser sandbox payments succeeded: the $70 hardware fixture ($65 set
 Desktop and 320-pixel order views were inspected. The mobile order wraps its long identifier and has no horizontal overflow or broken visible images. Initial generated punctuation exposed a replacement character in the rendered confirmation; it was corrected and the rebuilt page inspected. Provider form-fill tools reported timeouts after filling the controls, so the visible state was checked before submission rather than repeating an uncertain action.
 
 The immutable prototype, accepted homepage and original ZIP/APK remain untouched. Public production checkout is still disabled pending seller verification/live runtime credentials and factual shipping/tax/return/licence terms. The website entitlement is not a native activation key. Automatic purchase email and tax invoices are not included in this release. The core's `deploy/phonebridger/PLAYGROUND.md` holds reproducible operational instructions; private screenshots/fixtures/credentials stay outside Git.
+
+## Purchase preparation update — 6 October 2026
+
+The live available CTA is Buy now; disabled mode deliberately retains the enquiry action, and PLAYGROUND stays clearly labelled test checkout. One-time pricing and free manual-supplier shipping copy apply only to available live offers. Private live confirmations include the immutable accepted terms/seller/version; the application requires consent before requesting a provider Session. Buyer data stays private.
+
+A separate isolated synthetic withdrawal request was saved and its downloaded confirmation matched the exact D1 identifier/time. The browser event reporter timed out despite a successful file download; filesystem/server reconciliation proved the result, without replaying the form. Mail was disabled and only the exact test row was cleaned up. Desktop/320-pixel canonical withdrawal form checks pass. No real withdrawal or live payment occurred.
+
+The owner has supplied a publishable key only. Server restricted key, signing secret and factual live activation review remain unfinished; the current public Buy now action is therefore not enabled. The prepared browser key form awaits the human's final creation action. Test payments remain evidence of sandbox behavior, not real sales.

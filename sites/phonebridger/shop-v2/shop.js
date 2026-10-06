@@ -26,12 +26,12 @@
     $('[data-selection-name]').textContent=names[count]+(count?' · '+finishName:'');
     $('[data-total]').textContent=money(amount);
     $('[data-mobile-name]').textContent=names[count];$('[data-mobile-price]').textContent=(available?'':'Planned · ')+money(amount)+' '+(catalog?.currency||'usd').toUpperCase();
-    $('[data-price-label]').textContent=(available?'Setup price':'Planned launch price')+' · '+(catalog?.currency||'usd').toUpperCase();
+    $('[data-price-label]').textContent=(available?'One-time payment':'Planned launch price')+' · '+(catalog?.currency||'usd').toUpperCase();
     $('[data-availability]').textContent=available?(catalog.mode==='test'?'Test checkout · No real payment':'Orders open'):catalog?.mode!=='disabled'&&offer?.available?'Selected finish unavailable - try the other finish':'Preparing for launch · Try the free beta today';
-    $('[data-purchase-note]').textContent=available?'Your final total and any confirmed delivery charge are shown on Stripe Checkout before payment.':'Orders are not open yet. Delivery, applicable taxes and final purchase terms will be confirmed before sales begin.';
+    $('[data-purchase-note]').textContent=available?(count&&catalog.shippingAmount===0?'Free shipping to destinations offered at Checkout. Import charges, if any, may be collected locally.':'One-time payment. Review your final total on secure Stripe Checkout before paying.'):'Orders are not open yet. Delivery, applicable taxes and final purchase terms will be confirmed before sales begin.';
     $('.pb-consent').hidden=!available;
     if(catalog?.mode==='test'){const input=$('[data-purchase-consent]');$('.pb-consent').replaceChildren(input,document.createTextNode(' I understand this is a sandbox simulation. No money, goods or licence will be supplied.'));}
-    cta.firstChild.textContent=available?(catalog.mode==='test'?'Open test checkout ':'Continue to checkout '):'Ask about this setup ';
+    cta.firstChild.textContent=available?(catalog.mode==='test'?'Open test checkout ':'Buy now '):'Ask about this setup ';
     cta.href='/contact?topic=setup&holders='+count+'&finish='+finish;
     $('[data-gallery-tag]').textContent=view==='holder'?finishName+' holder':view==='placement'?'Your screen edges':'Your setup';
     $('[data-gallery-title]').textContent=view==='holder'?'A home for your phone.':view==='placement'?'Put your phone where it belongs.':'One app. Your kind of desk.';

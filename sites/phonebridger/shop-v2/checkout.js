@@ -16,7 +16,7 @@
    for(const [label,value]of [['Order',order.id],['Setup',names[order.holders]],['Finish',order.holders?order.finish:'No hardware'],['Delivery status',order.holders?({unfulfilled:'Awaiting dispatch',dispatched:'Dispatched',fulfilled:'Delivered',on_hold:'On hold'}[order.fulfilment]||order.fulfilment):'Digital delivery'],['Setup price',money(order.subtotal)],['Shipping',money(order.shipping)],['Total',money(order.subtotal+order.shipping)]]){const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;row.append(dt,dd);$('[data-order-details]').append(row);}
    if(order.status==='paid'){try{sessionStorage.removeItem('phonebridger.checkout.v1');}catch{}}
    const actions=$('[data-order-actions]');actions.replaceChildren();
-   if(order.paid_at)actions.append(link('Download payment summary','/api/shop/receipt?id='+id));
+   if(order.paid_at)actions.append(link(mode==='test'?'Download test payment summary':'Download order confirmation','/api/shop/receipt?id='+id));
    if(order.status==='paid'&&entitlement?.status==='active')actions.append(link(mode==='test'?'Download test licence record':'Download licence record','/api/shop/licence?id='+id),link('Get the apps','/downloads'));
    const deliveryStatus=$('[data-delivery-status]');deliveryStatus.textContent=mode==='test'?'Sandbox simulation. No money, licence or hardware is supplied.':order.holders?'Your software is available after payment. Hardware tracking appears here after dispatch.':'Your software download and purchase record are ready.';
    if(delivery){deliveryStatus.append(document.createTextNode(' '+delivery.carrier+'  -  '+delivery.tracking_number+' '),link('Track delivery',delivery.tracking_url));}

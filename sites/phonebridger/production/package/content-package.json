@@ -66,7 +66,7 @@
       "type": "product",
       "slug": "shop",
       "title": "Your desk. Your setup.",
-      "description": "Choose PhoneBridger with optional magnetic holders in Black or Silver.",
+      "description": "Compare PhoneBridger Windows app setups with one, two or three optional magnetic holders. Check compatibility, delivery and purchase terms.",
       "intent": "Understand PhoneBridger shop information and its current beta boundaries.",
       "body": [
         {
@@ -125,7 +125,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Final mounting materials, included accessories and measured fit will be confirmed before hardware sales. Illustrations show the intended branded finish."
+          "text": "Check your mounting surface and phone or case fit. Product imagery is illustrative; the PhoneBridger engraving is a branding mockup. No phone or computer is included."
         },
         {
           "type": "heading",
@@ -143,7 +143,7 @@
         },
         {
           "type": "paragraph",
-          "text": "After launch, completed purchasers can share what worked, what did not and how PhoneBridger fits their day. We publish genuine reviews after moderation, including critical ones."
+          "text": "Completed purchasers can share what worked, what did not and how PhoneBridger fits their day. We publish genuine reviews after moderation, including critical ones."
         },
         {
           "type": "paragraph",
@@ -164,23 +164,23 @@
         },
         {
           "type": "paragraph",
-          "text": "The proposed offer is a one-time V1 licence for one Windows PC and up to three Android phones. A future paid major version would be a separate offer. The current beta is free; final licence delivery and purchase terms are not active yet."
+          "text": "This is a one-time V1 licence for one Windows PC and up to three Android phones. A future paid major version is a separate offer. The beta remains free to try; buying does not unlock extra beta features. After confirmed payment, your purchase and licence record appear in your account."
         },
         {
           "type": "paragraph",
-          "text": "Software is downloaded, not supplied in a physical software box. A hardware bundle is planned to include your selected number of holders in the chosen finish. Final accessories and packaging will be listed before hardware orders open."
+          "text": "Software is downloaded, not supplied in a physical software box. A hardware bundle includes your selected number of foldable magnetic holders in the chosen finish, sent directly by our supplier. The software-box image is a digital-product illustration; no physical software box is shipped."
         },
         {
           "type": "paragraph",
-          "text": "Shipping destinations, rates and delivery times are being confirmed. We will show the supported destination and total delivery cost before accepting a hardware order."
+          "text": "We offer free worldwide shipping to destinations available at Checkout. Hardware is sent directly by our supplier after we arrange your order. Delivery time depends on destination and the carrier; tracking appears in your account after dispatch. Import duties or local charges, if applicable, are separate from our shipping charge."
         },
         {
           "type": "paragraph",
-          "text": "Final purchase, cancellation and return terms will be available before orders open. For now, try the free beta and ask us about your phone, case and mounting surface before choosing hardware."
+          "text": "App-only purchases can be cancelled within 14 days of purchase. A hardware bundle can be returned within 14 days of receiving it. Ordinary change-of-mind return postage is paid by you. See our purchase terms for the withdrawal form, instructions and faulty-goods rights."
         },
         {
           "type": "paragraph",
-          "text": "The planned seller for paid PhoneBridger orders is MB Memocasting. When sales open, payment will take place on Stripe-hosted Checkout. No card details are entered or stored on this shop page."
+          "text": "Your seller is MB Memocasting. Available purchases are paid on Stripe-hosted Checkout. No card details are entered or stored on this shop page."
         },
         {
           "type": "heading",
@@ -196,11 +196,11 @@
       "media": [],
       "links": [],
       "id": "311df081-e4bb-4ced-bbba-d456301d2319",
-      "revisionHash": "127dfdd125dfb54e4bb7b0d23e75691c28d18a45657758a262708b9ee868228d",
+      "revisionHash": "d98817b2a6493d31f5d19d2cc525ca746dece71e97d6bcc6a6a776b76bcb52af",
       "approval": {
         "status": "approved",
-        "revisionHash": "127dfdd125dfb54e4bb7b0d23e75691c28d18a45657758a262708b9ee868228d",
-        "approvedAt": "2026-10-06T15:27:30.811Z",
+        "revisionHash": "d98817b2a6493d31f5d19d2cc525ca746dece71e97d6bcc6a6a776b76bcb52af",
+        "approvedAt": "2026-10-06T20:09:55.987Z",
         "actorId": "owner-authorized-production-review-20261006"
       }
     },
@@ -535,7 +535,7 @@
       "type": "service",
       "slug": "privacy",
       "title": "Your data. Clear boundaries.",
-      "description": "How PhoneBridger handles website enquiries, account records, saved choices and limited measurement.",
+      "description": "How MB Memocasting handles PhoneBridger enquiries, accounts, payments, supplier delivery, reviews and limited measurement.",
       "intent": "Understand PhoneBridger privacy information and its current beta boundaries.",
       "body": [
         {
@@ -549,7 +549,7 @@
         },
         {
           "type": "paragraph",
-          "text": "PhoneBridger is operated by MB Pinet. For privacy, access or deletion requests, use our contact form. This notice covers this website and its account service."
+          "text": "PhoneBridger is operated by MB Memocasting. For privacy, access or deletion requests, use our contact form. This notice covers this website and its account service."
         },
         {
           "type": "heading",
@@ -585,7 +585,25 @@
         },
         {
           "type": "paragraph",
-          "text": "We store your email, creation date and salted password hash, never a readable password. A first-party Secure, HttpOnly, SameSite session cookie expires after eight hours; logging out revokes the session. Account records remain until deletion. Email verification and automatic password recovery are not available yet. Accounts do not represent a paid licence or purchase."
+          "text": "We store your email, creation date and salted password hash, never a readable password. A first-party Secure, HttpOnly, SameSite session cookie expires after eight hours; logging out revokes the session. Account records remain until deletion. Email verification and automatic password recovery are not available yet. Creating an account does not itself make a purchase. Your account connects you to your own order history when Checkout is available."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Purchases and delivery"
+        },
+        {
+          "type": "paragraph",
+          "text": "When you buy, we store your account reference, email, selected package and finish, price, accepted policy version, order and payment references, status and timestamps. Stripe hosts the payment form; we do not store your card number or security code. Stripe processes payment, billing and security information under its own privacy practices. For hardware, we store the delivery details you enter at Checkout. MB Memocasting arranges fulfilment through its supplier and shares the recipient name and delivery address needed for shipping with that supplier and carrier, including outside the EEA where applicable. Delivery records contain tracking and dispatch information. Payment and order records may need to remain after account deletion for accounting, refunds, disputes and legal obligations."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Reviews"
+        },
+        {
+          "type": "paragraph",
+          "text": "Submitting a review authorizes publication of your chosen public name, rating, text and purchased setup. We do not publish your email or delivery address. Reviews are linked to paid, fulfilled orders and moderated for spam, privacy, relevance and abuse; a critical rating is not a rejection reason. Contact us to request correction or withdrawal."
         },
         {
           "type": "heading",
@@ -612,7 +630,7 @@
         },
         {
           "type": "paragraph",
-          "text": "No advertising trackers, live checkout or marketing subscription is included. The downloaded apps have their own permissions and pairing settings; this website notice does not replace their setup information. Updated 6 October 2026."
+          "text": "No advertising trackers or marketing subscription is included. Checkout availability is shown on the shop; purchase processing starts only when you choose to buy. The downloaded apps have their own permissions and pairing settings; this website notice does not replace their setup information. Updated 6 October 2026."
         },
         {
           "type": "paragraph",
@@ -623,11 +641,11 @@
       "media": [],
       "links": [],
       "id": "b82b4bbf-cafa-4f4a-a47e-aed706fea3d4",
-      "revisionHash": "d9592532606d07100fbbdac175f81c84be67a4aa9f229f7420f1b51e45930849",
+      "revisionHash": "ac00fcbb08c29e40d47e5fe8f7dd68fc4fe5c75cdc59d854577b2cb3b06fb6f1",
       "approval": {
         "status": "approved",
-        "revisionHash": "d9592532606d07100fbbdac175f81c84be67a4aa9f229f7420f1b51e45930849",
-        "approvedAt": "2026-10-06T10:54:42.360Z",
+        "revisionHash": "ac00fcbb08c29e40d47e5fe8f7dd68fc4fe5c75cdc59d854577b2cb3b06fb6f1",
+        "approvedAt": "2026-10-06T20:09:56.017Z",
         "actorId": "owner-authorized-production-review-20261006"
       }
     },
@@ -636,72 +654,114 @@
       "type": "service",
       "slug": "terms",
       "title": "Before you start. A few clear details.",
-      "description": "Current PhoneBridger beta and planned store boundaries.",
+      "description": "PhoneBridger purchase, licence, free shipping and cancellation terms from MB Memocasting.",
       "intent": "Understand PhoneBridger terms information and its current beta boundaries.",
       "body": [
         {
           "type": "paragraph",
-          "text": "The beta is available. Paid orders are not open yet."
+          "text": "Your purchase, delivery and cancellation terms in one place."
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Current beta"
+          "text": "Your seller"
         },
         {
           "type": "paragraph",
-          "text": "PhoneBridger connects a Windows PC to Android phones. This beta is under development and has the compatibility and feature limits described on the downloads and help pages. Keep your own files backed up and review permissions before enabling a feature."
+          "text": "PhoneBridger purchases are sold by MB Memocasting, company number 306026827, registered in Lithuania at Pupinės g. 10-55, LT-02206 Vilnius. Contact hello@phonebridger.com or company support on +370 691 08251. MB Memocasting is not VAT registered."
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Planned store offer"
+          "text": "What you are buying"
         },
         {
           "type": "paragraph",
-          "text": "Displayed USD prices are planned launch prices. They are not an open checkout or a confirmed shipping quote. The intended offer is a one-time V1 licence for one Windows PC and up to three Android phones, with optional hardware. Paid activation is not implemented in the beta."
+          "text": "App only is USD 29; App + 1 holder is USD 49; App + 2 holders is USD 65; App + 3 holders is USD 79. Each includes the same one-time Windows V1 licence for one PC and up to three Android phones, with the Android companion. No subscription is added. The licence covers personal or business use of V1 and available V1 maintenance updates; a future paid major version is a separate offer. You may reinstall on a replacement PC, but not redistribute or resell the software."
         },
         {
           "type": "paragraph",
-          "text": "Shipping, taxes, seller details, hardware specifications and sales/refund policies will be confirmed before a purchase is available. A future paid major version would be a separate offer. The software-box image is an illustration of a digital download, not a shipped software box."
+          "text": "The current beta remains free to try. Buying does not unlock extra beta features. Your purchase and licence record appear after confirmed payment; the record is not an activation key entered into the current apps. Download the apps from the Downloads page. Review compatibility and required Android permissions before buying. The beta is still in development; future features and release dates are not promised."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hardware bundles add the selected count of foldable magnetic holders in Black or Silver. No laptop, phone or physical software box is included. Images are illustrations; the depicted PhoneBridger engraving is a branding mockup. Check magnetic-ring or case fit and a suitable mounting surface before attachment. Do not strain your laptop hinge or screen."
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Saving or asking about a setup"
+          "text": "Payment and confirmation"
         },
         {
           "type": "paragraph",
-          "text": "Saving a setup records a choice in your browser. Preparing an email creates a draft in your email app. Neither action places an order, reserves stock, charges a payment or establishes a shipping commitment."
+          "text": "Checkout availability is shown on the shop. Saving a setup or contacting us does not place an order. When Checkout is available, accept these terms, sign in to keep your order connected to your account, then pay on Stripe-hosted Checkout. Review the final payable amount before payment. We do not add VAT under our current non-VAT-registered status. Import duties or destination charges, where applicable, may be collected locally."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your order becomes paid only after payment is verified. Status, downloadable order confirmation and licence record appear in your account. The confirmation retains the terms accepted for that order. Card statements may show MB MEMOCASTING. Payment method availability is determined at Checkout. If payment is pending, refresh your order or contact us before paying again."
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Website and account preview"
+          "text": "Free shipping and supplier fulfilment"
         },
         {
           "type": "paragraph",
-          "text": "The live demo uses sample data. PhoneBridger accounts exist only to verify the email/password flow; they do not grant a paid licence or creator role. No creator dashboard or commission programme is activated here."
+          "text": "Shipping is free to destinations offered at Checkout. MB Memocasting arranges hardware orders manually with its supplier, which sends goods directly to the recipient. We remain your seller for delivery and returns. No local warehouse stock is claimed. Tracking appears in your account after dispatch."
+        },
+        {
+          "type": "paragraph",
+          "text": "Transit time varies. Unless a different period is agreed before purchase, the statutory delivery deadline is 30 days. We notify you and refund an order we cannot fulfil. Contact us about late or damaged goods; supplier policies do not replace your legal rights."
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Questions"
+          "text": "Cancellation and returns"
         },
         {
           "type": "paragraph",
-          "text": "For compatibility, beta or planned-store questions, contact hello@phonebridger.com ."
+          "text": "Cancel app-only purchases within 14 days of purchase; downloading does not waive this right. Withdraw from an entire hardware bundle within 14 days of receiving the goods. Notify us online, by email or by post; no reason is required. For a partial cancellation, tell us which items you are returning."
+        },
+        {
+          "type": "paragraph",
+          "text": "Return hardware within 14 days of notification. You pay ordinary change-of-mind return postage; contact us for instructions before sending. Excessive use may reduce the refund. Refunds use the original payment method within 14 days of notification; we may wait for goods or proof of sending. A cancelled licence is revoked. Faulty or incorrect goods retain their statutory remedies."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Withdraw from your contract"
+        },
+        {
+          "type": "paragraph",
+          "text": "Withdraw from contract"
+        },
+        {
+          "type": "paragraph",
+          "text": "The online form takes your name, email, order reference and withdrawal statement, and provides a dated confirmation to download after submission. You may instead email hello@phonebridger.com with “I withdraw from my PhoneBridger order”, your order reference, name, address and purchase or receipt date. Sign only if sending on paper. This wording is optional."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Support and disputes"
+        },
+        {
+          "type": "paragraph",
+          "text": "Contact us about downloads, setup, delivery, cancellation or faults. Lithuanian law applies without removing mandatory consumer protections in your country. Unresolved consumer complaints may be referred to Lithuania’s State Consumer Rights Protection Authority, vvtat.lrv.lt. Creator commissions and a creator dashboard are not included."
+        },
+        {
+          "type": "paragraph",
+          "text": "Terms version phonebridger-v1-20261006. Updated 6 October 2026."
         }
       ],
       "publishAt": "2026-10-06T00:00:00.000Z",
       "media": [],
       "links": [],
       "id": "ba1b41d1-e831-48ed-bf1c-7734865d4882",
-      "revisionHash": "497c52552b35d1e141ff973805e695006221fcf3721a8a288d97a519e5c64aff",
+      "revisionHash": "7ab01ddbf726d36dead14db6cfac5fd829bbfef1b4191ca8dbbe2b5771d442f3",
       "approval": {
         "status": "approved",
-        "revisionHash": "497c52552b35d1e141ff973805e695006221fcf3721a8a288d97a519e5c64aff",
-        "approvedAt": "2026-10-06T15:27:30.834Z",
+        "revisionHash": "7ab01ddbf726d36dead14db6cfac5fd829bbfef1b4191ca8dbbe2b5771d442f3",
+        "approvedAt": "2026-10-06T20:09:56.046Z",
         "actorId": "owner-authorized-production-review-20261006"
       }
     },
@@ -1603,5 +1663,5 @@
       }
     }
   ],
-  "generatedAt": "2026-10-06T15:44:50.071Z"
+  "generatedAt": "2026-10-06T20:09:56.058Z"
 }

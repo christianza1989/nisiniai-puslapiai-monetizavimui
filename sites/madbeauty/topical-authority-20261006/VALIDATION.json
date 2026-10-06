@@ -1,10 +1,11 @@
 {
   "checkedAt": "2026-10-07",
   "artifactHashes": {
-    "PLAN.json": "8b3e618f371e070551cd5f8a3a72e6b10a098699feee969c235053a62b5b7fc9",
+    "PLAN.json": "06445236596be3b3bfd936ebf7c07103dbc80f593ddb33f698758fe731465070",
     "SEMANTIC_REVIEW.json": "68dde0b6afcd5135064e6758ee4c264607ee1c9d539badc4a848fcf5fbaa1440",
     "SEO_MAP.json": "5e0959e165755ef11bd41a82ee832ed6447c023ff69ac8871b95cfce765ebe26",
-    "RESEARCH_IMPORT_MANIFEST.json": "830088eec3b93489dc7c1473c99aa0b585ed56aa1e3d2a29cc183a7fedb1ae24"
+    "RESEARCH_IMPORT_MANIFEST.json": "830088eec3b93489dc7c1473c99aa0b585ed56aa1e3d2a29cc183a7fedb1ae24",
+    "STUDIO_RECONCILIATION.json": "8823f07f3234beb8092e42b8ad73ec99183314b1e3a028610e443a941ef9bc39"
   },
   "status": "FULL_CATALOGUE_PLAN_STRUCTURE_AND_RESEARCH_PROVENANCE_PASS",
   "totals": {
@@ -72,12 +73,13 @@
     "Broad service heads assigned national/mixed catalogue role; mask query unresolved explicitly",
     "13 schema-valid transport batches; every retained plan exactly once, parent first",
     "New maintained SEO core included in actual planning instruction fingerprint",
-    "Historical pilot execution and original initial content package unchanged"
+    "Historical pilot execution and original initial content package unchanged",
+    "Owner-isolated studio295 active/8 archived; actual merged brief prompt projection verified without generation"
   ],
   "notAccepted": [
     "All new article texts, media or clinical review; only one historical private pilot exists",
     "Keyword candidate/backlog targeting, full keyword universe, mobile/city ranking or AI visibility",
-    "Private studio migration from303 to295 plans and any new public release",
+    "Private tenant restoration in another clone, V2 rich-output generation adapter and any new public release",
     "Current production full catalogue/resolver/provider supply and booking delivery",
     "GSC/GA4, qualified leads, confirmed bookings, future traffic or Google rankings"
   ]

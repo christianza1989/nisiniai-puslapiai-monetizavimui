@@ -398,6 +398,74 @@ export async function deleteDraftPage(siteId, pageId) {
     return { deleted: pageId };
   });
 }
+// Private researched-plan reconciliation. Uses the same lock/store as ordinary
+// edits; archived snapshots never enter pages, package export or drafting queues.
+export async function reconcilePrivatePlan(siteId, input) {
+  return locked(async () => {
+    const site = await getSite(siteId);
+    const digest = value => createHash('sha256').update(stable(value)).digest('hex');
+    if (site.canonicalHost !== input.canonicalHost || site.locale !== input.locale) throw new Error('Plan reconciliation: site scope mismatch.');
+    if (!/^[a-f0-9]{64}$/.test(input.sourcePlanSha256 || '') || !/^[a-f0-9]{64}$/.test(input.skillFingerprint || '')) throw new Error('Plan reconciliation: source fingerprints required.');
+    const jobs = await readJson(JOB_FILE, []);
+    if (jobs.some(j => j.siteId === siteId && ['queued', 'running'].includes(j.status))) throw new Error('Plan reconciliation: active site job; wait for its owner.');
+    const requestHash=digest(input),previous=site.planReconciliations?.findLast(r=>r.requestHash===requestHash);
+    const resultHash=()=>{const {planReconciliations,...rest}=site;return digest(rest);};
+    if(previous){if(resultHash()!==previous.resultSiteHash)throw new Error('Plan reconciliation: result changed after prior reconciliation.');return {...previous,replayed:true};}
+    if (digest(site) !== input.expectedSiteHash) throw new Error('Plan reconciliation: site changed; reread before retrying.');
+    const updates = input.updates, retire = input.retire;
+    if (!Array.isArray(updates) || !updates.length || !Array.isArray(retire)) throw new Error('Plan reconciliation: complete updates and retire decisions required.');
+    const kept = new Set(updates.map(x => x.pageId)), removed = new Set(retire.map(x => x.pageId));
+    if (kept.size !== updates.length || removed.size !== retire.length || [...removed].some(id => kept.has(id))) throw new Error('Plan reconciliation: duplicate or conflicting IDs.');
+    if (kept.size !== input.coverageTarget || site.pages.length !== kept.size + removed.size || site.pages.some(p => !kept.has(p.id) && !removed.has(p.id))) throw new Error('Plan reconciliation: every existing page requires one decision.');
+    const byId = new Map(site.pages.map(p => [p.id, p]));
+    for (const decision of retire) {
+      const page = byId.get(decision.pageId);
+      if (!page || !kept.has(decision.targetPageId) || !decision.reason?.trim()) throw new Error('Plan reconciliation: invalid retirement target.');
+      if (page.body.length || page.media.length || page.approval || page.publishedRevision) throw new Error('Plan reconciliation: retirement requires an unwritten, unapproved plan.');
+    }
+    for (const page of site.pages.filter(p => kept.has(p.id))) {
+      const inline = page.body.flatMap(b => b.content || (b.type === 'richList' ? b.items.flat() : []));
+      const referenced = [...(page.links || []).map(x => x.targetPageId), ...(page.editorial?.relatedPageIds || []), ...inline.filter(n => n.type === 'link' && n.target.kind === 'page').map(n => n.target.pageId)];
+      if (referenced.some(id => removed.has(id))) throw new Error('Plan reconciliation: retained content references a retired page.');
+    }
+    const now = new Date().toISOString(), protectedHashes = [];
+    for (const update of updates) {
+      const page = byId.get(update.pageId);
+      if (!page || update.slug !== page.slug || !update.brief || Buffer.byteLength(JSON.stringify(update.brief)) > 262144) throw new Error('Plan reconciliation: stable slug and bounded full brief required.');
+      const protectedPage = Boolean(page.body.length || page.approval || page.publishedRevision);
+      if (protectedPage && update.metadata && Object.keys(update.metadata).length) throw new Error('Plan reconciliation: written/approved revision metadata must be preserved.');
+      const links = update.linkSuggestions || [];
+      if (links.length > 100 || links.some(l => !kept.has(l.targetPageId) || l.targetPageId === page.id || !l.label?.trim() || !l.reason?.trim())) throw new Error('Plan reconciliation: invalid planned links.');
+      const pillar = update.pillarPageId || '';
+      if (pillar && (!kept.has(pillar) || pillar === page.id)) throw new Error('Plan reconciliation: invalid pillar.');
+      const before = protectedPage ? revisionHash(page) : null;
+      // Full evidence/ownership/media/typed targets are private planning data,
+      // separate from rendered body, media and revision/approval metadata.
+      page.planningBrief = { sourcePlanSha256: input.sourcePlanSha256, skillFingerprint: input.skillFingerprint, reconciledAt: now, data: structuredClone(update.brief) };
+      if (!protectedPage) {
+        for (const key of ['title', 'description', 'intent']) if (key in (update.metadata || {})) page[key] = site.schemaVersion === 2 ? losslessString(update.metadata[key], 1000) : plain(update.metadata[key], 300);
+        if ('cluster' in (update.metadata || {})) page.cluster = plain(update.metadata.cluster, 120);
+      }
+      page.pillarPageId = pillar;
+      page.linkSuggestions = links.map(l => ({targetPageId:l.targetPageId,label:plain(l.label,160),reason:plain(l.reason,500)}));
+      page.updatedAt = now;
+      if (before && revisionHash(page) !== before) throw new Error('Plan reconciliation: protected revision changed.');
+      if (before) protectedHashes.push({pageId:page.id,revisionHash:before});
+    }
+    for (const page of site.pages.filter(p => kept.has(p.id))) {
+      const seen = new Set([page.id]);let parent = page.pillarPageId;
+      while (parent) {if (seen.has(parent)) throw new Error('Plan reconciliation: pillar cycle.');seen.add(parent);parent=byId.get(parent).pillarPageId;}
+    }
+    site.retiredPlans = [...(site.retiredPlans || []), ...retire.map(d => ({retiredAt:now,sourcePlanSha256:input.sourcePlanSha256,targetPageId:d.targetPageId,reason:d.reason,page:structuredClone(byId.get(d.pageId))}))];
+    site.pages = site.pages.filter(p => kept.has(p.id));
+    site.contentPolicy = contentPolicy({...site.contentPolicy,cadence:'coverage',coverageTarget:kept.size},site.timezone);
+    site.updatedAt=now;
+    const receipt={id:randomUUID(),appliedAt:now,requestHash,resultSiteHash:resultHash(),sourcePlanSha256:input.sourcePlanSha256,skillFingerprint:input.skillFingerprint,activePages:kept.size,retired:retire.map(d=>({pageId:d.pageId,targetPageId:d.targetPageId,reason:d.reason})),protectedHashes,newGeneration:false,productionDeployed:false};
+    site.planReconciliations = [...(site.planReconciliations || []),receipt];
+    await writeJson(siteFile(siteId),site);
+    return receipt;
+  });
+}
 async function approveDraft(site, page, actorId, batchIds = new Set()) {
     const siteId = site.id;
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });

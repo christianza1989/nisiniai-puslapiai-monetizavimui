@@ -6,7 +6,7 @@
 
 Visos 21 katalogo srities /59 grupių /225 procedūrų ir103 miestų apimtis išlaikyta. Pradiniai300 naujų URL sutikrinti pagal jų pavadinimus, outline ir originalią naudą. Sujungti8 sutampantys reader jobs: liko292 nauji gidai +3 retained revisions, 919 planned links. 288 evergreen parengimo orientyras iki2026-11-24,4 sezonai ir12 peržiūrų iki2027-04-06. Šie skaičiai yra sprendimų rezultatas, ne kvota. Dates lieka planinės, faktiniai gates ir pajėgumas nepakeičiami kalendoriumi.
 
-Vienas tikras privatus B-registracija tekstas ir vaizdas jau sukurti gpt-6-luna /xhigh bei atskiru ImageGen. Jo V2/hash/receipt neperrašyti; tai ne visų planų vykdymas. Ankstesni303 privatūs studijos planai nebuvo slapta pakeisti į295: PLAN.execution.planMigration aiškiai nurodo8 retired unpublished intents ir išlaikomus realius UUID. Approval, runtime href ir naujas production release neatlikti.
+Vienas tikras privatus B-registracija tekstas ir vaizdas jau sukurti gpt-6-luna /xhigh bei atskiru ImageGen. Jo V2/hash/receipt neperrašyti; tai ne visų planų vykdymas. Ankstesni303 privatūs studijos planai suderinti per bendrą model workflow:295 aktyvūs,8 exact retired snapshots išsaugoti privačioje istorijoje su old→target UUID. STUDIO_RECONCILIATION.json patvirtina konkretaus owner-isolated studio būseną ir actual bendro prompt patikrą be generavimo. Brief šaltinis yra ankstesnio peržiūrėto master SHA8b3e618f371e070551cd5f8a3a72e6b10a098699feee969c235053a62b5b7fc9; naujame master papildyta vykdymo būsena ir pataisytas window.target, straipsnių brief apimtis nepasikeitė. Approval, runtime href ir naujas production release neatlikti.
 
 | Sujungta tema | Paliktas atsakymas | Kodėl |
 | --- | --- | --- |
@@ -100,4 +100,4 @@ Mokamų call dabar0. Jei prioritetui būtina užbaigti mišrią užklausą, mini
 
 ## Priėmimo įrodymai
 
-PLAN SHA:8b3e618f371e070551cd5f8a3a72e6b10a098699feee969c235053a62b5b7fc9; SEMANTIC_REVIEW SHA:68dde0b6afcd5135064e6758ee4c264607ee1c9d539badc4a848fcf5fbaa1440; SEO_MAP SHA:5e0959e165755ef11bd41a82ee832ed6447c023ff69ac8871b95cfce765ebe26. VALIDATION.json tikrina struktūrą, remapped IDs, datas,225 vardinius atsakymus, tikrus vendor related įrodymus ir broad-query pataisas. Tai ne klinikinis, Google ranking ar naujo release PASS. Pradinio paketo SHA ir istorinio pilot receipt išsaugoti. Private import actual status papildytas RESEARCH_IMPORT_MANIFEST.json.
+PLAN SHA:06445236596be3b3bfd936ebf7c07103dbc80f593ddb33f698758fe731465070; SEMANTIC_REVIEW SHA:68dde0b6afcd5135064e6758ee4c264607ee1c9d539badc4a848fcf5fbaa1440; SEO_MAP SHA:5e0959e165755ef11bd41a82ee832ed6447c023ff69ac8871b95cfce765ebe26. VALIDATION.json tikrina struktūrą, remapped IDs, datas,225 vardinius atsakymus, tikrus vendor related įrodymus ir broad-query pataisas. Tai ne klinikinis, Google ranking ar naujo release PASS. Pradinio paketo SHA ir istorinio pilot receipt išsaugoti. Private import actual status papildytas RESEARCH_IMPORT_MANIFEST.json.

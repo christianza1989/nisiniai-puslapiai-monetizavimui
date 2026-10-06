@@ -1,0 +1,186 @@
+{
+  "checkedAt": "2026-10-06T22:30:27.631Z",
+  "status": "OWNER_PRIVATE_STUDIO_295_ACTIVE_VERIFIED",
+  "siteId": "madbeauty",
+  "sourcePlanSha256": "8b3e618f371e070551cd5f8a3a72e6b10a098699feee969c235053a62b5b7fc9",
+  "sourceInstructionFingerprint": "87c068b149c46fd13194a51ddd9601eb069c094fb95385ae2b1208ed4b245b39",
+  "transactionId": "25ff5614-fba5-4953-be6a-b13f8fabd8e2",
+  "activePages": 295,
+  "archivedPlans": 8,
+  "coverageTarget": 295,
+  "retired": [
+    {
+      "pageId": "2feb72da-2ff4-4624-a218-fad67bcbca6f",
+      "targetPageId": "2cca02ae-6141-494b-90bb-a358af2c3c4f",
+      "reason": "Pradinė danga, nežinoma sistema, ilgis ir ankstesnis darbas yra tas pats prieš nagų vizitą perduodamos informacijos ruošinys. Gelinio lakavimo išimtis palikti vardiniame skyriuje."
+    },
+    {
+      "pageId": "027741e2-233b-4a4c-853c-c043d6d8e286",
+      "targetPageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+      "reason": "Abu lygina masažo zonas, darbo laiką ir komfortą. Kaklo ir pečių apimtis įtraukiama į vieną zonų žemėlapį; atskiras URL nekurtų naujos užduoties."
+    },
+    {
+      "pageId": "b31fee9c-1f3c-4f09-89ef-5cf40f1b559d",
+      "targetPageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "reason": "Norimas kontūras ir ilgis yra barzdos modeliavimo užduotis. Originalius formos siluetus ir kasdienius kompromisus įtraukti į modeliavimo gidą."
+    },
+    {
+      "pageId": "83a0c66c-ba09-4257-aa8a-89a5841ad2f2",
+      "targetPageId": "76203864-c54f-45f7-86ea-b3794b27a567",
+      "reason": "Abu atsako, kada kosmetinio pedikiūro nepakanka ir reikalingas sveikatos vertinimas. Vizito atidėjimas yra to paties sprendimo dalis; klinikinio algoritmo nekurti."
+    },
+    {
+      "pageId": "cd5b9b1a-a4fa-4626-899d-60e16ff1cfb6",
+      "targetPageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+      "reason": "Vartotojo odos pastebėjimai, priemonės ir ankstesnės reakcijos yra vienos pirmos konsultacijos informacija. Nedaryti atskiro savidiagnostinio odos tipo URL."
+    },
+    {
+      "pageId": "95a0ff18-f4a4-4874-868d-0e17967519e2",
+      "targetPageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "reason": "Universalus po-SPA patarimas neturi vienos produkto instrukcijos. Ritualo komponentų instrukcijos ir pagalbos ribos tampa pagrindinio pasirinkimo gido skyriumi."
+    },
+    {
+      "pageId": "aed445f0-40d3-46f6-88d1-75bcd0a75315",
+      "targetPageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+      "reason": "Bendra rankų ir pėdų SPA priežiūros kortelė priklauso paketo paaiškinimui. Konkretaus parafino bei nagų dangos instrukcijos turi savo metodo savininkus."
+    },
+    {
+      "pageId": "b2966e5e-5ac3-43bd-81b5-102f1070fc2c",
+      "targetPageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+      "reason": "Seanso patirties ir gydymo pažado skirtumas yra tos pačios savijautos paslaugos pasirinkimo ribos; atskiras generinis po-seanso tekstas dubliuotų jas."
+    }
+  ],
+  "pilotRevisionHash": "45b6cc23d2d23566be44f9bb0d96f2326c418473dcc9875f7ced0cf670f450f4",
+  "historicalPilotFilesUnchanged": true,
+  "promptInspection": {
+    "actualSharedHelper": "draftPageData used by draftPage, draftBatch and autopilot",
+    "mergedTargets": [
+      {
+        "pageId": "2cca02ae-6141-494b-90bb-a358af2c3c4f",
+        "editorialId": "MN-pasiruosimas",
+        "sourceIds": [
+          "S01",
+          "S02",
+          "S08",
+          "S07",
+          "S14"
+        ],
+        "outlineSections": 6,
+        "plannedLinks": 5,
+        "promptSha256": "f6af4bf2d8b3c465c057572f23a071cbae143465221b679e57854c529d3ee9c5"
+      },
+      {
+        "pageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+        "editorialId": "MS-nugara-ar-kunas",
+        "sourceIds": [
+          "S25",
+          "S26",
+          "S28",
+          "S29",
+          "S37"
+        ],
+        "outlineSections": 10,
+        "plannedLinks": 2,
+        "promptSha256": "e0f1de23c988babc0e98c627360041f8bbc2ede88cdf1ffaabc8c594d67fa304"
+      },
+      {
+        "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+        "editorialId": "BR-kirpimas-modeliavimas",
+        "sourceIds": [
+          "S56",
+          "S43",
+          "S11"
+        ],
+        "outlineSections": 8,
+        "plannedLinks": 2,
+        "promptSha256": "8d0db62d28b647c994334f8e98a21d8fd9aee60b436ae38acef9409421c023b8"
+      },
+      {
+        "pageId": "76203864-c54f-45f7-86ea-b3794b27a567",
+        "editorialId": "PD-kosmetinis-ar-sveikatos",
+        "sourceIds": [
+          "S32",
+          "S08",
+          "S11",
+          "S29",
+          "S31"
+        ],
+        "outlineSections": 6,
+        "plannedLinks": 3,
+        "promptSha256": "a81784dbb3702d341590be886194efdd778b1553861caa97a4fd07fa82414a72"
+      },
+      {
+        "pageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+        "editorialId": "VP-konsultacija",
+        "sourceIds": [
+          "S27",
+          "S38",
+          "S29",
+          "S30",
+          "S39"
+        ],
+        "outlineSections": 8,
+        "plannedLinks": 2,
+        "promptSha256": "fc6dbcbee86758d02903d97b49cad23524edc80e6a081e62a00131e83e7d70a7"
+      },
+      {
+        "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+        "editorialId": "SP-gidas",
+        "sourceIds": [
+          "S76",
+          "S79",
+          "S64"
+        ],
+        "outlineSections": 10,
+        "plannedLinks": 6,
+        "promptSha256": "9b8df3c78903281bdf5ff856aecc342e8891a57fef3a0dfcde5e0f3bf503140d"
+      },
+      {
+        "pageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+        "editorialId": "RP-gidas",
+        "sourceIds": [
+          "S77",
+          "S08"
+        ],
+        "outlineSections": 8,
+        "plannedLinks": 3,
+        "promptSha256": "b8b2e2a56c2ff0ae52e423d453008bd9f67bf0b506065716a5e27b444ef18a04"
+      },
+      {
+        "pageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+        "editorialId": "SV-gidas",
+        "sourceIds": [
+          "S63",
+          "S81"
+        ],
+        "outlineSections": 9,
+        "plannedLinks": 3,
+        "promptSha256": "748434ed3b134bcdd2ff675e63c84a84deaf0fcb31d980cce7c7d9dd30135cdb"
+      }
+    ],
+    "modelCalls": 0
+  },
+  "activeJobs": 0,
+  "rollback": "Exact private site-before.json and all retired page snapshots retained. Recovery must use the same write lock and conflict checks; no automatic rollback performed.",
+  "generationCalls": 0,
+  "newPaidUsd": 0,
+  "productionDeployed": false,
+  "limits": [
+    "Receipt verifies this owner-isolated private studio at checkedAt, not every clone or tenant.",
+    "Generic V2 generator remains fail-closed; full prompt inspection does not certify a V2 drafting adapter.",
+    "No approval, export, deployment or clinical review."
+  ],
+  "server": {
+    "isolatedPort": 8827,
+    "activeJobsBeforeRestart": 0,
+    "restartedOwnedProcess": true,
+    "currentApi": {
+      "activePages": 295,
+      "archivedPlans": 8,
+      "planningBriefs": 295,
+      "writtenPages": 1,
+      "approvedPages": 0
+    },
+    "scope": "Only owned writing-studio process restarted; fresh shared model/generator loaded. V2 generation remains blocked."
+  }
+}

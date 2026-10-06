@@ -16,7 +16,7 @@
   "window": {
     "start": "2026-10-06",
     "end": "2027-04-06",
-    "target": 303
+    "target": 295
   },
   "completionTarget": "2026-11-24",
   "completionMeaning": "Pradinio evergreen ciklo parengimo tikslas, priklausantis nuo faktinių šaltinių, specialistų, tekstų, medijos ir rendered review. Nėra garantuota darbo pajėgumo ar Google data; parengtas grupes galima išleisti anksčiau.",
@@ -86287,7 +86287,7 @@
     "planBeforeDrafts": true,
     "existingDatesMutable": false,
     "briefSource": "PLAN.json authoritative; V1 transport drops catalogue binding and rich research. Bind real studio IDs and V2 snapshots before drafting/import; do not claim automatic V2 CLI readiness.",
-    "fullMapRequired": "Atnaujinta PLAN.json yra master; ankstesni303 privatūs UUID planai dar nemigruoti. Naujam rengimui taikyti explicit planMigration ir naują actual skill fingerprint.",
+    "fullMapRequired": "Master brief per bendrą DATA lock perduotas295 aktyviems istoriniams UUID;8 retired snapshots ir ryšiai išlaikyti privačioje istorijoje. Generic V2 autopilot dar fail-closed: adapterio, šaltinių/media/review/release vartai lieka atskiri.",
     "gates": [
       "Teiginio šaltinis ir konkretus protokolas",
       "Faktinis tekstas ir originali nauda",
@@ -86307,7 +86307,7 @@
     "planMigration": {
       "oldPrivatePlans": 303,
       "newPlannedTotal": 295,
-      "status": "NOT_APPLIED_TO_PRIVATE_STUDIO",
+      "status": "APPLIED_TO_OWNER_PRIVATE_STUDIO",
       "retire": [
         {
           "oldId": "GL-pasiruosimas",
@@ -86366,7 +86366,13 @@
           "action": "Retire unpublished plan through shared studio workflow; retain history and UUID mapping. No redirect for unpublished slug."
         }
       ],
-      "preserve": "Keep all real legacy IDs, scheduled dates, first pilot and its receipt. Review existing private plan changes before fresh revision; never relabel historical Luna output as generated under new skill."
+      "preserve": "Keep all real legacy IDs, scheduled dates, first pilot and its receipt. Review existing private plan changes before fresh revision; never relabel historical Luna output as generated under new skill.",
+      "receipt": "STUDIO_RECONCILIATION.json",
+      "checkedAt": "2026-10-06T22:30:27.631Z",
+      "appliedSourcePlanSha256": "8b3e618f371e070551cd5f8a3a72e6b10a098699feee969c235053a62b5b7fc9",
+      "activePlans": 295,
+      "archivedPlans": 8,
+      "scope": "Historical verification of the owner-isolated studio at checkedAt, not automatic state restoration in another clone."
     },
     "connectedGroups": [
       {

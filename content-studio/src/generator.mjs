@@ -64,6 +64,14 @@ async function planSite(siteId, months = 0, skill, requestedCount = null) {
   return mergePlan(siteId, result.pages, months);
 }
 
+export function draftPageData(site, page) {
+  return { id: page.id, type: page.type, slug: page.slug, title: page.title, description: page.description,
+    intent: page.intent, reason: page.editorialReason || '', cluster: page.cluster || '', pillarPageId: page.pillarPageId || '',
+    sourceQueries: page.sourceQueries || [], plannedInternalLinks: page.linkSuggestions || [], sourceCandidates: page.externalLinks || [],
+    plannedNetworkLinks: page.networkLinkSuggestions || [],
+    ...(page.planningBrief ? {planningBrief:structuredClone(page.planningBrief)} : {}),
+    availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) };
+}
 async function draftPage(siteId, pageId, skill, jobId=null) {
   const site = await getSite(siteId);
   const page = site.pages.find(item => item.id === pageId);
@@ -71,11 +79,7 @@ async function draftPage(siteId, pageId, skill, jobId=null) {
   const prompt = buildEditorialPrompt(skill, { mode: 'draft',
     instruction: 'Write an original useful first draft for this page in the site locale. Honour its specific intent and actual deliverables. Source candidates remain unverified. Return draft-result.schema.json fields only; self-review and identify precise remaining fact/asset dependencies.',
     siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() },
-    pageData: { id: page.id, type: page.type, slug: page.slug, title: page.title, description: page.description,
-      intent: page.intent, reason: page.editorialReason || '', cluster: page.cluster || '', pillarPageId: page.pillarPageId || '',
-      sourceQueries: page.sourceQueries || [], plannedInternalLinks: page.linkSuggestions || [], sourceCandidates: page.externalLinks || [],
-      plannedNetworkLinks: page.networkLinkSuggestions || [],
-      availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) }
+    pageData: draftPageData(site,page)
   });
   const result = await codexJson(prompt, 'draft-result.schema.json',jobId,pageId);
   if (!Array.isArray(result.blocks)) throw new Error('Codex negrąžino teksto blokų.');

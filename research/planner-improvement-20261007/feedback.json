@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "date": "2026-10-07",
+  "status": "VERIFIED_LOCALLY_AND_APPLIED_TO_PRIMARY",
+  "basis": [
+    {
+      "threadId": "01a112b2-5607-7a42-a1b2-3f68720e5fd1",
+      "site": "dovanos123",
+      "experience": "Head queries needed visible canonical decisions; 361 recipient/occasion pairs did not need 361 URLs. Existing revision identity/import needed a separate handover checkpoint."
+    },
+    {
+      "threadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
+      "site": "madbeauty",
+      "experience": "225 procedures reopened scope; eight semantic merges retained useful answers; full planningBrief/UUID reconciliation and future versus release links needed explicit acceptance."
+    }
+  ],
+  "changes": [
+    "One planning-decision reference: early exact-query map, consequential evidence/alternatives, facet cross-map, revision/brief handover, distinct completion states",
+    "Planning-only automatic loading; required missing reference fails closed; batch instruction snapshots preserved",
+    "Owner-confirmed full scope takes precedence over default narrow pilot; no default publishing quotas",
+    "Actual supplied V1/V2 contract selection; paid acquisition outside read-only JSON jobs",
+    "Personal SEO core mirror synchronized; missing planner discovery junction restored to maintained primary source"
+  ],
+  "verification": {
+    "integrationTests": {
+      "passed": 11,
+      "failed": 0,
+      "scope": "editorial-skill and seo-research integration; both isolated worktree and primary checkout; mocked CLI, no paid calls"
+    },
+    "skillValidation": "Both changed skills passed quick_validate using uv-isolated PyYAML",
+    "changedPrimaryCatalogRecords": "niche-content-planner and niche-seo-geo-core: no issues in actual audit",
+    "primaryLocalLinksVerified": 469,
+    "ownerV2ParagraphsPreserved": true,
+    "personalSeoMirror": "Exact-byte MATCH from primary",
+    "plannerDiscovery": "Junction to maintained primary planner; no separate editable skill fork"
+  },
+  "limitations": [
+    "Full 55-skill audit remains FAIL: 96 pre-existing archive hash discrepancies and 3 other missing core junctions. The example archive's working/HEAD/primary bytes agree and were not changed in this task; historical catalog archive hashes were not rewritten.",
+    "Primary already includes Madbeauty's pending native V2 adapter; main-based PR does not claim that adapter is implemented in main.",
+    "Existing servers must reload the changed loader module through their owner's coordinated restart after jobs finish. Already active jobs retain their instruction snapshots.",
+    "No live ranking/GEO, whole new content plan, publication or model-quality benchmark was claimed. Context reduction beyond plan-only routing remains an evaluation hypothesis."
+  ],
+  "spendUsd": 0,
+  "gitHandoff": "PR22 / ai/planner-retrospective-20261007; source revision assigned at commit"
+}

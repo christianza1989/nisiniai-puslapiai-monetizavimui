@@ -36,4 +36,4 @@ Hypothesis: beginner-friendly project guides. Existing downloads: none.
 
 ## Transfer to a new niche
 
-Infer a narrow initial customer job from the brief, label assumptions and research what readers cannot presently decide. Choose the smallest meaningful set of distinct answers. A technical-products checklist cannot be adapted to a reporting service by substituting nouns; the decisions, evidence, examples, seasonal triggers and next action must change.
+Reconcile the full owner-confirmed scope, label assumptions and research what readers cannot presently decide. Select a useful first release within the complete map. Apply the [facet cross-map rule](planning-decisions.md) only to dimensions that matter in this niche. A technical-products checklist cannot become a reporting-service plan by substituting nouns; decisions, evidence, examples, timing and next action must change.

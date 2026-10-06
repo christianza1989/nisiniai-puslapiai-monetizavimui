@@ -305,3 +305,7 @@ Owner requested improvements from Madbeauty and Dovanos123 planner retrospective
 
 Root PR22 scope implemented: one planning-decisions checkpoint, plan-only loader, version/scope/research boundaries, brief/revision handover and deferred links. Eleven loader/evidence integration tests and both skill validators PASS in isolated/main-based and primary contexts; primary changed catalog records have no issues and personal SEO mirror matches. Planner discovery restored as junction to the maintained primary source. Madbeauty owned native-V2/coverage paragraphs preserved; active jobs keep snapshots. Full audit has pre-existing archive hashes/other discovery issues, recorded in research/planner-improvement-20261007/feedback.json without historical rewrites. No paid research, approval, private content mutation or deployment. Own document/loader window released after Git handoff; foreign V2 writer source remains its owner's scope.
 
+# 2026-10-07 planner revision clarification RESERVED
+
+Root owns only planning-decisions.md clarification and this workstream row: distinguish plan reconciliation from an explicitly requested native V2 editorial revision. Inspected Madbeauty current revise CLI/guard/model/docs; its adapter is separate pending work, so guidance is conditional on the maintained path being present. No writer/schema/approval/data changes.
+

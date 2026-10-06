@@ -4,10 +4,10 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-05T14:06:27Z",
-  "lastResearchDateLocal": "2026-10-05",
-  "lastResearchFile": "research/2026-10-05-scaffold-fee/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-05-scaffold-fee/QA.json",
+  "lastResearchAt": "2026-10-06T10:09:12Z",
+  "lastResearchDateLocal": "2026-10-06",
+  "lastResearchFile": "research/2026-10-06-diagnostic-demand/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-06-diagnostic-demand/QA.json",
   "lastCycleOutcome": "evidence_only_no_new_proposal",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
@@ -65,9 +65,9 @@
     }
   ],
   "researchContinuity": {
-    "completed": "Scaffolding M1 supplier-side economics reviewed against three primary LT/UK sources. A paid contact is not a won job; Bark credit returns are limited and conditional. LT supplier offers free manager help. Existing BUSINESS already covers payer agreement and M2 alternative. Two hypothetical provider contribution/fee-ceiling scenarios recalculated; actual demand/margins/willingness unknown. No new idea. Latest root GitHub/Madbeauty and core autonomy decisions reviewed; pending experiments unchanged. Registry research prepared in isolated Git branch/PR according to new multi-machine contract; original checkout modifications untouched.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision",
-    "nextCandidateQuestion": "Check current main and the research PR/worktree continuity before repeating a question. Review direct owner approvals first. Then choose a distinct existing-niche demand/monetization question only where evidence could change its experiment. Keep private registry changes in their own branch/PR; do not duplicate Madbeauty, core learning or deferred metalo-tvoros work.",
+    "completed": "Auto diagnostic demand reviewed using three primary provider claims from four opened HTML URLs. Paid planned recurring-symptom diagnosis is distinct from a free battery tester request. Kemi Vilnius/Kaunas starting price is not our revenue; Dagas Kaunas and Akumai Klaipeda free tests do not prove a Vilnius offer. Existing BUSINESS/ACQUISITION already require willingness to consider paid diagnosis, so no new proposal. Three future qualification cases described, not executed. Root Madbeauty/rules and core calibration decisions reviewed; pending scopes unchanged. PR1 remains open; continuing its isolated owned research branch while main continuity is older.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence",
+    "nextCandidateQuestion": "Read main and attached PR1/worktree continuity first; avoid repeating an unmerged study. Review actual approvals before any experiment implementation. Otherwise inspect one distinct, decision-changing commercial question in an existing niche. Keep private research in its owned Git branch/PR and preserve other executors ownership.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
     "executionScope": "Research and private registry only; BDEV-0003-P1 and P2 remain proposed. Strategic autonomy direction does not approve these experiment scopes; no local export/restore prototype executed"
   },

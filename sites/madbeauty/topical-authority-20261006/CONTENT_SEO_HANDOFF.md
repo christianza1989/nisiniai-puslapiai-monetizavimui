@@ -88,3 +88,14 @@ Platformos sesijos `VALIDATION.md` pateikia 89/89 regresijos ir izoliuoto synthe
 Visos 225 treatment procedūros, 59 grupės ir 21 sritis sutikrintos su konkretaus straipsnio ID bei vardiniu skyriumi: PROCEDURE_COVERAGE.json. PLAN.json apima 300 naujų gidų, 3 esamų gidų atnaujinimus ir 940 suplanuotų redakcinių ryšių. Straipsniai turi planned catalogue target ID iš exact foundation registry; pasirinktas miestas nėra automatiškai Vilnius. Papildomai atlikta 730 frazių Google Ads apimčių, 33 susijusių užklausų grupių ir 60 Google organic imčių per treg / DataForSEO LT rinkai. SEO_MAP.json atskiria informacinį straipsnį nuo local komercinio filtro.
 
 Šis planavimo priėmimas nepatvirtina tekstų, media, ekspertų review, studijos ID roundtrip ar gyvų href. Prieš vykdymą lieka konkreti private studio/V2 įrašymo ir importo patikra. Būsimus planuojamus URL nepradėti rodyti kaip veikiančių ar indeksuojamų rezultatų.
+
+
+## Gyvas siauras platformos release — 2026-10-07
+
+Savininko prašymu platformos sesija įdiegė siaurą turinio pagrindą, platesnis upgrade liko pauzėje. Jos source handoff d345668b4568670056964f315f07f6492d2d1968 / PR21, deployed runtime797a2a27dc5724f7efa06993c0fd34c030a8f616, Worker3ef780b8-bfde-436d-ae01-f2cb1f842e80. Tai platformos sesijos deployment įrašai, ne šios turinio sesijos pakartotas92testų matavimas. Patvirtintas pradinis V1paketas nepakito.
+
+Ši turinio sesija savarankiškai patikrino actual/content-targets.json200no-store, visų305plannedregistroID sutapimą,257nationalready/48planned/0localready/indexEligible0. Dviejų nacionalinių puslapių HTTP200, fullHTML/H1/canonical/noindex ir103cityoptions patikrinti; vienas emptyVilnius404 ircatalogue URL nebuvimas sitemap patikrinti. LIVE_TARGET_REVIEW.json turi datą, rawSHA irimtiesribas. National functionalhref gali naudoti tik exact real target ircurrentregistry. Ši patikra nepatvirtina visų257route mūsų sesijoje, Google ranking ar realios pasiūlos.
+
+Privatus102observationSEO import atnaujintas perbendrą adapterį:94exactpaidresponse/request pairs pakartotinai patikrinti be naujų mokamų užklausų;11actualHTTPbodybytes išsaugoti ircopiedsourceenvelopeSHA patikrinti. Naujas prompt research nebeturi oldresolver404 kaipcurrentfact. Istorinis pirminis404audit nepaverstas klaida ar perrašyta generavimo istorija.
+
+Studija295active/8archived/fullplanningBrief yra atskirai priimta. GenericrichV2writing adapteris ir actual reviewed full V2release lieka vartai:exactlyoneapprovedhome, visi paketo referenced/retained puslapiai, realios autoriaus/šaltinių/media peržiūros irimmutableexport. Nereikia generuoti dar kartą pirmoLunapiloto ar automatiškai pervadinti V1approvals įV2. Iki scheduled2026-10-13irvisųvartų pilotobody/media/sitemap nėra vieši.

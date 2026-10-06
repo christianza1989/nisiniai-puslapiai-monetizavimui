@@ -54,7 +54,7 @@ Mezoterapija turi national/mixed service owner ir ES-mezoterapija-biorevitalizac
 
 ## Private import ir aktualumas
 
-102 stebėjimai importuoti per bendrą content-studio/scripts/seo-research.mjs į atskirą madbeauty-writing-studio-20261007 tenant data. Status: available; current kinds: keywords, serp, crawl, source; missing kinds: backlinks, geo, analytics. Imported manifest SHA:7b7eaad226d81b8036e1fea0bc94da754df6f692f9757dbd5322902735d593b5. Žali provider ir request bytes lieka privatūs, pilni atsakymai ir SHA išsaugoti; prompt value imtys sutrumpintos tik dėl256KiB adapterio ribos, ne pakeistos kitais duomenimis.
+102 stebėjimai importuoti per bendrą content-studio/scripts/seo-research.mjs į atskirą madbeauty-writing-studio-20261007 tenant data. Status: available; current kinds: keywords, serp, crawl, source; missing kinds: backlinks, geo, analytics. Imported manifest SHA:57a20b6a5f88fec1d23921fa9ccd75e698bd460320ee8a2b80844c8b3366c2c9. Žali provider ir request bytes lieka privatūs, pilni atsakymai ir SHA išsaugoti; prompt value imtys sutrumpintos tik dėl256KiB adapterio ribos, ne pakeistos kitais duomenimis.
 
 Keyword original acquisition tiksli valanda nebuvo išsaugota. observedAt įvardytas kaip dabartinis vietinis raw bytes skaitymas, originalAcquisitionDate=2026-10-06, originalAcquisitionInstant=null, replay=true. Underlying vendor updatedAt /monthly arrays išsaugoti. SERP turi actual original datetime. Pakartotinis importas nėra naujas nepriklausomas sample ar GEO baseline.
 
@@ -67,16 +67,18 @@ Current reiškia sutampančius bytes/locale ir galiojantį pasirinktą review wi
 | / | 200 | <meta name="robots" content="index,follow"> | Madbeauty — Grožio laikas. Tavo ritmu. · Madbeauty |
 | /robots.txt | 200 | nėra HTTP signalo | text/plain; charset=utf-8 |
 | /sitemap.xml | 200 | nėra HTTP signalo | application/xml; charset=utf-8 |
-| /content-targets.json | 404 | noindex | Numatytas naujas CTA dar neparengtas |
+| /content-targets.json | 200 | noindex | Veikia current nacionalinis browse resolveris; local-ready nėra |
 | /paslaugos | 200 | noindex | Grožio paslaugos · Madbeauty |
 | /gidai | 200 | <meta name="robots" content="index,follow"> | Grožio gidai prieš vizitą · Madbeauty |
 | /registracija | 404 | noindex | Puslapis nerastas · Madbeauty |
 | /paskyra | 200 | noindex | Prisijunk el. paštu · Madbeauty |
 | /meistrui/pradzia | 200 | noindex | Pradėk kaip meistras · Madbeauty |
-| /paslaugos/kirpimai-moteru-kirpimas/vilnius | 404 | noindex | Numatytas naujas CTA dar neparengtas |
+| /paslaugos/kirpimai-moteru-kirpimas/vilnius | 404 | noindex | Tuščias vietinis rezultatas, href neparengtas |
 | /meistrams | 200 | noindex | Daugiau laiko tavo darbui · Madbeauty |
 
-Tai11 bounded GET, ne exhaustive crawl. Viešas /paslaugos yra200/noindex HTML shell; naujas resolveris ir tikrintas moterų kirpimo Vilniuje adresas404/noindex. /paskyra ir /meistrui/pradzia pasiekiami200/noindex, tačiau auth, el. pašto pristatymas, approved provider ir booking projection čia nepriimti. Bare /registracija404 yra tuščias adresas be pasirinktos paslaugos, ne viso rezervavimo variklio neveikimo įrodymas. Šių kelių negalima reklamuoti kaip patikrintos veikiančios rezervacijos.
+Tai 11 bounded GET, ne exhaustive crawl. Po platformos siauro release resolveris grąžina 200/no-store, /paslaugos turi nacionalinį SSR naršymą. Actual registras nurodo 257 nacionalinius functional-ready ir 48 planned plėtinius, 0 local-ready / indexEligible0. Šios sesijos papildomai patikrinti du nacionaliniai 200/H1/canonical/noindex puslapiai su 103 miestų pasirinkimais ir vienas tuščias Vilnius404: [LIVE_TARGET_REVIEW.json](LIVE_TARGET_REVIEW.json). National href leidžiamas tik pagal exact fresh registry; archyvuotas snapshot nepakeičia runtime aktualumo. /paskyra ir /meistrui/pradzia pasiekiami200/noindex, tačiau auth, el. pašto pristatymas, approved provider ir booking projection čia nepriimti. Bare /registracija404 yra tuščias adresas be pasirinktos paslaugos, ne viso rezervavimo variklio neveikimo įrodymas. Šių kelių negalima reklamuoti kaip patikrintos veikiančios rezervacijos.
+
+Privatus 102-observation import atnaujintas per bendrą adapterį: originalūs 94 paid request/response byte pairs išlaikyti, 11 naujai gautų public HTTP body bytes papildomai išsaugoti bei patikrinti source envelope. Naujas prompt research nebenaudoja seno resolver404 kaip dabartinio fakto. Istorinis pradinis auditas ir generation receipt nepakeisti. V2 naujo straipsnio viešam išleidimui dar reikia actual reviewed approved home, visų retained/reference puslapių ir media immutable release; V1 approval istorijos negalima automatiškai pervadinti į V2.
 
 Skaitytojo kelias: gido atsakymas → atitinkama tikra procedūra/grupė → aiškiai pasirinktas miestas → approved real provider pasiūlymas → tikras serverio patvirtintas booking. Meistro kelias: meniu/grafiko/galerijos brief → tikra meistro informacija ir email-only account entry → darbo vieta → realūs variantai, grafikas, profilis → moderuotas viešas pasiūlymas. Planned commerce targets lieka false iki fresh resolver; nenaudoti owned future URL kaip external bypass.
 

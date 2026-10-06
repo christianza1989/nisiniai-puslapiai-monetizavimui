@@ -1,6 +1,6 @@
 // Read existing paid responses, capture a bounded public baseline, and build a private bundle.
 // Never authenticates to or calls a paid research provider. Raw bytes stay outside Git.
-import {readFileSync,writeFileSync,mkdirSync,copyFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -12,7 +12,6 @@ const sha=b=>createHash('sha256').update(b).digest('hex');
 const read=f=>JSON.parse(readFileSync(path.join(dir,f),'utf8'));
 const now=new Date().toISOString(),observations=[];
 function artifact(name,bytes){writeFileSync(path.join(output,name),bytes);return{artifact:name,sha256:sha(bytes)};}
-function preserve(name){const b=readFileSync(path.join(dir,'keyword-research',name));return artifact('raw/'+name,b);}
 function instant(s){return s?.replace(' ','T').replace(' +00:00','Z');}
 for(const file of ['volume-lt-clean.json',...Array.from({length:33},(_,i)=>`ideas-${String(i+1).padStart(2,'0')}.json`),...Array.from({length:60},(_,i)=>`serp-${String(i+1).padStart(2,'0')}.json`)]){
  const raw=read('keyword-research/'+file),task=raw.result.tasks[0],request=read('keyword-research/'+file.replace('.json','.request.json'));
@@ -34,8 +33,11 @@ const baseline=await Promise.all(paths.map(async(p,i)=>{
  return{path:p,url:r.url,status:r.status,observedAt:new Date().toISOString(),source,bytes:b.length,contentType:r.headers.get('content-type'),xRobots:r.headers.get('x-robots-tag'),title:s.match(/<title>(.*?)<\/title>/s)?.[1]??null,canonical:s.match(/<link[^>]*rel="canonical"[^>]*>/)?.[0]??null,robots:s.match(/<meta[^>]*name="robots"[^>]*>/)?.[0]??null,hrefs:[...new Set([...s.matchAll(/href="([^"]+)"/g)].map(m=>m[1]).filter(x=>x.startsWith('/')))].slice(0,35)};
  }catch(e){return{path:p,error:e.message,observedAt:new Date().toISOString()};}
 }));
-const baselineSource=artifact('public-baseline.json',JSON.stringify(baseline,null,2)+'\n');
-observations.push({id:'public-baseline',kind:'crawl',status:'observed',observedAt:new Date().toISOString(),freshUntil:'2026-10-08T20:00:00Z',country:'LT',language:'lt',source:baselineSource,value:baseline.map(({source,hrefs,...x})=>x),limitations:'Eleven bounded GET requests only. HTTP success does not prove indexing, real providers, login/booking delivery or deployment of the full foundation. Saved actual HTML/robots/sitemap bytes. No exhaustive crawl. One-day freshness is a release planning check.'});
+const registryResponse=baseline.find(x=>x.path==='/content-targets.json');
+let catalogueReadiness=null;
+if(registryResponse?.status===200){const r=JSON.parse(readFileSync(path.join(output,registryResponse.source.artifact),'utf8'));catalogueReadiness={deployed:r.deployed,generatedAt:r.generatedAt,expiresAt:r.expiresAt,routes:r.routes.length,readyNational:r.routes.filter(x=>x.status==='ready'&&!x.cityId).length,plannedNational:r.routes.filter(x=>x.status==='planned'&&!x.cityId).length,readyLocal:r.routes.filter(x=>x.status==='ready'&&x.cityId).length,indexEligible:r.routes.filter(x=>x.indexEligible).length,meaning:'National functional browse noindex; local href requires actual current approved supply. Runtime registry expires, not permanent readiness.'};}
+const baselineSource=artifact('public-baseline.json',JSON.stringify({format:'bounded-public-http-evidence/v1',pages:baseline,catalogueReadiness,bodies:baseline.filter(x=>x.source).map(x=>({path:x.path,sha256:x.source.sha256,base64:readFileSync(path.join(output,x.source.artifact)).toString('base64')}))},null,2)+'\n');
+observations.push({id:'public-baseline',kind:'crawl',status:'observed',observedAt:new Date().toISOString(),freshUntil:'2026-10-08T20:00:00Z',country:'LT',language:'lt',source:baselineSource,value:{pages:baseline.map(({source,hrefs,...x})=>x),catalogueReadiness},limitations:'Eleven bounded GET requests only. HTTP success does not prove indexing, real providers or login/booking delivery. Actual response bytes are retained in the source envelope; catalogue readiness is a sampled current registry observation and expires. No exhaustive crawl. One-day freshness is a release planning check.'});
 const ownerBytes=readFileSync(new URL('../BUSINESS.md',import.meta.url));
 observations.push({id:'owner-business-contract',kind:'source',status:'observed',observedAt:new Date().toISOString(),freshUntil:'2026-11-06T20:00:00Z',country:'GLOBAL',language:'und',source:artifact('owner-business-contract.txt',ownerBytes),value:{scope:'Latest 2026-10-06 full local email-only provider-to-client implementation authorization; full catalogue owner scope. Earlier nail-only/backend-later notes are historical.',currentPublicReadiness:'Separate baseline; no proof of real supply or email delivery in this audit.'},limitations:'Local owner business contract is evidence of authorized scope, not a vendor keyword observation or a clinical approval. Read newest entries first; preserve historical context.'});
 for(const [id,url] of [['google-helpful','https://developers.google.com/search/docs/fundamentals/creating-helpful-content'],['google-ai-guide','https://developers.google.com/search/docs/fundamentals/ai-optimization-guide'],['google-ai-features','https://developers.google.com/search/docs/appearance/ai-features']]){

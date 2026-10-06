@@ -18,7 +18,12 @@ for(const o of result.observations.filter(o=>o.callId)){
  cost+=o.chargedUsd;calls++;
 }
 assert.equal(calls,94);assert.equal(rows,730);assert.equal(related,931);assert.ok(Math.abs(cost-0.71772)<1e-9);
+const baseline=result.observations.find(o=>o.id==='public-baseline'),httpEvidence=JSON.parse(artifactBytes(siteDirectory,baseline.source.artifact));
+assert.equal(httpEvidence.format,'bounded-public-http-evidence/v1');assert.equal(httpEvidence.bodies.length,11);
+for(const b of httpEvidence.bodies){assert.equal(sha(Buffer.from(b.base64,'base64')),b.sha256);assert.equal(httpEvidence.pages.find(p=>p.path===b.path).source.sha256,b.sha256);}
+assert.equal(httpEvidence.pages.find(p=>p.path==='/content-targets.json').status,200);assert.equal(baseline.value.catalogueReadiness.readyNational,257);assert.equal(baseline.value.catalogueReadiness.readyLocal,0);
 const manifest=JSON.parse(readFileSync(new URL('RESEARCH_IMPORT_MANIFEST.json',dir),'utf8'));
 manifest.sharedImport={status:result.status,evidenceSha256:result.evidenceSha256,currentKinds:result.currentKinds,missingKinds:result.missingKinds,observations:result.observations.length,privateStudio:'madbeauty-writing-studio-20261007',paidExecution:result.paidExecution,newPaidUsd:0,exactBytePairsVerified:calls,responseAndRequestHashesVerified:true,assessedAt:result.assessedAt,freshSamples:result.observations.filter(x=>x.freshSample).map(x=>x.id),replayedProviderSamples:calls};
+manifest.sharedImport.publicHttpBodiesVerified=11;manifest.sharedImport.catalogueReadiness=baseline.value.catalogueReadiness;
 writeFileSync(new URL('RESEARCH_IMPORT_MANIFEST.json',dir),JSON.stringify(manifest,null,2)+'\n');
 console.log(JSON.stringify({status:result.status,observations:102,exactBytePairsVerified:calls,volumeRows:rows,relatedRows:related,historicalPaidUsd:Number(cost.toFixed(5)),newPaidUsd:0,evidenceSha256:result.evidenceSha256}));

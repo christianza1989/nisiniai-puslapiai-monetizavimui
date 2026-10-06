@@ -1,5 +1,9 @@
 # Facebook kanalas visam nišų tinklui
 
+2026-10-07 v2: aktualus roadmapas ir jo [PROFIT_ENGINE](research/facebook-agent-phonebridger-2026-10-07/PROFIT_ENGINE.md) prideda originalų Page kalendorių, Page-as-group tapatybę, komentarų aptarnavimą ir weekly contribution review. Tai planuojama plėtra, ne jau priimtas Page/grupių runtime. Senesnė žemiau esanti architektūra / ribos išlaikomos.
+
+2026-10-07 vykdymo tęsinys: [aktualus FB_AGENT_ROADMAP](FB_AGENT_ROADMAP.md) turi etapų checkboxus, esamos implementacijos ribas, transporto priėmimą, kalibravimą ir pirmą PhoneBridger pilotą. Žemiau paliekamas ankstesnis architektūros / autorizacijos kontekstas; jis neįrodo naujų gyvų adapterių. Naujo roadmapo parengimas jų neįjungia.
+
 2026-10-01. **Po savininko pavedimo įgyvendintas atskiras privatus FB core modulis, per-nišos įjungimas, GUI, patvari eilė ir ribotas Codex CLI generavimas. Gyvas rinkimas, Page webhook, siuntimas ir nuolatinis stebėjimas neprijungti.** Faktinis šios pakopos kodas / naudojimas / ribos: [FACEBOOK_MODULE](agent-business-core/FACEBOOK_MODULE.md), [priėmimas](research/facebook-module-2026-10-01/QA.md). Žemiau aprašyta tikslinė architektūra nėra visų jos adapterių veikimo įrodymas. Šis dokumentas papildo [ACQUISITION_CORE](ACQUISITION_CORE.md), o ne kuria antrą CRM. Faktinė paskyros / grupių peržiūra ir aktualūs Meta šaltiniai: [tyrimas](research/facebook-acquisition-2026-10-01/RESEARCH.md). Vykdymo instrukcija: [acquisition skill FB priedas](SKILLS/niche-client-acquisition/references/facebook.md).
 
 ## Sprendimas dėl vienos paskyros

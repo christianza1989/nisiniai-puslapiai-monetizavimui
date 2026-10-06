@@ -1,0 +1,455 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/antakiai-gidas",
+      "title": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+      "description": "Antakių forma, spalva ir plaukelių kryptis sprendžiamos skirtingomis paslaugomis. Palyginkite korekcijos, dažymo ir laminavimo paskirtį bei eigą.",
+      "intent": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+      "reason": "Forma ir spalva; Plaukelių kryptis; Paslaugų deriniai ir eiga; Antakių formos konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Trijų skirtingų estetinių tikslų schema. Pilnas brief: topical-authority-20261006/PLAN.json#AN-gidas",
+      "cluster": "Antakių priežiūra",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+        "https://www.treatwell.lt/salonas/laminuota-brows-lashes/",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/auskaru-verimas-gidas",
+      "title": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+      "description": "Auskarų vėrimo: vieta, papuošalas, eiga ir priežiūros planas. Gide: vėrimo vieta ir pradinė informacija; specialisto ir aplinkos patikra; vizito eiga bei priežiūros ribos.",
+      "intent": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+      "reason": "Vėrimo vieta ir pradinė informacija; Specialisto ir aplinkos patikra; Vizito eiga bei priežiūros ribos; Auskaro vėrimo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Paslaugos užduoties ir dokumentų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#AV-gidas",
+      "cluster": "Auskarų vėrimas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+        "https://www.nhs.uk/conditions/infected-piercings/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/bendri-gidas",
+      "title": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas",
+      "description": "Grožio paslaugos pasirinkimas. Gide: paslauga ir norimas rezultatas; kur rasti kategorijos paaiškinimą; kas patvirtina pasiūlymą.",
+      "intent": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas",
+      "reason": "Paslauga ir norimas rezultatas; Kur rasti kategorijos paaiškinimą; Kas patvirtina pasiūlymą. Nauda: Visų 21 patvirtintos katalogo srities pasirinkimų žemėlapis, atskiriant 14 grožio ir 7 planuojamų plėtinių kompetenciją. Pilnas brief: topical-authority-20261006/PLAN.json#B-gidas",
+      "cluster": "Registracija, sauga ir meistrai",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas",
+        "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienos-gidas",
+      "title": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+      "description": "Blakstienų paslaugų: dažymas, laminavimas ir priauginimas. Gide: natūrali blakstiena ir pridedamas plaukelis; spalva ir kryptis; skirtingų paslaugų eiga.",
+      "intent": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+      "reason": "Natūrali blakstiena ir pridedamas plaukelis; Spalva ir kryptis; Skirtingų paslaugų eiga. Nauda: Trijų tikslų ir darbų komponentų schema. Pilnas brief: topical-authority-20261006/PLAN.json#BL-gidas",
+      "cluster": "Blakstienų priežiūra",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/",
+        "https://nouveaulashes.com/eyelash-treatment-aftercare/lvl-lashes-aftercare"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/barzda-vyrams-gidas",
+      "title": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+      "description": "Vyrų grožio paslaugų: kirpimas, barzda, dažymas, oda ir depiliacija. Gide: paslaugos pagal tikslą; kirpimas ir barzda atskirai; kur tęsti konkretaus metodo pasirinkimą.",
+      "intent": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+      "reason": "Paslaugos pagal tikslą; Kirpimas ir barzda atskirai; Kur tęsti konkretaus metodo pasirinkimą; Barzdos dažymas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Vyrų paslaugų kelio schema su nuorodomis į bendrus metodų gidus. Pilnas brief: topical-authority-20261006/PLAN.json#BR-gidas",
+      "cluster": "Barzda ir vyrų paslaugų pasirinkimas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+        "https://www.treatwell.lt/salonas/gargzdu-barzdaskuciai/",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/depiliacija-gidas",
+      "title": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+      "description": "Depiliacijos: vaškas, cukraus pasta, zonos ir vizito eiga. Gide: plaukelio pašalinimo principas; metodas ir zona; vizito eiga bei komfortas.",
+      "intent": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+      "reason": "Plaukelio pašalinimo principas; Metodas ir zona; Vizito eiga bei komfortas; Plaukų šalinimo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Metodo ir zonos pasirinkimų schema. Pilnas brief: topical-authority-20261006/PLAN.json#DP-gidas",
+      "cluster": "Depiliacija vašku ir cukrumi",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://www.treatwell.lt/salonas/depiliacija/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-dazymas-gidas",
+      "title": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+      "description": "Plaukų dažymo: spalva, technika ir ankstesnio dažymo istorija. Gide: spalva ir pašviesinimas; darbų zonos; konsultacija ir realios pokyčio ribos.",
+      "intent": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+      "reason": "Spalva ir pašviesinimas; Darbų zonos; Konsultacija ir realios pokyčio ribos; Vyrų paslaugos: konkretus tikslas ir meniu apimtis, be metodo dubliavimo pagal lytį. Nauda: Dažymo sprendimų medis pagal pradinę būklę. Pilnas brief: topical-authority-20261006/PLAN.json#DZ-gidas",
+      "cluster": "Plaukų dažymas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/estetika-gidas",
+      "title": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija",
+      "description": "Estetinės procedūros. Gide: procedūros tikslas bei poveikio būdas; odos būklės įvertinimas; licencijos ir konsultacijos apimtis.",
+      "intent": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija",
+      "reason": "Procedūros tikslas bei poveikio būdas; Odos būklės įvertinimas; Licencijos ir konsultacijos apimtis; Estetinių procedūrų konsultacija: metodo paskirtis ir konkreti paslaugos apimtis; Odos būklės profesionalus įvertinimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Paskirties ir kompetencijos lentelė be procedūros skyrimo. Pilnas brief: topical-authority-20261006/PLAN.json#ES-gidas",
+      "cluster": "Estetinės procedūros ir medicininė riba",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/microneedling-devices",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/dermal-fillers-soft-tissue-fillers",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/fizinis-aktyvumas-gidas",
+      "title": "Treniruotės pasirinkimas: individualus, grupinis, pilateso ar jogos formatas",
+      "description": "Treniruotės pasirinkimas. Gide: tikslas ir pradinis pajėgumas; individualus bei grupinis dėmesys; pilatesas joga ir programos apimtis.",
+      "intent": "Treniruotės pasirinkimas: individualus, grupinis, pilateso ar jogos formatas",
+      "reason": "Tikslas ir pradinis pajėgumas; Individualus bei grupinis dėmesys; Pilatesas joga ir programos apimtis; Asmeninė treniruotė: metodo paskirtis ir konkreti paslaugos apimtis; Grupinė treniruotė: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Keturių formatų pasirinkimo matrica pagal tikslą ir praktines sąlygas. Pilnas brief: topical-authority-20261006/PLAN.json#FX-gidas",
+      "cluster": "Sportas ir judėjimas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Treniruotės pasirinkimas: individualus, grupinis, pilateso ar jogos formatas",
+        "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+        "https://www.nccih.nih.gov/health/yoga-effectiveness-and-safety",
+        "https://www.nhs.uk/live-well/exercise/pilates-and-yoga/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/gelinis-lakavimas-gidas",
+      "title": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+      "description": "Gelinio lakavimo: kas tai, kaip atliekamas ir kaip prižiūrėti. Gide: danga ir natūralus nagas; padengimo etapai; rezultato ir priežiūros ribos.",
+      "intent": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+      "reason": "Danga ir natūralus nagas; Padengimo etapai; Rezultato ir priežiūros ribos; Paprastas nagų lakavimas: metodo paskirtis ir konkreti paslaugos apimtis; Gelinis lakavimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Dangos sluoksnių iliustracija, ne procedūros mokymas. Pilnas brief: topical-authority-20261006/PLAN.json#GL-gidas",
+      "cluster": "Gelinis lakavimas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/gyvunai-gidas",
+      "title": "Gyvūno kirpimas ir kailio priežiūra: šuns, katės ir veterinaro poreikiai",
+      "description": "Gyvūno kirpimas ir kailio priežiūra: šuns, katės ir veterinaro poreikiai. Gide: rūšis kailio tipas ir komfortas; kirpimas maudymas bei nagai; grožio paslaugos ir veterinaro riba.",
+      "intent": "Gyvūno kirpimas ir kailio priežiūra: šuns, katės ir veterinaro poreikiai",
+      "reason": "Rūšis kailio tipas ir komfortas; Kirpimas maudymas bei nagai; Grožio paslaugos ir veterinaro riba; Šunų kirpimas: metodo paskirtis ir konkreti paslaugos apimtis; Gyvūnų maudymas: metodo paskirtis ir konkreti paslaugos apimtis; Gyvūno kailio priežiūros konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Gyvūno vizito apimties matrica be žmonių kosmetikos pritaikymo. Pilnas brief: topical-authority-20261006/PLAN.json#GY-gidas",
+      "cluster": "Gyvūnų priežiūra",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Gyvūno kirpimas ir kailio priežiūra: šuns, katės ir veterinaro poreikiai",
+        "https://www.rspca.org.uk/adviceandwelfare/pets/cats/health/grooming",
+        "https://www.rspca.org.uk/adviceandwelfare/pets/dogs/health/grooming"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/idegis-gidas",
+      "title": "Purškiamas įdegis ir soliariumas: skirtingi metodai ir sveikatos ribos",
+      "description": "Purškiamas įdegis ir soliariumas: skirtingi metodai ir sveikatos ribos. Gide: kosmetinė spalva ir uv poveikis; paslaugos eiga bei apimtis; sveikatos ir įrodymų ribos.",
+      "intent": "Purškiamas įdegis ir soliariumas: skirtingi metodai ir sveikatos ribos",
+      "reason": "Kosmetinė spalva ir UV poveikis; Paslaugos eiga bei apimtis; Sveikatos ir įrodymų ribos; Purškiamas įdegis: metodo paskirtis ir konkreti paslaugos apimtis; Soliariumas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Kosmetinės spalvos ir UV metodų palyginimo schema. Pilnas brief: topical-authority-20261006/PLAN.json#IG-gidas",
+      "cluster": "Įdegio paslaugos",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Purškiamas įdegis ir soliariumas: skirtingi metodai ir sveikatos ribos",
+        "https://www.fda.gov/cosmetics/cosmetic-products/sunless-tanners-bronzers",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-priminimas-saugiai-naudotis-soliariumu-1eOm/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kuno-prieziura-gidas",
+      "title": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+      "description": "Kūno priežiūros: odos procedūros, įvyniojimai ir aparatų paskirties ribos. Gide: priežiūra ir estetinis tikslas; rankinis ar aparatinis komponentas; vizito eiga ir medicininė riba.",
+      "intent": "Kūno priežiūros procedūrų gidas: kosmetinė priežiūra, metodai ir lūkesčiai",
+      "reason": "Priežiūra ir estetinis tikslas; Rankinis ar aparatinis komponentas; Vizito eiga ir medicininė riba; Nugaros odos priežiūra: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Tikslų bei komponentų žemėlapis. Pilnas brief: topical-authority-20261006/PLAN.json#KP-gidas",
+      "cluster": "Kūno priežiūra ir estetinės procedūros",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/non-invasive-body-contouring-technologies",
+        "https://www.treatwell.lt/salonai/procedura-kuno-ivyniojimai/pasiulymo-tipas-vietinis/kur-lietuva/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kirpimas-gidas",
+      "title": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga",
+      "description": "Rinkdamiesi kirpimą palyginkite plaukų tekstūrą, norimą kontūrą ir kasdienį formavimą. Sužinokite, kaip apibrėžti konsultacijos ir kirpimo užduotį.",
+      "intent": "Kirpimo gidas: forma, plaukų tekstūra ir paslaugos eiga",
+      "reason": "Ko tikėtis iš konsultacijos; Forma ir tekstūra; Kirpimas bei užbaigimas; Moterų kirpimas: metodo paskirtis ir konkreti paslaugos apimtis; Kirpimo pasirinkimas pagal veido formą, tekstūrą ir kasdienio formavimo poreikį. Nauda: Kirpimo sprendimo schema, ne veido formų stereotipai. Pilnas brief: topical-authority-20261006/PLAN.json#KR-gidas",
+      "cluster": "Kirpimas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kineziterapija-gidas",
+      "title": "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas",
+      "description": "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas. Gide: profesionalus įvertinimas; individualaus ir grupinio darbo paskirtis; skirtumas nuo poilsio masažo.",
+      "intent": "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas",
+      "reason": "Profesionalus įvertinimas; Individualaus ir grupinio darbo paskirtis; Skirtumas nuo poilsio masažo; Kineziterapeuto konsultacija: metodo paskirtis ir konkreti paslaugos apimtis; Individuali kineziterapija: metodo paskirtis ir konkreti paslaugos apimtis; Kineziterapijos grupinis užsiėmimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Kineziterapijos paslaugų formato ir tikslo schema. Pilnas brief: topical-authority-20261006/PLAN.json#KT-gidas",
+      "cluster": "Kineziterapija",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas",
+        "https://www.nhs.uk/tests-and-treatments/physiotherapy/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-salinimas-lazeriu-gidas",
+      "title": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+      "description": "Plaukų šalinimo lazeriu: metodas, konsultacija ir rezultatų ribos. Gide: poveikio principas; konsultacija ir pradinė informacija; vizito eiga bei individualus planas.",
+      "intent": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+      "reason": "Poveikio principas; Konsultacija ir pradinė informacija; Vizito eiga bei individualus planas; Plaukų šalinimas lazeriu: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Pasirinkimo ir konsultacijos schema. Pilnas brief: topical-authority-20261006/PLAN.json#LZ-gidas",
+      "cluster": "Plaukų šalinimas lazeriu ir IPL",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+        "https://www.aad.org/public/cosmetic/hair-removal/laser-hair-removal-faqs",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicina-gidas",
+      "title": "Dermatologas ir medicinos estetikos konsultacija: poreikis, kompetencija ir vizito apimtis",
+      "description": "Dermatologas ir medicinos estetikos konsultacija. Gide: odos sveikata ir estetinis tikslas; specialisto bei įstaigos licencijos; kito specialisto konsultacijos kryptis.",
+      "intent": "Dermatologas ir medicinos estetikos konsultacija: poreikis, kompetencija ir vizito apimtis",
+      "reason": "Odos sveikata ir estetinis tikslas; Specialisto bei įstaigos licencijos; Kito specialisto konsultacijos kryptis; Dermatologo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis; Medicinos estetikos konsultacija: metodo paskirtis ir konkreti paslaugos apimtis; Kito medicinos specialisto konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Konsultacijų paskirties ir licencijos patikros žemėlapis. Pilnas brief: topical-authority-20261006/PLAN.json#MD-gidas",
+      "cluster": "Medicinos specialistų konsultacijos",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Dermatologas ir medicinos estetikos konsultacija: poreikis, kompetencija ir vizito apimtis",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/microneedling-devices"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/makiazas-gidas",
+      "title": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas",
+      "description": "Makiažo paslaugų: dieninis, proginis ir vestuvinis rezultatas. Gide: renginio ir rezultato užduotis; naudojamų produktų kontekstas; vizito eiga.",
+      "intent": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas",
+      "reason": "Renginio ir rezultato užduotis; Naudojamų produktų kontekstas; Vizito eiga. Nauda: Tikslų ir darbų komponentų matrica. Pilnas brief: topical-authority-20261006/PLAN.json#MK-gidas",
+      "cluster": "Makiažas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/makeup-faustina/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-gidas",
+      "title": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+      "description": "Manikiūro: metodai, eiga ir paslaugos pasirinkimas. Gide: nagų ir odelių sutvarkymas; dangos pasirinkimas atskirai; vizito eiga nuo įvertinimo iki užbaigimo.",
+      "intent": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+      "reason": "Nagų ir odelių sutvarkymas; Dangos pasirinkimas atskirai; Vizito eiga nuo įvertinimo iki užbaigimo; Vyriškas manikiūras: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Paslaugos komponentų schema: priežiūra, padengimas, nuėmimas. Pilnas brief: topical-authority-20261006/PLAN.json#MN-gidas",
+      "cluster": "Manikiūras",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-gidas",
+      "title": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+      "description": "Masažo: kūno ir veido paslaugos, eiga bei kompetencijos ribos. Gide: estetinis ir sveikatos tikslas; kūno zonos ir veidas; vizito eiga bei komfortas.",
+      "intent": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+      "reason": "Estetinis ir sveikatos tikslas; Kūno zonos ir veidas; Vizito eiga bei komfortas; Atpalaiduojantis masažas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Masažo tikslų ir paslaugos apimties schema. Pilnas brief: topical-authority-20261006/PLAN.json#MS-gidas",
+      "cluster": "Masažas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-dizainas-gidas",
+      "title": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+      "description": "Nagų dizaino: forma, spalva, technika ir darbo apimtis. Gide: dizainas nėra dangos tipas; forma ir akcentai; technikos bei darbų skaičius.",
+      "intent": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+      "reason": "Dizainas nėra dangos tipas; Forma ir akcentai; Technikos bei darbų skaičius; Dizaino užduoties patvirtinimas ir darbo eiga; Nagų dailė: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Originali keturių sprendimų dizaino schema. Pilnas brief: topical-authority-20261006/PLAN.json#ND-gidas",
+      "cluster": "Nagų dizainas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://www.adobe.com/uk/creativecloud/photography/discover/white-balance.html"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-priauginimas-gidas",
+      "title": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+      "description": "Nagų priauginimo: ilgio kūrimas, konstrukcija ir papildymas. Gide: natūralus nagas ir konstrukcija; ilgio bei formos užduotis; naujas darbas ir papildymas.",
+      "intent": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+      "reason": "Natūralus nagas ir konstrukcija; Ilgio bei formos užduotis; Naujas darbas ir papildymas; Priaugintų nagų nuėmimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Konstrukcijos ir dangos komponentų schema. Pilnas brief: topical-authority-20261006/PLAN.json#NP-gidas",
+      "cluster": "Nagų priauginimas ir papildymas",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.fresha.com/lp/en/tt/gel-nails/in/nl-amsterdam/balboaplein",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/odontologija-gidas",
+      "title": "Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai",
+      "description": "Burnos higiena, dantų balinimas ir odontologo konsultacija. Gide: profilaktika ir kosmetinės spalvos pasirinkimas; dantų būklės įvertinimas; odontologas ir ortodontas.",
+      "intent": "Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai",
+      "reason": "Profilaktika ir kosmetinės spalvos pasirinkimas; Dantų būklės įvertinimas; Odontologas ir ortodontas; Profesionali burnos higiena: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Keturių paslaugų tikslo palyginimas be gydymo skyrimo. Pilnas brief: topical-authority-20261006/PLAN.json#OD-gidas",
+      "cluster": "Odontologija",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai",
+        "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/pedikiuras-gidas",
+      "title": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+      "description": "Pedikiūro: pėdų priežiūra, nagų sutvarkymas ir lakavimas. Gide: trys darbų komponentai; be dangos ar su danga; vizito eiga ir sveikatos ribos.",
+      "intent": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+      "reason": "Trys darbų komponentai; Be dangos ar su danga; Vizito eiga ir sveikatos ribos; Vyriškas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Pėdų ir nagų paslaugos apimties schema. Pilnas brief: topical-authority-20261006/PLAN.json#PD-gidas",
+      "cluster": "Pedikiūras",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+        "https://www.treatwell.lt/salonas/classic-pedicure-manicure-grozio-sodas/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-06",
+  "status": "FULL_PLAN_BINDING_PASS_NOT_RUNTIME_ACCEPTANCE",
+  "foundationCommit": "c1f159353620aed66e9c67a95306786646c7137c",
+  "articles": 300,
+  "treatments": 225,
+  "cities": 103,
+  "actualActivation": false,
+  "notAccepted": [
+    "Article texts or original media, not created",
+    "Qualified medical/legal review, not performed",
+    "Actual studio UUID binding, generation, V2 import or public deployment",
+    "Exact future traffic, full keyword universe, AI visibility, rankings or conversion results"
+  ]
+}

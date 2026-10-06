@@ -1,0 +1,460 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/kuno-prieziura-kaina-trukme",
+      "title": "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas",
+      "description": "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas. Gide: vienos zonos apimtis; komponentai ir konsultacija; paketo sąlygos.",
+      "intent": "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas",
+      "reason": "Vienos zonos apimtis; Komponentai ir konsultacija; Paketo sąlygos. Nauda: Realios apimties ir kainos pasiūlymo ruošinys. Pilnas brief: topical-authority-20261006/PLAN.json#KP-kaina-trukme",
+      "cluster": "Kūno priežiūra ir estetinės procedūros",
+      "pillarSlug": "gidai/kuno-prieziura-gidas",
+      "sourceQueries": [
+        "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/non-invasive-body-contouring-technologies",
+        "https://www.treatwell.lt/salonai/procedura-kuno-ivyniojimai/pasiulymo-tipas-vietinis/kur-lietuva/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kirpimas-kaina-trukme",
+      "title": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas",
+      "description": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas. Gide: kas įskaičiuota; ilgis ir pasirinkta forma; atskiri papildomi darbai.",
+      "intent": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas",
+      "reason": "Kas įskaičiuota; Ilgis ir pasirinkta forma; Atskiri papildomi darbai. Nauda: Datuotų vienodos apimties pasiūlymų palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#KR-kaina-trukme",
+      "cluster": "Kirpimas",
+      "pillarSlug": "gidai/kirpimas-gidas",
+      "sourceQueries": [
+        "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-salinimas-lazeriu-kaina-trukme",
+      "title": "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas",
+      "description": "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas. Gide: vienos zonos apimtis; konsultacija; kurso komercinės sąlygos.",
+      "intent": "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas",
+      "reason": "Vienos zonos apimtis; Konsultacija; Kurso komercinės sąlygos. Nauda: Tikro pasiūlymo komponentų lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#LZ-kaina-trukme",
+      "cluster": "Plaukų šalinimas lazeriu ir IPL",
+      "pillarSlug": "gidai/plauku-salinimas-lazeriu-gidas",
+      "sourceQueries": [
+        "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas",
+        "https://www.aad.org/public/cosmetic/hair-removal/laser-hair-removal-faqs",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/makiazas-kaina-trukme",
+      "title": "Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas",
+      "description": "Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas. Gide: įtraukti komponentai; papildomas vizitas; išvykimo sąlygos.",
+      "intent": "Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas",
+      "reason": "Įtraukti komponentai; Papildomas vizitas; Išvykimo sąlygos. Nauda: Datuotų tikrų meniu apimties palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#MK-kaina-trukme",
+      "cluster": "Makiažas",
+      "pillarSlug": "gidai/makiazas-gidas",
+      "sourceQueries": [
+        "Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/makeup-faustina/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-ar-gelinis",
+      "title": "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?",
+      "description": "Manikiūras ir gelinis lakavimas sprendžia skirtingas užduotis. Palyginkite nagų priežiūrą, dangą, nuėmimą ir vieno vizito darbų apimtį.",
+      "intent": "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?",
+      "reason": "Priežiūra ir padengimas; Vienas ar kombinuotas pasiūlymas; Pasirinkimas esant senai dangai. Nauda: Sprendimų medis pagal norimą rezultatą. Pilnas brief: topical-authority-20261006/PLAN.json#MN-ar-gelinis",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-be-lakavimo",
+      "title": "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis?",
+      "description": "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis. Gide: nagų forma ir paviršius; odelių sutvarkymas; kas nėra spalvinė danga.",
+      "intent": "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis?",
+      "reason": "Nagų forma ir paviršius; Odelių sutvarkymas; Kas nėra spalvinė danga; Manikiūras be lakavimo: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Originali nagų priežiūros komponentų iliustracija. Pilnas brief: topical-authority-20261006/PLAN.json#MN-be-lakavimo",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-trukme",
+      "title": "Kiek trunka manikiūras ir kas prailgina vizitą?",
+      "description": "Kiek trunka manikiūras ir kas prailgina vizitą. Gide: priežiūros laikas; nuėmimas ir papildomi darbai; vizito trukmė bei atvykimo rezervas.",
+      "intent": "Kiek trunka manikiūras ir kas prailgina vizitą?",
+      "reason": "Priežiūros laikas; Nuėmimas ir papildomi darbai; Vizito trukmė bei atvykimo rezervas. Nauda: Laiko sudėties schema be universalaus minučių pažado. Pilnas brief: topical-authority-20261006/PLAN.json#MN-trukme",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Kiek trunka manikiūras ir kas prailgina vizitą?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-kaina-trukme",
+      "title": "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai",
+      "description": "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai. Gide: seanso ir vizito laikas; įtrauktos zonos; priedai ir ritualai.",
+      "intent": "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai",
+      "reason": "Seanso ir vizito laikas; Įtrauktos zonos; Priedai ir ritualai. Nauda: Vienodos apimties realių pasiūlymų lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#MS-kaina-trukme",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-nugara-ar-kunas",
+      "title": "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė",
+      "description": "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė. Gide: įtrauktos zonos; darbo laikas ir visas vizitas; komforto derinimas.",
+      "intent": "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė",
+      "reason": "Įtrauktos zonos; Darbo laikas ir visas vizitas; Komforto derinimas; Nugaros masažas: metodo paskirtis ir konkreti paslaugos apimtis; Galvos masažas: metodo paskirtis ir konkreti paslaugos apimtis; Pėdų masažas: metodo paskirtis ir konkreti paslaugos apimtis; Rankų masažas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Zonų ir laiko komponentų brėžinys. Pilnas brief: topical-authority-20261006/PLAN.json#MS-nugara-ar-kunas",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-dizainas-akcentai-kaina",
+      "title": "Nagų dizaino kaina: akcentų skaičius, technika ir nuėmimas",
+      "description": "Nagų dizaino kaina: akcentų skaičius, technika ir nuėmimas. Gide: kurie nagai dekoruojami; darbo sudėtingumas; vienodos pasiūlymo sąlygos.",
+      "intent": "Nagų dizaino kaina: akcentų skaičius, technika ir nuėmimas",
+      "reason": "Kurie nagai dekoruojami; Darbo sudėtingumas; Vienodos pasiūlymo sąlygos; Piešimas ant nagų: metodo paskirtis ir konkreti paslaugos apimtis; Nagų dekoravimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: 10 nagų žymėjimo kortelė ir apimties palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#ND-akcentai-kaina",
+      "cluster": "Nagų dizainas",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Nagų dizaino kaina: akcentų skaičius, technika ir nuėmimas",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://www.adobe.com/uk/creativecloud/photography/discover/white-balance.html"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-priauginimas-kaina-trukme",
+      "title": "Nagų priauginimo kaina ir trukmė: ilgis, konstrukcija, dizainas bei nuėmimas",
+      "description": "Nagų priauginimo kaina ir trukmė. Gide: naujo darbo komponentai; papildymo variantai; papildomi darbai.",
+      "intent": "Nagų priauginimo kaina ir trukmė: ilgis, konstrukcija, dizainas bei nuėmimas",
+      "reason": "Naujo darbo komponentai; Papildymo variantai; Papildomi darbai. Nauda: Datuotų realių meniu komponentų palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#NP-kaina-trukme",
+      "cluster": "Nagų priauginimas ir papildymas",
+      "pillarSlug": "gidai/nagu-priauginimas-gidas",
+      "sourceQueries": [
+        "Nagų priauginimo kaina ir trukmė: ilgis, konstrukcija, dizainas bei nuėmimas",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.fresha.com/lp/en/tt/gel-nails/in/nl-amsterdam/balboaplein",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/pedikiuras-be-lakavimo",
+      "title": "Pedikiūras be lakavimo: ko tikėtis iš priežiūros vizito?",
+      "description": "Pedikiūras be lakavimo: ko tikėtis iš priežiūros vizito. Gide: nagų sutvarkymas; pėdų odos darbai; kas nepatenka į pasirinktą variantą.",
+      "intent": "Pedikiūras be lakavimo: ko tikėtis iš priežiūros vizito?",
+      "reason": "Nagų sutvarkymas; Pėdų odos darbai; Kas nepatenka į pasirinktą variantą; Pedikiūras be lakavimo: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Dviejų meniu variantų palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#PD-be-lakavimo",
+      "cluster": "Pedikiūras",
+      "pillarSlug": "gidai/pedikiuras-gidas",
+      "sourceQueries": [
+        "Pedikiūras be lakavimo: ko tikėtis iš priežiūros vizito?",
+        "https://www.treatwell.lt/salonas/classic-pedicure-manicure-grozio-sodas/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/pedikiuras-kaina-trukme",
+      "title": "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas",
+      "description": "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas. Gide: pėdų priežiūros apimtis; senos dangos nuėmimas; komplektas ar priedai.",
+      "intent": "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas",
+      "reason": "Pėdų priežiūros apimtis; Senos dangos nuėmimas; Komplektas ar priedai. Nauda: Normalizuota dviejų realių pasiūlymų sudėtis. Pilnas brief: topical-authority-20261006/PLAN.json#PD-kaina-trukme",
+      "cluster": "Pedikiūras",
+      "pillarSlug": "gidai/pedikiuras-gidas",
+      "sourceQueries": [
+        "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas",
+        "https://www.treatwell.lt/salonas/classic-pedicure-manicure-grozio-sodas/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-prieziura-kaina-trukme",
+      "title": "Plaukų priežiūros procedūros kaina ir trukmė: sistema, ilgis bei priedai",
+      "description": "Plaukų priežiūros procedūros kaina ir trukmė: sistema, ilgis bei priedai. Gide: naudota sistema; ilgis ir tankis; kirpimas ar formavimas papildomai.",
+      "intent": "Plaukų priežiūros procedūros kaina ir trukmė: sistema, ilgis bei priedai",
+      "reason": "Naudota sistema; Ilgis ir tankis; Kirpimas ar formavimas papildomai. Nauda: Datuotų pasiūlymų apimties lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#PP-kaina-trukme",
+      "cluster": "Plaukų priežiūros procedūros",
+      "pillarSlug": "gidai/plauku-prieziura-gidas",
+      "sourceQueries": [
+        "Plaukų priežiūros procedūros kaina ir trukmė: sistema, ilgis bei priedai",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+        "https://www.fda.gov/consumers/consumer-updates/formaldehyde-hair-smoothing-products-what-you-should-know"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-formavimas-kaina-trukme",
+      "title": "Šukuosenos kaina ir trukmė: plovimas, formavimas bei aksesuarai",
+      "description": "Šukuosenos kaina ir trukmė: plovimas, formavimas bei aksesuarai. Gide: įtrauktas plovimas; sudėtingumas ir ilgis; atvykimas į renginio vietą.",
+      "intent": "Šukuosenos kaina ir trukmė: plovimas, formavimas bei aksesuarai",
+      "reason": "Įtrauktas plovimas; Sudėtingumas ir ilgis; Atvykimas į renginio vietą. Nauda: Normalizuota dviejų tikrų pasiūlymų lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#SF-kaina-trukme",
+      "cluster": "Plaukų formavimas ir šukuosenos",
+      "pillarSlug": "gidai/plauku-formavimas-gidas",
+      "sourceQueries": [
+        "Šukuosenos kaina ir trukmė: plovimas, formavimas bei aksesuarai",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+        "https://www.treatwell.lt/salonas/makeup-faustina/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/veido-prieziura-kaina-trukme",
+      "title": "Veido priežiūros kaina ir trukmė: konsultacija, metodas bei papildomi darbai",
+      "description": "Veido priežiūros kaina ir trukmė. Gide: darbų apimtis; konsultacijos ir procedūros laikas; kas apmokama atskirai.",
+      "intent": "Veido priežiūros kaina ir trukmė: konsultacija, metodas bei papildomi darbai",
+      "reason": "Darbų apimtis; Konsultacijos ir procedūros laikas; Kas apmokama atskirai. Nauda: Normalizuotas dviejų patikrintų pasiūlymų palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#VP-kaina-trukme",
+      "cluster": "Veido priežiūra",
+      "pillarSlug": "gidai/veido-prieziura-gidas",
+      "sourceQueries": [
+        "Veido priežiūros kaina ir trukmė: konsultacija, metodas bei papildomi darbai",
+        "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+        "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/veido-prieziura-konsultacija",
+      "title": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas",
+      "description": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas. Gide: tikslas ir ankstesnės procedūros; produktų bei reakcijų informacija.",
+      "intent": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas",
+      "reason": "Tikslas ir ankstesnės procedūros; Produktų bei reakcijų informacija; Tolesnių veiksmų pagrindimas; Odos priežiūros konsultacija: metodo paskirtis ir konkreti paslaugos apimtis; Veido procedūros parinkimo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Konsultacijos rezultatų ruošinys. Pilnas brief: topical-authority-20261006/PLAN.json#VP-konsultacija",
+      "cluster": "Veido priežiūra",
+      "pillarSlug": "gidai/veido-prieziura-gidas",
+      "sourceQueries": [
+        "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas",
+        "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+        "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-13",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/antakiai-dazai-henna",
+      "title": "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą?",
+      "description": "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą. Gide: produkto sudėtis ir paskirtis; plaukelio/odos spalva; priežiūros instrukcijos.",
+      "intent": "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą?",
+      "reason": "Produkto sudėtis ir paskirtis; Plaukelio/odos spalva; Priežiūros instrukcijos; Antakių dažymas dažais: metodo paskirtis ir konkreti paslaugos apimtis; Antakių dažymas chna: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Sistemų palyginimas tik pagal patikrintus dokumentus. Pilnas brief: topical-authority-20261006/PLAN.json#AN-dazai-henna",
+      "cluster": "Antakių priežiūra",
+      "pillarSlug": "gidai/antakiai-gidas",
+      "sourceQueries": [
+        "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą?",
+        "https://www.treatwell.lt/salonas/laminuota-brows-lashes/",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/antakiai-laminavimas",
+      "title": "Antakių laminavimas: kaip keičiama plaukelių kryptis ir kas įeina?",
+      "description": "Kaip antakių laminavimas keičia plaukelių kryptį? Sužinokite, kuo skiriasi laminavimas, dažymas ir korekcija bei kas įeina į pasiūlymą.",
+      "intent": "Antakių laminavimas: kaip keičiama plaukelių kryptis ir kas įeina?",
+      "reason": "Laminavimo paskirtis; Dažymas ir korekcija atskirai; Rezultato ribos; Antakių laminavimas: metodo paskirtis ir konkreti paslaugos apimtis; Antakių laminavimas su korekcija ir dažymu: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Procedūros komponentų schema, ne DIY mokymas. Pilnas brief: topical-authority-20261006/PLAN.json#AN-laminavimas",
+      "cluster": "Antakių priežiūra",
+      "pillarSlug": "gidai/antakiai-gidas",
+      "sourceQueries": [
+        "Antakių laminavimas: kaip keičiama plaukelių kryptis ir kas įeina?",
+        "https://www.treatwell.lt/salonas/laminuota-brows-lashes/",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/antakiai-metodai",
+      "title": "Antakių korekcija pincetu, vašku ar siūlu: metodų skirtumai",
+      "description": "Antakių korekcija pincetu, vašku ar siūlu: metodų skirtumai. Gide: plaukelių pašalinimo būdas; darbų zona; kas priklauso nuo odos ir naudojamų produktų.",
+      "intent": "Antakių korekcija pincetu, vašku ar siūlu: metodų skirtumai",
+      "reason": "Plaukelių pašalinimo būdas; Darbų zona; Kas priklauso nuo odos ir naudojamų produktų; Antakių korekcija pincetu: metodo paskirtis ir konkreti paslaugos apimtis; Antakių korekcija vašku: metodo paskirtis ir konkreti paslaugos apimtis; Antakių korekcija siūlu: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Metodų palyginimas be universalaus saugumo reitingo. Pilnas brief: topical-authority-20261006/PLAN.json#AN-metodai",
+      "cluster": "Antakių priežiūra",
+      "pillarSlug": "gidai/antakiai-gidas",
+      "sourceQueries": [
+        "Antakių korekcija pincetu, vašku ar siūlu: metodų skirtumai",
+        "https://www.treatwell.lt/salonas/laminuota-brows-lashes/",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/antakiai-spalva",
+      "title": "Antakių dažų spalva: ką reiškia norimas intensyvumas ir atspalvis?",
+      "description": "Antakių dažų spalva: ką reiškia norimas intensyvumas ir atspalvis. Gide: atspalvis ir intensyvumas; plaukelio ir odos efektas; apšvietimas ir pavyzdys.",
+      "intent": "Antakių dažų spalva: ką reiškia norimas intensyvumas ir atspalvis?",
+      "reason": "Atspalvis ir intensyvumas; Plaukelio ir odos efektas; Apšvietimas ir pavyzdys. Nauda: Originali atspalvio užduoties schema. Pilnas brief: topical-authority-20261006/PLAN.json#AN-spalva",
+      "cluster": "Antakių priežiūra",
+      "pillarSlug": "gidai/antakiai-gidas",
+      "sourceQueries": [
+        "Antakių dažų spalva: ką reiškia norimas intensyvumas ir atspalvis?",
+        "https://www.treatwell.lt/salonas/laminuota-brows-lashes/",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/auskaru-verimas-metodai",
+      "title": "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas?",
+      "description": "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas. Gide: naudojamas metodas; vienkartiniai ir daugkartiniai instrumentai; sterilizavimo informacija.",
+      "intent": "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas?",
+      "reason": "Naudojamas metodas; Vienkartiniai ir daugkartiniai instrumentai; Sterilizavimo informacija. Nauda: Terminų ir paskirties lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#AV-metodai",
+      "cluster": "Auskarų vėrimas",
+      "pillarSlug": "gidai/auskaru-verimas-gidas",
+      "sourceQueries": [
+        "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas?",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+        "https://www.nhs.uk/conditions/infected-piercings/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/auskaru-verimas-papuosalas",
+      "title": "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija",
+      "description": "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija. Gide: medžiagos deklaracija; dydis ir pasirinktai vietai tinkamumas; produkto informacija.",
+      "intent": "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija",
+      "reason": "Medžiagos deklaracija; Dydis ir pasirinktai vietai tinkamumas; Produkto informacija; Papuošalo pakeitimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Papuošalo dokumentų kortelė be saugios medžiagos garantijos. Pilnas brief: topical-authority-20261006/PLAN.json#AV-papuosalas",
+      "cluster": "Auskarų vėrimas",
+      "pillarSlug": "gidai/auskaru-verimas-gidas",
+      "sourceQueries": [
+        "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+        "https://www.nhs.uk/conditions/infected-piercings/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/auskaru-verimas-vietos",
+      "title": "Ausies spenelis, kremzlė ir kitos vėrimo vietos: skirtinga užduotis",
+      "description": "Ausies spenelis, kremzlė ir kitos vėrimo vietos: skirtinga užduotis. Gide: pasirinkta vieta; papuošalo ir darbo apimtis; individualaus vertinimo ribos.",
+      "intent": "Ausies spenelis, kremzlė ir kitos vėrimo vietos: skirtinga užduotis",
+      "reason": "Pasirinkta vieta; Papuošalo ir darbo apimtis; Individualaus vertinimo ribos; Ausų spenelių vėrimas: metodo paskirtis ir konkreti paslaugos apimtis; Ausies kremzlės vėrimas: metodo paskirtis ir konkreti paslaugos apimtis; Nosies auskaro vėrimas: metodo paskirtis ir konkreti paslaugos apimtis; Antakio auskaro vėrimas: metodo paskirtis ir konkreti paslaugos apimtis; Lūpos auskaro vėrimas: metodo paskirtis ir konkreti paslaugos apimtis; Bambos auskaro vėrimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Neutralus anatominių zonų orientacinis brėžinys. Pilnas brief: topical-authority-20261006/PLAN.json#AV-vietos",
+      "cluster": "Auskarų vėrimas",
+      "pillarSlug": "gidai/auskaru-verimas-gidas",
+      "sourceQueries": [
+        "Ausies spenelis, kremzlė ir kitos vėrimo vietos: skirtinga užduotis",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+        "https://www.nhs.uk/conditions/infected-piercings/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

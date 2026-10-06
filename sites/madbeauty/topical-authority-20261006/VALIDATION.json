@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-06",
+  "status": "FULL_CATALOGUE_EDITORIAL_PLAN_STRUCTURE_PASS",
+  "totals": {
+    "newUrls": 300,
+    "retainedArticleUrls": 3,
+    "coverageTarget": 303,
+    "evergreenNew": 296,
+    "seasonalNew": 4,
+    "links": 940,
+    "sources": 84,
+    "categoryBranches": 33,
+    "referenceMenuItems": 49,
+    "platformGaps": 21,
+    "oldIntentsReconciled": 76,
+    "catalogueCategories": 21,
+    "catalogueGroups": 59,
+    "proceduresReconciled": 225
+  },
+  "keywordResearch": {
+    "volumeKeywords": 730,
+    "seeds": 33,
+    "serpQueries": 60,
+    "chargedUsd": 0.71772
+  },
+  "checks": [
+    "All 225 authoritative treatments have explicit named article-section decisions",
+    "21 catalogue areas and 33 editorial branches × 8 planned reader dimensions",
+    "103 city IDs; every planned CTA comes from exact foundation registry and stays inactive",
+    "49 owner menu positions and 76 prior intents reconciled; 3 existing URLs/dates retained",
+    "300 unique slugs/IDs, chronological cycle-free hierarchy, Europe/Vilnius DST",
+    "296 evergreen + 4 seasonal dates and 12 review dates",
+    "300 individual outlines/contributions/evidence/media/source briefs",
+    "940 valid unique planned links and actual legacy functional destinations",
+    "84 READ content sources with limits; no fabricated text/expert/media approval",
+    "730 LT volume rows, 33 related searches, 60 Google organic snapshots and real cost receipts",
+    "300 distinct primary phrases, meta titles/descriptions and H1/H2 maps",
+    "13 schema-valid transport batches; all 300 exactly once, parent first",
+    "HTML includes every article once and the catalogue decisions",
+    "Immutable initial content package SHA unchanged"
+  ],
+  "notAccepted": [
+    "Article texts or original media, not created",
+    "Qualified medical/legal review, not performed",
+    "Actual studio UUID binding, generation, V2 import or public deployment",
+    "Exact future traffic, full keyword universe, AI visibility, rankings or conversion results"
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/psichologine-pagalba-testinumas",
+      "title": "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba",
+      "description": "Psichologinės pagalbos tęstinumas. Gide: pagalbos proceso aptarimas; specialisto keitimas ir ribos; atskiras skubios pagalbos kelias.",
+      "intent": "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba",
+      "reason": "Pagalbos proceso aptarimas; Specialisto keitimas ir ribos; Atskiras skubios pagalbos kelias. Nauda: Proceso aptarimo ir tikrų pagalbos kontaktų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#PS-testinumas",
+      "cluster": "Psichologinė pagalba",
+      "pillarSlug": "gidai/psichologine-pagalba-gidas",
+      "sourceQueries": [
+        "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba",
+        "https://www.nhs.uk/tests-and-treatments/counselling/",
+        "https://vaspvt.lrv.lt/lt/naujienos/medicinos-psichologams-pristatyta-licencijuojamos-veiklos-prieziuros-tvarka-xQr/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-priauginimas-pasiruosimas-prieziura",
+      "title": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis",
+      "description": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis. Gide: pradinė plaukų būklė; sistemos kasdienė priežiūra; skausmas įtempimas ir sveikatos vertinimas.",
+      "intent": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis",
+      "reason": "Pradinė plaukų būklė; Sistemos kasdienė priežiūra; Skausmas įtempimas ir sveikatos vertinimas. Nauda: Konkrečios sistemos priežiūros ir pagalbos kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#PX-pasiruosimas-prieziura",
+      "cluster": "Plaukų priauginimas",
+      "pillarSlug": "gidai/plauku-priauginimas-gidas",
+      "sourceQueries": [
+        "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis",
+        "https://www.aad.org/public/diseases/hair-loss/causes/hairstyles?pp=1",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/rankos-pedos-spa-prieziura",
+      "title": "Po rankų ir pėdų SPA: odos priežiūra ir nepageidaujami pojūčiai",
+      "description": "Po rankų ir pėdų SPA: odos priežiūra ir nepageidaujami pojūčiai. Gide: konkretaus produkto tęsinys; nagų dangos instrukcija atskirai; kada paslaugos patarimo nepakanka.",
+      "intent": "Po rankų ir pėdų SPA: odos priežiūra ir nepageidaujami pojūčiai",
+      "reason": "Konkretaus produkto tęsinys; Nagų dangos instrukcija atskirai; Kada paslaugos patarimo nepakanka. Nauda: Dviejų priežiūros sričių kortelė pagal naudojamą produktą. Pilnas brief: topical-authority-20261006/PLAN.json#RP-prieziura",
+      "cluster": "Rankų ir pėdų SPA",
+      "pillarSlug": "gidai/rankos-pedos-spa-gidas",
+      "sourceQueries": [
+        "Po rankų ir pėdų SPA: odos priežiūra ir nepageidaujami pojūčiai",
+        "https://www.treatwell.lt/salonai/procedura-parafino-terapija/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/spa-prieziura",
+      "title": "Po SPA ritualo: produkto priežiūra, pojūčiai ir pagalbos riba",
+      "description": "Po SPA ritualo: produkto priežiūra, pojūčiai ir pagalbos riba. Gide: skirtingų produktų priežiūra; komfortas ir nepageidaujami pojūčiai.",
+      "intent": "Po SPA ritualo: produkto priežiūra, pojūčiai ir pagalbos riba",
+      "reason": "Skirtingų produktų priežiūra; Komfortas ir nepageidaujami pojūčiai; Kada pranešti teikėjui ar kreiptis pagalbos. Nauda: Atskira priežiūros kortelė pagal ritualo komponentus. Pilnas brief: topical-authority-20261006/PLAN.json#SP-prieziura",
+      "cluster": "SPA ir poilsis",
+      "pillarSlug": "gidai/spa-gidas",
+      "sourceQueries": [
+        "Po SPA ritualo: produkto priežiūra, pojūčiai ir pagalbos riba",
+        "https://www.spavilnius.lt/lt/vilnius/proceduros/spa-ritualai-hamame/140",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-priminimas-kaip-saugiai-teikti-pirties-paslaugas/",
+        "https://www.nccih.nih.gov/health/aromatherapy"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/savijauta-testinumas",
+      "title": "Po atsipalaidavimo seanso: patirties vertinimas ir pagalbos riba",
+      "description": "Po atsipalaidavimo seanso: patirties vertinimas ir pagalbos riba. Gide: patirtis nėra ligos gydymo įrodymas; nepageidaujamų pojūčių aptarimas.",
+      "intent": "Po atsipalaidavimo seanso: patirties vertinimas ir pagalbos riba",
+      "reason": "Patirtis nėra ligos gydymo įrodymas; Nepageidaujamų pojūčių aptarimas; Kada rinktis psichologinę ar medicininę pagalbą. Nauda: Patirties aptarimo kortelė su kompetencijos ribomis. Pilnas brief: topical-authority-20261006/PLAN.json#SV-testinumas",
+      "cluster": "Savijautos užsiėmimai",
+      "pillarSlug": "gidai/savijauta-gidas",
+      "sourceQueries": [
+        "Po atsipalaidavimo seanso: patirties vertinimas ir pagalbos riba",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+        "https://www.nccih.nih.gov/health/relaxation-techniques-what-you-need-to-know"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/sezonai-naujieji",
+      "title": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+      "description": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis. Gide: paviršiaus efektas; akcentų vieta; paketo sudėtis ir norimas rezultatas.",
+      "intent": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+      "reason": "Paviršiaus efektas; Akcentų vieta; Paketo sudėtis ir norimas rezultatas. Nauda: Originalūs vienodos formos dizaino variantai. Pilnas brief: topical-authority-20261006/PLAN.json#SZ-naujieji",
+      "cluster": "Sezoniniai pasirinkimai",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/tatuiruotes-prieziura",
+      "title": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos",
+      "description": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos. Gide: konkretaus padengimo instrukcija; gijimo ir galutinio rezultato skirtumas.",
+      "intent": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos",
+      "reason": "Konkretaus padengimo instrukcija; Gijimo ir galutinio rezultato skirtumas; Pokyčiai kurių negalima vertinti internetu. Nauda: Instrukcijos šaltinio ir pagalbos veiksmų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#TT-prieziura",
+      "cluster": "Tatuiruotės",
+      "pillarSlug": "gidai/tatuiruotes-gidas",
+      "sourceQueries": [
+        "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos",
+        "https://nvsc.lrv.lt/lt/naujienos/i-ka-reikia-atkreipti-demesi-renkantis-tatuiravimo-ir-ilgalaikio-makiazo-paslaugas/",
+        "https://www.fda.gov/cosmetics/resources-consumers-cosmetics/cosmetics-safety-qa-tattoos-and-permanent-makeup",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/veido-prieziura-pilingas",
+      "title": "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?",
+      "description": "Kosmetinis šveitimas ir profesionalus cheminis pilingas. Gide: mechaninė/kosmetinė priežiūra; cheminio metodo skirtinga apimtis; kvalifikacija ir individualaus vertinimo ribos.",
+      "intent": "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?",
+      "reason": "Mechaninė/kosmetinė priežiūra; Cheminio metodo skirtinga apimtis; Kvalifikacija ir individualaus vertinimo ribos; Paviršinis veido šveitimas: metodo paskirtis ir konkreti paslaugos apimtis; Rūgštinis veido šveitimas: metodo paskirtis ir konkreti paslaugos apimtis; Fermentinis veido šveitimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Terminų atskyrimo schema be koncentracijų ar DIY receptų. Pilnas brief: topical-authority-20261006/PLAN.json#VP-pilingas",
+      "cluster": "Veido priežiūra",
+      "pillarSlug": "gidai/veido-prieziura-gidas",
+      "sourceQueries": [
+        "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?",
+        "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+        "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/veido-prieziura-reakcija",
+      "title": "Nepageidaujama reakcija po veido procedūros: kada reikalingas sveikatos vertinimas?",
+      "description": "Nepageidaujama reakcija po veido procedūros. Gide: atlikto metodo informacija; ko straipsnis negali nustatyti; teikėjo ir sveikatos specialisto pagalbos kelias.",
+      "intent": "Nepageidaujama reakcija po veido procedūros: kada reikalingas sveikatos vertinimas?",
+      "reason": "Atlikto metodo informacija; Ko straipsnis negali nustatyti; Teikėjo ir sveikatos specialisto pagalbos kelias. Nauda: Informacijos perdavimo ir pagalbos ribų atmintinė. Pilnas brief: topical-authority-20261006/PLAN.json#VP-reakcija",
+      "cluster": "Veido priežiūra",
+      "pillarSlug": "gidai/veido-prieziura-gidas",
+      "sourceQueries": [
+        "Nepageidaujama reakcija po veido procedūros: kada reikalingas sveikatos vertinimas?",
+        "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+        "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/veido-prieziura-sveikatos-riba",
+      "title": "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba",
+      "description": "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba. Gide: kosmetinė paskirtis; invaziniai darbai ir medicininiai tikslai; specialisto bei įstaigos patikra.",
+      "intent": "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba",
+      "reason": "Kosmetinė paskirtis; Invaziniai darbai ir medicininiai tikslai; Specialisto bei įstaigos patikra. Nauda: LT kompetencijos ir paslaugos paskirties lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#VP-sveikatos-riba",
+      "cluster": "Veido priežiūra",
+      "pillarSlug": "gidai/veido-prieziura-gidas",
+      "sourceQueries": [
+        "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba",
+        "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+        "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/sezonai-valentino",
+      "title": "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos",
+      "description": "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos. Gide: subtilus ir kontrastingas variantas; trumpų nagų adaptacija; technikos ir apimties užduotis.",
+      "intent": "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos",
+      "reason": "Subtilus ir kontrastingas variantas; Trumpų nagų adaptacija; Technikos ir apimties užduotis. Nauda: Originalių iliustracijų pora su adaptacijos schema. Pilnas brief: topical-authority-20261006/PLAN.json#SZ-valentino",
+      "cluster": "Sezoniniai pasirinkimai",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/"
+      ],
+      "publishDate": "2027-01-12",
+      "seasonalHook": "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/sezonai-velykos",
+      "title": "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas",
+      "description": "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas. Gide: 2027-03-28 datos kontekstas; konkretaus teikėjo grafikas; keitimo bei atvykimo informacija.",
+      "intent": "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas",
+      "reason": "2027-03-28 datos kontekstas; Konkretaus teikėjo grafikas; Keitimo bei atvykimo informacija. Nauda: Užpildoma darbo laiko ir vizito patvirtinimo kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#SZ-velykos",
+      "cluster": "Sezoniniai pasirinkimai",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/"
+      ],
+      "publishDate": "2027-02-23",
+      "seasonalHook": "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas",
+      "networkLinks": []
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 # Madbeauty — dabartinis įgyvendinimas
 
+## Gyvas Cloudflare paleidimas — 2026-10-06
+
+Veikia https://madbeauty.lt: Hostinger domenas prijungtas, Cloudflare DNS/TLS ir HTTP/www nukreipimai patikrinti. Produkcinis SQL Durable Object adapteris saugo paskyras, rezervavimus, privatų media ir laiškų eilę; realus info@pinet.lt OTP → operatorius → serverinis logout patikrintas, laiškas gautas pagrindiniame INBOX. Vieši17 puslapių/119 assetų/7 private404 ir canonical discovery PASS; desktop ir390px home/login vaizdai priimti. Pirmasis realių meistrų katalogas tuščias, užpildomas tik tikrais patvirtinamais profiliais.
+
+Naujas Workers6, ankstesnis backend/platform/foundation74, studio33, core51 testų PASS. Actual Cloudflare Images EXIF/alpha/metadata/tall-image PASS; Miniflare apribojimas ir originalus FAIL užrašyti atskirai. Piloto saugojimo ribos, eilės, retention, privatus PITR bookmark ir atkūrimo/rollback tvarka dokumentuoti [OPERATIONS](cloudflare/OPERATIONS.md), faktiniai [RELEASE įrodymai](cloudflare/RELEASE.json). Šaltinis perduodamas draftPR8, main merge atskiras.
+
+Ankstesnės UI69/70 priėmimo ribos bei sustabdyta demo/gallery peržiūra išlieka. Naujas produkcinis Lighthouse, paieškos indeksavimas, paklausa ir veikimo/apkrovos garantija nematuoti; mokėjimai/FB/voice neįjungti. Žemiau ankstesnės sesijos istorija aprašo tuo metu buvusias priklausomybes.
+
 <!-- UIUX_V3_CURRENT -->
 ## Aktualus UI/UX V3 rezultatas — 2026-10-06
 

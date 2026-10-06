@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../../dovanos-memorycasting/node_modules/wrangler/config-schema.json",
+  "name": "madbeauty-platform-preview",
+  "account_id": "d102163f74a45ab6d33bca786ce281ec",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-05-22",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "assets": {
+    "directory": "./output/assets-release",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "PLATFORM",
+        "class_name": "MadbeautyPlatform"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "MadbeautyPlatform"
+      ]
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+  "rules": [
+    {
+      "type": "Text",
+      "globs": [
+        "**/*.sql",
+        "**/app.html"
+      ],
+      "fallthrough": true
+    }
+  ],
+  "vars": {
+    "APP_ORIGIN": "https://madbeauty.lt",
+    "RELEASE_MODE": "production",
+    "OPERATOR_EMAIL": "info@pinet.lt"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1
+  },
+  "routes": [
+    {
+      "pattern": "madbeauty.lt",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.madbeauty.lt",
+      "custom_domain": true
+    }
+  ]
+}

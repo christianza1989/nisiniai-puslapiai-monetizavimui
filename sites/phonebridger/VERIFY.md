@@ -1,5 +1,13 @@
 # Integration verification — 2026-10-05
 
+## Knowledge/search follow-up — 2026-10-06
+
+Current authoritative status: [whole-site A–Z audit](PHASE-1-AUDIT.md), **local NOT READY / launch NOT READY**. Four guides, hub and editorial profile reviewed in actual desktop/mobile/narrow/tablet views. Initial16captures individually inspected; tablet/eyebrow defects repaired and fresh scored ship. Visible contextual links now use the shared helper with root-path input, convert safely to relative destinations and receive real prose-link assertions.286local link checks,20served WebPs,14eligible prepared pages, mutation/future/revocation/account exclusions and472freeze entries pass. Homepage outside footer unchanged; no native work.
+
+Actual core plugin attests313runtime files and17nested pages, denies private/public-host access and exercises local account cycle.13account/integration tests and52shared core tests pass; TypeScript/scopedESLint/build pass. All9existing niches pass actual local productionWorker HTTP smoke;45fixed-clock SEO artifacts are byte identical. No active package, live domain, SMTP, payment or creator service is admitted.
+
+Saved Lighthouse13.5.0 default mobile: hub96performance/100accessibility; permissions96/100 (previous run97/100); frozen homepage62/96, existing app.js exception and ARIA/name defects. Preserve original failed runs; current guide improvements do not certify whole-site accessibility/performance. Actual200%zoom/OS reduced-motion, production field data, durable inquiries/INBOX receipts/counters/legal/domain/hosted auth remain unverified or failed. See qa/knowledge-v1 and knowledge/README.md for exact scope and dependencies. Historical results below remain records of their own editions.
+
 Environment: Windows, Node24.19.0/npm11.17.0, fresh sibling GitHub checkouts.
 Private base: 0544d6a; core base: bb0a0e5. Implementation PRs are unmerged.
 

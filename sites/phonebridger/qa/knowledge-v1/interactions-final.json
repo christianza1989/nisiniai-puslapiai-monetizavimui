@@ -1,0 +1,149 @@
+{
+  "environment": "Actual IAB desktop/mobile viewport; not physical device",
+  "toc": {
+    "hash": "#mouse-and-keyboard-control",
+    "targetTop": 124.6875,
+    "headerBottom": 78.66667175292969,
+    "clears": true
+  },
+  "skip": {
+    "hash": "#main",
+    "testedEnter": true
+  },
+  "views": [
+    {
+      "route": "guides/getting-started",
+      "width": 1280,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../guides/android-permissions/",
+          "text": "Android permissions explained",
+          "underline": "underline"
+        },
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "route": "guides/getting-started",
+      "width": 390,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../guides/android-permissions/",
+          "text": "Android permissions explained",
+          "underline": "underline"
+        },
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "route": "guides/usb-wifi",
+      "width": 1280,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "route": "guides/usb-wifi",
+      "width": 390,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "route": "guides/android-permissions",
+      "width": 1280,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../guides/getting-started/",
+          "text": "setup guide",
+          "underline": "underline"
+        },
+        {
+          "href": "../../guides/usb-wifi/",
+          "text": "USB or Wi-Fi?",
+          "underline": "underline"
+        },
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "route": "guides/android-permissions",
+      "width": 390,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../guides/getting-started/",
+          "text": "setup guide",
+          "underline": "underline"
+        },
+        {
+          "href": "../../guides/usb-wifi/",
+          "text": "USB or Wi-Fi?",
+          "underline": "underline"
+        },
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "route": "guides/phone-position",
+      "width": 1280,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "route": "guides/phone-position",
+      "width": 390,
+      "images": true,
+      "inlineLinks": [
+        {
+          "href": "../../editorial/",
+          "text": "Review method & corrections",
+          "underline": "underline"
+        }
+      ],
+      "overflow": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# PhoneBridger
+> Use your Windows mouse and keyboard in your own Android apps, on the phone beside your PC.
+
+## Published pages
+- [Your mouse. Now on your phone.](https://phonebridger.com/): Use your Windows mouse and keyboard in your own Android apps. Connect through USB or Wi-Fi.
+- [Your desk. Your setup.](https://phonebridger.com/shop): Choose PhoneBridger with optional magnetic holders in Black or Silver.
+- [A question? Let’s connect.](https://phonebridger.com/contact): Get help with PhoneBridger or ask about a setup.
+- [A small setup. A better flow.](https://phonebridger.com/help): Pair Windows and Android, prepare USB and understand PhoneBridger permissions.
+- [Your next workspace. Starts here.](https://phonebridger.com/downloads): Get the Windows beta and Android companion, then pair your devices.
+- [Your phone stays yours. Your desk gets closer.](https://phonebridger.com/about): PhoneBridger keeps your physical Android apps beside your Windows workspace.
+- [Your data. Clear boundaries.](https://phonebridger.com/privacy): How the PhoneBridger website preview handles sample data, saved choices and local accounts.
+- [Before you start. A few clear details.](https://phonebridger.com/terms): Current PhoneBridger beta and planned store boundaries.
+- [A clear start. A smoother everyday setup.](https://phonebridger.com/guides): PhoneBridger guides for first pairing, USB and Wi-Fi, Android permissions and phone placement.
+- [Set up PhoneBridger on Windows and Android](https://phonebridger.com/guides/getting-started): Install both beta apps, pair your own PC, approve it on Android and check your first screen-edge transition.
+- [USB or Wi-Fi? Set up the connection that fits your desk](https://phonebridger.com/guides/usb-wifi): Understand automatic USB priority, Wi-Fi fallback, data-cable requirements and the current one-USB-phone limit.
+- [Android permissions explained: mouse control, pairing and audio](https://phonebridger.com/guides/android-permissions): Know which permission enables which PhoneBridger feature, what restricted settings mean and when to stop rather than grant access.
+- [Put your phone in the right place: positions and transition zones](https://phonebridger.com/guides/phone-position): Match left, right or above in PhoneBridger to the phone on your desk, then check entry, return and a comfortable multi-phone arrangement.
+- [Who prepares the PhoneBridger guides](https://phonebridger.com/editorial): Our guide scope, organizational attribution, source checks, illustration method and correction contact.
+
+Contact: hello@phonebridger.com
+Full approved content: https://phonebridger.com/llms-full.txt

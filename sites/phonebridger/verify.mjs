@@ -25,7 +25,7 @@ for(const item of [...manifest.files,...manifest.verificationFiles]) {
 const html = await readFile(path.join(here,'prototype/index.html'),'utf8');
 assert.match(html,/<html lang="en"/); assert.match(html,/name="robots" content="noindex,nofollow,noarchive"/);
 assert.doesNotMatch(html,/href="(?:\.\.\/)+release\//);
-assert.equal(manifest.files.some(f=>/\.cjs$|\.json$|\.txt$/.test(f.path)),false);
-for(const route of ['shop','contact','help','downloads','about','privacy','terms','login','register','recover','account']) assert.ok(manifest.files.some(f=>f.path===route+'/index.html'),route);
+assert.equal(manifest.files.some(f=>/\.cjs$|\.json$/.test(f.path)),false);
+for(const route of ['shop','contact','help','downloads','about','privacy','terms','login','register','recover','account','guides','guides/getting-started','guides/usb-wifi','guides/android-permissions','guides/phone-position','editorial']) assert.ok(manifest.files.some(f=>f.path===route+'/index.html'),route);
 assert.ok(manifest.files.some(f=>f.path==='assets/closing-conversion-v1/holder-silver-640.webp'));
 console.log(JSON.stringify({status:'PASS',runtimeFiles:manifest.files.length,privateVerificationFiles:manifest.verificationFiles.length,publicPackage:false,liveChannels:false,sourceEnginesUnchanged:true}));

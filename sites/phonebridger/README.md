@@ -60,6 +60,11 @@ files and are not served by the core adapter.
 
 ## Integration documents
 
+- [Four setup guides and editorial extension](knowledge/README.md), [guide design](knowledge/DESIGN.md), [primary-source research](knowledge/RESEARCH.md)
+- [Whole-site A–Z audit and remaining gates](PHASE-1-AUDIT.md): local and launch are **NOT READY**; no complete-site or public-release claim.
+
+The private snapshot now includes seventeen inner routes. New guides/editorial content and prepared English SEO/LLM artifacts use the shared Studio/projection/media/schema pipeline. This does not activate a PhoneBridger public package. The frozen homepage keeps its original content/head; the audit records measured performance, script/accessibility and metadata gaps that cannot be silently repaired under that freeze.
+
 - [BUSINESS](BUSINESS.md), [PRODUCT](PRODUCT.md), [DESIGN](DESIGN.md)
 - [INTEGRATION](INTEGRATION.md), [ROADMAP](ROADMAP.md), [ACQUISITION](ACQUISITION.md)
 - [Inner pages and local accounts](PAGES.md), [research/page plan](PAGE_PLAN.md)

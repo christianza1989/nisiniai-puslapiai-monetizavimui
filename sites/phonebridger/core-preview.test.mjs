@@ -25,7 +25,7 @@ test('actual core plugin serves all attested pages/assets and isolates real loca
   for(let offset=0;offset<manifest.files.length;offset+=12)await Promise.all(manifest.files.slice(offset,offset+12).map(async file=>{
    const res=await fetch(base+file.path,{method:'HEAD'});assert.equal(res.status,200,file.path);assert.equal(Number(res.headers.get('content-length')),file.bytes,file.path);assert.match(res.headers.get('x-robots-tag'),/noindex/);
   }));
-  for(const route of ['shop','contact','help','downloads','about','privacy','terms','login','register','recover','account']){
+  for(const route of ['shop','contact','help','downloads','about','privacy','terms','login','register','recover','account','guides','guides/getting-started','guides/usb-wifi','guides/android-permissions','guides/phone-position','editorial']){
    const res=await fetch(base+route+'/');assert.equal(res.status,200,route);
    assert.equal(createHash('sha256').update(Buffer.from(await res.arrayBuffer())).digest('hex'),manifest.files.find(f=>f.path===route+'/index.html').sha256,route);
   }
@@ -37,7 +37,7 @@ test('actual core plugin serves all attested pages/assets and isolates real loca
   assert.equal((await(await fetch(base+'api/account/session',{headers:{Cookie:cookie}})).json()).user.email,'integration-fixture@example.invalid');
   assert.equal((await fetch(base+'api/account/logout',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json',Cookie:cookie},body:'{}'})).status,200);
   assert.equal((await(await fetch(base+'api/account/session',{headers:{Cookie:cookie}})).json()).user,null);
-  console.log(JSON.stringify({status:'PASS',attestedAssets:manifest.files.length,nestedPages:11,privateFilesDenied:true,publicHostDenied:true,actualLocalAccountCycle:true}));
+  console.log(JSON.stringify({status:'PASS',attestedAssets:manifest.files.length,nestedPages:17,privateFilesDenied:true,publicHostDenied:true,actualLocalAccountCycle:true}));
  }finally{
   await new Promise(resolve=>server.close(resolve));
   if(previous===undefined)delete process.env.PHONEBRIDGER_CORE_ACCOUNT_STORE;else process.env.PHONEBRIDGER_CORE_ACCOUNT_STORE=previous;

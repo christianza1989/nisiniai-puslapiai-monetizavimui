@@ -9,8 +9,8 @@ if (!process.argv[2]) throw Error('Usage: node sites/phonebridger/snapshot.mjs <
 const target = path.join(here, 'prototype');
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 const runtime = new Set(['.html','.js','.css','.svg','.webp','.png','.jpg','.ttf','.woff2','.mp4','.wav']);
-const chosen = new Set(['index.html', 'assets/fonts/OFL.txt']);
-const pageRoutes = ['shop','contact','help','downloads','about','privacy','terms','login','register','recover','account'];
+const chosen = new Set(['index.html', 'robots.txt','sitemap.xml','llms.txt','llms-full.txt','assets/fonts/OFL.txt']);
+const pageRoutes = ['shop','contact','help','downloads','about','privacy','terms','login','register','recover','account','guides','guides/getting-started','guides/usb-wifi','guides/android-permissions','guides/phone-position','editorial'];
 for (const route of pageRoutes) chosen.add(`${route}/index.html`);
 // Reviewed dynamic finish selection must retain both exact product assets.
 chosen.add('assets/closing-conversion-v1/holder-silver-640.webp');

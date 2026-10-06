@@ -22,5 +22,17 @@ commit `dac6c001cc874ab05af25c7bf38d80390cdcee9d` is pushed. Validation passes;
 unmerged PR availability does not certify adoption by every agent or old site.
 
 No niche price, palette or assumed VAT scenario becomes a universal core default.
+
+## Content/search completion correction — 2026-10-06
+
+An earlier page-family completion claim omitted the active site's guides, editorial trust, shared SEO/GEO/LLM and whole-site audit. Four authored guides, their hub/profile and approved shadow package now fill the content gap. The portable acceptance/improvement references now require an evidence-backed completion matrix under the actual site's contract, without universal guide quotas or automatic production authorization.
+
+English machine exports/profile breadcrumbs inherited Lithuanian-only labels. A pure shared SEO formatter and locale-aware schema aliases correct English output while45fixed-clock incumbent artifacts remain byte-identical. Core52tests,tsc/scopedESLint/build and all9localWorker HTTP checks pass. No niche-specific formatter, active registry entry or production activation was added.
+
+Actual article inspection found that the shared contextual link helper intentionally accepts root/HTTPS paths but the static adapter supplied relative paths. Corrected the adapter's input/output boundary; re-reviewed the meaningful setup-guide alias through Studio and added a real prose-link assertion.286same-origin checks pass. Exact package regeneration is byte-idempotent. Source freeze remains intact.
+
+Fresh visual/Lighthouse review repaired768px card framing, redundant eyebrows and color-only prose links. Guide hub/permissions final mobile scores96/96performance and100accessibility; frozen homepage62performance, script exception and ARIA issues explicitly fail in the A–Z audit. A code-only TOC finding was withdrawn after checking inherited scroll-padding. Bounded detector warnings and failed reports remain, not rewritten as historical PASS.
+
+The guide extension is verified locally; whole-site local/launch readiness is NOTREADY. Domain/public dates, full projection cutover, durable inquiry, mail receipt, measurement, operator/legal/hosted services remain specific gates. These changes are in scoped open PRs, not merged universal adoption.
 The account adapter is deliberately local and not a replacement for hosted auth.
 No other site's package/schema or historical test evidence was rewritten.

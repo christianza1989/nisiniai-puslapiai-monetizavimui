@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "preparedPages": 14,
+  "individualGuides": 4,
+  "httpLinks": 286,
+  "actualResponsiveMedia": 20,
+  "approvedEditRejected": true,
+  "futureRevokedLinksHidden": true,
+  "privateUrls404": true,
+  "accountsExcluded": true,
+  "homepageOutsideFooterUnchanged": true,
+  "frozenFiles": 472,
+  "productionPublication": false
+}

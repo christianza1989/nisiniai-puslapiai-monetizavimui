@@ -1,5 +1,7 @@
 # Inner pages and local accounts — 2026-10-06
 
+Follow-up content/search scope is implemented in [knowledge](knowledge/README.md): guide hub, first setup, USB/Wi-Fi, Android permissions, phone positioning and editorial responsibility. Four original contextual images become20responsive shared-pipeline WebPs. Header/footer/help connect the routes. The [A–Z audit](PHASE-1-AUDIT.md) supersedes any inference that the earlier page list alone meant whole-site completion; local/launch readiness remains failed/unverified where evidence is missing.
+
 The existing selected homepage is preserved. Its source changes are confined to
 footer links; 471 saved pre-existing files retain their hashes. The private
 integration copy additionally carries its documented noindex/preview transforms.

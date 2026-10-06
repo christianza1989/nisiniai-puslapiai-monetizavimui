@@ -1,0 +1,3646 @@
+{
+  "siteId": "madbeauty",
+  "version": 3,
+  "evaluatedAt": "2026-10-05T23:18:29.030Z",
+  "environment": "private loopback 8788, durable preview API",
+  "reviewer": "same implementing agent",
+  "scope": "Current UI/UX repair and route/viewport coverage; owner stopped demo profile/image review; full-state acceptance remains explicitly bounded.",
+  "historicalInventoryUnchanged": true,
+  "screens": [
+    {
+      "id": "public-home",
+      "label": "Homepage ir paieška",
+      "route": "/",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-home",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-home-1280-001.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-home",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-home-390-022.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-search",
+      "label": "Paieška, autocomplete, List/Map, filtras",
+      "route": "/paieska",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-search",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-search-1280-002.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-search",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-search-390-023.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-search",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-search",
+          "width": 640,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        640,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-services",
+      "label": "Paslaugų indeksas",
+      "route": "/paslaugos",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-services",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-services-1280-003.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-services",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-services-390-024.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-services",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-services",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-services",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-service-hub",
+      "label": "Paslaugos hub",
+      "route": "/paslaugos/:service",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-service-hub",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-service-hub-1280-004.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-service-hub",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-service-hub-390-025.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-service-hub",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-service-hub",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-service-hub",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-city-hub",
+      "label": "Miesto hub",
+      "route": "/miestai/:city",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-city-hub",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-city-hub-1280-005.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-city-hub",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-city-hub-390-026.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-city-hub",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-city-hub",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-city-hub",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-catalog",
+      "label": "Atrinktas service/city katalogas",
+      "route": "/paslaugos/:service/:city",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-catalog",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-catalog-1280-006.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-catalog",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-catalog-390-027.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-practitioner",
+      "label": "Meistro profilis",
+      "route": "/meistrai/:slug",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [],
+      "otherEvidence": [
+        "research/madbeauty-implementation/profile-crop-browser-v5.json"
+      ],
+      "widths": [],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-venue",
+      "label": "Salono profilis",
+      "route": "/salonai/:slug",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-venue",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-venue-1280-007.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-venue",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-venue-390-028.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-gallery",
+      "label": "Galerijos / portfolio panelė",
+      "route": null,
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-gallery",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-gallery-390-043.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-gallery-fixed",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-gallery-fixed-390-045.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390
+      ],
+      "desktopEvidence": false,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted.",
+        "First mobile distortion failed; CSS corrected and captured; post-correction pixel inspection intentionally stopped after owner steering."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-service-option",
+      "label": "Variantai, priedai ir kainos",
+      "route": null,
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-service-option-desktop",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-public-service-option-desktop-1280-087.png",
+          "review": "PASS: kaina, trukmė, priedas ir buferiai aiškiai atskirti"
+        },
+        {
+          "id": "public-service-option",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-service-option-390-044.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "public-for-business",
+      "label": "Meistrams landing",
+      "route": "/meistrams",
+      "surface": "public",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "public-for-business",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-for-business-1280-008.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-for-business",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-public-for-business-390-029.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "public-for-business",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-for-business",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "public-for-business",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-services-step",
+      "label": "Paslaugos ir priedai",
+      "route": "/registracija/paslauga",
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-services-desktop",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-services-desktop-1280-088.png",
+          "review": "Priedas pažymėtas: +15 min. ir +5 € prieš laiko pasirinkimą"
+        },
+        {
+          "id": "booking-services-live-total-pass",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-services-live-total-pass-1280-089.png",
+          "review": "PASS: priedas iškart perskaičiuoja 75 min./25 €, vieno meistro žingsnis pašalintas iš navigacijos"
+        },
+        {
+          "id": "booking-services-salon-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-services-salon-mobile-390-100.png",
+          "review": "PASS: 30+15 min., 43+5 €; santrauka kompaktiška"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-staff-step",
+      "label": "Meistro pasirinkimas kai reikia",
+      "route": "/registracija/meistras",
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-staff-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-staff-mobile-390-101.png",
+          "review": "PASS: tik 3 skirtingi tinkami žmonės; su priedu 45 min., 48/50/52 €"
+        },
+        {
+          "id": "booking-staff-desktop-pass",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-staff-desktop-pass-1280-102.png",
+          "review": "PASS: pakeitus meistrą Milda, priedas išlieka; 45 min./50 €"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted.",
+        "V3 mobile capture was loading and is not an accepted full mobile selection screenshot. Desktop and actual multi-staff booking transaction passed."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-time-step",
+      "label": "Data ir laikas",
+      "route": "/registracija/laikas",
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-time-empty-desktop",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-time-empty-desktop-1280-090.png",
+          "review": "PASS: 75 min. vizitas netelpa; siūlomi alternatyvūs užklausa / pageidavimas"
+        },
+        {
+          "id": "booking-time-mobile-pass",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-time-mobile-pass-390-093.png",
+          "review": "PASS: 75 min. intervalai su autoritetinga serverio patikra; 24 h laukai"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-details-step",
+      "label": "Kliento kontaktas ir taisyklės",
+      "route": "/registracija/duomenys",
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-details-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-details-mobile-390-094.png",
+          "review": "PASS: vardas ir readonly el. paštas; pilna 75 min./25 € santrauka"
+        },
+        {
+          "id": "booking-details-desktop-pass",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-details-desktop-pass-1280-103.png",
+          "review": "PASS: duomenys ir 45 min./50 € santrauka viename vaizde"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-review-step",
+      "label": "Visa santrauka",
+      "route": "/registracija/perziura",
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-review-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-review-mobile-390-095.png",
+          "review": "PASS: prieš patvirtinimą data, intervalas, suma ir mokėjimo principas"
+        },
+        {
+          "id": "booking-review-desktop-pass",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-review-desktop-pass-1280-104.png",
+          "review": "PASS: Milda / spalio 10 d. 14:15–15:00 / 45 min. / 50 €"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-confirmation",
+      "label": "Vizito patvirtinimas",
+      "route": "/registracija/rezultatas",
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-confirmation-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-confirmation-mobile-390-096.png",
+          "review": "PASS: vienas durable serverio booking, ne SMTP įrodymas"
+        },
+        {
+          "id": "booking-confirmation-mobile-polished",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-confirmation-mobile-polished-390-097.png",
+          "review": "PASS: patvirtinimas ir veiksmas pirmame mobile ekrane; išskleidžiama santrauka"
+        },
+        {
+          "id": "booking-confirmation-salon-desktop",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-confirmation-salon-desktop-1280-105.png",
+          "review": "PASS: salonas, pasirinkta meistrė ir priedas patvirtinti durable serverio įraše"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-inquiry",
+      "label": "Užklausa be authoritative kalendoriaus",
+      "route": null,
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-inquiry-desktop",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-inquiry-desktop-1280-091.png",
+          "review": "Užklausa aiškiai nėra laiko patvirtinimas"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": false,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-waitlist",
+      "label": "Waitlist pasiūlymas",
+      "route": null,
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-waitlist-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-waitlist-mobile-390-092.png",
+          "review": "PASS: pageidavimas, ne patvirtintas vizitas; modalas telpa 390 px"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390
+      ],
+      "desktopEvidence": false,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-reschedule",
+      "label": "Pakeisti vizitą",
+      "route": null,
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-reschedule",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-reschedule-1280.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "booking-reschedule-fixed",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-reschedule-fixed-390-008.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "booking-reschedule-fixed",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-reschedule-fixed-1280-009.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "booking-reschedule-addon-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-reschedule-addon-mobile-390-098.png",
+          "review": "PASS: pakeitimo intervalai išsaugo priedą ir visą 75 min. trukmę"
+        },
+        {
+          "id": "professional-reschedule-price-final",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-reschedule-price-final-320-067.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "booking-cancel",
+      "label": "Atšaukimas ir priežastis",
+      "route": null,
+      "surface": "booking",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "booking-cancel",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-cancel-1280.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "booking-cancel",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-cancel-390.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "booking-cancel-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-booking-cancel-mobile-390-099.png",
+          "review": "PASS: konkretus laikas ir atšaukimo priežastis prieš patvirtinimą"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-entry",
+      "label": "Prisijungimas el. paštu",
+      "route": "/paskyra",
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-entry",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-entry-1280.png",
+          "review": "PASS pixel review: spacious split introduction/form, clear labels and primary action, normal product copy."
+        },
+        {
+          "id": "customer-entry-authenticated",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-entry-authenticated-1280.png",
+          "review": "PASS pixel review: distinct account choice view, server account visible, clear client/work entry actions."
+        },
+        {
+          "id": "customer-entry-authenticated",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-entry-authenticated-390-022.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-entry",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-entry",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-entry",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-appointments",
+      "label": "Būsimi ir buvę vizitai",
+      "route": "/paskyra/vizitai",
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-appointments",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-appointments-1280.png",
+          "review": "PASS pixel review: distinct visit list with state tabs, price/end time and clear detail action; existing server booking visible."
+        },
+        {
+          "id": "customer-appointments",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-appointments-390-017.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-appointments-polished",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-appointments-polished-390-018.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-appointments",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-appointments",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-appointments",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-visit-detail",
+      "label": "Vizito detalės",
+      "route": "/paskyra/vizitai/:id",
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-visit-detail",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-visit-detail-1280.png",
+          "review": "PASS pixel review: clear visit summary and three distinct actions; pending sidebar copy polish tracked separately."
+        },
+        {
+          "id": "customer-visit-detail",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-customer-visit-detail-390-058.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-visit-detail",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-visit-detail",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-favorites",
+      "label": "Išsaugoti meistrai",
+      "route": "/paskyra/issaugoti",
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-favorites-empty",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-favorites-empty-390-019.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-favorites-saved",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-favorites-saved-390-020.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-favorites-saved",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-favorites-saved-390-021.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-favorites",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-favorites",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1440
+      ],
+      "desktopEvidence": false,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-messages",
+      "label": "Su vizitu susieti pokalbiai",
+      "route": "/paskyra/pranesimai",
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-messages",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-messages-1280-010.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-messages-sent",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-messages-sent-1280-011.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-messages",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-messages-390-016.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-messages",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-messages",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-messages",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-profile",
+      "label": "Asmeniniai duomenys",
+      "route": "/paskyra/profilis",
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-profile",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-profile-1280-012.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-profile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-profile-390-015.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-profile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-profile",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-profile",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-settings",
+      "label": "Komunikacijos ir privacy",
+      "route": "/paskyra/nustatymai",
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-settings",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-settings-1280-013.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-settings",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-settings-390-014.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "customer-settings",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-settings",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "customer-settings",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "customer-review",
+      "label": "Atsiliepimas po atlikto vizito",
+      "route": null,
+      "surface": "customer",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "customer-review-mobile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-review-mobile-390-085.png",
+          "review": "Modalas atliktam testiniam vizitui; pateikimas tik vietinis example.com"
+        },
+        {
+          "id": "customer-review-desktop",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-customer-review-desktop-1280-086.png",
+          "review": "PASS: atlikto vizito atsiliepimo modalas, rating ir komentaras pasiekiami"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-onboarding",
+      "label": "Organization ir profilio setup",
+      "route": "/meistrui/pradzia",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-onboarding-step-1",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-1-1280-057.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-2",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-2-1280-058.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-3",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-3-1280-059.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-4",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-4-1280-060.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-5",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-5-1280-061.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-6",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-6-1280-062.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-6",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-6-390-063.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-5",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-5-390-064.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-4",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-4-390-065.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-3",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-3-390-066.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-2",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-2-390-067.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding-step-1",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-onboarding-step-1-390-068.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-onboarding",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-onboarding",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-onboarding",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-onboarding",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-overview",
+      "label": "Dienos apžvalga",
+      "route": "/meistrui",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-overview",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-overview-390-024.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-overview",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-overview-1280-039.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-overview",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-overview",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-overview",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-calendar",
+      "label": "Diena / savaitė / mobile agenda",
+      "route": "/meistrui/kalendorius",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-calendar",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-calendar-390-023.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-calendar",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-calendar-1280-040.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-calendar-block-persisted",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-calendar-block-persisted-390-048.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-calendar-final",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-calendar-final-1440-060.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        },
+        {
+          "id": "professional-early-block-final",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-early-block-final-1440-061.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        },
+        {
+          "id": "professional-calendar-narrow-final",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-calendar-narrow-final-320-065.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        },
+        {
+          "id": "professional-calendar-handoff-final",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-calendar-handoff-final-1280-068.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        },
+        {
+          "id": "professional-calendar-handoff-final",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-calendar-handoff-final-1280-069.png",
+          "review": "PASS actual platform pixel review at1280: seven weekday columns visible, existing visit, actions/date/navigation, no page overflow; not every state/physical device."
+        },
+        {
+          "id": "professional-calendar-handoff-final",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-calendar-handoff-final-1280-070.png",
+          "review": "PASS actual platform pixel review at1280: heading, seven weekdays, persisted visit/actions/navigation/date visible; no page overflow; not every state/physical-device acceptance."
+        },
+        {
+          "id": "professional-calendar",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-calendar",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-calendar",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-calendar",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-calendar",
+          "width": 640,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        640,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-visit-drawer",
+      "label": "Vizito panelė",
+      "route": null,
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-visit-drawer-manual-persisted",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-visit-drawer-manual-persisted-1280-055.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-visit-drawer",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-visit-drawer-390-055.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-manual-visit",
+      "label": "Manual vizitas",
+      "route": null,
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-manual-visit",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-manual-visit-1280-054.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-manual-visit",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-manual-visit-390-054.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-manual-options-narrow-final",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-manual-options-narrow-final-320-066.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-inquiries",
+      "label": "Užklausos ir būsenos",
+      "route": "/meistrui/uzklausos",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-inquiries",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-inquiries-390-033.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-inquiries",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-inquiries-1280-041.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-inquiries",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-inquiries",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-inquiries",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-waitlist",
+      "label": "Laukiančiųjų sąrašas",
+      "route": "/meistrui/laukiantieji",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-waitlist",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-waitlist-390-034.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-waitlist",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-waitlist-1280-042.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-waitlist",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-waitlist",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-waitlist",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-clients",
+      "label": "Klientų sąrašas",
+      "route": "/meistrui/klientai",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-clients",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-clients-390-035.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-clients",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-clients-1280-043.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-client-created",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-client-created-390-053.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-clients-tablet-final",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-clients-tablet-final-820-063.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        },
+        {
+          "id": "professional-client-form-tablet-final",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-client-form-tablet-final-820-064.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        },
+        {
+          "id": "professional-clients",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-clients",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-clients",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-clients",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-clients",
+          "width": 640,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        640,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-client-detail",
+      "label": "Privati kliento kortelė",
+      "route": "/meistrui/klientai/:id",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-client-detail",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-client-detail-1280-056.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-client-detail",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-client-detail-390-056.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-services",
+      "label": "Paslaugų sąrašas",
+      "route": "/meistrui/paslaugos",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-services",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-services-390-025.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-services",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-services-1280-044.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-services",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-services",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-services",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-services",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-services",
+          "width": 640,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        640,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-service-editor",
+      "label": "Paslauga / variantai / priedai / kompetencija",
+      "route": null,
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-service-editor",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-service-editor-390-026.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-service-editor-multiple",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-service-editor-multiple-390-049.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-service-future-guard-final",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-professional-service-future-guard-final-1440-062.png",
+          "review": "PASS actual pixel review for this platform view and viewport; no page overflow; not full-state or physical-device acceptance."
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-shifts",
+      "label": "Pamainos / pertraukos / uždarymai",
+      "route": "/meistrui/grafikas",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-shifts",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-shifts-390-027.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-shifts",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-shifts-1280-045.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-shifts",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-shifts",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-shifts",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-resources",
+      "label": "Kabinetai ir įranga",
+      "route": "/meistrui/resursai",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-resources",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-resources-390-028.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-resources",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-resources-1280-046.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-resources",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-resources",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-resources",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-team",
+      "label": "Darbuotojai ir rolės",
+      "route": "/meistrui/komanda",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-team",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-team-390-029.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-team",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-team-1280-047.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-team",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-team",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-team",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-profile",
+      "label": "Profile revisions",
+      "route": "/meistrui/profilis",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-profile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-profile-390-030.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-profile",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-profile-1280-048.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-profile",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-profile",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-profile",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-gallery",
+      "label": "Media importas ir kilmė",
+      "route": "/meistrui/galerija",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-gallery",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-gallery-390-031.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-gallery",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-gallery-1280-049.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-messages",
+      "label": "Delivery ir service/marketing skirtis",
+      "route": "/meistrui/pranesimai",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-messages",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-messages-390-032.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-messages",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-messages-1280-050.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-messages",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-messages",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-messages",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-reports",
+      "label": "Vizitų / inquiry įvykdymo duomenys",
+      "route": "/meistrui/ataskaitos",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-reports",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-reports-390-036.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-reports",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-reports-1280-051.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-reports",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-reports",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-reports",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-integrations",
+      "label": "External booking ir scoped links",
+      "route": "/meistrui/integracijos",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-integrations",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-integrations-390-037.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-integrations",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-integrations-1280-052.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-integrations",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-integrations",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-integrations",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-integrations",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-integrations",
+          "width": 640,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        320,
+        390,
+        640,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted.",
+        "This surface reports current capability/status. A visible route does not imply live external transport, publication, field analytics or integrations."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "professional-settings",
+      "label": "Booking taisyklės ir privacy",
+      "route": "/meistrui/nustatymai",
+      "surface": "professional",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "professional-settings",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-settings-390-038.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-settings",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-professional-settings-1280-053.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "professional-settings",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-settings",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "professional-settings",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted.",
+        "This surface reports current capability/status. A visible route does not imply live external transport, publication, field analytics or integrations."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "operator-queue",
+      "label": "Approvals",
+      "route": "/operatorius",
+      "surface": "operator",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "operator-queue",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-queue-390-070.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-queue-returned",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-queue-returned-390-072.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-queue",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-queue-1280-078.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-queue",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-queue",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-queue",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "operator-provider-review",
+      "label": "Revision ir grąžinimo priežastis",
+      "route": null,
+      "surface": "operator",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "operator-provider-review",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-provider-review-390-071.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390
+      ],
+      "desktopEvidence": false,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "operator-catalog",
+      "label": "Taxonomy / eligibility",
+      "route": "/operatorius/katalogas",
+      "surface": "operator",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "operator-catalog",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-catalog-390-073.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-catalog",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-catalog-1280-079.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-catalog-mobile-pass",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-catalog-mobile-pass-390-084.png",
+          "review": "PASS: vardas, miestas, būsena ir veiksmas telpa 390 px kortelėje; horizontalus puslapio overflow 0"
+        },
+        {
+          "id": "operator-catalog",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-catalog",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-catalog",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "operator-reports",
+      "label": "Media ir atsiliepimų pranešimai",
+      "route": "/operatorius/skundai",
+      "surface": "operator",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "operator-reports",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-reports-390-074.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-reports",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-reports-1280-080.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-reviews-queue",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-operator-reviews-queue-390-050.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-review-moderation",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-operator-review-moderation-390-051.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-reports",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-reports",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-reports",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "operator-delivery",
+      "label": "Inquiry / outbox diagnostika",
+      "route": "/operatorius/pristatymas",
+      "surface": "operator",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "operator-delivery",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-delivery-390-075.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-delivery",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-delivery-1280-081.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-delivery",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-delivery",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-delivery",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted.",
+        "This surface reports current capability/status. A visible route does not imply live external transport, publication, field analytics or integrations."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "operator-content",
+      "label": "Publikavimo / nuorodų eilė",
+      "route": "/operatorius/turinys",
+      "surface": "operator",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "operator-content",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-content-390-076.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-content",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-content-1280-082.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-content",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-content",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-content",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted.",
+        "This surface reports current capability/status. A visible route does not imply live external transport, publication, field analytics or integrations."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "operator-metrics",
+      "label": "Atskiras siteId matavimas",
+      "route": "/operatorius/rodikliai",
+      "surface": "operator",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "operator-metrics",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-metrics-390-077.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-metrics",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v3.json",
+          "screenshot": "research/madbeauty-implementation/v3-operator-metrics-1280-083.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "operator-metrics",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-metrics",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "operator-metrics",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted.",
+        "This surface reports current capability/status. A visible route does not imply live external transport, publication, field analytics or integrations."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "content-guides",
+      "label": "Gidų indeksas ir klasteriai",
+      "route": "/gidai",
+      "surface": "content",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "content-guides",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-content-guides-1280-009.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "content-guides",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-content-guides-390-030.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "content-guides",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-guides",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-guides",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "content-guide",
+      "label": "Pilnas gidas / service CTA",
+      "route": "/gidai/:slug",
+      "surface": "content",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "content-guide",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-guide",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-guide",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-guide",
+          "width": 320,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-guide",
+          "width": 640,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [
+        "research/madbeauty-implementation/content-initial-guides-final-browser.json"
+      ],
+      "widths": [
+        320,
+        390,
+        640,
+        820,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "content-editorial",
+      "label": "Redakcija ir metodika",
+      "route": "/redakcija",
+      "surface": "content",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "content-editorial",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-content-editorial-1280-010.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "content-editorial",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-content-editorial-390-031.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "content-editorial",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-editorial",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-editorial",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "content-author",
+      "label": "Tikras autoriaus profilis",
+      "route": "/autoriai/:slug",
+      "surface": "content",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "content-author",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-content-author-1280-011.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "content-author",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-content-author-390-032.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "content-author",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-author",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "content-author",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-about",
+      "label": "Apie platformą",
+      "route": "/apie",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-about",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-about-1280-012.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-about",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-about-390-033.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-about",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-about",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-about",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-contact",
+      "label": "MB Pinet ir patikimas kelias",
+      "route": "/kontaktai",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-contact",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-contact-1280-013.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-contact",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-contact-390-034.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-contact",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-contact",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-contact",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-how",
+      "label": "Etapo ir registracijos paaiškinimas",
+      "route": "/kaip-veikia",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-how",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-how-1280-014.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-how",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-how-390-035.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-how",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-how",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-how",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-verification",
+      "label": "Tikrinimo metodika",
+      "route": "/tikrinimas",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-verification",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-verification-1280-015.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-verification",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-verification-390-036.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-verification",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-verification",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-verification",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-help",
+      "label": "Pagalba ir taisyklės",
+      "route": "/pagalba",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-help",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-help-1280-016.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-help",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-help-390-037.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-help",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-help",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-help",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-privacy",
+      "label": "Privatumas",
+      "route": "/privatumas",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-privacy",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-privacy-1280-017.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-privacy",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-privacy-390-038.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-privacy",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-privacy",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-privacy",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-cookies",
+      "label": "Slapukai",
+      "route": "/slapukai",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-cookies",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-cookies-1280-018.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-cookies",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-cookies-390-039.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-cookies",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-cookies",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-cookies",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-terms",
+      "label": "Taisyklės",
+      "route": "/taisykles",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-terms",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-terms-1280-019.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-terms",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-terms-390-040.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-terms",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-terms",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-terms",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-cancellation",
+      "label": "Atšaukimo principai",
+      "route": "/atsaukimas",
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-cancellation",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-cancellation-1280-020.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-cancellation",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-cancellation-390-041.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-cancellation",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-cancellation",
+          "width": 820,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        },
+        {
+          "id": "trust-cancellation",
+          "width": 1440,
+          "receipt": "research/madbeauty-implementation/uiux-routes-v1.json",
+          "review": "Actual rendered DOM/viewport; not standalone pixel acceptance"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        820,
+        1280,
+        1440
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    },
+    {
+      "id": "trust-not-found",
+      "label": "404 / unpublished / removed",
+      "route": null,
+      "surface": "trust",
+      "implementation": "IMPLEMENTED_LOCAL",
+      "browserEvidence": [
+        {
+          "id": "trust-not-found",
+          "width": 1280,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-not-found-1280-021.png",
+          "review": "pending pixel review"
+        },
+        {
+          "id": "trust-not-found",
+          "width": 390,
+          "receipt": "research/madbeauty-implementation/screen-acceptance-v6.json",
+          "screenshot": "research/madbeauty-implementation/v6-trust-not-found-390-042.png",
+          "review": "pending pixel review"
+        }
+      ],
+      "otherEvidence": [],
+      "widths": [
+        390,
+        1280
+      ],
+      "desktopEvidence": true,
+      "mobileEvidence": true,
+      "fullStateAcceptance": "UNVERIFIED",
+      "notes": [
+        "Every normal/loading/empty/error/validation/permission state has not been independently accepted."
+      ],
+      "currentUiuxMatrix": "sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json"
+    }
+  ]
+}

@@ -1,0 +1,1664 @@
+{
+  "at": "2026-10-06T01:22:56.856Z",
+  "normalDesktopMobileMissing": [],
+  "ownerStopped": [
+    "public-gallery",
+    "demo photography/profile aesthetic review"
+  ],
+  "gaps": [
+    {
+      "screen": "public-home",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-home",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-home",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-search",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-search",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-search",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-services",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-services",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-services",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-service-hub",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-service-hub",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-service-hub",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-city-hub",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-city-hub",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-city-hub",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-catalog",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-catalog",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-catalog",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-practitioner",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-practitioner",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-practitioner",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-venue",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-venue",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-venue",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-service-option",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-service-option",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-service-option",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-for-business",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-for-business",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "public-for-business",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-services-step",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-services-step",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-services-step",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-staff-step",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-staff-step",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-staff-step",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-time-step",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-time-step",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-time-step",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-details-step",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-details-step",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-details-step",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-review-step",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-review-step",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-review-step",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-confirmation",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-confirmation",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-confirmation",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-inquiry",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-inquiry",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-inquiry",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-waitlist",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-waitlist",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-waitlist",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-reschedule",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-reschedule",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-reschedule",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-cancel",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-cancel",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "booking-cancel",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-entry",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-entry",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-entry",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-appointments",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-appointments",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-appointments",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-visit-detail",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-visit-detail",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-visit-detail",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-favorites",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-favorites",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-favorites",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-messages",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-messages",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-messages",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-profile",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-profile",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-profile",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-settings",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-settings",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-settings",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-review",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-review",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "customer-review",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-onboarding",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-onboarding",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-onboarding",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-overview",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-overview",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-overview",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-calendar",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-calendar",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-visit-drawer",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-visit-drawer",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-visit-drawer",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-manual-visit",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-manual-visit",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-manual-visit",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-inquiries",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-inquiries",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-inquiries",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-waitlist",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-waitlist",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-waitlist",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-clients",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-clients",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-clients",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-client-detail",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-client-detail",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-client-detail",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-services",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-services",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-services",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-service-editor",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-service-editor",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-service-editor",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-shifts",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-shifts",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-shifts",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-resources",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-resources",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-resources",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-team",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-team",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-team",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-profile",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-profile",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-profile",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-gallery",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-gallery",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-gallery",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-messages",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-messages",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-messages",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-reports",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-reports",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-reports",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-integrations",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-integrations",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-integrations",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-settings",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-settings",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "professional-settings",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-queue",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-queue",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-queue",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-provider-review",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-provider-review",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-provider-review",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-catalog",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-catalog",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-catalog",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-reports",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-reports",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-reports",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-delivery",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-delivery",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-delivery",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-content",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-content",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-content",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-metrics",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-metrics",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "operator-metrics",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-guides",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-guides",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-guides",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-guide",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-guide",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-guide",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-editorial",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-editorial",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-editorial",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-author",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-author",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "content-author",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-about",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-about",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-about",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-contact",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-contact",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-contact",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-how",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-how",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-how",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-verification",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-verification",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-verification",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-help",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-help",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-help",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-privacy",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-privacy",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-privacy",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-cookies",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-cookies",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-cookies",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-terms",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-terms",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-terms",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-cancellation",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-cancellation",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-cancellation",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-not-found",
+      "state": "tablet",
+      "reason": "Optional extended per-surface tablet coverage; desktop/mobile are individually accepted.",
+      "type": "OPTIONAL_EXTENDED_COVERAGE",
+      "canPerformNow": true,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-not-found",
+      "state": "zoom-reflow",
+      "reason": "Physical200%browser zoom unsupported by current IAB; narrow CSS measurements are distinct.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    },
+    {
+      "screen": "trust-not-found",
+      "state": "reduced-motion",
+      "reason": "OS reduced-motion setting unavailable through current tools; source CSS preference rule is not actual OS test.",
+      "type": "TOOL_LIMIT",
+      "canPerformNow": false,
+      "nextAction": "Use a browser/device exposing the required setting or viewport."
+    }
+  ],
+  "productionDependencies": [
+    "Physical zoom, OS reduced-motion, production browsers/devices unverified",
+    "No live SMTP/INBOX, payment, FB, voice, DNS/TLS/deploy, real-provider or demand claim",
+    "Search map is a location scheme; no real geocoder integration",
+    "Media-check validates file locally; public import unchanged and not represented as completed production upload"
+  ]
+}

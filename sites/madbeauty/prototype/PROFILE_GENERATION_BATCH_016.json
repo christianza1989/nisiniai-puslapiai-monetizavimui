@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-32-portrait",
+      "profileIndex": 31,
+      "name": "Saulė Dargytė",
+      "specialty": "hair",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P32 portrait. A unique fictional Lithuanian adult woman with silver short crop, age 40, navy clean professional tunic, in a hair professional studio with natural birch furnishings, black equipment and violet stool. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: long narrow face, hooded hazel eyes, slightly aquiline nose; strong dark straight eyebrows. Fair skin with natural pink undertone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Saulė Dargytė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-727931fc-58d7-4eae-994b-d440a75fb3c7.png",
+      "review": "Pixel review accepted: silver pixie-haired hair practitioner with long angular face and dark wrap blouse; coherent distinct portrait."
+    },
+    {
+      "id": "profile-32-work",
+      "profileIndex": 31,
+      "name": "Saulė Dargytė",
+      "specialty": "hair",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P32 hair portfolio photo. Rear three-quarter portrait of an adult female client showing a professional shoulder-length haircut and natural glossy healthy-looking hair, focus on the ash-blonde gentle balayage. Soft side daylight. Quiet pale stone with charcoal furnishings and olive plant background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Saulė Dargytė hair stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-95d2c912-710e-4b08-9ab4-39a41095aae4.png",
+      "review": "Pixel review accepted: shoulder-length layered blonde hairstyle from side/back with plausible silhouette; clear hair result and distinct style."
+    },
+    {
+      "id": "profile-32-space",
+      "profileIndex": 31,
+      "name": "Saulė Dargytė",
+      "specialty": "hair",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P32 studio interior. Unique hair small professional studio interior: natural birch furnishings, black equipment and violet stool. Hair salon chair, mirror and tidy hair tools. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Saulė Dargytė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-13a0117f-d82d-487a-b3a2-2497645a149c.png",
+      "review": "Pixel review accepted: hair station with broad circular mirror, wood desk and dark chair; coherent usable interior with crop room."
+    },
+    {
+      "id": "profile-33-portrait",
+      "profileIndex": 32,
+      "name": "Vesta Vingė",
+      "specialty": "brows",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P33 portrait. A unique fictional Lithuanian adult woman with short chestnut bob, age 47, ivory knit blouse, in a brows professional studio with oak and white cabinetry, tall arched window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: round face with full cheeks, warm brown eyes, long straight nose; fine softly arched eyebrows. Medium warm skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Vesta Vingė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-153bd750-38f2-410f-8baa-b7ad152f9436.png",
+      "review": "Pixel review accepted: mature short brown bob practitioner with full face and brown eyes; distinct portrait."
+    },
+    {
+      "id": "profile-33-work",
+      "profileIndex": 32,
+      "name": "Vesta Vingė",
+      "specialty": "brows",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P33 brows portfolio photo. Macro editorial photograph of one adult woman's eye and naturally groomed eyebrow, face with real skin texture, eye closed softly; show a clean tapered eyebrow with restrained natural makeup. Bright diffused window light. Quiet warm walnut furniture, soft cream wall and round mirror background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Vesta Vingė brows stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-8298801b-ab82-444b-aefe-1497b27b94e3.png",
+      "review": "Pixel review accepted: natural textured eyebrow/eye close-up, clean shape and plausible resting hand; relevant brow illustration."
+    },
+    {
+      "id": "profile-33-space",
+      "profileIndex": 32,
+      "name": "Vesta Vingė",
+      "specialty": "brows",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P33 studio interior. Unique brows small professional studio interior: oak and white cabinetry, tall arched window. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Vesta Vingė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-80f3ca94-b2c9-4792-99ee-0acbc6e7ae9f.png",
+      "review": "Pixel review accepted: white brow treatment chair, arched window and light cabinetry; distinct interior layout."
+    },
+    {
+      "id": "profile-34-portrait",
+      "profileIndex": 33,
+      "name": "Elena Adomė",
+      "specialty": "skin",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P34 portrait. A unique fictional Lithuanian adult woman with long straight honey-blonde hair, age 54, plum professional blouse, in a skin professional studio with pale stone with charcoal furnishings and olive plant. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: angular square jaw, wide-set grey-green eyes, slim straight nose; strong dark straight eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Elena Adomė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-05eab57f-01f4-4c6a-81d8-582047925493.png",
+      "review": "Pixel review accepted: mature long blonde-haired skincare practitioner with grey eyes and plum blouse; coherent distinct face."
+    },
+    {
+      "id": "profile-34-work",
+      "profileIndex": 33,
+      "name": "Elena Adomė",
+      "specialty": "skin",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P34 skin portfolio photo. Calm editorial spa skincare procedure scene, an adult woman client on a treatment chair under a white towel, a practitioner's clean hands using two soft white cleansing pads; no medical equipment. Soft side daylight. Quiet bright skylight, black thin metal furnishings background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Elena Adomė skin stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-67f6481a-9418-4457-82e3-e0dea94a25d3.png",
+      "review": "Pixel review accepted: facial cleansing scene with two cotton pads and plausible practitioner hands; relevant distinct skincare view."
+    }
+  ]
+}

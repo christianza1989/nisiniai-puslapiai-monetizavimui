@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const url=new URL('./public/workspace-ui.mjs',import.meta.url);let s=await readFile(url,'utf8');
+s=s.replace("s.closedDay!==null?'<br>uždarymas: '+ctx.dayLabel(s.closedDay):''","s.closedDate?'<br>Uždarymas: '+esc(s.closedDate):s.closedDay!=null?'<br>Uždarymas: '+ctx.dayLabel(s.closedDay):''");
+s=s.replace("${select('uždarymo diena','closedDay'", "${ctx.adapter.mode==='real'?field('Uždarymo data','closedDate',s.closedDate||'','date'):select('Uždarymo diena','closedDay'");
+s=s.replace("s.closedDay===null?'':String(s.closedDay))}","s.closedDay===null?'':String(s.closedDay))}");
+s=s.replace("{weekdays:fd.getAll('weekdays')}","{weekdays:fd.getAll('weekdays'),closedDate:fd.get('closedDate')||null}");
+s=s.replace("closedDay:fd.get('closedDay')===''?null:Number(fd.get('closedDay'))", "...(ctx.adapter.mode==='real'?{}:{closedDay:fd.get('closedDay')===''?null:Number(fd.get('closedDay'))})");
+s=s.replace("[['Vilnius','Vilnius'],['Kaunas','Kaunas'],['Klaipėda','Klaipėda']],v.city||o.city", "['Vilnius','Kaunas','Klaipėda','Šiauliai','Panevėžys','Alytus','Marijampolė','Palanga'].map(c=>[c,c]),v.city||o.city");
+s=s.replace("name:v.name,bio:v.bio,kind:v.kind}", "name:v.name||d.organizations[0].name,bio:v.bio||d.organizations[0].bio,kind:v.kind||d.organizations[0].kind,city:v.city||d.organizations[0].city}");
+await writeFile(url,s);

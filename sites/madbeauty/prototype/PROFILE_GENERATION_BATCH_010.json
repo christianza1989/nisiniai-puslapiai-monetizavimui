@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-16-portrait",
+      "profileIndex": 15,
+      "name": "Giedrė Navickė",
+      "specialty": "skin",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P16 portrait. A unique fictional Lithuanian adult woman with silver short crop, age 44, black linen apron over white shirt, in a skin professional studio with natural birch furnishings, black equipment and violet stool. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: angular square jaw, almond-shaped dark eyes, short rounded nose; strong dark straight eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Giedrė Navickė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-73ae29f3-43cf-4982-957e-8a2ec0362c76.png",
+      "review": "Pixel review accepted: mature practitioner with cropped silver hair and charcoal apron; distinct face, coherent portrait, no labels."
+    },
+    {
+      "id": "profile-16-work",
+      "profileIndex": 15,
+      "name": "Giedrė Navickė",
+      "specialty": "skin",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P16 skin portfolio photo. Calm editorial spa skincare procedure scene, an adult woman client on a treatment chair under a white towel, a practitioner's clean hands using a smooth jade-toned facial roller held gently; no medical claim. Soft side daylight. Quiet pale stone with charcoal furnishings and olive plant background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Giedrė Navickė skin stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-fbab0834-47d1-4f52-be76-2107d08557dc.png",
+      "review": "Pixel review accepted: cosmetic face massage with jade roller, coherent hands and client anatomy; relevant treatment scene."
+    },
+    {
+      "id": "profile-16-space",
+      "profileIndex": 15,
+      "name": "Giedrė Navickė",
+      "specialty": "skin",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P16 studio interior. Unique skin small professional studio interior: natural birch furnishings, black equipment and violet stool. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Giedrė Navickė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-c705754d-5d9f-4132-8ece-82a11448c919.png",
+      "review": "Pixel review accepted: white skin-treatment chair and light wood storage, black lamp and lilac stool; plausible distinct interior."
+    },
+    {
+      "id": "profile-17-portrait",
+      "profileIndex": 16,
+      "name": "Dovilė Tumėnaitė",
+      "specialty": "massage",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P17 portrait. A unique fictional Lithuanian adult woman with short chestnut bob, age 51, navy clean professional tunic, in a massage professional studio with oak and white cabinetry, tall arched window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: heart-shaped face, large grey eyes, slightly aquiline nose; fine softly arched eyebrows. Fair skin with natural pink undertone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Dovilė Tumėnaitė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-6f87556f-0dfc-431a-be01-763d70b8c27b.png",
+      "review": "Pixel review accepted: middle-aged massage practitioner with auburn bob and navy uniform; distinct coherent portrait."
+    },
+    {
+      "id": "profile-17-work",
+      "profileIndex": 16,
+      "name": "Dovilė Tumėnaitė",
+      "specialty": "massage",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P17 massage portfolio photo. Editorial wellness photo of a practitioner performing a gentle shoulder massage on a seated adult client, client in a simple sleeveless top; only neck, upper shoulder and practitioner's hands visible, quiet beige setting with olive leaf shadow. Bright diffused window light. Quiet warm walnut furniture, soft cream wall and round mirror background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Dovilė Tumėnaitė massage stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-a2ade8ba-1cd9-4f0b-a257-fd3e35d01f76.png",
+      "review": "Pixel review accepted: shoulder massage detail with two coherent hands and fully clothed client; plausible treatment, no medical claims."
+    },
+    {
+      "id": "profile-17-space",
+      "profileIndex": 16,
+      "name": "Dovilė Tumėnaitė",
+      "specialty": "massage",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P17 studio interior. Unique massage small professional studio interior: oak and white cabinetry, tall arched window. Massage table neatly made with folded linen, quiet uncluttered treatment room. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Dovilė Tumėnaitė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-19252d89-6ffa-4e0d-bbc2-69183a902a6d.png",
+      "review": "Pixel review accepted: massage table with lilac linen, oak cabinets and arched daylight window; distinct room composition."
+    },
+    {
+      "id": "profile-18-portrait",
+      "profileIndex": 17,
+      "name": "Laura Juškaitė",
+      "specialty": "pedicure",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P18 portrait. A unique fictional Lithuanian adult woman with long straight honey-blonde hair, age 29, ivory knit blouse, in a pedicure professional studio with pale stone with charcoal furnishings and olive plant. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: high prominent cheekbones, hooded hazel eyes, long straight nose; strong dark straight eyebrows. Medium warm skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Laura Juškaitė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-719dda7a-ba86-4e0f-89b8-8507df53a5eb.png",
+      "review": "Pixel review accepted: young adult with honey-blond hair and cream knit blouse; coherent facial structure and relevant studio backdrop."
+    },
+    {
+      "id": "profile-18-work",
+      "profileIndex": 17,
+      "name": "Laura Juškaitė",
+      "specialty": "pedicure",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P18 pedicure portfolio photo. Editorial close photograph of anatomically correct adult feet after pedicure, resting on a clean folded towel, focus on neat short toenails with muted mauve polish. Soft side daylight. Quiet bright skylight, black thin metal furnishings background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Laura Juškaitė pedicure stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-0bf78406-1525-463f-a9ea-05fe993e0b28.png",
+      "review": "Pixel review accepted: two feet with ten plausible toes and mauve pedicure; clear nail result, no tools or labels."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-05",
+  "assets": [
+    {
+      "id": "profile-02-space",
+      "profileIndex": 1,
+      "name": "Ieva Jankutė",
+      "specialty": "hair",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P02 studio interior. Unique hair small professional studio interior: pale stone with charcoal furnishings and olive plant. Hair salon chair, mirror and tidy hair tools. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Ieva Jankutė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-fce76ac2-a523-476d-8990-4cb793dae38d.png",
+      "review": "Sequential pixel review accepted 2026-10-05: salon chair and equipment match hair interior; distinct black-haired portrait with natural skin and clear face. Crop safe."
+    },
+    {
+      "id": "profile-03-portrait",
+      "profileIndex": 2,
+      "name": "Gabija Mockutė",
+      "specialty": "brows",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P03 portrait. A unique fictional Lithuanian adult woman with wavy black shoulder-length hair, age 40, ivory knit blouse, in a brows professional studio with warm walnut furniture, soft cream wall and round mirror. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Gabija Mockutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-90fe6652-b856-40d8-b261-8369315c0e51.png",
+      "review": "Sequential pixel review accepted 2026-10-05: salon chair and equipment match hair interior; distinct black-haired portrait with natural skin and clear face. Crop safe."
+    }
+  ]
+}

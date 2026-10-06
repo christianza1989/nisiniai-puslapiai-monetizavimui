@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import path from 'node:path';
+const base='http://127.0.0.1:8788',here=import.meta.dirname,manifest=JSON.parse(await readFile(path.join(here,'PROFILE_ASSET_MANIFEST_V2.json'))),hash=b=>createHash('sha256').update(b).digest('hex');
+assert.equal(manifest.importedAssets,120);assert.equal(manifest.complete,true);assert.equal(new Set(manifest.assets.map(a=>a.source.sha256)).size,120);
+const sessionResponse=await fetch(base+'/api/madbeauty/session'),session=await sessionResponse.json(),cookie=sessionResponse.headers.get('set-cookie').split(';')[0];
+const rpc=async(method,input={})=>{const r=await fetch(base+'/api/madbeauty/rpc',{method:'POST',headers:{origin:base,cookie,'content-type':'application/json','x-csrf-token':session.csrf},body:JSON.stringify({method,input,siteId:'madbeauty'})});assert.equal(r.status,200);return(await r.json()).result;};
+const catalog=await rpc('catalog'),profiles=[];let files=0,bytes=0;
+for(let i=0;i<40;i++){const assets=manifest.assets.filter(a=>a.profileIndex===i);assert.deepEqual(assets.map(a=>a.type).sort(),['portrait','space','work']);for(const a of assets){assert.match(a.review,/accepted/i);for(const v of a.variants){const original=await readFile(path.join(here,'public',v.file));assert.equal(hash(original),v.sha256);const r=await fetch(base+'/'+v.file);assert.equal(r.status,200);assert.match(r.headers.get('content-type'),/^image\/webp/);const actual=Buffer.from(await r.arrayBuffer());assert.equal(hash(actual),v.sha256);files++;bytes+=actual.length;}}
+const row=catalog.find(s=>s.avatarImageId===assets.find(a=>a.type==='portrait').id);assert.ok(row);const profile=await rpc('profile',{id:row.organizationId});assert.equal(profile.kind,'solo');assert.equal(profile.avatarImageId,assets.find(a=>a.type==='portrait').id);assert.equal(new Set(profile.gallery).size,2);assert.ok(profile.gallery.includes(assets.find(a=>a.type==='work').id));assert.ok(profile.gallery.includes(assets.find(a=>a.type==='space').id));profiles.push({id:profile.id,name:profile.name,kind:profile.kind,avatar:profile.avatarImageId,gallery:profile.gallery});}
+const privateStatus=(await fetch(base+'/private-originals/profiles-v2/profile-01-portrait.png')).status;assert.equal(privateStatus,404);
+const report={date:'2026-10-05',status:'PASS',mode:'preview-server',profiles:profiles.length,distinctOriginals:120,webpFiles:files,bytes,uniqueOriginalHashes:120,privateOriginalStatus:privateStatus,rows:profiles};await writeFile(path.resolve(here,'../../../research/madbeauty-implementation/profile-media-http.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,rows:undefined}));

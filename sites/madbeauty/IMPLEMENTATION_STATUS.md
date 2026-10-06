@@ -1,0 +1,117 @@
+# Madbeauty — dabartinis įgyvendinimas
+
+<!-- UIUX_V3_CURRENT -->
+## Aktualus UI/UX V3 rezultatas — 2026-10-06
+
+Vietinis funkcijų ir normalios desktop/mobile sąsajos pavedimas užbaigtas su savininko demo medijos išimtimi. Tai apima69 iš70 inventoriaus paviršių; public-gallery ir demo fotografijų/profilių estetika savininko sustabdyta. 219 V3 kadrai, 202 peržiūrėti konkretūs įrašai; baseline, pereinamo dažymo ir smooth-scroll kadrai nelaikomi PASS. Peržiūrą atliko tas pats įgyvendinantis agentas.
+
+Veikia pilnas kliento rezervavimas→perkėlimas→atšaukimas→reload; meistro kalendorius ir rankinis vizitas; patvarios inquiry/waitlist užklausos ir jų būsenos kliento paskyroje; abiejų rolių pokalbiai; completed vizito atsiliepimas→operatoriaus approval/rejection; profilio revizija→operatoriaus patvirtinimas; kontaktų pranešimas→operatoriaus eilė. Tikras ryšio nutrūkimas išlaikė įvestą užklausą, pakartojimas po restart išsaugojo vieną įrašą. Tikras dviejų skirtukų409 neperrašė naujesnės paslaugos versijos. Visa tai privatus QA su example.com paskyromis.
+
+Regresija **74 PASS /0 FAIL**: backend V17 **36**, platform/HTTP/calendar V11 **29**, foundation V11 **9**. Rinkinių manifestas įrašytas prieš paleidimą; pridėtas vienas prasmingas request-history izoliacijos testas, testų nepašalinta. **32 mjs sintaksės patikros PASS** (įskaitant backend testų failus), tikslūs sourceSHA256 galutiniame kvite. Prisijungusio mobiliojo kalendoriaus Lighthouse V10 **94/100/100/66**, LCP2,56s, TBT25ms, CLS0,094,205927baitai. Matuota pradinė QA darbo vieta, ne trijų meistrų apkrova; privatus noindex. Matavimas atliktas prieš galutinį operatoriaus tuščio turinio teksto pakeitimą; kalendoriaus kodas nepakito, pirmoji source versija išlaikyta.
+
+Normalūs vaizdai priimti kiekvienam nestabdytam paviršiui. Loading/error/validation/permission/empty būsenų bendro komponento arba serverio kontrakto įrodymai matricoje pažymėti atskirai nuo konkretaus ekrano naršyklės bandymo. Fizinis200%zoom, OS reduced-motion, production įrenginiai ir papildoma visų paviršių planšetės matrica lieka UNVERIFIED. Ne visos įmanomos laiko/persidengimo kombinacijos priimtos.
+
+Gyvas SMTP/INBOX, DNS/TLS/hosting/deploy, production katalogo SSR/SEO, tikri teikėjai ir paklausa yra atskiros neprijungtos priklausomybės. Mokėjimai/FB/voice neįjungti. A–Z rezultatas nepakeistas: vietinis7,6/gateReady=false; gyvas paleidimas0, paklausa nematuota. Root8786 ir bendras core nepakeisti.
+
+**Paketas užbaigtas:** V3UX23–29 ir tuščio turinio paaiškinimas. **Vietinis funkcijų bei normalios desktop/mobile apimties pavedimas užbaigtas:**69paviršiai, savininko media išimtis. **Laukiama konkrečių priklausomybių:** fizinių browser/OS nustatymų, production adapterio/hosting/pašto ir tikrų komercinių faktų. Papildoma planšetės aprėptis matricoje UNVERIFIED, nėra visų įrenginių PASS.
+
+Entry point: `node sites/madbeauty/prototype/app-server.mjs` → [vietinė platforma](http://127.0.0.1:8788/meistrui/kalendorius). Own procesas8788/PID7392; root8786/PID21428 nepakeistas. Failų ribos: sites/madbeauty/, sites/madbeauty.md, research/madbeauty-implementation/ ir savas WORKSTREAMS įrašas.
+
+Aktualus [priėmimas](uiux/ACCEPTANCE.md), [kelionės](uiux/JOURNEYS.md), [tikslūs UNVERIFIED](uiux/REMAINING_GAPS.json), [galutinis kvitas](../../research/madbeauty-implementation/uiux-functional-final-v3.json).
+
+## Ankstesnių etapų istorija
+
+## Istorinis UI/UX V2 rezultatas — 2026-10-06
+
+**Vietinės pataisos priimtos; visų 70 ekranų priėmimas tęsiamas.** Pagerintas trijų meistrų kalendorius su trumpais persidengiančiais vizitais, rankinio vizito kainos/trukmės santrauka, kliento ir vizito detalės bei 320 px antraštė. Actual naršyklės rankinis vizitas → perkėlimas → atšaukimo validacija → atšaukimas → reload PASS; galutinė to paties vizito canceled/version3 būsena patvari. Darbo vieta privati, nepatvirtinta viešam katalogui.
+
+Regresija **73 PASS**: backend V16 35, platform/HTTP/layout V10 29 ir atskirai foundation V10 9. 27 nauji UI kadrai, 23 priimti konkretūs įrašai, devyni tiksliai pritaikyti ankstesni būsenų įrodymai. 13 JS sintaksės patikrų PASS. Mobiliojo prisijungusio kalendoriaus Lighthouse V9 **94/100/100/66**; tai vietinis privatus noindex puslapis, ne visos platformos ar production rezultatas.
+
+Entry point: `node sites/madbeauty/prototype/app-server.mjs` → http://127.0.0.1:8788/. Preview naudoja patvarų backend ir izoliuotą privatų QA katalogą. Šios sesijos failų ribos: tik `sites/madbeauty/`, `research/madbeauty-implementation/` ir savas WORKSTREAMS įrašas. Bendras core ir root 8786 nepakeisti. Demo profilių ir vaizdų peržiūra neatnaujinta.
+
+Aktualus priėmimas: [uiux/ACCEPTANCE.md](uiux/ACCEPTANCE.md), patikrintos kelionės: [uiux/JOURNEYS.md](uiux/JOURNEYS.md), tikslūs tarpai: [uiux/REMAINING_GAPS.json](uiux/REMAINING_GAPS.json). Toliau nepriimti pilni inquiry/waitlist, kliento atsiliepimo, operatoriaus peržiūros ir booking-staff pasirinkimo keliai; dalis viešų normalios būsenos bei visų 70 ekranų būsenų/desktop/mobile įrodymų. Fizinis zoom, OS reduced-motion ir production naršyklių/įrenginių patikros UNVERIFIED. A–Z vietinis 7,6 su gateReady=false nepakeltas; SMTP/INBOX, DNS/deploy, visas katalogo SSR/SEO, tikri teikėjai ir paklausa atskiri nepriimti vartai.
+
+## Istorinis UI/UX V1 priėmimas — 2026-10-06
+
+Vietinės platformos formos, auth/booking atkūrimas, search/calendar ir variantų pasirinkimas pagerinti. 146 actual route/viewport įrašų per 46 paviršių,320/390/640/820/1440px. BackendV15 35/35, platformV9 30/30, HTTPV1 4/4;69PASS. Authenticated calendar LighthouseV8 94/100/100/66. Aktualios ribos ir70matrix: [uiux/ACCEPTANCE.md](uiux/ACCEPTANCE.md). Full70/all-state, physical zoom/reduced-motion ir production vartai vis darUNVERIFIED. Demo media/profilių peržiūra neatnaujinta.
+
+## Ankstesnis platformos priėmimas
+
+2026-10-06 · **Vietinė platforma įgyvendinta; išplėstinis priėmimas su ribomis**. Aktualus entrypoint: `node sites/madbeauty/prototype/app-server.mjs` → http://127.0.0.1:8788/. Root8786 neliečiamas. Savininko naujausias nurodymas: nebeperžiūrėti demo vaizdų/profilių ir gerinti platformą.
+
+Veikia email-only vietinis auth, atskiros narystės, naujos meistro darbo vietos ir kliento sukūrimas, pirmas rankinis vizitas dar prieš viešinimą, serverio laiko paieška, atomic hold/confirm/change/cancel, kliento ir meistro ta pati vizito projekcija, pokalbiai, profilinių versijų ir atsiliepimų moderavimas. Nauji klientai ir inquiry/waitlist klientai matomi tik savo darbo vietoje. Kalendorius turi7 dienas, datą/komandos filtrą, blokus, soft atlaisvinimą ir buferių/rezervacijų konfliktų apsaugą. Priedų redaktorius išlaiko kelis arba nulį priedų; paslaugos išjungimas saugo būsimus vizitus.
+
+**Patikra:** backend V14 **35/35**, platform V7 **30/30**. Actual browser pirmas provider→client→manual visit, kliento email login ir restart persistence PASS; `platform-functional-final-v1.json` / `durable-functional-receipt-final.json`. Prisijungusio mobiliojo kalendoriaus Lighthouse V7 **94 performance /100 accessibility /100 best-practices /66 SEO**, LCP2.57s, TBT36.5ms, CLS0.094,194294bytes; privatus noindex sąmoningas. V6 84 ir ankstesnės klaidos išlaikytos.
+
+70 ekranų/panelių įgyvendinimo ir konkrečių naršyklės įrodymų matrica: `SCREEN_STATUS.json`; originalus `SCREEN_INVENTORY.json` istorinis ir neperrašytas. Tai nėra visų70 × visų būsenų PASS. Platformos sample patikrintas1440/820/320, vieši paviršiai1280/390; fizinis įrenginys/visas zoom matrica nepatikrinti. Demo media jau120 originalų/600WebP/40rinkinių; paskutinė instrukcija sustabdė tolimesnę jų peržiūrą.
+
+Turinio core:7 approved puslapiai/3 gidai/20WebP, common importer/projection/review-release, SHA dba452bae4c613cc91b2da0d67addd221e405f30c594992553f3009bfc809579, exported-not-deployed. 3/sav.,6mėn.,10:00Vilnius reiškia76planavimo langus, ne76straipsnius.
+
+**Atskiri nepriimti vartai:** SMTP ir INBOX/el. pašto nuosavybė, tikri teikėjai/teisės/brand, visas katalogo production SSR/SEO/LLM, DNS/TLS/komercinis hostingas/deploy, production privacy/backup/monitoring, reali paklausa. Mokėjimai/FB/voice/gyvi laiškai neįjungti. A–Z85 ir scorer: `PHASE-1-AUDIT.md/json`, `PHASE-1-AUDIT-SCORE.json`; jokio10/10/domain-ready teiginio.
+
+
+
+Galutinė papildoma pataisa: reschedule variantas prieš patvirtinimą rodo kainą ir trukmę. Atomic change atnaujina snapshot/meistrą/resursą, tikrina konkretaus vizito prieigą ir leidžia savo esamą nepublikuoto meistro vizitą perkelti klientui. BackendV13 pirmas naujo kontrakto testas FAIL: aptikta approval-dependent reschedule spraga. Pataisyta; V14 35/35PASS2049.8453ms, platformV7 30/30PASS2362.7397ms. V13FAIL išlaikytas. Actual320px reschedule panelė ir native dialog replacement focus retestuoti;1280px savaitė dabar rodo visus7stulpelius.
+
+## Istoriniai įrašai (ankstesnė apimtis; ne dabartinis priėmimas)
+
+# Madbeauty — actual įgyvendinimas
+
+## Dabartinis entrypoint ir priėmimo ribos
+
+2026-10-05 · **IN_PROGRESS / vietinis veikiantis pilotas**. Agentas rašo tik Madbeauty namespace ir sutartus studio tenant duomenis. Aktualus entrypoint: `node sites/madbeauty/prototype/app-server.mjs` → http://127.0.0.1:8788/. Root komponentų kit 8786 nestabdomas. Dabartinis serverio režimas preview: vienkartiniai 40 solo / 6 salonų įrašai atskirame DB, tas pats patvarus auth / booking backend. `MADBEAUTY_DATA_MODE=unseeded` atidaro pirminį izoliuotą registracijos QA DB; `demo` yra ankstesnis browser mock. `runtime/` privatūs duomenys ir OTP capture nėra paketo ar Git turinys.
+
+| Modulis | Autorizuota ir actual | Priėmimas / source |
+|---|---|---|
+| Produktas / 70 ekranų UI | Savininko pasirinktas black/white/violet homepage yra visų paviršių kokybės etalonas. Savitos search/profile/booking/client/workspace/operator/legal/article kompozicijos | Inventorius įgyvendintas ankstesniame etape; galutinė individuali serverio desktop/mobile/keyboard matrica vyksta |
+| Meistro ir kliento email-only | Savininko 2026-10-05 pavedimas per root: vietinis veikiantis backend, atskiros paskyros, patvarus vizitas | `backend/`, `BACKEND_DECISION.md`, 27/27 V7 ir actual `v2-server-*` / `v2-unified-server-*` |
+| Testinė pasiūla / medija | ≥40 individualių meistrų, kiekvienam portretas + 2 atskiri vaizdai; demo kilmė įrašuose, normali produkto copy | **120/120** accepted originalų / 600 WebP, 40 pilnų rinkinių; `PROFILE_ASSET_MANIFEST_V2.json`, batch 001–019. Galutinis visų profilių crop priėmimas dar eilėje |
+| Turinio core | Tas pats madbeauty siteId / V1 studio review-release-import / common projection-schema-SEO | **7 approved puslapiai / 3 gidai / 20 media failų**, `content/INITIAL_RELEASE_RECEIPT.json`, `CONTENT_READINESS.md`. SHA dba452bae4c613cc91b2da0d67addd221e405f30c594992553f3009bfc809579. Exported-not-deployed |
+| Turinio politika | Savininko patikslinimas per root: 3 straipsniai/savaitę, 6 mėn., 10:00 Europe/Vilnius | Planavimo langai ≠ parengti straipsniai. Esami publishAt / 5 approved puslapiai nepakeisti; `content-initial-release-import.json` |
+| Gyvos operacijos | SMTP / INBOX, tikri teikėjai, DNS / hosting / deploy, mokėjimai, FB, voice, GSC ir paklausa neįjungti arba nepriimti | Atskirai UNVERIFIED, ne vietinio užsakymo atsisakymas |
+
+Actual common first-guide draft / before-after publishAt / revoked-target / unknown-host / no-demo HTTP patikros PASS. Kontroliuojamas laikrodžio replay nėra istorinis domeno paleidimas. Bendras SEO tik importuotiems turinio puslapiams; viso katalogo production SSR atskiras vartas. `CORE_FEEDBACK.md` atskiria patirtas problemas ir siūlomus pakeitimus.
+
+Kitas rezultatas: galutinis 3 gidų HTML / SPA schema / CTA, visi 40 profilių, Fresha per-kelio palyginimas ir 70 ekranų actual serverio priėmimas; A–Z/scorer ir prisijungusios darbo vietos Lighthouse. Jokio 10/10 / production-ready / domain-ready teiginio.
+
+**Žemiau išlaikytas ankstesnio etapo įrašas turi savo istorinę apimtį. Dabartinę būseną nustato šis pradžios registras, ne jo frontend-only ar vaizdų tarpiniai skaičiai.**
+
+## Ankstesnis išplėsto užsakymo tarpinis įrašas (2026-10-05)
+
+Savininko papildymas pakeitė frontend demonstracijos priėmimą: galutinė produkto kalba visuose 70 ekranų, ≥40 skirtingų meistrų su individualiais portretais ir dviem portfolio / aplinkos vaizdais, veikiantis email-only prisijungimas ir meistro → kliento rezervavimas. Žemiau išlikęs demonstracijos aprašymas yra ankstesnio etapo istorija, ne dabartinis priėmimas.
+
+- Backend pasirinktas ir įgyvendinamas: Node 22 `node:sqlite`, serverio sesijos / hashed vienkartiniai el. pašto kodai / CSRF / membership teisės / `BEGIN IMMEDIATE` / patvarus užklausų ir pranešimų saugojimas. Sprendimas: `BACKEND_DECISION.md`.
+- 27/27 backend testai PASS: `research/madbeauty-implementation/backend-tests-v7.tap` (3873.26 ms). Actual HTTP persidengiančios užklausos — vienas 200, vienas 409; du atskiri procesai / SQLite connection su 60 ir 90 min. vizitais — vienas booking ir vienas outbox. Pirmas bandymas aptiko prisijungimo užraktą; taisymas ir pertestavimas dokumentuoti, neslepiami. V6 išsaugotas su 26 PASS / 1 FAIL: naujame preview kataloge trūko paslaugų active normalizavimo; pataisyta prieš V7. Patikrintos privačios medijos ribos, profilio city/kind revizija, tikros datos uždarymas ir būsimų vizitų išjungimo apsauga. Foundation / platform regresija 30/30 PASS (`foundation-platform-v2.tap`).
+- Actual CUA browser provider email registration → profile → 32 € / 60 min. service → pending → atskira operatoriaus paskyra → approved → atskira kliento email paskyra → 2026-10-06 17:00–18:00 booking → 17:30–18:30 reschedule → message → server restart → session ir booking išliko → ta pati registracija meistro kalendoriuje. Įrodymai `v2-provider-*`, `v2-booking-confirmed-desktop.png`, `v2-client-after-server-restart-desktop.png`. Grafiko redagavimo ir cancel browser dalys dar atskiroje eilėje; testai jas tikrina.
+- Pradinio unseeded serverio naršyklės patikra papildyta: meistras atsakė, klientas matė tą patį serverio pokalbį, klientas atšaukė vizitą, atšaukimas išliko po reload. Meistro absolute closedDate ir weekday pakeitimas išliko; būsimą vizitą panaikinantis weekday pakeitimas atmestas. Įrodymai `v2-server-*` ir `browser-qa-v2.json`.
+- Vieningas privatus serverio preview katalogas įgyvendintas atskirame `platform-preview.sqlite`: 40 fiktyvių solo meistrų ir 6 salonai, tie patys auth / transactional booking API naujai registruojamam klientui ir meistrui. Įkėlimas vienkartinis, patvarus; preview failą atidaryti real storage režimu draudžiama. Pradinė `platform.sqlite` su browser QA išlaikyta atskirai. Naujo default preview naršyklės priėmimas dar vyksta. El. pašto transportas šiuo metu tik privatus serverio testų capture, be viešo OTP endpoint. Tai nėra SMTP ar INBOX įrodymas.
+- Produkto copy perrašymas ir pastovi tamsi darbo vietos navigacija įgyvendinti, individualių 70 ekranų V2 priėmimas tęsiasi. Kalendorius turi valandų tinklelį ir duration-scaled vizitus, mobile agenda. Deterministinis 40 solo / 6 salonų sluoksnis dabar išsklaido vizitus ryte ir po pietų, tikrina visą intervalą su buferiais, neliečia istorinio foundation seed. 120 vaizdų planas `prototype/PROFILE_ASSET_PLAN_V2.json`; 45 originalai peržiūrėti ir importuoti / 225 WebP; 15 pilnų individualių rinkinių iš 40. Visa šeima NEBAIGTA. P14–P40 dar negeneruotų portretų įvairovės papildymas įrašytas prospektyviai `PROFILE_PLAN_AMENDMENT_001.json`.
+- Realios galerijos upload API naudoja MEDIA_CORE `optimizeRaster`, originalai runtime privačiai. Actual browser įkėlė portretą ir du atskirus vaizdus → private profile draft → operatorius peržiūrėjo visas 3 miniatiūras / teises → priėmė versiją → public profile desktop/mobile rodo mediją. Mobile 390 px: visi vaizdai loaded, 360 WebP selected, overflow 0. Įrodymai `browser-qa-v2.json`, `v2-public-profile-approved-media-*.png`; nėra SMTP ar tikrų teikėjo darbų įrodymo.
+- Root suderinta turinio eilė papildyta vieno gido brief→draft/assets→fact/link review→approved import→publishAt HTML/index/CTA/schema/sitemap/LLMs proof; prieš adapterio langą shared model/generator code nekeičiamas. Pusmečio generavimas neįjungtas.
+- Full 70 ekranų V2, A–Z/scorer, shared SSR / core kontaktų integracija, komercinis hostingas ir realus pristatymas lieka atskiri nepatvirtinti vartai. Jokio production-ready, 10/10 ar paklausos teiginio.
+
+### Ankstesnio privataus frontend etapo istorija
+
+2026-10-05 · sesija 01a10c23-938f-7e62-9674-4b3bfef2dc29. Privati vietinė frontend demonstracija. Originalus SCREEN_INVENTORY ir ankstesni maketai / manifestai neperrašyti.
+
+Preview: http://127.0.0.1:8788/ · start: `node sites/madbeauty/prototype/app-server.mjs`. Tik loopback, visi atsakymai noindex, jokio production sitemap ar LLM eksporto. Root UI kit 8786 procesas nepakeistas ir nesustabdytas.
+
+## Įgyvendinta, tikrinimas vyksta
+
+- Pilnas homepage pagal HUMAN_SELECTED homepage-modern-v2 kompoziciją: tikras HTML, DM Sans, white/black/violet, transparent blur / autohide header, fotografijos, keturių laukų paieška, kategorijos, demo laikų kortelės, tamsus paaiškinimas, trys gidai, darbo kalendoriaus blokas ir footer.
+- Routinama paieška / filtrai / scheminis žemėlapis / pagination, paslaugų ir miesto hub, solo / salono profilis, galerija / variantų panelės.
+- Paslauga → priedai → meistras → laikas → demo kontaktas → peržiūra → demo rezultatas; užklausa ir waitlist atskirai.
+- Kliento, meistro / salono ir operatoriaus paviršiai, redagavimo / moderavimo panelės, onboarding, dienos / savaitės ir mobile agenda kalendorius.
+- Trys pilni originalūs gidai, MB Pinet redakcijos ir autoriaus profilis, about/contact/help/privacy/cookies/terms/cancellation/verification tekstai šiam preview.
+- Central seed, originalus foundation adapteris ir jo platformos extension; viena mutable modelio projekcija, isolated localStorage namespace ir reset. Foundation 9 testai iki plėtros PASS; galutinės regresijos ir platesnės patikros dar vyksta.
+- 2 nauji built-in ImageGen originalai (hero violetinė fotografija, meistrės salonas), 9 WebP per shared optimizeRaster. Esami 11 originalų / 55 WebP ir jų historical manifest išlaikyti.
+
+## Actual priėmimo įrodymai
+
+Bus įrašyti po testų ir actual desktop/mobile/keyboard/flow/SEO/performance peržiūros į `research/madbeauty-implementation/`, `prototype/IMPLEMENTATION_QA.md`, atskirą `SCREEN_STATUS.json` ir A–Z auditą. Šis tarpinis dokumentas nėra full QA PASS.
+
+## Neįjungta / vėlesni vartai
+
+Tikras auth / tenant server security / patvarios inquiries / SMTP-INBOX / authoritative kalendoriaus ir atomic booking backend / mokėjimai / voice / FB outreach / PWA-native / production seed exclusion build / shared SSR SEO adapteris / teikėjų teisės ir tikri faktai / DNS-TLS-hosting / deployment / GSC-Bing / paklausa. Jie neįeina į privačios demonstracijos priėmimą ir nevadinami veikiančiais.
+
+Nėra 10/10, domain-ready, realaus vizito ar išmatuoto pranašumo prieš Fresha teiginio.

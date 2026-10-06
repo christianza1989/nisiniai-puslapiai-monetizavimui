@@ -1,0 +1,687 @@
+{
+  "schemaVersion": 1,
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "locale": "lt-LT",
+  "site": {
+    "id": "madbeauty",
+    "name": "Madbeauty",
+    "canonicalHost": "madbeauty.lt",
+    "locale": "lt-LT",
+    "timezone": "Europe/Vilnius",
+    "brand": {
+      "accent": "#8b5cf6"
+    },
+    "offer": "Grožio paslaugų paieška pagal miestą, procedūrą ir visam vizitui tinkantį laiką.",
+    "contact": {
+      "email": "info@pinet.lt",
+      "phone": ""
+    }
+  },
+  "pages": [
+    {
+      "siteId": "madbeauty",
+      "type": "home",
+      "slug": "",
+      "title": "Madbeauty — Grožio laikas. Tavo ritmu.",
+      "description": "Pasirink grožio paslaugą, miestą ir visam vizitui tinkantį laiką.",
+      "intent": "Pradėti grožio paslaugos paiešką",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Atrask meistrą, paslaugą ir tau tinkantį laiką. Grožio gidai padeda iš anksto susitarti dėl procedūros apimties."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pridėjus pasirinktus darbus, tikrink bendrą procedūros trukmę."
+        }
+      ],
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        }
+      ],
+      "id": "85ae7c9c-1176-47ff-b125-6c52d479973d",
+      "revisionHash": "abb649e31679fdc028df45e9c1aa54fa7cc7609e9efbebe1fb1b90e9c6ddeda2",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "abb649e31679fdc028df45e9c1aa54fa7cc7609e9efbebe1fb1b90e9c6ddeda2",
+        "approvedAt": "2026-10-05T19:07:00.519Z",
+        "actorId": "madbeauty-implementation-agent"
+      }
+    },
+    {
+      "siteId": "madbeauty",
+      "type": "faq",
+      "slug": "gidai",
+      "title": "Grožio gidai prieš vizitą",
+      "description": "Paslaugų apimtis, pasirinkimas ir aiškūs klausimai meistrui.",
+      "intent": "Pasiruošti grožio paslaugos pasirinkimui",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Prieš rezervuodama palygink paslaugos apimtį, visą kainą ir procedūros trukmę. Kas įeina į manikiūro kainą padės palyginti vienodo vizito pasiūlymus."
+        }
+      ],
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        }
+      ],
+      "id": "a61a0248-1c28-4cdc-89ba-e6c087989cdf",
+      "revisionHash": "bfb6c56af249cb65bb00001790c97e6ee40f6f126d7d5063186d106ea37df80d",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "bfb6c56af249cb65bb00001790c97e6ee40f6f126d7d5063186d106ea37df80d",
+        "approvedAt": "2026-10-05T19:07:00.662Z",
+        "actorId": "madbeauty-implementation-agent"
+      }
+    },
+    {
+      "siteId": "madbeauty",
+      "type": "faq",
+      "slug": "paslaugos/manikiuras",
+      "title": "Manikiūro paslaugos",
+      "description": "Palygink konkrečią paslaugos apimtį ir patikrink visam vizitui tinkantį laiką.",
+      "intent": "Rasti tinkamą manikiūro paslaugą",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Pasirink miestą, meistrą ir norimą procedūrą. Bazinę paslaugą ir reikalingus priedus palygink atskirai. Kas įeina į manikiūro kainą padės pasiruošti pasirinkimui."
+        }
+      ],
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        }
+      ],
+      "id": "0bb50b7b-d1dd-43fd-b54f-918ab1bf8098",
+      "revisionHash": "e3f583f88478bbe73fc36fb3946b9e1f5c93031e44d86f11ff54e7dc3edf2a5d",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "e3f583f88478bbe73fc36fb3946b9e1f5c93031e44d86f11ff54e7dc3edf2a5d",
+        "approvedAt": "2026-10-05T19:07:00.795Z",
+        "actorId": "madbeauty-implementation-agent"
+      }
+    },
+    {
+      "siteId": "madbeauty",
+      "type": "faq",
+      "slug": "redakcija",
+      "title": "Kaip rengiamas Madbeauty turinys",
+      "description": "MB Pinet redakcijos metodika, šaltiniai ir iliustracijų naudojimas.",
+      "intent": "Patikrinti turinio kilmę ir atsakomybę",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Madbeauty turinį rengia MB Pinet redakcija su AI pagalba. Prieš patvirtinimą peržiūrimi teiginiai, nuorodos, iliustracijos ir puslapio vaizdas. Tai organizacijos redakcinis profilis; nekuriame išgalvotų ekspertų."
+        },
+        {
+          "type": "paragraph",
+          "text": "Originalios AI iliustracijos padeda aptarti stilių ar darbo aplinką. Jos nėra konkretaus meistro atliktų darbų, tikro salono ar kliento vizito įrodymas. Šaltinių nuorodos pateikiamos tada, kai tekstas remiasi patikrinamais išoriniais teiginiais."
+        },
+        {
+          "type": "paragraph",
+          "text": "Apie turinio klaidą pranešk info@pinet.lt, nurodydama puslapį ir konkretų teiginį. Operatorius — MB Pinet."
+        }
+      ],
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "media": [],
+      "links": [],
+      "id": "6cc9716e-8706-4628-a85a-7a32ca432a7d",
+      "revisionHash": "95433659f4ca284e6e220b6b6088ed4a82ae600c9f6f0f0299d0eb7a9c3a5b83",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "95433659f4ca284e6e220b6b6088ed4a82ae600c9f6f0f0299d0eb7a9c3a5b83",
+        "approvedAt": "2026-10-05T19:07:00.927Z",
+        "actorId": "madbeauty-implementation-agent"
+      }
+    },
+    {
+      "siteId": "madbeauty",
+      "type": "guide",
+      "slug": "gidai/kas-ieina-i-manikiuro-kaina",
+      "title": "Kas įeina į manikiūro kainą",
+      "description": "Palygink visą procedūrą, nuėmimą, priedus ir laiką, o ne vien didžiausiu šriftu parašytą skaičių.",
+      "intent": "Suprasti visą manikiūro vizito kainą ir trukmę",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Manikiūro kainą prasminga lyginti tik žinant, kas į ją įeina. Pirmiausia išsiaiškink, ar pasirinkai nagų sutvarkymą, lakavimą, esamo padengimo nuėmimą ir dizainą. Tie patys žodžiai skirtingų teikėjų sąrašuose gali reikšti skirtingą apimtį."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kaina prasideda nuo apimties"
+        },
+        {
+          "type": "paragraph",
+          "text": "Paslaugos pavadinimas nėra visas susitarimas. Įrašas „manikiūras“ gali būti atskira nagų sutvarkymo procedūra, o „manikiūras su lakavimu“ – kelių darbų derinys. Net jei abiejų įrašų nuotraukoje matyti lakuoti nagai, iš jos negalima spręsti, kad padengimas įskaičiuotas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Žyma „nuo“ turi turėti paaiškinimą: kada kaina didėja ir kas ją keičia. Šis gidas nenustato rinkos kainoraščio. Tikrink konkretaus teikėjo kainoraštį ir pasirinktos procedūros apimtį."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką palyginti pasiūlymuose"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Esamo padengimo nuėmimas: ar įeina, ar skiriasi savo ir kito meistro darbo nuėmimas? Tai gali būti atskiras priedas prie procedūros.",
+            "Nagų sutvarkymas: ką apima bazinė paslauga? Ne kiekvienas lakavimo įrašas apima visą manikiūrą.",
+            "Lakavimas: kokio tipo padengimas ir ar įskaičiuotas? Kitas variantas gali turėti kitą trukmę.",
+            "Dizainas: įkainis už vieną nagą ar visą rinkinį, koks sudėtingumas? Piešinys turi tilpti rezervuotame laike.",
+            "Ilgio ar formos pakeitimas: ar reikia kitos paslaugos? Trumpas vizitas gali netikti visam norimam darbui."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kainos ir laiko pavyzdys"
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiame pavyzdyje bazinė paslauga kainuoja 30 €, trunka 60 min., o papildomas paruošimas kainuoja 5 € ir trunka 15 min. Pavyzdžio suma – 35 €, vizitas – 75 min. Tai iliustracinės reikšmės, ne Lietuvos kainų vidurkis ir ne pasiūlymas pirkti."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei turi laiko nuo 17:00 iki 18:00, visas šis vizitas netelpa. 17:00–18:15 tinka kliento procedūrai, o teikėjo darbo grafike dar reikia patikrinti paruošimo ir sutvarkymo buferius. Buferiai skirti meistro ir darbo vietos užimtumui; jie nėra papildoma procedūra klientui. Visos dalys turi būti tikrinamos kartu."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei vienas teikėjas įtraukia nuėmimą, o kitas jį įkainoja atskirai, lygink galutinę tokio pat vizito sumą. Pigiau atrodantis bazinis įrašas gali neapimti reikalingų darbų. Didesnė kaina pati savaime neįrodo kokybės."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Klausimai prieš vizitą"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Atvyksiu su tokiu padengimu. Ar pasirinkau tinkamą nuėmimą?",
+            "Noriu tokios formos, ilgio ir vienos detalės. Kuri paslauga tai apima?",
+            "Kokia visa kaina pagal šį pasirinkimą ir kas dar galėtų ją pakeisti?",
+            "Kiek truks visas vizitas ir ar turimas intervalas pakankamas?",
+            "Jei atvykus paaiškės kita apimtis, ar prieš darbą aptarsime kainos ir laiko pasikeitimą?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Manikiūro paslaugos padeda pradėti paiešką. Nuotrauką naudok kaip pokalbio priemonę, o galutinį pasirinkimą grįsk paslaugos aprašu."
+        }
+      ],
+      "publishAt": "2026-10-05T12:00:00.000Z",
+      "media": [
+        {
+          "id": "3c7cf4f4-12e6-4383-ae5c-2e9108a77c41",
+          "src": "/content-assets/madbeauty/3c7cf4f4-12e6-4383-ae5c-2e9108a77c41.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "a76fd63e-2742-49ba-8f24-5f7ae4daa56e",
+          "src": "/content-assets/madbeauty/a76fd63e-2742-49ba-8f24-5f7ae4daa56e.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "3f5ad984-d9c3-4c8a-b12e-0b233c3ce29f",
+          "src": "/content-assets/madbeauty/3f5ad984-d9c3-4c8a-b12e-0b233c3ce29f.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "ad083450-b91b-444c-95be-45cf31f18856",
+          "src": "/content-assets/madbeauty/ad083450-b91b-444c-95be-45cf31f18856.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "0598d240-44e9-4f35-8e2f-922f94acbd83",
+          "src": "/content-assets/madbeauty/0598d240-44e9-4f35-8e2f-922f94acbd83.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "0bb50b7b-d1dd-43fd-b54f-918ab1bf8098",
+          "label": "Manikiūro paslaugos"
+        }
+      ],
+      "id": "baf25810-3318-4b27-b59c-e0c82093824d",
+      "revisionHash": "14e84d820b2d6a4f39e4206f19539aca6916fb3c8c1038098620065c6de742de",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "14e84d820b2d6a4f39e4206f19539aca6916fb3c8c1038098620065c6de742de",
+        "approvedAt": "2026-10-05T19:07:01.035Z",
+        "actorId": "madbeauty-implementation-agent"
+      }
+    },
+    {
+      "siteId": "madbeauty",
+      "type": "guide",
+      "slug": "gidai/kaip-pasirinkti-nagu-spalva",
+      "title": "Kaip pasirinkti nagų spalvą",
+      "description": "Trys kryptys ir klausimai, padedantys pasirinkti spalvą pagal savo kasdienybę, o ne vien ekrano nuotrauką.",
+      "intent": "Pasirinkti manikiūro spalvą ir paruošti aiškią užduotį meistrui",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Nagų spalvą paprasčiau pasirinkti turint dvi ar tris kryptis. Viena gali tikti kasdienai, kita – norimam akcentui. Prieš vizitą pasižymėk, ko tikiesi: mažai pastebimo padengimo, aiškaus kontrasto ar konkrečios detalės. Šios iliustracijos skirtos palyginti stiliaus kryptis, ne parodyti konkretaus meistro darbus."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pradėk nuo savo savaitės"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pagalvok apie drabužius, kuriuos iš tikro dėvėsi, ir situacijas, kuriose nori matyti šią spalvą. Jei tau patinka ryškus akcentas, nereikia jo atsisakyti vien todėl, kad nuotraukoje neutrali spalva atrodo tvarkingai. Jei labiau vertini ramų bendrą vaizdą, pirmiausia palygink kelis artimus atspalvius."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kasdienis derinys: ar spalva patinka prie dažniausiai dėvimų drabužių?",
+            "Norimas akcentas: ar nori, kad pirmiausia matytųsi spalva, forma ar viena dizaino detalė?",
+            "Nagų ilgis ir forma: palygink panašaus ilgio pavyzdžius, kad lūkesčiai būtų aiškesni.",
+            "Kitas vizitas: ar pasirinkimas vis dar patiks po kelių dienų, kai pasikeis apranga ar renginys?"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Neutralus padengimas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Švelni rožinė, smėlio ar pieno kryptis leidžia daugiau dėmesio skirti nagų formai ir padengimo skaidrumui. „Neutralus“ nėra viena spalva: vienas variantas gali būti beveik skaidrus, kitas – visiškai dengiantis. Pasižiūrėk į mėginį ir pasakyk, kurio rezultato tikiesi."
+        },
+        {
+          "type": "image",
+          "assetId": "3bdf81e9-8188-405c-bf66-3e94ee1adb92"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ryškus vienos spalvos akcentas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Koralo iliustracija rodo vientisos spalvos kryptį. Renkantis nebūtina tiksliai atkartoti šio tono. Palygink du mėginius toje pačioje šviesoje ir pasirink, kuris malonesnis tau. Ekranas, apšvietimas ir nuotraukos apdorojimas gali keisti spalvos įspūdį, todėl nuotrauka nėra konkretaus produkto atspalvio garantija."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Plona linija ar prancūziška kryptis"
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei patinka detalė, aptark linijos plotį, krašto formą ir bazinį toną. Pasakymas „prancūziškas“ dar neapibrėžia viso rezultato. Nuotraukoje matomą ilgį ar formą gali tekti pritaikyti tavo nagams; tai geriau išsiaiškinti renkantis procedūrą."
+        },
+        {
+          "type": "image",
+          "assetId": "665d4c52-43e2-4635-8368-d921980b1f30"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką nusiųsti meistrui"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Vieną pagrindinę nuotrauką ir vieną alternatyvą; prie kiekvienos parašyk, kuri dalis tau svarbi.",
+            "Norimą ilgį ir formą, ar paliksi dabartinį padengimą, ar reikės nuėmimo.",
+            "Ar nori vienos spalvos, vienos detalės, ar dizaino visam rinkiniui.",
+            "Klausimą, ar pasirinkta paslauga ir laikas apima šį rezultatą bei reikalingus priedus."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Venk siųsti dešimt nesuderinamų pavyzdžių be paaiškinimo. Konkretus sakinys „patinka plona linija, bet noriu trumpesnių nagų“ padeda geriau už bendrą „padarykite panašiai“. Galutinę spalvą ir darbo apimtį susitarkite prieš procedūrą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Kas įeina į manikiūro kainą padės atskirti bazinį padengimą nuo dizaino ar nuėmimo priedų. Manikiūro paslaugos yra kitas žingsnis pasirinkus kryptį. Šis gidas nepateikia sezono populiarumo reitingo ar konkretaus kainoraščio."
+        }
+      ],
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "media": [
+        {
+          "id": "482e64a1-14b1-410a-a433-9b7b85a37f13",
+          "src": "/content-assets/madbeauty/482e64a1-14b1-410a-a433-9b7b85a37f13.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "32c67d0c-748c-49bb-8a8e-634c1ab45cc1",
+          "src": "/content-assets/madbeauty/32c67d0c-748c-49bb-8a8e-634c1ab45cc1.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "ccfc86ac-40a5-4e0e-a0ef-01844bee3f20",
+          "src": "/content-assets/madbeauty/ccfc86ac-40a5-4e0e-a0ef-01844bee3f20.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "88dab7a3-7cb7-4cf9-bfea-86cc6d9e8afc",
+          "src": "/content-assets/madbeauty/88dab7a3-7cb7-4cf9-bfea-86cc6d9e8afc.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "1b8018ca-e91e-424d-8d74-e3ae18b3deb7",
+          "src": "/content-assets/madbeauty/1b8018ca-e91e-424d-8d74-e3ae18b3deb7.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "3bdf81e9-8188-405c-bf66-3e94ee1adb92",
+          "src": "/content-assets/madbeauty/3bdf81e9-8188-405c-bf66-3e94ee1adb92.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "ddd046b0-878e-48ea-8cea-284b3ee9e781",
+          "src": "/content-assets/madbeauty/ddd046b0-878e-48ea-8cea-284b3ee9e781.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "52f234b6-1734-4303-9cba-3e3a737381f8",
+          "src": "/content-assets/madbeauty/52f234b6-1734-4303-9cba-3e3a737381f8.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "2db81dab-30b2-4687-ac3c-c5cb8d774c6b",
+          "src": "/content-assets/madbeauty/2db81dab-30b2-4687-ac3c-c5cb8d774c6b.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "6b01152f-934e-4a4f-b98b-471c0585d052",
+          "src": "/content-assets/madbeauty/6b01152f-934e-4a4f-b98b-471c0585d052.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "665d4c52-43e2-4635-8368-d921980b1f30",
+          "src": "/content-assets/madbeauty/665d4c52-43e2-4635-8368-d921980b1f30.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "7cee90b4-4251-45c7-b081-f05fb620d7b5",
+          "src": "/content-assets/madbeauty/7cee90b4-4251-45c7-b081-f05fb620d7b5.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "2fbfaec5-26bd-403d-aec5-5332e6230fd3",
+          "src": "/content-assets/madbeauty/2fbfaec5-26bd-403d-aec5-5332e6230fd3.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "2b85fe40-f390-4079-9d0f-854a5c954875",
+          "src": "/content-assets/madbeauty/2b85fe40-f390-4079-9d0f-854a5c954875.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "bffc49d3-cb91-4ebe-8cdc-d9f5a25a1aeb",
+          "src": "/content-assets/madbeauty/bffc49d3-cb91-4ebe-8cdc-d9f5a25a1aeb.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "0bb50b7b-d1dd-43fd-b54f-918ab1bf8098",
+          "label": "Manikiūro paslaugos"
+        },
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        }
+      ],
+      "id": "99c2d09a-1314-48db-999c-075d312271b2",
+      "revisionHash": "6894109a854588287dbca7d0041806e752e96c57e8d18d2e8dbb1a7014438233",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "6894109a854588287dbca7d0041806e752e96c57e8d18d2e8dbb1a7014438233",
+        "approvedAt": "2026-10-05T19:37:15.588Z",
+        "actorId": "madbeauty-implementation-agent"
+      }
+    },
+    {
+      "siteId": "madbeauty",
+      "type": "guide",
+      "slug": "gidai/kaip-vertinti-meistro-darbu-galerija",
+      "title": "Kaip vertinti meistro darbų galeriją",
+      "description": "Atskirti tinkamą stilių nuo teikėjo darbo įrodymo ir pasiruošti klausimus prieš rezervuojant.",
+      "intent": "Įvertinti meistro portfolio ir susitarti dėl norimo rezultato",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Galerija padeda nuspręsti, ar tau artimas meistro stilius. Ji naudinga tada, kai matai panašaus ilgio, formos ir procedūros pavyzdžius. Viena graži nuotrauka nepasako visos paslaugos apimties, kainos ar to, ar toks rezultatas įmanomas tavo vizito metu."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pirmiausia patikrink, ką matai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Atskirk konkretaus teikėjo atliktus darbus, bendrą stiliaus iliustraciją ir darbo aplinkos nuotrauką. Jie atsako į skirtingus klausimus. Teikėjo darbų nuotrauka padeda aptarti jo pasirinktą stilių, iliustracija – tavo idėją, o aplinkos vaizdas – erdvės išdėstymą. Šio gido originali iliustracija nėra jokio teikėjo portfolio."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei kilmė neaiški, paklausk, ar darbas atliktas paties teikėjo ir kokia procedūra buvo pasirinkta. Neatpažinta nuotrauka savaime nėra apgaulės įrodymas, tačiau jos negalima laikyti patvirtintu konkretaus meistro rezultatu."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Lygink panašų rezultatą"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Procedūra: ar nuotraukoje ta pati paslauga, kurią renkiesi?",
+            "Ilgis ir forma: ar pavyzdys panašus į tavo norimą rezultatą?",
+            "Detalė: kas tau svarbiausia – tonas, linija, ilgis, bendras stilius?",
+            "Skirtingi darbai: ar yra keli pavyzdžiai, o ne tik keli tos pačios nuotraukos iškirpimai?",
+            "Aprašymas: ar aišku, kokia apimtis ir priedai padėjo gauti šį rezultatą?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nuotrauką vertink kaip pagrindą pokalbiui. Apšvietimas, kampas ir apdorojimas keičia įspūdį, todėl iš vieno kadro nereikėtų spręsti apie visą teikėjo darbą. Paprašyk artimesnio tavo pasirinkimui pavyzdžio, jei galerijoje vyrauja visai kita kryptis."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Stilius ir saugos klausimai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Graži galerija nepatvirtina kvalifikacijos, higienos ar leidimo vykdyti veiklą. NVSC primena, kad grožio paslaugoms taikomi higienos reikalavimai, veiklai reikalingas leidimas-higienos pasas, o teikėjams – atitinkamos sveikatos patikros ir mokymai. Nuoroda į oficialų paaiškinimą pateikta šaltiniuose; galerijos apžvalga nepakeičia šių patikrų."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei kyla konkretus saugos klausimas, aptark jį su teikėju ir tikrink oficialų šaltinį. Šis gidas nenustato medicininio tinkamumo procedūrai ir nevertina sveikatos būklės pagal nuotrauką. Pranešti apie neaiškią profilio informaciją galima operatoriaus kontaktu."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Trumpa užduotis prieš rezervuojant"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Patinka ši konkreti detalė; norėčiau tokio ilgio ir formos.",
+            "Ar tai jūsų atliktas darbas, ir kokią paslaugą turėčiau rinktis?",
+            "Ar mano dabartiniam padengimui reikės nuėmimo ar papildomo paruošimo?",
+            "Kokia visa kaina ir trukmė pagal šį pasirinkimą?",
+            "Jei rezultato taip atkartoti negalima, kokį artimą variantą siūlote aptarti?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Toks klausimų rinkinys padeda susitarti dėl procedūros, o ne gauti pažadą pagal vieną nuotrauką. Palik laiko visai pasirinktos paslaugos apimčiai. Manikiūro paslaugos padės tęsti pasirinkimą; Kas įeina į manikiūro kainą paaiškina, kokius priedus verta patikrinti."
+        }
+      ],
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "media": [
+        {
+          "id": "665d4c52-43e2-4635-8368-d921980b1f30",
+          "src": "/content-assets/madbeauty/665d4c52-43e2-4635-8368-d921980b1f30.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "7cee90b4-4251-45c7-b081-f05fb620d7b5",
+          "src": "/content-assets/madbeauty/7cee90b4-4251-45c7-b081-f05fb620d7b5.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "2fbfaec5-26bd-403d-aec5-5332e6230fd3",
+          "src": "/content-assets/madbeauty/2fbfaec5-26bd-403d-aec5-5332e6230fd3.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "2b85fe40-f390-4079-9d0f-854a5c954875",
+          "src": "/content-assets/madbeauty/2b85fe40-f390-4079-9d0f-854a5c954875.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "bffc49d3-cb91-4ebe-8cdc-d9f5a25a1aeb",
+          "src": "/content-assets/madbeauty/bffc49d3-cb91-4ebe-8cdc-d9f5a25a1aeb.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "0bb50b7b-d1dd-43fd-b54f-918ab1bf8098",
+          "label": "Manikiūro paslaugos"
+        },
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+          "label": "NVSC: grožio paslaugos turi būti saugios",
+          "reason": "Oficialus 2026-09-17 paaiškinimas apie leidimą-higienos pasą ir teikėjo reikalavimus; patikrinta 2026-10-05."
+        }
+      ],
+      "id": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+      "revisionHash": "a91981708dc59dd3d4bed747980f58f574f8a25b614f705db53a9e06c1ddf884",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "a91981708dc59dd3d4bed747980f58f574f8a25b614f705db53a9e06c1ddf884",
+        "approvedAt": "2026-10-05T19:37:15.733Z",
+        "actorId": "madbeauty-implementation-agent"
+      }
+    }
+  ],
+  "generatedAt": "2026-10-05T19:37:15.799Z"
+}

@@ -1,0 +1,2 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const f=new URL('./public/public-views.mjs',import.meta.url);let s=await readFile(f,'utf8');s=s.replace('<span class="demo-label">Demo</span>','').replace("s.kind==='salon'?'studio':s.imageId","s.avatarImageId||(s.kind==='salon'?'studio':s.imageId)");s=s.replace('Atsiliepimų šiame rinkinyje nėra.','Atsiliepimų dar nėra.').replace('Atidaryti galerijos iliustraciją','Atidaryti galerijos vaizdą').replace('Atidaryti darbų iliustraciją','Atidaryti darbų vaizdą');await writeFile(f,s);

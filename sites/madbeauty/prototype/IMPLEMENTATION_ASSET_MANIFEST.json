@@ -60,6 +60,58 @@
         "mobile": "60% center"
       },
       "review": "Sequential agent pixel review 2026-10-05: intact hands, correct violet identity, left copy area."
+    },
+    {
+      "id": "technician",
+      "generator": "built-in ImageGen",
+      "prompt": "Use case: photorealistic-natural. Asset type: photographic salon scene for the narrow right panel of Madbeauty homepage hero. Original contemporary editorial photograph of an adult female nail technician wearing a plain black professional shirt, concentrating on a manicure at a white desk in an elegant quiet salon with softly lit tall oval mirror, pale stone, small violet flower arrangement. Three-quarter profile, natural skin and realistic anatomically correct hands. Portrait composition with subject around center, generous framing for a tall crop. Modern white/black/violet palette, soft daylight, photographic texture. No text, logos, branding, watermark, UI, collage or screenshot. Private fictional platform illustration, not a real practitioner or documentary salon photograph.",
+      "alt": "Manikiūro procedūros iliustracija moderniame salone",
+      "use": "private-demo/editorial-illustration",
+      "rights": "Original AI illustration; fictional practitioner, not a real salon photograph.",
+      "source": {
+        "file": "private-originals/technician-v1.png",
+        "width": 1024,
+        "height": 1536,
+        "mime": "image/png",
+        "hasAlpha": false,
+        "bytes": 1889080,
+        "sha256": "101e4c6c107c5e6193e4d0a26c2968618cb9920d78cadbf6cde17b100c9b2e15"
+      },
+      "variants": [
+        {
+          "file": "images/technician-1024.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 56326,
+          "sha256": "97d4fa50123ba775071890c09fad363df49225f5ed725b77f5742efb534f1823"
+        },
+        {
+          "file": "images/technician-800.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 41878,
+          "sha256": "fd5e168616bdc50579019bd404576956e3206cf90d96d3962011f76a6c275dac"
+        },
+        {
+          "file": "images/technician-640.webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 31536,
+          "sha256": "fd7418ae6c5b43311af9a7c9073983ae5c524c14c7646d86c81a82b89531dd08"
+        },
+        {
+          "file": "images/technician-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 15762,
+          "sha256": "07d2bb7b2342e45568e71d7d5f620f6b1a31ea217d662bc0f4abcc73835eaf85"
+        }
+      ],
+      "policy": "responsive-webp-v1",
+      "crop": {
+        "hero": "60% center"
+      },
+      "review": "Sequential agent pixel review 2026-10-05: natural scene, black workwear and appropriate tall composition."
     }
   ]
 }

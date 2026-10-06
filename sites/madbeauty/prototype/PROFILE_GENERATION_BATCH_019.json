@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-40-portrait",
+      "profileIndex": 39,
+      "name": "Danguolė Mikė",
+      "specialty": "skin",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P40 portrait. A unique fictional Lithuanian adult woman with silver short crop, age 38, white cotton shirt with dark apron, in a skin professional studio with natural birch furnishings, black equipment and violet stool. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: angular square jaw, warm brown eyes, broad softly rounded nose; strong dark straight eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Danguolė Mikė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-c4bd2763-01b1-44ba-98fb-3caeb68f2e15.png",
+      "review": "Pixel review accepted: Silver short-haired skincare practitioner with brown eyes and strong dark brows; coherent distinct adult portrait."
+    },
+    {
+      "id": "profile-40-work",
+      "profileIndex": 39,
+      "name": "Danguolė Mikė",
+      "specialty": "skin",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P40 skin portfolio photo. Calm editorial spa skincare procedure scene, an adult woman client on a treatment chair under a white towel, a practitioner's clean hands using a smooth jade-toned facial roller held gently; no medical claim. Soft side daylight. Quiet pale stone with charcoal furnishings and olive plant background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Danguolė Mikė skin stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-4484399f-1d6f-4f48-a42b-7ae8d25a5393.png",
+      "review": "Pixel review accepted: Skincare scene with jade facial roller, closed eyes and natural anatomy; illustrative spa care without before-after or medical claim."
+    },
+    {
+      "id": "profile-40-space",
+      "profileIndex": 39,
+      "name": "Danguolė Mikė",
+      "specialty": "skin",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P40 studio interior. Unique skin small professional studio interior: natural birch furnishings, black equipment and violet stool. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Danguolė Mikė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-dae45045-f8ab-4650-981d-a63b3025d7d7.png",
+      "review": "Pixel review accepted: White treatment chair in foreground, birch cabinetry and violet stool; clean coherent distinct room."
+    }
+  ]
+}

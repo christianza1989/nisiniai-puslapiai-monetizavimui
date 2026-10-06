@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-05",
+  "assets": [
+    {
+      "id": "profile-01-portrait",
+      "profileIndex": 0,
+      "name": "Austėja Vaitkutė",
+      "specialty": "nails",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty replaceable fictional profile P01 portrait. Editorial photographic portrait of a fictional Lithuanian adult woman nail technician aged 28, short chestnut bob, warm brown eyes, cream knit top and black apron, natural relaxed confident expression in a clean daylight nail studio. One person, chest-up, face fully visible, centered with generous breathing room for square or circular avatar crops. Soft window daylight, real skin texture, understated black-white-violet brand accents in softly blurred background. Photograph, no beauty retouch look. No text, no logos, no watermark, no collage. Not a real business or person endorsement. Generate one square image.",
+      "alt": "Austėja Vaitkutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-9b6066c0-46a9-4512-b4f4-448391dae2da.png",
+      "review": "Sequential pixel review: subject matches asset role, distinct composition, clean crop; accepted 2026-10-05."
+    },
+    {
+      "id": "profile-01-work",
+      "profileIndex": 0,
+      "name": "Austėja Vaitkutė",
+      "specialty": "nails",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P01 nails portfolio photo. A close editorial photograph of two anatomically correct adult female hands with short oval manicure, one hand rests gently on the other on pale linen; focus on finished nails with sheer blush base and single tiny violet line. Bright diffused window light. Quiet warm walnut furniture, soft cream wall and round mirror background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Austėja Vaitkutė nails stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-28b12efb-0815-4e63-b182-4d5a9b54bf5a.png",
+      "review": "Sequential pixel review: subject matches asset role, distinct composition, clean crop; accepted 2026-10-05."
+    },
+    {
+      "id": "profile-01-space",
+      "profileIndex": 0,
+      "name": "Austėja Vaitkutė",
+      "specialty": "nails",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P01 studio interior. Unique nails small professional studio interior: oak and white cabinetry, tall arched window. One clean manicure desk with task lamp and two seats. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Austėja Vaitkutė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-deb00d38-9a1e-4ad4-8899-202ab4b5bd36.png",
+      "review": "Sequential pixel review: subject matches asset role, distinct composition, clean crop; accepted 2026-10-05."
+    },
+    {
+      "id": "profile-02-portrait",
+      "profileIndex": 1,
+      "name": "Ieva Jankutė",
+      "specialty": "hair",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P02 portrait. A unique fictional Lithuanian adult woman with long straight honey-blonde hair, age 33, navy clean professional tunic, in a hair professional studio with pale stone with charcoal furnishings and olive plant. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Ieva Jankutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-1a4c1bee-b30a-4242-88ca-baa4d9af0825.png",
+      "review": "Sequential pixel review: subject matches asset role, distinct composition, clean crop; accepted 2026-10-05."
+    },
+    {
+      "id": "profile-02-work",
+      "profileIndex": 1,
+      "name": "Ieva Jankutė",
+      "specialty": "hair",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P02 hair portfolio photo. Rear three-quarter portrait of an adult female client showing a professional shoulder-length haircut and natural glossy healthy-looking hair, focus on the soft face-framing brunette layers. Soft side daylight. Quiet bright skylight, black thin metal furnishings background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Ieva Jankutė hair stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-e93e5af3-0ab1-4a81-b432-3793e37ef63a.png",
+      "review": "Sequential pixel review: subject matches asset role, distinct composition, clean crop; accepted 2026-10-05."
+    }
+  ]
+}

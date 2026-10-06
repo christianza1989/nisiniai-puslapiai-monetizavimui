@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-24-portrait",
+      "profileIndex": 23,
+      "name": "Rasa Šleinė",
+      "specialty": "pedicure",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P24 portrait. A unique fictional Lithuanian adult woman with silver short crop, age 42, plum professional blouse, in a pedicure professional studio with natural birch furnishings, black equipment and violet stool. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: high prominent cheekbones, large grey eyes, slim straight nose; strong dark straight eyebrows. Medium warm skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Rasa Šleinė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-d7510081-6dc5-4e5d-83e8-463940c89a2c.png",
+      "review": "Pixel review accepted: mature silver pixie-haired pedicure practitioner with angular face and plum blouse; coherent distinct portrait."
+    },
+    {
+      "id": "profile-24-work",
+      "profileIndex": 23,
+      "name": "Rasa Šleinė",
+      "specialty": "pedicure",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P24 pedicure portfolio photo. Editorial close photograph of anatomically correct adult feet after pedicure, resting on a clean folded towel, focus on neat short toenails with glossy coral polish. Soft side daylight. Quiet pale stone with charcoal furnishings and olive plant background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Rasa Šleinė pedicure stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-81467ac8-a2f0-4a64-bf6c-470386e94233.png",
+      "review": "Pixel review accepted: coral pedicure on two anatomically plausible feet with ten toes; clear individual nail result."
+    },
+    {
+      "id": "profile-24-space",
+      "profileIndex": 23,
+      "name": "Rasa Šleinė",
+      "specialty": "pedicure",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P24 studio interior. Unique pedicure small professional studio interior: natural birch furnishings, black equipment and violet stool. Pedicure chair with basin, closed storage and stool. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Rasa Šleinė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-b49a9632-59b8-4ec6-bfaf-b461bb221e5d.png",
+      "review": "Pixel review accepted: black pedicure chair, white basin, oak cabinetry and lilac stool; distinct room and coherent furniture."
+    },
+    {
+      "id": "profile-25-portrait",
+      "profileIndex": 24,
+      "name": "Toma Petrauskaitė",
+      "specialty": "nails",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P25 portrait. A unique fictional Lithuanian adult woman with short chestnut bob, age 49, white cotton shirt with dark apron, in a nails professional studio with oak and white cabinetry, tall arched window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: broad oval face, hooded hazel eyes, broad softly rounded nose; fine softly arched eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Toma Petrauskaitė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-f73a2ec9-8e4b-4c59-89de-0aba7503f44c.png",
+      "review": "Pixel review accepted: middle-aged nail practitioner with chestnut bob, broad face and white apron; coherent distinct portrait."
+    },
+    {
+      "id": "profile-25-work",
+      "profileIndex": 24,
+      "name": "Toma Petrauskaitė",
+      "specialty": "nails",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P25 nails portfolio photo. A close editorial photograph of two anatomically correct adult female hands with short oval manicure, one hand rests gently on the other on pale linen; focus on finished nails with warm caramel with one subtle gold accent. Bright diffused window light. Quiet warm walnut furniture, soft cream wall and round mirror background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Toma Petrauskaitė nails stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-aa3ec13d-981e-47d2-94fd-5c1deb7afc52.png",
+      "review": "Pixel review accepted: caramel manicure with one gold accent and coherent hands; distinct nail style without logos."
+    },
+    {
+      "id": "profile-25-space",
+      "profileIndex": 24,
+      "name": "Toma Petrauskaitė",
+      "specialty": "nails",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P25 studio interior. Unique nails small professional studio interior: oak and white cabinetry, tall arched window. One clean manicure desk with task lamp and two seats. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Toma Petrauskaitė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-6530d43e-cc8c-4e86-8f52-c688f7c4a0e8.png",
+      "review": "Pixel review accepted: oak and white nail station by arched window, two chairs and task lamp; plausible distinct layout."
+    },
+    {
+      "id": "profile-26-portrait",
+      "profileIndex": 25,
+      "name": "Paulius Naujokas",
+      "specialty": "hair",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P26 portrait. A unique fictional Lithuanian adult man with short dark curly hair and light stubble, age 27, black linen apron over white shirt, in a hair professional studio with pale stone with charcoal furnishings and olive plant. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: long narrow face, warm brown eyes, short rounded nose; strong dark straight eyebrows. Fair skin with natural pink undertone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Paulius Naujokas profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-2a1ca996-0005-4990-8629-b922841ed7a5.png",
+      "review": "Pixel review accepted: adult male hair practitioner with short dark curls, stubble and white shirt/apron; distinct coherent portrait."
+    },
+    {
+      "id": "profile-26-work",
+      "profileIndex": 25,
+      "name": "Paulius Naujokas",
+      "specialty": "hair",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P26 hair portfolio photo. Rear three-quarter portrait of an adult female client showing a professional shoulder-length haircut and natural glossy healthy-looking hair, focus on the dark-brown shoulder-length lob. Soft side daylight. Quiet bright skylight, black thin metal furnishings background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Paulius Naujokas hair stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-f5748b33-8e40-48ac-9d51-b3250d52e71a.png",
+      "review": "Pixel review accepted: shoulder-length textured brunette bob viewed over shoulder; coherent face, hand and hair texture."
+    }
+  ]
+}

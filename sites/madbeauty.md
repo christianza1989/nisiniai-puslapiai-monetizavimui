@@ -1,3 +1,13 @@
+# madbeauty.lt — vietinės platformos rezultatas
+
+2026-10-06. Savininko autorizuotas vietinis platformos funkcijų ir normalios desktop/mobile sąsajos darbas užbaigtas su demo medijos išimtimi. Patvarus email-only auth, meistro/kliento paskyros, kalendorius, atomic booking, kliento užklausų istorija, pokalbiai ir operatoriaus moderavimas. [Atidaryti vietinę platformą](http://127.0.0.1:8788/meistrui/kalendorius).
+
+**74PASS/0FAIL**,69individualios normalios desktop/mobile peržiūros; public-gallery OWNER_STOPPED. Lighthouse mobiliajam prisijungusiam kalendoriui94/100/100/66. Aktuali [būklė](madbeauty/IMPLEMENTATION_STATUS.md), [priėmimas](madbeauty/uiux/ACCEPTANCE.md), [kelionės](madbeauty/uiux/JOURNEYS.md), [70paviršių matrica](madbeauty/SCREEN_STATUS.json), [likusios priklausomybės](madbeauty/uiux/REMAINING_GAPS.json).
+
+Fizinis zoom/OSmotion/production įrenginiai ir pilna planšetės matrica UNVERIFIED. Gyvas paštas, DNS/hosting/deploy, tikri teikėjai ir paklausa atskiri. A–Z7,6/gateReady=false nepakeistas; nėra10/10ar production-ready teiginio.
+
+## Istoriniai tyrimai / planai
+
 # madbeauty.lt
 
 2026-10-05. Fazė 1, RESEARCH_COMPLETE / PLATFORM_PROPOSED. Savininkas pranešė įsigijęs domeną, DR18; nepriklausomai nepermatuota.

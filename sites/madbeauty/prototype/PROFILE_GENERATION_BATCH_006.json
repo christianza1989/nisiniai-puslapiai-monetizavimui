@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-06-space",
+      "profileIndex": 5,
+      "name": "Monika Petraitė",
+      "specialty": "pedicure",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P06 studio interior. Unique pedicure small professional studio interior: white tiled details, violet flowers and brass small lamp. Pedicure chair with basin, closed storage and stool. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Monika Petraitė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-0c49a736-f622-4f93-9650-eb40e56dda9b.png",
+      "review": "Pixel review accepted: separate bright pedicure room, raised foot basin and chair, storage and plausible tools; no people, logos or duplication."
+    },
+    {
+      "id": "profile-07-portrait",
+      "profileIndex": 6,
+      "name": "Milda Kazlauskė",
+      "specialty": "nails",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P07 portrait. A unique fictional Lithuanian adult woman with straight brunette bangs, age 39, navy clean professional tunic, in a nails professional studio with minimal charcoal doorframes, cream upholstery and large window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Milda Kazlauskė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-a36d5068-06b4-439d-849c-efd1c0aaf5c2.png",
+      "review": "Pixel review accepted: adult brunette with tied hair and fringe, navy tunic; natural texture and distinct face, centered portrait crop."
+    },
+    {
+      "id": "profile-07-work",
+      "profileIndex": 6,
+      "name": "Milda Kazlauskė",
+      "specialty": "nails",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P07 nails portfolio photo. A close editorial photograph of two anatomically correct adult female hands with short oval manicure, one hand rests gently on the other on pale linen; focus on finished nails with deep burgundy solid polish. Bright diffused window light. Quiet oak and white cabinetry, tall arched window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Milda Kazlauskė nails stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-ba72b996-161b-407f-b8ea-85754cd9d431.png",
+      "review": "Pixel review accepted: burgundy short manicure on two hands, coherent overlapping hand anatomy and textured sleeve; distinct from P01 neutral example."
+    },
+    {
+      "id": "profile-07-space",
+      "profileIndex": 6,
+      "name": "Milda Kazlauskė",
+      "specialty": "nails",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P07 studio interior. Unique nails small professional studio interior: minimal charcoal doorframes, cream upholstery and large window. One clean manicure desk with task lamp and two seats. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Milda Kazlauskė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-64ca0c48-9699-4825-bf1b-91e9ae9de952.png",
+      "review": "Pixel review accepted: nail studio from doorway, desk and two chairs with plausible manicure lamp; separate coherent interior and no branding."
+    }
+  ]
+}

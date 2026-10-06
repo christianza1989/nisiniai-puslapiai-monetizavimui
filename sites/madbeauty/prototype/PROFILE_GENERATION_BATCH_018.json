@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-37-work",
+      "profileIndex": 36,
+      "name": "Jūratė Kvedarė",
+      "specialty": "nails",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P37 nails portfolio photo. A close editorial photograph of two anatomically correct adult female hands with short oval manicure, one hand rests gently on the other on pale linen; focus on finished nails with sheer blush base and single tiny violet line. Bright diffused window light. Quiet minimal charcoal doorframes, cream upholstery and large window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Jūratė Kvedarė nails stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-938e88fa-e2b5-4e11-97cd-7c3a2dfe34c2.png",
+      "review": "Pixel review accepted: Pale nude manicure with fine violet lines; distinct finger and nail composition, no text."
+    },
+    {
+      "id": "profile-37-space",
+      "profileIndex": 36,
+      "name": "Jūratė Kvedarė",
+      "specialty": "nails",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P37 studio interior. Unique nails small professional studio interior: sage-grey walls, oak flooring and linen curtains. One clean manicure desk with task lamp and two seats. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Jūratė Kvedarė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-4ef358a4-d72f-4148-b438-607cfeac6a54.png",
+      "review": "Pixel review accepted: Sage manicure room with boucle seat, clean workstation and daylight; distinct coherent layout."
+    },
+    {
+      "id": "profile-38-portrait",
+      "profileIndex": 37,
+      "name": "Emilija Žemaitė",
+      "specialty": "hair",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P38 portrait. A unique fictional Lithuanian adult woman with curly brown shoulder-length hair, age 53, ivory knit blouse, in a hair professional studio with white tiled details, violet flowers and brass small lamp. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: long narrow face, large grey eyes, long straight nose; strong dark straight eyebrows. Fair skin with natural pink undertone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Emilija Žemaitė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-f5527d59-f6a5-45bd-b932-f7a41bdcfa16.png",
+      "review": "Pixel review accepted: Mature practitioner with curly chestnut hair, grey eyes and cream knit; natural skin texture and centered crop."
+    },
+    {
+      "id": "profile-38-work",
+      "profileIndex": 37,
+      "name": "Emilija Žemaitė",
+      "specialty": "hair",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P38 hair portfolio photo. Rear three-quarter portrait of an adult female client showing a professional shoulder-length haircut and natural glossy healthy-looking hair, focus on the soft face-framing brunette layers. Soft side daylight. Quiet natural birch furnishings, black equipment and violet stool background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Emilija Žemaitė hair stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-9e1a35e8-e372-48ad-bbd5-6e220d562ab4.png",
+      "review": "Pixel review accepted: Brown shoulder-length layered waves with subtle warm highlights; coherent hair finish and clear crop."
+    },
+    {
+      "id": "profile-38-space",
+      "profileIndex": 37,
+      "name": "Emilija Žemaitė",
+      "specialty": "hair",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P38 studio interior. Unique hair small professional studio interior: white tiled details, violet flowers and brass small lamp. Hair salon chair, mirror and tidy hair tools. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Emilija Žemaitė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-955d6240-f83c-4cb7-b242-23fa6c242fee.png",
+      "review": "Pixel review accepted: Single dark hair chair by brass-framed mirror and back window; coherent individual salon space."
+    },
+    {
+      "id": "profile-39-portrait",
+      "profileIndex": 38,
+      "name": "Julija Savickė",
+      "specialty": "brows",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P39 portrait. A unique fictional Lithuanian adult woman with straight brunette bangs, age 31, plum professional blouse, in a brows professional studio with minimal charcoal doorframes, cream upholstery and large window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: round face with full cheeks, hooded hazel eyes, slim straight nose; fine softly arched eyebrows. Medium warm skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Julija Savickė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-efea6ae9-c18c-4a49-bf63-31e8724e845e.png",
+      "review": "Pixel review accepted: Brown-haired skincare practitioner with straight fringe and plum blouse; distinct natural face and centered crop."
+    },
+    {
+      "id": "profile-39-work",
+      "profileIndex": 38,
+      "name": "Julija Savickė",
+      "specialty": "brows",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P39 brows portfolio photo. Macro editorial photograph of one adult woman's eye and naturally groomed eyebrow, face with real skin texture, eye closed softly; show a full dark brow and subtle lash curve. Bright diffused window light. Quiet oak and white cabinetry, tall arched window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Julija Savickė brows stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-da37098c-e3de-41cd-87b9-3a3e833ea5dd.png",
+      "review": "Pixel review accepted: Close skin and eyebrow detail with closed eye, natural skin texture and pale manicure; no treatment claims."
+    },
+    {
+      "id": "profile-39-space",
+      "profileIndex": 38,
+      "name": "Julija Savickė",
+      "specialty": "brows",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P39 studio interior. Unique brows small professional studio interior: minimal charcoal doorframes, cream upholstery and large window. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Julija Savickė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-ab7b17d2-7d72-42df-be19-00e5ba93d9f8.png",
+      "review": "Pixel review accepted: White skincare chair with small magnifier lamp, dark window frame and violet towel; coherent separate room."
+    }
+  ]
+}

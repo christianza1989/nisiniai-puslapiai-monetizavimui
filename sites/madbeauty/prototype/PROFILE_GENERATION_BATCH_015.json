@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-29-work",
+      "profileIndex": 28,
+      "name": "Kotryna Remeikė",
+      "specialty": "massage",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P29 massage portfolio photo. Editorial wellness photo of a practitioner performing a gentle shoulder massage on a seated adult client, client in a simple sleeveless top; only neck, upper shoulder and practitioner's hands visible, warm daylight, relaxed shoulders and clean linens. Bright diffused window light. Quiet minimal charcoal doorframes, cream upholstery and large window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Kotryna Remeikė massage stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-051ad149-fa87-4e58-a0e3-32681512a342.png",
+      "review": "Pixel review accepted: shoulder massage with plausible hands and relaxed seated client; distinct procedure view without medical claim."
+    },
+    {
+      "id": "profile-29-space",
+      "profileIndex": 28,
+      "name": "Kotryna Remeikė",
+      "specialty": "massage",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P29 studio interior. Unique massage small professional studio interior: sage-grey walls, oak flooring and linen curtains. Massage table neatly made with folded linen, quiet uncluttered treatment room. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Kotryna Remeikė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-595f1134-512e-4f7a-a77c-577183867381.png",
+      "review": "Pixel review accepted: sage massage room with headrest bed, side window and oak cabinet; coherent distinct interior."
+    },
+    {
+      "id": "profile-30-portrait",
+      "profileIndex": 29,
+      "name": "Eglė Mažeikė",
+      "specialty": "pedicure",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P30 portrait. A unique fictional Lithuanian adult woman with curly brown shoulder-length hair, age 26, white cotton shirt with dark apron, in a pedicure professional studio with white tiled details, violet flowers and brass small lamp. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: high prominent cheekbones, almond-shaped dark eyes, broad softly rounded nose; strong dark straight eyebrows. Medium warm skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Eglė Mažeikė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-4df67849-c1ce-4c39-a8b7-1d1b0321abb4.png",
+      "review": "Pixel review accepted: curly-haired pedicure practitioner with oval face, dark eyes and white blouse; distinct portrait."
+    },
+    {
+      "id": "profile-30-work",
+      "profileIndex": 29,
+      "name": "Eglė Mažeikė",
+      "specialty": "pedicure",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P30 pedicure portfolio photo. Editorial close photograph of anatomically correct adult feet after pedicure, resting on a clean folded towel, focus on neat short toenails with natural clear coat. Soft side daylight. Quiet natural birch furnishings, black equipment and violet stool background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Eglė Mažeikė pedicure stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-e9803254-d4b3-44b7-bb4b-3f88b057da50.png",
+      "review": "Pixel review accepted: two feet with plausible toes and nude polish on white towel; suitable pedicure result illustration."
+    },
+    {
+      "id": "profile-30-space",
+      "profileIndex": 29,
+      "name": "Eglė Mažeikė",
+      "specialty": "pedicure",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P30 studio interior. Unique pedicure small professional studio interior: white tiled details, violet flowers and brass small lamp. Pedicure chair with basin, closed storage and stool. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Eglė Mažeikė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-d0e156a9-ad7f-4539-918a-3485ba1f5387.png",
+      "review": "Pixel review accepted: white tiled pedicure room with elevated basin chair, sink and wheeled stool; usable spatial view."
+    },
+    {
+      "id": "profile-31-portrait",
+      "profileIndex": 30,
+      "name": "Darius Stasiulis",
+      "specialty": "nails",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P31 portrait. A unique fictional Lithuanian adult man with closely cropped dark hair and trimmed beard, age 33, black linen apron over white shirt, in a nails professional studio with minimal charcoal doorframes, cream upholstery and large window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: broad oval face, large grey eyes, short rounded nose; fine softly arched eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Darius Stasiulis profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-bef0591d-19c9-493c-aeab-5537b19898c6.png",
+      "review": "Pixel review accepted: close-cropped bearded male nail practitioner with grey eyes and white shirt; coherent distinct individual."
+    },
+    {
+      "id": "profile-31-work",
+      "profileIndex": 30,
+      "name": "Darius Stasiulis",
+      "specialty": "nails",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P31 nails portfolio photo. A close editorial photograph of two anatomically correct adult female hands with short oval manicure, one hand rests gently on the other on pale linen; focus on finished nails with soft pink oval nails with one abstract black detail. Bright diffused window light. Quiet oak and white cabinetry, tall arched window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Darius Stasiulis nails stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-de8dcff8-fa2b-4742-9775-ffd362df75f7.png",
+      "review": "Pixel review accepted: pale pink manicure with fine dark line detail, plausible overlapping hands; relevant distinct nail style."
+    },
+    {
+      "id": "profile-31-space",
+      "profileIndex": 30,
+      "name": "Darius Stasiulis",
+      "specialty": "nails",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P31 studio interior. Unique nails small professional studio interior: minimal charcoal doorframes, cream upholstery and large window. One clean manicure desk with task lamp and two seats. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Darius Stasiulis darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-18c67462-e186-4110-95a7-f7fba19cb44f.png",
+      "review": "Pixel review accepted: compact white manicure desk and boucle chairs with tall window and waiting chair; distinct studio layout."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const image=(page,id=null,cover=false,article=false)=>{
+ const a=id?page.media.find(a=>a.id===id):page.media[0];if(!a)return'';
+ const family=page.media.filter(b=>b.alt===a.alt&&Math.abs(b.width/b.height-a.width/a.height)<.03).sort((a,b)=>a.width-b.width);
+ return `<img src="${esc(a.src)}" srcset="${family.map(b=>esc(b.src)+' '+b.width+'w').join(', ')}" sizes="${cover||article?'(max-width:760px) calc(100vw - 32px), (max-width:1050px) calc(100vw - 300px), 780px':'(max-width:760px) calc(100vw - 32px), 400px'}" width="${a.width}" height="${a.height}" alt="${esc(a.alt)}" ${cover?'fetchpriority="high"':'loading="lazy"'} class="${cover?'article-cover':''}">`;
+};
+export const contentCard=page=>`<article class="guide-card"><a href="/${esc(page.slug)}">${image(page)}<h3>${esc(page.title)}</h3></a><p>${esc(page.description)}</p><a class="link" href="/${esc(page.slug)}">Skaityti <span aria-hidden="true">→</span></a></article>`;
+export function renderContentPage(page,{operatorName='MB Pinet',pages=[]}={}){
+ const text=value=>page.contextual?.[value]||esc(value);
+ const blocks=page.body.map((b,i)=>b.type==='paragraph'?`<p>${text(b.text)}</p>`:b.type==='heading'?`<h${b.level} id="skyrius-${i}">${esc(b.text)}</h${b.level}>`:b.type==='list'?`<ul>${b.items.map(t=>`<li>${text(t)}</li>`).join('')}</ul>`:b.type==='image'?image(page,b.assetId,false,true):'').join('');
+ const related=page.links.map(l=>`<a class="link" href="${esc(l.href)}">${esc(l.label)}</a>`).join('<br>');
+ const sources=(page.externalLinks||[]).map(l=>`<li><a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a> — ${esc(l.reason)}</li>`).join('');
+ if(page.slug==='gidai')return`<div class="page container"><h1>${esc(page.title)}</h1><p>${esc(page.description)}</p><div class="cards section">${pages.filter(p=>p.type==='guide').map(contentCard).join('')}</div></div>`;
+ if(page.type!=='guide')return`<div class="page container"><article class="prose"><h1>${esc(page.title)}</h1>${blocks}${related?'<nav aria-label="Susiję puslapiai">'+related+'</nav>':''}</article></div>`;
+ return`<div class="page container"><nav class="crumbs" aria-label="Kelias"><a href="/">Madbeauty</a> / <a href="/gidai">Gidai</a> / <span>${esc(page.title)}</span></nav><div class="article-layout"><article class="article"><h1>${esc(page.title)}</h1><div class="article-byline">Parengė <a href="/redakcija">${esc(operatorName)} redakcija</a> · <time datetime="${esc(page.dates.published)}">${esc(page.dates.published.slice(0,10))}</time></div>${image(page,null,true)}${blocks}${sources?'<h2>Šaltiniai</h2><ul>'+sources+'</ul>':''}${related?'<section class="panel"><h2>Kitas žingsnis</h2><nav aria-label="Susiję puslapiai">'+related+'</nav></section>':''}<p class="hint">Originalios redakcinės iliustracijos nėra konkretaus teikėjo darbai.</p></article><aside class="article-aside"><details open><summary>Šiame gide</summary>${page.body.map((b,i)=>b.type==='heading'?`<a href="#skyrius-${i}" data-anchor>${esc(b.text)}</a>`:'').join('')}</details><a href="/redakcija">Kaip rengiamas turinys</a></aside></div></div>`;
+}

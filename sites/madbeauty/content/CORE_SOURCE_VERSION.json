@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-05",
+  "binding": "same common projection/schema/SEO; Madbeauty HTML only",
+  "files": [
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\lib\\niche-links.mjs",
+      "sha256": "29d8ae699f7ee715718d31791fa1f0189dd47fa50f0fd270d9477b364c927b35"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\lib\\niche-schema-core.mjs",
+      "sha256": "813bcf8d16460b3775fba78c46435474bf59ffa7871f478f9811f736e73a32fc"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\lib\\niche-seo.ts",
+      "sha256": "a8047073804d5e1324c84deb375c5877e11d7fd99605e452c31eeedc235b818d"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\scripts\\content-package-core.mjs",
+      "sha256": "bbe9a40d5fd36efeef5153f6f2e2ef41aea3f2e61d211156fe5765c82452592d"
+    }
+  ]
+}

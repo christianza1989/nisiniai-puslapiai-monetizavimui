@@ -1,3 +1,13 @@
+## UI/UX pataisų priėmimas — 2026-10-06
+
+Vietinės platformos formos, auth/booking atkūrimas, search/calendar ir variantų pasirinkimas pagerinti. 146 actual route/viewport įrašų per 46 paviršių,320/390/640/820/1440px. BackendV15 35/35, platformV9 30/30, HTTPV1 4/4;69PASS. Authenticated calendar LighthouseV8 94/100/100/66. Aktualios ribos ir70matrix: [uiux/ACCEPTANCE.md](uiux/ACCEPTANCE.md). Full70/all-state, physical zoom/reduced-motion ir production vartai vis darUNVERIFIED. Demo media/profilių peržiūra neatnaujinta.
+
+# Madbeauty — actual produkto tapatybė
+
+2026-10-06. Savininko pasirinktas black/white/violet homepage-modern-v2 įgyvendintas su DM Sans, originaliu wordmark ir funkciniam kalendoriui skirta tamsia navigacija. Public/search/profile/booking/workspace/article turi atskiras kompozicijas. Platformos kalendorius7dienų/duration-grid desktop, agenda mobile;820px klientų darbo vieta ir320px formos patikrintos. Actual: screen-acceptance-v6.json ir SCREEN_STATUS.json. Mažesnė26px modalų antraštė/sticky header, horizontalus mobile navigation ir aiškios formos klaidos. Viešo core šablono kopija nėra tapatybės pagrindas. Nepriklausomas/all70/every-state/nearest-network vizualinis priėmimas nepaskelbtas. Naujausias savininko nurodymas sustabdė tolimesnes demo profilių/vaizdų patikras.
+
+## Istoriniai įrašai (ankstesnė apimtis; ne dabartinis priėmimas)
+
 # Madbeauty — pilnos platformos vizualiniai maketai
 
 2026-10-05. Agent-selected kryptis: iš pradžių trys raster konceptai, po Fresha review įgyvendinta atskira privati UI foundation. Tai ne pilnos platformos ar tikro booking priėmimas. Produkto autoritetas [PRODUCT](PRODUCT.md), [PLATFORM_PLAN](PLATFORM_PLAN.md) ir [FINAL_PROTOTYPE_PLAN](FINAL_PROTOTYPE_PLAN.md). Originalūs rastro artefaktai ir jų fingerprint neperrašyti.

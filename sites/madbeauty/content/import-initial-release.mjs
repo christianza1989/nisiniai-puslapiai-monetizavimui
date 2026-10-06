@@ -1,0 +1,8 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {spawnSync} from 'node:child_process';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const root=path.resolve(import.meta.dirname,'../../..'),receipt=JSON.parse(await readFile(new URL('./INITIAL_RELEASE_RECEIPT.json',import.meta.url))),first=JSON.parse(await readFile(new URL('./FIRST_RELEASE_RECEIPT.json',import.meta.url))),before=JSON.parse(await readFile(first.path)),after=JSON.parse(await readFile(receipt.path)),releaseDir=path.dirname(receipt.path),sandbox=path.resolve(import.meta.dirname,'../runtime/output/content-core');
+for(const page of before.pages)assert.deepEqual(after.pages.find(p=>p.id===page.id),page,'Existing approved page changed');
+const results=[];for(const [script,args,cwd] of [['content-studio/scripts/verify-content-release.mjs',[releaseDir],root],['scripts/import-content-package.mjs',[releaseDir,'--replace'],sandbox],['scripts/compile-content-packages.mjs',[],sandbox]]){const result=spawnSync(process.execPath,[script,...args],{cwd,encoding:'utf8',windowsHide:true});results.push({script,exitCode:result.status,output:result.stdout+result.stderr});if(result.status!==0)throw Error(result.stdout+result.stderr);}
+await writeFile(path.join(root,'research/madbeauty-implementation/content-initial-release-import.json'),JSON.stringify({date:'2026-10-05',status:'PASS',originalApprovedPagesUnchanged:5,pages:after.pages.length,assets:receipt.assets,packageSha256:receipt.packageSha256,state:receipt.state,results},null,2)+'\n');console.log(JSON.stringify({status:'PASS',pages:after.pages.length,assets:receipt.assets,originalApprovedPagesUnchanged:5}));

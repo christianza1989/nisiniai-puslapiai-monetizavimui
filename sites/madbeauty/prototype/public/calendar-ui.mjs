@@ -1,0 +1,51 @@
+import {esc,btn,field,select,date,time,hhmm,minute,empty,userError} from './ui.mjs';
+import {positionCalendarRecords} from './calendar-layout.mjs';
+const offsetForKey=(ctx,key)=>Math.round((Date.parse(key+'T12:00:00Z')-Date.parse(ctx.dayKey(0)+'T12:00:00Z'))/86400000);
+const chosenOffset=ctx=>ctx.state.calendarDate?offsetForKey(ctx,ctx.state.calendarDate):ctx.state.calendarDay||0;
+const localMinute=at=>{const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Vilnius',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(at)).split(':').map(Number);return p[0]*60+p[1];};
+const dateKeyAt=at=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(at));
+export function calendarView(ctx,d,visitLine){
+ const chosen=chosenOffset(ctx),week=ctx.state.calendarMode==='week',weekday=new Date(ctx.dayInstant(chosen)).getUTCDay(),start=week?chosen-(weekday+6)%7:chosen,days=Array.from({length:week?7:1},(_,i)=>start+i);
+ const staff=ctx.state.calendarStaff||'',matches=b=>!staff||b.practitionerId===staff||!b.practitionerId&&d.services.some(s=>s.practitionerId===staff&&s.resourceId===b.resourceId);
+ const forDay=i=>d.bookings.filter(b=>dateKeyAt(b.startAt)===ctx.dayKey(i)&&matches(b)).sort((a,b)=>a.startAt.localeCompare(b.startAt));
+ const blocksForDay=i=>(d.busyBlocks||[]).filter(b=>b.active!==false&&dateKeyAt(b.startAt)===ctx.dayKey(i)&&matches(b));
+ const targetName=b=>d.practitioners.find(p=>p.id===b.practitionerId)?.name||d.resources.find(r=>r.id===b.resourceId)?.label||'Darbo laikas';
+ const blockRow=b=>`<div class="list-row"><div><strong>${esc(b.label||'Užblokuotas laikas')}</strong><p>${time(b.startAt)}–${time(b.endAt)} · ${esc(targetName(b))}</p></div>${ctx.adapter.mode==='real'?btn('release-time-block','Atlaisvinti',`data-id="${b.id}"`,'button outline small'):''}</div>`;
+ const layouts=new Map(days.map(i=>{
+  const records=[...forDay(i).map(b=>({b,block:false})),...blocksForDay(i).map(b=>({b,block:true}))];
+  return [i,positionCalendarRecords(records.map(r=>({...r,from:localMinute(r.b.startAt),to:localMinute(r.b.endAt)})))];
+ }));
+ const visible=days.flatMap(i=>[...forDay(i),...blocksForDay(i)]),scale=2,lo=Math.max(0,Math.floor(Math.min(480,...visible.map(b=>localMinute(b.startAt)))/60)*60),hi=Math.min(1440,Math.ceil(Math.max(1260,...visible.map(b=>localMinute(b.endAt)))/60)*60),hours=Math.ceil((hi-lo)/60),overlapping=days.some(i=>layouts.get(i).maxLanes>1),dayMarkup=i=>{
+  const positioned=layouts.get(i).items;
+  return `<section class="time-day"><h3>${ctx.dayLabel(i)}</h3><div class="time-day-body" style="height:${(hi-lo)*scale}px">${Array.from({length:hours},(_,n)=>`<span class="hour-rule" style="top:${n*60*scale}px"></span>`).join('')}${positioned.map(({b,block,from,to,lane,lanes})=>{
+   const style=`top:${Math.max(0,from-lo)*scale}px;height:${Math.max(30,(to-from)*scale)}px;left:calc(${lane*100/lanes}% + 4px);width:calc(${100/lanes}% - 8px)`;
+   if(block)return `<div class="time-block" title="${esc(time(b.startAt)+'–'+time(b.endAt)+' · '+b.label+' · '+targetName(b))}" style="${style}"><strong>${time(b.startAt)}–${time(b.endAt)}</strong><span>${esc(b.label||'Užblokuota')}</span><small>${esc(targetName(b))}</small></div>`;
+   const label=b.serviceSnapshot?.label||d.services.find(s=>s.id===b.providerServiceId)?.label||'Vizitas',client=d.clients.find(c=>c.id===b.clientId)?.name||'Klientas';
+   return btn('visit-drawer',`<strong>${time(b.startAt)}–${time(b.endAt)}</strong><span class="appointment-client">${esc(client)}</span><span class="appointment-service">${esc(label)}</span>${d.organizations[0]?.kind==='salon'?'<small class="appointment-staff">'+esc(targetName(b))+'</small>':''}`,`data-id="${b.id}" data-duration="${to-from}" title="${esc(client+' · '+label+' · '+targetName(b))}" aria-label="${esc(time(b.startAt)+'–'+time(b.endAt)+', '+label+', '+client+', '+targetName(b))}" style="${style}"`,'time-appointment '+b.status+(to-from<25?' very-short':to-from<35?' compact':''));
+  }).join('')}</div></section>`;
+ };
+ const selectedDate=ctx.dayKey(chosen);
+ return `<div class="calendar-controls"><div class="toolbar calendar-toolbar"><div class="row">${btn('calendar-nav','Ankstesnė','data-id="-1" aria-label="Ankstesnė savaitė ar diena"','button outline small')}${btn('calendar-today','Šiandien','','button outline small')}${btn('calendar-nav','Kita','data-id="1" aria-label="Kita savaitė ar diena"','button outline small')}</div><div class="segmented">${[['day','Diena'],['week','Savaitė']].map(([id,label])=>btn('calendar-mode',label,`data-id="${id}" aria-pressed="${ctx.state.calendarMode===id}"`)).join('')}</div></div>
+ <form id="calendar-filter" class="calendar-filter">${field('Kalendoriaus data','calendarDate',selectedDate,'date','required')}${d.practitioners.length>1?select('Meistras','calendarStaff',[['','Visa komanda'],...d.practitioners.map(p=>[p.id,p.name])],staff):''}<button class="button outline small">Rodyti</button></form>
+ <div class="toolbar calendar-actions">${btn('manual-visit','Naujas vizitas','','button accent small')}${ctx.adapter.mode==='real'?btn('block-time','Blokuoti laiką','','button outline small'):''}</div>
+ <div class="calendar-caption"><strong>${week?ctx.dayLabel(start)+'–'+ctx.dayLabel(start+6):ctx.dayLabel(start)}</strong><span>${esc(d.organizations[0].name)} · Vilniaus laikas</span></div></div>
+ ${overlapping&&week?'<p id="calendar-scroll-hint" class="calendar-scroll-hint hint">Persidengiantys vizitai rodomi greta. Slink tinklelį horizontaliai arba pasirink „Diena“.</p>':''}
+ <div class="time-calendar-wrap" tabindex="0" role="region" aria-label="Laiko kalendorius" ${overlapping&&week?'aria-describedby="calendar-scroll-hint"':''}><div class="time-calendar" style="grid-template-columns:48px ${days.map(i=>`minmax(${Math.max(week?120:250,layouts.get(i).maxLanes*112)}px,1fr)`).join(' ')}"><div class="time-axis"><div class="time-axis-head"></div><div style="height:${(hi-lo)*scale}px">${Array.from({length:hours},(_,n)=>`<span style="top:${n*60*scale}px">${hhmm(lo+n*60)}</span>`).join('')}</div></div>${days.map(dayMarkup).join('')}</div></div>
+ <div class="agenda"><section class="selected-agenda"><h2>${ctx.dayLabel(chosen)}${chosen===0?' · šiandien':''}</h2>${forDay(chosen).length?forDay(chosen).map(b=>visitLine(ctx,b)).join(''):empty('Šią dieną vizitų nėra','Pridėk vizitą arba pasirink kitą datą.',btn('manual-visit','Naujas vizitas','','button outline'))}${blocksForDay(chosen).map(blockRow).join('')}</section>${week?days.filter(i=>i!==chosen).map(i=>`<details class="agenda-day"><summary>${ctx.dayLabel(i)}<span>${forDay(i).filter(b=>b.status!=='canceled').length} vizitų${blocksForDay(i).length?' · '+blocksForDay(i).length+' blokų':''}</span></summary>${forDay(i).length?forDay(i).map(b=>visitLine(ctx,b)).join(''):'<p class="hint">Vizitų nėra.</p>'}${blocksForDay(i).map(blockRow).join('')}</details>`).join(''):''}</div>
+ ${(d.busyBlocks||[]).some(b=>b.active!==false&&days.some(i=>date(b.startAt)===ctx.dayLabel(i)))?`<details class="calendar-block-list"><summary>Užblokuoti laikai</summary>${days.flatMap(blocksForDay).map(blockRow).join('')}</details>`:''}<p class="hint">Vizito panelėje gali pakeisti laiką ar būseną. Pilkai pažymėti intervalai nerodomi laisvų laikų paieškoje.</p>`;
+}
+export async function calendarAction(ctx,action,button){
+ if(action==='calendar-nav'){ctx.state.calendarDate=ctx.dayKey(chosenOffset(ctx)+(ctx.state.calendarMode==='week'?7:1)*Number(button.dataset.id));ctx.saveUI();await ctx.render();return true;}
+ if(action==='calendar-today'){ctx.state.calendarDate=ctx.dayKey(0);ctx.saveUI();await ctx.render();return true;}
+ if(action==='calendar-mode'){ctx.state.calendarMode=button.dataset.id;ctx.saveUI();await ctx.render();return true;}
+ if(action==='block-time'){
+  const d=ctx.workspace;ctx.openDialog('Blokuoti laiką',`<p>Pasirink, kurio meistro arba darbo vietos laikas bus neprieinamas registracijai.</p><form id="time-block">${select('Kam blokuoti','target',[...d.practitioners.filter(p=>p.active).map(p=>['staff:'+p.id,p.name]),...d.resources.filter(r=>r.active).map(r=>['resource:'+r.id,'Darbo vieta: '+r.label])],d.practitioners[0]?'staff:'+d.practitioners[0].id:'')}${field('Data','dateKey',ctx.dayKey(Math.max(0,Math.min(30,chosenOffset(ctx)))),'date',`required min="${ctx.dayKey(0)}" max="${ctx.dayKey(30)}"`)}<div class="grid-2">${field('Nuo','from','09:00','time','required')}${field('Iki','to','10:00','time','required')}</div>${field('Priežastis','label','','text','required maxlength="100"')}<button class="button accent">Išsaugoti bloką</button></form>`);return true;
+ }
+ if(action==='release-time-block'){const b=ctx.workspace.busyBlocks.find(b=>b.id===button.dataset.id);await ctx.adapter.releaseBusyBlock({id:b.id,version:b.version});ctx.toast('Laikas atlaisvintas registracijai.');await ctx.render();return true;}
+ return false;
+}
+export async function calendarForm(ctx,form,fd){
+ if(form.id==='calendar-filter'){const key=fd.get('calendarDate');if(!/^\d{4}-\d{2}-\d{2}$/.test(key)||new Date(key+'T12:00:00Z').toISOString().slice(0,10)!==key)throw userError('Pasirink galiojančią datą.');ctx.state.calendarDate=key;ctx.state.calendarStaff=fd.get('calendarStaff')||'';ctx.saveUI();await ctx.render();return true;}
+ if(form.id==='time-block'){const target=String(fd.get('target')),split=target.indexOf(':'),type=target.slice(0,split),id=target.slice(split+1);await ctx.adapter.createBusyBlock({organizationId:ctx.state.session.organizationId,[type==='staff'?'practitionerId':'resourceId']:id,dateKey:fd.get('dateKey'),from:minute(fd.get('from')),to:minute(fd.get('to')),label:fd.get('label')});ctx.state.calendarDate=fd.get('dateKey');ctx.closeDialog();ctx.toast('Laikas užblokuotas.');ctx.saveUI();await ctx.render();return true;}
+ return false;
+}

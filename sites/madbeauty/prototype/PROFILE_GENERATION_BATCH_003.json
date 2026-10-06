@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-05",
+  "assets": [
+    {
+      "id": "profile-03-work",
+      "profileIndex": 2,
+      "name": "Gabija Mockutė",
+      "specialty": "brows",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P03 brows portfolio photo. Macro editorial photograph of one adult woman's eye and naturally groomed eyebrow, face with real skin texture, eye closed softly; show a softly brushed-up natural brow and fine individual lashes. Bright diffused window light. Quiet sage-grey walls, oak flooring and linen curtains background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Gabija Mockutė brows stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-3603f6c2-9258-4ab0-9ae4-d06a976d800f.png",
+      "review": "Pixel review accepted 2026-10-05: natural eyebrow/lash close-up, coherent hand and face anatomy, no medical claim or text."
+    },
+    {
+      "id": "profile-03-space",
+      "profileIndex": 2,
+      "name": "Gabija Mockutė",
+      "specialty": "brows",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P03 studio interior. Unique brows small professional studio interior: warm walnut furniture, soft cream wall and round mirror. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Gabija Mockutė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-51ebf26f-fa94-49f9-9eef-9a4d5192867b.png",
+      "review": "Pixel review accepted 2026-10-05: distinct cosmetic treatment-chair interior, appropriate storage and lighting, crop safe, no text."
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-26-space",
+      "profileIndex": 25,
+      "name": "Paulius Naujokas",
+      "specialty": "hair",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P26 studio interior. Unique hair small professional studio interior: pale stone with charcoal furnishings and olive plant. Hair salon chair, mirror and tidy hair tools. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Paulius Naujokas darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-83f783ac-4917-4994-844b-78c7bbb539b4.png",
+      "review": "Pixel review accepted: single hair station with round mirror, window tree and dark chair; clear usable interior, distinct from prior stations."
+    },
+    {
+      "id": "profile-27-portrait",
+      "profileIndex": 26,
+      "name": "Tadas Karvelis",
+      "specialty": "brows",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P27 portrait. A unique fictional Lithuanian adult man with swept-back light brown hair, clean-shaven, age 34, navy clean professional tunic, in a brows professional studio with warm walnut furniture, soft cream wall and round mirror. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: round face with full cheeks, wide-set grey-green eyes, slightly aquiline nose; fine softly arched eyebrows. Medium warm skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Tadas Karvelis profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-4154e3e7-4d5c-40f4-90ae-8ebb13b6d2c4.png",
+      "review": "Pixel review accepted: short-haired practitioner with broad face, pale green eyes and navy top; coherent individual portrait."
+    },
+    {
+      "id": "profile-27-work",
+      "profileIndex": 26,
+      "name": "Tadas Karvelis",
+      "specialty": "brows",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P27 brows portfolio photo. Macro editorial photograph of one adult woman's eye and naturally groomed eyebrow, face with real skin texture, eye closed softly; show a softly brushed-up natural brow and fine individual lashes. Bright diffused window light. Quiet sage-grey walls, oak flooring and linen curtains background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Tadas Karvelis brows stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-cd42b91e-38e9-4ba9-acfe-e081649abddb.png",
+      "review": "Pixel review accepted: eyebrow close-up with natural texture, closed eye and plausible hand; suitable brow styling illustration."
+    },
+    {
+      "id": "profile-27-space",
+      "profileIndex": 26,
+      "name": "Tadas Karvelis",
+      "specialty": "brows",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P27 studio interior. Unique brows small professional studio interior: warm walnut furniture, soft cream wall and round mirror. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Tadas Karvelis darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-d2ec7693-ee7d-4e9c-8ccb-ebe0e475a48c.png",
+      "review": "Pixel review accepted: warm wood brow room with reclined white chair, oval mirror and window; distinct layout and crop room."
+    },
+    {
+      "id": "profile-28-portrait",
+      "profileIndex": 27,
+      "name": "Martyna Kairytė",
+      "specialty": "skin",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P28 portrait. A unique fictional Lithuanian adult woman with auburn pixie cut, age 41, ivory knit blouse, in a skin professional studio with bright skylight, black thin metal furnishings. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: angular square jaw, light blue eyes, long straight nose; strong dark straight eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Martyna Kairytė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-1b82b394-00eb-400e-9ad8-da6608ee922d.png",
+      "review": "Pixel review accepted: red pixie-haired practitioner with angular face and grey eyes; coherent individual portrait."
+    },
+    {
+      "id": "profile-28-work",
+      "profileIndex": 27,
+      "name": "Martyna Kairytė",
+      "specialty": "skin",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P28 skin portfolio photo. Calm editorial spa skincare procedure scene, an adult woman client on a treatment chair under a white towel, a practitioner's clean hands using a soft small cleansing brush; gentle cosmetic care with no devices. Soft side daylight. Quiet white tiled details, violet flowers and brass small lamp background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Martyna Kairytė skin stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-fdfaf13b-0c35-4517-b94c-2393ca043ac6.png",
+      "review": "Pixel review accepted: facial cleansing scene with plausible hands, brush and towel; relevant nonmedical skincare illustration."
+    },
+    {
+      "id": "profile-28-space",
+      "profileIndex": 27,
+      "name": "Martyna Kairytė",
+      "specialty": "skin",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P28 studio interior. Unique skin small professional studio interior: bright skylight, black thin metal furnishings. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Martyna Kairytė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-1c4222b2-ed03-4300-a1f5-a14296e56448.png",
+      "review": "Pixel review accepted: skincare chair under sloping roof window, charcoal cabinetry and lilac towel; clear distinct interior."
+    },
+    {
+      "id": "profile-29-portrait",
+      "profileIndex": 28,
+      "name": "Kotryna Remeikė",
+      "specialty": "massage",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P29 portrait. A unique fictional Lithuanian adult woman with dark-blonde braided updo, age 48, plum professional blouse, in a massage professional studio with sage-grey walls, oak flooring and linen curtains. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: heart-shaped face, deep-set brown eyes, slim straight nose; fine softly arched eyebrows. Fair skin with natural pink undertone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Kotryna Remeikė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-0af794b7-812c-4eb9-8b87-c9d4be03bc10.png",
+      "review": "Pixel review accepted: mature curly-haired massage practitioner in plum blouse, round face and brown eyes; distinct face and usable crop."
+    }
+  ]
+}

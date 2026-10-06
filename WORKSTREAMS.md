@@ -8,6 +8,8 @@
 
 # Lygiagrečios sesijos
 
+2026-10-06 root savininko Git perdavimo papildymas: švari `ai/madbeauty-platform-20261006` šaka, tik `docs/NEXT_CODEX_HANDOFF_2026-10-06.md`, nuoroda `sites/madbeauty/GIT_HANDOFF.md`, du atrinkti root Git peržiūros MD ir ši eilutė. Runtime, kitų sesijų failai, schemos, DNS ir deployment nekinta. Kitas Codex gauna aktualią atkūrimo versiją ir aiškią Madbeauty Cloudflare/production priėmimo eilę; SQLite vietinis rezultatas nepervadinamas Workers priėmimu. Shared doc langas atlaisvinamas po commit/push.
+
 2026-10-03 autoelektrikaivilniuje mažas shared prijungimo langas: tik viena nauja savo dispatch šaka `app/niche/[siteId]/[[...slug]]/page.tsx`, viena savo ženklo šaka `app/niche/[siteId]/brand-icon/route.ts`, oficialus savo 11 puslapių / 20 WebP paketo importas ir bendras compile. Aktualios esamos šešios dispatch šakos ir brand-icon išimtys perskaitytos; jos išlaikomos. Network registry auto domeną jau turi, liveDomains tuščias ir nekinta. Bendras production dist nekeičiamas. Po lango savo izoliuota kopija `output/three-sites-20261003/autoelektrikaivilniuje/`; SMTP/LEAD_EMAIL/voice off, vietinė D1 tik sintetinė.
 
 2026-10-03 autoelektrikaivilniuje įgyvendinimas tęsiasi savo ribose: papildomai rezervuotas tik savas `dovanos-memorycasting/public/fonts/autoelektrikaivilniuje/` su Barlow šeimos SIL OFL ir kilmės žurnalu. Jokių bendrų font/config ar kitų domenų pakeitimų šiame žingsnyje.

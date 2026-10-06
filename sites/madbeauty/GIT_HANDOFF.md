@@ -1,5 +1,7 @@
 # Madbeauty paleidimas iš Git
 
+**Aktualus perdavimas kitai sesijai:** [2026-10-06 startas ir Cloudflare/domeno darbų eilė](../../docs/NEXT_CODEX_HANDOFF_2026-10-06.md). Savininkas pavedė kitai sesijai užbaigti ir paleisti; šiame commit perduodamas vietinis kodas, ne jau įgyvendintas Workers/D1 adapteris.
+
 2026-10-06. Į Git perduotas V3 vietinės platformos kodas, naudojami WebP/fontų/ikonų failai, planai ir priėmimo dokumentacija. Vietinis funkcijų bei normalios desktop/mobile sąsajos etapas apima 69 paviršius su savininko sustabdyta demo galerijos peržiūra. Tai nėra viešas deployment ar production priėmimas.
 
 ## Naujas kompiuteris

@@ -21,6 +21,7 @@ test('Compiled Workers publication boundary excludes future body, links, schema,
   const future=now<publishAt,v2=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[{name:'isolated-publication-clock',setup(b){
    b.onLoad({filter:/cloudflare[\\/]worker\.mjs$/},async a=>({contents:(await readFile(a.path,'utf8')).replace('contentProjection(Date.now(),registry)',`contentProjection(${now},registry)`),loader:'js'}));
    b.onLoad({filter:/output[\\/]content-package\.json$/},()=>({contents:JSON.stringify(pkg),loader:'json'}));
+   b.onLoad({filter:/output[\\/]asset-paths\.json$/},async a=>({contents:JSON.stringify([...new Set([...JSON.parse(await readFile(a.path,'utf8')),...media.keys()])]),loader:'json'}));
   }}]});
   const f=await fixture({RELEASE_MODE:'production'},v2.outputFiles[0].text,async request=>{const bytes=media.get(new URL(request.url).pathname);return bytes?new Response(bytes,{headers:{'Content-Type':'image/webp'}}):new Response('Not found',{status:404});});
   try{

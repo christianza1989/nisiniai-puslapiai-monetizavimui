@@ -1,5 +1,13 @@
 # Madbeauty — dabartinis įgyvendinimas
 
+## Gyvas patvirtintas V2 turinio paketas — 2026-10-07
+
+Turinio sesijos tikras reviewed V2 release `b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5` įdiegtas į tą patį madbeauty.lt Worker. Versija **edf429e9-2409-49bb-bf2b-88b5d53628f8**, runtime source897ba83 / PR24. [Priėmimas ir pakartojimo kelias](v2-release-20261007/README.md), [tikras deployment kvitas](v2-release-20261007/RECEIPT.json). Devyni tikrai patvirtinti puslapiai; dabar vieši septyni (home, indeksas, redakcija, organizacijos autorius, trys gidai), du ateities gidai lieka404 iki2026-10-13T07:00:00Z. Approved bytes ir datos nepakeisti.
+
+92/92 testai, exact shadow import, admission, production dry-run PASS. Actualhost17pages/134assets/7private boundaries, due25media exact bytes, future5unsharedmedia404, JSON/schema/canonical/sitemap/LLM exclusion PASS. Visos257nationalSSRroutes/noindex/103cityoptions PASS;48extensionsPLANNED,0localREADY. Actual desktop1280/mobile390 indeksas, retained straipsnis, authorlink ir approvedhomefragment, loadedresponsiveimages ir0overflow PASS. Indekso/body/home/featuredimage renderer trūkumai pataisyti. Ta pati DO/secrets tapatybė, jokios DB/mail/DNS migracijos; rollback3ef780b8.
+
+Tikras compiled reviewed paketas izoliuotai patikrintas realnow/T−1ms/T:7/7/9 pages,25/25/30media,14typed commerce href ties publikavimo laiku. Actualhost post-date elgesys dar **UNVERIFIED iki tikros datos**. PR10 writer valdo generavimą/review/export; PR24 nišos runtime/hosted acceptance. **Platesnis platformos upgrade tebėra PAUSED.** Toliau esantys ankstesni release įrašai yra istorija.
+
 ## Gyvas turinio pagrindo release — 2026-10-07
 
 Savininkas turinio sesijoje paprašė užbaigti reikalingą generavimo ir publikavimo infrastruktūrą. Gyva Worker versija **3ef780b8-bfde-436d-ae01-f2cb1f842e80**, runtime source797a2a2 / foundationc1f1593. [Release ir likę vartai](content-publication-20261007/README.md), [tikras kvitas](content-publication-20261007/RECEIPT.json). Viešas content-targets.json200:257 nacionaliniai core browse tikslaiREADY,48 plėtiniųPLANNED,0 miestųREADY, nes actual patvirtintos pasiūlos nėra. Visos257SSRroutes/canonical/noindex/103miestųoptions patikrintos, catalogue ne sitemap; tušti miestai404.

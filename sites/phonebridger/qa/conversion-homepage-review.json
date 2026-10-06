@@ -1,0 +1,190 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "sectionWidth": 1320,
+      "afterSixCards": true,
+      "products": [
+        {
+          "id": "app",
+          "holders": 0,
+          "width": 310.5,
+          "height": 293.484375
+        },
+        {
+          "id": "one",
+          "holders": 1,
+          "width": 310.515625,
+          "height": 293.484375
+        },
+        {
+          "id": "two",
+          "holders": 2,
+          "width": 310.5,
+          "height": 293.5
+        },
+        {
+          "id": "three",
+          "holders": 3,
+          "width": 310.515625,
+          "height": 293.5
+        }
+      ],
+      "clippedArt": 0,
+      "images": true,
+      "selection": "4/4 mouse, keyboard wrap/End PASS",
+      "cta": "4/4 correct summaries, Escape/focus/beta link PASS",
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "sectionWidth": 1280,
+      "afterSixCards": true,
+      "products": [
+        {
+          "id": "app",
+          "holders": 0,
+          "width": 300.234375,
+          "height": 283.765625
+        },
+        {
+          "id": "one",
+          "holders": 1,
+          "width": 300.234375,
+          "height": 283.765625
+        },
+        {
+          "id": "two",
+          "holders": 2,
+          "width": 300.234375,
+          "height": 283.765625
+        },
+        {
+          "id": "three",
+          "holders": 3,
+          "width": 300.234375,
+          "height": 283.765625
+        }
+      ],
+      "clippedArt": 0,
+      "images": true,
+      "selection": "4/4 mouse, keyboard wrap/End PASS",
+      "cta": "4/4 correct summaries, Escape/focus/beta link PASS",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "sectionWidth": 768,
+      "afterSixCards": true,
+      "products": [
+        {
+          "id": "app",
+          "holders": 0,
+          "width": 345,
+          "height": 275
+        },
+        {
+          "id": "one",
+          "holders": 1,
+          "width": 345,
+          "height": 275
+        },
+        {
+          "id": "two",
+          "holders": 2,
+          "width": 345,
+          "height": 275
+        },
+        {
+          "id": "three",
+          "holders": 3,
+          "width": 345,
+          "height": 275
+        }
+      ],
+      "clippedArt": 0,
+      "images": true,
+      "selection": "4/4 mouse, keyboard wrap/End PASS",
+      "cta": "4/4 correct summaries, Escape/focus/beta link PASS",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "sectionWidth": 390,
+      "afterSixCards": true,
+      "products": [
+        {
+          "id": "app",
+          "holders": 0,
+          "width": 174,
+          "height": 235
+        },
+        {
+          "id": "one",
+          "holders": 1,
+          "width": 174,
+          "height": 235
+        },
+        {
+          "id": "two",
+          "holders": 2,
+          "width": 174,
+          "height": 235
+        },
+        {
+          "id": "three",
+          "holders": 3,
+          "width": 174,
+          "height": 235
+        }
+      ],
+      "clippedArt": 0,
+      "images": true,
+      "selection": "4/4 mouse, keyboard wrap/End PASS",
+      "cta": "4/4 correct summaries, Escape/focus/beta link PASS",
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "sectionWidth": 320,
+      "afterSixCards": true,
+      "products": [
+        {
+          "id": "app",
+          "holders": 0,
+          "width": 139,
+          "height": 235
+        },
+        {
+          "id": "one",
+          "holders": 1,
+          "width": 139,
+          "height": 235
+        },
+        {
+          "id": "two",
+          "holders": 2,
+          "width": 139,
+          "height": 235
+        },
+        {
+          "id": "three",
+          "holders": 3,
+          "width": 139,
+          "height": 235
+        }
+      ],
+      "clippedArt": 0,
+      "images": true,
+      "selection": "4/4 mouse, keyboard wrap/End PASS",
+      "cta": "4/4 correct summaries, Escape/focus/beta link PASS",
+      "errors": []
+    }
+  ]
+}

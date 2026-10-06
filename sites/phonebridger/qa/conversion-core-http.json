@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "scope": "actual core preview middleware in an isolated loopback HTTP server, index + conversion assets; existing vinext server not restarted",
+  "records": [
+    {
+      "file": "assets/conversion-v1/card-selection.js",
+      "status": 200,
+      "bytes": 981
+    },
+    {
+      "file": "assets/conversion-v1/components.css",
+      "status": 200,
+      "bytes": 7219
+    },
+    {
+      "file": "assets/conversion-v1/holder-black-640.webp",
+      "status": 200,
+      "bytes": 87132
+    },
+    {
+      "file": "assets/conversion-v1/icons/app-window.svg",
+      "status": 200,
+      "bytes": 563
+    },
+    {
+      "file": "assets/conversion-v1/icons/arrow-right.svg",
+      "status": 200,
+      "bytes": 250
+    },
+    {
+      "file": "assets/conversion-v1/icons/arrow-up-right.svg",
+      "status": 200,
+      "bytes": 250
+    },
+    {
+      "file": "assets/conversion-v1/icons/cursor.svg",
+      "status": 200,
+      "bytes": 320
+    },
+    {
+      "file": "assets/conversion-v1/icons/keyboard.svg",
+      "status": 200,
+      "bytes": 442
+    },
+    {
+      "file": "assets/conversion-v1/icons/transfer.svg",
+      "status": 200,
+      "bytes": 355
+    },
+    {
+      "file": "assets/conversion-v1/icons/windows.svg",
+      "status": 200,
+      "bytes": 299
+    },
+    {
+      "file": "assets/conversion-v1/section.css",
+      "status": 200,
+      "bytes": 5758
+    },
+    {
+      "file": "assets/conversion-v1/section.js",
+      "status": 200,
+      "bytes": 1579
+    },
+    {
+      "file": "assets/conversion-v1/software-package-scene-v1-1254.webp",
+      "status": 200,
+      "bytes": 1332408
+    },
+    {
+      "file": "assets/conversion-v1/software-package-scene-v1-320.webp",
+      "status": 200,
+      "bytes": 92714
+    },
+    {
+      "file": "assets/conversion-v1/software-package-scene-v1-640.webp",
+      "status": 200,
+      "bytes": 369192
+    },
+    {
+      "file": "assets/conversion-v1/software-package-scene-v1-960.webp",
+      "status": 200,
+      "bytes": 831312
+    },
+    {
+      "file": "assets/conversion-v1/surface-grain.svg",
+      "status": 200,
+      "bytes": 323
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytes": 60500
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "scope": "actual core preview middleware on isolated loopback HTTP server; index and all setup-guide runtime assets; existing vinext server not restarted",
+  "records": [
+    {
+      "file": "assets/setup-guide-v1/icons.svg",
+      "status": 200,
+      "bytes": 938
+    },
+    {
+      "file": "assets/setup-guide-v1/pairing.svg",
+      "status": 200,
+      "bytes": 26757
+    },
+    {
+      "file": "assets/setup-guide-v1/platforms.svg",
+      "status": 200,
+      "bytes": 2505
+    },
+    {
+      "file": "assets/setup-guide-v1/positions.svg",
+      "status": 200,
+      "bytes": 4267
+    },
+    {
+      "file": "assets/setup-guide-v1/section.css",
+      "status": 200,
+      "bytes": 8196
+    },
+    {
+      "file": "assets/setup-guide-v1/surface-grain.svg",
+      "status": 200,
+      "bytes": 323
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytes": 61683
+    }
+  ]
+}

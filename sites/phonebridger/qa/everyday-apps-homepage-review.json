@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-06",
+  "state": "section integrated and verified on actual homepage",
+  "records": [
+    {
+      "width": 1448,
+      "scrollWidth": 1448,
+      "section": {
+        "x": 0,
+        "y": 78.15625,
+        "w": 1448,
+        "h": 1082.90625,
+        "bottom": 1161.0625
+      },
+      "newSection": true,
+      "uniqueIds": true,
+      "oldStoryGone": true,
+      "afterConversion": true,
+      "beforeConnections": true,
+      "images": true,
+      "textClips": [],
+      "headingOverlap": false,
+      "demoHref": "#workspace",
+      "navActive": "location",
+      "hello": "HELLO and Enter",
+      "svgUses": [
+        "assets/everyday-apps-v1/icons.svg#keyboard",
+        "assets/everyday-apps-v1/icons.svg#mouse",
+        "assets/everyday-apps-v1/icons.svg#arrow-up-right"
+      ],
+      "demoNavigation": true,
+      "conversionSummary": true
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "section": {
+        "x": 0,
+        "y": 78.375,
+        "w": 1280,
+        "h": 972.484375,
+        "bottom": 1050.859375
+      },
+      "newSection": true,
+      "uniqueIds": true,
+      "oldStoryGone": true,
+      "afterConversion": true,
+      "beforeConnections": true,
+      "images": true,
+      "textClips": [],
+      "headingOverlap": false,
+      "demoHref": "#workspace",
+      "navActive": "location",
+      "hello": "HELLO and Enter",
+      "svgUses": [
+        "assets/everyday-apps-v1/icons.svg#keyboard",
+        "assets/everyday-apps-v1/icons.svg#mouse",
+        "assets/everyday-apps-v1/icons.svg#arrow-up-right"
+      ],
+      "demoNavigation": true,
+      "conversionSummary": true
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "section": {
+        "x": 0,
+        "y": 78.203125,
+        "w": 1024,
+        "h": 842.34375,
+        "bottom": 920.546875
+      },
+      "newSection": true,
+      "uniqueIds": true,
+      "oldStoryGone": true,
+      "afterConversion": true,
+      "beforeConnections": true,
+      "images": true,
+      "textClips": [],
+      "headingOverlap": false,
+      "demoHref": "#workspace",
+      "navActive": "location",
+      "hello": "HELLO and Enter",
+      "svgUses": [
+        "assets/everyday-apps-v1/icons.svg#keyboard",
+        "assets/everyday-apps-v1/icons.svg#mouse",
+        "assets/everyday-apps-v1/icons.svg#arrow-up-right"
+      ],
+      "demoNavigation": true,
+      "conversionSummary": true
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "section": {
+        "x": 0,
+        "y": 78.1875,
+        "w": 768,
+        "h": 1595.5625,
+        "bottom": 1673.75
+      },
+      "newSection": true,
+      "uniqueIds": true,
+      "oldStoryGone": true,
+      "afterConversion": true,
+      "beforeConnections": true,
+      "images": true,
+      "textClips": [],
+      "headingOverlap": false,
+      "demoHref": "#workspace",
+      "navActive": "location",
+      "hello": "HELLO and Enter",
+      "svgUses": [
+        "assets/everyday-apps-v1/icons.svg#keyboard",
+        "assets/everyday-apps-v1/icons.svg#mouse",
+        "assets/everyday-apps-v1/icons.svg#arrow-up-right"
+      ],
+      "demoNavigation": true,
+      "conversionSummary": true
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "section": {
+        "x": 0,
+        "y": 78.140625,
+        "w": 390,
+        "h": 1407.71875,
+        "bottom": 1485.859375
+      },
+      "newSection": true,
+      "uniqueIds": true,
+      "oldStoryGone": true,
+      "afterConversion": true,
+      "beforeConnections": true,
+      "images": true,
+      "textClips": [],
+      "headingOverlap": false,
+      "demoHref": "#workspace",
+      "navActive": "location",
+      "hello": "HELLO and Enter",
+      "svgUses": [
+        "assets/everyday-apps-v1/icons.svg#keyboard",
+        "assets/everyday-apps-v1/icons.svg#mouse",
+        "assets/everyday-apps-v1/icons.svg#arrow-up-right"
+      ],
+      "demoNavigation": true,
+      "conversionSummary": true
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "section": {
+        "x": 0,
+        "y": 77.6875,
+        "w": 320,
+        "h": 1411.21875,
+        "bottom": 1488.90625
+      },
+      "newSection": true,
+      "uniqueIds": true,
+      "oldStoryGone": true,
+      "afterConversion": true,
+      "beforeConnections": true,
+      "images": true,
+      "textClips": [],
+      "headingOverlap": false,
+      "demoHref": "#workspace",
+      "navActive": "location",
+      "hello": "HELLO and Enter",
+      "svgUses": [
+        "assets/everyday-apps-v1/icons.svg#keyboard",
+        "assets/everyday-apps-v1/icons.svg#mouse",
+        "assets/everyday-apps-v1/icons.svg#arrow-up-right"
+      ],
+      "demoNavigation": true,
+      "conversionSummary": true
+    }
+  ],
+  "errors": [],
+  "badAssets": []
+}

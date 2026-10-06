@@ -1,0 +1,338 @@
+# PhoneBridger
+> Use your Windows mouse and keyboard in your own Android apps, on the phone beside your PC.
+
+Only currently eligible pages are included below. A separately designed homepage is supplemented by its public HTML.
+
+## Your mouse. Now on your phone.
+URL: https://phonebridger.com/
+Use your Windows mouse and keyboard in your own Android apps. Connect through USB or Wi-Fi.
+Related answer: [A clear start. A smoother everyday setup.](https://phonebridger.com/guides)
+Related answer: [Your desk. Your setup.](https://phonebridger.com/shop)
+Related answer: [A small setup. A better flow.](https://phonebridger.com/help)
+
+## Your desk. Your setup.
+URL: https://phonebridger.com/shop
+Choose PhoneBridger with optional magnetic holders in Black or Silver.
+
+Start with the app. Add a home for your phones.
+One mouse. More screens.
+## Make it yours.
+Every setup starts with the same app. The holders are your choice.
+Windows app + Android companion
+Up to three connected Android phones
+2 magnetic holders · Black
+Orders are not open yet. Save your choice or ask about this setup. Shipping and applicable taxes will be confirmed before a purchase.
+## Same app. Your kind of desk.
+Use your existing phone stand, or choose optional magnetic holders to keep your phones beside your screen. The app works either way.
+Move your mouse through a chosen screen edge to control your own Android apps. Type with your PC keyboard, send supported Google links and listen to supported phone audio through your PC.
+No. App only works with your existing phone setup. Optional holders change the physical arrangement, not the app features.
+The beta supports one physical USB phone at a time. Other paired phones can use Wi-Fi. USB takes priority automatically after its one-time setup.
+The planned offer is a one-time V1 licence for one Windows PC and up to three Android phones. A future paid major version would be a separate offer. Paid licensing and checkout are not active in this beta.
+Hardware orders and shipping are not open. Ask us about your phone, case and laptop before choosing a mount. Final dimensions, attachments and fulfilment details will be confirmed before sale.
+
+## A question? Let’s connect.
+URL: https://phonebridger.com/contact
+Get help with PhoneBridger or ask about a setup.
+
+A little context helps us point you in the right direction.
+## Talk to PhoneBridger.
+For setup help, compatibility questions and the setup you have in mind.
+The guide covers pairing, permissions and a one-time USB setup.
+## What can we help with?
+Please leave out passwords, payment details and private messages from your apps.
+This prepares an editable email draft. Open it in your email app and send it there; this form does not send or store a message.
+
+## A small setup. A better flow.
+URL: https://phonebridger.com/help
+Pair Windows and Android, prepare USB and understand PhoneBridger permissions.
+
+Find your next step, from the first pairing to your everyday connection.
+Windows + Android
+## Pair once over Wi-Fi.
+Use the same reachable Wi-Fi network for the first pairing. Install the Windows app and Android companion, then open both.
+Open pairing on your PC. Find the PC’s pairing QR code in PhoneBridger.
+Scan from the Android companion. Use the companion’s QR scanner, then approve your computer on the phone.
+Choose your phone’s screen edge. Place it left, right or above your PC. Enable mouse control on Android and set the matching position and transition zone.
+Your pairing is saved for next time. Ordinary disconnection or a USB/Wi-Fi switch does not remove it. Choosing Forget computer removes saved trust and requires pairing again.
+## Prefer a cable? Prepare USB once.
+First finish the Wi-Fi pairing above. Then use a data-capable USB cable and Android’s USB debugging authorization.
+Enable developer options and USB debugging. Android’s settings labels vary by phone. Use your device’s developer options to enable USB debugging.
+Connect and authorize this PC. Approve the Android authorization prompt only for a computer you trust.
+Keep PhoneBridger open. After preparation, USB is preferred automatically. Unplugging restores Wi-Fi when your saved phone is reachable.
+The current beta discovers one physical USB phone at a time. Additional phones can connect over Wi-Fi. The two transports share the same feature engine.
+## Your permissions. Your choice.
+Accessibility access allows the Android companion to perform mouse and keyboard actions. The companion guides you to the relevant setting.
+Phone audio sharing has a separate Android system approval. It requires Android 10 or newer and an app that permits audio capture; not all apps do. Enable it when you want to listen through the PC.
+Allow camera access when using the QR scanner. Do not share a pairing QR or authorize an unfamiliar computer.
+## What’s in this beta?
+Mouse and keyboard control for up to three paired Android phones.
+Supported phone audio through the PC, with separate permission.
+Supported Google links handed to the phone’s installed app, with browser fallback.
+Automatic USB preference and Wi-Fi fallback.
+Chrome tab handoff uses the extension included in the Windows ZIP. Follow its included setup instructions. Native file dragging, macOS/iPhone companions, production Windows signing and Google Play distribution are not included.
+The website’s sample apps do not connect to your real accounts. They illustrate the workflow with local sample data.
+## Something still feels stuck?
+Tell us the step, Windows version and Android version.
+## Prefer a step-by-step answer?
+Pairing, connections, permissions and phone placement.
+Related answer: [A clear start. A smoother everyday setup.](https://phonebridger.com/guides)
+Related answer: [Your next workspace. Starts here.](https://phonebridger.com/downloads)
+Related answer: [A question? Let’s connect.](https://phonebridger.com/contact)
+
+## Your next workspace. Starts here.
+URL: https://phonebridger.com/downloads
+Get the Windows beta and Android companion, then pair your devices.
+
+Install both apps. Pair once. Keep your phones in the flow.
+## PhoneBridger for PC
+Your mouse and keyboard, ready for your connected phones.
+Extract the whole ZIP. Keep PhoneBridger.exe beside its _internal folder.
+## Your phone’s companion
+Pair with your PC. Keep using the Android apps you know.
+Install on your phone, then follow the pairing steps. Updating keeps your saved pairing.
+This is a beta. Windows production signing and Google Play distribution are pending. Windows application control may block the unsigned package. If you are unsure about an installation prompt, ask for help .
+Phone audio needs Android 10+ and a source app that allows capture. Native file dragging is planned and is not included.
+## Installed both?
+Your next step is to pair and approve your computer.
+
+## Your phone stays yours. Your desk gets closer.
+URL: https://phonebridger.com/about
+PhoneBridger keeps your physical Android apps beside your Windows workspace.
+
+A Windows mouse and keyboard for the Android apps you already use.
+## A bridge between screens.
+PhoneBridger is built around a simple desk habit: your phone is beside your PC, and your mouse is already in your hand.
+Move through the chosen edge of your Windows screen to control your physical Android phone. Type with the keyboard on your desk. Move back to continue on your PC.
+## The apps you know. The workspace you choose.
+Keep your phone’s own Android apps and choose where each phone belongs: left, right or above. Optional holders help with the physical arrangement; the software works without them.
+The current release is a beta. Try the local website demo, read the setup guide and see whether the beta fits your device.
+
+## Your data. Clear boundaries.
+URL: https://phonebridger.com/privacy
+How the PhoneBridger website preview handles sample data, saved choices and local accounts.
+
+What this website preview stores, and what it does not.
+## Website demonstration
+The homepage uses fictional sample apps and data. Messages, email drafts, notes and spreadsheet edits stay in page memory and clear on reset or reload. The video player uses local preview files; it does not sign in to YouTube or your other accounts.
+## Saved setup
+The shop saves only your chosen package and holder finish in this browser’s local storage when you choose Save my setup. You can replace it by saving another setup or remove it by clearing this site’s browser data.
+## Contacting us
+The contact form prepares a draft in your email application. This website does not store or send that message. Sending it through your email app shares its contents with hello@phonebridger.com and your email provider.
+## Account preview
+On the local account preview, the server stores your email, creation time, a salted password hash and session records. It does not store a readable password. A first-party HttpOnly session cookie keeps the preview signed in and expires after eight hours. Logging out clears that session.
+These are local preview accounts, not production licences or purchases. Hosted account operations, email verification and automatic password recovery are not active. Do not use a password you use elsewhere in this preview.
+## Current website scope
+No live checkout, marketing analytics or advertising tracker is added by these pages. The downloaded apps request their own permissions during setup; this note describes the website preview, not a complete production app privacy policy.
+## Before public launch
+Production hosting, legal operator details, retention/contact rights and account policies require review before live accounts or orders are opened.
+Ask a data or account question .
+
+## Before you start. A few clear details.
+URL: https://phonebridger.com/terms
+Current PhoneBridger beta and planned store boundaries.
+
+The beta is available. Paid orders are not open yet.
+## Current beta
+PhoneBridger connects a Windows PC to Android phones. This beta is under development and has the compatibility and feature limits described on the downloads and help pages. Keep your own files backed up and review permissions before enabling a feature.
+## Planned store offer
+Displayed USD prices are planned launch prices. They are not an open checkout or a confirmed shipping quote. The intended offer is a one-time V1 licence for one Windows PC and up to three Android phones, with optional hardware. Paid activation is not implemented in the beta.
+Shipping, taxes, seller details, hardware specifications and sales/refund policies will be confirmed before a purchase is available. A future paid major version would be a separate offer. The software-box image is an illustration of a digital download, not a shipped software box.
+## Saving or asking about a setup
+Saving a setup records a choice in your browser. Preparing an email creates a draft in your email app. Neither action places an order, reserves stock, charges a payment or establishes a shipping commitment.
+## Website and account preview
+The live demo uses sample data. Local preview accounts exist only to verify the email/password flow; they do not grant a paid licence or creator role. No creator dashboard or commission programme is activated here.
+## Questions
+For compatibility, beta or planned-store questions, contact hello@phonebridger.com .
+
+## A clear start. A smoother everyday setup.
+URL: https://phonebridger.com/guides
+PhoneBridger guides for first pairing, USB and Wi-Fi, Android permissions and phone placement.
+
+Practical guides for the phone beside your PC. Start with pairing, then choose the connection and position that fit your desk.
+These guides explain the current Windows and Android beta. Product instructions are checked against release documentation; platform requirements link to primary sources. Illustrations show context, not a certified device test.
+Related answer: [setup guide](https://phonebridger.com/guides/getting-started)
+Related answer: [USB or Wi-Fi?](https://phonebridger.com/guides/usb-wifi)
+Related answer: [Android permissions explained](https://phonebridger.com/guides/android-permissions)
+Related answer: [Put your phone in the right place: positions and transition zones](https://phonebridger.com/guides/phone-position)
+
+## Set up PhoneBridger on Windows and Android
+URL: https://phonebridger.com/guides/getting-started
+Install both beta apps, pair your own PC, approve it on Android and check your first screen-edge transition.
+Author: MB Pinet; text prepared with AI using the cited sources.
+Publication date: 2026-10-06T00:00:00.000Z
+Content review: 2026-10-06T05:41:33.208Z
+
+Install the Windows app and Android companion, enable mouse control on the phone, then scan the PC’s pairing code and approve your computer. Use the same reachable Wi-Fi network for this first pairing.
+PhoneBridger controls apps on your physical Android screen. It does not turn a browser demo into a connection to your phone. Keep your phone beside the PC so you can see both screens while you set up.
+## Before you start
+- Have your own Windows PC and an Android phone available. The current download is a 64-bit Windows ZIP; the Android companion requires Android 8 or later.
+- Keep both devices on the same reachable Wi-Fi network for the first pairing. A guest network can prevent devices from reaching each other.
+- Use the beta files from the Downloads page. The Windows beta is unsigned and Android is distributed as an APK. If you cannot establish the source of a file or understand an installation warning, stop and ask for help.
+## 1. Install both apps
+Extract the entire Windows ZIP into one folder. Keep PhoneBridger.exe next to its _internal folder; running only a copied EXE can leave its dependencies behind. Close an older running PC instance before opening this version.
+Install the Android companion on your phone. Updating the existing app with the current compatible package retains the saved pairing. Read the system installation prompts rather than accepting an unrelated app or a file sent by a stranger.
+## 2. Enable mouse control on Android
+Open PhoneBridger on the phone and use its mouse-control setup. Review the explanation before opening Android’s accessibility settings, then enable the PhoneBridger service if you choose to grant that access. Android menu labels can differ by manufacturer.
+This permission and pairing are separate steps. An installed app is not automatically allowed to control other apps, and an enabled accessibility service does not automatically trust a PC. Read Android permissions explained if the setting is unavailable.
+## 3. Scan and approve your PC
+- Open the pairing screen in the Windows app.
+- Open the pairing scanner in PhoneBridger on Android and scan the code displayed by your own PC. Use the app’s scanner, not an unrelated QR reader.
+- Check that this is the computer you intend to trust, then approve it on the phone.
+- Wait for the connected status before trying to enter the phone. The illustration on this website is not a working pairing code.
+## 4. Match the phone’s position
+Put the phone left, right or above your PC screen. Choose the corresponding position and transition zone in the Windows app. The selected zone is the part of the screen edge you cross to enter the phone; it should agree with the desk arrangement.
+Start with one phone. Open a harmless screen on it, move through your chosen PC screen edge and check that you can click and scroll. Use Ctrl + Alt + S to return to Windows. Ctrl + Alt + Q exits the PC app. Do not use this first check to alter private or consequential information.
+## If the first connection does not complete
+- Check that both apps are open, the phone is unlocked and the PC’s pairing code is current.
+- Check that the devices can reach one another on the network. Being connected to similarly named networks is not proof of reachability.
+- Confirm the PC approval on the phone and mouse-control permission separately.
+- If you are upgrading, close the older PC app before starting the new one.
+- Record the exact visible status and your app/OS versions for support; leave passwords, pairing codes and private app messages out of an email.
+## What happens next time?
+Saved pairing is reused when the phone is reachable. A normal disconnect preserves that trust; forgetting the phone or computer revokes it. If you change device trust, approve your own PC again rather than trying to bypass the warning.
+After the initial pairing, you can keep using Wi-Fi or prepare USB once. The current beta prefers an authorized physical USB phone automatically and falls back to Wi-Fi when the cable is removed. Native file dragging is planned and is not part of this setup.
+Related answer: [A clear start. A smoother everyday setup.](https://phonebridger.com/guides)
+Related answer: [Android permissions explained](https://phonebridger.com/guides/android-permissions)
+Related answer: [Put your phone in the right place: positions and transition zones](https://phonebridger.com/guides/phone-position)
+Related answer: [USB or Wi-Fi?](https://phonebridger.com/guides/usb-wifi)
+Related answer: [Your next workspace. Starts here.](https://phonebridger.com/downloads)
+Related answer: [A question? Let’s connect.](https://phonebridger.com/contact)
+
+## USB or Wi-Fi? Set up the connection that fits your desk
+URL: https://phonebridger.com/guides/usb-wifi
+Understand automatic USB priority, Wi-Fi fallback, data-cable requirements and the current one-USB-phone limit.
+Author: MB Pinet; text prepared with AI using the cited sources.
+Publication date: 2026-10-06T00:00:00.000Z
+Content review: 2026-10-06T06:08:11.516Z
+
+Pair over the same reachable Wi-Fi network first. After one-time USB debugging authorization, connecting a data cable makes the beta prefer USB automatically; unplugging it restores Wi-Fi when the saved phone is reachable.
+## Choose for your desk, not a different feature tier
+Wi-Fi keeps the desk free of a cable. USB is useful when your phone already sits beside a wired PC. PhoneBridger uses the same mouse, keyboard, supported audio and link features on either transport. Neither choice adds native file dragging to the current beta.
+There is no universal latency or reliability promise here. Network conditions, cable quality and the phone matter. Start with the arrangement you can maintain comfortably, then confirm the active connection in both apps.
+## Start with Wi-Fi pairing
+Follow Set up PhoneBridger on Windows and Android. Keep both devices on the same reachable Wi-Fi network, scan the PC pairing code in the Android companion and approve your own PC. PhoneBridger’s ordinary Wi-Fi connection does not require Android wireless debugging.
+A guest or isolated network may let both devices access the internet while preventing them from communicating with each other. If pairing waits, check the network policy or try your own permitted network; do not disable a managed network’s protections.
+## Prepare USB once
+- Use a data-capable cable that fits your phone and PC. A charging-only cable cannot provide this connection.
+- On your Android phone, enable Developer options using the manufacturer’s applicable instructions, then enable USB debugging. Android’s official instructions explain where these settings live; menu locations vary.
+- Connect the phone to your own PC and review the debugging authorization prompt on the phone. Authorize only a computer you trust.
+- Keep PhoneBridger running and look for USB as the active connection. No separate USB launcher or PC app restart is required by the current beta.
+USB debugging grants development access to the authorized computer. It is different from approving the computer inside PhoneBridger. If your device or workplace policy does not permit debugging, use Wi-Fi instead. Turn off debugging or revoke debugging authorizations when you no longer want that access.
+## What happens when you unplug?
+Control returns to Windows while the transport changes. If the saved phone is reachable over Wi-Fi, PhoneBridger reconnects with the saved pairing. Cross the configured screen edge again to enter the phone; the switch itself does not silently repeat your previous action.
+If Wi-Fi is unavailable, the app waits for a reachable saved phone. A disconnection does not erase the pairing. Forgetting a phone or computer is the deliberate trust-revocation action.
+## Using more than one phone
+The beta supports up to three configured phone positions, but USB discovery supports one physical USB debugging phone at a time. Keep one such phone connected by cable; other paired phones can use Wi-Fi. Multiple USB debugging devices can make selection ambiguous, so do not assume that three cables give three USB sessions.
+## If USB does not take over
+- Check that the cable carries data, not only power.
+- Unlock the phone and check whether debugging authorization is waiting for your decision.
+- Keep only the intended physical USB debugging phone attached.
+- Check the active USB/Wi-Fi status in the apps rather than assuming a plugged-in cable is active.
+- If Windows does not detect the Android device, official Android documentation notes that an applicable manufacturer USB driver may be needed. Do not install an unknown driver from a search advertisement.
+## A simple arrangement to try
+For example, connect one desk phone by USB and keep a second paired phone on Wi-Fi. This illustrates a supported arrangement; it is not a claim that a particular phone, dock or cable has been tested. If you ask for help, include the phone model, Windows/Android versions, visible connection status and whether the cable transfers data.
+Related answer: [A clear start. A smoother everyday setup.](https://phonebridger.com/guides)
+Related answer: [setup guide](https://phonebridger.com/guides/getting-started)
+Related answer: [Android permissions explained](https://phonebridger.com/guides/android-permissions)
+Related answer: [Your next workspace. Starts here.](https://phonebridger.com/downloads)
+Related answer: [A question? Let’s connect.](https://phonebridger.com/contact)
+Source: [Android Developers: connect a hardware device](https://developer.android.com/studio/run/device) — USB debugging, computer authorization context and applicable Windows USB driver requirements; retrieved 2026-10-06.
+Source: [Android Developers: Developer options](https://developer.android.com/studio/debug/dev-options) — Official platform settings context; retrieved 2026-10-06. PhoneBridger Wi-Fi does not use Android wireless debugging.
+
+## Android permissions explained: mouse control, pairing and audio
+URL: https://phonebridger.com/guides/android-permissions
+Know which permission enables which PhoneBridger feature, what restricted settings mean and when to stop rather than grant access.
+Author: MB Pinet; text prepared with AI using the cited sources.
+Publication date: 2026-10-06T00:00:00.000Z
+Content review: 2026-10-06T06:08:11.532Z
+
+Mouse control uses Android accessibility access. Pairing separately approves your PC. Phone audio asks for Android capture consent, and USB needs debugging authorization only if you choose a cable.
+## One feature, one reason for access
+A connection is not a blanket permission. Install the companion, read its explanation and choose access for the feature you intend to use. You can use the setup guide to distinguish a missing app permission from a PC that has not been approved.
+## Mouse and keyboard control
+PhoneBridger’s mouse-control setup opens Android’s accessibility service settings. Accessibility access can let an app read screen content and interact with other apps on your behalf. Grant it only after you understand that capability and trust the app source.
+Open the permission flow in PhoneBridger, review the explanation and choose the PhoneBridger service in Android settings if you wish to enable it. Return to the companion and check its status. A saved switch and a service that is still starting are not always the same state; give the app’s status a chance to update before repeatedly toggling settings.
+## When Android shows a restricted setting
+Some Android 13-and-later settings can be restricted for installed apps. Google’s guidance describes a route through Settings → Apps → the app → More → Allow restricted settings, with on-screen confirmation. Availability and wording vary by device.
+That is a sensitive choice, not a routine error to bypass. Google advises allowing it only when you trust the developer. If the option is absent, managed by your organization or unclear, stop and ask for help. Do not install another tool simply to defeat Android’s protection.
+## Camera access for pairing
+The in-app pairing scanner uses the camera to read the code on your own PC. Review the camera request in that context. The sample QR illustration on the website cannot pair a device. Approving the PC is a separate confirmation after scanning.
+If scanning is unsuccessful, check the current PC code, lighting and scanner framing before changing unrelated permissions. Do not share a pairing code in a public post or send it to an unsolicited helper.
+## Listening through your PC
+Phone audio requires Android 10 or later and Android’s capture consent. The source app must also permit playback capture; some apps or content do not. Silent audio does not by itself mean mouse control or pairing failed.
+Start audio sharing from the app and review the system prompt. Declining audio consent leaves that audio feature unavailable. Check the source app and PC volume before retrying; repeatedly granting unrelated permissions will not make protected audio capturable.
+## USB authorization
+USB debugging is needed only for the current physical USB transport. It approves development access for a computer, while PhoneBridger’s own approval establishes application trust. Use USB or Wi-Fi? for the cable preparation steps. Ordinary PhoneBridger Wi-Fi does not require wireless debugging.
+## How to stop or revoke access
+- Use the PC app’s pause control or return to Windows with Ctrl + Alt + S when you want to stop controlling the phone.
+- Disable the PhoneBridger accessibility service in Android settings if you no longer want that service access.
+- Use the app’s forget action to revoke the saved phone/computer pairing rather than treating an unplugged cable as revocation.
+- Review or revoke Android debugging authorizations separately when you no longer trust that PC for debugging.
+## What to send support
+Describe the feature you are enabling, the exact visible prompt, your Android version and the app version. A cropped screenshot of the setting can help if it contains no personal content. Do not include a password, pairing token, private app messages or a full settings export.
+Related answer: [A clear start. A smoother everyday setup.](https://phonebridger.com/guides)
+Related answer: [setup guide](https://phonebridger.com/guides/getting-started)
+Related answer: [USB or Wi-Fi?](https://phonebridger.com/guides/usb-wifi)
+Related answer: [Your next workspace. Starts here.](https://phonebridger.com/downloads)
+Related answer: [A question? Let’s connect.](https://phonebridger.com/contact)
+Source: [Google Android Help: restricted settings](https://support.google.com/android/answer/12623953?hl=en) — Restricted settings, accessibility capability and trusted-developer warning; retrieved 2026-10-06.
+Source: [Android Developers: playback capture](https://developer.android.com/media/platform/av-capture) — Android 10 playback capture, system consent and source-app capture policy; retrieved 2026-10-06.
+
+## Put your phone in the right place: positions and transition zones
+URL: https://phonebridger.com/guides/phone-position
+Match left, right or above in PhoneBridger to the phone on your desk, then check entry, return and a comfortable multi-phone arrangement.
+Author: MB Pinet; text prepared with AI using the cited sources.
+Publication date: 2026-10-06T00:00:00.000Z
+Content review: 2026-10-06T06:08:11.546Z
+
+Choose Left, Right or Above to match where the phone actually sits beside your PC. Then set the matching screen-edge transition zone and check entry and return with one phone before adding more.
+## Start from the physical arrangement
+Keep the phone screen visible and within a comfortable viewing position. If it sits on the left of the PC screen, select Left; if it sits on the right, select Right; if it sits above the PC screen, select Above. The setting describes your desk arrangement, not the phone’s USB port or its Wi-Fi address.
+A magnetic holder is optional. A suitable existing phone stand can work too. Mount compatibility, attachment and stability depend on your actual phone, case and laptop; do not assume the website illustration guarantees a particular fit.
+## Position and transition zone are different choices
+Position chooses the side of the PC associated with that phone. The transition zone chooses the area of that screen edge you cross to enter it. Use the Windows app’s zone editor and test the visible area rather than treating the entire edge as an accidental trigger.
+Leave a zone that makes sense alongside other windows or monitors you use. This guide does not prescribe new sensitivity, movement timing or cursor tuning; it uses the app’s existing controls.
+## Make one simple check
+- Connect one approved phone and open a harmless app screen on it.
+- Check the phone’s actual placement and choose the matching Left, Right or Above position in Windows.
+- Check the selected transition zone.
+- Move deliberately through that part of the PC screen edge. Verify that the phone is the screen you intended to enter.
+- Use Ctrl + Alt + S to return to Windows. Make one click and one scroll in a harmless screen before using your normal apps.
+## If you enter the wrong place or cannot enter
+- Check that the phone is connected and approved; a saved position is not evidence of an active connection.
+- Check which phone you selected in the Windows device view.
+- Check the chosen position against the actual desk, then check the transition-zone area.
+- Check mouse-control permission on Android separately.
+- If the phone was rotated, compare its visible orientation and the app’s current state. Describe an unresolved mismatch to support instead of experimenting with unrelated settings.
+## Adding a second or third phone
+Add one phone at a time and give each its intended place. For example, a portrait phone on the left and a landscape phone above the PC are two different positions. The illustration is an arrangement example, not a statement that your device orientation or mount has been tested.
+Keep the same basic check for every phone: connected status, correct selected device, matching physical position and intended transition zone. The beta can configure up to three Android phones; one may use physical USB while others use Wi-Fi. Three positions do not imply three physical USB connections.
+## Returning after a connection switch
+USB and Wi-Fi share the same settings. When the connection changes, control returns to Windows; cross the configured edge again when the saved phone reconnects. An unavailable Wi-Fi network after unplugging a cable cannot be solved by changing the phone’s position.
+## Make the arrangement comfortable
+Choose a stable surface and keep the phone visible without covering the laptop’s vents or controls. Avoid a placement that pulls on the cable or makes the screen difficult to read. The right arrangement is the one you can use consistently; the app-only option lets you start with the stand you already have.
+If you need help, include the phone position, orientation, app versions and a simple sketch of the desk. Leave account credentials and private phone screens out of that sketch.
+Related answer: [A clear start. A smoother everyday setup.](https://phonebridger.com/guides)
+Related answer: [setup guide](https://phonebridger.com/guides/getting-started)
+Related answer: [USB or Wi-Fi?](https://phonebridger.com/guides/usb-wifi)
+Related answer: [Android permissions explained](https://phonebridger.com/guides/android-permissions)
+Related answer: [Your next workspace. Starts here.](https://phonebridger.com/downloads)
+Related answer: [A question? Let’s connect.](https://phonebridger.com/contact)
+
+## Who prepares the PhoneBridger guides
+URL: https://phonebridger.com/editorial
+Our guide scope, organizational attribution, source checks, illustration method and correction contact.
+
+The organizational attribution for these guides is MB Pinet, the operator named in the shared project configuration. PhoneBridger’s guide contact is hello@phonebridger.com. We do not list a fictional individual expert, customer test or independent certification.
+## How these guides are prepared
+AI assists research, drafting and layout. Product instructions are checked against the current release documentation; platform requirements are checked against linked primary Android or Microsoft sources. An agent’s editorial review is not an independent human expert review.
+## What the illustrations mean
+Original contextual illustrations show a plausible desk, cable or permission theme. They do not document a customer installation, stocked product, exact device compatibility or a measured test. Precise controls and diagrams are provided as editable text and vector graphics. Required third-party credits are retained where applicable.
+## Versions and dates
+These guides were prepared and checked on 6 October 2026 for the beta described on Downloads. This private preview is not evidence of public publication. Before launch, the real first publication date and any later meaningful review must be recorded; changing a calendar date alone does not update the guidance.
+## Scope and corrections
+Use the guides to understand setup and feature limits. They do not replace Android’s own permission explanation, your organization’s policy or the manufacturer’s hardware requirements. Send the page URL, the inaccurate sentence and a supporting source to hello@phonebridger.com. Do not send passwords, pairing codes or private messages.
+## What we do not claim
+There is no measured latency guarantee, supported-device certification, independent product review or proof of demand in these guides. Paid orders, production customer accounts and native file dragging are not activated by the website preview.
+Related answer: [A clear start. A smoother everyday setup.](https://phonebridger.com/guides)
+Related answer: [Your phone stays yours. Your desk gets closer.](https://phonebridger.com/about)

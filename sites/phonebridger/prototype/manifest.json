@@ -1,0 +1,1937 @@
+{
+  "schemaVersion": 1,
+  "siteId": "phonebridger",
+  "mode": "private-prototype",
+  "locale": "en",
+  "sourceRepository": "https://github.com/christianza1989/PhoneBridger",
+  "sourceBaseCommit": "b4c57fe112723747145b97d41d763ca060ca4c94",
+  "sourceState": "owner-authorized website working snapshot; not a native release",
+  "transforms": [
+    "private robots meta and notice",
+    "installer links point to the private-preview notice"
+  ],
+  "files": [
+    {
+      "path": "about/index.html",
+      "bytes": 5641,
+      "sha256": "04f182fe464e0d201b9ec910490895c075b0f929139125427579c6cacd48c03c",
+      "sourceSha256": "7153babe12cbc5e4735cd6e0aff203a900a160022d3c1620893ce0f1475ef536"
+    },
+    {
+      "path": "account/index.html",
+      "bytes": 3583,
+      "sha256": "8c09cab83bd4c3f98f932eedef77003c943eccdb7cc4a66e3e742c24cdb38fcd",
+      "sourceSha256": "0a010d3bd502d7c771699c83659553c1db44433160c592c5f62cdc406d61f851"
+    },
+    {
+      "path": "app.js",
+      "bytes": 3867,
+      "sha256": "34bb20f217b23366b3656d774963955d050ec772afeab64705b1776772b4d947",
+      "sourceSha256": "34bb20f217b23366b3656d774963955d050ec772afeab64705b1776772b4d947"
+    },
+    {
+      "path": "apps.css",
+      "bytes": 27369,
+      "sha256": "de3d678f0db854377236c2f2476c10c64d0a808fce417b663e0ed59ef67ed413",
+      "sourceSha256": "de3d678f0db854377236c2f2476c10c64d0a808fce417b663e0ed59ef67ed413"
+    },
+    {
+      "path": "assets/app-ui-v1/audio-flow-v1.png",
+      "bytes": 663464,
+      "sha256": "402bae52b5058674e99129988a47a05565a62d8282c3f18f669efa58ea997004",
+      "sourceSha256": "402bae52b5058674e99129988a47a05565a62d8282c3f18f669efa58ea997004"
+    },
+    {
+      "path": "assets/app-ui-v1/controls.css",
+      "bytes": 6053,
+      "sha256": "8d7589095c534e0a60d1a30cf977bfb182c0f9f12373e7a76b48d7e02b0d2052",
+      "sourceSha256": "8d7589095c534e0a60d1a30cf977bfb182c0f9f12373e7a76b48d7e02b0d2052"
+    },
+    {
+      "path": "assets/app-ui-v1/desktop.css",
+      "bytes": 15872,
+      "sha256": "47757511480751d9671e135bda34cd18f02b07380cf5d724b00efd2f2c9b13d0",
+      "sourceSha256": "47757511480751d9671e135bda34cd18f02b07380cf5d724b00efd2f2c9b13d0"
+    },
+    {
+      "path": "assets/app-ui-v1/desktop.js",
+      "bytes": 36626,
+      "sha256": "319ded6ff8ce1e156c012d9782be0baf3cb3e34469c16f869f0acf9a48b73c5e",
+      "sourceSha256": "319ded6ff8ce1e156c012d9782be0baf3cb3e34469c16f869f0acf9a48b73c5e"
+    },
+    {
+      "path": "assets/app-ui-v1/devices-group-v1.png",
+      "bytes": 1326623,
+      "sha256": "5a9f0f36cfa8c60c0f59387175a1ca272708fc1807258e79b45df38ecb258243",
+      "sourceSha256": "5a9f0f36cfa8c60c0f59387175a1ca272708fc1807258e79b45df38ecb258243"
+    },
+    {
+      "path": "assets/app-ui-v1/files-concept-v2.png",
+      "bytes": 1198324,
+      "sha256": "776b15436ffe9e6b89999f6ebd2e2d6bb24df7e87dc0597034dd76c41b963bf3",
+      "sourceSha256": "776b15436ffe9e6b89999f6ebd2e2d6bb24df7e87dc0597034dd76c41b963bf3"
+    },
+    {
+      "path": "assets/app-ui-v1/icons.svg",
+      "bytes": 13444,
+      "sha256": "6025299c9d032de127d6731488041ffd155c84da206901ff4e3cbe1c73cea844",
+      "sourceSha256": "6025299c9d032de127d6731488041ffd155c84da206901ff4e3cbe1c73cea844"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/app-calendar.svg",
+      "bytes": 342,
+      "sha256": "c6135e5594b4e6a44a2dced47e36be9756496d003d2fe96f4895ccf7d10de811",
+      "sourceSha256": "c6135e5594b4e6a44a2dced47e36be9756496d003d2fe96f4895ccf7d10de811"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/app-drive.svg",
+      "bytes": 218,
+      "sha256": "96bde8d857c83c10df93cc31eed7f7fbed7e30849e5b4e43edd2ead7632e6b85",
+      "sourceSha256": "96bde8d857c83c10df93cc31eed7f7fbed7e30849e5b4e43edd2ead7632e6b85"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/app-gmail.svg",
+      "bytes": 316,
+      "sha256": "042a3c702a6b47b3eb26eb67e21ed360656b3b8cd9a5c286b0e1ea8c6b23d294",
+      "sourceSha256": "042a3c702a6b47b3eb26eb67e21ed360656b3b8cd9a5c286b0e1ea8c6b23d294"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/app-google.svg",
+      "bytes": 404,
+      "sha256": "9af3baef66019d5a3e74773a437d4d71bdfd6dec8eec887f722f7965e313521e",
+      "sourceSha256": "9af3baef66019d5a3e74773a437d4d71bdfd6dec8eec887f722f7965e313521e"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/app-keep.svg",
+      "bytes": 248,
+      "sha256": "9f6faeeaba5f3c084189da18a778c5dd1ecc1f92c659a3a00ed68cc99d10aa4b",
+      "sourceSha256": "9f6faeeaba5f3c084189da18a778c5dd1ecc1f92c659a3a00ed68cc99d10aa4b"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/app-sheets.svg",
+      "bytes": 250,
+      "sha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b",
+      "sourceSha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/app-tasks.svg",
+      "bytes": 236,
+      "sha256": "6f84d8f6feecaeebcdb495dc82658f65d214b3eb1196f4362316cd3e5737cf4a",
+      "sourceSha256": "6f84d8f6feecaeebcdb495dc82658f65d214b3eb1196f4362316cd3e5737cf4a"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/archive.svg",
+      "bytes": 305,
+      "sha256": "234bb8f8efe40b657d6309a90b321e47664fce312501cb9c7f3f60cf25f74b39",
+      "sourceSha256": "234bb8f8efe40b657d6309a90b321e47664fce312501cb9c7f3f60cf25f74b39"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/arrow-down.svg",
+      "bytes": 224,
+      "sha256": "1d772eda21465a387fecafbd06423b27dce1ba43230249ae0372b7014c750adb",
+      "sourceSha256": "1d772eda21465a387fecafbd06423b27dce1ba43230249ae0372b7014c750adb"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/arrow-left.svg",
+      "bytes": 223,
+      "sha256": "1873d863b7cd1b6384cd62680bc0174cbd8daf3ac48863e3a7c1a813278ac26e",
+      "sourceSha256": "1873d863b7cd1b6384cd62680bc0174cbd8daf3ac48863e3a7c1a813278ac26e"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/arrow-right.svg",
+      "bytes": 225,
+      "sha256": "16ce492114ef343da185786ff703bcd843985cfe3bef77cc31f7b3fa5168ac38",
+      "sourceSha256": "16ce492114ef343da185786ff703bcd843985cfe3bef77cc31f7b3fa5168ac38"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/arrow-up.svg",
+      "bytes": 222,
+      "sha256": "a0be2d87d770e97d8ef903a4f79ba3d1b85ea52f92b07d82c6adb97586a5b28f",
+      "sourceSha256": "a0be2d87d770e97d8ef903a4f79ba3d1b85ea52f92b07d82c6adb97586a5b28f"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/brand.svg",
+      "bytes": 460,
+      "sha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0",
+      "sourceSha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/browser-window.svg",
+      "bytes": 296,
+      "sha256": "da7f4240e8f05ad1efd3ce6b4d0afb748842ba3e970cb26980ca295f9eb6e55b",
+      "sourceSha256": "da7f4240e8f05ad1efd3ce6b4d0afb748842ba3e970cb26980ca295f9eb6e55b"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/browser.svg",
+      "bytes": 281,
+      "sha256": "d6b706ebc3c6267f490213abcf4bbd6d46158a19760132cd31798e1e9e2eb82f",
+      "sourceSha256": "d6b706ebc3c6267f490213abcf4bbd6d46158a19760132cd31798e1e9e2eb82f"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/check-circle.svg",
+      "bytes": 250,
+      "sha256": "f308b64937f44f57561c2710f1269a5c86fdbd2fcee27d81bfad5d93531ccb54",
+      "sourceSha256": "f308b64937f44f57561c2710f1269a5c86fdbd2fcee27d81bfad5d93531ccb54"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/check.svg",
+      "bytes": 212,
+      "sha256": "3ebeea038cd0d989ec0a9240543557d3f43019c2f38acfc2f9b82e6e8e6a04d2",
+      "sourceSha256": "3ebeea038cd0d989ec0a9240543557d3f43019c2f38acfc2f9b82e6e8e6a04d2"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/chevron-down.svg",
+      "bytes": 217,
+      "sha256": "11812538f9bbed012fb4a0e3dcd990c1fa8e2f5858e3a330c67b50a06f96bded",
+      "sourceSha256": "11812538f9bbed012fb4a0e3dcd990c1fa8e2f5858e3a330c67b50a06f96bded"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/chevron-left.svg",
+      "bytes": 218,
+      "sha256": "65bbf6c5b02ca8e9546427d83439589da435a6c12f0f38758858803184ba4128",
+      "sourceSha256": "65bbf6c5b02ca8e9546427d83439589da435a6c12f0f38758858803184ba4128"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/chevron-right.svg",
+      "bytes": 218,
+      "sha256": "475370464b3eeef369946925865ed2bd846e1b7aca20521961882c8588370fb6",
+      "sourceSha256": "475370464b3eeef369946925865ed2bd846e1b7aca20521961882c8588370fb6"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/close.svg",
+      "bytes": 218,
+      "sha256": "7f849a7d134e28e71b4a0ffa6ad8e4c497825dc9807a0a75dc5db585dfad856a",
+      "sourceSha256": "7f849a7d134e28e71b4a0ffa6ad8e4c497825dc9807a0a75dc5db585dfad856a"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/cursor.svg",
+      "bytes": 230,
+      "sha256": "1bbc4baed8cac91a47acdedda966df636b0287696a46d4114df1b40e77499412",
+      "sourceSha256": "1bbc4baed8cac91a47acdedda966df636b0287696a46d4114df1b40e77499412"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/devices.svg",
+      "bytes": 314,
+      "sha256": "2bdf2e34b064be9739e9309fe107569d7fcb201ef1be30dd71fada9286830e23",
+      "sourceSha256": "2bdf2e34b064be9739e9309fe107569d7fcb201ef1be30dd71fada9286830e23"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/download.svg",
+      "bytes": 235,
+      "sha256": "d0427bf88872a9691d651bc9a86efcc93d011c1a535a28edf610966d6d27ef52",
+      "sourceSha256": "d0427bf88872a9691d651bc9a86efcc93d011c1a535a28edf610966d6d27ef52"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/external.svg",
+      "bytes": 236,
+      "sha256": "efd0731315f7af11e32ba96bab1e56ff810341c310b58dc705f92c9d9db8b30a",
+      "sourceSha256": "efd0731315f7af11e32ba96bab1e56ff810341c310b58dc705f92c9d9db8b30a"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/file-image-color.svg",
+      "bytes": 298,
+      "sha256": "39c4076c6cc27646e7140ec4f518e103aa44a48be0f94b4d1a9a35501148476d",
+      "sourceSha256": "39c4076c6cc27646e7140ec4f518e103aa44a48be0f94b4d1a9a35501148476d"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/file-pdf-color.svg",
+      "bytes": 303,
+      "sha256": "55805227b974e266477585e67fc95331c51674b64920df6172a6047262b87cac",
+      "sourceSha256": "55805227b974e266477585e67fc95331c51674b64920df6172a6047262b87cac"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/file-text.svg",
+      "bytes": 253,
+      "sha256": "366090b91fa01cf8eb477dda503ffde1882ab5fbc4d2d7d9676a6c61f53d5ec9",
+      "sourceSha256": "366090b91fa01cf8eb477dda503ffde1882ab5fbc4d2d7d9676a6c61f53d5ec9"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/file-zip-color.svg",
+      "bytes": 344,
+      "sha256": "2e0269026ce0b8eec474f1c75fdcae953c467e9c85fc33b8ab149e08be156747",
+      "sourceSha256": "2e0269026ce0b8eec474f1c75fdcae953c467e9c85fc33b8ab149e08be156747"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/file.svg",
+      "bytes": 234,
+      "sha256": "62828e7563b8250ee7d6dd0885eb116609445a2798e6e06e132b4328e6dd10d4",
+      "sourceSha256": "62828e7563b8250ee7d6dd0885eb116609445a2798e6e06e132b4328e6dd10d4"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/folder-color.svg",
+      "bytes": 364,
+      "sha256": "c550d0bccb60ccf43407743e1e7790e3e4aa4d869982f02572980ed9b6535c2e",
+      "sourceSha256": "c550d0bccb60ccf43407743e1e7790e3e4aa4d869982f02572980ed9b6535c2e"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/folder-open.svg",
+      "bytes": 236,
+      "sha256": "bdea0765609c7fdb7cc9f12c89051ea26415afa34732823cfe5954f26fe5ad76",
+      "sourceSha256": "bdea0765609c7fdb7cc9f12c89051ea26415afa34732823cfe5954f26fe5ad76"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/folder.svg",
+      "bytes": 236,
+      "sha256": "987b43d66e0a2dd0991ec5034eb9e88c4e3036976622e2f0eae2e503d4e98d51",
+      "sourceSha256": "987b43d66e0a2dd0991ec5034eb9e88c4e3036976622e2f0eae2e503d4e98d51"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/headphones.svg",
+      "bytes": 325,
+      "sha256": "d9f94a12e33f63263db0c6b1269814a7ff9ad3c96b948860fbbb5d83e8b44fc1",
+      "sourceSha256": "d9f94a12e33f63263db0c6b1269814a7ff9ad3c96b948860fbbb5d83e8b44fc1"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/help.svg",
+      "bytes": 268,
+      "sha256": "1a6eeebb2ab26e5646af6f1e01e2e4bde9b08d052af4aed1ae8861ecd6d4a02c",
+      "sourceSha256": "1a6eeebb2ab26e5646af6f1e01e2e4bde9b08d052af4aed1ae8861ecd6d4a02c"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/image.svg",
+      "bytes": 297,
+      "sha256": "0ac5321f5c6f75d9b2dde470f553052cbb0e85045f2bd56149c5d71e84d57a20",
+      "sourceSha256": "0ac5321f5c6f75d9b2dde470f553052cbb0e85045f2bd56149c5d71e84d57a20"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/keyboard.svg",
+      "bytes": 332,
+      "sha256": "e7dc69e7e8e8353b80ebd56c95eae85ed463a734a2da1f22a495e8d9a1352245",
+      "sourceSha256": "e7dc69e7e8e8353b80ebd56c95eae85ed463a734a2da1f22a495e8d9a1352245"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/link.svg",
+      "bytes": 289,
+      "sha256": "fe6d820c5bfd3e431c23cc001e9e2115e69d38db497214afb0bd0c43cbdf6ff1",
+      "sourceSha256": "fe6d820c5bfd3e431c23cc001e9e2115e69d38db497214afb0bd0c43cbdf6ff1"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/lock.svg",
+      "bytes": 277,
+      "sha256": "ef2f1b6a9cd89847b02d76a95d21c35a93b2e36766488d60b20e47f5d404d6dc",
+      "sourceSha256": "ef2f1b6a9cd89847b02d76a95d21c35a93b2e36766488d60b20e47f5d404d6dc"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/maximize.svg",
+      "bytes": 240,
+      "sha256": "778c747e8fdbf8f49455672e55787cfecec750d821bbb52e512d2c1c46bf355b",
+      "sourceSha256": "778c747e8fdbf8f49455672e55787cfecec750d821bbb52e512d2c1c46bf355b"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/menu.svg",
+      "bytes": 220,
+      "sha256": "33d68734869e5536f6d9206648324285fa56d1e4f60f9f284250f3a40195c05b",
+      "sourceSha256": "33d68734869e5536f6d9206648324285fa56d1e4f60f9f284250f3a40195c05b"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/minimize.svg",
+      "bytes": 209,
+      "sha256": "65a4d774cfb3861999eb6854fc3150a5fe680394e008620ff72589c8d7c4e345",
+      "sourceSha256": "65a4d774cfb3861999eb6854fc3150a5fe680394e008620ff72589c8d7c4e345"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/monitor.svg",
+      "bytes": 265,
+      "sha256": "41ea1081049f69a010c7561578a9bf760341e603e46b9d9d91b340f9639008e2",
+      "sourceSha256": "41ea1081049f69a010c7561578a9bf760341e603e46b9d9d91b340f9639008e2"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/more.svg",
+      "bytes": 277,
+      "sha256": "74bc90c675eacd5c7184f2b689525a565a729f72214d28835031d1167a3d5e04",
+      "sourceSha256": "74bc90c675eacd5c7184f2b689525a565a729f72214d28835031d1167a3d5e04"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/mouse.svg",
+      "bytes": 254,
+      "sha256": "7e88aecb683086c143a3792f237a8c5e56a5f10c120279abb2d7c3008ce01dfb",
+      "sourceSha256": "7e88aecb683086c143a3792f237a8c5e56a5f10c120279abb2d7c3008ce01dfb"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/mute.svg",
+      "bytes": 247,
+      "sha256": "76f3bb41365e005fcd8fef0e67ec2666d7e59096398f3496fb546a4416521ac9",
+      "sourceSha256": "76f3bb41365e005fcd8fef0e67ec2666d7e59096398f3496fb546a4416521ac9"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/pause.svg",
+      "bytes": 213,
+      "sha256": "c5c50640802b19b31fdd7239a548e87882858cf088f6c8eb6d585ac29573fc18",
+      "sourceSha256": "c5c50640802b19b31fdd7239a548e87882858cf088f6c8eb6d585ac29573fc18"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/phone.svg",
+      "bytes": 262,
+      "sha256": "affe0c8c0b498c180a4b582ecfdfe12268f7e0b86ec1e4ee30d7298ce40d4962",
+      "sourceSha256": "affe0c8c0b498c180a4b582ecfdfe12268f7e0b86ec1e4ee30d7298ce40d4962"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/play.svg",
+      "bytes": 214,
+      "sha256": "564a5153460cd50b76c6c78622b56fe32b6dc30dffb29bd025b59f088b29d494",
+      "sourceSha256": "564a5153460cd50b76c6c78622b56fe32b6dc30dffb29bd025b59f088b29d494"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/plus.svg",
+      "bytes": 213,
+      "sha256": "ec80dfdb4e182140ccda22cf3973ed8e5ce69e68613f2c2e35a6435194ef68ff",
+      "sourceSha256": "ec80dfdb4e182140ccda22cf3973ed8e5ce69e68613f2c2e35a6435194ef68ff"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/reset.svg",
+      "bytes": 225,
+      "sha256": "ec3fdff9bce71fbf5bc450f185f8d89028641266db2f2fb7ea6662c440e0a61d",
+      "sourceSha256": "ec3fdff9bce71fbf5bc450f185f8d89028641266db2f2fb7ea6662c440e0a61d"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/search.svg",
+      "bytes": 240,
+      "sha256": "c3b601a96e74b762bd5f215620207c8702e1ccd49360b4a9bd00adbb4216fb19",
+      "sourceSha256": "c3b601a96e74b762bd5f215620207c8702e1ccd49360b4a9bd00adbb4216fb19"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/settings.svg",
+      "bytes": 337,
+      "sha256": "2bcdaad4c534a10c61688e9696ece12cd93e8656d48e5eaa9b6df632dddc3931",
+      "sourceSha256": "2bcdaad4c534a10c61688e9696ece12cd93e8656d48e5eaa9b6df632dddc3931"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/shield.svg",
+      "bytes": 262,
+      "sha256": "56a4b68a147f096538c77646f0eb5bc7239fcb09145520a1d7f221aaf59c3339",
+      "sourceSha256": "56a4b68a147f096538c77646f0eb5bc7239fcb09145520a1d7f221aaf59c3339"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/speaker.svg",
+      "bytes": 273,
+      "sha256": "ef2ea3a4fee5d462cf68132a9cbb9bc355342a306693fa51377da5a79087c960",
+      "sourceSha256": "ef2ea3a4fee5d462cf68132a9cbb9bc355342a306693fa51377da5a79087c960"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/stop.svg",
+      "bytes": 234,
+      "sha256": "f6014ba66f44593ae15e9a2673d5c7b7c60e7bafbce5a706cddb06d57cad367d",
+      "sourceSha256": "f6014ba66f44593ae15e9a2673d5c7b7c60e7bafbce5a706cddb06d57cad367d"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/transfer.svg",
+      "bytes": 241,
+      "sha256": "acf3350a23bb7a135065343876be44267ae878a53059712fae4f22a41673e2d7",
+      "sourceSha256": "acf3350a23bb7a135065343876be44267ae878a53059712fae4f22a41673e2d7"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/upload.svg",
+      "bytes": 233,
+      "sha256": "04d4096a31afa0a36a3ab0d0f374cea84dd0c6c626859325cae168ec6928c224",
+      "sourceSha256": "04d4096a31afa0a36a3ab0d0f374cea84dd0c6c626859325cae168ec6928c224"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/usb.svg",
+      "bytes": 294,
+      "sha256": "1c43a090de352d7335c1c11e697e05d320d33e453d97a383b57141b55759d679",
+      "sourceSha256": "1c43a090de352d7335c1c11e697e05d320d33e453d97a383b57141b55759d679"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/waveform.svg",
+      "bytes": 237,
+      "sha256": "d071719c090643bf3ef2e71c5785159bf756f1e1d00c78f5222407683a35fb01",
+      "sourceSha256": "d071719c090643bf3ef2e71c5785159bf756f1e1d00c78f5222407683a35fb01"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/wifi.svg",
+      "bytes": 292,
+      "sha256": "fdc1f31f9ceed5d26f334727fe703600084bad86980bd30b48e16aadaa4da31e",
+      "sourceSha256": "fdc1f31f9ceed5d26f334727fe703600084bad86980bd30b48e16aadaa4da31e"
+    },
+    {
+      "path": "assets/app-ui-v1/icons/zone.svg",
+      "bytes": 289,
+      "sha256": "241df0f0fea2bb438a01dd5e8db01b8c37f47d40e3242c1cc752c22bc3e1a421",
+      "sourceSha256": "241df0f0fea2bb438a01dd5e8db01b8c37f47d40e3242c1cc752c22bc3e1a421"
+    },
+    {
+      "path": "assets/app-ui-v1/phone-preview-green-v1.png",
+      "bytes": 1191178,
+      "sha256": "65bc0019ecc4afd5c02740ffecd19b04fa2585e5ac0268acf81b22967c9de02e",
+      "sourceSha256": "65bc0019ecc4afd5c02740ffecd19b04fa2585e5ac0268acf81b22967c9de02e"
+    },
+    {
+      "path": "assets/app-ui-v1/preview.html",
+      "bytes": 8714,
+      "sha256": "bccf5f03a8af02e2506fae2f361b8ffaed6f1811d6454a76ba5589a424d1de55",
+      "sourceSha256": "a156114d5e2886361cc26f2dfa3ba2ae6b893e1930fc01a88c64068b97899703"
+    },
+    {
+      "path": "assets/app-ui-v1/preview.js",
+      "bytes": 4307,
+      "sha256": "06f0d8c339f5c91d8d7cf4912b11a7799f4eafd020361521d55bceb195f6b1c3",
+      "sourceSha256": "06f0d8c339f5c91d8d7cf4912b11a7799f4eafd020361521d55bceb195f6b1c3"
+    },
+    {
+      "path": "assets/brand-mark.svg",
+      "bytes": 460,
+      "sha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0",
+      "sourceSha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0"
+    },
+    {
+      "path": "assets/closing-conversion-v1/background-v1-1280.webp",
+      "bytes": 920508,
+      "sha256": "c59cb41fe9526251daa3a5949a6509d6e6449a49dfc3e8bbd5503a72256c9086",
+      "sourceSha256": "c59cb41fe9526251daa3a5949a6509d6e6449a49dfc3e8bbd5503a72256c9086"
+    },
+    {
+      "path": "assets/closing-conversion-v1/background-v1-1586.webp",
+      "bytes": 1348896,
+      "sha256": "dcb656cb6bc2df732d1fbf724c26cc349b344df93246bdebed0b0cc529d06e10",
+      "sourceSha256": "dcb656cb6bc2df732d1fbf724c26cc349b344df93246bdebed0b0cc529d06e10"
+    },
+    {
+      "path": "assets/closing-conversion-v1/background-v1-640.webp",
+      "bytes": 214560,
+      "sha256": "ff2ade6f8e557fc25edec19f66059de329543dc7d717b88248350573b7ba5511",
+      "sourceSha256": "ff2ade6f8e557fc25edec19f66059de329543dc7d717b88248350573b7ba5511"
+    },
+    {
+      "path": "assets/closing-conversion-v1/background-v1-960.webp",
+      "bytes": 512200,
+      "sha256": "e424036af35ca1ff64ffa0d2b828bacf7d12408cc75f5bd5dab63bb746a2fffd",
+      "sourceSha256": "e424036af35ca1ff64ffa0d2b828bacf7d12408cc75f5bd5dab63bb746a2fffd"
+    },
+    {
+      "path": "assets/closing-conversion-v1/holder-black-640.webp",
+      "bytes": 87132,
+      "sha256": "098da02c0783fffd9efa62dbdaf0d94dae76b502a87a8d4a4679d8eb6a8beba6",
+      "sourceSha256": "098da02c0783fffd9efa62dbdaf0d94dae76b502a87a8d4a4679d8eb6a8beba6"
+    },
+    {
+      "path": "assets/closing-conversion-v1/holder-silver-640.webp",
+      "bytes": 99230,
+      "sha256": "4ad4d093da197e8e617e5a5f86c6645c1a367783cb0bc84e6d50e2f991f67838",
+      "sourceSha256": "4ad4d093da197e8e617e5a5f86c6645c1a367783cb0bc84e6d50e2f991f67838"
+    },
+    {
+      "path": "assets/closing-conversion-v1/icons/android.svg",
+      "bytes": 577,
+      "sha256": "4ae6f45898418953bc2a37a8864b6920fbe52b01bd575fdbd584ee2c6f396162",
+      "sourceSha256": "4ae6f45898418953bc2a37a8864b6920fbe52b01bd575fdbd584ee2c6f396162"
+    },
+    {
+      "path": "assets/closing-conversion-v1/icons/arrow-up-right.svg",
+      "bytes": 250,
+      "sha256": "58b8b9ffa2090193f20fdb1c9ceb3384bd0e2a4294fdc778dda4833122354ddf",
+      "sourceSha256": "58b8b9ffa2090193f20fdb1c9ceb3384bd0e2a4294fdc778dda4833122354ddf"
+    },
+    {
+      "path": "assets/closing-conversion-v1/icons/windows.svg",
+      "bytes": 299,
+      "sha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610",
+      "sourceSha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610"
+    },
+    {
+      "path": "assets/closing-conversion-v1/section.css",
+      "bytes": 9383,
+      "sha256": "94367f455c328b81043189df0715dbaadcec022e5bfb82f80f34c1ff27d471a3",
+      "sourceSha256": "94367f455c328b81043189df0715dbaadcec022e5bfb82f80f34c1ff27d471a3"
+    },
+    {
+      "path": "assets/closing-conversion-v1/software-package-pink-v1-1239.webp",
+      "bytes": 1129390,
+      "sha256": "a180310c709d563153db9d69d66e061c0a583f3d2bfcea1ac1f2bf89e7bc6d59",
+      "sourceSha256": "a180310c709d563153db9d69d66e061c0a583f3d2bfcea1ac1f2bf89e7bc6d59"
+    },
+    {
+      "path": "assets/closing-conversion-v1/software-package-pink-v1-320.webp",
+      "bytes": 84042,
+      "sha256": "8eead37b0a1e44899da1066889ba4b0d415f890d4ae641da590e4ac6806e0230",
+      "sourceSha256": "8eead37b0a1e44899da1066889ba4b0d415f890d4ae641da590e4ac6806e0230"
+    },
+    {
+      "path": "assets/closing-conversion-v1/software-package-pink-v1-640.webp",
+      "bytes": 318960,
+      "sha256": "0b57af8ec7f5b304feed815e8759980a0cf2d07fc3febdcc48c12c34243b5472",
+      "sourceSha256": "0b57af8ec7f5b304feed815e8759980a0cf2d07fc3febdcc48c12c34243b5472"
+    },
+    {
+      "path": "assets/closing-conversion-v1/software-package-pink-v1-960.webp",
+      "bytes": 722776,
+      "sha256": "0d9bac2f9d488550955cf5fc8c2a8dde03851f22f3cdce00aeca7029511e8de7",
+      "sourceSha256": "0d9bac2f9d488550955cf5fc8c2a8dde03851f22f3cdce00aeca7029511e8de7"
+    },
+    {
+      "path": "assets/closing-conversion-v1/swatch-black.svg",
+      "bytes": 519,
+      "sha256": "b630fa5cfcff6987117765b1028d5a026663a6cf388b9271e0146ab50373e40f",
+      "sourceSha256": "b630fa5cfcff6987117765b1028d5a026663a6cf388b9271e0146ab50373e40f"
+    },
+    {
+      "path": "assets/closing-conversion-v1/swatch-silver.svg",
+      "bytes": 561,
+      "sha256": "3f426a88c0036fb31c3c8d15f09874c74c8392142d19189b9376eb4f766e733a",
+      "sourceSha256": "3f426a88c0036fb31c3c8d15f09874c74c8392142d19189b9376eb4f766e733a"
+    },
+    {
+      "path": "assets/closing-conversion-v1/two-holders-pink-v1-1280.webp",
+      "bytes": 489700,
+      "sha256": "1fcc3bd835897e89c1972b4ceb12bcc8fac04afa33045091185248157301ce7c",
+      "sourceSha256": "1fcc3bd835897e89c1972b4ceb12bcc8fac04afa33045091185248157301ce7c"
+    },
+    {
+      "path": "assets/closing-conversion-v1/two-holders-pink-v1-1774.webp",
+      "bytes": 898480,
+      "sha256": "f3db1d67e68a4960f0a3b1cfa4147b51ca531b13105be76ab879618ba0be23d9",
+      "sourceSha256": "f3db1d67e68a4960f0a3b1cfa4147b51ca531b13105be76ab879618ba0be23d9"
+    },
+    {
+      "path": "assets/closing-conversion-v1/two-holders-pink-v1-320.webp",
+      "bytes": 36030,
+      "sha256": "0a208ad59d48a16415e4a517cc2bc85a0e5d811566f238f246a815fa7ae941c5",
+      "sourceSha256": "0a208ad59d48a16415e4a517cc2bc85a0e5d811566f238f246a815fa7ae941c5"
+    },
+    {
+      "path": "assets/closing-conversion-v1/two-holders-pink-v1-640.webp",
+      "bytes": 121700,
+      "sha256": "b290ecfd2fb164b58d4aa8c10095dba5a0f3bd6caa051ac06041b29613c1615d",
+      "sourceSha256": "b290ecfd2fb164b58d4aa8c10095dba5a0f3bd6caa051ac06041b29613c1615d"
+    },
+    {
+      "path": "assets/closing-conversion-v1/two-holders-pink-v1-960.webp",
+      "bytes": 270410,
+      "sha256": "0cc5c0478cb7d43afd8aae5de35140e3616f49f82b7f7a1db8b8995006e14f33",
+      "sourceSha256": "0cc5c0478cb7d43afd8aae5de35140e3616f49f82b7f7a1db8b8995006e14f33"
+    },
+    {
+      "path": "assets/conversion-v1/card-selection.js",
+      "bytes": 981,
+      "sha256": "41b2bfd0a750a2c84caed309aec169c92ec0a90a4ae2048105ea2c0a24437433",
+      "sourceSha256": "41b2bfd0a750a2c84caed309aec169c92ec0a90a4ae2048105ea2c0a24437433"
+    },
+    {
+      "path": "assets/conversion-v1/components.css",
+      "bytes": 7219,
+      "sha256": "1fea3ec058019e37a4ab7a95c4c340315aab0aaf65f4cc30e6fcfce831f2fc60",
+      "sourceSha256": "1fea3ec058019e37a4ab7a95c4c340315aab0aaf65f4cc30e6fcfce831f2fc60"
+    },
+    {
+      "path": "assets/conversion-v1/holder-black-640.webp",
+      "bytes": 87132,
+      "sha256": "098da02c0783fffd9efa62dbdaf0d94dae76b502a87a8d4a4679d8eb6a8beba6",
+      "sourceSha256": "098da02c0783fffd9efa62dbdaf0d94dae76b502a87a8d4a4679d8eb6a8beba6"
+    },
+    {
+      "path": "assets/conversion-v1/icons/app-window.svg",
+      "bytes": 563,
+      "sha256": "6ce9cc3bce140b1b911c1153e9bc88e6c9a1f4b7ae807b5353196b91fcd7f188",
+      "sourceSha256": "6ce9cc3bce140b1b911c1153e9bc88e6c9a1f4b7ae807b5353196b91fcd7f188"
+    },
+    {
+      "path": "assets/conversion-v1/icons/arrow-right.svg",
+      "bytes": 250,
+      "sha256": "e1317a4e4f16043efa98d2830c92a478a8906d9d9129881029bddecf575a07f5",
+      "sourceSha256": "e1317a4e4f16043efa98d2830c92a478a8906d9d9129881029bddecf575a07f5"
+    },
+    {
+      "path": "assets/conversion-v1/icons/arrow-up-right.svg",
+      "bytes": 250,
+      "sha256": "58b8b9ffa2090193f20fdb1c9ceb3384bd0e2a4294fdc778dda4833122354ddf",
+      "sourceSha256": "58b8b9ffa2090193f20fdb1c9ceb3384bd0e2a4294fdc778dda4833122354ddf"
+    },
+    {
+      "path": "assets/conversion-v1/icons/cursor.svg",
+      "bytes": 320,
+      "sha256": "2e5f7f1b759b8fd4098ebb6bd9c6cbb1070cef24d74e424fc3acf6fbd0f07492",
+      "sourceSha256": "2e5f7f1b759b8fd4098ebb6bd9c6cbb1070cef24d74e424fc3acf6fbd0f07492"
+    },
+    {
+      "path": "assets/conversion-v1/icons/keyboard.svg",
+      "bytes": 442,
+      "sha256": "bd5ffc42f6758e67b5603cdf677d10ce2367869063ffe785083eca020bbce84f",
+      "sourceSha256": "bd5ffc42f6758e67b5603cdf677d10ce2367869063ffe785083eca020bbce84f"
+    },
+    {
+      "path": "assets/conversion-v1/icons/transfer.svg",
+      "bytes": 355,
+      "sha256": "b4797dc755104b4831fad4d1c86f45acc903813a46ed7b5e94bb6719e18531b2",
+      "sourceSha256": "b4797dc755104b4831fad4d1c86f45acc903813a46ed7b5e94bb6719e18531b2"
+    },
+    {
+      "path": "assets/conversion-v1/icons/windows.svg",
+      "bytes": 299,
+      "sha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610",
+      "sourceSha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610"
+    },
+    {
+      "path": "assets/conversion-v1/section.css",
+      "bytes": 5758,
+      "sha256": "8f38a639d052e48d54b551128cb0f690debccb7080d1c76e9b7fa09af24f0e6a",
+      "sourceSha256": "8f38a639d052e48d54b551128cb0f690debccb7080d1c76e9b7fa09af24f0e6a"
+    },
+    {
+      "path": "assets/conversion-v1/section.js",
+      "bytes": 1579,
+      "sha256": "8a9f88528659f8920ba51a810f57951a6f8272d96e3c954a4009a3a8e23112a2",
+      "sourceSha256": "8a9f88528659f8920ba51a810f57951a6f8272d96e3c954a4009a3a8e23112a2"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-1254.webp",
+      "bytes": 1332408,
+      "sha256": "d5b40e0295f708ba5db70c1f2dfa8023d190e6e29fdd457c23cec6b2a664f4f3",
+      "sourceSha256": "d5b40e0295f708ba5db70c1f2dfa8023d190e6e29fdd457c23cec6b2a664f4f3"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-320.webp",
+      "bytes": 92714,
+      "sha256": "d7ece13a290691ebfd3b83a8d7e68209fbeed5ce73ef857ee33eba4add331098",
+      "sourceSha256": "d7ece13a290691ebfd3b83a8d7e68209fbeed5ce73ef857ee33eba4add331098"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-640.webp",
+      "bytes": 369192,
+      "sha256": "bb9e264425a300bb1686b09f959c3f5760de55760e0c54a698e9923ea5d64923",
+      "sourceSha256": "bb9e264425a300bb1686b09f959c3f5760de55760e0c54a698e9923ea5d64923"
+    },
+    {
+      "path": "assets/conversion-v1/software-package-scene-v1-960.webp",
+      "bytes": 831312,
+      "sha256": "7019dba7e37c9e391b6d52c5d2890010d6b3e620bffdd14113f322501e8e2b2c",
+      "sourceSha256": "7019dba7e37c9e391b6d52c5d2890010d6b3e620bffdd14113f322501e8e2b2c"
+    },
+    {
+      "path": "assets/conversion-v1/surface-grain.svg",
+      "bytes": 323,
+      "sha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b",
+      "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
+    },
+    {
+      "path": "assets/everyday-apps-v1/android-chat-demo-v1.svg",
+      "bytes": 5584,
+      "sha256": "31b68dcc22869e66b08e281f7f06640a3d8f1279cc04b4c137480f561bfdc114",
+      "sourceSha256": "31b68dcc22869e66b08e281f7f06640a3d8f1279cc04b4c137480f561bfdc114"
+    },
+    {
+      "path": "assets/everyday-apps-v1/audio-handoff.svg",
+      "bytes": 1988,
+      "sha256": "83b195b8143a8fcad62d430f07a438bc4d9da4b488cdc8a105e1824b0aba6d6e",
+      "sourceSha256": "83b195b8143a8fcad62d430f07a438bc4d9da4b488cdc8a105e1824b0aba6d6e"
+    },
+    {
+      "path": "assets/everyday-apps-v1/cursor-transition.svg",
+      "bytes": 474,
+      "sha256": "e001be40105dc29fd1174acc534708ce89b0383c81e3ef180c89ba1ac1dbaf7f",
+      "sourceSha256": "e001be40105dc29fd1174acc534708ce89b0383c81e3ef180c89ba1ac1dbaf7f"
+    },
+    {
+      "path": "assets/everyday-apps-v1/gmail-inbox-demo-v1.svg",
+      "bytes": 23009,
+      "sha256": "f01d6fcaf6001eb24466c7fe4ea8e2bba7074741665d9eebad3a7d7b6f38ee71",
+      "sourceSha256": "f01d6fcaf6001eb24466c7fe4ea8e2bba7074741665d9eebad3a7d7b6f38ee71"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons.svg",
+      "bytes": 1926,
+      "sha256": "a13ee809cd49a39dfb34b98145b22ee6015a6d1f7368638c0a7881e179eb3532",
+      "sourceSha256": "a13ee809cd49a39dfb34b98145b22ee6015a6d1f7368638c0a7881e179eb3532"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-drive.svg",
+      "bytes": 223,
+      "sha256": "a9c0816677b3cabe956e2e2df4e069ccd1aabfc682a8180865f7a83d54448fce",
+      "sourceSha256": "a9c0816677b3cabe956e2e2df4e069ccd1aabfc682a8180865f7a83d54448fce"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-gmail.svg",
+      "bytes": 316,
+      "sha256": "042a3c702a6b47b3eb26eb67e21ed360656b3b8cd9a5c286b0e1ea8c6b23d294",
+      "sourceSha256": "042a3c702a6b47b3eb26eb67e21ed360656b3b8cd9a5c286b0e1ea8c6b23d294"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-sheets.svg",
+      "bytes": 250,
+      "sha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b",
+      "sourceSha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b"
+    },
+    {
+      "path": "assets/everyday-apps-v1/icons/app-whatsapp.svg",
+      "bytes": 369,
+      "sha256": "8216db408324f265bf6f8ef92b44b6d962593d8d57a6fb0be3d230ee3d121cbc",
+      "sourceSha256": "8216db408324f265bf6f8ef92b44b6d962593d8d57a6fb0be3d230ee3d121cbc"
+    },
+    {
+      "path": "assets/everyday-apps-v1/keycaps-hello.svg",
+      "bytes": 2698,
+      "sha256": "55b2c66479b9cca94da508800bf96ffad42b35a15a09d16a9aa9adab16435e53",
+      "sourceSha256": "55b2c66479b9cca94da508800bf96ffad42b35a15a09d16a9aa9adab16435e53"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-1280.webp",
+      "bytes": 422394,
+      "sha256": "c76ea010f0e3a9fab43dd413b904ebd0eda3e345134f2f34aff08a90217bff12",
+      "sourceSha256": "c76ea010f0e3a9fab43dd413b904ebd0eda3e345134f2f34aff08a90217bff12"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-1536.webp",
+      "bytes": 623202,
+      "sha256": "1e980aec4e7393e5709846b49e38e663de106148e6abef1a0c62c1b4865bafff",
+      "sourceSha256": "1e980aec4e7393e5709846b49e38e663de106148e6abef1a0c62c1b4865bafff"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-640.webp",
+      "bytes": 114164,
+      "sha256": "6e53c6688cc05445e954476c5bc53da42c8cbb3f3a8019698c9c8e414661db2a",
+      "sourceSha256": "6e53c6688cc05445e954476c5bc53da42c8cbb3f3a8019698c9c8e414661db2a"
+    },
+    {
+      "path": "assets/everyday-apps-v1/laptop-shell-960.webp",
+      "bytes": 254750,
+      "sha256": "33da8c6df6caf287c6f8843fabcd620114afad83c055b8a9a39c52005a81f17b",
+      "sourceSha256": "33da8c6df6caf287c6f8843fabcd620114afad83c055b8a9a39c52005a81f17b"
+    },
+    {
+      "path": "assets/everyday-apps-v1/link-handoff.svg",
+      "bytes": 1050,
+      "sha256": "1214125095e2408577573c0bab79b39ae92b3deb6c5f9f97d9da63bde8820a6c",
+      "sourceSha256": "1214125095e2408577573c0bab79b39ae92b3deb6c5f9f97d9da63bde8820a6c"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-240.webp",
+      "bytes": 22364,
+      "sha256": "37a803fb4cfe58f42fb884fcf7364e122a71135705d91bc7d01a1955d20072a7",
+      "sourceSha256": "37a803fb4cfe58f42fb884fcf7364e122a71135705d91bc7d01a1955d20072a7"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-480.webp",
+      "bytes": 49776,
+      "sha256": "b173c707f1da916cd942fccca680601555970a2f61fae8c0e6f7372bd07c003f",
+      "sourceSha256": "b173c707f1da916cd942fccca680601555970a2f61fae8c0e6f7372bd07c003f"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-720.webp",
+      "bytes": 102032,
+      "sha256": "ef4da2b737ef024f7605857c3a7189c314a859149ba0f09e59ec24ce1d2fc0bc",
+      "sourceSha256": "ef4da2b737ef024f7605857c3a7189c314a859149ba0f09e59ec24ce1d2fc0bc"
+    },
+    {
+      "path": "assets/everyday-apps-v1/phone-shell-866.webp",
+      "bytes": 334472,
+      "sha256": "7c22d9ba7234c2d9bd4210b7a50b26045b99c9d085312d2008d623c0f3c874d7",
+      "sourceSha256": "7c22d9ba7234c2d9bd4210b7a50b26045b99c9d085312d2008d623c0f3c874d7"
+    },
+    {
+      "path": "assets/everyday-apps-v1/section.css",
+      "bytes": 7721,
+      "sha256": "87c4777b6f18272814f7a9aec1c92ee6f1328de59832271bd8e11ba7c9377a20",
+      "sourceSha256": "87c4777b6f18272814f7a9aec1c92ee6f1328de59832271bd8e11ba7c9377a20"
+    },
+    {
+      "path": "assets/everyday-apps-v1/surface-grain.svg",
+      "bytes": 323,
+      "sha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b",
+      "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-1280.webp",
+      "bytes": 740280,
+      "sha256": "4b5c16e7b36c578c150cbcfe9c4333c49a14539e4bfd73c82617c305e314bb79",
+      "sourceSha256": "4b5c16e7b36c578c150cbcfe9c4333c49a14539e4bfd73c82617c305e314bb79"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-1672.webp",
+      "bytes": 1167356,
+      "sha256": "1c2a1c7b7f9ffc67b6e3f74010753d01abdecf4c0651cff783ab56ec192db9f5",
+      "sourceSha256": "1c2a1c7b7f9ffc67b6e3f74010753d01abdecf4c0651cff783ab56ec192db9f5"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-640.webp",
+      "bytes": 192466,
+      "sha256": "6f176ed6927764c403baebb43c4c60a3b682d74a83d4691155cfd649161beb0e",
+      "sourceSha256": "6f176ed6927764c403baebb43c4c60a3b682d74a83d4691155cfd649161beb0e"
+    },
+    {
+      "path": "assets/everyday-apps-v1/workspace-background-960.webp",
+      "bytes": 424174,
+      "sha256": "d6e02cc9a8e004fee5622f106e3b49fe476add93b6e537b673cd56a6a344b29d",
+      "sourceSha256": "d6e02cc9a8e004fee5622f106e3b49fe476add93b6e537b673cd56a6a344b29d"
+    },
+    {
+      "path": "assets/experience-v1/01-move-screens-1200.webp",
+      "bytes": 67412,
+      "sha256": "76ee03150f2581f129a034feb4cb4d6b32dd2ab3162f4956a43c32dffa8b2b9f",
+      "sourceSha256": "76ee03150f2581f129a034feb4cb4d6b32dd2ab3162f4956a43c32dffa8b2b9f"
+    },
+    {
+      "path": "assets/experience-v1/01-move-screens-1536.webp",
+      "bytes": 94438,
+      "sha256": "4105fb2ad884388e46a4601d87199f09aa7affb81895b1222d03cdffeb2353db",
+      "sourceSha256": "4105fb2ad884388e46a4601d87199f09aa7affb81895b1222d03cdffeb2353db"
+    },
+    {
+      "path": "assets/experience-v1/01-move-screens-360.webp",
+      "bytes": 11444,
+      "sha256": "23127a1802e80ce48b7297b6bd1deb2fafe51a851f250cd4817119a29d77e232",
+      "sourceSha256": "23127a1802e80ce48b7297b6bd1deb2fafe51a851f250cd4817119a29d77e232"
+    },
+    {
+      "path": "assets/experience-v1/01-move-screens-640.webp",
+      "bytes": 25234,
+      "sha256": "f72e56d153e439e4f9db4d6ff0d580a4dda687f545472949c09108af81ba9c92",
+      "sourceSha256": "f72e56d153e439e4f9db4d6ff0d580a4dda687f545472949c09108af81ba9c92"
+    },
+    {
+      "path": "assets/experience-v1/01-move-screens-800.webp",
+      "bytes": 34968,
+      "sha256": "a9c867da128e909f5e1aa6aa48434241727bd8f41f46fbe26ed2dd68cda62421",
+      "sourceSha256": "a9c867da128e909f5e1aa6aa48434241727bd8f41f46fbe26ed2dd68cda62421"
+    },
+    {
+      "path": "assets/experience-v1/02-type-reply-1200.webp",
+      "bytes": 81388,
+      "sha256": "da3e7fb36ee0f65b955ab907302425b846df5dfbfa4ea3bbb7418c0bb699907c",
+      "sourceSha256": "da3e7fb36ee0f65b955ab907302425b846df5dfbfa4ea3bbb7418c0bb699907c"
+    },
+    {
+      "path": "assets/experience-v1/02-type-reply-1536.webp",
+      "bytes": 117162,
+      "sha256": "91edbacbb567cc7e34fb21cf895d839e6ca245a36866e6e0de02871ff0edd3a2",
+      "sourceSha256": "91edbacbb567cc7e34fb21cf895d839e6ca245a36866e6e0de02871ff0edd3a2"
+    },
+    {
+      "path": "assets/experience-v1/02-type-reply-360.webp",
+      "bytes": 13718,
+      "sha256": "fdc4a74b75a40120976d9fed3f06b2b8a02534626fc41f72a0b67057f716d880",
+      "sourceSha256": "fdc4a74b75a40120976d9fed3f06b2b8a02534626fc41f72a0b67057f716d880"
+    },
+    {
+      "path": "assets/experience-v1/02-type-reply-640.webp",
+      "bytes": 29424,
+      "sha256": "bcd6620b090b7d5f582a05600264d6d424e5a379cad01f5d5b4c2f4e1f9693c0",
+      "sourceSha256": "bcd6620b090b7d5f582a05600264d6d424e5a379cad01f5d5b4c2f4e1f9693c0"
+    },
+    {
+      "path": "assets/experience-v1/02-type-reply-800.webp",
+      "bytes": 40910,
+      "sha256": "0112c14708c57009f5be309ec114b6c300a937d5401961fc89db88640454f114",
+      "sourceSha256": "0112c14708c57009f5be309ec114b6c300a937d5401961fc89db88640454f114"
+    },
+    {
+      "path": "assets/experience-v1/03-send-tab-1200.webp",
+      "bytes": 68646,
+      "sha256": "0a99dc626424ea66e67cb3d0b30fe6d214f3082c88db831ddb54c82a8d96b01c",
+      "sourceSha256": "0a99dc626424ea66e67cb3d0b30fe6d214f3082c88db831ddb54c82a8d96b01c"
+    },
+    {
+      "path": "assets/experience-v1/03-send-tab-1536.webp",
+      "bytes": 95860,
+      "sha256": "d9e7bed9263e29adb524abbea0ef73af6c2badb87812750c52817463b34bbc3a",
+      "sourceSha256": "d9e7bed9263e29adb524abbea0ef73af6c2badb87812750c52817463b34bbc3a"
+    },
+    {
+      "path": "assets/experience-v1/03-send-tab-360.webp",
+      "bytes": 11656,
+      "sha256": "7d20406a9696f7a68a995145b5f4ab06510eaae1c33bfaa27548a6456ef74dae",
+      "sourceSha256": "7d20406a9696f7a68a995145b5f4ab06510eaae1c33bfaa27548a6456ef74dae"
+    },
+    {
+      "path": "assets/experience-v1/03-send-tab-640.webp",
+      "bytes": 25372,
+      "sha256": "9db8875868774d32d555ba0f6aeae2b7d0dc5877c0fc4e88e89c5a3c2535ec8a",
+      "sourceSha256": "9db8875868774d32d555ba0f6aeae2b7d0dc5877c0fc4e88e89c5a3c2535ec8a"
+    },
+    {
+      "path": "assets/experience-v1/03-send-tab-800.webp",
+      "bytes": 35132,
+      "sha256": "56f3a1265eda75b597c79cafb46a369e4e1d96d330b3e8951a93076a9b66071f",
+      "sourceSha256": "56f3a1265eda75b597c79cafb46a369e4e1d96d330b3e8951a93076a9b66071f"
+    },
+    {
+      "path": "assets/experience-v1/04-file-transfer-1200.webp",
+      "bytes": 75164,
+      "sha256": "89c3edee0bacbb305b0298be4f200855f016c3fd78e93cb11d20294f87d095d4",
+      "sourceSha256": "89c3edee0bacbb305b0298be4f200855f016c3fd78e93cb11d20294f87d095d4"
+    },
+    {
+      "path": "assets/experience-v1/04-file-transfer-1536.webp",
+      "bytes": 105458,
+      "sha256": "7caff48dac27ef62612fd0fc560154750c7eb0ecf0a6ac4c1c8191fa8aa9c646",
+      "sourceSha256": "7caff48dac27ef62612fd0fc560154750c7eb0ecf0a6ac4c1c8191fa8aa9c646"
+    },
+    {
+      "path": "assets/experience-v1/04-file-transfer-360.webp",
+      "bytes": 13064,
+      "sha256": "9832fdda91719c62a94aa98e1d4a76993e22ef42a88150e214cebd23caf5b5b3",
+      "sourceSha256": "9832fdda91719c62a94aa98e1d4a76993e22ef42a88150e214cebd23caf5b5b3"
+    },
+    {
+      "path": "assets/experience-v1/04-file-transfer-640.webp",
+      "bytes": 29348,
+      "sha256": "4f7458b7333453f13bb24eed660af1d1867e70fb20dc8ca6673aca21b0bd8246",
+      "sourceSha256": "4f7458b7333453f13bb24eed660af1d1867e70fb20dc8ca6673aca21b0bd8246"
+    },
+    {
+      "path": "assets/experience-v1/04-file-transfer-800.webp",
+      "bytes": 39878,
+      "sha256": "72a28e379994b0fe18903788da3f30a4e11dc5deafef5ce3f5810e65d248de32",
+      "sourceSha256": "72a28e379994b0fe18903788da3f30a4e11dc5deafef5ce3f5810e65d248de32"
+    },
+    {
+      "path": "assets/experience-v1/05-pc-audio-1200.webp",
+      "bytes": 110602,
+      "sha256": "f7aac91a8e2dea1d4c6762157aca6512c7d5d8c170f4eb748e7fd21de29884e1",
+      "sourceSha256": "f7aac91a8e2dea1d4c6762157aca6512c7d5d8c170f4eb748e7fd21de29884e1"
+    },
+    {
+      "path": "assets/experience-v1/05-pc-audio-1536.webp",
+      "bytes": 164064,
+      "sha256": "62a2cb2286a14ec10348e150e9e1944a54c4e7b1fc98ce9bf7873a5815d45251",
+      "sourceSha256": "62a2cb2286a14ec10348e150e9e1944a54c4e7b1fc98ce9bf7873a5815d45251"
+    },
+    {
+      "path": "assets/experience-v1/05-pc-audio-360.webp",
+      "bytes": 16350,
+      "sha256": "bb7ff2e59e6d1422db80efc502cbcd0a8ad8d371e3ea8c959266735d42f75e25",
+      "sourceSha256": "bb7ff2e59e6d1422db80efc502cbcd0a8ad8d371e3ea8c959266735d42f75e25"
+    },
+    {
+      "path": "assets/experience-v1/05-pc-audio-640.webp",
+      "bytes": 37810,
+      "sha256": "25d0a51aec8f486514ee66aba7a772a8b6bd4532f730f8a1ba67894cea32aabc",
+      "sourceSha256": "25d0a51aec8f486514ee66aba7a772a8b6bd4532f730f8a1ba67894cea32aabc"
+    },
+    {
+      "path": "assets/experience-v1/05-pc-audio-800.webp",
+      "bytes": 53396,
+      "sha256": "766466472563adb4720e69e9e8c2b53ecf91d6343b03aecd438091073ab08a01",
+      "sourceSha256": "766466472563adb4720e69e9e8c2b53ecf91d6343b03aecd438091073ab08a01"
+    },
+    {
+      "path": "assets/experience-v1/06-phonebridger-1200.webp",
+      "bytes": 46224,
+      "sha256": "b09b58a5624bbb6ea54a62e0dfc8996ea8e18e67f4fd7e11076d021b45a75cd1",
+      "sourceSha256": "b09b58a5624bbb6ea54a62e0dfc8996ea8e18e67f4fd7e11076d021b45a75cd1"
+    },
+    {
+      "path": "assets/experience-v1/06-phonebridger-1536.webp",
+      "bytes": 64826,
+      "sha256": "0e4cdbd7b98fca94464fe2938d0e45c6ced7dd928468b1ef51e827b7a553eaf6",
+      "sourceSha256": "0e4cdbd7b98fca94464fe2938d0e45c6ced7dd928468b1ef51e827b7a553eaf6"
+    },
+    {
+      "path": "assets/experience-v1/06-phonebridger-360.webp",
+      "bytes": 9532,
+      "sha256": "0af146a8c231f5522ea69d21cf71910600fb8719a03d8eccbb5eb578fdd4fc38",
+      "sourceSha256": "0af146a8c231f5522ea69d21cf71910600fb8719a03d8eccbb5eb578fdd4fc38"
+    },
+    {
+      "path": "assets/experience-v1/06-phonebridger-640.webp",
+      "bytes": 20350,
+      "sha256": "d0b8221b2310909061ef862fc3bb02c132a4c77ab8396cf12ea862d3d9585ce8",
+      "sourceSha256": "d0b8221b2310909061ef862fc3bb02c132a4c77ab8396cf12ea862d3d9585ce8"
+    },
+    {
+      "path": "assets/experience-v1/06-phonebridger-800.webp",
+      "bytes": 26796,
+      "sha256": "e0b63b673fd5816d2e56315f5b82b684ea71e1406a37aad97c0e1c06f6dc5d76",
+      "sourceSha256": "e0b63b673fd5816d2e56315f5b82b684ea71e1406a37aad97c0e1c06f6dc5d76"
+    },
+    {
+      "path": "assets/experience-v1/components.css",
+      "bytes": 4185,
+      "sha256": "5ad13a4b37af6e365c5a6f973a43b3c830fbbe87dc6788faf30b8bf52b16702b",
+      "sourceSha256": "5ad13a4b37af6e365c5a6f973a43b3c830fbbe87dc6788faf30b8bf52b16702b"
+    },
+    {
+      "path": "assets/experience-v1/icons.svg",
+      "bytes": 3602,
+      "sha256": "9aea47034d2f0d14f29bcc12d9d06655aa9aa9dcb01060674f21d0f191623642",
+      "sourceSha256": "9aea47034d2f0d14f29bcc12d9d06655aa9aa9dcb01060674f21d0f191623642"
+    },
+    {
+      "path": "assets/experience-v1/icons/app-sheets.svg",
+      "bytes": 250,
+      "sha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b",
+      "sourceSha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b"
+    },
+    {
+      "path": "assets/experience-v1/icons/arrow-up-right.svg",
+      "bytes": 228,
+      "sha256": "9ea236cb4793beb67fb81b05e8630b57e8c3b4f446ea8c21008ffaf0b683c1c4",
+      "sourceSha256": "9ea236cb4793beb67fb81b05e8630b57e8c3b4f446ea8c21008ffaf0b683c1c4"
+    },
+    {
+      "path": "assets/experience-v1/icons/check.svg",
+      "bytes": 212,
+      "sha256": "3ebeea038cd0d989ec0a9240543557d3f43019c2f38acfc2f9b82e6e8e6a04d2",
+      "sourceSha256": "3ebeea038cd0d989ec0a9240543557d3f43019c2f38acfc2f9b82e6e8e6a04d2"
+    },
+    {
+      "path": "assets/experience-v1/icons/close.svg",
+      "bytes": 218,
+      "sha256": "7f849a7d134e28e71b4a0ffa6ad8e4c497825dc9807a0a75dc5db585dfad856a",
+      "sourceSha256": "7f849a7d134e28e71b4a0ffa6ad8e4c497825dc9807a0a75dc5db585dfad856a"
+    },
+    {
+      "path": "assets/experience-v1/icons/cursor.svg",
+      "bytes": 230,
+      "sha256": "1bbc4baed8cac91a47acdedda966df636b0287696a46d4114df1b40e77499412",
+      "sourceSha256": "1bbc4baed8cac91a47acdedda966df636b0287696a46d4114df1b40e77499412"
+    },
+    {
+      "path": "assets/experience-v1/icons/folder-open.svg",
+      "bytes": 236,
+      "sha256": "bdea0765609c7fdb7cc9f12c89051ea26415afa34732823cfe5954f26fe5ad76",
+      "sourceSha256": "bdea0765609c7fdb7cc9f12c89051ea26415afa34732823cfe5954f26fe5ad76"
+    },
+    {
+      "path": "assets/experience-v1/icons/keyboard.svg",
+      "bytes": 332,
+      "sha256": "e7dc69e7e8e8353b80ebd56c95eae85ed463a734a2da1f22a495e8d9a1352245",
+      "sourceSha256": "e7dc69e7e8e8353b80ebd56c95eae85ed463a734a2da1f22a495e8d9a1352245"
+    },
+    {
+      "path": "assets/experience-v1/icons/link.svg",
+      "bytes": 289,
+      "sha256": "fe6d820c5bfd3e431c23cc001e9e2115e69d38db497214afb0bd0c43cbdf6ff1",
+      "sourceSha256": "fe6d820c5bfd3e431c23cc001e9e2115e69d38db497214afb0bd0c43cbdf6ff1"
+    },
+    {
+      "path": "assets/experience-v1/icons/monitor.svg",
+      "bytes": 265,
+      "sha256": "41ea1081049f69a010c7561578a9bf760341e603e46b9d9d91b340f9639008e2",
+      "sourceSha256": "41ea1081049f69a010c7561578a9bf760341e603e46b9d9d91b340f9639008e2"
+    },
+    {
+      "path": "assets/experience-v1/icons/mouse.svg",
+      "bytes": 254,
+      "sha256": "7e88aecb683086c143a3792f237a8c5e56a5f10c120279abb2d7c3008ce01dfb",
+      "sourceSha256": "7e88aecb683086c143a3792f237a8c5e56a5f10c120279abb2d7c3008ce01dfb"
+    },
+    {
+      "path": "assets/experience-v1/icons/phone.svg",
+      "bytes": 262,
+      "sha256": "affe0c8c0b498c180a4b582ecfdfe12268f7e0b86ec1e4ee30d7298ce40d4962",
+      "sourceSha256": "affe0c8c0b498c180a4b582ecfdfe12268f7e0b86ec1e4ee30d7298ce40d4962"
+    },
+    {
+      "path": "assets/experience-v1/icons/phonebridger.svg",
+      "bytes": 460,
+      "sha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0",
+      "sourceSha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0"
+    },
+    {
+      "path": "assets/experience-v1/icons/settings.svg",
+      "bytes": 337,
+      "sha256": "2bcdaad4c534a10c61688e9696ece12cd93e8656d48e5eaa9b6df632dddc3931",
+      "sourceSha256": "2bcdaad4c534a10c61688e9696ece12cd93e8656d48e5eaa9b6df632dddc3931"
+    },
+    {
+      "path": "assets/experience-v1/icons/speaker.svg",
+      "bytes": 273,
+      "sha256": "ef2ea3a4fee5d462cf68132a9cbb9bc355342a306693fa51377da5a79087c960",
+      "sourceSha256": "ef2ea3a4fee5d462cf68132a9cbb9bc355342a306693fa51377da5a79087c960"
+    },
+    {
+      "path": "assets/experience-v1/icons/transfer.svg",
+      "bytes": 241,
+      "sha256": "acf3350a23bb7a135065343876be44267ae878a53059712fae4f22a41673e2d7",
+      "sourceSha256": "acf3350a23bb7a135065343876be44267ae878a53059712fae4f22a41673e2d7"
+    },
+    {
+      "path": "assets/experience-v1/preview.html",
+      "bytes": 6619,
+      "sha256": "b2f6e9aef25c77dd722acb03f995ec9fb8c10033425983df86fbb3911f06cc52",
+      "sourceSha256": "2ce3bb7dc470113169f7f284db8d6ad2b2a0a9d176eefa91c76cab93c520ac21"
+    },
+    {
+      "path": "assets/experience-v1/scenarios.js",
+      "bytes": 3144,
+      "sha256": "c812e50adb6a314cb87741696c8e5705721a0752c0151dd97e74615c020fa386",
+      "sourceSha256": "c812e50adb6a314cb87741696c8e5705721a0752c0151dd97e74615c020fa386"
+    },
+    {
+      "path": "assets/faq-v1/android.svg",
+      "bytes": 577,
+      "sha256": "4ae6f45898418953bc2a37a8864b6920fbe52b01bd575fdbd584ee2c6f396162",
+      "sourceSha256": "4ae6f45898418953bc2a37a8864b6920fbe52b01bd575fdbd584ee2c6f396162"
+    },
+    {
+      "path": "assets/faq-v1/icons.svg",
+      "bytes": 2732,
+      "sha256": "0904f2e5cf9becab87688c45b31931cec180c01338c5d941892309a1b0bc6acc",
+      "sourceSha256": "0904f2e5cf9becab87688c45b31931cec180c01338c5d941892309a1b0bc6acc"
+    },
+    {
+      "path": "assets/faq-v1/section.css",
+      "bytes": 7057,
+      "sha256": "4c09c601e3b61e7482fdfbd875db74af9b9ae056a200c5bd031704c3ce4be2ab",
+      "sourceSha256": "4c09c601e3b61e7482fdfbd875db74af9b9ae056a200c5bd031704c3ce4be2ab"
+    },
+    {
+      "path": "assets/faq-v1/surface-grain.svg",
+      "bytes": 323,
+      "sha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b",
+      "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
+    },
+    {
+      "path": "assets/faq-v1/windows.svg",
+      "bytes": 299,
+      "sha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610",
+      "sourceSha256": "f5c081b440db3b215e7f81c649bbb8e8fb82fb80b8b2bb3063be8b6b56ecd610"
+    },
+    {
+      "path": "assets/fonts/manrope-400.ttf",
+      "bytes": 94972,
+      "sha256": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
+      "sourceSha256": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a"
+    },
+    {
+      "path": "assets/fonts/manrope-600.ttf",
+      "bytes": 95096,
+      "sha256": "6bad1a774228464cc88b8b0271555b266f7a3c64a7bedf15e165fdab4f6ac0ce",
+      "sourceSha256": "6bad1a774228464cc88b8b0271555b266f7a3c64a7bedf15e165fdab4f6ac0ce"
+    },
+    {
+      "path": "assets/fonts/manrope-800.ttf",
+      "bytes": 95688,
+      "sha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950",
+      "sourceSha256": "b8f802f05b322a7345805f5b89f8bb976604cc719a91530918d5ce3c47160950"
+    },
+    {
+      "path": "assets/guides-v1/guides.css",
+      "bytes": 8144,
+      "sha256": "91fc6b4549b2282959b603ee86a671780480524a3863cd582f789138e5f566f2",
+      "sourceSha256": "91fc6b4549b2282959b603ee86a671780480524a3863cd582f789138e5f566f2"
+    },
+    {
+      "path": "assets/hero-refresh-v1/icons.svg",
+      "bytes": 654,
+      "sha256": "e17f4e03c7b04e447e607d4585fbda912b4ef86fefbe97c50bd5ce0ceda7f7c5",
+      "sourceSha256": "e17f4e03c7b04e447e607d4585fbda912b4ef86fefbe97c50bd5ce0ceda7f7c5"
+    },
+    {
+      "path": "assets/hero-refresh-v1/presentation.js",
+      "bytes": 1179,
+      "sha256": "315a9e256dffadf355e351abce69381d2accdefb7eb1c2e0d7f85f5e0d4deb39",
+      "sourceSha256": "315a9e256dffadf355e351abce69381d2accdefb7eb1c2e0d7f85f5e0d4deb39"
+    },
+    {
+      "path": "assets/hero-refresh-v1/section.css",
+      "bytes": 8096,
+      "sha256": "eea7e28264884ae174630402e4e9a269d3b42253ace65d493d7be8a71e4ce6ca",
+      "sourceSha256": "eea7e28264884ae174630402e4e9a269d3b42253ace65d493d7be8a71e4ce6ca"
+    },
+    {
+      "path": "assets/homepage-social-v1.jpg",
+      "bytes": 124988,
+      "sha256": "3758ca1da9bbac0da2f9ca9d5cbc1f5fbb971bf2a6bc3baa64f77b84393a307b",
+      "sourceSha256": "3758ca1da9bbac0da2f9ca9d5cbc1f5fbb971bf2a6bc3baa64f77b84393a307b"
+    },
+    {
+      "path": "assets/homepage-usb-v1.webp",
+      "bytes": 159094,
+      "sha256": "43d52c8d0e9a4cae9cdcb660d6f97046913f88c3bd428250890d08ba2d55dc5e",
+      "sourceSha256": "43d52c8d0e9a4cae9cdcb660d6f97046913f88c3bd428250890d08ba2d55dc5e"
+    },
+    {
+      "path": "assets/homepage-v1.css",
+      "bytes": 25983,
+      "sha256": "5d2f8a5295ced583ab52a72c71140da1ee39c03be2b7d580d62adafedf8177e3",
+      "sourceSha256": "5d2f8a5295ced583ab52a72c71140da1ee39c03be2b7d580d62adafedf8177e3"
+    },
+    {
+      "path": "assets/phone-frame-v1.webp",
+      "bytes": 570670,
+      "sha256": "5b4de1be26f6c686d5ac16726ed81e9ac7af99cd8de14d7c210e9e78670b7572",
+      "sourceSha256": "5b4de1be26f6c686d5ac16726ed81e9ac7af99cd8de14d7c210e9e78670b7572"
+    },
+    {
+      "path": "assets/reference-pink-background-v1.webp",
+      "bytes": 202296,
+      "sha256": "847d20969c053d3f2181ee89409bbc9e841da332e6e14619691156ca0bc88633",
+      "sourceSha256": "847d20969c053d3f2181ee89409bbc9e841da332e6e14619691156ca0bc88633"
+    },
+    {
+      "path": "assets/reviews-v1/section.css",
+      "bytes": 8203,
+      "sha256": "6fed4008b346f6d585d59d7179faba67599641718d552b745b968bfa2beeea94",
+      "sourceSha256": "6fed4008b346f6d585d59d7179faba67599641718d552b745b968bfa2beeea94"
+    },
+    {
+      "path": "assets/reviews-v1/section.js",
+      "bytes": 6059,
+      "sha256": "e3e85d31f7e400b05e4322d61a54e0fbb6a9de27b3c45306b28f616a008a9d59",
+      "sourceSha256": "e3e85d31f7e400b05e4322d61a54e0fbb6a9de27b3c45306b28f616a008a9d59"
+    },
+    {
+      "path": "assets/setup-guide-v1/icons.svg",
+      "bytes": 938,
+      "sha256": "a849febc20790734495f123da765ddcb551ed237cd1c654ab6150cf02da95b1a",
+      "sourceSha256": "a849febc20790734495f123da765ddcb551ed237cd1c654ab6150cf02da95b1a"
+    },
+    {
+      "path": "assets/setup-guide-v1/pairing.svg",
+      "bytes": 26757,
+      "sha256": "65a86507653a74515adbda0cb9c8a5cf7dfa6690e478b3e54e20e267bc464786",
+      "sourceSha256": "65a86507653a74515adbda0cb9c8a5cf7dfa6690e478b3e54e20e267bc464786"
+    },
+    {
+      "path": "assets/setup-guide-v1/platforms.svg",
+      "bytes": 2505,
+      "sha256": "66955ee95b4fe2234cd052966532f862fb382e39bdc43b0db9e5fd4762c84b75",
+      "sourceSha256": "66955ee95b4fe2234cd052966532f862fb382e39bdc43b0db9e5fd4762c84b75"
+    },
+    {
+      "path": "assets/setup-guide-v1/positions.svg",
+      "bytes": 4267,
+      "sha256": "31fa4bb889b516e5727eb3a66499916aba44e6c6b67ffdb365fb52db8f1aa380",
+      "sourceSha256": "31fa4bb889b516e5727eb3a66499916aba44e6c6b67ffdb365fb52db8f1aa380"
+    },
+    {
+      "path": "assets/setup-guide-v1/section.css",
+      "bytes": 8196,
+      "sha256": "6003e5c3817c39c188a4f3819d01055b420ed7deb59500d6d550eaa8a8bdcb6e",
+      "sourceSha256": "6003e5c3817c39c188a4f3819d01055b420ed7deb59500d6d550eaa8a8bdcb6e"
+    },
+    {
+      "path": "assets/setup-guide-v1/surface-grain.svg",
+      "bytes": 323,
+      "sha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b",
+      "sourceSha256": "425c70fe8e56529288b300fb29168206ad8b4aa4147f396a2a51adbff9e3696b"
+    },
+    {
+      "path": "assets/simulator-v2/apps.js",
+      "bytes": 37417,
+      "sha256": "47211215bf986815d5f57f28b40f722b2c5bf9f779edddbf63c370b537c9c202",
+      "sourceSha256": "47211215bf986815d5f57f28b40f722b2c5bf9f779edddbf63c370b537c9c202"
+    },
+    {
+      "path": "assets/simulator-v2/creator-model.js",
+      "bytes": 10292,
+      "sha256": "bc3a3c924a2086a4333f86167ff6725fbc7deb7741af3aa373d53f093ce5984f",
+      "sourceSha256": "bc3a3c924a2086a4333f86167ff6725fbc7deb7741af3aa373d53f093ce5984f"
+    },
+    {
+      "path": "assets/simulator-v2/creator-ui.js",
+      "bytes": 24654,
+      "sha256": "82d56ed38718ca46ecd39fe94c33d618f9442f6855f2ae259348cd57ffa7affe",
+      "sourceSha256": "82d56ed38718ca46ecd39fe94c33d618f9442f6855f2ae259348cd57ffa7affe"
+    },
+    {
+      "path": "assets/simulator-v2/creators.css",
+      "bytes": 14307,
+      "sha256": "b95cf878510db5293467c0c6d0171a0ffbaf2d74a42dff66935018ded7a0e663",
+      "sourceSha256": "b95cf878510db5293467c0c6d0171a0ffbaf2d74a42dff66935018ded7a0e663"
+    },
+    {
+      "path": "assets/simulator-v2/data.js",
+      "bytes": 17558,
+      "sha256": "64ace23533a2c9f46074cab7284ba4ca85fe485ec18f0f176f1f1e16947fb74a",
+      "sourceSha256": "64ace23533a2c9f46074cab7284ba4ca85fe485ec18f0f176f1f1e16947fb74a"
+    },
+    {
+      "path": "assets/simulator-v2/demo-experience.js",
+      "bytes": 5593,
+      "sha256": "680916ce5310613bb93b3b8680704d8852739010305c9c4a7e65865fe9931c0f",
+      "sourceSha256": "680916ce5310613bb93b3b8680704d8852739010305c9c4a7e65865fe9931c0f"
+    },
+    {
+      "path": "assets/simulator-v2/doodle.svg",
+      "bytes": 498,
+      "sha256": "5962805a96dde7d689d3df3560527271a7acc19e69284949aac429fff265e601",
+      "sourceSha256": "5962805a96dde7d689d3df3560527271a7acc19e69284949aac429fff265e601"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-alex.webp",
+      "bytes": 76078,
+      "sha256": "b63c36d20699843e1a78ca28cda1bc02483050ba6d2a70d5d5b43e3130a82834",
+      "sourceSha256": "b63c36d20699843e1a78ca28cda1bc02483050ba6d2a70d5d5b43e3130a82834"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-emma.webp",
+      "bytes": 132294,
+      "sha256": "647c9199729ff292efe0edd6307e975b90ff9ab3cd971d61d1e997dd49fa2f7b",
+      "sourceSha256": "647c9199729ff292efe0edd6307e975b90ff9ab3cd971d61d1e997dd49fa2f7b"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-jamie.webp",
+      "bytes": 48610,
+      "sha256": "a4a172210b020ff027c44c6ea2f02d69ddfbeec48d7852d9d9548a78bf8836d1",
+      "sourceSha256": "a4a172210b020ff027c44c6ea2f02d69ddfbeec48d7852d9d9548a78bf8836d1"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-leo.webp",
+      "bytes": 129768,
+      "sha256": "8288989024f6ceee0f6f7655761cde4916af6939060477620bd9f9d50cd9b192",
+      "sourceSha256": "8288989024f6ceee0f6f7655761cde4916af6939060477620bd9f9d50cd9b192"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-mia.webp",
+      "bytes": 148644,
+      "sha256": "9aed5014d984159b76bec944a5ad7d3e822b3f82a07a26f894c4ac60e6435ccc",
+      "sourceSha256": "9aed5014d984159b76bec944a5ad7d3e822b3f82a07a26f894c4ac60e6435ccc"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-noah.webp",
+      "bytes": 131316,
+      "sha256": "f1b02a9c9ec2d00c2b9169025d1187dca32e5142e1a80e690dd87dcfacbfdc69",
+      "sourceSha256": "f1b02a9c9ec2d00c2b9169025d1187dca32e5142e1a80e690dd87dcfacbfdc69"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-oliver.webp",
+      "bytes": 111544,
+      "sha256": "42af07abb687b79e6c31a2ecaa8f54c3c9936c9bb4765f9ab3f4cce3f0fabb37",
+      "sourceSha256": "42af07abb687b79e6c31a2ecaa8f54c3c9936c9bb4765f9ab3f4cce3f0fabb37"
+    },
+    {
+      "path": "assets/simulator-v2/media/avatar-sofia.webp",
+      "bytes": 79384,
+      "sha256": "45a765a3346345b539e0a7a85d843a7a8349880622198df18caf1626d198ebdf",
+      "sourceSha256": "45a765a3346345b539e0a7a85d843a7a8349880622198df18caf1626d198ebdf"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-city-gardens.webp",
+      "bytes": 363824,
+      "sha256": "a2264b9de9748658ae6b4651a9afd96beab22dd5c98f8c04b8eaf471e31f026e",
+      "sourceSha256": "a2264b9de9748658ae6b4651a9afd96beab22dd5c98f8c04b8eaf471e31f026e"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-coastal-trails.webp",
+      "bytes": 363060,
+      "sha256": "dc33cafb49e6b6a95c33239c2897e21d8b5b0d5afed4a58f29fb7751af8fbd93",
+      "sourceSha256": "dc33cafb49e6b6a95c33239c2897e21d8b5b0d5afed4a58f29fb7751af8fbd93"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-design-materials.webp",
+      "bytes": 152678,
+      "sha256": "769de700e91978d2b819701307577477ce71c19a6adf5410202de7c84a3a0f47",
+      "sourceSha256": "769de700e91978d2b819701307577477ce71c19a6adf5410202de7c84a3a0f47"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-local-coffee.webp",
+      "bytes": 137138,
+      "sha256": "130cb42ac4fabe6e221fecf15dc349878c6c4778f65e00ef15a03d2065a95ce4",
+      "sourceSha256": "130cb42ac4fabe6e221fecf15dc349878c6c4778f65e00ef15a03d2065a95ce4"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-night-sky.webp",
+      "bytes": 226762,
+      "sha256": "b1f69b417e1b66af4913b847f3ba5f99cf3d23358659d4d8438100e4d7d031a0",
+      "sourceSha256": "b1f69b417e1b66af4913b847f3ba5f99cf3d23358659d4d8438100e4d7d031a0"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-remote-team.webp",
+      "bytes": 146878,
+      "sha256": "9c69cbc3e4b72b2f5a182d2429abf3ae3c408b0b6caef2134b22ff31039c1108",
+      "sourceSha256": "9c69cbc3e4b72b2f5a182d2429abf3ae3c408b0b6caef2134b22ff31039c1108"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-smart-tools.webp",
+      "bytes": 99940,
+      "sha256": "d517113c759a41473916d0e17ba2d0f611b75d9c593cff898bb7abf724b88379",
+      "sourceSha256": "d517113c759a41473916d0e17ba2d0f611b75d9c593cff898bb7abf724b88379"
+    },
+    {
+      "path": "assets/simulator-v2/media/news-workspaces.webp",
+      "bytes": 83314,
+      "sha256": "41f39a70686b62ed43bcd698f6027032649a153e9c40698160aa9fd62ba08293",
+      "sourceSha256": "41f39a70686b62ed43bcd698f6027032649a153e9c40698160aa9fd62ba08293"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-cafe.webp",
+      "bytes": 114272,
+      "sha256": "2be436ec0a23307f18e00a2c95b24929d698e790c1d690394c5fe69b468537f8",
+      "sourceSha256": "2be436ec0a23307f18e00a2c95b24929d698e790c1d690394c5fe69b468537f8"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-city-evening.webp",
+      "bytes": 301322,
+      "sha256": "88b40f093ee3f02576912e9de55c63db9a105ee8e72e684e607453c4c5543157",
+      "sourceSha256": "88b40f093ee3f02576912e9de55c63db9a105ee8e72e684e607453c4c5543157"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-coast.webp",
+      "bytes": 371776,
+      "sha256": "56756104ae71b6713c24bdb3de982591d12b850cde7976799ff019a3b12d3cb9",
+      "sourceSha256": "56756104ae71b6713c24bdb3de982591d12b850cde7976799ff019a3b12d3cb9"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-forest.webp",
+      "bytes": 417208,
+      "sha256": "e318edfe73b4a4a59b3c8f4a38df7f50f0b7e0f19c84a6a7f8aee755f1fd441d",
+      "sourceSha256": "e318edfe73b4a4a59b3c8f4a38df7f50f0b7e0f19c84a6a7f8aee755f1fd441d"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-lake.webp",
+      "bytes": 189296,
+      "sha256": "7d066be64aa44bd1ce2172e83c5ebffbe6ae27a50b3690b38ae2481f59100c13",
+      "sourceSha256": "7d066be64aa44bd1ce2172e83c5ebffbe6ae27a50b3690b38ae2481f59100c13"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-market.webp",
+      "bytes": 256806,
+      "sha256": "fcc95111d2753758c4d3013854ceea20cf4b4ea6263ebb474daeed9dc7418f05",
+      "sourceSha256": "fcc95111d2753758c4d3013854ceea20cf4b4ea6263ebb474daeed9dc7418f05"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-mountain.webp",
+      "bytes": 381142,
+      "sha256": "538dd92d0ca0d21942f81fa4569631b46badeaf36fdf95fbc549576913df598c",
+      "sourceSha256": "538dd92d0ca0d21942f81fa4569631b46badeaf36fdf95fbc549576913df598c"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-notebook.webp",
+      "bytes": 114324,
+      "sha256": "be6ab127a94e28536d242e6abbc9246757c71861f106578a189e329a0c548115",
+      "sourceSha256": "be6ab127a94e28536d242e6abbc9246757c71861f106578a189e329a0c548115"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-park-walk.webp",
+      "bytes": 583038,
+      "sha256": "35cad370aaf36c0acbebe72ac6931f31176d267c2903406babae46bca13c2178",
+      "sourceSha256": "35cad370aaf36c0acbebe72ac6931f31176d267c2903406babae46bca13c2178"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-studio-detail.webp",
+      "bytes": 324384,
+      "sha256": "e55eb69755e228c8ca935a5c040821efae9f4afcce12bf5068c389415278e9e6",
+      "sourceSha256": "e55eb69755e228c8ca935a5c040821efae9f4afcce12bf5068c389415278e9e6"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-team-table.webp",
+      "bytes": 120946,
+      "sha256": "2abd235af4acb46b046e302798b461b2a5f57d3703569dd007277744a4b4824b",
+      "sourceSha256": "2abd235af4acb46b046e302798b461b2a5f57d3703569dd007277744a4b4824b"
+    },
+    {
+      "path": "assets/simulator-v2/media/photo-workspace.webp",
+      "bytes": 67178,
+      "sha256": "ff88a50b42a49e5df0699a1d1774d1e40d686528af6712fbc015efe84908e8ad",
+      "sourceSha256": "ff88a50b42a49e5df0699a1d1774d1e40d686528af6712fbc015efe84908e8ad"
+    },
+    {
+      "path": "assets/simulator-v2/media/voice-1.wav",
+      "bytes": 369480,
+      "sha256": "85338f09c27ec464d9048d5d43da3f1fe836c5cc58fec96950d099d9aa3f9847",
+      "sourceSha256": "85338f09c27ec464d9048d5d43da3f1fe836c5cc58fec96950d099d9aa3f9847"
+    },
+    {
+      "path": "assets/simulator-v2/media/voice-2.wav",
+      "bytes": 294542,
+      "sha256": "073640200f0b6e60a08b61dab3d52678fabae521586c4d1ae7427470754d0507",
+      "sourceSha256": "073640200f0b6e60a08b61dab3d52678fabae521586c4d1ae7427470754d0507"
+    },
+    {
+      "path": "assets/simulator-v2/media/voice-3.wav",
+      "bytes": 284836,
+      "sha256": "4469a6bbba124a9fa23111f259571befc6d7f7bd44ca4fd46a5766a7e882bcce",
+      "sourceSha256": "4469a6bbba124a9fa23111f259571befc6d7f7bd44ca4fd46a5766a7e882bcce"
+    },
+    {
+      "path": "assets/simulator-v2/simulator.css",
+      "bytes": 51162,
+      "sha256": "96fb47dd0529f56046380beb76b861c2cd9098689fa6ad427240e809861c0f41",
+      "sourceSha256": "96fb47dd0529f56046380beb76b861c2cd9098689fa6ad427240e809861c0f41"
+    },
+    {
+      "path": "assets/simulator-v2/simulator.js",
+      "bytes": 64945,
+      "sha256": "8c179c11da07344e27a2fb34222a50f336561b01850c3c514b828d645e4e9e5e",
+      "sourceSha256": "8c179c11da07344e27a2fb34222a50f336561b01850c3c514b828d645e4e9e5e"
+    },
+    {
+      "path": "assets/simulator-v2/state.js",
+      "bytes": 12146,
+      "sha256": "5145ef782d45509c629255e914c2dda1289eb2d996c92555d52f3242c88fb524",
+      "sourceSha256": "5145ef782d45509c629255e914c2dda1289eb2d996c92555d52f3242c88fb524"
+    },
+    {
+      "path": "assets/simulator-v2/stories.js",
+      "bytes": 17651,
+      "sha256": "ccfcedd4ca1e382de3b77b15a576dbf33572d2995baf7aea58cd3477eabf6476",
+      "sourceSha256": "ccfcedd4ca1e382de3b77b15a576dbf33572d2995baf7aea58cd3477eabf6476"
+    },
+    {
+      "path": "assets/simulator-v2/ui.js",
+      "bytes": 7280,
+      "sha256": "e8abea7ec22a2d2b529da01ffa30ab9a834b9fe2fce15463eaca2c8e8ac5a831",
+      "sourceSha256": "e8abea7ec22a2d2b529da01ffa30ab9a834b9fe2fce15463eaca2c8e8ac5a831"
+    },
+    {
+      "path": "assets/site-pages-v1/icons.svg",
+      "bytes": 1719,
+      "sha256": "eecba4355d9d8bb2c1cd497d3fd3303434f2b6570e087d03568c8cc281b4ac26",
+      "sourceSha256": "eecba4355d9d8bb2c1cd497d3fd3303434f2b6570e087d03568c8cc281b4ac26"
+    },
+    {
+      "path": "assets/site-pages-v1/site.css",
+      "bytes": 19251,
+      "sha256": "b60976b034e503541e3686212ea4d98dc04dd32ff6cec1fa8aed19f3185e0618",
+      "sourceSha256": "b60976b034e503541e3686212ea4d98dc04dd32ff6cec1fa8aed19f3185e0618"
+    },
+    {
+      "path": "assets/site-pages-v1/site.js",
+      "bytes": 6229,
+      "sha256": "d2dbcf6a3401256efaf0026264fa5ff3e866884ba416d226c5092e93957a3293",
+      "sourceSha256": "d2dbcf6a3401256efaf0026264fa5ff3e866884ba416d226c5092e93957a3293"
+    },
+    {
+      "path": "assets/surface-photo-frame-lossless-v1.svg",
+      "bytes": 1747272,
+      "sha256": "61440e0a862fc7dba3f7a378c8db10de7f1c32bbb7a4f7c8804eea8d6c115ac1",
+      "sourceSha256": "61440e0a862fc7dba3f7a378c8db10de7f1c32bbb7a4f7c8804eea8d6c115ac1"
+    },
+    {
+      "path": "assets/video-player.css",
+      "bytes": 5518,
+      "sha256": "1129868b6938d85f8f842b1e514f1c89b2e992e0fa2548e8f0030e95614e9ea9",
+      "sourceSha256": "1129868b6938d85f8f842b1e514f1c89b2e992e0fa2548e8f0030e95614e9ea9"
+    },
+    {
+      "path": "assets/video/kato-poster.jpg",
+      "bytes": 38540,
+      "sha256": "85adeb124dcb18c903786b9ef27f909b79777469e7ab398f1e55acafdec80680",
+      "sourceSha256": "85adeb124dcb18c903786b9ef27f909b79777469e7ab398f1e55acafdec80680"
+    },
+    {
+      "path": "assets/video/kato.mp4",
+      "bytes": 24856575,
+      "sha256": "bd4a1d6fb4285fee892ff2872d82b72b83ff324697435a40d7a0205b4a6bc951",
+      "sourceSha256": "bd4a1d6fb4285fee892ff2872d82b72b83ff324697435a40d7a0205b4a6bc951"
+    },
+    {
+      "path": "assets/video/playlist.js",
+      "bytes": 466,
+      "sha256": "9c3715f4a6a188b44b47a908764763dd298cc191eaeb530d72aee21042416f27",
+      "sourceSha256": "9c3715f4a6a188b44b47a908764763dd298cc191eaeb530d72aee21042416f27"
+    },
+    {
+      "path": "assets/video/relax1-poster.jpg",
+      "bytes": 40675,
+      "sha256": "6b2b09cc0f2bb4ada2744e807900c72b5851a63d8866505eb93e22f8f0864852",
+      "sourceSha256": "6b2b09cc0f2bb4ada2744e807900c72b5851a63d8866505eb93e22f8f0864852"
+    },
+    {
+      "path": "assets/video/relax1.mp4",
+      "bytes": 24303408,
+      "sha256": "e9bcd2e41cd085b5dbb9bc35731f465262119f1f6280d5e38f3b5c585aed7847",
+      "sourceSha256": "e9bcd2e41cd085b5dbb9bc35731f465262119f1f6280d5e38f3b5c585aed7847"
+    },
+    {
+      "path": "chrome.js",
+      "bytes": 14806,
+      "sha256": "030908e150b15b497bd1e505ca1c58483fb532bc55078f21810ee5183f8cc6f6",
+      "sourceSha256": "030908e150b15b497bd1e505ca1c58483fb532bc55078f21810ee5183f8cc6f6"
+    },
+    {
+      "path": "contact/index.html",
+      "bytes": 6705,
+      "sha256": "7723330f9161ee8c2ac05692710ec85facc818c9962c8ddc2363035f0b77c791",
+      "sourceSha256": "6161ff95031537056b34eb2393dfbc04047bbbdb5ae72de528cf17c89b2d4770"
+    },
+    {
+      "path": "content-assets/phonebridger/16feb108-327c-4d7c-a268-6f2b1dd83a86.webp",
+      "bytes": 21806,
+      "sha256": "bd5c34a4a950286001f26e70bcad2a68f41525aac0d52b7592b6159a1ca132a5",
+      "sourceSha256": "bd5c34a4a950286001f26e70bcad2a68f41525aac0d52b7592b6159a1ca132a5"
+    },
+    {
+      "path": "content-assets/phonebridger/1d515fcf-0f49-4626-9e80-e4305f5fd85e.webp",
+      "bytes": 35810,
+      "sha256": "0dcf1f5e1571ffa1927312dcf1a6d97da97ad0c58ac9bd9333fe709dc7c627f4",
+      "sourceSha256": "0dcf1f5e1571ffa1927312dcf1a6d97da97ad0c58ac9bd9333fe709dc7c627f4"
+    },
+    {
+      "path": "content-assets/phonebridger/28b2c372-f22d-450f-848f-7e50c862a474.webp",
+      "bytes": 5654,
+      "sha256": "489f096d771e0df13cfd803960f8358f84eb96714232f39b44570ebcfe0a569e",
+      "sourceSha256": "489f096d771e0df13cfd803960f8358f84eb96714232f39b44570ebcfe0a569e"
+    },
+    {
+      "path": "content-assets/phonebridger/46ddb88c-f7bc-4354-bad3-39fe79611ca5.webp",
+      "bytes": 52290,
+      "sha256": "15a24346927e855f71d1e60758a483f0294d3eac3449f97f85183186544a6d22",
+      "sourceSha256": "15a24346927e855f71d1e60758a483f0294d3eac3449f97f85183186544a6d22"
+    },
+    {
+      "path": "content-assets/phonebridger/4b891ab1-8a36-4e6a-9b5a-a2b83c0412d0.webp",
+      "bytes": 49402,
+      "sha256": "3a2671d3e34e3dd3dd04e7ece792c9f8098770a1ba0db0ea5e42fae0671a90bf",
+      "sourceSha256": "3a2671d3e34e3dd3dd04e7ece792c9f8098770a1ba0db0ea5e42fae0671a90bf"
+    },
+    {
+      "path": "content-assets/phonebridger/51557432-771e-4207-a991-f37a532cfa8a.webp",
+      "bytes": 5518,
+      "sha256": "d79acdf265ac4b3d1525901ca17c037b15ffe58b7a18198ef63e3fd10d8c9925",
+      "sourceSha256": "d79acdf265ac4b3d1525901ca17c037b15ffe58b7a18198ef63e3fd10d8c9925"
+    },
+    {
+      "path": "content-assets/phonebridger/577abb05-2f7e-4761-b400-e357eb67d210.webp",
+      "bytes": 13674,
+      "sha256": "ef859630345b6da2f5bd6df117c5a004b55a4b414e10313a50916d6064dfbc08",
+      "sourceSha256": "ef859630345b6da2f5bd6df117c5a004b55a4b414e10313a50916d6064dfbc08"
+    },
+    {
+      "path": "content-assets/phonebridger/6b27bc52-7261-48f3-ab35-8567fc2ced66.webp",
+      "bytes": 18966,
+      "sha256": "d73312a2fba4f3088f0a296118bf5736bce0baecf139be69159bd0231e7c74e6",
+      "sourceSha256": "d73312a2fba4f3088f0a296118bf5736bce0baecf139be69159bd0231e7c74e6"
+    },
+    {
+      "path": "content-assets/phonebridger/6c50338f-d349-4ff9-b9ad-cf2f77b4ec93.webp",
+      "bytes": 8352,
+      "sha256": "2eade6932536ad3f0477e95e4947c53f97b06511e1a22917400afacd322b6497",
+      "sourceSha256": "2eade6932536ad3f0477e95e4947c53f97b06511e1a22917400afacd322b6497"
+    },
+    {
+      "path": "content-assets/phonebridger/72549c48-a8d1-456f-897a-b03eb71c6d07.webp",
+      "bytes": 13808,
+      "sha256": "6f1e8e96e469cb196acda055c1b8a308867b5594683f8c3a3f603be060056efb",
+      "sourceSha256": "6f1e8e96e469cb196acda055c1b8a308867b5594683f8c3a3f603be060056efb"
+    },
+    {
+      "path": "content-assets/phonebridger/968770d6-8a91-4d9d-ba64-256c4f38f9f2.webp",
+      "bytes": 31240,
+      "sha256": "42ea989098267024b9b181c9ad65d5a5692a95acdf1b2cdc2f4f709a3ccdeff0",
+      "sourceSha256": "42ea989098267024b9b181c9ad65d5a5692a95acdf1b2cdc2f4f709a3ccdeff0"
+    },
+    {
+      "path": "content-assets/phonebridger/9eca6d72-03ef-41fd-9b64-635b1866cf92.webp",
+      "bytes": 34398,
+      "sha256": "27ff88cd7765961110d13698dc27f172fbfab2e69373e893dff3f16f377a7086",
+      "sourceSha256": "27ff88cd7765961110d13698dc27f172fbfab2e69373e893dff3f16f377a7086"
+    },
+    {
+      "path": "content-assets/phonebridger/a779aa23-ae3d-461a-a405-69e3544d26fe.webp",
+      "bytes": 85382,
+      "sha256": "6595faf4d225f2e9383f09043efd05048b8ac1de4b0641f05ffd2d42f06c47b4",
+      "sourceSha256": "6595faf4d225f2e9383f09043efd05048b8ac1de4b0641f05ffd2d42f06c47b4"
+    },
+    {
+      "path": "content-assets/phonebridger/a79749fb-63e5-4dfb-b158-0e425422ef53.webp",
+      "bytes": 13680,
+      "sha256": "d03bcfb837ea4db1eed52d25ee9e5b5be6663766b19a825fd651cb2a5d8312a8",
+      "sourceSha256": "d03bcfb837ea4db1eed52d25ee9e5b5be6663766b19a825fd651cb2a5d8312a8"
+    },
+    {
+      "path": "content-assets/phonebridger/b5b69843-09fc-4df7-9008-7d4bcf87ef54.webp",
+      "bytes": 59662,
+      "sha256": "5e26dd96e7c4130d7d6ef9b2998a8b0f3368d7e3035a1827fa7b15798053376e",
+      "sourceSha256": "5e26dd96e7c4130d7d6ef9b2998a8b0f3368d7e3035a1827fa7b15798053376e"
+    },
+    {
+      "path": "content-assets/phonebridger/bc89d038-6393-4b8f-a52b-891b78176475.webp",
+      "bytes": 19136,
+      "sha256": "4b97ffde5ff8d2d04912c3237802e67f26ca183605161e9d0a1c3fe8abcba9b7",
+      "sourceSha256": "4b97ffde5ff8d2d04912c3237802e67f26ca183605161e9d0a1c3fe8abcba9b7"
+    },
+    {
+      "path": "content-assets/phonebridger/c5bb18a0-f84e-45f2-b797-988420a35deb.webp",
+      "bytes": 6018,
+      "sha256": "7ef54cd880bbb46ef80286a08cc6169ccd464ff3af737d8ddc35ab488b0bbba0",
+      "sourceSha256": "7ef54cd880bbb46ef80286a08cc6169ccd464ff3af737d8ddc35ab488b0bbba0"
+    },
+    {
+      "path": "content-assets/phonebridger/c75ffcfd-eb4c-4fbc-a3e1-5ad009960397.webp",
+      "bytes": 19136,
+      "sha256": "e23a33c739f6fc64f3b57e410beff794d98621aba5d5e6543eab34f507a18569",
+      "sourceSha256": "e23a33c739f6fc64f3b57e410beff794d98621aba5d5e6543eab34f507a18569"
+    },
+    {
+      "path": "content-assets/phonebridger/db9cb59e-a6c0-4eeb-88c3-e6764b6084c4.webp",
+      "bytes": 55620,
+      "sha256": "347322bfb9b3652397c17beb06109dcece8c20c5fb4af175b78258a3aa02b332",
+      "sourceSha256": "347322bfb9b3652397c17beb06109dcece8c20c5fb4af175b78258a3aa02b332"
+    },
+    {
+      "path": "content-assets/phonebridger/f0128636-c25b-43e1-bcf8-c1081bff5db5.webp",
+      "bytes": 36516,
+      "sha256": "aeb32a74ecc03c5dff533467fdaabd42df7572eced6ec8d914049a5681d11d21",
+      "sourceSha256": "aeb32a74ecc03c5dff533467fdaabd42df7572eced6ec8d914049a5681d11d21"
+    },
+    {
+      "path": "downloads/index.html",
+      "bytes": 6702,
+      "sha256": "5bba0085f98ca448d222a8f63084d851e2a8c78140a1f0ab04ccd14e6f9abe7e",
+      "sourceSha256": "c748ec69e100de671020b92f218866fc80828eb1cca0bc2e6c5527bc644d9633"
+    },
+    {
+      "path": "editorial/index.html",
+      "bytes": 7309,
+      "sha256": "343744ff7e281b857dbaf0be6e68979370c26c3c5cd7b9064425f9041fc465e7",
+      "sourceSha256": "abe373f02a3b4b5feb1e0bbec65b0fb1172c01eb51775a4b8bb01c321258e6ae"
+    },
+    {
+      "path": "guides/android-permissions/index.html",
+      "bytes": 14354,
+      "sha256": "4be42a14c9ae7dbf4d6cbc82b92f33b29f097e39b4be61543990f04bac6617e4",
+      "sourceSha256": "703f88a0355321faf5373b2eabf239b189064256c9c65c1d8c5ce9fd202f3c24"
+    },
+    {
+      "path": "guides/getting-started/index.html",
+      "bytes": 13757,
+      "sha256": "6487eb3ed973c6b1ca74a1df53c633886ee6c3719bea5a04d5a60593c4d693c4",
+      "sourceSha256": "4933a2c1b7f94ec9aeefe0f27a4d6936625154b53258288abf2f96a9e51714ca"
+    },
+    {
+      "path": "guides/index.html",
+      "bytes": 10564,
+      "sha256": "ea5d6931c996c641d7079bd2eae0bfed0a422e46d4d8493a61d688aae0c5c8e5",
+      "sourceSha256": "a5c4ba1a38f9c2381586dfa3c02d13d38a7100d42c6b253ba40afbc9cb5e56ec"
+    },
+    {
+      "path": "guides/phone-position/index.html",
+      "bytes": 13795,
+      "sha256": "5e38ad47d02cb12e4b90f5bf7480b493a5af9de33ce6c22fc72ba8359faf5f9f",
+      "sourceSha256": "c9b1667a181de2835569a0054ac7b6e9f58256d99d32834d50656ca31f987393"
+    },
+    {
+      "path": "guides/usb-wifi/index.html",
+      "bytes": 14225,
+      "sha256": "69d5a877ef71018cf31c23bbd4731efea02eb8d77642a8b584b09bebf3d08789",
+      "sourceSha256": "59e870c4810de14b21bbe1f61fabd830b2bc7ad033fdfa66ea39c4f2341e748b"
+    },
+    {
+      "path": "help/index.html",
+      "bytes": 8688,
+      "sha256": "4ce123888a54371500f14fef1445e1fcb6983a58ef0950eba61f1c9ac38dc034",
+      "sourceSha256": "0667995cef892a07ad2d6c1ea139329dd440e973da9e6515de77f0e24d5cbec9"
+    },
+    {
+      "path": "index.html",
+      "bytes": 84891,
+      "sha256": "00426e3e4477feeeb5a5f7c2d58d745cbd850371cfcea7ed0bd6b642c12227b1",
+      "sourceSha256": "2259d25667414fc195c953c9af2bf59a70bb796104be30538172e156f8411be7"
+    },
+    {
+      "path": "llms-full.txt",
+      "bytes": 34566,
+      "sha256": "a838fab88e455ed16826fa50ce14eac4b521d90483636781398147fb24abaa4a",
+      "sourceSha256": "a838fab88e455ed16826fa50ce14eac4b521d90483636781398147fb24abaa4a"
+    },
+    {
+      "path": "llms.txt",
+      "bytes": 2653,
+      "sha256": "a0b9237cf59a6d4d66600342b3cddb56432011d69feb34361557453941178621",
+      "sourceSha256": "a0b9237cf59a6d4d66600342b3cddb56432011d69feb34361557453941178621"
+    },
+    {
+      "path": "login/index.html",
+      "bytes": 4467,
+      "sha256": "679ad33bbf6d235d0299e2e940bccd3b5e2cb72a1dc0888bab2afc182a525b5c",
+      "sourceSha256": "de43375611e841a81394c706f6ad8c464b898cac3c401ddffb217aa8be34f3cc"
+    },
+    {
+      "path": "privacy/index.html",
+      "bytes": 6407,
+      "sha256": "6f99517bf51a5706c1c4310c8b865e6b7810dba75fbd127c2e3b6f9822941ac8",
+      "sourceSha256": "b72bfda10c6eea8f3f49a9e779926f794c21eb904c192bc64fff1dcede40a94f"
+    },
+    {
+      "path": "recover/index.html",
+      "bytes": 3396,
+      "sha256": "b77da6c7970e20085962b9c4ebb19f577607b75726a932df63e75268c74f473d",
+      "sourceSha256": "31168378d6193a11d66bc167053d3cad6fa073709c512004d5954ffcf978b0a3"
+    },
+    {
+      "path": "register/index.html",
+      "bytes": 4457,
+      "sha256": "5ad8cbdde9b6234d9ace134e73e0de9ff4565b73eb2b912d15d135d3d14adbd9",
+      "sourceSha256": "c452a30cb1688cfce2bf2fea81fd8bca6fdd59069a4b6f575ce659c0b00965b9"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 26,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+      "sourceSha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    {
+      "path": "shop/index.html",
+      "bytes": 10475,
+      "sha256": "00c49a267427bda02801b06a9f9e67d5349a57468f9253ee6c7bce42475812e9",
+      "sourceSha256": "5d6cd3cc9530713f1789c07ed7c4a923089d999d0d81a3664d0979c91732d612"
+    },
+    {
+      "path": "simulation.css",
+      "bytes": 38815,
+      "sha256": "e937b52eb40a0847a37d22d88531f26c84413608bf439fa808f84640fe46ee72",
+      "sourceSha256": "e937b52eb40a0847a37d22d88531f26c84413608bf439fa808f84640fe46ee72"
+    },
+    {
+      "path": "simulation.js",
+      "bytes": 37954,
+      "sha256": "d49bb554c721340f27e9f72c79b7ef39b3baf01cb517798839f0e8a6abec76da",
+      "sourceSha256": "d49bb554c721340f27e9f72c79b7ef39b3baf01cb517798839f0e8a6abec76da"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 1507,
+      "sha256": "4ccc2a2c05f13e9badbd8ed68a91bc3c675ecfc031282a6ef2490f0bad0f486f",
+      "sourceSha256": "4ccc2a2c05f13e9badbd8ed68a91bc3c675ecfc031282a6ef2490f0bad0f486f"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 12722,
+      "sha256": "622ad999e942bb4029cd1283d4ce23ac2dcde8254c17dfe78d332e95ba1d8401",
+      "sourceSha256": "622ad999e942bb4029cd1283d4ce23ac2dcde8254c17dfe78d332e95ba1d8401"
+    },
+    {
+      "path": "terms/index.html",
+      "bytes": 6021,
+      "sha256": "b7a51c7574afb3645bde810a1fd3a1b00af6d6dddd6e8ceb86e8029bea763a1e",
+      "sourceSha256": "0e99acb9de41a2fafdcd5bd12db9e34b95358b66325f028884190835edb0bdde"
+    },
+    {
+      "path": "utilities.js",
+      "bytes": 19515,
+      "sha256": "b39397d4aa1125cd3fcfd39cbc87d420d523838757e72d70d913d11337510797",
+      "sourceSha256": "b39397d4aa1125cd3fcfd39cbc87d420d523838757e72d70d913d11337510797"
+    },
+    {
+      "path": "video.js",
+      "bytes": 11903,
+      "sha256": "5678dda1fb42bc4a95c68911b8915c5d30373a573910f1f1a597df7aa309c650",
+      "sourceSha256": "5678dda1fb42bc4a95c68911b8915c5d30373a573910f1f1a597df7aa309c650"
+    }
+  ],
+  "verificationFiles": [
+    {
+      "path": "assets/fonts/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "sourceSha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "tests/creator-model.cjs",
+      "bytes": 4551,
+      "sha256": "17443d84fd01664ecd92116bb739dd132845d2dd52b5656efc97071f635383f4",
+      "sourceSha256": "17443d84fd01664ecd92116bb739dd132845d2dd52b5656efc97071f635383f4"
+    },
+    {
+      "path": "tests/demo-experience.cjs",
+      "bytes": 5664,
+      "sha256": "d740bd945a9479b67804a4ab0e5f38c3bd98fb8663233dd7048679ae59ea6d4d",
+      "sourceSha256": "d740bd945a9479b67804a4ab0e5f38c3bd98fb8663233dd7048679ae59ea6d4d"
+    },
+    {
+      "path": "tests/locked-interactions.cjs",
+      "bytes": 24057,
+      "sha256": "0cc9aaf37758acfa19152ba0a49c8fd18f73bac4f6de8c6886c55fe4a489b13a",
+      "sourceSha256": "0cc9aaf37758acfa19152ba0a49c8fd18f73bac4f6de8c6886c55fe4a489b13a"
+    },
+    {
+      "path": "tests/pointer-transitions.cjs",
+      "bytes": 4437,
+      "sha256": "b93b8f44da9ae0f09352097dd2aee147a8c3ce51771378322f15d77ca7efda4f",
+      "sourceSha256": "b93b8f44da9ae0f09352097dd2aee147a8c3ce51771378322f15d77ca7efda4f"
+    },
+    {
+      "path": "tests/simulator-state.cjs",
+      "bytes": 7691,
+      "sha256": "74dde5f1fd791a52b73f4a76185cdbf63856b4f5097e7a35db65a8f7f3277407",
+      "sourceSha256": "74dde5f1fd791a52b73f4a76185cdbf63856b4f5097e7a35db65a8f7f3277407"
+    },
+    {
+      "path": "tests/simulator-views.cjs",
+      "bytes": 4070,
+      "sha256": "e0671756546717c55d1665c004c2a182d56f77eea25590df285aec18f9777162",
+      "sourceSha256": "e0671756546717c55d1665c004c2a182d56f77eea25590df285aec18f9777162"
+    }
+  ]
+}

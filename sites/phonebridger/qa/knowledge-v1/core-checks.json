@@ -1,0 +1,31 @@
+{
+  "scope": "actual local modified shared core, not public deployment",
+  "tests": {
+    "command": "node --test tests/*.test.mjs",
+    "passed": 52,
+    "failed": 0,
+    "output": "core-test-output.txt"
+  },
+  "typescript": {
+    "command": "npx tsc --noEmit",
+    "exit": 0
+  },
+  "lint": {
+    "command": "npx eslint lib/niche-seo.ts lib/niche-seo-core.mjs lib/niche-schema-core.mjs scripts/phonebridger-preview.mjs tests/niche-seo.test.mjs tests/niche-seo-legacy.test.mjs",
+    "exit": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "exit": 0,
+    "packageCount": 9,
+    "warnings": "Existing vinext unsupported next webpack setting and chunk-size warnings retained; actual local production Worker smoke in core-regression-http.json"
+  },
+  "legacy": {
+    "fixedClock": "2026-10-06",
+    "sourceRevision": "e42107b468a05797aa864fd0bd42b871d3168b60",
+    "packages": 9,
+    "outputs": 45,
+    "byteEquality": true
+  },
+  "note": "Production build/Worker executed earlier in this same run on the same core implementation; only companion inline links changed afterwards."
+}

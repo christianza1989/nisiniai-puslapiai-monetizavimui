@@ -1,0 +1,256 @@
+[
+  {
+    "fonts": "loaded",
+    "h1": "A clear start.\nA smoother everyday setup.",
+    "headings": 5,
+    "images": [
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/c75ffcfd-eb4c-4fbc-a3e1-5ad009960397.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/6c50338f-d349-4ff9-b9ad-cf2f77b4ec93.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/51557432-771e-4207-a991-f37a532cfa8a.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/28b2c372-f22d-450f-848f-7e50c862a474.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      }
+    ],
+    "overflow": false,
+    "route": "/design/website/homepage/guides/",
+    "width": 1280
+  },
+  {
+    "fonts": "loaded",
+    "h1": "Set up PhoneBridger on Windows and Android",
+    "headings": 8,
+    "images": [
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/9eca6d72-03ef-41fd-9b64-635b1866cf92.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      }
+    ],
+    "overflow": false,
+    "route": "/design/website/homepage/guides/getting-started/",
+    "width": 1280
+  },
+  {
+    "fonts": "loaded",
+    "h1": "USB or Wi-Fi? Set up the connection that fits your desk",
+    "headings": 9,
+    "images": [
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/b5b69843-09fc-4df7-9008-7d4bcf87ef54.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      }
+    ],
+    "overflow": false,
+    "route": "/design/website/homepage/guides/usb-wifi/",
+    "width": 1280
+  },
+  {
+    "fonts": "loaded",
+    "h1": "Android permissions explained: mouse control, pairing and audio",
+    "headings": 10,
+    "images": [
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/1d515fcf-0f49-4626-9e80-e4305f5fd85e.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      }
+    ],
+    "overflow": false,
+    "route": "/design/website/homepage/guides/android-permissions/",
+    "width": 1280
+  },
+  {
+    "fonts": "loaded",
+    "h1": "Put your phone in the right place: positions and transition zones",
+    "headings": 8,
+    "images": [
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/content-assets/phonebridger/f0128636-c25b-43e1-bcf8-c1081bff5db5.webp"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      }
+    ],
+    "overflow": false,
+    "route": "/design/website/homepage/guides/phone-position/",
+    "width": 1280
+  },
+  {
+    "fonts": "loaded",
+    "h1": "Who prepares the PhoneBridger guides",
+    "headings": 5,
+    "images": [
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      },
+      {
+        "decoded": true,
+        "source": "http://127.0.0.1:4177/design/website/homepage/assets/brand-mark.svg"
+      }
+    ],
+    "overflow": false,
+    "route": "/design/website/homepage/editorial/",
+    "width": 1280
+  },
+  {
+    "fonts": "loaded",
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/",
+    "width": 390
+  },
+  {
+    "fonts": "loaded",
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/getting-started/",
+    "width": 390
+  },
+  {
+    "fonts": "loaded",
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/usb-wifi/",
+    "width": 390
+  },
+  {
+    "fonts": "loaded",
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/android-permissions/",
+    "width": 390
+  },
+  {
+    "fonts": "loaded",
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/phone-position/",
+    "width": 390
+  },
+  {
+    "fonts": "loaded",
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/editorial/",
+    "width": 390
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/",
+    "width": 320
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/getting-started/",
+    "width": 320
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/usb-wifi/",
+    "width": 320
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/android-permissions/",
+    "width": 320
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/phone-position/",
+    "width": 320
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/editorial/",
+    "width": 320
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/",
+    "width": 768
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/getting-started/",
+    "width": 768
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/usb-wifi/",
+    "width": 768
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/android-permissions/",
+    "width": 768
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/guides/phone-position/",
+    "width": 768
+  },
+  {
+    "images": true,
+    "overflow": false,
+    "route": "/design/website/homepage/editorial/",
+    "width": 768
+  }
+]

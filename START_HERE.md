@@ -1,5 +1,7 @@
 # Sukurk svetainę pagal domeną
 
+Savininko užsakytai platformai skaityk [DEMO_DATA_POLICY.md](DEMO_DATA_POLICY.md): final produkto tekstai nuo pradžių, testiniai tik atskiri duomenys. **Madbeauty 2026-10-05 išimtis:** paprašytas veikiantis vietinis meistro/kliento backend, testavimo registracija tik email; frontend-only planas pakeistas. Kitų domenų F1 apimtis lieka.
+
 Šis failas skirtas naujai Codex sesijai be ankstesnio pokalbio. Savininkas delegavo konkurentų tyrimą, siauro pasiūlymo hipotezę, dizainą, turinį, programavimą ir patikrą. Užduotis „sukurk svetainę domenui X“ reiškia įgyvendinti pilną **pirmos fazės** vietinį pilotą bendrame variklyje. Įprastų maketo, šrifto ar temų pasirinkimų savininko neklausinėk.
 
 Po BUSINESS parenk trumpą privatų `sites/<siteId>/ACQUISITION.md` pagal [klientų paieškos sutartį](ACQUISITION_CORE.md) ir [niche-client-acquisition](SKILLS/niche-client-acquisition/SKILL.md): iš kur atvesime konkrečius pirkėjus ar jų poreikius, koks signalas tinkamas ir kaip pamatuosime bandymą. Planas papildo SEO; vien domeno užduotis nepradeda siuntimo, socialinių žinučių, paskyrų pirkimo ar pardavimų sistemos realizacijos.

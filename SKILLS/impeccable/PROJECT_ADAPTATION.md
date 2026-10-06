@@ -1,5 +1,7 @@
 # Impeccable in the niche-site network
 
+Explicit platform/prototype work follows [DEMO_DATA_POLICY](../../DEMO_DATA_POLICY.md): final product screens and copy, isolated swappable fixtures. Competitor research must map inspected screens to adopted/improved/rejected decisions, not replace the selected brand with a competitor skin. A calendar/workspace needs stable navigation; a public autohide header is not a workspace default.
+
 The owner has delegated ordinary niche research, offer hypotheses, visual direction, concept selection and implementation. Project `AGENTS.md` and the user's instructions remain authoritative. This adaptation applies to the shared niche-site projects, not unrelated work.
 
 Read [the shared project skill contract](../PROJECT_CONTRACT.md) and use the actual active-domain paths. Upstream examples of approvals, external services, global PRODUCT/DESIGN files and delegation do not expand the authorized task. A concept decision is an agent decision when delegated; it is not human approval.

@@ -1,5 +1,7 @@
 # Nišinių svetainių tinklo darbo taisyklės
 
+**Platformos 2026-10-05:** [DEMO_DATA_POLICY.md](DEMO_DATA_POLICY.md) reikalauja final produkto tekstų ir atskirų testinių duomenų. Madbeauty savininkas tiesiogiai praplėtė iki veikiančio vietinio meistro paskyros / paslaugų / grafiko ir kliento rezervavimo backend; testavimo registracija tik el. paštu. Frontend-only planas pakeistas; kitoms nišoms F1 nesikeičia. [Backend priėmimas](docs/MADBEAUTY_BACKEND_ACCEPTANCE.md) atskirai nuo ankstesnio frontend testų.
+
 ## Naujos sesijos pradžia
 
 **Tyrimo gylis:** naujos nišos BUSINESS sprendimą grįsti realiu pirkimo ketinimo, Lietuvos ir užsienio konkurentų pasiūlymų, alternatyvių monetizavimo modelių, vykdymo/partnerių galimybių ir ekonomikos tyrimu pagal builderio business-validation. Išrinkti geriausiai pagrįstą modelį, dokumentuoti prieštaraujančius įrodymus bei kas pakeistų sprendimą. Nežinomos kainos, sąnaudos, maržos ir paklausa lieka prielaidomis ar nežinomybe. Gilus tyrimas vyksta prieš nišos kūrimą; įprastam straipsniui kartoti jį tik pasikeitus svarbiems faktams.

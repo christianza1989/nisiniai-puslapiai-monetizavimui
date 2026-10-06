@@ -5,6 +5,8 @@ description: "Choose a concrete commercial offer and phase-one demand test, rese
 
 # Niche Site Builder
 
+For an explicitly ordered platform/prototype read [the demo data policy](../../DEMO_DATA_POLICY.md): final product screens/copy with swappable fixtures, not demo-labelled pages. Honour current site-specific user scope; a full-platform exception does not expand other phase-one sites.
+
 For this network read [the shared project skill contract](../PROJECT_CONTRACT.md). It defines helper roles, current contacts, authorization and shared publication/media boundaries; imported helpers never replace this complete build workflow.
 
 Create a complete, useful phase-one site that helps a real customer decide and makes genuine interest measurable. Research is an input to design, not a report that substitutes for implementation. The shared core supplies domain isolation and SEO; each niche supplies its own audience, honest offer, visual identity and answer structure.

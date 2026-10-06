@@ -1,3 +1,4 @@
+import {isCityId} from './cities.mjs';
 import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
@@ -15,14 +16,14 @@ if(!contact.operatorName||!contact.email)throw Error('Approved central contact r
 const inventory=JSON.parse(await readFile(path.join(root,'../SCREEN_INVENTORY.json'),'utf8'));
 const heroMedia=JSON.parse(await readFile(path.join(publicRoot,'app-media.json'),'utf8')).assets.find(a=>a.id==='hero-violet');
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.ttf':'font/ttf','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8'};
-const modules=new Set(['config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs']);
+const modules=new Set(['cities.mjs','config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs']);
 export function resolveRoute(pathname,{profileResolver=null,contentResolver=null}={}){
   const canonical=pathname==='/'?'/':pathname.replace(/\/+$/,'');
   for(const s of inventory.screens.filter(s=>s.route)){
     const names=[];const re=new RegExp('^'+s.route.replace(/:([a-z]+)/g,(_,n)=>{names.push(n);return'([a-z0-9_-]+)';})+'$');const match=canonical.match(re);if(!match)continue;
     const params=Object.fromEntries(names.map((n,i)=>[n,match[i+1]]));
     if(params.service&&!TAXONOMY.some(s=>s.id===params.service))return null;
-    if(params.city&&!['vilnius','kaunas','klaipeda','siauliai','panevezys','alytus','marijampole','palanga'].includes(params.city))return null;
+    if(params.city&&!isCityId(params.city))return null;
     if(s.id==='content-guide'&&!contentResolver?.(params.slug))return null;
     if(['public-practitioner','public-venue'].includes(s.id)){
       if(params.slug.startsWith('provider_')){const p=profileResolver?.(params.slug);if(!p||(s.id==='public-practitioner'&&p.kind!=='solo')||(s.id==='public-venue'&&p.kind!=='salon'))return null;}

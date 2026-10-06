@@ -1,3 +1,4 @@
+import {CITY_NAMES} from '../prototype/cities.mjs';
 import {randomId,reject} from './primitives.mjs';
 import {availability,option,find,plus,overlaps,dayOffsetForDate} from './availability.mjs';
 import {localInstant,makeClock,TAXONOMY} from '../prototype/demo-model.mjs';
@@ -5,7 +6,7 @@ import {mediaPublic} from './primitives.mjs';
 const copy=x=>structuredClone(x);
 const text=(v,max=100)=>{if(typeof v!=='string'||!v.trim()||v.trim().length>max)reject('INVALID_INPUT','Patikrinkite privalomus teksto laukus.');return v.trim();};
 const number=(v,min,max)=>{if(!Number.isInteger(v)||v<min||v>max)reject('INVALID_INPUT','Netinkama skaitinė reikšmė.');return v;};
-const cities=['Vilnius','Kaunas','Klaipėda','Šiauliai','Panevėžys','Alytus','Marijampolė','Palanga'];
+const cities=CITY_NAMES;
 const canonical=v=>Array.isArray(v)?v.map(canonical):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonical(v[k])])):v;
 export function createPlatform(store){
   const clock=()=>makeClock(new Date(store.clock()).toISOString());

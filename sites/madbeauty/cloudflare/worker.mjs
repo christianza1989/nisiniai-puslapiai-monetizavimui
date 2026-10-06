@@ -1,3 +1,4 @@
+import {isCityId} from '../prototype/cities.mjs';
 import {MadbeautyPlatform} from './platform-object.mjs';
 import {contentProjection,contact,escape} from './content.mjs';
 import template from '../prototype/public/app.html';
@@ -51,7 +52,7 @@ export default {
   const canonical=path==='/'?'/':path.replace(/\/+$/,'');if(path!==canonical)return Response.redirect(url.origin+canonical+url.search,308);
   let route=matchRoute(path),page=content.pages.find(p=>(p.slug?'/'+p.slug:'/')===path),profile=null;
   if(route?.params.service&&!TAXONOMY.some(s=>s.id===route.params.service))route=null;
-  if(route?.params.city&&!['vilnius','kaunas','klaipeda','siauliai','panevezys','alytus','marijampole','palanga'].includes(route.params.city))route=null;
+  if(route?.params.city&&!isCityId(route.params.city))route=null;
   if(path.startsWith('/gidai/')&&!page)route=null;
   if(route&&['public-practitioner','public-venue'].includes(route.id)){
    if(!route.params.slug.startsWith('provider_'))route=null;

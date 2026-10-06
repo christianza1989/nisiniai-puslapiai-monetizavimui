@@ -1,3 +1,4 @@
+import {CITY_NAMES} from '/cities.mjs';
 import {esc,icon,link,btn,money,time,date,field,textarea,select,badge,status,hhmm,minute,photo,empty,crumbs,errorHTML,searchHash,userError} from './ui.mjs';
 import {serviceCard} from './public-views.mjs';
 import {guides} from './content.mjs';
@@ -71,7 +72,7 @@ async function professionalView(ctx,path,d){
 }
 function onboarding(ctx,d){const o=d.organizations[0],step=ctx.state.onboardingStep||0,v=ctx.state.onboarding;const names=['Veikla','Profilis ir vieta','Paslaugos','Grafikas','Medija ir būdas','Peržiūra'];let form='';
   if(step===0)form=select('Veiklos tipas','kind',[['solo','Solo meistras'],['salon','Salonas su komanda']],v.kind||o.kind)+field('Prekės ženklas / vardas','name',v.name||o.name,'text','required maxlength="100"');
-  if(step===1)form=textarea('Veiklos aprašymas','bio',v.bio||o.bio,'required maxlength="600"')+select('Miestas','city',['Vilnius','Kaunas','Klaipėda','Šiauliai','Panevėžys','Alytus','Marijampolė','Palanga'].map(c=>[c,c]),v.city||o.city)+`<p class="hint">Nurodyk savo veiklos vietą ir patikrink viešai rodomą informaciją.</p>`;
+  if(step===1)form=textarea('Veiklos aprašymas','bio',v.bio||o.bio,'required maxlength="600"')+select('Miestas','city',CITY_NAMES.map(c=>[c,c]),v.city||o.city)+`<p class="hint">Nurodyk savo veiklos vietą ir patikrink viešai rodomą informaciją.</p>`;
   if(step===2)form=`<p>${d.services.map(s=>esc(s.label)+' · '+money(s.priceMinor)+' · '+s.durationMin+' min.').join('<br>')}</p>${link('/meistrui/paslaugos','Atidaryti paslaugų redaktorių','link')}<label class="check-label"><input type="checkbox" name="servicesChecked" required ${v.servicesChecked?'checked':''}>Peržiūrėjau variantus ir priedus</label>`;
   if(step===3)form=`<p>${d.schedules.map(s=>hhmm(s.startMin)+'–'+hhmm(s.endMin)+' · pertrauka '+hhmm(s.breakStartMin)+'–'+hhmm(s.breakEndMin)).join('<br>')}</p>${link('/meistrui/grafikas','Redaguoti pamainą','link')}<label class="check-label"><input type="checkbox" name="scheduleChecked" required ${v.scheduleChecked?'checked':''}>Peržiūrėjau grafiko taisykles</label>`;
   if(step===4)form=`<h2 style="font-size:26px">Tavo darbai ir vieta</h2><p>Pridėk portretą, darbų ir darbo aplinkos vaizdus savo galerijoje. ${link('/meistrui/galerija','Atidaryti galeriją','link')}</p><p>Klientai rezervuoja pagal tavo paslaugų variantus ir darbo grafiką.</p><label class="check-label"><input type="checkbox" name="rightsChecked" required ${v.rightsChecked?'checked':''}>Turiu pateiktų vaizdų viešinimo teisę</label>`;

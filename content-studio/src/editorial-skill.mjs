@@ -7,7 +7,7 @@ export const EDITORIAL_SKILL_DIR = path.resolve(import.meta.dirname, '..', '..',
 // Load once per job: a batch must use one instruction snapshot even if files change.
 export async function loadEditorialSkill(mode, directory = process.env.STUDIO_EDITORIAL_SKILL_DIR || EDITORIAL_SKILL_DIR) {
   if (!['plan', 'draft'].includes(mode)) throw new Error('Nežinomas redakcinio skill režimas.');
-  const files = ['../PROJECT_CONTRACT.md', 'SKILL.md', 'references/studio-contract.md', 'references/quality-review.md', 'references/network-linking.md', 'references/media-workflow.md'];
+  const files = ['../PROJECT_CONTRACT.md', 'SKILL.md', 'references/studio-contract.md', 'references/quality-review.md', 'references/network-linking.md', 'references/media-workflow.md', 'references/content-workflow.md'];
   if (mode === 'plan') files.push('references/niche-adaptation.md');
   const sections = await Promise.all(files.map(async file => {
     try {

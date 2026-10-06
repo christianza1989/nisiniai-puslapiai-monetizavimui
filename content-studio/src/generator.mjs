@@ -3,8 +3,9 @@ import { existsSync } from 'node:fs';
 import { mkdir, readFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { ROOT, DATA, getSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
+import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
+import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -49,21 +50,18 @@ const contextForSite = site => ({
   id: site.id, domain: site.canonicalHost, name: site.name, locale: site.locale,
   timezone: site.timezone, stage: site.stage, offerHypothesis: site.offer, audience: site.audience,
   verifiedFacts: site.facts, suppliedContact: site.contact,
+  contentPolicy: contentPolicy(site.contentPolicy, site.timezone),
   existingPages: site.pages.map(page => ({ id: page.id, type: page.type, slug: page.slug, title: page.title, intent: page.intent,
     cluster: page.cluster || '', pillarPageId: page.pillarPageId || '', publishAt: page.publishAt,
     approved: Boolean(page.publishedRevision), status: page.status }))
 });
 
-async function planSite(siteId, months = 0, skill) {
+async function planSite(siteId, months = 0, skill, requestedCount = null) {
   const site = await getSite(siteId);
-  const count = months ? '8-12' : '5-10';
-  const today = new Date();
-  const dateParts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: site.timezone || 'Europe/Vilnius', year: 'numeric', month: '2-digit', day: '2-digit' })
-    .formatToParts(today).map(({ type, value }) => [type, value]));
-  const localDate = `${dateParts.year}-${dateParts.month}-${dateParts.day}`;
-  const horizon = new Date(today);
-  horizon.setUTCMonth(horizon.getUTCMonth() + 6);
-  const instruction = `Autonomously choose ${count} distinct useful new URLs for ${months ? 'a six-month calendar' : 'an initial demand-test site'}. Use the site's locale. Include home only if absent. Today in ${site.timezone || 'Europe/Vilnius'} is ${localDate}. ${months ? `Every new publishDate must be at least seven days after today and no later than ${horizon.toISOString().slice(0, 10)}; spread substantive pages across this horizon.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
+  const policy = contentPolicy({ ...site.contentPolicy, ...(months ? { months } : {}) }, site.timezone);
+  const count = requestedCount || (months ? Math.min(24, planningWindow(policy).target) : '5-10');
+  const localDate = scheduleDate(Date.now(), policy.timezone);
+  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? `a ${policy.months}-month calendar with target ${policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}` : 'an initial demand-test site'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; spread substantive pages across this horizon, respect existing dates and seasonal dependencies. Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
   const prompt = buildEditorialPrompt(skill, { mode: 'plan', instruction, siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() } });
   const result = await codexJson(prompt, 'plan-result.schema.json');
   if (!Array.isArray(result.pages)) throw new Error('Codex negrąžino puslapių plano.');
@@ -116,17 +114,30 @@ async function draftBatch(siteId, jobId, skill) {
 }
 
 async function autopilot(siteId, jobId, skill) {
-  const site = await getSite(siteId);
-  const horizon = new Date(); horizon.setUTCMonth(horizon.getUTCMonth() + 6);
-  const upcoming = site.pages.filter(page => page.type !== 'home' && page.status !== 'revoked'
-    && Date.parse(page.publishAt) > Date.now() && Date.parse(page.publishAt) <= horizon.getTime());
-  let plan = { added: 0, total: site.pages.length, skipped: 'Esamas šešių mėnesių planas pakankamas.' };
-  if (!site.pages.some(page => page.type === 'home') || upcoming.length < 8) {
-    await updateJob(jobId, { detail: 'Planuojamos temos, klasteriai ir sezoninės datos šešiems mėnesiams.' });
-    plan = await planSite(siteId, 6, skill);
+  let site = await getSite(siteId);
+  const policy = contentPolicy(site.contentPolicy, site.timezone), window = planningWindow(policy);
+  const countUpcoming = value => value.pages.filter(page => ['guide','article'].includes(page.type) && page.status !== 'revoked' && Date.parse(page.publishAt) > Date.now() && scheduleDate(page.publishAt, policy.timezone) <= window.end).length;
+  let plan = { added: 0, total: site.pages.length, targetArticles: window.target };
+  // Bound work and stop on lack of progress; no repeated filler prompts to hit a quota.
+  for (let batch = 0; batch < Math.ceil(window.target / 24); batch++) {
+    const remaining = window.target - countUpcoming(site);
+    if (remaining <= 0 && site.pages.some(page => page.type === 'home')) break;
+    await updateJob(jobId, { detail: `Planuojama partija ${batch + 1}; tikslas ${window.target} straipsnių per ${policy.months} mėn.` });
+    const next = await planSite(siteId, policy.months, skill, Math.min(24, Math.max(remaining, 1)));
+    plan.added += next.added; plan.total = next.total;
+    if (!next.added) break;
+    site = await getSite(siteId);
   }
+  plan.remainingArticles = Math.max(0, window.target - countUpcoming(site));
   await updateJob(jobId, { detail: `Plane ${plan.total} puslapių, pridėta ${plan.added}; rengiami tušti juodraščiai.` });
-  const drafts = await draftBatch(siteId, jobId, skill);
+  const drafts = { generated: 0, failed: 0, failures: [] };
+  const emptyCount = (await getSite(siteId)).pages.filter(page => page.body.length === 0 && page.status !== 'revoked').length;
+  for (let batch = 0; batch < Math.ceil(emptyCount / 24); batch++) {
+    const next = await draftBatch(siteId, jobId, skill);
+    drafts.generated += next.generated; drafts.failed += next.failed; drafts.failures.push(...(next.failures || []));
+    if (next.failed || !next.generated) break;
+  }
+  drafts.remaining = (await getSite(siteId)).pages.filter(page => page.body.length === 0 && page.status !== 'revoked').length;
   return { plan, drafts, nextGate: 'Faktų ir šaltinių patikra prieš viešinimą' };
 }
 
@@ -149,6 +160,10 @@ async function generateImage(siteId, input) {
 
 export async function enqueue(type, siteId, pageId, input = {}) {
   if(['autopilot','plan','draft','draft-batch'].includes(type)&&(await getSite(siteId)).schemaVersion===2)throw new Error('V2 generavimo kontraktas dar nepriimtas. Importuokite arba redaguokite struktūrizuotą v2 juodraštį; legacy generatorius jo neperrašo.');
+  if (['autopilot','plan','draft','draft-batch'].includes(type)) {
+    const site = await getSite(siteId);
+    if (site.contentWorkflowVersion !== 1) await editSite(siteId, { contentPolicy: contentPolicy(site.contentPolicy, site.timezone) });
+  }
   return createJob(type, siteId, pageId).then(job => {
     const work = async () => {
       await updateJob(job.id, { status: 'running', startedAt: new Date().toISOString() });
@@ -157,7 +172,7 @@ export async function enqueue(type, siteId, pageId, input = {}) {
           ? await loadEditorialSkill(['autopilot', 'plan'].includes(type) ? 'plan' : 'draft') : null;
         if (skill) await updateJob(job.id, { editorialSkill: skill.metadata });
         const detail = type === 'autopilot' ? await autopilot(siteId, job.id, skill)
-          : type === 'plan' ? await planSite(siteId, Number(input.months) === 6 ? 6 : 0, skill)
+          : type === 'plan' ? await planSite(siteId, input.months ? contentPolicy({ ...((await getSite(siteId)).contentPolicy), months: Number(input.months) }).months : 0, skill)
           : type === 'draft' ? await draftPage(siteId, pageId, skill)
           : type === 'draft-batch' ? await draftBatch(siteId, job.id, skill)
           : type === 'network-check' ? await verifyNetworkLinks(siteId, pageId)

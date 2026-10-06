@@ -11,6 +11,8 @@ Build pages that support a concrete business demand test, then measure whether c
 
 ## Inputs and operating modes
 
+For every site's scheduling, link finalization, agent review and release use [the common content workflow](references/content-workflow.md). Business facts and CTA targets vary; the pipeline is shared. A studio release does not prove deployment.
+
 Read the site brief, existing page inventory and task's current date, timezone, locale and planning horizon. Use project `AGENTS.md`, `SEO_GEO_CORE.md` and `sites/<siteId>.md` when accessible. A domain name alone does not prove ownership, location, operational capacity or even the intended offer.
 
 Load [niche adaptation](references/niche-adaptation.md) for research and calendar work. Load [quality review](references/quality-review.md) before returning a plan or draft. For studio JSON tasks also load [studio contract](references/studio-contract.md). The runtime may inject these files directly; do not assume they were loaded through skill discovery.

@@ -710,7 +710,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "cb77034d13d08c9c21c10bd2d055b8201dd0a96cdf8b1f6f3122414ec24bfcfd"
+      "entrySha256": "8aab9d7603783a219d898e83f32da8121ace1de8ddf4426a095e054319449a65"
     },
     {
       "id": "niche-site-audit",
@@ -721,7 +721,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "7ee071f6f38fe3db047983586b4bc4d0e17b89d842618a2f74eb5e18c84c5b7c"
+      "entrySha256": "77dc16db748088e80e961a8f6bb8b705f5cf41954c8ff6e3f1b0bc37aae6529e"
     },
     {
       "id": "niche-site-builder",
@@ -732,7 +732,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "3b449f8212e5f7189f73e745f088d21c12cca198f9846f6ea95228c10db34098"
+      "entrySha256": "61f114461337b26cbbfa2de6b11a0be713831d251a5bb283dddc3f518fa8fd49"
     },
     {
       "id": "on-page-seo-checklist",

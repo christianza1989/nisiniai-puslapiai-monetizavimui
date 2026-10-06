@@ -57,6 +57,8 @@ For a new site or rejected visual direction, compare a small number of genuinely
 
 ## 4. Implement the complete journey
 
+Every new site must be content-ready from its first local delivery. Read project [CONTENT_CORE.md](../../CONTENT_CORE.md) and the mandatory [build contract](../../CORE_BUILD_CONTRACT.md#turinio-priėmimas-privalomas-kiekvienai-naujai-svetainei). Enable its private contentPolicy/workflow v1, prepare the seasonal plan and wire the shared package importer, guide index and article layout; do not hardcode future editorial text or dates. Record `sites/<siteId>/CONTENT_READINESS.md` with actual private-preview, import and isolated HTTP before/after publishAt evidence for pages, prepared links and SEO/LLM outputs. Use real registered service/filter targets through a site adapter where needed. A calendar or shared unit test does not prove this site's integration. Local completion requires this path; future ungenerated drafts and real deployment remain explicit separate states.
+
 Carry useful text from the approved content package into the renderer; avoid hardcoded factual copy that drifts from the approved revision, schema or LLM output. All displayed claims and links must respect the same host, approval and publishAt predicates. Static UI labels can belong to components; business facts belong to the site's content.
 
 Build homepage and supporting pages, not just an attractive first screen. Remove placeholder text, fake buttons, empty categories, self-links and routes to future drafts. Existing content with an unresolved claim remains private; publishable factual pages can proceed independently. Design does not turn an unverified offer into a functioning service.

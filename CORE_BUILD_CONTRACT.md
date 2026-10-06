@@ -36,6 +36,19 @@
 
 Paleidimo komandą ir bindingų pavadinimus tikrinti aktualiame package/runtime. Neskaityti ir nekopijuoti prisijungimų TXT į paketus, GUI, promtus ar viešą dokumentaciją. Testiniai kontaktai/užklausos lieka izoliuoti; neištrinti realių duomenų. Build/import langai ir procesai derinami per `WORKSTREAMS.md`.
 
+## Turinio priėmimas privalomas kiekvienai naujai svetainei
+
+Taikyti [CONTENT_CORE.md](CONTENT_CORE.md) nuo pirmo paketo, nepriklausomai nuo domeno ar dizaino. Iki vietinio užbaigimo agentas parengia `sites/<siteId>/CONTENT_READINESS.md` su PASS/FAIL/UNVERIFIED ir tikrais įrodymais:
+
+- [ ] Tas pats stabilus siteId studijoje, pakete ir viešame maršrute; įjungta contentPolicy / contentWorkflowVersion=1 ir nišai pagrįstas sezoninis planas.
+- [ ] Veikia paketo priėmimas / importas ir gidų indeksas bei straipsnio maketas su vaizdais, atribucija, datomis, šaltiniais ir tikrais nišos CTA. Turinio tekstai ar publikavimo datos nėra nukopijuoti į rendererio hardcode.
+- [ ] Privatus juodraštis atsidaro studijos peržiūroje, bet nerodomas viešame URL, meniu, sitemap, schemose ar LLM išvestyse.
+- [ ] Savo izoliuotoje peržiūroje faktiniais HTTP bandymais patikrintas jau įdiegtos patvirtintos būsimos revizijos ir jos paruoštų nuorodų elgesys prieš / po publishAt. Nekurti antro schedulerio ar publikavimo predikato; nelaikyti kalendoriaus įrašo šio bandymo įrodymu.
+- [ ] Peržiūra, vidiniai / išoriniai / tarpdomeniniai ryšiai ir WebP šeimos naudoja bendrus vartus. Neveikiančio katalogo/filtro nuorodos nepublikuojamos; jei reikia adapterio, tikri registruoti tikslai ir jų eligibility patikrinti.
+- [ ] Release patikrintas bendru verify-content-release CLI; įrašyti package SHA, source versija ir lokalaus importo / HTTP įrodymai. Privatus review manifest nepatenka į viešą svetainę.
+
+Trūkstant šio kelio svetainė dar nėra vietiškai užbaigta. Tikras production deployment, DNS, indeksavimas ir paklausa lieka atskiri vartai. Pusmečio plano paruošimas nereiškia, kad visi jo būsimi tekstai jau sugeneruoti, peržiūrėti ar vieši; faktinį parengtų juodraščių / release kiekį įrašyti aiškiai. A–Z auditui šiuos įrodymus priskirti jo taikomiems publikavimo, URL, ryšių ir turinio kriterijams, neperrašant istorinių auditų.
+
 ## Kokybės kartelė
 
 Tikslas — visi taikomi **local** kriterijai PASS, o vizualinis sprendimas įvertintas atskirai. Local 10/10 nėra tikro paleidimo, teisinės atitikties, pasaulinio dizaino reitingo ar paklausos pažadas. Tikros produkcinės/DNS/operatoriaus/privatumo ir paklausos spragos lieka launch/operations stulpeliuose. Neaiški didinimo patikra negali virsti PASS vien dėl nurodyto tikslo.

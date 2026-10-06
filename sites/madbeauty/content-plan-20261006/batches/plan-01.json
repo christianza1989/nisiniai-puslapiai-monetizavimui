@@ -53,6 +53,23 @@
     },
     {
       "type": "guide",
+      "slug": "gidai/veido-prieziuros-paslaugos-pasirinkimas",
+      "title": "Veido priežiūros paslauga: kaip pasirinkti konsultaciją ir procedūros apimtį?",
+      "description": "Atskirti konsultaciją, valymą ir kitus priežiūros komponentus prieš pasirenkant pasiūlymą.",
+      "intent": "Atskirti konsultaciją, valymą ir kitus priežiūros komponentus prieš pasirenkant pasiūlymą.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Pasirinkimo žemėlapis su teikėjo patvirtinamais komponentais, be individualios diagnozės.",
+      "cluster": "face",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "veido prieziuros paslaugos pasirinkimas",
+        "veido priežiūros paslauga kaip pasirinkti konsultaciją ir procedūros apimtį"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
       "slug": "gidai/seno-lako-nuemimas-registruojantis",
       "title": "Ar registruojantis reikia pridėti seno lako nuėmimą?",
       "description": "Nurodyti esamą dangą ir išsiaiškinti, ar jos nuėmimas įtrauktas.",
@@ -64,24 +81,75 @@
         "seno lako nuemimas registruojantis",
         "ar registruojantis reikia pridėti seno lako nuėmimą"
       ],
-      "publishDate": "2026-10-20",
+      "publishDate": "2026-10-22",
       "seasonalHook": "",
       "networkLinks": []
     },
     {
       "type": "guide",
-      "slug": "gidai/gelinis-lakavimas-ar-nagu-stiprinimas",
-      "title": "Gelinis lakavimas ar nagų stiprinimas: ką reiškia pasiūlymas?",
-      "description": "Atskirti spalvos padengimą nuo papildomos konstrukcijos ar bazės paslaugos.",
-      "intent": "Atskirti spalvos padengimą nuo papildomos konstrukcijos ar bazės paslaugos.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Paslaugos sudėties palyginimas be gydymo ar universalaus tinkamumo pažadų.",
-      "cluster": "nails",
-      "pillarSlug": "gidai/manikiuras-ar-gelinis-lakavimas",
+      "slug": "gidai/masazo-paslaugos-pasirinkimas",
+      "title": "Masažo pasirinkimas: kūno ar veido masažas, apimtis ir trukmė?",
+      "description": "Pasirinkti estetinės ar atsipalaidavimo paslaugos apimtį pagal norimas zonas ir patvirtintą teikėjo aprašymą.",
+      "intent": "Pasirinkti estetinės ar atsipalaidavimo paslaugos apimtį pagal norimas zonas ir patvirtintą teikėjo aprašymą.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Zonų ir komponentų pasirinkimo kortelė, atskiriant negydomąją paslaugą nuo sveikatos paslaugos.",
+      "cluster": "massage",
+      "pillarSlug": "",
       "sourceQueries": [
-        "gelinis lakavimas ar nagu stiprinimas",
-        "gelinis lakavimas ar nagų stiprinimas ką reiškia pasiūlymas"
+        "masazo paslaugos pasirinkimas",
+        "masažo pasirinkimas kūno ar veido masažas, apimtis ir trukmė"
       ],
-      "publishDate": "2026-10-22",
+      "publishDate": "2026-10-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kaip-pasirinkti-plauku-paslauga",
+      "title": "Plaukų paslaugos pasirinkimas: kirpimas, dažymas ar konsultacija?",
+      "description": "Pasirinkti tinkamą pradinę paslaugą pagal norimą pokytį ir turimą informaciją.",
+      "intent": "Pasirinkti tinkamą pradinę paslaugą pagal norimą pokytį ir turimą informaciją.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Pasirinkimo medis su konsultacijos keliu sudėtingam ar neaiškiam pokyčiui.",
+      "cluster": "hair",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "kaip pasirinkti plauku paslauga",
+        "plaukų paslaugos pasirinkimas kirpimas, dažymas ar konsultacija"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/antakiu-ir-blakstienu-paslaugu-gidas",
+      "title": "Antakių ir blakstienų paslaugos: kaip išskaidyti norimą rezultatą?",
+      "description": "Atskirti korekciją, spalvą, laminavimą ir kitus paslaugų pavadinimus.",
+      "intent": "Atskirti korekciją, spalvą, laminavimą ir kitus paslaugų pavadinimus.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Pasirinkimo lentelė pagal norimą formos, spalvos ar vizualios krypties pokytį.",
+      "cluster": "brows",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "antakiu ir blakstienu paslaugu gidas",
+        "antakių ir blakstienų paslaugos kaip išskaidyti norimą rezultatą"
+      ],
+      "publishDate": "2026-10-29",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/pedikiuro-paslaugos-variantai",
+      "title": "Pedikiūro paslaugų variantai: nagai, pėdos ar padengimas?",
+      "description": "Pasirinkti paslaugos apimtį atskiriant nagų ir pėdų priežiūrą nuo dangos.",
+      "intent": "Pasirinkti paslaugos apimtį atskiriant nagų ir pėdų priežiūrą nuo dangos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Trijų dalių paslaugos pasirinkimo lentelė, be medicininio pedikiūro pažadų.",
+      "cluster": "pedicure",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "pedikiuro paslaugos variantai",
+        "pedikiūro paslaugų variantai nagai, pėdos ar padengimas"
+      ],
+      "publishDate": "2026-10-31",
       "seasonalHook": "",
       "networkLinks": []
     },
@@ -98,7 +166,75 @@
         "nagu dizaino pasirinkimo gidas",
         "kaip išsirinkti nagų dizainą, kurį meistras galės tiksliai įvertinti"
       ],
-      "publishDate": "2026-10-27",
+      "publishDate": "2026-11-03",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/pirmines-veido-prieziuros-konsultacijos-klausimai",
+      "title": "Ką aptarti per pirmą veido priežiūros konsultaciją?",
+      "description": "Perduoti aktualią ankstesnių procedūrų ir naudojamų priemonių informaciją specialistui, nesigydant pagal interneto tekstą.",
+      "intent": "Perduoti aktualią ankstesnių procedūrų ir naudojamų priemonių informaciją specialistui, nesigydant pagal interneto tekstą.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Trumpas konsultacijos klausimynas su nežinomos informacijos laukais.",
+      "cluster": "face",
+      "pillarSlug": "gidai/veido-prieziuros-paslaugos-pasirinkimas",
+      "sourceQueries": [
+        "pirmines veido prieziuros konsultacijos klausimai",
+        "ką aptarti per pirmą veido priežiūros konsultaciją"
+      ],
+      "publishDate": "2026-11-05",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-dazymo-konsultacija",
+      "title": "Plaukų dažymo konsultacija: ką pasiruošti ir ką aptarti?",
+      "description": "Aptarti galimą rezultatą ir darbų apimtį prieš pasirenkant dažymo variantą.",
+      "intent": "Aptarti galimą rezultatą ir darbų apimtį prieš pasirenkant dažymo variantą.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Konsultacijos klausimynas su norimos ir nepageidaujamos krypties laukais.",
+      "cluster": "hair",
+      "pillarSlug": "gidai/kaip-pasirinkti-plauku-paslauga",
+      "sourceQueries": [
+        "plauku dazymo konsultacija",
+        "plaukų dažymo konsultacija ką pasiruošti ir ką aptarti"
+      ],
+      "publishDate": "2026-11-07",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nugaros-ar-viso-kuno-masazo-apimtis",
+      "title": "Nugaros ar viso kūno masažas: kaip sutarti zonas ir laiką?",
+      "description": "Išsiaiškinti, kurios zonos įeina į konkretų pasiūlymą ir kaip skaičiuojamas vizito laikas.",
+      "intent": "Išsiaiškinti, kurios zonos įeina į konkretų pasiūlymą ir kaip skaičiuojamas vizito laikas.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Zonų pažymėjimo ir įtraukta / neįtraukta lentelė.",
+      "cluster": "massage",
+      "pillarSlug": "gidai/masazo-paslaugos-pasirinkimas",
+      "sourceQueries": [
+        "nugaros ar viso kuno masazo apimtis",
+        "nugaros ar viso kūno masažas kaip sutarti zonas ir laiką"
+      ],
+      "publishDate": "2026-11-10",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienu-laminavimo-variantai",
+      "title": "Blakstienų laminavimo variantai: ką patikrinti pasiūlyme?",
+      "description": "Išsiaiškinti dažymo ir kitų priedų įtraukimą prieš renkantis variantą.",
+      "intent": "Išsiaiškinti dažymo ir kitų priedų įtraukimą prieš renkantis variantą.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Konkretaus teikėjo meniu išskaidymo pavyzdys, patikrintas prieš rašymą.",
+      "cluster": "brows",
+      "pillarSlug": "gidai/antakiu-ir-blakstienu-paslaugu-gidas",
+      "sourceQueries": [
+        "blakstienu laminavimo variantai",
+        "blakstienų laminavimo variantai ką patikrinti pasiūlyme"
+      ],
+      "publishDate": "2026-11-12",
       "seasonalHook": "",
       "networkLinks": []
     },
@@ -114,108 +250,6 @@
       "sourceQueries": [
         "nagu forma ir ilgis",
         "nagų forma ir ilgis kaip apibūdinti norimą rezultatą"
-      ],
-      "publishDate": "2026-10-29",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/trumpu-nagu-dizaino-pasirinkimas",
-      "title": "Trumpų nagų dizainas: kaip pritaikyti patikusią idėją?",
-      "description": "Aptarti, ką pakeisti ilgiems nagams skirtoje nuotraukoje, kai norimas trumpas ilgis.",
-      "intent": "Aptarti, ką pakeisti ilgiems nagams skirtoje nuotraukoje, kai norimas trumpas ilgis.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Trys originalios idėjos su akcentų ir laisvo ploto palyginimu.",
-      "cluster": "design",
-      "pillarSlug": "gidai/nagu-dizaino-pasirinkimo-gidas",
-      "sourceQueries": [
-        "trumpu nagu dizaino pasirinkimas",
-        "trumpų nagų dizainas kaip pritaikyti patikusią idėją"
-      ],
-      "publishDate": "2026-10-31",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/prancuziskas-ar-vienos-spalvos-manikiuras",
-      "title": "Prancūziškas ar vienos spalvos manikiūras: ką palyginti?",
-      "description": "Pasirinkti apimtį ir rezultatą tarp dviejų konkrečių dizaino variantų.",
-      "intent": "Pasirinkti apimtį ir rezultatą tarp dviejų konkrečių dizaino variantų.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Palyginimo kortelė su linijos pločiu, nagų skaičiumi ir kainos patvirtinimu.",
-      "cluster": "design",
-      "pillarSlug": "gidai/nagu-dizaino-pasirinkimo-gidas",
-      "sourceQueries": [
-        "prancuziskas ar vienos spalvos manikiuras",
-        "prancūziškas ar vienos spalvos manikiūras ką palyginti"
-      ],
-      "publishDate": "2026-11-03",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/nagu-spalvos-nuotrauka-ir-apsvietimas",
-      "title": "Kodėl nagų spalva nuotraukoje ir salone gali skirtis?",
-      "description": "Naudoti nuotrauką kaip orientyrą ir sutarti spalvos pavyzdį realiame apšvietime.",
-      "intent": "Naudoti nuotrauką kaip orientyrą ir sutarti spalvos pavyzdį realiame apšvietime.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. To paties iliustracinio atspalvio trijų apšvietimų schema.",
-      "cluster": "design",
-      "pillarSlug": "gidai/nagu-dizaino-pasirinkimo-gidas",
-      "sourceQueries": [
-        "nagu spalvos nuotrauka ir apsvietimas",
-        "kodėl nagų spalva nuotraukoje ir salone gali skirtis"
-      ],
-      "publishDate": "2026-11-05",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/nagu-dizaino-apimtis-kainoje",
-      "title": "Kiek nagų su dizainu: kaip sutarti papildomų darbų apimtį?",
-      "description": "Nurodyti akcentų skaičių ir techniką, kad dizaino priedas nebūtų dviprasmis.",
-      "intent": "Nurodyti akcentų skaičių ir techniką, kad dizaino priedas nebūtų dviprasmis.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. 10 nagų pažymėjimo ruošinys, skirtas konkrečiam pasiūlymui gauti.",
-      "cluster": "design",
-      "pillarSlug": "gidai/nagu-dizaino-pasirinkimo-gidas",
-      "sourceQueries": [
-        "nagu dizaino apimtis kainoje",
-        "kiek nagų su dizainu kaip sutarti papildomų darbų apimtį"
-      ],
-      "publishDate": "2026-11-10",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/kito-meistro-dangos-informacija",
-      "title": "Keičiate nagų meistrą: kokią informaciją apie seną dangą perduoti?",
-      "description": "Perduoti žinomą sistemos ir ankstesnio darbo informaciją, kai naujas meistras jos nematė.",
-      "intent": "Perduoti žinomą sistemos ir ankstesnio darbo informaciją, kai naujas meistras jos nematė.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Trumpa perdavimo kortelė su aiškiu „nežinau“ pasirinkimu.",
-      "cluster": "nails",
-      "pillarSlug": "gidai/manikiuras-ar-gelinis-lakavimas",
-      "sourceQueries": [
-        "kito meistro dangos informacija",
-        "keičiate nagų meistrą kokią informaciją apie seną dangą perduoti"
-      ],
-      "publishDate": "2026-11-12",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/dezinfekcija-ir-sterilizacija-salone",
-      "title": "Dezinfekcija ir sterilizacija: kokius klausimus užduoti salone?",
-      "description": "Nesupainioti įrankių apdorojimo terminų ir nepalaikyti UV spintelės visuotiniu saugos įrodymu.",
-      "intent": "Nesupainioti įrankių apdorojimo terminų ir nepalaikyti UV spintelės visuotiniu saugos įrodymu.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Terminų ir klausimų lentelė, be savarankiško sterilizavimo instrukcijų.",
-      "cluster": "safety",
-      "pillarSlug": "gidai/grozio-paslaugos-saugos-klausimai",
-      "sourceQueries": [
-        "dezinfekcija ir sterilizacija salone",
-        "dezinfekcija ir sterilizacija kokius klausimus užduoti salone"
       ],
       "publishDate": "2026-11-14",
       "seasonalHook": "",
@@ -257,6 +291,23 @@
     },
     {
       "type": "guide",
+      "slug": "gidai/meistro-informacijos-gidas",
+      "title": "Meistro informacijos gidas: profilis, paslaugų meniu ir grafikas",
+      "description": "Meistrui parengti nuoseklią patikrinamą informaciją apie profilį, paslaugas, laiką ir susitarimo sąlygas.",
+      "intent": "Meistrui parengti nuoseklią patikrinamą informaciją apie profilį, paslaugas, laiką ir susitarimo sąlygas.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Informacijos parengimo žemėlapis su atskirais profilio, meniu, grafiko ir teisių klausimais.",
+      "cluster": "providers",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "meistro informacijos gidas",
+        "meistro informacijos gidas profilis, paslaugų meniu ir grafikas"
+      ],
+      "publishDate": "2026-11-21",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
       "slug": "gidai/kaledinio-manikiuro-dizaino-briefas",
       "title": "Kalėdinis manikiūras: kaip pateikti aiškią dizaino užduotį?",
       "description": "Išrinkti vieną šventinio dizaino kryptį ir aiškiai aprašyti akcentus.",
@@ -274,16 +325,16 @@
     },
     {
       "type": "guide",
-      "slug": "gidai/express-ir-pilnas-manikiuras",
-      "title": "Express ir pilnas manikiūras: ką tiksliai patikrinti aprašyme?",
-      "description": "Nepasirinkti trumpo varianto tikintis visos odelių, formos ir padengimo apimties.",
-      "intent": "Nepasirinkti trumpo varianto tikintis visos odelių, formos ir padengimo apimties.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Įtraukta / neįtraukta palyginimas pagal tikrą datuotą teikėjo meniu.",
-      "cluster": "nails",
-      "pillarSlug": "gidai/manikiuras-ar-gelinis-lakavimas",
+      "slug": "gidai/plauku-ilgis-tankis-ir-pasiulymas",
+      "title": "Plaukų ilgis ir tankis kainyne: kaip gauti aiškų pasiūlymą?",
+      "description": "Suprasti teikėjo ilgio ir tankio kategoriją, kai kaina nurodyta „nuo“.",
+      "intent": "Suprasti teikėjo ilgio ir tankio kategoriją, kai kaina nurodyta „nuo“.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Ilgio matavimo orientyras ir patvirtinimo žinutė be šalies kainų vidurkių.",
+      "cluster": "hair",
+      "pillarSlug": "gidai/kaip-pasirinkti-plauku-paslauga",
       "sourceQueries": [
-        "express ir pilnas manikiuras",
-        "express ir pilnas manikiūras ką tiksliai patikrinti aprašyme"
+        "plauku ilgis tankis ir pasiulymas",
+        "plaukų ilgis ir tankis kainyne kaip gauti aiškų pasiūlymą"
       ],
       "publishDate": "2026-11-26",
       "seasonalHook": "",
@@ -291,16 +342,16 @@
     },
     {
       "type": "guide",
-      "slug": "gidai/manikiuras-ir-pedikiuras-vienas-vizitas",
-      "title": "Manikiūras ir pedikiūras viename vizite: ką suderinti?",
-      "description": "Patikrinti, ar paslaugos atliekamos iš eilės, kartu ar pas skirtingus teikėjus.",
-      "intent": "Patikrinti, ar paslaugos atliekamos iš eilės, kartu ar pas skirtingus teikėjus.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Dvi dienotvarkės schemos su patvirtinamu bendru laiku.",
-      "cluster": "booking",
-      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "slug": "gidai/veido-valymo-pasiulymo-apimtis",
+      "title": "Veido valymo pasiūlymas: ką patikrinti prieš pasirenkant variantą?",
+      "description": "Suprasti teikėjo vartojamus metodų pavadinimus ir darbų apimtį, nepasirenkant gydymo pagal odos diagnozę.",
+      "intent": "Suprasti teikėjo vartojamus metodų pavadinimus ir darbų apimtį, nepasirenkant gydymo pagal odos diagnozę.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Pasiūlymo komponentų patikros lentelė: pavadinimas, įtraukimas, konsultacija, instrukcijos.",
+      "cluster": "face",
+      "pillarSlug": "gidai/veido-prieziuros-paslaugos-pasirinkimas",
       "sourceQueries": [
-        "manikiuras ir pedikiuras vienas vizitas",
-        "manikiūras ir pedikiūras viename vizite ką suderinti"
+        "veido valymo pasiulymo apimtis",
+        "veido valymo pasiūlymas ką patikrinti prieš pasirenkant variantą"
       ],
       "publishDate": "2026-11-28",
       "seasonalHook": "",
@@ -342,69 +393,18 @@
     },
     {
       "type": "guide",
-      "slug": "gidai/ranku-ir-nagu-prieziura-ziema",
-      "title": "Rankų ir nagų priežiūra žiemą: ką aptarti po manikiūro?",
-      "description": "Aptarti bendrą priežiūrą ir vengti dangos krapštymo, nepateikiant gydymo režimo.",
-      "intent": "Aptarti bendrą priežiūrą ir vengti dangos krapštymo, nepateikiant gydymo režimo.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Bendros priežiūros atmintinė su aiškia specialisto konsultacijos riba.",
-      "cluster": "safety",
-      "pillarSlug": "gidai/grozio-paslaugos-saugos-klausimai",
+      "slug": "gidai/kobido-pasiulymo-komponentai",
+      "title": "Kobido pasiūlymas: veidas, kaklas, dekoltė ir papildomi darbai",
+      "description": "Palyginti konkretų veido masažo variantą pagal zonas ir priedus, nesuteikiant pavadinimui gydymo garantijos.",
+      "intent": "Palyginti konkretų veido masažo variantą pagal zonas ir priedus, nesuteikiant pavadinimui gydymo garantijos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Datuotų pasiūlymų komponentų matrica, ne anti-age rezultatų reitingas.",
+      "cluster": "massage",
+      "pillarSlug": "gidai/masazo-paslaugos-pasirinkimas",
       "sourceQueries": [
-        "ranku ir nagu prieziura ziema",
-        "rankų ir nagų priežiūra žiemą ką aptarti po manikiūro"
+        "kobido pasiulymo komponentai",
+        "kobido pasiūlymas veidas, kaklas, dekoltė ir papildomi darbai"
       ],
-      "publishDate": "2026-12-08",
-      "seasonalHook": "Žiemos laikotarpis 2026–2027: rankų priežiūros kontekstas.",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/pazeistas-nagas-po-vizito-ka-pranesti",
-      "title": "Pažeistas nagas ar danga po vizito: ką pranešti meistrui?",
-      "description": "Aiškiai aprašyti problemą ir paprašyti tinkamo tolimesnio veiksmo, nebandant gydyti namuose.",
-      "intent": "Aiškiai aprašyti problemą ir paprašyti tinkamo tolimesnio veiksmo, nebandant gydyti namuose.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Situacijos, datos, nuotraukos ir norimo sprendimo žinutės ruošinys.",
-      "cluster": "booking",
-      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
-      "sourceQueries": [
-        "pazeistas nagas po vizito ka pranesti",
-        "pažeistas nagas ar danga po vizito ką pranešti meistrui"
-      ],
-      "publishDate": "2026-12-10",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/meistro-informacijos-gidas",
-      "title": "Meistro informacijos gidas: profilis, paslaugų meniu ir grafikas",
-      "description": "Meistrui parengti nuoseklią patikrinamą informaciją apie profilį, paslaugas, laiką ir susitarimo sąlygas.",
-      "intent": "Meistrui parengti nuoseklią patikrinamą informaciją apie profilį, paslaugas, laiką ir susitarimo sąlygas.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Informacijos parengimo žemėlapis su atskirais profilio, meniu, grafiko ir teisių klausimais.",
-      "cluster": "providers",
-      "pillarSlug": "",
-      "sourceQueries": [
-        "meistro informacijos gidas",
-        "meistro informacijos gidas profilis, paslaugų meniu ir grafikas"
-      ],
-      "publishDate": "2026-12-12",
-      "seasonalHook": "",
-      "networkLinks": []
-    },
-    {
-      "type": "guide",
-      "slug": "gidai/meistro-paslaugu-meniu",
-      "title": "Kaip meistrui aprašyti paslaugų meniu be dviprasmiškų variantų?",
-      "description": "Išskaidyti pagrindinę paslaugą, priedus ir įtrauktus darbus vienareikšmiškai.",
-      "intent": "Išskaidyti pagrindinę paslaugą, priedus ir įtrauktus darbus vienareikšmiškai.",
-      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Trijų meniu eilučių prieš / po tekstiniai pavyzdžiai, pažymėti kaip ruošiniai.",
-      "cluster": "providers",
-      "pillarSlug": "gidai/meistro-informacijos-gidas",
-      "sourceQueries": [
-        "meistro paslaugu meniu",
-        "kaip meistrui aprašyti paslaugų meniu be dviprasmiškų variantų"
-      ],
-      "publishDate": "2026-12-15",
+      "publishDate": "2026-12-05",
       "seasonalHook": "",
       "networkLinks": []
     }

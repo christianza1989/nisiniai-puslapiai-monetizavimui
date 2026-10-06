@@ -5,11 +5,12 @@
   "result": "PASS",
   "observed": [
     "Hero, summary counts and planning-only notice render legibly in an actual screenshot.",
-    "Initial calendar reports 76 events: 64 articles and 12 editorial reviews.",
-    "November month filter reports 12 matching events.",
+    "Initial calendar reports 88 events: 76 articles and 12 additional editorial reviews.",
+    "All 10 current taxonomy categories appear in the coverage table, each with article count, first date and its category route; 29 shared articles are separately identified.",
+    "November month filter reports 14 matching events.",
     "Adding TPO search returns exactly M14, dated 2026-11-17.",
     "Clicking the M14 title opens its detailed brief, structure and source requirements.",
-    "Network filter for M14 reports exactly 7 incoming/outgoing suggestions.",
+    "Network filter for M65 (facial care pillar) reports exactly 15 incoming/outgoing suggestions out of 411 total.",
     "Browser console returned no warning/error entries during the checks."
   ],
   "notClaimed": [
@@ -17,5 +18,5 @@
     "External source availability at future publication time",
     "Article writing, media generation, studio import or production publication"
   ],
-  "screenshot": "Local screenshot retained outside Git: madbeauty-content-plan-preview.png in Codex tmp."
+  "screenshot": "Local screenshot retained outside Git: madbeauty-content-plan-coverage.png in Codex tmp; screenshot shows the broader service categories including massage and facial care."
 }

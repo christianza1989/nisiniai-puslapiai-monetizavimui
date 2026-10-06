@@ -1,5 +1,13 @@
 # Madbeauty — dabartinis įgyvendinimas
 
+## Aktualus straipsnių / katalogo pagrindas — 2026-10-06
+
+Savininkas po pilno plano pauzės paprašė pirmiausia paruošti pagrindą turinio sesijai rašyti teisingai susietus straipsnius. **Šio pavedimo režimas: lokalus veikiantis pagrindas + Workers candidate; pilnas atnaujinimas tebėra PAUSED.** [Sąsaja ir entrypoint](content-foundation-20261006/README.md), [V2 kontraktas](content-foundation-20261006/CONTRACT.md), [priėmimas](content-foundation-20261006/VALIDATION.md). Source savininkas `ai/madbeauty-content-foundation-20261006`, bazė b422165. Turinio sesija PR10 patvirtino, kad305 node /225 procedūrų,103 miestų ir resolverio eksportų pakanka žemėlapiui, sidecar ir struktūrizuotiems V2 juodraščiams.
+
+Pagrindo lokalus pavedimas užbaigtas: registry / SSR national→city→approved offer / empty404 / V2 immutable intake, projection, rich render, schema ir discovery. Regresija89/89; actual desktop1280 ir mobile390 kategorijos, procedūros, miesto ir V2 straipsnio peržiūra. Provider/workspace meniu lieka ankstesni10 ID; pilnas variantų / meistro procedūrų pasirinkimas ir kiti plano moduliai pristabdyti. Viešas naujo katalogo release neatliktas; gyva versija402a0fb5… lieka ankstesnė. Static draft registry visi planned, neleisti future href.
+
+Kita konkreti priklausomybė: turinio sesijos private studio plan→V2 CLI/import kelias dar atskirai nepriimtas; V2 add/edit jau turi esamą modelį. Agentas gali rengti tyrimą ir struktūrizuotus juodraščius dabar pagal perduotą kontraktą. Vienos tikros straipsnio revizijos review/export/actual preview ir production deployment priėmimas lieka iki viešo leidimo; GSC / SEO pozicijos ir225 procedūrų temų aprėptis šiuo pagrindu nepriimti. Tai neužbaigia pilno platformos pavedimo.
+
 ## Aktualus katalogo atnaujinimo planas — 2026-10-06
 
 Savininkas paprašė platformos peržiūros ir pilno tobulinimo plano pagal Treatwell kategorijas bei Fresha. **Šio pavedimo režimas: auditas ir planas.** Parengtas [pilnas planas](upgrade-plan-20261006/PLAN.md), [interaktyvi peržiūra](upgrade-plan-20261006/index.html) ir [41 darbo eilė](upgrade-plan-20261006/BACKLOG.json): 14 pagrindinių sričių, 194 procedūros, 7 papildomi plėtiniai, kelių paslaugų pasirinkimas meistrui, variantų / paieškos / rezervavimo / migracijos sutartys. [Įrodymai ir ribos](upgrade-plan-20261006/AUDIT.md). Naujo katalogo runtime dar neįgyvendintas; šis paketas nekeičia gyvų paskyrų, mokėjimų ar turinio kalendoriaus.

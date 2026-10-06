@@ -10,8 +10,9 @@ export function publicModuleEntries(contentPages,trustPages,profiles){
  ];
 }
 export function moduleDiscovery(content,path,entries){
- if(path==='/sitemap.xml')return content.seo.nicheSitemapXml(content.pkg,content.pages).replace('</urlset>',entries.map(e=>`<url><loc>${escape(origin+e.path)}</loc></url>`).join('')+'</urlset>');
- const full=path==='/llms-full.txt',base=full?content.seo.nicheLlmsFull(content.pkg,content.pages):content.seo.nicheLlmsIndex(content.pkg,content.pages);
+ const pages=content.pages.filter(p=>p.slug!=='paslaugos'&&!p.slug.startsWith('paslaugos/'));
+ if(path==='/sitemap.xml')return content.seo.nicheSitemapXml(content.pkg,pages).replace('</urlset>',entries.map(e=>`<url><loc>${escape(origin+e.path)}</loc></url>`).join('')+'</urlset>');
+ const full=path==='/llms-full.txt',base=full?content.seo.nicheLlmsFull(content.pkg,pages):content.seo.nicheLlmsIndex(content.pkg,pages);
  return base+'\n\n## Platformos informacija ir priimti teikėjų profiliai\n'+entries.map(e=>full?`\n### ${e.title}\nURL: ${origin+e.path}\n${e.text}`:`- [${e.title}](${origin+e.path})`).join('\n');
 }
 export function moduleSchema(path,title,description,profile=null){

@@ -9,7 +9,9 @@ import {bookingView,bookingAction,bookingForm,bookingChange} from './booking-ui.
 import {workspaceView,workspaceAction,workspaceForm,manualServiceSummary} from './workspace-ui.mjs';
 import {createHttpAdapter} from './http-adapter.mjs';
 import {accountAction,accountForm} from './account-ui.mjs';
-import {setContentData} from './content.mjs';
+import {setContentData,trustPages} from './content.mjs';
+import {activeNode,CATALOGUE_ORIGIN} from '/content-targets.mjs';
+import {isCityId} from '/cities.mjs';
 const $=s=>document.querySelector(s),boot=await fetch('/boot.json').then(r=>r.json());
 
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:''},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
@@ -76,8 +78,9 @@ async function render(){
   document.body.classList.toggle('workspace-page',/^\/(meistrui|operatorius|paskyra)/.test(path));
   const h1=$('#main h1')?.textContent||'Madbeauty';document.title=h1+' · Madbeauty';
   const contentPage=ctx.content?.pages.find(p=>'/'+p.slug===path||!p.slug&&path==='/');
-  document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>s.remove());if(contentPage?.schema){const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(contentPage.schema).replace(/</g,'\\u003c');document.head.append(script);}
-  $('meta[name="description"]').content=contentPage?.description||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';$('link[rel="canonical"]').href=contentPage?.url||location.origin+location.pathname;saveUI();
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>s.remove());if(contentPage?.schema&&!path.startsWith('/paslaugos')){const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(contentPage.schema).replace(/</g,'\\u003c');document.head.append(script);}
+  $('meta[name="description"]').content=contentPage?.description||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';$('link[rel="canonical"]').href=contentPage?.url||CATALOGUE_ORIGIN+location.pathname;
+  $('meta[name="robots"]').content=!boot.privatePrototype&&!location.search&&!path.startsWith('/paslaugos')&&(contentPage||ctx.currentProfile?.approved||trustPages[path])?'index,follow':'noindex,follow';saveUI();
 }
 async function selectRole(role,organizationId='demo-org-0',clientId='demo-client-0',target=null){if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);state.session={role,organizationId,clientId};state.booking=null;saveUI();await navigate(target||({customer:'/paskyra/vizitai',professional:'/meistrui',operator:'/operatorius'})[role]||'/');}
 async function beginBooking(id,candidate=null){
@@ -115,6 +118,7 @@ async function commonAction(action,b){
 }
 function galleryDialog(){const g=ctx.gallery;openDialog('Galerija · '+(g.index+1)+' / '+g.images.length,`${photo(ctx,g.images[g.index],'','(max-width:760px) 90vw, 650px')}<div class="toolbar">${btn('gallery-next','Ankstesnė','data-id="-1"','button outline')}${btn('gallery-next','Kita','data-id="1"','button outline')}</div><p class="hint"></p>`);}
 async function commonForm(form,fd){
+  if(form.id==='catalogue-city'){const node=activeNode(fd.get('paslauga')),city=fd.get('miestas');if(!node||!isCityId(city))throw userError('Pasirink paslaugą ir miestą.');await navigate('/paslaugos/'+node.id+'/'+city);return true;}
   if(await accountForm(ctx,form,fd))return true;
   if(['home-search','results-search'].includes(form.id)){const t=ctx.taxonomy.find(t=>t.id===fd.get('paslauga')||t.label.toLocaleLowerCase('lt')===String(fd.get('paslauga')).toLocaleLowerCase('lt'));if(!t)throw userError('Pasirinkite paslaugą iš pasiūlymų.');const [nuo,iki]=String(fd.get('intervalas')).split(',');state.search={...state.search,paslauga:t.id,miestas:fd.get('miestas'),diena:Number(fd.get('diena')),nuo,iki};await navigate('/paieska'+searchHash(state.search));return true;}
   if(form.id==='filters'){state.search={...state.search,...Object.fromEntries(fd)};await navigate(ctx.path+searchHash(state.search));return true;}

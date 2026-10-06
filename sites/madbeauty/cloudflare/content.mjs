@@ -1,4 +1,5 @@
-import pkg from '../content/initial-release/content-package.json';
+import pkg from './output/content-package.json';
+import {projectMadbeautyV2} from '../content/v2-projection.mjs';
 import network from '../../../../dovanos-memorycasting/config/niche-network.json';
 import {projectPublicPages,contextualParts} from '../../../../dovanos-memorycasting/lib/niche-links.mjs';
 import {nicheSchemaGraph,nicheEditorialDates} from '../../../../dovanos-memorycasting/lib/niche-schema-core.mjs';
@@ -6,7 +7,8 @@ import {renderContentPage} from '../prototype/public/content-render.mjs';
 import * as seo from './output/seo.mjs';
 export const contact={operatorName:network.contactsBySite?.madbeauty?.operatorName||network.operatorName,email:network.contactsBySite?.madbeauty?.email||network.defaultEmail};
 export const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function contentProjection(now=Date.now()){
+export function contentProjection(now=Date.now(),registry={targets:[]}){
+ if(pkg.schemaVersion===2)return projectMadbeautyV2(pkg,{settings:network,registry,now});
  const pages=projectPublicPages(pkg,[pkg],network,now),byId=new Map(pages.map(p=>[p.id,p])),projected={...pkg,pages};
  const dto=pages.map(p=>{
   const links=p.links.map(l=>({...l,href:'/'+byId.get(l.targetPageId).slug})),contextual={};

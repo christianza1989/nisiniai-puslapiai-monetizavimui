@@ -1,4 +1,5 @@
 import {CITY_NAMES} from '../prototype/cities.mjs';
+import {matchesTaxonomy} from '../prototype/taxonomy.mjs';
 import {randomId,reject} from './primitives.mjs';
 import {availability,option,find,plus,overlaps,dayOffsetForDate} from './availability.mjs';
 import {localInstant,makeClock,TAXONOMY} from '../prototype/demo-model.mjs';
@@ -38,7 +39,7 @@ export function createPlatform(store){
   const api={
     clock,
     session(user){const d=store.read();return user?{user:{id:user.id,email:user.email,name:user.name},clientId:user.id,operator:!!user.operator,organizations:d.memberships.filter(m=>m.accountId===user.id).map(m=>publicOrg(find(d,'organizations',m.organizationId)))}:{user:null,clientId:null,operator:false,organizations:[]};},
-    catalog(filters={}){const d=store.read();return d.services.filter(s=>s.active&&d.organizations.some(o=>o.id===s.organizationId&&o.approved)).map(s=>publicService(d,s)).filter(s=>(!filters.city||s.city===filters.city)&&(!filters.taxonomyServiceId||s.taxonomyServiceId===filters.taxonomyServiceId)&&(!filters.kind||s.kind===filters.kind)&&(!filters.name||(s.label+' '+s.organizationName+' '+s.practitionerName).toLocaleLowerCase('lt').includes(String(filters.name).toLocaleLowerCase('lt')))&&(filters.maxPrice==null||s.priceMinor<=filters.maxPrice));},
+    catalog(filters={}){const d=store.read();return d.services.filter(s=>s.active&&d.organizations.some(o=>o.id===s.organizationId&&o.approved)).map(s=>publicService(d,s)).filter(s=>(!filters.city||s.city===filters.city)&&(!filters.taxonomyServiceId||matchesTaxonomy(s.taxonomyServiceId,filters.taxonomyServiceId))&&(!filters.kind||s.kind===filters.kind)&&(!filters.name||(s.label+' '+s.organizationName+' '+s.practitionerName).toLocaleLowerCase('lt').includes(String(filters.name).toLocaleLowerCase('lt')))&&(filters.maxPrice==null||s.priceMinor<=filters.maxPrice));},
     profile(id){const d=store.read(),o=d.organizations.find(o=>o.id===id&&o.approved);if(!o)return null;return {...publicOrg(o),media:(d.media||[]).filter(a=>o.gallery.includes(a.id)||o.avatarImageId===a.id).map(mediaPublic),location:copy(find(d,'locations',o.locationId)),practitioners:d.practitioners.filter(p=>p.organizationId===id&&p.active).map(({accountId,...p})=>p),services:d.services.filter(s=>s.organizationId===id&&s.active),reviews:d.reviews.filter(r=>r.organizationId===id&&r.approved).map(({id,bookingId,rating,text,createdAt})=>({id,bookingId,rating,text,createdAt}))};},
     availability(input,user=null){
       const d=store.read(),opts={};if(input.scope?.role==='professional'){ownOrg(d,user,input.scope.organizationId);if(find(d,'services',input.providerServiceId).organizationId!==input.scope.organizationId)reject('FORBIDDEN','Kita organizacija.',403);opts.internal=true;}

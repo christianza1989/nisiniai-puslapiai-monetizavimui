@@ -3,6 +3,7 @@ import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {renderContentPage} from '../prototype/public/content-render.mjs';
+import {admitMadbeautyPackage} from './intake.mjs';
 const root=path.resolve(import.meta.dirname,'../../../../dovanos-memorycasting'),sandbox=path.resolve(import.meta.dirname,'../runtime/output/content-core');
 const network=JSON.parse(await readFile(path.join(root,'config/niche-network.json'),'utf8'));
 const operatorName=network.contactsBySite?.madbeauty?.operatorName||network.operatorName;
@@ -18,10 +19,14 @@ await build({entryPoints:[path.join(root,'lib/niche-seo.ts')],outfile:seoFile,bu
  b.onLoad({filter:/.*/,namespace:'madbeauty-bindings'},args=>({contents:args.path==='niche-sites'?`export const nicheOrigin=p=>'https://'+p.canonicalHost;export const nichePagePath=p=>p.slug?'/'+p.slug:'/';export const publicNichePages=p=>p.pages;`:`export const nicheNetworkContact=()=>({operatorName:${JSON.stringify(operatorName)}});`,loader:'js'}));
 }}]});
 const seo=await import(pathToFileURL(seoFile));
+const v2SchemaFile=path.resolve(import.meta.dirname,'../cloudflare/output/gift-seo.mjs');
+await mkdir(path.dirname(v2SchemaFile),{recursive:true});
+await build({entryPoints:[path.join(root,'lib/gift-seo.ts')],outfile:v2SchemaFile,bundle:true,platform:'neutral',format:'esm'});
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const contentAssetsRoot=path.join(sandbox,'public/content-assets');
-export async function contentProjection({now=Date.now(),packagePath=path.join(sandbox,'content-packages/madbeauty/content-package.json'),settings={}}={}){
- let pkg;try{pkg=validateContentPackage(JSON.parse(await readFile(packagePath,'utf8')));}catch(e){if(e.code==='ENOENT')return null;throw e;}
+export async function contentProjection({now=Date.now(),packagePath=path.join(sandbox,'content-packages/madbeauty/content-package.json'),settings={},registry={targets:[]}}={}){
+ let pkg;try{pkg=admitMadbeautyPackage(validateContentPackage(JSON.parse(await readFile(packagePath,'utf8'))),{operatorName,email:network.contactsBySite?.madbeauty?.email||network.defaultEmail});}catch(e){if(e.code==='ENOENT')return null;throw e;}
+ if(pkg.schemaVersion===2){const {projectMadbeautyV2}=await import('./v2-projection.mjs');return projectMadbeautyV2(pkg,{settings:{...network,...settings},registry,now:typeof now==='number'?now:Date.parse(now)});}
  if(pkg.schemaVersion!==1||pkg.siteId!=='madbeauty'||pkg.canonicalHost!=='madbeauty.lt')throw Error('Wrong content tenant/version');
  const pages=projectPublicPages(pkg,[pkg],settings,typeof now==='number'?now:Date.parse(now));
  const projected={...pkg,pages},byId=new Map(pages.map(p=>[p.id,p]));

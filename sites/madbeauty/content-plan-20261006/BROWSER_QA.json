@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-06",
+  "artifact": "MADBEAUTY-6-MENESIU-PLANAS.html",
+  "surface": "Codex in-app browser, local read-only preview, default desktop viewport",
+  "result": "PASS",
+  "observed": [
+    "Hero, summary counts and planning-only notice render legibly in an actual screenshot.",
+    "Initial calendar reports 76 events: 64 articles and 12 editorial reviews.",
+    "November month filter reports 12 matching events.",
+    "Adding TPO search returns exactly M14, dated 2026-11-17.",
+    "Clicking the M14 title opens its detailed brief, structure and source requirements.",
+    "Network filter for M14 reports exactly 7 incoming/outgoing suggestions.",
+    "Browser console returned no warning/error entries during the checks."
+  ],
+  "notClaimed": [
+    "Mobile viewport or physical print/PDF rendering acceptance",
+    "External source availability at future publication time",
+    "Article writing, media generation, studio import or production publication"
+  ],
+  "screenshot": "Local screenshot retained outside Git: madbeauty-content-plan-preview.png in Codex tmp."
+}

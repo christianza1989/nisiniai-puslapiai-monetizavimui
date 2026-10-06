@@ -1,0 +1,276 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/meistro-atsaukimo-salygu-aprasymas",
+      "title": "Kaip meistrui aiškiai aprašyti vizito keitimo sąlygas?",
+      "description": "Pateikti suprantamas, patikrintas sąlygas prieš klientui susitariant.",
+      "intent": "Pateikti suprantamas, patikrintas sąlygas prieš klientui susitariant.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Sąlygų teksto ruošinys su teisinės patikros laukais, ne automatinė taisyklė.",
+      "cluster": "providers",
+      "pillarSlug": "gidai/meistro-informacijos-gidas",
+      "sourceQueries": [
+        "meistro atsaukimo salygu aprasymas",
+        "kaip meistrui aiškiai aprašyti vizito keitimo sąlygas"
+      ],
+      "publishDate": "2027-02-23",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/meistro-konsultacijos-zinute",
+      "title": "Kokią konsultacijos žinutę meistrui siųsti prieš sudėtingesnį darbą?",
+      "description": "Surinkti reikalingą informaciją prieš patvirtinant apimtį ir laiką.",
+      "intent": "Surinkti reikalingą informaciją prieš patvirtinant apimtį ir laiką.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Klausimynas nagų ir plaukų paslaugai su atsakymo / patvirtinimo skirtumu.",
+      "cluster": "providers",
+      "pillarSlug": "gidai/meistro-informacijos-gidas",
+      "sourceQueries": [
+        "meistro konsultacijos zinute",
+        "kokią konsultacijos žinutę meistrui siųsti prieš sudėtingesnį darbą"
+      ],
+      "publishDate": "2027-02-25",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/meistro-paslaugu-trukmes-perziura",
+      "title": "Kaip meistrui peržiūrėti paslaugų trukmes pagal realius vizitus?",
+      "description": "Pakeisti spėtą meniu trukmę datuotu savo darbo stebėjimu.",
+      "intent": "Pakeisti spėtą meniu trukmę datuotu savo darbo stebėjimu.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Anoniminė paslaugų laiko lentelė be klientų vardų ir pajamų pažadų.",
+      "cluster": "providers",
+      "pillarSlug": "gidai/meistro-informacijos-gidas",
+      "sourceQueries": [
+        "meistro paslaugu trukmes perziura",
+        "kaip meistrui peržiūrėti paslaugų trukmes pagal realius vizitus"
+      ],
+      "publishDate": "2027-03-02",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/meistro-darbo-vietos-aprasymas",
+      "title": "Meistro darbo vietos aprašymas: kaip padėti klientui atvykti?",
+      "description": "Parengti tikslius įėjimo ir atvykimo nurodymus su patikrinta vieta.",
+      "intent": "Parengti tikslius įėjimo ir atvykimo nurodymus su patikrinta vieta.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Vietos aprašymo ruošinys su įėjimo nuotraukos teisių patikra.",
+      "cluster": "providers",
+      "pillarSlug": "gidai/meistro-informacijos-gidas",
+      "sourceQueries": [
+        "meistro darbo vietos aprasymas",
+        "meistro darbo vietos aprašymas kaip padėti klientui atvykti"
+      ],
+      "publishDate": "2027-03-04",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/velyku-savaitgalio-meistro-darbo-laikas",
+      "title": "Velykų savaitgalis 2027: kaip pasitikrinti meistro darbo laiką?",
+      "description": "Patikrinti būtent šventinio savaitgalio darbo laiko išimtis, nepasikliaujant įprastu savaitės grafiku.",
+      "intent": "Patikrinti būtent šventinio savaitgalio darbo laiko išimtis, nepasikliaujant įprastu savaitės grafiku.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Kovo 27–29 dienų patvirtinimo kortelė su alternatyva darbo dieną.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "velyku savaitgalio meistro darbo laikas",
+        "velykų savaitgalis 2027 kaip pasitikrinti meistro darbo laiką"
+      ],
+      "publishDate": "2027-03-06",
+      "seasonalHook": "Velykos 2027-03-28: išankstinis datos patvirtinimas.",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/avansas-ir-vizito-patvirtinimas",
+      "title": "Avansas ir vizito patvirtinimas: ką išsiaiškinti su teikėju?",
+      "description": "Suprasti konkretaus teikėjo mokėjimo ir patvirtinimo sąlygas, nežadant Madbeauty mokėjimų funkcijos.",
+      "intent": "Suprasti konkretaus teikėjo mokėjimo ir patvirtinimo sąlygas, nežadant Madbeauty mokėjimų funkcijos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Klausimų ir mokėjimo įrodymų atmintinė.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "avansas ir vizito patvirtinimas",
+        "avansas ir vizito patvirtinimas ką išsiaiškinti su teikėju"
+      ],
+      "publishDate": "2027-03-09",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/darbu-nuotrauku-publikavimo-susitarimas",
+      "title": "Darbo nuotraukos publikavimas: ką meistrui susitarti su klientu?",
+      "description": "Atskirti paslaugos atlikimą, fotografavimą ir viešą atvaizdo naudojimą.",
+      "intent": "Atskirti paslaugos atlikimą, fotografavimą ir viešą atvaizdo naudojimą.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Sutikimo turinio kontrolė su kanalo, tikslo ir atšaukimo klausimais.",
+      "cluster": "providers",
+      "pillarSlug": "gidai/meistro-informacijos-gidas",
+      "sourceQueries": [
+        "darbu nuotrauku publikavimo susitarimas",
+        "darbo nuotraukos publikavimas ką meistrui susitarti su klientu"
+      ],
+      "publishDate": "2027-03-11",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/pakartotinis-vizitas-ar-korekcija",
+      "title": "Pakartotinis manikiūro vizitas ar korekcija: kaip apibūdinti poreikį?",
+      "description": "Nesupainioti naujo priežiūros vizito su konkretaus atlikto darbo trūkumo sprendimu.",
+      "intent": "Nesupainioti naujo priežiūros vizito su konkretaus atlikto darbo trūkumo sprendimu.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Dviejų situacijų žinutės su datomis ir aiškiu pageidavimu.",
+      "cluster": "nails",
+      "pillarSlug": "gidai/manikiuras-ar-gelinis-lakavimas",
+      "sourceQueries": [
+        "pakartotinis vizitas ar korekcija",
+        "pakartotinis manikiūro vizitas ar korekcija kaip apibūdinti poreikį"
+      ],
+      "publishDate": "2027-03-16",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/antakiu-permanentinis-makiazas-konsultacija",
+      "title": "Turite permanentinį antakių makiažą: ką pasakyti prieš naują paslaugą?",
+      "description": "Pateikti ankstesnio darbo informaciją ir paprašyti įvertinimo, nenustatant tinkamumo savarankiškai.",
+      "intent": "Pateikti ankstesnio darbo informaciją ir paprašyti įvertinimo, nenustatant tinkamumo savarankiškai.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Konsultacijos informacijos kortelė, be šalinimo ar gydymo instrukcijų.",
+      "cluster": "brows",
+      "pillarSlug": "gidai/antakiu-ir-blakstienu-paslaugu-gidas",
+      "sourceQueries": [
+        "antakiu permanentinis makiazas konsultacija",
+        "turite permanentinį antakių makiažą ką pasakyti prieš naują paslaugą"
+      ],
+      "publishDate": "2027-03-18",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienu-laminavimas-ar-priauginimas",
+      "title": "Blakstienų laminavimas ar priauginimas: kaip atskirti pasiūlymus?",
+      "description": "Atskirti skirtingų rezultatų ir priežiūros apimčių paslaugas.",
+      "intent": "Atskirti skirtingų rezultatų ir priežiūros apimčių paslaugas.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Pasiūlymų aprėpties palyginimas, patvirtintas tikro teikėjo prieš rašymą.",
+      "cluster": "brows",
+      "pillarSlug": "gidai/antakiu-ir-blakstienu-paslaugu-gidas",
+      "sourceQueries": [
+        "blakstienu laminavimas ar priauginimas",
+        "blakstienų laminavimas ar priauginimas kaip atskirti pasiūlymus"
+      ],
+      "publishDate": "2027-03-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nekokybiska-grozio-paslauga-kreipimasis",
+      "title": "Nepavykęs grožio vizitas: kaip užfiksuoti situaciją ir kreiptis?",
+      "description": "Surinkti faktus, raštu nurodyti reikalavimą ir atskirti paslaugos ginčą nuo sveikatos problemos.",
+      "intent": "Surinkti faktus, raštu nurodyti reikalavimą ir atskirti paslaugos ginčą nuo sveikatos problemos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Faktų ir įrodymų sąrašas bei neutralaus kreipimosi ruošinys.",
+      "cluster": "safety",
+      "pillarSlug": "gidai/grozio-paslaugos-saugos-klausimai",
+      "sourceQueries": [
+        "nekokybiska grozio paslauga kreipimasis",
+        "nepavykęs grožio vizitas kaip užfiksuoti situaciją ir kreiptis"
+      ],
+      "publishDate": "2027-03-23",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/saknu-ar-visu-plauku-dazymas",
+      "title": "Šaknų ar visų plaukų dažymas: kaip tiksliai pasirinkti variantą?",
+      "description": "Patikrinti, ar norimas darbas apima tik ataugusią dalį, ar ir ilgį.",
+      "intent": "Patikrinti, ar norimas darbas apima tik ataugusią dalį, ar ir ilgį.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Apimties žymėjimo schema ir klausimai apie papildomus darbus.",
+      "cluster": "hair",
+      "pillarSlug": "gidai/kaip-pasirinkti-plauku-paslauga",
+      "sourceQueries": [
+        "saknu ar visu plauku dazymas",
+        "šaknų ar visų plaukų dažymas kaip tiksliai pasirinkti variantą"
+      ],
+      "publishDate": "2027-03-25",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kaip-pasirinkti-grozio-vizito-vieta",
+      "title": "Grožio vizito vieta: ką palyginti be atstumo kilometrais?",
+      "description": "Pasirinkti pagal realią paslaugą, kelionės laiką ir vietos informaciją be miestų URL klonų.",
+      "intent": "Pasirinkti pagal realią paslaugą, kelionės laiką ir vietos informaciją be miestų URL klonų.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Dviejų vietų kelionės ir paslaugos kontrolinė lentelė.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "kaip pasirinkti grozio vizito vieta",
+        "grožio vizito vieta ką palyginti be atstumo kilometrais"
+      ],
+      "publishDate": "2027-03-30",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/keli-grozio-vizitai-ta-pacia-diena",
+      "title": "Keli grožio vizitai tą pačią dieną: kaip suderinti laiką?",
+      "description": "Sutarti kelių teikėjų laikus atskirai neįvedant universalios procedūrų sekos.",
+      "intent": "Sutarti kelių teikėjų laikus atskirai neįvedant universalios procedūrų sekos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Dienos laiko juosta su kelionės ir kiekvieno teikėjo patvirtinimu.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "keli grozio vizitai ta pacia diena",
+        "keli grožio vizitai tą pačią dieną kaip suderinti laiką"
+      ],
+      "publishDate": "2027-04-01",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/ramus-grozio-vizitas-poreikiai",
+      "title": "Ramesnis grožio vizitas: kaip iš anksto aptarti bendravimo poreikius?",
+      "description": "Aiškiai paprašyti mažiau pokalbio ar kitų individualių sąlygų, nežadant universalios paslaugos.",
+      "intent": "Aiškiai paprašyti mažiau pokalbio ar kitų individualių sąlygų, nežadant universalios paslaugos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Mandagus poreikių žinutės ruošinys ir patvirtinimo klausimas.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "ramus grozio vizitas poreikiai",
+        "ramesnis grožio vizitas kaip iš anksto aptarti bendravimo poreikius"
+      ],
+      "publishDate": "2027-04-03",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/meistro-profilio-perziuros-ir-uzklausos",
+      "title": "Meistro profilio peržiūros ir tikros užklausos: ką matuoti atskirai?",
+      "description": "Nesupainioti skaitomo turinio su tinkama paslaugos užklausa ar įvykusiu vizitu.",
+      "intent": "Nesupainioti skaitomo turinio su tinkama paslaugos užklausa ar įvykusiu vizitu.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Anoniminė rodiklių lentelė su skirtingais peržiūros, užklausos ir patvirtinimo įvykiais.",
+      "cluster": "providers",
+      "pillarSlug": "gidai/meistro-informacijos-gidas",
+      "sourceQueries": [
+        "meistro profilio perziuros ir uzklausos",
+        "meistro profilio peržiūros ir tikros užklausos ką matuoti atskirai"
+      ],
+      "publishDate": "2027-04-06",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

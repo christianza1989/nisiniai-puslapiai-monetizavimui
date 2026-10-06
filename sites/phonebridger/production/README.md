@@ -1,5 +1,13 @@
 # Production edition
 
+## Shared header and footer — 6 October 2026
+
+The owner explicitly authorized changing the homepage header/footer to match every inner page. `shell.mjs` is the single structural source for all 19 pages; `shared-shell/` supplies scoped CSS, accessible menu behavior and native SVG assets. Production builds keep the original prototype attestation and main content. The old homepage navigation block is replaced by shared navigation without changing its demo engine or detail handlers.
+
+Links are absolute, active destinations are marked, the narrow menu supports Escape/outside-click/focus exit and the demo can hide the header during pointer lock. The footer contains product/help/legal/account routes, the owner-selected seller, contact and four card network badges. It explicitly leaves method availability to Checkout; badges are not proof of live activation or every card being accepted. Payment documentation consulted: https://docs.stripe.com/payments/cards.
+
+Run `node sites/phonebridger/production/check-shell.mjs` from the companion after the core build to verify exactly one identical shell on all 19 routes, actual route destinations and valid navigation scripts. Actual rendered acceptance is recorded in the core release log separately.
+
 ## Shop overlay — 6 October 2026
 
 `source.mjs` replaces shop/checkout main content and adds account-owned order history using the maintained `shop-v2/` kit and exports an exact five-file frontend asset allowlist. The immutable prototype is still byte-checked. Changed shop and terms bodies are reviewed through the same Studio flow. The core emits 14 public and five private routes; the private checkout/order page has no canonical, schema or public-discovery entry.

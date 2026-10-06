@@ -18,6 +18,10 @@ export function transform(file, input) {
   text=text.replace(/ \$\('\[data-contact\]'\)\.addEventListener\('submit',[\s\S]*?link\.focus\(\);\}\);/,` $('[data-contact]').addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const status=$('[data-contact-status]'),button=form.querySelector('[type=submit]');button.disabled=true;status.textContent='Sending your message…';try{const payload=Object.fromEntries(new FormData(form));payload.consent=form.elements.consent.checked;const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const result=await response.json();if(!response.ok)throw Error(result.error||'Please try again.');status.textContent=result.message;form.reset();}catch(error){status.textContent=error.message;}finally{button.disabled=false;}});`);
   text=text.replaceAll('Account service is not connected in this preview. Please use the local account preview or contact support.','Account service is temporarily unavailable. Please try again or contact support.').replaceAll('Creating your local preview account…','Creating your account…').replaceAll('You’re signed in to the local preview.','You’re signed in to PhoneBridger.');
  }
- if(file==='app.js')text=text.replace("querySelector('[data-open-privacy]').addEventListener","querySelector('[data-open-privacy]')?.addEventListener").replace("querySelector('[data-close-privacy]').addEventListener","querySelector('[data-close-privacy]')?.addEventListener");
+ if(file==='app.js'){
+  // Navigation belongs to the shared shell; preserve all demo/detail handlers.
+  text=text.replace(/  const menuButton =[\s\S]*?  const privacy =/,"  root.dataset.theme = 'dark';\n  document.querySelector('meta[name=\"theme-color\"]').content = '#101114';\n  const privacy =").replace(/  updateNavigation\(\);\s*\}\)\(\);/, '})();');
+  text=text.replace("querySelector('[data-open-privacy]').addEventListener","querySelector('[data-open-privacy]')?.addEventListener").replace("querySelector('[data-close-privacy]').addEventListener","querySelector('[data-close-privacy]')?.addEventListener");
+ }
  return text;
 }

@@ -4,6 +4,8 @@ Before returning output, challenge it as a reader and as an evidence reviewer. C
 
 ## Plan checks
 
+Apply [planning decisions and handover](planning-decisions.md): the first inspectable artifact maps head queries and existing URLs; important decisions show what research changed; full-map acceptance is separate from draft/release acceptance. For a single-page draft reuse its reconciled brief rather than repeating full-map research.
+
 For an initial new-niche plan, verify the business decision rests on inspected buying-intent/competitor evidence, alternative revenue models, fulfilment feasibility, sourced or explicitly assumed economics and a meaningful test. A generic “later affiliate/ads/leads” sentence is insufficient. For an ordinary article reuse the current business decision and check only relevant changed facts; do not force a whole new business study.
 
 **Business fit first:** is the selected customer, paid outcome and plausible revenue mechanism explicit in the brief, and does the initial offer collect relevant product/service intent? An old calendar or attractive informational topic is insufficient. If ordinary strategy remains open, research and choose it; if a real operational fact is unresolved, keep that claim private. A topic suggestion is editorial interest, not a purchase enquiry. Assess helpful informational pages by their role in the customer journey without forcing a sales pitch into every paragraph.

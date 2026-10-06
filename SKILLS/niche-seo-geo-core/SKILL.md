@@ -15,6 +15,8 @@ Read the domain's current brief, business model, page inventory, research and ap
 
 For this user's niche network, when present, read `TOPICAL_CONTENT_CORE.md`, `SEO_GEO_CORE.md`, `CONTENT_CORE.md` and `SKILLS/niche-content-planner/SKILL.md` in the current project. Follow their schema, domain, revision and release contracts. This skill adds research and decisions; do not create replacement canonical, schema, sitemap, link resolvers or publication filters. A user-level installed skill is not proof that the content studio injects it or that its instruction fingerprints changed.
 
+For a topical plan or structural refresh use the planner's `references/planning-decisions.md` checkpoint when present: show query-to-URL decisions before dates, then verify their handover to the actual writer. Load it for planning rather than repeating niche research in every draft.
+
 Select the needed mode: catalog audit, domain baseline, strategy/map, authorized implementation, or measured refresh. Audit requests authorize evidence gathering and a concrete backlog, not a production deployment or backlink campaign. Respect existing authorization and spend limits; do not ask again for authorized work.
 
 ## 1. Establish a baseline and a question worth buying data for

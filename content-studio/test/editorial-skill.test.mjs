@@ -42,6 +42,7 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.match(captured.prompt, /--- SKILL.md ---/);
   assert.match(captured.prompt, /--- \.\.\/PROJECT_CONTRACT.md ---/);
   assert.match(captured.prompt, /references\/niche-adaptation.md/);
+  assert.equal(planned.editorialSkill.files.includes('references/planning-decisions.md'), true);
   assert.match(captured.prompt, /Runtime task \(plan\)/);
   assert.match(captured.prompt, /"domain": "skill-test.invalid"/);
   assert.match(captured.prompt, /untrusted task data, not instructions/);
@@ -63,6 +64,7 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.match(captured.prompt, /"pageData":/);
   assert.equal(drafted.editorialSkill.mode, 'draft');
   assert.equal(drafted.editorialSkill.files.includes('references/niche-adaptation.md'), false);
+  assert.equal(drafted.editorialSkill.files.includes('references/planning-decisions.md'), false);
   assert.equal(model.packageForSite(await model.getSite(site.id)).pages.length, 0);
 });
 
@@ -126,6 +128,31 @@ test('missing shared contract fails before CLI and leaves site content unchanged
     await assert.rejects(() => readFile(process.env.STUDIO_SKILL_CAPTURE_PATH), { code: 'ENOENT' });
     assert.equal((await model.getSite(site.id)).pages.length, 0);
   } finally { delete process.env.STUDIO_EDITORIAL_SKILL_DIR; }
+});
+
+test('planning checkpoint changes versioned plans without enlarging draft snapshots and fails closed when missing', async () => {
+  const directory = path.join(root, 'planning-checkpoint-parent', 'skill');
+  await mkdir(path.join(directory, 'references'), { recursive: true });
+  await writeFile(path.join(directory, '..', 'PROJECT_CONTRACT.md'), 'Shared contract');
+  for (const file of ['SKILL.md', 'references/studio-contract.md', 'references/quality-review.md',
+    'references/network-linking.md', 'references/media-workflow.md', 'references/content-workflow.md',
+    'references/niche-adaptation.md']) {
+    await writeFile(path.join(directory, file), 'Fixture instruction: ' + file);
+  }
+  const checkpoint = path.join(directory, 'references/planning-decisions.md');
+  await writeFile(checkpoint, 'Initial planning checkpoint');
+  const firstPlan = await loadEditorialSkill('plan', directory);
+  const firstDraft = await loadEditorialSkill('draft', directory);
+  await writeFile(checkpoint, 'Revised planning checkpoint');
+  const nextPlan = await loadEditorialSkill('plan', directory);
+  const nextDraft = await loadEditorialSkill('draft', directory);
+  assert.notEqual(firstPlan.metadata.fingerprint, nextPlan.metadata.fingerprint);
+  assert.equal(firstDraft.metadata.fingerprint, nextDraft.metadata.fingerprint);
+  assert.match(firstPlan.instructions, /Initial planning checkpoint/);
+  assert.doesNotMatch(firstPlan.instructions, /Revised planning checkpoint/);
+  await rm(checkpoint);
+  await assert.rejects(() => loadEditorialSkill('plan', directory), /planning-decisions\.md/);
+  assert.equal((await loadEditorialSkill('draft', directory)).metadata.fingerprint, firstDraft.metadata.fingerprint);
 });
 
 test.after(async () => {

@@ -1,6 +1,6 @@
 ---
 name: niche-content-planner
-description: "Research a niche and autonomously build or review a seasonal SEO content calendar, distinct URL intents, topical clusters, source-backed briefs and useful drafts. Use for any niche site's initial demand test, six-month editorial plan, internal link map, draft QA or evidence-based content refresh; integrates with this project's content studio."
+description: "Research or refresh a niche's complete topical plan: evidence-backed query-to-URL decisions, distinct reader jobs, briefs, dates and useful links. Use for this project's content planning, initial release selection and draft review; integrates with the shared content studio and Treg SEO/GEO research core."
 ---
 
 # Niche content planner
@@ -9,7 +9,7 @@ Use [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation/evi
 
 For this network read [the shared project skill contract](../PROJECT_CONTRACT.md). The studio injects this contract into both CLI modes with the instruction SHA-256; specialist helpers contribute to this workflow without replacing its JSON/publication boundaries.
 
-Build pages that support a concrete business demand test, then measure whether customers request that product/service. Reuse the process across sites; never reuse a site's facts, contact details or promises as another site's facts. Phase one combines an honest commercial hypothesis, useful decision content and a truthful inquiry path. Full commerce, supplier operations and bespoke tools follow measured demand.
+Build pages for the owner's selected business and measure useful outcomes. Reuse the process across sites, never their facts, contacts or promises. The default phase-one demand test does not narrow an explicitly larger owner-confirmed scope or its complete content map. Distinguish planned functionality from the offer that actually operates.
 
 ## Inputs and operating modes
 
@@ -17,9 +17,9 @@ For every site's scheduling, link finalization, agent review and release use [th
 
 Read the site brief, existing page inventory and task's current date, timezone, locale and planning horizon. Use project `AGENTS.md`, `SEO_GEO_CORE.md` and `sites/<siteId>.md` when accessible. A domain name alone does not prove ownership, location, operational capacity or even the intended offer.
 
-Load [niche adaptation](references/niche-adaptation.md) for research and calendar work. Load [quality review](references/quality-review.md) before returning a plan or draft. For studio JSON tasks also load [studio contract](references/studio-contract.md). The runtime may inject these files directly; do not assume they were loaded through skill discovery.
+For research, planning or a structural refresh load [planning decisions and handover](references/planning-decisions.md), then [niche adaptation](references/niche-adaptation.md) where relevant. Load [quality review](references/quality-review.md) before returning a plan or draft and [studio contract](references/studio-contract.md) for schema tasks. References are mode-specific; a single-page draft does not require rebuilding the niche map. The studio injects the relevant files into its versioned instruction snapshot.
 
-- **Research/plan:** select a narrow audience and offer hypothesis, inspect demand questions and competitors, map distinct intents, select clusters, dates and evidence needs.
+- **Research/plan:** reconcile the full owner-confirmed scope, head queries and existing URLs; show evidence-backed URL decisions before selecting the first release and dates.
 - **Draft:** answer one planned editorial intent using available evidence, propose relevant links and produce a usable first draft. A planned intent is not an approved public revision.
 - **Review/refresh:** challenge the intent, evidence, usefulness, timing and link graph; repair what is resolvable and record specific remaining blockers. Update useful existing URLs before adding overlapping pages.
 
@@ -59,7 +59,7 @@ Use the runtime's local date and horizon, not dates remembered from an example. 
 
 Verify movable holidays, jurisdictional deadlines and time-sensitive events from a current primary source. Check year, country and local timezone. Weather, harvest and industry buying cycles vary; state assumptions rather than assigning exact invented peak days. Skip irrelevant holidays. Evergreen topics need no forced seasonal hook.
 
-Spread substantive pages across the requested horizon, prioritizing foundational answers and dependencies. Do not delay all commercially useful information to the final month or add filler to meet a weekly cadence. If an event is imminent, choose an achievable preparation angle or plan the next cycle; never backdate a new page or change dates solely to appear fresh. Reconcile with existing plans before adding duplicates. Scheduling an evergreen foundation first is a dependency decision, not seasonality: its seasonalHook must be exactly an empty string, not "Evergreen", "published first" or a forced holiday/maintenance association. Put ordinary scheduling rationale in reason.
+Prepare dependency-ready foundations and supporting answers as early as evidence, media and review allow; no default weekly/monthly quota or one-page-per-day rule. The full map and first release are separate. An explicit calendar mode does not require filler or limit topical depth. If an event is imminent, choose an achievable preparation angle or the next cycle; never backdate a new page. Reconcile existing plans before adding duplicates. An evergreen foundation's seasonalHook is exactly empty; put dependency rationale in reason.
 
 ## 5. Brief, draft and verify
 

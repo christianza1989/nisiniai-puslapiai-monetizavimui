@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-10-space",
+      "profileIndex": 9,
+      "name": "Greta Rimkutė",
+      "specialty": "skin",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P10 studio interior. Unique skin small professional studio interior: pale stone with charcoal furnishings and olive plant. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Greta Rimkutė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-3bb36959-2bfd-45a5-a552-7eea74735809.png",
+      "review": "Pixel review accepted: frontal skin-treatment room with charcoal storage and white reclined chair, distinct layout and plausible lamp, no people."
+    },
+    {
+      "id": "profile-11-portrait",
+      "profileIndex": 10,
+      "name": "Justė Šimkutė",
+      "specialty": "massage",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P11 portrait. A unique fictional Lithuanian adult woman with wavy black shoulder-length hair, age 38, black linen apron over white shirt, in a massage professional studio with warm walnut furniture, soft cream wall and round mirror. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Justė Šimkutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-8ae8dd63-e555-4812-911a-fba686fb8289.png",
+      "review": "Pixel review accepted: adult black wavy-haired portrait in massage room, natural freckled face and white shirt/apron; distinct centered crop."
+    },
+    {
+      "id": "profile-11-work",
+      "profileIndex": 10,
+      "name": "Justė Šimkutė",
+      "specialty": "massage",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P11 massage portfolio photo. Editorial wellness photo of a practitioner performing a gentle shoulder massage on a seated adult client, client in a simple sleeveless top; only neck, upper shoulder and practitioner's hands visible, soft side light, walnut room detail in background. Bright diffused window light. Quiet sage-grey walls, oak flooring and linen curtains background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Justė Šimkutė massage stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-52bf581b-dbb1-46c2-bfcd-81ce7ecadf75.png",
+      "review": "Pixel review accepted: gentle seated shoulder massage from rear angle, covered adult client, two plausible hands, distinct from P05 angle."
+    },
+    {
+      "id": "profile-11-space",
+      "profileIndex": 10,
+      "name": "Justė Šimkutė",
+      "specialty": "massage",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P11 studio interior. Unique massage small professional studio interior: warm walnut furniture, soft cream wall and round mirror. Massage table neatly made with folded linen, quiet uncluttered treatment room. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Justė Šimkutė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-b7901ea9-a198-4d88-a33d-9c4081a1e327.png",
+      "review": "Pixel review accepted: massage room doorway composition, wood table with face cradle, towels and side window; no people or branding."
+    },
+    {
+      "id": "profile-12-portrait",
+      "profileIndex": 11,
+      "name": "Simona Kavaliauskė",
+      "specialty": "pedicure",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P12 portrait. A unique fictional Lithuanian adult woman with auburn pixie cut, age 45, navy clean professional tunic, in a pedicure professional studio with bright skylight, black thin metal furnishings. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Simona Kavaliauskė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-5527bcf7-8515-4b96-a96c-986b080dff51.png",
+      "review": "Pixel review accepted: adult auburn pixie portrait in navy tunic and skylit pedicure setting; natural face, centered avatar crop."
+    },
+    {
+      "id": "profile-12-work",
+      "profileIndex": 11,
+      "name": "Simona Kavaliauskė",
+      "specialty": "pedicure",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P12 pedicure portfolio photo. Editorial close photograph of anatomically correct adult feet after pedicure, resting on a clean folded towel, focus on neat short toenails with soft blush polish. Soft side daylight. Quiet white tiled details, violet flowers and brass small lamp background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Simona Kavaliauskė pedicure stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-ca3acc81-8025-43f3-a07a-69851f7fd9eb.png",
+      "review": "Pixel review accepted: short pale pink pedicure, two feet with five plausible toes each, towel setting and no distracting branding."
+    },
+    {
+      "id": "profile-12-space",
+      "profileIndex": 11,
+      "name": "Simona Kavaliauskė",
+      "specialty": "pedicure",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P12 studio interior. Unique pedicure small professional studio interior: bright skylight, black thin metal furnishings. Pedicure chair with basin, closed storage and stool. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Simona Kavaliauskė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-85253d9d-f02b-4113-adf9-18e55a78cedf.png",
+      "review": "Pixel review accepted: distinct skylit pedicure chair/foot basin detail, black storage, plausible equipment and clean scene."
+    },
+    {
+      "id": "profile-13-portrait",
+      "profileIndex": 12,
+      "name": "Karolina Stankutė",
+      "specialty": "nails",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P13 portrait. A unique fictional Lithuanian adult woman with dark-blonde braided updo, age 52, ivory knit blouse, in a nails professional studio with sage-grey walls, oak flooring and linen curtains. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Karolina Stankutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-6314a96c-7bf0-4654-9081-a45530c978c5.png",
+      "review": "Pixel review accepted: mature adult loose blonde updo portrait with cream knit, natural freckles and nail studio; distinct face and centered crop."
+    }
+  ]
+}

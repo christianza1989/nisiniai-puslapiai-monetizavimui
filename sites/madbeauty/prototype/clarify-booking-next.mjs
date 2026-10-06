@@ -1,0 +1,2 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const file=new URL('./public/booking-ui.mjs',import.meta.url);let s=await readFile(file,'utf8');const a="Toliau: meistras ${icon('arrow')}";if(!s.includes(a))throw Error('Expected booking CTA missing');s=s.replace(a,"${profile.practitioners.length>1?'Toliau: meistras':'Toliau: laikas'} ${icon('arrow')}");await writeFile(file,s);console.log('Solo booking next action clarified.');

@@ -1,0 +1,12 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const url=new URL('./public/workspace-ui.mjs',import.meta.url);let s=await readFile(url,'utf8');
+s=s.replace("import {accountEntry} from './account-ui.mjs';","import {accountEntry} from './account-ui.mjs';\nimport {conversations} from './chat-ui.mjs';");
+const customerStart=s.indexOf("  else if(part==='pranesimai'){title='pokalbiai'"),customerEnd=s.indexOf("  else if(part==='profilis')",customerStart);
+if(customerStart<0||customerEnd<0)throw Error('Customer chat boundary');
+s=s.slice(0,customerStart)+"  else if(part==='pranesimai'){title='Pokalbiai';content=conversations(ctx,d,'customer');}\n"+s.slice(customerEnd);
+const proStart=s.indexOf("  else if(part==='pranesimai'){title='Pranešimų peržiūra'"),proEnd=s.indexOf("  else if(part==='ataskaitos')",proStart);
+if(proStart<0||proEnd<0)throw Error('Provider chat boundary');
+s=s.slice(0,proStart)+"  else if(part==='pranesimai'){title='Pokalbiai';content=conversations(ctx,d,'professional')+`<details class=\"delivery-details\"><summary>Vizitų pranešimų būsenos</summary>${list(d.outbox,o=>`<div class=\"list-row\"><div><strong>${esc(o.type)}</strong>${badge(o.state)}</div>${btn('outbox-preview','Peržiūrėti',`data-id=\"${o.id}\"`,'button outline small')}</div>`,'Po vizito patvirtinimo čia atsiras jo pranešimas.')}</details>`;}\n"+s.slice(proEnd);
+s=s.replace("if(action==='message-visit'){", "if(action==='chat-select'){ctx.state.chatBookingId=id;ctx.saveUI();await ctx.render();return true;}\n  if(action==='message-visit'){");
+s=s.replace("if(form.id==='message-form'){", "if(form.id==='conversation-message'){await ctx.adapter.message({scope,bookingId:ctx.state.chatBookingId,text:fd.get('text')});await ctx.render();return true;}\n  if(form.id==='message-form'){");
+await writeFile(url,s);

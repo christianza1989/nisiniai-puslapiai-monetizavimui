@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-21-work",
+      "profileIndex": 20,
+      "name": "Neringa Žukaitė",
+      "specialty": "brows",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P21 brows portfolio photo. Macro editorial photograph of one adult woman's eye and naturally groomed eyebrow, face with real skin texture, eye closed softly; show a light brown brushed eyebrow with clean lash line. Bright diffused window light. Quiet minimal charcoal doorframes, cream upholstery and large window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Neringa Žukaitė brows stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-0150d381-5587-4a44-a849-d3802fe17d1e.png",
+      "review": "Pixel review accepted: natural shaped brow detail with closed eye and coherent fingers; relevant brow work without labels."
+    },
+    {
+      "id": "profile-21-space",
+      "profileIndex": 20,
+      "name": "Neringa Žukaitė",
+      "specialty": "brows",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P21 studio interior. Unique brows small professional studio interior: sage-grey walls, oak flooring and linen curtains. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Neringa Žukaitė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-8678605c-79e7-4d5e-8d8c-ec7ce8bb946d.png",
+      "review": "Pixel review accepted: sage brow room with reclining white chair and black lamp; distinct layout, plausible furniture."
+    },
+    {
+      "id": "profile-22-portrait",
+      "profileIndex": 21,
+      "name": "Aistė Venckutė",
+      "specialty": "skin",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P22 portrait. A unique fictional Lithuanian adult woman with curly brown shoulder-length hair, age 28, navy clean professional tunic, in a skin professional studio with white tiled details, violet flowers and brass small lamp. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: angular square jaw, deep-set brown eyes, slightly aquiline nose; strong dark straight eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Aistė Venckutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-2c659dd2-363b-48b5-a81c-9d136209214d.png",
+      "review": "Pixel review accepted: adult practitioner with dark curls, long angular face and navy uniform; coherent distinct portrait."
+    },
+    {
+      "id": "profile-22-work",
+      "profileIndex": 21,
+      "name": "Aistė Venckutė",
+      "specialty": "skin",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P22 skin portfolio photo. Calm editorial spa skincare procedure scene, an adult woman client on a treatment chair under a white towel, a practitioner's clean hands using a single small soft cosmetic brush on the cheek. Soft side daylight. Quiet natural birch furnishings, black equipment and violet stool background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Aistė Venckutė skin stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-b1d7baad-e913-4341-a625-e8fc9f6c12ac.png",
+      "review": "Pixel review accepted: cosmetic mask brushed onto client's cheek with coherent practitioner hand; no treatment outcome claim."
+    },
+    {
+      "id": "profile-22-space",
+      "profileIndex": 21,
+      "name": "Aistė Venckutė",
+      "specialty": "skin",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P22 studio interior. Unique skin small professional studio interior: white tiled details, violet flowers and brass small lamp. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Aistė Venckutė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-d5ccece2-8395-4746-9a20-3e912a1e6629.png",
+      "review": "Pixel review accepted: white-tile treatment room with brass wall light, cream chair and rolling cart; distinct coherent space."
+    },
+    {
+      "id": "profile-23-portrait",
+      "profileIndex": 22,
+      "name": "Kamilė Valiukė",
+      "specialty": "massage",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P23 portrait. A unique fictional Lithuanian adult woman with straight brunette bangs, age 35, ivory knit blouse, in a massage professional studio with minimal charcoal doorframes, cream upholstery and large window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: heart-shaped face, almond-shaped dark eyes, long straight nose; fine softly arched eyebrows. Fair skin with natural pink undertone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Kamilė Valiukė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-782030f9-7565-4d3b-9a49-c81403081f80.png",
+      "review": "Pixel review accepted: adult massage practitioner with tied brunette hair and bangs, cream blouse; distinct coherent portrait."
+    },
+    {
+      "id": "profile-23-work",
+      "profileIndex": 22,
+      "name": "Kamilė Valiukė",
+      "specialty": "massage",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P23 massage portfolio photo. Editorial wellness photo of a practitioner performing a gentle shoulder massage on a seated adult client, client in a simple sleeveless top; only neck, upper shoulder and practitioner's hands visible, bright treatment room with pale violet towel. Bright diffused window light. Quiet oak and white cabinetry, tall arched window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Kamilė Valiukė massage stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-5a2339c1-8c6f-4ee8-8e9b-1e2a5a89a233.png",
+      "review": "Pixel review accepted: shoulder massage detail on clothed client, plausible practitioner hands; relevant non-medical service scene."
+    },
+    {
+      "id": "profile-23-space",
+      "profileIndex": 22,
+      "name": "Kamilė Valiukė",
+      "specialty": "massage",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P23 studio interior. Unique massage small professional studio interior: minimal charcoal doorframes, cream upholstery and large window. Massage table neatly made with folded linen, quiet uncluttered treatment room. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Kamilė Valiukė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-6a8484d4-eec1-443b-91af-629a4e04a932.png",
+      "review": "Pixel review accepted: massage table seen through doorway, oak storage and black window frame; distinct coherent interior."
+    }
+  ]
+}

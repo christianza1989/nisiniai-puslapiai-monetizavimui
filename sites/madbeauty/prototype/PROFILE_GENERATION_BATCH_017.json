@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-34-space",
+      "profileIndex": 33,
+      "name": "Elena Adomė",
+      "specialty": "skin",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P34 studio interior. Unique skin small professional studio interior: pale stone with charcoal furnishings and olive plant. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: centered work station and daylight window at back. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Elena Adomė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-70c98b4d-d485-4a40-8b0e-a8ff5deceb2b.png",
+      "review": "Pixel review accepted: straight-on skincare chair by tall window with charcoal cabinet and ring lamp; distinct coherent room."
+    },
+    {
+      "id": "profile-35-portrait",
+      "profileIndex": 34,
+      "name": "Lukas Martinkus",
+      "specialty": "massage",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P35 portrait. A unique fictional Lithuanian adult man with medium chestnut hair and rectangular glasses, age 32, white cotton shirt with dark apron, in a massage professional studio with warm walnut furniture, soft cream wall and round mirror. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: heart-shaped face, light blue eyes, broad softly rounded nose; fine softly arched eyebrows. Fair skin with natural pink undertone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Lukas Martinkus profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-46b942f8-6e8b-482f-a3a7-d2b6ecc384f0.png",
+      "review": "Pixel review accepted: curly-haired male massage practitioner with rectangular glasses and pale blue eyes; coherent distinct individual."
+    },
+    {
+      "id": "profile-35-work",
+      "profileIndex": 34,
+      "name": "Lukas Martinkus",
+      "specialty": "massage",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P35 massage portfolio photo. Editorial wellness photo of a practitioner performing a gentle shoulder massage on a seated adult client, client in a simple sleeveless top; only neck, upper shoulder and practitioner's hands visible, soft side light, walnut room detail in background. Bright diffused window light. Quiet sage-grey walls, oak flooring and linen curtains background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Lukas Martinkus massage stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-3f7bc240-e11d-4a5a-9eca-3fc587e4169d.png",
+      "review": "Pixel review accepted: shoulder massage scene with plausible practitioner hands and seated client; distinct procedure angle."
+    },
+    {
+      "id": "profile-35-space",
+      "profileIndex": 34,
+      "name": "Lukas Martinkus",
+      "specialty": "massage",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P35 studio interior. Unique massage small professional studio interior: warm walnut furniture, soft cream wall and round mirror. Massage table neatly made with folded linen, quiet uncluttered treatment room. Distinct layout: diagonal view from doorway with station on left. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Lukas Martinkus darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-ce2265a1-3d1c-4d43-9920-3d5cae7fd7e9.png",
+      "review": "Pixel review accepted: oak massage room with headrest table, purple runner, tall cabinet and side window; usable spatial layout."
+    },
+    {
+      "id": "profile-36-portrait",
+      "profileIndex": 35,
+      "name": "Kristina Bartkutė",
+      "specialty": "pedicure",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P36 portrait. A unique fictional Lithuanian adult woman with auburn pixie cut, age 39, black linen apron over white shirt, in a pedicure professional studio with bright skylight, black thin metal furnishings. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: high prominent cheekbones, deep-set brown eyes, short rounded nose; strong dark straight eyebrows. Medium warm skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Kristina Bartkutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-14e3543b-7036-4f32-8f53-bf2baf1c8ec0.png",
+      "review": "Pixel review accepted: red pixie-haired pedicure practitioner with angular face and brown eyes; coherent distinct portrait."
+    },
+    {
+      "id": "profile-36-work",
+      "profileIndex": 35,
+      "name": "Kristina Bartkutė",
+      "specialty": "pedicure",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P36 pedicure portfolio photo. Editorial close photograph of anatomically correct adult feet after pedicure, resting on a clean folded towel, focus on neat short toenails with pearl ivory polish. Soft side daylight. Quiet white tiled details, violet flowers and brass small lamp background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Kristina Bartkutė pedicure stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-bc1f9448-18ae-4758-b3d2-436d3fb25241.png",
+      "review": "Pixel review accepted: pearl white pedicure on towel with plausible toes and restrained styling; distinct pedicure result."
+    },
+    {
+      "id": "profile-36-space",
+      "profileIndex": 35,
+      "name": "Kristina Bartkutė",
+      "specialty": "pedicure",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P36 studio interior. Unique pedicure small professional studio interior: bright skylight, black thin metal furnishings. Pedicure chair with basin, closed storage and stool. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Kristina Bartkutė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-ed7a01b8-37fb-4827-a9bc-9e2decc117b1.png",
+      "review": "Pixel review accepted: pedicure basin chair beneath skylight with dark pedestal and storage shelves; distinct interior."
+    },
+    {
+      "id": "profile-37-portrait",
+      "profileIndex": 36,
+      "name": "Jūratė Kvedarė",
+      "specialty": "nails",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P37 portrait. A unique fictional Lithuanian adult woman with dark-blonde braided updo, age 46, navy clean professional tunic, in a nails professional studio with sage-grey walls, oak flooring and linen curtains. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image. Specific individual facial structure: broad oval face, almond-shaped dark eyes, slightly aquiline nose; fine softly arched eyebrows. Light olive skin tone. Preserve these distinguishing features in a candid relaxed portrait.",
+      "alt": "Jūratė Kvedarė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-6316ce07-06fe-41e9-97c2-678bc8ef83e5.png",
+      "review": "Pixel review accepted: mature updo-haired nail practitioner with round face, brown eyes and navy blouse; coherent portrait."
+    }
+  ]
+}

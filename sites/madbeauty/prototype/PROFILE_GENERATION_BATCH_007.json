@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-08-portrait",
+      "profileIndex": 7,
+      "name": "Ugnė Daukšaitė",
+      "specialty": "hair",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P08 portrait. A unique fictional Lithuanian adult woman with silver short crop, age 46, ivory knit blouse, in a hair professional studio with natural birch furnishings, black equipment and violet stool. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Ugnė Daukšaitė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-c9b6aa35-3f3d-4bb7-96f7-eab20ba4ef8d.png",
+      "review": "Pixel review accepted: silver pixie adult portrait in hair studio, cream knit, distinct face and natural skin, centered crop."
+    },
+    {
+      "id": "profile-08-work",
+      "profileIndex": 7,
+      "name": "Ugnė Daukšaitė",
+      "specialty": "hair",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P08 hair portfolio photo. Rear three-quarter portrait of an adult female client showing a professional shoulder-length haircut and natural glossy healthy-looking hair, focus on the straight honey-blonde blunt bob. Soft side daylight. Quiet pale stone with charcoal furnishings and olive plant background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Ugnė Daukšaitė hair stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-957eae97-0fba-4e56-bb2f-7fc7613a5a8d.png",
+      "review": "Pixel review accepted: short straight blonde bob styling example, coherent face and hand, clear hair silhouette, no logo."
+    },
+    {
+      "id": "profile-08-space",
+      "profileIndex": 7,
+      "name": "Ugnė Daukšaitė",
+      "specialty": "hair",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P08 studio interior. Unique hair small professional studio interior: natural birch furnishings, black equipment and violet stool. Hair salon chair, mirror and tidy hair tools. Distinct layout: close interior detail with chair in foreground. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Ugnė Daukšaitė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-d6c3f4c2-9caf-4d1a-84d6-ba8958f594b3.png",
+      "review": "Pixel review accepted: close hair chair and round mirror studio, plausible base/equipment, no people, distinct layout."
+    },
+    {
+      "id": "profile-09-portrait",
+      "profileIndex": 8,
+      "name": "Lina Žilinskė",
+      "specialty": "brows",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P09 portrait. A unique fictional Lithuanian adult woman with short chestnut bob, age 53, plum professional blouse, in a brows professional studio with oak and white cabinetry, tall arched window. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Bright diffused daylight, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Lina Žilinskė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-77123d8a-7eee-4e3a-83c4-929e3ff8e047.png",
+      "review": "Pixel review accepted: mature brunette bob with plum blouse, cosmetic room and clear centered face; distinct from P04 pixie."
+    },
+    {
+      "id": "profile-09-work",
+      "profileIndex": 8,
+      "name": "Lina Žilinskė",
+      "specialty": "brows",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P09 brows portfolio photo. Macro editorial photograph of one adult woman's eye and naturally groomed eyebrow, face with real skin texture, eye closed softly; show a clean tapered eyebrow with restrained natural makeup. Bright diffused window light. Quiet warm walnut furniture, soft cream wall and round mirror background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Lina Žilinskė brows stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-6dbf4b73-1ee7-4b5e-9358-bbec2f7ecfb3.png",
+      "review": "Pixel review accepted: natural eyebrow/closed lash detail with plausible resting hand; gentle editorial style without treatment claim."
+    },
+    {
+      "id": "profile-09-space",
+      "profileIndex": 8,
+      "name": "Lina Žilinskė",
+      "specialty": "brows",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P09 studio interior. Unique brows small professional studio interior: oak and white cabinetry, tall arched window. Cosmetic treatment chair, closed clean storage and adjustable small light. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Lina Žilinskė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-ff10372d-b7b8-451e-ba5b-e5bb51ce020a.png",
+      "review": "Pixel review accepted: arched-window brow studio with reclined chair and closed storage; distinct interior, no brands."
+    },
+    {
+      "id": "profile-10-portrait",
+      "profileIndex": 9,
+      "name": "Greta Rimkutė",
+      "specialty": "skin",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P10 portrait. A unique fictional Lithuanian adult woman with long straight honey-blonde hair, age 31, white cotton shirt with dark apron, in a skin professional studio with pale stone with charcoal furnishings and olive plant. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Greta Rimkutė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-27472934-eb19-49be-bcca-90e7c232e410.png",
+      "review": "Pixel review accepted: adult long blonde-haired portrait with white shirt and dark apron, distinct face, usable avatar crop."
+    },
+    {
+      "id": "profile-10-work",
+      "profileIndex": 9,
+      "name": "Greta Rimkutė",
+      "specialty": "skin",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P10 skin portfolio photo. Calm editorial spa skincare procedure scene, an adult woman client on a treatment chair under a white towel, a practitioner's clean hands using two soft white cleansing pads; no medical equipment. Soft side daylight. Quiet bright skylight, black thin metal furnishings background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Greta Rimkutė skin stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-5e7c829e-412f-48ed-9052-a975f7d9dc4c.png",
+      "review": "Pixel review accepted: gentle facial cotton-pad cleansing scene, plausible hands and towel coverage, no device or medical claim."
+    }
+  ]
+}

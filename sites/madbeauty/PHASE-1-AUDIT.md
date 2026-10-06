@@ -1,361 +1,91 @@
-# madbeauty.lt — first-phase audit
-
-UNREVIEWED scaffold. No quality score or readiness is claimed.
-
-## Inventory and versions
-
-Record actual URLs, package hash, source/build, environment, operator facts and dependencies.
-
-## Baseline findings and repairs
-
-Record P0/P1/P2 findings before fixes and their actual acceptance evidence.
-
-## Measurements and visual verdict
-
-Record real screenshots, all initial guide reviews, local storage/delivery boundaries, performance and separate visual judgement.
-
-## A–Z checks
-
-- [ ] **A1 · UNVERIFIED · local gate** — Phase 1 is explicit; inquiry is not an order, reservation or proven demand.
-
-  Evidence: not yet inspected.
-
-- [ ] **A2 · UNVERIFIED · local gate** — The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.
-
-  Evidence: not yet inspected.
-
-- [ ] **A3 · UNVERIFIED · operations gate** — Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.
-
-  Evidence: not yet inspected.
-
-- [ ] **B1 · UNVERIFIED · local gate** — Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.
-
-  Evidence: not yet inspected.
-
-- [ ] **B2 · UNVERIFIED · local gate** — No borrowed phones, addresses, identities, credentials, reviews or certifications.
-
-  Evidence: not yet inspected.
-
-- [ ] **B3 · UNVERIFIED · launch gate** — Actual operator identity, applicable legal identifiers/address and domain control are established.
-
-  Evidence: not yet inspected.
-
-- [ ] **C1 · UNVERIFIED · local gate** — Bounded history evidence, retrieval limits and unavailable periods are recorded.
-
-  Evidence: not yet inspected.
-
-- [ ] **C2 · UNVERIFIED · local gate** — Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.
-
-  Evidence: not yet inspected.
-
-- [ ] **C3 · UNVERIFIED · launch** — Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.
-
-  Evidence: not yet inspected.
-
-- [ ] **D1 · UNVERIFIED · local** — Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.
-
-  Evidence: not yet inspected.
-
-- [ ] **D2 · UNVERIFIED · local gate** — Current facts and permissions support original copy/assets; old or competitor claims are not our facts.
-
-  Evidence: not yet inspected.
-
-- [ ] **D3 · UNVERIFIED · local** — Search intents and niche advantages are hypotheses where no search/conversion data exists.
-
-  Evidence: not yet inspected.
-
-- [ ] **E1 · UNVERIFIED · local** — Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.
-
-  Evidence: not yet inspected.
-
-- [ ] **E2 · UNVERIFIED · local** — DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.
-
-  Evidence: not yet inspected.
-
-- [ ] **E3 · UNVERIFIED · local gate** — Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.
-
-  Evidence: not yet inspected.
-
-- [ ] **F1 · UNVERIFIED · local gate** — All public pages are reachable through useful navigation/context; no orphan initial guide.
-
-  Evidence: not yet inspected.
-
-- [ ] **F2 · UNVERIFIED · local gate** — Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.
-
-  Evidence: not yet inspected.
-
-- [ ] **F3 · UNVERIFIED · local** — Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.
-
-  Evidence: not yet inspected.
-
-- [ ] **G1 · UNVERIFIED · local gate** — First screen identifies the topic, useful offer and honest next action.
-
-  Evidence: not yet inspected.
-
-- [ ] **G2 · UNVERIFIED · local** — Middle/end answer new questions rather than repeating promotions or decorative cards.
-
-  Evidence: not yet inspected.
-
-- [ ] **G3 · UNVERIFIED · local gate** — Primary/secondary actions, privacy route, empty/error/success states have real behavior.
-
-  Evidence: not yet inspected.
-
-- [ ] **H1 · UNVERIFIED · local gate** — At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.
-
-  Evidence: not yet inspected.
-
-- [ ] **H2 · UNVERIFIED · local gate** — Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.
-
-  Evidence: not yet inspected.
-
-- [ ] **H3 · UNVERIFIED · local** — Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.
-
-  Evidence: not yet inspected.
-
-- [ ] **H4 · UNVERIFIED · local gate** — Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.
-
-  Evidence: not yet inspected.
-
-- [ ] **H5 · UNVERIFIED · local gate** — Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.
-
-  Evidence: not yet inspected.
-
-- [ ] **I1 · UNVERIFIED · local gate** — Visible attribution identifies a real Person or Organization with a public profile or clear identity.
-
-  Evidence: not yet inspected.
-
-- [ ] **I2 · UNVERIFIED · local gate** — Author/profile/schema identity agrees; no fictional expert or unverified experience.
-
-  Evidence: not yet inspected.
-
-- [ ] **I3 · UNVERIFIED · local gate** — Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.
-
-  Evidence: not yet inspected.
-
-- [ ] **I4 · UNVERIFIED · launch gate** — Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.
-
-  Evidence: not yet inspected.
-
-- [ ] **J1 · UNVERIFIED · local gate** — About/editorial information explains purpose, AI role, source method, limitations and corrections contact.
-
-  Evidence: not yet inspected.
-
-- [ ] **J2 · UNVERIFIED · local** — Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.
-
-  Evidence: not yet inspected.
-
-- [ ] **J3 · UNVERIFIED · local gate** — Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.
-
-  Evidence: not yet inspected.
-
-- [ ] **K1 · UNVERIFIED · local gate** — Every public URL has one useful H1, title, description, correct language and canonical.
-
-  Evidence: not yet inspected.
-
-- [ ] **K2 · UNVERIFIED · local** — Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.
-
-  Evidence: not yet inspected.
-
-- [ ] **K3 · UNVERIFIED · local gate** — Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.
-
-  Evidence: not yet inspected.
-
-- [ ] **L1 · UNVERIFIED · local gate** — JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.
-
-  Evidence: not yet inspected.
-
-- [ ] **L2 · UNVERIFIED · local gate** — Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.
-
-  Evidence: not yet inspected.
-
-- [ ] **L3 · UNVERIFIED · local gate** — No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.
-
-  Evidence: not yet inspected.
-
-- [ ] **L4 · UNVERIFIED · launch** — Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.
-
-  Evidence: not yet inspected.
-
-- [ ] **M1 · UNVERIFIED · local gate** — Contextual links use real same-site target IDs and informative anchors; fragments exist.
-
-  Evidence: not yet inspected.
-
-- [ ] **M2 · UNVERIFIED · local gate** — Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.
-
-  Evidence: not yet inspected.
-
-- [ ] **M3 · UNVERIFIED · local** — Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.
-
-  Evidence: not yet inspected.
-
-- [ ] **N1 · UNVERIFIED · local gate** — Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.
-
-  Evidence: not yet inspected.
-
-- [ ] **N2 · UNVERIFIED · local gate** — Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.
-
-  Evidence: not yet inspected.
-
-- [ ] **N3 · UNVERIFIED · local gate** — Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.
-
-  Evidence: not yet inspected.
-
-- [ ] **N4 · UNVERIFIED · launch** — Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.
-
-  Evidence: not yet inspected.
-
-- [ ] **O1 · UNVERIFIED · local gate** — Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.
-
-  Evidence: not yet inspected.
-
-- [ ] **O2 · UNVERIFIED · local gate** — Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.
-
-  Evidence: not yet inspected.
-
-- [ ] **O3 · UNVERIFIED · launch gate** — DNS, TLS, real host, indexing directives and domain isolation work on production.
-
-  Evidence: not yet inspected.
-
-- [ ] **P1 · UNVERIFIED · local gate** — Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.
-
-  Evidence: not yet inspected.
-
-- [ ] **P2 · UNVERIFIED · local gate** — Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.
-
-  Evidence: not yet inspected.
-
-- [ ] **P3 · UNVERIFIED · local gate** — Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.
-
-  Evidence: not yet inspected.
-
-- [ ] **Q1 · UNVERIFIED · local gate** — Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.
-
-  Evidence: not yet inspected.
-
-- [ ] **Q2 · UNVERIFIED · local gate** — Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.
-
-  Evidence: not yet inspected.
-
-- [ ] **Q3 · UNVERIFIED · local** — llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.
-
-  Evidence: not yet inspected.
-
-- [ ] **R1 · UNVERIFIED · local gate** — Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.
-
-  Evidence: not yet inspected.
-
-- [ ] **R2 · UNVERIFIED · local gate** — Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.
-
-  Evidence: not yet inspected.
-
-- [ ] **R3 · UNVERIFIED · local gate** — Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.
-
-  Evidence: not yet inspected.
-
-- [ ] **S1 · UNVERIFIED · local gate** — Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.
-
-  Evidence: not yet inspected.
-
-- [ ] **S2 · UNVERIFIED · local gate** — Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.
-
-  Evidence: not yet inspected.
-
-- [ ] **S3 · UNVERIFIED · local** — Real viewport tests are distinguished from physical device and synthesized touch testing.
-
-  Evidence: not yet inspected.
-
-- [ ] **T1 · UNVERIFIED · local gate** — Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.
-
-  Evidence: not yet inspected.
-
-- [ ] **T2 · UNVERIFIED · local** — Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.
-
-  Evidence: not yet inspected.
-
-- [ ] **T3 · UNVERIFIED · launch** — Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.
-
-  Evidence: not yet inspected.
-
-- [ ] **U1 · UNVERIFIED · local gate** — Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.
-
-  Evidence: not yet inspected.
-
-- [ ] **U2 · UNVERIFIED · local gate** — Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.
-
-  Evidence: not yet inspected.
-
-- [ ] **U3 · UNVERIFIED · local gate** — Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.
-
-  Evidence: not yet inspected.
-
-- [ ] **U4 · UNVERIFIED · launch gate** — Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.
-
-  Evidence: not yet inspected.
-
-- [ ] **V1 · UNVERIFIED · local gate** — Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.
-
-  Evidence: not yet inspected.
-
-- [ ] **V2 · UNVERIFIED · local gate** — Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.
-
-  Evidence: not yet inspected.
-
-- [ ] **V3 · UNVERIFIED · operations gate** — GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.
-
-  Evidence: not yet inspected.
-
-- [ ] **W1 · UNVERIFIED · local gate** — Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.
-
-  Evidence: not yet inspected.
-
-- [ ] **W2 · UNVERIFIED · local gate** — Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.
-
-  Evidence: not yet inspected.
-
-- [ ] **W3 · UNVERIFIED · launch gate** — Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.
-
-  Evidence: not yet inspected.
-
-- [ ] **W4 · UNVERIFIED · local gate** — Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.
-
-  Evidence: not yet inspected.
-
-- [ ] **X1 · UNVERIFIED · local gate** — No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.
-
-  Evidence: not yet inspected.
-
-- [ ] **X2 · UNVERIFIED · local** — Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.
-
-  Evidence: not yet inspected.
-
-- [ ] **X3 · UNVERIFIED · launch gate** — Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.
-
-  Evidence: not yet inspected.
-
-- [ ] **Y1 · UNVERIFIED · local gate** — Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.
-
-  Evidence: not yet inspected.
-
-- [ ] **Y2 · UNVERIFIED · local gate** — Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.
-
-  Evidence: not yet inspected.
-
-- [ ] **Y3 · UNVERIFIED · local gate** — START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.
-
-  Evidence: not yet inspected.
-
-- [ ] **Z1 · UNVERIFIED · local gate** — Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.
-
-  Evidence: not yet inspected.
-
-- [ ] **Z2 · UNVERIFIED · local gate** — 10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.
-
-  Evidence: not yet inspected.
-
-- [ ] **Z3 · UNVERIFIED · launch gate** — Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.
-
-  Evidence: not yet inspected.
-
-## Stage scores and launch/demand gates
-
-Use the shared scorer after inspection. Never convert unknown checks to PASS/NA merely to reach 10.
+# Madbeauty — A–Z aktuali patikra
+
+Atnaujinta 2026-10-05T23:18:29.030Z. Tas pats įgyvendinimo agentas; nepriklausomo vertinimo teiginio nėra. Vietinis UX taisymų paketas priimtas su nurodytomis ribomis. Tikras paleidimas ir paklausa atskiri. Jokio10/10 ar visų70visųbūsenų teiginio.
+
+| ID | Etapas | Būsena | Įrodymai ir ribos |
+|---|---|---|---|
+| A1 | local | PASS | `PLATFORM_BUILD_CONTRACT.md`, `sites/madbeauty/BUSINESS.md`. Owner explicitly authorized a full local platform. This is a private test environment, not a launched phase-one offer; inquiries, bookings, delivery and demand remain distinct. |
+| A2 | local | PASS | `research/madbeauty-implementation/first-provider-manual-browser-v1.json`, `research/madbeauty-implementation/solo-booking-change-cancel-v3.json`, `sites/madbeauty/BUSINESS.md`. Local account/provider/client/booking action works. Free pilot payer hypothesis remains unproven; no real service supply, commercial launch or paid demand inferred. |
+| A3 | operations | UNVERIFIED | `sites/madbeauty/BUSINESS.md`. No qualified real inquiries, service value or operating economics measured. |
+| B1 | local | PASS | `sites/madbeauty/prototype/app-server.mjs`, `research/madbeauty-implementation/content-release-http.json`. Preview loads approved central MB Pinet/info@pinet.lt defaults. Content package uses the same contact; no borrowed telephone/address. |
+| B2 | local | PASS | `sites/madbeauty/DEMO_DATA_CONTRACT.md`, `sites/madbeauty/prototype/PROFILE_ASSET_MANIFEST_V2.json`. Synthetic profiles are private fixtures, not borrowed provider credentials or client projects. No visible demo banner by explicit owner instruction. Not approved for live publication. |
+| B3 | launch | UNVERIFIED | `sites/madbeauty/BUSINESS.md`. Full applicable legal identifiers/address/domain control and trademark scope not established for deployment. |
+| C1 | local | PASS | `sites/madbeauty/history/audit.json`, `sites/madbeauty/history/ASSESSMENT.md`. 300 URL bounded inventory; incomplete CDX and challenge page recorded. |
+| C2 | local | PASS | `sites/madbeauty/history/url-decisions.json`, `sites/madbeauty/history/ASSESSMENT.md`. No blind homepage redirects or old provider identity reuse. |
+| C3 | launch | NA | `sites/madbeauty/history/url-decisions.json`. No legacy redirect was implemented in this local platform scope. If redirects are added, this criterion becomes applicable. |
+| D1 | local | PASS | `sites/madbeauty/FRESHA_UX_REVIEW.md`, `research/madbeauty-fresha-2026-10-05/MANIFEST.json`, `research/madbeauty-fresha-2026-10-05/PARTNER_OBSERVATIONS.json`. Actual public desktop/mobile and authorized read-only partner observations with per-path decision/evidence table; owner screenshots separately identified. Competitor checkout and atomicity remain unverified. |
+| D2 | local | PASS | `sites/madbeauty/BUSINESS.md`, `sites/madbeauty/prototype/PROFILE_ASSET_MANIFEST_V2.json`. Competitor scale/prices/promises not copied as ours; synthetic assets documented and private. |
+| D3 | local | PASS | `sites/madbeauty/SEO_GEO_PLAN.md`, `sites/madbeauty/BUSINESS.md`. SEO/conversion/economics hypotheses are not measured claims. |
+| E1 | local | UNVERIFIED | `sites/madbeauty/DESIGN.md`. Own modern visual identity implemented; full actual nearest-network desktop/mobile comparative acceptance not established here. |
+| E2 | local | PASS | `sites/madbeauty/DESIGN.md`, `research/madbeauty-implementation/screen-acceptance-v6.json`. Actual tokens, owner selected composition, distinct operational workspace, calendar/tool purpose and compromises recorded; performance separated. |
+| E3 | local | PASS | `sites/madbeauty/prototype/PROFILE_ASSET_MANIFEST_V2.json`, `sites/madbeauty/content/INITIAL_GUIDES_BATCH.json`. ImageGen origin preserved privately/editorially; no model badge or claim of real provider work. Local scope only. |
+| F1 | local | PASS | `research/madbeauty-implementation/screen-acceptance-v6.json`, `research/madbeauty-implementation/content-initial-guides-final-browser.json`. Public index/header/footer/guide paths observed in the local application; all three initial guides linked. |
+| F2 | local | PASS | `research/madbeauty-implementation/screen-acceptance-v6.json`, `research/madbeauty-implementation/platform-functional-final-v1.json`. Actual desktop/mobile public navigation and authenticated contact-report route; SMTP mailto delivery is separate. |
+| F3 | local | PASS | `sites/madbeauty/URL_POLICY.json`, `sites/madbeauty/content/INITIAL_GUIDES_BATCH.json`. Three distinct guide intents; filtered work surface vs category/city/profile entities separated. Real indexed category/city supply not yet accepted. |
+| G1 | local | PASS | `research/madbeauty-implementation/screen-acceptance-v6.json`. Local homepage and workspace identify service/time and working next action. Private fixture context is deployment boundary, not a live offer. |
+| G2 | local | PASS | `research/madbeauty-implementation/content-initial-guides-final-browser.json`, `sites/madbeauty/prototype/public/workspace-ui.mjs`. Guides answer separate questions; workspace sections operate distinct records rather than promotional repeats. |
+| G3 | local | PASS | `research/madbeauty-implementation/platform-functional-final-v1.json`, `research/madbeauty-implementation/solo-booking-change-cancel-v3.json`, `research/madbeauty-implementation/screen-acceptance-v6.json`. Actual form validation, auth recovery, empty availability, conflict, cancellation and contact moderation; initial failures retained. |
+| H1 | local | PASS | `sites/madbeauty/content/INITIAL_GUIDES_BATCH.json`, `research/madbeauty-implementation/content-initial-guides-final-browser.json`. Same agent individually read three useful guides; no independent/human review claimed. |
+| H2 | local | PASS | `sites/madbeauty/CONTENT_READINESS.md`, `sites/madbeauty/content/INITIAL_GUIDES_BATCH.json`. Primary NVSC/VDAI evidence and qualified illustrative price/color examples; no seasonal popularity or universal health claim. |
+| H3 | local | PASS | `research/madbeauty-implementation/content-initial-guides-final-browser.json`. Price scope example, color selection and gallery evaluation give usable questions/steps. |
+| H4 | local | PASS | `research/madbeauty-implementation/content-initial-guides-final-browser.json`. Actual HTML/TOC/lists/inline figures and source sections rendered at 1280/390; earlier overflow failure retained. |
+| H5 | local | PASS | `sites/madbeauty/content/INITIAL_GUIDES_BATCH.json`, `research/madbeauty-implementation/content-initial-guides-final-browser.json`. All initial guide images inspected before latest steering, real responsive files and homepage/index visuals. Legal/account pages intentionally text/forms. No new demo-image inspection needed. |
+| I1 | local | PASS | `research/madbeauty-implementation/screen-acceptance-v6.json`, `sites/madbeauty/content/INITIAL_RELEASE_RECEIPT.json`. Organization attribution MB Pinet and reachable editorial/author routes; no fictional expert. |
+| I2 | local | PASS | `research/madbeauty-implementation/content-common-seo-smoke.txt`, `sites/madbeauty/CONTENT_READINESS.md`. Common approved author/editorial identity and schema agree for content package. |
+| I3 | local | PASS | `research/madbeauty-implementation/content-release-http.json`, `sites/madbeauty/content/INITIAL_RELEASE_RECEIPT.json`. Publication/review dates are versioned, publishAt predicate shared and not refreshed per request. |
+| I4 | launch | UNVERIFIED | `sites/madbeauty/CONTENT_READINESS.md`. Exported-not-deployed. Clock replay is not a historical public launch. |
+| J1 | local | PASS | `research/madbeauty-implementation/screen-acceptance-v6.json`, `sites/madbeauty/prototype/public/content.mjs`. About/editorial describe purpose, sources, AI image role and correction contact in local preview. |
+| J2 | local | PASS | `sites/madbeauty/CONTENT_READINESS.md`. Review by same implementing agent disclosed; no qualified human or independent audit claim. |
+| J3 | local | PASS | `research/madbeauty-implementation/content-revocation-http.json`, `sites/madbeauty/CONTENT_READINESS.md`. Common revision-bound review/approval and revoke-repair exercise on isolated clone; changed approved content blocked. |
+| K1 | local | UNVERIFIED | `research/madbeauty-implementation/content-common-seo-smoke.txt`, `sites/madbeauty/prototype/app-server.mjs`. Seven content pages accepted; full catalog/profile server HTML unique metadata and domain canonical integration not accepted. SPA alone is insufficient for whole-domain acceptance. |
+| K2 | local | UNVERIFIED | `research/madbeauty-implementation/screen-acceptance-v6.json`. Own wordmark/favicon and content alt observed, but whole public URL heading/sharing metadata matrix incomplete. |
+| K3 | local | PASS | `research/madbeauty-implementation/content-release-http.json`, `sites/madbeauty/prototype/platform.test.mjs`. Unknown/future guide/unapproved profile 404; private routes/API authorization and noindex; no homepage canonical fallback. |
+| L1 | local | PASS | `research/madbeauty-implementation/content-common-seo-smoke.txt`, `research/madbeauty-implementation/content-initial-guides-final-browser.json`. Truthful approved common content WebPage/Article/Organization JSON-LD parses; private synthetic providers not emitted as production schema. |
+| L2 | local | UNVERIFIED | `research/madbeauty-implementation/content-common-seo-smoke.txt`. Content package relations tested; whole catalog/profile breadcrumb/entity relation acceptance still incomplete. |
+| L3 | local | PASS | `research/madbeauty-implementation/content-release-http.json`, `sites/madbeauty/prototype/app-server.mjs`. No fictional provider Review/AggregateRating/Offer JSON-LD or rich-result guarantee in common public content; fixtures kept private. |
+| L4 | launch | UNVERIFIED | `sites/madbeauty/IMPLEMENTATION_STATUS.md`. No crawlable production deployment, Rich Results Test or URL Inspection. |
+| M1 | local | PASS | `research/madbeauty-implementation/content-initial-guides-final-browser.json`, `research/madbeauty-implementation/content-release-http.json`. Actual guide target IDs/TOC fragments and category CTA exercised. |
+| M2 | local | PASS | `research/madbeauty-implementation/content-revocation-http.json`, `research/madbeauty-implementation/content-release-http.json`. Future/unapproved/revoked target negatives across content projection passed. |
+| M3 | local | PASS | `sites/madbeauty/URL_POLICY.json`, `sites/madbeauty/CONTENT_READINESS.md`. Distinct guide/category questions, no all-to-all authority claim. |
+| N1 | local | PASS | `sites/madbeauty/CONTENT_READINESS.md`, `research/madbeauty-fresha-2026-10-05/MANIFEST.json`. Primary source targets read and retrieval date recorded; competitor observations do not imply partnership. |
+| N2 | local | PASS | `sites/madbeauty/CONTENT_READINESS.md`, `sites/madbeauty/prototype/public/app.mjs`. No new editorial cross-domain network link published; verslomatika footer is plain text attribution, not an unverified service/target link. |
+| N3 | local | PASS | `research/madbeauty-implementation/content-initial-guides-final-browser.json`. Source/related/prose links render in actual guide; no paid/sponsored links added. |
+| N4 | launch | UNVERIFIED | `sites/madbeauty/IMPLEMENTATION_STATUS.md`. Live launch destinations not checked; no launch. |
+| O1 | local | PASS | `research/madbeauty-implementation/content-release-http.json`, `sites/madbeauty/prototype/platform.test.mjs`. Local preview slash/query/unknown-host/discovery behavior and common content canonical projections tested. This is not real-host acceptance. |
+| O2 | local | PASS | `research/madbeauty-implementation/content-release-http.json`, `research/madbeauty-implementation/content-revocation-http.json`. Default preview discovery off; isolated common sitemap contains eligible pages; API access controlled separately from robots. |
+| O3 | launch | UNVERIFIED | `sites/madbeauty/IMPLEMENTATION_STATUS.md`. DNS/TLS/commercial hosting/production isolation absent. |
+| P1 | local | FAIL | `sites/madbeauty/content/adapter.mjs`, `sites/madbeauty/prototype/app-server.mjs`. Authoritative common projection implemented for seven content pages. Entire live provider/catalog SSR/schema/discovery integration is still absent; package-only PASS would overstate whole-platform coverage. |
+| P2 | local | PASS | `research/madbeauty-implementation/content-release-http.json`, `research/madbeauty-implementation/content-revocation-http.json`, `research/madbeauty-implementation/backend-tests-v14.tap`. Hash/date/revoke/cross-host and fixture-database/private-storage negatives passed locally. |
+| P3 | local | PASS | `sites/madbeauty/content/CORE_SANDBOX_PROVENANCE.json`, `research/madbeauty-implementation/content-initial-release-import.json`, `research/madbeauty-implementation/content-revocation-http.json`. Exact common importer/validator compile, unrelated first five objects unchanged; changed approval blocked. |
+| Q1 | local | UNVERIFIED | `research/madbeauty-implementation/content-common-seo-smoke.txt`. Seven content page LLM output matches; complete domain provider/catalog LLM projection not accepted. Preview discovery disabled. |
+| Q2 | local | PASS | `research/madbeauty-implementation/content-initial-guides-final-browser.json`. Qualified guide answers/checklists/sources visible in semantic server HTML; no hidden model-only facts. |
+| Q3 | local | PASS | `sites/madbeauty/SEO_GEO_PLAN.md`. LLM files supplementary; no special ranking/traffic promise. |
+| R1 | local | PASS | `research/madbeauty-implementation/platform-functional-final-v1.json`, `research/madbeauty-implementation/screen-acceptance-v6.json`, `research/madbeauty-implementation/uiux-functional-final-v1.json`, `sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json`. Actual labels/modal required fields/focus cycling/Escape opener restoration; native focus edge case repaired and retested. Current UIUXV1 records actual narrow reflow, drafts, auth/hold expiry, validation and conflict recovery. Control++ ineffective in IAB, so physical200% zoom and reduced-motion preference remain UNVERIFIED. |
+| R2 | local | UNVERIFIED | `research/madbeauty-implementation/platform-functional-final-v1.json`, `research/madbeauty-implementation/uiux-functional-final-v1.json`, `sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json`. Sampled target/focus/contrast observations and Lighthouse100 do not establish full zoom/reflow/text sizing/WCAG acceptance. Current UIUXV1 records actual narrow reflow, drafts, auth/hold expiry, validation and conflict recovery. Control++ ineffective in IAB, so physical200% zoom and reduced-motion preference remain UNVERIFIED. |
+| R3 | local | UNVERIFIED | `research/madbeauty-implementation/platform-functional-final-v1.json`, `sites/madbeauty/prototype/public/tokens.css`, `research/madbeauty-implementation/uiux-functional-final-v1.json`, `sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json`. Actual modal/form/disclosure behavior tested; CSS reduced-motion rule exists but physical settings/complete preference behavior not tested. Current UIUXV1 records actual narrow reflow, drafts, auth/hold expiry, validation and conflict recovery. Control++ ineffective in IAB, so physical200% zoom and reduced-motion preference remain UNVERIFIED. |
+| S1 | local | UNVERIFIED | `research/madbeauty-implementation/screen-acceptance-v6.json`, `research/madbeauty-implementation/uiux-functional-final-v1.json`, `sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json`. Sampled platform 1440/820/320 and public1280/390 pass; no all70/tablet/every-state matrix or physical-device acceptance. Current UIUXV1 records actual narrow reflow, drafts, auth/hold expiry, validation and conflict recovery. Control++ ineffective in IAB, so physical200% zoom and reduced-motion preference remain UNVERIFIED. |
+| S2 | local | UNVERIFIED | `research/madbeauty-implementation/content-initial-guides-final-browser.json`, `research/madbeauty-implementation/platform-functional-final-v1.json`, `research/madbeauty-implementation/uiux-functional-final-v1.json`, `sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json`. Narrow guides/forms actual, enlarged-text/zoom full site not tested. Current UIUXV1 records actual narrow reflow, drafts, auth/hold expiry, validation and conflict recovery. Control++ ineffective in IAB, so physical200% zoom and reduced-motion preference remain UNVERIFIED. |
+| S3 | local | PASS | `research/madbeauty-implementation/platform-functional-final-v1.json`. Browser viewport screenshots explicitly distinct from physical-device/touch acceptance. |
+| T1 | local | UNVERIFIED | `research/madbeauty-implementation/performance-authenticated-v7.json`, `research/madbeauty-implementation/performance-authenticated-v6.json`. Authenticated local calendar improved84→94; literal production-mobile criterion not met because no production deployment. |
+| T2 | local | PASS | `research/madbeauty-implementation/performance-authenticated-v7.json`, `research/madbeauty-implementation/performance-authenticated-v6.json`, `research/madbeauty-implementation/uiux-functional-final-v1.json`, `sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json`, `research/madbeauty-implementation/performance-authenticated-v8.json`. Actual signed-in workspace, LCP4.16→2.57s, bytes491k→194k, CLS0.094/TBT36.5ms; lazy media/content, parallel single session, scoped service rows and modulepreload. No dummy guest score substituted. Current UIUXV1 records actual narrow reflow, drafts, auth/hold expiry, validation and conflict recovery. Control++ ineffective in IAB, so physical200% zoom and reduced-motion preference remain UNVERIFIED. |
+| T3 | launch | UNVERIFIED | `sites/madbeauty/IMPLEMENTATION_STATUS.md`. No production field CWV or traffic. |
+| U1 | local | PASS | `research/madbeauty-implementation/backend-tests-v14.tap`, `research/madbeauty-implementation/durable-functional-receipt-final.json`. Owner-authorized local SQLite durable backend substitutes for planned D1 here; validation/origin/CSRF/body bounds and restart persistence. Captured mail failure does not erase booking/inquiry. |
+| U2 | local | UNVERIFIED | `sites/madbeauty/BACKEND_DECISION.md`. Local test capture only; no real SMTP acceptance. |
+| U3 | local | UNVERIFIED | `sites/madbeauty/BACKEND_DECISION.md`. No matching marked Message-ID INBOX receipt; capture is not inbox/email ownership. |
+| U4 | launch | UNVERIFIED | `sites/madbeauty/BACKEND_DECISION.md`. Production bindings/delivery/reconciliation not implemented or accepted. |
+| V1 | local | UNVERIFIED | `sites/madbeauty/prototype/public/workspace-ui.mjs`. Private diagnostic events are not qualified inquiries; full production bot/DNT/GPC exclusion not tested. |
+| V2 | local | UNVERIFIED | `sites/madbeauty/prototype/public/content.mjs`. Privacy text exists; full cookie/identifier/production provider inventory acceptance incomplete. |
+| V3 | operations | UNVERIFIED | `sites/madbeauty/BUSINESS.md`. No real qualified traffic/inquiries/economics; voice remains off. |
+| W1 | local | UNVERIFIED | `sites/madbeauty/prototype/public/content.mjs`, `PLATFORM_BUILD_CONTRACT.md`. Owner scope is an actual local platform rather than pure information pilot. Complete notice/terms review for future live operation not established. |
+| W2 | local | UNVERIFIED | `sites/madbeauty/BUSINESS.md`. Production processors/transfers/storage/deletion limits and full legal identity unknown; do not invent them. |
+| W3 | launch | UNVERIFIED | `sites/madbeauty/IMPLEMENTATION_STATUS.md`. Live legal basis/processors/retention/delete/recovery absent. |
+| W4 | local | PASS | `research/madbeauty-implementation/backend-tests-v14.tap`, `research/madbeauty-implementation/screen-acceptance-v3.json`. Marketing choice distinct/default off; preferences stored only, no campaign runtime, no checkbox construed as outreach authorization. |
+| X1 | local | PASS | `research/madbeauty-implementation/backend-tests-v14.tap`, `sites/madbeauty/backend/http.mjs`, `sites/madbeauty/backend/fixture-runtime.test.mjs`. Secret tokens/OTP/captures/runtime/private media not served; tenant/client links scoped, anonymous rate gate, operator-only actions tested. Git ignore/sanitized evidence checked separately. |
+| X2 | local | PASS | `research/madbeauty-implementation/backend-tests-v14.tap`, `research/madbeauty-implementation/platform-functional-final-v1.json`. CSRF/origin/session budget, UI recoverable errors, no voice dependency and known email/production limitations assessed. |
+| X3 | launch | UNVERIFIED | `sites/madbeauty/BACKEND_DECISION.md`. Production access/abuse/backup restore/incident controls not accepted. Local rate control is not production assurance. |
+| Y1 | local | PASS | `sites/madbeauty/content/CORE_SANDBOX_PROVENANCE.json`, `sites/madbeauty/content/adapter.mjs`. Shared content/media machinery reused read-only; niche role/calendar/booking extensions remain own namespace. No schema fork/change. |
+| Y2 | local | NA | `research/madbeauty-implementation/platform-tests-v7.tap`, `research/madbeauty-implementation/content-common-seo-smoke.txt`. No shared core/runtime/schema code changed in this scoped work; no cross-niche regression claim. Own backend34/platform30/common imported content7 checks passed. Becomes applicable on relevant shared change. |
+| Y3 | local | PASS | `PLATFORM_BUILD_CONTRACT.md`, `sites/madbeauty/PROJECT_ROADMAP.md`, `sites/madbeauty/IMPLEMENTATION_STATUS.md`. Current contract and journal entrypoint linked; historical frontend-only status superseded explicitly, old evidence retained. |
+| Z1 | local | PASS | `sites/madbeauty/PHASE-1-AUDIT.json`, `sites/madbeauty/PHASE-1-AUDIT.md`, `sites/madbeauty/SCREEN_STATUS.json`, `research/madbeauty-implementation/uiux-functional-final-v1.json`, `sites/madbeauty/uiux/SCREEN_STATE_MATRIX.json`. All85 criteria individually stored; scorer run separately; versions/repairs/remaining blockers retained. Same-agent evaluation. Current UIUXV1 records actual narrow reflow, drafts, auth/hold expiry, validation and conflict recovery. Control++ ineffective in IAB, so physical200% zoom and reduced-motion preference remain UNVERIFIED. |
+| Z2 | local | PASS | `sites/madbeauty/IMPLEMENTATION_STATUS.md`, `sites/madbeauty/PHASE-1-AUDIT.json`. No10/10/domain-ready/full70 every-state claim; failed/unverified gates explicit and local functional progress separate. |
+| Z3 | launch | UNVERIFIED | `sites/madbeauty/IMPLEMENTATION_STATUS.md`. No final domain-ready handover, live launch or demand guarantee. |

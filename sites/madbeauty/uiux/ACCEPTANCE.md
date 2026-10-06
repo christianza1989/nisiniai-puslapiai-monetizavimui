@@ -1,0 +1,52 @@
+# Madbeauty — platformos UI/UX priėmimas
+
+<!-- UIUX_V3_CURRENT -->
+## Aktualus UI/UX V3 rezultatas — 2026-10-06
+
+Vietinis funkcijų ir normalios desktop/mobile sąsajos pavedimas užbaigtas su savininko demo medijos išimtimi. Tai apima69 iš70 inventoriaus paviršių; public-gallery ir demo fotografijų/profilių estetika savininko sustabdyta. 219 V3 kadrai, 202 peržiūrėti konkretūs įrašai; baseline, pereinamo dažymo ir smooth-scroll kadrai nelaikomi PASS. Peržiūrą atliko tas pats įgyvendinantis agentas.
+
+Veikia pilnas kliento rezervavimas→perkėlimas→atšaukimas→reload; meistro kalendorius ir rankinis vizitas; patvarios inquiry/waitlist užklausos ir jų būsenos kliento paskyroje; abiejų rolių pokalbiai; completed vizito atsiliepimas→operatoriaus approval/rejection; profilio revizija→operatoriaus patvirtinimas; kontaktų pranešimas→operatoriaus eilė. Tikras ryšio nutrūkimas išlaikė įvestą užklausą, pakartojimas po restart išsaugojo vieną įrašą. Tikras dviejų skirtukų409 neperrašė naujesnės paslaugos versijos. Visa tai privatus QA su example.com paskyromis.
+
+Regresija **74 PASS /0 FAIL**: backend V17 **36**, platform/HTTP/calendar V11 **29**, foundation V11 **9**. Rinkinių manifestas įrašytas prieš paleidimą; pridėtas vienas prasmingas request-history izoliacijos testas, testų nepašalinta. **32 mjs sintaksės patikros PASS** (įskaitant backend testų failus), tikslūs sourceSHA256 galutiniame kvite. Prisijungusio mobiliojo kalendoriaus Lighthouse V10 **94/100/100/66**, LCP2,56s, TBT25ms, CLS0,094,205927baitai. Matuota pradinė QA darbo vieta, ne trijų meistrų apkrova; privatus noindex. Matavimas atliktas prieš galutinį operatoriaus tuščio turinio teksto pakeitimą; kalendoriaus kodas nepakito, pirmoji source versija išlaikyta.
+
+Normalūs vaizdai priimti kiekvienam nestabdytam paviršiui. Loading/error/validation/permission/empty būsenų bendro komponento arba serverio kontrakto įrodymai matricoje pažymėti atskirai nuo konkretaus ekrano naršyklės bandymo. Fizinis200%zoom, OS reduced-motion, production įrenginiai ir papildoma visų paviršių planšetės matrica lieka UNVERIFIED. Ne visos įmanomos laiko/persidengimo kombinacijos priimtos.
+
+Gyvas SMTP/INBOX, DNS/TLS/hosting/deploy, production katalogo SSR/SEO, tikri teikėjai ir paklausa yra atskiros neprijungtos priklausomybės. Mokėjimai/FB/voice neįjungti. A–Z rezultatas nepakeistas: vietinis7,6/gateReady=false; gyvas paleidimas0, paklausa nematuota. Root8786 ir bendras core nepakeisti.
+
+Aktualūs įrodymai: [galutinis kvitas](../../../research/madbeauty-implementation/uiux-functional-final-v3.json), [naršyklės įrašai](../../../research/madbeauty-implementation/uiux-browser-v3.json), [testų manifestas](../../../research/madbeauty-implementation/uiux-regression-manifest-v3.json), [būsenų matrica](SCREEN_STATE_MATRIX.json), [kelionės](JOURNEYS.md), [likusios priklausomybės](REMAINING_GAPS.json), [intervencijos](../../../research/madbeauty-implementation/uiux-interventions-v3.json).
+
+Žemiau išlaikyti ankstesnių etapų rezultatai; jie nepakeičia šios aktualios apimties.
+
+<!-- UIUX_V3_HISTORY -->
+
+# Madbeauty — dabartinių UI/UX pataisų priėmimas
+
+## Aktualus V2 rezultatas — 2026-10-06
+
+Priimtos keturios konkrečios vietinės pataisos: trumpų persidengiančių vizitų išdėstymas, rankinio vizito kainos ir trukmės santrauka, kliento bei vizito detalių matomumas ir 320 px antraštės persiliejimas. Trijų meistrų kalendoriuje vienalaikiai 15 min. vizitai turi skaitomus laikus; gretimas vizitas nesusikerta, o vėlesnis 60 min. vizitas grįžta į visą plotį. Patikrintos dienos, savaitės, meistro filtro, mobilios darbotvarkės ir klaviatūros slinkimo būsenos. Tai vienas tikras vietinis scenarijus, ne visų komandų dydžių ir persidengimų priėmimas.
+
+Naršyklėje sukurtas rankinis vizitas 14:00–14:15, perkeltas į 14:30–14:45, patikrinta tuščios atšaukimo priežasties klaida, atšauktas ir perkrautas puslapis. Tas pats vizito ID išliko su galutine canceled/version3 būsena, 15 min. trukme ir 10 EUR kaina. Kliento kortelė ir vizito detalės peržiūrėtos desktop bei mobile. QA darbo vieta privati ir nepatvirtinta viešam katalogui; kontaktai rezervuotame example.com domene.
+
+Backend V16 **35/35**, platform/HTTP/layout V10 **29/29**, atskirai foundation V10 **9/9** — **73 PASS**. Patikrinta 13 JS failų sintaksė. Išsaugoti 27 nauji kadrai: 23 įrašai priimti konkrečioms matricos eilutėms, keturi defektų pradinės būsenos kadrai nenaudojami kaip PASS. Devyni ankstesni V1 būsenų įrodymai pritaikyti tik tiksliai atitinkamoms būsenoms. Prisijungusio mobiliojo kalendoriaus Lighthouse V9: **94 performance / 100 accessibility / 100 best-practices / 66 SEO**, LCP 2,56 s, TBT 123,5 ms, CLS 0,084, 204 700 baitų. Matuota pradinė QA darbo vieta; privatus kalendorius turi noindex.
+
+Patikrintos kelionės ir konkrečios likusios spragos: [JOURNEYS.md](JOURNEYS.md), [SCREEN_STATE_MATRIX.json](SCREEN_STATE_MATRIX.json), [REMAINING_GAPS.json](REMAINING_GAPS.json). Dar nėra priimtos normalios būsenos public-home, public-catalog, booking-staff-step, booking-inquiry, booking-waitlist, customer-review ir operator-provider-review eilutėms. Ne visi 70 paviršių turi peržiūrėtus desktop/mobile kadrus ar visas taikomas klaidų būsenas. Fizinis 200 % mastelis, OS sumažintas judesys ir production įrenginiai lieka UNVERIFIED.
+
+Įrodymai: `research/madbeauty-implementation/uiux-functional-final-v2.json`, `uiux-browser-v2.json`, `uiux-calendar-fixture-v2.json`, `uiux-dialog-keyboard-v2.json`, `uiux-interventions-v2.json` ir `performance-authenticated-v9.json`. Pirmo integravimo sintaksės klaida ir praleistas foundation testų paleidimas užfiksuoti, po pataisų patikrinti. 320 px antraštės retestas lygina scrollWidth su clientWidth; ankstesni matavimai pagal innerWidth atgaline data nekeičiami. Slaptų duomenų patikra nerado kredencialų; keturi privatūs HTTP keliai grąžino 404. Demo profilių ir fotografijų peržiūra neatnaujinta. A–Z rezultatas nepakeltas: vietinis 7,6, gateReady=false; gyvas paleidimas ir paklausa nepriimti.
+
+V2 perdavimo kadras `research/madbeauty-implementation/uiux-v2-calendar-handoff.png` išsaugotas atstačius numatytąjį 1280 × 720 viewport. Tai atskiras rezultato vaizdas, ne papildomas 27 įrašų matricos priėmimas.
+
+## Istorinis V1 priėmimas
+
+2026-10-06. Pagerintas platformos naudojimas, išlaikant baltą, juodą ir violetinę tapatybę. Savininko nurodymu demo fotografijų ir profilių peržiūra neatnaujinta. Šis dokumentas priima konkrečias vietines pataisas; visos platformos priėmimas ir gyvas paleidimas tebėra atskiri etapai.
+
+Naršyklėje atliktos 146 maršrutų ir ekranų pločių patikros per 46 paviršius, naudojant 320, 390, 640, 820 ir 1440 CSS px. Šiuose įrašuose dokumentas neturėjo horizontalaus persiliejimo, buvo viena h1, o veiksmo mygtukai netyčia nepateikė formų. Svarbiausi pakeisti keliai ir dialogai peržiūrėti vizualiai, išsaugoti 33 priėmimo kadrai. DOM matavimas neįrodo kiekvieno ekrano vizualinės kokybės.
+
+Sutvarkytos lietuviškos laukų klaidos, fokusas, ARIA ryšiai ir vykdomo pateikimo būsena. Neįrašytos formos atkuriamos bei atmetamos, priedų redaktorius išlaiko teisingą priedų tapatybę. Prisijungimo kodo žingsnis išlieka perkrovus puslapį; pasibaigus sesijai rezervavimas prašo prisijungti iš naujo ir atkuria kontaktą. Laikinos rezervacijos galiojimas rodomas gyvai, o jau patvirtinto vizito grįžimo eiga apsaugota nuo pakartotinio patvirtinimo. Kalendorius ir paieškos filtrai kompaktiškesni; paslaugų variantai, trukmė ir kainos skaitomi pilnai. Neįrašyta QA žinutė tik atkurta ir atmesta, niekam neišsiųsta.
+
+Backend V15 35/35, platform V9 30/30 ir HTTP V1 4/4 — iš viso 69 PASS. Prisijungusio mobiliojo kalendoriaus Lighthouse V8: 94 performance, 100 accessibility, 100 best-practices ir 66 SEO; LCP 2,56 s, TBT 57 ms, CLS 0,094, 200 836 baitai. Tai vietinis matavimas; privatus kalendorius sąmoningai turi noindex.
+
+Patikrų intervencijos išsaugotos. Vienas kadras buvo užfiksuotas likus šešioms sekundėms iki rezervacijos pabaigos; jis pažymėtas kaip laikmatis, o tikras pasibaigimas ir išjungtas patvirtinimas patikrinti vėliau. Po bendro dokumento matavimo aptiktas 320 px kalendoriaus valdiklių persiliejimas tėviniame bloke, pataisytas ir pamatuotas atskirai. Detektoriaus du perspėjimai įvertinti: seno nenaudojamo vizito akcento kraštas sumažintas iki 1 px, o 2 px išskleidimo rodyklė palikta kaip geometrija. Detektorius nėra dizaino kokybės įrodymas. Galutinis juodraščio atmetimas patikrintas naršyklėje: laukai tušti, atkūrimo pranešimas pašalintas, fokusas grąžintas į pirmą lauką.
+
+70 paviršių būsenos saugomos [SCREEN_STATE_MATRIX.json](SCREEN_STATE_MATRIX.json). UNVERIFIED išlieka visų ekranų visos būsenos, fizinis mastelio ir OS sumažinto judesio bandymas, dalis kelių meistrų ir trumpų persidengiančių vizitų kombinacijų bei production naršyklių ir įrenginių matrica. IAB Control++ nepakeitė mastelio, todėl 320/640 px patikros laikomos CSS persitvarkymu, ne fiziniu 200 % priartinimu. A–Z auditas nesuteikia šiam paketui 10/10.
+
+Įrodymai saugomi `research/madbeauty-implementation/`: `uiux-functional-final-v1.json`, `uiux-browser-v1.json`, `uiux-routes-v1.json`, `uiux-computed-v1.json`, `uiux-session-expiry-v1.json`, `uiux-draft-discard-focus-v1.json` ir `uiux-final-safety-v1.json`. Galutinis 1280 × 720 kalendoriaus kadras yra atskiras perdavimo vaizdas, ne papildomas matricos priėmimas. Ankstesni instrukcijų fingerprint ir nesėkmės išsaugoti. Gyvas paleidimas, SMTP/INBOX, tikri tiekėjai ir paklausa, mokėjimai, FB bei balsas neįjungti.

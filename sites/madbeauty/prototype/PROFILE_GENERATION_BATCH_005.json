@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-05",
+  "reviewer": "implementation agent sequential pixel review",
+  "assets": [
+    {
+      "id": "profile-05-work",
+      "profileIndex": 4,
+      "name": "Rūta Noreikė",
+      "specialty": "massage",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P05 massage portfolio photo. Editorial wellness photo of a practitioner performing a gentle shoulder massage on a seated adult client, client in a simple sleeveless top; only neck, upper shoulder and practitioner's hands visible, warm daylight, relaxed shoulders and clean linens. Bright diffused window light. Quiet minimal charcoal doorframes, cream upholstery and large window background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Rūta Noreikė massage stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-2e3e2b42-f1fb-4f97-8111-e28c257a8c6e.png",
+      "review": "Pixel review accepted: coherent seated shoulder massage with two plausible hands; fully covered client, natural texture, no medical claim, square composition."
+    },
+    {
+      "id": "profile-05-space",
+      "profileIndex": 4,
+      "name": "Rūta Noreikė",
+      "specialty": "massage",
+      "type": "space",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P05 studio interior. Unique massage small professional studio interior: sage-grey walls, oak flooring and linen curtains. Massage table neatly made with folded linen, quiet uncluttered treatment room. Distinct layout: window left, work station right. A small restrained violet accent, daytime natural light, plausible independent practitioner space, no people, no product labels or branding. Editorial interior photograph, one square image, no text, watermark, collage. Fictional setting.",
+      "alt": "Rūta Noreikė darbo aplinkos iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-173788b8-5cf2-483b-bbce-bb39ad8b71a4.png",
+      "review": "Pixel review accepted: distinct massage room with soft covered table and face cradle, sage walls and wood storage, no people or brands."
+    },
+    {
+      "id": "profile-06-portrait",
+      "profileIndex": 5,
+      "name": "Monika Petraitė",
+      "specialty": "pedicure",
+      "type": "portrait",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P06 portrait. A unique fictional Lithuanian adult woman with curly brown shoulder-length hair, age 32, black linen apron over white shirt, in a pedicure professional studio with white tiled details, violet flowers and brass small lamp. Distinct individual face and natural relaxed expression, some subtle real freckles and skin texture where appropriate. Chest-up editorial photographic portrait, face centered, generous space for square and circular crop. Soft side-window light, realistic texture, restrained black-white-violet accents. No text, logos, watermarks or collage. Fictional replaceable record, not real business endorsement. One square image.",
+      "alt": "Monika Petraitė profilio portreto iliustracija",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-fa629deb-9144-4674-8ee5-afad2881de3e.png",
+      "review": "Pixel review accepted: curly-haired adult woman, distinct face and centered portrait; natural freckles, white shirt and dark apron, clear square crop."
+    },
+    {
+      "id": "profile-06-work",
+      "profileIndex": 5,
+      "name": "Monika Petraitė",
+      "specialty": "pedicure",
+      "type": "work",
+      "prompt": "Use case: photorealistic-natural. Asset: Madbeauty fictional profile P06 pedicure portfolio photo. Editorial close photograph of anatomically correct adult feet after pedicure, resting on a clean folded towel, focus on neat short toenails with deep cherry polish. Soft side daylight. Quiet natural birch furnishings, black equipment and violet stool background. Documentary-quality editorial photograph, natural textures, careful anatomy and realistic fingers. One coherent scene, one square image. No text, logos, watermark, collage, before-after comparison or medical claim. Original illustrative portfolio sample, not documentary work by a real provider.",
+      "alt": "Monika Petraitė pedicure stiliaus pavyzdys",
+      "sourcePath": "C:\\Users\\lenovo\\.codex\\generated_images\\01a10c23-938f-7e62-9674-4b3bfef2dc29\\exec-0d33844f-9c84-4a83-b004-7b70b6ec96fb.png",
+      "review": "Pixel review accepted: two natural feet with five plausible toes each, short burgundy pedicure on white towel; no extra anatomy or logo."
+    }
+  ]
+}

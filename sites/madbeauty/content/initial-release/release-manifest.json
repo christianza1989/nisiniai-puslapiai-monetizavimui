@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "packageSha256": "dba452bae4c613cc91b2da0d67addd221e405f30c594992553f3009bfc809579",
+  "assets": [
+    {
+      "name": "3c7cf4f4-12e6-4383-ae5c-2e9108a77c41.webp",
+      "sha256": "3d9c4feca0ef345cf7bd33dd6de06cd8f1d8dc4543a31440ae491361e6b71e1d"
+    },
+    {
+      "name": "a76fd63e-2742-49ba-8f24-5f7ae4daa56e.webp",
+      "sha256": "0f7b3a780ec5a6bf2b299ff4e7658d5e84cdadddb550b4b8d4a9c10e79665a00"
+    },
+    {
+      "name": "3f5ad984-d9c3-4c8a-b12e-0b233c3ce29f.webp",
+      "sha256": "9082a9b8a9dab2d7ec091ea5b47f1765d494961c4b795e005fa9d084112401c3"
+    },
+    {
+      "name": "ad083450-b91b-444c-95be-45cf31f18856.webp",
+      "sha256": "61343c2fa46b76d03cab5fc338ce249dbb1da71c957619004aff2a0c648c76e1"
+    },
+    {
+      "name": "0598d240-44e9-4f35-8e2f-922f94acbd83.webp",
+      "sha256": "a2fdb95d16020d0123405bd406f8915757e881b83c3842d41dd754e2efc3f744"
+    },
+    {
+      "name": "482e64a1-14b1-410a-a433-9b7b85a37f13.webp",
+      "sha256": "630c12498e226b5e6b90b2b6e6808f96dca1d88a6be481ccb7d3dd5d95b12d20"
+    },
+    {
+      "name": "32c67d0c-748c-49bb-8a8e-634c1ab45cc1.webp",
+      "sha256": "125f48b98aa9045a7871b544478b7af5299901e87c9c7643d02ebe6e08ff0e2c"
+    },
+    {
+      "name": "ccfc86ac-40a5-4e0e-a0ef-01844bee3f20.webp",
+      "sha256": "15ad88f6880fb3feb409659761e1001464fb109c71f86ed443afe53f56690950"
+    },
+    {
+      "name": "88dab7a3-7cb7-4cf9-bfea-86cc6d9e8afc.webp",
+      "sha256": "ca9dc10a6720fd3bc330a41cc4e02f0ee0fd0936c28330637dc94e5a1eff3bc9"
+    },
+    {
+      "name": "1b8018ca-e91e-424d-8d74-e3ae18b3deb7.webp",
+      "sha256": "12bb97190cba7d1df28138d348063800d1140f320b7a17f471cae48db6e55b36"
+    },
+    {
+      "name": "3bdf81e9-8188-405c-bf66-3e94ee1adb92.webp",
+      "sha256": "dfea84d8183966afb4600207f6363895402ade627ad0156b9ffca5eb32334349"
+    },
+    {
+      "name": "ddd046b0-878e-48ea-8cea-284b3ee9e781.webp",
+      "sha256": "98a7cbb1a943579a543b1152c6a01c5843c3d644ff925ce7d3927b7866bcc2b0"
+    },
+    {
+      "name": "52f234b6-1734-4303-9cba-3e3a737381f8.webp",
+      "sha256": "dd8009fb21d9f1877f7d387b8d00dbc6322e9dd8498bf12f531f0e3ea1503b3d"
+    },
+    {
+      "name": "2db81dab-30b2-4687-ac3c-c5cb8d774c6b.webp",
+      "sha256": "6c4e5c843eaf233132303cae22f63e9834708a2a668bf4b1cd791c1e401b3ac9"
+    },
+    {
+      "name": "6b01152f-934e-4a4f-b98b-471c0585d052.webp",
+      "sha256": "7007b759392cd8fc08ee4f2acc21284aa8f26fe458997ef6b1bf245ced5fa5ab"
+    },
+    {
+      "name": "665d4c52-43e2-4635-8368-d921980b1f30.webp",
+      "sha256": "b3b994adef229d515d98de7cab4595c53cae6e6a43446ec7112de51291733025"
+    },
+    {
+      "name": "7cee90b4-4251-45c7-b081-f05fb620d7b5.webp",
+      "sha256": "1b8d11d10de36e2a0b72dc9166d77ec438361b3ac65225e005a99b2e8b325ae0"
+    },
+    {
+      "name": "2fbfaec5-26bd-403d-aec5-5332e6230fd3.webp",
+      "sha256": "3f06846e9f0765310fe96025c9c834d343ab2e70c3c8abc24505d15e3cbe0576"
+    },
+    {
+      "name": "2b85fe40-f390-4079-9d0f-854a5c954875.webp",
+      "sha256": "1bdfa17dd61afff49a366094c59fb21cc83dbdf323fdc3100efe0b7a06426479"
+    },
+    {
+      "name": "bffc49d3-cb91-4ebe-8cdc-d9f5a25a1aeb.webp",
+      "sha256": "a32cc7aa7a9d79e95286946256e41e3af238a25c3da456aff5d7591091e2cded"
+    }
+  ],
+  "createdAt": "2026-10-05T19:37:15.913Z",
+  "pages": [
+    {
+      "pageId": "85ae7c9c-1176-47ff-b125-6c52d479973d",
+      "revisionHash": "abb649e31679fdc028df45e9c1aa54fa7cc7609e9efbebe1fb1b90e9c6ddeda2",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "madbeauty-implementation-agent sequential self-review",
+        "checkedAt": "2026-10-05T19:06:59.077Z",
+        "revisionHash": "abb649e31679fdc028df45e9c1aa54fa7cc7609e9efbebe1fb1b90e9c6ddeda2",
+        "binding": "1e0e4da60b0af12b4ec157905aa636041823652dceb0d6b881e8f20db43d9ac0",
+        "evidence": {
+          "usefulness": "Pradinis puslapis apibrėžia tris pasirinkimus: procedūra, miestas, visas vizito laikas. Paketo santrauka skirta savitam platformos maketui, ne pilno katalogo kopijai.",
+          "facts": "Perskaityta visa santrauka. Ji nežada tikrų tiekėjų, atvykimo, nemokamo aptarnavimo ar mokėjimo. Kontaktai tikrinti pagal central config: MB Pinet / info@pinet.lt.",
+          "sources": "Tekstas remiasi įgyvendintais vietinės platformos pasirinkimais, ne rinkos statistika. Išorinių teiginių nėra; rinkos tyrimas atskirai BUSINESS.md.",
+          "media": "Informacinė paketo home santrauka neturi dekoratyvios medijos. Pasirinkto platformos homepage vaizdai jau saugomi prototype/public manifestuose; šis release jų neperrašo.",
+          "links": "Prasmingas ryšys su bendrai patvirtinamu kainos gidu baf25810-3318-4b27-b59c-e0c82093824d. finalizeInternalLinks atliktas; prieš jo publishAt ryšį slepia common projekcija.",
+          "presentation": "Privatus bendros studijos preview faktiškai atidarytas 1280 px: H1, santrauka ir suplanuota nuoroda perskaityti. Įrodymas research/madbeauty-implementation/content-support-home-draft.png; galutinis platformos HTML priėmimas vyksta atskirai."
+        }
+      }
+    },
+    {
+      "pageId": "a61a0248-1c28-4cdc-89ba-e6c087989cdf",
+      "revisionHash": "bfb6c56af249cb65bb00001790c97e6ee40f6f126d7d5063186d106ea37df80d",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "madbeauty-implementation-agent sequential self-review",
+        "checkedAt": "2026-10-05T19:06:59.091Z",
+        "revisionHash": "bfb6c56af249cb65bb00001790c97e6ee40f6f126d7d5063186d106ea37df80d",
+        "binding": "21d7973ba3a379805a36dbdb0c8ebe343e2af5d2544ac7396a9d507ddd9dbad4",
+        "evidence": {
+          "usefulness": "Gidų indeksas sutelkia pasirengimo vizitui klausimus; pirmasis tikslas — palyginti vienodos procedūros apimtį, priedus ir visą kainą.",
+          "facts": "Indeksas nežada straipsnių skaičiaus ar išgalvotų ekspertų. Jo tekstas perskaitytas kartu su kainos gido juodraščiu; datos yra workflow publishAt.",
+          "sources": "Indekso tekstas yra originali navigacinė santrauka. Jame nėra kainų vidurkio, medicininių ar teisinių teiginių, todėl išorinio šaltinio nereikia.",
+          "media": "Indeksas naudos tik common projekcijoje viešų gidų actual WebP miniatiūras. Pirmo gido redakcinė darbo vietos iliustracija matyta desktop/mobile; jokio neegzistuojančio vaizdo ar svetimo portfolio.",
+          "links": "Vienas reader-benefit ryšys į kainos gido tikrą page ID baf25810-3318-4b27-b59c-e0c82093824d, galutinai įtrauktas per common finalize. Nenumatyta all-to-all ar network nuorodų.",
+          "presentation": "Actual privatus studijos indeksas perskaitytas 1280 px, overflow 0. content-support-index-draft.png ir content-draft-browser.json. Galutinis platformos indeksas tikrinamas po importo prieš/po datos."
+        }
+      }
+    },
+    {
+      "pageId": "0bb50b7b-d1dd-43fd-b54f-918ab1bf8098",
+      "revisionHash": "e3f583f88478bbe73fc36fb3946b9e1f5c93031e44d86f11ff54e7dc3edf2a5d",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "madbeauty-implementation-agent sequential self-review",
+        "checkedAt": "2026-10-05T19:06:59.104Z",
+        "revisionHash": "e3f583f88478bbe73fc36fb3946b9e1f5c93031e44d86f11ff54e7dc3edf2a5d",
+        "binding": "4c8bd4ac32ed765ed34e2912e3c94608bd0f08a0a4f7543c600c3d84954395e6",
+        "evidence": {
+          "usefulness": "Registruotas kategorijos URL paslaugos/manikiuras yra gido kelias į realiai veikiantį platformos kategorijos/miesto filtrą. Turinys padeda atskirti bazinę procedūrą nuo priedų.",
+          "facts": "Puslapis nežada MB Pinet teikiamos manikiūro procedūros. Tipas faq sąmoningai išlaiko WebPage schemą, nes MB Pinet yra platformos operatorius. Tikri teikėjai ir pajėgumas nepatvirtinti.",
+          "sources": "Santrauka remiasi actual TAXONOMY manikiuras ID ir veikiančia vartotojo paieška. Kainos ar paklausos skaičių joje nėra; papildomų šaltinių nereikia.",
+          "media": "Informacinis paketo filtro įėjimas be dekoratyvios fotografijos. Platformos kategorija naudoja savo anksčiau peržiūrėtą redakcinį manikiūro vaizdą; ne teikėjo darbų įrodymą.",
+          "links": "Ryšys į kainos gido ID baf25810-3318-4b27-b59c-e0c82093824d pateisintas galutinės apimties klausimu. Kategorijos URL atitinka tikrą manikiuras ID; nėra išgalvoto commerce target.",
+          "presentation": "1280 px common studio preview H1 ir visas tekstas perskaityti, overflow 0. content-support-service-draft.png. Actual platformos kategorija jau atidaryta ankstesniame browser QA; naujo prepared-link laiko testas seka po importo."
+        }
+      }
+    },
+    {
+      "pageId": "6cc9716e-8706-4628-a85a-7a32ca432a7d",
+      "revisionHash": "95433659f4ca284e6e220b6b6088ed4a82ae600c9f6f0f0299d0eb7a9c3a5b83",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "madbeauty-implementation-agent sequential self-review",
+        "checkedAt": "2026-10-05T19:06:59.117Z",
+        "revisionHash": "95433659f4ca284e6e220b6b6088ed4a82ae600c9f6f0f0299d0eb7a9c3a5b83",
+        "binding": "e6c7fcb776a206b201e40569f5f54ef93252ac97f45ef44014d4c3df7cb38d22",
+        "evidence": {
+          "usefulness": "Organizacijos redakcinis profilis paaiškina rengimo ir klaidų pranešimo kelią. Aiškiai atskiria AI iliustracijas nuo teikėjo darbų ir tikrų vizitų.",
+          "facts": "MB Pinet ir info@pinet.lt tikrinti central config. Nekuriamas asmens ekspertinis profilis, kvalifikacija ar gyvenimo aprašymas. Aprašytas agento review kelias faktiškai atliekamas šiai partijai.",
+          "sources": "Metodika yra projekto proceso aprašymas; išoriniai šaltiniai nėra jo pagrindas. BUSINESS ir MEDIA_CORE dokumentai atskirai saugo kilmę; public turinyje nėra vidinių manifestų.",
+          "media": "Metodikos puslapiui dekoratyvi fotografija neteikia skaitytojui papildomos informacijos; pagrįsta bevaizdė redakcinė išimtis. Jame nėra fiktyvaus redaktoriaus portreto.",
+          "links": "Nėra išorinių ar tarp-domenų ryšių. Kontaktas yra savininko patvirtintas central default, ne išgalvoto kito domeno telefono/adreso kopija.",
+          "presentation": "Actual visas redakcinis profilis perskaitytas 1280 px private studio preview ir screenshot, overflow 0. content-support-editorial-draft.png bei content-draft-browser.json; originali organizacijos atribucija išliko."
+        }
+      }
+    },
+    {
+      "pageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+      "revisionHash": "14e84d820b2d6a4f39e4206f19539aca6916fb3c8c1038098620065c6de742de",
+      "publishAt": "2026-10-05T12:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "madbeauty-implementation-agent sequential self-review",
+        "checkedAt": "2026-10-05T19:06:59.131Z",
+        "revisionHash": "14e84d820b2d6a4f39e4206f19539aca6916fb3c8c1038098620065c6de742de",
+        "binding": "74e1fa048432b0e932f3275ae9ebecbc0aee95871caf585f16dfd3b4e0923263",
+        "evidence": {
+          "usefulness": "Originalus palyginimas išskiria penkias apimties dalis, siūlo penkis konkrečius klausimus ir parodo, kodėl 75 min. netelpa į 60 min. langą. Tai atskiras pirkėjo klausimas, ne miesto/sinonimo kopija.",
+          "facts": "Perskaitytas visas galutinis V1 juodraštis. 30+5=35 eurų, 60+15=75 min., 17:00+75min=18:15 patikrinta. Visos reikšmės pažymėtos iliustracinėmis, ne rinkos kainomis ar pasiūlymu. Buferiai atitinka backend viso intervalo kontraktą ir jo 27/27 testų rezultatus.",
+          "sources": "Nėra išorinių statistikų ar medicininių/teisinių patarimų: tai originalus klausimų sąrašas ir aritmetinis pavyzdys. Nepridėta dekoratyvi citata. Projekto backend-tests-v7.tap pagrindžia platformos buferių elgseną, ne rinkos kainas.",
+          "media": "Actual darbo vietos originalas importuotas saveResponsiveAsset per MEDIA_CORE. Desktop ir 390px private preview pixel review: priemonės, spalvų paletė ir planavimo vieta aiškios; ne tikro salono ar meistro portfolio. content-first-guide-draft-desktop.png / mobile.png, image loaded ir overflow 0.",
+          "links": "Vienas patikrintas CTA į Manikiūro paslaugos page ID 0bb50b7b-d1dd-43fd-b54f-918ab1bf8098 ir realų /paslaugos/manikiuras maršrutą. finalizeInternalLinks atliktas, unpublished/due eligibility paliekama common projekcijai; išorinių ar network linkų nėra.",
+          "presentation": "Actual visas common studio juodraštis perskaitytas ir screenshot desktop1280/mobile390. Sąrašas pakeičia seną hardcoded lentelę sąmoninga redakcija, išlaikydamas penkias palyginimo eilutes. Galutinis savitas HTML/sidebar/schema/CTA tikrinami po importo; šis įrašas to dar nevadina PASS."
+        }
+      }
+    },
+    {
+      "pageId": "99c2d09a-1314-48db-999c-075d312271b2",
+      "revisionHash": "6894109a854588287dbca7d0041806e752e96c57e8d18d2e8dbb1a7014438233",
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "review": {
+        "version": 1,
+        "reviewer": "madbeauty-implementation-agent sequential self-review",
+        "checkedAt": "2026-10-05T19:37:15.375Z",
+        "revisionHash": "6894109a854588287dbca7d0041806e752e96c57e8d18d2e8dbb1a7014438233",
+        "binding": "8fa489454c30fc052ca4d0bf583d80674baf316b2a7d7bd5810c2f6711a60fb4",
+        "evidence": {
+          "usefulness": "Perskaitytas visas originalus gidas: neutralus / ryškus / plonos linijos palyginimas, keturi kasdienybės klausimai ir konkreti užduotis meistrui. Atskiras spalvos pasirinkimo ketinimas, ne kainos gido kopija.",
+          "facts": "Nėra sezono reitingo, rinkos kainos, produkto atspalvio garantijos ar tikro teikėjo darbų pažado. Vaizdai aiškiai iliustraciniai. Spalvos pasirinkimas yra subjektyvi naudinga gairė.",
+          "sources": "Originalios redakcinės pasirinkimo gairės be išorinių statistikų ar teisinių/medicininių teiginių; dekoratyvus šaltinis nepridėtas.",
+          "media": "Trys distinct originalios anksčiau generuotos iliustracijos (koralo / neutralūs / French) per saveResponsiveAsset, visos trys actual loaded 390 ir pakartotame 1280 preview. Pirmas desktop fullPage capture nespėjo lazy French; išlaikytas, po actual scroll retest visi loaded.",
+          "links": "Tikri page ID į Manikiūro paslaugos ir Kas įeina į manikiūro kainą, common finalize atliktas. Abu tikslai jau approved, contextual žodžiai tekste. Nėra city/sinonimų kopijų ar automatinio network ryšio.",
+          "presentation": "Actual studijos juodraštis visas perskaitytas. content-colors-draft-desktop-loaded.png ir content-colors-draft-mobile.png, išmatuoti 1280/390, horizontal overflow <=0, trys loaded vaizdai. content-initial-guides-draft-browser.json. Galutinis own HTML tikrinamas po importo."
+        }
+      }
+    },
+    {
+      "pageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+      "revisionHash": "a91981708dc59dd3d4bed747980f58f574f8a25b614f705db53a9e06c1ddf884",
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "review": {
+        "version": 1,
+        "reviewer": "madbeauty-implementation-agent sequential self-review",
+        "checkedAt": "2026-10-05T19:37:15.387Z",
+        "revisionHash": "a91981708dc59dd3d4bed747980f58f574f8a25b614f705db53a9e06c1ddf884",
+        "binding": "90a8273d0a0eb3fc36ef3fa1d4132165b629874f6f66501c958dd2deb5bb4072",
+        "evidence": {
+          "usefulness": "Perskaitytas visas originalus gidas: kilmė / panaši procedūra / keli darbai / saugos klausimai / konkreti užduotis. Galerijos stilius atskirtas nuo teisės vykdyti veiklą ir medicininio tinkamumo.",
+          "facts": "NVSC 2026-09-17 actual oficialus puslapis peržiūrėtas 2026-10-05: leidimas-higienos pasas / teikėjo sveikatos ir mokymų reikalavimai. Parafrazė trumpa, be diagnozių ir išgalvotos kvalifikacijos. Galerija jų nepatvirtina.",
+          "sources": "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/ — oficialus aktualus paaiškinimas, patikrintas actual web. External link turi reason ir verified=true; ne paieškos rezultatų URL.",
+          "media": "French iliustracijos originalas per saveResponsiveAsset ir 5 WebP variantai. Actual preview cover loaded desktop1280/mobile390, ne konkretaus meistro portfolio.",
+          "links": "Tikri page ID į Manikiūro paslaugos ir Kas įeina į manikiūro kainą, common finalize atliktas. Abu tikslai jau approved, contextual žodžiai tekste. Nėra city/sinonimų kopijų ar automatinio network ryšio.",
+          "presentation": "Actual studijos juodraštis visas perskaitytas. content-gallery-draft-desktop.png / mobile.png, išmatuoti 1280/390, horizontal overflow <=0, loaded cover. content-initial-guides-draft-browser.json. Galutinis own HTML ir Article tikrinami po importo."
+        }
+      }
+    }
+  ],
+  "state": "exported-not-deployed",
+  "next": "Import and verify in public core; do not report deployment from this receipt."
+}

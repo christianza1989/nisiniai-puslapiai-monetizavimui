@@ -1,0 +1,173 @@
+import {randomId,reject} from './store.mjs';
+import {availability,option,find,plus,overlaps,dayOffsetForDate} from './availability.mjs';
+import {localInstant,makeClock,TAXONOMY} from '../prototype/demo-model.mjs';
+import {mediaPublic} from './media.mjs';
+const copy=x=>structuredClone(x);
+const text=(v,max=100)=>{if(typeof v!=='string'||!v.trim()||v.trim().length>max)reject('INVALID_INPUT','Patikrinkite privalomus teksto laukus.');return v.trim();};
+const number=(v,min,max)=>{if(!Number.isInteger(v)||v<min||v>max)reject('INVALID_INPUT','Netinkama skaitinė reikšmė.');return v;};
+const cities=['Vilnius','Kaunas','Klaipėda','Šiauliai','Panevėžys','Alytus','Marijampolė','Palanga'];
+const canonical=v=>Array.isArray(v)?v.map(canonical):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonical(v[k])])):v;
+export function createPlatform(store){
+  const clock=()=>makeClock(new Date(store.clock()).toISOString());
+  const scope=(d,user,requested={})=>{
+    if(!user)reject('UNAUTHENTICATED','Prisijunkite el. paštu.',401);
+    if(requested.role==='operator'){if(!user.operator)reject('FORBIDDEN','Prieiga neleidžiama.',403);return {role:'operator',clientId:user.id,accountId:user.id};}
+    if(requested.role==='professional'){
+      const member=d.memberships.find(m=>m.accountId===user.id&&m.organizationId===requested.organizationId);
+      if(!member)reject('FORBIDDEN','Šios organizacijos prieiga neleidžiama.',403);
+      return {role:'professional',clientId:user.id,accountId:user.id,organizationId:member.organizationId};
+    }
+    return {role:'customer',clientId:user.id,accountId:user.id};
+  };
+  const ownOrg=(d,user,org)=>scope(d,user,{role:'professional',organizationId:org});
+  const ownBooking=(d,user,requested,id)=>{const b=find(d,'bookings',id),s=scope(d,user,requested);if(s.role==='operator'||s.role==='customer'&&b.clientId!==user.id||s.role==='professional'&&b.organizationId!==s.organizationId)reject('FORBIDDEN','Šio vizito prieiga neleidžiama.',403);return b;};
+  const mutate=fn=>store.transaction(()=>{const d=store.read();d.media||=[];const result=fn(d);store.write(d);return copy(result);});
+  const event=(d,type,id)=>d.events.push({id:randomId('event'),type,entityId:id,at:new Date(store.clock()).toISOString(),siteId:store.siteId});
+  const outbox=(d,b,type)=>{const c=find(d,'clients',b.clientId);return store.mail({accountId:c.id,organizationId:b.organizationId,bookingId:b.id,recipient:c.email,type,payload:{bookingId:b.id,startAt:b.startAt,endAt:b.endAt,status:b.status,priceMinor:b.priceMinor}});};
+  const slots=(d,input,opts={})=>availability(d,input,store.clock(),opts);
+  const choose=(d,candidate,opts={})=>{
+    if(!candidate||!Number.isFinite(Date.parse(candidate.snapshotAt))||Date.parse(candidate.snapshotAt)+300000<store.clock())reject('STALE_AVAILABILITY','Pasirinkimas paseno. Atnaujinkite laikus.',409);
+    const dateKey=candidate.dateKey||new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(candidate.startAt));
+    const result=slots(d,{providerServiceId:candidate.providerServiceId,addons:candidate.addonIds,dateKey,dayOffset:candidate.dayOffset,from:candidate.from,to:candidate.to},opts);
+    const c=result.slots.find(s=>s.id===candidate.id&&s.serviceVersion===candidate.serviceVersion&&s.scheduleVersion===candidate.scheduleVersion&&s.priceMinor===candidate.priceMinor);
+    if(!c)reject('SLOT_CONFLICT','Laikas arba paslauga pasikeitė. Pasirinkite kitą laiką.',409);return c;
+  };
+  const publicOrg=o=>({id:o.id,name:o.name,kind:o.kind,city:o.city,locationId:o.locationId,bio:o.bio,gallery:o.gallery,avatarImageId:o.avatarImageId||null,approved:o.approved,profileState:o.profileState,calendarState:'current',version:o.version});
+  const publicService=(d,s)=>{const o=find(d,'organizations',s.organizationId),p=find(d,'practitioners',s.practitionerId),l=find(d,'locations',o.locationId);return {...s,organizationName:o.name,practitionerName:p.name,initials:p.initials,city:o.city,kind:o.kind,area:l.area,calendarState:'current',avatarImageId:o.avatarImageId||null,media:(d.media||[]).filter(a=>a.id===o.avatarImageId).map(mediaPublic)};};
+  const api={
+    clock,
+    session(user){const d=store.read();return user?{user:{id:user.id,email:user.email,name:user.name},clientId:user.id,operator:!!user.operator,organizations:d.memberships.filter(m=>m.accountId===user.id).map(m=>publicOrg(find(d,'organizations',m.organizationId)))}:{user:null,clientId:null,operator:false,organizations:[]};},
+    catalog(filters={}){const d=store.read();return d.services.filter(s=>s.active&&d.organizations.some(o=>o.id===s.organizationId&&o.approved)).map(s=>publicService(d,s)).filter(s=>(!filters.city||s.city===filters.city)&&(!filters.taxonomyServiceId||s.taxonomyServiceId===filters.taxonomyServiceId)&&(!filters.kind||s.kind===filters.kind)&&(!filters.name||(s.label+' '+s.organizationName+' '+s.practitionerName).toLocaleLowerCase('lt').includes(String(filters.name).toLocaleLowerCase('lt')))&&(filters.maxPrice==null||s.priceMinor<=filters.maxPrice));},
+    profile(id){const d=store.read(),o=d.organizations.find(o=>o.id===id&&o.approved);if(!o)return null;return {...publicOrg(o),media:(d.media||[]).filter(a=>o.gallery.includes(a.id)||o.avatarImageId===a.id).map(mediaPublic),location:copy(find(d,'locations',o.locationId)),practitioners:d.practitioners.filter(p=>p.organizationId===id&&p.active).map(({accountId,...p})=>p),services:d.services.filter(s=>s.organizationId===id&&s.active),reviews:d.reviews.filter(r=>r.organizationId===id&&r.approved).map(({id,bookingId,rating,text,createdAt})=>({id,bookingId,rating,text,createdAt}))};},
+    availability(input,user=null){
+      const d=store.read(),opts={};if(input.scope?.role==='professional'){ownOrg(d,user,input.scope.organizationId);if(find(d,'services',input.providerServiceId).organizationId!==input.scope.organizationId)reject('FORBIDDEN','Kita organizacija.',403);opts.internal=true;}
+      if(input.ignoreBookingId){const b=ownBooking(d,user,input.scope,input.ignoreBookingId);if(b.providerServiceId!==input.providerServiceId)reject('FORBIDDEN','Paslaugos variantas nepriklauso šiam vizitui.',403);opts.ignoreBookingId=input.ignoreBookingId;opts.internal=true;}return slots(d,input,opts);
+    },
+    option(id,addons){const d=store.read(),s=find(d,'services',id);if(!find(d,'organizations',s.organizationId).approved)reject('NOT_FOUND','Paslauga nerasta.',404);return option(s,addons);},
+    workspace(user,requested){
+      const d=store.read(),s=scope(d,user,requested);
+      if(s.role==='customer'){
+        const requests=table=>d[table].filter(i=>i.clientId===user.id).map(({id,organizationId,providerServiceId,note,status,state,createdAt})=>({id,organizationId,providerServiceId,note,status,state,createdAt,organizationName:d.organizations.find(o=>o.id===organizationId)?.name||'Paslaugos teikėjas',serviceLabel:d.services.find(v=>v.id===providerServiceId)?.label||'Paslauga'}));
+        return {client:find(d,'clients',user.id),bookings:d.bookings.filter(b=>b.clientId===user.id),messages:d.messages.filter(m=>m.clientId===user.id),reviews:d.reviews.filter(r=>r.clientId===user.id),preferences:d.preferences.filter(p=>p.clientId===user.id),inquiries:requests('inquiries'),waitlist:requests('waitlist')};
+      }
+      const mail=store.db.prepare('SELECT id,organization_id AS organizationId,booking_id AS bookingId,state,type,attempts FROM mail_outbox WHERE site_id=? AND booking_id IS NOT NULL').all(store.siteId);
+      if(s.role==='operator')return {...d,clients:[],bookings:[],messages:[],holds:[],memberships:[],outbox:mail};
+      const b=d.bookings.filter(b=>b.organizationId===s.organizationId),links=(d.clientLinks||[]).filter(i=>i.organizationId===s.organizationId),clientIds=new Set([...b,...d.inquiries.filter(i=>i.organizationId===s.organizationId),...d.waitlist.filter(i=>i.organizationId===s.organizationId),...links].map(b=>b.clientId));
+      return {...Object.fromEntries(Object.entries(d).filter(([,v])=>Array.isArray(v)).map(([k,v])=>[k,k==='taxonomy'?v:k==='clients'?v.filter(c=>clientIds.has(c.id)).map(c=>({...c,name:links.find(l=>l.clientId===c.id)?.name||c.name})):v.filter(x=>x.organizationId===s.organizationId||k==='organizations'&&x.id===s.organizationId)])),outbox:mail.filter(m=>m.organizationId===s.organizationId)};
+    },
+    createOrganization(user,input){return mutate(d=>{
+      if(!user)reject('UNAUTHENTICATED','Prisijunkite.',401);if(d.memberships.filter(m=>m.accountId===user.id).length>=5)reject('LIMIT','Organizacijų limitas pasiektas.');
+      if(!cities.includes(input.city)||!['solo','salon'].includes(input.kind))reject('INVALID_INPUT','Pasirinkite miestą ir veiklos tipą.');
+      const org={id:randomId('provider'),name:text(input.name),bio:text(input.bio,600),city:input.city,kind:input.kind,locationId:randomId('location'),approved:false,profileState:'draft',gallery:[],draftGallery:[],draftAvatarImageId:null,avatarImageId:null,version:1,leadTimeMin:30,createdAt:new Date(store.clock()).toISOString()};
+      d.organizations.push(org);d.locations.push({id:org.locationId,organizationId:org.id,city:org.city,area:String(input.area||'').slice(0,80),publicAddress:String(input.address||'').slice(0,200),openingHoursLabel:'Pagal darbo grafiką'});
+      const practitioner={id:randomId('staff'),organizationId:org.id,locationId:org.locationId,name:text(input.practitionerName||input.name),initials:input.name.trim().slice(0,1).toUpperCase(),active:true,role:'owner',version:1};
+      d.practitioners.push(practitioner);d.resources.push({id:randomId('resource'),organizationId:org.id,label:'Darbo vieta',active:true,version:1});
+      d.schedules.push({id:practitioner.id+'-schedule',organizationId:org.id,practitionerId:practitioner.id,startMin:540,endMin:1200,breakStartMin:780,breakEndMin:840,closedDay:null,closedDate:null,weekdays:['Mon','Tue','Wed','Thu','Fri'],version:1});
+      d.memberships.push({id:randomId('membership'),accountId:user.id,organizationId:org.id,role:'owner'});event(d,'provider-created',org.id);return org;
+    });},
+    attachMedia(user,input){return mutate(d=>{ownOrg(d,user,input.organizationId);const o=find(d,'organizations',input.organizationId);if(d.media.filter(a=>a.organizationId===o.id).length>=24)reject('LIMIT','Profilio vaizdų limitas pasiektas.');d.media.push(copy(input));if(input.usage==='portrait')o.draftAvatarImageId=input.id;else o.draftGallery=[...(o.draftGallery||o.gallery),input.id];return mediaPublic(input);});},
+    createStaff(user,input){return mutate(d=>{ownOrg(d,user,input.organizationId);const o=find(d,'organizations',input.organizationId);if(d.practitioners.filter(p=>p.organizationId===o.id).length>=32)reject('LIMIT','Komandos narių limitas pasiektas.');const name=text(input.name),p={id:randomId('staff'),organizationId:o.id,locationId:o.locationId,name,initials:name.split(/\s+/).map(v=>v[0]).slice(0,2).join(''),active:true,role:'staff',version:1};d.practitioners.push(p);d.schedules.push({id:p.id+'-schedule',organizationId:o.id,practitionerId:p.id,startMin:540,endMin:1200,breakStartMin:780,breakEndMin:840,closedDate:null,closedDay:null,weekdays:['Mon','Tue','Wed','Thu','Fri'],version:1});return p;});},
+    createResource(user,input){return mutate(d=>{ownOrg(d,user,input.organizationId);if(d.resources.filter(r=>r.organizationId===input.organizationId).length>=32)reject('LIMIT','Darbo vietų limitas pasiektas.');const r={id:randomId('resource'),organizationId:input.organizationId,label:text(input.label),active:true,version:1};d.resources.push(r);return r;});},
+    createClient(user,input){return mutate(d=>{
+      ownOrg(d,user,input.organizationId);const email=text(input.email,254).toLowerCase(),name=text(input.name,80);if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))reject('INVALID_INPUT','Įrašykite teisingą el. paštą.');
+      d.clientLinks||=[];if(d.clientLinks.filter(l=>l.organizationId===input.organizationId).length>=1000)reject('LIMIT','Klientų sąrašo limitas pasiektas.');
+      let account=store.db.prepare('SELECT id FROM accounts WHERE site_id=? AND email=?').get(store.siteId,email);
+      if(!account){account={id:randomId('account')};store.db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(account.id,store.siteId,email,name,store.clock());}
+      if(!d.clients.some(c=>c.id===account.id))d.clients.push({id:account.id,accountId:account.id,email,name,version:1});
+      const old=d.clientLinks.find(l=>l.organizationId===input.organizationId&&l.clientId===account.id);
+      if(old){old.name=name;old.version++;}else d.clientLinks.push({id:randomId('client-link'),organizationId:input.organizationId,clientId:account.id,name,version:1,createdAt:clock().now});
+      event(d,'client-added',account.id);return {id:account.id,name,email};
+    });},
+    createBusyBlock(user,input){return mutate(d=>{
+      ownOrg(d,user,input.organizationId);const from=number(input.from,0,1439),to=number(input.to,0,1439),offset=dayOffsetForDate(input,store.clock());
+      if(from>=to||(!input.practitionerId&&!input.resourceId))reject('INVALID_INPUT','Pasirinkite meistrą arba darbo vietą ir tinkamą intervalą.');
+      for(const [key,table] of [['practitionerId','practitioners'],['resourceId','resources']])if(input[key]&&find(d,table,input[key]).organizationId!==input.organizationId)reject('FORBIDDEN','Kita organizacija.',403);
+      const at=min=>{try{return localInstant(clock(),offset,min);}catch{reject('INVALID_LOCAL_TIME','Šis vietinis laikas kartojasi arba neegzistuoja. Pasirinkite kitą intervalą.');}};
+      const startAt=at(from),endAt=at(to),related=b=>(input.practitionerId&&b.practitionerId===input.practitionerId)||(input.resourceId&&b.resourceId===input.resourceId);
+      if(Date.parse(startAt)<store.clock())reject('INVALID_INPUT','Praėjusio laiko blokuoti negalima.');
+      if(d.bookings.some(b=>b.status==='confirmed'&&related(b)&&overlaps(startAt,endAt,plus(b.startAt,-b.bufferBeforeMin),plus(b.endAt,b.bufferAfterMin)))||d.holds.some(h=>h.state==='held'&&Date.parse(h.expiresAt)>store.clock()&&related(h)&&overlaps(startAt,endAt,h.occupiedStart,h.occupiedEnd)))reject('SCHEDULE_CONFLICT','Intervale jau yra vizitas arba laikomas kliento pasirinkimas.',409);
+      if(d.busyBlocks.some(b=>b.active!==false&&related(b)&&overlaps(startAt,endAt,b.startAt,b.endAt)))reject('SCHEDULE_CONFLICT','Šis intervalas jau užblokuotas.',409);
+      const block={id:randomId('busy'),organizationId:input.organizationId,practitionerId:input.practitionerId||null,resourceId:input.resourceId||null,label:text(input.label,100),startAt,endAt,active:true,version:1,createdAt:clock().now};d.busyBlocks.push(block);event(d,'time-blocked',block.id);return block;
+    });},
+    releaseBusyBlock(user,input){return mutate(d=>{
+      const b=find(d,'busyBlocks',input.id);ownOrg(d,user,b.organizationId);if(b.version!==input.version)reject('VERSION_CONFLICT','Laiko blokas pasikeitė.',409);
+      if(b.active===false)reject('VERSION_CONFLICT','Laikas jau atlaisvintas.',409);b.active=false;b.version=(b.version||0)+1;event(d,'time-released',b.id);return b;
+    });},
+    createService(user,input){return mutate(d=>{
+      ownOrg(d,user,input.organizationId);const o=find(d,'organizations',input.organizationId),p=find(d,'practitioners',input.practitionerId),r=find(d,'resources',input.resourceId);
+      if(p.organizationId!==o.id||r.organizationId!==o.id)reject('FORBIDDEN','Netinkamas meistras arba darbo vieta.',403);
+      const tax=TAXONOMY.find(t=>t.id===input.taxonomyServiceId);if(!tax)reject('INVALID_INPUT','Pasirinkite paslaugos kategoriją.');
+      const s={id:randomId('service'),organizationId:o.id,locationId:o.locationId,practitionerId:p.id,resourceId:r.id,taxonomyServiceId:tax.id,label:text(input.label),durationMin:number(input.durationMin,15,480),priceMinor:number(input.priceMinor,0,100000),bufferBeforeMin:number(input.bufferBeforeMin??0,0,120),bufferAfterMin:number(input.bufferAfterMin??0,0,120),currency:'EUR',imageId:tax.imageId,addons:[],active:true,version:1};d.services.push(s);return s;
+    });},
+    hold(user,candidate){return mutate(d=>{if(!user)reject('UNAUTHENTICATED','Prisijunkite prieš pasirinkdami laiką.',401);const c=choose(d,candidate);const h={...c,id:randomId('hold'),accountId:user.id,state:'held',expiresAt:plus(clock().now,2)};d.holds.push(h);return h;});},
+    releaseHold(user,id){return mutate(d=>{const h=find(d,'holds',id);if(!user||h.accountId!==user.id)reject('FORBIDDEN','Prieiga neleidžiama.',403);if(h.state==='held')h.state='released';return {released:true};});},
+    confirm(user,input){return mutate(d=>{
+      if(!user)reject('UNAUTHENTICATED','Prisijunkite.',401);const key=user.id+':'+text(input.idempotencyKey,160),prior=d.idempotency[key],fingerprint=store.hash(JSON.stringify(canonical(input)));
+      if(prior){if(prior.fingerprint!==fingerprint)reject('IDEMPOTENCY_CONFLICT','Pakartojimo raktas jau panaudotas kitam veiksmui.',409);return find(d,'bookings',prior.bookingId);}
+      const h=find(d,'holds',input.holdId);if(h.accountId!==user.id)reject('FORBIDDEN','Prieiga neleidžiama.',403);
+      if(h.state!=='held'||Date.parse(h.expiresAt)<=store.clock())reject('HOLD_EXPIRED','Laiko pasirinkimo galiojimas baigėsi. Pasirinkite iš naujo.',409);
+      const s=find(d,'services',h.providerServiceId),c=choose(d,{...h,id:[h.providerServiceId,h.startAt,h.addonIds.join(',')].join('|'),snapshotAt:clock().now},{ignoreHoldId:h.id});
+      const client=find(d,'clients',user.id);client.name=text(input.name||client.name,80);client.version++;store.db.prepare('UPDATE accounts SET name=? WHERE id=? AND site_id=?').run(client.name,user.id,store.siteId);
+      const b={id:randomId('booking'),organizationId:c.organizationId,clientId:user.id,providerServiceId:s.id,practitionerId:c.practitionerId,resourceId:c.resourceId,locationId:c.locationId,startAt:c.startAt,endAt:c.endAt,durationMin:c.durationMin,priceMinor:c.priceMinor,addonIds:c.addonIds,bufferBeforeMin:s.bufferBeforeMin,bufferAfterMin:s.bufferAfterMin,status:'confirmed',currency:'EUR',timezone:'Europe/Vilnius',version:1,createdAt:clock().now,serviceSnapshot:{label:s.label,practitionerName:find(d,'practitioners',c.practitionerId).name,organizationName:find(d,'organizations',c.organizationId).name,durationMin:c.durationMin,priceMinor:c.priceMinor,addons:option(s,c.addonIds).addons}};
+      h.state='confirmed';d.bookings.push(b);d.idempotency[key]={bookingId:b.id,holdId:h.id,fingerprint};outbox(d,b,'confirmation');event(d,'booking-confirmed',b.id);return b;
+    });},
+    cancelBooking(user,input){return mutate(d=>{const b=ownBooking(d,user,input.scope,input.id);if(b.version!==input.version)reject('VERSION_CONFLICT','Vizitas pasikeitė. Atnaujinkite.',409);if(b.status!=='confirmed'||Date.parse(b.startAt)<=store.clock())reject('INVALID_INPUT','Atšaukti galima būsimą patvirtintą vizitą.');b.status='canceled';b.cancelReason=text(input.reason||'Kliento pasirinkimas',300);b.version++;outbox(d,b,'cancellation');event(d,'booking-canceled',b.id);return b;});},
+    changeBooking(user,input){return mutate(d=>{const b=ownBooking(d,user,input.scope,input.id);if(b.version!==input.version)reject('VERSION_CONFLICT','Vizitas pasikeitė. Atnaujinkite.',409);if(b.status!=='confirmed'||Date.parse(b.startAt)<=store.clock())reject('INVALID_INPUT','Keisti galima būsimą patvirtintą vizitą.');if(input.candidate.providerServiceId!==b.providerServiceId)reject('INVALID_INPUT','Paslaugos variantas turi sutapti.');const c=choose(d,input.candidate,{ignoreBookingId:b.id,internal:true}),s=find(d,'services',b.providerServiceId);Object.assign(b,{startAt:c.startAt,endAt:c.endAt,practitionerId:c.practitionerId,resourceId:c.resourceId,locationId:c.locationId,priceMinor:c.priceMinor,durationMin:c.durationMin,addonIds:c.addonIds,bufferBeforeMin:s.bufferBeforeMin,bufferAfterMin:s.bufferAfterMin,serviceSnapshot:{label:s.label,practitionerName:find(d,'practitioners',c.practitionerId).name,organizationName:find(d,'organizations',c.organizationId).name,durationMin:c.durationMin,priceMinor:c.priceMinor,addons:option(s,c.addonIds).addons},version:b.version+1});outbox(d,b,'reschedule');event(d,'booking-changed',b.id);return b;});},
+    manualVisit(user,input){return mutate(d=>{
+      ownOrg(d,user,input.scope?.organizationId);const key=user.id+':manual:'+text(input.idempotencyKey,160),fingerprint=store.hash(JSON.stringify(canonical(input))),prior=d.idempotency[key];
+      if(prior){if(prior.fingerprint!==fingerprint)reject('IDEMPOTENCY_CONFLICT','Raktas panaudotas kitam vizitui.',409);return find(d,'bookings',prior.bookingId);}
+      const c=choose(d,input.candidate,{internal:true});if(c.organizationId!==input.scope.organizationId)reject('FORBIDDEN','Kita organizacija.',403);const client=find(d,'clients',input.clientId);
+      if(![...d.bookings,...d.inquiries,...d.waitlist,...(d.clientLinks||[])].some(b=>b.clientId===client.id&&b.organizationId===c.organizationId))reject('FORBIDDEN','Klientas nepriklauso šiai organizacijai.',403);
+      const s=find(d,'services',c.providerServiceId),b={...c,id:randomId('booking'),clientId:client.id,status:'confirmed',version:1,currency:'EUR',timezone:'Europe/Vilnius',bufferBeforeMin:s.bufferBeforeMin,bufferAfterMin:s.bufferAfterMin,createdAt:clock().now,serviceSnapshot:{label:s.label,practitionerName:find(d,'practitioners',c.practitionerId).name,organizationName:find(d,'organizations',c.organizationId).name,durationMin:c.durationMin,priceMinor:c.priceMinor,addons:option(s,c.addonIds).addons}};delete b.occupiedStart;delete b.occupiedEnd;d.bookings.push(b);d.idempotency[key]={bookingId:b.id,fingerprint};outbox(d,b,'confirmation');event(d,'booking-manual',b.id);return b;
+    });},
+    edit(user,input){return mutate(d=>{
+      const {table,id,values,version}=input,s=scope(d,user,input.scope),e=find(d,table,id);
+      const fields={services:['label','durationMin','priceMinor','bufferBeforeMin','bufferAfterMin','addons','practitionerId','resourceId','active'],schedules:['startMin','endMin','breakStartMin','breakEndMin','closedDay','closedDate','weekdays'],resources:['label','active'],practitioners:['name','role','active'],inquiries:['status'],waitlist:['state'],clients:['name'],reports:['status'],organizations:['approved','profileState']};
+      if(!fields[table]||!values||Object.keys(values).some(k=>!fields[table].includes(k)))reject('INVALID_INPUT','Neleistinas laukas.');
+      if(s.role==='customer'&&(table!=='clients'||id!==user.id))reject('FORBIDDEN','Prieiga neleidžiama.',403);
+      if(s.role==='professional'&&(e.organizationId!==s.organizationId||['clients','reports','organizations'].includes(table)))reject('FORBIDDEN','Prieiga neleidžiama.',403);
+      if(s.role==='operator'&&!['reports','organizations'].includes(table))reject('FORBIDDEN','Prieiga neleidžiama.',403);
+      if(version!==undefined&&e.version!==version)reject('VERSION_CONFLICT','Įrašas pasikeitė. Atnaujinkite.',409);
+      for(const k of ['name','label'])if(k in values)text(values[k],100);
+      for(const k of ['durationMin','priceMinor','bufferBeforeMin','bufferAfterMin','startMin','endMin','breakStartMin','breakEndMin'])if(k in values)number(values[k],k==='durationMin'?15:0,k==='priceMinor'?100000:k==='durationMin'?480:k.startsWith('buffer')?120:1439);
+      for(const k of ['active','approved'])if(k in values&&typeof values[k]!=='boolean')reject('INVALID_INPUT','Netinkama būsena.');
+      const enums={inquiries:{status:['new','qualified','closed']},waitlist:{state:['waiting','offered','closed']},reports:{status:['new','resolved','hidden']},practitioners:{role:['staff','manager','owner']},organizations:{profileState:['draft','pending','returned','approved']}};
+      for(const [key,allowed] of Object.entries(enums[table]||{}))if(key in values&&!allowed.includes(values[key]))reject('INVALID_INPUT','Nežinoma įrašo būsena.');
+      if(values.active===false&&['services','resources','practitioners'].includes(table)&&d.bookings.some(b=>b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()&&b[{services:'providerServiceId',resources:'resourceId',practitioners:'practitionerId'}[table]]===id))reject('SCHEDULE_CONFLICT','Pirmiau perkelkite arba atšaukite šiam įrašui priskirtus būsimus vizitus.',409);
+      if(table==='services'){
+        for(const [field,t] of [['practitionerId','practitioners'],['resourceId','resources']])if(field in values&&find(d,t,values[field]).organizationId!==e.organizationId)reject('FORBIDDEN','Kita organizacija.',403);
+        if(values.addons&&(!Array.isArray(values.addons)||values.addons.length>12))reject('INVALID_INPUT','Netinkami priedai.');
+        for(const a of values.addons||[]){text(a.id,100);text(a.label,100);number(a.durationMin,0,240);number(a.priceMinor,0,100000);}if(values.addons&&new Set(values.addons.map(a=>a.id)).size!==values.addons.length)reject('INVALID_INPUT','Priedai dubliuojasi.');
+      }
+      if(table==='schedules'){
+        const n={...e,...values};if(n.startMin>=n.endMin||n.breakStartMin>=n.breakEndMin||n.breakStartMin<n.startMin||n.breakEndMin>n.endMin)reject('INVALID_INPUT','Patikrinkite pamainos ir pertraukos intervalus.');
+        if(n.weekdays&&(!Array.isArray(n.weekdays)||n.weekdays.some(w=>!['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].includes(w))))reject('INVALID_INPUT','Netinkamos savaitės dienos.');
+        if('closedDay' in values){if(values.closedDay!==null)number(values.closedDay,0,30);n.closedDate=values.closedDay===null?null:new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(localInstant(clock(),values.closedDay,720)));values.closedDate=n.closedDate;}
+        if('closedDate' in values){if(values.closedDate!==null&&(!/^\d{4}-\d{2}-\d{2}$/.test(values.closedDate)||!Number.isFinite(Date.parse(values.closedDate+'T12:00:00Z'))||new Date(values.closedDate+'T12:00:00Z').toISOString().slice(0,10)!==values.closedDate))reject('INVALID_INPUT','Netinkama uždarymo data.');n.closedDate=values.closedDate;values.closedDay=null;}
+        const future=d.bookings.filter(b=>b.practitionerId===e.practitionerId&&b.status==='confirmed'&&Date.parse(b.startAt)>store.clock());
+        for(const b of future){const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Vilnius',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(b.startAt)).split(':').map(Number),lo=p[0]*60+p[1]-b.bufferBeforeMin,hi=p[0]*60+p[1]+b.durationMin+b.bufferAfterMin,day=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(b.startAt)),weekday=new Date(b.startAt).toLocaleDateString('en-US',{timeZone:'Europe/Vilnius',weekday:'short'});if(lo<n.startMin||hi>n.endMin||lo<n.breakEndMin&&hi>n.breakStartMin||n.closedDate===day||n.weekdays&&!n.weekdays.includes(weekday))reject('SCHEDULE_CONFLICT','Grafiko pakeitimas paslėptų esamą vizitą. Pirmiau perkelkite jį.',409);}
+      }
+      if(table==='organizations'&&values.approved&&!d.services.some(v=>v.organizationId===e.id&&v.active))reject('INVALID_INPUT','Profilis neturi aktyvių paslaugų.');
+      Object.assign(e,copy(values),{version:(e.version||0)+1});if(table==='clients')store.db.prepare('UPDATE accounts SET name=? WHERE id=? AND site_id=?').run(e.name,user.id,store.siteId);event(d,'edit-'+table,id);return e;
+    });},
+    submitRevision(user,input){return mutate(d=>{const s=scope(d,user,input.scope);if(s.role!=='professional')reject('FORBIDDEN','Prieiga neleidžiama.',403);const o=find(d,'organizations',s.organizationId);if(!d.services.some(x=>x.organizationId===o.id&&x.active))reject('INVALID_INPUT','Pirmiausia pridėkite paslaugą.');const kind=input.kind??o.kind,city=input.city??o.city;if(!['solo','salon'].includes(kind)||!cities.includes(city))reject('INVALID_INPUT','Pasirinkite miestą ir veiklos tipą.');const revision={id:randomId('revision'),organizationId:o.id,name:text(input.name),bio:text(input.bio,600),kind,city,state:'pending',gallery:[...(o.draftGallery||o.gallery)],avatarImageId:o.draftAvatarImageId||o.avatarImageId,createdAt:clock().now};d.revisions.push(revision);o.profileState='pending';return revision;});},
+    moderate(user,input){return mutate(d=>{scope(d,user,{role:'operator'});const r=find(d,'revisions',input.id);if(r.state!=='pending')reject('VERSION_CONFLICT','Paraiška jau peržiūrėta.',409);if(!['approved','returned'].includes(input.state))reject('INVALID_INPUT','Netinkamas sprendimas.');if(input.state==='returned')text(input.reason,500);r.state=input.state;r.reason=String(input.reason||'').slice(0,500);const o=find(d,'organizations',r.organizationId);o.profileState=input.state;if(input.state==='approved'){o.name=r.name;o.bio=r.bio;o.kind=r.kind;if(r.city){o.city=r.city;find(d,'locations',o.locationId).city=r.city;}if(r.gallery)o.gallery=r.gallery;if(r.avatarImageId)o.avatarImageId=r.avatarImageId;o.approved=true;o.version++;}return r;});},
+    createInquiry(user,input){return mutate(d=>{if(!user)reject('UNAUTHENTICATED','Prisijunkite.',401);const s=find(d,'services',input.providerServiceId);if(!s.active||!find(d,'organizations',s.organizationId).approved||s.organizationId!==input.organizationId)reject('NOT_FOUND','Paslauga nerasta.',404);const item={id:randomId(input.waitlist?'waitlist':'inquiry'),organizationId:s.organizationId,providerServiceId:s.id,clientId:user.id,note:text(input.note,500),status:'new',state:'waiting',createdAt:clock().now,deliveryStatus:'stored'};d[input.waitlist?'waitlist':'inquiries'].push(item);return item;});},
+    favorite(user,input){return mutate(d=>{if(!user)reject('UNAUTHENTICATED','Prisijunkite.',401);const c=find(d,'clients',user.id),o=find(d,'organizations',input.organizationId);if(!o.approved)reject('NOT_FOUND','Profilis nerastas.',404);if(typeof input.saved!=='boolean')reject('INVALID_INPUT','Netinkamas pasirinkimas.');c.favoriteIds=[...(c.favoriteIds||[]).filter(id=>id!==o.id),...(input.saved?[o.id]:[])];return c.favoriteIds;});},
+    completeBooking(user,input){return mutate(d=>{const s=scope(d,user,input.scope);if(s.role!=='professional')reject('FORBIDDEN','Vizitą gali užbaigti jo teikėjas.',403);const b=ownBooking(d,user,input.scope,input.id);if(b.version!==input.version)reject('VERSION_CONFLICT','Vizitas pasikeitė.',409);if(b.status!=='confirmed'||Date.parse(b.endAt)>store.clock())reject('INVALID_INPUT','Užbaigti galima tik pasibaigusį patvirtintą vizitą.');b.status='completed';b.version++;event(d,'booking-completed',b.id);return b;});},
+    retryOutbox(user,input){return store.transaction(()=>{const d=store.read(),s=scope(d,user,input.scope),m=store.db.prepare('SELECT * FROM mail_outbox WHERE id=? AND site_id=? AND booking_id IS NOT NULL').get(input.id,store.siteId);if(!m)reject('NOT_FOUND','Pranešimas nerastas.',404);if(s.role==='customer'||s.role==='professional'&&m.organization_id!==s.organizationId)reject('FORBIDDEN','Prieiga neleidžiama.',403);store.db.prepare("UPDATE mail_outbox SET attempts=attempts+1 WHERE id=? AND site_id=?").run(m.id,store.siteId);return {id:m.id,state:m.state,attempts:m.attempts+1};});},
+    message(user,input){return mutate(d=>{const b=ownBooking(d,user,input.scope,input.bookingId),s=scope(d,user,input.scope),m={id:randomId('message'),organizationId:b.organizationId,clientId:b.clientId,bookingId:b.id,sender:s.role,text:text(input.text,600),createdAt:clock().now,deliveryStatus:'stored'};d.messages.push(m);return m;});},
+    review(user,input){return mutate(d=>{const b=ownBooking(d,user,{role:'customer'},input.bookingId);if(b.status!=='completed')reject('FORBIDDEN','Atsiliepimas galimas tik po atlikto vizito.',403);if(d.reviews.some(r=>r.bookingId===b.id))reject('ALREADY_REVIEWED','Vizitas jau įvertintas.',409);const r={id:randomId('review'),bookingId:b.id,organizationId:b.organizationId,clientId:user.id,rating:number(input.rating,1,5),text:text(input.text,600),createdAt:clock().now,approved:false};d.reviews.push(r);return r;});},
+    moderateReview(user,input){return mutate(d=>{
+      scope(d,user,{role:'operator'});const r=find(d,'reviews',input.id),current=r.state||(r.approved?'approved':'pending');
+      if(current!=='pending')reject('VERSION_CONFLICT','Atsiliepimas jau peržiūrėtas.',409);
+      if(!['approved','rejected'].includes(input.state))reject('INVALID_INPUT','Pasirinkite peržiūros sprendimą.');
+      const reason=input.state==='rejected'?text(input.reason,500):String(input.reason||'').trim().slice(0,500);
+      const b=find(d,'bookings',r.bookingId);if(b.status!=='completed'||b.organizationId!==r.organizationId)reject('INVALID_INPUT','Atsiliepimas nesusietas su atliktu vizitu.');
+      Object.assign(r,{state:input.state,approved:input.state==='approved',reason,moderatedAt:clock().now,version:(r.version||0)+1});event(d,'review-'+input.state,r.id);return r;
+    });},
+    report(user,input){return mutate(d=>{if(!user)reject('UNAUTHENTICATED','Prisijunkite.',401);const r={id:randomId('report'),target:text(input.target,200),note:text(input.note,500),status:'new',accountId:user.id};d.reports.push(r);return r;});},
+    preferences(user,input){return mutate(d=>{if(!user)reject('UNAUTHENTICATED','Prisijunkite.',401);if(typeof input.service!=='boolean'||typeof input.marketing!=='boolean')reject('INVALID_INPUT','Netinkami pasirinkimai.');const old=d.preferences.find(p=>p.clientId===user.id),value={id:user.id+'-preferences',clientId:user.id,service:input.service,marketing:input.marketing,updatedAt:clock().now};if(old)Object.assign(old,value);else d.preferences.push(value);return value;});},
+    metrics(user){const d=store.read();scope(d,user,{role:'operator'});return {events:d.events.length,realVisits:d.bookings.filter(b=>b.status==='completed').length,realInquiries:d.inquiries.length,demand:'TESTING_NOT_MEASURED'};},
+  };return api;
+}

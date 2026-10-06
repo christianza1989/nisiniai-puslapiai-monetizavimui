@@ -1,0 +1,302 @@
+{
+  "at": "2026-10-05T23:18:29.030Z",
+  "scope": "Current owner-requested UI/UX acceptance. No demo profile/image inspection; profile interaction and layout only. Same implementing agent; no independent claim.",
+  "defects": [
+    {
+      "id": "UX01",
+      "priority": "P1",
+      "issue": "Shared action buttons lack type=button; submit busy logic can disable an add-on/action button rather than the actual submit control.",
+      "evidence": "prototype/public/ui.mjs; app.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "interactions",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Explicit type=button on all shared actions; actual submit progress and duplicate protection."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX02",
+      "priority": "P1",
+      "issue": "Required/native form errors have no Lithuanian inline explanation, associated invalid field or correction guidance.",
+      "evidence": "screen-acceptance-v6.json professional-client-form-tablet-final",
+      "baselineStatus": "BROWSER_CONFIRMED",
+      "group": "interactions",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Lithuanian inline constraints, aria-invalid/describedby, first invalid focus; errors span grid."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX03",
+      "priority": "P1",
+      "issue": "Unsaved contact/profile/new-client input is only copied on submit; render/reload/help/back can lose it.",
+      "evidence": "prototype/public/account-ui.mjs; booking-ui.mjs; workspace-ui.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "forms",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Account/org/entity/version scoped8h tab drafts, success/logout clear, visible restore/discard, stable addon IDs during add/remove and reload."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX04",
+      "priority": "P1",
+      "issue": "Email challenge is context-only, so reload returns to email entry; no same-email resend/recovery progress.",
+      "evidence": "prototype/public/account-ui.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "auth-booking",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Challenge ID/email/expiry survives reload without code persistence; resend and other email paths."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX05",
+      "priority": "P1",
+      "issue": "Hold review lacks live expiry state; details dereferences anonymous session when auth expires. Server safely rejects, but recovery UX is weak.",
+      "evidence": "prototype/public/booking-ui.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "auth-booking",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Live countdown, disabled expired confirmation, heading/recovery after reload, auth expiry recovery; already-confirmed booking back guard."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX06",
+      "priority": "P1",
+      "issue": "Frontend validation Error without code is replaced with generic retry copy, hiding the actual interval/date/choice correction.",
+      "evidence": "prototype/public/ui.mjs; app.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "interactions",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Trusted frontend INVALID_INPUT copy survives errorHTML; actual interval correction visible."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX07",
+      "priority": "P2",
+      "issue": "Active navigation is only a visual class; dynamic page/form loading is generic and mutation progress lacks explicit text.",
+      "evidence": "prototype/public/ui.mjs; app.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "interactions",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "aria-current, live skeleton and executing submit label; selected booking step centered."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX08",
+      "priority": "P2",
+      "issue": "Several private empty lists reuse generic empty-state content/CTA instead of the task context; onboarding eligibility/status needs clearer next action.",
+      "evidence": "prototype/public/workspace-ui.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "workspace",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Task-specific dashboard CTA, profile readiness note, operator queue and selected-day empties."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX09",
+      "priority": "P2",
+      "issue": "Raw long registration IDs, calendar utility text and dense mobile forms need measured wrapping/reflow review.",
+      "evidence": "prototype/public/booking-ui.mjs; workspace.css",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "group": "style-reflow",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Short visit reference, compact calendar/sidebar, wrapped utilities and radio choice totals;320px buttons fit parent."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX10",
+      "priority": "P2",
+      "issue": "State coverage and fullscreen tablet/zoom/keyboard/reduced-motion acceptance are incomplete across70 surfaces.",
+      "evidence": "SCREEN_STATUS.json; PHASE-1-AUDIT.json",
+      "baselineStatus": "EVIDENCE_GAP",
+      "group": "all-groups",
+      "status": "UNVERIFIED",
+      "repairs": [
+        "Expanded current DOM route/viewport coverage and targeted state receipts."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-functional-final-v1.json"
+      ],
+      "remaining": [
+        "No renewed demo profile/image inspection",
+        "DOM width checks are not per-screen pixel or all-state acceptance",
+        "Control++ had no effect in IAB; 320/640 CSS-pixel reflow measured, physical 200% zoom unverified",
+        "Reduced-motion CSS exists; actual preference emulation unavailable in advertised browser capabilities",
+        "Full70/all-state and production launch gates remain unverified"
+      ]
+    },
+    {
+      "id": "UX11",
+      "priority": "P2",
+      "issue": "HTTP adapter has no bounded request timeout and assumes every error response is JSON.",
+      "evidence": "prototype/public/http-adapter.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "interactions",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "15s AbortController and safe non-JSON/null/network errors; conflict code preserved. Upload endpoint unchanged."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ],
+      "remaining": [
+        "Upload transport was not retested; media inspection stopped by owner."
+      ]
+    },
+    {
+      "id": "UX12",
+      "priority": "P2",
+      "issue": "Schematic map numbered button aria-label omits its visible number; some profile/booking auxiliary copy exposes internal terminology.",
+      "evidence": "prototype/public/public-views.mjs; booking-ui.mjs",
+      "baselineStatus": "SOURCE_CONFIRMED",
+      "group": "public-editorial",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Map accessible name includes visible number; human-facing time/schedule copy; snapshot-first conversation label."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-routes-v1.json",
+        "research/madbeauty-implementation/http-adapter-tests-v1.tap"
+      ]
+    },
+    {
+      "id": "UX13",
+      "priority": "P1",
+      "issue": "Mobile secondary filters hid first results",
+      "baselineStatus": "BROWSER_CONFIRMED",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Native disclosure, applied count, empty/reset and custom interval retained."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-functional-final-v1.json"
+      ]
+    },
+    {
+      "id": "UX14",
+      "priority": "P1",
+      "issue": "Calendar toolbar and prior empty days pushed visits down",
+      "baselineStatus": "BROWSER_CONFIRMED",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Compact controls, single-workspace name, selected day leads mobile;7 columns desktop."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-functional-final-v1.json"
+      ]
+    },
+    {
+      "id": "UX15",
+      "priority": "P1",
+      "issue": "Native select truncated service/staff duration and price",
+      "baselineStatus": "BROWSER_CONFIRMED",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Radio rows show full name, practitioner, duration and price; actual addon totals."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-functional-final-v1.json"
+      ]
+    },
+    {
+      "id": "UX16",
+      "priority": "P1",
+      "issue": "Confirmed booking allowed editing steps with reused idempotency key",
+      "baselineStatus": "BROWSER_CONFIRMED",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Back steps show existing visit and explicit plan-another action."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-functional-final-v1.json"
+      ]
+    },
+    {
+      "id": "UX17",
+      "priority": "P1",
+      "issue": "320px controls overflowed parent despite no document overflow",
+      "baselineStatus": "BROWSER_CONFIRMED",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Minmax grid/padding/input fix; actual every control right-overflow0."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-functional-final-v1.json"
+      ]
+    },
+    {
+      "id": "UX18",
+      "priority": "P1",
+      "issue": "Custom interval from booking was displayed as native select default",
+      "baselineStatus": "BROWSER_CONFIRMED",
+      "status": "FIXED_LOCAL",
+      "repairs": [
+        "Current interval added once among choices; actual14:00–20:00 display confirmed."
+      ],
+      "confirmation": [
+        "research/madbeauty-implementation/uiux-browser-v1.json",
+        "research/madbeauty-implementation/uiux-functional-final-v1.json"
+      ]
+    }
+  ]
+}

@@ -4,12 +4,18 @@ export function makeClock(iso=new Date().toISOString()) {
   const now=new Date(iso).toISOString();
   return Object.freeze({now,timezone:DEMO_CONFIG.timezone});
 }
+const formatters=new Map();
+const instantCaches=new WeakMap();
 function localParts(ms,tz) {
-  const p=new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date(ms));
+  if(!formatters.has(tz))formatters.set(tz,new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}));
+  const p=formatters.get(tz).formatToParts(new Date(ms));
   return Object.fromEntries(p.filter(x=>x.type!=='literal').map(x=>[x.type,Number(x.value)]));
 }
 export function localInstant(clock,dayOffset,minuteOfDay) {
   if (!Number.isInteger(dayOffset)||!Number.isInteger(minuteOfDay)||minuteOfDay<0||minuteOfDay>=1440) throw Error('Invalid local time');
+  if(!instantCaches.has(clock))instantCaches.set(clock,new Map());
+  const cache=instantCaches.get(clock),key=dayOffset+':'+minuteOfDay;
+  if(cache.has(key))return cache.get(key);
   const p=localParts(Date.parse(clock.now),clock.timezone);
   const target=Date.UTC(p.year,p.month-1,p.day+dayOffset,Math.floor(minuteOfDay/60),minuteOfDay%60,0);
   // Derive both neighboring offsets. Reject gaps/ambiguity instead of silently guessing at DST.
@@ -22,7 +28,7 @@ export function localInstant(clock,dayOffset,minuteOfDay) {
     if(Date.UTC(r.year,r.month-1,r.day,r.hour,r.minute,r.second)===target) candidates.add(candidate);
   }
   if(candidates.size!==1) throw Error(candidates.size?'Ambiguous local time':'Nonexistent local time');
-  return new Date([...candidates][0]).toISOString();
+  const result=new Date([...candidates][0]).toISOString();cache.set(key,result);return result;
 }
 export const TAXONOMY=Object.freeze([
   ['manikiuras','Manikiūras','nails-neutral',60],['gelinis-lakavimas','Gelinis lakavimas','nails-color',75],['nagu-dizainas','Nagų dizainas','nails-french',90],

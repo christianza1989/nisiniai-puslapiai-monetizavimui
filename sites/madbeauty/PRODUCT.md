@@ -8,17 +8,19 @@ web
 
 ## Users
 
-Klientas ieško konkrečios grožio paslaugos tinkamoje vietoje ir laiku. Meistras nori tinkamų klientų ir vėliau valdyti savo registracijas. Operatoriaus užduotis — patvirtinti informaciją, užklausų kelią ir duomenų kokybę.
+Klientas ieško konkrečios grožio paslaugos tinkamoje vietoje ir laiku. Meistras rengia savo paslaugas, grafiką, klientų sąrašą ir valdo registracijas vietinėje darbo vietoje. Operatoriaus užduotis — patvirtinti informaciją, užklausų kelią ir duomenų kokybę.
 
 ## Product Purpose
 
-Vienas marketplace ir būsima meistro darbo vieta pagal [PLATFORM_PLAN](PLATFORM_PLAN.md). Savininko patikslintas pagrindinis F2 kelias: paslauga, miestas, data ir viso vizito valandų intervalas → tikrai laisvi meistrai → patikima rezervacija.
+Vienas paslaugų katalogas ir meistro darbo vieta pagal [PLATFORM_PLAN](PLATFORM_PLAN.md). Savininko patikslintas pagrindinis F2 kelias: paslauga, miestas, data ir viso vizito valandų intervalas → tikrai laisvi meistrai → patikima rezervacija.
 
 ## Capabilities and Constraints
 
-Nemokami pradinio piloto profiliai ir naudojimas. Pilna platforma neįgyvendinta. Po Fresha public/partner review paruošta privati UI/assets/demo-data foundation pagal [QA](prototype/QA.md), [galutinis planas](FINAL_PROTOTYPE_PLAN.md), [70 ekranų inventorius](SCREEN_INVENTORY.json) ir [app architektūra](MOBILE_ARCHITECTURE.md). F1 skaidrios užklausos / išorinė registracija; F2 kalendorius po dokumentuotų plėtros ir AV-01–AV-14 priėmimo vartų. Demo nėra jau veikianti tikra pasiūla.
+Dabartinė apimtis: privati vietinė platforma su patvaria SQLite saugykla, el. pašto kodo autentifikacija per vietinį testinį capture, paskyros ir organizacijos izoliacija, realia viso vizito laiko patikra, laiko palaikymu, rezervacijos keitimu ir atšaukimu. Meistro darbo vietoje veikia paslaugos ir priedai, klientų sąrašas, rankinis vizitas, kalendorius bei laiko blokai. Operatorius peržiūri profilių versijas ir atsiliepimus. Aktualūs įrodymai ir ribos: [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md), [SCREEN_STATUS](SCREEN_STATUS.json), [UI/UX priėmimas](uiux/ACCEPTANCE.md).
 
-Vėlesnis savininko pavedimas: pilnas privatus paspaudžiamas prototipas su dummy data, visais būtinais puslapiais ir iš anksto suprojektuotu SEO / GEO bei straipsnių → service/catalog ryšiu; po to backend adapteriai. [PROTOTYPE_ROADMAP](PROTOTYPE_ROADMAP.md) ir [CONTENT_LINKING_PLAN](CONTENT_LINKING_PLAN.md). Tai ne indexable demo teikėjų pasiūla.
+Savininko pavedimas dabar — gerinti platformą ir visos sąsajos funkcijas. Demo profilių ir fotografijų peržiūra sustabdyta. Black/white/violet tapatybė bei pasirinktas modern-v2 homepage išlieka. Nemokamo piloto ekonomika yra hipotezė. Vietinis veikimas neįrodo tikrų meistrų pasiūlos, SMTP / INBOX pristatymo, produkcinio paleidimo ar paklausos. Mokėjimai ir išorinių kalendorių sinchronizacija neįjungti.
+
+Istorinė F1/frontend → privatus paspaudžiamas prototipas → backend darbų seka saugoma [PLATFORM_PLAN](PLATFORM_PLAN.md), [PROTOTYPE_ROADMAP](PROTOTYPE_ROADMAP.md) ir pradiniame [70 ekranų inventoriuje](SCREEN_INVENTORY.json). Jo PLANNED įrašai yra ankstesnio etapo fingerprint; dabartinė įgyvendinimo būsena saugoma atskirai.
 
 ## Brand Commitments
 

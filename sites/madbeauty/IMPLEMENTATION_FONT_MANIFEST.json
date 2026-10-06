@@ -1,0 +1,9 @@
+{
+  "source": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\prototype\\public\\fonts\\dmsans-DMSans[opsz,wght].ttf",
+  "output": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\prototype\\public\\fonts\\dmsans-app.woff2",
+  "sourceSha256": "8cd08d97e89c24d0aa92edd2f0f4c8ee6195eee9b7c9f154865a58b02f0c1c0d",
+  "outputSha256": "6539ad385a79b2370804fe1b1c1120d773b27aabf55775691598b9545b87cc2a",
+  "sourceBytes": 240164,
+  "outputBytes": 88840,
+  "method": "FontTools lossless WOFF2 conversion, no glyph subset; original font/license retained."
+}

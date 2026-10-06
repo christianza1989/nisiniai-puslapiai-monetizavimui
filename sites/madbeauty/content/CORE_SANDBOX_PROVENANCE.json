@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-05",
+  "scope": "local isolated exact common importer copy, no deployment",
+  "files": [
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\scripts\\import-content-package.mjs",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\scripts\\import-content-package.mjs",
+      "sha256": "4c35a10b961c437907b2cfb9a214fed7a7e23d669fef6b819425a056ef085db5"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\scripts\\compile-content-packages.mjs",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\scripts\\compile-content-packages.mjs",
+      "sha256": "6b1e792ce206093f7d6e031e30733c02ebb75d5aac6eb6b69386864e210b8216"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\scripts\\content-package-core.mjs",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\scripts\\content-package-core.mjs",
+      "sha256": "bbe9a40d5fd36efeef5153f6f2e2ef41aea3f2e61d211156fe5765c82452592d"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\scripts\\content-package-v2.mjs",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\scripts\\content-package-v2.mjs",
+      "sha256": "e7d6f81478a2778516d0c7f80a797b6eeac6fe27eb02ec9ed048348203a128c7"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\scripts\\content-v2-admission.mjs",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\scripts\\content-v2-admission.mjs",
+      "sha256": "b17c036d74265ab3f22d1ef2971fb834cf0f9f7deeea12175b4bd988d84f3a17"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\schemas\\content-package.v2.schema.json",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\schemas\\content-package.v2.schema.json",
+      "sha256": "2753d520745cba4a1fba07f624cfc2cab41bceb20bca280761dfd555cbf2cd54"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\tests\\seo-core-smoke.mjs",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\tests\\seo-core-smoke.mjs",
+      "sha256": "9d938230ccef6dbbfd56f020486cad36baf83486fb97898f61e23ce29df6a0ef"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\lib\\niche-links.mjs",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\lib\\niche-links.mjs",
+      "sha256": "29d8ae699f7ee715718d31791fa1f0189dd47fa50f0fd270d9477b364c927b35"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\config\\niche-network.json",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\config\\niche-network.json",
+      "sha256": "84b21fb4c18b4c8a89ac2f580e0bd728140df196f10ae53f6f231399582ee967"
+    },
+    {
+      "source": "C:\\Users\\lenovo\\Documents\\dovanos-memorycasting\\public\\favicon.svg",
+      "destination": "C:\\Users\\lenovo\\Documents\\nisiniai_puslapiai_monetizavimui\\sites\\madbeauty\\runtime\\output\\content-core\\public\\favicon.svg",
+      "sha256": "3e8863288c2d43dd33d2a71de317dcf9198f09932ea8d61e0def1b846a865435"
+    }
+  ]
+}

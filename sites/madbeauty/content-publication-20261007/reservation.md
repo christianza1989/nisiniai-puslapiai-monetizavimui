@@ -1,0 +1,1 @@
+2026-10-07: reserve own Madbeauty cloudflare build/worker/runtime/intake/catalogue verification and publication receipts. Source c1f1593. Shared studio/core and other domains untouched. Canonical runtime release with existing approved content; no approval synthesis.

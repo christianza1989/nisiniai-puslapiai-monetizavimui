@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "siteId": "madbeauty",
+  "localDate": "2026-10-07",
+  "timezone": "Europe/Kiev",
+  "recordedAt": "2026-10-06T22:39:21.897Z",
+  "state": "live-content-infrastructure-retained-v1",
+  "authority": {
+    "sourceThreadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
+    "humanRequest": "Paprašyti šios sesijos padaryti tai, ko reikia, kad būtų galima generuoti ir publikuoti straipsnius",
+    "confirmedBy": "read_thread userMessage 01a11351-a025-7903-9417-ef359d69e6d4"
+  },
+  "source": {
+    "deployedRuntimeCommit": "797a2a27dc5724f7efa06993c0fd34c030a8f616",
+    "foundationCommit": "c1f159353620aed66e9c67a95306786646c7137c",
+    "branch": "ai/madbeauty-content-publication-20261007",
+    "mainMerged": false
+  },
+  "production": {
+    "origin": "https://madbeauty.lt",
+    "worker": "madbeauty-platform-preview",
+    "version": "3ef780b8-bfde-436d-ae01-f2cb1f842e80",
+    "priorVersion": "402a0fb5-bd02-4a78-8a3b-de083aeb68e8",
+    "durableObjectNamespace": "2faf96eedef1425c8d4fc07444cde2f3",
+    "instance": "madbeauty-pilot-v1",
+    "migrationTag": "v1",
+    "bindingsComparedBeforeAfter": "PASS",
+    "secretsNamesPreserved": true,
+    "databaseMigration": false,
+    "dnsWrite": false,
+    "mailWrite": false,
+    "wrangler": "4.92.0"
+  },
+  "content": {
+    "schemaVersion": 1,
+    "packageSha256": "dba452bae4c613cc91b2da0d67addd221e405f30c594992553f3009bfc809579",
+    "approvedPages": 7,
+    "mediaWebP": 20,
+    "approvalBytesUnchanged": true,
+    "newArticleApprovals": 0,
+    "newArticlePublished": false,
+    "newV2ReleaseDeployed": false
+  },
+  "verification": {
+    "local": {
+      "tests": 92,
+      "pass": 92,
+      "fail": 0,
+      "skipped": 0,
+      "durationMs": 7067.7253,
+      "manifest": [
+        "sites/madbeauty/backend/*.test.mjs",
+        "sites/madbeauty/prototype/*.test.mjs",
+        "sites/madbeauty/acceptance/*.test.mjs",
+        "sites/madbeauty/cloudflare/*.test.mjs"
+      ],
+      "build": "PASS",
+      "dryRun": "PASS",
+      "compiledPublicationBoundary": "PASS at publishAt-1ms and exact publishAt; isolated fixture only"
+    },
+    "hosted": {
+      "at": "2026-10-06T22:35:02.542Z",
+      "pages": 17,
+      "assets": 124,
+      "approvedMediaByteHash": "PASS",
+      "privateBoundaries": 7,
+      "discovery": [
+        {
+          "path": "/sitemap.xml",
+          "status": 200
+        },
+        {
+          "path": "/llms.txt",
+          "status": 200
+        },
+        {
+          "path": "/llms-full.txt",
+          "status": 200
+        }
+      ],
+      "csrfSessionCatalog": "PASS without login/mail/booking writes"
+    },
+    "catalogue": {
+      "at": "2026-10-06T22:36:16.312Z",
+      "endpoint": "https://madbeauty.lt/content-targets.json",
+      "counts": {
+        "nodes": 305,
+        "cities": 103,
+        "readyNational": 257,
+        "readyLocal": 0,
+        "plannedExtensions": 48
+      },
+      "registrySnapshotSha256": "e6daa4fb1e522149cbe7e621061ceea4955285d89b6e23dd41027de8b9019216",
+      "allReadySSRRoutes": 257,
+      "negative": [
+        {
+          "path": "/paslaugos/unknown",
+          "status": 404
+        },
+        {
+          "path": "/paslaugos/nagai/unknown",
+          "status": 404
+        },
+        {
+          "path": "/content-assets/madbeauty/unknown.webp",
+          "status": 404
+        },
+        {
+          "path": "/content-package.json",
+          "status": 404
+        },
+        {
+          "path": "/runtime/platform.sqlite",
+          "status": 404
+        },
+        {
+          "path": "/content-execution-20261007/DRAFT-V2.json",
+          "status": 404
+        },
+        {
+          "path": "/paslaugos/kirpimai-moteru-kirpimas/vilnius",
+          "status": 404
+        }
+      ],
+      "nativeCityForm303": "PASS",
+      "indexEligible": 0,
+      "noindex": true,
+      "catalogueExcludedFromSitemap": true,
+      "registryTTLms": 3600000,
+      "currentRegistryMustBeRefetched": true,
+      "privatePilot": {
+        "path": "/gidai/bendri-registracija",
+        "state": "not-approved-not-public"
+      }
+    },
+    "browser": {
+      "desktop": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "categoryProcedureCityEmpty": "PASS"
+      },
+      "mobile": {
+        "viewport": [
+          390,
+          844
+        ],
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "cataloguePanel": {
+          "clientWidth": 341,
+          "scrollWidth": 341
+        },
+        "retainedArticle": {
+          "clientWidth": 343,
+          "scrollWidth": 343,
+          "imageLoaded": true
+        },
+        "cityOptions": 104,
+        "enterSubmit": "PASS"
+      },
+      "consoleErrors": 0,
+      "viewportReset": true,
+      "physicalDevice": false
+    }
+  },
+  "firstObservedFailures": [
+    {
+      "check": "catalogue HTTP verifier",
+      "reason": "Expected edition header on a native303 redirect; Response.redirect omits custom edition headers",
+      "resolution": "Verifier checks edition header on response bodies and exact redirect Location separately; complete verifier rerun PASS"
+    },
+    {
+      "check": "browser empty heading selector",
+      "reason": "Expected generic Puslapis nerastas but client correctly renders Šiame pasirinkime pasiūlymų nėra",
+      "resolution": "Fresh DOM inspected; actual empty message, URL and mobile journey verified"
+    }
+  ],
+  "remaining": [
+    "Actual full reviewed approved V2 home/retained/reference package and immutable media export from shared studio",
+    "Actual new V2 shadow import and canonical production timing/media reception after reviewed release exists",
+    "Generic rich draft CLI adapter acceptance owned by content session",
+    "Full provider procedure selector/variants and unrelated 41-task upgrade remain PAUSED",
+    "No new production Lighthouse, inbox/auth/booking acceptance, GSC/indexing or demand claim"
+  ],
+  "files": [
+    {
+      "path": "sites/madbeauty/cloudflare/worker.mjs",
+      "sha256": "b02c97f04f64807fb8bd029c9ea44b0fcfb58007af57e739914038c724e25ca0"
+    },
+    {
+      "path": "sites/madbeauty/cloudflare/build.mjs",
+      "sha256": "36a875cff2f7c3e066c8f9e54883d1fa22fed5a897408575719a4dc1ee1a0e00"
+    },
+    {
+      "path": "sites/madbeauty/cloudflare/content.mjs",
+      "sha256": "646bb5fe2523d727e2be83ef3292ad26e4d3bdabfc8eba6c451d7989f59053f0"
+    },
+    {
+      "path": "sites/madbeauty/cloudflare/runtime.test.mjs",
+      "sha256": "1c3a09f93b7c2a0e4d0bf4c1f9a7f8380d01fbb3d22dd0db3d17983192cbca02"
+    },
+    {
+      "path": "sites/madbeauty/cloudflare/verify.mjs",
+      "sha256": "d305b628055aa42ee3ecc8548c790079bb056bc715c0fb0dfbc9ad8142c2e75c"
+    },
+    {
+      "path": "sites/madbeauty/cloudflare/verify-catalogue.mjs",
+      "sha256": "e7326200892273e47db473fce84d07a6f5c57a9b82c947e631de14cc49f64b90"
+    },
+    {
+      "path": "sites/madbeauty/cloudflare/wrangler.production.json",
+      "sha256": "cea9065edda03f08c8655dc91f3a84d5f627f0997df75b538e2beb33cfa7d71c"
+    },
+    {
+      "path": "sites/madbeauty/content/release-admission.mjs",
+      "sha256": "ab1be85002052b36d691518c4bf450e485344a36198703737fdffad8544f2dda"
+    },
+    {
+      "path": "sites/madbeauty/content/intake.mjs",
+      "sha256": "7bbaa95d33499e51fc5e7f30342b46bca368167aecb55b3edcad3f7deba9460f"
+    },
+    {
+      "path": "sites/madbeauty/content/v2-projection.mjs",
+      "sha256": "417d14f6f60973eea267a6dc44e858c9e05165daf66abbe337fddeeb8348983b"
+    },
+    {
+      "path": "sites/madbeauty/prototype/catalogue-page.mjs",
+      "sha256": "d0128dfbea16730036e340e083cfee4e9fdbcff1af358692d1aeb5443382c2fe"
+    },
+    {
+      "path": "sites/madbeauty/prototype/content-targets.mjs",
+      "sha256": "59058fa34f5ddfb5acabf0b6abc6e0b8dc5f506858346407418bac5db5ba05cf"
+    },
+    {
+      "path": "sites/madbeauty/prototype/taxonomy.mjs",
+      "sha256": "e4ca28cbd8b63fd967b5babc692f22658fe5d7da9d9480dd5e0f90e1b204c7ce"
+    },
+    {
+      "path": "sites/madbeauty/prototype/public/content-render.mjs",
+      "sha256": "ffbfd9ef68723d31195e5e778b250cfb0a95cb9905ecaa687e5c08aaccbc2f15"
+    },
+    {
+      "path": "sites/madbeauty/acceptance/publication-release.test.mjs",
+      "sha256": "94f2f0de49ab5b32c5662a75d2ccaa3a86ceacde20dffed8a4e6b71c075680d6"
+    }
+  ]
+}

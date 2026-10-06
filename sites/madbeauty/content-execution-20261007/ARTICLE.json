@@ -1,0 +1,174 @@
+{
+  "title": "Kaip užsiregistruoti grožio vizitui: paslauga, laikas, vieta ir patvirtinimas",
+  "description": "Sužinokite, ką aptarti prieš grožio vizitą, kaip atskirti užklausą nuo patvirtinimo ir kaip užrašyti sutartą paslaugą, laiką, vietą bei kainą.",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Išsiųsta registracijos užklausa dar nereiškia, kad vizitas patvirtintas. Laiką laikykite sutartu, kai teikėjo arba registracijos sistemos patvirtinime aiškiai nurodyta paslauga, data, laikas ir vieta. Prieš sutikdami taip pat išsiaiškinkite paslaugos apimtį ir kainą. Patvirtinimas nebūtinai turi būti gautas rankiniu atsakymu, tačiau jame turi būti aišku, kas sutarta.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "heading",
+      "text": "Prieš rašydami apsibrėžkite, ko reikia",
+      "level": 2,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Paslaugą įvardykite taip, kaip ją vadina teikėjas. Jei tikslaus pavadinimo nežinote, aprašykite pageidaujamą rezultatą ir paprašykite patikslinti, kokia paslauga jį apima. Panašiai skambantys pavadinimai savaime nereiškia vienodos apimties ar kainos.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Pavyzdžiui, prieš užsisakydami kirpimą pasitikrinkite, ar sutariate tik dėl kirpimo, ar kartu ir dėl plaukų plovimo bei sušukavimo. Jei esama plaukų spalva ar priauginimai svarbūs jūsų norimam rezultatui, paminėkite juos ir paklauskite, ar tai keičia paslaugos apimtį, trukmę ar kainą. Nenumanykite, kad papildomi veiksmai įskaičiuoti, kol teikėjas to nepatvirtino.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Pateikite vieną ar kelis konkrečius laikus su data. Jei pirmas variantas netinka, nurodykite atsarginį. Iš anksto paklauskite, kiek numatoma trukti vizitas, kokiu adresu atvykti ir kaip rasti įėjimą. Jei svarbus privažiavimas ar įėjimas, pasiteiraukite apie juos tiesiai.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "list",
+      "text": "",
+      "level": 0,
+      "items": [
+        "Paslaugos pavadinimas arba pageidaujamas rezultatas.",
+        "Tiksli data ir laikas, taip pat galimas atsarginis variantas.",
+        "Miestas, vieta, tikslus adresas ir atvykimo informacija.",
+        "Numatoma trukmė ir tai, kas konkrečiai įeina į paslaugą.",
+        "Sutarta kaina, kas į ją įskaičiuota ir ar gali būti papildomų mokesčių.",
+        "Kaip gausite patvirtinimą ir kur kreiptis, jei reikės pakeisti laiką."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Išsiaiškinkite teikėją, apimtį ir kainą",
+      "level": 2,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Prieš susitardami įsitikinkite, su kuo bendraujate ir ar jums aišku, kas atliks paslaugą. NVSC pataria grožio paslaugų teikėjus rinktis atsakingai. Jei norite patikrinti teikėjo leidimo-higienos paso duomenis, juos galima tikrinti viešame licencijų portale. Tai bendras patikros žingsnis, o ne informacija apie konkretų šios svetainės teikėją.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Prieš paslaugą aiškiai susitarkite, kas bus atliekama ir kokia bus kaina. Jei siūloma keisti paslaugos apimtį, paprašykite prieš sutikdami patvirtinti atnaujintą apimtį ir kainą. Jei už paslaugą sumokėjote, išsaugokite mokėjimo dokumentą.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Pasiruošimo ar vėlesnės priežiūros nurodymų klauskite dėl konkrečios pasirinktos paslaugos ir vadovaukitės teikėjo informacija. Bendroje registracijos žinutėje nerašykite sveikatos duomenų, mokėjimo kortelės numerio ir nesiųskite jus identifikuojančių nuotraukų. Jei teikėjas prašo papildomos informacijos, pirmiausia išsiaiškinkite, ko reikia ir kokiu privačiu kanalu ją pateikti.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "heading",
+      "text": "Kopijuojamas registracijos žinutės ruošinys",
+      "level": 2,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Nukopijuokite ruošinį į savo žinučių programą, užpildykite tai, ką jau žinote, o nereikalingas eilutes ištrinkite. Konkreti data ir laikas padeda išvengti neaiškumo, kurį palieka tokie atsakymai kaip „kitą savaitę“ ar „po pietų“.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "list",
+      "text": "",
+      "level": 0,
+      "items": [
+        "Laba diena. Norėčiau užsiregistruoti [įrašykite paslaugą arba pageidaujamą rezultatą].",
+        "Miestas arba pageidaujama vieta: [įrašykite].",
+        "Man tinkamos datos ir laikai: [įrašykite vieną ar kelis konkrečius variantus].",
+        "Prašau patikslinti paslaugos apimtį ir numatomą trukmę: [įrašykite, ko norite paklausti].",
+        "Kaina ir kas į ją įeina: [įrašykite, ko norite paklausti].",
+        "Tikslus adresas ir atvykimo informacija: [įrašykite, ko reikia].",
+        "Kaip galėčiau pranešti, jei reikėtų pakeisti laiką? [įrašykite, jei reikia].",
+        "Prašau patvirtinti, ar šis laikas laisvas ir ar vizitas patvirtintas.",
+        "Atsakymui tinkamas kontaktas: [įrašykite vieną kontaktą].",
+        "Ačiū, [įrašykite vardą]."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Užklausa dar nėra patvirtintas vizitas",
+      "level": 2,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Hipotetinis nepatvirtintos užklausos pavyzdys: „Laba diena, domina antakių formavimas. Ar turite laisvą laiką 2026 m. spalio 20 d. apie 17 val.? Prašau parašyti, kiek truktų paslauga, kas į ją įeitų, kokia būtų kaina ir kokiu adresu atvykti?“ Tai tik klausimas apie galimybę. Kol teikėjas arba registracijos sistema nepatvirtino konkretaus vizito, laikas nėra sutartas.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Aiškaus patvirtinimo pavyzdys: „Pavyzdžio studija patvirtino kirpimo vizitą 2026 m. spalio 20 d., antradienį, 17.00–17.45 val. Sutarta apimtis – plaukų plovimas, kirpimas ir sušukavimas; sutarta kaina – 35 €. Vieta – Pavyzdžio studija, Pavyzdžių g. 1, Vilnius. Jei reikės pakeisti laiką, atsakykite į šią susirašinėjimo giją ir susitarkite su studija.“ Studija, adresas, paslauga, apimtis, kaina ir laikas yra išgalvoti. 45 minučių trukmė tėra šio pavyzdžio detalė, o 35 € nėra tikra Madbeauty kaina ar rinkos orientyras.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "heading",
+      "text": "Patvirtinimą perkelkite į savo užrašus",
+      "level": 2,
+      "items": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Gavę patvirtinimą iš teikėjo arba registracijos sistemos, perrašykite sutartas detales į penkis laukus. Jei kuri nors detalė skiriasi nuo to, ko prašėte, patikslinkite ją prieš laikydami susitarimą galutiniu. Išsaugokite ir patį patvirtinimą, kad prireikus galėtumėte greitai pasitikrinti informaciją.",
+      "level": 0,
+      "items": []
+    },
+    {
+      "type": "list",
+      "text": "",
+      "level": 0,
+      "items": [
+        "Paslauga: [įrašykite sutartą paslaugą].",
+        "Data ir laikas: [įrašykite patvirtintą datą ir laiką].",
+        "Vieta: [įrašykite miestą ir tikslų adresą].",
+        "Paslaugos apimtis ir kaina: [įrašykite, kas sutarta ir kokia suma].",
+        "Kur kreiptis dėl pakeitimo: [įrašykite patvirtintą kontaktą ar kanalą]."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Išsiųsta žinutė ar atėjusi vizito data savaime nepatvirtina registracijos. Jei dar trūksta laiko, vietos, paslaugos apimties ar kainos, paprašykite patikslinti. Šis gidas yra informacinis; jis nėra registracijos forma ir nepatvirtina konkretaus vizito.",
+      "level": 0,
+      "items": []
+    }
+  ],
+  "factChecks": [
+    "Trūksta tikro, peržiūrėto straipsnio vaizdo failo. Sugeneruoti ir importuoti vaizdą pagal imageBrief, patikrinti faktinius pikselius bei mobilų kadravimą ir prijungti prie straipsnio prieš redakcinį patvirtinimą.",
+    "Nepatvirtinta, kokie Madbeauty teikėjai, miestai, adresai, kategorijos, filtrai ar registracijos funkcijos šiuo metu veikia. Straipsnyje nepateikiami jų pavadinimai, prieinamumas ar sąsajos veiksmai. Bet kokiam realios platformos funkcijų aprašymui ar registracijos raginimui būtina patikrinti platformos ir teikėjų duomenis."
+  ],
+  "internalLinks": [],
+  "externalSources": [
+    {
+      "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+      "label": "VVTAT: kaip išsirinkti grožio paslaugas ir išvengti ginčų",
+      "reason": "Peržiūrėtas 2026-10-07; palaiko siaurą teiginį, kad prieš grožio paslaugą verta aiškiai susitarti dėl atliekamos paslaugos ir kainos bei išsaugoti mokėjimo dokumentą."
+    },
+    {
+      "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/",
+      "label": "NVSC: grožio paslaugų teikėjus rinkitės atsakingai",
+      "reason": "Peržiūrėtas 2026-10-07; palaiko bendrą patarimą atsakingai rinktis teikėją ir prireikus tikrinti leidimo-higienos paso duomenis viešame licencijų portale. Tai nėra Madbeauty teikėjo patikros įrodymas."
+    }
+  ],
+  "networkLinks": [],
+  "imageBrief": {
+    "prompt": "Use case: editorial still life for a Lithuanian beauty appointment decision guide. Page question: What information should a reader confirm before treating a beauty appointment as booked? Image role: suggest preparation and clear agreement, without depicting a real appointment, provider, salon, or booking interface. Create a crisp, contemporary editorial photograph: a simple unmarked paper appointment note, a closed dark notebook and a violet pen on a clean white surface, with a restrained black accent and one pale violet detail. Art direction: deliberate high-contrast palette inspired by #111114, #FFFFFF, #7040E8 and #F1EDFF; precise natural shadows, modern magazine composition, no generic beige spa styling. Composition: landscape 3:2 crop, primary objects grouped near the center with generous clear space; keep the note and pen inside a central mobile-safe area. No readable writing, no logos, no screen, no UI, no person, no identifiable provider, no treatment tools, no claim of availability or service quality, no watermark or model badge. Alt: Užrašų knygelė, violetinis rašiklis ir tuščias vizito lapelis ant balto paviršiaus.",
+    "alt": "Užrašų knygelė, violetinis rašiklis ir tuščias vizito lapelis ant balto paviršiaus.",
+    "role": "Editorial iliustracija, siejanti registracijos pasiruošimą su aiškiai užrašytais vizito duomenimis; nėra tikro teikėjo, paslaugos ar rezervacijos įrodymas.",
+    "proofBoundary": "Tai tik koncepcinė iliustracija. Ji neįrodo, kad Madbeauty turi veikiančią registracijos sąsają, laisvų laikų, konkrečių teikėjų, vietų ar kainų, ir nerodo tikro patvirtinto vizito."
+  }
+}

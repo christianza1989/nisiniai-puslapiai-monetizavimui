@@ -16,6 +16,7 @@ let prompt = ''; for await (const chunk of process.stdin) prompt += chunk;
 const args = process.argv.slice(2);
 await writeFile(process.env.STUDIO_SKILL_CAPTURE_PATH, JSON.stringify({ prompt, args }));
 const isPlan = args[args.indexOf('--output-schema') + 1].endsWith('plan-result.schema.json');
+if(!isPlan){if(args[args.indexOf('--model')+1]!=='gpt-6-luna'||!args.includes('model_reasoning_effort="xhigh"'))throw new Error('Article model policy missing');process.stderr.write('model: gpt-6-luna\\nreasoning effort: xhigh\\n');}
 const result = isPlan ? { pages: [{ type: 'guide', slug: 'pasirinkimas', title: 'Pasirinkimo vadovas', description: 'Kokius duomenis surinkti pasirinkimui.', intent: 'Kokius duomenis reikia surinkti?', reason: 'Naudingas kontrolinis sąrašas.', cluster: 'Pasirinkimas', pillarSlug: '', sourceQueries: [], publishDate: '2027-01-10', seasonalHook: '' }] }
   : { title: 'Pasirinkimo vadovas', description: 'Kokius duomenis surinkti pasirinkimui.', blocks: [{ type: 'paragraph', text: 'Pradėkite nuo dabartinės įrangos duomenų. Tai bandomasis privatus tekstas.', level: 0, items: [] }, { type: 'list', text: '', level: 0, items: ['Surinkite žymėjimą ir naudojimo sąlygas.'] }], factChecks: [], internalLinks: [], externalSources: [] };
 await writeFile(args[args.indexOf('--output-last-message') + 1], JSON.stringify(result));
@@ -62,6 +63,9 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.match(captured.prompt, /Runtime task \(draft\)/);
   assert.match(captured.prompt, /"pageData":/);
   assert.equal(drafted.editorialSkill.mode, 'draft');
+  assert.deepEqual(drafted.lastGenerationReceipt.observed,{model:'gpt-6-luna',reasoningEffort:'xhigh'});
+  assert.match(drafted.lastGenerationReceipt.resultSha256,/^[a-f0-9]{64}$/);
+  assert.equal(drafted.generationReceipts[page.id].model,'gpt-6-luna');
   assert.equal(drafted.editorialSkill.files.includes('references/niche-adaptation.md'), false);
   assert.equal(model.packageForSite(await model.getSite(site.id)).pages.length, 0);
 });

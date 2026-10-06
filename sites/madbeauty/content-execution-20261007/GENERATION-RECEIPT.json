@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6-luna",
+  "reasoningEffort": "xhigh",
+  "policyVersion": "article-luna-xhigh-20261007",
+  "fallback": false,
+  "observed": {
+    "model": "gpt-6-luna",
+    "reasoningEffort": "xhigh"
+  },
+  "startedAt": "2026-10-06T21:13:00.673Z",
+  "finishedAt": "2026-10-06T21:15:04.389Z",
+  "promptSha256": "48f97e63eaaffe68861056a1c019bea3668a9f7728bce3698a573c00c4da7470",
+  "resultSha256": "56376ad8d8df2ccb8345eb4e9763c311eaceefc56402ba3fee0a7f4281ddd059",
+  "execution": "CODEX_CLI",
+  "mode": "draft",
+  "editorialSkill": {
+    "name": "niche-content-planner",
+    "mode": "draft",
+    "files": [
+      "../PROJECT_CONTRACT.md",
+      "SKILL.md",
+      "references/studio-contract.md",
+      "references/quality-review.md",
+      "references/network-linking.md",
+      "references/media-workflow.md",
+      "references/content-workflow.md"
+    ],
+    "fingerprint": "089ad4d7ae43384d0c741c04a04e91f8978cc859fb5079f987a4ae049b431f8d"
+  },
+  "briefFile": "revision-brief.json",
+  "savedArticleSha256": "1d068f11ab28e9d9e75bcfa3035524b3af52ed95fabe66333277b98aff3fbd8f"
+}

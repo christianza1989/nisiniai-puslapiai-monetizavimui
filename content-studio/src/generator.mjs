@@ -1,11 +1,11 @@
 import { spawn } from 'node:child_process';
-import { existsSync } from 'node:fs';
 import { mkdir, readFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
+import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, listJobs, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
+import {generateEditorialJson,ARTICLE_GENERATION_POLICY} from './editorial-cli.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -29,21 +29,14 @@ function run(command, args, input, timeoutMs) {
   });
 }
 
-async function codexJson(prompt, schemaFile) {
-  const temp = path.join(DATA, 'tmp'); await mkdir(temp, { recursive: true });
-  const resultFile = path.join(temp, `${randomUUID()}.json`);
-  const args = [
-    '--ask-for-approval', 'never', 'exec', '--ephemeral', '--ignore-user-config', '--skip-git-repo-check',
-    '--sandbox', 'read-only',
-    '--output-schema', path.join(SCHEMAS, schemaFile), '--output-last-message', resultFile, '-'
-  ];
-  try {
-    const codexJs = process.env.CODEX_JS || path.join(process.env.APPDATA || '', 'npm', 'node_modules', '@openai', 'codex', 'bin', 'codex.js');
-    const command = process.platform === 'win32' && existsSync(codexJs) ? process.execPath : (process.env.CODEX_BIN || 'codex');
-    await run(command, command === process.execPath ? [codexJs, ...args] : args, prompt, 300000);
-    const data = JSON.parse(await readFile(resultFile, 'utf8'));
-    return data;
-  } finally { await rm(resultFile, { force: true }); }
+async function codexJson(prompt, schemaFile, jobId=null, pageId=null) {
+  const mode=schemaFile==='plan-result.schema.json'?'plan':'draft';
+  const generated=await generateEditorialJson(prompt,path.join(SCHEMAS,schemaFile),{root:ROOT,dataDir:DATA,mode});
+  if(jobId&&mode==='draft'){
+    const job=(await listJobs()).find(j=>j.id===jobId);
+    await updateJob(jobId,{lastGenerationReceipt:generated.receipt,...(pageId?{generationReceipts:{...(job?.generationReceipts||{}),[pageId]:generated.receipt}}:{})});
+  }
+  return generated.result;
 }
 
 const contextForSite = site => ({
@@ -71,7 +64,7 @@ async function planSite(siteId, months = 0, skill, requestedCount = null) {
   return mergePlan(siteId, result.pages, months);
 }
 
-async function draftPage(siteId, pageId, skill) {
+async function draftPage(siteId, pageId, skill, jobId=null) {
   const site = await getSite(siteId);
   const page = site.pages.find(item => item.id === pageId);
   if (!page) throw new Error('Puslapis nerastas.');
@@ -84,7 +77,7 @@ async function draftPage(siteId, pageId, skill) {
       plannedNetworkLinks: page.networkLinkSuggestions || [],
       availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) }
   });
-  const result = await codexJson(prompt, 'draft-result.schema.json');
+  const result = await codexJson(prompt, 'draft-result.schema.json',jobId,pageId);
   if (!Array.isArray(result.blocks)) throw new Error('Codex negrąžino teksto blokų.');
   const body = normalizeBlocks(result.blocks.map(block => ({ type: block.type, text: block.text, level: block.level, items: block.items })));
   const suggestions = [...(page.linkSuggestions || []), ...(result.internalLinks || [])]
@@ -109,7 +102,7 @@ async function draftBatch(siteId, jobId, skill) {
   if (!pages.length) return { generated: 0, failed: 0, detail: 'Tuščių planų nėra.' };
   let generated = 0; const failures = [];
   for (const page of pages) {
-    try { await draftPage(siteId, page.id, skill); generated++; }
+    try { await draftPage(siteId, page.id, skill,jobId); generated++; }
     catch (error) { failures.push(`${page.slug || '/'}: ${String(error.message || error).slice(0, 180)}`); }
     await updateJob(jobId, { detail: `${generated + failures.length}/${pages.length} parengta; ${generated} juodraščiai, ${failures.length} klaidos` });
   }
@@ -176,10 +169,10 @@ export async function enqueue(type, siteId, pageId, input = {}) {
       try {
         const skill = ['autopilot', 'plan', 'draft', 'draft-batch'].includes(type)
           ? await loadEditorialSkill(['autopilot', 'plan'].includes(type) ? 'plan' : 'draft') : null;
-        if (skill) await updateJob(job.id, { editorialSkill: skill.metadata });
+        if (skill) await updateJob(job.id, { editorialSkill: skill.metadata,articleGenerationPolicy:ARTICLE_GENERATION_POLICY });
         const detail = type === 'autopilot' ? await autopilot(siteId, job.id, skill)
           : type === 'plan' ? await planSite(siteId, input.months ? contentPolicy({ ...((await getSite(siteId)).contentPolicy), months: Number(input.months) }).months : 0, skill)
-          : type === 'draft' ? await draftPage(siteId, pageId, skill)
+          : type === 'draft' ? await draftPage(siteId, pageId, skill,job.id)
           : type === 'draft-batch' ? await draftBatch(siteId, job.id, skill)
           : type === 'network-check' ? await verifyNetworkLinks(siteId, pageId)
           : type === 'image' ? await generateImage(siteId, input)

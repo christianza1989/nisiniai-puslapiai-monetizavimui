@@ -8,6 +8,8 @@ Paths are relative to the project root unless stated otherwise. Runtime instruct
 
 The CLI runs read-only. Research may use tools when available; lack of web access must produce provisional research needs rather than fabricated results. Do not claim file writes, source retrieval, image generation, approval or deployment you did not perform.
 
+Owner-selected article workload (2026-10-07): article drafting uses `gpt-6-luna` with `model_reasoning_effort="xhigh"`, independently of the invoking chat model and global CLI preferences. Use the maintained `content-studio/src/editorial-cli.mjs` runner: explicit flags and observed CLI model/effort confirmation are required; retain its generation receipt with the draft. No silent model/effort fallback. A future owner instruction can change this maintained policy. This is the text writer and visual-brief author; actual raster generation uses the available ImageGen tool separately and cannot be labelled as Luna-generated pixels. Planning/research model selection is not pinned by this article rule.
+
 ## Plan result
 
 Schema: `content-studio/schemas/plan-result.schema.json`. Top level: `pages`.

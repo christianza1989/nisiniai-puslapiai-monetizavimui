@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const execution=JSON.parse(await readFile(new URL('EXECUTION.json',import.meta.url),'utf8'));
+const origin=process.argv[2]||'http://127.0.0.1:8827';
+if(!/^http:\/\/127\.0\.0\.1:\d+$/.test(origin))throw Error('Private loopback preview only');
+const response=await fetch(`${origin}/preview/madbeauty/${execution.pageId}`);
+if(!response.ok)throw Error('Shared studio preview unavailable');
+const html=(await response.text()).replaceAll('/api/media/madbeauty/','assets/').replace('href="/"',`href="${origin}/"`);
+if(!html.includes('noindex,nofollow')||!html.includes(execution.publishAt)||!html.includes('assets/'))throw Error('Private preview/date/media binding missing');
+await writeFile(new URL('REGISTRACIJOS-GIDAS.html',import.meta.url),html);
+console.log('Saved portable shared-studio preview, not a production template.');

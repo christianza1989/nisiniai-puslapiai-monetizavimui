@@ -1,0 +1,41 @@
+{
+  "status": "SOURCE_NOTES_REVIEWED_FOR_DRAFT",
+  "coverageMap": "../topical-authority-20261006/PLAN.json",
+  "coverage": {"newGuides": 300, "retainedUpdates": 3, "procedures": 225, "catalogueAreas": 21},
+  "planId": "B-registracija",
+  "slug": "gidai/bendri-registracija",
+  "title": "Grožio vizito registracijos gidas: paslauga, laikas, vieta ir patvirtinimas",
+  "intent": "Padėti užsisakyti tinkamą grožio paslaugą, nepaliekant neaiškaus laiko, vietos, kainos apimties ar registracijos patvirtinimo.",
+  "publishAt": "2026-10-13T07:00:00.000Z",
+  "deliverable": "Kopijuojamas ir savo užrašuose užpildomas registracijos ruošinys su patvirtinimo laukais; aiškiai hipotetinis užklausos ir patvirtinimo palyginimas.",
+  "outline": ["Paslaugos ir pradinės būklės duomenys", "Atvykimas bei prieinamumas", "Ką reiškia patvirtintas vizitas"],
+  "catalogueTargets": [],
+  "catalogueBoundary": "Šio bendro gido nekeisti į procedūros–miesto landing. Būsimame kataloge pasirinkimas vyks pagal procedūrą ir miestą. Neaprašyti tariamų veikiančių valdiklių ar tiekėjų.",
+  "sourceNotes": [
+    {
+      "id": "S19",
+      "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+      "label": "VVTAT: kaip išsirinkti grožio paslaugas ir išvengti ginčų",
+      "checkedAt": "2026-10-07",
+      "readEvidence": "Oficialus straipsnis perskaitytas; atnaujintas 2026-07-28. Prieš paslaugą svarbu aiškiai suprasti, kas bus atliekama, kainą ir galimas pasekmes. Rekomenduojamas mokėjimo dokumentas.",
+      "allowedClaims": "Aiškiai susitarti dėl paslaugos apimties ir kainos prieš paslaugą; išsaugoti mokėjimo įrodymą.",
+      "maxDerivedWords": 120,
+      "excluded": "Teisiniai terminai, grąžinimo garantijos ir konkreti ginčo procedūra nepatenka į šį gidą."
+    },
+    {
+      "id": "S30",
+      "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/",
+      "label": "NVSC: grožio paslaugų teikėjus rinkitės atsakingai",
+      "checkedAt": "2026-10-07",
+      "readEvidence": "Oficialus 2024-06-14 straipsnis perskaitytas. Teikėjo pasirinkimo ir higienos atsakomybės gairės; leidimo-higienos paso duomenų patikra viešame licencijų portale.",
+      "allowedClaims": "Paslaugos teikėjo tapatybę ir informaciją verta patikrinti. Jei minimas leidimas-higienos pasas, pateikti tai kaip patikros žingsnį, ne kaip konkretaus Madbeauty teikėjo patvirtinimą.",
+      "maxDerivedWords": 100,
+      "excluded": "Nepateikti konkrečių sveikatos tinkamumo, kontraindikacijų, produkto naudojimo ar pasirengimo instrukcijų."
+    }
+  ],
+  "site": {
+    "id": "madbeauty", "domain": "madbeauty.lt", "name": "Madbeauty", "locale": "lt-LT", "timezone": "Europe/Vilnius",
+    "contact": "info@pinet.lt", "operator": "MB Pinet",
+    "design": "Aktuali savininko kryptis: juoda #111114, balta #FFFFFF, violetinė #7040E8, šviesi violetinė #F1EDFF. Aiški editorial fotografija su tamsiu akcentu; ne universalus smėlio spalvos SPA. Teminis registracijos kontekstas, be realaus teikėjo ar UI imitacijos."
+  }
+}

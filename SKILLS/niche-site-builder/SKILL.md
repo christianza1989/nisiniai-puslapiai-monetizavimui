@@ -5,6 +5,8 @@ description: "Choose a concrete commercial offer and phase-one demand test, rese
 
 # Niche Site Builder
 
+For every new niche's market/SEO/GEO research use [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation contract](../niche-seo-geo-core/references/studio-integration.md). Inspect/import current site-scoped evidence before the URL map; preserve this builder's BUSINESS, design, implementation and acceptance scope. Treg observations cannot establish our fulfilment, credentials or paid demand. Reuse the shared research adapter and public SEO core rather than creating per-domain copies.
+
 For an explicitly ordered platform/prototype read [the demo data policy](../../DEMO_DATA_POLICY.md): final product screens/copy with swappable fixtures, not demo-labelled pages. Honour current site-specific user scope; a full-platform exception does not expand other phase-one sites.
 
 For this network read [the shared project skill contract](../PROJECT_CONTRACT.md). It defines helper roles, current contacts, authorization and shared publication/media boundaries; imported helpers never replace this complete build workflow.

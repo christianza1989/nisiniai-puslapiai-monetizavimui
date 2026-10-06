@@ -1,5 +1,7 @@
 # Nišinių svetainių įgūdžiai
 
+[niche-seo-geo-core](niche-seo-geo-core/SKILL.md) — 2026-10-07 bendras Treg tyrimų / SEO ir GEO matavimo modulis visoms nišoms. Tai penktas core registro įrašas (iš viso 55 skills), papildantis builder/planner/audit. Projekto Git šaltinis yra autoritetas, asmeninė Codex kopija sinchronizuojama bendru helperiu. Studija įkelia modulį tiesiogiai, su nauju instrukcijų SHA ir privačiu aktualumo / locale / raw įrodymų kontekstu. [Integracija](../SEO_RESEARCH_CORE.md) aprašo veikiančius vykdymo kelius ir aktyvavimo ribas.
+
 [niche-site-audit](niche-site-audit/SKILL.md) — pilnas pirmos fazės A–Z auditas su checkbox katalogu, atskirais vietinės kokybės / paleidimo / veiklos kriterijais ir įrodymų scoreriu. Įdiegtas per junction į tą patį projekto šaltinį. Nurodo realius taisymus, trijų gidų/autorystės/nuorodų/schema/privatumo/užklausų patikrą; negali suteikti 10/10 praleidęs kriterijus ar nepatikrintas prieigas. Pirmas praktinis pilnas bandymas — `sites/traktoriupadangos/PHASE-1-AUDIT.md`.
 
 Vieno sakinio domeno užduoties rezultatas aprašytas [CORE_BUILD_CONTRACT.md](../CORE_BUILD_CONTRACT.md). [Audito initializeris](niche-site-audit/scripts/init-audit.mjs) sukuria visus 85 kriterijus kaip UNVERIFIED ir išsaugo esamą auditą; [didinimo patikra](niche-site-audit/references/accessibility-verification.md) atskiria realų 200% zoom nuo siauro viewport. [AUTONOMY_BENCHMARK.md](../AUTONOMY_BENCHMARK.md) aprašo naujos sesijos pirmo rezultato fiksavimą prieš parent pataisas; bandymas dar nepradėtas.

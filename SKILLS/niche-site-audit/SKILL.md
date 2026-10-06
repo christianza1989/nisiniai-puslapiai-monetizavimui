@@ -5,6 +5,8 @@ description: Audit and repair a completed phase-one niche SEO website from busin
 
 # Phase-one niche website acceptance
 
+For research-dependent SEO/GEO findings apply [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation/evidence contract](../niche-seo-geo-core/references/studio-integration.md). Check actual locale, dates, raw evidence and missing/stale observations; do not inherit another site's metrics or an old PASS. This skill retains the full A–Z acceptance; a Treg dataset or loaded instruction fingerprint does not certify the site.
+
 Read [the shared project skill contract](../PROJECT_CONTRACT.md) for reconciled helper roles, real contact/source authority and publication/media boundaries. Imported SEO or UX checklists contribute focused evidence; they do not replace this A–Z acceptance or establish readiness independently.
 
 Use this skill when a niche site needs a complete acceptance audit, benchmark review or launch-readiness assessment. It does not create commerce, supplier, voice or account systems merely because a domain resembles a store. The owner's explicit request decides whether this is report-only or includes repairs.

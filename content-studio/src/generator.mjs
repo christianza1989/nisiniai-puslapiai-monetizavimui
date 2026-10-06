@@ -6,6 +6,7 @@ import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
 import {generateEditorialJson,ARTICLE_GENERATION_POLICY} from './editorial-cli.mjs';
+import {draftSnapshotHash,assertV2Draftable,v2DraftContext,acceptV2DraftResult,V2_DRAFT_INSTRUCTION} from './draft-v2.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -72,10 +73,25 @@ export function draftPageData(site, page) {
     ...(page.planningBrief ? {planningBrief:structuredClone(page.planningBrief)} : {}),
     availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) };
 }
-async function draftPage(siteId, pageId, skill, jobId=null) {
+async function draftPage(siteId, pageId, skill, jobId=null, revisionInput=null) {
   const site = await getSite(siteId);
   const page = site.pages.find(item => item.id === pageId);
   if (!page) throw new Error('Puslapis nerastas.');
+  if(site.schemaVersion===2){
+    const options=revisionInput?{revisionHash:revisionInput.expectedRevisionHash}:undefined;
+    const v2Context=v2DraftContext(site,page,options),expectedSiteHash=draftSnapshotHash(site);
+    const prompt=buildEditorialPrompt(skill,{mode:'draft',instruction:V2_DRAFT_INSTRUCTION+(revisionInput?' Revise the supplied currentDraft to fulfil the explicit editorialRevisionRequest. Preserve useful valid passages, resolve the specified actual issues, and return the complete revised native envelope. This is an explicit revision, never an automatic approval or rewrite of the saved published snapshot.':''),
+      siteData:contextForSite(site),pageData:{...draftPageData(site,page),v2Context,...(revisionInput?{currentDraft:{title:page.title,description:page.description,body:page.body,factChecks:page.factChecks},editorialRevisionRequest:revisionInput.editorialInstruction}:{})}});
+    const result=await codexJson(prompt,'draft-result.v2.schema.json',jobId,pageId);
+    const input=acceptV2DraftResult(site,page,result,options);
+    const receipt=(await listJobs()).find(j=>j.id===jobId)?.generationReceipts?.[pageId];
+    const updated=await editPage(siteId,pageId,input,{expectedSiteHash,...(revisionInput?{expectedRevisionHash:revisionInput.expectedRevisionHash}:{}),metadata:{version:2,createdAt:new Date().toISOString(),
+      expectedSiteHash,planningSourceSha256:page.planningBrief.sourcePlanSha256,skillFingerprint:skill.metadata.fingerprint,
+      researchEvidenceSha256:[...skill.researchSnapshots.values()][0]?.evidenceSha256||null,
+      generationReceipt:receipt||null,internalLinks:result.internalLinks,sourceIds:result.sourceIds,mediaBrief:result.mediaBrief,
+      ...(revisionInput?{revisesRevisionHash:revisionInput.expectedRevisionHash,editorialRevisionRequest:revisionInput.editorialInstruction}:{}),state:'private-draft-requires-source-media-and-rendered-review'}});
+    return {contentVersion:2,blocks:updated.body.length,factChecks:updated.factChecks,nextGate:'Source, actual media, link and rendered review; no automatic approval'};
+  }
   const prompt = buildEditorialPrompt(skill, { mode: 'draft',
     instruction: 'Write an original useful first draft for this page in the site locale. Honour its specific intent and actual deliverables. Source candidates remain unverified. Return draft-result.schema.json fields only; self-review and identify precise remaining fact/asset dependencies.',
     siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() },
@@ -162,7 +178,21 @@ async function generateImage(siteId, input) {
 }
 
 export async function enqueue(type, siteId, pageId, input = {}) {
-  if(['autopilot','plan','draft','draft-batch'].includes(type)&&(await getSite(siteId)).schemaVersion===2)throw new Error('V2 generavimo kontraktas dar nepriimtas. Importuokite arba redaguokite struktūrizuotą v2 juodraštį; legacy generatorius jo neperrašo.');
+  if(type==='revise'){
+    const site=await getSite(siteId),page=site.pages.find(p=>p.id===pageId);
+    if(!/^[a-f0-9]{64}$/.test(input.expectedRevisionHash||'')||typeof input.editorialInstruction!=='string'||input.editorialInstruction.trim().length<20||input.editorialInstruction.length>4000)throw new Error('Explicit V2 revision requires current revision hash and a concrete editorial request.');
+    assertV2Draftable(site,page,{revisionHash:input.expectedRevisionHash});
+  }
+  if(['autopilot','plan','draft','draft-batch'].includes(type)){
+    const site=await getSite(siteId);
+    if(site.schemaVersion===2){
+      if(type==='plan')throw new Error('V2 generavimo planas materializuojamas per pilno sutikrinto plano reconciliation, ne legacy plan-result.');
+      const candidates=type==='draft'?site.pages.filter(p=>p.id===pageId):site.pages.filter(p=>!p.body.length&&p.status!=='revoked');
+      if(type==='draft'&&!candidates.length)throw new Error('V2 generavimo tikslas nerastas.');
+      for(const page of candidates)assertV2Draftable(site,page);
+      if(type==='autopilot'&&site.contentPolicy.cadence!=='coverage')throw new Error('V2 generavimo autopilot reikalauja materializuoto coverage plano.');
+    }
+  }
   if (['autopilot','plan','draft','draft-batch'].includes(type)) {
     const site = await getSite(siteId);
     if (site.contentWorkflowVersion !== 1) await editSite(siteId, { contentPolicy: contentPolicy(site.contentPolicy, site.timezone) });
@@ -171,12 +201,13 @@ export async function enqueue(type, siteId, pageId, input = {}) {
     const work = async () => {
       await updateJob(job.id, { status: 'running', startedAt: new Date().toISOString() });
       try {
-        const skill = ['autopilot', 'plan', 'draft', 'draft-batch'].includes(type)
-          ? await loadEditorialSkill(['autopilot', 'plan'].includes(type) ? 'plan' : 'draft') : null;
+        const skill = ['autopilot', 'plan', 'draft', 'draft-batch','revise'].includes(type)
+          ? await loadEditorialSkill(type==='plan'||type==='autopilot'&&(await getSite(siteId)).schemaVersion!==2 ? 'plan' : 'draft') : null;
         if (skill) await updateJob(job.id, { editorialSkill: skill.metadata,articleGenerationPolicy:ARTICLE_GENERATION_POLICY });
         const detail = type === 'autopilot' ? await autopilot(siteId, job.id, skill)
           : type === 'plan' ? await planSite(siteId, input.months ? contentPolicy({ ...((await getSite(siteId)).contentPolicy), months: Number(input.months) }).months : 0, skill)
           : type === 'draft' ? await draftPage(siteId, pageId, skill,job.id)
+          : type === 'revise' ? await draftPage(siteId,pageId,skill,job.id,input)
           : type === 'draft-batch' ? await draftBatch(siteId, job.id, skill)
           : type === 'network-check' ? await verifyNetworkLinks(siteId, pageId)
           : type === 'image' ? await generateImage(siteId, input)

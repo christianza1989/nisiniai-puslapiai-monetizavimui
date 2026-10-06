@@ -1,0 +1,62 @@
+[
+  {
+    "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+    "phase": "category-original",
+    "model": "gpt-6-luna",
+    "reasoningEffort": "xhigh",
+    "policyVersion": "article-luna-xhigh-20261007",
+    "fallback": false,
+    "observed": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh"
+    },
+    "startedAt": "2026-10-06T23:08:37.932Z",
+    "finishedAt": "2026-10-06T23:12:17.547Z",
+    "promptSha256": "eb5b7be0949be0d761cfaaea467c0741bbb265d6e4ce91742bba31f2612864b1",
+    "resultSha256": "e1443ea40cb1889c8ae60b391e9dc3a1ce4528f78a95959c6b62446a38bc8f7b",
+    "execution": "CODEX_CLI",
+    "mode": "draft",
+    "skillFingerprint": "d375a2d4edd9fa63d08e69722f9284886914d79bf19117ec863c02fd14f64cf0",
+    "researchEvidenceSha256": "57a20b6a5f88fec1d23921fa9ccd75e698bd460320ee8a2b80844c8b3366c2c9",
+    "rawResultBytesVerified": true
+  },
+  {
+    "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+    "phase": "category-revision",
+    "model": "gpt-6-luna",
+    "reasoningEffort": "xhigh",
+    "policyVersion": "article-luna-xhigh-20261007",
+    "fallback": false,
+    "observed": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh"
+    },
+    "startedAt": "2026-10-06T23:20:14.055Z",
+    "finishedAt": "2026-10-06T23:22:04.211Z",
+    "promptSha256": "a4a8cd28db92a310a0b26ec49725113f48fa9c3caa88f0843b9d5645db22ad98",
+    "resultSha256": "b45f027285c93bbf05c0b323c50955fee4263318c4e53ea01205b04bdc2e7ab0",
+    "execution": "CODEX_CLI",
+    "mode": "draft",
+    "skillFingerprint": "d375a2d4edd9fa63d08e69722f9284886914d79bf19117ec863c02fd14f64cf0",
+    "researchEvidenceSha256": "57a20b6a5f88fec1d23921fa9ccd75e698bd460320ee8a2b80844c8b3366c2c9",
+    "rawResultBytesVerified": true
+  },
+  {
+    "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+    "phase": "preserved-pilot-final",
+    "model": "gpt-6-luna",
+    "reasoningEffort": "xhigh",
+    "observed": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh"
+    },
+    "fallback": false,
+    "startedAt": "2026-10-06T21:13:00.673Z",
+    "finishedAt": "2026-10-06T21:15:04.389Z",
+    "promptSha256": "48f97e63eaaffe68861056a1c019bea3668a9f7728bce3698a573c00c4da7470",
+    "resultSha256": "56376ad8d8df2ccb8345eb4e9763c311eaceefc56402ba3fee0a7f4281ddd059",
+    "execution": "CODEX_CLI",
+    "mode": "draft",
+    "historicalReceiptUnchanged": true
+  }
+]

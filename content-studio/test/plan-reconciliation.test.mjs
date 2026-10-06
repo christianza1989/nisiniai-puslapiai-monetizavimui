@@ -58,7 +58,7 @@ test('real shared draft prompt carries merged private evidence/media/links witho
  const prompt=buildEditorialPrompt(await loadEditorialSkill('draft'),{mode:'draft',instruction:'Validation only; no generation.',siteData:{id:after.id,domain:after.canonicalHost,locale:after.locale},pageData:draftPageData(after,page)});
  for(const text of ['Merged preparation system','S-merged','unknown-system option','System handoff card','informational article',f.c.id])assert.ok(prompt.includes(text));
  const beforeJobs=(await model.listJobs()).length;
- await assert.rejects(enqueue('autopilot',after.id,null),/V2 generavimo kontraktas/);assert.equal((await model.listJobs()).length,beforeJobs);
+ await assert.rejects(enqueue('autopilot',after.id,null),/V2 generavimo.*planningBrief/);assert.equal((await model.listJobs()).length,beforeJobs);
 });
 test('approved retained revision/approval remain byte-equivalent when only its private brief changes',async()=>{
  const f=await fixture('plan-approved.lt');await model.editSite(f.site.id,{facts:'Test business facts only.'});

@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "packageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5",
+  "assets": [
+    {
+      "name": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp",
+      "sha256": "768df8962d0d99c2affd6da7c2340fa45bb62f90fbba76e4e057cdf93bd14723"
+    },
+    {
+      "name": "a8f47340-0dfe-4f44-9f57-5c00007e4aef.webp",
+      "sha256": "3cb1827113a64dbaac35b30cfd59bb022756b63e44c378bfc29d7ca37c41159f"
+    },
+    {
+      "name": "78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+      "sha256": "77a2d7bf0cf25f755440c77269825b79909d9670acd9497074f5578d89ec640c"
+    },
+    {
+      "name": "cd6c01cf-b342-448e-a12e-510c2d69d394.webp",
+      "sha256": "6e6538717633d62a5590cf6241d5a7bb040a8092441c4d261b3b9662010e66f0"
+    },
+    {
+      "name": "1ef9872d-2973-4d96-9214-e2dfa9f8fbc0.webp",
+      "sha256": "f1d84e3989ae97c89d7c47206716d4732f616d24f8ded160aedf2b11a4f95466"
+    },
+    {
+      "name": "1bfc1140-3416-4da3-9e6c-a49d69876ff3.webp",
+      "sha256": "c9a735ecd76d5b6566d815c4c1ae86a2c4566105a34c25dbcd9fb178c7a41fa3"
+    },
+    {
+      "name": "3ef486dd-0ecc-4722-8705-bb9328b8452e.webp",
+      "sha256": "f88335ace317762ed9a44655968599cfbc7b4168b6f680a489e7c1beff03e006"
+    },
+    {
+      "name": "b3249cc3-fce3-42ef-ba6e-8df608a578ac.webp",
+      "sha256": "e205e1eee5cb5e97e12d6a1486a1b353f2cb0754c9c0018bb03bc0c3898d6e61"
+    },
+    {
+      "name": "bd594a9f-7f1a-4a41-b714-ab84f1a1cead.webp",
+      "sha256": "cde3187afb0432b185cea1ed073cc6071dcf2912181e7c0b1e4278dbb8a9a809"
+    },
+    {
+      "name": "9cafa576-a732-4bb0-a449-c686f37a899e.webp",
+      "sha256": "c53c6fead8aababfe82cf9feef0135f77b215778af375475e9543334a93ab4ef"
+    },
+    {
+      "name": "30a54837-325e-4489-8586-e8730b6b979b.webp",
+      "sha256": "6dcc269249bf883c22c2c93432336f07865b8070ed3f4afafefc06ce4ff71d1a"
+    },
+    {
+      "name": "d2926874-4d13-497c-a848-cc67febc7d53.webp",
+      "sha256": "fe3d85b80de11589c2bdca3ea5738156c8f4929c0a9f914a768fc39200b2fe95"
+    },
+    {
+      "name": "95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+      "sha256": "da6dc3fa5e541be4961ef472b106e1eb99a2523ac7517a322c1008023487d9f0"
+    },
+    {
+      "name": "1682ac36-ccf3-44d2-b733-7762921ebc01.webp",
+      "sha256": "beb6bb26ab577aafc30d5251b73a079f4011aa96a127ff3aea8e88d75a602752"
+    },
+    {
+      "name": "c5b77b84-1dcb-4d94-8b56-6595883b0d32.webp",
+      "sha256": "79802d4f5b1143c50a97510c0a40bd538a49cb6456a76b4d4c69028abdeb0e3b"
+    },
+    {
+      "name": "e251f0d2-c7b3-471a-88fb-c014926c747d.webp",
+      "sha256": "44cce5fd6cb6ebb9abd05c32a24a395f7d2267bed8d20f1eb57290fe7ce68897"
+    },
+    {
+      "name": "613f655c-3c5c-40bb-aa38-39fb5a7c8ef4.webp",
+      "sha256": "bf049d60216d4225c9a073a420416f464abff85c8f4d25761b76a7c9a735a024"
+    },
+    {
+      "name": "61ef4a59-50f0-4972-bc19-db478f10a77b.webp",
+      "sha256": "257f5ac5dd123183a12cc0b8c3f79899b418833364c243ce98df5de66283b0c1"
+    },
+    {
+      "name": "5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455.webp",
+      "sha256": "e58ddcbdcdf7190ed2b64a151ed50a40dc78e80c3ed754a48516e63468842946"
+    },
+    {
+      "name": "f7faf1f2-2aff-45a9-b85f-ef5d4d42d4d4.webp",
+      "sha256": "ff1958fb5ce27b7fa272694e5da6f59147d490dd1ba70643ef7cbc1c04b0b91b"
+    },
+    {
+      "name": "49b66963-88d6-4515-b65f-aeef52595244.webp",
+      "sha256": "2b355ff3e0d86051c4cbab278344e68c6c519dd7a125326b4965a63f5fc07f2c"
+    },
+    {
+      "name": "d388de34-ba0f-4182-9dc9-c00f285a58df.webp",
+      "sha256": "cec83ee5f20ca7b977bbb1f1705ea001f2972cd6303d3c44904eebdeafb84327"
+    },
+    {
+      "name": "21a7dafb-7f66-4807-8aaf-d39b4e1cb119.webp",
+      "sha256": "f92091ae540bc1155ee4c9ca5542898c201fe24f955bb7d2a228b3edf9c11f7d"
+    },
+    {
+      "name": "a0e75c8d-60f4-4b97-b450-4cfb7b2e69a1.webp",
+      "sha256": "0051b59fba292ac70ad9402ef917124200e01895b1f0c26d53be5132ca636171"
+    },
+    {
+      "name": "cf1b9887-f456-43be-a2c7-b1fad00e9957.webp",
+      "sha256": "57b9582dda11553060a3522017a2a389c11c4ffaef21aa8e2660a02f84350017"
+    },
+    {
+      "name": "34710a86-f607-4bb6-aa6c-d90a0767beeb.webp",
+      "sha256": "39e2c652fe38164d9790938eab41748fe52757d37526a6b78c701ff13957354b"
+    },
+    {
+      "name": "7a64d2da-c966-41f8-8817-fa3090634a27.webp",
+      "sha256": "7c006bb70446a3f1225b42338c17f401af39bd3e97bcc52d6fd5860e813f125f"
+    },
+    {
+      "name": "f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e.webp",
+      "sha256": "110ed8877dec66012b1c9adfce48b211a2a723f99030ce4d176bef9dd20799fc"
+    },
+    {
+      "name": "2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+      "sha256": "5e4bfa35b7e4ba27f1795bdb8bbfacbdd83ff6dddafc75bcbcac9e50079b44b6"
+    },
+    {
+      "name": "5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72.webp",
+      "sha256": "df4f5e17b9c29a7a4fed08c7565042755ffd7e55b876cb6ef335d47e9af1d1b4"
+    }
+  ],
+  "createdAt": "2026-10-06T23:31:35.536Z",
+  "pages": [
+    {
+      "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+      "revisionHash": "acdb4ea2709ef4953cc9804992899f5a659f3804eee1b9381eaf6d2c83ab9c82",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.093Z",
+        "revisionHash": "acdb4ea2709ef4953cc9804992899f5a659f3804eee1b9381eaf6d2c83ab9c82",
+        "binding": "297cf2bb39c0666a8bc0a34f71141bdc36ded7098e5abe06c043fc719b4c40a4",
+        "evidence": {
+          "usefulness": "Read both actual Luna/xhigh results and the accepted explicit revision. The revised article distinguishes desired result, procedure and package with an original fictional haircut request comparison;14 core category choices and7 clearly inactive planned formats cover the actual platform scope.15 native blocks,577 words; no quota filler.",
+          "facts": "All14 core catalogue labels were checked against owner taxonomy and actual national SSR/current registry;7 extensions remain planned plain text. The durable rule distinguishes national browsing from actual city supply and confirmed appointment. No provider counts, fictional experts, prices or medical suitability/instructions are asserted.",
+          "sources": "Actual retrieved VVTAT document supports only agreed scope/price/possible consequences and retaining the payment document. The short attributed paraphrase was compared with the primary document. No refund guarantee, legal deadline or clinical advice. Source S19 identity and public URL match the separately retrieved snapshot.",
+          "media": "Actual built-in ImageGen original still-life pixels inspected, then all5WebP variant dimensions/hash bytes checked. Blank notebook,comb,brush and nude polish are broad editorial illustration, without readable UI/logos or actual provider/client-result claims. Removed duplicated body image because reviewed featured image already renders once.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+      "revisionHash": "45b6cc23d2d23566be44f9bb0d96f2326c418473dcc9875f7ced0cf670f450f4",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.171Z",
+        "revisionHash": "45b6cc23d2d23566be44f9bb0d96f2326c418473dcc9875f7ced0cf670f450f4",
+        "binding": "d875d0ce221737e98a69332c48e00485a4997e69fda020f4c164436380b14a0f",
+        "evidence": {
+          "usefulness": "Re-read preserved final actual Luna/xhigh text and its earlier editorial revision. It distinguishes a request from confirmation, includes practical scope/time/location/price questions, a copyable message and explicitly fictional confirmation example. Original article revision45b6cc... is unchanged.",
+          "facts": "The example amounts,address,duration are expressly hypothetical. Booking confirmation is not asserted from a sent request or platform category. Scope stays logistical; no medical instructions,individual eligibility,real providers or specific legal remedies. Unwritten conditions-guide link is privately deferred with its original reader reason.",
+          "sources": "Retrieved primary NVSC responsible-provider choice and VVTAT scope/price/payment documents were compared with their short attributed passages. They support bounded permit lookup and consumer agreement steps. No fabricated expert review or wider medical/legal conclusion.",
+          "media": "Preserved actual original ImageGen image and approved-to-be5WebP family: notebook,blank sheet and violet pen. Pixel review and both viewport render repeated; no readable booking UI/customer/provider proof. All5 exact WebP byte/dimension/provenance checks passed; this image is unshared with due pages.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+      "revisionHash": "f34e0268323557dda316b0dcc7ce14720a4475cbb9b1ec7718be56f6124e6835",
+      "publishAt": "2026-10-05T12:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.247Z",
+        "revisionHash": "f34e0268323557dda316b0dcc7ce14720a4475cbb9b1ec7718be56f6124e6835",
+        "binding": "d67b8856cfcd2d4cf391581563b403be5f80f9b2f9e71d81ddd8f217c41d130e",
+        "evidence": {
+          "usefulness": "Read retained article, comparing whole service scope/removal/polish/design and duration. Original illustrative arithmetic30+5=35EUR and60+15=75minutes is correct;17:00–18:00 versus17:00–18:15 makes the time constraint actionable. The useful prior text is retained, not rewritten to manufacture volume.",
+          "facts": "The values are explicitly an illustration, neither a Lithuanian market average nor an offer. Service labels are explained as possible provider-specific bundles, with confirmation required. No health claims, actual listings or price-quality guarantee. Original ID/URL/publication date preserved.",
+          "sources": "No external empirical trend,market-price or clinical claim. Original worked arithmetic and practical comparison are explicitly illustrative. The current national manicure catalogue was separately HTTP checked; catalogue destination is a typed commerce link, not a fabricated external source.",
+          "media": "Retained original ImageGen editorial workspace pixels independently inspected, not a real salon or client result. Reimported through common optimizer to a fresh5WebP family; actual bytes/dimensions/provenance verified. V1 asset bytes and historical approvals remain untouched.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "99c2d09a-1314-48db-999c-075d312271b2",
+      "revisionHash": "fc0748686ec6398f1aab56b7616f78d0f38f989307cb7b4995f824e46819b512",
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.322Z",
+        "revisionHash": "fc0748686ec6398f1aab56b7616f78d0f38f989307cb7b4995f824e46819b512",
+        "binding": "7d13857b98a59bf5311cf0835b56a1f58786ca808aa016ffe9b0b1407c3ae85b",
+        "evidence": {
+          "usefulness": "Read retained style-choice article: neutral,coral and thin French-line directions are different illustrative choices, with clothing,shape,length and practical provider-message prompts. No seasonal popularity claim or copied ranking; supports a specific style decision.",
+          "facts": "Style preferences are presented as choices rather than objective beauty or product efficacy facts. Lighting/screen differences are described without a shade-match guarantee. Original three images are illustrative and expressly not a specific provider portfolio. No medical claims or invented market metrics.",
+          "sources": "No external factual trend/product/ranking claim is made; this is original style comparison. Current national manicure commerce target was separately retrieved. The actual price-guide dependency is included; planned design pillar is deferred until separately written and reviewed.",
+          "media": "All three original ImageGen coral/neutral/French image pixels inspected and reimported to three5WebP families. Alt matches observed nail-style imagery. Mobile offscreen third image initially lazy and then loaded after real scroll; all three decode at both widths. No fabricated real client/provider provenance.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+      "revisionHash": "2e71357b4d7606995e6cde881042e04c67290a8173659ae530d8864a07b4e651",
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.395Z",
+        "revisionHash": "2e71357b4d7606995e6cde881042e04c67290a8173659ae530d8864a07b4e651",
+        "binding": "53cbb10a770302d95f1e6c3b9cafef07dc62d2f11159a51318f52a84aa7e67ac",
+        "evidence": {
+          "usefulness": "Read retained article distinguishing provider work,style illustration and premises. It provides concrete comparable-length/procedure/detail questions and a short inquiry task; a beautiful photo is not treated as qualification,hygiene or attainable-result proof.",
+          "facts": "The scope is evidence interpretation, not diagnosing hygiene or medical fitness from images. It avoids accusing unidentified images of fraud and does not promise replication. Official NVSC hygiene requirements are attributed; no individual clinical advice is given.",
+          "sources": "Retrieved and read actual NVSC2026-09-17 primary document on beauty-service hygiene. Its permit,health-check,hygiene/first-aid training statements support only the bounded attributed passage. A gallery does not substitute for these checks; no fake clinician review.",
+          "media": "Retained original ImageGen thin French-style nail illustration pixels inspected; body says illustration is not any provider portfolio. Reimported common5WebP variants and exact bytes verified, sharing the same editorial family with the colour guide rather than inventing new provenance.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "85ae7c9c-1176-47ff-b125-6c52d479973d",
+      "revisionHash": "a3c0b8100b2b211aebf2f1a03917ec13c4b46ad9ad0d0eabd5795c853ce05346",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.468Z",
+        "revisionHash": "a3c0b8100b2b211aebf2f1a03917ec13c4b46ad9ad0d0eabd5795c853ce05346",
+        "binding": "b5f0b246645125f324dc9d875cd505d19ce6d81084f4f07cc6d71ebeda22c5b2",
+        "evidence": {
+          "usefulness": "Home copy orients readers to service/category/city choices and useful preparation guides, with the real operator contact. It introduces the broader platform and5 reviewed guide dependencies, whose future visibility is date-gated.",
+          "facts": "Real owner-provided MB Pinet/info@pinet.lt identity retained. Category browsing is not sold as confirmed local supply or appointment. No invented ratings,providers,bookings,medical expertise or search-position guarantee.",
+          "sources": "Home introduces owned navigation and contact rather than external statistical or clinical assertions. Actual catalogue readiness is separately verified and only current eligible typed destinations may become links.",
+          "media": "Actual broad original ImageGen still-life and5WebP family inspected and decoded in both viewports. Editorial image supports orientation without claiming a real provider,product recommendation or result.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "a61a0248-1c28-4cdc-89ba-e6c087989cdf",
+      "revisionHash": "62fc252edcd5ffec873c926d8653d2e66ed94148bfde08176597e7af34e82a14",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.541Z",
+        "revisionHash": "62fc252edcd5ffec873c926d8653d2e66ed94148bfde08176597e7af34e82a14",
+        "binding": "17601906a926afee0f2a15edce0f336bf758d31eafccf695378a0ffd70728a4a",
+        "evidence": {
+          "usefulness": "Index groups the actual reviewed guides by reader question: scope,style and portfolio, plus two scheduled broad visit-choice guides. Every attached guide is in the exact reviewed release; future links are public time-gated.",
+          "facts": "No promise of all295 completed articles or supplied provider results. Text distinguishes illustrative examples from real price lists and actual provider work. Original index identity/date preserved.",
+          "sources": "Owned editorial navigation only; no external evidence-dependent popularity,supply,price or medical assertion.",
+          "media": "Actual shared broad editorial still-life5WebP family reviewed; the shared home/index image is intentionally already due and is not a private future-only asset.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "6cc9716e-8706-4628-a85a-7a32ca432a7d",
+      "revisionHash": "70918b47756dff2ab43117df8908de0f1ac9f3abf800dec5da934112c2b8c9e6",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.622Z",
+        "revisionHash": "70918b47756dff2ab43117df8908de0f1ac9f3abf800dec5da934112c2b8c9e6",
+        "binding": "ff72c4c506d11ad8c55b391535dce988a530467b2e1eadfa84b53d2d25387a50",
+        "evidence": {
+          "usefulness": "Actual methodology/contact page explains AI assistance,source/media review,illustration limitations and how to report a specific content error. Original public contact/operator preserved.",
+          "facts": "Organization authorship only; no named or credentialed fabricated expert,doctor or customer. The method describes performed reviews and does not substitute for specialist review.",
+          "sources": "Owned process/owner identity statements; no external clinical/legal/statistical claim requiring a document snapshot.",
+          "media": "Text-focused methodology page has no decorative raster. This is an intentional useful support-page exception, not a guide with missing required featured media.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "madbeauty-author-redakcija",
+      "revisionHash": "f7cc6f73cf54ae14761c36dade46b420037788240fbc4d6d7cfa55ecb97c76b1",
+      "publishAt": "2026-10-06T23:07:32.603Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.695Z",
+        "revisionHash": "f7cc6f73cf54ae14761c36dade46b420037788240fbc4d6d7cfa55ecb97c76b1",
+        "binding": "d6b7757232b5ed4bc30d91bb01a9288b83c4293435df5eb0fac62bced5e1d007",
+        "evidence": {
+          "usefulness": "Actual organization author profile explains MB Pinet ownership,AI-assisted information,citation/image review and concrete corrections contact. Matches all selected editorial author IDs and does not pretend to be a specialist.",
+          "facts": "True organization snapshot only. Explicitly disclaims credentials not held and says a specialist review is required for claims needing it. No fake biography,experience,awards or sameAs identities.",
+          "sources": "Owner-provided organization/contact and actual editorial process statements, without unverified external expert/medical claims.",
+          "media": "Text-focused organization profile intentionally contains no irrelevant stock portrait or fabricated individual; guide media requirement does not apply.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    }
+  ],
+  "state": "exported-not-deployed",
+  "next": "Import and verify in public core; do not report deployment from this receipt."
+}

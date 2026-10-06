@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import { normalizeNetworkSuggestions, targetCatalog, networkOverview, networkStatus, checkTarget } from './network-links.mjs';
 import { optimizeRaster } from './image-pipeline.mjs';
 import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,validateV2Package,bodyPlainText} from './content-package-v2.mjs';
+import {draftSnapshotHash,assertV2Draftable} from './draft-v2.mjs';
 import { withStudioWriteLock } from './write-lock.mjs';
 import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
 import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
@@ -338,11 +339,15 @@ export async function mergePlan(siteId, proposals, months = 0) {
     return { added, total: site.pages.length };
   });
 }
-export async function editPage(siteId, pageId, input) {
+export async function editPage(siteId, pageId, input, draftGuard=null) {
   return locked(async () => {
     const site = await getSite(siteId);
     const page = site.pages.find(item => item.id === pageId);
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
+    if(draftGuard){
+      if(draftSnapshotHash(site)!==draftGuard.expectedSiteHash)throw new Error('V2 draft result is stale: site changed during generation.');
+      assertV2Draftable(site,page,{revisionHash:draftGuard.expectedRevisionHash});
+    }
     const v2=site.schemaVersion===2;
     const type = input.type && (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : page.type;
     const slug = 'slug' in input || type !== page.type ? normalizeSlug(input.slug ?? page.slug, type) : page.slug;
@@ -379,6 +384,11 @@ export async function editPage(siteId, pageId, input) {
       }
       if(media.length>MAX_PAGE_MEDIA)throw new Error('Puslapyje telpa iki 60 medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.');
       page.media=media;
+    }
+    if(draftGuard){
+      validateV2Draft(page,publicSite(site));
+      if(draftGuard.expectedRevisionHash&&page.generatedDraft)page.generatedDraftHistory=[...(page.generatedDraftHistory||[]),structuredClone(page.generatedDraft)];
+      page.generatedDraft=structuredClone(draftGuard.metadata);
     }
     page.status = 'review'; page.approval = null; page.updatedAt = new Date().toISOString();
     await writeJson(siteFile(siteId), site);
@@ -536,6 +546,32 @@ export async function finalizeInternalLinks(siteId, pageIds) {
     }
     await writeJson(siteFile(siteId), site);
     return { siteId, changed, next: 'Review unchanged drafts before batch approval; approved snapshots were not edited.' };
+  });
+}
+// A complete map includes future dependencies. Choose a real release subset
+// explicitly, preserving every deferred suggestion and its reader reason.
+export async function selectReleaseLinks(siteId,input){
+  return locked(async()=>{
+    const site=await getSite(siteId);
+    if(draftSnapshotHash(site)!==input.expectedSiteHash)throw new Error('Release links: stale site snapshot.');
+    const pages=selectedPages(site,input.pageIds),selected=new Set(input.pageIds);
+    if(!Array.isArray(input.decisions)||input.decisions.length!==pages.length||new Set(input.decisions.map(d=>d.pageId)).size!==pages.length)throw new Error('Release links: one complete decision per selected page required.');
+    const now=new Date().toISOString(),summary=[];
+    for(const page of pages){
+      const d=input.decisions.find(d=>d.pageId===page.id);if(!d||!Array.isArray(d.keep)||!Array.isArray(d.defer))throw new Error('Release links: invalid decision.');
+      const proposals=[...(page.linkSuggestions||[]),...(page.generatedDraft?.internalLinks||[])].filter((l,i,a)=>a.findIndex(x=>x.targetPageId===l.targetPageId)===i);
+      // Already attached links cannot disappear as a side effect of planning.
+      for(const l of page.links)if(!proposals.some(p=>p.targetPageId===l.targetPageId))proposals.push({...l,reason:'Existing reviewed attachment; preserve unless separately edited.'});
+      const known=new Map(proposals.map(l=>[l.targetPageId,l])),kept=new Set(d.keep),deferred=new Set(d.defer.map(x=>x.targetPageId));
+      if(kept.size!==d.keep.length||deferred.size!==d.defer.length||[...kept].some(id=>deferred.has(id))||known.size!==kept.size+deferred.size||[...known.keys()].some(id=>!kept.has(id)&&!deferred.has(id)))throw new Error('Release links: every proposal needs exactly one keep/defer decision.');
+      for(const id of kept){const target=site.pages.find(p=>p.id===id&&p.status!=='revoked');if(!target||id===page.id||!selected.has(id)&&!target.publishedRevision)throw new Error('Release links: kept target is not in the reviewed release or previously approved.');}
+      for(const item of d.defer)if(!item.reason?.trim()||item.reason.length>1000||page.links.some(l=>l.targetPageId===item.targetPageId))throw new Error('Release links: deferred reason required; attached links need separate editing.');
+      page.deferredInternalLinks=[...(page.deferredInternalLinks||[]),...d.defer.map(item=>({proposal:structuredClone(known.get(item.targetPageId)),reason:item.reason,selectedAt:now}))];
+      page.linkSuggestions=d.keep.map(id=>structuredClone(known.get(id)));
+      page.updatedAt=now;summary.push({pageId:page.id,kept:kept.size,deferred:deferred.size});
+    }
+    await writeJson(siteFile(siteId),site);
+    return {siteId,selectedAt:now,decisions:summary,state:'selected-requires-final-links-and-current-review',approved:false,deployed:false};
   });
 }
 export async function recordEditorialReview(siteId, pageId, input) {

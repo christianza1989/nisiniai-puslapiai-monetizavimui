@@ -10,6 +10,10 @@ const target = path.join(here, 'prototype');
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 const runtime = new Set(['.html','.js','.css','.svg','.webp','.png','.jpg','.ttf','.woff2','.mp4','.wav']);
 const chosen = new Set(['index.html', 'assets/fonts/OFL.txt']);
+const pageRoutes = ['shop','contact','help','downloads','about','privacy','terms','login','register','recover','account'];
+for (const route of pageRoutes) chosen.add(`${route}/index.html`);
+// Reviewed dynamic finish selection must retain both exact product assets.
+chosen.add('assets/closing-conversion-v1/holder-silver-640.webp');
 async function directory(relative, predicate) {
   for (const entry of await readdir(path.join(source, relative), { withFileTypes: true })) {
     const name = `${relative}/${entry.name}`;
@@ -47,10 +51,12 @@ const files = [];
 for (const name of [...chosen].sort()) {
   const bytes = await readFile(path.join(source, name));
   let output = bytes;
-  if (name === 'index.html') {
-    let html = bytes.toString('utf8').replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow,noarchive">');
+  if (name.endsWith('.html')) {
+    let html = bytes.toString('utf8');
+    if (/<meta\b[^>]*name="robots"[^>]*>/.test(html)) html = html.replace(/<meta\b[^>]*name="robots"[^>]*>/g,'<meta name="robots" content="noindex,nofollow,noarchive">');
+    else html = html.replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow,noarchive">');
     html = html.replace(/href="(?:\.\.\/)+release\/[^" ]+"/g, 'href="#integration-preview"');
-    html = html.replace('<body>', '<body>\n<aside id="integration-preview" style="padding:12px 20px;background:#23232b;color:#eee;text-align:center;font:14px system-ui">Private project preview · Demo earnings and transfers are fictional. Beta installers remain in the application repository.</aside>');
+    html = html.replace(/<body\b[^>]*>/, '$&\n<aside id="integration-preview" style="padding:12px 20px;background:#23232b;color:#eee;text-align:center;font:14px system-ui">Private project preview · Paid orders are not open. Beta installers remain in the application repository.</aside>');
     output = Buffer.from(html);
   }
   await mkdir(path.dirname(path.join(target, name)), { recursive: true });

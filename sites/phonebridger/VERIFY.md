@@ -198,3 +198,11 @@ exact manifest bytes for index plus all six setup runtime assets (7/7 PASS),
 recorded in qa/setup-guide-core-http.json. Existing vinext process not restarted.
 No native app, simulator engine or shared-core source changed; no new physical
 capture, deployment or full-site audit acceptance is claimed.
+
+## Inner pages and account adapter — 2026-10-06
+
+Eleven new English routes reviewed on real desktop1280/mobile390 views; ten guest-accessible routes measured additionally at320/768/1024, no horizontal overflow or broken images. Account was captured after real local sign-in at1280/390. Shop App only hides finish/holders; 3-holder Silver selection updates79USD/inclusions/art and persists on reload; contact query carries that choice, form produces a mailto draft without sending. Mobile menu opens and Escape closes; show/hide password, wrong-password error, registration/login/logout and guest redirect were exercised using synthetic test identities. Recovery does not claim an emailed reset. Final current captures and measured geometry are in qa/site-pages-v1/. Original detector warnings retained; source/rendered repairs and independent three-finding verdict ship, no clean-detector or conversion claim.
+
+471 old source files retain hashes; source HTML outside footer is byte-equivalent to saved baseline. Snapshot289 files /80,270,387bytes,282runtime+7private verification; manifest/source non-HTML hashes PASS. Core plugin test serves all282attested assets and11exact nested HTML routes; redirects preserve query; private files/public Host are denied; actual account cycle passes. Local account12/12, copied existing simulator60/60, shared core48/48 tests PASS. Core production build, TypeScript and scoped ESLint PASS; build retains pre-existing vinext/chunk/CSS filename warnings. Production output/public-package inspection excludes PhoneBridger. No native source, mouse baseline, releases, pairing or shared package changed.
+
+Local adapter tests do not certify hosted authentication, email delivery/reset, legal compliance, payment/licensing, stock/fulfilment, public deployment or demand. No production endpoint/channel activated.

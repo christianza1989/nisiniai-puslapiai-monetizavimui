@@ -1,6 +1,6 @@
 # PhoneBridger project module
 
-The owner's existing English homepage and interactive simulation now travel
+The owner's existing English homepage, eleven inner pages and interactive simulation now travel
 with the private project repository. Native applications remain in
 [PhoneBridger](https://github.com/christianza1989/PhoneBridger). This integration
 does not create a public content package or a real creator revenue backend.
@@ -62,6 +62,8 @@ files and are not served by the core adapter.
 
 - [BUSINESS](BUSINESS.md), [PRODUCT](PRODUCT.md), [DESIGN](DESIGN.md)
 - [INTEGRATION](INTEGRATION.md), [ROADMAP](ROADMAP.md), [ACQUISITION](ACQUISITION.md)
+- [Inner pages and local accounts](PAGES.md), [research/page plan](PAGE_PLAN.md)
+- [Builder feedback](CORE_FEEDBACK.md)
 - [Verification](VERIFY.md), [project identity](project.json)
 - [Prototype manifest](prototype/manifest.json)
 

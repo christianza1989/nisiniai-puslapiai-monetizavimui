@@ -16,7 +16,7 @@ it does not contain separate root AGENTS or the two integration docs.
 | Publication | Existing core predicates untouched; no PhoneBridger content package | Reviewed package and dedicated niche renderer dispatch |
 | SEO/GEO | Dummy prototype absent from shared public projections/indexes | Shared niche-seo/schema/ArticleMeta/breadcrumb/LLM APIs with visible eligible content |
 | Media | Existing reviewed optimized bytes unchanged | New editorial images through saveResponsiveAsset/import-image; imageSrcSet |
-| Lead/mail | Existing /uzklausa and per-site routing are future adapters; no form added | Durable lead, rate/consent controls, SMTP transport and INBOX evidence |
+| Lead/mail | Contact form prepares a mailto draft; existing /uzklausa and per-site routing are future server adapters | Durable lead, rate/consent controls, SMTP transport and INBOX evidence |
 | Interest | Existing /ivykius remains the shared future counter, not a lead | Approved real events, separated from simulator actions |
 | Voice/agent | No runtime profile, worker or voice widget activated | Approved public knowledge and fail-closed policy/profile |
 | Creator backend | Page-memory demo only | Authenticated server ledger, orders/refunds/attribution, payout provider |
@@ -40,3 +40,7 @@ Merge core PR #1 first, private PR #2 second. Both PRs are reviewable and remain
 unmerged by the implementing task. Re-run the recorded checks against the
 eventual merged SHAs before deployment. Shared schemas and all nine existing
 approved packages remain unchanged.
+
+## Inner pages / local account boundary — 2026-10-06
+
+The latest owner instruction defers creator implementation and freezes homepage except footer. Eleven static semantic inner pages use the same manifest-attested private core mount; only manifest-listed directory indexes resolve. The optional companion server/accounts.cjs is imported exclusively by the serve-only Vite plugin, uses the actual listening port and exact 127.0.0.1 origin, and stores private local data outside prototype. Default stores are per-port. Missing companion/server module is compatible with core-first merge. The single account adapter is reused by the standalone core-backed preview and tested directly; it is not copied as a public static file. Contact is an explicit mailto draft, no SMTP or lead-storage adapter. Live hosting/production auth/commerce remain separate gated work. See PAGES.md and CORE_FEEDBACK.md.

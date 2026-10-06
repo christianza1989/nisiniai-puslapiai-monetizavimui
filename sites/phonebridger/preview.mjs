@@ -1,0 +1,14 @@
+import http from 'node:http';
+import path from 'node:path';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+import {homedir} from 'node:os';
+import {createAccounts} from './server/accounts.cjs';
+const here=fileURLToPath(new URL('.',import.meta.url));
+const core=path.resolve(process.argv[2]||path.join(here,'../../../dovanos-memorycasting'));
+const {createPhoneBridgerPreviewMiddleware,PHONEBRIDGER_PREVIEW_PREFIX}=await import(pathToFileURL(path.join(core,'scripts/phonebridger-preview.mjs')).href);
+const port=Number(process.env.PHONEBRIDGER_PREVIEW_PORT||4187);
+if(!Number.isInteger(port)||port<1024||port>65535)throw Error('Use a local preview port between 1024 and 65535.');
+const accountHandler=createAccounts({origin:`http://127.0.0.1:${port}`,prefix:PHONEBRIDGER_PREVIEW_PREFIX,storePath:process.env.PHONEBRIDGER_ACCOUNT_STORE||path.join(homedir(),'.phonebridger-preview',`project-${port}.json`)});
+const middleware=await createPhoneBridgerPreviewMiddleware(path.join(here,'prototype'),{accountHandler});
+const server=http.createServer((req,res)=>middleware(req,res,()=>{res.writeHead(404);res.end();}).catch(()=>{if(!res.headersSent)res.writeHead(503);res.end('Preview unavailable');}));
+server.listen(port,'127.0.0.1',()=>console.log(`PhoneBridger core-backed preview: http://127.0.0.1:${port}${PHONEBRIDGER_PREVIEW_PREFIX}`));

@@ -58,3 +58,7 @@ elsewhere. SVG illustrations and live HTML/CSS preserve crisp geometry/copy.
 Native USB disclosure and #setup/#usb-setup/#downloads anchors remain functional.
 Tablet rows and narrow stacked cards retain the full surface recipe.
 Source concept/provenance and asset recipe: SETUP_GUIDE_ASSETS.md.
+
+## Inner-page extension — 2026-10-06
+
+The current owner selected identity and all homepage sections are frozen; only footer links extend the source homepage. New shop/contact/account/read-page families inherit Manrope, charcoal and pink but change density by job. A layered faithful product stage and live four-option configuration lead shop; quiet labelled forms lead contact/auth; help/policies prioritize reading. Exact approved package and Black/Silver holders are reused. Planned price/order and local-account boundaries are visible. Independent finish review returned ship after three targeted findings were resolved. See PAGES.md, PAGE_PLAN.md and qa/site-pages-v1/. Creator work is deferred.

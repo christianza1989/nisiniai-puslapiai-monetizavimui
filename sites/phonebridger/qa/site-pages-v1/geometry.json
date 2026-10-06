@@ -1,0 +1,138 @@
+[
+  {
+    "route": "register",
+    "viewport": "desktop",
+    "broken": [],
+    "headings": 1,
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "help",
+    "viewport": "desktop",
+    "broken": [],
+    "headings": 1,
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "downloads",
+    "viewport": "desktop",
+    "broken": [],
+    "headings": 1,
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "about",
+    "viewport": "desktop",
+    "broken": [],
+    "headings": 1,
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "privacy",
+    "viewport": "desktop",
+    "broken": [],
+    "headings": 1,
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "terms",
+    "viewport": "desktop",
+    "broken": [],
+    "headings": 1,
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "recover",
+    "viewport": "desktop",
+    "broken": [],
+    "headings": 1,
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "shop",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "contact",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "login",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "register",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "help",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "downloads",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "about",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "privacy",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "terms",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "recover",
+    "viewport": "mobile",
+    "broken": [],
+    "headings": 1,
+    "scroll": 380,
+    "width": 390
+  }
+]

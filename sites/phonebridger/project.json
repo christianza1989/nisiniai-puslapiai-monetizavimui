@@ -5,14 +5,29 @@
   "name": "PhoneBridger",
   "locale": "en",
   "timezone": "Europe/Vilnius",
-  "contact": { "email": "hello@phonebridger.com" },
-  "brand": { "accent": "#ff2d9a" },
+  "contact": {
+    "email": "hello@phonebridger.com"
+  },
+  "brand": {
+    "accent": "#ff2d9a"
+  },
   "offer": "Windows and Android connected workspace; private beta website and local interactive demo.",
   "audience": "People who use a Windows PC with one or more Android phones at their desk.",
-  "facts": "Owner-approved contact: hello@phonebridger.com. Website language: English. Native mouse implementation is frozen. Website sample messages, files, news, creator sales, earnings and payouts are fictional and remain outside public editorial packages. File transfer in the browser is a simulation; native file dragging is planned. Public domain ownership, release distribution, product policies, commercial pricing and creator terms require separate verification.",
+  "facts": "Owner-approved contact: hello@phonebridger.com. Website language: English. Native mouse implementation is frozen. Website sample messages, files, news, creator sales, earnings and payouts are fictional and remain outside public editorial packages. File transfer in the browser is a simulation; native file dragging is planned. Public domain ownership, release distribution, product policies, production sales/fulfilment and creator terms require separate verification. Proposed owner-delegated launch USD prices: App29, +1 holder49, +2 holders65, +3 holders79; no open checkout. Eleven inner pages and local-only email/password accounts are private previews, not production licences. Creator extension is deferred by the latest owner instruction.",
   "stage": "planning",
-  "prototype": { "path": "prototype/index.html", "mount": "/__projects/phonebridger/", "mode": "private-prototype", "productionIncluded": false },
-  "channels": { "smtp": false, "voice": false, "facebook": false, "payments": false, "realReferrals": false },
+  "prototype": {
+    "path": "prototype/index.html",
+    "mount": "/__projects/phonebridger/",
+    "mode": "private-prototype",
+    "productionIncluded": false
+  },
+  "channels": {
+    "smtp": false,
+    "voice": false,
+    "facebook": false,
+    "payments": false,
+    "realReferrals": false
+  },
   "publicPackage": null,
   "domainOwnershipVerified": false
 }

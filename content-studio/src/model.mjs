@@ -250,6 +250,32 @@ export async function editSite(id, input) {
     return site;
   });
 }
+/** Explicit canonical migration; historical approved versions and release files stay intact. */
+export async function migrateSiteDomain(id, { expectedCanonicalHost, canonicalHost, actorId }) {
+  if (typeof actorId !== 'string' || !actorId.trim() || actorId.length > 120) throw new Error('Domeno migracijai reikia atsakingo agento ID.');
+  if (typeof expectedCanonicalHost !== 'string' || typeof canonicalHost !== 'string') throw new Error('Domeno migracijai reikia seno ir naujo domeno.');
+  const previous = normalizedHost(expectedCanonicalHost), next = normalizedHost(canonicalHost);
+  if (previous === next) throw new Error('Domeno migracijai reikia skirtingo naujo domeno.');
+  return locked(async () => {
+    const site = await getSite(id);
+    if (site.canonicalHost !== previous) throw new Error('Pirminis domenas pasikeitė; perskaitykite aktualų įrašą.');
+    if ((await listSites()).some(other => other.id !== id && other.canonicalHost === next)) throw new Error('Domenas jau yra registre.');
+    const changedAt = new Date().toISOString();
+    site.canonicalHost = next;
+    site.contentWorkflowVersion = 1;
+    site.domainMigrations = [...(site.domainMigrations || []), { from: previous, to: next, actorId: actorId.trim(), changedAt }];
+    for (const page of site.pages) {
+      if (page.status === 'revoked') continue;
+      if (page.contentVersion === 2) page.siteSnapshot = structuredClone(publicSite(site));
+      page.status = 'review'; page.approval = null; page.updatedAt = changedAt;
+      // Retained editorialReview no longer matches the new canonical context binding.
+      // publishedRevision remains historical until the normal reviewed batch replaces it.
+    }
+    site.updatedAt = changedAt;
+    await writeJson(siteFile(id), site);
+    return { siteId: id, previousCanonicalHost: previous, canonicalHost: next, state: 'requires-reviewed-release', deployment: 'not-performed' };
+  });
+}
 const makePage = (site, input) => {
   const v2=site.schemaVersion===2;
   const type = (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : 'guide';

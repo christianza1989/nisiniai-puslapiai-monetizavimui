@@ -71,77 +71,137 @@
       "body": [
         {
           "type": "paragraph",
-          "text": "Start with the app. Add a home for your phones."
+          "text": "Use your Windows mouse and keyboard in your own Android apps. Add a home for your phones."
         },
         {
           "type": "paragraph",
-          "text": "One mouse. More screens."
+          "text": "Same finish for every holder in your setup."
+        },
+        {
+          "type": "paragraph",
+          "text": "Orders are not open yet. Delivery, applicable taxes and final purchase terms will be confirmed before sales begin."
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Make it yours."
+          "text": "Your familiar apps. A more connected desk."
         },
         {
           "type": "paragraph",
-          "text": "Every setup starts with the same app. The holders are your choice."
+          "text": "Your phone keeps running its own apps. You keep using the mouse and keyboard you know."
         },
         {
           "type": "paragraph",
-          "text": "Windows app + Android companion"
+          "text": "Cross your chosen screen edge to control your phone. Click and scroll in its own Android apps."
         },
         {
           "type": "paragraph",
-          "text": "Up to three connected Android phones"
+          "text": "Reply to a message or write an email with the PC keyboard already on your desk."
         },
         {
           "type": "paragraph",
-          "text": "2 magnetic holders · Black"
-        },
-        {
-          "type": "paragraph",
-          "text": "Orders are not open yet. Save your choice or ask about this setup. Shipping and applicable taxes will be confirmed before a purchase."
+          "text": "USB takes priority after its one-time setup. Wi-Fi keeps your paired workspace connected."
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Same app. Your kind of desk."
+          "text": "Close to your screen. Clear of your desk."
         },
         {
           "type": "paragraph",
-          "text": "Use your existing phone stand, or choose optional magnetic holders to keep your phones beside your screen. The app works either way."
+          "text": "The optional magnetic holder places a compatible phone beside your laptop screen. Its hinged design lets you adjust the physical arrangement and fold it away."
         },
         {
           "type": "paragraph",
-          "text": "Move your mouse through a chosen screen edge to control your own Android apps. Type with your PC keyboard, send supported Google links and listen to supported phone audio through your PC."
+          "text": "Magnetic phone attachment Check that your phone or case has a compatible magnetic ring."
         },
         {
           "type": "paragraph",
-          "text": "No. App only works with your existing phone setup. Optional holders change the physical arrangement, not the app features."
+          "text": "Match your chosen screen edge Set the app position to the side where your phone sits."
         },
         {
           "type": "paragraph",
-          "text": "The beta supports one physical USB phone at a time. Other paired phones can use Wi-Fi. USB takes priority automatically after its one-time setup."
+          "text": "Your choice of one, two or three The holder count changes your desk arrangement. App features stay the same."
         },
         {
           "type": "paragraph",
-          "text": "The planned offer is a one-time V1 licence for one Windows PC and up to three Android phones. A future paid major version would be a separate offer. Paid licensing and checkout are not active in this beta."
+          "text": "Final mounting materials, included accessories and measured fit will be confirmed before hardware sales. Illustrations show the intended branded finish."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A good fit starts here."
         },
         {
           "type": "paragraph",
-          "text": "Hardware orders and shipping are not open. Ask us about your phone, case and laptop before choosing a mount. Final dimensions, attachments and fulfilment details will be confirmed before sale."
+          "text": "Software support and physical holder fit are separate. Let us help if you are unsure."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Honest experiences. Helpful details."
+        },
+        {
+          "type": "paragraph",
+          "text": "After launch, completed purchasers can share what worked, what did not and how PhoneBridger fits their day. We publish genuine reviews after moderation, including critical ones."
+        },
+        {
+          "type": "paragraph",
+          "text": "Verified purchase means the review is linked to a paid, fulfilled PhoneBridger order. Reviews from other retailers are not shown as our customers’ experiences."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A few things worth knowing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Still deciding? Tell us about your desk."
+        },
+        {
+          "type": "paragraph",
+          "text": "No. Use an existing phone stand or another suitable arrangement. The optional magnetic holders change where your phones sit, not what the app can do."
+        },
+        {
+          "type": "paragraph",
+          "text": "The proposed offer is a one-time V1 licence for one Windows PC and up to three Android phones. A future paid major version would be a separate offer. The current beta is free; final licence delivery and purchase terms are not active yet."
+        },
+        {
+          "type": "paragraph",
+          "text": "Software is downloaded, not supplied in a physical software box. A hardware bundle is planned to include your selected number of holders in the chosen finish. Final accessories and packaging will be listed before hardware orders open."
+        },
+        {
+          "type": "paragraph",
+          "text": "Shipping destinations, rates and delivery times are being confirmed. We will show the supported destination and total delivery cost before accepting a hardware order."
+        },
+        {
+          "type": "paragraph",
+          "text": "Final purchase, cancellation and return terms will be available before orders open. For now, try the free beta and ask us about your phone, case and mounting surface before choosing hardware."
+        },
+        {
+          "type": "paragraph",
+          "text": "The planned seller for paid PhoneBridger orders is MB Memocasting. When sales open, payment will take place on Stripe-hosted Checkout. No card details are entered or stored on this shop page."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Try the flow. Then make it yours."
+        },
+        {
+          "type": "paragraph",
+          "text": "The free beta lets you explore PhoneBridger with your own desk and devices."
         }
       ],
       "publishAt": "2026-10-06T00:00:00.000Z",
       "media": [],
       "links": [],
       "id": "311df081-e4bb-4ced-bbba-d456301d2319",
-      "revisionHash": "7fa9c0257647ff9ab65aaba4e711911ce11b0578e306a7bdc213966cdcdd04fb",
+      "revisionHash": "127dfdd125dfb54e4bb7b0d23e75691c28d18a45657758a262708b9ee868228d",
       "approval": {
         "status": "approved",
-        "revisionHash": "7fa9c0257647ff9ab65aaba4e711911ce11b0578e306a7bdc213966cdcdd04fb",
-        "approvedAt": "2026-10-06T05:41:32.753Z",
-        "actorId": "codex-editorial-review-20261006"
+        "revisionHash": "127dfdd125dfb54e4bb7b0d23e75691c28d18a45657758a262708b9ee868228d",
+        "approvedAt": "2026-10-06T15:27:30.811Z",
+        "actorId": "owner-authorized-production-review-20261006"
       }
     },
     {
@@ -621,7 +681,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The live demo uses sample data. Local preview accounts exist only to verify the email/password flow; they do not grant a paid licence or creator role. No creator dashboard or commission programme is activated here."
+          "text": "The live demo uses sample data. PhoneBridger accounts exist only to verify the email/password flow; they do not grant a paid licence or creator role. No creator dashboard or commission programme is activated here."
         },
         {
           "type": "heading",
@@ -637,12 +697,12 @@
       "media": [],
       "links": [],
       "id": "ba1b41d1-e831-48ed-bf1c-7734865d4882",
-      "revisionHash": "2b427329aa138de420cf1c2450ed8767bba85c2516c81a2a580b52c3c0a06275",
+      "revisionHash": "497c52552b35d1e141ff973805e695006221fcf3721a8a288d97a519e5c64aff",
       "approval": {
         "status": "approved",
-        "revisionHash": "2b427329aa138de420cf1c2450ed8767bba85c2516c81a2a580b52c3c0a06275",
-        "approvedAt": "2026-10-06T05:41:32.920Z",
-        "actorId": "codex-editorial-review-20261006"
+        "revisionHash": "497c52552b35d1e141ff973805e695006221fcf3721a8a288d97a519e5c64aff",
+        "approvedAt": "2026-10-06T15:27:30.834Z",
+        "actorId": "owner-authorized-production-review-20261006"
       }
     },
     {
@@ -1543,5 +1603,5 @@
       }
     }
   ],
-  "generatedAt": "2026-10-06T11:00:31.571Z"
+  "generatedAt": "2026-10-06T15:44:50.071Z"
 }

@@ -48,6 +48,18 @@ Kiekvienas taikomas kriterijus turi PASS / FAIL / UNVERIFIED / NA su komanda ar 
 
 Naršyklės / Lighthouse įrodyme fiksuoti actual URL, pasirinktą tabą, išmatuotą viewport, prisijungimo rolę ir duomenų režimą. Prisijungimo puslapio balas nėra darbo kalendoriaus balas; viewport nustatymo komanda be išmatuoto lango pločio nėra mobile patikra. FAIL → taisymas → retest saugoti atskirais įrodymais, nekeisti seno balo ar screenshot. HTTP Host izoliacijai naudoti transportą, kurio actual Host header patikrintas, ne numanytą browser fetch override.
 
+## Pavedimo tęstinumas ir priėmimo pilnumas
+
+Vienas pataisų paketas yra tarpinis etapas. Jei sutartoje vietinėje apimtyje lieka įvykdomų ekranų, vartotojo kelių ar defektų patikrų, agentas po paketo pats tęsia kitą nepatikrintą grupę. Ribotos grupės valdo pakeitimų riziką, bet nesumažina užsakymo apimties. Nereikia naujo savininko „tęsk“. Visą vietinį pavedimą baigti tik užbaigus taikomą sutartą apimtį arba aiškiai nurodžius konkrečią trūkstamą prieigą, faktą ar įrankio galimybę. Įrankio neprieinamas fizinis bandymas lieka UNVERIFIED, tačiau jis nestabdo kitų įvykdomų darbų. Savininko sustabdytas darbas neatnaujinamas iš šios taisyklės.
+
+Aktualios IMPLEMENTATION_STATUS pradžioje atskirti „paketas užbaigtas“, „vietinis pavedimas užbaigtas“ ir „laukiama konkrečios priklausomybės“. Kiekvienam likusiam darbui nurodyti ekraną ar kelią, trūkstamą įrodymą, ar galima atlikti dabar, ir konkretų kitą veiksmą. Sesijos idle būsena ar testų PASS suma nėra viso produkto užbaigimo įrodymas.
+
+Priėmimo matricoje iš pradžių nustatyti būsenų taikomumą pagal realų ekraną ir jo duomenų kelią. Statiniam tekstui nereikia fiktyvaus formos validation ar serverinio success bandymo; NA pagrįsti tuo, kad tokios elgsenos nėra. Taikomos klaidos ir tuščios būsenos negali tapti NA vien todėl, kad jas sunkiau sukelti. Kiekvieno užsakyto paviršiaus normalus desktop/mobile vaizdas turi būti peržiūrėtas, o pagrindinės rolių kelionės — atliktos su tikru adapteriu, išlaikant aiškiai dokumentuotas savininko išimtis. Bendro komponento įrodymą pakartotinai naudoti tik tiksliai jo apimtoms būsenoms ir nepakitusiai realizacijai; jis nepakeičia konkretaus ekrano kompozicijos peržiūros.
+
+Prieš regresiją fiksuoti reikiamų testų rinkinių ir jų komandų sąrašą; po jos patikrinti, kad visi rinkiniai iš tikrųjų paleisti. Atskirti naujus, perkeltus ir nebeaktualius testus. Bendras didesnis PASS skaičius neįrodo, kad nepraleista kita suite; jos pašalinimą pagrįsti, o praleistą paleidimą atlikti ir išsaugoti pirmą klaidą.
+
+Persiliejimą tikrinti ne tik viso dokumento, bet ir siaurų konteinerių lygiu: kalendoriaus toolbar, dialogai, paieškos filtrai, kortelės ir pasirinkimai. Elemento scrollWidth lyginti su jo clientWidth ir apžiūrėti rezultatą; viewport innerWidth gali slėpti nukirpimą tėviniame bloke. Sąmoningai slenkamas plotas turi aiškų pasiekiamą valdymą, o paslėptas overflow nėra automatinė pataisa. Vaizdiniai matavimai ir testų suma nepakeičia realaus skaitomumo bei užduoties atlikimo.
+
 ## Vietinis rezultatas, paleidimas ir pamokos
 
 Vietinis funkcionalumas, pilnos sąsajos kokybė, production adapteris / hostingas, tikras email pristatymas, viešas deployment ir komercinė paklausa yra atskiros būsenos. Savininko užsakytą vietinį darbą užbaigti autonomiškai; trūkstamų paleidimo faktų neišgalvoti. Produkto modulis ir jungiklis nėra jau įjungta gyva operacija.

@@ -4,6 +4,8 @@ Kūrimo metu rastas bendras spragas fiksuok ir pagrįstai taisyk pats pagal [COR
 
 Didesnės savininko užsakytos platformos eiga ir papildomi priėmimo vartai: [PLATFORM_BUILD_CONTRACT.md](PLATFORM_BUILD_CONTRACT.md). Aktualią apimtį ir entrypoint skaityti jos IMPLEMENTATION_STATUS; ankstesnis maketo roadmap nėra naujesnio pavedimo ribojimas.
 
+Platformos pataisų paketai yra tarpiniai etapai: po jų tęsk likusius įvykdomus sutarto pavedimo darbus, nelauk naujo savininko „tęsk“. PLATFORM_BUILD_CONTRACT nustato viso pavedimo užbaigimą, pagrįstas priklausomybes ir taikomų ekranų bei testų rinkinių priėmimą.
+
 Savininko užsakytai platformai skaityk [DEMO_DATA_POLICY.md](DEMO_DATA_POLICY.md): final produkto tekstai nuo pradžių, testiniai tik atskiri duomenys. **Madbeauty 2026-10-05 išimtis:** paprašytas veikiantis vietinis meistro/kliento backend, testavimo registracija tik email; frontend-only planas pakeistas. Kitų domenų F1 apimtis lieka.
 
 Šis failas skirtas naujai Codex sesijai be ankstesnio pokalbio. Savininkas delegavo konkurentų tyrimą, siauro pasiūlymo hipotezę, dizainą, turinį, programavimą ir patikrą. Užduotis „sukurk svetainę domenui X“ reiškia įgyvendinti pilną **pirmos fazės** vietinį pilotą bendrame variklyje. Įprastų maketo, šrifto ar temų pasirinkimų savininko neklausinėk.

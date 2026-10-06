@@ -42,7 +42,22 @@ export async function auditSkills(root){
    const installed=`C:/Users/lenovo/.codex/skills/${name}`;
    try{
     await access(installed);const resolved=await realpath(installed),expected=await realpath(path.dirname(file));
-    if(resolved.toLowerCase()!==expected.toLowerCase())record.issues.push(`Different installed copy/alias: ${name}`);
+    if(resolved.toLowerCase()!==expected.toLowerCase()){
+     if(skill.discovery==='project-synchronized'){
+      async function checkMirror(relative=''){
+       for(const entry of await readdir(path.join(path.dirname(file),relative),{withFileTypes:true})){
+        if(entry.name==='__pycache__'||entry.name.endsWith('.pyc'))continue;
+        const next=path.join(relative,entry.name);
+        if(entry.isDirectory())await checkMirror(next);
+        else if(entry.isFile()){
+         try{if(sha(await readFile(path.join(path.dirname(file),next)))!==sha(await readFile(path.join(installed,next))))record.issues.push(`Installed mirror differs: ${next}`);}
+         catch(error){if(error.code==='ENOENT')record.issues.push(`Installed mirror missing: ${next}`);else throw error;}
+        }
+       }
+      }
+      await checkMirror();
+     }else record.issues.push(`Different installed copy/alias: ${name}`);
+    }
     record.discovery={installed,resolved};
    }catch(error){if(error.code!=='ENOENT')throw error;}
   }
@@ -68,7 +83,7 @@ export async function auditSkills(root){
  const origins=Object.fromEntries([...new Set(catalog.skills.map(s=>s.originalOrigin))].map(o=>[o,catalog.skills.filter(s=>s.originalOrigin===o).length]));
  const roles=Object.fromEntries([...allowedRoles].map(role=>[role,records.filter(r=>r.role===role).length]));
  const allIssues=[...issues,...records.flatMap(r=>r.issues.map(i=>`${r.id}: ${i}`))];
- return {checkedAt:new Date().toISOString(),clientDate:'2026-10-01',scope:'52 project skills, all current entry/prompts/references and exact imported source archives',
+ return {checkedAt:new Date().toISOString(),scope:`${records.length} project skills, current entry/prompts/references and exact imported source archives`,
   status:allIssues.length?'FAIL':'PASS_STRUCTURE_AND_CONFIGURATION',totalSkills:records.length,roles,origins,
   archivesVerified:records.reduce((n,r)=>n+r.sourceArchivesVerified,0),markdownFilesChecked:markdown.size,
   localLinksVerified:links.filter(l=>l.status==='EXISTS').length,templateLinksNotAsserted:links.filter(l=>l.status==='TEMPLATE'),

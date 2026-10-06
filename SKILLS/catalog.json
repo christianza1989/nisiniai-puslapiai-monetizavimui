@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "reviewedOn": "2026-10-01",
+  "reviewedOn": "2026-10-07",
   "commonContract": "PROJECT_CONTRACT.md",
-  "scope": "This project only; no new global skill installs",
+  "scope": "Versioned project skills; optional personal discovery mirrors use the project source",
   "skills": [
     {
       "id": "ai-follow-up-email-generator",
@@ -710,7 +710,18 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "8aab9d7603783a219d898e83f32da8121ace1de8ddf4426a095e054319449a65"
+      "entrySha256": "7eca5b786c1a4b6637e1d2d3c19a95b6e1535f65e01d600735ec6ff36c2dc80c"
+    },
+    {
+      "id": "niche-seo-geo-core",
+      "role": "core",
+      "entry": "niche-seo-geo-core/SKILL.md",
+      "prompt": null,
+      "discovery": "project-synchronized",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "0bdb079af946a2e035eaaec8ce9f4837b98884d3655c05f2f5d1d9e675f09c90"
     },
     {
       "id": "niche-site-audit",
@@ -721,7 +732,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "77dc16db748088e80e961a8f6bb8b705f5cf41954c8ff6e3f1b0bc37aae6529e"
+      "entrySha256": "8752ba951d9b42b2b27c172d7350dab0143a5b42d67f9639cfb07598930b1dde"
     },
     {
       "id": "niche-site-builder",
@@ -732,7 +743,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "61f114461337b26cbbfa2de6b11a0be713831d251a5bb283dddc3f518fa8fd49"
+      "entrySha256": "3a43b21a8b95e8802320976ad74ceb37a2011f25207f851cf14cde51ee5ec4d6"
     },
     {
       "id": "on-page-seo-checklist",

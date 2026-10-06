@@ -5,6 +5,8 @@ description: "Research a niche and autonomously build or review a seasonal SEO c
 
 # Niche content planner
 
+Use [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation/evidence contract](../niche-seo-geo-core/references/studio-integration.md) for demand/intent research, current Treg observations and SEO/GEO refresh. This planner retains the JSON/editorial workflow. Reuse current evidence per site, refresh what can change the decision, and mark unsupported/unmeasured facts instead of inventing demand. The studio loads this module directly and supplies private `siteData.seoResearch`.
+
 For this network read [the shared project skill contract](../PROJECT_CONTRACT.md). The studio injects this contract into both CLI modes with the instruction SHA-256; specialist helpers contribute to this workflow without replacing its JSON/publication boundaries.
 
 Build pages that support a concrete business demand test, then measure whether customers request that product/service. Reuse the process across sites; never reuse a site's facts, contact details or promises as another site's facts. Phase one combines an honest commercial hypothesis, useful decision content and a truthful inquiry path. Full commerce, supplier operations and bespoke tools follow measured demand.

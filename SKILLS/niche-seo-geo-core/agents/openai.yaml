@@ -1,0 +1,4 @@
+interface:
+  display_name: "Niche SEO & GEO Core"
+  short_description: "Treg tyrimai, SEO/GEO auditas ir nišų turinio strategija"
+  default_prompt: "Naudok $niche-seo-geo-core šios nišos SEO ir GEO auditui: ištirk paklausą bei konkurentus per Treg, sutikrink URL ketinimus ir paruošk įrodymais pagrįstas pataisas pagal autorizuotą biudžetą."

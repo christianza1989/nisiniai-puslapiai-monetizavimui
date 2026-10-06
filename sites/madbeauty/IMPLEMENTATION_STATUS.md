@@ -1,5 +1,12 @@
 # Madbeauty — dabartinis įgyvendinimas
 
+## Gyvas turinio pagrindo release — 2026-10-07
+
+Savininkas turinio sesijoje paprašė užbaigti reikalingą generavimo ir publikavimo infrastruktūrą. Gyva Worker versija **3ef780b8-bfde-436d-ae01-f2cb1f842e80**, runtime source797a2a2 / foundationc1f1593. [Release ir likę vartai](content-publication-20261007/README.md), [tikras kvitas](content-publication-20261007/RECEIPT.json). Viešas content-targets.json200:257 nacionaliniai core browse tikslaiREADY,48 plėtiniųPLANNED,0 miestųREADY, nes actual patvirtintos pasiūlos nėra. Visos257SSRroutes/canonical/noindex/103miestųoptions patikrintos, catalogue ne sitemap; tušti miestai404.
+
+Local92/92PASS, immutable V1 package7pages/20WebP išlaikytas; hosted17pages/124assets/7boundaries/3discovery ir medijos baitaiPASS. Actual desktop1280/mobile390 navigacija ir empty/Enter/0overflow, esamas gidas su tikru responsive vaizduPASS. Ta pati DO tapatybė/secrets, jokios DB migracijos/mail/DNS writes. Naujas privatus straipsnis neapproved ir nepublic; tikras full reviewed V2 home/retained/reference release/shadow/public priėmimas dar reikalingas. Sintetinis compiled laiko ribos testas nėra šio straipsnio review ar viešas V2 priėmimas. Private studio/generator valdo PR10. **Platesnis platformos upgrade tebėra PAUSED.**
+
+
 ## Aktualus straipsnių / katalogo pagrindas — 2026-10-06
 
 Savininkas po pilno plano pauzės paprašė pirmiausia paruošti pagrindą turinio sesijai rašyti teisingai susietus straipsnius. **Šio pavedimo režimas: lokalus veikiantis pagrindas + Workers candidate; pilnas atnaujinimas tebėra PAUSED.** [Sąsaja ir entrypoint](content-foundation-20261006/README.md), [V2 kontraktas](content-foundation-20261006/CONTRACT.md), [priėmimas](content-foundation-20261006/VALIDATION.md). Source savininkas `ai/madbeauty-content-foundation-20261006`, bazė b422165. Turinio sesija PR10 patvirtino, kad305 node /225 procedūrų,103 miestų ir resolverio eksportų pakanka žemėlapiui, sidecar ir struktūrizuotiems V2 juodraščiams.

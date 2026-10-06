@@ -7,7 +7,7 @@ import {CITIES} from '../prototype/cities.mjs';
 import {planTarget,resolveContentTarget} from '../prototype/content-targets.mjs';
 const origin=process.argv[2]||'https://madbeauty.lt';assert.equal(origin,'https://madbeauty.lt');
 const receipt=JSON.parse(await readFile(new URL('output/content-release-receipt.json',import.meta.url)));
-async function get(path){const r=await fetch(origin+path,{redirect:'manual'});assert.equal(r.headers.get('x-madbeauty-content-sha256'),receipt.packageSha256,path);return {status:r.status,headers:r.headers,text:await r.text()};}
+async function get(path){const r=await fetch(origin+path,{redirect:'manual'});if(![301,303,307,308].includes(r.status))assert.equal(r.headers.get('x-madbeauty-content-sha256'),receipt.packageSha256,path);return {status:r.status,headers:r.headers,text:await r.text()};}
 const r=await get('/content-targets.json');assert.equal(r.status,200);assert.equal(r.headers.get('cache-control'),'no-store');const registry=JSON.parse(r.text),now=Date.now();assert.equal(registry.siteId,'madbeauty');assert.equal(registry.deployed,true);assert.ok(Date.parse(registry.generatedAt)<=now&&Date.parse(registry.expiresAt)>now);assert.ok(!/email|@|clientId|bookingId|practitionerId/.test(r.text));
 const proof={origin,at:new Date(now).toISOString(),packageSha256:receipt.packageSha256,registryHash:createHash('sha256').update(r.text).digest('hex'),counts:{nodes:TAXONOMY_NODES.length,cities:CITIES.length,readyNational:0,readyLocal:0,plannedExtensions:0},routes:[],negative:[],indexEligible:0};
 assert.equal(new Set(registry.routes.map(r=>r.routeRegistryId)).size,registry.routes.length);

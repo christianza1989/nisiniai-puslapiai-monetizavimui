@@ -1,6 +1,6 @@
 # PhoneBridger: pirmas FB paklausos ir pardavimo bandymas
 
-2026-10-07 · PLANAS, ne aktyvi kampanija. Bendro [roadmapo](../../FB_AGENT_ROADMAP.md) M1–M6 vartai prieš M7. [Tyrimas](RESEARCH.md) atskiria gyvą pasiūlymą nuo source deklaracijų / nežinomybių.
+2026-10-07 · v2 PLANAS, ne aktyvi kampanija. Bendro [roadmapo](../../FB_AGENT_ROADMAP.md) aktualūs naudojamo kanalo M1–M6 vartai prieš M7. [Tyrimas](RESEARCH.md) atskiria gyvą pasiūlymą nuo source deklaracijų / nežinomybių. Originalus Page turinys ir16briefų: [PROFIT_ENGINE](PROFIT_ENGINE.md). V1grupių rezultatų logika išsaugota, v2prideda atskirą Page kelią.
 
 ## Komercinis pasirinkimas
 
@@ -29,11 +29,13 @@ Tai hipotezės, ne jau rasti pirkėjai. Konkrečios grupės bus parinktos per ak
 | B | Kasdien Android app naudojantis freelancer/smulkus operatorius; aiškus nepatogumas persijungiant | Pasiteirauti apie konkretų veiksmą, parodyti realų jo atitikmenį; app-only beta | Reklama prieš vartotojo taisykles, jautrūs ekranai/pokalbiai, pažadas automatizuoti jų verslą |
 | C | Desk-setup/produktyvumo kūrėjas ar rekomenduotojas; prašo naujos priemonės demonstracijai | Tikras setup ir funkcijos; tiriamas referral kelias | Ne buyer įrašas; mainai/komisija nepatvirtinti; affiliate click != sale |
 
-Pirmos kohortos kalba: pasirinkti vieną iš actual tinkamų LT arba EN bendruomenių, ne vienu metu visą pasaulį. Svetainė angliška; atsakymo kalba turi atitikti grupę ir žmogų. Pradėti A; B pridėti tik jei nėra pakankamai realių A signalų; C laikyti atskiru partnerių bandymu.
+Pirmos kohortos kalba: pasirinkti vieną iš actual tinkamų LT arba EN bendruomenių, ne vienu metu visą pasaulį. Svetainė angliška; atsakymo kalba turi atitikti grupę ir žmogų. Pradėti A; B pridėti tik jei nėra pakankamai realių A signalų; C laikyti atskiru partnerių bandymu. Nuosavo Page turiniui pradinis ENvariantas pagal svetainę, konkretus use-case ir bent vienas originalus tikras demonstration; grupės kalbos nekeisti mūsų naudai.
 
 Search seed, ne scraping nurodymas: „control Android with PC mouse“, „share keyboard with phone“, „DeskDock alternative“, „phone beside monitor“, „Android workstation“, lietuviški analogai. Kiekvieną originalų klausimą tikrinti: laikas, poreikis, įrenginiai, atsakymų aktualumas, ar mūsų reply dar prideda vertės. Nerinkti grupės žmonių į kontaktų sąrašą.
 
 ## Kelias nuo FB iki rezultato
+
+Page kohorta papildomai prasideda nuo originalaus įrašo/reel/patarimo, jo prasmingos diskusijos ir konkretaus device/use-fit. Toks postas neprivalo turėti prieš tai rasto buyer signalo. Tinkama PhoneBridger Page grupėje yra atskiras target/actor; UI narystė nėra universalus API. Toliau abi kohortos naudoja tą patį teisingą beta/pirkimo kelią, atskirai matuoja pradžios šaltinį ir neišgalvoja case iš like.
 
 1. Konkretaus tinkamo klausimo šaltinis → originali naudinga diskusija / leistinas komentaras. Pristatome ryšį su PhoneBridger, ne apsimetame patenkintu klientu.
 2. Vienas CTA: pažiūrėti demonstraciją arba išbandyti beta. Nuoroda tik jei grupė leidžia ir ji padeda klausimui; kitaip atsakyti be reklaminio link.
@@ -61,16 +63,22 @@ Tai mūsų išankstinės ribos, ne rinkos konversijos prognozės ar Meta leistin
 
 | Parametras | Pirmas pasirinkimas |
 | --- | --- |
-| Shadow |7 d., leidžiamos/sintetinės įvestys, gyvų writes0 |
-| Live intake |14 d. po visų reikalingų vartų; iki D21 paskutinės kohortos D7 review |
-| Grupės |3–5 aktualiai apžiūrėtos tinkamos; allowed personal kelias būtinas; Page bandymas atskirai |
-| Darbo laikas |Iki30min/d. vietinio agento research/analysis; iki20draft-attempts/d. pagal esamą mažesnę actual kvotą |
-| Live writes |Iki3 naujų naudingų viešų atsakymų/d. paskyroje ir iki1 į tą patį originalų thread; provider/group/site riba gali būti mažesnė ar0 |
+| Shadow |Iki7d., leidžiamos/sintetinės įvestys, writes0; vartai/coverage lemia užbaigimą, ne vien laukimo dienos |
+| Grupės intake |14d. po aktualių vartų; ikiD21 paskutinės kohortos D7 review |
+| Page intake |28d. originalaus turinio; ikiD35 paskutinės kohortos D7 review; neprivalo laukti neveikiančio personal kelio |
+| Grupės |3–5 apžiūrėtos tinkamos; konkretaus Page arba profilio leidžiamas kelias, membership ir post/comment vartai |
+| Nuosavo Page turinys |4originalūs įrašai/sav.,16per4sav. su assets;2demonstracijos+1patarimas+1diskusija pagal actual priimtus formatus |
+| Darbo laikas |Pradinis30min/d. research/analysis; media gamybos laikas atskirai apskaitomas ir prieš runner sutariamas bendras bounded cap. Iki20draft/model-attempts/d. bendroje paruošimo kvotoje, failed count irgi skaičiuojamas |
+| Proactive comments |Iki3naujų naudingų atsakymų/d. paskyroje, iki1naujo pitch į originalųthread; actual naujas inbound leidžia tinkamą pokalbio tęsinį |
+| Inbound public replies |Iki20/d. pagal tikrus klausimus ir mažesnes actual model/provider/budget ribas; backlog/priority matomi, ne pažadas atsakyti visiems iš karto |
+| Originalūs grupių postai |Pradinis iki1naudingo originalaus post/sav. pasirinktai grupei tik jeigu leidžia taisyklės; membership nėra reklamos/post teisė |
 | Messenger |Nė vieno unsolicited prospect DM; tik konkretus pakviestas ar inbound thread per priimtą transportą ir galiojantį scope |
 | Follow-up |Nėra automatinio bump po tylos; D7 klausimas tik jei žmogus prašė/leidžia channel policy, kitais atvejais laukti inbound |
 | Spend |Nauji ads/subscriptions0, jokių naujų mokamų duomenų ar hardware užsakymų; esamo CLI naudojimas ribotas ir matuojamas |
 
 Realus tinkamų signalų kiekis nėra pažadėtas. Trūkstant minimalaus pagrindo bandymui, pažymėti inconclusive ir persvarstyti kanalą, o ne kurti 42 generinius komentarus kvotai užpildyti.
+
+Page posting, grupių proactive, inbound ir modelio kvotos nėra sudedama teisė išnaudoti visas vienu metu. Taikomas mažesnis global/site/provider/budget cap, atskiras tikrų klausimų ir support prioritetas. Pradžioje nekurti netikrų postų vien16skaičiui. Gerai veikiantis formatas pakartojamas kaip naujas originalus naudingas use-case, ne kopijuojamas į visą grupių tinklą.
 
 ## Matavimo sutartis
 
@@ -85,6 +93,7 @@ Realus tinkamų signalų kiekis nėra pažadėtas. Trūkstant minimalaus pagrind
 | D7 retained |Kohortos narys realiai naudojo arba patvirtino grįžimą; unknown atskirai |
 | Paid |Serverinis live order/webhook su currency/amount ir unique ID; ne Session created ar test payment |
 | Contribution |Pajamos minus tiesioginės actual payment/hardware/shipping/refund/support/acquisition/AI sąnaudos, mokesčius traktuoti nuosekliai |
+| Creative outcome |Actual postID/format/tema ir insights periodas; meaningfulquestions/qualifiedvisits/activation/sales/supportcost/media/worktime susieti, unknown atskirai |
 
 Pseudonymous experiment/action ID ir allowlisted UTM; jokio FB žmogaus vardo/email/token URL. Pirmiausia patikrinti, ar forma ir checkout iš tiesų išsaugo šią informaciją. Cross-device/consent trūkumai lieka unattributed; nelaikyti referrer vienu pats sau tikslu. Kokybinis „kaip radote?“ gali papildyti, tačiau neapsimeta tiksliu click-to-sale susiejimu.
 
@@ -92,11 +101,13 @@ Darbo piltuvas ir buyer/partner/support keliai atskiri. Agentas dokumentuoja zer
 
 ## Tęsti, keisti, stabdyti
 
-Pradiniai sprendimo slenksčiai — hipoteziniai ir nekeisti jų atgaline data vien rezultatui pagražinti.
+Pradiniai sprendimo slenksčiai — hipoteziniai ir nekeisti jų atgaline data vien rezultatui pagražinti. Grupės14d. ir Page28d. yra atskiri eksperimentai. Page turinio sprendimas nepriklauso nuo rastų svetimų grupės įrašų skaičiaus.
 
 - **Inconclusive:** per14d. nerasta bent10 teisėtai kontaktuotinų tinkamų problemos signalų arba nėra patikimo įvykių matavimo. Nėra pakankamo pagrindo daryti rinkos išvadą; keisti kanalą / auditoriją ir išsaugoti pirmą rezultatą.
+- **Page inconclusive:** per28d. nepriimtas transportas, mažiau8patvirtintų originalių postų arba neįmanoma patikimai įvertinti klientų kelio. Tai ne įrodymas, kad produktas nereikalingas. Bent8postai leidžia tik preliminarią kūrybos diagnostiką; reach/visits denominator ir actual pirkėjų kokybė vis tiek būtini, o vien like nelaikomas paklausa.
 - **Tęsti mažą app kohortą:** bent5 unikalūs kvalifikuoti žmonės, bent3 realios aktyvacijos ir bent2 D7 grįžę naudotojai, critical rights/privacy/capability vartai nepramušti. Tai naudojimo signalas, dar ne pelningumas.
 - **Tęsti komercinį bandymą:** bent2 nepriklausomi realūs pirkėjai ir jų outcome/actual cost; antrai kohortai patikrinti, ar įnašas po aptarnavimo bei grąžinimų teigiamas. Mažas n neleidžia prognozuoti bendro CAC/LTV.
+- **Tęsti Page kryptį:** tokie pat actual buyer/use/sale vartai, atskiri nuo grupių kohortos, plus weekly creative/cost review. Didelis reach su nuliniais qualifiedoutcomes nėra laimintis komercinis variantas; siauras pelningas kampas gali būti vertingesnis. Nepriskirti visų pardavimų organiniam Page be attribution.
 - **Keisti pasiūlymą / onboarding:** problema reali, bet aktyvacija nepavyksta arba didžioji dalis grįžta prie nemokamo pakaitalo. Pirmiausia taisyti tikrą setup/pranašumo spragą, ne dauginti reklamas.
 - **Stabdyti konkretų kanalą iš karto:** permissions/rules nebegalioja, restriction, privacy incident, wrong recipient/site arba pasikartojantys duplicate sends. Refusal stabdo konkretaus žmogaus kelią; netikslus critical produkto teiginys blokuojamas iki faktinės pataisos.
 - **Neskaluoti hardware:** nežinoma supplier/shipping/return ekonomika ar reali fulfilment galimybė. App-only bandymas nėra hardware įrodymas.
@@ -106,10 +117,11 @@ Pradiniai sprendimo slenksčiai — hipoteziniai ir nekeisti jų atgaline data v
 - [x] Produktas / realus katalogas patikrinti read-only; nukreipimas app-first pagrįstas.
 - [ ] PHONEBRIDGER actual runtime identity/žinios ir acquisition policy.
 - [ ] Actual 3–5 bendruomenės, taisyklės, current platform rights arba priimtas atskiras Page kanalas.
+- [ ] PhoneBridger Page paruošimas,16originalių briefų/assets, calendar, publication/comments transportas ir realūs receipts.
 - [ ] Realus native/device-fit/asset įrodymas ir actual live copy įvertinimas.
 - [ ] Matavimas bei privacy/consent, serverinis paid feed ir actual sąnaudos.
 - [ ] Vietinis pipeline, GUI, single-account ir held-out tests.
 - [ ] Shadow, vienas transporto kvitas, kontroliuojamas M7.
-- [ ] D7/D21 kohortos review ir core pamokos su checkbox / evidence / commit.
+- [ ] D7/grupiųD21/PageD35 review, weekly creative/profit learning ir core pamokos su evidence/commit.
 
 Šį planą galima perkelti į aktualų `sites/phonebridger/ACQUISITION.md` tik sutartu to modulio source savininko langeliu. Šiame pavedime jo aktyvios šakos ir gyvas produktas neredaguoti. Pirmas įgyvendinimo tikslas — universalus vietinis kelias; pirma gyva niša vėliau PhoneBridger, ne automatinis visų svetainių įjungimas.

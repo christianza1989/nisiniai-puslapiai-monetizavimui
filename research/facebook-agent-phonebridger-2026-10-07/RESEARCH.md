@@ -63,3 +63,17 @@ Treg katalogo skill matytas, tačiau callable provider įrankių šioje sesijoje
 - Live atribucija ir privacy / consent / retention pagal naudojamą kanalą; cookie ar el. pašto buvimas nėra marketing subscription.
 
 Toliau vykdyti [roadmapą](../../FB_AGENT_ROADMAP.md), aktualias kainas/kanalų taisykles prieš live patikrinti dar kartą.
+
+## V2 — Page turinys, grupės ir diskusijos
+
+2026-10-07 savininkas paprašė platesnio pelno/aktyvausPage modelio. Nė vieno account action ar naujo runtime testo neatlikta. Šio tęsinio pirminiai šaltiniai:
+
+| Šaltinis | Perskaitytas įrodymas / riba | Plano sprendimas |
+| --- | --- | --- |
+| [Meta Join a Facebook group](https://www.facebook.com/help/ipad-app/401492893195007) | Search ištrauka apima oficialų tekstą apie Pages prisijungimą, admin draudimą, dalyvavimo/membership skirtumą. Direct open nukreipė login/temporaryblock; actual mūsų grupės UI netikrinta | Page-as-group kanalas planuojamas sąlyginai su exactactor/membership/rules; nepretenduoti į priimtą grupių API |
+| [Meta Original Creators2026](https://about.fb.com/news/2026/03/rewarding-original-creators-on-facebook/),2026-03 | Originalumo / meaningfultransform gairės perskaitytos; neprisiskiriame Meta bendrų growth skaičių kaip savo prognozės | Originalios mūsų demonstracijos ir savas naudingas turinys; reach nėra pažadas |
+| [Meta Spam2025](https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/),2025-04 su update | Fake/coordinated engagement ir netinkamas spam mažina vertę pagal Meta tekstą | Jokio fake cross-Page engagement, copybroadcast ar nereikšmingų linkcomment |
+| [Meta Engagement bait](https://about.fb.com/news/2017/12/news-feed-fyi-fighting-engagement-bait-on-facebook/),2017su vėlesniaisupdate | Atskiriamas dirbtinis engagementbait ir tikras patarimo/rekomendacijos klausimas | Naudingi diskusijų klausimai leidžiami; „komentuok+“, tagbait nėra augimo taktika |
+| [Pages posts](https://developers.facebook.com/docs/pages-api/posts/), [Reels publishing](https://developers.facebook.com/docs/video-api/guides/reels-publishing/), [Page webhooks](https://developers.facebook.com/docs/pages-api/webhooks-for-pages/) | Direct429; aktualūs endpoint/permission/media/metrics scope nepriimti | Konkretaus formato transportas priimamas per actual dokumentus/prieigą vėliau; neteigti, kad visi post/media/insights metodai prieinami |
+
+Šio tyrimo išvada: būtinas originalus Page kalendorius ir public discussion/inbound kelias, tačiau Page UI funkcija nėra bendras leidimas programiškai veikti grupėse. Turinio/konversijos/kaštų darbo sutartis [PROFIT_ENGINE](PROFIT_ENGINE.md). Nepradėtos kampanijos, Page kūrimas, subscription, creator contracts ar paid ads.

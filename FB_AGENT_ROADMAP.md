@@ -1,14 +1,16 @@
 # Facebook agentas: bendras core ir PhoneBridger pilotas
 
-2026-10-07 · v1 · Būsena: PLANAS, gyvi FB adapteriai dar nepriimti.
+2026-10-07 · v2 · Būsena: PLANAS, gyvi FB adapteriai dar nepriimti. V1 perdavimo įrodymai išsaugoti; v2 papildo originalų Page turinį, Page dalyvavimą grupėse ir pelno peržiūrą.
 
 Savininko pavedimas: parengti pilną įgyvendinimo planą, tada išbandyti PhoneBridger versle. Šis dokumentas yra aktualus FB darbų roadmapas. [Ankstesnis planas](FB_ACQUISITION_PLAN.md) saugo architektūros ir autorizacijos kontekstą; [modulio sutartis](agent-business-core/FACEBOOK_MODULE.md) aprašo esamą kodą. Naujai neužsakomi 30 nepriklausomų botų ar antras CRM.
 
 Produkto tyrimas ir tikrinimo ribos: [RESEARCH](research/facebook-agent-phonebridger-2026-10-07/RESEARCH.md). Pirmo verslo auditorijos, pasiūlymai ir ekonomika: [PHONEBRIDGER-PILOT](research/facebook-agent-phonebridger-2026-10-07/PHONEBRIDGER-PILOT.md).
 
+Page kalendorius, turinio/distribucijos/komentarų ir ekonomikos sutartis: [PROFIT_ENGINE](research/facebook-agent-phonebridger-2026-10-07/PROFIT_ENGINE.md). Skaityti jį kuriant aktyvų Page ar platesnį FB augimo kanalą;16 PhoneBridger originalių briefų yra ten. Tai detalus priedas, ne antras CRM/roadmapas.
+
 ## Rezultatas, kurį statome
 
-Agentas randa leistinus konkretaus poreikio signalus, pasirenka tinkamą nišą, padeda žmogui pagal tikrus verslo faktus ir nukreipia į vieną tinkamą veiksmą. Jis seka, ar žmogus išbandė produktą, pateikė konkrečią užklausą, nusipirko ir liko patenkintas. Kasdienio įrašų skaičiaus maksimizavimas nėra tikslas.
+Agentas augina konkretaus verslo Page originaliu naudingu turiniu, palaiko jo diskusijas ir dalyvauja tinkamose grupėse kaip Page, kai tai leidžiama. Jis taip pat randa leistinus konkretaus poreikio signalus ir nukreipia į tinkamą veiksmą. Tikslas — pakartojamai pelningas kliento kelias: tinkamas susidomėjimas → išbandymas/užklausa → pirkimas → actual naudojimas ir aptarnavimas. Reach/likes/comments rodo sklaidą, tačiau neįrodo pelno. Vertiname pardavimo įnašą po acquisition, media, AI, support, fulfilment ir grąžinimų sąnaudų.
 
 Vienas paskyros koordinatorius aptarnauja visą tinklą. Nišų specialistai yra pagal poreikį paleidžiamos užduotys su savo faktais, ne atskiros prisijungusios FB paskyros. Asmeninio profilio naršyklę valdo vienas vykdytojas. Page API pokalbiai turi atskirą eiliškumą ir tiekėjo ribas. Niša turi savo įjungimą, kanalus, pasiūlymą, biudžetą ir matavimą.
 
@@ -33,6 +35,7 @@ Esamas 20/d. draft limitas yra mūsų darbo kvota, ne Meta leidimas ar siuntimo 
 | Kanalas | Paskirtis | Dabartinė būsena | Įgyvendinimo vartas |
 | --- | --- | --- | --- |
 | Asmeninis profilis / grupės | Aktualūs klausimai, naudingi komentarai, tinkamų grupių atranka | Savininkas anksčiau autorizavo įprastus veiksmus; gyvas adapteris neįgyvendintas | Atskirai patvirtinta konkretaus automatizavimo / duomenų naudojimo teisė, grupės taisyklės, esama prisijungusi sesija |
+| Verslo Page / kitų grupės | Atpažįstama verslo tapatybė, naudingi komentarai ir leidžiami originalūs įrašai | Page participation UI galima grupėse, kurios priima Pages; mūsų adapteris nepriimtas | Konkretaus Page/grupės narystė, action/format/rules, exact actor ir actual transporto teisės; Pages API nėra universalus grupių publishing API |
 | Asmeninis Messenger | Pokalbis konkretaus žmogaus paprašytu klausimu | Nėra Page API pakaitalas | Konkretaus pokalbio teisė ir tinkamas leidžiamas transportas; nėra masinių DM |
 | Verslo Page įrašai / komentarai | Originalios demonstracijos, atsakymai į savo Page aktyvumą | Tikslinis adapteris | Tikra valdoma Page, aktualios programos teisės ir provider dokumentai |
 | Page Messenger | Atsakymai į tinkamą inbound, kvalifikavimas, tęstinumas | Tikslinis adapteris | App / token / webhook patikra, konkretaus gavėjo scope ir aktualus siuntimo langas |
@@ -48,6 +51,7 @@ Jei personal kelio vartas neišspręstas, jo collector / join / comment / DM lie
 | --- | --- | --- |
 | Koordinatorius | Aktualus mandatas / policy, paskyros eilė, pauzės, limitai, adapterio kvitai | Teisės keisti produktą ar savarankiškai kelti biudžetą |
 | Bendruomenių tyrėjas | Leistini šaltiniai → grupių kandidatai, taisyklės, aktualumas | Asmenų sąrašų ir viso inbox eksporto |
+| Page turinio planuotojas | Aktualus pasiūlymas, realūs klausimai / assets → slenkantis30d. originalių postų kalendorius ir creative hipotezė | Fiktyvių buyer signalų originaliam Page postui sukurti |
 | Routeris | Minimalus signalas → siteId, buyer / supplier / referral / support / unknown | Spėjimo, kad profesija ar grupės narystė įrodo pirkimo ketinimą |
 | Nišos specialistas | Patvirtinti faktai ir leistinas kontekstas → naudingas atsakymas, vienas CTA | Kitų nišų klientų, paskyros tokenų, nepatvirtintų pažadų |
 | Patikra | Teiginiai, leidimai, pasikartojimai, tikslas → vykdyti / blokuoti / reikia fakto | Galimybės savo balu panaikinti trūkstamą teisę |
@@ -63,6 +67,7 @@ Planuojama suderinama esamos policy plėtra, ne jau veikiantis JSON/API. Migrati
 | Konfigūracijos grupė | Reikalavimas |
 | --- | --- |
 | Tapatybė | Vienas stabilus siteId ↔ esamas business_id ↔ dabartinis canonical host; jokio naujo verslo vien dėl domeno alias |
+| Publikavimo tapatybė | Konkretus PageID/profile actor pagal target; Page ownership, grupės Page acceptance ir membership tikrinami atskirai |
 | Faktai | Revision-bound approved žinios, atskiras turinio ir kontaktų hash, pasiūlymo versija, kalba, vykdymo būsena |
 | Kanalai | Atskiri research / collect / join / comment / personal-DM / Page-publish / Page-reply leidimai; default OFF |
 | Mandatas | Savininko autoriza, action scope, paskyra/Page, galiojimas ir atšaukimas; ne kiekvieno įprasto atsakymo approval |
@@ -70,6 +75,7 @@ Planuojama suderinama esamos policy plėtra, ne jau veikiantis JSON/API. Migrati
 | Darbo ribos | Globali paskyros kvota + mažesnė site kvota; modelio kvota, laiko langai, signalų galiojimas, aktyvių pokalbių riba |
 | Pinigai | Naujų subscription / ads spend=0; aiškus esamo CLI naudojimo limitas; mokėjimas ar biudžeto padidinimas turi savo autoriza |
 | Bandymas | experimentId, auditorija, offerId, CTA URL, pradžia / pabaiga, tęsti / stop kriterijai |
+| Originalus turinys | Post purpose, format, assets/rights/review, publishAt/timezone, providerPostId/permalink; atskira paskirtis nuo signal reply |
 | Saugoma būsena | Pause, suppression, retention, audit ir prieigos politika; nelaikyti tokenų studijos/public pakete |
 
 Įjungimas turi reikšti priimtą kanalą, ne vien `enabled=true`. Viena nuoroda tarp asmeninio FB ID ir Page PSID nesukuria siuntimo teisės. Naujos nišos išlieka defaultoff; šis FB modulis nekeičia jų F1 apimties.
@@ -109,10 +115,12 @@ Esamą `/operator/facebook-ui` plėsti, ne kurti antrą dashboard.
 | --- | --- |
 | Bendra būsena | Paskyra/Page, visi site toggles, dabartinis mode, global pause, lease savininkas ir paskutinė sėkminga patikra |
 | Kanalai / grupės | Tikra URL, tema/kalba, patikrintos taisyklės, narystė, kiekvieno veiksmo teisė, apribojimo priežastis |
+| Page kalendorius | Originalo briefas ir preview, planned/scheduled/published, exact actor, datos, moderation/blocked priežastis ir tikras permalink |
 | Signalai | Kodėl buyer / support / referral, šaltinio laikas, expiry, niche fit ir excluded reason |
 | Veiksmų eilė | Originalo nuoroda, draftas, fact/policy versijos, siūlomas CTA, kvota, receipt / uncertain ir reconciliation |
 | Pokalbiai | Tik leistinas scoped thread, next action, tikro inbound Case nuoroda, refusal/pause |
 | Bandymas | Funnel su denominatoriais, D7 naudojimas, tikri pirkimai/refund, laiko bei pinigų sąnaudos |
+| Turinio rezultatai | Creative/format/tema, actual platform metrics su laiku/apibrėžimu, kvalifikuotas srautas, pardavimai, support ir įnašas; unknown atskirai |
 | Patikros | Priėmimo scenarijai, paskutinis įrodymas, aktualūs blockers ir kalibravimo versija |
 
 Pauzė yra tikras serverio vartas, ne vien pilkas mygtukas. Site perjungimas išvalo seną kontekstą; live ir test duomenys vizualiai ir technologiškai atskirti. Paskyros kredencialų nėra URL/localStorage/modelio prompte. Pakanka vieno darbuotojo tab; per-nišos analitika nereikalauja 30 FB tabų.
@@ -127,7 +135,7 @@ Agentas gali siūlyti / lokaliai gerinti atrankos taisykles, retrieval ar tekstu
 
 ## Įgyvendinimo roadmapas su priėmimo vartais
 
-Checkbox uždaryti tik su datuotu įrodymu ir commit. M0 paruoštas šiame dokumente; M1–M8 yra būsimi darbai, ne veikiančios API. Įgyvendinimo seka M1 → M2 → M3 → M4 → M5 → M6 → M7 → M8. Personal ir Page teisių vartai sprendžiami atskirai.
+Checkbox uždaryti tik su datuotu įrodymu ir commit. M0 paruoštas; M1–M8 yra būsimi darbai, ne veikiančios API. Pirma M1+M2 sutartis ir vietinis pilnas kelias, tada vienas M3 transportas. M4 planuoklis ir M5 matavimas gali būti kuriami lygiagrečiai savo suderintose failų srityse. M6+M7 priėmimas taikomas konkrečiam naudojamam kanalui: nereikia laukti neįgyvendinamo personal collector, kad priimtume Page šaką. Nepaleidžiama šaka lieka OFF ir neuždaryta. M8 — po realaus bandymo išvadų.
 
 ### M0 — faktinė bazė ir planas
 
@@ -142,7 +150,8 @@ Checkbox uždaryti tik su datuotu įrodymu ir commit. M0 paruoštas šiame dokum
 - [ ] Užfiksuoti produkto paskelbtą versiją, tikro telefono suderinamumo įrodymus, žinomus ribojimus ir aktualų katalogo edition.
 - [ ] Užregistruoti savininko esamą mandatą, paskyrą ir konkrečių kanalų teisių evidence; personal/Page atskirai.
 - [ ] Parinkti 3–5 realiai apžiūrėtas tinkamas bendruomenes; užrašyti taisykles ir trijų sprendimų priežastis: naudoti / atidėti / atmesti.
-- [ ] Parinkti realią valdomą PhoneBridger Page, jei toks kanalas naudojamas; nedaryti prielaidos, kad ji egzistuoja.
+- [ ] Parinkti realią valdomą PhoneBridger Page, parengti jos brand/contact/CTA/pinned-start/inbound kelią; nedaryti prielaidos, kad ji egzistuoja.
+- [ ] Kiekvienai pasirinktai grupei patikrinti Page participation, membership, exact actor ir post/comment/link/format vartus; profilio nenaudoti Page draudimui apeiti.
 - [ ] Užfiksuoti app-only pirmą pasiūlymą, beta CTA ir experiment limits; kaina tik iš serverio catalog.
 
 Priėmimas: vienas faktų/teisių manifest, kiekvieno kanalo ON/OFF priežastis, nė vieno naujo live veiksmo vien dėl config. Trūkstant personal teisių, tęsti vietinį ir galimą Page kelią.
@@ -150,10 +159,12 @@ Priėmimas: vienas faktų/teisių manifest, kiekvieno kanalo ON/OFF priežastis,
 ### M2 — vietinis end-to-end kelias ir GUI
 
 - [ ] Nedidelė esamos policy migracija, atskiri action capabilities ir mandatas; defaultoff išlaikytas.
-- [ ] Signalas → routeris → approved žinios → draftas → patikra → simulated receipt → tikras inbound fixture CaseSource.
+- [ ] Signalas → routeris → approved žinios → draftas → patikra → simulated receipt → aiškiai sintetinis inbound fixture CaseSource.
+- [ ] Originalus content job → asset/claim review → scheduled post → simulated receipt → comment fixture → scoped reply; nereikia fiktyvaus buyer signal.
 - [ ] Būsimo dispatch registras atskirai nuo dabartinio preparation status.
 - [ ] D1/commerce adapterio ir agentų CaseSource dedup kontraktas; neprisiimti, kad PhoneBridger jau yra agentų runtime klientas.
 - [ ] GUI bendra/persite pauzė, provenance, action reason ir funnel; 390 px ir desktop patikra.
+- [ ] Page kalendorius/preview, grupių Page/profile matrica ir creative contribution ekranas tame pačiame GUI.
 - [ ] Secret, prompt injection, cross-site, auth, data deletion ir backward-compatibility testai.
 
 Priėmimas: tik izoliuoti test duomenys; operatoriui matomas pilnas kelias; nepasikeitę kitų nišų policy ir klientų duomenys.
@@ -161,6 +172,7 @@ Priėmimas: tik izoliuoti test duomenys; operatoriui matomas pilnas kelias; nepa
 ### M3 — vienas patikimas transportas
 
 - [ ] Pirmiausia priimti vieną prieinamą teisėtą kanalą. Oficialiam Page: token scope, webhook signature/challenge, recipient identity, event dedup ir current provider policy.
+- [ ] Priimtam Page post formatui actual publish/schedule/media/completion receipt; originalo permalink ir komentarų inbound/reply, ne vien Messenger.
 - [ ] Jei personal adapteris leidžiamas: vienas browser lease su fencing, exact page/thread recheck ir žmogaus darbo suspend; nekopijuoti slapukų.
 - [ ] Idempotency + durable outbox + receipt; timeout → uncertain → check-only reconciliation.
 - [ ] Retry tik patvirtintai neįvykdytam retryable darbui; provider limit / restriction → pause/backoff.
@@ -174,6 +186,8 @@ Priėmimas: actual kanalo kvitas, one-write ir retry įrodymai; Page nėra perso
 - [ ] Collector tik leidžiamiems šaltiniams; source-specific cursor, timestamp, expiry ir rules refresh.
 - [ ] Nėra bendro grupių scrape endpoint pagal seną tutorial; actual API/capability patikrinta.
 - [ ] Bounded runner: tinkamų darbų tick, paskyros ir site fairness, server-side kvotos, laiko limitas ir cost ledger.
+- [ ] Social content ir provider scheduled job turi vieną scheduling autoritetą; publishAt/asset/offer pasikeitimo, pendingmoderation ir restart scenarijai.
+- [ ] Viral inbound triage ir backlog: atskira proactive ir inbound kvota, actual support nepasimeta turinio eilėje.
 - [ ] Webhook greitai durable-ack, pokalbis apdorojamas atskirai; cron nenaudojamas kiekvienam chat reply.
 - [ ] Local PC miego / išjungimo elgsena aprašyta; nepažadėti 24/7 be actual host. Cloud worker optional atskiras sprendimas.
 - [ ] Retention ir suppression išbandyti visame FB pipeline.
@@ -188,25 +202,28 @@ Priėmimas: originalo duomenų teisės ir aktualumas, restart nepraleidžia ar n
 - [ ] Patikrinti katalogo realią CTA bei demo fallback; reklamai naudojami tik realaus produkto įrodymai.
 - [ ] Paid-live webhook/receipt/order outcome read-only feed su site isolation; test orders nepakliūva į funnel.
 - [ ] Refund/dispute/fulfilment sąnaudos ir actual marža; supplier/inventory/payout unknown žymimi aiškiai.
+- [ ] Creative/campaign/action atribucija, insights apibrėžimai/laikas, acquisition/media/AI/worktime kaštai; first/last/assisted/unattributed nepadvigubina sale.
 
 Priėmimas: viena užklausa / aktyvacija / pardavimas skaičiuojami tik kartą, atribucija neapsimeta tikslia ten, kur duomenų nėra.
 
 ### M6 — kalibracija ir shadow
 
 - [ ] 80 situacijų rinkinys, held-out dalis, expected gates ir actual rezultatai.
-- [ ] 7 kalendorinių dienų bounded shadow su leistinomis įvestimis, nesiunčiant komentarų / DM.
+- [ ] Bounded shadow su leistinomis įvestimis, nesiunčiant komentarų / DM/postų. Pradinis iki7d. nėra tuščio laukimo reikalavimas: vartus/coverage pasiekus baigti anksčiau su įrodymais; dėl datos vartai neužsidaro.
 - [ ] Peržiūrėti false positives / negatives, nereikalingus CTA, pasikartojimus, kalbą ir pending unknown.
 - [ ] Patvirtinti saugius originalius reply variantus ir 3 realaus produkto vizualus; ImageGen tik iliustracijai, ne įrodytam veikimui.
+- [ ]16 originalių Page briefų su auditorija/use-case/asset/fact/CTA; pradinei4/sav. kadencijai actual priimti formatai, ne fiktyvūs produkto įrodymai.
 
 Priėmimas: critical tests PASS ir held-out atrankos kokybė; shadow neskelbiamas demand testu. Tai kalibravimo etapas, ne nuolatinis rankinio approval reikalavimas.
 
 ### M7 — pirmas kontroliuojamas live bandymas
 
 - [ ] Tik PhoneBridger ir priimti kanalai; kitų nišų toggles OFF.
-- [ ] 14 dienų eksperimentas; darbo ir veiksmų cap iš piloto, jokio naujo ads/subscription spend.
+- [ ] Grupės:14d. poreikių testas / D21 paskutinio dalyvio D7. Page:28d. originalaus turinio testas / D35 paskutinio dalyvio D7. Kanalai vertinami atskirai, jokio naujo ads/subscription spend.
 - [ ] Kiekvieno leidžiamo įprasto veiksmo receipt ir factual context; nereikalauti savininko patvirtinti kiekvieną komentarą.
 - [ ] Daily savikontrolė, refusal/complaint/restriction pause, reikšmingų kliūčių pranešimas.
-- [ ] D7 rezultatų peržiūra ir galutinė kohortos peržiūra iki D21; aktuali Page messaging teisė tikrinama kiekvienam tęstiniam atsakymui.
+- [ ] D7/grupiųD21/PageD35 peržiūra; aktuali Page messaging teisė tikrinama kiekvienam tęstiniam atsakymui.
+- [ ] Weekly learning: content/kanalo profit review, viena gerinimo hipotezė ir kontrolė; ne winner paskelbimas iš likes ar dviejų sale.
 - [ ] Tęsti / keisti / stabdyti sprendimas pagal konkrečius veikiančio produkto ir mokėjimo įrodymus.
 
 Priėmimas: atsiskaityta už kiekvieną signalą ir realų veiksmą; nėra launch/sales/10/10 deklaracijos iš sintetinių duomenų.
@@ -217,6 +234,7 @@ Priėmimas: atsiskaityta už kiekvieną signalą ir realų veiksmą; nėra launc
 - [ ] Pridėti antrą nišą su savo BUSINESS/ACQUISITION, kanalų teisėmis ir faktų projekcija.
 - [ ] Patikrinti paskyros fairness, bendrą suppression ir scoped CRM; ne daugiau tabų kaip pakaitalas izoliuotumui.
 - [ ] Dokumentuoti core/skill pamokas pagal CORE_IMPROVEMENT; vienos nišos copy netampa bendru šablonu.
+- [ ] Creator/referral ar nuosavos bendruomenės testas tik pagrindus actual poreikį/teises/sutartį; nedauginti tuščių grupių ir fake cross-Page engagement.
 
 Priėmimas: įrodytas perkėlimas į kitą verslą, ne vien PhoneBridger hardcode; naujų nišų plėtra tik pagal jų paklausą.
 
@@ -246,6 +264,18 @@ Visi žemiau NOT RUN šiam naujam transportui. Kiekvienas turi testID, exact com
 - [ ] FB-20 Kasdienio limito / biudžeto pasiekimas sustabdo darbą, failed model attempts suskaičiuojami.
 - [ ] FB-21 Payout/supplier/native licence nežinomybių agentas nepaverčia delivery pažadu.
 - [ ] FB-22 Esami formos / pašto / kitų nišų / SEO kontraktai nepakeisti arba prasmingai regresiškai patikrinti.
+- [ ] FB-23 Page-denied / nepatvirtinta grupė ir wrong actor užblokuoja Page-as-group write; profilio fallback neapeina draudimo.
+- [ ] FB-24 Originalus Page postas kuriamas content job, ne fake buyer signal; post/reply/Messenger teisės atskiros.
+- [ ] FB-25 Scheduled/submitted/pendingmoderation/visible status turi actual receipt; restart ir timeout nesukuria antro post.
+- [ ] FB-26 Stale price/fact/asset/rights blokuoja scheduled post; publishAt pakeitimas nepalieka dviejų schedule autoritetų.
+- [ ] FB-27 Kritinė tikra patirtis nepaslepiama dėl reputacijos; reply leidimas nesuteikia delete/hide.
+- [ ] FB-28 Fake social proof, duplicate broadcast ir engagement bait atmesti; prasmingas klausimas neblokuojamas vien dėl comment CTA.
+- [ ] FB-29 Viral spike išlaiko dedup/caps/site fairness/support ir matomą backlog be neriboto spend.
+- [ ] FB-30 Unknown/deprecated insights lieka unknown, metrikų periodai ir unique reach nesuplakami.
+- [ ] FB-31 Vienas sale per first/last/assisted nesuskaičiuojamas kelis kartus; unknown source nevadinamas tiksliu FB CAC.
+- [ ] FB-32 Revenue/holder turnover nėra profit; currencies/tax/refund/support/media/AI/partner costs pateikiami nuosekliai, nežinomybės neužmaskuotos.
+- [ ] FB-33 Social post/media nepublikuoja website Article release, actual accepted formatas patikrintas; WebP nėra Meta formato įrodymas.
+- [ ] FB-34 Proactive vieno thread cap netrukdo tikram autorizuotam reply; tylos bump ir nepakviesti DM neatliekami.
 
 ## Nemokamo starto ir veikimo sprendimas
 

@@ -5,6 +5,7 @@ import template from '../prototype/public/app.html';
 import {trustPages} from '../prototype/public/product-trust.mjs';
 import inventory from '../SCREEN_INVENTORY.json';
 import assets from './output/asset-paths.json';
+import release from './output/content-release-receipt.json';
 import {publicModuleEntries,moduleDiscovery,moduleSchema} from './public-modules.mjs';
 import {routeTitle} from './route-titles.mjs';
 import {activeNode,createContentTargetRegistry} from '../prototype/content-targets.mjs';
@@ -12,6 +13,7 @@ import {catalogueRoute,renderCataloguePage} from '../prototype/catalogue-page.mj
 export {MadbeautyPlatform};
 const assetPaths=new Set(assets);
 const headers={"X-Content-Type-Options":"nosniff","Referrer-Policy":"strict-origin-when-cross-origin","Content-Security-Policy":"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"};
+headers['X-Madbeauty-Content-SHA256']=release.packageSha256;
 const json=(data,status=200)=>Response.json(data,{status,headers:{...headers,'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});
 function matchRoute(path){
  for(const screen of inventory.screens.filter(s=>s.route)){

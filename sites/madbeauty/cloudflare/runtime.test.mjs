@@ -1,4 +1,4 @@
-import {articleFixture} from '../content-foundation-20261006/fixture.mjs';
+import {articleFixture,signFixture} from '../content-foundation-20261006/fixture.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,readFile} from 'node:fs/promises';
@@ -11,6 +11,29 @@ const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/li
 const {Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
 const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}});
 const script=bundle.outputFiles[0].text,origin='https://madbeauty.test';
+test('Compiled Workers publication boundary excludes future body, links, schema, JSON, discovery and all five uploaded media until exact due time',async()=>{
+ const pkg=articleFixture(),article=pkg.pages[1],initial=JSON.parse(await readFile(new URL('../content/initial-release/content-package.json',import.meta.url),'utf8'));
+ article.media=initial.pages.find(p=>p.type==='guide').media;assert.equal(article.media.length,5);article.editorial.featuredImageId=article.media[0].id;
+ const publishAt=Date.parse('2026-10-13T07:00:00Z');article.publishAt=new Date(publishAt).toISOString();article.editorial.datePublished=article.publishAt;
+ pkg.pages[0].body.push({type:'richParagraph',content:[{type:'link',text:'Būsimas gidas',target:{kind:'page',pageId:article.id}}]});signFixture(pkg);
+ const media=new Map(await Promise.all(article.media.map(async m=>[m.src,await readFile(new URL('../content/initial-release/assets/'+path.basename(m.src),import.meta.url))])));
+ for(const now of [publishAt-1,publishAt]){
+  const future=now<publishAt,v2=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[{name:'isolated-publication-clock',setup(b){
+   b.onLoad({filter:/cloudflare[\\/]worker\.mjs$/},async a=>({contents:(await readFile(a.path,'utf8')).replace('contentProjection(Date.now(),registry)',`contentProjection(${now},registry)`),loader:'js'}));
+   b.onLoad({filter:/output[\\/]content-package\.json$/},()=>({contents:JSON.stringify(pkg),loader:'json'}));
+  }}]});
+  const f=await fixture({RELEASE_MODE:'production'},v2.outputFiles[0].text,async request=>{const bytes=media.get(new URL(request.url).pathname);return bytes?new Response(bytes,{headers:{'Content-Type':'image/webp'}}):new Response('Not found',{status:404});});
+  try{
+   const route='/'+article.slug,response=await f.mf.dispatchFetch(origin+route),html=await response.text();assert.equal(response.status,future?404:200);
+   const home=await(await f.mf.dispatchFetch(origin+'/')).text(),json=await(await f.mf.dispatchFetch(origin+'/content.json')).text();
+   if(future){assert.ok(!html.includes(article.title));assert.ok(!html.includes('application/ld+json'));assert.ok(!home.includes('href="https://madbeauty.lt'+route+'"'));assert.ok(!json.includes(article.id));}
+   else {assert.ok(html.includes(article.title));assert.ok(html.includes('"@type":"Article"'));assert.ok(home.includes('href="https://madbeauty.lt'+route+'"'));assert.ok(json.includes(article.id));assert.match(html,/srcset=/);}
+   for(const path of ['/sitemap.xml','/llms.txt','/llms-full.txt']){const text=await(await f.mf.dispatchFetch(origin+path)).text();assert.equal(text.includes('https://madbeauty.lt'+route),!future,path);}
+   for(const m of article.media){const image=await f.mf.dispatchFetch(origin+m.src);assert.equal(image.status,future?404:200,m.src);if(!future)assert.deepEqual(Buffer.from(await image.arrayBuffer()),media.get(m.src));}
+   assert.equal((await f.mf.dispatchFetch(origin+'/content-assets/madbeauty/unknown.webp')).status,404);
+  }finally{await f.close();}
+ }
+});
 test('Workers V2 article→catalogue registry→SSR supply; withdrawal removes link, empty city404 and private data',async()=>{
  const v2=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[{name:'isolated-v2-package',setup(b){b.onLoad({filter:/output[\\/]content-package\.json$/},()=>({contents:JSON.stringify(articleFixture()),loader:'json'}));}}]});
  const f=await fixture({RELEASE_MODE:'production'},v2.outputFiles[0].text);try{
@@ -34,9 +57,9 @@ test('Workers V2 article→catalogue registry→SSR supply; withdrawal removes l
   const current=await(await f.mf.dispatchFetch(origin+'/content-targets.json')).json();assert.ok(!current.targets.some(t=>t.id.endsWith(':vilnius')));
  }finally{await f.close();}
 });
-async function fixture(bindings={},fixtureScript=script){
+async function fixture(bindings={},fixtureScript=script,assetService=async()=>new Response('Not found',{status:404})){
  const storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-workers-')),mails=[];let failMail=false;
- const start=()=>new Miniflare({modules:true,script:fixtureScript,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true}},durableObjectsPersist:storage,images:{binding:'IMAGES'},bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',SESSION_SECRET:'local-test-only-secret-no-production-access',OPERATOR_EMAIL:'operator@example.com',...bindings},serviceBindings:{MAIL_TRANSPORT:async request=>{if(failMail)return new Response('Unavailable',{status:503});mails.push(await request.json());return new Response('Accepted');},ASSETS:async()=>new Response('Not found',{status:404})}});
+ const start=()=>new Miniflare({modules:true,script:fixtureScript,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true}},durableObjectsPersist:storage,images:{binding:'IMAGES'},bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',SESSION_SECRET:'local-test-only-secret-no-production-access',OPERATOR_EMAIL:'operator@example.com',...bindings},serviceBindings:{MAIL_TRANSPORT:async request=>{if(failMail)return new Response('Unavailable',{status:503});mails.push(await request.json());return new Response('Accepted');},ASSETS:assetService}});
  let mf=start();
  const browser=()=>{
   let cookie='',csrf='';

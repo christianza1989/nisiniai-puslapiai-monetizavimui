@@ -1,10 +1,11 @@
-import {readFile,writeFile,mkdir,copyFile,readdir,stat} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,copyFile,readdir,stat,mkdtemp,rm,rename} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {admitMadbeautyPackage} from '../content/intake.mjs';
 import {verifyContentRelease} from '../../../content-studio/src/content-release.mjs';
-const site=path.resolve(import.meta.dirname,'..'),core=path.resolve(site,'../../../dovanos-memorycasting'),output=path.join(import.meta.dirname,'output'),assets=path.join(output,'assets-release');
+import {admitPublicationRelease} from '../content/release-admission.mjs';
+const site=path.resolve(import.meta.dirname,'..'),core=path.resolve(site,'../../../dovanos-memorycasting'),output=path.join(import.meta.dirname,'output');
 const {validateContentPackage}=await import(pathToFileURL(path.join(core,'scripts/content-package-core.mjs')));
 const args=process.argv.slice(2),arg=name=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
 const packagePath=arg('--content-package')?path.resolve(arg('--content-package')):path.join(site,'content/initial-release/content-package.json');
@@ -14,8 +15,10 @@ const pkg=validateContentPackage(JSON.parse(raw));
 await verifyContentRelease(path.dirname(packagePath),validateContentPackage);
 const network=JSON.parse(await readFile(path.join(core,'config/niche-network.json'),'utf8'));
 admitMadbeautyPackage(pkg,{operatorName:network.contactsBySite?.madbeauty?.operatorName||network.operatorName,email:network.contactsBySite?.madbeauty?.email||network.defaultEmail});
-await mkdir(assets,{recursive:true});
-await writeFile(path.join(output,'content-package.json'),raw);
+admitPublicationRelease(pkg);
+await mkdir(output,{recursive:true});
+// Build an exact asset edition: never carry media/modules from a previous release.
+const assets=await mkdtemp(path.join(output,'assets-build-'));
 const publicRoot=path.join(site,'prototype/public');
 for(const entry of await readdir(publicRoot)){
  if(!/\.(?:css|mjs|svg)$/.test(entry)||['kit.mjs'].includes(entry))continue;
@@ -39,5 +42,11 @@ await build({entryPoints:[path.join(core,'lib/niche-seo.ts')],outfile:path.join(
 }}]});
 const all=[];async function files(root,relative=''){for(const name of await readdir(root)){const next=path.join(root,name),r=path.posix.join(relative,name);if((await stat(next)).isDirectory())await files(next,r);else all.push('/'+r);}}await files(assets);
 if(all.some(file=>/profile-\d|demo-org-/.test(file)))throw Error('Stale fixture assets in output; rebuild in a clean private output directory');
+const finalAssets=path.join(output,'assets-release');
+if(path.dirname(finalAssets)!==output)throw Error('Invalid build output boundary');
+await rm(finalAssets,{recursive:true,force:true});
+await rename(assets,finalAssets);
+await writeFile(path.join(output,'content-package.json'),raw);
 await writeFile(path.join(output,'asset-paths.json'),JSON.stringify(all));
+await writeFile(path.join(output,'content-release-receipt.json'),JSON.stringify({schemaVersion:1,siteId:'madbeauty',canonicalOrigin:'https://madbeauty.lt',state:'verified-candidate-not-deployed',builtAt:new Date().toISOString(),packageSha256:expectedSha,contentSchemaVersion:pkg.schemaVersion,approvedPages:pkg.pages.map(p=>({id:p.id,path:'/'+p.slug,revisionHash:p.revisionHash,publishAt:p.publishAt,media:p.media.map(m=>m.src)})),assets:all.length},null,2)+'\n');
 console.log(JSON.stringify({state:'candidate-built-not-deployed',approvedPages:pkg.pages.length,assets:all.length,packageSha256:createHash('sha256').update(raw).digest('hex')}));

@@ -13,14 +13,14 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
  });};
  const views=new WeakMap(),row= (collection,id)=>{currentMetadata();const value=db.prepare('SELECT data FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').get(siteId,collection,collection==='idempotency'?id:'id:'+id);return value?JSON.parse(value.data):null;};
  const clientRows=(collection,id)=>{currentMetadata();return db.prepare('SELECT data FROM state_rows WHERE site_id=? AND collection=? AND client_id=? ORDER BY position').all(siteId,collection,id).map(x=>JSON.parse(x.data));};
- function readOrganization(organizationId,accountIds=[]){
+ function readOrganization(organizationId,accountIds=[],{includeClientHistory=false}={}){
   const meta=currentMetadata(),fields=JSON.parse(meta.fields),rows=[],ids=new Set(accountIds.filter(x=>typeof x==='string'));ensureStats(meta);
   for(const f of fields){
    if(tenant.has(f.collection))rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=? AND organization_id=? ORDER BY position').all(siteId,f.collection,organizationId));
    else if(globalRead.has(f.collection))rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=? ORDER BY position').all(siteId,f.collection));
    else if(f.kind==='scalar')rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=?').all(siteId,f.collection));
   }
-  for(const r of rows){const v=JSON.parse(r.data);if(r.collection==='bookings'&&v.status==='confirmed'&&Date.parse(v.endAt)>clock()||r.collection==='waitlist'&&v.criteria&&!['closed','expired'].includes(v.state)||r.collection==='holds'&&v.state==='held'&&Date.parse(v.expiresAt)>clock()){if(v.clientId||v.accountId)ids.add(v.clientId||v.accountId);}}
+  for(const r of rows){const v=JSON.parse(r.data);if(r.collection==='bookings'&&v.status==='confirmed'&&Date.parse(v.endAt)>clock()||r.collection==='waitlist'&&v.criteria&&!['closed','expired'].includes(v.state)||r.collection==='holds'&&v.state==='held'&&Date.parse(v.expiresAt)>clock()){if(v.clientId||v.accountId)ids.add(v.clientId||v.accountId);}if(includeClientHistory&&['bookings','inquiries','waitlist','clientLinks','clientCards'].includes(r.collection)&&v.clientId)ids.add(v.clientId);}
   for(const id of ids){
    rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').all(siteId,'clients','id:'+id));
    rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=? AND client_id=? ORDER BY position').all(siteId,'preferences',id));
@@ -35,7 +35,7 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
   const view=views.get(data);if(!view)throw Error('Unknown organization view');const meta=currentMetadata();if(meta.version!==view.meta.version)reject('VERSION_CONFLICT','Duomenys pasikeitė. Pakartokite veiksmą.',409);
   const encoded=encode(data);if(JSON.stringify(encoded.fields)!==JSON.stringify(view.fields))throw Error('Organization write requires an unchanged collection manifest');
   const old=new Map(view.rows.map(r=>[identity(r),r])),changes=[],removed=[],kinds=new Map(view.fields.map(f=>[f.collection,f.kind]));
-  const allowed=r=>tenant.has(r.collection)?r.organizationId===view.organizationId:r.collection==='clients'?view.ids.has(JSON.parse(r.raw).id):r.collection==='preferences'?view.ids.has(JSON.parse(r.raw).clientId):r.collection==='idempotency'?[...view.ids].some(id=>r.key.startsWith(id+':')):r.collection==='events';
+  const allowed=r=>tenant.has(r.collection)?r.organizationId===view.organizationId:r.collection==='clients'?view.ids.has(JSON.parse(r.raw).id):r.collection==='preferences'?view.ids.has(JSON.parse(r.raw).clientId):r.collection==='idempotency'?[...view.ids].some(id=>r.key.startsWith(id+':')):r.collection==='selectionVersions'?r.key===view.organizationId:r.collection==='events';
   for(const r of encoded.rows){const key=identity(r),prior=old.get(key);old.delete(key);if(prior?.data===r.raw)continue;if(!allowed(r)||r.collection==='clients'&&!prior)throw Error('Organization patch cannot change another scope or global metadata');if(!prior&&db.prepare('SELECT record_key FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').get(siteId,r.collection,r.key))throw Error('Organization patch cannot overwrite an unloaded record');changes.push({...r,prior});}
   for(const prior of old.values()){const shape={collection:prior.collection,organizationId:prior.organization_id,key:prior.record_key,raw:prior.data};if(!allowed(shape)||shape.collection==='events')throw Error('Organization patch cannot delete outside its loaded scope');removed.push(prior);}
   const counts=new Map(),deltas=new Map(),cost=r=>bytes(r.raw??r.data)+(kinds.get(r.collection)==='scalar'?0:1)+(kinds.get(r.collection)==='object'?bytes(JSON.stringify(r.key??r.record_key))+1:0);

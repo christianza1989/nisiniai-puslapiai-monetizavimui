@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "6a34019",
+  "runtimeSourceCheckpoint": "16bb2b8",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -94,6 +94,12 @@
       "tests": 159,
       "state": "accepted-isolated-path",
       "remaining": "Full UI state matrix, physical tenant routing, larger-adapter and factual activation"
+    },
+    {
+      "name": "indexed-provider-mutations-private-workspaces-and-browser-conflict-recovery",
+      "tests": 160,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing, remaining global operations and full actual UI matrix; activation facts"
     }
   ],
   "tasks": [
@@ -297,7 +303,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md: indexed own-organization booking mutations, guarded row patch and counter, atomic outbox and foreign history/reminder preservation; actual Node/Workers >1MiB/restart; physical routing and global operations remain."
+      "evidence": "STORAGE.md: indexed booking and provider mutations/private workspaces, guarded row patch and atomic outbox; Node/Workers 5000 foreign-history/restart and global client waitlist limit preserved. Physical routing and global identity/access/preferences/automation/erasure remain."
     },
     {
       "id": "I03",
@@ -311,7 +317,8 @@
       "id": "I04",
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
-      "state": "in-progress"
+      "state": "in-progress",
+      "evidence": "UI_MATRIX.md/ACCEPTANCE.md: named per-path actual evidence and outstanding states, latest competing hold conflict and network retained-input recovery."
     },
     {
       "id": "E01",

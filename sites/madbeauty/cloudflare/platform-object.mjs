@@ -41,7 +41,7 @@ export class MadbeautyPlatform extends DurableObject{
  async recoveryStatus(){
   this.expire();
   const bookmark=await this.ctx.storage.getCurrentBookmark(),db=this.store.db;
-  return {siteId:this.store.siteId,bookmark,databaseBytes:this.ctx.storage.sql.databaseSize,stateBytes:Buffer.byteLength(db.prepare('SELECT data FROM platform_state WHERE site_id=?').get(this.store.siteId).data),mediaBytes:db.prepare('SELECT COALESCE(SUM(bytes),0) AS bytes FROM media_objects').get().bytes,outbox:db.prepare('SELECT state,COUNT(*) AS count FROM mail_outbox WHERE site_id=? GROUP BY state').all(this.store.siteId),alarm:await this.ctx.storage.getAlarm()};
+  return {siteId:this.store.siteId,bookmark,databaseBytes:this.ctx.storage.sql.databaseSize,stateBytes:this.store.rowStats().bytes,stateStorage:this.store.rowStats(),mediaBytes:db.prepare('SELECT COALESCE(SUM(bytes),0) AS bytes FROM media_objects').get().bytes,outbox:db.prepare('SELECT state,COUNT(*) AS count FROM mail_outbox WHERE site_id=? GROUP BY state').all(this.store.siteId),alarm:await this.ctx.storage.getAlarm()};
  }
  // Control-plane RPC only. It is absent from the browser dispatcher and HTTP API.
  // Calling this schedules recovery on the next DO session; maintainers then abort

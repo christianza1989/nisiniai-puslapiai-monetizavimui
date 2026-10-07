@@ -1,3 +1,4 @@
+import {openRowState} from './row-state.mjs';
 import {DatabaseSync} from 'node:sqlite';
 import {readFileSync,mkdirSync,existsSync,writeFileSync,chmodSync} from 'node:fs';
 import path from 'node:path';
@@ -17,10 +18,13 @@ export function openStore({filename=path.resolve(import.meta.dirname,'../runtime
     const existing=JSON.parse(db.prepare('SELECT data FROM platform_state WHERE site_id=?').get(siteId).data);
     if(existing.isDemo&&!fixturePreview)throw Error('Fixture preview database cannot be opened as real storage');
   }catch(e){db.close();throw e;}
-  const store={db,siteId,clock,filename,fixturePreview,hash:value=>createHmac('sha256',secret).update(String(value)).digest('hex'),
-    read:()=>JSON.parse(db.prepare('SELECT data FROM platform_state WHERE site_id=?').get(siteId).data),
-    write:data=>{const fictional=data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-'));if(fictional&&!(fixturePreview&&data.isDemo===true&&data.fixtureRuntime==='server-preview-v1'))throw Error('Fiction cannot enter real storage');db.prepare('UPDATE platform_state SET data=?,version=version+1 WHERE site_id=?').run(JSON.stringify(data),siteId);},
-    transaction:fn=>{db.exec('BEGIN IMMEDIATE');try{const value=fn();if(value?.then)throw Error('SQLite transaction callback must be synchronous');db.exec('COMMIT');return value;}catch(e){db.exec('ROLLBACK');throw e;}},
+  let transactionDepth=0;
+  const transaction=fn=>{const invoke=()=>{const value=fn();if(value?.then)throw Error('SQLite transaction callback must be synchronous');return value;};if(transactionDepth)return invoke();db.exec('BEGIN IMMEDIATE');transactionDepth++;try{const value=invoke();db.exec('COMMIT');return value;}catch(e){db.exec('ROLLBACK');throw e;}finally{transactionDepth--;}};
+  let rows;try{rows=openRowState({db,siteId,clock,transaction});}catch(e){db.close();throw e;}
+  const store={db,siteId,clock,filename,fixturePreview,rowStats:rows.stats,organizationRecords:rows.rows,hash:value=>createHmac('sha256',secret).update(String(value)).digest('hex'),
+    read:rows.read,readCollections:rows.collections,
+    write:data=>{const fictional=data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-'));if(fictional&&!(fixturePreview&&data.isDemo===true&&data.fixtureRuntime==='server-preview-v1'))throw Error('Fiction cannot enter real storage');rows.write(data);},
+    transaction,
     close:()=>db.close(),
     mail:({accountId=null,organizationId=null,bookingId=null,challengeId=null,recipient,type,payload})=>{const id=randomId('mail');db.prepare('INSERT INTO mail_outbox(id,site_id,account_id,organization_id,booking_id,challenge_id,recipient,type,payload,state,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)').run(id,siteId,accountId,organizationId,bookingId,challengeId,recipient,type,JSON.stringify(payload),'captured',clock());return id;},
     capture:challengeId=>{const r=db.prepare('SELECT payload FROM mail_outbox WHERE site_id=? AND challenge_id=? AND type=?').get(siteId,challengeId,'login-code');return r?JSON.parse(r.payload):null;},

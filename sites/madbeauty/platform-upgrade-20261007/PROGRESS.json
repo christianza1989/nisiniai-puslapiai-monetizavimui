@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "7865062",
+  "runtimeSourceCheckpoint": "addb8b8",
   "companionSchema": "niche-public-core63cfd8c / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -22,6 +22,12 @@
       "tests": 110,
       "state": "accepted-isolated-path",
       "remaining": "Browser complete branch booking and full state matrix; later plan modules"
+    },
+    {
+      "name": "normalized-sql-rows-and-scoped-public-reads",
+      "tests": 114,
+      "state": "accepted-isolated-path",
+      "remaining": "Whole-state mutation serialization and per-organization routing; production migration not applied"
     }
   ],
   "tasks": [
@@ -204,13 +210,15 @@
       "id": "I01",
       "title": "Saugojimo migracijos projektas ir operacijų rodikliai",
       "phase": "1",
-      "state": "pending-implementation"
+      "state": "in-progress",
+      "evidence": "STORAGE.md: immutable legacy checkpoint, IDs/restart, bounded rows, indexed public read, synthetic size/timing; remaining global mutation/DO routing"
     },
     {
       "id": "I02",
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
-      "state": "pending-implementation"
+      "state": "in-progress",
+      "evidence": "STORAGE.md: immutable legacy checkpoint, IDs/restart, bounded rows, indexed public read, synthetic size/timing; remaining global mutation/DO routing"
     },
     {
       "id": "I03",
@@ -274,11 +282,10 @@
     }
   ],
   "next": [
-    "W02 multiple reviewed places and own staff schedules",
     "S04 professional / salon results and S05 real coordinates",
     "B01 multi-service visit and B02 phased occupancy",
     "B04/B05 reminders and waitlist",
-    "I01/I02 storage size and normalization",
+    "I02 scoped writes and per-organization routing",
     "Full desktop/mobile error/stale/conflict states"
   ]
 }

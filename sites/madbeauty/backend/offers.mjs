@@ -33,7 +33,7 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
  };
  const checked=(d,o)=>{const n=node(d,o.taxonomyServiceId);if(!publicLocation(d,o.locationId))reject('LOCATION_UNPUBLISHED','Pirmiausia pateikite veiklos vietą peržiūrai.');if(o.published&&o.published.locationId!==o.locationId&&d.bookings.some(b=>b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()&&d.services.some(s=>s.offerId===o.id&&s.id===b.providerServiceId)))reject('LOCATION_CONFLICT','Pirmiau perkelkite arba atšaukite šio pasiūlymo būsimus vizitus.',409);const active=o.variants.filter(v=>v.active!==false);if(!active.length)reject('OFFER_INCOMPLETE','Pridėkite bent vieną aktyvų variantą.');active.forEach(v=>variant(d,o,v,true));if(!eligible(d,o,n))reject('QUALIFICATION_REQUIRED','Šiai procedūrai ir vietai reikalinga operatoriaus tinkamumo patikra.');return n;};
  return {
-  taxonomy(){return taxonomyProjection(store.read());},
+  taxonomy(){return taxonomyProjection(store.readCollections?store.readCollections(['taxonomyChanges','taxonomyVersion']):store.read());},
   selectProcedures(user,input){return mutate(d=>{offerState(d);ownOrg(d,user,input.organizationId);const org=find(d,'organizations',input.organizationId),locationId=input.locationId||org.locationId,ids=input.procedureIds;if(find(d,'locations',locationId).organizationId!==org.id)reject('FORBIDDEN','Kita veiklos vieta.',403);
    if(!Array.isArray(ids)||ids.length<1||ids.length>512||new Set(ids).size!==ids.length)reject('INVALID_INPUT','Pasirinkite procedūras be pasikartojimų.');ids.forEach(id=>node(d,id));
    const key=user.id+':procedures:'+txt(input.idempotencyKey,160),fingerprint=store.hash(JSON.stringify({organizationId:org.id,locationId,ids:[...ids].sort(),version:input.version}));

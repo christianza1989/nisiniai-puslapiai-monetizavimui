@@ -18,6 +18,16 @@ function fixture(){const store=openStore({filename:':memory:',secret:'offer-fixt
 }
 const fails=(code,fn)=>assert.throws(fn,e=>e.code===code);
 
+test('Public catalogue/profile/session reads avoid private history; search reads each matching organization calendar once',()=>{const f=fixture();const fullRead=f.store.read;try{
+ f.publish(f.make());f.approveOrg();const input={providerServiceId:'variant-fixture',practitionerId:f.p1.id,dayOffset:1,from:1020,to:1200},slot=f.api.availability(input).slots[0],d=fullRead();
+ for(let i=0;i<2600;i++)d.bookings.push({id:'unrelated-history-'+i,organizationId:'unrelated-org',status:'completed',serviceSnapshot:{description:'x'.repeat(500)}});
+ d.bookings.push({id:'calendar-conflict',organizationId:f.org.id,practitionerId:f.p1.id,resourceId:f.r1.id,startAt:slot.startAt,endAt:slot.endAt,bufferBeforeMin:0,bufferAfterMin:0,status:'confirmed'});f.store.write(d);
+ const requested=[],orgRead=f.store.organizationRecords;f.store.organizationRecords=(table,id)=>{requested.push([table,id]);return orgRead(table,id);};f.store.read=()=>{throw Error('Public method loaded full private state');};
+ assert.equal(f.api.catalog({}).length,1);assert.equal(f.api.profile(f.org.id).id,f.org.id);assert.equal(f.api.session(f.owner).organizations[0].id,f.org.id);assert.ok(f.api.taxonomy().nodes.length);assert.equal(f.api.option('variant-fixture',[],f.p1.id).priceMinor,2500);
+ assert.ok(!f.api.availability(input).slots.some(s=>s.startAt===slot.startAt));requested.length=0;
+ const rows=f.api.search({dayOffset:1,from:1020,to:1200,anyTime:true,name:'Antras meistras'});assert.equal(rows.length,1);assert.equal(rows[0].staffOptions.length,2);assert.deepEqual(requested.map(x=>x[0]),['schedules','bookings','busyBlocks','holds']);assert.ok(requested.every(x=>x[1]===f.org.id));assert.ok(!JSON.stringify(rows).includes('unrelated-history'));
+ }finally{f.store.read=fullRead;f.store.close();}});
+
 test('Versioned catalogue additions require eligibility, retain archived IDs and resolve or reject provider requests',()=>{const f=fixture();try{
  const change=input=>f.api.changeTaxonomy(f.operator,{version:f.api.taxonomy().version,...input});
  fails('FORBIDDEN',()=>f.api.changeTaxonomy(f.owner,{version:f.api.taxonomy().version,operation:'add'}));

@@ -2,6 +2,8 @@
 
 Pirmas įgyvendinimas 2026-09-30. Vienas FastAPI/PostgreSQL core, atskiri gyvo balso ir patvarių užduočių procesai. Pirmoji balso niša — `traktoriupadangos`. Tai vietinis pagrindas; gamybiniai M0/M6 vartai dar nepraeiti.
 
+Aktualus 2026-10-07 pavedimas ir tikro garso priėmimas: [traktoriupadangos IMPLEMENTATION_STATUS](../../sites/traktoriupadangos/IMPLEMENTATION_STATUS.md). Naujas vietinis balso launcher: `scripts/start_voice_background.ps1`; viešo paleidimo priklausomybės ir komandos: [VOICE_LAUNCH](../../voice-agent-plan/VOICE_LAUNCH_2026-10-07.md). Ankstesnių tekstinių kalibracijų skaičiai žemiau nėra dabartinio balso paleidimo įrodymas.
+
 ## 2026-10-01 tekstinis ir pašto papildymas
 
 Galutinis suite po PDF ir retail integracijos: 118 PASS; paskutinės nuorodų / presentation pataisos 12 tikslinių PASS; Ruff PASS. Metaduomenų ir tikro HTTP PDF QA 10/10. Nepridėti senų 112/23/36 skaičių prie naujo suite: tai persidengiantys istoriniai paleidimai.
@@ -24,6 +26,7 @@ Reikia Python 3.13, `uv`, veikiančio Docker ir Node. Priklausomybės užfiksuot
 uv sync --locked
 uv run python scripts/setup_local.py
 docker compose up -d postgres
+uv run python scripts/bootstrap.py --role-only
 uv run alembic upgrade head
 uv run python scripts/bootstrap.py
 ```

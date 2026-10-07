@@ -1,5 +1,7 @@
 # Balso sistemos įgyvendinimo etapai
 
+**Aktualus 2026-10-07 traktoriupadangos paleidimo pavedimas:** [IMPLEMENTATION_STATUS](../sites/traktoriupadangos/IMPLEMENTATION_STATUS.md) ir [tikro garso priėmimas / paleidimo eiga](VOICE_LAUNCH_2026-10-07.md). Tikras vietinis Gemini/RTC garsas ir kontaktų įrankiai jau išbandyti; viešas paleidimas / pilnas M0 dar nepriimti. Žemiau esanti 2026-09-30 pažangos lentelė yra istorinio etapo įrašas.
+
 **2026-10-01 papildymas:** [TEXT_CLIENT_LAB](TEXT_CLIENT_LAB.md) fiksuoja veikiančią Codex tekstinę laboratoriją, bendrą pašto UI, 5 pasiūlymų + 1 testinės sąskaitos SMTP kvitus ir vietinį imituoto patvirtinimo kelią. Tai dalis C0/C2 bandymų iš [komercinės plėtros plano](PROCUREMENT_AND_INVOICING.md), ne M0 ar production invoicing užbaigimas. Likę artimiausi vartai: tikras inbox → reply → case įrodymas, pilnas inbound/outbound worker, patikrintas sourcing/antkainio profilis ir Gemini audio.
 
 Data 2026-09-30. Checkbox pažymimas tik įgyvendinus jo konkrečią sutartį ir išsaugojus patikros įrodymą. Dalinis darbas nepaverčia viso etapo baigtu; aktualūs įrodymai yra [IMPLEMENTATION.md](IMPLEMENTATION.md). Dokumentų parengimas neįrodo tikro balso ar laiško pristatymo.

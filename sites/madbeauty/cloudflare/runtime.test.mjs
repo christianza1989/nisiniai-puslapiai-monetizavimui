@@ -12,6 +12,26 @@ const {Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/minifl
 const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}});
 const script=bundle.outputFiles[0].text,origin='https://madbeauty.test';
 
+test('Workers reviewed branch keeps its city, scoped resource, staff shift and confirmed address after SQL restart',async()=>{
+ const f=await fixture();try{
+  const owner=f.browser(),operator=f.browser(),client=f.browser();await owner.login('branch-owner@example.com');await operator.login('operator@example.com');await client.login('branch-client@example.com');
+  const rpc=async(b,method,input)=>{const r=await b.rpc(method,input);assert.equal(r.status,200,method+': '+JSON.stringify(r.value));return r.value.result;};
+  const org=await rpc(owner,'createOrganization',{name:'Isolated branch fixture',bio:'Not a production provider.',kind:'salon',city:'Vilnius'}),scope={role:'professional',organizationId:org.id},w=await rpc(owner,'workspace',scope),p=w.practitioners[0];
+  let l=await rpc(owner,'saveLocation',{organizationId:org.id,label:'Isolated Kaunas branch',city:'Kaunas',publicAddress:'Fixture address K',openingHoursLabel:'Configured shift',latitude:54.8985,longitude:23.9036});
+  assert.equal((await client.rpc('saveLocation',{organizationId:org.id,label:'Unauthorized'})).status,403);
+  l=await rpc(owner,'submitLocation',{id:l.id,version:l.version});l=await rpc(operator,'moderateLocation',{id:l.id,version:l.version,state:'approved'});
+  await rpc(owner,'assignStaffLocations',{id:p.id,version:p.version,locationIds:[org.locationId,l.id],transferBufferMin:30});
+  const shifts=(await rpc(owner,'workspace',scope)).schedules,a=shifts.find(s=>s.locationId===org.locationId),b=shifts.find(s=>s.locationId===l.id);
+  await rpc(owner,'edit',{scope,table:'schedules',id:a.id,version:a.version,values:{weekdays:['Mon']}});await rpc(owner,'edit',{scope,table:'schedules',id:b.id,version:b.version,values:{weekdays:['Tue','Wed','Thu','Fri','Sat','Sun']}});
+  const r=await rpc(owner,'createResource',{organizationId:org.id,locationId:l.id,label:'Branch resource'}),selected=await rpc(owner,'selectProcedures',{organizationId:org.id,locationId:l.id,procedureIds:['kirpimai-vyru-kirpimas'],version:0,idempotencyKey:'branch-procedures'});
+  const draft=await rpc(owner,'saveOffer',{id:selected[0].id,version:selected[0].version,label:'Branch service',variants:[{id:'branch-worker-variant',label:'Branch haircut',priceMinor:3000,durationMin:60,staffOptions:[{practitionerId:p.id,resourceId:r.id}]}]}),pending=await rpc(owner,'submitOffer',{id:draft.id,version:draft.version});await rpc(operator,'moderateOffer',{id:draft.id,version:pending.version,state:'approved'});
+  const revision=await rpc(owner,'submitRevision',{scope,name:org.name,bio:org.bio});await rpc(operator,'moderate',{id:revision.id,state:'approved'});
+  assert.equal((await rpc(client,'catalog',{city:'Vilnius'})).length,0);assert.equal((await rpc(client,'catalog',{city:'Kaunas'}))[0].location.id,l.id);
+  let candidate;for(let dayOffset=1;dayOffset<8;dayOffset++){candidate=(await rpc(client,'availability',{providerServiceId:'branch-worker-variant',dayOffset,from:1020,to:1200})).slots[0];if(candidate)break;}assert.ok(candidate);
+  const hold=await rpc(client,'hold',candidate),booking=await rpc(client,'confirm',{holdId:hold.id,name:'Fixture client',idempotencyKey:'branch-booking'});assert.equal(booking.serviceSnapshot.location.publicAddress,'Fixture address K');
+  assert.equal((await owner.rpc('setLocationActive',{id:l.id,version:l.version,active:false})).status,409);await f.restart();assert.equal((await rpc(client,'workspace',{role:'customer'})).bookings[0].serviceSnapshot.location.id,l.id);assert.equal((await rpc(owner,'workspace',scope)).schedules.length,2);
+ }finally{await f.close();}
+});
 test('Workers upgrade: private multi-selection → reviewed multi-staff offer → interval search → atomic booking → same IDs after restart',async()=>{
  const f=await fixture();try{
   const owner=f.browser(),operator=f.browser(),client=f.browser(),other=f.browser();

@@ -118,7 +118,7 @@ test('Bounded URL filters exclude PII and unknown facets; article resolver gates
 test('All declared routes resolve; unknown service/city/guide and unavailable default profile do not',async()=>{
   const inv=JSON.parse(await readFile(new URL('../SCREEN_INVENTORY.json',import.meta.url),'utf8'));
   const {contentProjection}=await import('../content/adapter.mjs'),content=await contentProjection(),contentResolver=slug=>content.pages.some(p=>p.type==='guide'&&p.slug==='gidai/'+slug);
-  assert.equal(inv.screens.length,71);
+  assert.equal(inv.screens.length,72);
   for(const s of inv.screens.filter(s=>s.route)){const route=s.route.replace(':service','manikiuras').replace(':city','vilnius').replace(':slug',s.id==='content-guide'?'kaip-pasirinkti-nagu-spalva':s.id==='content-author'?'mb-pinet':s.id==='public-venue'?'demo-org-24':'demo-org-0').replace(':id',s.id==='professional-client-detail'?'demo-client-0':'demo-booking-210');assert.ok(resolveRoute(route,{contentResolver}),s.id);}
   for(const path of ['/paslaugos/fake/vilnius','/paslaugos/manikiuras/fake','/gidai/future','/meistrai/demo-org-29'])assert.equal(resolveRoute(path,{contentResolver}),null);
   assert.equal(resolveRoute('/gidai/kaip-pasirinkti-nagu-spalva'),null,'Missing content binding fails closed');

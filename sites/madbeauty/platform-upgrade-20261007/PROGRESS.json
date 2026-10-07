@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "6945943",
+  "runtimeSourceCheckpoint": "7865062",
   "companionSchema": "niche-public-core63cfd8c / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -16,6 +16,12 @@
       "tests": 106,
       "state": "accepted-isolated-path",
       "remaining": "Full UI state matrix and later plan modules"
+    },
+    {
+      "name": "reviewed-places-staff-shifts-address-snapshots",
+      "tests": 110,
+      "state": "accepted-isolated-path",
+      "remaining": "Browser complete branch booking and full state matrix; later plan modules"
     }
   ],
   "tasks": [
@@ -161,7 +167,8 @@
       "id": "W02",
       "title": "Keli adresai ir komandos grafikas",
       "phase": "3",
-      "state": "pending-implementation"
+      "state": "in-progress",
+      "evidence": "Reviewed branch CRUD, own-place staff/resources/schedules, travel buffer and old-booking guards; local + Workers restart acceptance"
     },
     {
       "id": "W03",

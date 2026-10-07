@@ -1,3 +1,4 @@
+import {publicLocation,practitionerPlaces} from './locations-state.mjs';
 import {reject} from './primitives.mjs';
 import {mediaPublic} from './primitives.mjs';
 export const ROLE_CAPABILITIES={owner:['offers','profile','team','resources','schedule','clients','bookings','messages','reports','access'],manager:['offers','profile','team','resources','schedule','clients','bookings','messages','reports'],reception:['clients','bookings','messages','reports'],practitioner:['schedule','bookings','messages']};
@@ -12,7 +13,7 @@ export function practitionerWorkspace(d,s,result){
  if(!s.capabilities.includes('access')){result.memberships=[];result.accessChanges=[];}
  if(!s.capabilities.includes('offers')){result.offers=[];result.procedureRequests=[];result.menuGroups=[];}
  if(!s.capabilities.includes('profile')){
-  result.qualifications=[];result.revisions=[];
+  result.qualifications=[];result.revisions=[];result.locations=result.locations.map(l=>publicLocation(d,l.id)||{id:l.id,organizationId:l.organizationId,label:'Vieta ruošiama'});
   result.organizations=result.organizations.map(({draftGallery,draftAvatarImageId,...org})=>org);
   const published=new Set(result.organizations.flatMap(o=>[o.avatarImageId,...o.gallery]));
   result.media=(result.media||[]).filter(a=>published.has(a.id)).map(mediaPublic);
@@ -21,5 +22,5 @@ export function practitionerWorkspace(d,s,result){
  const bookings=result.bookings.filter(b=>b.practitionerId===s.practitionerId),ids=new Set(bookings.map(b=>b.id)),clients=new Set(bookings.map(b=>b.clientId));
  const services=result.services.filter(x=>x.practitionerId===s.practitionerId||x.staffOptions?.some(p=>p.practitionerId===s.practitionerId)).map(x=>({...x,...x.staffOptions?.find(p=>p.practitionerId===s.practitionerId),...(x.staffOptions?{staffOptions:x.staffOptions.filter(p=>p.practitionerId===s.practitionerId)}:{})}));
  const resources=new Set([...services,...bookings].map(x=>x.resourceId));
- return {...result,bookings,clients:result.clients.filter(c=>clients.has(c.id)),clientLinks:[],offers:[],procedureRequests:[],qualifications:[],memberships:[],revisions:[],inquiries:[],waitlist:[],practitioners:result.practitioners.filter(p=>p.id===s.practitionerId),schedules:result.schedules.filter(x=>x.practitionerId===s.practitionerId),services,resources:result.resources.filter(r=>resources.has(r.id)),holds:result.holds.filter(x=>x.practitionerId===s.practitionerId),busyBlocks:result.busyBlocks.filter(x=>x.practitionerId===s.practitionerId),messages:result.messages.filter(x=>ids.has(x.bookingId)),reviews:result.reviews.filter(x=>ids.has(x.bookingId)),outbox:result.outbox.filter(x=>ids.has(x.bookingId))};
+ return {...result,locations:result.locations.filter(l=>practitionerPlaces(d,d.practitioners.find(p=>p.id===s.practitionerId)).includes(l.id)),bookings,clients:result.clients.filter(c=>clients.has(c.id)),clientLinks:[],offers:[],procedureRequests:[],qualifications:[],memberships:[],revisions:[],inquiries:[],waitlist:[],practitioners:result.practitioners.filter(p=>p.id===s.practitionerId),schedules:result.schedules.filter(x=>x.practitionerId===s.practitionerId),services,resources:result.resources.filter(r=>resources.has(r.id)),holds:result.holds.filter(x=>x.practitionerId===s.practitionerId),busyBlocks:result.busyBlocks.filter(x=>x.practitionerId===s.practitionerId),messages:result.messages.filter(x=>ids.has(x.bookingId)),reviews:result.reviews.filter(x=>ids.has(x.bookingId)),outbox:result.outbox.filter(x=>ids.has(x.bookingId))};
 }

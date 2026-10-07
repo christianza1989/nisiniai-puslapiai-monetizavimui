@@ -1,0 +1,25 @@
+{
+  "purpose": "Public registration brief; not a private Studio backup or an approval receipt",
+  "siteId": "mokytoja-ai",
+  "canonicalHost": "namudarbas.lt",
+  "name": "Superiora",
+  "offer": "Mokymosi pagalba šeimai: tėvams skirti gidai, palaikantys atskirą AI mokytojo projektą",
+  "audience": "Tėvai ir globėjai, padedantys vaikui mokytis savarankiškai",
+  "facts": "Viešas adresas https://namudarbas.lt. Produkto prekės ženklas Superiora. Aplikacija yra atskiras Next.js/Vercel projektas. Bendros studijos turinys pateikiamas mokymosi-gidai skiltyje. Mokinių ir šeimų duomenys nėra turinio šaltinis. Nežadėti mokymosi rezultatų, visų platformos funkcijų, mokyklų integracijų ar pedagogo kvalifikacijos be produkto patvirtintų faktų.",
+  "contact": { "email": "info@pinet.lt", "phone": "" },
+  "contentPolicy": {
+    "months": 6,
+    "cadence": "weekly",
+    "articlesPerWeek": 2,
+    "localTime": "10:00",
+    "timezone": "Europe/Vilnius"
+  },
+  "sourceRepository": "https://github.com/christianza1989/mokytoja-ai",
+  "publicIndex": "https://namudarbas.lt/mokymosi-gidai",
+  "currentPublicPageInventory": [
+    { "pageId": "9f0d62bc-bfa2-4ed8-8299-996ddf03ac70", "slug": "", "type": "home" },
+    { "pageId": "31fad6f3-2631-4637-9d2d-674ac11d35c4", "slug": "mokymosi-gidai/padeti-namu-darbams-neatliekant-uz-vaika", "type": "guide" },
+    { "pageId": "49ce210c-0e07-4d8e-a7f9-26b5a456788d", "slug": "mokymosi-gidai/fotografuoti-uzduoti-ir-bandyma", "type": "guide" },
+    { "pageId": "a53eb15c-0399-4767-b4c9-ad7f1263c0bd", "slug": "mokymosi-gidai/kai-vaikas-nesupranta-pirmas-zingsnis", "type": "guide" }
+  ]
+}

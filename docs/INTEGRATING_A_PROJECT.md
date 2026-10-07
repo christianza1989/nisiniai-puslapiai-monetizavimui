@@ -41,6 +41,8 @@ Madbeauty grožio taxonomy, paslaugų variantai, availability, kalendorius, pask
 
 Aiškus savininko pavedimas palikti projektą jo esamame hostinge turi pirmenybę prieš pilno core prijungimo checklist. Tokiu atveju `siteId` registruojamas studijoje, o į target perduodamas tik patikrintas turinio bundle pagal [CONTENT_CORE nepriklausomo projekto adapterį](../CONTENT_CORE.md#nepriklausomo-projekto-turinio-adapteris--2026-10-06). Nekurti public registry, antro publisher ar paskyrų migracijos vien straipsniams. Target išlaiko savo aktualų roadmap, dizainą, veikiančias funkcijas, realius faktus ir priėmimo vartus. Content transporto testai nėra jo UI, kontaktų, deployment ar piloto priėmimas.
 
+Namudarbas.lt (`siteId=mokytoja-ai`) konkretus trijų repo startas, aktyvaus viešo snapshot inventorius ir GitHub perdavimo būsena: [NAMUDARBAS_INTEGRATION](NAMUDARBAS_INTEGRATION.md). Jo `AI_teacher` source lieka viename atskirame repo; privatus studijos kalendorius, reviews ir šeimų duomenys klonuojant Git neatsikuria.
+
 ## Naujo AI pirmo atsakymo kriterijai
 
 AI turi gebėti įvardyti savo siteId, verslo tikslą, dabartinį etapą, rašymo ribas, kokį esamą core/adapterį naudos, kas tik suplanuota ir ką testuos. Neužtenka „padariau landing“ ar švaraus Lighthouse. Jei neprieinamas companion repo ar tikri verslo faktai, įvardyti konkrečią spragą ir tęsti nepriklausomą autorizuotą darbą — neišgalvoti veikiančių API, tiekėjų ar klientų.

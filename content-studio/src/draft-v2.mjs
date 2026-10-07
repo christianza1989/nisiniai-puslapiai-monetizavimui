@@ -15,6 +15,22 @@ export function v2CliSchema(value){
   if(out.format==='uri')delete out.format;
   return out;
 }
+// Constrain generation as well as acceptance. A schema copied for one immutable
+// draft context must never make up IDs or inline a future, unapproved page.
+export function bindV2DraftSchema(schema,site,page){
+  const out=structuredClone(schema);
+  const suggestions=site.pages.filter(p=>p.id!==page.id&&p.status!=='revoked').map(p=>p.id);
+  if(suggestions.length)out.properties.internalLinks.items.properties.targetPageId.enum=suggestions;
+  else out.properties.internalLinks.maxItems=0;
+  const inline=site.pages.filter(p=>p.id!==page.id&&p.status!=='revoked'&&p.publishedRevision).map(p=>p.id);
+  out.$defs.target.anyOf=out.$defs.target.anyOf.filter(branch=>{
+    if(branch.properties.kind.enum[0]!=='page')return true;
+    if(!inline.length)return false;
+    branch.properties.pageId.enum=inline;
+    return true;
+  });
+  return out;
+}
 export function assertV2Draftable(site,page,{revisionHash}={}){
   if(site.schemaVersion!==2||!page||page.contentVersion!==2||page.status==='revoked')throw Error('V2 generavimo tikslas nerastas arba atšauktas.');
   if(revisionHash){

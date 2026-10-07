@@ -103,3 +103,11 @@ Pritaikytas bendras source: TOPICAL_CONTENT_CORE, AGENTS/CONTENT_CORE/SEO_GEO po
 Katalogo pamoka įrašyta į bendrą skill: turinio klasteris nėra platformos taxonomy ID, procedūra nėra teikėjo variantas. Planavimo CTA turi remtis autoritetingais ID ir actual bendru resolveriu. Bendras vietinis gidas bei pasirinktas miestas turi skirtingą kelią; dovanų nišai nėra privalomo procedūra–miestas šablono. Jei plan/schema/import neperneša ID, integracija dar nepriimta. Source gali būti parengtas, bet būsimas route netampa live href ar Google rezultatu. Dovanos123 sesijai metodika perduota savininko autorizuotu pranešimu; Madbeauty platformos sesija kuria atskirą adapterį savo srityje.
 
 Ši source patikra nepriima neparašytų straipsnių, neegzistuojančių vaizdų, ekspertų review, viso naujo 225 procedūrų turinio plano ar gyvo diegimo. Aktualus pakeitimas PR10; istoriniai instruction fingerprint nekoreguojami atgaline data.
+
+## Tikslūs puslapių ID generavimo schemoje — 2026-10-07
+
+Patirtas bendras defektas: penki tikri Luna/xhigh juodraščiai buvo atmesti nepakeisto native V2 validatoriaus. Keturi makiažo juodraščiai pakeitė pilno žemėlapio šakninio puslapio UUID; nagų dizaino juodraštis bandė įterpti dar nepatvirtinto puslapio nuorodą tekste. Klaidos ir originalūs CLI rezultatų SHA lieka privačiame generavimo žurnale, neperrašyti kaip PASS.
+
+Pataisyta priežastis: bendras bindV2DraftSchema helperis apriboja privačią vieno darbo CLI schemą tik tikrais tos svetainės ID. Pasiūlymams leidžiami esami neatšaukti svetimi puslapiai; teksto nuorodoms leidžiamos tik esamos patvirtintos versijos. Savęs ir atšauktų puslapių nėra sąrašuose; kai nėra tikslo, atitinkamas kelias negeneruojamas. Darbo kvite išsaugomas tikros privačios schemos SHA. Vieša V2 sutartis, paskesnis tikslus validatorius, faktų, medijos, peržiūros ir datos vartai nepakeisti.
+
+Source: content-studio/src/draft-v2.mjs ir generator.mjs, regresija test/draft-v2.test.mjs, PR10. Tikri native individualaus / batch / explicit revision CLI integracijos testai tikrina, kad vykdomam procesui perduodama konkreti schema; bendras studijos rinkinys60/60 PASS. Pirmi du realūs atmestų straipsnių pakartojimai priimti su nauja schema ir tuo pačiu Luna/xhigh, be fallback. Ši pataisa nepatvirtina jų faktų ar publikavimo: straipsniai lieka juodraščiai iki atskiros redakcinės peržiūros ir leidimo.

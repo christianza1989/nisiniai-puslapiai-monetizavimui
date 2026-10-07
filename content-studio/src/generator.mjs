@@ -1,12 +1,12 @@
 import { spawn } from 'node:child_process';
-import { mkdir, readFile, rm } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, rm, rmdir } from 'node:fs/promises';
 import path from 'node:path';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, createHash } from 'node:crypto';
 import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, listJobs, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
 import {generateEditorialJson,ARTICLE_GENERATION_POLICY} from './editorial-cli.mjs';
-import {draftSnapshotHash,assertV2Draftable,v2DraftContext,acceptV2DraftResult,V2_DRAFT_INSTRUCTION} from './draft-v2.mjs';
+import {draftSnapshotHash,assertV2Draftable,v2DraftContext,acceptV2DraftResult,bindV2DraftSchema,V2_DRAFT_INSTRUCTION} from './draft-v2.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -30,9 +30,19 @@ function run(command, args, input, timeoutMs) {
   });
 }
 
-async function codexJson(prompt, schemaFile, jobId=null, pageId=null) {
+async function codexJson(prompt, schemaFile, jobId=null, pageId=null, boundSchema=null) {
   const mode=schemaFile==='plan-result.schema.json'?'plan':'draft';
-  const generated=await generateEditorialJson(prompt,path.join(SCHEMAS,schemaFile),{root:ROOT,dataDir:DATA,mode});
+  let schemaPath=path.join(SCHEMAS,schemaFile),schemaDirectory;
+  if(boundSchema){
+    schemaDirectory=path.join(DATA,'tmp','draft-schema-'+randomUUID());
+    await mkdir(schemaDirectory,{recursive:true});
+    schemaPath=path.join(schemaDirectory,schemaFile);
+    await writeFile(schemaPath,JSON.stringify(boundSchema),{flag:'wx'});
+  }
+  let generated;
+  try{generated=await generateEditorialJson(prompt,schemaPath,{root:ROOT,dataDir:DATA,mode});}
+  finally{if(schemaDirectory){await rm(schemaPath,{force:true});await rmdir(schemaDirectory);}}
+  if(boundSchema)generated.receipt.draftSchemaSha256=createHash('sha256').update(JSON.stringify(boundSchema)).digest('hex');
   if(jobId&&mode==='draft'){
     const job=(await listJobs()).find(j=>j.id===jobId);
     await updateJob(jobId,{lastGenerationReceipt:generated.receipt,...(pageId?{generationReceipts:{...(job?.generationReceipts||{}),[pageId]:generated.receipt}}:{})});
@@ -82,7 +92,8 @@ async function draftPage(siteId, pageId, skill, jobId=null, revisionInput=null) 
     const v2Context=v2DraftContext(site,page,options),expectedSiteHash=draftSnapshotHash(site);
     const prompt=buildEditorialPrompt(skill,{mode:'draft',instruction:V2_DRAFT_INSTRUCTION+(revisionInput?' Revise the supplied currentDraft to fulfil the explicit editorialRevisionRequest. Preserve useful valid passages, resolve the specified actual issues, and return the complete revised native envelope. This is an explicit revision, never an automatic approval or rewrite of the saved published snapshot.':''),
       siteData:contextForSite(site),pageData:{...draftPageData(site,page),v2Context,...(revisionInput?{currentDraft:{title:page.title,description:page.description,body:page.body,factChecks:page.factChecks},editorialRevisionRequest:revisionInput.editorialInstruction}:{})}});
-    const result=await codexJson(prompt,'draft-result.v2.schema.json',jobId,pageId);
+    const schema=bindV2DraftSchema(JSON.parse(await readFile(path.join(SCHEMAS,'draft-result.v2.schema.json'),'utf8')),site,page);
+    const result=await codexJson(prompt,'draft-result.v2.schema.json',jobId,pageId,schema);
     const input=acceptV2DraftResult(site,page,result,options);
     const receipt=(await listJobs()).find(j=>j.id===jobId)?.generationReceipts?.[pageId];
     const updated=await editPage(siteId,pageId,input,{expectedSiteHash,...(revisionInput?{expectedRevisionHash:revisionInput.expectedRevisionHash}:{}),metadata:{version:2,createdAt:new Date().toISOString(),

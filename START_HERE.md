@@ -18,6 +18,8 @@ Tas pats galioja trumpam „daryk naują psl domenui X“. Patikrintų core real
 
 ## 1. Perskaityk ir nustatyk ribas
 
+Naujai svetainei nuo pradžių skaityti [pirmo pilno pristatymo checkpoint](SKILLS/niche-site-builder/references/first-delivery.md), o užbaigiant vykdyti jame nurodytą bound HTTP verifier ir local audito vartus. Core builder/audit/planner atradimas naujam kompiuteriui: `node SKILLS/scripts/install-core-skills.mjs`; helper saugo esamas nesutampančias kopijas, jų tyliai neperrašo.
+
 1. `AGENTS.md`, `WORKSTREAMS.md`, `SEO_GEO_CORE.md`.
    Jei užduotis apima balso agentą, papildomai `VOICE_CORE_INTEGRATION.md` ir `voice-agent-plan/README.md`. Vien svetainės sukūrimas nepradeda balso runtime realizacijos; visi nauji domenai pradeda nuo SEO ir tikrų užklausų matavimo.
 2. `sites/<siteId>.md`, jei yra, ir `sites/<siteId>/DESIGN.md`, jei yra. Domeno vardas ir seni planavimo įrašai nepatvirtina registracijos ar paslaugos pajėgumo. Naujam domenui sukurk atskirą dokumentą. Iš domeno parink stabilų siteId; domeno nepervadink be priežasties.

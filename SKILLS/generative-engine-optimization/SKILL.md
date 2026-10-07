@@ -7,6 +7,8 @@ description: "Audit useful extractable answers and entity consistency for this n
 
 Read [PROJECT_CONTRACT](../PROJECT_CONTRACT.md) before using this skill in the network. Role: **phase1-support**; it contributes the scoped task below and does not silently expand a domain build. Use current site facts, authorization and actual tool capabilities.
 
+Use the maintained [SEO/GEO core](../niche-seo-geo-core/SKILL.md), especially [automatic GEO publishing](../niche-seo-geo-core/references/geo-publishing.md) and [measurement](../niche-seo-geo-core/references/geo-measurement.md). This helper adds no parallel LLM index, calendar, bot policy or paid monitor. A new approved page must propagate through the actual shared import/deployment/projection and be checked in rendered HTML and live reading exports; an optional llms.txt file does not establish indexing/citations.
+
 ## Workflow
 
 1. Read actual visible content, truthful operator/author information and shared SEO_GEO_CORE output.

@@ -5,6 +5,8 @@ description: Research, audit and improve a niche website's organic search and AI
 
 # Niche SEO and GEO core
 
+For every content plan/draft/review use [GEO publishing](references/geo-publishing.md): visible useful answers, truthful entities/dates, shared automatic reading exports, search-versus-training controls and bound HTTP acceptance. It is injected into both studio modes; the invoking agent verifies import/deployment and technical integration. It does not add a special schema, a second scheduler or guaranteed AI citations.
+
 Turn verified market observations into useful pages and measurable business outcomes. Treg supplies observations, not a ranking strategy or a guarantee. Treat topical authority as demonstrated depth, useful original evidence and trustworthy recognition; never invent a Google topical-authority or E-E-A-T score.
 
 ## Choose the work and preserve the existing core

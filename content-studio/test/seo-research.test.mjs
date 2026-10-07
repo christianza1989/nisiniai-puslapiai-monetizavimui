@@ -80,7 +80,7 @@ test('missing research module stops execution and module edits change instructio
   await assert.rejects(() => loadEditorialSkill('draft', undefined, path.join(root, 'missing-core')), /niche-seo-geo-core/);
   const editable = path.join(root, 'editable-core');
   await mkdir(path.join(editable, 'references'), { recursive: true });
-  for (const file of ['SKILL.md', 'references/studio-integration.md', 'references/evidence-contract.md']) await writeFile(path.join(editable, file), await readFile(path.join(SEO_SKILL_DIR, file)));
+  for (const file of ['SKILL.md', 'references/studio-integration.md', 'references/evidence-contract.md', 'references/geo-publishing.md']) await writeFile(path.join(editable, file), await readFile(path.join(SEO_SKILL_DIR, file)));
   const old = await loadEditorialSkill('draft', undefined, editable);
   await writeFile(path.join(editable, 'references/studio-integration.md'), 'Changed private evidence and generation rules for isolated fixture');
   const next = await loadEditorialSkill('draft', undefined, editable);

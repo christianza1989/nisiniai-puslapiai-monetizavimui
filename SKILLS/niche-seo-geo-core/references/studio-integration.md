@@ -4,7 +4,7 @@
 
 The maintained source is this repository's `SKILLS/niche-seo-geo-core`. A personal Codex installation is a synchronized distribution, not a second independently maintained core. The existing niche-content-planner owns plan/draft output and editorial workflow; builder owns the site; niche-site-audit owns acceptance; shared SEO_GEO_CORE owns the public implementation. Use this module for research, observations and SEO/GEO decisions. Follow project contracts when general guidance overlaps. Never add fields to the studio JSON/public package just to fit a research report.
 
-All new sites, topical plans, meaningful SEO/metadata refresh and acceptance audits use this module. `AGENTS.md` and PROJECT_CONTRACT route direct agents here. The studio's plan/draft/autopilot jobs load the project entrypoint, this reference and evidence-contract into their immutable instruction snapshot. Plan mode also loads provider/intent/GEO guidance; draft mode reads those references only when research is needed. Missing module files stop generation before CLI execution. Existing jobs and old approvals retain their historical hashes.
+All new sites, topical plans, meaningful SEO/metadata refresh and acceptance audits use this module. `AGENTS.md` and PROJECT_CONTRACT route direct agents here. The studio's plan/draft/autopilot jobs load the project entrypoint, this reference, evidence-contract and [GEO publishing](geo-publishing.md) into their immutable instruction snapshot. Plan mode also loads provider/intent/measurement guidance; draft mode reads those detailed research references only when needed. Missing module files stop generation before CLI execution. Existing jobs and old approvals retain their historical hashes.
 
 ## Research before generation; refresh when needed
 

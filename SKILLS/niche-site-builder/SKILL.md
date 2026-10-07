@@ -5,6 +5,8 @@ description: "Choose a concrete commercial offer and phase-one demand test, rese
 
 # Niche Site Builder
 
+For a complete new-site delivery read [first-delivery checkpoints](references/first-delivery.md) before defining page families. Establish the real editorial identity/profile, guide hub and public route roles before bulk content; verify one end-to-end article layout early. Finish with the bound rendered-site verifier and `--require-local` audit gate. Missing authorship, dates, schema, breadcrumbs, supporting pages or publication integration are in-scope implementation work, not items to wait for the owner to request separately. A narrow edit keeps its actual scope.
+
 For every new niche's market/SEO/GEO research use [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation contract](../niche-seo-geo-core/references/studio-integration.md). Inspect/import current site-scoped evidence before the URL map; preserve this builder's BUSINESS, design, implementation and acceptance scope. Treg observations cannot establish our fulfilment, credentials or paid demand. Reuse the shared research adapter and public SEO core rather than creating per-domain copies.
 
 For an explicitly ordered platform/prototype read [the demo data policy](../../DEMO_DATA_POLICY.md): final product screens/copy with swappable fixtures, not demo-labelled pages. Honour current site-specific user scope; a full-platform exception does not expand other phase-one sites.

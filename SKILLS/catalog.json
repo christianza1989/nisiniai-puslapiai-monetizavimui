@@ -484,7 +484,7 @@
         "- Never invent statistics, awards, or credentials to look more citable. Corroboration works because it's real — mark anything the user must supply with `[VERIFY: …]` or `[ADD: your real number]`.",
         "## Required Output Format"
       ],
-      "entrySha256": "b78ea826c2b50ca2fa899fec714ae974fffd9136cd365b4a53cd778d13b0bd45"
+      "entrySha256": "2c89dddee9d933942f247a19f23fa0cbc656e996f7616b3b1207554e070ef968"
     },
     {
       "id": "gmail-triage",
@@ -721,7 +721,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "d9814903ccbb64f5efc90e93d263a27ddb68b7cbfa12893480b8e2860bdec0e6"
+      "entrySha256": "0e99a761014e9d3704bb2af9dd7fe6e9a4a7f7c7a1fd30ba2bb3c71409428193"
     },
     {
       "id": "niche-site-audit",
@@ -732,7 +732,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "8752ba951d9b42b2b27c172d7350dab0143a5b42d67f9639cfb07598930b1dde"
+      "entrySha256": "dff6ca102fe20df0e4275f695ff0b336cb0a0332a5e2d02783ef8408a82f97c0"
     },
     {
       "id": "niche-site-builder",
@@ -743,7 +743,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "3a43b21a8b95e8802320976ad74ceb37a2011f25207f851cf14cde51ee5ec4d6"
+      "entrySha256": "5d2ae6954cfb423c26adab7b3a01d7045740dd0afc3b954d17c5355aeaace05d"
     },
     {
       "id": "on-page-seo-checklist",

@@ -22,7 +22,7 @@ export async function loadEditorialSkill(mode, directory = process.env.STUDIO_ED
   }));
   // The repository is authoritative; a user's optional installed copy is never
   // required by automated jobs or another computer's checkout.
-  const seoFiles = ['SKILL.md', 'references/studio-integration.md', 'references/evidence-contract.md',
+  const seoFiles = ['SKILL.md', 'references/studio-integration.md', 'references/evidence-contract.md', 'references/geo-publishing.md',
     ...(mode === 'plan' ? ['references/treg-playbook.md', 'references/intent-quality.md', 'references/geo-measurement.md'] : [])];
   for (const file of seoFiles) {
     let content;

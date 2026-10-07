@@ -4,10 +4,10 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-06T10:09:12Z",
-  "lastResearchDateLocal": "2026-10-06",
-  "lastResearchFile": "research/2026-10-06-diagnostic-demand/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-06-diagnostic-demand/QA.json",
+  "lastResearchAt": "2026-10-07T06:06:12.682Z",
+  "lastResearchDateLocal": "2026-10-07",
+  "lastResearchFile": "research/2026-10-07-sale-channel-cost/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-07-sale-channel-cost/QA.json",
   "lastCycleOutcome": "evidence_only_no_new_proposal",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
@@ -65,9 +65,9 @@
     }
   ],
   "researchContinuity": {
-    "completed": "Auto diagnostic demand reviewed using three primary provider claims from four opened HTML URLs. Paid planned recurring-symptom diagnosis is distinct from a free battery tester request. Kemi Vilnius/Kaunas starting price is not our revenue; Dagas Kaunas and Akumai Klaipeda free tests do not prove a Vilnius offer. Existing BUSINESS/ACQUISITION already require willingness to consider paid diagnosis, so no new proposal. Three future qualification cases described, not executed. Root Madbeauty/rules and core calibration decisions reviewed; pending scopes unchanged. PR1 remains open; continuing its isolated owned research branch while main continuity is older.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence",
-    "nextCandidateQuestion": "Read main and attached PR1/worktree continuity first; avoid repeating an unmerged study. Review actual approvals before any experiment implementation. Otherwise inspect one distinct, decision-changing commercial question in an existing niche. Keep private research in its owned Git branch/PR and preserve other executors ownership.",
+    "completed": "Reviewed four distinct primary opened sources for sale-channel economics; price locale variant is not an extra source. Existing first-path already covers Flippa/Acquire eligibility, so no duplicate proposal. New listing-fee/refund versus buyer-contact distinction and illustrative USD scenarios recomputed; costs and actual sale probabilities unknown. Root owner reaffirmed Verslomatika dashboard/commercial paths and asked about integration (message 01a114e7-83d3-7501-ad60-6d99971ae7ee); root reports dashboard not integrated. External Verslomatika executor retains its scope; no private credentials stored. That question and Namudarbas-specific integration instruction do not approve registry P1/P2. PR1 still open and mergeable; own research worktree used; main continuity older.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision",
+    "nextCandidateQuestion": "Read main plus attached PR1 continuity and real owner decisions first. Preserve separate Verslomatika executor scope; do not implement its dashboard or repeat integration findings. Only resume this session scoped approved work. Otherwise inspect one distinct commercial question, preserving current research histories and pending approvals.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
     "executionScope": "Research and private registry only; BDEV-0003-P1 and P2 remain proposed. Strategic autonomy direction does not approve these experiment scopes; no local export/restore prototype executed"
   },

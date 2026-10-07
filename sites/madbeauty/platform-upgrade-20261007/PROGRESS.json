@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "addb8b8",
+  "runtimeSourceCheckpoint": "227557f",
   "companionSchema": "niche-public-core63cfd8c / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -28,6 +28,12 @@
       "tests": 114,
       "state": "accepted-isolated-path",
       "remaining": "Whole-state mutation serialization and per-organization routing; production migration not applied"
+    },
+    {
+      "name": "typed-search-results-and-public-coordinate-map",
+      "tests": 117,
+      "state": "accepted-isolated-path",
+      "remaining": "Geolocation permission handoff and full UI error/stale/conflict matrix; production not deployed"
     }
   ],
   "tasks": [
@@ -101,13 +107,13 @@
       "id": "S04",
       "title": "Salonų ir meistrų atskiri paieškos rezultatai",
       "phase": "2",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance"
     },
     {
       "id": "S05",
       "title": "Žemėlapis, atstumai ir adresai",
       "phase": "3",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance"
     },
     {
       "id": "P01",
@@ -282,7 +288,6 @@
     }
   ],
   "next": [
-    "S04 professional / salon results and S05 real coordinates",
     "B01 multi-service visit and B02 phased occupancy",
     "B04/B05 reminders and waitlist",
     "I02 scoped writes and per-organization routing",

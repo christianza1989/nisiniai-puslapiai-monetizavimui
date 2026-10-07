@@ -43,7 +43,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
     const requestHost=String(req.headers.host||'').split(':')[0].toLowerCase();
     if(!['127.0.0.1','localhost','madbeauty.lt','www.madbeauty.lt'].includes(requestHost)){res.writeHead(404,{'X-Robots-Tag':'noindex, nofollow','Content-Type':'text/plain; charset=utf-8'});res.end('Not found');return;}
     if(apiHandler&&await apiHandler.handle(req,res))return;
-    const headers={'X-Robots-Tag':'noindex, nofollow, noarchive','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"};
+    const headers={'X-Robots-Tag':'noindex, nofollow, noarchive','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-src https://www.openstreetmap.org; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"};
     if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405,headers);res.end();return;}
     try{
       const url=new URL(req.url,'http://127.0.0.1'),requested=decodeURIComponent(url.pathname);

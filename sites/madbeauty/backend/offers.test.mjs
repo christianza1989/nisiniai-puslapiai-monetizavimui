@@ -25,7 +25,7 @@ test('Public catalogue/profile/session reads avoid private history; search reads
  const requested=[],orgRead=f.store.organizationRecords;f.store.organizationRecords=(table,id)=>{requested.push([table,id]);return orgRead(table,id);};f.store.read=()=>{throw Error('Public method loaded full private state');};
  assert.equal(f.api.catalog({}).length,1);assert.equal(f.api.profile(f.org.id).id,f.org.id);assert.equal(f.api.session(f.owner).organizations[0].id,f.org.id);assert.ok(f.api.taxonomy().nodes.length);assert.equal(f.api.option('variant-fixture',[],f.p1.id).priceMinor,2500);
  assert.ok(!f.api.availability(input).slots.some(s=>s.startAt===slot.startAt));requested.length=0;
- const rows=f.api.search({dayOffset:1,from:1020,to:1200,anyTime:true,name:'Antras meistras'});assert.equal(rows.length,1);assert.equal(rows[0].staffOptions.length,2);assert.deepEqual(requested.map(x=>x[0]),['schedules','bookings','busyBlocks','holds']);assert.ok(requested.every(x=>x[1]===f.org.id));assert.ok(!JSON.stringify(rows).includes('unrelated-history'));
+ const rows=f.api.search({dayOffset:1,from:1020,to:1200,anyTime:true,name:'Antras meistras'});assert.equal(rows.length,1);assert.equal(rows[0].staffOptions.length,1);assert.equal(rows[0].staffOptions[0].practitionerId,f.p2.id);assert.deepEqual(requested.map(x=>x[0]),['schedules','bookings','busyBlocks','holds']);assert.ok(requested.every(x=>x[1]===f.org.id));assert.ok(!JSON.stringify(rows).includes('unrelated-history'));
  }finally{f.store.read=fullRead;f.store.close();}});
 
 test('Versioned catalogue additions require eligibility, retain archived IDs and resolve or reject provider requests',()=>{const f=fixture();try{
@@ -117,3 +117,16 @@ test('Legacy migration preserves broad classification, original IDs and snapshot
  assert.equal(after.services[0].id,before.services[0].id);assert.equal(after.services[0].priceMinor,2700);assert.equal(legacy.taxonomyServiceId,'kirpimai');assert.equal(legacy.migrationState,'needs-classification');assert.deepEqual(after.bookings,before.bookings);
  fails('INVALID_INPUT',()=>f.api.submitOffer(f.owner,{id:legacy.id,version:1}));fails('FORBIDDEN',()=>f.api.migrateCatalogue(f.owner));
 }finally{f.store.close();}});
+
+
+test('Search entity projections deduplicate variants, apply individual staff prices and names, and expose only approved review totals',()=>{const f=fixture();try{
+ const draft=f.make(),first=draft.variants[0];f.publish(f.api.saveOffer(f.owner,{...draft,variants:[first,{...first,id:'variant-fixture-second',label:'Ilgi plaukai',priceMinor:4000}]}));f.approveOrg();
+ const state=f.store.read();state.reviews.push({id:'approved-review-fixture',organizationId:f.org.id,clientId:f.client.id,bookingId:'completed-fixture',rating:4,text:'Private text fixture',approved:true},{id:'pending-review-fixture',organizationId:f.org.id,clientId:f.client.id,rating:1,text:'Pending text',approved:false});f.store.write(state);
+ const filters={city:'Vilnius',taxonomyServiceId:'plaukai',dayOffset:1,from:1020,to:1200},all=f.api.searchResults(filters);
+ assert.equal(all.treatments.length,2);assert.equal(all.salons.length,1);assert.equal(all.salons[0].services.length,2);assert.equal(all.professionals.length,2);assert.ok(all.professionals.every(p=>p.services.length===2));assert.equal(all.salons[0].reviewSummary.rating,4);assert.equal(all.salons[0].reviewSummary.count,1);assert.ok(!JSON.stringify(all).includes(f.client.id));assert.ok(!JSON.stringify(all).includes('Private text'));
+ const cheap=f.api.searchResults({...filters,maxPrice:3000});assert.equal(cheap.professionals.length,1);assert.equal(cheap.professionals[0].practitionerId,f.p1.id);assert.ok(cheap.salons[0].slots.every(c=>c.practitionerId===f.p1.id&&c.priceMinor<=3000));
+ const named=f.api.searchResults({...filters,name:'antras meistras'});assert.equal(named.professionals.length,1);assert.equal(named.professionals[0].practitionerId,f.p2.id);assert.equal(named.professionals[0].priceMinor,3500);assert.ok(named.salons[0].slots.every(c=>c.practitionerId===f.p2.id));
+ const busy=f.store.read();busy.busyBlocks.push({id:'fully-busy-fixture',organizationId:f.org.id,practitionerId:f.p2.id,resourceId:f.r2.id,startAt:'2026-10-08T14:00:00Z',endAt:'2026-10-08T17:00:00Z',active:true});f.store.write(busy);
+ const limited=f.api.searchResults(filters);assert.equal(limited.professionals.length,1);assert.equal(limited.professionals[0].practitionerId,f.p1.id);
+ const offer=f.api.workspace(f.owner,f.scope).offers.find(o=>o.id===draft.id);f.api.archiveOffer(f.owner,{id:offer.id,version:offer.version});assert.deepEqual(f.api.searchResults(filters),{treatments:[],salons:[],professionals:[]});
+ }finally{f.store.close();}});

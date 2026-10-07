@@ -8,7 +8,7 @@ export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=fa
   const cookie=s=>`${cookieName}=${s.token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=28800${secure?'; Secure':''}`;
   const cookies=req=>Object.fromEntries(String(req.headers.cookie||'').split(';').map(x=>x.trim().split('=')));
   const body=async req=>{let bytes=0,text='';for await(const chunk of req){bytes+=chunk.length;if(bytes>16384)reject('PAYLOAD_TOO_LARGE','Per didelė užklausa.',413);text+=chunk;}try{return JSON.parse(text);}catch{reject('INVALID_INPUT','Netinkama užklausa.');}};
-  const publicMethods=new Set(['catalog','profile','availability','option','taxonomy','search']);
+  const publicMethods=new Set(['catalog','profile','availability','option','taxonomy','search','searchResults']);
   const methods=new Set([...publicMethods,'saveLocation','submitLocation','moderateLocation','setLocationActive','assignStaffLocations','grantMembership','revokeMembership','bulkOfferPrices','saveMenuGroup','selectProcedures','saveOffer','submitOffer','moderateOffer','archiveOffer','requestProcedure','moderateProcedure','changeTaxonomy','assessQualification','migrateCatalogue','workspace','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','hold','releaseHold','confirm','cancelBooking','changeBooking','manualVisit','edit','submitRevision','moderate','moderateReview','createInquiry','message','review','report','preferences','metrics','favorite','retryOutbox','completeBooking']);
   const send=(res,status,data,session=null)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow','Referrer-Policy':'no-referrer',...(session?.token?{'Set-Cookie':cookie(session)}:{})});res.end(JSON.stringify(data));};
   async function handle(req,res){
@@ -35,7 +35,8 @@ export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=fa
       if(pathname==='/api/madbeauty/logout'){const fresh=auth.logout(s);send(res,200,{...platform.session(null),csrf:fresh.csrf,clock:platform.clock()},fresh);return true;}
       if(pathname!=='/api/madbeauty/rpc'||!methods.has(input.method))reject('NOT_FOUND','Operacija nerasta.',404);
       const user=publicMethods.has(input.method)?auth.account(s):auth.requireAccount(s),v=input.input||{};let result;
-      if(input.method==='taxonomy')result=platform.taxonomy();
+      if(input.method==='searchResults')result=platform.searchResults(v);
+      else if(input.method==='taxonomy')result=platform.taxonomy();
       else if(input.method==='search')result=platform.search(v);
       else if(input.method==='catalog')result=platform.catalog(v);
       else if(input.method==='profile')result=platform.profile(v.id);

@@ -1,3 +1,9 @@
+## 2026-10-07 — aktyvus platformos darbas ir atskiras turinio leidimas
+
+Platus upgrade tebėra ACTIVE PR26. Paieškos rezultatai turi atskirus paslaugų, salonų ir meistrų tipus, teisingas darbuotojo kainos ribas ir laikus, patvirtintų koordinačių žemėlapį. Katalogo, pasiūlymų, prieigų, filialų, SQL eilučių ir paieškos patikros: 117 / 117 paired Node + Workers PASS. Faktiniai 320 / 390 / 820 / 1440 px ekranai be horizontalaus išstūmimo. Likę kelių paslaugų vizito, fazių, priminimų, laukiančiųjų, ataskaitų, scoped writes ir visos UI matricos darbai tęsiami. [Aktualus progresas](platform-upgrade-20261007/PROGRESS.json), [įrodymai](platform-upgrade-20261007/ACCEPTANCE.md).
+
+Atskiras reviewed turinio batch30 gyvas madbeauty.lt: runtime b7a34b1, Worker f8eba745-b8ef-446e-aeff-3c8b95c762bd, 39 puslapiai / 180 tikrų WebP, dabar 7 vieši ir 32 pagal išlaikytas ateities datas. Narrow PR30 receipt 6777e97 ir writer PR10 nepriklausomas hosted acceptance 8ce36cf. Šis turinio leidimas nekeičia plataus upgrade production būsenos: platformos upgrade dar nepaskelbtas. Toliau pateikti senesni leidimai ir pauzės yra istorija.
+
 ## 2026-10-07 — upgrade pirmas uždaras kelias veikia, darbas tęsiamas
 
 Aktualus visas 0–3 upgrade tebėra ACTIVE PR26. Pirmas katalogas → privatus pasiūlymas → operatoriaus versija → actual intervalas → rezervacija patikrintas Node ir izoliuotame Workers su SQL restart bei browser. Katalogo ir 103 miestų combobox, kelių darbuotojų variantai, migracija, meniu/priedų/tvarkymo/CSV pagrindas jau yra šakoje; likusių modulių ir pilnos UI matricos priėmimas dar vykdomas. Tai nėra production perjungimas ar viso upgrade COMPLETE. Dabartinis entrypoint: `platform-upgrade-20261007/preview.mjs` (own8841 + exact reviewed V2 SHA argumentai). Įrodymai ir ribos: [ACCEPTANCE](platform-upgrade-20261007/ACCEPTANCE.md). Source bazė159d7d7, branch ai/madbeauty-platform-upgrade-20261007; source runtime commit įrašomas šiame priėmime po check.

@@ -1,4 +1,5 @@
 import {createLocationApi,validateCoordinates} from './locations.mjs';
+import {groupSearchRows,matchingQuotes} from './search-results.mjs';
 import {publicLocation,distanceKm,locationSchedule,staffAtLocation,resourceAtLocation,bookingPlace} from './locations-state.mjs';
 import {membershipScope,requireCapability,practitionerWorkspace} from './permissions.mjs';
 import {CITY_NAMES} from '../prototype/cities.mjs';
@@ -183,5 +184,23 @@ export function createPlatform(store){
     preferences(user,input){return mutate(d=>{if(!user)reject('UNAUTHENTICATED','Prisijunkite.',401);if(typeof input.service!=='boolean'||typeof input.marketing!=='boolean')reject('INVALID_INPUT','Netinkami pasirinkimai.');const old=d.preferences.find(p=>p.clientId===user.id),value={id:user.id+'-preferences',clientId:user.id,service:input.service,marketing:input.marketing,updatedAt:clock().now};if(old)Object.assign(old,value);else d.preferences.push(value);return value;});},
     metrics(user){const d=store.read();scope(d,user,{role:'operator'});return {events:d.events.length,realVisits:d.bookings.filter(b=>b.status==='completed').length,realInquiries:d.inquiries.length,demand:'TESTING_NOT_MEASURED'};},
   };Object.assign(api,createLocationApi({store,mutate,ownOrg,scope,event,clock}));Object.assign(api,createOfferApi({store,mutate,ownOrg:(d,u,org)=>ownOrg(d,u,org,'offers'),scope,event,clock}));
-  api.search=(filters={})=>{const point=filters.near?validateCoordinates(filters.near.latitude,filters.near.longitude):null;if(filters.sort==='distance'&&point?.latitude==null)reject('LOCATION_REQUIRED','Atstumui rikiuoti reikia jūsų pasirinktos vietos.');const d=publicRead(),calendars=new Map(),rows=catalogRows(d,filters).map(s=>{let a;try{if(!calendars.has(s.organizationId))calendars.set(s.organizationId,calendarRead(d,s.organizationId));a=slots(calendars.get(s.organizationId),{providerServiceId:s.id,addons:filters.addons||[],practitionerId:filters.practitionerId,dayOffset:filters.dayOffset??1,dateKey:filters.dateKey,from:filters.from??540,to:filters.to??1200});}catch(e){if(e.code!=='ADDON_SELECTION_REQUIRED')throw e;a={state:'needs-options',slots:[],message:e.message};}return {...s,distanceKm:distanceKm(point,s.location),availability:a,nextAt:a.slots[0]?.startAt||null};}).filter(s=>filters.anyTime||s.bookingMode&&s.bookingMode!=='instant'||s.availability.slots.length||s.availability.state==='needs-options');rows.sort(filters.sort==='distance'?(a,b)=>(a.distanceKm??Infinity)-(b.distanceKm??Infinity)||a.id.localeCompare(b.id):filters.sort==='price'?(a,b)=>a.priceMinor-b.priceMinor:filters.sort==='name'?(a,b)=>a.organizationName.localeCompare(b.organizationName,'lt'):(a,b)=>(a.nextAt||'z').localeCompare(b.nextAt||'z')||a.id.localeCompare(b.id));return rows;};return api;
+  api.search=(filters={})=>{
+    const point=filters.near?validateCoordinates(filters.near.latitude,filters.near.longitude):null;
+    if(filters.sort==='distance'&&point?.latitude==null)reject('LOCATION_REQUIRED','Atstumui rikiuoti reikia jūsų pasirinktos vietos.');
+    const d=publicRead(['reviews']),calendars=new Map(),reviews=new Map();
+    for(const r of d.reviews)if(r.approved){const a=reviews.get(r.organizationId)||{count:0,sum:0};a.count++;a.sum+=r.rating;reviews.set(r.organizationId,a);}
+    const rows=catalogRows(d,filters).flatMap(s=>{
+      const quotes=matchingQuotes(s,filters);if(!quotes.length)return [];
+      const selected={...s,priceMinor:Math.min(...quotes.map(q=>q.priceMinor)),priceToMinor:Math.max(...quotes.map(q=>q.priceMinor)),durationMin:Math.min(...quotes.map(q=>q.durationMin)),durationToMin:Math.max(...quotes.map(q=>q.durationMin)),...(s.staffOptions?{staffOptions:quotes}:{}),...(quotes.length===1?{practitionerName:quotes[0].name}:{} )};
+      let a;try{
+        if(!calendars.has(s.organizationId))calendars.set(s.organizationId,calendarRead(d,s.organizationId));
+        a=slots(calendars.get(s.organizationId),{providerServiceId:s.id,addons:filters.addons||[],practitionerId:filters.practitionerId,dayOffset:filters.dayOffset??1,dateKey:filters.dateKey,from:filters.from??540,to:filters.to??1200});
+      }catch(e){if(e.code!=='ADDON_SELECTION_REQUIRED')throw e;a={state:'needs-options',slots:[],message:e.message};}
+      a={...a,slots:a.slots.filter(c=>quotes.some(q=>q.practitionerId===c.practitionerId))};
+      const review=reviews.get(s.organizationId),reviewSummary=review?{count:review.count,rating:Math.round(review.sum/review.count*10)/10}:null;
+      return [{...selected,reviewSummary,distanceKm:distanceKm(point,s.location),availability:a,nextAt:a.slots[0]?.startAt||null}];
+    }).filter(s=>filters.anyTime||s.bookingMode&&s.bookingMode!=='instant'||s.availability.slots.length||s.availability.state==='needs-options');
+    rows.sort(filters.sort==='distance'?(a,b)=>(a.distanceKm??Infinity)-(b.distanceKm??Infinity)||a.id.localeCompare(b.id):filters.sort==='price'?(a,b)=>a.priceMinor-b.priceMinor||a.id.localeCompare(b.id):filters.sort==='name'?(a,b)=>a.organizationName.localeCompare(b.organizationName,'lt')||a.id.localeCompare(b.id):(a,b)=>(a.nextAt||'z').localeCompare(b.nextAt||'z')||a.id.localeCompare(b.id));return rows;
+  };
+  api.searchResults=(filters={})=>groupSearchRows(api.search(filters),filters);return api;
 }

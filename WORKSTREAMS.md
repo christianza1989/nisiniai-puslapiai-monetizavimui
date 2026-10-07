@@ -315,3 +315,6 @@ Cloudflare release 2026-10-06: also reserves infrastructure/mail-relay/** for th
 2026-10-07 Madbeauty PR26 third checkpoint: W02 reviewed places/public address snapshots, per-place resources/staff shifts, explicit transfer buffer and future-booking guards.110/110 paired local+Workers PASS; own browser390/1280 create/assign/shift/resource/procedure/editor/unpublished gate/operator review. Production untouched; full branch browser booking/full-state matrix and remaining full-plan modules ACTIVE.
 
 2026-10-07 Madbeauty upgrade own SQL checkpoint:114/114PASS,rows-v2 legacy checkpoint/ID/restart/capacity/outbox+scopedpublicread, STORAGE.md. I01/I02ACTIVE: globalmutations/perorgDOremaining; realnamespace unchanged. Writer753a6b6 exact39pageSHA75aa78 publication has own narrow worktree/PR30 from159d7d7 without these storage/branch source changes.
+
+
+2026-10-07 Madbeauty PR26 fifth checkpoint: S04 grouped treatment / salon / professional results, staff price and name filters, approved organization review aggregates, S05 public-coordinate OpenStreetMap iframe with ephemeral opt-in reference point. Paired 117 / 117 tests PASS, actual 320 / 390 / 820 / 1440 px no overflow after header fix. Narrow content PR30 deployed independently as b7a34b1 / f8eba745; no upgrade runtime or normalized migration live. Full upgrade ACTIVE; B01 / B02 and remaining modules next.

@@ -1,5 +1,11 @@
 # Madbeauty — dabartinis įgyvendinimas
 
+## Pilnas platformos upgrade atnaujintas — 2026-10-07
+
+Savininkas tiesiogiai paprašė pradėti suplanuotą platformos upgrade; ankstesnė plataus darbo PAUSED būsena panaikinta. **Režimas: vietinis veikiantis upgrade ir izoliuotas Workers kandidatų priėmimas, darbas ACTIVE.** Šaka `ai/madbeauty-platform-upgrade-20261007`, bazė159d7d7. [Apimtis ir tęstinumas](platform-upgrade-20261007/README.md), [API ir migracijos kontraktas](platform-upgrade-20261007/API.md), [pilnas planas](upgrade-plan-20261006/PLAN.md). Pirmas rezultatas — pilnos taksonomijos meistro pasirinkimai, privatūs pasiūlymai, variantai su tinkamais darbuotojais, paieška pagal tikrą visą laiką ir patvarus hold/confirm. Toliau tęsiami kiti įvykdomi plano moduliai.
+
+Publikuotas approved V2 paketas/source897ba83 ir Workeredf429e9 išlaikomi. Turinio generatorius/review/export yra PR10 atsakomybė. Production klientų DB, snapshots, DO tapatybė, secrets/mail/DNS ir nemokamo piloto modelis nepakeisti šiuo pavedimo atnaujinimu. Platesni mokami/integracijų aktyvavimai turi savo tikrus faktinius vartus. Žemiau pateiktos ankstesnės pauzės yra istorinė būsena.
+
 ## Gyvas patvirtintas V2 turinio paketas — 2026-10-07
 
 Turinio sesijos tikras reviewed V2 release `b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5` įdiegtas į tą patį madbeauty.lt Worker. Versija **edf429e9-2409-49bb-bf2b-88b5d53628f8**, runtime source897ba83 / PR24. [Priėmimas ir pakartojimo kelias](v2-release-20261007/README.md), [tikras deployment kvitas](v2-release-20261007/RECEIPT.json). Devyni tikrai patvirtinti puslapiai; dabar vieši septyni (home, indeksas, redakcija, organizacijos autorius, trys gidai), du ateities gidai lieka404 iki2026-10-13T07:00:00Z. Approved bytes ir datos nepakeisti.

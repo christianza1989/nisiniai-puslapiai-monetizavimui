@@ -18,10 +18,10 @@ const now=FIXTURE_NOW;
 test('Madbeauty V2 shared schemas and visible breadcrumbs use the projected Gidai index and reviewed editorial dates',async()=>{
  const dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-editorial-')),packagePath=path.join(dir,'content-package.json'),pkg=articleFixture();
  try{
-  const index={...structuredClone(pkg.pages[0]),id:'fixture-index',type:'index',slug:'gidai',title:'Gidai'};pkg.pages.push(index);pkg.pages[1].editorial.dateModified='2026-10-06T09:00:00Z';signFixture(pkg);await writeFile(packagePath,JSON.stringify(pkg));
+  const index={...structuredClone(pkg.pages[0]),id:'fixture-index',type:'index',slug:'gidai',title:'Gidai'};pkg.pages.push(index);pkg.pages[1].editorial.datePublished='2026-10-06T22:35:02.542Z';pkg.pages[1].editorial.dateModified='2026-10-07T01:00:00Z';signFixture(pkg);await writeFile(packagePath,JSON.stringify(pkg));
   const content=await contentProjection({packagePath,now,registry:{targets:[]}}),article=content.pages.find(p=>p.id==='fixture-guide'),schemas=content.schema(article);
   assert.equal(schemas[0].datePublished,pkg.pages[1].editorial.datePublished);assert.equal(schemas[0].dateModified,pkg.pages[1].editorial.dateModified);assert.equal(schemas[0].author[0]['@type'],'Organization');assert.equal(schemas[0].reviewedBy,undefined);
-  assert.deepEqual(schemas[1].itemListElement.map(x=>x.name),['Madbeauty','Gidai',article.title]);assert.equal(schemas[1].itemListElement[1].item,'https://madbeauty.lt/gidai');assert.match(content.html(article),/href="\/gidai">Gidai<\/a>/);
+  assert.deepEqual(schemas[1].itemListElement.map(x=>x.name),['Madbeauty','Gidai',article.title]);assert.equal(schemas[1].itemListElement[1].item,'https://madbeauty.lt/gidai');assert.match(content.html(article),/href="\/gidai">Gidai<\/a>/);assert.match(content.html(article),/datetime="2026-10-06T22:35:02.542Z">2026 m. spalio 7 d./);assert.match(content.html(article),/Atnaujinta <time datetime="2026-10-07T01:00:00Z">2026 m. spalio 7 d./);
   const collection=content.schema(content.pages.find(p=>p.id===index.id))[0];assert.equal(collection['@type'],'CollectionPage');assert.equal(collection.mainEntity.itemListElement.length,1);
   index.publishAt='2026-10-07T08:00:00Z';signFixture(pkg);await writeFile(packagePath,JSON.stringify(pkg));const future=await contentProjection({packagePath,now,registry:{targets:[]}}),due=future.pages.find(p=>p.id===article.id);
   assert.equal(future.schema(due)[1].itemListElement.length,2);assert.doesNotMatch(future.html(due),/href="\/gidai">Gidai<\/a>/);

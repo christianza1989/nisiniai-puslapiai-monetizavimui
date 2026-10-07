@@ -32,15 +32,15 @@ test('local schedule preserves wall time across DST, validates dates and bounded
   assert.throws(() => contentPolicy({ articlesPerMonth: 0 }));
   assert.equal(planningWindow(contentPolicy({ months:1 }),Date.parse('2027-01-31T09:00Z')).end,'2027-02-28');
   const proposals = [{type:'guide',publishDate:'2026-11-12'},{type:'guide',publishDate:'2026-11-12'}];
-  const scheduled = scheduledPlan(proposals,[],contentPolicy(),Date.parse('2026-10-05T08:00Z'));
+  const scheduled = scheduledPlan(proposals,[],contentPolicy({cadence:'monthly'}),Date.parse('2026-10-05T08:00Z'));
   assert.deepEqual(scheduled.map(p => p.publishAt),['2026-11-12T08:00:00.000Z','2026-11-13T08:00:00.000Z']);
 });
 
 test('weekly cadence fills spaced dates across batches without exceeding three articles in a calendar week', () => {
   const now = Date.parse('2026-10-05T08:00Z'), policy = contentPolicy({months:6,cadence:'weekly',articlesPerWeek:3});
   const window = planningWindow(policy,now); assert.equal(window.target,76);
-  assert.equal(contentPolicy().articlesPerMonth,2,'legacy monthly default stays compatible');
-  assert.throws(()=>contentPolicy({cadence:'weekly',articlesPerWeek:8}));
+  assert.equal(contentPolicy({cadence:'monthly'}).articlesPerMonth,2,'explicit legacy monthly policy stays compatible');
+  assert.equal(contentPolicy({cadence:'weekly',articlesPerWeek:8}).articlesPerWeek,8);
   assert.throws(()=>contentPolicy({cadence:'daily'}));
   let pages=[];
   while(pages.length<window.target) {

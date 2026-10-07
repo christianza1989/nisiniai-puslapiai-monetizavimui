@@ -1,0 +1,4385 @@
+{
+  "reviewedAt": "2026-10-07",
+  "status": "REUSED_RESULT_FORMAT_REVIEW_NOT_NEW_SAMPLE",
+  "queries": [
+    {
+      "query": "manikiūras",
+      "file": "serp-01.json",
+      "callId": "0d8ed2ad6583412aae9cdde8f1ec4a46",
+      "observedAt": "2026-10-06T20:39:01Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "providers, local catalogues, design inspiration",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.grozissaviems.lt/grozio-specialistai/Maniki%C5%ABras/Kaunas",
+          "title": "Top grožio specialistai ir salonai - Manikiūras, Kaunas",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://panele.lt/grozis/vasaros-pabaigos-manikiuras-nagu-idejos-rugpjutis-rugsejis",
+          "title": "Vasaros pabaigos manikiūras: 8 idėjos rugpjūčiui ir rugsėjui",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-japoniskas-manikiuras/pasiulymo-tipas-vietinis/kur-rasos-vilnius-lt/",
+          "title": "Japoniškas manikiūras šalia Rasos, Vilnius - Treatwell",
+          "rankGroup": 3,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://paslaugos.lt/klasikinis-manikiuras",
+          "title": "KLASIKINIS MANIKIŪRAS nuo 15 €: kainos 2026 m.",
+          "rankGroup": 4,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://lamour.lt/paslaugos/manikiuras/",
+          "title": "Manikiūras | L'Amour",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://mytime.lt/kategorijos/manikiuras/",
+          "title": "Manikiūras - MyTime",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.lrytas.lt/zyme/manikiuras",
+          "title": "Manikiūras",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.grozissaviems.lt/pedikiuras-manikiuras-vilniuje/apie",
+          "title": "Manikiūras Pedikiūras Vilniuje - Loreina J.",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.geradovana.lt/manikiuras-arba-gelinis-lakavimas-kaune-moa-studija",
+          "title": "Manikiūras arba gelinis lakavimas Kaune",
+          "rankGroup": 9,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-japoniskas-manikiuras/pasiulymo-tipas-vietinis/kur-romainiai-kaunas-lt/",
+          "title": "Japoniškas manikiūras šalia Romainiai, Kaunas - Treatwell",
+          "rankGroup": 10,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "gelinis lakavimas",
+      "file": "serp-02.json",
+      "callId": "f18a3725ed9545d38fe8743a397bfebf",
+      "observedAt": "2026-10-06T20:38:51Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 7,
+      "observedFormats": "DIY instructions, retail education, salons",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://nagulakavimas.lt/gelinio-lakavimo-instrukcija/?srsltid=AU7gw4WgI7FIqIk_NIDfnAAPTi1dj3_pYnrN55Ky5xFcOzEKY9LXDMW6",
+          "title": "Gelinio lakavimo instrukcija",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-ilgalaikis-gelinis-manikiuras/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "ilgalaikis gelinis manikiuras rajonas: Vilnius - Treatwell",
+          "rankGroup": 2,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://cascada.lt/cascada-tinklarastis/gelinis-lakavimas-namuose-misija-imanoma",
+          "title": "Gelinis lakavimas namuose? Misija įmanoma!",
+          "rankGroup": 3,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.bookitnow.lt/nagai/manikiuras/gelinis-lakavimas",
+          "title": "Gelinis lakavimas",
+          "rankGroup": 4,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://manikiurasvilniuje.lt/",
+          "title": "Gelinis lakavimas 2026 Vilniuje | Nagų salonas THE 1",
+          "rankGroup": 5,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.eurokos.lt/dekoratyvine/gelinis-lakavimas/",
+          "title": "Gelinio lakavimo priemonės",
+          "rankGroup": 6,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://profmedcentr.eu/straipsniai/news/gelinis-lakavimas-ar-paprastas-nagu-lakas-kuris-pasirinkimas-geresnis",
+          "title": "Gelinis lakavimas ar paprastas nagų lakas: kuris geresnis ...",
+          "rankGroup": 7,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "nagų dizainas",
+      "file": "serp-03.json",
+      "callId": "27a12c2814244c2fb9178490037962fa",
+      "observedAt": "2026-10-06T20:38:51Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 7,
+      "observedFormats": "retail tools, visual inspiration, nail services",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://beinitas.lt/375-nagu-dizainas",
+          "title": "Nagų dizainas: priemonės, dekoracijos ir teptukai",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.pinterest.com/bumeliene/gro%C5%BEis/",
+          "title": "91 Grožis ideas | bordo nails design, unghie bordeaux gel, ...",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://panele.lt/grozis/top-10-nagu-dizainu-kurie-tiks-tiek-kasdienai-tiek-sventei",
+          "title": "Top 10 nagų dizainų, kurie tiks tiek kasdienai, tiek šventei",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.facebook.com/DidierLabLithuania/videos/nag%C5%B3-dizainas-su-g%C4%97li%C5%B3-motyvu-puikus-pasirinkimas-vasaros-%C5%BEied%C5%B3-i%C5%A1siilgusioms-ak/1547420422788433/",
+          "title": "Nagų dizainas su gėlių motyvu – puikus pasirinkimas vasaros ...",
+          "rankGroup": 4,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "http://www.nagudizainas.lt/",
+          "title": "nagudizainas.lt: Manikiūras",
+          "rankGroup": 5,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://senses.lt/kategorija/nagu-dizainas/",
+          "title": "Nagų dizainas",
+          "rankGroup": 6,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.bookitnow.lt/apie/tinklarastis/nagu-dizainas-saltajam-sezonui--top-30!",
+          "title": "Nagų dizainas šaltajam sezonui – TOP 30!",
+          "rankGroup": 7,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "pedikiūras",
+      "file": "serp-04.json",
+      "callId": "f20956411c5f4ca681e64cdec8a7932f",
+      "observedAt": "2026-10-06T20:38:58Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "salons and local catalogues",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-pedikiuras/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "Top 20 salonai teikiantys paslaugą Pedikiūras rajonas: Vilnius",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://sauleja.lt/paslaugos/manikiuras-ir-pedikiuras/",
+          "title": "Manikiūras ir pedikiūras Kaune",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=94&categories=45",
+          "title": "Pedikiūras Kaune - (54)",
+          "rankGroup": 3,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.facebook.com/groups/596452553826652/?locale=lt_LT",
+          "title": "Manikiūras Pedikiūras Vilniuje",
+          "rankGroup": 4,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.dovanusala.lt/lt/96-manikiuras-ir-pedikiuras",
+          "title": "Manikiūras ir Pedikiūras, gera kaina",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.bookitnow.lt/nagai/pedikiuras",
+          "title": "Pedikiūras",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.facebook.com/Figarosalonas/videos/pediki%C5%ABras-tai-ne-tik-gra%C5%BE%C5%ABs-sutvarkyti-nagai-ir-p%C4%97dos-tai-savoti%C5%A1kas-atsipalaid/864718851352976/",
+          "title": "Pedikiūras - tai ne tik gražūs, sutvarkyti nagai ir pėdos. ...",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://esteskin.lt/grozionamai/manikiuras-pedikiuras/",
+          "title": "Manikiūras, pedikiūras",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.beautynail.lt/lt/lcatalog/product/10/pedikiuras/",
+          "title": "Pedikiūras",
+          "rankGroup": 9,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://paslaugos.lt/pedikiuras/vilniuje",
+          "title": "PEDIKIŪRAS Vilniuje: kainos 2026 m.",
+          "rankGroup": 10,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "moterų kirpimas",
+      "file": "serp-05.json",
+      "callId": "cb7f3a1bf2d14115a0cdf59ad9f5dbde",
+      "observedAt": "2026-10-06T20:39:06Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "salons, directories and training outlier",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-plauku-kirpimas-ir-isdziovinimas-moterims/pasiulymo-tipas-vietinis/kur-snipiskes-vilnius-lt/",
+          "title": "Top 20 salonai teikiantys paslaugą Plaukų kirpimas ir ...",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "http://www.kirpimas.lt/index.php/sukuosenos-parinkimas/57-moteru-kirpimas-moteriskas-kirpimas-kirpimas",
+          "title": "Moterų kirpimas, moteriškas kirpimas, kirpimas - Kirpimas.lt",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://paslaugos24.lt/paslauga/moteru-kirpimas/17016",
+          "title": "Moterų kirpimas",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=269&categories=188",
+          "title": "TOP moterų kirpimo pasiūlymų Markučiuose",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.kursuok.lt/mokymai/programa/moteru-plauku-kirpimas/",
+          "title": "Moterų plaukų kirpimas",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "http://korenevskiylt.blogspot.com/2014/06/moteriskas-plauku-kirpimas-rusiskas.html",
+          "title": "3.3.9. Baziniai klasikiniai moteriski kirpimai",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.imones.lt/kirpyklos/moteru-kirpimas",
+          "title": "Moterų kirpimas < Kirpyklos",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.instagram.com/p/DUKoYYvjuAU/",
+          "title": "MOTERŲ KATEGORIJA. MEISTRŲ RUNGTIS Moteriškas ...",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.1551.lt/paieska/plauk%C5%B3+kirpimas+moterims/",
+          "title": "Plaukų kirpimas moterims paieška",
+          "rankGroup": 9,
+          "rankAbsolute": 11
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų dažymas",
+      "file": "serp-06.json",
+      "callId": "ea78caed237b47b0b9070456a1f16735",
+      "observedAt": "2026-10-06T20:39:03Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "DIY retail advice and salons",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.eurokos.lt/blog/post/plauku-dazymas-ir-sviesinimas-namuose-su-kin/",
+          "title": "Plaukų dažymas ir šviesinimas namuose su KIN",
+          "rankGroup": 1,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://mtec.lt/naujienos-lt/plauku-dazymas-sveika-ar-ne/",
+          "title": "Plaukų dažymas – sveika ar ne?",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-plauku-dazymas/pasiulymo-tipas-vietinis/kur-giraite-lt/",
+          "title": "Plaukų dažymas šalia Giraite, Kauno rajonas - Treatwell",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.grozionamaisfinksas.lt/paslaugos/plauku-dazymas/visu-plauku-dazymas/",
+          "title": "Visų plaukų dažymas Vilniuje",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-plauku-saknu-dazymas/pasiulymo-tipas-vietinis/kur-kaunas-lt/",
+          "title": "moterų plaukų šaknų dažymas rajonas: Kaunas - Treatwell",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://fejalaura.lt/paslaugos/",
+          "title": "Paslaugos",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.delfi.lt/moterys/stilius/19-profesionaliu-patarimu-plauku-dazymui-namuose-92891773",
+          "title": "19 profesionalių patarimų plaukų dažymui namuose",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://akcijatau.lt/tau/plauku-dazymas-vilniuje",
+          "title": "plaukų dažymas vilniuje",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://paslaugos.lt/kirpejai/plauku-dazymas/klaipedoje",
+          "title": "PLAUKŲ DAŽYMAS Klaipėdoje: kainos 2026 m.",
+          "rankGroup": 9,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "antakių laminavimas",
+      "file": "serp-07.json",
+      "callId": "b68f8ca07ec04d999190528d87bc8307",
+      "observedAt": "2026-10-06T20:39:08Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "DIY products, social tutorials, method explanation and providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.facebook.com/100063894182862/videos/antaki%C5%B3-laminavimas-tai-viena-i%C5%A1-t%C5%B3-proced%C5%ABr%C5%B3-kuri-tikrai-gali-sukelti-priklauso/810514574727472/",
+          "title": "Antakių laminavimas – tai viena iš tų procedūrų, kuri tikrai gali ...",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://sivalashop.lt/module/tvcmsblog/single?page_type=post&rewrite=antakiu-laminavimas-namuose&fc=module&id=2",
+          "title": "Antakių laminavimas namuose - tobuli antakiai per 15 ...",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=MM6Rzf67H1Q",
+          "title": "Antakių laminavimas su POSH LASHES",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.apiestiliu.lt/antakiu-laminavimas-kas-tai/",
+          "title": "ANTAKIŲ LAMINAVIMAS - kas tai? - Apie stilių",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.bookitnow.lt/veidas/antakiai/antakiu-laminavimas",
+          "title": "Antakių laminavimas",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.facebook.com/silkyskinbyg/videos/antaki%C5%B3-laminavimas-ir-korekcija-/1384216916412757/",
+          "title": "Antakių laminavimas ir korekcija 🤤 | Silkysking",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://browmaniac.ee/lt/kulmuhooldus-lash-lift-iluteenused/",
+          "title": "Blakstienų laminavimas, antakių priežiūra ...",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.facebook.com/gintare.litvin/videos/antaki%C5%B3-laminavimas-ir-da%C5%BEymas-tai-populiari-gro%C5%BEio-proced%C5%ABra-skirta-i%C5%A1ry%C5%A1kinti-/1101196348527754/",
+          "title": "Antakių laminavimas ir dažymas – tai populiari grožio ...",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "blakstienų priauginimas",
+      "file": "serp-08.json",
+      "callId": "e941894511c34aeea5f7c466d5c98f53",
+      "observedAt": "2026-10-06T20:39:13Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "providers and method explanations",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.grozissaviems.lt/blakstienu-priauginimas-lamina/apie?lang=lt",
+          "title": "Blakstienų priauginimas lamina - Diana Ulevic",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://getbeauty.lt/category/blakstienu-priauginimas/",
+          "title": "blakstienų priauginimas",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://2sesutes.lt/kas-yra-blakstienu-priauginimas/",
+          "title": "Kas yra blakstienų priauginimas?",
+          "rankGroup": 3,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://paslaugos.lt/anna-zieniute-ab1123",
+          "title": "Blakstienų priauginimas Kaune - Kaunas / Anna Zieniute",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.facebook.com/a.p.priauginimas/",
+          "title": "A.P. Blakstienų priauginimas | Kaunas",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.grozissaviems.lt/blakstienu-priauginimas/naujas-vizitas",
+          "title": "Blakstienu priauginimas - Naujas vizitas",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/blakstienu-priauginimas-vilnius/",
+          "title": "blakstienu priauginimas vilnius skelbimai",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.facebook.com/ADgroziostudija/videos/blakstien%C5%B3-priauginimaslashes-brows-by-agnesse/854614663360308/",
+          "title": "Blakstienų priauginimas. Lashes & Brows By Agnesse",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://mylamination.lt/tag/blakstienu-priauginimas-3/",
+          "title": "blakstienų priauginimas - My lamination",
+          "rankGroup": 9,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "masažas",
+      "file": "serp-09.json",
+      "callId": "e0afa80db20c47a5afa16a721dcccd6b",
+      "observedAt": "2026-10-06T20:39:17Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "provider directories, medical and relaxation offers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.manodaktaras.lt/paslaugos/masazai",
+          "title": "Masažai visoje Lietuvoje",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/proceduru-grupe-masazas/pasiulymo-tipas-vietinis/kur-visoriai-vilnius-lt/",
+          "title": "Masažas šalia Visoriai, Vilnius - Treatwell",
+          "rankGroup": 2,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://akcijatau.lt/tau/ivairus-masazai",
+          "title": "Įvairūs masažai",
+          "rankGroup": 3,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.geradovana.lt/gydomasis-kuno-masazas-kaune-kauno-masazo-klinika",
+          "title": "Gydomasis kūno masažas Kaune",
+          "rankGroup": 4,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-atpalaiduojantis-masazas/pasiulymo-tipas-vietinis/kur-paupys-senamiestis-lt/",
+          "title": "atpalaiduojantis masažas šalia Paupys, Vilnius - Treatwell",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.mokyklaaob.lt/kas-yra-masazas/",
+          "title": "Kas yra masažas ?",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.facebook.com/masazaspro/",
+          "title": "Masažas Šiauliuose | Šiauliai",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.laisvalaikiodovanos.lt/nugaros-masazas-kaune-40-min/",
+          "title": "Nugaros masažas Kaune (40 min.)",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://gmcentras.lt/straipsniai/letinio-streso-poveikis-kunui-ir-kaip-ji-mazina-masazas",
+          "title": "Lėtinio streso poveikis kūnui ir masažas | GM Centras",
+          "rankGroup": 9,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=302&categories=45",
+          "title": "TOP 20 Masažas pasiūlymų Kaune",
+          "rankGroup": 10,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "veido valymas",
+      "file": "serp-10.json",
+      "callId": "e41f0d759d454b7180d054cbacbe76ab",
+      "observedAt": "2026-10-06T20:39:14Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "clinics and local providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://sugihara.lt/paslaugos/kosmetologija/veido-proceduros/",
+          "title": "Veido procedūros - Sugihara",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=246&categories=45",
+          "title": "Veido valymas Kaune - (227)",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.sapiegosklinika.lt/lt/kosmetologines-proceduros/mechaninis-veido-valymas/",
+          "title": "Mechaninis veido arba nugaros valymas",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://odos-klinika.lt/service/mechaninis-veido-valymas/",
+          "title": "Veido valymas Kaune Odos Klinikoje",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://medihub.lt/veido-valymas/",
+          "title": "Veido valymas - MEDIHUB LIETUVA",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://ramioda.lt/paslaugos/veido-valymas/",
+          "title": "Veido valymas",
+          "rankGroup": 6,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=246&categories=44",
+          "title": "Veido valymas Vilniuje - (142)",
+          "rankGroup": 7,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.manodrauge.lt/tinklarastis/veido-valymas-kodel-tai-svarbu-ir-kaip-teisingai-atlikti?srsltid=AU7gw4VSfwL2MTBwfSpbNFzd3Vd2XxM57hRaCvBfjV-UHz86VBtE2Vtq",
+          "title": "Veido valymas: 7 žingsnių procedūra švariai ir švytinčiai odai",
+          "rankGroup": 8,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://www.manodaktaras.lt/paslaugos/grozio-proceduros-ir-sveikatingumas/veido/valymas",
+          "title": "Veido valymas: mechaninis, rūgštinis, ultragarsinis",
+          "rankGroup": 9,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "nagų priauginimas",
+      "file": "serp-11.json",
+      "callId": "40c57788ed194c96a1fef9c1fd1d5be7",
+      "observedAt": "2026-10-06T20:39:19Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "method explanation, products and providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://nagudraugas.lt/nagu-priauginimas-pliusai-minusai-ir-patarimai/",
+          "title": "Nagų priauginimas: Pliusai, minusai ir patarimai",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://paslaugos.lt/nagu-priauginimas",
+          "title": "NAGŲ PRIAUGINIMAS nuo 25 €: kainos 2026 m.",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://watalook.lt/marketplace?service=Gelinis%20nag%C5%B3%20priauginimas",
+          "title": "Gelinis nagų priauginimas",
+          "rankGroup": 3,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=256&categories=44",
+          "title": "Nagų priauginimas Vilniuje - (15)",
+          "rankGroup": 4,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Kq2DvVsuElA",
+          "title": "Išbandome lakuojamą kietąjį gelį su teptuku | Nagų ...",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.drogas.lt/blog/drogas-rekomenduoja/nagu-priauginimas-su-sincero-salon-statybiniais-geliais-priemones-technika-ir-patarimai/",
+          "title": "Nagų priauginimas su SINCERO SALON statybiniais geliais",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://pronagustudija.lt/paslaugos-kainorastis/",
+          "title": "Paslaugos ir kainoraštis",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.15min.lt/gyvenimas/naujiena/mada-ir-grozis/nagu-priauginimas-jau-praeitis-specialistes-atskleidzia-kas-dabar-karaliauja-manikiuro-rinkoje-1062-2634278",
+          "title": "Nagų priauginimas – jau praeitis? Specialistės atskleidžia, ...",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-ilgalaikis-gelinis-lakavimas-1/pasiulymo-tipas-vietinis/kur-kaunas-lt/",
+          "title": "ilgalaikis gelinis lakavimas rajonas: Kaunas - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://paslaugos.lt/nagu-priauginimas/kaune",
+          "title": "NAGŲ PRIAUGINIMAS Kaune nuo 25 €: kainos 2026 m.",
+          "rankGroup": 10,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "proginės šukuosenos",
+      "file": "serp-12.json",
+      "callId": "f9e1683617814a2f91849d8adb2b9a37",
+      "observedAt": "2026-10-06T20:39:22Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "event hair providers and directories",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.bookitnow.lt/plaukai/sukuosenos/progines-sukuosenos",
+          "title": "Proginės šukuosenos",
+          "rankGroup": 1,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-susukavimas-ir-progines-sukuosenos/pasiulymo-tipas-vietinis/kur-panorama-lt/",
+          "title": "sušukavimas ir proginės šukuosenos šalia Panorama, Vilnius",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://paslaugos.lt/uzklausos/progines-sukuosenos/vilniuje",
+          "title": "Klientų užklausos (45): Proginės šukuosenos",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://cup.lt/lt/paslaugos/grozio-salonai/progines-sukuosenos",
+          "title": "Proginės šukuosenos",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.facebook.com/100057702217976/videos/%C5%A1ukuosenosprogin%C4%97s-%C5%A1ukuosenos-registracija-mob-8-624-77696-au%C5%A1ra/856416795637753/",
+          "title": "Šukuosenos Proginės šukuosenos. Registracija mob. 8 624 ...",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/progines-sukuosenos/",
+          "title": "progines sukuosenos skelbimai",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.info.lt/paieska/progin%C4%97s+%C5%A1ukuosenos",
+          "title": "Proginės šukuosenos",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-susukavimas-ir-progines-sukuosenos/pasiulymo-tipas-vietinis/kur-kalnenai-vilnius-lt/",
+          "title": "sušukavimas ir proginės šukuosenos šalia Kalnenai, Vilnius",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų tiesinimas keratinu",
+      "file": "serp-13.json",
+      "callId": "422b215441184a4c96f84ae804f2d058",
+      "observedAt": "2026-10-06T20:39:25Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "providers, retail products and price aggregators",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.facebook.com/muzasalonas.lt/posts/ilgalaikis-plauk%C5%B3-tiesinimas-keratinu-tai-viena-populiariausi%C5%B3-proced%C5%ABr%C5%B3-skirta-/1211466830984439/",
+          "title": "Ilgalaikis plaukų tiesinimas keratinu",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.groziopaslaugos.lt/public/kainos_plauku_tiesinimas_keratinu_gydymas",
+          "title": "Kainos - plaukų tiesinimas keratinu",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.kainos.lt/paieska/keratinas-plauku-tiesinimui-kaina",
+          "title": "Keratinas Plauku Tiesinimui kaina nuo 7.95 € (47 pard.)",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.facebook.com/Mystichairandbeauty/videos/plauk%C5%B3-tiesinimas-keratinu-coco-choco%EF%B8%8Fregistracija-02084780687-atlieka-kirpeja%EF%B8%8F-/410190488153596/",
+          "title": "Plaukų tiesinimas keratinu „Coco Choco\" registracija",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.groziopaslaugos.lt/plauku_tiesinimas_keratinu_cheminis_susukavimas/",
+          "title": "Plaukų tiesinimas - Gatineau grožio salonas Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-plauku-tiesinimas-1/pasiulymo-tipas-vietinis/kur-lietuva/",
+          "title": "plaukų tiesinimas rajonas: Lietuva - Treatwell",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://aina.lt/plauku-tiesinimas-keratinu-koki-pasirinkti-kaip-po-proceduros-plaukus-priziureti-ir-ko-jokiu-budu-nedaryti/",
+          "title": "Plaukų tiesinimas keratinu: kokį pasirinkti, kaip po ...",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.facebook.com/groziolinija.lt/videos/viena-%F0%9D%90%86%F0%9D%90%8A%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%A2%F0%9D%90%AB-proced%C5%ABra-suteikia-dvigub%C4%85-poveik%C4%AF-atstatoma-plauk%C5%B3-strukt%C5%ABra-ir-ji/253006477220314/",
+          "title": "Viena 𝐆𝐊𝐡𝐚𝐢𝐫 procedūra suteikia dvigubą poveikį",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "depiliacija vašku",
+      "file": "serp-14.json",
+      "callId": "708c9ef0c82f4d3db0ce8e211d0c6814",
+      "observedAt": "2026-10-06T20:39:32Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "DIY articles and providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-bikini-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-seskine-vilnius-lt/",
+          "title": "Moterų bikini depiliacija vašku šalia Šeškine, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.kalvotoji.lt/2022/07/14/depiliacija-vasku-namuose-dazniausios-daromos-klaidos/",
+          "title": "Depiliacija vašku namuose – dažniausios daromos klaidos",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://panele.lt/grozis/depiliacija-vasku-namuose-kaip-isvengti-sudirgusios-odos",
+          "title": "Depiliacija vašku namuose: kaip išvengti sudirgusios odos?",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.facebook.com/everigs/posts/depiliacija-va%C5%A1ku-ir-cukrumivieni-i%C5%A1-populiariausi%C5%B3-b%C5%ABd%C5%B3-greitai-pa%C5%A1alinti-nepag/1266922578777575/",
+          "title": "Depiliacija vašku ir cukrumi vieni iš populiariausių būdų ...",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.facebook.com/61557616672357/videos/-depiliacija-va%C5%A1ku-%C5%A1velni-oda-ilgesniam-laikui-po-plaukeli%C5%B3-%C5%A1alinimo-va%C5%A1ku-oda-g/877451878655418/",
+          "title": "Depiliacija vašku – švelni oda ilgesniam laikui  Po plaukelių ...",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-bikini-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-romainiai-kaunas-lt/",
+          "title": "Moterų bikini depiliacija vašku šalia Romainiai, Kaunas",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://gyvensena.sveikas.lt/lt/grozis_ir_kuno_prieziura/grozio_salonas_namuose_depiliacija_vasku/",
+          "title": "Grožio salonas namuose. Depiliacija vašku - sveikas.lt",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.instagram.com/p/DTr6XtTCN3d/",
+          "title": "ką verta žinoti? Depiliacija vašku – tai viena populiariausių ...",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/depiliacija-vasku-vilniuje/",
+          "title": "depiliacija vasku vilniuje skelbimai",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų šalinimas lazeriu",
+      "file": "serp-15.json",
+      "callId": "845ff3594c734a6fa3562dfb6bd9d8f1",
+      "observedAt": "2026-10-06T20:39:33Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "clinics and method explanations",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.hila.lt/paslaugos-ir-kainos/dermatologija/plauku-salinimas-lazeriu/",
+          "title": "Plaukų šalinimas lazeriu",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://plaukusalinimaslazeriu.lt/",
+          "title": "Plaukų šalinimas lazeriu",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=HVAuwpsIE9U",
+          "title": "Dar nebuvai atlikęs plaukelių šalinimo lazeriu procedūros? ...",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=295&categories=44",
+          "title": "Veido plaukelių šalinimas Vilniuje - BookitNow",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.apollohospitals.com/lt/health-library/laser-hair-removal-yay-or-nay",
+          "title": "Plaukų šalinimas lazeriu – taip ar ne? | Apollo ligoninės",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.facebook.com/revuclinic/videos/elektroepiliacija-ar-lazerin%C4%97-depiliacija/1588650925184997/",
+          "title": "Elektroepiliacija ar lazerinė depiliacija? - REVÙ CLINIC",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://primumestetica.lt/plaukeliu-salinimas-epiliaciniu-lazeriu-deka-again/",
+          "title": "Plaukelių šalinimas epiliaciniu lazeriu „Deka Again“",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.pasveik.lt/lt/sveikatos-ir-medicinos-naujienos/plauku-salinimas-aleksandrito-lazeriu-gydytoja-dermatologe-atsako-i-dazniausiai-uzduodamus-klausimus/345/",
+          "title": "Plaukų šalinimas Aleksandrito lazeriu: gydytoja ... - Pasveik.lt",
+          "rankGroup": 8,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://bioklinika.lt/paslauga/plastaku-plauku-salinimas/",
+          "title": "Plaštakų plaukų šalinimas",
+          "rankGroup": 9,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "makiažas",
+      "file": "serp-16.json",
+      "callId": "11a32741fdf941a2bb4e87232501224d",
+      "observedAt": "2026-10-06T20:39:40Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "cosmetics retail and makeup providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://bonnie.lt/collections/makiazas",
+          "title": "Makiažas | Dekoratyvinė kosmetika",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-makiazas/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "Top 20 salonai teikiantys paslaugą Makiažas rajonas: Vilnius",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://vilma-permanent.lt/",
+          "title": "Permanentinis makiažas Vilniuje | Vilma Mickienė",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.facebook.com/groups/606905054386969/",
+          "title": "Makiažas Vilniuje",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.gsmakeup.lt/profesionalus-proginis-makiazas-kaune-makiazas-vestuvems-makiazo-meistre-gabriele-sinickaite/",
+          "title": "Makiažas vestuvėms - makiažo meistrė Gabrielė Sinickaitė",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.bookitnow.lt/veidas/makiazas",
+          "title": "Makiažas - (232)",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://gabikami.lt/",
+          "title": "Gaivus makiažas Vilniuje | GabiKami",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://agneber.lt/makiazas/",
+          "title": "Profesionalus makiažas | AGNEBER",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "kūno procedūros",
+      "file": "serp-17.json",
+      "callId": "fc89c5b824bf4c66b24e09176cf60bbc",
+      "observedAt": "2026-10-06T20:39:36Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "body treatment providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-kuno-proceduros/pasiulymo-tipas-vietinis/kur-snipiskes-vilnius-lt/",
+          "title": "kūno procedūros rajonas: Šnipiškes, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.spavilnius.lt/lt/vilnius/proceduros/kuno-proceduros-su-ivyniojimu/65",
+          "title": "Kuno proceduros su įvyniojimu Vilniuje",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://mytime.lt/kategorijos/kuno-proceduros/",
+          "title": "Kūno procedūros - MyTime",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://estetusklinika.lt/proceduros/kuno-pilingas/",
+          "title": "Profesionalus kūno pilingas — odos atnaujinimas | Estetus",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.facebook.com/100048915282242/?locale=te_IN",
+          "title": "Estetinės kūno procedūros | Kaunas",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-kuno-proceduros/pasiulymo-tipas-vietinis/kur-naujamiestis-vilnius-lt/",
+          "title": "kūno procedūros rajonas: Naujamiestis, Vilnius - Treatwell",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://marinashpak.lt/proceduros/kuno-proceduros/",
+          "title": "Kūno procedūros",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.facebook.com/groziokultas/posts/aparatin%C4%97s-k%C5%ABno-proced%C5%ABros-kai-skirtingos-technologijos-sujungiamos-vienam-tiksl/1621809133288842/",
+          "title": "Aparatinės kūno procedūros – kai skirtingos technologijos ...",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://sauleja.lt/mijapilkg/paslaugos/grozio-proceduros/kuno-proceduros/",
+          "title": "Kūno procedūros",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.facebook.com/Sapiegosklinika/videos/kod%C4%97l-vienos-k%C5%ABno-proced%C5%ABros-ne-visada-pakanka-kai-norime-veikti-ir-k%C5%ABno-apimtis/1445744754149742/",
+          "title": "Kodėl vienos kūno procedūros ne visada pakanka, kai norime ...",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "auskarų vėrimas",
+      "file": "serp-18.json",
+      "callId": "ef2ceaaaca19416cbde6179ed1425b7a",
+      "observedAt": "2026-10-06T20:39:48Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "piercing providers and price menus",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-auskaru-verimas/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "auskarų vėrimas rajonas: Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.bookitnow.lt/auskaru-verimo-paslaugos-pas-zoja",
+          "title": "Idilija auskarų vėrimas",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://vean-tattoo.lt/tatu-salony/vilnius/auskaru-verimas",
+          "title": "Auskarų vėrimas Vilniuje: meistrai ir papuošalai | VEAN TATTOO",
+          "rankGroup": 3,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://odos-klinika.lt/service/auskaru-verimas/",
+          "title": "Auskarų vėrimas Kaune Odos Klinikoje",
+          "rankGroup": 4,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://idilija.lt/kainos/?srsltid=AU7gw4WzdOSzJE0C0ckLJfi6-NNthTt9ivPdQMnmJkozAiGisJSYPIrf",
+          "title": "Kainos - Idilija.lt",
+          "rankGroup": 5,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://ribas.lt/pages/piercing-service",
+          "title": "Auskarų vėrimas",
+          "rankGroup": 6,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://tiesiogapiegrozi.lt/paslaugos/auskaru-verimas/",
+          "title": "Auskarų vėrimas",
+          "rankGroup": 7,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.grozissaviems.lt/rgiraite-beauty/apie",
+          "title": "R.Giraitė Beauty - Rimgailė Ma",
+          "rankGroup": 8,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-auskaru-verimas/pasiulymo-tipas-vietinis/kur-vetrunge-klaipeda-lt/",
+          "title": "Auskarų vėrimas šalia Vetrunge, Klaipeda - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "barzdos kirpimas",
+      "file": "serp-19.json",
+      "callId": "976a2be24f8e4313b29606bd2872a1df",
+      "observedAt": "2026-10-06T20:39:45Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "barber providers and bundled offers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-barzdos-kirpimas-ir-modeliavimas/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "barzdos kirpimas ir modeliavimas rajonas: Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=279&categories=44",
+          "title": "Barzdos kirpimas ir modeliavimas Vilniuje",
+          "rankGroup": 2,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.laisvalaikiodovanos.lt/vyriskas-kirpimas-ir-barzdos-modeliavimas/",
+          "title": "Vyriškas kirpimas ir barzdos modeliavimas",
+          "rankGroup": 3,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://barzdaskuciai.lt/paslaugos/",
+          "title": "Barzdaskučiai | Barbershop | PASLAUGOS",
+          "rankGroup": 4,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://barzdociai.lt/kirpimas-ir-barzdos-modeliavimas-vilniuje/",
+          "title": "Kirpimas ir barzdos modeliavimas Vilniuje - Barzdočiai.lt",
+          "rankGroup": 5,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.bookitnow.lt/proceduros-vyrams/barzdos-kirpimas-ir-modeliavimas",
+          "title": "Barzdos kirpimas ir modeliavimas",
+          "rankGroup": 6,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://thegentlemen.lt/paslaugos/",
+          "title": "Paslaugos - The Gentlemen Barbershop | Vyrų kirpykla",
+          "rankGroup": 7,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://paslaugos.lt/barzdos-formavimas",
+          "title": "BARZDOS FORMAVIMAS: kainos 2026 m.",
+          "rankGroup": 8,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-barzdos-kirpimas-ir-modeliavimas/pasiulymo-tipas-vietinis/kur-klaipeda-lt/",
+          "title": "barzdos kirpimas ir modeliavimas rajonas: Klaipeda - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "spa",
+      "file": "serp-20.json",
+      "callId": "4a70cc06c3b84ed5b3b5345d14c92da1",
+      "observedAt": "2026-10-06T20:39:46Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 7,
+      "observedFormats": "hotels, overnight travel and day spa services",
+      "role": "MIXED_DAY_SPA_AND_TRAVEL_SCOPE",
+      "evidence": [
+        {
+          "url": "https://www.booking.com/spa/city/lt/dobiliai.lt.html",
+          "title": "10 geriausių SPA viešbučių mieste Dobiliai, Lietuvoje",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.spavilnius.lt/lt/druskininkai/spa-vilnius-vilnius",
+          "title": "Dienos SPA Vilniuje | SPA VILNIUS",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.makaliauslietuva.lt/poilsis-lietuvoje/druskininkai-vienam-spa-vilnius/",
+          "title": "SPA VILNIUS Druskininkai vienam - MakaliausLietuva.lt",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.pamatyklietuvoje.lt/keliones/naujienos/spa-turizmas-lietuvoje-poilsis-sveikatinimas-ir-kelione-link-saves/531",
+          "title": "SPA turizmas Lietuvoje: poilsis, sveikatinimas ir kelionė ...",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.noriunoriunoriu.lt/lt/pasiulymas/viesbutis-ir-spa-goda-druskininkuose-2-nakvynes-standartinis-kambarys-pusryciai-vakarienes-masazai-dviem",
+          "title": "2 nakvynės, pusryčiai, dvi VAKARIENĖS, MASAŽAI ir SPA ...",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://sauleja.lt/spa-paslaugos-poroms/",
+          "title": "SPA paslaugos Poroms",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.facebook.com/Passionspas.lt/",
+          "title": "Passionspas.lt Masažiniai SPA ir Swimspa Plaukimo ...",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "permanentinis makiažas",
+      "file": "serp-21.json",
+      "callId": "2a0986c49d4b4aa29d8a257f71c00400",
+      "observedAt": "2026-10-06T20:39:53Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "pigmentation providers, explanations and social images",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://paslaugos.lt/dorota-zarembiene-dp600",
+          "title": "Ilgalaikis makiažas/permanentas Vilniuje - Vilnius / Dorota ...",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.15min.lt/tema/permanentinis-makiazas-mikropigmentacija-5191",
+          "title": "Permanentinis makiažas (Mikropigmentacija) | Tema - 15min",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.instagram.com/p/DbaoT4BDf9I/",
+          "title": "Permanentinis makiažas po 2 metų – štai kaip jis atrodo. ...",
+          "rankGroup": 3,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.facebook.com/svlinesstudija/posts/permanentinis-aki%C5%B3-pravedimas-tai-ilgalaikis-makia%C5%BEas-kurio-metu-%C4%AFvedami-pigment/1207485031378548/",
+          "title": "Permanentinis akių pravedimas – tai ilgalaikis makiažas, ...",
+          "rankGroup": 4,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.treatwell.lt/salonas/permanentinis-makiazas-klaipeda-by-jelena-matvejeva/",
+          "title": "Permanentinis makiažas Klaipėda by Jelena Matvejeva",
+          "rankGroup": 5,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.manodaktaras.lt/naujienos/tema/permanentinis-makiazas",
+          "title": "permanentinis makiažas",
+          "rankGroup": 6,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://grokiskis.lt/verslas/permanentinis-makiazas-grozio-revoliucija",
+          "title": "Permanentinis makiažas - grožio revoliucija",
+          "rankGroup": 7,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.manosveikata.lt/aktualijos/permanentinis-makiazas-pagalba-skubantiems/",
+          "title": "Permanentinis makiažas - pagalba skubantiems",
+          "rankGroup": 8,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.grozissaviems.lt/grozio-specialistai/Permanentinis%20makia%C5%BEas/Vilnius",
+          "title": "Top grožio specialistai ir salonai - Permanentinis makiažas ...",
+          "rankGroup": 9,
+          "rankAbsolute": 15
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "tatuiruotės",
+      "file": "serp-22.json",
+      "callId": "a415d2731f704d1199aa301c8622f2f7",
+      "observedAt": "2026-10-06T20:39:57Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "tattoo studios, inspiration, definitions and temporary retail products",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.facebook.com/groups/326973797465056/",
+          "title": "Tatuiruotės",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://lt.wikipedia.org/wiki/Tatuiruot%C4%97",
+          "title": "Tatuiruotė",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.positivetattoo.lt/",
+          "title": "Positive Tattoo: Pradžia",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.eurokos.lt/dekoratyvine/kuno-daile/laikinos-tatuiruotes/",
+          "title": "Laikinos tatuiruotės",
+          "rankGroup": 4,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://onyxtattoo.lt/",
+          "title": "Onyx Tattoo - Tatuiruočių studija Vilniuje | Profesionalūs meistrai",
+          "rankGroup": 5,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://vean-tattoo.lt/tatu-salony/klaipeda",
+          "title": "Tatuiruotės Klaipėda – meistrai ir kainos | VEAN TATTOO",
+          "rankGroup": 6,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://jomitattoo.lt/kainos/",
+          "title": "Kainos - Jo Mi | Tatuiruočių studija Vilniuje",
+          "rankGroup": 7,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.pegasas.lt/zaislai-ir-zaidimai/lauko-zaidimai/laikinosios-tatuiruotes/",
+          "title": "Laikinosios tatuiruotės",
+          "rankGroup": 8,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.noriugreit.lt/lt/kunas/tatuiruotes",
+          "title": "Tatuiruotės",
+          "rankGroup": 9,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://draugams.lt/laikinos-tatuiruotes/",
+          "title": "Laikinos tatuiruotės",
+          "rankGroup": 10,
+          "rankAbsolute": 15
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "mezoterapija",
+      "file": "serp-23.json",
+      "callId": "4d201a1f341d4ecbbf429226aa2b9624",
+      "observedAt": "2026-10-06T20:39:57Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "clinical providers and method explanations",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://perfectusclinica.com/estetine-medicina/mezoterapija/",
+          "title": "Mezoterapija",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.zavi.lt/grozio-uzrasai/kas-yra-mikroadatine-mezoterapija-ir-kaip-ji-veikia-oda?srsltid=AU7gw4UiCtDxDA-RFoedMVotV7wxLFMXw8ctSsrheDHS4AkIjuTzd5rz",
+          "title": "Kas yra mikroadatinė mezoterapija ir kaip ji veikia odą?",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://pdxdantukai.lt/veido-estetika/mezoterapija/",
+          "title": "Mezoterapija",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://medestetus.lt/paslaugos/estetine-dermatologija/mezoterapija/",
+          "title": "Mezoterapija",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://danysclinic.com/mezoterapija/",
+          "title": "Mezoterapija",
+          "rankGroup": 5,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "http://www.odosestetikosklinika.lt/mezoterapija-su-adatiniu-aparatu/",
+          "title": "Mezoterapija su adatiniu aparatu",
+          "rankGroup": 6,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://dermamedika.eu/mezoterapija/",
+          "title": "Mezoterapija",
+          "rankGroup": 7,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://clinicus.lt/mezoterapija-biorevitalizacija-ir-karboksiterapija-kokie-skirtumai-ir-kada-kuria-procedura-rinktis/",
+          "title": "Mezoterapija, biorevitalizacija ir karboksiterapija. Kokie ...",
+          "rankGroup": 8,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų priauginimas",
+      "file": "serp-24.json",
+      "callId": "9fb21fefa3e54402a7bd28c239f98f50",
+      "observedAt": "2026-10-06T20:39:58Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "hair extension providers and social/listing pages",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.instagram.com/_ketrin_plauku_priauginimas/",
+          "title": "Plaukų priauginimas Vilniuje Aukščiausia ...",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/plauku-priauginimo-vilnius/",
+          "title": "plauku priauginimo vilnius skelbimai",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://gkacademy.lt/en/galerija3/galerija/plauk-priauginimas",
+          "title": "Plaukų priauginimas - Galerija3 - gkacademy.lt",
+          "rankGroup": 3,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.facebook.com/renatosstudija/videos/plauk%C5%B3-priauginimas-atliktas-ant-trump%C5%B3-plauk%C5%B3-spalva-sukurta-specialiai-nat%C5%ABral/624669261692896/",
+          "title": "Plaukų priauginimas atliktas ant trumpų ...",
+          "rankGroup": 4,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.facebook.com/SHMIELHAIR/videos/-plauk%C5%B3-priauginimas-shmiel-studio-gro%C5%BEis-kuris-kalba-pats-u%C5%BE-save-ilgi-tank%C5%ABs-i/1069823505004814/",
+          "title": "Plaukų priauginimas Shmiel Studio – grožis, kuris kalba pats už ...",
+          "rankGroup": 5,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.facebook.com/ilgalaikeestetika/videos/plauk%C5%B3-priauginimas-puikus-b%C5%ABdas-greitai-ir-efektyviai-pasiekti-norim%C4%85-rezultat%C4%85/914606840382262/",
+          "title": "Plaukų priauginimas – puikus būdas greitai ir efektyviai pasiekti ...",
+          "rankGroup": 6,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.facebook.com/erikaburmakeup/videos/ar-priauginimas-gali-b%C5%ABti-atliekamas-ant-labai-plon%C5%B3-plauk%C5%B3-%C5%A1%C4%AF-klausim%C4%85-u%C5%BEduodat/25181882141477225/",
+          "title": "Ar priauginimas gali būti atliekamas ant labai plonų plaukų? ...",
+          "rankGroup": 7,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://izoblok.lt/statyba/plauku-priauginimas-klijais/",
+          "title": "Plaukų priauginimas klijais: išmokite efektyviausią techniką ir ...",
+          "rankGroup": 8,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://paslaugos.lt/plauku-prieziura-pk708",
+          "title": "Plaukų priauginimas - Vilniaus r. / Plaukų priežiūra",
+          "rankGroup": 9,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "parafino terapija",
+      "file": "serp-25.json",
+      "callId": "3f504dae86d24da1a6c8407a1808366a",
+      "observedAt": "2026-10-06T20:40:07Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "paraffin providers and thermal health claims",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-parafino-terapija/pasiulymo-tipas-vietinis/kur-visoriai-vilnius-lt/",
+          "title": "Parafino terapija šalia Visoriai, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.facebook.com/100063716973903/photos/parafino-terapija-tai-gydymas-%C5%A1ilumaparafino-proced%C5%ABra-ne-tik-su%C5%A1ildys-rankas-%C5%A1a/801328876983864/?locale=es_ES",
+          "title": "tai gydymas šiluma. Parafino procedūra ne tik sušildys ...",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.ambra.lt/parafino-terapija-rankoms-kojoms/",
+          "title": "Parafino terapija rankoms ir kojoms",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://peteliskiugroziosalonaslt.weebly.com/parafino-terapija.html",
+          "title": "Parafino terapija - Peteliskiu Grozio Salonas",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://siauliuglobosnamai.lt/parafino-voneles-proceduromis-lepiname-rankeles/",
+          "title": "Parafino vonelės procedūromis lepiname rankeles",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.beautyspot.lt/straipsniai/category/4_parafino-terapija",
+          "title": "Parafino terapija - beautyspot.lt",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://pronail.com.ua/lt/parafinoterapiya_dlya_ruk_chto_i_kak",
+          "title": "Parafino terapija rankoms: kas ir kaip pronail",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://bvshop.lt/collections/parafino-terapija",
+          "title": "Parafino terapija | Manikiūras ir pedikiūras - BVShop",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-parafino-terapija/pasiulymo-tipas-vietinis/kur-spaudos-rumai-lt/",
+          "title": "parafino terapija šalia Spaudos rumai, Vilnius - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "purškiamas įdegis",
+      "file": "serp-26.json",
+      "callId": "f07bc38edd8e4807b7fe70014f4e042a",
+      "observedAt": "2026-10-06T20:40:08Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "spray tan providers and retail explanations",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://spells.lt/",
+          "title": "Spells.lt: Purškiamo Įdegio studija",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.instagram.com/sun_by_sil/",
+          "title": "Purškiamas įdegis Vilniuje | Spray Tan (@sun_by_sil)",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://newcrush.com/lt/blog/idegio-tipai-kuo-skiriasi-savaiminis-dirbtinis-ir-purskiamas-idegis-n1467?srsltid=AU7gw4VOTvSCyD9rDAIeDYrRN-U_DPXZE5n5ufSiacYcHAx4yJkllEr4",
+          "title": "kuo skiriasi savaiminis, dirbtinis ir purškiamas įdegis?",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.facebook.com/you.glow.purskiamas.idegis/",
+          "title": "You Glow purškiamas įdegis | Šiauliai",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.drogas.lt/blog/drogas-rekomenduoja/purskiamas-idegis-greitas-sprendimas-bet-kokiai-progai/",
+          "title": "Purškiamas įdegis: greitas sprendimas bet kokiai progai",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-purskiamas-idegis-ir-soliariumai/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "Purškiamas įdegis ir soliariumai rajonas: Vilnius - Treatwell",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.kainos.lt/paieska/purskiamas-idegis-kaina",
+          "title": "Purskiamas Idegis kaina nuo 4.20 € (52 pard.)",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://klipshop.lt/veidui-ir-kunui/saules-priemones/savaiminio-idegio/purskikliai",
+          "title": "Savaiminio įdegio purškikliai",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.tangerine.lt/post/pur%C5%A1kiamas-%C4%AFdegis-ar-savaiminis-%C4%AFdegis-namuose-k%C4%85-verta-%C5%BEinoti",
+          "title": "Purškiamas Įdegis ar Savaiminis Įdegis Namuose: ką verta ...",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://panele.lt/grozis/purskiamo-idegis-jo-privalumai-ir-trukumai",
+          "title": "Purškiamas įdegis: jo privalumai ir trūkumai",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "pilatesas",
+      "file": "serp-27.json",
+      "callId": "eeabb31cf5e848859a9a6910a887b41d",
+      "observedAt": "2026-10-06T20:40:10Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "definitions, classes and reformer formats",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://lt.wikipedia.org/wiki/Pilatesas",
+          "title": "Pilatesas",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://4fstore.lt/blog/post/pilatesas-kas-tai-yra-ir-kaip-pradeti",
+          "title": "Pilatesas: kas tai? Nauda, pratimai pradedantiesiems | Blog 4F",
+          "rankGroup": 2,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://gymplius.lt/pilatesas-studijoje-ar-sporto-klube-privalumai-ir-trukumai/",
+          "title": "Pilatesas studijoje ar sporto klube: privalumai ir trūkumai",
+          "rankGroup": 3,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://mypilates.lt/kodel-rinktis-mypilates/",
+          "title": "Pilatesas su reformer treniruokliu: kaip veikia ir kodėl jis ...",
+          "rankGroup": 4,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.facebook.com/KaunasCityGym/videos/pilateso-treniruot%C4%97s-kaune/1124838958108352/",
+          "title": "PILATESAS: tai viso kūno mankštos metodika, stiprinanti ...",
+          "rankGroup": 5,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://rinkosaikste.lt/pilatesas-neatrastas-stiprybs-ir-sveikatos-lobynas/",
+          "title": "Pilatesas – neatrastas stiprybės ir sveikatos lobynas",
+          "rankGroup": 6,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://sportano.lt/blog/pilatesas-kas-tai-per-pratimai-ir-koks-ju-poveikis-pilateso-nauda-principai-ir-rusys-pradedantiesiems-ir-pazengusiems/",
+          "title": "Pilatesas - kas tai per pratimai ir koks jų poveikis? Pilateso ...",
+          "rankGroup": 7,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.apelsinas.lt/treniruotes/pilates/",
+          "title": "Pilates",
+          "rankGroup": 8,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://pinkpilates.lt/",
+          "title": "Pink Pilates: Pilates Reformer Vilniuje",
+          "rankGroup": 9,
+          "rankAbsolute": 15
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "kineziterapija",
+      "file": "serp-28.json",
+      "callId": "3a3ea76840b44e4486ae8338e6f1dfc5",
+      "observedAt": "2026-10-06T20:40:08Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "health providers and education/university pages",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://lsmu.lt/wp-content/uploads/Kineziterapija.pdf",
+          "title": "KINEZITERAPIJA",
+          "rankGroup": 1,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://reabilitacija.unomeda.lt/paslauga/grupine-kineziterapija/",
+          "title": "Grupinė kineziterapija",
+          "rankGroup": 2,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://judesiodirbtuves.lt/paslaugos/individuali-kineziterapija/",
+          "title": "Individuali kineziterapija",
+          "rankGroup": 3,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://paslaugos.lt/you-sporto-ir-sveikatingumo-klinika-yk030",
+          "title": "Kineziterapija/gydomieji masažai/nėščiosioms",
+          "rankGroup": 4,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.15min.lt/zmones/naujiena/lietuva/gydymas-judesiu-ir-saugo-nuo-ligu-ir-padeda-sveikti-1050-20862",
+          "title": "Gydymas judesiu – ir saugo nuo ligų, ir padeda sveikti",
+          "rankGroup": 5,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://unavita.lt/lt/paslaugos-products-1/kineziterapija-ir-reabilitacija",
+          "title": "Kineziterapija ir reabilitacija - UnaVita Privati Klinika Vilniuje",
+          "rankGroup": 6,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.vlmedicina.lt/lt/sala-galunes-ar-man-sklerodermija/kineziterapija-judesio-galia-sveikatai",
+          "title": "Kineziterapija: judesio galia sveikatai",
+          "rankGroup": 7,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://gydymasjudesiu.lt/lt/apie-mus/terminu-zodynelis.htm",
+          "title": "Terminų žodynėlis",
+          "rankGroup": 8,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=YdYb9yAwLk8",
+          "title": "Individuali kineziterapija | Eglės sanatorija",
+          "rankGroup": 9,
+          "rankAbsolute": 14
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "psichologo konsultacija",
+      "file": "serp-29.json",
+      "callId": "9879afb5f7de488096c2a85b4db6771e",
+      "observedAt": "2026-10-06T20:40:18Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "psychological service providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.asklinika.lt/irasas-365/vilnius/paslaugos/paslaugos-suaugusiesiems/psichologo-konsultacija/",
+          "title": "Psichologo konsultacija",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.vppc.lt/irasas-214/vilnius/paslaugos/pirminio-lygio-psichikos-sveikatos-centro-paslaugos/psichologo-konsultacija/",
+          "title": "Psichologo konsultacija suaugusiesiems",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://paslaugos.lt/uzklausos/psichologo-konsultacija",
+          "title": "Klientų užklausos (207): Psichologo konsultacija",
+          "rankGroup": 3,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.info.lt/paieska/individualios+psichologo+konsultacijos",
+          "title": "Individualios psichologo konsultacijos",
+          "rankGroup": 4,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://senevita.lrv.lt/lt/paslaugos/reabilitacijos-paslaugos/psichologo-konsultacija",
+          "title": "Psichologo konsultacija - Viešoji įstaiga ...",
+          "rankGroup": 5,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://klaipedoshospisas.lt/seimos-klinika/paslaugos/medicinos-psichologo-konsultacija/",
+          "title": "Medicinos psichologo konsultacija – Šeimos klinika",
+          "rankGroup": 6,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://gerameda.lt/psichologo-konsultacija-kaina-vilnius/",
+          "title": "Psichologo konsultacija kaina Vilniuje 2026: kiek kainuoja",
+          "rankGroup": 7,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://paslaugos.lt/uzklausos/psichologo-konsultacija/vilniaus-rajone",
+          "title": "Klientų užklausos (10): Psichologo konsultacija",
+          "rankGroup": 8,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://depresijosiveikimas.lt/tag/psichologo-konsultacija/",
+          "title": "Tag Archives: psichologo konsultacija",
+          "rankGroup": 9,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://ramumo.lt/psichologo-konsultacija-internetu/",
+          "title": "Psichologo konsultacija internetu",
+          "rankGroup": 10,
+          "rankAbsolute": 14
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "meditacija",
+      "file": "serp-30.json",
+      "callId": "7c9f1cbf44ba4df7903f28af77722ec3",
+      "observedAt": "2026-10-06T20:40:22Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "definitions, audio/video and wellbeing sessions",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.tetaklubas.lt/kas-yra-meditacija/",
+          "title": "Kas yra meditacija?",
+          "rankGroup": 1,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=oY5B0xYALDs",
+          "title": "Atpalaiduojanti meditacija miegui EINU SAVO KELIU lietuviškai",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.artofliving.org/lt-lt/meditacija-ir-atsipalaidavimas",
+          "title": "Meditacija ir atsipalaidavimas | The Art Of Living Lietuva",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.asportas.lt/blog/meditacija/",
+          "title": "Meditacija: 12 moksliškai pagrįstų teigiamų savybių",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.artofliving.org/lt-lt/meditacija-ir-miegas-pana%C5%A1%C5%ABs-ta%C4%8Diau-skirtingi",
+          "title": "Meditacija ir miegas: Panašūs, tačiau skirtingi",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=IXy5iIdRbqk",
+          "title": "Lina Bagdonavičienė. Sėdimoji meditacija su emocijomis.",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.artofliving.org/lt-lt/meditacija-i%C5%A1rauna-nuobodul%C4%AF",
+          "title": "Meditacija išrauna nuobodulį | The Art Of Living Lietuva",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=1svX2KSCJtQ",
+          "title": "Atsipalaidavimo meditacija \"Vidinė Ramybė\" lietuviškai",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "burnos higiena",
+      "file": "serp-31.json",
+      "callId": "11519264df6f45a7b9667134446938d6",
+      "observedAt": "2026-10-06T20:40:20Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "dental clinics and before/after care articles",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://senvagesklinika.lt/services/burnos-higiena/",
+          "title": "Burnos higiena Panevėžys, kaina nuo 30 €",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.bookitnow.lt/burnos-higiena",
+          "title": "Burnos higiena",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.sypsenosakademija.lt/paslaugos/profesionali-burnos-higiena",
+          "title": "Profesionali burnos higiena Vilniuje, Kaune ir Klaipėdoje",
+          "rankGroup": 3,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.manodaktaras.lt/naujienos/burnos-higiena-pries-ir-po-31511",
+          "title": "Burnos higiena prieš ir po – kaip reikėtų elgtis?",
+          "rankGroup": 4,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://meliva.lt/paslaugos/profilaktikos-ir-dantu-higienos-centras/profesionali-burnos-higiena",
+          "title": "Profesionali burnos higiena",
+          "rankGroup": 5,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://lauradenta.lt/burnos-higiena-klaipedoje/",
+          "title": "Profesionali Burnos Higiena Klaipėdoje",
+          "rankGroup": 6,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.anteja.lt/gydytojai-specialistai/burnos-higienistai",
+          "title": "Burnos higienistai Vilniuje, Kaune ir kituose miestuose",
+          "rankGroup": 7,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://zverynoklinika.lt/burnos-higiena/",
+          "title": "Burnos higiena | zverynoklinika",
+          "rankGroup": 8,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://clinicdpc.lt/paslaugos/profesionali-burnos-higiena/",
+          "title": "Profesionali burnos higiena | DPC - Dantų priežiūros centras",
+          "rankGroup": 9,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://jurininkupoliklinika.lt/medicinos-paslaugos/odontologija/burnos-higiena/",
+          "title": "Burnos higiena",
+          "rankGroup": 10,
+          "rankAbsolute": 14
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "dermatologo konsultacija",
+      "file": "serp-32.json",
+      "callId": "b6dfcb45036d42b8aab702ff6c32f683",
+      "observedAt": "2026-10-06T20:40:24Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "medical specialist providers",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://affidea.lt/lt/paslaugos/gydytoju-konsultacijos/dermatovenerologas-odos-gydytojas-venerologas/",
+          "title": "Dermatologo konsultacija (Dermatovenerologas)",
+          "rankGroup": 1,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://iderma.lt/",
+          "title": "Dermatologo konsultacija internetu per 24 val. | iDerma",
+          "rankGroup": 2,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.anteja.lt/gydytojai-specialistai/dermatovenerologai",
+          "title": "Dermatovenerologai Vilniuje",
+          "rankGroup": 3,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.revuclinic.lt/lt/dermatologo-konsultacija/",
+          "title": "Dermatologo konsultacija",
+          "rankGroup": 4,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://insenseclinic.lt/paslaugos/konsultacijos-78/gydytojo-dermatologo-konsultacija-79",
+          "title": "Gydytojo dermatologo konsultacija",
+          "rankGroup": 5,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://ostklinika.lt/paslaugos/dermatologo-paslaugos/",
+          "title": "Dermatologas Vilniuje, odos gydytojai",
+          "rankGroup": 6,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://radviluklinika.lt/paslaugos/gydytoju-konsultacijos/dermatologo-dermatovenerologo-onkologo-konsultacija/",
+          "title": "Dermatologo, dermatovenerologo, onkologo konsultacija",
+          "rankGroup": 7,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://sgklinika.lt/procedura/dermatologijos-konsultacijos/",
+          "title": "Dermatologija - odos ligų diagnostika ir gydymas",
+          "rankGroup": 8,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://sokratoclinica.lt/parduotuve/dermatologo-konsultacija/",
+          "title": "Dermatologo konsultacija - Sokratoclinica.lt",
+          "rankGroup": 9,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://nmc.lt/medicinos-paslaugos/dermatovenerologija/dermatologo-konsultacija/",
+          "title": "Dermatovenerologo konsultacija - NORTHWAY",
+          "rankGroup": 10,
+          "rankAbsolute": 14
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "šunų kirpimas",
+      "file": "serp-33.json",
+      "callId": "9acb942f9225403da5132be6c57cfb18",
+      "observedAt": "2026-10-06T20:40:31Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "grooming providers and home/service comparison",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.zoohotel.lt/gyvunu-kirpykla-vilnius/sunys/",
+          "title": "Šunų kirpykla Vilniuje | Šunų kirpimo kaina nuo 20 €",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.barkvilis.lt/sunu-kirpykla",
+          "title": "Šunų kirpykla",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://groomy.lt/",
+          "title": "Šunų kirpykla Kaune – profesionalus šunų kirpimas | groomy.lt",
+          "rankGroup": 3,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://fera.lt/suns-kirpimas-namuose-ir-pas-kirpja-principai-privalumai-ir-trkumai.html",
+          "title": "Šuns kirpimas namuose ir pas kirpėją",
+          "rankGroup": 4,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.sunukirpimas.lt/",
+          "title": "Šunų kirpimas Kaune – Šunų kirpimas Kaune - Kaunas",
+          "rankGroup": 5,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.dzovet.lt/paslaugos/gyvunu-kirpykla/",
+          "title": "Gyvūnų kirpykla",
+          "rankGroup": 6,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://sagis.lt/",
+          "title": "Šunų kirpykla Vilniuje | Sagis gyvūnų kirpykla",
+          "rankGroup": 7,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.dogihouse.lt/",
+          "title": "DogiHouse.lt – Šunų ir kačių kirpykla & SPA",
+          "rankGroup": 8,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.bookitnow.lt/paslaugos-gyvunams",
+          "title": "Paslaugos gyvūnams - (160)",
+          "rankGroup": 9,
+          "rankAbsolute": 15
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "manikiūras vilniuje",
+      "file": "serp-34.json",
+      "callId": "9501f78df1474c78af319016d13b3e06",
+      "observedAt": "2026-10-06T20:40:29Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/proceduru-grupe-nagai/pasiulymo-tipas-vietinis/kur-baltupiai-vilnius-lt/",
+          "title": "Top 20 Nagai rajonas: Baltupiai, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.bookitnow.lt/nagai/manikiuras/gelinis-lakavimas/vilnius?page=2",
+          "title": "Gelinis lakavimas Vilniuje - (54)",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://cemra.lt/nails/",
+          "title": "Manikiūras, nagų priauginimas ir pedikiūras Vilniuje - Cemra",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.grozissaviems.lt/pedikiuras-manikiuras-vilniuje/apie",
+          "title": "Manikiūras Pedikiūras Vilniuje - Loreina J.",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/proceduru-grupe-nagai/pasiulymo-tipas-vietinis/kur-stotis-lt/",
+          "title": "Nagai šalia Stotis, Vilnius - Treatwell",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://paslaugos.lt/manikiuras/vilniaus-rajone",
+          "title": "APARATINIS MANIKIŪRAS Vilniaus rajone: kainos 2026 m.",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.facebook.com/groups/596452553826652/posts/3079924812146068/",
+          "title": "Manikiūras, gelinis lakavimas, korekcija, priauginimas",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://akcijatau.lt/preke/206-manikiuras-pedikiuras/29616-profesionalus-klasikinis-manikiuras-su-ilgalaikiu-lakavimu-dalia-grozio-studija-vilniuje",
+          "title": "Profesionalus klasikinis manikiūras su ilgalaikiu lakavimu \" ...",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.groziopaslaugos.lt/pagrindinis/paslaugos/item/139/",
+          "title": "Manikiūras + nagų lakavimas - Gatineau grožio salonas Vilniuje",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.grozissaviems.lt/pedikiuras-manikiuras-vilniuje/naujas-vizitas",
+          "title": "Manikiūras Pedikiūras Vilniuje - Naujas vizitas",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "gelinis lakavimas vilniuje",
+      "file": "serp-35.json",
+      "callId": "85fb89f4205b43fa86eeb6774196d389",
+      "observedAt": "2026-10-06T20:40:30Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=250&categories=44",
+          "title": "Ilgalaikis nagų lakavimas Vilniuje - (65)",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://topklinikos.lt/gelinis-lakavimas-shellac/vilniuje",
+          "title": "Gelinis lakavimas (Shellac) Vilniuje - Lietuvos klinikos",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://paslaugos.lt/bio-gelis/vilniuje",
+          "title": "BIO GELIS Vilniuje: kainos 2026 m.",
+          "rankGroup": 3,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.info.lt/paieska/gelinis+lakavimas/Vilnius",
+          "title": "Gelinis lakavimas Vilniuje - Vilnius",
+          "rankGroup": 4,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/gelinis-lakavimas-vilnius-8/",
+          "title": "gelinis lakavimas vilnius 8 skelbimai",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.facebook.com/ambrastyle/albums/640844346038115/",
+          "title": "Ilgalaikis gelinis lakavimas Vilniuje - Pašilaičiai | Vilnius",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.dovanusala.lt/lt/23045-smart-pedikiuras-ir-gelinis-lakavimas-seno-lako-nuemimas-vilniuje.html",
+          "title": "SMART pedikiūras ir gelinis lakavimas + seno lako ...",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.facebook.com/groups/1612744708979258/posts/4222590334661336/",
+          "title": "Grožio paslaugos Vilniuje",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/nagu-gelinis-lakavimas-vilnius/",
+          "title": "nagu gelinis lakavimas vilnius skelbimai",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.facebook.com/gelinisnagulakavimasvilniuje/",
+          "title": "Gelinis nagų lakavimas Vilniuje | Vilnius",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "nagų dizainas vilniuje",
+      "file": "serp-36.json",
+      "callId": "fa8f5d04c4a042f490c6d65c731cf192",
+      "observedAt": "2026-10-06T20:40:32Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonas/doviles-nagu-dizainas/",
+          "title": "Dovilės nagų dizainas | Manikiūro ir pedikiūro salonas",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.starofservice.lt/kat/vilniaus/vilniaus-m/vilnius/nagu-prieziura",
+          "title": "10 geriausi manucures Vilnius mieste, Vilniaus m.",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.instagram.com/likemebeauty.lt/",
+          "title": "Nail 𝐒𝐭𝐮𝐝𝐢𝐨 №1 (@likemebeauty.lt) · Vilnius",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-nagu-daile/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "Top 20 salonai teikiantys paslaugą Nagų dailė rajonas: Vilnius",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://watalook.lt/beauty-specialist/nagu-projektas",
+          "title": "Nagų projektas (Name On studija) - Vilnius",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://paslaugos.lt/nagu-lakavimas/vilniuje",
+          "title": "NAGŲ LAKAVIMAS Vilniuje nuo 10 €: kainos 2026 m.",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.facebook.com/p/Nagu-Dizainas-100063458817195/",
+          "title": "Nagu Dizainas | Vilnius",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.info.lt/paieska/nag%C5%B3+dizainas/Vilnius",
+          "title": "Nagų dizainas Vilnius",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://mr.lt/lt/s/nagu-dizainas/vilnius",
+          "title": "Nagų dizainas Vilniuje — kainos ir rezervacija",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "pedikiūras vilniuje",
+      "file": "serp-37.json",
+      "callId": "a9706d0e15da4def82268994edf8df0e",
+      "observedAt": "2026-10-06T20:40:37Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-rugstinis-pedikiuras/pasiulymo-tipas-vietinis/kur-baltupiai-vilnius-lt/",
+          "title": "Rūgštinis pedikiūras šalia Baltupiai, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.facebook.com/groups/295853142811931/",
+          "title": "Pedikiūras ir manikiūras( Vilnius)-PASKUTINĖS MINUTĖS ...",
+          "rankGroup": 2,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://mr.lt/lt/s/pedikiuras/vilnius",
+          "title": "Pedikiūras Vilniuje — kainos ir rezervacija",
+          "rankGroup": 3,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.groziopaslaugos.lt/pagrindinis/paslaugos/item/360",
+          "title": "Pedikiūras (be lakavimo) + atpalaiduojantis pėdų masažas",
+          "rankGroup": 4,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.info.lt/paieska/Pediki%C5%ABras/Vilnius",
+          "title": "Pedikiūras Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://topklinikos.lt/medicininis-pedikiuras/vilniuje",
+          "title": "Medicininis pedikiūras Vilniuje - Lietuvos klinikos - TopKlinikos",
+          "rankGroup": 6,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/vilnius-pedikiuras/",
+          "title": "vilnius pedikiuras skelbimai",
+          "rankGroup": 7,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.grozissaviems.lt/pedikiuras-manikiuras-vilniuje/naujas-vizitas?lang=en",
+          "title": "Manikiūras Pedikiūras Vilniuje - New appointment",
+          "rankGroup": 8,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.tobulasvente.lt/manikiuras-pedikiuras-vilniuje/",
+          "title": "Manikiūras, pedikiūras Vilniuje Vilniaus m.",
+          "rankGroup": 9,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.medicina.lt/paieska/Pediki%C5%ABras/Vilnius",
+          "title": "Pedikiūras Vilniuje",
+          "rankGroup": 10,
+          "rankAbsolute": 16
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "moterų kirpimas vilniuje",
+      "file": "serp-38.json",
+      "callId": "4d12ab30ee0e4cc9b246b46f564d8930",
+      "observedAt": "2026-10-06T20:40:40Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-kirpimas-ir-plauku-prieziura/pasiulymo-tipas-vietinis/kur-siaures-miestelis-lt/",
+          "title": "kirpimas ir plaukų priežiūra rajonas: Šiaures miestelis, Vilnius",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-kirpimas-ir-plauku-prieziura/pasiulymo-tipas-vietinis/kur-petro-ir-povilo-baznycia-lt/",
+          "title": "Kirpimas ir plaukų priežiūra šalia Petro ir Povilo bažnycia ...",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://rekvizitai.vz.lt/paieskos-frazes/Vyr%C5%B3+ir+moter%C5%B3+kirpykla/vilnius/",
+          "title": "Vyrų ir moterų kirpykla Vilniuje. Rekvizitai.lt",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/prekes-zenklas-evo/kur-vilnius-lt/",
+          "title": "Top 20 Evo rajonas: Vilnius - Treatwell",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-kirpimas-ir-plauku-prieziura/pasiulymo-tipas-vietinis/kur-sapiegos-parkas-lt/",
+          "title": "Kirpimas ir plaukų priežiūra šalia Sapiegos parkas, Vilnius",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-kirpimas-ir-plauku-prieziura/pasiulymo-tipas-vietinis/kur-kauno-gatve-vilnius-lt/",
+          "title": "Kirpimas ir plaukų priežiūra šalia Kauno gatve, Vilnius",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-kirpimas-ir-plauku-prieziura/pasiulymo-tipas-vietinis/kur-spaudos-rumai-lt/",
+          "title": "Kirpimas ir plaukų priežiūra šalia Spaudos rumai, Vilnius",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.bookitnow.lt/plaukai/plauku-kirpimas/moteru-kirpimas",
+          "title": "Moterų kirpimas - Kirpimai moterims",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.imones.lt/kirpyklos/moteru-kirpimas/vilniuje/3",
+          "title": "Moterų kirpimas Vilniuje < Kirpyklos 3",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų dažymas vilniuje",
+      "file": "serp-39.json",
+      "callId": "88f0c82eea0c4907bc6543b0d7b5eea0",
+      "observedAt": "2026-10-06T20:40:39Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://paslaugos.lt/kirpejai/plauku-dazymas/vilniuje",
+          "title": "PLAUKŲ DAŽYMAS Vilniuje: kainos 2026 m. - Vilnius",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-plauku-dazymas/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "plaukų dažymas rajonas: Vilnius - Treatwell",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.grozionamaisfinksas.lt/paslaugos/plauku-dazymas/",
+          "title": "Plaukų dažymas Vilniuje",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=270&categories=44",
+          "title": "Plaukų dažymas Vilniuje - (246)",
+          "rankGroup": 4,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.e.divalta.lt/grozio-paslaugos/plauku-proceduros/balayage-dazymas/",
+          "title": "Balayage dažymas Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://watalook.lt/marketplace?city=Near%20me&closest=true&service=Plauk%C5%B3%20da%C5%BEymas&page=2",
+          "title": "Plaukų dažymas, Near me",
+          "rankGroup": 6,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.dandysalon.lt/plauku-dazymas-vilniuje/",
+          "title": "Plaukų Dažymas Vilniuje | Sruogelėm | Ombre | Balayage",
+          "rankGroup": 7,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://akcijatau.lt/tau/plauku-dazymas-vilniuje",
+          "title": "plaukų dažymas vilniuje",
+          "rankGroup": 8,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-plauku-dazymas/pasiulymo-tipas-vietinis/kur-zirmunai-vilnius-lt/",
+          "title": "plaukų dažymas rajonas: Žirmunai, Vilnius - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 17
+        },
+        {
+          "url": "https://www.dovanusala.lt/lt/10079-airtouch-plauku-dazymas-salone-scandal-parlor-vilniuje.html",
+          "title": "„Airtouch“ plaukų dažymas salone „Scandal parlor“ Vilniuje",
+          "rankGroup": 10,
+          "rankAbsolute": 18
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "antakių laminavimas vilniuje",
+      "file": "serp-40.json",
+      "callId": "ce3578cf268b47c0a9044ed717f3e89c",
+      "observedAt": "2026-10-06T20:40:44Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-antakiu-laminavimas/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+          "title": "antakių laminavimas rajonas: Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.spavilnius.lt/lt/vilnius/procedura/antakiu-laminavimas-korekcija-ir-dazymas/1370",
+          "title": "Antakių laminavimas, korekcija ir dažymas",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.e.divalta.lt/grozio-paslaugos/antakiu-korekcija/antakiu-laminavimas/",
+          "title": "Antakių laminavimas gera kaina Vilniuje",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=373&categories=44",
+          "title": "Antakių laminavimas Vilniuje",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.noriunoriunoriu.lt/lt/pasiulymas/grozi-salonas-vilniaus-centre-scandal-parlor-antakiu-arba-blakstienu-lainavimas-dazymas-korekcija",
+          "title": "Antakių ir blakstienų laminavimas/dažymas/korekcija Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://paslaugos.lt/antakiu-laminavimas/vilniuje",
+          "title": "ANTAKIŲ LAMINAVIMAS Vilniuje nuo 20 €: kainos 2026 m.",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.dovanusala.lt/lt/18018-blakstienu-ir-antakiu-laminavimas-ir-dazymas-salone-scandal-parlor-vilniuje.html",
+          "title": "Blakstienų ir antakių laminavimas ir dažymas",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.facebook.com/Figarosalonas/videos/antaki%C5%B3-da%C5%BEymas-korekcija-ir-laminavimas-proced%C5%ABros-kurios-gali-pakeisti-veido-b/305402405668887/",
+          "title": "Antakių dažymas, korekcija ir laminavimas  Procedūros ...",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://studioglow.lt/antakiu-laminavimas-vilniuje",
+          "title": "Antakių Laminavimas Vilniuje",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "blakstienų priauginimas vilniuje",
+      "file": "serp-41.json",
+      "callId": "f475cd5131404c5dabb90f41b0e95b4b",
+      "observedAt": "2026-10-06T20:40:53Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-blakstienu-priauginimas/pasiulymo-tipas-vietinis/kur-ausros-vartai-lt/",
+          "title": "Blakstienų priauginimas šalia Aušros vartai, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.facebook.com/groups/1612744708979258/posts/4472098009710566/",
+          "title": "✨ Blakstienų priauginimas Vilniuje ✨",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-blakstienu-priauginimas/pasiulymo-tipas-vietinis/kur-tauro-kalnas-lt/",
+          "title": "Blakstienų priauginimas šalia Tauro kalnas, Vilnius - Treatwell",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.facebook.com/groups/1438392676456378/posts/3801517266810562/",
+          "title": "Blakstienų priauginimas Vilniuje",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.didysisvestuviukatalogas.lt/ad-vestuvines-sukuosenos-grozio-paslaugos-104124.html",
+          "title": "Blakstienų priauginimas Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.facebook.com/HEIDEgroziostudija/posts/blakstien%C5%B3-priauginimas-pas-blakstienu-priauginimas-vilniuje-blakstienupriaugini/1067200509149187/",
+          "title": "Blakstienų priauginimas Pas 》Blakstienu ...",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.e.divalta.lt/grozio-paslaugos/blakstienu-proceduros/blakstienu-priauginimas/",
+          "title": "Blakstienų priauginimas Vilniuje",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/priauginimas-blakstienu-vilnius/",
+          "title": "priauginimas blakstienu vilnius skelbimai",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.instagram.com/p/DUq6YqZCI1F/",
+          "title": "Antakių korekciją ir laminavimą Blakstienų laminavimas – ...",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.protinga.lt/kategorija/blakstienu-priauginimas-vilniuje",
+          "title": "Blakstienų priauginimas Vilniuje",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "masažas vilniuje",
+      "file": "serp-42.json",
+      "callId": "4fd017bd723c448d934b4201ed3800d9",
+      "observedAt": "2026-10-06T20:40:54Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=302&categories=44",
+          "title": "TOP 20 Masažas pasiūlymų Vilniuje",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.medicina.lt/paieska/gydomasis+masa%C5%BEas/Vilnius/100-20",
+          "title": "Gydomasis masažas Vilnius",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/vilniaus-masazas/",
+          "title": "vilniaus masazas skelbimai",
+          "rankGroup": 3,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-svediskas-masazas/pasiulymo-tipas-vietinis/kur-senamiestis-vilnius-lt/",
+          "title": "švediškas masažas rajonas: Senamiestis, Vilnius - Treatwell",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://paslaugos.lt/masazo-paslaugos/atpalaiduojantis-viso-kuno-masazas/vilniuje",
+          "title": "Atpalaiduojantis viso kūno masažas Vilniuje - Vilnius",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://tobuladovana.lt/masazai-moterims-vilniuje/",
+          "title": "Masažai moterims Vilniuje",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.alio.lt/paieska/masazas-ir-vilnius/",
+          "title": "Masazas ir Vilniuje skelbimai",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://paslaugos24.lt/paslaugos-m/vilniuje/grozis/masazas",
+          "title": "Masažas Vilniuje",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.geradovana.lt/gydomasis-kuno-masazas-vilniuje-qi-anmo",
+          "title": "Gydomasis kūno masažas Vilniuje",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=393&categories=44",
+          "title": "TOP 20 Giluminis masažas pasiūlymų Vilniuje",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "veido valymas vilniuje",
+      "file": "serp-43.json",
+      "callId": "51512666f3874dbc8bb280de9994d3c6",
+      "observedAt": "2026-10-06T20:40:51Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-giliai-valanti-veido-procedura/pasiulymo-tipas-vietinis/kur-rasos-vilnius-lt/",
+          "title": "veido valymas šalia Rasos, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://cup.lt/lt/paslaugos/grozio-salonai/aparatinis-veido-valymas",
+          "title": "Aparatinis veido valymas",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://paslaugos.lt/veido-valymas/vilniaus-rajone",
+          "title": "VEIDO VALYMAS Vilniaus rajone: kainos 2026 m.",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://kunoharmonija.eu/produktas/veido-valymas/",
+          "title": "Veido valymas - Kunoharmonija.eu - Masažai, Kosmetologija ...",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://akcijatau.lt/preke/156-veido-proceduros/50740-rugstinis-veido-valymas-su-oda-glikolio-rugstimi-dalia-grozio-studija-vilniuje",
+          "title": "Rūgštinis veido valymas su ODA glikolio rūgštimi \"Dalia ...",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://odosiq.lt/giluminis-veido-valymas-vilniuje/",
+          "title": "Giluminis veido valymas Vilniuje: kada jo reikia ir ko tikėtis?",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-veido-valymas-ultragarsu/pasiulymo-tipas-vietinis/kur-fabijoniskes-vilnius-lt/",
+          "title": "veido valymas ultragarsu šalia Fabijoniškes, Vilnius - Treatwell",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.orangeprojects.lt/veido-odos-valymas-vilniuje-metodai-eiga-ir-nauda/",
+          "title": "Veido odos valymas Vilniuje: metodai, eiga ir nauda",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-veido-valymas-1/pasiulymo-tipas-vietinis/kur-antezeriai-vilnius-lt/",
+          "title": "Veido valymas šalia Antežeriai, Vilnius - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://paslaugos.lt/kosmetines-veido-proceduros/vilniuje",
+          "title": "VEIDO PROCEDŪROS Vilniuje: kainos 2026 m.",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "nagų priauginimas vilniuje",
+      "file": "serp-44.json",
+      "callId": "a0a3a751394940b9a3d69e2dab63292a",
+      "observedAt": "2026-10-06T20:40:51Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonas/nagu-meistre-evelina-anett-beauty-studio/",
+          "title": "Nagų meistrė Evelina - Anett beauty studio - Naujininkai, Vilnius",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://mr.lt/en/s/nagu-priauginimas/vilnius",
+          "title": "Nagų priauginimas Vilniuje — kainos ir rezervacija",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.treatwell.lt/salonas/ievos-grozio-studija/",
+          "title": "NailVina | Manikiūro ir pedikiūro salonas - Tauro kalnas, Vilnius",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://paslaugos.lt/higieninis-manikiuras/vilniaus-rajone",
+          "title": "HIGIENINIS MANIKIŪRAS Vilniaus rajone nuo 15",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.facebook.com/groups/525363347183572/",
+          "title": "Nagai Nagučiai Naujininkai Vilnius",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.alio.lt/paieska/nagu-priauginimas-manikiuras-pedikiuras-vilnius/",
+          "title": "Nagu priauginimas manikiuras pedikiuras Vilniuje skelbimai",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/nagu-priauginimas-geliu-vilnius/",
+          "title": "nagu priauginimas geliu vilnius skelbimai",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.instagram.com/reel/DZOsdyBKDO7/",
+          "title": "Nagų priauginimas Kaina nuo 40€ Esame Vilniuje, stoties ...",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/priauginimas-nagu-vilnius/",
+          "title": "priauginimas nagu vilnius skelbimai",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "proginės šukuosenos vilniuje",
+      "file": "serp-45.json",
+      "callId": "0536bc5a99a946eab43093db4ae124f1",
+      "observedAt": "2026-10-06T20:41:07Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=275&categories=44",
+          "title": "Proginės šukuosenos Vilniuje - (38)",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://paslaugos.lt/uzklausos/progines-sukuosenos/vilniuje",
+          "title": "Klientų užklausos (45): Proginės šukuosenos",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-susukavimas-ir-progines-sukuosenos/pasiulymo-tipas-vietinis/kur-kudirkos-aikste-lt/",
+          "title": "Sušukavimas ir proginės šukuosenos šalia Kudirkos aikšte ...",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://cup.lt/lt/paslaugos/grozio-salonai/progines-sukuosenos",
+          "title": "Proginės šukuosenos",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.didysisvestuviukatalogas.lt/cat-vestuvines-sukuosenos-grozio-paslaugos.html?page=7",
+          "title": "Vestuvinės šukuosenos, grožio paslaugos",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-susukavimas-ir-progines-sukuosenos/pasiulymo-tipas-vietinis/kur-zalgirio-stadionas-lt/",
+          "title": "Sušukavimas ir proginės šukuosenos šalia Žalgirio stadionas ...",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.mln.lt/plauku-kirpimas-progines-sukuosenos-greenas-salonas-vilniuje/",
+          "title": "Plaukų kirpimas, proginės šukuosenos Greenas salonas ...",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=275&categories=193",
+          "title": "Proginės šukuosenos Pilaitėje",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų tiesinimas keratinu vilniuje",
+      "file": "serp-46.json",
+      "callId": "52ebd663305d4f46a55adee486aff670",
+      "observedAt": "2026-10-06T20:40:57Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=272&categories=44",
+          "title": "TOP 20 Plaukų tiesinimas pasiūlymų Vilniuje",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://egoforma.lt/grozio-ir-kosmetologijos-paslaugos/vyru-ir-moteru-kirpykla/braziliskas-plauku-tiesinimas-keratinu/",
+          "title": "Braziliškas plaukų tiesinimas keratinu",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.treatwell.lt/salonas/keratino-spa/",
+          "title": "Keratino Spa | Kirpykla - Žirmunai, Vilnius - Treatwell",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://akcijatau.lt/preke/516-plauku-prieziura/28683-ilgalaikis-braziliskas-plauku-tiesinimas-su-coco-choco-keratinu-dalia-grozio-studija-vilniuje",
+          "title": "Ilgalaikis braziliškas plaukų tiesinimas su „Coco Choco ...",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.grozionamaisfinksas.lt/paslaugos/plauku-proceduros/keratininis-plauku-tiesinimas/",
+          "title": "Keratininis plaukų tiesinimas Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.noriunoriunoriu.lt/lt/pasiulymas/grozi-salonas-vilniaus-centre-scandal-parlor-plauku-tiesinimas-keratinu",
+          "title": "Plaukų tiesinimas keratinu salone „Scandal Parlor“ Vilniuje",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://paslaugos.lt/braziliskas-plauku-tiesinimas-keratinu/vilniuje",
+          "title": "Braziliškas plaukų tiesinimas keratinu Vilniuje",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://groziolinija.com/",
+          "title": "Ilgalaikio plaukų tiesinimo ir atstatymo procedūros Kaune",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.geradovana.lt/plauku-tiesinimas-keratinu-coco-choco-dalios-grozio-studija",
+          "title": "Plaukų tiesinimas keratinu „Coco Choco“",
+          "rankGroup": 9,
+          "rankAbsolute": 11
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "depiliacija vašku vilniuje",
+      "file": "serp-47.json",
+      "callId": "6660bf8ede1c4e8cad12f8a4d85287ea",
+      "observedAt": "2026-10-06T20:41:02Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-bikini-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-paupys-senamiestis-lt/",
+          "title": "moterų bikini depiliacija vašku šalia Paupys, Vilnius - Treatwell",
+          "rankGroup": 1,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/depiliacija-vasku-vilniuje/",
+          "title": "depiliacija vasku vilniuje skelbimai",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-koju-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-vcup-lt/",
+          "title": "Moterų kojų depiliacija vašku šalia VCUP, Vilnius - Treatwell",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-koju-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-naujamiestis-vilnius-lt/",
+          "title": "moterų kojų depiliacija vašku rajonas: Naujamiestis, Vilnius",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.facebook.com/61559614564599/videos/nugaros-depiliacija-su-lycon-va%C5%A1ku/1488121258504578/",
+          "title": "Vaškokerai - Depiliacija Vašku Vilniuje on Reels",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-ranku-ir-pazastu-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-pc-europa-lt/",
+          "title": "Moterų rankų ir pažastų depiliacija vašku rajonas - Vilnius",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.facebook.com/groups/1612744708979258/posts/4457051397881894/",
+          "title": "Depiliacija vašku",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-bikini-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-naujoji-vilnia-vilnius-lt/",
+          "title": "Moterų bikini depiliacija vašku šalia Naujoji Vilnia, Vilnius",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-moteru-bikini-depiliacija-vasku/pasiulymo-tipas-vietinis/kur-antakalnis-vilnius-lt/",
+          "title": "Moterų bikini depiliacija vašku šalia Antakalnis, Vilnius",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.facebook.com/depiliacijosmeistre.lt/videos/lazerineepiliacija-va%C5%A1ko-cukrus-depiliacijavas%CC%8Cku-depilacija-vilnius/641674888730039/",
+          "title": "lazerineepiliacija #vaško #cukrus #depiliacijavašku #depilacija ...",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų šalinimas lazeriu vilniuje",
+      "file": "serp-48.json",
+      "callId": "60390b77ee4945a7a197d5b49ba0e416",
+      "observedAt": "2026-10-06T20:41:03Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://narmeda.lt/paslauga/plauku-salinimo-lazeris/",
+          "title": "Plaukų šalinimo lazeris",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=356&categories=44",
+          "title": "TOP 20 Rankų epiliacija lazeriu pasiūlymų Vilniuje",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://topklinikos.lt/pazasciu-plauku-salinimas-lazeriu/vilniuje",
+          "title": "Pažasčių plaukų šalinimas lazeriu Vilniuje - Lietuvos klinikos",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://bionbion.lt/proceduros-kategorija/plauku-salinimas-diodo-lazeriu-lazerine-depiliacija/",
+          "title": "Plaukų šalinimas diodo lazeriu. Lazerinė depiliacija",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.medicina.lt/paieska/plauk%C5%B3+%C5%A1alinimas+lazeriu",
+          "title": "Plaukų šalinimas lazeriu",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.hila.lt/paslaugos-ir-kainos/dermatologija/plauku-salinimas-lazeriu/",
+          "title": "Plaukų šalinimas lazeriu",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.shorts.lt/plauku-salinimas-lazeriu-proceduros-ir-rezultatai/",
+          "title": "Plaukų šalinimas lazeriu. Procedūros ir rezultatai - Shorts.lt",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://topklinikos.lt/ranku-plauku-salinimas-lazeriu/vilniuje",
+          "title": "Rankų plaukų šalinimas lazeriu Vilniuje - Lietuvos klinikos",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.geradovana.lt/plauku-salinimas-aleksandrito-lazeriu-skinny-estetikos-klinika",
+          "title": "Plaukų šalinimas aleksandrito lazeriu",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://akcijatau.lt/preke/541-depiliacijos/55521-ilgalaike-pilna-bikini-depiliacija-diodiniu-lazeriu-vilniuje",
+          "title": "Ilgalaikė pilna bikini depiliacija diodiniu lazeriu, Vilniuje",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "makiažas vilniuje",
+      "file": "serp-49.json",
+      "callId": "c682f159755541539b87efce96f79586",
+      "observedAt": "2026-10-06T20:41:04Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.treatwell.lt/salonas/makiazas-tau-provizaziste-vita/",
+          "title": "Makiažas Tau (Provizažistė Vita) - Žalgirio stadionas, Vilnius",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.instagram.com/rakovska_ya/",
+          "title": "Makiažas Vilniuje💄 (@rakovska_ya)",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://paslaugos.lt/visazistes/brandzios-odos-makiazas",
+          "title": "BRANDŽIOS ODOS MAKIAŽAS nuo 35 €: kainos 2026 m.",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.info.lt/paieska/makia%C5%BEas/Vilnius",
+          "title": "Makiažas Vilniuje",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.e.divalta.lt/grozio-paslaugos/makiazas/",
+          "title": "Makiažas Vilniuje: dieninis, vakarinis, vestuvinis",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.tobulasvente.lt/makiazas-vilniuje/",
+          "title": "Makiažas Vilniuje Vilniaus m.",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.facebook.com/groups/606905054386969/posts/1720152459728884/",
+          "title": "✨ Ieškote makiažo ir šukuosenos Vilniuje? ✨",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://mr.lt/lt/s/maziazas/vilnius",
+          "title": "Makiažas Vilniuje — kainos ir rezervacija",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.treatwell.lt/en/place/loreta-look-makiazas-sukuosenos-vilniuje/",
+          "title": "Loreta Look - makiažas & šukuosenos Vilniuje - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.instagram.com/paskoviene_makeup/",
+          "title": "Rugilė Paškovienė | MAKIAŽAS ŠUKUOSENOS VILNIUS ...",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "kūno procedūros vilniuje",
+      "file": "serp-50.json",
+      "callId": "1684c1e0630943b2a4e627dd8b5a8346",
+      "observedAt": "2026-10-06T20:41:09Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://mr.lt/lt/s/k%C5%ABno-proced%C5%ABros/vilnius",
+          "title": "Kūno procedūros ir masažas Vilniuje",
+          "rankGroup": 1,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.spavilnius.lt/lt/vilnius/proceduros/kuno-sveitimai/187",
+          "title": "Kuno šveitimai Vilniuje | SPA VILNIUS",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.provansokvapai.lt/en/kuno-proceduros-vilniuje",
+          "title": "Kūno procedūros Vilniuje (All)",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.facebook.com/anticeliulitinis/?locale=lt_LT",
+          "title": "𝗙𝗜𝗚𝗨𝗥𝗘𝗟𝗟𝗘 estetinės kūno procedūros | Vilnius",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://www.facebook.com/groups/1244335273195796/posts/1923782951917688/",
+          "title": "KŪNO FORMAVIMO PROCEDŪROS",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.spavilnius.lt/lt/vilnius/proceduros/masazai-ir-kuno-proceduros/2",
+          "title": "Masažai ir kuno proceduros Druskininkuose",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.geradovana.lt/apie/tinklarastis/kuno-proceduros-uzkariausiancios-grozio-salonus-2020-metais",
+          "title": "Kūno procedūros užkariausiančios grožio salonus 2020 ...",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://akcijatau.lt/preke/153-masazai-kuno-proceduros/55978-kuno-kompresijos-procedura-kuno-limfodrenazinis-masazas-10-kartu-elen-spa-vilniuje",
+          "title": "kūno limfodrenažinis masažas 10 kartų, Elen Spa Vilniuje",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.instagram.com/reel/DaCqfa-Mex9/",
+          "title": "Jei reikėtų pasirinkti tik dvi kūno procedūras, MediAnna klinikų ...",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://visainfo.lt/zymes/kuno-proceduros-vilniuje",
+          "title": "kūno procedūros Vilniuje",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "auskarų vėrimas vilniuje",
+      "file": "serp-51.json",
+      "callId": "a7f3a7f972db4565b09eb409fbff2d9b",
+      "observedAt": "2026-10-06T20:41:16Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.starofservice.lt/kat/vilniaus/vilniaus-m/vilnius/auskaru-verimas",
+          "title": "10 geriausia auskarų vėrimo specialistas Vilnius mieste ...",
+          "rankGroup": 1,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://mr.lt/lt/s/auskar%C5%B3-v%C4%97rimas/vilnius",
+          "title": "Auskarų vėrimas Vilniuje",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.instagram.com/p/DVBp-hSlhRy/",
+          "title": "Flat iš dienos kai rinkau jums auskarus ir rodžiau tik įvėrus ...",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/verimas-vilnius/",
+          "title": "verimas vilnius skelbimai",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://auskaruverimas.weebly.com/",
+          "title": "Auskarų vėrimas Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.facebook.com/groups/groziui/posts/3610181465789654/",
+          "title": "AUSKARŲ VĖRIMAS NUO 22€✨",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://visainfo.lt/zymes/auskaru-verimas-vilnius",
+          "title": "Auskarų vėrimas Vilnius",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.facebook.com/groups/1612744708979258/posts/4036266566627048/",
+          "title": "Auskarų vėrimas visų kūno zonų! 📍VILNIUS Savanorių pr. 59",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.instagram.com/p/DJrPocToDH_/",
+          "title": "Stung by Bee I Profesionalus Auskarų vėrimas Vilniuje",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://paslaugos.lt/auskaru-verimas/vilniaus-rajone",
+          "title": "Auskarų vėrimas Vilniaus rajone - Paslaugos.lt",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "barzdos kirpimas vilniuje",
+      "file": "serp-52.json",
+      "callId": "94980c7152d44780b1e78ae84f088fd5",
+      "observedAt": "2026-10-06T20:41:15Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 10,
+      "observedFormats": "local procedure providers, catalogues and social/listing pages",
+      "role": "LOCAL_CATALOGUE_READER_JOB",
+      "evidence": [
+        {
+          "url": "https://www.facebook.com/thegentelmen.barbershop/videos/kirpimas-bei-barzdos-modeliavimas-ir-tonavimas-atliktas-meistro-adrey%EF%B8%8Fkvie%C4%8Diame-/485479603626442/",
+          "title": "Kirpimas bei barzdos modeliavimas ir tonavimas atliktas ...",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.peaky.lt/lt/",
+          "title": "Peaky Barbers | Vyrų kirpykla Vilniuje",
+          "rankGroup": 2,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-barzdos-kirpimas-ir-modeliavimas/pasiulymo-tipas-vietinis/kur-lietuva/",
+          "title": "barzdos kirpimas ir modeliavimas rajonas: Lietuva - Treatwell",
+          "rankGroup": 3,
+          "rankAbsolute": 10
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-barzdos-kirpimas-ir-modeliavimas/pasiulymo-tipas-vietinis/kur-zalgirio-stadionas-lt/",
+          "title": "Barzdos kirpimas ir modeliavimas šalia Žalgirio stadionas ...",
+          "rankGroup": 4,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://gentlemansempire.lt/",
+          "title": "Gentleman's Empire — Barbershop Vilniuje",
+          "rankGroup": 5,
+          "rankAbsolute": 12
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-barzdos-kirpimas-ir-modeliavimas/pasiulymo-tipas-vietinis/kur-seb-arena-lt/",
+          "title": "barzdos kirpimas ir modeliavimas šalia Seb arena, Vilnius",
+          "rankGroup": 6,
+          "rankAbsolute": 13
+        },
+        {
+          "url": "https://www.bookitnow.lt/Home/Category?id=267&categories=44",
+          "title": "Vyriškas kirpimas Vilniuje - (55)",
+          "rankGroup": 7,
+          "rankAbsolute": 14
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-barzdos-kirpimas-ir-modeliavimas/pasiulymo-tipas-vietinis/kur-panorama-lt/",
+          "title": "Barzdos kirpimas ir modeliavimas šalia Panorama, Vilnius",
+          "rankGroup": 8,
+          "rankAbsolute": 15
+        },
+        {
+          "url": "https://www.bookitnow.lt/apie/tinklarastis/top-vyru-kirpyklos-ir-barzdaskuciai-vilniuje",
+          "title": "TOP vyrų kirpyklos ir barzdaskučiai Vilniuje",
+          "rankGroup": 9,
+          "rankAbsolute": 16
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-vyriskas-kirpimas/pasiulymo-tipas-vietinis/kur-naujamiestis-vilnius-lt/",
+          "title": "vyriškas kirpimas rajonas: Naujamiestis, Vilnius - Treatwell",
+          "rankGroup": 10,
+          "rankAbsolute": 17
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "japoniškas manikiūras",
+      "file": "serp-53.json",
+      "callId": "e638a02695774635a8ab63a00a89ba16",
+      "observedAt": "2026-10-06T20:41:16Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 6,
+      "observedFormats": "Japanese manicure providers and explanation",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://www.facebook.com/OmorfiGrozioStudija/posts/%EF%B8%8F-japoni%C5%A1kas-maniki%C5%ABras-%EF%B8%8F-jau-atliekame-gro%C5%BEio-studijoje-omorfi%EF%B8%8Fkas-tai-japoni%C5%A1k/1310715047729925/",
+          "title": "Grožio studija Omorfi",
+          "rankGroup": 1,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://paslaugos24.lt/paslaugos-a/darbai-332/japoniskas-11923",
+          "title": "Japoniškas manikiūras",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.laikas.lt/japoniskas-manikiuras-dar-viena-grozio-mada-ar-reali-pagalba-pavargusiems-nagams-173290/",
+          "title": "Japoniškas manikiūras – dar viena grožio mada ar reali ...",
+          "rankGroup": 3,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.instagram.com/reel/DRMzrx7DDrk/",
+          "title": "Japoniškas manikiūras – natūralaus spindesio ritualas  Ar ...",
+          "rankGroup": 4,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.instagram.com/p/DVc1PyTiD24/",
+          "title": "🌿P. SHINE - japoniškas manikiūras ...",
+          "rankGroup": 5,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://ub.lt/japonisko-manikiuro-paslaptis-naturalus-blizgesys-ir-stiprus-nagai-be-lako/",
+          "title": "Japoniško manikiūro paslaptis: natūralus blizgesys ir ...",
+          "rankGroup": 6,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "manikiūras ir gelinis lakavimas kuo skiriasi",
+      "file": "serp-54.json",
+      "callId": "f1f4ec4ca9e249278ddcabcfd862646f",
+      "observedAt": "2026-10-06T20:41:15Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "method comparison, commercial service pages and forum discussion",
+      "role": "INFORMATIONAL_GUIDE_WITH_COMMERCIAL_MIX",
+      "evidence": [
+        {
+          "url": "https://fashionhub-lt.decorexpro.com/gel-lak/vse/",
+          "title": "Viskas apie gelinio lakavimo manikiūrą - decorexpro",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.facebook.com/1Gaivile.Paulauskaite/videos/pirmas-%C5%BEingsnis-pasakyti-sau-jog-tu-galimaniki%C5%ABraskietasis-gelisgelinis-lakavima/152925776010854/",
+          "title": "pasakyti sau, jog tu gali. *Manikiūras *Kietasis gelis *Gelinis ...",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.gerospaslaugos.lt/manikiuras-gelinis-lakavimas-pedikiuras/",
+          "title": "Manikiūras, gelinis lakavimas, pedikiūras",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.neblondine.lt/ar-viska-zinai-apie-ilgalaiki-manikiura-pasitikrink/",
+          "title": "Ar viską žinai apie ilgalaikį manikiūrą? Pasitikrink!",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://mamyciuklubas.lt/forum/manikiuras-gelinis-lakavimas-37788/",
+          "title": "Manikiuras, gelinis lakavimas - Forumas",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.facebook.com/groups/658753455502096/posts/1363362118374556/",
+          "title": "✨ Manikiūras ir gelinis lakavimas✨",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.delfi.lt/temos/gelinis-manikiuras/",
+          "title": "Gelinis manikiūras",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.facebook.com/jurgitar.grozis/videos/%EF%B8%8Fmaniki%C5%ABras%EF%B8%8Fgelinis-lakavimas/958800336214616/",
+          "title": "Manikiūras Gelinis lakavimas | Jurgita R. ...",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "kaip pasiruošti plaukų dažymui",
+      "file": "serp-55.json",
+      "callId": "c7902009c52b45e6b3c523764feb8e16",
+      "observedAt": "2026-10-06T20:41:24Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 7,
+      "observedFormats": "hair preparation articles, provider advice and social/video pages",
+      "role": "INFORMATIONAL_GUIDE_WITH_COMMERCIAL_MIX",
+      "evidence": [
+        {
+          "url": "https://beautyprint.lt/uncategorized/kaip-elgtis-kad-plauku-dazai-nepazeistu-plauko/",
+          "title": "Kaip elgtis, kad plaukų dažai nepažeistų plauko - Beauty Print",
+          "rankGroup": 1,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.15min.lt/gyvenimas/naujiena/mada-ir-grozis/plauku-stilistai-atrado-buda-kaip-padeti-savo-klientams-ka-butina-zinoti-dazantis-ar-kerpantis-plaukus-namuose-1062-1297542",
+          "title": "Plaukų stilistai atrado būdą, kaip padėti savo klientams",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://l24.lt/lt/moterims/item/22372-ka-reikia-zinoti-apie-plauk-dazyma",
+          "title": "Ką reikia žinoti apie plaukų dažymą",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.youtube.com/shorts/UntiiUnROjE",
+          "title": "Žilų plaukų dažymas Druska Pipirai",
+          "rankGroup": 4,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.instagram.com/reel/DLr0zuqIINK/",
+          "title": "Pasiruošimas plaukų dažymui – svarbiau ...",
+          "rankGroup": 5,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://apieplaukus.lt/blogs/straipsniai/plauku-kaukes-kaip-ir-kodel-verta-jas-itraukti-savo-rutina?srsltid=AU7gw4Wahhp9tG4xT63grQIPYNdur1AZAsiPcADAzCECTK3p1v6w_E_5",
+          "title": "Plaukų kaukės: kaip ir kodėl verta jas įtraukti į savo rutiną?",
+          "rankGroup": 6,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.tevu-darzelis.lt/forumas/topic/plauku-dazymas",
+          "title": "Plaukų dažymas | Forumas",
+          "rankGroup": 7,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "antakių laminavimas kiek laikosi",
+      "file": "serp-56.json",
+      "callId": "dfb2f61f3b9741af816bde56dadfc35b",
+      "observedAt": "2026-10-06T20:41:24Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "care/duration explanation and provider pages",
+      "role": "INFORMATIONAL_GUIDE_WITH_COMMERCIAL_MIX",
+      "evidence": [
+        {
+          "url": "https://www.15min.lt/gyvenimas/naujiena/mada-ir-grozis/antakiu-meistre-apie-dazniausias-moteru-klaidas-antakiu-laminavima-ir-atsiauginima-1062-1268780",
+          "title": "Antakių meistrė – apie dažniausias moterų klaidas ...",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://www.facebook.com/groups/613265792166034/posts/3098676056958316/",
+          "title": "Blakstienų ir antakių laminavimas/antakių dizainas",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.watalook.com/blog/kas-yra-antakiu-laminavimas",
+          "title": "Antakių laminavimas: viskas, ką privalai žinoti - Watalook",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.grozionamaisfinksas.lt/paslaugos/antakiu-korekcija/antakiu-laminavimas/",
+          "title": "Antakių laminavimas geriausia kaina",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://browmaniac.ee/lt/kulmude-lamineerimine-kodus-kuidas-saavutada-salongivaariline-tulemus/",
+          "title": "Antakių laminavimas namuose – kaip pasiekti salono vertą ...",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.permanentinismakiazas.lt/blakstienu-laminavimas/",
+          "title": "Blakstienu laminavimas",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://didierlab.lt/blogs/news/antakiu-laminavimo-klaidos?srsltid=AU7gw4XQbP7a7x8zUXbwiD6M6eYMRhAabUoOwpAQTyPPZyGtA_YHvijD",
+          "title": "Dažniausios antakių laminavimo klaidos – kaip jų išvengti?",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.facebook.com/100034348314234/posts/da%C5%BEniausiai-u%C5%BEduodami-klausimai-apie-blakstienu%CC%A8-laminavima%CC%A8-kiek-laiko-trunka-b/4514184968608850/",
+          "title": "Kiek laiko trunka blakstienų laminavimo procedura? Iki 1: ...",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "permanentinis makiažas pliusai ir minusai",
+      "file": "serp-57.json",
+      "callId": "8951e0784e9d42acae416b63f923604f",
+      "observedAt": "2026-10-06T20:41:24Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "benefit/boundary articles and clinical/provider blogs",
+      "role": "INFORMATIONAL_GUIDE_WITH_COMMERCIAL_MIX",
+      "evidence": [
+        {
+          "url": "https://www.belamu.lt/naujienos/post/permanentinis-makiazas-pliusai-ir-minusai",
+          "title": "Permanentinis makiažas: pliusai ir minusai",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://makeup2go.lt/kas-yra-permanentinis-makiazas/",
+          "title": "Kas yra permanentinis makiažas❓| Jo pliusai ir minusai",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://www.delfi.lt/gyvenimas/grozis_ir_sveikata/specialiste-papasakojo-apie-permanentinio-makiazo-tragedijas-viena-medziaga-net-gali-sukelti-vezi-83575885",
+          "title": "Specialistė papasakojo apie permanentinio makiažo ...",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.anasilo.lt/blogass/permanentinis-makia%C5%BEas-viskas-k%C4%85-reikia-%C5%BEinoti-apie-proced%C5%ABros-pliusus-ir-minusus",
+          "title": "viskas, ką reikia žinoti apie procedūros pliusus ir minusus",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://agnespermanentklinika.lt/permanentinis-makiazas-2/",
+          "title": "Permanentinis makiažas ir didžiausios daromos klaidos",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.tevu-darzelis.lt/forumas/topic/permanentinis-makiazas",
+          "title": "Permanentinis makiažas | Forumas",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.lrytas.lt/stilius/karamele/2018/11/27/news/jei-niekaip-negalite-apsispresti-5-dazniausi-mitai-apie-permanentini-makiaza-8368356",
+          "title": "Jei niekaip negalite apsispręsti: 5 dažniausi mitai apie ...",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.bookitnow.lt/apie/tinklarastis/permanentinis-makiazas-viskas-ka-privalote-zinoti",
+          "title": "Permanentinis makiažas: viskas ką privalote žinoti",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://veidolinijos.lt/naudinga/",
+          "title": "Permanentinis makiažas - Naudinga žinoti",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "plaukų priauginimas kaina",
+      "file": "serp-58.json",
+      "callId": "25dd7143b9534901bf9792c90f2434b2",
+      "observedAt": "2026-10-06T20:41:22Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 8,
+      "observedFormats": "provider prices, listing pages and enquiries",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://m.skelbiu.lt/paieska/na-priauginimas/",
+          "title": "na priauginimas skelbimai",
+          "rankGroup": 1,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://paslaugos.lt/plauku-priauginimas/palangoje",
+          "title": "PLAUKŲ PRIAUGINIMAS Palangoje: kainos 2026 m.",
+          "rankGroup": 2,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.facebook.com/groups/649029308575673/posts/4163830440428858/",
+          "title": "Sveiki. Plaukų priauginimas. Rekomenduokit kokybės ir ...",
+          "rankGroup": 3,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://paslaugos.lt/uzklausos/plauku-priauginimas/vilniuje",
+          "title": "Klientų užklausos (2): Plaukų priauginimas",
+          "rankGroup": 4,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://www.facebook.com/groups/1654440914824329/posts/4603725583229166/",
+          "title": "Plaukų priauginimas už specialią kainą!",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://m.skelbiu.lt/paieska/priauginimas-plauku/",
+          "title": "priauginimas plauku skelbimai",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.facebook.com/groups/1135817299835430/posts/27906975758959554/",
+          "title": "priauginu plaukus už labai patrauklią kainą! ক kokyi' plaukai ...",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.facebook.com/renatosplaukai/videos/%C4%AF-plauk%C5%B3-priauginimo-kain%C4%85-%C4%AFeina-ne-tik-plaukai-konsultacija-individualiai-parin/1072251355391336/",
+          "title": "Į plaukų priauginimo kainą įeina ne tik plaukai.  Konsultacija, ...",
+          "rankGroup": 8,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "spa poroms",
+      "file": "serp-59.json",
+      "callId": "f298959256354a4cb99d9a9b8ed1b5db",
+      "observedAt": "2026-10-06T20:41:30Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "couples packages, day spa and hotel/travel explanations",
+      "role": "MIXED_DAY_SPA_AND_TRAVEL_SCOPE",
+      "evidence": [
+        {
+          "url": "https://www.provansokvapai.lt/spa-paslaugos-vilniuje/spa-ritualai-poroms/saldi-porele",
+          "title": "SPA ritualai poroms, SALDI PORELE",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-masazai-poroms/pasiulymo-tipas-vietinis/kur-panorama-lt/",
+          "title": "Masažai poroms šalia Panorama, Vilnius - Treatwell",
+          "rankGroup": 2,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://chilluva.lt/spa-dviems-romantiski-viesbuciai-ir-spa-ritualai/",
+          "title": "SPA dviems: romantiški viešbučiai ir išskirtiniai ritualai",
+          "rankGroup": 3,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://www.exoticspa.lt/spa-programa-poroms",
+          "title": "Spa programa poroms - SPA centras ir masažo salonas Vilniuje",
+          "rankGroup": 4,
+          "rankAbsolute": 5
+        },
+        {
+          "url": "https://www.facebook.com/angelspacentras/videos/spa-proced%C5%ABros-poroms-atgaiva-sielai-ir-ypatingas-laikas-dviese-bet-kokiu-orurom/3923542341257993/",
+          "title": "SPA procedūros poroms – atgaiva sielai ir ypatingas laikas ...",
+          "rankGroup": 5,
+          "rankAbsolute": 6
+        },
+        {
+          "url": "https://panele.lt/grozis/namu-spa-ritualai-poroms-grozis-kaip-bendras-vakaro-ritualas",
+          "title": "Namų SPA ritualai poroms: grožis kaip bendras vakaro ...",
+          "rankGroup": 6,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://www.facebook.com/etnospa/posts/spa-laikas-poromsskirkite-laiko-vienas-kitam-atsipalaiduodami-nuo-kasdienio-%C5%A1urm/965976072205123/",
+          "title": "ETNO SPA",
+          "rankGroup": 7,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.provansokvapai.lt/spa-paslaugos-vilniuje/spa-ritualai-poroms/meile-tvyro-ore",
+          "title": "SPA ritualai poroms, MEILE TVYRO ORE",
+          "rankGroup": 8,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://www.treatwell.lt/salonai/procedura-masazai-poroms/pasiulymo-tipas-vietinis/kur-forum-cinemas-lt/",
+          "title": "Masažai poroms šalia Forum Cinemas, Vilnius - Treatwell",
+          "rankGroup": 9,
+          "rankAbsolute": 10
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    },
+    {
+      "query": "limfodrenažinis masažas",
+      "file": "serp-60.json",
+      "callId": "b5de217aca814f8b9daa2dac5f64a917",
+      "observedAt": "2026-10-06T20:41:38Z",
+      "reviewedAt": "2026-10-07",
+      "country": "LT",
+      "locationCode": 2440,
+      "language": "lt",
+      "device": "desktop",
+      "returnedRows": 9,
+      "observedFormats": "equipment/commercial advice, clinics and method explanations",
+      "role": "NATIONAL_SERVICE_OR_MIXED_DISCOVERY",
+      "evidence": [
+        {
+          "url": "https://biomed.lt/limfodrenazas-kompresine-terapija/limfodrenazinis-masazas/",
+          "title": "Limfodrenažinio masažo kainų palyginimas namuose ir salone",
+          "rankGroup": 1,
+          "rankAbsolute": 1
+        },
+        {
+          "url": "https://www.masazuotojas.lt/limfodrenazinis-masazas-vilniuje/",
+          "title": "Limfodrenažinis masažas Vilniuje – kainos",
+          "rankGroup": 2,
+          "rankAbsolute": 2
+        },
+        {
+          "url": "https://limfa.lt/limfodrenazinis-pilvo-masazas/",
+          "title": "Limfodrenažinis pilvo masažas - Limfedemos centro studija",
+          "rankGroup": 3,
+          "rankAbsolute": 3
+        },
+        {
+          "url": "https://sveika.lt/viskas-ka-turite-zinoti-apie-limfodrenazini-masaza/",
+          "title": "Viskas, ką turite žinoti apie limfodrenažinį masažą",
+          "rankGroup": 4,
+          "rankAbsolute": 4
+        },
+        {
+          "url": "https://insenseclinic.lt/paslaugos/masazas-186/limfodrenazinis-masazas-187",
+          "title": "Limfodrenažinis masažas",
+          "rankGroup": 5,
+          "rankAbsolute": 7
+        },
+        {
+          "url": "https://gmcentras.lt/straipsniai/limfodrenazinis-masazas-nauda-kada-verta-rinktis",
+          "title": "Limfodrenažinis masažas: nauda ir kada verta rinktis?",
+          "rankGroup": 6,
+          "rankAbsolute": 8
+        },
+        {
+          "url": "https://www.facebook.com/saulejaspa/videos/limfodrena%C5%BEinis-masa%C5%BEas-rankomis-puikus-b%C5%ABdas-norint-normalizuoti-ir-atstatyti-l/320954730745873/",
+          "title": "Limfodrenažinis masažas rankomis – puikus būdas norint ...",
+          "rankGroup": 7,
+          "rankAbsolute": 9
+        },
+        {
+          "url": "https://skklinika.lt/straipsniai/limfodrenazinis-masazas-esant-onkoliginiams-susirgimams/",
+          "title": "Limfodrenažinis masažas esant onkologiniams susirgimams",
+          "rankGroup": 8,
+          "rankAbsolute": 11
+        },
+        {
+          "url": "https://skin.lt/paslaugos/masazai-veidui-ir-kunui/kuno-masazai/limfodrenazinis-kuno-masazas-rankomis/",
+          "title": "Limfodrenažinis kūno masažas rankomis",
+          "rankGroup": 9,
+          "rankAbsolute": 12
+        }
+      ],
+      "limitation": "Returned titles/URLs and known page formats inspected. Destination body not read in this SERP review; no health facts, service availability or Madbeauty ranking inferred."
+    }
+  ],
+  "overlaps": [
+    {
+      "a": "manikiūras",
+      "b": "gelinis lakavimas",
+      "aFile": "serp-01.json",
+      "bFile": "serp-02.json",
+      "aCount": 10,
+      "bCount": 7,
+      "intersection": 0,
+      "union": 17,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    },
+    {
+      "a": "manikiūras",
+      "b": "japoniškas manikiūras",
+      "aFile": "serp-01.json",
+      "bFile": "serp-53.json",
+      "aCount": 10,
+      "bCount": 6,
+      "intersection": 0,
+      "union": 16,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    },
+    {
+      "a": "permanentinis makiažas",
+      "b": "permanentinis makiažas pliusai ir minusai",
+      "aFile": "serp-21.json",
+      "bFile": "serp-57.json",
+      "aCount": 9,
+      "bCount": 9,
+      "intersection": 0,
+      "union": 18,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    },
+    {
+      "a": "spa",
+      "b": "spa poroms",
+      "aFile": "serp-20.json",
+      "bFile": "serp-59.json",
+      "aCount": 7,
+      "bCount": 9,
+      "intersection": 0,
+      "union": 16,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    },
+    {
+      "a": "moterų kirpimas",
+      "b": "moterų kirpimas vilniuje",
+      "aFile": "serp-05.json",
+      "bFile": "serp-38.json",
+      "aCount": 9,
+      "bCount": 9,
+      "intersection": 0,
+      "union": 18,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    },
+    {
+      "a": "gelinis lakavimas",
+      "b": "gelinis lakavimas vilniuje",
+      "aFile": "serp-02.json",
+      "bFile": "serp-35.json",
+      "aCount": 7,
+      "bCount": 10,
+      "intersection": 0,
+      "union": 17,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    },
+    {
+      "a": "antakių laminavimas",
+      "b": "antakių laminavimas kiek laikosi",
+      "aFile": "serp-07.json",
+      "bFile": "serp-56.json",
+      "aCount": 8,
+      "bCount": 8,
+      "intersection": 0,
+      "union": 16,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    },
+    {
+      "a": "plaukų priauginimas",
+      "b": "plaukų priauginimas kaina",
+      "aFile": "serp-24.json",
+      "bFile": "serp-58.json",
+      "aCount": 9,
+      "bCount": 8,
+      "intersection": 0,
+      "union": 17,
+      "jaccard": 0,
+      "commonUrls": [],
+      "interpretation": "Bounded same-country/device original samples; explicit city and reader question can change results. No universal merge/split threshold and no proof for unqueried article pairs."
+    }
+  ],
+  "paidUsd": 0
+}

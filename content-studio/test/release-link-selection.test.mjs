@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,readFile,rm} from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import {draftSnapshotHash} from '../src/draft-v2.mjs';
+const root=await mkdtemp(path.join(os.tmpdir(),'release-links-'));process.env.STUDIO_DATA_DIR=root;
+const model=await import('../src/model.mjs');await model.initialize();test.after(()=>rm(root,{recursive:true,force:true}));
+test('release subset keeps future map edges with reasons and refuses omissions/stale/unknown targets atomically',async()=>{
+ const site=await model.createSite({canonicalHost:'release-links-test.lt',name:'Testas',offer:'Testas',schemaVersion:2});
+ const a=await model.addPage(site.id,{id:'a',slug:'a',type:'guide',title:'A',intent:'A'}),b=await model.addPage(site.id,{id:'b',slug:'b',type:'guide',title:'B',intent:'B'}),c=await model.addPage(site.id,{id:'c',slug:'c',type:'guide',title:'C',intent:'C'});
+ await model.editPage(site.id,a.id,{linkSuggestions:[{targetPageId:b.id,label:'B',reason:'A distinct useful next decision.'},{targetPageId:c.id,label:'C',reason:'A future additional reader answer.'}]});
+ const before=await model.getSite(site.id),hash=model.revisionHash(before.pages[0]),file=path.join(root,'sites',site.id+'.json'),bytes=await readFile(file);
+ const request={expectedSiteHash:draftSnapshotHash(before),pageIds:[a.id,b.id],decisions:[{pageId:a.id,keep:[b.id],defer:[{targetPageId:c.id,reason:'The complete future answer is not written or reviewed yet.'}]},{pageId:b.id,keep:[],defer:[]}]};
+ await assert.rejects(()=>model.selectReleaseLinks(site.id,{...request,decisions:[{...request.decisions[0],defer:[]},request.decisions[1]]}),/every proposal/);assert.deepEqual(await readFile(file),bytes);
+ await assert.rejects(()=>model.selectReleaseLinks(site.id,{...request,expectedSiteHash:'f'.repeat(64)}),/stale/);assert.deepEqual(await readFile(file),bytes);
+ await assert.rejects(()=>model.selectReleaseLinks(site.id,{...request,pageIds:[a.id],decisions:[{pageId:a.id,keep:[b.id],defer:request.decisions[0].defer}]}),/not in/);assert.deepEqual(await readFile(file),bytes);
+ const receipt=await model.selectReleaseLinks(site.id,request),after=await model.getSite(site.id),page=after.pages[0];
+ assert.equal(receipt.approved,false);assert.equal(page.linkSuggestions.length,1);assert.equal(page.deferredInternalLinks[0].proposal.targetPageId,c.id);assert.equal(model.revisionHash(page),hash);assert.equal(page.publishedRevision,null);
+ await model.finalizeInternalLinks(site.id,[a.id,b.id]);assert.equal((await model.getSite(site.id)).pages[0].links[0].targetPageId,b.id);
+});

@@ -1,0 +1,403 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "description",
+    "body",
+    "factChecks",
+    "internalLinks",
+    "sourceIds",
+    "mediaBrief"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "body": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": {
+        "$ref": "#/$defs/block"
+      }
+    },
+    "factChecks": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 600
+      }
+    },
+    "internalLinks": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "targetPageId",
+          "label",
+          "reason"
+        ],
+        "properties": {
+          "targetPageId": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mediaBrief": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    }
+  },
+  "$defs": {
+    "block": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "paragraph"
+              ],
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "level",
+            "text"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "heading"
+              ],
+              "type": "string"
+            },
+            "level": {
+              "enum": [
+                2,
+                3
+              ],
+              "type": "integer"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "items"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "list"
+              ],
+              "type": "string"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "assetId"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "image"
+              ],
+              "type": "string"
+            },
+            "assetId": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "content"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "richParagraph"
+              ],
+              "type": "string"
+            },
+            "content": {
+              "type": "array",
+              "maxItems": 500,
+              "items": {
+                "$ref": "#/$defs/inline"
+              },
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "level",
+            "content"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "richHeading"
+              ],
+              "type": "string"
+            },
+            "level": {
+              "enum": [
+                2,
+                3
+              ],
+              "type": "integer"
+            },
+            "content": {
+              "type": "array",
+              "maxItems": 500,
+              "items": {
+                "$ref": "#/$defs/inline"
+              },
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "ordered",
+            "items"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "richList"
+              ],
+              "type": "string"
+            },
+            "ordered": {
+              "type": "boolean"
+            },
+            "items": {
+              "type": "array",
+              "maxItems": 100,
+              "items": {
+                "type": "array",
+                "maxItems": 500,
+                "items": {
+                  "$ref": "#/$defs/inline"
+                },
+                "minItems": 1
+              },
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "inline": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "text"
+              ],
+              "type": "string"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12000
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text",
+            "target"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "link"
+              ],
+              "type": "string"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "target": {
+              "$ref": "#/$defs/target"
+            }
+          }
+        }
+      ]
+    },
+    "target": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "pageId"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "page"
+              ],
+              "type": "string"
+            },
+            "pageId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "url"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "external"
+              ],
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048,
+              "pattern": "^https://"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "siteId",
+            "pageId"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "network"
+              ],
+              "type": "string"
+            },
+            "siteId": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+            },
+            "pageId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "targetId"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "commerce"
+              ],
+              "type": "string"
+            },
+            "targetId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,342 @@
+[
+  {
+    "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+    "keep": [
+      "697ccf43-018c-4385-9147-0bcd6286df97",
+      "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+      "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+      "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+      "855a0812-340e-46fa-9e77-8232c1b7fc43",
+      "83808900-d3df-4942-97c6-121bdeca5216",
+      "df24650a-285f-4fe6-b08a-6b0db530e38f",
+      "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+      "5d3da74e-b618-402a-be10-a4cff0634f5b"
+    ],
+    "defer": [
+      {
+        "targetPageId": "79fef70d-5c27-4225-be1a-a60208982320",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "dde5ab75-2c43-4c9c-b964-d21e03d83b42",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "b8ec812b-cb4b-4668-9e6b-e904ae2a03cc",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "9c6ffc21-3617-4952-b866-180a85d06ca4",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      }
+    ]
+  },
+  {
+    "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+    "keep": [
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+      "f35f4167-4cca-4f4e-808b-cf20977f933d"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+    "keep": [
+      "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+      "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+      "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+      "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+      "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+      "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+      "886f62f7-ffa1-49f3-8847-f4069619606a",
+      "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
+    ],
+    "defer": [
+      {
+        "targetPageId": "30eba50c-0083-45d5-a37f-a7b9fee96271",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "295aca7a-5d71-44ae-8e1b-a6beddc3e3b6",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      }
+    ]
+  },
+  {
+    "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+    "keep": [
+      "61ff3d37-948a-4c60-a0ca-04314065f5a1"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+    "keep": [
+      "61ff3d37-948a-4c60-a0ca-04314065f5a1"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+    "keep": [
+      "61ff3d37-948a-4c60-a0ca-04314065f5a1"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+    "keep": [
+      "61ff3d37-948a-4c60-a0ca-04314065f5a1"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+    "keep": [
+      "61ff3d37-948a-4c60-a0ca-04314065f5a1"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+    "keep": [
+      "61ff3d37-948a-4c60-a0ca-04314065f5a1"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+    "keep": [
+      "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+      "6e2978f2-d468-47c5-a06b-989fcf9547eb"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+    "keep": [
+      "2c373504-6712-4e49-b295-815761c629d2",
+      "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+      "99989673-07b9-4e51-93da-b4fff0fcd04f",
+      "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+      "df53abff-cb78-4282-be67-f7b8649c1b68"
+    ],
+    "defer": [
+      {
+        "targetPageId": "d6826231-5a31-4447-817f-7e83840d17d7",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "1d5d772c-b090-4026-9622-15212f2432c3",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "2150e551-dac5-4e3c-9067-b152a5467b91",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "1b095393-014a-40e2-b99c-e16091121101",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "a945aa5a-f298-4a5a-95f4-f78581a61082",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      }
+    ]
+  },
+  {
+    "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+    "keep": [
+      "6e2978f2-d468-47c5-a06b-989fcf9547eb"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+    "keep": [
+      "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+      "f35f4167-4cca-4f4e-808b-cf20977f933d"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+    "keep": [
+      "6e2978f2-d468-47c5-a06b-989fcf9547eb"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+    "keep": [
+      "6e2978f2-d468-47c5-a06b-989fcf9547eb"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+    "keep": [
+      "6e2978f2-d468-47c5-a06b-989fcf9547eb"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+    "keep": [
+      "57f183fb-ac75-4d1f-9afc-412100b0595d",
+      "ed236e53-380e-4fd1-a47a-c83567ff021e",
+      "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+      "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+      "99c2d09a-1314-48db-999c-075d312271b2"
+    ],
+    "defer": [
+      {
+        "targetPageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "883fbdff-deb2-45c0-8598-f72b2fccfb87",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "368a7c8a-080f-4a93-9f24-ef91d12b59cd",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "1f875513-79aa-4cc3-a971-0c9e47fcfb28",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "30ca9bbf-33c0-4da6-85bd-8ba29577810e",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "6e34c24a-621b-4ff0-8fd3-34ee94edfb94",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "e6ffd42c-43f3-45de-beed-97e5c18f37a5",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      },
+      {
+        "targetPageId": "fd01f304-ecd5-4f1f-82cc-96212cbfc117",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      }
+    ]
+  },
+  {
+    "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+    "keep": [
+      "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+    "keep": [
+      "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+      "6d90498a-ab1d-4d58-8c75-0fc0cea84177"
+    ],
+    "defer": []
+  },
+  {
+    "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+    "keep": [
+      "8118dd44-f9c4-4282-a0d6-201b5d038a3d"
+    ],
+    "defer": [
+      {
+        "targetPageId": "6e34c24a-621b-4ff0-8fd3-34ee94edfb94",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      }
+    ]
+  },
+  {
+    "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+    "keep": [
+      "8118dd44-f9c4-4282-a0d6-201b5d038a3d"
+    ],
+    "defer": [
+      {
+        "targetPageId": "883fbdff-deb2-45c0-8598-f72b2fccfb87",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      }
+    ]
+  },
+  {
+    "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+    "keep": [
+      "8118dd44-f9c4-4282-a0d6-201b5d038a3d"
+    ],
+    "defer": [
+      {
+        "targetPageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+        "reason": "This specific researched intent remains in the complete private map, but its article is not written/reviewed in this30-page release. Keep its original reader reason; activate only with an independently approved due destination."
+      }
+    ]
+  }
+]

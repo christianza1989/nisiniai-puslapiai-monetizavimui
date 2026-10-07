@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "recordedAt": "2026-10-07T07:05:28.694Z",
+  "state": "live-reviewed-batch30-and-scheduled-future-content",
+  "packageSha256": "75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4",
+  "production": {
+    "origin": "https://madbeauty.lt",
+    "worker": "madbeauty-platform-preview",
+    "version": "f8eba745-b8ef-446e-aeff-3c8b95c762bd",
+    "deploymentId": "d7d92538-23a4-4dec-9bf0-8472f12d1ed7",
+    "deployedAt": "2026-10-07T06:58:06.006895Z",
+    "rollbackVersion": "edf429e9-2409-49bb-bf2b-88b5d53628f8",
+    "durableObjectNamespace": "2faf96eedef1425c8d4fc07444cde2f3",
+    "instance": "madbeauty-pilot-v1",
+    "bindingsIdentical": true,
+    "storageMigration": false,
+    "branchesUpgrade": false,
+    "dnsWrite": false,
+    "mailWrite": false
+  },
+  "source": {
+    "writerCommit": "753a6b6",
+    "writerFixCommit": "bdd3e65",
+    "runtimeCommit": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+    "runtimeBase": "897ba831f27d42c88cf723e0b6c0abd22ac57d48",
+    "companionCore": "63cfd8c",
+    "writerPullRequest": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/10",
+    "runtimePullRequest": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/30",
+    "corePullRequest": "https://github.com/christianza1989/niche-public-core/pull/6",
+    "mainMerged": false
+  },
+  "content": {
+    "pages": 39,
+    "guides": 35,
+    "newArticles": 30,
+    "duePages": 7,
+    "futurePages": 32,
+    "totalWebP": 180,
+    "dueWebP": 25,
+    "futureOnlyWebP": 155,
+    "datesPreserved": true,
+    "author": "Madbeauty redakcija",
+    "authorKind": "organization"
+  },
+  "evidence": {
+    "platformReceipt": {
+      "repositoryRelativePath": "sites/madbeauty/content-batch30-20261007/RECEIPT.json",
+      "branch": "ai/madbeauty-content-batch30-20261007",
+      "sha256": "492380f66f28fdc4005c3010ea1bf658253cb97f358280de574c6e9c21fc6881",
+      "status": "live-canonical",
+      "receiptCommit": "6777e97"
+    },
+    "independent": {
+      "file": "INDEPENDENT-HOSTED-CHECK.json",
+      "sha256": "e29b9c58ea79e57227f1288d223c1f94174a65d3bdffc48fa51de31c79aed094",
+      "checkedAt": "2026-10-07T07:02:39.637Z",
+      "requests": 227,
+      "method": "Independent actual-domain read-only GETs: exact reviewed edition,39page paths,180asset paths,JSON/discovery/private boundaries and schema; no future date in actual host is simulated."
+    },
+    "platformChecks": {
+      "madbeautyRegression": {
+        "pass": 93,
+        "log": "evidence/regression-3.log"
+      },
+      "exactCompiledTiming": {
+        "pass": true,
+        "checkpoints": 15,
+        "log": "evidence/isolated-timing.json"
+      },
+      "localTiming": {
+        "pass": true,
+        "origin": "http://127.0.0.1:8854"
+      },
+      "browser": {
+        "widths": [
+          1280,
+          390
+        ],
+        "articleDocumentOverflow": false,
+        "authorLink": true
+      },
+      "productionDryRun": true,
+      "commonCoreBuild": true,
+      "commonCoreSeoSmoke": {
+        "pass": true,
+        "siteId": "greitossvetaines",
+        "pages": 7,
+        "meaning": "V1 host/schema regressions against own companion compiled runtime8879; not Madbeauty hosted receipt"
+      },
+      "canonicalTiming": {
+        "pass": true,
+        "pages": 39,
+        "readyMedia": 25,
+        "hiddenMedia": 155,
+        "discovery": 3,
+        "checkedAt": "2026-10-07T06:59:43.882Z"
+      },
+      "canonicalGeneral": {
+        "pass": true,
+        "pages": 17,
+        "assets": 284,
+        "privateBoundaries": 7,
+        "discovery": 3,
+        "csrf": true,
+        "catalog": true
+      },
+      "canonicalBrowser": {
+        "pass": true,
+        "widths": [
+          1280,
+          390
+        ],
+        "paths": [
+          "/gidai",
+          "/gidai/kas-ieina-i-manikiuro-kaina"
+        ],
+        "articleDatePublished": "2026-10-06T17:09:24.272Z",
+        "visibleDate": "2026 m. spalio 6 d.",
+        "overflow": false,
+        "imagesLoaded": true
+      },
+      "canonicalCatalogue": {
+        "pass": true,
+        "routes": 257,
+        "cities": 103,
+        "extensionsPlanned": 48,
+        "localReady": 0,
+        "indexEligible": 0,
+        "negative": 7,
+        "clock": "Bounded HTTP response Date within5s; measured Cloudflare ahead123–197ms; runtime gates unchanged"
+      }
+    },
+    "rootActualBrowser": {
+      "tool": "cua_repl",
+      "article": "/gidai/kas-ieina-i-manikiuro-kaina",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 720,
+          "scrollWidth": 1265
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 375
+        }
+      ],
+      "featuredImageDecoded": true,
+      "actualScreenshotsInspected": true,
+      "visibleByline": "Parengė Madbeauty redakcija ·2026 m. spalio 6 d.",
+      "datetime": "2026-10-06T17:09:24.272Z",
+      "crumbs": "Madbeauty / Gidai / Kas įeina į manikiūro kainą",
+      "authorLinkClicked": true,
+      "profileHeading": "Madbeauty redakcija",
+      "profileCanonical": "https://madbeauty.lt/autoriai/redakcija",
+      "profileSchemaAfterSpaNavigation": "WebPage",
+      "viewportOverrideReset": true
+    }
+  },
+  "limits": {
+    "futureActualHostDatesVerified": false,
+    "full295GuideMapWritten": false,
+    "humanProfessionalReviewPerformed": false,
+    "fullPlatformUpgradeDeployed": false,
+    "searchIndexingGuaranteed": false
+  }
+}

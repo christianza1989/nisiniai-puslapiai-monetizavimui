@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import { normalizeNetworkSuggestions, targetCatalog, networkOverview, networkStatus, checkTarget } from './network-links.mjs';
 import { optimizeRaster } from './image-pipeline.mjs';
 import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,validateV2Package,bodyPlainText} from './content-package-v2.mjs';
+import {draftSnapshotHash,assertV2Draftable} from './draft-v2.mjs';
 import { withStudioWriteLock } from './write-lock.mjs';
 import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
 import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
@@ -338,11 +339,15 @@ export async function mergePlan(siteId, proposals, months = 0) {
     return { added, total: site.pages.length };
   });
 }
-export async function editPage(siteId, pageId, input) {
+export async function editPage(siteId, pageId, input, draftGuard=null) {
   return locked(async () => {
     const site = await getSite(siteId);
     const page = site.pages.find(item => item.id === pageId);
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
+    if(draftGuard){
+      if(draftSnapshotHash(site)!==draftGuard.expectedSiteHash)throw new Error('V2 draft result is stale: site changed during generation.');
+      assertV2Draftable(site,page,{revisionHash:draftGuard.expectedRevisionHash});
+    }
     const v2=site.schemaVersion===2;
     const type = input.type && (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : page.type;
     const slug = 'slug' in input || type !== page.type ? normalizeSlug(input.slug ?? page.slug, type) : page.slug;
@@ -380,6 +385,11 @@ export async function editPage(siteId, pageId, input) {
       if(media.length>MAX_PAGE_MEDIA)throw new Error('Puslapyje telpa iki 60 medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.');
       page.media=media;
     }
+    if(draftGuard){
+      validateV2Draft(page,publicSite(site));
+      if(draftGuard.expectedRevisionHash&&page.generatedDraft)page.generatedDraftHistory=[...(page.generatedDraftHistory||[]),structuredClone(page.generatedDraft)];
+      page.generatedDraft=structuredClone(draftGuard.metadata);
+    }
     page.status = 'review'; page.approval = null; page.updatedAt = new Date().toISOString();
     await writeJson(siteFile(siteId), site);
     return page;
@@ -396,6 +406,74 @@ export async function deleteDraftPage(siteId, pageId) {
     site.pages.splice(index, 1);
     await writeJson(siteFile(siteId), site);
     return { deleted: pageId };
+  });
+}
+// Private researched-plan reconciliation. Uses the same lock/store as ordinary
+// edits; archived snapshots never enter pages, package export or drafting queues.
+export async function reconcilePrivatePlan(siteId, input) {
+  return locked(async () => {
+    const site = await getSite(siteId);
+    const digest = value => createHash('sha256').update(stable(value)).digest('hex');
+    if (site.canonicalHost !== input.canonicalHost || site.locale !== input.locale) throw new Error('Plan reconciliation: site scope mismatch.');
+    if (!/^[a-f0-9]{64}$/.test(input.sourcePlanSha256 || '') || !/^[a-f0-9]{64}$/.test(input.skillFingerprint || '')) throw new Error('Plan reconciliation: source fingerprints required.');
+    const jobs = await readJson(JOB_FILE, []);
+    if (jobs.some(j => j.siteId === siteId && ['queued', 'running'].includes(j.status))) throw new Error('Plan reconciliation: active site job; wait for its owner.');
+    const requestHash=digest(input),previous=site.planReconciliations?.findLast(r=>r.requestHash===requestHash);
+    const resultHash=()=>{const {planReconciliations,...rest}=site;return digest(rest);};
+    if(previous){if(resultHash()!==previous.resultSiteHash)throw new Error('Plan reconciliation: result changed after prior reconciliation.');return {...previous,replayed:true};}
+    if (digest(site) !== input.expectedSiteHash) throw new Error('Plan reconciliation: site changed; reread before retrying.');
+    const updates = input.updates, retire = input.retire;
+    if (!Array.isArray(updates) || !updates.length || !Array.isArray(retire)) throw new Error('Plan reconciliation: complete updates and retire decisions required.');
+    const kept = new Set(updates.map(x => x.pageId)), removed = new Set(retire.map(x => x.pageId));
+    if (kept.size !== updates.length || removed.size !== retire.length || [...removed].some(id => kept.has(id))) throw new Error('Plan reconciliation: duplicate or conflicting IDs.');
+    if (kept.size !== input.coverageTarget || site.pages.length !== kept.size + removed.size || site.pages.some(p => !kept.has(p.id) && !removed.has(p.id))) throw new Error('Plan reconciliation: every existing page requires one decision.');
+    const byId = new Map(site.pages.map(p => [p.id, p]));
+    for (const decision of retire) {
+      const page = byId.get(decision.pageId);
+      if (!page || !kept.has(decision.targetPageId) || !decision.reason?.trim()) throw new Error('Plan reconciliation: invalid retirement target.');
+      if (page.body.length || page.media.length || page.approval || page.publishedRevision) throw new Error('Plan reconciliation: retirement requires an unwritten, unapproved plan.');
+    }
+    for (const page of site.pages.filter(p => kept.has(p.id))) {
+      const inline = page.body.flatMap(b => b.content || (b.type === 'richList' ? b.items.flat() : []));
+      const referenced = [...(page.links || []).map(x => x.targetPageId), ...(page.editorial?.relatedPageIds || []), ...inline.filter(n => n.type === 'link' && n.target.kind === 'page').map(n => n.target.pageId)];
+      if (referenced.some(id => removed.has(id))) throw new Error('Plan reconciliation: retained content references a retired page.');
+    }
+    const now = new Date().toISOString(), protectedHashes = [];
+    for (const update of updates) {
+      const page = byId.get(update.pageId);
+      if (!page || update.slug !== page.slug || !update.brief || Buffer.byteLength(JSON.stringify(update.brief)) > 262144) throw new Error('Plan reconciliation: stable slug and bounded full brief required.');
+      const protectedPage = Boolean(page.body.length || page.approval || page.publishedRevision);
+      if (protectedPage && update.metadata && Object.keys(update.metadata).length) throw new Error('Plan reconciliation: written/approved revision metadata must be preserved.');
+      const links = update.linkSuggestions || [];
+      if (links.length > 100 || links.some(l => !kept.has(l.targetPageId) || l.targetPageId === page.id || !l.label?.trim() || !l.reason?.trim())) throw new Error('Plan reconciliation: invalid planned links.');
+      const pillar = update.pillarPageId || '';
+      if (pillar && (!kept.has(pillar) || pillar === page.id)) throw new Error('Plan reconciliation: invalid pillar.');
+      const before = protectedPage ? revisionHash(page) : null;
+      // Full evidence/ownership/media/typed targets are private planning data,
+      // separate from rendered body, media and revision/approval metadata.
+      page.planningBrief = { sourcePlanSha256: input.sourcePlanSha256, skillFingerprint: input.skillFingerprint, reconciledAt: now, data: structuredClone(update.brief) };
+      if (!protectedPage) {
+        for (const key of ['title', 'description', 'intent']) if (key in (update.metadata || {})) page[key] = site.schemaVersion === 2 ? losslessString(update.metadata[key], 1000) : plain(update.metadata[key], 300);
+        if ('cluster' in (update.metadata || {})) page.cluster = plain(update.metadata.cluster, 120);
+      }
+      page.pillarPageId = pillar;
+      page.linkSuggestions = links.map(l => ({targetPageId:l.targetPageId,label:plain(l.label,160),reason:plain(l.reason,500)}));
+      page.updatedAt = now;
+      if (before && revisionHash(page) !== before) throw new Error('Plan reconciliation: protected revision changed.');
+      if (before) protectedHashes.push({pageId:page.id,revisionHash:before});
+    }
+    for (const page of site.pages.filter(p => kept.has(p.id))) {
+      const seen = new Set([page.id]);let parent = page.pillarPageId;
+      while (parent) {if (seen.has(parent)) throw new Error('Plan reconciliation: pillar cycle.');seen.add(parent);parent=byId.get(parent).pillarPageId;}
+    }
+    site.retiredPlans = [...(site.retiredPlans || []), ...retire.map(d => ({retiredAt:now,sourcePlanSha256:input.sourcePlanSha256,targetPageId:d.targetPageId,reason:d.reason,page:structuredClone(byId.get(d.pageId))}))];
+    site.pages = site.pages.filter(p => kept.has(p.id));
+    site.contentPolicy = contentPolicy({...site.contentPolicy,cadence:'coverage',coverageTarget:kept.size},site.timezone);
+    site.updatedAt=now;
+    const receipt={id:randomUUID(),appliedAt:now,requestHash,resultSiteHash:resultHash(),sourcePlanSha256:input.sourcePlanSha256,skillFingerprint:input.skillFingerprint,activePages:kept.size,retired:retire.map(d=>({pageId:d.pageId,targetPageId:d.targetPageId,reason:d.reason})),protectedHashes,newGeneration:false,productionDeployed:false};
+    site.planReconciliations = [...(site.planReconciliations || []),receipt];
+    await writeJson(siteFile(siteId),site);
+    return receipt;
   });
 }
 async function approveDraft(site, page, actorId, batchIds = new Set()) {
@@ -468,6 +546,32 @@ export async function finalizeInternalLinks(siteId, pageIds) {
     }
     await writeJson(siteFile(siteId), site);
     return { siteId, changed, next: 'Review unchanged drafts before batch approval; approved snapshots were not edited.' };
+  });
+}
+// A complete map includes future dependencies. Choose a real release subset
+// explicitly, preserving every deferred suggestion and its reader reason.
+export async function selectReleaseLinks(siteId,input){
+  return locked(async()=>{
+    const site=await getSite(siteId);
+    if(draftSnapshotHash(site)!==input.expectedSiteHash)throw new Error('Release links: stale site snapshot.');
+    const pages=selectedPages(site,input.pageIds),selected=new Set(input.pageIds);
+    if(!Array.isArray(input.decisions)||input.decisions.length!==pages.length||new Set(input.decisions.map(d=>d.pageId)).size!==pages.length)throw new Error('Release links: one complete decision per selected page required.');
+    const now=new Date().toISOString(),summary=[];
+    for(const page of pages){
+      const d=input.decisions.find(d=>d.pageId===page.id);if(!d||!Array.isArray(d.keep)||!Array.isArray(d.defer))throw new Error('Release links: invalid decision.');
+      const proposals=[...(page.linkSuggestions||[]),...(page.generatedDraft?.internalLinks||[])].filter((l,i,a)=>a.findIndex(x=>x.targetPageId===l.targetPageId)===i);
+      // Already attached links cannot disappear as a side effect of planning.
+      for(const l of page.links)if(!proposals.some(p=>p.targetPageId===l.targetPageId))proposals.push({...l,reason:'Existing reviewed attachment; preserve unless separately edited.'});
+      const known=new Map(proposals.map(l=>[l.targetPageId,l])),kept=new Set(d.keep),deferred=new Set(d.defer.map(x=>x.targetPageId));
+      if(kept.size!==d.keep.length||deferred.size!==d.defer.length||[...kept].some(id=>deferred.has(id))||known.size!==kept.size+deferred.size||[...known.keys()].some(id=>!kept.has(id)&&!deferred.has(id)))throw new Error('Release links: every proposal needs exactly one keep/defer decision.');
+      for(const id of kept){const target=site.pages.find(p=>p.id===id&&p.status!=='revoked');if(!target||id===page.id||!selected.has(id)&&!target.publishedRevision)throw new Error('Release links: kept target is not in the reviewed release or previously approved.');}
+      for(const item of d.defer)if(!item.reason?.trim()||item.reason.length>1000||page.links.some(l=>l.targetPageId===item.targetPageId))throw new Error('Release links: deferred reason required; attached links need separate editing.');
+      page.deferredInternalLinks=[...(page.deferredInternalLinks||[]),...d.defer.map(item=>({proposal:structuredClone(known.get(item.targetPageId)),reason:item.reason,selectedAt:now}))];
+      page.linkSuggestions=d.keep.map(id=>structuredClone(known.get(id)));
+      page.updatedAt=now;summary.push({pageId:page.id,kept:kept.size,deferred:deferred.size});
+    }
+    await writeJson(siteFile(siteId),site);
+    return {siteId,selectedAt:now,decisions:summary,state:'selected-requires-final-links-and-current-review',approved:false,deployed:false};
   });
 }
 export async function recordEditorialReview(siteId, pageId, input) {

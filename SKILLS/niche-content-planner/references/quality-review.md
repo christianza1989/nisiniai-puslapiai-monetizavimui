@@ -14,6 +14,10 @@ For an initial new-niche plan, verify the business decision rests on inspected b
 4. **Timing:** every date is real, in bounds and in the right local year; relevant preparation topics precede events. Movable dates require evidence. Evergreen hooks must be exactly empty, even when you scheduled the page first or before winter. Put dependency/cadence rationale in reason instead. Lead times remain assumptions; no ranking/indexing deadline claims.
 5. **Honest delivery:** title, description and reason agree. No unbuilt downloads/tools, invented operational capacity, other sites' contacts, unsupported product stock or fake expertise.
 
+6. **Coverage completeness:** compare every confirmed category and relevant reader-job dimension against its URL/section or justified exclusion. Inspect substantive answer requirements, not only topic counts. Reconcile all prior intents and identify precise missing evidence. A partial batch is not a complete map. Dates and counts alone never prove topical authority.
+7. **Completion speed:** dependency-ready evergreen groups are prepared early and may share dates. No quota-driven delay, synonym/FAQ URL inflation or two-year drip schedule. The first release and whole map are separately identified.
+8. **Catalogue and next action:** reconcile every owner-supplied current/future catalogue item, distinguish taxonomy from provider variants and editorial clusters, and record the real target IDs. A larger supplied catalogue reopens earlier completeness. Planned route metadata is not a live href; verify that the actual studio/import/projection path preserves IDs before claiming integration. Functional readiness and search-index eligibility are separate.
+
 ## Draft checks
 
 1. **Answer:** the opening answers the specific question with its limits. A reader can act on the explanation without rereading generic paragraphs. The body fulfils the title.
@@ -32,11 +36,13 @@ Publication checks belong to orchestration: functioning contacts, real asset fil
 
 ## Primary SEO references
 
-Verified 2026-09-30. Recheck when changing policy-dependent instructions.
+References rechecked 2026-10-06. Recheck when changing policy-dependent instructions.
 
 - [Google: helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content): useful original answers and honest provenance; no preferred word-count target.
 - [Google: spam policies](https://developers.google.com/search/docs/essentials/spam-policies): generating many low-value pages to manipulate rankings is scaled content abuse; do not use the multi-site core to conceal copied/thin content or automate artificial backlinks.
 - [Google: link practices](https://developers.google.com/search/docs/crawling-indexing/links-crawlable): meaningful crawlable links and descriptive natural anchors; no ideal link quota.
 - [Google: AI features](https://developers.google.com/search/docs/appearance/ai-features): ordinary SEO and visible-content/schema consistency remain relevant; special AI files/schema are not required and visibility is not guaranteed.
+
+- [Google: AI optimization](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide): do not create a page for every query variation; useful complete answers take priority.
 
 The cluster model, suggested cadence and lead times in this skill are editorial choices, not Google requirements. "Topical authority" describes coherent useful coverage here, not a measured Google score.

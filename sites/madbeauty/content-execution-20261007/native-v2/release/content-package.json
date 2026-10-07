@@ -1,0 +1,2015 @@
+{
+  "schemaVersion": 2,
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "locale": "lt-LT",
+  "site": {
+    "id": "madbeauty",
+    "name": "Madbeauty",
+    "canonicalHost": "madbeauty.lt",
+    "locale": "lt-LT",
+    "timezone": "Europe/Vilnius",
+    "brand": {
+      "accent": "#7040E8"
+    },
+    "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+    "contact": {
+      "email": "info@pinet.lt",
+      "phone": ""
+    },
+    "renderer": "niche",
+    "operatorName": "MB Pinet"
+  },
+  "pages": [
+    {
+      "id": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "guide",
+      "slug": "gidai/bendri-gidas",
+      "title": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas",
+      "description": "Kaip nuo norimo rezultato pasirinkti grožio paslaugą, palyginti jos apimtį ir patvirtinti vizito sąlygas.",
+      "intent": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas",
+      "body": [
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Grožio paslaugą rinkitės pradėdami nuo norimo rezultato, o ne vien nuo panašiai skambančio pavadinimo. Pirmiausia pasirinkite sritį, tada patikslinkite konkrečią procedūrą, kas į ją įeina ir kokiomis sąlygomis ji atliekama. Kategorija padeda pradėti paiešką, bet pati savaime nepatvirtina teikėjo, laisvo laiko ar registracijos."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Nuo norimo rezultato iki konkretaus pasiūlymo"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Įvardykite, ką norite pakeisti arba išlaikyti. Pavyzdžiui, ar norite atnaujinti plaukų formą, susitarti dėl nagų priežiūros, ar pasirinkti veido procedūrą?",
+            "Pasirinkite paslaugų sritį ir patikslinkite procedūrą. Tokie žodžiai kaip „pilnas“, „express“ ar „korekcija“ gali reikšti skirtingą darbų apimtį, todėl išsiaiškinkite, kas įtraukta ir kas kainuotų papildomai.",
+            "Prieš susitardami aptarkite apimtį, kainą, trukmę, vietą, pasiruošimą ir vizito keitimo sąlygas. Atskirai sulaukite patvirtinimo dėl pasirinktos paslaugos ir laiko."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pavyzdys: neaiški ir aiškesnė kirpimo užklausa"
+        },
+        {
+          "type": "paragraph",
+          "text": "Toliau pateikti išgalvoti pavyzdžiai, skirti palyginti užklausos aiškumą; tai nėra tikri klientų atvejai."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Neaiški užklausa: „Norėčiau kirpimo.“ Joje nepasakyta, kokio pokyčio žmogus tikisi, todėl skirtingus pasiūlymus gali būti sunku palyginti.",
+            "Aiškesnė užklausa: „Norėčiau atnaujinti plaukų formą ir išlaikyti apytikrį dabartinį ilgį.“ Ji nusako pasirinkimą ir norimą rezultatą.",
+            "Paketo patvirtinimas atskirai: „Prašau patikslinti, ar į pasiūlymą įeina konsultacija, plovimas ir džiovinimas, ir patvirtinti galutinę kainą bei trukmę.“ Aiškesnis noras savaime nepasako, kokius darbus apima konkretus paketas."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "14 nacionalinio grožio katalogo sričių"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kategorijos padeda nusakyti, kokios paslaugos ieškote. Tiksli procedūros sudėtis ir teikėjo pasiūlymas tikrinami atskirai."
+        },
+        {
+          "type": "richList",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "type": "link",
+                "text": "Plaukai",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:plaukai"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – patikslinkite, ar domina kirpimas, dažymas, formavimas, priežiūros procedūra ar plaukų priauginimas."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Nagai",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:nagai"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – nurodykite, ar ieškote manikiūro, pedikiūro, lakavimo, priauginimo ar dizaino."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Antakiai",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:antakiai"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – įvardykite, ar aktuali forma, korekcija, dažymas, laminavimas ar ilgalaikis makiažas."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Blakstienos",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:blakstienos"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – atskirkite dažymą, laminavimą ir priauginimą: tai skirtingi pasiūlymai."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Makiažas",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:makiazas"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – nurodykite progą ir norimą rezultatą, pavyzdžiui, dieninį, proginį ar vestuvinį makiažą."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Depiliacija ir plaukų šalinimas",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:depiliacija"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – įvardykite kūno zoną ir dominantį metodą."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Veido priežiūra",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:veidas"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – išsiaiškinkite, ar pasiūlymas apima konsultaciją, valymą, kaukę ar kitus darbus."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Kūno priežiūra",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:kunas"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – patikslinkite procedūros metodą, zoną ir siekiamą kosmetinį rezultatą."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Masažas",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:masazas"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – nurodykite, ar domina veido, nugaros ar viso kūno seansas ir kokia jo apimtis."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "SPA ir poilsis",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:spa"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – palyginkite, kas įeina į apsilankymą, kiek jis trunka ir kokios jo sąlygos."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Ilgalaikis makiažas",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:ilgalaikis-makiazas"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – įvardykite zoną ir ar domina pirmoji procedūra, korekcija ar konsultacija."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Tatuiruotės",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:tatuiruotes"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – aptarkite idėją, vietą, dydį, eskizo derinimą ir darbų apimtį."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Auskarų vėrimas",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:verimas"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – nurodykite vėrimo vietą ir pasitikrinkite, kas įeina į pasiūlymą, įskaitant papuošalą."
+              }
+            ],
+            [
+              {
+                "type": "link",
+                "text": "Estetinės procedūros",
+                "target": {
+                  "kind": "commerce",
+                  "targetId": "mb:catalog:estetika"
+                }
+              },
+              {
+                "type": "text",
+                "text": " – patikslinkite konkretų procedūros pavadinimą ir pasiūlymo apimtį."
+              }
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "7 planuojamos plėtros sritys"
+        },
+        {
+          "type": "paragraph",
+          "text": "Šios sritys yra planuojami katalogo plėtiniai, o ne šiuo metu aktyvūs pasiūlymai. Toliau pateikti pasirinkimai nusako paslaugų formatus, bet ne jų veiksmingumą, teikėjų kvalifikaciją ar tinkamumą konkrečiam žmogui."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sportas ir judėjimas – rinkitės, ar ieškote individualios treniruotės, ar grupinio užsiėmimo.",
+            "Kineziterapija – pasirinkite konsultaciją, individualų darbą ar grupinį užsiėmimą.",
+            "Psichologinė pagalba – patikslinkite, ar domina individuali, porų ar šeimos konsultacija.",
+            "Savijautos užsiėmimai – apsispręskite, ar ieškote meditacijos, kvėpavimo ar garso seanso.",
+            "Odontologija – nurodykite, ar ieškote burnos higienos, dantų balinimo ar konsultacijos.",
+            "Medicinos specialistai – patikslinkite, ar domina dermatologo, ar medicinos estetikos konsultacija.",
+            "Gyvūnų priežiūra – nurodykite, ar ieškote katės, ar šuns kailio priežiūros."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kategorija, miestas ir vizito patvirtinimas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pradėkite nuo nacionalinės paslaugų srities, o tada pasirinkite miestą. Kategorija padeda nusakyti paieškos kryptį, bet nepatvirtina, kad tame mieste yra teikėjų, jų konkrečios pasiūlos ar laisvo laiko. Prieš laikydami vizitą sutartu, gaukite teikėjo patvirtinimą dėl paslaugos, darbų apimties, kainos, laiko, vietos ir sąlygų."
+        },
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Valstybinė vartotojų teisių apsaugos tarnyba rekomenduoja prieš grožio paslaugą išsiaiškinti jos apimtį, kainą ir galimas pasekmes bei išsaugoti mokėjimo dokumentą. Tai nėra konkretaus rezultato ar ginčo baigties garantija. Daugiau informacijos pateikia "
+            },
+            {
+              "type": "link",
+              "text": "VVTAT rekomendacijos",
+              "target": {
+                "kind": "external",
+                "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/"
+              }
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "media": [
+        {
+          "id": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638",
+          "src": "/content-assets/madbeauty/858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "a8f47340-0dfe-4f44-9f57-5c00007e4aef",
+          "src": "/content-assets/madbeauty/a8f47340-0dfe-4f44-9f57-5c00007e4aef.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "78cde752-76f1-4fa8-bbdf-0097741e59f5",
+          "src": "/content-assets/madbeauty/78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "cd6c01cf-b342-448e-a12e-510c2d69d394",
+          "src": "/content-assets/madbeauty/cd6c01cf-b342-448e-a12e-510c2d69d394.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "1ef9872d-2973-4d96-9214-e2dfa9f8fbc0",
+          "src": "/content-assets/madbeauty/1ef9872d-2973-4d96-9214-e2dfa9f8fbc0.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+          "label": "Grožio vizito registracijos gidas: paslauga, laikas, vieta ir patvirtinimas"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+          "label": "VVTAT: grožio paslaugos ir susitarimas",
+          "reason": "Perskaityta 2026-10-07: prieš paslaugą aiškiai išsiaiškinti jos apimtį, kainą ir galimas pasekmes; išsaugoti mokėjimo dokumentą. Tik šios rekomendacijos, ne grąžinimo garantijos, medicininio tinkamumo ar universalių teisinių procedūrų aiškinimas."
+        }
+      ],
+      "editorial": {
+        "category": "Grožio paslaugų pasirinkimas",
+        "readingMinutes": 4,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [
+          {
+            "id": "S19",
+            "title": "Kaip išsirinkti grožio paslaugas ir išvengti ginčų",
+            "publisher": "VVTAT",
+            "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+            "accessedAt": "2026-10-06T22:59:42.158Z",
+            "public": true
+          }
+        ],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638",
+        "relatedPageIds": [],
+        "commerceTargets": [
+          {
+            "id": "mb:catalog:plaukai",
+            "url": "https://madbeauty.lt/paslaugos/plaukai",
+            "label": "Plaukai",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:23.590Z"
+          },
+          {
+            "id": "mb:catalog:nagai",
+            "url": "https://madbeauty.lt/paslaugos/nagai",
+            "label": "Nagai",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:23.789Z"
+          },
+          {
+            "id": "mb:catalog:antakiai",
+            "url": "https://madbeauty.lt/paslaugos/antakiai",
+            "label": "Antakiai",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:23.993Z"
+          },
+          {
+            "id": "mb:catalog:blakstienos",
+            "url": "https://madbeauty.lt/paslaugos/blakstienos",
+            "label": "Blakstienos",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:24.227Z"
+          },
+          {
+            "id": "mb:catalog:makiazas",
+            "url": "https://madbeauty.lt/paslaugos/makiazas",
+            "label": "Makiažas",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:24.436Z"
+          },
+          {
+            "id": "mb:catalog:depiliacija",
+            "url": "https://madbeauty.lt/paslaugos/depiliacija",
+            "label": "Depiliacija ir plaukų šalinimas",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:24.638Z"
+          },
+          {
+            "id": "mb:catalog:veidas",
+            "url": "https://madbeauty.lt/paslaugos/veidas",
+            "label": "Veido priežiūra",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:24.837Z"
+          },
+          {
+            "id": "mb:catalog:kunas",
+            "url": "https://madbeauty.lt/paslaugos/kunas",
+            "label": "Kūno priežiūra",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:25.058Z"
+          },
+          {
+            "id": "mb:catalog:masazas",
+            "url": "https://madbeauty.lt/paslaugos/masazas",
+            "label": "Masažas",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:25.270Z"
+          },
+          {
+            "id": "mb:catalog:spa",
+            "url": "https://madbeauty.lt/paslaugos/spa",
+            "label": "SPA ir poilsis",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:25.511Z"
+          },
+          {
+            "id": "mb:catalog:ilgalaikis-makiazas",
+            "url": "https://madbeauty.lt/paslaugos/ilgalaikis-makiazas",
+            "label": "Ilgalaikis makiažas",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:25.713Z"
+          },
+          {
+            "id": "mb:catalog:tatuiruotes",
+            "url": "https://madbeauty.lt/paslaugos/tatuiruotes",
+            "label": "Tatuiruotės",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:25.911Z"
+          },
+          {
+            "id": "mb:catalog:verimas",
+            "url": "https://madbeauty.lt/paslaugos/verimas",
+            "label": "Auskarų vėrimas",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:26.121Z"
+          },
+          {
+            "id": "mb:catalog:estetika",
+            "url": "https://madbeauty.lt/paslaugos/estetika",
+            "label": "Estetinės procedūros",
+            "relationship": "Madbeauty nacionalinė paslaugų sritis. Miestą pasirenka skaitytojas; kategorija neįrodo teikėjų pasiūlos ar registracijos.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:19:26.330Z"
+          }
+        ]
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "acdb4ea2709ef4953cc9804992899f5a659f3804eee1b9381eaf6d2c83ab9c82",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "acdb4ea2709ef4953cc9804992899f5a659f3804eee1b9381eaf6d2c83ab9c82",
+        "approvedAt": "2026-10-06T23:31:34.845Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "guide",
+      "slug": "gidai/bendri-registracija",
+      "title": "Kaip užsiregistruoti grožio vizitui: paslauga, laikas, vieta ir patvirtinimas",
+      "description": "Sužinokite, ką aptarti prieš grožio vizitą, kaip atskirti užklausą nuo patvirtinimo ir kaip užrašyti sutartą paslaugą, laiką, vietą bei kainą.",
+      "intent": "Grožio vizito registracijos gidas: paslauga, laikas, vieta ir patvirtinimas",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Išsiųsta registracijos užklausa dar nereiškia, kad vizitas patvirtintas. Laiką laikykite sutartu, kai teikėjo arba registracijos sistemos patvirtinime aiškiai nurodyta paslauga, data, laikas ir vieta. Prieš sutikdami taip pat išsiaiškinkite paslaugos apimtį ir kainą. Patvirtinimas nebūtinai turi būti gautas rankiniu atsakymu, tačiau jame turi būti aišku, kas sutarta."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prieš rašydami apsibrėžkite, ko reikia"
+        },
+        {
+          "type": "paragraph",
+          "text": "Paslaugą įvardykite taip, kaip ją vadina teikėjas. Jei tikslaus pavadinimo nežinote, aprašykite pageidaujamą rezultatą ir paprašykite patikslinti, kokia paslauga jį apima. Panašiai skambantys pavadinimai savaime nereiškia vienodos apimties ar kainos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pavyzdžiui, prieš užsisakydami kirpimą pasitikrinkite, ar sutariate tik dėl kirpimo, ar kartu ir dėl plaukų plovimo bei sušukavimo. Jei esama plaukų spalva ar priauginimai svarbūs jūsų norimam rezultatui, paminėkite juos ir paklauskite, ar tai keičia paslaugos apimtį, trukmę ar kainą. Nenumanykite, kad papildomi veiksmai įskaičiuoti, kol teikėjas to nepatvirtino."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pateikite vieną ar kelis konkrečius laikus su data. Jei pirmas variantas netinka, nurodykite atsarginį. Iš anksto paklauskite, kiek numatoma trukti vizitas, kokiu adresu atvykti ir kaip rasti įėjimą. Jei svarbus privažiavimas ar įėjimas, pasiteiraukite apie juos tiesiai."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Paslaugos pavadinimas arba pageidaujamas rezultatas.",
+            "Tiksli data ir laikas, taip pat galimas atsarginis variantas.",
+            "Miestas, vieta, tikslus adresas ir atvykimo informacija.",
+            "Numatoma trukmė ir tai, kas konkrečiai įeina į paslaugą.",
+            "Sutarta kaina, kas į ją įskaičiuota ir ar gali būti papildomų mokesčių.",
+            "Kaip gausite patvirtinimą ir kur kreiptis, jei reikės pakeisti laiką."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Išsiaiškinkite teikėją, apimtį ir kainą"
+        },
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Prieš susitardami įsitikinkite, su kuo bendraujate ir ar jums aišku, kas atliks paslaugą. NVSC pataria grožio paslaugų teikėjus rinktis atsakingai. Jei norite patikrinti teikėjo leidimo-higienos paso duomenis, juos galima tikrinti viešame licencijų portale. Tai bendras patikros žingsnis, o ne informacija apie konkretų šios svetainės teikėją. Šaltinis: "
+            },
+            {
+              "type": "link",
+              "text": "NVSC",
+              "target": {
+                "kind": "external",
+                "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/"
+              }
+            }
+          ]
+        },
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Prieš paslaugą aiškiai susitarkite, kas bus atliekama ir kokia bus kaina. Jei siūloma keisti paslaugos apimtį, paprašykite prieš sutikdami patvirtinti atnaujintą apimtį ir kainą. Jei už paslaugą sumokėjote, išsaugokite mokėjimo dokumentą. Šaltinis: "
+            },
+            {
+              "type": "link",
+              "text": "VVTAT",
+              "target": {
+                "kind": "external",
+                "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/"
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Pasiruošimo ar vėlesnės priežiūros nurodymų klauskite dėl konkrečios pasirinktos paslaugos ir vadovaukitės teikėjo informacija. Bendroje registracijos žinutėje nerašykite sveikatos duomenų, mokėjimo kortelės numerio ir nesiųskite jus identifikuojančių nuotraukų. Jei teikėjas prašo papildomos informacijos, pirmiausia išsiaiškinkite, ko reikia ir kokiu privačiu kanalu ją pateikti."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kopijuojamas registracijos žinutės ruošinys"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nukopijuokite ruošinį į savo žinučių programą, užpildykite tai, ką jau žinote, o nereikalingas eilutes ištrinkite. Konkreti data ir laikas padeda išvengti neaiškumo, kurį palieka tokie atsakymai kaip „kitą savaitę“ ar „po pietų“."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Laba diena. Norėčiau užsiregistruoti [įrašykite paslaugą arba pageidaujamą rezultatą].",
+            "Miestas arba pageidaujama vieta: [įrašykite].",
+            "Man tinkamos datos ir laikai: [įrašykite vieną ar kelis konkrečius variantus].",
+            "Prašau patikslinti paslaugos apimtį ir numatomą trukmę: [įrašykite, ko norite paklausti].",
+            "Kaina ir kas į ją įeina: [įrašykite, ko norite paklausti].",
+            "Tikslus adresas ir atvykimo informacija: [įrašykite, ko reikia].",
+            "Kaip galėčiau pranešti, jei reikėtų pakeisti laiką? [įrašykite, jei reikia].",
+            "Prašau patvirtinti, ar šis laikas laisvas ir ar vizitas patvirtintas.",
+            "Atsakymui tinkamas kontaktas: [įrašykite vieną kontaktą].",
+            "Ačiū, [įrašykite vardą]."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Užklausa dar nėra patvirtintas vizitas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hipotetinis nepatvirtintos užklausos pavyzdys: „Laba diena, domina antakių formavimas. Ar turite laisvą laiką 2026 m. spalio 20 d. apie 17 val.? Prašau parašyti, kiek truktų paslauga, kas į ją įeitų, kokia būtų kaina ir kokiu adresu atvykti?“ Tai tik klausimas apie galimybę. Kol teikėjas arba registracijos sistema nepatvirtino konkretaus vizito, laikas nėra sutartas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Aiškaus patvirtinimo pavyzdys: „Pavyzdžio studija patvirtino kirpimo vizitą 2026 m. spalio 20 d., antradienį, 17.00–17.45 val. Sutarta apimtis – plaukų plovimas, kirpimas ir sušukavimas; sutarta kaina – 35 €. Vieta – Pavyzdžio studija, Pavyzdžių g. 1, Vilnius. Jei reikės pakeisti laiką, atsakykite į šią susirašinėjimo giją ir susitarkite su studija.“ Studija, adresas, paslauga, apimtis, kaina ir laikas yra išgalvoti. 45 minučių trukmė tėra šio pavyzdžio detalė, o 35 € nėra tikra Madbeauty kaina ar rinkos orientyras."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Patvirtinimą perkelkite į savo užrašus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Gavę patvirtinimą iš teikėjo arba registracijos sistemos, perrašykite sutartas detales į penkis laukus. Jei kuri nors detalė skiriasi nuo to, ko prašėte, patikslinkite ją prieš laikydami susitarimą galutiniu. Išsaugokite ir patį patvirtinimą, kad prireikus galėtumėte greitai pasitikrinti informaciją."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Paslauga: [įrašykite sutartą paslaugą].",
+            "Data ir laikas: [įrašykite patvirtintą datą ir laiką].",
+            "Vieta: [įrašykite miestą ir tikslų adresą].",
+            "Paslaugos apimtis ir kaina: [įrašykite, kas sutarta ir kokia suma].",
+            "Kur kreiptis dėl pakeitimo: [įrašykite patvirtintą kontaktą ar kanalą]."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Išsiųsta žinutė ar atėjusi vizito data savaime nepatvirtina registracijos. Jei dar trūksta laiko, vietos, paslaugos apimties ar kainos, paprašykite patikslinti. Šis gidas yra informacinis; jis nėra registracijos forma ir nepatvirtina konkretaus vizito."
+        }
+      ],
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "media": [
+        {
+          "id": "1bfc1140-3416-4da3-9e6c-a49d69876ff3",
+          "src": "/content-assets/madbeauty/1bfc1140-3416-4da3-9e6c-a49d69876ff3.webp",
+          "alt": "Užrašų knygelė, violetinis rašiklis ir tuščias vizito lapelis ant balto paviršiaus.",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali AI sukurta redakcinė iliustracija šiam Madbeauty gidui; nėra tikro teikėjo ar vizito fotografija."
+        },
+        {
+          "id": "3ef486dd-0ecc-4722-8705-bb9328b8452e",
+          "src": "/content-assets/madbeauty/3ef486dd-0ecc-4722-8705-bb9328b8452e.webp",
+          "alt": "Užrašų knygelė, violetinis rašiklis ir tuščias vizito lapelis ant balto paviršiaus.",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali AI sukurta redakcinė iliustracija šiam Madbeauty gidui; nėra tikro teikėjo ar vizito fotografija."
+        },
+        {
+          "id": "b3249cc3-fce3-42ef-ba6e-8df608a578ac",
+          "src": "/content-assets/madbeauty/b3249cc3-fce3-42ef-ba6e-8df608a578ac.webp",
+          "alt": "Užrašų knygelė, violetinis rašiklis ir tuščias vizito lapelis ant balto paviršiaus.",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali AI sukurta redakcinė iliustracija šiam Madbeauty gidui; nėra tikro teikėjo ar vizito fotografija."
+        },
+        {
+          "id": "bd594a9f-7f1a-4a41-b714-ab84f1a1cead",
+          "src": "/content-assets/madbeauty/bd594a9f-7f1a-4a41-b714-ab84f1a1cead.webp",
+          "alt": "Užrašų knygelė, violetinis rašiklis ir tuščias vizito lapelis ant balto paviršiaus.",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali AI sukurta redakcinė iliustracija šiam Madbeauty gidui; nėra tikro teikėjo ar vizito fotografija."
+        },
+        {
+          "id": "9cafa576-a732-4bb0-a449-c686f37a899e",
+          "src": "/content-assets/madbeauty/9cafa576-a732-4bb0-a449-c686f37a899e.webp",
+          "alt": "Užrašų knygelė, violetinis rašiklis ir tuščias vizito lapelis ant balto paviršiaus.",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali AI sukurta redakcinė iliustracija šiam Madbeauty gidui; nėra tikro teikėjo ar vizito fotografija."
+        }
+      ],
+      "links": [],
+      "externalLinks": [
+        {
+          "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+          "label": "VVTAT: kaip išsirinkti grožio paslaugas ir išvengti ginčų",
+          "reason": "Peržiūrėtas 2026-10-07; palaiko siaurą teiginį, kad prieš grožio paslaugą verta aiškiai susitarti dėl atliekamos paslaugos ir kainos bei išsaugoti mokėjimo dokumentą."
+        },
+        {
+          "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/",
+          "label": "NVSC: grožio paslaugų teikėjus rinkitės atsakingai",
+          "reason": "Peržiūrėtas 2026-10-07; palaiko bendrą patarimą atsakingai rinktis teikėją ir prireikus tikrinti leidimo-higienos paso duomenis viešame licencijų portale. Tai nėra Madbeauty teikėjo patikros įrodymas."
+        }
+      ],
+      "editorial": {
+        "category": "Registracija ir vizito pasirinkimas",
+        "readingMinutes": 4,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [
+          {
+            "id": "S19",
+            "title": "VVTAT: kaip išsirinkti grožio paslaugas ir išvengti ginčų",
+            "publisher": "VVTAT",
+            "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+            "accessedAt": "2026-10-06T21:15:04.389Z",
+            "public": true
+          },
+          {
+            "id": "S30",
+            "title": "NVSC: grožio paslaugų teikėjus rinkitės atsakingai",
+            "publisher": "NVSC",
+            "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/",
+            "accessedAt": "2026-10-06T21:15:04.389Z",
+            "public": true
+          }
+        ],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": "1bfc1140-3416-4da3-9e6c-a49d69876ff3",
+        "relatedPageIds": [],
+        "commerceTargets": []
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "45b6cc23d2d23566be44f9bb0d96f2326c418473dcc9875f7ced0cf670f450f4",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "45b6cc23d2d23566be44f9bb0d96f2326c418473dcc9875f7ced0cf670f450f4",
+        "approvedAt": "2026-10-06T23:31:34.909Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "baf25810-3318-4b27-b59c-e0c82093824d",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "guide",
+      "slug": "gidai/kas-ieina-i-manikiuro-kaina",
+      "title": "Kas įeina į manikiūro kainą",
+      "description": "Palygink visą procedūrą, nuėmimą, priedus ir laiką, o ne vien didžiausiu šriftu parašytą skaičių.",
+      "intent": "Suprasti visą manikiūro vizito kainą ir trukmę",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Manikiūro kainą prasminga lyginti tik žinant, kas į ją įeina. Pirmiausia išsiaiškink, ar pasirinkai nagų sutvarkymą, lakavimą, esamo padengimo nuėmimą ir dizainą. Tie patys žodžiai skirtingų teikėjų sąrašuose gali reikšti skirtingą apimtį."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kaina prasideda nuo apimties"
+        },
+        {
+          "type": "paragraph",
+          "text": "Paslaugos pavadinimas nėra visas susitarimas. Įrašas „manikiūras“ gali būti atskira nagų sutvarkymo procedūra, o „manikiūras su lakavimu“ – kelių darbų derinys. Net jei abiejų įrašų nuotraukoje matyti lakuoti nagai, iš jos negalima spręsti, kad padengimas įskaičiuotas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Žyma „nuo“ turi turėti paaiškinimą: kada kaina didėja ir kas ją keičia. Šis gidas nenustato rinkos kainoraščio. Tikrink konkretaus teikėjo kainoraštį ir pasirinktos procedūros apimtį."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką palyginti pasiūlymuose"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Esamo padengimo nuėmimas: ar įeina, ar skiriasi savo ir kito meistro darbo nuėmimas? Tai gali būti atskiras priedas prie procedūros.",
+            "Nagų sutvarkymas: ką apima bazinė paslauga? Ne kiekvienas lakavimo įrašas apima visą manikiūrą.",
+            "Lakavimas: kokio tipo padengimas ir ar įskaičiuotas? Kitas variantas gali turėti kitą trukmę.",
+            "Dizainas: įkainis už vieną nagą ar visą rinkinį, koks sudėtingumas? Piešinys turi tilpti rezervuotame laike.",
+            "Ilgio ar formos pakeitimas: ar reikia kitos paslaugos? Trumpas vizitas gali netikti visam norimam darbui."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kainos ir laiko pavyzdys"
+        },
+        {
+          "type": "paragraph",
+          "text": "Šiame pavyzdyje bazinė paslauga kainuoja 30 €, trunka 60 min., o papildomas paruošimas kainuoja 5 € ir trunka 15 min. Pavyzdžio suma – 35 €, vizitas – 75 min. Tai iliustracinės reikšmės, ne Lietuvos kainų vidurkis ir ne pasiūlymas pirkti."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei turi laiko nuo 17:00 iki 18:00, visas šis vizitas netelpa. 17:00–18:15 tinka kliento procedūrai, o teikėjo darbo grafike dar reikia patikrinti paruošimo ir sutvarkymo buferius. Buferiai skirti meistro ir darbo vietos užimtumui; jie nėra papildoma procedūra klientui. Visos dalys turi būti tikrinamos kartu."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei vienas teikėjas įtraukia nuėmimą, o kitas jį įkainoja atskirai, lygink galutinę tokio pat vizito sumą. Pigiau atrodantis bazinis įrašas gali neapimti reikalingų darbų. Didesnė kaina pati savaime neįrodo kokybės."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Klausimai prieš vizitą"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Atvyksiu su tokiu padengimu. Ar pasirinkau tinkamą nuėmimą?",
+            "Noriu tokios formos, ilgio ir vienos detalės. Kuri paslauga tai apima?",
+            "Kokia visa kaina pagal šį pasirinkimą ir kas dar galėtų ją pakeisti?",
+            "Kiek truks visas vizitas ir ar turimas intervalas pakankamas?",
+            "Jei atvykus paaiškės kita apimtis, ar prieš darbą aptarsime kainos ir laiko pasikeitimą?"
+          ]
+        },
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "link",
+              "text": "Manikiūro paslaugos",
+              "target": {
+                "kind": "commerce",
+                "targetId": "mb:catalog:manikiuras"
+              }
+            },
+            {
+              "type": "text",
+              "text": " padeda pradėti paiešką. Nuotrauką naudok kaip pokalbio priemonę, o galutinį pasirinkimą grįsk paslaugos aprašu."
+            }
+          ]
+        }
+      ],
+      "publishAt": "2026-10-05T12:00:00.000Z",
+      "media": [
+        {
+          "id": "30a54837-325e-4489-8586-e8730b6b979b",
+          "src": "/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "d2926874-4d13-497c-a848-cc67febc7d53",
+          "src": "/content-assets/madbeauty/d2926874-4d13-497c-a848-cc67febc7d53.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "95a97dfe-e02a-4dd4-b7d2-25b168ed8a65",
+          "src": "/content-assets/madbeauty/95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "1682ac36-ccf3-44d2-b733-7762921ebc01",
+          "src": "/content-assets/madbeauty/1682ac36-ccf3-44d2-b733-7762921ebc01.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "c5b77b84-1dcb-4d94-8b56-6595883b0d32",
+          "src": "/content-assets/madbeauty/c5b77b84-1dcb-4d94-8b56-6595883b0d32.webp",
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        }
+      ],
+      "links": [],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Nagų paslaugų pasirinkimas",
+        "readingMinutes": 3,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": "30a54837-325e-4489-8586-e8730b6b979b",
+        "relatedPageIds": [],
+        "commerceTargets": [
+          {
+            "id": "mb:catalog:manikiuras",
+            "url": "https://madbeauty.lt/paslaugos/manikiuras",
+            "label": "Manikiūro paslaugos",
+            "relationship": "Nacionalinis paslaugų katalogas; miestą renkasi skaitytojas, patvirtintos vietinės pasiūlos dabar nėra.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:07:32.603Z"
+          }
+        ]
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "f34e0268323557dda316b0dcc7ce14720a4475cbb9b1ec7718be56f6124e6835",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "f34e0268323557dda316b0dcc7ce14720a4475cbb9b1ec7718be56f6124e6835",
+        "approvedAt": "2026-10-06T23:31:34.968Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "99c2d09a-1314-48db-999c-075d312271b2",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "guide",
+      "slug": "gidai/kaip-pasirinkti-nagu-spalva",
+      "title": "Kaip pasirinkti nagų spalvą",
+      "description": "Trys kryptys ir klausimai, padedantys pasirinkti spalvą pagal savo kasdienybę, o ne vien ekrano nuotrauką.",
+      "intent": "Pasirinkti manikiūro spalvą ir paruošti aiškią užduotį meistrui",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Nagų spalvą paprasčiau pasirinkti turint dvi ar tris kryptis. Viena gali tikti kasdienai, kita – norimam akcentui. Prieš vizitą pasižymėk, ko tikiesi: mažai pastebimo padengimo, aiškaus kontrasto ar konkrečios detalės. Šios iliustracijos skirtos palyginti stiliaus kryptis, ne parodyti konkretaus meistro darbus."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pradėk nuo savo savaitės"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pagalvok apie drabužius, kuriuos iš tikro dėvėsi, ir situacijas, kuriose nori matyti šią spalvą. Jei tau patinka ryškus akcentas, nereikia jo atsisakyti vien todėl, kad nuotraukoje neutrali spalva atrodo tvarkingai. Jei labiau vertini ramų bendrą vaizdą, pirmiausia palygink kelis artimus atspalvius."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kasdienis derinys: ar spalva patinka prie dažniausiai dėvimų drabužių?",
+            "Norimas akcentas: ar nori, kad pirmiausia matytųsi spalva, forma ar viena dizaino detalė?",
+            "Nagų ilgis ir forma: palygink panašaus ilgio pavyzdžius, kad lūkesčiai būtų aiškesni.",
+            "Kitas vizitas: ar pasirinkimas vis dar patiks po kelių dienų, kai pasikeis apranga ar renginys?"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Neutralus padengimas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Švelni rožinė, smėlio ar pieno kryptis leidžia daugiau dėmesio skirti nagų formai ir padengimo skaidrumui. „Neutralus“ nėra viena spalva: vienas variantas gali būti beveik skaidrus, kitas – visiškai dengiantis. Pasižiūrėk į mėginį ir pasakyk, kurio rezultato tikiesi."
+        },
+        {
+          "type": "image",
+          "assetId": "49b66963-88d6-4515-b65f-aeef52595244"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ryškus vienos spalvos akcentas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Koralo iliustracija rodo vientisos spalvos kryptį. Renkantis nebūtina tiksliai atkartoti šio tono. Palygink du mėginius toje pačioje šviesoje ir pasirink, kuris malonesnis tau. Ekranas, apšvietimas ir nuotraukos apdorojimas gali keisti spalvos įspūdį, todėl nuotrauka nėra konkretaus produkto atspalvio garantija."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Plona linija ar prancūziška kryptis"
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei patinka detalė, aptark linijos plotį, krašto formą ir bazinį toną. Pasakymas „prancūziškas“ dar neapibrėžia viso rezultato. Nuotraukoje matomą ilgį ar formą gali tekti pritaikyti tavo nagams; tai geriau išsiaiškinti renkantis procedūrą."
+        },
+        {
+          "type": "image",
+          "assetId": "34710a86-f607-4bb6-aa6c-d90a0767beeb"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ką nusiųsti meistrui"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Vieną pagrindinę nuotrauką ir vieną alternatyvą; prie kiekvienos parašyk, kuri dalis tau svarbi.",
+            "Norimą ilgį ir formą, ar paliksi dabartinį padengimą, ar reikės nuėmimo.",
+            "Ar nori vienos spalvos, vienos detalės, ar dizaino visam rinkiniui.",
+            "Klausimą, ar pasirinkta paslauga ir laikas apima šį rezultatą bei reikalingus priedus."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Venk siųsti dešimt nesuderinamų pavyzdžių be paaiškinimo. Konkretus sakinys „patinka plona linija, bet noriu trumpesnių nagų“ padeda geriau už bendrą „padarykite panašiai“. Galutinę spalvą ir darbo apimtį susitarkite prieš procedūrą."
+        },
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Kas įeina į manikiūro kainą padės atskirti bazinį padengimą nuo dizaino ar nuėmimo priedų. "
+            },
+            {
+              "type": "link",
+              "text": "Manikiūro paslaugos",
+              "target": {
+                "kind": "commerce",
+                "targetId": "mb:catalog:manikiuras"
+              }
+            },
+            {
+              "type": "text",
+              "text": " yra kitas žingsnis pasirinkus kryptį. Šis gidas nepateikia sezono populiarumo reitingo ar konkretaus kainoraščio."
+            }
+          ]
+        }
+      ],
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "media": [
+        {
+          "id": "e251f0d2-c7b3-471a-88fb-c014926c747d",
+          "src": "/content-assets/madbeauty/e251f0d2-c7b3-471a-88fb-c014926c747d.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "613f655c-3c5c-40bb-aa38-39fb5a7c8ef4",
+          "src": "/content-assets/madbeauty/613f655c-3c5c-40bb-aa38-39fb5a7c8ef4.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "61ef4a59-50f0-4972-bc19-db478f10a77b",
+          "src": "/content-assets/madbeauty/61ef4a59-50f0-4972-bc19-db478f10a77b.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455",
+          "src": "/content-assets/madbeauty/5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "f7faf1f2-2aff-45a9-b85f-ef5d4d42d4d4",
+          "src": "/content-assets/madbeauty/f7faf1f2-2aff-45a9-b85f-ef5d4d42d4d4.webp",
+          "alt": "Koralo spalvos nagai laikant keraminį puodelį",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "49b66963-88d6-4515-b65f-aeef52595244",
+          "src": "/content-assets/madbeauty/49b66963-88d6-4515-b65f-aeef52595244.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "d388de34-ba0f-4182-9dc9-c00f285a58df",
+          "src": "/content-assets/madbeauty/d388de34-ba0f-4182-9dc9-c00f285a58df.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "21a7dafb-7f66-4807-8aaf-d39b4e1cb119",
+          "src": "/content-assets/madbeauty/21a7dafb-7f66-4807-8aaf-d39b4e1cb119.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "a0e75c8d-60f4-4b97-b450-4cfb7b2e69a1",
+          "src": "/content-assets/madbeauty/a0e75c8d-60f4-4b97-b450-4cfb7b2e69a1.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "cf1b9887-f456-43be-a2c7-b1fad00e9957",
+          "src": "/content-assets/madbeauty/cf1b9887-f456-43be-a2c7-b1fad00e9957.webp",
+          "alt": "Neutralios spalvos trumpų nagų manikiūro iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "34710a86-f607-4bb6-aa6c-d90a0767beeb",
+          "src": "/content-assets/madbeauty/34710a86-f607-4bb6-aa6c-d90a0767beeb.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "7a64d2da-c966-41f8-8817-fa3090634a27",
+          "src": "/content-assets/madbeauty/7a64d2da-c966-41f8-8817-fa3090634a27.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e",
+          "src": "/content-assets/madbeauty/f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "2372f919-a770-49a2-ba82-d15e3a34fd89",
+          "src": "/content-assets/madbeauty/2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72",
+          "src": "/content-assets/madbeauty/5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        }
+      ],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Nagų paslaugų pasirinkimas",
+        "readingMinutes": 3,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": "e251f0d2-c7b3-471a-88fb-c014926c747d",
+        "relatedPageIds": [],
+        "commerceTargets": [
+          {
+            "id": "mb:catalog:manikiuras",
+            "url": "https://madbeauty.lt/paslaugos/manikiuras",
+            "label": "Manikiūro paslaugos",
+            "relationship": "Nacionalinis paslaugų katalogas; miestą renkasi skaitytojas, patvirtintos vietinės pasiūlos dabar nėra.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:07:32.603Z"
+          }
+        ]
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "fc0748686ec6398f1aab56b7616f78d0f38f989307cb7b4995f824e46819b512",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "fc0748686ec6398f1aab56b7616f78d0f38f989307cb7b4995f824e46819b512",
+        "approvedAt": "2026-10-06T23:31:35.028Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "guide",
+      "slug": "gidai/kaip-vertinti-meistro-darbu-galerija",
+      "title": "Kaip vertinti meistro darbų galeriją",
+      "description": "Atskirti tinkamą stilių nuo teikėjo darbo įrodymo ir pasiruošti klausimus prieš rezervuojant.",
+      "intent": "Įvertinti meistro portfolio ir susitarti dėl norimo rezultato",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Galerija padeda nuspręsti, ar tau artimas meistro stilius. Ji naudinga tada, kai matai panašaus ilgio, formos ir procedūros pavyzdžius. Viena graži nuotrauka nepasako visos paslaugos apimties, kainos ar to, ar toks rezultatas įmanomas tavo vizito metu."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pirmiausia patikrink, ką matai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Atskirk konkretaus teikėjo atliktus darbus, bendrą stiliaus iliustraciją ir darbo aplinkos nuotrauką. Jie atsako į skirtingus klausimus. Teikėjo darbų nuotrauka padeda aptarti jo pasirinktą stilių, iliustracija – tavo idėją, o aplinkos vaizdas – erdvės išdėstymą. Šio gido originali iliustracija nėra jokio teikėjo portfolio."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei kilmė neaiški, paklausk, ar darbas atliktas paties teikėjo ir kokia procedūra buvo pasirinkta. Neatpažinta nuotrauka savaime nėra apgaulės įrodymas, tačiau jos negalima laikyti patvirtintu konkretaus meistro rezultatu."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Lygink panašų rezultatą"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Procedūra: ar nuotraukoje ta pati paslauga, kurią renkiesi?",
+            "Ilgis ir forma: ar pavyzdys panašus į tavo norimą rezultatą?",
+            "Detalė: kas tau svarbiausia – tonas, linija, ilgis, bendras stilius?",
+            "Skirtingi darbai: ar yra keli pavyzdžiai, o ne tik keli tos pačios nuotraukos iškirpimai?",
+            "Aprašymas: ar aišku, kokia apimtis ir priedai padėjo gauti šį rezultatą?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nuotrauką vertink kaip pagrindą pokalbiui. Apšvietimas, kampas ir apdorojimas keičia įspūdį, todėl iš vieno kadro nereikėtų spręsti apie visą teikėjo darbą. Paprašyk artimesnio tavo pasirinkimui pavyzdžio, jei galerijoje vyrauja visai kita kryptis."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Stilius ir saugos klausimai"
+        },
+        {
+          "type": "paragraph",
+          "text": "Graži galerija nepatvirtina kvalifikacijos, higienos ar leidimo vykdyti veiklą. NVSC primena, kad grožio paslaugoms taikomi higienos reikalavimai, veiklai reikalingas leidimas-higienos pasas, o teikėjams – atitinkamos sveikatos patikros ir mokymai. Nuoroda į oficialų paaiškinimą pateikta šaltiniuose; galerijos apžvalga nepakeičia šių patikrų."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jei kyla konkretus saugos klausimas, aptark jį su teikėju ir tikrink oficialų šaltinį. Šis gidas nenustato medicininio tinkamumo procedūrai ir nevertina sveikatos būklės pagal nuotrauką. Pranešti apie neaiškią profilio informaciją galima operatoriaus kontaktu."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Trumpa užduotis prieš rezervuojant"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Patinka ši konkreti detalė; norėčiau tokio ilgio ir formos.",
+            "Ar tai jūsų atliktas darbas, ir kokią paslaugą turėčiau rinktis?",
+            "Ar mano dabartiniam padengimui reikės nuėmimo ar papildomo paruošimo?",
+            "Kokia visa kaina ir trukmė pagal šį pasirinkimą?",
+            "Jei rezultato taip atkartoti negalima, kokį artimą variantą siūlote aptarti?"
+          ]
+        },
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Toks klausimų rinkinys padeda susitarti dėl procedūros, o ne gauti pažadą pagal vieną nuotrauką. Palik laiko visai pasirinktos paslaugos apimčiai. "
+            },
+            {
+              "type": "link",
+              "text": "Manikiūro paslaugos",
+              "target": {
+                "kind": "commerce",
+                "targetId": "mb:catalog:manikiuras"
+              }
+            },
+            {
+              "type": "text",
+              "text": " padės tęsti pasirinkimą; Kas įeina į manikiūro kainą paaiškina, kokius priedus verta patikrinti."
+            }
+          ]
+        }
+      ],
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "media": [
+        {
+          "id": "34710a86-f607-4bb6-aa6c-d90a0767beeb",
+          "src": "/content-assets/madbeauty/34710a86-f607-4bb6-aa6c-d90a0767beeb.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "7a64d2da-c966-41f8-8817-fa3090634a27",
+          "src": "/content-assets/madbeauty/7a64d2da-c966-41f8-8817-fa3090634a27.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e",
+          "src": "/content-assets/madbeauty/f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "2372f919-a770-49a2-ba82-d15e3a34fd89",
+          "src": "/content-assets/madbeauty/2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        },
+        {
+          "id": "5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72",
+          "src": "/content-assets/madbeauty/5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72.webp",
+          "alt": "Plonas prancūziško manikiūro kraštelis",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI illustration; no competitor media. Not a real provider portfolio."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        },
+        {
+          "targetPageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+          "label": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas"
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+          "label": "NVSC: grožio paslaugos turi būti saugios",
+          "reason": "Oficialus 2026-09-17 paaiškinimas perskaitytas 2026-10-07: leidimas-higienos pasas, sveikatos patikros, higienos ir pirmosios pagalbos mokymai. Taikoma grožio paslaugų teikėjui; galerija neįrodo šių reikalavimų vykdymo. Jokių individualaus saugumo ar gydymo patarimų."
+        }
+      ],
+      "editorial": {
+        "category": "Nagų paslaugų pasirinkimas",
+        "readingMinutes": 3,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [
+          {
+            "id": "nvsc-grozio-sauga-20260917",
+            "title": "NVSC primena – grožio paslaugos turi būti saugios",
+            "publisher": "NVSC",
+            "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+            "accessedAt": "2026-10-06T23:07:32.603Z",
+            "public": true
+          }
+        ],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": "34710a86-f607-4bb6-aa6c-d90a0767beeb",
+        "relatedPageIds": [],
+        "commerceTargets": [
+          {
+            "id": "mb:catalog:manikiuras",
+            "url": "https://madbeauty.lt/paslaugos/manikiuras",
+            "label": "Manikiūro paslaugos",
+            "relationship": "Nacionalinis paslaugų katalogas; miestą renkasi skaitytojas, patvirtintos vietinės pasiūlos dabar nėra.",
+            "verified": true,
+            "checkedAt": "2026-10-06T23:07:32.603Z"
+          }
+        ]
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "2e71357b4d7606995e6cde881042e04c67290a8173659ae530d8864a07b4e651",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "2e71357b4d7606995e6cde881042e04c67290a8173659ae530d8864a07b4e651",
+        "approvedAt": "2026-10-06T23:31:35.091Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "85ae7c9c-1176-47ff-b125-6c52d479973d",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "home",
+      "slug": "",
+      "title": "Madbeauty — Grožio laikas. Tavo ritmu.",
+      "description": "Pasirink grožio paslaugą, miestą ir visam vizitui tinkantį laiką.",
+      "intent": "Pradėti grožio paslaugos paiešką",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Madbeauty padeda orientuotis grožio paslaugose: pasirinkti kategoriją ir miestą, suprasti paslaugos apimtį bei pasiruošti vizito susitarimui."
+        },
+        {
+          "type": "paragraph",
+          "text": "Kataloge galima pasirinkti nacionalinę paslaugų sritį. Konkrečius miestų rezultatus ir vizitą vertink pagal faktiškai pateiktus teikėjo duomenis; kategorijos puslapis savaime nepatvirtina laisvo laiko ar rezervacijos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Grožio gidai atskiria bazinę procedūrą, papildomus darbus, iliustracinį pavyzdį ir tikrą pasiūlymą. Dėl platformos ar turinio klausimo kreipkis info@pinet.lt. Operatorius – MB Pinet."
+        }
+      ],
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "media": [
+        {
+          "id": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638",
+          "src": "/content-assets/madbeauty/858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "a8f47340-0dfe-4f44-9f57-5c00007e4aef",
+          "src": "/content-assets/madbeauty/a8f47340-0dfe-4f44-9f57-5c00007e4aef.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "78cde752-76f1-4fa8-bbdf-0097741e59f5",
+          "src": "/content-assets/madbeauty/78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "cd6c01cf-b342-448e-a12e-510c2d69d394",
+          "src": "/content-assets/madbeauty/cd6c01cf-b342-448e-a12e-510c2d69d394.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "1ef9872d-2973-4d96-9214-e2dfa9f8fbc0",
+          "src": "/content-assets/madbeauty/1ef9872d-2973-4d96-9214-e2dfa9f8fbc0.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        },
+        {
+          "targetPageId": "99c2d09a-1314-48db-999c-075d312271b2",
+          "label": "Kaip pasirinkti nagų spalvą"
+        },
+        {
+          "targetPageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+          "label": "Kaip vertinti meistro darbų galeriją"
+        },
+        {
+          "targetPageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+          "label": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas"
+        },
+        {
+          "targetPageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+          "label": "Kaip užsiregistruoti grožio vizitui: paslauga, laikas, vieta ir patvirtinimas"
+        }
+      ],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Grožio paslaugų pasirinkimas",
+        "readingMinutes": 1,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638",
+        "relatedPageIds": [],
+        "commerceTargets": []
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "a3c0b8100b2b211aebf2f1a03917ec13c4b46ad9ad0d0eabd5795c853ce05346",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "a3c0b8100b2b211aebf2f1a03917ec13c4b46ad9ad0d0eabd5795c853ce05346",
+        "approvedAt": "2026-10-06T23:31:35.150Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "a61a0248-1c28-4cdc-89ba-e6c087989cdf",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "index",
+      "slug": "gidai",
+      "title": "Grožio gidai prieš vizitą",
+      "description": "Paslaugų apimtis, pasirinkimas ir aiškūs klausimai meistrui.",
+      "intent": "Pasiruošti grožio paslaugos pasirinkimui",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Grožio gidai padeda išsirinkti paslaugos kryptį ir aiškiai susitarti dėl vizito. Rinkis atsakymą pagal savo klausimą: paslaugos apimtis, stiliaus pasirinkimas arba teikėjo darbų galerija."
+        },
+        {
+          "type": "paragraph",
+          "text": "Kiekviename gide atskiriame praktinį pasirinkimo pavyzdį nuo tikro teikėjo kainoraščio ir originalią redakcinę iliustraciją nuo meistro portfolio. Nauji gidai pasirodo po turinio, šaltinių ir vaizdų peržiūros."
+        }
+      ],
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "media": [
+        {
+          "id": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638",
+          "src": "/content-assets/madbeauty/858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "a8f47340-0dfe-4f44-9f57-5c00007e4aef",
+          "src": "/content-assets/madbeauty/a8f47340-0dfe-4f44-9f57-5c00007e4aef.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "78cde752-76f1-4fa8-bbdf-0097741e59f5",
+          "src": "/content-assets/madbeauty/78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "cd6c01cf-b342-448e-a12e-510c2d69d394",
+          "src": "/content-assets/madbeauty/cd6c01cf-b342-448e-a12e-510c2d69d394.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        },
+        {
+          "id": "1ef9872d-2973-4d96-9214-e2dfa9f8fbc0",
+          "src": "/content-assets/madbeauty/1ef9872d-2973-4d96-9214-e2dfa9f8fbc0.webp",
+          "alt": "Atversta užrašų knygelė, šukos, makiažo šepetėlis ir nagų lako buteliukas ant šviesaus stalo",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial still life, generated and pixel-reviewed 2026-10-07; not a provider, product recommendation, real salon or client-result photograph."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą"
+        },
+        {
+          "targetPageId": "99c2d09a-1314-48db-999c-075d312271b2",
+          "label": "Kaip pasirinkti nagų spalvą"
+        },
+        {
+          "targetPageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+          "label": "Kaip vertinti meistro darbų galeriją"
+        },
+        {
+          "targetPageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+          "label": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas"
+        },
+        {
+          "targetPageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+          "label": "Kaip užsiregistruoti grožio vizitui: paslauga, laikas, vieta ir patvirtinimas"
+        }
+      ],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Grožio paslaugų pasirinkimas",
+        "readingMinutes": 1,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638",
+        "relatedPageIds": [],
+        "commerceTargets": []
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "62fc252edcd5ffec873c926d8653d2e66ed94148bfde08176597e7af34e82a14",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "62fc252edcd5ffec873c926d8653d2e66ed94148bfde08176597e7af34e82a14",
+        "approvedAt": "2026-10-06T23:31:35.208Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "6cc9716e-8706-4628-a85a-7a32ca432a7d",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "about",
+      "slug": "redakcija",
+      "title": "Kaip rengiamas Madbeauty turinys",
+      "description": "MB Pinet redakcijos metodika, šaltiniai ir iliustracijų naudojimas.",
+      "intent": "Patikrinti turinio kilmę ir atsakomybę",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Madbeauty turinį rengia MB Pinet redakcija su AI pagalba. Prieš patvirtinimą peržiūrimi teiginiai, nuorodos, iliustracijos ir puslapio vaizdas. Tai organizacijos redakcinis profilis; nekuriame išgalvotų ekspertų."
+        },
+        {
+          "type": "paragraph",
+          "text": "Originalios AI iliustracijos padeda aptarti stilių ar darbo aplinką. Jos nėra konkretaus meistro atliktų darbų, tikro salono ar kliento vizito įrodymas. Šaltinių nuorodos pateikiamos tada, kai tekstas remiasi patikrinamais išoriniais teiginiais."
+        },
+        {
+          "type": "paragraph",
+          "text": "Apie turinio klaidą pranešk info@pinet.lt, nurodydama puslapį ir konkretų teiginį. Operatorius — MB Pinet."
+        }
+      ],
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "media": [],
+      "links": [],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Redakcija",
+        "readingMinutes": 1,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": null,
+        "relatedPageIds": [],
+        "commerceTargets": []
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "70918b47756dff2ab43117df8908de0f1ac9f3abf800dec5da934112c2b8c9e6",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "70918b47756dff2ab43117df8908de0f1ac9f3abf800dec5da934112c2b8c9e6",
+        "approvedAt": "2026-10-06T23:31:35.263Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    },
+    {
+      "id": "madbeauty-author-redakcija",
+      "siteId": "madbeauty",
+      "contentVersion": 2,
+      "type": "author",
+      "slug": "autoriai/redakcija",
+      "title": "Madbeauty redakcija",
+      "description": "MB Pinet administruojamo Madbeauty projekto redakcinė komanda, šaltinių patikra ir turinio klaidų taisymas.",
+      "intent": "Patikrinti tikrą organizacijos autorystę ir susisiekti dėl turinio.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Madbeauty redakcija yra MB Pinet administruojamo projekto organizacijos redakcinis profilis. Informacinius gidus rengiame su dirbtinio intelekto pagalba, o prieš publikavimą peržiūrime teiginius, šaltinius, nuorodas, iliustracijas ir puslapio vaizdą."
+        },
+        {
+          "type": "paragraph",
+          "text": "Šis profilis nesuteikia gydytojo, kosmetologo ar kito specialisto kvalifikacijos. Kai teiginiui reikalingas konkrečios srities specialisto vertinimas, redakcinė autoriaus žyma tokios patikros nepakeičia."
+        },
+        {
+          "type": "paragraph",
+          "text": "Originalios AI iliustracijos nėra konkretaus teikėjo darbų ar tikro kliento rezultato įrodymas. Apie turinio klaidą pranešk info@pinet.lt, nurodydama puslapį ir konkretų teiginį."
+        }
+      ],
+      "publishAt": "2026-10-06T23:07:32.603Z",
+      "media": [],
+      "links": [],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Redakcija",
+        "readingMinutes": 1,
+        "authors": [
+          {
+            "id": "madbeauty-redakcija",
+            "siteId": "madbeauty",
+            "locale": "lt-LT",
+            "slug": "redakcija",
+            "name": "Madbeauty redakcija",
+            "role": "Redakcinė komanda",
+            "bio": "MB Pinet administruojamo Madbeauty projekto informacinis turinys. Rengiant tekstą ir teminę iliustraciją naudotas dirbtinis intelektas; turinys peržiūrėtas redakciniame procese.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": null,
+        "relatedPageIds": [],
+        "commerceTargets": []
+      },
+      "siteSnapshot": {
+        "id": "madbeauty",
+        "name": "Madbeauty",
+        "canonicalHost": "madbeauty.lt",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#7040E8"
+        },
+        "offer": "Grožio paslaugų paieška pagal miestą ir procedūrą.",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "niche",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "f7cc6f73cf54ae14761c36dade46b420037788240fbc4d6d7cfa55ecb97c76b1",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "f7cc6f73cf54ae14761c36dade46b420037788240fbc4d6d7cfa55ecb97c76b1",
+        "approvedAt": "2026-10-06T23:31:35.319Z",
+        "actorId": "codex-root-reviewed-v2-20261007"
+      }
+    }
+  ],
+  "generatedAt": "2026-10-06T23:31:35.445Z"
+}

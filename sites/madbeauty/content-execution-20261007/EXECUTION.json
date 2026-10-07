@@ -1,0 +1,88 @@
+{
+  "status": "ONE_REAL_PRIVATE_ARTICLE_WITH_MEDIA",
+  "siteId": "madbeauty",
+  "planId": "B-registracija",
+  "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+  "slug": "gidai/bendri-registracija",
+  "publishAt": "2026-10-13T07:00:00.000Z",
+  "studioPages": 303,
+  "writtenPages": 1,
+  "approvedPages": 0,
+  "productionDeployed": false,
+  "v2Structure": "PASS",
+  "revisionHash": "45b6cc23d2d23566be44f9bb0d96f2326c418473dcc9875f7ced0cf670f450f4",
+  "writer": {
+    "model": "gpt-6-luna",
+    "reasoningEffort": "xhigh"
+  },
+  "imageGenerator": "BUILT_IN_IMAGEGEN",
+  "mediaRole": "Editorial iliustracija, siejanti registracijos pasiruošimą su aiškiai užrašytais vizito duomenimis; nėra tikro teikėjo, paslaugos ar rezervacijos įrodymas.",
+  "sourceSha256": "b9c6eae5851816f21c3b7c56140226bac89c95e736447b9aa6a99bc94296d858",
+  "assets": [
+    {
+      "file": "assets/1bfc1140-3416-4da3-9e6c-a49d69876ff3.webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 44092,
+      "sha256": "c9a735ecd76d5b6566d815c4c1ae86a2c4566105a34c25dbcd9fb178c7a41fa3"
+    },
+    {
+      "file": "assets/3ef486dd-0ecc-4722-8705-bb9328b8452e.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 31612,
+      "sha256": "f88335ace317762ed9a44655968599cfbc7b4168b6f680a489e7c1beff03e006"
+    },
+    {
+      "file": "assets/b3249cc3-fce3-42ef-ba6e-8df608a578ac.webp",
+      "width": 800,
+      "height": 533,
+      "bytes": 18700,
+      "sha256": "e205e1eee5cb5e97e12d6a1486a1b353f2cb0754c9c0018bb03bc0c3898d6e61"
+    },
+    {
+      "file": "assets/bd594a9f-7f1a-4a41-b714-ab84f1a1cead.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 13884,
+      "sha256": "cde3187afb0432b185cea1ed073cc6071dcf2912181e7c0b1e4278dbb8a9a809"
+    },
+    {
+      "file": "assets/9cafa576-a732-4bb0-a449-c686f37a899e.webp",
+      "width": 360,
+      "height": 240,
+      "bytes": 6500,
+      "sha256": "c53c6fead8aababfe82cf9feef0135f77b215778af375475e9543334a93ab4ef"
+    }
+  ],
+  "pendingLinks": [
+    {
+      "from": "B-registracija",
+      "to": "E-services",
+      "anchor": "Paslaugų paieška",
+      "section": "Tolesnis veiksmas",
+      "reason": "Peržiūrėti tikrą paslaugų paiešką ar meistro informaciją; tuščias katalogas nerodo laisvo vizito.",
+      "kind": "FUNCTIONAL_CTA",
+      "status": "PLANNED_NOT_LIVE",
+      "activation": "Patikrinta funkcinė kategorijos nuoroda; nežada pasiūlos.",
+      "targetPageId": null
+    },
+    {
+      "from": "B-registracija",
+      "to": "B-salygos",
+      "anchor": "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas?",
+      "section": "Patvirtinimo ir mokėjimo sąlygos",
+      "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+      "kind": "CONTEXTUAL",
+      "status": "PLANNED_NOT_LIVE",
+      "activation": "Tik kai tikras targetPageId patvirtintas, įdiegtas ir publishAt jau atėjęs.",
+      "targetPageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf"
+    }
+  ],
+  "limits": [
+    "Actual Madbeauty booking interface is deliberately outside this generic article.",
+    "Only one of 300 new articles is written; the other private records are plans.",
+    "No approval, public V2 import or deployment performed.",
+    "Scheduled public visibility still requires reviewed approval, exact package import/deployment and due date."
+  ]
+}

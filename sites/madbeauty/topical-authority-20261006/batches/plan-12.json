@@ -1,0 +1,457 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/kuno-prieziura-reakcija",
+      "title": "Nepageidaujama reakcija po kūno procedūros: pagalbos bei kompetencijos ribos",
+      "description": "Nepageidaujama reakcija po kūno procedūros. Aptariamos temos: procedūros ir įrenginio informacija; individualaus vertinimo poreikis.",
+      "intent": "Nepageidaujama reakcija po kūno procedūros: pagalbos bei kompetencijos ribos",
+      "reason": "Procedūros ir įrenginio informacija; Individualaus vertinimo poreikis; Sveikatos pagalbos kelias. Nauda: Informacijos perdavimo atmintinė. Pilnas brief: topical-authority-20261006/PLAN.json#KP-reakcija",
+      "cluster": "Kūno priežiūra ir estetinės procedūros",
+      "pillarSlug": "gidai/kuno-prieziura-gidas",
+      "sourceQueries": [
+        "Nepageidaujama reakcija po kūno procedūros: pagalbos bei kompetencijos ribos",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/non-invasive-body-contouring-technologies",
+        "https://www.treatwell.lt/salonai/procedura-kuno-ivyniojimai/pasiulymo-tipas-vietinis/kur-lietuva/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kineziterapija-testinumas",
+      "title": "Kineziterapijos tęsinys: namų plano supratimas ir pokyčių aptarimas",
+      "description": "Kineziterapijos tęsinys: namų plano supratimas ir pokyčių aptarimas. Aptariamos temos: individualios instrukcijos supratimas; pokyčių žurnalas.",
+      "intent": "Kineziterapijos tęsinys: namų plano supratimas ir pokyčių aptarimas",
+      "reason": "Individualios instrukcijos supratimas; Pokyčių žurnalas; Kada susisiekti su specialistu. Nauda: Specialisto paskirto plano grįžtamojo ryšio kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#KT-testinumas",
+      "cluster": "Kineziterapija",
+      "pillarSlug": "gidai/kineziterapija-gidas",
+      "sourceQueries": [
+        "Kineziterapijos tęsinys: namų plano supratimas ir pokyčių aptarimas",
+        "https://www.nhs.uk/tests-and-treatments/physiotherapy/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-salinimas-lazeriu-diapazonas",
+      "title": "Odos ir plaukelių savybės prieš lazerinį šalinimą: ką vertina specialistas?",
+      "description": "Odos ir plaukelių savybės prieš lazerinį šalinimą: ką vertina specialistas. Aptariamos temos: pradinė oda ir plaukelis; įrenginio tinkamumo ribos.",
+      "intent": "Odos ir plaukelių savybės prieš lazerinį šalinimą: ką vertina specialistas?",
+      "reason": "Pradinė oda ir plaukelis; Įrenginio tinkamumo ribos; Kodėl nėra savidiagnostinio testo. Nauda: Konsultacijos duomenų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#LZ-diapazonas",
+      "cluster": "Plaukų šalinimas lazeriu ir IPL",
+      "pillarSlug": "gidai/plauku-salinimas-lazeriu-gidas",
+      "sourceQueries": [
+        "Odos ir plaukelių savybės prieš lazerinį šalinimą: ką vertina specialistas?",
+        "https://www.aad.org/public/cosmetic/hair-removal/laser-hair-removal-faqs",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-salinimas-lazeriu-reakcija",
+      "title": "Reakcija po lazerinės procedūros: kada kreiptis į sveikatos specialistą?",
+      "description": "Reakcija po lazerinės procedūros: kada kreiptis į sveikatos specialistą. Aptariamos temos: procedūros ir įrenginio duomenys; vertinimo nuotoliu ribos.",
+      "intent": "Reakcija po lazerinės procedūros: kada kreiptis į sveikatos specialistą?",
+      "reason": "Procedūros ir įrenginio duomenys; Vertinimo nuotoliu ribos; Pagalbos kelias. Nauda: Informacijos perdavimo atmintinė. Pilnas brief: topical-authority-20261006/PLAN.json#LZ-reakcija",
+      "cluster": "Plaukų šalinimas lazeriu ir IPL",
+      "pillarSlug": "gidai/plauku-salinimas-lazeriu-gidas",
+      "sourceQueries": [
+        "Reakcija po lazerinės procedūros: kada kreiptis į sveikatos specialistą?",
+        "https://www.aad.org/public/cosmetic/hair-removal/laser-hair-removal-faqs",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicina-testinumas",
+      "title": "Po specialisto konsultacijos: plano supratimas, antra nuomonė ir pagalbos kelias",
+      "description": "Po specialisto konsultacijos. Aptariamos temos: individualaus plano supratimas; antros nuomonės paskirtis.",
+      "intent": "Po specialisto konsultacijos: plano supratimas, antra nuomonė ir pagalbos kelias",
+      "reason": "Individualaus plano supratimas; Antros nuomonės paskirtis; Kaip aptarti pokyčius su specialistu. Nauda: Paskirto plano ir klausimų aptarimo lapas be gydymo keitimo. Pilnas brief: topical-authority-20261006/PLAN.json#MD-testinumas",
+      "cluster": "Medicinos specialistų konsultacijos",
+      "pillarSlug": "gidai/medicina-gidas",
+      "sourceQueries": [
+        "Po specialisto konsultacijos: plano supratimas, antra nuomonė ir pagalbos kelias",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/microneedling-devices"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/makiazas-higiena",
+      "title": "Makiažo higiena: įrankiai, produktai ir odos reakcijų informacija",
+      "description": "Makiažo higiena: įrankiai, produktai ir odos reakcijų informacija. Aptariamos temos: įrankių higiena; produkto naudojimo sąlygos.",
+      "intent": "Makiažo higiena: įrankiai, produktai ir odos reakcijų informacija",
+      "reason": "Įrankių higiena; Produkto naudojimo sąlygos; Reakcijos ir sveikatos vertinimo riba. Nauda: NVSC terminų paaiškinimas makiažo situacijai. Pilnas brief: topical-authority-20261006/PLAN.json#MK-higiena",
+      "cluster": "Makiažas",
+      "pillarSlug": "gidai/makiazas-gidas",
+      "sourceQueries": [
+        "Makiažo higiena: įrankiai, produktai ir odos reakcijų informacija",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/makeup-faustina/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-pazeidimas",
+      "title": "Po manikiūro pažeistas nagas ar danga: kokia pagalba reikalinga?",
+      "description": "Po manikiūro pažeistas nagas ar danga: kokia pagalba reikalinga. Aptariamos temos: kosmetinis defektas ir sveikatos požymiai; ką užfiksuoti.",
+      "intent": "Po manikiūro pažeistas nagas ar danga: kokia pagalba reikalinga?",
+      "reason": "Kosmetinis defektas ir sveikatos požymiai; Ką užfiksuoti; Meistras ar sveikatos specialistas. Nauda: Aiškiai apribotas veiksmų kelias be diagnozių. Pilnas brief: topical-authority-20261006/PLAN.json#MN-pazeidimas",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Po manikiūro pažeistas nagas ar danga: kokia pagalba reikalinga?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-atpalaiduojantis-gydomasis",
+      "title": "Atpalaiduojantis ir gydomasis masažas: skirtinga paskirtis ir kvalifikacija",
+      "description": "Atpalaiduojantis ir gydomasis masažas: skirtinga paskirtis ir kvalifikacija. Aptariamos temos: savijautos paslauga; sveikatos paslauga.",
+      "intent": "Atpalaiduojantis ir gydomasis masažas: skirtinga paskirtis ir kvalifikacija",
+      "reason": "Savijautos paslauga; Sveikatos paslauga; Specialisto ir įstaigos apimtis. Nauda: LT kompetencijos tikrinimo kelias. Pilnas brief: topical-authority-20261006/PLAN.json#MS-atpalaiduojantis-gydomasis",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Atpalaiduojantis ir gydomasis masažas: skirtinga paskirtis ir kvalifikacija",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-gilieji-audiniai",
+      "title": "Giliųjų audinių masažas: metodo paskirtis, stiprumas ir kompetencijos ribos",
+      "description": "Giliųjų audinių masažas: metodo paskirtis, stiprumas ir kompetencijos ribos. Aptariamos temos: metodo principas; stiprumas nėra rezultato garantija.",
+      "intent": "Giliųjų audinių masažas: metodo paskirtis, stiprumas ir kompetencijos ribos",
+      "reason": "Metodo principas; Stiprumas nėra rezultato garantija; Individualaus vertinimo poreikis; Giliųjų audinių masažas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Terminų ir paskirties schema. Pilnas brief: topical-authority-20261006/PLAN.json#MS-gilieji-audiniai",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Giliųjų audinių masažas: metodo paskirtis, stiprumas ir kompetencijos ribos",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-kada-konsultacija",
+      "title": "Sveikatos klausimai prieš masažą: kada pirmiau reikalinga kvalifikuota konsultacija?",
+      "description": "Sveikatos klausimai prieš masažą. Aptariamos temos: ką pranešti apie būklę; straipsnio tinkamumo ribos.",
+      "intent": "Sveikatos klausimai prieš masažą: kada pirmiau reikalinga kvalifikuota konsultacija?",
+      "reason": "Ką pranešti apie būklę; Straipsnio tinkamumo ribos; Specialisto ir sveikatos pagalbos pasirinkimas. Nauda: Informacijos perdavimo kortelė be diagnozių. Pilnas brief: topical-authority-20261006/PLAN.json#MS-kada-konsultacija",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Sveikatos klausimai prieš masažą: kada pirmiau reikalinga kvalifikuota konsultacija?",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-limfodrenazinis",
+      "title": "Limfodrenažinis masažas: grožio pasiūlymas ir sveikatos paslaugos kontekstas",
+      "description": "Limfodrenažinis masažas. Aptariamos temos: konkretaus metodo paskirtis; rankinis ar aparatinis variantas.",
+      "intent": "Limfodrenažinis masažas: grožio pasiūlymas ir sveikatos paslaugos kontekstas",
+      "reason": "Konkretaus metodo paskirtis; Rankinis ar aparatinis variantas; Kompetencijos ir efekto įrodymai; Limfodrenažinis kūno masažas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Tikslą, metodą ir kvalifikaciją atskirianti lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#MS-limfodrenazinis",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Limfodrenažinis masažas: grožio pasiūlymas ir sveikatos paslaugos kontekstas",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-nesciosios",
+      "title": "Masažo pasirinkimas nėštumo metu: ką sprendžia individuali konsultacija",
+      "description": "Masažo pasirinkimas nėštumo metu: ką sprendžia individuali konsultacija. Aptariamos temos: poreikis ir sveikatos informacija; individualaus metodo parinkimas.",
+      "intent": "Masažo pasirinkimas nėštumo metu: ką sprendžia individuali konsultacija",
+      "reason": "Poreikis ir sveikatos informacija; Individualaus metodo parinkimas; Komfortas bei pagalbos ribos; Masažas nėščiosioms: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Konsultacijos informacijos kortelė be trimestrų tinkamumo algoritmo. Pilnas brief: topical-authority-20261006/PLAN.json#MS-nesciosios",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Masažo pasirinkimas nėštumo metu: ką sprendžia individuali konsultacija",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-teiginiai",
+      "title": "Kobido, limfodrenažas ir „detox“: kaip atskirti paslaugos aprašą nuo sveikatos pažado?",
+      "description": "Kobido, limfodrenažas ir „detox“. Aptariamos temos: metodas ir rinkodaros teiginys; kokiam rezultatui reikia įrodymų.",
+      "intent": "Kobido, limfodrenažas ir „detox“: kaip atskirti paslaugos aprašą nuo sveikatos pažado?",
+      "reason": "Metodas ir rinkodaros teiginys; Kokiam rezultatui reikia įrodymų; Sveikatos paslaugų riba. Nauda: Teiginių ir įrodymų paskirties lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#MS-teiginiai",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Kobido, limfodrenažas ir „detox“: kaip atskirti paslaugos aprašą nuo sveikatos pažado?",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-priauginimas-pazeidimas",
+      "title": "Pažeista nagų konstrukcija: korekcija, nuėmimas ir sveikatos pagalbos riba",
+      "description": "Pažeista nagų konstrukcija: korekcija, nuėmimas ir sveikatos pagalbos riba. Aptariamos temos: defektas ir sveikatos požymiai; informacija meistrui.",
+      "intent": "Pažeista nagų konstrukcija: korekcija, nuėmimas ir sveikatos pagalbos riba",
+      "reason": "Defektas ir sveikatos požymiai; Informacija meistrui; Ko nedaryti savarankiškai; Nago taisymas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Pagalbos kelias be klijavimo namuose. Pilnas brief: topical-authority-20261006/PLAN.json#NP-pazeidimas",
+      "cluster": "Nagų priauginimas ir papildymas",
+      "pillarSlug": "gidai/nagu-priauginimas-gidas",
+      "sourceQueries": [
+        "Pažeista nagų konstrukcija: korekcija, nuėmimas ir sveikatos pagalbos riba",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.fresha.com/lp/en/tt/gel-nails/in/nl-amsterdam/balboaplein",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/odontologija-prieziura",
+      "title": "Po burnos higienos ar balinimo: konkreti instrukcija ir kada kreiptis",
+      "description": "Po burnos higienos ar balinimo: konkreti instrukcija ir kada kreiptis. Aptariamos temos: atliktas darbas ir produkto instrukcija; jautrumo aptarimas.",
+      "intent": "Po burnos higienos ar balinimo: konkreti instrukcija ir kada kreiptis",
+      "reason": "Atliktas darbas ir produkto instrukcija; Jautrumo aptarimas; Sveikatos pagalbos kelias. Nauda: Dviejų paslaugų instrukcijos kortelė be universalios baltos dietos. Pilnas brief: topical-authority-20261006/PLAN.json#OD-prieziura",
+      "cluster": "Odontologija",
+      "pillarSlug": "gidai/odontologija-gidas",
+      "sourceQueries": [
+        "Po burnos higienos ar balinimo: konkreti instrukcija ir kada kreiptis",
+        "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/pedikiuras-kosmetinis-ar-sveikatos",
+      "title": "Kosmetinis pedikiūras ar sveikatos konsultacija: kur paslaugos riba?",
+      "description": "Kosmetinė pėdų ir nagų priežiūra turi ribas. Sužinokite, kaip atskirti pedikiūro užduotį nuo sveikatos vertinimo ir aptarti vizito atidėjimą.",
+      "intent": "Kosmetinis pedikiūras ar sveikatos konsultacija: kur paslaugos riba?",
+      "reason": "Kosmetinės priežiūros paskirtis; Skausmas ir įtartini pokyčiai; Kompetencijos patikrinimas; Kodėl nuotrauka nėra diagnozė; Paslaugos atidėjimas; Sveikatos konsultacija ir komunikacija. Nauda: Pagalbos maršrutas be nuospaudų ar ligų diagnozavimo; Aiškiai apribota atidėjimo atmintinė. Pilnas brief: topical-authority-20261006/PLAN.json#PD-kosmetinis-ar-sveikatos",
+      "cluster": "Pedikiūras",
+      "pillarSlug": "gidai/pedikiuras-gidas",
+      "sourceQueries": [
+        "Kosmetinis pedikiūras ar sveikatos konsultacija: kur paslaugos riba?",
+        "https://www.treatwell.lt/salonas/classic-pedicure-manicure-grozio-sodas/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/ilgalaikis-makiazas-pasiruosimas-prieziura",
+      "title": "Prieš ir po ilgalaikio makiažo: informacija, instrukcija ir pagalbos riba",
+      "description": "Prieš ir po ilgalaikio makiažo: informacija, instrukcija ir pagalbos riba. Aptariamos temos: pradinė būklė ir informuotas sprendimas; zonai bei pigmentui skirta instrukcija.",
+      "intent": "Prieš ir po ilgalaikio makiažo: informacija, instrukcija ir pagalbos riba",
+      "reason": "Pradinė būklė ir informuotas sprendimas; Zonai bei pigmentui skirta instrukcija; Įtartini pokyčiai ir pagalbos maršrutas. Nauda: Datuota zonai pritaikoma instrukcijos kortelė su patikrintu šaltiniu. Pilnas brief: topical-authority-20261006/PLAN.json#PM-pasiruosimas-prieziura",
+      "cluster": "Ilgalaikis makiažas",
+      "pillarSlug": "gidai/ilgalaikis-makiazas-gidas",
+      "sourceQueries": [
+        "Prieš ir po ilgalaikio makiažo: informacija, instrukcija ir pagalbos riba",
+        "https://nvsc.lrv.lt/lt/naujienos/i-ka-reikia-atkreipti-demesi-renkantis-tatuiravimo-ir-ilgalaikio-makiazo-paslaugas/",
+        "https://www.fda.gov/cosmetics/resources-consumers-cosmetics/cosmetics-safety-qa-tattoos-and-permanent-makeup",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-prieziura-keratinas",
+      "title": "Keratininio tiesinimo pasiūlymas: produktas, karštis ir sudėties patikra",
+      "description": "Keratininio tiesinimo pasiūlymas: produktas, karštis ir sudėties patikra. Aptariamos temos: pavadinimas ir tikra sistema; sudėtis bei darbo sąlygos.",
+      "intent": "Keratininio tiesinimo pasiūlymas: produktas, karštis ir sudėties patikra",
+      "reason": "Pavadinimas ir tikra sistema; Sudėtis bei darbo sąlygos; Ko neįrodo žyma; Keratininė plaukų procedūra: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Produkto dokumentų tikrinimo kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#PP-keratinas",
+      "cluster": "Plaukų priežiūros procedūros",
+      "pillarSlug": "gidai/plauku-prieziura-gidas",
+      "sourceQueries": [
+        "Keratininio tiesinimo pasiūlymas: produktas, karštis ir sudėties patikra",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+        "https://www.fda.gov/consumers/consumer-updates/formaldehyde-hair-smoothing-products-what-you-should-know"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-prieziura-reakcija",
+      "title": "Reakcija procedūros metu ar po jos: kosmetinės priežiūros ir sveikatos pagalbos riba",
+      "description": "Reakcija procedūros metu ar po jos. Aptariamos temos: naudota sistema ir ekspozicija; kokią informaciją perduoti.",
+      "intent": "Reakcija procedūros metu ar po jos: kosmetinės priežiūros ir sveikatos pagalbos riba",
+      "reason": "Naudota sistema ir ekspozicija; Kokią informaciją perduoti; Kada reikia sveikatos vertinimo. Nauda: Pagalbos ir informacijos perdavimo atmintinė. Pilnas brief: topical-authority-20261006/PLAN.json#PP-reakcija",
+      "cluster": "Plaukų priežiūros procedūros",
+      "pillarSlug": "gidai/plauku-prieziura-gidas",
+      "sourceQueries": [
+        "Reakcija procedūros metu ar po jos: kosmetinės priežiūros ir sveikatos pagalbos riba",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+        "https://www.fda.gov/consumers/consumer-updates/formaldehyde-hair-smoothing-products-what-you-should-know"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/psichologine-pagalba-testinumas",
+      "title": "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba",
+      "description": "Psichologinės pagalbos tęstinumas. Aptariamos temos: pagalbos proceso aptarimas; specialisto keitimas ir ribos.",
+      "intent": "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba",
+      "reason": "Pagalbos proceso aptarimas; Specialisto keitimas ir ribos; Atskiras skubios pagalbos kelias. Nauda: Proceso aptarimo ir tikrų pagalbos kontaktų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#PS-testinumas",
+      "cluster": "Psichologinė pagalba",
+      "pillarSlug": "gidai/psichologine-pagalba-gidas",
+      "sourceQueries": [
+        "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba",
+        "https://www.nhs.uk/tests-and-treatments/counselling/",
+        "https://vaspvt.lrv.lt/lt/naujienos/medicinos-psichologams-pristatyta-licencijuojamos-veiklos-prieziuros-tvarka-xQr/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-priauginimas-pasiruosimas-prieziura",
+      "title": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis",
+      "description": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis. Aptariamos temos: pradinė plaukų būklė; sistemos kasdienė priežiūra.",
+      "intent": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis",
+      "reason": "Pradinė plaukų būklė; Sistemos kasdienė priežiūra; Skausmas įtempimas ir sveikatos vertinimas. Nauda: Konkrečios sistemos priežiūros ir pagalbos kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#PX-pasiruosimas-prieziura",
+      "cluster": "Plaukų priauginimas",
+      "pillarSlug": "gidai/plauku-priauginimas-gidas",
+      "sourceQueries": [
+        "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis",
+        "https://www.aad.org/public/diseases/hair-loss/causes/hairstyles?pp=1",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/sezonai-naujieji",
+      "title": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+      "description": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis. Aptariamos temos: paviršiaus efektas; akcentų vieta.",
+      "intent": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+      "reason": "Paviršiaus efektas; Akcentų vieta; Paketo sudėtis ir norimas rezultatas. Nauda: Originalūs vienodos formos dizaino variantai. Pilnas brief: topical-authority-20261006/PLAN.json#SZ-naujieji",
+      "cluster": "Sezoniniai pasirinkimai",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/tatuiruotes-prieziura",
+      "title": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos",
+      "description": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos. Aptariamos temos: konkretaus padengimo instrukcija; gijimo ir galutinio rezultato skirtumas.",
+      "intent": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos",
+      "reason": "Konkretaus padengimo instrukcija; Gijimo ir galutinio rezultato skirtumas; Pokyčiai kurių negalima vertinti internetu. Nauda: Instrukcijos šaltinio ir pagalbos veiksmų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#TT-prieziura",
+      "cluster": "Tatuiruotės",
+      "pillarSlug": "gidai/tatuiruotes-gidas",
+      "sourceQueries": [
+        "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos",
+        "https://nvsc.lrv.lt/lt/naujienos/i-ka-reikia-atkreipti-demesi-renkantis-tatuiravimo-ir-ilgalaikio-makiazo-paslaugas/",
+        "https://www.fda.gov/cosmetics/resources-consumers-cosmetics/cosmetics-safety-qa-tattoos-and-permanent-makeup",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/veido-prieziura-pilingas",
+      "title": "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?",
+      "description": "Kosmetinis šveitimas ir profesionalus cheminis pilingas. Aptariamos temos: mechaninė/kosmetinė priežiūra; cheminio metodo skirtinga apimtis.",
+      "intent": "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?",
+      "reason": "Mechaninė/kosmetinė priežiūra; Cheminio metodo skirtinga apimtis; Kvalifikacija ir individualaus vertinimo ribos; Paviršinis veido šveitimas: metodo paskirtis ir konkreti paslaugos apimtis; Rūgštinis veido šveitimas: metodo paskirtis ir konkreti paslaugos apimtis; Fermentinis veido šveitimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Terminų atskyrimo schema be koncentracijų ar DIY receptų. Pilnas brief: topical-authority-20261006/PLAN.json#VP-pilingas",
+      "cluster": "Veido priežiūra",
+      "pillarSlug": "gidai/veido-prieziura-gidas",
+      "sourceQueries": [
+        "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?",
+        "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+        "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-11-24",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

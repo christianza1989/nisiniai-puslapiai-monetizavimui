@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-06T22:39:53.992Z",
+  "clientDate": "2026-10-07",
+  "status": "LIVE_RESOLVER_AND_TWO_NATIONAL_SAMPLES_VERIFIED_LOCAL_EMPTY_NOT_READY",
+  "registry": {
+    "httpStatus": 200,
+    "cacheControl": "no-store",
+    "bodySha256": "f5c01d9ffbb196c0976221124c1e02079d29f641d07182c9f8f8cb7d848761e0",
+    "version": "madbeauty-catalogue-v1",
+    "taxonomyVersion": "2026-10-06-v1",
+    "generatedAt": "2026-10-06T22:39:52.544Z",
+    "expiresAt": "2026-10-06T23:39:52.544Z",
+    "deployed": true,
+    "routes": 305,
+    "readyNational": 257,
+    "plannedNational": 48,
+    "readyLocal": 0,
+    "indexEligible": 0,
+    "idsMatchPlannedSnapshot": true
+  },
+  "samples": [
+    {
+      "routeRegistryId": "mb:catalog:kirpimai-moteru-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-moteru-kirpimas",
+      "httpStatus": 200,
+      "bodySha256": "e613e838543ad7c7027e24ee8eb3df1c825ad8a1c71f5b55df1cbe1278cad31e",
+      "title": "Moterų kirpimas · Madbeauty",
+      "h1": "Moterų kirpimas",
+      "canonical": "https://madbeauty.lt/paslaugos/kirpimai-moteru-kirpimas",
+      "robots": "noindex,follow",
+      "cityOptions": 103,
+      "targetSnapshot": {
+        "id": "mb:catalog:kirpimai-moteru-kirpimas",
+        "status": "ready",
+        "canonicalUrl": "https://madbeauty.lt/paslaugos/kirpimai-moteru-kirpimas",
+        "allowedQueryParams": [],
+        "verifiedAt": "2026-10-06T22:39:52.544Z",
+        "expiresAt": "2026-10-06T23:39:52.544Z",
+        "purpose": "information"
+      }
+    },
+    {
+      "routeRegistryId": "mb:catalog:manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras",
+      "httpStatus": 200,
+      "bodySha256": "71c30705cdc4606f5893261296348e4b050b0b67eaadbeeec8c1c10fa47c3cdf",
+      "title": "Manikiūro paslaugos · Madbeauty",
+      "h1": "Manikiūras",
+      "canonical": "https://madbeauty.lt/paslaugos/manikiuras",
+      "robots": "noindex,follow",
+      "cityOptions": 103,
+      "targetSnapshot": {
+        "id": "mb:catalog:manikiuras",
+        "status": "ready",
+        "canonicalUrl": "https://madbeauty.lt/paslaugos/manikiuras",
+        "allowedQueryParams": [],
+        "verifiedAt": "2026-10-06T22:39:52.544Z",
+        "expiresAt": "2026-10-06T23:39:52.544Z",
+        "purpose": "information"
+      }
+    }
+  ],
+  "emptyLocal": {
+    "url": "https://madbeauty.lt/paslaugos/kirpimai-moteru-kirpimas/vilnius",
+    "httpStatus": 404,
+    "bodySha256": "947f1cca22baa2be4c776c85debf2c802069ee8e957f26337a7b9c3b7529d795",
+    "hrefReady": false
+  },
+  "sitemap": {
+    "httpStatus": 200,
+    "bodySha256": "2505fcc8cd2b4cef322d9bf147e57281b7a38ea99d95c6becf0aaae05140f635",
+    "catalogueUrls": 0
+  },
+  "limits": [
+    "Independent check covers resolver identity/freshness, two national SSR routes and one empty local result; not all257 routes.",
+    "National functional browse is noindex, not proof of Google positions or approved supply.",
+    "Captured snapshot expires; actual fresh runtime registry is required for rendered typed destinations.",
+    "Does not approve a new article, V2 package, authentication, booking, clinical claims or deployment by this content session."
+  ],
+  "newPaidUsd": 0,
+  "actualDraftPrompt": {
+    "checkedAt": "2026-10-06T22:44:29.120Z",
+    "editorialId": "MN-pasiruosimas",
+    "pageId": "2cca02ae-6141-494b-90bb-a358af2c3c4f",
+    "researchSha256": "57a20b6a5f88fec1d23921fa9ccd75e698bd460320ee8a2b80844c8b3366c2c9",
+    "promptSha256": "26ff1dc2666a78bb658692cb77723d23be1914341ab9a89d8f299c3ff106ceff",
+    "currentNationalReadinessIncluded": true,
+    "mergedBriefIncluded": true,
+    "generationCalls": 0
+  }
+}

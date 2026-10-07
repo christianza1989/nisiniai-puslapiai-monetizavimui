@@ -73,7 +73,7 @@ test('HTTP v2 draft preview escapes HTML, keeps exact links and generator cannot
     const response=await fetch(`${base}/preview/v2-fixture/${page.id}`);const html=await response.text();
     assert.match(response.headers.get('x-robots-tag'),/noindex/);assert.match(html,/&lt;script&gt;alert/);assert.doesNotMatch(html,/<script>alert/);
     assert.equal((html.match(/href="\/preview\/v2-fixture\/gift-article-1"/g)||[]).length,2);assert.match(html,/<ol><li>Pirmas<\/li><li>Antras<\/li><\/ol>/);
-    const generated=await fetch(`${base}/api/sites/v2-fixture/pages/${page.id}/generate`,{method:'POST',headers:{'content-type':'application/json','x-studio-request':'1'},body:'{}'});assert.equal(generated.status,400);assert.match((await generated.json()).error,/V2 generavimo/);
+    const generated=await fetch(`${base}/api/sites/v2-fixture/pages/${page.id}/generate`,{method:'POST',headers:{'content-type':'application/json','x-studio-request':'1'},body:'{}'});assert.equal(generated.status,400);assert.match((await generated.json()).error,/V2 generavimo.*neperrašo/);
   }finally{await new Promise(resolve=>server.close(resolve));}
 });
 test.after(async()=>{await rm(root,{recursive:true,force:true});});

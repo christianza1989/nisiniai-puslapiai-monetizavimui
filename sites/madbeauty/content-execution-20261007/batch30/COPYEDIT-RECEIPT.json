@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "gidai/kirpimas-trumpas-vyriskas",
+    "kind": "verified-HTML-anchor-to-native-rich-link",
+    "bodyMeaningChanged": false
+  },
+  {
+    "slug": "gidai/sezonai-valentino",
+    "kind": "verified-pseudo-Markdown-to-native-rich-links",
+    "bodyMeaningChanged": false
+  },
+  {
+    "slug": "gidai/nagu-dizainas-gidas",
+    "kind": "remove-stray-token-and-grammar-copyedit",
+    "bodyMeaningChanged": false
+  },
+  {
+    "slug": "gidai/makiazas-vestuvinis",
+    "kind": "paragraph-and-language-copyedit",
+    "bodyMeaningChanged": false
+  },
+  {
+    "slug": "gidai/makiazas-pamoka",
+    "kind": "paragraph-and-language-copyedit",
+    "bodyMeaningChanged": false
+  },
+  {
+    "slug": "gidai/kirpimas-kaina-trukme",
+    "kind": "reviewed-source-observation-for-actual-Luna-revision"
+  },
+  {
+    "slug": "gidai/plauku-formavimas-kaina-trukme",
+    "kind": "reviewed-source-observation-for-actual-Luna-revision"
+  },
+  {
+    "slug": "gidai/makiazas-kaina-trukme",
+    "kind": "reviewed-source-observation-for-actual-Luna-revision"
+  },
+  {
+    "slug": "gidai/bendri-gidas",
+    "kind": "publication-metadata-only",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "bodyUnchanged": true,
+    "publishAtUnchanged": true,
+    "basis": "Exact scheduled publishAt, public date schema remains behind due gate"
+  },
+  {
+    "slug": "gidai/bendri-registracija",
+    "kind": "publication-metadata-only",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "bodyUnchanged": true,
+    "publishAtUnchanged": true,
+    "basis": "Exact scheduled publishAt, public date schema remains behind due gate"
+  },
+  {
+    "slug": "gidai/kas-ieina-i-manikiuro-kaina",
+    "kind": "publication-metadata-only",
+    "datePublished": "2026-10-06T22:35:02.542Z",
+    "bodyUnchanged": true,
+    "publishAtUnchanged": true,
+    "basis": "Verified public copy in an actual timestamped hosted receipt; earlier original publication time unknown and not asserted"
+  },
+  {
+    "slug": "gidai/kaip-pasirinkti-nagu-spalva",
+    "kind": "publication-metadata-only",
+    "datePublished": "2026-10-06T22:35:02.542Z",
+    "bodyUnchanged": true,
+    "publishAtUnchanged": true,
+    "basis": "Verified public copy in an actual timestamped hosted receipt; earlier original publication time unknown and not asserted"
+  },
+  {
+    "slug": "gidai/kaip-vertinti-meistro-darbu-galerija",
+    "kind": "publication-metadata-only",
+    "datePublished": "2026-10-06T22:35:02.542Z",
+    "bodyUnchanged": true,
+    "publishAtUnchanged": true,
+    "basis": "Verified public copy in an actual timestamped hosted receipt; earlier original publication time unknown and not asserted"
+  }
+]

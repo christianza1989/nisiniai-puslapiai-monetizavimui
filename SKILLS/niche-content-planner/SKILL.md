@@ -1,6 +1,6 @@
 ---
 name: niche-content-planner
-description: "Research a niche and autonomously build or review a seasonal SEO content calendar, distinct URL intents, topical clusters, source-backed briefs and useful drafts. Use for any niche site's initial demand test, six-month editorial plan, internal link map, draft QA or evidence-based content refresh; integrates with this project's content studio."
+description: "Research a niche and build or review its complete topical coverage plan, distinct URL intents, source-backed briefs, publication dates and internal link map. Use for this project's niche-site content planning, initial release selection, useful drafts or evidence-based refresh; integrates with the shared content studio."
 ---
 
 # Niche content planner
@@ -17,13 +17,19 @@ Read the site brief, existing page inventory and task's current date, timezone, 
 
 Load [niche adaptation](references/niche-adaptation.md) for research and calendar work. Load [quality review](references/quality-review.md) before returning a plan or draft. For studio JSON tasks also load [studio contract](references/studio-contract.md). The runtime may inject these files directly; do not assume they were loaded through skill discovery.
 
-- **Research/plan:** select a narrow audience and offer hypothesis, inspect demand questions and competitors, map distinct intents, select clusters, dates and evidence needs.
+- **Research/plan:** establish the full owner-confirmed audience, offer and category scope, inspect reader questions and competitors, map distinct intents and evidence needs, then choose useful first release groups and dates.
 - **Draft:** answer one planned editorial intent using available evidence, propose relevant links and produce a usable first draft. A planned intent is not an approved public revision.
 - **Review/refresh:** challenge the intent, evidence, usefulness, timing and link graph; repair what is resolvable and record specific remaining blockers. Update useful existing URLs before adding overlapping pages.
 
 Decide ordinary editorial choices independently. Missing business facts are not a reason to ask the owner to fill a calendar: research them, remove unnecessary claims or keep affected claims/pages private. Ask only when a consequential real fact cannot be established otherwise. This skill grants no additional authority to spend money, contact third parties or deploy a site.
 
 ## 1. Build the niche model
+
+Apply [TOPICAL_CONTENT_CORE](../../TOPICAL_CONTENT_CORE.md). Before drafting create the complete bounded niche question map, not merely a first calendar batch. Cover every owner-confirmed category and its relevant understanding, alternatives, selection, scope/cost/time, preparation, experience, aftercare/use and problem-resolution jobs. Inspect current local and foreign offerings, competing answers and primary evidence. Map questions to new URLs, sections/revisions of existing URLs, merges or justified exclusions; reconcile every old intent. No default weekly/monthly quota, equal cluster size or word count. The initial release subset is separate from the full coverage map.
+
+Include confirmed future scope in this map and distinguish it from currently operating functionality. Reconcile every owner-supplied catalogue/menu item. When a larger catalogue arrives, reopen the earlier map's completeness decision; a renamed total or a generic root does not prove that the newly added procedures/products/questions have been answered. Scope and justified exclusions must be visible in the deliverable.
+
+A useful article explains the actual service/product and decision. Do not turn every substantive answer into a generic list of questions to ask a provider. Specify the direct answer, mechanism/criteria, limits, original contribution and claim-level evidence needs. Appropriate expert review is real and scoped, never fabricated.
 
 Start from the selected business in `sites/<siteId>/BUSINESS.md` or its supplied brief context: paying customer, paid outcome, revenue mechanism and phase-one qualified enquiry. For an open new direction use the builder's [business validation](../niche-site-builder/references/business-validation.md); stale topic calendars are hypotheses, not a settled business. Do not replace the selected offer with a hobby magazine because fulfilment or assets are not connected yet. Resolve the ordinary strategy choice through research or mark its precise provisional basis; keep unknown operational claims out of public text. Each planned URL has a useful reader question and a documented role in the chosen customer journey. Don't create half a year of articles first and invent monetization afterwards.
 
@@ -51,13 +57,17 @@ Plan the root before or with its supporting pages. Give each support a relevant 
 
 Use existing stable URLs. Future pages remain link suggestions until both source and destination are publicly eligible under the shared domain/time/revision filter. Give every important page a legitimate discovery path from a public hub or navigation; do not leak draft routes to obtain that path.
 
+Bind the next action to the site's authoritative category/product/procedure registry, rather than equating an editorial cluster name with a runtime ID. For local-service platforms store the real taxonomy node and optional city ID; general guides use the relevant national destination and a city choice, while a local context or explicit reader selection uses that category/procedure in that city. For gift/product sites the useful axes may instead be recipient, occasion, format, budget or deadline. Do not copy a niche's facets into another niche. Record the target, label, reader reason and activation evidence for each planned CTA; unresolved route IDs remain null and planned URLs are not live hrefs.
+
+Use the existing public target resolver and registry gates; document any schema/import/prompt gap that would drop these IDs before claiming integration. Owned future targets must not bypass the resolver as external source links. Indexable local result pages require a useful real result set and the shared HTML/canonical/discovery contract. Hash state and every date/price/sort permutation are not separate SEO pages; empty result filters and independent local editorial content have distinct acceptance rules. Functional target readiness and index eligibility are separate.
+
 ## 4. Schedule around the niche's actual calendar
 
 Use the runtime's local date and horizon, not dates remembered from an example. Consider preparation, purchasing, implementation and use as separate moments. Publish useful preparation content ahead of relevant demand, allowing editorial and discovery time; lead time is an explicit planning assumption, not an indexing guarantee.
 
 Verify movable holidays, jurisdictional deadlines and time-sensitive events from a current primary source. Check year, country and local timezone. Weather, harvest and industry buying cycles vary; state assumptions rather than assigning exact invented peak days. Skip irrelevant holidays. Evergreen topics need no forced seasonal hook.
 
-Spread substantive pages across the requested horizon, prioritizing foundational answers and dependencies. Do not delay all commercially useful information to the final month or add filler to meet a weekly cadence. If an event is imminent, choose an achievable preparation angle or plan the next cycle; never backdate a new page or change dates solely to appear fresh. Reconcile with existing plans before adding duplicates. Scheduling an evergreen foundation first is a dependency decision, not seasonality: its seasonalHook must be exactly an empty string, not "Evergreen", "published first" or a forced holiday/maintenance association. Put ordinary scheduling rationale in reason.
+Complete foundations and their useful supporting answers as early as evidence, writing, media and review allow. Do not spread evergreen content across months to obey a cadence. Reviewed connected groups may share a publication date; later months support measurement, genuine updates and seasonal needs. Explicit calendar modes remain compatible and do not limit topical depth. If an event is imminent, choose an achievable preparation angle or plan the next cycle; never backdate a new page or change dates solely to appear fresh. Reconcile with existing plans before adding duplicates. Scheduling an evergreen foundation first is a dependency decision, not seasonality: its seasonalHook must be exactly an empty string, not "Evergreen", "published first" or a forced holiday/maintenance association. Put ordinary scheduling rationale in reason.
 
 ## 5. Brief, draft and verify
 

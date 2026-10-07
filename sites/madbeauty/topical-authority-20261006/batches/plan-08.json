@@ -1,0 +1,458 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/kuno-prieziura-pasiruosimas",
+      "title": "Prieš kūno procedūrą: tikslas, ankstesni darbai ir individualus vertinimas",
+      "description": "Prieš kūno procedūrą: tikslas, ankstesni darbai ir individualus vertinimas. Aptariamos temos: kosmetinis tikslas; naudotos procedūros.",
+      "intent": "Prieš kūno procedūrą: tikslas, ankstesni darbai ir individualus vertinimas",
+      "reason": "Kosmetinis tikslas; Naudotos procedūros; Metodo instrukcija bei sveikatos informacija. Nauda: Konsultacijos duomenų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#KP-pasiruosimas",
+      "cluster": "Kūno priežiūra ir estetinės procedūros",
+      "pillarSlug": "gidai/kuno-prieziura-gidas",
+      "sourceQueries": [
+        "Prieš kūno procedūrą: tikslas, ankstesni darbai ir individualus vertinimas",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/non-invasive-body-contouring-technologies",
+        "https://www.treatwell.lt/salonai/procedura-kuno-ivyniojimai/pasiulymo-tipas-vietinis/kur-lietuva/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kuno-prieziura-prieziura",
+      "title": "Po kūno procedūros: metodo instrukcija ir rezultato stebėjimas",
+      "description": "Po kūno procedūros: metodo instrukcija ir rezultato stebėjimas. Aptariamos temos: kas buvo atlikta; konkretaus protokolo priežiūra.",
+      "intent": "Po kūno procedūros: metodo instrukcija ir rezultato stebėjimas",
+      "reason": "Kas buvo atlikta; Konkretaus protokolo priežiūra; Rezultato dokumentavimo sąlygos. Nauda: Priežiūros ir stebėjimo kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#KP-prieziura",
+      "cluster": "Kūno priežiūra ir estetinės procedūros",
+      "pillarSlug": "gidai/kuno-prieziura-gidas",
+      "sourceQueries": [
+        "Po kūno procedūros: metodo instrukcija ir rezultato stebėjimas",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/non-invasive-body-contouring-technologies",
+        "https://www.treatwell.lt/salonai/procedura-kuno-ivyniojimai/pasiulymo-tipas-vietinis/kur-lietuva/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kirpimas-nuotrauka",
+      "title": "Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį?",
+      "description": "Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį. Aptariamos temos: kas patinka nuotraukoje; kiek ilgio palikti.",
+      "intent": "Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį?",
+      "reason": "Kas patinka nuotraukoje; Kiek ilgio palikti; Kas priklauso nuo tekstūros ir formavimo. Nauda: Užpildoma užduotis su ilgio žymėjimo schema. Pilnas brief: topical-authority-20261006/PLAN.json#KR-nuotrauka",
+      "cluster": "Kirpimas",
+      "pillarSlug": "gidai/kirpimas-gidas",
+      "sourceQueries": [
+        "Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį?",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kirpimas-pasiruosimas",
+      "title": "Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus?",
+      "description": "Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus. Aptariamos temos: įprastas formavimas; tekstūros vertinimas.",
+      "intent": "Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus?",
+      "reason": "Įprastas formavimas; Tekstūros vertinimas; Teikėjo pasirinkto metodo instrukcija. Nauda: Pasiruošimo matrica pagal sutartą darbo metodą. Pilnas brief: topical-authority-20261006/PLAN.json#KR-pasiruosimas",
+      "cluster": "Kirpimas",
+      "pillarSlug": "gidai/kirpimas-gidas",
+      "sourceQueries": [
+        "Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus?",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kirpimas-prieziura",
+      "title": "Kirpimo priežiūra namuose: formavimas pagal plaukų tekstūrą",
+      "description": "Kirpimo priežiūra namuose: formavimas pagal plaukų tekstūrą. Aptariamos temos: natūralus džiovinimas; formavimo priemonės ir karštis.",
+      "intent": "Kirpimo priežiūra namuose: formavimas pagal plaukų tekstūrą",
+      "reason": "Natūralus džiovinimas; Formavimo priemonės ir karštis; Kada tikslinti kirpimo užduotį. Nauda: Dviejų tekstūrų priežiūros scenarijai. Pilnas brief: topical-authority-20261006/PLAN.json#KR-prieziura",
+      "cluster": "Kirpimas",
+      "pillarSlug": "gidai/kirpimas-gidas",
+      "sourceQueries": [
+        "Kirpimo priežiūra namuose: formavimas pagal plaukų tekstūrą",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kineziterapija-pasiruosimas",
+      "title": "Pirmas kineziterapeuto vizitas: dokumentai, tikslas ir gydomojo masažo klausimas",
+      "description": "Pirmas kineziterapeuto vizitas. Aptariamos temos: turima sveikatos informacija; judesio tikslo aptarimas.",
+      "intent": "Pirmas kineziterapeuto vizitas: dokumentai, tikslas ir gydomojo masažo klausimas",
+      "reason": "Turima sveikatos informacija; Judesio tikslo aptarimas; Gydomojo masažo konsultacijos apimtis; Gydomojo masažo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Vizito informacijos ruošinys be savidiagnozės. Pilnas brief: topical-authority-20261006/PLAN.json#KT-pasiruosimas",
+      "cluster": "Kineziterapija",
+      "pillarSlug": "gidai/kineziterapija-gidas",
+      "sourceQueries": [
+        "Pirmas kineziterapeuto vizitas: dokumentai, tikslas ir gydomojo masažo klausimas",
+        "https://www.nhs.uk/tests-and-treatments/physiotherapy/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-salinimas-lazeriu-pasiruosimas",
+      "title": "Prieš lazerinį šalinimą: įdegis, ankstesni metodai ir konsultacija",
+      "description": "Prieš lazerinį šalinimą: įdegis, ankstesni metodai ir konsultacija. Aptariamos temos: ankstesnė ekspozicija ir šalinimas; naudojami produktai/vaistai.",
+      "intent": "Prieš lazerinį šalinimą: įdegis, ankstesni metodai ir konsultacija",
+      "reason": "Ankstesnė ekspozicija ir šalinimas; Naudojami produktai/vaistai; Specialisto instrukcijos. Nauda: Konsultacijos istorijos kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#LZ-pasiruosimas",
+      "cluster": "Plaukų šalinimas lazeriu ir IPL",
+      "pillarSlug": "gidai/plauku-salinimas-lazeriu-gidas",
+      "sourceQueries": [
+        "Prieš lazerinį šalinimą: įdegis, ankstesni metodai ir konsultacija",
+        "https://www.aad.org/public/cosmetic/hair-removal/laser-hair-removal-faqs",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-salinimas-lazeriu-prieziura",
+      "title": "Priežiūra po plaukų šalinimo lazeriu: pagal procedūrą pateikta instrukcija",
+      "description": "Priežiūra po plaukų šalinimo lazeriu: pagal procedūrą pateikta instrukcija. Aptariamos temos: atlikta procedūra; aplinkos poveikis.",
+      "intent": "Priežiūra po plaukų šalinimo lazeriu: pagal procedūrą pateikta instrukcija",
+      "reason": "Atlikta procedūra; Aplinkos poveikis; Individuali priežiūra ir pakartotinis vertinimas. Nauda: Pasirašytos instrukcijos komponentų ruošinys. Pilnas brief: topical-authority-20261006/PLAN.json#LZ-prieziura",
+      "cluster": "Plaukų šalinimas lazeriu ir IPL",
+      "pillarSlug": "gidai/plauku-salinimas-lazeriu-gidas",
+      "sourceQueries": [
+        "Priežiūra po plaukų šalinimo lazeriu: pagal procedūrą pateikta instrukcija",
+        "https://www.aad.org/public/cosmetic/hair-removal/laser-hair-removal-faqs",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicina-pasiruosimas",
+      "title": "Pasiruošimas medicinos konsultacijai: ankstesnė informacija ir rezultatų lūkesčiai",
+      "description": "Pasiruošimas medicinos konsultacijai. Aptariamos temos: turimi dokumentai ir naudojamos priemonės; ko tikimasi iš konsultacijos.",
+      "intent": "Pasiruošimas medicinos konsultacijai: ankstesnė informacija ir rezultatų lūkesčiai",
+      "reason": "Turimi dokumentai ir naudojamos priemonės; Ko tikimasi iš konsultacijos; Gydymo bei estetinės paslaugos atskyrimas. Nauda: Medicinos vizito duomenų ruošinys be vaistų nutraukimo patarimų. Pilnas brief: topical-authority-20261006/PLAN.json#MD-pasiruosimas",
+      "cluster": "Medicinos specialistų konsultacijos",
+      "pillarSlug": "gidai/medicina-gidas",
+      "sourceQueries": [
+        "Pasiruošimas medicinos konsultacijai: ankstesnė informacija ir rezultatų lūkesčiai",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/microneedling-devices"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/makiazas-laikymasis",
+      "title": "Makiažo palaikymas renginyje: tekstūra, aplinka ir pataisymo priemonės",
+      "description": "Makiažo palaikymas renginyje: tekstūra, aplinka ir pataisymo priemonės. Aptariamos temos: kosmetinis rezultatas; renginio aplinka.",
+      "intent": "Makiažo palaikymas renginyje: tekstūra, aplinka ir pataisymo priemonės",
+      "reason": "Kosmetinis rezultatas; Renginio aplinka; Sutartas pataisymo rinkinys. Nauda: Renginio priežiūros atmintinė. Pilnas brief: topical-authority-20261006/PLAN.json#MK-laikymasis",
+      "cluster": "Makiažas",
+      "pillarSlug": "gidai/makiazas-gidas",
+      "sourceQueries": [
+        "Makiažo palaikymas renginyje: tekstūra, aplinka ir pataisymo priemonės",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/makeup-faustina/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/makiazas-nuvalymas",
+      "title": "Kaip nuvalyti profesionalų makiažą ir atskirti laikinų blakstienų priežiūrą?",
+      "description": "Kaip skiriasi profesionalaus makiažo ir laikinų blakstienų nuvalymas? Aptariame naudotų produktų instrukcijas ir skirtumą nuo blakstienų priauginimo.",
+      "intent": "Kaip nuvalyti profesionalų makiažą ir atskirti laikinų blakstienų priežiūrą?",
+      "reason": "Naudoti produktai; Vienkartiniai priedai; Priauginimas nėra tas pats. Nauda: Nuvalymo instrukcijos ruošinys pagal produktus. Pilnas brief: topical-authority-20261006/PLAN.json#MK-nuvalymas",
+      "cluster": "Makiažas",
+      "pillarSlug": "gidai/makiazas-gidas",
+      "sourceQueries": [
+        "Kaip nuvalyti profesionalų makiažą ir atskirti laikinų blakstienų priežiūrą?",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/makeup-faustina/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/makiazas-pasiruosimas",
+      "title": "Kaip pasiruošti makiažui: odos produktai, reakcijų istorija ir renginio planas",
+      "description": "Kaip pasiruošti makiažui. Aptariamos temos: naudojamos priemonės; ankstesnės reakcijos.",
+      "intent": "Kaip pasiruošti makiažui: odos produktai, reakcijų istorija ir renginio planas",
+      "reason": "Naudojamos priemonės; Ankstesnės reakcijos; Renginio dienos informacija. Nauda: Pasiruošimo kortelė be odos diagnozavimo. Pilnas brief: topical-authority-20261006/PLAN.json#MK-pasiruosimas",
+      "cluster": "Makiažas",
+      "pillarSlug": "gidai/makiazas-gidas",
+      "sourceQueries": [
+        "Kaip pasiruošti makiažui: odos produktai, reakcijų istorija ir renginio planas",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/makeup-faustina/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-higiena",
+      "title": "Manikiūro įrankių higiena: dezinfekcija, sterilizacija ir vienkartinės priemonės",
+      "description": "Manikiūro įrankių higiena. Aptariamos temos: terminų skirtumas; įrankio paskirtis ir apdorojimas.",
+      "intent": "Manikiūro įrankių higiena: dezinfekcija, sterilizacija ir vienkartinės priemonės",
+      "reason": "Terminų skirtumas; Įrankio paskirtis ir apdorojimas; Ką reiškia UV spintelė. Nauda: NVSC teiginių paaiškinimas pagal situaciją. Pilnas brief: topical-authority-20261006/PLAN.json#MN-higiena",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Manikiūro įrankių higiena: dezinfekcija, sterilizacija ir vienkartinės priemonės",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-odeles",
+      "title": "Odelių priežiūra: kuo skiriasi salono darbas ir kasdienė priežiūra?",
+      "description": "Odelių priežiūra: kuo skiriasi salono darbas ir kasdienė priežiūra. Aptariamos temos: odelių paskirtis; kosmetinės priežiūros ribos.",
+      "intent": "Odelių priežiūra: kuo skiriasi salono darbas ir kasdienė priežiūra?",
+      "reason": "Odelių paskirtis; Kosmetinės priežiūros ribos; Kai oda pažeista ar uždegusi. Nauda: Kasdienės priežiūros ir atidėto vizito situacijų lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#MN-odeles",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Odelių priežiūra: kuo skiriasi salono darbas ir kasdienė priežiūra?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-pasiruosimas",
+      "title": "Kaip pasiruošti manikiūrui: esama danga ir norimas rezultatas",
+      "description": "Kokią informaciją perduoti prieš manikiūrą ar gelinį lakavimą? Aptariame seną dangą, nežinomą sistemą, norimą ilgį ir ankstesnio darbo istoriją.",
+      "intent": "Kaip pasiruošti manikiūrui: esama danga ir norimas rezultatas",
+      "reason": "Dangos istorija; Forma ir kasdienė veikla; Ką perduoti prieš vizitą; Ankstesnė sistema; Praėjusio darbo istorija; Kasdienė veikla ir ilgis. Nauda: Užpildoma pradinės būklės kortelė; Perdavimo kortelė su „nežinau“ pasirinkimu. Pilnas brief: topical-authority-20261006/PLAN.json#MN-pasiruosimas",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Kaip pasiruošti manikiūrui: esama danga ir norimas rezultatas",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/manikiuras-ziema",
+      "title": "Rankų ir nagų priežiūra žiemą: odos sausumas ir danga",
+      "description": "Rankų ir nagų priežiūra žiemą: odos sausumas ir danga. Aptariamos temos: drėkinimas ir įpročiai; dangos tausojimas.",
+      "intent": "Rankų ir nagų priežiūra žiemą: odos sausumas ir danga",
+      "reason": "Drėkinimas ir įpročiai; Dangos tausojimas; Kada nepakanka kosmetinės priežiūros. Nauda: Rutinos kortelė pagal odą ir dangą. Pilnas brief: topical-authority-20261006/PLAN.json#MN-ziema",
+      "cluster": "Manikiūras",
+      "pillarSlug": "gidai/manikiuras-gidas",
+      "sourceQueries": [
+        "Rankų ir nagų priežiūra žiemą: odos sausumas ir danga",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-pasiruosimas",
+      "title": "Kaip pasiruošti pirmajam masažo vizitui: apranga, privatumas ir komfortas",
+      "description": "Kaip pasiruošti pirmajam masažo vizitui: apranga, privatumas ir komfortas. Aptariamos temos: atvykimo ir aprangos informacija; privatumas ir uždengimas.",
+      "intent": "Kaip pasiruošti pirmajam masažo vizitui: apranga, privatumas ir komfortas",
+      "reason": "Atvykimo ir aprangos informacija; Privatumas ir uždengimas; Komforto bei sveikatos informacijos ribos. Nauda: Pirmo vizito situacijų atmintinė. Pilnas brief: topical-authority-20261006/PLAN.json#MS-pasiruosimas",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Kaip pasiruošti pirmajam masažo vizitui: apranga, privatumas ir komfortas",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/masazas-prieziura",
+      "title": "Po masažo: realistiški savijautos lūkesčiai ir pagalbos ribos",
+      "description": "Po masažo: realistiški savijautos lūkesčiai ir pagalbos ribos. Aptariamos temos: savijauta nėra gydymo įrodymas; teikėjo instrukcijos.",
+      "intent": "Po masažo: realistiški savijautos lūkesčiai ir pagalbos ribos",
+      "reason": "Savijauta nėra gydymo įrodymas; Teikėjo instrukcijos; Neįprastų simptomų sveikatos vertinimas. Nauda: Savijautos ir pagalbos ribų kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#MS-prieziura",
+      "cluster": "Masažas",
+      "pillarSlug": "gidai/masazas-gidas",
+      "sourceQueries": [
+        "Po masažo: realistiški savijautos lūkesčiai ir pagalbos ribos",
+        "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+        "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-dizainas-apsvietimas",
+      "title": "Kodėl nagų spalva ekrane, dienos šviesoje ir salone atrodo kitaip?",
+      "description": "Kodėl nagų spalva ekrane, dienos šviesoje ir salone atrodo kitaip. Aptariamos temos: apšvietimas ir baltos spalvos balansas; skaidrumas ir pagrindas.",
+      "intent": "Kodėl nagų spalva ekrane, dienos šviesoje ir salone atrodo kitaip?",
+      "reason": "Apšvietimas ir baltos spalvos balansas; Skaidrumas ir pagrindas; Spalvos pavyzdžio patvirtinimas. Nauda: Originalus kontroliuotas spalvos demonstravimas su metodika. Pilnas brief: topical-authority-20261006/PLAN.json#ND-apsvietimas",
+      "cluster": "Nagų dizainas",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Kodėl nagų spalva ekrane, dienos šviesoje ir salone atrodo kitaip?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://www.adobe.com/uk/creativecloud/photography/discover/white-balance.html"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-dizainas-matinis-blizgus",
+      "title": "Matinis ar blizgus paviršius: kaip skiriasi tas pats nagų dizainas?",
+      "description": "Matinis ar blizgus paviršius: kaip skiriasi tas pats nagų dizainas. Aptariamos temos: paviršiaus atspindys; spalvos suvokimas.",
+      "intent": "Matinis ar blizgus paviršius: kaip skiriasi tas pats nagų dizainas?",
+      "reason": "Paviršiaus atspindys; Spalvos suvokimas; Priežiūra pagal naudojamą viršutinį sluoksnį. Nauda: To paties iliustracinio dizaino pora. Pilnas brief: topical-authority-20261006/PLAN.json#ND-matinis-blizgus",
+      "cluster": "Nagų dizainas",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Matinis ar blizgus paviršius: kaip skiriasi tas pats nagų dizainas?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://www.adobe.com/uk/creativecloud/photography/discover/white-balance.html"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-dizainas-nuotrauka",
+      "title": "Dizaino nuotrauka meistrui: kaip aprašyti adaptaciją ir neįmanomas detales?",
+      "description": "Dizaino nuotrauka meistrui: kaip aprašyti adaptaciją ir neįmanomas detales. Aptariamos temos: kas nuotraukoje patinka; forma ir ilgis realybėje.",
+      "intent": "Dizaino nuotrauka meistrui: kaip aprašyti adaptaciją ir neįmanomas detales?",
+      "reason": "Kas nuotraukoje patinka; Forma ir ilgis realybėje; Kuriuos elementus keisti. Nauda: Užpildomas briefas su iliustraciniu adaptacijos pavyzdžiu. Pilnas brief: topical-authority-20261006/PLAN.json#ND-nuotrauka",
+      "cluster": "Nagų dizainas",
+      "pillarSlug": "gidai/nagu-dizainas-gidas",
+      "sourceQueries": [
+        "Dizaino nuotrauka meistrui: kaip aprašyti adaptaciją ir neįmanomas detales?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+        "https://www.adobe.com/uk/creativecloud/photography/discover/white-balance.html"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-priauginimas-pasiruosimas",
+      "title": "Prieš nagų priauginimą: sena sistema, norimas ilgis ir kasdieniai poreikiai",
+      "description": "Prieš nagų priauginimą: sena sistema, norimas ilgis ir kasdieniai poreikiai. Aptariamos temos: pradinė danga; ilgio bei formos užduotis.",
+      "intent": "Prieš nagų priauginimą: sena sistema, norimas ilgis ir kasdieniai poreikiai",
+      "reason": "Pradinė danga; Ilgio bei formos užduotis; Ankstesnio darbo informacija. Nauda: Užpildoma konsultacijos kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#NP-pasiruosimas",
+      "cluster": "Nagų priauginimas ir papildymas",
+      "pillarSlug": "gidai/nagu-priauginimas-gidas",
+      "sourceQueries": [
+        "Prieš nagų priauginimą: sena sistema, norimas ilgis ir kasdieniai poreikiai",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.fresha.com/lp/en/tt/gel-nails/in/nl-amsterdam/balboaplein",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nagu-priauginimas-prieziura",
+      "title": "Priaugintų nagų priežiūra: kasdieniai įpročiai ir tolimesnio vizito planas",
+      "description": "Priaugintų nagų priežiūra: kasdieniai įpročiai ir tolimesnio vizito planas. Aptariamos temos: konstrukcijos tausojimas; priežiūra pagal sistemą.",
+      "intent": "Priaugintų nagų priežiūra: kasdieniai įpročiai ir tolimesnio vizito planas",
+      "reason": "Konstrukcijos tausojimas; Priežiūra pagal sistemą; Papildymas ar nuėmimas. Nauda: Naudotai sistemai skirta priežiūros kortelė. Pilnas brief: topical-authority-20261006/PLAN.json#NP-prieziura",
+      "cluster": "Nagų priauginimas ir papildymas",
+      "pillarSlug": "gidai/nagu-priauginimas-gidas",
+      "sourceQueries": [
+        "Priaugintų nagų priežiūra: kasdieniai įpročiai ir tolimesnio vizito planas",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.fresha.com/lp/en/tt/gel-nails/in/nl-amsterdam/balboaplein",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/odontologija-pasiruosimas",
+      "title": "Pirma odontologo ar ortodonto konsultacija: informacija, tyrimai ir klausimai",
+      "description": "Pirma odontologo ar ortodonto konsultacija. Aptariamos temos: pradinė informacija apie gydymą; ortodontinio poreikio aptarimas.",
+      "intent": "Pirma odontologo ar ortodonto konsultacija: informacija, tyrimai ir klausimai",
+      "reason": "Pradinė informacija apie gydymą; Ortodontinio poreikio aptarimas; Tyrimų bei plano apimtis; Odontologo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis; Ortodonto konsultacija: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Vizito informacijos ruošinys be rentgeno paskyrimo internete. Pilnas brief: topical-authority-20261006/PLAN.json#OD-pasiruosimas",
+      "cluster": "Odontologija",
+      "pillarSlug": "gidai/odontologija-gidas",
+      "sourceQueries": [
+        "Pirma odontologo ar ortodonto konsultacija: informacija, tyrimai ir klausimai",
+        "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+        "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/"
+      ],
+      "publishDate": "2026-10-27",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

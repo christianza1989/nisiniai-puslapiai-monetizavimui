@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-06T23:46:18.916Z",
+  "origin": "https://madbeauty.lt",
+  "packageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5",
+  "duePages": 7,
+  "futurePages": 2,
+  "dueOrSharedExactWebP": 25,
+  "futureUnsharedWebP": 5,
+  "checks": [
+    {
+      "path": "/gidai/kas-ieina-i-manikiuro-kaina",
+      "status": 200,
+      "sha256": "6c24363c92281ad2633a094a8bc20340a46e8a6ab1f0edabeb45a174a5c7ac86",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/gidai/kaip-pasirinkti-nagu-spalva",
+      "status": 200,
+      "sha256": "7951e9a2cd7e68d30ec2ede79b4cace6c17a4eb530e77a83624fb5995a154cc2",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/gidai/kaip-vertinti-meistro-darbu-galerija",
+      "status": 200,
+      "sha256": "d0f93c7d704f4fd08e549b369a99c664bb492238dc5bf5817b215bc9a8eb641d",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "18ccb7b3558bda5ae599c2ba11d7593df851695f83eaebf11253137277339058",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/gidai",
+      "status": 200,
+      "sha256": "f0748a3af3a0ce3c907a0c1fef46e26fbe93f3a3c6e062be5492faa3cd9d3e6d",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/redakcija",
+      "status": 200,
+      "sha256": "fec0dca7ca54c547229a5dc1b2d335c3a64f58efc99369c18e5b60b7f7648e07",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/autoriai/redakcija",
+      "status": 200,
+      "sha256": "76a843b6920af0d0b86212a1d325729b379d679eb357a75b27e5d6cf82266912",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/gidai/bendri-gidas",
+      "status": 404,
+      "sha256": "947f1cca22baa2be4c776c85debf2c802069ee8e957f26337a7b9c3b7529d795",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/gidai/bendri-registracija",
+      "status": 404,
+      "sha256": "947f1cca22baa2be4c776c85debf2c802069ee8e957f26337a7b9c3b7529d795",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp",
+      "status": 200,
+      "sha256": "768df8962d0d99c2affd6da7c2340fa45bb62f90fbba76e4e057cdf93bd14723",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/a8f47340-0dfe-4f44-9f57-5c00007e4aef.webp",
+      "status": 200,
+      "sha256": "3cb1827113a64dbaac35b30cfd59bb022756b63e44c378bfc29d7ca37c41159f",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+      "status": 200,
+      "sha256": "77a2d7bf0cf25f755440c77269825b79909d9670acd9497074f5578d89ec640c",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/cd6c01cf-b342-448e-a12e-510c2d69d394.webp",
+      "status": 200,
+      "sha256": "6e6538717633d62a5590cf6241d5a7bb040a8092441c4d261b3b9662010e66f0",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/1ef9872d-2973-4d96-9214-e2dfa9f8fbc0.webp",
+      "status": 200,
+      "sha256": "f1d84e3989ae97c89d7c47206716d4732f616d24f8ded160aedf2b11a4f95466",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/1bfc1140-3416-4da3-9e6c-a49d69876ff3.webp",
+      "status": 404,
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/3ef486dd-0ecc-4722-8705-bb9328b8452e.webp",
+      "status": 404,
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/b3249cc3-fce3-42ef-ba6e-8df608a578ac.webp",
+      "status": 404,
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/bd594a9f-7f1a-4a41-b714-ab84f1a1cead.webp",
+      "status": 404,
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/9cafa576-a732-4bb0-a449-c686f37a899e.webp",
+      "status": 404,
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp",
+      "status": 200,
+      "sha256": "6dcc269249bf883c22c2c93432336f07865b8070ed3f4afafefc06ce4ff71d1a",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/d2926874-4d13-497c-a848-cc67febc7d53.webp",
+      "status": 200,
+      "sha256": "fe3d85b80de11589c2bdca3ea5738156c8f4929c0a9f914a768fc39200b2fe95",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+      "status": 200,
+      "sha256": "da6dc3fa5e541be4961ef472b106e1eb99a2523ac7517a322c1008023487d9f0",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/1682ac36-ccf3-44d2-b733-7762921ebc01.webp",
+      "status": 200,
+      "sha256": "beb6bb26ab577aafc30d5251b73a079f4011aa96a127ff3aea8e88d75a602752",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/c5b77b84-1dcb-4d94-8b56-6595883b0d32.webp",
+      "status": 200,
+      "sha256": "79802d4f5b1143c50a97510c0a40bd538a49cb6456a76b4d4c69028abdeb0e3b",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/e251f0d2-c7b3-471a-88fb-c014926c747d.webp",
+      "status": 200,
+      "sha256": "44cce5fd6cb6ebb9abd05c32a24a395f7d2267bed8d20f1eb57290fe7ce68897",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/613f655c-3c5c-40bb-aa38-39fb5a7c8ef4.webp",
+      "status": 200,
+      "sha256": "bf049d60216d4225c9a073a420416f464abff85c8f4d25761b76a7c9a735a024",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/61ef4a59-50f0-4972-bc19-db478f10a77b.webp",
+      "status": 200,
+      "sha256": "257f5ac5dd123183a12cc0b8c3f79899b418833364c243ce98df5de66283b0c1",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455.webp",
+      "status": 200,
+      "sha256": "e58ddcbdcdf7190ed2b64a151ed50a40dc78e80c3ed754a48516e63468842946",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/f7faf1f2-2aff-45a9-b85f-ef5d4d42d4d4.webp",
+      "status": 200,
+      "sha256": "ff1958fb5ce27b7fa272694e5da6f59147d490dd1ba70643ef7cbc1c04b0b91b",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/49b66963-88d6-4515-b65f-aeef52595244.webp",
+      "status": 200,
+      "sha256": "2b355ff3e0d86051c4cbab278344e68c6c519dd7a125326b4965a63f5fc07f2c",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/d388de34-ba0f-4182-9dc9-c00f285a58df.webp",
+      "status": 200,
+      "sha256": "cec83ee5f20ca7b977bbb1f1705ea001f2972cd6303d3c44904eebdeafb84327",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/21a7dafb-7f66-4807-8aaf-d39b4e1cb119.webp",
+      "status": 200,
+      "sha256": "f92091ae540bc1155ee4c9ca5542898c201fe24f955bb7d2a228b3edf9c11f7d",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/a0e75c8d-60f4-4b97-b450-4cfb7b2e69a1.webp",
+      "status": 200,
+      "sha256": "0051b59fba292ac70ad9402ef917124200e01895b1f0c26d53be5132ca636171",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/cf1b9887-f456-43be-a2c7-b1fad00e9957.webp",
+      "status": 200,
+      "sha256": "57b9582dda11553060a3522017a2a389c11c4ffaef21aa8e2660a02f84350017",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/34710a86-f607-4bb6-aa6c-d90a0767beeb.webp",
+      "status": 200,
+      "sha256": "39e2c652fe38164d9790938eab41748fe52757d37526a6b78c701ff13957354b",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/7a64d2da-c966-41f8-8817-fa3090634a27.webp",
+      "status": 200,
+      "sha256": "7c006bb70446a3f1225b42338c17f401af39bd3e97bcc52d6fd5860e813f125f",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e.webp",
+      "status": 200,
+      "sha256": "110ed8877dec66012b1c9adfce48b211a2a723f99030ce4d176bef9dd20799fc",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+      "status": 200,
+      "sha256": "5e4bfa35b7e4ba27f1795bdb8bbfacbdd83ff6dddafc75bcbcac9e50079b44b6",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-assets/madbeauty/5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72.webp",
+      "status": 200,
+      "sha256": "df4f5e17b9c29a7a4fed08c7565042755ffd7e55b876cb6ef335d47e9af1d1b4",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "sha256": "bcd6568b2a52651e19d38755f0b312172981091b02be4ea2cb27bd8f0f38009e",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "sha256": "89375010674e47c93ff61fc926f89c3f1459b3742fa16cfd14ca8acbbc5b0208",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "sha256": "b53848140f1e8f4840bb305ecae051d6ac72c701516315faae0fd1d0e5cda49d",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    },
+    {
+      "path": "/content-targets.json",
+      "status": 200,
+      "sha256": "565159b738717847ae57455cf9d55b7e62ff9e40f2446e96c3b8b323934d7fd8",
+      "contentPackageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+    }
+  ],
+  "registry": {
+    "generatedAt": "2026-10-06T23:46:23.658Z",
+    "expiresAt": "2026-10-07T00:46:23.658Z",
+    "nationalReady": 257,
+    "localReady": 0
+  },
+  "state": "independently-hosted-verified-at-actual-time",
+  "doesNotProveFutureDateInLiveHost": true,
+  "storageMailDnsWrites": false
+}

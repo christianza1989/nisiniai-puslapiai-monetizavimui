@@ -2,10 +2,16 @@
 
 2026-10-05. Vienas workflow visoms nišoms pagal siteId, įskaitant Madbeauty. Viešos V1/V2 schemos, publikavimo filtrai ir medijos importas nekopijuojami kiekvienai svetainei.
 
+## Aktualus aprėpties modelis — 2026-10-06
+
+Savininko pavedimu taikomas [TOPICAL_CONTENT_CORE](TOPICAL_CONTENT_CORE.md). Pilnas nišos klausimų/URL žemėlapis sudaromas iš karto; naujoms nišoms coverage režimas, ne savaičių kvota. Susietos parengtos temos gali turėti tą pačią datą; horizonte nereikia dirbtinai išbarstyti evergreen straipsnių. Ankstesnis Madbeauty 2–3/sav. tikslas pakeistas. Šaltinių, vaizdų, review ir release vartai nepakeisti.
+
 ## Veikiantis kelias
 
+**Straipsnių CLI modelis — 2026-10-07:** savininko pasirinkimas `gpt-6-luna`, `model_reasoning_effort="xhigh"` (Extra high). Bendras `content-studio/src/editorial-cli.mjs` šiuos parametrus paduoda kiekvienam draft, nepriklausomai nuo Codex pokalbio modelio ar vartotojo config. CLI pradžios modelio ir reasoning įrašai turi sutapti; neatitikimas / nepasiekiamas modelis sustabdo priėmimą, tylaus fallback nėra. Job / privataus rengimo kvitas saugo pasirinktą ir observed modelį, prompt bei rezultato SHA. Planavimo ir kitų darbų modeliai tuo nepakeičiami. Vaizdo promptą gali rengti Luna, tačiau faktinius pikselius kuria atskiras built-in ImageGen arba aiškiai pasirinktas Image API; Luna nėra vaizdų generatoriaus modelis. Modelio nustatymas nepakeičia faktų, šaltinių, vaizdų ir review vartų.
+
 1. Nišos BUSINESS, faktai, URL inventorius ir tikros funkcijos → niche-content-planner tyrimas ir sezoniniai briefai.
-2. `contentPolicy`: months (1–12), cadence (monthly arba weekly), articlesPerMonth (1–12) arba articlesPerWeek (1–7), localTime (HH:mm), timezone (IANA). Senam mėnesiniam policy suderinamumas: 6 mėn. × 2 straipsniai/mėn. 10:00; tai nėra visų nišų SEO rekomendacija. Savininko nurodytas dažnis turi pirmenybę prieš default. Madbeauty tikslas: 3 straipsniai/sav., leidžiant pagrįstai palikti tik 2, kai nėra trečios naudingos temos. Savaitiniame režime tikslas skaičiuojamas pagal realias intervalo datas, paliekant 7 kalendorines pasiruošimo dienas; datos išdėstomos per savaites, jau suplanuoti gidai įskaičiuojami į tos kalendorinės savaitės ribą. Agentas pagrindžia dažnį pagal naudingų klausimų kiekį. Esamų datų policy pakeitimas neperrašo. Laikrodis perskaičiuoja DST; neegzistuojančio/dviprasmio laiko nesirenka tyliai.
+2. `contentPolicy`: months (1–12), cadence = coverage naujoms nišoms, coverageTarget = sutikrinto pilno žemėlapio aktyvių guide/article URL skaičius (įskaitant esamus), arba null kol žemėlapio nėra; preparationDays (numatytai 0), localTime ir timezone. Nėra savaitės/dienos straipsnių ribos; patikrintas klasteris gali išleisti kelis URL kartu. Sena explicit monthly/weekly politika išsaugoma; pasirinktiniai articlesPerMonth/articlesPerWeek teigiami sveiki skaičiai be seno 12/7 cap. Kvota nėra aprėpties strategija. Esamų datų pakeitimas neatliekamas automatiškai. DST validacija bendra; datos neįrodo parengties.
 3. V1 CLI planuoja partijomis iki 24 URL ir rengia juodraščius. Autopilot apdoroja kelias partijas, sustoja nesant pažangos ar esant draft klaidai ir rodo likutį. V2 tekstinis generatorius dar išjungtas; rich turinys įkeliamas / redaguojamas lossless. V1/V2 peržiūra, partijos patvirtinimas ir release bendri.
 4. Agentas sugeneruoja ir peržiūri actual vaizdus su built-in ImageGen, importuoja MEDIA_CORE ir priskiria variantų šeimą. Tekstinis CLI savaime nevykdo built-in ImageGen. GUI ImageGen API yra atskiras API-key režimas.
 5. `finalizeInternalLinks` perkelia pagrįstus žinomų tos pačios nišos puslapių ryšių pasiūlymus į juodraščio `links`. Neprideda all-to-all ir nekeičia patvirtinto snapshot. Ryšiai su nerengiamu/atšauktu puslapiu atidedami arba pataisomi. Vėlesnis tikslo approval savaime neperrašo jau paskelbto straipsnio.
@@ -47,6 +53,8 @@ Prieš importą paleisti `node content-studio/scripts/verify-content-release.mjs
 
 Paleisti studijos `npm test` ir public core `npm run test:core`. Viešo adapterio/SEO keitimas papildomai reikalauja actual `test:seo-smoke` ir prieš/po datos HTTP bandymo savo izoliuotoje peržiūroje. Šis inkrementas viešo rendererio ir schemos nekeičia.
 
-## Savaitinės kadencijos patikslinimas — 2026-10-05
+## Istorinis savaitinės kadencijos patikslinimas — 2026-10-05
+
+Toliau išsaugota ankstesnė įgyvendinimo istorija. Ją pakeičia 2026-10-06 aprėpties modelis; tai nėra aktualus dažnio nurodymas.
 
 Savininkas Madbeauty numatė 2–3/sav.; anksčiau jo įrašas paveldėjo bendrą2/mėn. Tai nebuvo individuali SEO strategija. Weekly API/GUI/generatorius naudoja tikrą articlesPerWeek, ne apytikslį mėnesinį daugiklį. 2026-10-05 šešių mėnesių3/sav. politika turi76 suplanuojamus slotus iki2027-04-05 po7dienų pasiruošimo. Tai tikslas, ne jau parašyti/peržiūrėti tekstai. Esamos datos ir kitų nišų policy nekeičiamas. Kiekvienam URL reikia atskiro naudingo atsakymo ir atitinkamo tikro CTA; metrika sprendžia plėtrą. [Google people-first gairės](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) nerekomenduoja didinti kiekio vien dėl numanomo „šviežumo“.

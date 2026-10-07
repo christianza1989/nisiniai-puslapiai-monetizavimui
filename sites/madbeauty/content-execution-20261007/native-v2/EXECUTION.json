@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-06T23:31:35.593Z",
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "schemaVersion": 2,
+  "activePrivatePages": 299,
+  "articlePlanCount": 295,
+  "newArticlePlanCount": 292,
+  "retainedGuides": 3,
+  "supportPages": 4,
+  "writtenGuides": 5,
+  "newWrittenGuides": 2,
+  "approvedReleasePages": 9,
+  "retiredUnwrittenSnapshots": 8,
+  "packageSha256": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5",
+  "assets": 30,
+  "sourceDocuments": [
+    {
+      "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+      "status": 200,
+      "checkedAt": "2026-10-06T23:31:33.524Z",
+      "sha256": "aac09319af589c1dd4926e267094f5ae8ef4f5397f26828de4b014ca5c2e79c2"
+    },
+    {
+      "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/",
+      "status": 200,
+      "checkedAt": "2026-10-06T23:31:33.871Z",
+      "sha256": "4aa13da81702aec6feb095a416e560681926cc634096242ba31f00d4da750b27"
+    },
+    {
+      "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+      "status": 200,
+      "checkedAt": "2026-10-06T23:31:34.037Z",
+      "sha256": "e21913fc1aae5a35f19c9b3db77872a94294d27b7d2265e18e4fe3631e3e8803"
+    }
+  ],
+  "actualBrowserReview": {
+    "desktop": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    },
+    "pages": 9,
+    "horizontalOverflow": false,
+    "lazyColourImageScrolledAndDecoded": true,
+    "privatePreviewOnly": true
+  },
+  "pilotRevisionUnchanged": "45b6cc23d2d23566be44f9bb0d96f2326c418473dcc9875f7ced0cf670f450f4",
+  "publication": {
+    "duePages": 7,
+    "futurePages": 2,
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "futurePilotMediaUnshared": true,
+    "futureCategoryMediaSharedHomeIndex": true
+  },
+  "originalV1ApprovalsConverted": false,
+  "originalV1PackageSha256": "dba452bae4c613cc91b2da0d67addd221e405f30c594992553f3009bfc809579",
+  "sharedDraftSuite": {
+    "passed": 59,
+    "failed": 0,
+    "includesForeignMergedSeoPlannerTests": true
+  },
+  "newPaidResearchUsd": 0,
+  "privateSeoEvidenceSha256": "57a20b6a5f88fec1d23921fa9ccd75e698bd460320ee8a2b80844c8b3366c2c9",
+  "failedInitialCliSchema": {
+    "reason": "Observed CLI400 invalid_json_schema: oneOf unsupported",
+    "publicSchemaChanged": false,
+    "cliProjection": "disjoint anyOf",
+    "failedAttemptWasNotAccepted": true
+  },
+  "linkSelection": {
+    "kept": 14,
+    "deferred": 44,
+    "fullFutureGraphRetained": true,
+    "privateDecisionReceiptSha256": "1a1cde277888d00914c1a0c5fa63d802663fcb6e605c9e61f79b3018f6890de4"
+  },
+  "categoryLayoutCorrection": {
+    "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+    "beforeRevision": "843095f7f6b060d08793ba9cabfa647174749a44cffcf2c1da638f8b042ed441",
+    "afterRevision": "acdb4ea2709ef4953cc9804992899f5a659f3804eee1b9381eaf6d2c83ab9c82",
+    "correction": "Remove the duplicate body image because the actual renderer already displays the same reviewed featured image. Article prose and typed links unchanged; reading duration derived from actual words.",
+    "wordCount": 577,
+    "actualProseWriter": "gpt-6-luna",
+    "reasoningEffort": "xhigh"
+  },
+  "reviewedExport": {
+    "siteId": "madbeauty",
+    "canonicalHost": "madbeauty.lt",
+    "pages": 9,
+    "assets": 30,
+    "state": "verified-export-not-deployed"
+  },
+  "state": "reviewed-export-handed-to-platform-not-yet-hosted-accepted",
+  "deploymentReceipt": "HOSTED-ACCEPTANCE.json when separately completed",
+  "actualStudioUi": {
+    "pages": 299,
+    "approved": 9,
+    "serverRestartedAfterActiveJobsZero": true,
+    "mappedCoverageEnabled": true,
+    "draftBatchEnabled": true,
+    "legacyV2PlanDisabled": true,
+    "emptyMappedPageDraftEnabled": true,
+    "writtenApprovedPageDraftDisabled": true,
+    "bulkGenerationNotTriggered": true
+  },
+  "publicCoreRegression": {
+    "passed": 51,
+    "failed": 0,
+    "defaultV1HttpSeoSmoke": {
+      "status": "environment-unavailable",
+      "base": "http://127.0.0.1:8787",
+      "reason": "ECONNREFUSED; no running baseline server",
+      "candidateMadbeautyAcceptance": "Separate actual shadow/compiled/hosted acceptance by platform owner; not claimed from this baseline command"
+    }
+  }
+}

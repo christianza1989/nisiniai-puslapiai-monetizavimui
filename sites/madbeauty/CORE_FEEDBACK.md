@@ -93,3 +93,21 @@ Actual gift client chunks/font404 ir Madbeauty encoded-fontredirect parodė asse
 Direct SMTP šiame Workers/provider derinyje blokuotas. Optional shared public lib/hostinger-transport.mjs naudoja authenticated HTTPS/manualredirect/timeout ir saugius retryable errors; own PHPMailer relay turi bounds/purpose guards/receipts/TLS. Public D1 lease/backoff/retention testai ir core51PASS; abi canonical primaryINBOX PASS. Vieno providerio workaround nėra tinklo default. Mailbox password iš Workers pašalintas.
 
 Būsena: patikrinta actual cloud ir vietiškai, pritaikyta gyvam pilotui; source draftPR8 ir companionPR5, main merge atskiras. Tiksli source versija research/cloudflare-release-20261006/SOURCE_COMMITS.json. Kitos istorinių auditų svetainės šių PASS automatiškai neperima.
+
+## Pilna temų aprėptis ir planavimo skill — 2026-10-06
+
+Patirta spraga: kalendoriaus savaitinė kvota ir pradinis nagų pilotas buvo palaikyti pilnos platformos turinio apimtimi. Pirmas platesnis planas apėmė 10 veikiančių kategorijų, bet dar ne visus vartotojo klausimus; savininko vėliau pateiktas 225 procedūrų katalogas dar kartą praplėtė ribas. Straipsnių suma ir vien kiekvienos kategorijos paminėjimas nėra pilno naudingo atsakymo įrodymas.
+
+Pritaikytas bendras source: TOPICAL_CONTENT_CORE, AGENTS/CONTENT_CORE/SEO_GEO pointeriai ir niche-content-planner entry/references reikalauja iš karto pilno apibrėžtos nišos klausimų/URL/skyrių žemėlapio, ankstesnių ketinimų sutikrinimo, individualios struktūros, originalios naudos, faktiškų šaltinių, datų, priklausomybių ir kontekstinių nuorodų. Default coverage neturi savaitinės/mėnesinės kvotos ar vieno straipsnio per dieną ribos; vartai ir esami approved bytes/datos nekinta. Neužpildytas coverageTarget null ir neįkeltas pilnas map neužpildomi autopiloto išgalvotomis temomis. Legacy kalendoriai suderinami, pasirenkamo dažnio senas uppercap pašalintas.
+
+Katalogo pamoka įrašyta į bendrą skill: turinio klasteris nėra platformos taxonomy ID, procedūra nėra teikėjo variantas. Planavimo CTA turi remtis autoritetingais ID ir actual bendru resolveriu. Bendras vietinis gidas bei pasirinktas miestas turi skirtingą kelią; dovanų nišai nėra privalomo procedūra–miestas šablono. Jei plan/schema/import neperneša ID, integracija dar nepriimta. Source gali būti parengtas, bet būsimas route netampa live href ar Google rezultatu. Dovanos123 sesijai metodika perduota savininko autorizuotu pranešimu; Madbeauty platformos sesija kuria atskirą adapterį savo srityje.
+
+Ši source patikra nepriima neparašytų straipsnių, neegzistuojančių vaizdų, ekspertų review, viso naujo 225 procedūrų turinio plano ar gyvo diegimo. Aktualus pakeitimas PR10; istoriniai instruction fingerprint nekoreguojami atgaline data.
+
+## Tikslūs puslapių ID generavimo schemoje — 2026-10-07
+
+Patirtas bendras defektas: penki tikri Luna/xhigh juodraščiai buvo atmesti nepakeisto native V2 validatoriaus. Keturi makiažo juodraščiai pakeitė pilno žemėlapio šakninio puslapio UUID; nagų dizaino juodraštis bandė įterpti dar nepatvirtinto puslapio nuorodą tekste. Klaidos ir originalūs CLI rezultatų SHA lieka privačiame generavimo žurnale, neperrašyti kaip PASS.
+
+Pataisyta priežastis: bendras bindV2DraftSchema helperis apriboja privačią vieno darbo CLI schemą tik tikrais tos svetainės ID. Pasiūlymams leidžiami esami neatšaukti svetimi puslapiai; teksto nuorodoms leidžiamos tik esamos patvirtintos versijos. Savęs ir atšauktų puslapių nėra sąrašuose; kai nėra tikslo, atitinkamas kelias negeneruojamas. Darbo kvite išsaugomas tikros privačios schemos SHA. Vieša V2 sutartis, paskesnis tikslus validatorius, faktų, medijos, peržiūros ir datos vartai nepakeisti.
+
+Source: content-studio/src/draft-v2.mjs ir generator.mjs, regresija test/draft-v2.test.mjs, PR10. Tikri native individualaus / batch / explicit revision CLI integracijos testai tikrina, kad vykdomam procesui perduodama konkreti schema; bendras studijos rinkinys60/60 PASS. Pirmi du realūs atmestų straipsnių pakartojimai priimti su nauja schema ir tuo pačiu Luna/xhigh, be fallback. Ši pataisa nepatvirtina jų faktų ar publikavimo: straipsniai lieka juodraščiai iki atskiros redakcinės peržiūros ir leidimo.

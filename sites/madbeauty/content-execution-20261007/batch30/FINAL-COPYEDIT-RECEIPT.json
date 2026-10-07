@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "gidai/kirpimas-gidas",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/kirpimas-kaina-trukme",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/plauku-formavimas-kaina-trukme",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/plauku-formavimas-pasiruosimas",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/makiazas-gidas",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/makiazas-kaina-trukme",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/bendri-vizitu-derinimas",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/sezonai-kaledos",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": false,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/sezonai-valentino",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  },
+  {
+    "slug": "gidai/sezonai-velykos",
+    "kind": "actual-revision-copyedit",
+    "removedDuplicateFeaturedBodyImage": true,
+    "preservesGeneratedRawJournal": true
+  }
+]

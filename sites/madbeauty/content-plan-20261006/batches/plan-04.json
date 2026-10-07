@@ -1,0 +1,72 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/kaip-pasirinkti-grozio-vizito-vieta",
+      "title": "Grožio vizito vieta: ką palyginti be atstumo kilometrais?",
+      "description": "Pasirinkti pagal realią paslaugą, kelionės laiką ir vietos informaciją be miestų URL klonų.",
+      "intent": "Pasirinkti pagal realią paslaugą, kelionės laiką ir vietos informaciją be miestų URL klonų.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Dviejų vietų kelionės ir paslaugos kontrolinė lentelė.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "kaip pasirinkti grozio vizito vieta",
+        "grožio vizito vieta ką palyginti be atstumo kilometrais"
+      ],
+      "publishDate": "2027-03-30",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/keli-grozio-vizitai-ta-pacia-diena",
+      "title": "Keli grožio vizitai tą pačią dieną: kaip suderinti laiką?",
+      "description": "Sutarti kelių teikėjų laikus atskirai neįvedant universalios procedūrų sekos.",
+      "intent": "Sutarti kelių teikėjų laikus atskirai neįvedant universalios procedūrų sekos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Dienos laiko juosta su kelionės ir kiekvieno teikėjo patvirtinimu.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "keli grozio vizitai ta pacia diena",
+        "keli grožio vizitai tą pačią dieną kaip suderinti laiką"
+      ],
+      "publishDate": "2027-04-01",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/ramus-grozio-vizitas-poreikiai",
+      "title": "Ramesnis grožio vizitas: kaip iš anksto aptarti bendravimo poreikius?",
+      "description": "Aiškiai paprašyti mažiau pokalbio ar kitų individualių sąlygų, nežadant universalios paslaugos.",
+      "intent": "Aiškiai paprašyti mažiau pokalbio ar kitų individualių sąlygų, nežadant universalios paslaugos.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Mandagus poreikių žinutės ruošinys ir patvirtinimo klausimas.",
+      "cluster": "booking",
+      "pillarSlug": "gidai/grozio-vizito-registracijos-atmintine",
+      "sourceQueries": [
+        "ramus grozio vizitas poreikiai",
+        "ramesnis grožio vizitas kaip iš anksto aptarti bendravimo poreikius"
+      ],
+      "publishDate": "2027-04-03",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/meistro-profilio-perziuros-ir-uzklausos",
+      "title": "Meistro profilio peržiūros ir tikros užklausos: ką matuoti atskirai?",
+      "description": "Nesupainioti skaitomo turinio su tinkama paslaugos užklausa ar įvykusiu vizitu.",
+      "intent": "Nesupainioti skaitomo turinio su tinkama paslaugos užklausa ar įvykusiu vizitu.",
+      "reason": "Atskiras sprendimas prieš vizitą arba meistro informacijos parengimas. Anoniminė rodiklių lentelė su skirtingais peržiūros, užklausos ir patvirtinimo įvykiais.",
+      "cluster": "providers",
+      "pillarSlug": "gidai/meistro-informacijos-gidas",
+      "sourceQueries": [
+        "meistro profilio perziuros ir uzklausos",
+        "meistro profilio peržiūros ir tikros užklausos ką matuoti atskirai"
+      ],
+      "publishDate": "2027-04-06",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

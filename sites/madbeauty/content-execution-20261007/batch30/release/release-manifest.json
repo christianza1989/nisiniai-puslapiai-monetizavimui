@@ -1,0 +1,1513 @@
+{
+  "version": 1,
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "packageSha256": "75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4",
+  "assets": [
+    {
+      "name": "0c9cfe11-8efc-4f83-aff3-f2cd3e25a330.webp",
+      "sha256": "2e426fe6979645ccf639336f1fac4a3f32d2a9e86d0a83f47bbac36dc25cf2b1"
+    },
+    {
+      "name": "b56006d5-5c92-4b5c-af20-add3fd8eaff6.webp",
+      "sha256": "efe63a522ff5fde0688155109eaebc3e629298ff01d2b1889c29dead63c5d560"
+    },
+    {
+      "name": "c45ba386-cff8-4b07-8218-f1dd6e887bd7.webp",
+      "sha256": "41f57be4de0121aa64b6f07b8c0900ac8a8723f3919c93b0108f17225f3b52c6"
+    },
+    {
+      "name": "f84c38ca-2824-4b53-8088-b674d4f6939a.webp",
+      "sha256": "d3e2861f8493b9a1af53f1bedfba14c3ce5d2bf50e888396a037ff4a47c18860"
+    },
+    {
+      "name": "a6fecd8d-8d96-4e84-b8f9-860b31a8c3cd.webp",
+      "sha256": "b297e3eca45a7abde8ba25db5903aa9c5314fc14e18df7db8a6107ccb7d655cb"
+    },
+    {
+      "name": "0f257213-43e6-4374-bf72-344f00942e26.webp",
+      "sha256": "1a62c0b0ab9844037a1f085d5276a6ab7835431fe33e824bb8a830738ef6e694"
+    },
+    {
+      "name": "0129d25f-c23a-403f-ab1f-a42a2527df39.webp",
+      "sha256": "7bd24deacd7b241a049580b4091958b3f87a70110063ab2be1dddf5f02c6b188"
+    },
+    {
+      "name": "d76c85f3-6a17-47eb-ba57-849db830106d.webp",
+      "sha256": "d62c28ac69f1a834107ee255d2123e382d7e5ef99f586c6ed27f18a8e4f70f93"
+    },
+    {
+      "name": "ddbe0b91-407e-4348-aba4-28c742ff8864.webp",
+      "sha256": "94560f5abcdc6271416cdd786642003a0f60ace92de1f3bad4ed4880cbd9c431"
+    },
+    {
+      "name": "fe19c79b-60d9-468e-be8c-3dd306252edb.webp",
+      "sha256": "c3e9cba9dd539e9790ab22273bec423c8fe9be2232ac60b75d063b15c4b0de46"
+    },
+    {
+      "name": "1d89b1a1-541b-4dd9-bc8b-d4101975b8fc.webp",
+      "sha256": "b77587f3e27cc1176db12b37ba9aa08139d40c7438558ec02f2de3ab1a45df5e"
+    },
+    {
+      "name": "b28655a6-3f6d-4bbe-99b2-e4be729c3693.webp",
+      "sha256": "3346e386fa193fd7ca7a57412c952f65d404bb8b22cb66aa269b08a7562c61e1"
+    },
+    {
+      "name": "4a09b270-1be9-45a8-b7e9-1110be1087f4.webp",
+      "sha256": "5e3237a538e5ce529a55685476f08d65f3b9acbc3cb5cd1a4510e40f4d386620"
+    },
+    {
+      "name": "c9d26bfd-302f-4ec9-b4f1-7c60b3ecfec9.webp",
+      "sha256": "2dad50d5124d4286857b561c36298526a7f30f205d2ebbc82b61644988fa00a8"
+    },
+    {
+      "name": "1de1fab2-8428-49c2-82da-b55645a63aaa.webp",
+      "sha256": "9c39d2a358d6d6e0eb7c9518bef1a3fb139cadb4297e33acd10a302e35c80d48"
+    },
+    {
+      "name": "b54b2dbb-a26d-4252-af38-b01b64c75efd.webp",
+      "sha256": "6f3e027cfccf90274a3358dbfdc833c0d32f9cfca521cc029e2cfdb67c25d531"
+    },
+    {
+      "name": "9d4c6714-ba36-40fc-8380-a4fb429734f4.webp",
+      "sha256": "97375fe4d4da56e46b40d70c289d1877eb6190729bd5cab4212300fa6dfe7339"
+    },
+    {
+      "name": "635a031c-6d2d-4f36-a973-bedfb2904043.webp",
+      "sha256": "4a7e51edb1324cd6ec826f2e768c09cbc5b6fec7b4deafea703114ebafa39a3b"
+    },
+    {
+      "name": "807f4928-5818-4574-9308-36082fed5e1e.webp",
+      "sha256": "724485840a4ce0f81e274718ff60c88f5557e5c7ecda76fb6560b1c6026ca065"
+    },
+    {
+      "name": "97156c05-3a75-4bef-8e97-43c040c559fd.webp",
+      "sha256": "66fef05fd22103a070f8104306bff3bfa62d814dc00c53fbc44d6a44a8f93541"
+    },
+    {
+      "name": "632e055a-0d94-472c-9138-00fc010c8c10.webp",
+      "sha256": "2149444e9691a32c2ef4389f0dad481c11c0ae1d4c70581b33f4cfacc5e83c84"
+    },
+    {
+      "name": "2f6d2ce9-119f-4b88-a208-d780c53acb6f.webp",
+      "sha256": "8982073a580c42c129f492cedda511ae91a08f6b2ca9a12f45e288f8720e525d"
+    },
+    {
+      "name": "510c9784-7a3d-4462-802f-edb0552c7bdc.webp",
+      "sha256": "1a153b8ce727a8d13abc97cd87bab7ec93df6a363989d1e9f9e73344d1beac16"
+    },
+    {
+      "name": "5853620b-2340-4f25-8384-b4ad73d09651.webp",
+      "sha256": "bcb7f7ed9522603400014480c73256cb60af5812c8324c5c426649d49ea15c1e"
+    },
+    {
+      "name": "3709dcb8-14ee-46aa-8dd0-93ccef1df5cc.webp",
+      "sha256": "b04c407e25b6a281b6ea15f76124bd2640a81e824b822857c55b46c655012fff"
+    },
+    {
+      "name": "247fc275-3e88-4de6-a8e8-aed5bba45240.webp",
+      "sha256": "f5a9b489cb7ee61d148f6cdf41c1aee17e162586c7b0a3d8cfd46281d84905e3"
+    },
+    {
+      "name": "8dfe901a-6997-4000-a54e-a64554d4803d.webp",
+      "sha256": "f741e74ed28fd99ebbb468b680098d1abd89a059d7ff0aa9a4460df77be6fd07"
+    },
+    {
+      "name": "64b54ac3-449a-4d83-924a-9896a0eea0f1.webp",
+      "sha256": "14b0f8b9a2ffd841f1f338e7cd0c9bc2dfec0d4d51c8120fa2bed605950bb3dd"
+    },
+    {
+      "name": "1b2ac039-0abd-4d39-937e-1ed39f7d0b50.webp",
+      "sha256": "19b9c61e1c8cadb51c24ab34b5da6751c80d04cb68dba4c5729838c328d37b6e"
+    },
+    {
+      "name": "039dd198-35cd-4a20-90ce-d036574c13a0.webp",
+      "sha256": "fdf965421328401feaa7b56f1f14f34b60ba678876733fb68b130bd3c9a8166e"
+    },
+    {
+      "name": "51eb7eee-98b3-405f-b9e9-72752c8cc30d.webp",
+      "sha256": "6148bc2d187bca188dd85085cd5fc47e1ebe9e2bf41ddace6aa9bf96af64aa02"
+    },
+    {
+      "name": "5fc5335b-19a3-4aff-b171-54697d931bd8.webp",
+      "sha256": "f1d0bc0429c95ab16984a59a8022cf12d6790181591afaa1cc8c2bf4b9f08b3d"
+    },
+    {
+      "name": "63374a55-37ed-49a7-a27c-a86b2992ac25.webp",
+      "sha256": "3314db0a70cf7eb943325d55fad32f660fdf6b68f7aa420e1d1d0a02eff415a9"
+    },
+    {
+      "name": "830f0fbe-b8b7-41b3-9f54-5271b7190424.webp",
+      "sha256": "3310250be359fb41205436aaecc5a4e87227d1cff5218a319cd93e1fc664c3eb"
+    },
+    {
+      "name": "f24226fc-7e51-45fe-a9fb-ef160ea46b19.webp",
+      "sha256": "2f763b3dea73bba55b6d85117bd399da20557078fef0b555712efa00c0af4ec9"
+    },
+    {
+      "name": "c402d3eb-3242-408c-a7a7-c7ff254204d4.webp",
+      "sha256": "3f8731cbd5846fe8f8f9291e90bf409c3ed028b65048a389893ec5b068e274b3"
+    },
+    {
+      "name": "098aa7f3-3721-45d3-a40b-871d0efe7899.webp",
+      "sha256": "45d336b43bf712d5fed09b8709e54013af5335d2d78dc443e96e08b70a1ade94"
+    },
+    {
+      "name": "d92c37c0-d472-4450-81b8-703561913c7e.webp",
+      "sha256": "5144fddc1e9a9affbc9de85e9edd71ecab508b08af9acd84b37a44727f432511"
+    },
+    {
+      "name": "2ce12e85-6fe5-45b8-aa2a-0d186583b5a6.webp",
+      "sha256": "018403a42af040e9d8bd4692811a778074609a1cbb478255e475e2d327aced04"
+    },
+    {
+      "name": "b6647784-1203-4bd6-b193-d9e1955bef83.webp",
+      "sha256": "c9944f6049506db5db46936a3852d7c72332f6a4310b7831cb16b7906689a186"
+    },
+    {
+      "name": "b9f013ae-e2c3-450c-8e3e-ae9fc26be21a.webp",
+      "sha256": "09a72a5a7fe023689afb0328730adb718e1d9d69e7309ce6eec72aa486b49cd3"
+    },
+    {
+      "name": "04ef14fe-b623-4695-9aa3-56205f98840f.webp",
+      "sha256": "f5e7b76f55fb6ce46305cd1e40a08120fdc411e93d9deb7d3eb005aa62b831b3"
+    },
+    {
+      "name": "ef55eecf-e0db-4696-89e4-a92639dcbb5e.webp",
+      "sha256": "c207120c982bbdeb8b693ed2661d0904a944c159ee28a2b03d84f716f0d99fec"
+    },
+    {
+      "name": "ec264896-dc2d-4a82-a803-147e8eaeeacd.webp",
+      "sha256": "1853fb6bb60d0f6d7f99debe810fe05a6b85a6225e9d35ae8c32611efb10a02c"
+    },
+    {
+      "name": "37662d98-6ce1-458c-a42a-00ac956908b6.webp",
+      "sha256": "aea45ec2fbe8755b6dfba899e44e564e99ed2e0d8e96eb83c611596e70ab98f2"
+    },
+    {
+      "name": "01592090-487c-4467-a708-b3721e359f74.webp",
+      "sha256": "3030151b75a69f6adbc3d1485d3561cf3b2578d378e6e87c74c1c448c701815e"
+    },
+    {
+      "name": "0044da39-858c-4d18-bd83-db26ae2c527b.webp",
+      "sha256": "ef0f5d43811862cf01cfb954916e45ac62acc2cf23d7fa714d7713f7dc30ae52"
+    },
+    {
+      "name": "f03efab8-83d8-404d-9f21-e209bc176802.webp",
+      "sha256": "e85c22870848f2dc9e384fc9dde5622f8732f3c0c65899a827c7f1f2607bd667"
+    },
+    {
+      "name": "beb75fc4-1670-4cde-b861-88f526cade13.webp",
+      "sha256": "cb7c6b6cd738cf645d7dd56bd1507527cf55879306024df21fa6ed19c53d8d70"
+    },
+    {
+      "name": "4dc8d7f2-bc05-49ef-8436-f3d98d45d90b.webp",
+      "sha256": "96bef23540b08c6bb6c28c06efd9249eaf2637e7c01db0a8ec6b0e11793d177a"
+    },
+    {
+      "name": "04505c3a-86ba-4df6-b85a-7901543f77fc.webp",
+      "sha256": "7c96b178b0e1b2fc52c9ccf8a1bb2aab0ea2d6a273a467ad85e4243094d75d0e"
+    },
+    {
+      "name": "d15d5d33-8bed-42ad-90ca-d62b43050333.webp",
+      "sha256": "b7e2378968f1d667d6206127286b43d39c1cdbfbc244d461cc40cabc75c9717c"
+    },
+    {
+      "name": "595bbaf0-1b84-474f-bd83-1b61c69ee9f5.webp",
+      "sha256": "f3d86b3770e7cff04a16cec3276281771cecb9e1a0868d91c1d492c16f4e9edf"
+    },
+    {
+      "name": "eb5a47d1-06f2-4c3d-b9aa-aa2ba8c71718.webp",
+      "sha256": "4c573aea9ca68b53bf02b382983c9c0366eb1c9cf79f73774209a06e85b0ed42"
+    },
+    {
+      "name": "359bf4ab-528f-445d-8aa0-a283a160281b.webp",
+      "sha256": "704bd507f3a582b9bc41ca0b46677e6d548158ce6cb046bebae2bcdeac1c7102"
+    },
+    {
+      "name": "91c029bf-e239-49d6-b59d-1623624058ec.webp",
+      "sha256": "05885139b2e420c7ba6265cfc8723653a4b35f42bece3c0084a24738e1d0feff"
+    },
+    {
+      "name": "52af0722-557d-4b87-8bcf-e96adf73c68c.webp",
+      "sha256": "e9cc342b0487bc0034f8a0eaaaa5fff3279a4a97507e0ebb597985e4405ec009"
+    },
+    {
+      "name": "b1a7c086-3d99-4618-9f45-f09988d61e49.webp",
+      "sha256": "af0dc5aeb79ee2a331f03d7c560f17df88aafd7a9a8f50ebd2f8f3c7a1effead"
+    },
+    {
+      "name": "3761e7fa-7d4e-49a0-81fe-f0d2d7a0a498.webp",
+      "sha256": "dd6f4928ba2072a1ba7d3be8809c5ef50e69cf1106cb596d99c7b36a8c3a3ece"
+    },
+    {
+      "name": "cd5a68ca-4a12-422a-a7fb-f8a1357cd6ee.webp",
+      "sha256": "8b83b25a055ac9d8ab0030c67074310d61c067681cc1a36fcb02ac8cce2d57fb"
+    },
+    {
+      "name": "73fd1544-25e8-43f7-a14a-3c03bce3532d.webp",
+      "sha256": "8af96f0d93794903f5aa4133eae5d2f20b453a4888be8e75e8b5d5205bd2c4eb"
+    },
+    {
+      "name": "084ad21d-ad55-4ae9-8e05-8cce0b406b1f.webp",
+      "sha256": "d69d3c0d3f0d78eaa8d00203d6ccf876ff47cfeb2ab99f3f299042061f24a18d"
+    },
+    {
+      "name": "fcb3f457-ffc4-4e03-b843-98772a015c27.webp",
+      "sha256": "ce5183e7e83b330d3361298d87694717c8e52b069ad2b1b0da790f11c0e496dc"
+    },
+    {
+      "name": "4013e8e7-dc95-41b5-a7c3-04c7350f5ad6.webp",
+      "sha256": "27515d2e1623e71e1304a9c299335e0a6fb248f7a14f4ffd05a1609d3d779985"
+    },
+    {
+      "name": "8eb9846a-0d78-4fa5-bd82-ac26c67c2340.webp",
+      "sha256": "298c7cda6f4d9955856aaa7bacd11ca375b075af24bc9afd1ce48917c72adf30"
+    },
+    {
+      "name": "006e1c98-3afe-499b-9d6d-39e01c851764.webp",
+      "sha256": "e8d247508023b1308fe1de9845b5cfa1bf127419744970e298ab11dcb5efdfda"
+    },
+    {
+      "name": "6e0d1e27-030d-48bc-bfca-a5a2a241cb40.webp",
+      "sha256": "7f2874fc9fe8abee4bb8a7b44742cebb7caaa883a37203b396921d6ce2928896"
+    },
+    {
+      "name": "b2eebbbf-41b5-4553-bcf8-feaaa6d719a3.webp",
+      "sha256": "7ef5937f23ca2a89d7dc6b1a859feaf7f9abaf0f9aff6cbc6157e1421e6f12dc"
+    },
+    {
+      "name": "95840bc8-8355-4e0f-9590-536e113b011b.webp",
+      "sha256": "83c26bd1681eed4b430afe5fe2a3f224b78e28504f41105d4279619f05da7da9"
+    },
+    {
+      "name": "3867ac8d-4b84-4b40-81ed-3b2589d46ee6.webp",
+      "sha256": "4c2fd6c351c8d2809aa973cd4e5283008de1d9fbbdfb293e805c897441ec6e94"
+    },
+    {
+      "name": "8f923ddb-ab97-477f-8bd2-f808492267c3.webp",
+      "sha256": "bab525f6151cf32e9cf953c8fcb680cc723a3730030323825742dbec18eff2ff"
+    },
+    {
+      "name": "f201ff9e-4c80-405f-b31f-0ec9c986f993.webp",
+      "sha256": "eb2c48f1a392b2d9ca2e8f8c7917d3ada34286de98d055a7fe28b7da7df9859c"
+    },
+    {
+      "name": "45d4ed16-e8f2-44e3-9355-e1901471c4ad.webp",
+      "sha256": "2773ea9aed34fb36ab9a1cf479edd3aab85d2cacc0ec59daf839fde6abc64026"
+    },
+    {
+      "name": "182d191e-ce94-4cb9-a874-de11e79053c3.webp",
+      "sha256": "b90d12442dbc4c5f7041dc259e16b1f828eeeb295013f2bd1b72417777663541"
+    },
+    {
+      "name": "f8ec862e-951c-405e-94ea-29a82e07b4a6.webp",
+      "sha256": "ed4b64d34614b1f62ae13d5125f41a19d87fe9e98932152545f7d5dfd590864a"
+    },
+    {
+      "name": "d22fca2c-29c6-40c2-8a12-1015a5ff8e69.webp",
+      "sha256": "f2b88f4f72d56b830ab14a8843b031470e76c8cd2115a4e0c7fe686b58738590"
+    },
+    {
+      "name": "6473bd30-f977-495d-aa7a-6ab887a2ff43.webp",
+      "sha256": "24ee0dae351551c88e3ef82c376b679b3d319f2cb1773b163b359da968d5cefb"
+    },
+    {
+      "name": "10a9883b-d89b-44ba-a7ec-0cb9c0e283e3.webp",
+      "sha256": "3384c2aeee01fb0b09d469957b679482f61630e52050fc8bc789f681843c3b4d"
+    },
+    {
+      "name": "5e6cdd2b-cfbd-4da1-9f69-9a5d21b5ccfd.webp",
+      "sha256": "8943e2e3f1cf387a09454ddcddec15f009474ec3ae1e00e2e6c064f965006172"
+    },
+    {
+      "name": "e566d4c3-98e4-4597-a21f-09a83f5f1bff.webp",
+      "sha256": "a9391d594f0f69bfe12f60c9dbd33de1c402c9220650a21ccb886408521744c1"
+    },
+    {
+      "name": "a8c5e3be-9e49-4000-b008-7e4cc9a5da28.webp",
+      "sha256": "ef4e5815e7b6747c5f93bd26ae4f6da9f00f50c3a07bdac19046f208e84e8a1b"
+    },
+    {
+      "name": "a9628b94-03ab-4adc-a9f0-a5d34aa15355.webp",
+      "sha256": "5ecc3543b33e532b10d2f6facf4e902fb4681e198354c2ee3237f4c65772bf48"
+    },
+    {
+      "name": "2bcc2159-a982-477b-b18c-7fa0a7f8867a.webp",
+      "sha256": "fb48c5e27d6497c7da2275cdc5497acef1669959836f9f8307ec8041c29f0f0c"
+    },
+    {
+      "name": "faff5e2f-e4b6-410e-a8d3-7b48470b88ee.webp",
+      "sha256": "d1293953751c47794d3b646ee7a6cfdb1ed8f5b141619c110d1add6fbfbf5732"
+    },
+    {
+      "name": "206691bf-1c9e-4e6f-b205-09ada8b01d49.webp",
+      "sha256": "7966ce3ed8c7cd0e5fa9930dd402b29d7ed63445ab2b6e22d35a9d4bcb5669ac"
+    },
+    {
+      "name": "d34ef76a-e7cb-4de7-975f-4fc87d520885.webp",
+      "sha256": "2b8e616c58f71f3987b72e95c87eddb9a9d0cc996f32fb6877ed55ae8c44a1f0"
+    },
+    {
+      "name": "79b34022-35ff-471f-a18c-f4b6c50c1b9c.webp",
+      "sha256": "b6aad15f5b55807f630aecdfb5a92e52bf9056b8f5084572d01046c502095e15"
+    },
+    {
+      "name": "4ced8a73-8265-49d2-8af5-66d396d112b1.webp",
+      "sha256": "18d4c45bec04a710ebe09194e51db168f4f6f4ca3e5de4166d8e57459c69467d"
+    },
+    {
+      "name": "73e40340-8dae-42c7-ab16-63bf6ae3daa6.webp",
+      "sha256": "2b8e4fdd7e6638e6055584ad2fc42e1ad41cd46feb0a3e446fa02af2c5af4806"
+    },
+    {
+      "name": "71bb7685-7f17-4e55-aa85-919e150519e8.webp",
+      "sha256": "55463528c8b65fb591b37a77d7bddfdd4bbe1730704ecc1f37188b6c229f8d40"
+    },
+    {
+      "name": "3f3d8ba9-f4dc-4314-860e-e28ceaa3d9a5.webp",
+      "sha256": "b3c2a899172a6aececbd5dcefef5ecbe33626374085b8907896cec36fe17d16e"
+    },
+    {
+      "name": "d64a6dae-3d21-4434-b7d2-48f7bc18a728.webp",
+      "sha256": "ae47e0263cb4b388c757e3ac87cbc567122a2d5aa89178d4a0767758c7d018ca"
+    },
+    {
+      "name": "4a4ed29a-fcd0-4e29-a67d-7e590be58b0c.webp",
+      "sha256": "de2dc365984cb886dfffd1c0d1dd0a58f2bb7f6359917ed30f7af5ba12a2e7d5"
+    },
+    {
+      "name": "daede9c9-8353-4492-8d54-6bd310f7c81e.webp",
+      "sha256": "50c2d39c38abde0ef2b1249dedc83e6a686f7373a2191ce0c1063dafe4dfb521"
+    },
+    {
+      "name": "01330da9-dd9b-4d16-b3be-99b4f3981d86.webp",
+      "sha256": "e1a6228dd8ea803b1395f88aebd997b6cea00f64057a6d9ac7d6f8945fcc6dfa"
+    },
+    {
+      "name": "640499bc-5287-498b-a421-6932bf0f815b.webp",
+      "sha256": "a9cb4680487081002829e16f7b61d9336a5a9a73e210cfea641b08f7ab819935"
+    },
+    {
+      "name": "26cf11dc-c175-4282-83ba-76126fa75053.webp",
+      "sha256": "bafbdd99baffe289d8b21def8ac6de922e7f7667d47f0a2f8e9a900a0086ce7a"
+    },
+    {
+      "name": "ea4ca47a-4180-4c2e-9cf5-58ed592b78f2.webp",
+      "sha256": "80052013ccb404d6f027fcb89bd57eb46fa600f530b3e463b94c5e284b1472d5"
+    },
+    {
+      "name": "1d09712a-a0f3-46fa-95d8-a21b06bd1fdb.webp",
+      "sha256": "64e7de3dfe63d8fb98183e005cd83cd6dbccbc71aacb840aab2ae59f9c678050"
+    },
+    {
+      "name": "f04a04fe-fcc8-45aa-af8f-b39935c51b21.webp",
+      "sha256": "49d682bfb40f1caffd5d65979601e7c4d9d0b3db416b84d2f77c323c08353f3c"
+    },
+    {
+      "name": "5503a820-29f2-4d3e-b5b1-6015b25c8ef3.webp",
+      "sha256": "89917b98deba6405172d53797e40daebaa237ddc75b32bd1fada3aa36f76f865"
+    },
+    {
+      "name": "145be00a-eb75-4b7a-afcb-50972b0de135.webp",
+      "sha256": "9bc0ddb56503589a5464b68f1a2c8c8b1acd211b9cf2952e0f4cb53b26bef8ea"
+    },
+    {
+      "name": "78f8fda7-d314-4f63-9c85-edc17d75d9b3.webp",
+      "sha256": "7d70e6b9fc988b6a748f4147073ed812ac48fc0af38da0eb58f56bc0b3680c91"
+    },
+    {
+      "name": "d540cd53-caaf-47c6-833b-d8b90188524d.webp",
+      "sha256": "4832c885ee7598c5c58a6f3ff41bfb218fd3ea6726e7b1b7b5ad71f2f8d588d4"
+    },
+    {
+      "name": "06a7a4c2-1a28-43de-beac-fe4324e6a047.webp",
+      "sha256": "a4e9c238162a978079db1faa1127069e083a77f34faa398abf53358a57bfe891"
+    },
+    {
+      "name": "1c164629-1033-41de-8cf3-6c4565ac96db.webp",
+      "sha256": "388131fe472e8ff06e91704650d7309265fb16b549ac35b55a6b03d4d5860b6c"
+    },
+    {
+      "name": "6c67144b-6745-444b-97d0-fbdb59a30c9c.webp",
+      "sha256": "7b8bb915e456ce5cf828c9c357b429283f5b7c07bc7dd3f4732e15ecaa11dd74"
+    },
+    {
+      "name": "450c9403-4f31-4e49-9004-25fbed5be5e6.webp",
+      "sha256": "c267c22752a671a387a61df997de710d734e68e61d4d82fb52b7eb180019aede"
+    },
+    {
+      "name": "9d0b60ec-c9e1-442e-8014-171190857522.webp",
+      "sha256": "c2f8dc91eabcf9e7d0efe4af6a21e11931af6f783129ea6261c87972a3eeae50"
+    },
+    {
+      "name": "ab188f9f-250f-466b-899d-bdfadb3c2c68.webp",
+      "sha256": "4b36aa402e31b7879071c6b35d5c0305a92277b7bd51035ac9ac72b0410761b2"
+    },
+    {
+      "name": "2022e88e-96fa-4bc9-a7c4-0f0b61d508b9.webp",
+      "sha256": "95cdac36d13045a6ecff3ed64289f73be1d3ca70d108c7f8915ab84e54edbf7b"
+    },
+    {
+      "name": "3f130d10-623b-442c-8cba-c626ceb51c5b.webp",
+      "sha256": "2cb2d1f0dce269c81d5f3d97be9afff449de01c8bce26e2f1d48a740c670b1ae"
+    },
+    {
+      "name": "15185f5b-6032-468d-8437-2336b9f7bc8a.webp",
+      "sha256": "9cefdcd17ff58f241be9d8a8af3d2d8f2022df48966cc1a65f604c0d846830e9"
+    },
+    {
+      "name": "563f20f1-ee16-46d9-86e1-906d7103f0c7.webp",
+      "sha256": "b04e2df15dd3494ec7a5085484828a0d007f144274ea288d040316387973c517"
+    },
+    {
+      "name": "095b8b36-7ff4-4db6-9d05-381d48e7bcb4.webp",
+      "sha256": "ea4449a20c53b66f021db79b86c59cf4bedc43e0dd7b6a2a9d24f604fe1489f6"
+    },
+    {
+      "name": "469ce5c1-34ac-4280-993c-9be228f18d90.webp",
+      "sha256": "1241f510ee3bb2fa19e001dcf3972a2f131e5d16e3256bd17430c6f086a0d1a8"
+    },
+    {
+      "name": "01e195a5-0b53-4ed4-ad49-10920a55e827.webp",
+      "sha256": "2329d3c8a5d4ce3ea773c934d5a64bed114f57d1d6a7f6527d41baf4fd9dfcae"
+    },
+    {
+      "name": "04841ef2-51ed-4da4-8ca7-e1423f34a0be.webp",
+      "sha256": "6dcdffddc2a1167354529f209fd822be63772abe85436bdf1c19e82c46f2d836"
+    },
+    {
+      "name": "d99dcb93-0c3a-497b-a285-e8bb242b8d80.webp",
+      "sha256": "e5c77ab22c3edda85263f6ee7428590f23a9286e13874bf062078bbed74ee8a6"
+    },
+    {
+      "name": "e3e77424-01df-40cd-a354-8437b45e40e0.webp",
+      "sha256": "87524a16177ed8bd944e84d76a77b55c05c6911ba075df4181570c2df4b3c294"
+    },
+    {
+      "name": "8d2fa14b-9419-4370-9f9f-be943f7e4f73.webp",
+      "sha256": "f3e57bde8ebc24e115ed3fc151ed9e422c8d859bfb13761503a097ca8665a1d4"
+    },
+    {
+      "name": "9ddd27e6-a3d5-41aa-97d3-e9039767e07b.webp",
+      "sha256": "5c0d0d0793b60d947bddf4bd2662be3aedf0081a2461eb6f76e725efc8777a1b"
+    },
+    {
+      "name": "7901e534-e997-459f-b798-142651699330.webp",
+      "sha256": "2a0656ce9008ec685e9c6bf2708b344fc1b9ad7d31650c7b9cab30afd6e63bea"
+    },
+    {
+      "name": "534623eb-a3a0-4af4-b2c9-c36318b35582.webp",
+      "sha256": "ed578423b262845f2e0eb90d6877e9aec28a1a4547dc6ba44457bd05b133948c"
+    },
+    {
+      "name": "51db37c4-fe8a-4937-b881-ca109e3334c1.webp",
+      "sha256": "c3f7f871267b29d7ddb237d0efba27b0bd0386a9454bde74c784b81cb6083fee"
+    },
+    {
+      "name": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp",
+      "sha256": "768df8962d0d99c2affd6da7c2340fa45bb62f90fbba76e4e057cdf93bd14723"
+    },
+    {
+      "name": "a8f47340-0dfe-4f44-9f57-5c00007e4aef.webp",
+      "sha256": "3cb1827113a64dbaac35b30cfd59bb022756b63e44c378bfc29d7ca37c41159f"
+    },
+    {
+      "name": "78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+      "sha256": "77a2d7bf0cf25f755440c77269825b79909d9670acd9497074f5578d89ec640c"
+    },
+    {
+      "name": "cd6c01cf-b342-448e-a12e-510c2d69d394.webp",
+      "sha256": "6e6538717633d62a5590cf6241d5a7bb040a8092441c4d261b3b9662010e66f0"
+    },
+    {
+      "name": "1ef9872d-2973-4d96-9214-e2dfa9f8fbc0.webp",
+      "sha256": "f1d84e3989ae97c89d7c47206716d4732f616d24f8ded160aedf2b11a4f95466"
+    },
+    {
+      "name": "1bfc1140-3416-4da3-9e6c-a49d69876ff3.webp",
+      "sha256": "c9a735ecd76d5b6566d815c4c1ae86a2c4566105a34c25dbcd9fb178c7a41fa3"
+    },
+    {
+      "name": "3ef486dd-0ecc-4722-8705-bb9328b8452e.webp",
+      "sha256": "f88335ace317762ed9a44655968599cfbc7b4168b6f680a489e7c1beff03e006"
+    },
+    {
+      "name": "b3249cc3-fce3-42ef-ba6e-8df608a578ac.webp",
+      "sha256": "e205e1eee5cb5e97e12d6a1486a1b353f2cb0754c9c0018bb03bc0c3898d6e61"
+    },
+    {
+      "name": "bd594a9f-7f1a-4a41-b714-ab84f1a1cead.webp",
+      "sha256": "cde3187afb0432b185cea1ed073cc6071dcf2912181e7c0b1e4278dbb8a9a809"
+    },
+    {
+      "name": "9cafa576-a732-4bb0-a449-c686f37a899e.webp",
+      "sha256": "c53c6fead8aababfe82cf9feef0135f77b215778af375475e9543334a93ab4ef"
+    },
+    {
+      "name": "99839b41-cab8-455f-930e-62a5e19eac22.webp",
+      "sha256": "73f6fb573a7c062751a33f07af5a41709d367c99865fe95968477b832380c83b"
+    },
+    {
+      "name": "34f74f5e-2d30-492a-9f80-7b0f863f7a64.webp",
+      "sha256": "5befb60555d18030e84732d7a3e1882f32bb36aa63000fd93a706f8ad3fdfc07"
+    },
+    {
+      "name": "521c7055-d341-419b-b141-5709867eddba.webp",
+      "sha256": "84ae7bae14236d6503001fec53755d4763dbf9859ebf5e20bd79d83758023419"
+    },
+    {
+      "name": "96b615d8-ed0e-45c4-9ea9-0a4bafbb9cd4.webp",
+      "sha256": "06308df0e791566bd7f52d64eb86c899eeadbf433881cc373d31758699e25abb"
+    },
+    {
+      "name": "59252c3b-f256-4778-aa4a-5c2aeab7028d.webp",
+      "sha256": "7beec5c0b5203db1edf0e8eaaf9464c2a78a19a13aaf29fa4645b6d92d63798f"
+    },
+    {
+      "name": "9a186586-bf77-4403-af1a-b251157b7dc9.webp",
+      "sha256": "9a105ae5bfb1d3c2995f475239c9ea1c320f77d5f954847c2e49c7933ba2ad91"
+    },
+    {
+      "name": "fbc949ab-c9dc-44fd-9501-34b808e49b56.webp",
+      "sha256": "d6e4044c4d6f64bfc9516af722bc3d0d653ab9f0a46f8b798cafcd3eab6c6482"
+    },
+    {
+      "name": "4e93204f-7f6a-442f-a83d-928ee0965ee9.webp",
+      "sha256": "1c40000ad1601873967e36476cd7abee8c1cd8ead1e64e2909405cc2977c17b0"
+    },
+    {
+      "name": "3b6b7044-8440-4c89-a903-16fee577c22a.webp",
+      "sha256": "361afcd5450445293a4851760d094d8a51e216e019723c7924b442ad2564f114"
+    },
+    {
+      "name": "5ab90e50-d22d-4b96-af90-a2c2cf61c44a.webp",
+      "sha256": "674f1e6b3aa7d529ce642001a10c4a8a530e0fb0e9d12fc2f48280182f0422b4"
+    },
+    {
+      "name": "76b10fbc-19e2-48a3-bd9b-d09c41a390df.webp",
+      "sha256": "6a33ed71bd49f949124f60b0d9ebdbda5163be58485e71313654d299f5c6b29d"
+    },
+    {
+      "name": "53991835-d2c5-4249-ba51-7a15bef962a1.webp",
+      "sha256": "71d9292601d6ff444bca75561d6c6a157bc2b7dab3f92c608d87da4661a2565f"
+    },
+    {
+      "name": "4a1b2dfa-642c-49c0-8128-071a06c78ddf.webp",
+      "sha256": "805780bd06a9c0a0c5276ea48d940292d7badb95b41d7e69dadcbfa36c56ec8c"
+    },
+    {
+      "name": "5d3445a4-4f66-48ae-af1b-25f7eeb14028.webp",
+      "sha256": "eb710f09b61f19884b6b3cbb440b9514db8b0a1a6843a1c60db1c69d09cfdaf3"
+    },
+    {
+      "name": "d0b1754f-9ceb-42f1-aa4d-e0f58c07f0e0.webp",
+      "sha256": "630011a12202fa9bbf6961f17c4198286b5df5e4dafdc0ecf0ec2b29b6d92b82"
+    },
+    {
+      "name": "e6c78e6a-9f63-4ae5-8f27-5e277651289a.webp",
+      "sha256": "15e26711ba041bdd19957f781d820e8445abfd6c22f1f3f84fd44b8bd2164cd9"
+    },
+    {
+      "name": "783eb7bf-c593-49f5-a1d2-c51c5e81fa46.webp",
+      "sha256": "3d5f71ee8d27259435ef875ad9423660549e79c2f3cf0fab7bad7b34a1c92140"
+    },
+    {
+      "name": "c2ea6f78-a458-4468-a11c-386848fcfa97.webp",
+      "sha256": "091a4d36e2f0e63ff337e177f1a7060ecc3b120880d6ca1687e6d9730f0753da"
+    },
+    {
+      "name": "a03925ee-1720-4b9c-8409-52b20aa4b330.webp",
+      "sha256": "b0afd30f103f6b3b81ad4f407b0ab1b7e690b5e18d4e7ba4fa579e6da9db698d"
+    },
+    {
+      "name": "dd7e9bdb-4f4e-4a9d-b54a-e6acf8634ad3.webp",
+      "sha256": "8ef9c0f94d866aeb53f2ce6216d95372eff9a86bc650b740cce75518873e86ad"
+    },
+    {
+      "name": "e857ccc4-7299-402d-8da1-e0a933ec6838.webp",
+      "sha256": "27272b295388e48efc40318c96d85631fc89c0f8cfeca1899992f3c4980af5a3"
+    },
+    {
+      "name": "bae32ce2-b683-4d30-abb1-6eb52daa1ea9.webp",
+      "sha256": "ec92e522be410b46f4402bc42ab5cad15d549616f0ca81258170e131aa4b144a"
+    },
+    {
+      "name": "e1621b0c-8d0c-47ee-93c9-e86c01c5a433.webp",
+      "sha256": "28be239fd8a39fb1ec6fd2087846e9b301b7954bfb7b48c3a7cf10e5718d575d"
+    },
+    {
+      "name": "bcac7a1f-f927-4023-94da-0dd3da5fe9be.webp",
+      "sha256": "a466251c54b45a6a350edbc2971add764756ad235850ee3240e493bd8082576f"
+    },
+    {
+      "name": "4f5b388a-bc39-4bf7-b74c-c103e4c47ce8.webp",
+      "sha256": "a9f98f22500685f03a7da9fb43a46c7e3e910e3c1629db85d715b3798472ea70"
+    },
+    {
+      "name": "30a54837-325e-4489-8586-e8730b6b979b.webp",
+      "sha256": "6dcc269249bf883c22c2c93432336f07865b8070ed3f4afafefc06ce4ff71d1a"
+    },
+    {
+      "name": "d2926874-4d13-497c-a848-cc67febc7d53.webp",
+      "sha256": "fe3d85b80de11589c2bdca3ea5738156c8f4929c0a9f914a768fc39200b2fe95"
+    },
+    {
+      "name": "95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+      "sha256": "da6dc3fa5e541be4961ef472b106e1eb99a2523ac7517a322c1008023487d9f0"
+    },
+    {
+      "name": "1682ac36-ccf3-44d2-b733-7762921ebc01.webp",
+      "sha256": "beb6bb26ab577aafc30d5251b73a079f4011aa96a127ff3aea8e88d75a602752"
+    },
+    {
+      "name": "c5b77b84-1dcb-4d94-8b56-6595883b0d32.webp",
+      "sha256": "79802d4f5b1143c50a97510c0a40bd538a49cb6456a76b4d4c69028abdeb0e3b"
+    },
+    {
+      "name": "e251f0d2-c7b3-471a-88fb-c014926c747d.webp",
+      "sha256": "44cce5fd6cb6ebb9abd05c32a24a395f7d2267bed8d20f1eb57290fe7ce68897"
+    },
+    {
+      "name": "613f655c-3c5c-40bb-aa38-39fb5a7c8ef4.webp",
+      "sha256": "bf049d60216d4225c9a073a420416f464abff85c8f4d25761b76a7c9a735a024"
+    },
+    {
+      "name": "61ef4a59-50f0-4972-bc19-db478f10a77b.webp",
+      "sha256": "257f5ac5dd123183a12cc0b8c3f79899b418833364c243ce98df5de66283b0c1"
+    },
+    {
+      "name": "5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455.webp",
+      "sha256": "e58ddcbdcdf7190ed2b64a151ed50a40dc78e80c3ed754a48516e63468842946"
+    },
+    {
+      "name": "f7faf1f2-2aff-45a9-b85f-ef5d4d42d4d4.webp",
+      "sha256": "ff1958fb5ce27b7fa272694e5da6f59147d490dd1ba70643ef7cbc1c04b0b91b"
+    },
+    {
+      "name": "49b66963-88d6-4515-b65f-aeef52595244.webp",
+      "sha256": "2b355ff3e0d86051c4cbab278344e68c6c519dd7a125326b4965a63f5fc07f2c"
+    },
+    {
+      "name": "d388de34-ba0f-4182-9dc9-c00f285a58df.webp",
+      "sha256": "cec83ee5f20ca7b977bbb1f1705ea001f2972cd6303d3c44904eebdeafb84327"
+    },
+    {
+      "name": "21a7dafb-7f66-4807-8aaf-d39b4e1cb119.webp",
+      "sha256": "f92091ae540bc1155ee4c9ca5542898c201fe24f955bb7d2a228b3edf9c11f7d"
+    },
+    {
+      "name": "a0e75c8d-60f4-4b97-b450-4cfb7b2e69a1.webp",
+      "sha256": "0051b59fba292ac70ad9402ef917124200e01895b1f0c26d53be5132ca636171"
+    },
+    {
+      "name": "cf1b9887-f456-43be-a2c7-b1fad00e9957.webp",
+      "sha256": "57b9582dda11553060a3522017a2a389c11c4ffaef21aa8e2660a02f84350017"
+    },
+    {
+      "name": "34710a86-f607-4bb6-aa6c-d90a0767beeb.webp",
+      "sha256": "39e2c652fe38164d9790938eab41748fe52757d37526a6b78c701ff13957354b"
+    },
+    {
+      "name": "7a64d2da-c966-41f8-8817-fa3090634a27.webp",
+      "sha256": "7c006bb70446a3f1225b42338c17f401af39bd3e97bcc52d6fd5860e813f125f"
+    },
+    {
+      "name": "f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e.webp",
+      "sha256": "110ed8877dec66012b1c9adfce48b211a2a723f99030ce4d176bef9dd20799fc"
+    },
+    {
+      "name": "2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+      "sha256": "5e4bfa35b7e4ba27f1795bdb8bbfacbdd83ff6dddafc75bcbcac9e50079b44b6"
+    },
+    {
+      "name": "5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72.webp",
+      "sha256": "df4f5e17b9c29a7a4fed08c7565042755ffd7e55b876cb6ef335d47e9af1d1b4"
+    }
+  ],
+  "createdAt": "2026-10-07T06:41:57.020Z",
+  "pages": [
+    {
+      "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+      "revisionHash": "5b1d0e403654e39bac82627141a16590296840469c02b9694185080582f9c3a9",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.478Z",
+        "revisionHash": "5b1d0e403654e39bac82627141a16590296840469c02b9694185080582f9c3a9",
+        "binding": "3f7950a666142f608c67c67b14e60a184f83697c2790face946137f448a2b443",
+        "evidence": {
+          "usefulness": "Nail-design root separates visual idea from coating choice, with four decisions and fictional one-star accent task; original copyable brief. Removed literal stray text token and fixed noun agreement.",
+          "facts": "No one universal technique/product/package asserted. Design examples are illustrative, professional application/suitability remains provider assessment. Exact national nail-art target verified separately. No treatment/health or expert-review claim. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Original design/request/coordination examples, with no external popularity, product performance, tariff, clinical or provider-capacity claim. Empty citations do not invent evidence. Individual provider conditions are questions, not assertions.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+      "revisionHash": "bc11082b5b8c7b1ac504fc3e13c1c6629602b7433ba22bb93961839712d94cbe",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.118Z",
+        "revisionHash": "bc11082b5b8c7b1ac504fc3e13c1c6629602b7433ba22bb93961839712d94cbe",
+        "binding": "44b35f860ee1c06a0c220359be4da29554b4cb8b67566e2aa6cb171bf5719eac",
+        "evidence": {
+          "usefulness": "Two contrasting fictional shoulder-length and front-outline requests added. Root now answers contour/texture/routine choice rather than face-shape rules.",
+          "facts": "R01 goals/reference pictures and R02 natural growth/perimeter consultation were actually read. No face-shape prescription, technical cutting protocol or individualized suitability. Human stylist review has NOT happened; review requirement for a technical procedure is removed from this narrower consumer consultation scope, not marked fulfilled. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S43, S04, R01, R02. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+      "revisionHash": "3fb950dea4cefbaafc97c19f1f00f76ca0f1221bee9876f9889a59754f5b17be",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.213Z",
+        "revisionHash": "3fb950dea4cefbaafc97c19f1f00f76ca0f1221bee9876f9889a59754f5b17be",
+        "binding": "71018cb902533fa5f780ee18f6366726969e82a29bee1fcb7e6d23d3ef0b3872",
+        "evidence": {
+          "usefulness": "Two fictional keep/change requests and natural H2 corrected; menu scope separated from reader intent.",
+          "facts": "S04 actual ends variants and R01 reference-picture consultation support bounded labels. No claim that changing weight is a guaranteed result or instructions for cutting hair. No human professional review; actual procedure feasibility remains the chosen practitioner’s task. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S04, R01. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+      "revisionHash": "55a65cd57e9608b71db539a7d457562a66a656e829811bebc0be05dccb34744d",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.305Z",
+        "revisionHash": "55a65cd57e9608b71db539a7d457562a66a656e829811bebc0be05dccb34744d",
+        "binding": "1f819d2959d8a08c08ffc7f0678f3515b82a56e0e1ace74cc9afe7b7b6be0298",
+        "evidence": {
+          "usefulness": "Outside outline distinguished from shorter internal lengths, with questions about retained length, movement and routine.",
+          "facts": "Re-read R03 Unit203 pp30–37 and glossary: cutting techniques, weight distribution, texture/density/growth factors and maintenance advice. These support only ordinary length/shape distinctions. No angles, technique steps, guaranteed volume, universal suitability or clinical claims; published curriculum is not human review. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R03. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+      "revisionHash": "1914c672462842a8a71474865031baf938a1c8ea82896701b90393d43bd1bb18",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.403Z",
+        "revisionHash": "1914c672462842a8a71474865031baf938a1c8ea82896701b90393d43bd1bb18",
+        "binding": "75838344cedec0ba28da9e644edf0496eb533c4a580268421425e6461ccba093",
+        "evidence": {
+          "usefulness": "Bob/carré guide asks for length, perimeter and visible angles rather than universal name mapping.",
+          "facts": "No assertion that names have fixed universal definitions. R03 one-length/graduation supports asking for actual construction, not naming a universal bob technique. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R03. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+      "revisionHash": "498cd55506f63615589ac4ee48e75a7398419610e74494b4b537209906877baf",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.501Z",
+        "revisionHash": "498cd55506f63615589ac4ee48e75a7398419610e74494b4b537209906877baf",
+        "binding": "8a709c9d1aabf67a6d66ff9f2c14d457fecbb9ccb29a1a54d4f440466153abe6",
+        "evidence": {
+          "usefulness": "Fringe guide separates hair over forehead from longer face-framing sides and explains daily styling commitment.",
+          "facts": "R02 natural growth/perimeter/curl factors and preparation advice support individual consultation. No exact lengths or promises by face shape. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R02. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+      "revisionHash": "985a66570e79d9c796f670ba15a0de4941867bd94ccd630d2801dc63a55711a4",
+      "publishAt": "2026-11-10T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.601Z",
+        "revisionHash": "985a66570e79d9c796f670ba15a0de4941867bd94ccd630d2801dc63a55711a4",
+        "binding": "9e675ba418ebd4c64917ee4270879b82ee1149ec31baf9834a34d8a9f4d195b9",
+        "evidence": {
+          "usefulness": "Curly haircut preparation card records usual texture, target outline and length limits.",
+          "facts": "R03 explicitly addresses wet/dry cutting factors; R04 professional drying interview supports visible form changes only. No shrinkage percentage, best method, mandatory wash protocol or DIY sequence. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R03, R04. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+      "revisionHash": "072e8e6200730b0b64d5dbd6ae799900046f18cdfc17d30578e8daed6a684422",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.698Z",
+        "revisionHash": "072e8e6200730b0b64d5dbd6ae799900046f18cdfc17d30578e8daed6a684422",
+        "binding": "84204e7ffb3bdfb5d2bf388f21b34e77ee652a0e3f6d36382e0d5ae1f5fa1cf6",
+        "evidence": {
+          "usefulness": "Short haircut divided into top, sides, transition and contour; explicitly fictional task example.",
+          "facts": "R02 consultation and natural perimeter supports bounded descriptions; specific clipper numbers omitted. Raw HTML source anchor found inside plain content: convert only verified S04 URL into native rich link. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S04, R02. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+      "revisionHash": "5beeb51128b484257314214b90178707dd7d3e0eee4697b7ba00a6aea76e8ad0",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.809Z",
+        "revisionHash": "5beeb51128b484257314214b90178707dd7d3e0eee4697b7ba00a6aea76e8ad0",
+        "binding": "1728cfdd058b9d1cbbdea9c729090d0ac5e09c1c2bcc06335a2266fdc8be7def",
+        "evidence": {
+          "usefulness": "Actual dated28EUR/60min and32EUR/70min S04 variants versus S34 from45EUR/60min demonstrate why unlike scopes cannot be price-ranked.",
+          "facts": "Compared source snapshots and actual revision: S04 ends+wash28/60 and small/medium32/70, S34 women from45/60. Washing not inferred for S34. Prices are historical2026-10-07 observations, never national average or current Madbeauty offer. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S19, S04, S34, S33. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+      "revisionHash": "b6684693f8f737ed7676b3e04b891038ea1f912d82b4591ebd8a2c6c7ddc2c88",
+      "publishAt": "2026-10-27T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:49.909Z",
+        "revisionHash": "b6684693f8f737ed7676b3e04b891038ea1f912d82b4591ebd8a2c6c7ddc2c88",
+        "binding": "fdaaa315be71b5c64bfc8fc310bb8ca7e12fc1b277dd2f54231ebb00ec40c85b",
+        "evidence": {
+          "usefulness": "Haircut preparation distinguishes received/no instructions; no universal wash rule.",
+          "facts": "R02 pre-service individual instructions and AAD small texture-related passage. No actual provider-specific protocol claimed; confirm with selected practitioner. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S43, R02. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+      "revisionHash": "ae0e6f0fae8159adb795b9500362fba6f5a52ff1d4a62f3f295a1e14678c5bb6",
+      "publishAt": "2026-10-27T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.005Z",
+        "revisionHash": "ae0e6f0fae8159adb795b9500362fba6f5a52ff1d4a62f3f295a1e14678c5bb6",
+        "binding": "c147628f49084f5b826fde9564f35519eb2acaff0b4d6b002a4a2171f3c97675",
+        "evidence": {
+          "usefulness": "Reference photograph worksheet makes desired length, sides/back and non-negotiable priorities explicit, plus fictional filled example.",
+          "facts": "R01 consultation images and R05 multiple angles/lighting support interpretation. Photo is not client outcome guarantee; generated hair cards are original illustrations. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R01, R05. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+      "revisionHash": "7a9e12e6f8e0b4bbc798a72a78c236270f80610679481192f56f3f80ec9608c1",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.103Z",
+        "revisionHash": "7a9e12e6f8e0b4bbc798a72a78c236270f80610679481192f56f3f80ec9608c1",
+        "binding": "00ac0c0a0692e48b1efdc8cfbb23663d39acc8f7de1d563624cfc164faa38bc2",
+        "evidence": {
+          "usefulness": "Styling root splits drying, ordinary shape and event goal, with fictional waves request.",
+          "facts": "R03 Unit204 and AAD bounded heat/tension warning. No timed durability promise, individual eligibility, heat settings or stylist review asserted. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S43, R03. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+      "revisionHash": "18c7ce6ff6a320b25673273910ea7a7e9d6ae32c9c3f9d88a46f3bca1a4c08e4",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.199Z",
+        "revisionHash": "18c7ce6ff6a320b25673273910ea7a7e9d6ae32c9c3f9d88a46f3bca1a4c08e4",
+        "binding": "949d3717b9242ea8d1fa391d36b43d703b6173099aa8c9b12dce32028868ed55",
+        "evidence": {
+          "usefulness": "Drying versus event styling offers a shared-scope A/B/C comparison template.",
+          "facts": "Read actual S34 wash+dry and separate bridal/trial labels plus S58 styling without wash. Package scope is provider-specific. No universal tariffs/technician technique. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S34, S58. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+      "revisionHash": "8446db14e79a381e0320999ce414d835eb4b13f38426d9cfd446e66bfca5b8f6",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.298Z",
+        "revisionHash": "8446db14e79a381e0320999ce414d835eb4b13f38426d9cfd446e66bfca5b8f6",
+        "binding": "c0fb94c587529174f528b1f26e585fee53e057d321909dc1973cf9020a2ab3a1",
+        "evidence": {
+          "usefulness": "Curls/waves/straight choice gives three distinct task descriptions and a short filled-style silhouette template.",
+          "facts": "R03 separates styles; actual generated two mannequins illustrate curls/waves while straight is prose option. No universal result or technique. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R03. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+      "revisionHash": "e91faf10d8532aeeb154c176049ad42cc61527de0daa3967214c38e0e4dc354d",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.395Z",
+        "revisionHash": "e91faf10d8532aeeb154c176049ad42cc61527de0daa3967214c38e0e4dc354d",
+        "binding": "3bad4082fbf1ad4cdda9a9ad095b460e4b4b3cdcf390a5d35f9f765558713931",
+        "evidence": {
+          "usefulness": "Up/down hairstyle matrix uses clothing, accesssory, initial length and event constraints plus message template.",
+          "facts": "R03 Unit204 upstyles and styling varieties support ordinary descriptions. No minimum length or endurance guarantee; feasibility individually assessed. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R03. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+      "revisionHash": "b3290a447e581440803a39b754e2e88e214921f857a0d85ea26787c2ecb0b742",
+      "publishAt": "2026-11-10T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.496Z",
+        "revisionHash": "b3290a447e581440803a39b754e2e88e214921f857a0d85ea26787c2ecb0b742",
+        "binding": "fa2d1a604077e84dd46027a807c7488a94c5925edc63095c8519f893c3f46267",
+        "evidence": {
+          "usefulness": "Bridal trial outcomes card records chosen option, remaining changes, accessory responsibility and schedule.",
+          "facts": "S34 menu actually lists bridal and trial separately. No trial availability/price or must-have rule attributed to Madbeauty; conditions individually confirmed. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S34. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+      "revisionHash": "b6ec56a99dd50e5f0ee993918809f699883ce8aa175703c7ca6f63f16480c251",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.590Z",
+        "revisionHash": "b6ec56a99dd50e5f0ee993918809f699883ce8aa175703c7ca6f63f16480c251",
+        "binding": "933a7750bb05c5bb5a9f6dd888f2119c3c58482bdd227e31f76d1c15a33e8711",
+        "evidence": {
+          "usefulness": "Original explicitly fictional50+10=60EUR versus60EUR including wash gives comparable totals; dated menus illustrate incompatible scope.",
+          "facts": "Arithmetic correct. S58 curl WITHOUT wash35EUR/45min and S34 wash+blowdry from50EUR/60min confirmed in actual retrieved menus. Travel/accessory inclusion remains a question. VVTAT bounded agreement/payment-record paraphrase only. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S19, S34, S58. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+      "revisionHash": "7a061d438ef3e504326d446782b830f60c2d135090e603f035b404296d0d836f",
+      "publishAt": "2026-10-27T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.683Z",
+        "revisionHash": "7a061d438ef3e504326d446782b830f60c2d135090e603f035b404296d0d836f",
+        "binding": "0b3cb5cd42ec25cb38acdf39c47d80f0b52647c611e87966e6776430381b0a36",
+        "evidence": {
+          "usefulness": "Polite voice consistent; copyable preparation message records last wash/products/accessory and asks for individual instructions.",
+          "facts": "No particular provider instruction or universal wash timing is asserted. R03 preparation is salon-specific; AAD warning is limited to excessive heat and sustained tight pulling. No temperatures, diagnosis or individual contraindication. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S43, R03. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+      "revisionHash": "4b16452a44ac37d5d1a55b885f9b51ae37766f5ddb5c719924a9eb16d6e58b13",
+      "publishAt": "2026-11-10T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.794Z",
+        "revisionHash": "4b16452a44ac37d5d1a55b885f9b51ae37766f5ddb5c719924a9eb16d6e58b13",
+        "binding": "658f2a7318b1adb136ab153636dd8812b1c9b7cceeb5d63d0225800ff00b9d14",
+        "evidence": {
+          "usefulness": "One/two provider combined-visit guide has sequence checklist and fillable timeline.",
+          "facts": "S58 actually lists makeup+hair without wash, VVTAT small agreement/payment paraphrase. No universal parallel working/sequence/duration; both providers explicitly confirm feasibility. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S19, S58. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+      "revisionHash": "9d1a1d01e01010ee10692ceb29c8ae725f82851831571ab7b7d9f2e85791a222",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.892Z",
+        "revisionHash": "9d1a1d01e01010ee10692ceb29c8ae725f82851831571ab7b7d9f2e85791a222",
+        "binding": "736442ba0fdd9ac9c3c1e6c54c701fd9d75fbfa3a0fd30067cb9d0398eb5d142",
+        "evidence": {
+          "usefulness": "Original fictional office-photo versus evening-detail requests clarify intensity/context and optional scope without universal makeup rules.",
+          "facts": "Actual S58 labels substantiate day/evening/photo alternatives. No professional recommendation on skin, products, endurance, technical technique or suitability. Human makeup review is not performed or claimed; current consumer request comparison does not need fabricated credentials. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S58. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+      "revisionHash": "914e76c1f61f3aecd26610f768baa774f89d77ee646a50d404aeae97f118f098",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:50.989Z",
+        "revisionHash": "914e76c1f61f3aecd26610f768baa774f89d77ee646a50d404aeae97f118f098",
+        "binding": "4053c736c072dbec3858ee5fac2d1a7ac45f6f3975e74a12cdb00bb6b82a4088",
+        "evidence": {
+          "usefulness": "Day/event labels separated from intensity, original three contexts and scope axes. Native links use exact national day/evening/event targets.",
+          "facts": "Actual S58 menu confirms distinct named variants only. No universal technical protocol, suitability, product performance or expert approval asserted. Professional review requested by broad brief has not occurred; this narrower consumer-label comparison does not prescribe techniques. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S58. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+      "revisionHash": "10e7974f8cf55258ef758c2740328755251256d75503ee608ec3c08f993899ff",
+      "publishAt": "2026-11-10T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.087Z",
+        "revisionHash": "10e7974f8cf55258ef758c2740328755251256d75503ee608ec3c08f993899ff",
+        "binding": "b82d6fc9afd92e65bec0fc0830dc6cb1729582d44ea1a2a98aae9036fb354fc9",
+        "evidence": {
+          "usefulness": "Trial card records retained choices, changes, unknowns and event logistics. Inclusion/lash/price questions remain provider-specific. Paragraph fragments and duplicate link wording repaired.",
+          "facts": "No mandatory trial or longevity promise. A trial is presented as an opportunity to agree a task, not tested efficacy or a universal package. No actual provider conditions are asserted; medical/product suitability is outside scope. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Original design/request/coordination examples, with no external popularity, product performance, tariff, clinical or provider-capacity claim. Empty citations do not invent evidence. Individual provider conditions are questions, not assertions.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+      "revisionHash": "442e4431b2186d75ee7b1c361626f2fc8929db6ba90f69f49193725be3512edb",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.183Z",
+        "revisionHash": "442e4431b2186d75ee7b1c361626f2fc8929db6ba90f69f49193725be3512edb",
+        "binding": "b6f30cdf802d81aa2f7cd0bebc6fb6ff10e373eb8481235f5f6ff59b56e308c4",
+        "evidence": {
+          "usefulness": "Original retain/adapt/avoid photo-reference brief plus illustrative warm-shadow/quiet-lip example; identifies photoshoot makeup separately from later retouch.",
+          "facts": "Read Adobe R06 Color panel and R07 Smooth Skin: photographic lighting/white balance and editing can change visible colour/texture. No claim that any particular portfolio is retouched. No skin assessment or efficacy instruction; primary photo sources replace unsupported S23 candidate. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: R06, R07. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+      "revisionHash": "da168c20226993868e8ab55ae3290b1f90c15b6bda6a490cdf71863b274dd8dd",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.281Z",
+        "revisionHash": "da168c20226993868e8ab55ae3290b1f90c15b6bda6a490cdf71863b274dd8dd",
+        "binding": "346f22daeb2c69654c2eb65cabc9c6dfff21d9842ff486c7f1d1b6379c6ff437",
+        "evidence": {
+          "usefulness": "Original55+10=65EUR versus65EUR including lashes illustrates matched scope; actual day/evening observations now replace false no-numbers statement.",
+          "facts": "S58 day50EUR/60min and evening60EUR/70min checked in actual menu.65EUR comparison expressly fictional, not real offer. Lash/trial/travel inclusions conditional; no efficacy or universal inclusion. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S19, S58, S33. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+      "revisionHash": "2c27457150cd50cf07e2c8e3c25545fb90650a9c7bfd626548ef694e095c4fcf",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.382Z",
+        "revisionHash": "2c27457150cd50cf07e2c8e3c25545fb90650a9c7bfd626548ef694e095c4fcf",
+        "binding": "70c75a626809266c365a0bf3981a7e6f5f3dfb3b36f843a65653e007343c8f88",
+        "evidence": {
+          "usefulness": "Lesson versus product consultation separates practising with feedback from selection discussion. Two original user situations and fillable result brief give distinct reader job. Closing paragraph and polite title repaired.",
+          "facts": "All suggested deliverables conditional on provider scope. No teaching DIY technique, medical diagnosis, product compatibility or expert review asserted. General format names match actual owner taxonomy; no real unverified program claimed. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Original design/request/coordination examples, with no external popularity, product performance, tariff, clinical or provider-capacity claim. Empty citations do not invent evidence. Individual provider conditions are questions, not assertions.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+      "revisionHash": "40a936e83762311f7d980e25efa6feffe55c191b0c6fc453e558f2a7c530d8b4",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-metadata-20261007",
+        "checkedAt": "2026-10-07T06:41:52.129Z",
+        "revisionHash": "40a936e83762311f7d980e25efa6feffe55c191b0c6fc453e558f2a7c530d8b4",
+        "binding": "195183fd6120b9e828bb4d8bd08a08022961735c9a6a68a54c5fdf25f22e47dd",
+        "evidence": {
+          "usefulness": "Read both actual Luna/xhigh results and the accepted explicit revision. The revised article distinguishes desired result, procedure and package with an original fictional haircut request comparison;14 core category choices and7 clearly inactive planned formats cover the actual platform scope.15 native blocks,577 words; no quota filler.",
+          "facts": "All14 core catalogue labels were checked against owner taxonomy and actual national SSR/current registry;7 extensions remain planned plain text. The durable rule distinguishes national browsing from actual city supply and confirmed appointment. No provider counts, fictional experts, prices or medical suitability/instructions are asserted. Actual datePublished now reflects scheduled first public date for2future guides or earliest evidenced hosted copy2026-10-06T17:09:24.272Z for3retained guides; original publishAt unchanged and no invented dateModified.",
+          "sources": "Actual retrieved VVTAT document supports only agreed scope/price/possible consequences and retaining the payment document. The short attributed paraphrase was compared with the primary document. No refund guarantee, legal deadline or clinical advice. Source S19 identity and public URL match the separately retrieved snapshot.",
+          "media": "Actual built-in ImageGen original still-life pixels inspected, then all5WebP variant dimensions/hash bytes checked. Blank notebook,comb,brush and nude polish are broad editorial illustration, without readable UI/logos or actual provider/client-result claims. Removed duplicated body image because reviewed featured image already renders once.",
+          "links": "Retained approved guide graph unchanged; target eligibility is this exact39-page release. Future titles and links must remain filtered by the shared public due predicate. National typed commerce targets remain category browsing, not confirmed local providers.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step. Reused actual prior two-width render evidence for byte-identical prose/media; this change is publication metadata only. New public schema/byline date verification remains deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+      "revisionHash": "2e2e519fe9c54e62832b0897e89c5173415fdc8facb9ea050dcadaf070453813",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-metadata-20261007",
+        "checkedAt": "2026-10-07T06:41:52.229Z",
+        "revisionHash": "2e2e519fe9c54e62832b0897e89c5173415fdc8facb9ea050dcadaf070453813",
+        "binding": "05d54f0d14637ee331c1231c82029c4257d7a7e114a1d6edfc27d58a99ddeb50",
+        "evidence": {
+          "usefulness": "Re-read preserved final actual Luna/xhigh text and its earlier editorial revision. It distinguishes a request from confirmation, includes practical scope/time/location/price questions, a copyable message and explicitly fictional confirmation example. Original prose is unchanged; revision changes only actual publication metadata.",
+          "facts": "The example amounts,address,duration are expressly hypothetical. Booking confirmation is not asserted from a sent request or platform category. Scope stays logistical; no medical instructions,individual eligibility,real providers or specific legal remedies. Unwritten conditions-guide link is privately deferred with its original reader reason. Actual datePublished now reflects scheduled first public date for2future guides or earliest evidenced hosted copy2026-10-06T17:09:24.272Z for3retained guides; original publishAt unchanged and no invented dateModified.",
+          "sources": "Retrieved primary NVSC responsible-provider choice and VVTAT scope/price/payment documents were compared with their short attributed passages. They support bounded permit lookup and consumer agreement steps. No fabricated expert review or wider medical/legal conclusion.",
+          "media": "Preserved actual original ImageGen image and approved-to-be5WebP family: notebook,blank sheet and violet pen. Pixel review and both viewport render repeated; no readable booking UI/customer/provider proof. All5 exact WebP byte/dimension/provenance checks passed; this image is unshared with due pages.",
+          "links": "Retained approved guide graph unchanged; target eligibility is this exact39-page release. Future titles and links must remain filtered by the shared public due predicate. National typed commerce targets remain category browsing, not confirmed local providers.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step. Reused actual prior two-width render evidence for byte-identical prose/media; this change is publication metadata only. New public schema/byline date verification remains deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+      "revisionHash": "a9e24e990b75c1b85587d851d7d4a2896de086972d3e9dc5aaaba6b1a4183c53",
+      "publishAt": "2026-10-27T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.575Z",
+        "revisionHash": "a9e24e990b75c1b85587d851d7d4a2896de086972d3e9dc5aaaba6b1a4183c53",
+        "binding": "950165ba2fe3fc3b99186c92d024df744a7b69238cd871fe45a2bcd6a3881058",
+        "evidence": {
+          "usefulness": "Concrete fictional09:00–10:00,30minute personal travel reserve,10:30–11:30 schedule adds original calculation. Stray foreign word removed.",
+          "facts": "Timeline ends11:30 correctly. Durations and reserve fictional/personal assumptions, not actual appointment, clinical sequence or measured travel. VVTAT only agreement/payment-proof advice; accessibility must be confirmed for the exact venue. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S19. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+      "revisionHash": "1c39dc1f7757d2cdbe2232a3666b3fad02388ee714aaee93bae8b0d8f298b860",
+      "publishAt": "2026-11-10T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.679Z",
+        "revisionHash": "1c39dc1f7757d2cdbe2232a3666b3fad02388ee714aaee93bae8b0d8f298b860",
+        "binding": "c946c219034bf0091e5c184a6e5cd6686c2ef08f8388c987166bb4b2f1a6ace5",
+        "evidence": {
+          "usefulness": "Christmas two distinct colour/accent ideas plus event-backward planning card; original future timetable remains based on confirmed provider scope.",
+          "facts": "No measured demand, advance-booking deadline, availability or service duration asserted. S19 bounded agreement/payment-proof passage; Christmas timing is an editorial assumption, not search indexing or supply proof. Actual image shows green/gold accents; not a real client portfolio. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S19. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+      "revisionHash": "582cf082eaad5b379030bf050f7473796e96c1be1576d9ec68305f3c2ea5b65c",
+      "publishAt": "2026-11-24T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.779Z",
+        "revisionHash": "582cf082eaad5b379030bf050f7473796e96c1be1576d9ec68305f3c2ea5b65c",
+        "binding": "cf7dd36cee1ddf7d67e1c47fdb9330d08746eb527ce4bc39431fc715332e1550",
+        "evidence": {
+          "usefulness": "Three sparkle placements compared with same short-oval/base assumption, useful allocation/task scope; different original narrow job from Christmas multi-visit planning.",
+          "facts": "Personal design preferences and fictional options, not trend popularity, product method or wear guarantee. No empirical price/time/provider claims. Current national design browsing is explicit city choice, no local stock. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Original design/request/coordination examples, with no external popularity, product performance, tariff, clinical or provider-capacity claim. Empty citations do not invent evidence. Individual provider conditions are questions, not assertions.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+      "revisionHash": "3f428d4eef98120abb869b947fa4fc8db319318937f35dd2e93cc1fa363bb989",
+      "publishAt": "2027-01-12T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.891Z",
+        "revisionHash": "3f428d4eef98120abb869b947fa4fc8db319318937f35dd2e93cc1fa363bb989",
+        "binding": "71e5f4b6e5c70fbe51ef12dfb9a87891a40a426df28ca00c08d45a9487ad04ff",
+        "evidence": {
+          "usefulness": "Natural description, short-nail adaptation and fictional single-heart brief. Actual image is one pink/nude illustrative composition, not a two-result technical comparison.",
+          "facts": "Original design ideas require no empirical trend/source claim. No actual client work, technique, wear promise, price, health or expertise claim. Empty source list is appropriate for original visual choices. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Original design/request/coordination examples, with no external popularity, product performance, tariff, clinical or provider-capacity claim. Empty citations do not invent evidence. Individual provider conditions are questions, not assertions.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+      "revisionHash": "a5a1a90ee03762dfb7a99e6152326701e50df4c6334fd2572894a6d6c3f6f3b9",
+      "publishAt": "2027-02-23T08:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-editorial-20261007",
+        "checkedAt": "2026-10-07T06:41:51.991Z",
+        "revisionHash": "a5a1a90ee03762dfb7a99e6152326701e50df4c6334fd2572894a6d6c3f6f3b9",
+        "binding": "ea537d2b69fbfaca5107a50c3cb966ab0f08427b78a9eb2e22ba470d91e8a260",
+        "evidence": {
+          "usefulness": "Added explicit requestedSaturday2027-03-27 versus answeredSunday2027-03-28 mismatch and fillable confirmation card.",
+          "facts": "USCCB S15 actually confirms Easter Sunday2027-03-28. Calendar arithmetic confirms precedingSaturday27March. Provider holiday hours and availability are explicitly unknown and not asserted; this article helps readers confirm them. No human specialist review or hands-on/client test is claimed. Original generic brief warnings remain in the private claim-resolution ledger; actual technical or clinical procedures are outside this approved consumer scope.",
+          "sources": "Actual applicable retrieved source documents were read and compared against the bounded claims. Source IDs: S15. Dated provider menus support named individual variants only. Professional curricula support ordinary terms, not Lithuanian licensing or a performed expert review. Candidate source S23 replaced with retrieved Adobe R06/R07 for photo interpretation.",
+          "media": "Actual final topic-specific ImageGen PNG pixels inspected, original hash and import provenance retained privately. Exactly5 responsive WebP variants verified by bytes/dimensions/noEXIF; image and matching alt decoded in desktop/mobile preview. No real provider/client portfolio or product efficacy claim; final duplicate featured body image removed.",
+          "links": "Reviewed57 useful attachments for these30 pages;24 unwritten targets deferred with precise reasons while full planningBrief is retained. Only this39-page release and previous approved destinations are eligible. Exact native commerce IDs map to current national categories; city selected separately, no local supply or indexability promise. Public target/time gates must hide future article links.",
+          "presentation": "Actual common private preview for this article checked at1280x720 and390x844; loaded featured image and proportional full image, no horizontal overflow or raw markup. All30 bodies were actually read;9 genuine Luna/xhigh revisions and subsequent grammar/native-link/duplicate-image copyedits reread. Public rendered schema/byline/time-gate review is separate deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+      "revisionHash": "e5e31b745ae67f0c9be3f82a75f129915845c355a1313a725d4f897c5a9f913f",
+      "publishAt": "2026-10-05T12:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-metadata-20261007",
+        "checkedAt": "2026-10-07T06:41:52.328Z",
+        "revisionHash": "e5e31b745ae67f0c9be3f82a75f129915845c355a1313a725d4f897c5a9f913f",
+        "binding": "80823acbb1d3c9c98a042b56df67fce2556de0f7fdf20256976b7662bb9368f1",
+        "evidence": {
+          "usefulness": "Read retained article, comparing whole service scope/removal/polish/design and duration. Original illustrative arithmetic30+5=35EUR and60+15=75minutes is correct;17:00–18:00 versus17:00–18:15 makes the time constraint actionable. The useful prior text is retained, not rewritten to manufacture volume.",
+          "facts": "The values are explicitly an illustration, neither a Lithuanian market average nor an offer. Service labels are explained as possible provider-specific bundles, with confirmation required. No health claims, actual listings or price-quality guarantee. Original ID/URL/publication date preserved. Actual datePublished now reflects scheduled first public date for2future guides or earliest evidenced hosted copy2026-10-06T17:09:24.272Z for3retained guides; original publishAt unchanged and no invented dateModified.",
+          "sources": "No external empirical trend,market-price or clinical claim. Original worked arithmetic and practical comparison are explicitly illustrative. The current national manicure catalogue was separately HTTP checked; catalogue destination is a typed commerce link, not a fabricated external source.",
+          "media": "Retained original ImageGen editorial workspace pixels independently inspected, not a real salon or client result. Reimported through common optimizer to a fresh5WebP family; actual bytes/dimensions/provenance verified. V1 asset bytes and historical approvals remain untouched.",
+          "links": "Retained approved guide graph unchanged; target eligibility is this exact39-page release. Future titles and links must remain filtered by the shared public due predicate. National typed commerce targets remain category browsing, not confirmed local providers.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step. Reused actual prior two-width render evidence for byte-identical prose/media; this change is publication metadata only. New public schema/byline date verification remains deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "99c2d09a-1314-48db-999c-075d312271b2",
+      "revisionHash": "34748810d89780b9350a37fdaeabd17a928813c9f811dc9d829b416ce8074245",
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-metadata-20261007",
+        "checkedAt": "2026-10-07T06:41:52.424Z",
+        "revisionHash": "34748810d89780b9350a37fdaeabd17a928813c9f811dc9d829b416ce8074245",
+        "binding": "ba8383b61c0f193614ca2a2065e18d6c570a6864bd74be0b2624814f999a59e6",
+        "evidence": {
+          "usefulness": "Read retained style-choice article: neutral,coral and thin French-line directions are different illustrative choices, with clothing,shape,length and practical provider-message prompts. No seasonal popularity claim or copied ranking; supports a specific style decision.",
+          "facts": "Style preferences are presented as choices rather than objective beauty or product efficacy facts. Lighting/screen differences are described without a shade-match guarantee. Original three images are illustrative and expressly not a specific provider portfolio. No medical claims or invented market metrics. Actual datePublished now reflects scheduled first public date for2future guides or earliest evidenced hosted copy2026-10-06T17:09:24.272Z for3retained guides; original publishAt unchanged and no invented dateModified.",
+          "sources": "No external factual trend/product/ranking claim is made; this is original style comparison. Current national manicure commerce target was separately retrieved. The actual price-guide dependency is included; planned design pillar is deferred until separately written and reviewed.",
+          "media": "All three original ImageGen coral/neutral/French image pixels inspected and reimported to three5WebP families. Alt matches observed nail-style imagery. Mobile offscreen third image initially lazy and then loaded after real scroll; all three decode at both widths. No fabricated real client/provider provenance.",
+          "links": "Retained approved guide graph unchanged; target eligibility is this exact39-page release. Future titles and links must remain filtered by the shared public due predicate. National typed commerce targets remain category browsing, not confirmed local providers.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step. Reused actual prior two-width render evidence for byte-identical prose/media; this change is publication metadata only. New public schema/byline date verification remains deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+      "revisionHash": "b88c3c2a089a7e6fb8f19133675cd255779e7739abfdee381020dc82f1189eb4",
+      "publishAt": "2026-10-05T19:34:27.397Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-batch30-metadata-20261007",
+        "checkedAt": "2026-10-07T06:41:52.522Z",
+        "revisionHash": "b88c3c2a089a7e6fb8f19133675cd255779e7739abfdee381020dc82f1189eb4",
+        "binding": "fbae4eb0000d61bd8d0d8c13aebb00bc7cc63b5902b28dcafe19464054a7e0cb",
+        "evidence": {
+          "usefulness": "Read retained article distinguishing provider work,style illustration and premises. It provides concrete comparable-length/procedure/detail questions and a short inquiry task; a beautiful photo is not treated as qualification,hygiene or attainable-result proof.",
+          "facts": "The scope is evidence interpretation, not diagnosing hygiene or medical fitness from images. It avoids accusing unidentified images of fraud and does not promise replication. Official NVSC hygiene requirements are attributed; no individual clinical advice is given. Actual datePublished now reflects scheduled first public date for2future guides or earliest evidenced hosted copy2026-10-06T17:09:24.272Z for3retained guides; original publishAt unchanged and no invented dateModified.",
+          "sources": "Retrieved and read actual NVSC2026-09-17 primary document on beauty-service hygiene. Its permit,health-check,hygiene/first-aid training statements support only the bounded attributed passage. A gallery does not substitute for these checks; no fake clinician review.",
+          "media": "Retained original ImageGen thin French-style nail illustration pixels inspected; body says illustration is not any provider portfolio. Reimported common5WebP variants and exact bytes verified, sharing the same editorial family with the colour guide rather than inventing new provenance.",
+          "links": "Retained approved guide graph unchanged; target eligibility is this exact39-page release. Future titles and links must remain filtered by the shared public due predicate. National typed commerce targets remain category browsing, not confirmed local providers.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step. Reused actual prior two-width render evidence for byte-identical prose/media; this change is publication metadata only. New public schema/byline date verification remains deployment acceptance."
+        }
+      }
+    },
+    {
+      "pageId": "85ae7c9c-1176-47ff-b125-6c52d479973d",
+      "revisionHash": "a3c0b8100b2b211aebf2f1a03917ec13c4b46ad9ad0d0eabd5795c853ce05346",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.468Z",
+        "revisionHash": "a3c0b8100b2b211aebf2f1a03917ec13c4b46ad9ad0d0eabd5795c853ce05346",
+        "binding": "b5f0b246645125f324dc9d875cd505d19ce6d81084f4f07cc6d71ebeda22c5b2",
+        "evidence": {
+          "usefulness": "Home copy orients readers to service/category/city choices and useful preparation guides, with the real operator contact. It introduces the broader platform and5 reviewed guide dependencies, whose future visibility is date-gated.",
+          "facts": "Real owner-provided MB Pinet/info@pinet.lt identity retained. Category browsing is not sold as confirmed local supply or appointment. No invented ratings,providers,bookings,medical expertise or search-position guarantee.",
+          "sources": "Home introduces owned navigation and contact rather than external statistical or clinical assertions. Actual catalogue readiness is separately verified and only current eligible typed destinations may become links.",
+          "media": "Actual broad original ImageGen still-life and5WebP family inspected and decoded in both viewports. Editorial image supports orientation without claiming a real provider,product recommendation or result.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "a61a0248-1c28-4cdc-89ba-e6c087989cdf",
+      "revisionHash": "62fc252edcd5ffec873c926d8653d2e66ed94148bfde08176597e7af34e82a14",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.541Z",
+        "revisionHash": "62fc252edcd5ffec873c926d8653d2e66ed94148bfde08176597e7af34e82a14",
+        "binding": "17601906a926afee0f2a15edce0f336bf758d31eafccf695378a0ffd70728a4a",
+        "evidence": {
+          "usefulness": "Index groups the actual reviewed guides by reader question: scope,style and portfolio, plus two scheduled broad visit-choice guides. Every attached guide is in the exact reviewed release; future links are public time-gated.",
+          "facts": "No promise of all295 completed articles or supplied provider results. Text distinguishes illustrative examples from real price lists and actual provider work. Original index identity/date preserved.",
+          "sources": "Owned editorial navigation only; no external evidence-dependent popularity,supply,price or medical assertion.",
+          "media": "Actual shared broad editorial still-life5WebP family reviewed; the shared home/index image is intentionally already due and is not a private future-only asset.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "6cc9716e-8706-4628-a85a-7a32ca432a7d",
+      "revisionHash": "70918b47756dff2ab43117df8908de0f1ac9f3abf800dec5da934112c2b8c9e6",
+      "publishAt": "2026-10-05T07:00:00.000Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.622Z",
+        "revisionHash": "70918b47756dff2ab43117df8908de0f1ac9f3abf800dec5da934112c2b8c9e6",
+        "binding": "ff72c4c506d11ad8c55b391535dce988a530467b2e1eadfa84b53d2d25387a50",
+        "evidence": {
+          "usefulness": "Actual methodology/contact page explains AI assistance,source/media review,illustration limitations and how to report a specific content error. Original public contact/operator preserved.",
+          "facts": "Organization authorship only; no named or credentialed fabricated expert,doctor or customer. The method describes performed reviews and does not substitute for specialist review.",
+          "sources": "Owned process/owner identity statements; no external clinical/legal/statistical claim requiring a document snapshot.",
+          "media": "Text-focused methodology page has no decorative raster. This is an intentional useful support-page exception, not a guide with missing required featured media.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    },
+    {
+      "pageId": "madbeauty-author-redakcija",
+      "revisionHash": "f7cc6f73cf54ae14761c36dade46b420037788240fbc4d6d7cfa55ecb97c76b1",
+      "publishAt": "2026-10-06T23:07:32.603Z",
+      "review": {
+        "version": 1,
+        "reviewer": "codex-root-editorial-review-20261007",
+        "checkedAt": "2026-10-06T23:31:34.695Z",
+        "revisionHash": "f7cc6f73cf54ae14761c36dade46b420037788240fbc4d6d7cfa55ecb97c76b1",
+        "binding": "d6b7757232b5ed4bc30d91bb01a9288b83c4293435df5eb0fac62bced5e1d007",
+        "evidence": {
+          "usefulness": "Actual organization author profile explains MB Pinet ownership,AI-assisted information,citation/image review and concrete corrections contact. Matches all selected editorial author IDs and does not pretend to be a specialist.",
+          "facts": "True organization snapshot only. Explicitly disclaims credentials not held and says a specialist review is required for claims needing it. No fake biography,experience,awards or sameAs identities.",
+          "sources": "Owner-provided organization/contact and actual editorial process statements, without unverified external expert/medical claims.",
+          "media": "Text-focused organization profile intentionally contains no irrelevant stock portrait or fabricated individual; guide media requirement does not apply.",
+          "links": "Every attached same-site destination is in this exact9-page release. Complete keep/defer decisions retain44 future proposals and full original planningBrief graph; finalized14 useful attachments are checked without publishing future titles early. Commerce links match exact verified national IDs; no unapproved city target. Public runtime current-registry gate remains mandatory. Author organization is in actual /autoriai/redakcija page.",
+          "presentation": "Actual common private preview inspected in Codex browser at1280x900 and390x844: H1/description/paragraph/list layout readable and no horizontal overflow (scrollWidth≤viewport). Real5-variant images decode, including lazy lower colour image after scrolling. Lithuanian title/H2 match the body; no raw Markdown,HTML,broken asset placeholder or duplicate category featured image. This is private-render review; public shadow/production rendering remains a separate acceptance step."
+        }
+      }
+    }
+  ],
+  "state": "exported-not-deployed",
+  "next": "Import and verify in public core; do not report deployment from this receipt."
+}

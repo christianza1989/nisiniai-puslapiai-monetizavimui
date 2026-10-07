@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-07T06:41:46.514Z",
+  "tool": "cua_repl",
+  "privatePreview": "http://127.0.0.1:8828/preview/madbeauty/",
+  "pages": 30,
+  "views": 60,
+  "desktop": {
+    "width": 1280,
+    "height": 720,
+    "scrollWidth": 1265
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 375
+  },
+  "allFeaturedDecoded": true,
+  "horizontalOverflow": false,
+  "rawMarkup": false,
+  "duplicateFeaturedImage": false,
+  "pixelReview": "All30 original final images inspected in actual ImageGen output; representative desktop/mobile screenshots inspected. DOM image decoding/geometry checked for every article in both widths; not60 individual screenshot inspections.",
+  "initialFiveImageLoadRaces": "Recorded initial pre-load measurements, then networkidle retests decoded successfully.",
+  "changedIndicesRetested": [
+    0,
+    1,
+    7,
+    15,
+    16,
+    18,
+    22,
+    25,
+    26,
+    28,
+    29
+  ],
+  "viewportReset": true,
+  "publicRuntimeReviewPending": true
+}

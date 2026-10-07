@@ -1,0 +1,459 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/bendri-salygos",
+      "title": "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas?",
+      "description": "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas. Aptariamos temos: mokėjimas ir patvirtinimas; keitimo bei atšaukimo sąlygos.",
+      "intent": "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas?",
+      "reason": "Mokėjimas ir patvirtinimas; Keitimo bei atšaukimo sąlygos; Ką išsaugoti susitarimui. Nauda: Sąlygų perskaitymo scenarijus. Pilnas brief: topical-authority-20261006/PLAN.json#B-salygos",
+      "cluster": "Registracija, sauga ir meistrai",
+      "pillarSlug": "",
+      "sourceQueries": [
+        "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas?",
+        "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienos-dazymas",
+      "title": "Blakstienų dažymas: ką jis keičia ir ko nesuteikia?",
+      "description": "Blakstienų dažymas: ką jis keičia ir ko nesuteikia. Aptariamos temos: spalvos paryškinimas; ilgio ir tankio ribos.",
+      "intent": "Blakstienų dažymas: ką jis keičia ir ko nesuteikia?",
+      "reason": "Spalvos paryškinimas; Ilgio ir tankio ribos; Kombinuoti paketai; Blakstienų dažymas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Tikslų lentelė be išgalvoto tankinimo pažado. Pilnas brief: topical-authority-20261006/PLAN.json#BL-dazymas",
+      "cluster": "Blakstienų priežiūra",
+      "pillarSlug": "gidai/blakstienos-gidas",
+      "sourceQueries": [
+        "Blakstienų dažymas: ką jis keičia ir ko nesuteikia?",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/",
+        "https://nouveaulashes.com/eyelash-treatment-aftercare/lvl-lashes-aftercare"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienos-efektai",
+      "title": "Natūralus, cat-eye ir doll-eye blakstienų efektas: kuo skiriasi išdėstymas?",
+      "description": "Natūralus, cat-eye ir doll-eye blakstienų efektas: kuo skiriasi išdėstymas. Aptariamos temos: ilgio paskirstymas; akcento vieta.",
+      "intent": "Natūralus, cat-eye ir doll-eye blakstienų efektas: kuo skiriasi išdėstymas?",
+      "reason": "Ilgio paskirstymas; Akcento vieta; Norimo rezultato apibūdinimas. Nauda: Originalios vienodo mastelio išdėstymo schemos. Pilnas brief: topical-authority-20261006/PLAN.json#BL-efektai",
+      "cluster": "Blakstienų priežiūra",
+      "pillarSlug": "gidai/blakstienos-gidas",
+      "sourceQueries": [
+        "Natūralus, cat-eye ir doll-eye blakstienų efektas: kuo skiriasi išdėstymas?",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/",
+        "https://nouveaulashes.com/eyelash-treatment-aftercare/lvl-lashes-aftercare"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienos-klasikinis-volume",
+      "title": "Klasikinis ir volume priauginimas: ką reiškia 1D, 2D bei kiti pavadinimai?",
+      "description": "Klasikinis ir volume priauginimas: ką reiškia 1D, 2D bei kiti pavadinimai. Aptariamos temos: pridedamų plaukelių principas; paslaugos apimtis.",
+      "intent": "Klasikinis ir volume priauginimas: ką reiškia 1D, 2D bei kiti pavadinimai?",
+      "reason": "Pridedamų plaukelių principas; Paslaugos apimtis; Individualaus parinkimo ribos; Klasikinis blakstienų priauginimas: metodo paskirtis ir konkreti paslaugos apimtis; Hibridinis blakstienų priauginimas: metodo paskirtis ir konkreti paslaugos apimtis; Volume blakstienų priauginimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Terminų brėžinys, ne saugiausio metodo reitingas. Pilnas brief: topical-authority-20261006/PLAN.json#BL-klasikinis-volume",
+      "cluster": "Blakstienų priežiūra",
+      "pillarSlug": "gidai/blakstienos-gidas",
+      "sourceQueries": [
+        "Klasikinis ir volume priauginimas: ką reiškia 1D, 2D bei kiti pavadinimai?",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/",
+        "https://nouveaulashes.com/eyelash-treatment-aftercare/lvl-lashes-aftercare"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienos-laminavimas",
+      "title": "Kaip atliekamas blakstienų laminavimas ir ko tikėtis iš rezultato?",
+      "description": "Kaip atliekamas blakstienų laminavimas ir ko tikėtis iš rezultato. Aptariamos temos: konsultacija ir pasirinkta kryptis; proceso principas.",
+      "intent": "Kaip atliekamas blakstienų laminavimas ir ko tikėtis iš rezultato?",
+      "reason": "Konsultacija ir pasirinkta kryptis; Proceso principas; Dažymas kaip atskiras komponentas; Blakstienų laminavimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Neprocedūrinė eigos iliustracija. Pilnas brief: topical-authority-20261006/PLAN.json#BL-laminavimas",
+      "cluster": "Blakstienų priežiūra",
+      "pillarSlug": "gidai/blakstienos-gidas",
+      "sourceQueries": [
+        "Kaip atliekamas blakstienų laminavimas ir ko tikėtis iš rezultato?",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/",
+        "https://nouveaulashes.com/eyelash-treatment-aftercare/lvl-lashes-aftercare"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/blakstienos-papildymas-nuemimas",
+      "title": "Blakstienų papildymas ar pilnas nuėmimas: kada keičiasi vizito užduotis?",
+      "description": "Blakstienų papildymas ar pilnas nuėmimas: kada keičiasi vizito užduotis. Aptariamos temos: priauginimo būklė; kito meistro darbas.",
+      "intent": "Blakstienų papildymas ar pilnas nuėmimas: kada keičiasi vizito užduotis?",
+      "reason": "Priauginimo būklė; Kito meistro darbas; Naujo rinkinio ir papildymo apimtis; Blakstienų papildymas: metodo paskirtis ir konkreti paslaugos apimtis; Priaugintų blakstienų nuėmimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Trijų pradinių situacijų lentelė. Pilnas brief: topical-authority-20261006/PLAN.json#BL-papildymas-nuemimas",
+      "cluster": "Blakstienų priežiūra",
+      "pillarSlug": "gidai/blakstienos-gidas",
+      "sourceQueries": [
+        "Blakstienų papildymas ar pilnas nuėmimas: kada keičiasi vizito užduotis?",
+        "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+        "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/",
+        "https://nouveaulashes.com/eyelash-treatment-aftercare/lvl-lashes-aftercare"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/barzda-vyrams-masinele-skutimas",
+      "title": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
+      "description": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas. Aptariamos temos: paliekamas ilgis; kontūro darbas.",
+      "intent": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
+      "reason": "Paliekamas ilgis; Kontūro darbas; Naudoti produktai ir papildomi komponentai; Skutimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Dviejų užduočių palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#BR-masinele-skutimas",
+      "cluster": "Barzda ir vyrų paslaugų pasirinkimas",
+      "pillarSlug": "gidai/barzda-vyrams-gidas",
+      "sourceQueries": [
+        "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
+        "https://www.treatwell.lt/salonas/gargzdu-barzdaskuciai/",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/barzda-vyrams-paketas",
+      "title": "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį?",
+      "description": "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį. Aptariamos temos: plaukų kirpimo komponentai; barzdos darbas.",
+      "intent": "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį?",
+      "reason": "Plaukų kirpimo komponentai; Barzdos darbas; Papildomi ritualai. Nauda: Vienodų komponentų meniu palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#BR-paketas",
+      "cluster": "Barzda ir vyrų paslaugų pasirinkimas",
+      "pillarSlug": "gidai/barzda-vyrams-gidas",
+      "sourceQueries": [
+        "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį?",
+        "https://www.treatwell.lt/salonas/gargzdu-barzdaskuciai/",
+        "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/depiliacija-ar-lazeris",
+      "title": "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtingas metodas ir vizitų planas",
+      "description": "Depiliacija vašku ar lazerinis plaukų šalinimas. Aptariamos temos: pašalinimas ir mažinimo principas; vienas vizitas ir individualus planas.",
+      "intent": "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtingas metodas ir vizitų planas",
+      "reason": "Pašalinimas ir mažinimo principas; Vienas vizitas ir individualus planas; Kompetencijos bei įrodymų ribos. Nauda: Dviejų metodų pasirinkimo matrica. Pilnas brief: topical-authority-20261006/PLAN.json#DP-ar-lazeris",
+      "cluster": "Depiliacija vašku ir cukrumi",
+      "pillarSlug": "gidai/depiliacija-gidas",
+      "sourceQueries": [
+        "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtingas metodas ir vizitų planas",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://www.treatwell.lt/salonas/depiliacija/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/depiliacija-bikini",
+      "title": "Bikini depiliacija: klasikinis, gilus ir kiti pasiūlymo pavadinimai",
+      "description": "Bikini depiliacija: klasikinis, gilus ir kiti pasiūlymo pavadinimai. Aptariamos temos: zonos ribos; privatumas bei komunikacija.",
+      "intent": "Bikini depiliacija: klasikinis, gilus ir kiti pasiūlymo pavadinimai",
+      "reason": "Zonos ribos; Privatumas bei komunikacija; Ką tiksliai patvirtinti; Bikini depiliacija vašku: metodo paskirtis ir konkreti paslaugos apimtis; Braziliška depiliacija vašku: metodo paskirtis ir konkreti paslaugos apimtis; Bikini depiliacija cukrumi: metodo paskirtis ir konkreti paslaugos apimtis; Braziliška depiliacija cukrumi: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Neutralus zonų apimties paaiškinimas be eksplicitinių nuotraukų. Pilnas brief: topical-authority-20261006/PLAN.json#DP-bikini",
+      "cluster": "Depiliacija vašku ir cukrumi",
+      "pillarSlug": "gidai/depiliacija-gidas",
+      "sourceQueries": [
+        "Bikini depiliacija: klasikinis, gilus ir kiti pasiūlymo pavadinimai",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://www.treatwell.lt/salonas/depiliacija/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/depiliacija-rankos-pazastys",
+      "title": "Rankų ir pažastų depiliacija: kaip skiriasi zonos bei pasiūlymai?",
+      "description": "Rankų ir pažastų depiliacija: kaip skiriasi zonos bei pasiūlymai. Aptariamos temos: rankų zonos; pažastys kaip atskira paslauga.",
+      "intent": "Rankų ir pažastų depiliacija: kaip skiriasi zonos bei pasiūlymai?",
+      "reason": "Rankų zonos; Pažastys kaip atskira paslauga; Paketo sudėtis; Rankų depiliacija vašku: metodo paskirtis ir konkreti paslaugos apimtis; Pažastų depiliacija vašku: metodo paskirtis ir konkreti paslaugos apimtis; Rankų depiliacija cukrumi: metodo paskirtis ir konkreti paslaugos apimtis; Pažastų depiliacija cukrumi: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Zonų ir komponentų schema su paaiškintais kriterijais ir konkrečiu temos pavyzdžiu. Pilnas brief: topical-authority-20261006/PLAN.json#DP-rankos-pazastys",
+      "cluster": "Depiliacija vašku ir cukrumi",
+      "pillarSlug": "gidai/depiliacija-gidas",
+      "sourceQueries": [
+        "Rankų ir pažastų depiliacija: kaip skiriasi zonos bei pasiūlymai?",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://www.treatwell.lt/salonas/depiliacija/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/depiliacija-siulas",
+      "title": "Veido plaukelių šalinimas siūlu: skirtumas nuo vaško ir vizito apimtis",
+      "description": "Veido plaukelių šalinimas siūlu: skirtumas nuo vaško ir vizito apimtis. Aptariamos temos: mechaninio metodo paaiškinimas; veido zona ir pradinė būklė.",
+      "intent": "Veido plaukelių šalinimas siūlu: skirtumas nuo vaško ir vizito apimtis",
+      "reason": "Mechaninio metodo paaiškinimas; Veido zona ir pradinė būklė; Pasiruošimas bei priežiūros susitarimas; Veido plaukelių šalinimas siūlu: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Siūlo ir vaško metodų palyginimo schema. Pilnas brief: topical-authority-20261006/PLAN.json#DP-siulas",
+      "cluster": "Depiliacija vašku ir cukrumi",
+      "pillarSlug": "gidai/depiliacija-gidas",
+      "sourceQueries": [
+        "Veido plaukelių šalinimas siūlu: skirtumas nuo vaško ir vizito apimtis",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://www.treatwell.lt/salonas/depiliacija/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/depiliacija-vaskas-ar-cukrus",
+      "title": "Depiliacija vašku ar cukrumi: metodų ir paslaugos skirtumai",
+      "description": "Depiliacija vašku ar cukrumi: metodų ir paslaugos skirtumai. Aptariamos temos: naudojama medžiaga; darbo metodas.",
+      "intent": "Depiliacija vašku ar cukrumi: metodų ir paslaugos skirtumai",
+      "reason": "Naudojama medžiaga; Darbo metodas; Ko pavadinimas nepasako apie individualų tinkamumą. Nauda: Metodų lentelė be „neskausmingos“ garantijos. Pilnas brief: topical-authority-20261006/PLAN.json#DP-vaskas-ar-cukrus",
+      "cluster": "Depiliacija vašku ir cukrumi",
+      "pillarSlug": "gidai/depiliacija-gidas",
+      "sourceQueries": [
+        "Depiliacija vašku ar cukrumi: metodų ir paslaugos skirtumai",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://www.treatwell.lt/salonas/depiliacija/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/depiliacija-vyrams",
+      "title": "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas",
+      "description": "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas. Aptariamos temos: nugara ir kitos zonos; apimtis bei privatumas.",
+      "intent": "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas",
+      "reason": "Nugara ir kitos zonos; Apimtis bei privatumas; Pirmo vizito informacija; Nugaros depiliacija vašku: metodo paskirtis ir konkreti paslaugos apimtis; Krūtinės depiliacija vašku: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Konkrečių zonų ir komforto užduotis. Pilnas brief: topical-authority-20261006/PLAN.json#DP-vyrams",
+      "cluster": "Depiliacija vašku ir cukrumi",
+      "pillarSlug": "gidai/depiliacija-gidas",
+      "sourceQueries": [
+        "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas",
+        "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+        "https://www.treatwell.lt/salonas/depiliacija/",
+        "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-dazymas-balayage-airtouch",
+      "title": "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas?",
+      "description": "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas. Aptariamos temos: spalvos paskirstymas; sruogų atrankos principas.",
+      "intent": "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas?",
+      "reason": "Spalvos paskirstymas; Sruogų atrankos principas; Ko nuotrauka ir pavadinimas nepasako; Balayage: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Dviejų metodų schema be „geresnės technikos“ pažado. Pilnas brief: topical-authority-20261006/PLAN.json#DZ-balayage-airtouch",
+      "cluster": "Plaukų dažymas",
+      "pillarSlug": "gidai/plauku-dazymas-gidas",
+      "sourceQueries": [
+        "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas?",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-dazymas-ombre-sombre",
+      "title": "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika?",
+      "description": "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika. Aptariamos temos: perėjimo vieta; kontrasto lygis.",
+      "intent": "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika?",
+      "reason": "Perėjimo vieta; Kontrasto lygis; Pavadinimų persidengimas; Ombre: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Kontroliuotų iliustracijų palyginimas. Pilnas brief: topical-authority-20261006/PLAN.json#DZ-ombre-sombre",
+      "cluster": "Plaukų dažymas",
+      "pillarSlug": "gidai/plauku-dazymas-gidas",
+      "sourceQueries": [
+        "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika?",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-dazymas-saknys-ar-visi",
+      "title": "Šaknų ar visų plaukų dažymas: kada keičiasi darbų apimtis?",
+      "description": "Šaknų ar visų plaukų dažymas: kada keičiasi darbų apimtis. Aptariamos temos: ataugusi zona; ilgiai ir galai.",
+      "intent": "Šaknų ar visų plaukų dažymas: kada keičiasi darbų apimtis?",
+      "reason": "Ataugusi zona; Ilgiai ir galai; Spalvos suvienodinimas atskirai; Visų plaukų dažymas: metodo paskirtis ir konkreti paslaugos apimtis; Šaknų dažymas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Zonų schema su trimis užduotimis. Pilnas brief: topical-authority-20261006/PLAN.json#DZ-saknys-ar-visi",
+      "cluster": "Plaukų dažymas",
+      "pillarSlug": "gidai/plauku-dazymas-gidas",
+      "sourceQueries": [
+        "Šaknų ar visų plaukų dažymas: kada keičiasi darbų apimtis?",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-dazymas-sruogos",
+      "title": "Dažymas sruogomis: dalinis, visas ir prie veido",
+      "description": "Palyginkite dalinį ir visų plaukų dažymą sruogelėmis, šviesinimo bei tonavimo darbus ir vienodomis sąlygomis įvertinkite pasiūlymą.",
+      "intent": "Dažymas sruogomis: dalinis, visas ir prie veido",
+      "reason": "Darbų zonos; Šviesinimas ir tonavimas; Kainyno skirtingi paketai; Sruogelių dažymas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Originalus zonų ir įtrauktų darbų žemėlapis. Pilnas brief: topical-authority-20261006/PLAN.json#DZ-sruogos",
+      "cluster": "Plaukų dažymas",
+      "pillarSlug": "gidai/plauku-dazymas-gidas",
+      "sourceQueries": [
+        "Dažymas sruogomis: dalinis, visas ir prie veido",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/plauku-dazymas-tonavimas",
+      "title": "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo?",
+      "description": "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo. Aptariamos temos: atspalvio koregavimas; ko toneris savaime nepadaro.",
+      "intent": "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo?",
+      "reason": "Atspalvio koregavimas; Ko toneris savaime nepadaro; Sistemos skirtumai; Tonavimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Spalvos lygio ir atspalvio atskyrimo schema. Pilnas brief: topical-authority-20261006/PLAN.json#DZ-tonavimas",
+      "cluster": "Plaukų dažymas",
+      "pillarSlug": "gidai/plauku-dazymas-gidas",
+      "sourceQueries": [
+        "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo?",
+        "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+        "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+        "https://www.treatwell.lt/salonas/looks/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/estetika-mezoterapija-biorevitalizacija",
+      "title": "Mezoterapija ir biorevitalizacija: ką reikia žinoti apie konkretų metodą ir priemonę",
+      "description": "Mezoterapija ir biorevitalizacija: kodėl reikia žinoti konkretų metodą, priemonę ir paskirtį? Aptariame konsultacijos klausimus bei įrodymų ribas.",
+      "intent": "Mezoterapija ir biorevitalizacija: ką reikia žinoti apie konkretų metodą ir priemonę",
+      "reason": "Rinkodaros termino ir produkto skirtumas; Injekcinis ir kitas pateikimas; Konsultacijos tikslas bei alternatyvos; Mezoterapija: metodo paskirtis ir konkreti paslaugos apimtis; Biorevitalizacija: metodo paskirtis ir konkreti paslaugos apimtis; Veidas ar galvos oda: priemonės paskirties ir individualios konsultacijos ribos. Nauda: Produkto paskirties dokumentų palyginimo ruošinys. Pilnas brief: topical-authority-20261006/PLAN.json#ES-mezoterapija-biorevitalizacija",
+      "cluster": "Estetinės procedūros ir medicininė riba",
+      "pillarSlug": "gidai/estetika-gidas",
+      "sourceQueries": [
+        "Mezoterapija ir biorevitalizacija: ką reikia žinoti apie konkretų metodą ir priemonę",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/microneedling-devices",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/dermal-fillers-soft-tissue-fillers",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/estetika-mikroadatine",
+      "title": "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas",
+      "description": "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas. Aptariamos temos: poveikio mechanizmo paaiškinimas; rf ir paprasto metodo skirtumas.",
+      "intent": "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas",
+      "reason": "Poveikio mechanizmo paaiškinimas; RF ir paprasto metodo skirtumas; Patvirtinta paskirtis ir duomenų ribos; Mikroadatinė procedūra: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Dvi poveikio schemos su konkretaus įrenginio dokumentų patikra. Pilnas brief: topical-authority-20261006/PLAN.json#ES-mikroadatine",
+      "cluster": "Estetinės procedūros ir medicininė riba",
+      "pillarSlug": "gidai/estetika-gidas",
+      "sourceQueries": [
+        "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/microneedling-devices",
+        "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/dermal-fillers-soft-tissue-fillers",
+        "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/fizinis-aktyvumas-joga-pilatesas",
+      "title": "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai",
+      "description": "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai. Aptariamos temos: judesio ir kvėpavimo vaidmuo; kilimėlis bei konkretaus užsiėmimo inventorius.",
+      "intent": "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai",
+      "reason": "Judesio ir kvėpavimo vaidmuo; Kilimėlis bei konkretaus užsiėmimo inventorius; Tikslas grupė ir instruktoriaus priežiūra; Pilatesas: metodo paskirtis ir konkreti paslaugos apimtis; Joga: metodo paskirtis ir konkreti paslaugos apimtis; Pilatesas ant kilimėlio ir su reformer: inventorius, pamokos formatas ir individualus parinkimas. Nauda: Dviejų realių pamokų formato matrica su vienodais kriterijais. Pilnas brief: topical-authority-20261006/PLAN.json#FX-joga-pilatesas",
+      "cluster": "Sportas ir judėjimas",
+      "pillarSlug": "gidai/fizinis-aktyvumas-gidas",
+      "sourceQueries": [
+        "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai",
+        "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+        "https://www.nccih.nih.gov/health/yoga-effectiveness-and-safety",
+        "https://www.nhs.uk/live-well/exercise/pilates-and-yoga/"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/gelinis-lakavimas-ar-stiprinimas",
+      "title": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai",
+      "description": "Gelinis lakavimas, nagų stiprinimas ir priauginimas. Aptariamos temos: spalvos danga; papildoma konstrukcija.",
+      "intent": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai",
+      "reason": "Spalvos danga; Papildoma konstrukcija; Ilgio kūrimas; Nagų stiprinimas: metodo paskirtis ir konkreti paslaugos apimtis. Nauda: Paslaugos pasirinkimo matrica pagal rezultatą. Pilnas brief: topical-authority-20261006/PLAN.json#GL-ar-stiprinimas",
+      "cluster": "Gelinis lakavimas",
+      "pillarSlug": "gidai/gelinis-lakavimas-gidas",
+      "sourceQueries": [
+        "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/gelinis-lakavimas-baze",
+      "title": "Ką reiškia bazė ir nago išlyginimas gelinio lakavimo pasiūlyme?",
+      "description": "Ką reiškia bazė ir nago išlyginimas gelinio lakavimo pasiūlyme. Aptariamos temos: bazės paskirtis sistemoje; išlyginimas ir konstrukcija.",
+      "intent": "Ką reiškia bazė ir nago išlyginimas gelinio lakavimo pasiūlyme?",
+      "reason": "Bazės paskirtis sistemoje; Išlyginimas ir konstrukcija; Kas įeina į kainą. Nauda: Sluoksnių ir kainyno komponentų schema. Pilnas brief: topical-authority-20261006/PLAN.json#GL-baze",
+      "cluster": "Gelinis lakavimas",
+      "pillarSlug": "gidai/gelinis-lakavimas-gidas",
+      "sourceQueries": [
+        "Ką reiškia bazė ir nago išlyginimas gelinio lakavimo pasiūlyme?",
+        "https://www.treatwell.lt/salonas/vili-nails/",
+        "https://www.treatwell.lt/salonas/room-for-nails/",
+        "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures"
+      ],
+      "publishDate": "2026-10-20",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

@@ -141,3 +141,19 @@ Sustabdytas tik own8841preview: Rodyti laikus rodė ryšio klaidą ir išlaikė 
 
 Exact39page75aa Workers build302assets candidate-built-not-deployed (build-provider-workspace-160.log). [Būsenų matricos registras](UI_MATRIX.md) išskiria turimą įrodymą ir likusias actual patikras.
 
+
+##163 · paskyros įrašai, prieigos ir priminimai
+
+regression-34.log163/163pairedPASS, client-patch-second.log6PASS, client-patch-workers.log1actualWorkersPASS.5000foreignhistory ir uždraustas store.read: active practitioner session darbo vieta, grant/revoke journal, request mapping/qualification, existing-account OTP identity, customer scoped export/rebooking/operator case. Account control preferences/favourites/request-withdraw-review negali keisti foreign/global/unloaded-ID, stale version ar oversized row; outbox rollback. Preferences second-organization injection atšaukia visą pakeitimą ir jau pakeistus jobs. Alarm kartojimas turi vieną reminder per version, Worker restart išlaiko job/prefs/requests/favourite ir exact logical bytes. Pirmas scoped-access-automation-first.log turėjo vieną seną failure-injection store.write testą; jis atnaujintas į faktinį scoped persistence hook, originalus reminder+outbox rollback assertion išlaikytas.
+
+Actual mobile390 stale kandidatas po daugiau nei5min:409„Pasirinkimas paseno. Atnaujinkite laikus.“, focus alert (booking-stale-candidate-mobile.png). Rodyti laikus atnaujina; Enter18:00–19:00pasiekia client contact, Enter Toliau pasiekia review. Po natūralių2min„Laiko palaikymas baigėsi. Pasirink laiką iš naujo.“ ir disabled confirmation (booking-expired-hold-mobile.png /booking-expired-hold-full-mobile.png). Disabled mygtuko click bandymas neturi veiksmo, naršyklės diagnostika patvirtino disabled=true. Recovery nuorodos Enter grąžina į laikus. Tai realus expiry laikrodis, ne DOM/state injekcija; nereikia jokio naujo confirmed vizito. Platus platformos deployment nevykdytas.
+
+Build-scoped-client163.log exact75aa39page302assetsPASS candidate-not-deployed. Naujos tapatybės inicijavimas, global operator/catalogue kelių routing, fiziškai atskiri organizacijų DO ir visa UI matrica lieka aktyvūs. erasure execution vis dar false, actual SMTP/real pilot nepriimti.
+
+##164 · pasibaigusio palaikymo pasirinkimo žyma
+
+regression-35.log164/164pairedPASS; booking-roster.test expired/live-hold regression. Pasibaigus hold, grįžus į laikus senas candidate nebėra aria-pressed=true. Actual8841 guest OTP su named example.com fixture → Enter slot → contact → review → natūralios2min → disabled confirm → recovery link Enter →18:00–19:00 aria-pressed=false. booking-expiry-actual-390.png /booking-expired-marker-fixed-actual390.png (peržiūrėtas). Actual390 document/main client=scroll375. Bandymas viewport320/390/820/1440 per kelis tabus nepakeitė tikrinamo tabo faktinio390pločio; booking-expiry-widths-viewport-unchanged.json ir *-viewport-unchanged.png nėra keturių pločių PASS. Ankstesnis booking-expired-marker-fixed-mobile.png po reload turėjo tuščią juodraštį, jo nenaudojame pataisos įrodymui.
+
+Actual dropdown keyboard: balayage →ArrowDown/Enter Balayage, svencioneliai →ArrowDown/Enter Švenčionėliai →Ieškoti Enter. Rezultatų URL turi tikslius procedure/cityID, abu pavadinimai lieka filtruose,0pasiūlymų rodoma tuščia būsena. Tai specific procedure/small-city/no-diacritic/keyboard/empty įrodymas, kitų paieškos klaidų būsenų dar neužbaigia.
+
+Build-scoped-client164.log: exact75aa39page302assets, candidate-built-not-deployed. Source, target/runtime ir originalios paketų datos neperjungiami į produkciją.

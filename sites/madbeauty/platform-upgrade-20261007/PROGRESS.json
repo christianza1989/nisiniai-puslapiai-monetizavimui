@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "16bb2b8",
+  "runtimeSourceCheckpoint": "9df48c5",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -100,6 +100,18 @@
       "tests": 160,
       "state": "accepted-isolated-path",
       "remaining": "Physical organization routing, remaining global operations and full actual UI matrix; activation facts"
+    },
+    {
+      "name": "indexed-client-controls-access-eligibility-and-per-organization-automation",
+      "tests": 163,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing, new identities/creation/global operator paths, full actual UI matrix and activation facts"
+    },
+    {
+      "name": "expired-hold-selection-marker",
+      "tests": 164,
+      "state": "accepted-isolated-path",
+      "remaining": "Expired hold/recovery actual390 accepted; other expiry widths and full matrix, physical organization routing and activation facts remain"
     }
   ],
   "tasks": [
@@ -303,7 +315,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md: indexed booking and provider mutations/private workspaces, guarded row patch and atomic outbox; Node/Workers 5000 foreign-history/restart and global client waitlist limit preserved. Physical routing and global identity/access/preferences/automation/erasure remain."
+      "evidence": "STORAGE.md: indexed booking/provider/access/client-control patches, per-organization alarm reconciliation, scoped private workspaces/export/rebooking and same-transaction preference jobs; Node/actual Workers 5000 foreign-history/restart. Physical routing and global creation/operator paths remain."
     },
     {
       "id": "I03",

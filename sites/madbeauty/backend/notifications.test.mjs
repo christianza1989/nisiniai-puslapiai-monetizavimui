@@ -40,7 +40,7 @@ test('Late alarms and appointments created after reminder time do not send a cat
 });
 test('State persistence failure rolls back reminder queue and outbox together',()=>{
  const f=fixture();try{
-  f.at(Date.parse(f.booking.startAt)-86400000);const write=f.store.write;f.store.write=()=>{throw Error('Isolated persistence failure');};assert.throws(()=>f.api.runAutomation(),/persistence failure/);assert.equal(reminders(f).length,0);assert.equal(f.store.db.prepare('SELECT state FROM notification_jobs WHERE booking_id=?').get(f.booking.id).state,'planned');
-  f.store.write=write;f.api.runAutomation();assert.equal(reminders(f).length,1);
+  f.at(Date.parse(f.booking.startAt)-86400000);const write=f.store.writeOrganization;f.store.writeOrganization=()=>{throw Error('Isolated persistence failure');};assert.throws(()=>f.api.runAutomation(),/persistence failure/);assert.equal(reminders(f).length,0);assert.equal(f.store.db.prepare('SELECT state FROM notification_jobs WHERE booking_id=?').get(f.booking.id).state,'planned');
+  f.store.writeOrganization=write;f.api.runAutomation();assert.equal(reminders(f).length,1);
  }finally{f.close();}
 });

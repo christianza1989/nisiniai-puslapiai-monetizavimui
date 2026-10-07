@@ -39,7 +39,7 @@ export class MadbeautyPlatform extends DurableObject{
  }
  async catalog(input){return createPlatform(this.store).catalog(input);}
  async profile(id){return createPlatform(this.store).profile(id);}
- async publicProfiles(){const platform=createPlatform(this.store);return this.store.read().organizations.filter(o=>o.approved).map(o=>platform.profile(o.id));}
+ async publicProfiles(){const platform=createPlatform(this.store);return this.store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>platform.profile(o.id));}
  async recoveryStatus(){
   this.expire();
   const bookmark=await this.ctx.storage.getCurrentBookmark(),db=this.store.db;

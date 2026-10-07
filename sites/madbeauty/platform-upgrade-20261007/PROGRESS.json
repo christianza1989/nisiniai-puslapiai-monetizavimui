@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "105d09a",
+  "runtimeSourceCheckpoint": "3a69bcb",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -70,6 +70,12 @@
       "tests": 147,
       "state": "accepted-isolated-path",
       "remaining": "Full state matrix; organization routing/scoped writes; media scaling; factual activation"
+    },
+    {
+      "name": "reviewed-work-gallery-staff-portraits-and-working-hours",
+      "tests": 150,
+      "state": "accepted-isolated-path",
+      "remaining": "Full state matrix; media capacity/scaling; scoped mutations and organization routing; factual activation"
     }
   ],
   "tasks": [
@@ -155,7 +161,8 @@
       "id": "P01",
       "title": "Išsamus profilis ir tikrų darbų galerija",
       "phase": "2",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: ordered reviewed work/service links, caption and staff portraits, private provenance, stale/restricted snapshots, actual upload/review/public mobile work CTA and Node/Workers restart."
     },
     {
       "id": "B01",
@@ -334,7 +341,6 @@
     }
   ],
   "next": [
-    "P01 reviewed media/service associations and profile details",
     "W02 actual browser branch booking",
     "I02 scoped writes and per-organization routing",
     "I03 media capacity and adapter measurement",

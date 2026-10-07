@@ -3,6 +3,7 @@ import {localInstant,makeClock,visitFits} from '../prototype/demo-model.mjs';
 import {reject} from './primitives.mjs';
 import {serviceEligible} from './catalogue-state.mjs';
 import {plus,overlaps,occupiedRanges,rangesConflict} from './occupancy.mjs';
+import {phaseTiming} from './phases.mjs';
 export {plus,overlaps} from './occupancy.mjs';
 export const find=(d,table,id)=>{const r=d[table]?.find(x=>x.id===id);if(!r)reject('NOT_FOUND','Įrašas nerastas.',404);return r;};
 export function option(service,addons=[],{validateGroups=true}={}){
@@ -49,13 +50,13 @@ export function availability(d,input,now,{ignoreBookingId=null,ignoreHoldId=null
   const first=exact?exact[0]*60+exact[1]:Math.ceil(from/15)*15;
   for(let min=first;min<=to;min+=15){
     if(exact&&(min!==first||at(min)!==exactStartAt))break;
-    const startAt=at(min),endAt=plus(startAt,calc.durationMin),occupiedStart=plus(startAt,-s.bufferBeforeMin),occupiedEnd=plus(endAt,s.bufferAfterMin);
-    if(Date.parse(startAt)<now+Math.max(o.leadTimeMin??30,rules.minLeadTimeMin??0)*60000||min<(rules.fromMin??0)||min+calc.durationMin>(rules.toMin??1439)||!visitFits({startAt,durationMin:calc.durationMin,windowStart,windowEnd})||occupiedStart<shiftStart||occupiedEnd>shiftEnd||breakRange&&overlaps(occupiedStart,occupiedEnd,...breakRange))continue;
-    const range={practitionerId:p.id,resourceId:r.id,locationId:s.locationId,startAt:occupiedStart,endAt:occupiedEnd};
-    if(d.bookings.some(b=>b.id!==ignoreBookingId&&b.status==='confirmed'&&occupiedRanges(b).some(x=>rangesConflict(d,range,{...x,locationId:x.locationId||bookingPlace(d,b)},p))))continue;
-    if(d.busyBlocks.some(b=>b.active!==false&&(b.practitionerId===p.id||b.resourceId===r.id)&&overlaps(occupiedStart,occupiedEnd,b.startAt,b.endAt)))continue;
-    if(d.holds.some(h=>h.id!==ignoreHoldId&&h.state==='held'&&Date.parse(h.expiresAt)>now&&occupiedRanges(h).some(x=>rangesConflict(d,range,x,p))))continue;
-    slots.push({id:[s.id,startAt,addons.join(','),...(s.staffOptions?[p.id]:[])].join('|'),providerServiceId:s.id,offerId:s.offerId||null,variantId:s.staffOptions?s.id:null,organizationId:o.id,practitionerId:p.id,resourceId:r.id,locationId:s.locationId,startAt,endAt,occupiedStart,occupiedEnd,dateKey,dayOffset,from,to,addonIds:addons,priceMinor:calc.priceMinor,durationMin:calc.durationMin,serviceVersion:s.version,locationVersion:publicLocation(d,s.locationId)?.version||0,scheduleVersion:schedule.version,snapshotAt:clock.now});
+    const startAt=at(min),endAt=plus(startAt,calc.durationMin),{phases,occupancies}=phaseTiming(s,startAt,calc),occupiedStart=plus(startAt,-s.bufferBeforeMin),occupiedEnd=plus(endAt,s.bufferAfterMin);
+    if(Date.parse(startAt)<now+Math.max(o.leadTimeMin??30,rules.minLeadTimeMin??0)*60000||min<(rules.fromMin??0)||min+calc.durationMin>(rules.toMin??1439)||!visitFits({startAt,durationMin:calc.durationMin,windowStart,windowEnd})||occupiedStart<shiftStart||occupiedEnd>shiftEnd||breakRange&&occupancies.some(x=>x.practitionerId&&overlaps(x.startAt,x.endAt,...breakRange)))continue;
+    const conflicts=record=>occupancies.some(range=>occupiedRanges(record).some(x=>rangesConflict(d,range,{...x,locationId:x.locationId||bookingPlace(d,record)},p)));
+    if(d.bookings.some(b=>b.id!==ignoreBookingId&&b.status==='confirmed'&&conflicts(b)))continue;
+    if(d.busyBlocks.some(b=>b.active!==false&&occupancies.some(x=>(x.practitionerId&&b.practitionerId===x.practitionerId||x.resourceId&&b.resourceId===x.resourceId)&&overlaps(x.startAt,x.endAt,b.startAt,b.endAt))))continue;
+    if(d.holds.some(h=>h.id!==ignoreHoldId&&h.state==='held'&&Date.parse(h.expiresAt)>now&&conflicts(h)))continue;
+    slots.push({id:[s.id,startAt,addons.join(','),...(s.staffOptions?[p.id]:[])].join('|'),providerServiceId:s.id,offerId:s.offerId||null,variantId:s.staffOptions?s.id:null,organizationId:o.id,practitionerId:p.id,resourceId:r.id,locationId:s.locationId,startAt,endAt,phases,occupancies,occupiedStart,occupiedEnd,dateKey,dayOffset,from,to,addonIds:addons,priceMinor:calc.priceMinor,durationMin:calc.durationMin,serviceVersion:s.version,locationVersion:publicLocation(d,s.locationId)?.version||0,scheduleVersion:schedule.version,snapshotAt:clock.now});
   }
   return {state:slots.length?'current':'no-slots',slots,...meta};
 }

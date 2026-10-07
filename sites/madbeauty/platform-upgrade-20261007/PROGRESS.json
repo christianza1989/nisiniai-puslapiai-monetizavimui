@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "8e52157",
+  "runtimeSourceCheckpoint": "c373a0f",
   "companionSchema": "niche-public-core63cfd8c / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -40,6 +40,12 @@
       "tests": 122,
       "state": "accepted-isolated-path",
       "remaining": "Full state matrix, phased occupancy and later modules; production not deployed"
+    },
+    {
+      "name": "phased-staff-chair-occupancy-and-editor",
+      "tests": 126,
+      "state": "accepted-isolated-path",
+      "remaining": "Full UI state matrix and later modules; production not deployed"
     }
   ],
   "tasks": [
@@ -138,7 +144,8 @@
       "id": "B02",
       "title": "Procedūros fazės ir resursų rezervavimas",
       "phase": "3",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: independent phase occupancies, immutable saved phase snapshots, active break protection, Node/Workers processing overlap, actual phase editor error/recovery and staff/chair calendar filters"
     },
     {
       "id": "B03",
@@ -295,9 +302,11 @@
     }
   ],
   "next": [
-    "B01 multi-service visit and B02 phased occupancy",
     "B04/B05 reminders and waitlist",
+    "C01/C02 rebooking and client cards/export/retention",
+    "W03/O03 scoped metrics and report review",
     "I02 scoped writes and per-organization routing",
-    "Full desktop/mobile error/stale/conflict states"
+    "Full desktop/mobile error/stale/conflict states",
+    "Server-rendered sharing metadata from the approved content projection"
   ]
 }

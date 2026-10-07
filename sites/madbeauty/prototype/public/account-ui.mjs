@@ -16,7 +16,7 @@ export function providerStart(ctx){return`<div class="page container account-pag
 export async function accountAction(ctx,action){
   if(action==='email-resend'){const c=await ctx.realAdapter.authStart(ctx.authChallenge.email);persistChallenge(ctx,{...c,email:ctx.authChallenge.email});ctx.toast(c.message);await ctx.render();return true;}
   if(action==='email-again'){persistChallenge(ctx,null);await ctx.render();return true;}
-  if(action==='account-logout'){await ctx.realAdapter.logout();ctx.clearDrafts();persistChallenge(ctx,null);ctx.state.session={role:'guest',organizationId:null,clientId:null};ctx.state.booking=null;ctx.state.favorites=[];ctx.state.onboarding={};ctx.state.onboardingStep=0;ctx.state.calendarStaff='';ctx.state.chatBookingId=null;ctx.state.clientFilter='';ctx.state.uploads=[];ctx.closeDialog();await ctx.navigate('/');return true;}
+  if(action==='account-logout'){await ctx.realAdapter.logout();ctx.clearDrafts();persistChallenge(ctx,null);ctx.state.session={role:'guest',organizationId:null,clientId:null};ctx.state.booking=null;ctx.state.favorites=[];ctx.state.onboarding={};ctx.state.onboardingStep=0;ctx.state.calendarStaff='';ctx.state.calendarResource='';ctx.state.chatBookingId=null;ctx.state.clientFilter='';ctx.state.uploads=[];ctx.closeDialog();await ctx.navigate('/');return true;}
   return false;
 }
 export async function accountForm(ctx,form,fd){

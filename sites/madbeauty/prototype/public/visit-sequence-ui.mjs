@@ -1,6 +1,7 @@
+import {phaseList} from './phase-fields.mjs';
 import {esc,link,btn,money,time,date,field,select,minute,empty,crumbs,userError} from './ui.mjs';
 import {accountEntry} from './account-ui.mjs';
-export function segmentList(segments=[]){return `<ol class="visit-segments">${segments.map(s=>`<li><strong>${esc(s.serviceSnapshot?.label||s.label||'Paslauga')}</strong><p>${time(s.startAt)}–${time(s.endAt)} · ${esc(s.serviceSnapshot?.practitionerName||s.practitionerName||'Meistras')} · ${money(s.priceMinor)}</p></li>`).join('')}</ol>`;}
+export function segmentList(segments=[]){return `<ol class="visit-segments">${segments.map(s=>`<li><strong>${esc(s.serviceSnapshot?.label||s.label||'Paslauga')}</strong><p>${time(s.startAt)}–${time(s.endAt)} · ${esc(s.serviceSnapshot?.practitionerName||s.practitionerName||'Meistras')} · ${money(s.priceMinor)}</p>${phaseList(s.phases)}</li>`).join('')}</ol>`;}
 const choices=s=>s.staffOptions||[{practitionerId:s.practitionerId,name:s.practitionerName,priceMinor:s.priceMinor,durationMin:s.durationMin}];
 const page=(content,summary='')=>`<div class="page container">${crumbs([['Paieška','/paieska'],['Vizitas']])}${summary?`<div class="booking-layout"><div>${content}</div>${summary}</div>`:content}</div>`;
 const recovery=(title,copy,target='/registracija/laikas')=>page(empty(title,copy,link(target,'Grįžti prie pasirinkimo')));

@@ -1,4 +1,5 @@
 import {bookingUses} from './occupancy.mjs';
+import {normalizePhases} from './phases.mjs';
 import {staffAtLocation,resourceAtLocation,locationSchedule,publicLocation} from './locations-state.mjs';
 import {TAXONOMY_NODES,TAXONOMY_VERSION,taxonomyNode} from '../prototype/taxonomy.mjs';
 import {randomId,reject} from './primitives.mjs';
@@ -18,7 +19,8 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
   const id=v.id?txt(v.id):randomId('variant'),label=txt(v.label),priceMinor=v.priceMinor==null?null:int(v.priceMinor,0,100000),durationMin=v.durationMin==null?null:int(v.durationMin,15,480);
   const target=d.services.find(s=>s.id===id);if(target&&target.offerId!==o.id&&o.legacyServiceId!==target.id)reject('FORBIDDEN','Varianto ID priklauso kitam pasiūlymui.',403);
   if(!Array.isArray(v.staffOptions)||v.staffOptions.length>32)reject('INVALID_INPUT','Pasirinkite tinkamus darbuotojus.');
-  const staffOptions=v.staffOptions.map(x=>{const p=find(d,'practitioners',x.practitionerId),r=find(d,'resources',x.resourceId);if(p.organizationId!==o.organizationId||r.organizationId!==o.organizationId||!staffAtLocation(d,p,o.locationId)||!resourceAtLocation(d,r,o.locationId))reject('FORBIDDEN','Darbuotojas ar resursas iš kitos organizacijos.',403);return {practitionerId:p.id,resourceId:r.id,priceMinor:x.priceMinor==null?priceMinor:int(x.priceMinor,0,100000),durationMin:x.durationMin==null?durationMin:int(x.durationMin,15,480)};});
+  const phases=normalizePhases(v.phases,durationMin);
+  const staffOptions=v.staffOptions.map(x=>{const p=find(d,'practitioners',x.practitionerId),r=find(d,'resources',x.resourceId);if(p.organizationId!==o.organizationId||r.organizationId!==o.organizationId||!staffAtLocation(d,p,o.locationId)||!resourceAtLocation(d,r,o.locationId))reject('FORBIDDEN','Darbuotojas ar resursas iš kitos organizacijos.',403);const duration=x.durationMin==null?durationMin:int(x.durationMin,15,480),timing=normalizePhases(x.phases?.length?x.phases:phases,duration);return {practitionerId:p.id,resourceId:r.id,priceMinor:x.priceMinor==null?priceMinor:int(x.priceMinor,0,100000),durationMin:duration,...(x.phases?.length?{phases:timing}:{})};});
   if(new Set(staffOptions.map(x=>x.practitionerId)).size!==staffOptions.length)reject('INVALID_INPUT','Darbuotojai dubliuojasi.');
   const addons=(v.addons||[]).map(a=>({id:txt(a.id),label:txt(a.label),priceMinor:int(a.priceMinor,0,100000),durationMin:int(a.durationMin,0,240),groupId:a.groupId?txt(a.groupId):null}));
   if(addons.length>12||new Set(addons.map(a=>a.id)).size!==addons.length)reject('INVALID_INPUT','Patikrinkite priedų sąrašą.');
@@ -30,7 +32,7 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
   for(const [key,min,max] of [['fromMin',0,1438],['toMin',1,1439],['minLeadTimeMin',0,43200],['maxAdvanceDays',1,30]])if(rules[key]!==undefined)availabilityRules[key]=int(rules[key],min,max);
   if((availabilityRules.fromMin??0)>=(availabilityRules.toMin??1439))reject('INVALID_INPUT','Paslaugos valandų pradžia turi būti anksčiau už pabaigą.');
   const attributes={};for(const [key,value] of Object.entries(v.attributes||{})){if(!['hairLength','technique','bodyArea','audience','level'].includes(key))reject('INVALID_INPUT','Nežinomas varianto požymis.');attributes[key]=txt(value,80);}
-  return {id,label,priceMinor,durationMin,bufferBeforeMin:int(v.bufferBeforeMin??0,0,120),bufferAfterMin:int(v.bufferAfterMin??0,0,120),staffOptions,addons,addonGroups,active:v.active!==false,attributes,availabilityRules};
+  return {id,label,priceMinor,durationMin,bufferBeforeMin:int(v.bufferBeforeMin??0,0,120),bufferAfterMin:int(v.bufferAfterMin??0,0,120),staffOptions,phases,addons,addonGroups,active:v.active!==false,attributes,availabilityRules};
  };
  const checked=(d,o)=>{const n=node(d,o.taxonomyServiceId);if(!publicLocation(d,o.locationId))reject('LOCATION_UNPUBLISHED','Pirmiausia pateikite veiklos vietą peržiūrai.');if(o.published&&o.published.locationId!==o.locationId&&d.bookings.some(b=>b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()&&d.services.some(s=>s.offerId===o.id&&bookingUses(b,'providerServiceId',s.id))))reject('LOCATION_CONFLICT','Pirmiau perkelkite arba atšaukite šio pasiūlymo būsimus vizitus.',409);const active=o.variants.filter(v=>v.active!==false);if(!active.length)reject('OFFER_INCOMPLETE','Pridėkite bent vieną aktyvų variantą.');active.forEach(v=>variant(d,o,v,true));if(!eligible(d,o,n))reject('QUALIFICATION_REQUIRED','Šiai procedūrai ir vietai reikalinga operatoriaus tinkamumo patikra.');return n;};
  return {

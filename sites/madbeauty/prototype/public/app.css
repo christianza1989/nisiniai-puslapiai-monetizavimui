@@ -44,3 +44,8 @@ html:has(dialog[open]){overflow:hidden}
 .visit-segments li { padding-block:8px; }
 .visit-segments p { margin:6px 0; }
 .booking-layout > div { min-width:0; overflow-wrap:anywhere; }
+
+.time-appointment.processing { border:1px dashed var(--muted); background:#f6f4fb; color:var(--ink); }
+.phase-editor { margin-block:12px; }
+.phase-editor .panel { margin-block:10px; }
+.visit-phases li { margin-block:8px; }

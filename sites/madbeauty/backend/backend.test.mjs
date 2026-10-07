@@ -10,7 +10,21 @@ import {createAuth} from './auth.mjs';
 import {createPlatform} from './platform.mjs';
 import {createApiHandler} from './http.mjs';
 import {prepareMedia,readMedia,mediaPublic} from './media.mjs';
+import {parseOfferCsv} from '../prototype/public/offer-csv.mjs';
 const baseTime=Date.parse('2026-10-05T07:00:00Z');
+test('Offer CSV attachment requires the same-origin offer capability, retains IDs and versions, and excludes private customer history',async()=>{
+ const f=fixture();let handler;const server=createServer((req,res)=>handler.handle(req,res));
+ try{
+  const selected=f.api.selectProcedures(f.owner,{organizationId:f.org.id,procedureIds:['kirpimai-vyru-kirpimas'],version:0,idempotencyKey:'csv-export-fixture'})[0];
+  const offer=f.api.saveOffer(f.owner,{...selected,label:'Export fixture',variants:[{label:'Hair fixture',durationMin:60,priceMinor:2500,staffOptions:[{practitionerId:f.service.practitionerId,resourceId:f.service.resourceId}]}]});
+  const login=user=>{const s=f.auth.session(null),c=f.auth.start(s,user.email,'127.0.0.1');return f.auth.verify(s,c.challengeId,f.store.capture(c.challengeId).code,'127.0.0.1').session.token;};
+  const ownerToken=login(f.owner),otherToken=login(f.customer);await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const origin='http://127.0.0.1:'+server.address().port;handler=createApiHandler(f.store,{origin});
+  const url=origin+'/api/madbeauty/offer-prices.csv?organizationId='+encodeURIComponent(f.org.id),get=(token,extra={})=>fetch(url,{headers:{...(token?{cookie:'madbeauty_sid='+token}:{}),...extra}});
+  assert.equal((await get(null)).status,401);assert.equal((await get(otherToken)).status,403);assert.equal((await get(ownerToken,{origin:'https://foreign.test'})).status,403);assert.equal((await get(ownerToken,{'sec-fetch-site':'cross-site'})).status,403);
+  const response=await get(ownerToken),raw=await response.text();assert.equal(response.status,200);assert.match(response.headers.get('content-disposition'),/^attachment;/);assert.equal(response.headers.get('cache-control'),'no-store');assert.match(response.headers.get('x-robots-tag'),/noindex/);assert.ok(!raw.includes(f.customer.email));
+  const rows=parseOfferCsv(raw);assert.equal(rows.length,2);assert.ok(rows.every(r=>r.offerId===offer.id&&r.version===offer.version));assert.equal(rows[0].priceMinor,2500);assert.equal(rows[0].durationMin,60);
+ }finally{await new Promise(resolve=>server.close(resolve));f.close();}
+});
 function fixture({filename=':memory:'}={}){
   let now=baseTime;const store=openStore({filename,clock:()=>now,secret:'x'.repeat(64)}),auth=createAuth(store),api=createPlatform(store);
   function login(email){const s=auth.session(null),c=auth.start(s,email,'127.0.0.1'),r=auth.verify(s,c.challengeId,store.capture(c.challengeId).code,'127.0.0.1');return r;}

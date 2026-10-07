@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "40e9501",
+  "runtimeSourceCheckpoint": "6a34019",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -88,6 +88,12 @@
       "tests": 157,
       "state": "accepted-isolated-path",
       "remaining": "Physical tenant routing and remaining global operations; full UI matrix and factual activation"
+    },
+    {
+      "name": "keyboard-menu-groups-reviewed-snapshots-and-authenticated-price-csv",
+      "tests": 159,
+      "state": "accepted-isolated-path",
+      "remaining": "Full UI state matrix, physical tenant routing, larger-adapter and factual activation"
     }
   ],
   "tasks": [
@@ -125,7 +131,8 @@
       "id": "D05",
       "title": "Salono grupės ir paslaugų meniu tvarka",
       "phase": "2",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "ACCEPTANCE.md: owner group creation/assignment, two-tab stale409, immutable reviewed group and resubmit; actual native keyboard group focus at320/390/820/1440, taxonomy ID preserved."
     },
     {
       "id": "D06",
@@ -137,7 +144,8 @@
       "id": "D07",
       "title": "CSV importas ir masinis redagavimas",
       "phase": "3",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "ACCEPTANCE.md/API.md: authenticated scoped CSV attachment actual download, invalid header guidance, atomic two-row price draft30→31/reload, stale CSV409, public30 until explicit reviewed publish31; Node scoped/version/idempotency/rollback acceptance."
     },
     {
       "id": "S01",

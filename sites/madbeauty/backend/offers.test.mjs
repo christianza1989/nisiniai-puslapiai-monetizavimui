@@ -85,6 +85,17 @@ test('Required/exclusive addon groups and service rules use full payable duratio
  const old=f.api.workspace(f.owner,f.scope).offers.find(x=>x.id===o.id);fails('INVALID_INPUT',()=>f.api.saveOffer(f.owner,{...old,variants:old.variants.map(v=>({...v,availabilityRules:{unknown:true}}))}));
  assert.equal(f.api.profile(f.org.id).services[0].menuGroupLabel,'Kirpimas ir priežiūra');fails('FORBIDDEN',()=>f.api.saveMenuGroup(f.stranger,{id:group.id,version:group.version,organizationId:f.org.id,label:'Hijack'}));
  }finally{f.store.close();}});
+test('A pending menu captures the displayed group; group changes require resubmission and published snapshots stay bounded',()=>{const f=fixture();try{
+ let group=f.api.saveMenuGroup(f.owner,{organizationId:f.org.id,label:'Kirpimai',rank:4}),o=f.make();
+ o=f.api.saveOffer(f.owner,{...o,menuGroupId:group.id,rank:2});o=f.api.submitOffer(f.owner,{id:o.id,version:o.version});
+ assert.equal(o.menuGroupSnapshot.label,'Kirpimai');assert.equal(o.menuGroupSnapshot.rank,4);
+ group=f.api.saveMenuGroup(f.owner,{...group,label:'Kita grupė',rank:7});
+ fails('VERSION_CONFLICT',()=>f.api.moderateOffer(f.operator,{id:o.id,version:o.version,state:'approved'}));assert.equal(f.store.recordById('offers',o.id).state,'pending');
+ o=f.api.submitOffer(f.owner,{id:o.id,version:o.version});o=f.api.moderateOffer(f.operator,{id:o.id,version:o.version,state:'approved'});f.approveOrg();
+ assert.equal(f.api.profile(f.org.id).services[0].menuGroupLabel,'Kita grupė');assert.equal(f.api.profile(f.org.id).services[0].menuGroupRank,7);assert.equal(o.taxonomyServiceId,hair);
+ for(let i=0;i<15;i++){o=f.api.saveOffer(f.owner,{...o,label:'Kirpimas '+i});o=f.publish(o);assert.equal(o.published.published,undefined);assert.ok(JSON.stringify(o).length<12000);}
+ f.api.saveMenuGroup(f.owner,{...group,label:'Privatus grupės pakeitimas'});assert.equal(f.api.profile(f.org.id).services[0].menuGroupLabel,'Kita grupė');
+ }finally{f.store.close();}});
 test('Procedure selection persists private unpriced drafts, strict scope, versions and idempotency',()=>{const f=fixture();try{
  assert.equal(f.api.catalog().length,0);assert.equal(f.api.workspace(f.owner,f.scope).offers.length,2);assert.equal(f.api.workspace(f.owner,f.scope).selectionVersion,1);
  const same=f.api.selectProcedures(f.owner,{organizationId:f.org.id,procedureIds:[nails,hair],version:0,idempotencyKey:'initial-selection'});assert.deepEqual(same.map(o=>o.id).sort(),f.selected.map(o=>o.id).sort());

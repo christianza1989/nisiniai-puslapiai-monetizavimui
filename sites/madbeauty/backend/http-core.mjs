@@ -17,12 +17,17 @@ export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=fa
       if(req.headers.host!==new URL(origin).host)reject('ORIGIN','Netinkamas origin.',403);
       const pathname=new URL(req.url,origin).pathname;
       if(!['GET','POST'].includes(req.method))reject('METHOD','Metodas neleidžiamas.',405);
-      if(req.method==='GET'&&!['/api/madbeauty/session','/api/madbeauty/customer-data','/api/madbeauty/organization-report.csv'].includes(pathname)&&!pathname.startsWith('/api/madbeauty/media/'))reject('NOT_FOUND','Puslapis nerastas.',404);
+      if(req.method==='GET'&&!['/api/madbeauty/session','/api/madbeauty/customer-data','/api/madbeauty/organization-report.csv','/api/madbeauty/offer-prices.csv'].includes(pathname)&&!pathname.startsWith('/api/madbeauty/media/'))reject('NOT_FOUND','Puslapis nerastas.',404);
       const upload=pathname==='/api/madbeauty/upload';
       if(req.method==='POST'&&(req.headers.origin!==origin||!upload&&!String(req.headers['content-type']||'').startsWith('application/json')))reject('ORIGIN','Užklausa neleidžiama.',403);
       let s=auth.session(cookies(req)[cookieName],{create:false});
       if(!s&&pathname==='/api/madbeauty/session'){store.limit('session-ip:'+(req.socket.remoteAddress||'unknown'),60,60);s=auth.session(null);}
       if(!s&&req.method==='POST')reject('CSRF','Sesija pasikeitė. Prisijunkite iš naujo.',403);
+      if(req.method==='GET'&&pathname==='/api/madbeauty/offer-prices.csv'){
+        if(req.headers['sec-fetch-site']==='cross-site'||req.headers.origin&&req.headers.origin!==origin)reject('ORIGIN','Užklausa neleidžiama.',403);
+        const user=auth.requireAccount(s);store.limit('offer-export:'+user.id,20,600);const csv=platform.exportOfferCsv(user,Object.fromEntries(new URL(req.url,origin).searchParams));
+        res.writeHead(200,{'Content-Type':'text/csv; charset=utf-8','Content-Disposition':'attachment; filename="madbeauty-pasiulymu-kainos.csv"','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow','Referrer-Policy':'no-referrer'});res.end(csv);return true;
+      }
       if(req.method==='GET'&&pathname==='/api/madbeauty/organization-report.csv'){
         if(req.headers['sec-fetch-site']==='cross-site'||req.headers.origin&&req.headers.origin!==origin)reject('ORIGIN','Užklausa neleidžiama.',403);
         const user=auth.requireAccount(s),input=Object.fromEntries(new URL(req.url,origin).searchParams),csv=platform.reportCsv(user,input);store.limit('report-export:'+user.id,20,600);

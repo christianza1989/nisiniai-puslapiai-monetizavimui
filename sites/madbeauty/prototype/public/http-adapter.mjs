@@ -14,14 +14,16 @@ export function createHttpAdapter(){
   adapter.authVerify=async(challengeId,code)=>{session=await request('auth/verify',{challengeId,code});adapter.clock=session.clock;adapter.session=session;return session;};
   adapter.logout=async()=>{session=await request('logout',{});adapter.session=session;return session;};
   adapter.demoIdentities=async()=>({organizations:session?.organizations||[],clients:session?.user?[{id:session.user.id,name:session.user.name||session.user.email}]:[]});
+  adapter.taxonomy=()=>rpc('taxonomy');
+  adapter.search=input=>rpc('search',input);
   adapter.catalog=input=>rpc('catalog',input);
   adapter.profile=id=>rpc('profile',{id});
-  adapter.option=(id,addons=[])=>rpc('option',{id,addons});
+  adapter.option=(id,addons=[],practitionerId)=>rpc('option',{id,addons,practitionerId});
   adapter.workspace=scope=>rpc('workspace',scope);
   adapter.availability=input=>rpc('availability',input);
   adapter.hold=candidate=>rpc('hold',candidate);
   adapter.releaseHold=id=>rpc('releaseHold',{id});
   adapter.upload=async(file,{organizationId,alt,rights,usage})=>{const r=await fetch('/api/madbeauty/upload',{method:'POST',credentials:'same-origin',headers:{origin:location.origin,'content-type':file.type,'x-csrf-token':session.csrf,'x-organization-id':organizationId,'x-asset-alt':encodeURIComponent(alt),'x-asset-rights':encodeURIComponent(rights),'x-asset-usage':usage},body:file});const value=await r.json();if(!r.ok){const e=Error(value.error?.message||'Vaizdo įkelti nepavyko.');e.code=value.error?.code;throw e;}return value.result;};
-  for(const method of ['confirm','changeBooking','cancelBooking','manualVisit','createInquiry','edit','submitRevision','moderate','moderateReview','message','review','report','preferences','metrics','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','retryOutbox','completeBooking','favorite'])adapter[method]=input=>rpc(method,input);
+  for(const method of ['bulkOfferPrices','saveMenuGroup','selectProcedures','saveOffer','submitOffer','moderateOffer','archiveOffer','requestProcedure','moderateProcedure','changeTaxonomy','assessQualification','migrateCatalogue','confirm','changeBooking','cancelBooking','manualVisit','createInquiry','edit','submitRevision','moderate','moderateReview','message','review','report','preferences','metrics','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','retryOutbox','completeBooking','favorite'])adapter[method]=input=>rpc(method,input);
   return adapter;
 }

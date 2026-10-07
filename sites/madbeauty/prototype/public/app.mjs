@@ -1,3 +1,5 @@
+import {searchSelect,bindSearchSelects} from './search-select.mjs';
+import {filterProcedures} from './offer-editor.mjs';
 import {createPlatformAdapter as createAdapter} from '/platform-adapter.mjs';
 import {makeClock,localInstant,TAXONOMY} from '/demo-model.mjs';
 import {SCENARIOS} from '/config.mjs';
@@ -17,7 +19,7 @@ const $=s=>document.querySelector(s),boot=await fetch('/boot.json').then(r=>r.js
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:''},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
 let state=initial();
 try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':ui'));if(saved?.version===1&&saved.boot===boot.now)state={...state,...saved.state};}catch{}
-const ctx={state,media:new Map(),taxonomy:TAXONOMY,candidates:new Map(),minute,render,navigate,toast,openDialog,closeDialog,saveUI,selectRole,beginBooking,clearDrafts,
+const ctx={searchSelect,state,media:new Map(),taxonomy:TAXONOMY,candidates:new Map(),minute,render,navigate,toast,openDialog,closeDialog,saveUI,selectRole,beginBooking,clearDrafts,
   dayLabel:i=>date(localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720)),
   dayInstant:i=>localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720),
   dayKey:i=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720))),
@@ -53,7 +55,7 @@ async function render(){
   try{
     if(ctx.startupError)throw ctx.startupError;
     const privatePath=/^\/(meistrui|operatorius|paskyra)(\/|$)/.test(path),jobs=[];
-    if(ctx.adapter.mode==='real')jobs.push(ctx.realAdapter.refreshSession());
+    if(ctx.adapter.mode==='real'){jobs.push(ctx.realAdapter.refreshSession());jobs.push(ctx.realAdapter.taxonomy().then(t=>{ctx.catalogueNodes=t.nodes;ctx.taxonomyVersion=t.version;}));}
     if(!privatePath||path==='/meistrui/galerija'||path==='/paskyra/issaugoti')jobs.push(ctx.ensureMedia());
     if(!privatePath||path==='/operatorius/turinys')jobs.push(fetch('/content.json').then(r=>{if(!r.ok)throw userError('Turinio atnaujinti nepavyko.');return r.json();}).then(data=>{ctx.content=data;setContentData(data);}));
     await Promise.all(jobs);
@@ -67,7 +69,7 @@ async function render(){
     else html=await publicView(ctx,path);
     if(!html)html=`<div class="page container"><h1 class="page-title">Puslapis nerastas</h1><p>Nuoroda neteisinga, profilis nepatvirtintas arba turinys dar nepaskelbtas.</p>${link('/','Grįžti į pradžią')}</div>`;
   }catch(e){html=`<div class="page container"><h1>Šio vaizdo atidaryti nepavyko</h1>${errorHTML(e)}${link('/paskyra','Atidaryti paskyrą','button accent')} ${btn('reload-view','Bandyti dar kartą','','button outline')}</div>`;}
-  if(id!==renderId)return;chrome();$('#main').innerHTML=html;$('#main').setAttribute('aria-busy','false');restoreDrafts(ctx,$('#main'));
+  if(id!==renderId)return;chrome();$('#main').innerHTML=html;$('#main').setAttribute('aria-busy','false');restoreDrafts(ctx,$('#main'));bindSearchSelects($('#main'));
   document.querySelectorAll('#header a[href]').forEach(a=>{if(a.pathname===path)a.setAttribute('aria-current','page');});
   const expiry=$('#hold-expiry');if(expiry){const started=Date.now(),serverNow=Date.parse(ctx.adapter.clock.now),end=Date.parse(expiry.dataset.expires);const tick=()=>{const seconds=Math.max(0,Math.ceil((end-serverNow-(Date.now()-started))/1000));expiry.textContent=seconds?'Laikas tau laikomas '+Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0')+'.':'Laiko palaikymas baigėsi. Pasirink laiką iš naujo.';if(!seconds){clearInterval(ctx.holdTimer);expiry.setAttribute('role','alert');const confirm=$('[data-action="confirm-booking"]');if(confirm)confirm.disabled=true;$('#hold-recovery')?.removeAttribute('hidden');}};tick();ctx.holdTimer=setInterval(tick,1000);}
   const contents=$('#main .article-aside details');if(contents)contents.open=matchMedia('(min-width:761px)').matches;
@@ -86,7 +88,7 @@ async function selectRole(role,organizationId='demo-org-0',clientId='demo-client
 async function beginBooking(id,candidate=null){
   if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);
   const rows=await ctx.adapter.catalog(),s=rows.find(s=>s.id===id);if(!s){toast('Paslauga nepasiekiama.');return;}
-  const user=ctx.realAdapter.session?.user;state.booking={serviceId:id,addons:[],candidate,contact:{name:ctx.adapter.mode==='real'?(user?.name||''):'Pavyzdžio klientė',email:ctx.adapter.mode==='real'?(user?.email||''):'demo-guest@example.com'},idempotencyKey:'confirm-'+crypto.randomUUID(),result:null};saveUI();await navigate('/registracija/paslauga');
+  const user=ctx.realAdapter.session?.user;state.booking={serviceId:id,practitionerId:candidate?.practitionerId||s.practitionerId,addons:[],candidate,contact:{name:ctx.adapter.mode==='real'?(user?.name||''):'Pavyzdžio klientė',email:ctx.adapter.mode==='real'?(user?.email||''):'demo-guest@example.com'},idempotencyKey:'confirm-'+crypto.randomUUID(),result:null};saveUI();await navigate('/registracija/paslauga');
 }
 async function commonAction(action,b){
   if(!boot.privatePrototype&&['demo-controls','reset-demo','enable-demo'].includes(action))return true;
@@ -120,7 +122,7 @@ function galleryDialog(){const g=ctx.gallery;openDialog('Galerija · '+(g.index+
 async function commonForm(form,fd){
   if(form.id==='catalogue-city'){const node=activeNode(fd.get('paslauga')),city=fd.get('miestas');if(!node||!isCityId(city))throw userError('Pasirink paslaugą ir miestą.');await navigate('/paslaugos/'+node.id+'/'+city);return true;}
   if(await accountForm(ctx,form,fd))return true;
-  if(['home-search','results-search'].includes(form.id)){const t=ctx.taxonomy.find(t=>t.id===fd.get('paslauga')||t.label.toLocaleLowerCase('lt')===String(fd.get('paslauga')).toLocaleLowerCase('lt'));if(!t)throw userError('Pasirinkite paslaugą iš pasiūlymų.');const [nuo,iki]=String(fd.get('intervalas')).split(',');state.search={...state.search,paslauga:t.id,miestas:fd.get('miestas'),diena:Number(fd.get('diena')),nuo,iki};await navigate('/paieska'+searchHash(state.search));return true;}
+  if(['home-search','results-search'].includes(form.id)){const t=[{id:'all',label:'Visos paslaugos'},...(ctx.catalogueNodes||ctx.taxonomy)].find(t=>t.id===fd.get('paslauga')||t.label.toLocaleLowerCase('lt')===String(fd.get('paslauga')).toLocaleLowerCase('lt'));if(!t||!isCityId(fd.get('miestas')))throw userError('Pasirinkite paslaugą ir miestą iš sąrašo.');const [nuo,iki]=String(fd.get('intervalas')).split(',');state.search={...state.search,paslauga:t.id,miestas:fd.get('miestas'),diena:Number(fd.get('diena')),nuo,iki};await navigate('/paieska'+searchHash(state.search));return true;}
   if(form.id==='filters'){state.search={...state.search,...Object.fromEntries(fd)};await navigate(ctx.path+searchHash(state.search));return true;}
   if(form.id==='guide-cta'){const serviceId=fd.get('paslauga'),city=fd.get('miestas');state.search.paslauga=serviceId;if(city)state.search.miestas=city;await navigate('/paslaugos/'+serviceId+(city?'/'+city+searchHash(state.search):''));return true;}
   if(form.id==='demo-settings'){makeClock(fd.get('clock'));if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);state.enabled=fd.get('enabled')==='on';state.scenario=fd.get('scenario');if(state.clock!==fd.get('clock'))localStorage.removeItem(DEMO_NAMESPACE);state.clock=fd.get('clock');state.booking=null;state.favorites=[];state.session={role:fd.get('fixtureRole')||'guest',organizationId:fd.get('fixtureOrg')||'demo-org-0',clientId:fd.get('fixtureClient')||'demo-client-0'};adapter();closeDialog();const target=state.enabled?({customer:'/paskyra/vizitai',professional:'/meistrui/kalendorius',operator:'/operatorius'})[state.session.role]:null;if(target)await navigate(target);else await render();return true;}
@@ -139,7 +141,7 @@ document.addEventListener('click',async e=>{
   finally{if(b.isConnected)b.disabled=false;if(ctx.actionOpener===b)ctx.actionOpener=null;}
 });
 document.addEventListener('change',async e=>{if(e.target.form?.id==='manual-options'&&e.target.name==='serviceId'){$('#manual-service-summary').innerHTML=manualServiceSummary(ctx,e.target.value);return;}if(!['booking-services','booking-staff'].includes(e.target.form?.id))return;try{await bookingChange(ctx,e.target);}catch(err){toast(err.message);}});
-document.addEventListener('input',e=>{const f=e.target.form;if(f){clearFieldError(e.target);saveDraft(ctx,f);}});
+document.addEventListener('input',e=>{if(e.target.hasAttribute('data-procedure-query'))filterProcedures(e.target);const f=e.target.form;if(f){clearFieldError(e.target);saveDraft(ctx,f);}});
 document.addEventListener('change',e=>{const f=e.target.form;if(f){syncConditionalFields(f);saveDraft(ctx,f);}});
 document.addEventListener('submit',async e=>{const f=e.target;if(!(f instanceof HTMLFormElement))return;e.preventDefault();if(f.getAttribute('aria-busy')==='true'||!validateForm(f))return;const b=e.submitter||f.querySelector('button[type=submit],button:not([type])');if(b?.disabled)return;const label=b?.innerHTML,key=suspendDraft(ctx,f);let success=false;if(b){b.disabled=true;b.textContent='Vykdoma…';}f.setAttribute('aria-busy','true');f.querySelectorAll('.error-box').forEach(x=>x.remove());
   try{const fd=new FormData(f);if(!await commonForm(f,fd)&&!await bookingForm(ctx,f,fd))await workspaceForm(ctx,f,fd);success=true;}

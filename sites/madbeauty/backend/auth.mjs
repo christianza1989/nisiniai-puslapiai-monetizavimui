@@ -38,7 +38,9 @@ export function createAuth(store){
       if(!/^\d{6}$/.test(String(code||''))||!equal(store.hash(c.id+':'+code),c.code_hash))return {error:true};
       db.prepare('UPDATE email_challenges SET consumed=1 WHERE id=?').run(c.id);
       let u=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND email=?').get(siteId,c.email);
-      if(!u){u={id:randomId('account'),email:c.email,name:'',operator:0};db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(u.id,siteId,u.email,u.name,clock());const d=store.read();d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
+      if(!u){u={id:randomId('account'),email:c.email,name:'',operator:0};db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(u.id,siteId,u.email,u.name,clock());}
+      // Imported or administrator-created accounts need the same client identity as new sign-ins.
+      const d=store.read();if(!d.clients.some(x=>x.id===u.id)){d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
       if(store.onVerifiedAccount)u=store.onVerifiedAccount(u);
       db.prepare('DELETE FROM sessions WHERE token_hash=? AND site_id=?').run(s.token_hash,siteId);
       const fresh=session(null);db.prepare('UPDATE sessions SET account_id=? WHERE token_hash=?').run(u.id,fresh.token_hash);fresh.account_id=u.id;

@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+const {build}=await import(pathToFileURL(path.resolve(import.meta.dirname,'../../../../dovanos-memorycasting/node_modules/esbuild/lib/main.js')));
+const bundle=await build({entryPoints:[path.join(import.meta.dirname,'public/booking-ui.mjs')],write:false,bundle:true,format:'esm',platform:'node',plugins:[{name:'public-module-roots',setup(b){b.onResolve({filter:/^\/(cities|taxonomy|seo-contract)\.mjs$/},a=>({path:path.join(import.meta.dirname,a.path.slice(1))}));}}]});
+const {bookingView,bookingForm}=await import('data:text/javascript;base64,'+Buffer.from(bundle.outputFiles[0].text).toString('base64'));
+test('Booking variant selection has one checked authoritative service ID; staff choice keeps that ID and applies its own quote',async()=>{
+ const rows=[{id:'variant-a',label:'A',organizationId:'org',practitionerId:'p1',practitionerName:'One',organizationName:'Test',city:'Vilnius',durationMin:60,priceMinor:2500,bufferBeforeMin:0,bufferAfterMin:0,addons:[],staffOptions:[{practitionerId:'p1',resourceId:'r1',name:'One',priceMinor:2500,durationMin:60},{practitionerId:'p2',resourceId:'r2',name:'Two',priceMinor:3500,durationMin:90}]},{id:'variant-b',label:'B',organizationId:'org',practitionerId:'p1',durationMin:30,priceMinor:1500,addons:[]}];
+ const profile={kind:'salon',services:rows,practitioners:[{id:'p1',name:'One'},{id:'p2',name:'Two'}]},quote=(id,addons,p)=>{const s=rows.find(x=>x.id===id),x=s.staffOptions?.find(x=>x.practitionerId===p)||s;return {priceMinor:x.priceMinor,durationMin:x.durationMin,addons:[]};},ctx={state:{booking:{serviceId:'variant-a',practitionerId:'p1',addons:[],contact:{}},search:{}},adapter:{mode:'real',clock:{now:'2026-10-07T07:00:00Z'},catalog:async()=>rows,profile:async()=>profile,option:async(...args)=>quote(...args)},saveUI(){},navigate:async p=>{ctx.path=p;}};
+ const first=await bookingView(ctx,'/registracija/paslauga'),radios=[...first.matchAll(/<input type="radio"[^>]*>/g)].map(x=>x[0]);assert.equal(radios.length,2);assert.equal(radios.filter(x=>/ checked/.test(x)).length,1);assert.ok(radios[0].includes('name="serviceId" value="variant-a"'));assert.ok(!radios.some(x=>x.includes('staffChoice')));
+ const fd=new FormData();fd.set('serviceId','variant-a');await bookingForm(ctx,{id:'booking-services'},fd);assert.equal(ctx.path,'/registracija/meistras');const staff=await bookingView(ctx,ctx.path);assert.ok(staff.includes('value="variant-a|p2"'));assert.match(staff,/90 min\. · 35,00/);
+ const choice=new FormData();choice.set('staffChoice','variant-a|p2');await bookingForm(ctx,{id:'booking-staff'},choice);assert.equal(ctx.state.booking.serviceId,'variant-a');assert.equal(ctx.state.booking.practitionerId,'p2');assert.equal(ctx.path,'/registracija/laikas');
+});

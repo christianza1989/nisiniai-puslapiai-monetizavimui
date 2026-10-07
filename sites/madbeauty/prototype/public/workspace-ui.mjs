@@ -1,3 +1,5 @@
+import {offerQueue,taxonomyAdmin,offerAdminAction,offerAdminForm} from './offer-admin.mjs';
+import {offersView,offerAction,offerForm} from './offer-editor.mjs';
 import {CITY_NAMES} from '/cities.mjs';
 import {esc,icon,link,btn,money,time,date,field,textarea,select,badge,status,hhmm,minute,photo,empty,crumbs,errorHTML,searchHash,userError} from './ui.mjs';
 import {serviceCard} from './public-views.mjs';
@@ -56,6 +58,7 @@ async function professionalView(ctx,path,d){
   else if(part==='laukiantieji'){title='Laukiančiųjų sąrašas';content=`<p>Pasiūlymas nėra rezervacija. Klientas turės pats peržiūrėti ir patvirtinti naują laiką.</p>${list(d.waitlist,w=>`<div class="list-row"><div><strong>${esc(d.clients.find(c=>c.id===w.clientId)?.name||'Klientas')}</strong>${d.clients.find(c=>c.id===w.clientId)?.email?'<p>'+esc(d.clients.find(c=>c.id===w.clientId).email)+'</p>':''}<p>${esc(d.services.find(s=>s.id===w.providerServiceId)?.label||'Paslauga')}</p><p>${esc(w.note||'Pageidauja artimiausio tinkamo laiko.')}</p>${badge(w.state)}</div>${btn('waitlist-status','Peržiūrėti pasiūlymą',`data-id="${w.id}"`,'button outline small')}</div>`)}`;}
   else if(part==='klientai'&&id){const c=d.clients.find(c=>c.id===id);if(!c)return null;title=c.name;content=`<p>${esc(c.email)}</p><h2 style="font-size:26px">Vizitų istorija</h2>${list(d.bookings.filter(b=>b.clientId===id),b=>visitLine(ctx,b))}`;}
   else if(part==='klientai'){title='Tavo klientai';content=`${ctx.adapter.mode==='real'?btn('new-client','Pridėti klientą','','button accent'):''}<p>Rodomi tik pasirinktos organizacijos klientai. </p><form id="client-filter" class="row"><input class="input" name="term" aria-label="Ieškoti kliento" placeholder="Vardas" value="${esc(ctx.state.clientFilter||'')}"><button class="button outline">Ieškoti</button></form>${list(d.clients.filter(c=>!ctx.state.clientFilter||c.name.toLocaleLowerCase('lt').includes(ctx.state.clientFilter.toLocaleLowerCase('lt'))),c=>`<div class="list-row"><div><strong>${esc(c.name)}</strong><p>${esc(c.email)}</p></div>${link('/meistrui/klientai/'+c.id,'Kortelė','button outline small')}</div>`)}`;}
+  else if(part==='paslaugos'&&ctx.adapter.mode==='real'){title='Tavo pasiūlymai ir variantai';content=offersView(ctx,d);}
   else if(part==='paslaugos'){title='Tavo paslaugos';content=`<div class="toolbar"><p>Varianto kaina ir trukmė naudojama profilyje, laikuose ir vizito santraukoje.</p>${ctx.adapter.mode==='real'?btn('new-service','Pridėti paslaugą','','button accent'):''}</div>${list(d.services,s=>`<div class="service-line"><div><h3>${esc(s.label)}</h3><p>${s.durationMin} min. · ${money(s.priceMinor)} · ${esc(d.practitioners.find(p=>p.id===s.practitionerId)?.name)}<br>Priedai: ${s.addons.map(a=>esc(a.label)+' +'+a.durationMin+' min.').join(', ')}</p></div>${btn('edit-service','Redaguoti',`data-id="${s.id}"`,'button outline small')}</div>`)}`;}
   else if(part==='grafikas'){title='Pamainos ir pertraukos';content=`<p>Viešos darbo valandos nėra darbuotojo pamaina. Pakeitimas negali paslėpti esamo vizito.</p>${d.schedules.map(s=>`<div class="list-row"><div><strong>${esc(d.practitioners.find(p=>p.id===s.practitionerId)?.name)}</strong><p>${hhmm(s.startMin)}–${hhmm(s.endMin)} · pertrauka ${hhmm(s.breakStartMin)}–${hhmm(s.breakEndMin)}${s.closedDate?'<br>Uždarymas: '+esc(s.closedDate):s.closedDay!=null?'<br>Uždarymas: '+ctx.dayLabel(s.closedDay):''}</p></div>${btn('edit-schedule','Keisti pamainą',`data-id="${s.id}"`,'button outline small')}</div>`).join('')}`;}
   else if(part==='resursai'){title='Kabinetai ir įranga';content=`${ctx.adapter.mode==='real'?btn('new-resource','Pridėti darbo vietą','','button accent'):''}<p>Vienas procedūros resursas negali būti skiriamas dviem persidengiantiems vizitams.</p>${d.resources.map(r=>`<div class="list-row"><div><strong>${esc(r.label)}</strong><p>${r.active?'Prieinamas laiko paieškoje':'Išjungtas laiko paieškoje'}</p></div>${btn('edit-resource','Redaguoti',`data-id="${r.id}"`,'button outline small')}</div>`).join('')}`;}
@@ -88,7 +91,7 @@ async function operatorView(ctx,path,d){
   else if(part==='turinys'){title='Gidai ir susiję puslapiai';content=`<p>Patvirtinti gidai ir jų veikiantys paslaugų ryšiai.</p>${list(guides,g=>`<div class="list-row"><div><strong>${esc(g.title)}</strong><p>${g.links.map(l=>link(l.href,l.label,'link')).join(' · ')}<br>Numatyta publikavimo data: ${date(g.dates.published)}</p><span class="pill">Patvirtinta versija</span></div>${link('/gidai/'+g.slug,'Peržiūrėti','button outline small')}</div>`,'Patvirtintų ir paskelbtų gidų dar nėra. Jų versijos valdomos turinio studijoje.',link('/redakcija','Peržiūrėti redakcinę tvarką','button outline'))}`;}
   else if(part==='rodikliai'){title='Madbeauty matavimas';const m=await ctx.adapter.metrics({scope:ctx.state.session});content=`<div class="table-wrap"><table><thead><tr><th>Rodiklis</th><th>Būsena</th></tr></thead><tbody><tr><td>Platformos įvykiai</td><td>${m.events??m.demoEvents}</td></tr><tr><td>Tikras srautas</td><td>Nematuota</td></tr><tr><td>Tikros tinkamos užklausos</td><td>Nematuota</td></tr><tr><td>Atlikti vizitai</td><td>Neįrodyta</td></tr></tbody></table></div><p style="margin-top:24px">Testinių duomenų rodikliai atskiriami nuo klientų paklausos.</p>`;}
   else return null;
-  return shell(ctx,title,content,'operator');
+  if(ctx.adapter.mode==='real'){if(part==='')content=offerQueue(ctx,d)+content;if(part==='katalogas')content+=taxonomyAdmin(ctx,d);}return shell(ctx,title,content,'operator');
 }
 
 const bookingById=(ctx,id)=>ctx.workspace.bookings.find(b=>b.id===id);
@@ -101,6 +104,7 @@ async function rescheduleDialog(ctx,b,selection=null){
 }
 function messageDialog(ctx,b){ctx.dialogBooking=b;const rows=ctx.workspace.messages.filter(m=>m.bookingId===b.id);ctx.openDialog('Pokalbis apie vizitą',`<p>${date(b.startAt)} · ${time(b.startAt)}. Pokalbis susietas su šiuo vizitu.</p>${rows.map(m=>`<div class="list-row"><div><strong>${esc(m.sender)} · ${time(m.createdAt)}</strong><p>${esc(m.text)}</p></div></div>`).join('')||'<p>Žinučių dar nėra.</p>'}<form id="message-form">${textarea('Žinutė','text','','required maxlength="600"')}<button class="button accent">Išsaugoti žinutę</button></form>`);}
 export async function workspaceAction(ctx,action,button){
+  if(await offerAdminAction(ctx,action,button)||await offerAction(ctx,action,button))return true;
   const id=button.dataset.id,d=ctx.workspace,scope=ctx.state.session;
   if(await calendarAction(ctx,action,button))return true;
   if(action==='sandbox-entry'&&ctx.adapter.mode==='demo'){const role=button.dataset.role;await ctx.selectRole(role,scope.organizationId||'demo-org-0',scope.clientId||'demo-client-0');return true;}
@@ -138,6 +142,7 @@ export async function workspaceAction(ctx,action,button){
   return false;
 }
 export async function workspaceForm(ctx,form,fd){
+  if(await offerAdminForm(ctx,form,fd)||await offerForm(ctx,form,fd))return true;
   const scope=ctx.state.session,d=ctx.workspace;
   if(await calendarForm(ctx,form,fd))return true;
   if(form.id==='new-client'){await ctx.adapter.createClient({organizationId:scope.organizationId,name:fd.get('name'),email:fd.get('email')});ctx.closeDialog();ctx.toast('Klientas įtrauktas į tavo sąrašą.');await ctx.navigate('/meistrui/klientai');return true;}

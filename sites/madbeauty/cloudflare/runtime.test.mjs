@@ -11,6 +11,29 @@ const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/li
 const {Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
 const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}});
 const script=bundle.outputFiles[0].text,origin='https://madbeauty.test';
+
+test('Workers upgrade: private multi-selection → reviewed multi-staff offer → interval search → atomic booking → same IDs after restart',async()=>{
+ const f=await fixture();try{
+  const owner=f.browser(),operator=f.browser(),client=f.browser(),other=f.browser();
+  await owner.login('upgrade-provider@example.com');await operator.login('operator@example.com');await client.login('upgrade-client@example.com');await other.login('upgrade-other@example.com');
+  const rpc=async(b,method,input)=>{const r=await b.rpc(method,input);assert.equal(r.status,200,method+': '+JSON.stringify(r.value));return r.value.result;};
+  const org=await rpc(owner,'createOrganization',{name:'Workers upgrade fixture',bio:'Isolated provider acceptance.',kind:'salon',city:'Vilnius'}),scope={role:'professional',organizationId:org.id},w=await rpc(owner,'workspace',scope);
+  const p2=await rpc(owner,'createStaff',{organizationId:org.id,name:'Second fixture staff'}),r2=await rpc(owner,'createResource',{organizationId:org.id,label:'Second fixture resource'});
+  const input={organizationId:org.id,procedureIds:['kirpimai-vyru-kirpimas','lakavimas-gelinis-lakavimas'],version:0,idempotencyKey:'upgrade-selection'};
+  const offers=await rpc(owner,'selectProcedures',input);assert.equal(offers.length,2);assert.deepEqual((await rpc(owner,'selectProcedures',input)).map(o=>o.id),offers.map(o=>o.id));
+  assert.equal((await other.rpc('selectProcedures',{...input,idempotencyKey:'other'})).status,403);assert.equal((await rpc(client,'catalog',{})).length,0);
+  const draft=await rpc(owner,'saveOffer',{id:offers[0].id,version:offers[0].version,label:'Test haircut',variants:[{id:'upgrade-worker-variant',label:'Test variant',priceMinor:2500,durationMin:60,staffOptions:[{practitionerId:w.practitioners[0].id,resourceId:w.resources[0].id},{practitionerId:p2.id,resourceId:r2.id,priceMinor:3500,durationMin:90}]}]});
+  const pending=await rpc(owner,'submitOffer',{id:draft.id,version:draft.version});await rpc(operator,'moderateOffer',{id:draft.id,version:pending.version,state:'approved'});
+  const rev=await rpc(owner,'submitRevision',{scope,name:org.name,bio:org.bio});await rpc(operator,'moderate',{id:rev.id,state:'approved'});
+  const rows=await rpc(client,'catalog',{taxonomyServiceId:'plaukai'});assert.equal(rows.length,1);assert.equal(rows[0].staffOptions.length,2);
+  let candidate;for(let dayOffset=1;dayOffset<8;dayOffset++){const rows=await rpc(client,'search',{taxonomyServiceId:'plaukai',city:'Vilnius',practitionerId:p2.id,dayOffset,from:1020,to:1200});candidate=rows[0]?.availability.slots[0];if(candidate)break;}
+  assert.ok(candidate);assert.equal(candidate.practitionerId,p2.id);assert.equal(candidate.durationMin,90);assert.equal(candidate.priceMinor,3500);assert.ok(candidate.endAt<=new Date(Date.parse(candidate.startAt)+90*60000).toISOString());
+  const holds=await Promise.all([client.rpc('hold',candidate),other.rpc('hold',candidate)]);assert.deepEqual(holds.map(r=>r.status).sort(),[200,409]);const winner=holds[0].status===200?client:other,h=holds.find(r=>r.status===200).value.result;
+  const booking=await rpc(winner,'confirm',{holdId:h.id,name:'Fixture client',idempotencyKey:'upgrade-confirm'});assert.equal(booking.priceMinor,3500);assert.equal(booking.serviceSnapshot.practitionerName,p2.name);
+  await f.restart();assert.equal((await rpc(winner,'workspace',{role:'customer'})).bookings[0].id,booking.id);assert.equal((await rpc(owner,'workspace',scope)).bookings[0].id,booking.id);
+  const stored=(await rpc(owner,'workspace',scope)).offers.find(o=>o.id===draft.id);await rpc(owner,'archiveOffer',{id:stored.id,version:stored.version});assert.equal((await rpc(client,'catalog',{})).length,0);assert.equal((await rpc(owner,'workspace',scope)).bookings[0].serviceSnapshot.priceMinor,3500);
+ }finally{await f.close();}
+});
 test('Compiled Workers publication boundary excludes future body, links, schema, JSON, discovery and all five uploaded media until exact due time',async()=>{
  const pkg=articleFixture(),article=pkg.pages[1],initial=JSON.parse(await readFile(new URL('../content/initial-release/content-package.json',import.meta.url),'utf8'));
  article.media=initial.pages.find(p=>p.type==='guide').media;assert.equal(article.media.length,5);article.editorial.featuredImageId=article.media[0].id;

@@ -24,6 +24,8 @@
 
 ## Privalomas rezultatas iš pirmos užduoties
 
+Kuriant kiekvieną naują nišą nuo pradžių taikyti [pirmo pilno pristatymo eigą](SKILLS/niche-site-builder/references/first-delivery.md): tikra redakcinė tapatybė/profilis, gidų hub ir puslapių tipai prieš masinį turinį; vieno pilno straipsnio kelio bandymas prieš paketą; bendras `verify-site-completion.mjs` ir auditas su `--require-local` prieš užbaigimo teiginį. Autorius, datos, breadcrumbs, schemas, metadata ir supporting pages nėra papildomi savininko užsakymai. Patikros rezultatas susiejamas su konkrečiu paketu, source ir laiku; vietinis PASS atskiras nuo deployment ir tikro verslo paleidimo.
+
 - Prieš dizainą ir turinį parengtas `sites/<siteId>/BUSINESS.md` pagal [komercinės krypties patikrą](SKILLS/niche-site-builder/references/business-validation.md): konkretus klientas/mokamas rezultatas, pajamų mechanizmo hipotezė, rinkos šaltiniai ir sąžiningas pirmos fazės poreikio užklausos testas. Senas kalendorius nėra sprendimas dėl verslo, redakcinis interesas nėra prekybos/paslaugos paklausa; neišgalvoti vykdymo galimybių. Gidai, dizainas ir matavimas turi palaikyti pasirinktą kryptį.
 
 - Savitas pilnas homepage ir naudingas skaitytojo kelias, ne vien hero demonstracija.

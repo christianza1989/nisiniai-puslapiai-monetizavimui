@@ -11,6 +11,7 @@ git clone https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui.gi
 git clone https://github.com/christianza1989/niche-public-core.git dovanos-memorycasting
 cd nisiniai_puslapiai_monetizavimui
 . ./scripts/activate-workspace.ps1
+node SKILLS/scripts/install-core-skills.mjs
 npm ci --prefix content-studio
 npm --prefix ../dovanos-memorycasting run install:ci
 ```

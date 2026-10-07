@@ -5,6 +5,8 @@ description: Audit and repair a completed phase-one niche SEO website from busin
 
 # Phase-one niche website acceptance
 
+For new-site acceptance follow the builder's [first-delivery checkpoints](../niche-site-builder/references/first-delivery.md). Run `scripts/verify-site-completion.mjs` against the actual approved package and current preview/hosted output; retain its bound `SITE_COMPLETION.json` alongside the audit. Require every applicable local criterion with `score-audit.mjs <audit.json> --require-local`. The reporting-only scorer and `--render-only` checks cannot certify completion. Repair authorized implementation gaps without waiting for a separate owner request for authors, dates, schema or breadcrumbs.
+
 For research-dependent SEO/GEO findings apply [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation/evidence contract](../niche-seo-geo-core/references/studio-integration.md). Check actual locale, dates, raw evidence and missing/stale observations; do not inherit another site's metrics or an old PASS. This skill retains the full A–Z acceptance; a Treg dataset or loaded instruction fingerprint does not certify the site.
 
 Read [the shared project skill contract](../PROJECT_CONTRACT.md) for reconciled helper roles, real contact/source authority and publication/media boundaries. Imported SEO or UX checklists contribute focused evidence; they do not replace this A–Z acceptance or establish readiness independently.

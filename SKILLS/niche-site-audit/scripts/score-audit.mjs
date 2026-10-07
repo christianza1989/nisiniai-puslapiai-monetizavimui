@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 export function catalogFromMarkdown(text) {
   return [...text.matchAll(/^- \[ \] ([A-Z]\d+) \| (local|launch|operations) \| (gate|review) \| (.+)$/gm)]
     .map(([,id,stage,priority,criterion])=>({id,stage,gate:priority==='gate',criterion}));
@@ -27,8 +28,12 @@ export function scoreAudit(audit,catalog) {
     stages:Object.fromEntries(['local','launch','operations'].map(stage=>[stage,summarize(catalog.filter(x=>x.stage===stage))])),
     categories:Object.fromEntries([...new Set(catalog.map(x=>x.id[0]))].map(group=>[group,summarize(catalog.filter(x=>x.id.startsWith(group)))]))};
 }
-if(process.argv[1]===fileURLToPath(import.meta.url)) {
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const catalog=catalogFromMarkdown(await readFile(new URL('../references/checklist.md',import.meta.url),'utf8'));
   const audit=JSON.parse(await readFile(process.argv[2],'utf8'));
-  console.log(JSON.stringify(scoreAudit(audit,catalog),null,2));
+  const result=scoreAudit(audit,catalog);
+  console.log(JSON.stringify(result,null,2));
+  // Reporting remains available for incomplete/historical audits. Completion
+  // requires every applicable local criterion, including review items.
+  if(process.argv.includes('--require-local')&&!result.stages.local.perfect)process.exitCode=1;
 }

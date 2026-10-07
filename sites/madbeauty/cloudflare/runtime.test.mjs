@@ -31,6 +31,10 @@ test('Workers upgrade: private multi-selection â†’ reviewed multi-staff offer â†
   const holds=await Promise.all([client.rpc('hold',candidate),other.rpc('hold',candidate)]);assert.deepEqual(holds.map(r=>r.status).sort(),[200,409]);const winner=holds[0].status===200?client:other,h=holds.find(r=>r.status===200).value.result;
   const booking=await rpc(winner,'confirm',{holdId:h.id,name:'Fixture client',idempotencyKey:'upgrade-confirm'});assert.equal(booking.priceMinor,3500);assert.equal(booking.serviceSnapshot.practitionerName,p2.name);
   await f.restart();assert.equal((await rpc(winner,'workspace',{role:'customer'})).bookings[0].id,booking.id);assert.equal((await rpc(owner,'workspace',scope)).bookings[0].id,booking.id);
+  let membership=await rpc(owner,'grantMembership',{organizationId:org.id,email:'upgrade-other@example.com',role:'practitioner',practitionerId:p2.id,version:0});
+  const assigned=await rpc(other,'workspace',scope);assert.deepEqual(assigned.bookings.map(b=>b.id),[booking.id]);assert.equal(assigned.services[0].priceMinor,3500);assert.equal(assigned.offers.length,0);assert.equal(assigned.memberships.length,0);assert.equal(assigned.practitioners.length,1);
+  assert.equal((await other.rpc('saveOffer',{...draft,label:'Forbidden'})).status,403);assert.equal((await other.rpc('grantMembership',{organizationId:org.id,email:'upgrade-client@example.com',role:'manager',version:0})).status,403);
+  await rpc(owner,'revokeMembership',{id:membership.id,version:membership.version});assert.equal((await other.rpc('workspace',scope)).status,403);assert.equal((await other.send('session')).value.organizations.length,0);
   const stored=(await rpc(owner,'workspace',scope)).offers.find(o=>o.id===draft.id);await rpc(owner,'archiveOffer',{id:stored.id,version:stored.version});assert.equal((await rpc(client,'catalog',{})).length,0);assert.equal((await rpc(owner,'workspace',scope)).bookings[0].serviceSnapshot.priceMinor,3500);
  }finally{await f.close();}
 });
@@ -137,6 +141,12 @@ test('Workers media: real image transform, private original, pending owner acces
   const original=await sharp({create:{width:32,height:48,channels:4,background:{r:180,g:40,b:90,alpha:0.8}}}).png().toBuffer();
   const upload=await owner.upload(original,org.id);assert.equal(upload.status,200,JSON.stringify(upload.value));
   const media=upload.value.result;assert.equal(media.variants.length,1);assert.equal(media.variants[0].width,32);assert.ok(!JSON.stringify(media).includes('originals'));
+  await guest.login('media-team@example.com');let member=(await owner.rpc('grantMembership',{organizationId:org.id,email:'media-team@example.com',role:'manager',version:0})).value.result;
+  assert.equal((await guest.image(media.variants[0].file)).status,200);
+  const revoke=await owner.rpc('revokeMembership',{id:member.id,version:member.version});assert.equal(revoke.status,200);assert.equal((await guest.image(media.variants[0].file)).status,404);
+  member=(await owner.rpc('grantMembership',{organizationId:org.id,email:'media-team@example.com',role:'reception',version:revoke.value.result.version})).value.result;
+  assert.equal((await guest.upload(original,org.id)).status,403);assert.equal((await guest.image(media.variants[0].file)).status,404);
+  const reception=(await guest.rpc('workspace',{role:'professional',organizationId:org.id})).value.result;assert.equal(reception.media.length,0);assert.ok(!JSON.stringify(reception).includes('originals/'));assert.equal(reception.organizations[0].draftGallery,undefined);
   const image=await owner.image(media.variants[0].file);assert.equal(image.status,200);assert.equal(image.headers.get('content-type'),'image/webp');assert.ok((await image.arrayBuffer()).byteLength>10);
   const exif=await sharp({create:{width:32,height:48,channels:3,background:'#ba3456'}}).jpeg().withMetadata({orientation:6}).toBuffer();
   const rotated=await owner.upload(exif,org.id,'image/jpeg');assert.equal(rotated.status,200,JSON.stringify(rotated.value));

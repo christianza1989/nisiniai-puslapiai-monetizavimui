@@ -1,6 +1,6 @@
 import {localInstant,makeClock,visitFits} from '../prototype/demo-model.mjs';
 import {reject} from './primitives.mjs';
-import {taxonomyNode} from '../prototype/taxonomy.mjs';
+import {serviceEligible} from './catalogue-state.mjs';
 export const plus=(iso,min)=>new Date(Date.parse(iso)+min*60000).toISOString();
 export const overlaps=(a,b,c,d)=>Date.parse(a)<Date.parse(d)&&Date.parse(c)<Date.parse(b);
 export const find=(d,table,id)=>{const r=d[table]?.find(x=>x.id===id);if(!r)reject('NOT_FOUND','Įrašas nerastas.',404);return r;};
@@ -33,11 +33,9 @@ export function availability(d,input,now,{ignoreBookingId=null,ignoreHoldId=null
     return {...results[0],slots,state:slots.length?'current':results.some(x=>x.state==='no-slots')?'no-slots':'unavailable',priceFromMinor:staff.length?Math.min(...staff.map(x=>x.priceMinor)):null,staffOptions:staff};
   }
   if(input.practitionerId&&input.practitionerId!==s.practitionerId)reject('INVALID_INPUT','Šis meistras neatlieka pasirinkto varianto.');
-  const n=taxonomyNode(s.taxonomyServiceId),archived=(d.taxonomyChanges||[]).filter(c=>c.nodeId===n?.id).reduce((a,c)=>({...a,...c.values}),{}).archived;
-  const permitted=!s.staffOptions||!n?.reviewRequired||(d.qualifications||[]).some(q=>q.organizationId===s.organizationId&&q.locationId===s.locationId&&q.taxonomyNodeId===n.id&&q.state==='approved'&&Date.parse(q.expiresAt)>now);
   const o=find(d,'organizations',s.organizationId),p=find(d,'practitioners',s.practitionerId),r=find(d,'resources',s.resourceId),schedule=d.schedules.find(x=>x.practitionerId===p.id);
   const calc=option(s,addons),meta={source:'madbeauty-server',asOf:clock.now,expiresAt:plus(clock.now,5),serviceVersion:s.version,scheduleVersion:schedule?.version||0,...calc};
-  if((!internal&&!o.approved)||!s.active||!r.active||!p.active||!schedule||archived||!permitted||s.bookingMode&&s.bookingMode!=='instant')return {state:'unavailable',slots:[],...meta};
+  if((!internal&&!o.approved)||!s.active||!r.active||!p.active||!schedule||!serviceEligible(d,s,now)||s.bookingMode&&s.bookingMode!=='instant')return {state:'unavailable',slots:[],...meta};
   const dateKey=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(localInstant(clock,dayOffset,720)));
   const rules=s.availabilityRules||{};
   if(schedule.closedDate===dateKey||dayOffset>(rules.maxAdvanceDays??30))return {state:'no-slots',slots:[],...meta};

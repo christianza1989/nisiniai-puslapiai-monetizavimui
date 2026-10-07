@@ -17,3 +17,16 @@ Rastos ir pataisytos: paslaugos varianto radio buvo sutapatintas su darbuotojo r
 Preview naudoja exact reviewed V2 paketą `b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5`; paleidimas reikalauja path ir SHA. Abiejų būsimų straipsnių `publishAt=2026-10-13T07:00:00Z`, media ir discovery vartai išlieka. Nė vienas fixture profilis ar jo local target nėra realios pasiūlos / indexEligible įrodymas. Istoriniai receipts nepakeisti.
 
 Toliau: užbaigti katalogo administravimą ir visų naujų formų UI/stale/empty/conflict priėmimą; įgyvendinti likusius plano 0–3 modulius, saugojimo modelį ir gates. Išorinių pilotų, mokėjimų, kalendorių prieigų bei jautrių anketų faktai neįrašomi kaip turimi.
+
+
+## Antras kontrolinis taškas — komandos prieigos, katalogo administravimas ir V2 schema
+
+106/106 Madbeauty regresijų PASS (`evidence/regression-6.log`) su suderintu companion core63cfd8c (`MB_CORE_ROOT`), 52/52 bendro core bandymų PASS. Workers actual HTTP tikrina priskirto meistro apribojimą, kainų/rolių mutacijų403, atšauktą prieigą ir pending R2 vaizdų404 bei upload403; patvirtinto vizito ID išlieka po Miniflare restart. Naujos procedūros papildymas, kvalifikacijos vartas, archyvavimas/sinonimai/atkūrimas ir neaktyvus nepilnas variantas turi serverinius neigiamus bandymus.
+
+Naršyklėje: po own server restart klientui rodoma ta pati `booking_8739674d-ed65-4134-8886-080882f8fc66` rezervacija, apriboto meistro kalendoriuje rodomas tas pats vizitas, šoninis meniu neberodo pasiūlymų/prieigų/profilio. Tiesioginis `/meistrui/prieigos` kelias rodo nepriskirtos prieigos ekraną. Savininko grant ir edit dialogas patikrinti1280/390; operatoriaus actual add → archive → restore procedūros ciklas patikrintas, mobile restore dialogas peržiūrėtas. Kvito vaizdai yra own ignored evidence, tik sintetinės paskyros ir profiliai. Visų formų būsenų matrica dar nebaigta.
+
+Katalogo operatorius dabar mato ir archyvuotus įrašus, gali atkurti, pridėti procedūras/grupes, atmesti ar susieti naujo tipo prašymą. Pridėtos procedūros reikalauja tinkamumo įrodymo; naujos kategorijos lieka neaktyvios plėtros sritys. Pavadinimo keitimas išlaiko ID ir atnaujina palikuonių kelią. Senos paslaugos išlieka redaguojamos, meniu grupės turi eilę ir draft pakeitimai netaisomi tiesiogiai public snapshot.
+
+Companion schema PR6 https://github.com/christianza1989/niche-public-core/pull/6 (63cfd8c) yra atskira priklausomybė. Adapteris perduoda faktinį `/gidai` indeksą, schema ir HTML naudoja tas pačias reviewed editorial datas. Nėra išgalvoto Person ar reviewedBy. Node preview schema build atskirtas nuo Workers output, kad parallel tests/peržiūra neperrašytų release artefakto. Kandidato build priima `--core-root`; paired preview/test priima `MB_CORE_ROOT`. Shared pagrindinio checkout neperjungtas, dovanos123 release failai nepakeisti.
+
+Full upgrade ACTIVE; kelių paslaugų vizitas, fazės, vietos, veiklos ataskaitos, saugojimo normalizacija ir likusių UI būsenų priėmimas tęsiami. Šis taškas nėra production upgrade ar viso plano completion.

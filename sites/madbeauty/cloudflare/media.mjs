@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto';
 import {optimizeRasterWithImages} from '../../../content-studio/src/cloudflare-image-pipeline.mjs';
 import {randomId,reject} from '../backend/primitives.mjs';
+import {canManageProfile} from '../backend/permissions.mjs';
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 
 export function createMedia(env){
@@ -23,7 +24,7 @@ export function createMedia(env){
    if(!/^asset_[a-f0-9-]+-\d+\.webp$/.test(file))reject('NOT_FOUND','Vaizdas nerastas.',404);
    const d=store.read(),asset=(d.media||[]).find(a=>a.variants.some(v=>v.storageFile===file));
    if(!asset)reject('NOT_FOUND','Vaizdas nerastas.',404);
-   const p=platform.profile(asset.organizationId),published=p&&(p.gallery.includes(asset.id)||p.avatarImageId===asset.id),owner=user&&d.memberships.some(m=>m.accountId===user.id&&m.organizationId===asset.organizationId);
+   const p=platform.profile(asset.organizationId),published=p&&(p.gallery.includes(asset.id)||p.avatarImageId===asset.id),owner=user&&canManageProfile(d,user,asset.organizationId);
    if(!published&&!owner&&!user?.operator)reject('NOT_FOUND','Vaizdas nerastas.',404);
    const data=await env.MEDIA.get('variants/'+file);if(!data)reject('NOT_FOUND','Vaizdas nerastas.',404);return data.arrayBuffer();
   },

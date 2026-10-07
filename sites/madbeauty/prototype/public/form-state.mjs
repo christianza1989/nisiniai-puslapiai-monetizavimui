@@ -7,7 +7,7 @@ export function draftKey(ctx,form){
  if(!supported.has(form.id))return null;
  const user=ctx.realAdapter.session?.user?.id||'guest',org=ctx.state.session.organizationId||'';
  const edit=ctx.editing?.entity;
- const revision=form.id==='offer-editor'?ctx.offerDraft?.id+':'+ctx.offerDraft?.version:form.id==='procedure-selection'?ctx.workspace?.selectionVersion:form.id==='booking-contact'?ctx.state.booking?.hold?.id||ctx.state.booking?.serviceId:form.id==='onboarding'?ctx.state.onboardingStep:form.id==='profile-revision'?ctx.workspace?.organizations[0]?.version:form.id==='customer-profile'?ctx.workspace?.client?.version:
+ const revision=form.id==='menu-group'?ctx.editingMenuGroup?.id+':'+ctx.editingMenuGroup?.version:form.id==='offer-editor'?ctx.offerDraft?.id+':'+ctx.offerDraft?.version:form.id==='procedure-selection'?ctx.workspace?.selectionVersion:form.id==='booking-contact'?ctx.state.booking?.hold?.id||ctx.state.booking?.serviceId:form.id==='onboarding'?ctx.state.onboardingStep:form.id==='profile-revision'?ctx.workspace?.organizations[0]?.version:form.id==='customer-profile'?ctx.workspace?.client?.version:
  ['service-editor','schedule-editor','resource-editor','team-editor','status-editor'].includes(form.id)?edit?.id+':'+edit?.version:
  form.id==='conversation-message'?ctx.state.chatBookingId:['message-form','cancel-visit','review-form'].includes(form.id)?ctx.dialogBooking?.id:
  form.id==='moderation'?ctx.reviewing?.id:form.id==='review-moderation'?ctx.reviewingComment?.id:

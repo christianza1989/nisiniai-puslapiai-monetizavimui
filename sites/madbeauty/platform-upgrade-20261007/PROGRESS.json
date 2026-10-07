@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "status": "active-not-complete",
+  "plan": "../upgrade-plan-20261006/BACKLOG.json",
+  "runtimeSourceCheckpoint": "6945943",
+  "companionSchema": "niche-public-core63cfd8c / PR6",
+  "productionUpgradeDeployed": false,
+  "checkpoints": [
+    {
+      "name": "catalogue-offer-search-single-booking",
+      "tests": 102,
+      "state": "accepted-isolated-path"
+    },
+    {
+      "name": "roles-catalogue-admin-editorial-schema",
+      "tests": 106,
+      "state": "accepted-isolated-path",
+      "remaining": "Full UI state matrix and later plan modules"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "G01",
+      "title": "Aktuali platformos apimtis ir inventorius",
+      "phase": "0",
+      "state": "in-progress"
+    },
+    {
+      "id": "D01",
+      "title": "Hierarchinė taksonomija ir versijavimas",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "D02",
+      "title": "Senų kategorijų ir paslaugų migracija",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "D03",
+      "title": "Meistro kelių paslaugų pasirinkimas",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "D04",
+      "title": "Pasiūlymai, variantai ir keli meistrai",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "D05",
+      "title": "Salono grupės ir paslaugų meniu tvarka",
+      "phase": "2",
+      "state": "in-progress"
+    },
+    {
+      "id": "D06",
+      "title": "Priedų grupės ir pasirinkimo taisyklės",
+      "phase": "2",
+      "state": "in-progress"
+    },
+    {
+      "id": "D07",
+      "title": "CSV importas ir masinis redagavimas",
+      "phase": "3",
+      "state": "in-progress"
+    },
+    {
+      "id": "S01",
+      "title": "Paieškos meniu su kategorijomis ir sinonimais",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "S02",
+      "title": "Miestų ir vietos paieška",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "S03",
+      "title": "Rezultatai pagal tikrą laisvą viso vizito laiką",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "S04",
+      "title": "Salonų ir meistrų atskiri paieškos rezultatai",
+      "phase": "2",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "S05",
+      "title": "Žemėlapis, atstumai ir adresai",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "P01",
+      "title": "Išsamus profilis ir tikrų darbų galerija",
+      "phase": "2",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "B01",
+      "title": "Kelių paslaugų vienas vizitas",
+      "phase": "2",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "B02",
+      "title": "Procedūros fazės ir resursų rezervavimas",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "B03",
+      "title": "Paslaugų prieinamumo taisyklės",
+      "phase": "2",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "B04",
+      "title": "Priminimai prieš vizitą",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "B05",
+      "title": "Automatinis laukiančiųjų pasiūlymas",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "C01",
+      "title": "Kliento paskyra ir pakartotinis vizitas",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "C02",
+      "title": "Klientų kortelės ir duomenų teisės",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "C03",
+      "title": "Anketos ir sutikimų versijos",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "W01",
+      "title": "Darbuotojų prieigos ir kompetencijos",
+      "phase": "3",
+      "state": "in-progress"
+    },
+    {
+      "id": "W02",
+      "title": "Keli adresai ir komandos grafikas",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "W03",
+      "title": "Veiklos rodikliai ir CSV",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "W04",
+      "title": "Kalendorių ir išorinių sistemų integracijos",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "O01",
+      "title": "Taksonomijos administravimas ir naujų paslaugų prašymai",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "O02",
+      "title": "Teikėjo tinkamumas ir dokumentų patikra",
+      "phase": "2",
+      "state": "in-progress"
+    },
+    {
+      "id": "O03",
+      "title": "Skundai ir atsiliepimų priežiūra",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "I01",
+      "title": "Saugojimo migracijos projektas ir operacijų rodikliai",
+      "phase": "1",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "I02",
+      "title": "Katalogo projekcija ir organizacijų izoliacija",
+      "phase": "2",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "I03",
+      "title": "Medijos saugojimas ir apkrova",
+      "phase": "3",
+      "state": "pending-implementation"
+    },
+    {
+      "id": "I04",
+      "title": "Visų svarbių kelių patikros matrica",
+      "phase": "1",
+      "state": "in-progress"
+    },
+    {
+      "id": "E01",
+      "title": "Kategorijų ir miestų SEO bei gidų sąsaja",
+      "phase": "2",
+      "state": "accepted-prior-narrow-release"
+    },
+    {
+      "id": "G02",
+      "title": "Paslaugų teisės, duomenų ir taisyklių matrica",
+      "phase": "0",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "G03",
+      "title": "Realus meistrų pilotas ir produkto rodikliai",
+      "phase": "0",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X01",
+      "title": "Sveikatos, sporto ir gyvūnų plėtiniai",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X02",
+      "title": "Grupės, kursai ir paketai",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X03",
+      "title": "Mokėjimai, avansai ir neatvykimas",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X04",
+      "title": "Dovanų kuponai, lojalumas ir rinkodara",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X05",
+      "title": "Mobilioji patirtis ir pranešimai",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    }
+  ],
+  "next": [
+    "W02 multiple reviewed places and own staff schedules",
+    "S04 professional / salon results and S05 real coordinates",
+    "B01 multi-service visit and B02 phased occupancy",
+    "B04/B05 reminders and waitlist",
+    "I01/I02 storage size and normalization",
+    "Full desktop/mobile error/stale/conflict states"
+  ]
+}

@@ -5,9 +5,8 @@ const copy=x=>structuredClone(x);
 const txt=(v,max=100)=>{if(typeof v!=='string'||!v.trim()||v.trim().length>max)reject('INVALID_INPUT','Patikrinkite pasiūlymo tekstą.');return v.trim();};
 const int=(v,min,max)=>{if(!Number.isInteger(v)||v<min||v>max)reject('INVALID_INPUT','Patikrinkite kainą ir trukmę.');return v;};
 export function offerState(d){for(const k of ['offers','procedureRequests','taxonomyChanges','qualifications','menuGroups'])d[k]||=[];d.selectionVersions||={};}
-export function catalogueTaxonomy(d){const changes=d.taxonomyChanges||[],custom=changes.filter(c=>c.operation==='add').map(c=>c.node);return [...TAXONOMY_NODES,...custom].map(n=>({...n,...changes.filter(c=>c.nodeId===n.id).reduce((a,c)=>({...a,...c.values}),{})}));}
-export function taxonomyProjection(d){return {version:d.taxonomyVersion||TAXONOMY_VERSION,nodes:catalogueTaxonomy(d).filter(n=>!n.archived).map(n=>({...n,enabled:n.scope==='core'}))};}
-export function serviceEligible(d,s,now){const n=catalogueTaxonomy(d).find(n=>n.id===taxonomyNode(s.taxonomyServiceId)?.id);return !n?.archived&&(!s.staffOptions||!n?.reviewRequired||(d.qualifications||[]).some(q=>q.organizationId===s.organizationId&&q.locationId===s.locationId&&q.taxonomyNodeId===n.id&&q.state==='approved'&&Date.parse(q.expiresAt)>now));}
+export {catalogueTaxonomy,taxonomyProjection,serviceEligible} from './catalogue-state.mjs';
+import {catalogueTaxonomy,taxonomyProjection,serviceEligible} from './catalogue-state.mjs';
 export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
  const owned=(d,user,id)=>{const o=find(d,'offers',id);ownOrg(d,user,o.organizationId);return o;};
  const version=(o,v)=>{if(o.version!==v)reject('VERSION_CONFLICT','Pasiūlymas pasikeitė. Atnaujinkite puslapį.',409);};
@@ -31,7 +30,7 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
   const attributes={};for(const [key,value] of Object.entries(v.attributes||{})){if(!['hairLength','technique','bodyArea','audience','level'].includes(key))reject('INVALID_INPUT','Nežinomas varianto požymis.');attributes[key]=txt(value,80);}
   return {id,label,priceMinor,durationMin,bufferBeforeMin:int(v.bufferBeforeMin??0,0,120),bufferAfterMin:int(v.bufferAfterMin??0,0,120),staffOptions,addons,addonGroups,active:v.active!==false,attributes,availabilityRules};
  };
- const checked=(d,o)=>{const n=node(d,o.taxonomyServiceId);if(!o.variants.length)reject('OFFER_INCOMPLETE','Pridėkite bent vieną variantą.');o.variants.forEach(v=>variant(d,o,v,true));if(!eligible(d,o,n))reject('QUALIFICATION_REQUIRED','Šiai procedūrai ir vietai reikalinga operatoriaus tinkamumo patikra.');return n;};
+ const checked=(d,o)=>{const n=node(d,o.taxonomyServiceId);const active=o.variants.filter(v=>v.active!==false);if(!active.length)reject('OFFER_INCOMPLETE','Pridėkite bent vieną aktyvų variantą.');active.forEach(v=>variant(d,o,v,true));if(!eligible(d,o,n))reject('QUALIFICATION_REQUIRED','Šiai procedūrai ir vietai reikalinga operatoriaus tinkamumo patikra.');return n;};
  return {
   taxonomy(){return taxonomyProjection(store.read());},
   selectProcedures(user,input){return mutate(d=>{offerState(d);ownOrg(d,user,input.organizationId);const org=find(d,'organizations',input.organizationId),ids=input.procedureIds;
@@ -56,7 +55,7 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
    const n=checked(d,o),snapshot=copy(o);snapshot.approvedAt=clock().now;snapshot.approvedBy=user.id;
    // Existing service IDs remain the authoritative booking target. Drafts never overwrite them.
    const retained=new Set(snapshot.variants.filter(v=>v.active).map(v=>v.id));for(const s of d.services.filter(s=>s.offerId===o.id&&!retained.has(s.id)))s.active=false;
-   for(const v of snapshot.variants){const old=d.services.find(s=>s.id===v.id),first=v.staffOptions[0],value={...v,id:v.id,offerId:o.id,offerLabel:o.label,description:o.description,menuGroupId:o.menuGroupId||null,menuGroupLabel:o.menuGroupId?find(d,'menuGroups',o.menuGroupId).label:null,rank:o.rank||0,offerVersion:o.version,taxonomyServiceId:n.id,taxonomyVersion:snapshot.taxonomyVersion,organizationId:o.organizationId,locationId:o.locationId,practitionerId:first.practitionerId,resourceId:first.resourceId,currency:'EUR',imageId:n.imageId,bookingMode:o.bookingMode,version:(old?.version||0)+1};if(old)Object.assign(old,value);else d.services.push(value);}
+   for(const v of snapshot.variants.filter(v=>v.active)){const old=d.services.find(s=>s.id===v.id),first=v.staffOptions[0],value={...v,id:v.id,offerId:o.id,offerLabel:o.label,description:o.description,menuGroupId:o.menuGroupId||null,menuGroupLabel:o.menuGroupId?find(d,'menuGroups',o.menuGroupId).label:null,menuGroupRank:o.menuGroupId?find(d,'menuGroups',o.menuGroupId).rank:10000,rank:o.rank||0,offerVersion:o.version,taxonomyServiceId:n.id,taxonomyVersion:snapshot.taxonomyVersion,organizationId:o.organizationId,locationId:o.locationId,practitionerId:first.practitionerId,resourceId:first.resourceId,currency:'EUR',imageId:n.imageId,bookingMode:o.bookingMode,version:(old?.version||0)+1};if(old)Object.assign(old,value);else d.services.push(value);}
    o.published=snapshot;o.state='approved';o.version++;event(d,'offer-approved',o.id);return o;
   });},
   archiveOffer(user,input){return mutate(d=>{offerState(d);const o=owned(d,user,input.id);version(o,input.version);o.state='archived';o.version++;for(const s of d.services.filter(s=>s.offerId===o.id)){s.active=false;s.version++;}event(d,'offer-archived',o.id);return o;});},
@@ -67,12 +66,29 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
    for(const o of modified.values()){o.variants=o.variants.map(v=>variant(d,o,v));o.version++;o.state='draft';event(d,'offer-bulk-draft',o.id);}const result={updated:rows.length,offers:[...modified.values()].map(o=>({id:o.id,version:o.version}))};d.idempotency[key]={fingerprint,result};return result;
   });},
   requestProcedure(user,input){return mutate(d=>{offerState(d);ownOrg(d,user,input.organizationId);if(d.procedureRequests.filter(r=>r.organizationId===input.organizationId&&r.state==='pending').length>=20)reject('LIMIT','Prašymų limitas pasiektas.');const r={id:randomId('procedure-request'),organizationId:input.organizationId,label:txt(input.label),description:txt(input.description,1000),state:'pending',version:1,createdAt:clock().now};d.procedureRequests.push(r);event(d,'procedure-requested',r.id);return r;});},
-  moderateProcedure(user,input){return mutate(d=>{offerState(d);scope(d,user,{role:'operator'});const r=find(d,'procedureRequests',input.id);version(r,input.version);if(r.state!=='pending')reject('VERSION_CONFLICT','Prašymas jau peržiūrėtas.',409);const n=node(d,input.targetId);r.state='resolved';r.targetId=n.id;r.reason=txt(input.reason,500);r.version++;event(d,'procedure-request-resolved',r.id);return r;});},
-  changeTaxonomy(user,input){return mutate(d=>{offerState(d);scope(d,user,{role:'operator'});if(input.version!==(d.taxonomyVersion||TAXONOMY_VERSION))reject('VERSION_CONFLICT','Taksonomijos versija pasikeitė.',409);const nodes=catalogueTaxonomy(d),n=nodes.find(n=>n.id===input.nodeId);if(!n)reject('NOT_FOUND','Procedūra nerasta.',404);
-   if(!['archive','restore','aliases'].includes(input.operation))reject('INVALID_INPUT','Leidžiamas archyvavimas, atkūrimas arba sinonimų redagavimas.');
-   if(input.operation==='archive'&&nodes.some(x=>x.parentId===n.id&&!x.archived))reject('DEPENDENCY_CONFLICT','Pirmiau tvarkykite priklausomas procedūras.',409);
-   if(input.operation==='aliases'&&(!Array.isArray(input.aliases)||input.aliases.length>20))reject('INVALID_INPUT','Patikrinkite sinonimus.');
-   const values=input.operation==='aliases'?{aliases:input.aliases.map(x=>txt(x,80))}:{archived:input.operation==='archive'};d.taxonomyVersion=TAXONOMY_VERSION+'-r'+(d.taxonomyChanges.length+1);d.taxonomyChanges.push({id:randomId('taxonomy-change'),nodeId:n.id,operation:input.operation,values,version:d.taxonomyVersion,actorId:user.id,at:clock().now});event(d,'taxonomy-'+input.operation,n.id);return taxonomyProjection(d);
+  moderateProcedure(user,input){return mutate(d=>{
+   offerState(d);scope(d,user,{role:'operator'});const r=find(d,'procedureRequests',input.id);version(r,input.version);if(r.state!=='pending')reject('VERSION_CONFLICT','Prašymas jau peržiūrėtas.',409);
+   r.reason=txt(input.reason,500);if(input.state==='rejected')r.state='rejected';else{const n=node(d,input.targetId);r.state='resolved';r.targetId=n.id;}r.version++;event(d,'procedure-request-'+r.state,r.id);return r;
+  });},
+  changeTaxonomy(user,input){return mutate(d=>{
+   offerState(d);scope(d,user,{role:'operator'});if(input.version!==(d.taxonomyVersion||TAXONOMY_VERSION))reject('VERSION_CONFLICT','Taksonomijos versija pasikeitė.',409);
+   const nodes=catalogueTaxonomy(d),operations=['add','archive','restore','aliases','update'];if(!operations.includes(input.operation))reject('INVALID_INPUT','Pasirinkite galiojantį katalogo veiksmą.');
+   let n=nodes.find(n=>n.id===input.nodeId),values={};
+   const aliases=()=>{if(!Array.isArray(input.aliases)||input.aliases.length>20)reject('INVALID_INPUT','Patikrinkite sinonimus.');return [...new Set(input.aliases.map(x=>txt(x,80)))];};
+   if(input.operation==='add'){
+    if(typeof input.nodeId!=='string'||! /^[a-z][a-z0-9-]{2,99}$/.test(input.nodeId)||n||taxonomyNode(input.nodeId))reject('INVALID_INPUT','Procedūros ID turi būti unikalus, iš mažųjų lotyniškų raidžių, skaitmenų ir brūkšnelių.');
+    if(!['category','group','treatment'].includes(input.kind))reject('INVALID_INPUT','Pasirinkite kategoriją, grupę arba procedūrą.');
+    const parent=input.kind==='category'?null:nodes.find(n=>n.id===input.parentId&&!n.archived);
+    if(input.kind!=='category'&&(!parent||parent.kind!==({group:'category',treatment:'group'}[input.kind])))reject('INVALID_INPUT','Pasirinkite tinkamą hierarchijos vietą.');
+    if(nodes.length>=600)reject('LIMIT','Katalogo įrašų limitas pasiektas.');
+    n={id:input.nodeId,label:txt(input.label),kind:input.kind,parentId:parent?.id||null,categoryId:parent?.categoryId||input.nodeId,scope:parent?.scope||'extension',reviewRequired:true,rank:int(input.rank??0,0,10000),aliases:aliases(),imageId:parent?.imageId||null};
+   }else{
+    if(!n)reject('NOT_FOUND','Katalogo įrašas nerastas.',404);
+    if(input.operation==='archive'&&nodes.some(x=>x.parentId===n.id&&!x.archived))reject('DEPENDENCY_CONFLICT','Pirmiau tvarkykite priklausomas procedūras.',409);
+    if(input.operation==='restore'&&n.parentId&&nodes.find(x=>x.id===n.parentId)?.archived)reject('DEPENDENCY_CONFLICT','Pirmiau atkurkite aukštesnę katalogo grupę.',409);
+    values=input.operation==='aliases'?{aliases:aliases()}:input.operation==='update'?{label:txt(input.label),rank:int(input.rank??0,0,10000)}:{archived:input.operation==='archive'};
+   }
+   d.taxonomyVersion=TAXONOMY_VERSION+'-r'+(d.taxonomyChanges.length+1);d.taxonomyChanges.push({id:randomId('taxonomy-change'),nodeId:n.id,operation:input.operation,values,...(input.operation==='add'?{node:n}:{}),version:d.taxonomyVersion,actorId:user.id,at:clock().now});event(d,'taxonomy-'+input.operation,n.id);return taxonomyProjection(d);
   });},
   assessQualification(user,input){return mutate(d=>{offerState(d);scope(d,user,{role:'operator'});const n=node(d,input.taxonomyNodeId),l=find(d,'locations',input.locationId);if(l.organizationId!==input.organizationId)reject('FORBIDDEN','Kita vieta.',403);if(!Number.isFinite(Date.parse(input.expiresAt))||Date.parse(input.expiresAt)<=store.clock())reject('INVALID_INPUT','Patikrinkite patikros galiojimo datą.');const q={id:randomId('qualification'),organizationId:l.organizationId,locationId:l.id,taxonomyNodeId:n.id,state:'approved',evidenceReference:txt(input.evidenceReference,300),assessedAt:clock().now,expiresAt:input.expiresAt,actorId:user.id};d.qualifications.push(q);event(d,'qualification-assessed',q.id);return q;});},
   migrateCatalogue(user){return mutate(d=>{offerState(d);scope(d,user,{role:'operator'});let added=0;for(const s of d.services.filter(s=>!s.offerId)){const n=taxonomyNode(s.taxonomyServiceId);if(!n)continue;const v={...copy(s),staffOptions:[{practitionerId:s.practitionerId,resourceId:s.resourceId,priceMinor:s.priceMinor,durationMin:s.durationMin}]};const o={id:'offer-legacy-'+s.id,organizationId:s.organizationId,locationId:s.locationId,taxonomyServiceId:n.id,taxonomyVersion:TAXONOMY_VERSION,label:s.label,description:'',bookingMode:'instant',variants:[v],version:1,state:'draft',migrationState:n.kind==='treatment'?'mapped':'needs-classification',legacyServiceId:s.id};d.offers.push(o);s.offerId=o.id;added++;}event(d,'catalogue-migrated','taxonomy');return {added,services:d.services.length,bookings:d.bookings.length,version:TAXONOMY_VERSION};});},

@@ -6,8 +6,11 @@ Apimtis: plano0–3 etapų vykdomi katalogo, pasiūlymų, variantų, meistrų, p
 
 Pirmas serverinis kelias: kelių kanoninių procedūrų pasirinkimų partija → išsaugomi privatūs pasiūlymų juodraščiai → variantas su tikra kaina, trukme, tinkamais darbuotojais ir resursais → operatoriaus patvirtinimas → kategorijos paieška tik per approved projekciją → visas laisvas intervalas → atominis hold/confirm → abiejų rolių ID po restart. Toliau autonomiškai tęsiami likę įvykdomi plano moduliai; šio kelio PASS neužbaigia viso upgrade.
 
-Rašomi tik own `sites/madbeauty/backend`, `prototype`, `cloudflare`, `acceptance`, šio katalogo dokumentai, own status/WORKSTREAMS. Shared content-studio, companion public-core ir turinio PR10 nekeičiami. Publikuotas V2 paketas ir jo publishAt išlaikomi. Esami klientų, paslaugų, vizitų ID ir snapshots išlieka; realaus production DO duomenys neliečiami bandymų metu.
+Rašomi tik own `sites/madbeauty/backend`, `prototype`, `cloudflare`, `acceptance`, šio katalogo dokumentai, own status/WORKSTREAMS. Shared content-studio ir turinio PR10 nekeičiami. Suderinta siaura bendro schema pataisa izoliuotame companion core PR6 (63cfd8c), aktyvaus shared checkout failai neliečiami. Publikuotas V2 paketas ir jo publishAt išlaikomi. Esami klientų, paslaugų, vizitų ID ir snapshots išlieka; realaus production DO duomenys neliečiami bandymų metu.
 
 Regresijos manifestas: `node --test sites/madbeauty/backend/*.test.mjs sites/madbeauty/prototype/*.test.mjs sites/madbeauty/acceptance/*.test.mjs sites/madbeauty/cloudflare/*.test.mjs`. Actual UI plotis320/390/820/1440, keyboard, normal/empty/error/stale/conflict būsenos pagal taikomumą. Istoriniai92testai ir ankstesni receipts neperrašomi. Synthetic fixtures tik izoliuotame store, jokių fake teikėjų production kataloge.
 
 Kitas rezultatas: pasiūlymų duomenų ir API sutartis, atgal suderinama migracija ir serverinis pilno kelio priėmimas; tada meistro ir kliento sąsajos.
+
+
+Paired source: core PR6 (`ai/madbeauty-editorial-schema-20261007`) ir pagrindinio projekto PR26. Lokalios preview/test komandos prieš paleidimą nustato `MB_CORE_ROOT` į tą companion checkout; Workers build perduodamas `--core-root`. Produkciniai publishAt, approvals ir package SHA išlieka iš tikro immutable release. Naujo 39 puslapių paketo rengimas yra turinio sesijos darbas, jo deploy receipt bus atskiras nuo platformos upgrade.

@@ -17,6 +17,41 @@ function fixture(){const store=openStore({filename:':memory:',secret:'offer-fixt
  return {store,api,owner,client,operator,stranger,org,scope,p1,p2,r1,r2,selected,make,publish,approveOrg};
 }
 const fails=(code,fn)=>assert.throws(fn,e=>e.code===code);
+
+test('Versioned catalogue additions require eligibility, retain archived IDs and resolve or reject provider requests',()=>{const f=fixture();try{
+ const change=input=>f.api.changeTaxonomy(f.operator,{version:f.api.taxonomy().version,...input});
+ fails('FORBIDDEN',()=>f.api.changeTaxonomy(f.owner,{version:f.api.taxonomy().version,operation:'add'}));
+ fails('INVALID_INPUT',()=>change({operation:'add',kind:'treatment',nodeId:'kirpimas',parentId:'kirpimai',label:'Collision',aliases:[]}));
+ const id='kirpimai-izoliuota-procedura';change({operation:'add',kind:'treatment',nodeId:id,parentId:'kirpimai',label:'Izoliuota procedūra',aliases:['Testinis kirpimas']});
+ const n=f.api.taxonomy().nodes.find(n=>n.id===id);assert.equal(n.enabled,true);assert.equal(n.reviewRequired,true);assert.equal(n.path.length,3);
+ const request=f.api.requestProcedure(f.owner,{organizationId:f.org.id,label:'Prašymas',description:'Izoliuotas naujos procedūros prašymas.'});
+ const resolved=f.api.moderateProcedure(f.operator,{id:request.id,version:request.version,targetId:id,reason:'Atitinka papildytą katalogą.'});assert.equal(resolved.targetId,id);
+ fails('VERSION_CONFLICT',()=>f.api.moderateProcedure(f.operator,{id:request.id,version:request.version,targetId:id,reason:'Pakartojimas'}));
+ const rejected=f.api.requestProcedure(f.owner,{organizationId:f.org.id,label:'Atmetamas prašymas',description:'Reikia patikslinti.'});assert.equal(f.api.moderateProcedure(f.operator,{id:rejected.id,version:rejected.version,state:'rejected',reason:'Nepakanka apimties.'}).state,'rejected');
+ const selected=f.api.selectProcedures(f.owner,{organizationId:f.org.id,version:1,idempotencyKey:'custom-selection',procedureIds:[id]});const offer=f.make(selected[0]);
+ fails('QUALIFICATION_REQUIRED',()=>f.api.submitOffer(f.owner,{id:offer.id,version:offer.version}));
+ f.api.assessQualification(f.operator,{organizationId:f.org.id,locationId:f.org.locationId,taxonomyNodeId:id,evidenceReference:'Isolated fixture only',expiresAt:'2027-01-01T00:00:00Z'});f.publish(offer);f.approveOrg();
+ assert.equal(f.api.catalog({taxonomyServiceId:id}).length,1);assert.ok(f.api.availability({providerServiceId:'variant-fixture',dayOffset:1,from:1020,to:1200}).slots.length);
+ const group=f.api.taxonomy().nodes.find(n=>n.id==='kirpimai');change({operation:'update',nodeId:group.id,label:'Kirpimų grupė',rank:2});assert.equal(f.api.taxonomy().nodes.find(n=>n.id===id).path[1],'Kirpimų grupė');
+ fails('DEPENDENCY_CONFLICT',()=>change({operation:'archive',nodeId:'kirpimai'}));change({operation:'archive',nodeId:id});change({operation:'aliases',nodeId:id,aliases:['Naujas sinonimas']});
+ assert.equal(f.api.catalog({}).length,0);assert.equal(f.api.availability({providerServiceId:'variant-fixture',dayOffset:1,from:1020,to:1200}).slots.length,0);assert.ok(f.api.workspace(f.operator,{role:'operator'}).catalogueNodes.find(n=>n.id===id).archived);
+ change({operation:'restore',nodeId:id});assert.equal(f.api.catalog({}).length,1);assert.equal(f.api.taxonomy().nodes.find(n=>n.id===id).aliases[0],'Naujas sinonimas');
+ change({operation:'add',kind:'category',nodeId:'izoliuota-pletros-kategorija',label:'Plėtros testas',aliases:[]});assert.equal(f.api.taxonomy().nodes.find(n=>n.id==='izoliuota-pletros-kategorija').enabled,false);
+ }finally{f.store.close();}});
+
+test('Inactive incomplete variants are excluded from publication without breaking the approved active roster',()=>{const f=fixture();try{
+ const o=f.make(),draft=f.api.saveOffer(f.owner,{...o,variants:[...o.variants,{id:'inactive-unpriced',label:'Ruošiama',active:false,priceMinor:null,durationMin:null,staffOptions:[]}]});f.publish(draft);f.approveOrg();assert.deepEqual(f.api.catalog({}).map(x=>x.id),['variant-fixture']);
+ }finally{f.store.close();}});
+test('Server memberships separate prices, reception and assigned staff; revoked access fails immediately while bookings survive',()=>{const f=fixture();try{
+ const offer=f.make();f.publish(offer);f.approveOrg();const makeBooking=(user,p,key)=>{const c=f.api.availability({providerServiceId:'variant-fixture',practitionerId:p.id,dayOffset:1,from:1020,to:1200}).slots[0],h=f.api.hold(user,c);return f.api.confirm(user,{holdId:h.id,name:'Role fixture',idempotencyKey:key});};
+ const b1=makeBooking(f.client,f.p1,'staff-one'),b2=makeBooking(f.owner,f.p2,'staff-two');
+ let member=f.api.grantMembership(f.owner,{organizationId:f.org.id,email:f.stranger.email,role:'reception',version:0});
+ assert.ok(f.api.workspace(f.stranger,f.scope).capabilities.includes('bookings'));assert.equal(f.api.workspace(f.stranger,f.scope).offers.length,0);fails('FORBIDDEN',()=>f.api.saveOffer(f.stranger,{...f.api.workspace(f.owner,f.scope).offers[0],label:'Unauthorized price'}));fails('FORBIDDEN',()=>f.api.createStaff(f.stranger,{organizationId:f.org.id,name:'Unauthorized team'}));
+ assert.ok(f.api.createClient(f.stranger,{organizationId:f.org.id,name:'Reception fixture',email:'reception-client@example.com'}).id);
+ member=f.api.grantMembership(f.owner,{organizationId:f.org.id,email:f.stranger.email,role:'practitioner',practitionerId:f.p2.id,version:member.version});const own=f.api.workspace(f.stranger,f.scope);assert.deepEqual(own.bookings.map(b=>b.id),[b2.id]);assert.ok(!own.clients.some(c=>c.id===b1.clientId));assert.equal(own.schedules.length,1);assert.equal(own.services[0].priceMinor,3500);assert.equal(own.memberships.length,0);
+ fails('FORBIDDEN',()=>f.api.cancelBooking(f.stranger,{scope:f.scope,id:b1.id,version:b1.version}));fails('FORBIDDEN',()=>f.api.edit(f.stranger,{scope:f.scope,table:'schedules',id:f.api.workspace(f.owner,f.scope).schedules.find(s=>s.practitionerId===f.p1.id).id,values:{startMin:600}}));fails('FORBIDDEN',()=>f.api.grantMembership(f.stranger,{organizationId:f.org.id,email:f.client.email,role:'manager',version:0}));
+ fails('VERSION_CONFLICT',()=>f.api.revokeMembership(f.owner,{id:member.id,version:1}));f.api.revokeMembership(f.owner,{id:member.id,version:member.version});fails('FORBIDDEN',()=>f.api.workspace(f.stranger,f.scope));assert.equal(f.api.session(f.stranger).organizations.length,0);assert.equal(f.api.workspace(f.owner,f.scope).bookings.length,2);assert.equal(f.api.workspace(f.owner,f.scope).accessChanges.length,3);
+ }finally{f.store.close();}});
 test('Verified imported account repairs a missing client projection without changing its account ID or granting roles',()=>{
  const store=openStore({filename:':memory:',secret:'imported-account-fixture-'.repeat(3),clock:()=>now});try{store.db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run('imported-fixture','madbeauty','imported@example.com','Imported fixture',now);const auth=createAuth(store),session=auth.session(null),challenge=auth.start(session,'imported@example.com','fixture'),verified=auth.verify(session,challenge.challengeId,store.capture(challenge.challengeId).code,'fixture');assert.equal(verified.user.id,'imported-fixture');assert.equal(verified.user.operator,0);assert.equal(createPlatform(store).workspace(verified.user,{role:'customer'}).client.id,'imported-fixture');assert.equal(store.read().clients.length,1);}finally{store.close();}
 });

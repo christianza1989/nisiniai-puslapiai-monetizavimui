@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {optimizeRaster} from '../../../content-studio/src/image-pipeline.mjs';
 import {randomId,reject} from './primitives.mjs';
+import {canManageProfile} from './permissions.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 export const mediaRoot=store=>path.join(path.dirname(store.filename),'media');
 export {mediaPublic} from './primitives.mjs';
@@ -16,6 +17,6 @@ export async function prepareMedia(store,{bytes,mime,alt,rights,usage,organizati
 export async function readMedia(store,file,user,platform){
  if(!/^asset_[a-f0-9-]+-\d+\.webp$/.test(file))reject('NOT_FOUND','Vaizdas nerastas.',404);
  const d=store.read(),a=(d.media||[]).find(a=>a.variants.some(v=>v.storageFile===file));if(!a)reject('NOT_FOUND','Vaizdas nerastas.',404);
- const p=platform.profile(a.organizationId),published=p&&(p.gallery.includes(a.id)||p.avatarImageId===a.id),owner=user&&d.memberships.some(m=>m.accountId===user.id&&m.organizationId===a.organizationId);
+ const p=platform.profile(a.organizationId),published=p&&(p.gallery.includes(a.id)||p.avatarImageId===a.id),owner=user&&canManageProfile(d,user,a.organizationId);
  if(!published&&!owner&&!user?.operator)reject('NOT_FOUND','Vaizdas nerastas.',404);return readFile(path.join(mediaRoot(store),file));
 }

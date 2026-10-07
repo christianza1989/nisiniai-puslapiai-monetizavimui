@@ -692,6 +692,22 @@
       ]
     },
     {
+      "id": "professional-access",
+      "surface": "professional",
+      "route": "/meistrui/prieigos",
+      "label": "Komandos paskyrų prieigos",
+      "status": "IMPLEMENTED_ACCEPTANCE_IN_PROGRESS",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
       "id": "professional-profile",
       "surface": "professional",
       "route": "/meistrui/profilis",

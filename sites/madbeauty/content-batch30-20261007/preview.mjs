@@ -1,0 +1,14 @@
+import {readFile} from 'node:fs/promises';
+import {createServer} from 'node:http';
+import {createHash} from 'node:crypto';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+const root=path.resolve(import.meta.dirname,'../cloudflare'),core=path.resolve(import.meta.dirname,'../../../../dovanos-memorycasting'),port=8854,origin='http://127.0.0.1:'+port;
+const raw=await readFile(path.join(root,'output/content-package.json'));if(createHash('sha256').update(raw).digest('hex')!=='75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4')throw Error('Wrong immutable content edition');
+const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js'))),{Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
+const compiled=await build({entryPoints:[path.join(root,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}}),paths=JSON.parse(await readFile(path.join(root,'output/asset-paths.json'),'utf8'));
+const files=new Map(await Promise.all(paths.map(async p=>[p,await readFile(path.join(root,'output/assets-release',p))]))),types={'.mjs':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.webp':'image/webp','.woff2':'font/woff2','.ttf':'font/ttf','.json':'application/json'};
+const mf=new Miniflare({modules:true,script:compiled.outputFiles[0].text,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true}},images:{binding:'IMAGES'},bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',SESSION_SECRET:'isolated-compiled-batch30-preview-only-'.repeat(3)},serviceBindings:{ASSETS:async request=>{const p=new URL(request.url).pathname,bytes=files.get(decodeURIComponent(p));return bytes?new Response(bytes,{headers:{'content-type':types[path.extname(p)]||'text/plain'}}):new Response('Not found',{status:404});}}});
+const server=createServer(async(req,res)=>{try{if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}const r=await mf.dispatchFetch(origin+req.url,{method:req.method,headers:req.headers});res.writeHead(r.status,Object.fromEntries(r.headers));res.end(Buffer.from(await r.arrayBuffer()));}catch{res.writeHead(500);res.end('Preview unavailable');}});
+server.listen(port,'127.0.0.1',()=>console.log('Isolated compiled content edition: '+origin));
+const close=()=>server.close(async()=>{await mf.dispose();process.exit(0);});process.on('SIGINT',close);process.on('SIGTERM',close);

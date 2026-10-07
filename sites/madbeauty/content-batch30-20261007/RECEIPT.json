@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "verified-candidate-not-deployed",
+  "baseReceipt": "159d7d7",
+  "liveRuntimeBase": "897ba831f27d42c88cf723e0b6c0abd22ac57d48",
+  "companionCore": "63cfd8c",
+  "packageSha256": "75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4",
+  "approvedPages": 39,
+  "duePages": 7,
+  "futurePages": 32,
+  "readyMedia": 25,
+  "hiddenMedia": 155,
+  "buildAssets": 284,
+  "previousVersion": "edf429e9-2409-49bb-bf2b-88b5d53628f8",
+  "service": "madbeauty-platform-preview",
+  "origin": "https://madbeauty.lt",
+  "durableObjectNamespace": "2faf96eedef1425c8d4fc07444cde2f3",
+  "durableObjectInstance": "madbeauty-pilot-v1",
+  "storageMigration": false,
+  "branchesUpgrade": false,
+  "checks": {
+    "madbeautyRegression": {
+      "pass": 93,
+      "log": "evidence/regression-3.log"
+    },
+    "exactCompiledTiming": {
+      "pass": true,
+      "checkpoints": 15,
+      "log": "evidence/isolated-timing.json"
+    },
+    "localTiming": {
+      "pass": true,
+      "origin": "http://127.0.0.1:8854"
+    },
+    "browser": {
+      "widths": [
+        1280,
+        390
+      ],
+      "articleDocumentOverflow": false,
+      "authorLink": true
+    },
+    "productionDryRun": true
+  },
+  "author": "Organization: Madbeauty redakcija",
+  "activationAuthority": "Direct human request in madbeauty turinys authorizes reviewed content publication and scheduled availability; article dates unchanged."
+}

@@ -33,11 +33,12 @@ GitHub API: mokytojo repo `main` dar buvo senas `0926003`; dabartinė svetainė
 Vercel jau veikė iš vėlesnio vietinio source. Šis istorinis skirtumas nėra
 naujo source įkėlimo įrodymas.
 
-Dabartinio AI_teacher source įkėlimą, clone patikras, secret atranką ir
-konkretų Git commit/PR vykdo originali mokytojo sesija. **Šio dokumento
-pradinėje revizijoje source perdavimas dar vykdomas**; final kvitas bus
-pridėtas tik gavus ir patikrinus realų GitHub commit. GitHub PR pats savaime
-nereiškia `main` sujungimo, Vercel diegimo ar visos platformos priėmimo.
+Dabartinio AI_teacher source įkėlimą originali mokytojo sesija užbaigė:
+[Draft source PR1](https://github.com/christianza1989/mokytoja-ai/pull/1),
+šaka `codex/namudarbas-source-handoff-20261007`, final GitHub head
+`6b93977f906ca27c91dcf7c004ccbe25632471a1`. Root patikrino tikrą remote tree,
+turinio paketo baitus ir priklausomybių/diegimo šakos ribas. Source jau GitHub,
+jo `main` nesujungtas; Vercel diegimas ir visos platformos priėmimas atskiri.
 
 Originali sesija patikrino faktinį Vercel Git susiejimą: production šaka yra
 `main`. Source perdavimo šaka `codex/namudarbas-source-handoff-20261007`
@@ -62,7 +63,10 @@ npm ci --prefix content-studio
 
 Companion diegti pagal [MULTI_MACHINE](MULTI_MACHINE.md). AI_teacher
 priklausomybes ir vietinę konfigūraciją ruošti pagal jo GitHub perduotos
-versijos `README.md` / `docs/GITHUB_HANDOFF.md`, jei pastarasis pridėtas.
+versijos `README.md` / [docs/SOURCE_HANDOFF_2026-10-07.md](https://github.com/christianza1989/mokytoja-ai/blob/codex/namudarbas-source-handoff-20261007/docs/SOURCE_HANDOFF_2026-10-07.md).
+Mokytojo perduodamai versijai rekomenduojamas Node 24 pagal jo užfiksuotų
+kūrimo įrankių reikalavimus; ankstesnė minimali Node 20.9 eilutė nėra
+dabartinio dependency-complete atkūrimo priėmimas.
 Naudoti naujus vietinius raktus ir izoliuotą testinę saugyklą. Senos DB,
 paskyros, slapukai, `.env`, provider raktai, mokinių darbai ir privataus QA
 duomenys neperkeliami klonuojant repo.
@@ -124,5 +128,37 @@ ar periodinio generatoriaus priėmimas. Originalios istorijos nekeisti.
 
 ## Final GitHub kvitas
 
-PENDING: konkretus mokytojo source commit / PR, atrankos bei švaraus clone
-įrodymai bus įrašyti po savininko užsakytos source perdavimo patikros.
+- Source kodas ir assets: `402b9b493ef751e421edd096011b709537cef0ad`.
+- Final dokumentų kvitas ir remote PR head: `6b93977f906ca27c91dcf7c004ccbe25632471a1`;
+  paskutinis commit keitė tik `docs/PRODUCTION_ROADMAP_2026-09-28.md` ir
+  `docs/SOURCE_HANDOFF_2026-10-07.md`. Runtime kodo QA kontekstas nepasikeitė.
+- Source repo privatus; [PR1](https://github.com/christianza1989/mokytoja-ai/pull/1)
+  DRAFT, į `main` nesujungtas. Main išlieka `0926003`; pagal source actual
+  prieš/po patikrą Vercel production deployment išlieka
+  `dpl_5z5pQis285h49SXjM5aEQrGbCpVN`.
+- Source sesijos švarios Windows kopijos kvitas: Node 22.18 / npm 10.9.3,
+  fresh `npm ci` 522 paketai; 190 Vitest failų / 1424 testai PASS,
+  mokytojos offline 22/22, 16 sintetinių calibration tasksets, architecture
+  PASS, audit 0 spragų, production build PASS. ESLint 0 klaidų, 2 esami
+  navigacijos įspėjimai. Nauji provider API bandymai nevykdyti.
+- Source fresh production HTTP 11/11 PASS ir 15 WebP exact bytes; ši
+  komanda netikrina visų redakcinių/šeimos role authorization variantų,
+  jie turi atskirus unit testus. Linux/macOS atkūrimas netikrintas.
+- Source atranka: 878 failai, apie 102 MB; signature/žinomų vietinių
+  privačių reikšmių/indekso baitų patikra PASS. Frozen source digest
+  `806308cd1a0ea9b68d566f9798beef77832ae3116ddfe435bb031debcda1af0d`
+  neapima README/AGENTS/docs. Raw QA ir originalų repo nėra.
+- Root nepriklausoma GitHub patikra: recursive tree pilnas, 878 blob;
+  privalomi adapteriai, import script, 2 tarball ir roadmap yra; uždraustų
+  env/runtime/DB/original/tmp kelių 0, content 24 failai. Remote active
+  bundle ID, siteId, canonical ir viso paketo SHA-256 exact, keturi puslapiai.
+  Remote SDK/glob pins ir tik perdavimo šakai taikomas Vercel disable
+  patikrinti; GitHub workflows run 0. Pilno source QA root nekartojo.
+- Bendro repo registracijos briefas sulygintas su autoritetingu studijos
+  siteId/host/policy ir keturių aktyvių puslapių ID/slug/type: PASS.
+  Relative doc links, scoped whitespace ir exact-staged safety PASS.
+
+GitHub perdavimo pavedimas atliktas pagal šią ribotą source apimtį. Tai
+neaktyvina periodinio rengimo/deploy job, tikrų vaikų piloto, mokamų API ar
+nepriimtų produkto funkcijų. Tolimesnis AI klonuoja nurodytą source šaką,
+perskaito jos aktualų roadmap ir tęsia savo rezervuotoje srityje.

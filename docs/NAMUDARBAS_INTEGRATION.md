@@ -39,6 +39,13 @@ pradinėje revizijoje source perdavimas dar vykdomas**; final kvitas bus
 pridėtas tik gavus ir patikrinus realų GitHub commit. GitHub PR pats savaime
 nereiškia `main` sujungimo, Vercel diegimo ar visos platformos priėmimo.
 
+Originali sesija patikrino faktinį Vercel Git susiejimą: production šaka yra
+`main`. Source perdavimo šaka `codex/namudarbas-source-handoff-20261007`
+ruošiama su tik jai taikomu `git.deploymentEnabled=false`, kad jos push/PR
+nepaleistų preview deployment. Šio source į `main` automatiškai nesujungti:
+produkcinis diegimas ir jo QA yra kitas veiksmas. Vercel paskyros nustatymai,
+production branch, aplinkos raktai ir DNS šiame perdavime nekeičiami.
+
 ## Atkurti kitu kompiuteriu
 
 Klonuoti tris repo greta. Mokytojo final source šaką arba commit rinktis
@@ -47,7 +54,7 @@ pagal final kvitą žemiau, kol jis nesujungtas į jo `main`.
 ```powershell
 git clone https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui.git nisiniai_puslapiai_monetizavimui
 git clone https://github.com/christianza1989/niche-public-core.git dovanos-memorycasting
-git clone https://github.com/christianza1989/mokytoja-ai.git AI_teacher
+git clone --branch codex/namudarbas-source-handoff-20261007 https://github.com/christianza1989/mokytoja-ai.git AI_teacher
 cd nisiniai_puslapiai_monetizavimui
 . ./scripts/activate-workspace.ps1
 npm ci --prefix content-studio

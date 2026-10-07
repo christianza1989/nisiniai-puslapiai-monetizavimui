@@ -1,6 +1,7 @@
 import {publicLocation,practitionerPlaces} from './locations-state.mjs';
 import {reject} from './primitives.mjs';
 import {mediaPublic} from './primitives.mjs';
+import {visitSegments,bookingUses} from './occupancy.mjs';
 export const ROLE_CAPABILITIES={owner:['offers','profile','team','resources','schedule','clients','bookings','messages','reports','access'],manager:['offers','profile','team','resources','schedule','clients','bookings','messages','reports'],reception:['clients','bookings','messages','reports'],practitioner:['schedule','bookings','messages']};
 export function membershipScope(d,user,organizationId){
  const m=d.memberships.find(m=>m.accountId===user.id&&m.organizationId===organizationId&&m.active!==false),role=m?.role==='staff'?'practitioner':m?.role;
@@ -19,8 +20,11 @@ export function practitionerWorkspace(d,s,result){
   result.media=(result.media||[]).filter(a=>published.has(a.id)).map(mediaPublic);
  }
  if(s.membershipRole!=='practitioner')return result;
- const bookings=result.bookings.filter(b=>b.practitionerId===s.practitionerId),ids=new Set(bookings.map(b=>b.id)),clients=new Set(bookings.map(b=>b.clientId));
+ const bookings=result.bookings.filter(b=>bookingUses(b,'practitionerId',s.practitionerId)).map(b=>{
+  if(!b.segments)return b;const segments=visitSegments(b).filter(x=>x.practitionerId===s.practitionerId),first=segments[0],last=segments.at(-1),priceMinor=segments.reduce((n,x)=>n+x.priceMinor,0),durationMin=segments.reduce((n,x)=>n+x.durationMin,0);
+  return {...b,partialVisit:segments.length!==b.segments.length,segments,items:b.items.filter(i=>i.practitionerId===s.practitionerId),providerServiceId:first.providerServiceId,practitionerId:first.practitionerId,resourceId:first.resourceId,startAt:first.startAt,endAt:last.endAt,priceMinor,durationMin,procedureMin:durationMin,serviceSnapshot:{...first.serviceSnapshot,label:segments.map(x=>x.serviceSnapshot.label).join(' + '),priceMinor,durationMin,addons:segments.flatMap(x=>x.serviceSnapshot.addons)}};
+ }),ids=new Set(bookings.map(b=>b.id)),clients=new Set(bookings.map(b=>b.clientId));
  const services=result.services.filter(x=>x.practitionerId===s.practitionerId||x.staffOptions?.some(p=>p.practitionerId===s.practitionerId)).map(x=>({...x,...x.staffOptions?.find(p=>p.practitionerId===s.practitionerId),...(x.staffOptions?{staffOptions:x.staffOptions.filter(p=>p.practitionerId===s.practitionerId)}:{})}));
  const resources=new Set([...services,...bookings].map(x=>x.resourceId));
- return {...result,locations:result.locations.filter(l=>practitionerPlaces(d,d.practitioners.find(p=>p.id===s.practitionerId)).includes(l.id)),bookings,clients:result.clients.filter(c=>clients.has(c.id)),clientLinks:[],offers:[],procedureRequests:[],qualifications:[],memberships:[],revisions:[],inquiries:[],waitlist:[],practitioners:result.practitioners.filter(p=>p.id===s.practitionerId),schedules:result.schedules.filter(x=>x.practitionerId===s.practitionerId),services,resources:result.resources.filter(r=>resources.has(r.id)),holds:result.holds.filter(x=>x.practitionerId===s.practitionerId),busyBlocks:result.busyBlocks.filter(x=>x.practitionerId===s.practitionerId),messages:result.messages.filter(x=>ids.has(x.bookingId)),reviews:result.reviews.filter(x=>ids.has(x.bookingId)),outbox:result.outbox.filter(x=>ids.has(x.bookingId))};
+ return {...result,locations:result.locations.filter(l=>practitionerPlaces(d,d.practitioners.find(p=>p.id===s.practitionerId)).includes(l.id)),bookings,clients:result.clients.filter(c=>clients.has(c.id)),clientLinks:[],offers:[],procedureRequests:[],qualifications:[],memberships:[],revisions:[],inquiries:[],waitlist:[],practitioners:result.practitioners.filter(p=>p.id===s.practitionerId),schedules:result.schedules.filter(x=>x.practitionerId===s.practitionerId),services,resources:result.resources.filter(r=>resources.has(r.id)),holds:result.holds.filter(x=>bookingUses(x,'practitionerId',s.practitionerId)).map(x=>x.segments?{id:x.id,accountId:x.accountId,state:x.state,expiresAt:x.expiresAt,segments:x.segments.filter(y=>y.practitionerId===s.practitionerId)}:x),busyBlocks:result.busyBlocks.filter(x=>x.practitionerId===s.practitionerId),messages:result.messages.filter(x=>ids.has(x.bookingId)),reviews:result.reviews.filter(x=>ids.has(x.bookingId)),outbox:result.outbox.filter(x=>ids.has(x.bookingId))};
 }

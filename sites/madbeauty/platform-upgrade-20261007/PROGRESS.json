@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "227557f",
+  "runtimeSourceCheckpoint": "8e52157",
   "companionSchema": "niche-public-core63cfd8c / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -34,6 +34,12 @@
       "tests": 117,
       "state": "accepted-isolated-path",
       "remaining": "Geolocation permission handoff and full UI error/stale/conflict matrix; production not deployed"
+    },
+    {
+      "name": "atomic-multi-service-visit-and-segment-calendar",
+      "tests": 122,
+      "state": "accepted-isolated-path",
+      "remaining": "Full state matrix, phased occupancy and later modules; production not deployed"
     }
   ],
   "tasks": [
@@ -125,7 +131,8 @@
       "id": "B01",
       "title": "Kelių paslaugų vienas vizitas",
       "phase": "2",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md and ACCEPTANCE.md: Node/Workers concurrency, SQL restart, one booking/mail, secondary staff scope and actual browser whole sequence/whole reschedule/calendar"
     },
     {
       "id": "B02",

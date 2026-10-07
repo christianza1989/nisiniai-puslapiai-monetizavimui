@@ -37,3 +37,10 @@ html:has(dialog[open]){overflow:hidden}
 .entity-services{display:grid;gap:12px;margin:16px 0}.entity-services>div{display:flex;justify-content:space-between;gap:10px;align-items:center}.entity-services small{color:var(--muted)}.search-entity-tabs{flex-wrap:wrap}.search-location-toolbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:20px 0}.location-map{display:block;width:100%;height:340px;border:1px solid var(--line);border-radius:12px}.map-panel h2{font-size:24px}.map-addresses{display:grid;gap:16px;margin-top:20px}.map-addresses>div{padding:14px 0;border-top:1px solid var(--line)}.map-addresses p{margin:8px 0}.map-panel{min-width:0}.entity-card .card-body{min-width:0}.entity-card .card-meta{overflow-wrap:anywhere}@media(max-width:760px){.location-map{height:300px}.search-entity-tabs{gap:6px}.search-entity-tabs button{padding:10px}.search-results-toolbar{flex-wrap:wrap;gap:12px}.entity-services>div{flex-wrap:wrap}}
 
 @media(max-width:380px){.header-account span{display:none}#header .header-account{padding:10px;width:42px;height:42px;flex-shrink:0}}@media(min-width:761px) and (max-width:1050px){.results-map>.cards{grid-template-columns:minmax(0,1fr)}}
+
+.sequence-choice { margin-block:16px; }
+.sequence-choice h2 { font-size:22px; }
+.visit-segments { padding-left:24px; }
+.visit-segments li { padding-block:8px; }
+.visit-segments p { margin:6px 0; }
+.booking-layout > div { min-width:0; overflow-wrap:anywhere; }

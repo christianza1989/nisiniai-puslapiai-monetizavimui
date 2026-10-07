@@ -1,3 +1,4 @@
+import {bookingUses} from './occupancy.mjs';
 import {CITY_NAMES} from '../prototype/cities.mjs';
 import {randomId,reject} from './primitives.mjs';
 import {find} from './availability.mjs';
@@ -41,7 +42,7 @@ export function createLocationApi({store,mutate,ownOrg,scope,event,clock}){
    const ids=input.locationIds;if(!Array.isArray(ids)||!ids.length||ids.length>16||new Set(ids).size!==ids.length)reject('INVALID_INPUT','Pasirinkite veiklos vietas be pasikartojimų.');
    for(const id of ids){const l=find(d,'locations',id);if(l.organizationId!==p.organizationId||l.active===false)reject('FORBIDDEN','Vieta nepriklauso šiai organizacijai arba neaktyvi.',403);}
    if(!Number.isInteger(input.transferBufferMin)||input.transferBufferMin<0||input.transferBufferMin>240)reject('INVALID_INPUT','Įrašykite reikalingą persikėlimo laiką (0–240 min.).');
-   if(d.bookings.some(b=>b.practitionerId===p.id&&b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()&&!ids.includes(bookingPlace(d,b))))reject('SCHEDULE_CONFLICT','Pirmiau perkelkite šio meistro būsimus vizitus iš pašalinamos vietos.',409);
+   if(d.bookings.some(b=>bookingUses(b,'practitionerId',p.id)&&b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()&&!ids.includes(bookingPlace(d,b))))reject('SCHEDULE_CONFLICT','Pirmiau perkelkite šio meistro būsimus vizitus iš pašalinamos vietos.',409);
    const shifts=d.schedules.filter(s=>s.practitionerId===p.id&&ids.includes(s.locationId||p.locationId));
    for(const a of shifts)for(const b of shifts)if(a.id!==b.id&&(a.locationId||p.locationId)!==(b.locationId||p.locationId)&&(a.weekdays||[]).some(day=>(b.weekdays||[]).includes(day))&&a.startMin<b.endMin+input.transferBufferMin&&b.startMin<a.endMin+input.transferBufferMin)reject('SCHEDULE_CONFLICT','Persikėlimo laikas netelpa tarp esamų pamainų.',409);
    const previous=practitionerPlaces(d,p);for(const s of d.schedules.filter(s=>s.practitionerId===p.id&&!s.locationId))s.locationId=previous[0];

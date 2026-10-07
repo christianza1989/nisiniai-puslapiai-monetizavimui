@@ -12,6 +12,32 @@ const {Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/minifl
 const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}});
 const script=bundle.outputFiles[0].text,origin='https://madbeauty.test';
 
+test('Workers whole visit: all segment holds are atomic, one durable booking/mail, secondary staff privacy and whole reschedule',async()=>{
+ const f=await fixture();try{
+  const owner=f.browser(),operator=f.browser(),client=f.browser(),other=f.browser(),staff=f.browser();
+  for(const [b,email] of [[owner,'visit-owner@example.com'],[operator,'operator@example.com'],[client,'visit-client@example.com'],[other,'visit-other@example.com'],[staff,'visit-staff@example.com']])await b.login(email);
+  const rpc=async(b,m,i)=>{const r=await b.rpc(m,i);assert.equal(r.status,200,m+': '+JSON.stringify(r.value));return r.value.result;};
+  const org=await rpc(owner,'createOrganization',{name:'Isolated whole visit',bio:'SQL acceptance fixture only.',kind:'salon',city:'Vilnius'}),scope={role:'professional',organizationId:org.id},w=await rpc(owner,'workspace',scope),p2=await rpc(owner,'createStaff',{organizationId:org.id,name:'Second visit staff'}),r2=await rpc(owner,'createResource',{organizationId:org.id,label:'Second visit resource'});
+  const offers=await rpc(owner,'selectProcedures',{organizationId:org.id,procedureIds:['manikiuras-klasikinis-manikiuras','pedikiuras-klasikinis-pedikiuras'],version:0,idempotencyKey:'whole-visit-procedures'});
+  const items=[];
+  for(let i=0;i<2;i++){
+   const id='whole-visit-variant-'+i,p=i?p2:w.practitioners[0],r=i?r2:w.resources[0];
+   const draft=await rpc(owner,'saveOffer',{id:offers[i].id,version:offers[i].version,label:i?'Fixture pedicure':'Fixture manicure',variants:[{id,label:i?'Pedicure':'Manicure',priceMinor:i?2000:2500,durationMin:i?45:60,bufferBeforeMin:5,bufferAfterMin:10,staffOptions:[{practitionerId:p.id,resourceId:r.id}]}]}),pending=await rpc(owner,'submitOffer',{id:draft.id,version:draft.version});await rpc(operator,'moderateOffer',{id:draft.id,version:pending.version,state:'approved'});items.push({providerServiceId:id,practitionerId:p.id,addons:[]});
+  }
+  const rev=await rpc(owner,'submitRevision',{scope,name:org.name,bio:org.bio});await rpc(operator,'moderate',{id:rev.id,state:'approved'});
+  let c;for(let dayOffset=1;dayOffset<8&&!c;dayOffset++)c=(await rpc(client,'visitAvailability',{items,dayOffset,from:540,to:1200})).slots[0];assert.ok(c);assert.equal(c.segments.length,2);assert.equal(c.priceMinor,4500);assert.equal(c.durationMin,120);
+  const raced=await Promise.all([client.rpc('holdVisit',c),other.rpc('holdVisit',c)]);assert.deepEqual(raced.map(r=>r.status).sort(),[200,409]);const winner=raced[0].status===200?client:other,h=raced.find(r=>r.status===200).value.result;
+  const second=await rpc(owner,'availability',{providerServiceId:items[1].providerServiceId,practitionerId:p2.id,dateKey:c.dateKey,from:540,to:1200});assert.ok(!second.slots.some(s=>s.startAt===c.segments[1].startAt));
+  const input={holdId:h.id,name:'Whole visit client',idempotencyKey:'one-whole-visit'},b=await rpc(winner,'confirmVisit',input);assert.equal(b.segments.length,2);assert.equal((await rpc(winner,'confirmVisit',input)).id,b.id);
+  const namespace=await f.mf.getDurableObjectNamespace('PLATFORM');await namespace.get(namespace.idFromName('madbeauty-pilot-v1')).drain();assert.equal(f.mails.filter(m=>m.text.includes(b.id)).length,1);
+  await f.restart();const persisted=(await rpc(winner,'workspace',{role:'customer'})).bookings[0];assert.equal(persisted.id,b.id);assert.deepEqual(persisted.segments.map(s=>s.practitionerId),items.map(i=>i.practitionerId));assert.equal((await rpc(owner,'workspace',scope)).bookings.length,1);
+  await rpc(owner,'grantMembership',{organizationId:org.id,email:'visit-staff@example.com',role:'practitioner',practitionerId:p2.id,version:0});const assigned=(await rpc(staff,'workspace',scope)).bookings[0];assert.equal(assigned.partialVisit,true);assert.equal(assigned.priceMinor,2000);assert.equal(assigned.segments.length,1);assert.ok(!JSON.stringify(assigned).includes(items[0].providerServiceId));assert.equal((await staff.rpc('cancelBooking',{scope,id:b.id,version:b.version,reason:'Forbidden partial'})).status,403);
+  let next;for(let dayOffset=1;dayOffset<8&&!next;dayOffset++)next=(await rpc(winner,'visitAvailability',{items,dayOffset,from:540,to:1200,ignoreBookingId:b.id,scope:{role:'customer'}})).slots.find(x=>x.startAt!==b.startAt);assert.ok(next);
+  const changed=await rpc(winner,'changeVisit',{scope:{role:'customer'},id:b.id,version:b.version,candidate:next});assert.equal(changed.id,b.id);assert.equal(changed.version,2);assert.equal(changed.segments[1].startAt,next.segments[1].startAt);
+  await rpc(winner,'cancelBooking',{scope:{role:'customer'},id:b.id,version:changed.version,reason:'Fixture finished'});assert.ok((await rpc(client,'visitAvailability',{items,dateKey:next.dateKey,from:540,to:1200})).slots.some(x=>x.startAt===next.startAt));
+ }finally{await f.close();}
+});
+
 test('Workers reviewed branch keeps its city, scoped resource, staff shift and confirmed address after SQL restart',async()=>{
  const f=await fixture();try{
   const owner=f.browser(),operator=f.browser(),client=f.browser();await owner.login('branch-owner@example.com');await operator.login('operator@example.com');await client.login('branch-client@example.com');

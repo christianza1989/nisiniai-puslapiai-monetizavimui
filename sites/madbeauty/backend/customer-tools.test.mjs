@@ -1,0 +1,40 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {openStore} from './store.mjs';
+import {createAuth} from './auth.mjs';
+import {createPlatform} from './platform.mjs';
+function fixture(){
+ let now=Date.parse('2026-10-07T06:00:00Z');const store=openStore({filename:':memory:',clock:()=>now,secret:'isolated-customer-tools-'.repeat(3)}),auth=createAuth(store),api=createPlatform(store);
+ const login=email=>{const s=auth.session(null),c=auth.start(s,email,'127.0.0.1');return auth.verify(s,c.challengeId,store.capture(c.challengeId).code,'127.0.0.1').user;};
+ const owner=login('customer-tools-owner@example.com'),client=login('customer-tools-client@example.com'),other=login('customer-tools-other@example.com'),operator={...owner,operator:true},org=api.createOrganization(owner,{name:'Customer tools fixture',bio:'Isolated rebooking and client card acceptance.',city:'Vilnius',kind:'salon'}),scope={role:'professional',organizationId:org.id},w=api.workspace(owner,scope),p=w.practitioners[0],r=w.resources[0],s=api.createService(owner,{organizationId:org.id,practitionerId:p.id,resourceId:r.id,taxonomyServiceId:'manikiuras',label:'Saved manicure',durationMin:60,priceMinor:2500}),rev=api.submitRevision(owner,{scope,name:org.name,bio:org.bio});api.moderate(operator,{id:rev.id,state:'approved'});
+ const c=api.availability({providerServiceId:s.id,dayOffset:1,from:900,to:1200}).slots[0],h=api.hold(client,c),b=api.confirm(client,{holdId:h.id,name:'Customer fixture',idempotencyKey:'customer-tools'});
+ return {store,api,auth,login,owner,client,other,operator,org,scope,s,p,r,b,at:v=>{now=v;},close:()=>store.close()};
+}
+const code=(c,fn)=>assert.throws(fn,e=>e.code===c);
+test('Rebooking uses the current authoritative price and staff choice, preserves old snapshots, and an archived variant keeps history with alternatives',()=>{
+ const f=fixture();try{
+  code('FORBIDDEN',()=>f.api.rebooking(f.other,{id:f.b.id}));let re=f.api.rebooking(f.client,{id:f.b.id});assert.equal(re.state,'ready');assert.equal(re.priceMinor,2500);assert.equal(re.changes[0].changed,false);
+  f.api.edit(f.owner,{scope:f.scope,table:'services',id:f.s.id,version:f.s.version,values:{priceMinor:3000,durationMin:75}});re=f.api.rebooking(f.client,{id:f.b.id});assert.equal(re.changes[0].previous.priceMinor,2500);assert.equal(re.priceMinor,3000);assert.equal(re.procedureMin,75);assert.equal(re.changes[0].changed,true);assert.equal(f.api.workspace(f.client,{role:'customer'}).bookings[0].durationMin,60);
+  f.api.cancelBooking(f.client,{id:f.b.id,version:f.b.version,reason:'Archive acceptance'});f.api.edit(f.owner,{scope:f.scope,table:'services',id:f.s.id,version:2,values:{active:false}});re=f.api.rebooking(f.client,{id:f.b.id});assert.equal(re.state,'unavailable');assert.equal(re.searchPath,'/paieska');assert.equal(f.api.workspace(f.client,{role:'customer'}).bookings[0].serviceSnapshot.label,'Saved manicure');
+ }finally{f.close();}
+});
+test('Organization cards and data export are isolated; fresh email proof gates requests and export, preferences remain independent, and erasure stays pending retention review',()=>{
+ const f=fixture();try{
+  const org2=f.api.createOrganization(f.other,{name:'Another organization',bio:'No shared client access.',city:'Kaunas',kind:'solo'}),scope2={role:'professional',organizationId:org2.id};code('FORBIDDEN',()=>f.api.saveClientCard(f.other,{organizationId:f.org.id,clientId:f.client.id,version:0,name:'Other',note:'Denied'}));code('FORBIDDEN',()=>f.api.saveClientCard(f.other,{organizationId:org2.id,clientId:f.client.id,version:0,name:'Other',note:'Denied'}));
+  const card=f.api.saveClientCard(f.owner,{organizationId:f.org.id,clientId:f.client.id,version:0,name:'Local client name',note:'Contact after 17:00.'});code('VERSION_CONFLICT',()=>f.api.saveClientCard(f.owner,{organizationId:f.org.id,clientId:f.client.id,version:0,name:'Lost update',note:''}));assert.equal(f.api.workspace(f.owner,f.scope).clientCards[0].id,card.id);assert.equal(f.api.workspace(f.other,scope2).clientCards?.length||0,0);assert.equal(f.api.workspace(f.operator,{role:'operator'}).clientCards.length,0);
+  f.api.favorite(f.client,{organizationId:f.org.id,saved:true});assert.equal(f.api.workspace(f.owner,f.scope).clients.find(c=>c.id===f.client.id).favoriteIds,undefined);
+  f.api.preferences(f.client,{service:false,marketing:true,reminderLeadMin:0});const ex=f.api.exportCustomer(f.client);assert.equal(ex.bookings.length,1);assert.equal(ex.organizationCards[0].note,card.note);assert.equal(ex.organizationCards[0].updatedBy,undefined);assert.equal(ex.preferences[0].service,false);assert.equal(ex.preferences[0].marketing,true);assert.equal(f.api.exportCustomer(f.other).bookings.length,0);
+  code('INVALID_INPUT',()=>f.api.requestErasure(f.client,{confirmEmail:f.other.email}));const er=f.api.requestErasure(f.client,{confirmEmail:f.client.email});assert.equal(er.state,'pending');assert.equal(er.retentionState,'review-required');assert.equal(f.api.requestErasure(f.client,{confirmEmail:f.client.email}).id,er.id);assert.equal(f.api.workspace(f.client,{role:'customer'}).bookings[0].status,'confirmed');
+  code('FORBIDDEN',()=>f.api.erasureCase(f.owner,{id:er.id}));assert.equal(f.api.workspace(f.operator,{role:'operator'}).dataRequests[0].clientId,undefined);assert.equal(f.api.erasureCase(f.operator,{id:er.id}).executionEnabled,false);code('INVALID_INPUT',()=>f.api.reviewErasure(f.operator,{id:er.id,version:er.version,state:'completed',reason:'Not executed',retentionBasis:'Unknown'}));
+  const reviewed=f.api.reviewErasure(f.operator,{id:er.id,version:er.version,state:'retention-review',reason:'Awaiting reviewed retention schedule.',retentionBasis:'Isolated acceptance only; no live policy approval.'});assert.equal(f.api.erasureCase(f.operator,{id:er.id}).actions.length,2);code('VERSION_CONFLICT',()=>f.api.reviewErasure(f.operator,{id:er.id,version:er.version,state:'needs-information',reason:'Stale',retentionBasis:'Stale'}));
+  code('FORBIDDEN',()=>f.api.withdrawErasure(f.other,{id:er.id,version:reviewed.version}));f.api.withdrawErasure(f.client,{id:er.id,version:reviewed.version});assert.equal(f.api.workspace(f.client,{role:'customer'}).dataRequests[0].state,'withdrawn');
+  f.at(f.store.clock()+600001);code('REAUTH_REQUIRED',()=>f.api.exportCustomer(f.client));code('REAUTH_REQUIRED',()=>f.api.requestErasure(f.client,{confirmEmail:f.client.email}));const verified=f.login(f.client.email);assert.equal(f.api.exportCustomer(verified).bookings[0].id,f.b.id);
+ }finally{f.close();}
+});
+test('Rebooking an ordered multi-service visit retains the entire sequence and reports a removed addon without changing the original visit',()=>{
+ const f=fixture();try{
+  const s2=f.api.createService(f.owner,{organizationId:f.org.id,practitionerId:f.p.id,resourceId:f.r.id,taxonomyServiceId:'antakiai',label:'Second saved service',durationMin:30,priceMinor:1500});f.api.edit(f.owner,{scope:f.scope,table:'services',id:s2.id,version:1,values:{addons:[{id:'saved-addon',label:'Extra work',durationMin:15,priceMinor:500}]}});
+  const items=[{providerServiceId:f.s.id,practitionerId:f.p.id,addons:[]},{providerServiceId:s2.id,practitionerId:f.p.id,addons:['saved-addon']}],c=f.api.visitAvailability({items,dayOffset:2,from:900,to:1200}).slots[0];assert.ok(c);const h=f.api.holdVisit(f.client,c),b=f.api.confirmVisit(f.client,{holdId:h.id,name:'Sequence repeat',idempotencyKey:'sequence-repeat'});
+  f.api.edit(f.owner,{scope:f.scope,table:'services',id:s2.id,version:2,values:{addons:[]}});const re=f.api.rebooking(f.client,{id:b.id});assert.equal(re.sequence,true);assert.deepEqual(re.items.map(i=>i.providerServiceId),items.map(i=>i.providerServiceId));assert.equal(re.changes[1].previous.priceMinor,2000);assert.equal(re.changes[1].current.priceMinor,1500);assert.deepEqual(re.changes[1].removedAddons,['saved-addon']);assert.deepEqual(f.api.workspace(f.client,{role:'customer'}).bookings.find(x=>x.id===b.id).items[1].addons,['saved-addon']);
+ }finally{f.close();}
+});

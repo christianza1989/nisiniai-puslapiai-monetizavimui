@@ -11,6 +11,8 @@ export function membershipScope(d,user,organizationId){
 export function requireCapability(s,capability){if(capability&&!s.capabilities?.includes(capability))reject('FORBIDDEN','Šiam veiksmui tavo darbo vietos prieigos nepakanka.',403);return s;}
 export function canManageProfile(d,user,organizationId){try{return membershipScope(d,user,organizationId).capabilities.includes('profile');}catch{return false;}}
 export function practitionerWorkspace(d,s,result){
+ if(!s.capabilities.includes('clients'))result.clientCards=[];
+ result.dataRequests=[];
  if(!s.capabilities.includes('access')){result.memberships=[];result.accessChanges=[];}
  if(!s.capabilities.includes('offers')){result.offers=[];result.procedureRequests=[];result.menuGroups=[];}
  if(!s.capabilities.includes('profile')){

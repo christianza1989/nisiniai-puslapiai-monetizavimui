@@ -326,3 +326,5 @@ Cloudflare release 2026-10-06: also reserves infrastructure/mail-relay/** for th
 2026-10-07 Madbeauty PR26 sharing/GEO checkpoint: bounded shared giftMetadata SSR/SPA serializer, dynamic projection-only GEO and no-store discovery;128 paired PASS + exact75aa39-page/180media Workers time boundary + actual browser metadata clearing. Companion own c7e0c9a cherry-picks writer f27547c,55 core PASS; active writer/shared files unchanged. Broader upgrade remains ACTIVE; production version and approved package unchanged.
 
 2026-10-07 Madbeauty PR26 own worktree: B04/B05 reminders + structured waitlist,137 paired PASS, actual isolated mobile phase booking/error/recovery/settings; exact75aa candidate297 assets. Live f8eba745 unchanged; next C01/C02/B03/W03/O03. No shared/writer files edited.
+
+2026-10-07 Madbeauty PR26 own checkpoint: C01 current-price rebooking + C02 scoped cards/export/fresh-OTP audited requests141PASS, actual mobile repeat/new ID + server attachment + stale card UI. Erasure execution retention facts remain gate; no live data writes. Next B03/W03/O03/I02/I03 and full acceptance.

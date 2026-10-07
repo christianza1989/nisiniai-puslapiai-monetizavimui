@@ -11,9 +11,9 @@ export function createAuth(store){
     if(!create)return null;
     const fresh=randomBytes(32).toString('base64url'),csrf=randomBytes(24).toString('base64url');
     db.prepare('INSERT INTO sessions(token_hash,site_id,account_id,csrf,created_at,touched_at,expires_at) VALUES(?,?,NULL,?,?,?,?)').run(store.hash(fresh),siteId,csrf,now,now,now+8*60*60*1000);
-    return {token_hash:store.hash(fresh),site_id:siteId,account_id:null,csrf,token:fresh,expires_at:now+8*60*60*1000};
+    return {token_hash:store.hash(fresh),site_id:siteId,account_id:null,csrf,token:fresh,created_at:now,expires_at:now+8*60*60*1000};
   };
-  const account=s=>s?.account_id?db.prepare('SELECT id,email,name,operator FROM accounts WHERE id=? AND site_id=?').get(s.account_id,siteId):null;
+  const account=s=>{const u=s?.account_id?db.prepare('SELECT id,email,name,operator FROM accounts WHERE id=? AND site_id=?').get(s.account_id,siteId):null;return u?{...u,verifiedAt:s.created_at}:null;};
   const requireAccount=s=>{const u=account(s);if(!u)reject('UNAUTHENTICATED','Prisijunkite el. paštu.',401);return u;};
   const csrf=(s,value)=>{if(!s||!equal(s.csrf,value||''))reject('CSRF','Sesija pasikeitė. Atnaujinkite puslapį.',403);};
   const start=(s,email,ip)=>{
@@ -44,7 +44,7 @@ export function createAuth(store){
       if(store.onVerifiedAccount)u=store.onVerifiedAccount(u);
       db.prepare('DELETE FROM sessions WHERE token_hash=? AND site_id=?').run(s.token_hash,siteId);
       const fresh=session(null);db.prepare('UPDATE sessions SET account_id=? WHERE token_hash=?').run(u.id,fresh.token_hash);fresh.account_id=u.id;
-      return {session:fresh,user:u};
+      return {session:fresh,user:{...u,verifiedAt:clock()}};
     });
     if(result.error)reject('INVALID_CODE','Kodas neteisingas arba nebegalioja. Gaukite naują kodą.',400);
     return result;

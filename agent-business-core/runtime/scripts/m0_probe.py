@@ -1,6 +1,8 @@
 """Explicit real Gemini setup probe. Does not activate voice or claim audio UX certification."""
 import asyncio
 import json
+import sys
+import wave
 from importlib.metadata import version
 from pathlib import Path
 from uuid import uuid4
@@ -42,16 +44,31 @@ async def probe():
     audio_parts, transcription_parts = 0, 0
     async with asyncio.timeout(25):
         async with client.aio.live.connect(model=cfg.live_model, config=config) as session:
-            await session.send_client_content(turns={"role": "user", "parts": [{"text": "Pasakyk: techninis balso testas."}]}, turn_complete=True)
+            await session.send_client_content(turns={"role": "user", "parts": [{"text":
+                "Perskaityk tik šį tekstą lietuviškai: Man reikia dviejų traktoriaus padangų 420/85 R30. "
+                "Pasiūlymą norėčiau gauti el. paštu. Prašau atidaryti kontaktų langą."}]}, turn_complete=True)
+            pcm = bytearray()
             async for message in session.receive():
                 content = message.server_content
                 if content:
                     if content.model_turn:
                         audio_parts += sum(bool(p.inline_data) for p in content.model_turn.parts)
+                        for part in content.model_turn.parts:
+                            if part.inline_data and part.inline_data.data:
+                                pcm.extend(part.inline_data.data)
                     transcription_parts += int(bool(content.output_transcription))
+    if pcm:
+        output = Path("artifacts/tractor-voice/client-input.wav")
+        output.parent.mkdir(parents=True, exist_ok=True)
+        with wave.open(str(output), "wb") as wav:
+            wav.setnchannels(1)
+            wav.setsampwidth(2)
+            wav.setframerate(24000)
+            wav.writeframes(pcm)
     result = {**metadata, "status": "setup_and_output_checked", "audio_parts": audio_parts,
               "transcription_parts": transcription_parts, "api_key_logged": False,
-              "declared_cost_reserved": True, "invoice_verified": False}
+              "declared_cost_reserved": True, "invoice_verified": False,
+              "audio_file_saved": bool(pcm)}
     return result
 
 
@@ -61,10 +78,14 @@ async def main():
     except Exception:
         # SDK exceptions may contain request URLs or private provider details.
         result = {"status": "probe_failed", "full_m0_pass": False, "private_error_logged": False}
+    finally:
+        await db.engine.dispose()
     path = Path("artifacts/m0-probe.json")
     path.parent.mkdir(exist_ok=True)
     path.write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(json.dumps(result))
+    if result["status"] != "setup_and_output_checked" or not result.get("audio_parts"):
+        sys.exit(1)
 
 
 if __name__ == "__main__":

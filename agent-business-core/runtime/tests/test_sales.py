@@ -3,7 +3,7 @@ from datetime import timedelta
 
 import pytest
 
-from pinet_core import mailbox, sales, service
+from pinet_core import mailbox, order_tests, sales, service
 from pinet_core.config import settings
 from pinet_core.db import db
 from pinet_core.models import Case, MailMessage, new_id, utcnow
@@ -92,6 +92,12 @@ async def test_reminder_once_after_24h_and_reply_cancels(client, monkeypatch):
 
 
 async def test_reply_worker_invoice_same_case_and_idempotency(client, monkeypatch):
+    # Unit tests must not require the owner's ignored billing configuration.
+    monkeypatch.setattr(order_tests, 'issuer_profile', lambda: {
+        'issuer': {'name': 'Fixture issuer', 'kind': 'business', 'registration_code': 'FIXTURE',
+            'address': 'Fixture address', 'vat_registered': False},
+        'tax_treatment': 'not_registered', 'vat_rate_percent': '0', 'tax_policy_ref': 'fixture-non-vat',
+    })
     item, case_id, mid = await case_fixture(client, monkeypatch)
     body = 'Patvirtinu V1, 2 vnt., 1343.32 EUR. Jonas, Kaunas'
     async with db.transaction(item.id, settings().environment) as tx:

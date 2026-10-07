@@ -3,10 +3,13 @@ import os
 import subprocess
 from pathlib import Path
 
+from dotenv import dotenv_values
+
 from pinet_core.config import settings
 
 cfg = settings()
-root = Path(os.environ.get("PINET_PUBLIC_CORE_PATH", "C:/Users/lenovo/Documents/dovanos-memorycasting"))
+root = Path(os.environ.get("PINET_PUBLIC_CORE_PATH") or dotenv_values(".env").get("PINET_PUBLIC_CORE_PATH")
+            or Path(__file__).resolve().parents[4] / "dovanos-memorycasting")
 # Dedicated ignored Cloudflare environment: no generic .dev.vars or SMTP secrets are loaded.
 private = root / ".dev.vars.voice"
 private.write_text(f"VOICE_WIDGET_ENABLED=1\nVOICE_CORE_URL=http://127.0.0.1:8840\n"

@@ -177,6 +177,18 @@ async def finalize(tx, convo):
         slot.expires_at = utcnow()
 
 
+async def request_end(tx, convo):
+    """Let a live owner flush its final audio transcript before queuing post-call jobs."""
+    live_transport = not convo.payload["test"] or convo.payload.get("m0_probe") is True
+    if (live_transport and convo.state == "active" and convo.owner
+            and convo.lease_until and convo.lease_until > utcnow()):
+        convo.payload = {**convo.payload, "stop_requested": True}
+        await add_event(tx, convo, "end-requested", "end_requested", {})
+        return "ending"
+    await finalize(tx, convo)
+    return "finalized"
+
+
 async def submit_contact(tx, convo, data: ContactInput):
     value = data.value
     if data.channel == "email":

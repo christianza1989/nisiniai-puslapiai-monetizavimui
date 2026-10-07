@@ -48,7 +48,7 @@ export function synchronizeWaitlist(store,d){
 }
 export function waitlistMailValid(store,row,payload){
  if(row.type!=='waitlist-offer')return true;
- const d=store.readCollections(['waitlist','preferences']),w=d.waitlist.find(w=>w.id===payload.waitlistId),pref=d.preferences.find(p=>p.clientId===w?.clientId);
+ const w=store.recordById('waitlist',payload.waitlistId),pref=w?store.clientRecords('preferences',w.clientId)[0]:null;
  return !!w&&w.state==='offered'&&w.version===payload.waitlistVersion&&w.offer.id===payload.offerId&&w.offer.outboxId===row.id&&Date.parse(w.offer.expiresAt)>store.clock()&&pref?.service!==false;
 }
 export function claimWaitlist(d,user,input,now){

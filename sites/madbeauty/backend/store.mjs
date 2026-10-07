@@ -22,7 +22,7 @@ export function openStore({filename=path.resolve(import.meta.dirname,'../runtime
   const transaction=fn=>{const invoke=()=>{const value=fn();if(value?.then)throw Error('SQLite transaction callback must be synchronous');return value;};if(transactionDepth)return invoke();db.exec('BEGIN IMMEDIATE');transactionDepth++;try{const value=invoke();db.exec('COMMIT');return value;}catch(e){db.exec('ROLLBACK');throw e;}finally{transactionDepth--;}};
   let rows;try{rows=openRowState({db,siteId,clock,transaction});}catch(e){db.close();throw e;}
   const store={db,siteId,clock,filename,fixturePreview,rowStats:rows.stats,organizationRecords:rows.rows,hash:value=>createHmac('sha256',secret).update(String(value)).digest('hex'),
-    read:rows.read,readCollections:rows.collections,
+    read:rows.read,readCollections:rows.collections,recordById:rows.recordById,clientRecords:rows.clientRecords,readOrganization:rows.readOrganization,writeOrganization:data=>{const fictional=data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-'));if(fictional&&!(fixturePreview&&data.isDemo===true&&data.fixtureRuntime==='server-preview-v1'))throw Error('Fixture data forbidden');rows.writeOrganization(data);},
     write:data=>{const fictional=data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-'));if(fictional&&!(fixturePreview&&data.isDemo===true&&data.fixtureRuntime==='server-preview-v1'))throw Error('Fiction cannot enter real storage');rows.write(data);},
     transaction,
     close:()=>db.close(),

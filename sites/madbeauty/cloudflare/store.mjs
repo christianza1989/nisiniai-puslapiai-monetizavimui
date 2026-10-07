@@ -24,7 +24,7 @@ export function openDurableStore(ctx,secret,{clock=()=>Date.now()}={}){
  const seal=data=>{const iv=randomBytes(12),cipher=createCipheriv('aes-256-gcm',key,iv);return JSON.stringify({v:1,iv:iv.toString('base64'),tag:null,encrypted:Buffer.concat([cipher.update(JSON.stringify(data),'utf8'),cipher.final()]).toString('base64'),...{tag:cipher.getAuthTag().toString('base64')}});};
  const unseal=raw=>{const data=JSON.parse(raw);if(data.v!==1)throw Error('Unrecognized outbox payload');const cipher=createDecipheriv('aes-256-gcm',key,Buffer.from(data.iv,'base64'));cipher.setAuthTag(Buffer.from(data.tag,'base64'));return JSON.parse(Buffer.concat([cipher.update(Buffer.from(data.encrypted,'base64')),cipher.final()]).toString('utf8'));};
  const store={db,siteId:SITE_ID,clock,fixturePreview:false,rowStats:rows.stats,organizationRecords:rows.rows,hash:value=>createHmac('sha256',secret).update(String(value)).digest('hex'),
-  read:rows.read,readCollections:rows.collections,
+  read:rows.read,readCollections:rows.collections,recordById:rows.recordById,clientRecords:rows.clientRecords,readOrganization:rows.readOrganization,writeOrganization:data=>{if(data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-')))throw Error('Fixture data forbidden');rows.writeOrganization(data);},
   write:data=>{
    if(data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-')))throw Error('Fixture data forbidden');
    rows.write(data);

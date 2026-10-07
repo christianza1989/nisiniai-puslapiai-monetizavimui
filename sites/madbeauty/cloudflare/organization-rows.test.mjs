@@ -1,0 +1,32 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+const runtime=path.resolve(import.meta.dirname,'../../../../dovanos-memorycasting');
+const {build}=await import(pathToFileURL(path.join(runtime,'node_modules/esbuild/lib/main.js'))),{Miniflare}=await import(pathToFileURL(path.join(runtime,'node_modules/miniflare/dist/src/index.js')));
+test('Actual Workers organization patch books against 5000 unrelated rows without global read; other reminder and snapshots survive conflict/restart',async()=>{
+ const bundle=await build({stdin:{resolveDir:import.meta.dirname,sourcefile:'isolated-org-row-fixture.mjs',contents:`
+  import {DurableObject} from 'cloudflare:workers';
+  import {openDurableStore} from './store.mjs';
+  import {createPlatform} from '../backend/platform.mjs';
+  export class OrganizationFixture extends DurableObject {
+   constructor(ctx,env){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET,{clock:()=>Date.parse('2026-10-07T06:00:00Z')});this.read=this.store.read;this.api=createPlatform(this.store);this.owner={id:'isolated-owner',email:'owner@example.com'},this.client={id:'isolated-client',email:'client@example.com'};
+    if(!this.store.readCollections(['organizations']).organizations.length){const d=this.read();d.clients.push({...this.owner,name:'Owner fixture',version:1},{...this.client,name:'Client fixture',version:1});this.store.write(d);for(const name of ['Fixture A','Fixture B']){const org=this.api.createOrganization(this.owner,{name,city:'Vilnius',kind:'solo',bio:'Isolated Worker organization authority.'}),scope={role:'professional',organizationId:org.id},w=this.api.workspace(this.owner,scope);this.api.createService(this.owner,{organizationId:org.id,practitionerId:w.practitioners[0].id,resourceId:w.resources[0].id,taxonomyServiceId:'manikiuras',label:'Worker fixture manicure',durationMin:60,priceMinor:2500});this.api.moderate({...this.owner,operator:true},{id:this.api.submitRevision(this.owner,{scope,name,bio:org.bio}).id,state:'approved'});}}
+   }
+   async fetch(request){const route=new URL(request.url).pathname,orgs=this.store.readCollections(['organizations']).organizations,a=orgs.find(o=>o.name==='Fixture A'),b=orgs.find(o=>o.name==='Fixture B'),services=this.store.readCollections(['services']).services,slot=org=>this.api.availability({providerServiceId:services.find(s=>s.organizationId===org.id).id,dayOffset:1,from:900,to:1200,addons:[]}).slots[0];try{
+    if(route==='/load'){const otherHold=this.api.hold(this.client,slot(b));this.api.confirm(this.client,{holdId:otherHold.id,idempotencyKey:'other-worker',name:'Client fixture'});const d=this.read();for(let n=0;n<5000;n++)d.bookings.push({id:'isolated-history-'+n,organizationId:b.id,status:'completed',clientId:'isolated-unrelated-'+n,startAt:'2026-01-01T07:00:00Z',endAt:'2026-01-01T08:00:00Z',serviceSnapshot:{label:'Retained isolated history',description:'x'.repeat(500),priceMinor:3000}});this.store.write(d);}
+    this.store.read=()=>{throw Error('Global history read forbidden');};
+    if(route==='/book'){const candidate=slot(a),hold=this.api.hold(this.client,candidate),input={holdId:hold.id,idempotencyKey:'worker-scoped',name:'Client fixture'},booking=this.api.confirm(this.client,input);if(this.api.confirm(this.client,input).id!==booking.id)throw Error('Replay mismatch');try{this.api.hold(this.client,candidate);throw Error('Missing conflict');}catch(e){if(e.code!=='SLOT_CONFLICT')throw e;}this.api.cancelBooking(this.client,{id:booking.id,version:1,reason:'Isolated scoped cancellation'});}
+    const first=this.store.organizationRecords('bookings',a.id),other=this.store.organizationRecords('bookings',b.id).find(x=>x.status==='confirmed'),job=this.store.db.prepare('SELECT * FROM notification_jobs WHERE booking_id=?').get(other?.id),raw=JSON.stringify(this.read());return Response.json({bookings:first,other,job,stats:this.store.rowStats(),actualBytes:Buffer.byteLength(raw),outbox:first.length?this.store.db.prepare('SELECT COUNT(*) AS n FROM mail_outbox WHERE booking_id=?').get(first[0].id).n:0});
+   }catch(e){return Response.json({code:e.code||e.message},{status:e.status||500});}}
+  }
+  export default {fetch(request,env){return env.ORGANIZATION_FIXTURE.get(env.ORGANIZATION_FIXTURE.idFromName('isolated-only')).fetch(request);}};
+ `},write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text'}});
+ const dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-org-workers-')),start=()=>new Miniflare({modules:true,script:bundle.outputFiles[0].text,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{ORGANIZATION_FIXTURE:{className:'OrganizationFixture',useSQLite:true}},durableObjectsPersist:dir,bindings:{SESSION_SECRET:'isolated-org-worker-'.repeat(3)}});let mf=start();
+ try{
+  const get=async route=>{const r=await mf.dispatchFetch('https://org-fixture.test'+route);const value=await r.json();assert.equal(r.status,200,JSON.stringify(value));return value;},before=await get('/load'),after=await get('/book');assert.equal(after.bookings.length,1);assert.equal(after.bookings[0].status,'canceled');assert.deepEqual(after.other,before.other);assert.deepEqual(after.job,before.job);assert.equal(after.outbox,2);assert.equal(after.stats.bytes,after.actualBytes);assert.equal(after.stats.legacyMirrored,false);
+  await mf.dispose();mf=start();const reopened=await get('/');assert.deepEqual(reopened.bookings,after.bookings);assert.deepEqual(reopened.job,before.job);assert.equal(reopened.stats.bytes,reopened.actualBytes);assert.equal(reopened.outbox,2);
+ }finally{await mf.dispose();if(path.resolve(dir).startsWith(path.resolve(os.tmpdir())+path.sep+'madbeauty-org-workers-'))await rm(dir,{recursive:true,force:true});}
+});

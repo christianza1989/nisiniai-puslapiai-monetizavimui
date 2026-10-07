@@ -1,8 +1,9 @@
 import {createHash} from 'node:crypto';
 import {reject} from './primitives.mjs';
+import {organizationRows} from './organization-rows.mjs';
 const rowLimit=128*1024,legacyLimit=1024*1024;
 const byteLength=s=>Buffer.byteLength(s,'utf8');
-function encode(data){
+export function encode(data){
  const fields=[],rows=[];
  for(const [collection,value] of Object.entries(data)){
   const kind=Array.isArray(value)?'array':value&&typeof value==='object'?'object':'scalar';fields.push({collection,kind});
@@ -18,7 +19,7 @@ function encode(data){
  if(byteLength(JSON.stringify(fields))>64*1024)throw Error('Invalid state collection manifest');
  return {fields,rows};
 }
-function decode(fields,rows){
+export function decode(fields,rows){
  const data={};for(const f of fields)Object.defineProperty(data,f.collection,{value:f.kind==='array'?[]:f.kind==='object'?{}:undefined,enumerable:true,writable:true,configurable:true});
  const kinds=new Map(fields.map(f=>[f.collection,f.kind]));
  for(const r of rows){const kind=kinds.get(r.collection),value=JSON.parse(r.data);if(kind==='array')data[r.collection].push(value);else if(kind==='object')Object.defineProperty(data[r.collection],r.record_key,{value,enumerable:true,writable:true,configurable:true});else if(kind==='scalar')data[r.collection]=value;else throw Error('Invalid state collection');}
@@ -50,5 +51,5 @@ export function openRowState({db,siteId,transaction,clock}){
   write(data);
   if(JSON.stringify(read())!==JSON.stringify(data))throw Error('State migration verification failed');
  });
- return {read,write,collections,stats:()=>{const m=currentMetadata();return {model:'rows-v2',version:m.version,records:m.records,bytes:m.bytes,maxRecordBytes:db.prepare('SELECT COALESCE(MAX(LENGTH(CAST(data AS BLOB))),0) AS bytes FROM state_rows WHERE site_id=?').get(siteId).bytes,legacyMirrored:!!m.legacy_mirrored};},rows:(collection,organizationId)=>{currentMetadata();return db.prepare('SELECT data FROM state_rows WHERE site_id=? AND collection=? AND organization_id=? ORDER BY position').all(siteId,collection,organizationId).map(r=>JSON.parse(r.data));}};
+ return {...organizationRows({db,siteId,transaction,clock,currentMetadata,fullRead:read,encode,decode}),read,write,collections,stats:()=>{const m=currentMetadata();return {model:'rows-v2',version:m.version,records:m.records,bytes:m.bytes,maxRecordBytes:db.prepare('SELECT COALESCE(MAX(LENGTH(CAST(data AS BLOB))),0) AS bytes FROM state_rows WHERE site_id=?').get(siteId).bytes,legacyMirrored:!!m.legacy_mirrored};},rows:(collection,organizationId)=>{currentMetadata();return db.prepare('SELECT data FROM state_rows WHERE site_id=? AND collection=? AND organization_id=? ORDER BY position').all(siteId,collection,organizationId).map(r=>JSON.parse(r.data));}};
 }

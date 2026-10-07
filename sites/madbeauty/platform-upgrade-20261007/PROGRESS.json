@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "fca9d76",
+  "runtimeSourceCheckpoint": "40e9501",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -82,6 +82,12 @@
       "tests": 154,
       "state": "accepted-isolated-pilot-path",
       "remaining": "Larger media adapter activation/migration requires reviewed account/cost; organization routing and full state matrix remain"
+    },
+    {
+      "name": "indexed-organization-booking-patch-and-actual-branch-browser",
+      "tests": 157,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical tenant routing and remaining global operations; full UI matrix and factual activation"
     }
   ],
   "tasks": [
@@ -236,8 +242,8 @@
       "id": "W02",
       "title": "Keli adresai ir komandos grafikas",
       "phase": "3",
-      "state": "in-progress",
-      "evidence": "Reviewed branch CRUD, own-place staff/resources/schedules, travel buffer and old-booking guards; local + Workers restart acceptance"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: reviewed branches and staff/resources/schedules, same staff transfer protection; actual browser branch booking, no-whole-slot recovery, explicit confirmation and versioned reschedule/reload at320/390/820/1440."
     },
     {
       "id": "W03",
@@ -283,7 +289,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md: immutable legacy checkpoint, IDs/restart, bounded rows, indexed public read, synthetic size/timing; remaining global mutation/DO routing"
+      "evidence": "STORAGE.md: indexed own-organization booking mutations, guarded row patch and counter, atomic outbox and foreign history/reminder preservation; actual Node/Workers >1MiB/restart; physical routing and global operations remain."
     },
     {
       "id": "I03",
@@ -349,8 +355,7 @@
     }
   ],
   "next": [
-    "W02 actual browser branch booking",
-    "I02 scoped writes and per-organization routing",
+    "I02 physical organization routing and remaining global operations",
     "Full desktop/mobile error/stale/conflict states",
     "I03 larger-adapter activation and hosted load gate"
   ]

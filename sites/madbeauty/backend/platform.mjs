@@ -34,8 +34,9 @@ export function createPlatform(store){
   };
   const ownOrg=(d,user,org,capability=null)=>requireCapability(scope(d,user,{role:'professional',organizationId:org}),capability);
   const ownBooking=(d,user,requested,id)=>{const b=find(d,'bookings',id),s=scope(d,user,requested);if(s.role==='operator'||s.role==='customer'&&b.clientId!==user.id||s.role==='professional'&&(b.organizationId!==s.organizationId||s.practitionerId&&!bookingUses(b,'practitionerId',s.practitionerId)))reject('FORBIDDEN','Šio vizito prieiga neleidžiama.',403);return b;};
-  const mutate=fn=>store.transaction(()=>{const d=store.read();d.media||=[];offerState(d);const result=fn(d);synchronizeWaitlist(store,d);synchronizeReminders(store,d);store.write(d);return copy(result);});
-  const event=(d,type,id)=>d.events.push({id:randomId('event'),type,entityId:id,at:new Date(store.clock()).toISOString(),siteId:store.siteId});
+  let organizationMutation=null;
+  const mutate=fn=>store.transaction(()=>{const d=organizationMutation||store.read();d.media||=[];offerState(d);const result=fn(d);synchronizeWaitlist(store,d);synchronizeReminders(store,d);if(organizationMutation)store.writeOrganization(d);else store.write(d);return copy(result);});
+  const event=(d,type,id)=>d.events.push({id:randomId('event'),type,entityId:id,...(d.organizationContext?{organizationId:d.organizationContext}:{}),at:new Date(store.clock()).toISOString(),siteId:store.siteId});
   const outbox=(d,b,type)=>{const c=find(d,'clients',b.clientId);return store.mail({accountId:c.id,organizationId:b.organizationId,bookingId:b.id,recipient:c.email,type,payload:{bookingId:b.id,startAt:b.startAt,endAt:b.endAt,status:b.status,priceMinor:b.priceMinor}});};
   const slots=(d,input,opts={})=>availability(d,input,store.clock(),opts);
   const choose=(d,candidate,opts={})=>{
@@ -227,5 +228,15 @@ export function createPlatform(store){
     }).filter(s=>filters.anyTime||s.bookingMode&&s.bookingMode!=='instant'||s.availability.slots.length||s.availability.state==='needs-options');
     rows.sort(filters.sort==='distance'?(a,b)=>(a.distanceKm??Infinity)-(b.distanceKm??Infinity)||a.id.localeCompare(b.id):filters.sort==='price'?(a,b)=>a.priceMinor-b.priceMinor||a.id.localeCompare(b.id):filters.sort==='name'?(a,b)=>a.organizationName.localeCompare(b.organizationName,'lt')||a.id.localeCompare(b.id):(a,b)=>(a.nextAt||'z').localeCompare(b.nextAt||'z')||a.id.localeCompare(b.id));return rows;
   };
-  api.searchResults=(filters={})=>groupSearchRows(api.search(filters),filters);return api;
+  api.searchResults=(filters={})=>groupSearchRows(api.search(filters),filters);
+  if(store.readOrganization&&store.recordById){
+    const record=(table,id)=>{const value=store.recordById(table,id);if(!value)reject('NOT_FOUND','Įrašas nerastas.',404);return value;};
+    const confirmation=(i,user,multi=false)=>{const h=store.recordById('holds',i?.holdId);if(h)return h;const prior=store.recordById('idempotency',user.id+':'+(multi?'visit:':'')+i?.idempotencyKey);return prior?.bookingId?record('bookings',prior.bookingId):record('holds',i?.holdId);};
+    const routes={hold:i=>record('services',i?.providerServiceId),holdVisit:i=>record('services',i?.items?.[0]?.providerServiceId),confirm:(i,u)=>confirmation(i,u),confirmVisit:(i,u)=>confirmation(i,u,true),releaseHold:i=>record('holds',i),cancelBooking:i=>record('bookings',i?.id),changeBooking:i=>record('bookings',i?.id),changeVisit:i=>record('bookings',i?.id),completeBooking:i=>record('bookings',i?.id),message:i=>record('bookings',i?.bookingId),review:i=>record('bookings',i?.bookingId),manualVisit:i=>record('services',i?.candidate?.providerServiceId),acceptWaitlist:i=>record('waitlist',i?.id),closeWaitlist:i=>record('waitlist',i?.id),createInquiry:i=>record('services',i?.providerServiceId)};
+    for(const [name,resolve] of Object.entries(routes)){const original=api[name];api[name]=(user,input)=>{
+      if(!user)return original(user,input);
+      return store.transaction(()=>{const target=resolve(input,user);if(organizationMutation)throw Error('Nested organization mutation');const view=store.readOrganization(target.organizationId,[user.id,input?.clientId].filter(Boolean));organizationMutation=view.organizationPatchReady?view:null;try{return original(user,input);}finally{organizationMutation=null;}});
+    };}
+  }
+  return api;
 }

@@ -14,4 +14,4 @@ Izoliuota bazė private8653b48/public37208b8. Kitų nišų patvirtintos revizijo
 
 Savos browser pataisos atskirai: mobile word space, TOC prieš prose DOM ir desktop column2, keturių gidų indekso tekstas, About literal Markdown brackets. Jos neperkelia kitų nišų turinio.
 
-R2 ir S2: tikras 200 % naršyklės mastelis nepatvirtintas. U3: SMTP priėmė vieną pažymėtą laišką, tačiau keturios tikslaus Message-ID paieškos INBOX jo nerado. Pristatymo priežastis nenustatyta. Production legal/host/D1/rate/recovery/retention/processors/CWV ir demand vartai atskirai neįrodyti. Jokių site-ID LLM išimčių, suklastotų kvitų ar tylaus modelio pakeitimo.
+R2 ir S2: tikras 200 % naršyklės mastelis nepatvirtintas. U3: pažymėtas laiškas rastas INBOX.Junk, o ne INBOX; SPF/DKIM/DMARC praėjo, pašto filtravimo nustatymai nekeisti. Pristatymo priežastis nenustatyta. Production legal/host/D1/rate/recovery/retention/processors/CWV ir demand vartai atskirai neįrodyti. Jokių site-ID LLM išimčių, suklastotų kvitų ar tylaus modelio pakeitimo.

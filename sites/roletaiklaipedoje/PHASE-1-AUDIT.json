@@ -2,7 +2,7 @@
   "siteId": "roletaiklaipedoje",
   "canonicalHost": "roletaiklaipedoje.lt",
   "phase": 1,
-  "evaluatedAt": "2026-10-07T13:28:52.369Z",
+  "evaluatedAt": "2026-10-07T13:54:05.297Z",
   "evaluator": "Codex agentas pagal faktinius įrodymus; ne nepriklausomas ar žmogaus patvirtinimas",
   "environment": {
     "origin": "http://127.0.0.1:8794",
@@ -745,6 +745,8 @@
       "status": "PASS",
       "evidence": [
         "FORM_VERIFICATION.json; ACCESSIBILITY-VERIFICATION.json",
+        "NATIVE_FORM_QA.json",
+        "NATIVE_FORM_QA.json",
         "NATIVE_FORM_QA.json"
       ],
       "notes": "Native/server validation, origin, size/chunked, honeypot, unknown Host ir accepted; tikras D1 consent/new išlieka be SMTP."
@@ -767,9 +769,11 @@
       "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
       "status": "FAIL",
       "evidence": [
-        "MAIL_VERIFICATION.json"
+        "MAIL_VERIFICATION.json",
+        "MAIL_DIAGNOSTIC.json",
+        "MAIL_DIAGNOSTIC.json"
       ],
-      "notes": "Vienas SMTP accepted laiškas; keturios tikslaus Message-ID paieškos INBOX iki 2026-10-07T13:14:28.000Z nerado match. Antras laiškas nesiųstas, nustatymai nekeisti, test lead pašalintas."
+      "notes": "Pažymėtas Message-ID rastas INBOX.Junk, ne INBOX. Exact self-test headers rodo SPF/DKIM/DMARC pass; spam score nepateiktas. Tik read-only EXAMINE/PEEK, laiškas neperkeltas, antras nesiųstas, nustatymai nekeisti, synthetic D1 pašalintas."
     },
     {
       "id": "U4",

@@ -14,7 +14,7 @@
   "imapAuthenticated": true,
   "onlyMatchingHeaderSearch": true,
   "syntheticLeadRemoved": true,
-  "result": "SMTPaccepted; four exact-ID INBOX searches found no match, including fourth after approximately23minutes. No second email or mailbox/DNS changes.",
+  "result": "SMTP accepted; the exact marked message was found in INBOX.Junk, not INBOX. SPF, DKIM and DMARC passed; provider spam score was not supplied. No move, second message or configuration change.",
   "inbox": {
     "date": "2026-10-07T13:14:28.000Z",
     "tlsVerified": true,
@@ -25,5 +25,23 @@
   },
   "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
   "sourceVersion": "17b30eb1355a39407eeefc70b76ef298665fb565",
-  "sourceFingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960"
+  "sourceFingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960",
+  "deliveryDiagnostic": {
+    "at": "2026-10-07T13:50:53.503Z",
+    "file": "MAIL_DIAGNOSTIC.json",
+    "matches": [
+      {
+        "folder": "INBOX.Junk",
+        "found": true,
+        "authenticationResults": [
+          "dkim=pass",
+          "dmarc=pass",
+          "spf=pass"
+        ],
+        "spamFlag": "not supplied",
+        "spamScore": "not supplied",
+        "onlySelectedSelfTestHeadersRead": true
+      }
+    ]
+  }
 }

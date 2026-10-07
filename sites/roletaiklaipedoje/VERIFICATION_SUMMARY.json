@@ -62,7 +62,7 @@
   ],
   "notMeasured": [
     "Actual 200% browser zoom: unsupported shortcut produced no change; R2/S2 remain UNVERIFIED.",
-    "Matching self-test INBOX receipt: searches returned no match; U3 FAIL.",
+    "Matching INBOX receipt is absent; exact marked message found INBOX.Junk, SPF/DKIM/DMARC passed. U3 FAIL; read-only MAIL_DIAGNOSTIC.json.",
     "Live deployment, indexing, field CWV, real demand and production legal/operational gates."
   ]
 }

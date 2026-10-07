@@ -1,6 +1,6 @@
 # Galutinio vietinio rezultato peržiūra
 
-**Priėmimas neužbaigtas:** local69/72 (9.58/10). R2 ir S2: tikras 200 % naršyklės mastelis nepatvirtintas. U3: SMTP priėmė vieną pažymėtą laišką, tačiau keturios tikslaus Message-ID paieškos INBOX jo nerado. Ne10/10, ne local-ready/domain-ready; ankstesnio mėlyno rezultato Ship nebegalioja.
+**Priėmimas neužbaigtas:** local69/72 (9.58/10). R2 ir S2: tikras 200 % naršyklės mastelis nepatvirtintas. U3: pažymėtas laiškas rastas INBOX.Junk, o ne INBOX; SPF/DKIM/DMARC praėjo, pašto filtravimo nustatymai nekeisti. Ne10/10, ne local-ready/domain-ready; ankstesnio mėlyno rezultato Ship nebegalioja.
 
 Actual agento craft peržiūra:11 URL/4 individualūs gidai/4 full-scroll viewport, du artimiausi maketai abiem pločiais ir8 peržiūrėti lapai,6 neuždengti LT/UK/CZ kadrai. Originali kryptis B: paper/Georgia/system-ui, lango ženklas, antraštė virš panoramos, asimetriškas pasiruošimas, numeruoti gidai ir optional editable message. Penkios tikros ImageGen generacijos/25 WebP su peržiūrėtais crops. Nepriklausomo ar žmogaus approval ir skaitinio craft10/10 nėra.
 

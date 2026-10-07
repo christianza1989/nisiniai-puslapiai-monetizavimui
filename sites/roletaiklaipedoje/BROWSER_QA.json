@@ -4141,5 +4141,13 @@
     "Historical5195 block is not current8794 result.",
     "No physical phone/touch or human/independent craft certification."
   ],
-  "privatePixels": true
+  "privatePixels": true,
+  "nativeFeedback": {
+    "report": "NATIVE_FORM_QA.json",
+    "screenshots": [
+      "verification/native-success-desktop.png",
+      "verification/native-success-mobile.png"
+    ],
+    "observed": "Actual native form POST succeeded with honest local-only/no-mail text; return link activated; D1 consent/new verified and exact test lead removed."
+  }
 }

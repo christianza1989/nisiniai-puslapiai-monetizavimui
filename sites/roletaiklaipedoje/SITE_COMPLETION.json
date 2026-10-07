@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-07T13:30:10.661Z",
-  "projectionAt": "2026-10-07T13:30:09.795Z",
+  "checkedAt": "2026-10-07T13:54:06.360Z",
+  "projectionAt": "2026-10-07T13:54:05.470Z",
   "siteId": "roletaiklaipedoje",
   "canonicalHost": "roletaiklaipedoje.lt",
   "transportOrigin": "http://127.0.0.1:8794",
@@ -206,15 +206,15 @@
       "errors": []
     },
     {
-      "url": "https://roletaiklaipedoje.lt/kontaktai",
-      "errors": []
-    },
-    {
       "url": "https://roletaiklaipedoje.lt/apie-projekta",
       "errors": []
     },
     {
       "url": "https://roletaiklaipedoje.lt/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/kontaktai",
       "errors": []
     },
     {
@@ -269,12 +269,6 @@
       "sha256": "51b219ff1af50f83c218941f64bee4e14cd6c96e6963bd46edcb8b9bef4ab9a7"
     },
     {
-      "path": "/kontaktai",
-      "status": 200,
-      "contentType": "text/html; charset=utf-8",
-      "sha256": "2e5e3ebfb6fe00fb26786ca632787244deaf7fe8d8d83082c64280dbde7c4bed"
-    },
-    {
       "path": "/apie-projekta",
       "status": 200,
       "contentType": "text/html; charset=utf-8",
@@ -285,6 +279,12 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "sha256": "5b9776cd61099c114ac6e22236bf64a56a539545fba63c74f9853b70f06da4dd"
+    },
+    {
+      "path": "/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2e5e3ebfb6fe00fb26786ca632787244deaf7fe8d8d83082c64280dbde7c4bed"
     },
     {
       "path": "/redakcija",
@@ -353,16 +353,16 @@
       "sha256": "dfdb9eeb7e613b7a6b9492978cdc3e914849f260ee0d704b056736a1b1767bfb"
     },
     {
-      "path": "/content-assets/roletaiklaipedoje/d5723dd3-5296-4fe4-afb3-02c004568da1.webp",
-      "status": 200,
-      "contentType": "image/webp",
-      "sha256": "7e0e129171b4088c86ce09940fef4167d8aace0de323bc7ba1599ed4bdc93ac2"
-    },
-    {
       "path": "/content-assets/roletaiklaipedoje/979247f9-4494-40e1-bfc6-df2862405800.webp",
       "status": 200,
       "contentType": "image/webp",
       "sha256": "5d929274c6004f6528d1d87d82cf9d40f2ce5bd3326f479ed4e37a0f3034aa8c"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/d5723dd3-5296-4fe4-afb3-02c004568da1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "7e0e129171b4088c86ce09940fef4167d8aace0de323bc7ba1599ed4bdc93ac2"
     },
     {
       "path": "/content-assets/roletaiklaipedoje/a0868661-1cda-43e2-b14a-4afe226167db.webp",
@@ -383,16 +383,16 @@
       "sha256": "d2f538719d01e7d4b46a03f69488fe5a52cb90a29347941ea7d0ba91f3bdcef1"
     },
     {
-      "path": "/content-assets/roletaiklaipedoje/1e4d8d70-6ffd-41ff-8cd2-d5a2b056ec97.webp",
-      "status": 200,
-      "contentType": "image/webp",
-      "sha256": "4e8d0eb3a6b0fdd134fe0b8ed02338f4b38c4a8f76bdf0dce949ccc9a2a677b9"
-    },
-    {
       "path": "/content-assets/roletaiklaipedoje/54a938f9-e9c4-46a4-8990-e657decd4aff.webp",
       "status": 200,
       "contentType": "image/webp",
       "sha256": "3a2b3ed4fcff648f112468e900ec7da3d5916c52d8c3473963e786908616dd72"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/1e4d8d70-6ffd-41ff-8cd2-d5a2b056ec97.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "4e8d0eb3a6b0fdd134fe0b8ed02338f4b38c4a8f76bdf0dce949ccc9a2a677b9"
     },
     {
       "path": "/content-assets/roletaiklaipedoje/232f4a08-c348-4551-8367-ac0a470c9b1b.webp",
@@ -425,16 +425,16 @@
       "sha256": "eecbd62c3d1089843ca566f383bf2cb1b559dd34b8cf5f9e4cafd7f0d603ba9b"
     },
     {
-      "path": "/content-assets/roletaiklaipedoje/92f67e70-feae-4314-9292-4a22aa8d1d56.webp",
-      "status": 200,
-      "contentType": "image/webp",
-      "sha256": "265afdaccc686ce377a140e2bb86814eaf0c8554fc6393c5d8dbc470f3fd4704"
-    },
-    {
       "path": "/content-assets/roletaiklaipedoje/a09454a9-4533-4927-b367-3d10e4f54a13.webp",
       "status": 200,
       "contentType": "image/webp",
       "sha256": "e153f6178c835b7a8bd7abac1a84db6554939198f87eb603dd1601d1dfa9044e"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/92f67e70-feae-4314-9292-4a22aa8d1d56.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "265afdaccc686ce377a140e2bb86814eaf0c8554fc6393c5d8dbc470f3fd4704"
     },
     {
       "path": "/content-assets/roletaiklaipedoje/f38979d5-42cf-447d-b291-808ecc18c726.webp",
@@ -499,7 +499,7 @@
   ],
   "auditScore": {
     "siteId": "roletaiklaipedoje",
-    "evaluatedAt": "2026-10-07T13:28:52.369Z",
+    "evaluatedAt": "2026-10-07T13:54:05.297Z",
     "stages": {
       "local": {
         "passed": 69,

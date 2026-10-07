@@ -36,6 +36,7 @@ for(const name of ['cities.mjs','taxonomy-data.mjs','taxonomy.mjs','content-targ
 await mkdir(path.join(assets,'content-assets/madbeauty'),{recursive:true});
 for(const file of new Set(pkg.pages.flatMap(p=>p.media.map(m=>path.basename(m.src)))))await copyFile(path.join(path.dirname(packagePath),'assets',file),path.join(assets,'content-assets/madbeauty',file));
 const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js')));
+await build({stdin:{contents:`export {projectContentPagesV2} from ${JSON.stringify(path.join(core,'lib/content-projection-v2.mjs'))};export {contentSeoV2} from ${JSON.stringify(path.join(core,'lib/content-seo-v2.mjs'))};`,resolveDir:core,sourcefile:'madbeauty-shared-content.mjs'},outfile:path.join(output,'content-core.mjs'),bundle:true,platform:'neutral',format:'esm'});
 await build({entryPoints:[path.join(core,'lib/gift-seo.ts')],outfile:path.join(output,'gift-seo.mjs'),bundle:true,platform:'neutral',format:'esm'});
 await build({entryPoints:[path.join(core,'lib/niche-seo.ts')],outfile:path.join(output,'seo.mjs'),bundle:true,platform:'neutral',format:'esm',plugins:[{name:'site-bindings',setup(b){
  b.onResolve({filter:/^@\/lib\/niche-sites$/},()=>({path:'sites',namespace:'site'}));b.onResolve({filter:/^@\/lib\/niche-network$/},()=>({path:'network',namespace:'site'}));

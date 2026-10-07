@@ -11,6 +11,7 @@ import {openStore} from '../backend/store.mjs';
 import {createApiHandler} from '../backend/http.mjs';
 import {initializeFixtureRuntime} from '../backend/fixture-runtime.mjs';
 import {contentProjection,contentAssetsRoot} from '../content/adapter.mjs';
+import {sharingHtml} from './public/sharing.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),publicRoot=path.join(root,'public');
 const network=JSON.parse(await readFile(process.env.MB_NETWORK_CONFIG||path.resolve(root,'../../../../dovanos-memorycasting/config/niche-network.json'),'utf8'));
 const siteContact=network.contactsBySite?.madbeauty||{},contact={operatorName:siteContact.operatorName||network.operatorName,email:siteContact.email||network.defaultEmail};
@@ -73,7 +74,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
         html=html.replace(/<title>[^<]*<\/title>/,'<title>'+(route?.label||'Puslapis nerastas')+' · Madbeauty</title>');
         const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
         if(cataloguePage){html=html.replace(/<title>[^<]*<\/title>/,'<title>'+escape(cataloguePage.title)+' · Madbeauty</title>').replace('</head>',`<link rel="canonical" href="https://madbeauty.lt${escape(requested)}"></head>`).replace('<p class="container">Įkeliama…</p>',renderCataloguePage(cataloguePage));}
-        else if(contentPage&&!isCatalogue){html=html.replace(/<title>[^<]*<\/title>/,'<title>'+escape(contentPage.title)+' · Madbeauty</title>').replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+escape(contentPage.description)+'">');html=html.replace('</head>',`<link rel="canonical" href="${escape(content.seo.nichePageUrl(content.pkg,contentPage))}"><script type="application/ld+json">${JSON.stringify(content.schema(contentPage)).replace(/</g,'\\u003c')}</script></head>`);html=html.replace('<p class="container">Įkeliama…</p>',content.html(contentPage));}
+        else if(contentPage&&!isCatalogue&&!invalidPage){html=html.replace(/<title>[^<]*<\/title>/,'<title>'+escape(contentPage.title)+' · Madbeauty</title>').replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+escape(contentPage.description)+'">');html=html.replace('</head>',`<link rel="canonical" href="${escape(content.seo.nichePageUrl(content.pkg,contentPage))}">${sharingHtml(content.metadata?.(contentPage))}<script type="application/ld+json">${JSON.stringify(content.schema(contentPage)).replace(/</g,'\\u003c')}</script></head>`);html=html.replace('<p class="container">Įkeliama…</p>',content.html(contentPage));}
         else if(route)html=html.replace('</head>',`<link rel="canonical" href="http://127.0.0.1:${req.socket.localPort}${route.canonical}"></head>`);
         res.writeHead(route&&!invalidPage?200:404,{...headers,'Content-Type':mime['.html']});res.end(req.method==='HEAD'?undefined:html);return;
       }

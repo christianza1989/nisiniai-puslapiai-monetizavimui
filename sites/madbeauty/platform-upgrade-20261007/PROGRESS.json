@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "c373a0f",
-  "companionSchema": "niche-public-core63cfd8c / PR6",
+  "runtimeSourceCheckpoint": "f3bb9f4",
+  "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
     {

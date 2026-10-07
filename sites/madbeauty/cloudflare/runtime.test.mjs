@@ -90,6 +90,7 @@ test('Compiled Workers publication boundary excludes future body, links, schema,
  const pkg=articleFixture(),article=pkg.pages[1],initial=JSON.parse(await readFile(new URL('../content/initial-release/content-package.json',import.meta.url),'utf8'));
  article.media=initial.pages.find(p=>p.type==='guide').media;assert.equal(article.media.length,5);article.editorial.featuredImageId=article.media[0].id;
  const publishAt=Date.parse('2026-10-13T07:00:00Z');article.publishAt=new Date(publishAt).toISOString();article.editorial.datePublished=article.publishAt;
+ pkg.pages.push({...structuredClone(pkg.pages[0]),id:'boundary-author',type:'author',slug:'autoriai/fixture-editor',title:'Boundary author',publishAt:article.publishAt});
  pkg.pages[0].body.push({type:'richParagraph',content:[{type:'link',text:'Būsimas gidas',target:{kind:'page',pageId:article.id}}]});signFixture(pkg);
  const media=new Map(await Promise.all(article.media.map(async m=>[m.src,await readFile(new URL('../content/initial-release/assets/'+path.basename(m.src),import.meta.url))])));
  for(const now of [publishAt-1,publishAt]){
@@ -102,9 +103,9 @@ test('Compiled Workers publication boundary excludes future body, links, schema,
   try{
    const route='/'+article.slug,response=await f.mf.dispatchFetch(origin+route),html=await response.text();assert.equal(response.status,future?404:200);
    const home=await(await f.mf.dispatchFetch(origin+'/')).text(),json=await(await f.mf.dispatchFetch(origin+'/content.json')).text();
-   if(future){assert.ok(!html.includes(article.title));assert.ok(!html.includes('application/ld+json'));assert.ok(!home.includes('href="https://madbeauty.lt'+route+'"'));assert.ok(!json.includes(article.id));}
-   else {assert.ok(html.includes(article.title));assert.ok(html.includes('"@type":"Article"'));assert.ok(home.includes('href="https://madbeauty.lt'+route+'"'));assert.ok(json.includes(article.id));assert.match(html,/srcset=/);}
-   for(const path of ['/sitemap.xml','/llms.txt','/llms-full.txt']){const text=await(await f.mf.dispatchFetch(origin+path)).text();assert.equal(text.includes('https://madbeauty.lt'+route),!future,path);}
+   if(future){assert.ok(!html.includes(article.title));assert.ok(!html.includes('application/ld+json'));assert.ok(!home.includes('href="https://madbeauty.lt'+route+'"'));assert.ok(!json.includes(article.id));assert.doesNotMatch(html,/og:title|twitter:image|article:published_time/);}
+   else {assert.ok(html.includes(article.title));assert.ok(html.includes('"@type":"Article"'));assert.ok(home.includes('href="https://madbeauty.lt'+route+'"'));assert.ok(json.includes(article.id));assert.match(html,/srcset=/);assert.ok(html.includes('property="og:title" content="'+article.title+'"'));assert.match(html,/article:published_time" content="2026-10-13T07:00:00.000Z/);assert.match(html,/twitter:card" content="summary_large_image/);}
+   for(const path of ['/robots.txt','/sitemap.xml','/llms.txt','/llms-full.txt']){const response=await f.mf.dispatchFetch(origin+path),text=await response.text();assert.equal(response.headers.get('cache-control'),'no-store',path);if(path!=='/robots.txt')assert.equal(text.includes('https://madbeauty.lt'+route),!future,path);if(path==='/llms-full.txt'){assert.equal(text.includes('Autoriaus profilis:'),!future);if(!future)assert.match(text,/Publikavimo data: 2026-10-13T07:00:00.000Z/);}}
    for(const m of article.media){const image=await f.mf.dispatchFetch(origin+m.src);assert.equal(image.status,future?404:200,m.src);if(!future)assert.deepEqual(Buffer.from(await image.arrayBuffer()),media.get(m.src));}
    assert.equal((await f.mf.dispatchFetch(origin+'/content-assets/madbeauty/unknown.webp')).status,404);
   }finally{await f.close();}

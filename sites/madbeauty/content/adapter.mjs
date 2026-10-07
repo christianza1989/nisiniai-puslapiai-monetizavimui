@@ -22,12 +22,14 @@ const seo=await import(pathToFileURL(seoFile));
 const v2SchemaFile=path.join(sandbox,'gift-seo.bundle.mjs');
 await mkdir(path.dirname(v2SchemaFile),{recursive:true});
 await build({entryPoints:[path.join(root,'lib/gift-seo.ts')],outfile:v2SchemaFile,bundle:true,platform:'neutral',format:'esm'});
-const {giftSchemas:schemaRenderer}=await import(pathToFileURL(v2SchemaFile));
+const {giftSchemas:schemaRenderer,giftMetadata:metadataRenderer}=await import(pathToFileURL(v2SchemaFile));
+const {projectContentPagesV2:projector}=await import(pathToFileURL(path.join(root,'lib/content-projection-v2.mjs')));
+const {contentSeoV2:seoRenderer}=await import(pathToFileURL(path.join(root,'lib/content-seo-v2.mjs')));
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const contentAssetsRoot=path.join(sandbox,'public/content-assets');
 export async function contentProjection({now=Date.now(),packagePath=path.join(sandbox,'content-packages/madbeauty/content-package.json'),settings={},registry={targets:[]}}={}){
  let pkg;try{pkg=admitMadbeautyPackage(validateContentPackage(JSON.parse(await readFile(packagePath,'utf8'))),{operatorName,email:network.contactsBySite?.madbeauty?.email||network.defaultEmail});}catch(e){if(e.code==='ENOENT')return null;throw e;}
- if(pkg.schemaVersion===2){const {projectMadbeautyV2}=await import('./v2-projection.mjs');return projectMadbeautyV2(pkg,{schemaRenderer,settings:{...network,...settings},registry,now:typeof now==='number'?now:Date.parse(now)});}
+ if(pkg.schemaVersion===2){const {projectMadbeautyV2}=await import('./v2-projection.mjs');return projectMadbeautyV2(pkg,{schemaRenderer,metadataRenderer,projector,seoRenderer,settings:{...network,...settings},registry,now:typeof now==='number'?now:Date.parse(now)});}
  if(pkg.schemaVersion!==1||pkg.siteId!=='madbeauty'||pkg.canonicalHost!=='madbeauty.lt')throw Error('Wrong content tenant/version');
  const pages=projectPublicPages(pkg,[pkg],settings,typeof now==='number'?now:Date.parse(now));
  const projected={...pkg,pages},byId=new Map(pages.map(p=>[p.id,p]));

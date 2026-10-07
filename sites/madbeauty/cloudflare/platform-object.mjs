@@ -5,6 +5,8 @@ import {createMedia} from './media.mjs';
 import {createSqlMediaBucket} from './media-bucket.mjs';
 import {createPlatform} from '../backend/platform.mjs';
 import {createAuth} from '../backend/auth.mjs';
+import {nextReminderAt,reminderValid} from '../backend/notifications.mjs';
+import {nextWaitlistAt,waitlistMailValid} from '../backend/waitlist.mjs';
 import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger-transport.mjs';
 
 // One bounded Madbeauty pilot coordination domain. Other sites use separate namespaces.
@@ -52,9 +54,10 @@ export class MadbeautyPlatform extends DurableObject{
  }
  async schedule(){
   const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox WHERE site_id=? AND state IN ('pending','sending')").get(this.store.siteId);
-  await this.ctx.storage.setAlarm(Math.max(Date.now()+1000,row?.due||Date.now()+86400000));
+  const due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity);
+  await this.ctx.storage.setAlarm(Math.max(Date.now()+1000,Number.isFinite(due)?due:Date.now()+86400000));
  }
- async alarm(){await this.drain();this.expire();await this.schedule();}
+ async alarm(){createPlatform(this.store).runAutomation();await this.drain();this.expire();await this.schedule();}
  expire(){
   const now=Date.now(),db=this.store.db;
   db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0 WHERE type='login-code' AND state IN ('pending','sending','failed') AND challenge_id IN (SELECT id FROM email_challenges WHERE consumed=1 OR expires_at<=?)").run(now);
@@ -63,6 +66,7 @@ export class MadbeautyPlatform extends DurableObject{
   db.prepare('DELETE FROM email_challenges WHERE expires_at<?').run(now-86400000);
   db.prepare("DELETE FROM mail_outbox WHERE type='login-code' AND created_at<?").run(now-86400000);
   db.prepare("DELETE FROM mail_outbox WHERE state IN ('accepted','failed','expired') AND created_at<?").run(now-30*86400000);
+  db.prepare("DELETE FROM notification_jobs WHERE state IN ('queued','suppressed','missed') AND due_at<?").run(now-30*86400000);
  }
  async drain(){
   if(this.mailRunning)return this.mailRunning;
@@ -76,13 +80,15 @@ export class MadbeautyPlatform extends DurableObject{
     const now=Date.now();const row=db.prepare("SELECT * FROM mail_outbox WHERE site_id=? AND ((state='pending' AND next_attempt_at<=?) OR (state='sending' AND lease_until<=?)) ORDER BY created_at LIMIT 1").get(siteId,now,now);
     if(!row)break;
     const payload=this.store.unseal(row.payload);
+    if(!reminderValid(this.store,row,payload)||!waitlistMailValid(this.store,row,payload)){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0 WHERE id=? AND site_id=?").run(row.id,siteId);continue;}
     if(row.type==='login-code'){
      const challenge=db.prepare('SELECT consumed,expires_at FROM email_challenges WHERE id=? AND site_id=?').get(row.challenge_id,siteId);
      if(!challenge||challenge.consumed||challenge.expires_at<=now){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}' WHERE id=?").run(row.id);continue;}
     }
     db.prepare("UPDATE mail_outbox SET state='sending',attempts=attempts+1,lease_until=? WHERE id=?").run(now+60000,row.id);
-    const subject=row.type==='login-code'?'Madbeauty prisijungimo kodas':'Madbeauty vizito atnaujinimas';
-    const text=row.type==='login-code'?`Jūsų prisijungimo kodas: ${payload.code}\nGalioja iki ${payload.expiresAt}. Jei prisijungimo neprašėte, ignoruokite šį laišką.`:`Vizitas ${payload.bookingId}\nBūsena: ${payload.status}\nPradžia: ${new Intl.DateTimeFormat('lt-LT',{timeZone:'Europe/Vilnius',dateStyle:'medium',timeStyle:'short'}).format(new Date(payload.startAt))}\nIšsami informacija: https://madbeauty.lt/paskyra/vizitai\nMB Pinet · info@pinet.lt`;
+    const subject=row.type==='login-code'?'Madbeauty prisijungimo kodas':row.type==='reminder'?'Madbeauty priminimas apie vizitą':row.type==='waitlist-offer'?'Madbeauty laiko pasiūlymas':'Madbeauty vizito atnaujinimas';
+    const starts=payload.startAt?new Intl.DateTimeFormat('lt-LT',{timeZone:'Europe/Vilnius',dateStyle:'medium',timeStyle:'short'}).format(new Date(payload.startAt)):'';
+    const text=row.type==='login-code'?`Jūsų prisijungimo kodas: ${payload.code}\nGalioja iki ${payload.expiresAt}. Jei prisijungimo neprašėte, ignoruokite šį laišką.`:row.type==='waitlist-offer'?`Atsirado jūsų pageidavimą atitinkantis laikas: ${starts}.\nTai pasiūlymas, ne rezervacija. Galioja iki ${new Intl.DateTimeFormat('lt-LT',{timeZone:'Europe/Vilnius',timeStyle:'short'}).format(new Date(payload.expiresAt))}.\nPasirinkite ir patvirtinkite paskyroje: https://madbeauty.lt/paskyra/vizitai#būsena=pageidavimai\nMB Pinet · info@pinet.lt`:`Vizitas ${payload.bookingId}\nBūsena: ${payload.status}\nPradžia: ${starts}\nIšsami informacija: https://madbeauty.lt/paskyra/vizitai\nMB Pinet · info@pinet.lt`;
     const mail={to:row.recipient,subject,text,id:(row.challenge_id||row.id).replaceAll('_','-')};
     let accepted=false;
     try{

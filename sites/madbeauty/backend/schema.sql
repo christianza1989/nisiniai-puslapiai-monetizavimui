@@ -26,6 +26,13 @@ CREATE TABLE IF NOT EXISTS mail_outbox (
  created_at INTEGER NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, delivered_at INTEGER
 ) STRICT;
 CREATE INDEX IF NOT EXISTS outbox_site ON mail_outbox(site_id,created_at);
+CREATE TABLE IF NOT EXISTS notification_jobs (
+ id TEXT PRIMARY KEY, site_id TEXT NOT NULL, organization_id TEXT NOT NULL,
+ booking_id TEXT NOT NULL, booking_version INTEGER NOT NULL, lead_min INTEGER NOT NULL,
+ due_at INTEGER NOT NULL, state TEXT NOT NULL, outbox_id TEXT, created_at INTEGER NOT NULL
+) STRICT;
+CREATE INDEX IF NOT EXISTS notification_due ON notification_jobs(site_id,state,due_at);
+CREATE INDEX IF NOT EXISTS notification_booking ON notification_jobs(site_id,booking_id,booking_version);
 CREATE TABLE IF NOT EXISTS state_rows (
  site_id TEXT NOT NULL, collection TEXT NOT NULL, record_key TEXT NOT NULL,
  position INTEGER NOT NULL, organization_id TEXT, practitioner_id TEXT, resource_id TEXT,

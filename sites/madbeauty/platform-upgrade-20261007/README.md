@@ -10,10 +10,10 @@ Rašomi tik own `sites/madbeauty/backend`, `prototype`, `cloudflare`, `acceptanc
 
 Regresijos manifestas: `node --test sites/madbeauty/backend/*.test.mjs sites/madbeauty/prototype/*.test.mjs sites/madbeauty/acceptance/*.test.mjs sites/madbeauty/cloudflare/*.test.mjs`. Actual UI plotis320/390/820/1440, keyboard, normal/empty/error/stale/conflict būsenos pagal taikomumą. Istoriniai92testai ir ankstesni receipts neperrašomi. Synthetic fixtures tik izoliuotame store, jokių fake teikėjų production kataloge.
 
-Kiti darbai: B04/B05 priminimai ir struktūruotas laukiančiųjų sąrašas, klientų kortelės ir pakartotinis rezervavimas, apimties ribojimas mutacijoms bei likusi priėmimo matrica.
+Kiti darbai: klientų kortelės ir pakartotinis rezervavimas, apimties ribojimas mutacijoms bei likusi priėmimo matrica.
 
 
 Paired source: core PR6 (`ai/madbeauty-editorial-schema-20261007`) ir pagrindinio projekto PR26. Lokalios preview/test komandos prieš paleidimą nustato `MB_CORE_ROOT` į tą companion checkout; Workers build perduodamas `--core-root`. Produkciniai publishAt, approvals ir package SHA išlieka iš tikro immutable release. Naujo 39 puslapių paketo rengimas yra turinio sesijos darbas, jo deploy receipt bus atskiras nuo platformos upgrade.
 
 
-Aktualus checkpoint: 128 / 128 paired testų; pilno vizito fazės, SSR dalijimosi metaduomenys ir dinaminės GEO išvestys. Prieš testus nustatyk PowerShell `$env:MB_CORE_ROOT='C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-editorial-core'`; Workers build `--core-root` įriša ir V2 projekcijos/GEO helper bytes, ne vien schema. Companion c7e0c9a integruoja rašytojo f27547c. Preview naudoja exact 39 puslapių SHA 75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4. Atskiras content PR30 live receipt 6777e97 jau priimtas; plataus upgrade production deploy dar nevykdytas.
+Aktualus checkpoint: 137 / 137 paired testų; patvarūs priminimai ir laukiančiųjų pasiūlymai, pilno vizito fazės, SSR dalijimosi metaduomenys ir dinaminės GEO išvestys. Prieš testus nustatyk PowerShell `$env:MB_CORE_ROOT='C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-editorial-core'`; Workers build `--core-root` įriša ir V2 projekcijos/GEO helper bytes, ne vien schema. Companion c7e0c9a integruoja rašytojo f27547c. Preview naudoja exact 39 puslapių SHA 75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4. Atskiras content PR30 live receipt 6777e97 jau priimtas; plataus upgrade production deploy dar nevykdytas.

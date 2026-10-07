@@ -12,7 +12,7 @@ import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger
 // One bounded Madbeauty pilot coordination domain. Other sites use separate namespaces.
 // Booking/state transactions never await network I/O. Split per organization before scale.
 export class MadbeautyPlatform extends DurableObject{
- constructor(ctx,env){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET);this.media=createMedia({...env,MEDIA:env.MEDIA||createSqlMediaBucket(this.store)});this.mailRunning=null;
+ constructor(ctx,env){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET);this.mediaBucket=createSqlMediaBucket(this.store);this.media=createMedia({...env,MEDIA:this.mediaBucket});this.mailRunning=null;
   this.store.onVerifiedAccount=user=>{if(env.OPERATOR_EMAIL&&user.email===env.OPERATOR_EMAIL){this.store.db.prepare('UPDATE accounts SET operator=1 WHERE id=? AND site_id=?').run(user.id,this.store.siteId);return {...user,operator:1};}return user;};
  }
  async fetch(request){
@@ -43,7 +43,7 @@ export class MadbeautyPlatform extends DurableObject{
  async recoveryStatus(){
   this.expire();
   const bookmark=await this.ctx.storage.getCurrentBookmark(),db=this.store.db;
-  return {siteId:this.store.siteId,bookmark,databaseBytes:this.ctx.storage.sql.databaseSize,stateBytes:this.store.rowStats().bytes,stateStorage:this.store.rowStats(),mediaBytes:db.prepare('SELECT COALESCE(SUM(bytes),0) AS bytes FROM media_objects').get().bytes,outbox:db.prepare('SELECT state,COUNT(*) AS count FROM mail_outbox WHERE site_id=? GROUP BY state').all(this.store.siteId),alarm:await this.ctx.storage.getAlarm()};
+  return {siteId:this.store.siteId,bookmark,databaseBytes:this.ctx.storage.sql.databaseSize,stateBytes:this.store.rowStats().bytes,stateStorage:this.store.rowStats(),mediaBytes:this.mediaBucket.stats().bytes,mediaStorage:this.mediaBucket.stats(),outbox:db.prepare('SELECT state,COUNT(*) AS count FROM mail_outbox WHERE site_id=? GROUP BY state').all(this.store.siteId),alarm:await this.ctx.storage.getAlarm()};
  }
  // Control-plane RPC only. It is absent from the browser dispatcher and HTTP API.
  // Calling this schedules recovery on the next DO session; maintainers then abort

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "3a69bcb",
+  "runtimeSourceCheckpoint": "fca9d76",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -76,6 +76,12 @@
       "tests": 150,
       "state": "accepted-isolated-path",
       "remaining": "Full state matrix; media capacity/scaling; scoped mutations and organization routing; factual activation"
+    },
+    {
+      "name": "atomic-bounded-media-storage-integrity-and-load",
+      "tests": 154,
+      "state": "accepted-isolated-pilot-path",
+      "remaining": "Larger media adapter activation/migration requires reviewed account/cost; organization routing and full state matrix remain"
     }
   ],
   "tasks": [
@@ -283,7 +289,9 @@
       "id": "I03",
       "title": "Medijos saugojimas ir apkrova",
       "phase": "3",
-      "state": "pending-implementation"
+      "state": "in-progress",
+      "evidence": "MEDIA.md: SQL selection after actual scale and official pricing review, atomic batches/counter/hash, local failed attachment cleanup, legacy/restart and actual Miniflare 4000-booking/24-image diagnostic.",
+      "remaining": "R2 scaling migration/account activation and hosted load are not executed or claimed; bounded existing pilot remains."
     },
     {
       "id": "I04",
@@ -343,7 +351,7 @@
   "next": [
     "W02 actual browser branch booking",
     "I02 scoped writes and per-organization routing",
-    "I03 media capacity and adapter measurement",
-    "Full desktop/mobile error/stale/conflict states"
+    "Full desktop/mobile error/stale/conflict states",
+    "I03 larger-adapter activation and hosted load gate"
   ]
 }

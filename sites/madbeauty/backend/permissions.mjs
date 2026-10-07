@@ -17,8 +17,8 @@ export function practitionerWorkspace(d,s,result){
  if(!s.capabilities.includes('offers')){result.offers=[];result.procedureRequests=[];result.menuGroups=[];}
  if(!s.capabilities.includes('profile')){
   result.qualifications=[];result.revisions=[];result.locations=result.locations.map(l=>publicLocation(d,l.id)||{id:l.id,organizationId:l.organizationId,label:'Vieta ruošiama'});
-  result.organizations=result.organizations.map(({draftGallery,draftAvatarImageId,...org})=>org);
-  const published=new Set(result.organizations.flatMap(o=>[o.avatarImageId,...o.gallery]));
+  result.organizations=result.organizations.map(({draftGallery,draftGalleryEntries,draftAvatarImageId,draftStaffPortraits,...org})=>org);
+  const published=new Set(result.organizations.flatMap(o=>[o.avatarImageId,...o.gallery,...(o.staffPortraits||[]).map(x=>x.mediaId)]));
   result.media=(result.media||[]).filter(a=>published.has(a.id)).map(mediaPublic);
  }
  if(s.membershipRole!=='practitioner')return result;

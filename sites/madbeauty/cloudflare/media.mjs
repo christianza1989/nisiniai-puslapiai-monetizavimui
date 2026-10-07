@@ -14,9 +14,10 @@ export function createMedia(env){
    if(count>=24)reject('LIMIT','Profilio vaizdų limitas pasiektas.');
    let output;try{output=await optimizeRasterWithImages(env.IMAGES,bytes,mime);}catch{reject('INVALID_IMAGE','Vaizdo paruošti nepavyko. Patikrinkite formatą ir matmenis.');}
    const id=randomId('asset'),original='originals/'+id,variants=[],written=[];
+   const objects=[{key:original,value:bytes,httpMetadata:{contentType:mime}},...output.variants.map(v=>{const storageFile=id+'-'+v.width+'.webp';variants.push({storageFile,width:v.width,height:v.height,bytes:v.bytes.length,sha256:hash(v.bytes)});return {key:'variants/'+storageFile,value:v.bytes,httpMetadata:{contentType:'image/webp'}};})];
    try{
-    await env.MEDIA.put(original,bytes,{httpMetadata:{contentType:mime}});written.push(original);
-    for(const v of output.variants){const storageFile=id+'-'+v.width+'.webp';await env.MEDIA.put('variants/'+storageFile,v.bytes,{httpMetadata:{contentType:'image/webp'}});written.push('variants/'+storageFile);variants.push({storageFile,width:v.width,height:v.height,bytes:v.bytes.length,sha256:hash(v.bytes)});}
+    if(env.MEDIA.putMany)await env.MEDIA.putMany(objects);
+    else for(const object of objects){written.push(object.key);await env.MEDIA.put(object.key,object.value,{httpMetadata:object.httpMetadata});}
    }catch{await env.MEDIA.delete(written);reject('MEDIA_UNAVAILABLE','Vaizdo išsaugoti nepavyko.',503);}
    return {id,organizationId,usage,alt:alt.trim(),rights:rights.trim(),...(rightsConfirmedAt?{rightsConfirmedAt,rightsConfirmedBy}:{}),source:{original,mime,bytes:bytes.length,sha256:hash(bytes),...output.source},variants,policy:output.policy,createdAt:new Date(store.clock()).toISOString()};
   },
@@ -26,7 +27,7 @@ export function createMedia(env){
    if(!asset)reject('NOT_FOUND','Vaizdas nerastas.',404);
    const p=platform.profile(asset.organizationId),published=p?.media.some(m=>m.id===asset.id),owner=user&&canManageProfile(d,user,asset.organizationId);
    if(!published&&!owner&&!user?.operator)reject('NOT_FOUND','Vaizdas nerastas.',404);
-   const data=await env.MEDIA.get('variants/'+file);if(!data)reject('NOT_FOUND','Vaizdas nerastas.',404);return data.arrayBuffer();
+   let data;try{data=await env.MEDIA.get('variants/'+file);}catch{reject('MEDIA_UNAVAILABLE','Vaizdas laikinai nepasiekiamas.',503);}if(!data)reject('NOT_FOUND','Vaizdas nerastas.',404);return data.arrayBuffer();
   },
  };
 }

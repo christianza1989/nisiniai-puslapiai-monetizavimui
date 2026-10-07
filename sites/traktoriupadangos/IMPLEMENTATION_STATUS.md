@@ -32,3 +32,5 @@ Vieša verslo tapatybė: `MB Pinet` / `info@pinet.lt` pagal bendrą kontaktų co
 | M0 ir gyvo piloto įjungimas | Dar ne | Tik išsaugojus visus taikomus įrodymus keisti measured gate ir per-site operatoriaus politiką. Launcher jų pats nekeičia |
 
 Autorizacija svetainę paleisti jau suteikta; pakartotinio bendro „tęsk“ nereikia. Trūkstamų serverio, DNS, juridinių faktų ir paslaugos pajėgumo neišgalvoti.
+
+Git perdavimas: tikrintas runtime source `070c8c2`, public widget `e6f763b`; [core Draft PR32](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/32), [public Draft PR9](https://github.com/christianza1989/niche-public-core/pull/9). Abu push atlikti, exact-staged safety PASS; privačių .env/DB/audio/mail duomenų staging nėra. PR nėra merge/deployment. Vietiniai API/SFU/PG/jobs/probe procesai ir ignoruojami įrodymai išlaikyti šiame worktree.

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "12d7138",
+  "runtimeSourceCheckpoint": "105d09a",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -64,6 +64,12 @@
       "tests": 141,
       "state": "accepted-isolated-path",
       "remaining": "Erasure execution requires reviewed retention policy and backup handling; full UI matrix and production activation remain"
+    },
+    {
+      "name": "organization-rules-scoped-reports-complaint-journal",
+      "tests": 147,
+      "state": "accepted-isolated-path",
+      "remaining": "Full state matrix; organization routing/scoped writes; media scaling; factual activation"
     }
   ],
   "tasks": [
@@ -169,7 +175,8 @@
       "id": "B03",
       "title": "Paslaugų prieinamumo taisyklės",
       "phase": "2",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: rules and current-schedule report denominators, authenticated CSV, typed public reports, versioned audited decisions, private image retention; actual desktop/mobile error/recovery/reload and consultation request."
     },
     {
       "id": "B04",
@@ -223,7 +230,8 @@
       "id": "W03",
       "title": "Veiklos rodikliai ir CSV",
       "phase": "3",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: rules and current-schedule report denominators, authenticated CSV, typed public reports, versioned audited decisions, private image retention; actual desktop/mobile error/recovery/reload and consultation request."
     },
     {
       "id": "W04",
@@ -247,7 +255,8 @@
       "id": "O03",
       "title": "Skundai ir atsiliepimų priežiūra",
       "phase": "3",
-      "state": "pending-implementation"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: rules and current-schedule report denominators, authenticated CSV, typed public reports, versioned audited decisions, private image retention; actual desktop/mobile error/recovery/reload and consultation request."
     },
     {
       "id": "I01",
@@ -325,10 +334,10 @@
     }
   ],
   "next": [
-    "W03/O03 scoped metrics and report review",
-    "B03 availability rule acceptance",
-    "W03/O03 scoped metrics and report review",
+    "P01 reviewed media/service associations and profile details",
+    "W02 actual browser branch booking",
     "I02 scoped writes and per-organization routing",
+    "I03 media capacity and adapter measurement",
     "Full desktop/mobile error/stale/conflict states"
   ]
 }

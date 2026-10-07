@@ -40,11 +40,11 @@ export function availability(d,input,now,{ignoreBookingId=null,ignoreHoldId=null
   if((!internal&&!o.approved)||!s.active||!resourceAtLocation(d,r,s.locationId)||!staffAtLocation(d,p,s.locationId)||!schedule||!serviceEligible(d,s,now)||s.bookingMode&&s.bookingMode!=='instant')return {state:'unavailable',slots:[],...meta};
   const dateKey=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(localInstant(clock,dayOffset,720)));
   const rules=s.availabilityRules||{};
-  if(schedule.closedDate===dateKey||dayOffset>(rules.maxAdvanceDays??30))return {state:'no-slots',slots:[],...meta};
+  if(schedule.closedDate===dateKey||o.bookingRules?.closedDates?.includes(dateKey)||dayOffset>Math.min(rules.maxAdvanceDays??30,o.bookingRules?.maxAdvanceDays??30))return {state:'no-slots',slots:[],...meta};
   const at=m=>{try{return localInstant(clock,dayOffset,m);}catch{reject('INVALID_LOCAL_TIME','Šis vietinis laikas neegzistuoja arba kartojasi dėl laikrodžio keitimo. Pasirinkite kitą intervalą.');}},shiftStart=at(schedule.startMin),shiftEnd=at(schedule.endMin),windowStart=at(from),windowEnd=at(to);
   const breakRange=schedule.breakStartMin===null?null:[at(schedule.breakStartMin),at(schedule.breakEndMin)];
   const weekday=new Date(at(720)).toLocaleDateString('en-US',{timeZone:'Europe/Vilnius',weekday:'short'});
-  if(schedule.weekdays&&!schedule.weekdays.includes(weekday)||rules.weekdays&&!rules.weekdays.includes(weekday))return {state:'no-slots',slots:[],...meta};
+  if(schedule.weekdays&&!schedule.weekdays.includes(weekday)||rules.weekdays&&!rules.weekdays.includes(weekday)||o.bookingRules?.weekdays&&!o.bookingRules.weekdays.includes(weekday))return {state:'no-slots',slots:[],...meta};
   const slots=[];
   const exact=exactStartAt?new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Vilnius',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(exactStartAt)).split(':').map(Number):null;
   const first=exact?exact[0]*60+exact[1]:Math.ceil(from/15)*15;

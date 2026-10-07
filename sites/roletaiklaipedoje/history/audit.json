@@ -1,0 +1,615 @@
+{
+  "version": 2,
+  "domain": "roletaiklaipedoje.lt",
+  "checkedAt": "2026-10-07T11:26:45.902Z",
+  "terms": [
+    "rolet",
+    "žaliuz",
+    "lang"
+  ],
+  "coverage": "records-found",
+  "inventoryComplete": false,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": false,
+      "observedRows": 0,
+      "omitted": 0,
+      "truncated": false,
+      "error": "archive_timeout"
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 24,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": true,
+      "observedRows": 13,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": true,
+      "observedRows": 1,
+      "omitted": 0,
+      "truncated": false
+    }
+  ],
+  "inventory": [
+    {
+      "original": "http://www.roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20100906165922",
+      "capturedAt": "2010-09-06T16:59:22.000Z",
+      "status": 200,
+      "digest": "BQGU5FCEWJICHTFYOVS3XOJROSJN5QNH",
+      "replayUrl": "https://web.archive.org/web/20100906165922/http://www.roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/akcijos/",
+      "path": "/akcijos/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231003065233",
+      "capturedAt": "2023-10-03T06:52:33.000Z",
+      "status": 200,
+      "digest": "HYLB2KAR7ESZBD3RJNFCE3GJJSXGEDPA",
+      "replayUrl": "https://web.archive.org/web/20231003065233/https://roletaiklaipedoje.lt/akcijos/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/author/vsdksemenasgmail-com/",
+      "path": "/author/vsdksemenasgmail-com/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231003072233",
+      "capturedAt": "2023-10-03T07:22:33.000Z",
+      "status": 200,
+      "digest": "7QDUHTB5MPEMA3HNP34WGSTJGQIN57TC",
+      "replayUrl": "https://web.archive.org/web/20231003072233/https://roletaiklaipedoje.lt/author/vsdksemenasgmail-com/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/ka-svarbu-zinoti-pries-uzsisakant-roletus/",
+      "path": "/ka-svarbu-zinoti-pries-uzsisakant-roletus/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003080419",
+      "capturedAt": "2023-10-03T08:04:19.000Z",
+      "status": 200,
+      "digest": "ZJLICFDCZCNTPXRM7HGDCG6HECACRIII",
+      "replayUrl": "https://web.archive.org/web/20231003080419/https://roletaiklaipedoje.lt/ka-svarbu-zinoti-pries-uzsisakant-roletus/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/kas-geriau-roletai-ar-uzuolaidos/",
+      "path": "/kas-geriau-roletai-ar-uzuolaidos/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003074736",
+      "capturedAt": "2023-10-03T07:47:36.000Z",
+      "status": 200,
+      "digest": "F5L4VBYOL6KU2WE25M2SSVMZZR26LRHL",
+      "replayUrl": "https://web.archive.org/web/20231003074736/https://roletaiklaipedoje.lt/kas-geriau-roletai-ar-uzuolaidos/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/kontaktai/",
+      "path": "/kontaktai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231003064038",
+      "capturedAt": "2023-10-03T06:40:38.000Z",
+      "status": 200,
+      "digest": "JFUPY2ZNRZ2PBCDMQVJI7WRX57CNDOW6",
+      "replayUrl": "https://web.archive.org/web/20231003064038/https://roletaiklaipedoje.lt/kontaktai/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/medines-zaliuzes/",
+      "path": "/medines-zaliuzes/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231003064509",
+      "capturedAt": "2023-10-03T06:45:09.000Z",
+      "status": 200,
+      "digest": "6VIRIQVN3VKEPQR2KXAN7SFTQQPNGFW7",
+      "replayUrl": "https://web.archive.org/web/20231003064509/https://roletaiklaipedoje.lt/medines-zaliuzes/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/plisuotos-zaliuzes/",
+      "path": "/plisuotos-zaliuzes/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231003072148",
+      "capturedAt": "2023-10-03T07:21:48.000Z",
+      "status": 200,
+      "digest": "ZPWJGL7TXJM6MEOOBEGFOZ42HNPMAIOL",
+      "replayUrl": "https://web.archive.org/web/20231003072148/https://roletaiklaipedoje.lt/plisuotos-zaliuzes/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/roletai-diena-naktis/",
+      "path": "/roletai-diena-naktis/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003080332",
+      "capturedAt": "2023-10-03T08:03:32.000Z",
+      "status": 200,
+      "digest": "MFOZBVT6H36PSQ36KLQQ2HQMQNKVF5I7",
+      "replayUrl": "https://web.archive.org/web/20231003080332/https://roletaiklaipedoje.lt/roletai-diena-naktis/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/roletu-audiniai-koks-geriausias-variantas/",
+      "path": "/roletu-audiniai-koks-geriausias-variantas/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003062227",
+      "capturedAt": "2023-10-03T06:22:27.000Z",
+      "status": 200,
+      "digest": "KWN7RGLSD5SFV5RALOA4YQUWE2CMCJLE",
+      "replayUrl": "https://web.archive.org/web/20231003062227/https://roletaiklaipedoje.lt/roletu-audiniai-koks-geriausias-variantas/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/roletu-pliusai-ir-minusai/",
+      "path": "/roletu-pliusai-ir-minusai/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003082348",
+      "capturedAt": "2023-10-03T08:23:48.000Z",
+      "status": 200,
+      "digest": "PIX2Z2N4TTRX23GYUYSZEWWXB5CNXXQ7",
+      "replayUrl": "https://web.archive.org/web/20231003082348/https://roletaiklaipedoje.lt/roletu-pliusai-ir-minusai/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/roletu-prieziura-nuo-pelesio/",
+      "path": "/roletu-prieziura-nuo-pelesio/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003060829",
+      "capturedAt": "2023-10-03T06:08:29.000Z",
+      "status": 200,
+      "digest": "VOW6Z3AI2ZWLPLQXI6HVNIYYF377WKXS",
+      "replayUrl": "https://web.archive.org/web/20231003060829/https://roletaiklaipedoje.lt/roletu-prieziura-nuo-pelesio/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/straipsniai/",
+      "path": "/straipsniai/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231003070956",
+      "capturedAt": "2023-10-03T07:09:56.000Z",
+      "status": 200,
+      "digest": "N4IHZQNM4BRRZDPX7LCNK3QD4UTDQTII",
+      "replayUrl": "https://web.archive.org/web/20231003070956/https://roletaiklaipedoje.lt/straipsniai/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/kaip-priziureti-roletus/",
+      "path": "/tag/kaip-priziureti-roletus/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003073419",
+      "capturedAt": "2023-10-03T07:34:19.000Z",
+      "status": 200,
+      "digest": "GIBSF3TXVS3OHFT326WJ25UVY5ZAR5NL",
+      "replayUrl": "https://web.archive.org/web/20231003073419/https://roletaiklaipedoje.lt/tag/kaip-priziureti-roletus/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/pelesis-ant-roleto/",
+      "path": "/tag/pelesis-ant-roleto/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003072014",
+      "capturedAt": "2023-10-03T07:20:14.000Z",
+      "status": 200,
+      "digest": "GFLALVTQA4BI74MUYJ54BZP2SGRBINLH",
+      "replayUrl": "https://web.archive.org/web/20231003072014/https://roletaiklaipedoje.lt/tag/pelesis-ant-roleto/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletai-internetu/",
+      "path": "/tag/roletai-internetu/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003082646",
+      "capturedAt": "2023-10-03T08:26:46.000Z",
+      "status": 200,
+      "digest": "WOZZI2JQEJZ4FTYYATTJV7QTQ5VZXJS4",
+      "replayUrl": "https://web.archive.org/web/20231003082646/https://roletaiklaipedoje.lt/tag/roletai-internetu/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletai-ir-uzuolaidos/",
+      "path": "/tag/roletai-ir-uzuolaidos/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003061428",
+      "capturedAt": "2023-10-03T06:14:28.000Z",
+      "status": 200,
+      "digest": "NOM4PDNPCCZWOFIKNKWEF6ZOCH7YXOLS",
+      "replayUrl": "https://web.archive.org/web/20231003061428/https://roletaiklaipedoje.lt/tag/roletai-ir-uzuolaidos/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletai-klaipeda/",
+      "path": "/tag/roletai-klaipeda/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003083401",
+      "capturedAt": "2023-10-03T08:34:01.000Z",
+      "status": 200,
+      "digest": "IODRR6B6YFTJXL6G2PB3AIL37DZ62V75",
+      "replayUrl": "https://web.archive.org/web/20231003083401/https://roletaiklaipedoje.lt/tag/roletai-klaipeda/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletai-klaipedoje/",
+      "path": "/tag/roletai-klaipedoje/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003083701",
+      "capturedAt": "2023-10-03T08:37:01.000Z",
+      "status": 200,
+      "digest": "44YRZS2LVHLHXO5L3YQIPZVQWXCSLQHL",
+      "replayUrl": "https://web.archive.org/web/20231003083701/https://roletaiklaipedoje.lt/tag/roletai-klaipedoje/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletai-pliusai-ir-minusai/",
+      "path": "/tag/roletai-pliusai-ir-minusai/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003080247",
+      "capturedAt": "2023-10-03T08:02:47.000Z",
+      "status": 200,
+      "digest": "TFNAIN4GR44IWUYV4CY5CQS3OP67JIG5",
+      "replayUrl": "https://web.archive.org/web/20231003080247/https://roletaiklaipedoje.lt/tag/roletai-pliusai-ir-minusai/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletu-gamyba-klaipedoje/",
+      "path": "/tag/roletu-gamyba-klaipedoje/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003073541",
+      "capturedAt": "2023-10-03T07:35:41.000Z",
+      "status": 200,
+      "digest": "TAWJ4U37U3IJXJJE6IEPGAKWVS5QHWA2",
+      "replayUrl": "https://web.archive.org/web/20231003073541/https://roletaiklaipedoje.lt/tag/roletu-gamyba-klaipedoje/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletu-montavimas/",
+      "path": "/tag/roletu-montavimas/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003075115",
+      "capturedAt": "2023-10-03T07:51:15.000Z",
+      "status": 200,
+      "digest": "FHR2E675RGD3VQSVHNUNPS72GSGLQCL2",
+      "replayUrl": "https://web.archive.org/web/20231003075115/https://roletaiklaipedoje.lt/tag/roletu-montavimas/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/roletu-prieziura/",
+      "path": "/tag/roletu-prieziura/",
+      "kind": "topic-candidate",
+      "topicHint": true,
+      "timestamp": "20231003065459",
+      "capturedAt": "2023-10-03T06:54:59.000Z",
+      "status": 200,
+      "digest": "4U3LWFRKSZLWPKMIKM7L2VSYUSPBBEPS",
+      "replayUrl": "https://web.archive.org/web/20231003065459/https://roletaiklaipedoje.lt/tag/roletu-prieziura/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/tag/uzuolaidu-montavimas/",
+      "path": "/tag/uzuolaidu-montavimas/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20231003072453",
+      "capturedAt": "2023-10-03T07:24:53.000Z",
+      "status": 200,
+      "digest": "F77HBZIA5LXGMYCMEBH2GANOTLP3J3VH",
+      "replayUrl": "https://web.archive.org/web/20231003072453/https://roletaiklaipedoje.lt/tag/uzuolaidu-montavimas/"
+    }
+  ],
+  "roots": [
+    {
+      "original": "http://www.roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20100906165922",
+      "capturedAt": "2010-09-06T16:59:22.000Z",
+      "status": 200,
+      "digest": "BQGU5FCEWJICHTFYOVS3XOJROSJN5QNH",
+      "replayUrl": "https://web.archive.org/web/20100906165922/http://www.roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/?",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20110926074829",
+      "capturedAt": "2011-09-26T07:48:29.000Z",
+      "status": 200,
+      "digest": "HKJFID23BZLYG3KVQNLUR3HFJMLU62A3",
+      "replayUrl": "https://web.archive.org/web/20110926074829/http://www.roletaiklaipedoje.lt/?"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20130208051403",
+      "capturedAt": "2013-02-08T05:14:03.000Z",
+      "status": 200,
+      "digest": "72LPPEFGNKPSC7GFKAUOGXAQ6J6F3QSF",
+      "replayUrl": "https://web.archive.org/web/20130208051403/http://www.roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "http://roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20140103041842",
+      "capturedAt": "2014-01-03T04:18:42.000Z",
+      "status": 200,
+      "digest": "MCSC46BBURDGBLOYZ27XGMHF6YND4PUE",
+      "replayUrl": "https://web.archive.org/web/20140103041842/http://roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20150502153631",
+      "capturedAt": "2015-05-02T15:36:31.000Z",
+      "status": 200,
+      "digest": "EPFVLCY2KWTROY45YVZ5POZSUJ3QJUFG",
+      "replayUrl": "https://web.archive.org/web/20150502153631/http://www.roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "http://roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20160109195822",
+      "capturedAt": "2016-01-09T19:58:22.000Z",
+      "status": 200,
+      "digest": "OHLATYKODRZJFOY23JEHI4LBJV7UG5V2",
+      "replayUrl": "https://web.archive.org/web/20160109195822/http://roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/?",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20170103223603",
+      "capturedAt": "2017-01-03T22:36:03.000Z",
+      "status": 200,
+      "digest": "YYNXQAGSSM4TOIHITLB5LJDMUSU37YKQ",
+      "replayUrl": "https://web.archive.org/web/20170103223603/http://www.roletaiklaipedoje.lt/?"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/?",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20180206092607",
+      "capturedAt": "2018-02-06T09:26:07.000Z",
+      "status": 200,
+      "digest": "ABVGQCHVO5GAGSMK5LD4MYWBW2WR4GY3",
+      "replayUrl": "https://web.archive.org/web/20180206092607/http://www.roletaiklaipedoje.lt/?"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/?",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20190118064726",
+      "capturedAt": "2019-01-18T06:47:26.000Z",
+      "status": 200,
+      "digest": "WX5ID4A3OKNK5NKAN7JWBXL4S5JO4TQ5",
+      "replayUrl": "https://web.archive.org/web/20190118064726/http://www.roletaiklaipedoje.lt/?"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/?",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20200125200711",
+      "capturedAt": "2020-01-25T20:07:11.000Z",
+      "status": 200,
+      "digest": "FSGXOWDCJAPDKL5LP4GM3WARTSN5WNHV",
+      "replayUrl": "https://web.archive.org/web/20200125200711/http://www.roletaiklaipedoje.lt/?"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20210116113305",
+      "capturedAt": "2021-01-16T11:33:05.000Z",
+      "status": 200,
+      "digest": "FSGXOWDCJAPDKL5LP4GM3WARTSN5WNHV",
+      "replayUrl": "https://web.archive.org/web/20210116113305/http://www.roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20230929133033",
+      "capturedAt": "2023-09-29T13:30:33.000Z",
+      "status": 200,
+      "digest": "SPHMVMQHQVXIADWFFOP3X4XTLL3KND5X",
+      "replayUrl": "https://web.archive.org/web/20230929133033/https://roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20240221023834",
+      "capturedAt": "2024-02-21T02:38:34.000Z",
+      "status": 200,
+      "digest": "MLCATJHYZ3HUP6QSMIEBTOG3X64YNK5T",
+      "replayUrl": "https://web.archive.org/web/20240221023834/https://roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20240414054243",
+      "capturedAt": "2024-04-14T05:42:43.000Z",
+      "status": 200,
+      "digest": "T44Q3UCL5DHQWHLZTJZSHHUGUHCEA3WB",
+      "replayUrl": "https://web.archive.org/web/20240414054243/https://roletaiklaipedoje.lt/"
+    }
+  ],
+  "snapshots": [
+    {
+      "original": "https://roletaiklaipedoje.lt/",
+      "timestamp": "20240414054243",
+      "replayUrl": "https://web.archive.org/web/20240414054243/https://roletaiklaipedoje.lt/",
+      "ok": true,
+      "title": "Roletai Klaipėdoje, Palangoje, Kretingoje, Šventojoje. Kaina, akcija.",
+      "headings": [
+        "Roletai Klaipėdoje, Palangoje, Kretingoje, Šventojoje.",
+        "Roletai diena naktis",
+        "Plisuotos žaliuzės",
+        "Medinės žaliuzės"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 708,
+      "htmlSha256": "76c6ba9f7d25549d7be1286df9745782056363fbef8a080f80e6529f08d4472e",
+      "resolvedUrl": "https://web.archive.org/web/20240414054243id_/https://roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/",
+      "timestamp": "20100906165922",
+      "replayUrl": "https://web.archive.org/web/20100906165922/http://www.roletaiklaipedoje.lt/",
+      "ok": true,
+      "title": "Roletai Klaipėdoje | Prekybos roletais Klaipėdos mieste lyderis",
+      "headings": [
+        "Tinkleliai-roletai",
+        "Roletai Klaipėdoje",
+        "Nemokamai!",
+        "Kiti mūsų produktai"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 182,
+      "htmlSha256": "09d6a9c92a9498804af541f7d49dc76ae5294f23832931cb39bfbabb8f43478c",
+      "resolvedUrl": "https://web.archive.org/web/20100906165922id_/http://www.roletaiklaipedoje.lt/"
+    },
+    {
+      "original": "https://roletaiklaipedoje.lt/roletai-diena-naktis/",
+      "timestamp": "20231003080332",
+      "replayUrl": "https://web.archive.org/web/20231003080332/https://roletaiklaipedoje.lt/roletai-diena-naktis/",
+      "ok": true,
+      "title": "Roletai diena naktis Klaipėdoje. Didelis asortimentas, kaina, akcija.",
+      "headings": [
+        "Roletai diena naktis"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 387,
+      "htmlSha256": "09c021f682c44b99d9ea8a0d23b4f54ef50ab51ed5a38227580462330d71c2a1",
+      "resolvedUrl": "https://web.archive.org/web/20231003080332id_/https://roletaiklaipedoje.lt/roletai-diena-naktis/"
+    },
+    {
+      "original": "http://www.roletaiklaipedoje.lt/?",
+      "timestamp": "20180206092607",
+      "replayUrl": "https://web.archive.org/web/20180206092607/http://www.roletaiklaipedoje.lt/?",
+      "ok": true,
+      "title": "Domus Lumina Roletai Klaipėdoje | Prekyba roletais Klaipėdos mieste",
+      "headings": [
+        "Roletai Klaipėdoje",
+        "Kiti mūsų produktai"
+      ],
+      "signals": [],
+      "contentReadable": true,
+      "approximateWordCount": 1314,
+      "htmlSha256": "c12877f66ac15aa7dbd291588a0ecd094d04583444a6761375eceee278ea0e60",
+      "resolvedUrl": "https://web.archive.org/web/20180206092607id_/http://www.roletaiklaipedoje.lt/?"
+    }
+  ],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-07T11:26:45.916Z",
+      "status": null,
+      "error": "archive_timeout"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-07T11:26:54.931Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-07T11:27:03.102Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-07T11:27:08.053Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=roletaiklaipedoje.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20240414054243id_/https://roletaiklaipedoje.lt/",
+      "checkedAt": "2026-10-07T11:27:09.054Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20240414054243id_/https://roletaiklaipedoje.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20100906165922id_/http://www.roletaiklaipedoje.lt/",
+      "checkedAt": "2026-10-07T11:27:09.960Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20100906165922id_/http://www.roletaiklaipedoje.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20231003080332id_/https://roletaiklaipedoje.lt/roletai-diena-naktis/",
+      "checkedAt": "2026-10-07T11:27:10.874Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20231003080332id_/https://roletaiklaipedoje.lt/roletai-diena-naktis/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20180206092607id_/http://www.roletaiklaipedoje.lt/?",
+      "checkedAt": "2026-10-07T11:27:11.781Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20180206092607id_/http://www.roletaiklaipedoje.lt/?"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "roletaiklaipedoje",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

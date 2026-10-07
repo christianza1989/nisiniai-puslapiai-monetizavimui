@@ -64,3 +64,11 @@ Paleisti studijos `npm test` ir public core `npm run test:core`. Viešo adapteri
 ## Savaitinės kadencijos patikslinimas — 2026-10-05
 
 Savininkas Madbeauty numatė 2–3/sav.; anksčiau jo įrašas paveldėjo bendrą2/mėn. Tai nebuvo individuali SEO strategija. Weekly API/GUI/generatorius naudoja tikrą articlesPerWeek, ne apytikslį mėnesinį daugiklį. 2026-10-05 šešių mėnesių3/sav. politika turi76 suplanuojamus slotus iki2027-04-05 po7dienų pasiruošimo. Tai tikslas, ne jau parašyti/peržiūrėti tekstai. Esamos datos ir kitų nišų policy nekeičiamas. Kiekvienam URL reikia atskiro naudingo atsakymo ir atitinkamo tikro CTA; metrika sprendžia plėtrą. [Google people-first gairės](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) nerekomenduoja didinti kiekio vien dėl numanomo „šviežumo“.
+
+## 2026-10-07 patikrintas writer ir acceptance perdavimas
+
+STUDIO_CODEX_MODEL ir STUDIO_CODEX_REASONING_EFFORT (pvz. gpt-6-luna/xhigh) perduodami faktiniam CLI po --ignore-user-config. writerExecution skiria prašymą nuo stebėto CLI header; mismatch stabdo, tylaus fallback nėra. Pokalbio modelio žyma nėra writer įrodymas. Senas serveris vykdo seną įkeltą kodą: naują kodą tikrinti idle/isolated single-owner instancija. Hostname/PID owner neleidžia kitai instancijai atkurti gyvo darbo kaip failed.
+
+Coverage — bounded distinct-reader-job planas be savaitinės kvotos. Same-day dependency-ready datos leistinos, transporto batch limit nėra temų riba; neparašyti planai lieka privatūs. V1 home optional bodyProjection: canonical yra pasirašoma schema/abiejų validatoriuose/hash per naują review; legacy home hash/summary nekinta. Tikrinti visą HTML ir LLM body.
+
+SITE_COMPLETION turi paketo SHA ir faktinį sourceFingerprint, ne vien sourceVersion užrašą. --render-only nėra priėmimas. Visi85 A–Z ir score-audit --require-local turi likti FAIL/UNVERIFIED iki tikrų browser/200%/SMTP+INBOX įrodymų. Actual same-package HTTP prieš/po publishAt atskiras nuo kontrolinio laikrodžio. Pavyzdys project-root sites/roletaiklaipedoje/HANDOVER.md.

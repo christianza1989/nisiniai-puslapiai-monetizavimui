@@ -77,3 +77,11 @@ Prieš pirmą realų paleidimą būtini veikiantys kontaktai, patvarus užklaus�
 Prieš repo/shared-core darbą skaityti `docs/MULTI_MACHINE.md` ir `docs/GITHUB.md`. Gretimas viešas core checkout vadinamas `dovanos-memorycasting`; senas absoliutus lenovo kelias nėra naujo kompiuterio reikalavimas. Kiekvienam AI atskira šaka/PR ir failų sritis; WORKSTREAMS nėra distributed lock. Sekretų, studijos data, runtime DB ir klientų duomenų į Git nekopijuoti. Kodo clone neperkelia Codex pokalbių ar patvirtintų operacinių prieigų.
 
 Naujam AI, jungiančiam projektą prie bendros sistemos, privalomas startas `docs/INTEGRATING_A_PROJECT.md`. Madbeauty privatus prototipas naudojasi bendromis sutartimis, bet actual public/agent runtime integracija dar nepriimta; prie core jungti nišos moduliu, ne kurti paralelinį nepriklausomą bendrą core.
+
+## 2026-10-07 patikrintas writer ir acceptance perdavimas
+
+STUDIO_CODEX_MODEL ir STUDIO_CODEX_REASONING_EFFORT (pvz. gpt-6-luna/xhigh) perduodami faktiniam CLI po --ignore-user-config. writerExecution skiria prašymą nuo stebėto CLI header; mismatch stabdo, tylaus fallback nėra. Pokalbio modelio žyma nėra writer įrodymas. Senas serveris vykdo seną įkeltą kodą: naują kodą tikrinti idle/isolated single-owner instancija. Hostname/PID owner neleidžia kitai instancijai atkurti gyvo darbo kaip failed.
+
+Coverage — bounded distinct-reader-job planas be savaitinės kvotos. Same-day dependency-ready datos leistinos, transporto batch limit nėra temų riba; neparašyti planai lieka privatūs. V1 home optional bodyProjection: canonical yra pasirašoma schema/abiejų validatoriuose/hash per naują review; legacy home hash/summary nekinta. Tikrinti visą HTML ir LLM body.
+
+SITE_COMPLETION turi paketo SHA ir faktinį sourceFingerprint, ne vien sourceVersion užrašą. --render-only nėra priėmimas. Visi85 A–Z ir score-audit --require-local turi likti FAIL/UNVERIFIED iki tikrų browser/200%/SMTP+INBOX įrodymų. Actual same-package HTTP prieš/po publishAt atskiras nuo kontrolinio laikrodžio. Pavyzdys project-root sites/roletaiklaipedoje/HANDOVER.md.

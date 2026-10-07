@@ -1,0 +1,23 @@
+{
+  "reason": "Retained privately until the destination is written, reviewed and eligible; no public future article promises.",
+  "links": [
+    {
+      "pageId": "f89735ad-2a98-42b1-970b-32676758a669",
+      "targetPageId": "e8035d6b-254a-4647-8527-b9334e7e4c5e",
+      "label": "Kaip veikia diena–naktis roletai",
+      "reason": "Skaitytojui, kuriam reikia atskiro diena–naktis juostų veikimo paaiškinimo."
+    },
+    {
+      "pageId": "f89735ad-2a98-42b1-970b-32676758a669",
+      "targetPageId": "ab33e178-537a-4b1d-8442-5d54a034e9ac",
+      "label": "Kodėl blackout roletai praleidžia šviesą kraštuose",
+      "reason": "Skaitytojui, kuriam svarbiausia suprasti šviesos tarpus aplink blackout roletą."
+    },
+    {
+      "pageId": "060391b8-d36b-4717-b4ec-a6a8cd6665d0",
+      "targetPageId": "d7a7c094-f029-49b5-af4d-62c47ff579f1",
+      "label": "Kas turi būti sutarta dėl matavimo ir montavimo",
+      "reason": "Papildo kainos palyginimą konkrečiais klausimais apie matavimo ir montavimo apimtį."
+    }
+  ]
+}

@@ -80,5 +80,8 @@ browser-profile*/
 /research/**/.git/
 /research/**/qa/
 
+# Original acquired source bytes remain private, separate from reviewed summaries.
+/sites/*/research-raw/
+
 # Historical factory bundle has independent credentials/backups; keep local.
 /fabrikas-github-upload/

@@ -1,0 +1,789 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-07T13:30:10.661Z",
+  "projectionAt": "2026-10-07T13:30:09.795Z",
+  "siteId": "roletaiklaipedoje",
+  "canonicalHost": "roletaiklaipedoje.lt",
+  "transportOrigin": "http://127.0.0.1:8794",
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
+  "inspector": {
+    "scriptSha256": "b020c290962b4d39ff71b67dcb22e7ef6a4ce64c60565bb6ee1bc70dad190561",
+    "htmlParserSha256": "23433fcac79499e5598f0f16fa12c17f40d405bf56bc67d62c12cdc1553637bc"
+  },
+  "source": {
+    "coreCommit": "17b30eb1355a39407eeefc70b76ef298665fb565",
+    "fingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960",
+    "files": [
+      {
+        "file": "app/niche/[siteId]/[[...slug]]/page.tsx",
+        "sha256": "61517de04acdeaa64e1b57beaeb05d085eb5356e11f25cf702580c115d2bc344"
+      },
+      {
+        "file": "app/niche/[siteId]/brand-icon/route.ts",
+        "sha256": "be4f6c7deccc6c2a6a25be15719d7e4e71805e8126fcb2cbad1082b64ca3dabe"
+      },
+      {
+        "file": "app/niche/[siteId]/interest/route.ts",
+        "sha256": "04d2507681f80f19cefed81115c55697ca1c0e819a782629334e8942f651b78d"
+      },
+      {
+        "file": "app/niche/[siteId]/lead/route.ts",
+        "sha256": "d6e0ad365126c0d3d19395d227f96b34e7a69fdbe2bc4e96d42c36057da3c5de"
+      },
+      {
+        "file": "components/niche/akmenas-site.module.css",
+        "sha256": "aea5e3f63f5347a6aaca92fca69d284eaf7e60df6fd11fff5f64d49985c3c2b9"
+      },
+      {
+        "file": "components/niche/akmenas-site.tsx",
+        "sha256": "3f516ab27c08ba033bd0e68fff15dfa43e0289f8003c3ba399e6dcbf3bfaa033"
+      },
+      {
+        "file": "components/niche/article-meta.tsx",
+        "sha256": "0a0f1e297fbd9c72ac9fa060df604c2ff12b29536465f4f51eb9a3d15fe8205f"
+      },
+      {
+        "file": "components/niche/auksarankiams-site.module.css",
+        "sha256": "d8975571ff820315cef6a6481c86f96824bfa0c7dd70c24e38ee2793843b8ee0"
+      },
+      {
+        "file": "components/niche/auksarankiams-site.tsx",
+        "sha256": "bc34d891ac74b5d4500ce3f6b03e778c8aeb607a405dfdbfa283eac39c6d4e61"
+      },
+      {
+        "file": "components/niche/autoelektrikaivilniuje-site.module.css",
+        "sha256": "59cf5d2e05f31af2b7e4d053d158cd0dedb1c69fc2d16e7c48634ffeb1d794c8"
+      },
+      {
+        "file": "components/niche/autoelektrikaivilniuje-site.tools.tsx",
+        "sha256": "8a6722b7aad145b8052080f528c3e302ba85868953af2119123e669f19f1c62a"
+      },
+      {
+        "file": "components/niche/autoelektrikaivilniuje-site.tsx",
+        "sha256": "13a524b2f9c67e67a2aee3f6219bc66f8ad3c273cbd01eab41be8ce619d5c22b"
+      },
+      {
+        "file": "components/niche/fasadopastoliai-site.module.css",
+        "sha256": "c89017bcb78bad7ba4184cdca9e398011e0db69afa17b52050af92c643551922"
+      },
+      {
+        "file": "components/niche/fasadopastoliai-site.tools.tsx",
+        "sha256": "bb45da35cc050ddbd1cd09018c24d8ec605d30b782c7f7302cb0f60ab49d5db4"
+      },
+      {
+        "file": "components/niche/fasadopastoliai-site.tsx",
+        "sha256": "e65fd0954bb7758efe2ee8b98eb8009d8a85f27daffc3fab225834f3f381e011"
+      },
+      {
+        "file": "components/niche/generic-site.tsx",
+        "sha256": "bab1edc0550f9caa6a59af89264d4637fbe01b07af39ca5ce403a46dd71d86e4"
+      },
+      {
+        "file": "components/niche/interest-tracking.tsx",
+        "sha256": "b23cdfb3003620924e8a69c6982b8e330546ed396f5cdd89e323ff78fdd54a4a"
+      },
+      {
+        "file": "components/niche/laiptucentras-quote-check.tsx",
+        "sha256": "dc4dec1fe189e8f7933e38e8fa9302f8e91fd60e350e75a5d49cf533a23592d8"
+      },
+      {
+        "file": "components/niche/laiptucentras-site.module.css",
+        "sha256": "09939dcf579a5a820f469e0e66e2a2580fd155f010682a27fffce6838e01685e"
+      },
+      {
+        "file": "components/niche/laiptucentras-site.tsx",
+        "sha256": "a0744d40a2bd876be78303892e7dba2482bfc554aa9927fecb083101c2bfa0b7"
+      },
+      {
+        "file": "components/niche/linked-text.tsx",
+        "sha256": "dd0b67da17cf4bc4c79ef741306794ef31cc08cf723def05e858092f8090e56f"
+      },
+      {
+        "file": "components/niche/miniekskavatoriai-site.module.css",
+        "sha256": "4d2ed136e025fe82150fecce77880325e0f812469cb0e11b24b4ffb52975f5e4"
+      },
+      {
+        "file": "components/niche/miniekskavatoriai-site.tools.tsx",
+        "sha256": "fb5a04285022f6de4a2af487761f40b070d0ddffe3c39d9f2ce93140cb413190"
+      },
+      {
+        "file": "components/niche/miniekskavatoriai-site.tsx",
+        "sha256": "1d8df9305dfeeb23475730504e604941d5a62695ed42ce01eaa846761fde42ba"
+      },
+      {
+        "file": "components/niche/niche-styles.tsx",
+        "sha256": "3638165cf78da07a8ff18dc4c798fdcb482723aaacb7e082aa5013641c0315c9"
+      },
+      {
+        "file": "components/niche/roletaiklaipedoje-site.module.css",
+        "sha256": "7d51176a952d3c70c5db7ddf393be0d24d77358397046daf7acec0211a5631d3"
+      },
+      {
+        "file": "components/niche/roletaiklaipedoje-site.tools.tsx",
+        "sha256": "1ed950b0397ce48b222e0abd48bd4283e36bd07c2e24e52b87c962297df60ea9"
+      },
+      {
+        "file": "components/niche/roletaiklaipedoje-site.tsx",
+        "sha256": "849193c2f4970f8cf0bfb343d733793fb98dd421df55576f4513ea499725eb2b"
+      },
+      {
+        "file": "components/niche/tractor-site.module.css",
+        "sha256": "76e8396d39e954621228647037ad313251c7a5229d7f43d888441b89574beb7f"
+      },
+      {
+        "file": "components/niche/tractor-site.tsx",
+        "sha256": "f7dd7a4d8116794f7cf73478e355a03b040ea2110d9f35570aec4012facc5712"
+      },
+      {
+        "file": "components/niche/voice-widget.module.css",
+        "sha256": "5c416b1917637877dbc765fed1495d404466b1c54ef3738ffd8785490428d8f6"
+      },
+      {
+        "file": "components/niche/voice-widget.tsx",
+        "sha256": "0a6d5bc08436aba06b29412ddc2828997e2c3125b66f2f9510260914f8187a8c"
+      },
+      {
+        "file": "config/niche-network.json",
+        "sha256": "d83aa6e46589b7f864d1617668af7bbfc1c696d9e4aaf8107aaddc5f687c1ca2"
+      },
+      {
+        "file": "lib/niche-links.mjs",
+        "sha256": "29d8ae699f7ee715718d31791fa1f0189dd47fa50f0fd270d9477b364c927b35"
+      },
+      {
+        "file": "lib/niche-media.mjs",
+        "sha256": "633b3af3b83d84c825022265374084205060e752504df1730527ab50f68f5d61"
+      },
+      {
+        "file": "lib/niche-reading.mjs",
+        "sha256": "c6c49eea213b4ee5092807eb78e9d26609dbd89979cb0ece238ae6b8bd6f5eea"
+      },
+      {
+        "file": "lib/niche-schema-core.mjs",
+        "sha256": "cdd0886e4dcb188caba5c9c8beb9f3f5914541d7286da4962ff16dd714a3c00f"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "9e62442bb8a42aa31e030b6187c1967185c743a7002a22a9d0ea1040e8a27aaa"
+      },
+      {
+        "file": "lib/niche-sites.ts",
+        "sha256": "b1b66cf7b35f39245b038a436088fc3f304e48e337065d15c3894b7afe1b7190"
+      },
+      {
+        "file": "proxy.ts",
+        "sha256": "3002592efe80a2047b20a185befa3742ab6835a747894c98c5c690cc4af7e999"
+      },
+      {
+        "file": "scripts/content-package-core.mjs",
+        "sha256": "2f4731b2626500057e8fde83bd01bdf09884004cecb55e70dc0d225b511a039c"
+      }
+    ]
+  },
+  "state": "NOT_COMPLETE",
+  "publicPages": 11,
+  "hiddenPages": 0,
+  "articles": 4,
+  "rendered": [
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai/pasiulymu-palyginimas",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/kontaktai",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/apie-projekta",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/redakcija",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/privatumas",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/naudojimo-salygos",
+      "errors": []
+    }
+  ],
+  "crawlerPolicy": {
+    "Googlebot": [],
+    "bingbot": [],
+    "OAI-SearchBot": [],
+    "Claude-SearchBot": [],
+    "PerplexityBot": []
+  },
+  "http": [
+    {
+      "path": "/gidai/roletu-pasirinkimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8938337f2991a4add8a96fb28d3e6e9aaf85683b9567585951a8e6981c7a4eef"
+    },
+    {
+      "path": "/gidai/matmenys-uzklausai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e3f859b8650de5af16f35eacc2f45f38c0390000ef6cd948dd5dfcf2ce758c73"
+    },
+    {
+      "path": "/gidai/sviesa-ir-privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ff0053460a30779cf44a54ef40fdd550c9a73e6249561a8b7a4761e781897a07"
+    },
+    {
+      "path": "/gidai/pasiulymu-palyginimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0b576ff6f41c1c1ee63c8b966ee2df89004d4e9f10866c33d904b4e15a5dc0ca"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "51b219ff1af50f83c218941f64bee4e14cd6c96e6963bd46edcb8b9bef4ab9a7"
+    },
+    {
+      "path": "/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2e5e3ebfb6fe00fb26786ca632787244deaf7fe8d8d83082c64280dbde7c4bed"
+    },
+    {
+      "path": "/apie-projekta",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c08b72d3ac85d7f38708bd19e546e87d4b4354a5c480c6a2e67a9d1790a5a9a9"
+    },
+    {
+      "path": "/gidai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5b9776cd61099c114ac6e22236bf64a56a539545fba63c74f9853b70f06da4dd"
+    },
+    {
+      "path": "/redakcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b5401d241aae450527f1eb9371f9abfe5d3a57823a009bc28ee74aa5835c2f43"
+    },
+    {
+      "path": "/privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "11c191cd96e48546045ffb10339657e2a5f01b172dc27fd30b76c6200ad15399"
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6cab399e1785c82f7fc96e3078b2277f5f4a64408050788aa8944c8f1fb25e6f"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/e838cbc0-79e1-45e4-850b-100272d59d55.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "3519cbef042fe57149f9f24bc836ea1a644b21e22df53fcad98e015aef8e0d3a"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/2b5bf0c0-1764-4696-abe6-1ec98c06b682.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cea2d2deb3cc7ec07dad281f741968c300841bd61147117e0e07b2bee40beb96"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/e1ff5b14-fb8f-47b6-a88a-8c6be53a5e7b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "989e77b0087513008179e19ed8cca472423ca4897ea83e0a7cd95e637f567fca"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/e9fd3c6c-bd88-4508-8983-b9fb09359eb7.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e82be38b1cd4a4f8c447691d7c06ca60ecd66ab825015943a3b4d8c4c5925272"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/45549210-db7c-4521-b617-cc613326fe55.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d8344b628d11f52d36733d9a386947431e99873a4c7a84a8a04644d039ffeb0c"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/7d515925-2e43-4b9e-9cb3-7055d4152eb8.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c2598170e668bb7cbccfd794e3017a5d6f09a6cc79c17daf4367146b84397017"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/0abf37b8-3fe3-44c9-8590-be927d58fd24.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "bf8ea8962874c1403bf148e206a89ae14f0d19caeb15ff80dbc5a20df0d1466f"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/4fa7d10a-bc3c-41bb-834f-a91bb0440531.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "dfdb9eeb7e613b7a6b9492978cdc3e914849f260ee0d704b056736a1b1767bfb"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/d5723dd3-5296-4fe4-afb3-02c004568da1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "7e0e129171b4088c86ce09940fef4167d8aace0de323bc7ba1599ed4bdc93ac2"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/979247f9-4494-40e1-bfc6-df2862405800.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5d929274c6004f6528d1d87d82cf9d40f2ce5bd3326f479ed4e37a0f3034aa8c"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/a0868661-1cda-43e2-b14a-4afe226167db.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "b8499794b0d70f421dc39ab7aee1182a92aa1ae89d1e15634ce53dea1a66ff18"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/5bf04a33-4187-439e-ad19-c632ac81ba49.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "eb5b4a24506d2a605f1fb81e9d5bdd2e0bde25176ed31b8fca0c04da7ce01b99"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/4ed657ac-2ef6-4506-b62a-788cb9810e72.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d2f538719d01e7d4b46a03f69488fe5a52cb90a29347941ea7d0ba91f3bdcef1"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/1e4d8d70-6ffd-41ff-8cd2-d5a2b056ec97.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "4e8d0eb3a6b0fdd134fe0b8ed02338f4b38c4a8f76bdf0dce949ccc9a2a677b9"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/54a938f9-e9c4-46a4-8990-e657decd4aff.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "3a2b3ed4fcff648f112468e900ec7da3d5916c52d8c3473963e786908616dd72"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/232f4a08-c348-4551-8367-ac0a470c9b1b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "abf9895f35e4647b71d73e459a3808e7a8766da1b3b36f42815078aeecb8f476"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/88e9a2c9-3fcb-43b0-abb8-f3a978c8ce51.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "303dc642eed9487c5fee4f8bd896ff28ab96b69cb6179d549e4f75355cb4ab99"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/c35fa7d6-2799-407c-8cd6-3ed0e7d41e8e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c52da65d6c95fddd61fb7037d1e19a3b9db27372881e8d2ca38b860679d6a90b"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/31e47d38-245b-495c-ba5e-a681074270aa.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d160040dcc524b780734ffc8c634068ef006179b5b24ea7e29d4d3ac380d587a"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/7f4bcfbd-3fec-4e4a-b827-e517e96d2179.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "eecbd62c3d1089843ca566f383bf2cb1b559dd34b8cf5f9e4cafd7f0d603ba9b"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/92f67e70-feae-4314-9292-4a22aa8d1d56.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "265afdaccc686ce377a140e2bb86814eaf0c8554fc6393c5d8dbc470f3fd4704"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/a09454a9-4533-4927-b367-3d10e4f54a13.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e153f6178c835b7a8bd7abac1a84db6554939198f87eb603dd1601d1dfa9044e"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/f38979d5-42cf-447d-b291-808ecc18c726.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e520793f4fd5b3c3db453b1470511189f5d56f79ff1c14685ddf3db7935dd8f6"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/9c87c9f6-e1b8-4592-a2b3-16f527437bf1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "538b590e999b193ab2dd558fcb428e059f3756bd9776efda3ff553df983165ba"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/a9af6bce-712c-4771-86f9-e0134d83200f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ae102d2bd34a2fb863370c532da137c320a6cfea48cd78e0627a31b74a243494"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "sha256": "3af139a96afa44f34640737f10f7b4d04917b2d4e5b503dbcf61b2116af96b7c"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "9b812d7fdf78240893713608d52c7e68ab06c53122ad89dc38cc63fbfa4046cf"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "8c4358752ff67c41b314a152c6d142bbbc9ccb482596e16f17260811026fa251"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "d8ac11afd49d0fad89855be59af09b0aee934b8bca73b6916eb8846b1f6f5155"
+    },
+    {
+      "path": "/content-package.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d9022c2124a09db3ee09ad623e3342342defdd02c27ca0db0049033330310fd3"
+    },
+    {
+      "path": "/release-manifest.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "277b9be602a58ab78d5a01bea4af7db3124469e1e71badc4316e5625a18bca57"
+    },
+    {
+      "path": "/__niche-check-a62d94542fd2a2fe",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ced2eccd47e880571946513e6f88cd08865c067b08046f182ec5b3a14767ef97"
+    }
+  ],
+  "auditScore": {
+    "siteId": "roletaiklaipedoje",
+    "evaluatedAt": "2026-10-07T13:28:52.369Z",
+    "stages": {
+      "local": {
+        "passed": 69,
+        "applicable": 72,
+        "score": 9.58,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "R2",
+          "S2",
+          "U3"
+        ]
+      },
+      "launch": {
+        "passed": 0,
+        "applicable": 10,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3",
+          "I4",
+          "O3",
+          "U4",
+          "W3",
+          "X3",
+          "Z3"
+        ]
+      },
+      "operations": {
+        "passed": 0,
+        "applicable": 2,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3",
+          "V3"
+        ]
+      }
+    },
+    "categories": {
+      "A": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3"
+        ]
+      },
+      "B": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3"
+        ]
+      },
+      "C": {
+        "passed": 2,
+        "applicable": 2,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "D": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "E": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "F": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "G": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "H": {
+        "passed": 5,
+        "applicable": 5,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "I": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "I4"
+        ]
+      },
+      "J": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "K": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "L": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "M": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "N": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "O": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "O3"
+        ]
+      },
+      "P": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Q": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "R": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "R2"
+        ]
+      },
+      "S": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "S2"
+        ]
+      },
+      "T": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "U": {
+        "passed": 2,
+        "applicable": 4,
+        "score": 5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "U3",
+          "U4"
+        ]
+      },
+      "V": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "V3"
+        ]
+      },
+      "W": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "W3"
+        ]
+      },
+      "X": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "X3"
+        ]
+      },
+      "Y": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Z": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "Z3"
+        ]
+      }
+    }
+  },
+  "issues": [
+    "LOCAL_AUDIT_INCOMPLETE"
+  ],
+  "limitations": [
+    "HTML checks do not prove computed browser visibility, image pixels, factual correctness or business capability.",
+    "Separate A–Z/browser/performance/form/source evidence and actual launch gates remain required.",
+    "Current package pages only; dynamic catalogue, query facets and other business routes retain their own acceptance.",
+    "Robots checks use the standard parser for search agents, not a verified crawler visit or proof of WAF/CDN/account access. Training and user-request bots have separate owner-controlled policies.",
+    "A controlled-clock local check is not evidence that the future live date has occurred.",
+    "GET requests only; no deployment, approval, paid research, DNS, mail or client writes."
+  ]
+}

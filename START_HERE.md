@@ -110,3 +110,11 @@ Pilnas verslo funkcijas kurk tik kai šios nišos dokumentuotas signalas pagrind
 Naujos nišos naudoja įprastą v1 sutartį; Dovanos123 migracijos v2 gift adapteris nėra universalus homepage šablonas. V2 turi atskirą patvirtintos versijos snapshot ir rich inline modelį, jo CLI generavimas dar fail-closed. `.example` fixture ir local admission nėra domain-ready ar turinys main importui. Tarp-procesinį studijos užraktą ir vieno GUI/queue savininko recovery taisyklę aprašo [M1 patikra](research/dovanos123-integration-2026-10-04/M1/ACCEPTANCE.md).
 
 Actual v2 paketo vietinė peržiūra gali naudoti `local-preview` receipt tik izoliuotoje `output/` arba `outputs/` kopijoje: proxy leidžia tik loopback host, noindex/no-store lieka; main importas ir realus host uždaryti. Tai nėra production receipt. Niekuomet netvirtintos medijos alt/credit korekcijai naudoti [MEDIA_CORE](MEDIA_CORE.md) bendrą modelio API, ne raw JSON ar naują kiekvienos nišos optimizatorių.
+
+## 2026-10-07 patikrintas writer ir acceptance perdavimas
+
+STUDIO_CODEX_MODEL ir STUDIO_CODEX_REASONING_EFFORT (pvz. gpt-6-luna/xhigh) perduodami faktiniam CLI po --ignore-user-config. writerExecution skiria prašymą nuo stebėto CLI header; mismatch stabdo, tylaus fallback nėra. Pokalbio modelio žyma nėra writer įrodymas. Senas serveris vykdo seną įkeltą kodą: naują kodą tikrinti idle/isolated single-owner instancija. Hostname/PID owner neleidžia kitai instancijai atkurti gyvo darbo kaip failed.
+
+Coverage — bounded distinct-reader-job planas be savaitinės kvotos. Same-day dependency-ready datos leistinos, transporto batch limit nėra temų riba; neparašyti planai lieka privatūs. V1 home optional bodyProjection: canonical yra pasirašoma schema/abiejų validatoriuose/hash per naują review; legacy home hash/summary nekinta. Tikrinti visą HTML ir LLM body.
+
+SITE_COMPLETION turi paketo SHA ir faktinį sourceFingerprint, ne vien sourceVersion užrašą. --render-only nėra priėmimas. Visi85 A–Z ir score-audit --require-local turi likti FAIL/UNVERIFIED iki tikrų browser/200%/SMTP+INBOX įrodymų. Actual same-package HTTP prieš/po publishAt atskiras nuo kontrolinio laikrodžio. Pavyzdys project-root sites/roletaiklaipedoje/HANDOVER.md.

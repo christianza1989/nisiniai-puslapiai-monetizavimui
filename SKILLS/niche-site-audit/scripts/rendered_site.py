@@ -32,7 +32,14 @@ class Element:
     def text(self, visible=True):
         if visible and self.hidden():
             return ''
-        return ' '.join(c.text(visible) if isinstance(c, Element) else c for c in self.children)
+        # Inline nodes preserve author-supplied spaces and punctuation. Adding
+        # a space around every anchor falsely rejects "read <a>guide</a>.".
+        text = ''.join(c.text(visible) if isinstance(c, Element) else c for c in self.children)
+        if self.tag == 'br':
+            return ' '
+        if self.tag in ('p', 'li', 'ul', 'ol', 'h1', 'h2', 'h3', 'h4', 'div', 'section', 'article', 'nav', 'header', 'footer', 'figure', 'figcaption', 'aside', 'main', 'tr', 'td', 'th'):
+            return ' ' + text + ' '
+        return text
 
 
 class Document(HTMLParser):
@@ -155,6 +162,9 @@ def inspect_page(observation):
     if p['type'] == 'home':
         check(any('WebSite' in types(e) for e in entities), 'WEBSITE_SCHEMA')
         check(any('Organization' in types(e) for e in entities), 'ORGANIZATION_SCHEMA')
+        if p.get('bodyProjection') == 'canonical':
+            for text in p.get('bodyTexts', []):
+                check(norm(text) in norm(doc.text()), 'APPROVED_BODY_RENDERED')
     if p.get('isArticleIndex'):
         check(any('CollectionPage' in types(e) for e in entities), 'COLLECTION_SCHEMA')
     if p['type'] not in ('article', 'guide'):

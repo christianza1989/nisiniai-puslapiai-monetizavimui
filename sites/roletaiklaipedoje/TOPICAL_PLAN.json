@@ -1,0 +1,1088 @@
+{
+  "siteId": "roletaiklaipedoje",
+  "scope": "Vidaus roletų pasirinkimas, pirkimo pasirengimas, langų/kambarių pritaikymas, valdymas/priežiūra ir pagrindinės problemos Klaipėdos būsto pirkėjui. Lauko ekranai, markizės, kitų miestų durys ir pilnas žaliuzių katalogas už šios apibrėžtos nišos ribų.",
+  "createdAt": "2026-10-07T11:34:30.296Z",
+  "timezone": "Europe/Vilnius",
+  "quota": null,
+  "dates": "Proposed editorial readiness targets; only reviewed immutable package becomes public at publishAt.",
+  "pages": [
+    {
+      "pageId": "8cdccbb2-c005-4b1e-9009-6a103eb91476",
+      "url": "/gidai/roletu-pasirinkimas",
+      "title": "Kaip pasirinkti roletus: nuo kambario poreikio iki sistemos",
+      "query": "roletai kaip pasirinkti",
+      "variants": [
+        "roletai Klaipėdoje",
+        "roletai kaip pasirinkti",
+        "roletų rūšys"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirinkimas",
+      "rootUrl": "/gidai",
+      "contribution": "Poreikio sprendimų lapas, atskiri audinys/mechanizmas/tvirtinimas.",
+      "requiredSources": [
+        "https://www.isotra.com/verra-semi-fabric-roller-blind",
+        "https://www.luxaflex.co.uk/products/blackout-blinds/",
+        "https://www.luxaflex.co.uk/products/roller-blinds/",
+        "https://www.ikea.com/lt/lt/p/langdans-ritinine-uzuolaida-pilka-50471837/"
+      ],
+      "plannedPublishAt": "2026-10-07T11:34:30.201Z",
+      "state": "LOCAL_APPROVED_NOT_DEPLOYED",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Verified sources attached to the approved revision.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "f89735ad-2a98-42b1-970b-32676758a669",
+      "url": "/gidai/sviesa-ir-privatumas",
+      "title": "Diena–naktis ar blackout: šviesa ir privatumas",
+      "query": "diena naktis ar blackout",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirinkimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Dienos ir vakaro scenarijų palyginimas, kraštų šviesos ribos.",
+      "requiredSources": [
+        "https://www.isotra.com/verra-semi-fabric-roller-blind",
+        "https://www.luxaflex.co.uk/products/blackout-blinds/",
+        "https://www.luxaflex.co.uk/products/roller-blinds/",
+        "https://www.ikea.com/lt/lt/p/langdans-ritinine-uzuolaida-pilka-50471837/"
+      ],
+      "plannedPublishAt": "2026-10-07T11:34:30.201Z",
+      "state": "LOCAL_APPROVED_NOT_DEPLOYED",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Verified sources attached to the approved revision.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "c724b12b-2821-4990-95f8-bfc1167f49cb",
+      "url": "/gidai/matmenys-uzklausai",
+      "title": "Ką išmatuoti prieš roletų užklausą",
+      "query": "roletu matavimas",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirengimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Lango inventoriaus ir matavimo vietos lapas, be užsakymo dydžio formulės.",
+      "requiredSources": [
+        "https://www.isotra.com/verra-semi-fabric-roller-blind",
+        "https://www.luxaflex.co.uk/products/blackout-blinds/",
+        "https://www.luxaflex.co.uk/products/roller-blinds/",
+        "https://www.ikea.com/lt/lt/p/langdans-ritinine-uzuolaida-pilka-50471837/"
+      ],
+      "plannedPublishAt": "2026-10-07T11:34:30.201Z",
+      "state": "LOCAL_APPROVED_NOT_DEPLOYED",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Verified sources attached to the approved revision.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "060391b8-d36b-4717-b4ec-a6a8cd6665d0",
+      "url": "/gidai/pasiulymu-palyginimas",
+      "title": "Kaip palyginti roletų kainos pasiūlymus",
+      "query": "roletu kaina",
+      "variants": [
+        "roletų kaina",
+        "roletų kainos palyginimas",
+        "kas įskaičiuota į roletų kainą"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pirkimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Vienodos apimties pasiūlymų patikros lentelė be išgalvotų kainų.",
+      "requiredSources": [
+        "https://www.isotra.com/verra-semi-fabric-roller-blind",
+        "https://www.luxaflex.co.uk/products/blackout-blinds/",
+        "https://www.luxaflex.co.uk/products/roller-blinds/",
+        "https://www.ikea.com/lt/lt/p/langdans-ritinine-uzuolaida-pilka-50471837/"
+      ],
+      "plannedPublishAt": "2026-10-07T12:52:15.095Z",
+      "state": "LOCAL_APPROVED_NOT_DEPLOYED",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Verified sources attached to the approved revision.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "ff21d684-e2a3-4d76-9697-18d4a57d03ff",
+      "url": "/gidai/kasetiniai-ar-klasikiniai",
+      "title": "Kasetiniai ar klasikiniai roletai",
+      "query": "kasetiniai roletai",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirinkimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Audinio ir konstrukcijos terminų atskyrimas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-09T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "e8035d6b-254a-4647-8527-b9334e7e4c5e",
+      "url": "/gidai/roletai-diena-naktis",
+      "title": "Kaip veikia diena–naktis roletai",
+      "query": "roletai diena naktis",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirinkimas",
+      "rootUrl": "/gidai/sviesa-ir-privatumas",
+      "contribution": "Juostų padėties paaiškinimas ir privatumo bandymas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-09T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/sviesa-ir-privatumas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "ab33e178-537a-4b1d-8442-5d54a034e9ac",
+      "url": "/gidai/blackout-tarpai",
+      "title": "Kodėl blackout roletai praleidžia šviesą kraštuose",
+      "query": "blackout roletai tarpai",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "problemos",
+      "rootUrl": "/gidai/sviesa-ir-privatumas",
+      "contribution": "Atskirti audinį nuo visos sistemos, klausimai tiekėjui.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-09T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/sviesa-ir-privatumas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "cc5304e3-33dc-4b2b-b32d-d2bae10b6f23",
+      "url": "/gidai/roletai-ar-uzuolaidos",
+      "title": "Roletai ar užuolaidos: kada ką rinktis",
+      "query": "roletai ar uzuolaidos",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirinkimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Lango naudojimo, sluoksniavimo ir priežiūros sprendimų palyginimas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-09T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "edbada53-4fd0-4da4-a25c-f06e92a62ed8",
+      "url": "/gidai/roletai-ar-plisuotos-zaliuzes",
+      "title": "Roletai ar plisuotos žaliuzės",
+      "query": "roletai ar plisuotos",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirinkimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Konstrukcijų/paslankumo skirtumai pagal gamintojo sistemą.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-09T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "0a9670ed-2f79-4383-b068-239c62c43a99",
+      "url": "/gidai/audinio-pavyzdys",
+      "title": "Kaip vertinti roleto audinio pavyzdį",
+      "query": "roletu audiniai",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirinkimas",
+      "rootUrl": "/gidai/sviesa-ir-privatumas",
+      "contribution": "Tikros dienos/vakaro šviesos patikros lapas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-09T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/sviesa-ir-privatumas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "f1ddbc14-fd16-4bb8-b4ba-8971ece6207a",
+      "url": "/gidai/miegamasis",
+      "title": "Roletai miegamajam: tamsinimo pasirinkimai",
+      "query": "roletai miegamajam",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "kambariai",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Tamsinimo poreikis ir kraštų kontrolė.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "8f2e4bf8-26f5-47a6-b32d-7f718bf4b90f",
+      "url": "/gidai/darbo-kambarys",
+      "title": "Roletai darbo kambariui: akinimas ir dienos šviesa",
+      "query": "roletai nuo saules darbo kambarys",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "kambariai",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Ekrano vietos ir naudojimo laiko stebėjimo lapas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "76a7c3d5-0c4d-4d58-ac61-49a2a3aa1b8c",
+      "url": "/gidai/virtuve",
+      "title": "Roletai virtuvei: priežiūra ir lango naudojimas",
+      "query": "roletai virtuvei",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "kambariai",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Tinkamumo/valymo instrukcijos patikra.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "77870820-552c-44c8-b8c1-a8d3a5924a03",
+      "url": "/gidai/vonia",
+      "title": "Roletai voniai: drėgmė ir audinio pasirinkimas",
+      "query": "roletai voniai",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "kambariai",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Produkto tinkamumas pagal instrukciją, ne universalus atsparumas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "cf8caf86-88db-4899-a6b3-042efb703b1d",
+      "url": "/gidai/vaiku-kambarys",
+      "title": "Roletai vaikų kambariui: saugos klausimai",
+      "query": "roletai vaiku kambariui",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "sauga",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Konkrečių valdymo saugos dokumentų patikra.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "733e73c1-8919-43f8-9ab7-0217e2734259",
+      "url": "/gidai/balkono-durys",
+      "title": "Roletai balkono durims ir dažnai atidaromiems langams",
+      "query": "roletai balkono durims",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "langai",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Varčios/rankenos/ėjimo kliūčių lapas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "888637f2-74cd-483c-bdb8-d560f95f1e03",
+      "url": "/gidai/didelis-langas",
+      "title": "Roletai dideliam langui: ko paklausti tiekėjo",
+      "query": "roletai dideliems langams",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "langai",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Sistemos pločio/apimties duomenys tik iš pasirinkto modelio.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "07fda96c-15ac-4b70-9d61-85a379868ba9",
+      "url": "/gidai/stoglangis",
+      "title": "Roletai stoglangiui: modelio suderinamumas",
+      "query": "roletai stoglangiams",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "langai",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Lango modelio žymėjimo ir sistemos suderinamumo patikra.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "7abc9c62-8cea-42bd-8776-271756c9f417",
+      "url": "/gidai/nuomojamas-bustas",
+      "title": "Roletai nuomojamam būstui ir negręžiamas tvirtinimas",
+      "query": "roletai be grezimo",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pasirengimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Savininko leidimas ir gamintojo tvirtinimo apribojimai.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "d7a7c094-f029-49b5-af4d-62c47ff579f1",
+      "url": "/gidai/matavimas-montavimas",
+      "title": "Kas turi būti sutarta dėl matavimo ir montavimo",
+      "query": "roletu montavimas klaipeda",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pirkimas",
+      "rootUrl": "/gidai/matmenys-uzklausai",
+      "contribution": "Atsakomybės/termino/garantijos klausimų lapas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/matmenys-uzklausai",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "3b240757-0bc9-49d7-8e60-b4b0163a2eba",
+      "url": "/gidai/standartiniai-ar-pagal-matmenis",
+      "title": "Standartiniai ar pagal matmenis gaminami roletai",
+      "query": "roletai pagal matmenis",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pirkimas",
+      "rootUrl": "/gidai/matmenys-uzklausai",
+      "contribution": "Audinio/bendro pločio ir aptarnavimo palyginimas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/matmenys-uzklausai",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "c89f5844-09f1-4d60-b07d-087435a583ad",
+      "url": "/gidai/roletai-internetu",
+      "title": "Ką patikrinti perkant roletus internetu",
+      "query": "roletai internetu",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "pirkimas",
+      "rootUrl": "/gidai/matmenys-uzklausai",
+      "contribution": "Instrukcija, matmenys, pardavėjo sąlygos ir neatitikimo kelias.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-12T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/matmenys-uzklausai",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "c1925a98-bbbb-4e5b-9fcf-fc39200d7f04",
+      "url": "/gidai/prieziura",
+      "title": "Kaip prižiūrėti roletus pagal audinį",
+      "query": "roletu prieziura",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "naudojimas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Konkretaus audinio valymo instrukcija, jokio bendro plovimo recepto.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-15T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "ad6f0615-a34d-4113-a84f-c4ef531db977",
+      "url": "/gidai/pelesis",
+      "title": "Pelėsis ant roleto: ką patikrinti prieš valymą",
+      "query": "pelėsis ant roleto",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "problemos",
+      "rootUrl": "/gidai/prieziura",
+      "contribution": "Drėgmės/priežasties vertinimas ir dokumento ribos.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-15T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/prieziura",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Exact selected manufacturer model care/safety instructions; no guessed repair, chemical recipe or health diagnosis. Stop if unavailable.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "dd309404-e935-4e3e-b283-0250af58be53",
+      "url": "/gidai/grandinele",
+      "title": "Roleto grandinėlė stringa: saugus problemos aprašymas",
+      "query": "roletu grandinele stringa",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "problemos",
+      "rootUrl": "/gidai/prieziura",
+      "contribution": "Gedimo duomenys servisui, be pavojingo išardymo.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-15T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/prieziura",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Exact selected manufacturer model care/safety instructions; no guessed repair, chemical recipe or health diagnosis. Stop if unavailable.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "348b3ee1-5547-4a42-97d7-bcd0a20a43a5",
+      "url": "/gidai/audinys-krypsta",
+      "title": "Roleto audinys vyniojasi kreivai",
+      "query": "roletas kreivai vyniojasi",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "problemos",
+      "rootUrl": "/gidai/prieziura",
+      "contribution": "Stebėjimų lapas servisui, ne įtempimo remonto vadovas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-15T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/prieziura",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Exact selected manufacturer model care/safety instructions; no guessed repair, chemical recipe or health diagnosis. Stop if unavailable.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "f87facce-a540-4e37-8ac9-a2bdba3e6284",
+      "url": "/gidai/elektriniai",
+      "title": "Elektriniai roletai: ką suplanuoti prieš pasirinkimą",
+      "query": "elektriniai roletai",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "valdymas",
+      "rootUrl": "/gidai/valdymas",
+      "contribution": "Maitinimo/suderinamumo dokumentai, ne elektros darbų instrukcija.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-15T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/valdymas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Exact manufacturer model/controller manual and compatibility conditions; not general smart-home claims.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "33c6eb20-5a3c-44d3-9508-9941ec72233c",
+      "url": "/gidai/valdymas",
+      "title": "Grandinėlė ar kitoks valdymas: patogumas ir sauga",
+      "query": "roletu valdymas",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "valdymas",
+      "rootUrl": "/gidai",
+      "contribution": "Pasiekiamumo ir tikros gaminio dokumentacijos vertinimas.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-15T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Exact manufacturer model/controller manual and compatibility conditions; not general smart-home claims.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "15bc7bd2-bb77-4d96-8945-0edb52699e85",
+      "url": "/gidai/vakaro-privatumas",
+      "title": "Kodėl roletas vakare atrodo permatomas",
+      "query": "roletai permatomi vakare",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "problemos",
+      "rootUrl": "/gidai/sviesa-ir-privatumas",
+      "contribution": "Audinio bandymas su vidaus/išorės apšvietimu.",
+      "requiredSources": [],
+      "plannedPublishAt": "2026-10-15T07:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/sviesa-ir-privatumas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    },
+    {
+      "pageId": "084a5afc-37b0-49b0-ba86-d70e96a8b6d3",
+      "url": "/gidai/vasaros-pasirengimas",
+      "title": "Kaip pasiruošti vasaros akinimui namuose",
+      "query": "roletai nuo saules",
+      "variants": [],
+      "country": "LT",
+      "language": "lt",
+      "demandEvidence": "unmeasured",
+      "decision": "new",
+      "intent": "informational-decision",
+      "cluster": "sezonas",
+      "rootUrl": "/gidai/roletu-pasirinkimas",
+      "contribution": "Prieš sezoną surinkti langų laikų/poreikių duomenis, be šilumos procentų.",
+      "requiredSources": [],
+      "plannedPublishAt": "2027-02-15T08:00:00.000Z",
+      "state": "PLANNED_PRIVATE_UNWRITTEN",
+      "cta": "/kontaktai",
+      "links": [
+        {
+          "url": "/gidai/roletu-pasirinkimas",
+          "reason": "A broader or prior decision needed for this distinct reader job."
+        },
+        {
+          "url": "/kontaktai",
+          "reason": "Register the concrete window need, without a fulfilment promise."
+        }
+      ],
+      "measurement": "Indexing → query impressions → relevant guide visits → stored/received/qualified inquiries; synthetic excluded.",
+      "sourcePriority": "Primary manufacturer fabric/system/size specifications for the actual example; local offer only as a competitor comparison.",
+      "sourceNeeds": "Find and read applicable primary instructions before drafting; current source bundle is not automatically applicable to this topic.",
+      "dependency": "Publication requires body, original contribution, evidence, inspected media, immutable review, useful eligible links and actual render. Date alone never publishes an unwritten plan."
+    }
+  ],
+  "merges": [
+    {
+      "queries": [
+        "roletai Klaipeda",
+        "roletai Klaipedoje",
+        "roletai Klaipėdoje"
+      ],
+      "target": "/",
+      "reason": "Vienas vietinis poreikio kelias, ne trys miesto durys."
+    },
+    {
+      "queries": [
+        "roletu kainos",
+        "roletu kaina"
+      ],
+      "target": "/gidai/pasiulymu-palyginimas",
+      "reason": "Vienas palyginamų apimčių klausimas."
+    }
+  ],
+  "queryDecisions": [
+    {
+      "queries": [
+        "roletai Klaipėdoje",
+        "roletai Klaipėda"
+      ],
+      "url": "/",
+      "decision": "merge",
+      "reason": "Same local commercial entry job; no city spelling doorway."
+    },
+    {
+      "queries": [
+        "roletų kaina",
+        "roletų kainos",
+        "roletų pasiūlymų palyginimas"
+      ],
+      "url": "/gidai/pasiulymu-palyginimas",
+      "decision": "merge",
+      "reason": "Compare complete scope without invented tariffs."
+    },
+    {
+      "queries": [
+        "lauko roletai",
+        "markizės",
+        "roletai Vilniuje",
+        "žaliuzių katalogas"
+      ],
+      "url": null,
+      "decision": "exclude",
+      "reason": "Outside the defined indoor roletai/Klaipėda phase-one offer."
+    },
+    {
+      "queries": [
+        "roletai diena naktis veikimas"
+      ],
+      "url": "/gidai/roletai-diena-naktis",
+      "decision": "new-private",
+      "reason": "Mechanism explanation differs from the published two-option light/privacy decision; do not publish repeated filler."
+    }
+  ],
+  "readiness": "30 bounded guide jobs materialized in studio; four locally approved, 26 private unwritten plans. No publication/week target. Initial same-day and later dates reflect dependencies/seasons, not guaranteed launch dates."
+}

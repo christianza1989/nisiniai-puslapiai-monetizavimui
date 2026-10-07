@@ -110,6 +110,8 @@ test('queued plan and draft deliver actual private evidence to the CLI process a
   process.env.STUDIO_SEO_CAPTURE = capture;
   process.env.CODEX_JS = path.join(root, 'codex-fixture.mjs');
   process.env.STUDIO_OUTPUT_DIR = path.join(root, 'output');
+  process.env.STUDIO_CODEX_MODEL = 'gpt-6-luna';
+  process.env.STUDIO_CODEX_REASONING_EFFORT = 'xhigh';
   await writeFile(process.env.CODEX_JS, `
     import {writeFile} from 'node:fs/promises';
     let prompt='';for await(const chunk of process.stdin)prompt+=chunk;
@@ -136,6 +138,9 @@ test('queued plan and draft deliver actual private evidence to the CLI process a
   assert.equal(plan.status, 'complete', plan.error);
   assert.deepEqual(plan.editorialSkill.modules, ['niche-seo-geo-core']);
   let captured = JSON.parse(await readFile(capture, 'utf8'));
+  assert.equal(captured.args[captured.args.indexOf('--model')+1],'gpt-6-luna');
+  assert.ok(captured.args.includes('model_reasoning_effort="xhigh"'));
+  assert.equal(JSON.parse(plan.detail).writerExecution.status,'cli-header-observed');
   const context = JSON.parse(captured.prompt.slice(captured.prompt.lastIndexOf('\n{\n  "siteData"') + 1)).siteData.seoResearch;
   assert.equal(context.observations[0].value.estimated, 170);
   assert.equal(context.domain, site.domain);
@@ -145,6 +150,8 @@ test('queued plan and draft deliver actual private evidence to the CLI process a
   assert.equal(draft.status, 'complete', draft.error);
   assert.deepEqual(draft.editorialSkill.modules, ['niche-seo-geo-core']);
   captured = JSON.parse(await readFile(capture, 'utf8'));
+  assert.equal(captured.args[captured.args.indexOf('--model')+1],'gpt-6-luna');
+  assert.equal(JSON.parse(draft.detail).writerExecution.reportedEffort,'xhigh');
   assert.match(captured.prompt, /niche-seo-geo-core\/references\/studio-integration.md/);
   const publicPackage = JSON.stringify(model.packageForSite(await model.getSite(site.id)));
   assert.equal(publicPackage.includes('seoResearch'), false);

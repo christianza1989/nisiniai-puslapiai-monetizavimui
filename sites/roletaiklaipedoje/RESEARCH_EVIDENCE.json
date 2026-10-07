@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "siteId": "roletaiklaipedoje",
+  "domain": "roletaiklaipedoje.lt",
+  "language": "lt",
+  "country": "LT",
+  "observations": [
+    {
+      "id": "isotra-daynight",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T11:34:22.747Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "isotra-daynight.html",
+        "sha256": "c0bf56baeb037bc478fa7eb89c4da66ec55258ad34af9c5a1cec2109515288f4"
+      },
+      "value": {
+        "url": "https://www.isotra.com/verra-semi-fabric-roller-blind",
+        "reason": "Dviejų audinio sluoksnių tankios/permatomos juostos persidengia; konstrukcija atskira nuo audinio.",
+        "httpStatus": 200
+      },
+      "limitations": "Raw response hash preserves acquisition. Claim applicability requires separate reading. Not demand/volume data."
+    },
+    {
+      "id": "luxaflex-blackout",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T11:34:23.168Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "luxaflex-blackout.html",
+        "sha256": "58da9fdeaca55ef90faf8d814c80cf2c31d4a4b3eaaa4ba7a6690abfe0f13199"
+      },
+      "value": {
+        "url": "https://www.luxaflex.co.uk/products/blackout-blinds/",
+        "reason": "Tamsinantis audinys ir viso lango šoninės šviesos kontrolė nėra tas pats.",
+        "httpStatus": 200
+      },
+      "limitations": "Raw response hash preserves acquisition. Claim applicability requires separate reading. Not demand/volume data."
+    },
+    {
+      "id": "luxaflex-roller",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T11:34:25.132Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "luxaflex-roller.html",
+        "sha256": "9f23a227a920d96a1e20bf85408007d3255d426352b0cb458a2d595baec17d1c"
+      },
+      "value": {
+        "url": "https://www.luxaflex.co.uk/products/roller-blinds/",
+        "reason": "Audinių pralaidumas, valdymas ir lango konstrukcija pasirenkami atskirai; konkrečių gaminių savybių negeneralizuoti.",
+        "httpStatus": 200
+      },
+      "limitations": "Raw response hash preserves acquisition. Claim applicability requires separate reading. Not demand/volume data."
+    },
+    {
+      "id": "ikea-size",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T11:34:27.751Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "ikea-size.html",
+        "sha256": "d63dda97bdc9217a3d5492c453b7988fb52773bc1e4b9ecf300e1f9e5ff79149"
+      },
+      "value": {
+        "url": "https://www.ikea.com/lt/lt/p/langdans-ritinine-uzuolaida-pilka-50471837/",
+        "reason": "Konkretaus modelio audinio ir bendras plotis skiriasi. Ne universalus matavimo receptas.",
+        "httpStatus": 200
+      },
+      "limitations": "Raw response hash preserves acquisition. Claim applicability requires separate reading. Not demand/volume data."
+    },
+    {
+      "id": "optirole",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T11:34:28.396Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "optirole.html",
+        "sha256": "165a59f919586358a246a739d1508bd8b6bf2c0e023e4ed07f16eba2cbfb953a"
+      },
+      "value": {
+        "url": "https://www.optirole.lt/",
+        "reason": "Konkurentas Klaipėdoje siūlo gamybą pagal matmenis ir montavimą; ne mūsų pajėgumas.",
+        "httpStatus": 200
+      },
+      "limitations": "Raw response hash preserves acquisition. Claim applicability requires separate reading. Not demand/volume data."
+    },
+    {
+      "id": "roleturojus",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T11:34:28.749Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "roleturojus.html",
+        "sha256": "2ac7b1e1117ceac6b6284a8605cfdf9b4854c308252f1d2c0fccdd8854416ed7"
+      },
+      "value": {
+        "url": "https://roleturojus.lt/gauti-pasiulyma/",
+        "reason": "Konkurentas skiria kainos, matavimo, montavimo ir remonto užklausas; ne mūsų pasiūlymas.",
+        "httpStatus": 200
+      },
+      "limitations": "Raw response hash preserves acquisition. Claim applicability requires separate reading. Not demand/volume data."
+    },
+    {
+      "id": "stores-fr",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T11:34:29.649Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "stores-fr.html",
+        "sha256": "eb90c2eecda821a1a45bf8c648d6f865356c0407abcd0e24f25f2ece6787e0dd"
+      },
+      "value": {
+        "url": "https://storesenrouleur.com/",
+        "reason": "Prancūzijos gamintojas turi konkrečius gaminius/krepšelį ir informacinius naudojimo klausimus; kitokia vykdymo apimtis.",
+        "httpStatus": 200
+      },
+      "limitations": "Raw response hash preserves acquisition. Claim applicability requires separate reading. Not demand/volume data."
+    },
+    {
+      "id": "edpb-lawful",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T12:03:38.165Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "edpb-lawful.html",
+        "sha256": "94d816d0742c846cb429b94e9e45fcecaf620a1531e66f88c872bc74a55dbb89"
+      },
+      "value": {
+        "url": "https://www.edpb.europa.eu/sme/be-compliant/process-personal-data-lawfully_en",
+        "reason": "Sutikimo pasirinktinumas, tikslas, informacija ir atšaukimas.",
+        "httpStatus": 200
+      },
+      "limitations": "Primary guidance; legal application and production configuration remain separate launch checks."
+    },
+    {
+      "id": "edpb-rights",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T12:03:38.213Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "edpb-rights.html",
+        "sha256": "a9e9a7c0bde82931ab2678e0ca31ac3debee6f2006cc0fa7254a099ca7af342c"
+      },
+      "value": {
+        "url": "https://www.edpb.europa.eu/topics/key-gdpr-concepts/data-subject-rights_en",
+        "reason": "Duomenų subjekto teisės ir jų taikymo sąlygos.",
+        "httpStatus": 200
+      },
+      "limitations": "Primary guidance; legal application and production configuration remain separate launch checks."
+    },
+    {
+      "id": "vdai-home",
+      "kind": "source",
+      "status": "observed",
+      "country": "GLOBAL",
+      "language": "und",
+      "observedAt": "2026-10-07T12:03:38.340Z",
+      "freshUntil": "2026-11-06T12:00:00Z",
+      "source": {
+        "artifact": "vdai-home.html",
+        "sha256": "6e8551b390b6c67254d687560d6ee0c7801863406fe75fbaed06d0d1f42e0169"
+      },
+      "value": {
+        "url": "https://vdai.lrv.lt/",
+        "reason": "Lietuvos duomenų apsaugos priežiūros institucija ir skundų kelias.",
+        "httpStatus": 200
+      },
+      "limitations": "Primary guidance; legal application and production configuration remain separate launch checks."
+    }
+  ]
+}

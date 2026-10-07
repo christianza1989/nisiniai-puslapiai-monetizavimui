@@ -1,0 +1,407 @@
+[
+  {
+    "key": "hero",
+    "file": "exec-a8de6131-0878-42f1-ac54-d94fa498b358.png",
+    "alt": "Šviesus iliustracinis kambarys su dviem lininio atspalvio roletais",
+    "slug": "",
+    "prompt": "Create a beautiful original architectural interior editorial photograph-like illustration, ultra-wide landscape 3:2 crop. A lived-in quiet modern Baltic apartment living/dining room, soft oatmeal walls, pale oak table, a low ivory sofa, a small understated branch in a ceramic vase. The central subject is a wide clean window fitted with two REALISTIC warm linen-colored fabric ROLLER BLINDS, partly lowered, flat continuous fabric panels, thin subtle bottom bars, discreet enclosed roller at the top. Gentle afternoon daylight filtered through fabric, clearly visible fine textile texture. No wooden/slatted blinds, no Roman folds, no zebra stripes in this hero. A neutral blurred leafy courtyard outside, no recognizable city or landmark. Broad horizontal composition and natural shadow shape, tactile, refined, inviting without luxury excess. No people, no brand logos, no typography, no visible loose cords or loops, no photorealistic customer documentation claims. Keep window and blinds readable in a central mobile crop. This is an illustrative interior for a roller blind selection information site, not a real installation or stocked product.",
+    "tool": "image_gen.imagegen",
+    "model": "not disclosed by tool",
+    "sourceSha256": "ee3008aae2099f6e3ae0a88c179554bc1f70dea10994605870274c03c4c27bb9",
+    "assetId": "9c87c9f6-e1b8-4592-a2b3-16f527437bf1",
+    "variants": [
+      {
+        "id": "9c87c9f6-e1b8-4592-a2b3-16f527437bf1",
+        "src": "/content-assets/roletaiklaipedoje/9c87c9f6-e1b8-4592-a2b3-16f527437bf1.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 113132,
+        "sha256": "538b590e999b193ab2dd558fcb428e059f3756bd9776efda3ff553df983165ba"
+      },
+      {
+        "id": "f38979d5-42cf-447d-b291-808ecc18c726",
+        "src": "/content-assets/roletaiklaipedoje/f38979d5-42cf-447d-b291-808ecc18c726.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 76640,
+        "sha256": "e520793f4fd5b3c3db453b1470511189f5d56f79ff1c14685ddf3db7935dd8f6"
+      },
+      {
+        "id": "a09454a9-4533-4927-b367-3d10e4f54a13",
+        "src": "/content-assets/roletaiklaipedoje/a09454a9-4533-4927-b367-3d10e4f54a13.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 38928,
+        "sha256": "e153f6178c835b7a8bd7abac1a84db6554939198f87eb603dd1601d1dfa9044e"
+      },
+      {
+        "id": "92f67e70-feae-4314-9292-4a22aa8d1d56",
+        "src": "/content-assets/roletaiklaipedoje/92f67e70-feae-4314-9292-4a22aa8d1d56.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 25882,
+        "sha256": "265afdaccc686ce377a140e2bb86814eaf0c8554fc6393c5d8dbc470f3fd4704"
+      },
+      {
+        "id": "a9af6bce-712c-4771-86f9-e0134d83200f",
+        "src": "/content-assets/roletaiklaipedoje/a9af6bce-712c-4771-86f9-e0134d83200f.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 9252,
+        "sha256": "ae102d2bd34a2fb863370c532da137c320a6cfea48cd78e0627a31b74a243494"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2465424,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 113132
+        },
+        {
+          "width": 1200,
+          "bytes": 76640
+        },
+        {
+          "width": 800,
+          "bytes": 38928
+        },
+        {
+          "width": 640,
+          "bytes": 25882
+        },
+        {
+          "width": 360,
+          "bytes": 9252
+        }
+      ],
+      "originalStoredPrivately": true
+    },
+    "review": "Actual generated pixels viewed by root. Subject and source-original isolation retained; final CSS crops still require rendered verification."
+  },
+  {
+    "key": "choice",
+    "file": "exec-9010008e-2e1d-4c3f-a2ee-d3ce306f3f7a.png",
+    "alt": "Skirtingo tankumo audinio pavyzdžiai prie lango rėmo ir roleto apatinės juostos",
+    "slug": "gidai/roletu-pasirinkimas",
+    "prompt": "Original editorial still-life photograph-like illustration for an article about CHOOSING roller blind fabric and construction. Landscape 3:2. Close tactile warm linen and pale gray roller-blind fabric swatches laid across an oak worktop next to a modern white window frame section and a discreet realistic roller-blind bottom rail. Several small unbranded samples, continuous woven fabric rather than curtains. Soft natural light from left revealing different fabric densities, plenty of quiet negative space. No people, no logos, no text, no invented measurements, no hand drawn arrows, no cord loops. Oatmeal, warm ink, wood and soft stone palette. Useful subject-specific composition: fabric is separate from the window's construction. It is a generated illustration, not a customer project or product for sale.",
+    "tool": "image_gen.imagegen",
+    "model": "not disclosed by tool",
+    "sourceSha256": "bd61e9431c748bd461d6bd2133c29d964a521999f85a5a170c32674e7afccdad",
+    "assetId": "979247f9-4494-40e1-bfc6-df2862405800",
+    "variants": [
+      {
+        "id": "979247f9-4494-40e1-bfc6-df2862405800",
+        "src": "/content-assets/roletaiklaipedoje/979247f9-4494-40e1-bfc6-df2862405800.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 244620,
+        "sha256": "5d929274c6004f6528d1d87d82cf9d40f2ce5bd3326f479ed4e37a0f3034aa8c"
+      },
+      {
+        "id": "e9fd3c6c-bd88-4508-8983-b9fb09359eb7",
+        "src": "/content-assets/roletaiklaipedoje/e9fd3c6c-bd88-4508-8983-b9fb09359eb7.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 165016,
+        "sha256": "e82be38b1cd4a4f8c447691d7c06ca60ecd66ab825015943a3b4d8c4c5925272"
+      },
+      {
+        "id": "2b5bf0c0-1764-4696-abe6-1ec98c06b682",
+        "src": "/content-assets/roletaiklaipedoje/2b5bf0c0-1764-4696-abe6-1ec98c06b682.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 78974,
+        "sha256": "cea2d2deb3cc7ec07dad281f741968c300841bd61147117e0e07b2bee40beb96"
+      },
+      {
+        "id": "e838cbc0-79e1-45e4-850b-100272d59d55",
+        "src": "/content-assets/roletaiklaipedoje/e838cbc0-79e1-45e4-850b-100272d59d55.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 49602,
+        "sha256": "3519cbef042fe57149f9f24bc836ea1a644b21e22df53fcad98e015aef8e0d3a"
+      },
+      {
+        "id": "e1ff5b14-fb8f-47b6-a88a-8c6be53a5e7b",
+        "src": "/content-assets/roletaiklaipedoje/e1ff5b14-fb8f-47b6-a88a-8c6be53a5e7b.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 11720,
+        "sha256": "989e77b0087513008179e19ed8cca472423ca4897ea83e0a7cd95e637f567fca"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 3304852,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 244620
+        },
+        {
+          "width": 1200,
+          "bytes": 165016
+        },
+        {
+          "width": 800,
+          "bytes": 78974
+        },
+        {
+          "width": 640,
+          "bytes": 49602
+        },
+        {
+          "width": 360,
+          "bytes": 11720
+        }
+      ],
+      "originalStoredPrivately": true
+    },
+    "review": "Actual generated pixels viewed by root. Subject and source-original isolation retained; final CSS crops still require rendered verification."
+  },
+  {
+    "key": "light",
+    "file": "exec-b0266419-df85-4468-9aa2-93dbbb910b36.png",
+    "alt": "Diena–naktis roleto tankios ir permatomos juostos prie miegamojo lango",
+    "slug": "gidai/sviesa-ir-privatumas",
+    "prompt": "Original editorial photograph-like illustration for a roller blind article about DAY-NIGHT FABRIC versus room darkening. Landscape 3:2. One clean close medium view of a modern neutral bedroom window fitted with an accurately plausible unbranded zebra/day-night roller blind: two continuous parallel fabric layers alternating horizontal opaque warm ivory woven stripes with fine transparent mesh stripes, in a partly aligned light-filtering position. Clearly visible doubled fabric layers at lower bar, subtle enclosing top cassette. Soft daylight outside, warm cream wall and edge of linen bed at bottom, no recognisable locality. The illustration teaches that stripe alignment controls light; do not show a fake split day/night time scene or claim perfect darkness. No text, numbers, branding, arrows, dangling cord loops or humans. Tactile materials and quiet editorial composition matching oatmeal/tobacco interiors. Generated illustrative system, not customer work or stock.",
+    "tool": "image_gen.imagegen",
+    "model": "not disclosed by tool",
+    "sourceSha256": "cd28253704da9e8139e8f9c2a4d51183da6a878f2c9300eb89780c99953b1a86",
+    "assetId": "7d515925-2e43-4b9e-9cb3-7055d4152eb8",
+    "variants": [
+      {
+        "id": "7d515925-2e43-4b9e-9cb3-7055d4152eb8",
+        "src": "/content-assets/roletaiklaipedoje/7d515925-2e43-4b9e-9cb3-7055d4152eb8.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 97482,
+        "sha256": "c2598170e668bb7cbccfd794e3017a5d6f09a6cc79c17daf4367146b84397017"
+      },
+      {
+        "id": "45549210-db7c-4521-b617-cc613326fe55",
+        "src": "/content-assets/roletaiklaipedoje/45549210-db7c-4521-b617-cc613326fe55.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 58604,
+        "sha256": "d8344b628d11f52d36733d9a386947431e99873a4c7a84a8a04644d039ffeb0c"
+      },
+      {
+        "id": "0abf37b8-3fe3-44c9-8590-be927d58fd24",
+        "src": "/content-assets/roletaiklaipedoje/0abf37b8-3fe3-44c9-8590-be927d58fd24.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 28266,
+        "sha256": "bf8ea8962874c1403bf148e206a89ae14f0d19caeb15ff80dbc5a20df0d1466f"
+      },
+      {
+        "id": "4fa7d10a-bc3c-41bb-834f-a91bb0440531",
+        "src": "/content-assets/roletaiklaipedoje/4fa7d10a-bc3c-41bb-834f-a91bb0440531.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 19044,
+        "sha256": "dfdb9eeb7e613b7a6b9492978cdc3e914849f260ee0d704b056736a1b1767bfb"
+      },
+      {
+        "id": "d5723dd3-5296-4fe4-afb3-02c004568da1",
+        "src": "/content-assets/roletaiklaipedoje/d5723dd3-5296-4fe4-afb3-02c004568da1.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 7990,
+        "sha256": "7e0e129171b4088c86ce09940fef4167d8aace0de323bc7ba1599ed4bdc93ac2"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2449755,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 97482
+        },
+        {
+          "width": 1200,
+          "bytes": 58604
+        },
+        {
+          "width": 800,
+          "bytes": 28266
+        },
+        {
+          "width": 640,
+          "bytes": 19044
+        },
+        {
+          "width": 360,
+          "bytes": 7990
+        }
+      ],
+      "originalStoredPrivately": true
+    },
+    "review": "Actual generated pixels viewed by root. Subject and source-original isolation retained; final CSS crops still require rendered verification."
+  },
+  {
+    "key": "measure",
+    "file": "exec-593252b0-5e9d-42c4-9282-3f3d56c8efff.png",
+    "alt": "Lango rėmas ir rankena, ant palangės užrašų lapas ir susukta matavimo juosta",
+    "slug": "gidai/matmenys-uzklausai",
+    "prompt": "Original editorial photograph-like illustration for a practical guide 'What to measure before a roller blind enquiry'. Landscape 3:2 close medium view of a clean white tilt-and-turn apartment window with a clearly visible white handle and realistic frame/sash/glass borders. A partly lowered unbranded warm ivory fabric roller blind at the top. A plain orange tape-measure housing lies on the pale oak windowsill with the metal tape retracted, a simple unmarked notebook and pencil beside it. NO measurement numbers, no diagrams/arrows, no hands or people, no text/logos, no dangling loop cords. The image visually establishes frame versus glass and preparing notes, not a precise technical installation instruction. Soft daylight, neutral blurred exterior, warm oatmeal palette, clean architectural photography with tactile materials. Important central frame and handle visible in mobile crop. Generated illustrative window, not a customer site or product sold.",
+    "tool": "image_gen.imagegen",
+    "model": "not disclosed by tool",
+    "sourceSha256": "92a923f8026e5a39a1609c76e617af1230ce5f390ac9c4081783657a9e7f460f",
+    "assetId": "54a938f9-e9c4-46a4-8990-e657decd4aff",
+    "variants": [
+      {
+        "id": "54a938f9-e9c4-46a4-8990-e657decd4aff",
+        "src": "/content-assets/roletaiklaipedoje/54a938f9-e9c4-46a4-8990-e657decd4aff.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 75160,
+        "sha256": "3a2b3ed4fcff648f112468e900ec7da3d5916c52d8c3473963e786908616dd72"
+      },
+      {
+        "id": "4ed657ac-2ef6-4506-b62a-788cb9810e72",
+        "src": "/content-assets/roletaiklaipedoje/4ed657ac-2ef6-4506-b62a-788cb9810e72.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 48854,
+        "sha256": "d2f538719d01e7d4b46a03f69488fe5a52cb90a29347941ea7d0ba91f3bdcef1"
+      },
+      {
+        "id": "5bf04a33-4187-439e-ad19-c632ac81ba49",
+        "src": "/content-assets/roletaiklaipedoje/5bf04a33-4187-439e-ad19-c632ac81ba49.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 26076,
+        "sha256": "eb5b4a24506d2a605f1fb81e9d5bdd2e0bde25176ed31b8fca0c04da7ce01b99"
+      },
+      {
+        "id": "a0868661-1cda-43e2-b14a-4afe226167db",
+        "src": "/content-assets/roletaiklaipedoje/a0868661-1cda-43e2-b14a-4afe226167db.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 18474,
+        "sha256": "b8499794b0d70f421dc39ab7aee1182a92aa1ae89d1e15634ce53dea1a66ff18"
+      },
+      {
+        "id": "1e4d8d70-6ffd-41ff-8cd2-d5a2b056ec97",
+        "src": "/content-assets/roletaiklaipedoje/1e4d8d70-6ffd-41ff-8cd2-d5a2b056ec97.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8460,
+        "sha256": "4e8d0eb3a6b0fdd134fe0b8ed02338f4b38c4a8f76bdf0dce949ccc9a2a677b9"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2095759,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 75160
+        },
+        {
+          "width": 1200,
+          "bytes": 48854
+        },
+        {
+          "width": 800,
+          "bytes": 26076
+        },
+        {
+          "width": 640,
+          "bytes": 18474
+        },
+        {
+          "width": 360,
+          "bytes": 8460
+        }
+      ],
+      "originalStoredPrivately": true
+    },
+    "review": "Actual generated pixels viewed by root. Subject and source-original isolation retained; final CSS crops still require rendered verification."
+  },
+  {
+    "key": "quote",
+    "file": "exec-173b496e-6fc2-4aba-a0ff-6c8fe7f54b5b.png",
+    "alt": "Audinių ir kasetės pavyzdžiai šalia tuščių pasiūlymo apimties lapų",
+    "slug": "gidai/pasiulymu-palyginimas",
+    "prompt": "Original quiet editorial still-life photograph-like illustration for a guide about comparing roller blind quotes fairly. Landscape 3:2. On a warm pale oak table beside a soft daylight window: three distinctly textured unbranded roller blind fabric samples in ivory, warm gray and muted tobacco, one realistic small white roller-blind cassette sample, a pencil and two entirely blank cream paper sheets with no numbers or readable printing. Arrangement thoughtfully separates fabric choice and mechanism from paper scope notes, beautiful natural soft shadow. No humans, brands, money, calculator screens, logos, prices or typography. The image communicates specifying like-for-like components, does not imply our stock or an actual quote. Refined tactile material photography, oatmeal palette matching a warm architectural interiors journal, important items in central mobile crop.",
+    "tool": "image_gen.imagegen",
+    "model": "not disclosed by tool",
+    "sourceSha256": "a0d2ac93f175149de5d4d15bd33cf738654e3ca34417255c0003a90edbe14a4e",
+    "assetId": "7f4bcfbd-3fec-4e4a-b827-e517e96d2179",
+    "variants": [
+      {
+        "id": "7f4bcfbd-3fec-4e4a-b827-e517e96d2179",
+        "src": "/content-assets/roletaiklaipedoje/7f4bcfbd-3fec-4e4a-b827-e517e96d2179.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 143030,
+        "sha256": "eecbd62c3d1089843ca566f383bf2cb1b559dd34b8cf5f9e4cafd7f0d603ba9b"
+      },
+      {
+        "id": "c35fa7d6-2799-407c-8cd6-3ed0e7d41e8e",
+        "src": "/content-assets/roletaiklaipedoje/c35fa7d6-2799-407c-8cd6-3ed0e7d41e8e.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 94714,
+        "sha256": "c52da65d6c95fddd61fb7037d1e19a3b9db27372881e8d2ca38b860679d6a90b"
+      },
+      {
+        "id": "88e9a2c9-3fcb-43b0-abb8-f3a978c8ce51",
+        "src": "/content-assets/roletaiklaipedoje/88e9a2c9-3fcb-43b0-abb8-f3a978c8ce51.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 43610,
+        "sha256": "303dc642eed9487c5fee4f8bd896ff28ab96b69cb6179d549e4f75355cb4ab99"
+      },
+      {
+        "id": "232f4a08-c348-4551-8367-ac0a470c9b1b",
+        "src": "/content-assets/roletaiklaipedoje/232f4a08-c348-4551-8367-ac0a470c9b1b.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 28102,
+        "sha256": "abf9895f35e4647b71d73e459a3808e7a8766da1b3b36f42815078aeecb8f476"
+      },
+      {
+        "id": "31e47d38-245b-495c-ba5e-a681074270aa",
+        "src": "/content-assets/roletaiklaipedoje/31e47d38-245b-495c-ba5e-a681074270aa.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 10568,
+        "sha256": "d160040dcc524b780734ffc8c634068ef006179b5b24ea7e29d4d3ac380d587a"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 2769755,
+      "variantBytes": [
+        {
+          "width": 1536,
+          "bytes": 143030
+        },
+        {
+          "width": 1200,
+          "bytes": 94714
+        },
+        {
+          "width": 800,
+          "bytes": 43610
+        },
+        {
+          "width": 640,
+          "bytes": 28102
+        },
+        {
+          "width": 360,
+          "bytes": 10568
+        }
+      ],
+      "originalStoredPrivately": true
+    },
+    "review": "Actual generated pixels viewed by root. Subject and source-original isolation retained; final CSS crops still require rendered verification."
+  }
+]

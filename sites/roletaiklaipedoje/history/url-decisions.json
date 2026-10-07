@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-07T13:28:52.185Z",
+  "inventoryComplete": false,
+  "limitation": "24 discovered URLs; bounded inventory timed out. These decisions do not claim completeness or backlink value.",
+  "redirectsImplemented": 0,
+  "decisions": [
+    {
+      "sourceUrl": "http://www.roletaiklaipedoje.lt/",
+      "path": "/",
+      "capturedAt": "2010-09-06T16:59:22.000Z",
+      "decision": "replace-root-original-content",
+      "target": "/",
+      "candidate": null,
+      "reason": "Topical continuity supports an original roletai home; no former business identity, copied content or ownership continuity claim."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/akcijos/",
+      "path": "/akcijos/",
+      "capturedAt": "2023-10-03T06:52:33.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/author/vsdksemenasgmail-com/",
+      "path": "/author/vsdksemenasgmail-com/",
+      "capturedAt": "2023-10-03T07:22:33.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/ka-svarbu-zinoti-pries-uzsisakant-roletus/",
+      "path": "/ka-svarbu-zinoti-pries-uzsisakant-roletus/",
+      "capturedAt": "2023-10-03T08:04:19.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/kas-geriau-roletai-ar-uzuolaidos/",
+      "path": "/kas-geriau-roletai-ar-uzuolaidos/",
+      "capturedAt": "2023-10-03T07:47:36.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/kontaktai/",
+      "path": "/kontaktai/",
+      "capturedAt": "2023-10-03T06:40:38.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/medines-zaliuzes/",
+      "path": "/medines-zaliuzes/",
+      "capturedAt": "2023-10-03T06:45:09.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/plisuotos-zaliuzes/",
+      "path": "/plisuotos-zaliuzes/",
+      "capturedAt": "2023-10-03T07:21:48.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/roletai-diena-naktis/",
+      "path": "/roletai-diena-naktis/",
+      "capturedAt": "2023-10-03T08:03:32.000Z",
+      "decision": "defer-same-intent-restoration",
+      "target": null,
+      "candidate": "/gidai/roletai-diena-naktis",
+      "reason": "Historical specific explanation aligns with a privately planned detailed guide, which is not yet written/approved. Keep 404 until same intent and source are reviewed."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/roletu-audiniai-koks-geriausias-variantas/",
+      "path": "/roletu-audiniai-koks-geriausias-variantas/",
+      "capturedAt": "2023-10-03T06:22:27.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/roletu-pliusai-ir-minusai/",
+      "path": "/roletu-pliusai-ir-minusai/",
+      "capturedAt": "2023-10-03T08:23:48.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/roletu-prieziura-nuo-pelesio/",
+      "path": "/roletu-prieziura-nuo-pelesio/",
+      "capturedAt": "2023-10-03T06:08:29.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/straipsniai/",
+      "path": "/straipsniai/",
+      "capturedAt": "2023-10-03T07:09:56.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Old promotion/product/unknown-service scope cannot inherit supplier, price, fulfilment or unique intent from a URL alone. Keep 404."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/kaip-priziureti-roletus/",
+      "path": "/tag/kaip-priziureti-roletus/",
+      "capturedAt": "2023-10-03T07:34:19.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/pelesis-ant-roleto/",
+      "path": "/tag/pelesis-ant-roleto/",
+      "capturedAt": "2023-10-03T07:20:14.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletai-internetu/",
+      "path": "/tag/roletai-internetu/",
+      "capturedAt": "2023-10-03T08:26:46.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletai-ir-uzuolaidos/",
+      "path": "/tag/roletai-ir-uzuolaidos/",
+      "capturedAt": "2023-10-03T06:14:28.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletai-klaipeda/",
+      "path": "/tag/roletai-klaipeda/",
+      "capturedAt": "2023-10-03T08:34:01.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletai-klaipedoje/",
+      "path": "/tag/roletai-klaipedoje/",
+      "capturedAt": "2023-10-03T08:37:01.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletai-pliusai-ir-minusai/",
+      "path": "/tag/roletai-pliusai-ir-minusai/",
+      "capturedAt": "2023-10-03T08:02:47.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletu-gamyba-klaipedoje/",
+      "path": "/tag/roletu-gamyba-klaipedoje/",
+      "capturedAt": "2023-10-03T07:35:41.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletu-montavimas/",
+      "path": "/tag/roletu-montavimas/",
+      "capturedAt": "2023-10-03T07:51:15.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/roletu-prieziura/",
+      "path": "/tag/roletu-prieziura/",
+      "capturedAt": "2023-10-03T06:54:59.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    },
+    {
+      "sourceUrl": "https://roletaiklaipedoje.lt/tag/uzuolaidu-montavimas/",
+      "path": "/tag/uzuolaidu-montavimas/",
+      "capturedAt": "2023-10-03T07:24:53.000Z",
+      "decision": "404",
+      "target": null,
+      "candidate": null,
+      "reason": "Former archive/author taxonomy is not a distinct current reader job; no mass redirect."
+    }
+  ]
+}

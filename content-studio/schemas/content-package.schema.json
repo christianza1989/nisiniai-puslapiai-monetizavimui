@@ -57,6 +57,7 @@
         "slug": { "type": "string" }, "title": { "type": "string" },
         "description": { "type": "string" }, "intent": { "type": "string" },
         "body": { "type": "array", "items": { "$ref": "#/$defs/block" } },
+        "bodyProjection": { "const": "canonical" },
         "publishAt": { "type": "string", "format": "date-time" },
         "revisionHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
         "approval": {

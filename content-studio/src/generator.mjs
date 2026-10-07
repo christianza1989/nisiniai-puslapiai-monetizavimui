@@ -6,6 +6,7 @@ import { randomUUID } from 'node:crypto';
 import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
+import { writerSelection, writerArguments, writerReceipt } from './writer-execution.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -14,16 +15,16 @@ let queue = Promise.resolve();
 function run(command, args, input, timeoutMs) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, { cwd: ROOT, shell: false, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] });
-    let stdout = ''; let stderr = ''; let settled = false;
+    let stdout = ''; let stderr = ''; let stderrHeader = ''; let settled = false;
     const timer = setTimeout(() => { child.kill(); finish(new Error(`Darbas viršijo ${Math.round(timeoutMs / 1000)} s ribą.`)); }, timeoutMs);
     function finish(error, result) {
       if (settled) return; settled = true; clearTimeout(timer);
       error ? reject(error) : resolve(result);
     }
     child.stdout.on('data', data => { stdout = (stdout + data.toString()).slice(-12000); });
-    child.stderr.on('data', data => { stderr = (stderr + data.toString()).slice(-12000); });
+    child.stderr.on('data', data => { if (stderrHeader.length < 4000) stderrHeader = (stderrHeader + data.toString()).slice(0,4000); stderr = (stderr + data.toString()).slice(-12000); });
     child.on('error', error => finish(error));
-    child.on('close', code => code === 0 ? finish(null, { stdout, stderr }) : finish(new Error(`${command} grąžino kodą ${code}. ${(stderr || stdout).slice(-1400)}`)));
+    child.on('close', code => code === 0 ? finish(null, { stdout, stderr, stderrHeader }) : finish(new Error(`${command} grąžino kodą ${code}. ${(stderr || stdout).slice(-1400)}`)));
     child.stdin.on('error', () => {});
     child.stdin.end(input || '');
   });
@@ -32,16 +33,19 @@ function run(command, args, input, timeoutMs) {
 async function codexJson(prompt, schemaFile) {
   const temp = path.join(DATA, 'tmp'); await mkdir(temp, { recursive: true });
   const resultFile = path.join(temp, `${randomUUID()}.json`);
+  const selection = writerSelection();
   const args = [
     '--ask-for-approval', 'never', 'exec', '--ephemeral', '--ignore-user-config', '--skip-git-repo-check',
     '--sandbox', 'read-only',
+    ...writerArguments(selection),
     '--output-schema', path.join(SCHEMAS, schemaFile), '--output-last-message', resultFile, '-'
   ];
   try {
     const codexJs = process.env.CODEX_JS || path.join(process.env.APPDATA || '', 'npm', 'node_modules', '@openai', 'codex', 'bin', 'codex.js');
     const command = process.platform === 'win32' && existsSync(codexJs) ? process.execPath : (process.env.CODEX_BIN || 'codex');
-    await run(command, command === process.execPath ? [codexJs, ...args] : args, prompt, 300000);
+    const execution = await run(command, command === process.execPath ? [codexJs, ...args] : args, prompt, 300000);
     const data = JSON.parse(await readFile(resultFile, 'utf8'));
+    Object.defineProperty(data, 'writerExecution', { value: writerReceipt(selection, execution) });
     return data;
   } finally { await rm(resultFile, { force: true }); }
 }
@@ -61,11 +65,12 @@ async function planSite(siteId, months = 0, skill, requestedCount = null) {
   const policy = contentPolicy({ ...site.contentPolicy, ...(months ? { months } : {}) }, site.timezone);
   const count = requestedCount || (months ? Math.min(24, planningWindow(policy).target) : '5-10');
   const localDate = scheduleDate(Date.now(), policy.timezone);
-  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? `a ${policy.months}-month calendar with target ${policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}` : 'an initial demand-test site'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; spread substantive pages across this horizon, respect existing dates and seasonal dependencies. Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
+  const timing = policy.cadence === 'coverage' ? `Complete the bounded topical scope as soon as evidence, media and review allow. There is no weekly/monthly or one-page-per-day quota. Several dependency-ready pages may share a date. Tentative dates are not approval. Do not backdate or exceed ${planningWindow(policy).end}.` : months ? `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; spread substantive pages across this horizon, respect existing dates and seasonal dependencies. Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.';
+  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? `a ${policy.months}-month calendar with target ${policy.cadence === 'coverage' ? `${policy.topicTarget} bounded topics without a publishing quota` : policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}` : 'an initial demand-test site'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${timing} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
   const prompt = buildEditorialPrompt(skill, { mode: 'plan', instruction, siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() } });
   const result = await codexJson(prompt, 'plan-result.schema.json');
   if (!Array.isArray(result.pages)) throw new Error('Codex negrąžino puslapių plano.');
-  return mergePlan(siteId, result.pages, months);
+  return { ...await mergePlan(siteId, result.pages, months), writerExecution: result.writerExecution };
 }
 
 async function draftPage(siteId, pageId, skill) {
@@ -97,27 +102,27 @@ async function draftPage(siteId, pageId, skill) {
     networkLinkSuggestions: [...(page.networkLinkSuggestions || []), ...(result.networkLinks || [])] });
   // Fact checks are editorial notes and cannot be part of an approved public package.
   if (updated.networkLinkSuggestions?.length) await verifyNetworkLinks(siteId, pageId);
-  return { blocks: body.length, factChecks: updated.factChecks, internalSuggestions: suggestions.length, externalSourcesToVerify: externalLinks.length };
+  return { blocks: body.length, factChecks: updated.factChecks, internalSuggestions: suggestions.length, externalSourcesToVerify: externalLinks.length, writerExecution: result.writerExecution };
 }
 
 async function draftBatch(siteId, jobId, skill) {
   const site = await getSite(siteId);
   const pages = site.pages.filter(page => page.body.length === 0 && page.status !== 'revoked').slice(0, 24);
   if (!pages.length) return { generated: 0, failed: 0, detail: 'Tuščių planų nėra.' };
-  let generated = 0; const failures = [];
+  let generated = 0; const failures = [], writerExecutions = [];
   for (const page of pages) {
-    try { await draftPage(siteId, page.id, skill); generated++; }
+    try { const result = await draftPage(siteId, page.id, skill); writerExecutions.push({pageId:page.id, ...result.writerExecution}); generated++; }
     catch (error) { failures.push(`${page.slug || '/'}: ${String(error.message || error).slice(0, 180)}`); }
     await updateJob(jobId, { detail: `${generated + failures.length}/${pages.length} parengta; ${generated} juodraščiai, ${failures.length} klaidos` });
   }
-  return { generated, failed: failures.length, failures };
+  return { generated, failed: failures.length, failures, writerExecutions };
 }
 
 async function autopilot(siteId, jobId, skill) {
   let site = await getSite(siteId);
   const policy = contentPolicy(site.contentPolicy, site.timezone), window = planningWindow(policy);
-  const countUpcoming = value => value.pages.filter(page => ['guide','article'].includes(page.type) && page.status !== 'revoked' && Date.parse(page.publishAt) > Date.now() && scheduleDate(page.publishAt, policy.timezone) <= window.end).length;
-  let plan = { added: 0, total: site.pages.length, targetArticles: window.target };
+  const countUpcoming = value => value.pages.filter(page => ['guide','article'].includes(page.type) && page.status !== 'revoked' && (policy.cadence === 'coverage' ? scheduleDate(page.publishAt, policy.timezone) >= window.start : Date.parse(page.publishAt) > Date.now()) && scheduleDate(page.publishAt, policy.timezone) <= window.end).length;
+  let plan = { added: 0, total: site.pages.length, targetArticles: window.target, writerExecutions: [] };
   // Bound work and stop on lack of progress; no repeated filler prompts to hit a quota.
   for (let batch = 0; batch < Math.ceil(window.target / 24); batch++) {
     const remaining = window.target - countUpcoming(site);
@@ -125,16 +130,18 @@ async function autopilot(siteId, jobId, skill) {
     await updateJob(jobId, { detail: `Planuojama partija ${batch + 1}; tikslas ${window.target} straipsnių per ${policy.months} mėn.` });
     const next = await planSite(siteId, policy.months, skill, Math.min(24, Math.max(remaining, 1)));
     plan.added += next.added; plan.total = next.total;
+    if(next.writerExecution)plan.writerExecutions.push(next.writerExecution);
     if (!next.added) break;
     site = await getSite(siteId);
   }
   plan.remainingArticles = Math.max(0, window.target - countUpcoming(site));
   await updateJob(jobId, { detail: `Plane ${plan.total} puslapių, pridėta ${plan.added}; rengiami tušti juodraščiai.` });
-  const drafts = { generated: 0, failed: 0, failures: [] };
+  const drafts = { generated: 0, failed: 0, failures: [], writerExecutions: [] };
   const emptyCount = (await getSite(siteId)).pages.filter(page => page.body.length === 0 && page.status !== 'revoked').length;
   for (let batch = 0; batch < Math.ceil(emptyCount / 24); batch++) {
     const next = await draftBatch(siteId, jobId, skill);
     drafts.generated += next.generated; drafts.failed += next.failed; drafts.failures.push(...(next.failures || []));
+    drafts.writerExecutions.push(...(next.writerExecutions || []));
     if (next.failed || !next.generated) break;
   }
   drafts.remaining = (await getSite(siteId)).pages.filter(page => page.body.length === 0 && page.status !== 'revoked').length;

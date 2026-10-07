@@ -1,0 +1,116 @@
+{
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
+  "sourceVersion": "17b30eb1355a39407eeefc70b76ef298665fb565",
+  "sourceFingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960",
+  "tool": "Official npm Lighthouse13.5.0 CLI, real vinext production media, headless Chrome mobile lab",
+  "runs": [
+    {
+      "page": "home",
+      "url": "http://127.0.0.1:8794/",
+      "fetchTime": "2026-10-07T12:57:03.548Z",
+      "lighthouseVersion": "13.5.0",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2934.5,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "screen": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "throttling": "simulate",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 69,
+        "agentic-browsing": 100
+      },
+      "LCP": 2251.2888,
+      "CLS": 0,
+      "TBT": 10,
+      "reportPath": "output/audits/roletai/lighthouse-home-final.report.json",
+      "reportSha256": "00ebb3393de61af68b112337c204700615a3e6e6efdf370492c39e28b5a927b3"
+    },
+    {
+      "page": "guide",
+      "url": "http://127.0.0.1:8794/gidai/roletu-pasirinkimas",
+      "fetchTime": "2026-10-07T12:57:18.771Z",
+      "lighthouseVersion": "13.5.0",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2948,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "screen": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "throttling": "simulate",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 69,
+        "agentic-browsing": 100
+      },
+      "LCP": 2423.5374999999995,
+      "CLS": 0,
+      "TBT": 0,
+      "reportPath": "output/audits/roletai/lighthouse-guide-final.report.json",
+      "reportSha256": "e5baaef031bb2856d540b4e13c3bf999f1f237b7887ced7cf0a3a4f41341606d"
+    },
+    {
+      "page": "contact",
+      "url": "http://127.0.0.1:8794/kontaktai",
+      "fetchTime": "2026-10-07T12:57:33.229Z",
+      "lighthouseVersion": "13.5.0",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2906,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "screen": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "throttling": "simulate",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66,
+        "agentic-browsing": 100
+      },
+      "LCP": 2025.068,
+      "CLS": 0,
+      "TBT": 6.500000000000114,
+      "reportPath": "output/audits/roletai/lighthouse-contact-final.report.json",
+      "reportSha256": "f95f1efbb8a31ee5d9c2c544ee6bbd9ad6913f1756c111e03ea5e97d86caa28a"
+    }
+  ],
+  "limitations": [
+    "Loopback lab not fieldCWV.",
+    "LocalSEO66–69 lowered by intentional previewnoindex/robotsDisallow; all9 canonical-host SEO smoke separate.",
+    "DuplicateCSS output and >500kB framework chunk build warnings retained.",
+    "About59KiB unused frameworkJS and minor image savings remain; performance>=90 met; no downloaded fonts."
+  ]
+}

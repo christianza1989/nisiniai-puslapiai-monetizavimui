@@ -28,6 +28,12 @@ def fixture(host='beauty.example', name='Beauty editorial', kind='Organization',
 
 
 class RenderedSiteTests(unittest.TestCase):
+    def test_inline_link_punctuation_is_exact_but_missing_body_still_fails(self):
+        observation, _, _ = fixture()
+        observation['html'] = observation['html'].replace('A specific useful answer.', 'A specific <a href="/guide">useful answer</a>.')
+        self.assertNotIn('APPROVED_BODY_RENDERED', inspect_page(observation))
+        observation['html'] = observation['html'].replace('useful answer</a>', 'other answer</a>')
+        self.assertIn('APPROVED_BODY_RENDERED', inspect_page(observation))
     def test_training_block_does_not_block_search_agents(self):
         text = 'User-agent: GPTBot\nDisallow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\n'
         urls = ['https://beauty.example/guide']

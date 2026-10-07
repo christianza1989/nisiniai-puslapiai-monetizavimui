@@ -1,0 +1,21 @@
+import {getSite,editPage,revisionHash,recordEditorialReview,approveReviewedBatch,releaseContent} from '../src/model.mjs';
+import {readFile,writeFile,copyFile} from 'node:fs/promises';
+const core=new URL('../../../dovanos-memorycasting/',import.meta.url),base=new URL('../../sites/roletaiklaipedoje/',import.meta.url);
+let renderer=await readFile(new URL('components/niche/roletaiklaipedoje-site.tsx',core),'utf8');
+renderer=renderer.replace('Savo langą<br/>pažįstate jūs.','Savo langą<br/> pažįstate jūs.');
+const start=renderer.indexOf('{guide&&<aside className={s.contents}>'),end=renderer.indexOf('</aside>}',start)+9;
+if(start<0||end<9)throw Error('Expected existing guide contents');
+const contents=renderer.slice(start,end);renderer=renderer.slice(0,start)+renderer.slice(end);
+renderer=renderer.replace('<article className={s.prose}>{guide&&<figure',contents+'<article className={s.prose}>{guide&&<figure');
+await writeFile(new URL('components/niche/roletaiklaipedoje-site.tsx',core),renderer);
+let css=await readFile(new URL('components/niche/roletaiklaipedoje-site.module.css',core),'utf8');
+css=css.replace('.articlePhoto img{','.guideLayout>.contents{grid-column:2;grid-row:1}.guideLayout>.prose{grid-column:1;grid-row:1}.articlePhoto img{');
+await writeFile(new URL('components/niche/roletaiklaipedoje-site.module.css',core),css);
+await copyFile(new URL('VERIFICATION_SUMMARY.json',base),new URL('PUBLICATION.05b22.json',base));
+const s=await getSite('roletaiklaipedoje'),index=s.pages.find(p=>p.slug==='gidai'),future=s.pages.find(p=>p.slug==='gidai/pasiulymu-palyginimas');
+await editPage(s.id,index.id,{description:index.description.replace('trys klausimai','praktiniai klausimai')});
+await editPage(s.id,future.id,{publishAt:new Date(Date.now()+6*60*1000).toISOString()});
+const current=await getSite(s.id);
+for(const old of [index,future]){const p=current.pages.find(p=>p.id===old.id);await recordEditorialReview(s.id,p.id,{revisionHash:revisionHash(p),reviewer:'Codex /root — actual browser review correction',evidence:{...old.editorialReview.evidence,presentation:'Actual 1280×900 and 390×844 production browser review of all 11 pages on package 05b22…: 48 desktop and 75 mobile tiles, loaded images, no horizontal overflow. Repaired joined homepage words and moved guide contents before body in DOM, keeping desktop side column; corrected outdated guide-count description. Final amended build must be rechecked. This is agent review, not human approval; enlargement and own-mailbox delivery remain separate.'}});}
+await approveReviewedBatch(s.id,[index.id,future.id],'Codex /root — local browser repairs, no deployment');
+const release=await releaseContent(s.id);await writeFile(new URL('LOCAL_RELEASE.json',base),JSON.stringify(release,null,2));console.log(JSON.stringify(release));

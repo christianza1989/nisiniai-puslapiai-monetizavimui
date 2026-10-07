@@ -1,0 +1,123 @@
+{
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
+  "sourceVersion": "17b30eb1355a39407eeefc70b76ef298665fb565",
+  "sourceFingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960",
+  "keyboard": {
+    "at": "2026-10-07T13:11:50.479Z",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "skip": {
+      "active": "Pereiti prie turinio",
+      "href": "#turinys",
+      "outline": "rgb(115, 75, 52) solid 2.66667px",
+      "rect": {
+        "bottom": 54.59375,
+        "height": 54.59375,
+        "left": 20,
+        "right": 185.7916717529297,
+        "top": 0,
+        "width": 165.7916717529297,
+        "x": 20,
+        "y": 0
+      }
+    },
+    "skipActivation": {
+      "hash": "#turinys",
+      "activeId": "turinys"
+    },
+    "menu": {
+      "enterOpened": true,
+      "spaceClosed": true
+    },
+    "contents": {
+      "enterClosed": true,
+      "spaceOpened": true,
+      "anchor": "#section-3",
+      "actualTarget": "2. Audinį rinkitės pagal šviesos pralaidumą",
+      "top": 27.8958
+    },
+    "zoom": {
+      "attempt": "ctrl+plus twice at desktop",
+      "baseline": {
+        "dpr": 1.5,
+        "h1Font": "78px",
+        "height": 631,
+        "outerWidth": 1280,
+        "visualScale": 1,
+        "width": 1280
+      },
+      "result": "No observable change; not actual 200%; remains UNVERIFIED"
+    },
+    "screenshots": [
+      "keyboard-skip-focus.png",
+      "keyboard-menu-open.png",
+      "keyboard-contents-closed.png",
+      "keyboard-contents-anchor.png"
+    ]
+  },
+  "worksheet": {
+    "consent": false,
+    "focused": "message",
+    "invalid": [
+      "name",
+      "email",
+      "consent"
+    ],
+    "message": "Roletų poreikis Klaipėdoje.\nKambarys ir langų skaičius: QA svetainė, du langai.\nKada ir kas trukdo: Popietės akinimas.\nNorimas pokytis: Mažiau akinimo.\nPreliminarūs matmenys ir matavimo taškai: Dar nematavau.\nLango atidarymas, rankena ar kitos kliūtys: Atidaroma varčia.\nSuprantu, kad tai poreikio registracija, ne roletų užsakymas ar vizitas.",
+    "notice": "Žinutė paruošta. Perskaitykite ir pataisykite; ji dar neišsiųsta.",
+    "url": "http://127.0.0.1:8794/kontaktai"
+  },
+  "native": {
+    "at": "2026-10-07T13:16:54.209Z",
+    "invalidEmail": {
+      "active": "email",
+      "consent": false,
+      "invalid": [
+        {
+          "message": "",
+          "name": "email"
+        },
+        {
+          "message": "Please check this box if you want to proceed.",
+          "name": "consent"
+        }
+      ],
+      "url": "http://127.0.0.1:8794/kontaktai"
+    },
+    "missingConsent": {
+      "active": "consent",
+      "consent": false,
+      "invalid": [
+        {
+          "message": "Please check this box if you want to proceed.",
+          "name": "consent"
+        }
+      ],
+      "url": "http://127.0.0.1:8794/kontaktai"
+    },
+    "noSuccessfulSubmission": true
+  },
+  "contrast": [
+    {
+      "fg": "302b25",
+      "bg": "f5f1e9",
+      "ratio": 12.44
+    },
+    {
+      "fg": "734b34",
+      "bg": "f5f1e9",
+      "ratio": 6.69
+    },
+    {
+      "fg": "5a5044",
+      "bg": "f5f1e9",
+      "ratio": 6.99
+    }
+  ],
+  "computedUtility": "Actual date/caption13px/22.1px, footer14px/23.8px; visible at four widths, enlargement pending.",
+  "motion": "Static design; no animated elements in actual inspected guide.",
+  "zoomStatus": "UNVERIFIED",
+  "limitations": "Ctrl+Plus attempt produced no observable change. 320px viewport and Lighthouse100 do not prove200% zoom, physical touch or WCAG conformance."
+}

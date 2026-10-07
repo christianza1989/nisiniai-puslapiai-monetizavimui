@@ -1,13 +1,17 @@
-# Core spragos — naujas roletaiklaipedoje.lt bandymas
+# Bendro core spragos ir tikros pataisos
 
-2026-10-07. Bazė: private 8653b48 / public 37208b8. Tai naujas izoliuotas perkūrimas; ankstesnių auditų PASS nepaveldimi.
+Izoliuota bazė private8653b48/public37208b8. Kitų nišų patvirtintos revizijos nekinta.
 
-## G-01 — pasirinktas rašymo modelis nepasiekia proceso
+| ID | Reprodukcija ir pataisymas | Įrodymas |
+|---|---|---|
+| G01 | ignore-user-config be model/effort neleido vykdyti pasirinkimo. Explicit writer env/argv ir faktinis CLI header kvitas; mismatch stabdo, jokio fallback. | writer-execution.test;11 actual Luna/xhigh complete ir2 failed WRITER_RUNS išlaikyti. |
+| G02 | Savaitinis režimas ribojo planą. Atskiras coverage leidžia dependency-ready same-day, įtraukia šiandieną; batch limit nėra redakcinė kvota. | coverage-schedule35 same-day, UI/config/autopilot. |
+| G03 | LLM praleido home body; aklas legacy viso body eksportas atskleistų nerodomą tekstą. Optional pasirašytas V1 home-only bodyProjection canonical abiejuose validatoriuose/schema/hash; legacy hash/summary nekinta. | Hash parity, tamper, canonical/legacy reading ir own full HTML/LLM. |
+| G04 | Antra studijos instancija atkūrė gyvą writer kaip failed. Hostname/PID owner saugo gyvą procesą; stale atkuriamas po exit, EPERM konservatyvus. | Tikras second-process job-owner bandymas ir original failure kvitas. |
+| G05 | Node fetch ignoravo virtual Host, inline parser kūrė klaidingus tarpus. Native bounded HTTP/HTTPS ir tiksli inline concat/block separator analizė. | Host fixture, Python10, istorinis before ir final clean rendered. |
+| G06 | Bet koks nonempty audit version buvo priimamas. Computed actual sorted source SHA fingerprint privalo sutapti. | Changed-source regression, SOURCE_BINDING ir final SITE_COMPLETION. |
+| G07 | Formos verifier buvo hardcoded tractor. Explicit tenant/base/source, canonical guard ir exact UUID cleanup; legacy default išlaikytas. | Actual roletai9 scenarios/D1/consent. |
 
-Reikalavimas: savininko gpt-6-luna / xhigh; planner planning-decisions reikalauja tikro writer handover.
-Reprodukcija: content-studio/src/generator.mjs codexJson argumentai turi --ignore-user-config, neturi --model ar model_reasoning_effort. Ankstesnis UI/pokalbio pasirinkimas nėra proceso nustatymas. Job neturi faktinio modelio vykdymo kvito.
-Planuojamas bendras pataisymas: explicit configurable model/effort, išsaugota invocation ir CLI run metadata; jokio tylaus kito modelio fallback. Prasminga patikra: fixture patikrina argv, tikras Luna draft registruoja proceso modelį. Būsena: nustatyta, dar netaisyta.
+Savos browser pataisos atskirai: mobile word space, TOC prieš prose DOM ir desktop column2, keturių gidų indekso tekstas, About literal Markdown brackets. Jos neperkelia kitų nišų turinio.
 
-## Darbo ribos
-
-Tik sites/roletaiklaipedoje*, own build script/research ir šios įrodytos bendros generatoriaus spragos. Public: own renderer/CSS/fonts/assets/package, own route branch; universalūs pataisymai tik su reprodukcija. Kitos nišos, paštas, DB, DNS ir istoriniai bendri įrodymai nekeičiami. Nėra viešo deployment autorizacijos.
+R2 ir S2: tikras 200 % naršyklės mastelis nepatvirtintas. U3: SMTP priėmė vieną pažymėtą laišką, tačiau keturios tikslaus Message-ID paieškos INBOX jo nerado. Pristatymo priežastis nenustatyta. Production legal/host/D1/rate/recovery/retention/processors/CWV ir demand vartai atskirai neįrodyti. Jokių site-ID LLM išimčių, suklastotų kvitų ar tylaus modelio pakeitimo.

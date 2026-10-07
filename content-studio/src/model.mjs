@@ -8,6 +8,7 @@ import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,valid
 import { withStudioWriteLock } from './write-lock.mjs';
 import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
 import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
+import {currentJobOwner,jobOwnerActive} from './job-owner.mjs';
 
 export const ROOT = path.resolve(import.meta.dirname, '..');
 export const DATA = path.resolve(process.env.STUDIO_DATA_DIR || path.join(ROOT, 'data'));
@@ -100,6 +101,7 @@ export function revisionPayload(page) {
   if(page.contentVersion===2)return v2RevisionPayload(page);
   const { siteId, type, slug, title, description, intent, body, publishAt, media, links } = page;
   const payload = { siteId, type, slug, title, description, intent, body, publishAt, media, links };
+  if(page.bodyProjection!==undefined)payload.bodyProjection=page.bodyProjection;
   if (page.externalLinks?.length) payload.externalLinks = page.externalLinks.map(({ url, label, reason }) => ({ url, label, reason }));
   return payload;
 }
@@ -142,6 +144,7 @@ export async function initialize({ recoverJobs = false } = {}) {
   const jobs = await readJson(JOB_FILE, []);
   let recovered = false;
   for (const job of jobs) if (recoverJobs && (job.status === 'queued' || job.status === 'running')) {
+    if(jobOwnerActive(job.executionOwner))continue;
     job.status = 'failed'; job.error = 'Studija buvo paleista iš naujo. Pradėkite šį darbą dar kartą.';
     job.finishedAt = new Date().toISOString(); recovered = true;
   }
@@ -279,11 +282,13 @@ export async function migrateSiteDomain(id, { expectedCanonicalHost, canonicalHo
 const makePage = (site, input) => {
   const v2=site.schemaVersion===2;
   const type = (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : 'guide';
+  if(input.bodyProjection!==undefined&&(v2||type!=='home'||input.bodyProjection!=='canonical'))throw new Error('Canonical body projection is a V1 home renderer contract.');
   if(v2&&input.id!==undefined&&!/^[a-zA-Z0-9][a-zA-Z0-9._-]{0,99}$/.test(input.id))throw new Error('Neteisingas stabilus puslapio ID.');
   return {
     id: v2&&input.id?input.id:randomUUID(), siteId: site.id, type, slug: normalizeSlug(input.slug, type),
     title: v2?losslessString(input.title,1000):plain(input.title, 180), description: v2?losslessString(input.description,1000):plain(input.description, 300),
     intent: v2?losslessString(input.intent,1000):plain(input.intent, 300), body: v2?normalizeV2Blocks(input.body||[]):normalizeBlocks(input.body || []),
+    ...(!v2&&input.bodyProjection==='canonical'&&type==='home'?{bodyProjection:'canonical'}:{}),
     ...(v2?{contentVersion:2,editorial:structuredClone(input.editorial||emptyEditorial()),siteSnapshot:structuredClone(publicSite(site))}:{}),
     publishAt: iso(input.publishAt || new Date().toISOString()), media: [], links: [],
     externalLinks: [], linkSuggestions: [], networkLinkSuggestions: normalizeNetworkSuggestions(input.networkLinks), cluster: plain(input.cluster, 120), seasonalHook: plain(input.seasonalHook, 300),
@@ -340,6 +345,7 @@ export async function editPage(siteId, pageId, input) {
     page.type = type; page.slug = slug;
     for (const key of ['title', 'description', 'intent']) if (key in input) page[key] = v2?losslessString(input[key],1000):plain(input[key], key === 'description' ? 300 : 300);
     if ('body' in input) page.body = v2?normalizeV2Blocks(input.body):normalizeBlocks(input.body);
+    if('bodyProjection' in input){if(v2||type!=='home'||input.bodyProjection!=='canonical')throw new Error('Canonical body projection is a V1 home renderer contract.');page.bodyProjection='canonical';}
     if(v2&&'editorial'in input)page.editorial=structuredClone(input.editorial);
     if(v2)page.siteSnapshot=structuredClone(publicSite(site));
     if ('factChecks' in input) page.factChecks = (Array.isArray(input.factChecks) ? input.factChecks : []).slice(0, 40).map(item => plain(item, 600));
@@ -555,7 +561,7 @@ export async function listJobs() { return (await readJson(JOB_FILE, [])).slice(-
 export async function createJob(type, siteId, pageId = null) {
   return locked(async () => {
     const jobs = await readJson(JOB_FILE, []);
-    const job = { id: randomUUID(), type, siteId, pageId, status: 'queued', startedAt: null, finishedAt: null, error: null, detail: '' };
+    const job = { id: randomUUID(), type, siteId, pageId, executionOwner:currentJobOwner(), status: 'queued', startedAt: null, finishedAt: null, error: null, detail: '' };
     jobs.push(job); await writeJson(JOB_FILE, jobs.slice(-200)); return job;
   });
 }

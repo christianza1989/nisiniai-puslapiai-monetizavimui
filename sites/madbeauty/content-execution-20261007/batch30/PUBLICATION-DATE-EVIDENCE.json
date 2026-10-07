@@ -1,0 +1,29 @@
+{
+  "sourceReceipt": "sites/madbeauty/cloudflare/RELEASE.json",
+  "records": [
+    {
+      "slug": "gidai/kas-ieina-i-manikiuro-kaina",
+      "previousNewMetadata": "2026-10-06T22:35:02.542Z",
+      "datePublished": "2026-10-06T17:09:24.272Z",
+      "basis": "Earlier actual canonical-host launch receipt confirms this exact path200. First known public copy, not the older unverified planned date; no unknown earlier history asserted.",
+      "bodyUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "slug": "gidai/kaip-pasirinkti-nagu-spalva",
+      "previousNewMetadata": "2026-10-06T22:35:02.542Z",
+      "datePublished": "2026-10-06T17:09:24.272Z",
+      "basis": "Earlier actual canonical-host launch receipt confirms this exact path200. First known public copy, not the older unverified planned date; no unknown earlier history asserted.",
+      "bodyUnchanged": true,
+      "publishAtUnchanged": true
+    },
+    {
+      "slug": "gidai/kaip-vertinti-meistro-darbu-galerija",
+      "previousNewMetadata": "2026-10-06T22:35:02.542Z",
+      "datePublished": "2026-10-06T17:09:24.272Z",
+      "basis": "Earlier actual canonical-host launch receipt confirms this exact path200. First known public copy, not the older unverified planned date; no unknown earlier history asserted.",
+      "bodyUnchanged": true,
+      "publishAtUnchanged": true
+    }
+  ]
+}

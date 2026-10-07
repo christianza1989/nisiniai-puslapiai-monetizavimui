@@ -1,0 +1,1039 @@
+[
+  {
+    "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+    "title": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga",
+    "description": "Kirpimo pasirinkimą susiekite su norimu kontūru, natūraliu plaukų kritimu ir kasdiene priežiūra. Du iliustraciniai pavyzdžiai padės aiškiai apibrėžti, ką norite išlaikyti ir keisti.",
+    "slug": "gidai/kirpimas-gidas",
+    "url": "https://madbeauty.lt/gidai/kirpimas-gidas",
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "localDateTime": "2026-10-13 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "bc11082b5b8c7b1ac504fc3e13c1c6629602b7433ba22bb93961839712d94cbe",
+    "internalLinks": [
+      {
+        "targetPageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+        "label": "Galiukų pakirpimas ar nauja kirpimo forma: skirtingos užduotys"
+      },
+      {
+        "targetPageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+        "label": "Sluoksniuotas kirpimas: kas keičiasi plaukų formoje ir priežiūroje?"
+      },
+      {
+        "targetPageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+        "label": "Bob ir carré kirpimai: ką tiksliai parodyti nuotraukoje?"
+      },
+      {
+        "targetPageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+        "label": "Kirpčiukai: ilgis, forma ir kasdienė priežiūra prieš apsisprendžiant"
+      },
+      {
+        "targetPageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+        "label": "Garbanotų plaukų kirpimas: natūrali tekstūra, susitraukimas ir vizito ruošimas"
+      },
+      {
+        "targetPageId": "83808900-d3df-4942-97c6-121bdeca5216",
+        "label": "Trumpas kirpimas: mašinėlės ilgis, kontūras ir perėjimas"
+      },
+      {
+        "targetPageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+        "label": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas"
+      },
+      {
+        "targetPageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+        "label": "Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus?"
+      },
+      {
+        "targetPageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+        "label": "Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį?"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai-moteru-kirpimas",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai-moteru-kirpimas",
+        "label": "Moterų kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "S43",
+      "S04",
+      "R01",
+      "R02"
+    ],
+    "featuredImageId": "0f257213-43e6-4374-bf72-344f00942e26"
+  },
+  {
+    "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+    "title": "Galiukų pakirpimas ar nauja kirpimo forma: skirtingos užduotys",
+    "description": "Sužinokite, kaip prieš vizitą apibrėžti norimą išlaikyti siluetą ar keisti ilgį ir kontūrą, ir ką aptarti dėl paslaugos apimties.",
+    "slug": "gidai/kirpimas-galiukai-ar-forma",
+    "url": "https://madbeauty.lt/gidai/kirpimas-galiukai-ar-forma",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "3fb950dea4cefbaafc97c19f1f00f76ca0f1221bee9876f9889a59754f5b17be",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai-galiuku-kirpimas",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai-galiuku-kirpimas",
+        "label": "Galiukų kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "S04",
+      "R01"
+    ],
+    "featuredImageId": "1d89b1a1-541b-4dd9-bc8b-d4101975b8fc"
+  },
+  {
+    "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+    "title": "Sluoksniuotas kirpimas: kas keičiasi plaukų formoje ir priežiūroje?",
+    "description": "Supraskite, kaip sluoksniai paskirsto plaukų ilgius, gali keisti siluetą ir ką aptarti pagal savo plaukų tekstūrą bei kasdienį formavimą.",
+    "slug": "gidai/kirpimas-sluoksniai",
+    "url": "https://madbeauty.lt/gidai/kirpimas-sluoksniai",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "55a65cd57e9608b71db539a7d457562a66a656e829811bebc0be05dccb34744d",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai",
+        "label": "Kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "R03"
+    ],
+    "featuredImageId": "b54b2dbb-a26d-4252-af38-b01b64c75efd"
+  },
+  {
+    "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+    "title": "Bob ir carré kirpimai: ką tiksliai parodyti nuotraukoje?",
+    "description": "Rinkitės pagal ilgį, kontūrą ir sluoksnius, o ne vien kirpimo pavadinimą. Šis palyginimas padeda aiškiau parodyti norimą formą.",
+    "slug": "gidai/kirpimas-bob-kare",
+    "url": "https://madbeauty.lt/gidai/kirpimas-bob-kare",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "1914c672462842a8a71474865031baf938a1c8ea82896701b90393d43bd1bb18",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai",
+        "label": "Kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "R03"
+    ],
+    "featuredImageId": "632e055a-0d94-472c-9138-00fc010c8c10"
+  },
+  {
+    "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+    "title": "Kirpčiukai: ilgis, forma ir kasdienė priežiūra prieš apsisprendžiant",
+    "description": "Kaip atskirti kirpčiukus nuo veidą įrėminančių sruogų ir pasirinkti užduotį pagal natūralų plaukų kritimą bei norimą kasdienę priežiūrą.",
+    "slug": "gidai/kirpimas-kirpciukai",
+    "url": "https://madbeauty.lt/gidai/kirpimas-kirpciukai",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "498cd55506f63615589ac4ee48e75a7398419610e74494b4b537209906877baf",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai-kirpciuku-kirpimas",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai-kirpciuku-kirpimas",
+        "label": "Kirpčiukų kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "R02"
+    ],
+    "featuredImageId": "247fc275-3e88-4de6-a8e8-aed5bba45240"
+  },
+  {
+    "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+    "title": "Garbanotų plaukų kirpimas: natūrali tekstūra, susitraukimas ir vizito ruošimas",
+    "description": "Sužinokite, ką aptarti dėl garbanų formos, sauso ar drėgno kirpimo ir kaip pasiruošti vizitui.",
+    "slug": "gidai/kirpimas-garbanoti",
+    "url": "https://madbeauty.lt/gidai/kirpimas-garbanoti",
+    "publishAt": "2026-11-10T08:00:00.000Z",
+    "localDateTime": "2026-11-10 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-11-10T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "985a66570e79d9c796f670ba15a0de4941867bd94ccd630d2801dc63a55711a4",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai",
+        "label": "Kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "R03",
+      "R04"
+    ],
+    "featuredImageId": "51eb7eee-98b3-405f-b9e9-72752c8cc30d"
+  },
+  {
+    "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+    "title": "Trumpas kirpimas: mašinėlės ilgis, kontūras ir perėjimas",
+    "description": "Kaip atskirai aprašyti viršaus ir šonų ilgį, perėjimo vietą, kontūrą ir tiksliai išsiaiškinti paslaugos apimtį.",
+    "slug": "gidai/kirpimas-trumpas-vyriskas",
+    "url": "https://madbeauty.lt/gidai/kirpimas-trumpas-vyriskas",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "072e8e6200730b0b64d5dbd6ae799900046f18cdfc17d30578e8daed6a684422",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai-vyru-kirpimas",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai-vyru-kirpimas",
+        "label": "Vyrų kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "S04",
+      "R02"
+    ],
+    "featuredImageId": "c402d3eb-3242-408c-a7a7-c7ff254204d4"
+  },
+  {
+    "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+    "title": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas",
+    "description": "Kaip palyginti kirpimo pasiūlymus pagal vienodą darbų apimtį, įskaičiuotą plovimą ir sušukavimą bei aiškiai nurodytą kainą ir trukmę.",
+    "slug": "gidai/kirpimas-kaina-trukme",
+    "url": "https://madbeauty.lt/gidai/kirpimas-kaina-trukme",
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "localDateTime": "2026-10-13 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "5beeb51128b484257314214b90178707dd7d3e0eee4697b7ba00a6aea76e8ad0",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai",
+        "label": "Kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "S19",
+      "S04",
+      "S34",
+      "S33"
+    ],
+    "featuredImageId": "b9f013ae-e2c3-450c-8e3e-ae9fc26be21a"
+  },
+  {
+    "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+    "title": "Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus?",
+    "description": "Prieš kirpimą plaukite plaukus pagal specialisto nurodymą. Sužinokite, ką pasitikslinti ir kaip parodyti įprastą plaukų tekstūrą.",
+    "slug": "gidai/kirpimas-pasiruosimas",
+    "url": "https://madbeauty.lt/gidai/kirpimas-pasiruosimas",
+    "publishAt": "2026-10-27T08:00:00.000Z",
+    "localDateTime": "2026-10-27 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-27T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "b6684693f8f737ed7676b3e04b891038ea1f912d82b4591ebd8a2c6c7ddc2c88",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai",
+        "label": "Kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "S43",
+      "R02"
+    ],
+    "featuredImageId": "01592090-487c-4467-a708-b3721e359f74"
+  },
+  {
+    "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+    "title": "Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį?",
+    "description": "Paverskite kirpimo nuotrauką aiškia užduotimi: išskirkite, kas patinka, pažymėkite ilgio ribas ir užpildykite pasiruošimo šabloną.",
+    "slug": "gidai/kirpimas-nuotrauka",
+    "url": "https://madbeauty.lt/gidai/kirpimas-nuotrauka",
+    "publishAt": "2026-10-27T08:00:00.000Z",
+    "localDateTime": "2026-10-27 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-27T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "ae0e6f0fae8159adb795b9500362fba6f5a52ff1d4a62f3f295a1e14678c5bb6",
+    "internalLinks": [
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      },
+      {
+        "targetPageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+        "label": "Kaip vertinti meistro darbų galeriją"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:kirpimai",
+        "url": "https://madbeauty.lt/paslaugos/kirpimai",
+        "label": "Kirpimas"
+      }
+    ],
+    "sourceIds": [
+      "R01",
+      "R05"
+    ],
+    "featuredImageId": "04505c3a-86ba-4df6-b85a-7901543f77fc"
+  },
+  {
+    "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+    "title": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena",
+    "description": "Sužinokite, kuo skiriasi džiovinimas, kasdienis sušukavimas ir proginė šukuosena, kokią darbų apimtį aptarti ir ką nurodyti prieš vizitą.",
+    "slug": "gidai/plauku-formavimas-gidas",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-gidas",
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "localDateTime": "2026-10-13 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "7a9e12e6f8e0b4bbc798a72a78c236270f80610679481192f56f3f80ec9608c1",
+    "internalLinks": [
+      {
+        "targetPageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+        "label": "Džiovinimas ir sušukavimas ar proginė šukuosena: skirtinga darbo apimtis"
+      },
+      {
+        "targetPageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+        "label": "Garbanos, bangos ir tiesus sušukavimas: ką parodyti šukuosenos užduotyje?"
+      },
+      {
+        "targetPageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+        "label": "Susegta ar palaida proginė šukuosena: tvirtinimas, apranga ir aksesuarai"
+      },
+      {
+        "targetPageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+        "label": "Vestuvinė šukuosena ir bandomasis vizitas: ką užbaigti prieš renginį?"
+      },
+      {
+        "targetPageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+        "label": "Šukuosenos kaina ir trukmė: plovimas, formavimas bei aksesuarai"
+      },
+      {
+        "targetPageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+        "label": "Prieš sušukavimą: kada plauti plaukus ir ką atsinešti?"
+      },
+      {
+        "targetPageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+        "label": "Makiažas ir šukuosena vienu vizitu: grafikas bei paslaugų sudėtis"
+      },
+      {
+        "targetPageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "label": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas",
+        "label": "Šukavimas ir šukuosenos"
+      }
+    ],
+    "sourceIds": [
+      "S43",
+      "R03"
+    ],
+    "featuredImageId": "91c029bf-e239-49d6-b59d-1623624058ec"
+  },
+  {
+    "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+    "title": "Džiovinimas ir sušukavimas ar proginė šukuosena: skirtinga darbo apimtis",
+    "description": "Palyginkite, kas įeina į plovimą ir džiovinimą, sušukavimą ar proginės šukuosenos formavimą. Praktinis vienodos apimties pasiūlymų palyginimo ruošinys.",
+    "slug": "gidai/plauku-formavimas-dziovinimas-ar-progine",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-dziovinimas-ar-progine",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "18c7ce6ff6a320b25673273910ea7a7e9d6ae32c9c3f9d88a46f3bca1a4c08e4",
+    "internalLinks": [
+      {
+        "targetPageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "label": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas-plauku-plovimas-ir-dziovinimas",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas-plauku-plovimas-ir-dziovinimas",
+        "label": "Plaukų plovimas ir džiovinimas"
+      },
+      {
+        "id": "mb:catalog:sukavimas-susukavimas",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas-susukavimas",
+        "label": "Sušukavimas"
+      }
+    ],
+    "sourceIds": [
+      "S34",
+      "S58"
+    ],
+    "featuredImageId": "73fd1544-25e8-43f7-a14a-3c03bce3532d"
+  },
+  {
+    "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+    "title": "Garbanos, bangos ir tiesus sušukavimas: ką parodyti šukuosenos užduotyje?",
+    "description": "Sužinokite, kaip nuotrauka ir keli aiškūs pasirinkimai padeda aptarti norimą sruogų formą, ilgį, tekstūrą ir sušukavimo apimtį.",
+    "slug": "gidai/plauku-formavimas-garbanos-bangos",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-garbanos-bangos",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "8446db14e79a381e0320999ce414d835eb4b13f38426d9cfd446e66bfca5b8f6",
+    "internalLinks": [
+      {
+        "targetPageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "label": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas-garbanu-formavimas",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas-garbanu-formavimas",
+        "label": "Garbanų formavimas"
+      }
+    ],
+    "sourceIds": [
+      "R03"
+    ],
+    "featuredImageId": "006e1c98-3afe-499b-9d6d-39e01c851764"
+  },
+  {
+    "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+    "title": "Susegta ar palaida proginė šukuosena: kaip apsispręsti?",
+    "description": "Rinkitės pagal norimą siluetą, aprangą, aksesuarus ir pradinį plaukų ilgį. Sužinokite, ką iš anksto suderinti dėl vakarinės šukuosenos darbų apimties.",
+    "slug": "gidai/plauku-formavimas-susegta",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-susegta",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "e91faf10d8532aeeb154c176049ad42cc61527de0daa3967214c38e0e4dc354d",
+    "internalLinks": [
+      {
+        "targetPageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "label": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas-vakarine-sukuosena",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas-vakarine-sukuosena",
+        "label": "Vakarinė šukuosena"
+      }
+    ],
+    "sourceIds": [
+      "R03"
+    ],
+    "featuredImageId": "8f923ddb-ab97-477f-8bd2-f808492267c3"
+  },
+  {
+    "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+    "title": "Vestuvinė šukuosena ir bandomasis vizitas: ką užbaigti prieš renginį?",
+    "description": "Rezultatų kortelė padės užfiksuoti pasirinktą šukuoseną, sutartą paslaugos apimtį ir renginio dienos grafiką.",
+    "slug": "gidai/plauku-formavimas-vestuves",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-vestuves",
+    "publishAt": "2026-11-10T08:00:00.000Z",
+    "localDateTime": "2026-11-10 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-11-10T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "b3290a447e581440803a39b754e2e88e214921f857a0d85ea26787c2ecb0b742",
+    "internalLinks": [
+      {
+        "targetPageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "label": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas-vestuvine-sukuosena",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas-vestuvine-sukuosena",
+        "label": "Vestuvinė šukuosena"
+      }
+    ],
+    "sourceIds": [
+      "S34"
+    ],
+    "featuredImageId": "d22fca2c-29c6-40c2-8a12-1015a5ff8e69"
+  },
+  {
+    "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+    "title": "Šukuosenos kaina ir trukmė: ką palyginti prieš vizitą",
+    "description": "Palyginkite šukuosenos pasiūlymus pagal darbų apimtį, plovimą, aksesuarus ir laiką. Pamatykite, kaip sulyginti galutinę kainą, kai pasiūlymai pateikti skirtingai.",
+    "slug": "gidai/plauku-formavimas-kaina-trukme",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-kaina-trukme",
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "localDateTime": "2026-10-13 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "b6ec56a99dd50e5f0ee993918809f699883ce8aa175703c7ca6f63f16480c251",
+    "internalLinks": [
+      {
+        "targetPageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "label": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas",
+        "label": "Šukavimas ir šukuosenos"
+      }
+    ],
+    "sourceIds": [
+      "S19",
+      "S34",
+      "S58"
+    ],
+    "featuredImageId": "a8c5e3be-9e49-4000-b008-7e4cc9a5da28"
+  },
+  {
+    "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+    "title": "Prieš sušukavimą: kada plauti plaukus ir ką atsinešti?",
+    "description": "Plovimo laikas priklauso nuo sutarto sušukavimo metodo. Sužinokite, ką pranešti apie naudotas priemones, kaip pasirinkti pavyzdžio nuotrauką ir kada verta atsinešti aksesuarą.",
+    "slug": "gidai/plauku-formavimas-pasiruosimas",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-pasiruosimas",
+    "publishAt": "2026-10-27T08:00:00.000Z",
+    "localDateTime": "2026-10-27 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-27T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "7a061d438ef3e504326d446782b830f60c2d135090e603f035b404296d0d836f",
+    "internalLinks": [
+      {
+        "targetPageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "label": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas",
+        "label": "Šukavimas ir šukuosenos"
+      }
+    ],
+    "sourceIds": [
+      "S43",
+      "R03"
+    ],
+    "featuredImageId": "d34ef76a-e7cb-4de7-975f-4fc87d520885"
+  },
+  {
+    "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+    "title": "Makiažas ir šukuosena vienu vizitu: grafikas bei paslaugų sudėtis",
+    "description": "Kaip pasirinkti vieną ar du teikėjus, suplanuoti darbų seką ir prieš renginį suderinti paslaugų apimtį, laiką bei atvykimo sąlygas.",
+    "slug": "gidai/plauku-formavimas-makiazas-kartu",
+    "url": "https://madbeauty.lt/gidai/plauku-formavimas-makiazas-kartu",
+    "publishAt": "2026-11-10T08:00:00.000Z",
+    "localDateTime": "2026-11-10 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-11-10T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "4b16452a44ac37d5d1a55b885f9b51ae37766f5ddb5c719924a9eb16d6e58b13",
+    "internalLinks": [
+      {
+        "targetPageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "label": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena"
+      },
+      {
+        "targetPageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+        "label": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:sukavimas",
+        "url": "https://madbeauty.lt/paslaugos/sukavimas",
+        "label": "Šukavimas ir šukuosenos"
+      }
+    ],
+    "sourceIds": [
+      "S19",
+      "S58"
+    ],
+    "featuredImageId": "3f3d8ba9-f4dc-4314-860e-e28ceaa3d9a5"
+  },
+  {
+    "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+    "title": "Dieninis, proginis ar vestuvinis makiažas: kaip pasirinkti?",
+    "description": "Palyginkite norimą įvaizdį, paslaugos sudėtį ir vizito sąlygas. Vien makiažo pavadinimas nepasako, kokie darbai įtraukti.",
+    "slug": "gidai/makiazas-gidas",
+    "url": "https://madbeauty.lt/gidai/makiazas-gidas",
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "localDateTime": "2026-10-13 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "9d1a1d01e01010ee10692ceb29c8ae725f82851831571ab7b7d9f2e85791a222",
+    "internalLinks": [
+      {
+        "targetPageId": "2c373504-6712-4e49-b295-815761c629d2",
+        "label": "Dieninis ir proginis makiažas: intensyvumas, apimtis ir pasiūlymo ribos"
+      },
+      {
+        "targetPageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+        "label": "Vestuvinis makiažas ir bandomasis vizitas: kaip užfiksuoti pasirinkimą?"
+      },
+      {
+        "targetPageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+        "label": "Makiažo nuotrauka vizažistui: tekstūra, atspalvis ir retušo ribos"
+      },
+      {
+        "targetPageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+        "label": "Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas"
+      },
+      {
+        "targetPageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+        "label": "Asmeninė makiažo pamoka ar priemonių konsultacija: ką gauni iš kiekvienos"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:makiazas",
+        "url": "https://madbeauty.lt/paslaugos/makiazas",
+        "label": "Makiažas"
+      }
+    ],
+    "sourceIds": [
+      "S58"
+    ],
+    "featuredImageId": "640499bc-5287-498b-a421-6932bf0f815b"
+  },
+  {
+    "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+    "title": "Dieninis ir proginis makiažas: intensyvumas, apimtis ir pasiūlymo ribos",
+    "description": "Sužinokite, kaip atskirti dieninio, vakarinio ir proginio makiažo užduotis, palyginti darbų apimtį ir aiškiai aptarti norimą rezultatą.",
+    "slug": "gidai/makiazas-dieninis-proginis",
+    "url": "https://madbeauty.lt/gidai/makiazas-dieninis-proginis",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "914e76c1f61f3aecd26610f768baa774f89d77ee646a50d404aeae97f118f098",
+    "internalLinks": [
+      {
+        "targetPageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+        "label": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:makiazo-tipai-dieninis-makiazas",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-dieninis-makiazas",
+        "label": "Dieninis makiažas"
+      },
+      {
+        "id": "mb:catalog:makiazo-tipai-vakarinis-makiazas",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-vakarinis-makiazas",
+        "label": "Vakarinis makiažas"
+      },
+      {
+        "id": "mb:catalog:makiazo-tipai-proginis-makiazas",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-proginis-makiazas",
+        "label": "Proginis makiažas"
+      }
+    ],
+    "sourceIds": [
+      "S58"
+    ],
+    "featuredImageId": "5503a820-29f2-4d3e-b5b1-6015b25c8ef3"
+  },
+  {
+    "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+    "title": "Vestuvinis makiažas ir bandomasis vizitas: kaip užfiksuoti pasirinkimą?",
+    "description": "Kaip bandomąjį vestuvinį makiažą paversti aiškiu planu: aptarkite renginio sąlygas, palyginkite paslaugos apimtį ir užrašykite sutartus pakeitimus.",
+    "slug": "gidai/makiazas-vestuvinis",
+    "url": "https://madbeauty.lt/gidai/makiazas-vestuvinis",
+    "publishAt": "2026-11-10T08:00:00.000Z",
+    "localDateTime": "2026-11-10 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-11-10T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "10e7974f8cf55258ef758c2740328755251256d75503ee608ec3c08f993899ff",
+    "internalLinks": [
+      {
+        "targetPageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+        "label": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas"
+      },
+      {
+        "targetPageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+        "label": "meistro darbų galerijos vertinimo gidas"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:makiazo-tipai-nuotakos-makiazas",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-nuotakos-makiazas",
+        "label": "Nuotakos makiažas"
+      },
+      {
+        "id": "mb:catalog:makiazo-tipai-bandomasis-nuotakos-makiazas",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-bandomasis-nuotakos-makiazas",
+        "label": "Bandomasis nuotakos makiažas"
+      }
+    ],
+    "sourceIds": [],
+    "featuredImageId": "1c164629-1033-41de-8cf3-6c4565ac96db"
+  },
+  {
+    "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+    "title": "Makiažo nuotrauka vizažistui: tekstūra, atspalvis ir retušo ribos",
+    "description": "Kaip iš nuotraukos perduoti makiažo kryptį, bet nesitikėti tikslios kopijos? Atskirsite, ką verta parodyti, ką apibūdinti žodžiais ir ką aptarti apie fotosesijos paslaugos apimtį.",
+    "slug": "gidai/makiazas-nuotrauka",
+    "url": "https://madbeauty.lt/gidai/makiazas-nuotrauka",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "442e4431b2186d75ee7b1c361626f2fc8929db6ba90f69f49193725be3512edb",
+    "internalLinks": [
+      {
+        "targetPageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+        "label": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:makiazo-tipai-makiazas-fotosesijai",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-makiazas-fotosesijai",
+        "label": "Makiažas fotosesijai"
+      }
+    ],
+    "sourceIds": [
+      "R06",
+      "R07"
+    ],
+    "featuredImageId": "2022e88e-96fa-4bc9-a7c4-0f0b61d508b9"
+  },
+  {
+    "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+    "title": "Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas",
+    "description": "Palyginkite makiažo pasiūlymus pagal įtrauktus darbus, blakstienas, bandomąjį vizitą ir atvykimo sąlygas. Kainą bei laiką tikrinkite pagal konkretų teikėjo meniu.",
+    "slug": "gidai/makiazas-kaina-trukme",
+    "url": "https://madbeauty.lt/gidai/makiazas-kaina-trukme",
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "localDateTime": "2026-10-13 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "da168c20226993868e8ab55ae3290b1f90c15b6bda6a490cdf71863b274dd8dd",
+    "internalLinks": [
+      {
+        "targetPageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+        "label": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:makiazas",
+        "url": "https://madbeauty.lt/paslaugos/makiazas",
+        "label": "Makiažas"
+      }
+    ],
+    "sourceIds": [
+      "S19",
+      "S58",
+      "S33"
+    ],
+    "featuredImageId": "469ce5c1-34ac-4280-993c-9be228f18d90"
+  },
+  {
+    "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+    "title": "Asmeninė makiažo pamoka ar priemonių konsultacija: ką gaunate iš kiekvienos",
+    "description": "Pamoka skirta mokytis atlikti makiažo veiksmus, o priemonių konsultacija – aiškiau atsirinkti ir naudoti produktus. Sužinokite, kaip palyginti jų apimtį ir pasiruošti.",
+    "slug": "gidai/makiazas-pamoka",
+    "url": "https://madbeauty.lt/gidai/makiazas-pamoka",
+    "publishAt": "2026-10-20T07:00:00.000Z",
+    "localDateTime": "2026-10-20 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-20T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "2c27457150cd50cf07e2c8e3c25545fb90650a9c7bfd626548ef694e095c4fcf",
+    "internalLinks": [
+      {
+        "targetPageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+        "label": "Makiažo paslaugų gidas: dieninis, proginis ir vestuvinis rezultatas"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:makiazo-mokymai-asmenine-makiazo-pamoka",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-mokymai-asmenine-makiazo-pamoka",
+        "label": "Asmeninė makiažo pamoka"
+      },
+      {
+        "id": "mb:catalog:makiazo-mokymai-makiazo-priemoniu-konsultacija",
+        "url": "https://madbeauty.lt/paslaugos/makiazo-mokymai-makiazo-priemoniu-konsultacija",
+        "label": "Makiažo priemonių konsultacija"
+      }
+    ],
+    "sourceIds": [],
+    "featuredImageId": "8d2fa14b-9419-4370-9f9f-be943f7e4f73"
+  },
+  {
+    "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+    "title": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+    "description": "Suplanuokite nagų dizainą atskirdami pagrindą, formą, spalvą ir dekoravimo apimtį. Iliustracinis pavyzdys padeda aiškiau aprašyti norimą rezultatą.",
+    "slug": "gidai/nagu-dizainas-gidas",
+    "url": "https://madbeauty.lt/gidai/nagu-dizainas-gidas",
+    "publishAt": "2026-10-13T07:00:00.000Z",
+    "localDateTime": "2026-10-13 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-13T07:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "5b1d0e403654e39bac82627141a16590296840469c02b9694185080582f9c3a9",
+    "internalLinks": [
+      {
+        "targetPageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+        "label": "Grožio vizitai prieš Kalėdas: nagų dizainas ir kelių paslaugų planas"
+      },
+      {
+        "targetPageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+        "label": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis"
+      },
+      {
+        "targetPageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+        "label": "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos"
+      },
+      {
+        "targetPageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+        "label": "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas"
+      },
+      {
+        "targetPageId": "99c2d09a-1314-48db-999c-075d312271b2",
+        "label": "Kaip pasirinkti nagų spalvą"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:nagu-dizainas-nagu-daile",
+        "url": "https://madbeauty.lt/paslaugos/nagu-dizainas-nagu-daile",
+        "label": "Nagų dailė"
+      }
+    ],
+    "sourceIds": [],
+    "featuredImageId": "0c9cfe11-8efc-4f83-aff3-f2cd3e25a330"
+  },
+  {
+    "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+    "title": "Keli grožio vizitai ir individualūs poreikiai: laiko, vietos bei komforto planas",
+    "description": "Kaip suplanuoti kelis grožio vizitus: sudėlioti laikus, patikrinti atvykimo sąlygas ir įtraukti individualius komforto poreikius.",
+    "slug": "gidai/bendri-vizitu-derinimas",
+    "url": "https://madbeauty.lt/gidai/bendri-vizitu-derinimas",
+    "publishAt": "2026-10-27T08:00:00.000Z",
+    "localDateTime": "2026-10-27 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-10-27T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "a9e24e990b75c1b85587d851d7d4a2896de086972d3e9dc5aaaba6b1a4183c53",
+    "internalLinks": [
+      {
+        "targetPageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+        "label": "grožio vizito registracijos gidas"
+      }
+    ],
+    "commerceTargets": [],
+    "sourceIds": [
+      "S19"
+    ],
+    "featuredImageId": "99839b41-cab8-455f-930e-62a5e19eac22"
+  },
+  {
+    "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+    "title": "Grožio vizitai prieš Kalėdas: nagų dizainas ir kelių paslaugų planas",
+    "description": "Dvi originalios šventinio nagų dizaino kryptys ir praktiškas planas keliems vizitams, dėliojamas pagal patvirtintą paslaugų apimtį, trukmę ir laiką.",
+    "slug": "gidai/sezonai-kaledos",
+    "url": "https://madbeauty.lt/gidai/sezonai-kaledos",
+    "publishAt": "2026-11-10T08:00:00.000Z",
+    "localDateTime": "2026-11-10 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-11-10T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "1c39dc1f7757d2cdbe2232a3666b3fad02388ee714aaee93bae8b0d8f298b860",
+    "internalLinks": [
+      {
+        "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+        "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+      },
+      {
+        "targetPageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+        "label": "Keli grožio vizitai ir individualūs poreikiai: laiko, vietos bei komforto planas"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:nagu-dizainas",
+        "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+        "label": "Dizainas"
+      }
+    ],
+    "sourceIds": [
+      "S19"
+    ],
+    "featuredImageId": "9a186586-bf77-4403-af1a-b251157b7dc9"
+  },
+  {
+    "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+    "title": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+    "description": "Palyginkite tris blizgesio ir akcentų variantus tai pačiai nagų formai, tada aiškiai sutarkite darbų apimtį.",
+    "slug": "gidai/sezonai-naujieji",
+    "url": "https://madbeauty.lt/gidai/sezonai-naujieji",
+    "publishAt": "2026-11-24T08:00:00.000Z",
+    "localDateTime": "2026-11-24 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2026-11-24T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "582cf082eaad5b379030bf050f7473796e96c1be1576d9ec68305f3c2ea5b65c",
+    "internalLinks": [
+      {
+        "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+        "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:nagu-dizainas",
+        "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+        "label": "Dizainas"
+      }
+    ],
+    "sourceIds": [],
+    "featuredImageId": "76b10fbc-19e2-48a3-bd9b-d09c41a390df"
+  },
+  {
+    "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+    "title": "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos",
+    "description": "Palyginkite subtilų ir kontrastingą nagų akcentą, tada pritaikykite pasirinktą idėją trumpiems nagams.",
+    "slug": "gidai/sezonai-valentino",
+    "url": "https://madbeauty.lt/gidai/sezonai-valentino",
+    "publishAt": "2027-01-12T08:00:00.000Z",
+    "localDateTime": "2027-01-12 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2027-01-12T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "3f428d4eef98120abb869b947fa4fc8db319318937f35dd2e93cc1fa363bb989",
+    "internalLinks": [
+      {
+        "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+        "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:nagu-dizainas",
+        "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+        "label": "Dizainas"
+      }
+    ],
+    "sourceIds": [],
+    "featuredImageId": "e6c78e6a-9f63-4ae5-8f27-5e277651289a"
+  },
+  {
+    "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+    "title": "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas",
+    "description": "2027 m. Velykų sekmadienis yra kovo 28 d. Sužinokite, kaip sutikrinti prašomą datą, teikėjo darbo laiką ir galutinį vizito patvirtinimą.",
+    "slug": "gidai/sezonai-velykos",
+    "url": "https://madbeauty.lt/gidai/sezonai-velykos",
+    "publishAt": "2027-02-23T08:00:00.000Z",
+    "localDateTime": "2027-02-23 10:00",
+    "timezone": "Europe/Vilnius",
+    "datePublished": "2027-02-23T08:00:00.000Z",
+    "author": "Madbeauty redakcija",
+    "revisionHash": "a5a1a90ee03762dfb7a99e6152326701e50df4c6334fd2572894a6d6c3f6f3b9",
+    "internalLinks": [
+      {
+        "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+        "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+      }
+    ],
+    "commerceTargets": [
+      {
+        "id": "mb:catalog:nagu-dizainas",
+        "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+        "label": "Dizainas"
+      }
+    ],
+    "sourceIds": [
+      "S15"
+    ],
+    "featuredImageId": "e857ccc4-7299-402d-8da1-e0a933ec6838"
+  }
+]

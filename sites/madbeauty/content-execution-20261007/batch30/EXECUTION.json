@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "siteId": "madbeauty",
+  "canonicalHost": "madbeauty.lt",
+  "checkedAt": "2026-10-07T06:41:57.478Z",
+  "releaseId": "ed176278-ff71-437b-90c9-414ff695eb79",
+  "packageSha256": "75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4",
+  "pages": 39,
+  "guides": 35,
+  "supportPages": 4,
+  "newArticles": 30,
+  "actualLunaAcceptedOutputs": 39,
+  "failedRejectedOutputs": 5,
+  "explicitLunaRevisions": 9,
+  "model": "gpt-6-luna",
+  "reasoningEffort": "xhigh",
+  "fallback": false,
+  "imageProvider": "BUILT_IN_IMAGEGEN",
+  "newImages": 30,
+  "newWebP": 150,
+  "totalWebP": 180,
+  "totalWebPBytes": 7026280,
+  "newReviewedRevisions": 35,
+  "preservedSupportApprovals": 4,
+  "oldFiveProseAndPublishAtPreserved": true,
+  "publication": {
+    "duePages": 7,
+    "futurePages": 32,
+    "dueMedia": 25,
+    "futureOnlyMedia": 155,
+    "firstNew": "2026-10-13T07:00:00.000Z",
+    "lastNew": "2027-02-23T08:00:00.000Z",
+    "timezone": "Europe/Vilnius"
+  },
+  "newArticleLinks": {
+    "kept": 57,
+    "deferred": 24,
+    "completePrivatePlanningBriefPreserved": true
+  },
+  "sourceDocuments": 14,
+  "newPaidResearchUsd": 0,
+  "writerFixCommit": "bdd3e65",
+  "writerTests": {
+    "passed": 60,
+    "failed": 0
+  },
+  "humanProfessionalReviewPerformed": false,
+  "fullTopicalMapComplete": false,
+  "state": "verified-reviewed-export-deployment-pending",
+  "publicRuntimeReview": "separate hosted acceptance required; no future public visibility claimed",
+  "previousReleaseUnchanged": "b208596faea613be548c15423ec691c3d1cc01b2f0b1dcdcfb80f7411ea8fdd5"
+}

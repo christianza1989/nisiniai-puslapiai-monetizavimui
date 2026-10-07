@@ -1,0 +1,3647 @@
+{
+  "newOriginals": 30,
+  "newVariants": 150,
+  "rejectedImageAttemptsRetainedPrivately": 2,
+  "sourcePngCopiedToPublic": false,
+  "promptsCopied": false,
+  "families": [
+    {
+      "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+      "slug": "gidai/kirpimas-gidas",
+      "assetId": "0f257213-43e6-4374-bf72-344f00942e26",
+      "alt": "Banguotų, pečius siekiančių plaukų kontūras iliustraciniame portrete",
+      "sourceSha256": "5c3c34a256885eec84c7d587a42a26e2d7a7a35a7b43b02f32629448af50a33b",
+      "sourceBytes": 2026919,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "0f257213-43e6-4374-bf72-344f00942e26",
+          "groupId": "16c374df-5327-4d47-8488-74976890a914",
+          "src": "/content-assets/madbeauty/0f257213-43e6-4374-bf72-344f00942e26.webp",
+          "alt": "Banguotų, pečius siekiančių plaukų kontūras iliustraciniame portrete",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 57312,
+          "sha256": "1a62c0b0ab9844037a1f085d5276a6ab7835431fe33e824bb8a830738ef6e694"
+        },
+        {
+          "id": "0129d25f-c23a-403f-ab1f-a42a2527df39",
+          "groupId": "16c374df-5327-4d47-8488-74976890a914",
+          "src": "/content-assets/madbeauty/0129d25f-c23a-403f-ab1f-a42a2527df39.webp",
+          "alt": "Banguotų, pečius siekiančių plaukų kontūras iliustraciniame portrete",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 39978,
+          "sha256": "7bd24deacd7b241a049580b4091958b3f87a70110063ab2be1dddf5f02c6b188"
+        },
+        {
+          "id": "d76c85f3-6a17-47eb-ba57-849db830106d",
+          "groupId": "16c374df-5327-4d47-8488-74976890a914",
+          "src": "/content-assets/madbeauty/d76c85f3-6a17-47eb-ba57-849db830106d.webp",
+          "alt": "Banguotų, pečius siekiančių plaukų kontūras iliustraciniame portrete",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 22568,
+          "sha256": "d62c28ac69f1a834107ee255d2123e382d7e5ef99f586c6ed27f18a8e4f70f93"
+        },
+        {
+          "id": "ddbe0b91-407e-4348-aba4-28c742ff8864",
+          "groupId": "16c374df-5327-4d47-8488-74976890a914",
+          "src": "/content-assets/madbeauty/ddbe0b91-407e-4348-aba4-28c742ff8864.webp",
+          "alt": "Banguotų, pečius siekiančių plaukų kontūras iliustraciniame portrete",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 16714,
+          "sha256": "94560f5abcdc6271416cdd786642003a0f60ace92de1f3bad4ed4880cbd9c431"
+        },
+        {
+          "id": "fe19c79b-60d9-468e-be8c-3dd306252edb",
+          "groupId": "16c374df-5327-4d47-8488-74976890a914",
+          "src": "/content-assets/madbeauty/fe19c79b-60d9-468e-be8c-3dd306252edb.webp",
+          "alt": "Banguotų, pečius siekiančių plaukų kontūras iliustraciniame portrete",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 7970,
+          "sha256": "c3e9cba9dd539e9790ab22273bec423c8fe9be2232ac60b75d063b15c4b0de46"
+        }
+      ]
+    },
+    {
+      "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+      "slug": "gidai/kirpimas-galiukai-ar-forma",
+      "assetId": "1d89b1a1-541b-4dd9-bc8b-d4101975b8fc",
+      "alt": "Du mokomieji manekenai su tiesesne galiukų linija ir trumpesniu bob kontūru",
+      "sourceSha256": "7bd6298146b8472444266d5f933efb225b3c2ca03230c25fdacfa4384123e753",
+      "sourceBytes": 2148410,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "1d89b1a1-541b-4dd9-bc8b-d4101975b8fc",
+          "groupId": "fa9b9bec-06c7-4dc5-a760-78c6c07c0ef4",
+          "src": "/content-assets/madbeauty/1d89b1a1-541b-4dd9-bc8b-d4101975b8fc.webp",
+          "alt": "Du mokomieji manekenai su tiesesne galiukų linija ir trumpesniu bob kontūru",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 86022,
+          "sha256": "b77587f3e27cc1176db12b37ba9aa08139d40c7438558ec02f2de3ab1a45df5e"
+        },
+        {
+          "id": "b28655a6-3f6d-4bbe-99b2-e4be729c3693",
+          "groupId": "fa9b9bec-06c7-4dc5-a760-78c6c07c0ef4",
+          "src": "/content-assets/madbeauty/b28655a6-3f6d-4bbe-99b2-e4be729c3693.webp",
+          "alt": "Du mokomieji manekenai su tiesesne galiukų linija ir trumpesniu bob kontūru",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 57968,
+          "sha256": "3346e386fa193fd7ca7a57412c952f65d404bb8b22cb66aa269b08a7562c61e1"
+        },
+        {
+          "id": "4a09b270-1be9-45a8-b7e9-1110be1087f4",
+          "groupId": "fa9b9bec-06c7-4dc5-a760-78c6c07c0ef4",
+          "src": "/content-assets/madbeauty/4a09b270-1be9-45a8-b7e9-1110be1087f4.webp",
+          "alt": "Du mokomieji manekenai su tiesesne galiukų linija ir trumpesniu bob kontūru",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 29652,
+          "sha256": "5e3237a538e5ce529a55685476f08d65f3b9acbc3cb5cd1a4510e40f4d386620"
+        },
+        {
+          "id": "c9d26bfd-302f-4ec9-b4f1-7c60b3ecfec9",
+          "groupId": "fa9b9bec-06c7-4dc5-a760-78c6c07c0ef4",
+          "src": "/content-assets/madbeauty/c9d26bfd-302f-4ec9-b4f1-7c60b3ecfec9.webp",
+          "alt": "Du mokomieji manekenai su tiesesne galiukų linija ir trumpesniu bob kontūru",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 20854,
+          "sha256": "2dad50d5124d4286857b561c36298526a7f30f205d2ebbc82b61644988fa00a8"
+        },
+        {
+          "id": "1de1fab2-8428-49c2-82da-b55645a63aaa",
+          "groupId": "fa9b9bec-06c7-4dc5-a760-78c6c07c0ef4",
+          "src": "/content-assets/madbeauty/1de1fab2-8428-49c2-82da-b55645a63aaa.webp",
+          "alt": "Du mokomieji manekenai su tiesesne galiukų linija ir trumpesniu bob kontūru",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 8956,
+          "sha256": "9c39d2a358d6d6e0eb7c9518bef1a3fb139cadb4297e33acd10a302e35c80d48"
+        }
+      ]
+    },
+    {
+      "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+      "slug": "gidai/kirpimas-sluoksniai",
+      "assetId": "b54b2dbb-a26d-4252-af38-b01b64c75efd",
+      "alt": "Vidutinio ilgio sluoksnių forma iliustraciniame plaukų portrete",
+      "sourceSha256": "431d3194400c9079c73f7e6fa84a452533c589af49d679c0223004ca53150dfa",
+      "sourceBytes": 2022741,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "b54b2dbb-a26d-4252-af38-b01b64c75efd",
+          "groupId": "215aac57-9dac-4137-8f90-e098db85ac1e",
+          "src": "/content-assets/madbeauty/b54b2dbb-a26d-4252-af38-b01b64c75efd.webp",
+          "alt": "Vidutinio ilgio sluoksnių forma iliustraciniame plaukų portrete",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 57204,
+          "sha256": "6f3e027cfccf90274a3358dbfdc833c0d32f9cfca521cc029e2cfdb67c25d531"
+        },
+        {
+          "id": "9d4c6714-ba36-40fc-8380-a4fb429734f4",
+          "groupId": "215aac57-9dac-4137-8f90-e098db85ac1e",
+          "src": "/content-assets/madbeauty/9d4c6714-ba36-40fc-8380-a4fb429734f4.webp",
+          "alt": "Vidutinio ilgio sluoksnių forma iliustraciniame plaukų portrete",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 39898,
+          "sha256": "97375fe4d4da56e46b40d70c289d1877eb6190729bd5cab4212300fa6dfe7339"
+        },
+        {
+          "id": "635a031c-6d2d-4f36-a973-bedfb2904043",
+          "groupId": "215aac57-9dac-4137-8f90-e098db85ac1e",
+          "src": "/content-assets/madbeauty/635a031c-6d2d-4f36-a973-bedfb2904043.webp",
+          "alt": "Vidutinio ilgio sluoksnių forma iliustraciniame plaukų portrete",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 22928,
+          "sha256": "4a7e51edb1324cd6ec826f2e768c09cbc5b6fec7b4deafea703114ebafa39a3b"
+        },
+        {
+          "id": "807f4928-5818-4574-9308-36082fed5e1e",
+          "groupId": "215aac57-9dac-4137-8f90-e098db85ac1e",
+          "src": "/content-assets/madbeauty/807f4928-5818-4574-9308-36082fed5e1e.webp",
+          "alt": "Vidutinio ilgio sluoksnių forma iliustraciniame plaukų portrete",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 16950,
+          "sha256": "724485840a4ce0f81e274718ff60c88f5557e5c7ecda76fb6560b1c6026ca065"
+        },
+        {
+          "id": "97156c05-3a75-4bef-8e97-43c040c559fd",
+          "groupId": "215aac57-9dac-4137-8f90-e098db85ac1e",
+          "src": "/content-assets/madbeauty/97156c05-3a75-4bef-8e97-43c040c559fd.webp",
+          "alt": "Vidutinio ilgio sluoksnių forma iliustraciniame plaukų portrete",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 8188,
+          "sha256": "66fef05fd22103a070f8104306bff3bfa62d814dc00c53fbc44d6a44a8f93541"
+        }
+      ]
+    },
+    {
+      "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+      "slug": "gidai/kirpimas-bob-kare",
+      "assetId": "632e055a-0d94-472c-9138-00fc010c8c10",
+      "alt": "Smakrą siekiančio bob kirpimo šoninis kontūras",
+      "sourceSha256": "fbe3edc927e5a019713583992cbbda73bb88da2b62c1bc84032630ea00f29cde",
+      "sourceBytes": 2061680,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "632e055a-0d94-472c-9138-00fc010c8c10",
+          "groupId": "37e80e1e-6794-4ec8-a995-274791d3169b",
+          "src": "/content-assets/madbeauty/632e055a-0d94-472c-9138-00fc010c8c10.webp",
+          "alt": "Smakrą siekiančio bob kirpimo šoninis kontūras",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 59062,
+          "sha256": "2149444e9691a32c2ef4389f0dad481c11c0ae1d4c70581b33f4cfacc5e83c84"
+        },
+        {
+          "id": "2f6d2ce9-119f-4b88-a208-d780c53acb6f",
+          "groupId": "37e80e1e-6794-4ec8-a995-274791d3169b",
+          "src": "/content-assets/madbeauty/2f6d2ce9-119f-4b88-a208-d780c53acb6f.webp",
+          "alt": "Smakrą siekiančio bob kirpimo šoninis kontūras",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 40404,
+          "sha256": "8982073a580c42c129f492cedda511ae91a08f6b2ca9a12f45e288f8720e525d"
+        },
+        {
+          "id": "510c9784-7a3d-4462-802f-edb0552c7bdc",
+          "groupId": "37e80e1e-6794-4ec8-a995-274791d3169b",
+          "src": "/content-assets/madbeauty/510c9784-7a3d-4462-802f-edb0552c7bdc.webp",
+          "alt": "Smakrą siekiančio bob kirpimo šoninis kontūras",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 22378,
+          "sha256": "1a153b8ce727a8d13abc97cd87bab7ec93df6a363989d1e9f9e73344d1beac16"
+        },
+        {
+          "id": "5853620b-2340-4f25-8384-b4ad73d09651",
+          "groupId": "37e80e1e-6794-4ec8-a995-274791d3169b",
+          "src": "/content-assets/madbeauty/5853620b-2340-4f25-8384-b4ad73d09651.webp",
+          "alt": "Smakrą siekiančio bob kirpimo šoninis kontūras",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 16324,
+          "sha256": "bcb7f7ed9522603400014480c73256cb60af5812c8324c5c426649d49ea15c1e"
+        },
+        {
+          "id": "3709dcb8-14ee-46aa-8dd0-93ccef1df5cc",
+          "groupId": "37e80e1e-6794-4ec8-a995-274791d3169b",
+          "src": "/content-assets/madbeauty/3709dcb8-14ee-46aa-8dd0-93ccef1df5cc.webp",
+          "alt": "Smakrą siekiančio bob kirpimo šoninis kontūras",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 7946,
+          "sha256": "b04c407e25b6a281b6ea15f76124bd2640a81e824b822857c55b46c655012fff"
+        }
+      ]
+    },
+    {
+      "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+      "slug": "gidai/kirpimas-kirpciukai",
+      "assetId": "247fc275-3e88-4de6-a8e8-aed5bba45240",
+      "alt": "Lengvi prasiskiriantys kirpčiukai ir ilgesnės sruogos prie veido",
+      "sourceSha256": "3014cb7bd75f967eac880012beccb9d48e33a3f477efca9d2e6016649b498afc",
+      "sourceBytes": 2350631,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "247fc275-3e88-4de6-a8e8-aed5bba45240",
+          "groupId": "aaf9d287-9e2d-4a9f-8b17-07eaf6ddabb6",
+          "src": "/content-assets/madbeauty/247fc275-3e88-4de6-a8e8-aed5bba45240.webp",
+          "alt": "Lengvi prasiskiriantys kirpčiukai ir ilgesnės sruogos prie veido",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 74702,
+          "sha256": "f5a9b489cb7ee61d148f6cdf41c1aee17e162586c7b0a3d8cfd46281d84905e3"
+        },
+        {
+          "id": "8dfe901a-6997-4000-a54e-a64554d4803d",
+          "groupId": "aaf9d287-9e2d-4a9f-8b17-07eaf6ddabb6",
+          "src": "/content-assets/madbeauty/8dfe901a-6997-4000-a54e-a64554d4803d.webp",
+          "alt": "Lengvi prasiskiriantys kirpčiukai ir ilgesnės sruogos prie veido",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 51890,
+          "sha256": "f741e74ed28fd99ebbb468b680098d1abd89a059d7ff0aa9a4460df77be6fd07"
+        },
+        {
+          "id": "64b54ac3-449a-4d83-924a-9896a0eea0f1",
+          "groupId": "aaf9d287-9e2d-4a9f-8b17-07eaf6ddabb6",
+          "src": "/content-assets/madbeauty/64b54ac3-449a-4d83-924a-9896a0eea0f1.webp",
+          "alt": "Lengvi prasiskiriantys kirpčiukai ir ilgesnės sruogos prie veido",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 26816,
+          "sha256": "14b0f8b9a2ffd841f1f338e7cd0c9bc2dfec0d4d51c8120fa2bed605950bb3dd"
+        },
+        {
+          "id": "1b2ac039-0abd-4d39-937e-1ed39f7d0b50",
+          "groupId": "aaf9d287-9e2d-4a9f-8b17-07eaf6ddabb6",
+          "src": "/content-assets/madbeauty/1b2ac039-0abd-4d39-937e-1ed39f7d0b50.webp",
+          "alt": "Lengvi prasiskiriantys kirpčiukai ir ilgesnės sruogos prie veido",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 18852,
+          "sha256": "19b9c61e1c8cadb51c24ab34b5da6751c80d04cb68dba4c5729838c328d37b6e"
+        },
+        {
+          "id": "039dd198-35cd-4a20-90ce-d036574c13a0",
+          "groupId": "aaf9d287-9e2d-4a9f-8b17-07eaf6ddabb6",
+          "src": "/content-assets/madbeauty/039dd198-35cd-4a20-90ce-d036574c13a0.webp",
+          "alt": "Lengvi prasiskiriantys kirpčiukai ir ilgesnės sruogos prie veido",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 7772,
+          "sha256": "fdf965421328401feaa7b56f1f14f34b60ba678876733fb68b130bd3c9a8166e"
+        }
+      ]
+    },
+    {
+      "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+      "slug": "gidai/kirpimas-garbanoti",
+      "assetId": "51eb7eee-98b3-405f-b9e9-72752c8cc30d",
+      "alt": "Garbanotų plaukų forma ant mokomojo manekeno",
+      "sourceSha256": "39962c649989f65230ac1e0400a617fa00be9c9ebdf08a56d5db6e8f24918fd2",
+      "sourceBytes": 2492836,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "51eb7eee-98b3-405f-b9e9-72752c8cc30d",
+          "groupId": "f6b1bd68-3780-4260-8ff0-9c23eb5d21bb",
+          "src": "/content-assets/madbeauty/51eb7eee-98b3-405f-b9e9-72752c8cc30d.webp",
+          "alt": "Garbanotų plaukų forma ant mokomojo manekeno",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 105342,
+          "sha256": "6148bc2d187bca188dd85085cd5fc47e1ebe9e2bf41ddace6aa9bf96af64aa02"
+        },
+        {
+          "id": "5fc5335b-19a3-4aff-b171-54697d931bd8",
+          "groupId": "f6b1bd68-3780-4260-8ff0-9c23eb5d21bb",
+          "src": "/content-assets/madbeauty/5fc5335b-19a3-4aff-b171-54697d931bd8.webp",
+          "alt": "Garbanotų plaukų forma ant mokomojo manekeno",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 71708,
+          "sha256": "f1d0bc0429c95ab16984a59a8022cf12d6790181591afaa1cc8c2bf4b9f08b3d"
+        },
+        {
+          "id": "63374a55-37ed-49a7-a27c-a86b2992ac25",
+          "groupId": "f6b1bd68-3780-4260-8ff0-9c23eb5d21bb",
+          "src": "/content-assets/madbeauty/63374a55-37ed-49a7-a27c-a86b2992ac25.webp",
+          "alt": "Garbanotų plaukų forma ant mokomojo manekeno",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 37262,
+          "sha256": "3314db0a70cf7eb943325d55fad32f660fdf6b68f7aa420e1d1d0a02eff415a9"
+        },
+        {
+          "id": "830f0fbe-b8b7-41b3-9f54-5271b7190424",
+          "groupId": "f6b1bd68-3780-4260-8ff0-9c23eb5d21bb",
+          "src": "/content-assets/madbeauty/830f0fbe-b8b7-41b3-9f54-5271b7190424.webp",
+          "alt": "Garbanotų plaukų forma ant mokomojo manekeno",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 26202,
+          "sha256": "3310250be359fb41205436aaecc5a4e87227d1cff5218a319cd93e1fc664c3eb"
+        },
+        {
+          "id": "f24226fc-7e51-45fe-a9fb-ef160ea46b19",
+          "groupId": "f6b1bd68-3780-4260-8ff0-9c23eb5d21bb",
+          "src": "/content-assets/madbeauty/f24226fc-7e51-45fe-a9fb-ef160ea46b19.webp",
+          "alt": "Garbanotų plaukų forma ant mokomojo manekeno",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 11268,
+          "sha256": "2f763b3dea73bba55b6d85117bd399da20557078fef0b555712efa00c0af4ec9"
+        }
+      ]
+    },
+    {
+      "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+      "slug": "gidai/kirpimas-trumpas-vyriskas",
+      "assetId": "c402d3eb-3242-408c-a7a7-c7ff254204d4",
+      "alt": "Trumpo kirpimo šonai ir ilgesnė viršutinė dalis",
+      "sourceSha256": "066b9130a1d0786caeb924d088d394f802100c8a212ebd5c5b92445eab5737e3",
+      "sourceBytes": 2169722,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "c402d3eb-3242-408c-a7a7-c7ff254204d4",
+          "groupId": "353144fd-f6da-4b45-a933-886884e5b759",
+          "src": "/content-assets/madbeauty/c402d3eb-3242-408c-a7a7-c7ff254204d4.webp",
+          "alt": "Trumpo kirpimo šonai ir ilgesnė viršutinė dalis",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 68098,
+          "sha256": "3f8731cbd5846fe8f8f9291e90bf409c3ed028b65048a389893ec5b068e274b3"
+        },
+        {
+          "id": "098aa7f3-3721-45d3-a40b-871d0efe7899",
+          "groupId": "353144fd-f6da-4b45-a933-886884e5b759",
+          "src": "/content-assets/madbeauty/098aa7f3-3721-45d3-a40b-871d0efe7899.webp",
+          "alt": "Trumpo kirpimo šonai ir ilgesnė viršutinė dalis",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 46954,
+          "sha256": "45d336b43bf712d5fed09b8709e54013af5335d2d78dc443e96e08b70a1ade94"
+        },
+        {
+          "id": "d92c37c0-d472-4450-81b8-703561913c7e",
+          "groupId": "353144fd-f6da-4b45-a933-886884e5b759",
+          "src": "/content-assets/madbeauty/d92c37c0-d472-4450-81b8-703561913c7e.webp",
+          "alt": "Trumpo kirpimo šonai ir ilgesnė viršutinė dalis",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 24488,
+          "sha256": "5144fddc1e9a9affbc9de85e9edd71ecab508b08af9acd84b37a44727f432511"
+        },
+        {
+          "id": "2ce12e85-6fe5-45b8-aa2a-0d186583b5a6",
+          "groupId": "353144fd-f6da-4b45-a933-886884e5b759",
+          "src": "/content-assets/madbeauty/2ce12e85-6fe5-45b8-aa2a-0d186583b5a6.webp",
+          "alt": "Trumpo kirpimo šonai ir ilgesnė viršutinė dalis",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 17474,
+          "sha256": "018403a42af040e9d8bd4692811a778074609a1cbb478255e475e2d327aced04"
+        },
+        {
+          "id": "b6647784-1203-4bd6-b193-d9e1955bef83",
+          "groupId": "353144fd-f6da-4b45-a933-886884e5b759",
+          "src": "/content-assets/madbeauty/b6647784-1203-4bd6-b193-d9e1955bef83.webp",
+          "alt": "Trumpo kirpimo šonai ir ilgesnė viršutinė dalis",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 8034,
+          "sha256": "c9944f6049506db5db46936a3852d7c72332f6a4310b7831cb16b7906689a186"
+        }
+      ]
+    },
+    {
+      "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+      "slug": "gidai/kirpimas-kaina-trukme",
+      "assetId": "b9f013ae-e2c3-450c-8e3e-ae9fc26be21a",
+      "alt": "Žirklės, šukos, rankšluostis ir tuščia užrašų knygelė",
+      "sourceSha256": "bb5a7f1193d8139deef8b36693f7831165f2a0a3b3acdc3f8c1a1cec3609459c",
+      "sourceBytes": 2180380,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "b9f013ae-e2c3-450c-8e3e-ae9fc26be21a",
+          "groupId": "53e1decd-b192-4dfa-817f-21b25361c41b",
+          "src": "/content-assets/madbeauty/b9f013ae-e2c3-450c-8e3e-ae9fc26be21a.webp",
+          "alt": "Žirklės, šukos, rankšluostis ir tuščia užrašų knygelė",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 68520,
+          "sha256": "09a72a5a7fe023689afb0328730adb718e1d9d69e7309ce6eec72aa486b49cd3"
+        },
+        {
+          "id": "04ef14fe-b623-4695-9aa3-56205f98840f",
+          "groupId": "53e1decd-b192-4dfa-817f-21b25361c41b",
+          "src": "/content-assets/madbeauty/04ef14fe-b623-4695-9aa3-56205f98840f.webp",
+          "alt": "Žirklės, šukos, rankšluostis ir tuščia užrašų knygelė",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 49178,
+          "sha256": "f5e7b76f55fb6ce46305cd1e40a08120fdc411e93d9deb7d3eb005aa62b831b3"
+        },
+        {
+          "id": "ef55eecf-e0db-4696-89e4-a92639dcbb5e",
+          "groupId": "53e1decd-b192-4dfa-817f-21b25361c41b",
+          "src": "/content-assets/madbeauty/ef55eecf-e0db-4696-89e4-a92639dcbb5e.webp",
+          "alt": "Žirklės, šukos, rankšluostis ir tuščia užrašų knygelė",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 27654,
+          "sha256": "c207120c982bbdeb8b693ed2661d0904a944c159ee28a2b03d84f716f0d99fec"
+        },
+        {
+          "id": "ec264896-dc2d-4a82-a803-147e8eaeeacd",
+          "groupId": "53e1decd-b192-4dfa-817f-21b25361c41b",
+          "src": "/content-assets/madbeauty/ec264896-dc2d-4a82-a803-147e8eaeeacd.webp",
+          "alt": "Žirklės, šukos, rankšluostis ir tuščia užrašų knygelė",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 20104,
+          "sha256": "1853fb6bb60d0f6d7f99debe810fe05a6b85a6225e9d35ae8c32611efb10a02c"
+        },
+        {
+          "id": "37662d98-6ce1-458c-a42a-00ac956908b6",
+          "groupId": "53e1decd-b192-4dfa-817f-21b25361c41b",
+          "src": "/content-assets/madbeauty/37662d98-6ce1-458c-a42a-00ac956908b6.webp",
+          "alt": "Žirklės, šukos, rankšluostis ir tuščia užrašų knygelė",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 8136,
+          "sha256": "aea45ec2fbe8755b6dfba899e44e564e99ed2e0d8e96eb83c611596e70ab98f2"
+        }
+      ]
+    },
+    {
+      "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+      "slug": "gidai/kirpimas-pasiruosimas",
+      "assetId": "01592090-487c-4467-a708-b3721e359f74",
+      "alt": "Paruošta tuščia kirpimo kėdė su apsiaustu ir šukomis",
+      "sourceSha256": "85a4357e805f886ed8b821ee98ef9b805a9ac0f5828903cac784d2c0cffef712",
+      "sourceBytes": 2108886,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "01592090-487c-4467-a708-b3721e359f74",
+          "groupId": "43c254ee-42e4-4217-8a42-86e23c1eeec4",
+          "src": "/content-assets/madbeauty/01592090-487c-4467-a708-b3721e359f74.webp",
+          "alt": "Paruošta tuščia kirpimo kėdė su apsiaustu ir šukomis",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 89646,
+          "sha256": "3030151b75a69f6adbc3d1485d3561cf3b2578d378e6e87c74c1c448c701815e"
+        },
+        {
+          "id": "0044da39-858c-4d18-bd83-db26ae2c527b",
+          "groupId": "43c254ee-42e4-4217-8a42-86e23c1eeec4",
+          "src": "/content-assets/madbeauty/0044da39-858c-4d18-bd83-db26ae2c527b.webp",
+          "alt": "Paruošta tuščia kirpimo kėdė su apsiaustu ir šukomis",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 65006,
+          "sha256": "ef0f5d43811862cf01cfb954916e45ac62acc2cf23d7fa714d7713f7dc30ae52"
+        },
+        {
+          "id": "f03efab8-83d8-404d-9f21-e209bc176802",
+          "groupId": "43c254ee-42e4-4217-8a42-86e23c1eeec4",
+          "src": "/content-assets/madbeauty/f03efab8-83d8-404d-9f21-e209bc176802.webp",
+          "alt": "Paruošta tuščia kirpimo kėdė su apsiaustu ir šukomis",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 38886,
+          "sha256": "e85c22870848f2dc9e384fc9dde5622f8732f3c0c65899a827c7f1f2607bd667"
+        },
+        {
+          "id": "beb75fc4-1670-4cde-b861-88f526cade13",
+          "groupId": "43c254ee-42e4-4217-8a42-86e23c1eeec4",
+          "src": "/content-assets/madbeauty/beb75fc4-1670-4cde-b861-88f526cade13.webp",
+          "alt": "Paruošta tuščia kirpimo kėdė su apsiaustu ir šukomis",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 28840,
+          "sha256": "cb7c6b6cd738cf645d7dd56bd1507527cf55879306024df21fa6ed19c53d8d70"
+        },
+        {
+          "id": "4dc8d7f2-bc05-49ef-8436-f3d98d45d90b",
+          "groupId": "43c254ee-42e4-4217-8a42-86e23c1eeec4",
+          "src": "/content-assets/madbeauty/4dc8d7f2-bc05-49ef-8436-f3d98d45d90b.webp",
+          "alt": "Paruošta tuščia kirpimo kėdė su apsiaustu ir šukomis",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 13162,
+          "sha256": "96bef23540b08c6bb6c28c06efd9249eaf2637e7c01db0a8ec6b0e11793d177a"
+        }
+      ]
+    },
+    {
+      "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+      "slug": "gidai/kirpimas-nuotrauka",
+      "assetId": "04505c3a-86ba-4df6-b85a-7901543f77fc",
+      "alt": "Rankose laikomi kirpimo siluetų iš šono ir nugaros pavyzdžiai",
+      "sourceSha256": "75ae3914c161286aaa2c92dd27ea0cf67e7a681ffd7a5900b6d0587a92e3f6c1",
+      "sourceBytes": 2171810,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "04505c3a-86ba-4df6-b85a-7901543f77fc",
+          "groupId": "13d74599-434a-431a-ac3a-5003e403272e",
+          "src": "/content-assets/madbeauty/04505c3a-86ba-4df6-b85a-7901543f77fc.webp",
+          "alt": "Rankose laikomi kirpimo siluetų iš šono ir nugaros pavyzdžiai",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 79574,
+          "sha256": "7c96b178b0e1b2fc52c9ccf8a1bb2aab0ea2d6a273a467ad85e4243094d75d0e"
+        },
+        {
+          "id": "d15d5d33-8bed-42ad-90ca-d62b43050333",
+          "groupId": "13d74599-434a-431a-ac3a-5003e403272e",
+          "src": "/content-assets/madbeauty/d15d5d33-8bed-42ad-90ca-d62b43050333.webp",
+          "alt": "Rankose laikomi kirpimo siluetų iš šono ir nugaros pavyzdžiai",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 55358,
+          "sha256": "b7e2378968f1d667d6206127286b43d39c1cdbfbc244d461cc40cabc75c9717c"
+        },
+        {
+          "id": "595bbaf0-1b84-474f-bd83-1b61c69ee9f5",
+          "groupId": "13d74599-434a-431a-ac3a-5003e403272e",
+          "src": "/content-assets/madbeauty/595bbaf0-1b84-474f-bd83-1b61c69ee9f5.webp",
+          "alt": "Rankose laikomi kirpimo siluetų iš šono ir nugaros pavyzdžiai",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 30542,
+          "sha256": "f3d86b3770e7cff04a16cec3276281771cecb9e1a0868d91c1d492c16f4e9edf"
+        },
+        {
+          "id": "eb5a47d1-06f2-4c3d-b9aa-aa2ba8c71718",
+          "groupId": "13d74599-434a-431a-ac3a-5003e403272e",
+          "src": "/content-assets/madbeauty/eb5a47d1-06f2-4c3d-b9aa-aa2ba8c71718.webp",
+          "alt": "Rankose laikomi kirpimo siluetų iš šono ir nugaros pavyzdžiai",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 22180,
+          "sha256": "4c573aea9ca68b53bf02b382983c9c0366eb1c9cf79f73774209a06e85b0ed42"
+        },
+        {
+          "id": "359bf4ab-528f-445d-8aa0-a283a160281b",
+          "groupId": "13d74599-434a-431a-ac3a-5003e403272e",
+          "src": "/content-assets/madbeauty/359bf4ab-528f-445d-8aa0-a283a160281b.webp",
+          "alt": "Rankose laikomi kirpimo siluetų iš šono ir nugaros pavyzdžiai",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 9664,
+          "sha256": "704bd507f3a582b9bc41ca0b46677e6d548158ce6cb046bebae2bcdeac1c7102"
+        }
+      ]
+    },
+    {
+      "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+      "slug": "gidai/plauku-formavimas-gidas",
+      "assetId": "91c029bf-e239-49d6-b59d-1623624058ec",
+      "alt": "Tiesi, banguota ir susegta plaukų forma ant trijų mokomųjų manekenų",
+      "sourceSha256": "5e4987518ce48eab1f0734524390081ebc5cb7f8a6671c1a21fb6b021857fc77",
+      "sourceBytes": 2263986,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "91c029bf-e239-49d6-b59d-1623624058ec",
+          "groupId": "7cb464ec-bc4c-4275-81c4-e9f825af3f5f",
+          "src": "/content-assets/madbeauty/91c029bf-e239-49d6-b59d-1623624058ec.webp",
+          "alt": "Tiesi, banguota ir susegta plaukų forma ant trijų mokomųjų manekenų",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 86038,
+          "sha256": "05885139b2e420c7ba6265cfc8723653a4b35f42bece3c0084a24738e1d0feff"
+        },
+        {
+          "id": "52af0722-557d-4b87-8bcf-e96adf73c68c",
+          "groupId": "7cb464ec-bc4c-4275-81c4-e9f825af3f5f",
+          "src": "/content-assets/madbeauty/52af0722-557d-4b87-8bcf-e96adf73c68c.webp",
+          "alt": "Tiesi, banguota ir susegta plaukų forma ant trijų mokomųjų manekenų",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 58772,
+          "sha256": "e9cc342b0487bc0034f8a0eaaaa5fff3279a4a97507e0ebb597985e4405ec009"
+        },
+        {
+          "id": "b1a7c086-3d99-4618-9f45-f09988d61e49",
+          "groupId": "7cb464ec-bc4c-4275-81c4-e9f825af3f5f",
+          "src": "/content-assets/madbeauty/b1a7c086-3d99-4618-9f45-f09988d61e49.webp",
+          "alt": "Tiesi, banguota ir susegta plaukų forma ant trijų mokomųjų manekenų",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 32148,
+          "sha256": "af0dc5aeb79ee2a331f03d7c560f17df88aafd7a9a8f50ebd2f8f3c7a1effead"
+        },
+        {
+          "id": "3761e7fa-7d4e-49a0-81fe-f0d2d7a0a498",
+          "groupId": "7cb464ec-bc4c-4275-81c4-e9f825af3f5f",
+          "src": "/content-assets/madbeauty/3761e7fa-7d4e-49a0-81fe-f0d2d7a0a498.webp",
+          "alt": "Tiesi, banguota ir susegta plaukų forma ant trijų mokomųjų manekenų",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 23080,
+          "sha256": "dd6f4928ba2072a1ba7d3be8809c5ef50e69cf1106cb596d99c7b36a8c3a3ece"
+        },
+        {
+          "id": "cd5a68ca-4a12-422a-a7fb-f8a1357cd6ee",
+          "groupId": "7cb464ec-bc4c-4275-81c4-e9f825af3f5f",
+          "src": "/content-assets/madbeauty/cd5a68ca-4a12-422a-a7fb-f8a1357cd6ee.webp",
+          "alt": "Tiesi, banguota ir susegta plaukų forma ant trijų mokomųjų manekenų",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 10532,
+          "sha256": "8b83b25a055ac9d8ab0030c67074310d61c067681cc1a36fcb02ac8cce2d57fb"
+        }
+      ]
+    },
+    {
+      "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+      "slug": "gidai/plauku-formavimas-dziovinimas-ar-progine",
+      "assetId": "73fd1544-25e8-43f7-a14a-3c03bce3532d",
+      "alt": "Džiovintuvas ir apvalus šepetys greta segtukų bei aksesuaro",
+      "sourceSha256": "9f1bd17c3839b73b8d485f98a6783b6f63bfc860dbf5fa65088ae4383de44518",
+      "sourceBytes": 2274856,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "73fd1544-25e8-43f7-a14a-3c03bce3532d",
+          "groupId": "b8a89f8d-c58d-48c5-bd7f-e3d30d6d1dd0",
+          "src": "/content-assets/madbeauty/73fd1544-25e8-43f7-a14a-3c03bce3532d.webp",
+          "alt": "Džiovintuvas ir apvalus šepetys greta segtukų bei aksesuaro",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 101660,
+          "sha256": "8af96f0d93794903f5aa4133eae5d2f20b453a4888be8e75e8b5d5205bd2c4eb"
+        },
+        {
+          "id": "084ad21d-ad55-4ae9-8e05-8cce0b406b1f",
+          "groupId": "b8a89f8d-c58d-48c5-bd7f-e3d30d6d1dd0",
+          "src": "/content-assets/madbeauty/084ad21d-ad55-4ae9-8e05-8cce0b406b1f.webp",
+          "alt": "Džiovintuvas ir apvalus šepetys greta segtukų bei aksesuaro",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 72942,
+          "sha256": "d69d3c0d3f0d78eaa8d00203d6ccf876ff47cfeb2ab99f3f299042061f24a18d"
+        },
+        {
+          "id": "fcb3f457-ffc4-4e03-b843-98772a015c27",
+          "groupId": "b8a89f8d-c58d-48c5-bd7f-e3d30d6d1dd0",
+          "src": "/content-assets/madbeauty/fcb3f457-ffc4-4e03-b843-98772a015c27.webp",
+          "alt": "Džiovintuvas ir apvalus šepetys greta segtukų bei aksesuaro",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 41874,
+          "sha256": "ce5183e7e83b330d3361298d87694717c8e52b069ad2b1b0da790f11c0e496dc"
+        },
+        {
+          "id": "4013e8e7-dc95-41b5-a7c3-04c7350f5ad6",
+          "groupId": "b8a89f8d-c58d-48c5-bd7f-e3d30d6d1dd0",
+          "src": "/content-assets/madbeauty/4013e8e7-dc95-41b5-a7c3-04c7350f5ad6.webp",
+          "alt": "Džiovintuvas ir apvalus šepetys greta segtukų bei aksesuaro",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 30572,
+          "sha256": "27515d2e1623e71e1304a9c299335e0a6fb248f7a14f4ffd05a1609d3d779985"
+        },
+        {
+          "id": "8eb9846a-0d78-4fa5-bd82-ac26c67c2340",
+          "groupId": "b8a89f8d-c58d-48c5-bd7f-e3d30d6d1dd0",
+          "src": "/content-assets/madbeauty/8eb9846a-0d78-4fa5-bd82-ac26c67c2340.webp",
+          "alt": "Džiovintuvas ir apvalus šepetys greta segtukų bei aksesuaro",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 12790,
+          "sha256": "298c7cda6f4d9955856aaa7bacd11ca375b075af24bc9afd1ce48917c72adf30"
+        }
+      ]
+    },
+    {
+      "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+      "slug": "gidai/plauku-formavimas-garbanos-bangos",
+      "assetId": "006e1c98-3afe-499b-9d6d-39e01c851764",
+      "alt": "Garbanų ir bangų siluetai ant dviejų mokomųjų manekenų",
+      "sourceSha256": "1ab4549443db468573437d9f9a2355f6c457d2b9f9f80999fb54f1c36647cc2c",
+      "sourceBytes": 2414542,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "006e1c98-3afe-499b-9d6d-39e01c851764",
+          "groupId": "a831b73d-2cad-4078-ad95-0e69781686a9",
+          "src": "/content-assets/madbeauty/006e1c98-3afe-499b-9d6d-39e01c851764.webp",
+          "alt": "Garbanų ir bangų siluetai ant dviejų mokomųjų manekenų",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 92342,
+          "sha256": "e8d247508023b1308fe1de9845b5cfa1bf127419744970e298ab11dcb5efdfda"
+        },
+        {
+          "id": "6e0d1e27-030d-48bc-bfca-a5a2a241cb40",
+          "groupId": "a831b73d-2cad-4078-ad95-0e69781686a9",
+          "src": "/content-assets/madbeauty/6e0d1e27-030d-48bc-bfca-a5a2a241cb40.webp",
+          "alt": "Garbanų ir bangų siluetai ant dviejų mokomųjų manekenų",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 61720,
+          "sha256": "7f2874fc9fe8abee4bb8a7b44742cebb7caaa883a37203b396921d6ce2928896"
+        },
+        {
+          "id": "b2eebbbf-41b5-4553-bcf8-feaaa6d719a3",
+          "groupId": "a831b73d-2cad-4078-ad95-0e69781686a9",
+          "src": "/content-assets/madbeauty/b2eebbbf-41b5-4553-bcf8-feaaa6d719a3.webp",
+          "alt": "Garbanų ir bangų siluetai ant dviejų mokomųjų manekenų",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 32918,
+          "sha256": "7ef5937f23ca2a89d7dc6b1a859feaf7f9abaf0f9aff6cbc6157e1421e6f12dc"
+        },
+        {
+          "id": "95840bc8-8355-4e0f-9590-536e113b011b",
+          "groupId": "a831b73d-2cad-4078-ad95-0e69781686a9",
+          "src": "/content-assets/madbeauty/95840bc8-8355-4e0f-9590-536e113b011b.webp",
+          "alt": "Garbanų ir bangų siluetai ant dviejų mokomųjų manekenų",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 23804,
+          "sha256": "83c26bd1681eed4b430afe5fe2a3f224b78e28504f41105d4279619f05da7da9"
+        },
+        {
+          "id": "3867ac8d-4b84-4b40-81ed-3b2589d46ee6",
+          "groupId": "a831b73d-2cad-4078-ad95-0e69781686a9",
+          "src": "/content-assets/madbeauty/3867ac8d-4b84-4b40-81ed-3b2589d46ee6.webp",
+          "alt": "Garbanų ir bangų siluetai ant dviejų mokomųjų manekenų",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 10920,
+          "sha256": "4c2fd6c351c8d2809aa973cd4e5283008de1d9fbbdfb293e805c897441ec6e94"
+        }
+      ]
+    },
+    {
+      "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+      "slug": "gidai/plauku-formavimas-susegta",
+      "assetId": "8f923ddb-ab97-477f-8bd2-f808492267c3",
+      "alt": "Žemai susegtos šukuosenos ir nedidelio aksesuaro pavyzdys",
+      "sourceSha256": "2d18151f247a3de08055400713ad8f1d2a0457caa9145c6d144a2faca5c75a3a",
+      "sourceBytes": 2176109,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "8f923ddb-ab97-477f-8bd2-f808492267c3",
+          "groupId": "3011db7d-0474-419c-b016-09c82945d02a",
+          "src": "/content-assets/madbeauty/8f923ddb-ab97-477f-8bd2-f808492267c3.webp",
+          "alt": "Žemai susegtos šukuosenos ir nedidelio aksesuaro pavyzdys",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 69374,
+          "sha256": "bab525f6151cf32e9cf953c8fcb680cc723a3730030323825742dbec18eff2ff"
+        },
+        {
+          "id": "f201ff9e-4c80-405f-b31f-0ec9c986f993",
+          "groupId": "3011db7d-0474-419c-b016-09c82945d02a",
+          "src": "/content-assets/madbeauty/f201ff9e-4c80-405f-b31f-0ec9c986f993.webp",
+          "alt": "Žemai susegtos šukuosenos ir nedidelio aksesuaro pavyzdys",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 49334,
+          "sha256": "eb2c48f1a392b2d9ca2e8f8c7917d3ada34286de98d055a7fe28b7da7df9859c"
+        },
+        {
+          "id": "45d4ed16-e8f2-44e3-9355-e1901471c4ad",
+          "groupId": "3011db7d-0474-419c-b016-09c82945d02a",
+          "src": "/content-assets/madbeauty/45d4ed16-e8f2-44e3-9355-e1901471c4ad.webp",
+          "alt": "Žemai susegtos šukuosenos ir nedidelio aksesuaro pavyzdys",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 27674,
+          "sha256": "2773ea9aed34fb36ab9a1cf479edd3aab85d2cacc0ec59daf839fde6abc64026"
+        },
+        {
+          "id": "182d191e-ce94-4cb9-a874-de11e79053c3",
+          "groupId": "3011db7d-0474-419c-b016-09c82945d02a",
+          "src": "/content-assets/madbeauty/182d191e-ce94-4cb9-a874-de11e79053c3.webp",
+          "alt": "Žemai susegtos šukuosenos ir nedidelio aksesuaro pavyzdys",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 20562,
+          "sha256": "b90d12442dbc4c5f7041dc259e16b1f828eeeb295013f2bd1b72417777663541"
+        },
+        {
+          "id": "f8ec862e-951c-405e-94ea-29a82e07b4a6",
+          "groupId": "3011db7d-0474-419c-b016-09c82945d02a",
+          "src": "/content-assets/madbeauty/f8ec862e-951c-405e-94ea-29a82e07b4a6.webp",
+          "alt": "Žemai susegtos šukuosenos ir nedidelio aksesuaro pavyzdys",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 10004,
+          "sha256": "ed4b64d34614b1f62ae13d5125f41a19d87fe9e98932152545f7d5dfd590864a"
+        }
+      ]
+    },
+    {
+      "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+      "slug": "gidai/plauku-formavimas-vestuves",
+      "assetId": "d22fca2c-29c6-40c2-8a12-1015a5ff8e69",
+      "alt": "Vestuvinės šukuosenos su šydu iliustracinis pavyzdys",
+      "sourceSha256": "cab7295785814794696358ba2619bc9c196379fc934fa6172721b2e659de887f",
+      "sourceBytes": 2194210,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "d22fca2c-29c6-40c2-8a12-1015a5ff8e69",
+          "groupId": "525f5e0d-2da1-432e-bb9e-5083859a3260",
+          "src": "/content-assets/madbeauty/d22fca2c-29c6-40c2-8a12-1015a5ff8e69.webp",
+          "alt": "Vestuvinės šukuosenos su šydu iliustracinis pavyzdys",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 59790,
+          "sha256": "f2b88f4f72d56b830ab14a8843b031470e76c8cd2115a4e0c7fe686b58738590"
+        },
+        {
+          "id": "6473bd30-f977-495d-aa7a-6ab887a2ff43",
+          "groupId": "525f5e0d-2da1-432e-bb9e-5083859a3260",
+          "src": "/content-assets/madbeauty/6473bd30-f977-495d-aa7a-6ab887a2ff43.webp",
+          "alt": "Vestuvinės šukuosenos su šydu iliustracinis pavyzdys",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 39942,
+          "sha256": "24ee0dae351551c88e3ef82c376b679b3d319f2cb1773b163b359da968d5cefb"
+        },
+        {
+          "id": "10a9883b-d89b-44ba-a7ec-0cb9c0e283e3",
+          "groupId": "525f5e0d-2da1-432e-bb9e-5083859a3260",
+          "src": "/content-assets/madbeauty/10a9883b-d89b-44ba-a7ec-0cb9c0e283e3.webp",
+          "alt": "Vestuvinės šukuosenos su šydu iliustracinis pavyzdys",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 21742,
+          "sha256": "3384c2aeee01fb0b09d469957b679482f61630e52050fc8bc789f681843c3b4d"
+        },
+        {
+          "id": "5e6cdd2b-cfbd-4da1-9f69-9a5d21b5ccfd",
+          "groupId": "525f5e0d-2da1-432e-bb9e-5083859a3260",
+          "src": "/content-assets/madbeauty/5e6cdd2b-cfbd-4da1-9f69-9a5d21b5ccfd.webp",
+          "alt": "Vestuvinės šukuosenos su šydu iliustracinis pavyzdys",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 15600,
+          "sha256": "8943e2e3f1cf387a09454ddcddec15f009474ec3ae1e00e2e6c064f965006172"
+        },
+        {
+          "id": "e566d4c3-98e4-4597-a21f-09a83f5f1bff",
+          "groupId": "525f5e0d-2da1-432e-bb9e-5083859a3260",
+          "src": "/content-assets/madbeauty/e566d4c3-98e4-4597-a21f-09a83f5f1bff.webp",
+          "alt": "Vestuvinės šukuosenos su šydu iliustracinis pavyzdys",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 7112,
+          "sha256": "a9391d594f0f69bfe12f60c9dbd33de1c402c9220650a21ccb886408521744c1"
+        }
+      ]
+    },
+    {
+      "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+      "slug": "gidai/plauku-formavimas-kaina-trukme",
+      "assetId": "a8c5e3be-9e49-4000-b008-7e4cc9a5da28",
+      "alt": "Apvalus šepetys, rankšluostis, segtukai ir šukuosenos aksesuaras",
+      "sourceSha256": "e93abb1b42a3f2e3940c5b881dbb1b00d3c32815e233366a60ad088fb87caf79",
+      "sourceBytes": 2054903,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "a8c5e3be-9e49-4000-b008-7e4cc9a5da28",
+          "groupId": "45a786fb-ae90-4076-afc7-6039b21047ac",
+          "src": "/content-assets/madbeauty/a8c5e3be-9e49-4000-b008-7e4cc9a5da28.webp",
+          "alt": "Apvalus šepetys, rankšluostis, segtukai ir šukuosenos aksesuaras",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 75508,
+          "sha256": "ef4e5815e7b6747c5f93bd26ae4f6da9f00f50c3a07bdac19046f208e84e8a1b"
+        },
+        {
+          "id": "a9628b94-03ab-4adc-a9f0-a5d34aa15355",
+          "groupId": "45a786fb-ae90-4076-afc7-6039b21047ac",
+          "src": "/content-assets/madbeauty/a9628b94-03ab-4adc-a9f0-a5d34aa15355.webp",
+          "alt": "Apvalus šepetys, rankšluostis, segtukai ir šukuosenos aksesuaras",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 55756,
+          "sha256": "5ecc3543b33e532b10d2f6facf4e902fb4681e198354c2ee3237f4c65772bf48"
+        },
+        {
+          "id": "2bcc2159-a982-477b-b18c-7fa0a7f8867a",
+          "groupId": "45a786fb-ae90-4076-afc7-6039b21047ac",
+          "src": "/content-assets/madbeauty/2bcc2159-a982-477b-b18c-7fa0a7f8867a.webp",
+          "alt": "Apvalus šepetys, rankšluostis, segtukai ir šukuosenos aksesuaras",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 32524,
+          "sha256": "fb48c5e27d6497c7da2275cdc5497acef1669959836f9f8307ec8041c29f0f0c"
+        },
+        {
+          "id": "faff5e2f-e4b6-410e-a8d3-7b48470b88ee",
+          "groupId": "45a786fb-ae90-4076-afc7-6039b21047ac",
+          "src": "/content-assets/madbeauty/faff5e2f-e4b6-410e-a8d3-7b48470b88ee.webp",
+          "alt": "Apvalus šepetys, rankšluostis, segtukai ir šukuosenos aksesuaras",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 24058,
+          "sha256": "d1293953751c47794d3b646ee7a6cfdb1ed8f5b141619c110d1add6fbfbf5732"
+        },
+        {
+          "id": "206691bf-1c9e-4e6f-b205-09ada8b01d49",
+          "groupId": "45a786fb-ae90-4076-afc7-6039b21047ac",
+          "src": "/content-assets/madbeauty/206691bf-1c9e-4e6f-b205-09ada8b01d49.webp",
+          "alt": "Apvalus šepetys, rankšluostis, segtukai ir šukuosenos aksesuaras",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 10560,
+          "sha256": "7966ce3ed8c7cd0e5fa9930dd402b29d7ed63445ab2b6e22d35a9d4bcb5669ac"
+        }
+      ]
+    },
+    {
+      "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+      "slug": "gidai/plauku-formavimas-pasiruosimas",
+      "assetId": "d34ef76a-e7cb-4de7-975f-4fc87d520885",
+      "alt": "Šukos ir plaukų segtukai nedidelėje kosmetinėje",
+      "sourceSha256": "274ae410dd0df41b3ce14b1892b73e238cfc2e05ea7e9b5fa7167fae12e80edf",
+      "sourceBytes": 2262622,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "d34ef76a-e7cb-4de7-975f-4fc87d520885",
+          "groupId": "f79c5625-1ff3-4f7a-9792-03781d55cd68",
+          "src": "/content-assets/madbeauty/d34ef76a-e7cb-4de7-975f-4fc87d520885.webp",
+          "alt": "Šukos ir plaukų segtukai nedidelėje kosmetinėje",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 92028,
+          "sha256": "2b8e616c58f71f3987b72e95c87eddb9a9d0cc996f32fb6877ed55ae8c44a1f0"
+        },
+        {
+          "id": "79b34022-35ff-471f-a18c-f4b6c50c1b9c",
+          "groupId": "f79c5625-1ff3-4f7a-9792-03781d55cd68",
+          "src": "/content-assets/madbeauty/79b34022-35ff-471f-a18c-f4b6c50c1b9c.webp",
+          "alt": "Šukos ir plaukų segtukai nedidelėje kosmetinėje",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 65000,
+          "sha256": "b6aad15f5b55807f630aecdfb5a92e52bf9056b8f5084572d01046c502095e15"
+        },
+        {
+          "id": "4ced8a73-8265-49d2-8af5-66d396d112b1",
+          "groupId": "f79c5625-1ff3-4f7a-9792-03781d55cd68",
+          "src": "/content-assets/madbeauty/4ced8a73-8265-49d2-8af5-66d396d112b1.webp",
+          "alt": "Šukos ir plaukų segtukai nedidelėje kosmetinėje",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 35094,
+          "sha256": "18d4c45bec04a710ebe09194e51db168f4f6f4ca3e5de4166d8e57459c69467d"
+        },
+        {
+          "id": "73e40340-8dae-42c7-ab16-63bf6ae3daa6",
+          "groupId": "f79c5625-1ff3-4f7a-9792-03781d55cd68",
+          "src": "/content-assets/madbeauty/73e40340-8dae-42c7-ab16-63bf6ae3daa6.webp",
+          "alt": "Šukos ir plaukų segtukai nedidelėje kosmetinėje",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 25736,
+          "sha256": "2b8e4fdd7e6638e6055584ad2fc42e1ad41cd46feb0a3e446fa02af2c5af4806"
+        },
+        {
+          "id": "71bb7685-7f17-4e55-aa85-919e150519e8",
+          "groupId": "f79c5625-1ff3-4f7a-9792-03781d55cd68",
+          "src": "/content-assets/madbeauty/71bb7685-7f17-4e55-aa85-919e150519e8.webp",
+          "alt": "Šukos ir plaukų segtukai nedidelėje kosmetinėje",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 11524,
+          "sha256": "55463528c8b65fb591b37a77d7bddfdd4bbe1730704ecc1f37188b6c229f8d40"
+        }
+      ]
+    },
+    {
+      "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+      "slug": "gidai/plauku-formavimas-makiazas-kartu",
+      "assetId": "3f3d8ba9-f4dc-4314-860e-e28ceaa3d9a5",
+      "alt": "Plaukų ir makiažo priemonės greta tuščios užrašų knygelės",
+      "sourceSha256": "d4bbce93bba9dd7d001c03e49503caf6dee56d4fe2aa9ede1d528da5782b9e96",
+      "sourceBytes": 2281193,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "3f3d8ba9-f4dc-4314-860e-e28ceaa3d9a5",
+          "groupId": "83989a56-31fb-4f9f-8069-753143465f48",
+          "src": "/content-assets/madbeauty/3f3d8ba9-f4dc-4314-860e-e28ceaa3d9a5.webp",
+          "alt": "Plaukų ir makiažo priemonės greta tuščios užrašų knygelės",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 105968,
+          "sha256": "b3c2a899172a6aececbd5dcefef5ecbe33626374085b8907896cec36fe17d16e"
+        },
+        {
+          "id": "d64a6dae-3d21-4434-b7d2-48f7bc18a728",
+          "groupId": "83989a56-31fb-4f9f-8069-753143465f48",
+          "src": "/content-assets/madbeauty/d64a6dae-3d21-4434-b7d2-48f7bc18a728.webp",
+          "alt": "Plaukų ir makiažo priemonės greta tuščios užrašų knygelės",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 78102,
+          "sha256": "ae47e0263cb4b388c757e3ac87cbc567122a2d5aa89178d4a0767758c7d018ca"
+        },
+        {
+          "id": "4a4ed29a-fcd0-4e29-a67d-7e590be58b0c",
+          "groupId": "83989a56-31fb-4f9f-8069-753143465f48",
+          "src": "/content-assets/madbeauty/4a4ed29a-fcd0-4e29-a67d-7e590be58b0c.webp",
+          "alt": "Plaukų ir makiažo priemonės greta tuščios užrašų knygelės",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 45610,
+          "sha256": "de2dc365984cb886dfffd1c0d1dd0a58f2bb7f6359917ed30f7af5ba12a2e7d5"
+        },
+        {
+          "id": "daede9c9-8353-4492-8d54-6bd310f7c81e",
+          "groupId": "83989a56-31fb-4f9f-8069-753143465f48",
+          "src": "/content-assets/madbeauty/daede9c9-8353-4492-8d54-6bd310f7c81e.webp",
+          "alt": "Plaukų ir makiažo priemonės greta tuščios užrašų knygelės",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 32968,
+          "sha256": "50c2d39c38abde0ef2b1249dedc83e6a686f7373a2191ce0c1063dafe4dfb521"
+        },
+        {
+          "id": "01330da9-dd9b-4d16-b3be-99b4f3981d86",
+          "groupId": "83989a56-31fb-4f9f-8069-753143465f48",
+          "src": "/content-assets/madbeauty/01330da9-dd9b-4d16-b3be-99b4f3981d86.webp",
+          "alt": "Plaukų ir makiažo priemonės greta tuščios užrašų knygelės",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 14008,
+          "sha256": "e1a6228dd8ea803b1395f88aebd997b6cea00f64057a6d9ac7d6f8945fcc6dfa"
+        }
+      ]
+    },
+    {
+      "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+      "slug": "gidai/makiazas-gidas",
+      "assetId": "640499bc-5287-498b-a421-6932bf0f815b",
+      "alt": "Neutralaus makiažo iliustracinis portretas",
+      "sourceSha256": "a2c8932304cf69fea17712c7f9c479a049f75c6ef744888345caec01446be115",
+      "sourceBytes": 1912484,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "640499bc-5287-498b-a421-6932bf0f815b",
+          "groupId": "2c4e16f2-1e2f-4dbd-8d7e-381e359bb3df",
+          "src": "/content-assets/madbeauty/640499bc-5287-498b-a421-6932bf0f815b.webp",
+          "alt": "Neutralaus makiažo iliustracinis portretas",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 40344,
+          "sha256": "a9cb4680487081002829e16f7b61d9336a5a9a73e210cfea641b08f7ab819935"
+        },
+        {
+          "id": "26cf11dc-c175-4282-83ba-76126fa75053",
+          "groupId": "2c4e16f2-1e2f-4dbd-8d7e-381e359bb3df",
+          "src": "/content-assets/madbeauty/26cf11dc-c175-4282-83ba-76126fa75053.webp",
+          "alt": "Neutralaus makiažo iliustracinis portretas",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 27350,
+          "sha256": "bafbdd99baffe289d8b21def8ac6de922e7f7667d47f0a2f8e9a900a0086ce7a"
+        },
+        {
+          "id": "ea4ca47a-4180-4c2e-9cf5-58ed592b78f2",
+          "groupId": "2c4e16f2-1e2f-4dbd-8d7e-381e359bb3df",
+          "src": "/content-assets/madbeauty/ea4ca47a-4180-4c2e-9cf5-58ed592b78f2.webp",
+          "alt": "Neutralaus makiažo iliustracinis portretas",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 14688,
+          "sha256": "80052013ccb404d6f027fcb89bd57eb46fa600f530b3e463b94c5e284b1472d5"
+        },
+        {
+          "id": "1d09712a-a0f3-46fa-95d8-a21b06bd1fdb",
+          "groupId": "2c4e16f2-1e2f-4dbd-8d7e-381e359bb3df",
+          "src": "/content-assets/madbeauty/1d09712a-a0f3-46fa-95d8-a21b06bd1fdb.webp",
+          "alt": "Neutralaus makiažo iliustracinis portretas",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 10682,
+          "sha256": "64e7de3dfe63d8fb98183e005cd83cd6dbccbc71aacb840aab2ae59f9c678050"
+        },
+        {
+          "id": "f04a04fe-fcc8-45aa-af8f-b39935c51b21",
+          "groupId": "2c4e16f2-1e2f-4dbd-8d7e-381e359bb3df",
+          "src": "/content-assets/madbeauty/f04a04fe-fcc8-45aa-af8f-b39935c51b21.webp",
+          "alt": "Neutralaus makiažo iliustracinis portretas",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 4592,
+          "sha256": "49d682bfb40f1caffd5d65979601e7c4d9d0b3db416b84d2f77c323c08353f3c"
+        }
+      ]
+    },
+    {
+      "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+      "slug": "gidai/makiazas-dieninis-proginis",
+      "assetId": "5503a820-29f2-4d3e-b5b1-6015b25c8ef3",
+      "alt": "Du atskiri švelnaus dieninio ir ryškesnio vakarinio makiažo pavyzdžiai",
+      "sourceSha256": "02f49c1353433a880fe37b36f105f7344ee8c8f6cfe8cdbcef7fcbf5a21338e9",
+      "sourceBytes": 2202403,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "5503a820-29f2-4d3e-b5b1-6015b25c8ef3",
+          "groupId": "edc87f52-ea4d-4d43-91b5-a48e97e617a4",
+          "src": "/content-assets/madbeauty/5503a820-29f2-4d3e-b5b1-6015b25c8ef3.webp",
+          "alt": "Du atskiri švelnaus dieninio ir ryškesnio vakarinio makiažo pavyzdžiai",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 63218,
+          "sha256": "89917b98deba6405172d53797e40daebaa237ddc75b32bd1fada3aa36f76f865"
+        },
+        {
+          "id": "145be00a-eb75-4b7a-afcb-50972b0de135",
+          "groupId": "edc87f52-ea4d-4d43-91b5-a48e97e617a4",
+          "src": "/content-assets/madbeauty/145be00a-eb75-4b7a-afcb-50972b0de135.webp",
+          "alt": "Du atskiri švelnaus dieninio ir ryškesnio vakarinio makiažo pavyzdžiai",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 43214,
+          "sha256": "9bc0ddb56503589a5464b68f1a2c8c8b1acd211b9cf2952e0f4cb53b26bef8ea"
+        },
+        {
+          "id": "78f8fda7-d314-4f63-9c85-edc17d75d9b3",
+          "groupId": "edc87f52-ea4d-4d43-91b5-a48e97e617a4",
+          "src": "/content-assets/madbeauty/78f8fda7-d314-4f63-9c85-edc17d75d9b3.webp",
+          "alt": "Du atskiri švelnaus dieninio ir ryškesnio vakarinio makiažo pavyzdžiai",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 23562,
+          "sha256": "7d70e6b9fc988b6a748f4147073ed812ac48fc0af38da0eb58f56bc0b3680c91"
+        },
+        {
+          "id": "d540cd53-caaf-47c6-833b-d8b90188524d",
+          "groupId": "edc87f52-ea4d-4d43-91b5-a48e97e617a4",
+          "src": "/content-assets/madbeauty/d540cd53-caaf-47c6-833b-d8b90188524d.webp",
+          "alt": "Du atskiri švelnaus dieninio ir ryškesnio vakarinio makiažo pavyzdžiai",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 17266,
+          "sha256": "4832c885ee7598c5c58a6f3ff41bfb218fd3ea6726e7b1b7b5ad71f2f8d588d4"
+        },
+        {
+          "id": "06a7a4c2-1a28-43de-beac-fe4324e6a047",
+          "groupId": "edc87f52-ea4d-4d43-91b5-a48e97e617a4",
+          "src": "/content-assets/madbeauty/06a7a4c2-1a28-43de-beac-fe4324e6a047.webp",
+          "alt": "Du atskiri švelnaus dieninio ir ryškesnio vakarinio makiažo pavyzdžiai",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 7676,
+          "sha256": "a4e9c238162a978079db1faa1127069e083a77f34faa398abf53358a57bfe891"
+        }
+      ]
+    },
+    {
+      "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+      "slug": "gidai/makiazas-vestuvinis",
+      "assetId": "1c164629-1033-41de-8cf3-6c4565ac96db",
+      "alt": "Švelnaus vestuvinio makiažo iliustracinis portretas",
+      "sourceSha256": "69fb5dbcc9d3835d1ba5e17243d001c99b92b0054d7279562824cac09a4d203d",
+      "sourceBytes": 2027674,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "1c164629-1033-41de-8cf3-6c4565ac96db",
+          "groupId": "8ec9ff45-a938-4f6d-ad0e-0f9a44b9740f",
+          "src": "/content-assets/madbeauty/1c164629-1033-41de-8cf3-6c4565ac96db.webp",
+          "alt": "Švelnaus vestuvinio makiažo iliustracinis portretas",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 49124,
+          "sha256": "388131fe472e8ff06e91704650d7309265fb16b549ac35b55a6b03d4d5860b6c"
+        },
+        {
+          "id": "6c67144b-6745-444b-97d0-fbdb59a30c9c",
+          "groupId": "8ec9ff45-a938-4f6d-ad0e-0f9a44b9740f",
+          "src": "/content-assets/madbeauty/6c67144b-6745-444b-97d0-fbdb59a30c9c.webp",
+          "alt": "Švelnaus vestuvinio makiažo iliustracinis portretas",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 35206,
+          "sha256": "7b8bb915e456ce5cf828c9c357b429283f5b7c07bc7dd3f4732e15ecaa11dd74"
+        },
+        {
+          "id": "450c9403-4f31-4e49-9004-25fbed5be5e6",
+          "groupId": "8ec9ff45-a938-4f6d-ad0e-0f9a44b9740f",
+          "src": "/content-assets/madbeauty/450c9403-4f31-4e49-9004-25fbed5be5e6.webp",
+          "alt": "Švelnaus vestuvinio makiažo iliustracinis portretas",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 20454,
+          "sha256": "c267c22752a671a387a61df997de710d734e68e61d4d82fb52b7eb180019aede"
+        },
+        {
+          "id": "9d0b60ec-c9e1-442e-8014-171190857522",
+          "groupId": "8ec9ff45-a938-4f6d-ad0e-0f9a44b9740f",
+          "src": "/content-assets/madbeauty/9d0b60ec-c9e1-442e-8014-171190857522.webp",
+          "alt": "Švelnaus vestuvinio makiažo iliustracinis portretas",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 15258,
+          "sha256": "c2f8dc91eabcf9e7d0efe4af6a21e11931af6f783129ea6261c87972a3eeae50"
+        },
+        {
+          "id": "ab188f9f-250f-466b-899d-bdfadb3c2c68",
+          "groupId": "8ec9ff45-a938-4f6d-ad0e-0f9a44b9740f",
+          "src": "/content-assets/madbeauty/ab188f9f-250f-466b-899d-bdfadb3c2c68.webp",
+          "alt": "Švelnaus vestuvinio makiažo iliustracinis portretas",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 7482,
+          "sha256": "4b36aa402e31b7879071c6b35d5c0305a92277b7bd51035ac9ac72b0410761b2"
+        }
+      ]
+    },
+    {
+      "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+      "slug": "gidai/makiazas-nuotrauka",
+      "assetId": "2022e88e-96fa-4bc9-a7c4-0f0b61d508b9",
+      "alt": "Tolygiai apšviestas makiažo portretas su matoma odos tekstūra",
+      "sourceSha256": "d8858dab3355f195ec5e75829160f9656a6349ae883afdabcdf49edeb4f0c4fb",
+      "sourceBytes": 2302767,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "2022e88e-96fa-4bc9-a7c4-0f0b61d508b9",
+          "groupId": "b7de40d4-df8c-408c-950e-431abac015bd",
+          "src": "/content-assets/madbeauty/2022e88e-96fa-4bc9-a7c4-0f0b61d508b9.webp",
+          "alt": "Tolygiai apšviestas makiažo portretas su matoma odos tekstūra",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 73626,
+          "sha256": "95cdac36d13045a6ecff3ed64289f73be1d3ca70d108c7f8915ab84e54edbf7b"
+        },
+        {
+          "id": "3f130d10-623b-442c-8cba-c626ceb51c5b",
+          "groupId": "b7de40d4-df8c-408c-950e-431abac015bd",
+          "src": "/content-assets/madbeauty/3f130d10-623b-442c-8cba-c626ceb51c5b.webp",
+          "alt": "Tolygiai apšviestas makiažo portretas su matoma odos tekstūra",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 48828,
+          "sha256": "2cb2d1f0dce269c81d5f3d97be9afff449de01c8bce26e2f1d48a740c670b1ae"
+        },
+        {
+          "id": "15185f5b-6032-468d-8437-2336b9f7bc8a",
+          "groupId": "b7de40d4-df8c-408c-950e-431abac015bd",
+          "src": "/content-assets/madbeauty/15185f5b-6032-468d-8437-2336b9f7bc8a.webp",
+          "alt": "Tolygiai apšviestas makiažo portretas su matoma odos tekstūra",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 24232,
+          "sha256": "9cefdcd17ff58f241be9d8a8af3d2d8f2022df48966cc1a65f604c0d846830e9"
+        },
+        {
+          "id": "563f20f1-ee16-46d9-86e1-906d7103f0c7",
+          "groupId": "b7de40d4-df8c-408c-950e-431abac015bd",
+          "src": "/content-assets/madbeauty/563f20f1-ee16-46d9-86e1-906d7103f0c7.webp",
+          "alt": "Tolygiai apšviestas makiažo portretas su matoma odos tekstūra",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 16608,
+          "sha256": "b04e2df15dd3494ec7a5085484828a0d007f144274ea288d040316387973c517"
+        },
+        {
+          "id": "095b8b36-7ff4-4db6-9d05-381d48e7bcb4",
+          "groupId": "b7de40d4-df8c-408c-950e-431abac015bd",
+          "src": "/content-assets/madbeauty/095b8b36-7ff4-4db6-9d05-381d48e7bcb4.webp",
+          "alt": "Tolygiai apšviestas makiažo portretas su matoma odos tekstūra",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 6534,
+          "sha256": "ea4449a20c53b66f021db79b86c59cf4bedc43e0dd7b6a2a9d24f604fe1489f6"
+        }
+      ]
+    },
+    {
+      "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+      "slug": "gidai/makiazas-kaina-trukme",
+      "assetId": "469ce5c1-34ac-4280-993c-9be228f18d90",
+      "alt": "Makiažo šepetėliai, neutrali paletė ir laikinos priklijuojamos blakstienos",
+      "sourceSha256": "1f4991d72fd96aa2b4b244b2fbb7348c9dbb47fc13222cb276f8879c74d905f3",
+      "sourceBytes": 2495605,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "469ce5c1-34ac-4280-993c-9be228f18d90",
+          "groupId": "c2f8aeb4-df78-4eb1-96c8-8ca2190d493f",
+          "src": "/content-assets/madbeauty/469ce5c1-34ac-4280-993c-9be228f18d90.webp",
+          "alt": "Makiažo šepetėliai, neutrali paletė ir laikinos priklijuojamos blakstienos",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 115926,
+          "sha256": "1241f510ee3bb2fa19e001dcf3972a2f131e5d16e3256bd17430c6f086a0d1a8"
+        },
+        {
+          "id": "01e195a5-0b53-4ed4-ad49-10920a55e827",
+          "groupId": "c2f8aeb4-df78-4eb1-96c8-8ca2190d493f",
+          "src": "/content-assets/madbeauty/01e195a5-0b53-4ed4-ad49-10920a55e827.webp",
+          "alt": "Makiažo šepetėliai, neutrali paletė ir laikinos priklijuojamos blakstienos",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 80860,
+          "sha256": "2329d3c8a5d4ce3ea773c934d5a64bed114f57d1d6a7f6527d41baf4fd9dfcae"
+        },
+        {
+          "id": "04841ef2-51ed-4da4-8ca7-e1423f34a0be",
+          "groupId": "c2f8aeb4-df78-4eb1-96c8-8ca2190d493f",
+          "src": "/content-assets/madbeauty/04841ef2-51ed-4da4-8ca7-e1423f34a0be.webp",
+          "alt": "Makiažo šepetėliai, neutrali paletė ir laikinos priklijuojamos blakstienos",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 42916,
+          "sha256": "6dcdffddc2a1167354529f209fd822be63772abe85436bdf1c19e82c46f2d836"
+        },
+        {
+          "id": "d99dcb93-0c3a-497b-a285-e8bb242b8d80",
+          "groupId": "c2f8aeb4-df78-4eb1-96c8-8ca2190d493f",
+          "src": "/content-assets/madbeauty/d99dcb93-0c3a-497b-a285-e8bb242b8d80.webp",
+          "alt": "Makiažo šepetėliai, neutrali paletė ir laikinos priklijuojamos blakstienos",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 29942,
+          "sha256": "e5c77ab22c3edda85263f6ee7428590f23a9286e13874bf062078bbed74ee8a6"
+        },
+        {
+          "id": "e3e77424-01df-40cd-a354-8437b45e40e0",
+          "groupId": "c2f8aeb4-df78-4eb1-96c8-8ca2190d493f",
+          "src": "/content-assets/madbeauty/e3e77424-01df-40cd-a354-8437b45e40e0.webp",
+          "alt": "Makiažo šepetėliai, neutrali paletė ir laikinos priklijuojamos blakstienos",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 11358,
+          "sha256": "87524a16177ed8bd944e84d76a77b55c05c6911ba075df4181570c2df4b3c294"
+        }
+      ]
+    },
+    {
+      "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+      "slug": "gidai/makiazas-pamoka",
+      "assetId": "8d2fa14b-9419-4370-9f9f-be943f7e4f73",
+      "alt": "Makiažo šepetėlio naudojimo prie veidrodžio iliustracija",
+      "sourceSha256": "1063449221b2a8b6216a7d488d17cac75924fb4400c2c5bbd387be526f0d935a",
+      "sourceBytes": 2027182,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "8d2fa14b-9419-4370-9f9f-be943f7e4f73",
+          "groupId": "115648ad-c76e-4dba-8f53-4c7d5e8da75b",
+          "src": "/content-assets/madbeauty/8d2fa14b-9419-4370-9f9f-be943f7e4f73.webp",
+          "alt": "Makiažo šepetėlio naudojimo prie veidrodžio iliustracija",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 54250,
+          "sha256": "f3e57bde8ebc24e115ed3fc151ed9e422c8d859bfb13761503a097ca8665a1d4"
+        },
+        {
+          "id": "9ddd27e6-a3d5-41aa-97d3-e9039767e07b",
+          "groupId": "115648ad-c76e-4dba-8f53-4c7d5e8da75b",
+          "src": "/content-assets/madbeauty/9ddd27e6-a3d5-41aa-97d3-e9039767e07b.webp",
+          "alt": "Makiažo šepetėlio naudojimo prie veidrodžio iliustracija",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 40682,
+          "sha256": "5c0d0d0793b60d947bddf4bd2662be3aedf0081a2461eb6f76e725efc8777a1b"
+        },
+        {
+          "id": "7901e534-e997-459f-b798-142651699330",
+          "groupId": "115648ad-c76e-4dba-8f53-4c7d5e8da75b",
+          "src": "/content-assets/madbeauty/7901e534-e997-459f-b798-142651699330.webp",
+          "alt": "Makiažo šepetėlio naudojimo prie veidrodžio iliustracija",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 25396,
+          "sha256": "2a0656ce9008ec685e9c6bf2708b344fc1b9ad7d31650c7b9cab30afd6e63bea"
+        },
+        {
+          "id": "534623eb-a3a0-4af4-b2c9-c36318b35582",
+          "groupId": "115648ad-c76e-4dba-8f53-4c7d5e8da75b",
+          "src": "/content-assets/madbeauty/534623eb-a3a0-4af4-b2c9-c36318b35582.webp",
+          "alt": "Makiažo šepetėlio naudojimo prie veidrodžio iliustracija",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 19364,
+          "sha256": "ed578423b262845f2e0eb90d6877e9aec28a1a4547dc6ba44457bd05b133948c"
+        },
+        {
+          "id": "51db37c4-fe8a-4937-b881-ca109e3334c1",
+          "groupId": "115648ad-c76e-4dba-8f53-4c7d5e8da75b",
+          "src": "/content-assets/madbeauty/51db37c4-fe8a-4937-b881-ca109e3334c1.webp",
+          "alt": "Makiažo šepetėlio naudojimo prie veidrodžio iliustracija",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 9424,
+          "sha256": "c3f7f871267b29d7ddb237d0efba27b0bd0386a9454bde74c784b81cb6083fee"
+        }
+      ]
+    },
+    {
+      "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+      "slug": "gidai/nagu-dizainas-gidas",
+      "assetId": "0c9cfe11-8efc-4f83-aff3-f2cd3e25a330",
+      "alt": "Keturi dirbtiniai nagų dizaino pavyzdžiai rožiniais, alyviniais ir metalo atspalviais",
+      "sourceSha256": "e4b9d41f0a12be0f556283ab5a506c4bb14e30e84ea7e6ef83e3bb15bae5dd60",
+      "sourceBytes": 2051813,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "0c9cfe11-8efc-4f83-aff3-f2cd3e25a330",
+          "groupId": "3a5b837c-1fa3-47a0-a217-88c96a6efe81",
+          "src": "/content-assets/madbeauty/0c9cfe11-8efc-4f83-aff3-f2cd3e25a330.webp",
+          "alt": "Keturi dirbtiniai nagų dizaino pavyzdžiai rožiniais, alyviniais ir metalo atspalviais",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 56566,
+          "sha256": "2e426fe6979645ccf639336f1fac4a3f32d2a9e86d0a83f47bbac36dc25cf2b1"
+        },
+        {
+          "id": "b56006d5-5c92-4b5c-af20-add3fd8eaff6",
+          "groupId": "3a5b837c-1fa3-47a0-a217-88c96a6efe81",
+          "src": "/content-assets/madbeauty/b56006d5-5c92-4b5c-af20-add3fd8eaff6.webp",
+          "alt": "Keturi dirbtiniai nagų dizaino pavyzdžiai rožiniais, alyviniais ir metalo atspalviais",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 41286,
+          "sha256": "efe63a522ff5fde0688155109eaebc3e629298ff01d2b1889c29dead63c5d560"
+        },
+        {
+          "id": "c45ba386-cff8-4b07-8218-f1dd6e887bd7",
+          "groupId": "3a5b837c-1fa3-47a0-a217-88c96a6efe81",
+          "src": "/content-assets/madbeauty/c45ba386-cff8-4b07-8218-f1dd6e887bd7.webp",
+          "alt": "Keturi dirbtiniai nagų dizaino pavyzdžiai rožiniais, alyviniais ir metalo atspalviais",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 24336,
+          "sha256": "41f57be4de0121aa64b6f07b8c0900ac8a8723f3919c93b0108f17225f3b52c6"
+        },
+        {
+          "id": "f84c38ca-2824-4b53-8088-b674d4f6939a",
+          "groupId": "3a5b837c-1fa3-47a0-a217-88c96a6efe81",
+          "src": "/content-assets/madbeauty/f84c38ca-2824-4b53-8088-b674d4f6939a.webp",
+          "alt": "Keturi dirbtiniai nagų dizaino pavyzdžiai rožiniais, alyviniais ir metalo atspalviais",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 18290,
+          "sha256": "d3e2861f8493b9a1af53f1bedfba14c3ce5d2bf50e888396a037ff4a47c18860"
+        },
+        {
+          "id": "a6fecd8d-8d96-4e84-b8f9-860b31a8c3cd",
+          "groupId": "3a5b837c-1fa3-47a0-a217-88c96a6efe81",
+          "src": "/content-assets/madbeauty/a6fecd8d-8d96-4e84-b8f9-860b31a8c3cd.webp",
+          "alt": "Keturi dirbtiniai nagų dizaino pavyzdžiai rožiniais, alyviniais ir metalo atspalviais",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 8474,
+          "sha256": "b297e3eca45a7abde8ba25db5903aa9c5314fc14e18df7db8a6107ccb7d655cb"
+        }
+      ]
+    },
+    {
+      "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+      "slug": "gidai/bendri-vizitu-derinimas",
+      "assetId": "99839b41-cab8-455f-930e-62a5e19eac22",
+      "alt": "Tuščias vizitų planavimo tinklelis greta šukų ir makiažo šepetėlio",
+      "sourceSha256": "fd7c109b46239b2d25d648c5321790f9b7277ae1f1207586b8f6fe835576e265",
+      "sourceBytes": 2325982,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "99839b41-cab8-455f-930e-62a5e19eac22",
+          "groupId": "bceb4c8a-fe64-4a71-8ff1-1e5e09776a71",
+          "src": "/content-assets/madbeauty/99839b41-cab8-455f-930e-62a5e19eac22.webp",
+          "alt": "Tuščias vizitų planavimo tinklelis greta šukų ir makiažo šepetėlio",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 108780,
+          "sha256": "73f6fb573a7c062751a33f07af5a41709d367c99865fe95968477b832380c83b"
+        },
+        {
+          "id": "34f74f5e-2d30-492a-9f80-7b0f863f7a64",
+          "groupId": "bceb4c8a-fe64-4a71-8ff1-1e5e09776a71",
+          "src": "/content-assets/madbeauty/34f74f5e-2d30-492a-9f80-7b0f863f7a64.webp",
+          "alt": "Tuščias vizitų planavimo tinklelis greta šukų ir makiažo šepetėlio",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 76694,
+          "sha256": "5befb60555d18030e84732d7a3e1882f32bb36aa63000fd93a706f8ad3fdfc07"
+        },
+        {
+          "id": "521c7055-d341-419b-b141-5709867eddba",
+          "groupId": "bceb4c8a-fe64-4a71-8ff1-1e5e09776a71",
+          "src": "/content-assets/madbeauty/521c7055-d341-419b-b141-5709867eddba.webp",
+          "alt": "Tuščias vizitų planavimo tinklelis greta šukų ir makiažo šepetėlio",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 40642,
+          "sha256": "84ae7bae14236d6503001fec53755d4763dbf9859ebf5e20bd79d83758023419"
+        },
+        {
+          "id": "96b615d8-ed0e-45c4-9ea9-0a4bafbb9cd4",
+          "groupId": "bceb4c8a-fe64-4a71-8ff1-1e5e09776a71",
+          "src": "/content-assets/madbeauty/96b615d8-ed0e-45c4-9ea9-0a4bafbb9cd4.webp",
+          "alt": "Tuščias vizitų planavimo tinklelis greta šukų ir makiažo šepetėlio",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 28242,
+          "sha256": "06308df0e791566bd7f52d64eb86c899eeadbf433881cc373d31758699e25abb"
+        },
+        {
+          "id": "59252c3b-f256-4778-aa4a-5c2aeab7028d",
+          "groupId": "bceb4c8a-fe64-4a71-8ff1-1e5e09776a71",
+          "src": "/content-assets/madbeauty/59252c3b-f256-4778-aa4a-5c2aeab7028d.webp",
+          "alt": "Tuščias vizitų planavimo tinklelis greta šukų ir makiažo šepetėlio",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 10608,
+          "sha256": "7beec5c0b5203db1edf0e8eaaf9464c2a78a19a13aaf29fa4645b6d92d63798f"
+        }
+      ]
+    },
+    {
+      "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+      "slug": "gidai/sezonai-kaledos",
+      "assetId": "9a186586-bf77-4403-af1a-b251157b7dc9",
+      "alt": "Kalėdinio nagų dizaino pavyzdžiai su žaliais ir auksiniais akcentais",
+      "sourceSha256": "3d4a6990ca0d9cc45c96782192e6a68bd602029609fe95591ee7e83230b156d4",
+      "sourceBytes": 1877249,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "9a186586-bf77-4403-af1a-b251157b7dc9",
+          "groupId": "48f45e4e-d786-4b89-9a9e-93fbca70c668",
+          "src": "/content-assets/madbeauty/9a186586-bf77-4403-af1a-b251157b7dc9.webp",
+          "alt": "Kalėdinio nagų dizaino pavyzdžiai su žaliais ir auksiniais akcentais",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 50824,
+          "sha256": "9a105ae5bfb1d3c2995f475239c9ea1c320f77d5f954847c2e49c7933ba2ad91"
+        },
+        {
+          "id": "fbc949ab-c9dc-44fd-9501-34b808e49b56",
+          "groupId": "48f45e4e-d786-4b89-9a9e-93fbca70c668",
+          "src": "/content-assets/madbeauty/fbc949ab-c9dc-44fd-9501-34b808e49b56.webp",
+          "alt": "Kalėdinio nagų dizaino pavyzdžiai su žaliais ir auksiniais akcentais",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 38482,
+          "sha256": "d6e4044c4d6f64bfc9516af722bc3d0d653ab9f0a46f8b798cafcd3eab6c6482"
+        },
+        {
+          "id": "4e93204f-7f6a-442f-a83d-928ee0965ee9",
+          "groupId": "48f45e4e-d786-4b89-9a9e-93fbca70c668",
+          "src": "/content-assets/madbeauty/4e93204f-7f6a-442f-a83d-928ee0965ee9.webp",
+          "alt": "Kalėdinio nagų dizaino pavyzdžiai su žaliais ir auksiniais akcentais",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 23272,
+          "sha256": "1c40000ad1601873967e36476cd7abee8c1cd8ead1e64e2909405cc2977c17b0"
+        },
+        {
+          "id": "3b6b7044-8440-4c89-a903-16fee577c22a",
+          "groupId": "48f45e4e-d786-4b89-9a9e-93fbca70c668",
+          "src": "/content-assets/madbeauty/3b6b7044-8440-4c89-a903-16fee577c22a.webp",
+          "alt": "Kalėdinio nagų dizaino pavyzdžiai su žaliais ir auksiniais akcentais",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 17780,
+          "sha256": "361afcd5450445293a4851760d094d8a51e216e019723c7924b442ad2564f114"
+        },
+        {
+          "id": "5ab90e50-d22d-4b96-af90-a2c2cf61c44a",
+          "groupId": "48f45e4e-d786-4b89-9a9e-93fbca70c668",
+          "src": "/content-assets/madbeauty/5ab90e50-d22d-4b96-af90-a2c2cf61c44a.webp",
+          "alt": "Kalėdinio nagų dizaino pavyzdžiai su žaliais ir auksiniais akcentais",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 8578,
+          "sha256": "674f1e6b3aa7d529ce642001a10c4a8a530e0fb0e9d12fc2f48280182f0422b4"
+        }
+      ]
+    },
+    {
+      "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+      "slug": "gidai/sezonai-naujieji",
+      "assetId": "76b10fbc-19e2-48a3-bd9b-d09c41a390df",
+      "alt": "Naujųjų metų nagų dizaino pavyzdžiai su sidabriniu blizgesiu",
+      "sourceSha256": "f93975bcdd0b3be47a8b960247df48803bb1b6a86ebac52e83872459f11e0236",
+      "sourceBytes": 2313864,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "76b10fbc-19e2-48a3-bd9b-d09c41a390df",
+          "groupId": "7b470a9e-1c72-4fb4-9132-7b44f2334a60",
+          "src": "/content-assets/madbeauty/76b10fbc-19e2-48a3-bd9b-d09c41a390df.webp",
+          "alt": "Naujųjų metų nagų dizaino pavyzdžiai su sidabriniu blizgesiu",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 102916,
+          "sha256": "6a33ed71bd49f949124f60b0d9ebdbda5163be58485e71313654d299f5c6b29d"
+        },
+        {
+          "id": "53991835-d2c5-4249-ba51-7a15bef962a1",
+          "groupId": "7b470a9e-1c72-4fb4-9132-7b44f2334a60",
+          "src": "/content-assets/madbeauty/53991835-d2c5-4249-ba51-7a15bef962a1.webp",
+          "alt": "Naujųjų metų nagų dizaino pavyzdžiai su sidabriniu blizgesiu",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 74238,
+          "sha256": "71d9292601d6ff444bca75561d6c6a157bc2b7dab3f92c608d87da4661a2565f"
+        },
+        {
+          "id": "4a1b2dfa-642c-49c0-8128-071a06c78ddf",
+          "groupId": "7b470a9e-1c72-4fb4-9132-7b44f2334a60",
+          "src": "/content-assets/madbeauty/4a1b2dfa-642c-49c0-8128-071a06c78ddf.webp",
+          "alt": "Naujųjų metų nagų dizaino pavyzdžiai su sidabriniu blizgesiu",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 42812,
+          "sha256": "805780bd06a9c0a0c5276ea48d940292d7badb95b41d7e69dadcbfa36c56ec8c"
+        },
+        {
+          "id": "5d3445a4-4f66-48ae-af1b-25f7eeb14028",
+          "groupId": "7b470a9e-1c72-4fb4-9132-7b44f2334a60",
+          "src": "/content-assets/madbeauty/5d3445a4-4f66-48ae-af1b-25f7eeb14028.webp",
+          "alt": "Naujųjų metų nagų dizaino pavyzdžiai su sidabriniu blizgesiu",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 31042,
+          "sha256": "eb710f09b61f19884b6b3cbb440b9514db8b0a1a6843a1c60db1c69d09cfdaf3"
+        },
+        {
+          "id": "d0b1754f-9ceb-42f1-aa4d-e0f58c07f0e0",
+          "groupId": "7b470a9e-1c72-4fb4-9132-7b44f2334a60",
+          "src": "/content-assets/madbeauty/d0b1754f-9ceb-42f1-aa4d-e0f58c07f0e0.webp",
+          "alt": "Naujųjų metų nagų dizaino pavyzdžiai su sidabriniu blizgesiu",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 13106,
+          "sha256": "630011a12202fa9bbf6961f17c4198286b5df5e4dafdc0ecf0ec2b29b6d92b82"
+        }
+      ]
+    },
+    {
+      "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+      "slug": "gidai/sezonai-valentino",
+      "assetId": "e6c78e6a-9f63-4ae5-8f27-5e277651289a",
+      "alt": "Rožiniai nagų dizaino pavyzdžiai su mažos širdelės akcentu",
+      "sourceSha256": "71ed9816e7dcde7aceb720ea8d655eda0a94e7b3b328e0b2fb370e3f4e294ff4",
+      "sourceBytes": 1906145,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "e6c78e6a-9f63-4ae5-8f27-5e277651289a",
+          "groupId": "cf73d1ce-379f-4db6-96b8-08e832327279",
+          "src": "/content-assets/madbeauty/e6c78e6a-9f63-4ae5-8f27-5e277651289a.webp",
+          "alt": "Rožiniai nagų dizaino pavyzdžiai su mažos širdelės akcentu",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 45170,
+          "sha256": "15e26711ba041bdd19957f781d820e8445abfd6c22f1f3f84fd44b8bd2164cd9"
+        },
+        {
+          "id": "783eb7bf-c593-49f5-a1d2-c51c5e81fa46",
+          "groupId": "cf73d1ce-379f-4db6-96b8-08e832327279",
+          "src": "/content-assets/madbeauty/783eb7bf-c593-49f5-a1d2-c51c5e81fa46.webp",
+          "alt": "Rožiniai nagų dizaino pavyzdžiai su mažos širdelės akcentu",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 32504,
+          "sha256": "3d5f71ee8d27259435ef875ad9423660549e79c2f3cf0fab7bad7b34a1c92140"
+        },
+        {
+          "id": "c2ea6f78-a458-4468-a11c-386848fcfa97",
+          "groupId": "cf73d1ce-379f-4db6-96b8-08e832327279",
+          "src": "/content-assets/madbeauty/c2ea6f78-a458-4468-a11c-386848fcfa97.webp",
+          "alt": "Rožiniai nagų dizaino pavyzdžiai su mažos širdelės akcentu",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 18762,
+          "sha256": "091a4d36e2f0e63ff337e177f1a7060ecc3b120880d6ca1687e6d9730f0753da"
+        },
+        {
+          "id": "a03925ee-1720-4b9c-8409-52b20aa4b330",
+          "groupId": "cf73d1ce-379f-4db6-96b8-08e832327279",
+          "src": "/content-assets/madbeauty/a03925ee-1720-4b9c-8409-52b20aa4b330.webp",
+          "alt": "Rožiniai nagų dizaino pavyzdžiai su mažos širdelės akcentu",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 13762,
+          "sha256": "b0afd30f103f6b3b81ad4f407b0ab1b7e690b5e18d4e7ba4fa579e6da9db698d"
+        },
+        {
+          "id": "dd7e9bdb-4f4e-4a9d-b54a-e6acf8634ad3",
+          "groupId": "cf73d1ce-379f-4db6-96b8-08e832327279",
+          "src": "/content-assets/madbeauty/dd7e9bdb-4f4e-4a9d-b54a-e6acf8634ad3.webp",
+          "alt": "Rožiniai nagų dizaino pavyzdžiai su mažos širdelės akcentu",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 6090,
+          "sha256": "8ef9c0f94d866aeb53f2ce6216d95372eff9a86bc650b740cce75518873e86ad"
+        }
+      ]
+    },
+    {
+      "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+      "slug": "gidai/sezonai-velykos",
+      "assetId": "e857ccc4-7299-402d-8da1-e0a933ec6838",
+      "alt": "Tuščia užrašų knygelė, kosmetinė ir pavasarinė tulpė",
+      "sourceSha256": "055ab4ca22a4572ffeaccd7a4804b3e56161310c396957c7efdeadcff6712f9d",
+      "sourceBytes": 2397494,
+      "provider": "BUILT_IN_IMAGEGEN",
+      "actualOriginalPixelsInspected": true,
+      "desktopMobileDecoded": true,
+      "variants": [
+        {
+          "id": "e857ccc4-7299-402d-8da1-e0a933ec6838",
+          "groupId": "4cba9cbc-1f53-4ada-80fa-bf3f29247aee",
+          "src": "/content-assets/madbeauty/e857ccc4-7299-402d-8da1-e0a933ec6838.webp",
+          "alt": "Tuščia užrašų knygelė, kosmetinė ir pavasarinė tulpė",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 110624,
+          "sha256": "27272b295388e48efc40318c96d85631fc89c0f8cfeca1899992f3c4980af5a3"
+        },
+        {
+          "id": "bae32ce2-b683-4d30-abb1-6eb52daa1ea9",
+          "groupId": "4cba9cbc-1f53-4ada-80fa-bf3f29247aee",
+          "src": "/content-assets/madbeauty/bae32ce2-b683-4d30-abb1-6eb52daa1ea9.webp",
+          "alt": "Tuščia užrašų knygelė, kosmetinė ir pavasarinė tulpė",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 82038,
+          "sha256": "ec92e522be410b46f4402bc42ab5cad15d549616f0ca81258170e131aa4b144a"
+        },
+        {
+          "id": "e1621b0c-8d0c-47ee-93c9-e86c01c5a433",
+          "groupId": "4cba9cbc-1f53-4ada-80fa-bf3f29247aee",
+          "src": "/content-assets/madbeauty/e1621b0c-8d0c-47ee-93c9-e86c01c5a433.webp",
+          "alt": "Tuščia užrašų knygelė, kosmetinė ir pavasarinė tulpė",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 46924,
+          "sha256": "28be239fd8a39fb1ec6fd2087846e9b301b7954bfb7b48c3a7cf10e5718d575d"
+        },
+        {
+          "id": "bcac7a1f-f927-4023-94da-0dd3da5fe9be",
+          "groupId": "4cba9cbc-1f53-4ada-80fa-bf3f29247aee",
+          "src": "/content-assets/madbeauty/bcac7a1f-f927-4023-94da-0dd3da5fe9be.webp",
+          "alt": "Tuščia užrašų knygelė, kosmetinė ir pavasarinė tulpė",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 33334,
+          "sha256": "a466251c54b45a6a350edbc2971add764756ad235850ee3240e493bd8082576f"
+        },
+        {
+          "id": "4f5b388a-bc39-4bf7-b74c-c103e4c47ce8",
+          "groupId": "4cba9cbc-1f53-4ada-80fa-bf3f29247aee",
+          "src": "/content-assets/madbeauty/4f5b388a-bc39-4bf7-b74c-c103e4c47ce8.webp",
+          "alt": "Tuščia užrašų knygelė, kosmetinė ir pavasarinė tulpė",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original OpenAI ImageGen editorial illustration, generated and actual pixels inspected 2026-10-07. Fictional illustrative scene; not a real provider portfolio, client result, branded product, medical evidence or professional review.",
+          "bytes": 13242,
+          "sha256": "a9f98f22500685f03a7da9fb43a46c7e3e910e3c1629db85d715b3798472ea70"
+        }
+      ]
+    }
+  ],
+  "all180Assets": {
+    "checkedAt": "2026-10-07T06:26:17.433Z",
+    "assets": [
+      {
+        "id": "0c9cfe11-8efc-4f83-aff3-f2cd3e25a330",
+        "src": "/content-assets/madbeauty/0c9cfe11-8efc-4f83-aff3-f2cd3e25a330.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 56566,
+        "sha256": "2e426fe6979645ccf639336f1fac4a3f32d2a9e86d0a83f47bbac36dc25cf2b1"
+      },
+      {
+        "id": "b56006d5-5c92-4b5c-af20-add3fd8eaff6",
+        "src": "/content-assets/madbeauty/b56006d5-5c92-4b5c-af20-add3fd8eaff6.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 41286,
+        "sha256": "efe63a522ff5fde0688155109eaebc3e629298ff01d2b1889c29dead63c5d560"
+      },
+      {
+        "id": "c45ba386-cff8-4b07-8218-f1dd6e887bd7",
+        "src": "/content-assets/madbeauty/c45ba386-cff8-4b07-8218-f1dd6e887bd7.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 24336,
+        "sha256": "41f57be4de0121aa64b6f07b8c0900ac8a8723f3919c93b0108f17225f3b52c6"
+      },
+      {
+        "id": "f84c38ca-2824-4b53-8088-b674d4f6939a",
+        "src": "/content-assets/madbeauty/f84c38ca-2824-4b53-8088-b674d4f6939a.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 18290,
+        "sha256": "d3e2861f8493b9a1af53f1bedfba14c3ce5d2bf50e888396a037ff4a47c18860"
+      },
+      {
+        "id": "a6fecd8d-8d96-4e84-b8f9-860b31a8c3cd",
+        "src": "/content-assets/madbeauty/a6fecd8d-8d96-4e84-b8f9-860b31a8c3cd.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8474,
+        "sha256": "b297e3eca45a7abde8ba25db5903aa9c5314fc14e18df7db8a6107ccb7d655cb"
+      },
+      {
+        "id": "0f257213-43e6-4374-bf72-344f00942e26",
+        "src": "/content-assets/madbeauty/0f257213-43e6-4374-bf72-344f00942e26.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 57312,
+        "sha256": "1a62c0b0ab9844037a1f085d5276a6ab7835431fe33e824bb8a830738ef6e694"
+      },
+      {
+        "id": "0129d25f-c23a-403f-ab1f-a42a2527df39",
+        "src": "/content-assets/madbeauty/0129d25f-c23a-403f-ab1f-a42a2527df39.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 39978,
+        "sha256": "7bd24deacd7b241a049580b4091958b3f87a70110063ab2be1dddf5f02c6b188"
+      },
+      {
+        "id": "d76c85f3-6a17-47eb-ba57-849db830106d",
+        "src": "/content-assets/madbeauty/d76c85f3-6a17-47eb-ba57-849db830106d.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 22568,
+        "sha256": "d62c28ac69f1a834107ee255d2123e382d7e5ef99f586c6ed27f18a8e4f70f93"
+      },
+      {
+        "id": "ddbe0b91-407e-4348-aba4-28c742ff8864",
+        "src": "/content-assets/madbeauty/ddbe0b91-407e-4348-aba4-28c742ff8864.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 16714,
+        "sha256": "94560f5abcdc6271416cdd786642003a0f60ace92de1f3bad4ed4880cbd9c431"
+      },
+      {
+        "id": "fe19c79b-60d9-468e-be8c-3dd306252edb",
+        "src": "/content-assets/madbeauty/fe19c79b-60d9-468e-be8c-3dd306252edb.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 7970,
+        "sha256": "c3e9cba9dd539e9790ab22273bec423c8fe9be2232ac60b75d063b15c4b0de46"
+      },
+      {
+        "id": "1d89b1a1-541b-4dd9-bc8b-d4101975b8fc",
+        "src": "/content-assets/madbeauty/1d89b1a1-541b-4dd9-bc8b-d4101975b8fc.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 86022,
+        "sha256": "b77587f3e27cc1176db12b37ba9aa08139d40c7438558ec02f2de3ab1a45df5e"
+      },
+      {
+        "id": "b28655a6-3f6d-4bbe-99b2-e4be729c3693",
+        "src": "/content-assets/madbeauty/b28655a6-3f6d-4bbe-99b2-e4be729c3693.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 57968,
+        "sha256": "3346e386fa193fd7ca7a57412c952f65d404bb8b22cb66aa269b08a7562c61e1"
+      },
+      {
+        "id": "4a09b270-1be9-45a8-b7e9-1110be1087f4",
+        "src": "/content-assets/madbeauty/4a09b270-1be9-45a8-b7e9-1110be1087f4.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 29652,
+        "sha256": "5e3237a538e5ce529a55685476f08d65f3b9acbc3cb5cd1a4510e40f4d386620"
+      },
+      {
+        "id": "c9d26bfd-302f-4ec9-b4f1-7c60b3ecfec9",
+        "src": "/content-assets/madbeauty/c9d26bfd-302f-4ec9-b4f1-7c60b3ecfec9.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 20854,
+        "sha256": "2dad50d5124d4286857b561c36298526a7f30f205d2ebbc82b61644988fa00a8"
+      },
+      {
+        "id": "1de1fab2-8428-49c2-82da-b55645a63aaa",
+        "src": "/content-assets/madbeauty/1de1fab2-8428-49c2-82da-b55645a63aaa.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8956,
+        "sha256": "9c39d2a358d6d6e0eb7c9518bef1a3fb139cadb4297e33acd10a302e35c80d48"
+      },
+      {
+        "id": "b54b2dbb-a26d-4252-af38-b01b64c75efd",
+        "src": "/content-assets/madbeauty/b54b2dbb-a26d-4252-af38-b01b64c75efd.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 57204,
+        "sha256": "6f3e027cfccf90274a3358dbfdc833c0d32f9cfca521cc029e2cfdb67c25d531"
+      },
+      {
+        "id": "9d4c6714-ba36-40fc-8380-a4fb429734f4",
+        "src": "/content-assets/madbeauty/9d4c6714-ba36-40fc-8380-a4fb429734f4.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 39898,
+        "sha256": "97375fe4d4da56e46b40d70c289d1877eb6190729bd5cab4212300fa6dfe7339"
+      },
+      {
+        "id": "635a031c-6d2d-4f36-a973-bedfb2904043",
+        "src": "/content-assets/madbeauty/635a031c-6d2d-4f36-a973-bedfb2904043.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 22928,
+        "sha256": "4a7e51edb1324cd6ec826f2e768c09cbc5b6fec7b4deafea703114ebafa39a3b"
+      },
+      {
+        "id": "807f4928-5818-4574-9308-36082fed5e1e",
+        "src": "/content-assets/madbeauty/807f4928-5818-4574-9308-36082fed5e1e.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 16950,
+        "sha256": "724485840a4ce0f81e274718ff60c88f5557e5c7ecda76fb6560b1c6026ca065"
+      },
+      {
+        "id": "97156c05-3a75-4bef-8e97-43c040c559fd",
+        "src": "/content-assets/madbeauty/97156c05-3a75-4bef-8e97-43c040c559fd.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8188,
+        "sha256": "66fef05fd22103a070f8104306bff3bfa62d814dc00c53fbc44d6a44a8f93541"
+      },
+      {
+        "id": "632e055a-0d94-472c-9138-00fc010c8c10",
+        "src": "/content-assets/madbeauty/632e055a-0d94-472c-9138-00fc010c8c10.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 59062,
+        "sha256": "2149444e9691a32c2ef4389f0dad481c11c0ae1d4c70581b33f4cfacc5e83c84"
+      },
+      {
+        "id": "2f6d2ce9-119f-4b88-a208-d780c53acb6f",
+        "src": "/content-assets/madbeauty/2f6d2ce9-119f-4b88-a208-d780c53acb6f.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 40404,
+        "sha256": "8982073a580c42c129f492cedda511ae91a08f6b2ca9a12f45e288f8720e525d"
+      },
+      {
+        "id": "510c9784-7a3d-4462-802f-edb0552c7bdc",
+        "src": "/content-assets/madbeauty/510c9784-7a3d-4462-802f-edb0552c7bdc.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 22378,
+        "sha256": "1a153b8ce727a8d13abc97cd87bab7ec93df6a363989d1e9f9e73344d1beac16"
+      },
+      {
+        "id": "5853620b-2340-4f25-8384-b4ad73d09651",
+        "src": "/content-assets/madbeauty/5853620b-2340-4f25-8384-b4ad73d09651.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 16324,
+        "sha256": "bcb7f7ed9522603400014480c73256cb60af5812c8324c5c426649d49ea15c1e"
+      },
+      {
+        "id": "3709dcb8-14ee-46aa-8dd0-93ccef1df5cc",
+        "src": "/content-assets/madbeauty/3709dcb8-14ee-46aa-8dd0-93ccef1df5cc.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 7946,
+        "sha256": "b04c407e25b6a281b6ea15f76124bd2640a81e824b822857c55b46c655012fff"
+      },
+      {
+        "id": "247fc275-3e88-4de6-a8e8-aed5bba45240",
+        "src": "/content-assets/madbeauty/247fc275-3e88-4de6-a8e8-aed5bba45240.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 74702,
+        "sha256": "f5a9b489cb7ee61d148f6cdf41c1aee17e162586c7b0a3d8cfd46281d84905e3"
+      },
+      {
+        "id": "8dfe901a-6997-4000-a54e-a64554d4803d",
+        "src": "/content-assets/madbeauty/8dfe901a-6997-4000-a54e-a64554d4803d.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 51890,
+        "sha256": "f741e74ed28fd99ebbb468b680098d1abd89a059d7ff0aa9a4460df77be6fd07"
+      },
+      {
+        "id": "64b54ac3-449a-4d83-924a-9896a0eea0f1",
+        "src": "/content-assets/madbeauty/64b54ac3-449a-4d83-924a-9896a0eea0f1.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 26816,
+        "sha256": "14b0f8b9a2ffd841f1f338e7cd0c9bc2dfec0d4d51c8120fa2bed605950bb3dd"
+      },
+      {
+        "id": "1b2ac039-0abd-4d39-937e-1ed39f7d0b50",
+        "src": "/content-assets/madbeauty/1b2ac039-0abd-4d39-937e-1ed39f7d0b50.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 18852,
+        "sha256": "19b9c61e1c8cadb51c24ab34b5da6751c80d04cb68dba4c5729838c328d37b6e"
+      },
+      {
+        "id": "039dd198-35cd-4a20-90ce-d036574c13a0",
+        "src": "/content-assets/madbeauty/039dd198-35cd-4a20-90ce-d036574c13a0.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 7772,
+        "sha256": "fdf965421328401feaa7b56f1f14f34b60ba678876733fb68b130bd3c9a8166e"
+      },
+      {
+        "id": "51eb7eee-98b3-405f-b9e9-72752c8cc30d",
+        "src": "/content-assets/madbeauty/51eb7eee-98b3-405f-b9e9-72752c8cc30d.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 105342,
+        "sha256": "6148bc2d187bca188dd85085cd5fc47e1ebe9e2bf41ddace6aa9bf96af64aa02"
+      },
+      {
+        "id": "5fc5335b-19a3-4aff-b171-54697d931bd8",
+        "src": "/content-assets/madbeauty/5fc5335b-19a3-4aff-b171-54697d931bd8.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 71708,
+        "sha256": "f1d0bc0429c95ab16984a59a8022cf12d6790181591afaa1cc8c2bf4b9f08b3d"
+      },
+      {
+        "id": "63374a55-37ed-49a7-a27c-a86b2992ac25",
+        "src": "/content-assets/madbeauty/63374a55-37ed-49a7-a27c-a86b2992ac25.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 37262,
+        "sha256": "3314db0a70cf7eb943325d55fad32f660fdf6b68f7aa420e1d1d0a02eff415a9"
+      },
+      {
+        "id": "830f0fbe-b8b7-41b3-9f54-5271b7190424",
+        "src": "/content-assets/madbeauty/830f0fbe-b8b7-41b3-9f54-5271b7190424.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 26202,
+        "sha256": "3310250be359fb41205436aaecc5a4e87227d1cff5218a319cd93e1fc664c3eb"
+      },
+      {
+        "id": "f24226fc-7e51-45fe-a9fb-ef160ea46b19",
+        "src": "/content-assets/madbeauty/f24226fc-7e51-45fe-a9fb-ef160ea46b19.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 11268,
+        "sha256": "2f763b3dea73bba55b6d85117bd399da20557078fef0b555712efa00c0af4ec9"
+      },
+      {
+        "id": "c402d3eb-3242-408c-a7a7-c7ff254204d4",
+        "src": "/content-assets/madbeauty/c402d3eb-3242-408c-a7a7-c7ff254204d4.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 68098,
+        "sha256": "3f8731cbd5846fe8f8f9291e90bf409c3ed028b65048a389893ec5b068e274b3"
+      },
+      {
+        "id": "098aa7f3-3721-45d3-a40b-871d0efe7899",
+        "src": "/content-assets/madbeauty/098aa7f3-3721-45d3-a40b-871d0efe7899.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 46954,
+        "sha256": "45d336b43bf712d5fed09b8709e54013af5335d2d78dc443e96e08b70a1ade94"
+      },
+      {
+        "id": "d92c37c0-d472-4450-81b8-703561913c7e",
+        "src": "/content-assets/madbeauty/d92c37c0-d472-4450-81b8-703561913c7e.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 24488,
+        "sha256": "5144fddc1e9a9affbc9de85e9edd71ecab508b08af9acd84b37a44727f432511"
+      },
+      {
+        "id": "2ce12e85-6fe5-45b8-aa2a-0d186583b5a6",
+        "src": "/content-assets/madbeauty/2ce12e85-6fe5-45b8-aa2a-0d186583b5a6.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 17474,
+        "sha256": "018403a42af040e9d8bd4692811a778074609a1cbb478255e475e2d327aced04"
+      },
+      {
+        "id": "b6647784-1203-4bd6-b193-d9e1955bef83",
+        "src": "/content-assets/madbeauty/b6647784-1203-4bd6-b193-d9e1955bef83.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8034,
+        "sha256": "c9944f6049506db5db46936a3852d7c72332f6a4310b7831cb16b7906689a186"
+      },
+      {
+        "id": "b9f013ae-e2c3-450c-8e3e-ae9fc26be21a",
+        "src": "/content-assets/madbeauty/b9f013ae-e2c3-450c-8e3e-ae9fc26be21a.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 68520,
+        "sha256": "09a72a5a7fe023689afb0328730adb718e1d9d69e7309ce6eec72aa486b49cd3"
+      },
+      {
+        "id": "04ef14fe-b623-4695-9aa3-56205f98840f",
+        "src": "/content-assets/madbeauty/04ef14fe-b623-4695-9aa3-56205f98840f.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 49178,
+        "sha256": "f5e7b76f55fb6ce46305cd1e40a08120fdc411e93d9deb7d3eb005aa62b831b3"
+      },
+      {
+        "id": "ef55eecf-e0db-4696-89e4-a92639dcbb5e",
+        "src": "/content-assets/madbeauty/ef55eecf-e0db-4696-89e4-a92639dcbb5e.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 27654,
+        "sha256": "c207120c982bbdeb8b693ed2661d0904a944c159ee28a2b03d84f716f0d99fec"
+      },
+      {
+        "id": "ec264896-dc2d-4a82-a803-147e8eaeeacd",
+        "src": "/content-assets/madbeauty/ec264896-dc2d-4a82-a803-147e8eaeeacd.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 20104,
+        "sha256": "1853fb6bb60d0f6d7f99debe810fe05a6b85a6225e9d35ae8c32611efb10a02c"
+      },
+      {
+        "id": "37662d98-6ce1-458c-a42a-00ac956908b6",
+        "src": "/content-assets/madbeauty/37662d98-6ce1-458c-a42a-00ac956908b6.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8136,
+        "sha256": "aea45ec2fbe8755b6dfba899e44e564e99ed2e0d8e96eb83c611596e70ab98f2"
+      },
+      {
+        "id": "01592090-487c-4467-a708-b3721e359f74",
+        "src": "/content-assets/madbeauty/01592090-487c-4467-a708-b3721e359f74.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 89646,
+        "sha256": "3030151b75a69f6adbc3d1485d3561cf3b2578d378e6e87c74c1c448c701815e"
+      },
+      {
+        "id": "0044da39-858c-4d18-bd83-db26ae2c527b",
+        "src": "/content-assets/madbeauty/0044da39-858c-4d18-bd83-db26ae2c527b.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 65006,
+        "sha256": "ef0f5d43811862cf01cfb954916e45ac62acc2cf23d7fa714d7713f7dc30ae52"
+      },
+      {
+        "id": "f03efab8-83d8-404d-9f21-e209bc176802",
+        "src": "/content-assets/madbeauty/f03efab8-83d8-404d-9f21-e209bc176802.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 38886,
+        "sha256": "e85c22870848f2dc9e384fc9dde5622f8732f3c0c65899a827c7f1f2607bd667"
+      },
+      {
+        "id": "beb75fc4-1670-4cde-b861-88f526cade13",
+        "src": "/content-assets/madbeauty/beb75fc4-1670-4cde-b861-88f526cade13.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 28840,
+        "sha256": "cb7c6b6cd738cf645d7dd56bd1507527cf55879306024df21fa6ed19c53d8d70"
+      },
+      {
+        "id": "4dc8d7f2-bc05-49ef-8436-f3d98d45d90b",
+        "src": "/content-assets/madbeauty/4dc8d7f2-bc05-49ef-8436-f3d98d45d90b.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 13162,
+        "sha256": "96bef23540b08c6bb6c28c06efd9249eaf2637e7c01db0a8ec6b0e11793d177a"
+      },
+      {
+        "id": "04505c3a-86ba-4df6-b85a-7901543f77fc",
+        "src": "/content-assets/madbeauty/04505c3a-86ba-4df6-b85a-7901543f77fc.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 79574,
+        "sha256": "7c96b178b0e1b2fc52c9ccf8a1bb2aab0ea2d6a273a467ad85e4243094d75d0e"
+      },
+      {
+        "id": "d15d5d33-8bed-42ad-90ca-d62b43050333",
+        "src": "/content-assets/madbeauty/d15d5d33-8bed-42ad-90ca-d62b43050333.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 55358,
+        "sha256": "b7e2378968f1d667d6206127286b43d39c1cdbfbc244d461cc40cabc75c9717c"
+      },
+      {
+        "id": "595bbaf0-1b84-474f-bd83-1b61c69ee9f5",
+        "src": "/content-assets/madbeauty/595bbaf0-1b84-474f-bd83-1b61c69ee9f5.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 30542,
+        "sha256": "f3d86b3770e7cff04a16cec3276281771cecb9e1a0868d91c1d492c16f4e9edf"
+      },
+      {
+        "id": "eb5a47d1-06f2-4c3d-b9aa-aa2ba8c71718",
+        "src": "/content-assets/madbeauty/eb5a47d1-06f2-4c3d-b9aa-aa2ba8c71718.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 22180,
+        "sha256": "4c573aea9ca68b53bf02b382983c9c0366eb1c9cf79f73774209a06e85b0ed42"
+      },
+      {
+        "id": "359bf4ab-528f-445d-8aa0-a283a160281b",
+        "src": "/content-assets/madbeauty/359bf4ab-528f-445d-8aa0-a283a160281b.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 9664,
+        "sha256": "704bd507f3a582b9bc41ca0b46677e6d548158ce6cb046bebae2bcdeac1c7102"
+      },
+      {
+        "id": "91c029bf-e239-49d6-b59d-1623624058ec",
+        "src": "/content-assets/madbeauty/91c029bf-e239-49d6-b59d-1623624058ec.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 86038,
+        "sha256": "05885139b2e420c7ba6265cfc8723653a4b35f42bece3c0084a24738e1d0feff"
+      },
+      {
+        "id": "52af0722-557d-4b87-8bcf-e96adf73c68c",
+        "src": "/content-assets/madbeauty/52af0722-557d-4b87-8bcf-e96adf73c68c.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 58772,
+        "sha256": "e9cc342b0487bc0034f8a0eaaaa5fff3279a4a97507e0ebb597985e4405ec009"
+      },
+      {
+        "id": "b1a7c086-3d99-4618-9f45-f09988d61e49",
+        "src": "/content-assets/madbeauty/b1a7c086-3d99-4618-9f45-f09988d61e49.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 32148,
+        "sha256": "af0dc5aeb79ee2a331f03d7c560f17df88aafd7a9a8f50ebd2f8f3c7a1effead"
+      },
+      {
+        "id": "3761e7fa-7d4e-49a0-81fe-f0d2d7a0a498",
+        "src": "/content-assets/madbeauty/3761e7fa-7d4e-49a0-81fe-f0d2d7a0a498.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 23080,
+        "sha256": "dd6f4928ba2072a1ba7d3be8809c5ef50e69cf1106cb596d99c7b36a8c3a3ece"
+      },
+      {
+        "id": "cd5a68ca-4a12-422a-a7fb-f8a1357cd6ee",
+        "src": "/content-assets/madbeauty/cd5a68ca-4a12-422a-a7fb-f8a1357cd6ee.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 10532,
+        "sha256": "8b83b25a055ac9d8ab0030c67074310d61c067681cc1a36fcb02ac8cce2d57fb"
+      },
+      {
+        "id": "73fd1544-25e8-43f7-a14a-3c03bce3532d",
+        "src": "/content-assets/madbeauty/73fd1544-25e8-43f7-a14a-3c03bce3532d.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 101660,
+        "sha256": "8af96f0d93794903f5aa4133eae5d2f20b453a4888be8e75e8b5d5205bd2c4eb"
+      },
+      {
+        "id": "084ad21d-ad55-4ae9-8e05-8cce0b406b1f",
+        "src": "/content-assets/madbeauty/084ad21d-ad55-4ae9-8e05-8cce0b406b1f.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 72942,
+        "sha256": "d69d3c0d3f0d78eaa8d00203d6ccf876ff47cfeb2ab99f3f299042061f24a18d"
+      },
+      {
+        "id": "fcb3f457-ffc4-4e03-b843-98772a015c27",
+        "src": "/content-assets/madbeauty/fcb3f457-ffc4-4e03-b843-98772a015c27.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 41874,
+        "sha256": "ce5183e7e83b330d3361298d87694717c8e52b069ad2b1b0da790f11c0e496dc"
+      },
+      {
+        "id": "4013e8e7-dc95-41b5-a7c3-04c7350f5ad6",
+        "src": "/content-assets/madbeauty/4013e8e7-dc95-41b5-a7c3-04c7350f5ad6.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 30572,
+        "sha256": "27515d2e1623e71e1304a9c299335e0a6fb248f7a14f4ffd05a1609d3d779985"
+      },
+      {
+        "id": "8eb9846a-0d78-4fa5-bd82-ac26c67c2340",
+        "src": "/content-assets/madbeauty/8eb9846a-0d78-4fa5-bd82-ac26c67c2340.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 12790,
+        "sha256": "298c7cda6f4d9955856aaa7bacd11ca375b075af24bc9afd1ce48917c72adf30"
+      },
+      {
+        "id": "006e1c98-3afe-499b-9d6d-39e01c851764",
+        "src": "/content-assets/madbeauty/006e1c98-3afe-499b-9d6d-39e01c851764.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 92342,
+        "sha256": "e8d247508023b1308fe1de9845b5cfa1bf127419744970e298ab11dcb5efdfda"
+      },
+      {
+        "id": "6e0d1e27-030d-48bc-bfca-a5a2a241cb40",
+        "src": "/content-assets/madbeauty/6e0d1e27-030d-48bc-bfca-a5a2a241cb40.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 61720,
+        "sha256": "7f2874fc9fe8abee4bb8a7b44742cebb7caaa883a37203b396921d6ce2928896"
+      },
+      {
+        "id": "b2eebbbf-41b5-4553-bcf8-feaaa6d719a3",
+        "src": "/content-assets/madbeauty/b2eebbbf-41b5-4553-bcf8-feaaa6d719a3.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 32918,
+        "sha256": "7ef5937f23ca2a89d7dc6b1a859feaf7f9abaf0f9aff6cbc6157e1421e6f12dc"
+      },
+      {
+        "id": "95840bc8-8355-4e0f-9590-536e113b011b",
+        "src": "/content-assets/madbeauty/95840bc8-8355-4e0f-9590-536e113b011b.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 23804,
+        "sha256": "83c26bd1681eed4b430afe5fe2a3f224b78e28504f41105d4279619f05da7da9"
+      },
+      {
+        "id": "3867ac8d-4b84-4b40-81ed-3b2589d46ee6",
+        "src": "/content-assets/madbeauty/3867ac8d-4b84-4b40-81ed-3b2589d46ee6.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 10920,
+        "sha256": "4c2fd6c351c8d2809aa973cd4e5283008de1d9fbbdfb293e805c897441ec6e94"
+      },
+      {
+        "id": "8f923ddb-ab97-477f-8bd2-f808492267c3",
+        "src": "/content-assets/madbeauty/8f923ddb-ab97-477f-8bd2-f808492267c3.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 69374,
+        "sha256": "bab525f6151cf32e9cf953c8fcb680cc723a3730030323825742dbec18eff2ff"
+      },
+      {
+        "id": "f201ff9e-4c80-405f-b31f-0ec9c986f993",
+        "src": "/content-assets/madbeauty/f201ff9e-4c80-405f-b31f-0ec9c986f993.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 49334,
+        "sha256": "eb2c48f1a392b2d9ca2e8f8c7917d3ada34286de98d055a7fe28b7da7df9859c"
+      },
+      {
+        "id": "45d4ed16-e8f2-44e3-9355-e1901471c4ad",
+        "src": "/content-assets/madbeauty/45d4ed16-e8f2-44e3-9355-e1901471c4ad.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 27674,
+        "sha256": "2773ea9aed34fb36ab9a1cf479edd3aab85d2cacc0ec59daf839fde6abc64026"
+      },
+      {
+        "id": "182d191e-ce94-4cb9-a874-de11e79053c3",
+        "src": "/content-assets/madbeauty/182d191e-ce94-4cb9-a874-de11e79053c3.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 20562,
+        "sha256": "b90d12442dbc4c5f7041dc259e16b1f828eeeb295013f2bd1b72417777663541"
+      },
+      {
+        "id": "f8ec862e-951c-405e-94ea-29a82e07b4a6",
+        "src": "/content-assets/madbeauty/f8ec862e-951c-405e-94ea-29a82e07b4a6.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 10004,
+        "sha256": "ed4b64d34614b1f62ae13d5125f41a19d87fe9e98932152545f7d5dfd590864a"
+      },
+      {
+        "id": "d22fca2c-29c6-40c2-8a12-1015a5ff8e69",
+        "src": "/content-assets/madbeauty/d22fca2c-29c6-40c2-8a12-1015a5ff8e69.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 59790,
+        "sha256": "f2b88f4f72d56b830ab14a8843b031470e76c8cd2115a4e0c7fe686b58738590"
+      },
+      {
+        "id": "6473bd30-f977-495d-aa7a-6ab887a2ff43",
+        "src": "/content-assets/madbeauty/6473bd30-f977-495d-aa7a-6ab887a2ff43.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 39942,
+        "sha256": "24ee0dae351551c88e3ef82c376b679b3d319f2cb1773b163b359da968d5cefb"
+      },
+      {
+        "id": "10a9883b-d89b-44ba-a7ec-0cb9c0e283e3",
+        "src": "/content-assets/madbeauty/10a9883b-d89b-44ba-a7ec-0cb9c0e283e3.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 21742,
+        "sha256": "3384c2aeee01fb0b09d469957b679482f61630e52050fc8bc789f681843c3b4d"
+      },
+      {
+        "id": "5e6cdd2b-cfbd-4da1-9f69-9a5d21b5ccfd",
+        "src": "/content-assets/madbeauty/5e6cdd2b-cfbd-4da1-9f69-9a5d21b5ccfd.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 15600,
+        "sha256": "8943e2e3f1cf387a09454ddcddec15f009474ec3ae1e00e2e6c064f965006172"
+      },
+      {
+        "id": "e566d4c3-98e4-4597-a21f-09a83f5f1bff",
+        "src": "/content-assets/madbeauty/e566d4c3-98e4-4597-a21f-09a83f5f1bff.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 7112,
+        "sha256": "a9391d594f0f69bfe12f60c9dbd33de1c402c9220650a21ccb886408521744c1"
+      },
+      {
+        "id": "a8c5e3be-9e49-4000-b008-7e4cc9a5da28",
+        "src": "/content-assets/madbeauty/a8c5e3be-9e49-4000-b008-7e4cc9a5da28.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 75508,
+        "sha256": "ef4e5815e7b6747c5f93bd26ae4f6da9f00f50c3a07bdac19046f208e84e8a1b"
+      },
+      {
+        "id": "a9628b94-03ab-4adc-a9f0-a5d34aa15355",
+        "src": "/content-assets/madbeauty/a9628b94-03ab-4adc-a9f0-a5d34aa15355.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 55756,
+        "sha256": "5ecc3543b33e532b10d2f6facf4e902fb4681e198354c2ee3237f4c65772bf48"
+      },
+      {
+        "id": "2bcc2159-a982-477b-b18c-7fa0a7f8867a",
+        "src": "/content-assets/madbeauty/2bcc2159-a982-477b-b18c-7fa0a7f8867a.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 32524,
+        "sha256": "fb48c5e27d6497c7da2275cdc5497acef1669959836f9f8307ec8041c29f0f0c"
+      },
+      {
+        "id": "faff5e2f-e4b6-410e-a8d3-7b48470b88ee",
+        "src": "/content-assets/madbeauty/faff5e2f-e4b6-410e-a8d3-7b48470b88ee.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 24058,
+        "sha256": "d1293953751c47794d3b646ee7a6cfdb1ed8f5b141619c110d1add6fbfbf5732"
+      },
+      {
+        "id": "206691bf-1c9e-4e6f-b205-09ada8b01d49",
+        "src": "/content-assets/madbeauty/206691bf-1c9e-4e6f-b205-09ada8b01d49.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 10560,
+        "sha256": "7966ce3ed8c7cd0e5fa9930dd402b29d7ed63445ab2b6e22d35a9d4bcb5669ac"
+      },
+      {
+        "id": "d34ef76a-e7cb-4de7-975f-4fc87d520885",
+        "src": "/content-assets/madbeauty/d34ef76a-e7cb-4de7-975f-4fc87d520885.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 92028,
+        "sha256": "2b8e616c58f71f3987b72e95c87eddb9a9d0cc996f32fb6877ed55ae8c44a1f0"
+      },
+      {
+        "id": "79b34022-35ff-471f-a18c-f4b6c50c1b9c",
+        "src": "/content-assets/madbeauty/79b34022-35ff-471f-a18c-f4b6c50c1b9c.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 65000,
+        "sha256": "b6aad15f5b55807f630aecdfb5a92e52bf9056b8f5084572d01046c502095e15"
+      },
+      {
+        "id": "4ced8a73-8265-49d2-8af5-66d396d112b1",
+        "src": "/content-assets/madbeauty/4ced8a73-8265-49d2-8af5-66d396d112b1.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 35094,
+        "sha256": "18d4c45bec04a710ebe09194e51db168f4f6f4ca3e5de4166d8e57459c69467d"
+      },
+      {
+        "id": "73e40340-8dae-42c7-ab16-63bf6ae3daa6",
+        "src": "/content-assets/madbeauty/73e40340-8dae-42c7-ab16-63bf6ae3daa6.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 25736,
+        "sha256": "2b8e4fdd7e6638e6055584ad2fc42e1ad41cd46feb0a3e446fa02af2c5af4806"
+      },
+      {
+        "id": "71bb7685-7f17-4e55-aa85-919e150519e8",
+        "src": "/content-assets/madbeauty/71bb7685-7f17-4e55-aa85-919e150519e8.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 11524,
+        "sha256": "55463528c8b65fb591b37a77d7bddfdd4bbe1730704ecc1f37188b6c229f8d40"
+      },
+      {
+        "id": "3f3d8ba9-f4dc-4314-860e-e28ceaa3d9a5",
+        "src": "/content-assets/madbeauty/3f3d8ba9-f4dc-4314-860e-e28ceaa3d9a5.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 105968,
+        "sha256": "b3c2a899172a6aececbd5dcefef5ecbe33626374085b8907896cec36fe17d16e"
+      },
+      {
+        "id": "d64a6dae-3d21-4434-b7d2-48f7bc18a728",
+        "src": "/content-assets/madbeauty/d64a6dae-3d21-4434-b7d2-48f7bc18a728.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 78102,
+        "sha256": "ae47e0263cb4b388c757e3ac87cbc567122a2d5aa89178d4a0767758c7d018ca"
+      },
+      {
+        "id": "4a4ed29a-fcd0-4e29-a67d-7e590be58b0c",
+        "src": "/content-assets/madbeauty/4a4ed29a-fcd0-4e29-a67d-7e590be58b0c.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 45610,
+        "sha256": "de2dc365984cb886dfffd1c0d1dd0a58f2bb7f6359917ed30f7af5ba12a2e7d5"
+      },
+      {
+        "id": "daede9c9-8353-4492-8d54-6bd310f7c81e",
+        "src": "/content-assets/madbeauty/daede9c9-8353-4492-8d54-6bd310f7c81e.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 32968,
+        "sha256": "50c2d39c38abde0ef2b1249dedc83e6a686f7373a2191ce0c1063dafe4dfb521"
+      },
+      {
+        "id": "01330da9-dd9b-4d16-b3be-99b4f3981d86",
+        "src": "/content-assets/madbeauty/01330da9-dd9b-4d16-b3be-99b4f3981d86.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 14008,
+        "sha256": "e1a6228dd8ea803b1395f88aebd997b6cea00f64057a6d9ac7d6f8945fcc6dfa"
+      },
+      {
+        "id": "640499bc-5287-498b-a421-6932bf0f815b",
+        "src": "/content-assets/madbeauty/640499bc-5287-498b-a421-6932bf0f815b.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 40344,
+        "sha256": "a9cb4680487081002829e16f7b61d9336a5a9a73e210cfea641b08f7ab819935"
+      },
+      {
+        "id": "26cf11dc-c175-4282-83ba-76126fa75053",
+        "src": "/content-assets/madbeauty/26cf11dc-c175-4282-83ba-76126fa75053.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 27350,
+        "sha256": "bafbdd99baffe289d8b21def8ac6de922e7f7667d47f0a2f8e9a900a0086ce7a"
+      },
+      {
+        "id": "ea4ca47a-4180-4c2e-9cf5-58ed592b78f2",
+        "src": "/content-assets/madbeauty/ea4ca47a-4180-4c2e-9cf5-58ed592b78f2.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 14688,
+        "sha256": "80052013ccb404d6f027fcb89bd57eb46fa600f530b3e463b94c5e284b1472d5"
+      },
+      {
+        "id": "1d09712a-a0f3-46fa-95d8-a21b06bd1fdb",
+        "src": "/content-assets/madbeauty/1d09712a-a0f3-46fa-95d8-a21b06bd1fdb.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 10682,
+        "sha256": "64e7de3dfe63d8fb98183e005cd83cd6dbccbc71aacb840aab2ae59f9c678050"
+      },
+      {
+        "id": "f04a04fe-fcc8-45aa-af8f-b39935c51b21",
+        "src": "/content-assets/madbeauty/f04a04fe-fcc8-45aa-af8f-b39935c51b21.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 4592,
+        "sha256": "49d682bfb40f1caffd5d65979601e7c4d9d0b3db416b84d2f77c323c08353f3c"
+      },
+      {
+        "id": "5503a820-29f2-4d3e-b5b1-6015b25c8ef3",
+        "src": "/content-assets/madbeauty/5503a820-29f2-4d3e-b5b1-6015b25c8ef3.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 63218,
+        "sha256": "89917b98deba6405172d53797e40daebaa237ddc75b32bd1fada3aa36f76f865"
+      },
+      {
+        "id": "145be00a-eb75-4b7a-afcb-50972b0de135",
+        "src": "/content-assets/madbeauty/145be00a-eb75-4b7a-afcb-50972b0de135.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 43214,
+        "sha256": "9bc0ddb56503589a5464b68f1a2c8c8b1acd211b9cf2952e0f4cb53b26bef8ea"
+      },
+      {
+        "id": "78f8fda7-d314-4f63-9c85-edc17d75d9b3",
+        "src": "/content-assets/madbeauty/78f8fda7-d314-4f63-9c85-edc17d75d9b3.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 23562,
+        "sha256": "7d70e6b9fc988b6a748f4147073ed812ac48fc0af38da0eb58f56bc0b3680c91"
+      },
+      {
+        "id": "d540cd53-caaf-47c6-833b-d8b90188524d",
+        "src": "/content-assets/madbeauty/d540cd53-caaf-47c6-833b-d8b90188524d.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 17266,
+        "sha256": "4832c885ee7598c5c58a6f3ff41bfb218fd3ea6726e7b1b7b5ad71f2f8d588d4"
+      },
+      {
+        "id": "06a7a4c2-1a28-43de-beac-fe4324e6a047",
+        "src": "/content-assets/madbeauty/06a7a4c2-1a28-43de-beac-fe4324e6a047.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 7676,
+        "sha256": "a4e9c238162a978079db1faa1127069e083a77f34faa398abf53358a57bfe891"
+      },
+      {
+        "id": "1c164629-1033-41de-8cf3-6c4565ac96db",
+        "src": "/content-assets/madbeauty/1c164629-1033-41de-8cf3-6c4565ac96db.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 49124,
+        "sha256": "388131fe472e8ff06e91704650d7309265fb16b549ac35b55a6b03d4d5860b6c"
+      },
+      {
+        "id": "6c67144b-6745-444b-97d0-fbdb59a30c9c",
+        "src": "/content-assets/madbeauty/6c67144b-6745-444b-97d0-fbdb59a30c9c.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 35206,
+        "sha256": "7b8bb915e456ce5cf828c9c357b429283f5b7c07bc7dd3f4732e15ecaa11dd74"
+      },
+      {
+        "id": "450c9403-4f31-4e49-9004-25fbed5be5e6",
+        "src": "/content-assets/madbeauty/450c9403-4f31-4e49-9004-25fbed5be5e6.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 20454,
+        "sha256": "c267c22752a671a387a61df997de710d734e68e61d4d82fb52b7eb180019aede"
+      },
+      {
+        "id": "9d0b60ec-c9e1-442e-8014-171190857522",
+        "src": "/content-assets/madbeauty/9d0b60ec-c9e1-442e-8014-171190857522.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 15258,
+        "sha256": "c2f8dc91eabcf9e7d0efe4af6a21e11931af6f783129ea6261c87972a3eeae50"
+      },
+      {
+        "id": "ab188f9f-250f-466b-899d-bdfadb3c2c68",
+        "src": "/content-assets/madbeauty/ab188f9f-250f-466b-899d-bdfadb3c2c68.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 7482,
+        "sha256": "4b36aa402e31b7879071c6b35d5c0305a92277b7bd51035ac9ac72b0410761b2"
+      },
+      {
+        "id": "2022e88e-96fa-4bc9-a7c4-0f0b61d508b9",
+        "src": "/content-assets/madbeauty/2022e88e-96fa-4bc9-a7c4-0f0b61d508b9.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 73626,
+        "sha256": "95cdac36d13045a6ecff3ed64289f73be1d3ca70d108c7f8915ab84e54edbf7b"
+      },
+      {
+        "id": "3f130d10-623b-442c-8cba-c626ceb51c5b",
+        "src": "/content-assets/madbeauty/3f130d10-623b-442c-8cba-c626ceb51c5b.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 48828,
+        "sha256": "2cb2d1f0dce269c81d5f3d97be9afff449de01c8bce26e2f1d48a740c670b1ae"
+      },
+      {
+        "id": "15185f5b-6032-468d-8437-2336b9f7bc8a",
+        "src": "/content-assets/madbeauty/15185f5b-6032-468d-8437-2336b9f7bc8a.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 24232,
+        "sha256": "9cefdcd17ff58f241be9d8a8af3d2d8f2022df48966cc1a65f604c0d846830e9"
+      },
+      {
+        "id": "563f20f1-ee16-46d9-86e1-906d7103f0c7",
+        "src": "/content-assets/madbeauty/563f20f1-ee16-46d9-86e1-906d7103f0c7.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 16608,
+        "sha256": "b04e2df15dd3494ec7a5085484828a0d007f144274ea288d040316387973c517"
+      },
+      {
+        "id": "095b8b36-7ff4-4db6-9d05-381d48e7bcb4",
+        "src": "/content-assets/madbeauty/095b8b36-7ff4-4db6-9d05-381d48e7bcb4.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 6534,
+        "sha256": "ea4449a20c53b66f021db79b86c59cf4bedc43e0dd7b6a2a9d24f604fe1489f6"
+      },
+      {
+        "id": "469ce5c1-34ac-4280-993c-9be228f18d90",
+        "src": "/content-assets/madbeauty/469ce5c1-34ac-4280-993c-9be228f18d90.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 115926,
+        "sha256": "1241f510ee3bb2fa19e001dcf3972a2f131e5d16e3256bd17430c6f086a0d1a8"
+      },
+      {
+        "id": "01e195a5-0b53-4ed4-ad49-10920a55e827",
+        "src": "/content-assets/madbeauty/01e195a5-0b53-4ed4-ad49-10920a55e827.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 80860,
+        "sha256": "2329d3c8a5d4ce3ea773c934d5a64bed114f57d1d6a7f6527d41baf4fd9dfcae"
+      },
+      {
+        "id": "04841ef2-51ed-4da4-8ca7-e1423f34a0be",
+        "src": "/content-assets/madbeauty/04841ef2-51ed-4da4-8ca7-e1423f34a0be.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 42916,
+        "sha256": "6dcdffddc2a1167354529f209fd822be63772abe85436bdf1c19e82c46f2d836"
+      },
+      {
+        "id": "d99dcb93-0c3a-497b-a285-e8bb242b8d80",
+        "src": "/content-assets/madbeauty/d99dcb93-0c3a-497b-a285-e8bb242b8d80.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 29942,
+        "sha256": "e5c77ab22c3edda85263f6ee7428590f23a9286e13874bf062078bbed74ee8a6"
+      },
+      {
+        "id": "e3e77424-01df-40cd-a354-8437b45e40e0",
+        "src": "/content-assets/madbeauty/e3e77424-01df-40cd-a354-8437b45e40e0.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 11358,
+        "sha256": "87524a16177ed8bd944e84d76a77b55c05c6911ba075df4181570c2df4b3c294"
+      },
+      {
+        "id": "8d2fa14b-9419-4370-9f9f-be943f7e4f73",
+        "src": "/content-assets/madbeauty/8d2fa14b-9419-4370-9f9f-be943f7e4f73.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 54250,
+        "sha256": "f3e57bde8ebc24e115ed3fc151ed9e422c8d859bfb13761503a097ca8665a1d4"
+      },
+      {
+        "id": "9ddd27e6-a3d5-41aa-97d3-e9039767e07b",
+        "src": "/content-assets/madbeauty/9ddd27e6-a3d5-41aa-97d3-e9039767e07b.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 40682,
+        "sha256": "5c0d0d0793b60d947bddf4bd2662be3aedf0081a2461eb6f76e725efc8777a1b"
+      },
+      {
+        "id": "7901e534-e997-459f-b798-142651699330",
+        "src": "/content-assets/madbeauty/7901e534-e997-459f-b798-142651699330.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 25396,
+        "sha256": "2a0656ce9008ec685e9c6bf2708b344fc1b9ad7d31650c7b9cab30afd6e63bea"
+      },
+      {
+        "id": "534623eb-a3a0-4af4-b2c9-c36318b35582",
+        "src": "/content-assets/madbeauty/534623eb-a3a0-4af4-b2c9-c36318b35582.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 19364,
+        "sha256": "ed578423b262845f2e0eb90d6877e9aec28a1a4547dc6ba44457bd05b133948c"
+      },
+      {
+        "id": "51db37c4-fe8a-4937-b881-ca109e3334c1",
+        "src": "/content-assets/madbeauty/51db37c4-fe8a-4937-b881-ca109e3334c1.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 9424,
+        "sha256": "c3f7f871267b29d7ddb237d0efba27b0bd0386a9454bde74c784b81cb6083fee"
+      },
+      {
+        "id": "858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638",
+        "src": "/content-assets/madbeauty/858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 107808,
+        "sha256": "768df8962d0d99c2affd6da7c2340fa45bb62f90fbba76e4e057cdf93bd14723"
+      },
+      {
+        "id": "a8f47340-0dfe-4f44-9f57-5c00007e4aef",
+        "src": "/content-assets/madbeauty/a8f47340-0dfe-4f44-9f57-5c00007e4aef.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 75222,
+        "sha256": "3cb1827113a64dbaac35b30cfd59bb022756b63e44c378bfc29d7ca37c41159f"
+      },
+      {
+        "id": "78cde752-76f1-4fa8-bbdf-0097741e59f5",
+        "src": "/content-assets/madbeauty/78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 40784,
+        "sha256": "77a2d7bf0cf25f755440c77269825b79909d9670acd9497074f5578d89ec640c"
+      },
+      {
+        "id": "cd6c01cf-b342-448e-a12e-510c2d69d394",
+        "src": "/content-assets/madbeauty/cd6c01cf-b342-448e-a12e-510c2d69d394.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 29100,
+        "sha256": "6e6538717633d62a5590cf6241d5a7bb040a8092441c4d261b3b9662010e66f0"
+      },
+      {
+        "id": "1ef9872d-2973-4d96-9214-e2dfa9f8fbc0",
+        "src": "/content-assets/madbeauty/1ef9872d-2973-4d96-9214-e2dfa9f8fbc0.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 11226,
+        "sha256": "f1d84e3989ae97c89d7c47206716d4732f616d24f8ded160aedf2b11a4f95466"
+      },
+      {
+        "id": "1bfc1140-3416-4da3-9e6c-a49d69876ff3",
+        "src": "/content-assets/madbeauty/1bfc1140-3416-4da3-9e6c-a49d69876ff3.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 44092,
+        "sha256": "c9a735ecd76d5b6566d815c4c1ae86a2c4566105a34c25dbcd9fb178c7a41fa3"
+      },
+      {
+        "id": "3ef486dd-0ecc-4722-8705-bb9328b8452e",
+        "src": "/content-assets/madbeauty/3ef486dd-0ecc-4722-8705-bb9328b8452e.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 31612,
+        "sha256": "f88335ace317762ed9a44655968599cfbc7b4168b6f680a489e7c1beff03e006"
+      },
+      {
+        "id": "b3249cc3-fce3-42ef-ba6e-8df608a578ac",
+        "src": "/content-assets/madbeauty/b3249cc3-fce3-42ef-ba6e-8df608a578ac.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 18700,
+        "sha256": "e205e1eee5cb5e97e12d6a1486a1b353f2cb0754c9c0018bb03bc0c3898d6e61"
+      },
+      {
+        "id": "bd594a9f-7f1a-4a41-b714-ab84f1a1cead",
+        "src": "/content-assets/madbeauty/bd594a9f-7f1a-4a41-b714-ab84f1a1cead.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 13884,
+        "sha256": "cde3187afb0432b185cea1ed073cc6071dcf2912181e7c0b1e4278dbb8a9a809"
+      },
+      {
+        "id": "9cafa576-a732-4bb0-a449-c686f37a899e",
+        "src": "/content-assets/madbeauty/9cafa576-a732-4bb0-a449-c686f37a899e.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 6500,
+        "sha256": "c53c6fead8aababfe82cf9feef0135f77b215778af375475e9543334a93ab4ef"
+      },
+      {
+        "id": "99839b41-cab8-455f-930e-62a5e19eac22",
+        "src": "/content-assets/madbeauty/99839b41-cab8-455f-930e-62a5e19eac22.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 108780,
+        "sha256": "73f6fb573a7c062751a33f07af5a41709d367c99865fe95968477b832380c83b"
+      },
+      {
+        "id": "34f74f5e-2d30-492a-9f80-7b0f863f7a64",
+        "src": "/content-assets/madbeauty/34f74f5e-2d30-492a-9f80-7b0f863f7a64.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 76694,
+        "sha256": "5befb60555d18030e84732d7a3e1882f32bb36aa63000fd93a706f8ad3fdfc07"
+      },
+      {
+        "id": "521c7055-d341-419b-b141-5709867eddba",
+        "src": "/content-assets/madbeauty/521c7055-d341-419b-b141-5709867eddba.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 40642,
+        "sha256": "84ae7bae14236d6503001fec53755d4763dbf9859ebf5e20bd79d83758023419"
+      },
+      {
+        "id": "96b615d8-ed0e-45c4-9ea9-0a4bafbb9cd4",
+        "src": "/content-assets/madbeauty/96b615d8-ed0e-45c4-9ea9-0a4bafbb9cd4.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 28242,
+        "sha256": "06308df0e791566bd7f52d64eb86c899eeadbf433881cc373d31758699e25abb"
+      },
+      {
+        "id": "59252c3b-f256-4778-aa4a-5c2aeab7028d",
+        "src": "/content-assets/madbeauty/59252c3b-f256-4778-aa4a-5c2aeab7028d.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 10608,
+        "sha256": "7beec5c0b5203db1edf0e8eaaf9464c2a78a19a13aaf29fa4645b6d92d63798f"
+      },
+      {
+        "id": "9a186586-bf77-4403-af1a-b251157b7dc9",
+        "src": "/content-assets/madbeauty/9a186586-bf77-4403-af1a-b251157b7dc9.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 50824,
+        "sha256": "9a105ae5bfb1d3c2995f475239c9ea1c320f77d5f954847c2e49c7933ba2ad91"
+      },
+      {
+        "id": "fbc949ab-c9dc-44fd-9501-34b808e49b56",
+        "src": "/content-assets/madbeauty/fbc949ab-c9dc-44fd-9501-34b808e49b56.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 38482,
+        "sha256": "d6e4044c4d6f64bfc9516af722bc3d0d653ab9f0a46f8b798cafcd3eab6c6482"
+      },
+      {
+        "id": "4e93204f-7f6a-442f-a83d-928ee0965ee9",
+        "src": "/content-assets/madbeauty/4e93204f-7f6a-442f-a83d-928ee0965ee9.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 23272,
+        "sha256": "1c40000ad1601873967e36476cd7abee8c1cd8ead1e64e2909405cc2977c17b0"
+      },
+      {
+        "id": "3b6b7044-8440-4c89-a903-16fee577c22a",
+        "src": "/content-assets/madbeauty/3b6b7044-8440-4c89-a903-16fee577c22a.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 17780,
+        "sha256": "361afcd5450445293a4851760d094d8a51e216e019723c7924b442ad2564f114"
+      },
+      {
+        "id": "5ab90e50-d22d-4b96-af90-a2c2cf61c44a",
+        "src": "/content-assets/madbeauty/5ab90e50-d22d-4b96-af90-a2c2cf61c44a.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8578,
+        "sha256": "674f1e6b3aa7d529ce642001a10c4a8a530e0fb0e9d12fc2f48280182f0422b4"
+      },
+      {
+        "id": "76b10fbc-19e2-48a3-bd9b-d09c41a390df",
+        "src": "/content-assets/madbeauty/76b10fbc-19e2-48a3-bd9b-d09c41a390df.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 102916,
+        "sha256": "6a33ed71bd49f949124f60b0d9ebdbda5163be58485e71313654d299f5c6b29d"
+      },
+      {
+        "id": "53991835-d2c5-4249-ba51-7a15bef962a1",
+        "src": "/content-assets/madbeauty/53991835-d2c5-4249-ba51-7a15bef962a1.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 74238,
+        "sha256": "71d9292601d6ff444bca75561d6c6a157bc2b7dab3f92c608d87da4661a2565f"
+      },
+      {
+        "id": "4a1b2dfa-642c-49c0-8128-071a06c78ddf",
+        "src": "/content-assets/madbeauty/4a1b2dfa-642c-49c0-8128-071a06c78ddf.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 42812,
+        "sha256": "805780bd06a9c0a0c5276ea48d940292d7badb95b41d7e69dadcbfa36c56ec8c"
+      },
+      {
+        "id": "5d3445a4-4f66-48ae-af1b-25f7eeb14028",
+        "src": "/content-assets/madbeauty/5d3445a4-4f66-48ae-af1b-25f7eeb14028.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 31042,
+        "sha256": "eb710f09b61f19884b6b3cbb440b9514db8b0a1a6843a1c60db1c69d09cfdaf3"
+      },
+      {
+        "id": "d0b1754f-9ceb-42f1-aa4d-e0f58c07f0e0",
+        "src": "/content-assets/madbeauty/d0b1754f-9ceb-42f1-aa4d-e0f58c07f0e0.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 13106,
+        "sha256": "630011a12202fa9bbf6961f17c4198286b5df5e4dafdc0ecf0ec2b29b6d92b82"
+      },
+      {
+        "id": "e6c78e6a-9f63-4ae5-8f27-5e277651289a",
+        "src": "/content-assets/madbeauty/e6c78e6a-9f63-4ae5-8f27-5e277651289a.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 45170,
+        "sha256": "15e26711ba041bdd19957f781d820e8445abfd6c22f1f3f84fd44b8bd2164cd9"
+      },
+      {
+        "id": "783eb7bf-c593-49f5-a1d2-c51c5e81fa46",
+        "src": "/content-assets/madbeauty/783eb7bf-c593-49f5-a1d2-c51c5e81fa46.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 32504,
+        "sha256": "3d5f71ee8d27259435ef875ad9423660549e79c2f3cf0fab7bad7b34a1c92140"
+      },
+      {
+        "id": "c2ea6f78-a458-4468-a11c-386848fcfa97",
+        "src": "/content-assets/madbeauty/c2ea6f78-a458-4468-a11c-386848fcfa97.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 18762,
+        "sha256": "091a4d36e2f0e63ff337e177f1a7060ecc3b120880d6ca1687e6d9730f0753da"
+      },
+      {
+        "id": "a03925ee-1720-4b9c-8409-52b20aa4b330",
+        "src": "/content-assets/madbeauty/a03925ee-1720-4b9c-8409-52b20aa4b330.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 13762,
+        "sha256": "b0afd30f103f6b3b81ad4f407b0ab1b7e690b5e18d4e7ba4fa579e6da9db698d"
+      },
+      {
+        "id": "dd7e9bdb-4f4e-4a9d-b54a-e6acf8634ad3",
+        "src": "/content-assets/madbeauty/dd7e9bdb-4f4e-4a9d-b54a-e6acf8634ad3.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 6090,
+        "sha256": "8ef9c0f94d866aeb53f2ce6216d95372eff9a86bc650b740cce75518873e86ad"
+      },
+      {
+        "id": "e857ccc4-7299-402d-8da1-e0a933ec6838",
+        "src": "/content-assets/madbeauty/e857ccc4-7299-402d-8da1-e0a933ec6838.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 110624,
+        "sha256": "27272b295388e48efc40318c96d85631fc89c0f8cfeca1899992f3c4980af5a3"
+      },
+      {
+        "id": "bae32ce2-b683-4d30-abb1-6eb52daa1ea9",
+        "src": "/content-assets/madbeauty/bae32ce2-b683-4d30-abb1-6eb52daa1ea9.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 82038,
+        "sha256": "ec92e522be410b46f4402bc42ab5cad15d549616f0ca81258170e131aa4b144a"
+      },
+      {
+        "id": "e1621b0c-8d0c-47ee-93c9-e86c01c5a433",
+        "src": "/content-assets/madbeauty/e1621b0c-8d0c-47ee-93c9-e86c01c5a433.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 46924,
+        "sha256": "28be239fd8a39fb1ec6fd2087846e9b301b7954bfb7b48c3a7cf10e5718d575d"
+      },
+      {
+        "id": "bcac7a1f-f927-4023-94da-0dd3da5fe9be",
+        "src": "/content-assets/madbeauty/bcac7a1f-f927-4023-94da-0dd3da5fe9be.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 33334,
+        "sha256": "a466251c54b45a6a350edbc2971add764756ad235850ee3240e493bd8082576f"
+      },
+      {
+        "id": "4f5b388a-bc39-4bf7-b74c-c103e4c47ce8",
+        "src": "/content-assets/madbeauty/4f5b388a-bc39-4bf7-b74c-c103e4c47ce8.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 13242,
+        "sha256": "a9f98f22500685f03a7da9fb43a46c7e3e910e3c1629db85d715b3798472ea70"
+      },
+      {
+        "id": "30a54837-325e-4489-8586-e8730b6b979b",
+        "src": "/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 110800,
+        "sha256": "6dcc269249bf883c22c2c93432336f07865b8070ed3f4afafefc06ce4ff71d1a"
+      },
+      {
+        "id": "d2926874-4d13-497c-a848-cc67febc7d53",
+        "src": "/content-assets/madbeauty/d2926874-4d13-497c-a848-cc67febc7d53.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 71322,
+        "sha256": "fe3d85b80de11589c2bdca3ea5738156c8f4929c0a9f914a768fc39200b2fe95"
+      },
+      {
+        "id": "95a97dfe-e02a-4dd4-b7d2-25b168ed8a65",
+        "src": "/content-assets/madbeauty/95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 42788,
+        "sha256": "da6dc3fa5e541be4961ef472b106e1eb99a2523ac7517a322c1008023487d9f0"
+      },
+      {
+        "id": "1682ac36-ccf3-44d2-b733-7762921ebc01",
+        "src": "/content-assets/madbeauty/1682ac36-ccf3-44d2-b733-7762921ebc01.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 31406,
+        "sha256": "beb6bb26ab577aafc30d5251b73a079f4011aa96a127ff3aea8e88d75a602752"
+      },
+      {
+        "id": "c5b77b84-1dcb-4d94-8b56-6595883b0d32",
+        "src": "/content-assets/madbeauty/c5b77b84-1dcb-4d94-8b56-6595883b0d32.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 13572,
+        "sha256": "79802d4f5b1143c50a97510c0a40bd538a49cb6456a76b4d4c69028abdeb0e3b"
+      },
+      {
+        "id": "e251f0d2-c7b3-471a-88fb-c014926c747d",
+        "src": "/content-assets/madbeauty/e251f0d2-c7b3-471a-88fb-c014926c747d.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 109140,
+        "sha256": "44cce5fd6cb6ebb9abd05c32a24a395f7d2267bed8d20f1eb57290fe7ce68897"
+      },
+      {
+        "id": "613f655c-3c5c-40bb-aa38-39fb5a7c8ef4",
+        "src": "/content-assets/madbeauty/613f655c-3c5c-40bb-aa38-39fb5a7c8ef4.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 64560,
+        "sha256": "bf049d60216d4225c9a073a420416f464abff85c8f4d25761b76a7c9a735a024"
+      },
+      {
+        "id": "61ef4a59-50f0-4972-bc19-db478f10a77b",
+        "src": "/content-assets/madbeauty/61ef4a59-50f0-4972-bc19-db478f10a77b.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 33804,
+        "sha256": "257f5ac5dd123183a12cc0b8c3f79899b418833364c243ce98df5de66283b0c1"
+      },
+      {
+        "id": "5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455",
+        "src": "/content-assets/madbeauty/5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 22394,
+        "sha256": "e58ddcbdcdf7190ed2b64a151ed50a40dc78e80c3ed754a48516e63468842946"
+      },
+      {
+        "id": "f7faf1f2-2aff-45a9-b85f-ef5d4d42d4d4",
+        "src": "/content-assets/madbeauty/f7faf1f2-2aff-45a9-b85f-ef5d4d42d4d4.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8076,
+        "sha256": "ff1958fb5ce27b7fa272694e5da6f59147d490dd1ba70643ef7cbc1c04b0b91b"
+      },
+      {
+        "id": "49b66963-88d6-4515-b65f-aeef52595244",
+        "src": "/content-assets/madbeauty/49b66963-88d6-4515-b65f-aeef52595244.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 77218,
+        "sha256": "2b355ff3e0d86051c4cbab278344e68c6c519dd7a125326b4965a63f5fc07f2c"
+      },
+      {
+        "id": "d388de34-ba0f-4182-9dc9-c00f285a58df",
+        "src": "/content-assets/madbeauty/d388de34-ba0f-4182-9dc9-c00f285a58df.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 49254,
+        "sha256": "cec83ee5f20ca7b977bbb1f1705ea001f2972cd6303d3c44904eebdeafb84327"
+      },
+      {
+        "id": "21a7dafb-7f66-4807-8aaf-d39b4e1cb119",
+        "src": "/content-assets/madbeauty/21a7dafb-7f66-4807-8aaf-d39b4e1cb119.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 29392,
+        "sha256": "f92091ae540bc1155ee4c9ca5542898c201fe24f955bb7d2a228b3edf9c11f7d"
+      },
+      {
+        "id": "a0e75c8d-60f4-4b97-b450-4cfb7b2e69a1",
+        "src": "/content-assets/madbeauty/a0e75c8d-60f4-4b97-b450-4cfb7b2e69a1.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 20888,
+        "sha256": "0051b59fba292ac70ad9402ef917124200e01895b1f0c26d53be5132ca636171"
+      },
+      {
+        "id": "cf1b9887-f456-43be-a2c7-b1fad00e9957",
+        "src": "/content-assets/madbeauty/cf1b9887-f456-43be-a2c7-b1fad00e9957.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 9210,
+        "sha256": "57b9582dda11553060a3522017a2a389c11c4ffaef21aa8e2660a02f84350017"
+      },
+      {
+        "id": "34710a86-f607-4bb6-aa6c-d90a0767beeb",
+        "src": "/content-assets/madbeauty/34710a86-f607-4bb6-aa6c-d90a0767beeb.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 85676,
+        "sha256": "39e2c652fe38164d9790938eab41748fe52757d37526a6b78c701ff13957354b"
+      },
+      {
+        "id": "7a64d2da-c966-41f8-8817-fa3090634a27",
+        "src": "/content-assets/madbeauty/7a64d2da-c966-41f8-8817-fa3090634a27.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 51008,
+        "sha256": "7c006bb70446a3f1225b42338c17f401af39bd3e97bcc52d6fd5860e813f125f"
+      },
+      {
+        "id": "f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e",
+        "src": "/content-assets/madbeauty/f34bd73e-0b7d-43ba-bcc6-e0c801e2a15e.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 28968,
+        "sha256": "110ed8877dec66012b1c9adfce48b211a2a723f99030ce4d176bef9dd20799fc"
+      },
+      {
+        "id": "2372f919-a770-49a2-ba82-d15e3a34fd89",
+        "src": "/content-assets/madbeauty/2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 20056,
+        "sha256": "5e4bfa35b7e4ba27f1795bdb8bbfacbdd83ff6dddafc75bcbcac9e50079b44b6"
+      },
+      {
+        "id": "5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72",
+        "src": "/content-assets/madbeauty/5da7fe01-bfdd-4515-8b5b-43b5d9ba1f72.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 8062,
+        "sha256": "df4f5e17b9c29a7a4fed08c7565042755ffd7e55b876cb6ef335d47e9af1d1b4"
+      }
+    ],
+    "actualWebpFiles": 180,
+    "renderedCheckSeparate": true,
+    "sourcePngPublic": false
+  }
+}

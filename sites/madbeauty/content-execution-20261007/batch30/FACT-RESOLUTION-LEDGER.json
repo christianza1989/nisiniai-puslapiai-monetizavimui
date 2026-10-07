@@ -1,0 +1,716 @@
+[
+  {
+    "index": 0,
+    "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+    "slug": "gidai/kirpimas-gidas",
+    "beforeRevision": "bc11082b5b8c7b1ac504fc3e13c1c6629602b7433ba22bb93961839712d94cbe",
+    "usefulness": "Two contrasting fictional shoulder-length and front-outline requests added. Root now answers contour/texture/routine choice rather than face-shape rules.",
+    "facts": "R01 goals/reference pictures and R02 natural growth/perimeter consultation were actually read. No face-shape prescription, technical cutting protocol or individualized suitability. Human stylist review has NOT happened; review requirement for a technical procedure is removed from this narrower consumer consultation scope, not marked fulfilled.",
+    "sourceIds": [
+      "S43",
+      "S04",
+      "R01",
+      "R02"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš redakcinį patvirtinimą reikalinga kirpėjo peržiūra ir kirpimo eigos patikra; pateiktame kontekste tokios žmogaus peržiūros įrodymo nėra.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R01 goals/reference pictures and R02 natural growth/perimeter consultation were actually read. No face-shape prescription, technical cutting protocol or individualized suitability. Human stylist review has NOT happened; review requirement for a technical procedure is removed from this narrower consumer consultation scope, not marked fulfilled.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 1,
+    "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+    "slug": "gidai/kirpimas-galiukai-ar-forma",
+    "beforeRevision": "3fb950dea4cefbaafc97c19f1f00f76ca0f1221bee9876f9889a59754f5b17be",
+    "usefulness": "Two fictional keep/change requests and natural H2 corrected; menu scope separated from reader intent.",
+    "facts": "S04 actual ends variants and R01 reference-picture consultation support bounded labels. No claim that changing weight is a guaranteed result or instructions for cutting hair. No human professional review; actual procedure feasibility remains the chosen practitioner’s task.",
+    "sourceIds": [
+      "S04",
+      "R01"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant juodraštį reikalinga kirpėjo peržiūra dėl formos, ilgio ir svorio pokyčių aprašymo; tokia kvalifikuota peržiūra dar neatlikta.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "S04 actual ends variants and R01 reference-picture consultation support bounded labels. No claim that changing weight is a guaranteed result or instructions for cutting hair. No human professional review; actual procedure feasibility remains the chosen practitioner’s task.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Sukurti ir peržiūrėti teminę iliustraciją apie dviejų skirtingų kirpimo užduočių aptarimą; dabartiniame kontekste nėra tinkamo prisegto vaizdo. Patikrinti faktinius pikselius, mobilų kadravimą, alt tekstą ir importuotą responsive WebP šeimą.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 2,
+    "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+    "slug": "gidai/kirpimas-sluoksniai",
+    "beforeRevision": "55a65cd57e9608b71db539a7d457562a66a656e829811bebc0be05dccb34744d",
+    "usefulness": "Outside outline distinguished from shorter internal lengths, with questions about retained length, movement and routine.",
+    "facts": "Re-read R03 Unit203 pp30–37 and glossary: cutting techniques, weight distribution, texture/density/growth factors and maintenance advice. These support only ordinary length/shape distinctions. No angles, technique steps, guaranteed volume, universal suitability or clinical claims; published curriculum is not human review.",
+    "sourceIds": [
+      "R03"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant tekstą reikalinga kirpėjo, turinčio darbo su skirtingomis plaukų tekstūromis patirties, peržiūra: įvertinti ilgių paskirstymo, silueto, galiukų pilnumo įspūdžio ir formavimo teiginius.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "Re-read R03 Unit203 pp30–37 and glossary: cutting techniques, weight distribution, texture/density/growth factors and maintenance advice. These support only ordinary length/shape distinctions. No angles, technique steps, guaranteed volume, universal suitability or clinical claims; published curriculum is not human review.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Teminė iliustracija dar nepridėta. Reikia sukurti ir peržiūrėti iliustracinę sluoksnių schemą; ji neturi būti pristatoma kaip tikro kliento rezultatas ar tiksli kirpimo instrukcija.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 3,
+    "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+    "slug": "gidai/kirpimas-bob-kare",
+    "beforeRevision": "1914c672462842a8a71474865031baf938a1c8ea82896701b90393d43bd1bb18",
+    "usefulness": "Bob/carré guide asks for length, perimeter and visible angles rather than universal name mapping.",
+    "facts": "No assertion that names have fixed universal definitions. R03 one-length/graduation supports asking for actual construction, not naming a universal bob technique.",
+    "sourceIds": [
+      "R03"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant tekstą, kirpimo specialistas turi peržiūrėti bob ir carré terminų vartojimą bei patikrinti, ar ilgio, kontūro ir sluoksnių pavyzdžiai jų nepateikia kaip universalių apibrėžimų.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "No assertion that names have fixed universal definitions. R03 one-length/graduation supports asking for actual construction, not naming a universal bob technique.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Sukurti ir peržiūrėti teminę iliustraciją: patikrinti, ar vienodos pozicijos vaizdai aiškiai palygina ilgį, kontūrą ir sluoksnius, bet nekuria tikslaus kirpimo rezultato ar standarto įspūdžio.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 4,
+    "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+    "slug": "gidai/kirpimas-kirpciukai",
+    "beforeRevision": "498cd55506f63615589ac4ee48e75a7398419610e74494b4b537209906877baf",
+    "usefulness": "Fringe guide separates hair over forehead from longer face-framing sides and explains daily styling commitment.",
+    "facts": "R02 natural growth/perimeter/curl factors and preparation advice support individual consultation. No exact lengths or promises by face shape.",
+    "sourceIds": [
+      "R02"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš tvirtinant juodraštį, kirpėjas turi peržiūrėti teiginius apie augimo krypties, plaukų kritimo ir pasirinktos formos ryšį bei kasdienį formavimo poreikį. Pateiktame kontekste nėra retrieved sourceSnapshots, todėl šiame juodraštyje nėra išorinių šaltinių citatų.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R02 natural growth/perimeter/curl factors and preparation advice support individual consultation. No exact lengths or promises by face shape.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Teminis kirpčiukų vaizdas nepridėtas. Reikia atskirai sugeneruoti ir importuoti iliustraciją, tada patikrinti tikrus pikselius, aprašą ir mobilų kadravimą prieš redakcinį patvirtinimą.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 5,
+    "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+    "slug": "gidai/kirpimas-garbanoti",
+    "beforeRevision": "985a66570e79d9c796f670ba15a0de4941867bd94ccd630d2801dc63a55711a4",
+    "usefulness": "Curly haircut preparation card records usual texture, target outline and length limits.",
+    "facts": "R03 explicitly addresses wet/dry cutting factors; R04 professional drying interview supports visible form changes only. No shrinkage percentage, best method, mandatory wash protocol or DIY sequence.",
+    "sourceIds": [
+      "R03",
+      "R04"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "PlaningBrief reikalauja kvalifikuoto specialisto vertinimo: prieš patvirtinimą peržiūrėti teiginius apie garbanų susitraukimą, sauso ar drėgno kirpimo taikymą ir atvykimo bei plovimo protokolą. Nepateikti kaip visiems taikomos taisyklės.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R03 explicitly addresses wet/dry cutting factors; R04 professional drying interview supports visible form changes only. No shrinkage percentage, best method, mandatory wash protocol or DIY sequence.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Šiam darbui nebuvo pateikta nė vieno retrieved sourceSnapshot. Jei faktiniai paaiškinimai apie garbanų ilgį ar kirpimo metodus lieka tekste, pridėti patikrintus, teiginius pagrindžiančius šaltinius arba susiaurinti teiginius.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R03 explicitly addresses wet/dry cutting factors; R04 professional drying interview supports visible form changes only. No shrinkage percentage, best method, mandatory wash protocol or DIY sequence.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Prie drafto nepridėta medija. Sugeneruoti, importuoti ir peržiūrėti pikselius bei mobilų crop pagal mediaBrief prieš patvirtinimą.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 6,
+    "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+    "slug": "gidai/kirpimas-trumpas-vyriskas",
+    "beforeRevision": "072e8e6200730b0b64d5dbd6ae799900046f18cdfc17d30578e8daed6a684422",
+    "usefulness": "Short haircut divided into top, sides, transition and contour; explicitly fictional task example.",
+    "facts": "R02 consultation and natural perimeter supports bounded descriptions; specific clipper numbers omitted. Raw HTML source anchor found inside plain content: convert only verified S04 URL into native rich link.",
+    "sourceIds": [
+      "S04",
+      "R02"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš redakcinį patvirtinimą kirpėjas turi patikrinti techninių terminų „perėjimo aukštis“, zonų ir kontūro paaiškinimus, kaip numatyta planavimo brief'e.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R02 consultation and natural perimeter supports bounded descriptions; specific clipper numbers omitted. Raw HTML source anchor found inside plain content: convert only verified S04 URL into native rich link.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Jei į tekstą vėliau įtraukiami konkretūs mašinėlės antgalių numeriai ar jų atitikmenys milimetrais, patikrinti juos pagal konkretaus gamintojo įrangą; šiame juodraštyje konkrečių nustatymų nėra.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R02 consultation and natural perimeter supports bounded descriptions; specific clipper numbers omitted. Raw HTML source anchor found inside plain content: convert only verified S04 URL into native rich link.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 7,
+    "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+    "slug": "gidai/kirpimas-kaina-trukme",
+    "beforeRevision": "5beeb51128b484257314214b90178707dd7d3e0eee4697b7ba00a6aea76e8ad0",
+    "usefulness": "Actual dated28EUR/60min and32EUR/70min S04 variants versus S34 from45EUR/60min demonstrate why unlike scopes cannot be price-ranked.",
+    "facts": "Compared source snapshots and actual revision: S04 ends+wash28/60 and small/medium32/70, S34 women from45/60. Washing not inferred for S34. Prices are historical2026-10-07 observations, never national average or current Madbeauty offer.",
+    "sourceIds": [
+      "S19",
+      "S04",
+      "S34",
+      "S33"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 8,
+    "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+    "slug": "gidai/kirpimas-pasiruosimas",
+    "beforeRevision": "b6684693f8f737ed7676b3e04b891038ea1f912d82b4591ebd8a2c6c7ddc2c88",
+    "usefulness": "Haircut preparation distinguishes received/no instructions; no universal wash rule.",
+    "facts": "R02 pre-service individual instructions and AAD small texture-related passage. No actual provider-specific protocol claimed; confirm with selected practitioner.",
+    "sourceIds": [
+      "S43",
+      "R02"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant tekstą patikrinkite, ar yra konkretaus kirpimo specialisto paruošimo protokolas. Jis nepateiktas, todėl tekstas nenustato universalios taisyklės, kada plauti plaukus ar kokios būklės jie turi būti.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R02 pre-service individual instructions and AAD small texture-related passage. No actual provider-specific protocol claimed; confirm with selected practitioner.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 9,
+    "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+    "slug": "gidai/kirpimas-nuotrauka",
+    "beforeRevision": "ae0e6f0fae8159adb795b9500362fba6f5a52ff1d4a62f3f295a1e14678c5bb6",
+    "usefulness": "Reference photograph worksheet makes desired length, sides/back and non-negotiable priorities explicit, plus fictional filled example.",
+    "facts": "R01 consultation images and R05 multiple angles/lighting support interpretation. Photo is not client outcome guarantee; generated hair cards are original illustrations.",
+    "sourceIds": [
+      "R01",
+      "R05"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Planavimo briefas nurodo šaltinius S04, S33, S34 ir S43, bet šiame darbe nėra pateikta jokių v2Context.sourceSnapshots ar patikrintų teiginių. Prieš patvirtinant išsaugoti ir peržiūrėti tinkamus šaltinius apie nuotraukų naudojimą kirpimo užduočiai bei tekstūros ir sušukavimo skirtumus arba pašalinti šaltinių reikalaujančius teiginius.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R01 consultation images and R05 multiple angles/lighting support interpretation. Photo is not client outcome guarantee; generated hair cards are original illustrations.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Planavimo briefui reikalinga originali schemos iliustracija dar nesukurta ir nepridėta: sugeneruoti arba parengti, importuoti, patikrinti vaizdo teises, faktinius pikselius, mobilų kadravimą ir alt tekstą prieš patvirtinant.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 10,
+    "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+    "slug": "gidai/plauku-formavimas-gidas",
+    "beforeRevision": "7a9e12e6f8e0b4bbc798a72a78c236270f80610679481192f56f3f80ec9608c1",
+    "usefulness": "Styling root splits drying, ordinary shape and event goal, with fictional waves request.",
+    "facts": "R03 Unit204 and AAD bounded heat/tension warning. No timed durability promise, individual eligibility, heat settings or stylist review asserted.",
+    "sourceIds": [
+      "S43",
+      "R03"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinimą atlikti planavimo brief'e nurodytą kirpėjo eigos patikrą; ji dar neatlikta. Patikrinti, ar paaiškinimas apie paslaugos dalių aptarimą tiksliai atitinka realią teikėjų praktiką, ir neformuluoti jo kaip universalaus meniu standarto.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R03 Unit204 and AAD bounded heat/tension warning. No timed durability promise, individual eligibility, heat settings or stylist review asserted.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Šiam gidui teminis vaizdas dar nepridėtas. Sukurti ir peržiūrėti trijų formavimo tikslų schemą; patikrinti tikruosius vaizdo pikselius, mobilų kadrą ir alt tekstą prieš priskiriant.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 11,
+    "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+    "slug": "gidai/plauku-formavimas-dziovinimas-ar-progine",
+    "beforeRevision": "18c7ce6ff6a320b25673273910ea7a7e9d6ae32c9c3f9d88a46f3bca1a4c08e4",
+    "usefulness": "Drying versus event styling offers a shared-scope A/B/C comparison template.",
+    "facts": "Read actual S34 wash+dry and separate bridal/trial labels plus S58 styling without wash. Package scope is provider-specific. No universal tariffs/technician technique.",
+    "sourceIds": [
+      "S34",
+      "S58"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Iki redakcinio patvirtinimo gauti ir peržiūrėti planavimo įraše nurodytų S33 ir S58 pirminius meniu. Patikrinti, ar juose iš tiesų nurodomi plovimas, džiovinimas, formos kūrimas, tvirtinimas ar priedai; prireikus patikslinti palyginimo tekstą. Šio darbo v2Context neturi retrieved sourceSnapshots, todėl sourceIds palikti tuščią ir šaltinių nuorodų neišgalvoti.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "Read actual S34 wash+dry and separate bridal/trial labels plus S58 styling without wash. Package scope is provider-specific. No universal tariffs/technician technique.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 12,
+    "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+    "slug": "gidai/plauku-formavimas-garbanos-bangos",
+    "beforeRevision": "8446db14e79a381e0320999ce414d835eb4b13f38426d9cfd446e66bfca5b8f6",
+    "usefulness": "Curls/waves/straight choice gives three distinct task descriptions and a short filled-style silhouette template.",
+    "facts": "R03 separates styles; actual generated two mannequins illustrate curls/waves while straight is prose option. No universal result or technique.",
+    "sourceIds": [
+      "R03"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Kirpėjo peržiūra dar neatlikta. Prieš patvirtinant tekstą, patikrinti, ar aptariamas skirtumas tarp norimo silueto ir pasiūlyme įtrauktų darbų yra tikslus šios paslaugų grupės kontekste; nepatvirtinti techninių atlikimo ar tinkamumo teiginių.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R03 separates styles; actual generated two mannequins illustrate curls/waves while straight is prose option. No universal result or technique.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Teminė iliustracija dar nepridėta. Sugeneruoti ir peržiūrėti tikrą iliustracijos failą, patikrinti mobilų kadravimą, alt tekstą ir teises prieš tvirtinant redakcinę versiją.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 13,
+    "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+    "slug": "gidai/plauku-formavimas-susegta",
+    "beforeRevision": "e91faf10d8532aeeb154c176049ad42cc61527de0daa3967214c38e0e4dc354d",
+    "usefulness": "Up/down hairstyle matrix uses clothing, accesssory, initial length and event constraints plus message template.",
+    "facts": "R03 Unit204 upstyles and styling varieties support ordinary descriptions. No minimum length or endurance guarantee; feasibility individually assessed.",
+    "sourceIds": [
+      "R03"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš juodraščio patvirtinimą reikalinga meistro peržiūra, ar aprašyti susegimo, palaidos ir tarpinės formos variantai atitinka realias atlikimo galimybes. Nepridėti universalių ilgio minimumų, trukmės ar kainų be konkretaus teikėjo patikrintos informacijos.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "R03 Unit204 upstyles and styling varieties support ordinary descriptions. No minimum length or endurance guarantee; feasibility individually assessed.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 14,
+    "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+    "slug": "gidai/plauku-formavimas-vestuves",
+    "beforeRevision": "b3290a447e581440803a39b754e2e88e214921f857a0d85ea26787c2ecb0b742",
+    "usefulness": "Bridal trial outcomes card records chosen option, remaining changes, accessory responsibility and schedule.",
+    "facts": "S34 menu actually lists bridal and trial separately. No trial availability/price or must-have rule attributed to Madbeauty; conditions individually confirmed.",
+    "sourceIds": [
+      "S34"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš tvirtinant tekstą, patikrinkite konkretaus teikėjo dabartines sąlygas, jei būtų įtraukiami teiginiai apie bandymo prieinamumą, būtinumą, kainą, trukmę, įtrauktus darbus, darbuotoją ar atvykimą. Šiame juodraštyje tokios sąlygos nepateikiamos kaip Madbeauty pasiūlymas ar visuotinė taisyklė.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "S34 menu actually lists bridal and trial separately. No trial availability/price or must-have rule attributed to Madbeauty; conditions individually confirmed.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Teminė iliustracija dar nepridėta. Prieš turinio patvirtinimą ją reikia sugeneruoti ar importuoti, peržiūrėti tikruose pikseliuose ir patikrinti mobilų kadravimą.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 15,
+    "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+    "slug": "gidai/plauku-formavimas-kaina-trukme",
+    "beforeRevision": "b6ec56a99dd50e5f0ee993918809f699883ce8aa175703c7ca6f63f16480c251",
+    "usefulness": "Original explicitly fictional50+10=60EUR versus60EUR including wash gives comparable totals; dated menus illustrate incompatible scope.",
+    "facts": "Arithmetic correct. S58 curl WITHOUT wash35EUR/45min and S34 wash+blowdry from50EUR/60min confirmed in actual retrieved menus. Travel/accessory inclusion remains a question. VVTAT bounded agreement/payment-record paraphrase only.",
+    "sourceIds": [
+      "S19",
+      "S34",
+      "S58"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 16,
+    "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+    "slug": "gidai/plauku-formavimas-pasiruosimas",
+    "beforeRevision": "7a061d438ef3e504326d446782b830f60c2d135090e603f035b404296d0d836f",
+    "usefulness": "Polite voice consistent; copyable preparation message records last wash/products/accessory and asks for individual instructions.",
+    "facts": "No particular provider instruction or universal wash timing is asserted. R03 preparation is salon-specific; AAD warning is limited to excessive heat and sustained tight pulling. No temperatures, diagnosis or individual contraindication.",
+    "sourceIds": [
+      "S43",
+      "R03"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant konkretų pasiruošimo nurodymą, gauti ir patikrinti teikėjo instrukciją dėl plovimo, džiovinimo ir ankstesnių priemonių. Tokia instrukcija nepateikta; tekste nėra universalios taisyklės.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "No particular provider instruction or universal wash timing is asserted. R03 preparation is salon-specific; AAD warning is limited to excessive heat and sustained tight pulling. No temperatures, diagnosis or individual contraindication.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 17,
+    "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+    "slug": "gidai/plauku-formavimas-makiazas-kartu",
+    "beforeRevision": "4b16452a44ac37d5d1a55b885f9b51ae37766f5ddb5c719924a9eb16d6e58b13",
+    "usefulness": "One/two provider combined-visit guide has sequence checklist and fillable timeline.",
+    "facts": "S58 actually lists makeup+hair without wash, VVTAT small agreement/payment paraphrase. No universal parallel working/sequence/duration; both providers explicitly confirm feasibility.",
+    "sourceIds": [
+      "S19",
+      "S58"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš publikavimo patvirtinimą atlikti planavimo brief'e nurodytą paslaugų specialisto peržiūrą: patikrinti, ar grafiko, darbų sekos ir atvykimo šablonas tiksliai atspindi realią teikėjų darbo organizavimo praktiką. Tekste universali seka ar trukmė neteigiama.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "S58 actually lists makeup+hair without wash, VVTAT small agreement/payment paraphrase. No universal parallel working/sequence/duration; both providers explicitly confirm feasibility.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 18,
+    "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+    "slug": "gidai/makiazas-gidas",
+    "beforeRevision": "9d1a1d01e01010ee10692ceb29c8ae725f82851831571ab7b7d9f2e85791a222",
+    "usefulness": "Original fictional office-photo versus evening-detail requests clarify intensity/context and optional scope without universal makeup rules.",
+    "facts": "Actual S58 labels substantiate day/evening/photo alternatives. No professional recommendation on skin, products, endurance, technical technique or suitability. Human makeup review is not performed or claimed; current consumer request comparison does not need fabricated credentials.",
+    "sourceIds": [
+      "S58"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Planavimo brief'e nurodyta vizažisto peržiūra neatlikta. Prieš patvirtinant tekstą, paprašyti vizažisto įvertinti, ar dieninio, proginio ir vestuvinio makiažo pasirinkimo bei darbų sudėties palyginimas tinkamas skaitytojui. Tekste profesinė peržiūra neteigta.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "Actual S58 labels substantiate day/evening/photo alternatives. No professional recommendation on skin, products, endurance, technical technique or suitability. Human makeup review is not performed or claimed; current consumer request comparison does not need fabricated credentials.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 19,
+    "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+    "slug": "gidai/makiazas-dieninis-proginis",
+    "beforeRevision": "914e76c1f61f3aecd26610f768baa774f89d77ee646a50d404aeae97f118f098",
+    "usefulness": "Day/event labels separated from intensity, original three contexts and scope axes. Native links use exact national day/evening/event targets.",
+    "facts": "Actual S58 menu confirms distinct named variants only. No universal technical protocol, suitability, product performance or expert approval asserted. Professional review requested by broad brief has not occurred; this narrower consumer-label comparison does not prescribe techniques.",
+    "sourceIds": [
+      "S58"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinimą reikalinga vizažisto peržiūra, kaip numatyta turinio plane; ji dar neatlikta.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "Actual S58 menu confirms distinct named variants only. No universal technical protocol, suitability, product performance or expert approval asserted. Professional review requested by broad brief has not occurred; this narrower consumer-label comparison does not prescribe techniques.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Prie šio puslapio dar nepridėta teminė veido schemos iliustracija. Reikia sukurti ir peržiūrėti tikrą vaizdą, patikrinti jo teises bei mobilų apkarpymą ir importuoti prijungiamą responsive šeimą.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 20,
+    "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+    "slug": "gidai/makiazas-vestuvinis",
+    "beforeRevision": "10e7974f8cf55258ef758c2740328755251256d75503ee608ec3c08f993899ff",
+    "usefulness": "Trial card records retained choices, changes, unknowns and event logistics. Inclusion/lash/price questions remain provider-specific. Paragraph fragments and duplicate link wording repaired.",
+    "facts": "No mandatory trial or longevity promise. A trial is presented as an opportunity to agree a task, not tested efficacy or a universal package. No actual provider conditions are asserted; medical/product suitability is outside scope.",
+    "sourceIds": [],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant straipsnį patikrinti konkretaus teikėjo bandomojo vizito apimtį, kainą, trukmę, avanso ir keitimo ar atšaukimo sąlygas; šios sąlygos negali būti pateikiamos kaip universalios.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "No mandatory trial or longevity promise. A trial is presented as an opportunity to agree a task, not tested efficacy or a universal package. No actual provider conditions are asserted; medical/product suitability is outside scope.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Katalogo nuorodos yra nacionaliniai kategorijų pasirinkimai. Jos nepatvirtina vietinės pasiūlos, laisvų laikų ar rezervacijos veikimo.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "No mandatory trial or longevity promise. A trial is presented as an opportunity to agree a task, not tested efficacy or a universal package. No actual provider conditions are asserted; medical/product suitability is outside scope.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 21,
+    "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+    "slug": "gidai/makiazas-nuotrauka",
+    "beforeRevision": "442e4431b2186d75ee7b1c361626f2fc8929db6ba90f69f49193725be3512edb",
+    "usefulness": "Original retain/adapt/avoid photo-reference brief plus illustrative warm-shadow/quiet-lip example; identifies photoshoot makeup separately from later retouch.",
+    "facts": "Read Adobe R06 Color panel and R07 Smooth Skin: photographic lighting/white balance and editing can change visible colour/texture. No claim that any particular portfolio is retouched. No skin assessment or efficacy instruction; primary photo sources replace unsupported S23 candidate.",
+    "sourceIds": [
+      "R06",
+      "R07"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant tekstą reikia atlikti planavimo brief'e nurodytą S23 šaltinio ir vizažisto peržiūrą. Šaltinio kopija nepateikta v2Context.sourceSnapshots, todėl sourceIds paliktas tuščias; patikrinti teiginius apie apšvietimo ir retušo poveikį bei fotosesijos paslaugos sudėtį.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "Read Adobe R06 Color panel and R07 Smooth Skin: photographic lighting/white balance and editing can change visible colour/texture. No claim that any particular portfolio is retouched. No skin assessment or efficacy instruction; primary photo sources replace unsupported S23 candidate.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Planuota teminė iliustracija dar nepridėta prie v2Context.attachedMedia. Prieš patvirtinimą ją reikia sugeneruoti, importuoti, patikrinti teises ir realius pikselius bei prisegti prie puslapio.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 22,
+    "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+    "slug": "gidai/makiazas-kaina-trukme",
+    "beforeRevision": "da168c20226993868e8ab55ae3290b1f90c15b6bda6a490cdf71863b274dd8dd",
+    "usefulness": "Original55+10=65EUR versus65EUR including lashes illustrates matched scope; actual day/evening observations now replace false no-numbers statement.",
+    "facts": "S58 day50EUR/60min and evening60EUR/70min checked in actual menu.65EUR comparison expressly fictional, not real offer. Lash/trial/travel inclusions conditional; no efficacy or universal inclusion.",
+    "sourceIds": [
+      "S19",
+      "S58",
+      "S33"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 23,
+    "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+    "slug": "gidai/makiazas-pamoka",
+    "beforeRevision": "2c27457150cd50cf07e2c8e3c25545fb90650a9c7bfd626548ef694e095c4fcf",
+    "usefulness": "Lesson versus product consultation separates practising with feedback from selection discussion. Two original user situations and fillable result brief give distinct reader job. Closing paragraph and polite title repaired.",
+    "facts": "All suggested deliverables conditional on provider scope. No teaching DIY technique, medical diagnosis, product compatibility or expert review asserted. General format names match actual owner taxonomy; no real unverified program claimed.",
+    "sourceIds": [],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš tvirtinant konkrečius teiginius apie tai, ką paprastai apima vizažisto pamoka ar priemonių konsultacija, patikrinti realių teikėjų pasiūlymus ir peržiūrėti kvalifikuotam vertinimui skirtą programos apimties klausimą. Juodraštyje pasiūlymai pateikiami kaip pasirinkimo kriterijai, o ne kaip garantuota paslaugos sudėtis.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "All suggested deliverables conditional on provider scope. No teaching DIY technique, medical diagnosis, product compatibility or expert review asserted. General format names match actual owner taxonomy; no real unverified program claimed.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Teminis straipsnio vaizdas dar negeneruotas ir neimportuotas. Atskirai sugeneruoti, patikrinti teises ir faktinius pikselius, importuoti responsyvią WebP šeimą ir patikrinti mobilų kadravimą bei alt tekstą.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 24,
+    "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+    "slug": "gidai/nagu-dizainas-gidas",
+    "beforeRevision": "5b1d0e403654e39bac82627141a16590296840469c02b9694185080582f9c3a9",
+    "usefulness": "Nail-design root separates visual idea from coating choice, with four decisions and fictional one-star accent task; original copyable brief. Removed literal stray text token and fixed noun agreement.",
+    "facts": "No one universal technique/product/package asserted. Design examples are illustrative, professional application/suitability remains provider assessment. Exact national nail-art target verified separately. No treatment/health or expert-review claim.",
+    "sourceIds": [],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Prieš patvirtinant projektą, nagų paslaugų specialistas turi patikrinti skyrių apie „Nagų dailę“: kad bendras kategorijos aprašymas nepriskirtų konkrečių metodų, produktų ar darbų paketų visiems pasiūlymams.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "No one universal technique/product/package asserted. Design examples are illustrative, professional application/suitability remains provider assessment. Exact national nail-art target verified separately. No treatment/health or expert-review claim.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Šiam gidui dar nepriskirtas temos vaizdas. Sukurti originalią redakcinę iliustraciją pagal mediaBrief, patikrinti tikruosius pikselius ir mobilų kadrą, importuoti responsive WebP šeimą bei priskirti patikrintą alt.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 25,
+    "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+    "slug": "gidai/bendri-vizitu-derinimas",
+    "beforeRevision": "a9e24e990b75c1b85587d851d7d4a2896de086972d3e9dc5aaaba6b1a4183c53",
+    "usefulness": "Concrete fictional09:00–10:00,30minute personal travel reserve,10:30–11:30 schedule adds original calculation. Stray foreign word removed.",
+    "facts": "Timeline ends11:30 correctly. Durations and reserve fictional/personal assumptions, not actual appointment, clinical sequence or measured travel. VVTAT only agreement/payment-proof advice; accessibility must be confirmed for the exact venue.",
+    "sourceIds": [
+      "S19"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 26,
+    "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+    "slug": "gidai/sezonai-kaledos",
+    "beforeRevision": "1c39dc1f7757d2cdbe2232a3666b3fad02388ee714aaee93bae8b0d8f298b860",
+    "usefulness": "Christmas two distinct colour/accent ideas plus event-backward planning card; original future timetable remains based on confirmed provider scope.",
+    "facts": "No measured demand, advance-booking deadline, availability or service duration asserted. S19 bounded agreement/payment-proof passage; Christmas timing is an editorial assumption, not search indexing or supply proof. Actual image shows green/gold accents; not a real client portfolio.",
+    "sourceIds": [
+      "S19"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Nėra salonų apkrovos, laisvų vietų ar paslaugų trukmių matavimo. Todėl tekste nepateikiami konkretūs rezervavimo terminai ar laisvų vizitų pažadai; prieš juos įtraukiant reikia patikrinti aktualius teikėjų kalendorius.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "No measured demand, advance-booking deadline, availability or service duration asserted. S19 bounded agreement/payment-proof passage; Christmas timing is an editorial assumption, not search indexing or supply proof. Actual image shows green/gold accents; not a real client portfolio.",
+        "humanProfessionalReviewPerformed": false
+      },
+      {
+        "note": "Teminis straipsnio vaizdas dar nepriskirtas. Atskirai sugeneruoti, importuoti ir peržiūrėti vaizdo pikselius bei mobilų kadravimą prieš redakcinį patvirtinimą.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 27,
+    "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+    "slug": "gidai/sezonai-naujieji",
+    "beforeRevision": "582cf082eaad5b379030bf050f7473796e96c1be1576d9ec68305f3c2ea5b65c",
+    "usefulness": "Three sparkle placements compared with same short-oval/base assumption, useful allocation/task scope; different original narrow job from Christmas multi-visit planning.",
+    "facts": "Personal design preferences and fictional options, not trend popularity, product method or wear guarantee. No empirical price/time/provider claims. Current national design browsing is explicit city choice, no local stock.",
+    "sourceIds": [],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Teminė šio straipsnio iliustracija dar nepridėta. Sukurti ir peržiūrėti tikruosius vaizdo pikselius, importuoti responsive šeimą ir prieš tvirtinimą pagal ją patikslinti alt tekstą. Iliustracija turi rodyti idėjinius variantus, ne tikrus kliento ar teikėjo darbus.",
+        "outcome": "completed-actual-media-review",
+        "evidence": "Actual generated PNG pixels inspected; matching alt imported with5WebP variants, actual file hashes/dimensions checked and featured decoded at1280/390px. Image is an illustration, not real provider/client proof.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 28,
+    "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+    "slug": "gidai/sezonai-valentino",
+    "beforeRevision": "3f428d4eef98120abb869b947fa4fc8db319318937f35dd2e93cc1fa363bb989",
+    "usefulness": "Natural description, short-nail adaptation and fictional single-heart brief. Actual image is one pink/nude illustrative composition, not a two-result technical comparison.",
+    "facts": "Original design ideas require no empirical trend/source claim. No actual client work, technique, wear promise, price, health or expertise claim. Empty source list is appropriate for original visual choices.",
+    "sourceIds": [],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Pateiktame v2Context.sourceSnapshots sąrašas tuščias, todėl sourceIds nepateikti. Tekste palikti tik dizaino pasirinkimo ir susitarimo koordinavimo patarimai; neįtraukti specialistų, kainų, trukmės, sveikatos ar garantuoto rezultato teiginių.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "Original design ideas require no empirical trend/source claim. No actual client work, technique, wear promise, price, health or expertise claim. Empty source list is appropriate for original visual choices.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  },
+  {
+    "index": 29,
+    "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+    "slug": "gidai/sezonai-velykos",
+    "beforeRevision": "a5a1a90ee03762dfb7a99e6152326701e50df4c6334fd2572894a6d6c3f6f3b9",
+    "usefulness": "Added explicit requestedSaturday2027-03-27 versus answeredSunday2027-03-28 mismatch and fillable confirmation card.",
+    "facts": "USCCB S15 actually confirms Easter Sunday2027-03-28. Calendar arithmetic confirms precedingSaturday27March. Provider holiday hours and availability are explicitly unknown and not asserted; this article helps readers confirm them.",
+    "sourceIds": [
+      "S15"
+    ],
+    "humanProfessionalReviewPerformed": false,
+    "resolution": [
+      {
+        "note": "Konkrečių teikėjų 2027 m. kovo 27 ir 28 d. darbo laikai ir vietinė pasiūla nežinomi; šiame tekste jie neteigami. Konkretų vizito laiką reikia tiesiogiai patvirtinti pasirinktam teikėjui.",
+        "outcome": "resolved-by-verified-or-bounded-consumer-scope",
+        "evidence": "USCCB S15 actually confirms Easter Sunday2027-03-28. Calendar arithmetic confirms precedingSaturday27March. Provider holiday hours and availability are explicitly unknown and not asserted; this article helps readers confirm them.",
+        "humanProfessionalReviewPerformed": false
+      }
+    ],
+    "technicalProceduresOutsideScope": true
+  }
+]

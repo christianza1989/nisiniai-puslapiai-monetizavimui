@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "ef79fa2fb21b666774daebbfefa30db9270c273f",
+  "runtimeSourceCheckpoint": "b00eeb8a34706b1e64fc53c247558ff57a6ae3fd",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -287,6 +287,13 @@
       "state": "accepted-isolated-path",
       "source": "ef79fa2fb21b666774daebbfefa30db9270c273f",
       "remaining": "Other applicable UI states and hosted/factual launch gates"
+    },
+    {
+      "name": "waitlist-stale-claim-focused-context-and-natural-expiry",
+      "tests": 256,
+      "state": "accepted-isolated-path",
+      "source": "b00eeb8a34706b1e64fc53c247558ff57a6ae3fd",
+      "remaining": "Other applicable UI states and hosted/factual launch gates"
     }
   ],
   "tasks": [
@@ -558,7 +565,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: branch/waitlist/client-card/access/global conflicts, other complaint publication actions/queue read errors and account-change booking draft privacy",
+    "Remaining applicable I04: branch/client-card/access/global conflicts, other complaint publication actions/queue read errors and account-change booking draft privacy; named local waitlist stale/expiry scope accepted",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

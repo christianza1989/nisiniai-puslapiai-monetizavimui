@@ -1,3 +1,7 @@
+## Waitlist256 — persistent conflict context and capture dimensions
+
+Actual native stale claim removed its focused button on refresh and left BODY focus; the4.5second toast disappeared from the request context. Owned waitlist UI now inserts the existing escaped error alert into that refreshed request and focuses it, with main fallback. Backend guards unchanged. Conflict/no-write/explicit one booking/natural15minute expiry/restart accepted at b00eeb8a34706b1e64fc53c247558ff57a6ae3fd; no shared core or production changes. Initial screenshot series did not match the latest DOM viewport; retained as diagnostic. Separate subsequent screenshot calls, read-only raster metadata and actual visual review establish final four widths; no image editing. Full scope waitlist256-browser.md.
+
 2026-10-08 actual phase/confirmation browser defects: phase action rerender focused Close, confirmation errors left focus on Confirm, and another tab's render overwrote shared UI booking choices on reload. Owned Madbeauty fixes preserve targeted phase focus, focus error/recovery, and use per-tab UI sessionStorage. Native two-store phase conflicts/no-write/current snapshots/restart and256/256 existing suites accepted at ef79fa2fb21b666774daebbfefa30db9270c273f; generic shared core was not changed. Same-tab persistence is distinct from cross-device drafts and cross-account privacy acceptance.
 
 ## Cancellation256 — original version and explicit whole intent

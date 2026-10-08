@@ -1,3 +1,7 @@
+## Waitlist256 — claim UI recovery
+
+Backend/version/expiry/hold contracts unchanged. Guarded claim409 refreshes authoritative current rows before displaying a persistent focused escaped alert in the affected request. Naturally expired offered rows derive their expired UI status from the current clock, remove action controls and preserve criteria; rejected claim does not imply a stored automation transition. b00eeb8a34706b1e64fc53c247558ff57a6ae3fd; exact local proof in ACCEPTANCE.md.
+
 ## 2026-10-08 — fazių ir patvirtinimo UI
 
 Backend contracts unchanged. Add/remove phase UI focuses its affected control; confirmation errors focus the existing alert/recovery. Per-tab UI snapshots use sessionStorage, keeping normal same-tab reload without other windows replacing the booking selection. Authoritative holds still use published serviceVersion; native versions1/2 reject after later publication, version3 confirms with saved phases. Runtime ef79fa2fb21b666774daebbfefa30db9270c273f; local scoped proof in ACCEPTANCE.md, no hosted activation.

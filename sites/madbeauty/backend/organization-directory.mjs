@@ -1,5 +1,5 @@
 import {ApiError,randomId,reject} from './primitives.mjs';
-import {membershipScope,requireCapability} from './permissions.mjs';
+import {membershipScope,requireCapability,canManageProfile} from './permissions.mjs';
 import {createPlatform} from './platform.mjs';
 import {organizationTransferProof as proof,sameTransferProof as equal,organizationCollections} from './organization-handoff.mjs';
 import {invokePlatform,publicRpcMethods} from './rpc-contract.mjs';
@@ -8,6 +8,7 @@ import {createDirectoryCacheIssuer,createDirectoryCacheReceiver,createDirectoryI
 import {createCustomerControlQueue,createCustomerControlReceiver} from './organization-customer-controls.mjs';
 import {createClientAdmissionQueue,createClientAdmissionReceipts,clientAdmissionInput} from './organization-client-admission.mjs';
 import {createOrganizationMailbox,createOrganizationMailReceipts,validateOrganizationMailClaim} from './organization-mail.mjs';
+import {validateOrganizationMediaBytes} from './organization-media.mjs';
 
 const json=JSON.stringify,clone=v=>JSON.parse(json(v)),maxTargets=32,maxResultBytes=1024*1024;
 const unavailable=()=>reject('ORGANIZATION_UNAVAILABLE','Organizacijos duomenys laikinai nepasiekiami. Bandykite dar kartą.',503);
@@ -24,6 +25,7 @@ const systemMethods=new Set(['organizationMailCandidates','organizationMailDueAt
 const readMethods=new Set([...publicRpcMethods,'session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference','workspace','rebooking','organizationReport','reportCsv','exportOfferCsv']);
 targetMethods.add('workspace');
 targetMethods.add('metrics');readMethods.add('metrics');
+targetMethods.add('mediaReadAccess');readMethods.add('mediaReadAccess');
 for(const method of [...systemMethods,'claimOrganizationMail'])targetMethods.add(method);
 // Candidate refresh runs deterministic alarm reconciliation; it is repeatable
 // without storing a transport nonce for every idle background poll.
@@ -33,6 +35,7 @@ targetMethods.add('identityActionScope');readMethods.add('identityActionScope');
 const fields=['bookings','messages','reviews','inquiries','waitlist','reports'];
 const exportFields=[...fields,'organizationCards'];
 function reference(method,input){
+ if(method==='mediaReadAccess')return {tables:['media'],id:input.id};
  if(['claimOrganizationMail','ackOrganizationMail'].includes(method))return {tables:['mail_outbox'],id:input.id};
  if(method==='identityActionScope')return {organizationId:input.organizationId};
  if(direct.has(method))return {organizationId:input.organizationId};
@@ -100,6 +103,13 @@ export function createOrganizationCommand(store,{targetName}){
   else if(body.method==='organizationMailDueAt')result=mailbox.nextAt();
   else if(body.method==='claimOrganizationMail')result=mailbox.claim(actor,body.input);
   else if(body.method==='ackOrganizationMail')result=mailbox.acknowledge(body.input);
+  else if(body.method==='mediaReadAccess'){
+   const asset=store.recordById('media',body.input.id),file=body.input.file,variant=asset?.variants?.find(v=>v.storageFile===file);
+   if(!variant||!/^asset_[a-f0-9-]+-\d+\.webp$/.test(file))reject('NOT_FOUND','Vaizdas nerastas.',404);
+   const owned=actor&&canManageProfile(store.readOrganization(organizationId),actor,organizationId),published=api.profile(organizationId)?.media?.some(m=>m.id===asset.id);
+   if(!published&&!owned&&!actor?.operator)reject('NOT_FOUND','Vaizdas nerastas.',404);
+   result={id:asset.id,file,key:'variants/'+file,bytes:variant.bytes,sha256:variant.sha256};
+  }
   else if(body.method==='identityActionScope')result={organizationId,operation:body.input.operation,clientCapacity:identityCapacity};
   else if(body.method==='applyCustomerControls')result=controls.apply(actor,body.input?.revision,()=>api.runAutomation());
   else if(body.method==='resolveReference'){const input=body.input;if(!validId(input?.id)||!Array.isArray(input.tables)||input.tables.length>3||input.tables.some(t=>!entityTables.has(t)&&t!=='mail_outbox'))reject('INVALID_INPUT','Netinkama įrašo tapatybė.');const collections=input.tables.filter(t=>owner(store,{tables:[t],id:input.id})===organizationId);result={organizationId:collections.length?organizationId:null,collections};}
@@ -145,10 +155,10 @@ export function createOrganizationDirectory(store,{getTarget}={}){
  const saveReferences=(t,references)=>store.transaction(()=>{for(const r of references){if(!entityTables.has(r.collection)||!validId(r.id))unavailable();const old=db.prepare('SELECT organization_id FROM organization_directory_refs WHERE site_id=? AND collection=? AND entity_id=?').get(siteId,r.collection,r.id);if(old&&old.organization_id!==t.organization_id)reject('IDEMPOTENCY_CONFLICT','Įrašo tapatybė priklauso kitai organizacijai.',409);db.prepare('INSERT INTO organization_directory_refs VALUES(?,?,?,?,?) ON CONFLICT(site_id,collection,entity_id) DO UPDATE SET epoch=excluded.epoch').run(siteId,r.collection,r.id,t.organization_id,t.epoch);}});
  async function targetCall(t,method,user,input={},recipientId=null,clientAdmission=null){
   if(t.state!=='sealed'||!getTarget)unavailable();
-  let response,nonce,account;
+  let response,nonce,account,binary;
   for(let attempt=0;attempt<2;attempt++){
    const packet=store.transaction(()=>{account=actor(user);nonce=randomId('command');return signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:account,input:clone(input),cache:cache.issue(account?.id,recipientId),...(clientAdmission?{clientAdmission}: {})});});
-   try{response=await getTarget(t.target_name).executeDirectoryCommand(packet);}catch{unavailable();}
+   try{const target=getTarget(t.target_name);if(method==='mediaReadAccess'){const reply=await target.readOrganizationMedia(packet);response=reply.response;binary=reply.bytes;}else response=await target.executeDirectoryCommand(packet);}catch{unavailable();}
    // An overtaken cache is rejected before the business operation. Refresh once;
    // transport failures and uncertain writes are never automatically replayed.
    if(response?.error?.code!=='STALE_DIRECTORY_CONTEXT')break;
@@ -156,7 +166,8 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   if(response?.error)throw new ApiError(response.error.code,response.error.message,response.error.status);
   const body=verify(store,'directory-result',response);
   if(body.schemaVersion!==1||body.siteId!==siteId||body.organizationId!==t.organization_id||body.epoch!==t.epoch||body.targetName!==t.target_name||body.nonce!==nonce||!Array.isArray(body.references)||body.references.length>1024)unavailable();
-  store.transaction(()=>{saveReferences(t,body.references);effects.accept(t,body.identityEffect,account,body.result);});return body.result;
+  store.transaction(()=>{saveReferences(t,body.references);effects.accept(t,body.identityEffect,account,body.result);});
+  return method==='mediaReadAccess'?validateOrganizationMediaBytes(body.result,input.file,binary):body.result;
  }
  async function resolve(ref,rows){
   if(ref.organizationId)return ref.organizationId;
@@ -222,6 +233,11 @@ export function createOrganizationDirectory(store,{getTarget}={}){
  }
  async function nextOrganizationMailAt(){
   let due=mailReceipts.nextAt()??Infinity;for(const target of transfers().filter(t=>t.state==='sealed'))try{const value=await targetCall(target,'organizationMailDueAt',null,{});if(value!==null&&(!Number.isSafeInteger(value)||value<0))unavailable();due=Math.min(due,value??Infinity);}catch{due=Math.min(due,store.clock()+30000);}return Number.isFinite(due)?due:null;
+ }
+ async function readMedia(file,user,readSource){
+  const match=/^(asset_[a-f0-9-]+)-\d+\.webp$/.exec(file);if(!match)reject('NOT_FOUND','Vaizdas nerastas.',404);
+  const rows=transfers(),organizationId=await resolve({tables:['media'],id:match[1]},rows),target=rows.find(t=>t.organization_id===organizationId);
+  return target?targetCall(target,'mediaReadAccess',user,{id:match[1],file}):readSource();
  }
  async function dispatch(method,user,input={}){
   const rows=transfers();if(!rows.length)return method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);
@@ -301,5 +317,5 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   // Central identity/preferences/export remain on their existing guarded writer.
   return invokePlatform(api,method,actor(user),input);
  }
- return {dispatch,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt,drainOrganizationMail,nextOrganizationMailAt};
+ return {dispatch,readMedia,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt,drainOrganizationMail,nextOrganizationMailAt};
 }

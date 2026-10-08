@@ -20,5 +20,11 @@ export class MadbeautyOrganizationStaging extends DurableObject{
  authorityStatus(){return createOrganizationAuthority(this.store,{targetName:''}).status();}
  discardAuthority(token){const targetName=token?.targetName;if(!this.ctx.id.equals(this.env.ORGANIZATION_STAGING.idFromName(targetName)))throw Error('Organization object identity mismatch');return createOrganizationAuthority(this.store,{targetName}).discard(token);}
  executeDirectoryCommand(packet){const targetName=packet?.targetName;if(!this.ctx.id.equals(this.env.ORGANIZATION_STAGING.idFromName(targetName)))throw Error('Organization object identity mismatch');return createOrganizationCommand(this.store,{targetName}).execute(packet);}
+ async readOrganizationMedia(packet){
+  if(packet?.method!=='mediaReadAccess')return {response:{error:{code:'FORBIDDEN',message:'Prieiga neleidžiama.',status:403}}};
+  const response=this.executeDirectoryCommand(packet);if(response.error)return {response};
+  try{const object=await this.mediaBucket.get(response.result.key);if(!object)throw Error('Missing object');return {response,bytes:await object.arrayBuffer()};}
+  catch{return {response:{error:{code:'MEDIA_UNAVAILABLE',message:'Vaizdas laikinai nepasiekiamas.',status:503}}};}
+ }
  fetch(){return new Response('Not found',{status:404});}
 }

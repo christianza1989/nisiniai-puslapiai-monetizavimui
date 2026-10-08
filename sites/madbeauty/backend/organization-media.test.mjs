@@ -7,6 +7,7 @@ import {createSqlMediaBucket,SQL_MEDIA_POLICY} from '../cloudflare/media-bucket.
 import {createOrganizationHandoff,createOrganizationStaging,organizationTransferProof} from './organization-handoff.mjs';
 import {createOrganizationCommit,createOrganizationAuthority} from './organization-authority.mjs';
 import {createOrganizationMediaSource,createOrganizationMediaStage} from './organization-media.mjs';
+import {createOrganizationDirectory,createOrganizationCommand} from './organization-directory.mjs';
 const secret='isolated-media-transfer-'.repeat(3),now=Date.parse('2026-10-08T06:00:00Z'),digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 async function fixture(){
  const source=openStore({filename:':memory:',secret,clock:()=>now}),target=openStore({filename:':memory:',secret,clock:()=>now}),sourceBucket=createSqlMediaBucket(source),targetBucket=createSqlMediaBucket(target),owner={id:'media-transfer-owner',email:'owner@example.com',name:'Owner',operator:true};
@@ -56,5 +57,22 @@ test('Aborting an unprepared partial media import requires the exact epoch token
   f.importer.accept(page(f,f.asset.source.original,1));const abort=f.commit.abort(f.control),{proof,...wrong}=abort;wrong.epoch++;
   assert.throws(()=>f.authority.discard({...wrong,proof:organizationTransferProof(f.source,'source-abort',wrong)}),e=>e.code==='HANDOFF_SCOPE');assert.equal(f.targetBucket.stats().bytes,300004);
   assert.equal(f.authority.discard(abort).state,'empty');assert.equal(f.targetBucket.stats().bytes,0);assert.equal(f.importer.summary().state,'empty');assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM media_chunks').get().n,0);assert.deepEqual(new Uint8Array(await (await f.sourceBucket.get(f.asset.source.original)).arrayBuffer()),f.original);
+ }finally{f.close();}
+});
+
+test('Current private media read checks canonical target permissions and denies a guest or foreign account without consulting the sealed source',async()=>{
+ const f=await fixture();try{
+  const context=copy(f),receipt=f.authority.prepare(context),command=createOrganizationCommand(f.target,{targetName:f.frozen.targetName});f.authority.activate(f.commit.seal({...f.control,targetReceipt:receipt}));
+  const directory=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:packet=>command.execute(packet),readOrganizationMedia:async packet=>{const response=command.execute(packet);if(response.error)return {response};return {response,bytes:await (await f.targetBucket.get(response.result.key)).arrayBuffer()};}})}),file=f.asset.variants[0].storageFile,readSource=()=>{throw Error('Sealed source must not serve old permissions or bytes');};
+  assert.deepEqual(await directory.readMedia(file,f.owner,readSource),Buffer.from(f.variant));await assert.rejects(()=>directory.readMedia(file,null,readSource),e=>e.code==='NOT_FOUND');
+  f.source.db.prepare('INSERT INTO accounts(id,site_id,email,name,operator,created_at) VALUES(?,?,?,?,0,?)').run('foreign-media',f.source.siteId,'foreign@example.com','Foreign',now);f.source.ensureClient('foreign-media');await assert.rejects(()=>directory.readMedia(file,{id:'foreign-media',operator:true},readSource),e=>e.code==='NOT_FOUND');await assert.rejects(()=>directory.readMedia(f.asset.source.original,f.owner,readSource),e=>e.code==='NOT_FOUND');assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM sessions').get().n,0);
+ }finally{f.close();}
+});
+
+test('A tampered binary result and an unavailable current target fail explicitly even when an intact sealed source variant still exists',async()=>{
+ const f=await fixture();try{
+  const context=copy(f),receipt=f.authority.prepare(context);f.authority.activate(f.commit.seal({...f.control,targetReceipt:receipt}));const command=createOrganizationCommand(f.target,{targetName:f.frozen.targetName}),file=f.asset.variants[0].storageFile,readSource=()=>{throw Error('Forbidden stale fallback');};
+  const tampered=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:packet=>command.execute(packet),readOrganizationMedia:async packet=>({response:command.execute(packet),bytes:new Uint8Array([9,9,9,9]).buffer})})});await assert.rejects(()=>tampered.readMedia(file,f.owner,readSource),e=>e.code==='MEDIA_UNAVAILABLE');
+  const unavailable=createOrganizationDirectory(f.source,{getTarget:()=>({readOrganizationMedia:()=>{throw Error('Named target unavailable');}})});await assert.rejects(()=>unavailable.readMedia(file,f.owner,readSource),e=>e.code==='ORGANIZATION_UNAVAILABLE');assert.deepEqual(new Uint8Array(await (await f.sourceBucket.get('variants/'+file)).arrayBuffer()),f.variant);
  }finally{f.close();}
 });

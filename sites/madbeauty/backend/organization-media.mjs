@@ -8,6 +8,11 @@ const integrity=()=>reject('HANDOFF_MEDIA_INTEGRITY','Perkeliamos medijos duomen
 const dependency=()=>reject('HANDOFF_DEPENDENCY','Prieš perdavimą reikia parengti visus organizacijos medijos failus.',409);
 const records=(store,table)=>store.db.prepare('SELECT data FROM '+table+' WHERE site_id=? ORDER BY ordinal').all(store.siteId).map(r=>JSON.parse(r.data));
 const mediaRecords=rows=>rows.filter(r=>r.collection==='media').map(r=>JSON.parse(r.raw));
+export function validateOrganizationMediaBytes(descriptor,file,binary){
+ let bytes;try{bytes=Buffer.from(binary);}catch{reject('MEDIA_UNAVAILABLE','Vaizdas laikinai nepasiekiamas.',503);}
+ if(descriptor?.file!==file||descriptor.key!=='variants/'+file||!Number.isSafeInteger(descriptor.bytes)||descriptor.bytes<1||descriptor.bytes>policy.objectBytes||bytes.length!==descriptor.bytes||sha(bytes)!==descriptor.sha256)reject('MEDIA_UNAVAILABLE','Vaizdas laikinai nepasiekiamas.',503);
+ return bytes;
+}
 export function organizationMediaObjects(rows,organizationId){
  const assets=mediaRecords(rows),objects=[],seen=new Set();if(assets.length>24)dependency();
  for(const asset of assets){

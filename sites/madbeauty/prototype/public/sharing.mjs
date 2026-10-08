@@ -19,3 +19,8 @@ export function syncSharing(document,metadata){
  for(const tag of document.querySelectorAll('meta[property^="og:"],meta[property^="article:"],meta[name^="twitter:"]'))tag.remove();
  for(const row of sharingEntries(metadata)){const tag=document.createElement('meta');tag.setAttribute(row.kind,row.key);tag.setAttribute('content',row.value);document.head.append(tag);}
 }
+export function syncCanonical(document,url){
+ let tag=document.querySelector('link[rel="canonical"]');
+ if(!tag){tag=document.createElement('link');tag.setAttribute('rel','canonical');document.head.append(tag);}
+ tag.setAttribute('href',url);
+}

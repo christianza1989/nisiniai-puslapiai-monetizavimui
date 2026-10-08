@@ -8,6 +8,12 @@ export const btn=(action,label,attrs='',cls='button')=>`<button type="button" cl
 export const userError=message=>Object.assign(Error(message),{code:'INVALID_INPUT'});
 export const field=(label,name,value='',type='text',attrs='')=>`<div class="field"><label for="${name}">${label}</label><input class="input" id="${name}" name="${name}" type="${type==='time'?'text':type}" value="${esc(value)}" ${type==='time'?'pattern="(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]" maxlength="5" placeholder="17:00" title="Laikas 24 valandų formatu, pvz., 17:00" autocomplete="off"':''} ${attrs}></div>`;
 export const select=(label,name,options,value='',attrs='')=>`<div class="field"><label for="${name}">${label}</label><select class="input" id="${name}" name="${name}" ${attrs}>${options.map(([v,l])=>`<option value="${esc(v)}" ${v===String(value)?'selected':''}>${esc(l)}</option>`).join('')}</select></div>`;
+export function bindSelectionContext(form,names){
+ const choices=names.map(name=>{
+  const control=form.elements.namedItem(name),context=document.createElement('p');context.id=form.id+'-selected-'+name;context.className='hint';context.setAttribute('role','status');control.setAttribute('aria-describedby',context.id);control.insertAdjacentElement('afterend',context);return {control,context};
+ });
+ const update=()=>{for(const {control,context}of choices)context.textContent=control.selectedOptions[0]?.textContent||'';};update();form.addEventListener('change',update);
+}
 export const textarea=(label,name,value='',attrs='')=>`<div class="field"><label for="${name}">${label}</label><textarea class="input" id="${name}" name="${name}" rows="4" ${attrs}>${esc(value)}</textarea></div>`;
 const moneyFormatter=new Intl.NumberFormat('lt-LT',{style:'currency',currency:'EUR'}),timeFormatters=new Map(),dateFormatters=new Map();
 export const money=n=>moneyFormatter.format(n/100);

@@ -1,6 +1,6 @@
 import {searchSelect,bindSearchSelects} from './search-select.mjs';
 import {loadJson} from './load-json.mjs';
-import {syncSharing} from './sharing.mjs';
+import {syncSharing,syncCanonical} from './sharing.mjs';
 import {submitReport} from './moderation-ui.mjs';
 import {waitlistFields,waitlistAction} from './waitlist-ui.mjs';
 import {locationDialog} from './search-results-ui.mjs';
@@ -101,7 +101,7 @@ async function render(){
   const contentPage=ctx.content?.pages.find(p=>'/'+p.slug===path||!p.slug&&path==='/');
   syncSharing(document,contentPage?.sharing);
   document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>s.remove());if(contentPage?.schema&&!path.startsWith('/paslaugos')){const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(contentPage.schema).replace(/</g,'\\u003c');document.head.append(script);}
-  $('meta[name="description"]').content=contentPage?.description||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';$('link[rel="canonical"]').href=contentPage?.url||CATALOGUE_ORIGIN+location.pathname;
+  $('meta[name="description"]').content=contentPage?.description||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';syncCanonical(document,contentPage?.url||CATALOGUE_ORIGIN+location.pathname);
   $('meta[name="robots"]').content=!boot.privatePrototype&&!location.search&&!path.startsWith('/paslaugos')&&(contentPage||ctx.currentProfile?.approved||trustPages[path])?'index,follow':'noindex,follow';saveUI();
 }
 async function selectRole(role,organizationId='demo-org-0',clientId='demo-client-0',target=null){if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);state.session={role,organizationId,clientId};state.booking=null;saveUI();await navigate(target||({customer:'/paskyra/vizitai',professional:'/meistrui',operator:'/operatorius'})[role]||'/');}

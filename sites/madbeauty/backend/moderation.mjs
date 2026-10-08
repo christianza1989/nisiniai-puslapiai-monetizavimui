@@ -20,7 +20,7 @@ export function createModeration({store,mutate,scope,event,clock}){
    const r={id:randomId('report'),target:id,...values,note,accountId:user.id,status:'new',version:1,createdAt:clock().now,dueAt:new Date(store.clock()+72*3600000).toISOString(),actions:[{state:'new',action:'submitted',at:clock().now}]};d.reports.push(r);if(key)d.idempotency[key]={reportId:r.id,fingerprint};event(d,'report-created',r.id);return reporterReport(r);
   });},
   reviewReport(user,input){return mutate(d=>{
-   scope(d,user,{role:'operator'});const r=find(d,'reports',input.id);if(input.version!==(r.version||0))reject('VERSION_CONFLICT','Pranešimas pasikeitė. Atnaujinkite.',409);
+   scope(d,user,{role:'operator'});const r=find(d,'reports',input.id);if(input.version!==(r.version||0))reject('VERSION_CONFLICT','Pranešimas pasikeitė. Uždarykite langą ir atnaujinkite puslapį, kad peržiūrėtumėte dabartinį sprendimą.',409);
    if(!['triage','resolved','dismissed'].includes(input.state)||!['record-only','hide-review','hide-media','disable-profile'].includes(input.action))reject('INVALID_INPUT','Pasirinkite peržiūros būseną ir veiksmą.');
    if(['resolved','dismissed','hidden'].includes(r.status))reject('VERSION_CONFLICT','Šio pranešimo peržiūra užbaigta.',409);const reason=text(input.reason,500);if((r.actions||[]).length>=50)reject('LIMIT','Pranešimo sprendimų limitas pasiektas.');
    if(input.action!=='record-only'){

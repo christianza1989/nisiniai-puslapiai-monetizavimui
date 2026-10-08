@@ -1,13 +1,7 @@
 import {qualificationDisplayState} from './offer-eligibility-ui.mjs';
 import {locationName} from './locations-ui.mjs';
 import {localInstant,makeClock} from '/demo-model.mjs';
-import {esc,btn,select,field,textarea,money,badge,hhmm} from './ui.mjs';
-function bindSelectionContext(form,names){
- const choices=names.map(name=>{
-  const control=form.elements.namedItem(name),context=document.createElement('p');context.id=form.id+'-selected-'+name;context.className='hint';context.setAttribute('role','status');control.setAttribute('aria-describedby',context.id);control.insertAdjacentElement('afterend',context);return {control,context};
- });
- const update=()=>{for(const {control,context}of choices)context.textContent=control.selectedOptions[0]?.textContent||'';};update();form.addEventListener('change',update);
-}
+import {esc,btn,select,field,textarea,money,badge,hhmm,bindSelectionContext} from './ui.mjs';
 export function offerReviewDetails(v){const groups=v.addonGroups||[],addons=v.addons||[],rules=v.availabilityRules||{},days={Mon:'Pirmadienis',Tue:'Antradienis',Wed:'Trečiadienis',Thu:'Ketvirtadienis',Fri:'Penktadienis',Sat:'Šeštadienis',Sun:'Sekmadienis'},attributes={hairLength:'Plaukų ilgis',technique:'Technika',bodyArea:'Kūno sritis',audience:'Kam skirta',level:'Lygis'};
  const addon=a=>`<li>${esc(a.label)} · +${money(a.priceMinor)} · +${a.durationMin} min.</li>`;
  return `${v.phases?.length?'<h4>Procedūros fazės</h4><ol>'+v.phases.map(p=>`<li>${esc(p.label)} · ${p.durationMin} min. · ${p.staffBusy?'meistras dirba':'meistras laisvas'} · ${p.resourceBusy?'darbo vieta užimta':'darbo vieta laisva'}</li>`).join('')+'</ol>':''}${groups.map(g=>`<h4>${esc(g.label)}</h4><p>${g.min>0?'Būtina pasirinkti':'Galima pasirinkti'} ${g.min}–${g.max} priedus. Papildoma kaina ir trukmė prisideda prie varianto.</p><ul>${addons.filter(a=>a.groupId===g.id).map(addon).join('')}</ul>`).join('')}${addons.some(a=>!a.groupId)?'<h4>Neprivalomi priedai</h4><ul>'+addons.filter(a=>!a.groupId).map(addon).join('')+'</ul>':''}${Object.entries(v.attributes||{}).filter(([k])=>attributes[k]).map(([k,value])=>`<p>${attributes[k]}: ${esc(value)}</p>`).join('')}${Object.keys(rules).length?'<h4>Registracijos ribos</h4>'+[rules.weekdays?.length?'<p>Dienos: '+rules.weekdays.map(day=>days[day]||esc(day)).join(', ')+'.</p>':'',rules.fromMin!=null&&rules.toMin!=null?'<p>Visas vizitas: '+hhmm(rules.fromMin)+'–'+hhmm(rules.toMin)+'.</p>':'',rules.minLeadTimeMin!=null?'<p>Rezervacija bent prieš '+rules.minLeadTimeMin+' min.</p>':'',rules.maxAdvanceDays!=null?'<p>Registracija iki '+rules.maxAdvanceDays+' dienų į priekį.</p>':''].join(''):''}`;

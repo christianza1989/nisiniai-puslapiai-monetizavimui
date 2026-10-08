@@ -2,9 +2,11 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "061708656e6841b6e81b6e9cc2b200a7a16ec774",
+  "runtimeSourceCheckpoint": "4e38a55558f0cf487df9ae937591e7d0eb038c10",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
+  "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
+  "productionReadOnlyCheck": "2026-10-08 wrangler deployments list: f8eba745-b8ef-446e-aeff-3c8b95c762bd remains 100%; no production write in this checkpoint.",
   "checkpoints": [
     {
       "name": "catalogue-offer-search-single-booking",
@@ -130,6 +132,18 @@
       "tests": 167,
       "state": "accepted-isolated-path",
       "remaining": "Original transient cold-start cause remains unverified; remaining UI paths, physical routing and factual activation"
+    },
+    {
+      "name": "indexed-organization-onboarding-manual-clients-and-scoped-mail-retry",
+      "tests": 168,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing and global operator paths, remaining UI matrix and activation facts"
+    },
+    {
+      "name": "reception-and-practitioner-calendar-states-keyboard-recovery",
+      "tests": 168,
+      "state": "accepted-isolated-path",
+      "remaining": "Remaining offer, waitlist, CSV, branch, phase and whole-cancellation actual states; physical routing and factual activation"
     }
   ],
   "tasks": [
@@ -334,7 +348,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md: indexed booking/provider/access/client-control and new verified identity patches, per-organization alarms and scoped workspaces; Node/actual Workers 5000 foreign-history, failure rollback and restart. Physical routing, organization creation and global operator paths remain."
+      "evidence": "STORAGE.md: indexed booking/provider/access/client-control, verified identities, organization creation/manual clients and mail retry, per-organization alarms and scoped workspaces; Node/actual Workers 5000 foreign-history, failure rollback and restart. Physical routing and global operator paths remain."
     },
     {
       "id": "I03",

@@ -1,5 +1,7 @@
 # Platformos upgrade — aktyvus įgyvendinimas
 
+Aktualus168/168 checkpoint: indexed organizacijos onboarding / rankiniai klientai / scoped mail retry (b04ed48), actual registratūros ir meistro kalendorių rolės / empty / error / keyboard recovery bei focus pataisa (4e38a55). Exact75aa39page304asset kandidatas nepaskelbtas. Savininko 2026-10-08 gyvo diegimo leidimas sąlyginis — kai visas upgrade baigtas; full ACTIVE apimtis dar neužbaigta. Read-only patikra patvirtino esamą gyvą f8eba745100%. [Likę darbai](UI_MATRIX.md), [saugyklos ribos](STORAGE.md), [priėmimas](ACCEPTANCE.md).
+
 Savininkas 2026-10-07 tiesiogiai atnaujino viso `upgrade-plan-20261006/PLAN.md` įgyvendinimą: „gali pradėti platformos tą upgrade kur darei planą“. Ankstesnė plataus upgrade pauzė panaikinta. Darbo šaka `ai/madbeauty-platform-upgrade-20261007`, bazė159d7d7 (gyvas reviewed V2 source897ba83 / Workersedf429e9). Vietinis veikiantis upgrade ir izoliuotas Workers kandidatų priėmimas; viešo perjungimo kvitas atskiras.
 
 Apimtis: plano0–3 etapų vykdomi katalogo, pasiūlymų, variantų, meistrų, paieškos, profilio, rezervavimo, operatoriaus ir saugojimo darbai. Etapo4 plėtiniai rengiami su jų aktyvavimo vartais; mokėjimų gavėjas, kaina, realių teikėjų pilotas, jautrių anketų poreikis ir išorinės prieigos nėra išgalvojami. Nesiunčiami kvietimai ar rinkodara. Esamas nemokamas pilotas išlieka.

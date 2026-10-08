@@ -132,3 +132,10 @@ Actual test naujas OTP account turi blank name; name reikalavimas cache admissio
 ###200 / per-object preferences ir actual alarm clock
 
 Perkelto organization kliento preferences reikėjo explicit committed intent/reconciliation, nes global writer negali redaguoti sealed source jobs. Vietoje global fence pašalinimo directory-only defer leidžia tik sealed scope, central desired prefs+unmigrated jobs+versioned queue lieka viena transaction, private target sync įvykdomas atskirai. Lost-reply/overlap/rollback tests ir actual browser pending notice patvirtina sutartį. Actual Worker alarm su fixed injected store clock pirmą kartą pašalino fixture sesiją, nes expiry naudojo wall clock; source expiry sulyginta su auth/state store.clock (production vis dar Date.now). Failure ir retest išsaugoti; testinio transporto unavailable nevadinti realiu email gavimu. Bendro core failai nepakeisti.200full4suites/305asset exact package priimti; mail admission ir kiti produkto vartai lieka atskiri.
+
+
+## 2026-10-08 — central recipient admission ir workspace reload pasirinkimas
+
+Patirtas target identityMethods fail-closed blokas neleido jau esamo central email client link/membership. ff917f2 private capability preflight prieš email lookup + method/email-bound minimal recipient cache leidžia current own calendar transaction, nekurdamas antro global auth writer. Post-cache nonce rollback ir permission change gap priimti Node, actual Workers/restart ir normal browser grant/revoke. New identity saga dar atskira priklausomybė, source/target distributed atomicity nepretenduojama.
+
+Actual reload po serverio restart rodė first org, nes dynamic boot timestamp atmetė bendrą UI save. Account-bound eligible selection atskirta nuo boot-sensitive demo state; first/retest proof named ACCEPTANCE203. Vien localStorage pasirinkimas nėra narystė. Bendrų shared taisyklių/kodo šiuo checkpoint nekeista.

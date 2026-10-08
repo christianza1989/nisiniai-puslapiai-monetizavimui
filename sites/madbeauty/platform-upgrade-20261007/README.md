@@ -1,3 +1,5 @@
+Aktualus203/203 checkpoint ff917f2: esamo central email klientų ir komandos prieigų admission, atomic target journals, capability-before-lookup ir actual Workers/browser restart/revocation. Account-bound darbo vietos pasirinkimas išlieka po reload; SSR nustatymų label pataisytas. Exact75aa kandidatas nepaskelbtas. Visas pavedimas ACTIVE; new manual identity, globals, mail/media/binding ir likusi UI matrica tęsiami.
+
 # Platformos upgrade — aktyvus įgyvendinimas
 
 Aktualus200/200 checkpoint6ce4e02: central preferences/durable control journal, target reminder reconciliation, lost reply/newer revision recovery ir actual Workers alarm/restart. Actual new-client booking ir mobile preference outage/recovery accepted. Exact75aa39page305asset kandidatas nepaskelbtas. Full pavedimas ACTIVE ir neužbaigtas; manual identity/membership, globals, mail/media/binding ir likusi UI matrica tęsiami. [Saugykla](STORAGE.md), [priėmimas](ACCEPTANCE.md), [UI likučiai](UI_MATRIX.md).

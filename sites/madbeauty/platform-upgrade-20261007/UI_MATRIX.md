@@ -39,3 +39,10 @@ Directory198 browser continuation: po abiejų owned stores restart klientas išl
 ## Customer controls200 / keyboard ir pending delivery
 
 8843 customer settings actual save→private namespace outage→pending notice/input retained→retry applied→reload false/0. Enter save, server/storage suppression ir source/target preference comparison named ACCEPTANCE200.320/390/820/1440 normal formų screenshot/widths peržiūrėti:246/316/498/799 client=scroll; document/main taip pat sutampa. Applied/pending/superseded source contract testuotas Node; superseded actual browser dar UNVERIFIED. Disabled Vykdoma… AX buvo matomas, screenshot po jo jau success. Pilnos kitų privacy/exports/network ir likusių ekranų būsenos tebėra atskiros. SSR inventory title privacy→privatumas copy dar taisytinas.
+
+
+## Directory203 / clients ir team access
+
+Actual8843 owner/customer normal OTP, target-existing client addition, unknown grant email focused error/input-retaining correction, Enter grant/revoke ir editor Escape/focus return, restart/eligible org selection/revoked customer no workspace accepted pagal ACCEPTANCE203. Client-list/team normal bei team dialog320/390/820/1440 screenshot šeimos visos peržiūrėtos; widths exact recorded. Reload selection first failure ir retest atskiri. SSR inventory nustatymų privatumas copy pataisytas.
+
+Current owner client-list/private-name ir team-member composition nepriskiriama naujo dar nežinomo manual email intake, stale-access actual concurrent browser, target outage/uncertain grant reply ar superseded preferences UI acceptance. Šios taikomos būsenos lieka tęstinos; Node rollback/version/capability tests nėra jų screenshot pakaitalas.

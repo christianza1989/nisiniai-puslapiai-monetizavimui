@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "6ce4e02d86da4d4e42e786d088255c9364bb44c6",
+  "runtimeSourceCheckpoint": "ff917f2b9db35ac54ba951fc86016293f169efce",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -180,6 +180,12 @@
       "tests": 200,
       "state": "accepted-isolated-path",
       "remaining": "Manual identity/membership, globals, target mail/media/binding and full UI matrix; production unchanged"
+    },
+    {
+      "name": "central-existing-email-recipient-client-links-team-access-and-workspace-reload",
+      "tests": 203,
+      "state": "accepted-isolated-path",
+      "remaining": "New manual identity admission, globals, target mail/media/binding and full UI states; production unchanged"
     }
   ],
   "tasks": [
@@ -384,7 +390,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE200: fresh central caches/name effects, versioned durable preferences/reconciliation, lost reply/overlap/rollback and actual Workers alarm/restart. Remaining manual identity/membership, globals and mail/media/binding."
+      "evidence": "STORAGE.md/ACCEPTANCE203: existing central recipient clients/team grants, current permission preflight/recheck, atomic recipient cache/link/access/nonce rollback, actual Workers/browser restart/revocation. New manual identity, globals and mail/media/binding remain."
     },
     {
       "id": "I03",
@@ -451,8 +457,8 @@
     }
   ],
   "next": [
-    "I02 central existing-email/manual-client/membership admission and remaining global controls",
-    "Target mail/media activation and full desktop/mobile error/stale/conflict states; SSR inventory settings title copy",
-    "I03 larger-adapter activation and hosted load gate"
+    "New manual client central identity admission and uncertain write recovery",
+    "Remaining global favorites/catalogue/metrics; target mail/media/binding and I04 states",
+    "Factual SMTP/pilot/retention and larger-adapter hosted load gates"
   ]
 }

@@ -77,3 +77,8 @@ Runtimed60e077 signed directory command papildytas private cache: central issue 
 ##200 preferences result ir private control delivery
 
 Runtime6ce4e02 preferences central desired value papildomas synchronization: applied/pending/superseded. Pending nėra HTTP business failure: central preference+intent jau committed, į saloną perduos indexed durable retry. Superseded grąžina latest central preferences, UI form atnaujinama šiuo value. applyCustomerControls private signed target method nėra browser allowlist; reikalauja current cache actor/revision/active scope. Source queue ack/retry tik matching revision. Worker alarm skaito queue due_at,30s retry/batch32. No shared source-target transaction ar įjungtos target mail delivery authority.
+
+
+## Directory203 / esamas central email recipient
+
+HTTP createClient ir grantMembership public kontraktas išlieka. Migrated org directory atlieka private signed identityActionScope, normalizuoja email ir actual central SQL parenka recipient ID; input.recipientId/operator niekada nėra admission šaltinis. Recipient cache tik dvi minimal identities ir jų current preferences, method/email binding, jokio operator promotion ar sessions. Actual target membership, capability ir original role/version/practitioner checks kartojami business transaction. Unknown manual email503 iki new identity flow; unknown grant404 su prisijungimo paaiškinimu, unauthorized403 prieš email lookup. Browser RPC identityActionScope404. Normal central/unmigrated API lieka tame pačiame guarded writer.

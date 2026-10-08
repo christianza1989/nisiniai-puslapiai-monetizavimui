@@ -1,3 +1,11 @@
+## Current organization media HTTP read224
+
+Runtime242c687b26d882ad2f634f585d55f9cb9ecc3fc5, full4suite manifest224/224 regression-64.log, media-read-first.log35PASS and media-read-workers-first.log1 actual Worker PASS, exact75aa39pages305assets build-media-read224.log, source6 safety PASS. Two new Node cases, extended existing Worker case; none removed. Current readMedia source directory resolves canonical asset ID/current sealed target, private signed mediaReadAccess verifies target published revision/current profile capability/operator. Physical target RPC returns bounded raw variant bytes plus signed descriptor, source verifies file/length/SHA256. Original storage paths and private commands are not browser RPC. Prepared/unavailable/current-corrupt target never serves retained source bytes.
+
+Actual Workers ordinary HTTP guest draft404→canonical owner200→actual signed submitRevision/moderate→guest200→two-object restart200→restricted404/owner200→target corrupted503; retained source hashes intact. Node guest/foreign actor spoof404, originals404, binary tamper503 and namespace outage503 accepted. Synthetic bytes test storage/HTTP response, not raster visual rendering or IMAGES optimization. No target sessions created.
+
+New target upload remains next feasible implementation, plus production namespace binding/migration and I04 actual UI states. Node filesystem-to-SQL import still absent. No new browser screenshot claimed. Production writes0; conditional full-upgrade deploy authorization persists, full upgrade ACTIVE/incomplete. Real SMTP/inbox, provider pilot and factual retention/backup gates remain.
+
 ## 2026-10-08 — private physical media transfer222
 
 Runtimef03c1daf9539e147ad589e8dd34167e951e4b0a9; four-suite manifest222/222 regression-63.log (five new Node transfer cases, one new actual Worker case), exact75aa39pages305assets build-media222.log,8source safety PASS. First media-transfer-node-first.log9/10 failure retained: initial optional media collection absent, fixture assertion corrected; runtime did not fabricate empty media. media-transfer-node-retest.log10PASS before added partial-abort case; final regression63 includes all5. media-transfer-workers-first.log1PASS before partial-abort helper addition; final regression includes current source.

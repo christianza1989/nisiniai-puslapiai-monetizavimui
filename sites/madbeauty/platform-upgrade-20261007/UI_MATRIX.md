@@ -1,3 +1,5 @@
+Media224 ordinary Worker HTTP privacy/publication/restriction/corruption states accepted per ACCEPTANCE224. This is a synthetic byte response test, no new raster/browser visual acceptance. Actual8843 browser is restarted on runtime224 and named owner normal OTP resumed for outstanding I04 work; those outstanding states are not yet PASS.
+
 Directory222 accepts private physical media chunk transfer/restart/authority, using synthetic byte fixtures. No new visible UI state is claimed; actual public/private media read and target upload adapter remain next work. Existing normal gallery pictures/earlier browser receipts below keep their original scope. See ACCEPTANCE222.
 
 Directory216 adds only private/background mail commands, no new user form. Actual Workers accepted local transport/lost-ack/restart per ACCEPTANCE216; this does not close existing browser I04 rows or demonstrate real inbox delivery. Current browser checkpoint remains globals210 / actual8843; remaining named UI states below stay actionable.

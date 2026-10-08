@@ -1,3 +1,7 @@
+## Current target media reads / 242c687b26d882ad2f634f585d55f9cb9ecc3fc5
+
+HTTP GET /api/madbeauty/media/<variant.webp> po central host/session patikrų resolves asset ID/current org. Internal readMedia helper invokes private readOrganizationMedia(packet) with signed mediaReadAccess command. Target current approved media projection arba current profile capability / canonical SQL operator reikalingi; original keys404. Raw bytes atskirai nuo signed bounded descriptor{id,file,key,bytes,sha256}, source tikrina actual binary. No browser RPC/private token. Namespace failure503, corrupt bytes503, current private/restricted guest404; retained source copy nenaudojama. Node/actual Worker evidence ACCEPTANCE224; new target upload dar rengiamas.
+
 ## Private media handoff / f03c1daf9539e147ad589e8dd34167e951e4b0a9
 
 Source organizationMediaHandoffPage input{operatorAccountId,organizationId,epoch,handoffId,key,part} tikrina source SQL operator ir frozen/sealed identity. Result{manifest,key,part,data(base64),proof}; media manifest įtraukiamas į immutable context tik esant media. Target stageOrganizationMedia(packet) tikrina actual DO name, signed calendar manifest/epoch/asset descriptors, HMAC ir max400KB; vienas256KiB chunk, exact repeated parts. mediaStagingStatus metadata only. prepareAuthority tikrina complete variant/original bytes SHA prieš source seal; source-abort exact token discard išvalo partial/prepared copy, active target nešalinamas. Limits esama SQL_MEDIA_POLICY, žr.STORAGE/ACCEPTANCE222.

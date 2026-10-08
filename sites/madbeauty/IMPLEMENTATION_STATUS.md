@@ -1,3 +1,9 @@
+## 2026-10-08 — aktyvus upgrade: aktualūs vieši ir privatūs salonų vaizdai
+
+Tarpinis224 paketas priimtas; visas pavedimas ACTIVE ir neužbaigtas. Runtime242c687b26d882ad2f634f585d55f9cb9ecc3fc5 / PR26, companionc7e0c9a / PR6.4suites224/224 regression-64.log ir exact75aa39page305asset build-media-read224.log. Canonical source session → signed target current profile permission → bounded binary variant + signed descriptor → source SHA/file/bytes verification. Actual Workers ordinary HTTP draft/private/published/restricted/corrupted/restart states ir Node foreign actor/binary tamper/outage priimti. Sealed source nepakeistas; nėra stale byte/access fallback. Tai synthetic HTTP/storage įrodymas, ne raster vizualinio rendering PASS.
+
+Toliau dabar įvykdomi target upload ir production binding/migration, Node filesystem import bei likusi I04 matrica. Tikri SMTP/pilot/retention faktai atskiri vartai. Production writes0; full-completion deploy sąlyga neįvykdyta, leidimas galioja. Darbas tęsiamas.
+
 ## 2026-10-08 — aktyvus upgrade: fizinis salonų medijos perdavimas
 
 Tarpinis222 paketas priimtas, visas pavedimas ACTIVE ir neužbaigtas. Runtimef03c1daf9539e147ad589e8dd34167e951e4b0a9 / PR26, companionc7e0c9a / PR6.4suites222/222 regression-63.log, exact75aa39page305asset build-media222.log ir8source safety PASS. Private signed256KiB chunks perduoda exact original/WebP variantų baitus ir esamus ID į atskirą SQL saugyklą; partial/replay/rollback/digest ir prepared/active fences priimti. Source lieka sealed su originaliais baitais; abort partial/prepared copy išvalo tik target reservation. Actual Workers two-object restart/complete/activate/restart hashes sutampa. Tai sintetinis storage bandymas, ne viešo vaizdo rendering įrodymas.

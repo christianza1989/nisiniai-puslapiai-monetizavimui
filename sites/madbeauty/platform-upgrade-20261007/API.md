@@ -82,3 +82,10 @@ Runtime6ce4e02 preferences central desired value papildomas synchronization: app
 ## Directory203 / esamas central email recipient
 
 HTTP createClient ir grantMembership public kontraktas išlieka. Migrated org directory atlieka private signed identityActionScope, normalizuoja email ir actual central SQL parenka recipient ID; input.recipientId/operator niekada nėra admission šaltinis. Recipient cache tik dvi minimal identities ir jų current preferences, method/email binding, jokio operator promotion ar sessions. Actual target membership, capability ir original role/version/practitioner checks kartojami business transaction. Unknown manual email503 iki new identity flow; unknown grant404 su prisijungimo paaiškinimu, unauthorized403 prieš email lookup. Browser RPC identityActionScope404. Normal central/unmigrated API lieka tame pačiame guarded writer.
+
+
+## Directory207 — rankinio kliento pridėjimas
+
+Migrated createClient accepts idempotencyKey max120 and normalized organizationId/email/name. Directory checks current clients capability, prepares canonical central identity+durable intent and sends signed private clientAdmission envelope. Reply adds admission:{id,state} pending/applied; pending means accepted durable action, not an uncommitted draft. UI retains fields/key across reload, repeats the same operation safely, and clears completed draft. Starting another action creates a new key and does not cancel prior admission. Same-key changed input/epoch409; invalid input/capability/capacity fail before provisioning. Existing no-key behavior and unknown grant404 remain.
+
+Background alarm can recover committed receipt after requester revocation, but current unauthorized browser retry is still denied at preflight. Permanent target refusal leaves explicit failed intent and its private provisioned account; retry requires current authorization. Node and actual Workers prove canonical identity is reused by later ordinary OTP.

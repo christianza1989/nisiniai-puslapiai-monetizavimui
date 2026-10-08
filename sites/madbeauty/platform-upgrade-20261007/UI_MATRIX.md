@@ -46,3 +46,8 @@ Directory198 browser continuation: po abiejų owned stores restart klientas išl
 Actual8843 owner/customer normal OTP, target-existing client addition, unknown grant email focused error/input-retaining correction, Enter grant/revoke ir editor Escape/focus return, restart/eligible org selection/revoked customer no workspace accepted pagal ACCEPTANCE203. Client-list/team normal bei team dialog320/390/820/1440 screenshot šeimos visos peržiūrėtos; widths exact recorded. Reload selection first failure ir retest atskiri. SSR inventory nustatymų privatumas copy pataisytas.
 
 Current owner client-list/private-name ir team-member composition nepriskiriama naujo dar nežinomo manual email intake, stale-access actual concurrent browser, target outage/uncertain grant reply ar superseded preferences UI acceptance. Šios taikomos būsenos lieka tęstinos; Node rollback/version/capability tests nėra jų screenshot pakaitalas.
+
+
+## Directory207 / new manual client pending recovery
+
+Actual owner new-client creation with committed reply loss, Enter pending, reload restores fields/key/pending notice, two-store restart and retry applied, completed draft cleared and Escape focus return. Pending dialog320/390/820/1440 all viewed and document/dialog/form measured; recovered client list390 viewed. Evidence family directory-manual207-* in ACCEPTANCE207. Current key is private proxy-redacted; storage single intent/version1 link establishes idempotent action. Permanent permission/capacity and role-gap concurrent browser cases remain applicable/unverified; their Node/Workers guards do not substitute screenshots.

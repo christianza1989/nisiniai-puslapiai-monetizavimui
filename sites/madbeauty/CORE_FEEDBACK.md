@@ -139,3 +139,8 @@ Perkelto organization kliento preferences reikėjo explicit committed intent/rec
 Patirtas target identityMethods fail-closed blokas neleido jau esamo central email client link/membership. ff917f2 private capability preflight prieš email lookup + method/email-bound minimal recipient cache leidžia current own calendar transaction, nekurdamas antro global auth writer. Post-cache nonce rollback ir permission change gap priimti Node, actual Workers/restart ir normal browser grant/revoke. New identity saga dar atskira priklausomybė, source/target distributed atomicity nepretenduojama.
 
 Actual reload po serverio restart rodė first org, nes dynamic boot timestamp atmetė bendrą UI save. Account-bound eligible selection atskirta nuo boot-sensitive demo state; first/retest proof named ACCEPTANCE203. Vien localStorage pasirinkimas nėra narystė. Bendrų shared taisyklių/kodo šiuo checkpoint nekeista.
+
+
+## 2026-10-08 — uncertain cross-object client creation and UI draft truth
+
+A new manual email cannot be invented by an organization target, and a transport nonce does not cover lost replies after expiration/restart. Local7694c8d uses canonical central provision+durable intent and target durable actor/input-bound business receipt.207tests/actual Workers/browser prove one account/link/event. UI recovery had misleading uncommitted-draft copy for a committed pending action; pending status now retains key and states that another action does not cancel the first. Hidden DOM proxy redaction is not a changed-key defect; single actual storage operation is the observable evidence. No shared universal module introduced, no global distributed rollback claim.

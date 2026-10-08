@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "ff917f2b9db35ac54ba951fc86016293f169efce",
+  "runtimeSourceCheckpoint": "7694c8d09453692cce7265c1ec08271cad2574d8",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -186,6 +186,12 @@
       "tests": 203,
       "state": "accepted-isolated-path",
       "remaining": "New manual identity admission, globals, target mail/media/binding and full UI states; production unchanged"
+    },
+    {
+      "name": "central-new-manual-client-durable-admission-receipt-and-ui-recovery",
+      "tests": 207,
+      "state": "accepted-isolated-path",
+      "remaining": "Globals, target mail/media/binding and full UI states; production unchanged"
     }
   ],
   "tasks": [
@@ -390,7 +396,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE203: existing central recipient clients/team grants, current permission preflight/recheck, atomic recipient cache/link/access/nonce rollback, actual Workers/browser restart/revocation. New manual identity, globals and mail/media/binding remain."
+      "evidence": "STORAGE.md/ACCEPTANCE207: canonical new manual identity, durable central intent + target actor/input-bound receipt, uncertain write/restart/alarm recovery, actual browser pending/restored/applied one link/event. Globals/mail/media/binding remain."
     },
     {
       "id": "I03",
@@ -457,8 +463,8 @@
     }
   ],
   "next": [
-    "New manual client central identity admission and uncertain write recovery",
-    "Remaining global favorites/catalogue/metrics; target mail/media/binding and I04 states",
+    "Current favorites/catalogue/metrics across migrated organizations",
+    "Target mail/media/binding and remaining I04 states",
     "Factual SMTP/pilot/retention and larger-adapter hosted load gates"
   ]
 }

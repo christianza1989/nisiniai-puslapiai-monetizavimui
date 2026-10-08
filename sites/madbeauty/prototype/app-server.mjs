@@ -48,7 +48,8 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
     if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405,headers);res.end();return;}
     try{
       const url=new URL(req.url,'http://127.0.0.1'),requested=decodeURIComponent(url.pathname);
-      const needsContent=requested==='/content.json'||requested.startsWith('/content-assets/')||['/robots.txt','/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)||(!path.extname(requested)&&!/^\/(meistrui|operatorius|paskyra|registracija)(\/|$)/.test(requested));
+      const catalogueRequest=requested==='/paslaugos'||requested.startsWith('/paslaugos/');
+      const needsContent=requested==='/content.json'||requested.startsWith('/content-assets/')||['/robots.txt','/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)||(!catalogueRequest&&!path.extname(requested)&&!/^\/(meistrui|operatorius|paskyra|registracija)(\/|$)/.test(requested));
       const offers=apiHandler?.platform.catalog({})||[],registry=createContentTargetRegistry({offers,deployed:false,now:contentClock()});
       const content=needsContent?await contentProjection({registry,now:contentClock(),...(contentPackagePath?{packagePath:contentPackagePath}:{})}):null;
       const contentPage=content?.pages.find(p=>(p.slug?'/'+p.slug:'/')===requested);
@@ -62,7 +63,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       if(['/favicon.svg','/favicon.ico'].includes(requested)){res.writeHead(200,{...headers,'Content-Type':mime['.svg']});res.end(await readFile(path.join(publicRoot,'wordmark.svg')));return;}
       if(['/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)){if(contentDiscovery&&content){const body=requested==='/sitemap.xml'?content.seo.nicheSitemapXml(content.pkg,content.pages):requested==='/llms.txt'?content.seo.nicheLlmsIndex(content.pkg,content.pages):content.seo.nicheLlmsFull(content.pkg,content.pages);res.writeHead(200,{...headers,'Content-Type':requested.endsWith('.xml')?'application/xml; charset=utf-8':'text/markdown; charset=utf-8'});res.end(req.method==='HEAD'?undefined:body);return;}res.writeHead(404,headers);res.end('Private preview: discovery disabled.');return;}
       if(/^\/paslaugos\/[^/]+$/.test(requested)&&isCityId(url.searchParams.get('miestas'))&&activeNode(requested.split('/')[2])){res.writeHead(303,{...headers,Location:requested+'/'+url.searchParams.get('miestas')});res.end();return;}
-      const isCatalogue=requested==='/paslaugos'||requested.startsWith('/paslaugos/'),cataloguePage=isCatalogue?catalogueRoute(requested,offers):null;
+      const isCatalogue=catalogueRequest,cataloguePage=isCatalogue?catalogueRoute(requested,offers):null;
       let route=resolveRoute(requested,{profileResolver:apiHandler?apiHandler.platform.profile:null,contentResolver:slug=>!!content?.pages.some(p=>['guide','article'].includes(p.type)&&p.slug==='gidai/'+slug)});
       if(requested.startsWith('/gidai/')&&!contentPage)route=null;
       if(isCatalogue&&!cataloguePage)route=null;

@@ -61,6 +61,6 @@ export function claimWaitlist(d,user,input,now){
  const hold={...candidate,slotId:candidate.id,id:randomId('hold'),accountId:user.id,state:'held',expiresAt:plus(new Date(now).toISOString(),2),waitlistId:w.id};d.holds.push(hold);w.state='choosing';w.holdId=hold.id;w.version++;return {hold,candidate};
 }
 export function nextWaitlistAt(store){
- const rows=store.readCollections(['waitlist']).waitlist.filter(w=>w.criteria&&!['closed','expired'].includes(w.state));
+ const rows=store.readCollections(['waitlist']).waitlist.filter(w=>w.criteria&&!['closed','expired'].includes(w.state)&&(!store.organizationWritable||store.organizationWritable(w.organizationId)));
  return rows.length?Math.min(store.clock()+300000,...rows.filter(w=>w.offer&&w.state==='offered').map(w=>Date.parse(w.offer.expiresAt)),...rows.map(w=>Date.parse(w.windowEndAt))):null;
 }

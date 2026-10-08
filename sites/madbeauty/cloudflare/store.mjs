@@ -30,14 +30,16 @@ export function openDurableStore(ctx,secret,{clock=()=>Date.now()}={}){
    if(data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-')))throw Error('Fixture data forbidden');
    rows.write(data);
   },
-  transaction,
+  transaction,assertOrganizationWritable:rows.assertOrganizationWritable,organizationWritable:rows.organizationWritable,
   mail:({accountId=null,organizationId=null,bookingId=null,challengeId=null,recipient,type,payload})=>{
+   rows.assertOrganizationWritable(organizationId);
    const id=randomId('mail');db.prepare('INSERT INTO mail_outbox(id,site_id,account_id,organization_id,booking_id,challenge_id,recipient,type,payload,state,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)').run(id,SITE_ID,accountId,organizationId,bookingId,challengeId,recipient,type,seal(payload),'pending',clock());return id;
   },
   limit:(bucket,max,seconds)=>{
    const now=clock(),key=store.hash(SITE_ID+':'+bucket);const row=db.prepare('INSERT INTO rate_limits(bucket,count,expires_at) VALUES(?,1,?) ON CONFLICT(bucket) DO UPDATE SET count=CASE WHEN rate_limits.expires_at>? THEN rate_limits.count+1 ELSE 1 END,expires_at=CASE WHEN rate_limits.expires_at>? THEN rate_limits.expires_at ELSE excluded.expires_at END RETURNING count').get(key,now+seconds*1000,now,now);
    if(row.count>max)reject('RATE_LIMITED','Per daug bandymų. Palaukite ir bandykite dar kartą.',429);
   },retryMail:row=>{
+   rows.assertOrganizationWritable(row.organization_id);
    if(row.state==='accepted'||row.state==='sending')reject('INVALID_STATE','Priimto arba siunčiamo pranešimo kartoti negalima.',409);
    db.prepare("UPDATE mail_outbox SET state='pending',attempts=0,next_attempt_at=0,lease_until=0 WHERE id=? AND site_id=?").run(row.id,SITE_ID);
    return {id:row.id,state:'pending',attempts:0};

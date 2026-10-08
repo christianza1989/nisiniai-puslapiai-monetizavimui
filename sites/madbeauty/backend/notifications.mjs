@@ -28,4 +28,4 @@ export function reminderValid(store,row,payload){
  const b=store.recordById('bookings',row.booking_id),pref=b?store.clientRecords('preferences',b.clientId)[0]:null;
  return !!job&&job.state==='queued'&&job.outbox_id===row.id&&!!b&&b.status==='confirmed'&&b.version===payload.bookingVersion&&b.startAt===payload.startAt&&Date.parse(b.startAt)>store.clock()&&pref?.service!==false&&(pref?.reminderLeadMin??1440)===payload.leadMin;
 }
-export function nextReminderAt(store){return store.db.prepare("SELECT MIN(due_at) AS due FROM notification_jobs WHERE site_id=? AND state='planned'").get(store.siteId)?.due||null;}
+export function nextReminderAt(store){return store.db.prepare("SELECT MIN(due_at) AS due FROM notification_jobs AS jobs WHERE site_id=? AND state='planned' AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=jobs.site_id AND h.organization_id=jobs.organization_id AND h.state!='aborted')").get(store.siteId)?.due||null;}

@@ -5,6 +5,7 @@ import {createMedia} from './media.mjs';
 import {createSqlMediaBucket} from './media-bucket.mjs';
 import {createPlatform} from '../backend/platform.mjs';
 import {createAuth} from '../backend/auth.mjs';
+import {createOrganizationHandoff} from '../backend/organization-handoff.mjs';
 import {nextReminderAt,reminderValid} from '../backend/notifications.mjs';
 import {nextWaitlistAt,waitlistMailValid} from '../backend/waitlist.mjs';
 import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger-transport.mjs';
@@ -40,6 +41,12 @@ export class MadbeautyPlatform extends DurableObject{
  async catalog(input){return createPlatform(this.store).catalog(input);}
  async profile(id){return createPlatform(this.store).profile(id);}
  async publicProfiles(){const platform=createPlatform(this.store);return this.store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>platform.profile(o.id));}
+ // Private maintenance RPC; operator identity comes from accounts, never a browser flag.
+ // These methods stage a copy only. They cannot grant a second calendar writer.
+ async organizationHandoffStatus(input){return createOrganizationHandoff(this.store).status(input);}
+ async freezeOrganization(input){return createOrganizationHandoff(this.store).freeze(input);}
+ async organizationHandoffPage(input){return createOrganizationHandoff(this.store).page(input);}
+ async abortOrganizationHandoff(input){return createOrganizationHandoff(this.store).abort(input);}
  async recoveryStatus(){
   this.expire();
   const bookmark=await this.ctx.storage.getCurrentBookmark(),db=this.store.db;
@@ -53,7 +60,7 @@ export class MadbeautyPlatform extends DurableObject{
   return this.ctx.storage.onNextSessionRestoreBookmark(bookmark);
  }
  async schedule(){
-  const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox WHERE site_id=? AND state IN ('pending','sending')").get(this.store.siteId);
+  const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox AS mail WHERE site_id=? AND state IN ('pending','sending') AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted')").get(this.store.siteId);
   const due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity);
   await this.ctx.storage.setAlarm(Math.max(Date.now()+1000,Number.isFinite(due)?due:Date.now()+86400000));
  }
@@ -77,7 +84,7 @@ export class MadbeautyPlatform extends DurableObject{
   const {db,siteId}=this.store;
   try{
    for(let n=0;n<10;n++){
-    const now=Date.now();const row=db.prepare("SELECT * FROM mail_outbox WHERE site_id=? AND ((state='pending' AND next_attempt_at<=?) OR (state='sending' AND lease_until<=?)) ORDER BY created_at LIMIT 1").get(siteId,now,now);
+    const now=Date.now();const row=db.prepare("SELECT * FROM mail_outbox AS mail WHERE site_id=? AND ((state='pending' AND next_attempt_at<=?) OR (state='sending' AND lease_until<=?)) AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted') ORDER BY created_at LIMIT 1").get(siteId,now,now);
     if(!row)break;
     const payload=this.store.unseal(row.payload);
     if(!reminderValid(this.store,row,payload)||!waitlistMailValid(this.store,row,payload)){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0 WHERE id=? AND site_id=?").run(row.id,siteId);continue;}

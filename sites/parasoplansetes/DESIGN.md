@@ -1,0 +1,28 @@
+# Dizaino sprendimas
+2026-10-08. parasoplansetes.lt / StepOver. Klientas sprendžia, kuris įrenginys ir programinis kelias tinka jo dokumentams. BUSINESS perskaitytas prieš konceptus / kodą. Nėra vieno sektoriaus filtro.
+## Tikros peržiūros
+Savininko signaturepads.lt homepage desktop/mobile ir katalogas desktop: tekstiniai akordeonai ant fotografijos, mišrus modelių tinklelis. Adaptuojame aiškius modelių pavadinimus; atsisakome fotografijos po tekstu ir akordeone paslėpto esminio paaiškinimo. StepOver NG5 produkto desktop1440 ir mobile390: modelio vaizdas, programinio kelio, priedų ir licencijų skirtumas. Modelio / komplekto atskyrimą perimame, gamintojo greičio ir teisinių superlatyvų nekopijuojame. Ekranai content-studio/tmp/parasoplansetes-research/screenshots/.
+Artimiausi tinklo patikrinti vaizdai: traktoriupadangos/critique-a-screenshots/home-desktop-full.jpg ir marking-guide-desktop-full.jpg (geltonas dvispalvis split hero, kondensuoti antraščių šriftai, didelio įrenginio siluetas); laiptucentras/DESIGN-REVISION-2026-10-01/home-desktop-top-final.jpg (interjero nuotrauka kairėje, didelis tamsus tekstas dešinėje). Autoelektrikai research AA vaizdas yra konkurento, jo nepriskiriame tinklo realizacijai.
+## Konceptų sprendimas
+Tikri privatūs HTML A ir B atverti desktop/mobile; screenshot concept-a/b-desktop/mobile.jpg. A — šviesi plati antraštė virš žemo kelių realių įrenginių pano, toliau darbo eigos juosta. B — tamsus tekstas greta vieno įrenginio kortelės. Pasirinkta A: matomas gamintojas ir keli modeliai, geriau išnaudojami maži originalūs300px vaizdai, išvengiama artimiausių tinklo split hero struktūros. Kompromisas: pateikiamas didesnis pasirinkimas, reikia iškart paaiškinti, nuo ko pradėti. Galutinis H1 turi pažodžiui įvardyti StepOver parašo planšetes; koncepto reklaminė frazė nenaudojama vietoj page title. Tai agento pasirinkimas, ne vartotojo approval.
+## Sistema
+Fonas #f4f7f3, rašalas #142b29, akcentas #b7f2cf su tamsiu tekstu; baltas gamintojo nuotraukų fonas; linijos #ced8d1. Šriftas sistemos Segoe UI / Arial su LT glyph, be išorinių užklausų; svoriai400/500/600/650. Galutinė desktop H1 iki76px, mobile42px,320px36px; letter-spacing -0.035em; body18px, line-height1.65; skaitmenys techninėse lentelėse tabular. Skaitymo plotis720px, maxsite1328px, 24px mobile.
+Wordmark native text „parašo planšetės.“ su originaliu SVG parašo brūkšniu; jokio StepOver logotipo kopijavimo. Favicon tas pats tikslus native mark. Navigacija Modeliai / Programinė įranga / Integracija / Gidai, aiškus Aptarti poreikį. Mobiliame kompaktiška matoma wrapping navigacija be papildomo JS. Native details naudojamas tik neesminei pagalbinei informacijai; visas pasiūlymas prieinamas.
+## Puslapių ir asetų planas
+| Vieta | Klausimas / kompozicija | Asset / vaizdo rolė | Kitas veiksmas |
+|---|---|---|---|
+| Home | Kas tai / didelis H1, trumpas atsakymas, pano3įrenginiai | Tikros duraSign4.3/5.0/10.0 nuotraukos iš savininko; maxactual300px, nemaskuojame kaip dideliushero | Katalogas arba užklausa |
+| Modelių katalogas | Kurį modelį lyginti /5modelių tikra lentelė ir atskiri puslapiai | Kiekvieno modelio tikra nuotrauka / originalus santykis | Modelio detalė |
+| Home darbo eiga | Įrenginys → programa → archyvas / tikslūs nativeHTML žingsniai | PDF workflow originali iliustracija palaiko paaiškinimą, ne specifikacija | Programinė įranga / gidas |
+| Gidas pasirinkimas | 6reikalavimai ir pasirinkimo pavyzdys | duraSign4.3 tikra nuotrauka / įrenginio kontekstas | Katalogas / poreikis |
+| Gidas PDF | Dokumentas, peržiūra, parašas, galutinis failas ir8priėmimo bandymai | Originali conceptual3D dokumentų / parašo iliustracija3:2, centre focal, be logotipų / tikrųUI | Programinė įranga |
+| Gidas integracija | Kompiuteris / terminal server / API / duomenų kelias | Originali abstractarchitektūros iliustracija3:2; ne realios diegimo schemos nuotrauka | Integracijos užklausa |
+| Gidų indeksas | Kurį klausimą spręsti / teisingas temos vaizdas kiekvienai nuorodai | Tų pačių4gidų families | Atitinkamas gidas |
+| Modelių detalės | Paskirtis, ekranas, programos poreikis, tikros ribos | Tikro konkretaus modelio300pxnuotrauka, sourceStepOver / ownmigration | Konkretus poreikis |
+| Contact / privatumas / apie / redakcija / sąlygos | Kaip kreiptis / kas rengia ir valdo / skaitomas tekstas | Pagrįstai be dekoratyvinių rasterių | NativeD1forma / kontaktas |
+Įrenginių nuotraukos nėra generuojamos ar perpiešiamos. Žinomas šaltinis / sha / metaduomenys owned-products.json; savininko page migration nurodymas leidžia parengti tą patį jo produktų turinį, gamintojo credit išsaugomas. Tiekimo / išskirtinių teisių jos neįrodo.
+## Naudingas įrankis
+Skaičiuoklė atidėta: nėra patvirtintų įrangos / licencijos / darbo kaštų. Vietoj jos naudinga statinė palyginimo lentelė ir užklausos parengimo sąrašas. Native forma1name/1email/1message surenka procesą, nėra paslėpto siuntimo ar antro CRM.
+Galutinė browser/contrast/reflow/Lighthouse peržiūra atliekama po realaus Core build; konceptų screenshot nėra svetainės priėmimas.
+
+Galutiniai tikri ekranai screenshots/: home-desktop-final1440, home-mobile-final390, gidai-desktop-final1440, gidai-mobile-final390, visi keturi gidai, PDF320/768 ir contact320. Lazy media tikrinta realiai pasiekus nuorodas klaviatūra; pilnas screenshot be slinkimo pradžioje gali rodyti dar neužkrautą žemiau esantį vaizdą. Tai nėra prarastas asset. Final99 nepažadamas: Lighthouse home97/PDF98, atskira vizualinė išvada — aiški pasirinkimo kelionė ir pakankamai skirtinga nuo tinklo split hero. Integracijos ir terminalinio serverio gidai naudoja tą pačią sąmoningai pažymėtą konceptinės architektūros kompoziciją; tai ne dviejų realių diegimų nuotraukos.

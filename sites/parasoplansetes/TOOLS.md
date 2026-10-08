@@ -1,0 +1,13 @@
+# Įrankių sprendimai
+2026-10-08. siteId parasoplansetes; BUSINESS šios dienos; fazė vietinė F1. Treg naudojamas faktinėmis iškvietomis.
+| Kliento kelias | Dabar | Plėtra ir jos sąlyga |
+| --- | --- | --- |
+| Paieška / pasirinkimas | Treg nemokama šaltinių paieška, gamintojo ir savininko katalogas | Google LT SERP ir LT Ads įverčiai faktiškai atlikti už apie 0,21 EUR; GSC tik reali jungtis |
+| Modelis / komplektas | StepOver portfelio aprašymas ir užklausa | Aktualus partnerio kainoraštis, modelio / OS matrica, realus demo |
+| Užklausa / tęstinumas | Esama public core D1 forma; SMTP atskirai | Tikrų užklausų aptarnavimas per esamą Case/mail po paleidimo |
+| Pasiūlymas / vykdymas | Dokumento / darbo vietų / sistemos atranka | Sutartas komplektas, licencija, mokamas diegimas, priėmimas |
+| Matavimas / turinys / media | Common studio research, review, release ir media importer | GSC / qualified leads / tikros sąmatos, be antro SEO ar CRM variklio |
+T1 tinyfish.web.search: GET query, location Lithuania, language lt → URL/title/snippet. Price 0 USD kataloge ir actual call 0 USD. Semantinį atitikimą tikrinti originaliame puslapyje; ne Google pozicijų / volume šaltinis. Raw privatus, be klientų PII. Tyrimo vykdytojas; naudoti tik naujam šaltinio klausimui, sustoti gavus tinkamą pirminį puslapį. Status scoped-test.
+T2 serpapi.google.serp.organic: GET engine google,q,google_domain google.lt,gl lt,hl lt,device desktop/mobile → organic_results ir faktiniai search_parameters. 0,015 USD/success, 9 actual successes / 1 mobile 503; bendras visų Treg tyrimų kaštas 0,231 USD, savininko limitas 2 EUR; esami API raktai per Treg, naujų provider raktų nereikia. Patikimumo katalogo mėginiai nėra LT rezultatų kokybės įrodymas. Atskirti reklamą, organinę ir absoliučią vietą, nenaudoti num parametro. Tyrimo vykdytojas; trigger konkretaus head / modelio / proceso URL sprendimas. Stop pasiekus patvirtintą cap ar netinkamą lokalę; failed/unsupported nėra nulis. Fallback nemokami originalūs šaltiniai ir išsaugoti dabartiniai duomenys. Status scoped-test; raw ir patikimumo ribos SEO_BASELINE.md.
+T3 common studio / D1 / media: vietinės esamo Core priemonės, ne mokami tiekėjo produktai. ContentPolicy ir review/release šiame site namespace; image import source/prompt/rights privačiai, public tik WebP variantai. D1 local QA įrašai ne klientai, SMTP ir voice off. Priėmimas — tikras HTTP/durable storage/browser, ne žurnalo tekstas.
+Būsimi organizacijų enrichment, cloud pardavimo, CRM ir siuntimo įrankiai neaktyvuojami: reikia tikro pirkimo proceso, teisėto duomenų tikslo, kaštų ir vykdytojo. Nėra automatizuoto klientų kontaktavimo, outreach ar mokamos reklamos.

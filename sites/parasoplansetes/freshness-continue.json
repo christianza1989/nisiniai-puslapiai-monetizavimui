@@ -1,0 +1,34 @@
+{
+  "status": "PASS_FRESH_BASE",
+  "reports": [
+    {
+      "status": "PASS_FRESH_BASE",
+      "reason": null,
+      "phase": "continue",
+      "repository": "christianza1989/nisiniai-puslapiai-monetizavimui",
+      "branch": "codex/parasoplansetes-f1-20261008",
+      "head_sha": "f743b1cbcb09418d733fbe3c72b6968d65a72259",
+      "fetched_main_sha": "f743b1cbcb09418d733fbe3c72b6968d65a72259",
+      "main_commits_missing": 0,
+      "branch_commits_ahead": 0,
+      "changed_entries": 3,
+      "checked_at": "2026-10-08T17:05:32.701Z",
+      "source_modified": false
+    },
+    {
+      "status": "PASS_FRESH_BASE",
+      "reason": null,
+      "phase": "continue",
+      "repository": "christianza1989/niche-public-core",
+      "branch": "codex/parasoplansetes-public-20261008",
+      "head_sha": "e578426610f067fd7a4db3574f754b8d06ef5426",
+      "fetched_main_sha": "e578426610f067fd7a4db3574f754b8d06ef5426",
+      "main_commits_missing": 0,
+      "branch_commits_ahead": 0,
+      "changed_entries": 49,
+      "checked_at": "2026-10-08T17:05:33.779Z",
+      "source_modified": false
+    }
+  ],
+  "guarantee": "Fetched main is in HEAD now; own changes are allowed only for continue/handoff. No automatic source rewrite."
+}

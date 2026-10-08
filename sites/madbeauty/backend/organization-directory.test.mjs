@@ -346,3 +346,9 @@ test('Ten total mail admissions per cycle rotate the durable organization cursor
   assert.equal(await directory.nextOrganizationMailAt(),Date.parse(f.first.startAt)-1440*60000);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM sessions').get().n,0);
  }finally{b.target.close();f.close();}
 });
+
+test('Platform contact reports stay on the central writer while organization reports use the active target; ordinary HTTP scopes and version decisions agree',async()=>{
+ const f=fixture();try{const input={target:'platform',note:'Isolated central contact report',idempotencyKey:'central-contact'},created=await f.request('client','report',input);assert.equal(created.status,200);const r=created.result;assert.equal(r.targetKind,'platform');assert.equal(r.organizationId,null);assert.equal(f.source.recordById('reports',r.id).id,r.id);assert.equal(f.target.recordById('reports',r.id),null);assert.equal((await f.request('client','report',input)).result.id,r.id);const orgReport=await f.request('client','report',{target:f.a.org.id,note:'Isolated target profile issue',idempotencyKey:'target-report'});assert.equal(orgReport.status,200);assert.equal(f.target.recordById('reports',orgReport.result.id).organizationId,f.a.org.id);
+ const queue=await f.request('owner','workspace',{role:'operator'});assert.ok(queue.result.reports.some(x=>x.id===r.id));assert.ok(queue.result.reports.some(x=>x.id===orgReport.result.id));assert.equal((await f.request('foreign','workspace',{role:'customer'})).result.reports.length,0);const decision={id:r.id,version:1,state:'triage',action:'record-only',reason:'Central support triage'};assert.equal((await f.request('client','reviewReport',decision)).status,403);assert.equal((await f.request('owner','reviewReport',decision)).status,200);assert.equal((await f.request('owner','reviewReport',decision)).status,409);assert.equal(f.target.recordById('reports',r.id),null);
+ }finally{f.close();}
+});

@@ -3,6 +3,7 @@ import {randomId,reject} from './primitives.mjs';
 const text=(v,max)=>{if(typeof v!=='string'||!v.trim()||v.trim().length>max)reject('INVALID_INPUT','Aprašykite pranešimą ir sprendimo priežastį.');return v.trim();};
 export const reporterReport=({actions,accountId,moderatedBy,...r})=>({...r,actions:(actions||[]).map(({actorId,...a})=>a)});
 function target(d,id){
+ if(id==='platform')return {targetKind:'platform',organizationId:null};
  const organization=d.organizations.find(o=>o.id===id&&o.approved);if(organization)return {targetKind:'organization',organizationId:organization.id};
  const review=d.reviews.find(r=>r.id===id&&r.approved),booking=review&&d.bookings.find(b=>b.id===review.bookingId&&b.status==='completed'&&b.organizationId===review.organizationId&&b.clientId===review.clientId);
  if(booking&&d.organizations.some(o=>o.id===review.organizationId&&o.approved))return {targetKind:'review',organizationId:review.organizationId};

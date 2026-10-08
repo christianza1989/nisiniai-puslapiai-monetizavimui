@@ -82,3 +82,7 @@ browser-profile*/
 
 # Historical factory bundle has independent credentials/backups; keep local.
 /fabrikas-github-upload/
+
+# Local operation locks/temporary atomic receipts; journal and payload stay tracked.
+/core-improvements/entries/**/operation.lock
+/core-improvements/entries/**/*.tmp

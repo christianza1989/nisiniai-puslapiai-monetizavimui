@@ -1,0 +1,43 @@
+{
+  "siteId": "core",
+  "summary": "Expand niche tool selection beyond SEO and add audited reversible autonomous upgrade workflow",
+  "category": "workflow",
+  "evidence": [
+    "CORE_IMPROVEMENT.md at cac1c449 authorizes scoped repairs but has no canonical journal/quarantine helper.",
+    "AGENTS / niche-seo-geo-core at cac1c449 route Treg SEO/GEO; no required whole-business TOOLS plan.",
+    "Read-only catalogue get on 2026-10-08 confirms supplier discovery semantic mismatch risk and endpoint-level routing conflict; core-improvements/examples/treg-selection-2026-10-08.md.",
+    "Companion source bd5fc25993195c875a1228263a7f45acb13d5000; public issue14 owns routing only. Initial journal rollout record is retrospective to implementation start."
+  ],
+  "paths": [
+    "BUSINESS_TOOLS_CORE.md",
+    "CORE_IMPROVEMENT.md",
+    "AGENTS.md",
+    "START_HERE.md",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "SKILLS/README.md",
+    "SKILLS/catalog.json",
+    "SKILLS/niche-business-tools/SKILL.md",
+    "SKILLS/niche-business-tools/PROMPT.md",
+    "SKILLS/niche-business-tools/references/tools-template.md",
+    "SKILLS/niche-site-builder/SKILL.md",
+    "SKILLS/niche-site-builder/references/business-validation.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/automation-business-planner/SKILL.md",
+    "scripts/core-upgrade.mjs",
+    "scripts/core-upgrade.test.mjs",
+    "core-improvements/README.md",
+    "core-improvements/examples/treg-selection-2026-10-08.md",
+    ".gitattributes",
+    ".gitignore",
+    ".github/workflows/agent-workflow.yml",
+    "docs/CORE_UPGRADE_COLD_START.md",
+    "docs/INTEGRATING_A_PROJECT.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/36",
+  "rollback": "Revert the scoped source commit; journal history and any quarantine payload must be retained. No actual project dead file was removed in this rollout.",
+  "id": "upgrade-f497a6c7-f6e2-43ec-89c6-c01760802c6a",
+  "branch": "codex/core-upgrades-business-tools-20261008",
+  "baseSha": "cac1c4491b3e0cab9ce7a73acebdb7fe51e4fb6a",
+  "createdAt": "2026-10-08T09:33:14.857Z"
+}

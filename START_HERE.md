@@ -1,5 +1,7 @@
 # Sukurk svetainę pagal domeną
 
+Po BUSINESS sprendimo taikyti [BUSINESS_TOOLS_CORE](BUSINESS_TOOLS_CORE.md) ir Git [niche-business-tools](SKILLS/niche-business-tools/SKILL.md): parengti nišos TOOLS.md dabartiniam mokamo rezultato keliui ir būsimai plėtrai. Kiekvieną įgyvendinamą shared pataisą registruoti [core upgrade žurnale](core-improvements/README.md); helperio karantinas saugo originalą ir priežastį, nepakeičia analizės / testų / Git scope.
+
 **Kitas kompiuteris / Madbeauty tęsinys 2026-10-06:** abiejų repo aktualūs pakeitimai sujungti į `main`. Pirmiausia skaityti [perdavimo instrukciją](docs/NEXT_CODEX_HANDOFF_2026-10-06.md): clone/atkūrimas, faktinės patikros ir dar įgyvendintinas Cloudflare runtime bei domeno priėmimas. Kodo perdavimas nėra viešas paleidimas.
 
 Kūrimo metu rastas bendras spragas fiksuok ir pagrįstai taisyk pats pagal [CORE_IMPROVEMENT.md](CORE_IMPROVEMENT.md), laikydamasis bendrų failų rezervacijos. Prieš užbaigimą įrašyk CORE_FEEDBACK su radiniais / pataisymais arba pagrįstu įrašu, kad bendro pakeitimo nereikėjo.

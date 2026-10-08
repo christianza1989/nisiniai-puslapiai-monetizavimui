@@ -699,7 +699,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "3b1e98d3e897193c2c14a0e79618eaa166a0d5e31a03ed40c70592d5feb21902"
+      "entrySha256": "3094ec4f7e5d38f9d4168d0d977a320b4810abfc46f3a60988113db7c862dc99"
     },
     {
       "id": "niche-content-planner",
@@ -743,7 +743,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "5d2ae6954cfb423c26adab7b3a01d7045740dd0afc3b954d17c5355aeaace05d"
+      "entrySha256": "4433a5618488b5d424fd958390120bb74b6150ceeff366893ad67dcf2240a2b7"
     },
     {
       "id": "on-page-seo-checklist",
@@ -1446,7 +1446,7 @@
       "discovery": "project-library",
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "5c09fa0fc12bccd2b00a8deb0172505052aef8699081baa21f2b0a86ecd7049e"
+      "entrySha256": "e7a8baa5d94c0000b622eb3eee150fdd3d6b1f42935e4444bf71c62d9e7df6b0"
     },
     {
       "id": "business-agent-calibration",
@@ -1458,6 +1458,17 @@
       "originalOrigin": "local-project",
       "archives": [],
       "entrySha256": "7f8f3090b0ba1ad0df2562db7e8fa2f8cab9c43afbab6fccbfa03031ce26e27c"
+    },
+    {
+      "id": "niche-business-tools",
+      "role": "phase1-support",
+      "entry": "niche-business-tools/SKILL.md",
+      "prompt": "niche-business-tools/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "4dab7f24f1cca912c71664575ec75509890c5db25a5e5dbad7936d29544856c5"
     }
   ]
 }

@@ -5,6 +5,8 @@ description: "Choose a concrete commercial offer and phase-one demand test, rese
 
 # Niche Site Builder
 
+After the BUSINESS decision use [niche-business-tools](../niche-business-tools/SKILL.md) to produce site TOOLS.md for current needs and future expansion across the paid customer path. Read-only catalogue discovery, unknown coverage/cost and admission triggers remain separate from runtime activation. When fixing a demonstrated shared gap or skill conflict, create a [core upgrade journal](../../core-improvements/README.md) entry and use scoped evidence/checks/Git delivery; quarantine only proven unnecessary exact tracked files under its runbook.
+
 For a complete new-site delivery read [first-delivery checkpoints](references/first-delivery.md) before defining page families. Establish the real editorial identity/profile, guide hub and public route roles before bulk content; verify one end-to-end article layout early. Finish with the bound rendered-site verifier and `--require-local` audit gate. Missing authorship, dates, schema, breadcrumbs, supporting pages or publication integration are in-scope implementation work, not items to wait for the owner to request separately. A narrow edit keeps its actual scope.
 
 For every new niche's market/SEO/GEO research use [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation contract](../niche-seo-geo-core/references/studio-integration.md). Inspect/import current site-scoped evidence before the URL map; preserve this builder's BUSINESS, design, implementation and acceptance scope. Treg observations cannot establish our fulfilment, credentials or paid demand. Reuse the shared research adapter and public SEO core rather than creating per-domain copies.

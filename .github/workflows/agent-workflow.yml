@@ -14,3 +14,5 @@ jobs:
         run: node --test scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs
       - name: Calibration Git inputs
         run: node SKILLS/business-agent-calibration/scripts/check-inputs.mjs
+      - name: Core upgrade and quarantine regression
+        run: node --test scripts/core-upgrade.test.mjs

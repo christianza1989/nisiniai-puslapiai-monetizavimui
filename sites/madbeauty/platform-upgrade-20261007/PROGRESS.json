@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "4133849a780ba13fcb1c52aa7cb4e3d8601aeae3",
+  "runtimeSourceCheckpoint": "7e9bb96be4a1606cec33910266475c1432251913",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -162,6 +162,12 @@
       "tests": 187,
       "state": "accepted-isolated-authority-path",
       "remaining": "Browser/directory/new ID routing, global identity/preferences/customer fanout, public projections, target mail/media activation and remaining UI states."
+    },
+    {
+      "name": "signed-directory-http-current-roles-and-two-store-browser",
+      "tests": 194,
+      "state": "accepted-bounded-isolated-path",
+      "remaining": "New central identity/cache/preferences/taxonomy/name admission, global controls, mail/media activation, production binding/migration and full UI matrix"
     }
   ],
   "tasks": [
@@ -366,7 +372,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE187: actual distinct Workers prepared target/source seal/active target retained-hold confirmation, rollback/restart/epoch replacement, source SQL state/mail/job fences and scoped/global control denial; HTTP/global/projection/mail/media routing still unimplemented."
+      "evidence": "STORAGE.md/ACCEPTANCE194: private active-target ordinary HTTP, authenticated actor and shared CSRF/origin/site checks, old/new ID resolution and lost registration recovery, current public/customer/professional/operator/session/export reads, mixed source/target ownership, Node/actual Workers/browser restart proof. New identity/cache/preferences/taxonomy/name and mail/media admission remain active."
     },
     {
       "id": "I03",
@@ -433,7 +439,7 @@
     }
   ],
   "next": [
-    "I02 physical organization routing and remaining global operations",
+    "I02 fresh central identity/preferences/taxonomy/name admission, remaining global controls and mail/media activation",
     "Full desktop/mobile error/stale/conflict states",
     "I03 larger-adapter activation and hosted load gate"
   ]

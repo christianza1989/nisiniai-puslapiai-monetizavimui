@@ -1,6 +1,6 @@
 # Tikrų UI būsenų priėmimo registras
 
-Aktyvus I04 registras. Tik named isolated8841, synthetic teikėjai/klientai; production nepakeista. Node/Workers kontrakto PASS atskirtas nuo actual naršyklės įrodymo. „Likę“ nėra PASS. Išsamesnės ankstesnių kelių aplinkybės ir apribojimai yra ACCEPTANCE.md. Ignored evidence saugo vietinius vaizdus ir skaitinius matavimus; nėra viešo release dalis.
+Aktyvus I04 registras. Tik named isolated8841 ir directory8843, synthetic teikėjai/klientai; production nepakeista. Node/Workers kontrakto PASS atskirtas nuo actual naršyklės įrodymo. „Likę“ nėra PASS. Išsamesnės ankstesnių kelių aplinkybės ir apribojimai yra ACCEPTANCE.md. Ignored evidence saugo vietinius vaizdus ir skaitinius matavimus; nėra viešo release dalis.
 
 | Kelias / rolė | Turimas actual įrodymas | Likę actual būsenų darbai |
 |---|---|---|
@@ -21,3 +21,8 @@ Aktyvus I04 registras. Tik named isolated8841, synthetic teikėjai/klientai; pro
 | Komandos prieigos/taksonomija/kvalifikacijos / owner/operator | Team mobile, taxonomy archive→restore, operator versioned review; rolės/expiry/server DTO tests; actual reception/practitioner restricted nav ir denied route / calendar168 | Actual182 expiry→owner warning/operator expired badge→booking alert/Escape/public exclusion→renewal/restored priimtas. Likę šio kelio network/stale taikomumo įrodymai |
 
 Galutinis I04 acceptance reikalauja uždaryti taikomas eilutes, įrašyti konkrečius matavimus ir įrodymus. Galutinis187pairedtestų bei305assetsbuildPASS neužbaigia visos matricos. Konkrečios178–182 būsenos ir vaizdų patikimumo ribos yra ACCEPTANCE.md.
+
+
+## Directory194 / actual two-store roles
+
+8843 owner/customer synthetic browser2/tab2, normal booking/detail/restart accepted: profile→hold→confirm new17:00–18:00/25€ ID matches target storage, customer detail and owner calendar dialog. Customer320/390/820/1440 plus dialog288/358/700/700 visually reviewed and width-measured in directory-customer-widths.json / directory-professional-widths.json. Source remains original snapshot; both stores restart and ordinary sessions survive. First mixed-org /meistrui503 screenshot preserved; guarded unmigrated fallback fixed, source overview→organization switch→current target calendar retest passed. Earlier per-role UI matrix and all untested error/stale/conflict states remain. Latest full backend regression194/194 does not mark them PASS.

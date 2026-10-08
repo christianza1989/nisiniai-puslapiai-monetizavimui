@@ -113,3 +113,12 @@ Fast viewport screenshot loop kartais saugo ankstesnį/intermediate paint, nors 
 Runtime4133849. Vien copy integrity flag nėra write authority: prepare importas vis dar fenced, source atominis seal precedes target activation, old source abort nebegalioja. Node ir actual Workers post-write failure/restart/private retained-hold confirm priimti. Source SQL mail/job guards uždaro seną lease writer; global preferences sutartis explicit guard pagalba nesusilpninta. Node SQLite object prototypes ir held accountId laukas pirmoje versijoje sukėlė actual test failure; cache protocol normalizuojamas per tikrą JSON transporto ribą.
 
 Epoch replacement leidžiamas tik su signed abort ir prepared target, jo transactional discard failure priimtas realiame SQLite Workers. Active kopijos niekada nepakeičia senas checkpoint/abort.187pairedPASS; public routing/global state/mail/media admission dar nėra priimtas. Tai Madbeauty site kontraktas, ne shared core migracijos ar kitų nišų garantija.
+
+
+## 2026-10-08 · directory routing and accepted HTTP do not imply all role entry points
+
+Runtime7e9bb96,194/194 regression-52. Actual two-store browser revealed that a global unsupported-workspace guard also rejected the source org of a mixed migrated/unmigrated owner. Removed that blanket guard after resolving the actual organization; retained source route still runs original membership/permission checks, sealed routes never fall back. Node and actual Workers now cover both orgs, and browser retry/switch/calendar matches the same target booking ID after restart. First failure screenshot retained.
+
+A forced post-OTP role lookup outage also exposed a committed-session/new-cookie ordering risk; secure cookie is now returned even with later lookup error, and next GET recovers the actual session. No OTP values/logs/artifacts entered Git. Async SSR waits current public projection and keeps assets/private shells independent of calendar outage. Shared rpc-contract avoids different browser/target calling conventions. Domain-specific helpers remain in Madbeauty own modules; no unrelated shared/writer files changed.
+
+Remaining cache identity/preferences/taxonomy/name, mail/media activation and full UI states stay ACTIVE. A successful existing-client booking alone cannot mark new-client/provider onboarding accepted after physical handoff. No partial production deployment inferred from the conditional full-upgrade authorization.

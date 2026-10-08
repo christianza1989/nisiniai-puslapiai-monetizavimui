@@ -1,6 +1,6 @@
 # Platformos upgrade — aktyvus įgyvendinimas
 
-Aktualus187/187 checkpoint4133849: bounded cache/outbox/job import, fenced prepared target, signed source seal/target activation, immutable old booking snapshots ir tikros dviejų SQLite Workers objektų restart/failure/retained-hold confirmation patikros. Browser routing/directory, central global paths ir mail/media activation dar neįgyvendinti. Exact75aa39page305asset kandidatas nepaskelbtas. Full pavedimas ACTIVE ir neužbaigtas, savininko deploy sąlyga dar neįvykdyta. [Saugykla](STORAGE.md), [priėmimas](ACCEPTANCE.md), [actual UI likučiai](UI_MATRIX.md).
+Aktualus194/194 checkpoint7e9bb96: signed directory ordinary HTTP routing, old/new ID recovery, current public/role/customer/export reads ir actual Node/Workers/two-store browser restart. Source SQL fences ir global auth išlieka; new identity/preferences/taxonomy cache admission bei mail/media activation dar įgyvendinami. Exact75aa39page305asset kandidatas nepaskelbtas. Full pavedimas ACTIVE ir neužbaigtas, deploy sąlyga dar neįvykdyta. [Saugykla](STORAGE.md), [priėmimas](ACCEPTANCE.md), [UI likučiai](UI_MATRIX.md).
 
 Savininkas 2026-10-07 tiesiogiai atnaujino viso `upgrade-plan-20261006/PLAN.md` įgyvendinimą: „gali pradėti platformos tą upgrade kur darei planą“. Ankstesnė plataus upgrade pauzė panaikinta. Darbo šaka `ai/madbeauty-platform-upgrade-20261007`, bazė159d7d7 (gyvas reviewed V2 source897ba83 / Workersedf429e9). Vietinis veikiantis upgrade ir izoliuotas Workers kandidatų priėmimas; viešo perjungimo kvitas atskiras.
 

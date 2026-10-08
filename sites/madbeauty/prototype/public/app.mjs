@@ -23,7 +23,7 @@ const $=s=>document.querySelector(s),boot=await loadJson('/boot.json');
 
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:'',rezultatai:'paslaugos'},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
 let state=initial(),restoredWorkspaceAccount=null;
-try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':ui'));if(saved?.version===1&&saved.boot===boot.now)state={...state,...saved.state};}catch{}
+try{const saved=JSON.parse(sessionStorage.getItem(DEMO_NAMESPACE+':ui'));if(saved?.version===1&&saved.boot===boot.now)state={...state,...saved.state};}catch{}
 const ctx={searchSelect,state,media:new Map(),taxonomy:TAXONOMY,candidates:new Map(),minute,render,navigate,toast,openDialog,closeDialog,saveUI,selectRole,beginBooking,clearDrafts,
   dayLabel:i=>date(localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720)),
   dayInstant:i=>localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720),
@@ -36,7 +36,7 @@ ctx.ensureMedia=async()=>{if(!mediaPromise)mediaPromise=Promise.all(['/media.jso
 function adapter(){ctx.adapter=createAdapter({enabled:state.enabled,deployment:boot.deployment,clock:makeClock(state.clock),scenario:state.scenario,richFixtures:true,persistence,realAdapter:boot.apiAvailable?ctx.realAdapter:null});if(!state.enabled&&ctx.realAdapter.session){const s=ctx.realAdapter.session;state.session={role:s.user?'customer':'guest',clientId:s.user?.id||null,organizationId:s.organizations[0]?.id||null};}}
 adapter();
 function saveUI(){try{
-  localStorage.setItem(DEMO_NAMESPACE+':ui',JSON.stringify({version:1,boot:boot.now,state}));
+  sessionStorage.setItem(DEMO_NAMESPACE+':ui',JSON.stringify({version:1,boot:boot.now,state}));
   const s=ctx.realAdapter.session;
   if(ctx.adapter.mode==='real'&&s?.user&&s.organizations.some(o=>o.id===state.session.organizationId))localStorage.setItem(DEMO_NAMESPACE+':real-workspace',JSON.stringify({accountId:s.user.id,organizationId:state.session.organizationId}));
 }catch{toast('Vietinių pasirinkimų išsaugoti nepavyko.');}}
@@ -120,7 +120,7 @@ async function commonAction(action,b){
   if(action==='demo-controls'){
     openDialog('Privačios demonstracijos valdikliai',`<p>Visi veiksmai vietiniai. Scenarijus taikomas bendram adapteriui, o laikrodis perduodamas visiems ekranams.</p><form id="demo-settings">${select('režimas','enabled',[['on','Įjungtas'],['off','Išjungtas']],state.enabled?'on':'off')}${select('Scenarijus','scenario',SCENARIOS.map(s=>[s,s]),state.scenario)}${field('Vienas UTC laikrodis','clock',state.clock,'text','required')}${select('Testinių įrašų paskyra','fixtureRole',[['guest','Svečias'],['customer','Klientas'],['professional','Meistras'],['operator','Operatorius']],state.session.role)}${field('Testinės organizacijos ID','fixtureOrg',state.session.organizationId||'demo-org-0')}${field('Testinio kliento ID','fixtureClient',state.session.clientId||'demo-client-0')}<button class="button accent">Taikyti</button></form><div class="divider"></div>${btn('reset-demo','Išvalyti  ir pradėti iš naujo','','button outline')}<p class="hint">Tai nėra tikras prisijungimas, production būsena ar duomenų migracija.</p>`);return true;
   }
-  if(action==='reset-demo'){localStorage.removeItem(DEMO_NAMESPACE);localStorage.removeItem(DEMO_NAMESPACE+':ui');state=initial();ctx.state=state;adapter();closeDialog();await navigate('/');toast('Madbeauty vietiniai  duomenys išvalyti.');return true;}
+  if(action==='reset-demo'){localStorage.removeItem(DEMO_NAMESPACE);localStorage.removeItem(DEMO_NAMESPACE+':ui');sessionStorage.removeItem(DEMO_NAMESPACE+':ui');state=initial();ctx.state=state;adapter();closeDialog();await navigate('/');toast('Madbeauty vietiniai  duomenys išvalyti.');return true;}
   if(action==='enable-demo'){state.enabled=true;adapter();await render();return true;}
   if(action==='favorite'){if(ctx.adapter.mode==='real'){if(!ctx.realAdapter.session?.user){state.afterAuth=ctx.path;await navigate('/paskyra');return true;}const d=await ctx.adapter.workspace({role:'customer'}),saved=!(d.client.favoriteIds||[]).includes(id);state.favorites=await ctx.adapter.favorite({organizationId:id,saved});}else state.favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];saveUI();b.setAttribute('aria-pressed',state.favorites.includes(id));toast(state.favorites.includes(id)?'Profilis išsaugotas.':'Profilis pašalintas iš išsaugotų.');return true;}
   if(action==='home-day'){state.search.diena=Number(id);saveUI();await render();return true;}

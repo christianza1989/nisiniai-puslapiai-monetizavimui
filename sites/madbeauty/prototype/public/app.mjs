@@ -92,7 +92,7 @@ async function render(){
 async function selectRole(role,organizationId='demo-org-0',clientId='demo-client-0',target=null){if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);state.session={role,organizationId,clientId};state.booking=null;saveUI();await navigate(target||({customer:'/paskyra/vizitai',professional:'/meistrui',operator:'/operatorius'})[role]||'/');}
 async function beginBooking(id,candidate=null,practitionerId=null){
   if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);
-  const rows=await ctx.adapter.catalog(),s=rows.find(s=>s.id===id);if(!s){toast('Paslauga nepasiekiama.');return;}
+  const rows=await ctx.adapter.catalog(),s=rows.find(s=>s.id===id);if(!s)throw Object.assign(Error('Ši paslauga šiuo metu nepasiekiama. Atnaujink profilį arba pasirink kitą paslaugą.'),{code:'SERVICE_UNAVAILABLE'});
   if(s.bookingMode&&s.bookingMode!=='instant'){state.booking=null;saveUI();await commonAction('inquiry',{dataset:{id}});return;}
   const user=ctx.realAdapter.session?.user;state.booking={serviceId:id,practitionerId:candidate?.practitionerId||practitionerId||s.practitionerId,addons:[],candidate,contact:{name:ctx.adapter.mode==='real'?(user?.name||''):'Pavyzdžio klientė',email:ctx.adapter.mode==='real'?(user?.email||''):'demo-guest@example.com'},idempotencyKey:'confirm-'+crypto.randomUUID(),result:null};saveUI();await navigate('/registracija/paslauga');
 }
@@ -156,7 +156,7 @@ document.addEventListener('click',async e=>{
   }
   const b=e.target.closest('[data-action]');if(!b)return;e.preventDefault();if(b.disabled)return;const hadFocus=b.contains(document.activeElement);ctx.actionOpener=b;b.disabled=true;
   try{if(!await commonAction(b.dataset.action,b)&&!await bookingAction(ctx,b.dataset.action,b))await workspaceAction(ctx,b.dataset.action,b);}
-  catch(err){if($('#dialog').open)$('#dialog .dialog-body').insertAdjacentHTML('afterbegin',errorHTML(err));else toast(err.message);}
+  catch(err){if($('#dialog').open){const body=$('#dialog .dialog-body');body.querySelectorAll('.error-box').forEach(x=>x.remove());body.insertAdjacentHTML('afterbegin',errorHTML(err));const alert=body.querySelector('.error-box');alert.setAttribute('tabindex','-1');alert.focus();}else toast(err.message);}
   finally{if(b.isConnected){b.disabled=false;if(hadFocus&&document.activeElement===document.body)b.focus({preventScroll:true});}if(ctx.actionOpener===b)ctx.actionOpener=null;}
 });
 document.addEventListener('change',async e=>{if(e.target.form?.id==='manual-options'&&e.target.name==='serviceId'){$('#manual-service-summary').innerHTML=manualServiceSummary(ctx,e.target.value);return;}if(!['booking-services','booking-staff','visit-sequence-services'].includes(e.target.form?.id))return;try{await bookingChange(ctx,e.target);}catch(err){toast(err.message);}});

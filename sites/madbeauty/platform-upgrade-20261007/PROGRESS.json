@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "b541fa6f09bc54d516e6ac42244a657c621f366a",
+  "runtimeSourceCheckpoint": "02d9872a05dd0d3f878b56d5de8a0df3e287ffdd",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -222,6 +222,12 @@
       "tests": 224,
       "state": "accepted-isolated-browser-and-node-path",
       "remaining": "Target upload, Node filesystem import, production binding/migration, remaining I04 and factual launch gates."
+    },
+    {
+      "name": "current-target-image-upload-and-durable-uncertain-reply-recovery",
+      "tests": 232,
+      "state": "accepted-isolated-node-workers-raster-path",
+      "remaining": "Native Worker browser upload states, local source upload dedup, Node filesystem import, production binding/migration, remaining I04 and factual launch gates."
     }
   ],
   "tasks": [
@@ -426,7 +432,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE224: directory/global controls/delegated mail, physical SQL media transfer and current target HTTP variant read accepted. Target upload/production binding/migration remain."
+      "evidence": "STORAGE.md/ACCEPTANCE232: transferred target current upload, physical atomic SQL image commit and durable lost-reply recovery accepted. Local source dedup, Node filesystem import and production binding/migration remain."
     },
     {
       "id": "I03",
@@ -493,7 +499,7 @@
     }
   ],
   "next": [
-    "Target upload/current capability, atomic binary storage and uncertain reply recovery",
+    "Actual Worker browser upload I04 and local source upload retry admission",
     "Production binding/migration candidate and Node filesystem import",
     "Remaining applicable I04 states; factual SMTP/pilot/retention and hosted load gates"
   ]

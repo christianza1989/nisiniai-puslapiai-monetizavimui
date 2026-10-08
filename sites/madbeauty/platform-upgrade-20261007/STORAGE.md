@@ -1,3 +1,7 @@
+## Current target upload / 02d9872a05dd0d3f878b56d5de8a0df3e287ffdd
+
+Source directory_media_uploads(site,actor,operationKey) reserves immutable original fingerprint, assetID, rights timestamp/actor and metadata; no original byte payload. Up to4096 intents/site, no invented retention cleanup. Target organization_media_uploads binds assetID/org/actor/fingerprint/result; bounded by24assets/org. putManySync allows blob chunks/capacity and attachMedia/profile/receipt/nonce/cache within existing synchronous transaction. No await inside commit. Source and target commits are separate: source pending survives uncertain target success, fresh target preflight returns committed result before reoptimization. Sealed original source org/media stay unchanged. Private raw RPC has signature/current epoch/physical target ID checks and32MiB including bounded overhead. Node filesystem adapter and local source idempotency remain separate unaccepted extensions.
+
 ## Archived procedure retention / b541fa6f09bc54d516e6ac42244a657c621f366a
 
 Existing private offer keeps original taxonomyServiceId and published snapshot; draft update uses normal versioned transaction. No taxonomy ID replacement, publication or booking eligibility bypass. Current full catalogue labels appear only as workspace DTO metadata; target signed cache remains current central authority. Actual target offer version2 after normal Enter save/reload.

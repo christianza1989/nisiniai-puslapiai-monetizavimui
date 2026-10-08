@@ -1,3 +1,7 @@
+## Platform contact reports255
+
+report accepts exact target=platform as private central targetKind=platform/organizationId:null. Current authenticated actor, bounded note, account-scoped key/fingerprint and pending duplicate guard remain. Platform reviews require canonical operator and current report version; only record-only actions apply, publication actions are rejected before finding an organization. Existing organization/media/review reports retain directory routing. Customer workspace/export exposes only their reports with private actor IDs removed. UI key is in current context, not a reload-persistent guarantee; review decisions use version conflicts and explicit re-read after uncertainty. Source 7385ca2a1d85bed1352dfe4a84d05f096bc8a838, ACCEPTANCE255/contact255-browser.md.
+
 ## Report range validation252
 
 Shared report-range.mjs validates strict YYYY-MM-DD calendar dates and inclusive1–92day ranges before UI navigation and backend reads. Invalid saved URL renders labeled retained dates and a specific error without a report fetch. Backend still applies current reports capability and Vilnius local-midnight report boundaries. Closed-date single-day validation retains its existing constraint. This adds no write/export bypass or new public endpoint. Source ccdccf5fb6efcb4939fb1aa24e1565aec703cab0; exact tests/native scope ACCEPTANCE252.

@@ -1,3 +1,9 @@
+## Contact255 — typed form targets and real capture dimensions
+
+Actual contact form used target=platform while moderation accepted only approved organization/media/review IDs, so every filled contact report failed404. Added exact private central platform target, operator record-only versioned review and meaningful Node/directory/UI guards; native lost report reply replays one receipt. Post-review lost response remains a guarded version conflict requiring explicit current re-read, not silently replayed or overclaimed idempotency. Inline success reset left an old restored-draft notice; report path now removes it.
+
+A nominal820 browser capture was actually390px despite DOM innerWidth820. First image retained as diagnostic; separate viewport/state and later screenshot capture produced verified820 raster. Screenshot method emitted JPEG bytes under existing .png evidence names; IHDR-only dimension assumptions were invalid, corrected with read-only Sharp metadata. Final review/reporter dimensions checked and pictures viewed. 7385ca2a1d85bed1352dfe4a84d05f096bc8a838; contact255-browser.md. No shared computer driver/image editing or production changes.
+
 ## Report252 — retained correction forms and native date width
 
 Actual invalid report submission removed the date form and offered only a retry that repeated invalid hash. Shared strict date helper and pre-navigation validation now preserve fields/focus; invalid bookmark renders correction before fetch. Node/native Worker evidence is ACCEPTANCE252. Symbol search validDay( missed the forEach(validDay) reference; focused regression caught and repaired it, first log retained. Search every symbol reference before removal. Equal scrollWidth/clientWidth did not prove native date years readable at390; actual Jan-Apr screenshot exposed clipping. <=600 single-column report fields fix it, final four-width pictures viewed.

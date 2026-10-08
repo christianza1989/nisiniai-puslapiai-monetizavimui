@@ -72,3 +72,8 @@ Central session roles, current public search/profile, customer/professional/oper
 ##198 fresh-cache command contract
 
 Runtimed60e077 signed directory command papildytas private cache: central issue sequence, vieno actor accounts(operator0)/clients/preferences ir current taxonomy snapshot. Browser RPC forma nesikeičia. Target command transaction admits cache before business; stale floor409STALE_DIRECTORY_CONTEXT refreshinamas tik vieną kartą prieš business action. HMAC/expiry/scope ir bounded input/reply išlieka. Signed result identityEffect tik confirm/confirmVisit, susietas su to paties actor booking; source compare-version/receipt ir references commit atomic. Nieko iš šių private cache/maintenance helperių nėra browser method allowlist. createClient/grantMembership naujų global identities keliai dar fail closed.
+
+
+##200 preferences result ir private control delivery
+
+Runtime6ce4e02 preferences central desired value papildomas synchronization: applied/pending/superseded. Pending nėra HTTP business failure: central preference+intent jau committed, į saloną perduos indexed durable retry. Superseded grąžina latest central preferences, UI form atnaujinama šiuo value. applyCustomerControls private signed target method nėra browser allowlist; reikalauja current cache actor/revision/active scope. Source queue ack/retry tik matching revision. Worker alarm skaito queue due_at,30s retry/batch32. No shared source-target transaction ar įjungtos target mail delivery authority.

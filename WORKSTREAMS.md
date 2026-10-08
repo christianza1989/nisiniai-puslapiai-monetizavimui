@@ -333,3 +333,6 @@ Cloudflare release 2026-10-06: also reserves infrastructure/mail-relay/** for th
 
 
 - 2026-10-08 Madbeauty own upgrade runtime d60e077:9source files fresh directory cache/confirmed name effect,198/198 full4suites, exact75aa39page305asset build ir isolated8843 new OTP→booking. Docs own status/platform/core-feedback; companionc7e0c9a neperrašytas. Active continuation: migrated-client preference reconciliation, remaining identity/globals/mail/media/UI. Production writes0, deploy only upon full acceptance.
+
+
+- 2026-10-08 Madbeauty own runtime6ce4e02:7source files central prefs/durable controls/target reconciliation,200/200 four suites, actual Workers alarm/restart and isolated8843 phone pending→recovery/reload; own docs/status updated. Next existing-email/manual identity/membership, globals/mail/media/UI. Production writes0; conditional complete-upgrade deployment prerequisite unsatisfied.

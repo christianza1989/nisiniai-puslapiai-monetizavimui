@@ -34,3 +34,8 @@ Galutinis I04 acceptance reikalauja uždaryti taikomas eilutes, įrašyti konkre
 
 
 Directory198 browser continuation: po abiejų owned stores restart klientas išlaikė secure session ir tą patį booking_44d462c1-70e7-476e-a551-29a628ae09bd detail. Owner per normalų OTP→org switch→calendar mobile agenda atvėrė Oct9→18:00 naujo kliento vizitą Enter. Dialogo width358=scrollWidth358, document390; visi3actions data-id sutampa su booking. Escape paslepia dialogą ir grąžina fokusą į to paties ID Atidaryti. directory-fresh198-detail-restarted-390.png / directory-fresh198-owner-mobile-dialog-390.png peržiūrėtos; directory-fresh198-keyboard.json matavimai. Kiti likę I04 scenarijai netampa PASS.
+
+
+## Customer controls200 / keyboard ir pending delivery
+
+8843 customer settings actual save→private namespace outage→pending notice/input retained→retry applied→reload false/0. Enter save, server/storage suppression ir source/target preference comparison named ACCEPTANCE200.320/390/820/1440 normal formų screenshot/widths peržiūrėti:246/316/498/799 client=scroll; document/main taip pat sutampa. Applied/pending/superseded source contract testuotas Node; superseded actual browser dar UNVERIFIED. Disabled Vykdoma… AX buvo matomas, screenshot po jo jau success. Pilnos kitų privacy/exports/network ir likusių ekranų būsenos tebėra atskiros. SSR inventory title privacy→privatumas copy dar taisytinas.

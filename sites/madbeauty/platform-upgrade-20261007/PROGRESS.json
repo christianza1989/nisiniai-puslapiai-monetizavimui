@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "d60e077abaad63d9325ff22a43983b375ca58661",
+  "runtimeSourceCheckpoint": "6ce4e02d86da4d4e42e786d088255c9364bb44c6",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -174,6 +174,12 @@
       "tests": 198,
       "state": "accepted-isolated-path",
       "remaining": "Migrated-client preference reconciliation, manual identity/membership admission, globals, target mail/media and full UI matrix; production unchanged"
+    },
+    {
+      "name": "central-preferences-durable-customer-controls-and-target-reminder-reconciliation",
+      "tests": 200,
+      "state": "accepted-isolated-path",
+      "remaining": "Manual identity/membership, globals, target mail/media/binding and full UI matrix; production unchanged"
     }
   ],
   "tasks": [
@@ -378,7 +384,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE198: fresh SQL actor identity/preferences/taxonomy cache, monotonic bounded admission, target rollback/account guards, durable confirmed-name effects with central compare-version receipts, ordinary first OTP sign-in→booking and actual Workers restart. Remaining migrated-client preferences, manual identity/membership, globals and mail/media/binding."
+      "evidence": "STORAGE.md/ACCEPTANCE200: fresh central caches/name effects, versioned durable preferences/reconciliation, lost reply/overlap/rollback and actual Workers alarm/restart. Remaining manual identity/membership, globals and mail/media/binding."
     },
     {
       "id": "I03",
@@ -445,8 +451,8 @@
     }
   ],
   "next": [
-    "I02 migrated-client preference reconciliation and durable control delivery; remaining manual identity/membership and globals",
-    "Target mail/media activation and full desktop/mobile error/stale/conflict states",
+    "I02 central existing-email/manual-client/membership admission and remaining global controls",
+    "Target mail/media activation and full desktop/mobile error/stale/conflict states; SSR inventory settings title copy",
     "I03 larger-adapter activation and hosted load gate"
   ]
 }

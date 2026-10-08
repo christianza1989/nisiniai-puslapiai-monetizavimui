@@ -6,6 +6,7 @@ import {createSqlMediaBucket} from './media-bucket.mjs';
 import {createPlatform} from '../backend/platform.mjs';
 import {createAuth} from '../backend/auth.mjs';
 import {createOrganizationHandoff} from '../backend/organization-handoff.mjs';
+import {createOrganizationCommit} from '../backend/organization-authority.mjs';
 import {nextReminderAt,reminderValid} from '../backend/notifications.mjs';
 import {nextWaitlistAt,waitlistMailValid} from '../backend/waitlist.mjs';
 import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger-transport.mjs';
@@ -47,6 +48,9 @@ export class MadbeautyPlatform extends DurableObject{
  async freezeOrganization(input){return createOrganizationHandoff(this.store).freeze(input);}
  async organizationHandoffPage(input){return createOrganizationHandoff(this.store).page(input);}
  async abortOrganizationHandoff(input){return createOrganizationHandoff(this.store).abort(input);}
+ async organizationHandoffContext(input){return createOrganizationCommit(this.store).context(input);}
+ async sealOrganizationHandoff(input){return createOrganizationCommit(this.store).seal(input);}
+ async abortPreparedOrganizationHandoff(input){return createOrganizationCommit(this.store).abort(input);}
  async recoveryStatus(){
   this.expire();
   const bookmark=await this.ctx.storage.getCurrentBookmark(),db=this.store.db;
@@ -72,8 +76,8 @@ export class MadbeautyPlatform extends DurableObject{
   db.prepare('DELETE FROM rate_limits WHERE expires_at<?').run(now);
   db.prepare('DELETE FROM email_challenges WHERE expires_at<?').run(now-86400000);
   db.prepare("DELETE FROM mail_outbox WHERE type='login-code' AND created_at<?").run(now-86400000);
-  db.prepare("DELETE FROM mail_outbox WHERE state IN ('accepted','failed','expired') AND created_at<?").run(now-30*86400000);
-  db.prepare("DELETE FROM notification_jobs WHERE state IN ('queued','suppressed','missed') AND due_at<?").run(now-30*86400000);
+  db.prepare("DELETE FROM mail_outbox WHERE state IN ('accepted','failed','expired') AND created_at<? AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail_outbox.site_id AND h.organization_id=mail_outbox.organization_id AND h.state!='aborted')").run(now-30*86400000);
+  db.prepare("DELETE FROM notification_jobs WHERE state IN ('queued','suppressed','missed') AND due_at<? AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=notification_jobs.site_id AND h.organization_id=notification_jobs.organization_id AND h.state!='aborted')").run(now-30*86400000);
  }
  async drain(){
   if(this.mailRunning)return this.mailRunning;

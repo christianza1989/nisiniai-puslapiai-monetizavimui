@@ -7,6 +7,7 @@ const bytes=value=>Buffer.byteLength(value,'utf8'),rowKey=r=>JSON.stringify([r.c
 const proof=(store,type,value)=>store.hash('organization-handoff-v1:'+type+':'+JSON.stringify(value));
 const equal=(a,b)=>{if(typeof a!=='string'||typeof b!=='string')return false;const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length&&timingSafeEqual(x,y);};
 const digest=rows=>{const hash=createHash('sha256');for(const row of rows)hash.update(JSON.stringify(row)+'\n');return hash.digest('hex');};
+export {proof as organizationTransferProof,equal as sameTransferProof,digest as organizationRowsDigest};
 const schema=`CREATE TABLE IF NOT EXISTS organization_handoffs(site_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,state TEXT NOT NULL,request_key TEXT NOT NULL,handoff_id TEXT NOT NULL,target_name TEXT NOT NULL,manifest TEXT NOT NULL,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL,PRIMARY KEY(site_id,organization_id));
 CREATE TABLE IF NOT EXISTS organization_handoff_rows(site_id TEXT NOT NULL,handoff_id TEXT NOT NULL,ordinal INTEGER NOT NULL,data TEXT NOT NULL,PRIMARY KEY(site_id,handoff_id,ordinal));`;
 
@@ -14,6 +15,10 @@ CREATE TABLE IF NOT EXISTS organization_handoff_rows(site_id TEXT NOT NULL,hando
 // path cannot keep writing a calendar while its immutable transfer is being read.
 export function organizationFence({db,siteId}){
  db.exec(schema);
+ db.exec('CREATE TABLE IF NOT EXISTS organization_target_authority(site_id TEXT PRIMARY KEY,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,state TEXT NOT NULL,manifest TEXT NOT NULL,context_hash TEXT NOT NULL,receipt TEXT NOT NULL,activation TEXT);');
+ for(const table of ['mail_outbox','notification_jobs'])for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])db.exec(`CREATE TRIGGER IF NOT EXISTS source_${table}_${event.toLowerCase()} BEFORE ${event} ON ${table}
+ WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=${row}.site_id AND organization_id=${row}.organization_id AND state!='aborted')
+ BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;`);
  db.exec(`CREATE TABLE IF NOT EXISTS state_writer_permits(site_id TEXT PRIMARY KEY);
  CREATE TRIGGER IF NOT EXISTS legacy_organization_fence BEFORE UPDATE ON platform_state
  WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=NEW.site_id AND state!='aborted') AND NOT EXISTS(SELECT 1 FROM state_writer_permits WHERE site_id=NEW.site_id)
@@ -27,8 +32,29 @@ export function organizationFence({db,siteId}){
  CREATE TRIGGER IF NOT EXISTS deleted_organization_fence BEFORE DELETE ON state_rows
  WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=OLD.site_id AND state!='aborted' AND (organization_id=OLD.organization_id OR OLD.collection='selectionVersions' AND organization_id=OLD.record_key))
  BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;`);
+ // A materialized target remains fenced until a signed source commit is accepted.
+ // After that it can never become another organization's writer or edit global preferences.
+ for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])db.exec(`CREATE TRIGGER IF NOT EXISTS target_state_${event.toLowerCase()} BEFORE ${event} ON state_rows
+ WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=${row}.site_id AND (a.state!='active' OR ${row}.organization_id IS NOT NULL AND ${row}.organization_id!=a.organization_id OR ${row}.collection='selectionVersions' AND ${row}.record_key!=a.organization_id OR ${row}.collection IN ('preferences','taxonomy','taxonomyChanges','taxonomyVersion','dataRequests')))
+ BEGIN SELECT RAISE(ABORT,'ORGANIZATION_TARGET_FENCED'); END;`);
+ db.exec(`CREATE TRIGGER IF NOT EXISTS target_legacy_fence BEFORE UPDATE ON platform_state
+ WHEN EXISTS(SELECT 1 FROM organization_target_authority WHERE site_id=NEW.site_id) AND NOT EXISTS(SELECT 1 FROM state_writer_permits WHERE site_id=NEW.site_id)
+ BEGIN SELECT RAISE(ABORT,'ORGANIZATION_TARGET_FENCED'); END;`);
+ for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])db.exec(`CREATE TRIGGER IF NOT EXISTS target_mail_${event.toLowerCase()} BEFORE ${event} ON mail_outbox
+ WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=${row}.site_id AND (a.state!='active' OR ${row}.organization_id IS NULL OR ${row}.organization_id!=a.organization_id))
+ BEGIN SELECT RAISE(ABORT,'ORGANIZATION_TARGET_FENCED'); END;`);
+ for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])db.exec(`CREATE TRIGGER IF NOT EXISTS target_job_${event.toLowerCase()} BEFORE ${event} ON notification_jobs
+ WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=${row}.site_id AND (a.state!='active' OR ${row}.organization_id!=a.organization_id))
+ BEGIN SELECT RAISE(ABORT,'ORGANIZATION_TARGET_FENCED'); END;`);
+ for(const [event,row] of [['INSERT','NEW'],['DELETE','OLD']])db.exec(`CREATE TRIGGER IF NOT EXISTS target_account_${event.toLowerCase()} BEFORE ${event} ON accounts
+ WHEN EXISTS(SELECT 1 FROM organization_target_authority WHERE site_id=${row}.site_id)
+ BEGIN SELECT RAISE(ABORT,'GLOBAL_IDENTITY_REQUIRED'); END;`);
+ db.exec(`CREATE TRIGGER IF NOT EXISTS target_account_update BEFORE UPDATE ON accounts
+ WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=OLD.site_id AND (a.state!='active' OR NEW.operator!=0 OR NEW.id!=OLD.id OR NEW.email!=OLD.email OR NEW.site_id!=OLD.site_id))
+ BEGIN SELECT RAISE(ABORT,'GLOBAL_IDENTITY_REQUIRED'); END;`);
  const status=id=>db.prepare('SELECT state FROM organization_handoffs WHERE site_id=? AND organization_id=?').get(siteId,id)?.state;
- const assertWritable=id=>{const state=id&&status(id);if(state&&state!=='aborted')reject('ORGANIZATION_MIGRATING','Organizacijos duomenys perkeliami. Bandykite dar kartą vėliau.',503);};
+ const target=()=>db.prepare('SELECT organization_id,state FROM organization_target_authority WHERE site_id=?').get(siteId);
+ const assertWritable=id=>{const own=target();if(own&&(id!==own.organization_id||own.state!=='active'))reject('ORGANIZATION_MIGRATING','Ši organizacijos saugykla dar nepriima pakeitimų.',503);const state=id&&status(id);if(state&&state!=='aborted')reject('ORGANIZATION_MIGRATING','Organizacijos duomenys perkeliami. Bandykite dar kartą vėliau.',503);};
  const organizationOf=(collection,key,raw)=>{
   const v=JSON.parse(raw);if(collection==='organizations')return v?.id;if(v?.organizationId)return v.organizationId;
   if(collection==='selectionVersions')return key;
@@ -36,7 +62,7 @@ export function organizationFence({db,siteId}){
   return null;
  };
  const assertRows=(changes,removed)=>{
-  if(!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND state!='aborted' LIMIT 1").get(siteId))return;
+  if(!target()&&!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND state!='aborted' LIMIT 1").get(siteId))return;
   const ids=new Set();for(const row of [...changes,...removed])for(const shape of [row,row.prior].filter(Boolean)){
    const id=organizationOf(shape.collection,shape.key??shape.record_key,shape.raw??shape.data);for(const value of Array.isArray(id)?id:[id])if(value)ids.add(value);
   }for(const id of ids)assertWritable(id);
@@ -45,7 +71,7 @@ export function organizationFence({db,siteId}){
  // The permit is inserted/deleted within that same synchronous transaction,
  // so an older JSON writer never observes a committed bypass permission.
  const mirrorWrite=fn=>{db.prepare('INSERT INTO state_writer_permits VALUES(?)').run(siteId);try{return fn();}finally{db.prepare('DELETE FROM state_writer_permits WHERE site_id=?').run(siteId);}};
- return {assertWritable,assertRows,mirrorWrite,isWritable:id=>{const state=id&&status(id);return !state||state==='aborted';}};
+ return {assertWritable,assertRows,mirrorWrite,isWritable:id=>{const own=target(),state=id&&status(id);return (!own||own.organization_id===id&&own.state==='active')&&(!state||state==='aborted');}};
 }
 
 // Old replay records have no organizationId. Resolve their stored entity references
@@ -90,7 +116,7 @@ export function createOrganizationHandoff(store){
   return publicStatus(get(input.organizationId));
  });}
  function page(input){return store.transaction(()=>{
-  const row=current(input);if(row.state!=='frozen')reject('INVALID_STATE','Perkėlimas neaktyvus.',409);if(!Number.isSafeInteger(input.offset)||input.offset<0)reject('INVALID_INPUT','Netinkamas paketo poslinkis.');const manifest=JSON.parse(row.manifest);if(input.offset>manifest.rows)reject('INVALID_INPUT','Paketo poslinkis per didelis.');
+  const row=current(input);if(!['frozen','sealed'].includes(row.state))reject('INVALID_STATE','Perkėlimas neaktyvus.',409);if(!Number.isSafeInteger(input.offset)||input.offset<0)reject('INVALID_INPUT','Netinkamas paketo poslinkis.');const manifest=JSON.parse(row.manifest);if(input.offset>manifest.rows)reject('INVALID_INPUT','Paketo poslinkis per didelis.');
   const records=db.prepare('SELECT ordinal,data FROM organization_handoff_rows WHERE site_id=? AND handoff_id=? AND ordinal>=? ORDER BY ordinal LIMIT 128').all(siteId,row.handoff_id,input.offset),rows=[];let size=0;
   for(const record of records){const length=bytes(record.data);if(rows.length&&size+length>pageBytes)break;rows.push(JSON.parse(record.data));size+=length;}
   const body={manifest,offset:input.offset,nextOffset:input.offset+rows.length,done:input.offset+rows.length===manifest.rows,rows};return {...body,proof:proof(store,'page',body)};
@@ -109,6 +135,7 @@ export function createOrganizationStaging(store,{targetName}){
   const {proof:signature,...body}=packet||{},manifest=body.manifest,{proof:manifestProof,...unsigned}=manifest||{};
   if(!equal(signature,proof(store,'page',body))||!equal(manifestProof,proof(store,'manifest',unsigned)))reject('FORBIDDEN','Perkėlimo paketas nepatvirtintas.',403);
   if(manifest.schemaVersion!==1||manifest.mode!=='read-only-staging'||manifest.siteId!==siteId||manifest.targetName!==targetName||targetName!=='madbeauty:organization:v1:'+manifest.organizationId||!Number.isSafeInteger(manifest.epoch)||manifest.epoch<1||!Number.isSafeInteger(manifest.rows)||manifest.rows<1||manifest.rows>maxRows||!Number.isSafeInteger(manifest.bytes)||manifest.bytes>maxBytes||!Array.isArray(body.rows)||body.rows.length>128||!Number.isSafeInteger(body.offset)||body.offset<0||body.nextOffset!==body.offset+body.rows.length||body.nextOffset>manifest.rows||body.done!==(body.nextOffset===manifest.rows))reject('HANDOFF_SCOPE','Perkėlimo paketo tapatybė netinkama.',409);
+  const authority=db.prepare('SELECT manifest FROM organization_target_authority WHERE site_id=?').get(siteId);if(authority&&authority.manifest!==JSON.stringify(manifest))reject('VERSION_CONFLICT','Parengtos organizacijos kopijos pakeisti negalima.',409);
   let existing=get();if(existing&&existing.manifest!==JSON.stringify(manifest)){
    const prior=JSON.parse(existing.manifest);if(!['receiving','ready-read-only'].includes(existing.state)||prior.organizationId!==manifest.organizationId||manifest.epoch<=prior.epoch)reject('VERSION_CONFLICT','Ši saugykla jau turi kitą perkėlimo versiją.',409);
    db.prepare('DELETE FROM organization_stage_rows WHERE site_id=?').run(siteId);db.prepare('DELETE FROM organization_stage WHERE site_id=?').run(siteId);existing=null;

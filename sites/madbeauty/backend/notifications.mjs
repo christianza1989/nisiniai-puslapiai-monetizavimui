@@ -3,6 +3,7 @@ export const REMINDER_LEADS=[0,120,1440];
 export function synchronizeReminders(store,d){
  const {db,siteId}=store,now=store.clock(),current=new Map();
  for(const b of d.bookings){
+  if(store.organizationWritable&&!store.organizationWritable(b.organizationId))continue;
   const pref=d.preferences.find(p=>p.clientId===b.clientId),lead=pref?.reminderLeadMin??1440;
   if(b.status!=='confirmed'||Date.parse(b.startAt)<=now||pref?.service===false||!lead)continue;
   const due=Date.parse(b.startAt)-lead*60000,id='notice_'+store.hash(`${b.id}:${b.version}:${lead}`),created=Date.parse(b.createdAt||'');
@@ -12,6 +13,7 @@ export function synchronizeReminders(store,d){
  }
  const jobs=d.organizationContext?db.prepare("SELECT * FROM notification_jobs WHERE site_id=? AND organization_id=? AND state IN ('planned','queued','suppressed')").all(siteId,d.organizationContext):db.prepare("SELECT * FROM notification_jobs WHERE site_id=? AND state IN ('planned','queued','suppressed')").all(siteId);
  for(const job of jobs){
+  if(store.organizationWritable&&!store.organizationWritable(job.organization_id))continue;
   const value=current.get(job.id);
   if(!value){db.prepare("UPDATE notification_jobs SET state='suppressed' WHERE id=? AND site_id=?").run(job.id,siteId);continue;}
   if(job.state==='suppressed'&&!job.outbox_id){db.prepare("UPDATE notification_jobs SET state='planned' WHERE id=? AND site_id=?").run(job.id,siteId);job.state='planned';}

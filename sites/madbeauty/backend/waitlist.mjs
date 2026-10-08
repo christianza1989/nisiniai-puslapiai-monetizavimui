@@ -25,6 +25,7 @@ export function validateWaitlist(d,input,now){
 export function synchronizeWaitlist(store,d){
  const now=store.clock(),cache=new Map();
  for(const w of d.waitlist.filter(w=>w.criteria&&!['closed','expired'].includes(w.state))){
+  if(store.organizationWritable&&!store.organizationWritable(w.organizationId))continue;
   if(Date.parse(w.windowEndAt)<=now){w.state='expired';w.version++;continue;}
   if(w.state==='choosing'){
    const hold=d.holds.find(h=>h.id===w.holdId);

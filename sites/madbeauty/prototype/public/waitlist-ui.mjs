@@ -1,4 +1,9 @@
-import {esc,select,field,btn,money,time,date,hhmm,userError} from './ui.mjs';
+import {esc,select,field,btn,money,time,date,hhmm,userError,errorHTML} from './ui.mjs';
+function focusRequestError(id,error){
+ const root=globalThis.document;if(!root)return false;
+ const target=root.querySelector(`[data-request-id="${CSS.escape(id)}"]`)?.firstElementChild||root.querySelector('#main');if(!target)return false;
+ target.insertAdjacentHTML('afterbegin',errorHTML(error));const alert=target.querySelector('.error-box');alert.setAttribute('tabindex','-1');alert.focus();return true;
+}
 export const waitlistState=(w,now)=>w.state==='offered'&&Date.parse(w.offer?.expiresAt)<=Date.parse(now)?'expired':w.state;
 export function waitlistFields(ctx,s){
  const b=ctx.state.booking?.serviceId===s.id?ctx.state.booking:null,staff=s.staffOptions||[{practitionerId:s.practitionerId,name:s.practitionerName}],day=Number(ctx.state.search.diena??1);
@@ -14,7 +19,7 @@ export async function waitlistAction(ctx,action,button){
  const w=ctx.workspace.waitlist.find(w=>w.id===button.dataset.id);if(!w)throw userError('Pageidavimas pasikeitė. Atnaujink puslapį.');
  if(action==='close-waitlist'){await ctx.adapter.closeWaitlist({scope:ctx.state.session,id:w.id,version:w.version});ctx.toast('Pageidavimas užbaigtas.');await ctx.render();return true;}
  if(ctx.state.booking?.hold)await ctx.adapter.releaseHold(ctx.state.booking.hold.id);
- let result;try{result=await ctx.adapter.acceptWaitlist({id:w.id,version:w.version,offerId:w.offer.id});}catch(e){if(['VERSION_CONFLICT','OFFER_EXPIRED','SLOT_CONFLICT'].includes(e.code)){await ctx.render();ctx.toast(e.message);return true;}throw e;}const user=ctx.realAdapter.session.user;
+ let result;try{result=await ctx.adapter.acceptWaitlist({id:w.id,version:w.version,offerId:w.offer.id});}catch(e){if(['VERSION_CONFLICT','OFFER_EXPIRED','SLOT_CONFLICT'].includes(e.code)){await ctx.render();if(!focusRequestError(w.id,e))ctx.toast(e.message);return true;}throw e;}const user=ctx.realAdapter.session.user;
  ctx.state.booking={serviceId:w.providerServiceId,practitionerId:result.candidate.practitionerId,addons:result.candidate.addonIds,candidate:result.candidate,hold:result.hold,contact:{name:user.name||'',email:user.email},idempotencyKey:'waitlist-confirm:'+w.id+':'+w.offer.id,result:null};
  ctx.saveUI();await ctx.navigate('/registracija/duomenys');return true;
 }

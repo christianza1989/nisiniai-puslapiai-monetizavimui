@@ -21,3 +21,5 @@ Tęsinio tvarka:
 7. 60dienų tikrų kvalifikuotų užklausų/pilotų/komplekto indėlio bandymas; testai ir klikai nėra paklausa. Realaus atstovavimo/supplier kainoraščio/garantijos faktai prieš pažadą klientui.
 
 Papildomos approval, pašto, deployment ar mokamo monitoring automatikos nesukurtos. Ankstesni PC/business darbai išsaugoti; current global installer UNCHANGED. Visa likusi reikalinga išorinė prieiga įvardyta; daugiau vietinių pakeitimų vien tam, kad pakiltų score, nereikia.
+
+Final actual private push taip pat grąžino403. Private checkpoint780a452 išsaugotas; abiejų repo write teisė nepasikeitė. Canonical staged safety private60files PASS ir public49files PASS, be radinių. Native terminal receipts yra Git-safe txt; build receipt normalizuoja tik trailing whitespace ir pateikia originalaus vietinio log SHA256. Final metadata commit patikrinamas per git rev-parse HEAD, handoff gate tikras fetch / ancestry.

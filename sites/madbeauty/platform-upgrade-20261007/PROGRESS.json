@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "7747a056dcf695c5f59d1a60682f33f3a5218e9c",
+  "runtimeSourceCheckpoint": "061708656e6841b6e81b6e9cc2b200a7a16ec774",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -124,6 +124,12 @@
       "tests": 166,
       "state": "accepted-isolated-path",
       "remaining": "Physical organization routing, organization creation/global operator paths, full actual UI matrix and activation facts"
+    },
+    {
+      "name": "bounded-public-startup-reads-and-keyboard-recovery",
+      "tests": 167,
+      "state": "accepted-isolated-path",
+      "remaining": "Original transient cold-start cause remains unverified; remaining UI paths, physical routing and factual activation"
     }
   ],
   "tasks": [

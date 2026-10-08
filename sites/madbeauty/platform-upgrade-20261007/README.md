@@ -31,3 +31,5 @@ Checkpoint164/164: expiry marker pataisa ir actual390 recovery aria-pressed=fals
 Checkpoint165/165: pilnas city dropdown, faktinės ribos ir paieškos network/keyboard recovery; konkretūs gidai atrenkami pagal admitted taxonomy/city targets. Cold-start shell failure priežastis lieka UNVERIFIED.
 
 Checkpoint166/166: naujos ir importuotos patvirtintos paskyros kliento tapatybė kuriama indexed patch, vienoje auth transakcijoje; rollback, unknown-account/new-client guards ir actual Workers restart priimti. Source7747a05; fizinis routing ir visa UI matrica lieka aktyvūs.
+
+Checkpoint167/167: pradinis HTTP503 ir uždelstas boot atsakymas užbaigiami klaida / keyboard retry, URL ir pasirinkti filtrai išlieka. Actual isolated8843 proxy į own8841, keturi plotiai, brand/focus. Source0617086; exact75aa39pages304assets, candidate-not-deployed. Originalaus transient cold-start priežastis nepervadinta patvirtinta.

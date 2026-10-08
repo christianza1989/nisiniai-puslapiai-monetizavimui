@@ -1,0 +1,28 @@
+{
+  "checkedOn": "2026-10-08",
+  "status": "PASS_bounded_documentary_proposal_validation",
+  "jsonParsed": 3,
+  "primarySourcesOpened": 4,
+  "localResearchPilotLinks": 8,
+  "brokenLocalRefs": 0,
+  "indexProposalLink": "PASS",
+  "existingApprovalFields": "UNCHANGED",
+  "pendingDecisions": 4,
+  "allPendingProposed": true,
+  "nextIdeaNumber": 4,
+  "newExperiment": "BDEV-0003-P3",
+  "experimentApproval": null,
+  "codeTCPRealDomainTests": "NOT_EXECUTED",
+  "otherExecutorWrites": false,
+  "tooling": [
+    "read_thread unavailable in current tool inventory",
+    "First entire-root-log read hit Node string size;bounded16MiBtail replaced it",
+    "Initial event_msg user filter found none;actual response_item user records extracted"
+  ],
+  "limits": [
+    "No current domain availability,registration or release date established",
+    "No all-branch integration audit",
+    "No global domain-list TLD composition counted",
+    "One-hour/max10 lab is proposed limit,not cost/capacity promise"
+  ]
+}

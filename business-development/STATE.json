@@ -4,19 +4,20 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-05T07:34:33Z",
-  "lastResearchDateLocal": "2026-10-05",
-  "lastResearchFile": "research/2026-10-05-accounting-input/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-05-accounting-input/QA.json",
-  "lastCycleOutcome": "evidence_only_no_new_proposal",
+  "lastResearchAt": "2026-10-08T06:10:08.762Z",
+  "lastResearchDateLocal": "2026-10-08",
+  "lastResearchFile": "research/2026-10-08-lt-availability/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-08-lt-availability/QA.json",
+  "lastCycleOutcome": "new_experiment_proposed",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003"
   ],
-  "lastNotifiedExperimentId": "BDEV-0003-P2",
+  "lastNotifiedExperimentId": "BDEV-0003-P3",
   "notifiedExperimentIds": [
     "BDEV-0003-P1",
-    "BDEV-0003-P2"
+    "BDEV-0003-P2",
+    "BDEV-0003-P3"
   ],
   "nextIdeaNumber": 4,
   "ownerVision": {
@@ -62,14 +63,23 @@
       "requestedScope": "Up to 4 agent-work hours in an isolated private local lab: synthetic two-site leads/interest export and restore with tenant exclusion checks; no shared runtime, actual data, accounts, DNS or subscriptions",
       "approvalSource": null,
       "approvalScope": null
+    },
+    {
+      "id": "BDEV-0003",
+      "experimentId": "BDEV-0003-P3",
+      "status": "proposed",
+      "file": "research/2026-10-08-lt-availability/PILOT.md",
+      "requestedScope": "Up to1 agent-work hour private status-only DAS lab:5synthetic cases,max10selected.lt names once,sequential,no faster1/sec,no purchase/WHOIS personal data/daemon/domain-sorter integration",
+      "approvalSource": null,
+      "approvalScope": null
     }
   ],
   "researchContinuity": {
-    "completed": "Three VMI primary HTML sources examined for i.SAF suitability as an accounting input. Payment data optional, e-invoice issuance differs by entity type, and SVS Lithuania register-reporting exception is explicitly stated. Actual MB Pinet VAT/SVS status unknown. Existing VISION/ARCHITECTURE already require originals, payment reconciliation and entity-specific adapter rules. Four future synthetic cases described, not executed; no new proposal/runtime. Latest accessible owner messages reviewed in root/core; pending scopes unchanged. Dovanos123 reports belong to other executors; histories preserved.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision",
-    "nextCandidateQuestion": "Review direct owner decisions first. Resume only explicitly approved work. Otherwise select one concrete demand or monetization question in an existing niche, with potential to change its experiment decision; avoid repeating generic supplier and accounting checklists. Preserve metalo-tvoros deferral and core executor ownership.",
+    "completed": "Four primary DOMREG HTML sources inspected; .lt quarantine,random24h release,30day trade restriction and DAS versus WHOIS100/30min limit documented. Existing VISION/M9 domain-availability requirement concretized as BDEV-0003-P3 proposed1hour bounded status-only lab. No TCP/test/code/purchase executed. Current main targeted search found no named DAS integration in reviewed dirs,not all branches audit. Root/core latest owner decisions recovered from bounded local logs after unavailable thread tools; no new registry approval. Own Git worktree/PR1 only; main continuity older.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision",
+    "nextCandidateQuestion": "Review main and attached PR1 latest continuity plus actual direct owner decisions. P3 is proposed; implement only if explicitly scoped approved and coordinate domain-sorter boundaries. Preserve P1/P2/BI pending and tractor/Verslomatika other executors. Do not repeat existing source studies.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
-    "executionScope": "Research and private registry only; BDEV-0003-P1 and P2 remain proposed. Strategic autonomy direction does not approve these experiment scopes; no local export/restore prototype executed"
+    "executionScope": "Research/private registry only. BDEV-0003-P1/P2/P3 proposed; no availability lab or export/restore implementation executed. No purchases,live campaigns,DNS or account permissions."
   },
   "approvedWork": [
     {

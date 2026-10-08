@@ -47,6 +47,10 @@ test('Versioned catalogue additions require eligibility, retain archived IDs and
  const resolved=f.api.moderateProcedure(f.operator,{id:request.id,version:request.version,targetId:id,reason:'Atitinka papildytą katalogą.'});assert.equal(resolved.targetId,id);
  fails('VERSION_CONFLICT',()=>f.api.moderateProcedure(f.operator,{id:request.id,version:request.version,targetId:id,reason:'Pakartojimas'}));
  const rejected=f.api.requestProcedure(f.owner,{organizationId:f.org.id,label:'Atmetamas prašymas',description:'Reikia patikslinti.'});assert.equal(f.api.moderateProcedure(f.operator,{id:rejected.id,version:rejected.version,state:'rejected',reason:'Nepakanka apimties.'}).state,'rejected');
+ const input={organizationId:f.org.id,label:'Pakartojamas prašymas',description:'Tinklo atsakymo atkūrimas.',idempotencyKey:'request-retry'},count=f.store.read().procedureRequests.length,eventCount=f.store.read().events.length,once=f.api.requestProcedure(f.owner,input),again=f.api.requestProcedure(f.owner,input);
+ assert.equal(again.id,once.id);assert.equal(f.store.read().procedureRequests.length,count+1);assert.equal(f.store.read().events.length,eventCount+1);
+ fails('IDEMPOTENCY_CONFLICT',()=>f.api.requestProcedure(f.owner,{...input,label:'Pakeista apimtis'}));
+ const reviewed=f.api.moderateProcedure(f.operator,{id:once.id,version:once.version,state:'rejected',reason:'Patikslinti.'});assert.deepEqual(f.api.requestProcedure(f.owner,input),reviewed);
  const selected=f.api.selectProcedures(f.owner,{organizationId:f.org.id,version:1,idempotencyKey:'custom-selection',procedureIds:[id]});const offer=f.make(selected[0]);
  fails('QUALIFICATION_REQUIRED',()=>f.api.submitOffer(f.owner,{id:offer.id,version:offer.version}));
  f.api.assessQualification(f.operator,{organizationId:f.org.id,locationId:f.org.locationId,taxonomyNodeId:id,evidenceReference:'Isolated fixture only',expiresAt:'2027-01-01T00:00:00Z'});f.publish(offer);f.approveOrg();

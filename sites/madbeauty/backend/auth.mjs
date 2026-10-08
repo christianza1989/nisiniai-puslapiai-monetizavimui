@@ -40,7 +40,8 @@ export function createAuth(store){
       let u=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND email=?').get(siteId,c.email);
       if(!u){u={id:randomId('account'),email:c.email,name:'',operator:0};db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(u.id,siteId,u.email,u.name,clock());}
       // Imported or administrator-created accounts need the same client identity as new sign-ins.
-      if(!(store.recordById?store.recordById('clients',u.id):store.read().clients.find(x=>x.id===u.id))){const d=store.read();d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
+      if(store.ensureClient)store.ensureClient(u.id);
+      else if(!(store.recordById?store.recordById('clients',u.id):store.read().clients.find(x=>x.id===u.id))){const d=store.read();d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
       if(store.onVerifiedAccount)u=store.onVerifiedAccount(u);
       db.prepare('DELETE FROM sessions WHERE token_hash=? AND site_id=?').run(s.token_hash,siteId);
       const fresh=session(null);db.prepare('UPDATE sessions SET account_id=? WHERE token_hash=?').run(u.id,fresh.token_hash);fresh.account_id=u.id;

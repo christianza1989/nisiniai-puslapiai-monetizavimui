@@ -42,12 +42,18 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
   const data=decode(fields,rows);Object.defineProperty(data,'clientPatchReady',{value:['media','offers','procedureRequests','taxonomyChanges','qualifications','menuGroups','selectionVersions'].every(name=>fields.some(f=>f.collection===name)),enumerable:false});
   views.set(data,{meta,fields,kind:'client',accountId,rows});return data;
  }
+ function ensureClient(accountId,validate){return transaction(()=>{
+  const account=db.prepare('SELECT id,email,name FROM accounts WHERE id=? AND site_id=?').get(accountId,siteId);if(!account)throw Error('Client identity requires an existing account');
+  const existing=row('clients',account.id);if(existing)return existing;
+  const data=readClient(account.id);validate(data);views.get(data).createIdentity=true;
+  const client={id:account.id,accountId:account.id,name:account.name,email:account.email,version:1};data.clients.push(client);writeOrganization(data);return client;
+ });}
  function writeOrganization(data){return transaction(()=>{
   const view=views.get(data);if(!view)throw Error('Unknown organization view');const meta=currentMetadata();if(meta.version!==view.meta.version)reject('VERSION_CONFLICT','Duomenys pasikeitė. Pakartokite veiksmą.',409);
   const encoded=encode(data);if(JSON.stringify(encoded.fields)!==JSON.stringify(view.fields))throw Error('Organization write requires an unchanged collection manifest');
   const old=new Map(view.rows.map(r=>[identity(r),r])),changes=[],removed=[],kinds=new Map(view.fields.map(f=>[f.collection,f.kind]));
   const allowed=r=>view.kind==='client'?r.collection==='clients'?JSON.parse(r.raw).id===view.accountId:['preferences','dataRequests'].includes(r.collection)?JSON.parse(r.raw).clientId===view.accountId:r.collection==='events':tenant.has(r.collection)?r.organizationId===view.organizationId:r.collection==='clients'?view.ids.has(JSON.parse(r.raw).id):r.collection==='preferences'?view.ids.has(JSON.parse(r.raw).clientId):r.collection==='idempotency'?[...view.ids].some(id=>r.key.startsWith(id+':')):r.collection==='selectionVersions'?r.key===view.organizationId:r.collection==='events';
-  for(const r of encoded.rows){const key=identity(r),prior=old.get(key);old.delete(key);if(prior?.data===r.raw)continue;if(!allowed(r)||r.collection==='clients'&&!prior)throw Error('Organization patch cannot change another scope or global metadata');if(!prior&&db.prepare('SELECT record_key FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').get(siteId,r.collection,r.key))throw Error('Organization patch cannot overwrite an unloaded record');changes.push({...r,prior});}
+  for(const r of encoded.rows){const key=identity(r),prior=old.get(key);old.delete(key);if(prior?.data===r.raw)continue;if(!allowed(r)||r.collection==='clients'&&!prior&&!view.createIdentity)throw Error('Organization patch cannot change another scope or global metadata');if(!prior&&db.prepare('SELECT record_key FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').get(siteId,r.collection,r.key))throw Error('Organization patch cannot overwrite an unloaded record');changes.push({...r,prior});}
   for(const prior of old.values()){const shape={collection:prior.collection,organizationId:prior.organization_id,key:prior.record_key,raw:prior.data};if(!allowed(shape)||shape.collection==='events')throw Error('Organization patch cannot delete outside its loaded scope');removed.push(prior);}
   const counts=new Map(),deltas=new Map(),cost=r=>bytes(r.raw??r.data)+(kinds.get(r.collection)==='scalar'?0:1)+(kinds.get(r.collection)==='object'?bytes(JSON.stringify(r.key??r.record_key))+1:0);
   for(const r of [...changes,...removed])if(!counts.has(r.collection)){const s=db.prepare('SELECT records,last_position FROM state_collection_stats WHERE site_id=? AND collection=?').get(siteId,r.collection);counts.set(r.collection,{n:s?.records||0,last:s?.last_position??-1});}
@@ -63,5 +69,5 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
   for(const [collection,count] of counts)db.prepare('INSERT INTO state_collection_stats VALUES(?,?,?,?) ON CONFLICT(site_id,collection) DO UPDATE SET records=excluded.records,last_position=excluded.last_position').run(siteId,collection,count.n+(deltas.get(collection)||0),count.last);
   db.prepare('UPDATE state_collection_stats_version SET version=? WHERE site_id=?').run(meta.version+1,siteId);views.delete(data);
  });}
- return {recordById:row,clientRecords:clientRows,readOrganization,writeOrganization,readClient,writeClient:data=>{if(views.get(data)?.kind!=='client')throw Error('Unknown client mutation view');return writeOrganization(data);}};
+ return {recordById:row,clientRecords:clientRows,readOrganization,writeOrganization,readClient,ensureClient,writeClient:data=>{if(views.get(data)?.kind!=='client')throw Error('Unknown client mutation view');return writeOrganization(data);}};
 }

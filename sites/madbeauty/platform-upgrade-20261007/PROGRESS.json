@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "4e38a55558f0cf487df9ae937591e7d0eb038c10",
+  "runtimeSourceCheckpoint": "32314724f9d74e29644675107c873e5100a5229d",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -144,6 +144,12 @@
       "tests": 168,
       "state": "accepted-isolated-path",
       "remaining": "Remaining offer, waitlist, CSV, branch, phase and whole-cancellation actual states; physical routing and factual activation"
+    },
+    {
+      "name": "sql-writer-fence-bounded-read-only-organization-transfer-and-independent-catalogue",
+      "tests": 175,
+      "state": "accepted-isolated-foundation",
+      "remaining": "Target write authority, worker routing/directory, global identity/preferences/replay ownership, mail and projection activation are not implemented; full UI and factual activation remain"
     }
   ],
   "tasks": [
@@ -348,7 +354,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md: indexed booking/provider/access/client-control, verified identities, organization creation/manual clients and mail retry, per-organization alarms and scoped workspaces; Node/actual Workers 5000 foreign-history, failure rollback and restart. Physical routing and global operator paths remain."
+      "evidence": "STORAGE.md: indexed operations plus source SQL/legacy writer fence, bounded authenticated immutable export and separate read-only SQLite staging; actual Workers partial failure/restart and old direct-SQL writer rejection. Target authority and physical routing remain unimplemented."
     },
     {
       "id": "I03",

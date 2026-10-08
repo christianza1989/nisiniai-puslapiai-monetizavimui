@@ -95,3 +95,9 @@ Actual gift client chunks/font404 ir Madbeauty encoded-fontredirect parodė asse
 Direct SMTP šiame Workers/provider derinyje blokuotas. Optional shared public lib/hostinger-transport.mjs naudoja authenticated HTTPS/manualredirect/timeout ir saugius retryable errors; own PHPMailer relay turi bounds/purpose guards/receipts/TLS. Public D1 lease/backoff/retention testai ir core51PASS; abi canonical primaryINBOX PASS. Vieno providerio workaround nėra tinklo default. Mailbox password iš Workers pašalintas.
 
 Būsena: patikrinta actual cloud ir vietiškai, pritaikyta gyvam pilotui; source draftPR8 ir companionPR5, main merge atskiras. Tiksli source versija research/cloudflare-release-20261006/SOURCE_COMMITS.json. Kitos istorinių auditų svetainės šių PASS automatiškai neperima.
+
+## Madbeauty writer perdavimo pagrindas ir SSR priklausomybė —2026-10-08
+
+Runtime3231472. Valdoma freeze kopija privalo sustabdyti ir seną aplikacijos writer: vien naujo JavaScript guard neapsaugo tiesioginio legacy JSON update. Pritaikyti source SQL triggers ir transaction-only mirror permit, actual atskirų SQLite Workers objektų post-insert failure/restart/staging testai. Pirmas Workers bandymas paslėpė trigger po>2MiB SQL binding limitu; pakeistas į tikrą mažą legacy mirror ir abi normalized tiesiogines mutacijas.6focusedPASS; readinessfalse, fizinis authority routing dar neaktyvuotas. Tai site modulio įgyvendinimas, ne shared core migracija.
+
+175suite pirmas run aptiko paslaugų SSR404. Controlled malformed package patvirtino konkrečią priklausomybę: katalogo puslapis prieš jo atvaizdavimą be reikalo skaitė straipsnių paketą ir bendras catch slėpė katalogą. Vietinis app-server dabar katalogui skaito jo patvirtintą pasiūlą savarankiškai. Naujas meaningful server testas ir175pairedPASS; originalaus pavienio cold-start bei parallel fail priežastys lieka nepatvirtintos. Shared core/skills šiame kontroliniame taške nepakeisti; kitų svetainių priėmimui šie PASS neperkeliami.

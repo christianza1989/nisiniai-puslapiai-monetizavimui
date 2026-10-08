@@ -128,7 +128,7 @@ async function commonAction(action,b){
   if(action==='map-area'){toast('Pasirinkta sritis pritaikyta.');return true;}
   if(action==='map-profile'){const rows=await ctx.adapter.catalog();const r=rows.find(s=>s.organizationId===id);await navigate(profileURL(r));return true;}
   if(['begin-booking','quick-slot'].includes(action)){const c=action==='quick-slot'?ctx.candidates.get(id):null;await beginBooking(c?.providerServiceId||id,c);return true;}
-  if(action==='service-option'){const s=ctx.currentProfile?.services.find(s=>s.id===id)||(await ctx.adapter.catalog()).find(s=>s.id===id);if(s?.bookingMode&&s.bookingMode!=='instant')return commonAction('inquiry',{dataset:{id}});openDialog('Paslauga ir priedai',`<h3>${esc(s.label)}</h3><p>${s.durationMin} min. · ${money(s.priceMinor)}</p>${s.addons.map(a=>`<p>${esc(a.label)}: +${a.durationMin} min. · +${money(a.priceMinor)}</p>`).join('')}<p>Grafike papildomai tikrinamas ${s.bufferBeforeMin} min. paruošimas ir ${s.bufferAfterMin} min. sutvarkymas.</p>${btn('begin-booking','Pasirinkti šį variantą',`data-id="${id}"`,'button accent')}`);return true;}
+  if(action==='service-option'){const s=ctx.currentProfile?.services.find(s=>s.id===id)||(await ctx.adapter.catalog()).find(s=>s.id===id);if(s?.bookingMode&&s.bookingMode!=='instant')return commonAction('inquiry',{dataset:{id}});openDialog('Paslauga ir priedai',`<h3>${esc(s.label)}</h3><p>${s.addonGroups?.some(g=>g.min>0)?"Bazinė paslauga: ":""}${s.durationMin} min. · ${money(s.priceMinor)}</p>${s.addonGroups?.some(g=>g.min>0)?"<p>Būtina pasirinkti priedus. Jie keičia galutinę kainą ir trukmę.</p>":""}${s.addons.map(a=>`<p>${esc(a.label)}: +${a.durationMin} min. · +${money(a.priceMinor)}</p>`).join('')}<p>Grafike papildomai tikrinamas ${s.bufferBeforeMin} min. paruošimas ir ${s.bufferAfterMin} min. sutvarkymas.</p>${btn('begin-booking','Pasirinkti šį variantą',`data-id="${id}"`,'button accent')}`);return true;}
   if(action==='choose-staff'){const s=ctx.currentProfile.services.find(s=>s.practitionerId===id||s.staffOptions?.some(p=>p.practitionerId===id));if(s)await beginBooking(s.id,null,id);else toast('Šio meistro paslaugos dar nepateiktos.');return true;}
   if(action==='gallery'){const source=ctx.currentProfile?.gallery||[],images=source.includes(id)?source:[id];ctx.gallery={images,index:Math.max(0,images.indexOf(id))};galleryDialog();return true;}
   if(action==='gallery-next'){ctx.gallery.index=(ctx.gallery.index+Number(id)+ctx.gallery.images.length)%ctx.gallery.images.length;galleryDialog();return true;}
@@ -154,10 +154,10 @@ document.addEventListener('click',async e=>{
     if(a.getAttribute('href').startsWith('#')&&!a.getAttribute('href').startsWith('#paslauga=')){const target=document.getElementById(decodeURIComponent(a.hash.slice(1)));if(target)return;}
     e.preventDefault();await navigate(a.pathname+a.search+a.hash);return;
   }
-  const b=e.target.closest('[data-action]');if(!b)return;e.preventDefault();if(b.disabled)return;ctx.actionOpener=b;b.disabled=true;
+  const b=e.target.closest('[data-action]');if(!b)return;e.preventDefault();if(b.disabled)return;const hadFocus=b.contains(document.activeElement);ctx.actionOpener=b;b.disabled=true;
   try{if(!await commonAction(b.dataset.action,b)&&!await bookingAction(ctx,b.dataset.action,b))await workspaceAction(ctx,b.dataset.action,b);}
   catch(err){if($('#dialog').open)$('#dialog .dialog-body').insertAdjacentHTML('afterbegin',errorHTML(err));else toast(err.message);}
-  finally{if(b.isConnected)b.disabled=false;if(ctx.actionOpener===b)ctx.actionOpener=null;}
+  finally{if(b.isConnected){b.disabled=false;if(hadFocus&&document.activeElement===document.body)b.focus({preventScroll:true});}if(ctx.actionOpener===b)ctx.actionOpener=null;}
 });
 document.addEventListener('change',async e=>{if(e.target.form?.id==='manual-options'&&e.target.name==='serviceId'){$('#manual-service-summary').innerHTML=manualServiceSummary(ctx,e.target.value);return;}if(!['booking-services','booking-staff','visit-sequence-services'].includes(e.target.form?.id))return;try{await bookingChange(ctx,e.target);}catch(err){toast(err.message);}});
 document.addEventListener('input',e=>{if(e.target.hasAttribute('data-procedure-query'))filterProcedures(e.target);const f=e.target.form;if(f){clearFieldError(e.target);saveDraft(ctx,f);}});

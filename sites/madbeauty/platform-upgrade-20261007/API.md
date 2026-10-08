@@ -1,3 +1,7 @@
+## Report range validation252
+
+Shared report-range.mjs validates strict YYYY-MM-DD calendar dates and inclusive1–92day ranges before UI navigation and backend reads. Invalid saved URL renders labeled retained dates and a specific error without a report fetch. Backend still applies current reports capability and Vilnius local-midnight report boundaries. Closed-date single-day validation retains its existing constraint. This adds no write/export bypass or new public endpoint. Source ccdccf5fb6efcb4939fb1aa24e1565aec703cab0; exact tests/native scope ACCEPTANCE252.
+
 ## CSV browser contract / 91d1c87c0b709a3f431b4e8bd40f99f5073f8fc9
 
 The first form performs only ordinary authenticated workspace read scoped to the active organization. Local preview resolves exact offer/variant/practitioner IDs, versions and bounds; it lists duplicate/unmatched/archived rows before any write. The second explicit confirmation calls existing bulkOfferPrices with unchanged validated rows and actor-scoped operation key. The server still checks current rights/versions and all variant rules in its atomic transaction. Same confirmation replay after lost response preserves its exact key; changed preview intent rotates it. No new public preview RPC or bulk write endpoint; no CSV intent persistence after closing/reloading the dialog. Source tests and native acceptance are ACCEPTANCE249.

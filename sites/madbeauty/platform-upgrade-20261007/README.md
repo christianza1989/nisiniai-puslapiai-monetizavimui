@@ -1,3 +1,5 @@
+Current252 runtime ccdccf5fb6efcb4939fb1aa24e1565aec703cab0: correctable report range/bookmark validation, exact92day bound and readable mobile years accepted locally. All4 suites252/252, exact75aa39pages308assets; scoped native evidence in report252-browser.md / ACCEPTANCE252. Whole upgrade remains ACTIVE; no production writes.
+
 Current runtime 91d1c87c0b709a3f431b4e8bd40f99f5073f8fc9: CSV has fresh read-only preview, duplicate/unmatched guidance and separate atomic confirmation; native stale/lostreply and rules/report recovery accepted per ACCEPTANCE249. Full task ACTIVE; no deployment. Next other named I04 and hosted/factual launch gates.
 
 Aktualus runtime cb8f37a30d2d4e634d169b52e752998bbad82a7d;246/246 testų tarpinis paketas ir native meniu/CSV/galerijos būsenos priimtos tikslioje [ACCEPTANCE](ACCEPTANCE.md) / [UI_MATRIX](UI_MATRIX.md) apimtyje. Visas upgrade ACTIVE; production nekelta. Toliau likusi I04 matrica ir hosted/factual vartai.

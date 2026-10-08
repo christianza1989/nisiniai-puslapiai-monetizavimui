@@ -1,3 +1,9 @@
+## Report252 — retained correction forms and native date width
+
+Actual invalid report submission removed the date form and offered only a retry that repeated invalid hash. Shared strict date helper and pre-navigation validation now preserve fields/focus; invalid bookmark renders correction before fetch. Node/native Worker evidence is ACCEPTANCE252. Symbol search validDay( missed the forEach(validDay) reference; focused regression caught and repaired it, first log retained. Search every symbol reference before removal. Equal scrollWidth/clientWidth did not prove native date years readable at390; actual Jan-Apr screenshot exposed clipping. <=600 single-column report fields fix it, final four-width pictures viewed.
+
+A local build --package typo silently selected the old default release. Exact build receipt exposed7pages/differentSHA; corrected explicit CLI rebuilt39/308/exact75aa before owned fixture restart. No deployment occurred. Failing unknown builder arguments is a proposed shared improvement, not implemented or claimed here. ccdccf5fb6efcb4939fb1aa24e1565aec703cab0.
+
 ## 2026-10-08 — preview acceptance and narrow native date fields
 
 Observed D07 acceptance gap: original BACKLOG required duplicate/unmatched and mass-price preview, but prior atomically scoped CSV form wrote directly. Runtime 91d1c87c0b709a3f431b4e8bd40f99f5073f8fc9 adds read-only current workspace preview and explicit confirmation without cloning backend validation. Node249 and native csv249-browser.md cover no-write/errors/stale/uncertain replay. No shared core change is required; this is the Madbeauty price workflow.

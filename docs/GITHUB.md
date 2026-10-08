@@ -1,5 +1,7 @@
 # GitHub source perkėlimas
 
+Actual kelių PC / agentų versijų patikra: [CODEX_GIT_WORKFLOW](CODEX_GIT_WORKFLOW.md). Push/PR iki merge nepakeičia kitų agentų main; kiekvienam PC reikalingas global bootstrap ir sėkmingas start/continue/handoff fetch gate. Gate leidžia savo worktree pakeitimus pagal režimą, bet neresetina aktyvių kitų darbų. Toliau galioja scoped stage / sekretų / PR tvarka.
+
 2026-10-05 savininko pavedimas bendram darbui kitu kompiuteriu. Numatyta PRIVATE:
 
 - `christianza1989/nisiniai-puslapiai-monetizavimui` — šis projektas.

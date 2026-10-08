@@ -1,5 +1,7 @@
 # Automatinė kokybės analizė ir savikalibracija
 
+**Aktualus vykdytojo startas 2026-10-08:** [business-agent-calibration skill](../SKILLS/business-agent-calibration/SKILL.md) su [runbook](../SKILLS/business-agent-calibration/references/runbook.md), [priėmimo matrica](../SKILLS/business-agent-calibration/references/acceptance.md) ir [Git perdavimo būkle](../docs/AGENT_CALIBRATION_HANDOFF_2026-10-08.md). Toliau pateikta sutartis bei datuoti įgyvendinimo įrašai lieka savo laikotarpio įrodymais; nauja metodika jų neperrašo ir nesuteikia production/audio promotion.
+
 Savininko papildymas 2026-09-30: po kiekvieno pokalbio vertinti kokybę ir aptiktas klaidas naudoti promptų bei skills tobulinimui. Ši sutartis numato automatinį pataisų parengimą, bandymą ir leidžiamų elgesio pataisų aktyvavimą. 2026-10-01 [tekstinė laboratorija](TEXT_CLIENT_LAB.md) jau realiai naudoja read-only Codex CLI kokybės analizei ir kandidato generavimui: kandidatas dviejų ciklų bandyme rezultatą pablogino (5/6 → 2/6), todėl neaktyvuotas. Po root konteksto pataisų atskira vystymo regresija praėjo 6/6. Tai nėra autonominio production promotion, nematyto holdout ar svorių mokymo įrodymas; canary ir M6-C vartai lieka.
 
 ## Ką reiškia mokymasis šioje sistemoje

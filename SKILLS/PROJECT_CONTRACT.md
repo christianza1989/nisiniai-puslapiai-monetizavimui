@@ -10,6 +10,8 @@ Read this when using any project skill. The user's current request and project `
 
 ## Choose the relevant workflow
 
+- **Business agent calibration:** for explicitly commissioned conversation, sales/mail, supplier-agent or autonomous learning work use [business-agent-calibration](business-agent-calibration/SKILL.md). Reproduce niche-specific scenarios through actual core receipts; separate Codex text, native audio, browser ACK, background jobs, SMTP and inbox evidence. New F1 sites do not inherit runtime activation. Base Git fragments and private adaptive releases are separate; check the [Git handoff](../docs/AGENT_CALIBRATION_HANDOFF_2026-10-08.md) before relying on unmerged launch code.
+
 All sites' editorial orchestration uses [CONTENT_CORE](../CONTENT_CORE.md): per-site policy, same-site draft link finalization, revision-bound agent evidence, atomic reviewed batch and immutable release. No per-domain publication clones. Agent evidence needs actual work; export isn't deployment and existing sites don't acquire retroactive audit PASS.
 
 - **Core:** `niche-site-builder` handles a complete domain build, `niche-content-planner` handles research/calendars/drafts, `niche-site-audit` handles A–Z acceptance, and `impeccable` handles art direction under its `PROJECT_ADAPTATION.md`. These four have installed discovery junctions; specialist helpers remain in the project library.

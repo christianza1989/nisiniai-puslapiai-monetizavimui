@@ -1447,6 +1447,17 @@
       "originalOrigin": "local-project",
       "archives": [],
       "entrySha256": "5c09fa0fc12bccd2b00a8deb0172505052aef8699081baa21f2b0a86ecd7049e"
+    },
+    {
+      "id": "business-agent-calibration",
+      "role": "business-operations",
+      "entry": "business-agent-calibration/SKILL.md",
+      "prompt": "business-agent-calibration/PROMPT.md",
+      "discovery": "project-library",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "7f8f3090b0ba1ad0df2562db7e8fa2f8cab9c43afbab6fccbfa03031ce26e27c"
     }
   ]
 }

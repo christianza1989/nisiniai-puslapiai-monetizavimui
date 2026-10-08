@@ -1,5 +1,7 @@
 # Nišinių svetainių ir automatizavimo sistema
 
+**Visiems PC ir Codex sesijoms:** [CODEX_GIT_WORKFLOW](docs/CODEX_GIT_WORKFLOW.md). Vieną kartą `node scripts/install-agent-git-bootstrap.mjs`, tada nauja sesija. Nuo tol agentai prieš darbą tikrina Git main, naudoja savo worktree ir prieš perdavimą pakartoja patikrą; nesujungtos pataisos nėra bendras core.
+
 Privatus kelių verslų projektas: nišų tyrimai ir dokumentacija, turinio studija, SEO/GEO sutartys, agentų runtime, projektui pritaikyti skills ir Madbeauty platformos prototipas.
 
 **Pradėti:** [AGENTS.md](AGENTS.md), [START_HERE.md](START_HERE.md), [WORKSTREAMS.md](WORKSTREAMS.md). Madbeauty kūrimas: [projekto roadmap](sites/madbeauty/PROJECT_ROADMAP.md).
@@ -15,6 +17,8 @@ workspace/
 Viešas core yra priklausomybė: studija tiesiogiai naudoja jo medijos ir paketų sutartis. Neklonuoti vien šio repo ir nesitikėti, kad veiks visas tinklas. Tikslūs clone/install žingsniai: [MULTI_MACHINE](docs/MULTI_MACHINE.md). Saugyklų bei snapshot ribos: [GITHUB](docs/GITHUB.md).
 
 **Kitam AI, prijungiančiam savo projektą:** [INTEGRATING_A_PROJECT](docs/INTEGRATING_A_PROJECT.md) — kas bendra, kas nišos modulis, siteId, adapteriai ir priėmimo eiga.
+
+**Verslo agentų kalibravimui:** [business-agent-calibration skill](SKILLS/business-agent-calibration/SKILL.md) — naujos nišos scenarijai, core + nišos instrukcijos, mokymosi / adoption / rollback patikra ir atskiri tikro balso / pašto įrodymai. [Git perdavimo būklė](docs/AGENT_CALIBRATION_HANDOFF_2026-10-08.md) atskiria main, nesujungtus balso PR ir privačius runtime duomenis.
 
 GitHub kopijų diegimo ir testų įrodymai bei ribos: [GITHUB_TRANSFER_REPORT](docs/GITHUB_TRANSFER_REPORT.md).
 

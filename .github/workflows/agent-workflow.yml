@@ -1,0 +1,16 @@
+name: Agent workflow
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Multi-PC freshness and bootstrap regression
+        run: node --test scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs
+      - name: Calibration Git inputs
+        run: node SKILLS/business-agent-calibration/scripts/check-inputs.mjs

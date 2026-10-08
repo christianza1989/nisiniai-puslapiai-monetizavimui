@@ -1,3 +1,11 @@
+## 2026-10-08 — rezervavimo klaidos ir natūrali galiojimo pabaiga
+
+Aktualus runtime: 20d24e5b06f6588ec26cf8c7aa1d919021d779ea. booking260-proof.json PASS: 7 tikslios UI / dviejų SQLite palyginimų patikros. regression-94: visi keturi rinkiniai 260/260 PASS per 40,759 s; 1 naujas UI testas, 0 papildytų, 0 pašalintų. Pirmas regression-93 išliko su 259/260 ir organization-directory ECONNRESET; atskiras pakartojimas 1/1 PASS prieš visą pakartotinę patikrą. Exact source safety: 2 failai PASS. Nepakeistas 75aa paketas: 39 puslapiai / 309 assets.
+
+Detalės: ACCEPTANCE.md / ignored booking260-proof.json.
+
+Visas atnaujinimas tebėra ACTIVE / neužbaigtas. Toliau: naujo katalogo įrašo / procedūros prašymų formos ir dabartinės saugyklos auditas; hosted restore/fence/load, tikras SMTP gavimas, meistrų pilotas ir saugojimo tvarka lieka nepriimti. Šio paketo production operacijų / deployment: 0.
+
 ## 2026-10-08 — pakartotinio vizito alternatyvos ir priedo pašalinimas
 
 Aktualus runtime: 0f667fe26afb9feb1120db138db8156dd20448fb. Užbaigtas šis vietinis patikrų paketas: rebooking259-proof.json PASS, 23 konkretūs UI / storage palyginimai; regression-92 visi keturi rinkiniai 259/259 PASS per 41,046 s. Palyginti su 258: 1 naujas UI regresijos testas, 1 papildytas esamas backend testas, 0 pašalintų. Exact staged safety PASS: 4 source/test failai. Nepakeistas 75aa paketas: 39 puslapiai / 309 assets.

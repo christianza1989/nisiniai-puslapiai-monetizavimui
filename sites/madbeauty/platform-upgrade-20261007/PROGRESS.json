@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "0f667fe26afb9feb1120db138db8156dd20448fb",
+  "runtimeSourceCheckpoint": "20d24e5b06f6588ec26cf8c7aa1d919021d779ea",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -363,6 +363,15 @@
       "regression": "regression-92.log",
       "evidence": "ACCEPTANCE.md / rebooking259-proof.json",
       "remaining": "Broader booking error/expiry widths and other applicable I04 surfaces; no hosted or real pilot acceptance"
+    },
+    {
+      "name": "booking-hold-errors-natural-expiry-widths",
+      "state": "accepted-isolated-path",
+      "runtime": "20d24e5b06f6588ec26cf8c7aa1d919021d779ea",
+      "tests": 260,
+      "regression": "regression-94.log",
+      "evidence": "ACCEPTANCE.md / booking260-proof.json",
+      "remaining": "Catalogue-add/procedure-request applicability, storage audit and factual/hosted gates"
     }
   ],
   "tasks": [
@@ -582,7 +591,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope."
     },
     {
       "id": "E01",
@@ -634,7 +643,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: broader booking error/expiry widths, catalogue-add/procedure-request applicability and storage audit; rebooking archived/addon scope accepted locally",
+    "Remaining applicable I04: catalogue-add/procedure-request applicability and current storage audit; booking error/expiry widths accepted locally",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

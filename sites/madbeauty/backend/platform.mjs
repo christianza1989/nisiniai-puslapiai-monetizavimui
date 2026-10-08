@@ -22,7 +22,7 @@ const text=(v,max=100)=>{if(typeof v!=='string'||!v.trim()||v.trim().length>max)
 const number=(v,min,max)=>{if(!Number.isInteger(v)||v<min||v>max)reject('INVALID_INPUT','Netinkama skaitinė reikšmė.');return v;};
 const cities=CITY_NAMES;
 const canonical=v=>Array.isArray(v)?v.map(canonical):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonical(v[k])])):v;
-export function createPlatform(store){
+export function createPlatform(store,{deferOrganizationPreferences=()=>false}={}){
   const clock=()=>makeClock(new Date(store.clock()).toISOString());
   const scope=(d,user,requested={})=>{
     if(!user)reject('UNAUTHENTICATED','Prisijunkite el. paštu.',401);
@@ -37,7 +37,7 @@ export function createPlatform(store){
   let organizationMutation=null,clientMutation=null,reconcileClientPreferences=false,creatingOrganizationId=null;
   const clientInput=input=>{const email=text(input.email,254).toLowerCase(),name=text(input.name,80);if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))reject('INVALID_INPUT','Įrašykite teisingą el. paštą.');return {email,name};};
   const mutate=fn=>store.transaction(()=>{const d=organizationMutation||clientMutation||store.read();d.media||=[];offerState(d);const result=fn(d);
-    if(clientMutation){store.writeClient(d);if(reconcileClientPreferences){const accountId=d.clients[0]?.id,organizationIds=new Set([...store.clientRecords('bookings',accountId).filter(b=>b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()),...store.clientRecords('waitlist',accountId).filter(w=>w.criteria&&!['closed','expired'].includes(w.state))].map(x=>x.organizationId));for(const id of organizationIds){store.assertOrganizationWritable?.(id);const view=store.readOrganization(id);synchronizeWaitlist(store,view);synchronizeReminders(store,view);store.writeOrganization(view);}}}
+    if(clientMutation){store.writeClient(d);if(reconcileClientPreferences){const accountId=d.clients[0]?.id,organizationIds=new Set([...store.clientRecords('bookings',accountId).filter(b=>b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()),...store.clientRecords('waitlist',accountId).filter(w=>w.criteria&&!['closed','expired'].includes(w.state))].map(x=>x.organizationId));for(const id of organizationIds){if(deferOrganizationPreferences(id,accountId))continue;store.assertOrganizationWritable?.(id);const view=store.readOrganization(id);synchronizeWaitlist(store,view);synchronizeReminders(store,view);store.writeOrganization(view);}}}
     else{synchronizeWaitlist(store,d);synchronizeReminders(store,d);if(organizationMutation)store.writeOrganization(d);else store.write(d);}return copy(result);});
   const event=(d,type,id)=>d.events.push({id:randomId('event'),type,entityId:id,...(d.organizationContext?{organizationId:d.organizationContext}:{}),at:new Date(store.clock()).toISOString(),siteId:store.siteId});
   const outbox=(d,b,type)=>{const c=find(d,'clients',b.clientId);return store.mail({accountId:c.id,organizationId:b.organizationId,bookingId:b.id,recipient:c.email,type,payload:{bookingId:b.id,startAt:b.startAt,endAt:b.endAt,status:b.status,priceMinor:b.priceMinor}});};

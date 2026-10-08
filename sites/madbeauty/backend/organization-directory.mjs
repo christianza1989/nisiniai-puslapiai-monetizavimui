@@ -4,6 +4,7 @@ import {organizationTransferProof as proof,sameTransferProof as equal,organizati
 import {invokePlatform,publicRpcMethods} from './rpc-contract.mjs';
 import {groupSearchRows} from './search-results.mjs';
 import {createDirectoryCacheIssuer,createDirectoryCacheReceiver,createDirectoryIdentityEffects} from './organization-directory-cache.mjs';
+import {createCustomerControlQueue,createCustomerControlReceiver} from './organization-customer-controls.mjs';
 
 const json=JSON.stringify,clone=v=>JSON.parse(json(v)),maxTargets=32,maxResultBytes=1024*1024;
 const unavailable=()=>reject('ORGANIZATION_UNAVAILABLE','Organizacijos duomenys laikinai nepasiekiami. Bandykite dar kartą.',503);
@@ -18,6 +19,7 @@ const targetMethods=new Set([...direct,...Object.keys(byId),'catalog','search','
 const identityMethods=new Set(['createClient','grantMembership']);
 const readMethods=new Set([...publicRpcMethods,'session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference','workspace','rebooking','organizationReport','reportCsv','exportOfferCsv']);
 targetMethods.add('workspace');
+targetMethods.add('applyCustomerControls');
 const fields=['bookings','messages','reviews','inquiries','waitlist','reports'];
 const exportFields=[...fields,'organizationCards'];
 function reference(method,input){
@@ -53,7 +55,7 @@ function resultReferences(store,result,organizationId){
 // checks. Targets have no HTTP dispatcher, session cookies or auth challenges.
 export function createOrganizationCommand(store,{targetName}){
  indexSchema(store);
- const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store);
+ const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store);
  store.db.exec('CREATE TABLE IF NOT EXISTS organization_directory_commands(site_id TEXT NOT NULL,nonce TEXT NOT NULL,expires_at INTEGER NOT NULL,request_hash TEXT NOT NULL,response TEXT NOT NULL,PRIMARY KEY(site_id,nonce)); CREATE INDEX IF NOT EXISTS directory_commands_expiry ON organization_directory_commands(site_id,expires_at);');
  function execute(packet){return store.transaction(()=>{
   const body=verify(store,'directory-command',packet),a=store.db.prepare('SELECT * FROM organization_target_authority WHERE site_id=?').get(store.siteId);
@@ -70,7 +72,8 @@ export function createOrganizationCommand(store,{targetName}){
   cache.apply(body.cache,actor,a.epoch);
   const identityBefore=actor&&['confirm','confirmVisit'].includes(body.method)?store.recordById('clients',actor.id):null;
   const api=createPlatform(store);let result;
-  if(body.method==='resolveReference'){const input=body.input;if(!validId(input?.id)||!Array.isArray(input.tables)||input.tables.length>3||input.tables.some(t=>!entityTables.has(t)&&t!=='mail_outbox'))reject('INVALID_INPUT','Netinkama įrašo tapatybė.');const collections=input.tables.filter(t=>owner(store,{tables:[t],id:input.id})===organizationId);result={organizationId:collections.length?organizationId:null,collections};}
+  if(body.method==='applyCustomerControls')result=controls.apply(actor,body.input?.revision,()=>api.runAutomation());
+  else if(body.method==='resolveReference'){const input=body.input;if(!validId(input?.id)||!Array.isArray(input.tables)||input.tables.length>3||input.tables.some(t=>!entityTables.has(t)&&t!=='mail_outbox'))reject('INVALID_INPUT','Netinkama įrašo tapatybė.');const collections=input.tables.filter(t=>owner(store,{tables:[t],id:input.id})===organizationId);result={organizationId:collections.length?organizationId:null,collections};}
   else if(body.method==='publicProfiles')result=store.organizationRecords('organizations',organizationId).filter(o=>o.approved).map(o=>api.profile(o.id));
   else if(body.method==='customerFragment'){
    if(!actor)reject('UNAUTHENTICATED','Prisijunkite.',401);
@@ -103,7 +106,8 @@ export function createOrganizationCommand(store,{targetName}){
 }
 
 export function createOrganizationDirectory(store,{getTarget}={}){
- const api=createPlatform(store),db=store.db,siteId=store.siteId;
+ const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store);
+ const api=createPlatform(store,{deferOrganizationPreferences:id=>!!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND organization_id=? AND state='sealed'").get(siteId,id)});
  const cache=createDirectoryCacheIssuer(store),effects=createDirectoryIdentityEffects(store);
  db.exec('CREATE TABLE IF NOT EXISTS organization_directory_refs(site_id TEXT NOT NULL,collection TEXT NOT NULL,entity_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,PRIMARY KEY(site_id,collection,entity_id));');
  const transfers=()=>{const rows=db.prepare("SELECT organization_id,epoch,state,target_name FROM organization_handoffs WHERE site_id=? AND state!='aborted' ORDER BY organization_id LIMIT 33").all(siteId);if(rows.length>maxTargets)reject('CAPACITY','Organizacijų paieškos apimtis viršija šio piloto ribą.',503);return rows;};
@@ -136,9 +140,23 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   return found;
  }
  const sort=(rows,filters)=>rows.sort(filters.sort==='distance'?(a,b)=>(a.distanceKm??Infinity)-(b.distanceKm??Infinity)||a.id.localeCompare(b.id):filters.sort==='price'?(a,b)=>a.priceMinor-b.priceMinor||a.id.localeCompare(b.id):filters.sort==='name'?(a,b)=>a.organizationName.localeCompare(b.organizationName,'lt')||a.id.localeCompare(b.id):(a,b)=>(a.nextAt||'z').localeCompare(b.nextAt||'z')||a.id.localeCompare(b.id));
+ async function flushCustomerControls(clientId){
+  const rows=transfers();for(const control of controls.pending(clientId)){
+   const target=rows.find(t=>t.organization_id===control.organization_id),user={id:control.client_id};
+   try{if(!target)unavailable();const result=await targetCall(target,'applyCustomerControls',user,{revision:control.revision});if(result.revision!==control.revision)unavailable();controls.acknowledge(control);}catch{controls.retry(control);}
+  }
+  return clientId?controls.remaining(clientId):null;
+ }
  async function dispatch(method,user,input={}){
   const rows=transfers();if(!rows.length)return method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);
   const excluded=new Set(rows.map(t=>t.organization_id));
+  if(method==='preferences'){
+   const account=actor(user);if(!account)reject('UNAUTHENTICATED','Prisijunkite.',401);
+   const {result,revision}=store.transaction(()=>({result:api.preferences(account,input),revision:controls.enqueue(account.id,rows.filter(t=>t.state==='sealed'))}));
+   const pending=await flushCustomerControls(account.id);
+   if(controls.revision(account.id)!==revision)return {...store.clientRecords('preferences',account.id)[0],synchronization:'superseded'};
+   return {...result,synchronization:pending?'pending':'applied'};
+  }
   if(['catalog','search','searchResults'].includes(method)){
    const operation=method==='searchResults'?'search':method,source=invokePlatform(api,operation,null,input).filter(s=>!excluded.has(s.organizationId)),parts=await Promise.all(rows.map(t=>targetCall(t,operation,null,input))),result=[...source,...parts.flat()];
    if(method==='catalog')return result;sort(result,input);return method==='searchResults'?groupSearchRows(result,input):result;
@@ -169,5 +187,5 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   if(['metrics','migrateCatalogue','changeTaxonomy'].includes(method))unavailable();
   return invokePlatform(api,method,actor(user),input);
  }
- return {dispatch};
+ return {dispatch,flushCustomerControls,nextControlAt:controls.nextAt};
 }

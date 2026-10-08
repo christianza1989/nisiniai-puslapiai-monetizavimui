@@ -67,7 +67,13 @@ export class MadbeautyPlatform extends DurableObject{
  // the session through a reviewed maintenance deployment. Never run as a smoke test.
  async scheduleRecovery(bookmark){
   if(!/^[a-f0-9]{8}-[a-f0-9]{8}-[a-f0-9]{8}-[a-f0-9]{32}$/i.test(bookmark))throw Error('Invalid recovery bookmark');
-  return this.ctx.storage.onNextSessionRestoreBookmark(bookmark);
+  // A source-only rewind can resurrect calendar ownership, canonical actors or
+  // issuance sequences already superseded by an organization object. Aborted
+  // handoffs also retain epochs/receipts, so they require coordinated recovery.
+  return this.ctx.blockConcurrencyWhile(async()=>{
+   if(this.store.db.prepare('SELECT COUNT(*) AS n FROM organization_handoffs WHERE site_id=?').get(this.store.siteId).n)throw Error('Source recovery requires coordinated source and organization checkpoints');
+   return this.ctx.storage.onNextSessionRestoreBookmark(bookmark);
+  });
  }
  async schedule(){
   const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox AS mail WHERE site_id=? AND state IN ('pending','sending') AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted')").get(this.store.siteId);

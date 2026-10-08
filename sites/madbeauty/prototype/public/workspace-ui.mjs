@@ -3,6 +3,7 @@ import {reportQueue,ownReports,moderationAction,moderationForm} from './moderati
 import {bookingRules,reportsView,operationsForm} from './operations-ui.mjs';
 import {clientCard,privacyTools,privacyQueue,customerToolsAction,customerToolsForm} from './customer-tools-ui.mjs';
 import {phaseList} from './phase-fields.mjs';
+import {clientAdmissionPending} from './form-state.mjs';
 import {waitlistSummary,waitlistState} from './waitlist-ui.mjs';
 import {segmentList} from './visit-sequence-ui.mjs';
 import {locationsView,locationsQueue,locationAction,locationForm,locationName} from './locations-ui.mjs';
@@ -126,7 +127,7 @@ export async function workspaceAction(ctx,action,button){
   const id=button.dataset.id,d=ctx.workspace,scope=ctx.state.session;
   if(await calendarAction(ctx,action,button))return true;
   if(action==='sandbox-entry'&&ctx.adapter.mode==='demo'){const role=button.dataset.role;await ctx.selectRole(role,scope.organizationId||'demo-org-0',scope.clientId||'demo-client-0');return true;}
-  if(action==='new-client'){ctx.openDialog('Pridėti klientą',`<p>Klientas galės prisijungti savo el. paštu. Kliento pridėjimas vizito nesukuria.</p><form id="new-client">${field('Kliento vardas','name','','text','required maxlength="80"')}${field('Kliento el. paštas','email','','email','required maxlength="254"')}<button class="button accent">Išsaugoti klientą</button></form>`);return true;}
+  if(action==='new-client'){ctx.openDialog('Pridėti klientą',`<p>Klientas galės prisijungti savo el. paštu. Kliento pridėjimas vizito nesukuria.</p><form id="new-client"><input type="hidden" name="idempotencyKey" value="client-${crypto.randomUUID()}">${field('Kliento vardas','name','','text','required maxlength="80"')}${field('Kliento el. paštas','email','','email','required maxlength="254"')}<p data-client-admission-status role="status" hidden></p><button class="button accent">Išsaugoti klientą</button></form>`);return true;}
   if(action==='new-staff'||action==='new-resource'){const staff=action==='new-staff';ctx.openDialog(staff?'Naujas komandos narys':'Nauja darbo vieta',`<form id="${action}">${field(staff?'Vardas ir pavardė':'Pavadinimas',staff?'name':'label','','text','required maxlength="100"')}${!staff?select('Veiklos vieta','locationId',d.locations.filter(l=>l.active!==false).map(l=>[l.id,locationName(l)]),d.organizations[0].locationId,'required'):''}<p class="hint">${staff?'Pridėjęs darbuotoją priskirk jam paslaugas ir patikrink darbo grafiką.':'Priskirk šią vietą paslaugoms, kurioms reikia bendro resurso.'}</p><button class="button accent">Pridėti</button></form>`);return true;}
   if(action==='complete-visit'){await ctx.adapter.completeBooking({scope,id,version:ctx.dialogBooking.version});ctx.closeDialog();ctx.toast('Vizitas pažymėtas atliktu.');await ctx.render();return true;}
   if(action==='new-service'){ctx.openDialog('Pridėti paslaugą',`<form id="new-service">${select('Kategorija','taxonomyServiceId',ctx.taxonomy.map(t=>[t.id,t.label]),'manikiuras')}${field('Paslaugos pavadinimas','label','','text','required maxlength="100"')}${field('Kaina (€)','price','25','number','required min="0" max="1000" step="0.01"')}${field('Trukmė (min.)','durationMin','60','number','required min="15" max="480" step="5"')}${field('Buferis prieš (min.)','bufferBeforeMin','5','number','required min="0" max="120"')}${field('Buferis po (min.)','bufferAfterMin','10','number','required min="0" max="120"')}${select('Meistras','practitionerId',d.practitioners.map(p=>[p.id,p.name]),d.practitioners[0].id)}${select('Darbo vieta','resourceId',d.resources.map(r=>[r.id,r.label]),d.resources[0].id)}<button class="button accent">Pridėti paslaugą</button></form>`);return true;}
@@ -165,7 +166,12 @@ export async function workspaceForm(ctx,form,fd){
   if(await locationForm(ctx,form,fd)||await teamAccessForm(ctx,form,fd)||await offerAdminForm(ctx,form,fd)||await offerForm(ctx,form,fd))return true;
   const scope=ctx.state.session,d=ctx.workspace;
   if(await calendarForm(ctx,form,fd))return true;
-  if(form.id==='new-client'){await ctx.adapter.createClient({organizationId:scope.organizationId,name:fd.get('name'),email:fd.get('email')});ctx.closeDialog();ctx.toast('Klientas įtrauktas į tavo sąrašą.');await ctx.navigate('/meistrui/klientai');return true;}
+  if(form.id==='new-client'){
+    const result=await ctx.adapter.createClient({organizationId:scope.organizationId,name:fd.get('name'),email:fd.get('email'),idempotencyKey:fd.get('idempotencyKey')});
+    if(result.admission?.state==='pending'){clientAdmissionPending(form);return true;}
+    delete form.dataset.operationPending;
+    ctx.closeDialog();ctx.toast('Klientas įtrauktas į tavo sąrašą.');await ctx.navigate('/meistrui/klientai');return true;
+  }
   if(form.id==='new-staff'||form.id==='new-resource'){await ctx.adapter[form.id==='new-staff'?'createStaff':'createResource']({...Object.fromEntries(fd),organizationId:scope.organizationId});ctx.closeDialog();ctx.toast('Įrašas pridėtas.');await ctx.render();return true;}
   if(form.id==='profile-upload'){const file=fd.get('file');if(!fd.has('rightsAccepted'))throw userError('Patvirtink vaizdo viešinimo teisę.');const a=await ctx.adapter.upload(file,{organizationId:scope.organizationId,usage:fd.get('usage'),alt:fd.get('alt'),rights:fd.get('rights')});ctx.media.set(a.id,a);ctx.toast('Vaizdas įkeltas. Pateik naują profilio versiją peržiūrai.');await ctx.render();return true;}
   if(form.id==='new-service'){const value=Object.fromEntries(fd);value.organizationId=scope.organizationId;value.priceMinor=Math.round(Number(value.price)*100);delete value.price;for(const k of ['durationMin','bufferBeforeMin','bufferAfterMin'])value[k]=Number(value[k]);await ctx.adapter.createService(value);ctx.closeDialog();ctx.toast('Paslauga pridėta.');await ctx.render();return true;}

@@ -67,10 +67,10 @@ export class MadbeautyPlatform extends DurableObject{
  }
  async schedule(){
   const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox AS mail WHERE site_id=? AND state IN ('pending','sending') AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted')").get(this.store.siteId);
-  const due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity,this.directory().nextControlAt()??Infinity);
+  const directory=this.directory(),due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity,directory.nextControlAt()??Infinity,directory.nextClientAdmissionAt()??Infinity);
   await this.ctx.storage.setAlarm(Math.max(Date.now()+1000,Number.isFinite(due)?due:Date.now()+86400000));
  }
- async alarm(){await this.directory().flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();await this.schedule();}
+ async alarm(){const directory=this.directory();await directory.flushClientAdmissions();await directory.flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();await this.schedule();}
  expire(){
   const now=this.store.clock(),db=this.store.db;
   db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0 WHERE type='login-code' AND state IN ('pending','sending','failed') AND challenge_id IN (SELECT id FROM email_challenges WHERE consumed=1 OR expires_at<=?)").run(now);

@@ -6,6 +6,7 @@ import {invokePlatform,publicRpcMethods} from './rpc-contract.mjs';
 import {groupSearchRows} from './search-results.mjs';
 import {createDirectoryCacheIssuer,createDirectoryCacheReceiver,createDirectoryIdentityEffects} from './organization-directory-cache.mjs';
 import {createCustomerControlQueue,createCustomerControlReceiver} from './organization-customer-controls.mjs';
+import {createClientAdmissionQueue,createClientAdmissionReceipts,clientAdmissionInput} from './organization-client-admission.mjs';
 
 const json=JSON.stringify,clone=v=>JSON.parse(json(v)),maxTargets=32,maxResultBytes=1024*1024;
 const unavailable=()=>reject('ORGANIZATION_UNAVAILABLE','Organizacijos duomenys laikinai nepasiekiami. Bandykite dar kartą.',503);
@@ -58,7 +59,7 @@ function resultReferences(store,result,organizationId){
 // checks. Targets have no HTTP dispatcher, session cookies or auth challenges.
 export function createOrganizationCommand(store,{targetName}){
  indexSchema(store);
- const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store);
+ const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store),admissions=createClientAdmissionReceipts(store);
  store.db.exec('CREATE TABLE IF NOT EXISTS organization_directory_commands(site_id TEXT NOT NULL,nonce TEXT NOT NULL,expires_at INTEGER NOT NULL,request_hash TEXT NOT NULL,response TEXT NOT NULL,PRIMARY KEY(site_id,nonce)); CREATE INDEX IF NOT EXISTS directory_commands_expiry ON organization_directory_commands(site_id,expires_at);');
  function execute(packet){return store.transaction(()=>{
   const body=verify(store,'directory-command',packet),a=store.db.prepare('SELECT * FROM organization_target_authority WHERE site_id=?').get(store.siteId);
@@ -72,16 +73,21 @@ export function createOrganizationCommand(store,{targetName}){
   if(body.input?.organizationId&&body.input.organizationId!==organizationId||body.input?.scope?.role==='professional'&&body.input.scope.organizationId!==organizationId)reject('FORBIDDEN','Kita organizacija.',403);
   const requestHash=proof(store,'directory-request',body),old=store.db.prepare('SELECT request_hash,response FROM organization_directory_commands WHERE site_id=? AND nonce=?').get(store.siteId,body.nonce);
   if(old){if(old.request_hash!==requestHash)reject('IDEMPOTENCY_CONFLICT','Užklausos tapatybė jau panaudota.',409);return JSON.parse(old.response);}
+  const recovered=admissions.check(body.method,actor,body.input,body.clientAdmission,body.cache);
+  if(recovered)return signed(store,'directory-result',{schemaVersion:1,siteId:store.siteId,organizationId,epoch:a.epoch,targetName,nonce:body.nonce,result:recovered,identityEffect:null,references:resultReferences(store,recovered,organizationId)});
+  let identityCapacity=true;
   if(identityMethods.has(body.method)||body.method==='identityActionScope'){
    if(!actor)reject('UNAUTHENTICATED','Prisijunkite.',401);
    const operation=body.method==='identityActionScope'?body.input?.operation:body.method;
    if(!identityMethods.has(operation))reject('INVALID_INPUT','Netinkamas paskyros veiksmas.');
-   requireCapability(membershipScope(store.readOrganization(organizationId,[actor.id]),actor,organizationId),operation==='createClient'?'clients':'access');
+   const view=store.readOrganization(organizationId,[actor.id]);
+   requireCapability(membershipScope(view,actor,organizationId),operation==='createClient'?'clients':'access');
+   identityCapacity=(view.clientLinks||[]).length<1000;
   }
   cache.apply(body.cache,actor,a.epoch,{method:body.method,input:body.input});
   const identityBefore=actor&&['confirm','confirmVisit'].includes(body.method)?store.recordById('clients',actor.id):null;
   const api=createPlatform(store);let result;
-  if(body.method==='identityActionScope')result={organizationId,operation:body.input.operation};
+  if(body.method==='identityActionScope')result={organizationId,operation:body.input.operation,clientCapacity:identityCapacity};
   else if(body.method==='applyCustomerControls')result=controls.apply(actor,body.input?.revision,()=>api.runAutomation());
   else if(body.method==='resolveReference'){const input=body.input;if(!validId(input?.id)||!Array.isArray(input.tables)||input.tables.length>3||input.tables.some(t=>!entityTables.has(t)&&t!=='mail_outbox'))reject('INVALID_INPUT','Netinkama įrašo tapatybė.');const collections=input.tables.filter(t=>owner(store,{tables:[t],id:input.id})===organizationId);result={organizationId:collections.length?organizationId:null,collections};}
   else if(body.method==='publicProfiles')result=store.organizationRecords('organizations',organizationId).filter(o=>o.approved).map(o=>api.profile(o.id));
@@ -103,6 +109,7 @@ export function createOrganizationCommand(store,{targetName}){
    result=invokePlatform(api,body.method,actor,body.input||{});
   }
   const identityEffect=identityBefore?effects.capture(result.id,identityBefore,store.recordById('clients',actor.id)):null;
+  admissions.capture(body.clientAdmission,result);
   const response=signed(store,'directory-result',{schemaVersion:1,siteId:store.siteId,organizationId,epoch:a.epoch,targetName,nonce:body.nonce,result:clone(result),identityEffect,references:readMethods.has(body.method)?[]:resultReferences(store,result,organizationId)});
   if(Buffer.byteLength(json(response))>maxResultBytes)reject('CAPACITY','Per didelis organizacijos atsakymas.',503);
   if(!readMethods.has(body.method)){
@@ -116,18 +123,18 @@ export function createOrganizationCommand(store,{targetName}){
 }
 
 export function createOrganizationDirectory(store,{getTarget}={}){
- const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store);
+ const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store),admissions=createClientAdmissionQueue(store);
  const api=createPlatform(store,{deferOrganizationPreferences:id=>!!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND organization_id=? AND state='sealed'").get(siteId,id)});
  const cache=createDirectoryCacheIssuer(store),effects=createDirectoryIdentityEffects(store);
  db.exec('CREATE TABLE IF NOT EXISTS organization_directory_refs(site_id TEXT NOT NULL,collection TEXT NOT NULL,entity_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,PRIMARY KEY(site_id,collection,entity_id));');
  const transfers=()=>{const rows=db.prepare("SELECT organization_id,epoch,state,target_name FROM organization_handoffs WHERE site_id=? AND state!='aborted' ORDER BY organization_id LIMIT 33").all(siteId);if(rows.length>maxTargets)reject('CAPACITY','Organizacijų paieškos apimtis viršija šio piloto ribą.',503);return rows;};
  const actor=user=>{if(!user)return null;const a=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND id=?').get(siteId,user.id);if(!a)reject('UNAUTHENTICATED','Prisijunkite.',401);return {...a,operator:!!a.operator,...(Number.isFinite(user.verifiedAt)?{verifiedAt:user.verifiedAt}:{})};};
  const saveReferences=(t,references)=>store.transaction(()=>{for(const r of references){if(!entityTables.has(r.collection)||!validId(r.id))unavailable();const old=db.prepare('SELECT organization_id FROM organization_directory_refs WHERE site_id=? AND collection=? AND entity_id=?').get(siteId,r.collection,r.id);if(old&&old.organization_id!==t.organization_id)reject('IDEMPOTENCY_CONFLICT','Įrašo tapatybė priklauso kitai organizacijai.',409);db.prepare('INSERT INTO organization_directory_refs VALUES(?,?,?,?,?) ON CONFLICT(site_id,collection,entity_id) DO UPDATE SET epoch=excluded.epoch').run(siteId,r.collection,r.id,t.organization_id,t.epoch);}});
- async function targetCall(t,method,user,input={},recipientId=null){
+ async function targetCall(t,method,user,input={},recipientId=null,clientAdmission=null){
   if(t.state!=='sealed'||!getTarget)unavailable();
   let response,nonce,account;
   for(let attempt=0;attempt<2;attempt++){
-   const packet=store.transaction(()=>{account=actor(user);nonce=randomId('command');return signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:account,input:clone(input),cache:cache.issue(account?.id,recipientId)});});
+   const packet=store.transaction(()=>{account=actor(user);nonce=randomId('command');return signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:account,input:clone(input),cache:cache.issue(account?.id,recipientId),...(clientAdmission?{clientAdmission}: {})});});
    try{response=await getTarget(t.target_name).executeDirectoryCommand(packet);}catch{unavailable();}
    // An overtaken cache is rejected before the business operation. Refresh once;
    // transport failures and uncertain writes are never automatically replayed.
@@ -157,6 +164,15 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   }
   return clientId?controls.remaining(clientId):null;
  }
+ async function deliverClientAdmission(row,rows){
+  if(row.state==='applied'||row.state==='failed')return row;
+  try{
+   const target=rows.find(t=>t.organization_id===row.organization_id&&t.epoch===row.epoch);if(!target)unavailable();
+   const result=await targetCall(target,'createClient',{id:row.actor_id},row.input,row.account_id,admissions.envelope(row));
+   return store.transaction(()=>admissions.applied(row,result));
+  }catch(error){return store.transaction(()=>admissions.failed(row,error));}
+ }
+ async function flushClientAdmissions(){const rows=transfers();for(const row of admissions.pending())await deliverClientAdmission(row,rows);}
  async function dispatch(method,user,input={}){
   const rows=transfers();if(!rows.length)return method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);
   const excluded=new Set(rows.map(t=>t.organization_id));
@@ -194,8 +210,14 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   const ref=reference(method,input);if(ref){const organizationId=await resolve(ref,rows),t=rows.find(r=>r.organization_id===organizationId);if(t){
    if(input.organizationId&&input.organizationId!==organizationId||input.scope?.role==='professional'&&input.scope.organizationId!==organizationId)reject('FORBIDDEN','Kita organizacija.',403);
    if(identityMethods.has(method)){
-    await targetCall(t,'identityActionScope',user,{organizationId,operation:method});
+    const permission=await targetCall(t,'identityActionScope',user,{organizationId,operation:method});
+    if(method==='createClient'&&input.idempotencyKey!==undefined){
+     const row=admissions.prepare(t,actor(user),input,input.idempotencyKey,permission.clientCapacity);
+     return admissions.result(await deliverClientAdmission(row,rows));
+    }
+    if(method==='createClient'&&!permission.clientCapacity)reject('LIMIT','Klientų sąrašo limitas pasiektas.');
     if(typeof input.email!=='string'||!input.email.trim()||input.email.trim().length>254)reject('INVALID_INPUT','Įrašykite teisingą el. paštą.');
+    if(method==='createClient')clientAdmissionInput(input);
     const email=input.email.trim().toLowerCase(),recipient=store.transaction(()=>{
      const account=db.prepare('SELECT id FROM accounts WHERE site_id=? AND email=?').get(siteId,email);
      if(!account)reject(method==='grantMembership'?'NOT_FOUND':'GLOBAL_IDENTITY_REQUIRED',method==='grantMembership'?'Ši paskyra dar neprisijungė. Pakvieskite žmogų susikurti paskyrą savarankiškai.':'Šiam klientui dar reikia centrinės paskyros sukūrimo.',method==='grantMembership'?404:503);
@@ -210,5 +232,5 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   if(['metrics','migrateCatalogue','changeTaxonomy'].includes(method))unavailable();
   return invokePlatform(api,method,actor(user),input);
  }
- return {dispatch,flushCustomerControls,nextControlAt:controls.nextAt};
+ return {dispatch,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt};
 }

@@ -176,7 +176,7 @@ document.addEventListener('change',e=>{const f=e.target.form;if(f){syncCondition
 document.addEventListener('submit',async e=>{const f=e.target;if(!(f instanceof HTMLFormElement))return;e.preventDefault();if(f.getAttribute('aria-busy')==='true'||!validateForm(f))return;const b=e.submitter||f.querySelector('button[type=submit],button:not([type])');if(b?.disabled)return;const label=b?.innerHTML,key=suspendDraft(ctx,f);let success=false;if(b){b.disabled=true;b.textContent='Vykdoma…';}f.setAttribute('aria-busy','true');f.querySelectorAll('.error-box').forEach(x=>x.remove());
   try{const fd=new FormData(f);if(!await commonForm(f,fd)&&!await bookingForm(ctx,f,fd))await workspaceForm(ctx,f,fd);success=true;}
   catch(err){f.insertAdjacentHTML('afterbegin',errorHTML(err));f.querySelector('.error-box').setAttribute('tabindex','-1');f.querySelector('.error-box').focus();}
-  finally{finishDraft(key,success);if(b?.isConnected){b.disabled=false;b.innerHTML=label;}f.removeAttribute('aria-busy');saveUI();}
+  finally{finishDraft(key,success&&f.dataset.operationPending!=='true');if(f.dataset.operationPending==='true')saveDraft(ctx,f);if(b?.isConnected){b.disabled=false;b.innerHTML=label;}f.removeAttribute('aria-busy');saveUI();}
 });
 window.addEventListener('popstate',async()=>{if(viewKey()!==renderedViewKey){await render();fragmentTarget()?.scrollIntoView({behavior:'instant'});}});
 window.addEventListener('hashchange',()=>{if(location.hash.includes('=')&&viewKey()!==renderedViewKey)render();});

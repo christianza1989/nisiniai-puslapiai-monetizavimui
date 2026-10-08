@@ -76,6 +76,7 @@ async function render(){
         restoredWorkspaceAccount=s.user?.id||null;state.session.organizationId=null;
         if(s.user)try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':real-workspace'));if(saved?.accountId===s.user.id&&s.organizations.some(o=>o.id===saved.organizationId))state.session.organizationId=saved.organizationId;}catch{}
       }
+      state.favorites=s.favoriteIds||[];
       state.session={...state.session,role:s.user?(state.session.role==='guest'?'customer':state.session.role):'guest',clientId:s.user?.id||null,organizationId:s.organizations.some(o=>o.id===state.session.organizationId)?state.session.organizationId:s.organizations[0]?.id||null};
     }
     ctx.renderClock=ctx.adapter.clock;
@@ -124,7 +125,17 @@ async function commonAction(action,b){
   }
   if(action==='reset-demo'){localStorage.removeItem(DEMO_NAMESPACE);localStorage.removeItem(DEMO_NAMESPACE+':ui');sessionStorage.removeItem(DEMO_NAMESPACE+':ui');state=initial();ctx.state=state;adapter();closeDialog();await navigate('/');toast('Madbeauty vietiniai  duomenys išvalyti.');return true;}
   if(action==='enable-demo'){state.enabled=true;adapter();await render();return true;}
-  if(action==='favorite'){if(ctx.adapter.mode==='real'){if(!ctx.realAdapter.session?.user){state.afterAuth=ctx.path;await navigate('/paskyra');return true;}const d=await ctx.adapter.workspace({role:'customer'}),saved=!(d.client.favoriteIds||[]).includes(id);state.favorites=await ctx.adapter.favorite({organizationId:id,saved});}else state.favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];saveUI();b.setAttribute('aria-pressed',state.favorites.includes(id));toast(state.favorites.includes(id)?'Profilis išsaugotas.':'Profilis pašalintas iš išsaugotų.');return true;}
+  if(action==='favorite'){
+    const host=b.closest('.service-card')||b.parentElement;host.querySelectorAll('.favorite-error').forEach(x=>x.remove());
+    if(ctx.adapter.mode==='real'){
+      if(!ctx.realAdapter.session?.user){state.afterAuth=ctx.path;await navigate('/paskyra');return true;}
+      const saved=b.getAttribute('aria-pressed')!=='true';
+      try{state.favorites=await ctx.adapter.favorite({organizationId:id,saved});}
+      catch(err){b.insertAdjacentHTML('beforebegin',`<div class="favorite-error" style="flex-basis:100%">${errorHTML(err)}</div>`);const alert=b.previousElementSibling.querySelector('.error-box');alert.setAttribute('tabindex','-1');alert.focus();return true;}
+    }else state.favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];
+    saveUI();for(const control of document.querySelectorAll('[data-action="favorite"]'))if(control.dataset.id===id){const saved=state.favorites.includes(id);control.setAttribute('aria-pressed',String(saved));if(control.classList.contains('favorite'))control.setAttribute('aria-label',saved?'Pašalinti iš išsaugotų':'Išsaugoti profilį');else control.innerHTML=icon('heart')+' '+(saved?'Pašalinti iš išsaugotų':'Išsaugoti');}
+    toast(state.favorites.includes(id)?'Profilis išsaugotas.':'Profilis pašalintas iš išsaugotų.');if(ctx.path==='/paskyra/issaugoti'){await render();$('#main').focus({preventScroll:true});}return true;
+  }
   if(action==='home-day'){state.search.diena=Number(id);saveUI();await render();return true;}
   if(action==='search-results'){state.search.rezultatai=id;await navigate(ctx.path+searchHash(state.search),{preserve:true});return true;}
   if(action==='map-location'){ctx.mapLocationId=id;await render();return true;}

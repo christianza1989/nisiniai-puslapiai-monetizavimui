@@ -81,7 +81,7 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
    r.reason=txt(input.reason,500);if(input.state==='rejected')r.state='rejected';else{const n=node(d,input.targetId);r.state='resolved';r.targetId=n.id;}r.version++;event(d,'procedure-request-'+r.state,r.id);return r;
   });},
   changeTaxonomy(user,input){return mutate(d=>{
-   d.taxonomyChanges||=[];scope(d,user,{role:'operator'});if(input.version!==(d.taxonomyVersion||TAXONOMY_VERSION))reject('VERSION_CONFLICT','Taksonomijos versija pasikeitė.',409);
+   d.taxonomyChanges||=[];scope(d,user,{role:'operator'});if(input.version!==(d.taxonomyVersion||TAXONOMY_VERSION))reject('VERSION_CONFLICT','Katalogo versija pasikeitė. Uždaryk langą, atnaujink puslapį ir peržiūrėk naują versiją prieš išsaugant.',409);
    const nodes=catalogueTaxonomy(d),operations=['add','archive','restore','aliases','update'];if(!operations.includes(input.operation))reject('INVALID_INPUT','Pasirinkite galiojantį katalogo veiksmą.');
    let n=nodes.find(n=>n.id===input.nodeId),values={};
    const aliases=()=>{if(!Array.isArray(input.aliases)||input.aliases.length>20)reject('INVALID_INPUT','Patikrinkite sinonimus.');return [...new Set(input.aliases.map(x=>txt(x,80)))];};

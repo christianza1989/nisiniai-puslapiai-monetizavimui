@@ -16,6 +16,8 @@ test('Rebooking uses the current authoritative price and staff choice, preserves
   code('FORBIDDEN',()=>f.api.rebooking(f.other,{id:f.b.id}));let re=f.api.rebooking(f.client,{id:f.b.id});assert.equal(re.state,'ready');assert.equal(re.priceMinor,2500);assert.equal(re.changes[0].changed,false);
   f.api.edit(f.owner,{scope:f.scope,table:'services',id:f.s.id,version:f.s.version,values:{priceMinor:3000,durationMin:75}});re=f.api.rebooking(f.client,{id:f.b.id});assert.equal(re.changes[0].previous.priceMinor,2500);assert.equal(re.priceMinor,3000);assert.equal(re.procedureMin,75);assert.equal(re.changes[0].changed,true);assert.equal(f.api.workspace(f.client,{role:'customer'}).bookings[0].durationMin,60);
   f.api.cancelBooking(f.client,{id:f.b.id,version:f.b.version,reason:'Archive acceptance'});f.api.edit(f.owner,{scope:f.scope,table:'services',id:f.s.id,version:2,values:{active:false}});re=f.api.rebooking(f.client,{id:f.b.id});assert.equal(re.state,'unavailable');assert.equal(re.searchPath,'/paieska');assert.equal(f.api.workspace(f.client,{role:'customer'}).bookings[0].serviceSnapshot.label,'Saved manicure');
+  const alternative=f.api.createService(f.owner,{organizationId:f.org.id,practitionerId:f.p.id,resourceId:f.r.id,taxonomyServiceId:'manikiuras',label:'Current salon alternative',durationMin:30,priceMinor:2000});
+  re=f.api.rebooking(f.client,{id:f.b.id});assert.deepEqual(re.alternatives,[{providerServiceId:alternative.id,label:alternative.label,organizationId:f.org.id,locationId:f.org.locationId,kind:'salon'}]);
  }finally{f.close();}
 });
 test('Organization cards and data export are isolated; fresh email proof gates requests and export, preferences remain independent, and erasure stays pending retention review',()=>{

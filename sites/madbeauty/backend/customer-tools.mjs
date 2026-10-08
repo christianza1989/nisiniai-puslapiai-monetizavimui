@@ -12,7 +12,7 @@ export function createCustomerTools({store,mutate,ownOrg,ownBooking,scope,event,
   rebooking(user,input){
    const before=store.recordById?ownBooking({bookings:[store.recordById('bookings',input.id)].filter(Boolean)},user,{role:'customer'},input.id):null;
    const d=before&&store.readOrganization?store.readOrganization(before.organizationId,[user.id]):store.read(),b=ownBooking(d,user,{role:'customer'},input.id),old=visitSegments(b),changes=[],items=[];
-   const alternatives=d.services.filter(s=>s.active&&serviceEligible(d,s,store.clock())&&d.organizations.some(o=>o.id===s.organizationId&&o.approved)&&s.organizationId===b.organizationId).map(s=>({providerServiceId:s.id,label:s.label,organizationId:s.organizationId,locationId:s.locationId}));
+   const alternatives=d.services.filter(s=>s.active&&serviceEligible(d,s,store.clock())&&d.organizations.some(o=>o.id===s.organizationId&&o.approved)&&s.organizationId===b.organizationId).map(s=>({providerServiceId:s.id,label:s.label,organizationId:s.organizationId,locationId:s.locationId,kind:d.organizations.find(o=>o.id===s.organizationId).kind}));
    for(const before of old){
     const s=d.services.find(s=>s.id===before.providerServiceId),org=d.organizations.find(o=>o.id===s?.organizationId);
     if(!s||!s.active||!org?.approved||!serviceEligible(d,s,store.clock())||s.bookingMode&&s.bookingMode!=='instant')return {state:'unavailable',bookingId:b.id,reason:'Ankstesnis variantas šiuo metu nerezervuojamas internetu.',alternatives,searchPath:'/paieska'};

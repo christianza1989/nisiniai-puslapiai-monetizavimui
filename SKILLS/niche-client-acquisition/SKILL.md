@@ -5,6 +5,8 @@ description: Research and plan customer acquisition for this niche-site network,
 
 # Find customers for a niche business
 
+For a new strategy or significant expansion update the site's TOOLS.md using [niche-business-tools](../niche-business-tools/SKILL.md). Separate buyer/supplier discovery, meaningful intent, country/entity relevance and contacting rights; Treg catalogue availability or a vendor match score does not establish these. Reuse actual core adapters. Document implemented shared repairs in the [upgrade journal](../../core-improvements/README.md).
+
 Read [PROJECT_CONTRACT](../PROJECT_CONTRACT.md), the site's actual BUSINESS / current offer and [ACQUISITION_CORE](../../ACQUISITION_CORE.md). Use the active siteId and actual operator / contact configuration. This is a project skill, not a new global tool or a completed CRM. For initial source / channel choices read the dated [research](../../research/client-acquisition-2026-10-01/RESEARCH.md); verify facts that may have changed before relying on them operationally.
 
 ## Choose the task

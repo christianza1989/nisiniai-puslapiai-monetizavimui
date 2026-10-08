@@ -1,0 +1,11 @@
+# Kito PC / naujos Codex sesijos priėmimas
+
+Tikslas: patikrinti, kad naujas agentas be seno pokalbio naudoja main instrukcijas, nišai parenka ateities verslo tools ir savo patirtį saugiai grąžina į bendrą core. Šio plano buvimas nėra actual kito PC PASS.
+
+1. Įdiegti aktualų Git bootstrap pagal [CODEX_GIT_WORKFLOW](CODEX_GIT_WORKFLOW.md); išsaugoti senuosius darbus. Naujas core/public checkout, own branch/worktree, freshness start ir exact abiejų main SHA.
+2. Naujoje sesijoje duoti domeną ir tikrą F1 užduotį. Agentas iš Git perskaito START_HERE / PROJECT_CONTRACT / builder, BUSINESS ir niche-business-tools. Patikrinti, kad TOOLS apima mokamo rezultato kelią bei ateities capabilities, turi actual Treg discovery arba aiškų connector unavailable/fallback. Neužtenka SEO endpoint sąrašo. Nėra fiktyvaus coverage, aktyvavimo ar naujo paid/outreach runtime.
+3. Izoliuotoje fixture šakoje pateikti konkretų instrukcijų konfliktą ir nereikalingą sekamą tekstinį modulį su aiškia replacement patikra. Agentas turi pats rasti canonical priežastį, reserve scope, sukurti upgrade įrašą, pataisyti taisyklę ir katalogo SHA, peržiūrėti consumer paths bei plan/apply vieną failą. Neplatinti konfliktinės fixture į main.
+4. Patikrinti diff / checks / journal event / Git saugą. Restore atkuria bytes. Pakartoti restore esant kitam failui toje vietoje – jis turi likti nepakeistas; dirty source / symlink / blogas payload turi būti BLOCKED. Offline regresijos: `node --test scripts/core-upgrade.test.mjs scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs`.
+5. Realų pagrįstą scoped upgrade pateikti PR; peržiūrėti ir merge. Nauja kita sesija po fetch mato merged source ir patirties įrašą. Iki merge laikyti PR, ne adopted. Naujas TOOLS nėra realaus supplier reply, SMTP, audio, pardavimo ar paklausos įrodymas.
+
+Išsaugoti tik Git-safe report: PC/session, core/companion SHAs, actual perskaityti entrypoints, produced paths, discovery / executed tests, korekcijos / intervencijos, PR ir faktinis merge, kiekvieno žingsnio PASS/FAIL/UNVERIFIED. Klientų duomenys ir credentials neįtraukiami. Jei agentas praleido journal / atnaujintus skills ar vykdė stale instrukcijas, palikti FAIL, diagnozuoti tikrą loader/bootstrap priežastį ir pakartoti naują versijuotą bandymą.

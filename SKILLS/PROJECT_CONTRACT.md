@@ -1,5 +1,9 @@
 # Shared skill contract for this niche network
 
+Every implemented shared upgrade additionally has a unique entry in the [core journal](../core-improvements/README.md), with original evidence, owned paths, checks and Git delivery. Proven dead files may be reversibly quarantined using the exact-file helper; never bulk-delete, change imported archives or overwrite another agent's work.
+
+New BUSINESS and significant expansion decisions require [niche-business-tools](niche-business-tools/SKILL.md) under [BUSINESS_TOOLS_CORE](../BUSINESS_TOOLS_CORE.md): site TOOLS.md for the whole paid customer path and future capabilities, with live Treg discovery or explicit unavailable/fallback evidence. Plans cannot activate paid calls or operational modules; phase-one scope remains intact.
+
 Builders may improve shared rules, skills, prompts and core helpers themselves under [CORE_IMPROVEMENT](../CORE_IMPROVEMENT.md), based on concrete implementation evidence, coordinated file ownership and proportionate validation. Record the finding/change in the site's CORE_FEEDBACK. Routine scoped repairs do not require mandatory root implementation or repeated owner approval; this does not expand business scope, change historical results or authorize external operations.
 
 Explicitly commissioned larger platforms also follow [PLATFORM_BUILD_CONTRACT](../PLATFORM_BUILD_CONTRACT.md): current scope/entrypoint, early end-to-end server-backed slice, shared/business boundaries and risk-based acceptance. Domain-only phase-one scope remains unchanged. Record concrete integration lessons in the site's CORE_FEEDBACK; a new instruction is not proof of adoption by existing sites.

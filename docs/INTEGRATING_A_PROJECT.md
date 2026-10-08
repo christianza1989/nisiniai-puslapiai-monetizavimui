@@ -1,5 +1,7 @@
 # Kaip prijungti projektą prie bendros sistemos
 
+Naujo BUSINESS / reikšmingos plėtros metu companion Git [niche-business-tools](../SKILLS/niche-business-tools/SKILL.md) ir [BUSINESS_TOOLS_CORE](../BUSINESS_TOOLS_CORE.md) numato nišos TOOLS.md visam mokamo kliento rezultatui ir ateities capabilities. Praktines shared spragas agentai patys taiso pagal [CORE_IMPROVEMENT](../CORE_IMPROVEMENT.md), kiekvienam įgyvendinamam upgrade veda [bendrą žurnalą](../core-improvements/README.md) ir naudoja atkuriamą karantiną. Imported archyvai, kitos sesijos failai, secrets ir klientų duomenys nekeičiami šia eiga.
+
 Šis dokumentas yra startas AI, gavusiam vien GitHub nuorodą. Projektas jungiamas pagal actual sutartis, ne kopijuojant visą ankstesnį verslą ar numanant, kad dokumentuoti API jau veikia.
 
 ## Pirmas perskaitymas

@@ -1,5 +1,19 @@
 # Core gerinimas kuriant svetaines
 
+**2026-10-08 papildymas:** savininkas aiškiai autorizavo ir pagrįstą dead code / nereikalingų failų valymą bei skill konfliktų pataisas. Kiekvienas įgyvendinamas shared upgrade turi atskirą [bendro žurnalo](core-improvements/README.md) įrašą. Žurnalas papildo per-nišos CORE_FEEDBACK: nišos įrašas nurodo upgrade ID, nekopijuoja visos istorijos. Viena nuolat visų agentų redaguojama indekso lentelė nenaudojama; atskirų įrašų suvestinė gaunama CLI. Skirtingų PC darbo koordinacija vyksta per GitHub scope ir PR, ne vietinį lock.
+
+## Autonominis upgrade ir karantinas
+
+Agentas gali pats diagnozuoti ir pataisyti konkrečią spragą, instrukcijų konfliktą, nereikalingą kodą ar dubliavimą, atnaujinti savo pakeistų skills katalogo SHA ir perduoti patikrintą scoped PR. Prieš pataisą fiksuoti radinį, evidence, bendrą ar nišinę priežastį, exact source SHA, GitHub issue/failų ribas ir atkūrimą. Nesukurti fiktyvios patirties ar privalomo „patobulinimo“ kiekvienai svetainei.
+
+Nereikalingų failų nelaikyti automatiškai ištrintinais. Patikrinti statinius importus, CLI/jobs/build/script registrus, dinaminį įkėlimą, docs nuorodas, kompatibilumą ir istorijos reikšmę. Vien `rg` rezultatas0 arba failo amžius nėra dead code įrodymas. Radinio atkūrimas ir vartotojo kelio patikra turi rodyti, kad pakeitimas nenutraukia palaikomo darbo. Jei naudojimas neaiškus, palikti failą ir dokumentuoti priklausomybę; tęsti kitus pataisymus.
+
+Praktiniam valymui naudoti `scripts/core-upgrade.mjs` plan → apply → restore pagal žurnalo runbook. Vienas įrašas / vienas tikslus švarus Git sekamas tekstinis failas. Karantinas saugo source bytes, originalų santykinį kelią, SHA-256, priežastį, bazę ir operacijos būseną. Jis nėra šiukšlių katalogas su klientų duomenimis. Secrets / runtime / DB / SOURCE archyvai / istorinės approval, benchmark, fingerprint / bootstrap ir migracijos neperkeliami helperiu. Šis sąmoningai konservatyvus allowlist gali atmesti kitą pagrįstą valymą: dokumentuoti atskirą migraciją, ne apeiti vartus ar masiškai trinti.
+
+Karantino `source.txt` yra originalūs baitai, ne vykdomas alternatyvus modulis. Jo negeneruoti į viešą paketą ir neįtraukti į runtime discovery. Nauji glob scanners turi jį ignoruoti vykdymui, bet saugos skeneris tikrina kaip tekstą. Atkūrimas niekada neperrašo naujo failo; blogas hash / dirty source / symlink / svetimas lock sustabdo operaciją. Po tikros migracijos galima atskirai pasiūlyti karantino retention peržiūrą; automatinio purge nėra.
+
+Pagrįsti checks, PR, merged source ir konkretaus adapterio / PC adoption yra skirtingi įvykiai. Pridėti įvykius, neperrašyti senos klaidos ar bandymo. Core pagerinimas perduodamas kitam agentui tik po main merge ir jo fetch / instrukcijų perskaitymo. Runtime agentų privatus mokymasis lieka [versijuoto kalibravimo](SKILLS/business-agent-calibration/SKILL.md) procesu; šis journal nepriskiria jiems teisės tyliai perrašyti vykdymo promptus.
+
 2026-10-05. Savininkas autorizavo svetaines ir platformas kuriančius agentus savarankiškai gerinti bendras taisykles, skills, promptus ir core realizaciją, kai praktinis darbas parodo pagrįstą trūkumą. Tai taikoma visoms nišoms, ne tik Madbeauty. Agentas neturi apsiriboti problemos pasiūlymu root ar savininkui, jei gali pats atlikti nedidelį, patikrintą pataisymą savo užduoties ribose.
 
 ## Nuo radinio iki pataisymo

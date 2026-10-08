@@ -1,5 +1,7 @@
 # Choose the business before the website
 
+After selecting BUSINESS, apply [niche-business-tools](../../niche-business-tools/SKILL.md) and write the niche TOOLS.md. Evaluate current and future capabilities for buyers, suppliers, product/service verification, customer follow-up, fulfilment and measurement, including Treg catalogue discovery and alternatives. Unknown cost/coverage and activation triggers remain explicit; future selection does not expand the current phase. Demonstrated shared defects return to the [upgrade journal](../../../core-improvements/README.md).
+
 Use for a new niche or an explicitly rejected business direction. This network tests demand for monetizable businesses. SEO content supports that test; an attractive publication and topic-submission form do not establish a commercial offer.
 
 Preserve the owner's chosen product and scope. A legacy brief, example calendar, domain pun or archive topic is a hypothesis to reassess, not an instruction to build that business. When the direction is open, compare a small set of plausible commercial angles using current local evidence and choose autonomously. Do not prescribe handyman services or any other example to every domain.

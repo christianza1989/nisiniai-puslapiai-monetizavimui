@@ -13,3 +13,5 @@
 *.webp binary
 *.ttf binary
 *.woff2 binary
+# Quarantine payloads retain original bytes across Windows/Linux clones.
+/core-improvements/entries/**/quarantine/source.txt -text

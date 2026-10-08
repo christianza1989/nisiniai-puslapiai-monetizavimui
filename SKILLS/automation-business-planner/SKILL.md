@@ -5,6 +5,8 @@ description: Research and propose evidence-backed business or automation improve
 
 # Develop this network's businesses and automation
 
+For a significant BUSINESS or expansion decision use [niche-business-tools](../niche-business-tools/SKILL.md) and update the niche TOOLS.md with relevant Treg / existing-core capabilities and admission criteria. Implement demonstrated routine shared defects under [CORE_IMPROVEMENT](../../CORE_IMPROVEMENT.md) with a [journal entry](../../core-improvements/README.md); this independent repair authority does not turn a new commercial proposal into an approved operational expansion.
+
 Read [PROJECT_CONTRACT](../PROJECT_CONTRACT.md), [business-development instructions](../../business-development/AGENTS.md), [IDEAS](../../business-development/IDEAS.md), state and current WORKSTREAMS. Preserve phase-one demand tests, actual operator/site configuration and the existing shared core. Do not turn every niche into a full marketplace or spin up duplicate CRM/agent infrastructure.
 
 ## Find a concrete improvement

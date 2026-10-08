@@ -1,5 +1,7 @@
 # Nišinių svetainių įgūdžiai
 
+[niche-business-tools](niche-business-tools/SKILL.md) — privaloma naujo BUSINESS ir reikšmingos plėtros įrankių atranka visam mokamam kliento rezultatui, ne vien SEO/GEO. [Sutartis](../BUSINESS_TOOLS_CORE.md), per-nišos TOOLS.md ir atskiri aktyvavimo / bandymo vartai. Bendros pataisos ir karantinas: [upgrade žurnalas](../core-improvements/README.md).
+
 [business-agent-calibration](business-agent-calibration/SKILL.md) — savininko užsakytų nišų pokalbių / sales / supplier agentų kalibravimo startas. [Runbook](business-agent-calibration/references/runbook.md) ir [priėmimo matrica](business-agent-calibration/references/acceptance.md) leidžia kitam agentui atkurti scenarijus ir patikrinti actual mokymąsi be seno Codex pokalbio. Project-library skill, randamas per AGENTS / catalog; ne visuomet įjungiamas F1 modulis ir ne globaliai įdiegta kopija. Offline preflight: `node SKILLS/business-agent-calibration/scripts/check-inputs.mjs`.
 
 [niche-seo-geo-core](niche-seo-geo-core/SKILL.md) — 2026-10-07 bendras Treg tyrimų / SEO ir GEO matavimo modulis visoms nišoms. Tai penktas core registro įrašas (iš viso 55 skills), papildantis builder/planner/audit. Projekto Git šaltinis yra autoritetas, asmeninė Codex kopija sinchronizuojama bendru helperiu. Studija įkelia modulį tiesiogiai, su nauju instrukcijų SHA ir privačiu aktualumo / locale / raw įrodymų kontekstu. [Integracija](../SEO_RESEARCH_CORE.md) aprašo veikiančius vykdymo kelius ir aktyvavimo ribas.

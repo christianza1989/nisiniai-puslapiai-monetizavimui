@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Scoped source review completed: only29 core paths, companion15 only2 documentation paths, no runtime/data packages. Linux preflight passed on initial source6c7d908 (run37758232760). Main merge and external-PC adoption not yet claimed.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/37",
+  "eventId": "57d197f4-e173-495a-b2db-3276ad234d7e",
+  "sequence": 4,
+  "at": "2026-10-08T09:41:17.857Z"
+}

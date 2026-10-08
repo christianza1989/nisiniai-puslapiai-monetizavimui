@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Owner-scoped source implemented and locally verified. 7 quarantine/journal cases and prior unchanged 5 freshness/bootstrap cases pass. No real project files quarantined, no provider execution, no remote-PC/Codex or channel claims. CI/main delivery pending.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs",
+      "result": "PASS",
+      "evidence": "7/7, including independent Git clone CRLF restore; docs/CORE_UPGRADES_QA_2026-10-08.md"
+    },
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs",
+      "result": "PASS",
+      "evidence": "12/12 prior combined run; final path guards separately re-tested in 7/7"
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs",
+      "result": "PASS",
+      "evidence": "6 profiles PASS_INPUTS; behaviour/knowledge/channels false, model calls0"
+    },
+    {
+      "command": "quick_validate.py for 4 affected/new skills; selected hash/local-link check",
+      "result": "PASS",
+      "evidence": "4 valid skills, 4 entry SHA matches, 150 local links; QA report"
+    },
+    {
+      "command": "git diff --cached --check; node scripts/repository-safety.mjs . --staged --secrets-root <original checkout>",
+      "result": "PASS",
+      "evidence": "28 staged paths, no findings; scope reviewed separately"
+    }
+  ],
+  "eventId": "9f613a3b-f6d9-48bc-919e-512293ac130e",
+  "sequence": 3,
+  "at": "2026-10-08T09:38:40.655Z"
+}

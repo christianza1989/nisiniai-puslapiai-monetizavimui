@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Implemented owner-scoped BUSINESS tools routing and first journal/quarantine helper. Initial rollout is retrospective; scope/evidence are issue36 and source review. No real project file removed. Source validation and fixture regressions in progress.",
+  "eventId": "19e8b2c0-c928-448a-8b81-27b352e3155b",
+  "sequence": 2,
+  "at": "2026-10-08T09:36:43.316Z"
+}

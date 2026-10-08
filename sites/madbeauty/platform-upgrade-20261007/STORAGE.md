@@ -1,3 +1,7 @@
+## Archived procedure retention / b541fa6f09bc54d516e6ac42244a657c621f366a
+
+Existing private offer keeps original taxonomyServiceId and published snapshot; draft update uses normal versioned transaction. No taxonomy ID replacement, publication or booking eligibility bypass. Current full catalogue labels appear only as workspace DTO metadata; target signed cache remains current central authority. Actual target offer version2 after normal Enter save/reload.
+
 ## Current physical target variant reads224
 
 Runtime242c687b26d882ad2f634f585d55f9cb9ecc3fc5, full4suite manifest224/224 regression-64.log, media-read-first.log35PASS and media-read-workers-first.log1 actual Worker PASS, exact75aa39pages305assets build-media-read224.log, source6 safety PASS. Two new Node cases, extended existing Worker case; none removed. Current readMedia source directory resolves canonical asset ID/current sealed target, private signed mediaReadAccess verifies target published revision/current profile capability/operator. Physical target RPC returns bounded raw variant bytes plus signed descriptor, source verifies file/length/SHA256. Original storage paths and private commands are not browser RPC. Prepared/unavailable/current-corrupt target never serves retained source bytes.

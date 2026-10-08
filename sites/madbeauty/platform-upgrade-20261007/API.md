@@ -1,3 +1,7 @@
+## Private archived procedure labels / b541fa6f09bc54d516e6ac42244a657c621f366a
+
+Professional workspace.catalogueNodes supplies the complete current versioned taxonomy, including archived labels; no extra private accounts or permissions. saveOffer permits original existing treatment ID when archived only for private draft. Changed archived ID and selectProcedures/submitOffer remain rejected. Public taxonomy excludes archived nodes; private retained labels never become eligible choices.
+
 ## Current target media reads / 242c687b26d882ad2f634f585d55f9cb9ecc3fc5
 
 HTTP GET /api/madbeauty/media/<variant.webp> po central host/session patikrų resolves asset ID/current org. Internal readMedia helper invokes private readOrganizationMedia(packet) with signed mediaReadAccess command. Target current approved media projection arba current profile capability / canonical SQL operator reikalingi; original keys404. Raw bytes atskirai nuo signed bounded descriptor{id,file,key,bytes,sha256}, source tikrina actual binary. No browser RPC/private token. Namespace failure503, corrupt bytes503, current private/restricted guest404; retained source copy nenaudojama. Node/actual Worker evidence ACCEPTANCE224; new target upload dar rengiamas.

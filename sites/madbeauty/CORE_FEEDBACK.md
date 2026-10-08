@@ -1,3 +1,9 @@
+## 2026-10-08 — archyvuota procedūra turi išlaikyti suprantamą pavadinimą
+
+Runtimeb541fa6f09bc54d516e6ac42244a657c621f366a: private original archived procedure draft remains editable, active selection/publication/booking remain strict. Professional DTO supplies current complete canonical labels; active select choices still derive from current public taxonomy. Actual8843 owner archived classic manicure, native Enter save/reload same ID, Escape focus return; four retest dialog widths320/390/820/1440 viewed with full accessible wrapped text. Initial raw ID/generic label, mobile native-select truncation and save rejection preserved in ignored evidence. Four manifest suites regression-65.log224/224 (0 new tests,3 extended); exact75aa39page305asset build-inactive224.log;7source safety PASS. Whole upgrade ACTIVE; target upload/binding, remaining I04 and factual launch gates continue. No production writes.
+
+Patirtas faktas: public active taxonomy cannot supply retained archived labels. Current private complete taxonomy fixes presentation while active options and public eligibility remain separately strict. Native select width metrics alone missed actual truncated status; visible wrapped context was required. Shared rules/core unchanged.
+
 ## 2026-10-08 — medijos leidimai turi ateiti iš aktualaus profilio
 
 Runtime242c687b26d882ad2f634f585d55f9cb9ecc3fc5: source HTTP anksčiau skaitė retained metadata ir bytes; fizinį org perkėlus tai būtų senų leidimų kelias. Private signed target descriptor/current projection ir raw bytes with source SHA verification prijungti prie ordinary Worker HTTP. Actual draft owner/guest, publication, restart, restriction ir corrupt503 su intact retained source įrodo fail-closed current read.224/2244suites ir exact75aa build; synthetic HTTP neskelbia raster visual PASS. Target upload ir I04 actual UI tęsiami; shared/core/production writes0.

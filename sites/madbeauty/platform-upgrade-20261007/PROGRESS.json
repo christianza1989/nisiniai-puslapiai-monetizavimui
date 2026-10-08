@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "242c687b26d882ad2f634f585d55f9cb9ecc3fc5",
+  "runtimeSourceCheckpoint": "b541fa6f09bc54d516e6ac42244a657c621f366a",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -216,6 +216,12 @@
       "tests": 224,
       "state": "accepted-isolated-path",
       "remaining": "Target upload, Node filesystem import, production binding/migration, actual raster/UI and factual launch gates."
+    },
+    {
+      "name": "archived-procedure-private-draft-and-accessible-canonical-label",
+      "tests": 224,
+      "state": "accepted-isolated-browser-and-node-path",
+      "remaining": "Target upload, Node filesystem import, production binding/migration, remaining I04 and factual launch gates."
     }
   ],
   "tasks": [
@@ -435,7 +441,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md/ACCEPTANCE.md: named per-path actual evidence and outstanding states, latest competing hold conflict and network retained-input recovery."
+      "evidence": "UI_MATRIX.md/ACCEPTANCE.md: archived procedure draft same ID save/reload and canonical inactive context accepted at320/390/820/1440. Other named states remain."
     },
     {
       "id": "E01",
@@ -487,8 +493,8 @@
     }
   ],
   "next": [
-    "Target mail admission with current global preferences and alarm recovery",
-    "Media transfer/binding and remaining applicable I04 states",
-    "Factual SMTP/pilot/retention and larger-adapter hosted load gates"
+    "Target upload/current capability, atomic binary storage and uncertain reply recovery",
+    "Production binding/migration candidate and Node filesystem import",
+    "Remaining applicable I04 states; factual SMTP/pilot/retention and hosted load gates"
   ]
 }

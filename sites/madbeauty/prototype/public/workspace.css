@@ -24,7 +24,8 @@
 @media(max-width:760px){.calendar-controls{gap:12px}.calendar-toolbar{display:grid;grid-template-columns:1fr;gap:8px!important}.calendar-toolbar .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.calendar-toolbar .segmented{justify-self:start}.calendar-filter{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.calendar-filter .field{max-width:none}.calendar-filter .field:has(select){grid-column:1/-1}.calendar-filter .button{align-self:end}.calendar-actions{display:flex;flex-wrap:wrap;gap:8px}.calendar-actions .button{flex:1;padding-inline:10px}.calendar-caption{margin-top:2px!important}.workspace-content h1{margin-bottom:16px}.sidebar .status-line{display:none}.sidebar form{margin-bottom:8px}.sidebar .button{margin-bottom:0}.sidebar .field{margin-bottom:0}.sidebar a{min-height:44px;display:flex;align-items:center}.selected-agenda .empty{padding:24px 16px}}
 
 .csv-preview{list-style:none;padding:0;margin:24px 0}.csv-preview>li{padding:20px 0;border-block:1px solid var(--line);overflow-wrap:anywhere}.csv-preview>li+li{border-top:0}.csv-preview h3{font-size:20px}.csv-preview dl{margin:16px 0;font-variant-numeric:tabular-nums}.csv-preview dl>div{display:grid;grid-template-columns:80px minmax(0,1fr);gap:12px;margin-block:8px}.csv-preview dt{font-weight:650}.csv-preview dd{margin:0;min-width:0}.csv-preview .hint{margin:0}#offer-csv-confirm .toolbar .button{white-space:normal;max-width:100%}
-@media(max-width:380px){#report-range.filter-form{grid-template-columns:minmax(0,1fr)}.csv-preview dl>div{grid-template-columns:minmax(0,1fr);gap:4px}}
+@media(max-width:600px){#report-range.filter-form{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:380px){.csv-preview dl>div{grid-template-columns:minmax(0,1fr);gap:4px}}
 .sidebar .workspace-name{color:#fff;font-size:14px;font-weight:650;line-height:1.5;margin:4px 6px 16px;overflow-wrap:anywhere}
 @media(max-width:760px){.sidebar .workspace-name{margin:0 4px 10px}}
 

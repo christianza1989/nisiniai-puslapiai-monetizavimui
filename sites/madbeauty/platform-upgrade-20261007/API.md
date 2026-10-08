@@ -1,3 +1,7 @@
+## Local maintenance import / 31465ffd1a616866f4089106abe25acfa9a53b6e
+
+`node sites/madbeauty/backend/import-filesystem-media.mjs --db EXISTING_LOCAL_DB --organization ORGANIZATION_ID --operator CANONICAL_OPERATOR_ID` requires explicit existing database plus its existing `.secret`. It does not create a new database/secret when missing. It invokes importFilesystemMedia before organization freeze. There is no new HTTP/public RPC/browser route; operator flag is loaded from canonical accounts each time. Results contain only counts, organization ID and filesystemWrites0, no secrets, contact details or original image bytes. Partial progress is atomic per asset and replay checks exact already-imported SQL bytes; retry after a later failure resumes.
+
 ## Patvarus source įkėlimas / 13a0de78eafa04bdad9001f627756141125672a5
 
 Ordinary Worker uploadSource naudoja canonical centrinę paskyrą. requireCapability(profile) ir source fence prieš admission; atkūrimas prieš quota24; po async shared IMAGES transform dar kartą tikrinama teisė ir fence. Final writeObjects/attach/profile/receipt/completion viename sync SQL commit. Node filesystem HTTP adapteris kol kas lieka atskiras. Perkeltam asset ID recovery būtina current capability, actor rightsConfirmedBy ir exact digest of organization/usage/alt/rights/MIME/original byte count/hash. Nėra sealed source write/read fallback ar receipt-table automatinio pernešimo.

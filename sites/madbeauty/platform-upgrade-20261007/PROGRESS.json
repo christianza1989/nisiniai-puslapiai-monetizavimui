@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "13a0de78eafa04bdad9001f627756141125672a5",
+  "runtimeSourceCheckpoint": "31465ffd1a616866f4089106abe25acfa9a53b6e",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -240,6 +240,12 @@
       "tests": 238,
       "state": "accepted-isolated-node-workers-and-native-gallery-paths",
       "remaining": "Node filesystem import, remaining I04 states and hosted/factual launch gates; source browser is separate from Worker HTTP acceptance; production not deployed."
+    },
+    {
+      "name": "private-filesystem-media-import-and-node-to-native-worker-transfer",
+      "tests": 244,
+      "state": "accepted-isolated-node-cli-and-native-worker-transfer",
+      "remaining": "Remaining applicable I04 UI states, hosted restore/fence/load and factual SMTP/pilot/retention gates; no production deployment."
     }
   ],
   "tasks": [
@@ -444,7 +450,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE238: target/source atomic upload and physical handoff recovery accepted in actual main Worker; candidate bindings local only. Node filesystem importer and hosted lifecycle/PITR/load remain."
+      "evidence": "STORAGE.md/ACCEPTANCE244: source/target current media/mail and binding candidate accepted locally; explicit filesystem→SQL importer and signed Node→native Worker physical transfer/current private read/restart accepted. Hosted production lifecycle/PITR/fence/load remain unverified."
     },
     {
       "id": "I03",
@@ -511,8 +517,8 @@
     }
   ],
   "next": [
-    "Node filesystem media import and its exact physical transfer acceptance",
-    "Applicable remaining I04 UI states, including gallery version-conflict/network states",
-    "Hosted restore/load and factual SMTP/pilot/retention gates; only then conditional full-upgrade deployment"
+    "Applicable remaining I04 UI states, starting with group/CSV and gallery version-conflict/network paths",
+    "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
+    "Only after full completion, use existing conditional deployment authorization"
   ]
 }

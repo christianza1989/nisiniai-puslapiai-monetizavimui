@@ -31,3 +31,6 @@ Galutinis I04 acceptance reikalauja uždaryti taikomas eilutes, įrašyti konkre
 ## Directory198 / pirmas naujas klientas
 
 8843 browser2/tab2 fresh central OTP identity sukūrimas po handoff→mobile390 profile/service/time/contact/review/confirm→same booking detail priimti. directory-fresh198-confirmed-390.png actual peržiūrėta. Identity/cache/global name sutapimą rodo directory-fresh198-status.json ir Node/Workers acceptance, ne išgalvotas browser global cache. Šis naujas kelias nepriskiria PASS kitoms likusioms keyboard/error/stale/conflict eilutėms.
+
+
+Directory198 browser continuation: po abiejų owned stores restart klientas išlaikė secure session ir tą patį booking_44d462c1-70e7-476e-a551-29a628ae09bd detail. Owner per normalų OTP→org switch→calendar mobile agenda atvėrė Oct9→18:00 naujo kliento vizitą Enter. Dialogo width358=scrollWidth358, document390; visi3actions data-id sutampa su booking. Escape paslepia dialogą ir grąžina fokusą į to paties ID Atidaryti. directory-fresh198-detail-restarted-390.png / directory-fresh198-owner-mobile-dialog-390.png peržiūrėtos; directory-fresh198-keyboard.json matavimai. Kiti likę I04 scenarijai netampa PASS.

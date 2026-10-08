@@ -1,3 +1,11 @@
+## 2026-10-08 — katalogo hierarchija ir patvarūs procedūrų prašymai
+
+Aktualus runtime: 8d3d88c03bd123824683de0503762b1bbec33bb8. catalogue263-proof.json PASS: 14 eilučių / mail / UI palyginimų ir 16 patikrintų rastrų. regression-96: visi keturi rinkiniai 263/263 PASS per 80,005 s, --test-concurrency=1 riboja vienu metu vykdomus testų failus; konkurenciniai veiksmai testų viduje išlieka. Palyginti su260: 3 nauji UI behavior testai, 1 papildytas esamas backend testas, 0 pašalintų. regression-95 išliko262/263 su organization-directory ECONNRESET. Exact source safety: 6 failai PASS. Nepakeistas75aa paketas:39puslapiai /309assets.
+
+Detalės: ACCEPTANCE.md / ignored catalogue263-proof.json.
+
+Visas atnaujinimas tebėra ACTIVE / neužbaigtas. Ši vietinė katalogo formų grupė užbaigta; toliau dabartinės saugyklos ir paleidimo pasirengimo auditas. Hosted restore/fence/load, tikras SMTP gavimas, meistrų pilotas ir faktinė duomenų saugojimo tvarka lieka nepriimti. Šio paketo production operacijų / deployment:0.
+
 ## 2026-10-08 — rezervavimo klaidos ir natūrali galiojimo pabaiga
 
 Aktualus runtime: 20d24e5b06f6588ec26cf8c7aa1d919021d779ea. booking260-proof.json PASS: 7 tikslios UI / dviejų SQLite palyginimų patikros. regression-94: visi keturi rinkiniai 260/260 PASS per 40,759 s; 1 naujas UI testas, 0 papildytų, 0 pašalintų. Pirmas regression-93 išliko su 259/260 ir organization-directory ECONNRESET; atskiras pakartojimas 1/1 PASS prieš visą pakartotinę patikrą. Exact source safety: 2 failai PASS. Nepakeistas 75aa paketas: 39 puslapiai / 309 assets.

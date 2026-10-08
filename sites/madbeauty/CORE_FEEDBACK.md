@@ -1,3 +1,11 @@
+## 2026-10-08 — katalogo hierarchija ir patvarūs procedūrų prašymai
+
+Aktualus runtime: 8d3d88c03bd123824683de0503762b1bbec33bb8. catalogue263-proof.json PASS: 14 eilučių / mail / UI palyginimų ir 16 patikrintų rastrų. regression-96: visi keturi rinkiniai 263/263 PASS per 80,005 s, --test-concurrency=1 riboja vienu metu vykdomus testų failus; konkurenciniai veiksmai testų viduje išlieka. Palyginti su260: 3 nauji UI behavior testai, 1 papildytas esamas backend testas, 0 pašalintų. regression-95 išliko262/263 su organization-directory ECONNRESET. Exact source safety: 6 failai PASS. Nepakeistas75aa paketas:39puslapiai /309assets.
+
+Detalės: ACCEPTANCE.md / ignored catalogue263-proof.json.
+
+Visas atnaujinimas tebėra ACTIVE / neužbaigtas. Ši vietinė katalogo formų grupė užbaigta; toliau dabartinės saugyklos ir paleidimo pasirengimo auditas. Hosted restore/fence/load, tikras SMTP gavimas, meistrų pilotas ir faktinė duomenų saugojimo tvarka lieka nepriimti. Šio paketo production operacijų / deployment:0.
+
 ## 2026-10-08 — pakartotinio vizito alternatyvos ir priedo pašalinimas
 
 Patirti du konkretūs Madbeauty defektai: nauja alternatyva buvo nukreipta pagal pasenusį ctx.rows, o rebooking read klaida dingdavo toast. Pataisytas verslo DTO su dabartiniu profile kind ir vietinis read-error recovery. Bendras editorial / SEO / media core nekeistas; vienos nišos sprendimas nepaverstas universalia taisykle.

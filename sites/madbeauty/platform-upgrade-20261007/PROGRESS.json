@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "20d24e5b06f6588ec26cf8c7aa1d919021d779ea",
+  "runtimeSourceCheckpoint": "8d3d88c03bd123824683de0503762b1bbec33bb8",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -372,6 +372,15 @@
       "regression": "regression-94.log",
       "evidence": "ACCEPTANCE.md / booking260-proof.json",
       "remaining": "Catalogue-add/procedure-request applicability, storage audit and factual/hosted gates"
+    },
+    {
+      "name": "catalogue-hierarchy-persistent-procedure-requests",
+      "state": "accepted-isolated-path",
+      "runtime": "8d3d88c03bd123824683de0503762b1bbec33bb8",
+      "tests": 263,
+      "regression": "regression-96.log",
+      "evidence": "ACCEPTANCE.md / catalogue263-proof.json",
+      "remaining": "Current storage/launch audit, hosted restore/fence/load and factual SMTP/pilot/retention gates"
     }
   ],
   "tasks": [
@@ -591,7 +600,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope."
     },
     {
       "id": "E01",
@@ -643,7 +652,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: catalogue-add/procedure-request applicability and current storage audit; booking error/expiry widths accepted locally",
+    "Current storage and launch-readiness audit; named remaining catalogue forms and booking error/expiry widths accepted locally",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

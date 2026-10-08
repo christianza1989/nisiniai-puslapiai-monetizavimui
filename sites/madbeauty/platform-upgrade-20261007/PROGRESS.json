@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "8d3d88c03bd123824683de0503762b1bbec33bb8",
+  "runtimeSourceCheckpoint": "39b71b18bd535eeb8d231fe497d26ca254b108d3",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
-  "productionReadOnlyCheck": "2026-10-08 wrangler deployments list: f8eba745-b8ef-446e-aeff-3c8b95c762bd remains 100%; no production write in this checkpoint.",
+  "productionReadOnlyCheck": "2026-10-08: wrangler live deployment f8eba745 remains100%; provider settings before/after private QA deployment preserve original namespace and binding/secret names. Production writes/deploy/migration0; private isolated QA deployments recorded separately.",
   "checkpoints": [
     {
       "name": "catalogue-offer-search-single-booking",
@@ -381,6 +381,15 @@
       "regression": "regression-96.log",
       "evidence": "ACCEPTANCE.md / catalogue263-proof.json",
       "remaining": "Current storage/launch audit, hosted restore/fence/load and factual SMTP/pilot/retention gates"
+    },
+    {
+      "name": "storage-recovery-authority-lifecycle-readiness-audit",
+      "state": "accepted-isolated-path",
+      "runtime": "39b71b18bd535eeb8d231fe497d26ca254b108d3",
+      "tests": 263,
+      "regression": "regression-98.log",
+      "evidence": "STORAGE_AUDIT.md / CURRENT_READINESS.md / storage263-hosted-proof.json / storage263-hosted-lifecycle-proof.json",
+      "remaining": "Factual real provider/mail/retention and chosen hosted product/canonical release gates; active-pair coordinated PITR not accepted"
     }
   ],
   "tasks": [
@@ -388,31 +397,36 @@
       "id": "G01",
       "title": "Aktuali platformos apimtis ir inventorius",
       "phase": "0",
-      "state": "in-progress"
+      "state": "in-progress",
+      "evidence": "SCREEN_INVENTORY and CURRENT_READINESS distinguish implemented/source/isolated/hosted/live facts and name remaining dependencies."
     },
     {
       "id": "D01",
       "title": "Hierarchinė taksonomija ir versijavimas",
       "phase": "1",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Shared versioned taxonomy, ancestry/aliases/archive integrity and global258/catalogue263 named local guards."
     },
     {
       "id": "D02",
       "title": "Senų kategorijų ir paslaugų migracija",
       "phase": "1",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Retained legacy URLs, deterministic private conversion and exact old/new booking/service/price IDs; migration and archived224 named checks."
     },
     {
       "id": "D03",
       "title": "Meistro kelių paslaugų pasirinkimas",
       "phase": "1",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Multi-procedure draft/restore and required price/duration/qualification guards; offers and catalogue forms named actual checks."
     },
     {
       "id": "D04",
       "title": "Pasiūlymai, variantai ir keli meistrai",
       "phase": "1",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Reviewed variants/per-staff prices/durations and unchanged booking snapshots; whole/phase/branch/rebooking named acceptance."
     },
     {
       "id": "D05",
@@ -425,7 +439,8 @@
       "id": "D06",
       "title": "Priedų grupės ir pasirinkimo taisyklės",
       "phase": "2",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Addon group min/max/foreign option guards, actual mandatory-addon recovery and removed-addon rebooking259."
     },
     {
       "id": "D07",
@@ -445,13 +460,16 @@
       "id": "S02",
       "title": "Miestų ir vietos paieška",
       "phase": "1",
-      "state": "in-progress"
+      "state": "in-progress",
+      "evidence": "103 exact canonical cities and manual/no-diacritic/dropdown/local location paths accepted; geography data type remains separate.",
+      "remaining": "Real device granted geolocation and physical consent flow not certified; manual input remains usable."
     },
     {
       "id": "S03",
       "title": "Rezultatai pagal tikrą laisvą viso vizito laiką",
       "phase": "1",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Actual whole-window, latest time ordering, no-full-slot recovery, phase/branch rules and booking260 stale/error/expiry scopes."
     },
     {
       "id": "S04",
@@ -532,7 +550,8 @@
       "id": "W01",
       "title": "Darbuotojų prieigos ir kompetencijos",
       "phase": "3",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Server role/capability scope and actual role168/access258 grant/revoke/stale/restart."
     },
     {
       "id": "W02",
@@ -558,13 +577,15 @@
       "id": "O01",
       "title": "Taksonomijos administravimas ir naujų paslaugų prašymai",
       "phase": "1",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "global258 and catalogue263 versioned changes, conditional parent/kind, requests/rejection/mapping/history/uncertain replay."
     },
     {
       "id": "O02",
       "title": "Teikėjo tinkamumas ir dokumentų patikra",
       "phase": "2",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Actual expiry182/qualification258 append-only assessments/private fields and separate profile vs procedure gates."
     },
     {
       "id": "O03",
@@ -577,30 +598,31 @@
       "id": "I01",
       "title": "Saugojimo migracijos projektas ir operacijų rodikliai",
       "phase": "1",
-      "state": "in-progress",
-      "evidence": "STORAGE.md: immutable legacy checkpoint, IDs/restart, bounded rows, indexed public read, synthetic size/timing; remaining global mutation/DO routing"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "STORAGE_AUDIT: measured local state size/latency, normalized rows/index/idempotency; actual isolated hosted source PITR/undo and exact read/restart. Named scope, not active-pair recovery."
     },
     {
       "id": "I02",
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
-      "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE244: source/target current media/mail and binding candidate accepted locally; explicit filesystem→SQL importer and signed Node→native Worker physical transfer/current private read/restart accepted. Hosted production lifecycle/PITR/fence/load remain unverified."
+      "state": "implemented-isolated-acceptance",
+      "evidence": "STORAGE_AUDIT: indexed current projections, signed source/target writer authority and public/customer/media/mail routing; native and isolated hosted old-writer rejection, source-only PITR guard."
     },
     {
       "id": "I03",
       "title": "Medijos saugojimas ir apkrova",
       "phase": "3",
-      "state": "in-progress",
-      "evidence": "MEDIA.md: SQL selection after actual scale and official pricing review, atomic batches/counter/hash, local failed attachment cleanup, legacy/restart and actual Miniflare 4000-booking/24-image diagnostic.",
-      "remaining": "R2 scaling migration/account activation and hosted load are not executed or claimed; bounded existing pilot remains."
+      "state": "implemented-isolated-acceptance",
+      "evidence": "MEDIA/STORAGE_AUDIT: bounded SQL media selected after size/cost review, native4000booking/24image diagnostic, exact private bytes/restart and public boundary. No R2 or large hosted population claim.",
+      "remaining": "Future optional R2/scaling/large-hosted-load is a separate factual/account decision; bounded SQL pilot implemented."
     },
     {
       "id": "I04",
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope.; current read-only operator/professional layouts and protected hosted storage lifecycle accepted in their named scopes.",
+      "remaining": "Chosen hosted product/UI/media/roles, real mail and provider pilot acceptance remain; sixteen new rendered-content images are not claimed as exact900px full frames."
     },
     {
       "id": "E01",
@@ -652,8 +674,8 @@
     }
   ],
   "next": [
-    "Current storage and launch-readiness audit; named remaining catalogue forms and booking error/expiry widths accepted locally",
-    "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
-    "Only after full completion, use existing conditional deployment authorization"
+    "Resolve real pilot provider and authorized booking/reminder recipient facts; pending async question remains",
+    "Factual retention/backups needed before activating destructive C02 execution; external phase4 activation dependencies separate",
+    "Chosen hosted product/canonical acceptance and full completion prerequisite before existing conditional production deploy authorization"
   ]
 }

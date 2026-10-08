@@ -1,3 +1,11 @@
+## 2026-10-08 — saugyklos atkūrimas ir pasirengimo auditas
+
+Aktualus runtime: 39b71b18bd535eeb8d231fe497d26ca254b108d3. Užbaigtas named storage / recovery paketas: regression-98 visi keturi rinkiniai 263/263 PASS per 76,473 s, 0 naujų / 1 papildytas / 0 pašalintų; exact source safety 2 failai /28 833 baitai PASS. Nepakeistas75aa39page309asset build. Source-only PITR atmetamas po bet kokios handoff istorijos; tikėtinas atmetimas nebeperkrauna veikiančio koordinatoriaus. Native frozen/sealed/aborted lifecycle testai ir actual hosted sealed-source instance / exact SQL patikros PASS.
+
+Pirmas atskiras hosted fixture d58c7fd patikrino tikrą source PITR / undo iki handoff, prepared target PITR kol source frozen, abiejų objektų restart ir 8 vienalaikius patvirtinimus → vienas booking / outbox. Current39b71b1 private QA versija65df717f-7bf7-4a5b-9975-bad678cd228d: 12 užklausų /4 lifecycle checks PASS, tie patys private namespaces ir išlikę ankstesni booking/roles/mail/history. Activated pair coordinated PITR ir hosted product/UI/SMTP pilotas nepriimti. Gyvos platformos source namespace / binding ir secret vardai unchanged; production deploy/migration/data-write0. Private isolated QA deployment atskiras nuo production.
+
+Visas platformos pavedimas ACTIVE / neužbaigtas; šio paketo užbaigimas nėra viso vietinio / gyvo pavedimo completion. Dabartiniai įrodymai ir konkretūs faktiniai/paleidimo likučiai: [CURRENT_READINESS](CURRENT_READINESS.md), [STORAGE_AUDIT](STORAGE_AUDIT.md). Ankstesniu async klausimu paprašyto realaus piloto teikėjo, testinio mail gavėjo ir retention tvarkos dar negauta. Conditional full-upgrade deploy leidimas galioja, prerequisite unsatisfied. Mokamos / išorinės phase4 operacijos neaktyvintos.
+
 ## 2026-10-08 — pakartotinio vizito alternatyvos ir priedo pašalinimas
 
 Aktualus runtime: 0f667fe26afb9feb1120db138db8156dd20448fb. Užbaigtas šis vietinis patikrų paketas: rebooking259-proof.json PASS, 23 konkretūs UI / storage palyginimai; regression-92 visi keturi rinkiniai 259/259 PASS per 41,046 s. Palyginti su 258: 1 naujas UI regresijos testas, 1 papildytas esamas backend testas, 0 pašalintų. Exact staged safety PASS: 4 source/test failai. Nepakeistas 75aa paketas: 39 puslapiai / 309 assets.

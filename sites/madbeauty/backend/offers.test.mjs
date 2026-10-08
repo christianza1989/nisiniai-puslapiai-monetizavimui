@@ -45,6 +45,10 @@ test('Versioned catalogue additions require eligibility, retain archived IDs and
  const group=f.api.taxonomy().nodes.find(n=>n.id==='kirpimai');change({operation:'update',nodeId:group.id,label:'Kirpimų grupė',rank:2});assert.equal(f.api.taxonomy().nodes.find(n=>n.id===id).path[1],'Kirpimų grupė');
  fails('DEPENDENCY_CONFLICT',()=>change({operation:'archive',nodeId:'kirpimai'}));change({operation:'archive',nodeId:id});change({operation:'aliases',nodeId:id,aliases:['Naujas sinonimas']});
  assert.equal(f.api.catalog({}).length,0);assert.equal(f.api.availability({providerServiceId:'variant-fixture',dayOffset:1,from:1020,to:1200}).slots.length,0);assert.ok(f.api.workspace(f.operator,{role:'operator'}).catalogueNodes.find(n=>n.id===id).archived);
+ const retained=f.api.workspace(f.owner,f.scope).offers.find(o=>o.id===offer.id),draft=f.api.saveOffer(f.owner,{...retained,description:'Private archived procedure edit'});assert.equal(draft.taxonomyServiceId,id);assert.equal(draft.state,'draft');assert.equal(draft.published.taxonomyServiceId,id);assert.equal(f.api.catalog().length,0);
+ fails('INVALID_INPUT',()=>f.api.submitOffer(f.owner,{id:draft.id,version:draft.version}));
+ fails('INVALID_INPUT',()=>f.api.saveOffer(f.owner,{...f.selected[1],taxonomyServiceId:id,label:'Different archived procedure',variants:[]}));
+ fails('INVALID_INPUT',()=>f.api.selectProcedures(f.owner,{organizationId:f.org.id,version:2,idempotencyKey:'archived-new-selection',procedureIds:[id]}));
  change({operation:'restore',nodeId:id});assert.equal(f.api.catalog({}).length,1);assert.equal(f.api.taxonomy().nodes.find(n=>n.id===id).aliases[0],'Naujas sinonimas');
  change({operation:'add',kind:'category',nodeId:'izoliuota-pletros-kategorija',label:'Plėtros testas',aliases:[]});assert.equal(f.api.taxonomy().nodes.find(n=>n.id==='izoliuota-pletros-kategorija').enabled,false);
  }finally{f.store.close();}});

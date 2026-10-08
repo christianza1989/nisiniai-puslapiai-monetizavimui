@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {offerEligibilityNotice,offerProcedureOptions,qualificationDisplayState} from './public/offer-eligibility-ui.mjs';
+import {offerEligibilityNotice,offerProcedureLabel,offerProcedureOptions,qualificationDisplayState} from './public/offer-eligibility-ui.mjs';
 const offer={organizationId:'org',locationId:'place',taxonomyServiceId:'t'},nodes=[{id:'t',enabled:true,reviewRequired:true,kind:'treatment',path:['Brows','Permanent']}],now='2026-10-08T10:00:00Z';
 test('Eligibility notice uses the current clock and the same organization, location and procedure; exact expiry cannot stay valid',()=>{
  const q={...offer,taxonomyNodeId:'t',state:'approved',expiresAt:'2026-10-08T10:00:00.001Z'};
@@ -18,4 +18,9 @@ test('Editing an archived procedure keeps the original selected ID instead of si
  assert.equal(choices[0][0],'t');assert.match(choices[0][1],/neaktyvi kataloge/);assert.equal(choices[1][0],'active');assert.equal(choices.filter(([id])=>id==='t').length,1);
  assert.match(offerEligibilityNotice([active,{...nodes[0],archived:true}],[],offer,now),/kataloge neaktyvi/);
  assert.deepEqual(offerProcedureOptions(nodes,offer),[['t','Brows → Permanent']]);
+ const retained=[{...nodes[0],archived:true},{...active,id:'retained-only',path:['Nails','Archived option']}];
+ assert.deepEqual(offerProcedureOptions([active],offer,retained),[['t','Brows → Permanent · neaktyvi kataloge'],['active','Nails → Manicure']]);
+ assert.equal(offerProcedureLabel([active],offer,retained),'Brows → Permanent');
+ assert.equal(offerProcedureLabel([{...nodes[0],path:['Current','Name']}],offer,retained),'Current → Name');
+ assert.equal(offerProcedureLabel([],offer),'Ankstesnė procedūra');
 });

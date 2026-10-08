@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
+  "runtimeSourceCheckpoint": "970913fca9fc77d6b3d6e05bf0d9eee21053e3ab",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -319,6 +319,14 @@
       "source": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
       "newTests": 0,
       "remaining": "Other applicable UI, hosted/factual launch gates"
+    },
+    {
+      "name": "native-qualification-context-and-team-access-errors-stale-restart",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "970913fca9fc77d6b3d6e05bf0d9eee21053e3ab",
+      "newTests": 0,
+      "remaining": "Global taxonomy, other applicable UI, hosted/factual launch gates"
     }
   ],
   "tasks": [
@@ -590,7 +598,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: access/global conflicts, other complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named branch/account/card/privacy/waitlist scopes accepted",
+    "Remaining applicable I04: global taxonomy/favorite/preference conflicts, complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named branch/account/card/privacy/waitlist/qualification/access scopes accepted",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

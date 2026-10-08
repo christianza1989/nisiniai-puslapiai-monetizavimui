@@ -171,3 +171,9 @@ Sustabdytas tik own8841 procesas. Ieškoti Enter su Balayage/Švenčionėliai pa
 Combobox input filtruoja jau įkeltą vietinę taksonomijos/city projekciją sinchroniškai: atskiras network/loading/save/version-conflict čia NA, nėra tokios operacijos. Visam paieškos view network/loading ir kalendoriaus stale/conflict taikomi, jų įrodymai atskiri.
 
 Paieškos gidai nebeima pirmų dviejų straipsnių konkrečiai procedūrai. Imami tik bendros public projekcijos gidai su admitted verified commerce target: tas pats procedure arba parent/child, atitinkantis city; exact/city ryšys turi pirmumą. Testas atmeta svetimą sritį, miestą, unknown ir unsigned target; all gali rodyti bendrus paskelbtus gidus. Actual Balayage puslapis po reload neturi nagų guide-card nuorodų. Immutable75aa bytes/datos nekeičiami. Preview deployed:false sąmoningai neturi aktyvių commerce target, todėl šis negative browser įrodymas nėra gyvo CTA publikavimo priėmimas.
+
+##166 · indexed identity creation (2026-10-08)
+
+Runtime7747a05. identity-scoped-focused.log8PASS, regression-38.log166/166pairedPASS. Naujos/importuotos patvirtintos paskyros nebereikalauja global history read/write; Node ir actual Workers5000foreign-row diagnostika draudžia global state_rows scan po counter inicializacijos. Unknown account ir savavališkas writeClient insertion atmetami; repeat nekartoja identity/version. Forced SQL failure po upsert realiai atšaukia account/challenge/session/version, tas pats normalus OTP po recovery užbaigia login. Worker restart išlaiko3naujas/importuotas/recovered identity eilutes, foreign snapshot/reminder, exact bytes ir esamus scoped booking/provider/customer operations. Tai izoliuotas fixture, kodai neeksportuojami ir SMTP nesiunčiamas.
+
+build-scoped-identity166.log39pages302assets exact75aa, candidate-built-not-deployed. Neaktyvuotas fizinis tenant routing, production migration ar factual pilot; full UI matrica tęsiama.

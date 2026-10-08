@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "4c2ea28",
+  "runtimeSourceCheckpoint": "7747a056dcf695c5f59d1a60682f33f3a5218e9c",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -118,6 +118,12 @@
       "tests": 165,
       "state": "accepted-isolated-path",
       "remaining": "Cold-start failure diagnosis, other full UI paths and physical organization routing; factual activation"
+    },
+    {
+      "name": "indexed-new-and-imported-verified-client-identities",
+      "tests": 166,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing, organization creation/global operator paths, full actual UI matrix and activation facts"
     }
   ],
   "tasks": [
@@ -322,7 +328,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md: indexed booking/provider/access/client-control patches, per-organization alarm reconciliation, scoped private workspaces/export/rebooking and same-transaction preference jobs; Node/actual Workers 5000 foreign-history/restart. Physical routing and global creation/operator paths remain."
+      "evidence": "STORAGE.md: indexed booking/provider/access/client-control and new verified identity patches, per-organization alarms and scoped workspaces; Node/actual Workers 5000 foreign-history, failure rollback and restart. Physical routing, organization creation and global operator paths remain."
     },
     {
       "id": "I03",

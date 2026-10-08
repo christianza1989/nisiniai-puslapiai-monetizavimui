@@ -18,6 +18,15 @@ function fixture(){const store=openStore({filename:':memory:',secret:'offer-fixt
 }
 const fails=(code,fn)=>assert.throws(fn,e=>e.code===code);
 
+test('Menu group lost replies replay one version and event; current permissions and changed intent still reject',()=>{const f=fixture();try{
+ const input={organizationId:f.org.id,label:'Atkuriama grupė',rank:3,idempotencyKey:'menu-lost-reply'},first=f.api.saveMenuGroup(f.owner,input);
+ assert.deepEqual(f.api.saveMenuGroup(f.owner,input),first);assert.equal(f.api.workspace(f.owner,f.scope).menuGroups.length,1);assert.equal(f.store.readCollections(['events']).events.filter(e=>e.type==='menu-group-saved').length,1);
+ fails('IDEMPOTENCY_CONFLICT',()=>f.api.saveMenuGroup(f.owner,{...input,label:'Kitas veiksmas'}));fails('FORBIDDEN',()=>f.api.saveMenuGroup(f.stranger,input));
+ const edit={...input,id:first.id,version:first.version,label:'Atnaujinta grupė',idempotencyKey:'menu-edit-lost-reply'},second=f.api.saveMenuGroup(f.owner,edit);assert.equal(second.version,2);assert.deepEqual(f.api.saveMenuGroup(f.owner,edit),second);
+ fails('VERSION_CONFLICT',()=>f.api.saveMenuGroup(f.owner,{...edit,idempotencyKey:'new-stale-edit'}));assert.equal(f.store.readCollections(['events']).events.filter(e=>e.type==='menu-group-saved').length,2);
+ const grant=f.api.grantMembership(f.owner,{organizationId:f.org.id,email:f.client.email,role:'manager',version:0}),memberInput={...input,label:'Komandos grupė',idempotencyKey:'member-menu-replay'};f.api.saveMenuGroup(f.client,memberInput);f.api.revokeMembership(f.owner,{id:grant.id,version:grant.version});fails('FORBIDDEN',()=>f.api.saveMenuGroup(f.client,memberInput));
+ }finally{f.store.close();}});
+
 test('Public catalogue/profile/session reads avoid private history; search reads each matching organization calendar once',()=>{const f=fixture();const fullRead=f.store.read;try{
  f.publish(f.make());f.approveOrg();const input={providerServiceId:'variant-fixture',practitionerId:f.p1.id,dayOffset:1,from:1020,to:1200},slot=f.api.availability(input).slots[0],d=fullRead();
  for(let i=0;i<2600;i++)d.bookings.push({id:'unrelated-history-'+i,organizationId:'unrelated-org',status:'completed',serviceSnapshot:{description:'x'.repeat(500)}});

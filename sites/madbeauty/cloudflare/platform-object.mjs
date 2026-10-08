@@ -10,6 +10,7 @@ import {createOrganizationCommit} from '../backend/organization-authority.mjs';
 import {createOrganizationDirectory} from '../backend/organization-directory.mjs';
 import {nextReminderAt,reminderValid} from '../backend/notifications.mjs';
 import {nextWaitlistAt,waitlistMailValid} from '../backend/waitlist.mjs';
+import {transactionalMail} from '../backend/transactional-mail.mjs';
 import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger-transport.mjs';
 
 // One bounded Madbeauty pilot coordination domain. Other sites use separate namespaces.
@@ -67,7 +68,7 @@ export class MadbeautyPlatform extends DurableObject{
  }
  async schedule(){
   const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox AS mail WHERE site_id=? AND state IN ('pending','sending') AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted')").get(this.store.siteId);
-  const directory=this.directory(),due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity,directory.nextControlAt()??Infinity,directory.nextClientAdmissionAt()??Infinity);
+  const directory=this.directory(),due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity,directory.nextControlAt()??Infinity,directory.nextClientAdmissionAt()??Infinity,await directory.nextOrganizationMailAt()??Infinity);
   await this.ctx.storage.setAlarm(Math.max(Date.now()+1000,Number.isFinite(due)?due:Date.now()+86400000));
  }
  async alarm(){const directory=this.directory();await directory.flushClientAdmissions();await directory.flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();await this.schedule();}
@@ -99,10 +100,7 @@ export class MadbeautyPlatform extends DurableObject{
      if(!challenge||challenge.consumed||challenge.expires_at<=now){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}' WHERE id=?").run(row.id);continue;}
     }
     db.prepare("UPDATE mail_outbox SET state='sending',attempts=attempts+1,lease_until=? WHERE id=?").run(now+60000,row.id);
-    const subject=row.type==='login-code'?'Madbeauty prisijungimo kodas':row.type==='reminder'?'Madbeauty priminimas apie vizitą':row.type==='waitlist-offer'?'Madbeauty laiko pasiūlymas':'Madbeauty vizito atnaujinimas';
-    const starts=payload.startAt?new Intl.DateTimeFormat('lt-LT',{timeZone:'Europe/Vilnius',dateStyle:'medium',timeStyle:'short'}).format(new Date(payload.startAt)):'';
-    const text=row.type==='login-code'?`Jūsų prisijungimo kodas: ${payload.code}\nGalioja iki ${payload.expiresAt}. Jei prisijungimo neprašėte, ignoruokite šį laišką.`:row.type==='waitlist-offer'?`Atsirado jūsų pageidavimą atitinkantis laikas: ${starts}.\nTai pasiūlymas, ne rezervacija. Galioja iki ${new Intl.DateTimeFormat('lt-LT',{timeZone:'Europe/Vilnius',timeStyle:'short'}).format(new Date(payload.expiresAt))}.\nPasirinkite ir patvirtinkite paskyroje: https://madbeauty.lt/paskyra/vizitai#būsena=pageidavimai\nMB Pinet · info@pinet.lt`:`Vizitas ${payload.bookingId}\nBūsena: ${payload.status}\nPradžia: ${starts}\nIšsami informacija: https://madbeauty.lt/paskyra/vizitai\nMB Pinet · info@pinet.lt`;
-    const mail={to:row.recipient,subject,text,id:(row.challenge_id||row.id).replaceAll('_','-')};
+    const mail=transactionalMail(row,payload);
     let accepted=false;
     try{
      if(this.env.MAIL_TRANSPORT){const r=await this.env.MAIL_TRANSPORT.fetch('https://transactional.invalid/',{method:'POST',body:JSON.stringify(mail)});if(!r.ok)throw Error('Transport failed');}
@@ -115,6 +113,7 @@ export class MadbeautyPlatform extends DurableObject{
      db.prepare('UPDATE mail_outbox SET state=?,next_attempt_at=?,lease_until=0 WHERE id=?').run(failed?'failed':'pending',now+Math.min(300000,15000*2**row.attempts),row.id);
     }
    }
+   await this.directory().drainOrganizationMail(async claim=>{const mail=transactionalMail(claim,claim.payload);if(this.env.MAIL_TRANSPORT){const response=await this.env.MAIL_TRANSPORT.fetch('https://transactional.invalid/',{method:'POST',body:JSON.stringify(mail)});if(!response.ok)throw Error('Transport failed');}else await sendHostingerMail(this.env,mail);});
   }finally{await this.schedule();}
  }
 }

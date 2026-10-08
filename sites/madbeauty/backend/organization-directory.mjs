@@ -7,6 +7,7 @@ import {groupSearchRows} from './search-results.mjs';
 import {createDirectoryCacheIssuer,createDirectoryCacheReceiver,createDirectoryIdentityEffects} from './organization-directory-cache.mjs';
 import {createCustomerControlQueue,createCustomerControlReceiver} from './organization-customer-controls.mjs';
 import {createClientAdmissionQueue,createClientAdmissionReceipts,clientAdmissionInput} from './organization-client-admission.mjs';
+import {createOrganizationMailbox,createOrganizationMailReceipts,validateOrganizationMailClaim} from './organization-mail.mjs';
 
 const json=JSON.stringify,clone=v=>JSON.parse(json(v)),maxTargets=32,maxResultBytes=1024*1024;
 const unavailable=()=>reject('ORGANIZATION_UNAVAILABLE','Organizacijos duomenys laikinai nepasiekiami. Bandykite dar kartą.',503);
@@ -19,14 +20,20 @@ const byId={profile:['organizations'],option:['services'],saveOffer:['offers'],s
 const targetMethods=new Set([...direct,...Object.keys(byId),'catalog','search','searchResults','availability','visitAvailability','hold','holdVisit','confirm','confirmVisit','manualVisit','message','review','report','saveMenuGroup','saveLocation','submitRevision','edit','createInquiry','createWaitlist','session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference']);
 // Only the directory selects a second identity from its central account registry.
 const identityMethods=new Set(['createClient','grantMembership']);
+const systemMethods=new Set(['organizationMailCandidates','organizationMailDueAt','ackOrganizationMail']);
 const readMethods=new Set([...publicRpcMethods,'session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference','workspace','rebooking','organizationReport','reportCsv','exportOfferCsv']);
 targetMethods.add('workspace');
 targetMethods.add('metrics');readMethods.add('metrics');
+for(const method of [...systemMethods,'claimOrganizationMail'])targetMethods.add(method);
+// Candidate refresh runs deterministic alarm reconciliation; it is repeatable
+// without storing a transport nonce for every idle background poll.
+for(const method of ['organizationMailCandidates','organizationMailDueAt'])readMethods.add(method);
 targetMethods.add('applyCustomerControls');
 targetMethods.add('identityActionScope');readMethods.add('identityActionScope');
 const fields=['bookings','messages','reviews','inquiries','waitlist','reports'];
 const exportFields=[...fields,'organizationCards'];
 function reference(method,input){
+ if(['claimOrganizationMail','ackOrganizationMail'].includes(method))return {tables:['mail_outbox'],id:input.id};
  if(method==='identityActionScope')return {organizationId:input.organizationId};
  if(direct.has(method))return {organizationId:input.organizationId};
  if(byId[method])return {tables:byId[method],id:input.id};
@@ -60,7 +67,7 @@ function resultReferences(store,result,organizationId){
 // checks. Targets have no HTTP dispatcher, session cookies or auth challenges.
 export function createOrganizationCommand(store,{targetName}){
  indexSchema(store);
- const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store),admissions=createClientAdmissionReceipts(store);
+ const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store),admissions=createClientAdmissionReceipts(store),mailbox=createOrganizationMailbox(store);
  store.db.exec('CREATE TABLE IF NOT EXISTS organization_directory_commands(site_id TEXT NOT NULL,nonce TEXT NOT NULL,expires_at INTEGER NOT NULL,request_hash TEXT NOT NULL,response TEXT NOT NULL,PRIMARY KEY(site_id,nonce)); CREATE INDEX IF NOT EXISTS directory_commands_expiry ON organization_directory_commands(site_id,expires_at);');
  function execute(packet){return store.transaction(()=>{
   const body=verify(store,'directory-command',packet),a=store.db.prepare('SELECT * FROM organization_target_authority WHERE site_id=?').get(store.siteId);
@@ -68,7 +75,8 @@ export function createOrganizationCommand(store,{targetName}){
   if(!validId(body.nonce)||!Number.isSafeInteger(body.expiresAt)||body.expiresAt<=store.clock()||body.expiresAt>store.clock()+30000||Buffer.byteLength(json(packet))>maxResultBytes+32768||Buffer.byteLength(json(body.input||{}))>32768)reject('INVALID_INPUT','Organizacijos užklausa paseno arba yra per didelė.');
   if(!targetMethods.has(body.method))reject('GLOBAL_IDENTITY_REQUIRED','Šiam veiksmui reikia centrinės paskyros patvirtinimo.',503);
   const actor=body.actor;if(actor&&(Object.keys(actor).some(k=>!['id','email','name','operator','verifiedAt'].includes(k))||!validId(actor.id)||typeof actor.email!=='string'||typeof actor.name!=='string'||typeof actor.operator!=='boolean'))reject('FORBIDDEN','Netinkama paskyros tapatybė.',403);
-  if(!readMethods.has(body.method)&&!actor)reject('UNAUTHENTICATED','Prisijunkite.',401);
+  if(!readMethods.has(body.method)&&!actor&&!systemMethods.has(body.method))reject('UNAUTHENTICATED','Prisijunkite.',401);
+  if(systemMethods.has(body.method)&&actor)reject('FORBIDDEN','Netinkama vidinės užduoties tapatybė.',403);
   const ref=reference(body.method,body.input||{}),organizationId=a.organization_id;
   if(ref&&owner(store,ref)!==organizationId)reject('FORBIDDEN','Įrašas nepriklauso šiai organizacijai.',403);
   if(body.input?.organizationId&&body.input.organizationId!==organizationId||body.input?.scope?.role==='professional'&&body.input.scope.organizationId!==organizationId)reject('FORBIDDEN','Kita organizacija.',403);
@@ -88,7 +96,11 @@ export function createOrganizationCommand(store,{targetName}){
   cache.apply(body.cache,actor,a.epoch,{method:body.method,input:body.input});
   const identityBefore=actor&&['confirm','confirmVisit'].includes(body.method)?store.recordById('clients',actor.id):null;
   const api=createPlatform(store);let result;
-  if(body.method==='identityActionScope')result={organizationId,operation:body.input.operation,clientCapacity:identityCapacity};
+  if(body.method==='organizationMailCandidates'){api.runAutomation();result=mailbox.candidates();}
+  else if(body.method==='organizationMailDueAt')result=mailbox.nextAt();
+  else if(body.method==='claimOrganizationMail')result=mailbox.claim(actor,body.input);
+  else if(body.method==='ackOrganizationMail')result=mailbox.acknowledge(body.input);
+  else if(body.method==='identityActionScope')result={organizationId,operation:body.input.operation,clientCapacity:identityCapacity};
   else if(body.method==='applyCustomerControls')result=controls.apply(actor,body.input?.revision,()=>api.runAutomation());
   else if(body.method==='resolveReference'){const input=body.input;if(!validId(input?.id)||!Array.isArray(input.tables)||input.tables.length>3||input.tables.some(t=>!entityTables.has(t)&&t!=='mail_outbox'))reject('INVALID_INPUT','Netinkama įrašo tapatybė.');const collections=input.tables.filter(t=>owner(store,{tables:[t],id:input.id})===organizationId);result={organizationId:collections.length?organizationId:null,collections};}
   else if(body.method==='publicProfiles')result=store.organizationRecords('organizations',organizationId).filter(o=>o.approved).map(o=>api.profile(o.id));
@@ -124,7 +136,7 @@ export function createOrganizationCommand(store,{targetName}){
 }
 
 export function createOrganizationDirectory(store,{getTarget}={}){
- const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store),admissions=createClientAdmissionQueue(store);
+ const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store),admissions=createClientAdmissionQueue(store),mailReceipts=createOrganizationMailReceipts(store);
  const api=createPlatform(store,{deferOrganizationPreferences:id=>!!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND organization_id=? AND state='sealed'").get(siteId,id)});
  const cache=createDirectoryCacheIssuer(store),effects=createDirectoryIdentityEffects(store);
  db.exec('CREATE TABLE IF NOT EXISTS organization_directory_refs(site_id TEXT NOT NULL,collection TEXT NOT NULL,entity_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,PRIMARY KEY(site_id,collection,entity_id));');
@@ -174,6 +186,43 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   }catch(error){return store.transaction(()=>admissions.failed(row,error));}
  }
  async function flushClientAdmissions(){const rows=transfers();for(const row of admissions.pending())await deliverClientAdmission(row,rows);}
+ async function acknowledgeMail(row,rows){
+  try{const target=rows.find(t=>t.organization_id===row.organization_id&&t.epoch===row.epoch);if(!target)unavailable();const result=await targetCall(target,'ackOrganizationMail',null,{id:row.mail_id,leaseToken:row.lease_token,messageHash:row.message_hash,outcome:row.outcome});if(result.id!==row.mail_id||row.outcome==='accepted'&&result.state!=='accepted'||row.outcome==='expired'&&result.state!=='expired'||row.outcome==='rejected'&&!['pending','failed'].includes(result.state))unavailable();store.transaction(()=>mailReceipts.acknowledged(row));}
+  catch{store.transaction(()=>mailReceipts.retry(row));}
+ }
+ async function drainOrganizationMail(send){
+  const rows=transfers();for(const row of mailReceipts.pending())await acknowledgeMail(row,rows);
+  let remaining=10,firstError;
+  for(const target of mailReceipts.order(rows.filter(t=>t.state==='sealed'))){
+   if(!remaining)break;
+   try{
+   // Rotate even when this namespace is unavailable. One failed salon must not
+   // starve another, and ten admissions bound external I/O for one alarm cycle.
+   store.transaction(()=>mailReceipts.advance(target));
+   const candidates=await targetCall(target,'organizationMailCandidates',null,{});if(!Array.isArray(candidates)||candidates.length>10)unavailable();
+   for(const candidate of candidates){
+    if(!remaining)break;remaining--;
+    if(!validId(candidate.id)||!validId(candidate.accountId))unavailable();const previous=mailReceipts.get(target.organization_id,candidate.id);
+    if(previous?.outcome==='accepted'){await acknowledgeMail(previous,rows);continue;}
+    if(!previous&&!mailReceipts.capacity())reject('CAPACITY','Pranešimų pristatymo žurnalo talpa pasiekta.',503);
+    const claim=await targetCall(target,'claimOrganizationMail',{id:candidate.accountId},{id:candidate.id});if(!claim)continue;
+    validateOrganizationMailClaim(store,target,candidate,claim);
+    const receipt=store.transaction(()=>mailReceipts.reserve(target,claim));let accepted=false,outcome;
+    const account=actor({id:claim.accountId}),pref=store.clientRecords('preferences',claim.accountId)[0];
+    if(account.email!==claim.recipient||['reminder','waitlist-offer'].includes(claim.type)&&(pref?.service===false||claim.type==='reminder'&&(pref?.reminderLeadMin??1440)!==claim.payload.leadMin))outcome='expired';
+    else try{await send(claim);accepted=true;outcome='accepted';}catch{outcome='rejected';}
+    // Receipt failure after external acceptance retains an uncertain lease.
+    // A later stable message ID replay has the documented at-least-once boundary.
+    const settled=store.transaction(()=>mailReceipts.settle(receipt,outcome));
+    if(accepted&&settled?.outcome!=='accepted')unavailable();await acknowledgeMail(settled,rows);
+   }
+   }catch(error){firstError??=error;}
+  }
+  if(firstError)throw firstError;
+ }
+ async function nextOrganizationMailAt(){
+  let due=mailReceipts.nextAt()??Infinity;for(const target of transfers().filter(t=>t.state==='sealed'))try{const value=await targetCall(target,'organizationMailDueAt',null,{});if(value!==null&&(!Number.isSafeInteger(value)||value<0))unavailable();due=Math.min(due,value??Infinity);}catch{due=Math.min(due,store.clock()+30000);}return Number.isFinite(due)?due:null;
+ }
  async function dispatch(method,user,input={}){
   const rows=transfers();if(!rows.length)return method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);
   const excluded=new Set(rows.map(t=>t.organization_id));
@@ -252,5 +301,5 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   // Central identity/preferences/export remain on their existing guarded writer.
   return invokePlatform(api,method,actor(user),input);
  }
- return {dispatch,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt};
+ return {dispatch,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt,drainOrganizationMail,nextOrganizationMailAt};
 }

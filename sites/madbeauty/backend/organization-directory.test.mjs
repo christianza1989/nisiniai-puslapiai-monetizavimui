@@ -277,3 +277,71 @@ test('Operator metrics count current organization rows once and catalogue conver
   const final=await f.directory.dispatch('metrics',f.users.owner,{}),central=f.api.metrics({...f.users.owner,operator:true},{excludeOrganizationIds:[f.a.org.id]}),target=createPlatform(f.target).metrics({...f.users.owner,operator:true});assert.equal(final.events,central.events+target.events);assert.equal(final.realVisits,2);
  }finally{f.close();}
 });
+
+
+function pendingMailFixture(){const f=fixture();f.target.db.prepare("UPDATE mail_outbox SET state='pending' WHERE state='captured' AND challenge_id IS NULL").run();const mail=f.target.mail;f.target.mail=input=>{const id=mail(input);f.target.db.prepare("UPDATE mail_outbox SET state='pending' WHERE id=?").run(id);return id;};return f;}
+
+test('Delegated organization mail retains one accepted central receipt after a committed acknowledgement reply is lost',async()=>{
+ const f=pendingMailFixture();try{
+  let timer=now,lost=true;f.source.clock=f.target.clock=()=>timer;const sent=[];
+  const directory=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:packet=>{const result=f.command.execute(packet);if(packet.method==='ackOrganizationMail'&&lost){lost=false;throw Error('Committed mail acknowledgement reply lost');}return result;}})});
+  await directory.drainOrganizationMail(async claim=>sent.push(claim.id));assert.equal(sent.length,1);const mailId=sent[0];assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE id=?').get(mailId).state,'accepted');assert.equal(f.source.db.prepare('SELECT state FROM mail_outbox WHERE id=?').get(mailId).state,'captured');
+  assert.equal(f.source.db.prepare('SELECT phase FROM directory_organization_mail WHERE mail_id=?').get(mailId).phase,'ack-pending');timer+=31000;await directory.drainOrganizationMail(async claim=>sent.push(claim.id));assert.equal(sent.length,1);assert.equal(f.source.db.prepare('SELECT phase FROM directory_organization_mail WHERE mail_id=?').get(mailId).phase,'complete');assert.equal(f.target.db.prepare('SELECT attempts FROM mail_outbox WHERE id=?').get(mailId).attempts,1);
+  assert.equal((await f.request('client','organizationMailCandidates')).status,404);assert.equal((await f.request('owner','claimOrganizationMail',{id:mailId})).status,404);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM sessions').get().n,0);
+ }finally{f.close();}
+});
+
+test('Mail admission checks source preferences again after target claim and suppresses an opted-out reminder while confirmations remain separate',async()=>{
+ const f=pendingMailFixture();try{
+  let timer=Date.parse(f.first.startAt)-1440*60000+1000,changed=false;f.source.clock=f.target.clock=()=>timer;
+  const outage=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:()=>{throw Error('Control delivery outage');}})}),sent=[];
+  const directory=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:async packet=>{const result=f.command.execute(packet);if(packet.method==='claimOrganizationMail'&&result.result?.type==='reminder'&&!changed){changed=true;const preference=await outage.dispatch('preferences',f.users.client,{service:false,marketing:false,reminderLeadMin:0});assert.equal(preference.synchronization,'pending');}return result;}})});
+  await directory.drainOrganizationMail(async claim=>sent.push(claim.type));assert.deepEqual(sent,['confirmation']);assert.equal(changed,true);assert.equal(f.source.clientRecords('preferences',f.users.client.id)[0].service,false);
+  const reminder=f.target.db.prepare("SELECT id,state FROM mail_outbox WHERE type='reminder'").get();assert.equal(reminder.state,'expired');assert.equal(f.source.db.prepare('SELECT outcome,phase FROM directory_organization_mail WHERE mail_id=?').get(reminder.id).outcome,'expired');assert.equal(f.source.db.prepare('SELECT outcome,phase FROM directory_organization_mail WHERE mail_id=?').get(reminder.id).phase,'complete');
+ }finally{f.close();}
+});
+
+test('Rejected organization transport backs off and uses the same stable mail identity on the next successful attempt',async()=>{
+ const f=pendingMailFixture();try{
+  let timer=now,calls=0;f.source.clock=f.target.clock=()=>timer;const ids=[];const send=async claim=>{ids.push(claim.id);if(++calls===1)throw Error('Isolated mail relay unavailable');};
+  await f.directory.drainOrganizationMail(send);const id=ids[0],row=f.target.db.prepare('SELECT state,next_attempt_at,attempts FROM mail_outbox WHERE id=?').get(id);assert.equal(row.state,'pending');assert.equal(row.attempts,1);assert.equal(row.next_attempt_at,timer+15000);await f.directory.drainOrganizationMail(send);assert.equal(calls,1);
+  timer+=15001;await f.directory.drainOrganizationMail(send);assert.deepEqual(ids,[id,id]);assert.equal(f.target.db.prepare('SELECT state,attempts FROM mail_outbox WHERE id=?').get(id).state,'accepted');assert.equal(f.target.db.prepare('SELECT state,attempts FROM mail_outbox WHERE id=?').get(id).attempts,2);assert.equal(f.source.db.prepare('SELECT phase FROM directory_organization_mail WHERE mail_id=?').get(id).phase,'complete');
+  assert.equal(Object.keys(f.source.db.prepare('SELECT * FROM directory_organization_mail WHERE mail_id=?').get(id)).includes('recipient'),false);assert.equal(Object.keys(f.source.db.prepare('SELECT * FROM directory_organization_mail WHERE mail_id=?').get(id)).includes('payload'),false);
+ }finally{f.close();}
+});
+
+test('Mail claim/cache/lease roll back on nonce failure, wrong acknowledgement binding is denied, and receipt failure after acceptance remains explicitly uncertain',async()=>{
+ const f=pendingMailFixture();try{
+  let timer=now;f.source.clock=f.target.clock=()=>timer;const mailId=f.target.db.prepare('SELECT id FROM mail_outbox WHERE booking_id=?').get(f.first.id).id;
+  const prepare=f.target.db.prepare.bind(f.target.db);f.target.db.prepare=q=>{const statement=prepare(q);return q.startsWith('INSERT INTO organization_directory_commands')?{...statement,run:(...args)=>{statement.run(...args);throw Error('Mail nonce commit failure');}}:statement;};let calls=0;await assert.rejects(f.directory.drainOrganizationMail(async()=>calls++),e=>e.code==='SERVER_ERROR');f.target.db.prepare=prepare;assert.equal(calls,0);assert.equal(f.target.db.prepare('SELECT state,attempts FROM mail_outbox WHERE id=?').get(mailId).state,'pending');assert.equal(f.target.db.prepare('SELECT attempts FROM mail_outbox WHERE id=?').get(mailId).attempts,0);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM organization_mail_claims').get().n,0);
+  const sourcePrepare=f.source.db.prepare.bind(f.source.db);let receiptFailure=true;f.source.db.prepare=q=>{const statement=sourcePrepare(q);return q.startsWith('UPDATE directory_organization_mail SET phase=')&&q.includes('ack-pending')&&receiptFailure?{...statement,run:(...args)=>{receiptFailure=false;statement.run(...args);throw Error('Accepted receipt post-write failure');}}:statement;};const transportIds=new Set();const send=async claim=>{calls++;transportIds.add(claim.id);};await assert.rejects(f.directory.drainOrganizationMail(send),/post-write failure/);f.source.db.prepare=sourcePrepare;assert.equal(calls,1);assert.equal(f.source.db.prepare('SELECT phase FROM directory_organization_mail WHERE mail_id=?').get(mailId).phase,'reserved');assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE id=?').get(mailId).state,'sending');await f.directory.drainOrganizationMail(send);assert.equal(calls,1);
+  const claim=f.target.db.prepare('SELECT lease_token,message_hash FROM organization_mail_claims WHERE mail_id=?').get(mailId),cache=createDirectoryCacheIssuer(f.source).issue(null),body={schemaVersion:1,siteId:f.source.siteId,organizationId:f.a.org.id,epoch:f.frozen.epoch,targetName:f.frozen.targetName,nonce:'wrong-mail-lease',expiresAt:timer+20000,method:'ackOrganizationMail',actor:null,input:{id:mailId,leaseToken:'wrong-lease',messageHash:claim.message_hash,outcome:'accepted'},cache};assert.equal(f.command.execute({...body,proof:organizationTransferProof(f.source,'directory-command',body)}).error.code,'MAIL_LEASE_CONFLICT');assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE id=?').get(mailId).state,'sending');
+  timer+=60001;await f.directory.drainOrganizationMail(send);assert.equal(calls,2);assert.equal(transportIds.size,1);assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE id=?').get(mailId).state,'accepted');
+ }finally{f.close();}
+});
+
+function secondMailTarget(f){
+ const target=openStore({filename:':memory:',secret,clock:()=>now}),handoff=createOrganizationHandoff(f.source),frozen=handoff.freeze({operatorAccountId:f.users.owner.id,organizationId:f.b.org.id,epoch:0,requestKey:'second-mail-fixture'}),control={operatorAccountId:f.users.owner.id,organizationId:f.b.org.id,epoch:frozen.epoch,handoffId:frozen.handoffId},stage=createOrganizationStaging(target,{targetName:frozen.targetName});
+ let offset=0;do{const page=handoff.page({...control,offset});stage.accept(page);offset=page.nextOffset;if(page.done)break;}while(true);
+ const commit=createOrganizationCommit(f.source),authority=createOrganizationAuthority(target,{targetName:frozen.targetName}),receipt=authority.prepare(commit.context(control));authority.activate(commit.seal({...control,targetReceipt:receipt}));const command=createOrganizationCommand(target,{targetName:frozen.targetName});target.db.prepare("UPDATE mail_outbox SET state='pending' WHERE state='captured' AND challenge_id IS NULL").run();return {target,command,frozen};
+}
+
+test('One unavailable organization does not prevent another accepted send, and the pump still reports the original recovery error',async()=>{
+ const f=pendingMailFixture(),b=secondMailTarget(f);try{
+  const directory=createOrganizationDirectory(f.source,{getTarget:name=>name===f.frozen.targetName?{executeDirectoryCommand:()=>{throw Error('One isolated namespace unavailable');}}:{executeDirectoryCommand:packet=>b.command.execute(packet)}}),sent=[];
+  await assert.rejects(directory.drainOrganizationMail(async claim=>sent.push(claim.organizationId)),e=>e.code==='ORGANIZATION_UNAVAILABLE');assert.deepEqual(sent,[f.b.org.id]);assert.equal(b.target.db.prepare('SELECT state FROM mail_outbox WHERE booking_id=?').get(f.other.id).state,'accepted');assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE booking_id=?').get(f.first.id).state,'pending');
+  await assert.rejects(directory.drainOrganizationMail(async claim=>sent.push(claim.organizationId)),e=>e.code==='ORGANIZATION_UNAVAILABLE');assert.equal(sent.length,1);
+ }finally{b.target.close();f.close();}
+});
+
+test('Ten total mail admissions per cycle rotate the durable organization cursor; unsupported and OTP rows never enter the delegated queue',async()=>{
+ const f=pendingMailFixture(),b=secondMailTarget(f);try{
+  const template=f.target.db.prepare('SELECT * FROM mail_outbox WHERE booking_id=?').get(f.first.id),insert=f.target.db.prepare('INSERT INTO mail_outbox(id,site_id,account_id,organization_id,booking_id,challenge_id,recipient,type,payload,state,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)');
+  for(let n=0;n<11;n++)insert.run('bulk-mail-'+n,template.site_id,template.account_id,template.organization_id,template.booking_id,null,template.recipient,template.type,template.payload,'pending',now-100);
+  insert.run('unsupported-mail',template.site_id,template.account_id,template.organization_id,null,null,template.recipient,'marketing','{}','pending',0);insert.run('forbidden-otp',template.site_id,template.account_id,template.organization_id,null,'private-challenge',template.recipient,'login-code','{}','pending',0);
+  const directory=createOrganizationDirectory(f.source,{getTarget:name=>({executeDirectoryCommand:packet=>(name===f.frozen.targetName?f.command:b.command).execute(packet)})});f.source.db.prepare('INSERT OR REPLACE INTO directory_organization_mail_cursor VALUES(?,?)').run(f.source.siteId,f.b.org.id);const sent=[];
+  await directory.drainOrganizationMail(async claim=>sent.push(claim));assert.equal(sent.length,10);assert.ok(sent.every(claim=>claim.organizationId===f.a.org.id));assert.equal(b.target.db.prepare('SELECT state FROM mail_outbox WHERE booking_id=?').get(f.other.id).state,'pending');
+  await directory.drainOrganizationMail(async claim=>sent.push(claim));assert.equal(sent.length,13);assert.equal(sent[10].organizationId,f.b.org.id);assert.equal(new Set(sent.map(c=>c.id)).size,13);assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE id=?').get('unsupported-mail').state,'pending');assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE id=?').get('forbidden-otp').state,'pending');assert.equal(f.source.db.prepare('SELECT COUNT(*) AS n FROM directory_organization_mail').get().n,13);
+  assert.equal(await directory.nextOrganizationMailAt(),Date.parse(f.first.startAt)-1440*60000);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM sessions').get().n,0);
+ }finally{b.target.close();f.close();}
+});

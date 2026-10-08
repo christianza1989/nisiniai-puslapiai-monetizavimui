@@ -1,0 +1,9 @@
+import {esc,textarea,btn,money} from './ui.mjs';
+export function csvImportForm(text='',preview=null){
+ const issues=preview?.errors.length?`<div class="error-box" role="alert" tabindex="-1"><strong>Pataisyk CSV prieš išsaugodamas</strong><ul>${preview.errors.map(e=>`<li>Eilutė ${e.line}: ${esc(e.message)}</li>`).join('')}</ul><p>Partija neįrašyta.</p></div>`:'';
+ return `<form id="offer-csv-import">${issues}<p>Įklijuok eksportuoto failo antraštę ir iki 40 pakeistų eilučių. Kainos nurodomos centais, trukmė minutėmis. Žvaigždutė nurodo bazinę varianto reikšmę, darbuotojo ID — jo kainą.</p>${textarea('CSV eilutės','csv',text,'required maxlength="15000"')}<p class="hint">Pirmiausia peržiūrėsi pakeitimus. Viešos kainos keičiasi tik po pasiūlymų peržiūros.</p><button class="button accent">Peržiūrėti pakeitimus</button></form>`;
+}
+export function csvConfirmationForm(preview){
+ const price=value=>value==null?'Neįrašyta':money(value),duration=value=>value==null?'Neįrašyta':value+' min.';
+ return `<form id="offer-csv-confirm"><p>Patikrink visas ${preview.rows.length} eilutes. Patvirtinus visa partija bus įrašyta kartu privačiuose pasiūlymų juodraščiuose.</p><ol class="csv-preview">${preview.changes.map(c=>`<li><h3>${esc(c.offerLabel)}</h3><p>${esc(c.variantLabel)} · ${esc(c.practitionerLabel)}</p><dl><div><dt>Kaina</dt><dd>${price(c.before.priceMinor)} → <strong>${price(c.after.priceMinor)}</strong></dd></div><div><dt>Trukmė</dt><dd>${duration(c.before.durationMin)} → <strong>${duration(c.after.durationMin)}</strong></dd></div></dl><p class="hint">CSV eilutė ${c.line} · pasiūlymo versija ${c.version}</p></li>`).join('')}</ol><p class="hint">Įrašant dar kartą tikrinamos teisės, versijos ir pasiūlymų taisyklės. Viešos kainos nesikeis iki atskiros pasiūlymų peržiūros.</p><div class="toolbar">${btn('offer-csv-revise','Grįžti prie CSV','','button outline')}<button class="button accent">Patvirtinti ir išsaugoti juodraščius</button></div></form>`;
+}

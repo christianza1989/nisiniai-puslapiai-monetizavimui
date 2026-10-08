@@ -1,3 +1,5 @@
+Directory216 adds only private/background mail commands, no new user form. Actual Workers accepted local transport/lost-ack/restart per ACCEPTANCE216; this does not close existing browser I04 rows or demonstrate real inbox delivery. Current browser checkpoint remains globals210 / actual8843; remaining named UI states below stay actionable.
+
 # Tikrų UI būsenų priėmimo registras
 
 Aktyvus I04 registras. Tik named isolated8841 ir directory8843, synthetic teikėjai/klientai; production nepakeista. Node/Workers kontrakto PASS atskirtas nuo actual naršyklės įrodymo. „Likę“ nėra PASS. Išsamesnės ankstesnių kelių aplinkybės ir apribojimai yra ACCEPTANCE.md. Ignored evidence saugo vietinius vaizdus ir skaitinius matavimus; nėra viešo release dalis.

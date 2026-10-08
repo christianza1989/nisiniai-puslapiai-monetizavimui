@@ -1,3 +1,9 @@
+## 2026-10-08 — organizacijų pranešimų perdavimas
+
+Patirta: target outbox turėjo autoritetingą rezervaciją, bet central alarm nepumpavo jo pranešimų. Runtime24c05a1229d64e7b72c4c744986090bd21d81b85 pridėjo signed current-cache claim ir source recipient/preferences recheck, durable accepted receipt bei acknowledgement recovery. Vieno namespace outage pradinis pumpas būtų sustabdęs kitus: isolated dviejų org testas dabar įrodo tęsiamą kito org pažangą ir pradinės klaidos reporting. Durable round-robin ir10 admissions/cycle neleidžia pirmo busy org backlog užimti kiekvieno ciklo.
+
+Node captured/pending fixture mismatch first21/25 preserved; explicit named fixture promotion, runtime captured nesunčiamas. Full four-suite216PASS, actual Workers local service transport/lost committed ack/two-store restart ir exact75aa build. Crash po external acceptance iki durable receipt liko at-least-once su stable ID; nepavadintas exactly-once. Central receipts be email/body. Shared transport/core failai nekeisti, SMTP/inbox/pilot/retention faktai nepakeisti tests. Visas pavedimas tęsiamas.
+
 # Madbeauty — V3 patirtos platformos pamokos
 
 2026-10-06 straipsnių / katalogo adapterio patirtis: [siauro pagrindo CORE_FEEDBACK](content-foundation-20261006/CORE_FEEDBACK.md). V2 projekcija naudojama iš esamo public core; shared studio langas lieka turinio PR10. Ankstesnės pamokos žemiau nekeistos.

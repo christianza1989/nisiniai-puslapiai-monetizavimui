@@ -1,3 +1,5 @@
+Aktualus216/216 runtime24c05a1229d64e7b72c4c744986090bd21d81b85: perkeltų salonų current-preference mail admission, central alarm, durable lost-ack recovery ir bounded rotating queue accepted Node/actual Workers. exact75aa build nepaskelbtas; SMTP/inbox ir tikro piloto įrodymai neperimti iš vietinių tests. Visas pavedimas ACTIVE, toliau media transfer/binding ir likusi I04 matrica.
+
 Aktualus210/210 checkpoint1e4f9fc: current-target favorites, indexed central taxonomy, current SQL metrics ir per-org replay-safe legacy catalogue conversion. Actual Workers/browser normal paths accepted; exact75aa kandidatas nepaskelbtas. Visas pavedimas ACTIVE; target mail/media/binding ir likusi UI matrica tęsiami.
 
 Aktualus207/207 checkpoint7694c8d: central new manual identity ir durable organization client admission, uncertain reply/restart/alarm recovery, actual pending/restored/mobile UI. Exact75aa kandidatas nepaskelbtas. Visas pavedimas ACTIVE; globals/mail/media/binding ir likusi UI matrica tęsiami.

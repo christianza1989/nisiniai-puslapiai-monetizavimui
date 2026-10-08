@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "1e4f9fc462cfab9f280d6035c1a2d07cb37aa977",
+  "runtimeSourceCheckpoint": "24c05a1229d64e7b72c4c744986090bd21d81b85",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -198,6 +198,12 @@
       "tests": 210,
       "state": "accepted-isolated-path",
       "remaining": "Target mail/media/binding and full UI states; production unchanged"
+    },
+    {
+      "name": "central-delegated-organization-mail-admission-and-alarm-recovery",
+      "tests": 216,
+      "state": "accepted-isolated-path",
+      "remaining": "Actual SMTP/inbox and real provider pilot; media transfer/production binding and outstanding I04 states. Receipt bounds remain; factual C02 retention/backups not activated."
     }
   ],
   "tasks": [
@@ -402,7 +408,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE210: central client identities/controls, current favorites/metrics/catalogue and replay-safe per-org conversion accepted Node/actual Workers/browser. Target mail/media/binding remain."
+      "evidence": "STORAGE.md/ACCEPTANCE216: current identities/controls/favorites/metrics/catalogue and delegated central mail admission/alarm/lost-ack restart accepted. Target direct mail authority remains false; media/binding remain."
     },
     {
       "id": "I03",

@@ -1,3 +1,9 @@
+## Private delegated mail contract / 24c05a1229d64e7b72c4c744986090bd21d81b85
+
+organizationMailCandidates and organizationMailDueAt are signed system commands (actor=null); target active org/epoch/object binding required. claimOrganizationMail input{id}, actor selected only from central SQL account plus fresh signed identity/preferences cache; returns id/org/epoch/account/recipient/type/payload/leaseToken/messageHash/attempt. Whitelist confirmation/reschedule/cancellation/reminder/waitlist-offer, payload max16KiB. Browser RPC exposes none of these commands. ackOrganizationMail input{id,leaseToken,messageHash,outcome}; outcomes accepted/expired/rejected, mismatched claim409. Replay retains bound durable receipts, no OTP/browser identity on target.
+
+Central coordinator drainOrganizationMail/nextOrganizationMailAt are private maintenance helpers; existing central alarm/transport runs them. Source recipient and reminder lead/opt-out checked again after target claim. Accepted receipt blocks re-send while ack retries; crash before receipt is at-least-once with stable transport ID.10 total candidate admissions/cycle, durable round-robin, independent org progress despite another outage. No production binding or new HTTP endpoint. See ACCEPTANCE216/STORAGE.
+
 # Pasiūlymų ir migracijos sutartis
 
 Tas pats `siteId=madbeauty`, Node SQLite ir SQL Durable Object adapteriai. Vienas transakcinis writer; snapshot / private draft / approved projection yra skirtingos paskirtys tame pačiame autoritetingame modelyje. Nėra antro lygiaverčio kalendoriaus writer ar production copy.

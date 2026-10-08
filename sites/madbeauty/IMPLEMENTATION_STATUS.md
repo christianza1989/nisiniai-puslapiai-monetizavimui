@@ -1,3 +1,11 @@
+## 2026-10-08 — aktyvus upgrade: perkeltų salonų pranešimų eilė
+
+Tarpinis216 paketas priimtas, visas pavedimas ACTIVE ir neužbaigtas. Runtime24c05a1229d64e7b72c4c744986090bd21d81b85 / PR26, companionc7e0c9a / PR6. Visos4manifest suites216/216 regression-62.log, exact75aa39page305asset build-mail216.log ir6source safety PASS. Source centrinis siuntėjas gauna signed current target outbox claim, dar kartą tikrina dabartinius kliento nustatymus ir saugo patvarų acknowledgement kvitą be email/body. Prarastas jau priimto siuntimo ack kartoja tik ack; crash iki durable receipt lieka dokumentuota at-least-once riba su stable transport ID. Iki10 delegated admissions/cycle, durable round-robin cursor; vieno salonų taško outage nestabdo kito pažangos.
+
+Actual Workers local transport/alarm→lost committed ack→source+target restart→receipt recovery PASS; sealed source outbox lieka nepakeistas. Tai nėra SMTP/inbox gavimo įrodymas. Target neturi savo transport/session/alarm, mailAuthorityfalse; central delivery admission jau priimtas.4096 journal bounds ir faktinė retention/backups policy atskiri vartai.
+
+Toliau įvykdomi media transfer/binding ir likusi I04 UI matrica. Tikro booking laiško gavėjas/piloto teikėjas bei retention faktai dar nepateikti. Production writes0; conditional deploy leidimas galioja, full-completion prerequisite unsatisfied. Darbas tęsiamas.
+
 ## 2026-10-08 — aktyvus upgrade: aktualūs mėgstamieji, katalogas ir rodikliai
 
 Tarpinis paketas210 priimtas, visas pavedimas ACTIVE ir neužbaigtas. Runtime1e4f9fc462cfab9f280d6035c1a2d07cb37aa977 / PR26, companionc7e0c9a / PR6. Visos4manifest suites210/210 regression-61.log, actual Workers globals/restart kelias22PASS ir exact75aa39page305asset build-globals210-final.log;8source files staged safety PASS. Mėgstamieji lieka central client patch, tikrina current target public profile, leidžia pašalinti jau nebeviešą bookmark. Indexed central catalogue scope nekeičia sealed org/global clients; target taxonomy tik signed cache. Metrics SQL counts current targets, excludes retained source scoped rows; demand nematuota. Legacy conversion kiekvienam org atomic, deterministic offer ID/service.offerId/no duplicate event leidžia pakartojimą po partial/lost reply; nėra whole-system transaction.

@@ -1,3 +1,11 @@
+## Central delegated outbox / runtime24c05a1229d64e7b72c4c744986090bd21d81b85
+
+Perkelto org mail_outbox ir notification_jobs yra target authoritative. Source nebekeičia ir nesiunčia retained sealed org outbox. Private organizationMailCandidates reconciliation → canonical customer cache claimOrganizationMail → central current preference gate → existing private transport → durable source receipt → signed ackOrganizationMail. Candidate/due polls don't fill nonce journal; claim/ack do. Target claim/cache/lease/nonce sync transaction; source receipt sync transaction separate, no distributed transaction. Same stable mail ID; accepted source receipt recovers ack after reply loss/restart. Crash before that source receipt remains at-least-once.
+
+Target lease60s; transport rejection pending15s exponential capped300s / failed after5. Central acknowledgement retry30s; max4096 site receipts and4096 target claims, no email/body in central receipts. Durable organization cursor rotates, max10 delegated candidate admissions per cycle, max32 pilot orgs; per-org failure continues other progress then throws. Source alarm alone aggregates target mail/reminder/waitlist due; target has no direct transport or alarm (mailAuthorityfalse). Global source outbox retains existing separate10 limit. Unsupported/OTP target rows are never candidates or delegated due jobs. No new retention policy inferred; factual C02/backups gates remain.
+
+Evidence ACCEPTANCE216 / regression-62.log216PASS / actual Workers local service transport, lost-ack and restart. Real inbox receipt and production binding/media migration are unverified. Historical scoped receipts below are unchanged.
+
 ## Directory210 — globalūs valdikliai po perdavimo
 
 readCatalogue/writeCatalogue atskiras source-only indexed view: tax collections/scalars loaded, only taxonomy/global append-only events may change; no all private history, no target writer promotion, unchanged collection/version/scope guards. Same sync transaction restores taxonomy/event/metadata on failure. Existing source SQL accounts remain the operator authority. Signed current cache updates target catalogue before its later read/write.

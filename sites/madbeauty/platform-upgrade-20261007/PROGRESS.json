@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "319ebd519e3494b4c97ca0cd71993507a7e6084d",
+  "runtimeSourceCheckpoint": "0f667fe26afb9feb1120db138db8156dd20448fb",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -354,6 +354,15 @@
       "proof": "publication258-proof.json: 58 checks; 3 resolved targets; 2 unchanged bookings; full shared native-selection context, canonical404 repair, private bytes and restart",
       "regression": "regression-90.log 258/258, 31992.3175ms, 0 new/2 extended/0 removed; all four suites",
       "remaining": "Full upgrade ACTIVE; rebooking archived/addon choices, broader booking error/expiry widths, catalogue applicability, storage audit and hosted/factual gates remain"
+    },
+    {
+      "name": "rebooking-current-alternatives-removed-addon-retry",
+      "state": "accepted-isolated-path",
+      "runtime": "0f667fe26afb9feb1120db138db8156dd20448fb",
+      "tests": 259,
+      "regression": "regression-92.log",
+      "evidence": "ACCEPTANCE.md / rebooking259-proof.json",
+      "remaining": "Broader booking error/expiry widths and other applicable I04 surfaces; no hosted or real pilot acceptance"
     }
   ],
   "tasks": [
@@ -485,7 +494,7 @@
       "title": "Kliento paskyra ir pakartotinis vizitas",
       "phase": "3",
       "state": "implemented-isolated-acceptance",
-      "evidence": "Current-price whole sequence, removed addons, archived alternative, own account access; actual changed-price rebooking confirms new ID and preserves old price."
+      "evidence": "Current-price whole sequence, removed addons, archived alternative, own account access; actual changed-price rebooking confirms new ID and preserves old price.; rebooking259 actual archived-alternative and removed-addon bookings, read-error keyboard retry and retained snapshots after restart accepted locally."
     },
     {
       "id": "C02",
@@ -573,7 +582,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally."
     },
     {
       "id": "E01",
@@ -625,7 +634,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: rebooking archived/addon choices, broader booking error/expiry widths, catalogue-add/procedure-request applicability and storage audit; named complaint publication/queue errors and unavailable-profile recovery accepted locally",
+    "Remaining applicable I04: broader booking error/expiry widths, catalogue-add/procedure-request applicability and storage audit; rebooking archived/addon scope accepted locally",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

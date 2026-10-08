@@ -1,3 +1,11 @@
+## 2026-10-08 — pakartotinio vizito alternatyvos ir priedo pašalinimas
+
+Aktualus runtime: 0f667fe26afb9feb1120db138db8156dd20448fb. Užbaigtas šis vietinis patikrų paketas: rebooking259-proof.json PASS, 23 konkretūs UI / storage palyginimai; regression-92 visi keturi rinkiniai 259/259 PASS per 41,046 s. Palyginti su 258: 1 naujas UI regresijos testas, 1 papildytas esamas backend testas, 0 pašalintų. Exact staged safety PASS: 4 source/test failai. Nepakeistas 75aa paketas: 39 puslapiai / 309 assets.
+
+Visas atnaujinimas tebėra ACTIVE / neužbaigtas; šio paketo production operacijų ir deployment: 0. Toliau galima atlikti platesnes rezervavimo klaidų / galiojimo patikras, likusių katalogo formų taikomumo peržiūrą ir saugojimo auditą. Hosted restore/fence/load, tikras SMTP gavimas, meistrų pilotas ir faktinė saugojimo tvarka lieka atskiri neužbaigti vartai. Sąlyginis leidimas diegti taikomas tik užbaigus visą atnaujinimą.
+
+Detalės: platform-upgrade-20261007/ACCEPTANCE.md, rebooking259.
+
 ## 2026-10-08 — skundų viešinimo sprendimai ir neprieinamas profilis
 
 Aktualus runtime: 319ebd519e3494b4c97ca0cd71993507a7e6084d. publication258-proof.json: PASS, 58 eilučių / mail / medijos / UI palyginimai, trys užbaigti pranešimai, abu sintetiniai vizitai išliko. regression-90: visi keturi rinkiniai, 258/258 PASS, 31,992 s; 0 naujų, 2 papildyti, 0 pašalintų testų. Patvirtintas nepakeistas 75aa paketas: 39 puslapiai / 309 assets. Tikslūs staged saugumo įrodymai: 9 source/test failai PASS.

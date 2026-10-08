@@ -1,3 +1,25 @@
+## 2026-10-08 — pakartotinio vizito alternatyvos ir priedo pašalinimas
+
+Aktualus runtime: 0f667fe26afb9feb1120db138db8156dd20448fb. Užbaigtas šis vietinis patikrų paketas: rebooking259-proof.json PASS, 23 konkretūs UI / storage palyginimai; regression-92 visi keturi rinkiniai 259/259 PASS per 41,046 s. Palyginti su 258: 1 naujas UI regresijos testas, 1 papildytas esamas backend testas, 0 pašalintų. Exact staged safety PASS: 4 source/test failai. Nepakeistas 75aa paketas: 39 puslapiai / 309 assets.
+
+Visas atnaujinimas tebėra ACTIVE / neužbaigtas; šio paketo production operacijų ir deployment: 0. Toliau galima atlikti platesnes rezervavimo klaidų / galiojimo patikras, likusių katalogo formų taikomumo peržiūrą ir saugojimo auditą. Hosted restore/fence/load, tikras SMTP gavimas, meistrų pilotas ir faktinė saugojimo tvarka lieka atskiri neužbaigti vartai. Sąlyginis leidimas diegti taikomas tik užbaigus visą atnaujinimą.
+
+### Įrodymų apimtis
+
+Vietinis localhost:8847, browser 2 / tab 9, įprastos email-only sintetinės owner/client paskyros, tikros Node API / dvi SQLite saugyklos ir pasirašytas organization-directory handoff. Du istoriniai vizitai sukurti hold/confirm/complete operacijomis su pažymėtu setup laikrodžiu; iki browser darbo grąžintas Date.now. Tai nėra tikro salono piloto ar hosted priėmimas.
+
+Patirtas klaidingos alternatyvos kelias: po kliento workspace skaitymo savininkas įprastu save/submit/moderate paskelbė naują variantą. Rebooking grąžino naują paslaugą, bet UI iš seno ctx.rows spėjo meistrai adresą patvirtintam salonui. Tikras paspaudimas atidarė neprieinamą profilį. DTO dabar grąžina dabartinį organization kind, UI remiasi šia reikšme. Po pataisos antras naujas variantas paskelbtas jau perskaičius kliento katalogą; native Tab/Enter atidarė teisingą salonai profilį. Iš jo atliktas naujas 20 EUR / 30 min vizitas.
+
+Pašalinto priedo pakartojimas rodo senus 60 EUR / 75 min ir dabartinius 50 EUR / 60 min, paaiškina nebesiūlomą priedą. Klientas tikrais žingsniais patvirtino naują vizitą be to priedo. Serverio atsakymui nutrūkus po commit, išliko error ir dabartinis pasirinkimas. QA klaviatūra pirmiausia pasirinko laiko recovery nuorodą, paskui per esamą Peržiūra navigaciją pakartojo patvirtinimą iki hold expiry. Grąžintas tas pats ID; target eilutės ir mail tiksliai nekito. Tai nėra tiesioginis Tab-to-confirm ar po-expiry retry priėmimas.
+
+Pradinis rebooking read 503 rodė tik dingstantį toast. Dabartinis UI išvalo ankstesnį rebooking pasirinkimą ir atidaro išliekantį role=alert su fokusu ir Bandyti dar kartą, išlaikydamas tą patį booking ID. Native Tab/Enter retry grąžino dabartinį pasiūlymą. Abiejų read fault / retry bandymų source ir target eilutės bei mail nekito.
+
+Alternatyvos, priedo paaiškinimas ir pataisytas read-error dialogas: tikri CSS 320/390/820/1440 × 900 matavimai, dvylika peržiūrėtų vaizdų; dokumento, dialogo ir jo body horizontalus overflow nenustatytas. Escape grąžino fokusą į Pakartoti vizitą. Galutinio rezervavimo lost-reply klaida peržiūrėta tik 320 px ir nepriskirta visų pločių priėmimui. Screenshot rasterio matmenys registruoti atskirai.
+
+Abu istoriniai booking įrašai, jų kaina, trukmė ir snapshot išliko tiksliai tokie patys. Tik du nauji confirmed vizitai, kiekvienam vienas confirmation mail ir vienas booking-confirmed įvykis; journal nėra faktinio pristatymo įrodymas. Abu stores restart išliko tiksliai tokie patys. Po restart klientas mato abu naujus vizitus, meistro kalendoriaus UI rodo tuos pačius du ID. Frozen SOURCE organizacijos eilutės nekito. Canonical kliento versija pagrįstai padidėjo po vieną dėl kiekvieno naujo patvirtinimo; tai central platform atsakomybė. Pradinis proof neteisingai tikėjosi nekintančių ir šių canonical klientų: diagnostika rebooking259-proof-initial-failure.log bei snapshots išlaikyti, palyginimo apimtis pataisyta be runtime pakeitimo.
+
+Pradinis QA setup v1 pateikė profilį prieš pirmą paslaugą ir buvo atmestas; jo SQLite išlaikyta. V2 seed sukurtas įprastu offer/revision keliu; pirmo HTTP handler paleidimo media options klaida pataisyta tik ignored fixture. Jokios naujos public QA API, synthetic eilutės, SQL, OTP ar nuotraukos neįtrauktos į Git / release. regression-91 259/259 ir galutinis regression-92 259/259 PASS; detector [].
+
 ## 2026-10-08 — skundų viešinimo sprendimai ir neprieinamas profilis
 
 Aktualus runtime: 319ebd519e3494b4c97ca0cd71993507a7e6084d. publication258-proof.json: PASS, 58 eilučių / mail / medijos / UI palyginimai, trys užbaigti pranešimai, abu sintetiniai vizitai išliko. regression-90: visi keturi rinkiniai, 258/258 PASS, 31,992 s; 0 naujų, 2 papildyti, 0 pašalintų testų. Patvirtintas nepakeistas 75aa paketas: 39 puslapiai / 309 assets. Tikslūs staged saugumo įrodymai: 9 source/test failai PASS.

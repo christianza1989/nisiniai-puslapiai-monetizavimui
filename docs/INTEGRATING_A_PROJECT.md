@@ -4,10 +4,14 @@
 
 ## Pirmas perskaitymas
 
+Pirmiau actual Git gate pagal [CODEX_GIT_WORKFLOW](CODEX_GIT_WORKFLOW.md): start / continue / handoff režimai ir kiekvieno PC global bootstrap. Vienas senas AGENTS arba asmeninis skill mirror nesuteikia aktualaus main įrodymo.
+
 1. Root README → AGENTS → docs/MULTI_MACHINE → WORKSTREAMS.
 2. Nauja niša: START_HERE → CORE_BUILD_CONTRACT → SKILLS/PROJECT_CONTRACT ir builder/business-validation.
 3. Esamas projektas: `sites/<siteId>.md` ir tos nišos BUSINESS/PRODUCT/roadmap/DESIGN. Didesnei savininko užsakytai platformai taikyti [PLATFORM_BUILD_CONTRACT](../PLATFORM_BUILD_CONTRACT.md). Madbeauty aktualų išplėstą pavedimą ir priėmimą skaityti `sites/madbeauty/IMPLEMENTATION_STATUS.md` / `BACKEND_DECISION.md`; PROJECT_ROADMAP istorinius etapus vertinti pagal jų apimtį.
 4. Bendros sutartys: SEO_GEO_CORE, MEDIA_CORE, MAIL_CORE, NETWORK_LINKING; reikalingiems būsimiems moduliais ACQUISITION_CORE ir VOICE_CORE_INTEGRATION. Dokumentus lyginti su aktualiu companion code.
+
+5. Jei pavedime yra verslo pokalbių, laiškų ar tiekėjų agentai: [business-agent-calibration skill](../SKILLS/business-agent-calibration/SKILL.md), jo runbook ir acceptance matrica. Tai vienas atkuriamos nišos kalibravimo startas; [perdavimo būklė](AGENT_CALIBRATION_HANDOFF_2026-10-08.md) atskiria jau main esantį kodą, nesujungtus audio PR ir private artefaktus.
 
 Nauja svetainė pradeda pirmoje fazėje. Madbeauty savininkas 2026-10-05 praplėtė privatų frontend užsakymą iki veikiančio vietinio meistro / kliento backend su email-only testavimo registracija pagal DEMO_DATA_POLICY ir docs/MADBEAUTY_BACKEND_ACCEPTANCE. Ankstesnis frontend-only etapas šio pavedimo neberiboja; kitoms nišoms plėtra automatiškai nepridedama.
 

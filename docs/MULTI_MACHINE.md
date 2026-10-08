@@ -1,5 +1,7 @@
 # Darbas dviem kompiuteriais
 
+**Privaloma actual freshness eiga:** [CODEX_GIT_WORKFLOW](CODEX_GIT_WORKFLOW.md). Vieną kartą kiekviename PC / Codex profilyje `node scripts/install-agent-git-bootstrap.mjs`, tada nauja sesija. Prieš darbą / tęsimą / Git perdavimą `scripts/git-freshness.mjs` su start / continue / handoff ir reikalingu companion. Gate atmeta failed fetch / bazę be current main, bet neperrašo active darbų. `activate-workspace.ps1` integruoja patikrą. Bootstrap nėra kitų PC remote install ar active instrukcijų hot reload.
+
 ## Naujas kompiuteris
 
 Reikia Git, GitHub prieigos abiem privatiems repo, Node22.22+ ir npm. Python runtime papildomai Python3.13+, uv ir Docker. Codex prisijungimas yra kiekvieno kompiuterio vietinis; jo failų per Git nekopijuoti.

@@ -1,3 +1,7 @@
+## 2026-10-08 — fazių ir patvirtinimo UI
+
+Backend contracts unchanged. Add/remove phase UI focuses its affected control; confirmation errors focus the existing alert/recovery. Per-tab UI snapshots use sessionStorage, keeping normal same-tab reload without other windows replacing the booking selection. Authoritative holds still use published serviceVersion; native versions1/2 reject after later publication, version3 confirms with saved phases. Runtime ef79fa2fb21b666774daebbfefa30db9270c273f; local scoped proof in ACCEPTANCE.md, no hosted activation.
+
 ## Whole cancellation256
 
 cancelBooking retains exact booking ID/current authenticated scope/original version/reason. A whole multi-service visit is one atomic status/version update retaining all saved segments; partial-practitioner scope is rejected. Old-version retries conflict, including after a committed response loss; they do not replay success or add another cancellation message/event. UI now explicitly shows all saved segments/full interval/total and requires review of a fresh version before retrying a changed booking. No new endpoint or backend write behavior. Source 15a3d6ba3d81a61910c150a69762cf64d70e62dd; ACCEPTANCE256/cancel256-browser.md.

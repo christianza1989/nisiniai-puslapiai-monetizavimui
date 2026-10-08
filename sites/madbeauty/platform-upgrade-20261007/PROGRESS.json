@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "15a3d6ba3d81a61910c150a69762cf64d70e62dd",
+  "runtimeSourceCheckpoint": "ef79fa2fb21b666774daebbfefa30db9270c273f",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -280,6 +280,13 @@
       "state": "accepted-isolated-path",
       "evidence": "ACCEPTANCE256/cancel256-browser.md;1new/1extended/0removed; exact75aa39/308; native Node directory two-store whole cancellation states",
       "remaining": "Other applicable I04, hosted and factual launch gates"
+    },
+    {
+      "name": "phase-focus-confirmation-recovery-and-per-tab-ui",
+      "tests": 256,
+      "state": "accepted-isolated-path",
+      "source": "ef79fa2fb21b666774daebbfefa30db9270c273f",
+      "remaining": "Other applicable UI states and hosted/factual launch gates"
     }
   ],
   "tasks": [
@@ -499,7 +506,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE256: whole cancellation Node-directory saved summary/outage/stale/uncertain-reply/re-read/restart accepted; platform contact255/report252/CSV249/rules246/prior menu/gallery/upload retain scopes. Other named applicable UI states remain."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE256 latest phases: native Node base/staff focus, confirmation error/recovery, two-window held-version no-write conflicts, per-tab reload/current phase snapshots/restart accepted. Prior cancellation/contact/report/CSV/rules/menu/gallery/upload retain scopes; other applicable states remain."
     },
     {
       "id": "E01",
@@ -551,7 +558,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: phase/branch/waitlist/client-card/access/global conflicts, other complaint publication actions/queue read errors",
+    "Remaining applicable I04: branch/waitlist/client-card/access/global conflicts, other complaint publication actions/queue read errors and account-change booking draft privacy",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

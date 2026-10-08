@@ -1,3 +1,5 @@
+Current runtime ef79fa2fb21b666774daebbfefa30db9270c273f: phase editor keyboard focus, focused confirmation errors and per-tab UI choices corrected; actual held-version conflicts/current phased booking/restart accepted locally. All4suites256/256, exact75aa39pages308assets. Full upgrade ACTIVE; no production writes. Details ACCEPTANCE.md / phase256-browser.md.
+
 Current256 runtime 15a3d6ba3d81a61910c150a69762cf64d70e62dd: whole saved-segment cancellation summary and native Node directory outage/stale/uncertain-reply/restart recovery accepted locally. Four declared suites256/256, exact75aa39pages308assets. Full upgrade ACTIVE; no production writes.
 
 Current255 runtime 7385ca2a1d85bed1352dfe4a84d05f096bc8a838: /kontaktai platform report now reaches private operator queue; same-form report lost-reply replay, versioned operator review/recovery and reporter visibility accepted locally. All4 suites255/255, exact75aa39pages308assets. Full upgrade ACTIVE; no production writes.

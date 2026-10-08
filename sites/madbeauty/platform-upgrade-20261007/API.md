@@ -1,3 +1,9 @@
+## Private media handoff / f03c1daf9539e147ad589e8dd34167e951e4b0a9
+
+Source organizationMediaHandoffPage input{operatorAccountId,organizationId,epoch,handoffId,key,part} tikrina source SQL operator ir frozen/sealed identity. Result{manifest,key,part,data(base64),proof}; media manifest įtraukiamas į immutable context tik esant media. Target stageOrganizationMedia(packet) tikrina actual DO name, signed calendar manifest/epoch/asset descriptors, HMAC ir max400KB; vienas256KiB chunk, exact repeated parts. mediaStagingStatus metadata only. prepareAuthority tikrina complete variant/original bytes SHA prieš source seal; source-abort exact token discard išvalo partial/prepared copy, active target nešalinamas. Limits esama SQL_MEDIA_POLICY, žr.STORAGE/ACCEPTANCE222.
+
+Šie RPC nėra browser dispatcher. Ordinary media reads/uploads target maršrutas dar kuriamas; šis priėmimas jo nepakeičia. No-media cached context schema lieka ta pati; old media-bearing cached context needs abort/new epoch, immutable packet neperrašomas.
+
 ## Private delegated mail contract / 24c05a1229d64e7b72c4c744986090bd21d81b85
 
 organizationMailCandidates and organizationMailDueAt are signed system commands (actor=null); target active org/epoch/object binding required. claimOrganizationMail input{id}, actor selected only from central SQL account plus fresh signed identity/preferences cache; returns id/org/epoch/account/recipient/type/payload/leaseToken/messageHash/attempt. Whitelist confirmation/reschedule/cancellation/reminder/waitlist-offer, payload max16KiB. Browser RPC exposes none of these commands. ackOrganizationMail input{id,leaseToken,messageHash,outcome}; outcomes accepted/expired/rejected, mismatched claim409. Replay retains bound durable receipts, no OTP/browser identity on target.

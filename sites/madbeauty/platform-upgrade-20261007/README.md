@@ -1,3 +1,5 @@
+Aktualus222/222 runtimef03c1daf9539e147ad589e8dd34167e951e4b0a9: signed resumable private SQL media transfer/originals/variants, source blob fences, partial/prepared abort ir actual two-object restart accepted. Full upgrade ACTIVE; next current HTTP media read/new target upload, production binding/migration ir I04 UI. Exact75aa build nepaskelbtas; real mail/pilot/retention vartai atskiri.
+
 Aktualus216/216 runtime24c05a1229d64e7b72c4c744986090bd21d81b85: perkeltų salonų current-preference mail admission, central alarm, durable lost-ack recovery ir bounded rotating queue accepted Node/actual Workers. exact75aa build nepaskelbtas; SMTP/inbox ir tikro piloto įrodymai neperimti iš vietinių tests. Visas pavedimas ACTIVE, toliau media transfer/binding ir likusi I04 matrica.
 
 Aktualus210/210 checkpoint1e4f9fc: current-target favorites, indexed central taxonomy, current SQL metrics ir per-org replay-safe legacy catalogue conversion. Actual Workers/browser normal paths accepted; exact75aa kandidatas nepaskelbtas. Visas pavedimas ACTIVE; target mail/media/binding ir likusi UI matrica tęsiami.

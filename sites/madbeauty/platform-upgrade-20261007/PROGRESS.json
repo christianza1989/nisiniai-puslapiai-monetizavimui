@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "24c05a1229d64e7b72c4c744986090bd21d81b85",
+  "runtimeSourceCheckpoint": "f03c1daf9539e147ad589e8dd34167e951e4b0a9",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -204,6 +204,12 @@
       "tests": 216,
       "state": "accepted-isolated-path",
       "remaining": "Actual SMTP/inbox and real provider pilot; media transfer/production binding and outstanding I04 states. Receipt bounds remain; factual C02 retention/backups not activated."
+    },
+    {
+      "name": "private-physical-organization-sql-media-transfer",
+      "tests": 222,
+      "state": "accepted-isolated-path",
+      "remaining": "Current HTTP media read/new target upload; Node filesystem import, production binding/migration, I04 and factual launch gates."
     }
   ],
   "tasks": [
@@ -408,7 +414,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE216: current identities/controls/favorites/metrics/catalogue and delegated central mail admission/alarm/lost-ack restart accepted. Target direct mail authority remains false; media/binding remain."
+      "evidence": "STORAGE.md/ACCEPTANCE222: directory/current globals/delegated mail and private exact physical SQL media transfer accepted Node/actual Workers. Current HTTP media/upload and production binding/migration remain."
     },
     {
       "id": "I03",

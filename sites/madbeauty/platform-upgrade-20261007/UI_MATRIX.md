@@ -1,3 +1,5 @@
+Directory222 accepts private physical media chunk transfer/restart/authority, using synthetic byte fixtures. No new visible UI state is claimed; actual public/private media read and target upload adapter remain next work. Existing normal gallery pictures/earlier browser receipts below keep their original scope. See ACCEPTANCE222.
+
 Directory216 adds only private/background mail commands, no new user form. Actual Workers accepted local transport/lost-ack/restart per ACCEPTANCE216; this does not close existing browser I04 rows or demonstrate real inbox delivery. Current browser checkpoint remains globals210 / actual8843; remaining named UI states below stay actionable.
 
 # Tikrų UI būsenų priėmimo registras

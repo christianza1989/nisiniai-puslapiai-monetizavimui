@@ -1,3 +1,9 @@
+## 2026-10-08 — aktyvus upgrade: fizinis salonų medijos perdavimas
+
+Tarpinis222 paketas priimtas, visas pavedimas ACTIVE ir neužbaigtas. Runtimef03c1daf9539e147ad589e8dd34167e951e4b0a9 / PR26, companionc7e0c9a / PR6.4suites222/222 regression-63.log, exact75aa39page305asset build-media222.log ir8source safety PASS. Private signed256KiB chunks perduoda exact original/WebP variantų baitus ir esamus ID į atskirą SQL saugyklą; partial/replay/rollback/digest ir prepared/active fences priimti. Source lieka sealed su originaliais baitais; abort partial/prepared copy išvalo tik target reservation. Actual Workers two-object restart/complete/activate/restart hashes sutampa. Tai sintetinis storage bandymas, ne viešo vaizdo rendering įrodymas.
+
+Toliau dabar įvykdomi: current HTTP media read/new target upload, production binding/migration ir likusi I04 UI matrica. Node filesystem medijai dar nėra SQL importo adapterio; faktiniai SMTP/pilot/retention vartai atskiri. Production writes0, conditional full-upgrade deploy leidimas galioja, completion prerequisite unsatisfied. Darbas tęsiamas.
+
 ## 2026-10-08 — aktyvus upgrade: perkeltų salonų pranešimų eilė
 
 Tarpinis216 paketas priimtas, visas pavedimas ACTIVE ir neužbaigtas. Runtime24c05a1229d64e7b72c4c744986090bd21d81b85 / PR26, companionc7e0c9a / PR6. Visos4manifest suites216/216 regression-62.log, exact75aa39page305asset build-mail216.log ir6source safety PASS. Source centrinis siuntėjas gauna signed current target outbox claim, dar kartą tikrina dabartinius kliento nustatymus ir saugo patvarų acknowledgement kvitą be email/body. Prarastas jau priimto siuntimo ack kartoja tik ack; crash iki durable receipt lieka dokumentuota at-least-once riba su stable transport ID. Iki10 delegated admissions/cycle, durable round-robin cursor; vieno salonų taško outage nestabdo kito pažangos.

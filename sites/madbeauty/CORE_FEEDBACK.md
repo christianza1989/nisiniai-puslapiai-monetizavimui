@@ -1,3 +1,7 @@
+## 2026-10-08 — medijos kopija turi tikrinti fizinius baitus
+
+Runtimef03c1daf9539e147ad589e8dd34167e951e4b0a9: buvęs HANDOFF_DEPENDENCY sąmoningai blokavo media-bearing org, nes JSON metadata kopija neperkelia original/WebP failų. Private signed chunk adapter dabar bindina frozen IDs/digests, rezervuoja existing SQL capacity atomic ir tik complete byte-verified target gauna prepared receipt. Source/target SQL blob fences apsaugo seną adapterį ir direct SQL; exact partial/prepared abort nelaiko nutekėjusios capacity. Actual Workers du objektai/restart tikrina original/variant SHA, ne fiktyvų public rendering.222/222 full4suites ir exact75aa build PASS. Initial optional-media fixture assertion9/10 failure retained, corrected test then current full PASS. HTTP media routing/upload, Node file import ir hosted restore/pilot gates nepriskirti šiam storage PASS; shared actual checkout/core/studio neliesti.
+
 ## 2026-10-08 — organizacijų pranešimų perdavimas
 
 Patirta: target outbox turėjo autoritetingą rezervaciją, bet central alarm nepumpavo jo pranešimų. Runtime24c05a1229d64e7b72c4c744986090bd21d81b85 pridėjo signed current-cache claim ir source recipient/preferences recheck, durable accepted receipt bei acknowledgement recovery. Vieno namespace outage pradinis pumpas būtų sustabdęs kitus: isolated dviejų org testas dabar įrodo tęsiamą kito org pažangą ir pradinės klaidos reporting. Durable round-robin ir10 admissions/cycle neleidžia pirmo busy org backlog užimti kiekvieno ciklo.

@@ -1,4 +1,5 @@
 import {searchSelect,bindSearchSelects} from './search-select.mjs';
+import {loadJson} from './load-json.mjs';
 import {syncSharing} from './sharing.mjs';
 import {waitlistFields,waitlistAction} from './waitlist-ui.mjs';
 import {locationDialog} from './search-results-ui.mjs';
@@ -17,7 +18,7 @@ import {accountAction,accountForm} from './account-ui.mjs';
 import {setContentData,trustPages} from './content.mjs';
 import {activeNode,CATALOGUE_ORIGIN} from '/content-targets.mjs';
 import {isCityId} from '/cities.mjs';
-const $=s=>document.querySelector(s),boot=await fetch('/boot.json').then(r=>r.json());
+const $=s=>document.querySelector(s),boot=await loadJson('/boot.json');
 
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:'',rezultatai:'paslaugos'},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
 let state=initial();
@@ -30,7 +31,7 @@ const ctx={searchSelect,state,media:new Map(),taxonomy:TAXONOMY,candidates:new M
 const persistence={load:()=>JSON.parse(localStorage.getItem(DEMO_NAMESPACE)||'null'),save:d=>localStorage.setItem(DEMO_NAMESPACE,JSON.stringify(d)),clear:()=>localStorage.removeItem(DEMO_NAMESPACE)};
 ctx.realAdapter=createHttpAdapter();
 let mediaPromise=null;
-ctx.ensureMedia=async()=>{if(!mediaPromise)mediaPromise=Promise.all(['/media.json','/app-media.json'].map(async u=>{const r=await fetch(u);if(!r.ok)throw userError('Medijos atnaujinti nepavyko.');return r.json();})).then(data=>{for(const a of data.flatMap(d=>d.assets))ctx.media.set(a.id,a);}).catch(e=>{mediaPromise=null;throw e;});return mediaPromise;};
+ctx.ensureMedia=async()=>{if(!mediaPromise)mediaPromise=Promise.all(['/media.json','/app-media.json'].map(u=>loadJson(u))).then(data=>{for(const a of data.flatMap(d=>d.assets))ctx.media.set(a.id,a);}).catch(e=>{mediaPromise=null;throw e;});return mediaPromise;};
 function adapter(){ctx.adapter=createAdapter({enabled:state.enabled,deployment:boot.deployment,clock:makeClock(state.clock),scenario:state.scenario,richFixtures:true,persistence,realAdapter:boot.apiAvailable?ctx.realAdapter:null});if(!state.enabled&&ctx.realAdapter.session){const s=ctx.realAdapter.session;state.session={role:s.user?'customer':'guest',clientId:s.user?.id||null,organizationId:s.organizations[0]?.id||null};}}
 adapter();
 function saveUI(){try{localStorage.setItem(DEMO_NAMESPACE+':ui',JSON.stringify({version:1,boot:boot.now,state}));}catch{toast('Vietinių pasirinkimų išsaugoti nepavyko.');}}
@@ -60,7 +61,7 @@ async function render(){
     const privatePath=/^\/(meistrui|operatorius|paskyra)(\/|$)/.test(path),jobs=[];
     if(ctx.adapter.mode==='real'){jobs.push(ctx.realAdapter.refreshSession());jobs.push(ctx.realAdapter.taxonomy().then(t=>{ctx.catalogueNodes=t.nodes;ctx.taxonomyVersion=t.version;}));}
     if(!privatePath||path==='/meistrui/galerija'||path==='/paskyra/issaugoti')jobs.push(ctx.ensureMedia());
-    if(!privatePath||path==='/operatorius/turinys')jobs.push(fetch('/content.json').then(r=>{if(!r.ok)throw userError('Turinio atnaujinti nepavyko.');return r.json();}).then(data=>{ctx.content=data;setContentData(data);}));
+    if(!privatePath||path==='/operatorius/turinys')jobs.push(loadJson('/content.json').then(data=>{ctx.content=data;setContentData(data);}));
     await Promise.all(jobs);
     if(ctx.adapter.mode==='real'){const s=ctx.realAdapter.session;state.session={...state.session,role:s.user?(state.session.role==='guest'?'customer':state.session.role):'guest',clientId:s.user?.id||null,organizationId:s.organizations.some(o=>o.id===state.session.organizationId)?state.session.organizationId:s.organizations[0]?.id||null};}
     ctx.renderClock=ctx.adapter.clock;

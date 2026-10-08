@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto';
+import {SQL_MEDIA_POLICY} from '../backend/media-policy.mjs';
+export {SQL_MEDIA_POLICY} from '../backend/media-policy.mjs';
 // Bounded existing pilot storage. No R2/account/payment activation is performed.
-export const SQL_MEDIA_POLICY=Object.freeze({capacityBytes:512*1024*1024,chunkBytes:256*1024,assetBytes:32*1024*1024,objectBytes:12*1024*1024,maxObjectsPerAsset:6});
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 export function createSqlMediaBucket(store,{capacityBytes=SQL_MEDIA_POLICY.capacityBytes}={}){
  const {db}=store,p=SQL_MEDIA_POLICY;
@@ -12,6 +13,13 @@ export function createSqlMediaBucket(store,{capacityBytes=SQL_MEDIA_POLICY.capac
   // Reconcile old adapter writes on reopen; do not rewrite or delete legacy bytes.
   const current=db.prepare('SELECT COALESCE(SUM(bytes),0) AS bytes,COUNT(*) AS objects FROM media_objects').get();
   db.prepare('INSERT INTO media_capacity(id,bytes,objects) VALUES(1,?,?) ON CONFLICT(id) DO UPDATE SET bytes=excluded.bytes,objects=excluded.objects').run(current.bytes,current.objects);
+  // These fences also cover direct SQL and older adapters during transfer.
+  for(const table of ['media_objects','media_chunks'])for(const event of ['INSERT','UPDATE','DELETE']){
+   const aliases=event==='UPDATE'?['OLD','NEW']:[event==='DELETE'?'OLD':'NEW'];
+   const frozen=aliases.map(row=>`EXISTS(SELECT 1 FROM state_rows AS asset JOIN organization_handoffs AS h ON h.site_id=asset.site_id AND h.organization_id=asset.organization_id AND h.state!='aborted' WHERE asset.site_id='${store.siteId}' AND asset.collection='media' AND (json_extract(asset.data,'$.source.original')=${row}.key OR EXISTS(SELECT 1 FROM json_each(asset.data,'$.variants') AS variant WHERE 'variants/'||json_extract(variant.value,'$.storageFile')=${row}.key)))`).join(' OR ');
+   db.exec(`CREATE TRIGGER IF NOT EXISTS source_${table}_${event.toLowerCase()} BEFORE ${event} ON ${table} WHEN ${frozen} BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;
+CREATE TRIGGER IF NOT EXISTS target_${table}_${event.toLowerCase()} BEFORE ${event} ON ${table} WHEN EXISTS(SELECT 1 FROM organization_target_authority WHERE state!='active') BEGIN SELECT RAISE(ABORT,'ORGANIZATION_TARGET_FENCED'); END;`);
+  }
  });
  const stats=()=>({...db.prepare('SELECT bytes,objects FROM media_capacity WHERE id=1').get(),capacityBytes,model:'sql-media-v2'});
  const putMany=async entries=>{

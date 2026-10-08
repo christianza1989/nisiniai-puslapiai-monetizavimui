@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto';
 import {initialState,randomId,reject} from './primitives.mjs';
 import {createOrganizationHandoff,createOrganizationStaging,organizationTransferProof as proof,sameTransferProof as equal,organizationRowsDigest} from './organization-handoff.mjs';
+import {organizationMediaManifest,assertOrganizationMediaReady,discardOrganizationMediaStage} from './organization-media.mjs';
 
 const maxContextBytes=1024*1024,maxContextRows=1024;
 const raw=v=>JSON.stringify(v),hash=v=>createHash('sha256').update(raw(v)).digest('hex');
@@ -29,7 +30,8 @@ export function createOrganizationCommit(store){
   const outbox=db.prepare('SELECT * FROM mail_outbox WHERE site_id=? AND organization_id=? ORDER BY id LIMIT 1025').all(siteId,status.organizationId),notificationJobs=db.prepare('SELECT * FROM notification_jobs WHERE site_id=? AND organization_id=? ORDER BY id LIMIT 1025').all(siteId,status.organizationId);
   if(outbox.length>maxContextRows||notificationJobs.length>maxContextRows||preferences.length>maxContextRows)reject('CAPACITY','Perdavimo pranešimų apimtis per didelė.',503);
   if(outbox.some(r=>r.state==='sending'||r.type==='login-code'))reject('HANDOFF_BUSY','Pradėtas pranešimo siuntimas dar nebaigtas.',409);
-  return {manifest:status.manifest,clients,preferences,accounts,taxonomy:store.readCollections(['taxonomy','taxonomyChanges','taxonomyVersion']),outbox,notificationJobs};
+  const mediaManifest=organizationMediaManifest(store,status.manifest);
+  return {manifest:status.manifest,clients,preferences,accounts,taxonomy:store.readCollections(['taxonomy','taxonomyChanges','taxonomyVersion']),outbox,notificationJobs,...(mediaManifest?{mediaManifest}:{})};
  }
  function context(input){return store.transaction(()=>{
   const status=current(input),existing=db.prepare('SELECT packet FROM organization_handoff_context WHERE site_id=? AND organization_id=? AND epoch=?').get(siteId,status.organizationId,status.epoch);if(existing)return JSON.parse(existing.packet);
@@ -64,7 +66,7 @@ export function createOrganizationAuthority(store,{targetName}){
   if(db.prepare("SELECT record_key FROM state_rows WHERE site_id=? AND collection NOT IN ('taxonomy','taxonomyChanges','taxonomyVersion','isDemo') LIMIT 1").get(siteId)||store.readCollections(['isDemo']).isDemo!==false||db.prepare('SELECT id FROM accounts LIMIT 1').get()||db.prepare('SELECT id FROM mail_outbox LIMIT 1').get())reject('INVALID_STATE','Tik tuščia organizacijos saugykla priima kopiją.',409);
   const records=db.prepare('SELECT data FROM organization_stage_rows WHERE site_id=? ORDER BY ordinal').all(siteId).map(r=>JSON.parse(r.data));
   if(records.length!==m.rows||new Set(records.map(r=>raw([r.collection,r.key]))).size!==records.length||records.reduce((n,r)=>n+Buffer.byteLength(raw(r)+'\n'),0)!==m.bytes||organizationRowsDigest(records)!==m.sha256)reject('HANDOFF_INTEGRITY','Kopijos įrašai pasikeitė.',409);
-  if(records.some(r=>r.collection==='media'))reject('HANDOFF_DEPENDENCY','Prieš perdavimą reikia perkelti šios organizacijos medijos failus.',409);
+  assertOrganizationMediaReady(store,m,records,content.mediaManifest);
   const ids=relatedIds(records);if(!Array.isArray(content.clients)||!Array.isArray(content.accounts)||!Array.isArray(content.preferences)||!Array.isArray(content.outbox)||!Array.isArray(content.notificationJobs)||[content.clients,content.accounts,content.preferences,content.outbox,content.notificationJobs].some(a=>a.length>maxContextRows)||content.clients.some(c=>!ids.has(c.id))||content.accounts.some(a=>!ids.has(a.id)||a.site_id!==siteId||a.operator!==0)||content.preferences.some(p=>!ids.has(p.clientId)))reject('HANDOFF_SCOPE','Perdavimo tapatybės nesutampa.',409);
   if(!content.taxonomy||Object.keys(content.taxonomy).some(k=>!['taxonomy','taxonomyChanges','taxonomyVersion'].includes(k)))reject('HANDOFF_SCOPE','Katalogo kopijos apimtis netinkama.',409);
   const clientIds=new Set(content.clients.map(c=>c.id));for(const r of records){const v=JSON.parse(r.raw),active=r.collection==='bookings'&&v.status==='confirmed'&&Date.parse(v.endAt)>store.clock()||r.collection==='holds'&&v.state==='held'&&Date.parse(v.expiresAt)>store.clock()||r.collection==='waitlist'&&v.criteria&&!['closed','expired'].includes(v.state);if(active&&!clientIds.has(v.clientId||v.accountId))reject('HANDOFF_DEPENDENCY','Trūksta aktyvaus vizito kliento tapatybės.',409);}
@@ -85,9 +87,15 @@ export function createOrganizationAuthority(store,{targetName}){
  });}
  function status(){const row=get();return row?{state:row.state,organizationId:row.organization_id,epoch:row.epoch,handoffId:JSON.parse(row.manifest).handoffId,writeAuthority:row.state==='active',mailAuthority:false}:{state:'empty',writeAuthority:false,mailAuthority:false};}
  function discard(token){return store.transaction(()=>{
-  const body=verified(store,'source-abort',token),row=get();if(body.schemaVersion!==1||body.siteId!==siteId||body.targetName!==targetName||body.state!=='aborted')reject('HANDOFF_SCOPE','Atšaukimo apimtis nesutampa.',409);if(!row)return status();
+  const body=verified(store,'source-abort',token),row=get();if(body.schemaVersion!==1||body.siteId!==siteId||body.targetName!==targetName||body.state!=='aborted')reject('HANDOFF_SCOPE','Atšaukimo apimtis nesutampa.',409);
+  if(!row){
+   const exists=db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='organization_media_stage'").get(),stage=exists&&db.prepare('SELECT manifest FROM organization_media_stage WHERE site_id=?').get(siteId);
+   if(stage){const m=JSON.parse(stage.manifest);if(m.organizationId!==body.organizationId||m.epoch!==body.epoch||m.handoffId!==body.handoffId)reject('HANDOFF_SCOPE','Atšaukimo apimtis nesutampa.',409);discardOrganizationMediaStage(store);}
+   return status();
+  }
   if(row.state!=='prepared'||row.organization_id!==body.organizationId||row.epoch!==body.epoch||JSON.parse(row.manifest).handoffId!==body.handoffId)reject('INVALID_STATE','Aktyvios arba kitos kopijos atšaukti negalima.',409);
   db.prepare('DELETE FROM organization_target_authority WHERE site_id=?').run(siteId);
+  discardOrganizationMediaStage(store);
   store.write(initialState());for(const table of ['mail_outbox','notification_jobs','accounts','organization_stage_rows','organization_stage'])db.prepare('DELETE FROM '+table+' WHERE site_id=?').run(siteId);
   return status();
  });}

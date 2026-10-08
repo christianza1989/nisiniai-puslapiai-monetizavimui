@@ -11,6 +11,7 @@ import {createOrganizationDirectory} from '../backend/organization-directory.mjs
 import {nextReminderAt,reminderValid} from '../backend/notifications.mjs';
 import {nextWaitlistAt,waitlistMailValid} from '../backend/waitlist.mjs';
 import {transactionalMail} from '../backend/transactional-mail.mjs';
+import {createOrganizationMediaSource} from '../backend/organization-media.mjs';
 import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger-transport.mjs';
 
 // One bounded Madbeauty pilot coordination domain. Other sites use separate namespaces.
@@ -50,6 +51,7 @@ export class MadbeautyPlatform extends DurableObject{
  async organizationHandoffStatus(input){return createOrganizationHandoff(this.store).status(input);}
  async freezeOrganization(input){return createOrganizationHandoff(this.store).freeze(input);}
  async organizationHandoffPage(input){return createOrganizationHandoff(this.store).page(input);}
+ async organizationMediaHandoffPage(input){return createOrganizationMediaSource(this.store).page(input);}
  async abortOrganizationHandoff(input){return createOrganizationHandoff(this.store).abort(input);}
  async organizationHandoffContext(input){return createOrganizationCommit(this.store).context(input);}
  async sealOrganizationHandoff(input){return createOrganizationCommit(this.store).seal(input);}

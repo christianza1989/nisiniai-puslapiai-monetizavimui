@@ -311,6 +311,14 @@
       "source": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
       "newTests": 0,
       "remaining": "Operator/staff location states, other applicable UI, hosted/factual launch gates"
+    },
+    {
+      "name": "native-location-review-and-staff-places-outage-stale-restart",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
+      "newTests": 0,
+      "remaining": "Other applicable UI, hosted/factual launch gates"
     }
   ],
   "tasks": [
@@ -582,7 +590,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: branch operator/staff network/stale, access/global conflicts, other complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named owner-location/account/card/privacy/waitlist scopes accepted",
+    "Remaining applicable I04: access/global conflicts, other complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named branch/account/card/privacy/waitlist scopes accepted",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

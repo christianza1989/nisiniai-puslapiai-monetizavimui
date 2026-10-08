@@ -1,3 +1,7 @@
+## Whole cancellation256
+
+cancelBooking retains exact booking ID/current authenticated scope/original version/reason. A whole multi-service visit is one atomic status/version update retaining all saved segments; partial-practitioner scope is rejected. Old-version retries conflict, including after a committed response loss; they do not replay success or add another cancellation message/event. UI now explicitly shows all saved segments/full interval/total and requires review of a fresh version before retrying a changed booking. No new endpoint or backend write behavior. Source 15a3d6ba3d81a61910c150a69762cf64d70e62dd; ACCEPTANCE256/cancel256-browser.md.
+
 ## Platform contact reports255
 
 report accepts exact target=platform as private central targetKind=platform/organizationId:null. Current authenticated actor, bounded note, account-scoped key/fingerprint and pending duplicate guard remain. Platform reviews require canonical operator and current report version; only record-only actions apply, publication actions are rejected before finding an organization. Existing organization/media/review reports retain directory routing. Customer workspace/export exposes only their reports with private actor IDs removed. UI key is in current context, not a reload-persistent guarantee; review decisions use version conflicts and explicit re-read after uncertainty. Source 7385ca2a1d85bed1352dfe4a84d05f096bc8a838, ACCEPTANCE255/contact255-browser.md.

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "7385ca2a1d85bed1352dfe4a84d05f096bc8a838",
+  "runtimeSourceCheckpoint": "15a3d6ba3d81a61910c150a69762cf64d70e62dd",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -273,6 +273,13 @@
       "state": "accepted-isolated-path",
       "evidence": "ACCEPTANCE255/contact255-browser.md;3new/1extended/0removed; exact75aa39/308; native contact/review/reporting-customer states",
       "remaining": "Other publication-action and applicable I04; hosted and factual launch gates"
+    },
+    {
+      "name": "whole-cancellation-saved-summary-native-stale-and-uncertain-recovery",
+      "tests": 256,
+      "state": "accepted-isolated-path",
+      "evidence": "ACCEPTANCE256/cancel256-browser.md;1new/1extended/0removed; exact75aa39/308; native Node directory two-store whole cancellation states",
+      "remaining": "Other applicable I04, hosted and factual launch gates"
     }
   ],
   "tasks": [
@@ -492,7 +499,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE255: platform contact/record-only review applicable errors and recovery accepted; current report252/CSV249/rules246/prior menu/gallery/upload retain scopes. Other publication-action/queue and named UI states remain."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE256: whole cancellation Node-directory saved summary/outage/stale/uncertain-reply/re-read/restart accepted; platform contact255/report252/CSV249/rules246/prior menu/gallery/upload retain scopes. Other named applicable UI states remain."
     },
     {
       "id": "E01",
@@ -544,7 +551,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: whole cancellation, phase/branch/waitlist/client-card/access/global conflicts, other complaint publication actions/queue read errors",
+    "Remaining applicable I04: phase/branch/waitlist/client-card/access/global conflicts, other complaint publication actions/queue read errors",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

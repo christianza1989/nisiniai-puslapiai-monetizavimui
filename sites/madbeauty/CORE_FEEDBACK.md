@@ -1,3 +1,7 @@
+## Cancellation256 — original version and explicit whole intent
+
+The existing whole-visit guard and atomic cancellation were sound, but a generic dialog hid the number of affected services. Added saved segments/total/interval and explicit whole action. Native two-window stale and committed-reply-loss acceptance preserves exact authoritative state; old versions conflict and require re-read, not an idempotent-success claim. Read-only fixture schema/key assumptions were corrected before comparing snapshots (mail type, booking value.id). Source 15a3d6ba3d81a61910c150a69762cf64d70e62dd; exact scope cancel256-browser.md. No shared core or production modification.
+
 ## Contact255 — typed form targets and real capture dimensions
 
 Actual contact form used target=platform while moderation accepted only approved organization/media/review IDs, so every filled contact report failed404. Added exact private central platform target, operator record-only versioned review and meaningful Node/directory/UI guards; native lost report reply replays one receipt. Post-review lost response remains a guarded version conflict requiring explicit current re-read, not silently replayed or overclaimed idempotency. Inline success reset left an old restored-draft notice; report path now removes it.

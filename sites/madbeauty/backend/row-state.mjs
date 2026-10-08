@@ -29,7 +29,7 @@ export function decode(fields,rows){
 // Shared Node/Workers codec. All related state/outbox mutations remain in one synchronous transaction.
 // SQL API: https://developers.cloudflare.com/durable-objects/api/sqlite-storage-api/
 export function openRowState({db,siteId,transaction,clock}){
- const fence=organizationFence({db,siteId});
+ const fence=organizationFence({db,siteId,transaction});
  const metadata=()=>db.prepare('SELECT * FROM state_row_metadata WHERE site_id=?').get(siteId);
  const currentMetadata=()=>{let meta=metadata();const legacy=db.prepare('SELECT version FROM platform_state WHERE site_id=?').get(siteId);if(meta&&legacy.version!==meta.legacy_version){if(!meta.legacy_mirrored)throw Error('Legacy writer changed a state exceeding its rollback capacity');write(JSON.parse(db.prepare('SELECT data FROM platform_state WHERE site_id=?').get(siteId).data));meta=metadata();}return meta;};
  const read=()=>{const meta=currentMetadata();if(!meta)return JSON.parse(db.prepare('SELECT data FROM platform_state WHERE site_id=?').get(siteId).data);return decode(JSON.parse(meta.fields),db.prepare('SELECT collection,record_key,data FROM state_rows WHERE site_id=? ORDER BY collection,position').all(siteId));};

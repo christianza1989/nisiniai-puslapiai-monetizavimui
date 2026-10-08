@@ -3,6 +3,7 @@ import {createPlatform} from './platform.mjs';
 import {organizationTransferProof as proof,sameTransferProof as equal,organizationCollections} from './organization-handoff.mjs';
 import {invokePlatform,publicRpcMethods} from './rpc-contract.mjs';
 import {groupSearchRows} from './search-results.mjs';
+import {createDirectoryCacheIssuer,createDirectoryCacheReceiver,createDirectoryIdentityEffects} from './organization-directory-cache.mjs';
 
 const json=JSON.stringify,clone=v=>JSON.parse(json(v)),maxTargets=32,maxResultBytes=1024*1024;
 const unavailable=()=>reject('ORGANIZATION_UNAVAILABLE','Organizacijos duomenys laikinai nepasiekiami. Bandykite dar kartą.',503);
@@ -52,11 +53,12 @@ function resultReferences(store,result,organizationId){
 // checks. Targets have no HTTP dispatcher, session cookies or auth challenges.
 export function createOrganizationCommand(store,{targetName}){
  indexSchema(store);
+ const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store);
  store.db.exec('CREATE TABLE IF NOT EXISTS organization_directory_commands(site_id TEXT NOT NULL,nonce TEXT NOT NULL,expires_at INTEGER NOT NULL,request_hash TEXT NOT NULL,response TEXT NOT NULL,PRIMARY KEY(site_id,nonce)); CREATE INDEX IF NOT EXISTS directory_commands_expiry ON organization_directory_commands(site_id,expires_at);');
  function execute(packet){return store.transaction(()=>{
   const body=verify(store,'directory-command',packet),a=store.db.prepare('SELECT * FROM organization_target_authority WHERE site_id=?').get(store.siteId);
   if(!a||a.state!=='active'||body.schemaVersion!==1||body.siteId!==store.siteId||body.organizationId!==a.organization_id||body.epoch!==a.epoch||body.targetName!==targetName||targetName!=='madbeauty:organization:v1:'+a.organization_id)unavailable();
-  if(!validId(body.nonce)||!Number.isSafeInteger(body.expiresAt)||body.expiresAt<=store.clock()||body.expiresAt>store.clock()+30000||Buffer.byteLength(json(packet))>32768)reject('INVALID_INPUT','Organizacijos užklausa paseno arba yra per didelė.');
+  if(!validId(body.nonce)||!Number.isSafeInteger(body.expiresAt)||body.expiresAt<=store.clock()||body.expiresAt>store.clock()+30000||Buffer.byteLength(json(packet))>maxResultBytes+32768||Buffer.byteLength(json(body.input||{}))>32768)reject('INVALID_INPUT','Organizacijos užklausa paseno arba yra per didelė.');
   if(!targetMethods.has(body.method)||identityMethods.has(body.method))reject('GLOBAL_IDENTITY_REQUIRED','Šiam veiksmui reikia centrinės paskyros patvirtinimo.',503);
   const actor=body.actor;if(actor&&(Object.keys(actor).some(k=>!['id','email','name','operator','verifiedAt'].includes(k))||!validId(actor.id)||typeof actor.email!=='string'||typeof actor.name!=='string'||typeof actor.operator!=='boolean'))reject('FORBIDDEN','Netinkama paskyros tapatybė.',403);
   if(!readMethods.has(body.method)&&!actor)reject('UNAUTHENTICATED','Prisijunkite.',401);
@@ -65,6 +67,8 @@ export function createOrganizationCommand(store,{targetName}){
   if(body.input?.organizationId&&body.input.organizationId!==organizationId||body.input?.scope?.role==='professional'&&body.input.scope.organizationId!==organizationId)reject('FORBIDDEN','Kita organizacija.',403);
   const requestHash=proof(store,'directory-request',body),old=store.db.prepare('SELECT request_hash,response FROM organization_directory_commands WHERE site_id=? AND nonce=?').get(store.siteId,body.nonce);
   if(old){if(old.request_hash!==requestHash)reject('IDEMPOTENCY_CONFLICT','Užklausos tapatybė jau panaudota.',409);return JSON.parse(old.response);}
+  cache.apply(body.cache,actor,a.epoch);
+  const identityBefore=actor&&['confirm','confirmVisit'].includes(body.method)?store.recordById('clients',actor.id):null;
   const api=createPlatform(store);let result;
   if(body.method==='resolveReference'){const input=body.input;if(!validId(input?.id)||!Array.isArray(input.tables)||input.tables.length>3||input.tables.some(t=>!entityTables.has(t)&&t!=='mail_outbox'))reject('INVALID_INPUT','Netinkama įrašo tapatybė.');const collections=input.tables.filter(t=>owner(store,{tables:[t],id:input.id})===organizationId);result={organizationId:collections.length?organizationId:null,collections};}
   else if(body.method==='publicProfiles')result=store.organizationRecords('organizations',organizationId).filter(o=>o.approved).map(o=>api.profile(o.id));
@@ -85,7 +89,8 @@ export function createOrganizationCommand(store,{targetName}){
    if(['hold','holdVisit','confirm','confirmVisit','createInquiry','createWaitlist','report'].includes(body.method)&&!store.recordById('clients',actor?.id))reject('GLOBAL_IDENTITY_REQUIRED','Ši paskyra dar neprijungta prie organizacijos saugyklos.',503);
    result=invokePlatform(api,body.method,actor,body.input||{});
   }
-  const response=signed(store,'directory-result',{schemaVersion:1,siteId:store.siteId,organizationId,epoch:a.epoch,targetName,nonce:body.nonce,result:clone(result),references:readMethods.has(body.method)?[]:resultReferences(store,result,organizationId)});
+  const identityEffect=identityBefore?effects.capture(result.id,identityBefore,store.recordById('clients',actor.id)):null;
+  const response=signed(store,'directory-result',{schemaVersion:1,siteId:store.siteId,organizationId,epoch:a.epoch,targetName,nonce:body.nonce,result:clone(result),identityEffect,references:readMethods.has(body.method)?[]:resultReferences(store,result,organizationId)});
   if(Buffer.byteLength(json(response))>maxResultBytes)reject('CAPACITY','Per didelis organizacijos atsakymas.',503);
   if(!readMethods.has(body.method)){
    store.db.prepare('DELETE FROM organization_directory_commands WHERE site_id=? AND expires_at<=?').run(store.siteId,store.clock());
@@ -99,18 +104,25 @@ export function createOrganizationCommand(store,{targetName}){
 
 export function createOrganizationDirectory(store,{getTarget}={}){
  const api=createPlatform(store),db=store.db,siteId=store.siteId;
+ const cache=createDirectoryCacheIssuer(store),effects=createDirectoryIdentityEffects(store);
  db.exec('CREATE TABLE IF NOT EXISTS organization_directory_refs(site_id TEXT NOT NULL,collection TEXT NOT NULL,entity_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,PRIMARY KEY(site_id,collection,entity_id));');
  const transfers=()=>{const rows=db.prepare("SELECT organization_id,epoch,state,target_name FROM organization_handoffs WHERE site_id=? AND state!='aborted' ORDER BY organization_id LIMIT 33").all(siteId);if(rows.length>maxTargets)reject('CAPACITY','Organizacijų paieškos apimtis viršija šio piloto ribą.',503);return rows;};
  const actor=user=>{if(!user)return null;const a=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND id=?').get(siteId,user.id);if(!a)reject('UNAUTHENTICATED','Prisijunkite.',401);return {...a,operator:!!a.operator,...(Number.isFinite(user.verifiedAt)?{verifiedAt:user.verifiedAt}:{})};};
  const saveReferences=(t,references)=>store.transaction(()=>{for(const r of references){if(!entityTables.has(r.collection)||!validId(r.id))unavailable();const old=db.prepare('SELECT organization_id FROM organization_directory_refs WHERE site_id=? AND collection=? AND entity_id=?').get(siteId,r.collection,r.id);if(old&&old.organization_id!==t.organization_id)reject('IDEMPOTENCY_CONFLICT','Įrašo tapatybė priklauso kitai organizacijai.',409);db.prepare('INSERT INTO organization_directory_refs VALUES(?,?,?,?,?) ON CONFLICT(site_id,collection,entity_id) DO UPDATE SET epoch=excluded.epoch').run(siteId,r.collection,r.id,t.organization_id,t.epoch);}});
  async function targetCall(t,method,user,input={}){
   if(t.state!=='sealed'||!getTarget)unavailable();
-  const nonce=randomId('command'),packet=signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:actor(user),input:clone(input)});let response;
-  try{response=await getTarget(t.target_name).executeDirectoryCommand(packet);}catch{unavailable();}
+  let response,nonce,account;
+  for(let attempt=0;attempt<2;attempt++){
+   const packet=store.transaction(()=>{account=actor(user);nonce=randomId('command');return signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:account,input:clone(input),cache:cache.issue(account?.id)});});
+   try{response=await getTarget(t.target_name).executeDirectoryCommand(packet);}catch{unavailable();}
+   // An overtaken cache is rejected before the business operation. Refresh once;
+   // transport failures and uncertain writes are never automatically replayed.
+   if(response?.error?.code!=='STALE_DIRECTORY_CONTEXT')break;
+  }
   if(response?.error)throw new ApiError(response.error.code,response.error.message,response.error.status);
   const body=verify(store,'directory-result',response);
   if(body.schemaVersion!==1||body.siteId!==siteId||body.organizationId!==t.organization_id||body.epoch!==t.epoch||body.targetName!==t.target_name||body.nonce!==nonce||!Array.isArray(body.references)||body.references.length>1024)unavailable();
-  saveReferences(t,body.references);return body.result;
+  store.transaction(()=>{saveReferences(t,body.references);effects.accept(t,body.identityEffect,account,body.result);});return body.result;
  }
  async function resolve(ref,rows){
   if(ref.organizationId)return ref.organizationId;

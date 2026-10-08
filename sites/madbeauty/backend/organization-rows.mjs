@@ -49,22 +49,33 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
   const data=readClient(account.id);validate(data);views.get(data).createIdentity=true;
   const client={id:account.id,accountId:account.id,name:account.name,email:account.email,version:1};data.clients.push(client);writeOrganization(data);return client;
  });}
+ function readDirectoryCache(accountIds){
+  const meta=currentMetadata(),fields=JSON.parse(meta.fields),ids=new Set(accountIds),rows=[];ensureStats(meta);
+  for(const f of fields){
+   if(['taxonomy','taxonomyChanges','taxonomyVersion'].includes(f.collection)||f.kind==='scalar')rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=? ORDER BY position').all(siteId,f.collection));
+   else if(f.collection==='clients')for(const id of ids)rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').all(siteId,f.collection,'id:'+id));
+   else if(f.collection==='preferences')for(const id of ids)rows.push(...db.prepare('SELECT * FROM state_rows WHERE site_id=? AND collection=? AND client_id=? ORDER BY position').all(siteId,f.collection,id));
+  }
+  const data=decode(fields,rows);views.set(data,{meta,fields,kind:'directory-cache',ids,rows,createIdentity:true});return data;
+ }
  function writeOrganization(data){return transaction(()=>{
   const view=views.get(data);if(!view)throw Error('Unknown organization view');const meta=currentMetadata();if(meta.version!==view.meta.version)reject('VERSION_CONFLICT','Duomenys pasikeitė. Pakartokite veiksmą.',409);
-  if(view.kind!=='client')fence.assertWritable(view.organizationId);
-  const encoded=encode(data);if(JSON.stringify(encoded.fields)!==JSON.stringify(view.fields))throw Error('Organization write requires an unchanged collection manifest');
-  const old=new Map(view.rows.map(r=>[identity(r),r])),changes=[],removed=[],kinds=new Map(view.fields.map(f=>[f.collection,f.kind]));
-  const allowed=r=>view.kind==='client'?r.collection==='clients'?JSON.parse(r.raw).id===view.accountId:['preferences','dataRequests'].includes(r.collection)?JSON.parse(r.raw).clientId===view.accountId:r.collection==='events':tenant.has(r.collection)?r.organizationId===view.organizationId:r.collection==='clients'?view.ids.has(JSON.parse(r.raw).id):r.collection==='preferences'?view.ids.has(JSON.parse(r.raw).clientId):r.collection==='idempotency'?[...view.ids].some(id=>r.key.startsWith(id+':')):r.collection==='selectionVersions'?r.key===view.organizationId:r.collection==='events';
+  if(!['client','directory-cache'].includes(view.kind))fence.assertWritable(view.organizationId);
+  const encoded=encode(data),existing=new Set(view.fields.map(f=>f.collection)),added=encoded.fields.filter(f=>!existing.has(f.collection));
+  if(JSON.stringify(encoded.fields.filter(f=>existing.has(f.collection)))!==JSON.stringify(view.fields)||added.length&&(view.kind!=='directory-cache'||added.some(f=>!['taxonomyChanges','taxonomyVersion'].includes(f.collection)||f.kind!==({taxonomyChanges:'array',taxonomyVersion:'scalar'}[f.collection]))))throw Error('Organization write requires an unchanged collection manifest');
+  const old=new Map(view.rows.map(r=>[identity(r),r])),changes=[],removed=[],kinds=new Map(encoded.fields.map(f=>[f.collection,f.kind]));
+  const allowed=r=>view.kind==='directory-cache'?['taxonomy','taxonomyChanges','taxonomyVersion'].includes(r.collection)||r.collection==='clients'&&view.ids.has(JSON.parse(r.raw).id)||r.collection==='preferences'&&view.ids.has(JSON.parse(r.raw).clientId):view.kind==='client'?r.collection==='clients'?JSON.parse(r.raw).id===view.accountId:['preferences','dataRequests'].includes(r.collection)?JSON.parse(r.raw).clientId===view.accountId:r.collection==='events':tenant.has(r.collection)?r.organizationId===view.organizationId:r.collection==='clients'?view.ids.has(JSON.parse(r.raw).id):r.collection==='preferences'?view.ids.has(JSON.parse(r.raw).clientId):r.collection==='idempotency'?[...view.ids].some(id=>r.key.startsWith(id+':')):r.collection==='selectionVersions'?r.key===view.organizationId:r.collection==='events';
   for(const r of encoded.rows){const key=identity(r),prior=old.get(key);old.delete(key);if(prior?.data===r.raw)continue;if(!allowed(r)||r.collection==='clients'&&!prior&&!view.createIdentity)throw Error('Organization patch cannot change another scope or global metadata');if(!prior&&db.prepare('SELECT record_key FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').get(siteId,r.collection,r.key))throw Error('Organization patch cannot overwrite an unloaded record');changes.push({...r,prior});}
   for(const prior of old.values()){const shape={collection:prior.collection,organizationId:prior.organization_id,key:prior.record_key,raw:prior.data};if(!allowed(shape)||shape.collection==='events')throw Error('Organization patch cannot delete outside its loaded scope');removed.push(prior);}
   fence.assertRows(changes,removed);
   const counts=new Map(),deltas=new Map(),cost=r=>bytes(r.raw??r.data)+(kinds.get(r.collection)==='scalar'?0:1)+(kinds.get(r.collection)==='object'?bytes(JSON.stringify(r.key??r.record_key))+1:0);
   for(const r of [...changes,...removed])if(!counts.has(r.collection)){const s=db.prepare('SELECT records,last_position FROM state_collection_stats WHERE site_id=? AND collection=?').get(siteId,r.collection);counts.set(r.collection,{n:s?.records||0,last:s?.last_position??-1});}
   const upsert=db.prepare('INSERT INTO state_rows(site_id,collection,record_key,position,organization_id,practitioner_id,resource_id,client_id,start_at,end_at,status,data) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(site_id,collection,record_key) DO UPDATE SET organization_id=excluded.organization_id,practitioner_id=excluded.practitioner_id,resource_id=excluded.resource_id,client_id=excluded.client_id,start_at=excluded.start_at,end_at=excluded.end_at,status=excluded.status,data=excluded.data');
-  let deltaBytes=0,deltaRecords=0;
+  let deltaBytes=added.reduce((n,f)=>n+bytes(JSON.stringify(f.collection))+2+(f.kind==='scalar'?0:2),0),deltaRecords=0;
   for(const r of changes){const count=counts.get(r.collection),position=r.prior?.position??++count.last;upsert.run(siteId,r.collection,r.key,position,r.organizationId,r.practitionerId,r.resourceId,r.clientId,r.startAt,r.endAt,r.status,r.raw);deltaBytes+=cost(r)-(r.prior?cost(r.prior):0);if(!r.prior){deltaRecords++;deltas.set(r.collection,(deltas.get(r.collection)||0)+1);}}
   for(const r of removed){db.prepare('DELETE FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').run(siteId,r.collection,r.record_key);deltaBytes-=cost(r);deltaRecords--;deltas.set(r.collection,(deltas.get(r.collection)||0)-1);}
   for(const [collection,delta] of deltas)if(kinds.get(collection)!=='scalar'){const count=counts.get(collection).n;deltaBytes+=(count?1:0)-(count+delta?1:0);}
+  if(added.length)db.prepare('UPDATE state_row_metadata SET fields=? WHERE site_id=?').run(JSON.stringify(encoded.fields),siteId);
   let nextBytes=meta.bytes+deltaBytes,mirrored=!!meta.legacy_mirrored&&nextBytes<=1024*1024;
   if(mirrored){const raw=JSON.stringify(fullRead());nextBytes=bytes(raw);mirrored=nextBytes<=1024*1024;if(mirrored)fence.mirrorWrite(()=>db.prepare('UPDATE platform_state SET data=?,version=version+1 WHERE site_id=?').run(raw,siteId));}
   const legacyVersion=db.prepare('SELECT version FROM platform_state WHERE site_id=?').get(siteId).version;
@@ -72,5 +83,13 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
   for(const [collection,count] of counts)db.prepare('INSERT INTO state_collection_stats VALUES(?,?,?,?) ON CONFLICT(site_id,collection) DO UPDATE SET records=excluded.records,last_position=excluded.last_position').run(siteId,collection,count.n+(deltas.get(collection)||0),count.last);
   db.prepare('UPDATE state_collection_stats_version SET version=? WHERE site_id=?').run(meta.version+1,siteId);views.delete(data);
  });}
- return {recordById:row,clientRecords:clientRows,readOrganization,writeOrganization,readClient,ensureClient,writeClient:data=>{if(views.get(data)?.kind!=='client')throw Error('Unknown client mutation view');return writeOrganization(data);}};
+ function writeDirectoryCache(data,accounts=[]){
+  const view=views.get(data);if(view?.kind!=='directory-cache')throw Error('Unknown directory cache view');
+  if(!Array.isArray(accounts)||accounts.some(a=>!view.ids.has(a.id)||a.site_id!==siteId||a.operator!==0||typeof a.email!=='string'||typeof a.name!=='string'||!Number.isSafeInteger(a.created_at)))throw Error('Invalid directory account cache');
+  return fence.cacheWrite(()=>{
+   for(const a of accounts)db.prepare('INSERT INTO accounts(id,site_id,email,name,operator,created_at) VALUES(?,?,?,?,0,?) ON CONFLICT(id) DO UPDATE SET email=excluded.email,name=excluded.name').run(a.id,siteId,a.email,a.name,a.created_at);
+   return writeOrganization(data);
+  });
+ }
+ return {recordById:row,clientRecords:clientRows,readOrganization,writeOrganization,readClient,ensureClient,writeClient:data=>{if(views.get(data)?.kind!=='client')throw Error('Unknown client mutation view');return writeOrganization(data);},readDirectoryCache,writeDirectoryCache};
 }

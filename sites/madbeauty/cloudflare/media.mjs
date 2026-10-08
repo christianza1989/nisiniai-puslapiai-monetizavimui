@@ -2,10 +2,15 @@ import {createHash} from 'node:crypto';
 import {optimizeRasterWithImages} from '../../../content-studio/src/cloudflare-image-pipeline.mjs';
 import {randomId,reject} from '../backend/primitives.mjs';
 import {canManageProfile} from '../backend/permissions.mjs';
+import {createSourceUpload} from '../backend/organization-upload.mjs';
+import {createPlatform} from '../backend/platform.mjs';
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 
 export function createMedia(env){
  const media={
+  async uploadSource(store,user,input){
+   return createSourceUpload(store,{transformMedia:media.transformMedia,writeObjects:entries=>{if(!env.MEDIA?.putManySync)reject('MEDIA_UNAVAILABLE','Vaizdo išsaugoti nepavyko.',503);env.MEDIA.putManySync(entries);},attach:(actor,asset)=>createPlatform(store).attachMedia(actor,asset)}).upload(user,input);
+  },
   async discardMedia(asset){await env.MEDIA.delete([asset.source.original,...asset.variants.map(v=>'variants/'+v.storageFile)]);},
   async transformMedia(store,{bytes,mime,alt,rights,usage,organizationId,rightsConfirmedAt,rightsConfirmedBy,id=randomId('asset')}){
    if(!env.IMAGES)reject('MEDIA_UNAVAILABLE','Vaizdų įkėlimas laikinai nepasiekiamas.',503);

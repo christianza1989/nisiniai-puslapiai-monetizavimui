@@ -252,8 +252,8 @@ export function createOrganizationDirectory(store,{getTarget}={}){
  }
  async function uploadMedia(user,input,{transformMedia,uploadSource}){
   const rows=transfers(),target=rows.find(t=>t.organization_id===input.organizationId);
-  if(!target)return uploadSource();
   const account=actor(user);if(!account)reject('UNAUTHENTICATED','Prisijunkite.',401);
+  if(!target)return uploadSource(account);
   await targetCall(target,'mediaUploadAccess',account,{organizationId:input.organizationId});
   const record=uploads.reserve(account,input),descriptor={organizationId:input.organizationId,id:record.metadata.id,requestHash:record.fingerprint};
   const recovered=await targetCall(target,'mediaUploadAccess',account,descriptor);let result=recovered.result;

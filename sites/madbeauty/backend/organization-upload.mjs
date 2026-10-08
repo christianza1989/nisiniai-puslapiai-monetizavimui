@@ -1,5 +1,5 @@
 import {createHash} from 'node:crypto';
-import {randomId,reject} from './primitives.mjs';
+import {randomId,reject,mediaPublic} from './primitives.mjs';
 import {membershipScope,requireCapability} from './permissions.mjs';
 import {organizationMediaObjects} from './organization-media.mjs';
 import {SQL_MEDIA_POLICY as policy} from './media-policy.mjs';
@@ -7,6 +7,7 @@ const json=JSON.stringify,hash=bytes=>createHash('sha256').update(bytes).digest(
 const invalid=()=>reject('INVALID_INPUT','Patikrinkite vaizdo įkėlimo duomenis.');
 const conflict=()=>reject('IDEMPOTENCY_CONFLICT','Šis įkėlimo raktas jau panaudotas kitam vaizdui.',409);
 const text=(value,max)=>{if(typeof value!=='string'||!value.trim()||value.trim().length>max)invalid();return value.trim();};
+const assetFingerprint=asset=>hash(json({organizationId:asset.organizationId,usage:asset.usage,alt:asset.alt,rights:asset.rights,mime:asset.source?.mime,originalBytes:asset.source?.bytes,originalSha256:asset.source?.sha256}));
 
 // Source records contain the admission metadata, never the original image bytes.
 // A lost target acknowledgement leaves the same asset ID available for retry.
@@ -51,8 +52,13 @@ export function createOrganizationUploadReceiver(store,{writeObjects}={}){
    if(!/^asset_[a-f0-9-]+$/.test(input.id)||!(/^[a-f0-9]{64}$/).test(input.requestHash))invalid();
    const old=store.db.prepare('SELECT * FROM organization_media_uploads WHERE site_id=? AND asset_id=?').get(store.siteId,input.id);
    if(old){if(old.organization_id!==input.organizationId||old.actor_id!==actor.id||old.fingerprint!==input.requestHash)conflict();return {organizationId:input.organizationId,id:input.id,result:JSON.parse(old.result)};}
+   // A source upload can be committed before an uncertain reply and then moved.
+   // The sealed snapshot carries its private asset metadata and physical bytes,
+   // while the central admission retains its ID and request fingerprint.
+   const asset=store.recordById('media',input.id);
+   if(asset){if(asset.organizationId!==input.organizationId||asset.rightsConfirmedBy!==actor.id||assetFingerprint(asset)!==input.requestHash)conflict();return {organizationId:input.organizationId,id:input.id,result:mediaPublic(asset)};}
+   if(store.organizationRecords('media',input.organizationId).length>=24)reject('LIMIT','Profilio vaizdų limitas pasiektas.');
   }
-  if(store.organizationRecords('media',input.organizationId).length>=24)reject('LIMIT','Profilio vaizdų limitas pasiektas.');
   return {organizationId:input.organizationId,id:input.id||null,result:null};
  }
  return {access,commit(actor,input,objects,attach){
@@ -64,5 +70,20 @@ export function createOrganizationUploadReceiver(store,{writeObjects}={}){
   const written=writeObjects(entries);if(written?.then)throw Error('Media commit must be synchronous');
   const result=attach(actor,asset);
   store.db.prepare('INSERT INTO organization_media_uploads VALUES(?,?,?,?,?,?)').run(store.siteId,asset.id,asset.organizationId,actor.id,input.requestHash,json(result));return result;
+ }};
+}
+
+// A source upload shares the same durable admission and receipt contract as a
+// moved organization. Optimization may await; the final role/fence check,
+// physical bytes, profile update and acknowledgement commit synchronously.
+export function createSourceUpload(store,{transformMedia,writeObjects,attach}){
+ const queue=createOrganizationUploadQueue(store),receiver=createOrganizationUploadReceiver(store,{writeObjects});
+ return {async upload(actor,input){
+  receiver.access(actor,{organizationId:input.organizationId});store.assertOrganizationWritable(input.organizationId);
+  const record=queue.reserve(actor,input),descriptor={organizationId:input.organizationId,id:record.metadata.id,requestHash:record.fingerprint},recovered=receiver.access(actor,descriptor);
+  if(recovered.result)return store.transaction(()=>{store.assertOrganizationWritable(input.organizationId);queue.complete(actor,record,recovered.result);return recovered.result;});
+  const prepared=await transformMedia(store,{...record.metadata,bytes:input.bytes});
+  if(prepared.asset.source.bytes!==record.metadata.originalBytes||prepared.asset.source.sha256!==record.metadata.originalSha256)reject('MEDIA_INTEGRITY','Vaizdo duomenys nesutampa.',409);
+  return store.transaction(()=>{store.assertOrganizationWritable(input.organizationId);const result=receiver.commit(actor,{...descriptor,asset:prepared.asset},prepared.objects,attach);queue.complete(actor,record,result);return result;});
  }};
 }

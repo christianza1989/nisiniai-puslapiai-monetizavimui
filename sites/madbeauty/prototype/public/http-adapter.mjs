@@ -1,5 +1,6 @@
 export function createHttpAdapter(){
-  let session=null;
+  let session=null,refreshPending=null;
+  const readMethods=new Set(['taxonomy','search','searchResults','visitAvailability','catalog','profile','option','workspace','availability','organizationReport','erasureCase','rebooking','exportCustomer','metrics']);
   const adapter={mode:'real',clock:{now:new Date().toISOString(),timezone:'Europe/Vilnius'}};
   async function request(path,data){
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);let r,result;
@@ -8,8 +9,8 @@ export function createHttpAdapter(){
     finally{clearTimeout(timer);}
     if(!r.ok){const e=Error(result.error?.message||'Užklausos įvykdyti nepavyko.');e.code=result.error?.code||'SERVER_ERROR';e.status=r.status;throw e;}return result;
   }
-  async function rpc(method,input={}){if(!session)await adapter.refreshSession();return(await request('rpc',{method,input,siteId:'madbeauty'})).result;}
-  adapter.refreshSession=async()=>{session=await request('session');adapter.clock=session.clock;adapter.session=session;return session;};
+  async function rpc(method,input={}){const previousUser=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();if(previousUser&&previousUser!==session.user?.id&&!readMethods.has(method))throw Object.assign(Error('Paskyros sesija pasikeitė. Prisijunk iš naujo ir patikrink veiksmą prieš jį kartodamas.'),{code:'SESSION_CHANGED',status:409});return(await request('rpc',{method,input,siteId:'madbeauty'})).result;}
+  adapter.refreshSession=()=>{if(!refreshPending)refreshPending=request('session').then(value=>{session=value;adapter.clock=session.clock;adapter.session=session;return session;}).finally(()=>{refreshPending=null;});return refreshPending;};
   adapter.authStart=async email=>request('auth/start',{email});
   adapter.authVerify=async(challengeId,code)=>{session=await request('auth/verify',{challengeId,code});adapter.clock=session.clock;adapter.session=session;return session;};
   adapter.logout=async()=>{session=await request('logout',{});adapter.session=session;return session;};

@@ -1,3 +1,7 @@
+## Patvarus source įkėlimas / 13a0de78eafa04bdad9001f627756141125672a5
+
+Ordinary Worker uploadSource naudoja canonical centrinę paskyrą. requireCapability(profile) ir source fence prieš admission; atkūrimas prieš quota24; po async shared IMAGES transform dar kartą tikrinama teisė ir fence. Final writeObjects/attach/profile/receipt/completion viename sync SQL commit. Node filesystem HTTP adapteris kol kas lieka atskiras. Perkeltam asset ID recovery būtina current capability, actor rightsConfirmedBy ir exact digest of organization/usage/alt/rights/MIME/original byte count/hash. Nėra sealed source write/read fallback ar receipt-table automatinio pernešimo.
+
 ## Bound candidate namespace / 93c020eff125da46471b3845695a290201ba6e7c
 
 Worker now exports both DO classes; config includes ORGANIZATION_STAGING. Namespace binding alone grants no active organization/calendar/mail/session authority. Target HTTP fetch remains404 and private commands require signed canonical actor/current epoch/physical target identity. No automatic org transfer occurs. Original central sessions and mail admission remain.

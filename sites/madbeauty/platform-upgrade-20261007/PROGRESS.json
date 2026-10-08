@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "93c020eff125da46471b3845695a290201ba6e7c",
+  "runtimeSourceCheckpoint": "13a0de78eafa04bdad9001f627756141125672a5",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -234,6 +234,12 @@
       "tests": 233,
       "state": "accepted-local-worker-and-config-dry-run",
       "remaining": "Remote migration/deploy remain unexecuted; native Worker browser upload, local source dedup, Node filesystem import, I04 and factual/hosted restore gates."
+    },
+    {
+      "name": "source-upload-atomic-durable-retry-and-physical-handoff-recovery",
+      "tests": 238,
+      "state": "accepted-isolated-node-workers-and-native-gallery-paths",
+      "remaining": "Node filesystem import, remaining I04 states and hosted/factual launch gates; source browser is separate from Worker HTTP acceptance; production not deployed."
     }
   ],
   "tasks": [
@@ -438,7 +444,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE233: directory/target media/mail and candidate namespace binding accepted locally through actual main Worker; remote lifecycle/PITR/load, local source dedup and Node filesystem adapter remain."
+      "evidence": "STORAGE.md/ACCEPTANCE238: target/source atomic upload and physical handoff recovery accepted in actual main Worker; candidate bindings local only. Node filesystem importer and hosted lifecycle/PITR/load remain."
     },
     {
       "id": "I03",
@@ -453,7 +459,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md/ACCEPTANCE.md: archived procedure draft same ID save/reload and canonical inactive context accepted at320/390/820/1440. Other named states remain."
+      "evidence": "UI_MATRIX.md/ACCEPTANCE238: actual target Worker native upload lost reply/restart/reload/same intent; current gallery service/caption Enter save/reload and readable editor at320/390/820/1440. Other named states remain."
     },
     {
       "id": "E01",
@@ -505,8 +511,8 @@
     }
   ],
   "next": [
-    "Actual Worker browser upload I04 and local source upload retry admission",
-    "Node filesystem media import and applicable remaining I04 states",
+    "Node filesystem media import and its exact physical transfer acceptance",
+    "Applicable remaining I04 UI states, including gallery version-conflict/network states",
     "Hosted restore/load and factual SMTP/pilot/retention gates; only then conditional full-upgrade deployment"
   ]
 }

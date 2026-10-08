@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "b00eeb8a34706b1e64fc53c247558ff57a6ae3fd",
+  "runtimeSourceCheckpoint": "ffa1874adc039fe1a7d2796bd1bb8eab721e0871",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -294,6 +294,15 @@
       "state": "accepted-isolated-path",
       "source": "b00eeb8a34706b1e64fc53c247558ff57a6ae3fd",
       "remaining": "Other applicable UI states and hosted/factual launch gates"
+    },
+    {
+      "name": "account-bound-restoration-and-native-client-privacy-recovery",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "ffa1874adc039fe1a7d2796bd1bb8eab721e0871",
+      "accountSource": "d9c61b01b583e0eee41f18efdd448b1efd8eb9ec",
+      "newTests": 2,
+      "remaining": "Other applicable UI states; hosted/factual launch gates; irreversible erasure disabled"
     }
   ],
   "tasks": [
@@ -513,7 +522,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE256 latest phases: native Node base/staff focus, confirmation error/recovery, two-window held-version no-write conflicts, per-tab reload/current phase snapshots/restart accepted. Prior cancellation/contact/report/CSV/rules/menu/gallery/upload retain scopes; other applicable states remain."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain."
     },
     {
       "id": "E01",
@@ -565,7 +574,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: branch/client-card/access/global conflicts, other complaint publication actions/queue read errors and account-change booking draft privacy; named local waitlist stale/expiry scope accepted",
+    "Remaining applicable I04: branch/access/global conflicts, other complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named account/card/privacy/waitlist scopes accepted",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

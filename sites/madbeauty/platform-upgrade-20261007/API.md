@@ -1,3 +1,7 @@
+## Meniu veiksmo pakartojimas / cb8f37a30d2d4e634d169b52e752998bbad82a7d
+
+saveMenuGroup optional idempotencyKey: actor-scoped,160char maximum. Current price capability and group ownership checked first. Exact normalized payload/org/ID/original version replays original result before version check, no extra group/version/event. Changed intent with same key409; new key and stale version409. Ordinary browser menu stores the key in its scoped8h same-tab version-bound draft; success clears it. Legacy callers without key retain earlier behavior.
+
 ## Local maintenance import / 31465ffd1a616866f4089106abe25acfa9a53b6e
 
 `node sites/madbeauty/backend/import-filesystem-media.mjs --db EXISTING_LOCAL_DB --organization ORGANIZATION_ID --operator CANONICAL_OPERATOR_ID` requires explicit existing database plus its existing `.secret`. It does not create a new database/secret when missing. It invokes importFilesystemMedia before organization freeze. There is no new HTTP/public RPC/browser route; operator flag is loaded from canonical accounts each time. Results contain only counts, organization ID and filesystemWrites0, no secrets, contact details or original image bytes. Partial progress is atomic per asset and replay checks exact already-imported SQL bytes; retry after a later failure resumes.

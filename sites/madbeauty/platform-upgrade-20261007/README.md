@@ -1,3 +1,5 @@
+Aktualus runtime cb8f37a30d2d4e634d169b52e752998bbad82a7d;246/246 testų tarpinis paketas ir native meniu/CSV/galerijos būsenos priimtos tikslioje [ACCEPTANCE](ACCEPTANCE.md) / [UI_MATRIX](UI_MATRIX.md) apimtyje. Visas upgrade ACTIVE; production nekelta. Toliau likusi I04 matrica ir hosted/factual vartai.
+
 ## Aktualus 244 testų tarpinis paketas
 
 Runtime 31465ffd1a616866f4089106abe25acfa9a53b6e: explicit Node filesystem importer parengia existing private asset.original ir WebP failus SQL handoff. Canonical operator tikrinamas prieš failų skaitymą ir dar kartą prieš commit; org writable fence, profile version ir exact visų media įrašų CAS atmeta pasikeitusią apimtį. Tikrinami legal asset/key names, real path/file type, exact size/SHA/MIME descriptor ir esamas SQL indeksas. Iki32MiB per asset; commit atominis vienam asset, organizacijos importas resumable. Source private original key tampa originals/ID; existing ID/variant URL/public DTO/gallery/profile version lieka tie patys. Diskiniai failai nekeičiami, nėra optimizerio kopijos/retransform ar trynimo.

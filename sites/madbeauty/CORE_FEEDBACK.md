@@ -1,3 +1,7 @@
+## 2026-10-08 — patirtas meniu išsaugojimo dublikatas
+
+Original saveMenuGroup retry po lost reply sukūrė naują ID: menu-replay-node-first.log reprodukcija FAIL. Pataisa cb8f37a30d2d4e634d169b52e752998bbad82a7d: business result replay su actor/org/payload/version fingerprint po current-role validation; menu draft retains operation key. Node ir native Workers restart/current access tests bei actual browser reload/retry SQL comparison priimti,246/246 suites. Atkūrimo copy nebeteigia, kad neaiškiam atsakymui esant forma tikrai neįrašyta. Bendro core ar kitų nišų formos automatiškai nepakeistos; ši pamoka nėra visų jų acceptance.
+
 ## 2026-10-08 — filesystem original nėra SQL originalas
 
 Runtime 31465ffd1a616866f4089106abe25acfa9a53b6e: explicit Node filesystem importer parengia existing private asset.original ir WebP failus SQL handoff. Canonical operator tikrinamas prieš failų skaitymą ir dar kartą prieš commit; org writable fence, profile version ir exact visų media įrašų CAS atmeta pasikeitusią apimtį. Tikrinami legal asset/key names, real path/file type, exact size/SHA/MIME descriptor ir esamas SQL indeksas. Iki32MiB per asset; commit atominis vienam asset, organizacijos importas resumable. Source private original key tampa originals/ID; existing ID/variant URL/public DTO/gallery/profile version lieka tie patys. Diskiniai failai nekeičiami, nėra optimizerio kopijos/retransform ar trynimo.

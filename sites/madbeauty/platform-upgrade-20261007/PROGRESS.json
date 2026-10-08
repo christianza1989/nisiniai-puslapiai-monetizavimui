@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "31465ffd1a616866f4089106abe25acfa9a53b6e",
+  "runtimeSourceCheckpoint": "cb8f37a30d2d4e634d169b52e752998bbad82a7d",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -246,6 +246,12 @@
       "tests": 244,
       "state": "accepted-isolated-node-cli-and-native-worker-transfer",
       "remaining": "Remaining applicable I04 UI states, hosted restore/fence/load and factual SMTP/pilot/retention gates; no production deployment."
+    },
+    {
+      "name": "idempotent-menu-save-and-native-menu-csv-gallery-states",
+      "tests": 246,
+      "state": "accepted-isolated-path",
+      "remaining": "Other named I04, hosted lifecycle/load and factual launch gates"
     }
   ],
   "tasks": [
@@ -465,7 +471,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md/ACCEPTANCE238: actual target Worker native upload lost reply/restart/reload/same intent; current gallery service/caption Enter save/reload and readable editor at320/390/820/1440. Other named states remain."
+      "evidence": "UI_MATRIX.md/ACCEPTANCE246: native group precommit/error/loading and committed reply loss/reload/two-store restart replay; CSV same-dialog uncertain retry and keyboard/Escape; gallery outage/version-conflict/reviewed recovery accepted. Other named states remain."
     },
     {
       "id": "E01",
@@ -517,7 +523,7 @@
     }
   ],
   "next": [
-    "Applicable remaining I04 UI states, starting with group/CSV and gallery version-conflict/network paths",
+    "Applicable remaining I04, continuing rules/reports/complaints, whole cancellation, phase/branch/waitlist/client-card/access/global conflict states",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "7e9bb96be4a1606cec33910266475c1432251913",
+  "runtimeSourceCheckpoint": "d60e077abaad63d9325ff22a43983b375ca58661",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -168,6 +168,12 @@
       "tests": 194,
       "state": "accepted-bounded-isolated-path",
       "remaining": "New central identity/cache/preferences/taxonomy/name admission, global controls, mail/media activation, production binding/migration and full UI matrix"
+    },
+    {
+      "name": "fresh-directory-identity-cache-and-confirmed-name-effects",
+      "tests": 198,
+      "state": "accepted-isolated-path",
+      "remaining": "Migrated-client preference reconciliation, manual identity/membership admission, globals, target mail/media and full UI matrix; production unchanged"
     }
   ],
   "tasks": [
@@ -372,7 +378,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE194: private active-target ordinary HTTP, authenticated actor and shared CSRF/origin/site checks, old/new ID resolution and lost registration recovery, current public/customer/professional/operator/session/export reads, mixed source/target ownership, Node/actual Workers/browser restart proof. New identity/cache/preferences/taxonomy/name and mail/media admission remain active."
+      "evidence": "STORAGE.md/ACCEPTANCE198: fresh SQL actor identity/preferences/taxonomy cache, monotonic bounded admission, target rollback/account guards, durable confirmed-name effects with central compare-version receipts, ordinary first OTP sign-in→booking and actual Workers restart. Remaining migrated-client preferences, manual identity/membership, globals and mail/media/binding."
     },
     {
       "id": "I03",
@@ -439,8 +445,8 @@
     }
   ],
   "next": [
-    "I02 fresh central identity/preferences/taxonomy/name admission, remaining global controls and mail/media activation",
-    "Full desktop/mobile error/stale/conflict states",
+    "I02 migrated-client preference reconciliation and durable control delivery; remaining manual identity/membership and globals",
+    "Target mail/media activation and full desktop/mobile error/stale/conflict states",
     "I03 larger-adapter activation and hosted load gate"
   ]
 }

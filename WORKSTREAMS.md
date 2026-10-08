@@ -330,3 +330,6 @@ Cloudflare release 2026-10-06: also reserves infrastructure/mail-relay/** for th
 2026-10-07 Madbeauty PR26 own checkpoint: C01 current-price rebooking + C02 scoped cards/export/fresh-OTP audited requests141PASS, actual mobile repeat/new ID + server attachment + stale card UI. Erasure execution retention facts remain gate; no live data writes. Next B03/W03/O03/I02/I03 and full acceptance.
 
 2026-10-08 Madbeauty own PR26 directory checkpoint7e9bb96: ordinary signed HTTP routes to one active target, current projections/roles/customer exports and new ID recovery;194/194PASS +actual two-store browser same booking/restart widths. New identity/cache/preferences/taxonomy/name, mail/media activation and I04 remain ACTIVE; conditional full upgrade deploy not executed. Shared/writer checkout unchanged.
+
+
+- 2026-10-08 Madbeauty own upgrade runtime d60e077:9source files fresh directory cache/confirmed name effect,198/198 full4suites, exact75aa39page305asset build ir isolated8843 new OTP→booking. Docs own status/platform/core-feedback; companionc7e0c9a neperrašytas. Active continuation: migrated-client preference reconciliation, remaining identity/globals/mail/media/UI. Production writes0, deploy only upon full acceptance.

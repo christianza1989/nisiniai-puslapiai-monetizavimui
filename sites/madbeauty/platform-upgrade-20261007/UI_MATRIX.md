@@ -26,3 +26,8 @@ Galutinis I04 acceptance reikalauja uždaryti taikomas eilutes, įrašyti konkre
 ## Directory194 / actual two-store roles
 
 8843 owner/customer synthetic browser2/tab2, normal booking/detail/restart accepted: profile→hold→confirm new17:00–18:00/25€ ID matches target storage, customer detail and owner calendar dialog. Customer320/390/820/1440 plus dialog288/358/700/700 visually reviewed and width-measured in directory-customer-widths.json / directory-professional-widths.json. Source remains original snapshot; both stores restart and ordinary sessions survive. First mixed-org /meistrui503 screenshot preserved; guarded unmigrated fallback fixed, source overview→organization switch→current target calendar retest passed. Earlier per-role UI matrix and all untested error/stale/conflict states remain. Latest full backend regression194/194 does not mark them PASS.
+
+
+## Directory198 / pirmas naujas klientas
+
+8843 browser2/tab2 fresh central OTP identity sukūrimas po handoff→mobile390 profile/service/time/contact/review/confirm→same booking detail priimti. directory-fresh198-confirmed-390.png actual peržiūrėta. Identity/cache/global name sutapimą rodo directory-fresh198-status.json ir Node/Workers acceptance, ne išgalvotas browser global cache. Šis naujas kelias nepriskiria PASS kitoms likusioms keyboard/error/stale/conflict eilutėms.

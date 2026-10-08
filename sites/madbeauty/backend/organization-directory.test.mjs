@@ -239,3 +239,41 @@ test('Client admission capacity rejects before provisioning, recorded permission
   const capacity={organizationId:f.a.org.id,email:'capacity-directory-manual@example.com',name:'No provision at capacity',idempotencyKey:'capacity-client-one'};assert.equal((await f.request('owner','createClient',capacity)).error.code,'LIMIT');assert.equal(f.source.db.prepare('SELECT id FROM accounts WHERE email=?').get(capacity.email),undefined);assert.equal((await f.directory.dispatch('createClient',f.users.reception,input)).id,failed.account_id);assert.equal(f.target.organizationRecords('clientLinks',f.a.org.id).find(c=>c.clientId===failed.account_id).version,1);
  }finally{f.close();}
 });
+
+
+test('Favorites use the current target profile, stay central and can remove an archived bookmark without trusting the sealed copy',async()=>{
+ const f=fixture();try{
+  const saved=await f.request('client','favorite',{organizationId:f.a.org.id,saved:true});assert.equal(saved.status,200,JSON.stringify(saved));assert.deepEqual(saved.result,[f.a.org.id]);assert.equal(f.target.recordById('clients',f.users.client.id).favoriteIds,undefined);
+  const view=f.target.readOrganization(f.a.org.id);view.organizations[0].approved=false;f.target.writeOrganization(view);assert.equal(f.source.recordById('organizations',f.a.org.id).approved,true);
+  assert.equal((await f.request('client','favorite',{organizationId:f.a.org.id,saved:true})).error.code,'NOT_FOUND');assert.deepEqual((await f.request('client','favorite',{organizationId:f.a.org.id,saved:false})).result,[]);
+  const unavailable=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:()=>{throw Error('Favorite profile unavailable');}})});await assert.rejects(unavailable.dispatch('favorite',f.users.client,{organizationId:f.a.org.id,saved:true}),e=>e.code==='ORGANIZATION_UNAVAILABLE');assert.deepEqual(f.source.recordById('clients',f.users.client.id).favoriteIds,[]);
+  assert.equal((await f.request('client','favorite',{organizationId:f.a.org.id,saved:'true'})).error.code,'INVALID_INPUT');assert.equal((await f.request('owner','metrics')).status,200);assert.equal(f.source.recordById('clients',f.users.foreign.id).favoriteIds,undefined);
+ }finally{f.close();}
+});
+
+test('Central taxonomy writes only its indexed scope, preserves sealed organizations and propagates current revisions through signed target cache',async()=>{
+ const cold=openStore({filename:':memory:',secret,clock:()=>now});try{const api=createPlatform(cold),before=api.taxonomy().version,changed=api.changeTaxonomy({id:'cold-operator',operator:true},{version:before,nodeId:'manikiuras',operation:'aliases',aliases:['Cold catalogue']});assert.notEqual(changed.version,before);assert.deepEqual(api.taxonomy().nodes.find(n=>n.id==='manikiuras').aliases,['Cold catalogue']);assert.equal(cold.readCollections(['events']).events.length,1);}finally{cold.close();}
+ const f=fixture({large:true});try{
+  const before=f.source.recordById('services',f.a.service.id),version=f.api.taxonomy().version,read=f.source.read;f.source.read=()=>{throw Error('Global catalogue must not read all private history');};
+  const denied=await f.request('client','changeTaxonomy',{version,nodeId:'manikiuras',operation:'aliases',aliases:['Denied']});assert.equal(denied.error.code,'FORBIDDEN');
+  const changed=await f.request('owner','changeTaxonomy',{version,nodeId:'manikiuras',operation:'aliases',aliases:['Aktuali katalogo procedūra']});assert.equal(changed.status,200,JSON.stringify(changed));assert.notEqual(changed.result.version,version);assert.deepEqual(f.source.recordById('services',f.a.service.id),before);
+  assert.equal((await f.request('owner','changeTaxonomy',{version,nodeId:'manikiuras',operation:'aliases',aliases:['Stale']})).error.code,'VERSION_CONFLICT');await f.directory.dispatch('catalog',null,{});assert.equal(f.target.readCollections(['taxonomyVersion']).taxonomyVersion,changed.result.version);
+  assert.throws(()=>f.target.readCatalogue(),e=>e.code==='FORBIDDEN');const foreign=f.source.readCatalogue();foreign.organizations.push({...f.b.org,name:'Cross-scope'});assert.throws(()=>f.source.writeCatalogue(foreign),/another scope/);
+  const write=f.source.writeCatalogue;f.source.writeCatalogue=d=>{write(d);throw Error('Catalogue post-write failure');};await assert.rejects(f.directory.dispatch('changeTaxonomy',f.users.owner,{version:changed.result.version,nodeId:'manikiuras',operation:'aliases',aliases:['Rolled back']}),/post-write/);f.source.writeCatalogue=write;assert.equal(f.api.taxonomy().version,changed.result.version);f.source.read=read;
+  assert.equal(f.source.rowStats().bytes,Buffer.byteLength(JSON.stringify(f.source.read())));assert.equal(f.source.db.prepare('SELECT COUNT(*) AS n FROM directory_cache_writer_permits').get().n,0);
+ }finally{f.close();}
+});
+
+test('Operator metrics count current organization rows once and catalogue conversion safely resumes after a committed target reply is lost',async()=>{
+ const f=fixture();try{
+  f.source.clock=f.target.clock=()=>now+3*86400000;
+  assert.equal((await f.request('owner','completeBooking',{id:f.first.id,version:1,scope:f.a.scope})).status,200);assert.equal((await f.request('owner','completeBooking',{id:f.other.id,version:1,scope:f.b.scope})).status,200);
+  const view=f.target.readOrganization(f.a.org.id);view.inquiries.push({id:'current-target-inquiry',organizationId:f.a.org.id,clientId:f.users.client.id,status:'open'});f.target.writeOrganization(view);
+  const metrics=await f.request('owner','metrics');assert.equal(metrics.status,200,JSON.stringify(metrics));assert.equal(metrics.result.realVisits,2);assert.equal(metrics.result.realInquiries,1);assert.equal(metrics.result.demand,'TESTING_NOT_MEASURED');assert.equal((await f.request('client','metrics')).status,403);
+  let lost=true;const directory=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:packet=>{const result=f.command.execute(packet);if(packet.method==='migrateOrganizationCatalogue'&&lost){lost=false;throw Error('Committed catalogue reply lost');}return result;}})});
+  await assert.rejects(directory.dispatch('migrateCatalogue',f.users.client,{}),e=>e.code==='FORBIDDEN');await assert.rejects(directory.dispatch('migrateCatalogue',f.users.owner,{}),e=>e.code==='ORGANIZATION_UNAVAILABLE');
+  assert.ok(f.target.recordById('services',f.a.service.id).offerId);assert.ok(f.source.recordById('services',f.b.service.id).offerId);assert.equal(f.source.recordById('services',f.a.service.id).offerId,undefined);
+  const recovered=await directory.dispatch('migrateCatalogue',f.users.owner,{});assert.equal(recovered.added,0);assert.equal(recovered.services,2);assert.equal(recovered.bookings,2);assert.equal(f.target.readCollections(['offers']).offers.filter(o=>o.legacyServiceId===f.a.service.id).length,1);assert.equal(f.target.readCollections(['events']).events.filter(e=>e.type==='catalogue-migrated').length,1);
+  const final=await f.directory.dispatch('metrics',f.users.owner,{}),central=f.api.metrics({...f.users.owner,operator:true},{excludeOrganizationIds:[f.a.org.id]}),target=createPlatform(f.target).metrics({...f.users.owner,operator:true});assert.equal(final.events,central.events+target.events);assert.equal(final.realVisits,2);
+ }finally{f.close();}
+});

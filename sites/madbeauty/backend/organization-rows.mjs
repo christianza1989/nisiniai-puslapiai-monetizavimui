@@ -58,13 +58,17 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
   }
   const data=decode(fields,rows);views.set(data,{meta,fields,kind:'directory-cache',ids,rows,createIdentity:true});return data;
  }
+ function readCatalogue(){
+  if(db.prepare('SELECT site_id FROM organization_target_authority WHERE site_id=?').get(siteId))reject('FORBIDDEN','Katalogą valdo centrinė sistema.',403);
+  const data=readDirectoryCache([]);views.get(data).kind='catalogue';return data;
+ }
  function writeOrganization(data){return transaction(()=>{
   const view=views.get(data);if(!view)throw Error('Unknown organization view');const meta=currentMetadata();if(meta.version!==view.meta.version)reject('VERSION_CONFLICT','Duomenys pasikeitė. Pakartokite veiksmą.',409);
-  if(!['client','directory-cache'].includes(view.kind))fence.assertWritable(view.organizationId);
+  if(!['client','directory-cache','catalogue'].includes(view.kind))fence.assertWritable(view.organizationId);
   const encoded=encode(data),existing=new Set(view.fields.map(f=>f.collection)),added=encoded.fields.filter(f=>!existing.has(f.collection));
-  if(JSON.stringify(encoded.fields.filter(f=>existing.has(f.collection)))!==JSON.stringify(view.fields)||added.length&&(view.kind!=='directory-cache'||added.some(f=>!['taxonomyChanges','taxonomyVersion'].includes(f.collection)||f.kind!==({taxonomyChanges:'array',taxonomyVersion:'scalar'}[f.collection]))))throw Error('Organization write requires an unchanged collection manifest');
+  if(JSON.stringify(encoded.fields.filter(f=>existing.has(f.collection)))!==JSON.stringify(view.fields)||added.length&&(!['directory-cache','catalogue'].includes(view.kind)||added.some(f=>!['taxonomyChanges','taxonomyVersion'].includes(f.collection)||f.kind!==({taxonomyChanges:'array',taxonomyVersion:'scalar'}[f.collection]))))throw Error('Organization write requires an unchanged collection manifest');
   const old=new Map(view.rows.map(r=>[identity(r),r])),changes=[],removed=[],kinds=new Map(encoded.fields.map(f=>[f.collection,f.kind]));
-  const allowed=r=>view.kind==='directory-cache'?['taxonomy','taxonomyChanges','taxonomyVersion'].includes(r.collection)||r.collection==='clients'&&view.ids.has(JSON.parse(r.raw).id)||r.collection==='preferences'&&view.ids.has(JSON.parse(r.raw).clientId):view.kind==='client'?r.collection==='clients'?JSON.parse(r.raw).id===view.accountId:['preferences','dataRequests'].includes(r.collection)?JSON.parse(r.raw).clientId===view.accountId:r.collection==='events':tenant.has(r.collection)?r.organizationId===view.organizationId:r.collection==='clients'?view.ids.has(JSON.parse(r.raw).id):r.collection==='preferences'?view.ids.has(JSON.parse(r.raw).clientId):r.collection==='idempotency'?[...view.ids].some(id=>r.key.startsWith(id+':')):r.collection==='selectionVersions'?r.key===view.organizationId:r.collection==='events';
+  const allowed=r=>view.kind==='catalogue'?['taxonomy','taxonomyChanges','taxonomyVersion','events'].includes(r.collection)&&!r.organizationId:view.kind==='directory-cache'?['taxonomy','taxonomyChanges','taxonomyVersion'].includes(r.collection)||r.collection==='clients'&&view.ids.has(JSON.parse(r.raw).id)||r.collection==='preferences'&&view.ids.has(JSON.parse(r.raw).clientId):view.kind==='client'?r.collection==='clients'?JSON.parse(r.raw).id===view.accountId:['preferences','dataRequests'].includes(r.collection)?JSON.parse(r.raw).clientId===view.accountId:r.collection==='events':tenant.has(r.collection)?r.organizationId===view.organizationId:r.collection==='clients'?view.ids.has(JSON.parse(r.raw).id):r.collection==='preferences'?view.ids.has(JSON.parse(r.raw).clientId):r.collection==='idempotency'?[...view.ids].some(id=>r.key.startsWith(id+':')):r.collection==='selectionVersions'?r.key===view.organizationId:r.collection==='events';
   for(const r of encoded.rows){const key=identity(r),prior=old.get(key);old.delete(key);if(prior?.data===r.raw)continue;if(!allowed(r)||r.collection==='clients'&&!prior&&!view.createIdentity)throw Error('Organization patch cannot change another scope or global metadata');if(!prior&&db.prepare('SELECT record_key FROM state_rows WHERE site_id=? AND collection=? AND record_key=?').get(siteId,r.collection,r.key))throw Error('Organization patch cannot overwrite an unloaded record');changes.push({...r,prior});}
   for(const prior of old.values()){const shape={collection:prior.collection,organizationId:prior.organization_id,key:prior.record_key,raw:prior.data};if(!allowed(shape)||shape.collection==='events')throw Error('Organization patch cannot delete outside its loaded scope');removed.push(prior);}
   fence.assertRows(changes,removed);
@@ -91,5 +95,5 @@ export function organizationRows({db,siteId,transaction,clock,currentMetadata,fu
    return writeOrganization(data);
   });
  }
- return {recordById:row,clientRecords:clientRows,readOrganization,writeOrganization,readClient,ensureClient,writeClient:data=>{if(views.get(data)?.kind!=='client')throw Error('Unknown client mutation view');return writeOrganization(data);},readDirectoryCache,writeDirectoryCache};
+ return {recordById:row,clientRecords:clientRows,readOrganization,writeOrganization,readClient,ensureClient,writeClient:data=>{if(views.get(data)?.kind!=='client')throw Error('Unknown client mutation view');return writeOrganization(data);},readCatalogue,writeCatalogue:data=>{if(views.get(data)?.kind!=='catalogue')throw Error('Unknown catalogue mutation view');return writeOrganization(data);},readDirectoryCache,writeDirectoryCache};
 }

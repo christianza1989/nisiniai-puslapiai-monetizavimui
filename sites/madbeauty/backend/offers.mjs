@@ -12,6 +12,7 @@ export function offerState(d){for(const k of ['offers','procedureRequests','taxo
 export {catalogueTaxonomy,taxonomyProjection,serviceEligible} from './catalogue-state.mjs';
 import {catalogueTaxonomy,taxonomyProjection,serviceEligible} from './catalogue-state.mjs';
 export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
+ const migrateLegacy=(d,user,organizationId=null)=>{offerState(d);scope(d,user,{role:'operator'});let added=0;for(const s of d.services.filter(s=>!s.offerId&&(!organizationId||s.organizationId===organizationId))){const n=taxonomyNode(s.taxonomyServiceId);if(!n)continue;const v={...copy(s),staffOptions:[{practitionerId:s.practitionerId,resourceId:s.resourceId,priceMinor:s.priceMinor,durationMin:s.durationMin}]};const o={id:'offer-legacy-'+s.id,organizationId:s.organizationId,locationId:s.locationId,taxonomyServiceId:n.id,taxonomyVersion:TAXONOMY_VERSION,label:s.label,description:'',bookingMode:'instant',variants:[v],version:1,state:'draft',migrationState:n.kind==='treatment'?'mapped':'needs-classification',legacyServiceId:s.id};d.offers.push(o);s.offerId=o.id;added++;}if(added)event(d,'catalogue-migrated','taxonomy');return {added,services:d.services.length,bookings:d.bookings.length,version:TAXONOMY_VERSION};};
  const owned=(d,user,id)=>{const o=find(d,'offers',id);ownOrg(d,user,o.organizationId);return o;};
  const version=(o,v)=>{if(o.version!==v)reject('VERSION_CONFLICT','Pasiūlymas pasikeitė. Atnaujinkite puslapį.',409);};
  const node=(d,id)=>{const n=catalogueTaxonomy(d).find(n=>n.id===id);if(!n||n.archived||n.scope!=='core'||n.kind!=='treatment')reject('INVALID_INPUT','Pasirinkite aktyvią procedūrą.');return n;};
@@ -77,7 +78,7 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
    r.reason=txt(input.reason,500);if(input.state==='rejected')r.state='rejected';else{const n=node(d,input.targetId);r.state='resolved';r.targetId=n.id;}r.version++;event(d,'procedure-request-'+r.state,r.id);return r;
   });},
   changeTaxonomy(user,input){return mutate(d=>{
-   offerState(d);scope(d,user,{role:'operator'});if(input.version!==(d.taxonomyVersion||TAXONOMY_VERSION))reject('VERSION_CONFLICT','Taksonomijos versija pasikeitė.',409);
+   d.taxonomyChanges||=[];scope(d,user,{role:'operator'});if(input.version!==(d.taxonomyVersion||TAXONOMY_VERSION))reject('VERSION_CONFLICT','Taksonomijos versija pasikeitė.',409);
    const nodes=catalogueTaxonomy(d),operations=['add','archive','restore','aliases','update'];if(!operations.includes(input.operation))reject('INVALID_INPUT','Pasirinkite galiojantį katalogo veiksmą.');
    let n=nodes.find(n=>n.id===input.nodeId),values={};
    const aliases=()=>{if(!Array.isArray(input.aliases)||input.aliases.length>20)reject('INVALID_INPUT','Patikrinkite sinonimus.');return [...new Set(input.aliases.map(x=>txt(x,80)))];};
@@ -97,6 +98,7 @@ export function createOfferApi({store,mutate,ownOrg,scope,event,clock}){
    d.taxonomyVersion=TAXONOMY_VERSION+'-r'+(d.taxonomyChanges.length+1);d.taxonomyChanges.push({id:randomId('taxonomy-change'),nodeId:n.id,operation:input.operation,values,...(input.operation==='add'?{node:n}:{}),version:d.taxonomyVersion,actorId:user.id,at:clock().now});event(d,'taxonomy-'+input.operation,n.id);return taxonomyProjection(d);
   });},
   assessQualification(user,input){return mutate(d=>{offerState(d);scope(d,user,{role:'operator'});const n=node(d,input.taxonomyNodeId),l=find(d,'locations',input.locationId);if(l.organizationId!==input.organizationId)reject('FORBIDDEN','Kita vieta.',403);if(!Number.isFinite(Date.parse(input.expiresAt))||Date.parse(input.expiresAt)<=store.clock())reject('INVALID_INPUT','Patikrinkite patikros galiojimo datą.');const q={id:randomId('qualification'),organizationId:l.organizationId,locationId:l.id,taxonomyNodeId:n.id,state:'approved',evidenceReference:txt(input.evidenceReference,300),assessedAt:clock().now,expiresAt:input.expiresAt,actorId:user.id};d.qualifications.push(q);event(d,'qualification-assessed',q.id);return q;});},
-  migrateCatalogue(user){return mutate(d=>{offerState(d);scope(d,user,{role:'operator'});let added=0;for(const s of d.services.filter(s=>!s.offerId)){const n=taxonomyNode(s.taxonomyServiceId);if(!n)continue;const v={...copy(s),staffOptions:[{practitionerId:s.practitionerId,resourceId:s.resourceId,priceMinor:s.priceMinor,durationMin:s.durationMin}]};const o={id:'offer-legacy-'+s.id,organizationId:s.organizationId,locationId:s.locationId,taxonomyServiceId:n.id,taxonomyVersion:TAXONOMY_VERSION,label:s.label,description:'',bookingMode:'instant',variants:[v],version:1,state:'draft',migrationState:n.kind==='treatment'?'mapped':'needs-classification',legacyServiceId:s.id};d.offers.push(o);s.offerId=o.id;added++;}event(d,'catalogue-migrated','taxonomy');return {added,services:d.services.length,bookings:d.bookings.length,version:TAXONOMY_VERSION};});},
+  migrateCatalogue(user){return mutate(d=>migrateLegacy(d,user));},
+  migrateOrganizationCatalogue(user,input){return mutate(d=>{find(d,'organizations',input.organizationId);return migrateLegacy(d,user,input.organizationId);});},
  };
 }

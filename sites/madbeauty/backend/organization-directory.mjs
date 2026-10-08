@@ -14,13 +14,14 @@ const signed=(store,type,body)=>({...body,proof:proof(store,type,body)});
 function verify(store,type,packet){const {proof:signature,...body}=packet||{};if(!equal(signature,proof(store,type,body)))reject('FORBIDDEN','Organizacijos užklausa nepatvirtinta.',403);return body;}
 const validId=id=>typeof id==='string'&&id.length>0&&id.length<=160;
 const entityTables=new Set(organizationCollections);
-const direct=new Set(['createStaff','createResource','createService','createBusyBlock','selectProcedures','requestProcedure','assessQualification','saveGallery','saveBookingRules','saveClientCard','bulkOfferPrices','createClient','grantMembership','organizationReport','reportCsv','exportOfferCsv']);
+const direct=new Set(['migrateOrganizationCatalogue','createStaff','createResource','createService','createBusyBlock','selectProcedures','requestProcedure','assessQualification','saveGallery','saveBookingRules','saveClientCard','bulkOfferPrices','createClient','grantMembership','organizationReport','reportCsv','exportOfferCsv']);
 const byId={profile:['organizations'],option:['services'],saveOffer:['offers'],submitOffer:['offers'],moderateOffer:['offers'],archiveOffer:['offers'],submitLocation:['locations'],moderateLocation:['locations'],setLocationActive:['locations'],assignStaffLocations:['practitioners'],revokeMembership:['memberships'],moderateProcedure:['procedureRequests'],releaseBusyBlock:['busyBlocks'],releaseHold:['holds'],cancelBooking:['bookings'],changeBooking:['bookings'],changeVisit:['bookings'],completeBooking:['bookings'],rebooking:['bookings'],acceptWaitlist:['waitlist'],closeWaitlist:['waitlist'],moderate:['revisions'],moderateReview:['reviews'],reviewReport:['reports'],retryOutbox:['mail_outbox']};
 const targetMethods=new Set([...direct,...Object.keys(byId),'catalog','search','searchResults','availability','visitAvailability','hold','holdVisit','confirm','confirmVisit','manualVisit','message','review','report','saveMenuGroup','saveLocation','submitRevision','edit','createInquiry','createWaitlist','session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference']);
 // Only the directory selects a second identity from its central account registry.
 const identityMethods=new Set(['createClient','grantMembership']);
 const readMethods=new Set([...publicRpcMethods,'session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference','workspace','rebooking','organizationReport','reportCsv','exportOfferCsv']);
 targetMethods.add('workspace');
+targetMethods.add('metrics');readMethods.add('metrics');
 targetMethods.add('applyCustomerControls');
 targetMethods.add('identityActionScope');readMethods.add('identityActionScope');
 const fields=['bookings','messages','reviews','inquiries','waitlist','reports'];
@@ -176,6 +177,27 @@ export function createOrganizationDirectory(store,{getTarget}={}){
  async function dispatch(method,user,input={}){
   const rows=transfers();if(!rows.length)return method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);
   const excluded=new Set(rows.map(t=>t.organization_id));
+  if(method==='favorite'){
+   const account=actor(user);if(!account)reject('UNAUTHENTICATED','Prisijunkite.',401);
+   if(!validId(input.organizationId)||typeof input.saved!=='boolean')reject('INVALID_INPUT','Netinkamas pasirinkimas.');
+   const target=rows.find(t=>t.organization_id===input.organizationId);if(!target)return api.favorite(account,input);
+   let eligible=false;
+   try{const profile=await targetCall(target,'profile',null,{id:input.organizationId});eligible=profile?.id===input.organizationId;}catch(error){if(input.saved||error.code!=='NOT_FOUND')throw error;}
+   return createPlatform(store,{favoriteOrganization:()=>({id:input.organizationId,approved:eligible})}).favorite(account,input);
+  }
+  if(['metrics','migrateCatalogue'].includes(method)){
+   const account=actor(user);if(!account)reject('UNAUTHENTICATED','Prisijunkite.',401);if(!account.operator)reject('FORBIDDEN','Operatoriaus prieiga neleidžiama.',403);
+   if(method==='metrics'){
+    const result=api.metrics(account,{excludeOrganizationIds:[...excluded]}),parts=await Promise.all(rows.map(t=>targetCall(t,'metrics',account,{})));
+    for(const part of parts)for(const key of ['events','realVisits','realInquiries']){if(!Number.isSafeInteger(part[key])||part[key]<0)unavailable();result[key]+=part[key];}return result;
+   }
+   // Every organization commits separately. Deterministic legacy offer IDs and
+   // the existing service.offerId make retries resume after a lost target reply.
+   const parts=[];for(const org of store.readCollections(['organizations']).organizations.filter(o=>!excluded.has(o.id)))parts.push(api.migrateOrganizationCatalogue(account,{organizationId:org.id}));
+   for(const target of rows)parts.push(await targetCall(target,'migrateOrganizationCatalogue',account,{organizationId:target.organization_id}));
+   return {added:parts.reduce((n,p)=>n+p.added,0),services:parts.reduce((n,p)=>n+p.services,0),bookings:parts.reduce((n,p)=>n+p.bookings,0),version:api.taxonomy().version};
+  }
+  if(method==='changeTaxonomy')return api.changeTaxonomy(actor(user),input);
   if(method==='preferences'){
    const account=actor(user);if(!account)reject('UNAUTHENTICATED','Prisijunkite.',401);
    const {result,revision}=store.transaction(()=>({result:api.preferences(account,input),revision:controls.enqueue(account.id,rows.filter(t=>t.state==='sealed'))}));
@@ -228,8 +250,6 @@ export function createOrganizationDirectory(store,{getTarget}={}){
    return targetCall(t,method,user,input);
   }}
   // Central identity/preferences/export remain on their existing guarded writer.
-  // Unsupported cross-object mutations fail closed instead of weakening its contract.
-  if(['metrics','migrateCatalogue','changeTaxonomy'].includes(method))unavailable();
   return invokePlatform(api,method,actor(user),input);
  }
  return {dispatch,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt};

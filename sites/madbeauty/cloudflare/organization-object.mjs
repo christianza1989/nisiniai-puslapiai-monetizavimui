@@ -6,8 +6,8 @@ import {createOrganizationCommand} from '../backend/organization-directory.mjs';
 import {createOrganizationMediaStage} from '../backend/organization-media.mjs';
 import {createSqlMediaBucket} from './media-bucket.mjs';
 
-// Exported for isolated runtime acceptance. No production binding or HTTP routing
-// points here yet. The private directory command requires a signed central actor
+// Exported and bound by the candidate deployment configuration. Provisioning has
+// no authority effect: the private directory command requires a signed central actor
 // and active source commit. Browser sessions and mail transport remain central.
 export class MadbeautyOrganizationStaging extends DurableObject{
  constructor(ctx,env){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET);this.mediaBucket=createSqlMediaBucket(this.store);this.staging=null;}

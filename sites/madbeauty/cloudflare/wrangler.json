@@ -18,6 +18,10 @@
       {
         "name": "PLATFORM",
         "class_name": "MadbeautyPlatform"
+      },
+      {
+        "name": "ORGANIZATION_STAGING",
+        "class_name": "MadbeautyOrganizationStaging"
       }
     ]
   },
@@ -26,6 +30,12 @@
       "tag": "v1",
       "new_sqlite_classes": [
         "MadbeautyPlatform"
+      ]
+    },
+    {
+      "tag": "v2-organization-storage",
+      "new_sqlite_classes": [
+        "MadbeautyOrganizationStaging"
       ]
     }
   ],

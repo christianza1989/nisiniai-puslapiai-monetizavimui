@@ -1,5 +1,6 @@
 import {isCityId} from '../prototype/cities.mjs';
 import {MadbeautyPlatform} from './platform-object.mjs';
+import {MadbeautyOrganizationStaging} from './organization-object.mjs';
 import {contentProjection,contact,escape} from './content.mjs';
 import template from '../prototype/public/app.html';
 import {trustPages} from '../prototype/public/product-trust.mjs';
@@ -11,7 +12,7 @@ import {routeTitle} from './route-titles.mjs';
 import {activeNode,createContentTargetRegistry} from '../prototype/content-targets.mjs';
 import {catalogueRoute,renderCataloguePage} from '../prototype/catalogue-page.mjs';
 import {sharingHtml} from '../prototype/public/sharing.mjs';
-export {MadbeautyPlatform};
+export {MadbeautyPlatform,MadbeautyOrganizationStaging};
 const assetPaths=new Set(assets);
 const headers={"X-Content-Type-Options":"nosniff","Referrer-Policy":"strict-origin-when-cross-origin","Content-Security-Policy":"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-src https://www.openstreetmap.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"};
 headers['X-Madbeauty-Content-SHA256']=release.packageSha256;

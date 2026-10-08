@@ -16,6 +16,7 @@ import {bookingView,bookingAction,bookingForm,bookingChange} from './booking-ui.
 import {workspaceView,workspaceAction,workspaceForm,manualServiceSummary} from './workspace-ui.mjs';
 import {createHttpAdapter} from './http-adapter.mjs';
 import {accountAction,accountForm} from './account-ui.mjs';
+import {reconcileAccountState} from './account-state.mjs';
 import {setContentData,trustPages} from './content.mjs';
 import {activeNode,CATALOGUE_ORIGIN} from '/content-targets.mjs';
 import {isCityId} from '/cities.mjs';
@@ -70,6 +71,7 @@ async function render(){
     await Promise.all(jobs);
     if(ctx.adapter.mode==='real'){
       const s=ctx.realAdapter.session;
+      if(reconcileAccountState(state,s.user)){clearDrafts();closeDialog();ctx.workspace=null;ctx.editing=null;ctx.rebooking=null;ctx.erasureCase=null;ctx.privacyChallenge=null;ctx.authChallenge=null;}
       if(restoredWorkspaceAccount!==(s.user?.id||null)){
         restoredWorkspaceAccount=s.user?.id||null;state.session.organizationId=null;
         if(s.user)try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':real-workspace'));if(saved?.accountId===s.user.id&&s.organizations.some(o=>o.id===saved.organizationId))state.session.organizationId=saved.organizationId;}catch{}

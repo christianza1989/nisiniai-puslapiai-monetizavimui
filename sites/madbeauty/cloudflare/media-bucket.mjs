@@ -22,7 +22,7 @@ CREATE TRIGGER IF NOT EXISTS target_${table}_${event.toLowerCase()} BEFORE ${eve
   }
  });
  const stats=()=>({...db.prepare('SELECT bytes,objects FROM media_capacity WHERE id=1').get(),capacityBytes,model:'sql-media-v2'});
- const putMany=async entries=>{
+ const putManySync=entries=>{
   if(!Array.isArray(entries)||entries.length<1||entries.length>p.maxObjectsPerAsset)throw Error('Invalid media batch');
   const seen=new Set(),prepared=entries.map(({key,value,httpMetadata={}})=>{
    if(!/^(?:originals\/asset_[a-f0-9-]+|variants\/asset_[a-f0-9-]+-\d+\.webp)$/.test(key)||seen.has(key))throw Error('Invalid media object key');seen.add(key);
@@ -40,7 +40,7 @@ CREATE TRIGGER IF NOT EXISTS target_${table}_${event.toLowerCase()} BEFORE ${eve
   });
  };
  return {
-  stats,putMany,put:(key,value,{httpMetadata={}}={})=>putMany([{key,value,httpMetadata}]),
+  stats,putManySync,putMany:async entries=>putManySync(entries),put:async(key,value,{httpMetadata={}}={})=>putManySync([{key,value,httpMetadata}]),
   async get(key){
    const metadata=db.prepare('SELECT bytes,sha256 FROM media_objects WHERE key=?').get(key);if(!metadata)return null;
    if(!Number.isSafeInteger(metadata.bytes)||metadata.bytes<1||metadata.bytes>p.objectBytes)throw Error('Media integrity unavailable');

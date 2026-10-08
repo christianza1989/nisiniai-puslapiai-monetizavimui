@@ -9,6 +9,7 @@ import {createCustomerControlQueue,createCustomerControlReceiver} from './organi
 import {createClientAdmissionQueue,createClientAdmissionReceipts,clientAdmissionInput} from './organization-client-admission.mjs';
 import {createOrganizationMailbox,createOrganizationMailReceipts,validateOrganizationMailClaim} from './organization-mail.mjs';
 import {validateOrganizationMediaBytes} from './organization-media.mjs';
+import {createOrganizationUploadQueue,createOrganizationUploadReceiver,validateUploadObjects} from './organization-upload.mjs';
 
 const json=JSON.stringify,clone=v=>JSON.parse(json(v)),maxTargets=32,maxResultBytes=1024*1024;
 const unavailable=()=>reject('ORGANIZATION_UNAVAILABLE','Organizacijos duomenys laikinai nepasiekiami. Bandykite dar kartą.',503);
@@ -26,6 +27,8 @@ const readMethods=new Set([...publicRpcMethods,'session','customerFragment','cus
 targetMethods.add('workspace');
 targetMethods.add('metrics');readMethods.add('metrics');
 targetMethods.add('mediaReadAccess');readMethods.add('mediaReadAccess');
+targetMethods.add('mediaUploadAccess');readMethods.add('mediaUploadAccess');
+targetMethods.add('attachUploadedMedia');
 for(const method of [...systemMethods,'claimOrganizationMail'])targetMethods.add(method);
 // Candidate refresh runs deterministic alarm reconciliation; it is repeatable
 // without storing a transport nonce for every idle background poll.
@@ -35,6 +38,7 @@ targetMethods.add('identityActionScope');readMethods.add('identityActionScope');
 const fields=['bookings','messages','reviews','inquiries','waitlist','reports'];
 const exportFields=[...fields,'organizationCards'];
 function reference(method,input){
+ if(['mediaUploadAccess','attachUploadedMedia'].includes(method))return {organizationId:input.organizationId};
  if(method==='mediaReadAccess')return {tables:['media'],id:input.id};
  if(['claimOrganizationMail','ackOrganizationMail'].includes(method))return {tables:['mail_outbox'],id:input.id};
  if(method==='identityActionScope')return {organizationId:input.organizationId};
@@ -68,11 +72,11 @@ function resultReferences(store,result,organizationId){
 
 // Only the directory signs this envelope after its usual HTTP session/origin/CSRF
 // checks. Targets have no HTTP dispatcher, session cookies or auth challenges.
-export function createOrganizationCommand(store,{targetName}){
+export function createOrganizationCommand(store,{targetName,writeMediaObjects}={}){
  indexSchema(store);
- const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store),admissions=createClientAdmissionReceipts(store),mailbox=createOrganizationMailbox(store);
+ const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store),admissions=createClientAdmissionReceipts(store),mailbox=createOrganizationMailbox(store),uploads=createOrganizationUploadReceiver(store,{writeObjects:writeMediaObjects});
  store.db.exec('CREATE TABLE IF NOT EXISTS organization_directory_commands(site_id TEXT NOT NULL,nonce TEXT NOT NULL,expires_at INTEGER NOT NULL,request_hash TEXT NOT NULL,response TEXT NOT NULL,PRIMARY KEY(site_id,nonce)); CREATE INDEX IF NOT EXISTS directory_commands_expiry ON organization_directory_commands(site_id,expires_at);');
- function execute(packet){return store.transaction(()=>{
+ function execute(packet,mediaObjects){return store.transaction(()=>{
   const body=verify(store,'directory-command',packet),a=store.db.prepare('SELECT * FROM organization_target_authority WHERE site_id=?').get(store.siteId);
   if(!a||a.state!=='active'||body.schemaVersion!==1||body.siteId!==store.siteId||body.organizationId!==a.organization_id||body.epoch!==a.epoch||body.targetName!==targetName||targetName!=='madbeauty:organization:v1:'+a.organization_id)unavailable();
   if(!validId(body.nonce)||!Number.isSafeInteger(body.expiresAt)||body.expiresAt<=store.clock()||body.expiresAt>store.clock()+30000||Buffer.byteLength(json(packet))>maxResultBytes+32768||Buffer.byteLength(json(body.input||{}))>32768)reject('INVALID_INPUT','Organizacijos užklausa paseno arba yra per didelė.');
@@ -103,6 +107,8 @@ export function createOrganizationCommand(store,{targetName}){
   else if(body.method==='organizationMailDueAt')result=mailbox.nextAt();
   else if(body.method==='claimOrganizationMail')result=mailbox.claim(actor,body.input);
   else if(body.method==='ackOrganizationMail')result=mailbox.acknowledge(body.input);
+  else if(body.method==='mediaUploadAccess')result=uploads.access(actor,body.input);
+  else if(body.method==='attachUploadedMedia')result=uploads.commit(actor,body.input,mediaObjects,(user,asset)=>api.attachMedia(user,asset));
   else if(body.method==='mediaReadAccess'){
    const asset=store.recordById('media',body.input.id),file=body.input.file,variant=asset?.variants?.find(v=>v.storageFile===file);
    if(!variant||!/^asset_[a-f0-9-]+-\d+\.webp$/.test(file))reject('NOT_FOUND','Vaizdas nerastas.',404);
@@ -142,23 +148,28 @@ export function createOrganizationCommand(store,{targetName}){
    store.db.prepare('INSERT INTO organization_directory_commands VALUES(?,?,?,?,?)').run(store.siteId,body.nonce,body.expiresAt,requestHash,json(response));
   }return response;
  });}
- return {execute:packet=>{try{return execute(packet);}catch(e){const known=e instanceof ApiError;return {error:{code:known?e.code:'SERVER_ERROR',message:known?e.message:'Užklausos įvykdyti nepavyko. Bandykite dar kartą.',status:known?e.status:500}};}}};
+ return {execute:(packet,objects)=>{try{return execute(packet,objects);}catch(e){const known=e instanceof ApiError;return {error:{code:known?e.code:'SERVER_ERROR',message:known?e.message:'Užklausos įvykdyti nepavyko. Bandykite dar kartą.',status:known?e.status:500}};}}};
 }
 
 export function createOrganizationDirectory(store,{getTarget}={}){
- const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store),admissions=createClientAdmissionQueue(store),mailReceipts=createOrganizationMailReceipts(store);
+ const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store),admissions=createClientAdmissionQueue(store),mailReceipts=createOrganizationMailReceipts(store),uploads=createOrganizationUploadQueue(store);
  const api=createPlatform(store,{deferOrganizationPreferences:id=>!!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND organization_id=? AND state='sealed'").get(siteId,id)});
  const cache=createDirectoryCacheIssuer(store),effects=createDirectoryIdentityEffects(store);
  db.exec('CREATE TABLE IF NOT EXISTS organization_directory_refs(site_id TEXT NOT NULL,collection TEXT NOT NULL,entity_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,PRIMARY KEY(site_id,collection,entity_id));');
  const transfers=()=>{const rows=db.prepare("SELECT organization_id,epoch,state,target_name FROM organization_handoffs WHERE site_id=? AND state!='aborted' ORDER BY organization_id LIMIT 33").all(siteId);if(rows.length>maxTargets)reject('CAPACITY','Organizacijų paieškos apimtis viršija šio piloto ribą.',503);return rows;};
  const actor=user=>{if(!user)return null;const a=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND id=?').get(siteId,user.id);if(!a)reject('UNAUTHENTICATED','Prisijunkite.',401);return {...a,operator:!!a.operator,...(Number.isFinite(user.verifiedAt)?{verifiedAt:user.verifiedAt}:{})};};
  const saveReferences=(t,references)=>store.transaction(()=>{for(const r of references){if(!entityTables.has(r.collection)||!validId(r.id))unavailable();const old=db.prepare('SELECT organization_id FROM organization_directory_refs WHERE site_id=? AND collection=? AND entity_id=?').get(siteId,r.collection,r.id);if(old&&old.organization_id!==t.organization_id)reject('IDEMPOTENCY_CONFLICT','Įrašo tapatybė priklauso kitai organizacijai.',409);db.prepare('INSERT INTO organization_directory_refs VALUES(?,?,?,?,?) ON CONFLICT(site_id,collection,entity_id) DO UPDATE SET epoch=excluded.epoch').run(siteId,r.collection,r.id,t.organization_id,t.epoch);}});
- async function targetCall(t,method,user,input={},recipientId=null,clientAdmission=null){
+ async function targetCall(t,method,user,input={},recipientId=null,clientAdmission=null,mediaObjects=null){
   if(t.state!=='sealed'||!getTarget)unavailable();
   let response,nonce,account,binary;
   for(let attempt=0;attempt<2;attempt++){
    const packet=store.transaction(()=>{account=actor(user);nonce=randomId('command');return signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:account,input:clone(input),cache:cache.issue(account?.id,recipientId),...(clientAdmission?{clientAdmission}: {})});});
-   try{const target=getTarget(t.target_name);if(method==='mediaReadAccess'){const reply=await target.readOrganizationMedia(packet);response=reply.response;binary=reply.bytes;}else response=await target.executeDirectoryCommand(packet);}catch{unavailable();}
+   if(method==='attachUploadedMedia'){
+    const objects=validateUploadObjects(input.asset,mediaObjects),bytes=objects.reduce((n,o)=>n+o.value.byteLength,0);
+    // Stay below the documented serialized RPC ceiling including the signed cache.
+    if(bytes+Buffer.byteLength(json(packet))+65536>32*1024*1024)reject('PAYLOAD_TOO_LARGE','Paruoštas vaizdas per didelis.',413);
+   }
+   try{const target=getTarget(t.target_name);if(method==='mediaReadAccess'){const reply=await target.readOrganizationMedia(packet);response=reply.response;binary=reply.bytes;}else if(method==='attachUploadedMedia')response=await target.storeOrganizationMedia(packet,mediaObjects);else response=await target.executeDirectoryCommand(packet);}catch{unavailable();}
    // An overtaken cache is rejected before the business operation. Refresh once;
    // transport failures and uncertain writes are never automatically replayed.
    if(response?.error?.code!=='STALE_DIRECTORY_CONTEXT')break;
@@ -239,6 +250,21 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   const rows=transfers(),organizationId=await resolve({tables:['media'],id:match[1]},rows),target=rows.find(t=>t.organization_id===organizationId);
   return target?targetCall(target,'mediaReadAccess',user,{id:match[1],file}):readSource();
  }
+ async function uploadMedia(user,input,{transformMedia,uploadSource}){
+  const rows=transfers(),target=rows.find(t=>t.organization_id===input.organizationId);
+  if(!target)return uploadSource();
+  const account=actor(user);if(!account)reject('UNAUTHENTICATED','Prisijunkite.',401);
+  await targetCall(target,'mediaUploadAccess',account,{organizationId:input.organizationId});
+  const record=uploads.reserve(account,input),descriptor={organizationId:input.organizationId,id:record.metadata.id,requestHash:record.fingerprint};
+  const recovered=await targetCall(target,'mediaUploadAccess',account,descriptor);let result=recovered.result;
+  if(!result){
+   const prepared=await transformMedia(store,{...record.metadata,bytes:input.bytes});
+   if(prepared.asset.source.bytes!==record.metadata.originalBytes||prepared.asset.source.sha256!==record.metadata.originalSha256)reject('MEDIA_INTEGRITY','Vaizdo duomenys nesutampa.',409);
+   result=await targetCall(target,'attachUploadedMedia',account,{...descriptor,asset:prepared.asset},null,null,prepared.objects);
+  }
+  if(result?.id!==descriptor.id)unavailable();
+  return store.transaction(()=>{saveReferences(target,[{collection:'media',id:result.id}]);uploads.complete(account,record,result);return result;});
+ }
  async function dispatch(method,user,input={}){
   const rows=transfers();if(!rows.length)return method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);
   const excluded=new Set(rows.map(t=>t.organization_id));
@@ -317,5 +343,5 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   // Central identity/preferences/export remain on their existing guarded writer.
   return invokePlatform(api,method,actor(user),input);
  }
- return {dispatch,readMedia,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt,drainOrganizationMail,nextOrganizationMailAt};
+ return {dispatch,readMedia,uploadMedia,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt,drainOrganizationMail,nextOrganizationMailAt};
 }

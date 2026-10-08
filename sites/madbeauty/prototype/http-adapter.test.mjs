@@ -1,6 +1,13 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createHttpAdapter} from './public/http-adapter.mjs';
+test('A failed upload sends the same operation header after adapter reload and starts a new intent only after a confirmed result',async t=>{
+ const values=new Map(),keys=[],metadata={organizationId:'org',alt:'Test',rights:'Fixture',usage:'gallery'},file=new File([new Uint8Array([1,2,3])],'fixture.png',{type:'image/png'});let lost=true;
+ for(const [name,value]of Object.entries({sessionStorage:{getItem:k=>values.get(k),setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)},location:{origin:'http://127.0.0.1:8843'}})){const original=Object.getOwnPropertyDescriptor(globalThis,name);Object.defineProperty(globalThis,name,{configurable:true,value});t.after(()=>{if(original)Object.defineProperty(globalThis,name,original);else delete globalThis[name];});}
+ t.mock.method(globalThis,'fetch',async(url,options)=>{if(url.endsWith('/session'))return {ok:true,json:async()=>({user:{id:'owner'},csrf:'test-csrf',clock:{now:'2026-10-08T10:00:00Z'}})};keys.push(options.headers['x-asset-operation']);if(lost){lost=false;throw Error('Uncertain accepted reply');}return {ok:true,json:async()=>({result:{id:'asset_11111111-0000-0000-0000-000000000000'}})};});
+ await assert.rejects(createHttpAdapter().upload(file,metadata),e=>e.code==='NETWORK_ERROR');assert.equal(values.size,1);
+ const reloaded=createHttpAdapter();assert.ok((await reloaded.upload(file,metadata)).id);assert.equal(keys[1],keys[0]);assert.equal(values.size,0);await reloaded.upload(file,metadata);assert.notEqual(keys[2],keys[0]);
+});
 test('unexpected HTML response has a safe recovery message',async t=>{
  t.mock.method(globalThis,'fetch',async()=>({ok:false,json:async()=>{throw Error('<html>private infrastructure detail</html>');}}));
  await assert.rejects(createHttpAdapter().refreshSession(),e=>e.code==='NETWORK_ERROR'&&!e.message.includes('private infrastructure'));

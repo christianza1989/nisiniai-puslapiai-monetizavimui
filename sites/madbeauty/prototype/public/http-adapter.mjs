@@ -1,5 +1,8 @@
+import {createMediaUploadIntents,mediaUploadFingerprint} from './media-upload-intent.mjs';
 export function createHttpAdapter(){
   let session=null,refreshPending=null;
+  let uploadStorage=null;try{uploadStorage=globalThis.sessionStorage;}catch{}
+  const uploads=createMediaUploadIntents(uploadStorage);
   const readMethods=new Set(['taxonomy','search','searchResults','visitAvailability','catalog','profile','option','workspace','availability','organizationReport','erasureCase','rebooking','exportCustomer','metrics']);
   const adapter={mode:'real',clock:{now:new Date().toISOString(),timezone:'Europe/Vilnius'}};
   async function request(path,data){
@@ -27,7 +30,18 @@ export function createHttpAdapter(){
   adapter.availability=input=>rpc('availability',input);
   adapter.hold=candidate=>rpc('hold',candidate);
   adapter.releaseHold=id=>rpc('releaseHold',{id});
-  adapter.upload=async(file,{organizationId,alt,rights,usage})=>{const r=await fetch('/api/madbeauty/upload',{method:'POST',credentials:'same-origin',headers:{origin:location.origin,'content-type':file.type,'x-csrf-token':session.csrf,'x-organization-id':organizationId,'x-asset-alt':encodeURIComponent(alt),'x-asset-rights':encodeURIComponent(rights),'x-asset-rights-confirmed':'true','x-asset-usage':usage},body:file});const value=await r.json();if(!r.ok){const e=Error(value.error?.message||'Vaizdo įkelti nepavyko.');e.code=value.error?.code;throw e;}return value.result;};
+  adapter.upload=async(file,metadata)=>{
+   const previousUser=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();
+   if(!session.user?.id||previousUser&&previousUser!==session.user.id)throw Object.assign(Error('Paskyros sesija pasikeitė. Prisijunk iš naujo.'),{code:'SESSION_CHANGED',status:409});
+   if(!file?.size||file.size>12*1024*1024)throw Object.assign(Error('Pasirink vaizdą iki 12 MB.'),{code:'INVALID_INPUT'});
+   const {organizationId,alt,rights,usage}=metadata,intent=uploads.reserve(session.user.id,organizationId,await mediaUploadFingerprint(file,metadata)),controller=new AbortController(),timer=setTimeout(()=>controller.abort(),60000);let r,value;
+   try{r=await fetch('/api/madbeauty/upload',{signal:controller.signal,method:'POST',credentials:'same-origin',headers:{origin:location.origin,'content-type':file.type,'x-csrf-token':session.csrf,'x-organization-id':organizationId,'x-asset-alt':encodeURIComponent(alt),'x-asset-rights':encodeURIComponent(rights),'x-asset-rights-confirmed':'true','x-asset-usage':usage,'x-asset-operation':intent.idempotencyKey},body:file});value=await r.json();if(!value||typeof value!=='object')throw Error('Invalid upload response');}
+   catch{throw Object.assign(Error('Atsakymas nepasiekiamas. Patikrink galeriją, prieš bandydamas dar kartą.'),{code:'NETWORK_ERROR'});}
+   finally{clearTimeout(timer);}
+   if(!r.ok){const e=Error(value.error?.message||'Vaizdo įkelti nepavyko.');e.code=value.error?.code;e.status=r.status;throw e;}
+   if(!value.result?.id)throw Object.assign(Error('Įkėlimo rezultatas nepasiekiamas. Patikrink galeriją.'),{code:'NETWORK_ERROR'});
+   uploads.complete(intent);return value.result;
+  };
   for(const method of ['saveGallery','reviewReport','organizationReport','saveBookingRules','erasureCase','reviewErasure','rebooking','saveClientCard','exportCustomer','requestErasure','withdrawErasure','createWaitlist','acceptWaitlist','closeWaitlist','confirmVisit','changeVisit','saveLocation','submitLocation','moderateLocation','setLocationActive','assignStaffLocations','grantMembership','revokeMembership','bulkOfferPrices','saveMenuGroup','selectProcedures','saveOffer','submitOffer','moderateOffer','archiveOffer','requestProcedure','moderateProcedure','changeTaxonomy','assessQualification','migrateCatalogue','confirm','changeBooking','cancelBooking','manualVisit','createInquiry','edit','submitRevision','moderate','moderateReview','message','review','report','preferences','metrics','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','retryOutbox','completeBooking','favorite'])adapter[method]=input=>rpc(method,input);
   return adapter;
 }

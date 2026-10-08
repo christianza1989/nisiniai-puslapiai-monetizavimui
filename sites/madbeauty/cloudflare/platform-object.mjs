@@ -30,7 +30,7 @@ export class MadbeautyPlatform extends DurableObject{
    try{return Response.json(await this.recoveryStatus(),{headers:{'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});}catch{return Response.json({error:{code:'RECOVERY_STATUS_UNAVAILABLE'}},{status:503,headers:{'Cache-Control':'no-store'}});}
   }
   if(request.method==='POST'&&new URL(request.url).pathname==='/api/madbeauty/auth/start'&&!this.env.MAIL_TRANSPORT&&!this.env.MAIL_RELAY_URL&&(!this.env.LEAD_SMTP_USER||!this.env.LEAD_SMTP_PASSWORD))return Response.json({error:{code:'MAIL_UNAVAILABLE',message:'Prisijungimas laikinai nepasiekiamas. Rašykite info@pinet.lt.'}},{status:503,headers:{'Cache-Control':'no-store'}});
-  const directory=this.directory(),media={...this.media,readMedia:(store,file,user,platform)=>directory.readMedia(file,user,()=>this.media.readMedia(store,file,user,platform))};
+  const directory=this.directory(),media={...this.media,uploadMedia:(user,input,uploadSource)=>directory.uploadMedia(user,input,{transformMedia:this.media.transformMedia,uploadSource}),readMedia:(store,file,user,platform)=>directory.readMedia(file,user,()=>this.media.readMedia(store,file,user,platform))};
   const response=await fetchApi(request,this.store,{origin,media,ip:request.headers.get('x-madbeauty-client-ip')||'unknown',dispatch:directory.dispatch});
   if(request.method==='POST'){
    await this.schedule();

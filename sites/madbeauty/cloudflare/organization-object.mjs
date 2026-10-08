@@ -20,6 +20,11 @@ export class MadbeautyOrganizationStaging extends DurableObject{
  authorityStatus(){return createOrganizationAuthority(this.store,{targetName:''}).status();}
  discardAuthority(token){const targetName=token?.targetName;if(!this.ctx.id.equals(this.env.ORGANIZATION_STAGING.idFromName(targetName)))throw Error('Organization object identity mismatch');return createOrganizationAuthority(this.store,{targetName}).discard(token);}
  executeDirectoryCommand(packet){const targetName=packet?.targetName;if(!this.ctx.id.equals(this.env.ORGANIZATION_STAGING.idFromName(targetName)))throw Error('Organization object identity mismatch');return createOrganizationCommand(this.store,{targetName}).execute(packet);}
+ storeOrganizationMedia(packet,objects){
+  if(packet?.method!=='attachUploadedMedia')return {error:{code:'FORBIDDEN',message:'Prieiga neleidžiama.',status:403}};
+  const targetName=packet?.targetName;if(!this.ctx.id.equals(this.env.ORGANIZATION_STAGING.idFromName(targetName)))throw Error('Organization object identity mismatch');
+  return createOrganizationCommand(this.store,{targetName,writeMediaObjects:entries=>this.mediaBucket.putManySync(entries)}).execute(packet,objects);
+ }
  async readOrganizationMedia(packet){
   if(packet?.method!=='mediaReadAccess')return {response:{error:{code:'FORBIDDEN',message:'Prieiga neleidžiama.',status:403}}};
   const response=this.executeDirectoryCommand(packet);if(response.error)return {response};

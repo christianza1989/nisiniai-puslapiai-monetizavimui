@@ -7,6 +7,7 @@ import {createPlatform} from '../backend/platform.mjs';
 import {createAuth} from '../backend/auth.mjs';
 import {createOrganizationHandoff} from '../backend/organization-handoff.mjs';
 import {createOrganizationCommit} from '../backend/organization-authority.mjs';
+import {createOrganizationDirectory} from '../backend/organization-directory.mjs';
 import {nextReminderAt,reminderValid} from '../backend/notifications.mjs';
 import {nextWaitlistAt,waitlistMailValid} from '../backend/waitlist.mjs';
 import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger-transport.mjs';
@@ -27,7 +28,7 @@ export class MadbeautyPlatform extends DurableObject{
    try{return Response.json(await this.recoveryStatus(),{headers:{'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});}catch{return Response.json({error:{code:'RECOVERY_STATUS_UNAVAILABLE'}},{status:503,headers:{'Cache-Control':'no-store'}});}
   }
   if(request.method==='POST'&&new URL(request.url).pathname==='/api/madbeauty/auth/start'&&!this.env.MAIL_TRANSPORT&&!this.env.MAIL_RELAY_URL&&(!this.env.LEAD_SMTP_USER||!this.env.LEAD_SMTP_PASSWORD))return Response.json({error:{code:'MAIL_UNAVAILABLE',message:'Prisijungimas laikinai nepasiekiamas. Rašykite info@pinet.lt.'}},{status:503,headers:{'Cache-Control':'no-store'}});
-  const response=await fetchApi(request,this.store,{origin,media:this.media,ip:request.headers.get('x-madbeauty-client-ip')||'unknown'});
+  const response=await fetchApi(request,this.store,{origin,media:this.media,ip:request.headers.get('x-madbeauty-client-ip')||'unknown',dispatch:(method,user,input)=>this.directory().dispatch(method,user,input)});
   if(request.method==='POST'){
    await this.schedule();
    if(new URL(request.url).pathname==='/api/madbeauty/auth/start'&&response.ok){
@@ -39,9 +40,10 @@ export class MadbeautyPlatform extends DurableObject{
   }
   return response;
  }
- async catalog(input){return createPlatform(this.store).catalog(input);}
- async profile(id){return createPlatform(this.store).profile(id);}
- async publicProfiles(){const platform=createPlatform(this.store);return this.store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>platform.profile(o.id));}
+ directory(){return createOrganizationDirectory(this.store,{getTarget:this.env.ORGANIZATION_STAGING?name=>this.env.ORGANIZATION_STAGING.get(this.env.ORGANIZATION_STAGING.idFromName(name)):undefined});}
+ async catalog(input){return this.directory().dispatch('catalog',null,input);}
+ async profile(id){return this.directory().dispatch('profile',null,{id});}
+ async publicProfiles(){return this.directory().dispatch('publicProfiles',null,{});}
  // Private maintenance RPC; operator identity comes from accounts, never a browser flag.
  // These methods stage a copy only. They cannot grant a second calendar writer.
  async organizationHandoffStatus(input){return createOrganizationHandoff(this.store).status(input);}

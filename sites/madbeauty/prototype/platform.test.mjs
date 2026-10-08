@@ -5,11 +5,18 @@ import {makeClock,localInstant} from './demo-model.mjs';
 import {createPlatformAdapter} from './platform-adapter.mjs';
 import {createAppServer,resolveRoute} from './app-server.mjs';
 import {catalogTarget,boundedFilters,publicProjection} from './seo-contract.mjs';
+import {ApiError} from '../backend/primitives.mjs';
 const clock=makeClock('2026-10-05T08:00:00Z');
 const pro={role:'professional',organizationId:'demo-org-0'},customer={role:'customer',clientId:'demo-client-0'},operator={role:'operator'};
 const adapter=(options={})=>createPlatformAdapter({enabled:true,deployment:'local-preview',clock,...options});
 const input={providerServiceId:'demo-service-0-0',dayOffset:1,from:1020,to:1200};
 const candidate=async a=>(await a.availability(input)).slots[0];
+
+test('Async authoritative public reads decide profile existence; a calendar outage leaves static assets and private page shells accessible',async()=>{
+ let approved=true,outage=false,calls=0;const apiHandler={handle:async()=>false,platform:{catalog:async()=>{calls++;if(outage)throw new ApiError('ORGANIZATION_UNAVAILABLE','Isolated directory outage',503);return [];},profile:async()=>approved?{kind:'salon'}:null}},s=createAppServer({apiHandler});await new Promise(r=>s.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+s.address().port;
+ try{assert.equal((await fetch(base+'/salonai/provider_async_fixture')).status,200);approved=false;assert.equal((await fetch(base+'/salonai/provider_async_fixture')).status,404);outage=true;assert.equal((await fetch(base+'/paslaugos')).status,503);const before=calls;for(const url of ['/app.mjs','/boot.json','/meistrui/kalendorius'])assert.equal((await fetch(base+url)).status,200,url);assert.equal(calls,before);}
+ finally{await new Promise(r=>s.close(r));}
+});
 
 test('Whole duration, add-ons and resource buffers: 19:00 start is rejected when 20:00 shift needs cleanup',async()=>{
   const a=adapter(),plain=await a.availability(input),added=await a.availability({...input,addons:['demo-addon-removal']});

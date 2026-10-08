@@ -1,6 +1,7 @@
 import {activeNode,createContentTargetRegistry} from './content-targets.mjs';
 import {catalogueRoute,renderCataloguePage} from './catalogue-page.mjs';
 import {isCityId} from './cities.mjs';
+import {ApiError} from '../backend/primitives.mjs';
 import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
@@ -50,7 +51,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       const url=new URL(req.url,'http://127.0.0.1'),requested=decodeURIComponent(url.pathname);
       const catalogueRequest=requested==='/paslaugos'||requested.startsWith('/paslaugos/');
       const needsContent=requested==='/content.json'||requested.startsWith('/content-assets/')||['/robots.txt','/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)||(!catalogueRequest&&!path.extname(requested)&&!/^\/(meistrui|operatorius|paskyra|registracija)(\/|$)/.test(requested));
-      const offers=apiHandler?.platform.catalog({})||[],registry=createContentTargetRegistry({offers,deployed:false,now:contentClock()});
+      const offers=needsContent||catalogueRequest?await apiHandler?.platform.catalog({})||[]:[],registry=createContentTargetRegistry({offers,deployed:false,now:contentClock()});
       const content=needsContent?await contentProjection({registry,now:contentClock(),...(contentPackagePath?{packagePath:contentPackagePath}:{})}):null;
       const contentPage=content?.pages.find(p=>(p.slug?'/'+p.slug:'/')===requested);
       if(requested==='/content-targets.json'){res.writeHead(200,{...headers,'Content-Type':mime['.json']});res.end(req.method==='HEAD'?undefined:JSON.stringify(registry));return;}
@@ -64,7 +65,8 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       if(['/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)){if(contentDiscovery&&content){const body=requested==='/sitemap.xml'?content.seo.nicheSitemapXml(content.pkg,content.pages):requested==='/llms.txt'?content.seo.nicheLlmsIndex(content.pkg,content.pages):content.seo.nicheLlmsFull(content.pkg,content.pages);res.writeHead(200,{...headers,'Content-Type':requested.endsWith('.xml')?'application/xml; charset=utf-8':'text/markdown; charset=utf-8'});res.end(req.method==='HEAD'?undefined:body);return;}res.writeHead(404,headers);res.end('Private preview: discovery disabled.');return;}
       if(/^\/paslaugos\/[^/]+$/.test(requested)&&isCityId(url.searchParams.get('miestas'))&&activeNode(requested.split('/')[2])){res.writeHead(303,{...headers,Location:requested+'/'+url.searchParams.get('miestas')});res.end();return;}
       const isCatalogue=catalogueRequest,cataloguePage=isCatalogue?catalogueRoute(requested,offers):null;
-      let route=resolveRoute(requested,{profileResolver:apiHandler?apiHandler.platform.profile:null,contentResolver:slug=>!!content?.pages.some(p=>['guide','article'].includes(p.type)&&p.slug==='gidai/'+slug)});
+      const profileId=requested.match(/^\/(?:meistrai|salonai)\/(provider_[a-z0-9_-]+)\/?$/)?.[1],currentProfile=profileId&&apiHandler?await apiHandler.platform.profile(profileId):null;
+      let route=resolveRoute(requested,{profileResolver:apiHandler?()=>currentProfile:null,contentResolver:slug=>!!content?.pages.some(p=>['guide','article'].includes(p.type)&&p.slug==='gidai/'+slug)});
       if(requested.startsWith('/gidai/')&&!contentPage)route=null;
       if(isCatalogue&&!cataloguePage)route=null;
       if(contentPage&&!isCatalogue&&!route)route={label:contentPage.title,canonical:requested};
@@ -85,7 +87,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       const compressed=body.length>1000&&/text|json|svg/.test(type)&&(req.headers['accept-encoding']||'').includes('gzip');
       if(compressed)body=gzipSync(body);
       res.writeHead(200,{...headers,'Content-Type':type,'Vary':'Accept-Encoding',...(compressed?{'Content-Encoding':'gzip'}:{}),'Content-Length':body.length});res.end(req.method==='HEAD'?undefined:body);
-    }catch{res.writeHead(404,{...headers,'Content-Type':mime['.txt']});res.end('Not found');}
+    }catch(error){const status=error instanceof ApiError?error.status:404;res.writeHead(status,{...headers,'Content-Type':mime['.txt']});res.end(status===404?'Not found':'Duomenys laikinai nepasiekiami. Bandykite dar kartą.');}
   });
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){

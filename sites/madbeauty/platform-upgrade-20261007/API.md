@@ -1,3 +1,15 @@
+## 2026-10-08 — katalogo, išsaugotų profilių ir įkėlimo atkūrimas
+
+Authenticated session DTO papildytas favoriteIds: tik prisijungusio naudotojo canonical klientui priklausantis sąrašas; anonymous gauna []. Node SQLite naudoja indexed recordById, legacy fallback skaito savo klientą. Organization directory išlaiko central rezultatą ir apjungia tik organizations. Rolės ir leidimai nekinta.
+
+Favorite RPC tebėra {organizationId, saved:boolean}; UI siunčia rodomą pasirinkimą, išlaiko jį po neaiškaus atsakymo ir atkuria būseną per session. Katalogo version guard nekeistas, conflict copy nurodo perskaityti naują versiją. Preferences tebėra central desired-state transaction + patvarus fanout: superseded atsakymas grąžina aktualius pasirinkimus, naujas retry gali sukurti naują revision. Naujos viešos QA API nėra. Native startup laikmatis nekeičia serverinių verslo operacijų.
+
+Aktualus runtime: ca8c7da8f107ae1ef22d02674eb7088d540ba7e6; modulio įkėlimo pataisa: 81999fe. Tai užbaigtas vietinis patikrų paketas, o visas platformos atnaujinimas tebėra ACTIVE / neužbaigtas. Sąlyginis savininko leidimas diegti galioja tik užbaigus visą atnaujinimą. Šiame pakete production operacijų ir deployment: 0.
+
+Visi keturi backend / prototype / acceptance / Workers rinkiniai paleisti: regression-86.log, 258/258 PASS, 31,62 s; 0 naujų, 1 papildytas, 0 pašalintų testų. Papildytas esamas duomenų izoliacijos testas tikrina, kad sesija grąžina tik prisijungusio kliento išsaugotų profilių ID. Patvirtintas nepakeistas 75aa turinio paketas: 39 puslapiai / 309 assets. Tikslūs staged saugumo įrodymai: ankstesnis 1 modulio failas ir dabartiniai 6 source/test failai — PASS.
+
+Toliau vykdomi dabar įmanomi darbai: skundų sprendimų viešinimo veiksmai ir eilės skaitymo klaida; pakartotinio vizito archyvuotos alternatyvos / pašalinti priedai; bendrų rezervavimo klaidų ir laiko galiojimo pločiai; likusių katalogo formų taikomumo peržiūra ir saugojimo auditų užbaigimas. Hosted restore / fence / load ir tikras laiškų gavimas, meistrų pilotas bei saugojimo faktai lieka atskiri neužbaigti vartai. Mokamos ketvirtos fazės integracijos neaktyvinamos be jų faktinių priklausomybių.
+
 ## Qualification/access258 — scoped continuation
 
 Current258 runtime 970913fca9fc77d6b3d6e05bf0d9eee21053e3ab: Node SSR uses existing production route titles, team technical roles display Lithuanian labels, and qualification choices show full current names. Named native qualification and team-access outage/stale/recovery/restart scopes accepted. Regression-82 allfour258/258 PASS32.92sec,0new/0extended/0removed; cumulative2 account tests since256 retained. Approved75aa39pages309assets;4 exact staged source blobs safety PASS. Full upgrade ACTIVE/incomplete; production write/deploy0.

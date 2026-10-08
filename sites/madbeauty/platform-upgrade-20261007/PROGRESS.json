@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "970913fca9fc77d6b3d6e05bf0d9eee21053e3ab",
+  "runtimeSourceCheckpoint": "ca8c7da8f107ae1ef22d02674eb7088d540ba7e6",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -327,6 +327,24 @@
       "source": "970913fca9fc77d6b3d6e05bf0d9eee21053e3ab",
       "newTests": 0,
       "remaining": "Global taxonomy, other applicable UI, hosted/factual launch gates"
+    },
+    {
+      "name": "native-incomplete-module-timeout-retry-and-late-completion",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "81999fe",
+      "newTests": 0,
+      "remaining": "Original transient cause and hosted/factual gates separate"
+    },
+    {
+      "name": "native-global-catalogue-favorite-intent-and-concurrent-preference-recovery",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "ca8c7da8f107ae1ef22d02674eb7088d540ba7e6",
+      "newTests": 0,
+      "extendedTests": 1,
+      "evidence": "module258-proof.json/global258-proof.json; regression-86 allfour258; approved75aa39/309; 6 source safety PASS",
+      "remaining": "Other applicable UI, storage audit, hosted/factual gates"
     }
   ],
   "tasks": [
@@ -598,7 +616,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: global taxonomy/favorite/preference conflicts, complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named branch/account/card/privacy/waitlist/qualification/access scopes accepted",
+    "Remaining applicable I04: complaint publication actions/queue-read errors, rebooking archived/addon choices, broader booking error/expiry widths, catalogue-add/procedure-request applicability; named module transport/global taxonomy/favorite/preference scopes accepted",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

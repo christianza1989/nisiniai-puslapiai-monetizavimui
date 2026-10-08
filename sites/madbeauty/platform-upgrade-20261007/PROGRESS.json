@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "02d9872a05dd0d3f878b56d5de8a0df3e287ffdd",
+  "runtimeSourceCheckpoint": "93c020eff125da46471b3845695a290201ba6e7c",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -228,6 +228,12 @@
       "tests": 232,
       "state": "accepted-isolated-node-workers-raster-path",
       "remaining": "Native Worker browser upload states, local source upload dedup, Node filesystem import, production binding/migration, remaining I04 and factual launch gates."
+    },
+    {
+      "name": "candidate-organization-binding-with-existing-pilot-persistence",
+      "tests": 233,
+      "state": "accepted-local-worker-and-config-dry-run",
+      "remaining": "Remote migration/deploy remain unexecuted; native Worker browser upload, local source dedup, Node filesystem import, I04 and factual/hosted restore gates."
     }
   ],
   "tasks": [
@@ -432,7 +438,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE232: transferred target current upload, physical atomic SQL image commit and durable lost-reply recovery accepted. Local source dedup, Node filesystem import and production binding/migration remain."
+      "evidence": "STORAGE.md/ACCEPTANCE233: directory/target media/mail and candidate namespace binding accepted locally through actual main Worker; remote lifecycle/PITR/load, local source dedup and Node filesystem adapter remain."
     },
     {
       "id": "I03",
@@ -500,7 +506,7 @@
   ],
   "next": [
     "Actual Worker browser upload I04 and local source upload retry admission",
-    "Production binding/migration candidate and Node filesystem import",
-    "Remaining applicable I04 states; factual SMTP/pilot/retention and hosted load gates"
+    "Node filesystem media import and applicable remaining I04 states",
+    "Hosted restore/load and factual SMTP/pilot/retention gates; only then conditional full-upgrade deployment"
   ]
 }

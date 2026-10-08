@@ -1,3 +1,7 @@
+## Bound candidate namespace / 93c020eff125da46471b3845695a290201ba6e7c
+
+Worker now exports both DO classes; config includes ORGANIZATION_STAGING. Namespace binding alone grants no active organization/calendar/mail/session authority. Target HTTP fetch remains404 and private commands require signed canonical actor/current epoch/physical target identity. No automatic org transfer occurs. Original central sessions and mail admission remain.
+
 ## Current target upload / 02d9872a05dd0d3f878b56d5de8a0df3e287ffdd
 
 POST /api/madbeauty/upload retains host/origin/session/CSRF/rights/binary12MiB checks and now uses dispatched current workspace permission. Optional x-asset-operation identifies same intent; old callers may omit it and receive a new server intent. Only Worker media.uploadMedia delegates transferred targets. Private mediaUploadAccess and attachUploadedMedia/storeOrganizationMedia are absent from public RPC methods. Signed packet carries descriptor/asset, raw binary objects separately; source and target verify exact object keys/MIME/length/SHA. Serialized RPC cap includes packet+binary+64KiB allowance below [Cloudflare documented32MiB limit](https://developers.cloudflare.com/workers/runtime-apis/rpc/). Target rechecks current capability/actor binding before transaction commit. Source local uploads keep previous adapter.

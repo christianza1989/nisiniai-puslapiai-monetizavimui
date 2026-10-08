@@ -2,6 +2,12 @@
 
 2026-10-08. Savininko patikslinimas visoms nišoms: trumpas pavedimas „sukurk šiam verslui pokalbių agentą“ apima pilną nišos prijungimą, kalibravimą, klaidų taisymą ir deklaruotos apimties priėmimą. Agentas pats vykdo šią eigą, savininkas neturi atskirai paprašyti kalibravimo ar smulkių pataisų. Naujos svetainės F1 be aiškaus agento pavedimo nesikeičia.
 
+**Numatytoji savininko apimtis:** išskyrus aiškiai siauresnį pavedimą, verslo agento sukūrimas apima veikiančią svetainės skambinimo mygtuko / mikrofono / gyvo balso eigą, kontaktų popup pokalbio metu ir po jo, tos pačios nišos konteksto tęstinumą, final transcript analizę, profesionalaus pažadą atitinkančio laiško parengimą / peržiūrą / išsiuntimą ir kliento reply tęsinį tame pačiame case/thread. Tai naršyklės skambutis; PSTN/SIP numeris turi savo atskirą provider integraciją. Atskiro „pridėk balsą / postcall email“ prašymo nereikia.
+
+El. laiškų kalibravimas apima poreikio papildymą, „per brangu“, kliento atsisakymą, pasiūlymo patvirtinimą ir neatsakymo tęsinį su valdomu laikrodžiu, stop taisyklėmis bei actual follow-up mandatu. Pasiūlymai turi tikrais šaltiniais pagrįstą mūsų kainą / antkainį ir neatskleidžia neleistinų tiekėjo/konkurento nuorodų. Tiekėjų paieška/derybos ir profesionalus PDF po užsakymo patvirtinimo priklauso nišos tikram verslo modeliui bei užsakytai prekybos apimčiai; jų neprimeti kitai nišai ar nepakeiti fiktyviu sandoriu.
+
+Trūkstamas šiai apimčiai reikalingas kodas yra įgyvendinimo darbas, ne priežastis pakeisti vartą į NA ar užbaigti tik tekstinį botą. Jį taisyk/prijunk bendrame core ir per-nišos adapteryje, atskirai tikrink main/PR ir hosted deployment. Išorinis credential, reali paskyra, budget ar deployment autorizacija gali būti konkreti priklausomybė; tęsk visus kitus įvykdomus darbus ir nepaskelbk live/PASS be actual įrodymo.
+
 ## 1. Prijunk actual core ir nišą
 
 Sėkmingai fetch / įrodyk abiejų repo naujausią main bazę, perskaityk AGENTS ir [runbook](runbook.md). Užfiksuok svetainės siteId / host, BUSINESS, faktinį pajėgumą, approved žinių projekciją, kontaktų ir kanalų šaltinį. Perskaityk actual profilius, compose, tool policy/admission ir aktualų implementation status; senas planas negali paneigti vėlesnio veikiančio kodo ar pakeisti jo patikros.

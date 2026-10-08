@@ -1,3 +1,11 @@
+## 2026-10-08 — skundų viešinimo sprendimai ir neprieinamas profilis
+
+Viešų RPC ir autorizacijos pakeitimų nėra. Esamas versioned reviewReport tikrina tą pačią versiją; nutrūkus atsakymui perskaitomas dabartinis sprendimas. Papildyta tik konflikto recovery kopija ir front-end pilno pasirinkimo / canonical / neprieinamo profilio rodymas.
+
+Aktualus runtime: 319ebd519e3494b4c97ca0cd71993507a7e6084d. publication258-proof.json: PASS, 58 eilučių / mail / medijos / UI palyginimai, trys užbaigti pranešimai, abu sintetiniai vizitai išliko. regression-90: visi keturi rinkiniai, 258/258 PASS, 31,992 s; 0 naujų, 2 papildyti, 0 pašalintų testų. Patvirtintas nepakeistas 75aa paketas: 39 puslapiai / 309 assets. Tikslūs staged saugumo įrodymai: 9 source/test failai PASS.
+
+Visas atnaujinimas tebėra ACTIVE / neužbaigtas; šiame pakete production operacijų ir deployment: 0. Toliau: pakartotinio vizito archyvuotos alternatyvos / pašalinti priedai, rezervavimo klaidų / galiojimo pločiai, likusios katalogo formos ir saugojimo auditai. Hosted restore/fence/load bei realūs SMTP, meistrų piloto ir saugojimo faktai lieka atskiri neužbaigti vartai. Sąlyginis savininko leidimas diegti taikomas tik užbaigus visą atnaujinimą.
+
 ## 2026-10-08 — katalogo, išsaugotų profilių ir įkėlimo atkūrimas
 
 Authenticated session DTO papildytas favoriteIds: tik prisijungusio naudotojo canonical klientui priklausantis sąrašas; anonymous gauna []. Node SQLite naudoja indexed recordById, legacy fallback skaito savo klientą. Organization directory išlaiko central rezultatą ir apjungia tik organizations. Rolės ir leidimai nekinta.

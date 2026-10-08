@@ -1,3 +1,11 @@
+## 2026-10-08 — skundų viešinimo sprendimai ir neprieinamas profilis
+
+Aktualus runtime: 319ebd519e3494b4c97ca0cd71993507a7e6084d. publication258-proof.json: PASS, 58 eilučių / mail / medijos / UI palyginimai, trys užbaigti pranešimai, abu sintetiniai vizitai išliko. regression-90: visi keturi rinkiniai, 258/258 PASS, 31,992 s; 0 naujų, 2 papildyti, 0 pašalintų testų. Patvirtintas nepakeistas 75aa paketas: 39 puslapiai / 309 assets. Tikslūs staged saugumo įrodymai: 9 source/test failai PASS.
+
+Visas atnaujinimas tebėra ACTIVE / neužbaigtas; šiame pakete production operacijų ir deployment: 0. Toliau: pakartotinio vizito archyvuotos alternatyvos / pašalinti priedai, rezervavimo klaidų / galiojimo pločiai, likusios katalogo formos ir saugojimo auditai. Hosted restore/fence/load bei realūs SMTP, meistrų piloto ir saugojimo faktai lieka atskiri neužbaigti vartai. Sąlyginis savininko leidimas diegti taikomas tik užbaigus visą atnaujinimą.
+
+Detalės ir ribos: ACCEPTANCE.md; ignored receipt: evidence/publication258-proof.json.
+
 ## 2026-10-08 — katalogo, išsaugotų profilių ir įkėlimo atkūrimas
 
 Aktualus runtime: ca8c7da8f107ae1ef22d02674eb7088d540ba7e6; modulio įkėlimo pataisa: 81999fe. Tai užbaigtas vietinis patikrų paketas, o visas platformos atnaujinimas tebėra ACTIVE / neužbaigtas. Sąlyginis savininko leidimas diegti galioja tik užbaigus visą atnaujinimą. Šiame pakete production operacijų ir deployment: 0.

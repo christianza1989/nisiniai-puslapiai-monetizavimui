@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "ca8c7da8f107ae1ef22d02674eb7088d540ba7e6",
+  "runtimeSourceCheckpoint": "319ebd519e3494b4c97ca0cd71993507a7e6084d",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -345,6 +345,15 @@
       "extendedTests": 1,
       "evidence": "module258-proof.json/global258-proof.json; regression-86 allfour258; approved75aa39/309; 6 source safety PASS",
       "remaining": "Other applicable UI, storage audit, hosted/factual gates"
+    },
+    {
+      "name": "complaint-publication-and-unavailable-profile",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "319ebd519e3494b4c97ca0cd71993507a7e6084d",
+      "proof": "publication258-proof.json: 58 checks; 3 resolved targets; 2 unchanged bookings; full shared native-selection context, canonical404 repair, private bytes and restart",
+      "regression": "regression-90.log 258/258, 31992.3175ms, 0 new/2 extended/0 removed; all four suites",
+      "remaining": "Full upgrade ACTIVE; rebooking archived/addon choices, broader booking error/expiry widths, catalogue applicability, storage audit and hosted/factual gates remain"
     }
   ],
   "tasks": [
@@ -535,7 +544,7 @@
       "title": "Skundai ir atsiliepimų priežiūra",
       "phase": "3",
       "state": "implemented-isolated-acceptance",
-      "evidence": "API.md/ACCEPTANCE.md: rules and current-schedule report denominators, authenticated CSV, typed public reports, versioned audited decisions, private image retention; actual desktop/mobile error/recovery/reload and consultation request."
+      "evidence": "ACCEPTANCE.md publication258: 3 actual UI publication decisions, queue/form failures, stale/lost replies, private byte retention and 2 retained bookings, both-store restart; named local scope."
     },
     {
       "id": "I01",
@@ -564,7 +573,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally."
     },
     {
       "id": "E01",
@@ -616,7 +625,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: complaint publication actions/queue-read errors, rebooking archived/addon choices, broader booking error/expiry widths, catalogue-add/procedure-request applicability; named module transport/global taxonomy/favorite/preference scopes accepted",
+    "Remaining applicable I04: rebooking archived/addon choices, broader booking error/expiry widths, catalogue-add/procedure-request applicability and storage audit; named complaint publication/queue errors and unavailable-profile recovery accepted locally",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

@@ -1,4 +1,5 @@
 import {ApiError,randomId,reject} from './primitives.mjs';
+import {membershipScope,requireCapability} from './permissions.mjs';
 import {createPlatform} from './platform.mjs';
 import {organizationTransferProof as proof,sameTransferProof as equal,organizationCollections} from './organization-handoff.mjs';
 import {invokePlatform,publicRpcMethods} from './rpc-contract.mjs';
@@ -15,14 +16,16 @@ const entityTables=new Set(organizationCollections);
 const direct=new Set(['createStaff','createResource','createService','createBusyBlock','selectProcedures','requestProcedure','assessQualification','saveGallery','saveBookingRules','saveClientCard','bulkOfferPrices','createClient','grantMembership','organizationReport','reportCsv','exportOfferCsv']);
 const byId={profile:['organizations'],option:['services'],saveOffer:['offers'],submitOffer:['offers'],moderateOffer:['offers'],archiveOffer:['offers'],submitLocation:['locations'],moderateLocation:['locations'],setLocationActive:['locations'],assignStaffLocations:['practitioners'],revokeMembership:['memberships'],moderateProcedure:['procedureRequests'],releaseBusyBlock:['busyBlocks'],releaseHold:['holds'],cancelBooking:['bookings'],changeBooking:['bookings'],changeVisit:['bookings'],completeBooking:['bookings'],rebooking:['bookings'],acceptWaitlist:['waitlist'],closeWaitlist:['waitlist'],moderate:['revisions'],moderateReview:['reviews'],reviewReport:['reports'],retryOutbox:['mail_outbox']};
 const targetMethods=new Set([...direct,...Object.keys(byId),'catalog','search','searchResults','availability','visitAvailability','hold','holdVisit','confirm','confirmVisit','manualVisit','message','review','report','saveMenuGroup','saveLocation','submitRevision','edit','createInquiry','createWaitlist','session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference']);
-// These need central identity admission before the organization can execute them.
+// Only the directory selects a second identity from its central account registry.
 const identityMethods=new Set(['createClient','grantMembership']);
 const readMethods=new Set([...publicRpcMethods,'session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference','workspace','rebooking','organizationReport','reportCsv','exportOfferCsv']);
 targetMethods.add('workspace');
 targetMethods.add('applyCustomerControls');
+targetMethods.add('identityActionScope');readMethods.add('identityActionScope');
 const fields=['bookings','messages','reviews','inquiries','waitlist','reports'];
 const exportFields=[...fields,'organizationCards'];
 function reference(method,input){
+ if(method==='identityActionScope')return {organizationId:input.organizationId};
  if(direct.has(method))return {organizationId:input.organizationId};
  if(byId[method])return {tables:byId[method],id:input.id};
  if(['hold','availability','createInquiry','createWaitlist'].includes(method))return {tables:['services'],id:input.providerServiceId};
@@ -61,7 +64,7 @@ export function createOrganizationCommand(store,{targetName}){
   const body=verify(store,'directory-command',packet),a=store.db.prepare('SELECT * FROM organization_target_authority WHERE site_id=?').get(store.siteId);
   if(!a||a.state!=='active'||body.schemaVersion!==1||body.siteId!==store.siteId||body.organizationId!==a.organization_id||body.epoch!==a.epoch||body.targetName!==targetName||targetName!=='madbeauty:organization:v1:'+a.organization_id)unavailable();
   if(!validId(body.nonce)||!Number.isSafeInteger(body.expiresAt)||body.expiresAt<=store.clock()||body.expiresAt>store.clock()+30000||Buffer.byteLength(json(packet))>maxResultBytes+32768||Buffer.byteLength(json(body.input||{}))>32768)reject('INVALID_INPUT','Organizacijos užklausa paseno arba yra per didelė.');
-  if(!targetMethods.has(body.method)||identityMethods.has(body.method))reject('GLOBAL_IDENTITY_REQUIRED','Šiam veiksmui reikia centrinės paskyros patvirtinimo.',503);
+  if(!targetMethods.has(body.method))reject('GLOBAL_IDENTITY_REQUIRED','Šiam veiksmui reikia centrinės paskyros patvirtinimo.',503);
   const actor=body.actor;if(actor&&(Object.keys(actor).some(k=>!['id','email','name','operator','verifiedAt'].includes(k))||!validId(actor.id)||typeof actor.email!=='string'||typeof actor.name!=='string'||typeof actor.operator!=='boolean'))reject('FORBIDDEN','Netinkama paskyros tapatybė.',403);
   if(!readMethods.has(body.method)&&!actor)reject('UNAUTHENTICATED','Prisijunkite.',401);
   const ref=reference(body.method,body.input||{}),organizationId=a.organization_id;
@@ -69,10 +72,17 @@ export function createOrganizationCommand(store,{targetName}){
   if(body.input?.organizationId&&body.input.organizationId!==organizationId||body.input?.scope?.role==='professional'&&body.input.scope.organizationId!==organizationId)reject('FORBIDDEN','Kita organizacija.',403);
   const requestHash=proof(store,'directory-request',body),old=store.db.prepare('SELECT request_hash,response FROM organization_directory_commands WHERE site_id=? AND nonce=?').get(store.siteId,body.nonce);
   if(old){if(old.request_hash!==requestHash)reject('IDEMPOTENCY_CONFLICT','Užklausos tapatybė jau panaudota.',409);return JSON.parse(old.response);}
-  cache.apply(body.cache,actor,a.epoch);
+  if(identityMethods.has(body.method)||body.method==='identityActionScope'){
+   if(!actor)reject('UNAUTHENTICATED','Prisijunkite.',401);
+   const operation=body.method==='identityActionScope'?body.input?.operation:body.method;
+   if(!identityMethods.has(operation))reject('INVALID_INPUT','Netinkamas paskyros veiksmas.');
+   requireCapability(membershipScope(store.readOrganization(organizationId,[actor.id]),actor,organizationId),operation==='createClient'?'clients':'access');
+  }
+  cache.apply(body.cache,actor,a.epoch,{method:body.method,input:body.input});
   const identityBefore=actor&&['confirm','confirmVisit'].includes(body.method)?store.recordById('clients',actor.id):null;
   const api=createPlatform(store);let result;
-  if(body.method==='applyCustomerControls')result=controls.apply(actor,body.input?.revision,()=>api.runAutomation());
+  if(body.method==='identityActionScope')result={organizationId,operation:body.input.operation};
+  else if(body.method==='applyCustomerControls')result=controls.apply(actor,body.input?.revision,()=>api.runAutomation());
   else if(body.method==='resolveReference'){const input=body.input;if(!validId(input?.id)||!Array.isArray(input.tables)||input.tables.length>3||input.tables.some(t=>!entityTables.has(t)&&t!=='mail_outbox'))reject('INVALID_INPUT','Netinkama įrašo tapatybė.');const collections=input.tables.filter(t=>owner(store,{tables:[t],id:input.id})===organizationId);result={organizationId:collections.length?organizationId:null,collections};}
   else if(body.method==='publicProfiles')result=store.organizationRecords('organizations',organizationId).filter(o=>o.approved).map(o=>api.profile(o.id));
   else if(body.method==='customerFragment'){
@@ -113,11 +123,11 @@ export function createOrganizationDirectory(store,{getTarget}={}){
  const transfers=()=>{const rows=db.prepare("SELECT organization_id,epoch,state,target_name FROM organization_handoffs WHERE site_id=? AND state!='aborted' ORDER BY organization_id LIMIT 33").all(siteId);if(rows.length>maxTargets)reject('CAPACITY','Organizacijų paieškos apimtis viršija šio piloto ribą.',503);return rows;};
  const actor=user=>{if(!user)return null;const a=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND id=?').get(siteId,user.id);if(!a)reject('UNAUTHENTICATED','Prisijunkite.',401);return {...a,operator:!!a.operator,...(Number.isFinite(user.verifiedAt)?{verifiedAt:user.verifiedAt}:{})};};
  const saveReferences=(t,references)=>store.transaction(()=>{for(const r of references){if(!entityTables.has(r.collection)||!validId(r.id))unavailable();const old=db.prepare('SELECT organization_id FROM organization_directory_refs WHERE site_id=? AND collection=? AND entity_id=?').get(siteId,r.collection,r.id);if(old&&old.organization_id!==t.organization_id)reject('IDEMPOTENCY_CONFLICT','Įrašo tapatybė priklauso kitai organizacijai.',409);db.prepare('INSERT INTO organization_directory_refs VALUES(?,?,?,?,?) ON CONFLICT(site_id,collection,entity_id) DO UPDATE SET epoch=excluded.epoch').run(siteId,r.collection,r.id,t.organization_id,t.epoch);}});
- async function targetCall(t,method,user,input={}){
+ async function targetCall(t,method,user,input={},recipientId=null){
   if(t.state!=='sealed'||!getTarget)unavailable();
   let response,nonce,account;
   for(let attempt=0;attempt<2;attempt++){
-   const packet=store.transaction(()=>{account=actor(user);nonce=randomId('command');return signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:account,input:clone(input),cache:cache.issue(account?.id)});});
+   const packet=store.transaction(()=>{account=actor(user);nonce=randomId('command');return signed(store,'directory-command',{schemaVersion:1,siteId,organizationId:t.organization_id,epoch:t.epoch,targetName:t.target_name,nonce,expiresAt:store.clock()+20000,method,actor:account,input:clone(input),cache:cache.issue(account?.id,recipientId)});});
    try{response=await getTarget(t.target_name).executeDirectoryCommand(packet);}catch{unavailable();}
    // An overtaken cache is rejected before the business operation. Refresh once;
    // transport failures and uncertain writes are never automatically replayed.
@@ -181,7 +191,20 @@ export function createOrganizationDirectory(store,{getTarget}={}){
    const result=api.erasureCase(actor(user),input),parts=await Promise.all(rows.map(t=>targetCall(t,'erasureBookings',user,{clientId:result.client.id})));
    result.futureBookings=[...result.futureBookings.filter(r=>!excluded.has(r.organizationId)),...parts.flat()];return result;
   }
-  const ref=reference(method,input);if(ref){const organizationId=await resolve(ref,rows),t=rows.find(r=>r.organization_id===organizationId);if(t){if(input.organizationId&&input.organizationId!==organizationId||input.scope?.role==='professional'&&input.scope.organizationId!==organizationId)reject('FORBIDDEN','Kita organizacija.',403);return targetCall(t,method,user,input);}}
+  const ref=reference(method,input);if(ref){const organizationId=await resolve(ref,rows),t=rows.find(r=>r.organization_id===organizationId);if(t){
+   if(input.organizationId&&input.organizationId!==organizationId||input.scope?.role==='professional'&&input.scope.organizationId!==organizationId)reject('FORBIDDEN','Kita organizacija.',403);
+   if(identityMethods.has(method)){
+    await targetCall(t,'identityActionScope',user,{organizationId,operation:method});
+    if(typeof input.email!=='string'||!input.email.trim()||input.email.trim().length>254)reject('INVALID_INPUT','Įrašykite teisingą el. paštą.');
+    const email=input.email.trim().toLowerCase(),recipient=store.transaction(()=>{
+     const account=db.prepare('SELECT id FROM accounts WHERE site_id=? AND email=?').get(siteId,email);
+     if(!account)reject(method==='grantMembership'?'NOT_FOUND':'GLOBAL_IDENTITY_REQUIRED',method==='grantMembership'?'Ši paskyra dar neprisijungė. Pakvieskite žmogų susikurti paskyrą savarankiškai.':'Šiam klientui dar reikia centrinės paskyros sukūrimo.',method==='grantMembership'?404:503);
+     store.ensureClient(account.id);return account.id;
+    });
+    return targetCall(t,method,user,input,recipient);
+   }
+   return targetCall(t,method,user,input);
+  }}
   // Central identity/preferences/export remain on their existing guarded writer.
   // Unsupported cross-object mutations fail closed instead of weakening its contract.
   if(['metrics','migrateCatalogue','changeTaxonomy'].includes(method))unavailable();

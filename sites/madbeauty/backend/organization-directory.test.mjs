@@ -141,3 +141,52 @@ test('Overlapping preference deliveries cannot acknowledge a later intent or res
   const first=directory.dispatch('preferences',f.users.client,{service:false,marketing:false,reminderLeadMin:0});await signal;const second=await directory.dispatch('preferences',f.users.client,{service:true,marketing:true,reminderLeadMin:120});assert.equal(second.synchronization,'applied');release();const older=await first;assert.equal(older.synchronization,'superseded');assert.equal(older.service,true);assert.equal(f.source.clientRecords('preferences',f.users.client.id)[0].service,true);assert.equal(f.target.clientRecords('preferences',f.users.client.id)[0].service,true);assert.equal(f.source.db.prepare('SELECT COUNT(*) AS n FROM directory_customer_controls').get().n,0);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM directory_cache_writer_permits').get().n,0);
  }finally{f.close();}
 });
+
+test('Existing central email identities become salon clients and versioned team members without replacing global names or creating target login authority',async()=>{
+ const f=fixture();try{
+  const globalBefore=f.source.recordById('clients',f.users.foreign.id);
+  f.source.db.prepare('UPDATE accounts SET operator=1 WHERE id=?').run(f.users.foreign.id);
+  const added=await f.request('owner','createClient',{organizationId:f.a.org.id,email:' DIRECTORY-FOREIGN@EXAMPLE.COM ',name:'Salono kliento vardas',recipientId:f.users.client.id});
+  assert.equal(added.status,200,JSON.stringify(added));assert.equal(added.result.id,f.users.foreign.id);
+  assert.deepEqual(f.source.recordById('clients',f.users.foreign.id),globalBefore);assert.equal(f.source.db.prepare('SELECT name FROM accounts WHERE id=?').get(f.users.foreign.id).name,'Foreign');
+  assert.equal(f.target.recordById('clients',f.users.foreign.id).name,'Foreign');assert.equal(f.target.db.prepare('SELECT operator FROM accounts WHERE id=?').get(f.users.foreign.id).operator,0);
+  assert.equal((await f.request('owner','workspace',f.a.scope)).result.clients.find(c=>c.id===f.users.foreign.id).name,'Salono kliento vardas');assert.equal(f.source.organizationRecords('clientLinks',f.a.org.id).length,0);
+  const grant=await f.request('owner','grantMembership',{organizationId:f.a.org.id,email:f.users.foreign.email,role:'manager',version:0});assert.equal(grant.status,200,JSON.stringify(grant));assert.equal(grant.result.accountId,f.users.foreign.id);assert.equal(grant.result.version,1);
+  const session=await f.request('foreign',null,{}, {verb:'GET',url:'/api/madbeauty/session'});assert.equal(session.organizations.find(o=>o.id===f.a.org.id).membershipRole,'manager');
+  assert.equal((await f.request('foreign','workspace',f.a.scope)).result.capabilities.includes('access'),false);
+  assert.equal((await f.request('foreign','grantMembership',{organizationId:f.a.org.id,email:f.users.client.email,role:'reception',version:0})).status,403);
+  assert.equal((await f.request('owner','grantMembership',{organizationId:f.a.org.id,email:f.users.foreign.email,role:'reception',version:0})).error.code,'VERSION_CONFLICT');
+  const revoke=await f.request('owner','revokeMembership',{id:grant.result.id,version:1});assert.equal(revoke.status,200,JSON.stringify(revoke));assert.equal(revoke.result.version,2);
+  assert.equal((await f.request('foreign',null,{}, {verb:'GET',url:'/api/madbeauty/session'})).organizations.some(o=>o.id===f.a.org.id),false);assert.equal((await f.request('foreign','workspace',f.a.scope)).status,403);
+  const restored=await f.request('owner','grantMembership',{organizationId:f.a.org.id,email:f.users.foreign.email,role:'reception',version:2});assert.equal(restored.status,200,JSON.stringify(restored));assert.equal(restored.result.id,grant.result.id);assert.equal(restored.result.version,3);
+  assert.equal(f.target.organizationRecords('accessChanges',f.a.org.id).filter(c=>c.membershipId===grant.result.id).length,3);assert.equal(f.source.organizationRecords('memberships',f.a.org.id).some(m=>m.accountId===f.users.foreign.id),false);
+  assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM sessions').get().n,0);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM email_challenges').get().n,0);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM directory_cache_writer_permits').get().n,0);
+ }finally{f.close();}
+});
+
+test('Current target capability precedes central email lookup, and revocation between identity preflight and command prevents recipient admission',async()=>{
+ const f=fixture();try{
+  let lookups=0;const prepare=f.source.db.prepare.bind(f.source.db);f.source.db.prepare=q=>{if(q==='SELECT id FROM accounts WHERE site_id=? AND email=?')lookups++;return prepare(q);};
+  for(const email of [f.users.client.email,'unknown-scope@example.com'])assert.equal((await f.request('foreign','createClient',{organizationId:f.a.org.id,email,name:'Denied'})).status,403);
+  assert.equal((await f.request('reception','grantMembership',{organizationId:f.a.org.id,email:f.users.client.email,role:'manager',version:0})).status,403);assert.equal(lookups,0);assert.equal(f.target.recordById('clients',f.users.foreign.id),null);
+  assert.equal((await f.request('owner','grantMembership',{organizationId:f.a.org.id,email:'unknown-scope@example.com',role:'manager',version:0})).error.code,'NOT_FOUND');assert.equal(lookups,1);assert.equal(f.source.db.prepare('SELECT id FROM accounts WHERE email=?').get('unknown-scope@example.com'),undefined);
+  const directory=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:packet=>{
+   const result=f.command.execute(packet);if(packet.method==='identityActionScope'&&!result.error)createPlatform(f.target).revokeMembership(f.users.owner,{id:f.membership.id,version:1});return result;
+  }})});
+  await assert.rejects(directory.dispatch('createClient',f.users.reception,{organizationId:f.a.org.id,email:f.users.foreign.email,name:'No recipient after revocation'}),e=>e.code==='FORBIDDEN');
+  assert.equal(f.target.recordById('clients',f.users.foreign.id),null);assert.equal(f.target.db.prepare('SELECT id FROM accounts WHERE id=?').get(f.users.foreign.id),undefined);assert.equal(f.target.organizationRecords('clientLinks',f.a.org.id).length,0);
+  assert.equal((await f.request('owner','identityActionScope',{organizationId:f.a.org.id,operation:'createClient'})).status,404);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM directory_cache_writer_permits').get().n,0);
+ }finally{f.close();}
+});
+
+test('Signed recipient cache binds the selected email and operation; target account, client link, access journal and nonce roll back together',()=>{
+ const f=fixture();try{
+  const issuer=createDirectoryCacheIssuer(f.source),actor={...f.users.owner,operator:true},packet=(method,extra={})=>{const body={schemaVersion:1,siteId:f.source.siteId,organizationId:f.a.org.id,epoch:f.frozen.epoch,targetName:f.frozen.targetName,nonce:'identity-'+method,expiresAt:now+20000,method,actor,input:{organizationId:f.a.org.id,email:f.users.foreign.email,name:'Private name',role:'manager',version:0},cache:issuer.issue(actor.id,f.users.foreign.id),...extra};return {...body,proof:organizationTransferProof(f.source,'directory-command',body)};},resign=value=>{const {proof,...body}=value;return {...body,proof:organizationTransferProof(f.source,'directory-command',body)};};
+  const original=packet('createClient'),bad=structuredClone(original);bad.cache.recipientId=f.users.client.id;assert.equal(f.command.execute(resign(bad)).error.code,'DIRECTORY_CONTEXT_INVALID');bad.cache=structuredClone(original.cache);bad.cache.accounts[1].operator=1;assert.equal(f.command.execute(resign(bad)).error.code,'DIRECTORY_CONTEXT_INVALID');bad.cache=structuredClone(original.cache);bad.cache.clients[1].favorites=[f.b.org.id];assert.equal(f.command.execute(resign(bad)).error.code,'DIRECTORY_CONTEXT_INVALID');bad.cache=structuredClone(original.cache);bad.method='session';assert.equal(f.command.execute(resign(bad)).error.code,'DIRECTORY_CONTEXT_INVALID');bad.method='grantMembership';bad.input.email=f.users.client.email;assert.equal(f.command.execute(resign(bad)).error.code,'DIRECTORY_CONTEXT_INVALID');
+  assert.equal(f.target.db.prepare('SELECT id FROM accounts WHERE id=?').get(f.users.foreign.id),undefined);
+  const before=f.target.rowStats(),prepare=f.target.db.prepare.bind(f.target.db);f.target.db.prepare=q=>{const s=prepare(q);return q.startsWith('INSERT INTO organization_directory_commands')?{...s,run:(...args)=>{s.run(...args);throw Error('Isolated identity nonce post-write failure');}}:s;};
+  assert.equal(f.command.execute(original).error.code,'SERVER_ERROR');assert.equal(f.target.recordById('clients',f.users.foreign.id),null);assert.equal(f.target.organizationRecords('clientLinks',f.a.org.id).length,0);assert.equal(f.target.db.prepare('SELECT id FROM accounts WHERE id=?').get(f.users.foreign.id),undefined);assert.deepEqual(f.target.rowStats(),before);
+  const grant=packet('grantMembership');assert.equal(f.command.execute(grant).error.code,'SERVER_ERROR');assert.equal(f.target.organizationRecords('accessChanges',f.a.org.id).filter(c=>c.next.accountId===f.users.foreign.id).length,0);assert.equal(f.target.organizationRecords('memberships',f.a.org.id).some(m=>m.accountId===f.users.foreign.id),false);assert.equal(f.target.recordById('clients',f.users.foreign.id),null);
+  f.target.db.prepare=prepare;const once=f.command.execute(grant),again=f.command.execute(grant);assert.ok(once.result,JSON.stringify(once));assert.deepEqual(again,once);assert.equal(f.target.organizationRecords('accessChanges',f.a.org.id).filter(c=>c.next.accountId===f.users.foreign.id).length,1);assert.equal(f.target.db.prepare('SELECT COUNT(*) AS n FROM directory_cache_writer_permits').get().n,0);
+ }finally{f.close();}
+});

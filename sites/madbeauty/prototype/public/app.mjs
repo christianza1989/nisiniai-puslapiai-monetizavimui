@@ -21,7 +21,7 @@ import {isCityId} from '/cities.mjs';
 const $=s=>document.querySelector(s),boot=await loadJson('/boot.json');
 
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:'',rezultatai:'paslaugos'},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
-let state=initial();
+let state=initial(),restoredWorkspaceAccount=null;
 try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':ui'));if(saved?.version===1&&saved.boot===boot.now)state={...state,...saved.state};}catch{}
 const ctx={searchSelect,state,media:new Map(),taxonomy:TAXONOMY,candidates:new Map(),minute,render,navigate,toast,openDialog,closeDialog,saveUI,selectRole,beginBooking,clearDrafts,
   dayLabel:i=>date(localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720)),
@@ -34,7 +34,11 @@ let mediaPromise=null;
 ctx.ensureMedia=async()=>{if(!mediaPromise)mediaPromise=Promise.all(['/media.json','/app-media.json'].map(u=>loadJson(u))).then(data=>{for(const a of data.flatMap(d=>d.assets))ctx.media.set(a.id,a);}).catch(e=>{mediaPromise=null;throw e;});return mediaPromise;};
 function adapter(){ctx.adapter=createAdapter({enabled:state.enabled,deployment:boot.deployment,clock:makeClock(state.clock),scenario:state.scenario,richFixtures:true,persistence,realAdapter:boot.apiAvailable?ctx.realAdapter:null});if(!state.enabled&&ctx.realAdapter.session){const s=ctx.realAdapter.session;state.session={role:s.user?'customer':'guest',clientId:s.user?.id||null,organizationId:s.organizations[0]?.id||null};}}
 adapter();
-function saveUI(){try{localStorage.setItem(DEMO_NAMESPACE+':ui',JSON.stringify({version:1,boot:boot.now,state}));}catch{toast('Vietinių pasirinkimų išsaugoti nepavyko.');}}
+function saveUI(){try{
+  localStorage.setItem(DEMO_NAMESPACE+':ui',JSON.stringify({version:1,boot:boot.now,state}));
+  const s=ctx.realAdapter.session;
+  if(ctx.adapter.mode==='real'&&s?.user&&s.organizations.some(o=>o.id===state.session.organizationId))localStorage.setItem(DEMO_NAMESPACE+':real-workspace',JSON.stringify({accountId:s.user.id,organizationId:state.session.organizationId}));
+}catch{toast('Vietinių pasirinkimų išsaugoti nepavyko.');}}
 function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(ctx.toastTimer);ctx.toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),4500);}
 let dialogOpener=null;
 function openDialog(title,html,{restore=true}={}){if(!$('#dialog').open)dialogOpener=ctx.actionOpener?.isConnected?ctx.actionOpener:document.activeElement;$('#dialog').innerHTML=`<div class="dialog-head"><h2 id="dialog-title">${esc(title)}</h2>${btn('close-dialog',icon('close'),'aria-label="Uždaryti"','close')}</div><div class="dialog-body">${html}</div>`;if(restore)restoreDrafts(ctx,$('#dialog'));$('#header').classList.remove('is-hidden');if(!$('#dialog').open)$('#dialog').showModal();if(!$('#dialog').contains(document.activeElement))$('#dialog button')?.focus();}
@@ -63,7 +67,14 @@ async function render(){
     if(!privatePath||path==='/meistrui/galerija'||path==='/paskyra/issaugoti')jobs.push(ctx.ensureMedia());
     if(!privatePath||path==='/operatorius/turinys')jobs.push(loadJson('/content.json').then(data=>{ctx.content=data;setContentData(data);}));
     await Promise.all(jobs);
-    if(ctx.adapter.mode==='real'){const s=ctx.realAdapter.session;state.session={...state.session,role:s.user?(state.session.role==='guest'?'customer':state.session.role):'guest',clientId:s.user?.id||null,organizationId:s.organizations.some(o=>o.id===state.session.organizationId)?state.session.organizationId:s.organizations[0]?.id||null};}
+    if(ctx.adapter.mode==='real'){
+      const s=ctx.realAdapter.session;
+      if(restoredWorkspaceAccount!==(s.user?.id||null)){
+        restoredWorkspaceAccount=s.user?.id||null;state.session.organizationId=null;
+        if(s.user)try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':real-workspace'));if(saved?.accountId===s.user.id&&s.organizations.some(o=>o.id===saved.organizationId))state.session.organizationId=saved.organizationId;}catch{}
+      }
+      state.session={...state.session,role:s.user?(state.session.role==='guest'?'customer':state.session.role):'guest',clientId:s.user?.id||null,organizationId:s.organizations.some(o=>o.id===state.session.organizationId)?state.session.organizationId:s.organizations[0]?.id||null};
+    }
     ctx.renderClock=ctx.adapter.clock;
     if(location.hash.startsWith('#paslauga=')||location.hash.includes('miestas=')){state.search={...state.search,...readSearch()};}
     if(/^\/paslaugos\/[^/]+\//.test(path)){state.search.paslauga=path.split('/')[2];state.search.miestas=path.split('/')[3];}

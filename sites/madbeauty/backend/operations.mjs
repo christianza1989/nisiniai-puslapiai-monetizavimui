@@ -2,10 +2,11 @@ import {find} from './availability.mjs';
 import {occupiedRanges} from './occupancy.mjs';
 import {makeClock,localInstant} from '../prototype/demo-model.mjs';
 import {reject} from './primitives.mjs';
+import {validateReportRange} from '../prototype/public/report-range.mjs';
 const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 const dayKey=at=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(at));
-function validDay(v){const n=typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)?Date.parse(v+'T12:00:00Z'):NaN;if(!Number.isFinite(n)||new Date(n).toISOString().slice(0,10)!==v)reject('INVALID_INPUT','Pasirinkite galiojančią datą.');return n;}
-const interval=(from,to)=>{const a=validDay(from),b=validDay(to);if(a>b||b-a>91*86400000)reject('INVALID_INPUT','Pasirinkite ne ilgesnį kaip 92 dienų laikotarpį.');return {start:Date.parse(localInstant(makeClock(new Date(a).toISOString()),0,0)),end:Date.parse(localInstant(makeClock(new Date(b).toISOString()),0,1439))+60000,days:(b-a)/86400000+1};};
+const validDay=value=>{const range=validateReportRange(value,value);if(range.error)reject('INVALID_INPUT','Pasirinkite galiojančią datą.');return range.fromNoon;};
+const interval=(from,to)=>{const range=validateReportRange(from,to);if(range.error)reject('INVALID_INPUT',range.error);return {start:Date.parse(localInstant(makeClock(new Date(range.fromNoon).toISOString()),0,0)),end:Date.parse(localInstant(makeClock(new Date(range.toNoon).toISOString()),0,1439))+60000,days:range.days};};
 const merge=rows=>{const out=[];for(const [lo,hi] of rows.filter(([lo,hi])=>hi>lo).sort((a,b)=>a[0]-b[0])){const last=out.at(-1);if(last&&lo<=last[1])last[1]=Math.max(hi,last[1]);else out.push([lo,hi]);}return out;};
 const minutes=rows=>merge(rows).reduce((n,[a,b])=>n+(b-a)/60000,0);
 export const csvCell=v=>{let s=String(v??'');if(/^[\s]*[=+\-@]|^[\t\r\n]/u.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';};

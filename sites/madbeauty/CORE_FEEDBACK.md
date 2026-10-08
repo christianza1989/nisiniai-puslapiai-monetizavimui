@@ -1,3 +1,9 @@
+## 2026-10-08 — preview acceptance and narrow native date fields
+
+Observed D07 acceptance gap: original BACKLOG required duplicate/unmatched and mass-price preview, but prior atomically scoped CSV form wrote directly. Runtime 91d1c87c0b709a3f431b4e8bd40f99f5073f8fc9 adds read-only current workspace preview and explicit confirmation without cloning backend validation. Node249 and native csv249-browser.md cover no-write/errors/stale/uncertain replay. No shared core change is required; this is the Madbeauty price workflow.
+
+Observed report320 native date year was clipped while clientWidth==scrollWidth; numeric overflow metrics alone had missed readability. Narrow report fields now stack; final four report249 screenshots viewed. Owned local startup404 after build came from a still-running old generated asset whitelist; restart only the owned process after adding a new module. This specific fixture diagnosis does not establish the cause of older unrelated cold-start failures. Full task remains ACTIVE.
+
 ## 2026-10-08 — patirtas meniu išsaugojimo dublikatas
 
 Original saveMenuGroup retry po lost reply sukūrė naują ID: menu-replay-node-first.log reprodukcija FAIL. Pataisa cb8f37a30d2d4e634d169b52e752998bbad82a7d: business result replay su actor/org/payload/version fingerprint po current-role validation; menu draft retains operation key. Node ir native Workers restart/current access tests bei actual browser reload/retry SQL comparison priimti,246/246 suites. Atkūrimo copy nebeteigia, kad neaiškiam atsakymui esant forma tikrai neįrašyta. Bendro core ar kitų nišų formos automatiškai nepakeistos; ši pamoka nėra visų jų acceptance.

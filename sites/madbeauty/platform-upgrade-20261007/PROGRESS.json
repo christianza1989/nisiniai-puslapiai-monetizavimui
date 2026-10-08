@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "cb8f37a30d2d4e634d169b52e752998bbad82a7d",
+  "runtimeSourceCheckpoint": "91d1c87c0b709a3f431b4e8bd40f99f5073f8fc9",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -252,6 +252,13 @@
       "tests": 246,
       "state": "accepted-isolated-path",
       "remaining": "Other named I04, hosted lifecycle/load and factual launch gates"
+    },
+    {
+      "name": "csv-preview-confirmation-rules-report-native",
+      "tests": 249,
+      "state": "accepted-isolated-path",
+      "source": "91d1c87c0b709a3f431b4e8bd40f99f5073f8fc9",
+      "remaining": "Other named applicable I04, hosted lifecycle/load and factual launch gates"
     }
   ],
   "tasks": [
@@ -303,7 +310,7 @@
       "title": "CSV importas ir masinis redagavimas",
       "phase": "3",
       "state": "implemented-isolated-acceptance",
-      "evidence": "ACCEPTANCE.md/API.md: authenticated scoped CSV attachment actual download, invalid header guidance, atomic two-row price draft30→31/reload, stale CSV409, public30 until explicit reviewed publish31; Node scoped/version/idempotency/rollback acceptance."
+      "evidence": "ACCEPTANCE249 / csv249-browser.md: fresh read-only owned ID/version/duplicate preview with safe before/after labels, separate atomic confirmation; native no-write invalid/corrected preview, concurrent33EUR/v4 stale protection, fresh33->32 committed lost reply exact v5 retry/reload; prior scoped export/publish tests retain scope. No reload-persistent CSV intent guarantee."
     },
     {
       "id": "S01",
@@ -471,7 +478,7 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md/ACCEPTANCE246: native group precommit/error/loading and committed reply loss/reload/two-store restart replay; CSV same-dialog uncertain retry and keyboard/Escape; gallery outage/version-conflict/reviewed recovery accepted. Other named states remain."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE249: current CSV preview/confirmation applicable states, rules precommit/stale/reviewed recovery, report read503/retry/date320 repair accepted. Prior menu/gallery/upload receipts retain exact scope. Complaints and other named applicable states remain."
     },
     {
       "id": "E01",

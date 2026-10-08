@@ -37,9 +37,9 @@ export function calendarView(ctx,d,visitLine){
  ${(d.busyBlocks||[]).some(b=>b.active!==false&&days.some(i=>date(b.startAt)===ctx.dayLabel(i)))?`<details class="calendar-block-list"><summary>Užblokuoti laikai</summary>${days.flatMap(blocksForDay).map(blockRow).join('')}</details>`:''}<p class="hint">Vizito panelėje gali pakeisti laiką ar būseną. Meistro filtras rodo tik jo darbo fazes, darbo vietos filtras — jos užimtumą. Punktyrinės fazės žymi laukimą. Pilkai pažymėti intervalai nerodomi laisvų laikų paieškoje.</p>`;
 }
 export async function calendarAction(ctx,action,button){
- if(action==='calendar-nav'){ctx.state.calendarDate=ctx.dayKey(chosenOffset(ctx)+(ctx.state.calendarMode==='week'?7:1)*Number(button.dataset.id));ctx.saveUI();await ctx.render();return true;}
- if(action==='calendar-today'){ctx.state.calendarDate=ctx.dayKey(0);ctx.saveUI();await ctx.render();return true;}
- if(action==='calendar-mode'){ctx.state.calendarMode=button.dataset.id;ctx.saveUI();await ctx.render();return true;}
+ if(action==='calendar-nav'){ctx.state.calendarDate=ctx.dayKey(chosenOffset(ctx)+(ctx.state.calendarMode==='week'?7:1)*Number(button.dataset.id));ctx.saveUI();await calendarRefresh(ctx,`[data-action="calendar-nav"][data-id="${button.dataset.id}"]`);return true;}
+ if(action==='calendar-today'){ctx.state.calendarDate=ctx.dayKey(0);ctx.saveUI();await calendarRefresh(ctx,'[data-action="calendar-today"]');return true;}
+ if(action==='calendar-mode'){ctx.state.calendarMode=button.dataset.id;ctx.saveUI();await calendarRefresh(ctx,`[data-action="calendar-mode"][data-id="${button.dataset.id}"]`);return true;}
  if(action==='block-time'){
   const d=ctx.workspace;ctx.openDialog('Blokuoti laiką',`<p>Pasirink, kurio meistro arba darbo vietos laikas bus neprieinamas registracijai.</p><form id="time-block">${select('Kam blokuoti','target',[...d.practitioners.filter(p=>p.active).map(p=>['staff:'+p.id,p.name]),...(d.practitionerId?[]:d.resources.filter(r=>r.active)).map(r=>['resource:'+r.id,'Darbo vieta: '+r.label])],d.practitioners[0]?'staff:'+d.practitioners[0].id:'')}${field('Data','dateKey',ctx.dayKey(Math.max(0,Math.min(30,chosenOffset(ctx)))),'date',`required min="${ctx.dayKey(0)}" max="${ctx.dayKey(30)}"`)}<div class="grid-2">${field('Nuo','from','09:00','time','required')}${field('Iki','to','10:00','time','required')}</div>${field('Priežastis','label','','text','required maxlength="100"')}<button class="button accent">Išsaugoti bloką</button></form>`);return true;
  }
@@ -47,7 +47,8 @@ export async function calendarAction(ctx,action,button){
  return false;
 }
 export async function calendarForm(ctx,form,fd){
- if(form.id==='calendar-filter'){const key=fd.get('calendarDate');if(!/^\d{4}-\d{2}-\d{2}$/.test(key)||new Date(key+'T12:00:00Z').toISOString().slice(0,10)!==key)throw userError('Pasirink galiojančią datą.');ctx.state.calendarDate=key;ctx.state.calendarStaff=fd.get('calendarStaff')||'';ctx.state.calendarResource=fd.get('calendarResource')||'';ctx.saveUI();await ctx.render();return true;}
+ if(form.id==='calendar-filter'){const key=fd.get('calendarDate');if(!/^\d{4}-\d{2}-\d{2}$/.test(key)||new Date(key+'T12:00:00Z').toISOString().slice(0,10)!==key)throw userError('Pasirink galiojančią datą.');ctx.state.calendarDate=key;ctx.state.calendarStaff=fd.get('calendarStaff')||'';ctx.state.calendarResource=fd.get('calendarResource')||'';ctx.saveUI();await calendarRefresh(ctx,'#calendar-filter button');return true;}
  if(form.id==='time-block'){const target=String(fd.get('target')),split=target.indexOf(':'),type=target.slice(0,split),id=target.slice(split+1);await ctx.adapter.createBusyBlock({organizationId:ctx.state.session.organizationId,[type==='staff'?'practitionerId':'resourceId']:id,dateKey:fd.get('dateKey'),from:minute(fd.get('from')),to:minute(fd.get('to')),label:fd.get('label')});ctx.state.calendarDate=fd.get('dateKey');ctx.closeDialog();ctx.toast('Laikas užblokuotas.');ctx.saveUI();await ctx.render();return true;}
  return false;
 }
+async function calendarRefresh(ctx,selector){await ctx.render();(document.querySelector('#main '+selector)||document.getElementById('main'))?.focus({preventScroll:true});}

@@ -342,3 +342,6 @@ Cloudflare release 2026-10-06: also reserves infrastructure/mail-relay/** for th
 
 
 - 2026-10-08 own Madbeauty runtime7694c8d:8source files new central client identity/durable admission/target receipt and pending draft recovery.207/207 four suites, exact75aa39page305asset build, actual Workers/browser restart/replay/mobile. Own9docs only, writer/shared/core unchanged. Globals/mail/media/UI continue; production writes0 and conditional full-upgrade deployment not eligible yet.
+
+
+- 2026-10-08 own Madbeauty runtime1e4f9fc:8source files current favorite eligibility, indexed central catalogue view, SQL current metrics and replay-safe per-org legacy conversion.210/210 four suites, actual Workers/browser globals, exact75aa build. Own9docs/status; no writer/shared/core changes or production writes. Target mail/media/binding/UI continue; full-upgrade deployment condition unsatisfied.

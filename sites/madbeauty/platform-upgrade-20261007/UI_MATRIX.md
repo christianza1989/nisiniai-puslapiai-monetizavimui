@@ -51,3 +51,8 @@ Current owner client-list/private-name ir team-member composition nepriskiriama 
 ## Directory207 / new manual client pending recovery
 
 Actual owner new-client creation with committed reply loss, Enter pending, reload restores fields/key/pending notice, two-store restart and retry applied, completed draft cleared and Escape focus return. Pending dialog320/390/820/1440 all viewed and document/dialog/form measured; recovered client list390 viewed. Evidence family directory-manual207-* in ACCEPTANCE207. Current key is private proxy-redacted; storage single intent/version1 link establishes idempotent action. Permanent permission/capacity and role-gap concurrent browser cases remain applicable/unverified; their Node/Workers guards do not substitute screenshots.
+
+
+## Directory210 / central controls
+
+Actual taxonomy aliases Enter save/r1, per-org legacy conversion/repeat, editor Escape focus, metrics13 events and favorite Space/reload checked accepted. Metrics320/390/820/1440 all viewed/measured; taxonomy dialog390 and favorite390 viewed. Evidence directory-globals210-* and ACCEPTANCE210. Table/document widths equal scrollWidths; workspace navigation remains intentionally scrollable. Archived favorite/outage and concurrent taxonomy stale/error UI remain applicable/unverified despite Node coverage. Renderer composition is otherwise unchanged.

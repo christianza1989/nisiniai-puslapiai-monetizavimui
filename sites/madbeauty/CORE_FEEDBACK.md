@@ -144,3 +144,8 @@ Actual reload po serverio restart rodė first org, nes dynamic boot timestamp at
 ## 2026-10-08 — uncertain cross-object client creation and UI draft truth
 
 A new manual email cannot be invented by an organization target, and a transport nonce does not cover lost replies after expiration/restart. Local7694c8d uses canonical central provision+durable intent and target durable actor/input-bound business receipt.207tests/actual Workers/browser prove one account/link/event. UI recovery had misleading uncommitted-draft copy for a committed pending action; pending status now retains key and states that another action does not cancel the first. Hidden DOM proxy redaction is not a changed-key defect; single actual storage operation is the observable evidence. No shared universal module introduced, no global distributed rollback claim.
+
+
+## 2026-10-08 — globals must not read sealed copies
+
+Existing globals were intentionally fail-closed during initial routing.1e4f9fc now keeps bookmark and taxonomy writers central while checking current target eligibility and aggregating current SQL counts. Source taxonomy needed a narrow patch view to avoid triggering whole-org reminder writes against a sealed calendar; large-history and post-write rollback tests accepted. Per-org deterministic catalogue conversion permits uncertain retry without distributed transaction claims. First favorite lookup used an incorrect nested profile shape; retained500 and corrected flat-id rerun document the actual failure.210tests/actual Workers/browser accepted bounded scope, no shared module changed.

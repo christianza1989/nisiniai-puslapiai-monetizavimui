@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "7694c8d09453692cce7265c1ec08271cad2574d8",
+  "runtimeSourceCheckpoint": "1e4f9fc462cfab9f280d6035c1a2d07cb37aa977",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -192,6 +192,12 @@
       "tests": 207,
       "state": "accepted-isolated-path",
       "remaining": "Globals, target mail/media/binding and full UI states; production unchanged"
+    },
+    {
+      "name": "current-favorites-central-indexed-taxonomy-global-metrics-and-per-org-catalogue-recovery",
+      "tests": 210,
+      "state": "accepted-isolated-path",
+      "remaining": "Target mail/media/binding and full UI states; production unchanged"
     }
   ],
   "tasks": [
@@ -396,7 +402,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md/ACCEPTANCE207: canonical new manual identity, durable central intent + target actor/input-bound receipt, uncertain write/restart/alarm recovery, actual browser pending/restored/applied one link/event. Globals/mail/media/binding remain."
+      "evidence": "STORAGE.md/ACCEPTANCE210: central client identities/controls, current favorites/metrics/catalogue and replay-safe per-org conversion accepted Node/actual Workers/browser. Target mail/media/binding remain."
     },
     {
       "id": "I03",
@@ -463,8 +469,8 @@
     }
   ],
   "next": [
-    "Current favorites/catalogue/metrics across migrated organizations",
-    "Target mail/media/binding and remaining I04 states",
+    "Target mail admission with current global preferences and alarm recovery",
+    "Media transfer/binding and remaining applicable I04 states",
     "Factual SMTP/pilot/retention and larger-adapter hosted load gates"
   ]
 }

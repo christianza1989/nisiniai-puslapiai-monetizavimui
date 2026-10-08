@@ -1,3 +1,11 @@
+## 2026-10-08 — aktyvus upgrade: vieno writer perdavimo protokolas
+
+Tarpinis paketas187 priimtas; visas vietinis pavedimas ACTIVE ir neužbaigtas. Runtime4133849 / PR26, companionc7e0c9a / PR6.187/187 keturių manifest suites regression-49.log, final authority5PASS ir exact75aa39page305asset build PASS. Atskiras target atomically paruošia patikrintą kalendorių, bounded own identity/preferences/taxonomy caches, outbox ir reminder jobs; lieka fenced. Tik signed source seal leidžia active target. Actual Workers patvirtino retained hold→new booking/replay, exact old ID/price snapshot, two-object restart, SQL writer/mail/job fences ir post-insert/delete rollback. [Kontraktas ir likę keliai](platform-upgrade-20261007/STORAGE.md), [įrodymai](platform-upgrade-20261007/ACCEPTANCE.md).
+
+Atšaukti leidžiama tik neaktyvią kopiją ir su source abort proof; naujos aktyvios kopijos, jos vizitų ar aukštesnės epoch senas abort neperrašo. Target neturi HTTP dispatcher, production binding/routing ar mail alarm; mailAuthorityfalse. Global auth/preferences/identity ir taxonomy tebevaldo source/directory, target kopijos nėra antras jų writer. Media-bearing organization prepare atmetamas iki actual blob migration. Šis private runtime priėmimas nėra full public routing ar production migracija.
+
+Kitas įvykdomas darbas: directory/Worker routing ir opaque naujų ID resolution, central identity/preferences/customer fanout, current public projection ir target mail/media activation, likusi UI matrica. SMTP/piloto/retention/larger-adapter faktai atskiri ir nepriklausomo vietinio darbo nestabdo. Production upgrade nepaskelbtas; savininko sąlyginis leidimas galioja, viso upgrade užbaigimo sąlyga dar neįvykdyta. Žemiau istorija.
+
 ## 2026-10-08 — aktyvus upgrade: sesijos atkūrimas ir pasiūlymų būsenos
 
 Tarpinis paketas182 priimtas; visas vietinis pavedimas ACTIVE ir neužbaigtas. Runtimed85cdc7 (sesijos barrier),b7f244f (pasiūlymų/priedų UI),2e39897 (tinkamumas ir matoma dialogo klaida), PR26 / companionc7e0c9a / PR6.182/182 keturių manifest suites regression-47.log ir exact75aa39page305asset build PASS. Vienas sesijos refresh aptarnauja konkuruojančius kvietimus; pasikeitus paskyrai, laukęs write neatkartojamas. Actual expired-session recovery keturiais pločiais priimtas.

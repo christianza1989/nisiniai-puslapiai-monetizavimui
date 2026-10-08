@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "2e398975ab17e6139b5a5b8f0768b16a7f45aa2e",
+  "runtimeSourceCheckpoint": "4133849a780ba13fcb1c52aa7cb4e3d8601aeae3",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -156,6 +156,12 @@
       "tests": 182,
       "state": "accepted-isolated-path",
       "remaining": "Physical target write authority/routing/global paths and remaining actual UI states; factual activation remains."
+    },
+    {
+      "name": "prepared-target-source-seal-immutable-context-and-single-private-calendar-authority",
+      "tests": 187,
+      "state": "accepted-isolated-authority-path",
+      "remaining": "Browser/directory/new ID routing, global identity/preferences/customer fanout, public projections, target mail/media activation and remaining UI states."
     }
   ],
   "tasks": [
@@ -360,7 +366,7 @@
       "title": "Katalogo projekcija ir organizacijų izoliacija",
       "phase": "2",
       "state": "in-progress",
-      "evidence": "STORAGE.md: indexed operations plus source SQL/legacy writer fence, bounded authenticated immutable export and separate read-only SQLite staging; actual Workers partial failure/restart and old direct-SQL writer rejection. Target authority and physical routing remain unimplemented."
+      "evidence": "STORAGE.md/ACCEPTANCE187: actual distinct Workers prepared target/source seal/active target retained-hold confirmation, rollback/restart/epoch replacement, source SQL state/mail/job fences and scoped/global control denial; HTTP/global/projection/mail/media routing still unimplemented."
     },
     {
       "id": "I03",

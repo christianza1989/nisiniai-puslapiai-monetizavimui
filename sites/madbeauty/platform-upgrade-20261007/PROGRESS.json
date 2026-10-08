@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "9df48c5",
+  "runtimeSourceCheckpoint": "4c2ea28",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "checkpoints": [
@@ -112,6 +112,12 @@
       "tests": 164,
       "state": "accepted-isolated-path",
       "remaining": "Expired hold/recovery actual390 accepted; other expiry widths and full matrix, physical organization routing and activation facts remain"
+    },
+    {
+      "name": "search-dropdown-usable-widths-keyboard-network-recovery-and-related-guides",
+      "tests": 165,
+      "state": "accepted-isolated-path",
+      "remaining": "Cold-start failure diagnosis, other full UI paths and physical organization routing; factual activation"
     }
   ],
   "tasks": [
@@ -169,7 +175,8 @@
       "id": "S01",
       "title": "Paieškos meniu su kategorijomis ir sinonimais",
       "phase": "1",
-      "state": "in-progress"
+      "state": "implemented-isolated-acceptance",
+      "evidence": "ACCEPTANCE.md165: enabled menu259 entries, exact synonyms/no-diacritic, Home/End/Arrow/Enter/Escape, all URL, empty/error/retry, popup/input320/390/820/1440. Full view cold-start failure remains I04 UNVERIFIED."
     },
     {
       "id": "S02",

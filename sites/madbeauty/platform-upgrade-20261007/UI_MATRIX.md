@@ -4,7 +4,7 @@ Aktyvus I04 registras. Tik named isolated8841, synthetic teikėjai/klientai; pro
 
 | Kelias / rolė | Turimas actual įrodymas | Likę actual būsenų darbai |
 |---|---|---|
-| Paslaugų/miestų paieška / klientas | Search empty, typed professional→booking, map; search-fixed-widths.json320/390/820/1440 be document overflow; pradinis combobox keyboard kelias | Atskirai suvesti paslaugų/city loading/network/stale ir keyboard matricos nuorodas |
+| Paslaugų/miestų paieška / klientas | 103city/259service options, alias/no-diacritic/Home/End/Arrow/Enter/Escape; full all preserves all URL; unknown empty; network→keyboard retry retains filter hash; fixed popup/input320/390/820/1440; typed professional→booking/map prior receipts | Cold-start shell failure priežastis UNVERIFIED. Combobox sync filter neturi atskiro network/save/version-conflict (NA); view loading/network ir calendar stale/conflict atskiri receipts |
 | Pasiūlymo pasirinkimas/redagavimas / owner | Catalogue→draft→submit→operator→booking; offers-widths.json; fazių invalid-sum400 palieka laukus, pataisytas save | Nepriced/archived/required-addon/expired-qualification actual empty/error/keyboard |
 | Meniu grupė / owner/operator/klientas | Two-tab version409, typed text preserved, resubmit reviewed version2; public native anchor Enter focus/Tab; service-group-widths.json | Group network save/retry ir loading |
 | Kainų CSV / owner | Actual authenticated attachment, invalid header guidance/input retained, atomic private30→31/reload, old CSV409, reviewed publish | Keyboard dialog/escape ir uncertain-network idempotent retry |
@@ -18,4 +18,4 @@ Aktyvus I04 registras. Tik named isolated8841, synthetic teikėjai/klientai; pro
 | Rules/reports/complaints/gallery | Actual save/error/recovery/reload, authenticated report CSV, reviewed gallery/service CTA ir staff portraits; gallery-public-widths-fixed.json | Submenu keyboard ir kiekvieno taikomo stale/conflict/network actual įrodymo nuorodos |
 | Komandos prieigos/taksonomija/kvalifikacijos / owner/operator | Team mobile, taxonomy archive→restore, operator versioned review; rolės/expiry/server DTO tests | Reception/practitioner normal/empty/error/keyboard UI suvestinė; qualification expiry actual UI |
 
-Galutinis I04 acceptance reikalauja uždaryti taikomas eilutes, įrašyti konkrečius matavimus ir įrodymus. Full164pairedtestų bei302assetsbuildPASS neužbaigia visos matricos.
+Galutinis I04 acceptance reikalauja uždaryti taikomas eilutes, įrašyti konkrečius matavimus ir įrodymus. Full165pairedtestų bei302assetsbuildPASS neužbaigia visos matricos.

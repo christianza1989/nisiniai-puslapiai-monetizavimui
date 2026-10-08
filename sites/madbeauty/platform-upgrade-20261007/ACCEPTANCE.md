@@ -157,3 +157,17 @@ regression-35.log164/164pairedPASS; booking-roster.test expired/live-hold regres
 Actual dropdown keyboard: balayage →ArrowDown/Enter Balayage, svencioneliai →ArrowDown/Enter Švenčionėliai →Ieškoti Enter. Rezultatų URL turi tikslius procedure/cityID, abu pavadinimai lieka filtruose,0pasiūlymų rodoma tuščia būsena. Tai specific procedure/small-city/no-diacritic/keyboard/empty įrodymas, kitų paieškos klaidų būsenų dar neužbaigia.
 
 Build-scoped-client164.log: exact75aa39page302assets, candidate-built-not-deployed. Source, target/runtime ir originalios paketų datos neperjungiami į produkciją.
+
+##165 · dropdown ribos, paieškos recovery ir teminiai gidai (2026-10-08)
+
+regression-36.log164/164PASS po search CSS/position pataisos; po teminių gidų atrankos regression-37.log165/165pairedPASS. Build-search-guides165.log exact75aa39pages302assets, candidate-built-not-deployed.
+
+Actual103cityoptions, Home/End/ArrowDown/Enter pasiekia Vilnių ir Žiežmarius.259paslaugų meniu įrašai apima Visos paslaugos ir aktyvią medžio projekciją; Home→Enter išsaugo all URL ir21fixturevariantų iš skirtingų sričių. balayage/balajazas randa Balayage; antakiu/antakių grąžina tuos pačius9procedūrų įrašus. service-alias-keyboard.json; Escape uždaro ir laiko fokusą results-search-service. Nežinomas tekstas turi „Atitikmenų nėra“ (service-dropdown-no-match-390.png), nesukuria kategorijos ar rezervacijos.
+
+Pirmas city-dropdown-all320 rodo meniu kraštą po scroll gutter ir pernelyg siaurą lauką. Pataisyta naudoti document.clientWidth, iki480px search form vienas stulpelis. city-dropdown-widths-fixed.json: viewport320/390/820/1440, document client=scroll305/375/805/1425; popup right297/367/765.89/889.51 neviršija clientWidth; popup client=scroll272/342/423/423.320/390 combobox215/285px. Peržiūrėti city-dropdown-fixed-* vaizdai. Viewport:false screenshot1440 buvo host panel crop811px, todėl papildomas city-dropdown-fixed-desktop-full.png/fullPage naudojamas darbalaukio kompozicijai; geometriniai viewport matavimai iš tikro1440.
+
+Sustabdytas tik own8841 procesas. Ieškoti Enter su Balayage/Švenčionėliai parodė ryšio klaidą, retained hash. search-network-error-widths.json ir keturi peržiūrėti error vaizdai turi viewport320/390/820/1440 be document/main overflow. Restart to paties DB/paketo, Bandyti dar kartą Enter grąžina abu pavadinimus ir tuščią pasiūlą; search-network-recovered-desktop-full.png. Viena pirminė naujo tabo navigacija liko shell Įkeliama iki reload; priežastis UNVERIFIED, tai nėra baigto cold-start failure priėmimas.
+
+Combobox input filtruoja jau įkeltą vietinę taksonomijos/city projekciją sinchroniškai: atskiras network/loading/save/version-conflict čia NA, nėra tokios operacijos. Visam paieškos view network/loading ir kalendoriaus stale/conflict taikomi, jų įrodymai atskiri.
+
+Paieškos gidai nebeima pirmų dviejų straipsnių konkrečiai procedūrai. Imami tik bendros public projekcijos gidai su admitted verified commerce target: tas pats procedure arba parent/child, atitinkantis city; exact/city ryšys turi pirmumą. Testas atmeta svetimą sritį, miestą, unknown ir unsigned target; all gali rodyti bendrus paskelbtus gidus. Actual Balayage puslapis po reload neturi nagų guide-card nuorodų. Immutable75aa bytes/datos nekeičiami. Preview deployed:false sąmoningai neturi aktyvių commerce target, todėl šis negative browser įrodymas nėra gyvo CTA publikavimo priėmimas.

@@ -1,4 +1,19 @@
 import {esc,icon,btn,photo,money,time} from './ui.mjs';
+import {matchesTaxonomy,taxonomyNode} from '/taxonomy.mjs';
+
+export function relatedGuides(publicGuides,procedureId,cityId,nodes){
+ if(procedureId==='all')return publicGuides.slice(0,2);
+ const selected=taxonomyNode(procedureId,nodes);if(!selected)return [];
+ return publicGuides.map((guide,index)=>{
+  const scores=(guide.editorial?.commerceTargets||[]).flatMap(target=>{
+   const parts=target.id?.split(':')||[];
+   if(!target.verified||parts[0]!=='mb'||parts[1]!=='catalog'||![3,4].includes(parts.length)||parts[3]&&parts[3]!==cityId)return [];
+   const node=taxonomyNode(parts[2],nodes);if(!node)return [];
+   const rank=node.id===selected.id?4:matchesTaxonomy(node.id,selected.id,nodes)?2:matchesTaxonomy(selected.id,node.id,nodes)?1:0;
+   return rank?[rank+(parts[3]?1:0)]:[];
+  });return {guide,index,rank:Math.max(0,...scores)};
+ }).filter(row=>row.rank).sort((a,b)=>b.rank-a.rank||a.index-b.index).slice(0,2).map(row=>row.guide);
+}
 
 export const distanceLabel=value=>value==null?'':`${new Intl.NumberFormat('lt-LT',{maximumFractionDigits:1}).format(value)} km tiesia linija`;
 export function entityCard(ctx,g){

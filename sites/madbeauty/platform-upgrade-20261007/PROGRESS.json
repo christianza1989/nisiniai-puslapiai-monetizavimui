@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "32314724f9d74e29644675107c873e5100a5229d",
+  "runtimeSourceCheckpoint": "2e398975ab17e6139b5a5b8f0768b16a7f45aa2e",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -150,6 +150,12 @@
       "tests": 175,
       "state": "accepted-isolated-foundation",
       "remaining": "Target write authority, worker routing/directory, global identity/preferences/replay ownership, mail and projection activation are not implemented; full UI and factual activation remain"
+    },
+    {
+      "name": "coalesced-session-recovery-offer-review-required-addons-and-qualification-expiry",
+      "tests": 182,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical target write authority/routing/global paths and remaining actual UI states; factual activation remains."
     }
   ],
   "tasks": [

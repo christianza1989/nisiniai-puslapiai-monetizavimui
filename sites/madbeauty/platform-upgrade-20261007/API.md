@@ -1,3 +1,9 @@
+## Branch258 — draft activation copy
+
+Current258 runtime c8cae50af057319fbdae11353bd5ffdf8eb5d139: owner location create-outage/keyboard retry, stale draft/archiving protection, future-booking archive guard and private restore/restart accepted in named local Node8843 scope. Private location restore/archive text now describes activation of a draft rather than promising public display. Regression-80.log allfour258/258 PASS33.29sec (0new since258,2 account tests since256,0removed); exact approved75aa39page309asset build;1latest staged source safety PASS. Full upgrade ACTIVE/incomplete; production writes/deploy0.
+
+Existing location version/future-booking guards unchanged. Active private draft has no publicLocation until approval; restore is not publication. Native no-write/version/restart and public exclusion scope in ACCEPTANCE258; fresh-create lost-reply deduplication is not promised.
+
 ## Account/privacy258 — restoration and privacy recovery
 
 Current258 runtime ffa1874adc039fe1a7d2796bd1bb8eab721e0871 (account restoration d9c61b01b583e0eee41f18efdd448b1efd8eb9ec): ordinary render/reload clears private booking and workspace context after an account change or logout, while same-account contact edits and anonymous public service choices survive. Native client-card keyboard/network and own export/request/withdrawal recovery accepted in named local Node8843 scope. Four suites regression-79.log258/258 PASS,32.52sec;2 new account-state regressions since256, no removed suites/tests and no extra privacy UI mirror tests. Exact approved75aa39page309asset build. Separate exact staged safety receipts3 account source blobs and1 privacy source blob PASS. Full upgrade ACTIVE/incomplete; production writes/deploy0.

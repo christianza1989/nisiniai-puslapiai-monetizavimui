@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "ffa1874adc039fe1a7d2796bd1bb8eab721e0871",
+  "runtimeSourceCheckpoint": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -303,6 +303,14 @@
       "accountSource": "d9c61b01b583e0eee41f18efdd448b1efd8eb9ec",
       "newTests": 2,
       "remaining": "Other applicable UI states; hosted/factual launch gates; irreversible erasure disabled"
+    },
+    {
+      "name": "native-owner-location-errors-versioned-archive-and-private-restoration",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
+      "newTests": 0,
+      "remaining": "Operator/staff location states, other applicable UI, hosted/factual launch gates"
     }
   ],
   "tasks": [
@@ -574,7 +582,7 @@
     }
   ],
   "next": [
-    "Remaining applicable I04: branch/access/global conflicts, other complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named account/card/privacy/waitlist scopes accepted",
+    "Remaining applicable I04: branch operator/staff network/stale, access/global conflicts, other complaint publication actions/queue read errors, rebooking archived/addon choices, broader booking error widths and module transport stall; named owner-location/account/card/privacy/waitlist scopes accepted",
     "Hosted restore/fence/load and factual SMTP/pilot/retention gates",
     "Only after full completion, use existing conditional deployment authorization"
   ]

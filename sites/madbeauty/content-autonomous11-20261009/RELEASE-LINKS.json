@@ -1,0 +1,80 @@
+{
+  "selectedPlanIds": [
+    "AN-gidas",
+    "BL-gidas",
+    "DP-gidas",
+    "DZ-gidas",
+    "GL-gidas",
+    "MN-gidas",
+    "NP-gidas",
+    "PD-gidas",
+    "PP-gidas",
+    "AN-korekcija-ar-dazymas",
+    "BR-kirpimas-modeliavimas"
+  ],
+  "specialistPendingPlanIds": [],
+  "receipt": {
+    "siteId": "madbeauty",
+    "selectedAt": "2026-10-09T20:10:27.147Z",
+    "decisions": [
+      {
+        "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+        "kept": 3,
+        "deferred": 8
+      },
+      {
+        "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+        "kept": 2,
+        "deferred": 10
+      },
+      {
+        "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+        "kept": 1,
+        "deferred": 11
+      },
+      {
+        "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+        "kept": 1,
+        "deferred": 14
+      },
+      {
+        "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+        "kept": 2,
+        "deferred": 10
+      },
+      {
+        "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+        "kept": 2,
+        "deferred": 11
+      },
+      {
+        "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+        "kept": 1,
+        "deferred": 7
+      },
+      {
+        "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+        "kept": 1,
+        "deferred": 8
+      },
+      {
+        "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+        "kept": 1,
+        "deferred": 8
+      },
+      {
+        "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+        "kept": 1,
+        "deferred": 0
+      }
+    ],
+    "state": "selected-requires-final-links-and-current-review",
+    "approved": false,
+    "deployed": false
+  }
+}

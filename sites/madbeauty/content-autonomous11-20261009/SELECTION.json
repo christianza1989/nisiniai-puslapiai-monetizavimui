@@ -1,0 +1,2827 @@
+{
+  "status": "30_WRITTEN_19_DEPLOYED_SCHEDULED_11_SPECIALIST_PENDING",
+  "createdAt": "2026-10-09T20:10:25.973Z",
+  "siteId": "madbeauty",
+  "domain": "madbeauty.lt",
+  "privateStudio": "C:/Users/Lenovo/.codex/tmp/madbeauty-autonomous11-20261009",
+  "sourceCalendarSha256": "571e8f7a6fb5f61cae524a4452c6f7471252f9f0622b544b43c5d972fff2f575",
+  "priorPackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "selection": "Eleven actual existing texts; autonomous owner policy supersedes human-signature gate, real agent checks retained",
+  "pages": [
+    {
+      "planId": "AN-gidas",
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "slug": "gidai/antakiai-gidas",
+      "title": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+      "date": "2026-10-29",
+      "time": "10:00",
+      "publishAt": "2026-10-29T08:00:00.000Z",
+      "localDate": "2026-10-29",
+      "localTime": "10:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Antakių specialisto terminų ir eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "AN-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/antakiai-gidas",
+        "title": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+        "description": "Antakių forma, spalva ir plaukelių kryptis sprendžiamos skirtingomis paslaugomis. Palyginkite korekcijos, dažymo ir laminavimo paskirtį bei eigą.",
+        "intent": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+        "categoryId": "antakiai",
+        "cluster": "Antakių priežiūra",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-10-29",
+        "parentId": null,
+        "outline": [
+          "Forma ir spalva",
+          "Plaukelių kryptis",
+          "Paslaugų deriniai ir eiga",
+          "Antakių formos konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Trijų skirtingų estetinių tikslų schema",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Antakių priežiūros gidas: korekcija, dažymas ir laminavimas“, paaiškinant: forma ir spalva.",
+          "body": [
+            "Forma ir spalva",
+            "Plaukelių kryptis",
+            "Paslaugų deriniai ir eiga",
+            "Antakių formos konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Trijų skirtingų estetinių tikslų schema",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S03",
+          "S24",
+          "S35"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Antakių specialisto terminų ir eigos review"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Antakių specialisto terminų ir eigos review"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Forma ir spalva;Plaukelių kryptis;Paslaugų deriniai ir eiga. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Trijų skirtingų estetinių tikslų schema",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Veidas",
+        "publishAt": "2026-10-29T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "antakiu-korekcija-antakiu-formos-konsultacija",
+            "categoryId": "antakiai",
+            "groupId": "antakiu-korekcija",
+            "label": "Antakių formos konsultacija",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "AN-gidas",
+            "section": "Antakių formos konsultacija: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Antakių formos konsultacija“ reiškia korekcija kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S03",
+              "S24",
+              "S35"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Antakių specialisto terminų ir eigos review"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "antakiu-korekcija-antakiu-formos-konsultacija",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:antakiu-korekcija-antakiu-formos-konsultacija",
+            "canonicalPath": "/paslaugos/antakiu-korekcija-antakiu-formos-konsultacija",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/antakiu-korekcija-antakiu-formos-konsultacija",
+            "label": "Antakių formos konsultacija",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "antakių priežiūra",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Trijų skirtingų estetinių tikslų schema",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "antakių priežiūra",
+          "relatedKeywords": [
+            "antakių laminavimas",
+            "antakiai",
+            "antakiu laminavimo rinkinys",
+            "antakiu laminavimas kaina",
+            "antakiu laminavimas minusai",
+            "laminavimo priemones"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "antakių laminavimas",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-12 20:27:34 +00:00"
+            },
+            {
+              "keyword": "antakiai",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-17 12:13:08 +00:00"
+            },
+            {
+              "keyword": "antakiu laminavimo rinkinys",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-16 22:36:39 +00:00"
+            },
+            {
+              "keyword": "antakiu laminavimas kaina",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-16 07:21:26 +00:00"
+            },
+            {
+              "keyword": "antakiu laminavimas minusai",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-17 01:07:59 +00:00"
+            },
+            {
+              "keyword": "laminavimo priemones",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-14 16:18:44 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Antakių formos konsultacija",
+            "Forma ir spalva",
+            "Plaukelių kryptis"
+          ],
+          "metaTitle": "Antakių priežiūra: korekcija, dažymas ir laminavimas",
+          "metaDescription": "Antakių forma, spalva ir plaukelių kryptis sprendžiamos skirtingomis paslaugomis. Palyginkite korekcijos, dažymo ir laminavimo paskirtį bei eigą.",
+          "h1": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+          "h2": [
+            "Forma ir spalva",
+            "Plaukelių kryptis",
+            "Paslaugų deriniai ir eiga",
+            "Antakių formos konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "antakių laminavimas",
+            "observedVolume": 390,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 52,
+            "descriptionChars": 145,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "AN-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e"
+      },
+      "finalTitle": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+      "finalDescription": "Antakių forma, spalva ir plaukelių kryptis sprendžiamos skirtingomis paslaugomis. Palyginkite korekcijos, dažymo ir laminavimo paskirtį bei eigą.",
+      "revisionHash": "b567d5b75bdb2697eb1f3a30a0652f49b3c543dbeaed2e78077e87ac63a6363f"
+    },
+    {
+      "planId": "BL-gidas",
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "slug": "gidai/blakstienos-gidas",
+      "title": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+      "date": "2026-10-30",
+      "time": "16:00",
+      "publishAt": "2026-10-30T14:00:00.000Z",
+      "localDate": "2026-10-30",
+      "localTime": "16:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Blakstienų specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "BL-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/blakstienos-gidas",
+        "title": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+        "description": "Blakstienų paslaugų: dažymas, laminavimas ir priauginimas. Aptariamos temos: natūrali blakstiena ir pridedamas plaukelis; spalva ir kryptis.",
+        "intent": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+        "categoryId": "blakstienos",
+        "cluster": "Blakstienų priežiūra",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-10-30",
+        "parentId": null,
+        "outline": [
+          "Natūrali blakstiena ir pridedamas plaukelis",
+          "Spalva ir kryptis",
+          "Skirtingų paslaugų eiga"
+        ],
+        "originalContribution": "Trijų tikslų ir darbų komponentų schema",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas“, paaiškinant: natūrali blakstiena ir pridedamas plaukelis.",
+          "body": [
+            "Natūrali blakstiena ir pridedamas plaukelis",
+            "Spalva ir kryptis",
+            "Skirtingų paslaugų eiga"
+          ],
+          "deliverable": "Trijų tikslų ir darbų komponentų schema",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S24",
+          "S35",
+          "S36",
+          "S40"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Blakstienų specialisto eigos review"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Blakstienų specialisto eigos review"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Natūrali blakstiena ir pridedamas plaukelis;Spalva ir kryptis;Skirtingų paslaugų eiga. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Trijų tikslų ir darbų komponentų schema",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Veidas",
+        "publishAt": "2026-10-30T14:00:00.000Z",
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "blakstienos",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:blakstienos",
+            "canonicalPath": "/paslaugos/blakstienos",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/blakstienos",
+            "label": "Blakstienos",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "blakstienų paslaugų skirtumai",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "procedureSections": [],
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Trijų tikslų ir darbų komponentų schema",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "blakstienų paslaugų skirtumai",
+          "relatedKeywords": [
+            "blakstienų priauginimas",
+            "klasikinis blakstienų priauginimas",
+            "volume blakstienos",
+            "blakstienos priauginimui",
+            "klasika blakstienos",
+            "led blakstienų priauginimas"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "blakstienų priauginimas",
+              "source": "ideas-08.json",
+              "callId": "0939a4075edd4d228bf748cfc97ae827",
+              "updatedAt": "2026-09-17 16:09:51 +00:00"
+            },
+            {
+              "keyword": "klasikinis blakstienų priauginimas",
+              "source": "ideas-08.json",
+              "callId": "0939a4075edd4d228bf748cfc97ae827",
+              "updatedAt": "2026-09-15 07:14:50 +00:00"
+            },
+            {
+              "keyword": "volume blakstienos",
+              "source": "ideas-08.json",
+              "callId": "0939a4075edd4d228bf748cfc97ae827",
+              "updatedAt": "2026-09-16 04:27:48 +00:00"
+            },
+            {
+              "keyword": "blakstienos priauginimui",
+              "source": "ideas-08.json",
+              "callId": "0939a4075edd4d228bf748cfc97ae827",
+              "updatedAt": "2026-09-14 20:46:56 +00:00"
+            },
+            {
+              "keyword": "klasika blakstienos",
+              "source": "ideas-08.json",
+              "callId": "0939a4075edd4d228bf748cfc97ae827",
+              "updatedAt": "2026-09-16 09:19:17 +00:00"
+            },
+            {
+              "keyword": "led blakstienų priauginimas",
+              "source": "ideas-08.json",
+              "callId": "0939a4075edd4d228bf748cfc97ae827",
+              "updatedAt": "2026-09-16 11:58:58 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Natūrali blakstiena ir pridedamas plaukelis",
+            "Spalva ir kryptis"
+          ],
+          "metaTitle": "Blakstienų paslaugų: dažymas, laminavimas ir priauginimas",
+          "metaDescription": "Blakstienų paslaugų: dažymas, laminavimas ir priauginimas. Aptariamos temos: natūrali blakstiena ir pridedamas plaukelis; spalva ir kryptis.",
+          "h1": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+          "h2": [
+            "Natūrali blakstiena ir pridedamas plaukelis",
+            "Spalva ir kryptis",
+            "Skirtingų paslaugų eiga"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "blakstienų priauginimas",
+            "observedVolume": 260,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 57,
+            "descriptionChars": 140,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "BL-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "16:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "40e22039-917a-479f-840e-97edb71dcd55"
+      },
+      "finalTitle": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+      "finalDescription": "Dažymas keičia blakstienų spalvą, laminavimas formuoja natūralių blakstienų kryptį, o priauginimas prideda plaukelių. Sužinokite, kaip palyginti paslaugų apimtį ir jų derinius.",
+      "revisionHash": "41848c41ed08d6d1af79faaa7c178562617bcea804615bcfed496b78c258d0f3"
+    },
+    {
+      "planId": "DP-gidas",
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "slug": "gidai/depiliacija-gidas",
+      "title": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+      "date": "2026-11-01",
+      "time": "10:00",
+      "publishAt": "2026-11-01T08:00:00.000Z",
+      "localDate": "2026-11-01",
+      "localTime": "10:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Depiliacijos specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "DP-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/depiliacija-gidas",
+        "title": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+        "description": "Depiliacijos: vaškas, cukraus pasta, zonos ir vizito eiga. Aptariamos temos: plaukelio pašalinimo principas; metodas ir zona.",
+        "intent": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+        "categoryId": "depiliacija",
+        "cluster": "Depiliacija vašku ir cukrumi",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-11-01",
+        "parentId": null,
+        "outline": [
+          "Plaukelio pašalinimo principas",
+          "Metodas ir zona",
+          "Vizito eiga bei komfortas",
+          "Plaukų šalinimo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Metodo ir zonos pasirinkimų schema",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga“, paaiškinant: plaukelio pašalinimo principas.",
+          "body": [
+            "Plaukelio pašalinimo principas",
+            "Metodas ir zona",
+            "Vizito eiga bei komfortas",
+            "Plaukų šalinimo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Metodo ir zonos pasirinkimų schema",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S51",
+          "S55",
+          "S11"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Depiliacijos specialisto eigos review"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Depiliacijos specialisto eigos review"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Plaukelio pašalinimo principas;Metodas ir zona;Vizito eiga bei komfortas. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Metodo ir zonos pasirinkimų schema",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Depiliacija",
+        "publishAt": "2026-11-01T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "depiliacija-kita-plauku-salinimo-konsultacija",
+            "categoryId": "depiliacija",
+            "groupId": "depiliacija-kita",
+            "label": "Plaukų šalinimo konsultacija",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "DP-gidas",
+            "section": "Plaukų šalinimo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Plaukų šalinimo konsultacija“ reiškia kiti būdai kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S51",
+              "S55",
+              "S11"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Depiliacijos specialisto eigos review"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "depiliacija-kita-plauku-salinimo-konsultacija",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:depiliacija-kita-plauku-salinimo-konsultacija",
+            "canonicalPath": "/paslaugos/depiliacija-kita-plauku-salinimo-konsultacija",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/depiliacija-kita-plauku-salinimo-konsultacija",
+            "label": "Plaukų šalinimo konsultacija",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "depiliacijos metodų pasirinkimas",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Metodo ir zonos pasirinkimų schema",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "depiliacijos metodų pasirinkimas",
+          "relatedKeywords": [
+            "depiliacija cukrumi",
+            "cukraus pasta depiliacijai",
+            "bikinio depiliacija video",
+            "depiliacija vašku",
+            "bikini depiliacija namuose",
+            "depiliacija cukraus pasta"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "depiliacija cukrumi",
+              "source": "ideas-14.json",
+              "callId": "1d3486f48b1f49c280a9302a703eba50",
+              "updatedAt": "2026-09-16 04:55:59 +00:00"
+            },
+            {
+              "keyword": "cukraus pasta depiliacijai",
+              "source": "ideas-14.json",
+              "callId": "1d3486f48b1f49c280a9302a703eba50",
+              "updatedAt": "2026-09-14 19:30:44 +00:00"
+            },
+            {
+              "keyword": "bikinio depiliacija video",
+              "source": "ideas-14.json",
+              "callId": "1d3486f48b1f49c280a9302a703eba50",
+              "updatedAt": "2026-09-16 16:43:35 +00:00"
+            },
+            {
+              "keyword": "depiliacija vašku",
+              "source": "ideas-14.json",
+              "callId": "1d3486f48b1f49c280a9302a703eba50",
+              "updatedAt": "2026-09-16 06:38:47 +00:00"
+            },
+            {
+              "keyword": "bikini depiliacija namuose",
+              "source": "ideas-14.json",
+              "callId": "1d3486f48b1f49c280a9302a703eba50",
+              "updatedAt": "2026-09-17 04:53:03 +00:00"
+            },
+            {
+              "keyword": "depiliacija cukraus pasta",
+              "source": "ideas-14.json",
+              "callId": "1d3486f48b1f49c280a9302a703eba50",
+              "updatedAt": "2026-09-14 09:24:28 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Plaukų šalinimo konsultacija",
+            "Plaukelio pašalinimo principas",
+            "Metodas ir zona"
+          ],
+          "metaTitle": "Depiliacijos: vaškas, cukraus pasta, zonos ir vizito eiga",
+          "metaDescription": "Depiliacijos: vaškas, cukraus pasta, zonos ir vizito eiga. Aptariamos temos: plaukelio pašalinimo principas; metodas ir zona.",
+          "h1": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+          "h2": [
+            "Plaukelio pašalinimo principas",
+            "Metodas ir zona",
+            "Vizito eiga bei komfortas",
+            "Plaukų šalinimo konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "depiliacija vašku",
+            "observedVolume": 50,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 57,
+            "descriptionChars": 125,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "DP-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b"
+      },
+      "finalTitle": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+      "finalDescription": "Vaško ir cukraus pastos pavadinimai nepasako visos vizito apimties. Sužinokite, kaip palyginti metodą, zoną, paslaugos ribas ir teikėjo nurodomą eigą.",
+      "revisionHash": "ab65f4cde32fa8f615ac36e79d42744df8ce2279cd7ca0577ceeccc913e944fe"
+    },
+    {
+      "planId": "DZ-gidas",
+      "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+      "slug": "gidai/plauku-dazymas-gidas",
+      "title": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+      "date": "2026-11-02",
+      "time": "10:00",
+      "publishAt": "2026-11-02T08:00:00.000Z",
+      "localDate": "2026-11-02",
+      "localTime": "10:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Dažymo specialisto ir konkrečių sistemų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "DZ-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/plauku-dazymas-gidas",
+        "title": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+        "description": "Plaukų dažymo: spalva, technika ir ankstesnio dažymo istorija. Aptariamos temos: spalva ir pašviesinimas; darbų zonos.",
+        "intent": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+        "categoryId": "plauku-dazymas",
+        "cluster": "Plaukų dažymas",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-11-02",
+        "parentId": null,
+        "outline": [
+          "Spalva ir pašviesinimas",
+          "Darbų zonos",
+          "Konsultacija ir realios pokyčio ribos",
+          "Vyrų paslaugos: konkretus tikslas ir meniu apimtis, be metodo dubliavimo pagal lytį"
+        ],
+        "originalContribution": "Dažymo sprendimų medis pagal pradinę būklę",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija“, paaiškinant: spalva ir pašviesinimas.",
+          "body": [
+            "Spalva ir pašviesinimas",
+            "Darbų zonos",
+            "Konsultacija ir realios pokyčio ribos",
+            "Vyrų paslaugos: konkretus tikslas ir meniu apimtis, be metodo dubliavimo pagal lytį"
+          ],
+          "deliverable": "Dažymo sprendimų medis pagal pradinę būklę",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S04",
+          "S33",
+          "S34",
+          "S09",
+          "S10",
+          "S42"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Dažymo specialisto ir konkrečių sistemų review"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Dažymo specialisto ir konkrečių sistemų review"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Spalva ir pašviesinimas;Darbų zonos;Konsultacija ir realios pokyčio ribos. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Dažymo sprendimų medis pagal pradinę būklę",
+          "role": "Teminė iliustracija ir naudingas ruošinys HTML turinyje",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Plaukai",
+        "publishAt": "2026-11-02T08:00:00.000Z",
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "plauku-dazymas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:plauku-dazymas",
+            "canonicalPath": "/paslaugos/plauku-dazymas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/plauku-dazymas",
+            "label": "Dažymas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "plaukų dažymo būdai",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "procedureSections": [],
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Dažymo sprendimų medis pagal pradinę būklę",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "plaukų dažymo būdai",
+          "relatedKeywords": [
+            "plaukų dažymas",
+            "plauku dazymas sruogelemis",
+            "žilų plaukų dažymas natūraliomis priemonėmis",
+            "zilu plauku dazymas sruogelemis",
+            "tamsiu plauku dazymas sruogelemis",
+            "kada dazyti plaukus pagal menuli"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "plaukų dažymas",
+              "source": "ideas-06.json",
+              "callId": "c068907c3ebc472e8250825dcfd904fc",
+              "updatedAt": "2026-09-12 15:52:42 +00:00"
+            },
+            {
+              "keyword": "plauku dazymas sruogelemis",
+              "source": "ideas-06.json",
+              "callId": "c068907c3ebc472e8250825dcfd904fc",
+              "updatedAt": "2026-09-12 21:46:49 +00:00"
+            },
+            {
+              "keyword": "žilų plaukų dažymas natūraliomis priemonėmis",
+              "source": "ideas-06.json",
+              "callId": "c068907c3ebc472e8250825dcfd904fc",
+              "updatedAt": "2026-09-15 03:27:28 +00:00"
+            },
+            {
+              "keyword": "zilu plauku dazymas sruogelemis",
+              "source": "ideas-06.json",
+              "callId": "c068907c3ebc472e8250825dcfd904fc",
+              "updatedAt": "2026-09-16 17:14:21 +00:00"
+            },
+            {
+              "keyword": "tamsiu plauku dazymas sruogelemis",
+              "source": "ideas-06.json",
+              "callId": "c068907c3ebc472e8250825dcfd904fc",
+              "updatedAt": "2026-09-13 17:06:44 +00:00"
+            },
+            {
+              "keyword": "kada dazyti plaukus pagal menuli",
+              "source": "ideas-06.json",
+              "callId": "c068907c3ebc472e8250825dcfd904fc",
+              "updatedAt": "2026-09-13 03:37:51 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Spalva ir pašviesinimas",
+            "Darbų zonos"
+          ],
+          "metaTitle": "Plaukų dažymo: spalva, technika ir ankstesnio dažymo istorija",
+          "metaDescription": "Plaukų dažymo: spalva, technika ir ankstesnio dažymo istorija. Aptariamos temos: spalva ir pašviesinimas; darbų zonos.",
+          "h1": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+          "h2": [
+            "Spalva ir pašviesinimas",
+            "Darbų zonos",
+            "Konsultacija ir realios pokyčio ribos",
+            "Vyrų paslaugos: konkretus tikslas ir meniu apimtis, be metodo dubliavimo pagal lytį"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "plaukų dažymas",
+            "observedVolume": 1600,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 61,
+            "descriptionChars": 118,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "DZ-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c"
+      },
+      "finalTitle": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+      "finalDescription": "Kaip pasirinkti dažymo paslaugą pagal norimą spalvos pokytį, jo vietą ir ankstesnio dažymo istoriją.",
+      "revisionHash": "d9cb6084186560a4804bcbc46b332099beac157e6b0fbbe80d990bc899011894"
+    },
+    {
+      "planId": "GL-gidas",
+      "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+      "slug": "gidai/gelinis-lakavimas-gidas",
+      "title": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+      "date": "2026-11-03",
+      "time": "16:00",
+      "publishAt": "2026-11-03T14:00:00.000Z",
+      "localDate": "2026-11-03",
+      "localTime": "16:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečios sistemos gamintojo protokolas ir meistro peržiūra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "GL-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/gelinis-lakavimas-gidas",
+        "title": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+        "description": "Gelinio lakavimo: kas tai, kaip atliekamas ir kaip prižiūrėti. Aptariamos temos: danga ir natūralus nagas; padengimo etapai.",
+        "intent": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+        "categoryId": "gelinis-lakavimas",
+        "cluster": "Gelinis lakavimas",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "E",
+          "S"
+        ],
+        "wave": 1,
+        "publishDate": "2026-11-03",
+        "parentId": null,
+        "outline": [
+          "Danga ir natūralus nagas",
+          "Padengimo etapai",
+          "Rezultato ir priežiūros ribos",
+          "Paprastas nagų lakavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Gelinis lakavimas: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Dangos sluoksnių iliustracija, ne procedūros mokymas",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti“, paaiškinant: danga ir natūralus nagas.",
+          "body": [
+            "Danga ir natūralus nagas",
+            "Padengimo etapai",
+            "Rezultato ir priežiūros ribos",
+            "Paprastas nagų lakavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Gelinis lakavimas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Dangos sluoksnių iliustracija, ne procedūros mokymas",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S01",
+          "S02",
+          "S07",
+          "S14"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Konkrečios sistemos gamintojo protokolas ir meistro peržiūra"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Konkrečios sistemos gamintojo protokolas ir meistro peržiūra"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Danga ir natūralus nagas;Padengimo etapai;Rezultato ir priežiūros ribos. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Dangos sluoksnių iliustracija, ne procedūros mokymas",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Nagai",
+        "publishAt": "2026-11-03T14:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "lakavimas-paprastas-nagu-lakavimas",
+            "categoryId": "nagai",
+            "groupId": "lakavimas",
+            "label": "Paprastas nagų lakavimas",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "GL-gidas",
+            "section": "Paprastas nagų lakavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Paprastas nagų lakavimas“ reiškia lakavimas kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S01",
+              "S02",
+              "S07",
+              "S14"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Konkrečios sistemos gamintojo protokolas ir meistro peržiūra"
+              }
+            ]
+          },
+          {
+            "taxonomyNodeId": "lakavimas-gelinis-lakavimas",
+            "categoryId": "nagai",
+            "groupId": "lakavimas",
+            "label": "Gelinis lakavimas",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "GL-gidas",
+            "section": "Gelinis lakavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Gelinis lakavimas“ reiškia lakavimas kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S01",
+              "S02",
+              "S07",
+              "S14"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Konkrečios sistemos gamintojo protokolas ir meistro peržiūra"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "lakavimas-paprastas-nagu-lakavimas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:lakavimas-paprastas-nagu-lakavimas",
+            "canonicalPath": "/paslaugos/lakavimas-paprastas-nagu-lakavimas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/lakavimas-paprastas-nagu-lakavimas",
+            "label": "Paprastas nagų lakavimas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "lakavimas-gelinis-lakavimas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:lakavimas-gelinis-lakavimas",
+            "canonicalPath": "/paslaugos/lakavimas-gelinis-lakavimas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/lakavimas-gelinis-lakavimas",
+            "label": "Gelinis lakavimas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "kas yra gelinis lakavimas",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Dangos sluoksnių iliustracija, ne procedūros mokymas",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "kas yra gelinis lakavimas",
+          "relatedKeywords": [
+            "gelinis lakavimas",
+            "nagai 2026 pavasaris",
+            "nagu idejos vasarai",
+            "geliniai nagai 2026 metams",
+            "madingi nagai 2026",
+            "gelinis lakavimas pavyzdziai"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "gelinis lakavimas",
+              "source": "ideas-02.json",
+              "callId": "28287cd07e5241a78d0cf2221fa78e79",
+              "updatedAt": "2026-09-17 23:46:32 +00:00"
+            },
+            {
+              "keyword": "nagai 2026 pavasaris",
+              "source": "ideas-02.json",
+              "callId": "28287cd07e5241a78d0cf2221fa78e79",
+              "updatedAt": "2026-09-15 18:55:54 +00:00"
+            },
+            {
+              "keyword": "nagu idejos vasarai",
+              "source": "ideas-02.json",
+              "callId": "28287cd07e5241a78d0cf2221fa78e79",
+              "updatedAt": "2026-09-16 21:25:17 +00:00"
+            },
+            {
+              "keyword": "geliniai nagai 2026 metams",
+              "source": "ideas-02.json",
+              "callId": "28287cd07e5241a78d0cf2221fa78e79",
+              "updatedAt": "2026-09-15 09:54:52 +00:00"
+            },
+            {
+              "keyword": "madingi nagai 2026",
+              "source": "ideas-02.json",
+              "callId": "28287cd07e5241a78d0cf2221fa78e79",
+              "updatedAt": "2026-09-13 02:25:04 +00:00"
+            },
+            {
+              "keyword": "gelinis lakavimas pavyzdziai",
+              "source": "ideas-02.json",
+              "callId": "28287cd07e5241a78d0cf2221fa78e79",
+              "updatedAt": "2026-09-15 21:18:52 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Paprastas nagų lakavimas",
+            "Gelinis lakavimas",
+            "Danga ir natūralus nagas",
+            "Padengimo etapai"
+          ],
+          "metaTitle": "Gelinio lakavimo: kas tai, kaip atliekamas ir kaip prižiūrėti",
+          "metaDescription": "Gelinio lakavimo: kas tai, kaip atliekamas ir kaip prižiūrėti. Aptariamos temos: danga ir natūralus nagas; padengimo etapai.",
+          "h1": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+          "h2": [
+            "Danga ir natūralus nagas",
+            "Padengimo etapai",
+            "Rezultato ir priežiūros ribos",
+            "Paprastas nagų lakavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Gelinis lakavimas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "gelinis lakavimas",
+            "observedVolume": 1000,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 61,
+            "descriptionChars": 124,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "GL-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "16:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67"
+      },
+      "finalTitle": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+      "finalDescription": "Supraskite, kuo gelinis lakavimas skiriasi nuo nagų stiprinimo ir priauginimo, kokius darbus verta patikrinti paslaugos apraše ir kodėl tiksli eiga priklauso nuo naudojamos sistemos.",
+      "revisionHash": "925ec1450154ff61b946c1863afce5486c32b16438436831d8cb3202ca9238f0"
+    },
+    {
+      "planId": "MN-gidas",
+      "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+      "slug": "gidai/manikiuras-gidas",
+      "title": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+      "date": "2026-11-07",
+      "time": "10:00",
+      "publishAt": "2026-11-07T08:00:00.000Z",
+      "localDate": "2026-11-07",
+      "localTime": "10:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Manikiūro specialisto patikrintas eigos aprašymas“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "MN-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/manikiuras-gidas",
+        "title": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+        "description": "Manikiūro: metodai, eiga ir paslaugos pasirinkimas. Aptariamos temos: nagų ir odelių sutvarkymas; dangos pasirinkimas atskirai.",
+        "intent": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+        "categoryId": "manikiuras",
+        "cluster": "Manikiūras",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-11-07",
+        "parentId": null,
+        "outline": [
+          "Nagų ir odelių sutvarkymas",
+          "Dangos pasirinkimas atskirai",
+          "Vizito eiga nuo įvertinimo iki užbaigimo",
+          "Vyriškas manikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Paslaugos komponentų schema: priežiūra, padengimas, nuėmimas",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas“, paaiškinant: nagų ir odelių sutvarkymas.",
+          "body": [
+            "Nagų ir odelių sutvarkymas",
+            "Dangos pasirinkimas atskirai",
+            "Vizito eiga nuo įvertinimo iki užbaigimo",
+            "Vyriškas manikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Paslaugos komponentų schema: priežiūra, padengimas, nuėmimas",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S01",
+          "S02",
+          "S08"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Manikiūro specialisto patikrintas eigos aprašymas"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Manikiūro specialisto patikrintas eigos aprašymas"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Nagų ir odelių sutvarkymas;Dangos pasirinkimas atskirai;Vizito eiga nuo įvertinimo iki užbaigimo. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Paslaugos komponentų schema: priežiūra, padengimas, nuėmimas",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Nagai",
+        "publishAt": "2026-11-07T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "manikiuras-vyriskas-manikiuras",
+            "categoryId": "nagai",
+            "groupId": "manikiuras",
+            "label": "Vyriškas manikiūras",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "MN-gidas",
+            "section": "Vyriškas manikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Vyriškas manikiūras“ reiškia manikiūras kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S01",
+              "S02",
+              "S08"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Manikiūro specialisto patikrintas eigos aprašymas"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "manikiuras-vyriskas-manikiuras",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:manikiuras-vyriskas-manikiuras",
+            "canonicalPath": "/paslaugos/manikiuras-vyriskas-manikiuras",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/manikiuras-vyriskas-manikiuras",
+            "label": "Vyriškas manikiūras",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "kas yra manikiūras",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Paslaugos komponentų schema: priežiūra, padengimas, nuėmimas",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "kas yra manikiūras",
+          "relatedKeywords": [
+            "manikiūras",
+            "japoniškas manikiūras",
+            "nagai 2026 pavasaris",
+            "geliniai nagai 2026 metams",
+            "manikiūras 2026",
+            "nagu idejos 2026"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "manikiūras",
+              "source": "ideas-01.json",
+              "callId": "c5a8bc143f0e464285db6307be0d1fe6",
+              "updatedAt": "2026-09-16 20:58:56 +00:00"
+            },
+            {
+              "keyword": "japoniškas manikiūras",
+              "source": "ideas-01.json",
+              "callId": "c5a8bc143f0e464285db6307be0d1fe6",
+              "updatedAt": "2026-09-13 20:55:15 +00:00"
+            },
+            {
+              "keyword": "nagai 2026 pavasaris",
+              "source": "ideas-01.json",
+              "callId": "c5a8bc143f0e464285db6307be0d1fe6",
+              "updatedAt": "2026-09-15 18:55:54 +00:00"
+            },
+            {
+              "keyword": "geliniai nagai 2026 metams",
+              "source": "ideas-01.json",
+              "callId": "c5a8bc143f0e464285db6307be0d1fe6",
+              "updatedAt": "2026-09-15 09:54:52 +00:00"
+            },
+            {
+              "keyword": "manikiūras 2026",
+              "source": "ideas-01.json",
+              "callId": "c5a8bc143f0e464285db6307be0d1fe6",
+              "updatedAt": "2026-09-17 05:50:43 +00:00"
+            },
+            {
+              "keyword": "nagu idejos 2026",
+              "source": "ideas-01.json",
+              "callId": "c5a8bc143f0e464285db6307be0d1fe6",
+              "updatedAt": "2026-09-13 14:23:19 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Vyriškas manikiūras",
+            "Nagų ir odelių sutvarkymas",
+            "Dangos pasirinkimas atskirai"
+          ],
+          "metaTitle": "Manikiūro: metodai, eiga ir paslaugos pasirinkimas",
+          "metaDescription": "Manikiūro: metodai, eiga ir paslaugos pasirinkimas. Aptariamos temos: nagų ir odelių sutvarkymas; dangos pasirinkimas atskirai.",
+          "h1": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+          "h2": [
+            "Nagų ir odelių sutvarkymas",
+            "Dangos pasirinkimas atskirai",
+            "Vizito eiga nuo įvertinimo iki užbaigimo",
+            "Vyriškas manikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "manikiūras",
+            "observedVolume": 1900,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 50,
+            "descriptionChars": 127,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "MN-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3"
+      },
+      "finalTitle": "Manikiūro gidas: priežiūra, danga ir vizito eiga",
+      "finalDescription": "Supraskite, kokie darbai gali įeiti į manikiūrą, kuo skiriasi nagų priežiūra nuo dangos ir ką išsiaiškinti dėl senos dangos nuėmimo.",
+      "revisionHash": "2dde51544d13a655a5bc21ec7606a993eb12f426823906b5d5feba5c84d69080"
+    },
+    {
+      "planId": "NP-gidas",
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "slug": "gidai/nagu-priauginimas-gidas",
+      "title": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+      "date": "2026-11-09",
+      "time": "10:00",
+      "publishAt": "2026-11-09T08:00:00.000Z",
+      "localDate": "2026-11-09",
+      "localTime": "10:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Sistemų dokumentai ir nagų specialisto review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "NP-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/nagu-priauginimas-gidas",
+        "title": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+        "description": "Nagų priauginimo: ilgio kūrimas, konstrukcija ir papildymas. Aptariamos temos: natūralus nagas ir konstrukcija; ilgio bei formos užduotis.",
+        "intent": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+        "categoryId": "nagu-priauginimas",
+        "cluster": "Nagų priauginimas ir papildymas",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-11-09",
+        "parentId": null,
+        "outline": [
+          "Natūralus nagas ir konstrukcija",
+          "Ilgio bei formos užduotis",
+          "Naujas darbas ir papildymas",
+          "Priaugintų nagų nuėmimas: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Konstrukcijos ir dangos komponentų schema",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas“, paaiškinant: natūralus nagas ir konstrukcija.",
+          "body": [
+            "Natūralus nagas ir konstrukcija",
+            "Ilgio bei formos užduotis",
+            "Naujas darbas ir papildymas",
+            "Priaugintų nagų nuėmimas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Konstrukcijos ir dangos komponentų schema",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S01",
+          "S05",
+          "S07",
+          "S41"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Sistemų dokumentai ir nagų specialisto review"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Sistemų dokumentai ir nagų specialisto review"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Natūralus nagas ir konstrukcija;Ilgio bei formos užduotis;Naujas darbas ir papildymas. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Konstrukcijos ir dangos komponentų schema",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Nagai",
+        "publishAt": "2026-11-09T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-priaugintu-nagu-nuemimas",
+            "categoryId": "nagai",
+            "groupId": "nagu-modeliavimas",
+            "label": "Priaugintų nagų nuėmimas",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "NP-gidas",
+            "section": "Priaugintų nagų nuėmimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Priaugintų nagų nuėmimas“ reiškia priauginimas ir korekcija kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S01",
+              "S05",
+              "S07",
+              "S41"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Sistemų dokumentai ir nagų specialisto review"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-priaugintu-nagu-nuemimas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:nagu-modeliavimas-priaugintu-nagu-nuemimas",
+            "canonicalPath": "/paslaugos/nagu-modeliavimas-priaugintu-nagu-nuemimas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-priaugintu-nagu-nuemimas",
+            "label": "Priaugintų nagų nuėmimas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "kas yra nagų priauginimas",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Konstrukcijos ir dangos komponentų schema",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "kas yra nagų priauginimas",
+          "relatedKeywords": [
+            "nagų priauginimas",
+            "priauginti nagai",
+            "nagu priauginimas priemones",
+            "nagu priauginimas kaina",
+            "gelinis lakavimas kaina",
+            "paprastas manikiuras kaina"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "nagų priauginimas",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-12 07:06:32 +00:00"
+            },
+            {
+              "keyword": "priauginti nagai",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-17 22:06:42 +00:00"
+            },
+            {
+              "keyword": "nagu priauginimas priemones",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-16 17:39:53 +00:00"
+            },
+            {
+              "keyword": "nagu priauginimas kaina",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-17 19:17:19 +00:00"
+            },
+            {
+              "keyword": "gelinis lakavimas kaina",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-15 08:54:46 +00:00"
+            },
+            {
+              "keyword": "paprastas manikiuras kaina",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-15 01:39:25 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Priaugintų nagų nuėmimas",
+            "Natūralus nagas ir konstrukcija",
+            "Ilgio bei formos užduotis"
+          ],
+          "metaTitle": "Nagų priauginimo: ilgio kūrimas, konstrukcija ir papildymas",
+          "metaDescription": "Nagų priauginimo: ilgio kūrimas, konstrukcija ir papildymas. Aptariamos temos: natūralus nagas ir konstrukcija; ilgio bei formos užduotis.",
+          "h1": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+          "h2": [
+            "Natūralus nagas ir konstrukcija",
+            "Ilgio bei formos užduotis",
+            "Naujas darbas ir papildymas",
+            "Priaugintų nagų nuėmimas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "nagų priauginimas",
+            "observedVolume": 140,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 59,
+            "descriptionChars": 138,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "NP-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "1a330536-9424-46c9-a12f-61435e941cd2"
+      },
+      "finalTitle": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+      "finalDescription": "Supraskite, kuo nagų priauginimas skiriasi nuo natūralių nagų stiprinimo ir gelinio lakavimo, ką reiškia naujas darbas, papildymas ir nuėmimas.",
+      "revisionHash": "3896c1feff1066743e741cee9cf29cdc72fcbd0fe9907637c6da35b9a211294e"
+    },
+    {
+      "planId": "PD-gidas",
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "slug": "gidai/pedikiuras-gidas",
+      "title": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+      "date": "2026-11-10",
+      "time": "16:00",
+      "publishAt": "2026-11-10T14:00:00.000Z",
+      "localDate": "2026-11-10",
+      "localTime": "16:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Pedikiūro specialisto eigos patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "PD-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/pedikiuras-gidas",
+        "title": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+        "description": "Pedikiūro: pėdų priežiūra, nagų sutvarkymas ir lakavimas. Aptariamos temos: trys darbų komponentai; be dangos ar su danga.",
+        "intent": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+        "categoryId": "pedikiuras",
+        "cluster": "Pedikiūras",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-11-10",
+        "parentId": null,
+        "outline": [
+          "Trys darbų komponentai",
+          "Be dangos ar su danga",
+          "Vizito eiga ir sveikatos ribos",
+          "Vyriškas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Pėdų ir nagų paslaugos apimties schema",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas“, paaiškinant: trys darbų komponentai.",
+          "body": [
+            "Trys darbų komponentai",
+            "Be dangos ar su danga",
+            "Vizito eiga ir sveikatos ribos",
+            "Vyriškas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Pėdų ir nagų paslaugos apimties schema",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S32",
+          "S08",
+          "S11"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Pedikiūro specialisto eigos patikra"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Pedikiūro specialisto eigos patikra"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Trys darbų komponentai;Be dangos ar su danga;Vizito eiga ir sveikatos ribos. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Pėdų ir nagų paslaugos apimties schema",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Nagai",
+        "publishAt": "2026-11-10T14:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "pedikiuras-vyriskas-pedikiuras",
+            "categoryId": "nagai",
+            "groupId": "pedikiuras",
+            "label": "Vyriškas pedikiūras",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "PD-gidas",
+            "section": "Vyriškas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Vyriškas pedikiūras“ reiškia pedikiūras kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S32",
+              "S08",
+              "S11"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Pedikiūro specialisto eigos patikra"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "pedikiuras-vyriskas-pedikiuras",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:pedikiuras-vyriskas-pedikiuras",
+            "canonicalPath": "/paslaugos/pedikiuras-vyriskas-pedikiuras",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/pedikiuras-vyriskas-pedikiuras",
+            "label": "Vyriškas pedikiūras",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "kas įeina į pedikiūrą",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Pėdų ir nagų paslaugos apimties schema",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "kas įeina į pedikiūrą",
+          "relatedKeywords": [
+            "pedikiūras",
+            "higieninis pedikiuras",
+            "medicininis pedikiuras",
+            "gydomasis pedikiūras",
+            "pedikiūras kaina",
+            "kojų pedikiūras"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "pedikiūras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-12 18:25:35 +00:00"
+            },
+            {
+              "keyword": "higieninis pedikiuras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-14 12:00:14 +00:00"
+            },
+            {
+              "keyword": "medicininis pedikiuras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-13 19:22:24 +00:00"
+            },
+            {
+              "keyword": "gydomasis pedikiūras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-15 14:13:02 +00:00"
+            },
+            {
+              "keyword": "pedikiūras kaina",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-16 18:56:42 +00:00"
+            },
+            {
+              "keyword": "kojų pedikiūras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-15 01:14:00 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Vyriškas pedikiūras",
+            "Trys darbų komponentai",
+            "Be dangos ar su danga"
+          ],
+          "metaTitle": "Pedikiūro: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+          "metaDescription": "Pedikiūro: pėdų priežiūra, nagų sutvarkymas ir lakavimas. Aptariamos temos: trys darbų komponentai; be dangos ar su danga.",
+          "h1": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+          "h2": [
+            "Trys darbų komponentai",
+            "Be dangos ar su danga",
+            "Vizito eiga ir sveikatos ribos",
+            "Vyriškas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "pedikiūras",
+            "observedVolume": 590,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 56,
+            "descriptionChars": 122,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "PD-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "16:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a"
+      },
+      "finalTitle": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+      "finalDescription": "Sužinokite, kokie darbai gali įeiti į pedikiūrą, kuo skiriasi vizitas be dangos ir su ja, ką palyginti renkantis paslaugą.",
+      "revisionHash": "a4b2f9a0dda50532bbaf0538c1881cbba1632945167ff60b7c7919752108108f"
+    },
+    {
+      "planId": "PP-gidas",
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "slug": "gidai/plauku-prieziura-gidas",
+      "title": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+      "date": "2026-11-11",
+      "time": "16:00",
+      "publishAt": "2026-11-11T14:00:00.000Z",
+      "localDate": "2026-11-11",
+      "localTime": "16:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": null,
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečių sistemų dokumentai ir kirpėjo review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "PP-gidas",
+        "key": "gidas",
+        "type": "guide",
+        "slug": "gidai/plauku-prieziura-gidas",
+        "title": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+        "description": "Plaukų priežiūros procedūrų: kosmetinė priežiūra ir lūkesčių ribos. Aptariamos temos: kosmetinis tikslas; naudota produktų sistema.",
+        "intent": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+        "categoryId": "plauku-prieziura",
+        "cluster": "Plaukų priežiūros procedūros",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-11-11",
+        "parentId": null,
+        "outline": [
+          "Kosmetinis tikslas",
+          "Naudota produktų sistema",
+          "Ko procedūra nepakeičia apie plaukų sveikatą",
+          "Drėkinamoji plaukų procedūra: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Plaukų priežiūros konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Tikslų, komponentų ir teiginių lentelė",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos“, paaiškinant: kosmetinis tikslas.",
+          "body": [
+            "Kosmetinis tikslas",
+            "Naudota produktų sistema",
+            "Ko procedūra nepakeičia apie plaukų sveikatą",
+            "Drėkinamoji plaukų procedūra: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Plaukų priežiūros konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Tikslų, komponentų ir teiginių lentelė",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S33",
+          "S43",
+          "S54"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Konkrečių sistemų dokumentai ir kirpėjo review"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Konkrečių sistemų dokumentai ir kirpėjo review"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Kosmetinis tikslas;Naudota produktų sistema;Ko procedūra nepakeičia apie plaukų sveikatą. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Tikslų, komponentų ir teiginių lentelė",
+          "role": "Teminė iliustracija ir naudingas ruošinys HTML turinyje",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Plaukai",
+        "publishAt": "2026-11-11T14:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "plauku-proceduros-drekinamoji-plauku-procedura",
+            "categoryId": "plaukai",
+            "groupId": "plauku-proceduros",
+            "label": "Drėkinamoji plaukų procedūra",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "PP-gidas",
+            "section": "Drėkinamoji plaukų procedūra: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Drėkinamoji plaukų procedūra“ reiškia plaukų ir galvos odos priežiūra kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S33",
+              "S43",
+              "S54"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Konkrečių sistemų dokumentai ir kirpėjo review"
+              }
+            ]
+          },
+          {
+            "taxonomyNodeId": "plauku-proceduros-plauku-prieziuros-konsultacija",
+            "categoryId": "plaukai",
+            "groupId": "plauku-proceduros",
+            "label": "Plaukų priežiūros konsultacija",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "PP-gidas",
+            "section": "Plaukų priežiūros konsultacija: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Plaukų priežiūros konsultacija“ reiškia plaukų ir galvos odos priežiūra kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S33",
+              "S43",
+              "S54"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Konkrečių sistemų dokumentai ir kirpėjo review"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "plauku-proceduros-drekinamoji-plauku-procedura",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:plauku-proceduros-drekinamoji-plauku-procedura",
+            "canonicalPath": "/paslaugos/plauku-proceduros-drekinamoji-plauku-procedura",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/plauku-proceduros-drekinamoji-plauku-procedura",
+            "label": "Drėkinamoji plaukų procedūra",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "plauku-proceduros-plauku-prieziuros-konsultacija",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:plauku-proceduros-plauku-prieziuros-konsultacija",
+            "canonicalPath": "/paslaugos/plauku-proceduros-plauku-prieziuros-konsultacija",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/plauku-proceduros-plauku-prieziuros-konsultacija",
+            "label": "Plaukų priežiūros konsultacija",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "plaukų priežiūros procedūrų pasirinkimas",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Tikslų, komponentų ir teiginių lentelė",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "plaukų priežiūros procedūrų pasirinkimas",
+          "relatedKeywords": [
+            "plaukų tiesinimas keratinu",
+            "ilgalaikis plauku tiesinimas",
+            "japoniskas plauku tiesinimas",
+            "plauku tiesinimas keratinu namuose",
+            "plauku tiesinimas keratinu kaina",
+            "ilgalaikis plauku tiesinimas kaina"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "plaukų tiesinimas keratinu",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-13 12:05:06 +00:00"
+            },
+            {
+              "keyword": "ilgalaikis plauku tiesinimas",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-13 21:10:03 +00:00"
+            },
+            {
+              "keyword": "japoniskas plauku tiesinimas",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-14 03:00:20 +00:00"
+            },
+            {
+              "keyword": "plauku tiesinimas keratinu namuose",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-17 14:24:04 +00:00"
+            },
+            {
+              "keyword": "plauku tiesinimas keratinu kaina",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-16 16:02:09 +00:00"
+            },
+            {
+              "keyword": "ilgalaikis plauku tiesinimas kaina",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-17 03:29:28 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Drėkinamoji plaukų procedūra",
+            "Plaukų priežiūros konsultacija",
+            "Kosmetinis tikslas",
+            "Naudota produktų sistema"
+          ],
+          "metaTitle": "Plaukų priežiūros procedūrų: kosmetinė priežiūra ir lūkesčių ribos",
+          "metaDescription": "Plaukų priežiūros procedūrų: kosmetinė priežiūra ir lūkesčių ribos. Aptariamos temos: kosmetinis tikslas; naudota produktų sistema.",
+          "h1": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+          "h2": [
+            "Kosmetinis tikslas",
+            "Naudota produktų sistema",
+            "Ko procedūra nepakeičia apie plaukų sveikatą",
+            "Drėkinamoji plaukų procedūra: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Plaukų priežiūros konsultacija: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": null,
+          "volumeSource": null,
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "plaukų tiesinimas keratinu",
+            "observedVolume": 70,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 66,
+            "descriptionChars": 131,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "PP-gidas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "16:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410"
+      },
+      "finalTitle": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+      "finalDescription": "Sužinokite, kuo plaukų priežiūros procedūra skiriasi nuo konsultacijos, kokią informaciją verta patikrinti apie naudojamą sistemą ir ko negalima spręsti vien iš paslaugos pavadinimo.",
+      "revisionHash": "8917b30c5a33d36372a1da46651096efc5b78c7920e671d362db0ae6d1ef565a"
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+      "slug": "gidai/antakiai-korekcija-ar-dazymas",
+      "title": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+      "date": "2026-12-01",
+      "time": "10:00",
+      "publishAt": "2026-12-01T08:00:00.000Z",
+      "localDate": "2026-12-01",
+      "localTime": "10:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": "AN-gidas",
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Meniu ir specialisto patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "AN-korekcija-ar-dazymas",
+        "key": "korekcija-ar-dazymas",
+        "type": "guide",
+        "slug": "gidai/antakiai-korekcija-ar-dazymas",
+        "title": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+        "description": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas. Aptariamos temos: keičiama forma; paryškinama spalva.",
+        "intent": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+        "categoryId": "antakiai",
+        "cluster": "Antakių priežiūra",
+        "audience": "Klientas",
+        "dimensions": [
+          "A",
+          "S"
+        ],
+        "wave": 1,
+        "publishDate": "2026-12-01",
+        "parentId": "AN-gidas",
+        "outline": [
+          "Keičiama forma",
+          "Paryškinama spalva",
+          "Bendras paketas"
+        ],
+        "originalContribution": "Rezultato ir komponentų lentelė",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Antakių korekcija ar dažymas: kuo skiriasi rezultatas?“, paaiškinant: keičiama forma.",
+          "body": [
+            "Keičiama forma",
+            "Paryškinama spalva",
+            "Bendras paketas"
+          ],
+          "deliverable": "Rezultato ir komponentų lentelė",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S03",
+          "S24",
+          "S35"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Meniu ir specialisto patikra"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Meniu ir specialisto patikra"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Keičiama forma;Paryškinama spalva;Bendras paketas. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Rezultato ir komponentų lentelė",
+          "role": "Teminė iliustracija ir naudingas ruošinys HTML turinyje",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Veidas",
+        "publishAt": "2026-12-01T08:00:00.000Z",
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "antakiai",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:antakiai",
+            "canonicalPath": "/paslaugos/antakiai",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/antakiai",
+            "label": "Antakiai",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "METHOD_COMPARISON",
+          "query": "antakių korekcija ar dažymas",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "procedureSections": [],
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Rezultato ir komponentų lentelė",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "antakių korekcija ar dažymas",
+          "relatedKeywords": [
+            "antakių laminavimas",
+            "antakiai",
+            "antakiu laminavimo rinkinys",
+            "antakiu laminavimas kaina",
+            "antakiu laminavimas minusai",
+            "laminavimo priemones"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "antakių laminavimas",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-12 20:27:34 +00:00"
+            },
+            {
+              "keyword": "antakiai",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-17 12:13:08 +00:00"
+            },
+            {
+              "keyword": "antakiu laminavimo rinkinys",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-16 22:36:39 +00:00"
+            },
+            {
+              "keyword": "antakiu laminavimas kaina",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-16 07:21:26 +00:00"
+            },
+            {
+              "keyword": "antakiu laminavimas minusai",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-17 01:07:59 +00:00"
+            },
+            {
+              "keyword": "laminavimo priemones",
+              "source": "ideas-07.json",
+              "callId": "8709db1c36c3449ebcb93b6110234cd3",
+              "updatedAt": "2026-09-14 16:18:44 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Keičiama forma",
+            "Paryškinama spalva"
+          ],
+          "metaTitle": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+          "metaDescription": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas. Aptariamos temos: keičiama forma; paryškinama spalva.",
+          "h1": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+          "h2": [
+            "Keičiama forma",
+            "Paryškinama spalva",
+            "Bendras paketas"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": "antakių korekcija ar dažymas",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "antakių laminavimas",
+            "observedVolume": 390,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 54,
+            "descriptionChars": 108,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "AN-korekcija-ar-dazymas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "929fe920-3df0-47cf-b780-d9af2d908972"
+      },
+      "finalTitle": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+      "finalDescription": "Korekcija keičia antakių formą, dažymas – jų atspalvį. Sužinokite, kaip pasirinkti pagal norimą rezultatą ir ką patikrinti bendrame pasiūlyme.",
+      "revisionHash": "7009cca0896a6988a863c0d53f1ef81518cc070c505693258ed3778cc07119b6"
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "slug": "gidai/barzda-vyrams-kirpimas-modeliavimas",
+      "title": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+      "date": "2026-12-02",
+      "time": "10:00",
+      "publishAt": "2026-12-02T08:00:00.000Z",
+      "localDate": "2026-12-02",
+      "localTime": "10:00",
+      "status": "WRITTEN_SPECIALIST_PENDING",
+      "parentId": "BR-gidas",
+      "seasonal": false,
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Barberio techninių terminų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "brief": {
+        "id": "BR-kirpimas-modeliavimas",
+        "key": "kirpimas-modeliavimas",
+        "type": "guide",
+        "slug": "gidai/barzda-vyrams-kirpimas-modeliavimas",
+        "title": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+        "description": "Kaip sutarti barzdos ilgį, kontūrą ir ūsų apimtį? Palyginame kirpimą bei modeliavimą ir parodome, kaip aprašyti norimą formą.",
+        "intent": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+        "categoryId": "barzda-vyrams",
+        "cluster": "Barzda ir vyrų paslaugų pasirinkimas",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "S",
+          "E"
+        ],
+        "wave": 1,
+        "publishDate": "2026-12-02",
+        "parentId": "BR-gidas",
+        "outline": [
+          "Ilgio užduotis",
+          "Kontūras ir ūsai",
+          "Vizito eiga bei užbaigimas",
+          "Barzdos kirpimas: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Barzdos modeliavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Norimas kontūras",
+          "Augimo kryptis ir tankis",
+          "Kasdienis formavimas"
+        ],
+        "originalContribution": "Originalus barzdos zonų brėžinys; Originalūs kontūrų siluetai ir užduoties kortelė",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis“, paaiškinant: ilgio užduotis.",
+          "body": [
+            "Ilgio užduotis",
+            "Kontūras ir ūsai",
+            "Vizito eiga bei užbaigimas",
+            "Barzdos kirpimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Barzdos modeliavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Norimas kontūras",
+            "Augimo kryptis ir tankis",
+            "Kasdienis formavimas"
+          ],
+          "deliverable": "Originalus barzdos zonų brėžinys; Originalūs kontūrų siluetai ir užduoties kortelė",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S56",
+          "S43",
+          "S11"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Barberio techninių terminų review"
+          },
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Barberio review; ne plaukų augimo gydymas"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Barberio techninių terminų review"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Ilgio užduotis;Kontūras ir ūsai;Vizito eiga bei užbaigimas. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Originalus barzdos zonų brėžinys",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Vyrams",
+        "publishAt": "2026-12-02T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "barzda-barzdos-kirpimas",
+            "categoryId": "plaukai",
+            "groupId": "barzda",
+            "label": "Barzdos kirpimas",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "BR-kirpimas-modeliavimas",
+            "section": "Barzdos kirpimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Barzdos kirpimas“ reiškia barzda ir skutimas kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S56",
+              "S43",
+              "S11"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Barberio techninių terminų review"
+              },
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Barberio review; ne plaukų augimo gydymas"
+              }
+            ]
+          },
+          {
+            "taxonomyNodeId": "barzda-barzdos-modeliavimas",
+            "categoryId": "plaukai",
+            "groupId": "barzda",
+            "label": "Barzdos modeliavimas",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "BR-kirpimas-modeliavimas",
+            "section": "Barzdos modeliavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Barzdos modeliavimas“ reiškia barzda ir skutimas kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S56",
+              "S43",
+              "S11"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Barberio techninių terminų review"
+              },
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Barberio review; ne plaukų augimo gydymas"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "barzda-barzdos-kirpimas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:barzda-barzdos-kirpimas",
+            "canonicalPath": "/paslaugos/barzda-barzdos-kirpimas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/barzda-barzdos-kirpimas",
+            "label": "Barzdos kirpimas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "barzda-barzdos-modeliavimas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:barzda-barzdos-modeliavimas",
+            "canonicalPath": "/paslaugos/barzda-barzdos-modeliavimas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/barzda-barzdos-modeliavimas",
+            "label": "Barzdos modeliavimas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "barzda",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:barzda",
+            "canonicalPath": "/paslaugos/barzda",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/barzda",
+            "label": "Barzda ir skutimas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "SERVICE_UNDERSTANDING",
+          "query": "barzdos kirpimas ir modeliavimas",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "mergedIntents": [
+          {
+            "oldId": "BR-forma",
+            "title": "Barzdos forma: kaip sutarti kontūrą ir ilgį be „idealios veido formos“ pažado?",
+            "reason": "Norimas kontūras ir ilgis yra barzdos modeliavimo užduotis. Originalius formos siluetus ir kasdienius kompromisus įtraukti į modeliavimo gidą."
+          }
+        ],
+        "mergedMediaBriefs": [
+          {
+            "oldId": "BR-forma",
+            "media": {
+              "status": "NOT_CREATED",
+              "subject": "Originalūs kontūrų siluetai ir užduoties kortelė",
+              "role": "Originali redakcinė schema / iliustracija",
+              "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+              "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+            }
+          }
+        ],
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Originalus barzdos zonų brėžinys; Originalūs kontūrų siluetai ir užduoties kortelė",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "barzdos kirpimas ir modeliavimas",
+          "relatedKeywords": [
+            "barzdaskuciai",
+            "barzdos aliejus",
+            "barzdos formavimo mašinėlė",
+            "profesionali plauku kirpimo masinele",
+            "geriausios plauku kirpimo masineles",
+            "barzdaskuciai vilniaus g"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "barzdaskuciai",
+              "source": "ideas-19.json",
+              "callId": "33180a6b96e742ef9284da6ad70edc32",
+              "updatedAt": "2026-09-15 23:31:54 +00:00"
+            },
+            {
+              "keyword": "barzdos aliejus",
+              "source": "ideas-19.json",
+              "callId": "33180a6b96e742ef9284da6ad70edc32",
+              "updatedAt": "2026-09-12 15:09:51 +00:00"
+            },
+            {
+              "keyword": "barzdos formavimo mašinėlė",
+              "source": "ideas-19.json",
+              "callId": "33180a6b96e742ef9284da6ad70edc32",
+              "updatedAt": "2026-09-15 17:05:59 +00:00"
+            },
+            {
+              "keyword": "profesionali plauku kirpimo masinele",
+              "source": "ideas-19.json",
+              "callId": "33180a6b96e742ef9284da6ad70edc32",
+              "updatedAt": "2026-09-12 19:39:13 +00:00"
+            },
+            {
+              "keyword": "geriausios plauku kirpimo masineles",
+              "source": "ideas-19.json",
+              "callId": "33180a6b96e742ef9284da6ad70edc32",
+              "updatedAt": "2026-09-12 11:29:34 +00:00"
+            },
+            {
+              "keyword": "barzdaskuciai vilniaus g",
+              "source": "ideas-19.json",
+              "callId": "33180a6b96e742ef9284da6ad70edc32",
+              "updatedAt": "2026-09-13 00:01:06 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Barzdos kirpimas",
+            "Barzdos modeliavimas",
+            "Ilgio užduotis",
+            "Kontūras ir ūsai"
+          ],
+          "metaTitle": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+          "metaDescription": "Kaip sutarti barzdos ilgį, kontūrą ir ūsų apimtį? Palyginame kirpimą bei modeliavimą ir parodome, kaip aprašyti norimą formą.",
+          "h1": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+          "h2": [
+            "Ilgio užduotis",
+            "Kontūras ir ūsai",
+            "Vizito eiga bei užbaigimas",
+            "Barzdos kirpimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Barzdos modeliavimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Norimas kontūras",
+            "Augimo kryptis ir tankis",
+            "Kasdienis formavimas"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": "barzdos kirpimas ir modeliavimas",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "barzdos kirpimas",
+            "observedVolume": 50,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 66,
+            "descriptionChars": 125,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "BR-kirpimas-modeliavimas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 1,
+        "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97"
+      },
+      "finalTitle": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+      "finalDescription": "Kaip sutarti barzdos ilgį, kontūrą ir ūsų apimtį? Palyginame kirpimą bei modeliavimą ir parodome, kaip aprašyti norimą formą.",
+      "revisionHash": "5fc014d66d9a9aa408f3ab79e5f12a00c722dce61223fd170c2f061bba22c588"
+    }
+  ],
+  "updatedAt": "2026-10-09T19:48:37.258Z"
+}

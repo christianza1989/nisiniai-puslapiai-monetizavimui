@@ -1,0 +1,491 @@
+{
+  "checkedAt": "2026-10-09T20:11:00.212Z",
+  "scope": "Private native shared-studio previews; no production deployment evidence",
+  "browser": "Installed Chrome via Playwright",
+  "views": [
+    {
+      "planId": "AN-gidas",
+      "device": "desktop",
+      "revisionHash": "654d71d95a48bd841b41a4224f532a85d96424d40d79da65779e894cc0dcd186",
+      "htmlSha256": "964c7fcb710f29ba6ae7a53f16fa8012fce95a202855b3cc132db7d0262528fb",
+      "checkedAt": "2026-10-09T20:10:53.149Z",
+      "title": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Natūralūs antakiai stambiame portreto kadre",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/0e2812cd-2909-4ead-b763-79873354dcfa.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\AN-gidas-desktop.png"
+    },
+    {
+      "planId": "BL-gidas",
+      "device": "desktop",
+      "revisionHash": "e6351a32ffe23eb84b718985273c97a99f2c05b341228573c8be979936f4f182",
+      "htmlSha256": "f8da05bdc06d32762c4da70766b3601a28d486150d0a9459844864924ca2159b",
+      "checkedAt": "2026-10-09T20:10:53.510Z",
+      "title": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Blakstienos iš arti užmerktos akies profilyje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/15f61c17-19ad-407b-9ae7-84ac352762a1.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\BL-gidas-desktop.png"
+    },
+    {
+      "planId": "DP-gidas",
+      "device": "desktop",
+      "revisionHash": "70edccc0e162e1e5c03542be4cabd08e047f54b3c1ed9b03528530bfa0718c42",
+      "htmlSha256": "0c13e9bd102e304cd9e0c418685bcedb152756d9e9de411c3865a7978beea1bf",
+      "checkedAt": "2026-10-09T20:10:53.871Z",
+      "title": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Depiliacijos priemonės ant darbo vežimėlio",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/6cb90f3a-7d25-4112-bf20-5f108c100a2f.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\DP-gidas-desktop.png"
+    },
+    {
+      "planId": "DZ-gidas",
+      "device": "desktop",
+      "revisionHash": "80b10294ff543cf732cac644adb6d1a66ae8b6b8a303c4adba83adaa2c3e911d",
+      "htmlSha256": "1e39427bfa2df9883430e26dfa5fff7cebc7861408704ba3fe307907c9bd4c66",
+      "checkedAt": "2026-10-09T20:10:54.228Z",
+      "title": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Dažytų plaukų spalvos perėjimai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/d71c46f3-0cb0-4048-8edd-339645c41ffd.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\DZ-gidas-desktop.png"
+    },
+    {
+      "planId": "GL-gidas",
+      "device": "desktop",
+      "revisionHash": "1109c3dcf2fe7cd134e52fb003831a10b166326dd251e63b8fde5802ad314e9b",
+      "htmlSha256": "c26a40ed82b14dc770c41216597ae30e041f0fc101ac352f212613cdd7dc723b",
+      "checkedAt": "2026-10-09T20:10:54.544Z",
+      "title": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Trumpi vyšninės spalvos geliniu laku padengti nagai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/43c278c2-fe53-473b-8b4e-3fbecedd0e99.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\GL-gidas-desktop.png"
+    },
+    {
+      "planId": "MN-gidas",
+      "device": "desktop",
+      "revisionHash": "8cd820f807d2a72c54c7e7b6070469c8d00c69fc9c30ea391da0282b08356989",
+      "htmlSha256": "bb0a5e70c5012cac4137271beb1e2812e3100476fc728e89b0715668419a590b",
+      "checkedAt": "2026-10-09T20:10:54.882Z",
+      "title": "Manikiūro gidas: priežiūra, danga ir vizito eiga",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Manikiūro konsultacija prie darbo stalo",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/a71b6493-bad8-4482-b84a-e40f719abceb.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\MN-gidas-desktop.png"
+    },
+    {
+      "planId": "NP-gidas",
+      "device": "desktop",
+      "revisionHash": "9cd27f0bc591f52b560bf2efc9b76fe6471bcd953f8adb60cb0871e94d2a5b25",
+      "htmlSha256": "c7f9cd6741df5f47e9d914a22cf98311a31c22d661f1d4b22e7185056c51dd6d",
+      "checkedAt": "2026-10-09T20:10:55.272Z",
+      "title": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Ilgi migdolo formos nagai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/0e63252d-315e-48fd-a418-de72eb6bd67f.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\NP-gidas-desktop.png"
+    },
+    {
+      "planId": "PD-gidas",
+      "device": "desktop",
+      "revisionHash": "d169b518e6680563b4270e91414891195b65f886903c62a7448af821847240dc",
+      "htmlSha256": "996637bd30ae7dfdf8a540c7d0bc6b66de2311a848e71001e0c15dc670a7460e",
+      "checkedAt": "2026-10-09T20:10:55.665Z",
+      "title": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Pėdos ant pedikiūro atramos",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/1e324627-91fb-463f-b986-ece1ca42a1b5.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\PD-gidas-desktop.png"
+    },
+    {
+      "planId": "PP-gidas",
+      "device": "desktop",
+      "revisionHash": "49ec720bdb7117941733ccd9fd2bb9f5c5e508c4d7126b19c239b0fc270459d3",
+      "htmlSha256": "a6743d6469602f4dff31b8841b92c53716869f0ea9b43e1369d7f8b73ed63429",
+      "checkedAt": "2026-10-09T20:10:56.070Z",
+      "title": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Garbanotų plaukų tekstūra natūralioje šviesoje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/27e7116c-2d09-4736-aa44-83f85af40c5b.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\PP-gidas-desktop.png"
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "device": "desktop",
+      "revisionHash": "256f8be129ea83550d057c7121013371382bf70cd9174ec3cfb7c328bd610f3e",
+      "htmlSha256": "034e262385de8729e0bb374d9a97ece7ca1799d726617ac16a793ae908a313cb",
+      "checkedAt": "2026-10-09T20:10:56.397Z",
+      "title": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Šviesių antakių forma ir spalva",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/22f0461b-9024-4276-b355-7ed83abb9fda.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\AN-korekcija-ar-dazymas-desktop.png"
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "device": "desktop",
+      "revisionHash": "8ccd64ca7503db46bd9568a921db269a17e3ce6045e78f05af3f3bfc2f7746ac",
+      "htmlSha256": "9488bc4665ddd420db87afe6bc43a01debcfd4c7a9a64a9b72064f6ad9e21879",
+      "checkedAt": "2026-10-09T20:10:56.740Z",
+      "title": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Barzdos forma šoniniame portrete",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/f8fadac4-3348-49a7-bed7-a9e20cc1511c.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\BR-kirpimas-modeliavimas-desktop.png"
+    },
+    {
+      "planId": "AN-gidas",
+      "device": "mobile",
+      "revisionHash": "654d71d95a48bd841b41a4224f532a85d96424d40d79da65779e894cc0dcd186",
+      "htmlSha256": "964c7fcb710f29ba6ae7a53f16fa8012fce95a202855b3cc132db7d0262528fb",
+      "checkedAt": "2026-10-09T20:10:57.673Z",
+      "title": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Natūralūs antakiai stambiame portreto kadre",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/b02cf4aa-f09b-4866-999a-e3dc7b2a1fcf.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\AN-gidas-mobile.png"
+    },
+    {
+      "planId": "BL-gidas",
+      "device": "mobile",
+      "revisionHash": "e6351a32ffe23eb84b718985273c97a99f2c05b341228573c8be979936f4f182",
+      "htmlSha256": "f8da05bdc06d32762c4da70766b3601a28d486150d0a9459844864924ca2159b",
+      "checkedAt": "2026-10-09T20:10:57.871Z",
+      "title": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Blakstienos iš arti užmerktos akies profilyje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/683ef647-b3ff-40b4-91ef-acb7dc59f56e.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\BL-gidas-mobile.png"
+    },
+    {
+      "planId": "DP-gidas",
+      "device": "mobile",
+      "revisionHash": "70edccc0e162e1e5c03542be4cabd08e047f54b3c1ed9b03528530bfa0718c42",
+      "htmlSha256": "0c13e9bd102e304cd9e0c418685bcedb152756d9e9de411c3865a7978beea1bf",
+      "checkedAt": "2026-10-09T20:10:58.096Z",
+      "title": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Depiliacijos priemonės ant darbo vežimėlio",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/dfd50838-825d-49ef-9721-458c48262936.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\DP-gidas-mobile.png"
+    },
+    {
+      "planId": "DZ-gidas",
+      "device": "mobile",
+      "revisionHash": "80b10294ff543cf732cac644adb6d1a66ae8b6b8a303c4adba83adaa2c3e911d",
+      "htmlSha256": "1e39427bfa2df9883430e26dfa5fff7cebc7861408704ba3fe307907c9bd4c66",
+      "checkedAt": "2026-10-09T20:10:58.307Z",
+      "title": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Dažytų plaukų spalvos perėjimai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/f8a0f19a-a8cb-44f6-9266-d8e7156a99c3.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\DZ-gidas-mobile.png"
+    },
+    {
+      "planId": "GL-gidas",
+      "device": "mobile",
+      "revisionHash": "1109c3dcf2fe7cd134e52fb003831a10b166326dd251e63b8fde5802ad314e9b",
+      "htmlSha256": "c26a40ed82b14dc770c41216597ae30e041f0fc101ac352f212613cdd7dc723b",
+      "checkedAt": "2026-10-09T20:10:58.494Z",
+      "title": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Trumpi vyšninės spalvos geliniu laku padengti nagai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/87df7744-8860-4e96-9e13-ca154d6e0026.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\GL-gidas-mobile.png"
+    },
+    {
+      "planId": "MN-gidas",
+      "device": "mobile",
+      "revisionHash": "8cd820f807d2a72c54c7e7b6070469c8d00c69fc9c30ea391da0282b08356989",
+      "htmlSha256": "bb0a5e70c5012cac4137271beb1e2812e3100476fc728e89b0715668419a590b",
+      "checkedAt": "2026-10-09T20:10:58.676Z",
+      "title": "Manikiūro gidas: priežiūra, danga ir vizito eiga",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Manikiūro konsultacija prie darbo stalo",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/36257a1c-a887-4583-80cb-4e13e9e74909.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\MN-gidas-mobile.png"
+    },
+    {
+      "planId": "NP-gidas",
+      "device": "mobile",
+      "revisionHash": "9cd27f0bc591f52b560bf2efc9b76fe6471bcd953f8adb60cb0871e94d2a5b25",
+      "htmlSha256": "c7f9cd6741df5f47e9d914a22cf98311a31c22d661f1d4b22e7185056c51dd6d",
+      "checkedAt": "2026-10-09T20:10:58.880Z",
+      "title": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Ilgi migdolo formos nagai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/6d596625-863b-4198-b399-ed1ea967828f.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\NP-gidas-mobile.png"
+    },
+    {
+      "planId": "PD-gidas",
+      "device": "mobile",
+      "revisionHash": "d169b518e6680563b4270e91414891195b65f886903c62a7448af821847240dc",
+      "htmlSha256": "996637bd30ae7dfdf8a540c7d0bc6b66de2311a848e71001e0c15dc670a7460e",
+      "checkedAt": "2026-10-09T20:10:59.059Z",
+      "title": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Pėdos ant pedikiūro atramos",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/4d7ba676-dca9-4c15-8454-c9450b049246.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\PD-gidas-mobile.png"
+    },
+    {
+      "planId": "PP-gidas",
+      "device": "mobile",
+      "revisionHash": "49ec720bdb7117941733ccd9fd2bb9f5c5e508c4d7126b19c239b0fc270459d3",
+      "htmlSha256": "a6743d6469602f4dff31b8841b92c53716869f0ea9b43e1369d7f8b73ed63429",
+      "checkedAt": "2026-10-09T20:10:59.265Z",
+      "title": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Garbanotų plaukų tekstūra natūralioje šviesoje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/28d95563-250b-464e-9b21-3f11ae07b98b.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\PP-gidas-mobile.png"
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "device": "mobile",
+      "revisionHash": "256f8be129ea83550d057c7121013371382bf70cd9174ec3cfb7c328bd610f3e",
+      "htmlSha256": "034e262385de8729e0bb374d9a97ece7ca1799d726617ac16a793ae908a313cb",
+      "checkedAt": "2026-10-09T20:10:59.453Z",
+      "title": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Šviesių antakių forma ir spalva",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/7b6116c4-9dec-4d60-a28f-264bddeb8f8d.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\AN-korekcija-ar-dazymas-mobile.png"
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "device": "mobile",
+      "revisionHash": "8ccd64ca7503db46bd9568a921db269a17e3ce6045e78f05af3f3bfc2f7746ac",
+      "htmlSha256": "9488bc4665ddd420db87afe6bc43a01debcfd4c7a9a64a9b72064f6ad9e21879",
+      "checkedAt": "2026-10-09T20:10:59.682Z",
+      "title": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Barzdos forma šoniniame portrete",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-autonomous11-20261009/assets/af8474f5-b524-429a-b1c8-dcd7b2149694.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-autonomous11-20261009\\screenshots\\BR-kirpimas-modeliavimas-mobile.png"
+    }
+  ]
+}

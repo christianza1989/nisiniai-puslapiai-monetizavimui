@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-10-09T20:12:35.527Z",
+  "policySha256": "cbec5ebdc888a0b09fe8dd409edeaf06602f32318301f30d6d8236d1ac9207d6",
+  "pages": [
+    {
+      "planId": "AN-gidas",
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "reviewRevisionHash": "654d71d95a48bd841b41a4224f532a85d96424d40d79da65779e894cc0dcd186",
+      "checkedAt": "2026-10-09T20:12:30.171Z",
+      "verifiedClaims": "Forma, spalva ir plaukelių kryptis atskirtos; S03/S24/S35 meniu variantai nepristatomi kaip universalus protokolas. Nėra dažų mišinių, alergijos nebuvimo ar vienodos priežiūros garantijos.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "BL-gidas",
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "reviewRevisionHash": "e6351a32ffe23eb84b718985273c97a99f2c05b341228573c8be979936f4f182",
+      "checkedAt": "2026-10-09T20:12:30.329Z",
+      "verifiedClaims": "Natūralių blakstienų spalva ir LVL pakėlimas atskirti nuo pridedamo plaukelio. S36 gamintojo LVL skirtumas ir S03/S24 pasiūlymų apimtis patvirtina palyginimą; nėra visuotinio trukmės ar klijų saugumo pažado.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "DP-gidas",
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "reviewRevisionHash": "70edccc0e162e1e5c03542be4cabd08e047f54b3c1ed9b03528530bfa0718c42",
+      "checkedAt": "2026-10-09T20:12:30.479Z",
+      "verifiedClaims": "S51 AAD vaškas šalina nuo šaknies, skutimas ties paviršiumi, pakartotinis aplikatoriaus merkimas ir šilumos higienos ribos patvirtintos. S55 45 min. / 25 Eur blauzdos ir 60 min. / 40 Eur kojos atitinka meniu. Nėra individualaus vaistų nutraukimo ar procedūros namuose protokolo.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "DZ-gidas",
+      "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+      "reviewRevisionHash": "80b10294ff543cf732cac644adb6d1a66ae8b6b8a303c4adba83adaa2c3e911d",
+      "checkedAt": "2026-10-09T20:12:30.623Z",
+      "verifiedClaims": "S42 gamintojas skiria highlights, pilną šviesinimą su tonavimu ir balayage; S04/S33 meniu atskiria plotą, tonavimą ir kirpimą. Nėra dažų receptų, oksidantų, laikų, garantuoto vieno vizito rezultato ar savidiagnozės.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "GL-gidas",
+      "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+      "reviewRevisionHash": "1109c3dcf2fe7cd134e52fb003831a10b166326dd251e63b8fde5802ad314e9b",
+      "checkedAt": "2026-10-09T20:12:30.762Z",
+      "verifiedClaims": "S07 AAD gelinis lakas kietinamas UV šviesa, jo neplėšti. S01/S02 meniu skiria dangą, stiprinimą, ilginimą ir nuėmimą. Sluoksnių schema aiškiai konceptuali, nėra universalių lempų, chemijos, eiliškumo ar dozavimo instrukcijų.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "MN-gidas",
+      "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+      "reviewRevisionHash": "8cd820f807d2a72c54c7e7b6070469c8d00c69fc9c30ea391da0282b08356989",
+      "checkedAt": "2026-10-09T20:12:30.915Z",
+      "verifiedClaims": "S01 atskiras manikiūras be dangos ir su danga; S02 atskiros stiprinimo/priauginimo užduotys. S08 kosmetinė danga neslepia pakitusio nago vertinimo poreikio. Sprendimų seka atskirta nuo atlikimo protokolo.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "NP-gidas",
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "reviewRevisionHash": "9cd27f0bc591f52b560bf2efc9b76fe6471bcd953f8adb60cb0871e94d2a5b25",
+      "checkedAt": "2026-10-09T20:12:31.207Z",
+      "verifiedClaims": "S01 faktiškai perskaitytas papildomai: yra Nagų priauginimas, natūralių nagų stiprinimas geliu ir atskira gelinio lako nuėmimo žyma. Priauginimo konstrukcija atskirta nuo spalvos dangos. S07 patarimas neplėšti aiškiai tik geliniam lakui, ne visų medžiagų nuėmimo protokolas.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PD-gidas",
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "reviewRevisionHash": "d169b518e6680563b4270e91414891195b65f886903c62a7448af821847240dc",
+      "checkedAt": "2026-10-09T20:12:31.347Z",
+      "verifiedClaims": "S32 realus datuotas meniu: 75 min. / 45 Eur be dangos; 90 min. / 50 Eur paprastas lakas; iki 120 min. / 60 Eur nuėmimas su geliniu. S08 sveikatos ir kosmetinės paslaugos ribos; nėra gydymo instrukcijų ar vietinės pasiūlos pažado.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PP-gidas",
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "reviewRevisionHash": "49ec720bdb7117941733ccd9fd2bb9f5c5e508c4d7126b19c239b0fc270459d3",
+      "checkedAt": "2026-10-09T20:12:31.489Z",
+      "verifiedClaims": "S54 FDA ne visiems glotninimo produktams taikomas formaldehido teiginys; JAV informacija nėra LT teisė. S33 tonavimas, dažymas ir kirpimas atskiri. Nevertinamas nenustatytas produktas ar klinikinis veiksmingumas.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+      "reviewRevisionHash": "256f8be129ea83550d057c7121013371382bf70cd9174ec3cfb7c328bd610f3e",
+      "checkedAt": "2026-10-09T20:12:31.626Z",
+      "verifiedClaims": "S03 meniu tikrai 30 min. / 10 Eur korekcija, 40 min. / 17 Eur su dažymu, 60 min. / 25 Eur laminavimo derinys. Vienas datuotas teikėjas, ne LT vidurkis ar Madbeauty pasiūla.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "reviewRevisionHash": "8ccd64ca7503db46bd9568a921db269a17e3ce6045e78f05af3f3bfc2f7746ac",
+      "checkedAt": "2026-10-09T20:12:31.761Z",
+      "verifiedClaims": "S56 meniu atskiria kirpimą/modeliavimą ir mašinėlės/skustuvo pasiūlymus. Pavadinimų riba sąlyginė; zonų žemėlapis originalus užduoties ruošinys, ne techninis protokolas. Dabartinis prieinamumas ar kaina iš senesnio meniu neteigiami.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    }
+  ]
+}

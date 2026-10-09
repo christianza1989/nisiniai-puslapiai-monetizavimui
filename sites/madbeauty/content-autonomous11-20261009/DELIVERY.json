@@ -1,0 +1,19 @@
+{
+  "preparedAt": "2026-10-09T20:12:35.528Z",
+  "additionalApproved": 11,
+  "approvedTotal": 69,
+  "guideTotal": 65,
+  "preservedApprovedSnapshots": 58,
+  "preservedPublicationMoments": 299,
+  "release": {
+    "path": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-autonomous11-20261009\\output\\releases\\madbeauty\\72dff344-c9ce-4401-89df-169734537fc1\\content-package.json",
+    "pages": 69,
+    "assets": 330,
+    "manifestPath": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-autonomous11-20261009\\output\\releases\\madbeauty\\72dff344-c9ce-4401-89df-169734537fc1\\release-manifest.json",
+    "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+    "state": "exported-not-deployed"
+  },
+  "state": "EXPORTED_NOT_DEPLOYED",
+  "humanExpertReviewPerformed": false,
+  "productionAcceptance": null
+}

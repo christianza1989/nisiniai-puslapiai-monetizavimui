@@ -1,0 +1,7 @@
+import {spawn} from 'node:child_process';
+import {writeFile,readFile} from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const repo=path.resolve(import.meta.dirname,'../../..'),root=path.join(repo,'sites/madbeauty/cloudflare/output/next60-private');
+const preflight=JSON.parse(await readFile(path.join(root,'provider-predeploy.json')));assert.equal(preflight.state,'PASS');assert.equal(preflight.qa.migrationTag,'calendar-qa-v1');assert.equal(preflight.qa.bindings.find(b=>b.name==='PLATFORM').namespaceId,'66b5a76fd6864563b5c3248e2290e55b');
+const child=spawn(process.execPath,[path.join(repo,'../dovanos-memorycasting/node_modules/wrangler/bin/wrangler.js'),'deploy','--config',path.join(root,'qa-wrangler.json'),'--message','Private content60 boundary acceptance; separate existing CalendarSource namespace'],{cwd:repo,stdio:['ignore','pipe','pipe']});let log='';child.stdout.on('data',b=>log+=b);child.stderr.on('data',b=>log+=b);const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});await writeFile(path.join(root,'qa-deploy.log'),log);assert.equal(code,0,'See private QA deployment log');const version=log.match(/Current Version ID: ([a-f0-9-]{36})/)?.[1];assert.ok(version);console.log(JSON.stringify({state:'QA_DEPLOYED',version,worker:'madbeauty-calendar-acceptance-20261009',productionChanged:false}));

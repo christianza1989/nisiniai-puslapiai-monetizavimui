@@ -1,0 +1,48 @@
+{
+  "siteId": "madbeauty",
+  "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+  "packageSource": "80f3f329b63602bd5ee6d7651e73303c6cee735c",
+  "baselinePackageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+  "writerDirectory": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009",
+  "writerReviewFile": "CLAIM-REVIEW.json",
+  "representativeFutureSlug": "gidai/auskaru-verimas-gidas",
+  "policy": {
+    "schemaVersion": 1,
+    "siteId": "madbeauty",
+    "scope": [
+      "guide",
+      "article"
+    ],
+    "mode": "autonomous-agent",
+    "humanSpecialistReviewRequired": false,
+    "humanPublicationApprovalRequired": false,
+    "authority": {
+      "source": "direct-human-request-in-platform-chat",
+      "date": "2026-10-09",
+      "instruction": "atjunk taisykles kad straipsniai lauktu specialisto perziuras, viskas turi veikti be zmogaus isikisimo"
+    },
+    "editorialReview": {
+      "revisionBound": true,
+      "requiredChecks": [
+        "usefulness",
+        "facts",
+        "sources",
+        "media",
+        "links",
+        "presentation"
+      ],
+      "unresolvedClaims": "agent-research-rewrite-or-omit",
+      "specialistRequirementsInOldBriefs": "superseded-by-this-owner-policy",
+      "fabricatedHumanReviewsAllowed": false,
+      "expertCredentialsClaimed": false
+    },
+    "publication": {
+      "retainExistingPublishAt": true,
+      "preserveIncumbentApprovedSnapshots": true,
+      "immutableReviewedPackage": true,
+      "sameTimeGateForPagesMediaLinksAndDiscovery": true,
+      "deployAfterActualAcceptance": true
+    },
+    "scopeBoundary": "Article editorial workflow only. Provider eligibility, identity, access permissions and actual customer data are separate product workflows."
+  }
+}

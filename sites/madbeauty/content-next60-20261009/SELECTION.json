@@ -1,5 +1,5 @@
 {
-  "status": "EXPORTED_NOT_DEPLOYED",
+  "status": "ACTUAL_DOMAIN_VERIFIED",
   "createdAt": "2026-10-09T19:56:47.325Z",
   "siteId": "madbeauty",
   "domain": "madbeauty.lt",
@@ -17,7 +17,7 @@
       "publishAt": "2026-10-30T08:00:00.000Z",
       "localDate": "2026-10-30",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -253,7 +253,7 @@
       "publishAt": "2026-11-02T14:00:00.000Z",
       "localDate": "2026-11-02",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -547,7 +547,7 @@
       "publishAt": "2026-11-03T08:00:00.000Z",
       "localDate": "2026-11-03",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -835,7 +835,7 @@
       "publishAt": "2026-11-04T08:00:00.000Z",
       "localDate": "2026-11-04",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -1169,7 +1169,7 @@
       "publishAt": "2026-11-04T14:00:00.000Z",
       "localDate": "2026-11-04",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -1455,7 +1455,7 @@
       "publishAt": "2026-11-05T08:00:00.000Z",
       "localDate": "2026-11-05",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -1693,7 +1693,7 @@
       "publishAt": "2026-11-05T14:00:00.000Z",
       "localDate": "2026-11-05",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -2027,7 +2027,7 @@
       "publishAt": "2026-11-06T08:00:00.000Z",
       "localDate": "2026-11-06",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -2265,7 +2265,7 @@
       "publishAt": "2026-11-06T14:00:00.000Z",
       "localDate": "2026-11-06",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -2596,7 +2596,7 @@
       "publishAt": "2026-11-08T08:00:00.000Z",
       "localDate": "2026-11-08",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -2836,7 +2836,7 @@
       "publishAt": "2026-11-09T14:00:00.000Z",
       "localDate": "2026-11-09",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -3083,7 +3083,7 @@
       "publishAt": "2026-11-11T08:00:00.000Z",
       "localDate": "2026-11-11",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -3326,7 +3326,7 @@
       "publishAt": "2026-11-12T08:00:00.000Z",
       "localDate": "2026-11-12",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -3614,7 +3614,7 @@
       "publishAt": "2026-11-12T14:00:00.000Z",
       "localDate": "2026-11-12",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -3861,7 +3861,7 @@
       "publishAt": "2026-11-13T08:00:00.000Z",
       "localDate": "2026-11-13",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -4206,7 +4206,7 @@
       "publishAt": "2026-11-13T14:00:00.000Z",
       "localDate": "2026-11-13",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -4644,7 +4644,7 @@
       "publishAt": "2026-11-14T08:00:00.000Z",
       "localDate": "2026-11-14",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -5042,7 +5042,7 @@
       "publishAt": "2026-11-15T08:00:00.000Z",
       "localDate": "2026-11-15",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -5290,7 +5290,7 @@
       "publishAt": "2026-11-16T08:00:00.000Z",
       "localDate": "2026-11-16",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -5533,7 +5533,7 @@
       "publishAt": "2026-11-17T14:00:00.000Z",
       "localDate": "2026-11-17",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": null,
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -5673,7 +5673,7 @@
       "publishAt": "2026-11-21T08:00:00.000Z",
       "localDate": "2026-11-21",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "AV-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -5879,7 +5879,7 @@
       "publishAt": "2026-11-25T14:00:00.000Z",
       "localDate": "2026-11-25",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "KP-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -6086,7 +6086,7 @@
       "publishAt": "2026-11-26T08:00:00.000Z",
       "localDate": "2026-11-26",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "LZ-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -6293,7 +6293,7 @@
       "publishAt": "2026-11-27T08:00:00.000Z",
       "localDate": "2026-11-27",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "MS-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -6501,7 +6501,7 @@
       "publishAt": "2026-11-30T14:00:00.000Z",
       "localDate": "2026-11-30",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "VP-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -6709,7 +6709,7 @@
       "publishAt": "2026-12-02T14:00:00.000Z",
       "localDate": "2026-12-02",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "DP-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -6999,7 +6999,7 @@
       "publishAt": "2026-12-03T08:00:00.000Z",
       "localDate": "2026-12-03",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "GL-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -7236,7 +7236,7 @@
       "publishAt": "2026-12-03T14:00:00.000Z",
       "localDate": "2026-12-03",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "MN-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -7476,7 +7476,7 @@
       "publishAt": "2026-12-04T08:00:00.000Z",
       "localDate": "2026-12-04",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "MS-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -7920,7 +7920,7 @@
       "publishAt": "2026-12-05T08:00:00.000Z",
       "localDate": "2026-12-05",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "PD-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -8126,7 +8126,7 @@
       "publishAt": "2026-12-06T08:00:00.000Z",
       "localDate": "2026-12-06",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "VP-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -8480,7 +8480,7 @@
       "publishAt": "2026-12-07T08:00:00.000Z",
       "localDate": "2026-12-07",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "MN-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -8686,7 +8686,7 @@
       "publishAt": "2026-12-07T14:00:00.000Z",
       "localDate": "2026-12-07",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "ES-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -8998,7 +8998,7 @@
       "publishAt": "2026-12-08T08:00:00.000Z",
       "localDate": "2026-12-08",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "FX-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -9304,7 +9304,7 @@
       "publishAt": "2026-12-08T14:00:00.000Z",
       "localDate": "2026-12-08",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "OD-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -9544,7 +9544,7 @@
       "publishAt": "2026-12-09T08:00:00.000Z",
       "localDate": "2026-12-09",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "PM-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -9787,7 +9787,7 @@
       "publishAt": "2026-12-09T14:00:00.000Z",
       "localDate": "2026-12-09",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "PS-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -10080,7 +10080,7 @@
       "publishAt": "2026-12-10T08:00:00.000Z",
       "localDate": "2026-12-10",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "PX-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -10369,7 +10369,7 @@
       "publishAt": "2026-12-10T14:00:00.000Z",
       "localDate": "2026-12-10",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "RP-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -10658,7 +10658,7 @@
       "publishAt": "2026-12-11T08:00:00.000Z",
       "localDate": "2026-12-11",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "SP-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -10900,7 +10900,7 @@
       "publishAt": "2026-12-11T14:00:00.000Z",
       "localDate": "2026-12-11",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "TT-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -11141,7 +11141,7 @@
       "publishAt": "2026-12-12T08:00:00.000Z",
       "localDate": "2026-12-12",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "AV-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -11348,7 +11348,7 @@
       "publishAt": "2026-12-13T08:00:00.000Z",
       "localDate": "2026-12-13",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "DZ-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -11594,7 +11594,7 @@
       "publishAt": "2026-12-14T08:00:00.000Z",
       "localDate": "2026-12-14",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "ES-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -11840,7 +11840,7 @@
       "publishAt": "2026-12-14T14:00:00.000Z",
       "localDate": "2026-12-14",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "KP-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -12184,7 +12184,7 @@
       "publishAt": "2026-12-15T08:00:00.000Z",
       "localDate": "2026-12-15",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "LZ-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -12426,7 +12426,7 @@
       "publishAt": "2026-12-15T14:00:00.000Z",
       "localDate": "2026-12-15",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "ND-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -12632,7 +12632,7 @@
       "publishAt": "2026-12-16T08:00:00.000Z",
       "localDate": "2026-12-16",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "NP-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -12840,7 +12840,7 @@
       "publishAt": "2026-12-16T14:00:00.000Z",
       "localDate": "2026-12-16",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "PM-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -13135,7 +13135,7 @@
       "publishAt": "2026-12-17T08:00:00.000Z",
       "localDate": "2026-12-17",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "PP-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -13375,7 +13375,7 @@
       "publishAt": "2026-12-17T14:00:00.000Z",
       "localDate": "2026-12-17",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "SP-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -13716,7 +13716,7 @@
       "publishAt": "2026-12-18T08:00:00.000Z",
       "localDate": "2026-12-18",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "AN-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -14006,7 +14006,7 @@
       "publishAt": "2026-12-18T14:00:00.000Z",
       "localDate": "2026-12-18",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "AV-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -14245,7 +14245,7 @@
       "publishAt": "2026-12-19T08:00:00.000Z",
       "localDate": "2026-12-19",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "BL-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -14487,7 +14487,7 @@
       "publishAt": "2026-12-20T08:00:00.000Z",
       "localDate": "2026-12-20",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "BR-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -14727,7 +14727,7 @@
       "publishAt": "2026-12-21T08:00:00.000Z",
       "localDate": "2026-12-21",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "DP-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -14952,7 +14952,7 @@
       "publishAt": "2026-12-21T14:00:00.000Z",
       "localDate": "2026-12-21",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "DZ-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -15197,7 +15197,7 @@
       "publishAt": "2026-12-22T14:00:00.000Z",
       "localDate": "2026-12-22",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "GL-gidas",
       "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
       "brief": {
@@ -15439,7 +15439,7 @@
       "publishAt": "2026-12-23T08:00:00.000Z",
       "localDate": "2026-12-23",
       "localTime": "10:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "KP-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -15732,7 +15732,7 @@
       "publishAt": "2026-12-23T14:00:00.000Z",
       "localDate": "2026-12-23",
       "localTime": "16:00",
-      "status": "APPROVED_SCHEDULED",
+      "status": "DEPLOYED_SCHEDULED",
       "parentId": "LZ-gidas",
       "reviewLevel": "QUALIFIED_HEALTH_OR_LEGAL_REVIEW",
       "brief": {
@@ -15941,6 +15941,6 @@
       "priorPackageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369"
     }
   ],
-  "updatedAt": "2026-10-09T22:48:46.392Z",
+  "updatedAt": "2026-10-09T23:15:11.223Z",
   "currentBaselinePackageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2"
 }

@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const here=new URL('.',import.meta.url),[receiptPath,expectedReceiptSha]=process.argv.slice(2);
+assert.ok(receiptPath);assert.match(expectedReceiptSha,/^[a-f0-9]{64}$/);
+const bytes=await fs.readFile(receiptPath),receiptSha=createHash('sha256').update(bytes).digest('hex');assert.equal(receiptSha,expectedReceiptSha);
+const receipt=JSON.parse(bytes),delivery=JSON.parse(await fs.readFile(new URL('DELIVERY.json',here),'utf8'));
+assert.equal(receipt.packageSha256,delivery.release.packageSha256);assert.equal(receipt.domain,'https://madbeauty.lt');
+assert.equal(receipt.package.pages,129);assert.equal(receipt.package.guides,125);
+assert.match(receipt.runtimeSource,/^[a-f0-9]{40}$/);assert.match(receipt.coreSource,/^[a-f0-9]{40}$/);assert.match(receipt.productionVersion,/^[a-f0-9-]{36}$/);assert.match(receipt.productionArtifactSha256,/^[a-f0-9]{64}$/);
+assert.ok(receipt.deployedAt&&Number.isFinite(Date.parse(receipt.deployedAt)));
+const accepted=JSON.parse(await fs.readFile(new URL('DOMAIN-ACCEPTANCE.json',here),'utf8'));assert.equal(accepted.state,'PASS_ACTUAL_CANONICAL_DOMAIN');assert.equal(accepted.packageSha256,receipt.packageSha256);
+await fs.writeFile(new URL('PRODUCTION-RECEIPT.json',here),bytes);
+delivery.state='ACTUAL_DOMAIN_VERIFIED';delivery.release.state='actual-domain-verified';delivery.productionAcceptance={...accepted,runtimeSource:receipt.runtimeSource,coreSource:receipt.coreSource,productionVersion:receipt.productionVersion,productionArtifactSha256:receipt.productionArtifactSha256,deployedAt:receipt.deployedAt,consumerReceiptSha256:receiptSha,consumerReceiptSource:receiptPath};
+await fs.writeFile(new URL('DELIVERY.json',here),JSON.stringify(delivery,null,2)+'\n');
+console.log({state:delivery.state,packageSha256:receipt.packageSha256,productionVersion:receipt.productionVersion,independentDomainVerified:true});

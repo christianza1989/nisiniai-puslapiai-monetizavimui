@@ -1,6 +1,6 @@
 # Madbeauty: papildomi 60 straipsnių
 
-Būsena: **EXPORTED_NOT_DEPLOYED**. 60 papildomų straipsnių patvirtinta autonomine agento peržiūra; bendrame pakete 129 puslapiai ir 125 gidai. Tekstų autorius viešai – Madbeauty redakcija. Faktinis CLI rašymo modelis – GPT-6 Luna, xhigh, be fallback.
+Būsena: **ACTUAL_DOMAIN_VERIFIED**. 60 papildomų straipsnių patvirtinta autonomine agento peržiūra; bendrame pakete 129 puslapiai ir 125 gidai. Tekstų autorius viešai – Madbeauty redakcija. Faktinis CLI rašymo modelis – GPT-6 Luna, xhigh, be fallback.
 
 60 atskirų originalių ImageGen fotografijos iliustracijų, po penkis responsive WebP variantus. Fikcinės teminės nuotraukos nėra realių klientų rezultatai. Šaltinių žurnale 102 iš tikrųjų perskaitytų ribotos apimties įrašų; kainų pavyzdžiai turi tikras meniu patikros datas ir nėra ateities tarifų garantija.
 

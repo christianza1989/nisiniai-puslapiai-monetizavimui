@@ -1,0 +1,88 @@
+{
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
+  "sourceVersion": "17b30eb1355a39407eeefc70b76ef298665fb565",
+  "sourceFingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960",
+  "checkedAt": "2026-10-07T13:28:52.372Z",
+  "tests": [
+    {
+      "command": "public npmrun test:core",
+      "passed": 56,
+      "failed": 0
+    },
+    {
+      "command": "private content-studio npmtest",
+      "passed": 52,
+      "failed": 0
+    },
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/*.test.mjs",
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "command": "python -X utf8 SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+      "passed": 10,
+      "failed": 0
+    },
+    {
+      "command": "public npx tsc --noEmit; npx eslint ownrenderer/tools",
+      "exitCode": 0
+    },
+    {
+      "command": "production npmrunbuild",
+      "exitCode": 0,
+      "warnings": "duplicateCSSname/>500kBframeworkchunk;privatelogretained"
+    },
+    {
+      "command": "node content-studio/scripts/verify-roletai-regressions.mjs explicit8794/all9IDs",
+      "passed": 9,
+      "failed": 0,
+      "evidence": "verification/all-niche-seo.json"
+    }
+  ],
+  "attempts": [
+    {
+      "command": "defaultSEOsmoke",
+      "result": "ECONNREFUSED8787;correctedexplicit8794/all9PASS"
+    },
+    {
+      "command": "unittestdiscoverhyphenfilename",
+      "result": "0discovered;correctedexplicitfile10PASS"
+    }
+  ],
+  "otherPackages": [
+    {
+      "siteId": "akmenas",
+      "unchanged": true
+    },
+    {
+      "siteId": "auksarankiams",
+      "unchanged": true
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "unchanged": true
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "unchanged": true
+    },
+    {
+      "siteId": "greitossvetaines",
+      "unchanged": true
+    },
+    {
+      "siteId": "laiptucentras",
+      "unchanged": true
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "unchanged": true
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "unchanged": true
+    }
+  ],
+  "synthetic": "Exactleadremoved,twoincrementsrestored;normallocalQAaggregatesnondemand."
+}

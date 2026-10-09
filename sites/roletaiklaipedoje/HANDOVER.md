@@ -1,0 +1,13 @@
+# Perdavimas
+
+Vietinė peržiūra http://127.0.0.1:8794/, SMTP/voice OFF. Public worktree ../dovanos-memorycasting, ai/roletai-core-rebuild-20261007; private ai/roletaiklaipedoje-rebuild-20261007. Draft [private PR33](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/33) ir [public PR11](https://github.com/christianza1989/niche-public-core/pull/11). Jokio merge/deploy.
+
+Paketo SHA: a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738. Core commit: 17b30eb1355a39407eeefc70b76ef298665fb565. Šaltinio fingerprint: e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960.
+
+LOCAL_RELEASE nurodo release C:\Users\Lenovo\Documents\Nisiniai_puslapiai\roletai-rebuild\nisiniai_puslapiai_monetizavimui\content-studio\output\releases\roletaiklaipedoje\806badee-71e3-4e73-a8ba-b6793b9b525b\content-package.json. Vieši11 puslapių/25 assets Git; private originals/prompts/reviews/full reports/screenshots/26 unwritten plans vietiniame ignored data/output/verification. Git clone neatkuria šių privačių artefaktų: naudoti šį worktree arba saugiai perkelti savo vietinius failus. TOPICAL_PLAN/MEDIA_PROVENANCE aprašo atkūrimo poreikius. Automatiškai nekartoti prepare/draft/rebind/finalize-browser-repairs/repair-link mutatorių: jie keistų revizijų/datos istoriją.
+
+Atkūrimas Node22+: public npm ci; nustatyti NICHE_DEV_SITE_ID=roletaiklaipedoje, npm run build; npm run start -- --port8794 --var LEAD_SMTP_ENABLED:0 --var VOICE_WIDGET_ENABLED:0 --log-level error. Vietinio D1 0004/0005 migracijos prieš formos bandymą, tik savo .wrangler/state. Studijai nauja idle instancija su explicit Luna/xhigh env; gyvų writer procesų neperkrauti. Readonly all9 SEO: content-studio node scripts/verify-roletai-regressions.mjs; public test:core/type/lint, private npm test, acceptance Node12 ir explicit Python10.
+
+SITE_COMPLETION render-only nėra acceptance. --audit ir scorer --require-local dabar sąmoningai fail; actual source pakitimai reikalauja naujo source binding ir atitinkamos browser/Lighthouse patikros. R2 ir S2: tikras 200 % naršyklės mastelis nepatvirtintas. U3: pažymėtas laiškas rastas INBOX.Junk, o ne INBOX; SPF/DKIM/DMARC praėjo, pašto filtravimo nustatymai nekeisti. Reikia tikro200% home/guide/contact/legal reflow ir konkretaus jau išsiųsto laiško gavimo diagnostikos. Nesiųsti automatiškai antro, neperkelti į INBOX dėl PASS ir nekeisti pašto/DNS nustatymų.
+
+Visi launch identity/address/domain/DNS/TLS/crawl/D1 binding/rate/recovery/retention/processors/field CWV ir realaus srauto/kvalifikuotų užklausų vartai neįrodyti. Own SMTP/comparison/studio/concept probe procesai sustabdyti, lieka8794 mail-disabled preview.

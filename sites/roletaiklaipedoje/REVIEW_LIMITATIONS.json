@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-10-07T12:03:37.926Z",
+  "scope": "Local editorial approval is not site completion or permission to deploy.",
+  "browser": "Chrome and IAB localhost requests return ERR_BLOCKED_BY_CLIENT. No desktop/mobile PASS.",
+  "originalWriterNotes": [
+    {
+      "pageId": "8cdccbb2-c005-4b1e-9009-6a103eb91476",
+      "slug": "gidai/roletu-pasirinkimas",
+      "notes": [
+        "Šiam gidui dar nepriskirtas peržiūrėtas, temos klausimą atitinkantis vaizdas. Parengti originalią iliustraciją, kurioje aiškiai palyginami audinio šviesos pralaidumas, tvirtinimo vieta ir lango naudojimo zona; nevaizduoti jos kaip kliento projekto ar konkretaus gamintojo gaminio.",
+        "Nuorodos į gidus „Ką išmatuoti prieš roletų užklausą“ ir „Diena–naktis ar blackout: šviesa ir privatumas“ veda į esamus, bet dar nepatvirtintus puslapius. Jas aktyvinti tik patikrinus turinį ir abiem puslapiams tapus tinkamiems viešai rodyti.",
+        "Prieš patvirtinant redakcinę versiją, dar kartą patikrinti gamintojų puslapių teiginius ir tai, kad pavyzdžiai nėra pateikiami kaip Klaipėdoje prieinamas MB Pinet asortimentas."
+      ]
+    },
+    {
+      "pageId": "f89735ad-2a98-42b1-970b-32676758a669",
+      "slug": "gidai/sviesa-ir-privatumas",
+      "notes": [
+        "Prieš tvirtinant tekstą patikrinti, ar info@pinet.lt kelias šiuo metu priima tokias poreikio registracijas; pateiktame kontekste pilotas apibūdintas kaip kuriamas.",
+        "Prieš tvirtinant puslapį parengti, importuoti ir peržiūrėti šiai temai skirtą vaizdą. Turimų puslapio duomenų vaizdų sąrašas tuščias.",
+        "Vidinių nuorodų tikslai dar nepatvirtinti viešam rodymui; palikti jas kaip pasiūlymus, kol puslapiai bus patvirtinti, paskelbti ir patikrinti."
+      ]
+    },
+    {
+      "pageId": "c724b12b-2821-4990-95f8-bfc1167f49cb",
+      "slug": "gidai/matmenys-uzklausai",
+      "notes": [
+        "Prieš publikavimą sukurti, prijungti ir peržiūrėti šiam matavimo gidui skirtą teminį vaizdą; patikrinti jo alt tekstą ir matomumą mobiliajame bei darbalaukio vaizde.",
+        "Prieš publikavimą patikrinti, kad į info@pinet.lt siunčiamas poreikio registracijos laiškas pasiekia numatytą gavėją ir kad viešas tekstas teisingai apibūdina piloto užklausos tvarkymą."
+      ]
+    },
+    {
+      "pageId": "060391b8-d36b-4717-b4ec-a6a8cd6665d0",
+      "slug": "gidai/pasiulymu-palyginimas",
+      "notes": [
+        "Prieš redakcinę peržiūrą ir išleidimą reikia sukurti bei peržiūrėti šio gido teminį vaizdą: palyginimo lapas šalia skirtingų neutralių roletų audinių pavyzdžių, be išgalvotų kainų, prekių ženklų ar klientų darbų. Pateiktų tinkamų vaizdų nėra.",
+        "Prieš viešą išleidimą patikrinti, kad info@pinet.lt priima tokias poreikio registracijas, ir suderinti CTA su svetainės privatumo informacija apie užklausų tvarkymą. Tekste nepažadamas atsakymas ar paslaugos suteikimas."
+      ]
+    },
+    {
+      "pageId": "edd9c46e-bac6-481d-97c3-dcfd33124f5f",
+      "slug": "",
+      "notes": [
+        "Prieš patvirtinant juodraštį, faktiškai peržiūrėti ir priskirti homepage vaizdą desktop bei mobile formatu; pateikti assetų metaduomenys nepatvirtina, kad jų pikseliai ar kadravimas buvo patikrinti.",
+        "Prieš išleidžiant nuorodą į „Aprašykite savo langą“, patikrinti galutinį kontaktų puslapio turinį ir patvirtintą jo versiją. Šiuo metu kataloge jis yra nepatvirtintas juodraštis."
+      ]
+    },
+    {
+      "pageId": "decedd62-337c-4faa-8db1-19944097b625",
+      "slug": "gidai",
+      "notes": [
+        "Trys nurodyti gidai dar nepatvirtinti ir nepaskelbti. Prieš rodant nuorodas patikrinkite jų patvirtinimą, paskelbimo laiką, domeno tinkamumą ir veikiančius URL; iki tol nuorodos lieka pasiūlymai.",
+        "Prieš patvirtinant gidų indeksą peržiūrėkite tikrus jo vaizdus staliniame ir mobiliajame rodiniuose: kiekviena miniatiūra turi atitikti susietą gidą, o atsakingi vaizdų failai turi būti įkeliami. Pateikti turto aprašai savaime nepatvirtina vaizdo ar jo atvaizdavimo."
+      ]
+    },
+    {
+      "pageId": "8353af3d-6e5b-4a71-af7c-340912f004e8",
+      "slug": "kontaktai",
+      "notes": [
+        "Prieš publikavimą patikrinti, kad puslapyje veikia vardą, el. paštą, žinutę ir sutikimą turinti forma, pateikta užklausa išsaugoma ir automatiškai neperduodama trečiajai šaliai; patikrinti, kad sutikimo tekstas sutampa su Privatumo puslapiu.",
+        "Patikrinti, kad info@pinet.lt veikia kaip viešas kontaktas."
+      ]
+    },
+    {
+      "pageId": "954941b8-c1e2-4ead-bdce-bae596fc21c4",
+      "slug": "apie-projekta",
+      "notes": [
+        "Poreikių surinkimo pilotas nurodytas kaip kuriamas. Prieš skelbiant patikrinti, ar kontaktų puslapio registracijos veiksmas jau veikia; jei ne, nekurti įspūdžio, kad užklausą galima pateikti per neveikiančią formą.",
+        "Prieš viešinimą atskirai patikrinti, ar info@pinet.lt laiškai realiai gaunami. Pateiktas adresas patvirtintas, tačiau laiško pristatymas šiame juodraštyje nepatikrintas."
+      ]
+    },
+    {
+      "pageId": "d9dd415b-b8da-448f-a693-86492b086b84",
+      "slug": "redakcija",
+      "notes": []
+    },
+    {
+      "pageId": "69064c9b-5ff0-481f-8044-7eda18da503a",
+      "slug": "privatumas",
+      "notes": [
+        "Prieš viešai įjungiant formą patikrinti tikrą duomenų srautą, hostingo, D1 ir el. pašto paslaugų teikėjų tapatybes, jų vaidmenis, duomenų saugojimo vietas bei galimus perdavimus; pagal faktus papildyti pranešimą. Neteigti, kad duomenys lieka ES ar nėra perduodami už jos ribų, kol tai nepatikrinta.",
+        "Patikrinti, kad formoje atskiras sutikimo laukelis nėra iš anksto pažymėtas, jo tekstas aiškiai nurodo tvarkymo tikslą, o sutikimo įrašas ir laikas iš tikrųjų išsaugomi.",
+        "Patikrinti, kad MB Pinet gali praktiškai įvykdyti nurodytą rankinį ištrynimą per 90 dienų, anksčiau pasibaigus tikslui ar gavus sutikimo atšaukimą; šiuo metu neteigti, kad ištrynimas automatizuotas.",
+        "Išsiaiškinti, ar svetainėje renkami serverio žurnalai, slapukų ar analitikos duomenys, įskaitant dalyje reason paminėtą agreguotą pirmosios šalies puslapio naudojimo matavimą. Jei taip, įtraukti jų duomenų kategorijas, tikslus, pagrindus, saugojimo terminus ir tiekėjus.",
+        "Patikrinti, ar MB Pinet paskyrė duomenų apsaugos pareigūną ir ar valdytojo tapatybei ar kontaktams reikia papildomų duomenų prieš publikavimą.",
+        "Patikrinti, kad viešos formos privatumo tekstas, sutikimo veiksmas ir duomenų tvarkymo pagrindas sutampa su faktiniu diegimu; šiame juodraštyje sutikimo pagrindas perimtas iš pateikto piloto aprašo."
+      ]
+    },
+    {
+      "pageId": "fd424d59-4e70-4cfe-99f7-39dcae03e2b1",
+      "slug": "naudojimo-salygos",
+      "notes": [
+        "Prieš publikavimą patikrinti, ar pagal aktualius reikalavimus prie operatoriaus pavadinimo būtina pateikti papildomus MB Pinet registracijos duomenis; jie nebuvo pateikti ir juos reikia gauti iš patikimo įmonės šaltinio.",
+        "Sutikrinti aprašymą apie poreikio formą su veikiančia forma, faktiniu duomenų srautu ir Privatumo puslapiu; šio juodraščio metu jų veikimas ir konkretūs duomenų tvarkymo nustatymai nebuvo patikrinti."
+      ]
+    }
+  ],
+  "outstanding": [
+    "Actual desktop/mobile/tablet rendering, crops, keyboard/menu/form UI and production Lighthouse",
+    "Actual production processor/transfer setup and operator identifiers before launch",
+    "Real SMTP/inbox receipt scoped to this release before launch",
+    "Manual retention process owner and deployment dates before launch"
+  ]
+}

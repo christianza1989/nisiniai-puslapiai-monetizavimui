@@ -2,13 +2,14 @@
 export function contentPolicy(input = {}, timezone = 'Europe/Vilnius') {
   const policy = { months: 6, articlesPerMonth: 2, articlesPerWeek: 3, localTime: '10:00', timezone, ...input };
   policy.cadence = input.cadence ?? (input.articlesPerWeek !== undefined ? 'weekly' : 'monthly');
-  if (!['monthly', 'weekly'].includes(policy.cadence)) throw new Error('Turinio kadencija turi būti monthly arba weekly.');
+  if (!['monthly', 'weekly', 'coverage'].includes(policy.cadence)) throw new Error('Turinio kadencija turi būti monthly, weekly arba coverage.');
+  if (policy.cadence === 'coverage' && (!Number.isInteger(policy.topicTarget) || policy.topicTarget < 1 || policy.topicTarget > 500)) throw new Error('Aprėpties tikslas: 1–500 apibrėžtų temų; tai transporto saugos riba, ne publikavimo kvota.');
   if (!Number.isInteger(policy.months) || policy.months < 1 || policy.months > 12) throw new Error('Turinio horizontas: 1–12 mėnesių.');
   if (policy.cadence === 'monthly' && (!Number.isInteger(policy.articlesPerMonth) || policy.articlesPerMonth < 1 || policy.articlesPerMonth > 12)) throw new Error('Turinio dažnis: 1–12 straipsnių per mėnesį.');
   if (policy.cadence === 'weekly' && (!Number.isInteger(policy.articlesPerWeek) || policy.articlesPerWeek < 1 || policy.articlesPerWeek > 7)) throw new Error('Turinio dažnis: 1–7 straipsniai per savaitę.');
   if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(policy.localTime)) throw new Error('Publikavimo laikas turi būti HH:mm.');
   new Intl.DateTimeFormat('en', { timeZone: policy.timezone }).format();
-  return { months: policy.months, cadence: policy.cadence, ...(policy.cadence === 'weekly' ? { articlesPerWeek: policy.articlesPerWeek } : { articlesPerMonth: policy.articlesPerMonth }), localTime: policy.localTime, timezone: policy.timezone };
+  return { months: policy.months, cadence: policy.cadence, ...(policy.cadence === 'coverage' ? { topicTarget: policy.topicTarget } : policy.cadence === 'weekly' ? { articlesPerWeek: policy.articlesPerWeek } : { articlesPerMonth: policy.articlesPerMonth }), localTime: policy.localTime, timezone: policy.timezone };
 }
 export function localDate(instant, timezone) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: timezone, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date(instant)).map(p => [p.type, p.value]));
@@ -49,7 +50,7 @@ export function planningWindow(policy, now = Date.now()) {
   const originalDay = date.getUTCDate(); date.setUTCDate(1); date.setUTCMonth(date.getUTCMonth() + policy.months);
   date.setUTCDate(Math.min(originalDay, new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate()));
   const end = date.toISOString().slice(0,10);
-  return { start, end, target: policy.cadence === 'weekly' ? weeklySlots(start, end, policy.articlesPerWeek).length : policy.months * policy.articlesPerMonth };
+  return { start, end, target: policy.cadence === 'coverage' ? policy.topicTarget : policy.cadence === 'weekly' ? weeklySlots(start, end, policy.articlesPerWeek).length : policy.months * policy.articlesPerMonth };
 }
 export function scheduledPlan(proposals, pages, policy, now = Date.now()) {
   const window = planningWindow(policy, now);
@@ -65,6 +66,12 @@ export function scheduledPlan(proposals, pages, policy, now = Date.now()) {
   }
   return proposals.map(input => {
     if (input.type === 'home') return { ...input, publishAt: new Date(now).toISOString() };
+    if (policy.cadence === 'coverage') {
+      let date = input.publishDate;
+      try { localPublishAt(date, policy.localTime, policy.timezone); if (date < window.start || date > window.end) date = null; } catch { date = null; }
+      const candidate = localPublishAt(date || window.start, policy.localTime, policy.timezone);
+      return { ...input, publishAt: new Date(Math.max(Date.parse(candidate), now)).toISOString() };
+    }
     index++;
     const weekly = policy.cadence === 'weekly' && ['guide','article'].includes(input.type);
     const available = date => !used.has(date) && (!weekly || (weekCounts.get(weekOf(date)) || 0) < policy.articlesPerWeek);

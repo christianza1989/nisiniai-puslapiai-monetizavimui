@@ -1,0 +1,19 @@
+# Verslo sprendimas — 2026-10-07
+
+Klientas: Klaipėdos būsto gyventojas, kuriam reikia lango uždengimo, ypač privatumo vakare ar mažesnio šviesos kiekio miegamajame. Mokamas rezultatas rinkoje — pagal langą parinkti, pagaminti ir sumontuoti roletai. Mūsų pasirinkta hipotezė — kvalifikuotų vietinių roletų poreikių surinkimas ir būsimas vykdymo partnerio modelis. Potencialus mokėtojas mums: realus roletų tiekėjas už jo priimtą tinkamą užklausą pagal atskirą susitarimą. Tokio susitarimo šiandien nėra; užklausa neperduodama trečiajai šaliai automatiškai.
+
+## Patikrinta rinka ir alternatyvos
+
+2026-10-07 perskaitytos pirminės įmonių svetainės: [OptiRole](https://www.optirole.lt/) viešai siūlo individualius matmenis ir pardavimą/montavimą Klaipėdoje; [Roletų Rojus](https://roleturojus.lt/gauti-pasiulyma/) turi atskiras kainos, matavimo, montavimo ir remonto užklausas. Tai jų pajėgumo teiginiai, ne mūsų faktai. Užklausos nėra įrodymas, kad jos pristatomos ar įmonės veikla nepriklausomai patikrinta. [Luxaflex UK](https://www.luxaflex.co.uk/products/roller-blinds/) turi audinių pasirinkimą ir specialistų konsultacijos kelią; [StoresEnrouleur FR](https://storesenrouleur.com/) — tikrą prekybos/krepšelio kelią; [IKEA LT](https://www.ikea.com/lt/lt/p/langdans-ritinine-uzuolaida-pilka-50471837/) — standartinio dydžio alternatyvą. [ISOTRA CZ](https://www.isotra.com/verra-semi-fabric-roller-blind) paaiškina audinio veikimą ir dokumentuoja sistemą. Tai keturios rinkos, skirtingi tiekimo modeliai.
+
+Alternatyva A: mūsų nuosavas montavimo verslas. Atmesta dabar, nes nėra patvirtintų montuotojų, tiekimo ar garantijų kelio. Alternatyva B: standartinių roletų affiliate/e-shop. Atidėta: nėra affiliate sutarties ar tiekimo, o vietinio matavimo klausimas išlieka. Alternatyva C: mokamas konsultavimo ar skaitmeninis pasirinkimo lapas. Silpnesnė pradinė hipotezė: konkurentai konsultaciją siūlo kartu su gaminiu; savarankiško dokumento mokėtojas neįrodytas. Partnerių užklausų modelis leidžia tikrinti konkretų gaminio ir montavimo poreikį neapsimetant vykdytoju. Vietinių tiesioginių tiekėjų gausa taip pat yra prieštaraujantis įrodymas: jie gali nenorėti mokėti už tarpininkavimą.
+
+## Kas veikia pirmoje fazėje
+
+MB Pinet / info@pinet.lt — savininko patvirtintas operatorius ir kontaktas. Informaciniai pasirinkimo gidai ir veikianti poreikio forma. Lankytojas aiškiai informuojamas: registruoja poreikį vystomam projektui, ne užsakymą, kainos pasiūlymo garantiją ar matavimo vizitą. Jokios kainos, termino, partnerio, klientų darbo, lokalaus biuro ar įvykdymo patirties neišgalvojama. Vietinė forma saugo tik sintetinius QA įrašus izoliuotoje DB; tikras paleidimas atskiras.
+
+## Ekonomika ir falsifikuojamas testas
+
+Užklausos vertė, tiekėjo apmokama suma, įsigijimo kaštai ir marža nežinomi. Formulė būsimam sprendimui: priimtų apmokamų užklausų pajamos minus turinio, srauto pritraukimo, operatoriaus darbo ir infrastruktūros kaštai. Skaičių scenarijų nepateikiame kaip rinkos duomenų. Reikia realaus partnerio susitarimo ir skirtingų matavimo/montavimo/aptarnavimo atsakomybių prieš vykdymą.
+
+Po autorizuoto paleidimo ir indeksavimo siūlomas 60–90 dienų stebėjimo langas (sprendimo prielaida, ne SEO terminas). Atskirai registruoti parodymus/paspaudimus, formos pasiekimą, DB įrašą, operatoriaus receipt, poreikio tinkamumą, kontaktavimo leidimą ir būsimą apmokėjimą. Tinkama užklausa turi Klaipėdos vietovę, langų/kambario kontekstą, konkretų roletų poreikį ir pasiekiamą kontaktą. Sintetiniai bandymai nepaklausa. Plėsti tik jei realios tinkamos užklausos ir partnerio priėmimas pagrindžia teigiamą ekonomiką; jei lankytojai ieško tik instrukcijų — persvarstyti pasiūlymą; jei nėra indeksavimo — pirmiausia taisyti paleidimą. Treg katalogas/paskyros patikrintos; mokamo LT SERP/volume limito nėra, išlaidos 0 USD, paklausos kiekis neįvertintas.

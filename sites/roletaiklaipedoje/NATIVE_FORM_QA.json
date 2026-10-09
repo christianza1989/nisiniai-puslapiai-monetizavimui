@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T13:43:51.973Z",
+  "name": "BROWSER-ROLETai-20261007-1791380596640",
+  "url": "http://127.0.0.1:8794/uzklausa",
+  "observedText": "Tai vietinės peržiūros bandymas: žinutė išsaugota tik šiame kompiuteryje, o tikras el. laiškas neišsiųstas.",
+  "screenshots": [
+    "native-success-desktop.png",
+    "native-success-mobile.png"
+  ],
+  "synthetic": true,
+  "siteId": "roletaiklaipedoje",
+  "durable": {
+    "id": "e643d4e0-547c-49e8-83c1-aaa97b7bf361",
+    "site_id": "roletaiklaipedoje",
+    "source_path": "/kontaktai",
+    "status": "new",
+    "consent_at": 1791380598789
+  },
+  "syntheticRecordRemoved": true,
+  "cleanupScope": "exact UUID/site/name only",
+  "SMTP": false,
+  "returnLink": "Browser clicked Grįžti į pradžią and observed homepage",
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738"
+}

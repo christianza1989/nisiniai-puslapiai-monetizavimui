@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-07T12:37:42.357Z",
+  "packageSha256": "05b22ac7dd1c599367965c9055b40fd61bd2f046b21ea6c36a8437e2b3412b93",
+  "writer": {
+    "requested": "gpt-6-luna",
+    "effort": "xhigh",
+    "evidence": "WRITER_RUNS.json — actual CLI headers, not chat model labels"
+  },
+  "build": "Production vinext build succeeded with real 25 optimized image variants; known duplicate CSS output and >500kB chunk warnings retained in local build log.",
+  "publication": {
+    "before": "2026-10-07T12:31:20.888Z",
+    "after": "2026-10-07T12:36:28.195Z",
+    "publishAt": "2026-10-07T12:34:33.888Z",
+    "immutablePackage": true,
+    "requests": [
+      62,
+      68
+    ],
+    "beforePublicPages": 10,
+    "afterPublicPages": 11
+  },
+  "otherPackages": [
+    {
+      "siteId": "akmenas",
+      "unchanged": true
+    },
+    {
+      "siteId": "auksarankiams",
+      "unchanged": true
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "unchanged": true
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "unchanged": true
+    },
+    {
+      "siteId": "greitossvetaines",
+      "unchanged": true
+    },
+    {
+      "siteId": "laiptucentras",
+      "unchanged": true
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "unchanged": true
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "unchanged": true
+    }
+  ],
+  "notMeasured": [
+    "Computed desktop/mobile/tablet render and crop",
+    "Keyboard/menu/worksheet UI",
+    "Lighthouse LCP/CLS/TBT/score",
+    "Actual roletai SMTP/inbox delivery",
+    "Live deployment, indexing, demand"
+  ]
+}

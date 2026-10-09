@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-07T13:28:52.248Z",
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
+  "writer": {
+    "requested": "gpt-6-luna",
+    "effort": "xhigh",
+    "evidence": "WRITER_RUNS.json — actual CLI headers, not chat model labels"
+  },
+  "build": "Production vinext build succeeded with real 25 optimized image variants; known duplicate CSS output and >500kB chunk warnings retained in local build log.",
+  "publication": {
+    "before": "2026-10-07T12:50:25.526Z",
+    "after": "2026-10-07T12:52:23.485Z",
+    "publishAt": "2026-10-07T12:52:15.095Z",
+    "immutablePackage": true,
+    "requests": [
+      62,
+      68
+    ],
+    "beforePublicPages": 10,
+    "afterPublicPages": 11
+  },
+  "otherPackages": [
+    {
+      "siteId": "akmenas",
+      "unchanged": true
+    },
+    {
+      "siteId": "auksarankiams",
+      "unchanged": true
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "unchanged": true
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "unchanged": true
+    },
+    {
+      "siteId": "greitossvetaines",
+      "unchanged": true
+    },
+    {
+      "siteId": "laiptucentras",
+      "unchanged": true
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "unchanged": true
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "unchanged": true
+    }
+  ],
+  "measured": [
+    "All 11 pages at desktop 1280, mobile 390, tablet 768 and narrow 320; actual images loaded and full-page scroll tiles retained in BROWSER_QA.json.",
+    "Native keyboard skip/menu/contents and editable worksheet; ACCESSIBILITY-VERIFICATION.json.",
+    "Three final production mobile Lighthouse runs; PERFORMANCE.json.",
+    "Durable native inquiry, consent timestamp and counter privacy tests, exact synthetic cleanup.",
+    "Own SMTP acceptance and four exact-ID INBOX searches; MAIL_VERIFICATION.json separates the failed receipt."
+  ],
+  "notMeasured": [
+    "Actual 200% browser zoom: unsupported shortcut produced no change; R2/S2 remain UNVERIFIED.",
+    "Matching INBOX receipt is absent; exact marked message found INBOX.Junk, SPF/DKIM/DMARC passed. U3 FAIL; read-only MAIL_DIAGNOSTIC.json.",
+    "Live deployment, indexing, field CWV, real demand and production legal/operational gates."
+  ]
+}

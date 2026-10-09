@@ -1,0 +1,433 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-07T12:07:36.339Z",
+  "projectionAt": "2026-10-07T12:07:35.357Z",
+  "siteId": "roletaiklaipedoje",
+  "canonicalHost": "roletaiklaipedoje.lt",
+  "transportOrigin": "http://127.0.0.1:8794",
+  "packageSha256": "bde727bced0a82686ba298cf7199af6e2eea0b047a3870ed1a0e7f95a118b99b",
+  "inspector": {
+    "scriptSha256": "49db89a40ed92080ce8660bb43d4e40bcb19b37f604b0766f19911a83c58fc0a",
+    "htmlParserSha256": "dc3262c590bac5f3c64ccbd1cf5e597c175dd70c6ecf775c28e59eea37ece9c0"
+  },
+  "source": {
+    "coreCommit": "6df39c6195ea4256a308160ffccf53fe44cf3685",
+    "files": [
+      {
+        "file": "scripts/content-package-core.mjs",
+        "sha256": "bbe9a40d5fd36efeef5153f6f2e2ef41aea3f2e61d211156fe5765c82452592d"
+      },
+      {
+        "file": "lib/niche-links.mjs",
+        "sha256": "29d8ae699f7ee715718d31791fa1f0189dd47fa50f0fd270d9477b364c927b35"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "9e62442bb8a42aa31e030b6187c1967185c743a7002a22a9d0ea1040e8a27aaa"
+      },
+      {
+        "file": "lib/niche-schema-core.mjs",
+        "sha256": "cdd0886e4dcb188caba5c9c8beb9f3f5914541d7286da4962ff16dd714a3c00f"
+      }
+    ]
+  },
+  "state": "NOT_COMPLETE",
+  "publicPages": 10,
+  "hiddenPages": 1,
+  "articles": 3,
+  "rendered": [
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+      "errors": [
+        "APPROVED_BODY_RENDERED"
+      ]
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+      "errors": [
+        "APPROVED_BODY_RENDERED"
+      ]
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+      "errors": [
+        "APPROVED_BODY_RENDERED"
+      ]
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/kontaktai",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/apie-projekta",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/redakcija",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/privatumas",
+      "errors": []
+    },
+    {
+      "url": "https://roletaiklaipedoje.lt/naudojimo-salygos",
+      "errors": []
+    }
+  ],
+  "crawlerPolicy": {
+    "Googlebot": [
+      "https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+      "https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+      "https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+      "https://roletaiklaipedoje.lt/",
+      "https://roletaiklaipedoje.lt/gidai",
+      "https://roletaiklaipedoje.lt/kontaktai",
+      "https://roletaiklaipedoje.lt/apie-projekta",
+      "https://roletaiklaipedoje.lt/redakcija",
+      "https://roletaiklaipedoje.lt/privatumas",
+      "https://roletaiklaipedoje.lt/naudojimo-salygos"
+    ],
+    "bingbot": [
+      "https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+      "https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+      "https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+      "https://roletaiklaipedoje.lt/",
+      "https://roletaiklaipedoje.lt/gidai",
+      "https://roletaiklaipedoje.lt/kontaktai",
+      "https://roletaiklaipedoje.lt/apie-projekta",
+      "https://roletaiklaipedoje.lt/redakcija",
+      "https://roletaiklaipedoje.lt/privatumas",
+      "https://roletaiklaipedoje.lt/naudojimo-salygos"
+    ],
+    "OAI-SearchBot": [
+      "https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+      "https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+      "https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+      "https://roletaiklaipedoje.lt/",
+      "https://roletaiklaipedoje.lt/gidai",
+      "https://roletaiklaipedoje.lt/kontaktai",
+      "https://roletaiklaipedoje.lt/apie-projekta",
+      "https://roletaiklaipedoje.lt/redakcija",
+      "https://roletaiklaipedoje.lt/privatumas",
+      "https://roletaiklaipedoje.lt/naudojimo-salygos"
+    ],
+    "Claude-SearchBot": [
+      "https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+      "https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+      "https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+      "https://roletaiklaipedoje.lt/",
+      "https://roletaiklaipedoje.lt/gidai",
+      "https://roletaiklaipedoje.lt/kontaktai",
+      "https://roletaiklaipedoje.lt/apie-projekta",
+      "https://roletaiklaipedoje.lt/redakcija",
+      "https://roletaiklaipedoje.lt/privatumas",
+      "https://roletaiklaipedoje.lt/naudojimo-salygos"
+    ],
+    "PerplexityBot": [
+      "https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+      "https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+      "https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+      "https://roletaiklaipedoje.lt/",
+      "https://roletaiklaipedoje.lt/gidai",
+      "https://roletaiklaipedoje.lt/kontaktai",
+      "https://roletaiklaipedoje.lt/apie-projekta",
+      "https://roletaiklaipedoje.lt/redakcija",
+      "https://roletaiklaipedoje.lt/privatumas",
+      "https://roletaiklaipedoje.lt/naudojimo-salygos"
+    ]
+  },
+  "http": [
+    {
+      "path": "/gidai/roletu-pasirinkimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b91c115b8909bc21b6e0cda176ded99b2f4945e88471fb9885f60fb2f49027c2"
+    },
+    {
+      "path": "/gidai/sviesa-ir-privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5cef81eaf1aecaf9f5a4245aba55358945e2c4a76cb3897245154a7042ff00ec"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c26fb89c9f96125f4b02cd982977e9033b4f8bf80a7f7162ec0cd4c1d48df6f5"
+    },
+    {
+      "path": "/gidai/matmenys-uzklausai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "16733aabddec55cd7559ec42fb4a4ef6281e1fe7f5d42b9359191e70510f33d0"
+    },
+    {
+      "path": "/gidai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "529ad829f84f2f9a6f4a437ee9e95271325a2ebc17d3919e0f20e6745f59fd85"
+    },
+    {
+      "path": "/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ff796f72c27dfbcc72ed1092a406cb82775eaa1f984447e44e92750e615882fe"
+    },
+    {
+      "path": "/apie-projekta",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8982d899ce7ab7ed93612706717542efa082fc02d6f3bac26e98f2550a6154be"
+    },
+    {
+      "path": "/redakcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "73bf0078647da043e0001cdec3e97fc4a47a0f9f668f1a124d683d9a1f8df3a5"
+    },
+    {
+      "path": "/privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f0de902c00542a84645146b4c19b47c3e0f23e3c2d404cd050af33cbf9e671a8"
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0fb4a9124f664536ca0df9bac644e011018b98f68d058cd1a932b6a416c8a95d"
+    },
+    {
+      "path": "/gidai/pasiulymu-palyginimas",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "636a26a9e2f05d4ec15f54458dee4135357c05f8dcb29447adcca66f6c1ebc67"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/e838cbc0-79e1-45e4-850b-100272d59d55.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "3519cbef042fe57149f9f24bc836ea1a644b21e22df53fcad98e015aef8e0d3a"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/2b5bf0c0-1764-4696-abe6-1ec98c06b682.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cea2d2deb3cc7ec07dad281f741968c300841bd61147117e0e07b2bee40beb96"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/e1ff5b14-fb8f-47b6-a88a-8c6be53a5e7b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "989e77b0087513008179e19ed8cca472423ca4897ea83e0a7cd95e637f567fca"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/e9fd3c6c-bd88-4508-8983-b9fb09359eb7.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e82be38b1cd4a4f8c447691d7c06ca60ecd66ab825015943a3b4d8c4c5925272"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/45549210-db7c-4521-b617-cc613326fe55.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d8344b628d11f52d36733d9a386947431e99873a4c7a84a8a04644d039ffeb0c"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/7d515925-2e43-4b9e-9cb3-7055d4152eb8.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c2598170e668bb7cbccfd794e3017a5d6f09a6cc79c17daf4367146b84397017"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/0abf37b8-3fe3-44c9-8590-be927d58fd24.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "bf8ea8962874c1403bf148e206a89ae14f0d19caeb15ff80dbc5a20df0d1466f"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/979247f9-4494-40e1-bfc6-df2862405800.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5d929274c6004f6528d1d87d82cf9d40f2ce5bd3326f479ed4e37a0f3034aa8c"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/d5723dd3-5296-4fe4-afb3-02c004568da1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "7e0e129171b4088c86ce09940fef4167d8aace0de323bc7ba1599ed4bdc93ac2"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/4fa7d10a-bc3c-41bb-834f-a91bb0440531.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "dfdb9eeb7e613b7a6b9492978cdc3e914849f260ee0d704b056736a1b1767bfb"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/a0868661-1cda-43e2-b14a-4afe226167db.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "b8499794b0d70f421dc39ab7aee1182a92aa1ae89d1e15634ce53dea1a66ff18"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/5bf04a33-4187-439e-ad19-c632ac81ba49.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "eb5b4a24506d2a605f1fb81e9d5bdd2e0bde25176ed31b8fca0c04da7ce01b99"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/54a938f9-e9c4-46a4-8990-e657decd4aff.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "3a2b3ed4fcff648f112468e900ec7da3d5916c52d8c3473963e786908616dd72"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/4ed657ac-2ef6-4506-b62a-788cb9810e72.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d2f538719d01e7d4b46a03f69488fe5a52cb90a29347941ea7d0ba91f3bdcef1"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/1e4d8d70-6ffd-41ff-8cd2-d5a2b056ec97.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "4e8d0eb3a6b0fdd134fe0b8ed02338f4b38c4a8f76bdf0dce949ccc9a2a677b9"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/7f4bcfbd-3fec-4e4a-b827-e517e96d2179.webp",
+      "status": 404,
+      "contentType": "text/plain;charset=UTF-8",
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/c35fa7d6-2799-407c-8cd6-3ed0e7d41e8e.webp",
+      "status": 404,
+      "contentType": "text/plain;charset=UTF-8",
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/88e9a2c9-3fcb-43b0-abb8-f3a978c8ce51.webp",
+      "status": 404,
+      "contentType": "text/plain;charset=UTF-8",
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/232f4a08-c348-4551-8367-ac0a470c9b1b.webp",
+      "status": 404,
+      "contentType": "text/plain;charset=UTF-8",
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/31e47d38-245b-495c-ba5e-a681074270aa.webp",
+      "status": 404,
+      "contentType": "text/plain;charset=UTF-8",
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/92f67e70-feae-4314-9292-4a22aa8d1d56.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "265afdaccc686ce377a140e2bb86814eaf0c8554fc6393c5d8dbc470f3fd4704"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/a09454a9-4533-4927-b367-3d10e4f54a13.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e153f6178c835b7a8bd7abac1a84db6554939198f87eb603dd1601d1dfa9044e"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/f38979d5-42cf-447d-b291-808ecc18c726.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e520793f4fd5b3c3db453b1470511189f5d56f79ff1c14685ddf3db7935dd8f6"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/a9af6bce-712c-4771-86f9-e0134d83200f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ae102d2bd34a2fb863370c532da137c320a6cfea48cd78e0627a31b74a243494"
+    },
+    {
+      "path": "/content-assets/roletaiklaipedoje/9c87c9f6-e1b8-4592-a2b3-16f527437bf1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "538b590e999b193ab2dd558fcb428e059f3756bd9776efda3ff553df983165ba"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 404,
+      "contentType": "text/plain;charset=UTF-8",
+      "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "42106c95b6083523759d4b9c0e66ec16183fc5f8865d9afc2e13e56f34543f7e"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "96294895353235b00741782d5b2f712fd0479e9a06ce3c788e9a9db1de1bf3b0"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    {
+      "path": "/content-package.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "08839175ccdaa52769e604e59ce659181eade62cde02321b52a95a57be717de7"
+    },
+    {
+      "path": "/release-manifest.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6c56bcc8b52e621ace7a86de5ed6bfca9e1aa0987d0aa4446ed33031af825fa1"
+    },
+    {
+      "path": "/__niche-check-bde727bced0a8268",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "af65dba3f8af865731bf13972d1fc2089759bff17f453098ccc0e020334956a2"
+    }
+  ],
+  "auditScore": null,
+  "issues": [
+    "APPROVED_BODY_RENDERED:https://roletaiklaipedoje.lt/gidai/roletu-pasirinkimas",
+    "APPROVED_BODY_RENDERED:https://roletaiklaipedoje.lt/gidai/sviesa-ir-privatumas",
+    "APPROVED_BODY_RENDERED:https://roletaiklaipedoje.lt/gidai/matmenys-uzklausai",
+    "DISCOVERY_UNAVAILABLE:/sitemap.xml",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:8cdccbb2-c005-4b1e-9009-6a103eb91476",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:f89735ad-2a98-42b1-970b-32676758a669",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:c724b12b-2821-4990-95f8-bfc1167f49cb",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:edd9c46e-bac6-481d-97c3-dcfd33124f5f",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:decedd62-337c-4faa-8db1-19944097b625",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:8353af3d-6e5b-4a71-af7c-340912f004e8",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:954941b8-c1e2-4ead-bdce-bae596fc21c4",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:d9dd415b-b8da-448f-a693-86492b086b84",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:69064c9b-5ff0-481f-8044-7eda18da503a",
+    "PUBLIC_URL_MISSING_FROM_DISCOVERY:/sitemap.xml:fd424d59-4e70-4cfe-99f7-39dcae03e2b1"
+  ],
+  "limitations": [
+    "HTML checks do not prove computed browser visibility, image pixels, factual correctness or business capability.",
+    "Separate A–Z/browser/performance/form/source evidence and actual launch gates remain required.",
+    "Current package pages only; dynamic catalogue, query facets and other business routes retain their own acceptance.",
+    "Robots checks use the standard parser for search agents, not a verified crawler visit or proof of WAF/CDN/account access. Training and user-request bots have separate owner-controlled policies.",
+    "A controlled-clock local check is not evidence that the future live date has occurred.",
+    "GET requests only; no deployment, approval, paid research, DNS, mail or client writes."
+  ]
+}

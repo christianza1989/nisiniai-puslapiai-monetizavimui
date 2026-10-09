@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T13:09:28.348Z",
+  "siteId": "roletaiklaipedoje",
+  "synthetic": true,
+  "checks": {
+    "shortName": 400,
+    "noConsent": 400,
+    "invalidEmail": 400,
+    "origin": 403,
+    "size": 400,
+    "chunkedSize": 400,
+    "honeypot": 200,
+    "unknownHost": 404,
+    "accepted": 200
+  },
+  "durableStored": true,
+  "storedStatus": "new",
+  "consentTimestampStored": true,
+  "smtpDisabled": true,
+  "noVoiceCoreDependency": true,
+  "syntheticRecordRemoved": true,
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
+  "sourceVersion": "17b30eb1355a39407eeefc70b76ef298665fb565",
+  "sourceFingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960"
+}

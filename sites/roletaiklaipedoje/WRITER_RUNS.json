@@ -1,0 +1,418 @@
+[
+  {
+    "id": "8881af91-3607-47a6-91d8-5984c57d4823",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "8cdccbb2-c005-4b1e-9009-6a103eb91476",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:35:01.035Z",
+    "finishedAt": "2026-10-07T11:37:00.600Z",
+    "error": null,
+    "detail": "{\"blocks\":15,\"factChecks\":[\"Šiam gidui dar nepriskirtas peržiūrėtas, temos klausimą atitinkantis vaizdas. Parengti originalią iliustraciją, kurioje aiškiai palyginami audinio šviesos pralaidumas, tvirtinimo vieta ir lango naudojimo zona; nevaizduoti jos kaip kliento projekto ar konkretaus gamintojo gaminio.\",\"Nuorodos į gidus „Ką išmatuoti prieš roletų užklausą“ ir „Diena–naktis ar blackout: šviesa ir privatumas“ veda į esamus, bet dar nepatvirtintus puslapius. Jas aktyvinti tik patikrinus turinį ir abiem puslapiams tapus tinkamiems viešai rodyti.\",\"Prieš patvirtinant redakcinę versiją, dar kartą patikrinti gamintojų puslapių teiginius ir tai, kad pavyzdžiai nėra pateikiami kaip Klaipėdoje prieinamas MB Pinet asortimentas.\"],\"internalSuggestions\":2,\"externalSourcesToVerify\":4,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:37:00.593Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "6109b798-8600-4205-9820-55d43abe2d0f",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "f89735ad-2a98-42b1-970b-32676758a669",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:37:01.006Z",
+    "finishedAt": "2026-10-07T11:38:44.590Z",
+    "error": null,
+    "detail": "{\"blocks\":12,\"factChecks\":[\"Prieš tvirtinant tekstą patikrinti, ar info@pinet.lt kelias šiuo metu priima tokias poreikio registracijas; pateiktame kontekste pilotas apibūdintas kaip kuriamas.\",\"Prieš tvirtinant puslapį parengti, importuoti ir peržiūrėti šiai temai skirtą vaizdą. Turimų puslapio duomenų vaizdų sąrašas tuščias.\",\"Vidinių nuorodų tikslai dar nepatvirtinti viešam rodymui; palikti jas kaip pasiūlymus, kol puslapiai bus patvirtinti, paskelbti ir patikrinti.\"],\"internalSuggestions\":3,\"externalSourcesToVerify\":3,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:38:44.585Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "5cd30969-ab4a-40b7-87de-3f2c9a6d5573",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "c724b12b-2821-4990-95f8-bfc1167f49cb",
+    "status": "failed",
+    "startedAt": "2026-10-07T11:38:44.971Z",
+    "finishedAt": "2026-10-07T11:38:44.980Z",
+    "error": "Turinio kadencija turi būti monthly arba weekly.",
+    "detail": "",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "aea0423a-0af1-4022-9072-c459dbdb31dc",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "c724b12b-2821-4990-95f8-bfc1167f49cb",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:40:10.243Z",
+    "finishedAt": "2026-10-07T11:40:39.511Z",
+    "error": null,
+    "detail": "{\"blocks\":13,\"factChecks\":[\"Prieš publikavimą sukurti, prijungti ir peržiūrėti šiam matavimo gidui skirtą teminį vaizdą; patikrinti jo alt tekstą ir matomumą mobiliajame bei darbalaukio vaizde.\",\"Prieš publikavimą patikrinti, kad į info@pinet.lt siunčiamas poreikio registracijos laiškas pasiekia numatytą gavėją ir kad viešas tekstas teisingai apibūdina piloto užklausos tvarkymą.\"],\"internalSuggestions\":1,\"externalSourcesToVerify\":0,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:40:39.505Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "c6c6bf71-e7fe-4662-8424-0032157d53bc",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "060391b8-d36b-4717-b4ec-a6a8cd6665d0",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:40:40.504Z",
+    "finishedAt": "2026-10-07T11:42:46.277Z",
+    "error": null,
+    "detail": "{\"blocks\":14,\"factChecks\":[\"Prieš redakcinę peržiūrą ir išleidimą reikia sukurti bei peržiūrėti šio gido teminį vaizdą: palyginimo lapas šalia skirtingų neutralių roletų audinių pavyzdžių, be išgalvotų kainų, prekių ženklų ar klientų darbų. Pateiktų tinkamų vaizdų nėra.\",\"Prieš viešą išleidimą patikrinti, kad info@pinet.lt priima tokias poreikio registracijas, ir suderinti CTA su svetainės privatumo informacija apie užklausų tvarkymą. Tekste nepažadamas atsakymas ar paslaugos suteikimas.\"],\"internalSuggestions\":2,\"externalSourcesToVerify\":3,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:42:46.271Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "fb6f3e58-c771-492d-bbe6-881d146cb4aa",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "edd9c46e-bac6-481d-97c3-dcfd33124f5f",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:51:53.677Z",
+    "finishedAt": "2026-10-07T11:53:01.720Z",
+    "error": null,
+    "detail": "{\"blocks\":11,\"factChecks\":[\"Prieš patvirtinant juodraštį, faktiškai peržiūrėti ir priskirti homepage vaizdą desktop bei mobile formatu; pateikti assetų metaduomenys nepatvirtina, kad jų pikseliai ar kadravimas buvo patikrinti.\",\"Prieš išleidžiant nuorodą į „Aprašykite savo langą“, patikrinti galutinį kontaktų puslapio turinį ir patvirtintą jo versiją. Šiuo metu kataloge jis yra nepatvirtintas juodraštis.\"],\"internalSuggestions\":1,\"externalSourcesToVerify\":0,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:53:01.713Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "aadcfbb4-fd4a-4cf5-9ec1-7f1c37a44711",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "decedd62-337c-4faa-8db1-19944097b625",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:53:02.383Z",
+    "finishedAt": "2026-10-07T11:54:24.223Z",
+    "error": null,
+    "detail": "{\"blocks\":5,\"factChecks\":[\"Trys nurodyti gidai dar nepatvirtinti ir nepaskelbti. Prieš rodant nuorodas patikrinkite jų patvirtinimą, paskelbimo laiką, domeno tinkamumą ir veikiančius URL; iki tol nuorodos lieka pasiūlymai.\",\"Prieš patvirtinant gidų indeksą peržiūrėkite tikrus jo vaizdus staliniame ir mobiliajame rodiniuose: kiekviena miniatiūra turi atitikti susietą gidą, o atsakingi vaizdų failai turi būti įkeliami. Pateikti turto aprašai savaime nepatvirtina vaizdo ar jo atvaizdavimo.\"],\"internalSuggestions\":3,\"externalSourcesToVerify\":0,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:54:24.218Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "ff5181de-c150-4263-a57e-fa4207c4aed4",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "8353af3d-6e5b-4a71-af7c-340912f004e8",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:54:25.121Z",
+    "finishedAt": "2026-10-07T11:54:57.313Z",
+    "error": null,
+    "detail": "{\"blocks\":8,\"factChecks\":[\"Prieš publikavimą patikrinti, kad puslapyje veikia vardą, el. paštą, žinutę ir sutikimą turinti forma, pateikta užklausa išsaugoma ir automatiškai neperduodama trečiajai šaliai; patikrinti, kad sutikimo tekstas sutampa su Privatumo puslapiu.\",\"Patikrinti, kad info@pinet.lt veikia kaip viešas kontaktas.\"],\"internalSuggestions\":3,\"externalSourcesToVerify\":0,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:54:57.307Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "8dff7604-f22e-4095-970f-12026327f198",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "954941b8-c1e2-4ead-bdce-bae596fc21c4",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:54:57.424Z",
+    "finishedAt": "2026-10-07T11:55:32.168Z",
+    "error": null,
+    "detail": "{\"blocks\":9,\"factChecks\":[\"Poreikių surinkimo pilotas nurodytas kaip kuriamas. Prieš skelbiant patikrinti, ar kontaktų puslapio registracijos veiksmas jau veikia; jei ne, nekurti įspūdžio, kad užklausą galima pateikti per neveikiančią formą.\",\"Prieš viešinimą atskirai patikrinti, ar info@pinet.lt laiškai realiai gaunami. Pateiktas adresas patvirtintas, tačiau laiško pristatymas šiame juodraštyje nepatikrintas.\"],\"internalSuggestions\":3,\"externalSourcesToVerify\":0,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:55:32.161Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "353a4194-3a41-4735-b5b6-3540b72ee161",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "d9dd415b-b8da-448f-a693-86492b086b84",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:55:32.715Z",
+    "finishedAt": "2026-10-07T11:56:28.391Z",
+    "error": null,
+    "detail": "{\"blocks\":7,\"factChecks\":[],\"internalSuggestions\":1,\"externalSourcesToVerify\":0,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:56:28.385Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "c3db9941-193e-476d-b236-3c47685cd824",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "69064c9b-5ff0-481f-8044-7eda18da503a",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:56:29.221Z",
+    "finishedAt": "2026-10-07T11:57:34.274Z",
+    "error": null,
+    "detail": "{\"blocks\":13,\"factChecks\":[\"Prieš viešai įjungiant formą patikrinti tikrą duomenų srautą, hostingo, D1 ir el. pašto paslaugų teikėjų tapatybes, jų vaidmenis, duomenų saugojimo vietas bei galimus perdavimus; pagal faktus papildyti pranešimą. Neteigti, kad duomenys lieka ES ar nėra perduodami už jos ribų, kol tai nepatikrinta.\",\"Patikrinti, kad formoje atskiras sutikimo laukelis nėra iš anksto pažymėtas, jo tekstas aiškiai nurodo tvarkymo tikslą, o sutikimo įrašas ir laikas iš tikrųjų išsaugomi.\",\"Patikrinti, kad MB Pinet gali praktiškai įvykdyti nurodytą rankinį ištrynimą per 90 dienų, anksčiau pasibaigus tikslui ar gavus sutikimo atšaukimą; šiuo metu neteigti, kad ištrynimas automatizuotas.\",\"Išsiaiškinti, ar svetainėje renkami serverio žurnalai, slapukų ar analitikos duomenys, įskaitant dalyje reason paminėtą agreguotą pirmosios šalies puslapio naudojimo matavimą. Jei taip, įtraukti jų duomenų kategorijas, tikslus, pagrindus, saugojimo terminus ir tiekėjus.\",\"Patikrinti, ar MB Pinet paskyrė duomenų apsaugos pareigūną ir ar valdytojo tapatybei ar kontaktams reikia papildomų duomenų prieš publikavimą.\",\"Patikrinti, kad viešos formos privatumo tekstas, sutikimo veiksmas ir duomenų tvarkymo pagrindas sutampa su faktiniu diegimu; šiame juodraštyje sutikimo pagrindas perimtas iš pateikto piloto aprašo.\"],\"internalSuggestions\":0,\"externalSourcesToVerify\":3,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:57:34.267Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "d611011f-de8c-40f6-8646-7bd61db52621",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "fd424d59-4e70-4cfe-99f7-39dcae03e2b1",
+    "status": "failed",
+    "startedAt": "2026-10-07T11:57:34.879Z",
+    "finishedAt": "2026-10-07T11:57:52.692Z",
+    "error": "Studija buvo paleista iš naujo. Pradėkite šį darbą dar kartą.",
+    "detail": "",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  },
+  {
+    "id": "a96f9f2d-659d-44f0-8997-4a9637217774",
+    "type": "draft",
+    "siteId": "roletaiklaipedoje",
+    "pageId": "fd424d59-4e70-4cfe-99f7-39dcae03e2b1",
+    "status": "complete",
+    "startedAt": "2026-10-07T11:58:14.870Z",
+    "finishedAt": "2026-10-07T11:59:50.238Z",
+    "error": null,
+    "detail": "{\"blocks\":13,\"factChecks\":[\"Prieš publikavimą patikrinti, ar pagal aktualius reikalavimus prie operatoriaus pavadinimo būtina pateikti papildomus MB Pinet registracijos duomenis; jie nebuvo pateikti ir juos reikia gauti iš patikimo įmonės šaltinio.\",\"Sutikrinti aprašymą apie poreikio formą su veikiančia forma, faktiniu duomenų srautu ir Privatumo puslapiu; šio juodraščio metu jų veikimas ir konkretūs duomenų tvarkymo nustatymai nebuvo patikrinti.\"],\"internalSuggestions\":2,\"externalSourcesToVerify\":1,\"writerExecution\":{\"model\":\"gpt-6-luna\",\"reasoningEffort\":\"xhigh\",\"selection\":\"explicit\",\"reportedModel\":\"gpt-6-luna\",\"reportedEffort\":\"xhigh\",\"status\":\"cli-header-observed\",\"completedAt\":\"2026-10-07T11:59:50.232Z\"}}",
+    "editorialSkill": {
+      "name": "niche-content-planner",
+      "modules": [
+        "niche-seo-geo-core"
+      ],
+      "mode": "draft",
+      "files": [
+        "../PROJECT_CONTRACT.md",
+        "SKILL.md",
+        "references/studio-contract.md",
+        "references/quality-review.md",
+        "references/network-linking.md",
+        "references/media-workflow.md",
+        "references/content-workflow.md",
+        "../niche-seo-geo-core/SKILL.md",
+        "../niche-seo-geo-core/references/studio-integration.md",
+        "../niche-seo-geo-core/references/evidence-contract.md",
+        "../niche-seo-geo-core/references/geo-publishing.md"
+      ],
+      "fingerprint": "afe5d06eb5a61dd6d50689c57f0c7f19fb87d6322959cca196f711c55d3561e2"
+    }
+  }
+]

@@ -1,9 +1,11 @@
-import {readFile,writeFile} from 'node:fs/promises';
+import {readFile,writeFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {spawn,execFileSync} from 'node:child_process';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {catalogFromMarkdown,scoreAudit} from './score-audit.mjs';
+import {request as httpRequest} from 'node:http';
+import {request as httpsRequest} from 'node:https';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const arg=(name,args)=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
@@ -12,6 +14,29 @@ const isLoopback=u=>['127.0.0.1','localhost','[::1]'].includes(u.hostname);
 const urlFor=(pkg,p)=>new URL('/'+p.slug,'https://'+pkg.canonicalHost).href;
 const urlsIn=text=>new Set((text.match(/https?:\/\/[^\s<>\[\]()"']+/g)||[]).map(u=>u.replace(/&amp;/g,'&').split('#')[0]));
 const normalizeReading=text=>String(text).replace(/\\([\\[\]])/g,'$1').replace(/\s+/g,' ').trim();
+export async function siteSourceBinding(core,schemaVersion=1){
+  const projectionFile=schemaVersion===2?'lib/content-projection-v2.mjs':'lib/niche-links.mjs';
+  const files=['scripts/content-package-core.mjs',projectionFile,'proxy.ts','app/niche/[siteId]/[[...slug]]/page.tsx','app/niche/[siteId]/lead/route.ts','app/niche/[siteId]/interest/route.ts','app/niche/[siteId]/brand-icon/route.ts','lib/niche-sites.ts','lib/niche-media.mjs','config/niche-network.json',...(schemaVersion===2?['scripts/content-package-v2.mjs','schemas/content-package.v2.schema.json','lib/content-seo-v2.mjs']:['lib/niche-seo.ts','lib/niche-schema-core.mjs','lib/niche-reading.mjs'])];
+  const components=(await readdir(path.join(core,'components/niche'))).filter(f=>/\.(tsx|css)$/.test(f)).map(f=>'components/niche/'+f);
+  const sources=await Promise.all([...new Set([...files,...components])].sort().map(async file=>({file,sha256:sha(await readFile(path.join(core,file)))})));
+  return {fingerprint:sha(JSON.stringify(sources)),files:sources};
+}
+export function sourceBindingIssues(audit,binding){return audit.version?.sourceFingerprint===binding.fingerprint?[]:['AUDIT_SOURCE_FINGERPRINT_MISMATCH'];}
+export async function verifierResponse(url,canonicalHost){
+  if(!isLoopback(url)){
+    const r=await fetch(url,{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}});
+    return {status:r.status,headers:r.headers,data:Buffer.from(await r.arrayBuffer())};
+  }
+  // Native HTTP actually honors the virtual Host. Node's fetch may ignore it,
+  // accidentally inspecting localhost instead of the requested tenant.
+  return new Promise((resolve,reject)=>{
+    const client=url.protocol==='https:'?httpsRequest:httpRequest;
+    const req=client(url,{headers:{Host:canonicalHost,'Cache-Control':'no-cache'},signal:AbortSignal.timeout(20000)},r=>{
+      const chunks=[];let size=0;r.on('data',c=>{size+=c.length;if(size>8*1024*1024){req.destroy(Error('Response exceeds bounded inspector size'));return;}chunks.push(c);});
+      r.on('error',reject);r.on('end',()=>resolve({status:r.statusCode,headers:new Headers(Object.entries(r.headers).flatMap(([k,v])=>v===undefined?[]:[[k,Array.isArray(v)?v.join(', '):v]])),data:Buffer.concat(chunks)}));
+    });req.on('error',reject);req.end();
+  });
+}
 export function verifyDiscoveryOutputs(pkg,pages,outputs){
   const issues=[],eligible=new Set(pages.map(p=>p.id));
   for(const [pathname,text] of Object.entries(outputs)){
@@ -27,7 +52,7 @@ export function verifyDiscoveryOutputs(pkg,pages,outputs){
       const section=sections.find(s=>s.match(/^URL:\s*(\S+)/)?.[1]===e.url);
       if(!section){issues.push('READING_SECTION_MISSING:'+e.id);continue;}
       const normalized=normalizeReading(section);
-      if(e.contentVersion===2||['article','guide'].includes(e.type))for(const text of e.bodyTexts)if(text.trim()&&!normalized.includes(normalizeReading(text)))issues.push('READING_BODY_MISSING:'+e.id);
+      if(e.contentVersion===2||e.bodyProjection==='canonical'||['article','guide'].includes(e.type))for(const text of e.bodyTexts)if(text.trim()&&!normalized.includes(normalizeReading(text)))issues.push('READING_BODY_MISSING:'+e.id);
       if(e.contentVersion===2){
         for(const date of [e.datePublished,e.dateModified].filter(Boolean))if(!section.includes(date))issues.push('READING_APPROVED_DATE_MISSING:'+e.id);
         for(const author of e.authors)if(author.url&&!urlsIn(section).has(author.url))issues.push('READING_PROFILE_MISSING:'+e.id);
@@ -55,7 +80,7 @@ export function articleExpectations(pkg,pages,indexSlug,allowNoindex=false){
       return {name:a.name,kind:a.kind==='organization'?'Organization':'Person',url:profiles.length===1?urlFor(pkg,profiles[0]):''};
     });
     const bodyTexts=p.body.flatMap(b=>b.text?[b.text]:b.content?[b.content.map(n=>n.text).join('')]:b.items?b.items.map(row=>typeof row==='string'?row:row.map(n=>n.text).join('')):[]);
-    return {id:p.id,type:p.type,contentVersion:p.contentVersion||1,title:p.title,description:p.description,locale:pkg.locale,origin,url:urlFor(pkg,p),
+    return {id:p.id,type:p.type,contentVersion:p.contentVersion||1,bodyProjection:p.bodyProjection,title:p.title,description:p.description,locale:pkg.locale,origin,url:urlFor(pkg,p),
       isArticleIndex:p.slug===indexSlug,articleIndexUrl:origin+'/'+indexSlug,publicUrls,authors,allowNoindex,
       hiddenUrls:pkg.pages.filter(p=>!pages.some(l=>l.id===p.id)).map(p=>urlFor(pkg,p)),
       datePublished:p.editorial?.datePublished||null,dateModified:p.editorial?.dateModified||null,
@@ -73,6 +98,7 @@ export async function verifySiteCompletion(args){
   const {validateContentPackage}=await import(pathToFileURL(path.join(core,'scripts/content-package-core.mjs')));
   validateContentPackage(pkg);
   const projectionFile=pkg.schemaVersion===2?'lib/content-projection-v2.mjs':'lib/niche-links.mjs';
+  const sourceBinding=await siteSourceBinding(core,pkg.schemaVersion);
   const projection=await import(pathToFileURL(path.join(core,projectionFile)));
   const settings=JSON.parse(await readFile(path.join(core,'config/niche-network.json'),'utf8'));
   // Eligibility is imported from the active core, never reimplemented here.
@@ -82,8 +108,8 @@ export async function verifySiteCompletion(args){
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');
   if(!pages.some(p=>['guide','article'].includes(p.type)))issues.push('NO_PUBLIC_ARTICLE_TO_INSPECT');
   const get=async pathname=>{
-    const response=await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache',...(isLoopback(origin)?{Host:pkg.canonicalHost}:{})}});
-    const data=Buffer.from(await response.arrayBuffer());
+    const response=await verifierResponse(new URL(pathname,origin),pkg.canonicalHost);
+    const data=response.data;
     if(data.length>8*1024*1024)throw Error('Response exceeds bounded inspector size: '+pathname);
     const receipt={path:pathname,status:response.status,contentType:response.headers.get('content-type')||'',sha256:sha(data)};
     const header=arg('--package-header',args);if(header&&response.headers.get(header)!==packageSha256)issues.push('HOSTED_PACKAGE_HEADER:'+pathname);
@@ -118,13 +144,13 @@ export async function verifySiteCompletion(args){
     const audit=JSON.parse(await readFile(required('--audit',args),'utf8'));
     if(audit.siteId!==pkg.siteId||audit.canonicalHost!==pkg.canonicalHost||audit.version?.packageSha256!==packageSha256)issues.push('AUDIT_TARGET_OR_PACKAGE_MISMATCH');
     if(!audit.evaluatedAt||!audit.version?.sourceVersion)issues.push('AUDIT_VERSION_OR_DATE_MISSING');
+    issues.push(...sourceBindingIssues(audit,sourceBinding));
     const catalog=catalogFromMarkdown(await readFile(new URL('../references/checklist.md',import.meta.url),'utf8'));
     auditScore=scoreAudit(audit,catalog);if(!auditScore.stages.local.perfect)issues.push('LOCAL_AUDIT_INCOMPLETE');
   }
   let coreCommit=null;try{coreCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:core,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch{}
-  const sourceFiles=['scripts/content-package-core.mjs',projectionFile,...(pkg.schemaVersion===2?['scripts/content-package-v2.mjs','schemas/content-package.v2.schema.json','lib/content-seo-v2.mjs']:['lib/niche-seo.ts','lib/niche-schema-core.mjs'])];
   const report={version:1,checkedAt:new Date().toISOString(),projectionAt:new Date(now).toISOString(),siteId:pkg.siteId,canonicalHost:pkg.canonicalHost,transportOrigin:origin.origin,
-    packageSha256,inspector:{scriptSha256:sha(await readFile(import.meta.filename)),htmlParserSha256:sha(await readFile(path.join(import.meta.dirname,'rendered_site.py')))},source:{coreCommit,files:await Promise.all(sourceFiles.map(async file=>({file,sha256:sha(await readFile(path.join(core,file)))})))},
+    packageSha256,inspector:{scriptSha256:sha(await readFile(import.meta.filename)),htmlParserSha256:sha(await readFile(path.join(import.meta.dirname,'rendered_site.py')))},source:{coreCommit,...sourceBinding},
     state:issues.length?'NOT_COMPLETE':args.includes('--render-only')?'RENDERED_CHECKS_PASS_NOT_SITE_ACCEPTANCE':'LOCAL_DELIVERY_CHECKS_PASS',
     publicPages:pages.length,hiddenPages:pkg.pages.length-pages.length,articles:pages.filter(p=>['guide','article'].includes(p.type)).length,rendered,crawlerPolicy,http,auditScore,issues:[...new Set(issues)],
     limitations:['HTML checks do not prove computed browser visibility, image pixels, factual correctness or business capability.','Separate A–Z/browser/performance/form/source evidence and actual launch gates remain required.','Current package pages only; dynamic catalogue, query facets and other business routes retain their own acceptance.','Robots checks use the standard parser for search agents, not a verified crawler visit or proof of WAF/CDN/account access. Training and user-request bots have separate owner-controlled policies.','A controlled-clock local check is not evidence that the future live date has occurred.','GET requests only; no deployment, approval, paid research, DNS, mail or client writes.']};

@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-07T13:14:28.000Z",
+  "siteId": "roletaiklaipedoje",
+  "sourcePath": "/gidai/matmenys-uzklausai",
+  "leadId": "dacaf4dd-53d4-48b9-bf6e-f27d8b146b02",
+  "messageId": "<dacaf4dd-53d4-48b9-bf6e-f27d8b146b02@pinet.lt>",
+  "recipient": "info@pinet.lt",
+  "synthetic": true,
+  "durableStored": true,
+  "consentTimestampStored": true,
+  "smtpAccepted": true,
+  "ownInboxReceived": false,
+  "tlsVerified": true,
+  "imapAuthenticated": true,
+  "onlyMatchingHeaderSearch": true,
+  "syntheticLeadRemoved": true,
+  "result": "SMTP accepted; the exact marked message was found in INBOX.Junk, not INBOX. SPF, DKIM and DMARC passed; provider spam score was not supplied. No move, second message or configuration change.",
+  "inbox": {
+    "date": "2026-10-07T13:14:28.000Z",
+    "tlsVerified": true,
+    "imapAuthenticated": true,
+    "mailbox": "INBOX",
+    "testId": "dacaf4dd-53d4-48b9-bf6e-f27d8b146b02",
+    "received": false
+  },
+  "packageSha256": "a62d94542fd2a2fe8b4f402c0f3b2e624dedf465ebe82dab7dc80238cf06e738",
+  "sourceVersion": "17b30eb1355a39407eeefc70b76ef298665fb565",
+  "sourceFingerprint": "e12c812c71cb64f605cde255f0001c221f19b3e9a62077e397a2cf0426daf960",
+  "deliveryDiagnostic": {
+    "at": "2026-10-07T13:50:53.503Z",
+    "file": "MAIL_DIAGNOSTIC.json",
+    "matches": [
+      {
+        "folder": "INBOX.Junk",
+        "found": true,
+        "authenticationResults": [
+          "dkim=pass",
+          "dmarc=pass",
+          "spf=pass"
+        ],
+        "spamFlag": "not supplied",
+        "spamScore": "not supplied",
+        "onlySelectedSelfTestHeadersRead": true
+      }
+    ]
+  }
+}

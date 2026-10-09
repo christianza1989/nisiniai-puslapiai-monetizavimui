@@ -77,3 +77,11 @@ Modelio mutacijos serializuojamos process-local ir atominiu tarp-procesiniu `.mo
 ## Bendras visų nišų review ir release (2026-10-05)
 
 CONTENT_CORE.md yra aktuali bendra eiga: policy/kadencija/timezone, kelių CLI partijų V1 generavimas, draft link finalizavimas, revision-bound agento review, atomic batch approval ir immutable release su paketo/media SHA. GUI turi Turinio eiga. V1 generavimo užduotis įjungia griežtus naujus review/export vartus; legacy įrašai migruoja su realia peržiūra. V2 review/release bendri, jo tekstinis generatorius vis dar OFF. Agentas turi faktiškai patikrinti turinį/asetus; receipt pildymas nėra patikra. Release lieka exported-not-deployed. Skaityti [CONTENT_CORE](../CONTENT_CORE.md); prieš importą naudoti scripts/verify-content-release.mjs. Ankstesnės instrukcijos apie tik planuojamą įrodymų žurnalą pakeistos šiuo inkrementu.
+
+## 2026-10-07 patikrintas writer ir acceptance perdavimas
+
+STUDIO_CODEX_MODEL ir STUDIO_CODEX_REASONING_EFFORT (pvz. gpt-6-luna/xhigh) perduodami faktiniam CLI po --ignore-user-config. writerExecution skiria prašymą nuo stebėto CLI header; mismatch stabdo, tylaus fallback nėra. Pokalbio modelio žyma nėra writer įrodymas. Senas serveris vykdo seną įkeltą kodą: naują kodą tikrinti idle/isolated single-owner instancija. Hostname/PID owner neleidžia kitai instancijai atkurti gyvo darbo kaip failed.
+
+Coverage — bounded distinct-reader-job planas be savaitinės kvotos. Same-day dependency-ready datos leistinos, transporto batch limit nėra temų riba; neparašyti planai lieka privatūs. V1 home optional bodyProjection: canonical yra pasirašoma schema/abiejų validatoriuose/hash per naują review; legacy home hash/summary nekinta. Tikrinti visą HTML ir LLM body.
+
+SITE_COMPLETION turi paketo SHA ir faktinį sourceFingerprint, ne vien sourceVersion užrašą. --render-only nėra priėmimas. Visi85 A–Z ir score-audit --require-local turi likti FAIL/UNVERIFIED iki tikrų browser/200%/SMTP+INBOX įrodymų. Actual same-package HTTP prieš/po publishAt atskiras nuo kontrolinio laikrodžio. Pavyzdys project-root sites/roletaiklaipedoje/HANDOVER.md.

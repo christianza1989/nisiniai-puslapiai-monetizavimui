@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Public source4b960b2132f28fc2a4839c570f9df4d2533698f1 adds same-tab host-isolated sessionStorage checkpoint, fixed30min deadline, server-authenticated restore, pending-message idempotency and saved-contact revision; excludes raw contact inputs and voice credentials. End/reset clears owned checkpoint, unavailable storage preserves in-memory chat. Optional30-day memory stays separate. Original browser page-navigation loss and later Chrome control interruption retained; no model calls or source-instruction promotion this turn.",
+  "eventId": "9e42c623-18a4-4c65-8cb8-91c7ee54f866",
+  "sequence": 2,
+  "at": "2026-10-09T23:24:27.264Z"
+}

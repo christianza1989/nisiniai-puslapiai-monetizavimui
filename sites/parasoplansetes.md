@@ -1,4 +1,6 @@
 # parasoplansetes.lt — StepOver Lietuvoje
+
+Dabartinis 2026-10-10 checkpoint: [Cloudflare ir C6 tęsimas](parasoplansetes/AGENT-CONTINUATION-20261010.md). Vieša jungtis atkurta, public4b960b2 išsaugo same-tab chat checkpoint;66core/19SEO/62remote PASS. Actual pradinis kontaktas išsaugotas, navigacijos FAIL sutvarkytas kode, bet post-fix browser navigacija/modelio atsakymas laukia Chrome jungties atkūrimo. Du privatūs Codex kandidatai atmesti, bazinės instrukcijos nepakeistos;10/10 nepriimtas. SMTP/IMAP login PASS, naujo OpenRouter mail/reply nėra.0naujų mokamų kvietimų, likusi chat autorizacija užrakinta; ankstesnės žemiau esančios būsenos yra istorija.
 2026-10-08. siteId: parasoplansetes. Rinka LT / lt. Savininkas pasirinko šį domeną StepOver pasiūlymui; jo esamas signaturepads.lt turi likti signotec pasiūlymui. Rinka — bet kuris verslas su tinkamu pasirašymo poreikiu.
 [Verslas](parasoplansetes/BUSINESS.md) · [Tyrimas](parasoplansetes/RESEARCH.md) · [Įrankiai](parasoplansetes/TOOLS.md).
 Google pirmos dvi organinės pozicijos — savininko tikslas, ne pasiektas ar garantuotas rezultatas.

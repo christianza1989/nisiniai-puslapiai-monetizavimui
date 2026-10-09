@@ -22,11 +22,11 @@ Kainos DataForSEO užklausa grąžino HTTP200, bet vidinis task 40101 „Interna
 
 „Elektroninis parašas planšete“ ir „parašo planšetės integracija“ grąžino daug nesusijusių tablet / švietimo rezultatų; integraciją patikrinus per AnyAPI situacija išliko panaši. Tai semantiškai silpni duomenys, kurie neįrodo mažos konkurencijos, paklausos nebuvimo ar laisvos rinkos. Integracijos turinys reikalingas dėl aiškaus IT sprendimo ir gamintojo API šeimų.
 
-„StepOver eSignatureOffice“ mėginys parodė eSignatureOffice, OfficePlugin ir instrukcijų įvairovę. Gamintojo pirminiai puslapiai patvirtina skirtingas programas. Dėl skirtingo rezultato PDF pasirašymas ir parašo vaizdas Word/Excel gauna skirtingus briefus. Nuotolinės užklausos rezultatai maišo QES, bendrą PDF ir debesijos procesus; informacinis kelių palyginimas atskiriamas nuo dar nepatvirtinto mūsų cloud pardavimo pasiūlymo.
+„StepOver eSignatureOffice“ mėginys parodė eSignatureOffice, OfficePlugin ir instrukcijų įvairovę. [Gamintojo programų katalogas](https://stepover.com/en/products/software/) patvirtina skirtingas programas. Dėl skirtingo rezultato PDF pasirašymas ir parašo vaizdas Word/Excel gauna skirtingus briefus. Nuotolinės užklausos rezultatai maišo QES, bendrą PDF ir debesijos procesus; informacinis kelių palyginimas atskiriamas nuo dar nepatvirtinto mūsų cloud pardavimo pasiūlymo.
 
 Ankstesnis 2026-10-08 Google Ads LT / lt stebėjimas: „PDF pasirašymas“ 260, „StepOver“ 10, „signotec“ 10; paskutinė mėnesinė eilutė 2026-08. Dauguma nišos frazių turi **null**, o ne0. Ads konkurencija nėra organinio SEO sunkumas; plati PDF apimtis nėra šio verslo pirkėjų skaičius. Kitų plano frazių apimtis nežinoma. GSC / GA4 ir AI citavimo matavimai neprijungti.
 
-Gamintojo dabartiniame signature-pads kataloge yra **nextGen Pad 5**, todėl jis įtrauktas į sąlyginį produktų planą. **duraSign Pad 10.0** dabartinėje apžvalgoje nerastas: esamas puslapis išsaugomas, prieš atnaujinant pardavimo pažadą reikia patvirtinti tiekimą ir palaikymą. Modelio nebuvimas viename katalogo puslapyje nėra automatinio ištrynimo ar301 pagrindas.
+[Gamintojo dabartiniame signature-pads kataloge](https://stepover.com/en/products/signature-pads/) yra **nextGen Pad 5**, todėl jis įtrauktas į sąlyginį produktų planą. **duraSign Pad 10.0** dabartinėje apžvalgoje nerastas: esamas puslapis išsaugomas, prieš atnaujinant pardavimo pažadą reikia patvirtinti tiekimą ir palaikymą. Modelio nebuvimas viename katalogo puslapyje nėra automatinio ištrynimo ar301 pagrindas.
 
 ## Dviejų svetainių turinio ir migracijos taisyklės
 
@@ -70,7 +70,7 @@ Kiekvienas URL turi vieną pagrindinę skaitytojo užduotį, natūralų title/H1
 
 GEO turinys turi būti lengvai pacituojamas: tikslūs StepOver / modelių / programų pavadinimai, aiškus skirtumas tarp parašo vaizdo, dokumento susiejimo ir parašo lygio; apibrėžti proceso žingsniai; šaltinis prie esminio teiginio; bandymo aplinka ir tikros datos, kai yra matavimas. Kiekvieno gido lentelė ar klausimynas atsako į konkretų klausimą, nėra bendras FAQ užpildas. JSON-LD turi atitikti matomą turinį; jokių netikrų kainų / availability / rating.
 
-Google nurodo, kad AI Overviews / AI Mode remiasi įprastais SEO pagrindais ir indeksavimo tinkamumu, be specialaus AI schema reikalavimo. Todėl svarbiausia: tekstas matomas HTML, aiški vidinių nuorodų struktūra, crawl prieiga, indeksuojamas tikras domenas ir patikrintas turinys. Bendro core llms išvestys yra papildomos discovery priemonės, ne įtraukimo ar pozicijos garantija. Kitų AI variklių prieigos taisykles tikrinti pagal jų actual crawler, prieš keičiant robots ar apsaugą.
+[Google AI paieškos gairės](https://developers.google.com/search/docs/appearance/ai-features) nurodo, kad AI Overviews / AI Mode remiasi įprastais SEO pagrindais ir indeksavimo tinkamumu, be specialaus AI schema reikalavimo. Todėl svarbiausia: tekstas matomas HTML, aiški vidinių nuorodų struktūra, crawl prieiga, indeksuojamas tikras domenas ir patikrintas turinys. Bendro core llms išvestys yra papildomos discovery priemonės, ne įtraukimo ar pozicijos garantija. Kitų AI variklių prieigos taisykles tikrinti pagal jų actual crawler, prieš keičiant robots ar apsaugą.
 
 Numatytas ryšių grafas jungia šaknį su palaikančiais atsakymais ir reikalingu kitu žingsniu. Naujas target planRef nėra viešas href ar tikras pageId; žemiau jie aiškiai atidėti. Esamo puslapio patvirtintas link snapshot nepasikeičia vien dėl to, kad atsirado naujas tikslas. Nejungti visų puslapių su visais ir neslėpti suplanuotų klaidingų nuorodų.
 
@@ -96,7 +96,7 @@ Dabartiniame core nėra palaikomo pilno planningBrief/reconcile kelio. `content-
 
 ## Tyrimo išlaidos ir ribos
 
-Šis darbas: 6 DataForSEO kvietimai po0,002 USD ir2 AnyAPI kvietimai faktiškai po0,0004 USD = **0,0128 USD**. AnyAPI katalogo orientyras buvo 0,0009 USD/kvietimui, todėl iš anksto nurodytas maksimalus dviejų patikrinimų orientyras 0,0018 USD buvo didesnis už actual charge. Ankstesni 0,231 USD + šis darbas = **0,2438 USD**. Pagal ankstesniame SEO_BASELINE išsaugotą 2026-10-08 ECB orientyrą 1 EUR=1,1186 USD — apie 0,218 EUR; tai ne naujo valiutos kurso tikrinimas ar mokėjimo mokesčio pažadas. **Savininko 2 EUR limitas neviršytas.**
+Šis darbas: 6 DataForSEO kvietimai po0,002 USD ir2 AnyAPI kvietimai faktiškai po0,0004 USD = **0,0128 USD**. AnyAPI katalogo orientyras buvo 0,0009 USD/kvietimui, todėl iš anksto nurodytas maksimalus dviejų patikrinimų orientyras 0,0018 USD buvo didesnis už actual charge. Ankstesni 0,231 USD + šis darbas = **0,2438 USD**. Pagal ankstesniame [SEO_BASELINE](SEO_BASELINE.md) išsaugotą 2026-10-08 ECB orientyrą 1 EUR=1,1186 USD — apie 0,218 EUR; tai ne naujo valiutos kurso tikrinimas ar mokėjimo mokesčio pažadas. **Savininko 2 EUR limitas neviršytas.**
 
 Nėra naujų mokamų prenumeratų, mokamo background crawler ar automatinio turinio publikavimo. Turinio, programų, kainų ir specialių dokumentų teiginiai tikrinami prieš actual rašymą / peržiūrą; plane nurodyta source candidate neprilygsta perskaitytam ir pritaikytam šaltiniui.
 
@@ -346,7 +346,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** StepOver; StepOver Lietuva; StepOver parašo planšetės. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06, S01, S05. Patikrinti atstovavimo statusą ir faktines vykdymo galimybes; nevartoti oficialus ar išskirtinis be įrodymo.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/), [S01](https://stepover.com/en/products/software/), [S05](https://stepover.com/en/products/developer/). Patikrinti atstovavimo statusą ir faktines vykdymo galimybes; nevartoti oficialus ar išskirtinis be įrodymo.
 
 **Medija:** Esama tikro modelio nuotrauka ir trijų kelių schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -370,7 +370,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetės; paraso plansetes; parašų planšetės; skaitmeninio parašo planšetės; StepOver modeliai. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06. Visų modelių aktualūs OEM duomenys ir tiekimas; dabartiniame gamintojo kataloge duraSign10.0 nerastas, jo statusą tikrinti atskirai.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/). Visų modelių aktualūs OEM duomenys ir tiekimas; dabartiniame gamintojo kataloge duraSign10.0 nerastas, jo statusą tikrinti atskirai.
 
 **Medija:** Esamos penkių modelių nuotraukos; NG5 tik gavus teisėtą assetą. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -394,7 +394,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** StepOver programinė įranga; parašo planšetės programa. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S01, S02, S03, S04. OEM funkcijos patikrintos katalogo lygiu; kiekvieno modulio versija, licencija ir LT pardavimo sąlygos dar tikrinamos.
+**Šaltiniai / būtini įrodymai / ribos:** [S01](https://stepover.com/en/products/software/), [S02](https://stepover.com/en/products/software/esignatureoffice/), [S03](https://stepover.com/en/products/software/print2ng/), [S04](https://stepover.com/en/products/cloud-sign-online/). OEM funkcijos patikrintos katalogo lygiu; kiekvieno modulio versija, licencija ir LT pardavimo sąlygos dar tikrinamos.
 
 **Medija:** Programinių kelių schema; tikros ekranų nuotraukos tik atlikus bandymą. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -418,7 +418,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** StepOver integracija; parašo planšetės integracija; StepOver API. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S05. Konkrečios sistemos API, OEM versijų suderinamumas ir realūs darbų pajėgumai. Bendras SERP semantiškai silpnas.
+**Šaltiniai / būtini įrodymai / ribos:** [S05](https://stepover.com/en/products/developer/). Konkrečios sistemos API, OEM versijų suderinamumas ir realūs darbų pajėgumai. Bendras SERP semantiškai silpnas.
 
 **Medija:** Sistemų sąveikos schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -442,13 +442,13 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetės gidai; pasirašymo sprendimų instrukcijos. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S08. Rodyti tik eligible puslapius; būsimi briefai nėra veikiančios nuorodos.
+**Šaltiniai / būtini įrodymai / ribos:** [S08](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). Rodyti tik eligible puslapius; būsimi briefai nėra veikiančios nuorodos.
 
 **Medija:** Esamos tikros gido miniatiūros. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
 **CTA:** „Raskite savo proceso gidą“ → /kontaktai. Prašyti tik proceso informacijos, ne jautrių klientų dokumentų.
 
-**Ryšiai:** 
+**Ryšiai:** /gidai/kaip-pasirinkti-paraso-plansete („Kaip pasirinkti parašo planšetę verslui“): Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą. Tikras native ID: 02bdd2e3-be1e-496f-9d4d-9874746c5c05. /gidai/pdf-pasirasymas-plansete („PDF pasirašymas parašo planšete: visa darbo eiga“): Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą. Tikras native ID: c63ae7ee-761b-41a4-b84e-3a81d95deb4d. /gidai/paraso-plansetes-integracija („Parašo planšetės integracija: pasiruošimas ir priėmimas“): Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą. Tikras native ID: 56845903-0cbb-4648-85a5-3ee3356913ac. /gidai/terminalinis-serveris-paraso-plansete („Parašo planšetė terminaliniame serveryje ir Citrix“): Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą. Tikras native ID: baa2c200-0432-4568-9cc3-b559cf9b9c80. /gidai/paraso-galiojimas („Parašas planšete ir kvalifikuotas elektroninis parašas“): Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą. Atidėta iki tikro native ID ir peržiūros.
 
 **Priklausomybės:** Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos Faktinė temos medija arba pagrįsta išimtis Tikslus revision-bound review ir realus production eligibility Esamas ID 356f6a4a-c558-4825-adfb-96b96905a32e; saugoma revizija db69aadeebf819f0237f2e8a1c46fb91c207536f6c2b52b58d2749c5a2490cf4; esama publishAt 2026-10-08T16:03:32.126Z. Tai esamo puslapio peržiūros briefas, jo body ar data nekeisti.
 
@@ -472,7 +472,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **CTA:** „Siųskite proceso užklausą“ → /kontaktai. Prašyti tik proceso informacijos, ne jautrių klientų dokumentų.
 
-**Ryšiai:** 
+**Ryšiai:** /privatumas („Užklausos duomenys“): Sužinoti, kaip tvarkoma pateikta informacija. Tikras native ID: bbc91dc1-e0f5-46b3-8fc9-279cf7e7c8bb. /apie-projekta („Kas atsako į užklausą“): Patikrinti projekto operatorių. Tikras native ID: 25f43486-e140-4fcf-b965-e457e47d8e20.
 
 **Priklausomybės:** Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos Faktinė temos medija arba pagrįsta išimtis Tikslus revision-bound review ir realus production eligibility Esamas ID 874d6fea-8071-48d4-bc07-ea1004302e7e; saugoma revizija cc126b1c5263c601c7e40598b701083f3acfb4883994236f09c8d228c7eeb2c4; esama publishAt 2026-10-08T16:03:32.126Z. Tai esamo puslapio peržiūros briefas, jo body ar data nekeisti.
 
@@ -496,7 +496,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **CTA:** „Patikslinkite bendradarbiavimo apimtį“ → /kontaktai. Prašyti tik proceso informacijos, ne jautrių klientų dokumentų.
 
-**Ryšiai:** /gidai/pasirasymo-pilotas („Piloto priėmimas“): Patikrinti šį pasirinkimą prieš plėtrą. Atidėta iki tikro native ID ir peržiūros. /kainos („Komplekto ir darbų kaina“): Atskirti licencijas bei diegimo apimtį. Atidėta iki tikro native ID ir peržiūros.
+**Ryšiai:** /redakcija („Turinio tikrinimo metodika“): Sužinoti, kaip tikrinami teiginiai. Tikras native ID: 62ebfdac-b6e8-4fef-b591-f32b2bacd979.
 
 **Priklausomybės:** Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos Faktinė temos medija arba pagrįsta išimtis Tikslus revision-bound review ir realus production eligibility Esamas ID 25f43486-e140-4fcf-b965-e457e47d8e20; saugoma revizija f55616213831668a3581fffeb2a1019909ab21953e5c46a0036ab646c6c7f40e; esama publishAt 2026-10-08T16:03:32.126Z. Tai esamo puslapio peržiūros briefas, jo body ar data nekeisti.
 
@@ -514,13 +514,13 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** StepOver turinio šaltiniai. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S08, S09. Nesugalvoti ekspertų vardų ir kvalifikacijų; faktinis peržiūros žurnalas.
+**Šaltiniai / būtini įrodymai / ribos:** [S08](https://developers.google.com/search/docs/fundamentals/creating-helpful-content), S09. Nesugalvoti ekspertų vardų ir kvalifikacijų; faktinis peržiūros žurnalas.
 
 **Medija:** Vizualo nereikia; metodikos tekstas. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
 **CTA:** „Praneškite apie netikslumą“ → /kontaktai. Prašyti tik proceso informacijos, ne jautrių klientų dokumentų.
 
-**Ryšiai:** 
+**Ryšiai:** /apie-projekta („Projekto operatorius“): Patikrinti turinio ir pasiūlymo atsakomybę. Tikras native ID: 25f43486-e140-4fcf-b965-e457e47d8e20.
 
 **Priklausomybės:** Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos Faktinė temos medija arba pagrįsta išimtis Tikslus revision-bound review ir realus production eligibility Esamas ID 62ebfdac-b6e8-4fef-b591-f32b2bacd979; saugoma revizija 6272a5db0d8100259bf9290a3ab1f7f049f7fbe6ff2bd204b1f58150aaa070db; esama publishAt 2026-10-08T16:03:32.126Z. Tai esamo puslapio peržiūros briefas, jo body ar data nekeisti.
 
@@ -544,7 +544,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **CTA:** „Patikslinkite pasiūlymo sąlygas“ → /kontaktai. Prašyti tik proceso informacijos, ne jautrių klientų dokumentų.
 
-**Ryšiai:** 
+**Ryšiai:** /privatumas („Duomenų tvarkymas“): Sužinoti užklausos duomenų naudojimo sąlygas. Tikras native ID: bbc91dc1-e0f5-46b3-8fc9-279cf7e7c8bb.
 
 **Priklausomybės:** Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos Faktinė temos medija arba pagrįsta išimtis Tikslus revision-bound review ir realus production eligibility Esamas ID e1fe5c9d-f69d-4b04-8131-ec57ff113fc0; saugoma revizija 2fa0d4ba77dad4a6eaa22ce1990372b99af1638f281cb2b012e629cf3ddcae75; esama publishAt 2026-10-08T16:03:32.126Z. Tai esamo puslapio peržiūros briefas, jo body ar data nekeisti.
 
@@ -568,7 +568,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **CTA:** „Kreipkitės dėl duomenų“ → /kontaktai. Prašyti tik proceso informacijos, ne jautrių klientų dokumentų.
 
-**Ryšiai:** /gidai/vietinis-ir-nuotolinis-pasirasymas („Pasirašymo kelio pasirinkimas“): Suderinti duomenų ir parašo reikalavimus su aplinka. Atidėta iki tikro native ID ir peržiūros.
+**Ryšiai:** /kontaktai („Kontaktas dėl duomenų“): Rasti realų kontaktą teisėms įgyvendinti. Tikras native ID: 874d6fea-8071-48d4-bc07-ea1004302e7e.
 
 **Priklausomybės:** Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos Faktinė temos medija arba pagrįsta išimtis Tikslus revision-bound review ir realus production eligibility Esamas ID bbc91dc1-e0f5-46b3-8fc9-279cf7e7c8bb; saugoma revizija 4f14773201727fb0c48c2b348979284021b5b2c8059cb918953316a6f5b1d979; esama publishAt 2026-10-08T16:03:32.126Z. Tai esamo puslapio peržiūros briefas, jo body ar data nekeisti.
 
@@ -586,7 +586,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetės kaina; StepOver kaina; parašo planšetės licencija. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S01, S06. Gauti aktualų tiekėjo kainoraštį ir licencijų vienetus; senos signaturepads kainos netampa nauju pasiūlymu.
+**Šaltiniai / būtini įrodymai / ribos:** [S01](https://stepover.com/en/products/software/), [S06](https://stepover.com/en/products/signature-pads/). Gauti aktualų tiekėjo kainoraštį ir licencijų vienetus; senos signaturepads kainos netampa nauju pasiūlymu.
 
 **Medija:** Kainos sudedamųjų schema; jokios išgalvotos sumos. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -610,7 +610,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** dokumentų pasirašymas verslui; pasirašymo procesų automatizavimas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S04, S05. Kiekvieno pavyzdžio dokumento reikalavimai ir realios vykdymo ribos; scenarijai žymimi kaip hipotetiniai.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S04](https://stepover.com/en/products/cloud-sign-online/), [S05](https://stepover.com/en/products/developer/). Kiekvieno pavyzdžio dokumento reikalavimai ir realios vykdymo ribos; scenarijai žymimi kaip hipotetiniai.
 
 **Medija:** Šešių procesų schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -634,7 +634,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** naturaSign Pad Classic; StepOver Classic. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06. OEM detalus datasheet; aktuali komplektacija, garantija, kaina ir tiekimas.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/). OEM detalus datasheet; aktuali komplektacija, garantija, kaina ir tiekimas.
 
 **Medija:** Esama tikro Classic nuotrauka. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -658,7 +658,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** duraSign Pad 4.3; StepOver 4.3. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06. OEM detalus datasheet ir bandymas su savu PDF; neskelbti minimalaus patogaus šrifto be matavimo.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/). OEM detalus datasheet ir bandymas su savu PDF; neskelbti minimalaus patogaus šrifto be matavimo.
 
 **Medija:** Esama tikro 4.3 nuotrauka. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -682,7 +682,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** duraSign Pad 5.0; StepOver 5. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06. OEM datasheet; nekopijuoti NG tinklo savybių į 5.0.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/). OEM datasheet; nekopijuoti NG tinklo savybių į 5.0.
 
 **Medija:** Esama tikro 5.0 nuotrauka. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -706,7 +706,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** duraSign Pad 10.0; StepOver 10.0. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06. Šiuolaikinėje OEM apžvalgoje šio modelio nėra; gauti gamintojo ar tiekėjo statusą prieš aktualią pardavimo ofertą.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/). Šiuolaikinėje OEM apžvalgoje šio modelio nėra; gauti gamintojo ar tiekėjo statusą prieš aktualią pardavimo ofertą.
 
 **Medija:** Esama tikro 10.0 nuotrauka. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -730,7 +730,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** duraSign Pad NG 10; StepOver NG10; nextGen 10. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06, S03, S05. OEM datasheet ir konkretus firmware / programos suderinamumas; nedeklaruoti atliktos integracijos.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/), [S03](https://stepover.com/en/products/software/print2ng/), [S05](https://stepover.com/en/products/developer/). OEM datasheet ir konkretus firmware / programos suderinamumas; nedeklaruoti atliktos integracijos.
 
 **Medija:** Esama tikro NG10 nuotrauka; ryšio schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -754,7 +754,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** kaip pasirinkti parašo planšetę; kokią parašo planšetę pirkti. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06, S07. Reikalavimų pavyzdys pažymėtas kaip hipotetinis; modelių savybės su OEM šaltiniais.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). Reikalavimų pavyzdys pažymėtas kaip hipotetinis; modelių savybės su OEM šaltiniais.
 
 **Medija:** Esama gido iliustracija; reikalavimų kortelė. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -778,7 +778,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** PDF pasirašymas planšete; kaip pasirašyti PDF planšete. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S03. Faktinis bandymas ir konkrečios programos instrukcija; jokių klientų dokumentų iliustracijose.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S03](https://stepover.com/en/products/software/print2ng/). Faktinis bandymas ir konkrečios programos instrukcija; jokių klientų dokumentų iliustracijose.
 
 **Medija:** Esama gido iliustracija; anoniminė proceso schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -802,7 +802,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** kaip integruoti parašo planšetę; parašo planšetės diegimas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S05. Savos bandomos aplinkos patikra; palaikomos versijos ir API pagal OEM.
+**Šaltiniai / būtini įrodymai / ribos:** [S05](https://stepover.com/en/products/developer/). Savos bandomos aplinkos patikra; palaikomos versijos ir API pagal OEM.
 
 **Medija:** Esama gido iliustracija; atsakomybių schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -826,7 +826,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetė terminalinis serveris; StepOver Citrix; StepOver TCP Extension. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S01, S02. OEM TCP/Citrix modulio dabartinės dokumentacijos ir realios aplinkos testas; jokio visų terminalų palaikymo pažado.
+**Šaltiniai / būtini įrodymai / ribos:** [S01](https://stepover.com/en/products/software/), [S02](https://stepover.com/en/products/software/esignatureoffice/). OEM TCP/Citrix modulio dabartinės dokumentacijos ir realios aplinkos testas; jokio visų terminalų palaikymo pažado.
 
 **Medija:** Esama gido iliustracija; dviejų sesijų schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -850,7 +850,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašas planšete teisinė galia; parašo planšetė kvalifikuotas parašas; biometrinis ar kvalifikuotas parašas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S07. RRT aktualus kvalifikavimo paaiškinimas patikrintas; eIDAS aktualus tekstas ir konkretaus dokumento teisinė peržiūra prieš galutines išvadas.
+**Šaltiniai / būtini įrodymai / ribos:** [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). RRT aktualus kvalifikavimo paaiškinimas patikrintas; eIDAS aktualus tekstas ir konkretaus dokumento teisinė peržiūra prieš galutines išvadas.
 
 **Medija:** Parašo lygių ir dokumento reikalavimų schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -874,7 +874,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** eSignatureOffice; StepOver eSignatureOffice. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02. OEM produkto funkcijos patikrintos; būtina tikra versija, bandymas ir mūsų parduodama licencija.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/). OEM produkto funkcijos patikrintos; būtina tikra versija, bandymas ir mūsų parduodama licencija.
 
 **Medija:** Savo bandymo ekrano nuotraukos; jokių klientų duomenų. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -898,7 +898,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** Print2NG; StepOver spausdinimas į planšetę. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S03, S06. OEM reikalavimai ir tikras bandymas; nepavadinti universalios integracijos be suderinamumo.
+**Šaltiniai / būtini įrodymai / ribos:** [S03](https://stepover.com/en/products/software/print2ng/), [S06](https://stepover.com/en/products/signature-pads/). OEM reikalavimai ir tikras bandymas; nepavadinti universalios integracijos be suderinamumo.
 
 **Medija:** Šaltinis → spausdintuvas → NG schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -922,7 +922,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetė ar iPad; pasirašymas planšetiniu kompiuteriu. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S04, S05, S06. OEM palaikomos platformos ir tikros programos testas; jokių visuotinės saugos pranašumo pažadų.
+**Šaltiniai / būtini įrodymai / ribos:** [S04](https://stepover.com/en/products/cloud-sign-online/), [S05](https://stepover.com/en/products/developer/), [S06](https://stepover.com/en/products/signature-pads/). OEM palaikomos platformos ir tikros programos testas; jokių visuotinės saugos pranašumo pažadų.
 
 **Medija:** Trijų aplinkų palyginimo schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -946,7 +946,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetės bandymas; pasirašymo sprendimo pilotas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S05. Realūs bandymų rezultatai reikalingi tik demonstracijai; negarantijuoti nemokamo demo, jei jo nėra.
+**Šaltiniai / būtini įrodymai / ribos:** [S05](https://stepover.com/en/products/developer/). Realūs bandymų rezultatai reikalingi tik demonstracijai; negarantijuoti nemokamo demo, jei jo nėra.
 
 **Medija:** Piloto protokolo kortelė. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -970,7 +970,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** nuotolinis pasirašymas; parašo planšetė nuotolinis pasirašymas; elektroninis parašas verslui. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S04, S07. OEM cloud šeima ir RRT kvalifikavimo reikalavimai; LT cloud pasiūlymas dar nepatvirtintas, gidas gali būti informacinis.
+**Šaltiniai / būtini įrodymai / ribos:** [S04](https://stepover.com/en/products/cloud-sign-online/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). OEM cloud šeima ir RRT kvalifikavimo reikalavimai; LT cloud pasiūlymas dar nepatvirtintas, gidas gali būti informacinis.
 
 **Medija:** Trijų procesų sprendimo medis. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -994,7 +994,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** StepOver Signature API; StepOver Device API; StepOver NextGen API; webSignatureOffice API. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S05. OEM developer apžvalga patikrinta; detalios API versijos / metodai / teisės tikrintini, kodo pavyzdžių neišgalvoti.
+**Šaltiniai / būtini įrodymai / ribos:** [S05](https://stepover.com/en/products/developer/). OEM developer apžvalga patikrinta; detalios API versijos / metodai / teisės tikrintini, kodo pavyzdžių neišgalvoti.
 
 **Medija:** API komponentų seka. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1018,7 +1018,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetės keliems padaliniams; pasirašymas keliose darbo vietose. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S01, S05. Tikras licencijų modelis ir konkreti infrastruktūra; pavyzdžio darbo vietų skaičiai ne kliento atvejis.
+**Šaltiniai / būtini įrodymai / ribos:** [S01](https://stepover.com/en/products/software/), [S05](https://stepover.com/en/products/developer/). Tikras licencijų modelis ir konkreti infrastruktūra; pavyzdžio darbo vietų skaičiai ne kliento atvejis.
 
 **Medija:** Dviejų padalinių proceso schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1042,7 +1042,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** sutarties pasirašymas parašo planšete; dokumentų pasirašymas klientų aptarnavime. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S07. Dokumento rūšiai tinkama teisinė ir organizacinė patikra; banko/draudiko procesų neišgalvoti.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). Dokumento rūšiai tinkama teisinė ir organizacinė patikra; banko/draudiko procesų neišgalvoti.
 
 **Medija:** Sutarties proceso schema; be tikro kliento sutarties. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1066,7 +1066,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** perdavimo priėmimo aktas planšete; prekių atsiėmimo parašas; nuomos perdavimo aktas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S05, S07. Tikras naudojamos sistemos dokumento formatas; nekurti eCMR funkcijų ar parašo teisėtumo garantijos.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S05](https://stepover.com/en/products/developer/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). Tikras naudojamos sistemos dokumento formatas; nekurti eCMR funkcijų ar parašo teisėtumo garantijos.
 
 **Medija:** Aktų laukų schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1090,7 +1090,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** keli parašai PDF; PDF pasirašo du žmonės. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S04. Konkrečios programos daugelio parašų galimybės ir tikras anoniminis bandymas.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S04](https://stepover.com/en/products/cloud-sign-online/). Konkrečios programos daugelio parašų galimybės ir tikras anoniminis bandymas.
 
 **Medija:** Dviejų dalyvių seka. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1114,7 +1114,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** kaip patikrinti PDF parašą; PDF parašas negalioja; PDF parašo tikrinimas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S07. Adobe ir OEM aktualios pirminės instrukcijos dar reikalingos; perspėjimas savaime nėra teisinio negaliojimo išvada.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). Adobe ir OEM aktualios pirminės instrukcijos dar reikalingos; perspėjimas savaime nėra teisinio negaliojimo išvada.
 
 **Medija:** Tikros bandomo failo ekranų nuotraukos. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1138,7 +1138,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** pasirašyto dokumento kopija klientui; PDF kopija po pasirašymo. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S04, S09. OEM ir pasirinktos pašto sistemos funkcijos; mūsų SMTP/INBOX dar nepatikrintas, nelaikyti įdiegta paslauga.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S04](https://stepover.com/en/products/cloud-sign-online/), S09. OEM ir pasirinktos pašto sistemos funkcijos; mūsų SMTP/INBOX dar nepatikrintas, nelaikyti įdiegta paslauga.
 
 **Medija:** Kopijos perdavimo schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1162,7 +1162,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** PDF parašo laukai; parašo vieta PDF; PDF šablonas pasirašymui. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02. OEM lauko atrankos / automatizavimo funkcijos ir tikras bandymas; nekurti universalaus teisinio sutarties šablono.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/). OEM lauko atrankos / automatizavimo funkcijos ir tikras bandymas; nekurti universalaus teisinio sutarties šablono.
 
 **Medija:** Anoniminio PDF laukų schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1186,7 +1186,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetė naršyklėje; StepOver Pad Connector; StepOver WebSocket. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S05, S06. OEM Pad Connector detalios instrukcijos ir konkrečių naršyklių testas; nepažadėti visų naršyklių ar plug-and-play.
+**Šaltiniai / būtini įrodymai / ribos:** [S05](https://stepover.com/en/products/developer/), [S06](https://stepover.com/en/products/signature-pads/). OEM Pad Connector detalios instrukcijos ir konkrečių naršyklių testas; nepažadėti visų naršyklių ar plug-and-play.
 
 **Medija:** Naršyklė → connector / NG → serveris schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1210,7 +1210,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** StepOver Office Plugin; parašas Word dokumente; parašas Excel. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S01, S07. OEM konkretaus OfficePlugin ir Office versijų dokumentacija; neatlikto bandymo nemaskuoti.
+**Šaltiniai / būtini įrodymai / ribos:** [S01](https://stepover.com/en/products/software/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). OEM konkretaus OfficePlugin ir Office versijų dokumentacija; neatlikto bandymo nemaskuoti.
 
 **Medija:** Anoniminis vaizdo įterpimo pavyzdys tik po bandymo. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1234,7 +1234,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** personalo dokumentų pasirašymas; darbuotojų pasirašymas planšete. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S07, S09. Darbo teisės, duomenų ir dokumentų formos peržiūra; darbuotojo sutikimas nėra automatinis bet kokių biometrinių duomenų pagrindas.
+**Šaltiniai / būtini įrodymai / ribos:** [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai), S09. Darbo teisės, duomenų ir dokumentų formos peržiūra; darbuotojo sutikimas nėra automatinis bet kokių biometrinių duomenų pagrindas.
 
 **Medija:** Trijų dokumentų tipų sprendimo schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1258,7 +1258,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** sutikimo pasirašymas planšete; formų pasirašymas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S07, S09. Sveikatos, nepilnamečių ir specialių kategorijų procesams atskiras specialisto vertinimas; neskelbti medicininio šablono be peržiūros.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai), S09. Sveikatos, nepilnamečių ir specialių kategorijų procesams atskiras specialisto vertinimas; neskelbti medicininio šablono be peržiūros.
 
 **Medija:** Formos versijų schema; pavyzdžiai be jautrių duomenų. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1282,7 +1282,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** mobilus dokumentų pasirašymas; parašo planšetė išvykose. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S04, S06. OEM platformų ir offline galimybių patikra; offline / baterijos funkcijų nesugalvoti.
+**Šaltiniai / būtini įrodymai / ribos:** [S04](https://stepover.com/en/products/cloud-sign-online/), [S06](https://stepover.com/en/products/signature-pads/). OEM platformų ir offline galimybių patikra; offline / baterijos funkcijų nesugalvoti.
 
 **Medija:** Mobilios darbo vietos schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1306,7 +1306,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** pasirašytų dokumentų archyvavimas; pasirašytų PDF saugojimas. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S07, S09. Dokumento rūšies archyvavimo ir programos taisyklės; nesugalvoti vieno termino visiems PDF ar vadinti backup ilgalaike parašo apsauga.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai), S09. Dokumento rūšies archyvavimo ir programos taisyklės; nesugalvoti vieno termino visiems PDF ar vadinti backup ilgalaike parašo apsauga.
 
 **Medija:** Dokumento kelio į archyvą schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1330,7 +1330,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetė neveikia; pasirašymas nutrūko; PDF neišsisaugojo. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S01, S02, S05. OEM žinomos klaidos ir bandomi nutrūkimai; nepublikuoti neatliktų destruktyvių bandymų kaip rezultatų.
+**Šaltiniai / būtini įrodymai / ribos:** [S01](https://stepover.com/en/products/software/), [S02](https://stepover.com/en/products/software/esignatureoffice/), [S05](https://stepover.com/en/products/developer/). OEM žinomos klaidos ir bandomi nutrūkimai; nepublikuoti neatliktų destruktyvių bandymų kaip rezultatų.
 
 **Medija:** Klaidos sprendimo medis. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1354,7 +1354,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** parašo planšetės rašiklis; StepOver priedai; parašo planšetės priežiūra. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06. OEM priežiūros instrukcijos ir priedų kodai; nekurti priedų SKU ar mūsų remonto/garantijos SLA.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/). OEM priežiūros instrukcijos ir priedų kodai; nekurti priedų SKU ar mūsų remonto/garantijos SLA.
 
 **Medija:** Tikro priedo nuotrauka tik gavus identifikaciją ir teises. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1378,7 +1378,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** webSignatureOffice; webSignatureOffice Lite; StepOver debesija. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S04, S05, S07. OEM šeima egzistuoja; LT pardavimas, planai, duomenų sutartis, signatūros lygis ir palaikymas nepatvirtinti. Pasiūlymą skelbti tik juos patikrinus.
+**Šaltiniai / būtini įrodymai / ribos:** [S04](https://stepover.com/en/products/cloud-sign-online/), [S05](https://stepover.com/en/products/developer/), [S07](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai). OEM šeima egzistuoja; LT pardavimas, planai, duomenų sutartis, signatūros lygis ir palaikymas nepatvirtinti. Pasiūlymą skelbti tik juos patikrinus.
 
 **Medija:** Savo bandymo nuotolinio proceso schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1402,7 +1402,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** StepOver nextGen Pad 5; nextGen 5 parašo planšetė. **Metrika:** not_measured; paklausa ir apimtis nežinomos.
 
-**Šaltiniai / būtini įrodymai / ribos:** S06. Gamintojo produkto detalės, aktualus tiekimas ir mūsų teisėtas komercinis pasiūlymas; kol kas conditional.
+**Šaltiniai / būtini įrodymai / ribos:** [S06](https://stepover.com/en/products/signature-pads/). Gamintojo produkto detalės, aktualus tiekimas ir mūsų teisėtas komercinis pasiūlymas; kol kas conditional.
 
 **Medija:** Tikra NG5 OEM nuotrauka su naudojimo teise. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1450,7 +1450,7 @@ Title, H1 ir description yra pasiūlymai būsimai redakcijai. Esamų patvirtint�
 
 **Užklausos:** biometrinis parašas; parašo planšetė BDAR; parašo duomenys. **Metrika:** Žr. susietą stebėjimą; tai ne šio puslapio apimtis ar pozicija.
 
-**Šaltiniai / būtini įrodymai / ribos:** S02, S09. BDAR pirminis tekstas ir VDAI/EDPB taikymo gairės dar reikalingi; ne visi parašo duomenys automatiškai Article9, bet ne visada pakanka checkbox.
+**Šaltiniai / būtini įrodymai / ribos:** [S02](https://stepover.com/en/products/software/esignatureoffice/), S09. BDAR pirminis tekstas ir VDAI/EDPB taikymo gairės dar reikalingi; ne visi parašo duomenys automatiškai Article9, bet ne visada pakanka checkbox.
 
 **Medija:** Duomenų srauto schema. Tai briefo užduotis; naujas assetas šiame plane nesukurtas.
 
@@ -1471,5 +1471,5 @@ Tikrinta 2026-10-09; katalogo apžvalga nėra kiekvieno produkto išbandymas.
 - **S05** [StepOver developer katalogas](https://stepover.com/en/products/developer/): API šeimų ir atsakomybių apžvalga, ne išbandyta integracija.
 - **S06** [StepOver signature pads katalogas](https://stepover.com/en/products/signature-pads/): Yra NG5, NG10, 4.3, Classic, 5.0; duraSign10.0 šioje apžvalgoje nėra. Tai nepaneigia seno produkto egzistavimo.
 - **S07** [RRT kvalifikuoti sertifikatai](https://rrt.lt/veiklos-sritys/skaitmenine-erdve/patikimumo-uztikrinimo-paslaugos/kvalifikuoti-sertifikatai): Kvalifikuoto parašo reikalavimų apžvalga; ne kiekvieno mūsų proceso teisėtumo patvirtinimas.
-- **S08** [Google people-first ir AI paieškos gairės](https://developers.google.com/search/docs/fundamentals/creating-helpful-content): Taip pat https://developers.google.com/search/docs/appearance/ai-features; SEO principai svarbūs AI paieškai, specialaus AI schema reikalavimo nėra.
+- **S08** [Google people-first ir AI paieškos gairės](https://developers.google.com/search/docs/fundamentals/creating-helpful-content): Taip pat [Google AI paieškos gairės](https://developers.google.com/search/docs/appearance/ai-features); SEO principai svarbūs AI paieškai, specialaus AI schema reikalavimo nėra.
 - **S09** Savininko faktai ir projekto būsenos įrašai: Savininko pokalbis, BUSINESS.md, CONTENT_READINESS.md, cloudflare-preview/README.md ir self-audit/ preview įrodymai; nėra išorinio tiekėjo ar eksperto sertifikavimas.

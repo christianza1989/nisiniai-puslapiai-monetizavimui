@@ -1,6 +1,6 @@
 {
   "format": "private-editorial-plan-1-not-runtime-schema",
-  "createdAt": "2026-10-09T11:30:45.159Z",
+  "createdAt": "2026-10-09T11:33:56.775Z",
   "date": "2026-10-09",
   "siteId": "parasoplansetes",
   "domain": "parasoplansetes.lt",
@@ -202,7 +202,7 @@
       "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
       "status": "retrieved",
       "checkedAt": "2026-10-09",
-      "limitation": "Taip pat https://developers.google.com/search/docs/appearance/ai-features; SEO principai svarbūs AI paieškai, specialaus AI schema reikalavimo nėra."
+      "limitation": "Taip pat [Google AI paieškos gairės](https://developers.google.com/search/docs/appearance/ai-features); SEO principai svarbūs AI paieškai, specialaus AI schema reikalavimo nėra."
     },
     {
       "id": "S09",
@@ -814,7 +814,48 @@
           "targetSlug": "kontaktai",
           "readerReason": "Užklausoje perduoti šiame puslapyje išvardytus konkretaus proceso reikalavimus; neskelbti neveikiančios demonstracijos, įdiegimo ar SLA."
         },
-        "internalLinks": [],
+        "internalLinks": [
+          {
+            "targetPlanRef": "PS-10",
+            "targetSlug": "gidai/kaip-pasirinkti-paraso-plansete",
+            "targetPageId": "02bdd2e3-be1e-496f-9d4d-9874746c5c05",
+            "label": "Kaip pasirinkti parašo planšetę verslui",
+            "reason": "Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          },
+          {
+            "targetPlanRef": "PS-11",
+            "targetSlug": "gidai/pdf-pasirasymas-plansete",
+            "targetPageId": "c63ae7ee-761b-41a4-b84e-3a81d95deb4d",
+            "label": "PDF pasirašymas parašo planšete: visa darbo eiga",
+            "reason": "Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          },
+          {
+            "targetPlanRef": "PS-12",
+            "targetSlug": "gidai/paraso-plansetes-integracija",
+            "targetPageId": "56845903-0cbb-4648-85a5-3ee3356913ac",
+            "label": "Parašo planšetės integracija: pasiruošimas ir priėmimas",
+            "reason": "Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          },
+          {
+            "targetPlanRef": "PS-13",
+            "targetSlug": "gidai/terminalinis-serveris-paraso-plansete",
+            "targetPageId": "baa2c200-0432-4568-9cc3-b559cf9b9c80",
+            "label": "Parašo planšetė terminaliniame serveryje ir Citrix",
+            "reason": "Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          },
+          {
+            "targetPlanRef": "PS-42",
+            "targetSlug": "gidai/paraso-galiojimas",
+            "targetPageId": null,
+            "label": "Parašas planšete ir kvalifikuotas elektroninis parašas",
+            "reason": "Pasirinkti atsakymą pagal įrangos, dokumento, IT aplinkos ar parašo reikalavimų klausimą.",
+            "state": "deferred-until-native-page-and-review"
+          }
+        ],
         "dependencies": [
           "Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos",
           "Faktinė temos medija arba pagrįsta išimtis",
@@ -896,7 +937,24 @@
           "targetSlug": "kontaktai",
           "readerReason": "Užklausoje perduoti šiame puslapyje išvardytus konkretaus proceso reikalavimus; neskelbti neveikiančios demonstracijos, įdiegimo ar SLA."
         },
-        "internalLinks": [],
+        "internalLinks": [
+          {
+            "targetPlanRef": "PS-19",
+            "targetSlug": "privatumas",
+            "targetPageId": "bbc91dc1-e0f5-46b3-8fc9-279cf7e7c8bb",
+            "label": "Užklausos duomenys",
+            "reason": "Sužinoti, kaip tvarkoma pateikta informacija.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          },
+          {
+            "targetPlanRef": "PS-16",
+            "targetSlug": "apie-projekta",
+            "targetPageId": "25f43486-e140-4fcf-b965-e457e47d8e20",
+            "label": "Kas atsako į užklausą",
+            "reason": "Patikrinti projekto operatorių.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          }
+        ],
         "dependencies": [
           "Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos",
           "Faktinė temos medija arba pagrįsta išimtis",
@@ -971,20 +1029,12 @@
         },
         "internalLinks": [
           {
-            "targetPlanRef": "PS-28",
-            "targetSlug": "gidai/pasirasymo-pilotas",
-            "targetPageId": null,
-            "label": "Piloto priėmimas",
-            "reason": "Patikrinti šį pasirinkimą prieš plėtrą.",
-            "state": "deferred-until-native-page-and-review"
-          },
-          {
-            "targetPlanRef": "PS-20",
-            "targetSlug": "kainos",
-            "targetPageId": null,
-            "label": "Komplekto ir darbų kaina",
-            "reason": "Atskirti licencijas bei diegimo apimtį.",
-            "state": "deferred-until-native-page-and-review"
+            "targetPlanRef": "PS-17",
+            "targetSlug": "redakcija",
+            "targetPageId": "62ebfdac-b6e8-4fef-b591-f32b2bacd979",
+            "label": "Turinio tikrinimo metodika",
+            "reason": "Sužinoti, kaip tikrinami teiginiai.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
           }
         ],
         "dependencies": [
@@ -1060,7 +1110,16 @@
           "targetSlug": "kontaktai",
           "readerReason": "Užklausoje perduoti šiame puslapyje išvardytus konkretaus proceso reikalavimus; neskelbti neveikiančios demonstracijos, įdiegimo ar SLA."
         },
-        "internalLinks": [],
+        "internalLinks": [
+          {
+            "targetPlanRef": "PS-16",
+            "targetSlug": "apie-projekta",
+            "targetPageId": "25f43486-e140-4fcf-b965-e457e47d8e20",
+            "label": "Projekto operatorius",
+            "reason": "Patikrinti turinio ir pasiūlymo atsakomybę.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          }
+        ],
         "dependencies": [
           "Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos",
           "Faktinė temos medija arba pagrįsta išimtis",
@@ -1133,7 +1192,16 @@
           "targetSlug": "kontaktai",
           "readerReason": "Užklausoje perduoti šiame puslapyje išvardytus konkretaus proceso reikalavimus; neskelbti neveikiančios demonstracijos, įdiegimo ar SLA."
         },
-        "internalLinks": [],
+        "internalLinks": [
+          {
+            "targetPlanRef": "PS-19",
+            "targetSlug": "privatumas",
+            "targetPageId": "bbc91dc1-e0f5-46b3-8fc9-279cf7e7c8bb",
+            "label": "Duomenų tvarkymas",
+            "reason": "Sužinoti užklausos duomenų naudojimo sąlygas.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
+          }
+        ],
         "dependencies": [
           "Aktualūs teiginio šaltiniai ir aiškios nepatvirtintos ribos",
           "Faktinė temos medija arba pagrįsta išimtis",
@@ -1210,12 +1278,12 @@
         },
         "internalLinks": [
           {
-            "targetPlanRef": "PS-35",
-            "targetSlug": "gidai/vietinis-ir-nuotolinis-pasirasymas",
-            "targetPageId": null,
-            "label": "Pasirašymo kelio pasirinkimas",
-            "reason": "Suderinti duomenų ir parašo reikalavimus su aplinka.",
-            "state": "deferred-until-native-page-and-review"
+            "targetPlanRef": "PS-15",
+            "targetSlug": "kontaktai",
+            "targetPageId": "874d6fea-8071-48d4-bc07-ea1004302e7e",
+            "label": "Kontaktas dėl duomenų",
+            "reason": "Rasti realų kontaktą teisėms įgyvendinti.",
+            "state": "existing-reviewed-snapshot-needs-eligibility"
           }
         ],
         "dependencies": [

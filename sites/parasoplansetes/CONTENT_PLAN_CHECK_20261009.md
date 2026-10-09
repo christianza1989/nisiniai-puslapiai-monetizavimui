@@ -5,7 +5,7 @@
 - 47 unikalūs URL: 19 tikrų esamų native ID/revizijų/datų ir 28 nauji pasiūlymai.
 - 47 pilni briefai: atsakymo apimtis, originalus indėlis, bent4 struktūros dalys, įrodymų ir šaltinių poreikiai, ribos, medija, CTA, tiksliniai ryšiai ir priklausomybės.
 - 154 užklausų sprendimai; LT/lt ir tikri stebėjimo ID arba aiškiai nematuota/missing estimate būsena. Rašybos variantai ir sektorių/miestų kombinacijos nesukuria automatinių kopijų.
-- 115 suplanuotų kontekstinių ryšių; visi taikiniai žemėlapyje. Esamų taikinių ID tikri, naujų taikinių ID null; planned nėra public href.
+- 123 suplanuotų kontekstinių ryšių; visi taikiniai žemėlapyje. Esamų taikinių ID tikri, naujų taikinių ID null; planned nėra public href.
 - Šaknys prieš palaikančius puslapius; tėvai egzistuoja, ciklų nėra, parengimo langai ne vėlesni už vaikų. Visi6 langai2026-10-09–2027-04-09; evergreen seasonalHook tuščias.
 - Visi19 esami puslapio įrašai, įskaitant body, approval, publishedRevision ir publishAt, palyginti deepEqual su prieš darbą išsaugota scoped kopija: nepakitę.
 - Patvirtinto package SHA-256 liko `ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b`.

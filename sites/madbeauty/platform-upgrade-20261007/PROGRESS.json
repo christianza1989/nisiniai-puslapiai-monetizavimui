@@ -6,7 +6,7 @@
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
-  "productionReadOnlyCheck": "Historical UI QA provider checks remain. Later separately authorized dates-only production version4dbdf361 accepted on2026-10-09; runtimeb7/core63/packagebb/original2faf-v1 and mail/DNS/bindings unchanged. Full upgrade productionUpgradeDeployed=false.",
+  "productionReadOnlyCheck": "Separate authorized content-only next19 release1de389a7 accepted2026-10-09: unchangedruntimeb7/core63/package320a/original2faf-v1 and provider configuration. Full upgrade remains not deployed. Historical date-only4db receipt retained.",
   "checkpoints": [
     {
       "name": "catalogue-offer-search-single-booking",
@@ -441,6 +441,17 @@
       "removedTests": 0,
       "receipt": "HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md",
       "remaining": "Actual provider pilot, authorized booking/reminder inbox, factual retention/backup policy and full canonical release acceptance; production unchanged"
+    },
+    {
+      "name": "approved-next19-content-admission-and-preserved-hosted-candidate",
+      "state": "accepted-named-scopes",
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+      "publicationStates": 102,
+      "assets": 404,
+      "hostedVersion": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
+      "receipt": "CONTENT_NEXT19_ACCEPTANCE.md",
+      "remaining": "Full platform factual pilot/inbox/retention prerequisites and final canonical full-release acceptance remain."
     }
   ],
   "tasks": [
@@ -680,7 +691,7 @@
       "title": "Kategorijų ir miestų SEO bei gidų sąsaja",
       "phase": "2",
       "state": "accepted-prior-narrow-release",
-      "evidence": "Separate canonical dates-only PR48 release4db/bb accepted; candidatebb64native states accepted;260unwritten topics remain plan."
+      "evidence": "Separate canonical dates-only PR48 release4db/bb accepted; candidatebb64native states accepted;260unwritten topics remain plan. New independent content-only next19 PR55 production1de/320a accepted; current candidate1ba/corec7/320a102native and hosted404assets passed. Historical PR48 retained."
     },
     {
       "id": "G02",
@@ -738,23 +749,30 @@
     "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/48",
     "scope": "Separately authorized dates only, full upgrade not activated"
   },
-  "candidatePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "candidatePackageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
   "nextContentBatch": {
     "producerThreadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
     "selectionPath": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next30-20261009/sites/madbeauty/content-next30-20261009/SELECTION.json",
     "selectionSha256": "522f172c2ec8b5e62e5826dfe14538b42fe7c2d22061fc86431634d7cffebb67",
-    "status": "WRITER_REPORTED_30_DRAFTS_NOT_ADMITTED",
+    "status": "APPROVED_19_SCHEDULED_CONTENT_ONLY_DEPLOYED_11_SPECIALIST_PENDING",
     "selectedPages": 30,
     "basePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
-    "consumerReceipt": "acceptance-20261009/next30-consumer-baseline.json",
-    "scope": "Separate writer-owned content work. Do not duplicate selected topics or alter its private studio. Planned content is not imported, approved or deployed; it is not a new full-upgrade completion prerequisite.",
-    "next": "On exact immutable handoff, verify preserved prior pages/media/dates and actual new revision-bound reviews; consume separately on live b7/core63 and upgrade1ba6c7d/corec7. Reconcile actual baseline and publication/native/hosted/canonical/provider gates for any separately authorized content release. Old PR48 deployment guards must not be replayed for a different package.",
+    "consumerReceipt": "acceptance-20261009/content-next19-production.json",
+    "scope": "Writer-owned30draft batch:19actual revision-bound approved guides admitted and scheduled independently on incumbent production runtime;11expert-gated drafts excluded. Full platform upgrade remains incomplete/not deployed.",
+    "next": "Acknowledge actual content-only receipt to writer; preserve old snapshots and dates. Any next60 handoff is separately reviewed; unwritten plans do not enter assets or add a full-upgrade prerequisite.",
     "catalogueTargetsReceipt": "acceptance-20261009/live-content-targets.json",
     "writerReportedDrafts": {
       "count": 30,
       "reportedAt": "2026-10-09T19:34:11.643Z",
       "source": "madbeauty turinys latest commentary: all 30 native mobile/desktop previews checked. No immutable consumer handoff, editorial approval or admission inferred."
-    }
+    },
+    "writtenDrafts": 30,
+    "admittedNewGuides": 19,
+    "specialistPendingDrafts": 11,
+    "packageSource": "4afef698d7ba6bdc7f9269a20855b8bf3a0a5eef",
+    "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+    "productionVersion": "1de389a7-3f36-44f5-ad57-bb3a457f2146",
+    "consumerReceiptSha256": "63af4f4c940367a2ee018f67a6d5022f973231887e2c154c157825566764ebeb"
   },
   "catalogueContinuation": {
     "checkedAt": "2026-10-09T18:54:37.287Z",
@@ -855,5 +873,26 @@
     "preservation": "acceptance-20261009/card-media-hosted-preservation.json",
     "productionUpgradeDeployed": false,
     "scope": "Current protected Worker exact data preservation, assets and native provider gallery cover. Earlier fbc normal client settings/export/favorite restart retain their original runtime identity."
+  },
+  "contentContinuation": {
+    "checkedAt": "2026-10-09T19:48:39.565Z",
+    "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+    "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+    "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+    "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+    "nativeArtifactSha256": "8e87a0c9a0fe2aea2613c0e79a3ddee41f8c1d4af855a0794aa42f4e9b041223",
+    "hostedArtifactSha256": "23133fb5f37e066322d8b904837a388eedf0d0a3249c9a4c80972c7e5fd6ada2",
+    "hostedVersion": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
+    "assets": 404,
+    "publicationStates": 102,
+    "currentPages": 7,
+    "futurePages": 51,
+    "receipt": "CONTENT_NEXT19_ACCEPTANCE.md",
+    "native": "acceptance-20261009/content-next19-candidate-calendar.json",
+    "hostedPreservation": "acceptance-20261009/content-next19-hosted-preservation.json",
+    "hostedHttp": "acceptance-20261009/content-next19-hosted-http.json",
+    "productionReceipt": "acceptance-20261009/content-next19-production.json",
+    "productionUpgradeDeployed": false,
+    "scope": "Exact320a edition admitted on unchanged1ba/corec7 candidate;102native publication states, hosted404assets/protected gates/empty-city selection and exact synthetic source-target-media-mail preservation. Old016/bb andfbc native UI receipts retain their tested identities. Independent content-only production1de usesb7/core63, not1ba."
   }
 }

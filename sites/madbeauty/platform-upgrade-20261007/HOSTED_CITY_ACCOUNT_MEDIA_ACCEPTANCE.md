@@ -2,7 +2,7 @@
 
 Šis bandymas priima konkrečius izoliuotos aplinkos kelius. Pilnas atnaujinimas madbeauty.lt nepaleistas. Tikro teikėjo, rezervacijos / priminimo inbox ir faktinės retention / backup tvarkos šie sintetiniai įrašai nepakeičia.
 
-## Aktualus leidimas
+## Kortelės bandymo leidimas — iki next19 paketo
 
 Runtime ir source: `1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb`; core `c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7`; patvirtintas turinio paketas `bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511`.
 
@@ -37,3 +37,7 @@ Salono kortelė be avataro rodė bendrą demonstracinės studijos nuotrauką, no
 | Išsaugoti profiliai | Įprastas add / list / source restart: favouriteIds ir visa source / target / capture būsena sutapo tiksliai. [Restart įrodymas](acceptance-20261009/city-hosted-favorite-restart.json). Šis restart atliktas fbc runtime; 1ba leidimas paskui tą būseną išlaikė. |
 
 Ekrano rastrai yra originalūs browser bytes; DOM viewport ir tikri rastrų matmenys užfiksuoti atskirai. Faktinio inbox, fizinio įrenginio geolocation leidimo, realaus piloto, negrįžtamo trynimo ar canonical viso atnaujinimo priėmimo čia nėra. Reikalingi faktai ir bandymo eiga: [PILOT_INPUTS.md](PILOT_INPUTS.md).
+
+## Dabartinis next19 turinio paketas
+
+Vėliau tas pats runtime1ba / corec7 kandidatas priėmė tikslų320a paketą:58puslapiai /404assets ir102native publikavimo ribos. Protected hosted versija0de7cc2f išlaikė tiksliai source29 / target29, fizinius3vaizdus, abu vizitus ir16mail captures; all404assets /51future article404 / empty-city303 patikros PASS. [CONTENT_NEXT19_ACCEPTANCE.md](CONTENT_NEXT19_ACCEPTANCE.md) ir jo named receipts fiksuoja šį paketą. Aukščiau esantys016/bb bei fbc native UI bandymai lieka jų tikrosiose tapatybėse; naujas turinio paketo priėmimas jų neperrašo. Nepriklausomas canonical content-only1de naudoja incumbentb7/core63, ne naują1ba backend.

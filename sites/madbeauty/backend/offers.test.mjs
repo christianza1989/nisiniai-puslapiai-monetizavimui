@@ -18,6 +18,19 @@ function fixture(){const store=openStore({filename:':memory:',secret:'offer-fixt
 }
 const fails=(code,fn)=>assert.throws(fn,e=>e.code===code);
 
+test('Profile review explains existing offer state without publishing or writing a rejected revision',()=>{const f=fixture();try{
+ const submit=()=>f.api.submitRevision(f.owner,{scope:f.scope,name:f.org.name,bio:f.org.bio});
+ const blocked=pattern=>{const before=f.store.read();assert.throws(submit,e=>e.code==='INVALID_INPUT'&&pattern.test(e.message));assert.deepEqual(f.store.read(),before);assert.equal(f.api.profile(f.org.id),null);};
+ blocked(/pasiūlymų.*užpildykite/i);
+ const draft=f.make(),pending=f.api.submitOffer(f.owner,{id:draft.id,version:draft.version});
+ blocked(/laukia peržiūros/i);
+ const returned=f.api.moderateOffer(f.operator,{id:pending.id,version:pending.version,state:'returned',reason:'Patikslinkite variantą.'});
+ blocked(/grąžinti taisyti/i);
+ f.publish(f.api.saveOffer(f.owner,{...returned,label:'Patikslintas pasiūlymas'}));
+ const revision=submit();assert.equal(revision.state,'pending');assert.equal(f.api.profile(f.org.id),null);
+ f.api.moderate(f.operator,{id:revision.id,state:'approved'});assert.equal(f.api.profile(f.org.id).id,f.org.id);
+ }finally{f.store.close();}});
+
 test('Menu group lost replies replay one version and event; current permissions and changed intent still reject',()=>{const f=fixture();try{
  const input={organizationId:f.org.id,label:'Atkuriama grupė',rank:3,idempotencyKey:'menu-lost-reply'},first=f.api.saveMenuGroup(f.owner,input);
  assert.deepEqual(f.api.saveMenuGroup(f.owner,input),first);assert.equal(f.api.workspace(f.owner,f.scope).menuGroups.length,1);assert.equal(f.store.readCollections(['events']).events.filter(e=>e.type==='menu-group-saved').length,1);

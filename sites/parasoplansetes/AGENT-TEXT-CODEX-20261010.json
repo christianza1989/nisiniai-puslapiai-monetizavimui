@@ -1,0 +1,1841 @@
+{
+  "site_id": "parasoplansetes",
+  "canonical_host": "parasoplansetes.lt",
+  "checked_at": "2026-10-09T21:14:14.793780+00:00",
+  "timezone": "Europe/Vilnius",
+  "status": "NOT_COMPLETE_10_TARGET",
+  "scope": "Owner-requested local Codex CLI text calibration; Gemini deployment and voice deferred. Actual ASGI/PG/tools and reviewed email drafts; popup ACK simulated, no SMTP/network/browser/audio certification.",
+  "source_sha": "ec73aaf8a572c0a89ebe6621e4d734805026692f",
+  "companion_sha": "b2d581ddc312a1431992806d0dd591d77c1e83d0",
+  "core_main": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "companion_main": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+  "engine": "codex_cli_local_default",
+  "cli_version": "0.160.1",
+  "auth_mode": "chatgpt",
+  "direct_api_key_present": false,
+  "actual_model_id": "UNRECORDED by existing CLI harness; do not infer from CLI version",
+  "snapshots": [
+    {
+      "id": "candidate1-freeze",
+      "sha256": "cf6d1418babbfa18a890ee5a6a9ff38af90f4347ba61605281d8eecef566c3ce",
+      "core_sha": "f45854333dd92743fa2cb9527168de5796adf5b3",
+      "roles": {
+        "conversation": "d5a3a8cfc2474f1b2dcc036d199205aa14cd9b2c798c357c5d989a4d6b62b330",
+        "sales": "6168ad6768aae9e6c9d24950a0ce4d42059384614e6986553050a8991d0fe700",
+        "quality": "23b519311a069abf5650c34dc0727807e4ae1d4e296886fb18720444fa25e6de"
+      },
+      "adaptive_hash": "d5a3a8cfc2474f1b2dcc036d199205aa14cd9b2c798c357c5d989a4d6b62b330",
+      "evaluation_contract_hash": "3aea6621f120fd5a7ca1f305c942cfe280590345d8a9be40ca37e96ad0cecf7d",
+      "knowledge_sha256": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd"
+    },
+    {
+      "id": "candidate2-freeze",
+      "sha256": "def0914b810af1688b74af5220fafc917e46f9504affe0c62fd42820cc6cb1e9",
+      "core_sha": "a498200187fd3767e9c76ebb46acb4765afac5d2",
+      "roles": {
+        "conversation": "65dff34f0facd9c8506033f3ff695fa47d30aba52a46590bb78b7c1d439158a1",
+        "sales": "f40c5f46c66442c0768af20dc7513b78d1f63561c442f04a2802f95662ec4c11",
+        "quality": "411121cd20b2e107df4089b325d8e2efb2622078cf4b3edb92161f0a10b4735a"
+      },
+      "adaptive_hash": "65dff34f0facd9c8506033f3ff695fa47d30aba52a46590bb78b7c1d439158a1",
+      "evaluation_contract_hash": "f768a74cc0d8e98afc324134ddea42640fe7e9530ace92dff774723cd92072de",
+      "knowledge_sha256": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd"
+    },
+    {
+      "id": "candidate3-freeze",
+      "sha256": "423a877a5a5991532a3ec97f06d94ec3d50e01cfae6529b159456e0f143b27a2",
+      "core_sha": "9ea1f305fee05efb5e229591194a41ea615c7414",
+      "roles": {
+        "conversation": "7f017e47b4d72851cc4e9f6e02af724f5c8206eaf45c29ac2dbf2e41d77a3c64",
+        "sales": "a3679a257a899286bacd10cfcb3a824ef6a78c9241fd513e0b99ab53393de306",
+        "quality": "47f62662a6d7285bf57e5c6ccd24010273cfc66de9046110802159e27c67fc86"
+      },
+      "adaptive_hash": "7f017e47b4d72851cc4e9f6e02af724f5c8206eaf45c29ac2dbf2e41d77a3c64",
+      "evaluation_contract_hash": "4a9c988d16a3835925f8a553fad4bb4a2bcbaec5585c501922146094dad6add5",
+      "knowledge_sha256": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd"
+    },
+    {
+      "id": "candidate4-freeze",
+      "sha256": "a059ccab12de2ce8387012ec9945722093c2c4b07d3a4c8caccdaaeb55521bb7",
+      "core_sha": "dd25f58593ef8b8923922e46f428f9e956e767d0",
+      "roles": {
+        "conversation": "c9fc8fff127b5946156efa17a3fc39ff6bfd43c0f352fe7df1366a7ab3c93104",
+        "sales": "73447ad9300ee48bdec94f214752d0d1d0ac98782b8ec3127dfe4cda5b44c9d7",
+        "quality": "d811ed925f40c1e1d938252590da81b2303376ed8c422e7978fb9c6052bafee0"
+      },
+      "adaptive_hash": "c9fc8fff127b5946156efa17a3fc39ff6bfd43c0f352fe7df1366a7ab3c93104",
+      "evaluation_contract_hash": "6e08c7c4684030e4d492ff68fa83b8904ac877518430f92296b1f6bee45b29b1",
+      "knowledge_sha256": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd"
+    },
+    {
+      "id": "candidate5-freeze",
+      "sha256": "e5caa3e25fd030e856ebdc3539a13c3db8820c471f7831ff455ea7790683684f",
+      "core_sha": "ec73aaf8a572c0a89ebe6621e4d734805026692f",
+      "roles": {
+        "conversation": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+        "sales": "c2c66116b9f40ab2199731073fc8ce7e9259af2793012fcff29c5b82c4e60179",
+        "quality": "1b9cea43fdc205fbc3c508d29b080000e687940d5a13f5e9d24e9bc23bcfa278"
+      },
+      "adaptive_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "evaluation_contract_hash": "3e2a6625e35ee5316e2745111c2fa602a16aa1a64535f6ac2961022fe5c6ea41",
+      "knowledge_sha256": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd"
+    }
+  ],
+  "baseline_snapshot": {
+    "core_sha": "38cba4aae63d97a42c27a67e6f2070ec2241e132",
+    "roles": {
+      "conversation": "fa7bfe37b744ec9174efe2862f23d9f9d7826860a4ae634b3a9528b825bb01f5",
+      "sales": "789251afe8c03015106a477ed546432adaf36891f0d49767f84256a5cc6cb507",
+      "quality": "903db3254cd908e61e04254f63d06bdce23748061b04caa2cbd7bbbff048a342"
+    },
+    "adaptive_hash": "fa7bfe37b744ec9174efe2862f23d9f9d7826860a4ae634b3a9528b825bb01f5",
+    "evaluation_contract_hash": "7a27cc0b752993f5fb338ae8795e43671730c5b5a84bd86dd34d11760d41fb0f",
+    "knowledge_sha256": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd"
+  },
+  "frozen_source_bytes_sha256": {
+    "src/pinet_core/followup_projection.py": "23d750bbf2a93cce38dfcc422f4827c0c92ab7b9ee2b04c0241ecb068041b0c6",
+    "src/pinet_core/knowledge.py": "94a0c6e80727283fa9280653b49b69d90bc673c72ada92578a249d58178f3a14",
+    "src/pinet_core/instructions/niches/parasoplansetes/conversation.md": "add4797ea75021617383bbaaf16f81ed12a54823696b8e96cc64513d5c7b03dc",
+    "src/pinet_core/instructions/niches/parasoplansetes/sales.md": "582a26ca14e9c94adf83401d4f82b34d391a44559423ed6f0ee31c428e0bfbb3",
+    "src/pinet_core/instructions/niches/parasoplansetes/supplier.md": "e7cc2623709692afab39d19fa4af7b7a2d8bfd9c689d4642bb8a011859a17331",
+    "scripts/client_lab.py": "45a8cbb4378b15c547209e2c07a107083890ca4c3533a3f38729cd2e233bca32",
+    "scripts/network_lab.py": "d2c42ba13958f2edee9c8141481164cc106a84c89f942c17ec2fe679a7953379",
+    "evals/network/parasoplansetes.json": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+    "evals/text-service-v2/parasoplansetes.json": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+    "evals/text-service-long-v1/parasoplansetes.json": "79e7cf41e826a2119b56cd390e3df1855c336bbd4c30d3d5a71e8ad743b00513"
+  },
+  "runs": [
+    {
+      "id": "parasoplansetes-codex-long-candidate2-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-long-candidate2-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "98afd45c469363322637f07819312955f22937a4898d7602adb0002f09028307",
+      "expected": 3,
+      "attempted": 3,
+      "completed_with_scores": 3,
+      "passed": 3,
+      "all_checks_pass": true,
+      "calls": 37,
+      "average_score_out_of_10": 9.0667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "65dff34f0facd9c8506033f3ff695fa47d30aba52a46590bb78b7c1d439158a1",
+      "evaluation_contract_hash": "f768a74cc0d8e98afc324134ddea42640fe7e9530ace92dff774723cd92072de",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "79e7cf41e826a2119b56cd390e3df1855c336bbd4c30d3d5a71e8ad743b00513",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "long_saved_email_latest_quantity",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "long_novice_mixed_no_contact",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "long_budget_display_and_selection",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-long-candidate3-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-long-candidate3-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "37353f7cd2eade28e165bfd33ae04a5d1b9b3d9a97ff4db3a21381f079f0b605",
+      "expected": 3,
+      "attempted": 3,
+      "completed_with_scores": 3,
+      "passed": 2,
+      "all_checks_pass": false,
+      "calls": 37,
+      "average_score_out_of_10": 9.3333,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "7f017e47b4d72851cc4e9f6e02af724f5c8206eaf45c29ac2dbf2e41d77a3c64",
+      "evaluation_contract_hash": "4a9c988d16a3835925f8a553fad4bb4a2bcbaec5585c501922146094dad6add5",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "79e7cf41e826a2119b56cd390e3df1855c336bbd4c30d3d5a71e8ad743b00513",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "long_saved_email_latest_quantity",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [
+            "independent_review_helpful"
+          ],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "long_novice_mixed_no_contact",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "long_budget_display_and_selection",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-long-candidate4-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-long-candidate4-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "3bfd139f19067c4bacecea7dab3436973cd4487bb3a55dd393feb42fbd8d8e83",
+      "expected": 3,
+      "attempted": 3,
+      "completed_with_scores": 3,
+      "passed": 3,
+      "all_checks_pass": true,
+      "calls": 37,
+      "average_score_out_of_10": 9.4667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "c9fc8fff127b5946156efa17a3fc39ff6bfd43c0f352fe7df1366a7ab3c93104",
+      "evaluation_contract_hash": "6e08c7c4684030e4d492ff68fa83b8904ac877518430f92296b1f6bee45b29b1",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "79e7cf41e826a2119b56cd390e3df1855c336bbd4c30d3d5a71e8ad743b00513",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "long_saved_email_latest_quantity",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "long_novice_mixed_no_contact",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "long_budget_display_and_selection",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-long-candidate5-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-long-candidate5-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "77df3020165a327104f3cdfcc9a7c94fd1080b9ec1b7d67f6eb75e0c58d2fd41",
+      "expected": 3,
+      "attempted": 3,
+      "completed_with_scores": 3,
+      "passed": 3,
+      "all_checks_pass": true,
+      "calls": 38,
+      "average_score_out_of_10": 9.0667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "evaluation_contract_hash": "3e2a6625e35ee5316e2745111c2fa602a16aa1a64535f6ac2961022fe5c6ea41",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "79e7cf41e826a2119b56cd390e3df1855c336bbd4c30d3d5a71e8ad743b00513",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "long_saved_email_latest_quantity",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "long_novice_mixed_no_contact",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 4,
+            "listening": 4,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "long_budget_display_and_selection",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-only-admitted-baseline-20261009",
+      "phase": "baseline",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-only-admitted-baseline-20261009/parasoplansetes/baseline/report.json",
+      "sha256": "7e5dedbdfbcdfe349f61a06638ba3c9a09f3931b5e62b96d071d5c0168749844",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 6,
+      "all_checks_pass": true,
+      "calls": 49,
+      "average_score_out_of_10": 9.0667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "fa7bfe37b744ec9174efe2862f23d9f9d7826860a4ae634b3a9528b825bb01f5",
+      "evaluation_contract_hash": "7a27cc0b752993f5fb338ae8795e43671730c5b5a84bd86dd34d11760d41fb0f",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "clear_buyer_contact_during",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "unsure_business_process",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "urgent_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "technical_skeptic_compatibility",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 4,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "price_budget_old_brand",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "privacy_refusal",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-only-baseline-20261009",
+      "phase": "baseline",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-only-baseline-20261009/parasoplansetes/baseline/report.json",
+      "sha256": "2f58583f58d93f5d1994bdea6a7fe6ac7b4dc596764485b9915c19f68c7f3fa3",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 0,
+      "passed": 0,
+      "all_checks_pass": false,
+      "calls": 0,
+      "average_score_out_of_10": null,
+      "minimum_score_out_of_5": null,
+      "all_dimensions_5": false,
+      "instruction_hash": "fa7bfe37b744ec9174efe2862f23d9f9d7826860a4ae634b3a9528b825bb01f5",
+      "evaluation_contract_hash": "7a27cc0b752993f5fb338ae8795e43671730c5b5a84bd86dd34d11760d41fb0f",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "clear_buyer_contact_during",
+          "errors": 0,
+          "scores": {
+            "relevance": null,
+            "factual_accuracy": null,
+            "listening": null,
+            "useful_next_step": null,
+            "email_quality": null
+          },
+          "failed_checks": [
+            "completed"
+          ],
+          "projection_kind": null
+        },
+        {
+          "id": "unsure_business_process",
+          "errors": 0,
+          "scores": {
+            "relevance": null,
+            "factual_accuracy": null,
+            "listening": null,
+            "useful_next_step": null,
+            "email_quality": null
+          },
+          "failed_checks": [
+            "completed"
+          ],
+          "projection_kind": null
+        },
+        {
+          "id": "urgent_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": null,
+            "factual_accuracy": null,
+            "listening": null,
+            "useful_next_step": null,
+            "email_quality": null
+          },
+          "failed_checks": [
+            "completed"
+          ],
+          "projection_kind": null
+        },
+        {
+          "id": "technical_skeptic_compatibility",
+          "errors": 0,
+          "scores": {
+            "relevance": null,
+            "factual_accuracy": null,
+            "listening": null,
+            "useful_next_step": null,
+            "email_quality": null
+          },
+          "failed_checks": [
+            "completed"
+          ],
+          "projection_kind": null
+        },
+        {
+          "id": "price_budget_old_brand",
+          "errors": 0,
+          "scores": {
+            "relevance": null,
+            "factual_accuracy": null,
+            "listening": null,
+            "useful_next_step": null,
+            "email_quality": null
+          },
+          "failed_checks": [
+            "completed"
+          ],
+          "projection_kind": null
+        },
+        {
+          "id": "privacy_refusal",
+          "errors": 0,
+          "scores": {
+            "relevance": null,
+            "factual_accuracy": null,
+            "listening": null,
+            "useful_next_step": null,
+            "email_quality": null
+          },
+          "failed_checks": [
+            "completed"
+          ],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-only-candidate1-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-only-candidate1-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "963363df20b0214abc07a1e8de2a3a60f85e9f64c4e03218f4d57a74bd673358",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 5,
+      "all_checks_pass": false,
+      "calls": 48,
+      "average_score_out_of_10": 8.9333,
+      "minimum_score_out_of_5": 3,
+      "all_dimensions_5": false,
+      "instruction_hash": "d5a3a8cfc2474f1b2dcc036d199205aa14cd9b2c798c357c5d989a4d6b62b330",
+      "evaluation_contract_hash": "3aea6621f120fd5a7ca1f305c942cfe280590345d8a9be40ca37e96ad0cecf7d",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "clear_buyer_contact_during",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "unsure_business_process",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "urgent_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "technical_skeptic_compatibility",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "price_budget_old_brand",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 4,
+            "useful_next_step": 4,
+            "email_quality": 3
+          },
+          "failed_checks": [
+            "reviewed_customer_projection_used",
+            "independent_review_helpful",
+            "competent_service_scores"
+          ],
+          "projection_kind": "informational_summary"
+        },
+        {
+          "id": "privacy_refusal",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-only-candidate2-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-only-candidate2-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "68e4541a79ad650a0fbe83f9ed204dc395ada5dd21ac43308e54187a7934f98d",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 5,
+      "all_checks_pass": false,
+      "calls": 48,
+      "average_score_out_of_10": 9.1333,
+      "minimum_score_out_of_5": 3,
+      "all_dimensions_5": false,
+      "instruction_hash": "65dff34f0facd9c8506033f3ff695fa47d30aba52a46590bb78b7c1d439158a1",
+      "evaluation_contract_hash": "f768a74cc0d8e98afc324134ddea42640fe7e9530ace92dff774723cd92072de",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "clear_buyer_contact_during",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 4,
+            "useful_next_step": 3,
+            "email_quality": 4
+          },
+          "failed_checks": [
+            "competent_service_scores"
+          ],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "unsure_business_process",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "urgent_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "technical_skeptic_compatibility",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "price_budget_old_brand",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "privacy_refusal",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-only-candidate3-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-only-candidate3-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "fd65a881b80162ec1c769ce8c947696912f6c242479ca41ed47ec3b6bca0239b",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 5,
+      "all_checks_pass": false,
+      "calls": 49,
+      "average_score_out_of_10": 9.2667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "7f017e47b4d72851cc4e9f6e02af724f5c8206eaf45c29ac2dbf2e41d77a3c64",
+      "evaluation_contract_hash": "4a9c988d16a3835925f8a553fad4bb4a2bcbaec5585c501922146094dad6add5",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "clear_buyer_contact_during",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "unsure_business_process",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [
+            "independent_review_helpful"
+          ],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "urgent_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "technical_skeptic_compatibility",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "price_budget_old_brand",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "privacy_refusal",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-only-candidate4-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-only-candidate4-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "7f93e47461707b77505b3317a9e54d84dbeebce786ddfacc2c467ad11f52ca6c",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 6,
+      "all_checks_pass": true,
+      "calls": 49,
+      "average_score_out_of_10": 8.7333,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "c9fc8fff127b5946156efa17a3fc39ff6bfd43c0f352fe7df1366a7ab3c93104",
+      "evaluation_contract_hash": "6e08c7c4684030e4d492ff68fa83b8904ac877518430f92296b1f6bee45b29b1",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "clear_buyer_contact_during",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "unsure_business_process",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "urgent_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 4,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "technical_skeptic_compatibility",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "price_budget_old_brand",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "privacy_refusal",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-only-candidate5-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-only-candidate5-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "75f72547444ffed3657b32e41a7bd2a0d8e4aedccd45662d3a41858c16d9fb24",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 6,
+      "all_checks_pass": true,
+      "calls": 48,
+      "average_score_out_of_10": 9.0,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "evaluation_contract_hash": "3e2a6625e35ee5316e2745111c2fa602a16aa1a64535f6ac2961022fe5c6ea41",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "clear_buyer_contact_during",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "unsure_business_process",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "urgent_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "technical_skeptic_compatibility",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "price_budget_old_brand",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "privacy_refusal",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-text-v2-baseline-20261009",
+      "phase": "baseline",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-text-v2-baseline-20261009/parasoplansetes/baseline/report.json",
+      "sha256": "5cfd18f7ef82d355ee44b36aab78aad2a18d9a0d1507cbc8710d502ae7e61c05",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 5,
+      "all_checks_pass": false,
+      "calls": 47,
+      "average_score_out_of_10": 9.2,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "fa7bfe37b744ec9174efe2862f23d9f9d7826860a4ae634b3a9528b825bb01f5",
+      "evaluation_contract_hash": "7a27cc0b752993f5fb338ae8795e43671730c5b5a84bd86dd34d11760d41fb0f",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "office_unsure_not_device_count",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "urgent_correction_no_stock",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "screen_5_not_automatic_exclusion",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [
+            "independent_review_helpful"
+          ],
+          "projection_kind": null
+        },
+        {
+          "id": "budget_no_invented_offer",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "privacy_reject_data_transfer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "saved_contact_change_language",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-text-v2-candidate1-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-text-v2-candidate1-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "864f0e2810697a597465fc39b72cd3ed3ef4df108875ed78f5cccc9ef88a2d1d",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 6,
+      "all_checks_pass": true,
+      "calls": 47,
+      "average_score_out_of_10": 9.2667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "d5a3a8cfc2474f1b2dcc036d199205aa14cd9b2c798c357c5d989a4d6b62b330",
+      "evaluation_contract_hash": "3aea6621f120fd5a7ca1f305c942cfe280590345d8a9be40ca37e96ad0cecf7d",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "office_unsure_not_device_count",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "urgent_correction_no_stock",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "screen_5_not_automatic_exclusion",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "budget_no_invented_offer",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "privacy_reject_data_transfer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "saved_contact_change_language",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-text-v2-candidate2-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-text-v2-candidate2-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "6147c8694fbf06d72bc750e1d320f276e7c0b83da3eaf9310a45f886d0f7ed84",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 6,
+      "all_checks_pass": true,
+      "calls": 45,
+      "average_score_out_of_10": 9.2667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "65dff34f0facd9c8506033f3ff695fa47d30aba52a46590bb78b7c1d439158a1",
+      "evaluation_contract_hash": "f768a74cc0d8e98afc324134ddea42640fe7e9530ace92dff774723cd92072de",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "office_unsure_not_device_count",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "urgent_correction_no_stock",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "screen_5_not_automatic_exclusion",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "budget_no_invented_offer",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "privacy_reject_data_transfer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "saved_contact_change_language",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-text-v2-candidate3-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-text-v2-candidate3-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "2fda4cddb1405b0b5b3acadf26fbf777f69dc2e9c9afba541211fdf4293df24e",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 5,
+      "all_checks_pass": false,
+      "calls": 46,
+      "average_score_out_of_10": 9.4,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "7f017e47b4d72851cc4e9f6e02af724f5c8206eaf45c29ac2dbf2e41d77a3c64",
+      "evaluation_contract_hash": "4a9c988d16a3835925f8a553fad4bb4a2bcbaec5585c501922146094dad6add5",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "office_unsure_not_device_count",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "urgent_correction_no_stock",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "screen_5_not_automatic_exclusion",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "budget_no_invented_offer",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "privacy_reject_data_transfer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "saved_contact_change_language",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 4,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [
+            "independent_review_helpful"
+          ],
+          "projection_kind": "reviewed_informational_followup"
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-text-v2-candidate4-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-text-v2-candidate4-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "8d8b520e34b1c942097550075efdbd7f510afefa52631452afb740ea3d4c8010",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 6,
+      "all_checks_pass": true,
+      "calls": 47,
+      "average_score_out_of_10": 9.2667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "c9fc8fff127b5946156efa17a3fc39ff6bfd43c0f352fe7df1366a7ab3c93104",
+      "evaluation_contract_hash": "6e08c7c4684030e4d492ff68fa83b8904ac877518430f92296b1f6bee45b29b1",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "office_unsure_not_device_count",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "urgent_correction_no_stock",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "screen_5_not_automatic_exclusion",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "budget_no_invented_offer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "privacy_reject_data_transfer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "saved_contact_change_language",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-text-v2-candidate5-20261009",
+      "phase": "candidate",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-text-v2-candidate5-20261009/parasoplansetes/candidate/report.json",
+      "sha256": "0b858424bf82530ad95f53c3e19ab7bcd4a7c25b68490ac00294906a39a70dc2",
+      "expected": 6,
+      "attempted": 6,
+      "completed_with_scores": 6,
+      "passed": 6,
+      "all_checks_pass": true,
+      "calls": 46,
+      "average_score_out_of_10": 9.2667,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "evaluation_contract_hash": "3e2a6625e35ee5316e2745111c2fa602a16aa1a64535f6ac2961022fe5c6ea41",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "office_unsure_not_device_count",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 4,
+            "listening": 4,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "urgent_correction_no_stock",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        },
+        {
+          "id": "screen_5_not_automatic_exclusion",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "budget_no_invented_offer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "privacy_reject_data_transfer",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 5,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "saved_contact_change_language",
+          "errors": 0,
+          "scores": {
+            "relevance": 4,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 4
+          },
+          "failed_checks": [],
+          "projection_kind": "reviewed_informational_followup"
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-codex-text-v2-protected5-20261010",
+      "phase": "blind",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-codex-text-v2-protected5-20261010/parasoplansetes/blind/report.json",
+      "sha256": "082cfe76369ca0b64a15c654798666e49a7ddbc99999c20afc6c77546cbbfa08",
+      "expected": 4,
+      "attempted": 4,
+      "completed_with_scores": 4,
+      "passed": 4,
+      "all_checks_pass": true,
+      "calls": 30,
+      "average_score_out_of_10": 9.6,
+      "minimum_score_out_of_5": 4,
+      "all_dimensions_5": false,
+      "instruction_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "evaluation_contract_hash": "3e2a6625e35ee5316e2745111c2fa602a16aa1a64535f6ac2961022fe5c6ea41",
+      "knowledge_hash": "b6722a068ab9a562bff3813d77a02135bd68a1883fe579a5d19b403f029f08cd",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_activated": false,
+      "clients": [
+        {
+          "id": "reserve_remote_mixed_workflow",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "reserve_phone_quantity_correction",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "reserve_legal_erp_claim_pressure",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        },
+        {
+          "id": "reserve_english_no_contact_specific_summary",
+          "errors": 0,
+          "scores": {
+            "relevance": 5,
+            "factual_accuracy": 5,
+            "listening": 5,
+            "useful_next_step": 4,
+            "email_quality": 5
+          },
+          "failed_checks": [],
+          "projection_kind": null
+        }
+      ]
+    }
+  ],
+  "final_acceptance": {
+    "cases": 19,
+    "operational_pass": 19,
+    "operational_gate": "PASS",
+    "mean_score_out_of_10": 9.2211,
+    "minimum_dimension_out_of_5": 4,
+    "all_dimensions_5": false,
+    "measured_10_target": "FAIL",
+    "protected_run": "parasoplansetes-codex-text-v2-protected5-20261010",
+    "protected_provenance": "Operator-authored withheld feedback; no candidate tuning from protected outcomes before this run; not external human-authored blind."
+  },
+  "usage": {
+    "canonical_cli_calls": 748,
+    "evaluator_diagnostic_completed_calls": 8,
+    "evaluator_diagnostic_initial_calls_before_encoding_error": 3,
+    "gemini_calls_this_calibration": 0,
+    "treg_paid_calls_this_calibration": 0,
+    "smtp_sends_this_calibration": 0,
+    "each_training_batch_call_limit": 100,
+    "protected_batch_call_limit": 80,
+    "cli_timeout_seconds": 180,
+    "automatic_timeout_retries": 0,
+    "billing_limit": "Existing ChatGPT Codex account quota consumed; no direct API key or new paid provider transactions. CLI usage is not an EUR invoice; historical provider reservations left intact."
+  },
+  "learning": {
+    "operator_git_procedure_changes": true,
+    "automatic_learning_enabled": false,
+    "candidate_activated": false,
+    "private_local_active_pointer_exists": false,
+    "selected_hash_semantics": "Fallback packaged conversation hash changes with Git procedures; not evidence of adaptive promotion."
+  },
+  "quality_controls": {
+    "paired_calls": 8,
+    "honest_cases_correct": 4,
+    "fabricated_sending_cases_rejected": 4,
+    "old_and_new_prompts_both_correct": true,
+    "original_complex_false_positive_preserved": true,
+    "initial_diagnostic_failure": "Windows stdout encoding, not model/service PASS"
+  },
+  "limitations": [
+    "Finite synthetic corpus and same default CLI family, no independent human satisfaction score. No universal10/10claim.",
+    "Single stochastic repetition per full source/corpus batch; scores are descriptive, not controlled statistical improvement.",
+    "Evaluator fingerprint includes instructions/source; C4 chronology evidence added, numerical rubric and thresholds unchanged.",
+    "Oldv1blind cases already seen and not used as protected acceptance.",
+    "Gemini behavior and live browser/mail delivery require a separate later deployment check. No cloud release or DNS change."
+  ],
+  "draft_prs": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/46",
+    "https://github.com/christianza1989/niche-public-core/pull/17"
+  ],
+  "adoption": "Own branch proposal; no reviewed main merge, live provider adoption or autonomous promotion claimed.",
+  "latest_owner_steering": "Gemini text and email calibration authorized after frozen Codex stage; voice remains OFF.",
+  "gemini_preflight": {
+    "status": "BLOCKED",
+    "text_mail_model": "gemini-3.8-flash",
+    "future_voice_model": "gemini-3.8-live",
+    "voice_enabled": false,
+    "credential_storage": "private ignored runtime/.env; value omitted",
+    "free_metadata_requests": 3,
+    "inference_calls": 0,
+    "api_status": 403,
+    "reasons": [
+      "API_KEY_SERVICE_BLOCKED",
+      "SERVICE_DISABLED"
+    ],
+    "project": "926136508612",
+    "google_signin_required": true,
+    "official_docs": [
+      "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "rates_usd_per_million": {
+      "input": 0.75,
+      "output_including_thinking": 3.75,
+      "valid_through": "2026-12-31"
+    },
+    "treg_catalog": "free discovery none; no paid call",
+    "budget": {
+      "reservation_count": 44,
+      "reserved_microusd": 1866000,
+      "observed_microusd": 492610,
+      "runtime_limit_microusd": 1866000,
+      "owner_limit_eur": 2,
+      "mutated": false
+    },
+    "generate_content": "UNVERIFIED; metadata failure is not an inference test"
+  },
+  "refusal_metadata_clarification": "Original canonical network runner already assigned refusal independently; export/negative-control repair does not establish old baseline false green."
+}

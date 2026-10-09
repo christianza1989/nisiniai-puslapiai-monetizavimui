@@ -1,0 +1,7 @@
+{
+  "status": "finding",
+  "note": "Correction of original journal summary: canonical network_lab already assigned persona refusal to its row before checks. client_lab exported metadata omitted it, but that omission did NOT establish a vacuous canonical baseline PASS. Retain original immutable record; scoped export/helper and actual negative controls remain useful. Evidence: original Git runner versus client_lab return, final report AGENT-TEXT-CODEX-20261010.",
+  "eventId": "274dce4c-a832-4ed2-b13c-784140d17e93",
+  "sequence": 3,
+  "at": "2026-10-09T21:16:52.978Z"
+}

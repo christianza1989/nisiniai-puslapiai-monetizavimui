@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-09T07:13:40.234Z",
+  "mode": "preflight",
+  "siteId": "parasoplansetes",
+  "mapSha256": "43c8ae251922b2e601d822c645163bb43e43f092c2010048eb7a191aca6adf41",
+  "writesPerformed": false,
+  "limits": "This read-only URL check does not certify mail, privacy, DNS ownership, rankings or full launch readiness.",
+  "dns": [
+    {
+      "host": "signaturepads.lt",
+      "records": [
+        {
+          "type": "NS",
+          "values": [
+            "ns1.dns-parking.com",
+            "ns2.dns-parking.com"
+          ]
+        },
+        {
+          "type": "A",
+          "values": [
+            "194.59.166.37"
+          ]
+        },
+        {
+          "type": "AAAA",
+          "values": [
+            "2a02:4780:9:1481:0:2019:5ffb:8"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "parasoplansetes.lt",
+      "records": [
+        {
+          "type": "NS",
+          "values": [],
+          "error": "ENOTFOUND"
+        },
+        {
+          "type": "A",
+          "values": [],
+          "error": "ENOTFOUND"
+        },
+        {
+          "type": "AAAA",
+          "values": [],
+          "error": "ENOTFOUND"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "status": null,
+      "error": "ENOTFOUND",
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "pass": false
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "status": null,
+      "error": "ENOTFOUND",
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "pass": false
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "status": null,
+      "error": "ENOTFOUND",
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "pass": false
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "status": null,
+      "error": "ENOTFOUND",
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "pass": false
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "status": null,
+      "error": "ENOTFOUND",
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "pass": false
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "status": 301,
+      "location": "https://signaturepads.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/",
+      "canonical": null,
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "observedDestination": "https://signaturepads.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/"
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/",
+      "status": 200,
+      "location": null,
+      "canonical": "https://signaturepads.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/",
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "observedDestination": null
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "status": 301,
+      "location": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3/",
+      "canonical": null,
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "observedDestination": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3/"
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3/",
+      "status": 200,
+      "location": null,
+      "canonical": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3/",
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "observedDestination": null
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "status": 301,
+      "location": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0/",
+      "canonical": null,
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "observedDestination": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0/"
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0/",
+      "status": 200,
+      "location": null,
+      "canonical": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0/",
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "observedDestination": null
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "status": 301,
+      "location": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/",
+      "canonical": null,
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "observedDestination": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/"
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/",
+      "status": 200,
+      "location": null,
+      "canonical": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/",
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "observedDestination": null
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "status": 301,
+      "location": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10/",
+      "canonical": null,
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "observedDestination": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10/"
+    },
+    {
+      "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10/",
+      "status": 200,
+      "location": null,
+      "canonical": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10/",
+      "noindex": false,
+      "expectedDestination": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "observedDestination": null
+    }
+  ],
+  "preservedPaths": [
+    {
+      "path": "/",
+      "chain": [
+        {
+          "url": "https://signaturepads.lt/",
+          "status": 200,
+          "location": null,
+          "canonical": "https://signaturepads.lt/",
+          "noindex": false
+        }
+      ],
+      "pass": true
+    },
+    {
+      "path": "/iranga/paraso-plansetes/",
+      "chain": [
+        {
+          "url": "https://signaturepads.lt/iranga/paraso-plansetes/",
+          "status": 200,
+          "location": null,
+          "canonical": "https://signaturepads.lt/iranga/paraso-plansetes/",
+          "noindex": false
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "status": "BLOCKED_URL_CHECKS"
+}

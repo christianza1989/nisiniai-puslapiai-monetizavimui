@@ -1,4 +1,5 @@
 # Dviejų gamintojų atskyrimo planas
+Vykdomas penkių modelių žemėlapis ir read-only preview/preflight/postflight tikrintuvas: `migration-url-map.json`, `verify-migration.mjs`. 2026-10-09 faktiniai DNS / URL kvitai ir paleidimo seka — `LAUNCH_NEXT.md`; paruošti seno WordPress tekstai — `SIGNOTEC_WORDPRESS_DRAFT.md`. Vieši pakeitimai dar neįdiegti.
 2026-10-08. signaturepads.lt priklauso savininkui; parasoplansetes.lt jo pasirinktas StepOver domenas. Šiame darbe WordPress rašymo / serverio prieigos nėra; gyvi pakeitimai neatlikti. Perkeliama tik StepOver dalis, ne visas domenas.
 ## Tikslus produkto žemėlapis
 | Senas signaturepads.lt kelias | Naujas parasoplansetes.lt kelias | Veiksmas po realaus naujo puslapio priėmimo |

@@ -4,11 +4,11 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-08T06:10:08.762Z",
-  "lastResearchDateLocal": "2026-10-08",
-  "lastResearchFile": "research/2026-10-08-lt-availability/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-08-lt-availability/QA.json",
-  "lastCycleOutcome": "new_experiment_proposed",
+  "lastResearchAt": "2026-10-09T14:50:31.232Z",
+  "lastResearchDateLocal": "2026-10-09",
+  "lastResearchFile": "research/2026-10-08-scaffold-public-space/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-08-scaffold-public-space/QA.json",
+  "lastCycleOutcome": "evidence_only_no_new_proposal",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003"
@@ -75,11 +75,11 @@
     }
   ],
   "researchContinuity": {
-    "completed": "Four primary DOMREG HTML sources inspected; .lt quarantine,random24h release,30day trade restriction and DAS versus WHOIS100/30min limit documented. Existing VISION/M9 domain-availability requirement concretized as BDEV-0003-P3 proposed1hour bounded status-only lab. No TCP/test/code/purchase executed. Current main targeted search found no named DAS integration in reviewed dirs,not all branches audit. Root/core latest owner decisions recovered from bounded local logs after unavailable thread tools; no new registry approval. Own Git worktree/PR1 only; main continuity older.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision",
-    "nextCandidateQuestion": "Review main and attached PR1 latest continuity plus actual direct owner decisions. P3 is proposed; implement only if explicitly scoped approved and coordinate domain-sorter boundaries. Preserve P1/P2/BI pending and tractor/Verslomatika other executors. Do not repeat existing source studies.",
+    "completed": "Oct8 14:00 heartbeat research completed Oct9 after environment date advance. Three Vilnius permit service pages inspected; permit lifecycle metadata distinguished from unverified actual legal applicability and fees. One Treg catalog query returned none; no provider calls. Existing scaffold M1 retained, no new idea or pilot. Latest root/core direct owner turns reviewed; no registry pilot approval. Own fresh worktree from fetched main, old scoped research integrated without conflicts; both GitHub repos freshness PASS. No site/core/runtime changes.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision",
+    "nextCandidateQuestion": "First run canonical Git freshness in owned current worktree, read current registry plus PR1 and direct owner decisions. Continue only specifically approved work; P1/P2/P3/BI remain proposed. Do not duplicate the active agent creation/calibration executor or reopen source-only niche studies.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
-    "executionScope": "Research/private registry only. BDEV-0003-P1/P2/P3 proposed; no availability lab or export/restore implementation executed. No purchases,live campaigns,DNS or account permissions."
+    "executionScope": "Research/private registry only; no new BDEV ID, no approved experiments or live operations. Existing P1/P2/P3 remain proposed. No site form, permits, accounts, purchase, DNS or campaigns."
   },
   "approvedWork": [
     {
@@ -98,5 +98,14 @@
       ]
     }
   ],
-  "scope": "Private business-development registry; no blanket permission for proposed changes"
+  "scope": "Private business-development registry; no blanket permission for proposed changes",
+  "gitContinuity": {
+    "worktree": "C:/Users/lenovo/.codex/worktrees/bdev-current/nisiniai_puslapiai_monetizavimui",
+    "localBranch": "codex/bdev-research-20261008-main",
+    "prUrl": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/1",
+    "remotePrBranch": "ai/bdev-scaffold-fee-20261005",
+    "coreMainSha": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+    "companionMainSha": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+    "note": "Fresh worktree integrates original PR history. Prior owned checkout preserved; future work uses this current worktree. No companion source edits."
+  }
 }

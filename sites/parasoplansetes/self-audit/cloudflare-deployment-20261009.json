@@ -1,0 +1,53 @@
+{
+  "status": "DEPLOYED_TEMPORARY_HOST_VERIFIED",
+  "date": "2026-10-09",
+  "url": "https://parasoplansetes-preview.pinet-azprekyba.workers.dev/",
+  "accountId": "1c0a7407abfb959d5ff46540f5f7009d",
+  "worker": "parasoplansetes-preview",
+  "versionId": "15c617c3-e85c-4e05-9e68-a961056f0678",
+  "initialVersionId": "306d5a6f-8309-4a58-808f-c4b1bda46578",
+  "d1": {
+    "name": "parasoplansetes-preview",
+    "id": "98f4d3c5-11a4-4d19-a6ec-d568a96da0f7",
+    "jurisdiction": "eu",
+    "region": "EEUR",
+    "schemaFiles": ["drizzle/0004_niche_leads.sql", "drizzle/0005_niche_interest_daily.sql"],
+    "ownSyntheticLeadId": "3dd70299-1700-4daa-afbe-e3a23a9a9f87",
+    "siteId": "parasoplansetes",
+    "sourcePath": "/kontaktai",
+    "formHttpStatus": 200,
+    "persistenceReadAfterRedeployment": true,
+    "realDemandEvidence": false
+  },
+  "source": {
+    "publicSha": "7761a29a0464e6ed0544b17567cd68539df89109",
+    "privatePreparationCheckpoint": "2c25973f8413e9b8be003542357994d3c7f22b69",
+    "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+    "adapterSha256": "891f8d372842f796e0c1751e6b58aedf9b1675f38ff33b3cd101ceecdad5e2da",
+    "releaseId": "f6b9db27-c7f2-4545-8fdb-8171ecbff165"
+  },
+  "validation": {
+    "regressionTests": 5,
+    "httpChecks": 60,
+    "pages": 19,
+    "media": 20,
+    "frameworkAssets": 16,
+    "report": "cloudflare-preview-remote-20261009.json",
+    "initialLimitedReport": "cloudflare-preview-remote-initial-20261009.json",
+    "visibleCssRules": [9, 123],
+    "browserGuideNavigation": true,
+    "screenshot": "output/parasoplansetes-cloudflare-preview/cloudflare-live-home-fixed.png"
+  },
+  "settings": {
+    "noindex": true,
+    "robotsDisallowAll": true,
+    "smtpEnabled": false,
+    "emailBindingEnabled": false,
+    "voiceEnabled": false,
+    "canonicalHost": "parasoplansetes.lt",
+    "customDomainConnected": false,
+    "paidPlanActivated": false,
+    "newPaidResearchCalls": 0
+  },
+  "limitations": ["SMTP/INBOX delivery unverified", "custom domain and WordPress migration not performed", "full local phase-one and production launch acceptance remains incomplete", "first44HTTP checks did not cover CSS/JS; browser found404, adapter fixed and expanded60checks passed"]
+}

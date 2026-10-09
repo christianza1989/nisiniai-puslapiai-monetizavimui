@@ -1,5 +1,7 @@
 # Aktualus GitHub perdavimas
 
+2026-10-09 papildymas: private2c25973 įkėlė site-specific Cloudflare preview helperį ir vietinę patikrą. Savininkui užbaigus OAuth, realus įkėlimas ir private adapterio CSS/JS pataisa tęsiami tame pačiame PR46; public source7761a29 ir approved package unchanged. Galutinis runtime version15c617c3-e85c-4e05-9e68-a961056f0678, workers.dev/60HTTP/browser/remoteD1 įrodymai — cloudflare-preview/README.md. Tai ne merge/adoption, custom-domain readiness ar SMTP PASS.
+
 2026-10-09. Paskyra **guzhas** dabar turi `push=true` abiejuose repo: `christianza1989/nisiniai-puslapiai-monetizavimui` ir `christianza1989/niche-public-core`. Abi teisės patvirtintos tikrais sėkmingais šakų push ir `git ls-remote` patikromis, ne vien API leidimo lauku.
 
 - Privačios šakos `codex/parasoplansetes-f1-20261008` įgyvendinimo checkpoint `d0f2d22c26607ff674002009a9b8194a8f6ad24c` įkeltas. Šio dokumento ir journal įvykių commit tęsiamas toje pačioje šakoje; naujausias SHA tikrinamas per Git / PR head.

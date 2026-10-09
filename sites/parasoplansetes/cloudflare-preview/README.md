@@ -2,6 +2,20 @@
 
 Savininkas 2026-10-09 aiškiai pavedė įkelti svetainę kol kas be domeno. Tai viešas laikinas `workers.dev` adresas su `noindex`, ne galutinis parasoplansetes.lt / SEO paleidimo priėmimas. Domeno / WordPress / 301 / Search Console ir SMTP priėmimo būsenos nesikeičia.
 
+## Aktualus rezultatas: įkelta 2026-10-09
+
+Veikiantis adresas: **https://parasoplansetes-preview.pinet-azprekyba.workers.dev/**. Savininko užbaigtas Wrangler OAuth dabar veikia, paskyra patvirtinta per whoami: info@azprekyba.lt / numatytas account ID. Pasirinkti workers_scripts:write ir d1:write leidimai pakako realiam įkėlimui; bendras whoami įspėjimas dėl kitų numatytųjų produktų scopes nėra šio diegimo klaida.
+
+Sukurtas account subdomain pinet-azprekyba, atskiras Worker parasoplansetes-preview ir D1 UUID `98f4d3c5-11a4-4d19-a6ec-d568a96da0f7`, jurisdiction EU / EEUR. Į DB įdiegtos tik lead ir interest lentelės. Galutinė Worker versija **15c617c3-e85c-4e05-9e68-a961056f0678**. Jokių mokamų planų, custom domain, SMTP, DNS ar WordPress pakeitimų.
+
+Galutinė patikra: **5 regresijos ir60gyvų HTTP checks PASS**: 19 puslapių, 20 medijos failų, 16 CSS/JS failų, 3 draudžiami vidiniai/API maršrutai, robots ir cross-origin formos guard. `self-audit/cloudflare-preview-remote-20261009.json` turi tikrą workers.dev bazę ir remoteDeploymentProven=true. Naršyklėje stylesheet9/123rules, matomas teisingas dizainas, natūrali navigacija homepage → pasirinkimo gidas → homepage. Galutinis vietinis screenshot: ignored `output/parasoplansetes-cloudflare-preview/cloudflare-live-home-fixed.png`.
+
+Gyva sintetinė forma gavo200, o remote D1 patvirtino tikslų ID `3dd70299-1700-4daa-afbe-e3a23a9a9f87`, site_id parasoplansetes / source_path /kontaktai. Forma pateikia tikrą išsaugojimo tekstą ir aiškiai nurodo, kad el. laiškas neperduotas. Tai ne SMTP/INBOX ar tikros klientų paklausos įrodymas. Vienintelis bandymas aiškiai pažymėtas QA, be tikrų klientų duomenų.
+
+Naršyklė aptiko pirmo įkėlimo CSS/JS404: assets run_worker_first=true nukreipė framework failus į rendererį, kuris paprastai juos palieka Cloudflare static assets sluoksniui. Vietinis adapteris dabar tik /_next/static/ ir /fonts/ perduoda ASSETS binding; publication-controlled medija tebelieka native guard. Pridėta prasminga regresija ir16frameworkfailų HTTP patikra, įkelta pataisyta versija. Pirmo44checks kvitas išsaugotas kaip `cloudflare-preview-remote-initial-20261009.json`; jis neapėmė CSS/JS ir nėra viso dizaino PASS.
+
+Autorizacijos callback problema išspręsta: originali CLI funkcija po120sekundžių uždaro localhost8976, todėl savininko vėlesnis callback nebeatsidaro. Tik vienam Node procesui ignored preload pratęsė šį konkretų laukimą iki30minučių; state, PKCE, scope ir provider token galiojimas nepakeisti, dependency source neredaguotas. Naujas flow sėkmingai užbaigtas; auth code / PKCE / token į Git nepateko. Žemiau išsaugota ankstesnės kliūties istorija.
+
 ## Tikslas ir ribos
 
 - Paskyra: `1c0a7407abfb959d5ff46540f5f7009d`, esama `Info@azprekyba.lt's Account`.
@@ -11,7 +25,7 @@ Savininkas 2026-10-09 aiškiai pavedė įkelti svetainę kol kas be domeno. Tai 
 - Kiekvienas atsakymas turi `X-Robots-Tag: noindex, nofollow` ir `private, no-store`; robots disallow all. Canonical / schemos išlaiko tikrą pagrindinį domeną. Tos pačios svetainės HTTP redirects grįžta į peržiūros host.
 - Mail, voice išjungti. Forma gali saugoti užklausą tik savo D1; SMTP pristatymo nežada. Mokami planai ir periodiniai mokami kvietimai neaktyvuojami.
 
-## Faktinė būklė 2026-10-09 08:37 UTC
+## Ankstesnė būklė 2026-10-09 08:37 UTC (išspręsta)
 
 **REMOTE NOT_DEPLOYED / AUTHENTICATION_REQUIRED.** Cloudflare connector skaitymo operacijos veikia: account, Workers ir D1 sąrašai. Workers ir D1 sąrašai buvo tušti. `GET workers/subdomain` grąžino 10007: paskyra dar neturi workers.dev subdomain. Bandymas registruoti `pinet-azprekyba` ir bandymas sukurti `parasoplansetes-preview` EU D1 abu grąžino `10000: Authentication error`. Nė viena užklausa nepranešė apie sukurtą išteklių. Naršyklė buvo neprisijungusi, CLI whoami taip pat neprisijungęs. PC Full access suteikia vietinius leidimus, bet nėra Cloudflare account autentifikacija.
 

@@ -53,3 +53,18 @@ test('Same-site redirects stay on preview while external redirects retain their 
     assert.equal(response.status, 307);
   }
 });
+
+test('Public framework assets use the binding; publication-controlled media keep the native guard', async () => {
+  let applicationCalls = 0;
+  let assetCalls = 0;
+  const handler = createPreviewHandler({ fetch() { applicationCalls++; return new Response('native', { status: 404 }); } });
+  const boundEnv = { ...env, ASSETS: { fetch(request) { assetCalls++; assert.match(request.url, /\/_next\/static\/|\/fonts\//); return new Response('body{}', { headers: { 'content-type': 'text/css' } }); } } };
+  const css = await handler.fetch(new Request(`https://${host}/_next/static/css/site.css`), boundEnv);
+  assert.equal(css.status, 200);
+  assert.equal(css.headers.get('content-type'), 'text/css');
+  assert.equal(css.headers.get('x-robots-tag'), 'noindex, nofollow');
+  await handler.fetch(new Request(`https://${host}/fonts/site.woff2`), boundEnv);
+  assert.equal((await handler.fetch(new Request(`https://${host}/content-assets/other/private.webp`), boundEnv)).status, 404);
+  assert.equal(assetCalls, 2);
+  assert.equal(applicationCalls, 1);
+});

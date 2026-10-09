@@ -6,13 +6,22 @@ const root = path.resolve(here, '../../..');
 const pkg = JSON.parse(fs.readFileSync(path.resolve(root, '../dovanos-memorycasting/content-packages/parasoplansetes/content-package.json'), 'utf8'));
 const base = process.argv[2] || 'http://127.0.0.1:8802';
 const checks = [];
+const frameworkAssets = new Set();
 for (const page of pkg.pages) {
   const pathname = page.slug ? '/' + page.slug : '/';
   const response = await fetch(base + pathname);
   const html = await response.text();
+  for (const match of html.matchAll(/(?:href|src)="(\/_next\/static\/[^"?#]+|\/fonts\/[^"?#]+)"/g)) frameworkAssets.add(match[1]);
   const canonical = html.match(/<link\b(?=[^>]*rel="canonical")(?=[^>]*href="([^"]+)")[^>]*>/)?.[1];
   const pass = response.status === 200 && response.headers.get('x-robots-tag') === 'noindex, nofollow' && canonical === 'https://parasoplansetes.lt' + pathname && html.includes('<h1');
   checks.push({ path: pathname, status: response.status, canonical, noindex: response.headers.get('x-robots-tag'), pass });
+}
+for (const pathname of frameworkAssets) {
+  const response = await fetch(base + pathname);
+  const bytes = (await response.arrayBuffer()).byteLength;
+  const type = response.headers.get('content-type') || '';
+  const expectedType = pathname.endsWith('.css') ? type.includes('text/css') : pathname.endsWith('.js') ? /javascript/.test(type) : true;
+  checks.push({ path: pathname, kind: 'framework-asset', status: response.status, bytes, contentType: type, pass: response.status === 200 && bytes > 0 && expectedType && response.headers.get('x-robots-tag') === 'noindex, nofollow' });
 }
 for (const pathname of ['/niche/parasoplansetes', '/api/health', '/gift/parasoplansetes']) {
   const response = await fetch(base + pathname);

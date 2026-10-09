@@ -1,6 +1,6 @@
 # Paruoštas tęsinys ir tikros prieigos kliūtys
 
-2026-10-09 savininkas papildomai užsakė viešą Cloudflare peržiūrą be domeno. [Diegimo ruošinys ir faktiniai bandymai](cloudflare-preview/README.md): atskiras Worker/D1, noindex, originalus paketas; 4 adapterio regresijos, dry-run ir44HTTP local checks PASS. Remote įkėlimas dar neatliktas: dvi account rašymo užklausos atmestos10000, CLI/browser neprisijungę. Atvertas Wrangler autorizacijos langas savininkui. Tai nepakeičia žemiau esančių galutinio domeno / SMTP / migracijos vartų.
+2026-10-09 savininko užsakyta Cloudflare peržiūra be domeno **įkelta**: https://parasoplansetes-preview.pinet-azprekyba.workers.dev/ . [Diegimas ir faktiniai bandymai](cloudflare-preview/README.md): atskiras Worker/EU D1, noindex, originalus paketas; galutinės5adapterio regresijos ir60gyvų HTTP checks PASS, naršyklėje dizainas/gidas veikia, pažymėta QA forma įrašyta remote D1. Išspręstas120sekundžių OAuth callback timeout ir pirmo įkėlimo framework CSS/JS404. Mail/voice išjungti; žemiau esančių galutinio domeno / SMTP / WordPress migracijos vartų tai nepakeičia.
 
 2026-10-09 07:13 UTC. Šis dokumentas papildo auditą; nepakeičia neįvykdytų kriterijų į PASS.
 

@@ -51,7 +51,13 @@ export function createPreviewHandler(application) {
       }
       const forwarded = new Request(destination, { method: request.method, headers,
         body: request.body, redirect: 'manual', ...(request.body ? { duplex: 'half' } : {}) });
-      const response = await application.fetch(forwarded, env, ctx);
+      // Vite normally lets Cloudflare serve these public framework files before
+      // invoking the application. run_worker_first=true requires that handoff
+      // here so every response still gets the preview/noindex boundary.
+      const frameworkAsset = incoming.pathname.startsWith('/_next/static/') || incoming.pathname.startsWith('/fonts/');
+      const response = frameworkAsset
+        ? await env.ASSETS.fetch(request)
+        : await application.fetch(forwarded, env, ctx);
       const responseHeaders = new Headers(response.headers);
       responseHeaders.set('x-robots-tag', 'noindex, nofollow');
       responseHeaders.set('cache-control', 'private, no-store');

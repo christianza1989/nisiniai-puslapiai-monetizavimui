@@ -59,11 +59,9 @@ async def resolve(tx, args: KnowledgeQuery):
     if (not state or not state.payload.get('knowledge')
             or state.refreshed_at + timedelta(seconds=settings().knowledge_ttl_seconds) < utcnow()):
         return {"status": "unavailable", "reason": "knowledge_snapshot_expired", "sources": []}
-    tokens = set(re.findall(r"\w+", args.query.casefold()))
     pages = [p for p in state.payload["knowledge"]["pages"] if p["revision_hash"] not in state.payload["revoked"]]
-    scored = sorted(pages, key=lambda p: sum(t in p["text"].casefold() or t in p["title"].casefold()
-                                           for t in tokens), reverse=True)
-    matching = [p for p in scored if any(t in p["text"].casefold() or t in p["title"].casefold() for t in tokens)]
+    tokens = search_tokens(args.query)
+    matching = ranked_pages(pages, args.query)
     sources = []
     for page in matching[:3]:
         offset = 0
@@ -76,6 +74,36 @@ async def resolve(tx, args: KnowledgeQuery):
             "commercial_tools": "disabled", "knowledge_revision": state.revision,
             "deployment_id": state.payload["knowledge"]["deployment_id"],
             "snapshot_ttl_seconds": settings().knowledge_ttl_seconds}
+
+
+def search_tokens(value):
+    # Keep model decimals atomic: 5.0 must not match 10.0 via the token "0".
+    return set(t.replace(',', '.') if re.fullmatch(r'\d+(?:[.,]\d+)+', t) else t
+               for t in re.findall(r'\d+(?:[.,]\d+)+|\w+', value.casefold()))
+
+
+def ranked_pages(pages, query):
+    tokens = search_tokens(query)
+    identifiers = {t.strip('.,;:()[]').casefold() for t in query.split()}
+    normalized = ' '.join(re.findall(r'\d+(?:[.,]\d+)+|\w+', query.casefold()))
+
+    def rank(page):
+        title, body = page['title'].casefold(), page['text'].casefold()
+        title_tokens, body_tokens = search_tokens(title), search_tokens(body)
+        title_phrase = ' '.join(re.findall(r'\d+(?:[.,]\d+)+|\w+', title))
+        identity = page['id'].casefold() in identifiers or page['url'].casefold() in identifiers
+        exact_title = bool(title_phrase) and (' ' + title_phrase + ' ') in (' ' + normalized + ' ')
+        numbers = {t for t in tokens if re.fullmatch(r'\d+(?:\.\d+)*', t)}
+        title_hits = sum(t in title_tokens if t in numbers else t in title for t in tokens)
+        body_hits = sum(t in body_tokens if t in numbers else t in body for t in tokens)
+        # Identity is selected only inside the already approved, non-revoked set.
+        # A verbose generic page cannot displace an exact title or model number.
+        return (identity, exact_title, len(numbers & title_tokens),
+                title_hits / max(1, len(title_tokens)), title_hits, body_hits)
+
+    scored = [(rank(page), page) for page in pages]
+    return [page for score, page in sorted(scored, key=lambda pair: pair[0], reverse=True)
+            if score[0] or score[4] or score[5]]
 
 
 async def projection(tx):

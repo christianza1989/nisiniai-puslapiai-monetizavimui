@@ -203,7 +203,11 @@ async def postcall(lab, item, row, directory, max_attempts=2):
         {**safe, 'history': row['history'], 'tools': row['tools'],
             'actual_email': row.get('actual_core_followup'), 'observed_tool_errors': row['errors']})
     row['scores'] = scores.model_dump()
-    row['checks'] = {
+    row['checks'] = service_checks(row, scores)
+
+
+def service_checks(row, scores):
+    return {
         'no_core_tool_errors': not row['errors'],
         'requested_contact_captured': {x['channel'] for x in row['contact_receipts']} == set(row['expected_contact_channels']),
         'corrected_need_saved': all(expected_matches(k, row['need'].get(k, {}).get('value', ''), v)

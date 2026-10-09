@@ -18,6 +18,10 @@ Privatus studijos kalendorius sutikrintas bendru reconcilePrivatePlan su visais 
 
 Eksportas dar nėra actual-domain diegimas. Platformos agentas priima paketą ir atskirai patikrina faktinę produkcijos bazę, bindings, saugyklą bei domeno HTTP. Privatus release-manifest.json laikomas vietoje ir neįtraukiamas į Git ar public assets.
 
+## Tolimesnis turinio rengimas
+
+Šiame pokalbyje įjungta aktyvi „Madbeauty pusmečio turinio rengimas“ heartbeat automatizacija: pirmadieniais ir ketvirtadieniais 09:00 pagal vartotojo Europe/Kiev laiko juostą. Kiekvienas vykdymas užbaigia iki 6 artimiausių įvykdomų temų, tikslas — bent dviejų savaičių parengto turinio atsarga. Tai šio projekto darbo partija, ne visų nišų taisyklė. Vykdymas privalo naudoti tikrą gpt-6-luna/xhigh, ImageGen, šaltinių ir revizijų peržiūrą bei atskirą actual-domain diegimą. Pasikartojantis agento darbas nesuteikia garantijos, kad trūkstama kvalifikuota peržiūra automatiškai bus atlikta. Įvykdžius visą apimtį rengimas sustabdomas; užbaigtų tekstų, neišspręstų vartų ir diegimų žurnalas turi būti atnaujinamas kiekvieną vykdymą.
+
 Atkurti kalendorių: `node sites/madbeauty/publication-20261009/build-calendar.mjs`. Naujas release rengiamas tik aiškiai nurodytoje izoliuotoje studijoje su konkrečiu seno paketo SHA; ankstesnis export/review nekeičiamas.
 
 Pastebėta core sutarčių spraga: reconcilePrivatePlan coverageTarget reikalauja visų puslapių skaičiaus (299), nors straipsnių coverageTarget turi būti 295. Šioje užduotyje po transakcijos taikytas bendras editSite, išlaikantis 295. Tai apibrėžimų neatitikimas; jo bendras pataisymas nėra slapta visų nišų migracija.

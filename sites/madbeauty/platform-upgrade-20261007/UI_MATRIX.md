@@ -1,3 +1,9 @@
+## 2026-10-09 — privatus serverio produkto kelias
+
+Aktualus runtime: 3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c. [HOSTED_UI_ACCEPTANCE.md](HOSTED_UI_ACCEPTANCE.md) fiksuoja actual source onboarding / operator / gallery / client whole booking / both roles / source restart, signed physical-media handoff ir active-target owner reschedule / restart. Vienas105min /80€vizitas išlaikėID; sourceversion1, targetversion2. Normali browser paskyra, capture-only mail, private key gate, atskiri namespaces; production deploy0.
+
+Patirtas pending-offer profilį klaidinantis pranešimas pataisytas pagal draft/pending/returned būseną. regression-99 visi keturi rinkiniai264/264PASS per66,390s;1naujas /0pašalintų. Exact source safety2failai /92883baitaiPASS, unchanged75aa39page309asset build; native QA gate23 ir hosted309asset-path patikros priimtos atskirai nuo produkto testų sumos. [CURRENT_READINESS.md](CURRENT_READINESS.md) ir [PILOT_INPUTS.md](PILOT_INPUTS.md) saugo likusius real provider / SMTP inbox / retention / canonical vartus. Visas pavedimas ACTIVE / neužbaigtas; private hosted happy path nepriima visų UI states ar realaus teikėjo. Toliau pateikti įrašai yra ankstesnių checkpoint istorija.
+
 ## 2026-10-08 — saugyklos atkūrimas ir pasirengimo auditas
 
 Aktualus runtime: 39b71b18bd535eeb8d231fe497d26ca254b108d3. Užbaigtas named storage / recovery paketas: regression-98 visi keturi rinkiniai 263/263 PASS per 76,473 s, 0 naujų / 1 papildytas / 0 pašalintų; exact source safety 2 failai /28 833 baitai PASS. Nepakeistas75aa39page309asset build. Source-only PITR atmetamas po bet kokios handoff istorijos; tikėtinas atmetimas nebeperkrauna veikiančio koordinatoriaus. Native frozen/sealed/aborted lifecycle testai ir actual hosted sealed-source instance / exact SQL patikros PASS.

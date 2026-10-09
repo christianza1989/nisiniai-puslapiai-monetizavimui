@@ -1,3 +1,7 @@
+## Private hosted UI acceptance — 2026-10-09
+
+Current runtime 3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c. The isolated full-app QA Worker uses new namespaces, a Bearer/HttpOnly access gate and allowlisted SQL mail capture. Actual browser onboarding, two offers, gallery transform, operator review, whole booking, both roles, source restart, signed physical media transfer, active target reschedule and restart passed in the named [HOSTED_UI_ACCEPTANCE](../platform-upgrade-20261007/HOSTED_UI_ACCEPTANCE.md) scope. This is an actual QA deployment; no production deployment or migration. It does not accept canonical host, real provider, SMTP inbox, all hosted UI states, active-pair PITR or retention policy. Prior storage-only QA and all production identities remain unchanged. Existing conditional full-release authorization still waits for CURRENT_READINESS completion prerequisites.
+
 ## Candidate upgrade operations — 2026-10-08
 
 Current candidate 39b71b18bd535eeb8d231fe497d26ca254b108d3; original production service/namespace/site/instance identity stays unchanged. The candidate appends ORGANIZATION_STAGING / v2-organization-storage; no remote production migration is applied yet. Both existing wrangler.json and wrangler.production.json name the SAME live Worker and include madbeauty.lt/www routes. wrangler.json is NOT isolated staging and must not be deployed for QA. The protected disposable storage acceptance Worker/config lives in ignored upgrade evidence, with separate namespaces and no live routes/mail/assets.

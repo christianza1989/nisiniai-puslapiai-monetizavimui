@@ -1,6 +1,10 @@
-# Dabartinė saugyklos ir atkūrimo patikra — 2026-10-08
+# Dabartinė saugyklos ir atkūrimo patikra — 2026-10-09
 
-Runtime: `39b71b18bd535eeb8d231fe497d26ca254b108d3`. Šis auditas atskiria įgyvendintą riboto piloto saugyklą, vietines apkrovos diagnostikas ir tikrą izoliuotą serverio bandymą. Visas platformos atnaujinimas dar nepriimtas paleidimui; gyvos platformos deployment ir migracijų šiame etape nėra.
+Runtime: `3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c`. Šis auditas atskiria įgyvendintą riboto piloto saugyklą, vietines apkrovos diagnostikas ir tikrą izoliuotą serverio bandymą. Visas platformos atnaujinimas dar nepriimtas paleidimui; gyvos platformos deployment ir migracijų šiame etape nėra.
+
+## Papildomas produkto / fizinės medijos kelias
+
+[HOSTED_UI_ACCEPTANCE.md](HOSTED_UI_ACCEPTANCE.md): atskiras private UI Worker / du nauji QA namespaces. Tikra UI registracija sukūrė vieną105min /80€vizitą; source restart išlaikė visus read collections. Signed handoff į active target perkėlė11kolekcijų ir3actualmediaobjects su vienodais SHA iš SQL chunks. Įprastas owner UI perkėlimas paliko sourcebookingversion1 ir įrašėtargetversion2; targetrestart išlaikė aktualų vizitą irmediją. Toks konkretus hostedcutover priimtas; canonical cutover / coordinated active-pair PITR / didelėhostedload / faktinėbackupretention politika nėra priimti. Ankstesnių storageQA duomenys nepakeisti.
 
 ## Įgyvendintas modelis
 

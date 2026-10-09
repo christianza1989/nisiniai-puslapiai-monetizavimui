@@ -1,3 +1,9 @@
+## 2026-10-09 — privatus serverio produkto kelias
+
+Aktualus runtime: 3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c. [HOSTED_UI_ACCEPTANCE.md](platform-upgrade-20261007/HOSTED_UI_ACCEPTANCE.md) fiksuoja actual source onboarding / operator / gallery / client whole booking / both roles / source restart, signed physical-media handoff ir active-target owner reschedule / restart. Vienas105min /80€vizitas išlaikėID; sourceversion1, targetversion2. Normali browser paskyra, capture-only mail, private key gate, atskiri namespaces; production deploy0.
+
+Patirtas pending-offer profilį klaidinantis pranešimas pataisytas pagal draft/pending/returned būseną. regression-99 visi keturi rinkiniai264/264PASS per66,390s;1naujas /0pašalintų. Exact source safety2failai /92883baitaiPASS, unchanged75aa39page309asset build; native QA gate23 ir hosted309asset-path patikros priimtos atskirai nuo produkto testų sumos. [CURRENT_READINESS.md](platform-upgrade-20261007/CURRENT_READINESS.md) ir [PILOT_INPUTS.md](platform-upgrade-20261007/PILOT_INPUTS.md) saugo likusius real provider / SMTP inbox / retention / canonical vartus. Visas pavedimas ACTIVE / neužbaigtas; private hosted happy path nepriima visų UI states ar realaus teikėjo. Toliau pateikti įrašai yra ankstesnių checkpoint istorija.
+
 ## 2026-10-08 — saugyklos atkūrimas ir pasirengimo auditas
 
 Patirta problema1: source control-plane scheduleRecovery tikrino formatą, bet po handoff vis tiek pasiekė PITR. Native pre-fix FAIL išlaikytas; privatus isolated hosted bandymas vėliau patvirtino tikrą API ir source-only atmetimą. Pataisa 39b71b18bd535eeb8d231fe497d26ca254b108d3: bet kokia handoff istorija reikalauja koordinuoto source/target recovery; guard nepakeičia operatoriaus maintenance quiescence ar backup politikos.

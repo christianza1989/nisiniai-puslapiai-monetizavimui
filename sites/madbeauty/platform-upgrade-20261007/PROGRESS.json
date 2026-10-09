@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "39b71b18bd535eeb8d231fe497d26ca254b108d3",
+  "runtimeSourceCheckpoint": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
-  "productionReadOnlyCheck": "2026-10-08: wrangler live deployment f8eba745 remains100%; provider settings before/after private QA deployment preserve original namespace and binding/secret names. Production writes/deploy/migration0; private isolated QA deployments recorded separately.",
+  "productionReadOnlyCheck": "2026-10-09: provider settings before/after private UI QA deploy retain production binding/secret names and original2faf namespace. QA source45cdaa/targetecd78b distinct, no cross-script bindings/domain routes. No production writes/deploy/migration; QA deployment separately recorded.",
   "checkpoints": [
     {
       "name": "catalogue-offer-search-single-booking",
@@ -390,6 +390,15 @@
       "regression": "regression-98.log",
       "evidence": "STORAGE_AUDIT.md / CURRENT_READINESS.md / storage263-hosted-proof.json / storage263-hosted-lifecycle-proof.json",
       "remaining": "Factual real provider/mail/retention and chosen hosted product/canonical release gates; active-pair coordinated PITR not accepted"
+    },
+    {
+      "name": "hosted-ui-onboarding-whole-booking-physical-cutover",
+      "state": "accepted-isolated-path",
+      "runtime": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+      "tests": 264,
+      "regression": "regression-99.log",
+      "evidence": "HOSTED_UI_ACCEPTANCE.md / hosted-ui264 restart/handoff/cutover/preflight receipts / native screenshots",
+      "remaining": "Canonical host/all applicable hosted states, factual real provider/mail/retention and existing full completion prerequisite. Capture-only transport is not SMTP."
     }
   ],
   "tasks": [
@@ -621,8 +630,8 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope.; current read-only operator/professional layouts and protected hosted storage lifecycle accepted in their named scopes.",
-      "remaining": "Chosen hosted product/UI/media/roles, real mail and provider pilot acceptance remain; sixteen new rendered-content images are not claimed as exact900px full frames."
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope.; current read-only operator/professional layouts and protected hosted storage lifecycle accepted in their named scopes.; HOSTED_UI_ACCEPTANCE20261009 concrete ordinary owner/operator/client journey, whole booking, physical-media source-to-active-target handoff, reschedule and restart accepted privately.",
+      "remaining": "Canonical release and remaining applicable hosted states, real mail / provider pilot / retention facts remain. A single concrete protected hosted journey is not an all-roles/all-states PASS."
     },
     {
       "id": "E01",
@@ -676,6 +685,6 @@
   "next": [
     "Resolve real pilot provider and authorized booking/reminder recipient facts; pending async question remains",
     "Factual retention/backups needed before activating destructive C02 execution; external phase4 activation dependencies separate",
-    "Chosen hosted product/canonical acceptance and full completion prerequisite before existing conditional production deploy authorization"
+    "Complete remaining applicable hosted/canonical acceptance when factual pilot/mail/retention dependencies and full completion prerequisite are satisfied; existing conditional production deployment authorization persists"
   ]
 }

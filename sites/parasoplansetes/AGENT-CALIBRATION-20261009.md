@@ -50,6 +50,8 @@ Mokymosi stebėjimas: quality `helpful`, root cause `unknown`, 0 issues, 0 candi
 - Tikros sesijos contact/save ir remembering core patikrinti per actual ASGI/PG, nauja sesija atkuria kliento kiekio pataisą; svetimos nišos session GET 404. Fizinis browser cookie + RTC reconnect / interruption vis dar UNVERIFIED.
 - Native `test_voice_worker.py` collection nepraėjo: Windows Application Control blokuoja locked PyAV 19.0.0 native codec modulį. Testai nebuvo žymėti PASS ar dependency pakeista tyliai. Sintaksės compilation ir PowerShell launcher parse PASS nėra worker vykdymo įrodymas.
 
+Vėlesnė actual native patikra: `av.codec.codec` jau PASS be policy pakeitimo, tačiau `livekit.local_inference._native` ir `livekit.agents` importas FAIL su DLL load klaida. Originalus PyAV policy FAIL išsaugotas kaip istorinis vykdymas. Šiame PC nerasta `msvcp140.dll` / `vcruntime140_1.dll`. Pagal [oficialų Microsoft runtime šaltinį](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) parsisiųstas ir patikrintas Microsoft Corporation signed installer 14.51.36247.0, SHA256 `843068991daaa1f73ad9f6239bce4d0f6a07a51f18c37ea2a867e9beca71295c`. Diegimas paleistas hidden / quiet / norestart, tačiau dar laukia Windows administratoriaus veiksmo; proceso teisės nėra administratorius. Runtime įdiegimo ar DLL problemos išsprendimo PASS dar nėra. Po užbaigimo reikia pakartoti native import ir voice-worker tests.
+
 ## Atskirų priėmimo vartų matrica
 
 | Vartai | Statusas | Konkretus įrodymas / riba |
@@ -68,14 +70,14 @@ Mokymosi stebėjimas: quality `helpful`, root cause `unknown`, 0 issues, 0 candi
 | Mokymasis | NO_CHANGE; paired UNVERIFIED | Learning ON stebėjime actual issue/candidate neatsirado |
 | Adoption / rollback | UNVERIFIED | Nebuvo eligible kandidato; svetimos nišos duomenys izoliuoti |
 | Jev ON/OFF pora | UNVERIFIED | Atlikta OFF; provider/OFF poros, kainos ir latencijos lyginimo nėra |
-| Tikras balsas | UNVERIFIED | Actual browser NotFoundError; PyAV OS blokas; Gemini ir SFU credential nėra |
+| Tikras balsas | UNVERIFIED | Actual browser NotFoundError; historical PyAV blokas, current LiveKit native DLL import FAIL; Gemini ir SFU credential nėra |
 | Viešas paleidimas | UNVERIFIED | Vietinis API/DB ir preview veikia; viešo HTTPS core, WSS SFU ir jobs voice infrastruktūros nėra |
 
 ## Konkrečios likusios priklausomybės ir tęsinys kitame PC
 
 1. Privačiame runtime `.env`: `PINET_GOOGLE_API_KEY`; `PINET_SMTP_USER`, `PINET_SMTP_PASSWORD`; `PINET_LAB_MAIL_RECIPIENT` – jūsų valdomas bandomasis adresas. SMTP serveris/portas, IMAP serveris/portas ir tikras siuntėjo adresas turi atitikti jūsų paštą. Esamas core IMAP naudoja tą pačią login porą; jei tiekėjas naudoja atskirą, reikės atskiro konfigūracijos pakeitimo. Raktų į chat nereikia.
 2. LiveKit serveris ir jo `PINET_LIVEKIT_URL`, `PINET_LIVEKIT_API_KEY`, `PINET_LIVEKIT_API_SECRET`. Vietiniam bandymui galima naudoti atskirą nemokamą serverį; viešam agentui reikalingas tikras HTTPS API / PostgreSQL / voice worker / jobs ir WSS/ICE/TURN pasiekiamumas. Nauja mokama paslauga neužsakyta.
-3. Windows leidžiamas locked native audio runtime arba tinkamas Linux host ir naršyklės mikrofonas. Čia oficialus portable Python 3.13.16 paleidžia DB/API/testus, tačiau PyAV codec vis dar blokuojamas. OS saugos politika neapeita. Oficialaus installer paleidimą automatinė peržiūra atmetė „blocked by policy“; tai nėra naudotojo Full access nustatymo pakeitimas.
+3. Veikiantis locked native audio runtime ir naršyklės mikrofonas. Oficialus portable Python 3.13.16 paleidžia DB/API/testus, PyAV naujausioje patikroje PASS; dabartinis LiveKit native DLL importas FAIL. Oficialus Microsoft C++ runtime diegimas laukia Windows administratoriaus užbaigimo. Po jo reikia faktinio pakartojimo; alternatyva tinkamas Linux host. OS saugos politika neapeita. Ankstesnio oficialaus Python installer paleidimą automatinė peržiūra atmetė „blocked by policy“; Python parengtas kitu oficialiu portable keliu.
 4. Likęs 2 EUR cash limitas ir actual provider tarifai prieš garso/Flash kvietimus turi būti užregistruoti core budget/policy. M0 flag keliama tik po actual audio/tool/browser receipts, ne dėl rakto buvimo.
 5. Po garso finalization: `m0_postcall_probe.py --site parasoplansetes --conversation-id <actual-id> --email <owner-address> --preview-url http://127.0.0.1:5197`; peržiūrėtas own-site draft → `m0_mail_preview.py --site parasoplansetes --send` privačioje `parasoplansetes-live-*` aplinkoje su lab transport. Patikrinti matching INBOX Message-ID ir tikrą owner reply; tada `mail_reader.sync_replies()` priima tik žinomą sender/thread/case. Receipt ir kliento atsakymas atskiri.
 

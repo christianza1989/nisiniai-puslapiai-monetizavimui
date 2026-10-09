@@ -1,5 +1,5 @@
 # Saviauditas: SEO/GEO ir faktinis priėmimas
-Naujausias GitHub statusas: privatus draft PR46 jau pateiktas; companion repo Write dar trūksta. `GIT_DELIVERY.md` atnaujina ankstesnių 403 kvitų ribas. Vietinis / gyvo domeno priėmimas nepasikeitė.
+Naujausias GitHub statusas: privatus draft PR46 ir companion draft PR17 pateikti bei susieti; abi šakos įkeltos. `GIT_DELIVERY.md` atnaujina ankstesnių 403 kvitų ribas. Vietinis / gyvo domeno priėmimas nepasikeitė.
 
 2026-10-09. Pradinis darbas turėjo konkrečių trūkumų: jie pataisyti ir patikrinti. Visas F1 ir gyvo domeno priėmimas tebėra **NOT_COMPLETE**. Google Top2 ir AI citatos neįrodytos. Originalus auditas išsaugotas `self-audit/initial-PHASE-1-AUDIT.*`.
 

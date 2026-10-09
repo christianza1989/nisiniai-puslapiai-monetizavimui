@@ -1,0 +1,18 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Text evaluator retroactively demands a last-dialogue acknowledgement of a reviewed follow-up created only by postcall processing. Preserve original false-positive and distinguish later projection from contemporaneous dispatch receipts; fabricated sending must remain a failure.",
+  "category": "code",
+  "evidence": [
+    "Private sourceC3 canonical long_saved_email_latest_quantity: exact final two-device need and requested3point summary retained; reviewed informational email created after final dialogue. Quality nevertheless needs_review because dialogue did not say email already prepared and waiting. Scalar grader preserves listening5 and no critical issues.",
+    "Canonical network_lab.postcall creates analysis and followup artifacts after dialogue() returns. Its runtime_capabilities.followup_mode describes postcall draft_waiting_delivery, not a during-dialogue artifact or SMTP receipt. A final assistant cannot truthfully acknowledge this later artifact."
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/network_lab.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44#issuecomment-6088281765",
+  "rollback": "Keep original sourceC3 report and old frozen quality prompt. Revert only chronology context/instructions via reviewed PR if paired positive/negative controls show weaker fabrication detection; never lower score thresholds or rewrite original results.",
+  "id": "upgrade-a309e218-49c5-44c6-965d-2b894c077977",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "9ea1f305fee05efb5e229591194a41ea615c7414",
+  "createdAt": "2026-10-09T20:40:00.882Z"
+}

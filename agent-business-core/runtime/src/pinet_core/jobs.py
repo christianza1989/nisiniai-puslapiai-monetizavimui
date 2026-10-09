@@ -454,8 +454,12 @@ async def maintenance(business_id):
     from .service import finalize
     cfg = settings()
     async with db.transaction(business_id, cfg.environment) as tx:
+        mode = Conversation.payload['mode'].astext
         expired = (await tx.scalars(select(Conversation).where(Conversation.state != "finalized",
-            Conversation.created_at < utcnow() - timedelta(seconds=cfg.session_seconds)).with_for_update(skip_locked=True))).all()
+            or_(and_(mode == 'chat', Conversation.created_at < utcnow() - timedelta(seconds=1800)),
+                and_(or_(mode.is_(None), mode != 'chat'),
+                     Conversation.created_at < utcnow() - timedelta(seconds=cfg.session_seconds)))
+            ).with_for_update(skip_locked=True))).all()
         for convo in expired:
             await finalize(tx, convo)
         # Cascades remove contacts, events, artifacts, jobs and outbox together.

@@ -179,6 +179,13 @@ async def receive_reply(tx, original, provider_id, sender, subject, body):
     """Called only by authenticated mailbox connector after header/thread matching."""
     existing = await tx.scalar(select(MailMessage).where(MailMessage.message_id == provider_id))
     if existing:
+        from .mail_reader import NO_TEXT
+        if (existing.direction == 'inbound' and existing.case_id == original.case_id
+                and sender.casefold() == original.payload['recipient'].casefold()
+                and existing.payload.get('source_ref') == 'authenticated_imap_reply'
+                and existing.payload.get('body') == NO_TEXT and body != NO_TEXT):
+            existing.payload = {**existing.payload, 'body': body[:16000],
+                'body_recovered_from_html': True}
         return existing
     if sender.casefold() != original.payload["recipient"].casefold():
         raise ValueError("reply_sender_not_case_participant")

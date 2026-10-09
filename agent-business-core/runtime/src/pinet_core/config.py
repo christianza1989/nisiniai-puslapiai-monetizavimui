@@ -24,6 +24,9 @@ class Settings(BaseSettings):
     learning_namespace: str = ''
     voice_enabled: bool = False
     voice_sites: list[str] = ["traktoriupadangos"]
+    chat_enabled: bool = False
+    chat_sites: list[str] = []
+    chat_turn_cost_ceiling_microusd: int = 0
     m0_verified: bool = False
     m0_probe_enabled: bool = False
     google_api_key: str = ""
@@ -69,6 +72,12 @@ class Settings(BaseSettings):
     @property
     def voice_ready(self):
         return self.voice_enabled and self.m0_verified and self.voice_provider_ready
+
+    @property
+    def chat_ready(self):
+        return all((self.chat_enabled, self.google_api_key, not self.allow_simulation,
+                    self.global_daily_budget_microusd > 0, self.chat_turn_cost_ceiling_microusd > 0,
+                    self.analysis_model == 'gemini-3.8-flash', pricing.current()))
 
 
 @lru_cache

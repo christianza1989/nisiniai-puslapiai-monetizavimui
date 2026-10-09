@@ -3,6 +3,7 @@ import asyncio
 import imaplib
 import re
 import ssl
+from html.parser import HTMLParser
 from email import policy
 from email.parser import BytesParser
 from email.utils import parseaddr
@@ -13,6 +14,41 @@ from . import mailbox, service
 from .config import settings
 from .db import db
 from .models import Business, MailMessage
+
+
+NO_TEXT = '[Laiškas be tekstinės dalies; HTML ir priedai automatiškai nevykdomi.]'
+
+
+def body_text(message):
+    plain = message.get_body(preferencelist=('plain',))
+    if plain:
+        return plain.get_content()[:16000]
+    html = message.get_body(preferencelist=('html',))
+    if not html:
+        return NO_TEXT
+    # Parse inert text only. No DOM, images, links, CSS, scripts or attachments
+    # are loaded or executed; the resulting text remains untrusted evidence.
+    class Text(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.hidden = []
+            self.parts = []
+        def handle_starttag(self, tag, attrs):
+            if tag in {'script', 'style', 'head', 'svg', 'template'}:
+                self.hidden.append(tag)
+            if not self.hidden and tag in {'br', 'p', 'div', 'li', 'blockquote'}:
+                self.parts.append('\n')
+        def handle_endtag(self, tag):
+            if self.hidden and tag == self.hidden[-1]:
+                self.hidden.pop()
+            if not self.hidden and tag in {'p', 'div', 'li', 'blockquote'}:
+                self.parts.append('\n')
+        def handle_data(self, value):
+            if not self.hidden:
+                self.parts.append(value)
+    parser = Text()
+    parser.feed(html.get_content()[:65536])
+    return re.sub(r'\n[ \t]*\n+', '\n\n', ''.join(parser.parts)).strip()[:16000] or NO_TEXT
 
 
 def fetch_replies(known):
@@ -50,8 +86,7 @@ def fetch_replies(known):
             if not pairs or len(pairs[0][1]) > 65536:
                 continue
             message = BytesParser(policy=policy.default).parsebytes(pairs[0][1])
-            body = message.get_body(preferencelist=("plain",))
-            text = body.get_content() if body else "[Laiškas be tekstinės dalies; HTML ir priedai automatiškai nevykdomi.]"
+            text = body_text(message)
             results.append({"original": original, "provider_id": provider_id, "sender": sender,
                             "subject": str(header.get("Subject", "")), "body": text[:16000]})
     return results

@@ -11,6 +11,11 @@ const server = path.join(publicRoot, 'dist/server');
 const dryRun = process.argv.includes('--dry-run');
 const host = process.env.PARASOPLANSETES_PREVIEW_HOST;
 const dbId = process.env.PARASOPLANSETES_PREVIEW_D1_ID;
+const chatCore = process.env.PARASOPLANSETES_CHAT_CORE_URL || '';
+if (chatCore && (!chatCore.startsWith('https://') || new URL(chatCore).username || new URL(chatCore).password
+    || new URL(chatCore).pathname !== '/' || new URL(chatCore).search || new URL(chatCore).hash)) {
+  throw new Error('Use an explicit HTTPS core origin without credentials, path or query.');
+}
 if (!dryRun && (!/^parasoplansetes-preview\.[a-z0-9-]+\.workers\.dev$/.test(host || '') || !/^[0-9a-f-]{36}$/i.test(dbId || '') || dbId === '00000000-0000-4000-8000-000000000000')) {
   throw new Error('Set the verified PREVIEW_HOST and dedicated preview D1 UUID before preparing a remote deployment.');
 }
@@ -37,7 +42,9 @@ const config = {
   preview_urls: false,
   assets: { binding: 'ASSETS', directory: path.join(publicRoot, 'dist/client'), run_worker_first: true },
   d1_databases: [{ binding: 'DB', database_name: 'parasoplansetes-preview', database_id: dbId || '00000000-0000-4000-8000-000000000000' }],
-  vars: { PREVIEW_HOST: host || 'parasoplansetes-preview.not-configured.workers.dev', LEAD_SMTP_ENABLED: '0', LEAD_EMAIL_ENABLED: '0', VOICE_WIDGET_ENABLED: '0' },
+  vars: { PREVIEW_HOST: host || 'parasoplansetes-preview.not-configured.workers.dev', LEAD_SMTP_ENABLED: '0', LEAD_EMAIL_ENABLED: '0', VOICE_WIDGET_ENABLED: '0',
+    CHAT_WIDGET_ENABLED: chatCore ? '1' : '0', CHAT_SITE_IDS: chatCore ? 'parasoplansetes' : '',
+    ...(chatCore ? { VOICE_CORE_URL: chatCore } : {}) },
   observability: { enabled: true },
 };
 const configPath = path.join(output, 'wrangler.json');

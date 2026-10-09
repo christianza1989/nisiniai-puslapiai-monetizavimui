@@ -18,6 +18,7 @@ from . import (
     service,
 )
 from .config import settings
+from .chat import Message as ChatMessage
 from .contracts import (
     Candidate,
     ContactInput,
@@ -229,6 +230,8 @@ def session_token(request):
 @app.post("/v1/sites/{site_id}/sessions", dependencies=[Depends(signed_edge)])
 async def start_session(site_id: str, data: Start):
     result = await service.start(await service.business(site_id), data)
+    if data.mode == 'chat':
+        return result
     # Access is minted only for this room and this anonymous visitor. No admin grant.
     from livekit import api
     cfg = settings()
@@ -265,6 +268,12 @@ async def forget_device(site_id: str, request: Request):
     async with db.transaction(item.id, settings().environment) as tx:
         await policy.lock(tx, item.id, settings().environment)
         return await memory.forget(tx, request.headers.get("x-pinet-memory", ""))
+
+
+@app.post('/v1/sites/{site_id}/sessions/{cid}/message', dependencies=[Depends(signed_edge)])
+async def chat_message(site_id: str, cid: str, request: Request, data: ChatMessage):
+    from . import chat
+    return await chat.message(await service.business(site_id), cid, session_token(request), data)
 
 
 @app.get("/v1/sites/{site_id}/sessions/{cid}", dependencies=[Depends(signed_edge)])

@@ -16,7 +16,14 @@ from . import pricing, profiles
 from .config import settings
 
 server = AgentServer(host="127.0.0.1")
-probe_server = AgentServer(host="127.0.0.1", num_idle_processes=0, load_threshold=float("inf"))
+def private_probe_load(worker):
+    # A private pilot admits one job. CPU saturation on a busy Windows PC must
+    # not advertise an idle worker as fully loaded to the SFU dispatcher.
+    return min(float(len(worker.active_jobs)), 1.0)
+
+
+probe_server = AgentServer(host="127.0.0.1", num_idle_processes=0,
+                          load_fnc=private_probe_load, load_threshold=0.9)
 
 
 def configure_worker_cli(worker, agent_name):

@@ -25,8 +25,10 @@ root = Path(os.environ.get("PINET_PUBLIC_CORE_PATH") or dotenv_values(".env").ge
 private = root / ('.dev.vars.' + environment)
 private.write_text(f"VOICE_WIDGET_ENABLED=1\nVOICE_CORE_URL={cfg.core_url}\n"
                    f"VOICE_EDGE_SECRET={cfg.edge_secret}\nNICHE_DEV_SITE_ID={site}\nVOICE_SITE_IDS={site}\n"
+                   f"CHAT_WIDGET_ENABLED={int(cfg.chat_enabled and site in cfg.chat_sites)}\nCHAT_SITE_IDS={site if site in cfg.chat_sites else ''}\n"
                    "LEAD_SMTP_ENABLED=0\n", encoding="utf-8")
 env = {**os.environ, "NICHE_DEV_SITE_ID": site, "VOICE_WIDGET_ENABLED": "1", "VOICE_SITE_IDS": site,
+       "CHAT_WIDGET_ENABLED": str(int(cfg.chat_enabled and site in cfg.chat_sites)), "CHAT_SITE_IDS": site if site in cfg.chat_sites else '',
        "VOICE_PREVIEW_PORT": str(args.port), "CLOUDFLARE_ENV": environment,
        "__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS": host,
        "VOICE_CORE_URL": cfg.core_url, "VOICE_EDGE_SECRET": cfg.edge_secret,

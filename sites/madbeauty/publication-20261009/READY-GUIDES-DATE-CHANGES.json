@@ -1,0 +1,326 @@
+{
+  "previousPackageSha256": "75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4",
+  "scope": "Only approved future guides; three historic guides and four supporting pages preserved",
+  "guides": [
+    {
+      "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+      "slug": "gidai/bendri-gidas",
+      "title": "Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "datePublished": "2026-10-13T07:00:00.000Z",
+      "localDate": "2026-10-13",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+      "slug": "gidai/kirpimas-gidas",
+      "title": "Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-13T13:00:00.000Z",
+      "datePublished": "2026-10-13T13:00:00.000Z",
+      "localDate": "2026-10-13",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+      "slug": "gidai/makiazas-gidas",
+      "title": "Dieninis, proginis ar vestuvinis makiažas: kaip pasirinkti?",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-14T07:00:00.000Z",
+      "datePublished": "2026-10-14T07:00:00.000Z",
+      "localDate": "2026-10-14",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+      "slug": "gidai/nagu-dizainas-gidas",
+      "title": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-14T13:00:00.000Z",
+      "datePublished": "2026-10-14T13:00:00.000Z",
+      "localDate": "2026-10-14",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+      "slug": "gidai/plauku-formavimas-gidas",
+      "title": "Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-15T07:00:00.000Z",
+      "datePublished": "2026-10-15T07:00:00.000Z",
+      "localDate": "2026-10-15",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+      "slug": "gidai/bendri-registracija",
+      "title": "Kaip užsiregistruoti grožio vizitui: paslauga, laikas, vieta ir patvirtinimas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-15T13:00:00.000Z",
+      "datePublished": "2026-10-15T13:00:00.000Z",
+      "localDate": "2026-10-15",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+      "slug": "gidai/kirpimas-bob-kare",
+      "title": "Bob ir carré kirpimai: ką tiksliai parodyti nuotraukoje?",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-16T07:00:00.000Z",
+      "datePublished": "2026-10-16T07:00:00.000Z",
+      "localDate": "2026-10-16",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+      "slug": "gidai/makiazas-dieninis-proginis",
+      "title": "Dieninis ir proginis makiažas: intensyvumas, apimtis ir pasiūlymo ribos",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-16T13:00:00.000Z",
+      "datePublished": "2026-10-16T13:00:00.000Z",
+      "localDate": "2026-10-16",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+      "slug": "gidai/plauku-formavimas-dziovinimas-ar-progine",
+      "title": "Džiovinimas ir sušukavimas ar proginė šukuosena: skirtinga darbo apimtis",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-17T07:00:00.000Z",
+      "datePublished": "2026-10-17T07:00:00.000Z",
+      "localDate": "2026-10-17",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+      "slug": "gidai/bendri-vizitu-derinimas",
+      "title": "Keli grožio vizitai ir individualūs poreikiai: laiko, vietos bei komforto planas",
+      "previousPublishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-18T07:00:00.000Z",
+      "datePublished": "2026-10-18T07:00:00.000Z",
+      "localDate": "2026-10-18",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+      "slug": "gidai/kirpimas-galiukai-ar-forma",
+      "title": "Galiukų pakirpimas ar nauja kirpimo forma: skirtingos užduotys",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-19T07:00:00.000Z",
+      "datePublished": "2026-10-19T07:00:00.000Z",
+      "localDate": "2026-10-19",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+      "slug": "gidai/makiazas-kaina-trukme",
+      "title": "Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-19T13:00:00.000Z",
+      "datePublished": "2026-10-19T13:00:00.000Z",
+      "localDate": "2026-10-19",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+      "slug": "gidai/plauku-formavimas-garbanos-bangos",
+      "title": "Garbanos, bangos ir tiesus sušukavimas: ką parodyti šukuosenos užduotyje?",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "datePublished": "2026-10-20T07:00:00.000Z",
+      "localDate": "2026-10-20",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+      "slug": "gidai/kirpimas-garbanoti",
+      "title": "Garbanotų plaukų kirpimas: natūrali tekstūra, susitraukimas ir vizito ruošimas",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-20T13:00:00.000Z",
+      "datePublished": "2026-10-20T13:00:00.000Z",
+      "localDate": "2026-10-20",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+      "slug": "gidai/makiazas-nuotrauka",
+      "title": "Makiažo nuotrauka vizažistui: tekstūra, atspalvis ir retušo ribos",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-21T07:00:00.000Z",
+      "datePublished": "2026-10-21T07:00:00.000Z",
+      "localDate": "2026-10-21",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+      "slug": "gidai/plauku-formavimas-kaina-trukme",
+      "title": "Šukuosenos kaina ir trukmė: ką palyginti prieš vizitą",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-21T13:00:00.000Z",
+      "datePublished": "2026-10-21T13:00:00.000Z",
+      "localDate": "2026-10-21",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+      "slug": "gidai/kirpimas-kaina-trukme",
+      "title": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-22T07:00:00.000Z",
+      "datePublished": "2026-10-22T07:00:00.000Z",
+      "localDate": "2026-10-22",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+      "slug": "gidai/makiazas-pamoka",
+      "title": "Asmeninė makiažo pamoka ar priemonių konsultacija: ką gaunate iš kiekvienos",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-22T13:00:00.000Z",
+      "datePublished": "2026-10-22T13:00:00.000Z",
+      "localDate": "2026-10-22",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+      "slug": "gidai/plauku-formavimas-makiazas-kartu",
+      "title": "Makiažas ir šukuosena vienu vizitu: grafikas bei paslaugų sudėtis",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-23T07:00:00.000Z",
+      "datePublished": "2026-10-23T07:00:00.000Z",
+      "localDate": "2026-10-23",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+      "slug": "gidai/kirpimas-kirpciukai",
+      "title": "Kirpčiukai: ilgis, forma ir kasdienė priežiūra prieš apsisprendžiant",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-23T13:00:00.000Z",
+      "datePublished": "2026-10-23T13:00:00.000Z",
+      "localDate": "2026-10-23",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+      "slug": "gidai/makiazas-vestuvinis",
+      "title": "Vestuvinis makiažas ir bandomasis vizitas: kaip užfiksuoti pasirinkimą?",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-24T07:00:00.000Z",
+      "datePublished": "2026-10-24T07:00:00.000Z",
+      "localDate": "2026-10-24",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+      "slug": "gidai/plauku-formavimas-pasiruosimas",
+      "title": "Prieš sušukavimą: kada plauti plaukus ir ką atsinešti?",
+      "previousPublishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-25T08:00:00.000Z",
+      "datePublished": "2026-10-25T08:00:00.000Z",
+      "localDate": "2026-10-25",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+      "slug": "gidai/kirpimas-nuotrauka",
+      "title": "Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį?",
+      "previousPublishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-26T08:00:00.000Z",
+      "datePublished": "2026-10-26T08:00:00.000Z",
+      "localDate": "2026-10-26",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+      "slug": "gidai/plauku-formavimas-susegta",
+      "title": "Susegta ar palaida proginė šukuosena: kaip apsispręsti?",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-26T14:00:00.000Z",
+      "datePublished": "2026-10-26T14:00:00.000Z",
+      "localDate": "2026-10-26",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+      "slug": "gidai/kirpimas-pasiruosimas",
+      "title": "Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus?",
+      "previousPublishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-27T08:00:00.000Z",
+      "datePublished": "2026-10-27T08:00:00.000Z",
+      "localDate": "2026-10-27",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+      "slug": "gidai/plauku-formavimas-vestuves",
+      "title": "Vestuvinė šukuosena ir bandomasis vizitas: ką užbaigti prieš renginį?",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-27T14:00:00.000Z",
+      "datePublished": "2026-10-27T14:00:00.000Z",
+      "localDate": "2026-10-27",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+      "slug": "gidai/kirpimas-sluoksniai",
+      "title": "Sluoksniuotas kirpimas: kas keičiasi plaukų formoje ir priežiūroje?",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-28T08:00:00.000Z",
+      "datePublished": "2026-10-28T08:00:00.000Z",
+      "localDate": "2026-10-28",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+      "slug": "gidai/kirpimas-trumpas-vyriskas",
+      "title": "Trumpas kirpimas: mašinėlės ilgis, kontūras ir perėjimas",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-28T14:00:00.000Z",
+      "datePublished": "2026-10-28T14:00:00.000Z",
+      "localDate": "2026-10-28",
+      "localTime": "16:00"
+    },
+    {
+      "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+      "slug": "gidai/sezonai-kaledos",
+      "title": "Grožio vizitai prieš Kalėdas: nagų dizainas ir kelių paslaugų planas",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-11-10T08:00:00.000Z",
+      "datePublished": "2026-11-10T08:00:00.000Z",
+      "localDate": "2026-11-10",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+      "slug": "gidai/sezonai-naujieji",
+      "title": "Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis",
+      "previousPublishAt": "2026-11-24T08:00:00.000Z",
+      "publishAt": "2026-11-24T08:00:00.000Z",
+      "datePublished": "2026-11-24T08:00:00.000Z",
+      "localDate": "2026-11-24",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+      "slug": "gidai/sezonai-valentino",
+      "title": "Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos",
+      "previousPublishAt": "2027-01-12T08:00:00.000Z",
+      "publishAt": "2027-01-12T08:00:00.000Z",
+      "datePublished": "2027-01-12T08:00:00.000Z",
+      "localDate": "2027-01-12",
+      "localTime": "10:00"
+    },
+    {
+      "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+      "slug": "gidai/sezonai-velykos",
+      "title": "Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas",
+      "previousPublishAt": "2027-02-23T08:00:00.000Z",
+      "publishAt": "2027-02-23T08:00:00.000Z",
+      "datePublished": "2027-02-23T08:00:00.000Z",
+      "localDate": "2027-02-23",
+      "localTime": "10:00"
+    }
+  ]
+}

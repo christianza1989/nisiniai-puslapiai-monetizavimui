@@ -1,0 +1,138 @@
+{
+  "checkedAt": "2026-10-09T19:02:11.887Z",
+  "status": "PASS_PLAN_SCHEMA_IDENTITY_DATES_AND_NATIVE_FIELDS",
+  "siteId": "promedical",
+  "plansAdded": 8,
+  "allPriorApprovedRevisionsUnchanged": 1856,
+  "publicProjectionPages": 1856,
+  "networkLinks": 0,
+  "writer": {
+    "status": "assembled-prompt-field-check-not-generation",
+    "nativePlanningBriefAdapter": "absent",
+    "legacyFields": "reason, sourceQueries, linkSuggestions and externalLinks preserved without truncation; generator.mjs draftPage forwards these fields to buildEditorialPrompt. Full catalogue cross-map is not an injected planningBrief field."
+  },
+  "handovers": [
+    {
+      "pageId": "9e46f186-582e-4eda-a6d8-30c5e6c903fe",
+      "path": "/gidai/bazinio-vezimelio-komplektacija",
+      "reasonLength": 886,
+      "sourceQueryCount": 3,
+      "internalLinkSuggestions": 4,
+      "sourceCandidates": 1,
+      "publishAt": "2026-10-23T07:00:00.000Z",
+      "currentRevisionHash": "ee9d6b38fac9c54469b1a8082d094fa372ed64ca2b90a2cbdf4609a1348b54f5",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "0ad3019fc52d133564c761409c1ef7f628a74e26cd2478b67d9efe9bd6325262"
+    },
+    {
+      "pageId": "7fb61c62-a821-47e2-b42c-81685961c434",
+      "path": "/gidai/mayo-staliuko-pasirinkimas",
+      "reasonLength": 837,
+      "sourceQueryCount": 4,
+      "internalLinkSuggestions": 5,
+      "sourceCandidates": 2,
+      "publishAt": "2026-10-30T08:00:00.000Z",
+      "currentRevisionHash": "f07f099ae30dd9fa3ea7949e43dbe2ca7c96388eb788cc24565a9fd6e02febaf",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "4d4c72a1b76e017d06718c0aa0602bf43d09dfcdb5baf2919f090685e67c2194"
+    },
+    {
+      "pageId": "3d1a5995-d8fe-4570-8bf5-03c0f9100f52",
+      "path": "/gidai/klaro-atsargines-dalies-paieska",
+      "reasonLength": 848,
+      "sourceQueryCount": 3,
+      "internalLinkSuggestions": 3,
+      "sourceCandidates": 1,
+      "publishAt": "2026-11-06T08:00:00.000Z",
+      "currentRevisionHash": "4c9b19e5a9783a7ffe942be481a98281a6be3dc5f58cfe7f65fb39a51ab5d1dc",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "c65fceddb0f2efd53ee8b5075bc969bb23a41399b8fd83399df71c56e90f965b"
+    },
+    {
+      "pageId": "9002e667-f305-4a41-8ed6-f151feb544d5",
+      "path": "/gidai/medicinines-spintos-pasirinkimas",
+      "reasonLength": 833,
+      "sourceQueryCount": 4,
+      "internalLinkSuggestions": 3,
+      "sourceCandidates": 1,
+      "publishAt": "2026-11-13T08:00:00.000Z",
+      "currentRevisionHash": "c2b4af171b8559909c2cd1cc06d4e517a5a1a747af081edde676db269b6e5769",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "4d776afbdacfeb4e1c7837c23f2f387f52d43226db525ffa411af9de50461967"
+    },
+    {
+      "pageId": "f8d3911c-3e7f-4938-ac54-6621bc18ad6f",
+      "path": "/gidai/nerudijancio-plieno-stalo-poreikis",
+      "reasonLength": 852,
+      "sourceQueryCount": 3,
+      "internalLinkSuggestions": 3,
+      "sourceCandidates": 1,
+      "publishAt": "2026-11-20T08:00:00.000Z",
+      "currentRevisionHash": "72f2f373cfbfb40522e201f3299c36d3b38b9e3194384d9702cc2e34f27ebf99",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "2cb2266d2f3b918433507a8f9989bd1e5ceb2748ddcbac75333b3643c0886b70"
+    },
+    {
+      "pageId": "880b11bb-86a8-43ba-a01a-be0e522e68fc",
+      "path": "/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "reasonLength": 847,
+      "sourceQueryCount": 3,
+      "internalLinkSuggestions": 3,
+      "sourceCandidates": 1,
+      "publishAt": "2026-11-27T08:00:00.000Z",
+      "currentRevisionHash": "de029fa2704629318b0776d1d96eb17878b4c9cd8b16cc8afe6c1c830e64a252",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "0a04273b6753ad3e543a1744fd908393b654c0ba74fe0ef7780cf08ba946ce6d"
+    },
+    {
+      "pageId": "1f166ace-c55b-4d5f-8502-b7e72bc84522",
+      "path": "/gidai/medicinines-irangos-valymo-dokumentai",
+      "reasonLength": 844,
+      "sourceQueryCount": 3,
+      "internalLinkSuggestions": 3,
+      "sourceCandidates": 2,
+      "publishAt": "2026-12-04T08:00:00.000Z",
+      "currentRevisionHash": "87739433cb013c36eaefd16aad4857a750d266ea11db0de220630ec0cfb130a2",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "8585290875c04d0d16aa2e73cb9345e64517c99801870772d12d5d345d50a43a"
+    },
+    {
+      "pageId": "059a836b-90c6-4106-ae72-166beaea7c24",
+      "path": "/gidai/irangos-komplekto-priemimo-patikra",
+      "reasonLength": 880,
+      "sourceQueryCount": 3,
+      "internalLinkSuggestions": 3,
+      "sourceCandidates": 2,
+      "publishAt": "2026-12-11T08:00:00.000Z",
+      "currentRevisionHash": "8aa5314ae2fe1c561f592c7c1e97552339b1b7dd37e89e4245bd5186d3082b6d",
+      "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+      "promptSha256": "1b99a6e6c410fdfd36cc02ae470c25faf35dfbfeb51062b678c6fe7c7109cbbe"
+    }
+  ],
+  "states": {
+    "draftsWritten": 0,
+    "approvedNewPages": 0,
+    "newRelease": false,
+    "deployed": false,
+    "measured": false
+  },
+  "finalChecks": {
+    "checkedAt": "2026-10-09T19:07:45.124Z",
+    "distinctQueryDecisions": 63,
+    "rootBranches": 34,
+    "sourceCategoryIdentities": 437,
+    "allObservationIdsResolve": true,
+    "missingKinds": [
+      "keywords",
+      "serp",
+      "backlinks",
+      "geo",
+      "analytics"
+    ],
+    "refreshKinds": [],
+    "paidResearchUsd": 0,
+    "cycles": false,
+    "scopeMap": "complete-for-owner-confirmed-inventory-not-measured-keyword-universe",
+    "researchEvidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406"
+  }
+}

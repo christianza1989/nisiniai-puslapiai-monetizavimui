@@ -1,0 +1,1590 @@
+{
+  "version": 1,
+  "siteId": "promedical",
+  "domain": "promedical.lt",
+  "country": "LT",
+  "language": "lt",
+  "timezone": "Europe/Vilnius",
+  "createdAt": "2026-10-09T19:00:55.550Z",
+  "scope": {
+    "products": 1408,
+    "categories": 437,
+    "rootBranches": 34,
+    "existingGuides": 3,
+    "newPrivateGuideProposals": 8
+  },
+  "research": {
+    "bundle": "content-studio/data/promedical-plan-research-20261009/bundle.json",
+    "paidAuthorizationUsd": 0,
+    "actualChargedUsd": 0,
+    "effectiveGoogleLtSerp": "not_measured",
+    "keywordVolume": "not_measured",
+    "geoCitations": "not_measured",
+    "indexingAnalytics": "not_connected",
+    "evidenceSha256": "207acb3aab8e813b5653924ab112dbb5480bd25109eace138040ffef73f2a406",
+    "observationCount": 27,
+    "localSourceSnapshotSha256": "00d2538197a45164b5472e2cf1a4d72b2cfa862d09c3cad50debc4f37fd38cf3"
+  },
+  "rootBranches": [
+    {
+      "sourceCategoryId": "akcni-nabidky",
+      "categoryName": "Gamintojo specialiųjų pasiūlymų asortimentas",
+      "sourceUrl": "https://www.klaro.cz/akcni-nabidky",
+      "catalogueModelsAcrossDescendants": 18,
+      "exactQuery": "Klaro gamintojo specialiųjų pasiūlymų asortimentas",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/akcni-nabidky",
+        "pageId": "3ebd53df-6425-4459-89c7-efc80aa90517",
+        "currentRevisionHash": "cd9e2a8aa75d4af3eae5f64da3c9dc9bcb0108c06c52e762453ae4c040b12d6d",
+        "publicRevisionHash": "cd9e2a8aa75d4af3eae5f64da3c9dc9bcb0108c06c52e762453ae4c040b12d6d"
+      },
+      "action": "existing-section",
+      "readerJob": "Peržiūrėti gamintojo šakos modelius be Promedical akcijos/kainos/likučio pažado.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "atypicka-vyroba",
+      "categoryName": "Gamyba pagal individualų poreikį",
+      "sourceUrl": "https://www.klaro.cz/atypicka-vyroba",
+      "catalogueModelsAcrossDescendants": 145,
+      "exactQuery": "Klaro individualios gamybos pavyzdžiai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/atypicka-vyroba",
+        "pageId": "9ae5d5dc-a7a5-4e1f-bb60-e03f5b7953e0",
+        "currentRevisionHash": "92e91341b747fa79262ebd2e90960a3b8973e187bee4e482ff4706bc0871c56c",
+        "publicRevisionHash": "92e91341b747fa79262ebd2e90960a3b8973e187bee4e482ff4706bc0871c56c"
+      },
+      "action": "existing-section",
+      "readerJob": "Peržiūrėti gamintojo pavyzdžius; atskirti pavyzdį nuo mūsų patvirtinto gamybos vykdymo.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "infuflex-page",
+      "categoryName": "InfuFlex – sulankstomas infuzijų stovas gelbėjimo tarnyboms ir išvažiuojamųjų paslaugų darbuotojams",
+      "sourceUrl": "https://www.klaro.cz/infuflex-page",
+      "catalogueModelsAcrossDescendants": 1,
+      "exactQuery": "InfuFlex infuzijų stovas",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/infuflex-page",
+        "pageId": "f5c15774-f5a8-406d-bd92-8be52105a5da",
+        "currentRevisionHash": "dfec2ab5e2b8e40dbb1156d1f3bec33a9fbd51c20670d6d90ae2ef1868ed600a",
+        "publicRevisionHash": "dfec2ab5e2b8e40dbb1156d1f3bec33a9fbd51c20670d6d90ae2ef1868ed600a"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti konkretų gamintojo stovo produktą; bendrą pasirinkimą susieti su infuzijų stovų šaka.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "iso-modul-system",
+      "categoryName": "ISO modulių sistema",
+      "sourceUrl": "https://www.klaro.cz/iso-modul-system",
+      "catalogueModelsAcrossDescendants": 206,
+      "exactQuery": "ISO moduliai medicinos įstaigoms",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-iso",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/iso-modul-system",
+        "pageId": "a37bd56e-e0e1-4642-98c9-380c7fe2fe1a",
+        "currentRevisionHash": "490c9cd7c89b44c1763b483297d7045773e045e96357dca90492b453dc316d39",
+        "publicRevisionHash": "490c9cd7c89b44c1763b483297d7045773e045e96357dca90492b453dc316d39"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti tikrus spintų, krepšių, vežimėlių ir stelažų sistemos komponentus.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "kategorie-instrumentacni-voziky",
+      "categoryName": "Instrumentų vežimėliai",
+      "sourceUrl": "https://www.klaro.cz/kategorie-instrumentacni-voziky",
+      "catalogueModelsAcrossDescendants": 8,
+      "exactQuery": "Mayo staliukas",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "queried-free-discovery-effective-market-unverified",
+      "evidenceIds": [
+        "plan-exact-3",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/kategorie-instrumentacni-voziky",
+        "pageId": "cb2d6321-e3d3-4af7-ac59-888fcadee878",
+        "currentRevisionHash": "7291f0e43cf5681ae0b9ab156ba169b3da9d85585ab38e95b41c018ba1f7d335",
+        "publicRevisionHash": "7291f0e43cf5681ae0b9ab156ba169b3da9d85585ab38e95b41c018ba1f7d335"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti instrumentų staliukų modelius ir jų parametrus.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "laboratore-a-lekarny",
+      "categoryName": "Laboratorijos ir vaistinės",
+      "sourceUrl": "https://www.klaro.cz/laboratore-a-lekarny",
+      "catalogueModelsAcrossDescendants": 41,
+      "exactQuery": "Klaro laboratorijų ir vaistinių įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/laboratore-a-lekarny",
+        "pageId": "9f71457b-2763-4c0a-a5fc-64b37bc9f9c3",
+        "currentRevisionHash": "cc6b62ce502b9b2cd492a7d9cdb08205d809bd28b1322f7b91dfe9f0e53a2f7d",
+        "publicRevisionHash": "cc6b62ce502b9b2cd492a7d9cdb08205d809bd28b1322f7b91dfe9f0e53a2f7d"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti šakai priskirtus gaminius; katalogo skyriaus pavadinimas negarantuoja visos laboratorijos įrengimo.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "manipulace-s-pradlem-a-odpadem",
+      "categoryName": "Skalbinių ir atliekų tvarkymas",
+      "sourceUrl": "https://www.klaro.cz/manipulace-s-pradlem-a-odpadem",
+      "catalogueModelsAcrossDescendants": 47,
+      "exactQuery": "skalbinių ir atliekų vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/manipulace-s-pradlem-a-odpadem",
+        "pageId": "50d9c392-b7f4-4f56-b73e-05c2fd5af502",
+        "currentRevisionHash": "4b77ce9c42cda1b27ad690642a5645c6bcf1031244bb020dafb5c367f66279bc",
+        "publicRevisionHash": "4b77ce9c42cda1b27ad690642a5645c6bcf1031244bb020dafb5c367f66279bc"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti įstaigos maišų/krepšių ir logistikos komplektaciją.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "multifunkcni-voziky",
+      "categoryName": "Daugiafunkciai vežimėliai",
+      "sourceUrl": "https://www.klaro.cz/multifunkcni-voziky",
+      "catalogueModelsAcrossDescendants": 20,
+      "exactQuery": "daugiafunkciai medicininiai vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/multifunkcni-voziky",
+        "pageId": "512d935d-e8db-4769-8a77-9658817709e5",
+        "currentRevisionHash": "17cbaf16629a42639da41dd04a70d28cc3d962ac606de8ac2d6ee94b8857add8",
+        "publicRevisionHash": "17cbaf16629a42639da41dd04a70d28cc3d962ac606de8ac2d6ee94b8857add8"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti būtent šios gamintojo šeimos modelius; platesnį procedūrinį pasirinkimą pasiekti nuoroda.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "obsluha-pokoju",
+      "categoryName": "Palatų aptarnavimas ir slauga",
+      "sourceUrl": "https://www.klaro.cz/obsluha-pokoju",
+      "catalogueModelsAcrossDescendants": 13,
+      "exactQuery": "Klaro palatų aptarnavimo įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/obsluha-pokoju",
+        "pageId": "6a190b84-5d32-4303-a645-6369d3510966",
+        "currentRevisionHash": "3efbb3765c3f6d7a8a210f073c8f4528dab2ff4fd7e55803918dae2a07dd364c",
+        "publicRevisionHash": "3efbb3765c3f6d7a8a210f073c8f4528dab2ff4fd7e55803918dae2a07dd364c"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti gamintojo palatų aptarnavimo asortimentą; kitą slaugos šaką susieti pasirinkimo nuoroda.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "plata",
+      "categoryName": "Vežimėliai su padėklais",
+      "sourceUrl": "https://www.klaro.cz/plata",
+      "catalogueModelsAcrossDescendants": 149,
+      "exactQuery": "Klaro padėklų vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/plata",
+        "pageId": "b70cac62-5b36-42fa-a397-56abdf22675a",
+        "currentRevisionHash": "c4411f525563ec306f652ce391357ed938db690c3a6930ba01e096bce6410763",
+        "publicRevisionHash": "c4411f525563ec306f652ce391357ed938db690c3a6930ba01e096bce6410763"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasirinkti išimamų ir stacionarių padėklų tikrą gaminio variantą.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "pouziti",
+      "categoryName": "Informacija",
+      "sourceUrl": "https://www.klaro.cz/pouziti",
+      "catalogueModelsAcrossDescendants": 1,
+      "exactQuery": "Klaro naudojimo informacija",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/pouziti",
+        "pageId": "6d22a505-c8fa-4d56-9793-ba473af6ad2f",
+        "currentRevisionHash": "7048cce6167b67b3ada7f6aa24564cb232669b8c35af124f9bce220f227f7f05",
+        "publicRevisionHash": "7048cce6167b67b3ada7f6aa24564cb232669b8c35af124f9bce220f227f7f05"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasiekti tikrą gamintojo informacinį įrašą; instrukcijų paieška turi atskirą gidų darbą.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "prislusenstvi",
+      "categoryName": "Vežimėlių priedai",
+      "sourceUrl": "https://www.klaro.cz/prislusenstvi",
+      "catalogueModelsAcrossDescendants": 115,
+      "exactQuery": "Klaro vežimėlių priedai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-equipped",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/prislusenstvi",
+        "pageId": "38c2f68b-715f-496b-85a6-8336af5b1fc0",
+        "currentRevisionHash": "4417b1ffbe1349e54f8fc0333c8895585dd3078b4de9e20148793d405edbda2d",
+        "publicRevisionHash": "4417b1ffbe1349e54f8fc0333c8895585dd3078b4de9e20148793d405edbda2d"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti priedą ir tikrinti konkrečios šeimos/modelio suderinamumą.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "produkty-pro-digitalizaci",
+      "categoryName": "Sveikatos priežiūros skaitmenizavimo sprendimai",
+      "sourceUrl": "https://www.klaro.cz/produkty-pro-digitalizaci",
+      "catalogueModelsAcrossDescendants": 6,
+      "exactQuery": "Klaro skaitmenizavimo gaminiai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/produkty-pro-digitalizaci",
+        "pageId": "83bf80e0-8682-4669-85d7-cd9e2674218c",
+        "currentRevisionHash": "5ca478c18a5a73a0cb0e09ddfe52c1c34b54508c27fd7ad4e5a223ff3872053f",
+        "publicRevisionHash": "5ca478c18a5a73a0cb0e09ddfe52c1c34b54508c27fd7ad4e5a223ff3872053f"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti tikras laikymo/vežimėlių konstrukcijas; nekurti tariamo programinės įrangos integravimo.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "produkty-pro-operacni-saly",
+      "categoryName": "Operacinių įranga",
+      "sourceUrl": "https://www.klaro.cz/produkty-pro-operacni-saly",
+      "catalogueModelsAcrossDescendants": 10,
+      "exactQuery": "Klaro operacinių įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/produkty-pro-operacni-saly",
+        "pageId": "800e3137-1b0a-4146-8489-1a5abedbc065",
+        "currentRevisionHash": "b903bc371e402b3f412ef573922ff3b396bbf19f0ace132a18825724445e8920",
+        "publicRevisionHash": "b903bc371e402b3f412ef573922ff3b396bbf19f0ace132a18825724445e8920"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasirinkti realias operacinių įrangos šeimas, nevirstant visos operacinės projektavimo pažadu.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "produkty-pro-sterilizaci",
+      "categoryName": "Sterilizavimo įranga",
+      "sourceUrl": "https://www.klaro.cz/produkty-pro-sterilizaci",
+      "catalogueModelsAcrossDescendants": 153,
+      "exactQuery": "Klaro sterilizavimo įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/produkty-pro-sterilizaci",
+        "pageId": "5bd3cd49-7d2d-4049-aa87-25816c24057e",
+        "currentRevisionHash": "c20d48363944f68e7333c4c94078f4492483e5597d53fe7ba4b073a13a2a4ed8",
+        "publicRevisionHash": "c20d48363944f68e7333c4c94078f4492483e5597d53fe7ba4b073a13a2a4ed8"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti gamintojo šakai priskirtus padėklus ir laikymo/transportavimo gaminius; individualių režimų nerekomenduoti.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "protihlukove-a-protiskluzove-podlozky",
+      "categoryName": "Triukšmą ir slydimą mažinantys įdėklai",
+      "sourceUrl": "https://www.klaro.cz/protihlukove-a-protiskluzove-podlozky",
+      "catalogueModelsAcrossDescendants": 24,
+      "exactQuery": "Klaro padėklų įdėklai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/protihlukove-a-protiskluzove-podlozky",
+        "pageId": "6e5ac724-77c7-4eb6-b1b2-734aee5ba1f2",
+        "currentRevisionHash": "a2652eca1e4d122b4ee62aa2565084c72b89e38a9d4dd5b0d0863b5c215784ca",
+        "publicRevisionHash": "a2652eca1e4d122b4ee62aa2565084c72b89e38a9d4dd5b0d0863b5c215784ca"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti įdėklą pagal tikslaus padėklo dydį ir paskirtį.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "regaly",
+      "categoryName": "Stelažai",
+      "sourceUrl": "https://www.klaro.cz/regaly",
+      "catalogueModelsAcrossDescendants": 52,
+      "exactQuery": "medicininiai stelažai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/regaly",
+        "pageId": "ccc9e302-dba5-4962-b42c-405217a11058",
+        "currentRevisionHash": "2850be8a483fea8105dc42cc0baa4ffdd6672ec1d364a0f5aaaba79b65b98649",
+        "publicRevisionHash": "2850be8a483fea8105dc42cc0baa4ffdd6672ec1d364a0f5aaaba79b65b98649"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti stelažų ir lentynų sistemas, tikrinti modelio matmenis bei apkrovas.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "rego-cz",
+      "categoryName": "REGO laikymo sistema",
+      "sourceUrl": "https://www.klaro.cz/rego-cz",
+      "catalogueModelsAcrossDescendants": 42,
+      "exactQuery": "REGO laikymo sistema",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/rego-cz",
+        "pageId": "f1961070-587f-4828-bc3e-b7a058c95cda",
+        "currentRevisionHash": "eeda3a0d62961cea314a67e96b72185e39973baf010eb4fdf36c24a2604039d8",
+        "publicRevisionHash": "eeda3a0d62961cea314a67e96b72185e39973baf010eb4fdf36c24a2604039d8"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti vienos tikros sistemos gaminius ir dokumentus, nežadėti sąveikos su bet kuria sistema.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "skrine",
+      "categoryName": "Spintos",
+      "sourceUrl": "https://www.klaro.cz/skrine",
+      "catalogueModelsAcrossDescendants": 55,
+      "exactQuery": "medicininės spintos",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/skrine",
+        "pageId": "8b824a50-5649-467a-bab0-348b50b3f0e1",
+        "currentRevisionHash": "4189705258f94aca9a3683ec38e014855c6465a174a66018c2686c9af735708a",
+        "publicRevisionHash": "4189705258f94aca9a3683ec38e014855c6465a174a66018c2686c9af735708a"
+      },
+      "action": "existing-section",
+      "readerJob": "Palyginti realių spintų sistemas ir tikslaus modelio talpos duomenis.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "specialni-voziky",
+      "categoryName": "Specialios paskirties medicininiai vežimėliai",
+      "sourceUrl": "https://www.klaro.cz/specialni-voziky",
+      "catalogueModelsAcrossDescendants": 20,
+      "exactQuery": "specialios paskirties medicininiai vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/specialni-voziky",
+        "pageId": "2e74b9ea-8bf9-4d2d-b59d-190b86da4c73",
+        "currentRevisionHash": "012909010282077595bbd505bbd74b8c718701514434aac80423c958c72f5e5c",
+        "publicRevisionHash": "012909010282077595bbd505bbd74b8c718701514434aac80423c958c72f5e5c"
+      },
+      "action": "existing-section",
+      "readerJob": "Palyginti tikras specializuotas komplektacijas, nesukurti tariamos paskirties.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "stojany-a-drzaky",
+      "categoryName": "Stovai, laikikliai ir pakabos",
+      "sourceUrl": "https://www.klaro.cz/stojany-a-drzaky",
+      "catalogueModelsAcrossDescendants": 74,
+      "exactQuery": "medicininiai stovai ir laikikliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/stojany-a-drzaky",
+        "pageId": "3d65fc86-766b-48c2-9963-8ef1e0392bb0",
+        "currentRevisionHash": "0cfeae0075cf944932b27d8069b03f6dcc3ce5b130ed1fa0737089a175deae74",
+        "publicRevisionHash": "0cfeae0075cf944932b27d8069b03f6dcc3ce5b130ed1fa0737089a175deae74"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasirinkti infuzijų, pakabų ir kitų stovų tikrą paskirties šaką.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "stoly",
+      "categoryName": "Stalai",
+      "sourceUrl": "https://www.klaro.cz/stoly",
+      "catalogueModelsAcrossDescendants": 16,
+      "exactQuery": "nerūdijančio plieno medicininiai stalai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-search-2",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/stoly",
+        "pageId": "3913b8f6-c942-4a51-8c68-226fb4d587dc",
+        "currentRevisionHash": "3ba002848350d10207804273838a637d8e14f914e7477b8d9c9f23f9b865207b",
+        "publicRevisionHash": "3ba002848350d10207804273838a637d8e14f914e7477b8d9c9f23f9b865207b"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti darbo stalą; atskirti jį nuo Mayo instrumentų staliuko.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "uklid-nahradni-dily",
+      "categoryName": "Atsarginės dalys",
+      "sourceUrl": "https://www.klaro.cz/uklid-nahradni-dily",
+      "catalogueModelsAcrossDescendants": 64,
+      "exactQuery": "Klaro atsarginės dalys",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-manuals",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/uklid-nahradni-dily",
+        "pageId": "4c81ecf1-beab-41f2-a0ca-c559c14117ba",
+        "currentRevisionHash": "9e3cf6c00266560ee37ca939185d82ec0c219c0ee0915ae18670c747fc7d5731",
+        "publicRevisionHash": "9e3cf6c00266560ee37ca939185d82ec0c219c0ee0915ae18670c747fc7d5731"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti tikrą katalogo detalę; nežadėti visų Klaro gaminių remonto ar visų dalių aprėpties.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "uklidove-vybaveni",
+      "categoryName": "Valymo įranga",
+      "sourceUrl": "https://www.klaro.cz/uklidove-vybaveni",
+      "catalogueModelsAcrossDescendants": 52,
+      "exactQuery": "Klaro valymo įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/uklidove-vybaveni",
+        "pageId": "68a80e72-c334-49aa-b8a1-3ccaba569760",
+        "currentRevisionHash": "49e2cef9e9b975854afad9fa81142d995905eec7341d897210e16e646b83186e",
+        "publicRevisionHash": "49e2cef9e9b975854afad9fa81142d995905eec7341d897210e16e646b83186e"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasirinkti valymo vežimėlių ar priemonių gaminius, ne dezinfekavimo režimą.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "velkokapacitni-mycky",
+      "categoryName": "Didelės talpos plovimo mašinos",
+      "sourceUrl": "https://www.klaro.cz/velkokapacitni-mycky",
+      "catalogueModelsAcrossDescendants": 2,
+      "exactQuery": "Klaro didelės talpos plovimo mašinos",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/velkokapacitni-mycky",
+        "pageId": "b04f69cb-c4fb-4595-b43b-158ebdad1627",
+        "currentRevisionHash": "9d35e7133ab99205a52b01e87c66a859f7553c63c7200f5cb4e30bad2425f9b6",
+        "publicRevisionHash": "9d35e7133ab99205a52b01e87c66a859f7553c63c7200f5cb4e30bad2425f9b6"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti realius gaminius ir gamintojo duomenis; nekurti tariamo validavimo ar priežiūros pasiūlymo.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "voziky-do-ostatnich-provozu",
+      "categoryName": "Kitų paskirčių vežimėliai",
+      "sourceUrl": "https://www.klaro.cz/voziky-do-ostatnich-provozu",
+      "catalogueModelsAcrossDescendants": 4,
+      "exactQuery": "Klaro kitų paskirčių vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/voziky-do-ostatnich-provozu",
+        "pageId": "ffe8a7e1-cbeb-4f46-8ecd-899fae156cff",
+        "currentRevisionHash": "6a695b23a4151767b0a5a151c70aa5d8cc62c1660b3d37cd91834ec530cef360",
+        "publicRevisionHash": "6a695b23a4151767b0a5a151c70aa5d8cc62c1660b3d37cd91834ec530cef360"
+      },
+      "action": "existing-section",
+      "readerJob": "Išlaikyti tikrą nedidelę gamintojo šaką be atskiro medicininio ekspertinio straipsnio.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "voziky-s-prislusenstvim",
+      "categoryName": "Vežimėliai su priedais",
+      "sourceUrl": "https://www.klaro.cz/voziky-s-prislusenstvim",
+      "catalogueModelsAcrossDescendants": 92,
+      "exactQuery": "procedūriniai vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "queried-free-discovery-effective-market-unverified",
+      "evidenceIds": [
+        "plan-exact-1",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/voziky-s-prislusenstvim",
+        "pageId": "6733765c-7a6a-46ab-9d24-ffdc63381285",
+        "currentRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8",
+        "publicRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasirinkti paskirties komplektaciją; paaiškinti BASIC ir PROFI šeimų kelią.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "vybaveni-pro-manipulaci-a-skladovani",
+      "categoryName": "Transportavimas ir sandėliavimas",
+      "sourceUrl": "https://www.klaro.cz/vybaveni-pro-manipulaci-a-skladovani",
+      "catalogueModelsAcrossDescendants": 124,
+      "exactQuery": "Klaro transportavimo ir sandėliavimo įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/vybaveni-pro-manipulaci-a-skladovani",
+        "pageId": "b324045c-a9cf-4293-86a4-96cf295691ca",
+        "currentRevisionHash": "f58303c373a9481a18c4b26ffc43bd7a801c19f93ae1d0fb9376772ee43ab8ca",
+        "publicRevisionHash": "f58303c373a9481a18c4b26ffc43bd7a801c19f93ae1d0fb9376772ee43ab8ca"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti realią vidaus logistikos šeimą; nepaversti įstaigos projekto pažadu.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "vybaveni-pro-obsluhu-pokoju",
+      "categoryName": "Patalpų aptarnavimas ir slauga",
+      "sourceUrl": "https://www.klaro.cz/vybaveni-pro-obsluhu-pokoju",
+      "catalogueModelsAcrossDescendants": 16,
+      "exactQuery": "Klaro patalpų aptarnavimo įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/vybaveni-pro-obsluhu-pokoju",
+        "pageId": "4a2d2418-3318-4a8a-af31-84a404ca5e69",
+        "currentRevisionHash": "51d60da12b4cd7b1412590b1424dcbd5bdd61b36f293d7534592aaf9d6155ed3",
+        "publicRevisionHash": "51d60da12b4cd7b1412590b1424dcbd5bdd61b36f293d7534592aaf9d6155ed3"
+      },
+      "action": "existing-section",
+      "readerJob": "Išlaikyti tikrą kitą gamintojo inventoriaus šaką; jos nesulieti pagal panašų vertimą be patikros.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "vybaveni-pro-velkokapacitni-mycky",
+      "categoryName": "Didelės talpos plovimo mašinų įranga",
+      "sourceUrl": "https://www.klaro.cz/vybaveni-pro-velkokapacitni-mycky",
+      "catalogueModelsAcrossDescendants": 2,
+      "exactQuery": "Klaro plovimo mašinų įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/vybaveni-pro-velkokapacitni-mycky",
+        "pageId": "13c50626-aff6-437f-abba-41e0f2651469",
+        "currentRevisionHash": "fa9cb7b67fa0886c0814e0d4f5c10b7423835cc2fd4d22c5c1aa8975c6577491",
+        "publicRevisionHash": "fa9cb7b67fa0886c0814e0d4f5c10b7423835cc2fd4d22c5c1aa8975c6577491"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti gamintojo įrangos elementus; pasirinkimo tekste susieti su priedų apžvalga.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "vybaveni-pro-velkokapacitni-mycky-prehled",
+      "categoryName": "Didelės talpos plovimo įrenginių priedai",
+      "sourceUrl": "https://www.klaro.cz/vybaveni-pro-velkokapacitni-mycky-prehled",
+      "catalogueModelsAcrossDescendants": 2,
+      "exactQuery": "Klaro plovimo įrenginių priedai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/vybaveni-pro-velkokapacitni-mycky-prehled",
+        "pageId": "b20c1563-e4e0-49fd-8955-772c8d28665e",
+        "currentRevisionHash": "1d7e72c5cad4bf58cc340dad3b51f382e5721df6ba48249939787442d2e7a529",
+        "publicRevisionHash": "1d7e72c5cad4bf58cc340dad3b51f382e5721df6ba48249939787442d2e7a529"
+      },
+      "action": "existing-section",
+      "readerJob": "Išlaikyti gamintojo apžvalgos tapatybę; prieš galimą sujungimą tikrinti dviejų modelių sutapimą ir funkciją.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "vyprodej-hlavni-menu",
+      "categoryName": "Gamintojo išpardavimo asortimentas",
+      "sourceUrl": "https://www.klaro.cz/vyprodej-hlavni-menu",
+      "catalogueModelsAcrossDescendants": 18,
+      "exactQuery": "Klaro gamintojo išpardavimo asortimentas",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/vyprodej-hlavni-menu",
+        "pageId": "8ebc04dd-bcf8-43c7-8023-7493b622ee32",
+        "currentRevisionHash": "d669ebb364a77d08b0cdd3df89923c8164809bcc12fdb1402324f965dca832ed",
+        "publicRevisionHash": "d669ebb364a77d08b0cdd3df89923c8164809bcc12fdb1402324f965dca832ed"
+      },
+      "action": "existing-section",
+      "readerJob": "Išlaikyti source tapatybę, bet nepriskirti mūsų nuolaidos; galimą apžvalgos dubliavimą palikti patikrai.",
+      "priority": "P3",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "zakladni-voziky",
+      "categoryName": "Moduliniai vežimėliai",
+      "sourceUrl": "https://www.klaro.cz/zakladni-voziky",
+      "catalogueModelsAcrossDescendants": 647,
+      "exactQuery": "medicininiai vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "queried-free-discovery-effective-market-unverified",
+      "evidenceIds": [
+        "plan-exact-0",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/zakladni-voziky",
+        "pageId": "0acac5b1-c78e-4621-9f09-aedcab129015",
+        "currentRevisionHash": "525cee411d516e564a23e49deb33ec6c55a4877243e7acd784a206e2434e3cac",
+        "publicRevisionHash": "525cee411d516e564a23e49deb33ec6c55a4877243e7acd784a206e2434e3cac"
+      },
+      "action": "existing-section",
+      "readerJob": "Palyginti modulinių vežimėlių šeimas ir pereiti į paskirties komplektacijas.",
+      "priority": "P1",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    },
+    {
+      "sourceCategoryId": "zdravotnicky-nabytek-prehled-hlavni",
+      "categoryName": "Medicininiai baldai",
+      "sourceUrl": "https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni",
+      "catalogueModelsAcrossDescendants": 16,
+      "exactQuery": "medicininiai baldai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-head-query-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/zdravotnicky-nabytek-prehled-hlavni",
+        "pageId": "d6f6d553-0d3a-487e-8597-d359af5e52d0",
+        "currentRevisionHash": "edb77a463c9073eeacc56acc034c2f21b250d946f88de356719a7b1f22f4496e",
+        "publicRevisionHash": "edb77a463c9073eeacc56acc034c2f21b250d946f88de356719a7b1f22f4496e"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasirinkti realią baldų paskirties kategoriją ir tikrinti gaminio parametrus.",
+      "priority": "P2",
+      "reason": "Išlaikyti tikrą katalogo URL; pasirinkimo tekstą ir susijusių šeimų nuorodas peržiūrėti atskirai. Naujo sinonimų/asortimento straipsnio nereikia. Kanoninis slug sutapatintas su actual source nuoroda; performance cannibalization neįrodyta."
+    }
+  ],
+  "headQueries": [
+    {
+      "exactQuery": "Klaro medicininė įranga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/",
+        "pageId": "36d50e14-bc72-4305-b8fe-9d55981abde3",
+        "currentRevisionHash": "09d18c0b39ebc814efae66b34bdefa5cabaece478b78e2cbe60ed4a1c563df2a",
+        "publicRevisionHash": "09d18c0b39ebc814efae66b34bdefa5cabaece478b78e2cbe60ed4a1c563df2a"
+      },
+      "action": "keep",
+      "readerJob": "Atstovaujamo gamintojo asortimento apžvalga ir poreikio veiksmas.",
+      "priority": "maintain",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "Klaro katalogas",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/produktai",
+        "pageId": "a5827907-f6ad-46d7-ba16-d3821da57ec1",
+        "currentRevisionHash": "ed0b063f0add96be87aeb8447a412cce6a4e67fb9b6b4610201514073aa6e8c7",
+        "publicRevisionHash": "ed0b063f0add96be87aeb8447a412cce6a4e67fb9b6b4610201514073aa6e8c7"
+      },
+      "action": "keep",
+      "readerJob": "Rasti tikrą modelį, kodą ir paskirties kategoriją.",
+      "priority": "maintain",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "Klaro PLV150",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/produktai",
+        "pageId": "a5827907-f6ad-46d7-ba16-d3821da57ec1",
+        "currentRevisionHash": "ed0b063f0add96be87aeb8447a412cce6a4e67fb9b6b4610201514073aa6e8c7",
+        "publicRevisionHash": "ed0b063f0add96be87aeb8447a412cce6a4e67fb9b6b4610201514073aa6e8c7"
+      },
+      "action": "existing-section",
+      "readerJob": "Kodas yra dviejų realių įrašų; parodyti abu ir atskirti modelio URL, o ne laikyti SKU unikaliu.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "vaistų vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-equipped",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/voziky-s-prislusenstvim",
+        "pageId": "6733765c-7a6a-46ab-9d24-ffdc63381285",
+        "currentRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8",
+        "publicRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8"
+      },
+      "action": "existing-section",
+      "readerJob": "Paskirties bloke parodyti BASIC ir PROFI vaistų komplektacijas, ne naują sinonimo URL.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "tvarstymo vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-equipped",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/voziky-s-prislusenstvim",
+        "pageId": "6733765c-7a6a-46ab-9d24-ffdc63381285",
+        "currentRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8",
+        "publicRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8"
+      },
+      "action": "existing-section",
+      "readerJob": "Paskirties bloke susieti tikras dviejų šeimų tvarstymo kategorijas.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "anesteziologiniai vežimėliai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-equipped",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/voziky-s-prislusenstvim",
+        "pageId": "6733765c-7a6a-46ab-9d24-ffdc63381285",
+        "currentRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8",
+        "publicRevisionHash": "2bd1ba0fb966410c8c5954f4de8d36082cccff6cc3bb2fa9c424862eac458dc8"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti paskirties šeimas pagal gamintojo duomenis, ne klinikinę procedūrą.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "infuzijų stovai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/infuzni-stojany",
+        "pageId": "5d27fce5-ea5c-4f66-b467-716612998d19",
+        "currentRevisionHash": "d2fb8b2d060a69f9192970e93511810068e268447ccd7f4b41bfdd68af5444d3",
+        "publicRevisionHash": "d2fb8b2d060a69f9192970e93511810068e268447ccd7f4b41bfdd68af5444d3"
+      },
+      "action": "existing-section",
+      "readerJob": "Pasirinkti tikrą stovo modelį ir jo parametrus.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "ISO moduliniai krepšiai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-iso",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/iso-skrine-kose",
+        "pageId": "0dae00de-61cb-47cd-8bb3-e08c9ba90ce0",
+        "currentRevisionHash": "cdaeb06e0f011a563c4e286546dcdeb22620edcd6b443dbe2d4db11dc38d967f",
+        "publicRevisionHash": "cdaeb06e0f011a563c4e286546dcdeb22620edcd6b443dbe2d4db11dc38d967f"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti krepšio matmenis, modelį ir sistemos tapatybę.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "nerūdijančio plieno spintos",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/nerezove-skrine",
+        "pageId": "c3f1475c-f4ea-4133-b425-2e1dccedb9ed",
+        "currentRevisionHash": "5fc58345a80b1eefe4de56de7b09a9ed4a2af74502ebe4e6b9bd823f0d3f1526",
+        "publicRevisionHash": "5fc58345a80b1eefe4de56de7b09a9ed4a2af74502ebe4e6b9bd823f0d3f1526"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti konkrečią konstrukcijos šeimą ir spintos duomenis.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "nerūdijančio plieno stalai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-steel",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kategorijos/nerezove-stoly",
+        "pageId": "5ea73e92-216a-4f3b-afd7-5b9ecdd8f2d9",
+        "currentRevisionHash": "ca1c2bae80ab33fd1af0056147adfad8b32c5e54b23df363a693ca725b28fa32",
+        "publicRevisionHash": "ca1c2bae80ab33fd1af0056147adfad8b32c5e54b23df363a693ca725b28fa32"
+      },
+      "action": "existing-section",
+      "readerJob": "Rasti realius standartinių stalų modelius; individualūs pavyzdžiai atskirai.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "kaip pasirinkti medicininį vežimėlį",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-equipped",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "currentRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba",
+        "publicRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba"
+      },
+      "action": "refresh",
+      "readerJob": "Papildyti BASIC/PROFI ir paskirties atrankos pavyzdžiais; atskirų sinonimų gidų nekurti.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "kaip pasirinkti procedūrinį vežimėlį",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-exact-1",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "currentRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba",
+        "publicRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba"
+      },
+      "action": "merge",
+      "readerJob": "Tas pats atrankos darbas; įtraukti kaip esamą paskirties paaiškinimą.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "Klaro BASIC ar PROFI",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-equipped",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "currentRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba",
+        "publicRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba"
+      },
+      "action": "existing-section",
+      "readerJob": "Skirtingų konstrukcijų/modelių palyginimas bendrame atrankos gide; ne du atskiri straipsniai.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "ISO modulinė sistema",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "queried-free-discovery-effective-market-unverified",
+      "evidenceIds": [
+        "plan-exact-2",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/iso-moduliu-sistema",
+        "pageId": "eab8457c-da03-420f-a149-33ebbd30953e",
+        "currentRevisionHash": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd",
+        "publicRevisionHash": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd"
+      },
+      "action": "refresh",
+      "readerJob": "Paaiškinti būtent medicinos priemonių laikymo/transportavimo kontekstą; bendras terminas turi kitų reikšmių.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "ISO krepšiai 600x400",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-iso",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/iso-moduliu-sistema",
+        "pageId": "eab8457c-da03-420f-a149-33ebbd30953e",
+        "currentRevisionHash": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd",
+        "publicRevisionHash": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd"
+      },
+      "action": "existing-section",
+      "readerJob": "Paaiškinti vardinio dydžio, gylio, kreipiančiųjų ir konkretaus modelio skirtumus be universalumo.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "kaip perkelti ISO krepšį iš spintos į vežimėlį",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-klaro-iso",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/iso-moduliu-sistema",
+        "pageId": "eab8457c-da03-420f-a149-33ebbd30953e",
+        "currentRevisionHash": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd",
+        "publicRevisionHash": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd"
+      },
+      "action": "merge",
+      "readerJob": "Esamo ISO gido suderinamumo kelias, ne naujas 2027-01-22 straipsnis.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "medicininės įrangos pirkimo užklausa",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-vpt-tools",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "pageId": "eb1e5df2-c357-436b-87af-642802724ce9",
+        "currentRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e",
+        "publicRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e"
+      },
+      "action": "refresh",
+      "readerJob": "Papildyti modelio/kiekio/priedų ir alternatyvų sutikrinimo ruošinį.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "medicininio vežimėlio techninė specifikacija",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-search-3",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "pageId": "eb1e5df2-c357-436b-87af-642802724ce9",
+        "currentRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e",
+        "publicRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e"
+      },
+      "action": "existing-section",
+      "readerJob": "Neutralus reikalavimų ruošinys ir nuorodos į oficialius dokumentus; ne teisinė pirkimo atitikties garantija.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "medicininių vežimėlių kaina",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kontaktai",
+        "pageId": "040d087a-777f-45ec-bb10-3095d3e2cccf",
+        "currentRevisionHash": "4c36815ba7ac4191b02b4d980499461655744edf227bbe9d950dbff4e80acfc9",
+        "publicRevisionHash": "4c36815ba7ac4191b02b4d980499461655744edf227bbe9d950dbff4e80acfc9"
+      },
+      "action": "existing-section",
+      "readerJob": "Pateikti konkretų modelių/kiekių poreikį pasiūlymui; kainų ar turimų likučių neišgalvoti.",
+      "priority": "P1",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "Promedical kontaktai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/kontaktai",
+        "pageId": "040d087a-777f-45ec-bb10-3095d3e2cccf",
+        "currentRevisionHash": "4c36815ba7ac4191b02b4d980499461655744edf227bbe9d950dbff4e80acfc9",
+        "publicRevisionHash": "4c36815ba7ac4191b02b4d980499461655744edf227bbe9d950dbff4e80acfc9"
+      },
+      "action": "keep",
+      "readerJob": "Tikra užklausos forma, savininko el. paštas ir telefonas; tikras SMTP/INBOX dar atskiras vartas.",
+      "priority": "maintain",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    },
+    {
+      "exactQuery": "Promedical informacijos šaltiniai",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-query-variant-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/redakcija",
+        "pageId": "14bbad55-c872-4574-818b-9f720b73199e",
+        "currentRevisionHash": "d647de7c0df3e037d17c4b86a5cae47487f3b828c81606ba535b679c0f61f335",
+        "publicRevisionHash": "d647de7c0df3e037d17c4b86a5cae47487f3b828c81606ba535b679c0f61f335"
+      },
+      "action": "keep",
+      "readerJob": "Matoma šaltinių/taisymo metodika ir tikras brand autorius.",
+      "priority": "maintain",
+      "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
+    }
+  ],
+  "newGuideJobs": [
+    {
+      "exactQuery": "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-klaro-equipped",
+        "plan-exact-0",
+        "plan-exact-1"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/bazinio-vezimelio-komplektacija",
+        "pageId": "9e46f186-582e-4eda-a6d8-30c5e6c903fe",
+        "currentRevisionHash": "ee9d6b38fac9c54469b1a8082d094fa372ed64ca2b90a2cbdf4609a1348b54f5",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kaip palyginti, kas įeina į bazinį vežimėlį ir ką reikia užsakyti papildomai?",
+      "priority": "P1",
+      "reason": "P1. Atskiras darbas nuo bendro atrankos gido: patikrinti pasiūlymo eilutes ir komplektacijos ribas. Atsakymas: lyginti tikslų modelio kodą, bazinį sąrašą ir priedų kodus. Originalus indėlis: aiškiai pažymėtas dviejų tikrų modelių komplektacijos palyginimo pavyzdys ir užklausos kontrolinis sąrašas. plan-klaro-equipped, plan-exact-0/1 patvirtina katalogo/paskirties formatą; apimtis ir LT pozicijos nežinomos. Gamintojo modelių kortelėse iš naujo tikrinti įtrauktus priedus, matmenis ir suderinamumą; nekurti universalios suderinamumo taisyklės, kainų ar likučių. Vaizdas: patikrinta konkretaus vežimėlio ir priedo gamintojo nuotrauka, su tikrais kodais ir teisėmis. Skaitytojo kelias: atrankos gidas → komplektacijos patikra → moduliniai vežimėliai / priedai → konkrečių modelių užklausa. Data – privataus parengimo orientyras; faktų, medijos ir revizijos peržiūra lieka prieš release.",
+      "planningDate": "2026-10-23",
+      "pillar": {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "currentRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba",
+        "publicRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba"
+      }
+    },
+    {
+      "exactQuery": "Kaip pasirinkti Mayo instrumentų staliuką",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-exact-3",
+        "plan-search-2",
+        "plan-klaro-instruments",
+        "plan-cpo-browser"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/mayo-staliuko-pasirinkimas",
+        "pageId": "7fb61c62-a821-47e2-b42c-81685961c434",
+        "currentRevisionHash": "f07f099ae30dd9fa3ea7949e43dbe2ca7c96388eb788cc24565a9fd6e02febaf",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kokius konkretaus Mayo staliuko parametrus palyginti prieš pasirenkant modelį?",
+      "priority": "P1",
+      "reason": "P1. Atskiras instrumentų staliuko pasirinkimo darbas: reguliavimas, padėklo plotas, važiuoklė ir modelio apkrovos ribos. Originalus indėlis: aiškiai pažymėtas NEREZ1101, NEREZ1120 ir NEREZ1135 parametrų palyginimo pavyzdys pagal gamintojo korteles; nepaversti jo klinikiniu tinkamumo įvertinimu. plan-exact-3, plan-search-2 ir plan-klaro-instruments patvirtina konkretų produktų formatą ir tikrą 8 modelių asortimentą. CPO pavyzdys rodo palyginimo laukus, bet jo tolerancijos ir garantija nėra mūsų pažadai. Prieš tekstą patikrinti konkrečių kodų instrukcijas, apkrovų kontekstą, skirtingus matmenų tipus. Vaizdas: tikra pasirinkto staliuko nuotrauka, ne tariama mūsų operacinė. Kelias: gidai → šis gidas → instrumentų kategorija → konkrečios kortelės / užklausa. LT apimtis ir reitingai nežinomi; data tik privatus parengimo orientyras.",
+      "planningDate": "2026-10-30",
+      "pillar": {
+        "path": "/gidai",
+        "pageId": "be06fde7-be34-4faa-95c2-c99831ca4d99",
+        "currentRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393",
+        "publicRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393"
+      }
+    },
+    {
+      "exactQuery": "Kaip rasti Klaro atsarginę dalį pagal įrangos kodą",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-klaro-manuals"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/klaro-atsargines-dalies-paieska",
+        "pageId": "3d1a5995-d8fe-4570-8bf5-03c0f9100f52",
+        "currentRevisionHash": "4c9b19e5a9783a7ffe942be481a98281a6be3dc5f58cfe7f65fb39a51ab5d1dc",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kaip nustatyti turimos įrangos ir reikalingos detalės tapatybę prieš užklausą?",
+      "priority": "P1",
+      "reason": "P1. Remonto užklausos paruošimas skiriasi nuo naujo vežimėlio parinkimo. Atsakymas: užfiksuoti įrangos lentelę/kodą, turimos detalės kodą, nuotrauką ir konkrečiam modeliui skirtą dokumentą. Originalus indėlis: tapatybės patikros seka ir praktinis užklausos ruošinys be kliento duomenų. plan-klaro-manuals patvirtina instrukcijų paiešką pagal katalogo numerį; kataloge yra reali atsarginių dalių šaka. Prieš rašant patikrinti bent vieną modelio ir jo detalės dokumentų porą; jei ryšio nėra, nenurodyti tariamo suderinamumo. Neteigti, kad visos dalys tinka, yra sandėlyje ar kad teikiame remonto paslaugą. Vaizdas: aiškiai pažymėtas gamintojo detalės / žymėjimo pavyzdys su naudojimo teisėmis. Kelias: gidai → dalies identifikavimas → atsarginių dalių kategorija / konkreti užklausa. Data privati; demand ir faktinė mūsų aptarnavimo apimtis nežinomi.",
+      "planningDate": "2026-11-06",
+      "pillar": {
+        "path": "/gidai",
+        "pageId": "be06fde7-be34-4faa-95c2-c99831ca4d99",
+        "currentRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393",
+        "publicRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393"
+      }
+    },
+    {
+      "exactQuery": "Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-klaro-iso",
+        "plan-exact-2"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/medicinines-spintos-pasirinkimas",
+        "pageId": "9002e667-f305-4a41-8ed6-f151feb544d5",
+        "currentRevisionHash": "c2b4af171b8559909c2cd1cc06d4e517a5a1a747af081edde676db269b6e5769",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kokią spintos konstrukciją ir talpos informaciją palyginti konkrečiam įstaigos laikymo poreikiui?",
+      "priority": "P2",
+      "reason": "P2. Spintos pastatymo, prieigos ir vidinės talpos darbas skiriasi nuo ISO krepšių perdavimo tarp įrangos. Originalus indėlis: matavimo ir talpos darbo lapas su pažymėtu spintos poreikio pavyzdžiu; išoriniai matmenys nevadinami naudinga vidine talpa. plan-klaro-iso ir faktinė spintų kategorija patvirtina skirtingų sistemų inventorių; bendro ISO termino nemedicininiai rezultatai neįrodo medicininio poreikio apimties. Prieš tekstą tikrinti dviejų tikrų modelių vidaus/išorės duomenis, kreipiančiąsias, ratukus, priedus ir durų variantus. Nežadėti automatinio vaistų išdavimo, universalios modulių sąveikos ar montavimo. Vaizdas: tikra spinta ir originali aiškiai iliustracinė matavimo schema. Kelias: gidai → spintos pasirinkimas → spintų kategorija; ISO gidas tik kai sprendžiamas modulių kelias. Data privati, LT apimtis nežinoma.",
+      "planningDate": "2026-11-13",
+      "pillar": {
+        "path": "/gidai",
+        "pageId": "be06fde7-be34-4faa-95c2-c99831ca4d99",
+        "currentRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393",
+        "publicRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393"
+      }
+    },
+    {
+      "exactQuery": "Kaip aprašyti nerūdijančio plieno stalo poreikį",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-klaro-steel",
+        "plan-search-2"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/nerudijancio-plieno-stalo-poreikis",
+        "pageId": "f8d3911c-3e7f-4938-ac54-6621bc18ad6f",
+        "currentRevisionHash": "72f2f373cfbfb40522e201f3299c36d3b38b9e3194384d9702cc2e34f27ebf99",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kaip paruošti palyginamą stalo poreikio aprašą ir išvengti neapibrėžtos komplektacijos?",
+      "priority": "P2",
+      "reason": "P2. Darbo stalo matavimas, stalviršis, apatinė dalis ir plautuvės variantas yra atskiras formatas nuo mobilaus Mayo staliuko. Originalus indėlis: aiškiai iliustracinis stalo poreikio ruošinys ir matmenų žymėjimo paaiškinimas. plan-klaro-steel ir tikra stalų kategorija pagrindžia medžiagos/modelio tikrinimą; plan-search-2 patvirtina instrumentų ir darbo baldų terminų skirtumą, ne LT volume. Prieš rašant patikrinti konkretaus stalo duomenis, medžiagą ir plautuvės konfigūraciją; neperkelti visos gamintojo individualios gamybos į mūsų patvirtintą vykdymą. Nežadėti atsparumo visoms cheminėms medžiagoms ar konkrečių tiekimo terminų. Vaizdas: gamintojo stalas ir iliustracinė matavimo schema su teisėmis. Kelias: pirkimo užklausos gidas → šis ruošinys → stalai / konkretus modelis → užklausa. Data privati; kaina ir tiekimo sąlygos derinamos atskirai.",
+      "planningDate": "2026-11-20",
+      "pillar": {
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "pageId": "eb1e5df2-c357-436b-87af-642802724ce9",
+        "currentRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e",
+        "publicRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e"
+      }
+    },
+    {
+      "exactQuery": "Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-inventory"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+        "pageId": "880b11bb-86a8-43ba-a01a-be0e522e68fc",
+        "currentRevisionHash": "de029fa2704629318b0776d1d96eb17878b4c9cd8b16cc8afe6c1c830e64a252",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kaip palyginti skalbinių ir atliekų vežimėlius pagal tikrą maišų sistemą ir įstaigos logistiką?",
+      "priority": "P2",
+      "reason": "P2. Maišų/krepšių, dangčių, talpos ir atskirų srautų komplektacija skiriasi nuo procedūrinio vežimėlio stalčių parinkimo. Originalus indėlis: įstaigos srautų ir matmenų kontrolinis sąrašas bei aiškiai iliustracinis dviejų komplektacijų palyginimas. Faktinė 47 modelių skalbinių ir atliekų šaka patvirtina inventorių; atskiras LT Google poreikio matavimas neatliktas. Prieš tekstą tikrinti gamintojo konkrečių modelių maišų/krepšių talpą, laikiklius, priedus ir paskirtį. Įstaigos atliekų klasifikavimo, infekcijų kontrolės ir darbo procedūrų nereglamentuoti šiame komerciniame gide. Nežadėti maišų universalumo ar sterilumo. Vaizdas: tikra šios šakos modelio nuotrauka, ne mūsų įstaigos projektas. Kelias: bendras atrankos gidas → šis gidas → skalbinių/atliekų kategorija → konkreti komplektacijos užklausa. Data privati, ne pirkimo sezono faktas.",
+      "planningDate": "2026-11-27",
+      "pillar": {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "currentRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba",
+        "publicRevisionHash": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba"
+      }
+    },
+    {
+      "exactQuery": "Kaip patikrinti medicininės įrangos valymo dokumentus",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-klaro-steel",
+        "plan-klaro-manuals"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/medicinines-irangos-valymo-dokumentai",
+        "pageId": "1f166ace-c55b-4d5f-8502-b7e72bc84522",
+        "currentRevisionHash": "87739433cb013c36eaefd16aad4857a750d266ea11db0de220630ec0cfb130a2",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kaip surasti konkrečiam modeliui taikomus valymo dokumentus ir patikrinti jų taikymo ribas?",
+      "priority": "P3",
+      "reason": "P3, priklausomybė: konkretaus modelio galiojanti instrukcija. Gido darbas – dokumentų tapatybė, ne dezinfekavimo receptas. Originalus indėlis: modelis → medžiaga → instrukcijos versija → priemonės suderinamumo įrodymas kontrolinė seka ir trūkstamų duomenų užklausos pavyzdys. plan-klaro-steel ir plan-klaro-manuals pagrindžia tikrinimo poreikį, bet bendras medžiagų straipsnis nepakeičia gaminio instrukcijos. Prieš tekstą perskaityti tikrą konkretaus modelio valymo skyrių; jei jo nėra, išlaikyti kaip rengimo priklausomybę. Nenurodyti universalių koncentracijų, ekspozicijų, sterilizavimo ar klinikinio tinkamumo. Vaizdas: tikras gaminys ir iliustracinė dokumentų patikros schema su teisėmis. Kelias: gidai → dokumentų patikra → instrukcijų šaltinis / konkretus modelis → informacijos užklausa. Data privati; nereikia viešinti vien dėl datos.",
+      "planningDate": "2026-12-04",
+      "pillar": {
+        "path": "/gidai",
+        "pageId": "be06fde7-be34-4faa-95c2-c99831ca4d99",
+        "currentRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393",
+        "publicRevisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393"
+      }
+    },
+    {
+      "exactQuery": "Įrangos komplekto priėmimas: ką sutikrinti su užsakymu",
+      "country": "LT",
+      "language": "lt",
+      "queryEvidence": "editorial-question-not-individually-queried",
+      "evidenceIds": [
+        "plan-inventory",
+        "plan-klaro-manuals",
+        "plan-vpt-tools"
+      ],
+      "demandVolume": null,
+      "destination": {
+        "path": "/gidai/irangos-komplekto-priemimo-patikra",
+        "pageId": "059a836b-90c6-4106-ae72-166beaea7c24",
+        "currentRevisionHash": "8aa5314ae2fe1c561f592c7c1e97552339b1b7dd37e89e4245bd5186d3082b6d",
+        "publicRevisionHash": null
+      },
+      "action": "new",
+      "readerJob": "Kaip užfiksuoti gauto komplekto atitikimą konkrečiam užsakymui ir perduoti nustatytą neatitikimą?",
+      "priority": "P3",
+      "reason": "P3, priklausomybė: patikrintas anoniminis užsakymo/dokumentų pavyzdys arba aiškiai iliustracinis ruošinys. Priėmimo sutikrinimas skiriasi nuo priešpirkiminio poreikio aprašo. Originalus indėlis: modelio/kiekio/priedų/instrukcijų kontrolinis sąrašas ir neutralus neatitikimo įrašo pavyzdys. plan-klaro-manuals pagrindžia instrukcijos tapatybę; mūsų tiekimo, garantijų ir pretenzijų terminai nepatvirtinti. Prieš tekstą patikrinti konkretaus modelio dokumentus ir atskirti įstaigos/sutarties priėmimą nuo paprasto fizinio sutikrinimo. Nežadėti įrengimo, mokymų ar servisavimo, nenustatyti teisinių terminų ir nekurti tariamo klientų atvejo. Vaizdas: originali aiškiai iliustracinė sutikrinimo schema be asmens duomenų. Kelias: pirkimo užklausos gidas → priėmimo patikra → konkretaus modelio dokumentai / kontaktai. Data tik privatus orientyras; neviešinti neužbaigus priklausomybių.",
+      "planningDate": "2026-12-11",
+      "pillar": {
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "pageId": "eb1e5df2-c357-436b-87af-642802724ce9",
+        "currentRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e",
+        "publicRevisionHash": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e"
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "query": "medicininiai vežimėliai Vilniuje / Kaune / kituose miestuose",
+      "action": "exclude",
+      "reason": "Nėra patvirtintų skirtingų vietinių paslaugų ar atsiėmimo vietų; kontaktai ir vienas katalogas."
+    },
+    {
+      "query": "universalus dezinfekavimo / sterilizavimo režimas",
+      "action": "exclude",
+      "reason": "Klinikinės/saugos instrukcijos turi modelio ir įstaigos kontekstą; tik dokumentų patikros gidas."
+    },
+    {
+      "query": "visų Klaro modelių garantinis remontas / sandėlio likučiai / pristatymas per N dienų",
+      "action": "exclude",
+      "reason": "Šie vykdymo faktai nepatvirtinti; atskira konkrečios užklausos patikra."
+    }
+  ],
+  "networkLinks": [],
+  "states": {
+    "scopeQueryMap": "complete-for-owner-confirmed-catalogue",
+    "drafts": "not-written-by-this-planning-task",
+    "release": "existing-package-unchanged",
+    "deployed": "not-performed",
+    "measured": "not-performed",
+    "privatePlans": "materialized-eight-native-v1-plans",
+    "writerHandover": "supported-fields-verified-in-assembled-prompt-no-cli-draft-executed"
+  },
+  "limitations": [
+    "437 source categories have not undergone a measured LT SERP alias/cannibalization audit; F3 remains UNVERIFIED.",
+    "planningBrief/reconcile native adapter is absent in this V1 checkout. New guide scope is retained losslessly in supported reason/sourceQueries/linkSuggestions/sourceCandidates; full cross-map is this orchestration artifact, not an injected planningBrief field.",
+    "Legacy contentPolicy is compatibility metadata, not a filler quota or activated automatic schedule."
+  ]
+}

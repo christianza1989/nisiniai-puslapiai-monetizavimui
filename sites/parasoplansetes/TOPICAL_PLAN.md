@@ -1,4 +1,12 @@
 # Užklausų ir URL sprendimai
+## Aktualus pilnas planas — 2026-10-09
+
+Visas dabartinis žemėlapis, 47 URL briefai, 154 tikslių užklausų sprendimai, verslo/proceso/aplinkos matrica ir šešių mėnesių parengimo langai: [CONTENT_PLAN_20261009.md](CONTENT_PLAN_20261009.md), struktūruoti duomenys [CONTENT_PLAN_20261009.json](CONTENT_PLAN_20261009.json). 19 esamų puslapių išsaugoti, 28 nauji tik suplanuoti; 3 priklauso nuo konkretaus papildomo įrodymo. Bendrinės įrangos užklausos taikinys naujame domene patikslintas į /paraso-plansetes, homepage skirtas StepOver pasiūlymui. NG5 įtrauktas sąlygiškai, duraSign10.0 tiekimas tikrintinas.
+
+Žemiau paliktas originalus 2026-10-08 checkpoint ir pirmo release istorija. Jo trumpas būsimas temų sąrašas bei homepage/kategorijos paskirstymas nėra naujo pilno plano pakaitalas. Native planningBrief adapterio spraga įvardyta naujame plane; nauji tekstai, approval ar publikavimas šiuo darbu neatlikti.
+
+## Istorinis 2026-10-08 checkpoint
+
 2026-10-08, LT / lt / Europe/Vilnius. Savininko patvirtintos abi svetainės; skirtingi gamintojai. Treg šaltinių paieškos be12143f50d14d4fa64bc2c9eeb0cd37 rezultatas padeda rasti katalogus, ne patikimą Google poziciją ar apimtį. Google LT desktop SERP / Ads volume faktiškai gauti; mobile head pozicija nepatvirtinta. Limitas 2 EUR, kaštas apie 0,21 EUR. Žr. SEO_BASELINE.md. Šis žemėlapis remiasi tikru katalogu ir skaitytojo užduotimis, o ne išgalvotu SERP overlap.
 | Užklausa / klausimas | Funkcija | Destination | Sprendimas |
 |---|---|---|---|

@@ -1,5 +1,7 @@
 # Turinio parengties įrodymai
 
+2026-10-09 pilno turinio plano papildymas: [CONTENT_PLAN_20261009.md](CONTENT_PLAN_20261009.md) ir [CONTENT_PLAN_20261009.json](CONTENT_PLAN_20261009.json). 47 URL briefai / 154 užklausų sprendimai: 19 esamų peržiūros, 28 nauji, 3 sąlyginiai. Planas atskirtas nuo rašymo ir publikavimo; naujų native planų/tekstų/approval/release/deploy šiuo darbu0. Pilnam actual writer perdavimui trūksta bendro planningBrief/reconcile adapterio; reason1000 ir legacy draftPage pilno briefo neperduoda. Patikrinta, kad visi19 esami page įrašai ir patvirtintas package SHA liko nepakitę. Esamas preview jau veikia workers.dev kaip noindex; tikras domenas dar neprijungtas. Žemiau išsaugoti originalūs saviaudito įrašai.
+
 2026-10-09 saviauditas. siteId `parasoplansetes`, domenas `parasoplansetes.lt`, locale `lt-LT`. Būsena: vietinė turinio realizacija; ne viešo domeno ar viso F1 priėmimas.
 
 Native contentWorkflowVersion1, šešių mėnesių planas ir dviejų publikacijų per mėnesį hipotezė yra studijos įraše. Tai nėra paleisto periodinio generatoriaus ar išmatuotos paklausos įrodymas. 19 puslapių, 4 gidai, 20 optimizuotų medijos failų. Kiekviena pataisa eina editPage → revision-bound recordEditorialReview → approveReviewedBatch → immutable release → kanoninis importas → build. Approval hash ranka nekeistas.

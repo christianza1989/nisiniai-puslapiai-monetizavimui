@@ -1,5 +1,7 @@
 # Madbeauty: SEO ir Facebook klientų pritraukimo planas
 
+2026-10-10 papildymas: savininkas pasirinko Madbeauty kaip būsimos bendros aktyvios paieškos sistemos pirmą teikėjų prisijungimo pilotą. Nauja darbo seka ir priėmimo vartai: [ACQUISITION_PILOT_PLAN](ACQUISITION_PILOT_PLAN.md), [TOOLS](TOOLS.md), [core roadmap](../../agent-business-core/acquisition-plan/ROADMAP.md). Toliau esantis ankstesnis SEO/FB planas išsaugotas; ši nuoroda neįjungia gyvo kontaktavimo.
+
 2026-10-05. Privatus planas pagal BUSINESS, ACQUISITION_CORE ir niche-client-acquisition. Statusas research/draft_only. Nemokami piloto profiliai ir naudojimas; jokios garantijos dėl naujų klientų ar laisvo vizito. Savininko ankstesnis grupių veiksmų pavedimas išlieka, bet šis tyrimas neįjungia gyvo transporto ir neatlieka kontaktavimo. Visus veiksmus turi riboti aktuali pasiūla, grupės taisyklės ir priimtas platformos adapteris.
 
 ## Dvi auditorijos, dvi konversijos

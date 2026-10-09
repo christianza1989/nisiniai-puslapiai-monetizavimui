@@ -1,5 +1,7 @@
 # Kasdienė aktyvi B2B klientų paieška
 
+2026-10-10: pilnas tolesnės sistemos [planas ir architektūra](acquisition-plan/README.md), [roadmap](acquisition-plan/ROADMAP.md) ir [Madbeauty teikėjų pilotas](../sites/madbeauty/ACQUISITION_PILOT_PLAN.md). Žemiau dokumentuojamas jau įgyvendintas vietinis research/draft parengimo etapas; planuojami production adapteriai nėra jo atliktos patikros.
+
 2026-10-09. Savininko pavedimas: pagerinti bendrą sistemą aktyviai klientų paieškai, pvz. medicininės įrangos pardavėjui. Autoritetas — privatus agentų core. Viešas `niche-public-core` lieka svetainės, užklausos ir patvirtinto turinio adapteris; prospectų ir korespondencijos jame nelaikyti.
 
 ## Radiniai ir įgyvendinta apimtis

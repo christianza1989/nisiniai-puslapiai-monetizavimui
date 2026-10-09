@@ -1,0 +1,31 @@
+# Madbeauty: nuoseklus publikavimas per pusmetį
+
+2026-10-09 savininkas pakeitė grupių išleidimą į nuoseklų kalendorių visam 295 straipsnių planui. Šis dokumentas pakeičia ankstesnes penkių bangų datas; tyrimas, URL ketinimai, H2, šaltiniai, originalios naudos reikalavimai ir būsimas vidinių ryšių tinklas išlieka.
+
+[Interaktyvus visų 295 straipsnių kalendorius](MADBEAUTY-NUOSEKLUS-PUSMECIO-PLANAS.html) · [Data, valanda ir būsena lentelėje](PUBLIKAVIMO-KALENDORIUS.md) · [Visas rengimo briefas](PLAN.json) · [Kalendoriaus duomenys](PUBLICATION-CALENDAR.json).
+
+Laikotarpis 2026-10-13–2027-04-06, Europe/Vilnius. Iki dviejų publikacijų darbo dieną 10:00 ir 16:00, iki vienos savaitgaliais 10:00; pilnos septynių dienų grupės turi 11–12 temų. Kiekvienas būsimas straipsnis turi atskirą momentą. Pagrindiniai gidai numatyti anksčiau už tęstines temas. Keturių sezoninių temų ankstesnės datos išlaikytos. 28 jau parengti būsimi bendrieji gidai pasirodys iki spalio 28 d.; 4 parengti sezoniniai gidai liks savo datomis. Trys istoriniai vieši gidai nekeisti.
+
+## Parengimo ir publikavimo būsenos
+
+35 straipsniai iš tikrųjų parašyti, peržiūrėti ir įkelti ankstesniame pakete; kitos 260 temos dar neparašytos. Nauja data neatlieka rašymo, vaizdų generavimo, faktų ar specialisto patikros. Konkretus nebaigtas straipsnis negali tapti viešas vien dėl atėjusios datos. Plano pabaiga yra savininko parengimo ir publikavimo tikslas, ne garantuotas Google indeksavimas ar reitingas.
+
+[RELEASE-REVIEW.json](RELEASE-REVIEW.json) fiksuoja naują peržiūrėtą immutable paketą: 39 puslapiai / 35 gidai / tie patys 180 WebP failų. 25 būsimų straipsnių publishAt ir datePublished pakeisti, likusios 14 patvirtintų puslapių versijų tiksliai išlaikytos. Visas tekstas, vaizdai, nuorodų ID, šaltiniai, autoriai ir faktiniai teiginiai nepakito. Nauji pakeistų revizijų patvirtinimai gauti per bendrus editPage, recordEditorialReview, approveReviewedBatch ir releaseContent; seno paketo ar patvirtinimų hash rankiniu būdu netaisome.
+
+Patikra: visų 295 unikalūs URL ir realūs studijos UUID; 292 skirtingi būsimi momentai; 176 kalendorinės dienos; root prieš support; sezonai; vietinio/UTC laiko ir DST bendras localPublishAt. Naujam paruoštų tekstų leidimui patikrinti tikri visų 180 vaizdų baitai ir 64 bendros viešos projekcijos būsenos prieš ir ties 32 pasirodymo momentais. Privačių naujų datų fragmentai peržiūrėti naudojant tikrą platformos rendererį. Istorinė tekstų/šaltinių/pikselių bei desktop/mobile peržiūra aiškiai išlaikyta kaip istorinė; nauja klinikinė peržiūra nevaidinta.
+
+Privatus studijos kalendorius sutikrintas bendru reconcilePrivatePlan su visais 299 puslapiais (295 straipsniai + 4 pagalbiniai); article coverageTarget atstatytas į 295. 260 neparašytų puslapių datos bei full planningBrief atnaujinti izoliuotoje kopijoje. Originalus rašymo tenant ir 75aa78 leidimas neperrašyti. Toliau rašymui naudoti šį naują kalendorių ir izoliuotos studijos kelio koordinavimo įrašą; actual gpt-6-luna / xhigh ir ImageGen modelių įrodymai bei visi review vartai lieka.
+
+2026-10-09 naujas datų paketas įdiegtas į madbeauty.lt. Nepriklausoma [domeno patikra](DOMAIN-ACCEPTANCE.json) patvirtino tikslų bb1b90aa paketo SHA, 7 šiuo metu viešus puslapius (3 gidus), visų 32 būsimų gidų HTTP 404 ir jų canonical URL nebuvimą sitemap bei abiejuose LLM failuose. [Diegimo įrašas](DEPLOYMENT.json) ir [platformos leidimo PR48](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/48) atskiria gyvą datų leidimą nuo vietinės parengimo peržiūros. Privatus release-manifest.json laikomas vietoje ir neįtraukiamas į Git ar public assets.
+
+Vietinės datos fragmentų patikros renderer SHA256 yra 52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c (platformos atnaujinimo kandidatas), projekcijos core — 37208b826fefc7bb86c65d8ce83acde72259c1dc. Tai nėra faktinės gyvos bazės priėmimas. Datų diegimui platformos savininkas išlaiko gyvą b7a34b1703060c4d8d5e426fa29347a393c32dff, core 63cfd8c2043eb2afa5eb6af638bae4dad9c86d46 ir renderer 0c48d38915c7ab442c362d292b5250a91a33f0d604eeb0564f3bcea129d61ae0; šios bazės HTTP bei pasirodymo ribų patikra fiksuojama atskiru platformos priėmimo įrašu. 284 surinkti platformos failai apima ir 180 straipsnių WebP; 309 priklauso platesniam atnaujinimo kandidatui.
+
+## Tolimesnis turinio rengimas
+
+Galutinis [platformos priėmimo įrašas](OWNER-DEPLOYMENT-RECEIPT.json): production version `4dbdf361-25c6-4496-97a5-daaed23df201`, artifact SHA256 `1898da08cc32f5e23f6dcf9c89fa5f04601a28f63cd5b8bb21afd47b00b98245`, leidimo source `385005d02298fd9c3b59f23f4668223ef341ab40`. Faktinis b7/63 consumer priėmimas praėjo 64 vietines ir 64 izoliuotas Cloudflare publikavimo laiko būsenas, domeno 284 failų patikrą (129 vieši tikslūs baitai, 155 būsimi vaizdai paslėpti) ir šešias tikras HTTPS naršyklės peržiūras telefone bei kompiuteryje. Kalendoriaus būsenos dabar žymi 32 parengtus ir pagal naujas datas įdiegtus gidus; 260 neparašytų temų šiame pakete nėra.
+
+Šiame pokalbyje įjungta aktyvi „Madbeauty pusmečio turinio rengimas“ heartbeat automatizacija: pirmadieniais ir ketvirtadieniais 09:00 pagal vartotojo Europe/Kiev laiko juostą. Kiekvienas vykdymas užbaigia iki 6 artimiausių įvykdomų temų, tikslas — bent dviejų savaičių parengto turinio atsarga. Tai šio projekto darbo partija, ne visų nišų taisyklė. Vykdymas privalo naudoti tikrą gpt-6-luna/xhigh, ImageGen, šaltinių ir revizijų peržiūrą bei atskirą actual-domain diegimą. Pasikartojantis agento darbas nesuteikia garantijos, kad trūkstama kvalifikuota peržiūra automatiškai bus atlikta. Įvykdžius visą apimtį rengimas sustabdomas; užbaigtų tekstų, neišspręstų vartų ir diegimų žurnalas turi būti atnaujinamas kiekvieną vykdymą.
+
+Atkurti kalendorių: `node sites/madbeauty/publication-20261009/build-calendar.mjs`. Naujas release rengiamas tik aiškiai nurodytoje izoliuotoje studijoje su konkrečiu seno paketo SHA; ankstesnis export/review nekeičiamas.
+
+Pastebėta core sutarčių spraga: reconcilePrivatePlan coverageTarget reikalauja visų puslapių skaičiaus (299), nors straipsnių coverageTarget turi būti 295. Šioje užduotyje po transakcijos taikytas bendras editSite, išlaikantis 295. Tai apibrėžimų neatitikimas; jo bendras pataisymas nėra slapta visų nišų migracija.

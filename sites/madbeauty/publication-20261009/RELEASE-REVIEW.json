@@ -1,0 +1,283 @@
+{
+  "recordedAt": "2026-10-09T11:30:57.860Z",
+  "state": "verified-export-not-deployed",
+  "previousPackageSha256": "75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "releasePath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-calendar-20261009\\sites\\madbeauty\\publication-20261009\\release\\",
+  "pages": 39,
+  "guides": 35,
+  "changedFutureDates": 25,
+  "unchangedApprovedPages": 14,
+  "totalArticlePlans": 295,
+  "bodyMediaAndClaimsUnchanged": true,
+  "historicalThreeDatesUnchanged": true,
+  "all180AssetsVerified": true,
+  "distinctFutureInstants": 32,
+  "beforeAtProjectionStates": 64,
+  "privateReconciliation": {
+    "activePages": 299,
+    "protectedRevisions": 39,
+    "articleCoverageTarget": 295
+  },
+  "actualRendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+  "proofs": [
+    {
+      "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+      "slug": "gidai/kirpimas-gidas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-13T13:00:00.000Z",
+      "oldRevisionHash": "bc11082b5b8c7b1ac504fc3e13c1c6629602b7433ba22bb93961839712d94cbe",
+      "newRevisionHash": "1f6e54163b565901e3d28ef00652c65579ba32f1dddba98607594893d94272a8",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+      "slug": "gidai/makiazas-gidas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-14T07:00:00.000Z",
+      "oldRevisionHash": "9d1a1d01e01010ee10692ceb29c8ae725f82851831571ab7b7d9f2e85791a222",
+      "newRevisionHash": "d5d59b73c98503db0fec3105d25ad314d07a3a9bbd589335652a58e56eab3b40",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+      "slug": "gidai/nagu-dizainas-gidas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-14T13:00:00.000Z",
+      "oldRevisionHash": "5b1d0e403654e39bac82627141a16590296840469c02b9694185080582f9c3a9",
+      "newRevisionHash": "fafe67c24f927058ba49db793d3df71d1be2f05a170fd90184fe82824dc0bedd",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+      "slug": "gidai/plauku-formavimas-gidas",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-15T07:00:00.000Z",
+      "oldRevisionHash": "7a9e12e6f8e0b4bbc798a72a78c236270f80610679481192f56f3f80ec9608c1",
+      "newRevisionHash": "79f8753554ab9a301453dc18effa7bbbd1520463e30a8ec817a60cd475016320",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+      "slug": "gidai/bendri-registracija",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-15T13:00:00.000Z",
+      "oldRevisionHash": "2e2e519fe9c54e62832b0897e89c5173415fdc8facb9ea050dcadaf070453813",
+      "newRevisionHash": "11a93dcc1eb8fb2676a104947859d5ad4ce48ac4de1b199a05b4c457b1b4d670",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+      "slug": "gidai/kirpimas-bob-kare",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-16T07:00:00.000Z",
+      "oldRevisionHash": "1914c672462842a8a71474865031baf938a1c8ea82896701b90393d43bd1bb18",
+      "newRevisionHash": "67988f4e7daeb17b76564f6a8792b6e1df2d9347fe741c418586b6457cf7727d",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+      "slug": "gidai/makiazas-dieninis-proginis",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-16T13:00:00.000Z",
+      "oldRevisionHash": "914e76c1f61f3aecd26610f768baa774f89d77ee646a50d404aeae97f118f098",
+      "newRevisionHash": "d3c654c16675857e551810afc6ce47bc31df0715ddd14414fc23f68e5af416b5",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+      "slug": "gidai/plauku-formavimas-dziovinimas-ar-progine",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-17T07:00:00.000Z",
+      "oldRevisionHash": "18c7ce6ff6a320b25673273910ea7a7e9d6ae32c9c3f9d88a46f3bca1a4c08e4",
+      "newRevisionHash": "eee0088a565cb4322ffdaf8e8a3f8c2bec84bf77f92018da7dc883ffe7ecfce3",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+      "slug": "gidai/bendri-vizitu-derinimas",
+      "previousPublishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-18T07:00:00.000Z",
+      "oldRevisionHash": "a9e24e990b75c1b85587d851d7d4a2896de086972d3e9dc5aaaba6b1a4183c53",
+      "newRevisionHash": "1fed06e2a02a331d2b456afa23140414b0ea285dbade14f408e8f372ca562f73",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+      "slug": "gidai/kirpimas-galiukai-ar-forma",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-19T07:00:00.000Z",
+      "oldRevisionHash": "3fb950dea4cefbaafc97c19f1f00f76ca0f1221bee9876f9889a59754f5b17be",
+      "newRevisionHash": "1ee16f3b4a40db3135270bebd9231e234b6140a1480a6bd07b47d537d414346a",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+      "slug": "gidai/makiazas-kaina-trukme",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-19T13:00:00.000Z",
+      "oldRevisionHash": "da168c20226993868e8ab55ae3290b1f90c15b6bda6a490cdf71863b274dd8dd",
+      "newRevisionHash": "7f57ea4530c349842d0490aea5f7c6468c447f1790bb61138cb615d986afb50e",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+      "slug": "gidai/kirpimas-garbanoti",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-20T13:00:00.000Z",
+      "oldRevisionHash": "985a66570e79d9c796f670ba15a0de4941867bd94ccd630d2801dc63a55711a4",
+      "newRevisionHash": "eeea368c3670da5cb193ff803ec12823cc37684146c4d127ef52fdcc403ca136",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+      "slug": "gidai/makiazas-nuotrauka",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-21T07:00:00.000Z",
+      "oldRevisionHash": "442e4431b2186d75ee7b1c361626f2fc8929db6ba90f69f49193725be3512edb",
+      "newRevisionHash": "7a3044d5b52faca43d2acfcb212e4884d736185cd2562ec618849c7e4488b6ca",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+      "slug": "gidai/plauku-formavimas-kaina-trukme",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-21T13:00:00.000Z",
+      "oldRevisionHash": "b6ec56a99dd50e5f0ee993918809f699883ce8aa175703c7ca6f63f16480c251",
+      "newRevisionHash": "b7450862030c3f595fde20d60307c2ec9dc79572a2eca4a5818a7f76bd4aec9a",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+      "slug": "gidai/kirpimas-kaina-trukme",
+      "previousPublishAt": "2026-10-13T07:00:00.000Z",
+      "publishAt": "2026-10-22T07:00:00.000Z",
+      "oldRevisionHash": "5beeb51128b484257314214b90178707dd7d3e0eee4697b7ba00a6aea76e8ad0",
+      "newRevisionHash": "6e86b7e421db64e9c88c9be6f22ad5a6a2e25f336c70d6279048cf08c179cb79",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+      "slug": "gidai/makiazas-pamoka",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-22T13:00:00.000Z",
+      "oldRevisionHash": "2c27457150cd50cf07e2c8e3c25545fb90650a9c7bfd626548ef694e095c4fcf",
+      "newRevisionHash": "5e4e8ae51dacdb1b658319997ac729b96bcde5783191ad7a0e8e809364335e17",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+      "slug": "gidai/plauku-formavimas-makiazas-kartu",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-23T07:00:00.000Z",
+      "oldRevisionHash": "4b16452a44ac37d5d1a55b885f9b51ae37766f5ddb5c719924a9eb16d6e58b13",
+      "newRevisionHash": "ffba4e89c33bd28f742ac02487a8aafd1c832b40872b70b3a7130fdd090e3a9b",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+      "slug": "gidai/kirpimas-kirpciukai",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-23T13:00:00.000Z",
+      "oldRevisionHash": "498cd55506f63615589ac4ee48e75a7398419610e74494b4b537209906877baf",
+      "newRevisionHash": "ebda8f66451bce7688019331785de6eec22e121a72ee56337ce9d74b3d0723bf",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+      "slug": "gidai/makiazas-vestuvinis",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-24T07:00:00.000Z",
+      "oldRevisionHash": "10e7974f8cf55258ef758c2740328755251256d75503ee608ec3c08f993899ff",
+      "newRevisionHash": "48a217e34e35551270c4eef7bf34c2692948b517a1f5f57b19588e19375333ba",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+      "slug": "gidai/plauku-formavimas-pasiruosimas",
+      "previousPublishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-25T08:00:00.000Z",
+      "oldRevisionHash": "7a061d438ef3e504326d446782b830f60c2d135090e603f035b404296d0d836f",
+      "newRevisionHash": "a7e86f766a3b680b3d98877ae2d1476a4dac5756a5b825b69e75cd3f798e4a65",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+      "slug": "gidai/kirpimas-nuotrauka",
+      "previousPublishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-26T08:00:00.000Z",
+      "oldRevisionHash": "ae0e6f0fae8159adb795b9500362fba6f5a52ff1d4a62f3f295a1e14678c5bb6",
+      "newRevisionHash": "22c2f4e755c18dd77e55f61968dafadd34b8d045528e7de69e452e867d9469c0",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+      "slug": "gidai/plauku-formavimas-susegta",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-26T14:00:00.000Z",
+      "oldRevisionHash": "e91faf10d8532aeeb154c176049ad42cc61527de0daa3967214c38e0e4dc354d",
+      "newRevisionHash": "cef27b9985fc9bb1d9dec57809eece68e09cc726fb6b47be4442001fbacd5b65",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+      "slug": "gidai/plauku-formavimas-vestuves",
+      "previousPublishAt": "2026-11-10T08:00:00.000Z",
+      "publishAt": "2026-10-27T14:00:00.000Z",
+      "oldRevisionHash": "b3290a447e581440803a39b754e2e88e214921f857a0d85ea26787c2ecb0b742",
+      "newRevisionHash": "4e5e2bb5f9fb346fde4eefa0625f4a523b9f1416f98ff23526bc68757b030c3f",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+      "slug": "gidai/kirpimas-sluoksniai",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-28T08:00:00.000Z",
+      "oldRevisionHash": "55a65cd57e9608b71db539a7d457562a66a656e829811bebc0be05dccb34744d",
+      "newRevisionHash": "39413d31f3e29f1c1366f401760f21647256f9f12044c87739820c25a64cd166",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    },
+    {
+      "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+      "slug": "gidai/kirpimas-trumpas-vyriskas",
+      "previousPublishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-28T14:00:00.000Z",
+      "oldRevisionHash": "072e8e6200730b0b64d5dbd6ae799900046f18cdfc17d30578e8daed6a684422",
+      "newRevisionHash": "d04d341c4080ddc648bb21ee1ca2c67f7d206d927b7d6f55418ce21f838dd947",
+      "onlyFutureDatesChanged": true,
+      "actualDraftFragmentTime": true
+    }
+  ],
+  "notAccepted": [
+    "Actual production deployment",
+    "Actual future public dates",
+    "The remaining 260 unwritten articles",
+    "New clinical review or AI/search visibility"
+  ],
+  "unwrittenPlansAligned": 260,
+  "mutatedUnwrittenThisAttempt": 0
+}

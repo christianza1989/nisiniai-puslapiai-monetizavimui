@@ -1,0 +1,205 @@
+{
+  "status": "PASS_ACTUAL_DOMAIN",
+  "checkedAt": "2026-10-09T12:11:01.963Z",
+  "origin": "https://madbeauty.lt",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "publicPages": 7,
+  "publicGuides": 3,
+  "futureGuidesHidden": 32,
+  "discoveryOutputs": [
+    "/sitemap.xml",
+    "/llms.txt",
+    "/llms-full.txt"
+  ],
+  "checks": {
+    "exactDueSlugSet": true,
+    "allFutureGuides404": true,
+    "futureCanonicalsExcludedFromDiscovery": true
+  },
+  "limitations": [
+    "Future HTTP timing boundary acceptance is supplied separately by the platform owner",
+    "This receipt does not claim remaining 260 article bodies exist"
+  ],
+  "http": [
+    {
+      "path": "/content.json",
+      "status": 200,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/nagu-dizainas-gidas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-gidas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-galiukai-ar-forma",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-sluoksniai",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-bob-kare",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-kirpciukai",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-garbanoti",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-trumpas-vyriskas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-pasiruosimas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/kirpimas-nuotrauka",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-gidas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-dziovinimas-ar-progine",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-garbanos-bangos",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-susegta",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-vestuves",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-pasiruosimas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-makiazas-kartu",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/makiazas-gidas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/makiazas-dieninis-proginis",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/makiazas-vestuvinis",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/makiazas-nuotrauka",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/makiazas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/makiazas-pamoka",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/bendri-gidas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/bendri-registracija",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/bendri-vizitu-derinimas",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/sezonai-kaledos",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/sezonai-naujieji",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/sezonai-valentino",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    },
+    {
+      "path": "/gidai/sezonai-velykos",
+      "status": 404,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+    }
+  ]
+}

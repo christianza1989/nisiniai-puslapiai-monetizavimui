@@ -1,3 +1,5 @@
+> 2026-10-09: publikavimo bangų datas pakeičia [naujas nuoseklus pusmečio kalendorius](../publication-20261009/MADBEAUTY-NUOSEKLUS-PUSMECIO-PLANAS.html). Senas tyrimas ir briefai išlaikyti; aktualios datos ir tekstų parengimo būsenos yra naujoje peržiūroje.
+
 # Galutinis Madbeauty turinio planas
 
 2026-10-06–2027-04-06. Visos 21 katalogo srities, 59 grupių ir 225 procedūrų atsakymai sutikrinti su foundation commit c1f159353620aed66e9c67a95306786646c7137c. 292 naujų individualių gidų ir 3 esamų gidų atnaujinimai; 919 suplanuotų redakcinių nuorodų. Tai pilnas paslaugos supratimo / pasirinkimo planas, ne visų medicinos ir kitų plėtinių problemų enciklopedija.

@@ -1,0 +1,45 @@
+# Promedical verification — 2026-10-09
+
+Implemented local catalogue, with production launch and some acceptance evidence still incomplete. No production WordPress, DNS, SMTP or real inbox was changed. The public contact is sales@promedical.lt, +370 686 88369; the owner requested the Promedical brand without a public legal-company name.
+
+## Version and environment
+
+Frozen manufacturer-source SHA256: `00d2538197a45164b5472e2cf1a4d72b2cfa862d09c3cad50debc4f37fd38cf3`. Canonical approved release: `5246119e-10eb-4fde-8e09-492b28ad07dc`; package SHA256 `32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6` (9,809,707 bytes). Current renderer commit `19a2c0baf6f064bd350af4e8e9f040a389b218be`; source-file hashes in SOURCE_VERSION.json. This renderer-only brand-label repair does not change the approved package.
+
+Freshness on resume and before the final QA batch fetched both origin/main successfully: core `d4ea8bf7384b70c4ea62a344001e3f8158812c56`, public `d0fd6b7d296303bfcaafadc4071945e675a72b96`. Both are ancestors of their own working branches. The handoff gate is recorded separately in the final workstream.
+
+Node24.21, Vite8.0.13, vinext1.0.0-beta.5, pinned Wrangler4.92.0, unchanged lockfile. `npm run build` completed successfully after the brand-label fix. Known shared build warnings remain in the original ignored build log. Local Workers runs on http://127.0.0.1:8787 with ASSETS, local DB and NICHE_DEV_SITE_ID=promedical. The existing read-only8790 proxy forwards canonical Host GET/HEAD unchanged and suppresses audit telemetry. Lighthouse and the canonical HTML inspector use this proxy; inquiry/browser/native all-site SEO tests use the real8787 server. The proxy does not test inquiry submission.
+
+## Catalogue and approval
+
+The whole manufacturer inventory was reconciled to 1,408 real products, 437 populated public categories and 11 support pages. One explicit dummy was excluded. All technical facts, units, codes, negations, configurations and 12,652 feature uses were checked against the frozen source. Five unverified manufacturer prices/market claims were omitted; 25 sparse extended descriptions have honest model/group introductions plus every available parameter. Product facts were not replaced by abbreviated card summaries.
+
+The importer uses the canonical Studio APIs. Actual private previews for all1,856 pages returned HTTP200; editorial review hashes and approvals were recorded canonically in batches of at most200. The final immutable release was imported and compiled through the public-core tooling. Source/photo provenance is in ASSET_PROVENANCE.json (3,598 responsive variants from1,180 verified source-image families). Raw source and review/runtime data remain private and ignored.
+
+`tests/promedical-catalogue-smoke.mjs` passed: all59 catalogue pages contain exactly1,408 unique model URLs, the final page16; pagination clamp, empty and code searches, nested categories and equivalent query filtering,34 roots, and two distinct PLV150 URLs. The original64 HTTP receipts and hashes are in CATALOGUE_HTTP.json. Renderer changes after this check affected only the unnecessary brand aria-label.
+
+`tests/seo-core-smoke.mjs` passed against actual canonical Host requests for all10 compiled sites. Promedical covered all1,856 public pages. SEO_REGRESSION.json records actual results for robots, sitemap, llms, schemas, unknown/private routes and tenant isolation; the interrupted pre-reboot Promedical run remains in a separate ignored log.
+
+Canonical `SKILLS/niche-site-audit/scripts/verify-site-completion.mjs` validates rendered HTML, eligible discovery, approved body/date/profile/source structure, assets and private-route exclusions. SITE_RENDERED.json contains the actual render-only outcome; SITE_COMPLETION.json contains the separate strict acceptance outcome. Neither file is a manual pass. Python must be specified as the bundled runtime on this PC: the Windows `python` shortcut is not an installed interpreter. The first final attempt failed `write EPIPE` before HTML inspection because that shortcut exited; it produced no valid report. The next direct8787 attempt reached discovery and failed fetch; a focused actual transport probe showed Node24 fetch did not convey the explicit canonical Host (sitemap404/local Disallow robots), while native node:http conveyed it (sitemap200/all1,856 URLs/canonical robots). This is a test-transport discrepancy, not a suppressed sitemap app defect. The recheck uses the existing read-only canonical Host proxy8790 and bundled interpreter. A separate function-local hidden-URL calculation optimization preserves the exact164,996,703-byte expectations output, predicates and rendered responses; see INSPECTOR-BENCHMARK.md. The all10-site SEO smoke independently uses native HTTP Host headers. The unsuccessful proxy attempt is also retained; calculation cost is not asserted as its proven sole failure cause.
+
+## Inquiry and privacy signals
+
+Actual native HTTP integration passed both before reboot and after resume: durable local D1 writes, required consent, payload limits, origin checks, unknown/draft/internal-route isolation, site attribution, bot/DNT/GPC suppression and two accepted aggregate counters. The integration removes its randomized synthetic lead and restores only its own counter delta. These are server-header tests and frontend-source inspection, not a claim of a physical-browser DNT/GPC experiment.
+
+The pre-reboot marked browser submission showed a connection error and did not write a row. Its screenshot and partial evidence are preserved. After reboot the unchanged client form submitted PLV150 —4vnt and displayed the explicit local-test saved message. A matching local SQLite row had site_id=promedical, source_path=/kontaktai and status=new. INQUIRY_VERIFICATION.json records the sanitized evidence and exact cleanup of our two own synthetic rows. No customer data or SQLite file is committed. The UI shortlist was cleared of our QA item after testing.
+
+Local saving is proven; SMTP acceptance and delivery to the owner's real INBOX are unverified. The normal flow distinguishes durable saving from notification acceptance. A sales email link is available. localStorage contains model/title/path/quantity only, persists after submission, and supports individual removal; no name/email is placed there. Daily interest aggregates contain site/day/path/event/count, not form fields or visitor identifiers. Local QA counters are not demand measurements. See PRIVACY-LAUNCH-GAPS.md for the nine actual operation/legal uncertainties.
+
+## Checks and limits
+
+54/54 public-core tests passed. Studio's original47-case run had44PASS and3FAIL: two load-related30s timeouts and a stale hardcoded nine-site parity expectation. The specific3 were rechecked successfully; 47 unique cases are covered across those runs, not an invented all-green original run. Ten media, ten workflow/network, five parity/V2/private-HTTP and two generator rechecks passed. The inspector scale change additionally passed10completion/scoring and9Python-parser cases with exact full-input expectations parity. Original timings and changes are in TEST_FINDINGS.md and CORE_FEEDBACK.md.
+
+BROWSER_VERIFICATION.json contains actual desktop/mobile rendering, full guide text, all24 parameters of48-20-va, keyboard skip/menu focus, native required-field validation, distinct duplicate-code selections, persistence and resumed local submission. Early pending images and unsuccessful zoom attempt are retained with their limitations. ACCESSIBILITY-VERIFICATION.md and PERFORMANCE.md explain the scope.
+
+Exact staged repository-safety scans must pass before each final commit. They are pattern scans with bounded scope, not a security certification. Ignore private source/runtime/credentials/DB/.openai data. Original machine-generated Lighthouse HTML contains trailing whitespace; it is retained as original evidence and is not reported as a source-format check pass.
+
+Actual render-only inspector: all1,856 current public pages,3,598 assets and7discovery/private/unknown paths,5,461requests,0issues, state RENDERED_CHECKS_PASS_NOT_SITE_ACCEPTANCE. It is not a manual or complete-acceptance PASS. Canonical scoring requires all applicable local review items as well as gates:62/71=8.73,9UNVERIFIED; `score-audit --require-local` actually exits1. Launch0/10 and operations0/2 are unverified, not a visual-quality score. Strict SITE_COMPLETION.json records the separate actual outcome.
+
+Actual strict verifier completed another5,461GET and returned exit1/stateNOT_COMPLETE with only LOCAL_AUDIT_INCOMPLETE. Its HTML/media/discovery/private checks introduce no additional issues; the unresolved audit criteria are retained. The package/source/parser bindings match the actual render-only and source evidence.
+
+Actual200% enlargement, wider competitor pixel comparisons, all-category search-intent consolidation, SMTP/INBOX, controller/legal basis/retention/processors/storage consent and production protections remain open. No10/10, local-ready, domain-ready, clinical sign-off, measured demand or launched-domain claim is made.

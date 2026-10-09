@@ -1,6 +1,6 @@
 {
-  "testedAt": "2026-10-09T17:27:17.446Z",
-  "state": "FAIL",
+  "testedAt": "2026-10-09T18:00:10.570Z",
+  "state": "PASS",
   "command": "SEO_SMOKE_SITE_ID=<each compiled site> SEO_SMOKE_BASE_URL=http://127.0.0.1:8787 node tests/seo-core-smoke.mjs",
   "environment": "local production Worker with each canonical Host header",
   "observations": [
@@ -49,8 +49,8 @@
     {
       "siteId": "promedical",
       "pages": 1856,
-      "exitCode": 1,
-      "output": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: read ECONNRESET\r\n    at TCP.onStreamRead (node:internal/stream_base_commons:216:20) {\r\n  errno: -4077,\r\n  code: 'ECONNRESET',\r\n  syscall: 'read'\r\n}\r\n\r\nNode.js v24.21.0"
+      "exitCode": 0,
+      "output": "SEO core smoke passed: promedical, 1856 public pages, robots, sitemap, llms, schemas, host isolation and 404."
     },
     {
       "siteId": "roletaiklaipedoje",

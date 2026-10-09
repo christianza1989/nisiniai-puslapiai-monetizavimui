@@ -1,5 +1,7 @@
 # Saugus sustabdymas prieš PC perkrovimą
 
+TĘSTA pagal naują savininko „tesk darba“ pavedimą. Žemiau išsaugotas istorinis PAUSED checkpoint, o aktualūs faktai yra [VERIFICATION.md](VERIFICATION.md), [TEST_FINDINGS.md](TEST_FINDINGS.md) ir [BROWSER_VERIFICATION.json](BROWSER_VERIFICATION.json). Sėkmingas fresh resume gate, Brand label pataisa, final build ir all10SEOsmoke; nekeista forma po perkrovimo išsaugojo marked PLV1504 vietiniame D1. Tik mūsų QA įrašai pašalinti. Galutinis lab95/100/100/100; zoom/SMTP/INBOX/production tebelieka nepatvirtinti. Šio istorinio sustabdymo radiniai nėra dabartinių neatliktų darbų sąrašas.
+
 2026-10-09. Savininkas aiškiai paprašė sustabdyti darbą saugioje vietoje. Darbas PAUSED pagal jo pavedimą; tai nėra svetainės priėmimas ar paskelbimas. Jokių kitų užduočių / automacijų nepradėti. Tęsti tik savininkui paprašius.
 
 ## Pavedimas ir kontaktai

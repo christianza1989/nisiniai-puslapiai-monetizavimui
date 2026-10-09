@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import {draftSnapshotHash} from 'file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/nisiniai_puslapiai_monetizavimui/content-studio/src/draft-v2.mjs';
+const here=new URL('.',import.meta.url),sel=JSON.parse(await fs.readFile(new URL('SELECTION.json',here),'utf8'));
+process.env.STUDIO_DATA_DIR=sel.privateStudio;process.env.STUDIO_OUTPUT_DIR=sel.privateStudio+'/output';
+const {getSite,listJobs,selectReleaseLinks,finalizeInternalLinks}=await import('file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/nisiniai_puslapiai_monetizavimui/content-studio/src/model.mjs');
+if((await listJobs()).some(j=>j.siteId==='madbeauty'&&['running','queued'].includes(j.status)))throw Error('Writer active');
+const pending=new Set();
+const site=await getSite('madbeauty'),selected=sel.pages.filter(i=>!pending.has(i.planId)),ids=new Set(selected.map(i=>i.pageId));
+const proposals=p=>[...(p.linkSuggestions||[]),...(p.generatedDraft?.internalLinks||[]),...(p.links||[])].filter((l,i,a)=>a.findIndex(x=>x.targetPageId===l.targetPageId)===i);
+const full=sel.pages.map(i=>{const p=site.pages.find(p=>p.id===i.pageId);return{planId:i.planId,pageId:i.pageId,publishAt:p.publishAt,proposals:proposals(p).map(l=>({...l,targetPlanId:sel.pages.find(i=>i.pageId===l.targetPageId)?.planId||null,targetTitle:site.pages.find(p=>p.id===l.targetPageId)?.title||null}))};});
+await fs.writeFile(new URL('LINK-PLAN.json',here),JSON.stringify({checkedAt:new Date().toISOString(),scope:'Private full graph before release selection. Deferred destinations remain planned, never live hrefs.',pages:full},null,2)+'\n');
+const decisions=selected.map(i=>{const p=site.pages.find(p=>p.id===i.pageId),links=proposals(p),ready=id=>ids.has(id)||!!site.pages.find(p=>p.id===id)?.publishedRevision;return {pageId:p.id,keep:links.filter(l=>ready(l.targetPageId)).map(l=>l.targetPageId),defer:links.filter(l=>!ready(l.targetPageId)).map(l=>({targetPageId:l.targetPageId,reason:'Ši susijusi tema išlieka privačiame pilname plane: jos tekstas ir faktinė agento peržiūra bei vieša revizija dar neparengti. Ji nesusiejama kaip viešas adresas vien dėl kalendoriaus datos.'}))};});
+const receipt=await selectReleaseLinks('madbeauty',{expectedSiteHash:draftSnapshotHash(site),pageIds:[...ids],decisions});
+await finalizeInternalLinks('madbeauty',[...ids]);
+await fs.writeFile(new URL('RELEASE-LINKS.json',here),JSON.stringify({selectedPlanIds:selected.map(i=>i.planId),specialistPendingPlanIds:[...pending],receipt},null,2)+'\n');
+console.log(JSON.stringify({selected:ids.size,specialistPending:pending.size,kept:decisions.reduce((n,d)=>n+d.keep.length,0),deferred:decisions.reduce((n,d)=>n+d.defer.length,0),approval:false}));

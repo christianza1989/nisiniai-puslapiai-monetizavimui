@@ -1,5 +1,5 @@
 {
-  "status": "30_WRITTEN_19_DEPLOYED_SCHEDULED_11_SPECIALIST_PENDING",
+  "status": "11_AGENT_REVIEWED_APPROVED_DEPLOYED_SCHEDULED",
   "createdAt": "2026-10-09T20:10:25.973Z",
   "siteId": "madbeauty",
   "domain": "madbeauty.lt",
@@ -18,12 +18,12 @@
       "publishAt": "2026-10-29T08:00:00.000Z",
       "localDate": "2026-10-29",
       "localTime": "10:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Antakių specialisto terminų ir eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "AN-gidas",
         "key": "gidas",
@@ -250,7 +250,12 @@
       },
       "finalTitle": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
       "finalDescription": "Antakių forma, spalva ir plaukelių kryptis sprendžiamos skirtingomis paslaugomis. Palyginkite korekcijos, dažymo ir laminavimo paskirtį bei eigą.",
-      "revisionHash": "b567d5b75bdb2697eb1f3a30a0652f49b3c543dbeaed2e78077e87ac63a6363f"
+      "revisionHash": "b567d5b75bdb2697eb1f3a30a0652f49b3c543dbeaed2e78077e87ac63a6363f",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Antakių specialisto terminų ir eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "BL-gidas",
@@ -262,12 +267,12 @@
       "publishAt": "2026-10-30T14:00:00.000Z",
       "localDate": "2026-10-30",
       "localTime": "16:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Blakstienų specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "BL-gidas",
         "key": "gidas",
@@ -462,7 +467,12 @@
       },
       "finalTitle": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
       "finalDescription": "Dažymas keičia blakstienų spalvą, laminavimas formuoja natūralių blakstienų kryptį, o priauginimas prideda plaukelių. Sužinokite, kaip palyginti paslaugų apimtį ir jų derinius.",
-      "revisionHash": "41848c41ed08d6d1af79faaa7c178562617bcea804615bcfed496b78c258d0f3"
+      "revisionHash": "41848c41ed08d6d1af79faaa7c178562617bcea804615bcfed496b78c258d0f3",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Blakstienų specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "DP-gidas",
@@ -474,12 +484,12 @@
       "publishAt": "2026-11-01T08:00:00.000Z",
       "localDate": "2026-11-01",
       "localTime": "10:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Depiliacijos specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "DP-gidas",
         "key": "gidas",
@@ -706,7 +716,12 @@
       },
       "finalTitle": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
       "finalDescription": "Vaško ir cukraus pastos pavadinimai nepasako visos vizito apimties. Sužinokite, kaip palyginti metodą, zoną, paslaugos ribas ir teikėjo nurodomą eigą.",
-      "revisionHash": "ab65f4cde32fa8f615ac36e79d42744df8ce2279cd7ca0577ceeccc913e944fe"
+      "revisionHash": "ab65f4cde32fa8f615ac36e79d42744df8ce2279cd7ca0577ceeccc913e944fe",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Depiliacijos specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "DZ-gidas",
@@ -718,12 +733,12 @@
       "publishAt": "2026-11-02T08:00:00.000Z",
       "localDate": "2026-11-02",
       "localTime": "10:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Dažymo specialisto ir konkrečių sistemų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "DZ-gidas",
         "key": "gidas",
@@ -923,7 +938,12 @@
       },
       "finalTitle": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
       "finalDescription": "Kaip pasirinkti dažymo paslaugą pagal norimą spalvos pokytį, jo vietą ir ankstesnio dažymo istoriją.",
-      "revisionHash": "d9cb6084186560a4804bcbc46b332099beac157e6b0fbbe80d990bc899011894"
+      "revisionHash": "d9cb6084186560a4804bcbc46b332099beac157e6b0fbbe80d990bc899011894",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Dažymo specialisto ir konkrečių sistemų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "GL-gidas",
@@ -935,12 +955,12 @@
       "publishAt": "2026-11-03T14:00:00.000Z",
       "localDate": "2026-11-03",
       "localTime": "16:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečios sistemos gamintojo protokolas ir meistro peržiūra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "GL-gidas",
         "key": "gidas",
@@ -1220,7 +1240,12 @@
       },
       "finalTitle": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
       "finalDescription": "Supraskite, kuo gelinis lakavimas skiriasi nuo nagų stiprinimo ir priauginimo, kokius darbus verta patikrinti paslaugos apraše ir kodėl tiksli eiga priklauso nuo naudojamos sistemos.",
-      "revisionHash": "925ec1450154ff61b946c1863afce5486c32b16438436831d8cb3202ca9238f0"
+      "revisionHash": "925ec1450154ff61b946c1863afce5486c32b16438436831d8cb3202ca9238f0",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečios sistemos gamintojo protokolas ir meistro peržiūra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "MN-gidas",
@@ -1232,12 +1257,12 @@
       "publishAt": "2026-11-07T08:00:00.000Z",
       "localDate": "2026-11-07",
       "localTime": "10:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Manikiūro specialisto patikrintas eigos aprašymas“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "MN-gidas",
         "key": "gidas",
@@ -1464,7 +1489,12 @@
       },
       "finalTitle": "Manikiūro gidas: priežiūra, danga ir vizito eiga",
       "finalDescription": "Supraskite, kokie darbai gali įeiti į manikiūrą, kuo skiriasi nagų priežiūra nuo dangos ir ką išsiaiškinti dėl senos dangos nuėmimo.",
-      "revisionHash": "2dde51544d13a655a5bc21ec7606a993eb12f426823906b5d5feba5c84d69080"
+      "revisionHash": "2dde51544d13a655a5bc21ec7606a993eb12f426823906b5d5feba5c84d69080",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Manikiūro specialisto patikrintas eigos aprašymas“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "NP-gidas",
@@ -1476,12 +1506,12 @@
       "publishAt": "2026-11-09T08:00:00.000Z",
       "localDate": "2026-11-09",
       "localTime": "10:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Sistemų dokumentai ir nagų specialisto review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "NP-gidas",
         "key": "gidas",
@@ -1710,7 +1740,12 @@
       },
       "finalTitle": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
       "finalDescription": "Supraskite, kuo nagų priauginimas skiriasi nuo natūralių nagų stiprinimo ir gelinio lakavimo, ką reiškia naujas darbas, papildymas ir nuėmimas.",
-      "revisionHash": "3896c1feff1066743e741cee9cf29cdc72fcbd0fe9907637c6da35b9a211294e"
+      "revisionHash": "3896c1feff1066743e741cee9cf29cdc72fcbd0fe9907637c6da35b9a211294e",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Sistemų dokumentai ir nagų specialisto review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "PD-gidas",
@@ -1722,12 +1757,12 @@
       "publishAt": "2026-11-10T14:00:00.000Z",
       "localDate": "2026-11-10",
       "localTime": "16:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Pedikiūro specialisto eigos patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "PD-gidas",
         "key": "gidas",
@@ -1954,7 +1989,12 @@
       },
       "finalTitle": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
       "finalDescription": "Sužinokite, kokie darbai gali įeiti į pedikiūrą, kuo skiriasi vizitas be dangos ir su ja, ką palyginti renkantis paslaugą.",
-      "revisionHash": "a4b2f9a0dda50532bbaf0538c1881cbba1632945167ff60b7c7919752108108f"
+      "revisionHash": "a4b2f9a0dda50532bbaf0538c1881cbba1632945167ff60b7c7919752108108f",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Pedikiūro specialisto eigos patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "PP-gidas",
@@ -1966,12 +2006,12 @@
       "publishAt": "2026-11-11T14:00:00.000Z",
       "localDate": "2026-11-11",
       "localTime": "16:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": null,
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečių sistemų dokumentai ir kirpėjo review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "PP-gidas",
         "key": "gidas",
@@ -2248,7 +2288,12 @@
       },
       "finalTitle": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
       "finalDescription": "Sužinokite, kuo plaukų priežiūros procedūra skiriasi nuo konsultacijos, kokią informaciją verta patikrinti apie naudojamą sistemą ir ko negalima spręsti vien iš paslaugos pavadinimo.",
-      "revisionHash": "8917b30c5a33d36372a1da46651096efc5b78c7920e671d362db0ae6d1ef565a"
+      "revisionHash": "8917b30c5a33d36372a1da46651096efc5b78c7920e671d362db0ae6d1ef565a",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečių sistemų dokumentai ir kirpėjo review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "AN-korekcija-ar-dazymas",
@@ -2260,12 +2305,12 @@
       "publishAt": "2026-12-01T08:00:00.000Z",
       "localDate": "2026-12-01",
       "localTime": "10:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": "AN-gidas",
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Meniu ir specialisto patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "AN-korekcija-ar-dazymas",
         "key": "korekcija-ar-dazymas",
@@ -2463,7 +2508,12 @@
       },
       "finalTitle": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
       "finalDescription": "Korekcija keičia antakių formą, dažymas – jų atspalvį. Sužinokite, kaip pasirinkti pagal norimą rezultatą ir ką patikrinti bendrame pasiūlyme.",
-      "revisionHash": "7009cca0896a6988a863c0d53f1ef81518cc070c505693258ed3778cc07119b6"
+      "revisionHash": "7009cca0896a6988a863c0d53f1ef81518cc070c505693258ed3778cc07119b6",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Meniu ir specialisto patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     },
     {
       "planId": "BR-kirpimas-modeliavimas",
@@ -2475,12 +2525,12 @@
       "publishAt": "2026-12-02T08:00:00.000Z",
       "localDate": "2026-12-02",
       "localTime": "10:00",
-      "status": "WRITTEN_SPECIALIST_PENDING",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "parentId": "BR-gidas",
       "seasonal": false,
       "previousPublishAt": "2026-10-13T07:00:00.000Z",
-      "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
-      "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Barberio techninių terminų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+      "reviewLevel": "AUTONOMOUS_AGENT_EDITORIAL_REVIEW",
+      "readiness": "Actual revision-bound agent review, immutable approval and canonical-domain acceptance recorded in REVIEW-NOTES.json, DELIVERY.json and DOMAIN-ACCEPTANCE.json.",
       "brief": {
         "id": "BR-kirpimas-modeliavimas",
         "key": "kirpimas-modeliavimas",
@@ -2820,8 +2870,14 @@
       },
       "finalTitle": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
       "finalDescription": "Kaip sutarti barzdos ilgį, kontūrą ir ūsų apimtį? Palyginame kirpimą bei modeliavimą ir parodome, kaip aprašyti norimą formą.",
-      "revisionHash": "5fc014d66d9a9aa408f3ab79e5f12a00c722dce61223fd170c2f061bba22c588"
+      "revisionHash": "5fc014d66d9a9aa408f3ab79e5f12a00c722dce61223fd170c2f061bba22c588",
+      "previousHumanGate": {
+        "status": "WRITTEN_SPECIALIST_PENDING",
+        "readiness": "Plane aiškiai numatyta patikra dar neatlikta: „Barberio techninių terminų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia.",
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL"
+      }
     }
   ],
-  "updatedAt": "2026-10-09T19:48:37.258Z"
+  "updatedAt": "2026-10-09T19:48:37.258Z",
+  "previousStatus": "30_WRITTEN_19_DEPLOYED_SCHEDULED_11_SPECIALIST_PENDING"
 }

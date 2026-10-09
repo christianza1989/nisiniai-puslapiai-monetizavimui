@@ -1,0 +1,946 @@
+[
+  {
+    "id": "S01",
+    "title": "Vili Nails · realių paslaugų variantai",
+    "url": "https://www.treatwell.lt/salonas/vili-nails/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Lako nuėmimas, dizainas ir manikiūro apimtis išskirti į skirtingus variantus bei trukmes.",
+    "limit": "Vieno salono pasiūlymas; ne Lietuvos kainų vidurkis, ne Madbeauty meistras.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S02",
+    "title": "Room for nails · paslaugų apimtis",
+    "url": "https://www.treatwell.lt/salonas/room-for-nails/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Skiriasi naujo ir grįžtančio kliento variantai, nuėmimo įtraukimas bei papildomos paslaugos.",
+    "limit": "Meniu gali keistis; prieš konkrečią kainą ar trukmę tikrinti iš naujo.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S03",
+    "title": "Laminuota Brows&Lashes · komponentai",
+    "url": "https://www.treatwell.lt/salonas/laminuota-brows-lashes/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Antakių laminavimas, dažymas ir korekcija siūlomi atskirais deriniais; bendras vizitas turi kitą trukmę.",
+    "limit": "Ne procedūros saugumo ar universalios trukmės įrodymas.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S04",
+    "title": "Žirmūnų 22 · plaukų paslaugų meniu",
+    "url": "https://www.treatwell.lt/salonas/zirmunu-22-grozio-studija/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Konsultacija, plaukų ilgis, dažymo apimtis ir papildomos paslaugos keičia pasiūlymo sudėtį.",
+    "limit": "Vieno teikėjo kainynas; jo pasiūla nėra mūsų katalogas.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S05",
+    "title": "Fresha · užsienio gelinių nagų pasiūlymai",
+    "url": "https://www.fresha.com/lp/en/tt/gel-nails/in/nl-amsterdam/balboaplein",
+    "kind": "Užsienio alternatyva",
+    "finding": "Pasiūlymuose atskiriamas papildymas, nuėmimas bei ankstesnės sistemos tipas.",
+    "limit": "Nyderlandų pasiūlymai neįrodo Lietuvos kainų ar paklausos.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S07",
+    "title": "AAD · gelinis manikiūras",
+    "url": "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/gel-manicures",
+    "kind": "Medicininė organizacija",
+    "finding": "Bendra nagų priežiūra, lako nekrapštymas ir UV atsargumo kontekstas.",
+    "limit": "Ne individuali diagnozė; nedaryti „LED be UV“ ar gydymo išvadų.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S08",
+    "title": "AAD · manikiūro ir pedikiūro sauga",
+    "url": "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety",
+    "kind": "Medicininė organizacija",
+    "finding": "Klausimai apie įrankius, odeles ir pedikiūro higieną; bendro pobūdžio atsargumas.",
+    "limit": "Lietuvos teisiniai reikalavimai tikrinami NVSC; nepateikti klinikinio gydymo.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S09",
+    "title": "NHS · reakcijos į plaukų dažus",
+    "url": "https://www.nhs.uk/conditions/hair-dye-reactions/",
+    "kind": "Sveikatos institucija",
+    "finding": "Ankstesnės reakcijos ir gamintojo instrukcijos svarbios prieš dažymą.",
+    "limit": "JK pagalbos numerių neperkelti į LT; nemokyti savarankiškai diagnozuoti alergijos.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S10",
+    "title": "Wella · dažų saugos testai",
+    "url": "https://www.wella.com/international/wella-magazine/hair-color-safety-tests",
+    "kind": "Gamintojas",
+    "finding": "Alergijos įspėjimo ir sruogos testai turi skirtingą paskirtį; laikytis konkretaus produkto instrukcijos.",
+    "limit": "Gamintojo taisyklės nėra universalios visiems dažams, antakiams ar blakstienoms.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S11",
+    "title": "NVSC · grožio paslaugų sauga, 2026-09-17",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+    "kind": "LT priežiūros institucija",
+    "finding": "Leidimo-higienos paso ir paslaugų saugos kontekstas pagal HN 117:2007.",
+    "limit": "Nerašyti, kad Madbeauty visus meistrus sertifikavo; tikrinimo apimtį patvirtinti atskirai.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S14",
+    "title": "SCCS · HEMA mokslinė nuomonė",
+    "url": "https://health.ec.europa.eu/publications/safety-cosmetic-ingredients-hema-and-di-hema-trimethylhexyl-dicarbamate-submission-i_en",
+    "kind": "ES mokslinė nuomonė, 2018",
+    "finding": "Rizikos vertinimas priklauso nuo naudojimo sąlygų ir sąlyčio su oda.",
+    "limit": "Ne dabartinių ženklinimo taisyklių tekstas; HEMA-free savaime neįrodo hipoalergiškumo.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S18",
+    "title": "Treatwell · prancūziško manikiūro straipsnis",
+    "url": "https://www.treatwell.lt/treatment-files/prancuziskas-manikiuras-nagai/",
+    "kind": "Konkurento redakcinis turinys",
+    "finding": "Jau aprašyti stiliai, formos ir idėjos; vien idėjų sąrašas nėra išskirtinumas.",
+    "limit": "Skaityta kaip konkurento aprėptis, ne medicininis šaltinis; nuotraukų nekopijuoti.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S19",
+    "title": "VVTAT · grožio paslaugos ir ginčai",
+    "url": "https://vvtat.lrv.lt/lt/naujienos-ir-pranesimai-ziniasklaidai-377/kaip-issirinkti-grozio-paslaugas-ir-isvengti-gincu-kV3/",
+    "kind": "LT vartotojų institucija",
+    "finding": "Aiški informacija prieš paslaugą, mokėjimo įrodymas, rašytinis kreipimasis ir ginčo kelias.",
+    "limit": "Prieš teisinį tekstą tikrinti aktualią tvarką; ne garantuotas pinigų grąžinimas.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S21",
+    "title": "VDAI · viešas nuotraukų paskelbimas",
+    "url": "https://vdai.lrv.lt/media/viesa/saugykla/2023/10/SHn2rl9xMjc.pdf",
+    "kind": "LT duomenų apsaugos institucija",
+    "finding": "Kai naudojamas sutikimas, turi būti įrodomas, suprantamas ir atskiriamas nuo kitų klausimų.",
+    "limit": "Konkretus sprendimas nėra visų atvaizdo ir autorių teisių situacijų vadovas.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S23",
+    "title": "Adobe · apšvietimas ir baltos spalvos balansas",
+    "url": "https://www.adobe.com/uk/creativecloud/photography/discover/white-balance.html",
+    "kind": "Fotografijos įrankio gamintojas",
+    "finding": "Apšvietimo spalvinė temperatūra ir baltos spalvos balansas veikia nuotraukos spalvas.",
+    "limit": "Ne atliktas Madbeauty eksperimentas; originalų palyginimą dar reikia sukurti ir patikrinti.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S24",
+    "title": "Leila · laminavimo ir priauginimo variantai",
+    "url": "https://www.treatwell.lt/salonas/blakstienu-priauginimo-ir-antakiu-dizaino-meistre-leila/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Atskirai siūlomi laminavimas, priauginimas ir korekcija po kito meistro, su skirtingomis darbų apimtimis.",
+    "limit": "Kainynas neįrodo procedūrų saugumo ar jų universalios priežiūros; nereklamuoti UV metodo kaip nerizikingo.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S25",
+    "title": "Prisilietimo harmonija · veido masažo variantai",
+    "url": "https://www.treatwell.lt/salonas/prisilietimo-harmonija-veido-masazai-kobido/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Veido masažas, dekoltė, nugaros darbai ir papildomi komponentai sudaro atskirus variantus.",
+    "limit": "Konkretaus teikėjo apimtis; ne gydymo, anti-age efekto ar universalios trukmės įrodymas.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S26",
+    "title": "The Palm Alchemy · masažų apimtis",
+    "url": "https://www.treatwell.lt/salonas/the-palm-alchemy/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Nugaros, kūno ir veido masažų meniu išskiria zonas, laiką bei paslaugų derinius.",
+    "limit": "Rinkodaros gydymo teiginiai nekartojami; kainos nėra LT vidurkis ar mūsų pasiūla.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S27",
+    "title": "VIP veido procedūros · variantų meniu",
+    "url": "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Atskiri express, ilgesnės veido priežiūros ir skirtingų valymo komponentų variantai.",
+    "limit": "Meniu klasifikuoja pasiūlymą; neįrodo individualaus tinkamumo ar procedūros saugumo.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S28",
+    "title": "NVSC · grožio veiklos apimtis",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/",
+    "kind": "LT priežiūros institucija",
+    "finding": "Veido ir kūno priežiūra bei negydomasis masažas patenka į grožio paslaugų kontekstą.",
+    "limit": "Prieš teisinį teiginį tikrinti aktualią normą ir konkrečios veiklos pobūdį; mūsų teikėjų nepatvirtina.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S29",
+    "title": "NVSC · grožio ir sveikatos paslaugų riba",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/",
+    "kind": "LT priežiūros institucija",
+    "finding": "Gydomosios ir invazinės sveikatos paslaugos turi kitą specialistų ir įstaigų reikalavimų kontekstą.",
+    "limit": "Nepaversti kosmetinės paslaugos sveikatos gydymu; prieš rašymą tikrinti konkretų teisės aktą.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S30",
+    "title": "NVSC · teikėjo pasirinkimas ir instrukcijos",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-pataria-grozio-paslaugu-teikejus-rinktis-atsakingai/",
+    "kind": "LT priežiūros institucija",
+    "finding": "Teikėjo informacija, paslaugos paaiškinimas ir individualios priežiūros instrukcijos yra patikros klausimai.",
+    "limit": "Bendros gairės nepakeičia konkretaus produkto, procedūros ar individualaus vertinimo.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S31",
+    "title": "VASPVT · sveikatos paslaugų teisėtumo patikra",
+    "url": "https://vaspvt.lrv.lt/lt/naujienos/ar-sveikatos-paslaugos-teikiamos-teisetai-2vr/",
+    "kind": "LT licencijavimo institucija",
+    "finding": "Sveikatos paslaugai svarbios specialisto ir įstaigos licencijos bei konkreti jų apimtis.",
+    "limit": "Sveikatos licencijavimo reikalavimų nepriskirti kiekvienam estetinio masažo variantui; skirti veiklos pobūdį.",
+    "checkedAt": "2026-10-06",
+    "status": "READ"
+  },
+  {
+    "id": "S32",
+    "title": "Classic Pedicure & Manicure · LT meniu",
+    "url": "https://www.treatwell.lt/salonas/classic-pedicure-manicure-grozio-sodas/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Atskiri pedikiūro ir dangos variantai.",
+    "limit": "Tik vieno teikėjo apimtis, ne individualus tinkamumas ar mūsų pasiūla.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S33",
+    "title": "Faces Hair & Makeup · dažymo ir kirpimo apimtis",
+    "url": "https://www.treatwell.lt/salonas/faces-hair-makeup/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Technikos, tonavimas, korekcija ir kirpimas sudaro skirtingus paketus.",
+    "limit": "Pavadinimas neįrodo saugumo, norimo rezultato ar nacionalinės kainos.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S34",
+    "title": "Looks · kirpimas ir dažymas",
+    "url": "https://www.treatwell.lt/salonas/looks/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Kirpčiukai, vaikų kirpimas ir dažymo apimtis turi atskirus variantus.",
+    "limit": "Ne visas Lietuvos salonų meniu ar išmatuota paklausa.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S35",
+    "title": "MILONA · antakiai ir blakstienos Kaune",
+    "url": "https://www.treatwell.lt/salonas/milona-antakiu-ir-blakstienu-dizaino-meistre-axome-salonas/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Dažymas, korekcija, laminavimas ir priauginimas siūlomi skirtingais deriniais.",
+    "limit": "Ne procedūros protokolas; konkurento specialistas nėra mūsų redakcijos ekspertas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S36",
+    "title": "Nouveau Lashes · LVL priežiūra",
+    "url": "https://nouveaulashes.com/eyelash-treatment-aftercare/lvl-lashes-aftercare",
+    "kind": "Konkrečios sistemos gamintojas",
+    "finding": "LVL turi savo priežiūros instrukciją ir skirtingus terminus vandeniui bei šilumai.",
+    "limit": "Taikyti tik identifikuotai LVL sistemai; ne visoms laminavimo priemonėms.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S37",
+    "title": "NCCIH · masažo įrodymai ir rizikos",
+    "url": "https://www.nccih.nih.gov/health/massage-therapy-what-you-need-to-know",
+    "kind": "Sveikatos institucija",
+    "finding": "Įrodymų ribos ir rizikos priklauso nuo situacijos; masažu neatidėti sveikatos pagalbos.",
+    "limit": "Ne LT licencijavimo taisyklės ar universali gydymo nauda.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S38",
+    "title": "Kosmetologija Visiems · veido procedūrų meniu",
+    "url": "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Skirtingi valymo metodai, papildomi darbai bei procedūrų pavadinimai.",
+    "limit": "Meniu medicininių ar „neinvazinių“ rinkodaros teiginių nelaikyti teisėtumo ar efektyvumo įrodymu.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S39",
+    "title": "AAD · cheminio pilingo apimtis",
+    "url": "https://www.aad.org/public/cosmetic/younger-looking/chemical-peels-overview",
+    "kind": "Medicininė organizacija",
+    "finding": "Metodo gylis ir atlikimo sąlygos keičia procedūros bei priežiūros kontekstą.",
+    "limit": "JAV reikalavimų automatiškai neperkelti į LT; neduoti DIY koncentracijų.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S40",
+    "title": "DermNet · blakstienų ir antakių kosmetika",
+    "url": "https://dermnetnz.org/topics/false-eyelashes-and-eyebrows",
+    "kind": "Specialistų medicininė publikacija",
+    "finding": "Priauginimas skiriasi nuo vienkartinių produktų; aprašomos klijų ir nuėmimo priemonių reakcijos.",
+    "limit": "Ne individuali diagnozė; užsienio kainų ir išlaikymo intervalų nenaudoti kaip LT normos.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S41",
+    "title": "DermNet · nagų kosmetikos alergija",
+    "url": "https://dermnetnz.org/topics/nail-cosmetics-allergy",
+    "kind": "Specialistų medicininė publikacija",
+    "finding": "Reakcijų vieta ir produktų poveikis neapsiriboja vien nago vaizdu.",
+    "limit": "Šaltinis nėra savidiagnostinis testas ar hipoalerginio produkto rekomendacija.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S42",
+    "title": "Wella · balayage, sruogos ir šviesinimas",
+    "url": "https://www.wella.com/professional/en-US/blondes-balayage",
+    "kind": "Gamintojas",
+    "finding": "Technikos ir norimo spalvos paskirstymo klasifikacija.",
+    "limit": "Prekės ženklo terminai neįrodo visų sistemų saugos; ne naminio dažymo receptas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S43",
+    "title": "AAD · formavimas ir plaukų pažeidimas",
+    "url": "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+    "kind": "Medicininė organizacija",
+    "finding": "Karščio, įtempimo ir tekstūros reikšmė priežiūros patarimams.",
+    "limit": "Ne individualus kirpimo parinkimas; neišplėsti vienos tekstūros patarimo visiems.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S50",
+    "title": "AAD · lazerinis plaukų šalinimas",
+    "url": "https://www.aad.org/public/cosmetic/hair-removal/laser-hair-removal-faqs",
+    "kind": "Medicininė organizacija",
+    "finding": "Konsultacija, pradinė būklė, įrenginys ir priežiūra keičia rezultato bei rizikos kontekstą.",
+    "limit": "Ne universali vizitų ar saugumo garantija, JAV kvalifikacijos nenurodo LT teisės.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S51",
+    "title": "AAD · plaukelių šalinimo metodai",
+    "url": "https://www.aad.org/public/everyday-care/skin-care-basics/hair/remove-unwanted-hair",
+    "kind": "Medicininė organizacija",
+    "finding": "Metodai veikia skirtingai; odos būklė ir vaistų informacija svarbios vertinimui.",
+    "limit": "Nedaryti savidiagnostinio tinkamumo testo; sistemos teiginius sutikrinti, nekeisti gydymo pagal tekstą.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S52",
+    "title": "FDA · neinvazinės kūno kontūro procedūros",
+    "url": "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/non-invasive-body-contouring-technologies",
+    "kind": "Sveikatos/įrenginių institucija",
+    "finding": "Kūno kontūro estetinė procedūra nėra svorio mažinimo ar nutukimo gydymas; metodai turi skirtingas ribas.",
+    "limit": "FDA rinkos leidimas nėra ES ar LT veiklos teisėtumo įrodymas; ne konkretaus mūsų įrenginio bandymas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S53",
+    "title": "NHS · infekcija po auskarų vėrimo",
+    "url": "https://www.nhs.uk/conditions/infected-piercings/",
+    "kind": "Sveikatos institucija",
+    "finding": "Įtariant komplikaciją svarbus sveikatos vertinimas, ne vien papuošalo priežiūros patarimas.",
+    "limit": "UK pagalbos numerių ir amžiaus tvarkos neperkelti į LT; ne nuotolinė diagnozė.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S54",
+    "title": "FDA · plaukų glotninimo produktų sudėtis",
+    "url": "https://www.fda.gov/consumers/consumer-updates/formaldehyde-hair-smoothing-products-what-you-should-know",
+    "kind": "Sveikatos/kosmetikos institucija",
+    "finding": "Glotninimo pavadinimas nepakeičia konkrečios sudėties ir darbo sąlygų patikros.",
+    "limit": "Ne teiginys apie visus LT produktus; JAV darbo aplinkos ribų neperkelti į LT.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S55",
+    "title": "Depiliacija · Kauno meniu",
+    "url": "https://www.treatwell.lt/salonas/depiliacija/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Vaškas, cukraus pasta ir skirtingos zonos pateikiami atskirais variantais.",
+    "limit": "Kainyne yra neįprastų įrašų; nekopijuoti nepatikrintos kainos ar vadinti rinkos vidurkiu.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S56",
+    "title": "Gargždų Barzdaskučiai · metodai ir paketai",
+    "url": "https://www.treatwell.lt/salonas/gargzdu-barzdaskuciai/",
+    "kind": "LT paslaugų meniu",
+    "finding": "Barzdos mašinėlės ir skustuvo variantai, kirpimo deriniai išskirti atskirai.",
+    "limit": "Ne mūsų meistras; ne laisvų laikų ar aktualios kainos įrodymas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S57",
+    "title": "Treatwell · kūno įvyniojimų LT pasiūlos pavyzdžiai",
+    "url": "https://www.treatwell.lt/salonai/procedura-kuno-ivyniojimai/pasiulymo-tipas-vietinis/kur-lietuva/",
+    "kind": "LT pasiūlos kategorijos puslapis",
+    "finding": "Įvyniojimo paketų bei komponentų klasifikacija ir tiekėjų pavyzdžiai.",
+    "limit": "Rinkodaros poveikio teiginių nelaikyti klinikiniais įrodymais; tai nėra kontroliuotas TOP20 tyrimas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S59",
+    "title": "NVSC · tatuiravimas ir ilgalaikis makiažas",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/i-ka-reikia-atkreipti-demesi-renkantis-tatuiravimo-ir-ilgalaikio-makiazo-paslaugas/",
+    "kind": "LT institucija",
+    "finding": "Pigmentavimo paslaugoms svarbūs higienos leidimai, instrumentai ir informavimas.",
+    "limit": "Ankstesnis institucijos paaiškinimas; prieš teisinius teiginius tikrinti aktualią normos redakciją.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S60",
+    "title": "FDA · tatuiruotės ir permanentinis makiažas",
+    "url": "https://www.fda.gov/cosmetics/resources-consumers-cosmetics/cosmetics-safety-qa-tattoos-and-permanent-makeup",
+    "kind": "Sveikatos institucija",
+    "finding": "Pigmentas ir jo šalinimas turi rizikų; vienkartiniai instrumentai neišsprendžia užteršto pigmento klausimo.",
+    "limit": "JAV pigmentų reguliavimo, donorystės ir amžiaus taisyklės nėra Lietuvos taisyklės.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S61",
+    "title": "FDA · mikroadatiniai įrenginiai",
+    "url": "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/microneedling-devices",
+    "kind": "Įrenginių institucija",
+    "finding": "Skirtingos paskirtys, priemonės ir kombinacijos turi skirtingą įrodymų bei rizikų kontekstą.",
+    "limit": "JAV leidimas ne ES atitiktis ar LT veiklos licencija; ne koncentracijų ar gylio instrukcija.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S62",
+    "title": "FDA · dermaliniai užpildai",
+    "url": "https://www.fda.gov/medical-devices/aesthetic-cosmetic-devices/dermal-fillers-soft-tissue-fillers",
+    "kind": "Įrenginių institucija",
+    "finding": "Injekciniai užpildai yra medicininė procedūra; rezultatas priklauso nuo medžiagos ir anatomijos.",
+    "limit": "Negeneralizuoti visoms mezoterapijos ar biorevitalizacijos priemonėms; JAV leidimai nėra LT teisė.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S63",
+    "title": "NCCIH · meditacija ir mindfulness",
+    "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "kind": "Sveikatos institucija",
+    "finding": "Tyrimuose praktikos ir rezultatų kokybė skiriasi; naudos teiginius reikia vertinti pagal konkretų rezultatą.",
+    "limit": "Savijautos seansas nepakeičia psichologinės pagalbos; ne visų garso ar kvėpavimo metodų įrodymas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S64",
+    "title": "NCCIH · aromaterapija",
+    "url": "https://www.nccih.nih.gov/health/aromatherapy",
+    "kind": "Sveikatos institucija",
+    "finding": "Aromaterapija gali būti seanso komponentas, bet medicininėms išvadoms trūksta tvirtų duomenų.",
+    "limit": "Nerašyti eterinių aliejų gydymo receptų, detox pažadų ar universalaus individualaus tinkamumo.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S65",
+    "title": "NCCIH · joga",
+    "url": "https://www.nccih.nih.gov/health/yoga-effectiveness-and-safety",
+    "kind": "Sveikatos institucija",
+    "finding": "Stiliai ir krūviai skiriasi; individualias sąlygas būtina aptarti su specialistu.",
+    "limit": "Netaikyti vieno jogos tyrimo pilatesui ar kiekvienai pamokai; ne individualus pratimų planas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S66",
+    "title": "WHO · fizinis aktyvumas",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+    "kind": "Sveikatos institucija",
+    "finding": "Fizinis aktyvumas platesnis už vieną sporto formatą; gairės skirstomos pagal žmonių grupes.",
+    "limit": "Bendros gairės nėra žmogaus treniruotės dozė ar trenerio kvalifikacijos patvirtinimas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S67",
+    "title": "NHS · kineziterapijos paskirtis ir vizitas",
+    "url": "https://www.nhs.uk/tests-and-treatments/physiotherapy/",
+    "kind": "Sveikatos institucija",
+    "finding": "Kineziterapija apima įvertinimą, judesio tikslą ir skirtingus metodus.",
+    "limit": "UK finansavimas, siuntimai ir specialistų registracija netaikomi LT; ne ligos diagnozė.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S68",
+    "title": "NHS · konsultavimas",
+    "url": "https://www.nhs.uk/tests-and-treatments/counselling/",
+    "kind": "Sveikatos institucija",
+    "finding": "Pokalbio pagalba skirta konkrečiam poreikiui; pirma konsultacija ir formatas turi savo apimtį.",
+    "limit": "UK counsellor sąvokos nesulyginti automatiškai su Lietuvos medicinos psichologu ar psichoterapeutu.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S69",
+    "title": "VASPVT · medicinos psichologų veiklos priežiūra",
+    "url": "https://vaspvt.lrv.lt/lt/naujienos/medicinos-psichologams-pristatyta-licencijuojamos-veiklos-prieziuros-tvarka-xQr/",
+    "kind": "LT institucija",
+    "finding": "Medicinos psichologo licencijuojama veikla ir jos sąlygos turi konkretų patikros kelią.",
+    "limit": "Ne teiginys, kad visų psichologinio konsultavimo profesijų teisinė tvarka vienoda.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S70",
+    "title": "NHS · dantų balinimas",
+    "url": "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+    "kind": "Sveikatos institucija",
+    "finding": "Balinimo pasirinkimas prasideda nuo dantų ir dantenų įvertinimo; restauracijos turi skirtingą kontekstą.",
+    "limit": "UK amžiaus, kainos ir profesinės teisės nėra LT taisyklės; ne naminių mišinių instrukcija.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S71",
+    "title": "RSPCA · kačių kailio priežiūra",
+    "url": "https://www.rspca.org.uk/adviceandwelfare/pets/cats/health/grooming",
+    "kind": "Gyvūnų gerovės institucija",
+    "finding": "Kailio tipas, sąvėlos ir gyvūno reakcija keičia priežiūros poreikį; pakitimai gali reikšti veterinaro poreikį.",
+    "limit": "UK praktikos ir kvalifikacijos nėra LT registracija; ne savarankiškas sąvėlų kirpimas ar sedacija.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S72",
+    "title": "RSPCA · šunų kirpėjo pasirinkimas",
+    "url": "https://www.rspca.org.uk/adviceandwelfare/pets/dogs/health/grooming",
+    "kind": "Gyvūnų gerovės institucija",
+    "finding": "Gyvūno komfortas, įrangos priežiūra ir džiovinimo kontrolė yra pasirinkimo kriterijai.",
+    "limit": "UK kvalifikacijos neperkeliamos į LT; atskiro nagų/maudymo protokolo ir veterinaro review vis tiek reikia.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S73",
+    "title": "AAD · plaukus tempiantys stiliai",
+    "url": "https://www.aad.org/public/diseases/hair-loss/causes/hairstyles?pp=1",
+    "kind": "Medicininė organizacija",
+    "finding": "Įtempimas ir ilgalaikis poveikis skiriasi nuo kosmetinio formos pasirinkimo.",
+    "limit": "Ne savidiagnostinis slinkimo testas ir ne visų priauginimo sistemų techninė instrukcija.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S74",
+    "title": "FDA · purškiamas įdegis ir bronzantai",
+    "url": "https://www.fda.gov/cosmetics/cosmetic-products/sunless-tanners-bronzers",
+    "kind": "Kosmetikos institucija",
+    "finding": "DHA paskirtis ir purškimo poveikio sritys svarbios pasirenkant paslaugą.",
+    "limit": "JAV ingredientų leidimas ne ES atitiktis; spalva neįrodo apsaugos nuo UV.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S75",
+    "title": "NVSC · soliariumo sauga 2026",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-priminimas-saugiai-naudotis-soliariumu-1eOm/",
+    "kind": "LT institucija",
+    "finding": "UV poveikis ir teikėjo informavimo pareigos svarbios paslaugos vertinimui.",
+    "limit": "Nekurti universalaus saugaus deginimosi grafiko ar vitamino D gydymo rekomendacijos.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S76",
+    "title": "SPA VILNIUS · hamamo ritualų apimtis",
+    "url": "https://www.spavilnius.lt/lt/vilnius/proceduros/spa-ritualai-hamame/140",
+    "kind": "LT teikėjo meniu",
+    "finding": "Hamamo paketas gali jungti pirtį, šildomą stalą ir kūno priežiūrą; paslaugos komponentai skiriasi.",
+    "limit": "Teikėjo poveikio reklama ne klinikinis įrodymas; ne Madbeauty partneris ar mūsų pasiūla.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S77",
+    "title": "Treatwell · parafino ir rankų SPA pasiūlos variantai",
+    "url": "https://www.treatwell.lt/salonai/procedura-parafino-terapija/pasiulymo-tipas-vietinis/kur-vilnius-lt/",
+    "kind": "LT platformos meniu",
+    "finding": "Rankoms ir pėdoms nurodomi atskiri paketai bei šalto/šildomo parafino pavadinimai.",
+    "limit": "Ne kontroliuotas TOP20 tyrimas; kainų nekopijuoti kaip rinkos vidurkio ar šiandienos prieinamumo.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S79",
+    "title": "NVSC · pirties veiklos sauga",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-priminimas-kaip-saugiai-teikti-pirties-paslaugas/",
+    "kind": "LT institucija",
+    "finding": "Leidimas, lankytojų informavimas ir įrangos taisyklės yra konkretūs paslaugos pasirinkimo klausimai.",
+    "limit": "Prieš teisinius teiginius tikrinti aktualią HN; neskelbti universalių temperatūros ir trukmės normų.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S81",
+    "title": "NCCIH · atsipalaidavimo metodai",
+    "url": "https://www.nccih.nih.gov/health/relaxation-techniques-what-you-need-to-know",
+    "kind": "Sveikatos institucija",
+    "finding": "Kvėpavimo ir kitų atsipalaidavimo metodų įrodymų kokybė bei paskirtis skiriasi.",
+    "limit": "Ne visų breathwork ar garso seansų įrodymas; nenurodyti individualių sveikatos pratimų.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S82",
+    "title": "NHS · pilateso ir jogos pamokų formatai",
+    "url": "https://www.nhs.uk/live-well/exercise/pilates-and-yoga/",
+    "kind": "Sveikatos institucija",
+    "finding": "Skirtingų pratimų vaizdo pamokos rodo atskirus judėjimo formatus.",
+    "limit": "Trumpas vaizdo indeksas nėra sisteminė pilateso veiksmingumo apžvalga ar individuali programa.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S83",
+    "title": "FDA · RF mikroadatinės procedūros saugos pranešimas",
+    "url": "https://www.fda.gov/medical-devices/safety-communications/potential-risks-certain-uses-radiofrequency-rf-microneedling-fda-safety-communication",
+    "kind": "Įrenginių institucija",
+    "finding": "2025-10-15 pranešimas skiria RF mikroadatinę procedūrą nuo bendro kosmetinio mikrobadymo ir aprašo praneštas komplikacijas.",
+    "limit": "JAV pranešimas neįrodo konkretaus LT aparato rizikos dažnio ar teisėtumo; nevartoti universalaus saugumo pažado.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S84",
+    "title": "Treatwell · permanentinio makiažo LT kategorija",
+    "url": "https://www.treatwell.lt/salonai/procedura-permanentinis-makiazas/pasiulymo-tipas-vietinis/kur-lietuva/",
+    "kind": "LT platformos meniu",
+    "finding": "Pigmentavimo zonos, korekcija ir pigmento šalinimas pateikiami kaip skirtingos paslaugų apimtys.",
+    "limit": "Tik paslaugų terminų ir filtravimo pavyzdys; ne paieškos apimčių, mūsų pasiūlos ar medicininio poveikio įrodymas.",
+    "status": "READ",
+    "checkedAt": "2026-10-06"
+  },
+  {
+    "id": "S85",
+    "title": "Odontologų rūmai: specialistų licencijų priežiūra",
+    "url": "https://odontologurumai.lt/del-gaunamu-vaspvt-laisku-apie-licencijamos-veiklos-prieziura/",
+    "kind": "LT profesinė institucija",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S86",
+    "title": "Odontologų rūmai: įstaigos leidimai ir licencija",
+    "url": "https://odontologurumai.lt/bendra-informacija/",
+    "kind": "LT profesinė institucija",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S87",
+    "title": "Wella: AirTouch ir balayage skirtumas",
+    "url": "https://us.wella.professionalstore.com/en-US/blog/hair-color/air-touch-balayage-technique",
+    "kind": "Gamintojo technikos paaiškinimas",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S88",
+    "title": "The GelBottle: cat-eye ir chrome gamintojo sistemos",
+    "url": "https://assets.thegelbottle.com/m/44e5120a36af3fa1/original/TGB_Application-Guide_Apres-Ski-Collection.pdf",
+    "kind": "Gamintojo dokumentas",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S89",
+    "title": "Jo Mi: vėrimo meniu su įtrauktu papuošalu",
+    "url": "https://jomitattoo.lt/auskaru-verimas/",
+    "kind": "LT teikėjo meniu",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S90",
+    "title": "ODA klinika: vėrimo apimtis, atskiri papuošalai ir laikas",
+    "url": "https://odaklinika.lt/auskaru-verimas/",
+    "kind": "LT teikėjo meniu",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S91",
+    "title": "Era Esthetic: plaukų šalinimo lazeriu kainoraštis",
+    "url": "https://lazerineklinika.lt/kainos/",
+    "kind": "LT teikėjo meniu",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S92",
+    "title": "Amber Esthetic: plaukų šalinimo zonų kainoraštis",
+    "url": "https://www.amberesthetic.lt/kainos",
+    "kind": "LT teikėjo meniu",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S93",
+    "title": "Association of Professional Piercers: initial jewellery",
+    "url": "https://safepiercing.org/jewelry-for-initial-piercings/",
+    "kind": "Profesinės asociacijos vartotojų informacija",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S94",
+    "title": "Association of Professional Piercers: piercing guns",
+    "url": "https://safepiercing.org/piercing-guns/",
+    "kind": "Profesinės asociacijos vartotojų informacija",
+    "finding": "Claim-specific research; retrieval is not review",
+    "limit": "Read before claims; no credentials, universal protocol or efficacy guarantee"
+  },
+  {
+    "id": "S95",
+    "title": "NHS: Pilates formato apibrėžimas",
+    "url": "https://www.nhs.uk/live-well/exercise/pilates-and-yoga/pilates-for-beginners/",
+    "kind": "Sveikatos institucijos vartotojų informacija",
+    "finding": "Actual claim-specific source research; retrieval is not review",
+    "limit": "Only actually read scope may support claims; no efficacy guarantees or universal protocol"
+  },
+  {
+    "id": "S96",
+    "title": "PGDENT: higienos sudėtis ir kainynas",
+    "url": "https://pgdent.lt/kainos/",
+    "kind": "LT teikėjo meniu",
+    "finding": "Actual claim-specific source research; retrieval is not review",
+    "limit": "Only actually read scope may support claims; no efficacy guarantees or universal protocol"
+  },
+  {
+    "id": "S97",
+    "title": "Dentara: skirtingos higienos apimtys",
+    "url": "https://dentara.lt/kainos",
+    "kind": "LT teikėjo meniu",
+    "finding": "Actual claim-specific source research; retrieval is not review",
+    "limit": "Only actually read scope may support claims; no efficacy guarantees or universal protocol"
+  },
+  {
+    "id": "S98",
+    "title": "LSMU: ortodontijos profesijos studijų aprašymas",
+    "url": "https://lsmu.lt/medicinos-akademijos-rezidenturos-studiju-programos-nuo-2023/ortodontija-2/",
+    "kind": "LT universitetas",
+    "finding": "Actual claim-specific source research; retrieval is not review",
+    "limit": "Only actually read scope may support claims; no efficacy guarantees or universal protocol"
+  },
+  {
+    "id": "S99",
+    "title": "Great Lengths: tvirtinimo sistemų skirtumas",
+    "url": "https://www.greatlengths.com/en-ca/hair-extension-products",
+    "kind": "Gamintojo produktų aprašymas",
+    "finding": "Actual claim-specific source research; retrieval is not review",
+    "limit": "Only actually read scope may support claims; no efficacy guarantees or universal protocol"
+  },
+  {
+    "id": "S100",
+    "title": "Great Lengths: profesionalus sistemų nuėmimas",
+    "url": "https://www.greatlengths.com/faq",
+    "kind": "Gamintojo sistemos DUK",
+    "finding": "Actual claim-specific source research; retrieval is not review",
+    "limit": "Only actually read scope may support claims; no efficacy guarantees or universal protocol"
+  },
+  {
+    "id": "S101",
+    "title": "SPA Vilnius: Vilniaus hamamo meniu",
+    "url": "https://www.spavilnius.lt/lt/vilnius/proceduros/spa-ritualai-hamame/140",
+    "kind": "LT teikėjo meniu",
+    "finding": "Actual claim-specific source research; retrieval is not review",
+    "limit": "Only actually read scope may support claims; no efficacy guarantees or universal protocol"
+  },
+  {
+    "id": "S102",
+    "title": "ALISPA: konkrečių Head SPA ritualų apimtis",
+    "url": "https://alispa.lt/",
+    "kind": "LT teikėjo paslaugos aprašymas",
+    "finding": "Claim-specific primary provider example, not independent efficacy",
+    "limit": "Read bounded scope; reject efficacy guarantees, dosing and universal protocol"
+  },
+  {
+    "id": "S103",
+    "title": "Era Esthetic: konkreti mezoterapijos paslaugos forma",
+    "url": "https://lazerineklinika.lt/mezoterapija/",
+    "kind": "LT teikėjo paslaugos aprašymas",
+    "finding": "Claim-specific primary provider example, not independent efficacy",
+    "limit": "Read bounded scope; reject efficacy guarantees, dosing and universal protocol"
+  },
+  {
+    "id": "S104",
+    "title": "Era Esthetic: konkreti biorevitalizacijos paslaugos forma",
+    "url": "https://lazerineklinika.lt/biorevitalizacija/",
+    "kind": "LT teikėjo paslaugos aprašymas",
+    "finding": "Claim-specific primary provider example, not independent efficacy",
+    "limit": "Read bounded scope; reject efficacy guarantees, dosing and universal protocol"
+  },
+  {
+    "id": "S105",
+    "title": "Gatineau: 2026 plaukų priauginimo ir korekcijos kainynas",
+    "url": "https://www.groziopaslaugos.lt/user_files/kainininkai/kainorastis%202026-01-07.pdf",
+    "kind": "Primary provider/manufacturer",
+    "finding": "Claim-specific actual research",
+    "limit": "Only actually read bounded claims; no clinical efficacy or universal protocol"
+  },
+  {
+    "id": "S106",
+    "title": "The Head Room: juostelinio priauginimo meniu",
+    "url": "https://theheadroom.lt/",
+    "kind": "Primary provider/manufacturer",
+    "finding": "Claim-specific actual research",
+    "limit": "Only actually read bounded claims; no clinical efficacy or universal protocol"
+  },
+  {
+    "id": "S107",
+    "title": "PhiAcademy: PowderBrows šešėliavimas",
+    "url": "https://www.phi-academy.com/en-us/courses/powderbrows",
+    "kind": "Primary provider/manufacturer",
+    "finding": "Claim-specific actual research",
+    "limit": "Only actually read bounded claims; no clinical efficacy or universal protocol"
+  },
+  {
+    "id": "S108",
+    "title": "PhiAcademy: PhiBrows ir microblading apibrėžimas",
+    "url": "https://www.phi-academy.com/en-us/contact",
+    "kind": "Primary provider/manufacturer",
+    "finding": "Claim-specific actual research",
+    "limit": "Only actually read bounded claims; no clinical efficacy or universal protocol"
+  },
+  {
+    "id": "S109",
+    "title": "ARAVIA Professional: šalto kremo-parafino produktas",
+    "url": "https://aravia.ru/catalog/krem_parafin_naturalnyy_s_molochnymi_proteinami_i_maslom_khlopka_210_ml/",
+    "kind": "Primary provider/manufacturer",
+    "finding": "Claim-specific actual research",
+    "limit": "Only actually read bounded claims; no clinical efficacy or universal protocol"
+  },
+  {
+    "id": "S110",
+    "title": "ARAVIA Professional: šaltas ir šiltas parafinas",
+    "url": "https://aravia-prof.ru/products/aravia-professional-paraffin/",
+    "kind": "Primary provider/manufacturer",
+    "finding": "Claim-specific actual research",
+    "limit": "Only actually read bounded claims; no clinical efficacy or universal protocol"
+  },
+  {
+    "id": "S111",
+    "title": "ARPANSA: lazerio, IPL ir LED technologijų grupės",
+    "url": "https://www.arpansa.gov.au/understanding-radiation/sources-radiation/more-radiation-sources/lasers-and-intense-pulsed-light-ipl",
+    "kind": "Australian government radiation authority"
+  },
+  {
+    "id": "S112",
+    "title": "ARPANSA: vartotojams skirtas lazerio ir IPL palyginimas",
+    "url": "https://www.arpansa.gov.au/understanding-radiation/sources-radiation/more-radiation-sources/lasers-and-intense-pulsed-light-0",
+    "kind": "Australian government radiation authority"
+  },
+  {
+    "id": "S113",
+    "title": "Gelish: iš anksto suformuoti Soft Gel tipsai",
+    "url": "https://gelish.com/products/soft-gel-tips-stiletto-medium-sc/1270004",
+    "kind": "Manufacturer product definition"
+  },
+  {
+    "id": "S114",
+    "title": "CND: priauginimo formos paskirtis",
+    "url": "https://cdn.shopify.com/s/files/1/0794/0010/8323/files/Future_Forms_SBS.pdf?v=1709839408",
+    "kind": "Manufacturer professional documentation linked from cnd.com"
+  },
+  {
+    "id": "S115",
+    "title": "Wella: sombre kaip švelnesnis ombre",
+    "url": "https://blog.wella.com/us/guide-to-sombre-hair",
+    "kind": "Manufacturer explanation"
+  },
+  {
+    "id": "S116",
+    "title": "Brow Code: konkrečios henna formulės sudėtis",
+    "url": "https://browcode.co/en-as/products/henna-kit",
+    "kind": "Manufacturer product information"
+  },
+  {
+    "id": "S117",
+    "title": "RefectoCil: konkretaus antakių dažo produkto informacija",
+    "url": "https://www.refectocil.co.za/product-natural-brown",
+    "kind": "Manufacturer regional product information"
+  },
+  {
+    "id": "S118",
+    "title": "Wella: ombre ir sombre spalvų žodynas",
+    "url": "https://www.wella.com/pl/wella-magazine/color-gloss-ary",
+    "kind": "Manufacturer terminology glossary"
+  },
+  {
+    "id": "S119",
+    "title": "CND PLEXIGEL Shaper: natūralaus nago padengimas ir ilgio kūrimas",
+    "url": "https://www.cnd.com/products/cnd-plexigel-shaper",
+    "kind": "Manufacturer specific system description"
+  },
+  {
+    "id": "S120",
+    "title": "AAD: šveitimas ir paviršinių negyvų odos ląstelių pašalinimas",
+    "url": "https://www.aad.org/public/everyday-care/skin-care-basics/care/exfoliation",
+    "kind": "Dermatology academy general explanation"
+  },
+  {
+    "id": "S121",
+    "title": "AAD: šveitimo mechanizmai ir individualios ribos",
+    "url": "https://www.aad.org/public/everyday-care/skin-care-secrets/routine/safely-exfoliate-at-home/",
+    "kind": "Dermatology academy general explanation"
+  }
+]

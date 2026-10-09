@@ -1,0 +1,336 @@
+{
+  "preparedAt": "2026-10-09T20:19:47.455Z",
+  "selected": 60,
+  "actualReadSources": 77,
+  "policy": {
+    "schemaVersion": 1,
+    "siteId": "madbeauty",
+    "scope": [
+      "guide",
+      "article"
+    ],
+    "mode": "autonomous-agent",
+    "humanSpecialistReviewRequired": false,
+    "humanPublicationApprovalRequired": false,
+    "authority": {
+      "source": "direct-human-request-in-platform-chat",
+      "date": "2026-10-09",
+      "instruction": "atjunk taisykles kad straipsniai lauktu specialisto perziuras, viskas turi veikti be zmogaus isikisimo"
+    },
+    "editorialReview": {
+      "revisionBound": true,
+      "requiredChecks": [
+        "usefulness",
+        "facts",
+        "sources",
+        "media",
+        "links",
+        "presentation"
+      ],
+      "unresolvedClaims": "agent-research-rewrite-or-omit",
+      "specialistRequirementsInOldBriefs": "superseded-by-this-owner-policy",
+      "fabricatedHumanReviewsAllowed": false,
+      "expertCredentialsClaimed": false
+    },
+    "publication": {
+      "retainExistingPublishAt": true,
+      "preserveIncumbentApprovedSnapshots": true,
+      "immutableReviewedPackage": true,
+      "sameTimeGateForPagesMediaLinksAndDiscovery": true,
+      "deployAfterActualAcceptance": true
+    },
+    "scopeBoundary": "Article editorial workflow only. Provider eligibility, identity, access permissions and actual customer data are separate product workflows."
+  },
+  "planReconciliation": {
+    "id": "fb84e9fa-ddae-4ee4-a205-57474d1e43d6",
+    "appliedAt": "2026-10-09T20:19:41.579Z",
+    "requestHash": "b687e214520b75dcdb04c27c5e2b071eb308db6019bf3a5ab80995c5269f93ff",
+    "resultSiteHash": "e63454d10983ec0d4416c0a2181e54412939215fbc0ff04ee20030b71bf8182e",
+    "sourcePlanSha256": "ddeab6a5cc22ac1544736e0256a17538aef06059be047e9c64914e3dcf704ff1",
+    "skillFingerprint": "87c068b149c46fd13194a51ddd9601eb069c094fb95385ae2b1208ed4b245b39",
+    "activePages": 299,
+    "retired": [],
+    "protectedHashes": [
+      {
+        "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+        "revisionHash": "8cd820f807d2a72c54c7e7b6070469c8d00c69fc9c30ea391da0282b08356989"
+      },
+      {
+        "pageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+        "revisionHash": "28d77ee9ecb6ab4145134cb9be163bfac6dc5e527a28866cea8d4fe86427d519"
+      },
+      {
+        "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+        "revisionHash": "1109c3dcf2fe7cd134e52fb003831a10b166326dd251e63b8fde5802ad314e9b"
+      },
+      {
+        "pageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+        "revisionHash": "9e9c8942ca54d7a3bf0521993b725fca2288389c6f7c1413b19f2c4ad2bd5df1"
+      },
+      {
+        "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+        "revisionHash": "fafe67c24f927058ba49db793d3df71d1be2f05a170fd90184fe82824dc0bedd"
+      },
+      {
+        "pageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+        "revisionHash": "73b847b84d2d24f869cd17e39163e4cb0eb030753a610e2f1489d636d31c143a"
+      },
+      {
+        "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+        "revisionHash": "d169b518e6680563b4270e91414891195b65f886903c62a7448af821847240dc"
+      },
+      {
+        "pageId": "91053963-6eff-408a-b26d-7eed52088b91",
+        "revisionHash": "898cc0485b34be39f113392be917482b9d24276cf90929b7e9ec373625c37b06"
+      },
+      {
+        "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+        "revisionHash": "1f6e54163b565901e3d28ef00652c65579ba32f1dddba98607594893d94272a8"
+      },
+      {
+        "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+        "revisionHash": "1ee16f3b4a40db3135270bebd9231e234b6140a1480a6bd07b47d537d414346a"
+      },
+      {
+        "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+        "revisionHash": "39413d31f3e29f1c1366f401760f21647256f9f12044c87739820c25a64cd166"
+      },
+      {
+        "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+        "revisionHash": "67988f4e7daeb17b76564f6a8792b6e1df2d9347fe741c418586b6457cf7727d"
+      },
+      {
+        "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+        "revisionHash": "ebda8f66451bce7688019331785de6eec22e121a72ee56337ce9d74b3d0723bf"
+      },
+      {
+        "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+        "revisionHash": "eeea368c3670da5cb193ff803ec12823cc37684146c4d127ef52fdcc403ca136"
+      },
+      {
+        "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+        "revisionHash": "d04d341c4080ddc648bb21ee1ca2c67f7d206d927b7d6f55418ce21f838dd947"
+      },
+      {
+        "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+        "revisionHash": "6e86b7e421db64e9c88c9be6f22ad5a6a2e25f336c70d6279048cf08c179cb79"
+      },
+      {
+        "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+        "revisionHash": "b6684693f8f737ed7676b3e04b891038ea1f912d82b4591ebd8a2c6c7ddc2c88"
+      },
+      {
+        "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+        "revisionHash": "22c2f4e755c18dd77e55f61968dafadd34b8d045528e7de69e452e867d9469c0"
+      },
+      {
+        "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+        "revisionHash": "80b10294ff543cf732cac644adb6d1a66ae8b6b8a303c4adba83adaa2c3e911d"
+      },
+      {
+        "pageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+        "revisionHash": "8444604af6ba86d74e4949521e2be475794737167ac7079c79cf8000d77a8b1a"
+      },
+      {
+        "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+        "revisionHash": "654d71d95a48bd841b41a4224f532a85d96424d40d79da65779e894cc0dcd186"
+      },
+      {
+        "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+        "revisionHash": "256f8be129ea83550d057c7121013371382bf70cd9174ec3cfb7c328bd610f3e"
+      },
+      {
+        "pageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+        "revisionHash": "5fd44117ab84e376242c0267c3902e58de564fd650d6c664c691a32cc0082376"
+      },
+      {
+        "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+        "revisionHash": "e6351a32ffe23eb84b718985273c97a99f2c05b341228573c8be979936f4f182"
+      },
+      {
+        "pageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+        "revisionHash": "c889aed1d01397b39a5daf16c3e73319d62b25282546e37901364aa361901d18"
+      },
+      {
+        "pageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+        "revisionHash": "8df1d917c8dd7a8bec5466d141230d5b825a624b134580a3b6c423b84db95c03"
+      },
+      {
+        "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+        "revisionHash": "9cd27f0bc591f52b560bf2efc9b76fe6471bcd953f8adb60cb0871e94d2a5b25"
+      },
+      {
+        "pageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+        "revisionHash": "e2dd83c394729f4b67f402a4f4a003b827e6f6dba5a1606041355f098011f4b4"
+      },
+      {
+        "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+        "revisionHash": "79f8753554ab9a301453dc18effa7bbbd1520463e30a8ec817a60cd475016320"
+      },
+      {
+        "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+        "revisionHash": "eee0088a565cb4322ffdaf8e8a3f8c2bec84bf77f92018da7dc883ffe7ecfce3"
+      },
+      {
+        "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+        "revisionHash": "8446db14e79a381e0320999ce414d835eb4b13f38426d9cfd446e66bfca5b8f6"
+      },
+      {
+        "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+        "revisionHash": "cef27b9985fc9bb1d9dec57809eece68e09cc726fb6b47be4442001fbacd5b65"
+      },
+      {
+        "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+        "revisionHash": "4e5e2bb5f9fb346fde4eefa0625f4a523b9f1416f98ff23526bc68757b030c3f"
+      },
+      {
+        "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+        "revisionHash": "b7450862030c3f595fde20d60307c2ec9dc79572a2eca4a5818a7f76bd4aec9a"
+      },
+      {
+        "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+        "revisionHash": "a7e86f766a3b680b3d98877ae2d1476a4dac5756a5b825b69e75cd3f798e4a65"
+      },
+      {
+        "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+        "revisionHash": "ffba4e89c33bd28f742ac02487a8aafd1c832b40872b70b3a7130fdd090e3a9b"
+      },
+      {
+        "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+        "revisionHash": "49ec720bdb7117941733ccd9fd2bb9f5c5e508c4d7126b19c239b0fc270459d3"
+      },
+      {
+        "pageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+        "revisionHash": "2f8982ff966a20822602719416dce44ff371bf8dca98b3b0bbc8de83de31dfc5"
+      },
+      {
+        "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+        "revisionHash": "70edccc0e162e1e5c03542be4cabd08e047f54b3c1ed9b03528530bfa0718c42"
+      },
+      {
+        "pageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+        "revisionHash": "e6c2a33da04e56f629fea9784f789529a87b2cb6f6b8d45359b50ade1c205cdf"
+      },
+      {
+        "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+        "revisionHash": "d5d59b73c98503db0fec3105d25ad314d07a3a9bbd589335652a58e56eab3b40"
+      },
+      {
+        "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+        "revisionHash": "d3c654c16675857e551810afc6ce47bc31df0715ddd14414fc23f68e5af416b5"
+      },
+      {
+        "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+        "revisionHash": "48a217e34e35551270c4eef7bf34c2692948b517a1f5f57b19588e19375333ba"
+      },
+      {
+        "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+        "revisionHash": "7a3044d5b52faca43d2acfcb212e4884d736185cd2562ec618849c7e4488b6ca"
+      },
+      {
+        "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+        "revisionHash": "7f57ea4530c349842d0490aea5f7c6468c447f1790bb61138cb615d986afb50e"
+      },
+      {
+        "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+        "revisionHash": "b382787b0531e737f5dcd085bc302ace3605f237dbbbb52827a87cc48cba9727"
+      },
+      {
+        "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+        "revisionHash": "8ccd64ca7503db46bd9568a921db269a17e3ce6045e78f05af3f3bfc2f7746ac"
+      },
+      {
+        "pageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+        "revisionHash": "cb140999bf9734769a704f99c756c8b69b1e1e5d7bf42c6fd4691429290514ac"
+      },
+      {
+        "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+        "revisionHash": "5e4e8ae51dacdb1b658319997ac729b96bcde5783191ad7a0e8e809364335e17"
+      },
+      {
+        "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+        "revisionHash": "40a936e83762311f7d980e25efa6feffe55c191b0c6fc453e558f2a7c530d8b4"
+      },
+      {
+        "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+        "revisionHash": "11a93dcc1eb8fb2676a104947859d5ad4ce48ac4de1b199a05b4c457b1b4d670"
+      },
+      {
+        "pageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+        "revisionHash": "3c4b7a2015592a529fdfa43f76103d580f81a37cdff8fb758af31babb067f62a"
+      },
+      {
+        "pageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+        "revisionHash": "5c78e574bddf18c1feb2a05ad8ce1ff0bc4dca0a21f1c61d916e45ec36fbfc73"
+      },
+      {
+        "pageId": "ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6",
+        "revisionHash": "19ec777792f935328aaa161d8c03e746a08e70409fb5bb5441b0c71f1752e8ce"
+      },
+      {
+        "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+        "revisionHash": "1fed06e2a02a331d2b456afa23140414b0ea285dbade14f408e8f372ca562f73"
+      },
+      {
+        "pageId": "10660b33-7a51-429f-80c0-6814e8d36cc6",
+        "revisionHash": "6bd4c1cf52e30aadfb4bf6d73f791f86ba9cbb4a71adae11397bbb412756877d"
+      },
+      {
+        "pageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+        "revisionHash": "2ff37b0eda100f1f1f0d9325ac1c8e87338dcfa58c65a112f5feee7f460f765f"
+      },
+      {
+        "pageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+        "revisionHash": "c48cab8ba32662ec03569bb3128e5236166d8dcfe1f7c1a6029c42b2bbd8bb1b"
+      },
+      {
+        "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+        "revisionHash": "1c39dc1f7757d2cdbe2232a3666b3fad02388ee714aaee93bae8b0d8f298b860"
+      },
+      {
+        "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+        "revisionHash": "582cf082eaad5b379030bf050f7473796e96c1be1576d9ec68305f3c2ea5b65c"
+      },
+      {
+        "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+        "revisionHash": "3f428d4eef98120abb869b947fa4fc8db319318937f35dd2e93cc1fa363bb989"
+      },
+      {
+        "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+        "revisionHash": "a5a1a90ee03762dfb7a99e6152326701e50df4c6334fd2572894a6d6c3f6f3b9"
+      },
+      {
+        "pageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+        "revisionHash": "e5e31b745ae67f0c9be3f82a75f129915845c355a1313a725d4f897c5a9f913f"
+      },
+      {
+        "pageId": "99c2d09a-1314-48db-999c-075d312271b2",
+        "revisionHash": "34748810d89780b9350a37fdaeabd17a928813c9f811dc9d829b416ce8074245"
+      },
+      {
+        "pageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+        "revisionHash": "b88c3c2a089a7e6fb8f19133675cd255779e7739abfdee381020dc82f1189eb4"
+      },
+      {
+        "pageId": "85ae7c9c-1176-47ff-b125-6c52d479973d",
+        "revisionHash": "a3c0b8100b2b211aebf2f1a03917ec13c4b46ad9ad0d0eabd5795c853ce05346"
+      },
+      {
+        "pageId": "a61a0248-1c28-4cdc-89ba-e6c087989cdf",
+        "revisionHash": "62fc252edcd5ffec873c926d8653d2e66ed94148bfde08176597e7af34e82a14"
+      },
+      {
+        "pageId": "6cc9716e-8706-4628-a85a-7a32ca432a7d",
+        "revisionHash": "70918b47756dff2ab43117df8908de0f1ac9f3abf800dec5da934112c2b8c9e6"
+      },
+      {
+        "pageId": "madbeauty-author-redakcija",
+        "revisionHash": "f7cc6f73cf54ae14761c36dade46b420037788240fbc4d6d7cfa55ecb97c76b1"
+      }
+    ],
+    "newGeneration": false,
+    "productionDeployed": false
+  },
+  "preservedApproved": 69,
+  "sourcePlanSha256": "ddeab6a5cc22ac1544736e0256a17538aef06059be047e9c64914e3dcf704ff1"
+}

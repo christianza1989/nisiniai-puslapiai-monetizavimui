@@ -1,0 +1,2647 @@
+{
+  "checkedAt": "2026-10-09T22:41:25.728Z",
+  "scope": "Private native shared-studio previews; no production deployment evidence",
+  "browser": "Installed Chrome via Playwright",
+  "views": [
+    {
+      "planId": "AV-gidas",
+      "device": "desktop",
+      "revisionHash": "60006cee58e1ffdc70b7984d34fc8283f820a4cd781d3c42e5949d5896b80483",
+      "htmlSha256": "fd628314ce685d0202ec91cc95673df20403553bf8e8b9b2865928456208321e",
+      "checkedAt": "2026-10-09T22:39:38.190Z",
+      "title": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Ausies papuošalas šoniniame portrete",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/54e4712b-ed66-41e2-ad73-e32d6d5578f1.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-gidas-desktop.png"
+    },
+    {
+      "planId": "ES-gidas",
+      "device": "desktop",
+      "revisionHash": "5519ee0707bb8ba3e285fc552dd754b32b14c00e024b32c524a8fbc275ab96c1",
+      "htmlSha256": "722380549a6d06afa3b8858a8fada22bba5941193ae6e02ccdeea279648bb349",
+      "checkedAt": "2026-10-09T22:39:38.502Z",
+      "title": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Estetinės konsultacijos pokalbis prie stalo",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/73b564d0-649b-42f3-8820-e2ead53ccd71.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-gidas-desktop.png"
+    },
+    {
+      "planId": "FX-gidas",
+      "device": "desktop",
+      "revisionHash": "7f9724b3b10cb6c59542e6d0b7d0cf1b2f1eb0b1ea53474be610a31d55737805",
+      "htmlSha256": "55ccfe05426330b68f426fb6a2a88dddf1a8a87e973886616b6d67320a654f37",
+      "checkedAt": "2026-10-09T22:39:38.770Z",
+      "title": "Treniruotės pasirinkimas: individualus, grupinis, pilateso ar jogos formatas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Grupinės treniruotės dalyviai studijoje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/360d04d1-b2b8-4b4e-bdd7-c4c499ad42c8.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-gidas-desktop.png"
+    },
+    {
+      "planId": "GY-gidas",
+      "device": "desktop",
+      "revisionHash": "e236573d6f4f8ed503a8295d532ccc3cd610ee9c163a9e62b6c96f3e85678960",
+      "htmlSha256": "74ab8decbb292a1fbd019574115e30d5c138235efa1a76f852e02d46ada3bc2d",
+      "checkedAt": "2026-10-09T22:39:39.050Z",
+      "title": "Gyvūno kirpimas ir kailio priežiūra: šuns, katės ir veterinaro poreikiai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Šuns kailio priežiūra kirpykloje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/4e959792-394f-47ee-956e-6b49b9a41881.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GY-gidas-desktop.png"
+    },
+    {
+      "planId": "IG-gidas",
+      "device": "desktop",
+      "revisionHash": "bcef381ffcec30539a92bd672f868bfc3c804b240eac02ad795f1a5ccc3a235d",
+      "htmlSha256": "461c09180364d241f24ca610771bd2697393700e4c6e7e9fca67b57cf45c60d7",
+      "checkedAt": "2026-10-09T22:39:39.333Z",
+      "title": "Purškiamas įdegis ir soliariumas: skirtingi metodai ir sveikatos ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Purškiamo įdegio darbo vieta",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/4e819dc7-cab8-4d03-b44a-82f64c464602.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\IG-gidas-desktop.png"
+    },
+    {
+      "planId": "KP-gidas",
+      "device": "desktop",
+      "revisionHash": "cb4d5f285fea5a35703177d10139a888b39fb09428aaf8f5d7c0bebacfa5b323",
+      "htmlSha256": "acba0532790decbea3bac34fc7d7cb5d63b70f5bf050265565b5cfaf6a620cfc",
+      "checkedAt": "2026-10-09T22:39:39.650Z",
+      "title": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Kūno priežiūros procedūros aptarimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/5e681c50-a4a6-49a0-bd4d-83d26384b41b.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-gidas-desktop.png"
+    },
+    {
+      "planId": "KT-gidas",
+      "device": "desktop",
+      "revisionHash": "730dbf4d54e892cc793dff87a6ce25f3da86e78a4b30b9da58c338f91b4b84b1",
+      "htmlSha256": "5c52753e46e6f8bdfe700cd4437f6649466bd94fd6cb19d829651a642a6ea2af",
+      "checkedAt": "2026-10-09T22:39:39.915Z",
+      "title": "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Kineziterapijos konsultacija judėjimo erdvėje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/b37fd229-874a-4ca8-932a-571a7fd40326.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KT-gidas-desktop.png"
+    },
+    {
+      "planId": "LZ-gidas",
+      "device": "desktop",
+      "revisionHash": "add8430b8478ae7c1d65db603f79f90ed754a681312b3173ffbce48de2203f2b",
+      "htmlSha256": "c3192c93056321dd1bae0b0de2d592c49ca670dfdcbce1655601dd09b5b56636",
+      "checkedAt": "2026-10-09T22:39:40.208Z",
+      "title": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Plaukų šalinimo lazeriu procedūrų kambarys",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/d2e32eab-615a-4299-8ded-c8a59c8edb45.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-gidas-desktop.png"
+    },
+    {
+      "planId": "MS-gidas",
+      "device": "desktop",
+      "revisionHash": "b3968d0e19cda8196ef6e1a2dfa900f99214615247c803032a0e2fb75bbb56a8",
+      "htmlSha256": "3733f2bec0cd35de264316b76a7c555c723626898e53ad92b224874a36454de7",
+      "checkedAt": "2026-10-09T22:39:40.794Z",
+      "title": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Masažo kambarys su paruošta kušete",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/fa5a52b5-fb99-47c8-9428-cfa588b30487.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-gidas-desktop.png"
+    },
+    {
+      "planId": "OD-gidas",
+      "device": "desktop",
+      "revisionHash": "9941554f49372d9892afffcd90656b87372d837b9a76b0c53a37c52e9c09a7dc",
+      "htmlSha256": "2a1d91451853ae07b1c4153e05fb349d117cba6816069c0baadedb072c833887",
+      "checkedAt": "2026-10-09T22:39:41.067Z",
+      "title": "Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Odontologijos konsultacijos kabinetas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/7b21f8b0-02d8-4412-a5e5-ac018842c3ce.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-gidas-desktop.png"
+    },
+    {
+      "planId": "PM-gidas",
+      "device": "desktop",
+      "revisionHash": "d676947a8cf47434e010588def896c8f68fb5fed6a3d00d7c0fa1962e3bf5683",
+      "htmlSha256": "1007bf6bfc80e83c513fa01022a426baf687fae8b82ceef6a0d63d3eb924b4e3",
+      "checkedAt": "2026-10-09T22:39:41.357Z",
+      "title": "Permanentinis makiažas: kas tai, zonos, privalumai ir ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Antakių ir veido apžiūra veidrodėlyje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/24dc5aac-3102-4cbe-85ea-d2b8f46aa492.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-gidas-desktop.png"
+    },
+    {
+      "planId": "PS-gidas",
+      "device": "desktop",
+      "revisionHash": "19e917d592436c934982c7e68c436406570b10e3b3e8e93b00c4e3ec58048cd8",
+      "htmlSha256": "3c241943d91067c627a6bf3189c2652022dff8ed4e9390d716cd70b2b88e03bc",
+      "checkedAt": "2026-10-09T22:39:41.669Z",
+      "title": "Psichologas, psichoterapija, porų ir šeimos konsultacija: skirtumai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Individualaus konsultavimo pokalbio aplinka",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/f00ae085-a7ad-4412-8b75-b8ec610d4a15.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-gidas-desktop.png"
+    },
+    {
+      "planId": "PX-gidas",
+      "device": "desktop",
+      "revisionHash": "3b344e1be1562cc0cbca8d2e7aedbe018d27f43813594b2bd407a08f59357839",
+      "htmlSha256": "5465fbb7dbfa6fafe65d575af8034a2e5d9c0b1c093949c65041da921fbdda88",
+      "checkedAt": "2026-10-09T22:39:41.999Z",
+      "title": "Plaukų priauginimas: tvirtinimo metodas, svoris ir priežiūros poreikis",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Plaukų priauginimo pavyzdžių aptarimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/e646b3b5-d005-4ec3-a08f-6774fb945490.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-gidas-desktop.png"
+    },
+    {
+      "planId": "RP-gidas",
+      "device": "desktop",
+      "revisionHash": "f1961852e67211106e0e7785988ff6dabcc8cdc121f2e2a5a4164e73b34f75c4",
+      "htmlSha256": "dab7d01acbaf4b90b2acc218cd27ac310738f028b86a71970b3bff54f012229f",
+      "checkedAt": "2026-10-09T22:39:42.308Z",
+      "title": "Rankų ir pėdų SPA: odos priežiūra, parafinas ir manikiūro skirtumai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Rankų SPA priemonės ir natūralūs nagai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/2909b132-c3e8-4c50-aded-0fffb6a4297b.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-gidas-desktop.png"
+    },
+    {
+      "planId": "SP-gidas",
+      "device": "desktop",
+      "revisionHash": "bf4272db4724ad0d9c8c98e683a0bf5852272a0aaa9366da14ea012d5229f7d1",
+      "htmlSha256": "2ef94f42ac24e44063822831ad1883a006bc2aba86aaa80a9d0d155453af8747",
+      "checkedAt": "2026-10-09T22:39:42.720Z",
+      "title": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "SPA poilsio erdvė ir pirties zona",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/943922e1-b34d-4002-8b8f-9ccd146db3fc.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-gidas-desktop.png"
+    },
+    {
+      "planId": "SV-gidas",
+      "device": "desktop",
+      "revisionHash": "4e856d6d8d638f1e6c9fb7254e386212204964c468aa3f3e6d2f0b8439550513",
+      "htmlSha256": "079f65a35f28ed19d4449c4c54a9e7024eb1b77c8e5aae9ec4a6eb84bb2b667f",
+      "checkedAt": "2026-10-09T22:39:43.079Z",
+      "title": "Meditacija, kvėpavimas ir garso seansai: formatai ir įrodymų ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Atsipalaidavimo užsiėmimo aplinka",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/75268ed6-92d7-48de-a7d6-cee6451cc23d.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SV-gidas-desktop.png"
+    },
+    {
+      "planId": "TT-gidas",
+      "device": "desktop",
+      "revisionHash": "16f6945e70469f1d8b7279b97dc373ff1b2a9c41b1ddd9b5ea881cb5e64230d6",
+      "htmlSha256": "1c2b7d6d6f339a854ef222b5e298370e5ea817d0b5fe667c555094f1b3769102",
+      "checkedAt": "2026-10-09T22:39:43.389Z",
+      "title": "Tatuiruotės pasirinkimas: idėja, vieta, eskizas ir atsakingi klausimai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Tatuiruotės eskizo ruošimo darbo vieta",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/65116cdc-0633-4205-9540-472ce3f273e8.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-gidas-desktop.png"
+    },
+    {
+      "planId": "VP-gidas",
+      "device": "desktop",
+      "revisionHash": "bcf7494be5c02226a756dc6623b2bc47661e32c6b152368058e2bbe4f6fa1523",
+      "htmlSha256": "b53945029dca45265cbc78326dba7be93e19f6e595c1da9226781c350bec9f8c",
+      "checkedAt": "2026-10-09T22:39:43.709Z",
+      "title": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Veido priežiūros konsultacija",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/0eeee0c0-146f-4cb8-b299-638960f266ab.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-gidas-desktop.png"
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "device": "desktop",
+      "revisionHash": "ae6689160e008a3a5ae94603907095c125186c73e34f052c3cc43086d3bdc527",
+      "htmlSha256": "b82716654279eb0301fb9058bf463714e41b00617b838df70bb04d470dd62b3f",
+      "checkedAt": "2026-10-09T22:39:43.983Z",
+      "title": "Meistrui: darbų fotografavimas, spalvos tikslumas ir publikavimo teisės",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Nagų darbo fotografavimas neutralioje šviesoje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/5f64afeb-ccd2-439a-ad78-d2dc326a50de.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\B-meistrui-galerija-desktop.png"
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "device": "desktop",
+      "revisionHash": "1500dae5738b9437daf513afdb705728b839542039fd607311235a9255c1f97f",
+      "htmlSha256": "0bec6b32cafd07c056db9010f7c99b3bb79122101b86e4ad27f3725ba6a1a6c3",
+      "checkedAt": "2026-10-09T22:39:44.266Z",
+      "title": "Auskarų vėrimo kaina ir trukmė: papuošalas, vieta ir kontrolinis vizitas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Auskarų papuošalai atskirose dėžutėse",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/6b522e29-26d8-44c1-86da-41a6bce27014.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-kaina-trukme-desktop.png"
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "device": "desktop",
+      "revisionHash": "2208e9ebe981db9e0caaaadf4cd5a8e3a618716123c19a88b5f35460bed104ff",
+      "htmlSha256": "98bed18fd15e2fae0e3fc4c787ba9670a94319ee5d8c6f5caf851794d0379ba6",
+      "checkedAt": "2026-10-09T22:39:44.522Z",
+      "title": "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Kūno procedūros vizito aptarimas registratūroje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/0b2f2acc-baad-4c00-b6d1-02c84a7e93c4.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-kaina-trukme-desktop.png"
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "device": "desktop",
+      "revisionHash": "e7501bc94051bb5f0509182481b7a93d010d87eb5b815db72812111dd222e45b",
+      "htmlSha256": "5446b452141396d03c729a4b9747356dd7993bcbd58a24e23e491436dbc69b2d",
+      "checkedAt": "2026-10-09T22:39:44.769Z",
+      "title": "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Plaukų šalinimo vizito planavimo priemonės",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/52dfe916-cedf-4e81-a5bf-da8dabe3dbed.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-kaina-trukme-desktop.png"
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "device": "desktop",
+      "revisionHash": "783b50df8e004f95517bf09107eef10dcf28f3597ad6bf1d946ba5df9ae74d82",
+      "htmlSha256": "8c984a78e772b6a11e7d3ea2eba0ff680ed672454d5035ec5a4e02cf4cb4e313",
+      "checkedAt": "2026-10-09T22:39:45.025Z",
+      "title": "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Masažo laiko ir darbo vietos paruošimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/ccf62c7d-5c81-4c9c-9d2d-68a5be2f6b70.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-kaina-trukme-desktop.png"
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "device": "desktop",
+      "revisionHash": "444849302ea04de55fe33e1bbe1db61d87ab236fc80dc6c42e4b0262c257381b",
+      "htmlSha256": "2247533df01ef03f0e9b3513bb4333dd1cca24a1deb8ac1c25f7db7d6ff2acbc",
+      "checkedAt": "2026-10-09T22:39:45.284Z",
+      "title": "Veido priežiūros kaina ir trukmė: konsultacija, metodas bei papildomi darbai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Veido priežiūros paketo priemonės",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/91e6f4dc-df17-476e-b59f-f2c97b44b4d7.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-kaina-trukme-desktop.png"
+    },
+    {
+      "planId": "DP-kojos",
+      "device": "desktop",
+      "revisionHash": "943adc1d4cf082a5a40cdce0ffe83b386ae64743287913b4981239f4240577e4",
+      "htmlSha256": "b9db0102237a8ed704ba7aaf4018b0b95a9930ab3b8511ac24494a993394558d",
+      "checkedAt": "2026-10-09T22:39:45.552Z",
+      "title": "Kojų depiliacija: blauzdos, šlaunys ar visos kojos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Blauzdų ir kojų depiliacijos zonos aptarimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/9efb5c0e-2163-4c87-86d0-d23eda2a4cfc.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-kojos-desktop.png"
+    },
+    {
+      "planId": "GL-nuemimas",
+      "device": "desktop",
+      "revisionHash": "ede969214055ddd03440d598f6969509e489b9662aeebc4dc0f8392bacb91acc",
+      "htmlSha256": "1c3c924f28efce49351e0fb9d1c7316ceabd004629f3d6e124b215bf3ea62484",
+      "checkedAt": "2026-10-09T22:39:45.821Z",
+      "title": "Nagų lako nuėmimas: paprasta danga, gelinis lakas ir naujas padengimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Natūralūs nagai ir uždara lako nuėmimo priemonė",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/d410d52c-37b5-4d41-bc66-78440d1837f3.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-nuemimas-desktop.png"
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "device": "desktop",
+      "revisionHash": "6b83db0017513763c4588452f5150e7804df1c349bd4ff385c6e5c664579d22d",
+      "htmlSha256": "828753cd90ef38fe0f2fbc3dc89d09a58a7c769f919336dd565686c8b01bd450",
+      "checkedAt": "2026-10-09T22:39:46.073Z",
+      "title": "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Trumpi natūralūs nagai be lakavimo",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/ed3b8d74-6733-4346-8f04-2bfe85fa6665.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-be-lakavimo-desktop.png"
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "device": "desktop",
+      "revisionHash": "80357c97889606c3419f57bc147b243c7e4d6ad7ac9ea5c9cce6fd2fd806533c",
+      "htmlSha256": "0a22c7a0f1d0dd76966a914460373eb2d4425a1da78d8b6203a95719cf682d52",
+      "checkedAt": "2026-10-09T22:39:46.352Z",
+      "title": "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Masažo darbo vietos ir kūno atramos",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/ad065022-cdee-4bf2-a90c-0d788d462d47.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-nugara-ar-kunas-desktop.png"
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "device": "desktop",
+      "revisionHash": "c6408477644e688d1c371c830319ddfbd11bdd407f57e3cbc10e5a86f371de0e",
+      "htmlSha256": "06a1c6612e2c1af0ae5791439fef32b8d5f7c8bcf7fc1cf428d31e2664bfda5d",
+      "checkedAt": "2026-10-09T22:39:46.608Z",
+      "title": "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Pedikiūro darbo vietos paruošimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/f34de46d-7a15-4cc0-b34b-404feae1bd18.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PD-kaina-trukme-desktop.png"
+    },
+    {
+      "planId": "VP-konsultacija",
+      "device": "desktop",
+      "revisionHash": "2642547a0ba553d176aa51f0e84ca1476fe8b31b6010f90c32795e5ef22a0313",
+      "htmlSha256": "05429c030d2583104ad07f0a5155277d27d116a5d976f116ae9ae323909981e4",
+      "checkedAt": "2026-10-09T22:39:46.908Z",
+      "title": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Pirmosios veido priežiūros konsultacijos pokalbis",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/cdff9692-911e-4118-aee4-e422477c02b3.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-konsultacija-desktop.png"
+    },
+    {
+      "planId": "MN-trukme",
+      "device": "desktop",
+      "revisionHash": "cd0564d81b1d903cf082851385697c000000458d113225c55a8ceef282afabee",
+      "htmlSha256": "1216762ed0e93479e13d6a8bc5fd1ced64635404c8be22b3b2ea9318311d780e",
+      "checkedAt": "2026-10-09T22:39:47.170Z",
+      "title": "Kiek trunka manikiūras ir kas prailgina vizitą?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Manikiūro vizito trukmės aptarimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/11d42739-14a6-4bf1-ba30-e8e161fe6bfc.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-trukme-desktop.png"
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "device": "desktop",
+      "revisionHash": "48538c483ab5262d197d851978d4cf6ef6b9346b954bcb21fe90dd8e31c9d9ec",
+      "htmlSha256": "afacfaae6f1b51ca5b345feb564e9c032842f3475e3d8808fdc483fa84c2a91a",
+      "checkedAt": "2026-10-09T22:39:47.455Z",
+      "title": "Mezoterapija ir biorevitalizacija: ką reikia žinoti apie konkretų metodą ir priemonę",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Estetinės procedūros priemonės informacijos aptarimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/521c14bd-0e11-4db1-98e5-b565a01a1c59.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mezoterapija-biorevitalizacija-desktop.png"
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "device": "desktop",
+      "revisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+      "htmlSha256": "810a971ef802dffdeeb3f0b45cc0fefd48d20cf57f7d4566d0b11e3604ca25d5",
+      "checkedAt": "2026-10-09T22:39:47.729Z",
+      "title": "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Jogos ir pilateso inventorius studijoje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/ac627e7f-05d2-4b72-89a1-3b636cc3895e.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-joga-pilatesas-desktop.png"
+    },
+    {
+      "planId": "OD-balinimas",
+      "device": "desktop",
+      "revisionHash": "98ca195e9f28580149d6e12a88c418ce2792a7f793685b82760b6e88cbf95885",
+      "htmlSha256": "2dc63244d94c9f92a771c0d3457e7029c4dcf6aefa9840ca5f0c1b8928a4a7ff",
+      "checkedAt": "2026-10-09T22:39:47.994Z",
+      "title": "Dantų balinimo konsultacija: natūrali spalva, restauracijos ir metodų ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Natūrali dantų spalva portreto kadre",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/0a8cfe15-2227-48b9-a05c-4b9b3bb3f83c.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-balinimas-desktop.png"
+    },
+    {
+      "planId": "PM-antakiai",
+      "device": "desktop",
+      "revisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+      "htmlSha256": "a3a245be64a5b0e07d8a06787660336b4fe9f85909e0d397515e1603a3c676e2",
+      "checkedAt": "2026-10-09T22:39:48.279Z",
+      "title": "Ilgalaikis antakių makiažas: forma, pigmentas ir metodo pasirinkimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Antakių formos aptarimas veidrodėlyje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/ec4ed6e5-7915-4721-9578-7f0cb5e6883a.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-antakiai-desktop.png"
+    },
+    {
+      "planId": "PS-poros-seima",
+      "device": "desktop",
+      "revisionHash": "e4ea8043859b14b05c8de19e0d9660ea35e43f4827baf2b82e9fc2c8502ef941",
+      "htmlSha256": "62bc111c8aa684313a3847082ae2a3a1875915344d73a61b1e113ced54c5698e",
+      "checkedAt": "2026-10-09T22:39:48.558Z",
+      "title": "Porų ar šeimos konsultacija: dalyvavimas, tikslas ir konfidencialumo susitarimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Porų konsultacijos pokalbio erdvė",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/d5814224-5ca5-4bea-97b1-cd1446c47f33.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-poros-seima-desktop.png"
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "device": "desktop",
+      "revisionHash": "98276fd65c335b8700e4ac1764db17b9eb21bb0741f947a45bdcca28ff4b2e8c",
+      "htmlSha256": "15546a5f399a6e98ed393142998e721e207166bece20087aa89d6da92f9eaaa8",
+      "checkedAt": "2026-10-09T22:39:48.847Z",
+      "title": "Priaugintų plaukų korekcija ir nuėmimas: atskiros darbų apimtys",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Priaugintų plaukų pavyzdžiai ir priemonės",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/2f9c3746-3d1d-4601-8619-0824c4562b25.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-korekcija-nuemimas-desktop.png"
+    },
+    {
+      "planId": "RP-parafinas",
+      "device": "desktop",
+      "revisionHash": "19999a97a41f9c93b3ac2aad6dd11375c69ed5ee7bbe344052324c09a8c5f091",
+      "htmlSha256": "ad2d62d5aa74d65426eeac2dfa2cec6682e87f4d0a8dd805086a29e6c24c8ef0",
+      "checkedAt": "2026-10-09T22:39:49.129Z",
+      "title": "Parafino procedūra rankoms ar pėdoms: šildomas ir šaltas variantas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Parafino ir rankų priežiūros priemonės",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/d56a7e6b-5bc2-4cc7-9e48-dc8a3beb66b1.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-parafinas-desktop.png"
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "device": "desktop",
+      "revisionHash": "8a6d83333e71631b936d073d25d904545ce42b33becd2a523e7615123a52eb24",
+      "htmlSha256": "ee17606d991dbcfbbd6d518d479f7f9151a2492c93720f8b7eed2b5b5cc80108",
+      "checkedAt": "2026-10-09T22:39:49.367Z",
+      "title": "Galvos SPA: plaukų priežiūra, masažas ir ritualo apimtis",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Galvos SPA darbo vieta",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/67b41743-b53b-4650-a57e-daac929f243a.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-galvos-spa-desktop.png"
+    },
+    {
+      "planId": "TT-eskizas",
+      "device": "desktop",
+      "revisionHash": "1680dc78672bc6708441a135fbda9edd0f8b052109cb302066ca2af9cc4bacaf",
+      "htmlSha256": "e4965745418517a595bfc132814f97e84a49c477d4097521fd8d31d8d027373c",
+      "checkedAt": "2026-10-09T22:39:49.672Z",
+      "title": "Tatuiruotės eskizo konsultacija: stilius, mastelis ir autorystė",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Tatuiruotės eskizo konsultacija",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/95ce981e-a115-4814-81cc-d61250f568c0.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-eskizas-desktop.png"
+    },
+    {
+      "planId": "AV-metodai",
+      "device": "desktop",
+      "revisionHash": "617ac86ea4b832c13b08309dfc5283bb802b6aafdc745299a6201fdb92244933",
+      "htmlSha256": "7a6d2e900ffea4bbd68f42ce44a3b2a942007def0051354a8917fad3a28a461c",
+      "checkedAt": "2026-10-09T22:39:49.953Z",
+      "title": "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Uždarytos auskarų vėrimo priemonių pakuotės",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/c721066a-153a-4e53-b9bb-c8a2f531e5bd.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-metodai-desktop.png"
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "device": "desktop",
+      "revisionHash": "079d340a9e40118a80ae2570d957b9075bcb8425ee94c57a67cfc998babe8d64",
+      "htmlSha256": "f8df11ff22078aeb3faf509e67d1d105f12fb8f722e4551eddc6170902078307",
+      "checkedAt": "2026-10-09T22:39:50.245Z",
+      "title": "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Dažymo technikos aptarimas salone",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/6181069d-d53e-4c74-b23c-1ef9442dd085.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-balayage-airtouch-desktop.png"
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "device": "desktop",
+      "revisionHash": "ff025ecd41635444dc66df1a9fafd1f1d18626efc4d20e8ce331e71a02d4e094",
+      "htmlSha256": "14a70a9f2937fa45ae202cb27744b8a282b4507fcaae70db778859a7fe10f52b",
+      "checkedAt": "2026-10-09T22:39:50.526Z",
+      "title": "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Mikroadatinės procedūros įrenginio aptarimas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/9de8b4b0-d499-4a3a-90dc-f5fe4a9ae3ab.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mikroadatine-desktop.png"
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "device": "desktop",
+      "revisionHash": "4ebd5fd0710f8067d1adb99eb38e5aba5ece851bae20ada02ad42cd04ccb77dc",
+      "htmlSha256": "b1b285e68b6784811ce08052d213479d6099b69bbf2103fe774607f7f6126ea0",
+      "checkedAt": "2026-10-09T22:39:50.813Z",
+      "title": "Kūno įvyniojimai: priemonė, ritualas ir pažadų ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Kūno įvyniojimo tekstilė ir kosmetikos priemonė",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/9a695fe6-256a-4519-bb1c-3032e03bec46.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-ivyniojimas-desktop.png"
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "device": "desktop",
+      "revisionHash": "3b86819253b6ab255cc0a9a7a24c747c9860d65c0bb937895d947dc4ee9d8ff1",
+      "htmlSha256": "0b7eb4af7221906438e1a0043f40d6815d57d5506ebfd555e96a6099ebc46991",
+      "checkedAt": "2026-10-09T22:39:51.068Z",
+      "title": "Lazeris ir IPL plaukų šalinimui: kuo skiriasi technologijos pavadinimai?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Du nepažymėti šviesos procedūrų antgaliai iliustracinėje aplinkoje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/ea9934a1-4ab0-4797-b269-5b2f5ff02908.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-lazeris-ipl-desktop.png"
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "device": "desktop",
+      "revisionHash": "e1b8c80293156c15c129cb714431a3efb0c7d4f302edd0040212b169e2e8c8f1",
+      "htmlSha256": "e3e0a47fd75d5ddd69683fc5602a7b545d893fc5c4fb4ba79c6db6281c8780c1",
+      "checkedAt": "2026-10-09T22:39:51.283Z",
+      "title": "Chrome ir cat-eye nagai: du skirtingi šviesos efektai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Du skirtingi šviesos efektai nagų dizaine",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/02bf158a-a1ad-4fc0-bb26-c859677526f7.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ND-chrome-cat-eye-desktop.png"
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "device": "desktop",
+      "revisionHash": "2b5548a86bfeb0fdae2b365841f4943129d4f654a28425d46cf1154d7c889d2d",
+      "htmlSha256": "c37d764192cf2f7bc082ff79be5f0299d3f03ab0f6d61444216a39f157ef9dff",
+      "checkedAt": "2026-10-09T22:39:51.564Z",
+      "title": "Nagų priauginimo formos ir tipsai: ką reiškia paslaugos metodas?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Nagų tipsų ir formų pavyzdžiai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/18032cc0-1657-4c15-b96c-2d44d599dbf3.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\NP-formos-tipsai-desktop.png"
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "device": "desktop",
+      "revisionHash": "06e05cbac3f0dcd1cc4d7c6d861f5bacd689b3c6d4b0f7254c4929f6675db4a4",
+      "htmlSha256": "45493167a17768b3f4a0950333fe7b74aba830ac84aaae59ac5d7d32fb5c678c",
+      "checkedAt": "2026-10-09T22:39:51.832Z",
+      "title": "Ilgalaikis lūpų ir akių makiažas: skirtingos zonos ir vizito klausimai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Lūpų ir akių zonos natūraliame portrete",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/9a72710e-187b-4da2-a908-594a9e7fc854.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-lupos-akys-desktop.png"
+    },
+    {
+      "planId": "PP-atstatymas",
+      "device": "desktop",
+      "revisionHash": "39893d5694e634b94f62e31fcb0caebbebf2b4f702e2dfc5eefbd82d438d76e8",
+      "htmlSha256": "7b535fa7af4dc918550ff892610aaf26862c9016168ce599905b9961168ed2ab",
+      "checkedAt": "2026-10-09T22:39:52.117Z",
+      "title": "„Plaukų atstatymas“: ką reiškia pasiūlymas ir kokių įrodymų reikia?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Plaukų galiukų ir tekstūros vaizdas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/365a7fdf-b7ab-4623-a42f-2d0081e061c0.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PP-atstatymas-desktop.png"
+    },
+    {
+      "planId": "SP-hamamas",
+      "device": "desktop",
+      "revisionHash": "e24466418b53d6124f98be0e96353d15f0c701365249ca3ffa3f5a662cd04fac",
+      "htmlSha256": "ee119c745b125277f6a2d2bf89385bfd1f7175cb7882a888ccec45d36cf5a6a1",
+      "checkedAt": "2026-10-09T22:39:52.381Z",
+      "title": "Hamamas, garinė pirtis ir pirtis: kuo skiriasi patirtis ir pasiūlymas?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Hamamo erdvė su akmeniniu suolu",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/e5efcfdb-81ba-429e-98f2-0660b8183160.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-hamamas-desktop.png"
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "device": "desktop",
+      "revisionHash": "2cb41e6b980e0a70237672550259915b525e49a150f0825e69111cd1f05f0692",
+      "htmlSha256": "2de3d511da6c61c6dc39881412e13aff6e62950d47d571142b0f937b5a7602d8",
+      "checkedAt": "2026-10-09T22:39:52.655Z",
+      "title": "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Antakių spalvos priemonių pavyzdžiai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/84f5ba0d-a190-4eb6-a9cc-643ec3702e15.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AN-dazai-henna-desktop.png"
+    },
+    {
+      "planId": "AV-papuosalas",
+      "device": "desktop",
+      "revisionHash": "35b93c380d057e13b9d4c70b447fccfd721393f6dd1d25ecb9f08db8319d16b8",
+      "htmlSha256": "1be42ea84424371123f81fb2facd3c3fb466397cb08943ce656ab2591ffeb23b",
+      "checkedAt": "2026-10-09T22:39:52.937Z",
+      "title": "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Auskaro forma ir papuošalo dokumentų aplankas",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/87c74845-293c-40df-b1bb-6619bd2b76c1.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-papuosalas-desktop.png"
+    },
+    {
+      "planId": "BL-dazymas",
+      "device": "desktop",
+      "revisionHash": "5fd62b719aaac9776dbabd806ee3f7bb5c90ed20cb272ea3ae7cef03d1925a6e",
+      "htmlSha256": "3726f7d23543ea8214dc6371455bdd0f210f0bbb1d66ac027133a465dd16aed8",
+      "checkedAt": "2026-10-09T22:39:53.183Z",
+      "title": "Blakstienų dažymas: ką jis keičia ir ko nesuteikia?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Natūralios blakstienos šviesiame portrete",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/f452609b-7c0e-4669-80d6-6ce84932a42b.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BL-dazymas-desktop.png"
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "device": "desktop",
+      "revisionHash": "eddbfbbc53f2c35b5deb861411349fe656d51e6a6dbb11ff445bf953bcba3c82",
+      "htmlSha256": "419a84f73811e0af8c14a3b3c9941715e3f9317180fe5f689029e770fa12923a",
+      "checkedAt": "2026-10-09T22:39:53.442Z",
+      "title": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Barzdos formavimo ir skutimo priemonės",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/b3f889bf-2f15-44c9-a360-5a13f8f0e0b1.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BR-masinele-skutimas-desktop.png"
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "device": "desktop",
+      "revisionHash": "b8d7861c4f8d3a74f9591dbf11b3dca0633415e4d7954a537e3f0b3d7abeb53d",
+      "htmlSha256": "3f04d2b7d30ce77426d47133d6fe12a38dfc3254aa4d482300eebb3adf882bb8",
+      "checkedAt": "2026-10-09T22:39:53.691Z",
+      "title": "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtumai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Plaukelių šalinimo metodo konsultacija",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/44a1ddc6-9d7d-4e56-92ab-9d72601acb22.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-ar-lazeris-desktop.png"
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "device": "desktop",
+      "revisionHash": "bb19b8b36314dd8de3c187e62b2c8334262e1c91269233f4422d16e0d76e1ae9",
+      "htmlSha256": "a3187e3040e6da5423bbbe82fbc34afd48609c22fb6ef031313fa45a5aa91694",
+      "checkedAt": "2026-10-09T22:39:53.966Z",
+      "title": "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Plaukų spalvos perėjimas ilgyje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/b533e34e-e360-454b-b158-59e14f5b941d.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-ombre-sombre-desktop.png"
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "device": "desktop",
+      "revisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+      "htmlSha256": "d388baa8ca9707d099dc5b24b35c1531304d6ebac67be41714d01834eb645864",
+      "checkedAt": "2026-10-09T22:39:54.252Z",
+      "title": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Skirtingos nagų dangos ir ilgio pavyzdžiai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/1d5d9808-d3c2-4994-b8b2-c57006cd0475.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-ar-stiprinimas-desktop.png"
+    },
+    {
+      "planId": "KP-sveitimas",
+      "device": "desktop",
+      "revisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+      "htmlSha256": "53ab6fc34d58656178779fadfa5c469b46995c53d00eb88b70ec9c0140f3ee7f",
+      "checkedAt": "2026-10-09T22:39:54.549Z",
+      "title": "Kūno šveitimas: kosmetinės procedūros apimtis ir priežiūra",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Kūno šveitimo priemonė ir pirštinė",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/238367c2-5d32-4c6b-a972-e11a8675bb1f.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-sveitimas-desktop.png"
+    },
+    {
+      "planId": "LZ-zonos",
+      "device": "desktop",
+      "revisionHash": "37833ab0b89baeffedad8b3e46a59f1c9f3d7f0ee9fb872a5eb9977f43a88817",
+      "htmlSha256": "0101625bf32b161c9b2d01a469877709d462b3ef569dfcf1e74d84350f3ed1a2",
+      "checkedAt": "2026-10-09T22:39:54.817Z",
+      "title": "Lazerinio plaukų šalinimo zonos: veidas, pažastys, bikini ir kūnas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Vyras konsultacijoje aptaria dilbio zonos apimtį",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/a206a34a-731f-4ec8-a193-7ac566d0db02.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-zonos-desktop.png"
+    },
+    {
+      "planId": "AV-gidas",
+      "device": "mobile",
+      "revisionHash": "60006cee58e1ffdc70b7984d34fc8283f820a4cd781d3c42e5949d5896b80483",
+      "htmlSha256": "fd628314ce685d0202ec91cc95673df20403553bf8e8b9b2865928456208321e",
+      "checkedAt": "2026-10-09T22:39:56.022Z",
+      "title": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Ausies papuošalas šoniniame portrete",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/8a3381bb-6019-41e0-ac37-b040a95efb1e.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-gidas-mobile.png"
+    },
+    {
+      "planId": "ES-gidas",
+      "device": "mobile",
+      "revisionHash": "5519ee0707bb8ba3e285fc552dd754b32b14c00e024b32c524a8fbc275ab96c1",
+      "htmlSha256": "722380549a6d06afa3b8858a8fada22bba5941193ae6e02ccdeea279648bb349",
+      "checkedAt": "2026-10-09T22:39:56.213Z",
+      "title": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Estetinės konsultacijos pokalbis prie stalo",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/49fda891-3f5d-47b8-9199-63889f5eb154.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-gidas-mobile.png"
+    },
+    {
+      "planId": "FX-gidas",
+      "device": "mobile",
+      "revisionHash": "7f9724b3b10cb6c59542e6d0b7d0cf1b2f1eb0b1ea53474be610a31d55737805",
+      "htmlSha256": "55ccfe05426330b68f426fb6a2a88dddf1a8a87e973886616b6d67320a654f37",
+      "checkedAt": "2026-10-09T22:39:56.377Z",
+      "title": "Treniruotės pasirinkimas: individualus, grupinis, pilateso ar jogos formatas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Grupinės treniruotės dalyviai studijoje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/cc73f0de-6fcb-45c1-afba-0bdd058f5914.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-gidas-mobile.png"
+    },
+    {
+      "planId": "GY-gidas",
+      "device": "mobile",
+      "revisionHash": "e236573d6f4f8ed503a8295d532ccc3cd610ee9c163a9e62b6c96f3e85678960",
+      "htmlSha256": "74ab8decbb292a1fbd019574115e30d5c138235efa1a76f852e02d46ada3bc2d",
+      "checkedAt": "2026-10-09T22:39:56.543Z",
+      "title": "Gyvūno kirpimas ir kailio priežiūra: šuns, katės ir veterinaro poreikiai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Šuns kailio priežiūra kirpykloje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/49b24f4f-bcab-4939-870f-5c9ad5e726cc.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GY-gidas-mobile.png"
+    },
+    {
+      "planId": "IG-gidas",
+      "device": "mobile",
+      "revisionHash": "bcef381ffcec30539a92bd672f868bfc3c804b240eac02ad795f1a5ccc3a235d",
+      "htmlSha256": "461c09180364d241f24ca610771bd2697393700e4c6e7e9fca67b57cf45c60d7",
+      "checkedAt": "2026-10-09T22:39:56.708Z",
+      "title": "Purškiamas įdegis ir soliariumas: skirtingi metodai ir sveikatos ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Purškiamo įdegio darbo vieta",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/c1318bcf-ae39-4edb-8d26-15db39ae5dda.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\IG-gidas-mobile.png"
+    },
+    {
+      "planId": "KP-gidas",
+      "device": "mobile",
+      "revisionHash": "cb4d5f285fea5a35703177d10139a888b39fb09428aaf8f5d7c0bebacfa5b323",
+      "htmlSha256": "acba0532790decbea3bac34fc7d7cb5d63b70f5bf050265565b5cfaf6a620cfc",
+      "checkedAt": "2026-10-09T22:39:56.926Z",
+      "title": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Kūno priežiūros procedūros aptarimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/3ae09f7d-0f0f-4f32-acf5-d87f257dc923.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-gidas-mobile.png"
+    },
+    {
+      "planId": "KT-gidas",
+      "device": "mobile",
+      "revisionHash": "730dbf4d54e892cc793dff87a6ce25f3da86e78a4b30b9da58c338f91b4b84b1",
+      "htmlSha256": "5c52753e46e6f8bdfe700cd4437f6649466bd94fd6cb19d829651a642a6ea2af",
+      "checkedAt": "2026-10-09T22:39:57.089Z",
+      "title": "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Kineziterapijos konsultacija judėjimo erdvėje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/a4b97871-e071-4c7d-9e47-116dc477d64c.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KT-gidas-mobile.png"
+    },
+    {
+      "planId": "LZ-gidas",
+      "device": "mobile",
+      "revisionHash": "add8430b8478ae7c1d65db603f79f90ed754a681312b3173ffbce48de2203f2b",
+      "htmlSha256": "c3192c93056321dd1bae0b0de2d592c49ca670dfdcbce1655601dd09b5b56636",
+      "checkedAt": "2026-10-09T22:39:57.277Z",
+      "title": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Plaukų šalinimo lazeriu procedūrų kambarys",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/58611160-a4f7-488f-9445-aee069bc5dcb.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-gidas-mobile.png"
+    },
+    {
+      "planId": "MS-gidas",
+      "device": "mobile",
+      "revisionHash": "b3968d0e19cda8196ef6e1a2dfa900f99214615247c803032a0e2fb75bbb56a8",
+      "htmlSha256": "3733f2bec0cd35de264316b76a7c555c723626898e53ad92b224874a36454de7",
+      "checkedAt": "2026-10-09T22:39:57.617Z",
+      "title": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Masažo kambarys su paruošta kušete",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/5d0581cc-782f-4b90-91cc-2b7082df0e32.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-gidas-mobile.png"
+    },
+    {
+      "planId": "OD-gidas",
+      "device": "mobile",
+      "revisionHash": "9941554f49372d9892afffcd90656b87372d837b9a76b0c53a37c52e9c09a7dc",
+      "htmlSha256": "2a1d91451853ae07b1c4153e05fb349d117cba6816069c0baadedb072c833887",
+      "checkedAt": "2026-10-09T22:39:57.782Z",
+      "title": "Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Odontologijos konsultacijos kabinetas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/0584678e-c187-454d-b590-deead86fb809.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-gidas-mobile.png"
+    },
+    {
+      "planId": "PM-gidas",
+      "device": "mobile",
+      "revisionHash": "d676947a8cf47434e010588def896c8f68fb5fed6a3d00d7c0fa1962e3bf5683",
+      "htmlSha256": "1007bf6bfc80e83c513fa01022a426baf687fae8b82ceef6a0d63d3eb924b4e3",
+      "checkedAt": "2026-10-09T22:39:57.984Z",
+      "title": "Permanentinis makiažas: kas tai, zonos, privalumai ir ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Antakių ir veido apžiūra veidrodėlyje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/10a548ee-d8de-4db0-b1e9-04921ab65286.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-gidas-mobile.png"
+    },
+    {
+      "planId": "PS-gidas",
+      "device": "mobile",
+      "revisionHash": "19e917d592436c934982c7e68c436406570b10e3b3e8e93b00c4e3ec58048cd8",
+      "htmlSha256": "3c241943d91067c627a6bf3189c2652022dff8ed4e9390d716cd70b2b88e03bc",
+      "checkedAt": "2026-10-09T22:39:58.170Z",
+      "title": "Psichologas, psichoterapija, porų ir šeimos konsultacija: skirtumai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Individualaus konsultavimo pokalbio aplinka",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/f93c9861-7887-410a-8776-13d021856fec.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-gidas-mobile.png"
+    },
+    {
+      "planId": "PX-gidas",
+      "device": "mobile",
+      "revisionHash": "3b344e1be1562cc0cbca8d2e7aedbe018d27f43813594b2bd407a08f59357839",
+      "htmlSha256": "5465fbb7dbfa6fafe65d575af8034a2e5d9c0b1c093949c65041da921fbdda88",
+      "checkedAt": "2026-10-09T22:39:58.350Z",
+      "title": "Plaukų priauginimas: tvirtinimo metodas, svoris ir priežiūros poreikis",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Plaukų priauginimo pavyzdžių aptarimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/11beed55-ca01-4099-90e5-a2267b4e8d75.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-gidas-mobile.png"
+    },
+    {
+      "planId": "RP-gidas",
+      "device": "mobile",
+      "revisionHash": "f1961852e67211106e0e7785988ff6dabcc8cdc121f2e2a5a4164e73b34f75c4",
+      "htmlSha256": "dab7d01acbaf4b90b2acc218cd27ac310738f028b86a71970b3bff54f012229f",
+      "checkedAt": "2026-10-09T22:39:58.519Z",
+      "title": "Rankų ir pėdų SPA: odos priežiūra, parafinas ir manikiūro skirtumai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Rankų SPA priemonės ir natūralūs nagai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/264612fc-82a6-4991-abb8-805f57d29ea0.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-gidas-mobile.png"
+    },
+    {
+      "planId": "SP-gidas",
+      "device": "mobile",
+      "revisionHash": "bf4272db4724ad0d9c8c98e683a0bf5852272a0aaa9366da14ea012d5229f7d1",
+      "htmlSha256": "2ef94f42ac24e44063822831ad1883a006bc2aba86aaa80a9d0d155453af8747",
+      "checkedAt": "2026-10-09T22:39:58.689Z",
+      "title": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "SPA poilsio erdvė ir pirties zona",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/a749b83a-6e82-49e2-a40f-374ce1d55018.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-gidas-mobile.png"
+    },
+    {
+      "planId": "SV-gidas",
+      "device": "mobile",
+      "revisionHash": "4e856d6d8d638f1e6c9fb7254e386212204964c468aa3f3e6d2f0b8439550513",
+      "htmlSha256": "079f65a35f28ed19d4449c4c54a9e7024eb1b77c8e5aae9ec4a6eb84bb2b667f",
+      "checkedAt": "2026-10-09T22:39:58.877Z",
+      "title": "Meditacija, kvėpavimas ir garso seansai: formatai ir įrodymų ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Atsipalaidavimo užsiėmimo aplinka",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/9dda770a-fbf2-4b21-892d-a67eca3ff542.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SV-gidas-mobile.png"
+    },
+    {
+      "planId": "TT-gidas",
+      "device": "mobile",
+      "revisionHash": "16f6945e70469f1d8b7279b97dc373ff1b2a9c41b1ddd9b5ea881cb5e64230d6",
+      "htmlSha256": "1c2b7d6d6f339a854ef222b5e298370e5ea817d0b5fe667c555094f1b3769102",
+      "checkedAt": "2026-10-09T22:39:59.067Z",
+      "title": "Tatuiruotės pasirinkimas: idėja, vieta, eskizas ir atsakingi klausimai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Tatuiruotės eskizo ruošimo darbo vieta",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/e4b90e3a-5f74-43a8-9d16-e4bc62808012.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-gidas-mobile.png"
+    },
+    {
+      "planId": "VP-gidas",
+      "device": "mobile",
+      "revisionHash": "bcf7494be5c02226a756dc6623b2bc47661e32c6b152368058e2bbe4f6fa1523",
+      "htmlSha256": "b53945029dca45265cbc78326dba7be93e19f6e595c1da9226781c350bec9f8c",
+      "checkedAt": "2026-10-09T22:39:59.295Z",
+      "title": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Veido priežiūros konsultacija",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/86400da9-0d1a-477d-a64d-47e336decac0.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-gidas-mobile.png"
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "device": "mobile",
+      "revisionHash": "ae6689160e008a3a5ae94603907095c125186c73e34f052c3cc43086d3bdc527",
+      "htmlSha256": "b82716654279eb0301fb9058bf463714e41b00617b838df70bb04d470dd62b3f",
+      "checkedAt": "2026-10-09T22:39:59.467Z",
+      "title": "Meistrui: darbų fotografavimas, spalvos tikslumas ir publikavimo teisės",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Nagų darbo fotografavimas neutralioje šviesoje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/52fc5d17-0391-424c-aada-804fc619740d.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\B-meistrui-galerija-mobile.png"
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "device": "mobile",
+      "revisionHash": "1500dae5738b9437daf513afdb705728b839542039fd607311235a9255c1f97f",
+      "htmlSha256": "0bec6b32cafd07c056db9010f7c99b3bb79122101b86e4ad27f3725ba6a1a6c3",
+      "checkedAt": "2026-10-09T22:39:59.634Z",
+      "title": "Auskarų vėrimo kaina ir trukmė: papuošalas, vieta ir kontrolinis vizitas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Auskarų papuošalai atskirose dėžutėse",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/193027ea-455f-47f7-8420-2f869709c210.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-kaina-trukme-mobile.png"
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "device": "mobile",
+      "revisionHash": "2208e9ebe981db9e0caaaadf4cd5a8e3a618716123c19a88b5f35460bed104ff",
+      "htmlSha256": "98bed18fd15e2fae0e3fc4c787ba9670a94319ee5d8c6f5caf851794d0379ba6",
+      "checkedAt": "2026-10-09T22:39:59.789Z",
+      "title": "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Kūno procedūros vizito aptarimas registratūroje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/350b83e7-a06d-48d4-be98-6400df1eb0eb.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-kaina-trukme-mobile.png"
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "device": "mobile",
+      "revisionHash": "e7501bc94051bb5f0509182481b7a93d010d87eb5b815db72812111dd222e45b",
+      "htmlSha256": "5446b452141396d03c729a4b9747356dd7993bcbd58a24e23e491436dbc69b2d",
+      "checkedAt": "2026-10-09T22:39:59.985Z",
+      "title": "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Plaukų šalinimo vizito planavimo priemonės",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/18774779-de7f-4185-9430-c931dccd9eff.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-kaina-trukme-mobile.png"
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "device": "mobile",
+      "revisionHash": "783b50df8e004f95517bf09107eef10dcf28f3597ad6bf1d946ba5df9ae74d82",
+      "htmlSha256": "8c984a78e772b6a11e7d3ea2eba0ff680ed672454d5035ec5a4e02cf4cb4e313",
+      "checkedAt": "2026-10-09T22:40:00.160Z",
+      "title": "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Masažo laiko ir darbo vietos paruošimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/04c6e9f4-d5db-4776-ab84-e346903483f5.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-kaina-trukme-mobile.png"
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "device": "mobile",
+      "revisionHash": "444849302ea04de55fe33e1bbe1db61d87ab236fc80dc6c42e4b0262c257381b",
+      "htmlSha256": "2247533df01ef03f0e9b3513bb4333dd1cca24a1deb8ac1c25f7db7d6ff2acbc",
+      "checkedAt": "2026-10-09T22:40:00.317Z",
+      "title": "Veido priežiūros kaina ir trukmė: konsultacija, metodas bei papildomi darbai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Veido priežiūros paketo priemonės",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/13731748-42a8-4ca3-9920-ccdcc75b5df5.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-kaina-trukme-mobile.png"
+    },
+    {
+      "planId": "DP-kojos",
+      "device": "mobile",
+      "revisionHash": "943adc1d4cf082a5a40cdce0ffe83b386ae64743287913b4981239f4240577e4",
+      "htmlSha256": "b9db0102237a8ed704ba7aaf4018b0b95a9930ab3b8511ac24494a993394558d",
+      "checkedAt": "2026-10-09T22:40:00.477Z",
+      "title": "Kojų depiliacija: blauzdos, šlaunys ar visos kojos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Blauzdų ir kojų depiliacijos zonos aptarimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/c1ad5f22-0305-4442-9b77-1f6f545e9b76.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-kojos-mobile.png"
+    },
+    {
+      "planId": "GL-nuemimas",
+      "device": "mobile",
+      "revisionHash": "ede969214055ddd03440d598f6969509e489b9662aeebc4dc0f8392bacb91acc",
+      "htmlSha256": "1c3c924f28efce49351e0fb9d1c7316ceabd004629f3d6e124b215bf3ea62484",
+      "checkedAt": "2026-10-09T22:40:00.636Z",
+      "title": "Nagų lako nuėmimas: paprasta danga, gelinis lakas ir naujas padengimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Natūralūs nagai ir uždara lako nuėmimo priemonė",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/b2469d73-82e8-464f-96d3-018e87e5fa5e.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-nuemimas-mobile.png"
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "device": "mobile",
+      "revisionHash": "6b83db0017513763c4588452f5150e7804df1c349bd4ff385c6e5c664579d22d",
+      "htmlSha256": "828753cd90ef38fe0f2fbc3dc89d09a58a7c769f919336dd565686c8b01bd450",
+      "checkedAt": "2026-10-09T22:40:00.795Z",
+      "title": "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Trumpi natūralūs nagai be lakavimo",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/de42f8ef-fcbb-46b9-af69-05b1de65c08e.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-be-lakavimo-mobile.png"
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "device": "mobile",
+      "revisionHash": "80357c97889606c3419f57bc147b243c7e4d6ad7ac9ea5c9cce6fd2fd806533c",
+      "htmlSha256": "0a22c7a0f1d0dd76966a914460373eb2d4425a1da78d8b6203a95719cf682d52",
+      "checkedAt": "2026-10-09T22:40:00.971Z",
+      "title": "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Masažo darbo vietos ir kūno atramos",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/e2b33722-b71e-41dc-8997-4c5cb5c77811.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-nugara-ar-kunas-mobile.png"
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "device": "mobile",
+      "revisionHash": "c6408477644e688d1c371c830319ddfbd11bdd407f57e3cbc10e5a86f371de0e",
+      "htmlSha256": "06a1c6612e2c1af0ae5791439fef32b8d5f7c8bcf7fc1cf428d31e2664bfda5d",
+      "checkedAt": "2026-10-09T22:40:01.126Z",
+      "title": "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Pedikiūro darbo vietos paruošimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/ec5ebfa9-7f25-43bb-99b4-d3c861cb6d4b.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PD-kaina-trukme-mobile.png"
+    },
+    {
+      "planId": "VP-konsultacija",
+      "device": "mobile",
+      "revisionHash": "2642547a0ba553d176aa51f0e84ca1476fe8b31b6010f90c32795e5ef22a0313",
+      "htmlSha256": "05429c030d2583104ad07f0a5155277d27d116a5d976f116ae9ae323909981e4",
+      "checkedAt": "2026-10-09T22:40:01.319Z",
+      "title": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Pirmosios veido priežiūros konsultacijos pokalbis",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/583801e7-3c9d-4e7d-81d5-1da1c99f9a94.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-konsultacija-mobile.png"
+    },
+    {
+      "planId": "MN-trukme",
+      "device": "mobile",
+      "revisionHash": "cd0564d81b1d903cf082851385697c000000458d113225c55a8ceef282afabee",
+      "htmlSha256": "1216762ed0e93479e13d6a8bc5fd1ced64635404c8be22b3b2ea9318311d780e",
+      "checkedAt": "2026-10-09T22:40:01.474Z",
+      "title": "Kiek trunka manikiūras ir kas prailgina vizitą?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Manikiūro vizito trukmės aptarimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/09afda27-8092-49fe-b7f6-3272e4b5296e.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-trukme-mobile.png"
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "device": "mobile",
+      "revisionHash": "48538c483ab5262d197d851978d4cf6ef6b9346b954bcb21fe90dd8e31c9d9ec",
+      "htmlSha256": "afacfaae6f1b51ca5b345feb564e9c032842f3475e3d8808fdc483fa84c2a91a",
+      "checkedAt": "2026-10-09T22:40:01.660Z",
+      "title": "Mezoterapija ir biorevitalizacija: ką reikia žinoti apie konkretų metodą ir priemonę",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Estetinės procedūros priemonės informacijos aptarimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/bbad1b6c-ca9b-4baa-a640-f7fcf746944c.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mezoterapija-biorevitalizacija-mobile.png"
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "device": "mobile",
+      "revisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+      "htmlSha256": "810a971ef802dffdeeb3f0b45cc0fefd48d20cf57f7d4566d0b11e3604ca25d5",
+      "checkedAt": "2026-10-09T22:40:01.832Z",
+      "title": "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Jogos ir pilateso inventorius studijoje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/fad1c942-152b-4703-ab00-ec21a268aa7b.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-joga-pilatesas-mobile.png"
+    },
+    {
+      "planId": "OD-balinimas",
+      "device": "mobile",
+      "revisionHash": "98ca195e9f28580149d6e12a88c418ce2792a7f793685b82760b6e88cbf95885",
+      "htmlSha256": "2dc63244d94c9f92a771c0d3457e7029c4dcf6aefa9840ca5f0c1b8928a4a7ff",
+      "checkedAt": "2026-10-09T22:40:02.002Z",
+      "title": "Dantų balinimo konsultacija: natūrali spalva, restauracijos ir metodų ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Natūrali dantų spalva portreto kadre",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/f4df7d52-746d-4fe4-b03f-7e5f2584f22a.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-balinimas-mobile.png"
+    },
+    {
+      "planId": "PM-antakiai",
+      "device": "mobile",
+      "revisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+      "htmlSha256": "a3a245be64a5b0e07d8a06787660336b4fe9f85909e0d397515e1603a3c676e2",
+      "checkedAt": "2026-10-09T22:40:02.182Z",
+      "title": "Ilgalaikis antakių makiažas: forma, pigmentas ir metodo pasirinkimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Antakių formos aptarimas veidrodėlyje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/d6ca5a54-fc80-4c57-8fed-54a71712ef94.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-antakiai-mobile.png"
+    },
+    {
+      "planId": "PS-poros-seima",
+      "device": "mobile",
+      "revisionHash": "e4ea8043859b14b05c8de19e0d9660ea35e43f4827baf2b82e9fc2c8502ef941",
+      "htmlSha256": "62bc111c8aa684313a3847082ae2a3a1875915344d73a61b1e113ced54c5698e",
+      "checkedAt": "2026-10-09T22:40:02.355Z",
+      "title": "Porų ar šeimos konsultacija: dalyvavimas, tikslas ir konfidencialumo susitarimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Porų konsultacijos pokalbio erdvė",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/6907aff8-ea1b-4bde-b0dc-a5f9bff46274.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-poros-seima-mobile.png"
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "device": "mobile",
+      "revisionHash": "98276fd65c335b8700e4ac1764db17b9eb21bb0741f947a45bdcca28ff4b2e8c",
+      "htmlSha256": "15546a5f399a6e98ed393142998e721e207166bece20087aa89d6da92f9eaaa8",
+      "checkedAt": "2026-10-09T22:40:02.533Z",
+      "title": "Priaugintų plaukų korekcija ir nuėmimas: atskiros darbų apimtys",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Priaugintų plaukų pavyzdžiai ir priemonės",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/706314d1-8aa3-4576-9669-33ae2158cadb.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-korekcija-nuemimas-mobile.png"
+    },
+    {
+      "planId": "RP-parafinas",
+      "device": "mobile",
+      "revisionHash": "19999a97a41f9c93b3ac2aad6dd11375c69ed5ee7bbe344052324c09a8c5f091",
+      "htmlSha256": "ad2d62d5aa74d65426eeac2dfa2cec6682e87f4d0a8dd805086a29e6c24c8ef0",
+      "checkedAt": "2026-10-09T22:40:02.703Z",
+      "title": "Parafino procedūra rankoms ar pėdoms: šildomas ir šaltas variantas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Parafino ir rankų priežiūros priemonės",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/acb551ed-842f-455b-9811-8a375d19eb07.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-parafinas-mobile.png"
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "device": "mobile",
+      "revisionHash": "8a6d83333e71631b936d073d25d904545ce42b33becd2a523e7615123a52eb24",
+      "htmlSha256": "ee17606d991dbcfbbd6d518d479f7f9151a2492c93720f8b7eed2b5b5cc80108",
+      "checkedAt": "2026-10-09T22:40:02.848Z",
+      "title": "Galvos SPA: plaukų priežiūra, masažas ir ritualo apimtis",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Galvos SPA darbo vieta",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/47d50890-9191-4107-b06b-f95d8084ed3a.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-galvos-spa-mobile.png"
+    },
+    {
+      "planId": "TT-eskizas",
+      "device": "mobile",
+      "revisionHash": "1680dc78672bc6708441a135fbda9edd0f8b052109cb302066ca2af9cc4bacaf",
+      "htmlSha256": "e4965745418517a595bfc132814f97e84a49c477d4097521fd8d31d8d027373c",
+      "checkedAt": "2026-10-09T22:40:03.020Z",
+      "title": "Tatuiruotės eskizo konsultacija: stilius, mastelis ir autorystė",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Tatuiruotės eskizo konsultacija",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/8842f8bd-d077-4227-98c6-5eedcb746515.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-eskizas-mobile.png"
+    },
+    {
+      "planId": "AV-metodai",
+      "device": "mobile",
+      "revisionHash": "617ac86ea4b832c13b08309dfc5283bb802b6aafdc745299a6201fdb92244933",
+      "htmlSha256": "7a6d2e900ffea4bbd68f42ce44a3b2a942007def0051354a8917fad3a28a461c",
+      "checkedAt": "2026-10-09T22:40:03.189Z",
+      "title": "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Uždarytos auskarų vėrimo priemonių pakuotės",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/6a52a099-7622-4ba4-8b64-bc65002c7745.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-metodai-mobile.png"
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "device": "mobile",
+      "revisionHash": "079d340a9e40118a80ae2570d957b9075bcb8425ee94c57a67cfc998babe8d64",
+      "htmlSha256": "f8df11ff22078aeb3faf509e67d1d105f12fb8f722e4551eddc6170902078307",
+      "checkedAt": "2026-10-09T22:40:03.344Z",
+      "title": "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Dažymo technikos aptarimas salone",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/2d3e36e7-f83b-4f22-ba01-96eb102f93d3.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-balayage-airtouch-mobile.png"
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "device": "mobile",
+      "revisionHash": "ff025ecd41635444dc66df1a9fafd1f1d18626efc4d20e8ce331e71a02d4e094",
+      "htmlSha256": "14a70a9f2937fa45ae202cb27744b8a282b4507fcaae70db778859a7fe10f52b",
+      "checkedAt": "2026-10-09T22:40:03.501Z",
+      "title": "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Mikroadatinės procedūros įrenginio aptarimas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/2e828070-1758-49c7-a7c5-015690af65d1.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mikroadatine-mobile.png"
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "device": "mobile",
+      "revisionHash": "4ebd5fd0710f8067d1adb99eb38e5aba5ece851bae20ada02ad42cd04ccb77dc",
+      "htmlSha256": "b1b285e68b6784811ce08052d213479d6099b69bbf2103fe774607f7f6126ea0",
+      "checkedAt": "2026-10-09T22:40:03.668Z",
+      "title": "Kūno įvyniojimai: priemonė, ritualas ir pažadų ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Kūno įvyniojimo tekstilė ir kosmetikos priemonė",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/94d92696-c83b-4dc6-8297-79a44e27faa8.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-ivyniojimas-mobile.png"
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "device": "mobile",
+      "revisionHash": "3b86819253b6ab255cc0a9a7a24c747c9860d65c0bb937895d947dc4ee9d8ff1",
+      "htmlSha256": "0b7eb4af7221906438e1a0043f40d6815d57d5506ebfd555e96a6099ebc46991",
+      "checkedAt": "2026-10-09T22:40:03.834Z",
+      "title": "Lazeris ir IPL plaukų šalinimui: kuo skiriasi technologijos pavadinimai?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Du nepažymėti šviesos procedūrų antgaliai iliustracinėje aplinkoje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/dc9f52b4-8a40-4bf4-a0ee-b4a2a6b5da50.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-lazeris-ipl-mobile.png"
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "device": "mobile",
+      "revisionHash": "e1b8c80293156c15c129cb714431a3efb0c7d4f302edd0040212b169e2e8c8f1",
+      "htmlSha256": "e3e0a47fd75d5ddd69683fc5602a7b545d893fc5c4fb4ba79c6db6281c8780c1",
+      "checkedAt": "2026-10-09T22:40:03.999Z",
+      "title": "Chrome ir cat-eye nagai: du skirtingi šviesos efektai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Du skirtingi šviesos efektai nagų dizaine",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/161139d0-311e-46ee-8f64-3348df41f687.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ND-chrome-cat-eye-mobile.png"
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "device": "mobile",
+      "revisionHash": "2b5548a86bfeb0fdae2b365841f4943129d4f654a28425d46cf1154d7c889d2d",
+      "htmlSha256": "c37d764192cf2f7bc082ff79be5f0299d3f03ab0f6d61444216a39f157ef9dff",
+      "checkedAt": "2026-10-09T22:40:04.170Z",
+      "title": "Nagų priauginimo formos ir tipsai: ką reiškia paslaugos metodas?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Nagų tipsų ir formų pavyzdžiai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/62e685c7-f496-46f2-acae-19d6d77ecae0.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\NP-formos-tipsai-mobile.png"
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "device": "mobile",
+      "revisionHash": "06e05cbac3f0dcd1cc4d7c6d861f5bacd689b3c6d4b0f7254c4929f6675db4a4",
+      "htmlSha256": "45493167a17768b3f4a0950333fe7b74aba830ac84aaae59ac5d7d32fb5c678c",
+      "checkedAt": "2026-10-09T22:40:04.355Z",
+      "title": "Ilgalaikis lūpų ir akių makiažas: skirtingos zonos ir vizito klausimai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Lūpų ir akių zonos natūraliame portrete",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/e85ecb87-23be-4863-857f-50cc2905ae4c.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-lupos-akys-mobile.png"
+    },
+    {
+      "planId": "PP-atstatymas",
+      "device": "mobile",
+      "revisionHash": "39893d5694e634b94f62e31fcb0caebbebf2b4f702e2dfc5eefbd82d438d76e8",
+      "htmlSha256": "7b535fa7af4dc918550ff892610aaf26862c9016168ce599905b9961168ed2ab",
+      "checkedAt": "2026-10-09T22:40:04.550Z",
+      "title": "„Plaukų atstatymas“: ką reiškia pasiūlymas ir kokių įrodymų reikia?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Plaukų galiukų ir tekstūros vaizdas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/36dd753a-7fde-43d9-a4a9-b5bc900091a0.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PP-atstatymas-mobile.png"
+    },
+    {
+      "planId": "SP-hamamas",
+      "device": "mobile",
+      "revisionHash": "e24466418b53d6124f98be0e96353d15f0c701365249ca3ffa3f5a662cd04fac",
+      "htmlSha256": "ee119c745b125277f6a2d2bf89385bfd1f7175cb7882a888ccec45d36cf5a6a1",
+      "checkedAt": "2026-10-09T22:40:04.711Z",
+      "title": "Hamamas, garinė pirtis ir pirtis: kuo skiriasi patirtis ir pasiūlymas?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Hamamo erdvė su akmeniniu suolu",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/6258385a-09de-41a8-b6e2-0ed0f66ec2fa.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-hamamas-mobile.png"
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "device": "mobile",
+      "revisionHash": "2cb41e6b980e0a70237672550259915b525e49a150f0825e69111cd1f05f0692",
+      "htmlSha256": "2de3d511da6c61c6dc39881412e13aff6e62950d47d571142b0f937b5a7602d8",
+      "checkedAt": "2026-10-09T22:40:04.885Z",
+      "title": "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Antakių spalvos priemonių pavyzdžiai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/64b8a4a4-e4c6-44cf-a33c-e8ace734a700.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AN-dazai-henna-mobile.png"
+    },
+    {
+      "planId": "AV-papuosalas",
+      "device": "mobile",
+      "revisionHash": "35b93c380d057e13b9d4c70b447fccfd721393f6dd1d25ecb9f08db8319d16b8",
+      "htmlSha256": "1be42ea84424371123f81fb2facd3c3fb466397cb08943ce656ab2591ffeb23b",
+      "checkedAt": "2026-10-09T22:40:05.063Z",
+      "title": "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Auskaro forma ir papuošalo dokumentų aplankas",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/8dd8d047-6926-4eee-be9f-2ecab44ea6c0.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-papuosalas-mobile.png"
+    },
+    {
+      "planId": "BL-dazymas",
+      "device": "mobile",
+      "revisionHash": "5fd62b719aaac9776dbabd806ee3f7bb5c90ed20cb272ea3ae7cef03d1925a6e",
+      "htmlSha256": "3726f7d23543ea8214dc6371455bdd0f210f0bbb1d66ac027133a465dd16aed8",
+      "checkedAt": "2026-10-09T22:40:05.229Z",
+      "title": "Blakstienų dažymas: ką jis keičia ir ko nesuteikia?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Natūralios blakstienos šviesiame portrete",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/0f973b93-6865-4092-b598-f64e54e7a018.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BL-dazymas-mobile.png"
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "device": "mobile",
+      "revisionHash": "eddbfbbc53f2c35b5deb861411349fe656d51e6a6dbb11ff445bf953bcba3c82",
+      "htmlSha256": "419a84f73811e0af8c14a3b3c9941715e3f9317180fe5f689029e770fa12923a",
+      "checkedAt": "2026-10-09T22:40:05.382Z",
+      "title": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Barzdos formavimo ir skutimo priemonės",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/b0ec3410-5d56-4c6f-8b82-ca369b802fec.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BR-masinele-skutimas-mobile.png"
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "device": "mobile",
+      "revisionHash": "b8d7861c4f8d3a74f9591dbf11b3dca0633415e4d7954a537e3f0b3d7abeb53d",
+      "htmlSha256": "3f04d2b7d30ce77426d47133d6fe12a38dfc3254aa4d482300eebb3adf882bb8",
+      "checkedAt": "2026-10-09T22:40:05.547Z",
+      "title": "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtumai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Plaukelių šalinimo metodo konsultacija",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/be2fd356-0054-4e3a-9e3a-aadd28262e4b.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-ar-lazeris-mobile.png"
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "device": "mobile",
+      "revisionHash": "bb19b8b36314dd8de3c187e62b2c8334262e1c91269233f4422d16e0d76e1ae9",
+      "htmlSha256": "a3187e3040e6da5423bbbe82fbc34afd48609c22fb6ef031313fa45a5aa91694",
+      "checkedAt": "2026-10-09T22:40:05.710Z",
+      "title": "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Plaukų spalvos perėjimas ilgyje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/52da6e50-d343-4ef8-b841-de17b598fe7b.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-ombre-sombre-mobile.png"
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "device": "mobile",
+      "revisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+      "htmlSha256": "d388baa8ca9707d099dc5b24b35c1531304d6ebac67be41714d01834eb645864",
+      "checkedAt": "2026-10-09T22:40:05.884Z",
+      "title": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Skirtingos nagų dangos ir ilgio pavyzdžiai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/20b98a66-1526-4163-9c8b-0a432f449081.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-ar-stiprinimas-mobile.png"
+    },
+    {
+      "planId": "KP-sveitimas",
+      "device": "mobile",
+      "revisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+      "htmlSha256": "53ab6fc34d58656178779fadfa5c469b46995c53d00eb88b70ec9c0140f3ee7f",
+      "checkedAt": "2026-10-09T22:40:06.045Z",
+      "title": "Kūno šveitimas: kosmetinės procedūros apimtis ir priežiūra",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Kūno šveitimo priemonė ir pirštinė",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/558ab38d-3678-4844-97ea-f64817b41d70.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-sveitimas-mobile.png"
+    },
+    {
+      "planId": "LZ-zonos",
+      "device": "mobile",
+      "revisionHash": "37833ab0b89baeffedad8b3e46a59f1c9f3d7f0ee9fb872a5eb9977f43a88817",
+      "htmlSha256": "0101625bf32b161c9b2d01a469877709d462b3ef569dfcf1e74d84350f3ed1a2",
+      "checkedAt": "2026-10-09T22:40:06.212Z",
+      "title": "Lazerinio plaukų šalinimo zonos: veidas, pažastys, bikini ir kūnas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Vyras konsultacijoje aptaria dilbio zonos apimtį",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/efdb2013-4cda-40ee-a537-e4fc4b952415.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-zonos-mobile.png"
+    },
+    {
+      "planId": "MD-gidas",
+      "device": "desktop",
+      "revisionHash": "e72d328e1057f05afc6b9af4353659ac65b6fe92bd9771b233f25f267265a924",
+      "htmlSha256": "46fe697c29b96f89550136985a0f5c78fc23e13235b35356ce5fd42cc9b3dcfb",
+      "checkedAt": "2026-10-09T22:41:23.504Z",
+      "title": "Dermatologo ir medicinos estetikos konsultacijos: skirtumai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Dermatologo konsultacijos aplinka",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/72a6b70b-5086-4855-b606-1f8623f768c1.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MD-gidas-desktop.png"
+    },
+    {
+      "planId": "MD-gidas",
+      "device": "mobile",
+      "revisionHash": "e72d328e1057f05afc6b9af4353659ac65b6fe92bd9771b233f25f267265a924",
+      "htmlSha256": "46fe697c29b96f89550136985a0f5c78fc23e13235b35356ce5fd42cc9b3dcfb",
+      "checkedAt": "2026-10-09T22:41:24.821Z",
+      "title": "Dermatologo ir medicinos estetikos konsultacijos: skirtumai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Dermatologo konsultacijos aplinka",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/assets/e7f48b30-4e29-43f9-ac93-7fc40e8d3e97.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MD-gidas-mobile.png"
+    }
+  ]
+}

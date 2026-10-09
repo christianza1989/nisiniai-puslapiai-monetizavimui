@@ -1,0 +1,790 @@
+{
+  "capturedAt": "2026-10-09T22:41:21.910Z",
+  "private": true,
+  "productionRenderer": false,
+  "bodyContentUnchanged": true,
+  "changes": [
+    "Local asset/navigation paths",
+    "Organization/date preview byline",
+    "Only finalized actual p.links in related guide wrapper",
+    "Public editorial source bibliography without private research reason",
+    "Verified six-field commerce snapshot hrefs for native plain-label fallback",
+    "Responsive overflow-wrap for private reading layout"
+  ],
+  "captures": [
+    {
+      "pageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+      "file": "AV-gidas.html",
+      "nativeHtmlSha256": "cf6b6b5652acae6e02f81b6df7045df77e5adeacf81f7aa3f883219f306a464c",
+      "adaptedHtmlSha256": "fd628314ce685d0202ec91cc95673df20403553bf8e8b9b2865928456208321e"
+    },
+    {
+      "pageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+      "file": "ES-gidas.html",
+      "nativeHtmlSha256": "5b9c88811fa51f0268581ce92771bd643323fc0f12d6cf8ab5e78e7957d39f85",
+      "adaptedHtmlSha256": "722380549a6d06afa3b8858a8fada22bba5941193ae6e02ccdeea279648bb349"
+    },
+    {
+      "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+      "file": "FX-gidas.html",
+      "nativeHtmlSha256": "960b07b25b83b030bdaa6a2de2b865010f187a51d16f82ea7cbac5177e52948b",
+      "adaptedHtmlSha256": "55ccfe05426330b68f426fb6a2a88dddf1a8a87e973886616b6d67320a654f37"
+    },
+    {
+      "pageId": "9233c7ed-52c6-4ee9-9835-4005db2d5781",
+      "file": "GY-gidas.html",
+      "nativeHtmlSha256": "03977f305719a64bb337547505ea911acf3c92098f39c5341fd5c7a52d3c1e8a",
+      "adaptedHtmlSha256": "74ab8decbb292a1fbd019574115e30d5c138235efa1a76f852e02d46ada3bc2d"
+    },
+    {
+      "pageId": "6a9450cb-725b-4077-9846-f6d8a9af26ef",
+      "file": "IG-gidas.html",
+      "nativeHtmlSha256": "f9ca131c78fd7538739d4368db65667ab74ff3b7c95760589281d081e8753b61",
+      "adaptedHtmlSha256": "461c09180364d241f24ca610771bd2697393700e4c6e7e9fca67b57cf45c60d7"
+    },
+    {
+      "pageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+      "file": "KP-gidas.html",
+      "nativeHtmlSha256": "ec2dc493a54351190a4750bd1170c534ec05605cb659c4e3b482faf840ee1442",
+      "adaptedHtmlSha256": "acba0532790decbea3bac34fc7d7cb5d63b70f5bf050265565b5cfaf6a620cfc"
+    },
+    {
+      "pageId": "e867d6e8-db21-432f-b4a8-209d7060be4c",
+      "file": "KT-gidas.html",
+      "nativeHtmlSha256": "0d667f1b076238a0e0b6f9696d15b6e9ee61780020d069a6b10643af3882c8bc",
+      "adaptedHtmlSha256": "5c52753e46e6f8bdfe700cd4437f6649466bd94fd6cb19d829651a642a6ea2af"
+    },
+    {
+      "pageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+      "file": "LZ-gidas.html",
+      "nativeHtmlSha256": "7f92624c27a9b3a0a0f0a130e9023d2ea692e8c1f522820da276135a74f39ed7",
+      "adaptedHtmlSha256": "c3192c93056321dd1bae0b0de2d592c49ca670dfdcbce1655601dd09b5b56636"
+    },
+    {
+      "pageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+      "file": "MD-gidas.html",
+      "nativeHtmlSha256": "4646b34e11b615eac3d5476c60e0f31babc09ed83a94f744d715f20f7fcb1799",
+      "adaptedHtmlSha256": "46fe697c29b96f89550136985a0f5c78fc23e13235b35356ce5fd42cc9b3dcfb"
+    },
+    {
+      "pageId": "61455054-263f-416a-8d1b-a993e4949753",
+      "file": "MS-gidas.html",
+      "nativeHtmlSha256": "bf577c5cebf13f61dc4d5e917942baa0547652ff898e88748a6f5095f685f79e",
+      "adaptedHtmlSha256": "3733f2bec0cd35de264316b76a7c555c723626898e53ad92b224874a36454de7"
+    },
+    {
+      "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+      "file": "OD-gidas.html",
+      "nativeHtmlSha256": "33aba7f33bf7b486912575c67d06e32ad35691966e9a40acdc260263925074ed",
+      "adaptedHtmlSha256": "2a1d91451853ae07b1c4153e05fb349d117cba6816069c0baadedb072c833887"
+    },
+    {
+      "pageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+      "file": "PM-gidas.html",
+      "nativeHtmlSha256": "451a83fa1c7cad0736f4b4928e4f29d65ff2d3e74609eceae718f3e2fc4ef4b8",
+      "adaptedHtmlSha256": "1007bf6bfc80e83c513fa01022a426baf687fae8b82ceef6a0d63d3eb924b4e3"
+    },
+    {
+      "pageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+      "file": "PS-gidas.html",
+      "nativeHtmlSha256": "62c8c5afe7fffc9d9a045b1b3f102dc1dc95894665cba7347f41ae93aa9bc043",
+      "adaptedHtmlSha256": "3c241943d91067c627a6bf3189c2652022dff8ed4e9390d716cd70b2b88e03bc"
+    },
+    {
+      "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+      "file": "PX-gidas.html",
+      "nativeHtmlSha256": "dc0f5ab3d8ff4b6b8b24b4f89f99dc247c9637a00c2397bf410e055ad35b1917",
+      "adaptedHtmlSha256": "5465fbb7dbfa6fafe65d575af8034a2e5d9c0b1c093949c65041da921fbdda88"
+    },
+    {
+      "pageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+      "file": "RP-gidas.html",
+      "nativeHtmlSha256": "79ee952753598e0b007bd398dfae54d7050269dcc56b3632abd64be92e7b605a",
+      "adaptedHtmlSha256": "dab7d01acbaf4b90b2acc218cd27ac310738f028b86a71970b3bff54f012229f"
+    },
+    {
+      "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "file": "SP-gidas.html",
+      "nativeHtmlSha256": "1c6e30fc9c3386f113638381c8cccce49ea826041c08f88b0745ffb3c08154b1",
+      "adaptedHtmlSha256": "2ef94f42ac24e44063822831ad1883a006bc2aba86aaa80a9d0d155453af8747"
+    },
+    {
+      "pageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+      "file": "SV-gidas.html",
+      "nativeHtmlSha256": "b1e67ff10be633e828adc23ac50988de63399eecf661e525cc8ca11a26c4f139",
+      "adaptedHtmlSha256": "079f65a35f28ed19d4449c4c54a9e7024eb1b77c8e5aae9ec4a6eb84bb2b667f"
+    },
+    {
+      "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+      "file": "TT-gidas.html",
+      "nativeHtmlSha256": "f6497f11d960b0f6dd40b30e89828522ffe6150755972a19e3c1ba9b5505eca0",
+      "adaptedHtmlSha256": "1c2b7d6d6f339a854ef222b5e298370e5ea817d0b5fe667c555094f1b3769102"
+    },
+    {
+      "pageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+      "file": "VP-gidas.html",
+      "nativeHtmlSha256": "b15ed15ae776666a0d802d8d92aa6f84f8d1f4dd7d1b9ed76728b722ffde12f6",
+      "adaptedHtmlSha256": "b53945029dca45265cbc78326dba7be93e19f6e595c1da9226781c350bec9f8c"
+    },
+    {
+      "pageId": "4deba947-1bc9-4c48-90da-62b48a9c7ece",
+      "file": "B-meistrui-galerija.html",
+      "nativeHtmlSha256": "9363d7c46e91a39b7c8962412c73b9ad097d3d00697bc649eeeec743db35eb1b",
+      "adaptedHtmlSha256": "b82716654279eb0301fb9058bf463714e41b00617b838df70bb04d470dd62b3f"
+    },
+    {
+      "pageId": "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572",
+      "file": "AV-kaina-trukme.html",
+      "nativeHtmlSha256": "83017c9555c7f26de397c007fad5bface34e38515cf1dfe8779c9e0287575a44",
+      "adaptedHtmlSha256": "0bec6b32cafd07c056db9010f7c99b3bb79122101b86e4ad27f3725ba6a1a6c3"
+    },
+    {
+      "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+      "file": "KP-kaina-trukme.html",
+      "nativeHtmlSha256": "c050d5ad69498d8f13394dade3fdbc15c68fa3c2f88e1996be165f47e7b34417",
+      "adaptedHtmlSha256": "98bed18fd15e2fae0e3fc4c787ba9670a94319ee5d8c6f5caf851794d0379ba6"
+    },
+    {
+      "pageId": "5d754fbd-3db9-4212-bdde-58d3ac1960fb",
+      "file": "LZ-kaina-trukme.html",
+      "nativeHtmlSha256": "9023911ed99eaa23553e29b71a4b513a359b116c93c57951cf4557517977f7b5",
+      "adaptedHtmlSha256": "5446b452141396d03c729a4b9747356dd7993bcbd58a24e23e491436dbc69b2d"
+    },
+    {
+      "pageId": "02eb68ff-1571-4cef-bfe0-31216660bcb1",
+      "file": "MS-kaina-trukme.html",
+      "nativeHtmlSha256": "4975b53f2566051270727c1d44ec178a924929a62a61aeeb956624fae0ef0611",
+      "adaptedHtmlSha256": "8c984a78e772b6a11e7d3ea2eba0ff680ed672454d5035ec5a4e02cf4cb4e313"
+    },
+    {
+      "pageId": "5fad7c52-342a-45e7-a619-a97048daf742",
+      "file": "VP-kaina-trukme.html",
+      "nativeHtmlSha256": "12b9836ebdc62ef7b7630eb34abfb19ac988cb2cd527cfbda118769f361684b5",
+      "adaptedHtmlSha256": "2247533df01ef03f0e9b3513bb4333dd1cca24a1deb8ac1c25f7db7d6ff2acbc"
+    },
+    {
+      "pageId": "26a9236d-7d71-4dc6-b282-ee3b65cd757b",
+      "file": "DP-kojos.html",
+      "nativeHtmlSha256": "3c149f23ab6c9ea8d92c8aec40f432ddeb1027cf9a54c70d3ebf4d6354d0851a",
+      "adaptedHtmlSha256": "b9db0102237a8ed704ba7aaf4018b0b95a9930ab3b8511ac24494a993394558d"
+    },
+    {
+      "pageId": "d4712e01-6bc1-47ec-aa60-ac311d9438de",
+      "file": "GL-nuemimas.html",
+      "nativeHtmlSha256": "11002b8fea2125dffa7dd60ea945accaa0ab031d1f02f0b801da17dc0b29ea06",
+      "adaptedHtmlSha256": "1c3c924f28efce49351e0fb9d1c7316ceabd004629f3d6e124b215bf3ea62484"
+    },
+    {
+      "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+      "file": "MN-be-lakavimo.html",
+      "nativeHtmlSha256": "97a198db1a98c3a6a8d588eef2058e5b909fae62b7f52046e84675dfe073e2e6",
+      "adaptedHtmlSha256": "828753cd90ef38fe0f2fbc3dc89d09a58a7c769f919336dd565686c8b01bd450"
+    },
+    {
+      "pageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+      "file": "MS-nugara-ar-kunas.html",
+      "nativeHtmlSha256": "621afb7dad94d73adeaecd6b135286b813449d1c1dd3ef4ddb12506eee73d54e",
+      "adaptedHtmlSha256": "0a22c7a0f1d0dd76966a914460373eb2d4425a1da78d8b6203a95719cf682d52"
+    },
+    {
+      "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+      "file": "PD-kaina-trukme.html",
+      "nativeHtmlSha256": "f0e3550f6d9ed989810551c111886d84a2e802cd99134dc5290d10a44f0ea521",
+      "adaptedHtmlSha256": "06a1c6612e2c1af0ae5791439fef32b8d5f7c8bcf7fc1cf428d31e2664bfda5d"
+    },
+    {
+      "pageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+      "file": "VP-konsultacija.html",
+      "nativeHtmlSha256": "2f238c4ee88f6af7301f83c6060bb57205269bd8d33cbd6309a91e559a449671",
+      "adaptedHtmlSha256": "05429c030d2583104ad07f0a5155277d27d116a5d976f116ae9ae323909981e4"
+    },
+    {
+      "pageId": "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a",
+      "file": "MN-trukme.html",
+      "nativeHtmlSha256": "458845c226e30c53c86fd09fedba476513e9426f5c107a2359250077d4e4d6f7",
+      "adaptedHtmlSha256": "1216762ed0e93479e13d6a8bc5fd1ced64635404c8be22b3b2ea9318311d780e"
+    },
+    {
+      "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+      "file": "ES-mezoterapija-biorevitalizacija.html",
+      "nativeHtmlSha256": "a6c591ac53b8c5e80d77a9dc16fab325fa289f5404fe65d67b4262c07bbd38ae",
+      "adaptedHtmlSha256": "afacfaae6f1b51ca5b345feb564e9c032842f3475e3d8808fdc483fa84c2a91a"
+    },
+    {
+      "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+      "file": "FX-joga-pilatesas.html",
+      "nativeHtmlSha256": "5e7797f1bdb677e6727b5a30573d27d9ed331f7a82fc8d961a515b17186b88b7",
+      "adaptedHtmlSha256": "810a971ef802dffdeeb3f0b45cc0fefd48d20cf57f7d4566d0b11e3604ca25d5"
+    },
+    {
+      "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+      "file": "OD-balinimas.html",
+      "nativeHtmlSha256": "2e177afc0e4ea4e58952b0b0c959ad5df339d014f5465df96f9d38572534ec8d",
+      "adaptedHtmlSha256": "2dc63244d94c9f92a771c0d3457e7029c4dcf6aefa9840ca5f0c1b8928a4a7ff"
+    },
+    {
+      "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+      "file": "PM-antakiai.html",
+      "nativeHtmlSha256": "e6079e257febe3969db3bf760ada8c0124eeb4836147f16ac9540b1726146e6d",
+      "adaptedHtmlSha256": "a3a245be64a5b0e07d8a06787660336b4fe9f85909e0d397515e1603a3c676e2"
+    },
+    {
+      "pageId": "56047987-7724-4476-80b1-fde21b00c826",
+      "file": "PS-poros-seima.html",
+      "nativeHtmlSha256": "0bcc5fd9b9ae6ac438b2ca8604349f5239728391d8b13dbf52fac48131778b96",
+      "adaptedHtmlSha256": "62bc111c8aa684313a3847082ae2a3a1875915344d73a61b1e113ced54c5698e"
+    },
+    {
+      "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+      "file": "PX-korekcija-nuemimas.html",
+      "nativeHtmlSha256": "46dc2e543b224deeade242bfefd4fa1b498a8baa014a38b5cd380a20fce0347f",
+      "adaptedHtmlSha256": "15546a5f399a6e98ed393142998e721e207166bece20087aa89d6da92f9eaaa8"
+    },
+    {
+      "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+      "file": "RP-parafinas.html",
+      "nativeHtmlSha256": "0436fe0e3e3d0eacf8ee8aed53ad8c7c030dfd28e1c9ac3dbfac418d7f974ccd",
+      "adaptedHtmlSha256": "ad2d62d5aa74d65426eeac2dfa2cec6682e87f4d0a8dd805086a29e6c24c8ef0"
+    },
+    {
+      "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+      "file": "SP-galvos-spa.html",
+      "nativeHtmlSha256": "c927fe94419282c80fd287fc131f6b8e4cdf8a2ae8a22aeb2849426685350473",
+      "adaptedHtmlSha256": "ee17606d991dbcfbbd6d518d479f7f9151a2492c93720f8b7eed2b5b5cc80108"
+    },
+    {
+      "pageId": "6835e31e-74ff-450d-b1cc-752477cbd404",
+      "file": "TT-eskizas.html",
+      "nativeHtmlSha256": "182216cd3940d7aba8301545fbd81be55abc3aa9b27265c1f93459e0d8ebd25b",
+      "adaptedHtmlSha256": "e4965745418517a595bfc132814f97e84a49c477d4097521fd8d31d8d027373c"
+    },
+    {
+      "pageId": "1af233ab-8ce1-4eea-8620-5cc6f6761c8e",
+      "file": "AV-metodai.html",
+      "nativeHtmlSha256": "59eeb6483dbfca51303f47054b5e613de82d9225dd69fc3723ccd0e6057baefa",
+      "adaptedHtmlSha256": "7a6d2e900ffea4bbd68f42ce44a3b2a942007def0051354a8917fad3a28a461c"
+    },
+    {
+      "pageId": "16a8706c-4c55-42ae-9681-e21c41dcc6c5",
+      "file": "DZ-balayage-airtouch.html",
+      "nativeHtmlSha256": "92df3760498a057bed11aa0d8fae59bd063268737b864fc409720d148cd04a92",
+      "adaptedHtmlSha256": "f8df11ff22078aeb3faf509e67d1d105f12fb8f722e4551eddc6170902078307"
+    },
+    {
+      "pageId": "01a5be0c-9c9a-40d3-bb9f-5993b6e47206",
+      "file": "ES-mikroadatine.html",
+      "nativeHtmlSha256": "aed9b85eb6915aafe870982fc4bf043328547c49a988ae73e6b5cbe7c52f919f",
+      "adaptedHtmlSha256": "14a70a9f2937fa45ae202cb27744b8a282b4507fcaae70db778859a7fe10f52b"
+    },
+    {
+      "pageId": "0f2c1fd1-9adf-4a38-973b-f4a10b244b89",
+      "file": "KP-ivyniojimas.html",
+      "nativeHtmlSha256": "acd1d122903e4c9762f589e4988bbe410e0ff3561fc99b6c19b163989d04fe40",
+      "adaptedHtmlSha256": "b1b285e68b6784811ce08052d213479d6099b69bbf2103fe774607f7f6126ea0"
+    },
+    {
+      "pageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+      "file": "LZ-lazeris-ipl.html",
+      "nativeHtmlSha256": "29264293eecf6c5864a4ee6c6d7d01a629a82805c670fff2391936d740227e88",
+      "adaptedHtmlSha256": "0b7eb4af7221906438e1a0043f40d6815d57d5506ebfd555e96a6099ebc46991"
+    },
+    {
+      "pageId": "30ca9bbf-33c0-4da6-85bd-8ba29577810e",
+      "file": "ND-chrome-cat-eye.html",
+      "nativeHtmlSha256": "01891092991be2d7504050fd6ab5de66868d4af2d481201da58b06e01960c8c5",
+      "adaptedHtmlSha256": "e3e0a47fd75d5ddd69683fc5602a7b545d893fc5c4fb4ba79c6db6281c8780c1"
+    },
+    {
+      "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+      "file": "NP-formos-tipsai.html",
+      "nativeHtmlSha256": "e3e7b37395602f62301386a3d5df10274cc670cfb716f5cbbe51b1d0443531af",
+      "adaptedHtmlSha256": "c37d764192cf2f7bc082ff79be5f0299d3f03ab0f6d61444216a39f157ef9dff"
+    },
+    {
+      "pageId": "59f6961c-4d66-421b-a1e9-184be6cedd3a",
+      "file": "PM-lupos-akys.html",
+      "nativeHtmlSha256": "494ebe21c9a1511fbd62ccbb605f38db33979eae930a6719e1f6b12dcd0f1650",
+      "adaptedHtmlSha256": "45493167a17768b3f4a0950333fe7b74aba830ac84aaae59ac5d7d32fb5c678c"
+    },
+    {
+      "pageId": "f13be7d8-026a-4039-afd3-e8711995fb9c",
+      "file": "PP-atstatymas.html",
+      "nativeHtmlSha256": "35478f437de08e2e6aadbb2d63a987c76e878daeb5258ef01c32608567b8f944",
+      "adaptedHtmlSha256": "7b535fa7af4dc918550ff892610aaf26862c9016168ce599905b9961168ed2ab"
+    },
+    {
+      "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+      "file": "SP-hamamas.html",
+      "nativeHtmlSha256": "e2322716f16d5aa294ce71856ab861545a27ac7be7a9ece9fd935570e287ee8a",
+      "adaptedHtmlSha256": "ee119c745b125277f6a2d2bf89385bfd1f7175cb7882a888ccec45d36cf5a6a1"
+    },
+    {
+      "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+      "file": "AN-dazai-henna.html",
+      "nativeHtmlSha256": "383becafa7ff1ba06ed6837752738392134bd0bc812291c6c7b65701c1b000fd",
+      "adaptedHtmlSha256": "2de3d511da6c61c6dc39881412e13aff6e62950d47d571142b0f937b5a7602d8"
+    },
+    {
+      "pageId": "2934dc52-45c8-429b-ba28-ce368787862d",
+      "file": "AV-papuosalas.html",
+      "nativeHtmlSha256": "f438713cb3016510e291a1a6422446b22abaca29aef98035afdf3f15657590f4",
+      "adaptedHtmlSha256": "1be42ea84424371123f81fb2facd3c3fb466397cb08943ce656ab2591ffeb23b"
+    },
+    {
+      "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+      "file": "BL-dazymas.html",
+      "nativeHtmlSha256": "a320f333b1886809926d0f40f9bd67cf2d5d9e762edc2e3a108299bc8762c125",
+      "adaptedHtmlSha256": "3726f7d23543ea8214dc6371455bdd0f210f0bbb1d66ac027133a465dd16aed8"
+    },
+    {
+      "pageId": "edac36e3-f996-4513-86f2-43468d3d9f6e",
+      "file": "BR-masinele-skutimas.html",
+      "nativeHtmlSha256": "7761ee7014c34d1869537b3ab794d356f3ab4d7d2a37a841f6df2550e0de0d14",
+      "adaptedHtmlSha256": "419a84f73811e0af8c14a3b3c9941715e3f9317180fe5f689029e770fa12923a"
+    },
+    {
+      "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+      "file": "DP-ar-lazeris.html",
+      "nativeHtmlSha256": "92b70aee33196e41f3db24b3c15cb25f2e74e7ea6c663c722ef24f1f710a8d24",
+      "adaptedHtmlSha256": "3f04d2b7d30ce77426d47133d6fe12a38dfc3254aa4d482300eebb3adf882bb8"
+    },
+    {
+      "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+      "file": "DZ-ombre-sombre.html",
+      "nativeHtmlSha256": "f20e3ce549712db5f46516db7b765678d135c75ca0d72221f2c6558e74fb93c6",
+      "adaptedHtmlSha256": "a3187e3040e6da5423bbbe82fbc34afd48609c22fb6ef031313fa45a5aa91694"
+    },
+    {
+      "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+      "file": "GL-ar-stiprinimas.html",
+      "nativeHtmlSha256": "01c2658f70267a98324156406f8dabb67ecfeb7233414a4648f3190104fa1271",
+      "adaptedHtmlSha256": "d388baa8ca9707d099dc5b24b35c1531304d6ebac67be41714d01834eb645864"
+    },
+    {
+      "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+      "file": "KP-sveitimas.html",
+      "nativeHtmlSha256": "07088e557f6167cd6b5c9b40140f3a02d5a2985cd446ce78d30240e256b7bf69",
+      "adaptedHtmlSha256": "53ab6fc34d58656178779fadfa5c469b46995c53d00eb88b70ec9c0140f3ee7f"
+    },
+    {
+      "pageId": "d2d923e8-fa60-4657-abcf-5916ca477647",
+      "file": "LZ-zonos.html",
+      "nativeHtmlSha256": "2bc6db083f08dbc2e84c77c942b5adbce4b0432730bd7fa52c558797a44840d2",
+      "adaptedHtmlSha256": "0101625bf32b161c9b2d01a469877709d462b3ef569dfcf1e74d84350f3ed1a2"
+    },
+    {
+      "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+      "file": "reference-3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3.html",
+      "nativeHtmlSha256": "208d92824a6ca7612b977549eef93eb53f81a4b19f1f370afda57568b57d5436",
+      "adaptedHtmlSha256": "377efd2b7a6ff8ec783fa0e11a4cd8864f5fac892b7fb168389e0464160f4a4d"
+    },
+    {
+      "pageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+      "file": "reference-5f6624f3-ac29-4353-9159-1f5425c437a3.html",
+      "nativeHtmlSha256": "316c13cdec3208d038a0cb7dcb2a75ef864871e1901c85403fe39795bc4cfad2",
+      "adaptedHtmlSha256": "0e4f518b32a53c5ff9dc7a86e35069ee94dd6cec524c1ff3e97332702f5307ed"
+    },
+    {
+      "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+      "file": "reference-4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67.html",
+      "nativeHtmlSha256": "87756ef740638301bf9cfa1813a08f77df4a0346af1208fcbae3875fe8f3fdbf",
+      "adaptedHtmlSha256": "5c4e8cfab9fc5044ce45257d9d35142811d38235838412a35fbd0f45b23638e2"
+    },
+    {
+      "pageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+      "file": "reference-b781498b-b37a-4157-8fc8-45c38316dd90.html",
+      "nativeHtmlSha256": "74b297186c9efce03501714a7e1ff33631ab1a8e052c5e050b2b013ec510cb66",
+      "adaptedHtmlSha256": "e118f41b3b86c75e462a9f3005e6f7e5939b98f97521052f06c94497d2972af1"
+    },
+    {
+      "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+      "file": "reference-8118dd44-f9c4-4282-a0d6-201b5d038a3d.html",
+      "nativeHtmlSha256": "1554ea75dff8d9018682007c68938819323c7d0869e5cbb9b4d9a118d3c13e0c",
+      "adaptedHtmlSha256": "a58259088b39013df31a4310a862e01f87424513c4539945831a9f1793ce4da1"
+    },
+    {
+      "pageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+      "file": "reference-5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f.html",
+      "nativeHtmlSha256": "bee787b2b61e09dc2ce74547e8ee264496c4f880e845fb66dd9906c1e5c5ba68",
+      "adaptedHtmlSha256": "6d5159dcc8b9b1998ba3a5c1a6f88494baf9f4a7039ee49b881f00df1dd457f6"
+    },
+    {
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "file": "reference-1017b2b1-d685-4673-a12b-7cfd350a8d0a.html",
+      "nativeHtmlSha256": "ef011c9dd039f8b0a7d80a249b94093ef747f754fe0d89aa26294753bab9b851",
+      "adaptedHtmlSha256": "2e86386807cbced7025f1d4f6b523ea4cfd52e7f25f4aae6b5e49e77b52e0eae"
+    },
+    {
+      "pageId": "91053963-6eff-408a-b26d-7eed52088b91",
+      "file": "reference-91053963-6eff-408a-b26d-7eed52088b91.html",
+      "nativeHtmlSha256": "d6c1b43b9d0c1da89dc97641417abb5e809e245a97a34c8025182ed2aeed2ab5",
+      "adaptedHtmlSha256": "b6681b7101d58bd004d58e28944a4075e903fba94d8a43fe1a7a10b25e893921"
+    },
+    {
+      "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5",
+      "file": "reference-d9b6cd7b-074e-42fe-9c87-9cd7281924d5.html",
+      "nativeHtmlSha256": "9a423449c8e17788cbae070d4f86d7d636ea4f049f1da3ba13ad86dcab37cdc4",
+      "adaptedHtmlSha256": "1c5be9d6b26963417e1b5a069f263233f07d8b86a680f079eef2a6c002f8ca15"
+    },
+    {
+      "pageId": "697ccf43-018c-4385-9147-0bcd6286df97",
+      "file": "reference-697ccf43-018c-4385-9147-0bcd6286df97.html",
+      "nativeHtmlSha256": "2499ca73036624414798c1d96209b464a880d84e4c6ca3a9570b3b4f9bfff127",
+      "adaptedHtmlSha256": "23e4b91e2b4387092214172c0076583b2e0c5699fac90d873a2ad9e68004019d"
+    },
+    {
+      "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08",
+      "file": "reference-aa2eb1ab-c359-41b0-85b9-238dfa682f08.html",
+      "nativeHtmlSha256": "eb5b04c96f8adaa2aaab13202082d30de816f8dc2dde57aec9fe35cd083b5c5e",
+      "adaptedHtmlSha256": "38747654ddc7e9dda61f4a2785ae4ca09aa62b62f7dc00da29ecd16784eaf1eb"
+    },
+    {
+      "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6",
+      "file": "reference-c09d4685-2a77-4c0e-b02d-797d0b77a3f6.html",
+      "nativeHtmlSha256": "fc5b44f0cbfbc1b65186c8e7143cf36a03c93bb53a3dd54f6fe40baecdee8046",
+      "adaptedHtmlSha256": "f3b6e0d2e8789767170a8626a7254e1f953cd53ea544f45959e05ad6db5f66bf"
+    },
+    {
+      "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f",
+      "file": "reference-5808d149-3a59-4643-b25b-f6614aa5fc3f.html",
+      "nativeHtmlSha256": "926100809b580859c12b1d98930cac2a08acbfee9f2ebbfe74c8cdbadd0719d7",
+      "adaptedHtmlSha256": "33c152ab2c6ad840b6da431b663916810bcf62a4fea191d630a95ccc82cb7142"
+    },
+    {
+      "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43",
+      "file": "reference-855a0812-340e-46fa-9e77-8232c1b7fc43.html",
+      "nativeHtmlSha256": "cda22c1316f4499fde91d073e4c2017f5e766faaf40f7538e8f27d2983ecf112",
+      "adaptedHtmlSha256": "013bf20d70bbd4f6ba68d8bd78fdce85542bc63566962ebbff5296d7aefab2a6"
+    },
+    {
+      "pageId": "83808900-d3df-4942-97c6-121bdeca5216",
+      "file": "reference-83808900-d3df-4942-97c6-121bdeca5216.html",
+      "nativeHtmlSha256": "ff773826ee874b3e66e04f519d1e829efa73669e4eee4c186ce867a80feb4ea0",
+      "adaptedHtmlSha256": "667c07ebeec2e773a3d493ad7a151ac5e5d8e266099d387a809c81acbce9789b"
+    },
+    {
+      "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+      "file": "reference-df24650a-285f-4fe6-b08a-6b0db530e38f.html",
+      "nativeHtmlSha256": "c2f95e43987722a3abf4ef54492373e98ecdc12628d726ead6997e1e0bc77920",
+      "adaptedHtmlSha256": "d1b6ec7066fe48130d8bdc67cb82e5842e382c422157c84770d34b2c9feb0098"
+    },
+    {
+      "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854",
+      "file": "reference-3b731f2e-46a8-4903-b9af-ce6cdaf12854.html",
+      "nativeHtmlSha256": "402c43f6bd179e892d67a245e96a646f886cbdf59d5f9949069e71cf8eb46929",
+      "adaptedHtmlSha256": "fcfc663d326063da5df397fc99093b0da88f52a03f4f074c8e3e684471e57ac6"
+    },
+    {
+      "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b",
+      "file": "reference-5d3da74e-b618-402a-be10-a4cff0634f5b.html",
+      "nativeHtmlSha256": "0dea28048159df7fb924ab9241d8947bf0abf251259f7c0291b739ef99acc18e",
+      "adaptedHtmlSha256": "bc4fa49a0b6ef1006c215471245fe3c83edd833efb0d2ccaba58eca39601165e"
+    },
+    {
+      "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+      "file": "reference-88652699-aee1-4c8b-a863-2569c2ea9e9c.html",
+      "nativeHtmlSha256": "5c8ea803bf390f8160744b67b0bcc01dc288a64be3b91f19a31420f465934e5d",
+      "adaptedHtmlSha256": "9fd3bb58bad1647648dbae2bbc7b392369871f3b9547739412a8ae177b2d4be3"
+    },
+    {
+      "pageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+      "file": "reference-7fa3d64b-bf31-44c7-88c8-ebd9391520d0.html",
+      "nativeHtmlSha256": "aa29cf35d8dd75fadf54325cd8a48072c705c6fea34634745a6ee9d992b2b6eb",
+      "adaptedHtmlSha256": "6f0b9649e6ff3aa4019b188fbc74a7c084dd8e6c1663407baf94119c741c4ba0"
+    },
+    {
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "file": "reference-f969be0f-79b0-485f-9c90-6904e4b1948e.html",
+      "nativeHtmlSha256": "385e6c0a0371d5ec9118b95efc0fd09b607f97d1a54eb6f42b2fb207fdc22192",
+      "adaptedHtmlSha256": "977f8875f7b1b08c333fab9cd60c53c517cdd34f51d668d986a53b2290e95cca"
+    },
+    {
+      "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+      "file": "reference-929fe920-3df0-47cf-b780-d9af2d908972.html",
+      "nativeHtmlSha256": "ec2e5c606e2dfcf6a92d287d01e493d72ca6b243467cfcafac67a94eee0300ff",
+      "adaptedHtmlSha256": "b1cf879432a30def63931ab7886943a6fdd760a834b1d9c34eb80509e464d5e0"
+    },
+    {
+      "pageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+      "file": "reference-5712f9c8-16db-448e-b6f5-df8f1ac4a59c.html",
+      "nativeHtmlSha256": "53a47c986c3ce7952e1fce318d6813a35a908914abac050d77b0f2bf572b030e",
+      "adaptedHtmlSha256": "e647350b889b5afcedb62b8e49c533973698d64bbf4f28021457c2400371d394"
+    },
+    {
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "file": "reference-40e22039-917a-479f-840e-97edb71dcd55.html",
+      "nativeHtmlSha256": "fe8a75807bf307761db0b1c7e733fddf26aa34e617ecf27d598899f9e3ca477b",
+      "adaptedHtmlSha256": "1db1c6951d095f95f35951ef494f67f6516429f290bbe852a317c161ba002491"
+    },
+    {
+      "pageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+      "file": "reference-8e7d280c-23e5-4eee-9faa-e95d13e19802.html",
+      "nativeHtmlSha256": "7cdbeaafb5e8a0bf8e432f4e87369afd31214c6b75086c09e3a5fc6d85c0af03",
+      "adaptedHtmlSha256": "08e20ca72637360e7224d99727eff1b0c73f868f0b17806748e8066213d4e2f3"
+    },
+    {
+      "pageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+      "file": "reference-b06bca63-c301-42ac-bd28-5eb0dcac0792.html",
+      "nativeHtmlSha256": "02f09a70cd500db364037f220ea53d6c0ad5e63bdf5cc784a247f49414ddbf70",
+      "adaptedHtmlSha256": "8348c225b4ba33bcdaced5acb09495f91a0c40476b5ae74ce8adfac874e90cbb"
+    },
+    {
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "file": "reference-1a330536-9424-46c9-a12f-61435e941cd2.html",
+      "nativeHtmlSha256": "bfa057104d6191d18ac16b8497be01dac0b71a29904df62258aac740c2a93bae",
+      "adaptedHtmlSha256": "ac7eff2056af413bad5d5b44294b2b8ae187d802bf626c4ddbfb0d6251a811b3"
+    },
+    {
+      "pageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+      "file": "reference-a107a0f4-1675-4553-ae21-bb935f36d605.html",
+      "nativeHtmlSha256": "a4bcece92c7840fbbf381c326fa8a6e61b8ed4ea71b39adf15765f937a44943b",
+      "adaptedHtmlSha256": "51cf842250f79f0fa87b39e199158f671ebbcf20b05110c1bb47f2e314e592a6"
+    },
+    {
+      "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1",
+      "file": "reference-61ff3d37-948a-4c60-a0ca-04314065f5a1.html",
+      "nativeHtmlSha256": "6408d9dc83854ea88fe154320f71c45e4e933b9bf90da928c9ebc1c2533f4e5b",
+      "adaptedHtmlSha256": "9589393f3f75841d4dee3099d366d2abd7dd3837c16d7914f70504ed40f94a84"
+    },
+    {
+      "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+      "file": "reference-5e3605f0-9b80-41e6-ba8b-4daac9fd91b5.html",
+      "nativeHtmlSha256": "394bff526611ef4f2ef543bce519ee253a809519d118292455e010af3d757b58",
+      "adaptedHtmlSha256": "2d67d86080d8d319301a248ac135cf24f77d12c5d9c8507a94291b9b57759b2f"
+    },
+    {
+      "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9",
+      "file": "reference-28f9b013-38fc-479b-82ed-7dfbc2e864e9.html",
+      "nativeHtmlSha256": "9532e52128bc39a1c6f33908b81b52d7118c23d9fc1156f4ae84fbd18b9823fe",
+      "adaptedHtmlSha256": "345f04dc5173ce20dde3b7e535f14dcd6eedaef18ccaa7b0dcc05ca5772d3169"
+    },
+    {
+      "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5",
+      "file": "reference-8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5.html",
+      "nativeHtmlSha256": "d11f20fe619158400cc960e69f5743163804364ffddf1d6d498ba1af7261c78c",
+      "adaptedHtmlSha256": "65bec87d1af4f4316a83a754089709085c3eff2b2e936063df40b1c38370e93b"
+    },
+    {
+      "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9",
+      "file": "reference-8eaa089e-1ec4-4e50-98b2-154b1b9d46a9.html",
+      "nativeHtmlSha256": "dd97a9906f18da8ada2e8ad85e5ce16150d6d03f5a3a40548b506a2155930191",
+      "adaptedHtmlSha256": "35fb5349c0da4a360b202ca65af28c13f08d6c30afabac25c35fc000c56409bc"
+    },
+    {
+      "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c",
+      "file": "reference-3db6430d-d08c-44a8-89a9-f58f49cee91c.html",
+      "nativeHtmlSha256": "d90efb696a424cdcc5f74fc2d8a2cd95a7780bb8fc7459a1fca89589a8b6fa9e",
+      "adaptedHtmlSha256": "2164186ee313ca716293d0c48775c858a763bd786d09578f69a6bc5cf5f5cf29"
+    },
+    {
+      "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39",
+      "file": "reference-527fc84f-a1bf-4823-9cb2-2377ed88bf39.html",
+      "nativeHtmlSha256": "8a5d5c597252fbb11fbdc4b993040bf3827b69c4ed215792418f437e2ed0c677",
+      "adaptedHtmlSha256": "52e85efae97c7099f9d45c57c48cecc48c537d5b73a98d061b4954ddb17fe847"
+    },
+    {
+      "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a",
+      "file": "reference-886f62f7-ffa1-49f3-8847-f4069619606a.html",
+      "nativeHtmlSha256": "26723d35d347fabc23da5458995cab9565754329516dd0b528e960f73ed82e19",
+      "adaptedHtmlSha256": "6392c951972cdee8cc4fb063d5dcbf509321004e3f1489593a57e6ba398d360b"
+    },
+    {
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "file": "reference-7dcc9ea0-7cb1-43e3-9eca-dccc896d6410.html",
+      "nativeHtmlSha256": "cc15385a3a4598d8508d735695912e6ab2e4dde4390253d565310163f8677fc3",
+      "adaptedHtmlSha256": "b30ccdfa314f2945eb97c656de799b7408975092fcc12296c1f9aa7fb66dfbc1"
+    },
+    {
+      "pageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+      "file": "reference-dcd8ade5-5023-4297-84d7-9f9ec21f4118.html",
+      "nativeHtmlSha256": "4cce13c82a2f7d79dcd59062cb96d0cf60e25f42e4541ddc93b14e6acaccd9bd",
+      "adaptedHtmlSha256": "b47f9eb22f3d55d32e729b42d0aca880dd3cfe375c851f3f5ee1fb73e1e0df22"
+    },
+    {
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "file": "reference-0f24db66-5e50-44ba-a6bf-ab8a6196e95b.html",
+      "nativeHtmlSha256": "c58d807f2ffb28757b50a1a52761c11bfa7bb0ac37b25dbaf3d9a77371b1db46",
+      "adaptedHtmlSha256": "5d32f8c47be3476edc9d1e336850f41c293dc4250cf4ea67159804e1ae75b0a0"
+    },
+    {
+      "pageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+      "file": "reference-da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df.html",
+      "nativeHtmlSha256": "4724b58311cf2682254dc9431b2217fcdb9c182beb58483bb522d801a9d8a9be",
+      "adaptedHtmlSha256": "b746b2c3efb22450f40aab30cfc7efcf2ec32dfa64fb59ddbe16fd21912fec7a"
+    },
+    {
+      "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb",
+      "file": "reference-6e2978f2-d468-47c5-a06b-989fcf9547eb.html",
+      "nativeHtmlSha256": "4f47b22b283e441ea6d0918c3f9a745726173039aa81b4ac981f75c718452559",
+      "adaptedHtmlSha256": "90ab01f3b9ec6dbe620ec9e8ff2cefc73129a619795cad1bb61460aaff2d685e"
+    },
+    {
+      "pageId": "2c373504-6712-4e49-b295-815761c629d2",
+      "file": "reference-2c373504-6712-4e49-b295-815761c629d2.html",
+      "nativeHtmlSha256": "33081e79abae58f7305d76f761a60ec0b8552b707add7bdeb8a8befd34dce794",
+      "adaptedHtmlSha256": "fef9c9c6cd048bb2e2946814ff203298f8e7f3f9db08899c1abfbe2c3a7fe17a"
+    },
+    {
+      "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2",
+      "file": "reference-04048b77-3e48-4947-b914-e8a0d44ed8c2.html",
+      "nativeHtmlSha256": "69e8827d9dbd8ef8fbdf3571a003825f8dfbae871614adfa4e3714feb7a92157",
+      "adaptedHtmlSha256": "ad2a16f444ceb10e13fb02d4d9fcef1e07d37b406a80b53b6fb8d4f6a6efffc8"
+    },
+    {
+      "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f",
+      "file": "reference-99989673-07b9-4e51-93da-b4fff0fcd04f.html",
+      "nativeHtmlSha256": "27c78b5e30418df10630660596f6407d36ccdc7966ef46f3082601f1433109da",
+      "adaptedHtmlSha256": "3924e089bef1564871ee88aa94815bd776cea4a58b2825a2aa7e90a759af9cd2"
+    },
+    {
+      "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74",
+      "file": "reference-d2351786-2f7d-4d7f-aa69-0c3c4bef3c74.html",
+      "nativeHtmlSha256": "f71b22f1d30fb5a1d9b21f94e82ebf28f7210a921ef96ab62f9ad0a2b60fb29a",
+      "adaptedHtmlSha256": "ca7cffbfac522ee80751572769cb0b463d8387302110af6ab939bcf993f61c57"
+    },
+    {
+      "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+      "file": "reference-f36137a1-20c4-4639-bcb6-e5740197536f.html",
+      "nativeHtmlSha256": "967034a4212fecfb0e1226ecc81e97ab829ca3b236ed61fe6d071556814a7de9",
+      "adaptedHtmlSha256": "df3bccdd7878c4c9be40c26a1a6909eb5241e597aa178047457f26d1187b03d7"
+    },
+    {
+      "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "file": "reference-ce6a0067-4223-4b42-a25c-4e676da16b97.html",
+      "nativeHtmlSha256": "9635f4e9e3f75442709275b9a7cc7c0caa6bb04e9e58b0fa984272fbcb46a0b2",
+      "adaptedHtmlSha256": "bd636ee0786dfbf3f26ca174c1720b9293918353564aded4fb90b0a4105b0d4f"
+    },
+    {
+      "pageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+      "file": "reference-d1dc3aff-7737-4283-a944-2fc0bd7c858a.html",
+      "nativeHtmlSha256": "06f3a4edc0e575e8bb0a735b320024ef53af6c62d9a66bbc92ec756f46ba2ac6",
+      "adaptedHtmlSha256": "dbe4f13e073808c045418d1168c12c6894229bf56b975f2d3ea27e642f446557"
+    },
+    {
+      "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68",
+      "file": "reference-df53abff-cb78-4282-be67-f7b8649c1b68.html",
+      "nativeHtmlSha256": "8c3538a205505bb5c0e7d588fb291e36127c98a682a4159709371cf63a4d0cf1",
+      "adaptedHtmlSha256": "8caf60a3e126e1f0801c7d2e0ff143008add6c257a68f6c9bc802e07dbe8b91a"
+    },
+    {
+      "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28",
+      "file": "reference-2b36a6c5-a758-4d60-a2f7-a87854140a28.html",
+      "nativeHtmlSha256": "6b0b7acdcaf10ca1f0fd4e9eeb3e1de01156fe1b79abada2e4cc39f5dae05e9d",
+      "adaptedHtmlSha256": "6de2a6a23af18dfcd3738d5739eee1dc7c97e10843834a49f2cb1fcf6899db75"
+    },
+    {
+      "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1",
+      "file": "reference-3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1.html",
+      "nativeHtmlSha256": "7ebfc71a83d2cd5d7409932848870d6e17d88c24585d9317d4ed52ce3a351d4c",
+      "adaptedHtmlSha256": "3f567305b313b2214045a3a51ade574591ffb0bb8237cf2c5fee5218f7a9193a"
+    },
+    {
+      "pageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+      "file": "reference-1663c676-9f7e-4340-b1d6-8fe1f97e9356.html",
+      "nativeHtmlSha256": "869b4590e75c3c4f45bb458d33f598bc1ce64d2f451f6492b70e35a79b730390",
+      "adaptedHtmlSha256": "153ba84e743699212d1660f8258a60dd1a61026d182d3170c10297f6880a6fe3"
+    },
+    {
+      "pageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+      "file": "reference-8f926c4f-792a-4dc2-8a0c-d5415c8f47bf.html",
+      "nativeHtmlSha256": "fdf5d1a36e94d188611d7db799caeff87617b612f1e29326f49b23dd8d6ea225",
+      "adaptedHtmlSha256": "b4f23c9401b6b32c69dcec793eede23c541ee00a58a3bce8e3f20d7c03f6da4a"
+    },
+    {
+      "pageId": "ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6",
+      "file": "reference-ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6.html",
+      "nativeHtmlSha256": "a113778d9e8a4d68afb8067191b519e8ffaf256f098f0e5c4be6d4d51934ee54",
+      "adaptedHtmlSha256": "8cb5d7685aa3b50c52343be5d0a50756a880dc55cfcc0f9a47bee6d7b5bb83c9"
+    },
+    {
+      "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177",
+      "file": "reference-6d90498a-ab1d-4d58-8c75-0fc0cea84177.html",
+      "nativeHtmlSha256": "d793998b44dc462b86f3c08597e1759e33129097c0e701d596639690eb2c37a1",
+      "adaptedHtmlSha256": "31dc4039f226cb607532ca4bd4ced0e72710f24f67779fd29ed295dda1a90879"
+    },
+    {
+      "pageId": "10660b33-7a51-429f-80c0-6814e8d36cc6",
+      "file": "reference-10660b33-7a51-429f-80c0-6814e8d36cc6.html",
+      "nativeHtmlSha256": "47a55c2dd422edbaf772c1661c247b091b92070368002340eb5884463658fc9c",
+      "adaptedHtmlSha256": "a1169fa70ce9ad20d6ad163957e71a47a91e8acac47037cfe825b1b1a9e5b605"
+    },
+    {
+      "pageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+      "file": "reference-a19f66ae-6adb-41ff-8602-d53404278787.html",
+      "nativeHtmlSha256": "1aef97fb1f148a3210ce92e310eb46bfe0ed2b3e8e955e5fc39a5fad067fa589",
+      "adaptedHtmlSha256": "9a9d479aac666f68e2fe646e9cfdf767e287f1ea88f1e46bbf4ea5f6a8b0bab8"
+    },
+    {
+      "pageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+      "file": "reference-211ed200-f2dc-4acc-95dc-a08acfda4b14.html",
+      "nativeHtmlSha256": "7755ae56722f69153910447975ae27d75fe3a0bd046d1480dcc84ff575833a7f",
+      "adaptedHtmlSha256": "a7a795c9c2a54591c7d1fcd84c3a4c3f2209e44f2a23b8337e20f31906d26fed"
+    },
+    {
+      "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d",
+      "file": "reference-57f183fb-ac75-4d1f-9afc-412100b0595d.html",
+      "nativeHtmlSha256": "c1a916f3d86984e7c542e19e1a92824b2bc93384595d0b9795ce6a4812667d24",
+      "adaptedHtmlSha256": "ecf0f056b6426e6115cd714f2ae4a6d9f940712b526bff7aa8ffae149a7f1e59"
+    },
+    {
+      "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e",
+      "file": "reference-ed236e53-380e-4fd1-a47a-c83567ff021e.html",
+      "nativeHtmlSha256": "8c337d9f7a226c5eda9e15a6a033964bf887caf6bf20805c993a87b214277556",
+      "adaptedHtmlSha256": "b7808191e3675ef51991cb849e86726b732f8bcad1bdd34d5e2f485ae8d57781"
+    },
+    {
+      "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603",
+      "file": "reference-01a2a4db-a027-4a4e-bbd5-5dc96cc1a603.html",
+      "nativeHtmlSha256": "a78d28ae371a25e1ad02f1bd1670f4159ae9bf428efd3cb1d32ef4a0309204ef",
+      "adaptedHtmlSha256": "69c8fbfe55e5921e255dba1005dc36226f6e859bc0548cbea0d1f5680d4f0a60"
+    },
+    {
+      "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848",
+      "file": "reference-8bec4e8c-c3f9-4208-9d19-4a67b86f7848.html",
+      "nativeHtmlSha256": "2e8ae3fc56f28d51591081fb672536b803c66b4232911891b4a0c573eeb17a63",
+      "adaptedHtmlSha256": "e23479802ad13364ef8037e1e06b39e0af7816e9ddc3fe85f0613a38c9f8a1b8"
+    },
+    {
+      "pageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+      "file": "reference-baf25810-3318-4b27-b59c-e0c82093824d.html",
+      "nativeHtmlSha256": "76cbea493fadb925b0b4de6a40bda56373f85f18cfba80e54dba2b44f55f97a5",
+      "adaptedHtmlSha256": "bc1cf7d65af8b37ab781418e8637855841fe2093bca2878df14680060a12d694"
+    },
+    {
+      "pageId": "99c2d09a-1314-48db-999c-075d312271b2",
+      "file": "reference-99c2d09a-1314-48db-999c-075d312271b2.html",
+      "nativeHtmlSha256": "3ca4b46e4f7fc03d9e26d8c7659578c24ad3dda1f3d33f298ee2325907e47730",
+      "adaptedHtmlSha256": "5cf36ad167fdf59f845fa02945991ba3dc0ee8ae98d56399563ee1bd5744ac65"
+    },
+    {
+      "pageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+      "file": "reference-f35f4167-4cca-4f4e-808b-cf20977f933d.html",
+      "nativeHtmlSha256": "08d75c4f11f8e409a3bc927fcf44c97b91066df5640c7be64fdd4f321f062fc4",
+      "adaptedHtmlSha256": "1da09759c602169c830bfa9e1242e4a2aa032e75d1f39a8d4d610bf276a8fb32"
+    },
+    {
+      "pageId": "85ae7c9c-1176-47ff-b125-6c52d479973d",
+      "file": "reference-85ae7c9c-1176-47ff-b125-6c52d479973d.html",
+      "nativeHtmlSha256": "bac8ac52efecf8caf0afc2829e7858f7c6db1ab736bb58a82ecdcc24cbf4c1f3",
+      "adaptedHtmlSha256": "e4d2f39ae2f383dec305bd23d783f5fd80317c19b4f4cfc1664aa4faf7bdca77"
+    },
+    {
+      "pageId": "a61a0248-1c28-4cdc-89ba-e6c087989cdf",
+      "file": "reference-a61a0248-1c28-4cdc-89ba-e6c087989cdf.html",
+      "nativeHtmlSha256": "2d6c656c3c64ee37b2c655de827ad88cbc51b515719c8ac4267ad2e64b5c09fe",
+      "adaptedHtmlSha256": "beb36ec99c3ec10c11bd8b23a100633932c3b7cde929dd22fe3b7241888af7d9"
+    },
+    {
+      "pageId": "6cc9716e-8706-4628-a85a-7a32ca432a7d",
+      "file": "reference-6cc9716e-8706-4628-a85a-7a32ca432a7d.html",
+      "nativeHtmlSha256": "38dcc06598b236329afd0a3081c114966f3a454da7ec6f9e006e8a945caf60f0",
+      "adaptedHtmlSha256": "43366acbeaceb279c4dbb16af0988ee64887b520a30c701911094189b09f8a24"
+    },
+    {
+      "pageId": "madbeauty-author-redakcija",
+      "file": "reference-madbeauty-author-redakcija.html",
+      "nativeHtmlSha256": "ea4026aebafa45cada6cca9ecf53f7a0cd6b2d7ac87b31bec69cfb185aef7a67",
+      "adaptedHtmlSha256": "2adf5305c720eb0856de3af4143717612919d9b8377432b3f5148076b6e6a63e"
+    }
+  ]
+}

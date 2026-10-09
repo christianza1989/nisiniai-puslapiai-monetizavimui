@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-09T22:34:20.220Z",
+  "scope": "Only previously actually read spelling/spacing fixes in plain-list nodes; no sources, claims or schedule changes.",
+  "changes": [
+    {
+      "planId": "PM-antakiai",
+      "beforeRevisionHash": "6fb55e702ba5ded3ef409237ed0f80f73492e4a913a11a70e3591a55cce15eb1",
+      "afterRevisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+      "observed": [
+        {
+          "from": "mida teikėjas",
+          "to": "ką teikėjas",
+          "actualListItemBefore": "Informacija apie pigmentą ir higieną: mida teikėjas konkrečiai nurodo, o mida reikėtų dar pasitikslinti?"
+        },
+        {
+          "from": "o mida reikėtų",
+          "to": "o ką reikėtų",
+          "actualListItemBefore": "Informacija apie pigmentą ir higieną: ką teikėjas konkrečiai nurodo, o mida reikėtų dar pasitikslinti?"
+        }
+      ]
+    }
+  ]
+}

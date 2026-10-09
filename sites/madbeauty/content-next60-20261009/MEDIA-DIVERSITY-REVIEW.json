@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-09T21:29:04.307Z",
+  "state": "PASS_ACTUAL_ORIGINAL_DIVERSITY",
+  "scope": "All60 original pixels previously seen individually plus four actual contact sheets viewed now. Responsive crop/render review remains separate.",
+  "sheets": [
+    {
+      "file": "IMAGES-1.png",
+      "sha256": "2d45128494fdca0eeb434e9347c8b91209d0bbcba7ec695a68edd1a1fce8d398"
+    },
+    {
+      "file": "IMAGES-2.png",
+      "sha256": "f632e15065947b8d2d53c76688b5ee855a9cfb5761e8923cd222e0e2c5bc13d9"
+    },
+    {
+      "file": "IMAGES-3.png",
+      "sha256": "16b503c8a1b98c37459fd661415f10cf9bb89f1f60a64f0849e9f5abf0f73e0b"
+    },
+    {
+      "file": "IMAGES-4.png",
+      "sha256": "1c825a4697ba28682402664926ef0ed00fe7cf8b56e526fb2b1d62aa68713354"
+    }
+  ],
+  "observations": [
+    "Distinct close portraits, people consultations, full studio views, tools, rooms and product scenes; cobalt/coral/green/violet/terracotta/mustard palettes alternate.",
+    "Repeated topic families do not reuse the same original;60source originals have distinct hashes.",
+    "IG original shower was rejected and regenerated as HVLP spray tent; last laser-zone consultation regenerated with distinct adult male and violet scene.",
+    "No fake before/after proof or active invasive procedure, no textual brand badges. Contact sheets are private QA artifacts, not publication media."
+  ]
+}

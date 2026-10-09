@@ -1,0 +1,232 @@
+[
+  {
+    "planId": "FX-gidas",
+    "usefulness": "Separates session organization from activity type; beginner choice example and direct Pilates explanation.",
+    "claims": "NHS balance/posture/strength/flexibility and named 45-minute video scoped, no individual therapeutic superiority.",
+    "remaining": "Final links, copyedit and rendered views.",
+    "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+    "revisionHash": "f33d1c759eb1be772a8cff7d170bdeef8098f8e3e6ccac2f362b2b32eec73306",
+    "observedAt": "2026-10-09T22:09:22.216Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "OD-gidas",
+    "usefulness": "Concrete hygiene components, same-menu amounts, orthodontic purpose and whitening-restoration distinction.",
+    "claims": "Dentara ultrasound/brush60–70, combinedAirflow80 and separate50 EUR; LSMU bite/alignment, NHS restorations do not whiten.",
+    "remaining": "Correct source reading local date from Oct9 to Oct10; final links/render.",
+    "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+    "revisionHash": "b85f883657aac1309dc94d0619d2aabe15527afdcb24dd7bb8495f1484533625",
+    "observedAt": "2026-10-09T22:09:22.217Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "PX-gidas",
+    "usefulness": "Individual keratin bonds versus flat adhesive tape examples; practical choice card and separate professional removal.",
+    "claims": "Great Lengths systems specifically named; AAD traction caution qualified; no universal maintenance interval or damage-free promise.",
+    "remaining": "Description can be shortened naturally; final links/render.",
+    "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+    "revisionHash": "7df5af1c2a1bfa266e3b76d5f0633f3291892f46db80ab6f6da523bdc3391f02",
+    "observedAt": "2026-10-09T22:09:22.217Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "SP-gidas",
+    "usefulness": "Separates ritual, room and private booking; concrete menu components and relaxation evidence limits.",
+    "claims": "SPA menu40min60 EUR and60min90 EUR scoped. Source says Kese scrub and body application, not oil massage.",
+    "remaining": "Correct erroneous Kese component label; final links/render.",
+    "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+    "revisionHash": "da3a6e7d180e42b6de4b95d0322c1d9700500a6b33d00978ee88e8037fc4459c",
+    "observedAt": "2026-10-09T22:09:22.218Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "TT-gidas",
+    "usefulness": "Motif/place/scale brief, exact sketch/session scope and worked offer comparison.",
+    "claims": "Current NVSC hygiene-pass scope and sterile pack opening, FDA contamination/reaction caution as US information, no fabricated provider verification.",
+    "remaining": "Final links/render.",
+    "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+    "revisionHash": "6eb033648ad4b581be37400047101fea6533f9ff5065a625924d78fcfc89dafb",
+    "observedAt": "2026-10-09T22:09:22.218Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "KP-kaina-trukme",
+    "usefulness": "Concrete menu comparison and reusable price/unit/duration fields without multiplying minutes into a false rate.",
+    "claims": "40min60 and60min90 EUR actual Oct10 menu; different packages. Kese component must be body application.",
+    "remaining": "Correct erroneous oil-massage label in two occurrences; final links/render.",
+    "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+    "revisionHash": "5b0233aa4cb6ede97244385f50903daa567230f0a6361b98902ae098da5d3973",
+    "observedAt": "2026-10-09T22:09:22.218Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "MN-be-lakavimo",
+    "usefulness": "Distinguishes no colour/no coating, existing removal and desired shape/surface; real offer wording example.",
+    "claims": "Vili40min25 versus60min30 EUR, scoped Oct9 historical menu; AAD nail-change referral, no home protocol.",
+    "remaining": "Actual responsive crop review resolves explicit image factCheck; final links/render.",
+    "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+    "revisionHash": "a3dba6aeddec2ee90b34259054780291c06dc8b49199a7d446354748fdb274e7",
+    "observedAt": "2026-10-09T22:09:22.218Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "PD-kaina-trukme",
+    "usefulness": "Three variants in one menu; clear15min5 EUR and30min10 EUR aggregate differences, not invented unit rates.",
+    "claims": "75min45,90min50,up to120min60 EUR dated Oct9; AAD cosmetic concealment and NVSC general hygiene-pass scope qualified.",
+    "remaining": "Final links/render.",
+    "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+    "revisionHash": "cd2d3d509213b96f82e3de73c3a4581923df93e4d99c5ba557195ddb81c9070c",
+    "observedAt": "2026-10-09T22:09:22.218Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "ES-mezoterapija-biorevitalizacija",
+    "usefulness": "Explains product/method/task distinction using two real Era descriptions and an incomplete-offer example.",
+    "claims": "Era Dermaheal microinjections versus HA/combined biorevitalisation scoped to that provider; no universal ingredients/course/pain-free promises. LT competence checks conditional on actual service.",
+    "remaining": "Replace foreign accidental word мэдээлimą with Lithuanian informaciją; final links and render.",
+    "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+    "revisionHash": "7dc1c97c178fd1a150e45009d7ed03f4f8ae2e1a9f04cc39fc645df9e59cdc4e",
+    "observedAt": "2026-10-09T22:16:45.235Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "FX-joga-pilatesas",
+    "usefulness": "Direct Pilates direction, variable yoga styles, comparable criteria and first-lesson example.",
+    "claims": "NHS specific45-minute beginner video scoped; no general lesson duration, equipment or clinical superiority claim.",
+    "remaining": "Correct neaiškiaks to neaiškų and Эti aprašo požymiai to Šie aprašo požymiai; final links/render.",
+    "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+    "revisionHash": "a2b63211533860353e2082e86973621c44523bce222536311ccd27838ee3a0f6",
+    "observedAt": "2026-10-09T22:16:45.236Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "OD-balinimas",
+    "usefulness": "Direct natural-teeth versus restoration response, visible-filling example and actual licence-check route.",
+    "claims": "NHS fillings/crowns do not change colour through whitening; no mandatory restoration replacement or guaranteed shade, LT licence scope separated from UK guidance.",
+    "remaining": "Correct mixed-language restoration-replacement sentence without changing its negative meaning; final links/render.",
+    "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+    "revisionHash": "56491474873fbd30b8b723625f21ec1057bbb44162716d949f1b07ef4e02e120",
+    "observedAt": "2026-10-09T22:16:45.236Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "PM-antakiai",
+    "usefulness": "Direct line-versus-shading visual choice, prior-pigment task and specific PhiAcademy examples.",
+    "claims": "PhiBrows manual versus PowderBrows apparatus scoped to those systems, FDA pigment/removal limits and current NVSC hygiene information. No universal nano rule or credential claim.",
+    "remaining": "Correct accidental Estonian mida; category is an aggregator, replace one-provider grouping assertion; final links/render.",
+    "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+    "revisionHash": "2011e62784c4f565c983d826947238365e903dd28415df979646bbc56dcfde84",
+    "observedAt": "2026-10-09T22:19:35.353Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "PX-korekcija-nuemimas",
+    "usefulness": "Actual40-unit worked arithmetic, correction versus finishing use, product-system/removal scope.",
+    "claims": "Gatineau40×3.50=140 versus40×0.80+20=52 conditional exact units, no duration invented. HeadRoom80/1h50 tape correction,50/1h removal method unspecified. GreatLength specific professional systems; AAD traction limits.",
+    "remaining": "Correct one missing sentence space; final links/render.",
+    "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+    "revisionHash": "06474ff39cf52a5853493dd04019cc0ed7fe24c89990672e6dead1854175e3a5",
+    "observedAt": "2026-10-09T22:19:35.354Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "RP-parafinas",
+    "usefulness": "Explains cold cream versus melted cosmetic wax using actual ARAVIA system, separates hand/foot zone from whole manicure/pedicure scope.",
+    "claims": "Manufacturer-specific product formats, not cold-water bath or all-brand standard; no temperature, timing, home recipe or detox claims.",
+    "remaining": "Explicit assigned-media pixel/crop note requires actual render; final links.",
+    "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+    "revisionHash": "5365bced600984b185980b45f5be2b95a654d636a7c9582e09f8d080e6ca08d3",
+    "observedAt": "2026-10-09T22:22:20.390Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "SP-galvos-spa",
+    "usefulness": "Concrete two-ritual component comparison, separate relaxation versus consultation versus cosmetic-care objectives.",
+    "claims": "Actual Oct10 ALISPA Classic70/Deluxe90 EUR, extra face/decollete massage, no duration.20 EUR aggregate component difference, not quality/efficacy. NCCIH aroma evidence limits.",
+    "remaining": "Final links/render.",
+    "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+    "revisionHash": "0e251434a4e2423ddcd1ecb2f7d4b4b1e79e9cb2c0d576aa5c402fadc44bede6",
+    "observedAt": "2026-10-09T22:22:20.390Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "NP-formos-tipsai",
+    "usefulness": "Direct support-form versus pre-shaped full coverage tip distinction and separate method/material/silhouette criteria.",
+    "claims": "Specific CND FutureForms/Gelish full-coverage soft-gel systems, no universal all-tip adhesive claim. Vili gel-polish amounts explicitly are not form/tip extension prices; DermNet allergy referral scoped.",
+    "remaining": "Fix accidental tipas to tipsas in product phrase; final links/render.",
+    "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+    "revisionHash": "e53f3b9171d6504d2e642730cb191ccc577f23393bd3c839592dba085b9b8935",
+    "observedAt": "2026-10-09T22:22:20.391Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "SP-hamamas",
+    "usefulness": "Direct space-use versus guided ritual/component distinction, actual one-menu comparison and illustrative matching-scope decision.",
+    "claims": "SPA Vilnius actualOct10 steam30min20 EUR, Kese scrub/body application40min60, namedritual60min90. No oil-massage invention, no old2023 source presented as current law.",
+    "remaining": "Final links/render.",
+    "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+    "revisionHash": "c21006bcfd68b2a880fba04e51a16307c7fe61172c7f40a765c607feb2d0e3b7",
+    "observedAt": "2026-10-09T22:27:02.977Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "AN-dazai-henna",
+    "usefulness": "Direct product/result/package comparison with actual ingredient examples and different bundled offers.",
+    "claims": "Specific RefectoCilNo3 oxidant/Toluene2,5Diamine/mAminophenol versus BrowCode Lawsonia plusotheringredients/PPD in named shade lists; not allhenna pureplant/hypoallergenic. Real historical Laminuota/MILONA menu units scoped.",
+    "remaining": "Final links/render.",
+    "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+    "revisionHash": "411975c0b135631b81555d8324557fdabd88e613ad2829d0b2f116834f3cc2c2",
+    "observedAt": "2026-10-09T22:27:02.978Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "BL-dazymas",
+    "usefulness": "Clear colour/curl/additionalhair decision and two actual bundled-menu illustrations.",
+    "claims": "Tinting does not add real length/density; individual extension versus strip corrected. Specific LVL example scoped, DermNet irritation/referral, actual Leila70min40 EUR andMILONA40min20 versus50min26 historical scope.",
+    "remaining": "Final links/render.",
+    "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+    "revisionHash": "5b464139b6c2806ba137f49bee4a3e00bd0aaa93a202a53551313454c2ad75b9",
+    "observedAt": "2026-10-09T22:27:02.978Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "DP-ar-lazeris",
+    "usefulness": "Direct current-hair removal versus growth-reduction goal, same-zone/per-visit versus package comparison.",
+    "claims": "AAD waxing/root and laser/follicle effects scoped, no permanent/course guarantee. Actual Oct9 calf wax25/45m versuswholelegs40/60m; Era108/103per6 andAmber99/79per4/69per6 are historical unit examples, not total plan costs or future tariff promises. NVSC general activity scope only.",
+    "remaining": "Final links/render. Historical Era offer must not be represented as a December-valid promotion.",
+    "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+    "revisionHash": "66b737962ac573cd3d3faa624823b0d9d0ad75bf99c141d8ffb526982b820d43",
+    "observedAt": "2026-10-09T22:28:14.942Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "DZ-ombre-sombre",
+    "usefulness": "Direct darker-root/light-end gradient versus softer contrast versus sruogų arrangement; useful three-observation photo reference brief.",
+    "claims": "Actually read current WellaS118 glossary and other Wella professional material; no rejected old Salt-and-Pepper rawURL used, no chemical recipe or identical-result guarantee. Faces menu toning separately scoped to actual historical example.",
+    "remaining": "Explicit attached-media actual pixel/mobile-crop check; final links.",
+    "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+    "revisionHash": "28c818817528e82c256c85d110395a1f4797a44423c73cade43337e6a9a2f783",
+    "observedAt": "2026-10-09T22:28:14.943Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "GL-ar-stiprinimas",
+    "usefulness": "Direct colour/overlay/extra-length choice, actual CND product can serve two tasks, clear menu-scope differences.",
+    "claims": "CND specific Shaper overlay/short freeedge extension, not biological repair. Vili exact colour/design/removal units; Room <=3cm existing versus new-client categories explicitly not new-set inference or market average.",
+    "remaining": "Correct nekurdamas grammar; final links/render.",
+    "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+    "revisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+    "observedAt": "2026-10-09T22:31:28.719Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  },
+  {
+    "planId": "KP-sveitimas",
+    "usefulness": "Direct outer dead-cell removal, mechanical versus chemical components, different moisture task and real package illustration.",
+    "claims": "Actual AAD S121 mechanisms/canirritate/notforeveryone; actual SPA Vilnius Oct10 Kese scrub/body application40min60 EUR, nooil-massage/detox/weight-loss/clinical guarantee or home acid/time protocol.",
+    "remaining": "Explicit assigned-media actual pixel/mobile-crop check; final links.",
+    "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+    "revisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+    "observedAt": "2026-10-09T22:31:28.720Z",
+    "state": "ACTUAL_COMPLETE_REVISED_BODY_READ_NOT_FINAL_APPROVAL"
+  }
+]

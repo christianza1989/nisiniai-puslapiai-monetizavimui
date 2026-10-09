@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+const here=new URL('.',import.meta.url),sel=JSON.parse(await fs.readFile(new URL('SELECTION.json',here),'utf8'));
+const site=JSON.parse(await fs.readFile(sel.privateStudio+'/sites/madbeauty.json','utf8'));
+const delivery=JSON.parse(await fs.readFile(new URL('DELIVERY.json',here),'utf8'));
+const sources=JSON.parse(await fs.readFile(new URL('SOURCE-NOTES.json',here),'utf8'));
+const rows=sel.pages.map(i=>{const p=site.pages.find(p=>p.id===i.pageId);return{...i,title:p.title,state:p.publishedRevision?'APPROVED_SCHEDULED':'PRIVATE_DRAFT'};}).sort((a,b)=>a.publishAt.localeCompare(b.publishAt));
+const cell=s=>String(s).replaceAll('|','\\|'),csv=s=>'"'+String(s).replaceAll('"','""')+'"';
+await fs.writeFile(new URL('PUBLICATION-DATES.csv',here),'\uFEFF'+[['Tema','Straipsnis','Data Lietuvoje','Laikas Lietuvoje','Zona','UTC','Adresas','Būsena'],...rows.map(i=>[i.planId,i.title,i.localDate,i.localTime,'Europe/Vilnius',i.publishAt,'https://madbeauty.lt/'+i.slug,i.state])].map(r=>r.map(csv).join(';')).join('\r\n')+'\r\n');
+await fs.writeFile(new URL('README.md',here),`# Madbeauty: papildomi 60 straipsnių\n\nBūsena: **${delivery.state}**. ${delivery.additionalApproved} papildomų straipsnių patvirtinta autonomine agento peržiūra; bendrame pakete ${delivery.approvedTotal} puslapiai ir ${delivery.guideTotal} gidai. Tekstų autorius viešai – Madbeauty redakcija. Faktinis CLI rašymo modelis – GPT-6 Luna, xhigh, be fallback.\n\n60 atskirų originalių ImageGen fotografijos iliustracijų, po penkis responsive WebP variantus. Fikcinės teminės nuotraukos nėra realių klientų rezultatai. Šaltinių žurnale ${sources.length} iš tikrųjų perskaitytų ribotos apimties įrašų; kainų pavyzdžiai turi tikras meniu patikros datas ir nėra ateities tarifų garantija.\n\n69 ankstesnės patvirtintos revizijos ir visos299 kalendoriaus akimirkos išsaugotos. Papildomi60 pasirodo spalio30–gruodžio23 d.,10:00 arba16:00 Lietuvos laiku. Būsimi puslapiai, vaizdai, nuorodos ir atradimo indeksai turi bendrą publikavimo laiko ribą. Eksportas ir tikras Cloudflare diegimas tikrinami atskirai.\n\n- [Visi tekstai ir nuotraukos](index.html)\n- [Tikslios publikavimo datos CSV](PUBLICATION-DATES.csv)\n- [Paketo ir diegimo būsena](DELIVERY.json)\n- [Šaltinių patikra](SOURCE-NOTES.json)\n- [Nuorodų tinklas](LINK-PLAN.json)\n\n| Data | Laikas Lietuvoje | Straipsnis | Tema |\n|---|---|---|---|\n${rows.map(i=>'| '+[i.localDate,i.localTime,'['+cell(i.title)+']('+i.planId+'.html)',i.planId].join(' | ')+' |').join('\n')}\n`);
+sel.history=sel.history||[];
+if(!sel.history.some(h=>h.event==='Original selection metadata retained'))sel.history.push({event:'Original selection metadata retained',status:sel.status,selection:sel.selection,priorPackageSha256:sel.priorPackageSha256});
+sel.status=delivery.state;sel.updatedAt=new Date().toISOString();sel.selection='Additional60 in the original exact calendar. Historical specialist wording in briefs is superseded by owner EDITORIAL_POLICY; six actual agent review gates remain required.';
+sel.currentBaselinePackageSha256='98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2';
+for(const i of sel.pages)i.status=rows.find(r=>r.pageId===i.pageId).state;
+await fs.writeFile(new URL('SELECTION.json',here),JSON.stringify(sel,null,2)+'\n');
+console.log({state:delivery.state,rows:rows.length});

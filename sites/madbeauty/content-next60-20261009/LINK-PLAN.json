@@ -1,0 +1,1560 @@
+{
+  "checkedAt": "2026-10-09T22:31:24.002Z",
+  "scope": "Private full graph before release selection. Deferred destinations remain planned, never live hrefs.",
+  "pages": [
+    {
+      "planId": "AV-gidas",
+      "pageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+      "publishAt": "2026-10-30T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "6cb7a406-fdd0-444a-8c40-fe51b88ddad3",
+          "label": "Ausies spenelis, kremzlė ir kitos vėrimo vietos: skirtinga užduotis",
+          "reason": "Atsakymas: Pasirinkta vieta.",
+          "targetPlanId": null,
+          "targetTitle": "Ausies spenelis, kremzlė ir kitos vėrimo vietos: skirtinga užduotis"
+        },
+        {
+          "targetPageId": "1af233ab-8ce1-4eea-8620-5cc6f6761c8e",
+          "label": "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas?",
+          "reason": "Atsakymas: Naudojamas metodas.",
+          "targetPlanId": "AV-metodai",
+          "targetTitle": "Auskarų vėrimo metodas ir įrankiai: ką paaiškina specialistas?"
+        },
+        {
+          "targetPageId": "2934dc52-45c8-429b-ba28-ce368787862d",
+          "label": "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija",
+          "reason": "Atsakymas: Medžiagos deklaracija.",
+          "targetPlanId": "AV-papuosalas",
+          "targetTitle": "Pirmas auskaras: papuošalo medžiaga, dydis ir dokumentuota informacija"
+        },
+        {
+          "targetPageId": "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572",
+          "label": "Auskarų vėrimo kaina ir trukmė: papuošalas, vieta ir kontrolinis vizitas",
+          "reason": "Atsakymas: Darbo ir papuošalo sudėtis.",
+          "targetPlanId": "AV-kaina-trukme",
+          "targetTitle": "Auskarų vėrimo kaina ir trukmė: papuošalas, vieta ir kontrolinis vizitas"
+        },
+        {
+          "targetPageId": "8e709a17-9157-489b-aa10-7d7b99177bce",
+          "label": "Prieš auskarų vėrimą: ankstesnės reakcijos, amžius ir paslaugos sąlygos",
+          "reason": "Atsakymas: Ankstesnių reakcijų informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš auskarų vėrimą: ankstesnės reakcijos, amžius ir paslaugos sąlygos"
+        },
+        {
+          "targetPageId": "d14b5f13-ae7b-4b59-816a-3f7909511901",
+          "label": "Priežiūra po auskarų vėrimo: vietai pritaikyta instrukcija ir kontrolė",
+          "reason": "Atsakymas: Konkrečios vietos instrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po auskarų vėrimo: vietai pritaikyta instrukcija ir kontrolė"
+        },
+        {
+          "targetPageId": "a81e4a10-ae78-466a-94f7-ee81310d73d5",
+          "label": "Skausmas ar įtariama infekcija po vėrimo: kada reikalinga sveikatos pagalba?",
+          "reason": "Atsakymas: Procedūros istorija.",
+          "targetPlanId": null,
+          "targetTitle": "Skausmas ar įtariama infekcija po vėrimo: kada reikalinga sveikatos pagalba?"
+        },
+        {
+          "targetPageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+          "label": "Grožio paslaugų teikėjo patikra: vieta, higiena ir paslaugos pobūdis",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Grožio paslaugų teikėjo patikra: vieta, higiena ir paslaugos pobūdis"
+        }
+      ]
+    },
+    {
+      "planId": "ES-gidas",
+      "pageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+      "publishAt": "2026-11-02T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "01a5be0c-9c9a-40d3-bb9f-5993b6e47206",
+          "label": "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas",
+          "reason": "Atsakymas: Poveikio mechanizmo paaiškinimas.",
+          "targetPlanId": "ES-mikroadatine",
+          "targetTitle": "Mikroadatinė procedūra: įrenginys, paskirtis ir RF skirtumas"
+        },
+        {
+          "targetPageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+          "label": "Mezoterapija ir biorevitalizacija: ką reikia žinoti apie konkretų metodą ir priemonę",
+          "reason": "Atsakymas: Rinkodaros termino ir produkto skirtumas.",
+          "targetPlanId": "ES-mezoterapija-biorevitalizacija",
+          "targetTitle": "Mezoterapija ir biorevitalizacija: ką reikia žinoti apie konkretų metodą ir priemonę"
+        },
+        {
+          "targetPageId": "cc245ef4-1dd8-42e1-ac4e-85b1d29b67ed",
+          "label": "Injekcinių procedūrų konsultacija: ko tikėtis iš įvertinimo",
+          "reason": "Atsakymas: Pradinis tikslas ir sveikatos informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Injekcinių procedūrų konsultacija: ko tikėtis iš įvertinimo"
+        },
+        {
+          "targetPageId": "640229bf-1d3d-466d-8744-7724133f0891",
+          "label": "Estetinis lazeris ir randų priežiūra: kodėl pirmas žingsnis yra konsultacija",
+          "reason": "Atsakymas: Rando pobūdžio įvertinimas.",
+          "targetPlanId": null,
+          "targetTitle": "Estetinis lazeris ir randų priežiūra: kodėl pirmas žingsnis yra konsultacija"
+        },
+        {
+          "targetPageId": "5a3c166b-911a-4508-a152-68d5f99dfba5",
+          "label": "Prieš ir po estetinės procedūros: dokumentuota instrukcija ir pagalbos veiksmai",
+          "reason": "Atsakymas: Metodo ir produkto informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš ir po estetinės procedūros: dokumentuota instrukcija ir pagalbos veiksmai"
+        },
+        {
+          "targetPageId": "25607efa-1615-4b22-8ed8-2b1d55ff14fc",
+          "label": "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba"
+        },
+        {
+          "targetPageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+          "label": "Dermatologas ir medicinos estetikos konsultacija: poreikis, kompetencija ir vizito apimtis",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "MD-gidas",
+          "targetTitle": "Dermatologo ir medicinos estetikos konsultacijos: skirtumai"
+        }
+      ]
+    },
+    {
+      "planId": "FX-gidas",
+      "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+      "publishAt": "2026-11-03T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "61506dee-2871-4316-946b-28d87f85273f",
+          "label": "Judesio ir treniruočių programos konsultacija: pasiruošimas ir pirmas susitikimas",
+          "reason": "Atsakymas: Pradinė informacija ir tikslai.",
+          "targetPlanId": null,
+          "targetTitle": "Judesio ir treniruočių programos konsultacija: pasiruošimas ir pirmas susitikimas"
+        },
+        {
+          "targetPageId": "59d45d9c-8021-434c-8a5e-7f47cd46d6f2",
+          "label": "Po pirmos treniruotės: plano koregavimas ir kada reikia sveikatos konsultacijos",
+          "reason": "Atsakymas: Grįžtamasis ryšys apie krūvį.",
+          "targetPlanId": null,
+          "targetTitle": "Po pirmos treniruotės: plano koregavimas ir kada reikia sveikatos konsultacijos"
+        },
+        {
+          "targetPageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+          "label": "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai",
+          "reason": "Atsakymas: Judesio ir kvėpavimo vaidmuo.",
+          "targetPlanId": "FX-joga-pilatesas",
+          "targetTitle": "Joga ar pilatesas: pamokos pobūdis, inventorius ir pasirinkimo kriterijai"
+        },
+        {
+          "targetPageId": "e867d6e8-db21-432f-b4a8-209d7060be4c",
+          "label": "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "KT-gidas",
+          "targetTitle": "Kineziterapija: konsultacija, individualus darbas ir grupinis užsiėmimas"
+        }
+      ]
+    },
+    {
+      "planId": "GY-gidas",
+      "pageId": "9233c7ed-52c6-4ee9-9835-4005db2d5781",
+      "publishAt": "2026-11-04T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "26ac5107-621c-49d6-9a38-b7b5c13c7ca4",
+          "label": "Pasiruošimas gyvūno kirpėjui: elgsena, kailio būklė ir vizito sąlygos",
+          "reason": "Atsakymas: Gyvūno reakcijos bei patirtis.",
+          "targetPlanId": null,
+          "targetTitle": "Pasiruošimas gyvūno kirpėjui: elgsena, kailio būklė ir vizito sąlygos"
+        },
+        {
+          "targetPageId": "8268d5d4-39ad-432b-ba56-1b7e2d6bd7d6",
+          "label": "Po gyvūno maudymo ir kirpimo: kailis, nagai ir kada kreiptis į veterinarą",
+          "reason": "Atsakymas: Konkretaus kailio kasdienė priežiūra.",
+          "targetPlanId": null,
+          "targetTitle": "Po gyvūno maudymo ir kirpimo: kailis, nagai ir kada kreiptis į veterinarą"
+        },
+        {
+          "targetPageId": "7304da2a-bd79-48ac-a89e-01a2103d3f25",
+          "label": "Katės kailio priežiūros paslauga: sąvėlos, komfortas ir veterinaro riba",
+          "reason": "Atsakymas: Kailio būklė ir sąvėlos.",
+          "targetPlanId": null,
+          "targetTitle": "Katės kailio priežiūros paslauga: sąvėlos, komfortas ir veterinaro riba"
+        },
+        {
+          "targetPageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+          "label": "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas?",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas?"
+        }
+      ]
+    },
+    {
+      "planId": "IG-gidas",
+      "pageId": "6a9450cb-725b-4077-9846-f6d8a9af26ef",
+      "publishAt": "2026-11-04T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "128cd8f9-5010-41ba-a3bf-64161204daeb",
+          "label": "Purškiamo įdegio pasiruošimas: produktas, spalvos bandymas ir apranga",
+          "reason": "Atsakymas: Konkretaus produkto pasiruošimas.",
+          "targetPlanId": null,
+          "targetTitle": "Purškiamo įdegio pasiruošimas: produktas, spalvos bandymas ir apranga"
+        },
+        {
+          "targetPageId": "2152a3fa-2e0c-413e-8438-5504d89c86f9",
+          "label": "Purškiamo įdegio priežiūra: spalvos tęstinumas ir apsauga nuo saulės",
+          "reason": "Atsakymas: Produkto laukimo instrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Purškiamo įdegio priežiūra: spalvos tęstinumas ir apsauga nuo saulės"
+        },
+        {
+          "targetPageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+          "label": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "KP-gidas",
+          "targetTitle": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos"
+        }
+      ]
+    },
+    {
+      "planId": "KP-gidas",
+      "pageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+      "publishAt": "2026-11-05T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+          "label": "Kūno šveitimas: kosmetinės procedūros apimtis ir priežiūra",
+          "reason": "Atsakymas: Šveitimo komponentas.",
+          "targetPlanId": "KP-sveitimas",
+          "targetTitle": "Kūno šveitimas: kosmetinės procedūros apimtis ir priežiūra"
+        },
+        {
+          "targetPageId": "0f2c1fd1-9adf-4a38-973b-f4a10b244b89",
+          "label": "Kūno įvyniojimai: priemonė, ritualas ir pažadų ribos",
+          "reason": "Atsakymas: Naudota priemonė.",
+          "targetPlanId": "KP-ivyniojimas",
+          "targetTitle": "Kūno įvyniojimai: priemonė, ritualas ir pažadų ribos"
+        },
+        {
+          "targetPageId": "2315b1ba-ce41-436c-8697-6f3eb7004794",
+          "label": "„Celiulito gydymas“ kainyne: estetinio pokyčio ir gydymo teiginio skirtumas",
+          "reason": "Atsakymas: Meniu terminas.",
+          "targetPlanId": null,
+          "targetTitle": "„Celiulito gydymas“ kainyne: estetinio pokyčio ir gydymo teiginio skirtumas"
+        },
+        {
+          "targetPageId": "fb95da79-bea9-442d-b9b2-0c70d8844c2e",
+          "label": "Liekninamoji procedūra ar kūno kontūro keitimas: ko iš tikrųjų tikėtis?",
+          "reason": "Atsakymas: Pavadinimas ir realus metodas.",
+          "targetPlanId": null,
+          "targetTitle": "Liekninamoji procedūra ar kūno kontūro keitimas: ko iš tikrųjų tikėtis?"
+        },
+        {
+          "targetPageId": "8a711f3c-a4f8-4049-9966-c565134699bf",
+          "label": "Beadatinė mezoterapija: koks metodas slepiasi po paslaugos pavadinimu?",
+          "reason": "Atsakymas: Koks konkretus įrenginys naudojamas.",
+          "targetPlanId": null,
+          "targetTitle": "Beadatinė mezoterapija: koks metodas slepiasi po paslaugos pavadinimu?"
+        },
+        {
+          "targetPageId": "050f61ee-9554-492f-afb1-77344cce14f3",
+          "label": "Kūno procedūrų įrenginiai: RF, ultragarsas ir kitos technologijos",
+          "reason": "Atsakymas: Technologijos pavadinimas.",
+          "targetPlanId": null,
+          "targetTitle": "Kūno procedūrų įrenginiai: RF, ultragarsas ir kitos technologijos"
+        },
+        {
+          "targetPageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+          "label": "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas",
+          "reason": "Atsakymas: Vienos zonos apimtis.",
+          "targetPlanId": "KP-kaina-trukme",
+          "targetTitle": "Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas"
+        },
+        {
+          "targetPageId": "973c79f1-a414-4472-9f96-ce0dbc6579c0",
+          "label": "Prieš kūno procedūrą: tikslas, ankstesni darbai ir individualus vertinimas",
+          "reason": "Atsakymas: Kosmetinis tikslas.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš kūno procedūrą: tikslas, ankstesni darbai ir individualus vertinimas"
+        },
+        {
+          "targetPageId": "a06dae8f-2a8e-4f5f-a9aa-541c3398473a",
+          "label": "Po kūno procedūros: metodo instrukcija ir rezultato stebėjimas",
+          "reason": "Atsakymas: Kas buvo atlikta.",
+          "targetPlanId": null,
+          "targetTitle": "Po kūno procedūros: metodo instrukcija ir rezultato stebėjimas"
+        },
+        {
+          "targetPageId": "d3c5bf2e-36f9-4ab1-a57d-53e8a58de9e4",
+          "label": "Nepageidaujama reakcija po kūno procedūros: pagalbos bei kompetencijos ribos",
+          "reason": "Atsakymas: Procedūros ir įrenginio informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Nepageidaujama reakcija po kūno procedūros: pagalbos bei kompetencijos ribos"
+        },
+        {
+          "targetPageId": "6a188097-9c56-450b-8829-f80f303f3450",
+          "label": "Presoterapija: slėgio procedūros apimtis ir skirtumas nuo masažo",
+          "reason": "Atsakymas: Mechanizmo bendras paaiškinimas.",
+          "targetPlanId": null,
+          "targetTitle": "Presoterapija: slėgio procedūros apimtis ir skirtumas nuo masažo"
+        },
+        {
+          "targetPageId": "4f5ee8a5-b111-458b-8a54-a7cec0e8111b",
+          "label": "Vakuuminė ir RF kūno procedūra: metodas, apimtis bei rezultato ribos",
+          "reason": "Atsakymas: Vakuumo ir energijos skirtumas.",
+          "targetPlanId": null,
+          "targetTitle": "Vakuuminė ir RF kūno procedūra: metodas, apimtis bei rezultato ribos"
+        },
+        {
+          "targetPageId": "61455054-263f-416a-8d1b-a993e4949753",
+          "label": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "MS-gidas",
+          "targetTitle": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos"
+        }
+      ]
+    },
+    {
+      "planId": "KT-gidas",
+      "pageId": "e867d6e8-db21-432f-b4a8-209d7060be4c",
+      "publishAt": "2026-11-05T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "825dc705-5bf4-45fe-95e6-81bcd7e53853",
+          "label": "Pirmas kineziterapeuto vizitas: dokumentai, tikslas ir gydomojo masažo klausimas",
+          "reason": "Atsakymas: Turima sveikatos informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Pirmas kineziterapeuto vizitas: dokumentai, tikslas ir gydomojo masažo klausimas"
+        },
+        {
+          "targetPageId": "637b1996-ff82-4674-8d1e-f626f002cfcc",
+          "label": "Kineziterapijos tęsinys: namų plano supratimas ir pokyčių aptarimas",
+          "reason": "Atsakymas: Individualios instrukcijos supratimas.",
+          "targetPlanId": null,
+          "targetTitle": "Kineziterapijos tęsinys: namų plano supratimas ir pokyčių aptarimas"
+        }
+      ]
+    },
+    {
+      "planId": "LZ-gidas",
+      "pageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+      "publishAt": "2026-11-06T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+          "label": "Lazeris ir IPL plaukų šalinimui: kuo skiriasi technologijos pavadinimai?",
+          "reason": "Atsakymas: Šviesos šaltinis.",
+          "targetPlanId": "LZ-lazeris-ipl",
+          "targetTitle": "Lazeris ir IPL plaukų šalinimui: kuo skiriasi technologijos pavadinimai?"
+        },
+        {
+          "targetPageId": "fccb852e-ed60-41de-8bfa-38c96547eded",
+          "label": "Odos ir plaukelių savybės prieš lazerinį šalinimą: ką vertina specialistas?",
+          "reason": "Atsakymas: Pradinė oda ir plaukelis.",
+          "targetPlanId": null,
+          "targetTitle": "Odos ir plaukelių savybės prieš lazerinį šalinimą: ką vertina specialistas?"
+        },
+        {
+          "targetPageId": "d2d923e8-fa60-4657-abcf-5916ca477647",
+          "label": "Lazerinio plaukų šalinimo zonos: veidas, pažastys, bikini ir kūnas",
+          "reason": "Atsakymas: Zonų ribos.",
+          "targetPlanId": "LZ-zonos",
+          "targetTitle": "Lazerinio plaukų šalinimo zonos: veidas, pažastys, bikini ir kūnas"
+        },
+        {
+          "targetPageId": "0c2fcd49-4c59-4e02-93a9-9df73a59d417",
+          "label": "Kiek lazerio vizitų reikia: individualus planas ir palaikymo ribos",
+          "reason": "Atsakymas: Pradinės savybės.",
+          "targetPlanId": null,
+          "targetTitle": "Kiek lazerio vizitų reikia: individualus planas ir palaikymo ribos"
+        },
+        {
+          "targetPageId": "5d754fbd-3db9-4212-bdde-58d3ac1960fb",
+          "label": "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas",
+          "reason": "Atsakymas: Vienos zonos apimtis.",
+          "targetPlanId": "LZ-kaina-trukme",
+          "targetTitle": "Plaukų šalinimo lazeriu kaina ir trukmė: zona, įrenginys bei paketas"
+        },
+        {
+          "targetPageId": "5b1a9842-82fd-4d68-9f2d-00f4136ca394",
+          "label": "Prieš lazerinį šalinimą: įdegis, ankstesni metodai ir konsultacija",
+          "reason": "Atsakymas: Ankstesnė ekspozicija ir šalinimas.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš lazerinį šalinimą: įdegis, ankstesni metodai ir konsultacija"
+        },
+        {
+          "targetPageId": "d3420d44-ff26-400d-9c10-704f092d2777",
+          "label": "Priežiūra po plaukų šalinimo lazeriu: pagal procedūrą pateikta instrukcija",
+          "reason": "Atsakymas: Atlikta procedūra.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po plaukų šalinimo lazeriu: pagal procedūrą pateikta instrukcija"
+        },
+        {
+          "targetPageId": "dc92c950-d112-44e0-b7ae-1dc0d51db71d",
+          "label": "Reakcija po lazerinės procedūros: kada kreiptis į sveikatos specialistą?",
+          "reason": "Atsakymas: Procedūros ir įrenginio duomenys.",
+          "targetPlanId": null,
+          "targetTitle": "Reakcija po lazerinės procedūros: kada kreiptis į sveikatos specialistą?"
+        },
+        {
+          "targetPageId": "255dddd3-19bb-4098-9ea7-e01506dc1aa3",
+          "label": "Elektroepiliacija ir šviesos metodai: kuo skiriasi veikimo principas bei vizito apimtis",
+          "reason": "Atsakymas: Folikulo ir šviesos metodo skirtumas.",
+          "targetPlanId": null,
+          "targetTitle": "Elektroepiliacija ir šviesos metodai: kuo skiriasi veikimo principas bei vizito apimtis"
+        },
+        {
+          "targetPageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+          "label": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga"
+        }
+      ]
+    },
+    {
+      "planId": "MD-gidas",
+      "pageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+      "publishAt": "2026-11-06T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f199d4b1-5748-479b-904b-ff7ffe67a6ba",
+          "label": "Pasiruošimas medicinos konsultacijai: ankstesnė informacija ir rezultatų lūkesčiai",
+          "reason": "Atsakymas: Turimi dokumentai ir naudojamos priemonės.",
+          "targetPlanId": null,
+          "targetTitle": "Pasiruošimas medicinos konsultacijai: ankstesnė informacija ir rezultatų lūkesčiai"
+        },
+        {
+          "targetPageId": "5cca302b-2361-4ced-ac5d-21dceabcc797",
+          "label": "Po specialisto konsultacijos: plano supratimas, antra nuomonė ir pagalbos kelias",
+          "reason": "Atsakymas: Individualaus plano supratimas.",
+          "targetPlanId": null,
+          "targetTitle": "Po specialisto konsultacijos: plano supratimas, antra nuomonė ir pagalbos kelias"
+        }
+      ]
+    },
+    {
+      "planId": "MS-gidas",
+      "pageId": "61455054-263f-416a-8d1b-a993e4949753",
+      "publishAt": "2026-11-08T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "6926cfb3-ed83-4677-895e-f385fdb12264",
+          "label": "Atpalaiduojantis ir gydomasis masažas: skirtinga paskirtis ir kvalifikacija",
+          "reason": "Atsakymas: Savijautos paslauga.",
+          "targetPlanId": null,
+          "targetTitle": "Atpalaiduojantis ir gydomasis masažas: skirtinga paskirtis ir kvalifikacija"
+        },
+        {
+          "targetPageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+          "label": "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė",
+          "reason": "Atsakymas: Kokios zonos įtrauktos.",
+          "targetPlanId": "MS-nugara-ar-kunas",
+          "targetTitle": "Nugaros ar viso kūno masažas: zonos, apimtis ir seanso trukmė"
+        },
+        {
+          "targetPageId": "48e1af9b-d501-44a4-a35f-32deadee64f2",
+          "label": "Masažo spaudimo stiprumas: kaip suderinti komfortą ir lūkesčius?",
+          "reason": "Atsakymas: Stiprumas nėra kokybės matas.",
+          "targetPlanId": null,
+          "targetTitle": "Masažo spaudimo stiprumas: kaip suderinti komfortą ir lūkesčius?"
+        },
+        {
+          "targetPageId": "92c1c3de-cc99-455c-94c6-3c2a9c9e3c65",
+          "label": "Veido masažas ir Kobido: terminai, zonos bei paslaugos sudėtis",
+          "reason": "Atsakymas: Veido masažo tikslas.",
+          "targetPlanId": null,
+          "targetTitle": "Veido masažas ir Kobido: terminai, zonos bei paslaugos sudėtis"
+        },
+        {
+          "targetPageId": "40692f1a-0361-40a7-9351-a45c05263725",
+          "label": "Veido masažas ar veido priežiūros procedūra: ką renkatės iš tikrųjų?",
+          "reason": "Atsakymas: Rankų darbo komponentas.",
+          "targetPlanId": null,
+          "targetTitle": "Veido masažas ar veido priežiūros procedūra: ką renkatės iš tikrųjų?"
+        },
+        {
+          "targetPageId": "02eb68ff-1571-4cef-bfe0-31216660bcb1",
+          "label": "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai",
+          "reason": "Atsakymas: Seanso ir vizito laikas.",
+          "targetPlanId": "MS-kaina-trukme",
+          "targetTitle": "Masažo kaina ir trukmė: darbo laikas, zonos bei papildomi komponentai"
+        },
+        {
+          "targetPageId": "4440d64b-6394-413f-8fe7-3421d6791c10",
+          "label": "Kaip pasiruošti pirmajam masažo vizitui: apranga, privatumas ir komfortas",
+          "reason": "Atsakymas: Atvykimo ir aprangos informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti pirmajam masažo vizitui: apranga, privatumas ir komfortas"
+        },
+        {
+          "targetPageId": "bc7e4800-4c7b-46be-aa49-0fae00d61bf5",
+          "label": "Po masažo: realistiški savijautos lūkesčiai ir pagalbos ribos",
+          "reason": "Atsakymas: Savijauta nėra gydymo įrodymas.",
+          "targetPlanId": null,
+          "targetTitle": "Po masažo: realistiški savijautos lūkesčiai ir pagalbos ribos"
+        },
+        {
+          "targetPageId": "7184de7b-3722-4e30-acd9-6481879e65dd",
+          "label": "Sveikatos klausimai prieš masažą: kada pirmiau reikalinga kvalifikuota konsultacija?",
+          "reason": "Atsakymas: Ką pranešti apie būklę.",
+          "targetPlanId": null,
+          "targetTitle": "Sveikatos klausimai prieš masažą: kada pirmiau reikalinga kvalifikuota konsultacija?"
+        },
+        {
+          "targetPageId": "f4367fd4-19f6-46a1-9f4c-0f22e6f820d4",
+          "label": "Masažo kursas ar vienas seansas: kaip vertinti pasiūlymą be rezultato garantijų?",
+          "reason": "Atsakymas: Paslaugos tikslas.",
+          "targetPlanId": null,
+          "targetTitle": "Masažo kursas ar vienas seansas: kaip vertinti pasiūlymą be rezultato garantijų?"
+        },
+        {
+          "targetPageId": "edf344ee-02e6-49f0-8345-1ec965b2ec8e",
+          "label": "Kobido, limfodrenažas ir „detox“: kaip atskirti paslaugos aprašą nuo sveikatos pažado?",
+          "reason": "Atsakymas: Metodas ir rinkodaros teiginys.",
+          "targetPlanId": null,
+          "targetTitle": "Kobido, limfodrenažas ir „detox“: kaip atskirti paslaugos aprašą nuo sveikatos pažado?"
+        },
+        {
+          "targetPageId": "9033c1ce-e3ba-45d4-909d-31157db13cf8",
+          "label": "Giliųjų audinių masažas: metodo paskirtis, stiprumas ir kompetencijos ribos",
+          "reason": "Atsakymas: Metodo principas.",
+          "targetPlanId": null,
+          "targetTitle": "Giliųjų audinių masažas: metodo paskirtis, stiprumas ir kompetencijos ribos"
+        },
+        {
+          "targetPageId": "aaaf1a69-54c8-4c4f-bbb2-4a4191e16903",
+          "label": "Limfodrenažinis masažas: grožio pasiūlymas ir sveikatos paslaugos kontekstas",
+          "reason": "Atsakymas: Konkretaus metodo paskirtis.",
+          "targetPlanId": null,
+          "targetTitle": "Limfodrenažinis masažas: grožio pasiūlymas ir sveikatos paslaugos kontekstas"
+        },
+        {
+          "targetPageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+          "label": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+          "reason": "Atsakymas: Rankinio darbo komponentas.",
+          "targetPlanId": null,
+          "targetTitle": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas"
+        },
+        {
+          "targetPageId": "5eed4583-9771-4c20-b478-c8802542e64b",
+          "label": "Klasikinis, švediškas ir tailandietiškas masažas: kuo skiriasi seanso formatas",
+          "reason": "Atsakymas: Pavadinimas ir teikėjo technika.",
+          "targetPlanId": null,
+          "targetTitle": "Klasikinis, švediškas ir tailandietiškas masažas: kuo skiriasi seanso formatas"
+        },
+        {
+          "targetPageId": "2d27631f-c76b-4422-b684-99388041e41c",
+          "label": "Sportinis masažas: vizito tikslas ir skirtumas nuo kineziterapijos",
+          "reason": "Atsakymas: Sporto kontekstas.",
+          "targetPlanId": null,
+          "targetTitle": "Sportinis masažas: vizito tikslas ir skirtumas nuo kineziterapijos"
+        },
+        {
+          "targetPageId": "fd85597c-81b2-44ff-9cb6-4add04742893",
+          "label": "Masažas karštais akmenimis: šilumos komponentas ir paslaugos apimtis",
+          "reason": "Atsakymas: Akmenys kaip seanso komponentas.",
+          "targetPlanId": null,
+          "targetTitle": "Masažas karštais akmenimis: šilumos komponentas ir paslaugos apimtis"
+        },
+        {
+          "targetPageId": "9962eb04-f449-4a36-9896-aa17fcdd802c",
+          "label": "Bukalinis, klasikinis ir limfodrenažinis veido masažas: metodų ribos",
+          "reason": "Atsakymas: Išorinis bei burnos srities darbas.",
+          "targetPlanId": null,
+          "targetTitle": "Bukalinis, klasikinis ir limfodrenažinis veido masažas: metodų ribos"
+        },
+        {
+          "targetPageId": "c0ca3f59-52f7-4766-8ec8-3c2e762319c0",
+          "label": "Masažo pasirinkimas nėštumo metu: ką sprendžia individuali konsultacija",
+          "reason": "Atsakymas: Poreikis ir sveikatos informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Masažo pasirinkimas nėštumo metu: ką sprendžia individuali konsultacija"
+        },
+        {
+          "targetPageId": "253abad4-75f2-47a5-b4cc-59c39d463c1b",
+          "label": "Masažas poroms: vienas laikas, du specialistai ir paketų skirtumai",
+          "reason": "Atsakymas: Lygiagretus ar nuoseklus darbas.",
+          "targetPlanId": null,
+          "targetTitle": "Masažas poroms: vienas laikas, du specialistai ir paketų skirtumai"
+        }
+      ]
+    },
+    {
+      "planId": "OD-gidas",
+      "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+      "publishAt": "2026-11-09T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "59059e22-fcd5-4137-8245-24e8116f15e8",
+          "label": "Pirma odontologo ar ortodonto konsultacija: informacija, tyrimai ir klausimai",
+          "reason": "Atsakymas: Pradinė informacija apie gydymą.",
+          "targetPlanId": null,
+          "targetTitle": "Pirma odontologo ar ortodonto konsultacija: informacija, tyrimai ir klausimai"
+        },
+        {
+          "targetPageId": "ec760721-6c00-47ce-8c4d-042572160f51",
+          "label": "Po burnos higienos ar balinimo: konkreti instrukcija ir kada kreiptis",
+          "reason": "Atsakymas: Atliktas darbas ir produkto instrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Po burnos higienos ar balinimo: konkreti instrukcija ir kada kreiptis"
+        },
+        {
+          "targetPageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+          "label": "Dantų balinimo konsultacija: natūrali spalva, restauracijos ir metodų ribos",
+          "reason": "Atsakymas: Natūralūs dantys ir restauracijos.",
+          "targetPlanId": "OD-balinimas",
+          "targetTitle": "Dantų balinimo konsultacija: natūrali spalva, restauracijos ir metodų ribos"
+        },
+        {
+          "targetPageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+          "label": "Grožio paslaugų teikėjo patikra: vieta, higiena ir paslaugos pobūdis",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Grožio paslaugų teikėjo patikra: vieta, higiena ir paslaugos pobūdis"
+        }
+      ]
+    },
+    {
+      "planId": "PM-gidas",
+      "pageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+      "publishAt": "2026-11-11T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+          "label": "Ilgalaikis antakių makiažas: forma, pigmentas ir metodo pasirinkimas",
+          "reason": "Atsakymas: Forma ir jau esantis pigmentas.",
+          "targetPlanId": "PM-antakiai",
+          "targetTitle": "Ilgalaikis antakių makiažas: forma, pigmentas ir metodo pasirinkimas"
+        },
+        {
+          "targetPageId": "59f6961c-4d66-421b-a1e9-184be6cedd3a",
+          "label": "Ilgalaikis lūpų ir akių makiažas: skirtingos zonos ir vizito klausimai",
+          "reason": "Atsakymas: Lūpų kontūras bei spalva.",
+          "targetPlanId": "PM-lupos-akys",
+          "targetTitle": "Ilgalaikis lūpų ir akių makiažas: skirtingos zonos ir vizito klausimai"
+        },
+        {
+          "targetPageId": "073fb608-c34f-479e-b8d0-3ec4ae5656ce",
+          "label": "Galvos odos mikropigmentacija: vizualinis rezultatas ir ribos",
+          "reason": "Atsakymas: Optinis pigmento efektas.",
+          "targetPlanId": null,
+          "targetTitle": "Galvos odos mikropigmentacija: vizualinis rezultatas ir ribos"
+        },
+        {
+          "targetPageId": "d239dae4-78cc-4af2-a9ff-e89204e82ae5",
+          "label": "Ilgalaikio makiažo korekcija ar šalinimo konsultacija?",
+          "reason": "Atsakymas: Korekcijos tikslas ir jau esantis pigmentas.",
+          "targetPlanId": null,
+          "targetTitle": "Ilgalaikio makiažo korekcija ar šalinimo konsultacija?"
+        },
+        {
+          "targetPageId": "83b6f4ec-79e0-455a-abef-d3a4596565c9",
+          "label": "Prieš ir po ilgalaikio makiažo: informacija, instrukcija ir pagalbos riba",
+          "reason": "Atsakymas: Pradinė būklė ir informuotas sprendimas.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš ir po ilgalaikio makiažo: informacija, instrukcija ir pagalbos riba"
+        },
+        {
+          "targetPageId": "2fc70301-40fc-40aa-967f-dde364f87643",
+          "label": "Permanentinis antakių makiažas ir nauja korekcija: ką galima ir ko nespręsti iš nuotraukos?",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Permanentinis antakių makiažas ir nauja korekcija: ką galima ir ko nespręsti iš nuotraukos?"
+        }
+      ]
+    },
+    {
+      "planId": "PS-gidas",
+      "pageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+      "publishAt": "2026-11-12T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "0f9c6721-f276-4cb8-919e-51b49bc4a4a3",
+          "label": "Pirma psichologinė konsultacija: tikslas, privatumas ir ką galima aptarti",
+          "reason": "Atsakymas: Poreikio užrašymas.",
+          "targetPlanId": null,
+          "targetTitle": "Pirma psichologinė konsultacija: tikslas, privatumas ir ką galima aptarti"
+        },
+        {
+          "targetPageId": "e4550042-f592-4d68-b479-bc4ebf7bc581",
+          "label": "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba",
+          "reason": "Atsakymas: Pagalbos proceso aptarimas.",
+          "targetPlanId": null,
+          "targetTitle": "Psichologinės pagalbos tęstinumas: lūkesčiai, grįžtamasis ryšys ir skubi pagalba"
+        },
+        {
+          "targetPageId": "56047987-7724-4476-80b1-fde21b00c826",
+          "label": "Porų ar šeimos konsultacija: dalyvavimas, tikslas ir konfidencialumo susitarimas",
+          "reason": "Atsakymas: Kas dalyvauja pokalbyje.",
+          "targetPlanId": "PS-poros-seima",
+          "targetTitle": "Porų ar šeimos konsultacija: dalyvavimas, tikslas ir konfidencialumo susitarimas"
+        }
+      ]
+    },
+    {
+      "planId": "PX-gidas",
+      "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+      "publishAt": "2026-11-12T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+          "label": "Priaugintų plaukų korekcija ir nuėmimas: atskiros darbų apimtys",
+          "reason": "Atsakymas: Tvirtinimų korekcija.",
+          "targetPlanId": "PX-korekcija-nuemimas",
+          "targetTitle": "Priaugintų plaukų korekcija ir nuėmimas: atskiros darbų apimtys"
+        },
+        {
+          "targetPageId": "05f1051e-0d97-48a2-b6b3-a1ae50b698a9",
+          "label": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis",
+          "reason": "Atsakymas: Pradinė plaukų būklė.",
+          "targetPlanId": null,
+          "targetTitle": "Priaugintų plaukų priežiūra: šukavimas, tvirtinimai ir kada kreiptis"
+        },
+        {
+          "targetPageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+          "label": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos"
+        }
+      ]
+    },
+    {
+      "planId": "RP-gidas",
+      "pageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+      "publishAt": "2026-11-13T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+          "label": "Parafino procedūra rankoms ar pėdoms: šildomas ir šaltas variantas",
+          "reason": "Atsakymas: Kas vadinama šaltu parafinu.",
+          "targetPlanId": "RP-parafinas",
+          "targetTitle": "Parafino procedūra rankoms ar pėdoms: šildomas ir šaltas variantas"
+        },
+        {
+          "targetPageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+          "label": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas"
+        }
+      ]
+    },
+    {
+      "planId": "SP-gidas",
+      "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "publishAt": "2026-11-13T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+          "label": "Hamamas, garinė pirtis ir pirtis: kuo skiriasi patirtis ir pasiūlymas?",
+          "reason": "Atsakymas: Garų ir erdvės aprašymas.",
+          "targetPlanId": "SP-hamamas",
+          "targetTitle": "Hamamas, garinė pirtis ir pirtis: kuo skiriasi patirtis ir pasiūlymas?"
+        },
+        {
+          "targetPageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+          "label": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+          "reason": "Atsakymas: Dvi procedūros ar bendras ritualas.",
+          "targetPlanId": null,
+          "targetTitle": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas"
+        },
+        {
+          "targetPageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+          "label": "Galvos SPA: plaukų priežiūra, masažas ir ritualo apimtis",
+          "reason": "Atsakymas: Galvos odos priežiūra.",
+          "targetPlanId": "SP-galvos-spa",
+          "targetTitle": "Galvos SPA: plaukų priežiūra, masažas ir ritualo apimtis"
+        },
+        {
+          "targetPageId": "652e13ef-efbb-4837-93f3-29818ebb9dc8",
+          "label": "Kaip pasiruošti SPA: apranga, daiktai ir procedūrų seka",
+          "reason": "Atsakymas: Teikėjo vidaus taisyklės.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti SPA: apranga, daiktai ir procedūrų seka"
+        },
+        {
+          "targetPageId": "253abad4-75f2-47a5-b4cc-59c39d463c1b",
+          "label": "Masažas poroms: vienas laikas, du specialistai ir paketų skirtumai",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Masažas poroms: vienas laikas, du specialistai ir paketų skirtumai"
+        }
+      ]
+    },
+    {
+      "planId": "SV-gidas",
+      "pageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+      "publishAt": "2026-11-14T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "4f79759e-ec88-4947-a754-a157720739f2",
+          "label": "Savijautos užsiėmimo pasirinkimas: aplinka, vedėjas ir individualūs poreikiai",
+          "reason": "Atsakymas: Triukšmas prisilietimas ir grupės dydis.",
+          "targetPlanId": null,
+          "targetTitle": "Savijautos užsiėmimo pasirinkimas: aplinka, vedėjas ir individualūs poreikiai"
+        },
+        {
+          "targetPageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+          "label": "Psichologas, psichoterapija, porų ir šeimos konsultacija: kaip atskirti pagalbos formatus",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "PS-gidas",
+          "targetTitle": "Psichologas, psichoterapija, porų ir šeimos konsultacija: skirtumai"
+        }
+      ]
+    },
+    {
+      "planId": "TT-gidas",
+      "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+      "publishAt": "2026-11-15T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "6835e31e-74ff-450d-b1cc-752477cbd404",
+          "label": "Tatuiruotės eskizo konsultacija: stilius, mastelis ir autorystė",
+          "reason": "Atsakymas: Referencas ir originalus eskizas.",
+          "targetPlanId": "TT-eskizas",
+          "targetTitle": "Tatuiruotės eskizo konsultacija: stilius, mastelis ir autorystė"
+        },
+        {
+          "targetPageId": "5a0e6d43-6465-44ae-8752-59f8ec2d255d",
+          "label": "Tatuiruotės atnaujinimas, uždengimas ar šalinimo konsultacija?",
+          "reason": "Atsakymas: Atnaujinamo darbo tikslas.",
+          "targetPlanId": null,
+          "targetTitle": "Tatuiruotės atnaujinimas, uždengimas ar šalinimo konsultacija?"
+        },
+        {
+          "targetPageId": "ba934652-fda8-4ee8-b047-074f709f83ab",
+          "label": "Pasiruošimas tatuiruotės sesijai: vieta, laikas ir informacija teikėjui",
+          "reason": "Atsakymas: Sesijos apimtis ir pertraukos.",
+          "targetPlanId": null,
+          "targetTitle": "Pasiruošimas tatuiruotės sesijai: vieta, laikas ir informacija teikėjui"
+        },
+        {
+          "targetPageId": "eaa82e0f-653a-4ae4-a920-ac0eacb6a2b9",
+          "label": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos",
+          "reason": "Atsakymas: Konkretaus padengimo instrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Tatuiruotės priežiūra: patikrinta instrukcija ir kada reikia pagalbos"
+        },
+        {
+          "targetPageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+          "label": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "AV-gidas",
+          "targetTitle": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas"
+        }
+      ]
+    },
+    {
+      "planId": "VP-gidas",
+      "pageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+      "publishAt": "2026-11-16T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "6e7c5115-19c6-4018-a23f-7a0e4b91dbd5",
+          "label": "Mechaninis, ultragarsinis ir kombinuotas veido valymas: ką reiškia meniu?",
+          "reason": "Atsakymas: Metodo principas.",
+          "targetPlanId": null,
+          "targetTitle": "Mechaninis, ultragarsinis ir kombinuotas veido valymas: ką reiškia meniu?"
+        },
+        {
+          "targetPageId": "0c14f72b-4e98-4340-8373-2dff5413661d",
+          "label": "Drėkinamoji veido procedūra: valymas, kaukė ir kiti paketo komponentai",
+          "reason": "Atsakymas: Kosmetinis tikslas.",
+          "targetPlanId": null,
+          "targetTitle": "Drėkinamoji veido procedūra: valymas, kaukė ir kiti paketo komponentai"
+        },
+        {
+          "targetPageId": "a9f5130c-0fa9-4f83-ac82-a26e54d29f74",
+          "label": "Express ar išsami veido procedūra: kas pasikeičia trumpesniame vizite?",
+          "reason": "Atsakymas: Paslaugos apimtis.",
+          "targetPlanId": null,
+          "targetTitle": "Express ar išsami veido procedūra: kas pasikeičia trumpesniame vizite?"
+        },
+        {
+          "targetPageId": "bc97f178-3247-4998-a6c6-bcfec2af2498",
+          "label": "Veido procedūra su kauke ar masažu: kaip palyginti paketą?",
+          "reason": "Atsakymas: Valymo komponentas.",
+          "targetPlanId": null,
+          "targetTitle": "Veido procedūra su kauke ar masažu: kaip palyginti paketą?"
+        },
+        {
+          "targetPageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+          "label": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas",
+          "reason": "Atsakymas: Tikslas ir ankstesnės procedūros.",
+          "targetPlanId": "VP-konsultacija",
+          "targetTitle": "Pirmoji veido priežiūros konsultacija: poreikiai, istorija ir aiškus planas"
+        },
+        {
+          "targetPageId": "5fad7c52-342a-45e7-a619-a97048daf742",
+          "label": "Veido priežiūros kaina ir trukmė: konsultacija, metodas bei papildomi darbai",
+          "reason": "Atsakymas: Darbų apimtis.",
+          "targetPlanId": "VP-kaina-trukme",
+          "targetTitle": "Veido priežiūros kaina ir trukmė: konsultacija, metodas bei papildomi darbai"
+        },
+        {
+          "targetPageId": "a6f9ac98-c6bb-4bbc-b1c6-a69526e3ce67",
+          "label": "Kaip pasiruošti veido procedūrai: produktai, ankstesni darbai ir instrukcija",
+          "reason": "Atsakymas: Naudojamų produktų istorija.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti veido procedūrai: produktai, ankstesni darbai ir instrukcija"
+        },
+        {
+          "targetPageId": "958f8cf0-36a8-4ce5-881b-aed57c416e93",
+          "label": "Priežiūra po veido procedūros: kodėl nėra visiems vienodo plano?",
+          "reason": "Atsakymas: Kokia procedūra atlikta.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po veido procedūros: kodėl nėra visiems vienodo plano?"
+        },
+        {
+          "targetPageId": "25607efa-1615-4b22-8ed8-2b1d55ff14fc",
+          "label": "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba",
+          "reason": "Atsakymas: Kosmetinė paskirtis.",
+          "targetPlanId": null,
+          "targetTitle": "Veido priežiūra ir sveikatos paslauga: invazinių procedūrų bei pažadų riba"
+        },
+        {
+          "targetPageId": "710b28b9-7714-478b-885e-1d7d10f27f9b",
+          "label": "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?",
+          "reason": "Atsakymas: Mechaninė/kosmetinė priežiūra.",
+          "targetPlanId": null,
+          "targetTitle": "Kosmetinis šveitimas ir profesionalus cheminis pilingas: kodėl svarbus metodas bei gylis?"
+        },
+        {
+          "targetPageId": "7fd83d84-7ce3-44b3-95a0-2eb77f219986",
+          "label": "Nepageidaujama reakcija po veido procedūros: kada reikalingas sveikatos vertinimas?",
+          "reason": "Atsakymas: Atlikto metodo informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Nepageidaujama reakcija po veido procedūros: kada reikalingas sveikatos vertinimas?"
+        },
+        {
+          "targetPageId": "62bbc5fb-1c92-44fd-9a82-dc6d16a0cb5a",
+          "label": "Vienkartinė veido procedūra ar priežiūros kursas: kaip vertinti siūlomą planą?",
+          "reason": "Atsakymas: Konkretaus estetinio tikslo apibrėžimas.",
+          "targetPlanId": null,
+          "targetTitle": "Vienkartinė veido procedūra ar priežiūros kursas: kaip vertinti siūlomą planą?"
+        },
+        {
+          "targetPageId": "d1353f33-d466-4713-855a-6e298d89cf5a",
+          "label": "LED, mikrosrovės ir radijo dažnis veidui: skirtingi poveikio būdai",
+          "reason": "Atsakymas: Šviesa elektros srovė ir RF.",
+          "targetPlanId": null,
+          "targetTitle": "LED, mikrosrovės ir radijo dažnis veidui: skirtingi poveikio būdai"
+        },
+        {
+          "targetPageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+          "label": "Dermatologas ir medicinos estetikos konsultacija: poreikis, kompetencija ir vizito apimtis",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "MD-gidas",
+          "targetTitle": "Dermatologo ir medicinos estetikos konsultacijos: skirtumai"
+        }
+      ]
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "pageId": "4deba947-1bc9-4c48-90da-62b48a9c7ece",
+      "publishAt": "2026-11-17T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f35f4167-4cca-4f4e-808b-cf20977f933d",
+          "label": "Kaip vertinti meistro darbų galeriją",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip vertinti meistro darbų galeriją"
+        }
+      ]
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "pageId": "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572",
+      "publishAt": "2026-11-21T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+          "label": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "AV-gidas",
+          "targetTitle": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas"
+        }
+      ]
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+      "publishAt": "2026-11-25T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+          "label": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "KP-gidas",
+          "targetTitle": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos"
+        }
+      ]
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "pageId": "5d754fbd-3db9-4212-bdde-58d3ac1960fb",
+      "publishAt": "2026-11-26T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+          "label": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "LZ-gidas",
+          "targetTitle": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos"
+        }
+      ]
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "pageId": "02eb68ff-1571-4cef-bfe0-31216660bcb1",
+      "publishAt": "2026-11-27T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "61455054-263f-416a-8d1b-a993e4949753",
+          "label": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "MS-gidas",
+          "targetTitle": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos"
+        }
+      ]
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "pageId": "5fad7c52-342a-45e7-a619-a97048daf742",
+      "publishAt": "2026-11-30T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+          "label": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "VP-gidas",
+          "targetTitle": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "DP-kojos",
+      "pageId": "26a9236d-7d71-4dc6-b282-ee3b65cd757b",
+      "publishAt": "2026-12-02T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+          "label": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga"
+        }
+      ]
+    },
+    {
+      "planId": "GL-nuemimas",
+      "pageId": "d4712e01-6bc1-47ec-aa60-ac311d9438de",
+      "publishAt": "2026-12-03T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+          "label": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti"
+        }
+      ]
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+      "publishAt": "2026-12-03T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+          "label": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Manikiūro gidas: priežiūra, danga ir vizito eiga"
+        }
+      ]
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "pageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+      "publishAt": "2026-12-04T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "61455054-263f-416a-8d1b-a993e4949753",
+          "label": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "MS-gidas",
+          "targetTitle": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos"
+        }
+      ]
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+      "publishAt": "2026-12-05T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+          "label": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas"
+        }
+      ]
+    },
+    {
+      "planId": "VP-konsultacija",
+      "pageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+      "publishAt": "2026-12-06T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+          "label": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "VP-gidas",
+          "targetTitle": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "MN-trukme",
+      "pageId": "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a",
+      "publishAt": "2026-12-07T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+          "label": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Manikiūro gidas: priežiūra, danga ir vizito eiga"
+        }
+      ]
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+      "publishAt": "2026-12-07T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+          "label": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "ES-gidas",
+          "targetTitle": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija"
+        }
+      ]
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+      "publishAt": "2026-12-08T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+          "label": "Treniruotės pasirinkimas: individualus, grupinis, pilateso ar jogos formatas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "FX-gidas",
+          "targetTitle": "Treniruotės pasirinkimas: individualus, grupinis, pilateso ar jogos formatas"
+        }
+      ]
+    },
+    {
+      "planId": "OD-balinimas",
+      "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+      "publishAt": "2026-12-08T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+          "label": "Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "OD-gidas",
+          "targetTitle": "Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai"
+        }
+      ]
+    },
+    {
+      "planId": "PM-antakiai",
+      "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+      "publishAt": "2026-12-09T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+          "label": "Permanentinis makiažas: kas tai, zonos, privalumai ir ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "PM-gidas",
+          "targetTitle": "Permanentinis makiažas: kas tai, zonos, privalumai ir ribos"
+        }
+      ]
+    },
+    {
+      "planId": "PS-poros-seima",
+      "pageId": "56047987-7724-4476-80b1-fde21b00c826",
+      "publishAt": "2026-12-09T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+          "label": "Psichologas, psichoterapija, porų ir šeimos konsultacija: kaip atskirti pagalbos formatus",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "PS-gidas",
+          "targetTitle": "Psichologas, psichoterapija, porų ir šeimos konsultacija: skirtumai"
+        }
+      ]
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+      "publishAt": "2026-12-10T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+          "label": "Plaukų priauginimas: tvirtinimo metodas, svoris ir priežiūros poreikis",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "PX-gidas",
+          "targetTitle": "Plaukų priauginimas: tvirtinimo metodas, svoris ir priežiūros poreikis"
+        }
+      ]
+    },
+    {
+      "planId": "RP-parafinas",
+      "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+      "publishAt": "2026-12-10T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+          "label": "Rankų ir pėdų SPA: odos priežiūra, parafinas ir manikiūro skirtumai",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "RP-gidas",
+          "targetTitle": "Rankų ir pėdų SPA: odos priežiūra, parafinas ir manikiūro skirtumai"
+        }
+      ]
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+      "publishAt": "2026-12-11T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+          "label": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "SP-gidas",
+          "targetTitle": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats"
+        },
+        {
+          "targetPageId": "a71017dd-9354-4709-a610-d38c45b2b31a",
+          "label": "Galvos odos priežiūra ir šveitimas salone: kosmetinis tikslas ir dermatologo riba",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Galvos odos priežiūra ir šveitimas salone: kosmetinis tikslas ir dermatologo riba"
+        }
+      ]
+    },
+    {
+      "planId": "TT-eskizas",
+      "pageId": "6835e31e-74ff-450d-b1cc-752477cbd404",
+      "publishAt": "2026-12-11T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+          "label": "Tatuiruotės gidas: idėja, vieta, eskizas ir atsakingas pasirinkimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "TT-gidas",
+          "targetTitle": "Tatuiruotės pasirinkimas: idėja, vieta, eskizas ir atsakingi klausimai"
+        }
+      ]
+    },
+    {
+      "planId": "AV-metodai",
+      "pageId": "1af233ab-8ce1-4eea-8620-5cc6f6761c8e",
+      "publishAt": "2026-12-12T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+          "label": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "AV-gidas",
+          "targetTitle": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas"
+        }
+      ]
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "pageId": "16a8706c-4c55-42ae-9681-e21c41dcc6c5",
+      "publishAt": "2026-12-13T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+          "label": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija"
+        },
+        {
+          "targetPageId": "67404770-1a57-4604-b391-0e5c8bcf1115",
+          "label": "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo?",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo?"
+        }
+      ]
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "pageId": "01a5be0c-9c9a-40d3-bb9f-5993b6e47206",
+      "publishAt": "2026-12-14T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+          "label": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "ES-gidas",
+          "targetTitle": "Estetinės procedūros: konsultacija, kosmetinis metodas ir medicininė kompetencija"
+        }
+      ]
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "pageId": "0f2c1fd1-9adf-4a38-973b-f4a10b244b89",
+      "publishAt": "2026-12-14T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+          "label": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "KP-gidas",
+          "targetTitle": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos"
+        }
+      ]
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "pageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+      "publishAt": "2026-12-15T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+          "label": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "LZ-gidas",
+          "targetTitle": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos"
+        }
+      ]
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "pageId": "30ca9bbf-33c0-4da6-85bd-8ba29577810e",
+      "publishAt": "2026-12-15T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+          "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+      "publishAt": "2026-12-16T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+          "label": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas"
+        }
+      ]
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "pageId": "59f6961c-4d66-421b-a1e9-184be6cedd3a",
+      "publishAt": "2026-12-16T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+          "label": "Permanentinis makiažas: kas tai, zonos, privalumai ir ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "PM-gidas",
+          "targetTitle": "Permanentinis makiažas: kas tai, zonos, privalumai ir ribos"
+        }
+      ]
+    },
+    {
+      "planId": "PP-atstatymas",
+      "pageId": "f13be7d8-026a-4039-afd3-e8711995fb9c",
+      "publishAt": "2026-12-17T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+          "label": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos"
+        }
+      ]
+    },
+    {
+      "planId": "SP-hamamas",
+      "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+      "publishAt": "2026-12-17T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+          "label": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "SP-gidas",
+          "targetTitle": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats"
+        }
+      ]
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+      "publishAt": "2026-12-18T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+          "label": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas"
+        }
+      ]
+    },
+    {
+      "planId": "AV-papuosalas",
+      "pageId": "2934dc52-45c8-429b-ba28-ce368787862d",
+      "publishAt": "2026-12-18T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+          "label": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "AV-gidas",
+          "targetTitle": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas"
+        }
+      ]
+    },
+    {
+      "planId": "BL-dazymas",
+      "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+      "publishAt": "2026-12-19T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "40e22039-917a-479f-840e-97edb71dcd55",
+          "label": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas"
+        }
+      ]
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "pageId": "edac36e3-f996-4513-86f2-43468d3d9f6e",
+      "publishAt": "2026-12-20T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+          "label": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija"
+        }
+      ]
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+      "publishAt": "2026-12-21T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+          "label": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga"
+        },
+        {
+          "targetPageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+          "label": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "LZ-gidas",
+          "targetTitle": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos"
+        }
+      ]
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+      "publishAt": "2026-12-21T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+          "label": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija"
+        }
+      ]
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+      "publishAt": "2026-12-22T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+          "label": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti"
+        },
+        {
+          "targetPageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+          "label": "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?"
+        }
+      ]
+    },
+    {
+      "planId": "KP-sveitimas",
+      "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+      "publishAt": "2026-12-23T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+          "label": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "KP-gidas",
+          "targetTitle": "Kūno priežiūros gidas: odos procedūros, įvyniojimai ir aparatų paskirties ribos"
+        }
+      ]
+    },
+    {
+      "planId": "LZ-zonos",
+      "pageId": "d2d923e8-fa60-4657-abcf-5916ca477647",
+      "publishAt": "2026-12-23T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+          "label": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "LZ-gidas",
+          "targetTitle": "Plaukų šalinimo lazeriu gidas: metodas, konsultacija ir rezultatų ribos"
+        }
+      ]
+    }
+  ]
+}

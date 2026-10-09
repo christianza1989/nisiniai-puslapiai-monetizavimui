@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';import fs from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';
+const here=new URL('.',import.meta.url),read=async f=>JSON.parse(await fs.readFile(new URL(f,here),'utf8')),sel=await read('SELECTION.json'),base=await read('BASELINE69-SNAPSHOTS.json'),delivery=await read('DELIVERY.json'),media=await read('MEDIA-PLAN.json');
+const bytes=await fs.readFile(new URL('release/content-package.json',here)),pkg=JSON.parse(bytes),sha=createHash('sha256').update(bytes).digest('hex');
+assert.equal(sha,delivery.release.packageSha256);assert.equal(pkg.siteId,'madbeauty');assert.equal(pkg.canonicalHost,'madbeauty.lt');assert.equal(pkg.pages.length,129);assert.equal(pkg.pages.filter(p=>p.type==='guide').length,125);
+assert.equal(new Set(pkg.pages.map(p=>p.id)).size,129);assert.equal(new Set(pkg.pages.map(p=>p.slug)).size,129);
+for(const b of base.approvedSnapshots)assert.deepEqual(pkg.pages.find(p=>p.id===b.id),b.revision,'Incumbent69 exact snapshot preserved');
+const site=JSON.parse(await fs.readFile(sel.privateStudio+'/sites/madbeauty.json','utf8'));for(const b of base.dates)assert.equal(site.pages.find(p=>p.id===b.id).publishAt,b.publishAt);
+const selected=pkg.pages.filter(p=>sel.pages.some(i=>i.pageId===p.id));assert.equal(selected.length,60);assert.equal(new Set(selected.map(p=>p.publishAt)).size,60);
+const assets=[...new Map(pkg.pages.flatMap(p=>p.media).map(m=>[m.src,m])).values()];assert.equal(assets.length,630);
+let manifest;try{manifest=await read('release/release-manifest.json');}catch(e){if(e.code!=='ENOENT')throw e;manifest=await read('release/ASSET-MANIFEST.json');}assert.equal(manifest.packageSha256,sha);
+const assetChecks=[];for(const asset of assets){assert.ok(asset.src.startsWith('/content-assets/madbeauty/'));const name=path.posix.basename(asset.src),file=new URL('release/assets/'+name,here),raw=await fs.readFile(file),expected=manifest.assets.find(a=>a.name===name)?.sha256;assert.match(expected,/^[a-f0-9]{64}$/);assert.equal(createHash('sha256').update(raw).digest('hex'),expected);if(asset.sha256)assert.equal(expected,asset.sha256);if(asset.bytes)assert.equal(raw.length,asset.bytes);assetChecks.push({src:asset.src,sha256:expected,bytes:raw.length});}
+assert.equal(new Set(media.map(m=>m.originalSha256)).size,60);assert.equal(new Set(media.map(m=>m.imported.groupId)).size,60);assert.ok(media.every(m=>m.imported.variants.length===5));
+const jobRows=JSON.parse(await fs.readFile(sel.privateStudio+'/jobs.json','utf8')),generation=[];
+for(const p of selected){
+ assert.equal(new Set(p.media.map(m=>m.groupId)).size,1);assert.equal(p.media.length,5);
+ const jobs=jobRows.filter(j=>j.pageId===p.id&&j.status==='complete'&&['draft','revise'].includes(j.type));assert.ok(jobs.length);
+ for(const j of jobs){const r=j.generationReceipts?.[p.id]||j.lastGenerationReceipt;assert.equal(r.observed.model,'gpt-6-luna');assert.equal(r.observed.reasoningEffort,'xhigh');assert.equal(r.execution,'CODEX_CLI');assert.equal(r.fallback,false);generation.push({pageId:p.id,jobId:j.id,type:j.type,receipt:r});}
+ assert.ok(p.editorial.authors.some(a=>a.name==='Madbeauty redakcija'));assert.equal(p.editorial.datePublished,p.publishAt);assert.equal(p.editorial.dateModified,null);
+ for(const c of p.editorial.commerceTargets||[]){assert.deepEqual(Object.keys(c).sort(),['checkedAt','id','label','relationship','url','verified'].sort());assert.equal(c.verified,true);assert.ok(c.url.startsWith('https://madbeauty.lt/'));assert.ok(!c.url.includes('bandymas.'));}
+}
+const result={checkedAt:new Date().toISOString(),state:'PASS_EXACT_EXPORTED_PACKAGE',packageSha256:sha,pages:129,guides:125,newGuides:60,unchangedApprovedSnapshots:69,unchangedCalendarMoments:299,uniqueResponsiveAssets:630,newOriginalPhotos:60,newResponsiveAssets:300,uniqueNewPublicationMoments:60,firstNewPublishAt:selected.toSorted((a,b)=>a.publishAt.localeCompare(b.publishAt))[0].publishAt,lastNewPublishAt:selected.toSorted((a,b)=>a.publishAt.localeCompare(b.publishAt)).at(-1).publishAt,generation,assetChecks,productionAcceptance:false};
+await fs.writeFile(new URL('release/ASSET-MANIFEST.json',here),JSON.stringify({version:1,siteId:pkg.siteId,canonicalHost:pkg.canonicalHost,packageSha256:sha,assets:assetChecks.map(a=>({name:path.posix.basename(a.src),sha256:a.sha256,bytes:a.bytes})),scope:'Portable exact actual asset hashes, copied from verified native export; local operator paths excluded.'},null,2)+'\n');
+await fs.writeFile(new URL('PACKAGE-ACCEPTANCE.json',here),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({...result,generation:undefined,assetChecks:undefined}));

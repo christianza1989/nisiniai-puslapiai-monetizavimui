@@ -1,0 +1,374 @@
+{
+  "selectedPlanIds": [
+    "AV-gidas",
+    "ES-gidas",
+    "FX-gidas",
+    "GY-gidas",
+    "IG-gidas",
+    "KP-gidas",
+    "KT-gidas",
+    "LZ-gidas",
+    "MD-gidas",
+    "MS-gidas",
+    "OD-gidas",
+    "PM-gidas",
+    "PS-gidas",
+    "PX-gidas",
+    "RP-gidas",
+    "SP-gidas",
+    "SV-gidas",
+    "TT-gidas",
+    "VP-gidas",
+    "B-meistrui-galerija",
+    "AV-kaina-trukme",
+    "KP-kaina-trukme",
+    "LZ-kaina-trukme",
+    "MS-kaina-trukme",
+    "VP-kaina-trukme",
+    "DP-kojos",
+    "GL-nuemimas",
+    "MN-be-lakavimo",
+    "MS-nugara-ar-kunas",
+    "PD-kaina-trukme",
+    "VP-konsultacija",
+    "MN-trukme",
+    "ES-mezoterapija-biorevitalizacija",
+    "FX-joga-pilatesas",
+    "OD-balinimas",
+    "PM-antakiai",
+    "PS-poros-seima",
+    "PX-korekcija-nuemimas",
+    "RP-parafinas",
+    "SP-galvos-spa",
+    "TT-eskizas",
+    "AV-metodai",
+    "DZ-balayage-airtouch",
+    "ES-mikroadatine",
+    "KP-ivyniojimas",
+    "LZ-lazeris-ipl",
+    "ND-chrome-cat-eye",
+    "NP-formos-tipsai",
+    "PM-lupos-akys",
+    "PP-atstatymas",
+    "SP-hamamas",
+    "AN-dazai-henna",
+    "AV-papuosalas",
+    "BL-dazymas",
+    "BR-masinele-skutimas",
+    "DP-ar-lazeris",
+    "DZ-ombre-sombre",
+    "GL-ar-stiprinimas",
+    "KP-sveitimas",
+    "LZ-zonos"
+  ],
+  "specialistPendingPlanIds": [],
+  "receipt": {
+    "siteId": "madbeauty",
+    "selectedAt": "2026-10-09T22:31:24.292Z",
+    "decisions": [
+      {
+        "pageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+        "kept": 4,
+        "deferred": 4
+      },
+      {
+        "pageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+        "kept": 3,
+        "deferred": 4
+      },
+      {
+        "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+        "kept": 2,
+        "deferred": 2
+      },
+      {
+        "pageId": "9233c7ed-52c6-4ee9-9835-4005db2d5781",
+        "kept": 1,
+        "deferred": 3
+      },
+      {
+        "pageId": "6a9450cb-725b-4077-9846-f6d8a9af26ef",
+        "kept": 1,
+        "deferred": 2
+      },
+      {
+        "pageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+        "kept": 4,
+        "deferred": 9
+      },
+      {
+        "pageId": "e867d6e8-db21-432f-b4a8-209d7060be4c",
+        "kept": 0,
+        "deferred": 2
+      },
+      {
+        "pageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+        "kept": 4,
+        "deferred": 6
+      },
+      {
+        "pageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+        "kept": 0,
+        "deferred": 2
+      },
+      {
+        "pageId": "61455054-263f-416a-8d1b-a993e4949753",
+        "kept": 2,
+        "deferred": 18
+      },
+      {
+        "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+        "kept": 2,
+        "deferred": 2
+      },
+      {
+        "pageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+        "kept": 2,
+        "deferred": 4
+      },
+      {
+        "pageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+        "kept": 1,
+        "deferred": 2
+      },
+      {
+        "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+        "kept": 2,
+        "deferred": 1
+      },
+      {
+        "pageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+        "kept": 2,
+        "deferred": 0
+      },
+      {
+        "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+        "kept": 2,
+        "deferred": 3
+      },
+      {
+        "pageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+        "kept": 1,
+        "deferred": 1
+      },
+      {
+        "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+        "kept": 2,
+        "deferred": 3
+      },
+      {
+        "pageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+        "kept": 3,
+        "deferred": 11
+      },
+      {
+        "pageId": "4deba947-1bc9-4c48-90da-62b48a9c7ece",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "5d754fbd-3db9-4212-bdde-58d3ac1960fb",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "02eb68ff-1571-4cef-bfe0-31216660bcb1",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "5fad7c52-342a-45e7-a619-a97048daf742",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "26a9236d-7d71-4dc6-b282-ee3b65cd757b",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "d4712e01-6bc1-47ec-aa60-ac311d9438de",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "56047987-7724-4476-80b1-fde21b00c826",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+        "kept": 1,
+        "deferred": 1
+      },
+      {
+        "pageId": "6835e31e-74ff-450d-b1cc-752477cbd404",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "1af233ab-8ce1-4eea-8620-5cc6f6761c8e",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "16a8706c-4c55-42ae-9681-e21c41dcc6c5",
+        "kept": 1,
+        "deferred": 1
+      },
+      {
+        "pageId": "01a5be0c-9c9a-40d3-bb9f-5993b6e47206",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "0f2c1fd1-9adf-4a38-973b-f4a10b244b89",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "30ca9bbf-33c0-4da6-85bd-8ba29577810e",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "59f6961c-4d66-421b-a1e9-184be6cedd3a",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "f13be7d8-026a-4039-afd3-e8711995fb9c",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "2934dc52-45c8-429b-ba28-ce368787862d",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "edac36e3-f996-4513-86f2-43468d3d9f6e",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+        "kept": 2,
+        "deferred": 0
+      },
+      {
+        "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+        "kept": 2,
+        "deferred": 0
+      },
+      {
+        "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "d2d923e8-fa60-4657-abcf-5916ca477647",
+        "kept": 1,
+        "deferred": 0
+      }
+    ],
+    "state": "selected-requires-final-links-and-current-review",
+    "approved": false,
+    "deployed": false
+  }
+}

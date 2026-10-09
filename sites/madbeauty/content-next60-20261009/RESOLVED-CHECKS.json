@@ -1,0 +1,1835 @@
+{
+  "checkedAt": "2026-10-09T22:48:09.581Z",
+  "humanExpertReviewPerformed": false,
+  "decisions": [
+    {
+      "planId": "AV-gidas",
+      "revisionHash": "60006cee58e1ffdc70b7984d34fc8283f820a4cd781d3c42e5949d5896b80483",
+      "originalNotes": [
+        "„Jo Mi“ ir ODA klinikos kainyno sudėties pavyzdžiai peržiūrėti 2026-10-09; prieš 2026-10-30 patvirtinimą dar kartą patikrinti, ar papuošalo įtraukimo ir metodo aprašai nepasikeitė, o pasikeitus tekstą atnaujinti arba pašalinti.",
+        "NHS puslapio nurodyta peržiūros data yra 2023 m., o kitas peržiūros terminas buvo 2026-04; prieš patvirtinant pastraipą iš naujo patikrinti aktualią sveikatos specialistų rekomendaciją ir tik tada palikti bendrą teiginį apie kreipimąsi dėl nerimą keliančių simptomų.",
+        "Teminis vaizdas dar nepriskirtas: v2Context.attachedMedia tuščias. Sugeneruoti, importuoti ir patikrinti tikrą responsive vaizdo šeimą, mobilų crop, alt ir teises prieš patvirtinant juodraštį."
+      ],
+      "resolution": "JoMi/ODA and NHS actually re-retrieved and read in SOURCES-RECHECK.json; inclusion statements unchanged and examples retain actualOct9 historical date, no futureOct30 check invented. NHS still serves old review date: use only generic professional referral, no claimed current medical review. Original photo actually inspected/imported; remaining media note closes only with actual desktop/mobile and sheet evidence, never metadata alone.",
+      "mediaEvidence": {
+        "originalSha256": "2e75abdb0d3eccdf3a37b5206d678352f063fd1af61ce27ed7570d87a9e65b7e",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:27:21.255Z",
+          "sha256": "2e75abdb0d3eccdf3a37b5206d678352f063fd1af61ce27ed7570d87a9e65b7e",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult side-profile ear with small healed silver stud, cobalt background and short dark hair; plausible visible anatomy, no active piercing or false healing comparison.",
+          "scope": "Original pixels actually inspected; mobile rendering and responsive asset checks are separate."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "60006cee58e1ffdc70b7984d34fc8283f820a4cd781d3c42e5949d5896b80483",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "60006cee58e1ffdc70b7984d34fc8283f820a4cd781d3c42e5949d5896b80483",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "ES-gidas",
+      "revisionHash": "5519ee0707bb8ba3e285fc552dd754b32b14c00e024b32c524a8fbc275ab96c1",
+      "originalNotes": [
+        "Prieš redakcinę peržiūrą sugeneruoti šiai temai skirtą vaizdą pagal mediaBrief, importuoti jį per bendrą responsive medijos kelią, tada patikrinti tikrus pikselius, alternatyvųjį tekstą ir mobilų kadravimą. Šiam juodraščiui medijos ID nepriskirtas."
+      ],
+      "resolution": "Only stale no-media note remains: actual original inspected and imported; responsive/crop closure requires actual render and pixel evidence. No personal clinical plan or human expert signature asserted.",
+      "mediaEvidence": {
+        "originalSha256": "20453c3c2c26bc551efa2978af545c1c4593ba1e2fec52722f339518dcd03462",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:27:32.930Z",
+          "sha256": "20453c3c2c26bc551efa2978af545c1c4593ba1e2fec52722f339518dcd03462",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Two adult women at a consultation desk, coral chairs and frosted-glass room. Visible hands/face plausible. Fictional scene supplies no expert credentials; mobile positioning still to check.",
+          "scope": "Original pixels actually inspected; mobile rendering and responsive asset checks are separate."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "5519ee0707bb8ba3e285fc552dd754b32b14c00e024b32c524a8fbc275ab96c1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "5519ee0707bb8ba3e285fc552dd754b32b14c00e024b32c524a8fbc275ab96c1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "FX-gidas",
+      "revisionHash": "7f9724b3b10cb6c59542e6d0b7d0cf1b2f1eb0b1ea53474be610a31d55737805",
+      "originalNotes": [],
+      "resolution": "No outstanding fact assertions; native Luna revision and source notes are real. Original medium and actual responsive pixel gates remain separately required before release; planned catalogue extensions legitimately deferred.",
+      "mediaEvidence": {
+        "originalSha256": "de64bc809c6403102f0d098d2941f5a4d9ece806c22f2a9f05dd060cd347c3ff",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:27:40.856Z",
+          "sha256": "de64bc809c6403102f0d098d2941f5a4d9ece806c22f2a9f05dd060cd347c3ff",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Three adult beginners and an instructor stand in sunlit exercise studio with green floor markings. Plausible neutral stance and limbs, no prescribed exercise or outcome claim.",
+          "scope": "Original pixels actually inspected; mobile rendering and responsive asset checks are separate."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "7f9724b3b10cb6c59542e6d0b7d0cf1b2f1eb0b1ea53474be610a31d55737805",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "7f9724b3b10cb6c59542e6d0b7d0cf1b2f1eb0b1ea53474be610a31d55737805",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "GY-gidas",
+      "revisionHash": "e236573d6f4f8ed503a8295d532ccc3cd610ee9c163a9e62b6c96f3e85678960",
+      "originalNotes": [
+        "Šiam gidui dar nepriskirtas temos vaizdas. Prieš redakcinį patvirtinimą sugeneruoti ir importuoti atskirą iliustraciją, tada patikrinti jos pikselius, mobilų kadravimą, alt tekstą ir teises."
+      ],
+      "resolution": "Stale no-media note resolves solely through actual original/import/crop evidence. Planned animal-service extension is deferred, no local provider/booking availability fabricated.",
+      "mediaEvidence": {
+        "originalSha256": "8aa9678900740dc13bd2dcdcf77014b3e8e88e48088421b5e0fd8da9927b2d46",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:27:46.752Z",
+          "sha256": "8aa9678900740dc13bd2dcdcf77014b3e8e88e48088421b5e0fd8da9927b2d46",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "White fluffy dog stands on grooming platform with groomer combing coat; terracotta room, four plausible legs and no scissors against face or injury. Overhead grooming arm/loop present without visible tension.",
+          "scope": "Original pixels actually inspected; mobile rendering and responsive asset checks are separate."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "e236573d6f4f8ed503a8295d532ccc3cd610ee9c163a9e62b6c96f3e85678960",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GY-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "e236573d6f4f8ed503a8295d532ccc3cd610ee9c163a9e62b6c96f3e85678960",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GY-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "IG-gidas",
+      "revisionHash": "bcef381ffcec30539a92bd672f868bfc3c804b240eac02ad795f1a5ccc3a235d",
+      "originalNotes": [],
+      "resolution": "No residual factCheck. Original wrong shower scene was actually replaced by inspected HVLP spray-tent illustration; final crop/alt require actual render evidence, no real procedure proof claimed.",
+      "mediaEvidence": {
+        "originalSha256": "d7b681819039662850c8774b7b6763afc2577ea36f2bfe3c62687fc97c6432f1",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:30:26.459Z",
+          "sha256": "d7b681819039662850c8774b7b6763afc2577ea36f2bfe3c62687fc97c6432f1",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Corrected original shows turquoise tanning tent with rear extractor grille and black spray gun, compressor hose and trolley. Showerhead and taps removed; recognizable powered-off spray-tanning equipment, no person.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "bcef381ffcec30539a92bd672f868bfc3c804b240eac02ad795f1a5ccc3a235d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\IG-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "bcef381ffcec30539a92bd672f868bfc3c804b240eac02ad795f1a5ccc3a235d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\IG-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "KP-gidas",
+      "revisionHash": "cb4d5f285fea5a35703177d10139a888b39fb09428aaf8f5d7c0bebacfa5b323",
+      "originalNotes": [
+        "Šiam juodraščiui nepriskirtas temos vaizdas. Prieš redakcinę peržiūrą reikia sugeneruoti atskirą iliustraciją, importuoti ją kaip responsive medijos šeimą ir patikrinti tikrus vaizdo taškus bei mobilų kadravimą."
+      ],
+      "resolution": "Only stale image note: original actually inspected/imported; remaining responsive and crop note closes only on real browser and pixel evidence. Live national body-care hub verified, no city supply claimed.",
+      "mediaEvidence": {
+        "originalSha256": "77f8e103c4878628b513d004175386ab4401fb928f6381cf6f5b0cf7757a373f",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:27:58.308Z",
+          "sha256": "77f8e103c4878628b513d004175386ab4401fb928f6381cf6f5b0cf7757a373f",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult client and therapist discuss at sofa in sage-green body-care setting, blank cards and treatment bed behind; plausible hands and faces, clothed non-invasive thematic scene.",
+          "scope": "Original pixels actually inspected; mobile rendering and responsive asset checks are separate."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "cb4d5f285fea5a35703177d10139a888b39fb09428aaf8f5d7c0bebacfa5b323",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "cb4d5f285fea5a35703177d10139a888b39fb09428aaf8f5d7c0bebacfa5b323",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "KT-gidas",
+      "revisionHash": "730dbf4d54e892cc793dff87a6ce25f3da86e78a4b30b9da58c338f91b4b84b1",
+      "originalNotes": [
+        "Teminė kineziterapijos iliustracija dar nesukurta ir nepriskirta: v2Context.attachedMedia yra tuščias. Prieš patvirtinimą reikia sugeneruoti, importuoti ir priskirti vaizdą, tada peržiūrėti jo pikselius ir mobilų kadrą."
+      ],
+      "resolution": "Stale missing-media note resolves through actual original/import and desktop/mobile evidence. Planned physiotherapy catalogue extension is genuinely deferred, no missing target fabricated.",
+      "mediaEvidence": {
+        "originalSha256": "1063f8ee61be25cdb4b34120d3e3db443eb4141b136803d4eb3a6d023ff93ccc",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:28:00.480Z",
+          "sha256": "1063f8ee61be25cdb4b34120d3e3db443eb4141b136803d4eb3a6d023ff93ccc",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Older adult woman and female practitioner converse seated in navy-and-white movement consultation room; bands and balls behind, plausible visible hands, no treatment protocol or credentials shown.",
+          "scope": "Original pixels actually inspected; mobile rendering and responsive asset checks are separate."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "730dbf4d54e892cc793dff87a6ce25f3da86e78a4b30b9da58c338f91b4b84b1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KT-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "730dbf4d54e892cc793dff87a6ce25f3da86e78a4b30b9da58c338f91b4b84b1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KT-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "LZ-gidas",
+      "revisionHash": "add8430b8478ae7c1d65db603f79f90ed754a681312b3173ffbce48de2203f2b",
+      "originalNotes": [
+        "Šiam gidui nepridėta lazerinio plaukų šalinimo temą atitinkanti iliustracija. Atskirai sukurti originalią redakcinę iliustraciją, importuoti ją kaip responsyvių WebP variantų šeimą ir prieš tvirtinimą patikrinti tikrus pikselius bei mobilų kadravimą."
+      ],
+      "resolution": "Only stale image note: actual original/import and rendered pixel gates required. Live laser national route separately verified; no actual local booking promise.",
+      "mediaEvidence": {
+        "originalSha256": "2b9674824f398c82ea83f2b8a8eae0cb6e90c550d57a927f0abebc872cdd5710",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:30:26.406Z",
+          "sha256": "2b9674824f398c82ea83f2b8a8eae0cb6e90c550d57a927f0abebc872cdd5710",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Empty sage-green laser-treatment room, powered-off device and handpiece in holder beside covered treatment bed. No active emission, lettering or brand/technical specification is asserted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "add8430b8478ae7c1d65db603f79f90ed754a681312b3173ffbce48de2203f2b",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "add8430b8478ae7c1d65db603f79f90ed754a681312b3173ffbce48de2203f2b",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "MD-gidas",
+      "revisionHash": "e72d328e1057f05afc6b9af4353659ac65b6fe92bd9771b233f25f267265a924",
+      "originalNotes": [
+        "Prieš peržiūrą ir tvirtinimą pridėti šiam straipsniui skirtą teminę iliustraciją, importuoti jos responsive variantus ir patikrinti tikrus failus, mobilų kadrą bei alternatyvųjį tekstą.",
+        "Jei galutinėje redakcijoje bus įvardytas konkretus procedūros metodas, priemonė ar įrenginys, atskirai patikrinti jo aktualų teisinį priskyrimą ir licencijos reikalavimus pagal oficialius šaltinius; šiame tekste konkretūs metodai neklasifikuojami."
+      ],
+      "resolution": "Re-read complete currentbody after Nekiekviena→Ne kiekviena correction. Conditional individualclassification note is inapplicable; actual original/import and two refreshed responsiveviews required.",
+      "mediaEvidence": {
+        "originalSha256": "a17b87549e5251a660a717d4e828433fd869cbad214cf16f46c5e27ffd9b76b7",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:30:26.425Z",
+          "sha256": "a17b87549e5251a660a717d4e828433fd869cbad214cf16f46c5e27ffd9b76b7",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult client and fictional practitioner at pale-blue consultation desk, blank paper and pen, plausible hands and faces, no active medical procedure or credential claim.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "e72d328e1057f05afc6b9af4353659ac65b6fe92bd9771b233f25f267265a924",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MD-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "e72d328e1057f05afc6b9af4353659ac65b6fe92bd9771b233f25f267265a924",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MD-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "MS-gidas",
+      "revisionHash": "b3968d0e19cda8196ef6e1a2dfa900f99214615247c803032a0e2fb75bbb56a8",
+      "originalNotes": [
+        "Prieš galutinę redakcinę peržiūrą ir publikavimą patikrinti, ar nepasikeitė NVSC nurodoma negydomojo masažo ir asmens sveikatos priežiūros paslaugų riba bei su ja susiję reikalavimai. S28 ir S29 peržiūrėti 2026-10-09; jų tyrimo įrašų freshUntil yra 2026-11-06, o puslapis suplanuotas 2026-11-08.",
+        "Masažo gidui skirtas vaizdas dar nesukurtas ir nepridėtas. Sukurti pagal mediaBrief, importuoti per bendrą responsive WebP kelią ir patikrinti tikruosius pikselius bei mobilų kadrą prieš galutinę peržiūrą."
+      ],
+      "resolution": "S28/S29 really re-retrieved/read Oct10 in SOURCES-RECHECK, no invented Nov8 source check; current review accepts bounded general rule, future source freshness is a separate maintenance task. Original/photo crop requires actual render/pixel evidence; no human specialist signature fabricated.",
+      "mediaEvidence": {
+        "originalSha256": "3e3d39928ad66e49668ce34543bb213699c2c9c04a644a1a97656a4a27cf56dc",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:30:26.444Z",
+          "sha256": "3e3d39928ad66e49668ce34543bb213699c2c9c04a644a1a97656a4a27cf56dc",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Forest-green massage room with covered wooden table, warm lamp and folded towels, no patient or active treatment. Distinct low-light architectural composition.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "b3968d0e19cda8196ef6e1a2dfa900f99214615247c803032a0e2fb75bbb56a8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "b3968d0e19cda8196ef6e1a2dfa900f99214615247c803032a0e2fb75bbb56a8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "OD-gidas",
+      "revisionHash": "9941554f49372d9892afffcd90656b87372d837b9a76b0c53a37c52e9c09a7dc",
+      "originalNotes": [],
+      "resolution": "No residual factCheck. Sources date correction actually applied; planned dentistry target deferred. Actual original and responsive pixel evidence still required before release.",
+      "mediaEvidence": {
+        "originalSha256": "c2f29f3cba84ce133024c6a40f2d2bacb9f082fe3f8fae94203a1ba6949ac743",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:33:05.935Z",
+          "sha256": "c2f29f3cba84ce133024c6a40f2d2bacb9f082fe3f8fae94203a1ba6949ac743",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Purple dental chair in empty bright clinic, stainless tray with dental mirror and instruments; thematic room image only, no treatment, practitioner or sterile-status claim.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "9941554f49372d9892afffcd90656b87372d837b9a76b0c53a37c52e9c09a7dc",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "9941554f49372d9892afffcd90656b87372d837b9a76b0c53a37c52e9c09a7dc",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PM-gidas",
+      "revisionHash": "d676947a8cf47434e010588def896c8f68fb5fed6a3d00d7c0fa1962e3bf5683",
+      "originalNotes": [
+        "Šiam gidui dar nėra prisegto permanentinio makiažo temos vaizdo. Sukurti pagal mediaBrief, importuoti bendru responsive medijos keliu ir patikrinti tikrą vaizdą, mobilų kadravimą bei alt tekstą prieš revision-bound peržiūrą."
+      ],
+      "resolution": "Only stale no-media note: actual original/import/crop gates are separate and close only with observed pixels. Live permanent-makeup consultation route independently verified.",
+      "mediaEvidence": {
+        "originalSha256": "1fc4af8f53fdd54ea73cdc0c7115d55c96f6e6eac96194203a8e50cd2ac411c8",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:33:05.972Z",
+          "sha256": "1fc4af8f53fdd54ea73cdc0c7115d55c96f6e6eac96194203a8e50cd2ac411c8",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult woman examines face in handheld mirror in warm ochre room, ordinary skin texture and plausible visible hand. No needle, before/after comparison or achieved permanent-makeup result asserted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "d676947a8cf47434e010588def896c8f68fb5fed6a3d00d7c0fa1962e3bf5683",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "d676947a8cf47434e010588def896c8f68fb5fed6a3d00d7c0fa1962e3bf5683",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PS-gidas",
+      "revisionHash": "19e917d592436c934982c7e68c436406570b10e3b3e8e93b00c4e3ec58048cd8",
+      "originalNotes": [],
+      "resolution": "No residual factCheck; grammar corrected to pas konkretų teikėją. Planned mental-health catalogue family genuinely deferred; actual original and rendered pixel gates remain required.",
+      "mediaEvidence": {
+        "originalSha256": "f026010fe8f1a0b69b0a03637887135082b204bbf27301b80220cbed6f1f2be8",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:33:06.042Z",
+          "sha256": "f026010fe8f1a0b69b0a03637887135082b204bbf27301b80220cbed6f1f2be8",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult male client and female fictional listener converse in blue-grey consultation room, plausible expressive hands, blank notebook and no identifiable practitioner/credentials.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "19e917d592436c934982c7e68c436406570b10e3b3e8e93b00c4e3ec58048cd8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "19e917d592436c934982c7e68c436406570b10e3b3e8e93b00c4e3ec58048cd8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PX-gidas",
+      "revisionHash": "3b344e1be1562cc0cbca8d2e7aedbe018d27f43813594b2bd407a08f59357839",
+      "originalNotes": [],
+      "resolution": "No residual factCheck; description now accurately concise. Actual original/import/crop evidence and real national extension route checked separately, no client result or local supply claimed.",
+      "mediaEvidence": {
+        "originalSha256": "d6307845bbc3105e7a51e139c0518942d7debd341f40582201fcd2ffdc46a022",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:33:06.060Z",
+          "sha256": "d6307845bbc3105e7a51e139c0518942d7debd341f40582201fcd2ffdc46a022",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Rear view of long brown hair beside a separate extension weft held by stylist in mauve salon. Plausible visible hands, attached result not represented as actual customer proof.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "3b344e1be1562cc0cbca8d2e7aedbe018d27f43813594b2bd407a08f59357839",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "3b344e1be1562cc0cbca8d2e7aedbe018d27f43813594b2bd407a08f59357839",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "RP-gidas",
+      "revisionHash": "f1961852e67211106e0e7785988ff6dabcc8cdc121f2e2a5a4164e73b34f75c4",
+      "originalNotes": [
+        "Teminis vaizdas nepridėtas: sugeneruoti ir peržiūrėti rankų bei pėdų SPA paketo palyginimui skirtą iliustraciją, importuoti ją per bendrą responsive WebP kelią ir prieš patvirtinimą patikrinti tikrus pikselius, mobilų kadrą bei alt tekstą."
+      ],
+      "resolution": "Only stale image note; original actually inspected and imported. Actual responsive crop/pixel evidence must pass before clearing note; verified national hand/foot SPA routes match article scope.",
+      "mediaEvidence": {
+        "originalSha256": "36d2bf73a34e24f250f6c1ab57b0bb2e487af9c84c5316ee7d8ec632f53e39a8",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:33:06.080Z",
+          "sha256": "36d2bf73a34e24f250f6c1ab57b0bb2e487af9c84c5316ee7d8ec632f53e39a8",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Close view of adult hands resting on blue towel with cream jar and closed care device beside. Plausible fingers/nails, no application temperature, medical result or active treatment depicted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "f1961852e67211106e0e7785988ff6dabcc8cdc121f2e2a5a4164e73b34f75c4",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "f1961852e67211106e0e7785988ff6dabcc8cdc121f2e2a5a4164e73b34f75c4",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "SP-gidas",
+      "revisionHash": "bf4272db4724ad0d9c8c98e683a0bf5852272a0aaa9366da14ea012d5229f7d1",
+      "originalNotes": [],
+      "resolution": "No residual factCheck; S101 actual rendered source and component correction recorded. Original and responsive pixel checks required; verified national ritual/space routes not local provider availability.",
+      "mediaEvidence": {
+        "originalSha256": "87c9c7ece982e356b7f4dc2661139a195c1d2d67cffcc5c747dfd8bb8c8afb88",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:37:26.906Z",
+          "sha256": "87c9c7ece982e356b7f4dc2661139a195c1d2d67cffcc5c747dfd8bb8c8afb88",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Empty warm stone spa lounge with rust-colour chaise longues, pool and glass steam-room enclosure. Architectural scene is distinct; fictional facility, no real business amenities asserted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "bf4272db4724ad0d9c8c98e683a0bf5852272a0aaa9366da14ea012d5229f7d1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "bf4272db4724ad0d9c8c98e683a0bf5852272a0aaa9366da14ea012d5229f7d1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "SV-gidas",
+      "revisionHash": "4e856d6d8d638f1e6c9fb7254e386212204964c468aa3f3e6d2f0b8439550513",
+      "originalNotes": [
+        "Šiam gidui dar nėra pridėta ir peržiūrėta teminė iliustracija. Sukurti bei importuoti iliustraciją per bendrą medijos kelią, patikrinti jos tikrus pikselius, mobilų kadravimą ir alt tekstą prieš redakcinę peržiūrą."
+      ],
+      "resolution": "Only stale missing-image note: original actually inspected/imported, closure needs actual rendered pixel evidence. Planned well-being extension genuinely deferred, not made-up city route.",
+      "mediaEvidence": {
+        "originalSha256": "ecd82eb694471f355ce2d60b21d91aa0c964e24e548f5ea1e6cd2f6aea954573",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:37:26.930Z",
+          "sha256": "ecd82eb694471f355ce2d60b21d91aa0c964e24e548f5ea1e6cd2f6aea954573",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Five clothed adults seated around a sound bowl in blue wellness room, central facilitator with mallet. Plausible visible seated anatomy, no sound-health efficacy or intervention proof.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "4e856d6d8d638f1e6c9fb7254e386212204964c468aa3f3e6d2f0b8439550513",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SV-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "4e856d6d8d638f1e6c9fb7254e386212204964c468aa3f3e6d2f0b8439550513",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SV-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "TT-gidas",
+      "revisionHash": "16f6945e70469f1d8b7279b97dc373ff1b2a9c41b1ddd9b5ea881cb5e64230d6",
+      "originalNotes": [],
+      "resolution": "No residual factCheck. Original fictional sketch/consultation photo and real responsive gates separately required; exact national new-tattoo information target verified.",
+      "mediaEvidence": {
+        "originalSha256": "003ae7b084c16b97aa5fc24620e75dfa0bda89346530eb341b14333756505f3f",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:37:26.945Z",
+          "sha256": "003ae7b084c16b97aa5fc24620e75dfa0bda89346530eb341b14333756505f3f",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Overhead wooden desk with original botanical tattoo sketches, pencils and powered-off tattoo machine on dark mat. No lettering, active tattooing, copied artist attribution or sterile workflow claim.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "16f6945e70469f1d8b7279b97dc373ff1b2a9c41b1ddd9b5ea881cb5e64230d6",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "16f6945e70469f1d8b7279b97dc373ff1b2a9c41b1ddd9b5ea881cb5e64230d6",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "VP-gidas",
+      "revisionHash": "bcf7494be5c02226a756dc6623b2bc47661e32c6b152368058e2bbe4f6fa1523",
+      "originalNotes": [
+        "Prieš tvirtinant viešą versiją, iš naujo patikrinti S27 ir S38 meniu: tekste pateiktos 2026-10-09 kainos ir trukmės gali būti pasikeitusios; atnaujinti pavyzdžius arba pašalinti skaitinį palyginimą.",
+        "Prieš patvirtinant šios versijos vaizdą, sugeneruoti ir importuoti teminę iliustraciją pagal mediaBrief, peržiūrėti tikrus pikselius ir mobilų crop; v2Context šiam puslapiui dar nenurodo pridėtos medijos."
+      ],
+      "resolution": "S27/S38 actually re-fetched/read Oct10 in SOURCES-RECHECK, unchanged units; examples keep actualOct9 historical date, not futureNov16 prices. Original and responsive crop/pixel gates required. Real face-care root verified.",
+      "mediaEvidence": {
+        "originalSha256": "d0e0077fd5b9183cbfb38fa77bbf26bf293d6e030d8d4cff8294e33e92ad5e22",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:37:26.958Z",
+          "sha256": "d0e0077fd5b9183cbfb38fa77bbf26bf293d6e030d8d4cff8294e33e92ad5e22",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult freckled client and fictional practitioner converse in peach facial-care setting, ordinary skin texture and plausible visible hands. Non-invasive thematic consultation, no actual expert credentials or result.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "bcf7494be5c02226a756dc6623b2bc47661e32c6b152368058e2bbe4f6fa1523",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-gidas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "bcf7494be5c02226a756dc6623b2bc47661e32c6b152368058e2bbe4f6fa1523",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-gidas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "revisionHash": "ae6689160e008a3a5ae94603907095c125186c73e34f052c3cc43086d3bdc527",
+      "originalNotes": [
+        "Šiam gidui nėra priskirtos temos iliustracijos. Pagal mediaBrief sugeneruoti ir importuoti atskirą vaizdą, peržiūrėti faktinius pikselius ir mobilų kadravimą prieš tvirtinant straipsnį."
+      ],
+      "resolution": "Only stale media note closes on original/import/real rendered pixels; fictional photography-process illustration is not a client/gallery result. No provider-commerce CTA needed for this editorial job.",
+      "mediaEvidence": {
+        "originalSha256": "90f25502db045a8ff6b782683cde27ca120b57e384aaf576b7538e40937e0a4d",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:37:26.969Z",
+          "sha256": "90f25502db045a8ff6b782683cde27ca120b57e384aaf576b7538e40937e0a4d",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Over-shoulder camera photographing a manicured hand on green table beside unlabelled grey card, lamp and tools. Hand has plausible fingers and screen depicts matching hand; fictional portfolio scene, no real client proof.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "ae6689160e008a3a5ae94603907095c125186c73e34f052c3cc43086d3bdc527",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\B-meistrui-galerija-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "ae6689160e008a3a5ae94603907095c125186c73e34f052c3cc43086d3bdc527",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\B-meistrui-galerija-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "revisionHash": "1500dae5738b9437daf513afdb705728b839542039fd607311235a9255c1f97f",
+      "originalNotes": [
+        "Prieš 2026-11-21 publikavimo peržiūrėti Jo Mi ir ODA kainynus; jei kainos, paslaugų apimtis ar nurodyta trukmė pasikeitė, pavyzdžius atnaujinti arba pašalinti.",
+        "Teminis auskarų vėrimo vaizdas dar nepridėtas. Prieš patvirtinant juodraštį sugeneruoti arba parinkti tinkamą vaizdą, importuoti responsive šeimą ir peržiūrėti faktinius pikselius bei mobilų kadrą."
+      ],
+      "resolution": "JoMi/ODA actually re-fetched/read Oct10, unchanged examples keepOct9 historical date and no futureNov21 check invented. Image note closes only with real original/import/crop evidence, no fake future validity.",
+      "mediaEvidence": {
+        "originalSha256": "62ca033e293cbf2a509ccc556279c00e759523a5e25aeccbc469d7f2cda119bb",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:41:42.519Z",
+          "sha256": "62ca033e293cbf2a509ccc556279c00e759523a5e25aeccbc469d7f2cda119bb",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Still life of two pairs of small earrings in cream presentation boxes on purple fabric; no price tag, text, brand or material-certification assertion.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "1500dae5738b9437daf513afdb705728b839542039fd607311235a9255c1f97f",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-kaina-trukme-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "1500dae5738b9437daf513afdb705728b839542039fd607311235a9255c1f97f",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-kaina-trukme-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "revisionHash": "2208e9ebe981db9e0caaaadf4cd5a8e3a618716123c19a88b5f35460bed104ff",
+      "originalNotes": [],
+      "resolution": "No residual factCheck; source rendered menu and original pixel observations real. Native public body unchanged after final links; actual responsive evidence still required before approval.",
+      "mediaEvidence": {
+        "originalSha256": "a3ac88c1af0e4bd45740e4c9a3f3bfcf18666dae1b7a342766fbd86796b14557",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:41:42.544Z",
+          "sha256": "a3ac88c1af0e4bd45740e4c9a3f3bfcf18666dae1b7a342766fbd86796b14557",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Client and staff member compare small cards at red reception counter; plausible hands and faces, fictional service-selection scene. Tiny indistinct card marks convey no actual price or offer.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "2208e9ebe981db9e0caaaadf4cd5a8e3a618716123c19a88b5f35460bed104ff",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-kaina-trukme-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "2208e9ebe981db9e0caaaadf4cd5a8e3a618716123c19a88b5f35460bed104ff",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-kaina-trukme-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "revisionHash": "e7501bc94051bb5f0509182481b7a93d010d87eb5b815db72812111dd222e45b",
+      "originalNotes": [
+        "Prieš redakcinį patvirtinimą šiam gidui reikia sukurti ir prijungti temai skirtą iliustraciją, tada patikrinti jos faktinius pikselius, mobilų apkarpymą ir alt tekstą. Šiuo metu prie juodraščio nėra prijungto vaizdo."
+      ],
+      "resolution": "Only stale medium note; real original/import/actual responsive pixels required. Offers clearly historical with expiration disclosed, not future prices. National apparatus information route verified, no city/provider supply claim.",
+      "mediaEvidence": {
+        "originalSha256": "a462c652850ce5a23bf585f756f647f6242b0805348da9c92a72930a79449a47",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:41:42.559Z",
+          "sha256": "a462c652850ce5a23bf585f756f647f6242b0805348da9c92a72930a79449a47",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Overhead arrangement of protective goggles, blank cards and undated grid notebook on navy surface with towels; no numerical price/session claim or protection standard asserted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "e7501bc94051bb5f0509182481b7a93d010d87eb5b815db72812111dd222e45b",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-kaina-trukme-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "e7501bc94051bb5f0509182481b7a93d010d87eb5b815db72812111dd222e45b",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-kaina-trukme-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "revisionHash": "783b50df8e004f95517bf09107eef10dcf28f3597ad6bf1d946ba5df9ae74d82",
+      "originalNotes": [
+        "Šiam puslapiui v2Context.attachedMedia nepateikta vaizdo. Reikia atskiros, konkrečiai masažo meniu palyginimui skirtos iliustracijos: ją sugeneruoti, importuoti kaip responsive WebP ir patikrinti tikruose pikseliuose bei mobiliame apkarpyme prieš peržiūrą."
+      ],
+      "resolution": "Only stale image note: actual original/import/crop evidence required; all dated observations remain historical and explicitly not current national tariffs. National massage hub verified.",
+      "mediaEvidence": {
+        "originalSha256": "252eb87f9aec4167cb3d55e169b6719c514479d2121cfb2dd464116f726342a6",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:41:42.572Z",
+          "sha256": "252eb87f9aec4167cb3d55e169b6719c514479d2121cfb2dd464116f726342a6",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Fictional massage worker lays fresh towel over empty table in orange/teal room; plausible hands, clock uses unlabelled tick marks, no active treatment or guarantee.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "783b50df8e004f95517bf09107eef10dcf28f3597ad6bf1d946ba5df9ae74d82",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-kaina-trukme-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "783b50df8e004f95517bf09107eef10dcf28f3597ad6bf1d946ba5df9ae74d82",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-kaina-trukme-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "revisionHash": "444849302ea04de55fe33e1bbe1db61d87ab236fc80dc6c42e4b0262c257381b",
+      "originalNotes": [
+        "Kainos ir trukmės pavyzdžiai yra 2026-10-09 patikrintų pasiūlymų momentinė informacija; prieš tikslios redakcijos patvirtinimą atnaujinti abiejų meniu duomenis, nes įkainiai ir pasiūlymai gali keistis.",
+        "Šiam juodraščiui nepridėtas teminis vaizdas. Sugeneruoti ir importuoti mediaBrief aprašytą iliustraciją; patikrinti tikrus pikselius, mobilų kadrą ir alt tekstą."
+      ],
+      "resolution": "S27/S38 really re-fetched/read Oct10 and units unchanged; historicalOct9 examples retained, no futureNov30 review claimed. Missing-media note closes only with actual original and responsive pixel evidence.",
+      "mediaEvidence": {
+        "originalSha256": "cd207118cc51301105560cafbd3c74e3153d15cc131a732e0ab7a90799a2408d",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:41:42.584Z",
+          "sha256": "cd207118cc51301105560cafbd3c74e3153d15cc131a732e0ab7a90799a2408d",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Unlabelled tube, bottle and cream jar on sage shelf beside towels and basin; distinct still-life close view, no real brand, product ingredients, price or clinical effect asserted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "444849302ea04de55fe33e1bbe1db61d87ab236fc80dc6c42e4b0262c257381b",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-kaina-trukme-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "444849302ea04de55fe33e1bbe1db61d87ab236fc80dc6c42e4b0262c257381b",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-kaina-trukme-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "DP-kojos",
+      "revisionHash": "943adc1d4cf082a5a40cdce0ffe83b386ae64743287913b4981239f4240577e4",
+      "originalNotes": [
+        "Šiam gidui skirta zonų pasirinkimą iliustruojanti teminė medija dar nepridėta. Prieš patvirtinimą ją reikia sugeneruoti, importuoti kaip responsive WebP šeimą ir peržiūrėti tikrus desktop bei mobile vaizdus ir alt tekstą."
+      ],
+      "resolution": "Only stale missing-media note; actual original, import, responsive observations required.",
+      "mediaEvidence": {
+        "originalSha256": "e625c937fa817fcfeb8759e61301c33761371157c9108c6d8dda3285a31c9986",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:44:29.528Z",
+          "sha256": "e625c937fa817fcfeb8759e61301c33761371157c9108c6d8dda3285a31c9986",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult seated with clothed torso and trousers rolled above bare lower legs in blue salon; plausible crossed legs and feet, no active waxing, intimate nudity or hair-removal outcome proof.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "943adc1d4cf082a5a40cdce0ffe83b386ae64743287913b4981239f4240577e4",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-kojos-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "943adc1d4cf082a5a40cdce0ffe83b386ae64743287913b4981239f4240577e4",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-kojos-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "GL-nuemimas",
+      "revisionHash": "ede969214055ddd03440d598f6969509e489b9662aeebc4dc0f8392bacb91acc",
+      "originalNotes": [
+        "Prieš redakcinę peržiūrą iš naujo patikrinti Vili Nails meniu: tekste pateikti 2026-10-09 vieno teikėjo kainų ir trukmės pavyzdžiai, ne Lietuvos vidurkis; jei pasiūlymas pasikeitė, atnaujinti pavyzdį arba jį pašalinti.",
+        "Teminis vaizdas dar nepridėtas. Sugeneruoti pagal mediaBrief, peržiūrėti faktinius pikselius ir mobilų kadrą, tada importuoti ir prijungti patvirtintą responsive medijos šeimą."
+      ],
+      "resolution": "ActualOct10 Vili recheck unchanged; historicalOct9 retained. Media evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "4db02015e96d47e88824fb10e6bfef9d9e0bc9292c9b8f357e8a791012e193c0",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:44:29.556Z",
+          "sha256": "4db02015e96d47e88824fb10e6bfef9d9e0bc9292c9b8f357e8a791012e193c0",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Close-up of hand resting on towel beside unlabelled bottle and cotton pads on burgundy surface. Plausible visible fingers, no soaking time, chemical identification or removal procedure depicted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "ede969214055ddd03440d598f6969509e489b9662aeebc4dc0f8392bacb91acc",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-nuemimas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "ede969214055ddd03440d598f6969509e489b9662aeebc4dc0f8392bacb91acc",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-nuemimas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "revisionHash": "6b83db0017513763c4588452f5150e7804df1c349bd4ff385c6e5c664579d22d",
+      "originalNotes": [
+        "Priskirtos iliustracijos pikseliai ir mobilus kadras šiame teksto peržiūros darbe nebuvo patikrinti. Prieš galutinai tvirtinant peržiūrėti priskirtą vaizdą ir jo mobilų kadravimą; jei jis neatitinka mediaBrief, sugeneruoti bei importuoti tinkamą vaizdą."
+      ],
+      "resolution": "Original illustration/import plus actual desktop/mobile evidence resolves stale image note.",
+      "mediaEvidence": {
+        "originalSha256": "e185f303fdafd0fd0c4471fce91709d6ac4deb489f755c309ca428802df83ae1",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:44:29.569Z",
+          "sha256": "e185f303fdafd0fd0c4471fce91709d6ac4deb489f755c309ca428802df83ae1",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Natural uncoated nails on adult hand holding glass in green setting; plausible five-finger grip, no active treatment or health claim.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "6b83db0017513763c4588452f5150e7804df1c349bd4ff385c6e5c664579d22d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-be-lakavimo-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "6b83db0017513763c4588452f5150e7804df1c349bd4ff385c6e5c664579d22d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-be-lakavimo-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "revisionHash": "80357c97889606c3419f57bc147b243c7e4d6ad7ac9ea5c9cce6fd2fd806533c",
+      "originalNotes": [
+        "Prieš redakcinį patvirtinimą iš naujo patikrinti NVSC pateiktą grožio paslaugų ir asmens sveikatos priežiūros paslaugų skirtį; palikti tik tai, ką pagrindžia aktuali šaltinio versija.",
+        "Meniu trukmės pavyzdys yra datuotas 2026-10-09 stebėjimas. Prieš numatytą 2026-12-04 publikavimo datą patikrinti, ar jį palikti kaip istorinį pavyzdį, ar atnaujinti pagal tuo metu matomą meniu.",
+        "Teminis zonų ir laiko vizualas dar nepridėtas: jį reikia atskirai sugeneruoti, importuoti ir peržiūrėti tikrus pikselius bei mobilų kadravimą."
+      ],
+      "resolution": "NVSC actually recheckedOct10; historical dated menu not futureDec4 verification. Media evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "41e211337dbe0216eedb77edbf488f068a32cae89fc11e7020169e2fdf6d6c09",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:44:29.584Z",
+          "sha256": "41e211337dbe0216eedb77edbf488f068a32cae89fc11e7020169e2fdf6d6c09",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Wide bright terracotta massage room with two separately covered wooden tables. No client, technique or body-zone result is inferred from furnishings.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "80357c97889606c3419f57bc147b243c7e4d6ad7ac9ea5c9cce6fd2fd806533c",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-nugara-ar-kunas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "80357c97889606c3419f57bc147b243c7e4d6ad7ac9ea5c9cce6fd2fd806533c",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MS-nugara-ar-kunas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "revisionHash": "c6408477644e688d1c371c830319ddfbd11bdd407f57e3cbc10e5a86f371de0e",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; deliverable is same-menu comparison, not fictional second provider; responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "2b4a9eddb37d9e2afac5b54bc80e9f947e12726e18ca6f523ad62a6ba2a80ba2",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:44:29.599Z",
+          "sha256": "2b4a9eddb37d9e2afac5b54bc80e9f947e12726e18ca6f523ad62a6ba2a80ba2",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Pedicure seat and basin with individually packaged files and instruments on navy towel in coral-tiled room. Photo conveys thematic workspace; actual sterilization/compliance status is not asserted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "c6408477644e688d1c371c830319ddfbd11bdd407f57e3cbc10e5a86f371de0e",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PD-kaina-trukme-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "c6408477644e688d1c371c830319ddfbd11bdd407f57e3cbc10e5a86f371de0e",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PD-kaina-trukme-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "VP-konsultacija",
+      "revisionHash": "2642547a0ba553d176aa51f0e84ca1476fe8b31b6010f90c32795e5ef22a0313",
+      "originalNotes": [
+        "Šio gido teminė iliustracija dar nepridėta prie juodraščio. Prieš redakcinę peržiūrą reikia sugeneruoti arba parinkti tinkamą vaizdą, jį importuoti ir patikrinti faktinius pikselius, mobilų kadravimą bei alternatyvųjį tekstą."
+      ],
+      "resolution": "Only stale missing image note closes with actual media and responsive view evidence.",
+      "mediaEvidence": {
+        "originalSha256": "888dedd6a34d0f4150dc7dfbb5dfe782b166821ae25efc9371792e04a4fc6b58",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:47:20.336Z",
+          "sha256": "888dedd6a34d0f4150dc7dfbb5dfe782b166821ae25efc9371792e04a4fc6b58",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Fictional facial-care worker explains an unlabelled bottle to client against dark-green wall and mirror. Plausible hands and profiles, no brand, medicine or actual professional endorsement.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "2642547a0ba553d176aa51f0e84ca1476fe8b31b6010f90c32795e5ef22a0313",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-konsultacija-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "2642547a0ba553d176aa51f0e84ca1476fe8b31b6010f90c32795e5ef22a0313",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\VP-konsultacija-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "MN-trukme",
+      "revisionHash": "cd0564d81b1d903cf082851385697c000000458d113225c55a8ceef282afabee",
+      "originalNotes": [
+        "Šiam puslapiui neprijungtas teminis vaizdas. Sugeneruoti pagal mediaBrief, importuoti per bendrą responsive medijos kelią ir prieš redakcinę peržiūrą patikrinti tikrus pikselius, mobilų kadravimą, alt tekstą ir teises."
+      ],
+      "resolution": "Only missing-media note; actual original/import/responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "b75c415de2661456951ce9aebe8699cc010f3909351300abd0f2f7a84a896ae5",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:47:20.356Z",
+          "sha256": "b75c415de2661456951ce9aebe8699cc010f3909351300abd0f2f7a84a896ae5",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Nail specialist and client converse across lavender table with colour swatches and unlabelled calendar grid. Plausible hands; mannequin hand in background is clearly a prop, no booking-date or duration claim.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "cd0564d81b1d903cf082851385697c000000458d113225c55a8ceef282afabee",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-trukme-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "cd0564d81b1d903cf082851385697c000000458d113225c55a8ceef282afabee",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\MN-trukme-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "revisionHash": "48538c483ab5262d197d851978d4cf6ef6b9346b954bcb21fe90dd8e31c9d9ec",
+      "originalNotes": [],
+      "resolution": "No unresolved fact checks or procedural dose/58ingredient/pain-free/course claims; verified bibliography and responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "97daa1bd20bf182dabe89f15ba422bdc10a474509af58d685a33f1141808976f",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:47:20.378Z",
+          "sha256": "97daa1bd20bf182dabe89f15ba422bdc10a474509af58d685a33f1141808976f",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Two adults compare blank folded paper and unlabelled white carton in bright consultation room; plausible fingers. No needles, medicine identifiers, injection or outcome comparison.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "48538c483ab5262d197d851978d4cf6ef6b9346b954bcb21fe90dd8e31c9d9ec",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mezoterapija-biorevitalizacija-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "48538c483ab5262d197d851978d4cf6ef6b9346b954bcb21fe90dd8e31c9d9ec",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mezoterapija-biorevitalizacija-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "revisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+      "originalNotes": [],
+      "resolution": "Actual Cyrillic plain-list typo fixed and Chrome rechecked; no unresolved facts, all remaining visual evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "727ce51aaea8e413332da2afce8b74fea91cf2add646bb1521d21e1d7d15891d",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:47:20.389Z",
+          "sha256": "727ce51aaea8e413332da2afce8b74fea91cf2add646bb1521d21e1d7d15891d",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult woman standing with rolled mat beside empty Pilates reformer in ochre studio. Plausible feet and neutral relaxed pose, no prescribed exercise or health result.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-joga-pilatesas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\FX-joga-pilatesas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "OD-balinimas",
+      "revisionHash": "98ca195e9f28580149d6e12a88c418ce2792a7f793685b82760b6e88cbf95885",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; no home formula or colour guarantee. Actual media and responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "3c9cf5627caa5cc7416e543500f4f0bc16daddfe6d467295005fff555d9978cf",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:47:20.410Z",
+          "sha256": "3c9cf5627caa5cc7416e543500f4f0bc16daddfe6d467295005fff555d9978cf",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult woman smiling in turquoise dental chair with bib, ordinary teeth and skin. No active bleaching or before/after claim; fictional thematic portrait, no real patient testimonial.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "98ca195e9f28580149d6e12a88c418ce2792a7f793685b82760b6e88cbf95885",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-balinimas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "98ca195e9f28580149d6e12a88c418ce2792a7f793685b82760b6e88cbf95885",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\OD-balinimas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PM-antakiai",
+      "revisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+      "originalNotes": [],
+      "resolution": "Two Estonian list words repaired, verified in final full read; exact verified NVSC slug only; no general nano classification.",
+      "mediaEvidence": {
+        "originalSha256": "f9e6ef91b70ebd9e835bae9ae6dd1d244ce472df1da4a3d6b0800c497f84eb26",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:51:19.234Z",
+          "sha256": "f9e6ef91b70ebd9e835bae9ae6dd1d244ce472df1da4a3d6b0800c497f84eb26",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Rear portrait of adult holding mirror reflecting eyebrows and face in lavender room. Reflection and visible hands broadly consistent; no pigment application or claimed achieved permanent result.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-antakiai-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-antakiai-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PS-poros-seima",
+      "revisionHash": "e4ea8043859b14b05c8de19e0d9660ea35e43f4827baf2b82e9fc2c8502ef941",
+      "originalNotes": [
+        "Teminė porų ar šeimos konsultacijos iliustracija dar nepridėta. Sukurti ir patikrinti tikrą vaizdo failą, importuoti jį per bendrą responsive medijos kelią ir įvertinti mobilų kadravimą prieš redakcinę peržiūrą."
+      ],
+      "resolution": "Only image note resolves with actual original/import/mobile/desktop evidence; no diagnosis or guaranteed relationship outcome.",
+      "mediaEvidence": {
+        "originalSha256": "035f4d9fe030f4cc430f626a50a87fb0f994c621d697f0f80fc502e08ba60b2f",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:51:19.247Z",
+          "sha256": "035f4d9fe030f4cc430f626a50a87fb0f994c621d697f0f80fc502e08ba60b2f",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult couple seated opposite fictional listener in sage room. Plausible hands and faces, unlabelled papers; no identifiable real family, practitioner credentials or clinical outcome.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "e4ea8043859b14b05c8de19e0d9660ea35e43f4827baf2b82e9fc2c8502ef941",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-poros-seima-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "e4ea8043859b14b05c8de19e0d9660ea35e43f4827baf2b82e9fc2c8502ef941",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PS-poros-seima-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "revisionHash": "98276fd65c335b8700e4ac1764db17b9eb21bb0741f947a45bdcca28ff4b2e8c",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; no invented duration/correction interval or interchangeable systems. Real media responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "b72a22e618cd2ac3eec27c772c0761ef3f2dac1a06934fc1b86828d0ab7b4678",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:51:19.255Z",
+          "sha256": "b72a22e618cd2ac3eec27c772c0761ef3f2dac1a06934fc1b86828d0ab7b4678",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Loose blond and brown extension strands with connector pieces arranged on red salon desk with comb and storage boxes. Thematic maintenance still life, no specific attachment/removal protocol.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "98276fd65c335b8700e4ac1764db17b9eb21bb0741f947a45bdcca28ff4b2e8c",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-korekcija-nuemimas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "98276fd65c335b8700e4ac1764db17b9eb21bb0741f947a45bdcca28ff4b2e8c",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PX-korekcija-nuemimas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "RP-parafinas",
+      "revisionHash": "19999a97a41f9c93b3ac2aad6dd11375c69ed5ee7bbe344052324c09a8c5f091",
+      "originalNotes": [
+        "Prieš redakcinį patvirtinimą peržiūrėti prisegto vaizdo tikruosius pikselius ir mobilų kadravimą; šioje peržiūroje jų patikrinti negalima."
+      ],
+      "resolution": "Actual original picture and responsive crop resolves stale pixel-check note; no home heating instructions.",
+      "mediaEvidence": {
+        "originalSha256": "2ab7d5cb9b2dcac68ee3764c02c81bff0c4e5d4fd323cbda2b294d73387c056b",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:51:19.261Z",
+          "sha256": "2ab7d5cb9b2dcac68ee3764c02c81bff0c4e5d4fd323cbda2b294d73387c056b",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Closed paraffin-care device, unlabelled jar and folded towels on blue-tiled surface. No hand immersed, temperature setting, treatment step or medical-benefit claim.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "19999a97a41f9c93b3ac2aad6dd11375c69ed5ee7bbe344052324c09a8c5f091",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-parafinas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "19999a97a41f9c93b3ac2aad6dd11375c69ed5ee7bbe344052324c09a8c5f091",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\RP-parafinas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "revisionHash": "8a6d83333e71631b936d073d25d904545ce42b33becd2a523e7615123a52eb24",
+      "originalNotes": [],
+      "resolution": "Actual date correctedOct10, no growth/repair claim; no unresolved facts, actual responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "edd344b914d948842b008115fcb40193822fd40a3b3b36d61f38823806dd56d3",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:51:19.268Z",
+          "sha256": "edd344b914d948842b008115fcb40193822fd40a3b3b36d61f38823806dd56d3",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Empty reclining salon chair and shampoo basin with head-spa water arch in warm peach room. No person or procedure outcome; fictional equipment illustration, not real local service inventory.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "8a6d83333e71631b936d073d25d904545ce42b33becd2a523e7615123a52eb24",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-galvos-spa-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "8a6d83333e71631b936d073d25d904545ce42b33becd2a523e7615123a52eb24",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-galvos-spa-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "TT-eskizas",
+      "revisionHash": "1680dc78672bc6708441a135fbda9edd0f8b052109cb302066ca2af9cc4bacaf",
+      "originalNotes": [
+        "Šiam puslapiui nepriskirtas tinkamas tatuiruotės eskizo vaizdas. Prieš redakcinę peržiūrą atskirai sugeneruoti arba parinkti vaizdą, importuoti jį per bendrą responsive media workflow ir patikrinti tikrus pikselius, mobilų crop bei alt tekstą."
+      ],
+      "resolution": "Actual topic illustration shows sketch consultation, no real client/art attribution claim; responsive evidence closes missing-media note.",
+      "mediaEvidence": {
+        "originalSha256": "bd03e1dbcfafebc126cb2a60a4f834f8e309902971c90daea4fe3b7a6ada4f84",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:54:22.972Z",
+          "sha256": "bd03e1dbcfafebc126cb2a60a4f834f8e309902971c90daea4fe3b7a6ada4f84",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Tattooed fictional adult artist and client discuss botanical sketches in deep-green room; visible hands plausible. No active tattooing, copied artist authorship or provider credentials asserted.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "1680dc78672bc6708441a135fbda9edd0f8b052109cb302066ca2af9cc4bacaf",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-eskizas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "1680dc78672bc6708441a135fbda9edd0f8b052109cb302066ca2af9cc4bacaf",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\TT-eskizas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "AV-metodai",
+      "revisionHash": "617ac86ea4b832c13b08309dfc5283bb802b6aafdc745299a6201fdb92244933",
+      "originalNotes": [
+        "Gidui reikia atskiros teminės iliustracijos. Priskirto vaizdo nėra; sugeneruoti pagal mediaBrief, importuoti per bendrą medijos kelią ir patikrinti faktinius pikselius bei teises prieš redakcinę peržiūrą."
+      ],
+      "resolution": "Only missing-image note closes with actual original/import/crop observations; no self-piercing protocol.",
+      "mediaEvidence": {
+        "originalSha256": "6d6fce6e7679f9704474316462ae1cd0365be3c3af00a4111747e3b6227301f3",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:54:22.981Z",
+          "sha256": "6d6fce6e7679f9704474316462ae1cd0365be3c3af00a4111747e3b6227301f3",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Piercing workspace still life with sealed packages, small jewellery display and metal tray on lavender desk. No active piercing; photograph does not certify sterilization or jewellery materials.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "617ac86ea4b832c13b08309dfc5283bb802b6aafdc745299a6201fdb92244933",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-metodai-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "617ac86ea4b832c13b08309dfc5283bb802b6aafdc745299a6201fdb92244933",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-metodai-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "revisionHash": "079d340a9e40118a80ae2570d957b9075bcb8425ee94c57a67cfc998babe8d64",
+      "originalNotes": [
+        "Prieš tvirtinant redakciją sugeneruoti ir prijungti šiai temai skirtą iliustraciją, tada patikrinti jos pikselius, alt tekstą ir mobilų kadravimą; pateiktame kontekste nėra prijungtos šio puslapio medijos.",
+        "„Looks“ meniu pavyzdys užfiksuotas 2026-10-09. Prieš tvirtinant peržiūrėti, ar šaltinis vis dar rodo nurodytą pasiūlymą; jei ne, atnaujinti datuotą pavyzdį arba pašalinti skaičius."
+      ],
+      "resolution": "Looks really recheckedOct10 unchanged; preserve historicalOct9, no future validity claim; image evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "6bd512fc3db31bde5cc97445c11307931bb6f2031bb8480c3fb90050ff152556",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:54:22.987Z",
+          "sha256": "6bd512fc3db31bde5cc97445c11307931bb6f2031bb8480c3fb90050ff152556",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Stylist gently holds highlighted loose hair in burgundy salon with powered-off dryer and colour swatches. Plausible hands and profiles, no actual colour-treatment result or brand testimony.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "079d340a9e40118a80ae2570d957b9075bcb8425ee94c57a67cfc998babe8d64",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-balayage-airtouch-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "079d340a9e40118a80ae2570d957b9075bcb8425ee94c57a67cfc998babe8d64",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-balayage-airtouch-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "revisionHash": "ff025ecd41635444dc66df1a9fafd1f1d18626efc4d20e8ce331e71a02d4e094",
+      "originalNotes": [
+        "Konkrečios mikroadatinės ar RF mikroadatinės paslaugos klasifikacija Lietuvoje priklauso nuo konkretaus įrenginio, jo paskirties ir atliekamo veiksmo. Prieš publikuojant teiginį apie konkrečios paslaugos teisinį statusą, jį reikia atskirai patikrinti pagal įrenginio dokumentus ir kompetentingos institucijos informaciją; pateikti bendrieji NVSC ir VASPVT šaltiniai jos konkrečiai neklasifikuoja."
+      ],
+      "resolution": "Conditional individual-device classification note does not apply: final body names no individual device legal classification; no settings/home recipe. Actual media required.",
+      "mediaEvidence": {
+        "originalSha256": "9f591d7ed16945a7ae67fac99df86f708e5eaffee012af329963b4c6a132d68b",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:54:22.994Z",
+          "sha256": "9f591d7ed16945a7ae67fac99df86f708e5eaffee012af329963b4c6a132d68b",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Fictional practitioner shows powered-off handheld microneedling device to client across blue consultation table. No skin contact or visible emission; plausible hands, no credential or safety certification.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "ff025ecd41635444dc66df1a9fafd1f1d18626efc4d20e8ce331e71a02d4e094",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mikroadatine-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "ff025ecd41635444dc66df1a9fafd1f1d18626efc4d20e8ce331e71a02d4e094",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ES-mikroadatine-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "revisionHash": "4ebd5fd0710f8067d1adb99eb38e5aba5ece851bae20ada02ad42cd04ccb77dc",
+      "originalNotes": [
+        "Šiam gidui dar reikia sugeneruoti ir peržiūrėti teminę kūno įvyniojimų iliustraciją, importuoti ją bendru responsive WebP keliu ir patikrinti tikrą mobilų kadravimą bei alt tekstą."
+      ],
+      "resolution": "Actual thematic wrap original/import/crops closes missing image note; no detox/weight or clinical promise.",
+      "mediaEvidence": {
+        "originalSha256": "101fe32801783af08b87795d80755247fb28e81771e6217dc5e1736076834e4b",
+        "originalPixelReview": {
+          "at": "2026-10-09T20:54:23.002Z",
+          "sha256": "101fe32801783af08b87795d80755247fb28e81771e6217dc5e1736076834e4b",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Folded towels, bathrobe, unlabelled jar and bowl of cosmetic mask on terracotta shelf. Warm diagonal light, no active wrap or detoxification/body-contour result.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "4ebd5fd0710f8067d1adb99eb38e5aba5ece851bae20ada02ad42cd04ccb77dc",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-ivyniojimas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "4ebd5fd0710f8067d1adb99eb38e5aba5ece851bae20ada02ad42cd04ccb77dc",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-ivyniojimas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "revisionHash": "3b86819253b6ab255cc0a9a7a24c747c9860d65c0bb937895d947dc4ee9d8ff1",
+      "originalNotes": [
+        "Šiam gidui dar reikia teminio vaizdo: atskiroje medijos darbo eigoje sugeneruoti ir patikrinti iliustraciją, kuri abstrakčiai palygina siauresnį lazerio šviesos pluoštą su platesne IPL šviesa. Ji neturi atrodyti kaip tikslus techninis ar medicininis brėžinys, konkretaus įrenginio nuotrauka ar procedūros įrodymas; prieš tvirtinimą patikrinti pikselius, mobilų kadravimą ir alt tekstą."
+      ],
+      "resolution": "Illustrative unlabelled handpieces are thematic, not literal beam/device demonstration. Actualtext comparison delivers mechanism; original/crops required.",
+      "mediaEvidence": {
+        "originalSha256": "c88b6a7c0a283b5348a0eb4c2760b08aaa58b94ca0c98240a1a2196873071eb6",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:00:22.036Z",
+          "sha256": "c88b6a7c0a283b5348a0eb4c2760b08aaa58b94ca0c98240a1a2196873071eb6",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Two differently shaped powered-off light-treatment handpieces on white clinic stands, orange accents, no skin contact; conceptual comparison only, shapes do not prove laser or IPL technology.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "3b86819253b6ab255cc0a9a7a24c747c9860d65c0bb937895d947dc4ee9d8ff1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-lazeris-ipl-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "3b86819253b6ab255cc0a9a7a24c747c9860d65c0bb937895d947dc4ee9d8ff1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-lazeris-ipl-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "revisionHash": "e1b8c80293156c15c129cb714431a3efb0c7d4f302edd0040212b169e2e8c8f1",
+      "originalNotes": [
+        "Teminė iliustracija dar nepridėta: atskirai sugeneruoti, importuoti ir peržiūrėti originalią palyginamąją schemą pagal mediaBrief; ji turi būti aiškiai iliustracinė, ne tikro teikėjo ar kliento darbo įrodymas.",
+        "Planuotas tikro efekto teikėjo vaizdo įrašas ir leidimas naudoti jį nepateikti. Prieš pridedant tokį įrašą reikia gauti tikrą failą ir patikrinti teikėjo leidimą; iki tol jo nelaikyti straipsnio medija."
+      ],
+      "resolution": "Optional provider video was removed from promised deliverable; no file/permission invented or video included. Real generated comparative illustration is thematic, not client result; responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "a83fb15bb0d6d9f5ecdc8e642871bad0d04c96ef2ff9fd1831a6012903e35620",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:00:22.048Z",
+          "sha256": "a83fb15bb0d6d9f5ecdc8e642871bad0d04c96ef2ff9fd1831a6012903e35620",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Two plausible adult nails close-up: silver reflective chrome and green magnetic-pattern cat-eye finish, charcoal ground, no anatomy distortion; fictional style example.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "e1b8c80293156c15c129cb714431a3efb0c7d4f302edd0040212b169e2e8c8f1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ND-chrome-cat-eye-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "e1b8c80293156c15c129cb714431a3efb0c7d4f302edd0040212b169e2e8c8f1",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\ND-chrome-cat-eye-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "revisionHash": "2b5548a86bfeb0fdae2b365841f4943129d4f654a28425d46cf1154d7c889d2d",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; no21day/breakproof guarantees or DIY cure/cutting; actual images/crops required.",
+      "mediaEvidence": {
+        "originalSha256": "68ddeeeb8615a267c31b8d120ac41b6e6b474b53578845e7f74cb20bde61e726",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:00:22.056Z",
+          "sha256": "68ddeeeb8615a267c31b8d120ac41b6e6b474b53578845e7f74cb20bde61e726",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult natural hand beside clear tips and gold sculpting forms on navy towel, plausible fingers, no active application, the small grid marks are tool markings.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "2b5548a86bfeb0fdae2b365841f4943129d4f654a28425d46cf1154d7c889d2d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\NP-formos-tipsai-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "2b5548a86bfeb0fdae2b365841f4943129d4f654a28425d46cf1154d7c889d2d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\NP-formos-tipsai-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "revisionHash": "06e05cbac3f0dcd1cc4d7c6d861f5bacd689b3c6d4b0f7254c4929f6675db4a4",
+      "originalNotes": [
+        "Šiam gidui trūksta priskirtos teminės iliustracijos. Sugeneruoti ir importuoti atskirą vaizdą, patikrinti tikruosius pikselius, mobilų kadravimą ir alt tekstą prieš peržiūrą bei eksportą."
+      ],
+      "resolution": "Actual individual original/import/crops closes missing-media note; no home healing recipe or case-result promise.",
+      "mediaEvidence": {
+        "originalSha256": "857db9102c80b4d6ffa998701783d2ddce3cb3b245f906eee636a3561ba1c3e0",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:00:22.062Z",
+          "sha256": "857db9102c80b4d6ffa998701783d2ddce3cb3b245f906eee636a3561ba1c3e0",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult woman's natural eye/lip portrait against ochre wall; illustrative facial zones, no claimed permanent-makeup result or before/after.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "06e05cbac3f0dcd1cc4d7c6d861f5bacd689b3c6d4b0f7254c4929f6675db4a4",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-lupos-akys-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "06e05cbac3f0dcd1cc4d7c6d861f5bacd689b3c6d4b0f7254c4929f6675db4a4",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PM-lupos-akys-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "PP-atstatymas",
+      "revisionHash": "39893d5694e634b94f62e31fcb0caebbebf2b4f702e2dfc5eefbd82d438d76e8",
+      "originalNotes": [
+        "Šiam gidui dar reikia sukurti ir peržiūrėti konkrečią redakcinę iliustraciją: sprendimo schemą „pavadinimas → metodas → pažadas → įrodymas“, patikrinti jos mobilų kadravimą ir prisegti responsyvų vaizdą. Šiuo metu v2Context.attachedMedia tuščias."
+      ],
+      "resolution": "Brief revised to actual textual decision matrix plus fictional topic photograph; old diagram requirement superseded, no fake technical visual/clinical repair evidence.",
+      "mediaEvidence": {
+        "originalSha256": "bd5dc83abdab234c084dd040dd3c9d607b79df780f318ccb860b194afb469d15",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:00:22.070Z",
+          "sha256": "bd5dc83abdab234c084dd040dd3c9d607b79df780f318ccb860b194afb469d15",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Close crop of ordinary wavy brunette hair above blue clothing and rust backdrop, plausible texture; no claimed repair efficacy or treatment result.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "39893d5694e634b94f62e31fcb0caebbebf2b4f702e2dfc5eefbd82d438d76e8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PP-atstatymas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "39893d5694e634b94f62e31fcb0caebbebf2b4f702e2dfc5eefbd82d438d76e8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\PP-atstatymas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "SP-hamamas",
+      "revisionHash": "e24466418b53d6124f98be0e96353d15f0c701365249ca3ffa3f5a662cd04fac",
+      "originalNotes": [],
+      "resolution": "Earlier legal assertion omitted in native revision; no currentlegal claim relies on2023 source, no unresolved facts; actual responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "24f7002058a986331352aacec72304d9ccb3838ddb2282144858b25dedffd8b5",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:02:11.041Z",
+          "sha256": "24f7002058a986331352aacec72304d9ccb3838ddb2282144858b25dedffd8b5",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Empty marble hammam with blue mosaic niches, bowl and beige towel, atmospheric steam, no human treatment or claimed real venue.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "e24466418b53d6124f98be0e96353d15f0c701365249ca3ffa3f5a662cd04fac",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-hamamas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "e24466418b53d6124f98be0e96353d15f0c701365249ca3ffa3f5a662cd04fac",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\SP-hamamas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "revisionHash": "2cb41e6b980e0a70237672550259915b525e49a150f0825e69111cd1f05f0692",
+      "originalNotes": [],
+      "resolution": "New actualmanufacturer composition sources close earlier definition gap; no pureplant/hypoallergenic or recipe claims. Responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "e92769bc9f13e6eb21d640e13627bb4d457faedfd02b3af3f917f626e2f7f670",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:02:11.051Z",
+          "sha256": "e92769bc9f13e6eb21d640e13627bb4d457faedfd02b3af3f917f626e2f7f670",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Unlabelled dark tube and brown powder tin with two colour swatches on sage surface; conceptual tint/henna comparison, no guaranteed actual formula.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "2cb41e6b980e0a70237672550259915b525e49a150f0825e69111cd1f05f0692",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AN-dazai-henna-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "2cb41e6b980e0a70237672550259915b525e49a150f0825e69111cd1f05f0692",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AN-dazai-henna-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "AV-papuosalas",
+      "revisionHash": "35b93c380d057e13b9d4c70b447fccfd721393f6dd1d25ecb9f08db8319d16b8",
+      "originalNotes": [
+        "Prieš patvirtinant ir išleidžiant tekstą, iš naujo patikrinti Jo Mi ir ODA klinikos meniu: pavyzdžiai tikrinti 2026-10-09, o planuojama publikavimo data vėlesnė. Jei informacija pasikeitė, atnaujinti pavyzdį arba jį pašalinti.",
+        "Puslapiui dar nepriskirta peržiūrėta temos iliustracija. Prieš patvirtinimą ją reikia sugeneruoti, peržiūrėti tikruose pikseliuose ir prisegti tinkamą responsyvią šeimą."
+      ],
+      "resolution": "JoMi/ODA actually recheckedOct10 unchanged; no fabricatedDec18 check. Actual original/import/crops resolves media note.",
+      "mediaEvidence": {
+        "originalSha256": "57525b68ba5cacff0648c9e91a4f1160fd4ee3750e477b2c994245e18ce13476",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:02:11.057Z",
+          "sha256": "57525b68ba5cacff0648c9e91a4f1160fd4ee3750e477b2c994245e18ce13476",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "One simple stud and one hoop in ceramic bowls on navy cloth, plausible jewellery with no claimed material certification.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "35b93c380d057e13b9d4c70b447fccfd721393f6dd1d25ecb9f08db8319d16b8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-papuosalas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "35b93c380d057e13b9d4c70b447fccfd721393f6dd1d25ecb9f08db8319d16b8",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\AV-papuosalas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "BL-dazymas",
+      "revisionHash": "5fd62b719aaac9776dbabd806ee3f7bb5c90ed20cb272ea3ae7cef03d1925a6e",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; no lash growth/density promise. Actual media/crops required.",
+      "mediaEvidence": {
+        "originalSha256": "042555686a7723c12c2bf8890c2df1b17ddf854c128304c03af178ce77ea3146",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:02:11.064Z",
+          "sha256": "042555686a7723c12c2bf8890c2df1b17ddf854c128304c03af178ce77ea3146",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Natural older woman's portrait, pale mint wall and ordinary lashes/skin; illustrative eye zone, no claimed lash-dye result.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "5fd62b719aaac9776dbabd806ee3f7bb5c90ed20cb272ea3ae7cef03d1925a6e",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BL-dazymas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "5fd62b719aaac9776dbabd806ee3f7bb5c90ed20cb272ea3ae7cef03d1925a6e",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BL-dazymas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "revisionHash": "eddbfbbc53f2c35b5deb861411349fe656d51e6a6dbb11ff445bf953bcba3c82",
+      "originalNotes": [
+        "Prieš patvirtinimą šiam gidui reikia priskirti teminę iliustraciją ir peržiūrėti tikrą vaizdą, mobilų kadrą, alt tekstą bei teises. v2Context.attachedMedia šiuo metu tuščias; CLI negali patvirtinti, kad turimas barzdos vaizdas jau priskirtas šiam puslapiui."
+      ],
+      "resolution": "Actualtopic original/import/crops closes stale unattached-media note; no providers/bookings fabricated.",
+      "mediaEvidence": {
+        "originalSha256": "f43cfe977eb5daaf8ce6127b131478624723364ce0627ef9c8c9d4cf5d93a2a9",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:02:11.071Z",
+          "sha256": "f43cfe977eb5daaf8ce6127b131478624723364ce0627ef9c8c9d4cf5d93a2a9",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Black clipper and closed folding razor on coral barber counter with white towel, plausible inactive tools, no active skin contact.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "eddbfbbc53f2c35b5deb861411349fe656d51e6a6dbb11ff445bf953bcba3c82",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BR-masinele-skutimas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "eddbfbbc53f2c35b5deb861411349fe656d51e6a6dbb11ff445bf953bcba3c82",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\BR-masinele-skutimas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "revisionHash": "b8d7861c4f8d3a74f9591dbf11b3dca0633415e4d7954a537e3f0b3d7abeb53d",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; historicalprices explicitly recheckcurrentconditions, notfutureDec21 promise; verifiedwax/sugar/laser nationalroutes.",
+      "mediaEvidence": {
+        "originalSha256": "e0c4a3bd3c3565e004467dc34612e6f8a075187d215f70b083d4249dd374edd1",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:07:19.434Z",
+          "sha256": "e0c4a3bd3c3565e004467dc34612e6f8a075187d215f70b083d4249dd374edd1",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Two adult women discuss folded blank service cards in a dark green room with inactive device, plausible hands, no active depilation or false provider testimonial.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "b8d7861c4f8d3a74f9591dbf11b3dca0633415e4d7954a537e3f0b3d7abeb53d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-ar-lazeris-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "b8d7861c4f8d3a74f9591dbf11b3dca0633415e4d7954a537e3f0b3d7abeb53d",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DP-ar-lazeris-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "revisionHash": "bb19b8b36314dd8de3c187e62b2c8334262e1c91269233f4422d16e0d76e1ae9",
+      "originalNotes": [
+        "Prieš redakcinį patvirtinimą peržiūrėti prijungto vaizdo tikrus pikselius ir mobilų apkirpimą; pateikti metaduomenys nepatvirtina, kad vaizdas tiksliai atitinka jo aprašą."
+      ],
+      "resolution": "RejectedS115SaltandPepper not used;S118actualdefinition supplies gap. Actual image/crops closes pixel-review note.",
+      "mediaEvidence": {
+        "originalSha256": "4742da2bdaa18e7219b678e6e9484b3977cb6ac43b484bd5ee6c9fd5393f5f8d",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:07:19.444Z",
+          "sha256": "4742da2bdaa18e7219b678e6e9484b3977cb6ac43b484bd5ee6c9fd5393f5f8d",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Rear three-quarter brunette hair with graduated lighter ends in blue salon, plausible texture and mirror without duplicated face; fictional colour illustration.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "bb19b8b36314dd8de3c187e62b2c8334262e1c91269233f4422d16e0d76e1ae9",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-ombre-sombre-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "bb19b8b36314dd8de3c187e62b2c8334262e1c91269233f4422d16e0d76e1ae9",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\DZ-ombre-sombre-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "revisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; product strength nomenclature not treatment/guarantee; actual responsive evidence required.",
+      "mediaEvidence": {
+        "originalSha256": "22b0d56f5823be21fa277459835e63d6ddd653fc5081f460ba94bac3dc00d9d2",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:07:19.451Z",
+          "sha256": "22b0d56f5823be21fa277459835e63d6ddd653fc5081f460ba94bac3dc00d9d2",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Three plausible adult hands showing short, medium and long nude nails against lavender, distinct shapes and reasonable finger anatomy; no claim of structural health.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-ar-stiprinimas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\GL-ar-stiprinimas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "KP-sveitimas",
+      "revisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+      "originalNotes": [
+        "Prieš tvirtinant patikrinti prie straipsnio pridėtos iliustracijos tikruosius pikselius ir mobilų kadrą; pateikti medijos metaduomenys patvirtina priskirtą assetą, bet ne vizualinės peržiūros atlikimą."
+      ],
+      "resolution": "ActualS121 fills previousmechanismgap; noacidstrength/time/interval or detox. Actualoriginal/crops closes pixel-review note.",
+      "mediaEvidence": {
+        "originalSha256": "0dd4fdbfb559b0ba089ed5e9944d23370d036e42e44a0f6f8b0b4b856fcbbdc0",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:07:19.459Z",
+          "sha256": "0dd4fdbfb559b0ba089ed5e9944d23370d036e42e44a0f6f8b0b4b856fcbbdc0",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Unlabelled jar of grainy cosmetic scrub, cotton mitt and blue towel on terracotta tile, realistic still life, no therapy result.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-sveitimas-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\KP-sveitimas-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    },
+    {
+      "planId": "LZ-zonos",
+      "revisionHash": "37833ab0b89baeffedad8b3e46a59f1c9f3d7f0ee9fb872a5eb9977f43a88817",
+      "originalNotes": [],
+      "resolution": "No unresolved facts; newmale-forearmoriginal replaced genericfemale image and was actually observed; national apparatusroute notcitysupply.",
+      "mediaEvidence": {
+        "originalSha256": "309277f0607474bff415c3aec84e35bf3cda5e8dc8f9ef5a7a746d21d36c0e91",
+        "originalPixelReview": {
+          "at": "2026-10-09T21:08:57.710Z",
+          "sha256": "309277f0607474bff415c3aec84e35bf3cda5e8dc8f9ef5a7a746d21d36c0e91",
+          "state": "PASS_ORIGINAL_PIXELS",
+          "observation": "Adult male client points to his forearm during a violet-room consultation, dark-haired professional seen from back; plausible hands, inactive equipment and no skin contact. Distinct people/palette from index 56, fictional illustration without efficacy claim.",
+          "scope": "Original pixels actually inspected. Responsive assets and mobile rendering require separate checks."
+        },
+        "renderViews": [
+          {
+            "device": "desktop",
+            "revisionHash": "37833ab0b89baeffedad8b3e46a59f1c9f3d7f0ee9fb872a5eb9977f43a88817",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-zonos-desktop.png"
+          },
+          {
+            "device": "mobile",
+            "revisionHash": "37833ab0b89baeffedad8b3e46a59f1c9f3d7f0ee9fb872a5eb9977f43a88817",
+            "screenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next60-20261009\\sites\\madbeauty\\content-next60-20261009\\screenshots\\LZ-zonos-mobile.png"
+          }
+        ]
+      },
+      "decision": "RESOLVED_BY_ACTUAL_AGENT_REVIEW"
+    }
+  ]
+}

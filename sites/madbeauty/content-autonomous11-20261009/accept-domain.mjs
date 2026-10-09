@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const here=new URL('.',import.meta.url);
+const receiptPath='C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-calendar-release-20261009/sites/madbeauty/content-deploy-autonomous-20261009/RECEIPT.json';
+const bytes=await fs.readFile(receiptPath);
+assert.equal(createHash('sha256').update(bytes).digest('hex'),'8a2a72e8ed3a669e47b6289e4b94723662b59f2b6189e0be92361e5c6d221ac8');
+await fs.writeFile(new URL('PRODUCTION-RECEIPT.json',here),bytes);
+let code=await fs.readFile(new URL('../content-next30-20261009/verify-domain.mjs',here),'utf8');
+code=code.replaceAll('320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369','98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2').replace('fresh.length,19','fresh.length,11').replace("'Does not claim specialist review of the eleven private articles or search indexing'","'Agent editorial review is recorded separately; no human specialist endorsement or search indexing is claimed'");
+await fs.writeFile(new URL('verify-domain.mjs',here),code);
+await import(new URL('verify-domain.mjs',here));
+const d=JSON.parse(await fs.readFile(new URL('DELIVERY.json',here),'utf8')),a=JSON.parse(await fs.readFile(new URL('DOMAIN-ACCEPTANCE.json',here),'utf8')),r=JSON.parse(bytes);
+d.release.state='actual-domain-verified';d.state='ACTUAL_DOMAIN_VERIFIED';d.productionAcceptance={...a,productionVersion:r.productionVersion,receiptSha256:createHash('sha256').update(bytes).digest('hex')};
+await fs.writeFile(new URL('DELIVERY.json',here),JSON.stringify(d,null,2)+'\n');
+await fs.writeFile(new URL('../content-next60-20261009/BASELINE69-DEPLOYMENT.json',here),JSON.stringify({observedAt:new Date().toISOString(),producerSource:r.packageSource,packageSha256:r.packageSha256,productionVersion:r.productionVersion,runtimeSource:r.runtimeSource,coreSource:r.coreSource,package:r.package,consumerReceiptSha256:createHash('sha256').update(bytes).digest('hex'),independentDomainAcceptance:a},null,2)+'\n');

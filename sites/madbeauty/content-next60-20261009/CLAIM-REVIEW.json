@@ -1,0 +1,546 @@
+{
+  "checkedAt": "2026-10-09T22:48:29.145Z",
+  "policySha256": "cbec5ebdc888a0b09fe8dd409edeaf06602f32318301f30d6d8236d1ac9207d6",
+  "pages": [
+    {
+      "planId": "AV-gidas",
+      "pageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+      "reviewRevisionHash": "60006cee58e1ffdc70b7984d34fc8283f820a4cd781d3c42e5949d5896b80483",
+      "checkedAt": "2026-10-09T22:48:09.862Z",
+      "verifiedClaims": "APP reusable-gun position and initial-jewellery documentation scoped, current NVSC hygiene-pass and sterile-pack checks. Actual dated JoMi included plain titanium versus ODA inclusion unknown. General professional referral only, no NHS home-treatment protocol or named symptoms/medications.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "ES-gidas",
+      "pageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+      "reviewRevisionHash": "5519ee0707bb8ba3e285fc552dd754b32b14c00e024b32c524a8fbc275ab96c1",
+      "checkedAt": "2026-10-09T22:48:10.031Z",
+      "verifiedClaims": "Actual FDA microneedle/RF/filler risks as US context; NVSC/VASPVT Lithuanian beauty/health boundary conditional on actual service, no unnamed device classified or credentials fabricated.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "FX-gidas",
+      "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+      "reviewRevisionHash": "7f9724b3b10cb6c59542e6d0b7d0cf1b2f1eb0b1ea53474be610a31d55737805",
+      "checkedAt": "2026-10-09T22:48:10.186Z",
+      "verifiedClaims": "NHS balance/posture/strength/flexibility and specific45-minute beginner video scope; NCCIH yoga variety, no clinical superiority or all-class duration claim.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "GY-gidas",
+      "pageId": "9233c7ed-52c6-4ee9-9835-4005db2d5781",
+      "reviewRevisionHash": "e236573d6f4f8ed503a8295d532ccc3cd610ee9c163a9e62b6c96f3e85678960",
+      "checkedAt": "2026-10-09T22:48:10.338Z",
+      "verifiedClaims": "Actual RSPCA dog stress/health discussion and cat matting/avoid scissors guidance qualified as UK recommendations, no LT provider credential or veterinary diagnosis claimed.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "IG-gidas",
+      "pageId": "6a9450cb-725b-4077-9846-f6d8a9af26ef",
+      "reviewRevisionHash": "bcef381ffcec30539a92bd672f868bfc3c804b240eac02ad795f1a5ccc3a235d",
+      "checkedAt": "2026-10-09T22:48:10.489Z",
+      "verifiedClaims": "FDA surface amino-acid reaction/colour notSPF and spray eye/mucosa/inhalation scope; NVSC current2026 UV risk and18+ rule, no safe exposure schedule or universal suitability.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "KP-gidas",
+      "pageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+      "reviewRevisionHash": "cb4d5f285fea5a35703177d10139a888b39fb09428aaf8f5d7c0bebacfa5b323",
+      "checkedAt": "2026-10-09T22:48:10.666Z",
+      "verifiedClaims": "FDA noninvasive contouring not weight-loss/obesity treatment, technology-specificlimits; no wrap detox or biological efficacy claim. Current NVSC/VASPVT activity/qualification boundary conditional on actual service, no unnamed-device classification.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "KT-gidas",
+      "pageId": "e867d6e8-db21-432f-b4a8-209d7060be4c",
+      "reviewRevisionHash": "730dbf4d54e892cc793dff87a6ce25f3da86e78a4b30b9da58c338f91b4b84b1",
+      "checkedAt": "2026-10-09T22:48:10.823Z",
+      "verifiedClaims": "NHS physiotherapy scope qualified as possible individual service components, not all-session protocol; VASPVT institution/professional/licence/address checks conditional on actual health service, no programme prescribed.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "LZ-gidas",
+      "pageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+      "reviewRevisionHash": "add8430b8478ae7c1d65db603f79f90ed754a681312b3173ffbce48de2203f2b",
+      "checkedAt": "2026-10-09T22:48:10.982Z",
+      "verifiedClaims": "AAD hair/skin/body/device factors, maintenance possibility and all-room eye protection; no fixed course/interval/permanent guarantee. Actual LT service classification left conditional, licence path not US rule imported.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "MD-gidas",
+      "pageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+      "reviewRevisionHash": "e72d328e1057f05afc6b9af4353659ac65b6fe92bd9771b233f25f267265a924",
+      "checkedAt": "2026-10-09T22:48:11.148Z",
+      "verifiedClaims": "NVSCbeautyhealth distinction and VASPVT conditionallicence scope, no specific unnameddevice classification.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "MS-gidas",
+      "pageId": "61455054-263f-416a-8d1b-a993e4949753",
+      "reviewRevisionHash": "b3968d0e19cda8196ef6e1a2dfa900f99214615247c803032a0e2fb75bbb56a8",
+      "checkedAt": "2026-10-09T22:48:11.304Z",
+      "verifiedClaims": "Actually rechecked NVSC S28/S29 nontherapeutic-beauty versus healthcare boundary, NCCIH limited/condition-specific evidence. Actual Oct9 Prisilietimo/ThePalm menu scope retained as historical examples, not current provider supply or treatment claim.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "OD-gidas",
+      "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+      "reviewRevisionHash": "9941554f49372d9892afffcd90656b87372d837b9a76b0c53a37c52e9c09a7dc",
+      "checkedAt": "2026-10-09T22:48:11.456Z",
+      "verifiedClaims": "Dentara ultrasound/brush60–70,combinedAirflow80,separateAirflow50 EUR with actualOct10 reading date; no duration invented. NHS fillings/crowns do not whiten; LSMU bite/alignment profile not complete legal competence list. Actual separate provider/institution checks.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PM-gidas",
+      "pageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+      "reviewRevisionHash": "d676947a8cf47434e010588def896c8f68fb5fed6a3d00d7c0fa1962e3bf5683",
+      "checkedAt": "2026-10-09T22:48:11.605Z",
+      "verifiedClaims": "FDA pigment/reaction/contamination/changeability as US information, current NVSC hygiene/activity boundary qualified. Treatwell correctly described as catalogue formats, not one provider or market standard; no healing duration/result guarantee.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PS-gidas",
+      "pageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+      "reviewRevisionHash": "19e917d592436c934982c7e68c436406570b10e3b3e8e93b00c4e3ec58048cd8",
+      "checkedAt": "2026-10-09T22:48:11.759Z",
+      "verifiedClaims": "VASPVT medical-psychology licence scope specifically limited, not all psychologists/psychotherapists; NHS individual/couple/family/remote formats not LT universal standard. No diagnosis, meeting-count promise or guaranteed outcome.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PX-gidas",
+      "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+      "reviewRevisionHash": "3b344e1be1562cc0cbca8d2e7aedbe018d27f43813594b2bd407a08f59357839",
+      "checkedAt": "2026-10-09T22:48:11.913Z",
+      "verifiedClaims": "Specific PreBonded andGLTapes manufacturer systems, AAD long-term traction risks qualified, trained professional removal recommendation not LT legal credential. No damage-free guarantee, universal interval or home removal recipe.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "RP-gidas",
+      "pageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+      "reviewRevisionHash": "f1961852e67211106e0e7785988ff6dabcc8cdc121f2e2a5a4164e73b34f75c4",
+      "checkedAt": "2026-10-09T22:48:12.096Z",
+      "verifiedClaims": "Treatwell paraffin category is one local catalogue observation, not all-market standard. AAD changed nail should not be masked with artificial coating; no heat/time/home protocol or biological repair claim.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "SP-gidas",
+      "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "reviewRevisionHash": "bf4272db4724ad0d9c8c98e683a0bf5852272a0aaa9366da14ea012d5229f7d1",
+      "checkedAt": "2026-10-09T22:48:12.275Z",
+      "verifiedClaims": "SPA Vilnius Oct10 steam30min20,Kese scrub/body application40min60 andnamedritual60min90 EUR. Actual component label corrected, no oil massage invented. NCCIH limited aroma evidence, no heat/dose/clinical or all-SPA protocol.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "SV-gidas",
+      "pageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+      "reviewRevisionHash": "4e856d6d8d638f1e6c9fb7254e386212204964c468aa3f3e6d2f0b8439550513",
+      "checkedAt": "2026-10-09T22:48:12.437Z",
+      "verifiedClaims": "NCCIH meditation/relaxation variety and preliminary/limited evidence; no named breathing protocol, disease treatment or health-care replacement promised.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "TT-gidas",
+      "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+      "reviewRevisionHash": "16f6945e70469f1d8b7279b97dc373ff1b2a9c41b1ddd9b5ea881cb5e64230d6",
+      "checkedAt": "2026-10-09T22:48:12.781Z",
+      "verifiedClaims": "Current NVSC tattoo hygiene-pass and sterile-package-opening scope, FDA pigment contamination/reaction and removal limits as US evidence. No actual provider verification, fixed healing plan or historical2022 source as current legal authority.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "VP-gidas",
+      "pageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+      "reviewRevisionHash": "bcf7494be5c02226a756dc6623b2bc47661e32c6b152368058e2bbe4f6fa1523",
+      "checkedAt": "2026-10-09T22:48:13.071Z",
+      "verifiedClaims": "ActualOct9 Kosmetologija60m59/90m69/90m85 versusVIP90m79/ultra90m69/acid90m69, not offpeak63.20 unrelated offer. CurrentNVSC licence/hygiene boundary conditional, no cosmetic-treatment efficacy or personal diagnosis.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "pageId": "4deba947-1bc9-4c48-90da-62b48a9c7ece",
+      "reviewRevisionHash": "ae6689160e008a3a5ae94603907095c125186c73e34f052c3cc43086d3bdc527",
+      "checkedAt": "2026-10-09T22:48:13.216Z",
+      "verifiedClaims": "Adobe grey-card/white-balance guidance not laboratory measurement; VDAI2023 identifiable-body-image case specifically qualified, not universal legal consent template. No unowned images or generated image as real client work.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "pageId": "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572",
+      "reviewRevisionHash": "1500dae5738b9437daf513afdb705728b839542039fd607311235a9255c1f97f",
+      "checkedAt": "2026-10-09T22:48:13.371Z",
+      "verifiedClaims": "ActualOct9 JoMi lobe20/helixconch35/industrial40 includedplainTi, stemchange10; ODA Studex19/30 versusInverness25/40 and15min, inclusion unknown. APP material/specification scope, not hypoallergen guarantee.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+      "reviewRevisionHash": "2208e9ebe981db9e0caaaadf4cd5a8e3a618716123c19a88b5f35460bed104ff",
+      "checkedAt": "2026-10-09T22:48:13.519Z",
+      "verifiedClaims": "ActualOct10 SPA menu Kese scrub/body application40min60 versus namedritual60min90 EUR, not same-work minute tariff or national average; actual body-application correction present twice.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "pageId": "5d754fbd-3db9-4212-bdde-58d3ac1960fb",
+      "reviewRevisionHash": "e7501bc94051bb5f0509182481b7a93d010d87eb5b815db72812111dd222e45b",
+      "checkedAt": "2026-10-09T22:48:13.671Z",
+      "verifiedClaims": "Actual historical Era73/65per6, Amber59/47per4/41per6; products/systems not efficacy ranking. Era promotion explicitly throughNov30. No consultation fee/duration invented or required course assumed; AAD individual factors scoped.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "pageId": "02eb68ff-1571-4cef-bfe0-31216660bcb1",
+      "reviewRevisionHash": "783b50df8e004f95517bf09107eef10dcf28f3597ad6bf1d946ba5df9ae74d82",
+      "checkedAt": "2026-10-09T22:48:13.806Z",
+      "verifiedClaims": "ActualOct9 women-only Palm60min50/90min60, PrisilietimoExpress50min40,Kobido70min45(struck60),decollete90min55/back100min65. Aggregate30min10 EUR difference, not universal rate or clinical suitability.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "pageId": "5fad7c52-342a-45e7-a619-a97048daf742",
+      "reviewRevisionHash": "444849302ea04de55fe33e1bbe1db61d87ab236fc80dc6c42e4b0262c257381b",
+      "checkedAt": "2026-10-09T22:48:13.945Z",
+      "verifiedClaims": "ActualOct9 VIPultra90min69/combined90min79 versusKosmetologija60min59/combined90min85; mechanical90min69/Hydra60min79/LED30min39 different jobs, not substitute efficacy or market average. NVSC qualification conditional on actual invasive/medical activity.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "DP-kojos",
+      "pageId": "26a9236d-7d71-4dc6-b282-ee3b65cd757b",
+      "reviewRevisionHash": "943adc1d4cf082a5a40cdce0ffe83b386ae64743287913b4981239f4240577e4",
+      "checkedAt": "2026-10-09T22:48:14.085Z",
+      "verifiedClaims": "AAD waxing root versus shaving surface; historical Kaunas menu categories not uniform zones or Madbeauty supply.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "GL-nuemimas",
+      "pageId": "d4712e01-6bc1-47ec-aa60-ac311d9438de",
+      "reviewRevisionHash": "ede969214055ddd03440d598f6969509e489b9662aeebc4dc0f8392bacb91acc",
+      "checkedAt": "2026-10-09T22:48:14.237Z",
+      "verifiedClaims": "ViliOct9 43/70 versus45/80,46/80 versus50/90; AAD no peeling, UV distinction; SCCS2018 HEMA bounded sensitisation.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+      "reviewRevisionHash": "6b83db0017513763c4588452f5150e7804df1c349bd4ff385c6e5c664579d22d",
+      "checkedAt": "2026-10-09T22:48:14.380Z",
+      "verifiedClaims": "ViliOct9 40min25 versus60min30, conditional difference20min5EUR; AAD changed nail referral not conceal.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "pageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+      "reviewRevisionHash": "80357c97889606c3419f57bc147b243c7e4d6ad7ac9ea5c9cce6fd2fd806533c",
+      "checkedAt": "2026-10-09T22:48:14.516Z",
+      "verifiedClaims": "PalmwomenOct9 35 versus60/90 minutes; NCCIH limited effects and NVSC nontherapeutic versus health scope.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+      "reviewRevisionHash": "c6408477644e688d1c371c830319ddfbd11bdd407f57e3cbc10e5a86f371de0e",
+      "checkedAt": "2026-10-09T22:48:14.673Z",
+      "verifiedClaims": "75min45,90min50,up-to120min60; differences aggregate15/5 and30/10 not isolated universal removal rate; AAD/NVSC bounded.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "VP-konsultacija",
+      "pageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+      "reviewRevisionHash": "2642547a0ba553d176aa51f0e84ca1476fe8b31b6010f90c32795e5ef22a0313",
+      "checkedAt": "2026-10-09T22:48:14.815Z",
+      "verifiedClaims": "TwoOct9 menus plus AAD peeling scopes, NVSC beauty/health and hygiene passport; no diagnosis or verified provider.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "MN-trukme",
+      "pageId": "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a",
+      "reviewRevisionHash": "cd0564d81b1d903cf082851385697c000000458d113225c55a8ceef282afabee",
+      "checkedAt": "2026-10-09T22:48:14.967Z",
+      "verifiedClaims": "Vili70/80 without removal and80/90 with; Room new/existing customer not equivalent to new set; AAD nail changes.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+      "reviewRevisionHash": "48538c483ab5262d197d851978d4cf6ef6b9346b954bcb21fe90dd8e31c9d9ec",
+      "checkedAt": "2026-10-09T22:48:15.102Z",
+      "verifiedClaims": "Era Dermaheal microinjection versus HA/combined biorevitalisation examples scoped to provider; NVSC/VASPVT conditional health licensing.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+      "reviewRevisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+      "checkedAt": "2026-10-09T22:48:15.252Z",
+      "verifiedClaims": "NCCIH yoga variable style; NHS specific beginner video45min/mat/balance/posture/strength/flexibility, not market standard or superiority.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "OD-balinimas",
+      "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+      "reviewRevisionHash": "98ca195e9f28580149d6e12a88c418ce2792a7f793685b82760b6e88cbf95885",
+      "checkedAt": "2026-10-09T22:48:15.400Z",
+      "verifiedClaims": "NHS bleaching changes natural teeth not restorations, no mandatory replacement; VASPVT and dental chamber independent scope.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PM-antakiai",
+      "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+      "reviewRevisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+      "checkedAt": "2026-10-09T22:48:15.531Z",
+      "verifiedClaims": "PhiAcademy manual PhiBrows versus machine PowderBrows specific systems; FDA skin pigment and difficult reversal; NVSC skin-penetrating hygiene.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PS-poros-seima",
+      "pageId": "56047987-7724-4476-80b1-fde21b00c826",
+      "reviewRevisionHash": "e4ea8043859b14b05c8de19e0d9660ea35e43f4827baf2b82e9fc2c8502ef941",
+      "checkedAt": "2026-10-09T22:48:15.678Z",
+      "verifiedClaims": "NHS UK format reference not LT legal/session standard; VASPVT medicalpsych not all counsellors/licensing universal.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+      "reviewRevisionHash": "98276fd65c335b8700e4ac1764db17b9eb21bb0741f947a45bdcca28ff4b2e8c",
+      "checkedAt": "2026-10-09T22:48:15.823Z",
+      "verifiedClaims": "GatineauOct10 PDF Jan7 3.50remove+add versus0.80 removal+20wash/style;140 versus52 conditional. HeadRoom80/110min,50/60min unknown removal method; GreatLengths specific systems and AAD traction.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "RP-parafinas",
+      "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+      "reviewRevisionHash": "19999a97a41f9c93b3ac2aad6dd11375c69ed5ee7bbe344052324c09a8c5f091",
+      "checkedAt": "2026-10-09T22:48:15.974Z",
+      "verifiedClaims": "ARAVIA4107 and manufacturer comparison specific system, no universal temperature/time/detox; Treatwell menu formats; AAD scope.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+      "reviewRevisionHash": "8a6d83333e71631b936d073d25d904545ce42b33becd2a523e7615123a52eb24",
+      "checkedAt": "2026-10-09T22:48:16.124Z",
+      "verifiedClaims": "ALISPA actualOct10 Classic70 components versusDeluxe90 extraface/decollete; no duration; NCCIH aroma evidence bounded.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "TT-eskizas",
+      "pageId": "6835e31e-74ff-450d-b1cc-752477cbd404",
+      "reviewRevisionHash": "1680dc78672bc6708441a135fbda9edd0f8b052109cb302066ca2af9cc4bacaf",
+      "checkedAt": "2026-10-09T22:48:16.257Z",
+      "verifiedClaims": "FDA skin pigment/reversal scope; author attribution is practical design workflow, no legal entitlement invented.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "AV-metodai",
+      "pageId": "1af233ab-8ce1-4eea-8620-5cc6f6761c8e",
+      "reviewRevisionHash": "617ac86ea4b832c13b08309dfc5283bb802b6aafdc745299a6201fdb92244933",
+      "checkedAt": "2026-10-09T22:48:16.405Z",
+      "verifiedClaims": "APP professional position against reusable guns not LT law/all capsules; NVSC sterile packages opened in view and specific passport; APP initial jewellery scope.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "pageId": "16a8706c-4c55-42ae-9681-e21c41dcc6c5",
+      "reviewRevisionHash": "079d340a9e40118a80ae2570d957b9075bcb8425ee94c57a67cfc998babe8d64",
+      "checkedAt": "2026-10-09T22:48:16.565Z",
+      "verifiedClaims": "Wella AirTouch can combine balayage/highlights; LooksOct9 5–6h220–280 aggregate actualsize tiers, not national average.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "pageId": "01a5be0c-9c9a-40d3-bb9f-5993b6e47206",
+      "reviewRevisionHash": "ff025ecd41635444dc66df1a9fafd1f1d18626efc4d20e8ce331e71a02d4e094",
+      "checkedAt": "2026-10-09T22:48:16.716Z",
+      "verifiedClaims": "FDA RF warningOct15,2025 serious reports not frequency/all devices; FDA US versus NVSC/VASPVT conditional LT scope.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "pageId": "0f2c1fd1-9adf-4a38-973b-f4a10b244b89",
+      "reviewRevisionHash": "4ebd5fd0710f8067d1adb99eb38e5aba5ece851bae20ada02ad42cd04ccb77dc",
+      "checkedAt": "2026-10-09T22:48:16.863Z",
+      "verifiedClaims": "Treatwell format example not protocol; FDA device contour info expressly not wrap efficacy; NVSC/VASPVT only actual health scope.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "pageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+      "reviewRevisionHash": "3b86819253b6ab255cc0a9a7a24c747c9860d65c0bb937895d947dc4ee9d8ff1",
+      "checkedAt": "2026-10-09T22:48:17.004Z",
+      "verifiedClaims": "ActualARPANSA111/112 optical distinction, no superiority/1064/universal efficacy/LT law; photoepilation does not identify device.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "pageId": "30ca9bbf-33c0-4da6-85bd-8ba29577810e",
+      "reviewRevisionHash": "e1b8c80293156c15c129cb714431a3efb0c7d4f302edd0040212b169e2e8c8f1",
+      "checkedAt": "2026-10-09T22:48:17.145Z",
+      "verifiedClaims": "Actual specific manufacturer systems support pigment/magnetic particle mechanism, no universal application/colour guarantee.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+      "reviewRevisionHash": "2b5548a86bfeb0fdae2b365841f4943129d4f654a28425d46cf1154d7c889d2d",
+      "checkedAt": "2026-10-09T22:48:17.287Z",
+      "verifiedClaims": "CND FutureForms under freeedge; Gelish fullcoverage SoftGel LEDadhesive specific; Vili prices explicitly gel polish not extension; DermNet allergy.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "pageId": "59f6961c-4d66-421b-a1e9-184be6cedd3a",
+      "reviewRevisionHash": "06e05cbac3f0dcd1cc4d7c6d861f5bacd689b3c6d4b0f7254c4929f6675db4a4",
+      "checkedAt": "2026-10-09T22:48:17.434Z",
+      "verifiedClaims": "FDA pigment skin/difficult removal USscope; NVSC invasivebeauty hygiene and conditional health distinction; category examples not inventory.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "PP-atstatymas",
+      "pageId": "f13be7d8-026a-4039-afd3-e8711995fb9c",
+      "reviewRevisionHash": "39893d5694e634b94f62e31fcb0caebbebf2b4f702e2dfc5eefbd82d438d76e8",
+      "checkedAt": "2026-10-09T22:48:17.579Z",
+      "verifiedClaims": "AAD heat/traction/textures and FDA not-all smoothing products containformaldehyde; FacesOct9 separatemenu work not efficacy.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "SP-hamamas",
+      "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+      "reviewRevisionHash": "e24466418b53d6124f98be0e96353d15f0c701365249ca3ffa3f5a662cd04fac",
+      "checkedAt": "2026-10-09T22:48:17.714Z",
+      "verifiedClaims": "SPA actualOct10 Turkishsteam30min20,Kese40min60,namedrituals60min90; actualbodyapplication notoil-massage.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+      "reviewRevisionHash": "2cb41e6b980e0a70237672550259915b525e49a150f0825e69111cd1f05f0692",
+      "checkedAt": "2026-10-09T22:48:17.856Z",
+      "verifiedClaims": "ActualS116 BrowCode Lawsonia+otheringredients/PPDsome shades;S117RefectoCilNo3 separateoxidant Toluene/mAminophenol. Oct9Laminuota10/30,17/40,25/60 andMilona20/40,26/50.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "AV-papuosalas",
+      "pageId": "2934dc52-45c8-429b-ba28-ce368787862d",
+      "reviewRevisionHash": "35b93c380d057e13b9d4c70b447fccfd721393f6dd1d25ecb9f08db8319d16b8",
+      "checkedAt": "2026-10-09T22:48:17.996Z",
+      "verifiedClaims": "APP specific documents/finish/threading advisory not LTlaw; JoMiOct9 someplainTi included, ODAinclusion unknown;stemchange separate.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "BL-dazymas",
+      "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+      "reviewRevisionHash": "5fd62b719aaac9776dbabd806ee3f7bb5c90ed20cb272ea3ae7cef03d1925a6e",
+      "checkedAt": "2026-10-09T22:48:18.146Z",
+      "verifiedClaims": "NouveauLVLspecific versusDermNetcosmetictypes/reactions; LeilaOct9 70min40,Milona40min20 versus50min26;botox term not definedpreparation.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "pageId": "edac36e3-f996-4513-86f2-43468d3d9f6e",
+      "reviewRevisionHash": "eddbfbbc53f2c35b5deb861411349fe656d51e6a6dbb11ff445bf953bcba3c82",
+      "checkedAt": "2026-10-09T22:48:18.290Z",
+      "verifiedClaims": "ActualOct9Gargzdumenu multipleformats not universalclassification; no medical shavingprotocol.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+      "reviewRevisionHash": "b8d7861c4f8d3a74f9591dbf11b3dca0633415e4d7954a537e3f0b3d7abeb53d",
+      "checkedAt": "2026-10-09T22:48:18.425Z",
+      "verifiedClaims": "AAD waxing/root, laserfollicle/resultmaintenance/eyeguard and no double-dipping; historicalKaunas25/45,40/60 versusEra108/103per6,Amber99/79per4/69per6.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+      "reviewRevisionHash": "bb19b8b36314dd8de3c187e62b2c8334262e1c91269233f4422d16e0d76e1ae9",
+      "checkedAt": "2026-10-09T22:48:18.568Z",
+      "verifiedClaims": "ActualWellaS118Polishglossary ombre/sombre; Wella balayage; FacesOct9 toner separate not allmenus.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+      "reviewRevisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+      "checkedAt": "2026-10-09T22:48:18.714Z",
+      "verifiedClaims": "ActualCNDShaper overlay or shortformextension, no biologicalrepair; Vili43/70,46/80,45/80,50/90;Roomexisting52/135,55/150 versusnew60/195,65/210 notnewset definition.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "KP-sveitimas",
+      "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+      "reviewRevisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+      "checkedAt": "2026-10-09T22:48:18.864Z",
+      "verifiedClaims": "ActualAAD121 boundedmechanism and irritation/notforall; SPAOct10 Kese40min60 scrub/bodyapplication notmassage.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    },
+    {
+      "planId": "LZ-zonos",
+      "pageId": "d2d923e8-fa60-4657-abcf-5916ca477647",
+      "reviewRevisionHash": "37833ab0b89baeffedad8b3e46a59f1c9f3d7f0ee9fb872a5eb9977f43a88817",
+      "checkedAt": "2026-10-09T22:48:19.012Z",
+      "verifiedClaims": "ActualOct9twocliniczone menus; AAD variable skin/hair/device and facialeyeprotection, packagecount not requiredcourse.",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false
+    }
+  ]
+}

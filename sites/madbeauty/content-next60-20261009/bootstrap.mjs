@@ -1,0 +1,21 @@
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const here=new URL('.',import.meta.url),prior='C:/Users/Lenovo/.codex/tmp/madbeauty-next30-20261009',data='C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009';
+try{await fs.access(data);throw Error('Private tenant already exists; preserve it');}catch(e){if(e.code!=='ENOENT')throw e;}
+const jobs=JSON.parse(await fs.readFile(prior+'/jobs.json','utf8'));if(jobs.some(j=>['queued','running'].includes(j.status)))throw Error('Prior writer active');
+await fs.cp(prior,data,{recursive:true,errorOnExist:true,force:false});
+const site=JSON.parse(await fs.readFile(data+'/sites/madbeauty.json','utf8'));
+const planBytes=await fs.readFile(new URL('../publication-20261009/PLAN.json',here)),plan=JSON.parse(planBytes);
+const baseline=JSON.parse(await fs.readFile(new URL('../content-next30-20261009/DELIVERY.json',here),'utf8'));
+const pages=site.pages.filter(p=>p.type==='guide'&&!p.body.length).toSorted((a,b)=>a.publishAt.localeCompare(b.publishAt)).slice(0,60);
+if(pages.length!==60)throw Error('Need sixty distinct unwritten intents');
+const selection={status:'SELECTED_NOT_WRITTEN',createdAt:new Date().toISOString(),siteId:'madbeauty',domain:'madbeauty.lt',privateStudio:data,priorStudio:prior,sourcePlanSha256:createHash('sha256').update(planBytes).digest('hex'),priorPackageSha256:baseline.release.packageSha256,selection:'Next sixty unwritten intents in the existing exact calendar; prepared parents are preserved, mandatory qualified reviews remain real.',pages:pages.map(p=>{const b=plan.pages.find(b=>b.slug===p.slug);if(!b)throw Error('Missing complete brief');const local=new Intl.DateTimeFormat('sv-SE',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23',timeZone:'Europe/Vilnius'}).format(new Date(p.publishAt));return {planId:b.id,pageId:p.id,slug:p.slug,title:p.title,publishAt:p.publishAt,localDate:local.slice(0,10),localTime:local.slice(11),status:'PLAN_NOT_WRITTEN',parentId:b.parentId,reviewLevel:b.reviewLevel,brief:b};})};
+await fs.mkdir(new URL('assets/',here),{recursive:true});await fs.mkdir(new URL('originals/',here),{recursive:true});
+await fs.writeFile(new URL('SELECTION.json',here),JSON.stringify(selection,null,2)+'\n');
+const required=new Set(selection.pages.flatMap(i=>i.brief.sourceIds));
+await fs.writeFile(new URL('SOURCE-CANDIDATES.json',here),JSON.stringify(plan.sources.filter(s=>required.has(s.id)),null,2)+'\n');
+const previous=JSON.parse(await fs.readFile(new URL('../content-next30-20261009/SOURCE-NOTES.json',here),'utf8'));
+const reuse=previous.filter(n=>plan.sources.some(s=>required.has(s.id)&&s.id===n.id&&s.url===n.url));
+await fs.writeFile(new URL('SOURCE-NOTES.json',here),JSON.stringify(reuse,null,2)+'\n');
+await fs.writeFile(new URL('BASELINE.json',here),JSON.stringify({savedAt:new Date().toISOString(),priorStudio:prior,approvedSnapshots:site.pages.filter(p=>p.publishedRevision).length,writtenGuides:site.pages.filter(p=>p.type==='guide'&&p.body.length).length,allPublicationMoments:site.pages.map(p=>({pageId:p.id,publishAt:p.publishAt})),priorPackageSha256:baseline.release.packageSha256},null,2)+'\n');
+console.log(JSON.stringify({selected:selection.pages.length,from:selection.pages[0].localDate,to:selection.pages.at(-1).localDate,sourceCandidates:required.size,reusableReadSources:reuse.length,priorApprovedSnapshots:site.pages.filter(p=>p.publishedRevision).length}));

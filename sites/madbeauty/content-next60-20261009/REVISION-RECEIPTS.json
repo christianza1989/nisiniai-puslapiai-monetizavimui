@@ -1,0 +1,600 @@
+[
+  {
+    "planId": "FX-gidas",
+    "completedAt": "2026-10-09T21:56:15.942Z",
+    "revisionHash": "f33d1c759eb1be772a8cff7d170bdeef8098f8e3e6ccac2f362b2b32eec73306",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T21:55:12.607Z",
+      "finishedAt": "2026-10-09T21:56:15.055Z",
+      "promptSha256": "cd003f2dc60be5bf6e6e78bd9b8cbb7c2e54d0e79b5afd828a9d77a5b977646b",
+      "resultSha256": "5a0223f0897ce90b2a2c81dfc142b974a7d3986046f76ae692bfb52c36ba8d60",
+      "resultArtifact": "tmp/95858964-04ce-404e-a823-3a80fe7d79c6.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "a73a722469709420e7d232116bc264e3207160a3d45bcbbb59122f3aa9b85c6a"
+    },
+    "jobId": "194923ae-ac58-4572-958f-83d801790e6e",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/FX-gidas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "OD-gidas",
+    "completedAt": "2026-10-09T21:57:37.044Z",
+    "revisionHash": "b85f883657aac1309dc94d0619d2aabe15527afdcb24dd7bb8495f1484533625",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T21:56:16.981Z",
+      "finishedAt": "2026-10-09T21:57:34.278Z",
+      "promptSha256": "6aba96af6e670d97c826d5798853009f70b30d34a5d3a8af771c94e6f2185d22",
+      "resultSha256": "ed01c93f1dbb30fa6dce8314180a97ef16423617ebab4062a4a80a064b7b598a",
+      "resultArtifact": "tmp/b994bdfd-8209-46b0-af73-8018e0ee217f.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "6b498d155ef736acfe7aed8edfb2181719385f16369a98d4705a0ac8502eaf60"
+    },
+    "jobId": "580ae144-b142-457b-b897-140226238f3f",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/OD-gidas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "PX-gidas",
+    "completedAt": "2026-10-09T21:58:37.200Z",
+    "revisionHash": "7df5af1c2a1bfa266e3b76d5f0633f3291892f46db80ab6f6da523bdc3391f02",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T21:57:42.240Z",
+      "finishedAt": "2026-10-09T21:58:36.563Z",
+      "promptSha256": "98a4ba032ea6c240d61d2cb4df5f182b153a58ca1fd011cd2d3f3d05906eecc2",
+      "resultSha256": "6dbd52d1bbcb283c9de87fc9d46773e2eedfc0e403e75db3de59f8d7efb622b2",
+      "resultArtifact": "tmp/d58d4b44-a83a-4520-a680-b452cfcbf290.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "a94f77cb013a578076d30e4074e2495a16c03c6d36fc7e2a59a87ca7a76ce497"
+    },
+    "jobId": "7853a045-99b9-4226-bbe7-daa41bbdb258",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/PX-gidas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "SP-gidas",
+    "completedAt": "2026-10-09T22:00:52.863Z",
+    "revisionHash": "da3a6e7d180e42b6de4b95d0322c1d9700500a6b33d00978ee88e8037fc4459c",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T21:58:38.283Z",
+      "finishedAt": "2026-10-09T22:00:51.996Z",
+      "promptSha256": "7497c889dc23ff6f101d893a89e4f72b8882d6a916c61e6ddbc137ab67b5c9f7",
+      "resultSha256": "5846a9af1f79991302b90fc8d95ea342bbe2c8506d43ed87f17cdb5d20c455c4",
+      "resultArtifact": "tmp/b67d576a-785e-498e-b20f-f14b6244e58b.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "ca4c86c5bacb29849a68894cbd9f9113e0fe3e9ca2057878215d4c1e25518334"
+    },
+    "jobId": "ca961f49-e950-4326-9e97-c2da272af564",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/SP-gidas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "TT-gidas",
+    "completedAt": "2026-10-09T22:05:30.377Z",
+    "revisionHash": "6eb033648ad4b581be37400047101fea6533f9ff5065a625924d78fcfc89dafb",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:00:53.651Z",
+      "finishedAt": "2026-10-09T22:05:29.818Z",
+      "promptSha256": "c8ba2687bb36f076ff9c21cac5d14ec719bbded63b6b147c563050491faf389f",
+      "resultSha256": "c6e6e926c7873051e499a0a0c5e5b3b2843c54e3531787e4441081ce62c3fc83",
+      "resultArtifact": "tmp/d7c6afa5-93dd-41b9-a444-c26be1c40d4a.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "c3edccc08b4aacbfdc9a0344dddd689e1358d1743271f50473d650920d255146"
+    },
+    "jobId": "5f787d6c-d031-4f9b-965f-46f6162db13d",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/TT-gidas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "KP-kaina-trukme",
+    "completedAt": "2026-10-09T22:06:32.358Z",
+    "revisionHash": "5b0233aa4cb6ede97244385f50903daa567230f0a6361b98902ae098da5d3973",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:05:31.567Z",
+      "finishedAt": "2026-10-09T22:06:31.409Z",
+      "promptSha256": "4f3aabd87ce3122b7bc59b95f4ce8b166d80ed7b693c7f74854ee2f01a85f45d",
+      "resultSha256": "44c17565502259d3e08215d9a207cff64fd282785b8ead23b051080f75576338",
+      "resultArtifact": "tmp/601e6a27-d6c2-48a5-90b2-a2f19dafbd63.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "f79128b916cff535d4811c21ac03ac70635d02843cb33ff6cf02275243abeef4"
+    },
+    "jobId": "db79a858-b295-4edd-bbb8-f8851f480977",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/KP-kaina-trukme.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "MN-be-lakavimo",
+    "completedAt": "2026-10-09T22:07:30.144Z",
+    "revisionHash": "a3dba6aeddec2ee90b34259054780291c06dc8b49199a7d446354748fdb274e7",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:06:33.520Z",
+      "finishedAt": "2026-10-09T22:07:25.713Z",
+      "promptSha256": "37c0f47d6b906e73a4e099c072c4d39d9fab92e8380606d57bb18390ec4cb9a2",
+      "resultSha256": "44b29c0c29c5e0b3fcb149603ceb1c06db559dfc1862ab78ee8fefbdee8cbf95",
+      "resultArtifact": "tmp/6586f9c1-c58e-4971-92d3-04aca4c24d1c.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "ffc24176990d3e60bb114d0982cde12f1595b4bf4fd782f2f33673f89f2ae634"
+    },
+    "jobId": "921605e7-d35b-4575-9c55-0ad1ae6e75e4",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/MN-be-lakavimo.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "PD-kaina-trukme",
+    "completedAt": "2026-10-09T22:08:30.711Z",
+    "revisionHash": "cd2d3d509213b96f82e3de73c3a4581923df93e4d99c5ba557195ddb81c9070c",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:07:34.758Z",
+      "finishedAt": "2026-10-09T22:08:29.700Z",
+      "promptSha256": "f9daa255cd634455e3b99ad21e0ea52766fbd1e7ae8de4ea5266d9df85234459",
+      "resultSha256": "a0a444dc55f08ab0070b0ccf17d35c71ab364bbe14483a27c38c26208a7a20bb",
+      "resultArtifact": "tmp/8730a06c-2e27-4734-8af0-4521632acc6a.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "8f2558a9485b1df26fa2231152a7d5b648b091f527631379b416668d74adb852"
+    },
+    "jobId": "e0ea5f51-5969-492b-8577-9ed441f01d5b",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/PD-kaina-trukme.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "ES-mezoterapija-biorevitalizacija",
+    "completedAt": "2026-10-09T22:09:28.293Z",
+    "revisionHash": "7dc1c97c178fd1a150e45009d7ed03f4f8ae2e1a9f04cc39fc645df9e59cdc4e",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:08:32.411Z",
+      "finishedAt": "2026-10-09T22:09:27.759Z",
+      "promptSha256": "c5fa554e12a7514ee6bbc37523baeff4ff4b905fce959aec63e4588eccf5019d",
+      "resultSha256": "7c4f5a2a45574bce4f44e06412d7edb302ef46117de2990c72c359310f747d49",
+      "resultArtifact": "tmp/e6becb5e-260c-4e74-8ef9-480b5baf9772.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "ee86348a19f49a3214de1b5696eb82c14b4691d8148ef9424c5024b91e30aaf7"
+    },
+    "jobId": "24d55388-8ac6-437d-ac6c-03e2eb9b8c6f",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/ES-mezoterapija-biorevitalizacija.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "FX-joga-pilatesas",
+    "completedAt": "2026-10-09T22:10:16.740Z",
+    "revisionHash": "a2b63211533860353e2082e86973621c44523bce222536311ccd27838ee3a0f6",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:09:29.137Z",
+      "finishedAt": "2026-10-09T22:10:15.814Z",
+      "promptSha256": "572c139a2f943b87aed8ebdfafd7d4345a4cb73ff3ee1756704cde89c198f7aa",
+      "resultSha256": "82dfd10e1b206c0720eebfd1ef55a5b9a1fdeca4653fc7b901ba4b590d34b916",
+      "resultArtifact": "tmp/2ca23492-4d8f-4670-8c04-853bc00d2d79.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "c22f063ad83382841f6d09479519814fcc214ef50da86a0976a7f87cad483e20"
+    },
+    "jobId": "f4a8c362-0b24-422e-ae98-defad7eb813f",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/FX-joga-pilatesas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "OD-balinimas",
+    "completedAt": "2026-10-09T22:11:50.577Z",
+    "revisionHash": "56491474873fbd30b8b723625f21ec1057bbb44162716d949f1b07ef4e02e120",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:10:17.425Z",
+      "finishedAt": "2026-10-09T22:11:50.065Z",
+      "promptSha256": "d5da56ee7ceb728e9f78c2a55b821fb50e325d12d285f38169bb458eb51798af",
+      "resultSha256": "be003cd4c1bb713f76cd053a0cc5832dacabe5fd9d5bfac9d1991e743f9affbe",
+      "resultArtifact": "tmp/8633d12d-0a3f-4119-ae2c-0deaecbd0ce3.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "68077804e28cea0599dc5ddee5001cd9f6c312a08a0f1969e71bba3afb3bf179"
+    },
+    "jobId": "d7d16091-c9e7-4518-8494-334e532f861a",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/OD-balinimas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "PM-antakiai",
+    "completedAt": "2026-10-09T22:17:49.409Z",
+    "revisionHash": "2011e62784c4f565c983d826947238365e903dd28415df979646bbc56dcfde84",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:16:07.250Z",
+      "finishedAt": "2026-10-09T22:17:48.563Z",
+      "promptSha256": "cd75e72be0c150a0f679e0042463a31afe03866e0acfe44050deffa18ac914ee",
+      "resultSha256": "a89760c43b2c975e395b2464f59efaf0dceff861b1064897f88e872301378636",
+      "resultArtifact": "tmp/cbfc9944-4bde-4f3e-ae4a-f7855b017ab5.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "1d5a39e5dcdd1e8b7dc63a17eac09a2fef225986b1e322e117efe41c88d60593"
+    },
+    "jobId": "8cf9742f-2ff2-423c-b815-b9fd594ea28c",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/PM-antakiai.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "PX-korekcija-nuemimas",
+    "completedAt": "2026-10-09T22:19:00.837Z",
+    "revisionHash": "06474ff39cf52a5853493dd04019cc0ed7fe24c89990672e6dead1854175e3a5",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:17:50.111Z",
+      "finishedAt": "2026-10-09T22:18:59.987Z",
+      "promptSha256": "8cc9fdc074771a5022ae6dc392205a056a09571ac3cea56617cd565bf88f1c58",
+      "resultSha256": "704ad8bb3410e8adffce4dc1f8aa54c4af0b42c04b302eb0f030a266f6f87cc0",
+      "resultArtifact": "tmp/9f719a22-044e-4267-9e54-ebd00a4e6dee.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "1a5a4b9862140047f615b5b62cfcbbbe63114eb1d2378ead93da09eb6b69df87"
+    },
+    "jobId": "71be0dde-459d-46c8-abf6-5f94e1511935",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/PX-korekcija-nuemimas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "RP-parafinas",
+    "completedAt": "2026-10-09T22:19:53.107Z",
+    "revisionHash": "5365bced600984b185980b45f5be2b95a654d636a7c9582e09f8d080e6ca08d3",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:19:01.498Z",
+      "finishedAt": "2026-10-09T22:19:52.640Z",
+      "promptSha256": "4229ca67b7eb6711644cb791bc338b4b0d8d6380e13f36faa28cbe2f8a63f396",
+      "resultSha256": "e44a151db1d6f86d71b0ebd07486d8ddbd65554b4674d06944bd5b202b9c2cce",
+      "resultArtifact": "tmp/ea35f2a7-6b93-4155-8b4e-68e1d3e7af7a.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "f71558da2f113ef14a68ec688be7b1c9117f25e2447b37006c4f4a5b255b3aae"
+    },
+    "jobId": "b5295614-512b-4ffb-9f43-0eba6db8bc72",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/RP-parafinas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "SP-galvos-spa",
+    "completedAt": "2026-10-09T22:20:25.381Z",
+    "revisionHash": "0e251434a4e2423ddcd1ecb2f7d4b4b1e79e9cb2c0d576aa5c402fadc44bede6",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:19:53.759Z",
+      "finishedAt": "2026-10-09T22:20:24.882Z",
+      "promptSha256": "35032d76fd9e323f05ff0527d2b5ed13ca520bd80b784440c8d02edd472671a2",
+      "resultSha256": "d993f2fab975fb1d4003ddead08b90f67aa9cf2d54db8466d8ae29994ece926b",
+      "resultArtifact": "tmp/e5d9ced5-f608-402c-8d02-338abdc6f7f6.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "01098de74d2272db638c478cb639ee502533e2dda320d12e0c86f052043306bb"
+    },
+    "jobId": "d1ad4c3f-5b97-448d-8c46-8cc1e6503270",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/SP-galvos-spa.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "NP-formos-tipsai",
+    "completedAt": "2026-10-09T22:21:14.914Z",
+    "revisionHash": "e53f3b9171d6504d2e642730cb191ccc577f23393bd3c839592dba085b9b8935",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:20:26.309Z",
+      "finishedAt": "2026-10-09T22:21:14.361Z",
+      "promptSha256": "216298dd77963abcfa6ffec8121ff537c20758192efc90105bebac7532af66b1",
+      "resultSha256": "8d29b7bb680f6665d3de2b9a871dc474e4c6c389fe07b4f1a74ffcdb1e127e00",
+      "resultArtifact": "tmp/2d75d594-a8bc-4ed7-aa74-2051064b233e.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "338713c743c9e8fdd88a7a66c1c259bc62a0d728c6d9fbb8cd21b3a6b058db0b"
+    },
+    "jobId": "3fa6d38d-bc0d-4daf-83bf-81462231a6de",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/NP-formos-tipsai.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "SP-hamamas",
+    "completedAt": "2026-10-09T22:23:05.231Z",
+    "revisionHash": "c21006bcfd68b2a880fba04e51a16307c7fe61172c7f40a765c607feb2d0e3b7",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:21:15.661Z",
+      "finishedAt": "2026-10-09T22:23:04.828Z",
+      "promptSha256": "2f1fdc6eae1b207224418ec2b738167666c65bb96e8a940481a74216de63058f",
+      "resultSha256": "ca15bcc461dadd9d328309642ffc5a7c88d150cc67e557a2261318c1cf235745",
+      "resultArtifact": "tmp/052082b2-5a2f-4c34-8e5b-35bd5e327c53.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "2a285b99d4d52c2c2fff52286c527360cb60a7fbedb42bd8242b9f94eeea8466"
+    },
+    "jobId": "6619dd5f-28d7-435e-ace1-1614a256c994",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/SP-hamamas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "AN-dazai-henna",
+    "completedAt": "2026-10-09T22:25:09.573Z",
+    "revisionHash": "411975c0b135631b81555d8324557fdabd88e613ad2829d0b2f116834f3cc2c2",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:23:05.895Z",
+      "finishedAt": "2026-10-09T22:25:08.639Z",
+      "promptSha256": "d1d26acbb94476b4410f3e6a1c4b7e3c3969e392a7bede292cac223a46b02e95",
+      "resultSha256": "9930b1c0e2ba7d7a1ae88bbf52e11ae82691203863a9aceb1ed630a8262f2aa1",
+      "resultArtifact": "tmp/7c3dfed3-bfbe-4703-8add-76a3edf21e7f.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "046be901254ecdc5c565de280812211673040224b3443568bec484238044ac7e"
+    },
+    "jobId": "6b9c87a9-d002-42fb-884e-6d19d56be102",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/AN-dazai-henna.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "BL-dazymas",
+    "completedAt": "2026-10-09T22:26:02.076Z",
+    "revisionHash": "5b464139b6c2806ba137f49bee4a3e00bd0aaa93a202a53551313454c2ad75b9",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:25:10.593Z",
+      "finishedAt": "2026-10-09T22:26:01.184Z",
+      "promptSha256": "74d27be9f2cda2649208d287ca73ccc18a1d26182016054b27de04c29a370108",
+      "resultSha256": "f87104c2d371a59eea1e5694f994d2c34aab9bde9f47806d88aa3d8c3930c567",
+      "resultArtifact": "tmp/4d890f7d-6420-44d9-89af-5722f12ab8df.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "773204877e73bb671f9694473b0f834bd2c87c1c27a83de5099dffd7ec68c2eb"
+    },
+    "jobId": "100858aa-35d2-43f7-b44f-b14134ed42e4",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/BL-dazymas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "DP-ar-lazeris",
+    "completedAt": "2026-10-09T22:26:52.419Z",
+    "revisionHash": "66b737962ac573cd3d3faa624823b0d9d0ad75bf99c141d8ffb526982b820d43",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:26:02.820Z",
+      "finishedAt": "2026-10-09T22:26:51.904Z",
+      "promptSha256": "f5549e69d5af9cf9c5f1b67f17ac6a09782fa49f872d73871c109db0630822f4",
+      "resultSha256": "4581ab663b511c48f4acbe1bee4885f736e5d654cdc31155c97729e9696f080b",
+      "resultArtifact": "tmp/4de0c86f-fbbe-4932-9850-3ea3450f6843.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "9b07ca2988116b8e7cd471647e78c8d53349063d3840605311fcc9a895efdb7e"
+    },
+    "jobId": "7eb2ec94-c684-4b52-a8b8-5edc8fee6af4",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/DP-ar-lazeris.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "DZ-ombre-sombre",
+    "completedAt": "2026-10-09T22:27:40.771Z",
+    "revisionHash": "28c818817528e82c256c85d110395a1f4797a44423c73cade43337e6a9a2f783",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:26:53.179Z",
+      "finishedAt": "2026-10-09T22:27:39.907Z",
+      "promptSha256": "cff0763210fa1f85f13e71413f4a1eb00313e6a1f660f09faad59d44073ced06",
+      "resultSha256": "e151c20ba084562ea10d5a64e3c50f8f9c48b7641760791da730cb6a2300612d",
+      "resultArtifact": "tmp/3b7a34dd-9e4e-4ef4-8f5b-23df88c22a9c.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "343dd1ec2a1c1b94eecb8d4b5e6a2097ead72d970d15c006401ae59bfb074643"
+    },
+    "jobId": "4de489af-5112-4166-aebd-b7c455a3b8cb",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/DZ-ombre-sombre.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "GL-ar-stiprinimas",
+    "completedAt": "2026-10-09T22:28:25.492Z",
+    "revisionHash": "735d7f49f0c76e23f3d3b569477d99cda2772ff0b83ee70d549ff1f518d57c8a",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:27:41.619Z",
+      "finishedAt": "2026-10-09T22:28:25.021Z",
+      "promptSha256": "4952b511b85a227372b1847e4cfb50909ba49497aea4e76f0f47e5d457d0e15f",
+      "resultSha256": "d24ccbb7d44de4f2b526b922b1c5846043062bf317f02cd049c55a56bd7a9ac7",
+      "resultArtifact": "tmp/427412ca-836c-40b1-94c9-a58d2f5de1dd.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "8537d459db2df8d19f70c63498e7d6d7101f36488377ad0463b99cbb945321ee"
+    },
+    "jobId": "b8511847-9bb5-4c0d-85d3-2ad46820de8e",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/GL-ar-stiprinimas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  },
+  {
+    "planId": "KP-sveitimas",
+    "completedAt": "2026-10-09T22:30:17.840Z",
+    "revisionHash": "31d8617b9e2801147a6865d2fb68196f2aad736741402763ad917ea302f77e8b",
+    "generationReceipt": {
+      "model": "gpt-6-luna",
+      "reasoningEffort": "xhigh",
+      "policyVersion": "article-luna-xhigh-20261007",
+      "fallback": false,
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "startedAt": "2026-10-09T22:28:26.190Z",
+      "finishedAt": "2026-10-09T22:30:17.253Z",
+      "promptSha256": "06c1ef2b5f5be8ddd5965e76d9ce7ba6df7ab5cb8e6f8b398ff6b9f68e79b39c",
+      "resultSha256": "4f40cb2bdc19a52306785f285da9d8bc5fc1b0ae50ca86a50f2363e6755385c5",
+      "resultArtifact": "tmp/c1059007-df9b-4106-bc0d-977c07872f7d.result.json",
+      "execution": "CODEX_CLI",
+      "mode": "draft",
+      "draftSchemaSha256": "2f7f16ac9987d004d554db2cd7e6ac8475dcc8f987a9cacaacea491211893376"
+    },
+    "jobId": "746d5ce5-3306-4173-90d5-af7233cd0c0f",
+    "requestFile": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next60-20261009/sites/madbeauty/content-next60-20261009/revision-requests/KP-sveitimas.json",
+    "state": "REVISED_REQUIRES_FULL_TEXT_REVIEW"
+  }
+]

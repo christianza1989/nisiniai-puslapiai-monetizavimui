@@ -1,0 +1,6 @@
+import fs from 'node:fs/promises';import {spawn} from 'node:child_process';import {fileURLToPath} from 'node:url';
+const here=new URL('.',import.meta.url),stateFile=new URL('NATIVE-DRIVER-STATE.json',here);
+await fs.copyFile(stateFile,new URL('HISTORICAL-PM-URL-REJECTION-DRIVER.json',here));
+const save=state=>fs.writeFile(stateFile,JSON.stringify({updatedAt:new Date().toISOString(),approval:false,...state},null,2)+'\n');
+await save({state:'RUNNING_NATIVE_STEP',script:'revise-required.mjs',reason:'Retry exact verified NVSC slug; previous response used paslaug-vartotojai instead of separately verified paslaugu-vartotojai. Rejected job and real receipt retained, no validator bypass.'});
+try{const code=await new Promise((resolve,reject)=>{const c=spawn(process.execPath,[fileURLToPath(new URL('revise-required.mjs',here))],{windowsHide:true,stdio:['ignore','pipe','pipe']});c.stdout.pipe(process.stdout);c.stderr.pipe(process.stderr);c.on('error',reject);c.on('exit',resolve);});if(code!==0)throw Error('Native revision resume failed '+code);await save({state:'NATIVE_REVISIONS_AND_MEDIA_COMPLETE_REQUIRE_ACTUAL_FINAL_REVIEW'});}catch(error){await save({state:'FAILED_REQUIRES_FIX',error:error.message});throw error;}

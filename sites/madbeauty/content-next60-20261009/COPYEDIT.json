@@ -1,0 +1,557 @@
+{
+  "checkedAt": "2026-10-09T22:31:01.842Z",
+  "changes": [
+    {
+      "planId": "AV-gidas",
+      "typedLinkSpacingCorrections": 2,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "ES-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "FX-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "GY-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "IG-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "KP-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "KT-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "LZ-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "MD-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": {
+        "title": "Dermatologo ir medicinos estetikos konsultacijos: skirtumai"
+      },
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "MS-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "OD-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PM-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PS-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": {
+        "title": "Psichologas, psichoterapija, porų ir šeimos konsultacija: skirtumai"
+      },
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PX-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": {
+        "description": "Palyginkite plaukų priauginimą keratino jungtimis ir lipniomis juostelėmis: tvirtinimą, norimą vaizdą, priežiūrą, korekciją bei nuėmimą."
+      },
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "RP-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "SP-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "SV-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": {
+        "title": "Meditacija, kvėpavimas ir garso seansai: formatai ir įrodymų ribos"
+      },
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "TT-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": {
+        "description": "Tatuiruotės motyvas, vieta, mastelis ir eskizas: kaip įvardyti pageidavimą, palyginti darbo apimtį bei patikrinti teikėjo ir pigmento informaciją."
+      },
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "VP-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 2,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "DP-kojos",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "GL-nuemimas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "VP-konsultacija",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "MN-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "OD-balinimas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PM-antakiai",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PS-poros-seima",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "typedLinkSpacingCorrections": 1,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "RP-parafinas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "TT-eskizas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "AV-metodai",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "typedLinkSpacingCorrections": 1,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "PP-atstatymas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "SP-hamamas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "AV-papuosalas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "BL-dazymas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "typedLinkSpacingCorrections": 1,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": {
+        "title": "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtumai"
+      },
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 1,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "KP-sveitimas",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 1,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    },
+    {
+      "planId": "LZ-zonos",
+      "typedLinkSpacingCorrections": 0,
+      "minorCorrections": 0,
+      "metadataShortened": null,
+      "joinedLinkParagraphs": 0,
+      "duplicateInlineFeaturedPhotosRemoved": 0,
+      "basis": "Luna authored content; editor spelling/spacing/metadata/layout only. Corrected S101 Kese component to actual body application and local source dates OD11/SP40 to Oct10. Removed unsupported universal platform-booking assertion in46; no new clinical claim added."
+    }
+  ]
+}

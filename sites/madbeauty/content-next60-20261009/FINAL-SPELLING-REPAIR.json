@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-09T22:33:58.083Z",
+  "planId": "FX-joga-pilatesas",
+  "beforeRevisionHash": "1d6334955bb487ba7be6f9989ff6b6c19bfad67cb1a6aa1513854bc1fed99b5a",
+  "afterRevisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+  "actualObserved": "Эti",
+  "correctedTo": "Šie",
+  "occurrences": 1,
+  "basis": "Actual browser and full-text observation; original phrase-spanning replacement did not match a typed node. Literal word correction only, no substantive content or source changes."
+}

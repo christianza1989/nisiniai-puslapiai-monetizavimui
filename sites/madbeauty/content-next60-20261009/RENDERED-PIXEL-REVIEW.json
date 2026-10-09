@@ -1,0 +1,55 @@
+{
+  "state": "PASS_ACTUAL_RENDERED_PIXELS",
+  "checkedAt": "2026-10-09T22:48:01.537Z",
+  "scope": "Eight actual first-fold contact sheets seen using view_image; full texts read separately, whole-page geometry/image checks in RENDER-CHECK. Owned private presentation adapter, not canonical production renderer.",
+  "sheets": [
+    {
+      "path": "SCREENS-desktop-1.png",
+      "sha256": "0ec77cb8f5e62f63e8de3439a5ce27362cc428c6797e2c32cca60302c7138e72",
+      "observedAt": "2026-10-09T22:48:01.520Z",
+      "observation": "Pages1–15 actual first-fold pixels: full wrapped titles, author/date, distinct ear portrait, gymgroup, grooming dog, HVLPtent, consultation/medical rooms and hands. No broken image or overlap visible. Actual1440px view contact crops observed: centred content, readable title hierarchy and generous image width."
+    },
+    {
+      "path": "SCREENS-desktop-2.png",
+      "sha256": "2fcf1c490908f1a1b1af6333913f83c8c5a2780a45f3c10b92f9c736c2f77fa4",
+      "observedAt": "2026-10-09T22:48:01.523Z",
+      "observation": "Pages16–30 actual first-fold pixels: SPA/meditation/sketch/camera/jewellery/price desk/feet/nails/room images visibly varied; titles and spacing readable, no overlap or missing image. Actual1440px view contact crops observed: centred content, readable title hierarchy and generous image width."
+    },
+    {
+      "path": "SCREENS-desktop-3.png",
+      "sha256": "d640887bc15a866c49d297c5f2b0ccba04ae9d4c0f704688e73036f4976ad350",
+      "observedAt": "2026-10-09T22:48:01.524Z",
+      "observation": "Pages31–45 actual first-fold pixels: consultation portraits, Pilatesstudio, dentistportrait, family session, tape hair tray, paraffinbath, headSPAchair, sketch session, sealedtools and wrap supplies distinct. Long headings fit. Actual1440px view contact crops observed: centred content, readable title hierarchy and generous image width."
+    },
+    {
+      "path": "SCREENS-desktop-4.png",
+      "sha256": "a5ae8d990a60fe8722d8c5f15a1f016e0f5185bef62fb515d52a5ba692103aa6",
+      "observedAt": "2026-10-09T22:48:01.526Z",
+      "observation": "Pages46–60 actual first-fold pixels: two illustrative handpieces, metallic versus stripe nail detail, tips, lip portrait, hair texture, hamam, product powders, jewellery, maturelashes, shave tools and male-forearm consultation varied. All shown images loaded and headings wrapped. Actual1440px view contact crops observed: centred content, readable title hierarchy and generous image width."
+    },
+    {
+      "path": "SCREENS-mobile-1.png",
+      "sha256": "c807ce1af84aaa44705a7e0aeec70c8c69687e02568a75e81e40558dba9169f6",
+      "observedAt": "2026-10-09T22:48:01.528Z",
+      "observation": "Pages1–15 actual first-fold pixels: full wrapped titles, author/date, distinct ear portrait, gymgroup, grooming dog, HVLPtent, consultation/medical rooms and hands. No broken image or overlap visible. Actual390px view contact crops observed: long Lithuanian headings fit inside narrow column, main subject remains visible, no text/image overlap or horizontal clipping in first fold."
+    },
+    {
+      "path": "SCREENS-mobile-2.png",
+      "sha256": "1c7375e0906ee4a77a877f7d1d9a4e4b328c80df29e5b0696482ef92a625a81a",
+      "observedAt": "2026-10-09T22:48:01.531Z",
+      "observation": "Pages16–30 actual first-fold pixels: SPA/meditation/sketch/camera/jewellery/price desk/feet/nails/room images visibly varied; titles and spacing readable, no overlap or missing image. Actual390px view contact crops observed: long Lithuanian headings fit inside narrow column, main subject remains visible, no text/image overlap or horizontal clipping in first fold."
+    },
+    {
+      "path": "SCREENS-mobile-3.png",
+      "sha256": "5968d5b68454e68264c8210b43ee7f7ad45b0e4a2dd365711cebe322185fd5d6",
+      "observedAt": "2026-10-09T22:48:01.534Z",
+      "observation": "Pages31–45 actual first-fold pixels: consultation portraits, Pilatesstudio, dentistportrait, family session, tape hair tray, paraffinbath, headSPAchair, sketch session, sealedtools and wrap supplies distinct. Long headings fit. Actual390px view contact crops observed: long Lithuanian headings fit inside narrow column, main subject remains visible, no text/image overlap or horizontal clipping in first fold."
+    },
+    {
+      "path": "SCREENS-mobile-4.png",
+      "sha256": "dc346d304f9bc5e7cc2c049822e7b946db38e87e6724fd340cb9f061065fe574",
+      "observedAt": "2026-10-09T22:48:01.536Z",
+      "observation": "Pages46–60 actual first-fold pixels: two illustrative handpieces, metallic versus stripe nail detail, tips, lip portrait, hair texture, hamam, product powders, jewellery, maturelashes, shave tools and male-forearm consultation varied. All shown images loaded and headings wrapped. Actual390px view contact crops observed: long Lithuanian headings fit inside narrow column, main subject remains visible, no text/image overlap or horizontal clipping in first fold."
+    }
+  ]
+}

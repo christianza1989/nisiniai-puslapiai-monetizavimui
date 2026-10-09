@@ -1,0 +1,6 @@
+import fs from 'node:fs/promises';import {createRequire} from 'node:module';import {createHash} from 'node:crypto';
+const req=createRequire('C:/Users/Lenovo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/package.json'),{chromium}=req('playwright');
+const sel=JSON.parse(await fs.readFile(new URL('SELECTION.json',import.meta.url),'utf8')),dir=sel.privateStudio+'/sources-next60';
+const source=JSON.parse(await fs.readFile(dir+'/FETCH.json','utf8')).find(s=>s.id==='S101');
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+try{const page=await browser.newPage();const response=await page.goto(source.url,{waitUntil:'networkidle',timeout:60000});await page.locator('body').waitFor();const text=await page.locator('body').innerText();await fs.writeFile(dir+'/S101-rendered.txt',text);const evidence={id:'S101',url:source.url,status:response.status(),at:new Date().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),file:dir+'/S101-rendered.txt',scope:'Rendered public DOM retrieved; not reviewed yet'};await fs.writeFile(dir+'/S101-rendered.json',JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));}finally{await browser.close();}

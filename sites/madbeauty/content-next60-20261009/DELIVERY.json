@@ -1,0 +1,23 @@
+{
+  "preparedAt": "2026-10-09T22:48:29.147Z",
+  "additionalApproved": 60,
+  "approvedTotal": 129,
+  "guideTotal": 125,
+  "preservedApprovedSnapshots": 69,
+  "preservedPublicationMoments": 299,
+  "release": {
+    "path": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next60-20261009\\output\\releases\\madbeauty\\e20865ed-6322-4dbe-b6e3-c23aefe00afb\\content-package.json",
+    "pages": 129,
+    "assets": 630,
+    "manifestPath": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next60-20261009\\output\\releases\\madbeauty\\e20865ed-6322-4dbe-b6e3-c23aefe00afb\\release-manifest.json",
+    "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+    "state": "exported-not-deployed"
+  },
+  "state": "EXPORTED_NOT_DEPLOYED",
+  "humanExpertReviewPerformed": false,
+  "productionAcceptance": null,
+  "limitations": [
+    "Planned catalogue extensions deferred with exactIDs; no test-provider or local-supply claims",
+    "Historical dated price examples do not promise publication-date prices"
+  ]
+}

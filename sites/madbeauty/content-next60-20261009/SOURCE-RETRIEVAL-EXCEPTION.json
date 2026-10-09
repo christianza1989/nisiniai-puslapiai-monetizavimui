@@ -1,0 +1,7 @@
+{
+  "id": "S115",
+  "candidateUrl": "https://blog.wella.com/us/guide-to-sombre-hair",
+  "rawSha256": "23329e1b4c825ed8973952f5bfe3fc728f33e6ff60c6efc1039e043159092396",
+  "state": "REJECTED_FOR_THIS_CLAIM",
+  "reason": "Actual fetched body is Salt and Pepper article, different from search-index sombre snippet. No sombre claim accepted from this raw. Current S118 glossary fetched and actually read instead."
+}

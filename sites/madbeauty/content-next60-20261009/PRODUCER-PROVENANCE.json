@@ -1,0 +1,3990 @@
+{
+  "observedAt": "2026-10-09T22:48:46.064Z",
+  "producerDirectory": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/nisiniai_puslapiai_monetizavimui",
+  "readOnlyForeignCheckout": true,
+  "headAtObservation": "8ce36cf75a63b52aa6f0a624c1a028d506614811",
+  "branchAtObservation": "ai/madbeauty-content-plan-20261006",
+  "workingTreeAtObservation": "M AGENTS.md\n M CORE_BUILD_CONTRACT.md\n M SEO_GEO_CORE.md\n M SKILLS/PROJECT_CONTRACT.md\n M SKILLS/README.md\n M SKILLS/catalog.json\n M SKILLS/generative-engine-optimization/SKILL.md\n M SKILLS/index.csv\n M SKILLS/niche-content-planner/SKILL.md\n M SKILLS/niche-content-planner/references/content-workflow.md\n M SKILLS/niche-content-planner/references/niche-adaptation.md\n M SKILLS/niche-content-planner/references/quality-review.md\n M SKILLS/niche-content-planner/references/studio-contract.md\n M SKILLS/niche-site-audit/SKILL.md\n M SKILLS/niche-site-audit/references/report-contract.md\n M SKILLS/niche-site-audit/scripts/score-audit.mjs\n M SKILLS/niche-site-builder/SKILL.md\n M SKILLS/scripts/audit-skills.mjs\n M START_HERE.md\n M WORKSTREAMS.md\n M content-studio/src/editorial-skill.mjs\n M content-studio/test/editorial-skill.test.mjs\n M docs/MULTI_MACHINE.md\n M sites/madbeauty/topical-authority-20261006/MADBEAUTY-TOPICAL-AUTHORITY-PLANAS.html\n M sites/madbeauty/topical-authority-20261006/README.md\n?? SEO_RESEARCH_CORE.md\n?? SKILLS/niche-content-planner/references/planning-decisions.md\n?? SKILLS/niche-seo-geo-core/\n?? SKILLS/niche-site-audit/scripts/completion.test.mjs\n?? SKILLS/niche-site-audit/scripts/rendered-site_test.py\n?? SKILLS/niche-site-audit/scripts/rendered_site.py\n?? SKILLS/niche-site-audit/scripts/verify-site-completion.mjs\n?? SKILLS/niche-site-builder/references/first-delivery.md\n?? SKILLS/scripts/install-core-skills.mjs\n?? SKILLS/scripts/install-core-skills.test.mjs\n?? content-studio/scripts/seo-research.mjs\n?? content-studio/src/seo-research.mjs\n?? content-studio/test/geo-skill.test.mjs\n?? content-studio/test/seo-research.test.mjs\n?? docs/TREG_SEO_INTEGRATION_QA_2026-10-07.md\n?? research/core-completion-20261007/\n?? sites/madbeauty/publication-20261009/",
+  "codeFilesAtObservation": [
+    {
+      "path": "content-studio/src/cloudflare-image-pipeline.mjs",
+      "sha256": "5f3f3b315f91447687e856335e132052b1f501d970e3781e6f7531b5fd0dbabe",
+      "bytes": 1620
+    },
+    {
+      "path": "content-studio/src/content-package-v2.mjs",
+      "sha256": "e7d6f81478a2778516d0c7f80a797b6eeac6fe27eb02ec9ed048348203a128c7",
+      "bytes": 7572
+    },
+    {
+      "path": "content-studio/src/content-release.mjs",
+      "sha256": "60a6729fd609f108147843ef731af37b43f81f8138ab41eddb8c6f62d45e73f2",
+      "bytes": 2077
+    },
+    {
+      "path": "content-studio/src/content-schedule.mjs",
+      "sha256": "581ea94f7f6eca772433577016409a62f1a0f5761f00624acf2970f32a07e17e",
+      "bytes": 10038
+    },
+    {
+      "path": "content-studio/src/content-workflow.mjs",
+      "sha256": "d6f8d377357fd60599fa28e96e469714f005cdbf8c446a96df0de05d1ffba20d",
+      "bytes": 5534
+    },
+    {
+      "path": "content-studio/src/draft-v2.mjs",
+      "sha256": "d8440e79c97ab1ebf7a1fd9e960d1961d940ddd6e51bc96565411ab9087c7fa9",
+      "bytes": 8212
+    },
+    {
+      "path": "content-studio/src/editorial-cli.mjs",
+      "sha256": "9f37b86a8ce444bb96a1a6a7c48f155b17d480d871d189b79b1e335d537111aa",
+      "bytes": 3910
+    },
+    {
+      "path": "content-studio/src/editorial-skill.mjs",
+      "sha256": "42e740632da68a672294abaf51dba160099b389c9d7dcc2b9474580633c82c4a",
+      "bytes": 3846
+    },
+    {
+      "path": "content-studio/src/generator.mjs",
+      "sha256": "7506f1c0f62bdca3313a33b915b54e622ddbc501808c73244a66b76da49ab056",
+      "bytes": 20089
+    },
+    {
+      "path": "content-studio/src/image-pipeline.mjs",
+      "sha256": "415acdb6b074fdc3731eff84547e2fd20eeba9219f45bb988996321f809f6eb9",
+      "bytes": 2090
+    },
+    {
+      "path": "content-studio/src/image-policy.mjs",
+      "sha256": "d5fafa694a183d242753e8505bde469d64c2265aeaff436562e06a183e4457fa",
+      "bytes": 859
+    },
+    {
+      "path": "content-studio/src/model.mjs",
+      "sha256": "4c5ff9e85e01f0eae177b0b1986285d2ea7727336642714a796550348ad3307c",
+      "bytes": 55896
+    },
+    {
+      "path": "content-studio/src/network-links.mjs",
+      "sha256": "69a58b8dde70ab7e4cc1974056cca02dc9b1630c6d3f0da9ad6e0306e6f0296e",
+      "bytes": 5120
+    },
+    {
+      "path": "content-studio/src/seo-research.mjs",
+      "sha256": "72590a64e094a47325caf74400232acdb5dd2ed9ccfb7b41b2e72145f0573894",
+      "bytes": 6920
+    },
+    {
+      "path": "content-studio/src/server.mjs",
+      "sha256": "227d066fc827a95c0cf36c939cfbe0d602c7c0b0f5020b0a99ba697a41522522",
+      "bytes": 14629
+    },
+    {
+      "path": "content-studio/src/write-lock.mjs",
+      "sha256": "2a544452a3c5e039aabe1243fcf42ff2b8623115b2541f7f8ee9ae09eb1efede",
+      "bytes": 1619
+    },
+    {
+      "path": "content-studio/scripts/add-tractor-editorial-images.mjs",
+      "sha256": "0a4aaf84066061289ee7a7f241235a53418bfc4183f79946c416b66ae72b8b58",
+      "bytes": 4619
+    },
+    {
+      "path": "content-studio/scripts/build-akmenas-site.mjs",
+      "sha256": "dad576081b0855e906c13bda6e832352859b654ce0e52e1db631e7fea9507952",
+      "bytes": 37900
+    },
+    {
+      "path": "content-studio/scripts/build-auksarankiams-handyman.mjs",
+      "sha256": "2c36bfb394c92e9ddc511735bc9e81ca76f39f0b01b4ad6ed675771716a7e84b",
+      "bytes": 37251
+    },
+    {
+      "path": "content-studio/scripts/build-auksarankiams-site.mjs",
+      "sha256": "ba90e874e433a4928defac05156e102d0b906ac7234ac8507ef142fc99435964",
+      "bytes": 28136
+    },
+    {
+      "path": "content-studio/scripts/build-autoelektrikaivilniuje-site.mjs",
+      "sha256": "daa1a259129a4316783188b7947e1b66508ceb53b0bf0f205ecf21946d988698",
+      "bytes": 7731
+    },
+    {
+      "path": "content-studio/scripts/build-fasadopastoliai-site.mjs",
+      "sha256": "b51b37024344ef37e2b08d0a2f7d8457dfe35ae988123344fe70e4a00ad26345",
+      "bytes": 5851
+    },
+    {
+      "path": "content-studio/scripts/build-laiptucentras-site.mjs",
+      "sha256": "5debfca00ef541e08e5e74d8192ad0001bad692f137024ced1b323790d44c5e8",
+      "bytes": 36216
+    },
+    {
+      "path": "content-studio/scripts/build-miniekskavatoriai-site.mjs",
+      "sha256": "e8eb19107a169b9fc08816d378cbe4b02341bc832888014b78d043af45641852",
+      "bytes": 36456
+    },
+    {
+      "path": "content-studio/scripts/build-roletaiklaipedoje-site.mjs",
+      "sha256": "7f012e8850a4015a94097a34365292c073e3aced579626656d332072048b46af",
+      "bytes": 28660
+    },
+    {
+      "path": "content-studio/scripts/build-tractor-site.mjs",
+      "sha256": "c05c1bd1856d65c4f6dd55d23045762d597d95b7785e376741072af80d97bdaa",
+      "bytes": 23720
+    },
+    {
+      "path": "content-studio/scripts/build-v2-draft-schema.mjs",
+      "sha256": "9672230dcd72ee6ad75f4dc17bc44d56fff68da5508410d177a24edf845d5336",
+      "bytes": 1276
+    },
+    {
+      "path": "content-studio/scripts/build-v2-schema.mjs",
+      "sha256": "af0f3e0a6e522ba8f2805df4f7567d76d37ccbb4d8598c83b47008804451348b",
+      "bytes": 4081
+    },
+    {
+      "path": "content-studio/scripts/complete-tractor-editorial.mjs",
+      "sha256": "344b322d152d8b5ba7d9340b645bdd83b4ff77c03a7b417f1a595e4a66ee260d",
+      "bytes": 22545
+    },
+    {
+      "path": "content-studio/scripts/content-workflow.mjs",
+      "sha256": "3b7683c6c9d8c8e56f1b724e595c1b82123c44a08083b72000d945984de20b33",
+      "bytes": 1231
+    },
+    {
+      "path": "content-studio/scripts/draft-page.mjs",
+      "sha256": "7c2f6ea8627d324dc53b7832b2ae0b3d532abdf8556d8d71cd8410be08d8532b",
+      "bytes": 1154
+    },
+    {
+      "path": "content-studio/scripts/draft-reviewed-brief.mjs",
+      "sha256": "1dedc9944d95aee29085a040373fc74e2a218db69ea602efbd61af98411bb8de",
+      "bytes": 4616
+    },
+    {
+      "path": "content-studio/scripts/evaluate-editorial-skill.mjs",
+      "sha256": "7df9be29072750408455c4bb1cb0e3678c9c7c20ae16523c352a49a1c4361f86",
+      "bytes": 6368
+    },
+    {
+      "path": "content-studio/scripts/export-v2-fixture.mjs",
+      "sha256": "2ee8299b0db36237c877e092399703a2e15304b61dc7cc46e0e575b418d14da3",
+      "bytes": 440
+    },
+    {
+      "path": "content-studio/scripts/finalize-pinet-operator.mjs",
+      "sha256": "46214f44024c3a5a9cf00fa5e0a94764156a1d3b2f7c9d2c40ad71f5ea08bab8",
+      "bytes": 1798
+    },
+    {
+      "path": "content-studio/scripts/import-image.mjs",
+      "sha256": "fc8e7ea9886aadeecc3c60b7db53e1e5edffe6dddb7505aa237f2aa615201679",
+      "bytes": 1253
+    },
+    {
+      "path": "content-studio/scripts/media-ui-fixture.mjs",
+      "sha256": "1e0a319b4a39e1b38e57bab4f8fbbab711e8d3f2e2855994f364ca63127688a3",
+      "bytes": 1540
+    },
+    {
+      "path": "content-studio/scripts/migrate-network-contacts.mjs",
+      "sha256": "7ab28d1f37bca0a140e5f1bf6d3f106980abc5b8fd1a148c528f824411745683",
+      "bytes": 2699
+    },
+    {
+      "path": "content-studio/scripts/reconcile-private-plan.mjs",
+      "sha256": "107296bdfa8194092a1c1ff56e3edf79edb9cefaadf866d71f65f82312b33a4a",
+      "bytes": 1724
+    },
+    {
+      "path": "content-studio/scripts/redesign-tractor-media.mjs",
+      "sha256": "eaeeae0b5e920570bca328c75bf8e8f5d3c93eb4e42ffb3cbcea196c0204e6be",
+      "bytes": 3889
+    },
+    {
+      "path": "content-studio/scripts/repair-auksarankiams-page-types.mjs",
+      "sha256": "01d67782c4f812db45c6e8b1876c39a0db209ad0a709d979929087f2f7d5bd28",
+      "bytes": 1132
+    },
+    {
+      "path": "content-studio/scripts/revise-page.mjs",
+      "sha256": "36ccc8bb8127e315bcf07eb7f0a2ac2d38676f378aab0334c72bc70d3ef97e8c",
+      "bytes": 1115
+    },
+    {
+      "path": "content-studio/scripts/seed-tractor-pilot.mjs",
+      "sha256": "7f75fad04b0f204af8581eab0f1d0f8efb63ba419adbee3bb4c31c9069966ca1",
+      "bytes": 7286
+    },
+    {
+      "path": "content-studio/scripts/seo-research.mjs",
+      "sha256": "21ac560705b01248b2ae2722cab543439fab999a52e11ba6adaf51b0364e46a5",
+      "bytes": 2689
+    },
+    {
+      "path": "content-studio/scripts/v2-qa-studio.mjs",
+      "sha256": "18916d94f19104ac5c65d72975709077ed6ee799aaa20d17a02c85c32f6a5c2c",
+      "bytes": 1060
+    },
+    {
+      "path": "content-studio/scripts/verify-content-release.mjs",
+      "sha256": "39c6169832a3e6b35278852988571e5489557a62082d826aabdee4df484db28b",
+      "bytes": 772
+    },
+    {
+      "path": "content-studio/scripts/verify-network-links.mjs",
+      "sha256": "0d2c1e533f1546335574c45f2608a45db129ca338d1148e60a3d7d81bb704adc",
+      "bytes": 449
+    }
+  ],
+  "jobs": [
+    {
+      "id": "6280c873-94ae-4787-b32d-c04894c129d8",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:19:48.442Z",
+        "finishedAt": "2026-10-09T20:21:25.334Z",
+        "promptSha256": "b55798348082b204de988a62b6ec7170817f0c6064e001195798d86042565e0f",
+        "resultSha256": "a9e0fcf919f5d9d92600bdd8976fbf11f65035acb9905abc67af2f61c88bf2ba",
+        "resultArtifact": "tmp/11616945-183b-4dbc-9403-c2843db5d4fc.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "24f473984547ab2d72e5fa54561a6a79724f3a5ec2c4dfdf6981158ab1cc722b"
+      },
+      "generationReceipts": {
+        "734d26c7-d9f3-4079-af80-771437a32caa": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:19:48.442Z",
+          "finishedAt": "2026-10-09T20:21:25.334Z",
+          "promptSha256": "b55798348082b204de988a62b6ec7170817f0c6064e001195798d86042565e0f",
+          "resultSha256": "a9e0fcf919f5d9d92600bdd8976fbf11f65035acb9905abc67af2f61c88bf2ba",
+          "resultArtifact": "tmp/11616945-183b-4dbc-9403-c2843db5d4fc.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "24f473984547ab2d72e5fa54561a6a79724f3a5ec2c4dfdf6981158ab1cc722b"
+        }
+      }
+    },
+    {
+      "id": "c728b6b3-51a7-4f64-954b-0a4fa00d75a8",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:21:27.258Z",
+        "finishedAt": "2026-10-09T20:22:57.868Z",
+        "promptSha256": "b272a7d0bf30ea08344824a66c5d9f667fc4221e5b7db9fd4333cc2b7e5e43ab",
+        "resultSha256": "2e2f44442f76ea3aead44cb1d50de43c82ff48a0446f9f65f0afcd3bb2d9be42",
+        "resultArtifact": "tmp/6e299506-cbed-4da0-b35b-ac3c8a3e989c.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "09e6f9fdefecfd76777ac5ccded9c60bee1464436a581f74745bf19f8a20c917"
+      },
+      "generationReceipts": {
+        "10b76a0c-c469-46dd-9059-679e0c3cb88e": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:21:27.258Z",
+          "finishedAt": "2026-10-09T20:22:57.868Z",
+          "promptSha256": "b272a7d0bf30ea08344824a66c5d9f667fc4221e5b7db9fd4333cc2b7e5e43ab",
+          "resultSha256": "2e2f44442f76ea3aead44cb1d50de43c82ff48a0446f9f65f0afcd3bb2d9be42",
+          "resultArtifact": "tmp/6e299506-cbed-4da0-b35b-ac3c8a3e989c.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "09e6f9fdefecfd76777ac5ccded9c60bee1464436a581f74745bf19f8a20c917"
+        }
+      }
+    },
+    {
+      "id": "03ccee21-3867-409d-9c94-77c7abdb8fda",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:23:04.517Z",
+        "finishedAt": "2026-10-09T20:23:47.807Z",
+        "promptSha256": "5062acdff23e527bcfe55a5ec8a8bf7a04b9aaa2e6c9758e13daf8fd775d6ab8",
+        "resultSha256": "587552ef4cee057a2d578621477999fde32402efbb88c67f5db50ea4bf1e07c1",
+        "resultArtifact": "tmp/182faf6f-27b0-4fe2-bb6c-91f5baa4451b.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "a73a722469709420e7d232116bc264e3207160a3d45bcbbb59122f3aa9b85c6a"
+      },
+      "generationReceipts": {
+        "9a0ace50-749b-48bb-b547-c623d73df32d": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:23:04.517Z",
+          "finishedAt": "2026-10-09T20:23:47.807Z",
+          "promptSha256": "5062acdff23e527bcfe55a5ec8a8bf7a04b9aaa2e6c9758e13daf8fd775d6ab8",
+          "resultSha256": "587552ef4cee057a2d578621477999fde32402efbb88c67f5db50ea4bf1e07c1",
+          "resultArtifact": "tmp/182faf6f-27b0-4fe2-bb6c-91f5baa4451b.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "a73a722469709420e7d232116bc264e3207160a3d45bcbbb59122f3aa9b85c6a"
+        }
+      }
+    },
+    {
+      "id": "26cafe9f-0f71-4a58-8e32-2574d35e7631",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "9233c7ed-52c6-4ee9-9835-4005db2d5781",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:23:49.931Z",
+        "finishedAt": "2026-10-09T20:25:36.766Z",
+        "promptSha256": "51e3d31210b6c8ee818779f4646851f639b8c8311fc971ee51a1fbb11e0dd694",
+        "resultSha256": "6c04f163b383586548b1991a431f5d6f81a50ce5903144dab03d2641b60d4358",
+        "resultArtifact": "tmp/626cbed0-43ef-4236-b644-129e70b80564.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "16269d153bd0b59606ab087e48f884a3f41db59ee1111592330ebba3c9d64001"
+      },
+      "generationReceipts": {
+        "9233c7ed-52c6-4ee9-9835-4005db2d5781": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:23:49.931Z",
+          "finishedAt": "2026-10-09T20:25:36.766Z",
+          "promptSha256": "51e3d31210b6c8ee818779f4646851f639b8c8311fc971ee51a1fbb11e0dd694",
+          "resultSha256": "6c04f163b383586548b1991a431f5d6f81a50ce5903144dab03d2641b60d4358",
+          "resultArtifact": "tmp/626cbed0-43ef-4236-b644-129e70b80564.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "16269d153bd0b59606ab087e48f884a3f41db59ee1111592330ebba3c9d64001"
+        }
+      }
+    },
+    {
+      "id": "172d1dbd-3bab-43d0-be06-a32c4e656db6",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "6a9450cb-725b-4077-9846-f6d8a9af26ef",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:25:39.076Z",
+        "finishedAt": "2026-10-09T20:26:56.018Z",
+        "promptSha256": "e9d642aaccd5af104512ba6ff455ecca176bc85e68bf80930d3a127d20e7ca68",
+        "resultSha256": "0d56065a3b42a77fcbb40d59950a8cea74025a69f2143314b95945e733beb4b3",
+        "resultArtifact": "tmp/fb28c779-1cdb-4aed-9481-f1b8d62a0490.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "9a49f45ee251c81495ec14b4a20a4c657d3f3043bbecde0032849c4331085577"
+      },
+      "generationReceipts": {
+        "6a9450cb-725b-4077-9846-f6d8a9af26ef": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:25:39.076Z",
+          "finishedAt": "2026-10-09T20:26:56.018Z",
+          "promptSha256": "e9d642aaccd5af104512ba6ff455ecca176bc85e68bf80930d3a127d20e7ca68",
+          "resultSha256": "0d56065a3b42a77fcbb40d59950a8cea74025a69f2143314b95945e733beb4b3",
+          "resultArtifact": "tmp/fb28c779-1cdb-4aed-9481-f1b8d62a0490.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "9a49f45ee251c81495ec14b4a20a4c657d3f3043bbecde0032849c4331085577"
+        }
+      }
+    },
+    {
+      "id": "3f36dd25-288c-48b6-80f1-5cedaf47682e",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:26:58.252Z",
+        "finishedAt": "2026-10-09T20:30:16.593Z",
+        "promptSha256": "618cdbf677db4589b5fa905a982e5bd832b57f4bed3ef319e7aa0e0eac55608e",
+        "resultSha256": "da33550a849a2507c013fb3fd1832e14d34698d833466ea3d5c58efbd8dac017",
+        "resultArtifact": "tmp/98bf9e31-9249-4f0b-a14b-ba000335c28c.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "a45da04f4978b2f5cf45b5623bc7687db0e374c0efbcc923a416c951e6432c44"
+      },
+      "generationReceipts": {
+        "d10b1e15-03c8-4866-ab91-94ec7c5135fc": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:26:58.252Z",
+          "finishedAt": "2026-10-09T20:30:16.593Z",
+          "promptSha256": "618cdbf677db4589b5fa905a982e5bd832b57f4bed3ef319e7aa0e0eac55608e",
+          "resultSha256": "da33550a849a2507c013fb3fd1832e14d34698d833466ea3d5c58efbd8dac017",
+          "resultArtifact": "tmp/98bf9e31-9249-4f0b-a14b-ba000335c28c.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "a45da04f4978b2f5cf45b5623bc7687db0e374c0efbcc923a416c951e6432c44"
+        }
+      }
+    },
+    {
+      "id": "dacf5b9a-bdac-443b-ac0e-e7a4154dac5a",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "e867d6e8-db21-432f-b4a8-209d7060be4c",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:30:18.972Z",
+        "finishedAt": "2026-10-09T20:31:29.613Z",
+        "promptSha256": "752b687a51d5dfe80aaac0f39f977948e718025236dfd1c91d5d5c3cb456e1de",
+        "resultSha256": "f8287de2d1394915eb00da1ce604b7d7679ce6fea5c73cad1dcb5b9e93a56087",
+        "resultArtifact": "tmp/8ffe95f4-f091-410b-b191-9f935c05844b.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "21421a3f18276d2d817804614c9783b2774b88d873a61f457942aaf763203326"
+      },
+      "generationReceipts": {
+        "e867d6e8-db21-432f-b4a8-209d7060be4c": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:30:18.972Z",
+          "finishedAt": "2026-10-09T20:31:29.613Z",
+          "promptSha256": "752b687a51d5dfe80aaac0f39f977948e718025236dfd1c91d5d5c3cb456e1de",
+          "resultSha256": "f8287de2d1394915eb00da1ce604b7d7679ce6fea5c73cad1dcb5b9e93a56087",
+          "resultArtifact": "tmp/8ffe95f4-f091-410b-b191-9f935c05844b.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "21421a3f18276d2d817804614c9783b2774b88d873a61f457942aaf763203326"
+        }
+      }
+    },
+    {
+      "id": "488db84b-f36f-44c1-be4f-fee064fdeca6",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:31:41.555Z",
+        "finishedAt": "2026-10-09T20:34:13.767Z",
+        "promptSha256": "f1543b87afe2ebbca02788edc595d5790a711d34da983843ea8a85d46d5ed758",
+        "resultSha256": "99f1f359cf9b3f70cabca060893dcfec12c8cc40f1e9c2ab5645aa7d79781274",
+        "resultArtifact": "tmp/fbd4e611-18da-4cc3-8d48-f537200cde26.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "d153abf41fb89b7109ccfe8be9dca027b80f343ed9a8fe6c1f99ad80d6c2c34d"
+      },
+      "generationReceipts": {
+        "538a8972-bb1f-4dd2-938a-571d4cc6b454": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:31:41.555Z",
+          "finishedAt": "2026-10-09T20:34:13.767Z",
+          "promptSha256": "f1543b87afe2ebbca02788edc595d5790a711d34da983843ea8a85d46d5ed758",
+          "resultSha256": "99f1f359cf9b3f70cabca060893dcfec12c8cc40f1e9c2ab5645aa7d79781274",
+          "resultArtifact": "tmp/fbd4e611-18da-4cc3-8d48-f537200cde26.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "d153abf41fb89b7109ccfe8be9dca027b80f343ed9a8fe6c1f99ad80d6c2c34d"
+        }
+      }
+    },
+    {
+      "id": "6d4cadf6-6e13-4c6a-802c-150aa2810476",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:34:16.108Z",
+        "finishedAt": "2026-10-09T20:35:50.003Z",
+        "promptSha256": "4f8db8a777c51d1aed090a2b785a40d1745ef7877adc0c50cf605b4c2f5fb817",
+        "resultSha256": "6e37c8128c4c1dedb7e018f94e106da28d005b9a0b6f118212443e2c087893aa",
+        "resultArtifact": "tmp/e52ab7e1-6e50-43d3-ad95-849cf5a2aaf7.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ace0ae91c409d192b7fe93d207fec56d7c4d1ac147cd4af4002a5397f2747d1d"
+      },
+      "generationReceipts": {
+        "6cf41aff-a11e-4788-9e93-c951ecbd96d9": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:34:16.108Z",
+          "finishedAt": "2026-10-09T20:35:50.003Z",
+          "promptSha256": "4f8db8a777c51d1aed090a2b785a40d1745ef7877adc0c50cf605b4c2f5fb817",
+          "resultSha256": "6e37c8128c4c1dedb7e018f94e106da28d005b9a0b6f118212443e2c087893aa",
+          "resultArtifact": "tmp/e52ab7e1-6e50-43d3-ad95-849cf5a2aaf7.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ace0ae91c409d192b7fe93d207fec56d7c4d1ac147cd4af4002a5397f2747d1d"
+        }
+      }
+    },
+    {
+      "id": "1bb921ac-e0e3-4507-92d6-446d1fdeb4e7",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "61455054-263f-416a-8d1b-a993e4949753",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:35:52.388Z",
+        "finishedAt": "2026-10-09T20:39:39.299Z",
+        "promptSha256": "90ec44b9cb81338d2e7485d9e93253f5cdcee99a65b75e17c6bfbd4108d7fa04",
+        "resultSha256": "db402ae764cb07c0723288a95f2ee01ecf8c4ddd20cc587b779748cb63dc6471",
+        "resultArtifact": "tmp/191f5797-df70-4795-82bd-00ef524a3d91.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "71083d76e368123162b54ea616d24e9ecb3706df0fb92e0463707c106aac346b"
+      },
+      "generationReceipts": {
+        "61455054-263f-416a-8d1b-a993e4949753": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:35:52.388Z",
+          "finishedAt": "2026-10-09T20:39:39.299Z",
+          "promptSha256": "90ec44b9cb81338d2e7485d9e93253f5cdcee99a65b75e17c6bfbd4108d7fa04",
+          "resultSha256": "db402ae764cb07c0723288a95f2ee01ecf8c4ddd20cc587b779748cb63dc6471",
+          "resultArtifact": "tmp/191f5797-df70-4795-82bd-00ef524a3d91.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "71083d76e368123162b54ea616d24e9ecb3706df0fb92e0463707c106aac346b"
+        }
+      }
+    },
+    {
+      "id": "6e966425-6b61-47bb-bdc5-7ec653cae5af",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:39:41.537Z",
+        "finishedAt": "2026-10-09T20:40:46.739Z",
+        "promptSha256": "52c1579353583524a8192efc979e113ad56832e35a03b1956bfb484f63ded8bb",
+        "resultSha256": "f8835de8af3c0947e86cd3b11abc62c4ba5132598fec08e31f9c1101b3e0833f",
+        "resultArtifact": "tmp/3e1a22f4-c9b8-4c17-a9a7-67a5fb498182.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "6b498d155ef736acfe7aed8edfb2181719385f16369a98d4705a0ac8502eaf60"
+      },
+      "generationReceipts": {
+        "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:39:41.537Z",
+          "finishedAt": "2026-10-09T20:40:46.739Z",
+          "promptSha256": "52c1579353583524a8192efc979e113ad56832e35a03b1956bfb484f63ded8bb",
+          "resultSha256": "f8835de8af3c0947e86cd3b11abc62c4ba5132598fec08e31f9c1101b3e0833f",
+          "resultArtifact": "tmp/3e1a22f4-c9b8-4c17-a9a7-67a5fb498182.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "6b498d155ef736acfe7aed8edfb2181719385f16369a98d4705a0ac8502eaf60"
+        }
+      }
+    },
+    {
+      "id": "f24116c5-29c2-4af5-bb81-458aa9296c1b",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:40:48.916Z",
+        "finishedAt": "2026-10-09T20:42:00.400Z",
+        "promptSha256": "acb0151ed9b9da9f6df3f14b1f152d9e8757da53403f6555a70109187b03d471",
+        "resultSha256": "f368ce30877f440c9583d58673885c4441c9634032a147e6e2559f1c047e3779",
+        "resultArtifact": "tmp/2e3654db-1a73-4d42-8b94-aeb4a119f717.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "49dfb170714ff6310d480789b62f85ea6f9046bb5ecf8d6a775ef29c96d8ae3d"
+      },
+      "generationReceipts": {
+        "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:40:48.916Z",
+          "finishedAt": "2026-10-09T20:42:00.400Z",
+          "promptSha256": "acb0151ed9b9da9f6df3f14b1f152d9e8757da53403f6555a70109187b03d471",
+          "resultSha256": "f368ce30877f440c9583d58673885c4441c9634032a147e6e2559f1c047e3779",
+          "resultArtifact": "tmp/2e3654db-1a73-4d42-8b94-aeb4a119f717.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "49dfb170714ff6310d480789b62f85ea6f9046bb5ecf8d6a775ef29c96d8ae3d"
+        }
+      }
+    },
+    {
+      "id": "d24fecb8-9b4d-4d04-a88e-e81bd0d0e502",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:42:02.802Z",
+        "finishedAt": "2026-10-09T20:42:49.236Z",
+        "promptSha256": "c66910c2555616f6a1fd6d167d98f74973d78a6d497833bf09b83782e434f640",
+        "resultSha256": "0eb3911add15cee2dc5a7f81d8cb33f07ecb7834b7a217b85168aabc59252f39",
+        "resultArtifact": "tmp/19e6d67d-604e-4594-852e-51154d3cc5ac.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "e41dacd88cc3140532ff6c505f13c9c38780a4a2e7bbf472d9faf7f87e3f1b59"
+      },
+      "generationReceipts": {
+        "2d6f6349-3fe1-4a91-abc0-3ae848a336a3": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:42:02.802Z",
+          "finishedAt": "2026-10-09T20:42:49.236Z",
+          "promptSha256": "c66910c2555616f6a1fd6d167d98f74973d78a6d497833bf09b83782e434f640",
+          "resultSha256": "0eb3911add15cee2dc5a7f81d8cb33f07ecb7834b7a217b85168aabc59252f39",
+          "resultArtifact": "tmp/19e6d67d-604e-4594-852e-51154d3cc5ac.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "e41dacd88cc3140532ff6c505f13c9c38780a4a2e7bbf472d9faf7f87e3f1b59"
+        }
+      }
+    },
+    {
+      "id": "f5374658-9249-4250-9340-a5395f575395",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:42:51.620Z",
+        "finishedAt": "2026-10-09T20:43:51.263Z",
+        "promptSha256": "e312ec15743820109c05e444630f4f331774c011abcd862dff64e29f47556c87",
+        "resultSha256": "0719e3ab99d82ec5fab5bc9461128f8c5ee11d95bab867dc8043480f8d08af67",
+        "resultArtifact": "tmp/479ffa41-beca-4f9d-9413-dd0fdebc196b.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "a94f77cb013a578076d30e4074e2495a16c03c6d36fc7e2a59a87ca7a76ce497"
+      },
+      "generationReceipts": {
+        "f2b67650-a922-4cfb-aab0-34d7f79ba662": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:42:51.620Z",
+          "finishedAt": "2026-10-09T20:43:51.263Z",
+          "promptSha256": "e312ec15743820109c05e444630f4f331774c011abcd862dff64e29f47556c87",
+          "resultSha256": "0719e3ab99d82ec5fab5bc9461128f8c5ee11d95bab867dc8043480f8d08af67",
+          "resultArtifact": "tmp/479ffa41-beca-4f9d-9413-dd0fdebc196b.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "a94f77cb013a578076d30e4074e2495a16c03c6d36fc7e2a59a87ca7a76ce497"
+        }
+      }
+    },
+    {
+      "id": "6b1860d4-3d85-421c-a112-b8f97c02a7be",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:43:52.999Z",
+        "finishedAt": "2026-10-09T20:44:47.862Z",
+        "promptSha256": "87f32e720ee2512b1c4ada50b6e17390f897506658ea807f8012d1bb90e275d4",
+        "resultSha256": "d27eda8b74df1ed614f801ea8e5e71691b6f6efe7ecb824b1bd752125b0bef65",
+        "resultArtifact": "tmp/dbad279a-51d6-4f83-a2f6-65201169fb57.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "67f7ebdd9d3038e63f471abe909d22cb1c49a850d7ff1de0bd93566307e5a637"
+      },
+      "generationReceipts": {
+        "4b0a4778-7bed-4ff9-b793-1ac973cd579a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:43:52.999Z",
+          "finishedAt": "2026-10-09T20:44:47.862Z",
+          "promptSha256": "87f32e720ee2512b1c4ada50b6e17390f897506658ea807f8012d1bb90e275d4",
+          "resultSha256": "d27eda8b74df1ed614f801ea8e5e71691b6f6efe7ecb824b1bd752125b0bef65",
+          "resultArtifact": "tmp/dbad279a-51d6-4f83-a2f6-65201169fb57.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "67f7ebdd9d3038e63f471abe909d22cb1c49a850d7ff1de0bd93566307e5a637"
+        }
+      }
+    },
+    {
+      "id": "de66fc5d-64ab-4df5-b1e3-418c3fcb5d98",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:44:50.167Z",
+        "finishedAt": "2026-10-09T20:45:48.850Z",
+        "promptSha256": "0beb3208e509f8db232b4a3f42b14a6b435f26ced2fb3de80910111ddd8f545e",
+        "resultSha256": "1e84acccacc6a0253e581beb83e1d176c631c22e7e49be8e865c4537ad0a6c17",
+        "resultArtifact": "tmp/ba5d76d6-41dd-413a-a4f0-63a5d68a93b1.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ca4c86c5bacb29849a68894cbd9f9113e0fe3e9ca2057878215d4c1e25518334"
+      },
+      "generationReceipts": {
+        "e12cce12-d605-46b1-ab5c-621f4c30f2f5": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:44:50.167Z",
+          "finishedAt": "2026-10-09T20:45:48.850Z",
+          "promptSha256": "0beb3208e509f8db232b4a3f42b14a6b435f26ced2fb3de80910111ddd8f545e",
+          "resultSha256": "1e84acccacc6a0253e581beb83e1d176c631c22e7e49be8e865c4537ad0a6c17",
+          "resultArtifact": "tmp/ba5d76d6-41dd-413a-a4f0-63a5d68a93b1.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ca4c86c5bacb29849a68894cbd9f9113e0fe3e9ca2057878215d4c1e25518334"
+        }
+      }
+    },
+    {
+      "id": "b2a98676-a91d-4f57-a580-40991ff78c8c",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:45:51.356Z",
+        "finishedAt": "2026-10-09T20:46:49.906Z",
+        "promptSha256": "1e4327260040342b1240eaaf764fd2d8abe1f9c15fda38b5ccb57477280d40ac",
+        "resultSha256": "5564e36d71aa95be5c63afbeb6b8ef79125d91f194b2eff121d845fe6a39facb",
+        "resultArtifact": "tmp/c5743d85-af06-409a-bfcb-c1d1ac61f39c.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "e92f5b24080db4c975e376ede567691b96d5fbf61c320abe9bed51f842f49f01"
+      },
+      "generationReceipts": {
+        "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:45:51.356Z",
+          "finishedAt": "2026-10-09T20:46:49.906Z",
+          "promptSha256": "1e4327260040342b1240eaaf764fd2d8abe1f9c15fda38b5ccb57477280d40ac",
+          "resultSha256": "5564e36d71aa95be5c63afbeb6b8ef79125d91f194b2eff121d845fe6a39facb",
+          "resultArtifact": "tmp/c5743d85-af06-409a-bfcb-c1d1ac61f39c.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "e92f5b24080db4c975e376ede567691b96d5fbf61c320abe9bed51f842f49f01"
+        }
+      }
+    },
+    {
+      "id": "0c1c6aa1-e4e1-4036-aa8a-addfd2a0c61f",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:46:58.649Z",
+        "finishedAt": "2026-10-09T20:48:28.963Z",
+        "promptSha256": "76d2f7b1aee3ee896be18fd0458019cc210d30a347bf7163d78504e975b1951c",
+        "resultSha256": "9971470c1a3b5a526f68bcc8ab964cb77628f4e92b7f4f11d847fa3aea047d5f",
+        "resultArtifact": "tmp/e690e225-3494-4f67-a667-2f5dc159390b.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "c3edccc08b4aacbfdc9a0344dddd689e1358d1743271f50473d650920d255146"
+      },
+      "generationReceipts": {
+        "bcaed80b-f2b4-4948-9665-2edab2cf8d89": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:46:58.649Z",
+          "finishedAt": "2026-10-09T20:48:28.963Z",
+          "promptSha256": "76d2f7b1aee3ee896be18fd0458019cc210d30a347bf7163d78504e975b1951c",
+          "resultSha256": "9971470c1a3b5a526f68bcc8ab964cb77628f4e92b7f4f11d847fa3aea047d5f",
+          "resultArtifact": "tmp/e690e225-3494-4f67-a667-2f5dc159390b.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "c3edccc08b4aacbfdc9a0344dddd689e1358d1743271f50473d650920d255146"
+        }
+      }
+    },
+    {
+      "id": "92141a01-9f1b-4a07-815d-2a873a74ff8d",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:48:30.284Z",
+        "finishedAt": "2026-10-09T20:49:57.513Z",
+        "promptSha256": "5f588a8c469e8a1ce97d4058d72606b8dacbaf5da9abcc90feeb8cfcac17b2de",
+        "resultSha256": "37db86dd4697a0f181c1bb404e25880659c3ee13b1f2daabda79d934259c732f",
+        "resultArtifact": "tmp/9f4cab4c-e99d-485a-8eff-c87047f48cca.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "205a8c45283594d8f86a1ca236c19458539cb745c3843e644f7074eb53bc4560"
+      },
+      "generationReceipts": {
+        "485e6aa9-bf58-49db-b938-b4471d4a6548": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:48:30.284Z",
+          "finishedAt": "2026-10-09T20:49:57.513Z",
+          "promptSha256": "5f588a8c469e8a1ce97d4058d72606b8dacbaf5da9abcc90feeb8cfcac17b2de",
+          "resultSha256": "37db86dd4697a0f181c1bb404e25880659c3ee13b1f2daabda79d934259c732f",
+          "resultArtifact": "tmp/9f4cab4c-e99d-485a-8eff-c87047f48cca.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "205a8c45283594d8f86a1ca236c19458539cb745c3843e644f7074eb53bc4560"
+        }
+      }
+    },
+    {
+      "id": "04cbc566-5488-4fb9-a20d-290f813e9a9b",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "4deba947-1bc9-4c48-90da-62b48a9c7ece",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:49:58.430Z",
+        "finishedAt": "2026-10-09T20:50:48.330Z",
+        "promptSha256": "fb3faef85f7a6e8811d6cae4118c4aabbf9ebda65d1d2b93136426ca2fe94a04",
+        "resultSha256": "f8e753d2c05c6affaa643fd11ef673972eac03b9b156d55fd0ac45db49ffecc9",
+        "resultArtifact": "tmp/a9dc9105-3673-4883-9357-08afa3f915cd.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "e6d4b8c1911fa3a7cb841c7a051a23bdebf38ec158a72e6c5bbf34499be2ed06"
+      },
+      "generationReceipts": {
+        "4deba947-1bc9-4c48-90da-62b48a9c7ece": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:49:58.430Z",
+          "finishedAt": "2026-10-09T20:50:48.330Z",
+          "promptSha256": "fb3faef85f7a6e8811d6cae4118c4aabbf9ebda65d1d2b93136426ca2fe94a04",
+          "resultSha256": "f8e753d2c05c6affaa643fd11ef673972eac03b9b156d55fd0ac45db49ffecc9",
+          "resultArtifact": "tmp/a9dc9105-3673-4883-9357-08afa3f915cd.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "e6d4b8c1911fa3a7cb841c7a051a23bdebf38ec158a72e6c5bbf34499be2ed06"
+        }
+      }
+    },
+    {
+      "id": "fe43b3ae-dffe-465d-8f61-49464016fa09",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:50:49.349Z",
+        "finishedAt": "2026-10-09T20:52:52.578Z",
+        "promptSha256": "34ab14920150218e9732fc2e418eee57f26e20a49548400bdd23402f862a461d",
+        "resultSha256": "9eb5e172f27bdb9d229017641ba1b701231870f002a1ef678b76b0987ee81000",
+        "resultArtifact": "tmp/3a82ceba-9236-4190-a12a-eec922192a20.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ee35dfd24f7b8544cdcb36929c125853d4191e8655757aaf802dfaa00d8a8b50"
+      },
+      "generationReceipts": {
+        "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:50:49.349Z",
+          "finishedAt": "2026-10-09T20:52:52.578Z",
+          "promptSha256": "34ab14920150218e9732fc2e418eee57f26e20a49548400bdd23402f862a461d",
+          "resultSha256": "9eb5e172f27bdb9d229017641ba1b701231870f002a1ef678b76b0987ee81000",
+          "resultArtifact": "tmp/3a82ceba-9236-4190-a12a-eec922192a20.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ee35dfd24f7b8544cdcb36929c125853d4191e8655757aaf802dfaa00d8a8b50"
+        }
+      }
+    },
+    {
+      "id": "35702f9d-27f3-4943-ac8b-25f038b85ebc",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:52:53.691Z",
+        "finishedAt": "2026-10-09T20:54:17.143Z",
+        "promptSha256": "de05d475a08fc03fc4fa4c0069577f8411df32b377d85646e6d4992b7a214015",
+        "resultSha256": "d4f869b2a5bb469ebfd4577e38cad800be7005b0001556085670848a3d2511a0",
+        "resultArtifact": "tmp/839427bc-b9a0-4c7d-95c6-3eb005e48375.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "f79128b916cff535d4811c21ac03ac70635d02843cb33ff6cf02275243abeef4"
+      },
+      "generationReceipts": {
+        "896cf841-8d8f-447d-bd11-57bf62639f69": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:52:53.691Z",
+          "finishedAt": "2026-10-09T20:54:17.143Z",
+          "promptSha256": "de05d475a08fc03fc4fa4c0069577f8411df32b377d85646e6d4992b7a214015",
+          "resultSha256": "d4f869b2a5bb469ebfd4577e38cad800be7005b0001556085670848a3d2511a0",
+          "resultArtifact": "tmp/839427bc-b9a0-4c7d-95c6-3eb005e48375.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "f79128b916cff535d4811c21ac03ac70635d02843cb33ff6cf02275243abeef4"
+        }
+      }
+    },
+    {
+      "id": "54bd460d-d5b2-4e45-960b-b5df8ab8a776",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "5d754fbd-3db9-4212-bdde-58d3ac1960fb",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:54:18.517Z",
+        "finishedAt": "2026-10-09T20:55:21.433Z",
+        "promptSha256": "9fc56ecfdd4c1b0e805e16460a54ac413a6002d7cc2729b99b735a986dcacf0f",
+        "resultSha256": "4b691989fbd640e5d6a6aef76a211965c5637dd3a913e5045fd4dae576f8b121",
+        "resultArtifact": "tmp/8e9307f5-4ba9-4ebb-bf9e-9e3da440726d.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "47cd8fe56127712d0d61ca5fb96cfddda191cb71e38b5b7ddb53a42ae8bd448f"
+      },
+      "generationReceipts": {
+        "5d754fbd-3db9-4212-bdde-58d3ac1960fb": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:54:18.517Z",
+          "finishedAt": "2026-10-09T20:55:21.433Z",
+          "promptSha256": "9fc56ecfdd4c1b0e805e16460a54ac413a6002d7cc2729b99b735a986dcacf0f",
+          "resultSha256": "4b691989fbd640e5d6a6aef76a211965c5637dd3a913e5045fd4dae576f8b121",
+          "resultArtifact": "tmp/8e9307f5-4ba9-4ebb-bf9e-9e3da440726d.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "47cd8fe56127712d0d61ca5fb96cfddda191cb71e38b5b7ddb53a42ae8bd448f"
+        }
+      }
+    },
+    {
+      "id": "a1ce2dd0-eee9-4e00-901a-b09841f1c5ab",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "02eb68ff-1571-4cef-bfe0-31216660bcb1",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:55:22.697Z",
+        "finishedAt": "2026-10-09T20:56:27.729Z",
+        "promptSha256": "ffff3a5c2b3e7ce5614b79e6048824c27359d8c0c7e7b888238350df4b6c43e5",
+        "resultSha256": "809c0b17ef6615ef85f7463e9b6075721e8bb880f39ddeb8fbb7dd9364e7864a",
+        "resultArtifact": "tmp/ba0e4286-62b9-416d-8279-b8aae3431645.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "4805e592aaee241db8c96376ecef3239426e742c72badcf2c33ae5df846aaa37"
+      },
+      "generationReceipts": {
+        "02eb68ff-1571-4cef-bfe0-31216660bcb1": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:55:22.697Z",
+          "finishedAt": "2026-10-09T20:56:27.729Z",
+          "promptSha256": "ffff3a5c2b3e7ce5614b79e6048824c27359d8c0c7e7b888238350df4b6c43e5",
+          "resultSha256": "809c0b17ef6615ef85f7463e9b6075721e8bb880f39ddeb8fbb7dd9364e7864a",
+          "resultArtifact": "tmp/ba0e4286-62b9-416d-8279-b8aae3431645.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "4805e592aaee241db8c96376ecef3239426e742c72badcf2c33ae5df846aaa37"
+        }
+      }
+    },
+    {
+      "id": "ae72bab1-0164-4395-9961-45a1b25b0280",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "5fad7c52-342a-45e7-a619-a97048daf742",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:56:28.940Z",
+        "finishedAt": "2026-10-09T20:57:38.730Z",
+        "promptSha256": "63e5bee3acb2320bba0bda40bb629b89315299abd9f72c3adc50eaf40b484982",
+        "resultSha256": "9cccd6f92fd29eb37dd34cc54753e1adcc8340d47c5dcf418e48aacfa9dc2b03",
+        "resultArtifact": "tmp/504db03e-f327-4322-89d5-d764f7b44172.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "03fbfdcd107b73d1999b29d0339266c5c19463b4e4989b7697773cd9ff86e70c"
+      },
+      "generationReceipts": {
+        "5fad7c52-342a-45e7-a619-a97048daf742": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:56:28.940Z",
+          "finishedAt": "2026-10-09T20:57:38.730Z",
+          "promptSha256": "63e5bee3acb2320bba0bda40bb629b89315299abd9f72c3adc50eaf40b484982",
+          "resultSha256": "9cccd6f92fd29eb37dd34cc54753e1adcc8340d47c5dcf418e48aacfa9dc2b03",
+          "resultArtifact": "tmp/504db03e-f327-4322-89d5-d764f7b44172.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "03fbfdcd107b73d1999b29d0339266c5c19463b4e4989b7697773cd9ff86e70c"
+        }
+      }
+    },
+    {
+      "id": "088c5748-46e2-40c3-a35d-d8c7b4b544b9",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "26a9236d-7d71-4dc6-b282-ee3b65cd757b",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:57:39.760Z",
+        "finishedAt": "2026-10-09T20:58:36.187Z",
+        "promptSha256": "a1d25b7ab78e53b97a3f8dc2d8e72ad0e71e5c45692461fda1ab9e2de2aa1cc1",
+        "resultSha256": "ee4d8cb8c0209cd7f70f7afd9783f7d231ffd7b296854281ce9d4bac55889459",
+        "resultArtifact": "tmp/13892b5c-1e93-44d6-96e4-99bcd025b38f.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "a20cbd812147fcd05b3162a3f9c8da6dfa91c8e84263863bf44beb994ffa9c0c"
+      },
+      "generationReceipts": {
+        "26a9236d-7d71-4dc6-b282-ee3b65cd757b": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:57:39.760Z",
+          "finishedAt": "2026-10-09T20:58:36.187Z",
+          "promptSha256": "a1d25b7ab78e53b97a3f8dc2d8e72ad0e71e5c45692461fda1ab9e2de2aa1cc1",
+          "resultSha256": "ee4d8cb8c0209cd7f70f7afd9783f7d231ffd7b296854281ce9d4bac55889459",
+          "resultArtifact": "tmp/13892b5c-1e93-44d6-96e4-99bcd025b38f.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "a20cbd812147fcd05b3162a3f9c8da6dfa91c8e84263863bf44beb994ffa9c0c"
+        }
+      }
+    },
+    {
+      "id": "f8a0aa02-05c7-4484-b902-cc3a3fdcd105",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "d4712e01-6bc1-47ec-aa60-ac311d9438de",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:58:39.042Z",
+        "finishedAt": "2026-10-09T20:59:53.722Z",
+        "promptSha256": "52055aefc7afe36cfed1b58d6e41d46514eacef2afbba057504e4ea93fd7857f",
+        "resultSha256": "27dd74ffa5e4c781b1cd79206cb0fcedf050febae9a0a5c7aebb32b3151997a8",
+        "resultArtifact": "tmp/873e8834-e01b-4ae6-9b2b-d7744459e84f.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "99b13c9c1b08fb33c6b1cefcf63b5fbeeb40df765a376fe4d827b337d7658031"
+      },
+      "generationReceipts": {
+        "d4712e01-6bc1-47ec-aa60-ac311d9438de": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:58:39.042Z",
+          "finishedAt": "2026-10-09T20:59:53.722Z",
+          "promptSha256": "52055aefc7afe36cfed1b58d6e41d46514eacef2afbba057504e4ea93fd7857f",
+          "resultSha256": "27dd74ffa5e4c781b1cd79206cb0fcedf050febae9a0a5c7aebb32b3151997a8",
+          "resultArtifact": "tmp/873e8834-e01b-4ae6-9b2b-d7744459e84f.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "99b13c9c1b08fb33c6b1cefcf63b5fbeeb40df765a376fe4d827b337d7658031"
+        }
+      }
+    },
+    {
+      "id": "dc863f74-b502-4223-8745-5a66cc035916",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T20:59:54.710Z",
+        "finishedAt": "2026-10-09T21:02:00.323Z",
+        "promptSha256": "ebd702a7645e809f5b86dc3e3ec717ff2a7d53bc586ff32fe56a6054e336e87d",
+        "resultSha256": "1e5ddd1eda10973a304e092062c8377bbd6a708c1662555cc19f5ad1c493dc67",
+        "resultArtifact": "tmp/3b7398de-51e6-4c12-8613-2358c5cfdc01.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ffc24176990d3e60bb114d0982cde12f1595b4bf4fd782f2f33673f89f2ae634"
+      },
+      "generationReceipts": {
+        "6d77f5cb-8271-4e81-b446-7a0537771b86": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T20:59:54.710Z",
+          "finishedAt": "2026-10-09T21:02:00.323Z",
+          "promptSha256": "ebd702a7645e809f5b86dc3e3ec717ff2a7d53bc586ff32fe56a6054e336e87d",
+          "resultSha256": "1e5ddd1eda10973a304e092062c8377bbd6a708c1662555cc19f5ad1c493dc67",
+          "resultArtifact": "tmp/3b7398de-51e6-4c12-8613-2358c5cfdc01.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ffc24176990d3e60bb114d0982cde12f1595b4bf4fd782f2f33673f89f2ae634"
+        }
+      }
+    },
+    {
+      "id": "54c45835-2d1d-4b09-ae20-c82604422c6d",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:02:01.334Z",
+        "finishedAt": "2026-10-09T21:03:19.342Z",
+        "promptSha256": "e3d497de2878055bdf7cb5cac3ff43b76b1db0399b846b229f0f0c4ce8b7b8be",
+        "resultSha256": "77e9f617d0a3ca5b62d1ba4ba9b5bba1add5ec8a66d049063e599608c489aafd",
+        "resultArtifact": "tmp/7745f89a-8087-4d98-9c81-96f7c15f04fe.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "7c3331e54476586cbf0ccc14a6dea0f7863ec7178065b301a54eabd26a90b557"
+      },
+      "generationReceipts": {
+        "5ebe7838-248a-4ada-8382-71001af065d5": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:02:01.334Z",
+          "finishedAt": "2026-10-09T21:03:19.342Z",
+          "promptSha256": "e3d497de2878055bdf7cb5cac3ff43b76b1db0399b846b229f0f0c4ce8b7b8be",
+          "resultSha256": "77e9f617d0a3ca5b62d1ba4ba9b5bba1add5ec8a66d049063e599608c489aafd",
+          "resultArtifact": "tmp/7745f89a-8087-4d98-9c81-96f7c15f04fe.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "7c3331e54476586cbf0ccc14a6dea0f7863ec7178065b301a54eabd26a90b557"
+        }
+      }
+    },
+    {
+      "id": "9a7fcada-df93-4284-937f-d961342610e2",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:03:20.752Z",
+        "finishedAt": "2026-10-09T21:04:37.106Z",
+        "promptSha256": "a56a9965d6f45f44e774203608f4639aa4eda9fd1ecb6ba6dac391db0bcd2dad",
+        "resultSha256": "5b8af11bcb7264b3eead84f1953af726161b77d2ace853a5e509ec9c230c2f38",
+        "resultArtifact": "tmp/2b198474-2b79-4df8-86a2-1f3477cfee86.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "8f2558a9485b1df26fa2231152a7d5b648b091f527631379b416668d74adb852"
+      },
+      "generationReceipts": {
+        "0436fded-d9a1-4e04-a7c4-2685fcf13eb3": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:03:20.752Z",
+          "finishedAt": "2026-10-09T21:04:37.106Z",
+          "promptSha256": "a56a9965d6f45f44e774203608f4639aa4eda9fd1ecb6ba6dac391db0bcd2dad",
+          "resultSha256": "5b8af11bcb7264b3eead84f1953af726161b77d2ace853a5e509ec9c230c2f38",
+          "resultArtifact": "tmp/2b198474-2b79-4df8-86a2-1f3477cfee86.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "8f2558a9485b1df26fa2231152a7d5b648b091f527631379b416668d74adb852"
+        }
+      }
+    },
+    {
+      "id": "0a6f8975-849a-4258-a232-b8bcf864e66b",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:04:37.905Z",
+        "finishedAt": "2026-10-09T21:06:37.033Z",
+        "promptSha256": "8526770d173904c5e3734db66d81a1b01d6093e27ac93920a8033cb913fd366b",
+        "resultSha256": "f8e03028c5305e1d6b020acc46179a5744ce91c76decb0ba8e89f31e9417a65b",
+        "resultArtifact": "tmp/5be95d71-4c18-4ad8-8de9-659fd6b00824.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "a10cb84af87765e7cd547513d9b86750a971ddb0332893d73fa5ed81c10afd70"
+      },
+      "generationReceipts": {
+        "e1fb3491-8c32-448c-9813-a98506bfb75b": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:04:37.905Z",
+          "finishedAt": "2026-10-09T21:06:37.033Z",
+          "promptSha256": "8526770d173904c5e3734db66d81a1b01d6093e27ac93920a8033cb913fd366b",
+          "resultSha256": "f8e03028c5305e1d6b020acc46179a5744ce91c76decb0ba8e89f31e9417a65b",
+          "resultArtifact": "tmp/5be95d71-4c18-4ad8-8de9-659fd6b00824.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "a10cb84af87765e7cd547513d9b86750a971ddb0332893d73fa5ed81c10afd70"
+        }
+      }
+    },
+    {
+      "id": "8583225a-257a-4884-966f-ee9fdba9fed8",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:06:37.946Z",
+        "finishedAt": "2026-10-09T21:07:29.129Z",
+        "promptSha256": "46ebb22ef3483d013926d05d2c08f08fdaa152c0edce136e6438970de8ba0609",
+        "resultSha256": "dfd5aaae14008e0f0a0e923f1b19e8ebe5bc40d3f1500bb37d79806accb45d5e",
+        "resultArtifact": "tmp/a82397c7-3c14-49a7-b1b9-76a1edfd9cc1.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "7acbfb05da5e0ed5aff494da26d1afb76514d3b9df110cb673b2d96ae909b28e"
+      },
+      "generationReceipts": {
+        "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:06:37.946Z",
+          "finishedAt": "2026-10-09T21:07:29.129Z",
+          "promptSha256": "46ebb22ef3483d013926d05d2c08f08fdaa152c0edce136e6438970de8ba0609",
+          "resultSha256": "dfd5aaae14008e0f0a0e923f1b19e8ebe5bc40d3f1500bb37d79806accb45d5e",
+          "resultArtifact": "tmp/a82397c7-3c14-49a7-b1b9-76a1edfd9cc1.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "7acbfb05da5e0ed5aff494da26d1afb76514d3b9df110cb673b2d96ae909b28e"
+        }
+      }
+    },
+    {
+      "id": "0916b392-e669-4e34-9a75-74896d120327",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:07:29.961Z",
+        "finishedAt": "2026-10-09T21:09:08.023Z",
+        "promptSha256": "4de8f131d5044f6d577e6b9ae727c8a5d935b94f09f1bee2962f94243bee6c64",
+        "resultSha256": "fe403777f24457d5b02ed6e09e78653bfc0e5049152305309b0dd686750ca036",
+        "resultArtifact": "tmp/88b4b65b-53e4-4beb-90c3-32356162a75b.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ee86348a19f49a3214de1b5696eb82c14b4691d8148ef9424c5024b91e30aaf7"
+      },
+      "generationReceipts": {
+        "4a57ba0a-213d-4a45-8f6c-5aab8504a98a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:07:29.961Z",
+          "finishedAt": "2026-10-09T21:09:08.023Z",
+          "promptSha256": "4de8f131d5044f6d577e6b9ae727c8a5d935b94f09f1bee2962f94243bee6c64",
+          "resultSha256": "fe403777f24457d5b02ed6e09e78653bfc0e5049152305309b0dd686750ca036",
+          "resultArtifact": "tmp/88b4b65b-53e4-4beb-90c3-32356162a75b.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ee86348a19f49a3214de1b5696eb82c14b4691d8148ef9424c5024b91e30aaf7"
+        }
+      }
+    },
+    {
+      "id": "67041163-908b-442a-adc2-05bd61533b05",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:09:08.995Z",
+        "finishedAt": "2026-10-09T21:10:02.591Z",
+        "promptSha256": "9d55624d84eedf1d98d0f0a96cecfa37966cb24c268086de9554f52a6945b33b",
+        "resultSha256": "1242a97e7f431a1a24272a756fc85d98afb7b95abc31f61bc6dcedfb8f93cb7e",
+        "resultArtifact": "tmp/8ee365c9-6e0f-41be-a7fc-f0b2daf2f71f.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "c22f063ad83382841f6d09479519814fcc214ef50da86a0976a7f87cad483e20"
+      },
+      "generationReceipts": {
+        "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:09:08.995Z",
+          "finishedAt": "2026-10-09T21:10:02.591Z",
+          "promptSha256": "9d55624d84eedf1d98d0f0a96cecfa37966cb24c268086de9554f52a6945b33b",
+          "resultSha256": "1242a97e7f431a1a24272a756fc85d98afb7b95abc31f61bc6dcedfb8f93cb7e",
+          "resultArtifact": "tmp/8ee365c9-6e0f-41be-a7fc-f0b2daf2f71f.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "c22f063ad83382841f6d09479519814fcc214ef50da86a0976a7f87cad483e20"
+        }
+      }
+    },
+    {
+      "id": "8609ea3c-b996-473c-9372-060fae2921d8",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:10:04.088Z",
+        "finishedAt": "2026-10-09T21:11:54.518Z",
+        "promptSha256": "1538448060fcb0f8bf1be675848a515129a9b2f5a42c9879a24179b7a17a21f6",
+        "resultSha256": "9354c5d644186d20794284e8d9895387f976a7e4821ca65e22add83daa4ac633",
+        "resultArtifact": "tmp/8a0e07eb-f92e-4167-adbb-cb7c5f024397.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "68077804e28cea0599dc5ddee5001cd9f6c312a08a0f1969e71bba3afb3bf179"
+      },
+      "generationReceipts": {
+        "3ff05886-7dce-4f99-9077-c2f9b86121a6": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:10:04.088Z",
+          "finishedAt": "2026-10-09T21:11:54.518Z",
+          "promptSha256": "1538448060fcb0f8bf1be675848a515129a9b2f5a42c9879a24179b7a17a21f6",
+          "resultSha256": "9354c5d644186d20794284e8d9895387f976a7e4821ca65e22add83daa4ac633",
+          "resultArtifact": "tmp/8a0e07eb-f92e-4167-adbb-cb7c5f024397.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "68077804e28cea0599dc5ddee5001cd9f6c312a08a0f1969e71bba3afb3bf179"
+        }
+      }
+    },
+    {
+      "id": "ccb6ef02-ed6c-4522-b182-20e15f41cfaf",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:11:55.829Z",
+        "finishedAt": "2026-10-09T21:12:49.127Z",
+        "promptSha256": "d0204c22ab75b9a658f70810e0f77f8fdda5e59e1e0af1f2d1bba86f383799dd",
+        "resultSha256": "8a724bc5c7067710a092fb424fb22d30e693cf665ba0a74e9c66063480495967",
+        "resultArtifact": "tmp/d527284e-8db2-4f42-8f99-9a9ba8f4fc53.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "1d5a39e5dcdd1e8b7dc63a17eac09a2fef225986b1e322e117efe41c88d60593"
+      },
+      "generationReceipts": {
+        "3e56767c-adcb-4f19-8ad4-314e68814d3b": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:11:55.829Z",
+          "finishedAt": "2026-10-09T21:12:49.127Z",
+          "promptSha256": "d0204c22ab75b9a658f70810e0f77f8fdda5e59e1e0af1f2d1bba86f383799dd",
+          "resultSha256": "8a724bc5c7067710a092fb424fb22d30e693cf665ba0a74e9c66063480495967",
+          "resultArtifact": "tmp/d527284e-8db2-4f42-8f99-9a9ba8f4fc53.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "1d5a39e5dcdd1e8b7dc63a17eac09a2fef225986b1e322e117efe41c88d60593"
+        }
+      }
+    },
+    {
+      "id": "2f59818a-f86d-4085-964b-beee9a15960a",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "56047987-7724-4476-80b1-fde21b00c826",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:12:50.462Z",
+        "finishedAt": "2026-10-09T21:13:45.577Z",
+        "promptSha256": "cdd8daf5dd5eb9d64212e03a06a577dfa780b5a54ee2a543bd872f9751e982bb",
+        "resultSha256": "a0638c8ba9dcc81bea670b32d785d645a79e6172c6c6e0899ae7ff30b162d273",
+        "resultArtifact": "tmp/479f7537-8b83-4268-a44b-8e82c57c6d12.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "da1d29f3767d2bf5cbda164451ac0de76792d7465f52a0aa58afa05fb678ed2d"
+      },
+      "generationReceipts": {
+        "56047987-7724-4476-80b1-fde21b00c826": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:12:50.462Z",
+          "finishedAt": "2026-10-09T21:13:45.577Z",
+          "promptSha256": "cdd8daf5dd5eb9d64212e03a06a577dfa780b5a54ee2a543bd872f9751e982bb",
+          "resultSha256": "a0638c8ba9dcc81bea670b32d785d645a79e6172c6c6e0899ae7ff30b162d273",
+          "resultArtifact": "tmp/479f7537-8b83-4268-a44b-8e82c57c6d12.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "da1d29f3767d2bf5cbda164451ac0de76792d7465f52a0aa58afa05fb678ed2d"
+        }
+      }
+    },
+    {
+      "id": "a4a80d5f-9dcd-4a91-8dd2-414fd0f93c26",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:13:47.527Z",
+        "finishedAt": "2026-10-09T21:15:30.114Z",
+        "promptSha256": "3af7aa828ea3f646627dcfb2505eadd7b7733a20a621855024e4ff434f5def8e",
+        "resultSha256": "7cc077064ed55b3f8b475e82f7756f4d97bfa030c40cfb3158133be71d73983e",
+        "resultArtifact": "tmp/ffe8bb67-5976-4ae6-ac75-ad35bb386f89.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "1a5a4b9862140047f615b5b62cfcbbbe63114eb1d2378ead93da09eb6b69df87"
+      },
+      "generationReceipts": {
+        "9b70fd84-c782-469c-99ca-1bdef8a50775": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:13:47.527Z",
+          "finishedAt": "2026-10-09T21:15:30.114Z",
+          "promptSha256": "3af7aa828ea3f646627dcfb2505eadd7b7733a20a621855024e4ff434f5def8e",
+          "resultSha256": "7cc077064ed55b3f8b475e82f7756f4d97bfa030c40cfb3158133be71d73983e",
+          "resultArtifact": "tmp/ffe8bb67-5976-4ae6-ac75-ad35bb386f89.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "1a5a4b9862140047f615b5b62cfcbbbe63114eb1d2378ead93da09eb6b69df87"
+        }
+      }
+    },
+    {
+      "id": "d7cc8d85-bb67-438b-99c2-219a074dfee1",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:15:31.937Z",
+        "finishedAt": "2026-10-09T21:16:39.883Z",
+        "promptSha256": "948d89e537595c92a1d706770b34dc24f89c0603915be12ef6196df55fdd07cb",
+        "resultSha256": "763d142b752f6c563ba126f2d3f0c8a107793d073f828a8ac81ca3ab97747d8f",
+        "resultArtifact": "tmp/08098c37-ff5a-4207-a684-b5984d3dbf47.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "f71558da2f113ef14a68ec688be7b1c9117f25e2447b37006c4f4a5b255b3aae"
+      },
+      "generationReceipts": {
+        "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:15:31.937Z",
+          "finishedAt": "2026-10-09T21:16:39.883Z",
+          "promptSha256": "948d89e537595c92a1d706770b34dc24f89c0603915be12ef6196df55fdd07cb",
+          "resultSha256": "763d142b752f6c563ba126f2d3f0c8a107793d073f828a8ac81ca3ab97747d8f",
+          "resultArtifact": "tmp/08098c37-ff5a-4207-a684-b5984d3dbf47.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "f71558da2f113ef14a68ec688be7b1c9117f25e2447b37006c4f4a5b255b3aae"
+        }
+      }
+    },
+    {
+      "id": "22a87fb6-1a30-4d0c-a6b4-bf716297a34a",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:16:40.994Z",
+        "finishedAt": "2026-10-09T21:17:28.810Z",
+        "promptSha256": "8f91369e2864c16e5c05f066687ddcb2d6bfa7916ce1fcef1d6b6d2c7f92452a",
+        "resultSha256": "12214e4fb1937832433d69c278fb27c889b05bbfafaf6e8b692f27ba1fc99f98",
+        "resultArtifact": "tmp/26eddf4f-4654-4001-9621-66a17f841902.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "01098de74d2272db638c478cb639ee502533e2dda320d12e0c86f052043306bb"
+      },
+      "generationReceipts": {
+        "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:16:40.994Z",
+          "finishedAt": "2026-10-09T21:17:28.810Z",
+          "promptSha256": "8f91369e2864c16e5c05f066687ddcb2d6bfa7916ce1fcef1d6b6d2c7f92452a",
+          "resultSha256": "12214e4fb1937832433d69c278fb27c889b05bbfafaf6e8b692f27ba1fc99f98",
+          "resultArtifact": "tmp/26eddf4f-4654-4001-9621-66a17f841902.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "01098de74d2272db638c478cb639ee502533e2dda320d12e0c86f052043306bb"
+        }
+      }
+    },
+    {
+      "id": "4d95caf9-723c-4faa-9be9-a3bd0b578e53",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "6835e31e-74ff-450d-b1cc-752477cbd404",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:17:30.532Z",
+        "finishedAt": "2026-10-09T21:18:31.587Z",
+        "promptSha256": "cebf1f47a4e033f8027f1ad55c86ba8a2d4e539797288ab2959a651aad5ffad2",
+        "resultSha256": "f78372068127b7f0f88b102d251294be33a20b9bcfe3a3ea404337662761d7a6",
+        "resultArtifact": "tmp/ebc2e9e6-d4f0-47ee-a55d-ff60869226d0.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "70d85b2e2af534f00c2841ef0e3acea64bd5fe5bdaf886dd0007b06d8ce0c1d5"
+      },
+      "generationReceipts": {
+        "6835e31e-74ff-450d-b1cc-752477cbd404": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:17:30.532Z",
+          "finishedAt": "2026-10-09T21:18:31.587Z",
+          "promptSha256": "cebf1f47a4e033f8027f1ad55c86ba8a2d4e539797288ab2959a651aad5ffad2",
+          "resultSha256": "f78372068127b7f0f88b102d251294be33a20b9bcfe3a3ea404337662761d7a6",
+          "resultArtifact": "tmp/ebc2e9e6-d4f0-47ee-a55d-ff60869226d0.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "70d85b2e2af534f00c2841ef0e3acea64bd5fe5bdaf886dd0007b06d8ce0c1d5"
+        }
+      }
+    },
+    {
+      "id": "9a95b3af-2f10-4aa9-a23e-54d7edb515e5",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "1af233ab-8ce1-4eea-8620-5cc6f6761c8e",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:18:32.929Z",
+        "finishedAt": "2026-10-09T21:19:35.224Z",
+        "promptSha256": "78def2a999b24359d70fc4558b3a45224fca9b4e20004e5756cb158528d731f9",
+        "resultSha256": "c057415f68e53a106e6fa3d15b8e3eb15b25c4fbfcf430aa1f58c2770ba6f350",
+        "resultArtifact": "tmp/c3cb3431-c83b-47be-a24f-84fa0eee97fe.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "7f229fbc0418deeb918e318b9c12400ddbc269b9a5a5b98e662b89d1936fa403"
+      },
+      "generationReceipts": {
+        "1af233ab-8ce1-4eea-8620-5cc6f6761c8e": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:18:32.929Z",
+          "finishedAt": "2026-10-09T21:19:35.224Z",
+          "promptSha256": "78def2a999b24359d70fc4558b3a45224fca9b4e20004e5756cb158528d731f9",
+          "resultSha256": "c057415f68e53a106e6fa3d15b8e3eb15b25c4fbfcf430aa1f58c2770ba6f350",
+          "resultArtifact": "tmp/c3cb3431-c83b-47be-a24f-84fa0eee97fe.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "7f229fbc0418deeb918e318b9c12400ddbc269b9a5a5b98e662b89d1936fa403"
+        }
+      }
+    },
+    {
+      "id": "0bcfa7ab-d20a-4a66-a58a-dd0e8b546a5f",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "16a8706c-4c55-42ae-9681-e21c41dcc6c5",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:19:36.087Z",
+        "finishedAt": "2026-10-09T21:21:41.781Z",
+        "promptSha256": "578e55cabba2591e300fc831f9e75f85e77f7271b2bb06339d0fa8f2eaa01d66",
+        "resultSha256": "0c7da5427463c5513c7db1d5065b708b757d4d0aadeac6ad2f93e27e112d404f",
+        "resultArtifact": "tmp/c7312577-e1d2-40ea-a592-97263cd4e334.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "f0167eaab12c50c98771d94cbf4735bbda1cb11530d1fe4844b4df28aa653471"
+      },
+      "generationReceipts": {
+        "16a8706c-4c55-42ae-9681-e21c41dcc6c5": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:19:36.087Z",
+          "finishedAt": "2026-10-09T21:21:41.781Z",
+          "promptSha256": "578e55cabba2591e300fc831f9e75f85e77f7271b2bb06339d0fa8f2eaa01d66",
+          "resultSha256": "0c7da5427463c5513c7db1d5065b708b757d4d0aadeac6ad2f93e27e112d404f",
+          "resultArtifact": "tmp/c7312577-e1d2-40ea-a592-97263cd4e334.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "f0167eaab12c50c98771d94cbf4735bbda1cb11530d1fe4844b4df28aa653471"
+        }
+      }
+    },
+    {
+      "id": "4012cc3d-ba81-4390-ad12-3217c52c0eb0",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "01a5be0c-9c9a-40d3-bb9f-5993b6e47206",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:21:42.824Z",
+        "finishedAt": "2026-10-09T21:23:07.370Z",
+        "promptSha256": "4ab440a309e44aadb70d1338d573f6aaa1e1c2d927e6d1bac297c451bf323c96",
+        "resultSha256": "43cd81bbbcfcfd98a3704d6ef39c4788af271bfa01d3ef660c7eee857dbabb26",
+        "resultArtifact": "tmp/d2adc87f-32fb-4ab6-a116-a02734562552.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "6a4d9158526486138a1a6366a4fac36911024250783139ebd838e21faed08991"
+      },
+      "generationReceipts": {
+        "01a5be0c-9c9a-40d3-bb9f-5993b6e47206": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:21:42.824Z",
+          "finishedAt": "2026-10-09T21:23:07.370Z",
+          "promptSha256": "4ab440a309e44aadb70d1338d573f6aaa1e1c2d927e6d1bac297c451bf323c96",
+          "resultSha256": "43cd81bbbcfcfd98a3704d6ef39c4788af271bfa01d3ef660c7eee857dbabb26",
+          "resultArtifact": "tmp/d2adc87f-32fb-4ab6-a116-a02734562552.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "6a4d9158526486138a1a6366a4fac36911024250783139ebd838e21faed08991"
+        }
+      }
+    },
+    {
+      "id": "badeefec-bfc8-4fd8-bf38-a9c60b26c177",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "0f2c1fd1-9adf-4a38-973b-f4a10b244b89",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:23:08.939Z",
+        "finishedAt": "2026-10-09T21:25:12.727Z",
+        "promptSha256": "02a0a9dedbb3f6e45db9ca5d00b6ca0d9f7a8af47d6e6d90cd98625df43bccde",
+        "resultSha256": "3876413b548a3ae249a7ec2948730e4eee76bd8ef2f9b6b971c4f2cae6a39088",
+        "resultArtifact": "tmp/6d7a0d42-ee8d-4125-b141-bc4239f4c776.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "d140064b8104317f087e4df182cb77289d05b426fa7d0ba273e6d9aa38946bbb"
+      },
+      "generationReceipts": {
+        "0f2c1fd1-9adf-4a38-973b-f4a10b244b89": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:23:08.939Z",
+          "finishedAt": "2026-10-09T21:25:12.727Z",
+          "promptSha256": "02a0a9dedbb3f6e45db9ca5d00b6ca0d9f7a8af47d6e6d90cd98625df43bccde",
+          "resultSha256": "3876413b548a3ae249a7ec2948730e4eee76bd8ef2f9b6b971c4f2cae6a39088",
+          "resultArtifact": "tmp/6d7a0d42-ee8d-4125-b141-bc4239f4c776.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "d140064b8104317f087e4df182cb77289d05b426fa7d0ba273e6d9aa38946bbb"
+        }
+      }
+    },
+    {
+      "id": "8a5bc2c5-c94b-4481-a307-d7455cf13184",
+      "type": "draft",
+      "status": "failed",
+      "pageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:25:16.078Z",
+        "finishedAt": "2026-10-09T21:28:03.130Z",
+        "promptSha256": "3298daf692a3bd16d5f1f94d76a09035fe4eaa0e711a0d033c754de1ec8c9eb1",
+        "resultSha256": "dd2a316f979101613fffb70e881533b128ecddbbc3d570fb56899e845e2fa190",
+        "resultArtifact": "tmp/cdce8f37-3714-4898-ad32-284e8c023b06.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "4d10fba7f32582db2a56814f709270e32f7a5d643bb56f8648f6926bb429f838"
+      },
+      "generationReceipts": {
+        "afc81d78-3f94-4484-9c4b-819841d96493": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:25:16.078Z",
+          "finishedAt": "2026-10-09T21:28:03.130Z",
+          "promptSha256": "3298daf692a3bd16d5f1f94d76a09035fe4eaa0e711a0d033c754de1ec8c9eb1",
+          "resultSha256": "dd2a316f979101613fffb70e881533b128ecddbbc3d570fb56899e845e2fa190",
+          "resultArtifact": "tmp/cdce8f37-3714-4898-ad32-284e8c023b06.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "4d10fba7f32582db2a56814f709270e32f7a5d643bb56f8648f6926bb429f838"
+        }
+      }
+    },
+    {
+      "id": "e5915b5b-8749-4824-afa0-faf80669b465",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:33:37.102Z",
+        "finishedAt": "2026-10-09T21:34:26.620Z",
+        "promptSha256": "63588433aff62f886eb499686f05690d87dcfa0900ac6c49d7c52e6aeaaa718a",
+        "resultSha256": "5f741261f8cd4ed5909f60f6ff208a134a39ec70b50bdf1cda7bf25cd281217d",
+        "resultArtifact": "tmp/217b3b0f-a487-4148-b883-1c28c7fa6735.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "4d10fba7f32582db2a56814f709270e32f7a5d643bb56f8648f6926bb429f838"
+      },
+      "generationReceipts": {
+        "afc81d78-3f94-4484-9c4b-819841d96493": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:33:37.102Z",
+          "finishedAt": "2026-10-09T21:34:26.620Z",
+          "promptSha256": "63588433aff62f886eb499686f05690d87dcfa0900ac6c49d7c52e6aeaaa718a",
+          "resultSha256": "5f741261f8cd4ed5909f60f6ff208a134a39ec70b50bdf1cda7bf25cd281217d",
+          "resultArtifact": "tmp/217b3b0f-a487-4148-b883-1c28c7fa6735.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "4d10fba7f32582db2a56814f709270e32f7a5d643bb56f8648f6926bb429f838"
+        }
+      }
+    },
+    {
+      "id": "3be9d6d4-ff4c-42ab-8b33-a37b3120f14d",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "30ca9bbf-33c0-4da6-85bd-8ba29577810e",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:34:27.717Z",
+        "finishedAt": "2026-10-09T21:36:17.512Z",
+        "promptSha256": "08aef98ad10ac0714f0a3e41f9ffaa666661870eadd08f33c07f8fe23c76dae8",
+        "resultSha256": "c5c5bda2faabc354ef27b7a0d531e7474808089331736db5f2af988528fcb973",
+        "resultArtifact": "tmp/1e45b6ef-dcb1-414c-b4be-14bde59b7db9.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "c340f4b94e3bd14bd1daf1dbdd06f1684f879f473ecc1bd9f752479ab082a2b5"
+      },
+      "generationReceipts": {
+        "30ca9bbf-33c0-4da6-85bd-8ba29577810e": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:34:27.717Z",
+          "finishedAt": "2026-10-09T21:36:17.512Z",
+          "promptSha256": "08aef98ad10ac0714f0a3e41f9ffaa666661870eadd08f33c07f8fe23c76dae8",
+          "resultSha256": "c5c5bda2faabc354ef27b7a0d531e7474808089331736db5f2af988528fcb973",
+          "resultArtifact": "tmp/1e45b6ef-dcb1-414c-b4be-14bde59b7db9.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "c340f4b94e3bd14bd1daf1dbdd06f1684f879f473ecc1bd9f752479ab082a2b5"
+        }
+      }
+    },
+    {
+      "id": "23c3546c-f7eb-4f21-a426-ff7e06624b14",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:36:18.514Z",
+        "finishedAt": "2026-10-09T21:38:29.885Z",
+        "promptSha256": "21a5f9ea9e92e8be0aca0b21334078570641f67196f85a7271ae5bedb41c8473",
+        "resultSha256": "0a5bb029269e1f213d5a5caca0fd4e0f330fa4222b68af4df718afda2e7dddc6",
+        "resultArtifact": "tmp/805d2192-d144-4ff0-8065-842a7815bd20.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "338713c743c9e8fdd88a7a66c1c259bc62a0d728c6d9fbb8cd21b3a6b058db0b"
+      },
+      "generationReceipts": {
+        "6571cefa-d9fb-464e-962b-a8753fa56056": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:36:18.514Z",
+          "finishedAt": "2026-10-09T21:38:29.885Z",
+          "promptSha256": "21a5f9ea9e92e8be0aca0b21334078570641f67196f85a7271ae5bedb41c8473",
+          "resultSha256": "0a5bb029269e1f213d5a5caca0fd4e0f330fa4222b68af4df718afda2e7dddc6",
+          "resultArtifact": "tmp/805d2192-d144-4ff0-8065-842a7815bd20.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "338713c743c9e8fdd88a7a66c1c259bc62a0d728c6d9fbb8cd21b3a6b058db0b"
+        }
+      }
+    },
+    {
+      "id": "8358b173-0cd4-4f4b-ab73-ce6a5b81d52e",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "59f6961c-4d66-421b-a1e9-184be6cedd3a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:38:31.202Z",
+        "finishedAt": "2026-10-09T21:39:21.493Z",
+        "promptSha256": "3edc4323f2a1e8985a6c8f5d17afaa98df0c98dab87e116556ffdce466e96287",
+        "resultSha256": "10258a209da93d3909ea8c400a035fa2975b19943becfac1900d94a5b4ac5987",
+        "resultArtifact": "tmp/1c1286c4-58c9-451b-a3af-6ef7982ff501.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "83b86dc145750e6be03a80b5875577e8609d2ecd255dc3bb3ec33572ff4340b2"
+      },
+      "generationReceipts": {
+        "59f6961c-4d66-421b-a1e9-184be6cedd3a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:38:31.202Z",
+          "finishedAt": "2026-10-09T21:39:21.493Z",
+          "promptSha256": "3edc4323f2a1e8985a6c8f5d17afaa98df0c98dab87e116556ffdce466e96287",
+          "resultSha256": "10258a209da93d3909ea8c400a035fa2975b19943becfac1900d94a5b4ac5987",
+          "resultArtifact": "tmp/1c1286c4-58c9-451b-a3af-6ef7982ff501.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "83b86dc145750e6be03a80b5875577e8609d2ecd255dc3bb3ec33572ff4340b2"
+        }
+      }
+    },
+    {
+      "id": "2b17ec90-707d-4419-bbb7-2d828a8ddf1d",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "f13be7d8-026a-4039-afd3-e8711995fb9c",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:39:22.820Z",
+        "finishedAt": "2026-10-09T21:41:21.358Z",
+        "promptSha256": "f579099178ba3a9058a150d2a0fd23b856a1a842322d83beaa63a843f4300ff8",
+        "resultSha256": "fa79fcc4e7193d822f6a7f2b4e26152dabe4f2c2fb0f945b16ca9895e50d4552",
+        "resultArtifact": "tmp/66734bdb-f79c-4c73-8044-49ac38d5194d.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "f96911ee8022b3cf54aee0e291944524cb22926edc1b810aad2fe08b173e413f"
+      },
+      "generationReceipts": {
+        "f13be7d8-026a-4039-afd3-e8711995fb9c": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:39:22.820Z",
+          "finishedAt": "2026-10-09T21:41:21.358Z",
+          "promptSha256": "f579099178ba3a9058a150d2a0fd23b856a1a842322d83beaa63a843f4300ff8",
+          "resultSha256": "fa79fcc4e7193d822f6a7f2b4e26152dabe4f2c2fb0f945b16ca9895e50d4552",
+          "resultArtifact": "tmp/66734bdb-f79c-4c73-8044-49ac38d5194d.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "f96911ee8022b3cf54aee0e291944524cb22926edc1b810aad2fe08b173e413f"
+        }
+      }
+    },
+    {
+      "id": "0c0a72b7-fd91-4ec2-9c63-81f2a4473fc8",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:41:23.138Z",
+        "finishedAt": "2026-10-09T21:42:07.373Z",
+        "promptSha256": "7e9706d7a4a90f5a959f87c73abcb788cc208f172a5543f8ce5e19d5e78625ee",
+        "resultSha256": "75964c0fb827481b306387ec37d6bc1644abad3086200be0ed65f7e5bc36a8ae",
+        "resultArtifact": "tmp/44e623e5-8a4a-472b-9160-1508d0325c3e.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "2a285b99d4d52c2c2fff52286c527360cb60a7fbedb42bd8242b9f94eeea8466"
+      },
+      "generationReceipts": {
+        "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:41:23.138Z",
+          "finishedAt": "2026-10-09T21:42:07.373Z",
+          "promptSha256": "7e9706d7a4a90f5a959f87c73abcb788cc208f172a5543f8ce5e19d5e78625ee",
+          "resultSha256": "75964c0fb827481b306387ec37d6bc1644abad3086200be0ed65f7e5bc36a8ae",
+          "resultArtifact": "tmp/44e623e5-8a4a-472b-9160-1508d0325c3e.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "2a285b99d4d52c2c2fff52286c527360cb60a7fbedb42bd8242b9f94eeea8466"
+        }
+      }
+    },
+    {
+      "id": "1c19ebe7-fd2b-4172-916f-e53497a0535d",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:42:08.388Z",
+        "finishedAt": "2026-10-09T21:42:54.506Z",
+        "promptSha256": "c3f890ad8b348642d2a0d860e0783a000852a8f321ce8074f21009f3acb63260",
+        "resultSha256": "24e41bd8cbac0261aaecf8a8152f79f832bb1de5f3fcf395b971722c6a6420ed",
+        "resultArtifact": "tmp/f3ef9cf0-61fc-4c98-b7f9-9d698ffe784e.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "046be901254ecdc5c565de280812211673040224b3443568bec484238044ac7e"
+      },
+      "generationReceipts": {
+        "7719e970-afd1-4a79-b67f-9ba7fe7129bd": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:42:08.388Z",
+          "finishedAt": "2026-10-09T21:42:54.506Z",
+          "promptSha256": "c3f890ad8b348642d2a0d860e0783a000852a8f321ce8074f21009f3acb63260",
+          "resultSha256": "24e41bd8cbac0261aaecf8a8152f79f832bb1de5f3fcf395b971722c6a6420ed",
+          "resultArtifact": "tmp/f3ef9cf0-61fc-4c98-b7f9-9d698ffe784e.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "046be901254ecdc5c565de280812211673040224b3443568bec484238044ac7e"
+        }
+      }
+    },
+    {
+      "id": "5f4291b2-d27f-4600-a391-51e0dde49279",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "2934dc52-45c8-429b-ba28-ce368787862d",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:42:55.864Z",
+        "finishedAt": "2026-10-09T21:44:14.159Z",
+        "promptSha256": "1d63ac0182c5a40ae6feab22ea1f5bf1e85490d247b986d602d3cb59d5275786",
+        "resultSha256": "9e3b1a69642767dee2d16a3ca87bef93de9d3a341b59e51779b66b7812b20672",
+        "resultArtifact": "tmp/11c0bda1-c129-437d-89ea-209d11c14bcc.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "3fdf5d287407bdf04c69641ed02398fcc24e1f2715d0494e2edd41d0621f53ab"
+      },
+      "generationReceipts": {
+        "2934dc52-45c8-429b-ba28-ce368787862d": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:42:55.864Z",
+          "finishedAt": "2026-10-09T21:44:14.159Z",
+          "promptSha256": "1d63ac0182c5a40ae6feab22ea1f5bf1e85490d247b986d602d3cb59d5275786",
+          "resultSha256": "9e3b1a69642767dee2d16a3ca87bef93de9d3a341b59e51779b66b7812b20672",
+          "resultArtifact": "tmp/11c0bda1-c129-437d-89ea-209d11c14bcc.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "3fdf5d287407bdf04c69641ed02398fcc24e1f2715d0494e2edd41d0621f53ab"
+        }
+      }
+    },
+    {
+      "id": "306ce009-b894-496d-8744-1e7ba8d46ae1",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:44:16.302Z",
+        "finishedAt": "2026-10-09T21:45:01.261Z",
+        "promptSha256": "64028b53d9d1b533c409a25c0c72dffdd5ba1585440f347b75d4d73102211009",
+        "resultSha256": "97635f1122290b6ec92565485c162b32af3f683b7e8a3bb039372808c86b9db0",
+        "resultArtifact": "tmp/ab0bdb8e-519c-4ee1-ae2d-84a6cde725a8.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "773204877e73bb671f9694473b0f834bd2c87c1c27a83de5099dffd7ec68c2eb"
+      },
+      "generationReceipts": {
+        "5b67edd7-e00c-436c-8b7b-759caa1107f9": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:44:16.302Z",
+          "finishedAt": "2026-10-09T21:45:01.261Z",
+          "promptSha256": "64028b53d9d1b533c409a25c0c72dffdd5ba1585440f347b75d4d73102211009",
+          "resultSha256": "97635f1122290b6ec92565485c162b32af3f683b7e8a3bb039372808c86b9db0",
+          "resultArtifact": "tmp/ab0bdb8e-519c-4ee1-ae2d-84a6cde725a8.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "773204877e73bb671f9694473b0f834bd2c87c1c27a83de5099dffd7ec68c2eb"
+        }
+      }
+    },
+    {
+      "id": "7626d699-7e5b-4bbc-ae11-094889ae6abd",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "edac36e3-f996-4513-86f2-43468d3d9f6e",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:45:02.176Z",
+        "finishedAt": "2026-10-09T21:46:05.715Z",
+        "promptSha256": "9c37e6b0c2182c8be78b8cff11e6fe7922c8f631da1f70830ea7f1ce8e509d2f",
+        "resultSha256": "c1db81dc1dd35f94de193399809a59f69a0660257c1ca804188b37e84adb94d6",
+        "resultArtifact": "tmp/f863bfc6-7861-4080-9cc8-3572857f8039.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "1fceff0e75a22b50ed7a22bbf1d75a65ae6bbe4430ff7779994a005967ae1679"
+      },
+      "generationReceipts": {
+        "edac36e3-f996-4513-86f2-43468d3d9f6e": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:45:02.176Z",
+          "finishedAt": "2026-10-09T21:46:05.715Z",
+          "promptSha256": "9c37e6b0c2182c8be78b8cff11e6fe7922c8f631da1f70830ea7f1ce8e509d2f",
+          "resultSha256": "c1db81dc1dd35f94de193399809a59f69a0660257c1ca804188b37e84adb94d6",
+          "resultArtifact": "tmp/f863bfc6-7861-4080-9cc8-3572857f8039.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "1fceff0e75a22b50ed7a22bbf1d75a65ae6bbe4430ff7779994a005967ae1679"
+        }
+      }
+    },
+    {
+      "id": "2ccea855-1cf1-4882-bf74-d80fd11c1078",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:46:09.198Z",
+        "finishedAt": "2026-10-09T21:48:50.958Z",
+        "promptSha256": "3344b3686ffae44adde8eec61534eecf0a5ac513c8b3be2440226535c246d269",
+        "resultSha256": "b5da53aceeb5ec02b33fef9946ab79734cecda42e12ddd2c28266ea17113f225",
+        "resultArtifact": "tmp/ac6acacf-73a8-446c-989e-9116bbba24e9.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "9b07ca2988116b8e7cd471647e78c8d53349063d3840605311fcc9a895efdb7e"
+      },
+      "generationReceipts": {
+        "fda5ef47-edf1-404b-9808-cc9230c5756a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:46:09.198Z",
+          "finishedAt": "2026-10-09T21:48:50.958Z",
+          "promptSha256": "3344b3686ffae44adde8eec61534eecf0a5ac513c8b3be2440226535c246d269",
+          "resultSha256": "b5da53aceeb5ec02b33fef9946ab79734cecda42e12ddd2c28266ea17113f225",
+          "resultArtifact": "tmp/ac6acacf-73a8-446c-989e-9116bbba24e9.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "9b07ca2988116b8e7cd471647e78c8d53349063d3840605311fcc9a895efdb7e"
+        }
+      }
+    },
+    {
+      "id": "b5d55457-7d3b-4e7f-9a5b-d874e8d42aa3",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:48:52.468Z",
+        "finishedAt": "2026-10-09T21:49:54.965Z",
+        "promptSha256": "cc89f231da6e20f66e9e1482a9b6e2ae5ea7e64785650ecf0929f73055fd1271",
+        "resultSha256": "cde79940d56a819b87c59ae9d0cc202ee9a3ae42d59ff81797e1ace0e0a5223d",
+        "resultArtifact": "tmp/cc93d9bc-017c-4454-b55a-4aeb3382c702.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "343dd1ec2a1c1b94eecb8d4b5e6a2097ead72d970d15c006401ae59bfb074643"
+      },
+      "generationReceipts": {
+        "de27f293-5c7a-49c9-a749-75eccb141e9f": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:48:52.468Z",
+          "finishedAt": "2026-10-09T21:49:54.965Z",
+          "promptSha256": "cc89f231da6e20f66e9e1482a9b6e2ae5ea7e64785650ecf0929f73055fd1271",
+          "resultSha256": "cde79940d56a819b87c59ae9d0cc202ee9a3ae42d59ff81797e1ace0e0a5223d",
+          "resultArtifact": "tmp/cc93d9bc-017c-4454-b55a-4aeb3382c702.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "343dd1ec2a1c1b94eecb8d4b5e6a2097ead72d970d15c006401ae59bfb074643"
+        }
+      }
+    },
+    {
+      "id": "956a190d-255c-4ee7-9dac-9752569e1580",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:49:56.322Z",
+        "finishedAt": "2026-10-09T21:50:48.554Z",
+        "promptSha256": "00190ee60119038d7945ba3314c8589ae793c55a2fd91e52cf5f827017f5d95a",
+        "resultSha256": "f402534253f998ae7a06db9da4aadca836ec052c700ef261547369f44a02dcad",
+        "resultArtifact": "tmp/c2fdb234-908d-465d-a884-422ef62c1b6e.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "8537d459db2df8d19f70c63498e7d6d7101f36488377ad0463b99cbb945321ee"
+      },
+      "generationReceipts": {
+        "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:49:56.322Z",
+          "finishedAt": "2026-10-09T21:50:48.554Z",
+          "promptSha256": "00190ee60119038d7945ba3314c8589ae793c55a2fd91e52cf5f827017f5d95a",
+          "resultSha256": "f402534253f998ae7a06db9da4aadca836ec052c700ef261547369f44a02dcad",
+          "resultArtifact": "tmp/c2fdb234-908d-465d-a884-422ef62c1b6e.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "8537d459db2df8d19f70c63498e7d6d7101f36488377ad0463b99cbb945321ee"
+        }
+      }
+    },
+    {
+      "id": "527e63fe-24c3-4b2f-9305-d52cd5ac12dc",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:50:49.882Z",
+        "finishedAt": "2026-10-09T21:51:48.895Z",
+        "promptSha256": "302e2f661b51aee76dae9c9a6460b56d003ee0b0eb29d22266fb64974fac4fb8",
+        "resultSha256": "be7a102e6ab103157b8dca9c86b426689668dc86a87388ee581e7461afe3eea8",
+        "resultArtifact": "tmp/c0e736b6-6a4d-41d0-ad51-5ccfe58b50a8.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "2f7f16ac9987d004d554db2cd7e6ac8475dcc8f987a9cacaacea491211893376"
+      },
+      "generationReceipts": {
+        "e4714d0a-666c-4b2d-b096-40e9f36b7508": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:50:49.882Z",
+          "finishedAt": "2026-10-09T21:51:48.895Z",
+          "promptSha256": "302e2f661b51aee76dae9c9a6460b56d003ee0b0eb29d22266fb64974fac4fb8",
+          "resultSha256": "be7a102e6ab103157b8dca9c86b426689668dc86a87388ee581e7461afe3eea8",
+          "resultArtifact": "tmp/c0e736b6-6a4d-41d0-ad51-5ccfe58b50a8.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "2f7f16ac9987d004d554db2cd7e6ac8475dcc8f987a9cacaacea491211893376"
+        }
+      }
+    },
+    {
+      "id": "84715aed-9a58-4279-bf68-261c0951209f",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "d2d923e8-fa60-4657-abcf-5916ca477647",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:52:00.517Z",
+        "finishedAt": "2026-10-09T21:54:20.817Z",
+        "promptSha256": "324a7338f5bcdade1a1e1b4698ea5d18bfe5d14f33b702e4e7ddb62ac977b790",
+        "resultSha256": "c4fa53be7ebfd77ae01fbd9a0a1c53a72f630a12838135185ea17b1d67ecbfb0",
+        "resultArtifact": "tmp/b00d0fdd-de5f-4ef8-8f8c-a08520535cbf.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "e9ce3e180e5f213859f36b26a13925c0c57d251a2dda99a63d69f5afcd44ccfe"
+      },
+      "generationReceipts": {
+        "d2d923e8-fa60-4657-abcf-5916ca477647": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:52:00.517Z",
+          "finishedAt": "2026-10-09T21:54:20.817Z",
+          "promptSha256": "324a7338f5bcdade1a1e1b4698ea5d18bfe5d14f33b702e4e7ddb62ac977b790",
+          "resultSha256": "c4fa53be7ebfd77ae01fbd9a0a1c53a72f630a12838135185ea17b1d67ecbfb0",
+          "resultArtifact": "tmp/b00d0fdd-de5f-4ef8-8f8c-a08520535cbf.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "e9ce3e180e5f213859f36b26a13925c0c57d251a2dda99a63d69f5afcd44ccfe"
+        }
+      }
+    },
+    {
+      "id": "194923ae-ac58-4572-958f-83d801790e6e",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:55:12.607Z",
+        "finishedAt": "2026-10-09T21:56:15.055Z",
+        "promptSha256": "cd003f2dc60be5bf6e6e78bd9b8cbb7c2e54d0e79b5afd828a9d77a5b977646b",
+        "resultSha256": "5a0223f0897ce90b2a2c81dfc142b974a7d3986046f76ae692bfb52c36ba8d60",
+        "resultArtifact": "tmp/95858964-04ce-404e-a823-3a80fe7d79c6.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "a73a722469709420e7d232116bc264e3207160a3d45bcbbb59122f3aa9b85c6a"
+      },
+      "generationReceipts": {
+        "9a0ace50-749b-48bb-b547-c623d73df32d": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:55:12.607Z",
+          "finishedAt": "2026-10-09T21:56:15.055Z",
+          "promptSha256": "cd003f2dc60be5bf6e6e78bd9b8cbb7c2e54d0e79b5afd828a9d77a5b977646b",
+          "resultSha256": "5a0223f0897ce90b2a2c81dfc142b974a7d3986046f76ae692bfb52c36ba8d60",
+          "resultArtifact": "tmp/95858964-04ce-404e-a823-3a80fe7d79c6.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "a73a722469709420e7d232116bc264e3207160a3d45bcbbb59122f3aa9b85c6a"
+        }
+      }
+    },
+    {
+      "id": "580ae144-b142-457b-b897-140226238f3f",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:56:16.981Z",
+        "finishedAt": "2026-10-09T21:57:34.278Z",
+        "promptSha256": "6aba96af6e670d97c826d5798853009f70b30d34a5d3a8af771c94e6f2185d22",
+        "resultSha256": "ed01c93f1dbb30fa6dce8314180a97ef16423617ebab4062a4a80a064b7b598a",
+        "resultArtifact": "tmp/b994bdfd-8209-46b0-af73-8018e0ee217f.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "6b498d155ef736acfe7aed8edfb2181719385f16369a98d4705a0ac8502eaf60"
+      },
+      "generationReceipts": {
+        "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:56:16.981Z",
+          "finishedAt": "2026-10-09T21:57:34.278Z",
+          "promptSha256": "6aba96af6e670d97c826d5798853009f70b30d34a5d3a8af771c94e6f2185d22",
+          "resultSha256": "ed01c93f1dbb30fa6dce8314180a97ef16423617ebab4062a4a80a064b7b598a",
+          "resultArtifact": "tmp/b994bdfd-8209-46b0-af73-8018e0ee217f.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "6b498d155ef736acfe7aed8edfb2181719385f16369a98d4705a0ac8502eaf60"
+        }
+      }
+    },
+    {
+      "id": "7853a045-99b9-4226-bbe7-daa41bbdb258",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:57:42.240Z",
+        "finishedAt": "2026-10-09T21:58:36.563Z",
+        "promptSha256": "98a4ba032ea6c240d61d2cb4df5f182b153a58ca1fd011cd2d3f3d05906eecc2",
+        "resultSha256": "6dbd52d1bbcb283c9de87fc9d46773e2eedfc0e403e75db3de59f8d7efb622b2",
+        "resultArtifact": "tmp/d58d4b44-a83a-4520-a680-b452cfcbf290.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "a94f77cb013a578076d30e4074e2495a16c03c6d36fc7e2a59a87ca7a76ce497"
+      },
+      "generationReceipts": {
+        "f2b67650-a922-4cfb-aab0-34d7f79ba662": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:57:42.240Z",
+          "finishedAt": "2026-10-09T21:58:36.563Z",
+          "promptSha256": "98a4ba032ea6c240d61d2cb4df5f182b153a58ca1fd011cd2d3f3d05906eecc2",
+          "resultSha256": "6dbd52d1bbcb283c9de87fc9d46773e2eedfc0e403e75db3de59f8d7efb622b2",
+          "resultArtifact": "tmp/d58d4b44-a83a-4520-a680-b452cfcbf290.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "a94f77cb013a578076d30e4074e2495a16c03c6d36fc7e2a59a87ca7a76ce497"
+        }
+      }
+    },
+    {
+      "id": "ca961f49-e950-4326-9e97-c2da272af564",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T21:58:38.283Z",
+        "finishedAt": "2026-10-09T22:00:51.996Z",
+        "promptSha256": "7497c889dc23ff6f101d893a89e4f72b8882d6a916c61e6ddbc137ab67b5c9f7",
+        "resultSha256": "5846a9af1f79991302b90fc8d95ea342bbe2c8506d43ed87f17cdb5d20c455c4",
+        "resultArtifact": "tmp/b67d576a-785e-498e-b20f-f14b6244e58b.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ca4c86c5bacb29849a68894cbd9f9113e0fe3e9ca2057878215d4c1e25518334"
+      },
+      "generationReceipts": {
+        "e12cce12-d605-46b1-ab5c-621f4c30f2f5": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T21:58:38.283Z",
+          "finishedAt": "2026-10-09T22:00:51.996Z",
+          "promptSha256": "7497c889dc23ff6f101d893a89e4f72b8882d6a916c61e6ddbc137ab67b5c9f7",
+          "resultSha256": "5846a9af1f79991302b90fc8d95ea342bbe2c8506d43ed87f17cdb5d20c455c4",
+          "resultArtifact": "tmp/b67d576a-785e-498e-b20f-f14b6244e58b.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ca4c86c5bacb29849a68894cbd9f9113e0fe3e9ca2057878215d4c1e25518334"
+        }
+      }
+    },
+    {
+      "id": "5f787d6c-d031-4f9b-965f-46f6162db13d",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:00:53.651Z",
+        "finishedAt": "2026-10-09T22:05:29.818Z",
+        "promptSha256": "c8ba2687bb36f076ff9c21cac5d14ec719bbded63b6b147c563050491faf389f",
+        "resultSha256": "c6e6e926c7873051e499a0a0c5e5b3b2843c54e3531787e4441081ce62c3fc83",
+        "resultArtifact": "tmp/d7c6afa5-93dd-41b9-a444-c26be1c40d4a.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "c3edccc08b4aacbfdc9a0344dddd689e1358d1743271f50473d650920d255146"
+      },
+      "generationReceipts": {
+        "bcaed80b-f2b4-4948-9665-2edab2cf8d89": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:00:53.651Z",
+          "finishedAt": "2026-10-09T22:05:29.818Z",
+          "promptSha256": "c8ba2687bb36f076ff9c21cac5d14ec719bbded63b6b147c563050491faf389f",
+          "resultSha256": "c6e6e926c7873051e499a0a0c5e5b3b2843c54e3531787e4441081ce62c3fc83",
+          "resultArtifact": "tmp/d7c6afa5-93dd-41b9-a444-c26be1c40d4a.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "c3edccc08b4aacbfdc9a0344dddd689e1358d1743271f50473d650920d255146"
+        }
+      }
+    },
+    {
+      "id": "db79a858-b295-4edd-bbb8-f8851f480977",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:05:31.567Z",
+        "finishedAt": "2026-10-09T22:06:31.409Z",
+        "promptSha256": "4f3aabd87ce3122b7bc59b95f4ce8b166d80ed7b693c7f74854ee2f01a85f45d",
+        "resultSha256": "44c17565502259d3e08215d9a207cff64fd282785b8ead23b051080f75576338",
+        "resultArtifact": "tmp/601e6a27-d6c2-48a5-90b2-a2f19dafbd63.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "f79128b916cff535d4811c21ac03ac70635d02843cb33ff6cf02275243abeef4"
+      },
+      "generationReceipts": {
+        "896cf841-8d8f-447d-bd11-57bf62639f69": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:05:31.567Z",
+          "finishedAt": "2026-10-09T22:06:31.409Z",
+          "promptSha256": "4f3aabd87ce3122b7bc59b95f4ce8b166d80ed7b693c7f74854ee2f01a85f45d",
+          "resultSha256": "44c17565502259d3e08215d9a207cff64fd282785b8ead23b051080f75576338",
+          "resultArtifact": "tmp/601e6a27-d6c2-48a5-90b2-a2f19dafbd63.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "f79128b916cff535d4811c21ac03ac70635d02843cb33ff6cf02275243abeef4"
+        }
+      }
+    },
+    {
+      "id": "921605e7-d35b-4575-9c55-0ad1ae6e75e4",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:06:33.520Z",
+        "finishedAt": "2026-10-09T22:07:25.713Z",
+        "promptSha256": "37c0f47d6b906e73a4e099c072c4d39d9fab92e8380606d57bb18390ec4cb9a2",
+        "resultSha256": "44b29c0c29c5e0b3fcb149603ceb1c06db559dfc1862ab78ee8fefbdee8cbf95",
+        "resultArtifact": "tmp/6586f9c1-c58e-4971-92d3-04aca4c24d1c.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ffc24176990d3e60bb114d0982cde12f1595b4bf4fd782f2f33673f89f2ae634"
+      },
+      "generationReceipts": {
+        "6d77f5cb-8271-4e81-b446-7a0537771b86": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:06:33.520Z",
+          "finishedAt": "2026-10-09T22:07:25.713Z",
+          "promptSha256": "37c0f47d6b906e73a4e099c072c4d39d9fab92e8380606d57bb18390ec4cb9a2",
+          "resultSha256": "44b29c0c29c5e0b3fcb149603ceb1c06db559dfc1862ab78ee8fefbdee8cbf95",
+          "resultArtifact": "tmp/6586f9c1-c58e-4971-92d3-04aca4c24d1c.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ffc24176990d3e60bb114d0982cde12f1595b4bf4fd782f2f33673f89f2ae634"
+        }
+      }
+    },
+    {
+      "id": "e0ea5f51-5969-492b-8577-9ed441f01d5b",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:07:34.758Z",
+        "finishedAt": "2026-10-09T22:08:29.700Z",
+        "promptSha256": "f9daa255cd634455e3b99ad21e0ea52766fbd1e7ae8de4ea5266d9df85234459",
+        "resultSha256": "a0a444dc55f08ab0070b0ccf17d35c71ab364bbe14483a27c38c26208a7a20bb",
+        "resultArtifact": "tmp/8730a06c-2e27-4734-8af0-4521632acc6a.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "8f2558a9485b1df26fa2231152a7d5b648b091f527631379b416668d74adb852"
+      },
+      "generationReceipts": {
+        "0436fded-d9a1-4e04-a7c4-2685fcf13eb3": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:07:34.758Z",
+          "finishedAt": "2026-10-09T22:08:29.700Z",
+          "promptSha256": "f9daa255cd634455e3b99ad21e0ea52766fbd1e7ae8de4ea5266d9df85234459",
+          "resultSha256": "a0a444dc55f08ab0070b0ccf17d35c71ab364bbe14483a27c38c26208a7a20bb",
+          "resultArtifact": "tmp/8730a06c-2e27-4734-8af0-4521632acc6a.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "8f2558a9485b1df26fa2231152a7d5b648b091f527631379b416668d74adb852"
+        }
+      }
+    },
+    {
+      "id": "24d55388-8ac6-437d-ac6c-03e2eb9b8c6f",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:08:32.411Z",
+        "finishedAt": "2026-10-09T22:09:27.759Z",
+        "promptSha256": "c5fa554e12a7514ee6bbc37523baeff4ff4b905fce959aec63e4588eccf5019d",
+        "resultSha256": "7c4f5a2a45574bce4f44e06412d7edb302ef46117de2990c72c359310f747d49",
+        "resultArtifact": "tmp/e6becb5e-260c-4e74-8ef9-480b5baf9772.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "ee86348a19f49a3214de1b5696eb82c14b4691d8148ef9424c5024b91e30aaf7"
+      },
+      "generationReceipts": {
+        "4a57ba0a-213d-4a45-8f6c-5aab8504a98a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:08:32.411Z",
+          "finishedAt": "2026-10-09T22:09:27.759Z",
+          "promptSha256": "c5fa554e12a7514ee6bbc37523baeff4ff4b905fce959aec63e4588eccf5019d",
+          "resultSha256": "7c4f5a2a45574bce4f44e06412d7edb302ef46117de2990c72c359310f747d49",
+          "resultArtifact": "tmp/e6becb5e-260c-4e74-8ef9-480b5baf9772.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "ee86348a19f49a3214de1b5696eb82c14b4691d8148ef9424c5024b91e30aaf7"
+        }
+      }
+    },
+    {
+      "id": "f4a8c362-0b24-422e-ae98-defad7eb813f",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:09:29.137Z",
+        "finishedAt": "2026-10-09T22:10:15.814Z",
+        "promptSha256": "572c139a2f943b87aed8ebdfafd7d4345a4cb73ff3ee1756704cde89c198f7aa",
+        "resultSha256": "82dfd10e1b206c0720eebfd1ef55a5b9a1fdeca4653fc7b901ba4b590d34b916",
+        "resultArtifact": "tmp/2ca23492-4d8f-4670-8c04-853bc00d2d79.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "c22f063ad83382841f6d09479519814fcc214ef50da86a0976a7f87cad483e20"
+      },
+      "generationReceipts": {
+        "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:09:29.137Z",
+          "finishedAt": "2026-10-09T22:10:15.814Z",
+          "promptSha256": "572c139a2f943b87aed8ebdfafd7d4345a4cb73ff3ee1756704cde89c198f7aa",
+          "resultSha256": "82dfd10e1b206c0720eebfd1ef55a5b9a1fdeca4653fc7b901ba4b590d34b916",
+          "resultArtifact": "tmp/2ca23492-4d8f-4670-8c04-853bc00d2d79.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "c22f063ad83382841f6d09479519814fcc214ef50da86a0976a7f87cad483e20"
+        }
+      }
+    },
+    {
+      "id": "d7d16091-c9e7-4518-8494-334e532f861a",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:10:17.425Z",
+        "finishedAt": "2026-10-09T22:11:50.065Z",
+        "promptSha256": "d5da56ee7ceb728e9f78c2a55b821fb50e325d12d285f38169bb458eb51798af",
+        "resultSha256": "be003cd4c1bb713f76cd053a0cc5832dacabe5fd9d5bfac9d1991e743f9affbe",
+        "resultArtifact": "tmp/8633d12d-0a3f-4119-ae2c-0deaecbd0ce3.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "68077804e28cea0599dc5ddee5001cd9f6c312a08a0f1969e71bba3afb3bf179"
+      },
+      "generationReceipts": {
+        "3ff05886-7dce-4f99-9077-c2f9b86121a6": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:10:17.425Z",
+          "finishedAt": "2026-10-09T22:11:50.065Z",
+          "promptSha256": "d5da56ee7ceb728e9f78c2a55b821fb50e325d12d285f38169bb458eb51798af",
+          "resultSha256": "be003cd4c1bb713f76cd053a0cc5832dacabe5fd9d5bfac9d1991e743f9affbe",
+          "resultArtifact": "tmp/8633d12d-0a3f-4119-ae2c-0deaecbd0ce3.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "68077804e28cea0599dc5ddee5001cd9f6c312a08a0f1969e71bba3afb3bf179"
+        }
+      }
+    },
+    {
+      "id": "bcb26c77-b5ee-44ab-8049-f7f0e6198251",
+      "type": "revise",
+      "status": "failed",
+      "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:11:51.287Z",
+        "finishedAt": "2026-10-09T22:13:34.817Z",
+        "promptSha256": "259bca4e0f9b11030c4282072c4a1b28bc742ad9dbb4097c1801c6b67ad0f869",
+        "resultSha256": "0912e4c910af7cfb817a53dd9ed8c5c5d00d8bc2951fa709e1a0f93d28d7a9be",
+        "resultArtifact": "tmp/5572a1b8-8dee-4e2e-8dfe-09578cb73859.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "1d5a39e5dcdd1e8b7dc63a17eac09a2fef225986b1e322e117efe41c88d60593"
+      },
+      "generationReceipts": {
+        "3e56767c-adcb-4f19-8ad4-314e68814d3b": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:11:51.287Z",
+          "finishedAt": "2026-10-09T22:13:34.817Z",
+          "promptSha256": "259bca4e0f9b11030c4282072c4a1b28bc742ad9dbb4097c1801c6b67ad0f869",
+          "resultSha256": "0912e4c910af7cfb817a53dd9ed8c5c5d00d8bc2951fa709e1a0f93d28d7a9be",
+          "resultArtifact": "tmp/5572a1b8-8dee-4e2e-8dfe-09578cb73859.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "1d5a39e5dcdd1e8b7dc63a17eac09a2fef225986b1e322e117efe41c88d60593"
+        }
+      }
+    },
+    {
+      "id": "8cf9742f-2ff2-423c-b815-b9fd594ea28c",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:16:07.250Z",
+        "finishedAt": "2026-10-09T22:17:48.563Z",
+        "promptSha256": "cd75e72be0c150a0f679e0042463a31afe03866e0acfe44050deffa18ac914ee",
+        "resultSha256": "a89760c43b2c975e395b2464f59efaf0dceff861b1064897f88e872301378636",
+        "resultArtifact": "tmp/cbfc9944-4bde-4f3e-ae4a-f7855b017ab5.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "1d5a39e5dcdd1e8b7dc63a17eac09a2fef225986b1e322e117efe41c88d60593"
+      },
+      "generationReceipts": {
+        "3e56767c-adcb-4f19-8ad4-314e68814d3b": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:16:07.250Z",
+          "finishedAt": "2026-10-09T22:17:48.563Z",
+          "promptSha256": "cd75e72be0c150a0f679e0042463a31afe03866e0acfe44050deffa18ac914ee",
+          "resultSha256": "a89760c43b2c975e395b2464f59efaf0dceff861b1064897f88e872301378636",
+          "resultArtifact": "tmp/cbfc9944-4bde-4f3e-ae4a-f7855b017ab5.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "1d5a39e5dcdd1e8b7dc63a17eac09a2fef225986b1e322e117efe41c88d60593"
+        }
+      }
+    },
+    {
+      "id": "71be0dde-459d-46c8-abf6-5f94e1511935",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:17:50.111Z",
+        "finishedAt": "2026-10-09T22:18:59.987Z",
+        "promptSha256": "8cc9fdc074771a5022ae6dc392205a056a09571ac3cea56617cd565bf88f1c58",
+        "resultSha256": "704ad8bb3410e8adffce4dc1f8aa54c4af0b42c04b302eb0f030a266f6f87cc0",
+        "resultArtifact": "tmp/9f719a22-044e-4267-9e54-ebd00a4e6dee.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "1a5a4b9862140047f615b5b62cfcbbbe63114eb1d2378ead93da09eb6b69df87"
+      },
+      "generationReceipts": {
+        "9b70fd84-c782-469c-99ca-1bdef8a50775": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:17:50.111Z",
+          "finishedAt": "2026-10-09T22:18:59.987Z",
+          "promptSha256": "8cc9fdc074771a5022ae6dc392205a056a09571ac3cea56617cd565bf88f1c58",
+          "resultSha256": "704ad8bb3410e8adffce4dc1f8aa54c4af0b42c04b302eb0f030a266f6f87cc0",
+          "resultArtifact": "tmp/9f719a22-044e-4267-9e54-ebd00a4e6dee.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "1a5a4b9862140047f615b5b62cfcbbbe63114eb1d2378ead93da09eb6b69df87"
+        }
+      }
+    },
+    {
+      "id": "b5295614-512b-4ffb-9f43-0eba6db8bc72",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:19:01.498Z",
+        "finishedAt": "2026-10-09T22:19:52.640Z",
+        "promptSha256": "4229ca67b7eb6711644cb791bc338b4b0d8d6380e13f36faa28cbe2f8a63f396",
+        "resultSha256": "e44a151db1d6f86d71b0ebd07486d8ddbd65554b4674d06944bd5b202b9c2cce",
+        "resultArtifact": "tmp/ea35f2a7-6b93-4155-8b4e-68e1d3e7af7a.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "f71558da2f113ef14a68ec688be7b1c9117f25e2447b37006c4f4a5b255b3aae"
+      },
+      "generationReceipts": {
+        "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:19:01.498Z",
+          "finishedAt": "2026-10-09T22:19:52.640Z",
+          "promptSha256": "4229ca67b7eb6711644cb791bc338b4b0d8d6380e13f36faa28cbe2f8a63f396",
+          "resultSha256": "e44a151db1d6f86d71b0ebd07486d8ddbd65554b4674d06944bd5b202b9c2cce",
+          "resultArtifact": "tmp/ea35f2a7-6b93-4155-8b4e-68e1d3e7af7a.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "f71558da2f113ef14a68ec688be7b1c9117f25e2447b37006c4f4a5b255b3aae"
+        }
+      }
+    },
+    {
+      "id": "d1ad4c3f-5b97-448d-8c46-8cc1e6503270",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:19:53.759Z",
+        "finishedAt": "2026-10-09T22:20:24.882Z",
+        "promptSha256": "35032d76fd9e323f05ff0527d2b5ed13ca520bd80b784440c8d02edd472671a2",
+        "resultSha256": "d993f2fab975fb1d4003ddead08b90f67aa9cf2d54db8466d8ae29994ece926b",
+        "resultArtifact": "tmp/e5d9ced5-f608-402c-8d02-338abdc6f7f6.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "01098de74d2272db638c478cb639ee502533e2dda320d12e0c86f052043306bb"
+      },
+      "generationReceipts": {
+        "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:19:53.759Z",
+          "finishedAt": "2026-10-09T22:20:24.882Z",
+          "promptSha256": "35032d76fd9e323f05ff0527d2b5ed13ca520bd80b784440c8d02edd472671a2",
+          "resultSha256": "d993f2fab975fb1d4003ddead08b90f67aa9cf2d54db8466d8ae29994ece926b",
+          "resultArtifact": "tmp/e5d9ced5-f608-402c-8d02-338abdc6f7f6.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "01098de74d2272db638c478cb639ee502533e2dda320d12e0c86f052043306bb"
+        }
+      }
+    },
+    {
+      "id": "3fa6d38d-bc0d-4daf-83bf-81462231a6de",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:20:26.309Z",
+        "finishedAt": "2026-10-09T22:21:14.361Z",
+        "promptSha256": "216298dd77963abcfa6ffec8121ff537c20758192efc90105bebac7532af66b1",
+        "resultSha256": "8d29b7bb680f6665d3de2b9a871dc474e4c6c389fe07b4f1a74ffcdb1e127e00",
+        "resultArtifact": "tmp/2d75d594-a8bc-4ed7-aa74-2051064b233e.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "338713c743c9e8fdd88a7a66c1c259bc62a0d728c6d9fbb8cd21b3a6b058db0b"
+      },
+      "generationReceipts": {
+        "6571cefa-d9fb-464e-962b-a8753fa56056": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:20:26.309Z",
+          "finishedAt": "2026-10-09T22:21:14.361Z",
+          "promptSha256": "216298dd77963abcfa6ffec8121ff537c20758192efc90105bebac7532af66b1",
+          "resultSha256": "8d29b7bb680f6665d3de2b9a871dc474e4c6c389fe07b4f1a74ffcdb1e127e00",
+          "resultArtifact": "tmp/2d75d594-a8bc-4ed7-aa74-2051064b233e.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "338713c743c9e8fdd88a7a66c1c259bc62a0d728c6d9fbb8cd21b3a6b058db0b"
+        }
+      }
+    },
+    {
+      "id": "6619dd5f-28d7-435e-ace1-1614a256c994",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:21:15.661Z",
+        "finishedAt": "2026-10-09T22:23:04.828Z",
+        "promptSha256": "2f1fdc6eae1b207224418ec2b738167666c65bb96e8a940481a74216de63058f",
+        "resultSha256": "ca15bcc461dadd9d328309642ffc5a7c88d150cc67e557a2261318c1cf235745",
+        "resultArtifact": "tmp/052082b2-5a2f-4c34-8e5b-35bd5e327c53.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "2a285b99d4d52c2c2fff52286c527360cb60a7fbedb42bd8242b9f94eeea8466"
+      },
+      "generationReceipts": {
+        "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:21:15.661Z",
+          "finishedAt": "2026-10-09T22:23:04.828Z",
+          "promptSha256": "2f1fdc6eae1b207224418ec2b738167666c65bb96e8a940481a74216de63058f",
+          "resultSha256": "ca15bcc461dadd9d328309642ffc5a7c88d150cc67e557a2261318c1cf235745",
+          "resultArtifact": "tmp/052082b2-5a2f-4c34-8e5b-35bd5e327c53.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "2a285b99d4d52c2c2fff52286c527360cb60a7fbedb42bd8242b9f94eeea8466"
+        }
+      }
+    },
+    {
+      "id": "6b9c87a9-d002-42fb-884e-6d19d56be102",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:23:05.895Z",
+        "finishedAt": "2026-10-09T22:25:08.639Z",
+        "promptSha256": "d1d26acbb94476b4410f3e6a1c4b7e3c3969e392a7bede292cac223a46b02e95",
+        "resultSha256": "9930b1c0e2ba7d7a1ae88bbf52e11ae82691203863a9aceb1ed630a8262f2aa1",
+        "resultArtifact": "tmp/7c3dfed3-bfbe-4703-8add-76a3edf21e7f.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "046be901254ecdc5c565de280812211673040224b3443568bec484238044ac7e"
+      },
+      "generationReceipts": {
+        "7719e970-afd1-4a79-b67f-9ba7fe7129bd": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:23:05.895Z",
+          "finishedAt": "2026-10-09T22:25:08.639Z",
+          "promptSha256": "d1d26acbb94476b4410f3e6a1c4b7e3c3969e392a7bede292cac223a46b02e95",
+          "resultSha256": "9930b1c0e2ba7d7a1ae88bbf52e11ae82691203863a9aceb1ed630a8262f2aa1",
+          "resultArtifact": "tmp/7c3dfed3-bfbe-4703-8add-76a3edf21e7f.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "046be901254ecdc5c565de280812211673040224b3443568bec484238044ac7e"
+        }
+      }
+    },
+    {
+      "id": "100858aa-35d2-43f7-b44f-b14134ed42e4",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:25:10.593Z",
+        "finishedAt": "2026-10-09T22:26:01.184Z",
+        "promptSha256": "74d27be9f2cda2649208d287ca73ccc18a1d26182016054b27de04c29a370108",
+        "resultSha256": "f87104c2d371a59eea1e5694f994d2c34aab9bde9f47806d88aa3d8c3930c567",
+        "resultArtifact": "tmp/4d890f7d-6420-44d9-89af-5722f12ab8df.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "773204877e73bb671f9694473b0f834bd2c87c1c27a83de5099dffd7ec68c2eb"
+      },
+      "generationReceipts": {
+        "5b67edd7-e00c-436c-8b7b-759caa1107f9": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:25:10.593Z",
+          "finishedAt": "2026-10-09T22:26:01.184Z",
+          "promptSha256": "74d27be9f2cda2649208d287ca73ccc18a1d26182016054b27de04c29a370108",
+          "resultSha256": "f87104c2d371a59eea1e5694f994d2c34aab9bde9f47806d88aa3d8c3930c567",
+          "resultArtifact": "tmp/4d890f7d-6420-44d9-89af-5722f12ab8df.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "773204877e73bb671f9694473b0f834bd2c87c1c27a83de5099dffd7ec68c2eb"
+        }
+      }
+    },
+    {
+      "id": "7eb2ec94-c684-4b52-a8b8-5edc8fee6af4",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:26:02.820Z",
+        "finishedAt": "2026-10-09T22:26:51.904Z",
+        "promptSha256": "f5549e69d5af9cf9c5f1b67f17ac6a09782fa49f872d73871c109db0630822f4",
+        "resultSha256": "4581ab663b511c48f4acbe1bee4885f736e5d654cdc31155c97729e9696f080b",
+        "resultArtifact": "tmp/4de0c86f-fbbe-4932-9850-3ea3450f6843.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "9b07ca2988116b8e7cd471647e78c8d53349063d3840605311fcc9a895efdb7e"
+      },
+      "generationReceipts": {
+        "fda5ef47-edf1-404b-9808-cc9230c5756a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:26:02.820Z",
+          "finishedAt": "2026-10-09T22:26:51.904Z",
+          "promptSha256": "f5549e69d5af9cf9c5f1b67f17ac6a09782fa49f872d73871c109db0630822f4",
+          "resultSha256": "4581ab663b511c48f4acbe1bee4885f736e5d654cdc31155c97729e9696f080b",
+          "resultArtifact": "tmp/4de0c86f-fbbe-4932-9850-3ea3450f6843.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "9b07ca2988116b8e7cd471647e78c8d53349063d3840605311fcc9a895efdb7e"
+        }
+      }
+    },
+    {
+      "id": "4de489af-5112-4166-aebd-b7c455a3b8cb",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:26:53.179Z",
+        "finishedAt": "2026-10-09T22:27:39.907Z",
+        "promptSha256": "cff0763210fa1f85f13e71413f4a1eb00313e6a1f660f09faad59d44073ced06",
+        "resultSha256": "e151c20ba084562ea10d5a64e3c50f8f9c48b7641760791da730cb6a2300612d",
+        "resultArtifact": "tmp/3b7a34dd-9e4e-4ef4-8f5b-23df88c22a9c.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "343dd1ec2a1c1b94eecb8d4b5e6a2097ead72d970d15c006401ae59bfb074643"
+      },
+      "generationReceipts": {
+        "de27f293-5c7a-49c9-a749-75eccb141e9f": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:26:53.179Z",
+          "finishedAt": "2026-10-09T22:27:39.907Z",
+          "promptSha256": "cff0763210fa1f85f13e71413f4a1eb00313e6a1f660f09faad59d44073ced06",
+          "resultSha256": "e151c20ba084562ea10d5a64e3c50f8f9c48b7641760791da730cb6a2300612d",
+          "resultArtifact": "tmp/3b7a34dd-9e4e-4ef4-8f5b-23df88c22a9c.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "343dd1ec2a1c1b94eecb8d4b5e6a2097ead72d970d15c006401ae59bfb074643"
+        }
+      }
+    },
+    {
+      "id": "b8511847-9bb5-4c0d-85d3-2ad46820de8e",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:27:41.619Z",
+        "finishedAt": "2026-10-09T22:28:25.021Z",
+        "promptSha256": "4952b511b85a227372b1847e4cfb50909ba49497aea4e76f0f47e5d457d0e15f",
+        "resultSha256": "d24ccbb7d44de4f2b526b922b1c5846043062bf317f02cd049c55a56bd7a9ac7",
+        "resultArtifact": "tmp/427412ca-836c-40b1-94c9-a58d2f5de1dd.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "8537d459db2df8d19f70c63498e7d6d7101f36488377ad0463b99cbb945321ee"
+      },
+      "generationReceipts": {
+        "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:27:41.619Z",
+          "finishedAt": "2026-10-09T22:28:25.021Z",
+          "promptSha256": "4952b511b85a227372b1847e4cfb50909ba49497aea4e76f0f47e5d457d0e15f",
+          "resultSha256": "d24ccbb7d44de4f2b526b922b1c5846043062bf317f02cd049c55a56bd7a9ac7",
+          "resultArtifact": "tmp/427412ca-836c-40b1-94c9-a58d2f5de1dd.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "8537d459db2df8d19f70c63498e7d6d7101f36488377ad0463b99cbb945321ee"
+        }
+      }
+    },
+    {
+      "id": "746d5ce5-3306-4173-90d5-af7233cd0c0f",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-09T22:28:26.190Z",
+        "finishedAt": "2026-10-09T22:30:17.253Z",
+        "promptSha256": "06c1ef2b5f5be8ddd5965e76d9ce7ba6df7ab5cb8e6f8b398ff6b9f68e79b39c",
+        "resultSha256": "4f40cb2bdc19a52306785f285da9d8bc5fc1b0ae50ca86a50f2363e6755385c5",
+        "resultArtifact": "tmp/c1059007-df9b-4106-bc0d-977c07872f7d.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "2f7f16ac9987d004d554db2cd7e6ac8475dcc8f987a9cacaacea491211893376"
+      },
+      "generationReceipts": {
+        "e4714d0a-666c-4b2d-b096-40e9f36b7508": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-09T22:28:26.190Z",
+          "finishedAt": "2026-10-09T22:30:17.253Z",
+          "promptSha256": "06c1ef2b5f5be8ddd5965e76d9ce7ba6df7ab5cb8e6f8b398ff6b9f68e79b39c",
+          "resultSha256": "4f40cb2bdc19a52306785f285da9d8bc5fc1b0ae50ca86a50f2363e6755385c5",
+          "resultArtifact": "tmp/c1059007-df9b-4106-bc0d-977c07872f7d.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "2f7f16ac9987d004d554db2cd7e6ac8475dcc8f987a9cacaacea491211893376"
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "The producer checkout is dirty and owned by another chat. Its HEAD alone does not identify the code used for generation. These current file hashes are observations, not retroactive hashes at each job start. Historical prompt/result hashes and job fingerprints remain the primary execution evidence. No foreign checkout, core or skill files were modified by this content batch."
+  ]
+}

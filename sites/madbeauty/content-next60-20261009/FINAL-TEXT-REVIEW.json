@@ -1,0 +1,606 @@
+{
+  "state": "PASS_ACTUAL60_FULL_FINAL_TEXT_REVIEWS",
+  "pages": [
+    {
+      "planId": "AV-gidas",
+      "usefulness": "Complete final body read: actual site/method/material/specification/inclusion criteria, same-site offer comparison and written aftercare task.",
+      "verifiedClaims": "APP reusable-gun position and initial-jewellery documentation scoped, current NVSC hygiene-pass and sterile-pack checks. Actual dated JoMi included plain titanium versus ODA inclusion unknown. General professional referral only, no NHS home-treatment protocol or named symptoms/medications.",
+      "remainingCheckResolution": "JoMi/ODA and NHS actually re-retrieved and read in SOURCES-RECHECK.json; inclusion statements unchanged and examples retain actualOct9 historical date, no futureOct30 check invented. NHS still serves old review date: use only generic professional referral, no claimed current medical review. Original photo actually inspected/imported; remaining media note closes only with actual desktop/mobile and sheet evidence, never metadata alone.",
+      "pageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+      "reviewedAt": "2026-10-09T22:32:15.472Z",
+      "revisionHash": "60006cee58e1ffdc70b7984d34fc8283f820a4cd781d3c42e5949d5896b80483",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "ES-gidas",
+      "usefulness": "Complete final body read: surface cosmetic versus skin penetration/injected material/energy mechanism, licence path and consultation scope.",
+      "verifiedClaims": "Actual FDA microneedle/RF/filler risks as US context; NVSC/VASPVT Lithuanian beauty/health boundary conditional on actual service, no unnamed device classified or credentials fabricated.",
+      "remainingCheckResolution": "Only stale no-media note remains: actual original inspected and imported; responsive/crop closure requires actual render and pixel evidence. No personal clinical plan or human expert signature asserted.",
+      "pageId": "10b76a0c-c469-46dd-9059-679e0c3cb88e",
+      "reviewedAt": "2026-10-09T22:32:15.473Z",
+      "revisionHash": "5519ee0707bb8ba3e285fc552dd754b32b14c00e024b32c524a8fbc275ab96c1",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "FX-gidas",
+      "usefulness": "Complete final body read: individual/group organization versus Pilates/yoga activity; three options and beginner example.",
+      "verifiedClaims": "NHS balance/posture/strength/flexibility and specific45-minute beginner video scope; NCCIH yoga variety, no clinical superiority or all-class duration claim.",
+      "remainingCheckResolution": "No outstanding fact assertions; native Luna revision and source notes are real. Original medium and actual responsive pixel gates remain separately required before release; planned catalogue extensions legitimately deferred.",
+      "pageId": "9a0ace50-749b-48bb-b547-c623d73df32d",
+      "reviewedAt": "2026-10-09T22:32:15.474Z",
+      "revisionHash": "7f9724b3b10cb6c59542e6d0b7d0cf1b2f1eb0b1ea53474be610a31d55737805",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "GY-gidas",
+      "usefulness": "Complete final body read: dog/cat grooming/bathing/nails/consultation tasks, included work and meaningful matting/discomfort example.",
+      "verifiedClaims": "Actual RSPCA dog stress/health discussion and cat matting/avoid scissors guidance qualified as UK recommendations, no LT provider credential or veterinary diagnosis claimed.",
+      "remainingCheckResolution": "Stale no-media note resolves solely through actual original/import/crop evidence. Planned animal-service extension is deferred, no local provider/booking availability fabricated.",
+      "pageId": "9233c7ed-52c6-4ee9-9835-4005db2d5781",
+      "reviewedAt": "2026-10-09T22:32:15.474Z",
+      "revisionHash": "e236573d6f4f8ed503a8295d532ccc3cd610ee9c163a9e62b6c96f3e85678960",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "IG-gidas",
+      "usefulness": "Complete final body read: DHA cosmetic colour versus UV exposure, concrete event choice and service/protection criteria.",
+      "verifiedClaims": "FDA surface amino-acid reaction/colour notSPF and spray eye/mucosa/inhalation scope; NVSC current2026 UV risk and18+ rule, no safe exposure schedule or universal suitability.",
+      "remainingCheckResolution": "No residual factCheck. Original wrong shower scene was actually replaced by inspected HVLP spray-tent illustration; final crop/alt require actual render evidence, no real procedure proof claimed.",
+      "pageId": "6a9450cb-725b-4077-9846-f6d8a9af26ef",
+      "reviewedAt": "2026-10-09T22:32:15.474Z",
+      "revisionHash": "bcef381ffcec30539a92bd672f868bfc3c804b240eac02ad795f1a5ccc3a235d",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "KP-gidas",
+      "usefulness": "Complete final body read: cosmetic-care/ritual/contour goal separated from zone/method/device, concrete back-scrub versus wrap example and offer criteria.",
+      "verifiedClaims": "FDA noninvasive contouring not weight-loss/obesity treatment, technology-specificlimits; no wrap detox or biological efficacy claim. Current NVSC/VASPVT activity/qualification boundary conditional on actual service, no unnamed-device classification.",
+      "remainingCheckResolution": "Only stale image note: original actually inspected/imported; remaining responsive and crop note closes only on real browser and pixel evidence. Live national body-care hub verified, no city supply claimed.",
+      "pageId": "d10b1e15-03c8-4866-ab91-94ec7c5135fc",
+      "reviewedAt": "2026-10-09T22:35:34.068Z",
+      "revisionHash": "cb4d5f285fea5a35703177d10139a888b39fb09428aaf8f5d7c0bebacfa5b323",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "KT-gidas",
+      "usefulness": "Complete final body read: consultation job versus individual/group organization, NHS assessment/movement/manual elements and matched-format example.",
+      "verifiedClaims": "NHS physiotherapy scope qualified as possible individual service components, not all-session protocol; VASPVT institution/professional/licence/address checks conditional on actual health service, no programme prescribed.",
+      "remainingCheckResolution": "Stale missing-media note resolves through actual original/import and desktop/mobile evidence. Planned physiotherapy catalogue extension is genuinely deferred, no missing target fabricated.",
+      "pageId": "e867d6e8-db21-432f-b4a8-209d7060be4c",
+      "reviewedAt": "2026-10-09T22:35:34.073Z",
+      "revisionHash": "730dbf4d54e892cc793dff87a6ce25f3da86e78a4b30b9da58c338f91b4b84b1",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "LZ-gidas",
+      "usefulness": "Complete final body read: realistic growth reduction factors, same-zone/unit offer comparison and illustrative two-armpit scope.",
+      "verifiedClaims": "AAD hair/skin/body/device factors, maintenance possibility and all-room eye protection; no fixed course/interval/permanent guarantee. Actual LT service classification left conditional, licence path not US rule imported.",
+      "remainingCheckResolution": "Only stale image note: actual original/import and rendered pixel gates required. Live laser national route separately verified; no actual local booking promise.",
+      "pageId": "538a8972-bb1f-4dd2-938a-571d4cc6b454",
+      "reviewedAt": "2026-10-09T22:35:34.085Z",
+      "revisionHash": "add8430b8478ae7c1d65db603f79f90ed754a681312b3173ffbce48de2203f2b",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "MS-gidas",
+      "usefulness": "Complete final body read: goal/zone/components/time/competence axes, actual two-menu facial-versus-body scope, comfort and meaningful back/shoulder example.",
+      "verifiedClaims": "Actually rechecked NVSC S28/S29 nontherapeutic-beauty versus healthcare boundary, NCCIH limited/condition-specific evidence. Actual Oct9 Prisilietimo/ThePalm menu scope retained as historical examples, not current provider supply or treatment claim.",
+      "remainingCheckResolution": "S28/S29 really re-retrieved/read Oct10 in SOURCES-RECHECK, no invented Nov8 source check; current review accepts bounded general rule, future source freshness is a separate maintenance task. Original/photo crop requires actual render/pixel evidence; no human specialist signature fabricated.",
+      "pageId": "61455054-263f-416a-8d1b-a993e4949753",
+      "reviewedAt": "2026-10-09T22:35:34.086Z",
+      "revisionHash": "b3968d0e19cda8196ef6e1a2dfa900f99214615247c803032a0e2fb75bbb56a8",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "OD-gidas",
+      "usefulness": "Complete final body read: hygiene/whitening/consultation tasks, actual component/price comparison and orthodontic-purpose distinction.",
+      "verifiedClaims": "Dentara ultrasound/brush60–70,combinedAirflow80,separateAirflow50 EUR with actualOct10 reading date; no duration invented. NHS fillings/crowns do not whiten; LSMU bite/alignment profile not complete legal competence list. Actual separate provider/institution checks.",
+      "remainingCheckResolution": "No residual factCheck. Sources date correction actually applied; planned dentistry target deferred. Actual original and responsive pixel evidence still required before release.",
+      "pageId": "c501f0d0-efd9-4d9d-b57d-dc4ac18a1c0c",
+      "reviewedAt": "2026-10-09T22:36:32.502Z",
+      "revisionHash": "9941554f49372d9892afffcd90656b87372d837b9a76b0c53a37c52e9c09a7dc",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PM-gidas",
+      "usefulness": "Complete final body read: deposited pigment versus removable makeup, longevity/changeability choice, existing-pigment task and zone/scope criteria.",
+      "verifiedClaims": "FDA pigment/reaction/contamination/changeability as US information, current NVSC hygiene/activity boundary qualified. Treatwell correctly described as catalogue formats, not one provider or market standard; no healing duration/result guarantee.",
+      "remainingCheckResolution": "Only stale no-media note: actual original/import/crop gates are separate and close only with observed pixels. Live permanent-makeup consultation route independently verified.",
+      "pageId": "41fbe0dc-0a2e-49c4-a74b-784f7cdab2a6",
+      "reviewedAt": "2026-10-09T22:36:32.504Z",
+      "revisionHash": "d676947a8cf47434e010588def896c8f68fb5fed6a3d00d7c0fa1962e3bf5683",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PS-gidas",
+      "usefulness": "Complete final body read: professional/process/participants axes and useful overlapping-offer plus individual/couple examples.",
+      "verifiedClaims": "VASPVT medical-psychology licence scope specifically limited, not all psychologists/psychotherapists; NHS individual/couple/family/remote formats not LT universal standard. No diagnosis, meeting-count promise or guaranteed outcome.",
+      "remainingCheckResolution": "No residual factCheck; grammar corrected to pas konkretų teikėją. Planned mental-health catalogue family genuinely deferred; actual original and rendered pixel gates remain required.",
+      "pageId": "2d6f6349-3fe1-4a91-abc0-3ae848a336a3",
+      "reviewedAt": "2026-10-09T22:36:32.504Z",
+      "revisionHash": "19e917d592436c934982c7e68c436406570b10e3b3e8e93b00c4e3ec58048cd8",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PX-gidas",
+      "usefulness": "Complete final body read: explicit Great Lengths keratin versus tape principles, length/density/weight/placement/care/removal criteria and worked density-only choice.",
+      "verifiedClaims": "Specific PreBonded andGLTapes manufacturer systems, AAD long-term traction risks qualified, trained professional removal recommendation not LT legal credential. No damage-free guarantee, universal interval or home removal recipe.",
+      "remainingCheckResolution": "No residual factCheck; description now accurately concise. Actual original/import/crop evidence and real national extension route checked separately, no client result or local supply claimed.",
+      "pageId": "f2b67650-a922-4cfb-aab0-34d7f79ba662",
+      "reviewedAt": "2026-10-09T22:36:32.505Z",
+      "revisionHash": "3b344e1be1562cc0cbca8d2e7aedbe018d27f43813594b2bd407a08f59357839",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "RP-gidas",
+      "usefulness": "Complete final body read: skin/nail/paraffin package components, hand/foot matrix, no-colour illustrative choice and product-specific aftercare card.",
+      "verifiedClaims": "Treatwell paraffin category is one local catalogue observation, not all-market standard. AAD changed nail should not be masked with artificial coating; no heat/time/home protocol or biological repair claim.",
+      "remainingCheckResolution": "Only stale image note; original actually inspected and imported. Actual responsive crop/pixel evidence must pass before clearing note; verified national hand/foot SPA routes match article scope.",
+      "pageId": "4b0a4778-7bed-4ff9-b793-1ac973cd579a",
+      "reviewedAt": "2026-10-09T22:36:32.505Z",
+      "revisionHash": "f1961852e67211106e0e7785988ff6dabcc8cdc121f2e2a5a4164e73b34f75c4",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "SP-gidas",
+      "usefulness": "Complete final body read: ritual components versus steam-space use versus privacy, real same-menu comparison and body/face/product-scope card.",
+      "verifiedClaims": "SPA Vilnius Oct10 steam30min20,Kese scrub/body application40min60 andnamedritual60min90 EUR. Actual component label corrected, no oil massage invented. NCCIH limited aroma evidence, no heat/dose/clinical or all-SPA protocol.",
+      "remainingCheckResolution": "No residual factCheck; S101 actual rendered source and component correction recorded. Original and responsive pixel checks required; verified national ritual/space routes not local provider availability.",
+      "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "reviewedAt": "2026-10-09T22:40:25.580Z",
+      "revisionHash": "bf4272db4724ad0d9c8c98e683a0bf5852272a0aaa9366da14ea012d5229f7d1",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "SV-gidas",
+      "usefulness": "Complete final body read: attention/breath/sound activities versus session conditions, meaningful guided-versus-listening choice and participation control.",
+      "verifiedClaims": "NCCIH meditation/relaxation variety and preliminary/limited evidence; no named breathing protocol, disease treatment or health-care replacement promised.",
+      "remainingCheckResolution": "Only stale missing-image note: original actually inspected/imported, closure needs actual rendered pixel evidence. Planned well-being extension genuinely deferred, not made-up city route.",
+      "pageId": "ce59ecd5-3146-4b3e-94ca-03bf1b7665ce",
+      "reviewedAt": "2026-10-09T22:40:25.582Z",
+      "revisionHash": "4e856d6d8d638f1e6c9fb7254e386212204964c468aa3f3e6d2f0b8439550513",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "TT-gidas",
+      "usefulness": "Complete final body read: motif/place/scale draft, sketch/session/whole-work unit and concrete differing-offer example.",
+      "verifiedClaims": "Current NVSC tattoo hygiene-pass and sterile-package-opening scope, FDA pigment contamination/reaction and removal limits as US evidence. No actual provider verification, fixed healing plan or historical2022 source as current legal authority.",
+      "remainingCheckResolution": "No residual factCheck. Original fictional sketch/consultation photo and real responsive gates separately required; exact national new-tattoo information target verified.",
+      "pageId": "bcaed80b-f2b4-4948-9665-2edab2cf8d89",
+      "reviewedAt": "2026-10-09T22:40:25.582Z",
+      "revisionHash": "16f6945e70469f1d8b7279b97dc373ff1b2a9c41b1ddd9b5ea881cb5e64230d6",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "VP-gidas",
+      "usefulness": "Complete final body read: cosmetic objective versus medical diagnosis, five service layers, actual matching-menu comparison and eye-zone/male-task scope.",
+      "verifiedClaims": "ActualOct9 Kosmetologija60m59/90m69/90m85 versusVIP90m79/ultra90m69/acid90m69, not offpeak63.20 unrelated offer. CurrentNVSC licence/hygiene boundary conditional, no cosmetic-treatment efficacy or personal diagnosis.",
+      "remainingCheckResolution": "S27/S38 actually re-fetched/read Oct10 in SOURCES-RECHECK, unchanged units; examples keep actualOct9 historical date, not futureNov16 prices. Original and responsive crop/pixel gates required. Real face-care root verified.",
+      "pageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+      "reviewedAt": "2026-10-09T22:40:25.582Z",
+      "revisionHash": "bcf7494be5c02226a756dc6623b2bc47661e32c6b152368058e2bbe4f6fa1523",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "usefulness": "Complete final body read: lighting/white balance/consistent comparisons, original-versus-retouch limits and concrete consent/use-channel discussion template.",
+      "verifiedClaims": "Adobe grey-card/white-balance guidance not laboratory measurement; VDAI2023 identifiable-body-image case specifically qualified, not universal legal consent template. No unowned images or generated image as real client work.",
+      "remainingCheckResolution": "Only stale media note closes on original/import/real rendered pixels; fictional photography-process illustration is not a client/gallery result. No provider-commerce CTA needed for this editorial job.",
+      "pageId": "4deba947-1bc9-4c48-90da-62b48a9c7ece",
+      "reviewedAt": "2026-10-09T22:40:25.582Z",
+      "revisionHash": "ae6689160e008a3a5ae94603907095c125186c73e34f052c3cc43086d3bdc527",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "usefulness": "Complete final body read: matching site/system/one-or-two-ears/inclusion/time, unknown final cost and separate stem-change versus control visit.",
+      "verifiedClaims": "ActualOct9 JoMi lobe20/helixconch35/industrial40 includedplainTi, stemchange10; ODA Studex19/30 versusInverness25/40 and15min, inclusion unknown. APP material/specification scope, not hypoallergen guarantee.",
+      "remainingCheckResolution": "JoMi/ODA actually re-fetched/read Oct10, unchanged examples keepOct9 historical date and no futureNov21 check invented. Image note closes only with real original/import/crop evidence, no fake future validity.",
+      "pageId": "d3d96b9b-5fc2-422a-9c2c-5dc29abe8572",
+      "reviewedAt": "2026-10-09T22:42:36.397Z",
+      "revisionHash": "1500dae5738b9437daf513afdb705728b839542039fd607311235a9255c1f97f",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "usefulness": "Complete final body read: equal zone/method/component scope, service minutes versus reservation, reusable unit/package comparison card.",
+      "verifiedClaims": "ActualOct10 SPA menu Kese scrub/body application40min60 versus namedritual60min90 EUR, not same-work minute tariff or national average; actual body-application correction present twice.",
+      "remainingCheckResolution": "No residual factCheck; source rendered menu and original pixel observations real. Native public body unchanged after final links; actual responsive evidence still required before approval.",
+      "pageId": "896cf841-8d8f-447d-bd11-57bf62639f69",
+      "reviewedAt": "2026-10-09T22:42:36.399Z",
+      "revisionHash": "2208e9ebe981db9e0caaaadf4cd5a8e3a618716123c19a88b5f35460bed104ff",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "usefulness": "Complete final body read: same-zone single visit versus per-visit package unit, explicit full commitments390/188/246 and missing-time/extra-fee criteria.",
+      "verifiedClaims": "Actual historical Era73/65per6, Amber59/47per4/41per6; products/systems not efficacy ranking. Era promotion explicitly throughNov30. No consultation fee/duration invented or required course assumed; AAD individual factors scoped.",
+      "remainingCheckResolution": "Only stale medium note; real original/import/actual responsive pixels required. Offers clearly historical with expiration disclosed, not future prices. National apparatus information route verified, no city/provider supply claim.",
+      "pageId": "5d754fbd-3db9-4212-bdde-58d3ac1960fb",
+      "reviewedAt": "2026-10-09T22:42:36.399Z",
+      "revisionHash": "e7501bc94051bb5f0509182481b7a93d010d87eb5b815db72812111dd222e45b",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "usefulness": "Complete final body read: same-menu duration/component arithmetic, face versus whole-body incomparable scope and four-field offer checklist.",
+      "verifiedClaims": "ActualOct9 women-only Palm60min50/90min60, PrisilietimoExpress50min40,Kobido70min45(struck60),decollete90min55/back100min65. Aggregate30min10 EUR difference, not universal rate or clinical suitability.",
+      "remainingCheckResolution": "Only stale image note: actual original/import/crop evidence required; all dated observations remain historical and explicitly not current national tariffs. National massage hub verified.",
+      "pageId": "02eb68ff-1571-4cef-bfe0-31216660bcb1",
+      "reviewedAt": "2026-10-09T22:42:36.399Z",
+      "revisionHash": "783b50df8e004f95517bf09107eef10dcf28f3597ad6bf1d946ba5df9ae74d82",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "usefulness": "Complete final body read: two actual menu ultrasonic/component comparisons,10EUR30min and6EUR differences, specified versus unknown extras.",
+      "verifiedClaims": "ActualOct9 VIPultra90min69/combined90min79 versusKosmetologija60min59/combined90min85; mechanical90min69/Hydra60min79/LED30min39 different jobs, not substitute efficacy or market average. NVSC qualification conditional on actual invasive/medical activity.",
+      "remainingCheckResolution": "S27/S38 really re-fetched/read Oct10 and units unchanged; historicalOct9 examples retained, no futureNov30 review claimed. Missing-media note closes only with actual original and responsive pixel evidence.",
+      "pageId": "5fad7c52-342a-45e7-a619-a97048daf742",
+      "reviewedAt": "2026-10-09T22:42:36.400Z",
+      "revisionHash": "444849302ea04de55fe33e1bbe1db61d87ab236fc80dc6c42e4b0262c257381b",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "DP-kojos",
+      "usefulness": "Complete final body read: Zone boundaries versus method, knees/feet/both legs checklist and lower-leg example.",
+      "verifiedClaims": "AAD waxing root versus shaving surface; historical Kaunas menu categories not uniform zones or Madbeauty supply.",
+      "remainingCheckResolution": "Only stale missing-media note; actual original, import, responsive observations required.",
+      "pageId": "26a9236d-7d71-4dc6-b282-ee3b65cd757b",
+      "reviewedAt": "2026-10-09T22:47:07.027Z",
+      "revisionHash": "943adc1d4cf082a5a40cdce0ffe83b386ae64743287913b4981239f4240577e4",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "GL-nuemimas",
+      "usefulness": "Complete final body read: Current coating identification, removal-only versus new coating and unknown provider/product handling.",
+      "verifiedClaims": "ViliOct9 43/70 versus45/80,46/80 versus50/90; AAD no peeling, UV distinction; SCCS2018 HEMA bounded sensitisation.",
+      "remainingCheckResolution": "ActualOct10 Vili recheck unchanged; historicalOct9 retained. Media evidence required.",
+      "pageId": "d4712e01-6bc1-47ec-aa60-ac311d9438de",
+      "reviewedAt": "2026-10-09T22:47:07.030Z",
+      "revisionHash": "ede969214055ddd03440d598f6969509e489b9662aeebc4dc0f8392bacb91acc",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "usefulness": "Complete final body read: Natural finish versus clear coating, shape/cuticle/polish/removal task and useful reservation wording.",
+      "verifiedClaims": "ViliOct9 40min25 versus60min30, conditional difference20min5EUR; AAD changed nail referral not conceal.",
+      "remainingCheckResolution": "Original illustration/import plus actual desktop/mobile evidence resolves stale image note.",
+      "pageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+      "reviewedAt": "2026-10-09T22:47:07.030Z",
+      "revisionHash": "6b83db0017513763c4588452f5150e7804df1c349bd4ff385c6e5c664579d22d",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "usefulness": "Complete final body read: Zones, privacy/pressure, reserved versus massage time, example back-specific job.",
+      "verifiedClaims": "PalmwomenOct9 35 versus60/90 minutes; NCCIH limited effects and NVSC nontherapeutic versus health scope.",
+      "remainingCheckResolution": "NVSC actually recheckedOct10; historical dated menu not futureDec4 verification. Media evidence required.",
+      "pageId": "5ebe7838-248a-4ada-8382-71001af065d5",
+      "reviewedAt": "2026-10-09T22:47:07.031Z",
+      "revisionHash": "80357c97889606c3419f57bc147b243c7e4d6ad7ac9ea5c9cce6fd2fd806533c",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "usefulness": "Complete final body read: Three variants of one real menu, same scope comparison and separate removal not derivable.",
+      "verifiedClaims": "75min45,90min50,up-to120min60; differences aggregate15/5 and30/10 not isolated universal removal rate; AAD/NVSC bounded.",
+      "remainingCheckResolution": "No unresolved facts; deliverable is same-menu comparison, not fictional second provider; responsive evidence required.",
+      "pageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+      "reviewedAt": "2026-10-09T22:47:07.031Z",
+      "revisionHash": "c6408477644e688d1c371c830319ddfbd11bdd407f57e3cbc10e5a86f371de0e",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "VP-konsultacija",
+      "usefulness": "Complete final body read: Specific observation/product/history card, consultation versus procedure and seven-field written plan.",
+      "verifiedClaims": "TwoOct9 menus plus AAD peeling scopes, NVSC beauty/health and hygiene passport; no diagnosis or verified provider.",
+      "remainingCheckResolution": "Only stale missing image note closes with actual media and responsive view evidence.",
+      "pageId": "e1fb3491-8c32-448c-9813-a98506bfb75b",
+      "reviewedAt": "2026-10-09T22:47:07.031Z",
+      "revisionHash": "2642547a0ba553d176aa51f0e84ca1476fe8b31b6010f90c32795e5ef22a0313",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "MN-trukme",
+      "usefulness": "Complete final body read: Components/current coating/design and route-specific timing without guessed time surcharge.",
+      "verifiedClaims": "Vili70/80 without removal and80/90 with; Room new/existing customer not equivalent to new set; AAD nail changes.",
+      "remainingCheckResolution": "Only missing-media note; actual original/import/responsive evidence required.",
+      "pageId": "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a",
+      "reviewedAt": "2026-10-09T22:47:07.031Z",
+      "revisionHash": "cd0564d81b1d903cf082851385697c000000458d113225c55a8ceef282afabee",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "usefulness": "Complete final body read: Product/method/zone/goal/inclusion comparison and explicit unknown fields.",
+      "verifiedClaims": "Era Dermaheal microinjection versus HA/combined biorevitalisation examples scoped to provider; NVSC/VASPVT conditional health licensing.",
+      "remainingCheckResolution": "No unresolved fact checks or procedural dose/58ingredient/pain-free/course claims; verified bibliography and responsive evidence required.",
+      "pageId": "4a57ba0a-213d-4a45-8f6c-5aab8504a98a",
+      "reviewedAt": "2026-10-09T22:47:07.032Z",
+      "revisionHash": "48538c483ab5262d197d851978d4cf6ef6b9346b954bcb21fe90dd8e31c9d9ec",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "usefulness": "Complete final body read: Class tempo/content/format/equipment/instructor comparison and first-class example.",
+      "verifiedClaims": "NCCIH yoga variable style; NHS specific beginner video45min/mat/balance/posture/strength/flexibility, not market standard or superiority.",
+      "remainingCheckResolution": "Actual Cyrillic plain-list typo fixed and Chrome rechecked; no unresolved facts, all remaining visual evidence required.",
+      "pageId": "d5eb2154-84a9-4fd2-9b71-ad7c5cd70878",
+      "reviewedAt": "2026-10-09T22:47:07.032Z",
+      "revisionHash": "20813fbbc936bcf9db08e089cfd3ad835796d9605781d94f897d7eb3c57430b7",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "OD-balinimas",
+      "usefulness": "Complete final body read: Natural teeth versus visible filling/crown and consultation decision example.",
+      "verifiedClaims": "NHS bleaching changes natural teeth not restorations, no mandatory replacement; VASPVT and dental chamber independent scope.",
+      "remainingCheckResolution": "No unresolved facts; no home formula or colour guarantee. Actual media and responsive evidence required.",
+      "pageId": "3ff05886-7dce-4f99-9077-c2f9b86121a6",
+      "reviewedAt": "2026-10-09T22:47:07.032Z",
+      "revisionHash": "98ca195e9f28580149d6e12a88c418ce2792a7f793685b82760b6e88cbf95885",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PM-antakiai",
+      "usefulness": "Complete final body read: Existing pigment/new work/refresh, stroke-versus-background choice, photo stage and task matrix.",
+      "verifiedClaims": "PhiAcademy manual PhiBrows versus machine PowderBrows specific systems; FDA skin pigment and difficult reversal; NVSC skin-penetrating hygiene.",
+      "remainingCheckResolution": "Two Estonian list words repaired, verified in final full read; exact verified NVSC slug only; no general nano classification.",
+      "pageId": "3e56767c-adcb-4f19-8ad4-314e68814d3b",
+      "reviewedAt": "2026-10-09T22:47:07.033Z",
+      "revisionHash": "0286ec5b8c2d98a4cfd36e437a71a4e14cb819073795f6419dd4d3ecca2fa6fb",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PS-poros-seima",
+      "usefulness": "Complete final body read: Who attends/common versus personal goal/confidentiality boundaries and reusable preparation card.",
+      "verifiedClaims": "NHS UK format reference not LT legal/session standard; VASPVT medicalpsych not all counsellors/licensing universal.",
+      "remainingCheckResolution": "Only image note resolves with actual original/import/mobile/desktop evidence; no diagnosis or guaranteed relationship outcome.",
+      "pageId": "56047987-7724-4476-80b1-fde21b00c826",
+      "reviewedAt": "2026-10-09T22:47:07.033Z",
+      "revisionHash": "e4ea8043859b14b05c8de19e0d9660ea35e43f4827baf2b82e9fc2c8502ef941",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "usefulness": "Complete final body read: Correction versus termination, unit/inclusions/reuse checklist and40-tape worked calculation.",
+      "verifiedClaims": "GatineauOct10 PDF Jan7 3.50remove+add versus0.80 removal+20wash/style;140 versus52 conditional. HeadRoom80/110min,50/60min unknown removal method; GreatLengths specific systems and AAD traction.",
+      "remainingCheckResolution": "No unresolved facts; no invented duration/correction interval or interchangeable systems. Real media responsive evidence required.",
+      "pageId": "9b70fd84-c782-469c-99ca-1bdef8a50775",
+      "reviewedAt": "2026-10-09T22:47:07.033Z",
+      "revisionHash": "98276fd65c335b8700e4ac1764db17b9eb21bb0741f947a45bdcca28ff4b2e8c",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "RP-parafinas",
+      "usefulness": "Complete final body read: Cold cream versus heated wax and separate ritual versus manicure/pedicure component.",
+      "verifiedClaims": "ARAVIA4107 and manufacturer comparison specific system, no universal temperature/time/detox; Treatwell menu formats; AAD scope.",
+      "remainingCheckResolution": "Actual original picture and responsive crop resolves stale pixel-check note; no home heating instructions.",
+      "pageId": "d18f4e7b-a92e-48ce-9ef7-3934be4cd82d",
+      "reviewedAt": "2026-10-09T22:47:07.034Z",
+      "revisionHash": "19999a97a41f9c93b3ac2aad6dd11375c69ed5ee7bbe344052324c09a8c5f091",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "usefulness": "Complete final body read: Relaxation versus product-care/consultation and component/price comparison.",
+      "verifiedClaims": "ALISPA actualOct10 Classic70 components versusDeluxe90 extraface/decollete; no duration; NCCIH aroma evidence bounded.",
+      "remainingCheckResolution": "Actual date correctedOct10, no growth/repair claim; no unresolved facts, actual responsive evidence required.",
+      "pageId": "07af45a8-b1c5-4a6e-a82c-2f8c07e062dd",
+      "reviewedAt": "2026-10-09T22:47:07.034Z",
+      "revisionHash": "8a6d83333e71631b936d073d25d904545ce42b33becd2a523e7615123a52eb24",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "TT-eskizas",
+      "usefulness": "Complete final body read: Reference versus original, placement/size/details compromises, deliverable/revisions and botanical example.",
+      "verifiedClaims": "FDA skin pigment/reversal scope; author attribution is practical design workflow, no legal entitlement invented.",
+      "remainingCheckResolution": "Actual topic illustration shows sketch consultation, no real client/art attribution claim; responsive evidence closes missing-media note.",
+      "pageId": "6835e31e-74ff-450d-b1cc-752477cbd404",
+      "reviewedAt": "2026-10-09T22:47:07.034Z",
+      "revisionHash": "1680dc78672bc6708441a135fbda9edd0f8b052109cb302066ca2af9cc4bacaf",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "AV-metodai",
+      "usefulness": "Complete final body read: Needle/reusable gun/disposable parts and sterilisation/jewellery comparison questions.",
+      "verifiedClaims": "APP professional position against reusable guns not LT law/all capsules; NVSC sterile packages opened in view and specific passport; APP initial jewellery scope.",
+      "remainingCheckResolution": "Only missing-image note closes with actual original/import/crop observations; no self-piercing protocol.",
+      "pageId": "1af233ab-8ce1-4eea-8620-5cc6f6761c8e",
+      "reviewedAt": "2026-10-09T22:47:07.034Z",
+      "revisionHash": "617ac86ea4b832c13b08309dfc5283bb802b6aafdc745299a6201fdb92244933",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "usefulness": "Complete final body read: Colour location/result versus airflow selection technique, inclusion/time comparison.",
+      "verifiedClaims": "Wella AirTouch can combine balayage/highlights; LooksOct9 5–6h220–280 aggregate actualsize tiers, not national average.",
+      "remainingCheckResolution": "Looks really recheckedOct10 unchanged; preserve historicalOct9, no future validity claim; image evidence required.",
+      "pageId": "16a8706c-4c55-42ae-9681-e21c41dcc6c5",
+      "reviewedAt": "2026-10-09T22:47:07.035Z",
+      "revisionHash": "079d340a9e40118a80ae2570d957b9075bcb8425ee94c57a67cfc998babe8d64",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "usefulness": "Complete final body read: Skin puncture versus additionalRF, precise device/energy/purpose/provider questions.",
+      "verifiedClaims": "FDA RF warningOct15,2025 serious reports not frequency/all devices; FDA US versus NVSC/VASPVT conditional LT scope.",
+      "remainingCheckResolution": "Conditional individual-device classification note does not apply: final body names no individual device legal classification; no settings/home recipe. Actual media required.",
+      "pageId": "01a5be0c-9c9a-40d3-bb9f-5993b6e47206",
+      "reviewedAt": "2026-10-09T22:47:07.035Z",
+      "revisionHash": "ff025ecd41635444dc66df1a9fafd1f1d18626efc4d20e8ce331e71a02d4e094",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "usefulness": "Complete final body read: Product versus ritual stages/zone/extra costs and comparable missing-data card.",
+      "verifiedClaims": "Treatwell format example not protocol; FDA device contour info expressly not wrap efficacy; NVSC/VASPVT only actual health scope.",
+      "remainingCheckResolution": "Actual thematic wrap original/import/crops closes missing image note; no detox/weight or clinical promise.",
+      "pageId": "0f2c1fd1-9adf-4a38-973b-f4a10b244b89",
+      "reviewedAt": "2026-10-09T22:47:07.035Z",
+      "revisionHash": "4ebd5fd0710f8067d1adb99eb38e5aba5ece851bae20ada02ad42cd04ccb77dc",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "usefulness": "Complete final body read: Narrow-focused versus wider spectrum terminology, device/model/zone/package comparison.",
+      "verifiedClaims": "ActualARPANSA111/112 optical distinction, no superiority/1064/universal efficacy/LT law; photoepilation does not identify device.",
+      "remainingCheckResolution": "Illustrative unlabelled handpieces are thematic, not literal beam/device demonstration. Actualtext comparison delivers mechanism; original/crops required.",
+      "pageId": "afc81d78-3f94-4484-9c4b-819841d96493",
+      "reviewedAt": "2026-10-09T22:47:07.035Z",
+      "revisionHash": "3b86819253b6ab255cc0a9a7a24c747c9860d65c0bb937895d947dc4ee9d8ff1",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "usefulness": "Complete final body read: Metallic surface versus magnetic stripe, angle/light comparison and desired design.",
+      "verifiedClaims": "Actual specific manufacturer systems support pigment/magnetic particle mechanism, no universal application/colour guarantee.",
+      "remainingCheckResolution": "Optional provider video was removed from promised deliverable; no file/permission invented or video included. Real generated comparative illustration is thematic, not client result; responsive evidence required.",
+      "pageId": "30ca9bbf-33c0-4da6-85bd-8ba29577810e",
+      "reviewedAt": "2026-10-09T22:47:07.036Z",
+      "revisionHash": "e1b8c80293156c15c129cb714431a3efb0c7d4f302edd0040212b169e2e8c8f1",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "usefulness": "Complete final body read: Support versus preformed tip, method/material/silhouette distinctions and menu comparison.",
+      "verifiedClaims": "CND FutureForms under freeedge; Gelish fullcoverage SoftGel LEDadhesive specific; Vili prices explicitly gel polish not extension; DermNet allergy.",
+      "remainingCheckResolution": "No unresolved facts; no21day/breakproof guarantees or DIY cure/cutting; actual images/crops required.",
+      "pageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+      "reviewedAt": "2026-10-09T22:47:07.036Z",
+      "revisionHash": "2b5548a86bfeb0fdae2b365841f4943129d4f654a28425d46cf1154d7c889d2d",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "usefulness": "Complete final body read: Separate lip contour/colour versus eye line and consultation/new work/correction questions.",
+      "verifiedClaims": "FDA pigment skin/difficult removal USscope; NVSC invasivebeauty hygiene and conditional health distinction; category examples not inventory.",
+      "remainingCheckResolution": "Actual individual original/import/crops closes missing-media note; no home healing recipe or case-result promise.",
+      "pageId": "59f6961c-4d66-421b-a1e9-184be6cedd3a",
+      "reviewedAt": "2026-10-09T22:47:07.036Z",
+      "revisionHash": "06e05cbac3f0dcd1cc4d7c6d861f5bacd689b3c6d4b0f7254c4929f6675db4a4",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "PP-atstatymas",
+      "usefulness": "Complete final body read: Name→method→promise→evidence decision matrix, immediate softness versus long-term repair and example.",
+      "verifiedClaims": "AAD heat/traction/textures and FDA not-all smoothing products containformaldehyde; FacesOct9 separatemenu work not efficacy.",
+      "remainingCheckResolution": "Brief revised to actual textual decision matrix plus fictional topic photograph; old diagram requirement superseded, no fake technical visual/clinical repair evidence.",
+      "pageId": "f13be7d8-026a-4039-afd3-e8711995fb9c",
+      "reviewedAt": "2026-10-09T22:47:07.037Z",
+      "revisionHash": "39893d5694e634b94f62e31fcb0caebbebf2b4f702e2dfc5eefbd82d438d76e8",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "SP-hamamas",
+      "usefulness": "Complete final body read: Space use versus led scrub/application ritual, conditions and menu unit comparison.",
+      "verifiedClaims": "SPA actualOct10 Turkishsteam30min20,Kese40min60,namedrituals60min90; actualbodyapplication notoil-massage.",
+      "remainingCheckResolution": "Earlier legal assertion omitted in native revision; no currentlegal claim relies on2023 source, no unresolved facts; actual responsive evidence required.",
+      "pageId": "4a17106d-6fb6-4ce5-82b3-e9fd2c02ca25",
+      "reviewedAt": "2026-10-09T22:47:07.037Z",
+      "revisionHash": "e24466418b53d6124f98be0e96353d15f0c701365249ca3ffa3f5a662cd04fac",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "usefulness": "Complete final body read: Exactproduct/hair-versus-skincolour/package comparison with worked menus.",
+      "verifiedClaims": "ActualS116 BrowCode Lawsonia+otheringredients/PPDsome shades;S117RefectoCilNo3 separateoxidant Toluene/mAminophenol. Oct9Laminuota10/30,17/40,25/60 andMilona20/40,26/50.",
+      "remainingCheckResolution": "New actualmanufacturer composition sources close earlier definition gap; no pureplant/hypoallergenic or recipe claims. Responsive evidence required.",
+      "pageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+      "reviewedAt": "2026-10-09T22:47:07.037Z",
+      "revisionHash": "2cb41e6b980e0a70237672550259915b525e49a150f0825e69111cd1f05f0692",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "AV-papuosalas",
+      "usefulness": "Complete final body read: Product/material documentscope/measures/site/inclusion card and purchase versuschange.",
+      "verifiedClaims": "APP specific documents/finish/threading advisory not LTlaw; JoMiOct9 someplainTi included, ODAinclusion unknown;stemchange separate.",
+      "remainingCheckResolution": "JoMi/ODA actually recheckedOct10 unchanged; no fabricatedDec18 check. Actual original/import/crops resolves media note.",
+      "pageId": "2934dc52-45c8-429b-ba28-ce368787862d",
+      "reviewedAt": "2026-10-09T22:47:07.037Z",
+      "revisionHash": "35b93c380d057e13b9d4c70b447fccfd721393f6dd1d25ecb9f08db8319d16b8",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "BL-dazymas",
+      "usefulness": "Complete final body read: Colour versus curl versus addedlashes and component menu comparison.",
+      "verifiedClaims": "NouveauLVLspecific versusDermNetcosmetictypes/reactions; LeilaOct9 70min40,Milona40min20 versus50min26;botox term not definedpreparation.",
+      "remainingCheckResolution": "No unresolved facts; no lash growth/density promise. Actual media/crops required.",
+      "pageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+      "reviewedAt": "2026-10-09T22:47:07.038Z",
+      "revisionHash": "5fd62b719aaac9776dbabd806ee3f7bb5c90ed20cb272ea3ae7cef03d1925a6e",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "usefulness": "Complete final body read: Keep trimmed length versus clean area, contour separately and beard-kept neck-shaved example.",
+      "verifiedClaims": "ActualOct9Gargzdumenu multipleformats not universalclassification; no medical shavingprotocol.",
+      "remainingCheckResolution": "Actualtopic original/import/crops closes stale unattached-media note; no providers/bookings fabricated.",
+      "pageId": "edac36e3-f996-4513-86f2-43468d3d9f6e",
+      "reviewedAt": "2026-10-09T22:47:07.038Z",
+      "revisionHash": "eddbfbbc53f2c35b5deb861411349fe656d51e6a6dbb11ff445bf953bcba3c82",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "usefulness": "Complete final body read: Root removal versus growth reduction, same zone and unit versus package plan.",
+      "verifiedClaims": "AAD waxing/root, laserfollicle/resultmaintenance/eyeguard and no double-dipping; historicalKaunas25/45,40/60 versusEra108/103per6,Amber99/79per4/69per6.",
+      "remainingCheckResolution": "No unresolved facts; historicalprices explicitly recheckcurrentconditions, notfutureDec21 promise; verifiedwax/sugar/laser nationalroutes.",
+      "pageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+      "reviewedAt": "2026-10-09T22:47:07.038Z",
+      "revisionHash": "b8d7861c4f8d3a74f9591dbf11b3dca0633415e4d7954a537e3f0b3d7abeb53d",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "usefulness": "Complete final body read: Gradientcontrast versus placement technique and three hypothetical visual choices.",
+      "verifiedClaims": "ActualWellaS118Polishglossary ombre/sombre; Wella balayage; FacesOct9 toner separate not allmenus.",
+      "remainingCheckResolution": "RejectedS115SaltandPepper not used;S118actualdefinition supplies gap. Actual image/crops closes pixel-review note.",
+      "pageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+      "reviewedAt": "2026-10-09T22:47:07.038Z",
+      "revisionHash": "bb19b8b36314dd8de3c187e62b2c8334262e1c91269233f4422d16e0d76e1ae9",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "usefulness": "Complete final body read: Colour/coating/currentlength versus addedlength and precise servicechoice checklist.",
+      "verifiedClaims": "ActualCNDShaper overlay or shortformextension, no biologicalrepair; Vili43/70,46/80,45/80,50/90;Roomexisting52/135,55/150 versusnew60/195,65/210 notnewset definition.",
+      "remainingCheckResolution": "No unresolved facts; product strength nomenclature not treatment/guarantee; actual responsive evidence required.",
+      "pageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+      "reviewedAt": "2026-10-09T22:47:07.038Z",
+      "revisionHash": "e7e7bdef115d286b231a0c6f7eef5906baf8790c6ac953ba9aec49ea644505b2",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "KP-sveitimas",
+      "usefulness": "Complete final body read: Dead surfacecells mechanical/chemical versus moisturising, scope/product/instructions comparison.",
+      "verifiedClaims": "ActualAAD121 boundedmechanism and irritation/notforall; SPAOct10 Kese40min60 scrub/bodyapplication notmassage.",
+      "remainingCheckResolution": "ActualS121 fills previousmechanismgap; noacidstrength/time/interval or detox. Actualoriginal/crops closes pixel-review note.",
+      "pageId": "e4714d0a-666c-4b2d-b096-40e9f36b7508",
+      "reviewedAt": "2026-10-09T22:47:07.039Z",
+      "revisionHash": "6762b5aad9b3213138f79c961c4a7823fa013b56428d9c45b50da70764172f47",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "LZ-zonos",
+      "usefulness": "Complete final body read: Exactboundary/both sides/zone-versus-visitpackage/unit/expiration checklist.",
+      "verifiedClaims": "ActualOct9twocliniczone menus; AAD variable skin/hair/device and facialeyeprotection, packagecount not requiredcourse.",
+      "remainingCheckResolution": "No unresolved facts; newmale-forearmoriginal replaced genericfemale image and was actually observed; national apparatusroute notcitysupply.",
+      "pageId": "d2d923e8-fa60-4657-abcf-5916ca477647",
+      "reviewedAt": "2026-10-09T22:47:07.039Z",
+      "revisionHash": "37833ab0b89baeffedad8b3e46a59f1c9f3d7f0ee9fb872a5eb9977f43a88817",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    },
+    {
+      "planId": "MD-gidas",
+      "usefulness": "Complete final body read: Health question versus aestheticgoal/consultation versusprocedure and concreteunknown fields.",
+      "verifiedClaims": "NVSCbeautyhealth distinction and VASPVT conditionallicence scope, no specific unnameddevice classification.",
+      "remainingCheckResolution": "Re-read complete currentbody after Nekiekviena→Ne kiekviena correction. Conditional individualclassification note is inapplicable; actual original/import and two refreshed responsiveviews required.",
+      "pageId": "6cf41aff-a11e-4788-9e93-c951ecbd96d9",
+      "reviewedAt": "2026-10-09T22:47:07.039Z",
+      "revisionHash": "e72d328e1057f05afc6b9af4353659ac65b6fe92bd9771b233f25f267265a924",
+      "state": "PASS_FULL_FINAL_TEXT_READ"
+    }
+  ],
+  "checkedAt": "2026-10-09T22:47:07.039Z"
+}

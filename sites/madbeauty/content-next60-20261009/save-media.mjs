@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+const here=path.dirname(new URL(import.meta.url).pathname.replace(/^\/(?:([A-Z]:))/, '$1'));
+const [index,source]=process.argv.slice(2);
+const plan=JSON.parse(await fs.readFile(here+'/MEDIA-PLAN.json','utf8'));
+const p=plan.find(p=>p.index===Number(index));if(!p||!source?.startsWith('C:'))throw Error('Exact generated source path required');
+const out=here+'/originals/'+p.planId+'.png';await fs.mkdir(here+'/originals',{recursive:true});
+if(p.status!=='NOT_GENERATED')throw Error('Image already registered; preserve previous provenance');
+await fs.copyFile(source,out,fs.constants.COPYFILE_EXCL);
+p.status='GENERATED_REQUIRES_PIXEL_REVIEW';p.sourcePath=source;p.originalPath=out;p.originalSha256=createHash('sha256').update(await fs.readFile(out)).digest('hex');p.generatedAt=new Date().toISOString();p.generator='built-in image_gen';
+await fs.writeFile(here+'/MEDIA-PLAN.json',JSON.stringify(plan,null,2)+'\n');
+console.log(JSON.stringify({index:p.index,planId:p.planId,sha256:p.originalSha256}));

@@ -1,0 +1,106 @@
+{
+  "reviewedAt": "2026-10-09T22:01:57.108Z",
+  "state": "PASS_ACTUAL_CURRENT_RECHECK",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://www.treatwell.lt/salonas/vili-nails/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:08.486Z",
+      "sha256": "75ba4e43d32fcf4a5e6a9a99caf4a3d7c6eb86e176986e89547f2c3f0ace8009",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S01.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.107Z",
+      "note": "Actually reread menu66–143: no-coat40min25EUR, removal60min30EUR; solid/French/ombre70min43EUR without removal,80min45EUR with removal;maxi80min46/90min50. Base-only60min40/75min43 is separate, not confused with colour. Same bounded units as dated examples."
+    },
+    {
+      "id": "S27",
+      "url": "https://www.treatwell.lt/salonas/vip-veido-proceduros/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:08.539Z",
+      "sha256": "29e17fd723eedd2f45a771df696c93e0c4cbbb3256a5f2dfdd23d263fd349216",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S27.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread combo90min79EUR, acid90min69EUR, ultrasound90min69EUR; other ultrasound+mechanical listing shows off-peak from63.20. Only exact named variants used, not minimum-price quality comparison or treatment efficacy."
+    },
+    {
+      "id": "S28",
+      "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-ka-svarbu-zinoti-norint-verstis-grozio-paslaugu-veikla-LY9r/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:08.357Z",
+      "sha256": "ac4af3e1937f7e22a32688ce792067feba01b62e80198754bb5a7a20b58b67fc",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S28.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread current NVSC main9–29 and update2026-01-23: non-therapeutic massage is beauty activity with hygiene permit; therapeutic excluded. No asserted approval of any particular provider, full regulatory compliance or future legal recheck."
+    },
+    {
+      "id": "S29",
+      "url": "https://nvsc.lrv.lt/lt/naujienos/grozio-paslaugu-veiklos-sveikatos-saugos-reikalavimai-ka-turi-zinoti-specialistai-ir-paslaugu-vartotojai-Hyu7/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:08.690Z",
+      "sha256": "fdb0e626dd900aa49b6c3175138a1357fe1c607abe8edb84fcc08a456596b778",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S29.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread current NVSC2025-12-18 body and update2026-01-23: healthcare activities/licensed professional and facility distinguished from beauty; concrete therapeutic massage and medical intervention examples. Hygiene permit not unlimited treatment right. No individual unnamed device classification or future-date legal verification."
+    },
+    {
+      "id": "S34",
+      "url": "https://www.treatwell.lt/salonas/looks/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:08.847Z",
+      "sha256": "5831e0a8af49bc46f50be1fa2b6549cc2020b377d5615d8e246cce8452755693",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S34.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread LOOKS AirTouch menu first24lines:smallshoulderlength5h220EUR,medium5h30m250EUR,largeverylong6h280EUR. Confirms dated comparable scope examples; not all hair types fixed-duration quote."
+    },
+    {
+      "id": "S38",
+      "url": "https://www.treatwell.lt/salonas/kosmetologija-visiems/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:08.769Z",
+      "sha256": "1c33d33a1220c422a1e81904652dec921ee604a8e1e1e89bac5b029376c6a24a",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S38.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread ultrasound60min59EUR,mechanical90min69EUR,combo90min85EUR,Hydra60min79EUR,LED30min39EUR. These are scope/time examples, not independent efficacy, safety or our provider claims."
+    },
+    {
+      "id": "S53",
+      "url": "https://www.nhs.uk/conditions/infected-piercings/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:09.127Z",
+      "sha256": "dd8510b9a37231388ed71377901a9790056ef7d12f45590ee7a6c641d036e6df",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S53.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread currently served NHS page: seek prompt healthcare help for suspected infection. Still lastreview2023-04-18/nextdue2026-04-18; do not call this newly clinician-reviewed2026. Madbeauty only general seek-health-professional referral, no diagnostic symptom checklist, antibiotics, warm-salt/water, jewellery-turning/removal,24h or UK111 advice."
+    },
+    {
+      "id": "S89",
+      "url": "https://jomitattoo.lt/auskaru-verimas/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:09.072Z",
+      "sha256": "64fbb1fc90a81d1a83d32617c855c34a65cf4eb5f4b824c660fe78899a8c0a51",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S89.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread current needle method, initial plainTi included, lobe20/helixconch35/industrial40EUR,stemchange10EUR separate. Reject provider all-guns-unsafe,hypoallergenic,healing months and home-procedure directions. No promotion of made-up all-provider rules."
+    },
+    {
+      "id": "S90",
+      "url": "https://odaklinika.lt/auskaru-verimas/",
+      "status": 200,
+      "retrievedAt": "2026-10-09T22:00:09.375Z",
+      "sha256": "4c31d2a1b4cc6e5d73786aedb94df7d0b14d5a0a39386e907f5d2dce0226fa83",
+      "file": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009/sources-recheck/S90.html",
+      "review": "ACTUALLY_READ_BOUNDED_PASSAGES",
+      "reviewedAt": "2026-10-09T22:01:57.108Z",
+      "note": "Actually reread StudexSystem75 two30/one19EUR15min andInverness two40/one25EUR15min. Current price includes jewellery remains unclear; page says jewellery selectable/purchasable, so do not infer inclusive tariff. Reject safe/hypoallergen/no-pain provider marketing."
+    }
+  ],
+  "scope": "Current confirmation of exact dated menu example units and limited official-source statements. Historical source ledger/raw timestamps remain intact. This is not a future publication-day recheck or newly clinician-reviewed medical advice."
+}

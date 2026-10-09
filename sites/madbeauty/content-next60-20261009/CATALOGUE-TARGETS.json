@@ -1,0 +1,1864 @@
+{
+  "checkedAt": "2026-10-09T22:31:23.778Z",
+  "registrySha256": "524f6e548665802c0cab4cde89ab5c49ad421350fb0cf8c86191f8f8a78821e1",
+  "generatedAt": "2026-10-09T22:31:02.122Z",
+  "expiresAt": "2026-10-09T23:31:02.122Z",
+  "cityTargets": 0,
+  "scope": "Actual canonical national information routes. Planned procedures deferred; no test providers/city or booking availability claims.",
+  "targets": [
+    {
+      "id": "mb:catalog:verimo-prieziura-auskaro-verimo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/verimo-prieziura-auskaro-verimo-konsultacija",
+      "label": "Auskaro vėrimo konsultacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:02.607Z",
+      "evidence": {
+        "taxonomyNodeId": "verimo-prieziura-auskaro-verimo-konsultacija",
+        "routeRegistryId": "mb:catalog:verimo-prieziura-auskaro-verimo-konsultacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/verimo-prieziura-auskaro-verimo-konsultacija",
+        "indexEligible": false,
+        "htmlSha256": "5d7307990adec05df646de52b13b372890679f99d6514c1f51c61843c1da7b6f"
+      }
+    },
+    {
+      "id": "mb:catalog:estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+      "label": "Estetinių procedūrų konsultacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:02.799Z",
+      "evidence": {
+        "taxonomyNodeId": "estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+        "routeRegistryId": "mb:catalog:estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+        "indexEligible": false,
+        "htmlSha256": "b73974e0f04af73165f3a3f5c48d0083164718ff84fa6633dc224ce4ba83c63c"
+      }
+    },
+    {
+      "id": "mb:catalog:estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+      "label": "Odos būklės profesionalus įvertinimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:03.038Z",
+      "evidence": {
+        "taxonomyNodeId": "estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+        "routeRegistryId": "mb:catalog:estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+        "indexEligible": false,
+        "htmlSha256": "e1c8f7efd6ad5010b2239bc4e2027c767f8d8d990d46f155bee455064945e922"
+      }
+    },
+    {
+      "id": "mb:catalog:idegis-purskiamas-idegis",
+      "url": "https://madbeauty.lt/paslaugos/idegis-purskiamas-idegis",
+      "label": "Purškiamas įdegis",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:03.242Z",
+      "evidence": {
+        "taxonomyNodeId": "idegis-purskiamas-idegis",
+        "routeRegistryId": "mb:catalog:idegis-purskiamas-idegis",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/idegis-purskiamas-idegis",
+        "indexEligible": false,
+        "htmlSha256": "58de89474691565affde04c7b5fba4bada386d73d25af3f0e371bee0a334390a"
+      }
+    },
+    {
+      "id": "mb:catalog:idegis-soliariumas",
+      "url": "https://madbeauty.lt/paslaugos/idegis-soliariumas",
+      "label": "Soliariumas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:03.437Z",
+      "evidence": {
+        "taxonomyNodeId": "idegis-soliariumas",
+        "routeRegistryId": "mb:catalog:idegis-soliariumas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/idegis-soliariumas",
+        "indexEligible": false,
+        "htmlSha256": "a077cf9cff988df3246fc50bd600dbf06484cbf30dc361b7d7f85c3177cc38ca"
+      }
+    },
+    {
+      "id": "mb:catalog:kunas",
+      "url": "https://madbeauty.lt/paslaugos/kunas",
+      "label": "Kūno priežiūra",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:03.641Z",
+      "evidence": {
+        "taxonomyNodeId": "kunas",
+        "routeRegistryId": "mb:catalog:kunas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kunas",
+        "indexEligible": false,
+        "htmlSha256": "01ef606a84f8df25b37b4bfe31f8e6788e2b6336f4910b11eb29546e200a7785"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+      "url": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+      "label": "Plaukų šalinimas lazeriu",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:03.840Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+        "routeRegistryId": "mb:catalog:plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+        "indexEligible": false,
+        "htmlSha256": "a647362c3bada6e87608b17c33eadff0b232430b3d69873fb7a587de40088a18"
+      }
+    },
+    {
+      "id": "mb:catalog:kuno-masazai-atpalaiduojantis-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-atpalaiduojantis-masazas",
+      "label": "Atpalaiduojantis masažas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:04.039Z",
+      "evidence": {
+        "taxonomyNodeId": "kuno-masazai-atpalaiduojantis-masazas",
+        "routeRegistryId": "mb:catalog:kuno-masazai-atpalaiduojantis-masazas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kuno-masazai-atpalaiduojantis-masazas",
+        "indexEligible": false,
+        "htmlSha256": "f3c750f1e935cd8643473a84d936903095fafca7498ddfa550ef21467f7ecc47"
+      }
+    },
+    {
+      "id": "mb:catalog:pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+      "label": "Ilgalaikio makiažo konsultacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:04.234Z",
+      "evidence": {
+        "taxonomyNodeId": "pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+        "routeRegistryId": "mb:catalog:pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+        "indexEligible": false,
+        "htmlSha256": "851fff26ea816ff15679ee8c5dd24edf684f49559f151d584e827c94fb87c92c"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-priauginimas-plauku-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-priauginimas-plauku-priauginimas",
+      "label": "Plaukų priauginimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:04.415Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-priauginimas-plauku-priauginimas",
+        "routeRegistryId": "mb:catalog:plauku-priauginimas-plauku-priauginimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-priauginimas-plauku-priauginimas",
+        "indexEligible": false,
+        "htmlSha256": "718c94bb536fca8bb84a6733d014e7405a618c6c76969cc6fa8b265c993e8fcb"
+      }
+    },
+    {
+      "id": "mb:catalog:rankos-pedos-ranku-spa",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-ranku-spa",
+      "label": "Rankų SPA",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:04.608Z",
+      "evidence": {
+        "taxonomyNodeId": "rankos-pedos-ranku-spa",
+        "routeRegistryId": "mb:catalog:rankos-pedos-ranku-spa",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/rankos-pedos-ranku-spa",
+        "indexEligible": false,
+        "htmlSha256": "cd60810b63ed3fabc5ae945240ec3f3233c007585b7bc3605bb197b8a0ea968b"
+      }
+    },
+    {
+      "id": "mb:catalog:rankos-pedos-pedu-spa",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-pedu-spa",
+      "label": "Pėdų SPA",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:04.808Z",
+      "evidence": {
+        "taxonomyNodeId": "rankos-pedos-pedu-spa",
+        "routeRegistryId": "mb:catalog:rankos-pedos-pedu-spa",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/rankos-pedos-pedu-spa",
+        "indexEligible": false,
+        "htmlSha256": "debd0ef586a437ec21cf504dcb671e8c80430a1227900192cbd07bf673d7246f"
+      }
+    },
+    {
+      "id": "mb:catalog:rankos-pedos",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos",
+      "label": "Rankų ir pėdų priežiūra",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:04.990Z",
+      "evidence": {
+        "taxonomyNodeId": "rankos-pedos",
+        "routeRegistryId": "mb:catalog:rankos-pedos",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/rankos-pedos",
+        "indexEligible": false,
+        "htmlSha256": "a465315a16872a4de9866c014410851b5d37a39d3097702f1ab0a38279214b31"
+      }
+    },
+    {
+      "id": "mb:catalog:spa-ritualai",
+      "url": "https://madbeauty.lt/paslaugos/spa-ritualai",
+      "label": "Ritualai",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:05.175Z",
+      "evidence": {
+        "taxonomyNodeId": "spa-ritualai",
+        "routeRegistryId": "mb:catalog:spa-ritualai",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/spa-ritualai",
+        "indexEligible": false,
+        "htmlSha256": "ae6e19b50b0f9b3db390633c2b297d4fe3c287458c1602fba09aa4321c5c92da"
+      }
+    },
+    {
+      "id": "mb:catalog:pirtys",
+      "url": "https://madbeauty.lt/paslaugos/pirtys",
+      "label": "Pirtys ir vanduo",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:05.366Z",
+      "evidence": {
+        "taxonomyNodeId": "pirtys",
+        "routeRegistryId": "mb:catalog:pirtys",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pirtys",
+        "indexEligible": false,
+        "htmlSha256": "53b1d2a4759afca51269046f6d5144c7b3eb509504aa84212824ce2af8b3a9e8"
+      }
+    },
+    {
+      "id": "mb:catalog:poilsio-proceduros",
+      "url": "https://madbeauty.lt/paslaugos/poilsio-proceduros",
+      "label": "Poilsio procedūros",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:05.548Z",
+      "evidence": {
+        "taxonomyNodeId": "poilsio-proceduros",
+        "routeRegistryId": "mb:catalog:poilsio-proceduros",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/poilsio-proceduros",
+        "indexEligible": false,
+        "htmlSha256": "41a99b78050393052cde617d7ad21b061cbe82d4d708c27f3ba61a7a56a7bc18"
+      }
+    },
+    {
+      "id": "mb:catalog:spa",
+      "url": "https://madbeauty.lt/paslaugos/spa",
+      "label": "SPA ir poilsis",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:05.735Z",
+      "evidence": {
+        "taxonomyNodeId": "spa",
+        "routeRegistryId": "mb:catalog:spa",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/spa",
+        "indexEligible": false,
+        "htmlSha256": "17971f652e8d47337e013837681f98665e2c263e9aa3d4008c6ba20dd8a771fc"
+      }
+    },
+    {
+      "id": "mb:catalog:tatuiravimas-nauja-tatuiruote",
+      "url": "https://madbeauty.lt/paslaugos/tatuiravimas-nauja-tatuiruote",
+      "label": "Nauja tatuiruotė",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:05.918Z",
+      "evidence": {
+        "taxonomyNodeId": "tatuiravimas-nauja-tatuiruote",
+        "routeRegistryId": "mb:catalog:tatuiravimas-nauja-tatuiruote",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/tatuiravimas-nauja-tatuiruote",
+        "indexEligible": false,
+        "htmlSha256": "fecc6168e8d61a977d264c6154a1f4f21e896fb346590aa1f584829a125526fa"
+      }
+    },
+    {
+      "id": "mb:catalog:veidas",
+      "url": "https://madbeauty.lt/paslaugos/veidas",
+      "label": "Veido priežiūra",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:06.098Z",
+      "evidence": {
+        "taxonomyNodeId": "veidas",
+        "routeRegistryId": "mb:catalog:veidas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/veidas",
+        "indexEligible": false,
+        "htmlSha256": "0be2fe2d9021aafd34c4b5448ec63a07146aa8d1975a47924d792d57183690de"
+      }
+    },
+    {
+      "id": "mb:catalog:verimas",
+      "url": "https://madbeauty.lt/paslaugos/verimas",
+      "label": "Auskarų vėrimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:06.283Z",
+      "evidence": {
+        "taxonomyNodeId": "verimas",
+        "routeRegistryId": "mb:catalog:verimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/verimas",
+        "indexEligible": false,
+        "htmlSha256": "46d40f90ace712fd5bac8a22073ece595477b3d600318c48049ac48f579cedff"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-salinimas-aparatu",
+      "url": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu",
+      "label": "Aparatu",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:06.473Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-salinimas-aparatu",
+        "routeRegistryId": "mb:catalog:plauku-salinimas-aparatu",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu",
+        "indexEligible": false,
+        "htmlSha256": "2827d32bbb878831142e2f9993504e939a1889cd3b2f8348da994803efed0e33"
+      }
+    },
+    {
+      "id": "mb:catalog:masazas",
+      "url": "https://madbeauty.lt/paslaugos/masazas",
+      "label": "Masažas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:06.671Z",
+      "evidence": {
+        "taxonomyNodeId": "masazas",
+        "routeRegistryId": "mb:catalog:masazas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/masazas",
+        "indexEligible": false,
+        "htmlSha256": "2ed79fdfc2be1099e331ec2021915c845d35fd9d5013976b5d32ffb949372d48"
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-vasku-koju-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-koju-depiliacija-vasku",
+      "label": "Kojų depiliacija vašku",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:06.867Z",
+      "evidence": {
+        "taxonomyNodeId": "depiliacija-vasku-koju-depiliacija-vasku",
+        "routeRegistryId": "mb:catalog:depiliacija-vasku-koju-depiliacija-vasku",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/depiliacija-vasku-koju-depiliacija-vasku",
+        "indexEligible": false,
+        "htmlSha256": "86e07f586a24e7e44b2275449f4ed644559fa1a069ee4aac6deb13a4b3ce1c70"
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-cukrumi-koju-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-koju-depiliacija-cukrumi",
+      "label": "Kojų depiliacija cukrumi",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:07.053Z",
+      "evidence": {
+        "taxonomyNodeId": "depiliacija-cukrumi-koju-depiliacija-cukrumi",
+        "routeRegistryId": "mb:catalog:depiliacija-cukrumi-koju-depiliacija-cukrumi",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-koju-depiliacija-cukrumi",
+        "indexEligible": false,
+        "htmlSha256": "07889656abbae297422f131bb2535e62387121a9b2b97fa822afefae3c6d5898"
+      }
+    },
+    {
+      "id": "mb:catalog:lakavimas-nagu-lakavimo-nuemimas",
+      "url": "https://madbeauty.lt/paslaugos/lakavimas-nagu-lakavimo-nuemimas",
+      "label": "Nagų lakavimo nuėmimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:07.232Z",
+      "evidence": {
+        "taxonomyNodeId": "lakavimas-nagu-lakavimo-nuemimas",
+        "routeRegistryId": "mb:catalog:lakavimas-nagu-lakavimo-nuemimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/lakavimas-nagu-lakavimo-nuemimas",
+        "indexEligible": false,
+        "htmlSha256": "71f0993a5293a9890a2ac24bb65c63a3038a7e537ca3d3fd5bc24c4c95a58461"
+      }
+    },
+    {
+      "id": "mb:catalog:manikiuras-manikiuras-be-lakavimo",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras-manikiuras-be-lakavimo",
+      "label": "Manikiūras be lakavimo",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:07.427Z",
+      "evidence": {
+        "taxonomyNodeId": "manikiuras-manikiuras-be-lakavimo",
+        "routeRegistryId": "mb:catalog:manikiuras-manikiuras-be-lakavimo",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/manikiuras-manikiuras-be-lakavimo",
+        "indexEligible": false,
+        "htmlSha256": "4940c1398d6083eb6af8cdda55c130271ae9145a04cba471b8bf15f4e75f74da"
+      }
+    },
+    {
+      "id": "mb:catalog:srities-masazai",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai",
+      "label": "Atskirų sričių masažai",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:07.620Z",
+      "evidence": {
+        "taxonomyNodeId": "srities-masazai",
+        "routeRegistryId": "mb:catalog:srities-masazai",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/srities-masazai",
+        "indexEligible": false,
+        "htmlSha256": "9a63e6cc13aba5f441dc668f57d16b0bad8629231124c0c0771c7500364e6385"
+      }
+    },
+    {
+      "id": "mb:catalog:srities-masazai-kaklo-ir-peciu-masazas",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai-kaklo-ir-peciu-masazas",
+      "label": "Kaklo ir pečių masažas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:07.798Z",
+      "evidence": {
+        "taxonomyNodeId": "srities-masazai-kaklo-ir-peciu-masazas",
+        "routeRegistryId": "mb:catalog:srities-masazai-kaklo-ir-peciu-masazas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/srities-masazai-kaklo-ir-peciu-masazas",
+        "indexEligible": false,
+        "htmlSha256": "148e5e3bea4b1f0dacc378bd33fc6e998d6c392ab34311be78a43fb504d58647"
+      }
+    },
+    {
+      "id": "mb:catalog:pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras",
+      "label": "Pedikiūras",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:07.983Z",
+      "evidence": {
+        "taxonomyNodeId": "pedikiuras",
+        "routeRegistryId": "mb:catalog:pedikiuras",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pedikiuras",
+        "indexEligible": false,
+        "htmlSha256": "b4476a76bbd16e4c0c6d28ec17e6bd9037d32a4dc0f3f55f0f6ea2a71a9d9bc2"
+      }
+    },
+    {
+      "id": "mb:catalog:veido-konsultacija-odos-prieziuros-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/veido-konsultacija-odos-prieziuros-konsultacija",
+      "label": "Odos priežiūros konsultacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:08.173Z",
+      "evidence": {
+        "taxonomyNodeId": "veido-konsultacija-odos-prieziuros-konsultacija",
+        "routeRegistryId": "mb:catalog:veido-konsultacija-odos-prieziuros-konsultacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/veido-konsultacija-odos-prieziuros-konsultacija",
+        "indexEligible": false,
+        "htmlSha256": "91184967d5aa3dabe195921836dfd146f7479fba295d0af9f74dff864d6449d6"
+      }
+    },
+    {
+      "id": "mb:catalog:veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+      "label": "Veido procedūros parinkimo konsultacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:08.369Z",
+      "evidence": {
+        "taxonomyNodeId": "veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+        "routeRegistryId": "mb:catalog:veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+        "indexEligible": false,
+        "htmlSha256": "707aed45fe389be620bdd48d8aed4837cb7ae7570829206283c51bbb3c9cd4f3"
+      }
+    },
+    {
+      "id": "mb:catalog:manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras",
+      "label": "Manikiūras",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:08.552Z",
+      "evidence": {
+        "taxonomyNodeId": "manikiuras",
+        "routeRegistryId": "mb:catalog:manikiuras",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/manikiuras",
+        "indexEligible": false,
+        "htmlSha256": "21b0d3d671dfc9de83e5e01f9c32d4d563ac058f8d30d801ced862d4cc2bc82a"
+      }
+    },
+    {
+      "id": "mb:catalog:estetikos-proceduros-mezoterapija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-mezoterapija",
+      "label": "Mezoterapija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:08.753Z",
+      "evidence": {
+        "taxonomyNodeId": "estetikos-proceduros-mezoterapija",
+        "routeRegistryId": "mb:catalog:estetikos-proceduros-mezoterapija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/estetikos-proceduros-mezoterapija",
+        "indexEligible": false,
+        "htmlSha256": "6f6138ec468f9c1d049f5d0941806bca893e0373e5a572f663880ca98beea0dc"
+      }
+    },
+    {
+      "id": "mb:catalog:estetikos-proceduros-biorevitalizacija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-biorevitalizacija",
+      "label": "Biorevitalizacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:08.948Z",
+      "evidence": {
+        "taxonomyNodeId": "estetikos-proceduros-biorevitalizacija",
+        "routeRegistryId": "mb:catalog:estetikos-proceduros-biorevitalizacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/estetikos-proceduros-biorevitalizacija",
+        "indexEligible": false,
+        "htmlSha256": "29c29adf64133feeb90d4cfe447f01ffc953d00d9f6cab00e37a07926a62ee7b"
+      }
+    },
+    {
+      "id": "mb:catalog:pigmentavimas-ilgalaikis-antakiu-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-antakiu-makiazas",
+      "label": "Ilgalaikis antakių makiažas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:09.140Z",
+      "evidence": {
+        "taxonomyNodeId": "pigmentavimas-ilgalaikis-antakiu-makiazas",
+        "routeRegistryId": "mb:catalog:pigmentavimas-ilgalaikis-antakiu-makiazas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-antakiu-makiazas",
+        "indexEligible": false,
+        "htmlSha256": "28218cd78a54bb94480d027ef822f692a8659675e5cb839344cc04b8a7a693d0"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-priauginimas-priauginimo-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/plauku-priauginimas-priauginimo-korekcija",
+      "label": "Priauginimo korekcija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:09.334Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-priauginimas-priauginimo-korekcija",
+        "routeRegistryId": "mb:catalog:plauku-priauginimas-priauginimo-korekcija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-priauginimas-priauginimo-korekcija",
+        "indexEligible": false,
+        "htmlSha256": "c3832ed03feffa38650b48c003ddae707c8396b566758149bd7401b68def7bd4"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-priauginimas-priaugintu-plauku-nuemimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-priauginimas-priaugintu-plauku-nuemimas",
+      "label": "Priaugintų plaukų nuėmimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:09.519Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-priauginimas-priaugintu-plauku-nuemimas",
+        "routeRegistryId": "mb:catalog:plauku-priauginimas-priaugintu-plauku-nuemimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-priauginimas-priaugintu-plauku-nuemimas",
+        "indexEligible": false,
+        "htmlSha256": "8a1fb9883868b40d070a98933cd75cfccca7f63af74f83541e04be040e210d15"
+      }
+    },
+    {
+      "id": "mb:catalog:rankos-pedos-parafino-procedura-rankoms",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-parafino-procedura-rankoms",
+      "label": "Parafino procedūra rankoms",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:09.713Z",
+      "evidence": {
+        "taxonomyNodeId": "rankos-pedos-parafino-procedura-rankoms",
+        "routeRegistryId": "mb:catalog:rankos-pedos-parafino-procedura-rankoms",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/rankos-pedos-parafino-procedura-rankoms",
+        "indexEligible": false,
+        "htmlSha256": "b23f93aabae1f5ee18b21f6d056ee0acad103cdf3192e67812573328a0c7dec2"
+      }
+    },
+    {
+      "id": "mb:catalog:rankos-pedos-parafino-procedura-pedoms",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-parafino-procedura-pedoms",
+      "label": "Parafino procedūra pėdoms",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:09.901Z",
+      "evidence": {
+        "taxonomyNodeId": "rankos-pedos-parafino-procedura-pedoms",
+        "routeRegistryId": "mb:catalog:rankos-pedos-parafino-procedura-pedoms",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/rankos-pedos-parafino-procedura-pedoms",
+        "indexEligible": false,
+        "htmlSha256": "0f1d331b1527b1ce3f612611f7733ab99c29a7bef13186b0849c74367828e70b"
+      }
+    },
+    {
+      "id": "mb:catalog:poilsio-proceduros-galvos-spa",
+      "url": "https://madbeauty.lt/paslaugos/poilsio-proceduros-galvos-spa",
+      "label": "Galvos SPA",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:10.088Z",
+      "evidence": {
+        "taxonomyNodeId": "poilsio-proceduros-galvos-spa",
+        "routeRegistryId": "mb:catalog:poilsio-proceduros-galvos-spa",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/poilsio-proceduros-galvos-spa",
+        "indexEligible": false,
+        "htmlSha256": "9fe72f6424a0086710cad173e6a11767bcb391fa2d1fc390243c312a54691327"
+      }
+    },
+    {
+      "id": "mb:catalog:tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+      "label": "Tatuiruotės eskizo konsultacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:10.290Z",
+      "evidence": {
+        "taxonomyNodeId": "tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+        "routeRegistryId": "mb:catalog:tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+        "indexEligible": false,
+        "htmlSha256": "854d013f618d9d7de0473773e7a03f66e15aa60785dc845037a26c1482fec4dc"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-dazymas-balayage",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-balayage",
+      "label": "Balayage",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:10.490Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-dazymas-balayage",
+        "routeRegistryId": "mb:catalog:plauku-dazymas-balayage",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-dazymas-balayage",
+        "indexEligible": false,
+        "htmlSha256": "7daa1d05e42667557edbde14bda163fe141d29857d03f94a3c820f403eb564aa"
+      }
+    },
+    {
+      "id": "mb:catalog:estetikos-proceduros-mikroadatine-procedura",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-mikroadatine-procedura",
+      "label": "Mikroadatinė procedūra",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:10.685Z",
+      "evidence": {
+        "taxonomyNodeId": "estetikos-proceduros-mikroadatine-procedura",
+        "routeRegistryId": "mb:catalog:estetikos-proceduros-mikroadatine-procedura",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/estetikos-proceduros-mikroadatine-procedura",
+        "indexEligible": false,
+        "htmlSha256": "3b80179421a1977f2d3983701d39b29fc2c0b506a5efbe4301dea4523465f70b"
+      }
+    },
+    {
+      "id": "mb:catalog:kuno-ivyniojimai-kuno-ivyniojimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-kuno-ivyniojimas",
+      "label": "Kūno įvyniojimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:10.869Z",
+      "evidence": {
+        "taxonomyNodeId": "kuno-ivyniojimai-kuno-ivyniojimas",
+        "routeRegistryId": "mb:catalog:kuno-ivyniojimai-kuno-ivyniojimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-kuno-ivyniojimas",
+        "indexEligible": false,
+        "htmlSha256": "4cf2a5b027e7e35081f12144353ffc10d948f2b139f24d5b5a3dc793dda49be9"
+      }
+    },
+    {
+      "id": "mb:catalog:kuno-ivyniojimai-purvo-ivyniojimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-purvo-ivyniojimas",
+      "label": "Purvo įvyniojimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:11.052Z",
+      "evidence": {
+        "taxonomyNodeId": "kuno-ivyniojimai-purvo-ivyniojimas",
+        "routeRegistryId": "mb:catalog:kuno-ivyniojimai-purvo-ivyniojimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-purvo-ivyniojimas",
+        "indexEligible": false,
+        "htmlSha256": "cb257ec78ac769471ca5ee8d45e0f556cca8fa97b471c977db083ea8a1fc05f2"
+      }
+    },
+    {
+      "id": "mb:catalog:kuno-ivyniojimai-dumbliu-ivyniojimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-dumbliu-ivyniojimas",
+      "label": "Dumblių įvyniojimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:11.232Z",
+      "evidence": {
+        "taxonomyNodeId": "kuno-ivyniojimai-dumbliu-ivyniojimas",
+        "routeRegistryId": "mb:catalog:kuno-ivyniojimai-dumbliu-ivyniojimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-dumbliu-ivyniojimas",
+        "indexEligible": false,
+        "htmlSha256": "b0b9ddc9910c4b1e6a4f914a5a662f9f465c2f1aa80c91f3cb65694750887b63"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-salinimas-aparatu-fotoepiliacija",
+      "url": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu-fotoepiliacija",
+      "label": "Fotoepiliacija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:11.422Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-salinimas-aparatu-fotoepiliacija",
+        "routeRegistryId": "mb:catalog:plauku-salinimas-aparatu-fotoepiliacija",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu-fotoepiliacija",
+        "indexEligible": false,
+        "htmlSha256": "f85dc562cad501a0ae2f49fbe329768078c56ab1cdabd78d0d117f67a45832c9"
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-dizainas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+      "label": "Dizainas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:11.620Z",
+      "evidence": {
+        "taxonomyNodeId": "nagu-dizainas",
+        "routeRegistryId": "mb:catalog:nagu-dizainas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+        "indexEligible": false,
+        "htmlSha256": "3793a9cf13ae14ca7c6c7fd1952af167824b3d22f0c082b960b155347a3c612f"
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-modeliavimas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas",
+      "label": "Priauginimas ir korekcija",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:11.802Z",
+      "evidence": {
+        "taxonomyNodeId": "nagu-modeliavimas",
+        "routeRegistryId": "mb:catalog:nagu-modeliavimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-modeliavimas",
+        "indexEligible": false,
+        "htmlSha256": "5bd691442a2a4d03e453dd258d08c875d33d374c22e196d24eafbf3a33b07137"
+      }
+    },
+    {
+      "id": "mb:catalog:pigmentavimas-ilgalaikis-lupu-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-lupu-makiazas",
+      "label": "Ilgalaikis lūpų makiažas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:11.986Z",
+      "evidence": {
+        "taxonomyNodeId": "pigmentavimas-ilgalaikis-lupu-makiazas",
+        "routeRegistryId": "mb:catalog:pigmentavimas-ilgalaikis-lupu-makiazas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-lupu-makiazas",
+        "indexEligible": false,
+        "htmlSha256": "20912fcc1c362da5215a573e843b7f90b37bfbae3e6afdeef317bdc1dd17f70f"
+      }
+    },
+    {
+      "id": "mb:catalog:pigmentavimas-ilgalaikis-akiu-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-akiu-makiazas",
+      "label": "Ilgalaikis akių makiažas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:12.166Z",
+      "evidence": {
+        "taxonomyNodeId": "pigmentavimas-ilgalaikis-akiu-makiazas",
+        "routeRegistryId": "mb:catalog:pigmentavimas-ilgalaikis-akiu-makiazas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-akiu-makiazas",
+        "indexEligible": false,
+        "htmlSha256": "92d25e795e4efac867e0eb73a92f4ed57d9b0f362fb1b7d9dd09ccd7c247295b"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-proceduros-atkuriamoji-plauku-procedura",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros-atkuriamoji-plauku-procedura",
+      "label": "Atkuriamoji plaukų procedūra",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:12.349Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-proceduros-atkuriamoji-plauku-procedura",
+        "routeRegistryId": "mb:catalog:plauku-proceduros-atkuriamoji-plauku-procedura",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-proceduros-atkuriamoji-plauku-procedura",
+        "indexEligible": false,
+        "htmlSha256": "6be14aacb9180057ede3ad4166c8378afbe4d06cd059ec21b2d9e981f7bb61c1"
+      }
+    },
+    {
+      "id": "mb:catalog:pirtys-pirtis",
+      "url": "https://madbeauty.lt/paslaugos/pirtys-pirtis",
+      "label": "Pirtis",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:12.537Z",
+      "evidence": {
+        "taxonomyNodeId": "pirtys-pirtis",
+        "routeRegistryId": "mb:catalog:pirtys-pirtis",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pirtys-pirtis",
+        "indexEligible": false,
+        "htmlSha256": "7af8b1071d490704b9ab7d758d2933a05064057ec37983c5bdab95da6c318a03"
+      }
+    },
+    {
+      "id": "mb:catalog:pirtys-hamamas",
+      "url": "https://madbeauty.lt/paslaugos/pirtys-hamamas",
+      "label": "Hamamas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:12.725Z",
+      "evidence": {
+        "taxonomyNodeId": "pirtys-hamamas",
+        "routeRegistryId": "mb:catalog:pirtys-hamamas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pirtys-hamamas",
+        "indexEligible": false,
+        "htmlSha256": "1d6b7f69d9ea11df876a2c29c44fc4982c168c93a3fc1b66db66145ef33539d0"
+      }
+    },
+    {
+      "id": "mb:catalog:pirtys-garine-pirtis",
+      "url": "https://madbeauty.lt/paslaugos/pirtys-garine-pirtis",
+      "label": "Garinė pirtis",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:12.918Z",
+      "evidence": {
+        "taxonomyNodeId": "pirtys-garine-pirtis",
+        "routeRegistryId": "mb:catalog:pirtys-garine-pirtis",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pirtys-garine-pirtis",
+        "indexEligible": false,
+        "htmlSha256": "372edf15b3a1bced97a237da1a01efe2942fa8a83c5e67f55fdb5ae3ec9e38b9"
+      }
+    },
+    {
+      "id": "mb:catalog:antakiu-dazymas-antakiu-dazymas-dazais",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-dazymas-antakiu-dazymas-dazais",
+      "label": "Antakių dažymas dažais",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:13.106Z",
+      "evidence": {
+        "taxonomyNodeId": "antakiu-dazymas-antakiu-dazymas-dazais",
+        "routeRegistryId": "mb:catalog:antakiu-dazymas-antakiu-dazymas-dazais",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/antakiu-dazymas-antakiu-dazymas-dazais",
+        "indexEligible": false,
+        "htmlSha256": "911bf1492cb3bd109aee320abeebed73dfcddf6c85e253e17a80ccd30c348c7e"
+      }
+    },
+    {
+      "id": "mb:catalog:antakiu-dazymas-antakiu-dazymas-chna",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-dazymas-antakiu-dazymas-chna",
+      "label": "Antakių dažymas chna",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:13.290Z",
+      "evidence": {
+        "taxonomyNodeId": "antakiu-dazymas-antakiu-dazymas-chna",
+        "routeRegistryId": "mb:catalog:antakiu-dazymas-antakiu-dazymas-chna",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/antakiu-dazymas-antakiu-dazymas-chna",
+        "indexEligible": false,
+        "htmlSha256": "634145d3ac51d95b82732a5fb041644de2c69b1c5fa6b79acdcd7dd7a3677bed"
+      }
+    },
+    {
+      "id": "mb:catalog:verimo-prieziura-papuosalo-pakeitimas",
+      "url": "https://madbeauty.lt/paslaugos/verimo-prieziura-papuosalo-pakeitimas",
+      "label": "Papuošalo pakeitimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:13.481Z",
+      "evidence": {
+        "taxonomyNodeId": "verimo-prieziura-papuosalo-pakeitimas",
+        "routeRegistryId": "mb:catalog:verimo-prieziura-papuosalo-pakeitimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/verimo-prieziura-papuosalo-pakeitimas",
+        "indexEligible": false,
+        "htmlSha256": "e4106010ca263470d36c49f42b351472b53655a003cdeb91b05169c102873212"
+      }
+    },
+    {
+      "id": "mb:catalog:blakstienu-prieziura-blakstienu-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-prieziura-blakstienu-dazymas",
+      "label": "Blakstienų dažymas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:13.673Z",
+      "evidence": {
+        "taxonomyNodeId": "blakstienu-prieziura-blakstienu-dazymas",
+        "routeRegistryId": "mb:catalog:blakstienu-prieziura-blakstienu-dazymas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/blakstienu-prieziura-blakstienu-dazymas",
+        "indexEligible": false,
+        "htmlSha256": "e57dd220b6cc2598fbabaa2f48e85070d735992996eeac652e8e8b1cdc34eebc"
+      }
+    },
+    {
+      "id": "mb:catalog:barzda-skutimas",
+      "url": "https://madbeauty.lt/paslaugos/barzda-skutimas",
+      "label": "Skutimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:13.869Z",
+      "evidence": {
+        "taxonomyNodeId": "barzda-skutimas",
+        "routeRegistryId": "mb:catalog:barzda-skutimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/barzda-skutimas",
+        "indexEligible": false,
+        "htmlSha256": "c8413b10768f2a1de6a2c24b1a6da7091456755bb292ecb8491e4c4c2cd8627a"
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku",
+      "label": "Vašku",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:14.094Z",
+      "evidence": {
+        "taxonomyNodeId": "depiliacija-vasku",
+        "routeRegistryId": "mb:catalog:depiliacija-vasku",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/depiliacija-vasku",
+        "indexEligible": false,
+        "htmlSha256": "4c1b1da71e9416cd7fd7a8b44209449c37c62e42c723b50766ec79e834ee90c2"
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi",
+      "label": "Cukrumi",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:14.283Z",
+      "evidence": {
+        "taxonomyNodeId": "depiliacija-cukrumi",
+        "routeRegistryId": "mb:catalog:depiliacija-cukrumi",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi",
+        "indexEligible": false,
+        "htmlSha256": "16adac2dde104c3e5c9bf615737542df75536611927f161436846164738e2b42"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-dazymas-ombre",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-ombre",
+      "label": "Ombre",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:14.467Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-dazymas-ombre",
+        "routeRegistryId": "mb:catalog:plauku-dazymas-ombre",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-dazymas-ombre",
+        "indexEligible": false,
+        "htmlSha256": "8fe846d9b3f044f361e4b90467f1ac0b6396363d637d0e197b1017862db050ba"
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-modeliavimas-nagu-stiprinimas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-stiprinimas",
+      "label": "Nagų stiprinimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:14.650Z",
+      "evidence": {
+        "taxonomyNodeId": "nagu-modeliavimas-nagu-stiprinimas",
+        "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-stiprinimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-stiprinimas",
+        "indexEligible": false,
+        "htmlSha256": "c0a7a732433bfbc38fbc57fb7212bd4dd4fa400cda69f97e4bb17190c2ea2a2f"
+      }
+    },
+    {
+      "id": "mb:catalog:kuno-sveitimas-kuno-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-sveitimas-kuno-sveitimas",
+      "label": "Kūno šveitimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:14.835Z",
+      "evidence": {
+        "taxonomyNodeId": "kuno-sveitimas-kuno-sveitimas",
+        "routeRegistryId": "mb:catalog:kuno-sveitimas-kuno-sveitimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kuno-sveitimas-kuno-sveitimas",
+        "indexEligible": false,
+        "htmlSha256": "f1781f26e1f87d2b7392476019c91e7a6863d82e9ccbbf8ea44181f150628061"
+      }
+    },
+    {
+      "id": "mb:catalog:kuno-sveitimas-kuno-drekinimo-procedura",
+      "url": "https://madbeauty.lt/paslaugos/kuno-sveitimas-kuno-drekinimo-procedura",
+      "label": "Kūno drėkinimo procedūra",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T22:31:15.017Z",
+      "evidence": {
+        "taxonomyNodeId": "kuno-sveitimas-kuno-drekinimo-procedura",
+        "routeRegistryId": "mb:catalog:kuno-sveitimas-kuno-drekinimo-procedura",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kuno-sveitimas-kuno-drekinimo-procedura",
+        "indexEligible": false,
+        "htmlSha256": "8a9e9379731618df1382d0e66afaa1b73776c0fa4fe25686b70973995f5a6ae9"
+      }
+    }
+  ],
+  "deferred": [
+    {
+      "taxonomyNodeId": "sportas-asmenine-treniruote",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "sportas-grupine-treniruote",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "gyvunu-grozis-sunu-kirpimas",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "gyvunu-grozis-gyvunu-maudymas",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "gyvunu-konsultacijos-gyvuno-kailio-prieziuros-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "kineziterapeuto-paslaugos-kineziterapeuto-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "kineziterapeuto-paslaugos-individuali-kineziterapija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "kineziterapeuto-paslaugos-kineziterapijos-grupinis-uzsiemimas",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "medicinos-konsultacijos-dermatologo-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "medicinos-konsultacijos-medicinos-estetikos-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "medicinos-konsultacijos-kito-medicinos-specialisto-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "dantu-prieziura-profesionali-burnos-higiena",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "psichologo-paslaugos-psichologo-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "psichologo-paslaugos-psichoterapijos-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "savijautos-uzsiemimai-meditacijos-uzsiemimas",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "savijautos-uzsiemimai-kvepavimo-uzsiemimas",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "savijautos-uzsiemimai-garso-atsipalaidavimo-seansas",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "savijauta",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "sportas-pilatesas",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "sportas-joga",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "dantu-prieziura-dantu-balinimo-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "psichologo-paslaugos-poru-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    },
+    {
+      "taxonomyNodeId": "psichologo-paslaugos-seimos-konsultacija",
+      "status": "planned",
+      "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+    }
+  ],
+  "pages": [
+    {
+      "planId": "AV-gidas",
+      "kept": [
+        "mb:catalog:verimo-prieziura-auskaro-verimo-konsultacija"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "ES-gidas",
+      "kept": [
+        "mb:catalog:estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+        "mb:catalog:estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "FX-gidas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "sportas-asmenine-treniruote",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "sportas-grupine-treniruote",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "GY-gidas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "gyvunu-grozis-sunu-kirpimas",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "gyvunu-grozis-gyvunu-maudymas",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "gyvunu-konsultacijos-gyvuno-kailio-prieziuros-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "IG-gidas",
+      "kept": [
+        "mb:catalog:idegis-purskiamas-idegis",
+        "mb:catalog:idegis-soliariumas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "KP-gidas",
+      "kept": [
+        "mb:catalog:kunas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "KT-gidas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "kineziterapeuto-paslaugos-kineziterapeuto-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "kineziterapeuto-paslaugos-individuali-kineziterapija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "kineziterapeuto-paslaugos-kineziterapijos-grupinis-uzsiemimas",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "LZ-gidas",
+      "kept": [
+        "mb:catalog:plauku-salinimas-aparatu-plauku-salinimas-lazeriu"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "MD-gidas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "medicinos-konsultacijos-dermatologo-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "medicinos-konsultacijos-medicinos-estetikos-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "medicinos-konsultacijos-kito-medicinos-specialisto-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "MS-gidas",
+      "kept": [
+        "mb:catalog:kuno-masazai-atpalaiduojantis-masazas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "OD-gidas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "dantu-prieziura-profesionali-burnos-higiena",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "PM-gidas",
+      "kept": [
+        "mb:catalog:pigmento-korekcija-ilgalaikio-makiazo-konsultacija"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "PS-gidas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "psichologo-paslaugos-psichologo-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "psichologo-paslaugos-psichoterapijos-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "PX-gidas",
+      "kept": [
+        "mb:catalog:plauku-priauginimas-plauku-priauginimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "RP-gidas",
+      "kept": [
+        "mb:catalog:rankos-pedos-ranku-spa",
+        "mb:catalog:rankos-pedos-pedu-spa",
+        "mb:catalog:rankos-pedos"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "SP-gidas",
+      "kept": [
+        "mb:catalog:spa-ritualai",
+        "mb:catalog:pirtys",
+        "mb:catalog:poilsio-proceduros",
+        "mb:catalog:spa"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "SV-gidas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "savijautos-uzsiemimai-meditacijos-uzsiemimas",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "savijautos-uzsiemimai-kvepavimo-uzsiemimas",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "savijautos-uzsiemimai-garso-atsipalaidavimo-seansas",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "savijauta",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "TT-gidas",
+      "kept": [
+        "mb:catalog:tatuiravimas-nauja-tatuiruote"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "VP-gidas",
+      "kept": [
+        "mb:catalog:veidas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "B-meistrui-galerija",
+      "kept": [],
+      "deferred": []
+    },
+    {
+      "planId": "AV-kaina-trukme",
+      "kept": [
+        "mb:catalog:verimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "KP-kaina-trukme",
+      "kept": [
+        "mb:catalog:kunas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "LZ-kaina-trukme",
+      "kept": [
+        "mb:catalog:plauku-salinimas-aparatu"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "MS-kaina-trukme",
+      "kept": [
+        "mb:catalog:masazas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "VP-kaina-trukme",
+      "kept": [
+        "mb:catalog:veidas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "DP-kojos",
+      "kept": [
+        "mb:catalog:depiliacija-vasku-koju-depiliacija-vasku",
+        "mb:catalog:depiliacija-cukrumi-koju-depiliacija-cukrumi"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "GL-nuemimas",
+      "kept": [
+        "mb:catalog:lakavimas-nagu-lakavimo-nuemimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "MN-be-lakavimo",
+      "kept": [
+        "mb:catalog:manikiuras-manikiuras-be-lakavimo"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "MS-nugara-ar-kunas",
+      "kept": [
+        "mb:catalog:srities-masazai",
+        "mb:catalog:srities-masazai-kaklo-ir-peciu-masazas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "PD-kaina-trukme",
+      "kept": [
+        "mb:catalog:pedikiuras"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "VP-konsultacija",
+      "kept": [
+        "mb:catalog:veido-konsultacija-odos-prieziuros-konsultacija",
+        "mb:catalog:veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+        "mb:catalog:veidas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "MN-trukme",
+      "kept": [
+        "mb:catalog:manikiuras"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "ES-mezoterapija-biorevitalizacija",
+      "kept": [
+        "mb:catalog:estetikos-proceduros-mezoterapija",
+        "mb:catalog:estetikos-proceduros-biorevitalizacija"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "FX-joga-pilatesas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "sportas-pilatesas",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "sportas-joga",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "OD-balinimas",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "dantu-prieziura-dantu-balinimo-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "PM-antakiai",
+      "kept": [
+        "mb:catalog:pigmentavimas-ilgalaikis-antakiu-makiazas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "PS-poros-seima",
+      "kept": [],
+      "deferred": [
+        {
+          "taxonomyNodeId": "psichologo-paslaugos-poru-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        },
+        {
+          "taxonomyNodeId": "psichologo-paslaugos-seimos-konsultacija",
+          "status": "planned",
+          "reason": "Actual canonical information route is not deployed ready; no live href fabricated."
+        }
+      ]
+    },
+    {
+      "planId": "PX-korekcija-nuemimas",
+      "kept": [
+        "mb:catalog:plauku-priauginimas-priauginimo-korekcija",
+        "mb:catalog:plauku-priauginimas-priaugintu-plauku-nuemimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "RP-parafinas",
+      "kept": [
+        "mb:catalog:rankos-pedos-parafino-procedura-rankoms",
+        "mb:catalog:rankos-pedos-parafino-procedura-pedoms"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "SP-galvos-spa",
+      "kept": [
+        "mb:catalog:poilsio-proceduros-galvos-spa"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "TT-eskizas",
+      "kept": [
+        "mb:catalog:tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "AV-metodai",
+      "kept": [
+        "mb:catalog:verimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "DZ-balayage-airtouch",
+      "kept": [
+        "mb:catalog:plauku-dazymas-balayage"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "ES-mikroadatine",
+      "kept": [
+        "mb:catalog:estetikos-proceduros-mikroadatine-procedura"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "KP-ivyniojimas",
+      "kept": [
+        "mb:catalog:kuno-ivyniojimai-kuno-ivyniojimas",
+        "mb:catalog:kuno-ivyniojimai-purvo-ivyniojimas",
+        "mb:catalog:kuno-ivyniojimai-dumbliu-ivyniojimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "LZ-lazeris-ipl",
+      "kept": [
+        "mb:catalog:plauku-salinimas-aparatu-fotoepiliacija",
+        "mb:catalog:plauku-salinimas-aparatu-plauku-salinimas-lazeriu"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "ND-chrome-cat-eye",
+      "kept": [
+        "mb:catalog:nagu-dizainas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "NP-formos-tipsai",
+      "kept": [
+        "mb:catalog:nagu-modeliavimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "PM-lupos-akys",
+      "kept": [
+        "mb:catalog:pigmentavimas-ilgalaikis-lupu-makiazas",
+        "mb:catalog:pigmentavimas-ilgalaikis-akiu-makiazas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "PP-atstatymas",
+      "kept": [
+        "mb:catalog:plauku-proceduros-atkuriamoji-plauku-procedura"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "SP-hamamas",
+      "kept": [
+        "mb:catalog:pirtys-pirtis",
+        "mb:catalog:pirtys-hamamas",
+        "mb:catalog:pirtys-garine-pirtis"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "AN-dazai-henna",
+      "kept": [
+        "mb:catalog:antakiu-dazymas-antakiu-dazymas-dazais",
+        "mb:catalog:antakiu-dazymas-antakiu-dazymas-chna"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "AV-papuosalas",
+      "kept": [
+        "mb:catalog:verimo-prieziura-papuosalo-pakeitimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "BL-dazymas",
+      "kept": [
+        "mb:catalog:blakstienu-prieziura-blakstienu-dazymas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "BR-masinele-skutimas",
+      "kept": [
+        "mb:catalog:barzda-skutimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "DP-ar-lazeris",
+      "kept": [
+        "mb:catalog:depiliacija-vasku",
+        "mb:catalog:depiliacija-cukrumi",
+        "mb:catalog:plauku-salinimas-aparatu-plauku-salinimas-lazeriu"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "DZ-ombre-sombre",
+      "kept": [
+        "mb:catalog:plauku-dazymas-ombre"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "GL-ar-stiprinimas",
+      "kept": [
+        "mb:catalog:nagu-modeliavimas-nagu-stiprinimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "KP-sveitimas",
+      "kept": [
+        "mb:catalog:kuno-sveitimas-kuno-sveitimas",
+        "mb:catalog:kuno-sveitimas-kuno-drekinimo-procedura"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "LZ-zonos",
+      "kept": [
+        "mb:catalog:plauku-salinimas-aparatu"
+      ],
+      "deferred": []
+    }
+  ]
+}

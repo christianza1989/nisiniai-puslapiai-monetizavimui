@@ -2,4 +2,4 @@ screenshots/
 SCREENS*.png
 release/release-manifest.json
 *.html
-assets/
+/assets/

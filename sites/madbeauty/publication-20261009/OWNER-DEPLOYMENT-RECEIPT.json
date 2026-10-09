@@ -1,0 +1,143 @@
+{
+  "recordedAt": "2026-10-09T12:12:42.578Z",
+  "state": "canonical-date-only-release-accepted",
+  "domain": "https://madbeauty.lt",
+  "releaseSource": "385005d02298fd9c3b59f23f4668223ef341ab40",
+  "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+  "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+  "packageSource": "e165b75101655527681c4eed6f72c4e2b6aee566",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "previousPackageSha256": "75aa78c1109f046a54ec03354dcf677c2a3af619ce549d5e59cf6ce514f806c4",
+  "rendererSha256": "0c48d38915c7ab442c362d292b5250a91a33f0d604eeb0564f3bcea129d61ae0",
+  "producerReviewedRendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+  "productionArtifactSha256": "1898da08cc32f5e23f6dcf9c89fa5f04601a28f63cd5b8bb21afd47b00b98245",
+  "productionVersion": "4dbdf361-25c6-4496-97a5-daaed23df201",
+  "previousProductionVersion": "f8eba745-b8ef-446e-aeff-3c8b95c762bd",
+  "deployedAt": "2026-10-09T12:09:13.077551Z",
+  "fullPlatformUpgradeDeployed": false,
+  "package": {
+    "pages": 39,
+    "guides": 35,
+    "dateChangedFutureGuides": 25,
+    "unchangedApprovedPages": 14,
+    "unchangedAssets": 180,
+    "futureGuides": 32,
+    "unwrittenPlanIsNotPublishedContent": true
+  },
+  "acceptance": {
+    "native": {
+      "state": "PASS",
+      "publicationStates": 64,
+      "gateChecks": 8,
+      "pages": 7,
+      "futureBlocked": 32,
+      "assets": 284,
+      "served": 129,
+      "blocked": 155,
+      "receiptSha256": "f09a0d41fef0b94ecfdfa76adf818cd9b109ca499beb1f7a37fbe6909ed4b145"
+    },
+    "hosted": {
+      "state": "PASS",
+      "publicationStates": 64,
+      "gateChecks": 7,
+      "pages": 7,
+      "futureBlocked": 32,
+      "assets": 284,
+      "served": 129,
+      "blocked": 155,
+      "receiptSha256": "abc8a9936e3eaf6f251bc8b67a858f8b94ee307357e79a3330b6528b2e61b7ff"
+    },
+    "live-before": {
+      "state": "PASS",
+      "publicationStates": 0,
+      "gateChecks": 0,
+      "pages": 7,
+      "futureBlocked": 32,
+      "assets": 284,
+      "served": 129,
+      "blocked": 155,
+      "receiptSha256": "8e173a3ba8950afb2573330dab33afd171b49f6615c33a0f5946cbfa517874f4"
+    },
+    "live-after": {
+      "state": "PASS",
+      "publicationStates": 0,
+      "gateChecks": 0,
+      "pages": 7,
+      "futureBlocked": 32,
+      "assets": 284,
+      "served": 129,
+      "blocked": 155,
+      "receiptSha256": "94fc97f3a3f635141ecf38dc14720353d47a2690e762b1253d754648356c1bc0"
+    }
+  },
+  "productionConfiguration": {
+    "unchanged": true,
+    "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3",
+    "className": "MadbeautyPlatform",
+    "migrationTag": "v1",
+    "compatibilityDate": "2026-05-22",
+    "compatibilityFlags": [
+      "nodejs_compat"
+    ],
+    "domainAssignments": [
+      "madbeauty.lt",
+      "www.madbeauty.lt"
+    ],
+    "plainVars": [
+      {
+        "name": "APP_ORIGIN",
+        "text": "https://madbeauty.lt"
+      },
+      {
+        "name": "OPERATOR_EMAIL",
+        "text": "info@pinet.lt"
+      },
+      {
+        "name": "RELEASE_MODE",
+        "text": "production"
+      }
+    ],
+    "secretNames": [
+      "LEAD_SMTP_ENABLED",
+      "LEAD_SMTP_USER",
+      "MAIL_RELAY_KEY",
+      "MAIL_RELAY_SITE",
+      "MAIL_RELAY_URL",
+      "SESSION_SECRET"
+    ],
+    "observabilityUnchanged": true
+  },
+  "qa": {
+    "version": "2b39ad0a-e114-4793-919f-cc38ef20f2b1",
+    "namespaceId": "66b5a76fd6864563b5c3248e2290e55b",
+    "clockHookOnlyInQa": true,
+    "noSmtpBindings": true
+  },
+  "screenshots": [
+    {
+      "name": "canonical-guides-1440.png",
+      "sha256": "de8a001e86c9c381fb07907b9619dc8a772cece70a87518e507c07acda9dc893"
+    },
+    {
+      "name": "canonical-article-1440.png",
+      "sha256": "f2184522912dfd61ceebcce54215dd21dfc69ed6d8551ae0394d6b5b7c13d551"
+    },
+    {
+      "name": "canonical-article-390.png",
+      "sha256": "d33557f1c1d6ef5797fd4411e82d8155ace9e33193ecff2ba950b6a579533912"
+    },
+    {
+      "name": "canonical-future-390.png",
+      "sha256": "32d166dcfa9bf639d70aca67462a982cf2a92dea349589bcfd0a547f5d7589ba"
+    },
+    {
+      "name": "canonical-future-1440.png",
+      "sha256": "857892c92a38d75021213f61e470a28fcb233701d901328add93209b8a80b448"
+    },
+    {
+      "name": "canonical-guides-390.png",
+      "sha256": "87b4048a626342d60970ab78cd3a67a4ffd4008ccef06bcb35b133dd708af21c"
+    }
+  ],
+  "scope": "Private simulated future-clock acceptance is distinct from real canonical current-time HTTP and browser acceptance. No full platform upgrade, provider admission, customer write, retention erasure, mail test, DNS or storage handoff performed."
+}

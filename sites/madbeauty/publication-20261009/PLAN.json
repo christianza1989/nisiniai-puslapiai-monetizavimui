@@ -15894,7 +15894,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d"
     },
     {
@@ -20209,7 +20209,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "d9b6cd7b-074e-42fe-9c87-9cd7281924d5"
     },
     {
@@ -20439,7 +20439,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "697ccf43-018c-4385-9147-0bcd6286df97"
     },
     {
@@ -20635,7 +20635,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "aa2eb1ab-c359-41b0-85b9-238dfa682f08"
     },
     {
@@ -20831,7 +20831,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "c09d4685-2a77-4c0e-b02d-797d0b77a3f6"
     },
     {
@@ -21061,7 +21061,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "5808d149-3a59-4643-b25b-f6614aa5fc3f"
     },
     {
@@ -21257,7 +21257,7 @@
       "previousResearchWave": 4,
       "previousPlannedPublishAt": "2026-11-10T08:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "855a0812-340e-46fa-9e77-8232c1b7fc43"
     },
     {
@@ -21682,7 +21682,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "83808900-d3df-4942-97c6-121bdeca5216"
     },
     {
@@ -22107,7 +22107,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "df24650a-285f-4fe6-b08a-6b0db530e38f"
     },
     {
@@ -22302,7 +22302,7 @@
       "previousResearchWave": 3,
       "previousPlannedPublishAt": "2026-10-27T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "3b731f2e-46a8-4903-b9af-ce6cdaf12854"
     },
     {
@@ -22497,7 +22497,7 @@
       "previousResearchWave": 3,
       "previousPlannedPublishAt": "2026-10-27T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "5d3da74e-b618-402a-be10-a4cff0634f5b"
     },
     {
@@ -39533,7 +39533,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "61ff3d37-948a-4c60-a0ca-04314065f5a1"
     },
     {
@@ -39811,7 +39811,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5"
     },
     {
@@ -40039,7 +40039,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "28f9b013-38fc-479b-82ed-7dfbc2e864e9"
     },
     {
@@ -40266,7 +40266,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "8cdfcc4a-aa52-4a44-ac30-287d6cbbdbe5"
     },
     {
@@ -40494,7 +40494,7 @@
       "previousResearchWave": 4,
       "previousPlannedPublishAt": "2026-11-10T08:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "8eaa089e-1ec4-4e50-98b2-154b1b9d46a9"
     },
     {
@@ -40688,7 +40688,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "3db6430d-d08c-44a8-89a9-f58f49cee91c"
     },
     {
@@ -40882,7 +40882,7 @@
       "previousResearchWave": 3,
       "previousPlannedPublishAt": "2026-10-27T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "527fc84f-a1bf-4823-9cb2-2377ed88bf39"
     },
     {
@@ -41272,7 +41272,7 @@
       "previousResearchWave": 4,
       "previousPlannedPublishAt": "2026-11-10T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "886f62f7-ffa1-49f3-8847-f4069619606a"
     },
     {
@@ -48109,7 +48109,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "6e2978f2-d468-47c5-a06b-989fcf9547eb"
     },
     {
@@ -48437,7 +48437,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "2c373504-6712-4e49-b295-815761c629d2"
     },
     {
@@ -48715,7 +48715,7 @@
       "previousResearchWave": 4,
       "previousPlannedPublishAt": "2026-11-10T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "04048b77-3e48-4947-b914-e8a0d44ed8c2"
     },
     {
@@ -48943,7 +48943,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "99989673-07b9-4e51-93da-b4fff0fcd04f"
     },
     {
@@ -49137,7 +49137,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "d2351786-2f7d-4d7f-aa69-0c3c4bef3c74"
     },
     {
@@ -71446,7 +71446,7 @@
       "previousResearchWave": 2,
       "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "df53abff-cb78-4282-be67-f7b8649c1b68"
     },
     {
@@ -74511,7 +74511,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "2b36a6c5-a758-4d60-a2f7-a87854140a28"
     },
     {
@@ -74643,7 +74643,7 @@
       "previousResearchWave": 1,
       "previousPlannedPublishAt": "2026-10-13T07:00:00.000Z",
       "publishLocalTime": "16:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "3d2eb233-ab0b-4cbc-af15-f1d9db6bf5c1"
     },
     {
@@ -75169,7 +75169,7 @@
       "previousResearchWave": 3,
       "previousPlannedPublishAt": "2026-10-27T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "6d90498a-ab1d-4d58-8c75-0fc0cea84177"
     },
     {
@@ -75827,7 +75827,7 @@
       "previousResearchWave": "SEASONAL",
       "previousPlannedPublishAt": "2026-11-10T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "57f183fb-ac75-4d1f-9afc-412100b0595d"
     },
     {
@@ -75978,7 +75978,7 @@
       "previousResearchWave": "SEASONAL",
       "previousPlannedPublishAt": "2026-11-24T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "ed236e53-380e-4fd1-a47a-c83567ff021e"
     },
     {
@@ -76128,7 +76128,7 @@
       "previousResearchWave": "SEASONAL",
       "previousPlannedPublishAt": "2027-01-12T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "01a2a4db-a027-4a4e-bbd5-5dc96cc1a603"
     },
     {
@@ -76279,7 +76279,7 @@
       "previousResearchWave": "SEASONAL",
       "previousPlannedPublishAt": "2027-02-23T08:00:00.000Z",
       "publishLocalTime": "10:00",
-      "deliveryStatus": "APPROVED_DEPLOYED_OLD_SCHEDULE",
+      "deliveryStatus": "APPROVED_SCHEDULE_DEPLOYED",
       "pageId": "8bec4e8c-c3f9-4208-9d19-4a67b86f7848"
     },
     {
@@ -88941,7 +88941,7 @@
         }
       }
     ],
-    "calendarStatus": "CONTINUOUS_OWNER_REQUESTED_PUBLICATION_PENDING_FOR_CHANGED_READY_GUIDES"
+    "calendarStatus": "CONTINUOUS_READY_GUIDES_DATES_DEPLOYED"
   },
   "updatedAt": "2026-10-09",
   "seoCoreReview": {

@@ -1,0 +1,33 @@
+{
+  "format": "madbeauty-calendar-deployment/v1",
+  "status": "PASS_ACTUAL_DOMAIN",
+  "recordedAt": "2026-10-09T12:12:16.930Z",
+  "checkedAt": "2026-10-09T12:11:01.963Z",
+  "origin": "https://madbeauty.lt",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "domainEvidence": "DOMAIN-ACCEPTANCE.json",
+  "ownerThread": "01a11268-7ab2-7a23-973c-598322dba15a",
+  "ownerPullRequest": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/48",
+  "ownerReceiptStatus": "canonical-date-only-release-accepted",
+  "publicGuides": 3,
+  "scheduledReadyGuides": 32,
+  "unwrittenGuides": 260,
+  "scope": "Prepared guide dates only; not a release of 260 unwritten topics",
+  "ownerReceipt": "OWNER-DEPLOYMENT-RECEIPT.json",
+  "ownerReceiptSha256": "1fcb71be980e9da00f9fc73524c99afc7319c37e7457815dadbadbdbfb7a2724",
+  "ownerReceiptCommit": "f1b70d625749e06f13986074006f985f80394c78",
+  "releaseSource": "385005d02298fd9c3b59f23f4668223ef341ab40",
+  "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+  "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+  "rendererSha256": "0c48d38915c7ab442c362d292b5250a91a33f0d604eeb0564f3bcea129d61ae0",
+  "productionArtifactSha256": "1898da08cc32f5e23f6dcf9c89fa5f04601a28f63cd5b8bb21afd47b00b98245",
+  "productionVersion": "4dbdf361-25c6-4496-97a5-daaed23df201",
+  "deployedAt": "2026-10-09T12:09:13.077551Z",
+  "consumerAcceptance": {
+    "nativePublicationStates": 64,
+    "hostedPublicationStates": 64,
+    "liveAfter": "PASS",
+    "productionConfigurationUnchanged": true,
+    "nativeHttpsScreenshots": 6
+  }
+}

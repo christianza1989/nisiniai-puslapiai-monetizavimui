@@ -1,40 +1,40 @@
 # Madbeauty: nuoseklus pusmečio kalendorius
 
-Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 neparašytų. Parengtų 32 būsimų gidų naujas datų paketas peržiūrėtas; faktinis diegimas dar tikrinamas. Likusios 260 temos dar turi būti parašytos, iliustruotos, peržiūrėtos ir įdiegtos.
+Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 neparašytų. Parengtų 32 būsimų gidų datos įdiegtos gyvoje svetainėje ir patikrintos. Likusios 260 temos dar turi būti parašytos, iliustruotos, peržiūrėtos ir įdiegtos.
 
 | Data | Valanda | Straipsnis | Parengimas |
 | --- | --- | --- | --- |
 | 2026-10-05 | 15:00 | Kas įeina į manikiūro kainą | Jau paskelbtas |
 | 2026-10-05 | 22:34 | Kaip pasirinkti nagų spalvą | Jau paskelbtas |
 | 2026-10-05 | 22:34 | Kaip vertinti meistro darbų galeriją | Jau paskelbtas |
-| 2026-10-13 | 10:00 | Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas | Parengtas; nauja data dar diegiama |
-| 2026-10-13 | 16:00 | Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga | Parengtas; nauja data dar diegiama |
-| 2026-10-14 | 10:00 | Dieninis, proginis ar vestuvinis makiažas: kaip pasirinkti? | Parengtas; nauja data dar diegiama |
-| 2026-10-14 | 16:00 | Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis | Parengtas; nauja data dar diegiama |
-| 2026-10-15 | 10:00 | Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena | Parengtas; nauja data dar diegiama |
-| 2026-10-15 | 16:00 | Kaip užsiregistruoti grožio vizitui: paslauga, laikas, vieta ir patvirtinimas | Parengtas; nauja data dar diegiama |
-| 2026-10-16 | 10:00 | Bob ir carré kirpimai: ką tiksliai parodyti nuotraukoje? | Parengtas; nauja data dar diegiama |
-| 2026-10-16 | 16:00 | Dieninis ir proginis makiažas: intensyvumas, apimtis ir pasiūlymo ribos | Parengtas; nauja data dar diegiama |
-| 2026-10-17 | 10:00 | Džiovinimas ir sušukavimas ar proginė šukuosena: skirtinga darbo apimtis | Parengtas; nauja data dar diegiama |
-| 2026-10-18 | 10:00 | Keli grožio vizitai ir individualūs poreikiai: laiko, vietos bei komforto planas | Parengtas; nauja data dar diegiama |
-| 2026-10-19 | 10:00 | Galiukų pakirpimas ar nauja kirpimo forma: skirtingos užduotys | Parengtas; nauja data dar diegiama |
-| 2026-10-19 | 16:00 | Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas | Parengtas; nauja data dar diegiama |
-| 2026-10-20 | 10:00 | Garbanos, bangos ir tiesus sušukavimas: ką parodyti šukuosenos užduotyje? | Parengtas; nauja data dar diegiama |
-| 2026-10-20 | 16:00 | Garbanotų plaukų kirpimas: natūrali tekstūra, susitraukimas ir vizito ruošimas | Parengtas; nauja data dar diegiama |
-| 2026-10-21 | 10:00 | Makiažo nuotrauka vizažistui: tekstūra, atspalvis ir retušo ribos | Parengtas; nauja data dar diegiama |
-| 2026-10-21 | 16:00 | Šukuosenos kaina ir trukmė: ką palyginti prieš vizitą | Parengtas; nauja data dar diegiama |
-| 2026-10-22 | 10:00 | Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas | Parengtas; nauja data dar diegiama |
-| 2026-10-22 | 16:00 | Asmeninė makiažo pamoka ar priemonių konsultacija: ką gaunate iš kiekvienos | Parengtas; nauja data dar diegiama |
-| 2026-10-23 | 10:00 | Makiažas ir šukuosena vienu vizitu: grafikas bei paslaugų sudėtis | Parengtas; nauja data dar diegiama |
-| 2026-10-23 | 16:00 | Kirpčiukai: ilgis, forma ir kasdienė priežiūra prieš apsisprendžiant | Parengtas; nauja data dar diegiama |
-| 2026-10-24 | 10:00 | Vestuvinis makiažas ir bandomasis vizitas: kaip užfiksuoti pasirinkimą? | Parengtas; nauja data dar diegiama |
-| 2026-10-25 | 10:00 | Prieš sušukavimą: kada plauti plaukus ir ką atsinešti? | Parengtas; nauja data dar diegiama |
-| 2026-10-26 | 10:00 | Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį? | Parengtas; nauja data dar diegiama |
-| 2026-10-26 | 16:00 | Susegta ar palaida proginė šukuosena: kaip apsispręsti? | Parengtas; nauja data dar diegiama |
-| 2026-10-27 | 10:00 | Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus? | Parengtas; nauja data dar diegiama |
-| 2026-10-27 | 16:00 | Vestuvinė šukuosena ir bandomasis vizitas: ką užbaigti prieš renginį? | Parengtas; nauja data dar diegiama |
-| 2026-10-28 | 10:00 | Sluoksniuotas kirpimas: kas keičiasi plaukų formoje ir priežiūroje? | Parengtas; nauja data dar diegiama |
-| 2026-10-28 | 16:00 | Trumpas kirpimas: mašinėlės ilgis, kontūras ir perėjimas | Parengtas; nauja data dar diegiama |
+| 2026-10-13 | 10:00 | Grožio paslaugos pasirinkimas: kategorijos, tikslas ir patikimas vizito planas | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-13 | 16:00 | Kaip pasirinkti kirpimą: plaukų tekstūra, veido forma ir vizito eiga | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-14 | 10:00 | Dieninis, proginis ar vestuvinis makiažas: kaip pasirinkti? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-14 | 16:00 | Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-15 | 10:00 | Plaukų formavimo gidas: džiovinimas, sušukavimas ir proginė šukuosena | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-15 | 16:00 | Kaip užsiregistruoti grožio vizitui: paslauga, laikas, vieta ir patvirtinimas | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-16 | 10:00 | Bob ir carré kirpimai: ką tiksliai parodyti nuotraukoje? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-16 | 16:00 | Dieninis ir proginis makiažas: intensyvumas, apimtis ir pasiūlymo ribos | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-17 | 10:00 | Džiovinimas ir sušukavimas ar proginė šukuosena: skirtinga darbo apimtis | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-18 | 10:00 | Keli grožio vizitai ir individualūs poreikiai: laiko, vietos bei komforto planas | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-19 | 10:00 | Galiukų pakirpimas ar nauja kirpimo forma: skirtingos užduotys | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-19 | 16:00 | Makiažo kaina ir trukmė: blakstienos, bandomasis vizitas bei atvykimas | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-20 | 10:00 | Garbanos, bangos ir tiesus sušukavimas: ką parodyti šukuosenos užduotyje? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-20 | 16:00 | Garbanotų plaukų kirpimas: natūrali tekstūra, susitraukimas ir vizito ruošimas | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-21 | 10:00 | Makiažo nuotrauka vizažistui: tekstūra, atspalvis ir retušo ribos | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-21 | 16:00 | Šukuosenos kaina ir trukmė: ką palyginti prieš vizitą | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-22 | 10:00 | Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-22 | 16:00 | Asmeninė makiažo pamoka ar priemonių konsultacija: ką gaunate iš kiekvienos | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-23 | 10:00 | Makiažas ir šukuosena vienu vizitu: grafikas bei paslaugų sudėtis | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-23 | 16:00 | Kirpčiukai: ilgis, forma ir kasdienė priežiūra prieš apsisprendžiant | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-24 | 10:00 | Vestuvinis makiažas ir bandomasis vizitas: kaip užfiksuoti pasirinkimą? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-25 | 10:00 | Prieš sušukavimą: kada plauti plaukus ir ką atsinešti? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-26 | 10:00 | Kirpimo nuotrauka: kaip sutarti ilgį, kontūrą ir norimą pokytį? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-26 | 16:00 | Susegta ar palaida proginė šukuosena: kaip apsispręsti? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-27 | 10:00 | Kaip pasiruošti kirpimui ir ar prieš vizitą plauti plaukus? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-27 | 16:00 | Vestuvinė šukuosena ir bandomasis vizitas: ką užbaigti prieš renginį? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-28 | 10:00 | Sluoksniuotas kirpimas: kas keičiasi plaukų formoje ir priežiūroje? | Parengtas ir įkeltas; laukia publikavimo datos |
+| 2026-10-28 | 16:00 | Trumpas kirpimas: mašinėlės ilgis, kontūras ir perėjimas | Parengtas ir įkeltas; laukia publikavimo datos |
 | 2026-10-29 | 10:00 | Antakių priežiūros gidas: korekcija, dažymas ir laminavimas | Planas; tekstas dar neparašytas |
 | 2026-10-30 | 10:00 | Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas | Planas; tekstas dar neparašytas |
 | 2026-10-30 | 16:00 | Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas | Planas; tekstas dar neparašytas |
@@ -54,7 +54,7 @@ Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 nepara
 | 2026-11-08 | 10:00 | Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos | Planas; tekstas dar neparašytas |
 | 2026-11-09 | 10:00 | Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas | Planas; tekstas dar neparašytas |
 | 2026-11-09 | 16:00 | Burnos higiena, dantų balinimas ir odontologo konsultacija: skirtingi tikslai | Planas; tekstas dar neparašytas |
-| 2026-11-10 | 10:00 | Grožio vizitai prieš Kalėdas: nagų dizainas ir kelių paslaugų planas | Parengtas; nauja data dar diegiama |
+| 2026-11-10 | 10:00 | Grožio vizitai prieš Kalėdas: nagų dizainas ir kelių paslaugų planas | Parengtas ir įkeltas; laukia publikavimo datos |
 | 2026-11-10 | 16:00 | Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas | Planas; tekstas dar neparašytas |
 | 2026-11-11 | 10:00 | Permanentinis makiažas: kas tai, zonos, privalumai ir ribos | Planas; tekstas dar neparašytas |
 | 2026-11-11 | 16:00 | Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos | Planas; tekstas dar neparašytas |
@@ -77,7 +77,7 @@ Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 nepara
 | 2026-11-22 | 10:00 | Blakstienų paslaugų kaina ir trukmė: naujas rinkinys, papildymas ir dažymas | Planas; tekstas dar neparašytas |
 | 2026-11-23 | 10:00 | Barzdos paslaugų kaina ir trukmė: formavimas, skutimas ir papildomi darbai | Planas; tekstas dar neparašytas |
 | 2026-11-23 | 16:00 | Depiliacijos kaina ir trukmė: zonos, metodas bei paketai | Planas; tekstas dar neparašytas |
-| 2026-11-24 | 10:00 | Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis | Parengtas; nauja data dar diegiama |
+| 2026-11-24 | 10:00 | Nagų dizainas Naujųjų metų renginiui: blizgesys, akcentai ir darbų apimtis | Parengtas ir įkeltas; laukia publikavimo datos |
 | 2026-11-24 | 16:00 | Plaukų dažymo kaina ir trukmė: ilgis, tankis, tonavimas bei kirpimas | Planas; tekstas dar neparašytas |
 | 2026-11-25 | 10:00 | Gelinio lakavimo kaina ir trukmė: nuėmimas, bazė bei dizainas | Planas; tekstas dar neparašytas |
 | 2026-11-25 | 16:00 | Kūno procedūros kaina ir trukmė: zonos, metodas bei kursas | Planas; tekstas dar neparašytas |
@@ -158,7 +158,7 @@ Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 nepara
 | 2027-01-10 | 10:00 | Veido procedūra su kauke ar masažu: kaip palyginti paketą? | Planas; tekstas dar neparašytas |
 | 2027-01-11 | 10:00 | Antakių dažų spalva: ką reiškia norimas intensyvumas ir atspalvis? | Planas; tekstas dar neparašytas |
 | 2027-01-11 | 16:00 | Kaip atliekamas blakstienų laminavimas ir ko tikėtis iš rezultato? | Planas; tekstas dar neparašytas |
-| 2027-01-12 | 10:00 | Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos | Parengtas; nauja data dar diegiama |
+| 2027-01-12 | 10:00 | Nagų dizainas Valentino dienai: originalūs akcentai ir adaptacijos | Parengtas ir įkeltas; laukia publikavimo datos |
 | 2027-01-12 | 16:00 | Veido plaukelių šalinimas siūlu: skirtumas nuo vaško ir vizito apimtis | Planas; tekstas dar neparašytas |
 | 2027-01-13 | 10:00 | Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo? | Planas; tekstas dar neparašytas |
 | 2027-01-13 | 16:00 | Klasikinis, aparatinis ir kombinuotas manikiūras: kuo skiriasi? | Planas; tekstas dar neparašytas |
@@ -228,7 +228,7 @@ Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 nepara
 | 2027-02-21 | 10:00 | Tatuiruotės atnaujinimas, uždengimas ar šalinimo konsultacija? | Planas; tekstas dar neparašytas |
 | 2027-02-22 | 10:00 | Estetinis lazeris ir randų priežiūra: kodėl pirmas žingsnis yra konsultacija | Planas; tekstas dar neparašytas |
 | 2027-02-22 | 16:00 | Ilgalaikio makiažo korekcija ar šalinimo konsultacija? | Planas; tekstas dar neparašytas |
-| 2027-02-23 | 10:00 | Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas | Parengtas; nauja data dar diegiama |
+| 2027-02-23 | 10:00 | Velykų savaitgalis 2027: grožio vizito darbo laikas ir patvirtinimas | Parengtas ir įkeltas; laukia publikavimo datos |
 | 2027-02-23 | 16:00 | Kūno procedūrų įrenginiai: RF, ultragarsas ir kitos technologijos | Planas; tekstas dar neparašytas |
 | 2027-02-24 | 10:00 | Elektroepiliacija ir šviesos metodai: kuo skiriasi veikimo principas bei vizito apimtis | Planas; tekstas dar neparašytas |
 | 2027-02-24 | 16:00 | Galvos odos priežiūra ir šveitimas salone: kosmetinis tikslas ir dermatologo riba | Planas; tekstas dar neparašytas |

@@ -361,3 +361,5 @@ Cloudflare release 2026-10-06: also reserves infrastructure/mail-relay/** for th
 
 
 - 2026-10-08 own Madbeauty runtime1e4f9fc:8source files current favorite eligibility, indexed central catalogue view, SQL current metrics and replay-safe per-org legacy conversion.210/210 four suites, actual Workers/browser globals, exact75aa build. Own9docs/status; no writer/shared/core changes or production writes. Target mail/media/binding/UI continue; full-upgrade deployment condition unsatisfied.
+
+2026-10-09 own Madbeauty autonomous editorial policy window: direct human request removes mandatory specialist-human article review. Own sites/madbeauty/EDITORIAL_POLICY.json/.md and platform evidence only. Writer is authorized to update its own next30/next60 helpers and private tenant, preserving published snapshots/dates; shared generic core already supports agent reviews and is not weakened. Consumer release helpers remain separately owned in madbeauty-calendar-release checkout. No other niche policy, provider eligibility, credentials, production customer records or DNS edits.

@@ -4,20 +4,21 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-09T14:50:31.232Z",
+  "lastResearchAt": "2026-10-09T15:00:47.457Z",
   "lastResearchDateLocal": "2026-10-09",
-  "lastResearchFile": "research/2026-10-08-scaffold-public-space/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-08-scaffold-public-space/QA.json",
-  "lastCycleOutcome": "evidence_only_no_new_proposal",
+  "lastResearchFile": "research/2026-10-09-mail-dsn/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-09-mail-dsn/QA.json",
+  "lastCycleOutcome": "new_experiment_proposed",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003"
   ],
-  "lastNotifiedExperimentId": "BDEV-0003-P3",
+  "lastNotifiedExperimentId": "BDEV-0003-P4",
   "notifiedExperimentIds": [
     "BDEV-0003-P1",
     "BDEV-0003-P2",
-    "BDEV-0003-P3"
+    "BDEV-0003-P3",
+    "BDEV-0003-P4"
   ],
   "nextIdeaNumber": 4,
   "ownerVision": {
@@ -72,14 +73,23 @@
       "requestedScope": "Up to1 agent-work hour private status-only DAS lab:5synthetic cases,max10selected.lt names once,sequential,no faster1/sec,no purchase/WHOIS personal data/daemon/domain-sorter integration",
       "approvalSource": null,
       "approvalScope": null
+    },
+    {
+      "id": "BDEV-0003",
+      "experimentId": "BDEV-0003-P4",
+      "status": "proposed",
+      "file": "research/2026-10-09-mail-dsn/PILOT.md",
+      "requestedScope": "Up to 2 agent-work hours: isolated offline MIME/DSN observations and candidate correlation, 12 synthetic cases across two sites; no network, live inbox, SMTP, DB or shared runtime changes; no resend, suppression or trusted-delivery state transitions",
+      "approvalSource": null,
+      "approvalScope": null
     }
   ],
   "researchContinuity": {
-    "completed": "Oct8 14:00 heartbeat research completed Oct9 after environment date advance. Three Vilnius permit service pages inspected; permit lifecycle metadata distinguished from unverified actual legal applicability and fees. One Treg catalog query returned none; no provider calls. Existing scaffold M1 retained, no new idea or pilot. Latest root/core direct owner turns reviewed; no registry pilot approval. Own fresh worktree from fetched main, old scoped research integrated without conflicts; both GitHub repos freshness PASS. No site/core/runtime changes.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision",
-    "nextCandidateQuestion": "First run canonical Git freshness in owned current worktree, read current registry plus PR1 and direct owner decisions. Continue only specifically approved work; P1/P2/P3/BI remain proposed. Do not duplicate the active agent creation/calibration executor or reopen source-only niche studies.",
+    "completed": "Four primary RFC sources read; existing SMTP states and scoped customer reply reader reviewed in current main. No dedicated DSN processor found in targeted paths; PR32 mail_reader diff empty. One Treg catalog query returned none, no provider calls. Proposed BDEV-0003-P4 is a bounded synthetic offline lab, not runtime integration or operational approval. No parser code or cases executed. Root/core latest direct owner turns reviewed; current source executor remains separate.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision",
+    "nextCandidateQuestion": "Read fresh main, PR1 and direct owner decisions before choosing work. P1/P2/P3/P4 and BI remain proposed. Implement only specifically approved scope, coordinate any later mail-runtime path with its owner, and preserve existing reply sender and tenant guards.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
-    "executionScope": "Research/private registry only; no new BDEV ID, no approved experiments or live operations. Existing P1/P2/P3 remain proposed. No site form, permits, accounts, purchase, DNS or campaigns."
+    "executionScope": "Research/private registry only. P4 documented, no lab executed. No live inbox, SMTP, client messages, runtime, purchases, DNS or campaigns."
   },
   "approvedWork": [
     {

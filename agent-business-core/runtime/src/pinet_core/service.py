@@ -92,7 +92,7 @@ async def start(item, data: Start, simulation=False):
     knowledge_store.validate(item, knowledge)
     if data.mode == "simulation" and not simulation:
         raise HTTPException(403, "simulation is internal only")
-    if not simulation and (item.site_id != "traktoriupadangos" or not cfg.voice_ready):
+    if not simulation and (item.site_id not in cfg.voice_sites or not cfg.voice_ready):
         raise HTTPException(503, "voice_not_ready")
     if not simulation and cfg.allow_simulation:
         raise HTTPException(503, "disable_simulation_before_live_voice")
@@ -175,6 +175,18 @@ async def finalize(tx, convo):
     slot = await tx.get(Admission, convo.id)
     if slot:
         slot.expires_at = utcnow()
+
+
+async def request_end(tx, convo):
+    """Let a live owner flush its final audio transcript before queuing post-call jobs."""
+    live_transport = not convo.payload["test"] or convo.payload.get("m0_probe") is True
+    if (live_transport and convo.state == "active" and convo.owner
+            and convo.lease_until and convo.lease_until > utcnow()):
+        convo.payload = {**convo.payload, "stop_requested": True}
+        await add_event(tx, convo, "end-requested", "end_requested", {})
+        return "ending"
+    await finalize(tx, convo)
+    return "finalized"
 
 
 async def submit_contact(tx, convo, data: ContactInput):

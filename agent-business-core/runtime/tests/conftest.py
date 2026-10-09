@@ -30,6 +30,9 @@ async def client(monkeypatch):
     monkeypatch.setattr(cfg, "environment", f"test-{uuid4()}")
     monkeypatch.setattr(cfg, "allow_simulation", True)
     monkeypatch.setattr(cfg, "google_api_key", "")
+    # Isolate the legacy transport fixtures from checkout-local niche admission.
+    monkeypatch.setattr(cfg, 'voice_sites', ['traktoriupadangos'])
+    monkeypatch.setattr(cfg, 'knowledge_refresh_sites', ['traktoriupadangos'])
     monkeypatch.setattr(cfg, 'learning_enabled', False)
     monkeypatch.setattr(cfg, 'learning_namespace', '')
     # Each fixture owns and disposes its engine. Match runtime connection pooling;

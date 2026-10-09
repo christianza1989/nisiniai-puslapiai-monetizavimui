@@ -14,7 +14,7 @@ def bind(data, subject, body, review, engine):
 
 def verified_result(data, analysis):
     value = analysis.get('validated_followup')
-    if not isinstance(value, dict) or value.get('engine') != 'codex_cli_text_lab':
+    if not isinstance(value, dict) or value.get('engine') not in {'codex_cli_text_lab', 'gemini-3.8-flash'}:
         return None  # Production generator must obtain its own review before opting in.
     if (value.get('review', {}).get('approved') is not True or value['review'].get('unsupported_claims') or
             value.get('body_hash') != digest(value.get('body', '')) or

@@ -22,6 +22,7 @@ from pinet_core import (
     calibration,
     jobs,
     knowledge,
+    onboarding,
     quality_guards,
     routing,
     service,
@@ -238,6 +239,8 @@ async def main():
     parser.add_argument('--include-holdout', action='store_true')
     parser.add_argument('--pin-release-file', type=Path)
     parser.add_argument('--knowledge-file', type=Path)
+    parser.add_argument('--admit-source', action='store_true',
+        help='Explicitly admit this frozen approved source in the isolated lab namespace only')
     args = parser.parse_args()
     if not re.fullmatch(r'[a-z0-9-]{1,80}', args.run_id) or not 10 <= args.max_calls <= 300:
         raise ValueError('bounded_run_required')
@@ -296,6 +299,9 @@ async def main():
                     try:
                         async with db.transaction(item.id, cfg.environment) as tx:
                             await knowledge.register(tx, item, manifest)
+                            if args.admit_source:
+                                await onboarding.update(tx, item, onboarding.Readiness(
+                                    source_ready=True, learning_admitted=args.learning_enabled))
                         row = await dialogue(client, lab, persona, manifest, directory, patch)
                         row['refusal'] = persona.get('refusal', False)
                         async with db.transaction(item.id, cfg.environment) as tx:

@@ -290,8 +290,8 @@ async def end(site_id: str, cid: str, request: Request):
     item = await service.business(site_id)
     async with db.transaction(item.id, settings().environment) as tx:
         convo = await service.conversation(tx, cid, session_token(request))
-        await service.finalize(tx, convo)
-    return {"state": "finalized"}
+        state = await service.request_end(tx, convo)
+    return {"state": state}
 
 
 @app.post("/v1/sites/{site_id}/sessions/{cid}/knowledge", dependencies=[Depends(signed_edge)])
@@ -403,6 +403,7 @@ async def simulation(site_id: str, data: Start):
 
 class Owner(Strict):
     owner: str
+    m0_probe: bool = False
 
 
 @app.post("/internal/sites/{site_id}/sessions/{cid}/claim", dependencies=[Depends(worker_auth)])
@@ -411,7 +412,15 @@ async def claim(site_id: str, cid: str, data: Owner):
     async with db.transaction(item.id, settings().environment) as tx:
         await policy.lock(tx, item.id, settings().environment)
         convo = await service.conversation(tx, cid)
-        authority, revision = await policy.require(tx, simulation=convo.payload["test"])
+        is_probe = convo.payload.get("m0_probe") is True
+        if data.m0_probe != is_probe or (is_probe and (not settings().m0_probe_enabled or not convo.payload["test"])):
+            raise HTTPException(403, "probe_admission_rejected")
+        if is_probe:
+            reservation = await tx.scalar(select(CostReservation).where(
+                CostReservation.action_key == f"voice:{cid}"))
+            if not reservation or reservation.reserved_microusd != convo.payload.get("cost_ceiling_microusd"):
+                raise HTTPException(403, "probe_reservation_missing")
+        authority, revision = await policy.require(tx, simulation=convo.payload["test"] and not is_probe)
         if convo.state == "finalized":
             raise HTTPException(409, "finalized")
         if convo.lease_until and convo.lease_until > utcnow() and convo.owner != data.owner:
@@ -421,6 +430,7 @@ async def claim(site_id: str, cid: str, data: Owner):
         convo.owner, convo.lease_until = data.owner, utcnow() + timedelta(seconds=120)
         convo.state = "active"
         return {"epoch": convo.epoch, "prompt": convo.payload["prompt"], "model": convo.payload["model"],
+                "stop_requested": convo.payload.get("stop_requested", False),
                 'release_hash': convo.payload['release_hash'],
                 "need_revision": convo.need_revision, "need": convo.payload["need"],
                 "policy_revision": revision, "allowed_tools": authority.allowed_tools,

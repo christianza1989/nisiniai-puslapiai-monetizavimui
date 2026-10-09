@@ -3,6 +3,8 @@ import asyncio
 import json
 import os
 import secrets
+from datetime import UTC, datetime
+from pathlib import Path
 from uuid import uuid4
 
 import httpx
@@ -10,28 +12,66 @@ from google.genai import types
 from livekit.agents import Agent, AgentServer, AgentSession, JobContext, RunContext, cli, function_tool
 from livekit.plugins import google
 
-from . import pricing
+from . import pricing, profiles
 from .config import settings
 
-server = AgentServer()
+server = AgentServer(host="127.0.0.1")
+probe_server = AgentServer(host="127.0.0.1", num_idle_processes=0, load_threshold=float("inf"))
+
+
+def configure_worker_cli(worker, agent_name):
+    """Record actual registration for the local launcher, never provider credentials."""
+    cfg = settings()
+    os.environ["LIVEKIT_URL"] = cfg.livekit_url
+    os.environ["LIVEKIT_API_KEY"] = cfg.livekit_api_key
+    os.environ["LIVEKIT_API_SECRET"] = cfg.livekit_api_secret
+    marker = Path("artifacts/voice-processes/consultant.registration.json")
+    marker.parent.mkdir(parents=True, exist_ok=True)
+
+    def record(ready):
+        marker.write_text(json.dumps({"ready": ready, "agent_name": agent_name,
+            "pid": os.getpid(), "environment": cfg.environment,
+            "registered_at": datetime.now(UTC).isoformat()}), encoding="utf-8")
+
+    record(False)
+
+    @worker.on("worker_registered")
+    def registered(_worker_id, _server_info):
+        record(True)
 
 
 @server.rtc_session(agent_name="pinet-consultant")
 async def entrypoint(ctx: JobContext):
+    await run_consultant(ctx)
+
+
+@probe_server.rtc_session(agent_name="pinet-m0-consultant")
+async def probe_entrypoint(ctx: JobContext):
+    """Private measured provider admission, independent of public live certification."""
+    await run_consultant(ctx, readiness_probe=True)
+
+
+async def run_consultant(ctx: JobContext, readiness_probe=False):
     cfg = settings()
-    if not cfg.voice_ready:
+    if not (cfg.m0_probe_enabled and cfg.voice_provider_ready if readiness_probe else cfg.voice_ready):
         raise RuntimeError("M0 and provider credentials required before real voice")
     parts = ctx.job.metadata.split(":")
-    if len(parts) != 2 or parts[0] != "traktoriupadangos" or ctx.room.name != f"pinet-{parts[1]}":
+    if (len(parts) != 2 or parts[0] not in cfg.voice_sites or parts[0] not in profiles.PROFILES
+            or ctx.room.name != f"pinet-{parts[1]}"):
         raise RuntimeError("invalid server dispatch mapping")
     site, cid = parts
     prefix = f"/internal/sites/{site}/sessions/{cid}"
     client = httpx.AsyncClient(base_url=cfg.core_url,
                                headers={"Authorization": f"Bearer {cfg.worker_secret}"}, timeout=10)
     owner = secrets.token_hex(16)
-    response = await client.post(f"{prefix}/claim", json={"owner": owner})
-    response.raise_for_status()
-    context = response.json()
+    claim = {"owner": owner, "m0_probe": readiness_probe}
+    try:
+        response = await client.post(f"{prefix}/claim", json=claim)
+        response.raise_for_status()
+        context = response.json()
+    except BaseException:
+        await client.aclose()
+        raise
     epoch = context["epoch"]
     queue = asyncio.Queue(maxsize=200)
     usage_queue = asyncio.Queue(maxsize=200)
@@ -180,6 +220,17 @@ async def entrypoint(ctx: JobContext):
                 failed.set()
 
     closed = asyncio.Event()
+    first_audio = asyncio.Event()
+
+    @session.on("agent_state_changed")
+    def agent_state_changed(event):
+        if event.new_state == "speaking":
+            first_audio.set()
+
+    @session.on("error")
+    def session_error(event):
+        if not getattr(event.error, "recoverable", False):
+            failed.set()
 
     @session.on("close")
     def session_closed(_):
@@ -189,8 +240,12 @@ async def entrypoint(ctx: JobContext):
         while not closed.is_set():
             await asyncio.sleep(cfg.voice_heartbeat_seconds)
             try:
-                response = await client.post(f"{prefix}/claim", json={"owner": owner})
+                response = await client.post(f"{prefix}/claim", json=claim)
                 unhealthy = response.status_code >= 400 or response.json()["epoch"] != epoch or failed.is_set()
+                if not unhealthy and response.json().get("stop_requested"):
+                    await session.aclose()
+                    closed.set()
+                    return
             except Exception:
                 unhealthy = True
                 failed.set()
@@ -208,6 +263,9 @@ async def entrypoint(ctx: JobContext):
         session.generate_reply(instructions="Prisistatyk kaip AI konsultantas. Jei turi ankstesnį kontekstą, "
             "trumpai paklausk ar tęsiame ankstesnį poreikį, neatskleisdamas kontaktų. "
             "Kitu atveju paaiškink kontakto formą ir paklausk kuo padėti.")
+        # Wait for actual generated speech, not only SDK/room initialization.
+        await asyncio.wait_for(first_audio.wait(), timeout=20)
+        await ctx.room.local_participant.set_attributes({"pinet.voice.ready": "true"})
         try:
             await asyncio.wait_for(closed.wait(), timeout=cfg.session_seconds)
         except TimeoutError:
@@ -247,8 +305,5 @@ async def entrypoint(ctx: JobContext):
 
 
 if __name__ == "__main__":
-    cfg = settings()
-    os.environ["LIVEKIT_URL"] = cfg.livekit_url
-    os.environ["LIVEKIT_API_KEY"] = cfg.livekit_api_key
-    os.environ["LIVEKIT_API_SECRET"] = cfg.livekit_api_secret
+    configure_worker_cli(server, "pinet-consultant")
     cli.run_app(server)

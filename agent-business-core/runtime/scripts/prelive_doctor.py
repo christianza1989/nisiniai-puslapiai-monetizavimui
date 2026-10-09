@@ -1,4 +1,5 @@
 """Read-only readiness inventory. Never outputs secret values or claims audio proof."""
+import argparse
 import asyncio
 import json
 from pathlib import Path
@@ -6,14 +7,18 @@ from pathlib import Path
 from sqlalchemy import func, select, text
 from sqlalchemy.ext.asyncio import create_async_engine
 
-from pinet_core import knowledge, policy
+from pinet_core import knowledge, onboarding, policy
 from pinet_core.config import settings
 from pinet_core.db import db
 from pinet_core.models import Outbox
 from pinet_core.service import business
+from pinet_core.profiles import PROFILES
 
 
 async def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--site', choices=sorted(PROFILES), default='traktoriupadangos')
+    args = parser.parse_args()
     cfg = settings()
     checks = []
 
@@ -40,20 +45,25 @@ async def main():
     add("simulation_disabled_for_live", not cfg.allow_simulation)
     add("explicit_global_budget_and_voice_ceiling", cfg.global_daily_budget_microusd > 0 and cfg.voice_cost_ceiling_microusd > 0)
     add("explicit_postcall_ceiling", cfg.analysis_cost_ceiling_microusd > 0)
-    item = await business("traktoriupadangos")
+    item = await business(args.site)
     async with db.transaction(item.id, cfg.environment) as tx:
         value, revision = await policy.read(tx)
         add("site_enabled_and_unpaused", value.enabled and not value.paused)
         add("explicit_site_budget", value.daily_budget_microusd > 0)
         add("current_approved_knowledge", await knowledge.projection(tx) is not None, "local_and_live")
+        add('source_explicitly_admitted', (await onboarding.status(tx, item.site_id))['source_ready'], 'local_and_live')
+        add('site_allowed_for_voice', args.site in cfg.voice_sites)
         pending = await tx.scalar(select(func.count()).select_from(Outbox).where(Outbox.state.in_(["dispatched", "unknown"])))
-    report = {"environment": cfg.environment, "migration": migration, "policy_revision": revision,
+    report = {"site_id": args.site, "canonical_host": item.canonical_host,
+              "environment": cfg.environment, "migration": migration, "policy_revision": revision,
               "checks": checks, "voice_enabled": cfg.voice_enabled, "smtp_enabled": cfg.smtp_enabled,
               "unreconciled_delivery_count": pending, "audio_test_verified_by_this_script": False,
               "invoice_verified_by_this_script": False,
               "live_eligible": all(x["status"] == "PASS" for x in checks) and cfg.voice_enabled}
     Path("artifacts").mkdir(exist_ok=True)
-    Path("artifacts/prelive-doctor.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    target = Path('artifacts/prelive-doctor.json') if args.site == 'traktoriupadangos' else Path('artifacts') / (args.site + '-voice') / 'prelive-doctor.json'
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps(report, indent=2))
     await db.engine.dispose()
 

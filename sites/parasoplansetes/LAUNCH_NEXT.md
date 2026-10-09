@@ -41,3 +41,6 @@ Preview įrodė tik vietinius modelius. Preflight šiame tęsinyje teisingai bai
 6. Patvirtinti abiejų domenų Search Console properties, pateikti savo domenų sitemap, užfiksuoti indexing ir tikrų užklausų baseline. Pirmos dvi Google vietos bei AI citatos lieka matuojami tikslai, ne atlikto kodo išvada.
 
 Pilnas vietinis priėmimas tebėra NOT_COMPLETE dėl R2/S2/U2/U3. Gyvo domeno paleidimas ir paklausa nepriimti. Šis tęsinys nesukūrė approval, paid monitoring ar išsiuntimo klientams automatikos.
+# 2026-10-09 agento faktinė būklė
+
+[Agent calibration report](AGENT-CALIBRATION-20261009.md): own profile/widget/core prijungti, approved source priimtas tik own local DB. 6/6train ir2/2reserved PASS per actual core,287backend/63public patikrosPASS. Tikram garsui trūksta Gemini/SFU konfigūracijos, veikiančio native voice runtime ir mikrofono; Windows blokuoja locked PyAV. Paštui trūksta SMTP/IMAP ir owner test recipient. Realus audio/inbox/customerreply/paleidimas liekaUNVERIFIED; naujas public voice deployment ar mokamas host neužsakytas. Nauji paid calls0; aktualus bendras ankstesnio Treg tyrimo kaštas0,2438USD.

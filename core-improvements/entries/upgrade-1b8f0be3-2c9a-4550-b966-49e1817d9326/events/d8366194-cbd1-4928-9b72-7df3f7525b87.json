@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Source/text/local browser recovery only. Original test failures retained and repaired; real audio, inbox and customer reply UNVERIFIED because provider/mail credentials and allowed native audio runtime/microphone are absent. No issue/candidate observed, so no promotion fabricated.",
+  "checks": [
+    {
+      "command": "python -m pytest -q --ignore=tests/test_voice_worker.py",
+      "result": "PASS",
+      "evidence": "287 passed; sites/parasoplansetes/AGENT-CALIBRATION-20261009.md"
+    },
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "63 tests; own profile/explicit site admission and agent-ready regressions"
+    },
+    {
+      "command": "npm run build + own test:seo-smoke",
+      "result": "PASS",
+      "evidence": "Build; 19 own pages/robots/sitemap/llms/schema/host isolation"
+    },
+    {
+      "command": "network_lab.py own frozen baseline and reserved",
+      "result": "PASS",
+      "evidence": "6/6 train + 2/2 reserved; minimized actual report hashes in AGENT-CALIBRATION-20261009.json"
+    },
+    {
+      "command": "Actual IAB desktop and 390px missing-microphone fallback",
+      "result": "PASS",
+      "evidence": "Private screenshots and real navigation to contact form; not audio certification"
+    }
+  ],
+  "eventId": "d8366194-cbd1-4928-9b72-7df3f7525b87",
+  "sequence": 3,
+  "at": "2026-10-09T15:54:58.990Z"
+}

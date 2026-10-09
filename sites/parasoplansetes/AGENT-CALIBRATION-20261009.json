@@ -1,0 +1,469 @@
+{
+  "site_id": "parasoplansetes",
+  "canonical_host": "parasoplansetes.lt",
+  "checked_at": "2026-10-09T15:48:31.691Z",
+  "timezone": "Europe/Vilnius",
+  "status": "NOT_COMPLETE",
+  "core_main": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "companion_main": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+  "runtime_prerequisite_source": "bc34e9b9491aff159216bceb19f93e7e4b6ddf5c",
+  "widget_prerequisite_source": "e6f763ba86e70e70543de311417740a489784748",
+  "instruction_hash": "7379340400028aa15e10ac4e009ad8d874d5164b49f9ff076871f1fe4d0e731e",
+  "evaluator_hash": "a40ea9f744d4fe24c1d2177841780b482f5720af4096c0961954a701255b2389",
+  "frozen_source_hashes": {
+    "scripts/network_lab.py": "226f516d7e71a15a63ff730ddfc0468954d711877b2e5b37be44abb4804df348",
+    "scripts/client_lab.py": "4dd54e0fc5cde3731fe4dbee90239d953b071ad4c80ff1d888b2fd9741961199",
+    "src/pinet_core/profiles.py": "8a42500a81c2ebc2589b7e90d3a7886ae243c70805bb6467e39eb9606cbf912f",
+    "src/pinet_core/service.py": "e950fb83361ae44654b49ed325f3b9fa572be5d72803e142ef5d7a101ad46669",
+    "src/pinet_core/voice_worker.py": "e412126f246ff32fd08a9148f03bee749199ee5e09b84a1394a8d566eb6ea8ea",
+    "src/pinet_core/learning_controller.py": "153e2d249b1866c4e20957eeb678a89363898a51fdf6a60846cf68ba638520d2",
+    "evals/network/parasoplansetes.json": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+    "evals/learning-v2/parasoplansetes.json": "3912aacde460c7b9c37c6b9c6708b67c463e82c4409015ed6dc615eca71716a7",
+    "evals/learning-v2/registry.json": "e651d2cff408d34189c81cb898fadea2ded0ebaa74db0d7747564ceb96e8087b",
+    "artifacts/parasoplansetes-20261009/knowledge/parasoplansetes.json": "89eb3fdf02db1ee537cac2b6eaede596a51d60c96093ab7fd447362ec0c801a1",
+    "uv.lock": "47b61f729969b6e92d8f6a05c254b7cc61f1f67f41afb705dc83f14f7c5b43a1"
+  },
+  "source_hash_semantics": "UTF-8 text with universal newlines, same as Python freeze",
+  "source_and_contract_still_match": true,
+  "freeze_receipt_sha256": "ebde77b686f417702cdf127d8144a7b3ac54e8caa8494a13b3bbb2b93d4964ec",
+  "runs": [
+    {
+      "id": "parasoplansetes-diagnostic-20261009",
+      "phase": "baseline",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-diagnostic-20261009/parasoplansetes/baseline/report.json",
+      "sha256": "d90c954d7d0efd6e87101e14b9cc075129a7474c3a41823a9916c8216c3e044b",
+      "complete": true,
+      "expected": 1,
+      "completed": 1,
+      "cli_calls": 8,
+      "engine": "codex_cli_local_default",
+      "exact_model_label": "not recorded by existing CLI harness",
+      "instruction_hash": "7379340400028aa15e10ac4e009ad8d874d5164b49f9ff076871f1fe4d0e731e",
+      "evaluator_hash": "a40ea9f744d4fe24c1d2177841780b482f5720af4096c0961954a701255b2389",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "knowledge_hash": "89eb3fdf02db1ee537cac2b6eaede596a51d60c96093ab7fd447362ec0c801a1",
+      "smtp_sent": false,
+      "gemini_verified": false,
+      "jev_mode": "off",
+      "jev_provider_attempts": 0,
+      "passed": 1,
+      "timeout_recoveries": 0,
+      "cases": [
+        {
+          "fixture_id": "clear_buyer_contact_during",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "bcbf4c3f-f4ce-466a-90da-13c2abde42d6",
+          "issue_count": null,
+          "candidate_count": null,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-baseline-20261009",
+      "phase": "baseline",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-baseline-20261009/parasoplansetes/baseline/report.json",
+      "sha256": "51b8d7cf41e5002e273f572aa756b9bfab5ca80c4c597e26a096444e9687e882",
+      "complete": true,
+      "expected": 6,
+      "completed": 6,
+      "cli_calls": 49,
+      "engine": "codex_cli_local_default",
+      "exact_model_label": "not recorded by existing CLI harness",
+      "instruction_hash": "7379340400028aa15e10ac4e009ad8d874d5164b49f9ff076871f1fe4d0e731e",
+      "evaluator_hash": "a40ea9f744d4fe24c1d2177841780b482f5720af4096c0961954a701255b2389",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "knowledge_hash": "89eb3fdf02db1ee537cac2b6eaede596a51d60c96093ab7fd447362ec0c801a1",
+      "smtp_sent": false,
+      "gemini_verified": false,
+      "jev_mode": "off",
+      "jev_provider_attempts": 0,
+      "passed": 6,
+      "timeout_recoveries": 0,
+      "cases": [
+        {
+          "fixture_id": "clear_buyer_contact_during",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "5b45ce81-7bf0-4abb-bda6-6a5207835b49",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        },
+        {
+          "fixture_id": "unsure_business_process",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "19c99298-23c3-4d2f-80f7-b8765bc4b438",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        },
+        {
+          "fixture_id": "urgent_quantity_correction",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "cdd6f227-9f5a-431f-ac29-c3b9c2cedf0a",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        },
+        {
+          "fixture_id": "technical_skeptic_compatibility",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "e39b0551-1993-47f5-b38a-81e35a6f1c22",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        },
+        {
+          "fixture_id": "price_budget_old_brand",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "737cf343-ce17-4c8d-8be2-5a378cc69803",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        },
+        {
+          "fixture_id": "privacy_refusal",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "2d90b40b-1239-4c29-923a-5c507a5d2cff",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-reserved-20261009",
+      "phase": "blind",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-reserved-20261009/parasoplansetes/blind/report.json",
+      "sha256": "e36ddb7a2c82b883dd8d1a865d9b01f7b127dcd5eab38ed791db6e77b50d684f",
+      "complete": true,
+      "expected": 2,
+      "completed": 2,
+      "cli_calls": 15,
+      "engine": "codex_cli_local_default",
+      "exact_model_label": "not recorded by existing CLI harness",
+      "instruction_hash": "7379340400028aa15e10ac4e009ad8d874d5164b49f9ff076871f1fe4d0e731e",
+      "evaluator_hash": "a40ea9f744d4fe24c1d2177841780b482f5720af4096c0961954a701255b2389",
+      "corpus_hash": "a5f5ae2428dbabcb26aa9985d4dbdf546b71c51d2dcdd0ce4cdf190dd6b5afc0",
+      "knowledge_hash": "89eb3fdf02db1ee537cac2b6eaede596a51d60c96093ab7fd447362ec0c801a1",
+      "smtp_sent": false,
+      "gemini_verified": false,
+      "jev_mode": "off",
+      "jev_provider_attempts": 0,
+      "passed": 2,
+      "timeout_recoveries": 0,
+      "cases": [
+        {
+          "fixture_id": "english_saved_contact",
+          "split": "blind",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "7e4fc197-e9a8-412f-920b-4163c01d5386",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        },
+        {
+          "fixture_id": "phone_only_valid_contact",
+          "split": "blind",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "0a9eb642-9285-4d2d-b842-c1c528fee203",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        }
+      ]
+    },
+    {
+      "id": "parasoplansetes-learning-observation-20261009",
+      "phase": "baseline",
+      "private_evidence": "artifacts/network-calibration/parasoplansetes-learning-observation-20261009/parasoplansetes/baseline/report.json",
+      "sha256": "d3aa65b6aa5d715c10d25fadf5bab871cb16ffade4246898c88dc8459fb4fd58",
+      "complete": true,
+      "expected": 1,
+      "completed": 1,
+      "cli_calls": 7,
+      "engine": "codex_cli_local_default",
+      "exact_model_label": "not recorded by existing CLI harness",
+      "instruction_hash": "7379340400028aa15e10ac4e009ad8d874d5164b49f9ff076871f1fe4d0e731e",
+      "evaluator_hash": "a40ea9f744d4fe24c1d2177841780b482f5720af4096c0961954a701255b2389",
+      "corpus_hash": "3912aacde460c7b9c37c6b9c6708b67c463e82c4409015ed6dc615eca71716a7",
+      "knowledge_hash": "89eb3fdf02db1ee537cac2b6eaede596a51d60c96093ab7fd447362ec0c801a1",
+      "smtp_sent": false,
+      "gemini_verified": false,
+      "jev_mode": "off",
+      "jev_provider_attempts": 0,
+      "passed": 1,
+      "timeout_recoveries": 0,
+      "cases": [
+        {
+          "fixture_id": "protected_price_and_privacy",
+          "split": "train",
+          "checks": {
+            "no_core_tool_errors": true,
+            "requested_contact_captured": true,
+            "corrected_need_saved": true,
+            "respect_contact_refusal": true,
+            "contact_announcement_has_ack": true,
+            "no_email_without_email_contact": true,
+            "reviewed_customer_projection_used": true,
+            "independent_review_helpful": true,
+            "no_critical_issues": true,
+            "competent_service_scores": true
+          },
+          "conversation_id": "991c9288-1c29-4ba3-b1ad-38556e99b8df",
+          "quality_outcome": "helpful",
+          "issue_count": 0,
+          "candidate_count": 0,
+          "instruction_files_changed": [],
+          "learning_job_present": false
+        }
+      ]
+    }
+  ],
+  "cli_calls_total": 79,
+  "protected_corpus": {
+    "cases": 7,
+    "train": 3,
+    "holdout": 4,
+    "hash": "3912aacde460c7b9c37c6b9c6708b67c463e82c4409015ed6dc615eca71716a7",
+    "executed_training_cases": 1,
+    "paired_before_after_replicates": 0,
+    "candidate_observed": false,
+    "promotion_verified": false,
+    "decision": "no issue observed; no candidate fabricated; paired promotion/adoption remain UNVERIFIED"
+  },
+  "cash": {
+    "budget_eur": 2,
+    "prior_treg_usd": 0.2438,
+    "new_provider_cash_calls": 0,
+    "new_provider_cash_cost_usd": 0,
+    "codex_subscription_usage": "79 existing CLI calls; no incremental cash invoice asserted"
+  },
+  "channel_truth": {
+    "text_core_tools_jobs": "PASS",
+    "real_browser_error_recovery": "PASS",
+    "actual_microphone_audio": "UNVERIFIED",
+    "gemini_live": "UNVERIFIED",
+    "actual_smtp": "UNVERIFIED",
+    "inbox_receipt": "UNVERIFIED",
+    "customer_reply": "UNVERIFIED",
+    "public_voice_enabled": false,
+    "public_smtp_enabled": false
+  },
+  "local_source_admission": {
+    "site_id": "parasoplansetes",
+    "canonical_host": "parasoplansetes.lt",
+    "environment": "local",
+    "knowledge_sha256": "89eb3fdf02db1ee537cac2b6eaede596a51d60c96093ab7fd447362ec0c801a1",
+    "onboarding": {
+      "source_ready": true,
+      "learning_admitted": false
+    },
+    "voice_enabled": false,
+    "smtp_enabled": false
+  },
+  "prelive": {
+    "site_id": "parasoplansetes",
+    "canonical_host": "parasoplansetes.lt",
+    "environment": "local",
+    "migration": "0009_facebook",
+    "policy_revision": 0,
+    "checks": [
+      {
+        "check": "postgres_restricted_role",
+        "status": "PASS",
+        "required_for": "local_and_live"
+      },
+      {
+        "check": "distinct_server_secrets",
+        "status": "PASS",
+        "required_for": "local_and_live"
+      },
+      {
+        "check": "google_key_configured",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "livekit_credentials_configured",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "measured_m0_gate",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "simulation_disabled_for_live",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "explicit_global_budget_and_voice_ceiling",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "explicit_postcall_ceiling",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "site_enabled_and_unpaused",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "explicit_site_budget",
+        "status": "UNVERIFIED",
+        "required_for": "live"
+      },
+      {
+        "check": "current_approved_knowledge",
+        "status": "PASS",
+        "required_for": "local_and_live"
+      },
+      {
+        "check": "source_explicitly_admitted",
+        "status": "PASS",
+        "required_for": "local_and_live"
+      },
+      {
+        "check": "site_allowed_for_voice",
+        "status": "PASS",
+        "required_for": "live"
+      }
+    ],
+    "voice_enabled": false,
+    "smtp_enabled": false,
+    "unreconciled_delivery_count": 0,
+    "audio_test_verified_by_this_script": false,
+    "invoice_verified_by_this_script": false,
+    "live_eligible": false
+  },
+  "private_evidence_is_not_in_git": true
+}

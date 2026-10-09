@@ -14,7 +14,8 @@ async def test_profile_registration_does_not_grant_source_or_learning(monkeypatc
         return None
     monkeypatch.setattr(knowledge, 'current', none)
     assert len(onboarding.LEGACY_SITES) == 6
-    assert onboarding.LEGACY_SITES == frozenset(profiles.PROFILES)
+    assert onboarding.LEGACY_SITES == frozenset(profiles.PROFILES) - {'parasoplansetes'}
+    assert onboarding.defaults('parasoplansetes') == {'source_ready': False, 'learning_admitted': False}
     for site in onboarding.LEGACY_SITES:
         assert (await onboarding.status(None, site)) == {'source_ready': True, 'learning_admitted': True}
     assert await onboarding.status(None, 'dovanos123') == {'source_ready': False, 'learning_admitted': False}

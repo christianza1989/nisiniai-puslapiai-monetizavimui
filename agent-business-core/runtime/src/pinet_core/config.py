@@ -23,7 +23,9 @@ class Settings(BaseSettings):
     learning_enabled: bool = False
     learning_namespace: str = ''
     voice_enabled: bool = False
+    voice_sites: list[str] = ["traktoriupadangos"]
     m0_verified: bool = False
+    m0_probe_enabled: bool = False
     google_api_key: str = ""
     live_model: str = "gemini-3.8-live"
     analysis_model: str = "gemini-3.8-flash"
@@ -58,11 +60,15 @@ class Settings(BaseSettings):
     knowledge_refresh_sites: list[str] = ["traktoriupadangos"]
 
     @property
-    def voice_ready(self):
-        return all((self.voice_enabled, self.m0_verified, self.google_api_key,
+    def voice_provider_ready(self):
+        return all((self.google_api_key,
                     self.livekit_url, self.livekit_api_key, self.livekit_api_secret, not self.allow_simulation,
                     self.global_daily_budget_microusd > 0, self.voice_cost_ceiling_microusd > 0,
                     self.live_model == "gemini-3.8-live", pricing.current()))
+
+    @property
+    def voice_ready(self):
+        return self.voice_enabled and self.m0_verified and self.voice_provider_ready
 
 
 @lru_cache

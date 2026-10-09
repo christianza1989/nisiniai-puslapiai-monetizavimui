@@ -16,27 +16,27 @@ CREATE TABLE IF NOT EXISTS organization_handoff_rows(site_id TEXT NOT NULL,hando
 export function organizationFence({db,siteId,transaction=fn=>fn()}){
  db.exec(schema);
  db.exec('CREATE TABLE IF NOT EXISTS organization_target_authority(site_id TEXT PRIMARY KEY,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,state TEXT NOT NULL,manifest TEXT NOT NULL,context_hash TEXT NOT NULL,receipt TEXT NOT NULL,activation TEXT);');
- db.exec('CREATE TABLE IF NOT EXISTS directory_cache_writer_permits(site_id TEXT PRIMARY KEY);');
- for(const table of ['mail_outbox','notification_jobs'])for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])db.exec(`CREATE TRIGGER IF NOT EXISTS source_${table}_${event.toLowerCase()} BEFORE ${event} ON ${table}
- WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=${row}.site_id AND organization_id=${row}.organization_id AND state!='aborted')
- BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;`);
+ db.exec('CREATE TABLE IF NOT EXISTS directory_cache_writer_permits(site_id TEXT PRIMARY KEY); CREATE TABLE IF NOT EXISTS retention_writer_permits(site_id TEXT NOT NULL,collection TEXT NOT NULL,record_key TEXT NOT NULL,PRIMARY KEY(site_id,collection,record_key)); CREATE TABLE IF NOT EXISTS retention_mail_permits(site_id TEXT NOT NULL,id TEXT NOT NULL,PRIMARY KEY(site_id,id));');
+ for(const table of ['mail_outbox','notification_jobs'])for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])transaction(()=>db.exec(`DROP TRIGGER IF EXISTS source_${table}_${event.toLowerCase()}; CREATE TRIGGER source_${table}_${event.toLowerCase()} BEFORE ${event} ON ${table}
+ WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=${row}.site_id AND organization_id=${row}.organization_id AND state!='aborted') AND NOT EXISTS(SELECT 1 FROM retention_mail_permits WHERE site_id=${row}.site_id AND id=${row}.id)
+ BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;`));
  db.exec(`CREATE TABLE IF NOT EXISTS state_writer_permits(site_id TEXT PRIMARY KEY);
  CREATE TRIGGER IF NOT EXISTS legacy_organization_fence BEFORE UPDATE ON platform_state
  WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=NEW.site_id AND state!='aborted') AND NOT EXISTS(SELECT 1 FROM state_writer_permits WHERE site_id=NEW.site_id)
  BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;
- CREATE TRIGGER IF NOT EXISTS inserted_organization_fence BEFORE INSERT ON state_rows
- WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=NEW.site_id AND state!='aborted' AND (organization_id=NEW.organization_id OR NEW.collection='selectionVersions' AND organization_id=NEW.record_key))
+ DROP TRIGGER IF EXISTS inserted_organization_fence; CREATE TRIGGER inserted_organization_fence BEFORE INSERT ON state_rows
+ WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=NEW.site_id AND state!='aborted' AND (organization_id=NEW.organization_id OR NEW.collection='selectionVersions' AND organization_id=NEW.record_key)) AND NOT (EXISTS(SELECT 1 FROM retention_writer_permits WHERE site_id=NEW.site_id AND collection=NEW.collection AND record_key=NEW.record_key) AND EXISTS(SELECT 1 FROM state_rows WHERE site_id=NEW.site_id AND collection=NEW.collection AND record_key=NEW.record_key))
  BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;
- CREATE TRIGGER IF NOT EXISTS updated_organization_fence BEFORE UPDATE ON state_rows
- WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=NEW.site_id AND state!='aborted' AND (organization_id=NEW.organization_id OR organization_id=OLD.organization_id OR NEW.collection='selectionVersions' AND organization_id=NEW.record_key OR OLD.collection='selectionVersions' AND organization_id=OLD.record_key))
+ DROP TRIGGER IF EXISTS updated_organization_fence; CREATE TRIGGER updated_organization_fence BEFORE UPDATE ON state_rows
+ WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=NEW.site_id AND state!='aborted' AND (organization_id=NEW.organization_id OR organization_id=OLD.organization_id OR NEW.collection='selectionVersions' AND organization_id=NEW.record_key OR OLD.collection='selectionVersions' AND organization_id=OLD.record_key)) AND NOT EXISTS(SELECT 1 FROM retention_writer_permits WHERE site_id=OLD.site_id AND collection=OLD.collection AND record_key=OLD.record_key)
  BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;
- CREATE TRIGGER IF NOT EXISTS deleted_organization_fence BEFORE DELETE ON state_rows
- WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=OLD.site_id AND state!='aborted' AND (organization_id=OLD.organization_id OR OLD.collection='selectionVersions' AND organization_id=OLD.record_key))
+ DROP TRIGGER IF EXISTS deleted_organization_fence; CREATE TRIGGER deleted_organization_fence BEFORE DELETE ON state_rows
+ WHEN EXISTS(SELECT 1 FROM organization_handoffs WHERE site_id=OLD.site_id AND state!='aborted' AND (organization_id=OLD.organization_id OR OLD.collection='selectionVersions' AND organization_id=OLD.record_key)) AND NOT EXISTS(SELECT 1 FROM retention_writer_permits WHERE site_id=OLD.site_id AND collection=OLD.collection AND record_key=OLD.record_key)
  BEGIN SELECT RAISE(ABORT,'ORGANIZATION_MIGRATING'); END;`);
  // A materialized target remains fenced until a signed source commit is accepted.
  // After that it can never become another organization's writer or edit global preferences.
  for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])transaction(()=>db.exec(`DROP TRIGGER IF EXISTS target_state_${event.toLowerCase()}; CREATE TRIGGER target_state_${event.toLowerCase()} BEFORE ${event} ON state_rows
- WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=${row}.site_id AND (a.state!='active' OR ${row}.organization_id IS NOT NULL AND ${row}.organization_id!=a.organization_id OR ${row}.collection='selectionVersions' AND ${row}.record_key!=a.organization_id OR ${row}.collection='dataRequests' OR ${row}.collection IN ('preferences','taxonomy','taxonomyChanges','taxonomyVersion') AND NOT EXISTS(SELECT 1 FROM directory_cache_writer_permits WHERE site_id=a.site_id)))
+ WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=${row}.site_id AND (a.state!='active' OR ${row}.organization_id IS NOT NULL AND ${row}.organization_id!=a.organization_id OR ${row}.collection='selectionVersions' AND ${row}.record_key!=a.organization_id OR ${row}.collection='dataRequests' OR ${row}.collection IN ('preferences','taxonomy','taxonomyChanges','taxonomyVersion') AND NOT EXISTS(SELECT 1 FROM directory_cache_writer_permits WHERE site_id=a.site_id) AND NOT (${row}.collection='preferences' AND EXISTS(SELECT 1 FROM retention_writer_permits WHERE site_id=${row}.site_id AND collection=${row}.collection AND record_key=${row}.record_key))))
  BEGIN SELECT RAISE(ABORT,'ORGANIZATION_TARGET_FENCED'); END;`));
  db.exec(`CREATE TRIGGER IF NOT EXISTS target_legacy_fence BEFORE UPDATE ON platform_state
  WHEN EXISTS(SELECT 1 FROM organization_target_authority WHERE site_id=NEW.site_id) AND NOT EXISTS(SELECT 1 FROM state_writer_permits WHERE site_id=NEW.site_id)
@@ -47,7 +47,7 @@ export function organizationFence({db,siteId,transaction=fn=>fn()}){
  for(const [event,row] of [['INSERT','NEW'],['UPDATE','NEW'],['DELETE','OLD']])db.exec(`CREATE TRIGGER IF NOT EXISTS target_job_${event.toLowerCase()} BEFORE ${event} ON notification_jobs
  WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=${row}.site_id AND (a.state!='active' OR ${row}.organization_id!=a.organization_id))
  BEGIN SELECT RAISE(ABORT,'ORGANIZATION_TARGET_FENCED'); END;`);
- db.exec(`CREATE TRIGGER IF NOT EXISTS target_account_delete BEFORE DELETE ON accounts WHEN EXISTS(SELECT 1 FROM organization_target_authority WHERE site_id=OLD.site_id) BEGIN SELECT RAISE(ABORT,'GLOBAL_IDENTITY_REQUIRED'); END;`);
+ transaction(()=>db.exec(`DROP TRIGGER IF EXISTS target_account_delete; CREATE TRIGGER target_account_delete BEFORE DELETE ON accounts WHEN EXISTS(SELECT 1 FROM organization_target_authority WHERE site_id=OLD.site_id) AND NOT EXISTS(SELECT 1 FROM retention_writer_permits WHERE site_id=OLD.site_id AND collection='accounts' AND record_key=OLD.id) BEGIN SELECT RAISE(ABORT,'GLOBAL_IDENTITY_REQUIRED'); END;`));
  transaction(()=>db.exec(`DROP TRIGGER IF EXISTS target_account_insert; CREATE TRIGGER target_account_insert BEFORE INSERT ON accounts
  WHEN EXISTS(SELECT 1 FROM organization_target_authority AS a WHERE a.site_id=NEW.site_id AND (a.state!='active' OR NEW.operator!=0 OR NOT EXISTS(SELECT 1 FROM directory_cache_writer_permits WHERE site_id=a.site_id)))
  BEGIN SELECT RAISE(ABORT,'GLOBAL_IDENTITY_REQUIRED'); END;
@@ -66,6 +66,7 @@ export function organizationFence({db,siteId,transaction=fn=>fn()}){
  const assertRows=(changes,removed)=>{
   if(!target()&&!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND state!='aborted' LIMIT 1").get(siteId))return;
   const ids=new Set();for(const row of [...changes,...removed])for(const shape of [row,row.prior].filter(Boolean)){
+   if(db.prepare('SELECT record_key FROM retention_writer_permits WHERE site_id=? AND collection=? AND record_key=?').get(siteId,shape.collection,shape.key??shape.record_key))continue;
    const id=organizationOf(shape.collection,shape.key??shape.record_key,shape.raw??shape.data);for(const value of Array.isArray(id)?id:[id])if(value)ids.add(value);
   }for(const id of ids)assertWritable(id);
  };
@@ -119,6 +120,7 @@ export function createOrganizationHandoff(store){
   return publicStatus(get(input.organizationId));
  });}
  function page(input){return store.transaction(()=>{
+  if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='retention_retired_handoffs'").get()&&db.prepare('SELECT organization_id FROM retention_retired_handoffs WHERE site_id=? AND organization_id=?').get(siteId,input.organizationId))reject('RETENTION_RETIRED','Istorinė kopija pašalinta pagal saugojimo tvarką.',409);
   const row=current(input);if(!['frozen','sealed'].includes(row.state))reject('INVALID_STATE','Perkėlimas neaktyvus.',409);if(!Number.isSafeInteger(input.offset)||input.offset<0)reject('INVALID_INPUT','Netinkamas paketo poslinkis.');const manifest=JSON.parse(row.manifest);if(input.offset>manifest.rows)reject('INVALID_INPUT','Paketo poslinkis per didelis.');
   const records=db.prepare('SELECT ordinal,data FROM organization_handoff_rows WHERE site_id=? AND handoff_id=? AND ordinal>=? ORDER BY ordinal LIMIT 128').all(siteId,row.handoff_id,input.offset),rows=[];let size=0;
   for(const record of records){const length=bytes(record.data);if(rows.length&&size+length>pageBytes)break;rows.push(JSON.parse(record.data));size+=length;}
@@ -136,6 +138,7 @@ export function createOrganizationStaging(store,{targetName}){
  const get=()=>db.prepare('SELECT * FROM organization_stage WHERE site_id=?').get(siteId);
  function accept(packet){return store.transaction(()=>{
   const {proof:signature,...body}=packet||{},manifest=body.manifest,{proof:manifestProof,...unsigned}=manifest||{};
+  if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='retention_retired_handoffs'").get()&&db.prepare('SELECT organization_id FROM retention_retired_handoffs WHERE site_id=? AND organization_id=?').get(siteId,manifest?.organizationId))reject('RETENTION_RETIRED','Istorinė kopija nebeatkuriama.',409);
   if(!equal(signature,proof(store,'page',body))||!equal(manifestProof,proof(store,'manifest',unsigned)))reject('FORBIDDEN','Perkėlimo paketas nepatvirtintas.',403);
   if(manifest.schemaVersion!==1||manifest.mode!=='read-only-staging'||manifest.siteId!==siteId||manifest.targetName!==targetName||targetName!=='madbeauty:organization:v1:'+manifest.organizationId||!Number.isSafeInteger(manifest.epoch)||manifest.epoch<1||!Number.isSafeInteger(manifest.rows)||manifest.rows<1||manifest.rows>maxRows||!Number.isSafeInteger(manifest.bytes)||manifest.bytes>maxBytes||!Array.isArray(body.rows)||body.rows.length>128||!Number.isSafeInteger(body.offset)||body.offset<0||body.nextOffset!==body.offset+body.rows.length||body.nextOffset>manifest.rows||body.done!==(body.nextOffset===manifest.rows))reject('HANDOFF_SCOPE','Perkėlimo paketo tapatybė netinkama.',409);
   const authority=db.prepare('SELECT manifest FROM organization_target_authority WHERE site_id=?').get(siteId);if(authority&&authority.manifest!==JSON.stringify(manifest))reject('VERSION_CONFLICT','Parengtos organizacijos kopijos pakeisti negalima.',409);

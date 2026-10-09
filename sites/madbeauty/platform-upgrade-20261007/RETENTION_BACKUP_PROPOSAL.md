@@ -1,6 +1,8 @@
 # Saugojimo ir atkūrimo pasiūlymas — 2026-10-10
 
-Savininkas patvirtino: nustatytos tvarkos nėra. Žemiau — konkretus techninis pasiūlymas sprendimui, **ne jau galiojanti politika**. Nauji terminai viešame privatumo tekste nepaskelbti, klientų duomenų trynimas neaktyvintas. Įprastų grožio rezervacijų apimtis; medicininių dokumentų, apskaitos ir mokėjimų saugojimo šis pasiūlymas neapibrėžia.
+2026-10-10 savininkas tiesiogiai atsakė **„Taip, taikome siūlomus terminus“** ir patvirtino12/24 mėn. bei30 dienų kopijų terminus. Serverinė politikos versija `madbeauty-2026-10-10-v1`. Žemiau išsaugotas originalus pasiūlymas ir jo tuometė būklė; patvirtinimas dar nėra vykdymo diegimo ar visų kopijų atkūrimo įrodymas. Dabartinę realizaciją ir jos tikras ribas fiksuoja [RETENTION_ACCEPTANCE.md](RETENTION_ACCEPTANCE.md).
+
+Originalaus pasiūlymo metu savininkas patvirtino: nustatytos tvarkos nėra. Žemiau — konkretus techninis pasiūlymas sprendimui, **ne jau galiojanti politika**. Nauji terminai viešame privatumo tekste nepaskelbti, klientų duomenų trynimas neaktyvintas. Įprastų grožio rezervacijų apimtis; medicininių dokumentų, apskaitos ir mokėjimų saugojimo šis pasiūlymas neapibrėžia.
 
 BDAR reikalauja pagrįsti saugojimo būtinybę, įgyvendinti taikytiną trynimą ir užtikrinti atkūrimą; jis nenustato vieno bendro rezervacijų termino. [Oficialus reglamentas, 5, 17 ir 32 str.](https://eur-lex.europa.eu/legal-content/En/ALL/?uri=CELEX%3A32016R0679). Toliau siūlomi skaičiai yra platformos eksploatavimo pasirinkimai, kuriuos turi patvirtinti duomenų valdytojas pagal realią veiklą.
 

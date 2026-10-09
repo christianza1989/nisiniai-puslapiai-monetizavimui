@@ -1,6 +1,7 @@
 import app,{MadbeautyPlatform} from '../cloudflare/worker.mjs';
 import {initializeFixtureRuntime} from '../backend/fixture-runtime.mjs';
 import {escape} from '../cloudflare/content.mjs';
+import {RETENTION_POLICY,policyPublic} from '../backend/retention-policy.mjs';
 import trialAssets from './output/trial-assets.json';
 import trialMedia from './output/trial-media.json';
 import template from '../prototype/public/app.html';
@@ -88,7 +89,7 @@ export default {async fetch(request,env){
  }
  if(url.pathname==='/robots.txt')return new Response('User-agent: *\nDisallow: /\n',{headers:{'Content-Type':'text/plain','X-Robots-Tag':'noindex'}});
  if(['/sitemap.xml','/llms.txt','/llms-full.txt','/content-targets.json'].includes(url.pathname))return deny();
- if(url.pathname==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'temporary-live-test',enabled:false,privatePrototype:false,apiAvailable:true,temporaryTest:{profiles:40,expiresAt:env.TRIAL_EXPIRES_AT},contact:{operatorName:'MB Pinet',email:'info@pinet.lt'}});
+ if(url.pathname==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'temporary-live-test',enabled:false,privatePrototype:false,apiAvailable:true,retentionPolicy:env.RETENTION_POLICY_VERSION===RETENTION_POLICY.version?policyPublic():null,temporaryTest:{profiles:40,expiresAt:env.TRIAL_EXPIRES_AT},contact:{operatorName:'MB Pinet',email:'info@pinet.lt'}});
  if(url.pathname==='/bandymo-paskyros'){
   if(!['GET','HEAD'].includes(request.method))return deny();
   const profiles=await source.trialProfiles();

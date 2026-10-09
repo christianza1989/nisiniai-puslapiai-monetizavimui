@@ -3,7 +3,7 @@ export function createHttpAdapter(){
   let session=null,refreshPending=null;
   let uploadStorage=null;try{uploadStorage=globalThis.sessionStorage;}catch{}
   const uploads=createMediaUploadIntents(uploadStorage);
-  const readMethods=new Set(['taxonomy','search','searchResults','visitAvailability','catalog','profile','option','workspace','availability','organizationReport','erasureCase','rebooking','exportCustomer','metrics']);
+  const readMethods=new Set(['taxonomy','search','searchResults','visitAvailability','catalog','profile','option','workspace','availability','organizationReport','erasureCase','erasurePreview','erasureStatus','rebooking','exportCustomer','metrics']);
   const adapter={mode:'real',clock:{now:new Date().toISOString(),timezone:'Europe/Vilnius'}};
   async function request(path,data){
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);let r,result;
@@ -42,6 +42,6 @@ export function createHttpAdapter(){
    if(!value.result?.id)throw Object.assign(Error('Įkėlimo rezultatas nepasiekiamas. Patikrink galeriją.'),{code:'NETWORK_ERROR'});
    uploads.complete(intent);return value.result;
   };
-  for(const method of ['saveGallery','reviewReport','organizationReport','saveBookingRules','erasureCase','reviewErasure','rebooking','saveClientCard','exportCustomer','requestErasure','withdrawErasure','createWaitlist','acceptWaitlist','closeWaitlist','confirmVisit','changeVisit','saveLocation','submitLocation','moderateLocation','setLocationActive','assignStaffLocations','grantMembership','revokeMembership','bulkOfferPrices','saveMenuGroup','selectProcedures','saveOffer','submitOffer','moderateOffer','archiveOffer','requestProcedure','moderateProcedure','changeTaxonomy','assessQualification','migrateCatalogue','confirm','changeBooking','cancelBooking','manualVisit','createInquiry','edit','submitRevision','moderate','moderateReview','message','review','report','preferences','metrics','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','retryOutbox','completeBooking','favorite'])adapter[method]=input=>rpc(method,input);
+  for(const method of ['saveGallery','reviewReport','organizationReport','saveBookingRules','erasureCase','erasurePreview','erasureStatus','reviewErasure','rebooking','saveClientCard','exportCustomer','requestErasure','withdrawErasure','createWaitlist','acceptWaitlist','closeWaitlist','confirmVisit','changeVisit','saveLocation','submitLocation','moderateLocation','setLocationActive','assignStaffLocations','grantMembership','revokeMembership','bulkOfferPrices','saveMenuGroup','selectProcedures','saveOffer','submitOffer','moderateOffer','archiveOffer','requestProcedure','moderateProcedure','changeTaxonomy','assessQualification','migrateCatalogue','confirm','changeBooking','cancelBooking','manualVisit','createInquiry','edit','submitRevision','moderate','moderateReview','message','review','report','preferences','metrics','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','retryOutbox','completeBooking','favorite'])adapter[method]=input=>rpc(method,input);
   return adapter;
 }

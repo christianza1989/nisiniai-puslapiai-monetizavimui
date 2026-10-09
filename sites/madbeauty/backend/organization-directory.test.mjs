@@ -9,6 +9,7 @@ import {createOrganizationCommit,createOrganizationAuthority} from './organizati
 import {createOrganizationDirectory,createOrganizationCommand} from './organization-directory.mjs';
 import {ApiError} from './primitives.mjs';
 import {createDirectoryCacheIssuer} from './organization-directory-cache.mjs';
+import {createOrganizationMailReceipts} from './organization-mail.mjs';
 const now=Date.parse('2026-10-08T06:00:00Z'),secret='isolated-directory-acceptance-'.repeat(3),origin='https://directory-fixture.test';
 function fixture({activate=true,large=false}={}){
  const source=openStore({filename:':memory:',secret,clock:()=>now}),target=openStore({filename:':memory:',secret,clock:()=>now}),auth=createAuth(source),api=createPlatform(source),sessions={};
@@ -281,6 +282,49 @@ test('Operator metrics count current organization rows once and catalogue conver
 
 
 function pendingMailFixture(){const f=fixture();f.target.db.prepare("UPDATE mail_outbox SET state='pending' WHERE state='captured' AND challenge_id IS NULL").run();const mail=f.target.mail;f.target.mail=input=>{const id=mail(input);f.target.db.prepare("UPDATE mail_outbox SET state='pending' WHERE id=?").run(id);return id;};return f;}
+
+test('Terminal delegated mail retires after 30 days only after target confirmation; a lost retirement reply never causes another send',async()=>{
+ const f=pendingMailFixture();try{
+  let timer=now,lost=true;f.source.clock=f.target.clock=()=>timer;const sent=[];
+  const directory=createOrganizationDirectory(f.source,{getTarget:()=>({executeDirectoryCommand:packet=>{const result=f.command.execute(packet);if(packet.method==='retireOrganizationMail'&&lost){lost=false;throw Error('Committed retirement reply lost');}return result;}})});
+  await directory.drainOrganizationMail(async claim=>sent.push(claim.id));const id=sent[0];assert.equal(sent.length,1);
+  timer+=30*86400000;await directory.drainOrganizationMail(async claim=>sent.push(claim.id));assert.ok(f.target.db.prepare('SELECT id FROM mail_outbox WHERE id=?').get(id));
+  timer++;await assert.rejects(directory.drainOrganizationMail(async claim=>sent.push(claim.id)),e=>e.code==='ORGANIZATION_UNAVAILABLE');
+  assert.equal(f.target.db.prepare('SELECT id FROM mail_outbox WHERE id=?').get(id),undefined);assert.equal(f.target.db.prepare('SELECT mail_id FROM organization_mail_claims WHERE mail_id=?').get(id),undefined);assert.equal(f.source.db.prepare('SELECT phase FROM directory_organization_mail WHERE mail_id=?').get(id).phase,'complete');
+  await directory.drainOrganizationMail(async claim=>sent.push(claim.id));assert.equal(f.source.db.prepare('SELECT phase FROM directory_organization_mail WHERE mail_id=?').get(id),undefined);assert.equal(sent.length,1);
+  assert.equal(f.target.recordById('bookings',f.first.id).id,f.first.id);assert.ok(f.source.db.prepare('SELECT id FROM mail_outbox WHERE id=?').get(id),'frozen original source copy remains fenced');
+  assert.equal((await f.request('client','retireOrganizationMail',{organizationId:f.a.org.id,entries:[]})).status,404);
+ }finally{f.close();}
+});
+
+test('4096 completed receipts reclaim bounded capacity, while pending or rejected retries and recent ACK completions remain protected',async()=>{
+ const f=pendingMailFixture();try{
+  let timer=now;f.source.clock=f.target.clock=()=>timer;const sent=[];await f.directory.drainOrganizationMail(async claim=>sent.push(claim.id));
+  const id=sent[0],mail=f.target.db.prepare('SELECT * FROM mail_outbox WHERE id=?').get(id),claim=f.target.db.prepare('SELECT * FROM organization_mail_claims WHERE mail_id=?').get(id),receipt=f.source.db.prepare('SELECT * FROM directory_organization_mail WHERE mail_id=?').get(id);
+  const insertMail=f.target.db.prepare("INSERT INTO mail_outbox(id,site_id,account_id,organization_id,booking_id,recipient,type,payload,state,created_at,delivered_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)"),insertClaim=f.target.db.prepare('INSERT INTO organization_mail_claims VALUES(?,?,?,?)'),insertReceipt=f.source.db.prepare('INSERT INTO directory_organization_mail VALUES(?,?,?,?,?,?,?,?,?,?,?)');
+  for(let n=1;n<4096;n++){const key='retirement-capacity-'+n;insertMail.run(key,mail.site_id,mail.account_id,mail.organization_id,mail.booking_id,mail.recipient,mail.type,mail.payload,'accepted',now,now);insertClaim.run(claim.site_id,key,claim.lease_token,claim.message_hash);insertReceipt.run(receipt.site_id,receipt.organization_id,receipt.epoch,key,receipt.account_id,receipt.message_hash,receipt.lease_token,'complete','accepted',now,now);}
+  // One ACK is still pending. One rejected receipt is a pending target retry.
+  f.source.db.prepare("UPDATE directory_organization_mail SET phase='ack-pending',completed_at=0,ack_due=? WHERE mail_id='retirement-capacity-1'").run(now+100*86400000);
+  f.target.db.prepare("UPDATE mail_outbox SET state='pending',next_attempt_at=? WHERE id='retirement-capacity-2'").run(now+100*86400000);f.source.db.prepare("UPDATE directory_organization_mail SET outcome='rejected' WHERE mail_id='retirement-capacity-2'").run();
+  f.source.db.prepare("UPDATE directory_organization_mail SET completed_at=? WHERE mail_id='retirement-capacity-3'").run(now+29*86400000);
+  timer+=31*86400000;await f.directory.drainOrganizationMail(async c=>sent.push(c.id));
+  assert.ok(f.source.db.prepare('SELECT COUNT(*) AS n FROM directory_organization_mail').get().n<4096);assert.ok(f.target.db.prepare('SELECT COUNT(*) AS n FROM organization_mail_claims').get().n<4096);assert.equal(sent.length,1);
+  for(const key of ['retirement-capacity-1','retirement-capacity-2','retirement-capacity-3'])assert.ok(f.source.db.prepare('SELECT mail_id FROM directory_organization_mail WHERE mail_id=?').get(key));
+  assert.equal(f.target.db.prepare("SELECT state FROM mail_outbox WHERE id='retirement-capacity-2'").get().state,'pending');
+  const slot=(await f.directory.dispatch('availability',null,{providerServiceId:f.a.service.id,dayOffset:1,from:900,to:1200})).slots[0],hold=await f.directory.dispatch('hold',f.users.client,slot),booking=await f.directory.dispatch('confirm',f.users.client,{holdId:hold.id,name:'New capacity client',idempotencyKey:'after-retirement'});
+  await f.directory.drainOrganizationMail(async c=>sent.push(c.id));assert.equal(sent.length,2);assert.equal(f.target.db.prepare('SELECT state FROM mail_outbox WHERE booking_id=?').get(booking.id).state,'accepted');
+ }finally{f.close();}
+});
+
+test('Existing mail receipt schema upgrades conservatively without ageing an unknown completed ACK or dropping pending work',()=>{
+ let timer=now;const store=openStore({filename:':memory:',secret,clock:()=>timer});try{
+  store.db.exec('CREATE TABLE directory_organization_mail(site_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,mail_id TEXT NOT NULL,account_id TEXT NOT NULL,message_hash TEXT NOT NULL,lease_token TEXT NOT NULL,phase TEXT NOT NULL,outcome TEXT,ack_due INTEGER NOT NULL,PRIMARY KEY(site_id,organization_id,mail_id));');
+  const insert=store.db.prepare('INSERT INTO directory_organization_mail VALUES(?,?,?,?,?,?,?,?,?,?)');insert.run(store.siteId,'legacy-org',1,'legacy-complete','client','hash','lease','complete','accepted',now-60*86400000);insert.run(store.siteId,'legacy-org',1,'legacy-pending','client','hash2','lease2','ack-pending','accepted',now-60*86400000);
+  const receipts=createOrganizationMailReceipts(store),transfer={organization_id:'legacy-org',epoch:1};assert.equal(receipts.get('legacy-org','legacy-complete').completed_at,now);assert.equal(receipts.get('legacy-org','legacy-pending').completed_at,0);assert.equal(receipts.retirable(transfer).length,0);assert.equal(receipts.pending().length,1);
+  timer+=29*86400000;createOrganizationMailReceipts(store);assert.equal(receipts.get('legacy-org','legacy-complete').completed_at,now);assert.equal(receipts.retirable(transfer).length,0);
+  timer+=2*86400000;assert.equal(receipts.retirable(transfer).length,1);assert.equal(receipts.pending().length,1);
+ }finally{store.close();}
+});
 
 test('Delegated organization mail retains one accepted central receipt after a committed acknowledgement reply is lost',async()=>{
  const f=pendingMailFixture();try{

@@ -34,6 +34,7 @@ export function createOrganizationCommit(store){
   return {manifest:status.manifest,clients,preferences,accounts,taxonomy:store.readCollections(['taxonomy','taxonomyChanges','taxonomyVersion']),outbox,notificationJobs,...(mediaManifest?{mediaManifest}:{})};
  }
  function context(input){return store.transaction(()=>{
+  if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='retention_retired_handoffs'").get()&&db.prepare('SELECT organization_id FROM retention_retired_handoffs WHERE site_id=? AND organization_id=?').get(siteId,input.organizationId))reject('RETENTION_RETIRED','Istorinis tapatybės paketas pašalintas.',409);
   const status=current(input),existing=db.prepare('SELECT packet FROM organization_handoff_context WHERE site_id=? AND organization_id=? AND epoch=?').get(siteId,status.organizationId,status.epoch);if(existing)return JSON.parse(existing.packet);
   if(status.state!=='frozen')reject('INVALID_STATE','Užbaigto perdavimo kontekstas nerastas.',409);
   const content=JSON.parse(raw(contents(status))),packet=signed(store,'context',{schemaVersion:1,...content,sha256:hash(content)});if(Buffer.byteLength(raw(packet))>maxContextBytes)reject('CAPACITY','Perdavimo kontekstas viršija 1 MiB ribą.',503);

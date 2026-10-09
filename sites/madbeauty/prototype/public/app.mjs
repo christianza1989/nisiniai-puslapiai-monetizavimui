@@ -18,10 +18,11 @@ import {workspaceView,workspaceAction,workspaceForm,manualServiceSummary} from '
 import {createHttpAdapter} from './http-adapter.mjs';
 import {accountAction,accountForm} from './account-ui.mjs';
 import {reconcileAccountState} from './account-state.mjs';
-import {setContentData,trustPages} from './content.mjs';
+import {setContentData,setRetentionPolicy,trustPages} from './content.mjs';
 import {activeNode,CATALOGUE_ORIGIN} from '/content-targets.mjs';
 import {isCityId} from '/cities.mjs';
 const $=s=>document.querySelector(s),boot=await loadJson('/boot.json');
+setRetentionPolicy(boot.retentionPolicy);
 
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:'',rezultatai:'paslaugos'},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
 let state=initial(),restoredWorkspaceAccount=null;
@@ -74,7 +75,7 @@ async function render(){
     await Promise.all(jobs);
     if(ctx.adapter.mode==='real'){
       const s=ctx.realAdapter.session;
-      if(reconcileAccountState(state,s.user)){clearDrafts();closeDialog();ctx.workspace=null;ctx.editing=null;ctx.rebooking=null;ctx.erasureCase=null;ctx.privacyChallenge=null;ctx.authChallenge=null;}
+      if(reconcileAccountState(state,s.user)){clearDrafts();closeDialog();ctx.workspace=null;ctx.editing=null;ctx.rebooking=null;ctx.erasureCase=null;ctx.privacyChallenge=null;ctx.erasureReceiptToken=null;ctx.authChallenge=null;}
       if(restoredWorkspaceAccount!==(s.user?.id||null)){
         restoredWorkspaceAccount=s.user?.id||null;state.session.organizationId=null;
         if(s.user)try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':real-workspace'));if(saved?.accountId===s.user.id&&s.organizations.some(o=>o.id===saved.organizationId))state.session.organizationId=saved.organizationId;}catch{}

@@ -3,7 +3,8 @@ import {MadbeautyPlatform} from './platform-object.mjs';
 import {MadbeautyOrganizationStaging} from './organization-object.mjs';
 import {contentProjection,contact,escape} from './content.mjs';
 import template from '../prototype/public/app.html';
-import {trustPages} from '../prototype/public/product-trust.mjs';
+import {trustPages as baseTrustPages,withRetentionPolicy} from '../prototype/public/product-trust.mjs';
+import {RETENTION_POLICY,policyPublic} from '../backend/retention-policy.mjs';
 import inventory from '../SCREEN_INVENTORY.json';
 import assets from './output/asset-paths.json';
 import release from './output/content-release-receipt.json';
@@ -26,6 +27,7 @@ function matchRoute(path){
 export default {
  async fetch(request,env){
   const url=new URL(request.url),origin=new URL(env.APP_ORIGIN),preview=env.RELEASE_MODE!=='production';
+  const retentionPolicy=env.RETENTION_POLICY_VERSION===RETENTION_POLICY.version?policyPublic():null,trustPages=withRetentionPolicy(baseTrustPages,retentionPolicy);
   if(!preview&&url.hostname==='www.madbeauty.lt')return Response.redirect('https://madbeauty.lt'+url.pathname+url.search,308);
   if(url.host!==origin.host)return new Response('Not found',{status:404,headers});
   if(!preview&&url.protocol==='http:')return Response.redirect('https://madbeauty.lt'+url.pathname+url.search,308);
@@ -39,7 +41,7 @@ export default {
   const path=url.pathname,needsCatalogue=(!path.includes('.')&&!/^\/(meistrui|paskyra|registracija|operatorius)(\/|$)/.test(path))||path==='/content.json'||path==='/content-targets.json'||path==='/paslaugos'||path.startsWith('/paslaugos/')||['/sitemap.xml','/llms.txt','/llms-full.txt'].includes(path)||path.startsWith('/gidai/')||path.startsWith('/autoriai/');
   const offers=needsCatalogue?await object.catalog({}):[],registry=createContentTargetRegistry({offers,deployed:!preview}),content=contentProjection(Date.now(),registry);
   let assetPath;try{assetPath=decodeURIComponent(path);}catch{return new Response('Not found',{status:404,headers});}
-  if(path==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'production',enabled:false,privatePrototype:false,apiAvailable:true,contact});
+  if(path==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'production',enabled:false,privatePrototype:false,apiAvailable:true,contact,retentionPolicy});
   if(path==='/screen-registry.json')return json(inventory.screens.map(({id,route,label,surface})=>({id,route,label,surface})));
   if(path==='/content.json')return json({siteId:'madbeauty',pages:content.dto,operatorName:contact.operatorName});
   if(path==='/content-targets.json')return json(registry);

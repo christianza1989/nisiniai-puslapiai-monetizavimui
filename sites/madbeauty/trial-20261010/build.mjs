@@ -1,8 +1,9 @@
-import {readFile,writeFile,mkdir,copyFile,cp} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,copyFile,cp,readdir} from 'node:fs/promises';
 import {createHash,randomBytes} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {RETENTION_POLICY} from '../backend/retention-policy.mjs';
 const site=path.resolve(import.meta.dirname,'..'),repo=path.resolve(site,'../..'),core=path.resolve(repo,'../dovanos-memorycasting');
 const output=path.join(import.meta.dirname,'output'),assets=path.join(output,'assets');
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
@@ -10,7 +11,7 @@ await mkdir(output,{recursive:true});
 const receipt=JSON.parse(await readFile(path.join(site,'cloudflare/output/content-release-receipt.json')));
 if(receipt.packageSha256!=='98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2')throw Error('Current reviewed content edition required');
 await cp(path.join(site,'cloudflare/output/assets-release'),assets,{recursive:true});
-await copyFile(path.join(site,'prototype/public/app.mjs'),path.join(assets,'app.mjs'));
+for(const file of await readdir(path.join(site,'prototype/public')))if(/\.(?:mjs|css|svg)$/.test(file)&&file!=='kit.mjs')await copyFile(path.join(site,'prototype/public',file),path.join(assets,file));
 const manifest=JSON.parse(await readFile(path.join(site,'prototype/public/app-media.json')));
 const publicManifest={assets:manifest.assets.map(({id,alt,variants})=>({id,alt,variants}))};
 const categories=JSON.parse(await readFile(path.join(site,'prototype/public/media.json')));
@@ -36,7 +37,7 @@ const configuration={name,account_id:'d102163f74a45ab6d33bca786ce281ec',main:'wo
  routes:[{pattern:'bandymas.madbeauty.lt',custom_domain:true}],assets:{directory:'./assets',binding:'ASSETS',run_worker_first:true},
  durable_objects:{bindings:[{name:'PLATFORM',class_name:'TemporaryTestPlatform'}]},
  migrations:[{tag:'trial-v1',new_sqlite_classes:['TemporaryTestPlatform']}],
- vars:{APP_ORIGIN:origin,RELEASE_MODE:'temporary-live-test',TRIAL_EXPIRES_AT:expiresAt},
+ vars:{APP_ORIGIN:origin,RELEASE_MODE:'temporary-live-test',TRIAL_EXPIRES_AT:expiresAt,RETENTION_POLICY_VERSION:RETENTION_POLICY.version},
  observability:{enabled:true,head_sampling_rate:0.1,traces:{enabled:true,head_sampling_rate:0.1}}};
 const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js')));
 const bundled=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'}});

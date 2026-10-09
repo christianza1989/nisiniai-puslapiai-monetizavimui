@@ -10,7 +10,7 @@ import {createSqlMediaBucket} from './media-bucket.mjs';
 // no authority effect: the private directory command requires a signed central actor
 // and active source commit. Browser sessions and mail transport remain central.
 export class MadbeautyOrganizationStaging extends DurableObject{
- constructor(ctx,env){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET);this.mediaBucket=createSqlMediaBucket(this.store);this.staging=null;}
+ constructor(ctx,env){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET);this.store.retentionPolicyVersion=env.RETENTION_POLICY_VERSION;this.mediaBucket=createSqlMediaBucket(this.store);this.staging=null;}
  stage(packet){const targetName='madbeauty:organization:v1:'+packet?.manifest?.organizationId;if(!this.ctx.id.equals(this.env.ORGANIZATION_STAGING.idFromName(targetName)))throw Error('Organization object identity mismatch');this.staging=createOrganizationStaging(this.store,{targetName});return this.staging.accept(packet);}
  stagingStatus(){return createOrganizationStaging(this.store,{targetName:''}).summary();}
  stageOrganizationMedia(packet){const targetName=packet?.manifest?.targetName;if(!this.ctx.id.equals(this.env.ORGANIZATION_STAGING.idFromName(targetName)))throw Error('Organization object identity mismatch');return createOrganizationMediaStage(this.store,{targetName}).accept(packet);}

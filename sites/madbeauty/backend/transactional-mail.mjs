@@ -1,6 +1,7 @@
 // Shared by the central pilot outbox and delegated organization outboxes.
 // Transport remains the existing private Hostinger adapter.
 export function transactionalMail(row,payload){
+ if(row.type==='account-closure-notice')return {to:row.recipient,subject:'Madbeauty paskyros uždarymo priminimas',text:`Tavo paskyra ilgą laiką nenaudota. Pagal saugojimo tvarką ją uždarysime ne anksčiau kaip ${payload.earliestClosureAt}.\nJei nori ją išsaugoti, prisijunk: https://madbeauty.lt/paskyra\nBūsimų vizitų ar veiklos prieigų turinčios paskyros šiuo veiksmu neuždaromos.\nMB Pinet · info@pinet.lt`,id:row.id.replaceAll('_','-')};
  const format=options=>new Intl.DateTimeFormat('lt-LT',{timeZone:'Europe/Vilnius',...options});
  const subject=row.type==='login-code'?'Madbeauty prisijungimo kodas':row.type==='reminder'?'Madbeauty priminimas apie vizitą':row.type==='waitlist-offer'?'Madbeauty laiko pasiūlymas':'Madbeauty vizito atnaujinimas';
  const starts=payload.startAt?format({dateStyle:'medium',timeStyle:'short'}).format(new Date(payload.startAt)):'';

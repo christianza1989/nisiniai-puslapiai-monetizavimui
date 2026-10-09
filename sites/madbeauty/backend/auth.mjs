@@ -1,8 +1,10 @@
 import {randomBytes,randomInt,timingSafeEqual} from 'node:crypto';
 import {randomId,reject} from './primitives.mjs';
+import {createRetention} from './retention.mjs';
 const equal=(a,b)=>{const x=Buffer.from(String(a)),y=Buffer.from(String(b));return x.length===y.length&&timingSafeEqual(x,y);};
 export function createAuth(store){
   const {db,siteId,clock}=store;
+  const retention=createRetention(store);
   const session=(token,{create=true}={})=>{
     const now=clock(),h=store.hash(token||'');
     let row=token?db.prepare('SELECT * FROM sessions WHERE token_hash=? AND site_id=?').get(h,siteId):null;
@@ -13,7 +15,7 @@ export function createAuth(store){
     db.prepare('INSERT INTO sessions(token_hash,site_id,account_id,csrf,created_at,touched_at,expires_at) VALUES(?,?,NULL,?,?,?,?)').run(store.hash(fresh),siteId,csrf,now,now,now+8*60*60*1000);
     return {token_hash:store.hash(fresh),site_id:siteId,account_id:null,csrf,token:fresh,created_at:now,expires_at:now+8*60*60*1000};
   };
-  const account=s=>{const u=s?.account_id?db.prepare('SELECT id,email,name,operator FROM accounts WHERE id=? AND site_id=?').get(s.account_id,siteId):null;return u?{...u,verifiedAt:s.created_at}:null;};
+  const account=s=>{const u=s?.account_id?db.prepare('SELECT id,email,name,operator FROM accounts WHERE id=? AND site_id=?').get(s.account_id,siteId):null;if(u&&retention.blocked(u.id))return null;if(u)db.prepare('INSERT INTO retention_activity(site_id,account_id,touched_at,notice_at) VALUES(?,?,?,0) ON CONFLICT(site_id,account_id) DO UPDATE SET touched_at=excluded.touched_at,notice_at=0').run(siteId,u.id,clock());return u?{...u,verifiedAt:s.created_at}:null;};
   const requireAccount=s=>{const u=account(s);if(!u)reject('UNAUTHENTICATED','Prisijunkite el. paštu.',401);return u;};
   const csrf=(s,value)=>{if(!s||!equal(s.csrf,value||''))reject('CSRF','Sesija pasikeitė. Atnaujinkite puslapį.',403);};
   const start=(s,email,ip)=>{

@@ -12,12 +12,13 @@ import {nextReminderAt,reminderValid} from '../backend/notifications.mjs';
 import {nextWaitlistAt,waitlistMailValid} from '../backend/waitlist.mjs';
 import {transactionalMail} from '../backend/transactional-mail.mjs';
 import {createOrganizationMediaSource} from '../backend/organization-media.mjs';
+import {policyActive} from '../backend/retention-policy.mjs';
 import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger-transport.mjs';
 
 // One bounded Madbeauty pilot coordination domain. Other sites use separate namespaces.
 // Booking/state transactions never await network I/O. Split per organization before scale.
 export class MadbeautyPlatform extends DurableObject{
- constructor(ctx,env,storeOptions){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET,storeOptions);this.mediaBucket=createSqlMediaBucket(this.store);this.media=createMedia({...env,MEDIA:this.mediaBucket});this.mailRunning=null;
+ constructor(ctx,env,storeOptions){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET,storeOptions);this.store.retentionPolicyVersion=env.RETENTION_POLICY_VERSION;this.mediaBucket=createSqlMediaBucket(this.store);this.media=createMedia({...env,MEDIA:this.mediaBucket});this.mailRunning=null;
   this.store.onVerifiedAccount=user=>{if(env.OPERATOR_EMAIL&&user.email===env.OPERATOR_EMAIL){this.store.db.prepare('UPDATE accounts SET operator=1 WHERE id=? AND site_id=?').run(user.id,this.store.siteId);return {...user,operator:1};}return user;};
  }
  async fetch(request){
@@ -71,27 +72,33 @@ export class MadbeautyPlatform extends DurableObject{
   // issuance sequences already superseded by an organization object. Aborted
   // handoffs also retain epochs/receipts, so they require coordinated recovery.
   const decision=await this.ctx.blockConcurrencyWhile(async()=>{
+   // A raw rewind would also rewind the erasure journal and revive deleted
+   // identities. Approved-policy recovery uses an isolated import with an
+   // independently verified current journal; never expose an older live DB.
+   if(policyActive(this.store)||this.directory().retention.journal().length)return {privacyBlocked:true};
    if(this.store.db.prepare('SELECT COUNT(*) AS n FROM organization_handoffs WHERE site_id=?').get(this.store.siteId).n)return {blocked:true};
    return {bookmark:await this.ctx.storage.onNextSessionRestoreBookmark(bookmark)};
   });
   // Throw after the callback: an expected refusal inside it would reset the DO.
+  if(decision.privacyBlocked)throw Error('Recovery requires the current erasure journal in an isolated checkpoint import');
   if(decision.blocked)throw Error('Source recovery requires coordinated source and organization checkpoints');
   return decision.bookmark;
  }
  async schedule(){
   const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox AS mail WHERE site_id=? AND state IN ('pending','sending') AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted')").get(this.store.siteId);
-  const directory=this.directory(),due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity,directory.nextControlAt()??Infinity,directory.nextClientAdmissionAt()??Infinity,await directory.nextOrganizationMailAt()??Infinity);
+  const directory=this.directory(),due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity,directory.nextControlAt()??Infinity,directory.nextClientAdmissionAt()??Infinity,directory.nextErasureAt()??Infinity,await directory.nextOrganizationMailAt()??Infinity);
   await this.ctx.storage.setAlarm(Math.max(Date.now()+1000,Number.isFinite(due)?due:Date.now()+86400000));
  }
- async alarm(){const directory=this.directory();await directory.flushClientAdmissions();await directory.flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();await this.schedule();}
+ async alarm(){const directory=this.directory();try{await directory.runRetention();await directory.flushClientAdmissions();await directory.flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();}finally{await this.schedule();}}
  expire(){
   const now=this.store.clock(),db=this.store.db;
   db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0 WHERE type='login-code' AND state IN ('pending','sending','failed') AND challenge_id IN (SELECT id FROM email_challenges WHERE consumed=1 OR expires_at<=?)").run(now);
   db.prepare('DELETE FROM sessions WHERE expires_at<? OR touched_at<?').run(now,now-1800000);
   db.prepare('DELETE FROM rate_limits WHERE expires_at<?').run(now);
   db.prepare('DELETE FROM email_challenges WHERE expires_at<?').run(now-86400000);
+  db.prepare("UPDATE mail_outbox SET finalized_at=? WHERE finalized_at=0 AND state IN ('accepted','failed','expired') AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail_outbox.site_id AND h.organization_id=mail_outbox.organization_id AND h.state!='aborted')").run(now);
   db.prepare("DELETE FROM mail_outbox WHERE type='login-code' AND created_at<?").run(now-86400000);
-  db.prepare("DELETE FROM mail_outbox WHERE state IN ('accepted','failed','expired') AND created_at<? AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail_outbox.site_id AND h.organization_id=mail_outbox.organization_id AND h.state!='aborted')").run(now-30*86400000);
+  db.prepare("DELETE FROM mail_outbox WHERE state IN ('accepted','failed','expired') AND finalized_at>0 AND finalized_at<? AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail_outbox.site_id AND h.organization_id=mail_outbox.organization_id AND h.state!='aborted')").run(now-30*86400000);
   db.prepare("DELETE FROM notification_jobs WHERE state IN ('queued','suppressed','missed') AND due_at<? AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=notification_jobs.site_id AND h.organization_id=notification_jobs.organization_id AND h.state!='aborted')").run(now-30*86400000);
  }
  async drain(){
@@ -106,10 +113,10 @@ export class MadbeautyPlatform extends DurableObject{
     const now=Date.now();const row=db.prepare("SELECT * FROM mail_outbox AS mail WHERE site_id=? AND ((state='pending' AND next_attempt_at<=?) OR (state='sending' AND lease_until<=?)) AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted') ORDER BY created_at LIMIT 1").get(siteId,now,now);
     if(!row)break;
     const payload=this.store.unseal(row.payload);
-    if(!reminderValid(this.store,row,payload)||!waitlistMailValid(this.store,row,payload)){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0 WHERE id=? AND site_id=?").run(row.id,siteId);continue;}
+    if(row.type==='account-closure-notice'&&!this.store.db.prepare('SELECT account_id FROM retention_activity WHERE site_id=? AND account_id=? AND notice_mail_id=? AND notice_at>0').get(siteId,row.account_id,row.id)||!reminderValid(this.store,row,payload)||!waitlistMailValid(this.store,row,payload)){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0,finalized_at=? WHERE id=? AND site_id=?").run(now,row.id,siteId);continue;}
     if(row.type==='login-code'){
      const challenge=db.prepare('SELECT consumed,expires_at FROM email_challenges WHERE id=? AND site_id=?').get(row.challenge_id,siteId);
-     if(!challenge||challenge.consumed||challenge.expires_at<=now){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}' WHERE id=?").run(row.id);continue;}
+     if(!challenge||challenge.consumed||challenge.expires_at<=now){db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',finalized_at=? WHERE id=?").run(now,row.id);continue;}
     }
     db.prepare("UPDATE mail_outbox SET state='sending',attempts=attempts+1,lease_until=? WHERE id=?").run(now+60000,row.id);
     const mail=transactionalMail(row,payload);
@@ -118,11 +125,11 @@ export class MadbeautyPlatform extends DurableObject{
      if(this.env.MAIL_TRANSPORT){const r=await this.env.MAIL_TRANSPORT.fetch('https://transactional.invalid/',{method:'POST',body:JSON.stringify(mail)});if(!r.ok)throw Error('Transport failed');}
      else await sendHostingerMail(this.env,mail);
      accepted=true;
-     db.prepare("UPDATE mail_outbox SET state='accepted',delivered_at=?,lease_until=0,payload=? WHERE id=?").run(Date.now(),row.type==='login-code'?'{}':row.payload,row.id);
+     db.prepare("UPDATE mail_outbox SET state='accepted',delivered_at=?,finalized_at=?,lease_until=0,payload=? WHERE id=?").run(Date.now(),Date.now(),row.type==='login-code'?'{}':row.payload,row.id);
     }catch(error){
      console.warn('transactional-mail-failed',accepted?'Mail relay receipt storage unavailable':error.message?.startsWith('Mail relay')?error.message:'Transport unavailable '+(error.name==='TypeError'?'type':error.name==='Error'?'generic':'storage'));
      const failed=row.attempts>=4;
-     db.prepare('UPDATE mail_outbox SET state=?,next_attempt_at=?,lease_until=0 WHERE id=?').run(failed?'failed':'pending',now+Math.min(300000,15000*2**row.attempts),row.id);
+     db.prepare('UPDATE mail_outbox SET state=?,next_attempt_at=?,lease_until=0,finalized_at=? WHERE id=?').run(failed?'failed':'pending',now+Math.min(300000,15000*2**row.attempts),failed?now:0,row.id);
     }
    }
    await this.directory().drainOrganizationMail(async claim=>{const mail=transactionalMail(claim,claim.payload);if(this.env.MAIL_TRANSPORT){const response=await this.env.MAIL_TRANSPORT.fetch('https://transactional.invalid/',{method:'POST',body:JSON.stringify(mail)});if(!response.ok)throw Error('Transport failed');}else await sendHostingerMail(this.env,mail);});

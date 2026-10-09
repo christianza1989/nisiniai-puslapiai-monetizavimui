@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS mail_outbox (
  id TEXT PRIMARY KEY, site_id TEXT NOT NULL, account_id TEXT, organization_id TEXT,
  booking_id TEXT, challenge_id TEXT, recipient TEXT NOT NULL, type TEXT NOT NULL,
  payload TEXT NOT NULL CHECK(json_valid(payload)), state TEXT NOT NULL,
- created_at INTEGER NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, delivered_at INTEGER
+ created_at INTEGER NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, delivered_at INTEGER, finalized_at INTEGER NOT NULL DEFAULT 0
 ) STRICT;
 CREATE INDEX IF NOT EXISTS outbox_site ON mail_outbox(site_id,created_at);
 CREATE TABLE IF NOT EXISTS notification_jobs (

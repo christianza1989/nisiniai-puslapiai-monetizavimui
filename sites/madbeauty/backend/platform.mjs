@@ -1,6 +1,8 @@
 import {createProfileTools,publishedMediaIds,profileDetails,validateGallery} from './profile-tools.mjs';
 import {createVisitApi,requireWholeVisit} from './visits.mjs';
 import {createCustomerTools} from './customer-tools.mjs';
+import {createRetention} from './retention.mjs';
+import {policyActive} from './retention-policy.mjs';
 import {createOperations} from './operations.mjs';
 import {createModeration,reporterReport} from './moderation.mjs';
 import {REMINDER_LEADS,synchronizeReminders} from './notifications.mjs';
@@ -48,7 +50,7 @@ export function createPlatform(store,{deferOrganizationPreferences=()=>false,fav
     if(catalogueMutation)store.writeCatalogue(d);else if(clientMutation){store.writeClient(d);if(reconcileClientPreferences){const accountId=d.clients[0]?.id,organizationIds=new Set([...store.clientRecords('bookings',accountId).filter(b=>b.status==='confirmed'&&Date.parse(b.endAt)>store.clock()),...store.clientRecords('waitlist',accountId).filter(w=>w.criteria&&!['closed','expired'].includes(w.state))].map(x=>x.organizationId));for(const id of organizationIds){if(deferOrganizationPreferences(id,accountId))continue;store.assertOrganizationWritable?.(id);const view=store.readOrganization(id);synchronizeWaitlist(store,view);synchronizeReminders(store,view);store.writeOrganization(view);}}}
     else{synchronizeWaitlist(store,d);synchronizeReminders(store,d);if(organizationMutation)store.writeOrganization(d);else store.write(d);}return copy(result);});
   const event=(d,type,id)=>d.events.push({id:randomId('event'),type,entityId:id,...(d.organizationContext?{organizationId:d.organizationContext}:{}),at:new Date(store.clock()).toISOString(),siteId:store.siteId});
-  const outbox=(d,b,type)=>{const c=find(d,'clients',b.clientId);return store.mail({accountId:c.id,organizationId:b.organizationId,bookingId:b.id,recipient:c.email,type,payload:{bookingId:b.id,startAt:b.startAt,endAt:b.endAt,status:b.status,priceMinor:b.priceMinor}});};
+  const outbox=(d,b,type)=>{const c=find(d,'clients',b.clientId);if(c.erased)return null;return store.mail({accountId:c.id,organizationId:b.organizationId,bookingId:b.id,recipient:c.email,type,payload:{bookingId:b.id,startAt:b.startAt,endAt:b.endAt,status:b.status,priceMinor:b.priceMinor}});};
   const slots=(d,input,opts={})=>availability(d,input,store.clock(),opts);
   const choose=(d,candidate,opts={})=>{
     if(!candidate||!Number.isFinite(Date.parse(candidate.snapshotAt))||Date.parse(candidate.snapshotAt)+300000<store.clock())reject('STALE_AVAILABILITY','Pasirinkimas paseno. Atnaujinkite laikus.',409);
@@ -220,6 +222,8 @@ export function createPlatform(store,{deferOrganizationPreferences=()=>false,fav
   };Object.assign(api,createLocationApi({store,mutate,ownOrg,scope,event,clock}));Object.assign(api,createOfferApi({store,mutate,ownOrg:(d,u,org)=>ownOrg(d,u,org,'offers'),scope,event,clock}));
   Object.assign(api,createVisitApi({store,mutate,publicRead,calendarRead,scope,ownBooking,event,outbox,clock}));
   Object.assign(api,createCustomerTools({store,mutate,ownOrg,ownBooking,scope,event,clock}));
+  api.erasurePreview=user=>createRetention(store).preview(user);
+  api.erasureStatus=(user,input)=>createRetention(store).status(input.receiptToken);
   Object.assign(api,createOperations({store,mutate,ownOrg,event,clock}));
   Object.assign(api,createModeration({store,mutate,scope,event,clock}));
   Object.assign(api,createProfileTools({mutate,ownOrg,event}));
@@ -289,5 +293,8 @@ export function createPlatform(store,{deferOrganizationPreferences=()=>false,fav
         if(clientMutation||organizationMutation)throw Error('Nested client mutation');const view=store.readClient(accountId,name==='favorite'?[input?.organizationId]:[]);clientMutation=view.clientPatchReady&&(!['requestErasure','withdrawErasure','reviewErasure'].includes(name)||Array.isArray(view.dataRequests))?view:null;reconcileClientPreferences=name==='preferences'&&!!clientMutation;try{return original(user,input);}finally{clientMutation=null;reconcileClientPreferences=false;}});
     };}
   }
+  const legacyErasure=api.requestErasure;
+  api.requestErasure=(user,input)=>{if(!policyActive(store))return legacyErasure(user,input);if(store.db.prepare('SELECT organization_id FROM organization_handoffs WHERE site_id=?').get(store.siteId))reject('ORGANIZATION_UNAVAILABLE','Naudokite centrinę organizacijų prieigą.',503);return createRetention(store).begin(user,input);};
+  const workspace=api.workspace;api.workspace=(user,input)=>{const result=workspace(user,input);return policyActive(store)?{...result,retentionPolicy:createRetention(store).policy()}:result;};
   return api;
 }

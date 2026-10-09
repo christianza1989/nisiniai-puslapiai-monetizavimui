@@ -10,6 +10,7 @@ export function openDurableStore(ctx,secret,{clock=()=>Date.now(),fixturePreview
  const db={exec:query=>execute(query),prepare:query=>({get:(...args)=>execute(query,args).rows[0],all:(...args)=>execute(query,args).rows,run:(...args)=>({changes:execute(query,args).changes})})};
  ctx.storage.transactionSync(()=>{
   db.exec(schema.replace('PRAGMA foreign_keys = ON;',''));
+  if(!db.prepare('PRAGMA table_info(mail_outbox)').all().some(c=>c.name==='finalized_at'))db.exec('ALTER TABLE mail_outbox ADD COLUMN finalized_at INTEGER NOT NULL DEFAULT 0');
   db.exec('CREATE TABLE IF NOT EXISTS release_metadata(key TEXT PRIMARY KEY,value TEXT NOT NULL)');
   if(!db.prepare("SELECT value FROM release_metadata WHERE key='outbox-v1'").get()){
    db.exec('ALTER TABLE mail_outbox ADD COLUMN next_attempt_at INTEGER NOT NULL DEFAULT 0; ALTER TABLE mail_outbox ADD COLUMN lease_until INTEGER NOT NULL DEFAULT 0;');

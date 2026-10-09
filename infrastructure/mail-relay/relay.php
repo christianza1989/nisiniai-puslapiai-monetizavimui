@@ -23,7 +23,7 @@ if (!isset($config['keys'][$site]) || !preg_match('/^\d{13}$/D', $time) || abs((
 $message = json_decode($raw, true);
 if (!is_array($message) || array_diff(array_keys($message), ['to','subject','text','id','replyTo']) || !preg_match('/^[a-z0-9-]{1,100}$/iD', $message['id'] ?? '') || !is_string($message['subject'] ?? null) || strlen($message['subject'])>400 || preg_match('/[\r\n]/', $message['subject']) || !is_string($message['text'] ?? null) || strlen($message['text'])>20000 || !filter_var($message['to'] ?? '', FILTER_VALIDATE_EMAIL) || (isset($message['replyTo']) && !filter_var($message['replyTo'], FILTER_VALIDATE_EMAIL))) reply(400, ['error'=>'Invalid message']);
 if ($site === 'dovanos123' && $message['to'] !== $config['user']) reply(400, ['error'=>'Invalid recipient']);
-if ($site === 'madbeauty' && !in_array($message['subject'], ['Madbeauty prisijungimo kodas','Madbeauty vizito atnaujinimas','Madbeauty priminimas apie vizitą','Madbeauty laiko pasiūlymas'], true)) reply(400, ['error'=>'Invalid purpose']);
+if ($site === 'madbeauty' && !in_array($message['subject'], ['Madbeauty prisijungimo kodas','Madbeauty vizito atnaujinimas','Madbeauty priminimas apie vizitą','Madbeauty laiko pasiūlymas','Madbeauty paskyros uždarymo priminimas'], true)) reply(400, ['error'=>'Invalid purpose']);
 $handle = fopen($private.'/receipts.json', 'c+');
 if ($handle === false) reply(503, ['error'=>'Storage unavailable']);
 chmod($private.'/receipts.json', 0600);

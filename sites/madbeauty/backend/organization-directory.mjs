@@ -10,6 +10,8 @@ import {createClientAdmissionQueue,createClientAdmissionReceipts,clientAdmission
 import {createOrganizationMailbox,createOrganizationMailReceipts,validateOrganizationMailClaim} from './organization-mail.mjs';
 import {validateOrganizationMediaBytes} from './organization-media.mjs';
 import {createOrganizationUploadQueue,createOrganizationUploadReceiver,validateUploadObjects} from './organization-upload.mjs';
+import {createRetention} from './retention.mjs';
+import {policyActive} from './retention-policy.mjs';
 
 const json=JSON.stringify,clone=v=>JSON.parse(json(v)),maxTargets=32,maxResultBytes=1024*1024;
 const unavailable=()=>reject('ORGANIZATION_UNAVAILABLE','Organizacijos duomenys laikinai nepasiekiami. Bandykite dar kartą.',503);
@@ -22,7 +24,7 @@ const byId={profile:['organizations'],option:['services'],saveOffer:['offers'],s
 const targetMethods=new Set([...direct,...Object.keys(byId),'catalog','search','searchResults','availability','visitAvailability','hold','holdVisit','confirm','confirmVisit','manualVisit','message','review','report','saveMenuGroup','saveLocation','submitRevision','edit','createInquiry','createWaitlist','session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference']);
 // Only the directory selects a second identity from its central account registry.
 const identityMethods=new Set(['createClient','grantMembership']);
-const systemMethods=new Set(['organizationMailCandidates','organizationMailDueAt','ackOrganizationMail']);
+const systemMethods=new Set(['organizationMailCandidates','organizationMailDueAt','ackOrganizationMail','retireOrganizationMail','eraseCustomerRecords','retentionSweep']);
 const readMethods=new Set([...publicRpcMethods,'session','customerFragment','customerExportFragment','erasureBookings','publicProfiles','resolveReference','workspace','rebooking','organizationReport','reportCsv','exportOfferCsv']);
 targetMethods.add('workspace');
 targetMethods.add('metrics');readMethods.add('metrics');
@@ -35,6 +37,7 @@ for(const method of [...systemMethods,'claimOrganizationMail'])targetMethods.add
 for(const method of ['organizationMailCandidates','organizationMailDueAt'])readMethods.add(method);
 targetMethods.add('applyCustomerControls');
 targetMethods.add('identityActionScope');readMethods.add('identityActionScope');
+targetMethods.add('erasurePreview');readMethods.add('erasurePreview');
 const fields=['bookings','messages','reviews','inquiries','waitlist','reports'];
 const exportFields=[...fields,'organizationCards'];
 function reference(method,input){
@@ -74,7 +77,7 @@ function resultReferences(store,result,organizationId){
 // checks. Targets have no HTTP dispatcher, session cookies or auth challenges.
 export function createOrganizationCommand(store,{targetName,writeMediaObjects}={}){
  indexSchema(store);
- const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store),admissions=createClientAdmissionReceipts(store),mailbox=createOrganizationMailbox(store),uploads=createOrganizationUploadReceiver(store,{writeObjects:writeMediaObjects});
+ const cache=createDirectoryCacheReceiver(store),effects=createDirectoryIdentityEffects(store),controls=createCustomerControlReceiver(store),admissions=createClientAdmissionReceipts(store),mailbox=createOrganizationMailbox(store),uploads=createOrganizationUploadReceiver(store,{writeObjects:writeMediaObjects}),retention=createRetention(store);
  store.db.exec('CREATE TABLE IF NOT EXISTS organization_directory_commands(site_id TEXT NOT NULL,nonce TEXT NOT NULL,expires_at INTEGER NOT NULL,request_hash TEXT NOT NULL,response TEXT NOT NULL,PRIMARY KEY(site_id,nonce)); CREATE INDEX IF NOT EXISTS directory_commands_expiry ON organization_directory_commands(site_id,expires_at);');
  function execute(packet,mediaObjects){return store.transaction(()=>{
   const body=verify(store,'directory-command',packet),a=store.db.prepare('SELECT * FROM organization_target_authority WHERE site_id=?').get(store.siteId);
@@ -82,6 +85,7 @@ export function createOrganizationCommand(store,{targetName,writeMediaObjects}={
   if(!validId(body.nonce)||!Number.isSafeInteger(body.expiresAt)||body.expiresAt<=store.clock()||body.expiresAt>store.clock()+30000||Buffer.byteLength(json(packet))>maxResultBytes+32768||Buffer.byteLength(json(body.input||{}))>32768)reject('INVALID_INPUT','Organizacijos užklausa paseno arba yra per didelė.');
   if(!targetMethods.has(body.method))reject('GLOBAL_IDENTITY_REQUIRED','Šiam veiksmui reikia centrinės paskyros patvirtinimo.',503);
   const actor=body.actor;if(actor&&(Object.keys(actor).some(k=>!['id','email','name','operator','verifiedAt'].includes(k))||!validId(actor.id)||typeof actor.email!=='string'||typeof actor.name!=='string'||typeof actor.operator!=='boolean'))reject('FORBIDDEN','Netinkama paskyros tapatybė.',403);
+  if(actor&&retention.blocked(actor.id)||body.cache?.recipientId&&retention.blocked(body.cache.recipientId))reject('UNAUTHENTICATED','Paskyra pašalinta.',401);
   if(!readMethods.has(body.method)&&!actor&&!systemMethods.has(body.method))reject('UNAUTHENTICATED','Prisijunkite.',401);
   if(systemMethods.has(body.method)&&actor)reject('FORBIDDEN','Netinkama vidinės užduoties tapatybė.',403);
   const ref=reference(body.method,body.input||{}),organizationId=a.organization_id;
@@ -107,6 +111,10 @@ export function createOrganizationCommand(store,{targetName,writeMediaObjects}={
   else if(body.method==='organizationMailDueAt')result=mailbox.nextAt();
   else if(body.method==='claimOrganizationMail')result=mailbox.claim(actor,body.input);
   else if(body.method==='ackOrganizationMail')result=mailbox.acknowledge(body.input);
+  else if(body.method==='retireOrganizationMail')result=mailbox.retire(body.input);
+  else if(body.method==='eraseCustomerRecords')result=retention.apply(body.input);
+  else if(body.method==='retentionSweep')result=retention.sweep();
+  else if(body.method==='erasurePreview')result=retention.inspect(actor);
   else if(body.method==='mediaUploadAccess')result=uploads.access(actor,body.input);
   else if(body.method==='attachUploadedMedia')result=uploads.commit(actor,body.input,mediaObjects,(user,asset)=>api.attachMedia(user,asset));
   else if(body.method==='mediaReadAccess'){
@@ -152,12 +160,12 @@ export function createOrganizationCommand(store,{targetName,writeMediaObjects}={
 }
 
 export function createOrganizationDirectory(store,{getTarget}={}){
- const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store),admissions=createClientAdmissionQueue(store),mailReceipts=createOrganizationMailReceipts(store),uploads=createOrganizationUploadQueue(store);
+ const db=store.db,siteId=store.siteId,controls=createCustomerControlQueue(store),admissions=createClientAdmissionQueue(store),mailReceipts=createOrganizationMailReceipts(store),uploads=createOrganizationUploadQueue(store),retention=createRetention(store);
  const api=createPlatform(store,{deferOrganizationPreferences:id=>!!db.prepare("SELECT organization_id FROM organization_handoffs WHERE site_id=? AND organization_id=? AND state='sealed'").get(siteId,id)});
  const cache=createDirectoryCacheIssuer(store),effects=createDirectoryIdentityEffects(store);
  db.exec('CREATE TABLE IF NOT EXISTS organization_directory_refs(site_id TEXT NOT NULL,collection TEXT NOT NULL,entity_id TEXT NOT NULL,organization_id TEXT NOT NULL,epoch INTEGER NOT NULL,PRIMARY KEY(site_id,collection,entity_id));');
  const transfers=()=>{const rows=db.prepare("SELECT organization_id,epoch,state,target_name FROM organization_handoffs WHERE site_id=? AND state!='aborted' ORDER BY organization_id LIMIT 33").all(siteId);if(rows.length>maxTargets)reject('CAPACITY','Organizacijų paieškos apimtis viršija šio piloto ribą.',503);return rows;};
- const actor=user=>{if(!user)return null;const a=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND id=?').get(siteId,user.id);if(!a)reject('UNAUTHENTICATED','Prisijunkite.',401);return {...a,operator:!!a.operator,...(Number.isFinite(user.verifiedAt)?{verifiedAt:user.verifiedAt}:{})};};
+ const actor=user=>{if(!user)return null;const a=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND id=?').get(siteId,user.id);if(!a||retention.blocked(user.id))reject('UNAUTHENTICATED','Prisijunkite.',401);return {...a,operator:!!a.operator,...(Number.isFinite(user.verifiedAt)?{verifiedAt:user.verifiedAt}:{})};};
  const saveReferences=(t,references)=>store.transaction(()=>{for(const r of references){if(!entityTables.has(r.collection)||!validId(r.id))unavailable();const old=db.prepare('SELECT organization_id FROM organization_directory_refs WHERE site_id=? AND collection=? AND entity_id=?').get(siteId,r.collection,r.id);if(old&&old.organization_id!==t.organization_id)reject('IDEMPOTENCY_CONFLICT','Įrašo tapatybė priklauso kitai organizacijai.',409);db.prepare('INSERT INTO organization_directory_refs VALUES(?,?,?,?,?) ON CONFLICT(site_id,collection,entity_id) DO UPDATE SET epoch=excluded.epoch').run(siteId,r.collection,r.id,t.organization_id,t.epoch);}});
  async function targetCall(t,method,user,input={},recipientId=null,clientAdmission=null,mediaObjects=null){
   if(t.state!=='sealed'||!getTarget)unavailable();
@@ -221,6 +229,14 @@ export function createOrganizationDirectory(store,{getTarget}={}){
    // Rotate even when this namespace is unavailable. One failed salon must not
    // starve another, and ten admissions bound external I/O for one alarm cycle.
    store.transaction(()=>mailReceipts.advance(target));
+   const oldReceipts=mailReceipts.retirable(target);
+   if(oldReceipts.length){
+    const entries=oldReceipts.map(r=>({id:r.mail_id,leaseToken:r.lease_token,messageHash:r.message_hash,completedAt:r.completed_at})),retired=await targetCall(target,'retireOrganizationMail',null,{organizationId:target.organization_id,entries});
+    if(!Array.isArray(retired)||retired.length!==entries.length||new Set(retired.map(r=>r.id)).size!==entries.length||retired.some(r=>!entries.some(e=>e.id===r.id)||typeof r.retired!=='boolean'))unavailable();
+    // Delete the no-body central receipt only after its active target confirms
+    // that terminal outbox/claim metadata is gone. Lost replies retain it.
+    store.transaction(()=>{for(const r of retired)if(r.retired)mailReceipts.forget(oldReceipts.find(old=>old.mail_id===r.id));});
+   }
    const candidates=await targetCall(target,'organizationMailCandidates',null,{});if(!Array.isArray(candidates)||candidates.length>10)unavailable();
    for(const candidate of candidates){
     if(!remaining)break;remaining--;
@@ -266,7 +282,19 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   return store.transaction(()=>{saveReferences(target,[{collection:'media',id:result.id}]);uploads.complete(account,record,result);return result;});
  }
  async function dispatch(method,user,input={}){
-  const rows=transfers();if(!rows.length)return method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);
+  const rows=transfers();
+  if(method==='erasureStatus')return retention.status(input.receiptToken);
+  if(method==='erasurePreview'){
+   const account=actor(user),result=retention.preview(account),parts=await Promise.all(rows.map(t=>targetCall(t,'erasurePreview',account,{}))),excluded=new Set(rows.map(t=>t.organization_id));
+   result.futureBookings=[...result.futureBookings.filter(b=>!excluded.has(b.organizationId)),...parts.flatMap(p=>p.futureBookings)];result.activeRequests=[...result.activeRequests.filter(b=>!excluded.has(b.organizationId)),...parts.flatMap(p=>p.activeRequests)];return result;
+  }
+  if(method==='requestErasure'&&policyActive(store)){
+   const account=actor(user);retention.inspect(account);
+   // Signed target preflight checks live memberships before removing identity.
+   await Promise.all(rows.map(t=>targetCall(t,'erasurePreview',account,{})));
+   const result=retention.begin(account,input,rows);await flushErasures();const current=retention.get(account.id);return {...result,state:current.state,completedAt:current.completed_at||null};
+  }
+  if(!rows.length){const result=method==='publicProfiles'?store.readCollections(['organizations']).organizations.filter(o=>o.approved).map(o=>api.profile(o.id)):invokePlatform(api,method,user,input);return method==='workspace'&&policyActive(store)?{...result,retentionPolicy:retention.policy()}:result;}
   const excluded=new Set(rows.map(t=>t.organization_id));
   if(method==='favorite'){
    const account=actor(user);if(!account)reject('UNAUTHENTICATED','Prisijunkite.',401);
@@ -306,7 +334,7 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   }
   if(method==='workspace'&&!['professional','operator'].includes(input.role)){
    const result=api.workspace(actor(user),input),parts=await Promise.all(rows.map(t=>targetCall(t,'customerFragment',user,{})));
-   for(const field of fields)result[field]=[...result[field].filter(r=>!excluded.has(r.organizationId)),...parts.flatMap(p=>p[field])];return result;
+   for(const field of fields)result[field]=[...result[field].filter(r=>!excluded.has(r.organizationId)),...parts.flatMap(p=>p[field])];return policyActive(store)?{...result,retentionPolicy:retention.policy()}:result;
   }
   if(method==='workspace'&&input.role==='operator'){
    const result=api.workspace(actor(user),input),parts=await Promise.all(rows.map(t=>targetCall(t,'workspace',user,input)));
@@ -343,5 +371,25 @@ export function createOrganizationDirectory(store,{getTarget}={}){
   // Central identity/preferences/export remain on their existing guarded writer.
   return invokePlatform(api,method,actor(user),input);
  }
- return {dispatch,readMedia,uploadMedia,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt,drainOrganizationMail,nextOrganizationMailAt};
+ async function flushErasures(){
+  for(const row of retention.pending())try{const target=transfers().find(t=>t.organization_id===row.organization_id&&t.epoch===row.epoch);if(!target)unavailable();const result=await targetCall(target,'eraseCustomerRecords',null,{clientId:row.client_id,requestId:row.request_id,aliasId:row.alias_id,policyVersion:row.policy_version});if(result.id!==row.request_id||result.state!=='completed'||!result.profileRemoved||!result.signInRevoked)unavailable();store.transaction(()=>{retention.acknowledge(row);
+   // No recipient or body is in these receipts; removing them after target ACK
+   // prevents obsolete mail retries from asking for the erased central account.
+   db.prepare('DELETE FROM directory_organization_mail WHERE site_id=? AND organization_id=? AND account_id=?').run(siteId,row.organization_id,row.client_id);
+   db.prepare('DELETE FROM directory_customer_controls WHERE site_id=? AND client_id=?').run(siteId,row.client_id);});
+  }catch{/* Durable queue remains pending; daily/alarm retries do not need a login. */}
+ }
+ async function runRetention(){
+  if(!policyActive(store))return;
+  await flushErasures();const rows=transfers(),confirmedSourceCopies=[];
+  for(const target of rows.filter(t=>t.state==='sealed'))try{const result=await targetCall(target,'retentionSweep',null,{});if(result.policyVersion!==retention.policy().version)unavailable();confirmedSourceCopies.push(target.organization_id);}catch{/* Do not expire the unconfirmed historical source copy. */}
+  retention.sweep({confirmedSourceCopies});
+  for(const candidate of retention.inactiveCandidates())try{
+   const account=actor({id:candidate.id,verifiedAt:store.clock()}),parts=[retention.inspect(account),...await Promise.all(rows.map(t=>targetCall(t,'erasurePreview',account,{})))],preview={futureBookings:parts.flatMap(p=>p.futureBookings),activeRequests:parts.flatMap(p=>p.activeRequests)};
+   if(preview.futureBookings.length||preview.activeRequests.length)continue;
+   retention.notifyInactive(candidate);retention.closeInactive(candidate,rows);
+  }catch{/* Active provider access, a changed login or unavailable namespace defers closure. */}
+  await flushErasures();
+ }
+ return {dispatch,readMedia,uploadMedia,flushErasures,runRetention,retention,nextErasureAt:()=>retention.pending().length?store.clock()+30000:null,flushCustomerControls,nextControlAt:controls.nextAt,flushClientAdmissions,nextClientAdmissionAt:admissions.nextAt,drainOrganizationMail,nextOrganizationMailAt};
 }

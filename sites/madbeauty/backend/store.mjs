@@ -14,6 +14,7 @@ export function openStore({filename=path.resolve(import.meta.dirname,'../runtime
   if(secret.length<32)throw Error('Server secret too short');
   const db=new DatabaseSync(filename);try{db.exec('PRAGMA busy_timeout=5000; PRAGMA journal_mode=WAL;');
     db.exec(readFileSync(new URL('./schema.sql',import.meta.url),'utf8'));
+    if(!db.prepare('PRAGMA table_info(mail_outbox)').all().some(c=>c.name==='finalized_at'))db.exec('ALTER TABLE mail_outbox ADD COLUMN finalized_at INTEGER NOT NULL DEFAULT 0');
     db.prepare('INSERT OR IGNORE INTO platform_state(site_id,version,data) VALUES(?,1,?)').run(siteId,JSON.stringify(initialState()));
     const existing=JSON.parse(db.prepare('SELECT data FROM platform_state WHERE site_id=?').get(siteId).data);
     if(existing.isDemo&&!fixturePreview)throw Error('Fixture preview database cannot be opened as real storage');

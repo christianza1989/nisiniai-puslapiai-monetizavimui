@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-09T22:17:59.301Z",
+  "sourceCommit": "67336cbe1cefae370b61c0dc17cd703db7beb9a2",
+  "sourceHashes": {
+    "infrastructure/mail-relay/relay.php": "18011d673b2d7ad73b45ec527da743b3991d18a99f13d21503e52e79a4c7dd4f",
+    "infrastructure/mail-relay/purpose.test.mjs": "a4b0541f88dbb3abbb685ce32b7aa78a01ac92ba5c103bd4489d8aad88dfb38c",
+    "sites/madbeauty/mail-acceptance-20261010/run.mjs": "c975124194989736b7e5c9d7d6e20fcceb96b0cfe44207ec1175d9beeff7c435",
+    "sites/madbeauty/cloudflare/platform-object.mjs": "3f6a8fe916c3c5efc1bc0ebd8d9d044420fe9d88c5b2be9856fa7d63f5461327"
+  },
+  "scope": "Existing protected relay narrow purpose correction; native isolated SQL booking/reminder with real SMTP and authorized own primary INBOX",
+  "before": {
+    "at": "2026-10-09T22:11:49.894Z",
+    "source": "2b40ff9f7078118d81af128e6aed0bd08d18639f",
+    "relayURL": "https://midnightblue-bear-439840.hostingersite.com/relay.php",
+    "result": {
+      "status": 400,
+      "value": {
+        "error": "Invalid purpose"
+      }
+    }
+  },
+  "relay": {
+    "at": "2026-10-09T22:13:46.856Z",
+    "host": "midnightblue-bear-439840.hostingersite.com",
+    "account": "u879098007",
+    "file": "public_html/relay.php",
+    "browserId": "3",
+    "tabId": "358287724",
+    "beforeSha256": "b479e92d17f9e713a08b8ad12e4035018d69938483d13a5f4ffc999c209cb3bc",
+    "afterSha256": "ede4290e54bf73ef087c49feaaff882eba8e8502093d5efa0d870e1659d9a98e",
+    "exactReload": true,
+    "guardOnly": true,
+    "privateConfigTouched": false,
+    "privateReceiptsTouched": false
+  },
+  "transport": {
+    "at": "2026-10-09T22:13:23.478Z",
+    "source": "2b40ff9f7078118d81af128e6aed0bd08d18639f",
+    "platformSha256": "3f6a8fe916c3c5efc1bc0ebd8d9d044420fe9d88c5b2be9856fa7d63f5461327",
+    "transportSha256": "54c41f340d04447782f2f3b152efab98ced7bc9d5401064d3cd36aa6f04dbce0",
+    "fixtureSha256": "fd4aa68cf56df4c398a8ccafc7100289561fed134d379d5f4f9c932e7eb4e372",
+    "relayURL": "https://midnightblue-bear-439840.hostingersite.com/relay.php",
+    "isolatedNativeSQL": true,
+    "authCaptureOnly": true,
+    "fixtureMessagePrefix": true,
+    "realMailKinds": [
+      "confirmation",
+      "reminder"
+    ],
+    "rows": [
+      {
+        "type": "login-code",
+        "state": "accepted",
+        "attempts": 1
+      },
+      {
+        "type": "login-code",
+        "state": "accepted",
+        "attempts": 1
+      },
+      {
+        "type": "login-code",
+        "state": "accepted",
+        "attempts": 1
+      },
+      {
+        "type": "confirmation",
+        "state": "accepted",
+        "attempts": 1
+      },
+      {
+        "type": "reminder",
+        "state": "accepted",
+        "attempts": 1
+      }
+    ],
+    "reminderBoundary": "24 hours before appointment; controlled SQL clock",
+    "restart": true,
+    "repeatedAutomationNoAdditionalReminder": true,
+    "unrelatedPurpose": {
+      "status": 400,
+      "value": {
+        "error": "Invalid purpose"
+      }
+    },
+    "canonicalDataWrites": 0,
+    "trialDataWrites": 0,
+    "inbox": "UNVERIFIED"
+  },
+  "inbox": {
+    "booking": {
+      "primaryInbox": true,
+      "exactBookingMatch": true,
+      "testLabelVisible": true,
+      "subject": "Madbeauty vizito atnaujinimas",
+      "at": "2026-10-09T22:15:44.968Z",
+      "browserId": "3",
+      "tabId": "358287708"
+    },
+    "reminder": {
+      "primaryInbox": true,
+      "exactBookingMatch": true,
+      "testLabelVisible": true,
+      "subject": "Madbeauty priminimas apie vizitą",
+      "at": "2026-10-09T22:16:41.135Z",
+      "browserId": "3",
+      "tabId": "358287708"
+    }
+  },
+  "http": [
+    {
+      "pathname": "/relay.php",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "pathname": "/",
+      "method": "GET",
+      "status": 404
+    },
+    {
+      "pathname": "/_private/config.php",
+      "method": "GET",
+      "status": 403
+    },
+    {
+      "pathname": "/_private/protection-probe.txt",
+      "method": "GET",
+      "status": 403
+    },
+    {
+      "pathname": "/relay.php",
+      "method": "POST",
+      "status": 401
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "relay-saved.jpeg",
+      "sha256": "6ff45301db830e64cc0ba69c3f01423001ef489f9fe3a520855f0a8c7e09f903",
+      "width": 1279,
+      "height": 575,
+      "storage": "Private ignored output; unedited native Chrome capture; not committed"
+    },
+    {
+      "name": "booking-inbox.jpeg",
+      "sha256": "f3bd3f5f67b43dd2daa1b56b6064abc0fe2a4703bf3f7f02019ef1380d800e41",
+      "width": 1279,
+      "height": 575,
+      "storage": "Private ignored output; unedited native Chrome capture; not committed"
+    },
+    {
+      "name": "reminder-inbox.jpeg",
+      "sha256": "88426b5bd7b52c073e664ffab33b5f3e8f6e234f925cd08fc83f0b2ab830892d",
+      "width": 1279,
+      "height": 575,
+      "storage": "Private ignored output; unedited native Chrome capture; not committed"
+    }
+  ],
+  "productRegression": {
+    "unchangedSource": true,
+    "reuse": "trial-20261010/OPERATIONS_RECEIPT.json at runtime7f08f8a,264/264; not claimed as newly rerun"
+  },
+  "purposeContract": {
+    "command": "node --test infrastructure/mail-relay/purpose.test.mjs",
+    "pass": 1,
+    "new": 1,
+    "removed": 0
+  },
+  "canonical": {
+    "fullUpgradeActivated": false,
+    "applicationDeploymentUnchanged": true,
+    "databaseWrites": 0,
+    "dnsChanges": 0
+  },
+  "trial": {
+    "deploymentUnchanged": true,
+    "databaseWrites": 0,
+    "realMailEnabled": false
+  },
+  "retention": {
+    "ownerConfirmedNoPolicy": true,
+    "proposal": "../platform-upgrade-20261007/RETENTION_BACKUP_PROPOSAL.md",
+    "approved": false,
+    "erasureExecutionEnabled": false
+  },
+  "privateExclusions": [
+    "Credentials",
+    "OTP",
+    "Message bodies",
+    "Booking IDs",
+    "Mail UI message IDs",
+    "Native mailbox screenshots"
+  ]
+}

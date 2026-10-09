@@ -20,7 +20,7 @@ const robots=await get('/robots.txt');assert.match(robots.text,/Disallow: \//);
 await client.login('demo-client-0@example.com');await owner.login('demo-provider-0@example.com');await foreign.login('demo-client-1@example.com');
 const service=catalogue.find(s=>s.organizationId==='demo-org-0');let slot;
 for(let dayOffset=1;dayOffset<8&&!slot;dayOffset++)slot=(await client.rpc('availability',{providerServiceId:service.id,dayOffset,from:540,to:1200,addons:[]})).slots[0];
-assert.ok(slot);const hold=await client.rpc('hold',slot),booking=await client.rpc('confirm',{holdId:hold.id,name:'Bandymo klientas',idempotencyKey:'temporary-live-trial-20261010'});
+assert.ok(slot);const hold=await client.rpc('hold',slot),booking=await client.rpc('confirm',{holdId:hold.id,name:'Bandymo klientas',idempotencyKey:'temporary-live-trial-'+startedAt});
 assert.equal((await owner.rpc('workspace',{role:'professional',organizationId:'demo-org-0'})).bookings.filter(b=>b.id===booking.id).length,1);
 assert.equal((await client.rpc('workspace',{role:'customer'})).bookings.filter(b=>b.id===booking.id).length,1);
 assert.equal((await foreign.rpc('workspace',{role:'customer'})).bookings.filter(b=>b.id===booking.id).length,0);

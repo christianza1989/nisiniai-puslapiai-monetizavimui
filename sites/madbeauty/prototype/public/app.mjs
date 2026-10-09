@@ -180,6 +180,7 @@ async function commonForm(form,fd){
 }
 document.addEventListener('click',async e=>{
   const a=e.target.closest('a');if(a&&a.origin===location.origin&&!a.hasAttribute('download')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&a.target!=='_blank'){
+    if(ctx.temporaryTest&&a.pathname==='/bandymo-paskyros')return;
     if(a.getAttribute('href').startsWith('#')&&!a.getAttribute('href').startsWith('#paslauga=')){const target=document.getElementById(decodeURIComponent(a.hash.slice(1)));if(target)return;}
     e.preventDefault();await navigate(a.pathname+a.search+a.hash);return;
   }

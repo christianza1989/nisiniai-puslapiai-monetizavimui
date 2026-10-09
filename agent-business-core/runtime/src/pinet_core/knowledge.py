@@ -101,10 +101,11 @@ async def refresh_from_edge(item):
         state = await current(tx)
         if state and state.refreshed_at + timedelta(seconds=cfg.knowledge_refresh_seconds) > utcnow():
             return {"status": "fresh"}
-    base = cfg.knowledge_source_base_url or f"https://{item.canonical_host}"
+    override = cfg.knowledge_source_overrides.get(item.site_id)
+    base = override or cfg.knowledge_source_base_url or f"https://{item.canonical_host}"
     parsed = urlparse(base)
     local = cfg.environment == "local" and parsed.scheme == "http" and parsed.hostname in {"127.0.0.1", "localhost"}
-    if not local and (parsed.scheme != "https" or parsed.hostname != item.canonical_host):
+    if not local and (parsed.scheme != "https" or (not override and parsed.hostname != item.canonical_host)):
         return {"status": "rejected", "reason": "source_host_not_allowed"}
     if parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.path not in {"", "/"}:
         return {"status": "rejected", "reason": "invalid_source_url"}
@@ -114,7 +115,7 @@ async def refresh_from_edge(item):
     signature = hmac.new(cfg.edge_secret.encode(), canonical.encode(), hashlib.sha256).hexdigest()
     try:
         async with httpx.AsyncClient(timeout=4, follow_redirects=False) as client:
-            async with client.stream("GET", base.rstrip("/") + path, headers={"Host": item.canonical_host,
+            async with client.stream("GET", base.rstrip("/") + path, headers={"Host": parsed.netloc if override else item.canonical_host,
                 "x-pinet-timestamp": stamp, "x-pinet-nonce": nonce, "x-pinet-signature": signature}) as response:
                 if response.status_code != 200:
                     return {"status": "unavailable", "reason": f"http_{response.status_code}"}

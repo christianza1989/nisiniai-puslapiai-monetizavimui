@@ -23,6 +23,9 @@ def verified_result(data, analysis):
             set(value.get('evidence_ids', [])) != {e['id'] for e in data['evidence']}):
         return None
     body, subject = value.get('body', ''), value.get('subject', '')
+    from .quality_guards import unsupported_model_exclusion
+    if unsupported_model_exclusion(body, data['knowledge']):
+        return None
     if (not 20 <= len(body) <= 6000 or not 3 <= len(subject) <= 180 or
             any(ord(c) < 32 for c in subject) or re.search(
                 r'\[TEST|\bSINTETIN\w*\s+(?:BANDYM|LAIŠK)|\bTESTINIS\s+LAIŠKAS', body + subject, re.I)):

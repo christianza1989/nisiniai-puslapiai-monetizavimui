@@ -1,0 +1,17 @@
+{
+  "siteId": "parasoplansetes",
+  "date": "2026-10-09",
+  "timezone": "Europe/Vilnius",
+  "status": "NOT_COMPLETE",
+  "coreMain": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "companionMain": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+  "runtimeTreeSha256": "7bea6f30baa7e3707bda49107135cf44247e23b09b2814143fe1d06d47117cea",
+  "workerVersion": "329cec18-07b0-4cbe-b13b-fe915d565ff3",
+  "previewUrl": "https://parasoplansetes-preview.pinet-azprekyba.workers.dev/",
+  "historicalCorpus": "6 train / 2 reserved Codex CLI PASS, frozen previous source; not current Gemini holdout",
+  "checks": {"backendPassed": 316, "publicPassed": 63, "build": "PASS", "previewPages": 19, "actualPreviewHttp": "PASS"},
+  "channels": {"geminiChat": "PASS tested chain; further paid calls budget-blocked", "contactSave": "PASS", "memory": "PASS tested regression", "postcallSmtpInbox": "PASS owner-only", "automaticReplyTransportInbox": "PASS owner-only", "originalInquiryFacts": "FAIL unsupported 5.0 exclusion retained", "correctiveMailReviewSmtpInbox": "PASS", "phoneMicrophone": "UNVERIFIED", "publicVoicePilot": "NOT_CREATED", "productionVoice": "OFF", "productionDomain": "UNVERIFIED"},
+  "learning": {"historicalDecision": "NO_CHANGE", "currentIntervention": "Git procedure/server guard change by coding agent", "adaptivePromotion": "NOT_CLAIMED", "newGeminiProtectedRound": "UNVERIFIED"},
+  "budget": {"limitEur": 2, "coreReservedUsd": 1.866, "providerUsageEstimateUsd": 0.492610, "tregHistoricalUsd": 0.2438, "diagnosticAllowanceUsd": 0.01, "futurePilotAllocationEur": 0.10, "fxPlanningUsdPerEur": 1.1206, "combinedConservativeEur": 1.9917, "correctionCalls": 2, "correctionEstimateUsd": 0.004291, "providerInvoiceVerified": false},
+  "dependencies": ["Paid-call authorization or evidenced invoice/reservation reconciliation", "Previously pending action-time confirmation for disposable Google media access", "Real phone audio/interruption/reconnect test", "Permanent cloud backend/DB/jobs/SFU and domain admission", "Draft PR review/merge and actual runtime/other-PC adoption"]
+}

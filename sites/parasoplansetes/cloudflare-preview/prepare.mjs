@@ -12,6 +12,8 @@ const dryRun = process.argv.includes('--dry-run');
 const host = process.env.PARASOPLANSETES_PREVIEW_HOST;
 const dbId = process.env.PARASOPLANSETES_PREVIEW_D1_ID;
 const chatCore = process.env.PARASOPLANSETES_CHAT_CORE_URL || '';
+const voicePilot = process.env.PARASOPLANSETES_VOICE_PILOT === '1';
+if (voicePilot && !chatCore) throw new Error('Voice pilot requires the explicit HTTPS core origin.');
 if (chatCore && (!chatCore.startsWith('https://') || new URL(chatCore).username || new URL(chatCore).password
     || new URL(chatCore).pathname !== '/' || new URL(chatCore).search || new URL(chatCore).hash)) {
   throw new Error('Use an explicit HTTPS core origin without credentials, path or query.');
@@ -42,7 +44,8 @@ const config = {
   preview_urls: false,
   assets: { binding: 'ASSETS', directory: path.join(publicRoot, 'dist/client'), run_worker_first: true },
   d1_databases: [{ binding: 'DB', database_name: 'parasoplansetes-preview', database_id: dbId || '00000000-0000-4000-8000-000000000000' }],
-  vars: { PREVIEW_HOST: host || 'parasoplansetes-preview.not-configured.workers.dev', LEAD_SMTP_ENABLED: '0', LEAD_EMAIL_ENABLED: '0', VOICE_WIDGET_ENABLED: '0',
+  vars: { PREVIEW_HOST: host || 'parasoplansetes-preview.not-configured.workers.dev', LEAD_SMTP_ENABLED: '0', LEAD_EMAIL_ENABLED: '0', VOICE_WIDGET_ENABLED: voicePilot ? '1' : '0',
+    ...(voicePilot ? { VOICE_SITE_IDS: 'parasoplansetes', VOICE_PILOT_SITE_IDS: 'parasoplansetes' } : {}),
     CHAT_WIDGET_ENABLED: chatCore ? '1' : '0', CHAT_SITE_IDS: chatCore ? 'parasoplansetes' : '',
     ...(chatCore ? { VOICE_CORE_URL: chatCore } : {}) },
   observability: { enabled: true },

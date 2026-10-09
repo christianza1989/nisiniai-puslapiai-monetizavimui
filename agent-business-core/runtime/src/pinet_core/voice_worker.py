@@ -24,6 +24,8 @@ def private_probe_load(worker):
 
 probe_server = AgentServer(host="127.0.0.1", num_idle_processes=0,
                           load_fnc=private_probe_load, load_threshold=0.9)
+pilot_server = AgentServer(host="127.0.0.1", num_idle_processes=0,
+                          load_fnc=private_probe_load, load_threshold=0.9)
 
 
 def configure_worker_cli(worker, agent_name):
@@ -58,20 +60,28 @@ async def probe_entrypoint(ctx: JobContext):
     await run_consultant(ctx, readiness_probe=True)
 
 
-async def run_consultant(ctx: JobContext, readiness_probe=False):
+@pilot_server.rtc_session(agent_name="pinet-pilot-consultant")
+async def pilot_entrypoint(ctx: JobContext):
+    await run_consultant(ctx, voice_pilot=True)
+
+
+async def run_consultant(ctx: JobContext, readiness_probe=False, voice_pilot=False):
     cfg = settings()
-    if not (cfg.m0_probe_enabled and cfg.voice_provider_ready if readiness_probe else cfg.voice_ready):
+    ready = cfg.voice_pilot_ready if voice_pilot else (cfg.m0_probe_enabled and cfg.voice_provider_ready if readiness_probe else cfg.voice_ready)
+    if not ready:
         raise RuntimeError("M0 and provider credentials required before real voice")
     parts = ctx.job.metadata.split(":")
     if (len(parts) != 2 or parts[0] not in cfg.voice_sites or parts[0] not in profiles.PROFILES
             or ctx.room.name != f"pinet-{parts[1]}"):
         raise RuntimeError("invalid server dispatch mapping")
     site, cid = parts
+    if voice_pilot and site not in cfg.voice_pilot_sites:
+        raise RuntimeError('voice_pilot_site_not_admitted')
     prefix = f"/internal/sites/{site}/sessions/{cid}"
     client = httpx.AsyncClient(base_url=cfg.core_url,
                                headers={"Authorization": f"Bearer {cfg.worker_secret}"}, timeout=10)
     owner = secrets.token_hex(16)
-    claim = {"owner": owner, "m0_probe": readiness_probe}
+    claim = {"owner": owner, "m0_probe": readiness_probe, "voice_pilot": voice_pilot}
     try:
         response = await client.post(f"{prefix}/claim", json=claim)
         response.raise_for_status()

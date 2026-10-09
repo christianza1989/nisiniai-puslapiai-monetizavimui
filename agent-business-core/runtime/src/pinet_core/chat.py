@@ -62,11 +62,15 @@ async def generate(schema, instruction, data):
             model=cfg.analysis_model, contents=json.dumps(data, ensure_ascii=False),
             config=types.GenerateContentConfig(system_instruction=instruction,
                 response_mime_type='application/json', response_json_schema=inline(wire_json),
-                max_output_tokens=1600)), 40)
+                thinking_config=types.ThinkingConfig(thinking_level=types.ThinkingLevel.LOW),
+                max_output_tokens=2048)), 40)
     amount = pricing.flash_estimate(result.usage_metadata, cfg.analysis_model)
     # Return conversion with usage separately; validation happens only after
     # the caller records observed usage, including malformed provider output.
-    return {'wire_text': result.text, 'need_binding': need, 'wire_schema': wire}, amount
+    candidates = getattr(result, 'candidates', None) or []
+    reason = str(getattr(candidates[0], 'finish_reason', '')) if candidates else ''
+    return {'wire_text': result.text, 'need_binding': need, 'wire_schema': wire,
+            'finish_reason': reason}, amount
 
 
 def decode(schema, generated):
@@ -126,6 +130,7 @@ async def message(item, cid, token, data: Message):
         convo.payload = {**convo.payload, 'chat_turn': {'id': key, 'until': (utcnow() + timedelta(seconds=150)).isoformat()}}
         evidence_id, prompt = saved.id, convo.payload['prompt']
     observed = 0
+    provider_finish_reason = ''
     outputs = []
     try:
         for step in range(3):
@@ -159,6 +164,7 @@ async def message(item, cid, token, data: Message):
                 'Poreikio laukai: ' + ', '.join(sorted(profiles.PROFILES[item.site_id].need_fields)))
             generated, amount = await generate(schema, instruction, model_input)
             observed += amount
+            provider_finish_reason = generated.get('finish_reason', '') if isinstance(generated, dict) else ''
             decision = decode(schema, generated)
             if observed > cfg.chat_turn_cost_ceiling_microusd:
                 raise HTTPException(503, 'message_cost_ceiling')
@@ -183,6 +189,8 @@ async def message(item, cid, token, data: Message):
         raise
     except Exception as error:
         diagnostic = {'error_type': type(error).__name__}
+        if provider_finish_reason:
+            diagnostic['provider_finish_reason'] = provider_finish_reason
         if isinstance(getattr(error, 'code', None), int):
             diagnostic['provider_code'] = error.code
             explanation = str(getattr(error, 'message', ''))

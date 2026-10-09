@@ -30,6 +30,12 @@ async def client(monkeypatch):
     monkeypatch.setattr(cfg, "environment", f"test-{uuid4()}")
     monkeypatch.setattr(cfg, "allow_simulation", True)
     monkeypatch.setattr(cfg, "google_api_key", "")
+    # A running owner's scoped pilot must not turn unit tests into live IO.
+    monkeypatch.setattr(cfg, 'smtp_enabled', False)
+    monkeypatch.setattr(cfg, 'imap_enabled', False)
+    monkeypatch.setattr(cfg, 'smtp_sites', [])
+    monkeypatch.setattr(cfg, 'smtp_recipient_allowlist', [])
+    monkeypatch.setattr(cfg, 'voice_pilot_enabled', False)
     # Isolate the legacy transport fixtures from checkout-local niche admission.
     monkeypatch.setattr(cfg, 'voice_sites', ['traktoriupadangos'])
     monkeypatch.setattr(cfg, 'knowledge_refresh_sites', ['traktoriupadangos'])

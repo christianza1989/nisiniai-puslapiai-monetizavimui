@@ -61,13 +61,16 @@ def fetch_replies(known):
         if status != "OK":
             return []
         for uid in data[0].split()[-100:]:
-            status, parts = imap.uid("fetch", uid, "(BODY.PEEK[HEADER.FIELDS (MESSAGE-ID IN-REPLY-TO REFERENCES FROM TO SUBJECT)] RFC822.SIZE)")
+            status, parts = imap.uid("fetch", uid, "(BODY.PEEK[HEADER.FIELDS (MESSAGE-ID IN-REPLY-TO REFERENCES FROM TO SUBJECT AUTO-SUBMITTED PRECEDENCE LIST-ID)] RFC822.SIZE)")
             if status != "OK":
                 continue
             pairs = [part for part in parts if isinstance(part, tuple)]
             if not pairs:
                 continue
             header = BytesParser(policy=policy.default).parsebytes(pairs[0][1])
+            if (str(header.get('Auto-Submitted', 'no')).casefold() != 'no'
+                    or str(header.get('Precedence', '')).casefold() in {'bulk', 'list', 'junk'} or header.get('List-ID')):
+                continue  # Never reply to automated responses or mailing lists.
             refs = re.findall(r"<[^<>\s]+>", str(header.get("In-Reply-To", "")) + " " + str(header.get("References", "")))
             if len({known[ref]["case_id"] for ref in refs if ref in known}) > 1:
                 continue  # Ambiguous thread; never guess which client case to update.
@@ -94,12 +97,15 @@ def fetch_replies(known):
 
 async def sync_replies():
     cfg = settings()
-    if cfg.environment != "local" or not cfg.lab_mail_enabled:
+    owner_lab = cfg.environment == 'local' and cfg.lab_mail_enabled
+    if not owner_lab and not (cfg.imap_enabled and cfg.imap_sites):
         raise RuntimeError("local_owner_mail_connection_required")
     async with db.registry() as tx:
         sites = list(await tx.scalars(select(Business.site_id)))
     known = {}
     for site in sites:
+        if not owner_lab and site not in cfg.imap_sites:
+            continue
         item = await service.business(site)
         async with db.transaction(item.id, cfg.environment) as tx:
             for message in await tx.scalars(select(MailMessage).where(MailMessage.direction == "outbound",

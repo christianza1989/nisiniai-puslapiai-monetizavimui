@@ -24,6 +24,8 @@ class Settings(BaseSettings):
     learning_namespace: str = ''
     voice_enabled: bool = False
     voice_sites: list[str] = ["traktoriupadangos"]
+    voice_pilot_enabled: bool = False
+    voice_pilot_sites: list[str] = []
     chat_enabled: bool = False
     chat_sites: list[str] = []
     chat_turn_cost_ceiling_microusd: int = 0
@@ -42,9 +44,15 @@ class Settings(BaseSettings):
     per_site_daily_reserved_seconds: int = 7200
     global_daily_reserved_seconds: int = 21600
     global_daily_budget_microusd: int = 0
+    global_total_budget_microusd: int = 0
     voice_cost_ceiling_microusd: int = 0
     analysis_cost_ceiling_microusd: int = 0
     smtp_enabled: bool = False
+    smtp_sites: list[str] = []
+    smtp_recipient_allowlist: list[str] = []
+    imap_enabled: bool = False
+    imap_sites: list[str] = []
+    imap_poll_seconds: int = 30
     smtp_host: str = "smtp.hostinger.com"
     smtp_port: int = 465
     smtp_user: str = ""
@@ -60,6 +68,9 @@ class Settings(BaseSettings):
     knowledge_refresh_seconds: int = 60
     knowledge_refresh_enabled: bool = False
     knowledge_source_base_url: str = ""
+    # Operator-declared, per-site HTTPS deployment origins (e.g. a private preview).
+    # The signed manifest must still match that site's canonical business mapping.
+    knowledge_source_overrides: dict[str, str] = {}
     knowledge_refresh_sites: list[str] = ["traktoriupadangos"]
 
     @property
@@ -72,6 +83,12 @@ class Settings(BaseSettings):
     @property
     def voice_ready(self):
         return self.voice_enabled and self.m0_verified and self.voice_provider_ready
+
+    @property
+    def voice_pilot_ready(self):
+        return all((self.voice_pilot_enabled, self.voice_pilot_sites, self.m0_probe_enabled,
+                    not self.voice_enabled, self.voice_provider_ready,
+                    self.livekit_url.startswith('wss://')))
 
     @property
     def chat_ready(self):

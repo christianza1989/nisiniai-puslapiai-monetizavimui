@@ -17,10 +17,13 @@ async def reserve(tx, business_id, authority, action_key, amount):
             raise HTTPException(409, "cost_reservation_conflict")
         return previous
     midnight = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
-    rows = (await tx.scalars(select(CostReservation).where(CostReservation.environment_id == cfg.environment,
-                                                          CostReservation.created_at >= midnight))).all()
-    total = sum(max(row.reserved_microusd, row.observed_microusd or 0) for row in rows)
-    own = sum(max(row.reserved_microusd, row.observed_microusd or 0) for row in rows if row.business_id == business_id)
+    rows = (await tx.scalars(select(CostReservation).where(CostReservation.environment_id == cfg.environment))).all()
+    lifetime = sum(max(row.reserved_microusd, row.observed_microusd or 0) for row in rows)
+    if cfg.global_total_budget_microusd > 0 and lifetime + amount > cfg.global_total_budget_microusd:
+        raise HTTPException(429, "total_cost_budget_exhausted")
+    today = [row for row in rows if row.created_at >= midnight]
+    total = sum(max(row.reserved_microusd, row.observed_microusd or 0) for row in today)
+    own = sum(max(row.reserved_microusd, row.observed_microusd or 0) for row in today if row.business_id == business_id)
     if total + amount > cfg.global_daily_budget_microusd or own + amount > authority.daily_budget_microusd:
         raise HTTPException(429, "cost_budget_exhausted")
     row = CostReservation(business_id=business_id, environment_id=cfg.environment,

@@ -240,11 +240,13 @@ async def start_session(site_id: str, data: Start):
              .with_identity(f"visitor-{result['conversation_id']}")
              .with_ttl(timedelta(seconds=cfg.session_seconds))
              .with_grants(api.VideoGrants(room_join=True, room=room, can_publish=True,
+                                         can_publish_sources=['microphone'],
                                          can_subscribe=True, can_publish_data=False)).to_jwt())
     try:
         async with api.LiveKitAPI(cfg.livekit_url, cfg.livekit_api_key, cfg.livekit_api_secret) as lk:
             await lk.agent_dispatch.create_dispatch(api.CreateAgentDispatchRequest(
-                room=room, agent_name="pinet-consultant", metadata=f"{site_id}:{result['conversation_id']}"))
+                room=room, agent_name="pinet-pilot-consultant" if data.mode == 'voice_pilot' else "pinet-consultant",
+                metadata=f"{site_id}:{result['conversation_id']}"))
     except Exception:
         item = await service.business(site_id)
         async with db.transaction(item.id, cfg.environment) as tx:
@@ -413,6 +415,7 @@ async def simulation(site_id: str, data: Start):
 class Owner(Strict):
     owner: str
     m0_probe: bool = False
+    voice_pilot: bool = False
 
 
 @app.post("/internal/sites/{site_id}/sessions/{cid}/claim", dependencies=[Depends(worker_auth)])
@@ -422,9 +425,13 @@ async def claim(site_id: str, cid: str, data: Owner):
         await policy.lock(tx, item.id, settings().environment)
         convo = await service.conversation(tx, cid)
         is_probe = convo.payload.get("m0_probe") is True
+        is_pilot = convo.payload.get('voice_pilot') is True
+        if data.voice_pilot != is_pilot or (is_pilot and (not settings().voice_pilot_ready
+                or site_id not in settings().voice_pilot_sites or convo.payload['test'])):
+            raise HTTPException(403, 'voice_pilot_admission_rejected')
         if data.m0_probe != is_probe or (is_probe and (not settings().m0_probe_enabled or not convo.payload["test"])):
             raise HTTPException(403, "probe_admission_rejected")
-        if is_probe:
+        if is_probe or is_pilot:
             reservation = await tx.scalar(select(CostReservation).where(
                 CostReservation.action_key == f"voice:{cid}"))
             if not reservation or reservation.reserved_microusd != convo.payload.get("cost_ceiling_microusd"):

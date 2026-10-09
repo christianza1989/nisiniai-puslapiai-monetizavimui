@@ -115,3 +115,32 @@ async def test_background_refresh_rejects_redirect_and_oversize(client, monkeypa
     assert (await store.refresh_from_edge(item))["reason"] == "http_302"
     response = httpx.Response(200, content=b"x" * 220001)
     assert (await store.refresh_from_edge(item))["reason"] == "manifest_too_large"
+
+
+async def test_preview_source_is_explicit_site_scoped_and_canonical_bound(client, monkeypatch):
+    cfg = settings()
+    monkeypatch.setattr(cfg, 'knowledge_refresh_enabled', True)
+    monkeypatch.setattr(cfg, 'knowledge_source_base_url', '')
+    monkeypatch.setattr(cfg, 'knowledge_source_overrides', {'traktoriupadangos': 'https://own-preview.workers.dev'})
+    item = await business('traktoriupadangos')
+    original = httpx.AsyncClient
+    requests = []
+    manifest = knowledge()
+    def handle(request):
+        requests.append(request)
+        assert request.headers['host'] == 'own-preview.workers.dev'
+        assert len(request.headers['x-pinet-signature']) == 64
+        return httpx.Response(200, json=manifest)
+    monkeypatch.setattr(store.httpx, 'AsyncClient', lambda **kwargs: original(transport=httpx.MockTransport(handle), **kwargs))
+    assert (await store.refresh_from_edge(item))['status'] == 'refreshed'
+    async with db.transaction(item.id, cfg.environment) as tx:
+        state = await store.current(tx)
+        state.refreshed_at = utcnow() - timedelta(seconds=cfg.knowledge_refresh_seconds + 1)
+    manifest = knowledge('greitossvetaines')
+    assert (await store.refresh_from_edge(item))['status'] == 'unavailable'
+    monkeypatch.setattr(cfg, 'knowledge_source_overrides', {'other-site': 'https://own-preview.workers.dev'})
+    assert (await store.refresh_from_edge(item))['status'] == 'unavailable'  # canonical host used; preview override ignored
+    assert requests[-1].url.host == item.canonical_host
+    monkeypatch.setattr(cfg, 'knowledge_source_overrides', {'traktoriupadangos': 'http://127.0.0.1:5197'})
+    monkeypatch.setattr(cfg, 'environment', 'nonlocal-preview')
+    assert (await store.refresh_from_edge(item))['reason'] == 'source_host_not_allowed'

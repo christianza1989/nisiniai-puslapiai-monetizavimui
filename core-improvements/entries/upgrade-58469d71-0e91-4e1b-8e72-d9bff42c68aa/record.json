@@ -1,0 +1,24 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Hosted acceptance voice needs explicitly scoped pilot admission without falsely setting production M0 verification. Reviewed conversation Outbox delivery does not register its message in the shared Case mailbox, so actual IMAP replies cannot reach an automated inquiry continuation.",
+  "category": "code",
+  "evidence": [
+    "sites/parasoplansetes/AGENT-PAUSE-20261009.md",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/mail_reader.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core",
+    "agent-business-core/runtime/tests",
+    "agent-business-core/runtime/.env.example",
+    "sites/parasoplansetes/voice-pilot-create.sh",
+    "sites/parasoplansetes/voice-pilot-startup.sh",
+    "sites/parasoplansetes/cloudflare-preview/prepare.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Disable per-site pilot and IMAP/SMTP admission; preserve durable SMTP and reply receipts. Revert scoped source in own branch. Remove only named disposable pilot resources after verifying ownership.",
+  "id": "upgrade-58469d71-0e91-4e1b-8e72-d9bff42c68aa",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "b432fa544af3609453b4ff918c326a859c7d1bac",
+  "createdAt": "2026-10-09T18:56:30.669Z"
+}

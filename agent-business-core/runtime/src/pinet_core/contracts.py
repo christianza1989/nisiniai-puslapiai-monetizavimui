@@ -32,7 +32,7 @@ class Start(Strict):
     knowledge: Knowledge
     notice_version: str = Field(max_length=80)
     consent: Literal[True]
-    mode: Literal["voice", "chat", "simulation"] = "voice"
+    mode: Literal["voice", "voice_pilot", "chat", "simulation"] = "voice"
     remember: bool = False
     memory_token: str | None = Field(default=None, max_length=100)
 

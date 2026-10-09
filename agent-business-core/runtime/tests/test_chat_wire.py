@@ -28,6 +28,7 @@ async def test_provider_adapter_keeps_server_evidence_binding(monkeypatch):
     assert decision.calls[0].arguments.base_revision == 7
     assert decision.calls[0].arguments.evidence_event_id == 'actual-client-event'
     wire = captured['config'].response_json_schema
+    assert captured['config'].thinking_config.thinking_level.value == 'LOW'
     assert '$defs' not in wire and 'maxItems' not in json.dumps(wire)
     # Unsupported fields and extra model-supplied evidence cannot reach core tools.
     generated['wire_text'] = json.dumps({'reply':'','calls':[{'name':'need.patch',

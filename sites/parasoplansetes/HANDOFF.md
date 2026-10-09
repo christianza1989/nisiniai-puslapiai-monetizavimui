@@ -33,3 +33,5 @@ Po PC perkrovimo aktyvus platformos kontekstas jau danger-full-access/unrestrict
 # 2026-10-09 agento tęsinys
 
 Aktualus agento įgyvendinimas ir atskiri channel vartai: [AGENT-CALIBRATION-20261009.md](AGENT-CALIBRATION-20261009.md), [minimizuoti kvitai](AGENT-CALIBRATION-20261009.json). Abiejų latest main integruoti, old heads išsaugoti. Galutiniai287backend/63public testai ir own19pagesSEO PASS; actual Codex+ASGI+PG corpus6train/2reserved PASS. Live Gemini/browser audio/SMTP/inbox/reply ir paired learning adoption dar UNVERIFIED. Šis statusas nepakeičia ankstesnės svetainės NOT_COMPLETE; Cloudflare preview voice/SMTP lieka OFF.
+
+2026-10-09 aktualus agento checkpoint po perkrovimo: [AGENT-RESUME-20261009](AGENT-RESUME-20261009.md). Actual public Gemini chat/contact/memory ir automatinis owner-only SMTP/INBOX/reply transportas patikrinti. Išsaugotas 5.0 factual FAIL, pridėtas guard ir tikras reviewed correction tame pačiame thread, INBOX PASS. 316 backend / 63 public / 19 puslapių HTTP PASS. Core rezervacijų limitas išnaudotas; fizinis telefonas, viešas SFU, nuolatinis cloud ir reviewed main adoption dar nepriimti. Istoriniai kvitai neperrašyti.

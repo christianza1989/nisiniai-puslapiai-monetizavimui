@@ -202,4 +202,7 @@ async def receive_reply(tx, original, provider_id, sender, subject, body):
         sale = dict(case.payload['sales'])
         sale.update(revision=sale['revision'] + 1, followup_due=None)
         case.payload = {**case.payload, 'sales': sale}
+    if original.payload.get('source_ref', '').startswith('conversation-outbox:'):
+        from .inquiry_replies import receive
+        await receive(tx, original, message)
     return message

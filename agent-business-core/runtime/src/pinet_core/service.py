@@ -93,9 +93,12 @@ async def start(item, data: Start, simulation=False):
     if data.mode == "simulation" and not simulation:
         raise HTTPException(403, "simulation is internal only")
     chat = data.mode == 'chat'
+    pilot = data.mode == 'voice_pilot'
     if not simulation and chat and (item.site_id not in cfg.chat_sites or not cfg.chat_ready):
         raise HTTPException(503, 'chat_not_ready')
-    if not simulation and not chat and (item.site_id not in cfg.voice_sites or not cfg.voice_ready):
+    if pilot and (simulation or item.site_id not in cfg.voice_pilot_sites or not cfg.voice_pilot_ready):
+        raise HTTPException(503, 'voice_pilot_not_ready')
+    if not simulation and not chat and (item.site_id not in cfg.voice_sites or not (cfg.voice_pilot_ready if pilot else cfg.voice_ready)):
         raise HTTPException(503, "voice_not_ready")
     if not simulation and cfg.allow_simulation:
         raise HTTPException(503, "disable_simulation_before_live_voice")
@@ -154,7 +157,7 @@ async def start(item, data: Start, simulation=False):
                              visitor_id=visitor.id if visitor else None,
                              expires_at=utcnow() + timedelta(seconds=cfg.session_seconds + 1800),
                              state="created", payload={"knowledge": knowledge.model_dump(mode="json"),
-                             "notice_version": data.notice_version, "test": simulation, "mode": data.mode,
+                             "notice_version": data.notice_version, "test": simulation, "mode": data.mode, "voice_pilot": pilot,
                              "start_request_id": request_id, "start_fingerprint": fingerprint,
                              "policy_revision": policy_revision,
                              "cost_ceiling_microusd": 0 if simulation else cfg.voice_cost_ceiling_microusd,

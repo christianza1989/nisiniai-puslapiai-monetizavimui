@@ -1,0 +1,145 @@
+{
+  "siteId": "promedical",
+  "dataDir": "C:\\Core\\promedical-core-20261009\\content-studio\\data",
+  "publishAt": "2026-10-09T14:47:29.665Z",
+  "inventory": [
+    {
+      "slug": "",
+      "pageId": "36d50e14-bc72-4305-b8fe-9d55981abde3",
+      "type": "home",
+      "revisionHash": "cb11046da18fa96d66914eb214c27929ec49806bfaff8c1cbbcad2825e0534d6",
+      "words": 133,
+      "sourceUrls": [
+        "https://www.klaro.cz/en"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "produktai",
+      "pageId": "a5827907-f6ad-46d7-ba16-d3821da57ec1",
+      "type": "service",
+      "revisionHash": "aff420d2781a8215742f57c4c3f1f5b9952326723c5d62f705af459067bfb04c",
+      "words": 128,
+      "sourceUrls": [
+        "https://www.klaro.cz/en",
+        "https://www.klaro.cz/en/navody-pdf-2186"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "gidai",
+      "pageId": "be06fde7-be34-4faa-95c2-c99831ca4d99",
+      "type": "faq",
+      "revisionHash": "a2f6615a02b98cd388657b5bb6ece6249407bbcfbf91f0ba29ea11bab3d5b393",
+      "words": 114,
+      "sourceUrls": [],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "gidai/medicininio-vezimelio-pasirinkimas",
+      "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+      "type": "guide",
+      "revisionHash": "b9b832117df72ae5cd0d7d8c21f9d48c660f34da6a1033acb6de0220f9356bb5",
+      "words": 597,
+      "sourceUrls": [
+        "https://www.klaro.cz/en/zakladni-voziky",
+        "https://www.klaro.cz/en/voziky-s-prislusenstvim",
+        "https://www.klaro.cz/en/druhy-nerezove-oceli",
+        "https://www.klaro.cz/en/navody-pdf-2186"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "gidai/iso-moduliu-sistema",
+      "pageId": "eab8457c-da03-420f-a149-33ebbd30953e",
+      "type": "guide",
+      "revisionHash": "889fa6a8613704a0170580978d90824926c8c58e8ced17814b7cf6f05a0a55e7",
+      "words": 652,
+      "sourceUrls": [
+        "https://www.klaro.cz/en/iso-modul-system",
+        "https://www.klaro.cz/en/iso-skrine-kose",
+        "https://www.klaro.cz/en/iso-skrine-prehled",
+        "https://www.klaro.cz/en/regalovy-system",
+        "https://www.klaro.cz/en/navody-pdf-2186"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "gidai/irangos-pirkimo-uzklausa",
+      "pageId": "eb1e5df2-c357-436b-87af-642802724ce9",
+      "type": "guide",
+      "revisionHash": "75cd5b583cc4a53a6d107107b9441479651f478bc03d5a314871cd10aaa52c0e",
+      "words": 642,
+      "sourceUrls": [
+        "https://vpt.lrv.lt/lt/naujienos-3/pagalbines-priemones-pirkimu-vykdytojams/",
+        "https://www.klaro.cz/en/navody-pdf-2186"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "kontaktai",
+      "pageId": "040d087a-777f-45ec-bb10-3095d3e2cccf",
+      "type": "service",
+      "revisionHash": "4c36815ba7ac4191b02b4d980499461655744edf227bbe9d950dbff4e80acfc9",
+      "words": 90,
+      "sourceUrls": [],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "apie-projekta",
+      "pageId": "f4b86b06-c39a-4aeb-b0f4-20b195c06328",
+      "type": "faq",
+      "revisionHash": "a93d89c9193653c28f6ced1bbe5e460ee2ebb438c2d119271d527f6f6c8ea756",
+      "words": 120,
+      "sourceUrls": [
+        "https://www.klaro.cz/en"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "redakcija",
+      "pageId": "14bbad55-c872-4574-818b-9f720b73199e",
+      "type": "faq",
+      "revisionHash": "d647de7c0df3e037d17c4b86a5cae47487f3b828c81606ba535b679c0f61f335",
+      "words": 192,
+      "sourceUrls": [
+        "https://www.klaro.cz/en",
+        "https://www.klaro.cz/en/navody-pdf-2186"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "privatumas",
+      "pageId": "fbecd4f2-ddef-4f28-b12a-97d2da359a68",
+      "type": "faq",
+      "revisionHash": "387530c56467a9ad551e0197a9df2359e3883500ea7bab2cc348d05015ca5bae",
+      "words": 173,
+      "sourceUrls": [
+        "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    },
+    {
+      "slug": "naudojimo-salygos",
+      "pageId": "9809b55a-b2dc-438a-929d-b77e964bc4b3",
+      "type": "faq",
+      "revisionHash": "c8ccb6b065cb69c3d7e4095ae621e9856c9ae206c368c3400f02f13cf2cc318f",
+      "words": 158,
+      "sourceUrls": [
+        "https://www.klaro.cz/en/navody-pdf-2186"
+      ],
+      "status": "draft",
+      "review": "Text and primary source preparation completed; actual media and rendered presentation review pending root."
+    }
+  ]
+}

@@ -1,28 +1,116 @@
-# Dizaino sprendimas
-2026-10-08. parasoplansetes.lt / StepOver. Klientas sprendžia, kuris įrenginys ir programinis kelias tinka jo dokumentams. BUSINESS perskaitytas prieš konceptus / kodą. Nėra vieno sektoriaus filtro.
-## Tikros peržiūros
-Savininko signaturepads.lt homepage desktop/mobile ir katalogas desktop: tekstiniai akordeonai ant fotografijos, mišrus modelių tinklelis. Adaptuojame aiškius modelių pavadinimus; atsisakome fotografijos po tekstu ir akordeone paslėpto esminio paaiškinimo. StepOver NG5 produkto desktop1440 ir mobile390: modelio vaizdas, programinio kelio, priedų ir licencijų skirtumas. Modelio / komplekto atskyrimą perimame, gamintojo greičio ir teisinių superlatyvų nekopijuojame. Ekranai content-studio/tmp/parasoplansetes-research/screenshots/.
-Artimiausi tinklo patikrinti vaizdai: traktoriupadangos/critique-a-screenshots/home-desktop-full.jpg ir marking-guide-desktop-full.jpg (geltonas dvispalvis split hero, kondensuoti antraščių šriftai, didelio įrenginio siluetas); laiptucentras/DESIGN-REVISION-2026-10-01/home-desktop-top-final.jpg (interjero nuotrauka kairėje, didelis tamsus tekstas dešinėje). Autoelektrikai research AA vaizdas yra konkurento, jo nepriskiriame tinklo realizacijai.
-## Konceptų sprendimas
-Tikri privatūs HTML A ir B atverti desktop/mobile; screenshot concept-a/b-desktop/mobile.jpg. A — šviesi plati antraštė virš žemo kelių realių įrenginių pano, toliau darbo eigos juosta. B — tamsus tekstas greta vieno įrenginio kortelės. Pasirinkta A: matomas gamintojas ir keli modeliai, geriau išnaudojami maži originalūs300px vaizdai, išvengiama artimiausių tinklo split hero struktūros. Kompromisas: pateikiamas didesnis pasirinkimas, reikia iškart paaiškinti, nuo ko pradėti. Galutinis H1 turi pažodžiui įvardyti StepOver parašo planšetes; koncepto reklaminė frazė nenaudojama vietoj page title. Tai agento pasirinkimas, ne vartotojo approval.
-## Sistema
-Fonas #f4f7f3, rašalas #142b29, akcentas #b7f2cf su tamsiu tekstu; baltas gamintojo nuotraukų fonas; linijos #ced8d1. Šriftas sistemos Segoe UI / Arial su LT glyph, be išorinių užklausų; svoriai400/500/600/650. Galutinė desktop H1 iki76px, mobile42px,320px36px; letter-spacing -0.035em; body18px, line-height1.65; skaitmenys techninėse lentelėse tabular. Skaitymo plotis720px, maxsite1328px, 24px mobile.
-Wordmark native text „parašo planšetės.“ su originaliu SVG parašo brūkšniu; jokio StepOver logotipo kopijavimo. Favicon tas pats tikslus native mark. Navigacija Modeliai / Programinė įranga / Integracija / Gidai, aiškus Aptarti poreikį. Mobiliame kompaktiška matoma wrapping navigacija be papildomo JS. Native details naudojamas tik neesminei pagalbinei informacijai; visas pasiūlymas prieinamas.
-## Puslapių ir asetų planas
-| Vieta | Klausimas / kompozicija | Asset / vaizdo rolė | Kitas veiksmas |
-|---|---|---|---|
-| Home | Kas tai / didelis H1, trumpas atsakymas, pano3įrenginiai | Tikros duraSign4.3/5.0/10.0 nuotraukos iš savininko; maxactual300px, nemaskuojame kaip dideliushero | Katalogas arba užklausa |
-| Modelių katalogas | Kurį modelį lyginti /5modelių tikra lentelė ir atskiri puslapiai | Kiekvieno modelio tikra nuotrauka / originalus santykis | Modelio detalė |
-| Home darbo eiga | Įrenginys → programa → archyvas / tikslūs nativeHTML žingsniai | PDF workflow originali iliustracija palaiko paaiškinimą, ne specifikacija | Programinė įranga / gidas |
-| Gidas pasirinkimas | 6reikalavimai ir pasirinkimo pavyzdys | duraSign4.3 tikra nuotrauka / įrenginio kontekstas | Katalogas / poreikis |
-| Gidas PDF | Dokumentas, peržiūra, parašas, galutinis failas ir8priėmimo bandymai | Originali conceptual3D dokumentų / parašo iliustracija3:2, centre focal, be logotipų / tikrųUI | Programinė įranga |
-| Gidas integracija | Kompiuteris / terminal server / API / duomenų kelias | Originali abstractarchitektūros iliustracija3:2; ne realios diegimo schemos nuotrauka | Integracijos užklausa |
-| Gidų indeksas | Kurį klausimą spręsti / teisingas temos vaizdas kiekvienai nuorodai | Tų pačių4gidų families | Atitinkamas gidas |
-| Modelių detalės | Paskirtis, ekranas, programos poreikis, tikros ribos | Tikro konkretaus modelio300pxnuotrauka, sourceStepOver / ownmigration | Konkretus poreikis |
-| Contact / privatumas / apie / redakcija / sąlygos | Kaip kreiptis / kas rengia ir valdo / skaitomas tekstas | Pagrįstai be dekoratyvinių rasterių | NativeD1forma / kontaktas |
-Įrenginių nuotraukos nėra generuojamos ar perpiešiamos. Žinomas šaltinis / sha / metaduomenys owned-products.json; savininko page migration nurodymas leidžia parengti tą patį jo produktų turinį, gamintojo credit išsaugomas. Tiekimo / išskirtinių teisių jos neįrodo.
-## Naudingas įrankis
-Skaičiuoklė atidėta: nėra patvirtintų įrangos / licencijos / darbo kaštų. Vietoj jos naudinga statinė palyginimo lentelė ir užklausos parengimo sąrašas. Native forma1name/1email/1message surenka procesą, nėra paslėpto siuntimo ar antro CRM.
-Galutinė browser/contrast/reflow/Lighthouse peržiūra atliekama po realaus Core build; konceptų screenshot nėra svetainės priėmimas.
+---
+name: "parasoplansetes.lt / StepOver"
+description: "Aiški įrenginio, programos ir dokumento proceso atranka"
+colors:
+  primary: "#185de5"
+  primary-hover: "#124cc0"
+  ink: "#172b49"
+  paper: "#f7f9fc"
+  surface: "#ffffff"
+  muted: "#53647c"
+  line: "#dce3ee"
+  inquiry: "#eaf0fb"
+typography:
+  display:
+    fontFamily: "StepOver Manrope, sans-serif"
+    fontSize: "clamp(36px, 4.4vw, 60px)"
+    fontWeight: 650
+    lineHeight: 1.14
+    letterSpacing: "-0.035em"
+  body:
+    fontFamily: "StepOver Manrope, sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.7
+  label:
+    fontFamily: "StepOver Manrope, sans-serif"
+    fontSize: "13px"
+    fontWeight: 700
+rounded:
+  field: "7px"
+  action: "8px"
+  model: "12px"
+  panel: "16px"
+spacing:
+  compact: "12px"
+  regular: "24px"
+  section: "48px"
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.surface}"
+    rounded: "{rounded.action}"
+    padding: "14px 22px"
+    height: "52px"
+  button-primary-hover:
+    backgroundColor: "{colors.primary-hover}"
+  field:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.field}"
+    padding: "12px 14px"
+---
 
-Galutiniai tikri ekranai screenshots/: home-desktop-final1440, home-mobile-final390, gidai-desktop-final1440, gidai-mobile-final390, visi keturi gidai, PDF320/768 ir contact320. Lazy media tikrinta realiai pasiekus nuorodas klaviatūra; pilnas screenshot be slinkimo pradžioje gali rodyti dar neužkrautą žemiau esantį vaizdą. Tai nėra prarastas asset. Final99 nepažadamas: Lighthouse home97/PDF98, atskira vizualinė išvada — aiški pasirinkimo kelionė ir pakankamai skirtinga nuo tinklo split hero. Integracijos ir terminalinio serverio gidai naudoja tą pačią sąmoningai pažymėtą konceptinės architektūros kompoziciją; tai ne dviejų realių diegimų nuotraukos.
+# Design System: parasoplansetes.lt
+
+## Overview
+
+**Creative North Star: "Dokumento darbo stalas"**
+
+2026-10-10 StepOver redesign. Dokumento eiga, tikras įrenginys, palyginamos savybės ir konkretus kitas veiksmas. Šaltos šviesios plokštumos, mėlyni veiksmai ir tamsus rašalas jungia katalogą su skaitmeniniu dokumentų procesu. Tai agento pasirinkimas pagal deleguotą pavedimą ir PROJECT_ADAPTATION, ne žmogaus dizaino approval. Ankstesnis 2026-10-08 DESIGN išsaugotas Git istorijoje.
+
+Originalus parašo ženklas, patvirtintos nuotraukos, gamintojo kreditai ir turinio tiesa išlieka. Tyrimas ir priėmimo ribos: [DESIGN-REFRESH-20261010](DESIGN-REFRESH-20261010.md).
+
+**Key Characteristics:**
+
+- Vienas mėlynas veiksmo akcentas.
+- Matoma dokumento eiga ir modelio savybės.
+- Bendra katalogo, skaitymo ir pokalbio tipografija.
+- Platus desktop išdėstymas tampa viena mobile seka.
+
+## Colors
+
+Primary žymi veiksmą, aktyvią navigaciją, fokusą ir eigos taškus. Ink naudojamas antraštėms ir homepage proceso blokui. Paper bei Surface skiria bendrą puslapį nuo įrenginio ar formos. Muted — papildomam paaiškinimui, Line — savybėms atskirti, Inquiry — užklausos vietai.
+
+**The Action Rule.** Mėlyna nukreipia į veiksmą arba pažymi būseną.
+
+## Typography
+
+Manrope laikomas lokaliai su OFL ir lotynų bei išplėstiniu lotynų poaibiais. Lietuviškos raidės palaikomos. Viešas puslapis nedaro Google Fonts užklausų. Šaltinis ir hash: companion `public/fonts/parasoplansetes/provenance.json`.
+
+Desktop H1 iki 60 px, produkto iki 54 px; mobile 39 px / produkto 37 px, iki 360 px — 34 px. Prozos H2 29 px desktop / 27 px mobile. Kūno tekstas 17 px desktop, 16 px mobile su 1.8 eilutės aukščiu. Įvestys 16 px. Etiketės mažesnės; valdikliai lieka bent 44 px aukščio.
+
+**The Plain Heading Rule.** H1 įvardija patvirtintą turinį; reklaminė frazė jo nepakeičia.
+
+## Layout
+
+Konteineris iki 1248 px, vidinis iki 1200 px, šonai 24 px. Skaitymo tekstas iki 720 px. Homepage: tekstas ir darbo stalas, trijų kelių navigacija, trys modeliai, proceso paaiškinimas, keturi gidai, užklausa. Katalogo modeliai ir kontaktų forma rodomi prieš papildomą paaiškinimą.
+
+Desktop katalogas dviejų stulpelių; gidai keturių, ties 1100 px — dviejų. Ties 900 px navigacija tampa native details meniu. Ties 700 px puslapis ir forma pereina į vieną stulpelį. Ties 360 px modelių savybės rodomos vertikaliai. Gido turinys desktop turi sticky nuorodų stulpelį, mobile — išskleidžiamą bloką prieš tekstą.
+
+## Elevation & Depth
+
+Tekstas ir savybės atskiriami tonu bei linijomis. Šešėliai: darbo stalas `0 18px 55px #213b6810`, pokalbis `0 16px 60px #172b4938`. Tai sluoksnio atskyrimas, ne įrenginio 3D imitacija.
+
+## Shapes
+
+Laukai lengvai užapvalinti, veiksmai kompaktiški, modelių ir gidų konteineriai minkštesni. Native SVG rodyklės ir dokumento ženklas priklauso veiksmams. Modelio nuotrauka neapkerpama; konceptinė gido iliustracija išlaiko savo vaidmenį.
+
+## Components
+
+Pagrindinis veiksmas mėlynas su baltu tekstu ir rodykle; hover tamsėja. Focus-visible turi 3 px kontūrą su tarpu. Fono perėjimas 180 ms išjungiamas per prefers-reduced-motion.
+
+Modelio konteineris rodo tikrą nuotrauką, pavadinimą, originalų aprašymą, savybių definition list ir realią nuorodą. Tai produkto vienetas, ne kiekvienos pastraipos dekoratyvinė kortelė.
+
+Forma turi matomas etiketes, native required/email/minLength validaciją, sutikimą ir esamą honeypot. Native POST endpoint bei laukų vardai išlieka. El. paštas matomas atskirai.
+
+Pokalbis pasirenkamas tik `appearance="stepover"`. Panelė iki 430 px, mobile iki viewport minus 24 px, su savo slinkimu, istorija, composer, disabled laukimo būsena ir kontakto forma. Bendro komponento sesijų, atminties ir kontakto protokolas neperrašomas. Paslaugos klaidos rodomos tiesiogiai.
+
+## Do's and Don'ts
+
+- **Do** išlaikyti paketo faktus, tikrus vaizdus, kreditus ir nuorodas.
+- **Do** aiškiai skirti įrenginį, programinį kelią ir užklausą.
+- **Do** jungti visus puslapius ta pačia veiksmų kalba.
+- **Don't** kurti kainų, klientų, įvertinimų, tiekimo ar sertifikavimo įrodymų.
+- **Don't** perpiešti įrenginio ar kopijuoti Dribbble vaizdo.
+- **Don't** vadinti vietinio fixture tikro AI ar el. pašto pristatymo įrodymu.

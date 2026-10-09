@@ -1,6 +1,6 @@
 # Madbeauty: nuoseklus pusmečio kalendorius
 
-Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 neparašytų. Parengtų tekstų datos reikalauja naujo paketo diegimo; planai nėra vieši tekstai.
+Visos valandos Lietuvos laiku. 295 temos: 3 paskelbtos, 32 parengtos, 260 neparašytų. Parengtų 32 būsimų gidų naujas datų paketas peržiūrėtas; faktinis diegimas dar tikrinamas. Likusios 260 temos dar turi būti parašytos, iliustruotos, peržiūrėtos ir įdiegtos.
 
 | Data | Valanda | Straipsnis | Parengimas |
 | --- | --- | --- | --- |

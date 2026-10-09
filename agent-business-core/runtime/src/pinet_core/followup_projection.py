@@ -1,6 +1,6 @@
 """Server-generated factual review binding for free customer follow-ups."""
 import re
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, urlunsplit
 
 from .security import digest
 
@@ -30,14 +30,22 @@ def verified_result(data, analysis):
             any(ord(c) < 32 for c in subject) or re.search(
                 r'\[TEST|\bSINTETIN\w*\s+(?:BANDYM|LAIŠK)|\bTESTINIS\s+LAIŠKAS', body + subject, re.I)):
         return None
-    sources = {p['url']: p for p in data['knowledge']['pages']}
+    sources = {root_url(p['url']): p for p in data['knowledge']['pages']}
     used = []
     for url in re.findall(r'https?://[^\s<>]+', body, flags=re.I):
         url = url.rstrip('.,;)')
-        if url not in sources or urlsplit(url).hostname != data['knowledge']['canonical_host']:
+        key = root_url(url)
+        if key not in sources or urlsplit(url).hostname != data['knowledge']['canonical_host']:
             return None
-        used.append(sources[url])
+        used.append(sources[key])
     return {'subject': subject, 'body': body, 'hash': digest(body), 'kind': 'reviewed_informational_followup',
         'validation': 'server_bound_model_facts_review', 'knowledge_revision': value['knowledge_revision'],
         'source_refs': [{k: p[k] for k in ['id', 'url', 'revision_hash', 'projection_hash']} for p in used],
         'test': data['test']}
+
+
+def root_url(url):
+    # The empty HTTP path and / identify the same approved homepage. Preserve
+    # scheme, authority, non-root paths, queries and fragments exactly.
+    value = urlsplit(url)
+    return urlunsplit(value._replace(path='/')) if not value.path else url

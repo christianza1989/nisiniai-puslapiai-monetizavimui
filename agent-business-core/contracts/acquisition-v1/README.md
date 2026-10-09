@@ -1,8 +1,10 @@
-# Acquisition adapter contract 0.1.0
+# Acquisition adapter contract 0.1.1
 
 2026-10-10. Candidate interface for the shared core, Madbeauty backend and Verslomatika. [Coordination issue66](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66), dependency [PR59](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/59), [dashboard handoff](../../verslomatika-plan/INTEGRATION_HANDOFF.md).
 
 **Implemented here:** strict Python contracts, generated JSON schemas, a pure conversion reducer, Python scoped HMAC verification, server Web Crypto signing/verification, and executable synthetic cross-language checks. **Not implemented by this package:** mounted HTTP routes, PostgreSQL replay ledger/outbox, scheduler, transport, production keys, Madbeauty binding or hosted acceptance. Do not advertise these endpoints as available until actual deployment capabilities confirm them.
+
+Patch0.1.1 enforces primitive types from the JSON schema: boolean false cannot arrive as numeric0, booleans cannot arrive as strings, source_revision cannot arrive as string/bool and times use JSON date-time strings. Use model_validate_json on raw JSON. Wire records are immutable after validation. Original candidate0.1.0 remains in commit2082c6ba6f6c4bf45d783bd97167602de6dff0c8; no mounted client has been claimed, and the accepting site adapter must explicitly update its version.
 
 ## Canonical source and generated clients
 
@@ -49,7 +51,7 @@ Sign serialized UTF-8 once and send those same bytes; the verifier must not pars
 
 Core creates an unpredictable reference with at least192bits of randomness, stores campaign/prospect/contact binding privately and sends only the ref to the approved site signup route. An invitation grants no login, publication, auto-registration or contact permission. Never encode contact email/person/source URL in its public ref. Log only scoped internal IDs; ref itself is a bearer attribution token and must be scrubbed from analytics.
 
-Madbeauty chooses its actual signup parameter/route after checking its current backend. Its owner currently identifies /registracija, /meistrui and /taisykles as ordinary public paths; invitation support on these paths is not yet verified. Core resolve returns only purpose, offer revision, expiry and state. Native account verification must validate the intended-recipient binding server-side before attribution; a forwarded link alone cannot establish who joined. The concrete verified-address digest/challenge is an adapter dependency, not a client-provided assertion.
+Madbeauty chooses its actual signup parameter/route after checking its current backend. Its owner later confirmed the current provider start /meistrui/pradzia through email-only /paskyra; /taisykles carries terms. Invitation support on these paths is not yet verified. Core resolve returns only purpose, offer revision, expiry and state. Native account verification must validate the intended-recipient binding server-side after actual OTP before attribution; a forwarded link alone cannot establish who joined. The concrete verified-address HMAC/challenge and email canonicalization are adapter dependencies, not a client-provided assertion. Never use a plain email SHA-256 as private recipient proof.
 
 Unknown ref →404, expired ref before first attribution →410, stopped marketing sequence → available signup remains ordinary but acquisition ref is not reactivated. Already-attributed ref cannot silently bind another native provider. Conversion callbacks for a provider already validly attributed before expiry remain acceptable later; account removal/suppression processing must continue when the campaign is paused or expired.
 

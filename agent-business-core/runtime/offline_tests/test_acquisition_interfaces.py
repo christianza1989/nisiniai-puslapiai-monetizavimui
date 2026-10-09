@@ -1,7 +1,7 @@
 import json
 import unittest
 from datetime import UTC, datetime, timedelta
-from uuid import uuid4
+from uuid import UUID, uuid4
 
 from pydantic import ValidationError
 
@@ -89,7 +89,7 @@ class AcquisitionInterfaceTests(unittest.TestCase):
         values = dict(scope=self.scope, invitation_ref=self.ref, campaign_id='synthetic-campaign',
                       prospect_id='synthetic-prospect', offer_revision='synthetic-offer',
                       issued_at=self.now, expires_at=self.now + timedelta(days=7))
-        self.assertEqual(Invitation(**values).contract_version, '0.1.0')
+        self.assertEqual(Invitation(**values).contract_version, '0.1.1')
         for patch in [{'contract_version': '2'}, {'expires_at': self.now}, {'invitation_ref': 'short'},
                       {'issued_at': self.now.replace(tzinfo=None)}, {'contact_email': 'person@example.test'}]:
             with self.subTest(patch=patch), self.assertRaises(ValidationError):
@@ -98,7 +98,8 @@ class AcquisitionInterfaceTests(unittest.TestCase):
     def test_capture_cannot_claim_external_send_or_production(self):
         values = dict(scope=self.scope, adapter_id='madbeauty-test')
         self.assertFalse(CaptureHandshake(**values).external_sent)
-        for patch in [{'external_sent': True}, {'recipient_domain': 'madbeauty.lt'},
+        for patch in [{'external_sent': True}, {'external_sent': 0}, {'external_sent': 'false'},
+                      {'recipient_domain': 'madbeauty.lt'},
                       {'scope': self.scope.model_copy(update={'environment_class': 'production'})}]:
             with self.subTest(patch=patch), self.assertRaises(ValidationError):
                 CaptureHandshake(**(values | patch))
@@ -113,6 +114,11 @@ class AcquisitionInterfaceTests(unittest.TestCase):
                 self.event('profile_active', **patch)
         with self.assertRaises(ValidationError):
             self.event(operator_approved=True)
+        for patch in [{'operator_approved': 'true'}, {'source_revision': '1'},
+                      {'source_revision': True}, {'occurred_at': int(self.now.timestamp())}]:
+            with self.subTest(patch=patch), self.assertRaises(ValidationError):
+                LifecycleEvent.model_validate_json(
+                    json.dumps(self.event('profile_active').model_dump(mode='json') | patch))
 
     def test_active_deactivation_and_late_events(self):
         active, _ = project_conversion(None, self.event('profile_active', 4))
@@ -145,7 +151,7 @@ class AcquisitionInterfaceTests(unittest.TestCase):
     def test_json_roundtrip_preserves_unicode_and_rejects_extra(self):
         value = self.event().model_dump(mode='json')
         self.assertEqual(LifecycleEvent.model_validate_json(json.dumps(value)), self.event(
-            event_id=value['event_id']))
+            event_id=UUID(value['event_id'])))
         with self.assertRaises(ValidationError):
             LifecycleEvent.model_validate(value | {'active_count': 100})
 

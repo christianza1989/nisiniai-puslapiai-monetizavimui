@@ -2,24 +2,39 @@
 from typing import Annotated, Literal
 from uuid import UUID
 
-from pydantic import AwareDatetime, Field, model_validator
+from pydantic import AwareDatetime, ConfigDict, Field, field_validator, model_validator
 
 from ..contracts import Strict
 
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 OpaqueId = Annotated[str, Field(min_length=1, max_length=100, pattern=r'^[A-Za-z0-9_-]+$')]
 InvitationRef = Annotated[str, Field(min_length=32, max_length=96, pattern=r'^[A-Za-z0-9_-]+$')]
 
 
-class Scope(Strict):
+class Wire(Strict):
+    model_config = ConfigDict(strict=True, frozen=True)
+
+
+class NoExternalSend(Wire):
+    external_sent: Literal[False] = False
+
+    @field_validator('external_sent', mode='before')
+    @classmethod
+    def only_boolean_false(cls, value):
+        if value is not False:
+            raise ValueError('external_sent_must_be_boolean_false')
+        return value
+
+
+class Scope(Wire):
     business_id: OpaqueId
     site_id: OpaqueId
     environment_id: OpaqueId
     environment_class: Literal['test', 'production']
 
 
-class Invitation(Strict):
-    contract_version: Literal['0.1.0'] = VERSION
+class Invitation(Wire):
+    contract_version: Literal['0.1.1'] = VERSION
     scope: Scope
     invitation_ref: InvitationRef
     campaign_id: OpaqueId
@@ -36,17 +51,17 @@ class Invitation(Strict):
         return self
 
 
-class ResolveRequest(Strict):
-    contract_version: Literal['0.1.0'] = VERSION
+class ResolveRequest(Wire):
+    contract_version: Literal['0.1.1'] = VERSION
     scope: Scope
     adapter_id: OpaqueId
     invitation_ref: InvitationRef
     request_id: UUID
 
 
-class Resolution(Strict):
+class Resolution(Wire):
     """Server-to-server minimal projection; never public prospect/contact data."""
-    contract_version: Literal['0.1.0'] = VERSION
+    contract_version: Literal['0.1.1'] = VERSION
     scope: Scope
     invitation_ref: InvitationRef
     objective: Literal['provider_signup'] = 'provider_signup'
@@ -55,8 +70,8 @@ class Resolution(Strict):
     state: Literal['available', 'expired', 'stopped', 'already_attributed']
 
 
-class LifecycleEvent(Strict):
-    contract_version: Literal['0.1.0'] = VERSION
+class LifecycleEvent(Wire):
+    contract_version: Literal['0.1.1'] = VERSION
     event_id: UUID
     scope: Scope
     adapter_id: OpaqueId
@@ -86,23 +101,20 @@ class LifecycleEvent(Strict):
         return self
 
 
-class EventReceipt(Strict):
-    contract_version: Literal['0.1.0'] = VERSION
+class EventReceipt(NoExternalSend):
+    contract_version: Literal['0.1.1'] = VERSION
     event_id: UUID
     state: Literal['applied', 'duplicate', 'stale']
     source_revision: int = Field(ge=1)
     profile_active: bool
-    # Accepted callback/registration says nothing about acquisition mail delivery.
-    external_sent: Literal[False] = False
 
 
-class CaptureHandshake(Strict):
-    contract_version: Literal['0.1.0'] = VERSION
+class CaptureHandshake(NoExternalSend):
+    contract_version: Literal['0.1.1'] = VERSION
     scope: Scope
     adapter_id: OpaqueId
     mode: Literal['capture_only'] = 'capture_only'
     recipient_domain: Literal['example.test'] = 'example.test'
-    external_sent: Literal[False] = False
 
     @model_validator(mode='after')
     def isolated(self):
@@ -111,7 +123,7 @@ class CaptureHandshake(Strict):
         return self
 
 
-class Conversion(Strict):
+class Conversion(Wire):
     scope: Scope
     invitation_ref: InvitationRef
     provider_ref: OpaqueId

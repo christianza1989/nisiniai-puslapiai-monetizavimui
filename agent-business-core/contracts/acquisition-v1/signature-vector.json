@@ -1,11 +1,11 @@
 {
-  "body_sha256": "ca056cb12c07d01691a1130754efcfd4752a7f674b785c3fdf7238d347948a97",
-  "body_utf8": "{\"contract_version\":\"0.1.0\",\"scope\":{\"business_id\":\"synthetic-business\",\"site_id\":\"madbeauty\",\"environment_id\":\"synthetic-test\",\"environment_class\":\"test\"},\"adapter_id\":\"madbeauty-test\",\"mode\":\"capture_only\",\"recipient_domain\":\"example.test\",\"external_sent\":false}",
+  "body_sha256": "6d5417c527f11481d3836cfb48570832e38cd885d94bfc79ced8aa39e43bc25d",
+  "body_utf8": "{\"contract_version\":\"0.1.1\",\"scope\":{\"business_id\":\"synthetic-business\",\"site_id\":\"madbeauty\",\"environment_id\":\"synthetic-test\",\"environment_class\":\"test\"},\"adapter_id\":\"madbeauty-test\",\"mode\":\"capture_only\",\"recipient_domain\":\"example.test\",\"external_sent\":false}",
   "fixture_only": true,
   "headers": {
     "Content-Type": "application/json",
     "X-Acq-Key-Id": "synthetic-key",
-    "X-Acq-Signature": "v1=58077b614e50e81b2c3e4e2089e14c7b38783847c58306160bfba0ec3a1a788e",
+    "X-Acq-Signature": "v1=129c72ab576a97d85a520e61b2886e76d98da78de916173e199d8325e733fed3",
     "X-Acq-Timestamp": "1791590400"
   },
   "key_id": "synthetic-key",

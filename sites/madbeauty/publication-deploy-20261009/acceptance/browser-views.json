@@ -1,0 +1,214 @@
+[
+  {
+    "name": "canonical-guides-1440",
+    "dates": [],
+    "document": {
+      "client": 1425,
+      "scroll": 1425
+    },
+    "images": [
+      {
+        "complete": true,
+        "height": 519,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+        "width": 780
+      },
+      {
+        "complete": true,
+        "height": 266,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/1682ac36-ccf3-44d2-b733-7762921ebc01.webp",
+        "width": 400
+      },
+      {
+        "complete": true,
+        "height": 266,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455.webp",
+        "width": 400
+      },
+      {
+        "complete": true,
+        "height": 266,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+        "width": 400
+      }
+    ],
+    "main": [
+      {
+        "client": 1425,
+        "scroll": 1425
+      }
+    ],
+    "titles": [
+      "Grožio gidai prieš vizitą"
+    ],
+    "url": "https://madbeauty.lt/gidai",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "name": "canonical-article-1440",
+    "dates": [
+      {
+        "datetime": "2026-10-06T17:09:24.272Z",
+        "text": "2026 m. spalio 6 d."
+      }
+    ],
+    "document": {
+      "client": 1425,
+      "scroll": 1425
+    },
+    "images": [
+      {
+        "complete": true,
+        "height": 519,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+        "width": 780
+      }
+    ],
+    "main": [
+      {
+        "client": 1425,
+        "scroll": 1425
+      }
+    ],
+    "titles": [
+      "Kas įeina į manikiūro kainą"
+    ],
+    "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "name": "canonical-article-390",
+    "dates": [
+      {
+        "datetime": "2026-10-06T17:09:24.272Z",
+        "text": "2026 m. spalio 6 d."
+      }
+    ],
+    "document": {
+      "client": 375,
+      "scroll": 375
+    },
+    "images": [
+      {
+        "complete": true,
+        "height": 238,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+        "width": 358
+      }
+    ],
+    "main": [
+      {
+        "client": 375,
+        "scroll": 375
+      }
+    ],
+    "titles": [
+      "Kas įeina į manikiūro kainą"
+    ],
+    "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+    "viewport": {
+      "height": 900,
+      "width": 390
+    }
+  },
+  {
+    "name": "canonical-future-390",
+    "dates": [],
+    "document": {
+      "client": 375,
+      "scroll": 375
+    },
+    "images": [],
+    "main": [
+      {
+        "client": 375,
+        "scroll": 375
+      }
+    ],
+    "titles": [
+      "Puslapis nerastas"
+    ],
+    "url": "https://madbeauty.lt/gidai/kirpimas-gidas",
+    "viewport": {
+      "height": 900,
+      "width": 390
+    }
+  },
+  {
+    "name": "canonical-future-1440",
+    "dates": [],
+    "document": {
+      "client": 1425,
+      "scroll": 1425
+    },
+    "images": [],
+    "main": [
+      {
+        "client": 1425,
+        "scroll": 1425
+      }
+    ],
+    "titles": [
+      "Puslapis nerastas"
+    ],
+    "url": "https://madbeauty.lt/gidai/kirpimas-gidas",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "name": "canonical-guides-390",
+    "dates": [],
+    "document": {
+      "client": 375,
+      "scroll": 375
+    },
+    "images": [
+      {
+        "complete": true,
+        "height": 238,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/78cde752-76f1-4fa8-bbdf-0097741e59f5.webp",
+        "width": 358
+      },
+      {
+        "complete": true,
+        "height": 238,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/1682ac36-ccf3-44d2-b733-7762921ebc01.webp",
+        "width": 358
+      },
+      {
+        "complete": true,
+        "height": 238,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/5fddf9ed-ffe1-4c2c-8dfd-946ad5bdc455.webp",
+        "width": 358
+      },
+      {
+        "complete": true,
+        "height": 238,
+        "src": "https://madbeauty.lt/content-assets/madbeauty/2372f919-a770-49a2-ba82-d15e3a34fd89.webp",
+        "width": 358
+      }
+    ],
+    "main": [
+      {
+        "client": 375,
+        "scroll": 375
+      }
+    ],
+    "titles": [
+      "Grožio gidai prieš vizitą"
+    ],
+    "url": "https://madbeauty.lt/gidai",
+    "viewport": {
+      "height": 900,
+      "width": 390
+    }
+  }
+]

@@ -1,0 +1,121 @@
+Original local log SHA-256: 762a55195914e4ec2d03b0c25b9abb2dfa998ac9481a82c0f9e06662b1ce6a4e
+Normalization: ANSI styling and trailing whitespace only; original .log remains local.
+
+
+> site-creator-vinext-starter@0.1.0 build
+> node scripts/compile-content-packages.mjs && node scripts/run-framework.mjs build
+
+Validated 10 approved site package(s).
+
+  vinext build  (Vite 8.0.13)
+
+[vinext] next.config option "webpack" is not yet supported and will be ignored
+[vinext] next.config option "webpack" is not yet supported and will be ignored
+[1/5] analyze client references...
+[2K
+transforming...✓ 465 modules transformed.
+rendering chunks...
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - rsc:virtual-client-package (17%)
+  - vinext:og-inline-fetch-assets (14%)
+  - vinext:middleware-server-only (13%)
+  - alias (12%)
+  - vinext:css-data-url (10%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 6.15s
+[2/5] analyze server references...
+[2K
+transforming...✓ 142 modules transformed.
+rendering chunks...
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - vinext:css-data-url (18%)
+  - vinext:middleware-server-only (15%)
+  - vinext:og-inline-fetch-assets (9%)
+  - vinext:validate-middleware-exports (8%)
+  - rsc:use-client (8%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 3.17s
+[3/5] build rsc environment...
+[2K
+transforming...✓ 462 modules transformed.
+rendering chunks...
+computing gzip size...
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - rsc:virtual-client-package (26%)
+  - alias (14%)
+  - vinext:og-inline-fetch-assets (13%)
+  - vinext:css-data-url (10%)
+  - vinext:middleware-server-only (8%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 3.49s
+[4/5] build client environment...
+[2K
+transforming...✓ 150 modules transformed.
+rendering chunks...
+computing gzip size...
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[FILE_NAME_CONFLICT] The emitted file _next/static/css/miniekskavatoriai-site.BtzP4zsQ.css overwrites a previously emitted file of the same name.
+
+[FILE_NAME_CONFLICT] The emitted file _next/static/css/fasadopastoliai-site.c44TB94f.css overwrites a previously emitted file of the same name.
+
+[FILE_NAME_CONFLICT] The emitted file _next/static/css/autoelektrikaivilniuje-site.Duv3QixM.css overwrites a previously emitted file of the same name.
+
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - vinext:css-data-url (18%)
+  - vinext:og-inline-fetch-assets (17%)
+  - vinext:validate-middleware-exports (7%)
+  - rsc:virtual-client-package (7%)
+  - rsc:use-client (5%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 3.46s
+[5/5] build ssr environment...
+[2K
+transforming...✓ 144 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 2.42s
+
+  Route (app)
+  ┌ ? /
+  ├ λ /api/ingest/articles
+  ├ λ /api/internal/publish-due
+  ├ ? /apie
+  ├ ? /autoriai
+  ├ ƒ /autoriai/:slug
+  ├ ƒ /gift/:siteId/:slug*
+  ├ λ /gift/:siteId/seo/:kind
+  ├ ? /kontaktai
+  ├ λ /llms-full.txt
+  ├ λ /llms.txt
+  ├ ƒ /niche/:siteId/:slug*
+  ├ λ /niche/:siteId/brand-icon
+  ├ λ /niche/:siteId/interest
+  ├ λ /niche/:siteId/lead
+  ├ λ /niche/:siteId/llms-full.txt
+  ├ λ /niche/:siteId/llms.txt
+  ├ λ /niche/:siteId/robots.txt
+  ├ λ /niche/:siteId/sitemap.xml
+  ├ λ /niche/:siteId/voice/:action
+  ├ ? /partneriu-nuorodu-atskleidimas
+  ├ ? /privatumas
+  ├ ? /redakcine-politika
+  ├ ? /slapukai
+  ├ ? /straipsniai
+  ├ ƒ /straipsniai/:slug
+  └ ? /taisykles
+
+  λ API  ƒ Dynamic  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.

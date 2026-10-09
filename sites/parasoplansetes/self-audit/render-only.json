@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-09T06:08:42.531Z",
-  "projectionAt": "2026-10-09T06:08:41.643Z",
+  "checkedAt": "2026-10-09T06:00:07.977Z",
+  "projectionAt": "2026-10-09T06:00:06.605Z",
   "siteId": "parasoplansetes",
   "canonicalHost": "parasoplansetes.lt",
   "transportOrigin": "http://127.0.0.1:8800",
@@ -31,7 +31,7 @@
       }
     ]
   },
-  "state": "NOT_COMPLETE",
+  "state": "RENDERED_CHECKS_PASS_NOT_SITE_ACCEPTANCE",
   "publicPages": 19,
   "hiddenPages": 0,
   "articles": 4,
@@ -57,11 +57,11 @@
       "errors": []
     },
     {
-      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
       "errors": []
     },
     {
-      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
       "errors": []
     },
     {
@@ -152,16 +152,16 @@
       "sha256": "81dd016effd983bc4575ce75e909a69005a53a2288a423599c104f5389bfa497"
     },
     {
-      "path": "/produktas/paraso-plansete-stepover-durasign-pad-5-0",
-      "status": 200,
-      "contentType": "text/html; charset=utf-8",
-      "sha256": "438dcbfcf1c6c068b2ae4665b33d11417a974a9e36e3bc33d9cd508efc3dbc4b"
-    },
-    {
       "path": "/produktas/paraso-plansete-stepover-durasign-pad-10-0",
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "sha256": "892b3f85b8bc8588f94a6cdfa99e306220fd19e7e3e45aa4080c9ad94d111ba0"
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "438dcbfcf1c6c068b2ae4665b33d11417a974a9e36e3bc33d9cd508efc3dbc4b"
     },
     {
       "path": "/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
@@ -248,16 +248,16 @@
       "sha256": "5de6339e0c21f52fd5924abbaeeaa17af042d1a7b68dd78903fe8d626b041381"
     },
     {
-      "path": "/content-assets/parasoplansetes/6b19d0f2-a258-48be-9d46-66867bdf4e34.webp",
-      "status": 200,
-      "contentType": "image/webp",
-      "sha256": "514cc5b63f271af176c08d26b16f2543caecba3dcd275b3e5f5d009a6f4edadd"
-    },
-    {
       "path": "/content-assets/parasoplansetes/72dd3442-8ebe-4c1b-b070-1872a414cbfd.webp",
       "status": 200,
       "contentType": "image/webp",
       "sha256": "15d76cd7c605a5b41ff00d3638a99ca534dc6e7eb4cd9b0837739d631c95458d"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/6b19d0f2-a258-48be-9d46-66867bdf4e34.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "514cc5b63f271af176c08d26b16f2543caecba3dcd275b3e5f5d009a6f4edadd"
     },
     {
       "path": "/content-assets/parasoplansetes/2a4ffcc8-4a67-443b-b32e-2c21a658c8b3.webp",
@@ -296,28 +296,28 @@
       "sha256": "ad9d4540177e27cc74081735eb17910ebc0d8c6feb166f9ae09baa7092453493"
     },
     {
-      "path": "/content-assets/parasoplansetes/662e318a-d291-4e6b-8c3b-443b1b208b0b.webp",
-      "status": 200,
-      "contentType": "image/webp",
-      "sha256": "92ea6061b33642c3de832475990cf26d7fc5e2137d45f1b9130eb809a4464418"
-    },
-    {
       "path": "/content-assets/parasoplansetes/1cb4dda2-1813-47a8-a3e7-ec77ea5a5a1c.webp",
       "status": 200,
       "contentType": "image/webp",
       "sha256": "9af4cec5a56022ffcf5974429f577c3f9e9322fa0e72245e0164ec5e1361b851"
     },
     {
-      "path": "/content-assets/parasoplansetes/246323f5-171a-469b-b4fd-403870ef722f.webp",
+      "path": "/content-assets/parasoplansetes/662e318a-d291-4e6b-8c3b-443b1b208b0b.webp",
       "status": 200,
       "contentType": "image/webp",
-      "sha256": "04311f1cb9a43843e22a1568fa5745e44ecc3cc42077344cd2161248f1347b52"
+      "sha256": "92ea6061b33642c3de832475990cf26d7fc5e2137d45f1b9130eb809a4464418"
     },
     {
       "path": "/content-assets/parasoplansetes/2ff7618a-5d40-4b66-8a0d-ca762ee39754.webp",
       "status": 200,
       "contentType": "image/webp",
       "sha256": "2186c09c85663a1c8b7cc17c0f32a209d8f90920759cd9d6a286c000968720ce"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/246323f5-171a-469b-b4fd-403870ef722f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "04311f1cb9a43843e22a1568fa5745e44ecc3cc42077344cd2161248f1347b52"
     },
     {
       "path": "/content-assets/parasoplansetes/f7af355c-80e6-4126-8e08-d3f56c1ff603.webp",
@@ -338,16 +338,16 @@
       "sha256": "9af4cec5a56022ffcf5974429f577c3f9e9322fa0e72245e0164ec5e1361b851"
     },
     {
-      "path": "/content-assets/parasoplansetes/cb64f6da-31e1-4032-a004-bc7c68df0d45.webp",
-      "status": 200,
-      "contentType": "image/webp",
-      "sha256": "04311f1cb9a43843e22a1568fa5745e44ecc3cc42077344cd2161248f1347b52"
-    },
-    {
       "path": "/content-assets/parasoplansetes/122d4817-a836-4b10-981f-c0ad27a79860.webp",
       "status": 200,
       "contentType": "image/webp",
       "sha256": "2186c09c85663a1c8b7cc17c0f32a209d8f90920759cd9d6a286c000968720ce"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/cb64f6da-31e1-4032-a004-bc7c68df0d45.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "04311f1cb9a43843e22a1568fa5745e44ecc3cc42077344cd2161248f1347b52"
     },
     {
       "path": "/content-assets/parasoplansetes/682659c4-ba4f-4ab1-bbf3-f224998447b3.webp",
@@ -398,289 +398,8 @@
       "sha256": "2802914052b9cd5b8b8048806b795fde6c90665abd2e052c85ac456943b30ef5"
     }
   ],
-  "auditScore": {
-    "siteId": "parasoplansetes",
-    "evaluatedAt": "2026-10-09T06:08:23.009Z",
-    "stages": {
-      "local": {
-        "passed": 68,
-        "applicable": 72,
-        "score": 9.44,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "R2",
-          "S2",
-          "U2",
-          "U3"
-        ]
-      },
-      "launch": {
-        "passed": 0,
-        "applicable": 11,
-        "score": 0,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "B3",
-          "I4",
-          "O3",
-          "U4",
-          "W3",
-          "X3",
-          "Z3"
-        ]
-      },
-      "operations": {
-        "passed": 0,
-        "applicable": 2,
-        "score": 0,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "A3",
-          "V3"
-        ]
-      }
-    },
-    "categories": {
-      "A": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "A3"
-        ]
-      },
-      "B": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "B3"
-        ]
-      },
-      "C": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": true,
-        "blockers": []
-      },
-      "D": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "E": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "F": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "G": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "H": {
-        "passed": 5,
-        "applicable": 5,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "I": {
-        "passed": 3,
-        "applicable": 4,
-        "score": 7.5,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "I4"
-        ]
-      },
-      "J": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "K": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "L": {
-        "passed": 3,
-        "applicable": 4,
-        "score": 7.5,
-        "perfect": false,
-        "gateReady": true,
-        "blockers": []
-      },
-      "M": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "N": {
-        "passed": 3,
-        "applicable": 4,
-        "score": 7.5,
-        "perfect": false,
-        "gateReady": true,
-        "blockers": []
-      },
-      "O": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "O3"
-        ]
-      },
-      "P": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "Q": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "R": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "R2"
-        ]
-      },
-      "S": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "S2"
-        ]
-      },
-      "T": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": true,
-        "blockers": []
-      },
-      "U": {
-        "passed": 1,
-        "applicable": 4,
-        "score": 2.5,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "U2",
-          "U3",
-          "U4"
-        ]
-      },
-      "V": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "V3"
-        ]
-      },
-      "W": {
-        "passed": 3,
-        "applicable": 4,
-        "score": 7.5,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "W3"
-        ]
-      },
-      "X": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "X3"
-        ]
-      },
-      "Y": {
-        "passed": 3,
-        "applicable": 3,
-        "score": 10,
-        "perfect": true,
-        "gateReady": true,
-        "blockers": []
-      },
-      "Z": {
-        "passed": 2,
-        "applicable": 3,
-        "score": 6.66,
-        "perfect": false,
-        "gateReady": false,
-        "blockers": [
-          "Z3"
-        ]
-      }
-    }
-  },
-  "issues": [
-    "LOCAL_AUDIT_INCOMPLETE"
-  ],
+  "auditScore": null,
+  "issues": [],
   "limitations": [
     "HTML checks do not prove computed browser visibility, image pixels, factual correctness or business capability.",
     "Separate A–Z/browser/performance/form/source evidence and actual launch gates remain required.",

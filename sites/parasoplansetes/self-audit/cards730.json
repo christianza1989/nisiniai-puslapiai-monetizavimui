@@ -1,0 +1,34 @@
+{
+  "images": [
+    {
+      "alt": "StepOver duraSign Pad 4.3, gamintojo įrenginys",
+      "complete": true,
+      "currentSrc": "http://127.0.0.1:8798/content-assets/parasoplansetes/6b19d0f2-a258-48be-9d46-66867bdf4e34.webp",
+      "sizes": "(max-width: 360px) 85px, (max-width: 760px) 110px, (max-width: 1050px) calc((100vw - 72px) / 2), (max-width: 1328px) calc((100vw - 88px) / 2), 620px",
+      "width": 110
+    },
+    {
+      "alt": "Konceptinė dokumento sluoksnių ir parašo iliustracija",
+      "complete": true,
+      "currentSrc": "http://127.0.0.1:8798/content-assets/parasoplansetes/f662199f-fc30-4532-97ac-2b732c88d5f6.webp",
+      "sizes": "(max-width: 360px) 85px, (max-width: 760px) 110px, (max-width: 1050px) calc((100vw - 72px) / 2), (max-width: 1328px) calc((100vw - 88px) / 2), 620px",
+      "width": 110
+    },
+    {
+      "alt": "Konceptinė trijų dokumentų proceso dalių sujungimo iliustracija",
+      "complete": true,
+      "currentSrc": "http://127.0.0.1:8798/content-assets/parasoplansetes/f7af355c-80e6-4126-8e08-d3f56c1ff603.webp",
+      "sizes": "(max-width: 360px) 85px, (max-width: 760px) 110px, (max-width: 1050px) calc((100vw - 72px) / 2), (max-width: 1328px) calc((100vw - 88px) / 2), 620px",
+      "width": 110
+    },
+    {
+      "alt": "Konceptinė terminalinio serverio dokumentų kelio iliustracija",
+      "complete": true,
+      "currentSrc": "http://127.0.0.1:8798/content-assets/parasoplansetes/682659c4-ba4f-4ab1-bbf3-f224998447b3.webp",
+      "sizes": "(max-width: 360px) 85px, (max-width: 760px) 110px, (max-width: 1050px) calc((100vw - 72px) / 2), (max-width: 1328px) calc((100vw - 88px) / 2), 620px",
+      "width": 110
+    }
+  ],
+  "overflow": false,
+  "width": 730
+}

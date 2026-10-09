@@ -2,7 +2,7 @@
   "siteId": "parasoplansetes",
   "canonicalHost": "parasoplansetes.lt",
   "phase": 1,
-  "evaluatedAt": "2026-10-09T06:09:11.436Z",
+  "evaluatedAt": "2026-10-08T17:11:49.859Z",
   "evaluator": "Codex agent, actual source/browser/HTTP review; no human expert certification",
   "environment": {
     "os": "Windows",
@@ -14,8 +14,8 @@
     "database": "local D1 synthetic only"
   },
   "version": {
-    "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
-    "sourceVersion": "7761a29a0464e6ed0544b17567cd68539df89109",
+    "packageSha256": "fae6a474091ea5b13e703aeca7aa22f5a159fa3e31ac32f665b4e1e7530c3429",
+    "sourceVersion": "39e327937ce32f2b27eef54c323d5d9a63a095de",
     "coreBase": "f743b1cbcb09418d733fbe3c72b6968d65a72259"
   },
   "verdict": {
@@ -149,10 +149,10 @@
       "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
       "status": "PASS",
       "evidence": [
-        "self-audit/model-primary-sources.json",
-        "CONTENT_READINESS.md"
+        "SEO_BASELINE.md",
+        "RESEARCH.md"
       ],
-      "notes": "All five specific StepOver model primary sources reviewed; 4.3 explicitly four colours, NG10 device PDF/.NET REST/Print2NG path distinguished; stock/price/customer compatibility not invented."
+      "notes": "Current primary manufacturer descriptions and owner actual models support bounded original copy; old prices not new quotes."
     },
     {
       "id": "D3",
@@ -293,10 +293,10 @@
       "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
       "status": "PASS",
       "evidence": [
-        "self-audit/model-primary-sources.json",
-        "self-audit/semantic-after.json"
+        "SEO_BASELINE.md",
+        "RESEARCH.md"
       ],
-      "notes": "Current bounded technical statements compared to model-specific manufacturer evidence; legal/customer assurances remain excluded."
+      "notes": "Manufacturer Windows/NG/licence scope checked; planšetė alone not QES; no universal customer compatibility or legal assurance."
     },
     {
       "id": "H3",
@@ -317,11 +317,10 @@
       "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
       "status": "PASS",
       "evidence": [
-        "self-audit/guide390.json",
-        "self-audit/guide390.jpg",
-        "VERIFICATION.md"
+        "VERIFICATION.md",
+        "screenshots/"
       ],
-      "notes": "Current selection guide inspected at390 with no horizontal overflow and exact approved inline text. Prior all-four-guide image/body reviews retained as historical evidence; body wording/assets unchanged apart from reviewed anchors."
+      "notes": "Full guide body, list items, images and source panels inspected in private then production browser; PDF320/tablet and all guide390 screenshots."
     },
     {
       "id": "H5",
@@ -415,10 +414,10 @@
       "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
       "status": "PASS",
       "evidence": [
-        "CONTENT_READINESS.md",
-        "self-audit/release.json"
+        "VERIFICATION.md",
+        "approved native package fae6a474"
       ],
-      "notes": "Four guide anchor revisions and five model-source revisions reviewed at their new native revision hashes; final immutable release imported through canonical importer."
+      "notes": "Actual native draft corrections then19review/approve/release; immutable import fingerprint retained; corrections require reapproval."
     },
     {
       "id": "K1",
@@ -427,10 +426,11 @@
       "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
       "status": "PASS",
       "evidence": [
-        "self-audit/render-only.json",
-        "self-audit/parasoplansetes-self-audit-after.json"
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
       ],
-      "notes": "Current package19pages/4guides metadata and actual HTTP checked; one H1/title/description/lt/canonical."
+      "notes": "Core rendered checks all19 URLs: one H1, title/description/lt/canonical."
     },
     {
       "id": "K2",
@@ -464,9 +464,11 @@
       "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
       "status": "PASS",
       "evidence": [
-        "self-audit/render-only.json"
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
       ],
-      "notes": "All19 current structured outputs checked; source/author/date/breadcrumb relationships remain native eligibility-bound."
+      "notes": "All19 structured outputs parse; WebSite/WebPage/Organization/Article/CollectionPage helpers unchanged."
     },
     {
       "id": "L2",
@@ -511,11 +513,11 @@
       "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
       "status": "PASS",
       "evidence": [
-        "self-audit/guide390.json",
-        "self-audit/semantic-after.json",
-        "CONTENT_READINESS.md"
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
       ],
-      "notes": "Corrected initially overbroad PASS: all four guides now have two useful same-site contextual body anchors in addition to related panels; visible text and destinations verified."
+      "notes": "Native IDs for useful catalogue/software/contact/related guide anchors; actual TOC section fragments exist."
     },
     {
       "id": "M2",
@@ -526,9 +528,9 @@
       "evidence": [
         "rendered-before-publication.json",
         "rendered-after-publication.json",
-        "self-audit/parasoplansetes-self-audit-core-tests.txt"
+        "http-acceptance.json"
       ],
-      "notes": "Historical real-clock package boundary preserved; current57 core regressions preserve hash/date/revocation/host restrictions."
+      "notes": "Actual future related/index/schema/media disappearance and reappearance verified, native hash/revocation negatives in54tests."
     },
     {
       "id": "M3",
@@ -548,10 +550,10 @@
       "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
       "status": "PASS",
       "evidence": [
-        "self-audit/model-primary-sources.json",
-        "CONTENT_READINESS.md"
+        "SEO_BASELINE.md",
+        "RESEARCH.md"
       ],
-      "notes": "Model-specific manufacturer source links now accompany each of five model pages, with dated scope. Existing guide/Commission evidence remains bounded; no live availability certification."
+      "notes": "Primary manufacturer and Commission sources actually checked with retrieval dates/reasons; owner source facts kept private."
     },
     {
       "id": "N2",
@@ -595,10 +597,10 @@
       "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
       "status": "PASS",
       "evidence": [
-        "self-audit/seo-all-niches.json",
-        "self-audit/render-only.json"
+        "public-core-tests.txt",
+        "seo-all-niches.json"
       ],
-      "notes": "Current all10-niche true-Host SEO smoke and this package canonical HTML/robots/sitemap/discovery pass; local noindex transport is explicit, not production robot access."
+      "notes": "All10 current hosts smoke-tested with true Host: canon/robots/sitemap/schema/unknown/slash/query boundaries; local bridge transport caveat explicit."
     },
     {
       "id": "O2",
@@ -644,11 +646,10 @@
       "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
       "status": "PASS",
       "evidence": [
-        "self-audit/parasoplansetes-self-audit-core-tests.txt",
-        "rendered-before-publication.json",
-        "rendered-after-publication.json"
+        "public-core-tests.txt",
+        "seo-all-niches.json"
       ],
-      "notes": "Current57 core tests pass; original actual clock future page/media404 and later200 receipts retained with original package hash."
+      "notes": "54 native core hash/date/revocation/tenant tests PASS; actual before-date media/page404; native draft preview private/noindex."
     },
     {
       "id": "P3",
@@ -669,11 +670,11 @@
       "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
       "status": "PASS",
       "evidence": [
-        "self-audit/semantic-before.json",
-        "self-audit/semantic-after.json",
-        "self-audit/render-only.json"
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
       ],
-      "notes": "Initial URL-presence check overstated body parity:10 visible homepage blocks were omitted from llms-full. Fixed shared native-home reading adapter; independent comparison now missingHtml0/missingFullText0 across19pages."
+      "notes": "Both LLM exports contain current native content/contact/date/related/source and all19 eligible URLs; hidden future absent beforehand."
     },
     {
       "id": "Q2",
@@ -694,10 +695,10 @@
       "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
       "status": "PASS",
       "evidence": [
-        "GEO_READINESS.md",
-        "SEO_BASELINE.md"
+        "BUSINESS.md",
+        "SALES_OPERATIONS.md"
       ],
-      "notes": "Google ignores llms.txt. Supplementary export parity is fixed, but Google ranking, AI inclusion and citations are not measured or guaranteed; connected GSC/GA4 absent."
+      "notes": "No AI visibility or rich-result/ranking guarantee; supplementary LLM projection only."
     },
     {
       "id": "R1",
@@ -741,12 +742,10 @@
       "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
       "status": "PASS",
       "evidence": [
-        "self-audit/cards730.json",
-        "self-audit/cards730.jpg",
-        "self-audit/guide390.json",
-        "VERIFICATION.md"
+        "VERIFICATION.md",
+        "screenshots/"
       ],
-      "notes": "Current730px guide cards loaded and rendered110px, correct sizes/currentSrc; current390px guide has no overflow. Initial320/390/768/1440 evidence is historical; this is not physical-phone or200% proof."
+      "notes": "Actual1440/390 views, PDF320/768 and form320 have scrollWidth<=innerWidth. Full article/catalogue/footer inspected, lazy media checked after navigation."
     },
     {
       "id": "S2",
@@ -778,10 +777,10 @@
       "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
       "status": "PASS",
       "evidence": [
-        "self-audit/lighthouse-home.report.json",
-        "self-audit/lighthouse-pdf.report.json"
+        "lighthouse-home-final.report.json",
+        "lighthouse-pdf-final.report.json"
       ],
-      "notes": "Current actual production-build mobile lab98home/98PDF, each automated accessibility100/best-practices100; real media, noindex preview. Two parallel samples, not field CWV or causal before/after claim."
+      "notes": "Production mobile lab with actualmedia:97 home/98 PDF, real dates/version/browser. Target>=90 met."
     },
     {
       "id": "T2",
@@ -790,10 +789,9 @@
       "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
       "status": "PASS",
       "evidence": [
-        "self-audit/performance.json",
-        "self-audit/cards730.json"
+        "VERIFICATION.md"
       ],
-      "notes": "Current LCP/CLS/TBT and category data saved; responsive110px card sizes corrected. Lab-only measures, not field INP; image variants/JS/CSS limits remain explicit."
+      "notes": "LCP/CLS/TBT and JS/CSS bytes in raw reports; lowres products truthfully sized and illustrations responsive WebP; shared chunk limitation retained."
     },
     {
       "id": "T3",
@@ -976,10 +974,10 @@
       "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
       "status": "PASS",
       "evidence": [
-        "CORE_FEEDBACK.md",
-        "self-audit/source-manifest.json"
+        "public-core-tests.txt",
+        "seo-all-niches.json"
       ],
-      "notes": "Own shared reading helper/import/tests plus scoped niche card sizes and separate shared inspector fix. Eligibility/schema/lead isolation unchanged; source remains own branches, unmerged."
+      "notes": "Only isolated renderer/brand routing/owned-domain registration plus canonical package/assets; core lead/projection/schema untouched. Shared adapter issue captured as feedback, not private fork."
     },
     {
       "id": "Y2",
@@ -988,13 +986,10 @@
       "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
       "status": "PASS",
       "evidence": [
-        "self-audit/parasoplansetes-self-audit-core-tests.txt",
-        "self-audit/seo-all-niches.json",
-        "self-audit/parser-tests-after.txt",
-        "self-audit/completion-tests.txt",
-        "self-audit/parasoplansetes-self-audit-final-build.txt"
+        "public-core-tests.txt",
+        "seo-all-niches.json"
       ],
-      "notes": "Public57tests, all10SEO, scoped lint/tsc/build previously observed on unchanged committed source; private12Python/9Node tests pass after parser repair."
+      "notes": "54 core tests, scoped lint/tsc/build and actual all10-niche SEO regressions PASS on final source."
     },
     {
       "id": "Y3",
@@ -1003,13 +998,10 @@
       "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
       "status": "PASS",
       "evidence": [
-        "CONTENT_READINESS.md",
-        "ACQUISITION.md",
-        "GEO_READINESS.md",
-        "HANDOFF.md",
-        "self-audit/source-manifest.json"
+        "PC_BOOTSTRAP.md",
+        "../parasoplansetes.md"
       ],
-      "notes": "Required missing readiness/acquisition documents now contain actual facts and limits. Both repo mains freshly fetched; canonical project skills used."
+      "notes": "Current source workflow/entrypoints explicitly read after successful fetch; site journal points to actual acceptance/report files for next session."
     },
     {
       "id": "Z1",
@@ -1018,13 +1010,10 @@
       "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
       "status": "PASS",
       "evidence": [
-        "SELF_AUDIT.md",
-        "self-audit/initial-PHASE-1-AUDIT.json",
-        "self-audit/render-only-before-parser-fix.json",
-        "self-audit/parser-tests-before.txt",
-        "PHASE-1-AUDIT.json"
+        "PHASE-1-AUDIT.md",
+        "VERIFICATION.md"
       ],
-      "notes": "Own historic85-item audit and genuine failed receipts preserved; current code/package/browser/HTTP/lab evidence bound separately."
+      "notes": "Full85-item baseline/findings/repairs/final screenshots/package/source/env retained; no deleted historic unrelated audit."
     },
     {
       "id": "Z2",
@@ -1033,11 +1022,9 @@
       "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
       "status": "PASS",
       "evidence": [
-        "SELF_AUDIT.md",
-        "PHASE-1-AUDIT.json",
-        "SITE_COMPLETION.json"
+        "PHASE-1-AUDIT.md"
       ],
-      "notes": "Four local gates remain UNVERIFIED; no full-local/site/domain/Google/AI outcome acceptance declared."
+      "notes": "Four local gates intentionally remain UNVERIFIED, all launch/operations evidence not fabricated; no local10/10 or ready claim."
     },
     {
       "id": "Z3",
@@ -1050,11 +1037,5 @@
       ],
       "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
     }
-  ],
-  "evidenceReuse": {
-    "initialAudit": "self-audit/initial-PHASE-1-AUDIT.json",
-    "initialSource": "39e327937ce32f2b27eef54c323d5d9a63a095de",
-    "initialPackage": "fae6a474091ea5b13e703aeca7aa22f5a159fa3e31ac32f665b4e1e7530c3429",
-    "reason": "Own historical evidence reused only for unchanged business, schema, lead/privacy/server contract, assets, keyboard and publication-boundary behavior. Four guides and five model source revisions, reading projection, card sizes and inspector checked separately below. Historical screenshots/lab scores do not become new observations."
-  }
+  ]
 }

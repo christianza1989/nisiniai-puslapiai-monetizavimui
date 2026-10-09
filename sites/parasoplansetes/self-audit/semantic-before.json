@@ -1,0 +1,367 @@
+{
+  "checkedAt": "2026-10-08T18:51:14.551Z",
+  "packageSha256": "fae6a474091ea5b13e703aeca7aa22f5a159fa3e31ac32f665b4e1e7530c3429",
+  "siteId": "parasoplansetes",
+  "scope": "actual local Worker with canonical Host; not live domain or real bot access",
+  "rows": [
+    {
+      "path": "/",
+      "type": "home",
+      "status": 200,
+      "bodyFacts": 10,
+      "missingHtml": [],
+      "missingFullText": [
+        "StepOver įrenginiai, programinė įranga ir tinkamo komplekto atranka pagal jūsų dokumentus. Pasirašymas aptarnavimo vietoje, padalinyje ar mišriame procese — pradėkime nuo jūsų darbo eigos.",
+        "Įrenginys yra viena sprendimo dalis",
+        "Svarbu, ką žmogus perskaito, kaip pasirašo ir kur patenka galutinis dokumentas. Planšetę, programinę įrangą ir integraciją vertinkite kaip vieną procesą.",
+        "Pasirinkite ekraną ir darbo vietai tinkamą modelį.",
+        "Suderinkite dokumentą rengiančią ir pasirašančią programą.",
+        "Numatykite galutinio failo archyvą ir prieigas.",
+        "Sprendimą lemia procesas, ne įmonės sektorius",
+        "Sutartys, perdavimo aktai, prekių atsiėmimas ar vidaus patvirtinimai — tinkamumą vertiname pagal konkrečius dokumentus ir techninę aplinką. Vienas punktas ar keli padaliniai: užklausoje aprašykite savo darbo vietas.",
+        "Aiški pradžia jūsų darbo vietai",
+        "Pateikite dokumento tipą, darbo vietų skaičių, naudojamą sistemą ir norimą terminą. Įrangos, licencijų, priedų ir diegimo apimtį reikia suderinti individualiai. Užklausa nėra užsakymas, rezervacija ar galutinė kaina."
+      ],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "wordCount": 133
+    },
+    {
+      "path": "/gidai/kaip-pasirinkti-paraso-plansete",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 31,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 632
+    },
+    {
+      "path": "/paraso-plansetes",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 9,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 125
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 137
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 141
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 138
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 131
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 150
+    },
+    {
+      "path": "/programine-iranga",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 212
+    },
+    {
+      "path": "/integracija",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 16,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "wordCount": 190
+    },
+    {
+      "path": "/gidai/pdf-pasirasymas-plansete",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 25,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [
+        {
+          "href": "https://stepover.com/produkte/software/esignatureoffice/",
+          "label": "StepOver eSignatureOffice"
+        }
+      ],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 505
+    },
+    {
+      "path": "/gidai/paraso-plansetes-integracija",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 29,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 508
+    },
+    {
+      "path": "/gidai/terminalinis-serveris-paraso-plansete",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 19,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 267
+    },
+    {
+      "path": "/gidai",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 3,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 63
+    },
+    {
+      "path": "/kontaktai",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 5,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 72
+    },
+    {
+      "path": "/apie-projekta",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 7,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 121
+    },
+    {
+      "path": "/redakcija",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 9,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ProfilePage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 173
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 9,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 131
+    },
+    {
+      "path": "/privatumas",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 320
+    }
+  ],
+  "controls": {
+    "parasoplansetes.lt": {
+      "status": 200,
+      "body": "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /uzklausa\nSitemap: https://parasoplansetes.lt/sitemap.xml\n",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-type": "text/plain; charset=utf-8",
+        "cache-control": "private, no-store",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Next-Url, X-Vinext-Interception-Context, X-Vinext-Mounted-Slots, X-Vinext-Rsc-Render-Mode"
+      }
+    },
+    "localhost:8798": {
+      "status": 200,
+      "body": "User-agent: *\nDisallow: /\n",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-type": "text/plain; charset=utf-8",
+        "cache-control": "private, no-store",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Next-Url, X-Vinext-Interception-Context, X-Vinext-Mounted-Slots, X-Vinext-Rsc-Render-Mode",
+        "x-robots-tag": "noindex, nofollow"
+      }
+    }
+  },
+  "fullText": {
+    "status": 200,
+    "headers": {
+      "transfer-encoding": "chunked",
+      "content-type": "text/markdown; charset=utf-8",
+      "cache-control": "private, no-store",
+      "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Next-Url, X-Vinext-Interception-Context, X-Vinext-Mounted-Slots, X-Vinext-Rsc-Render-Mode",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  "missingHtml": 0,
+  "missingFullText": 10
+}

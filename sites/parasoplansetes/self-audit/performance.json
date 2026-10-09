@@ -1,0 +1,45 @@
+{
+  "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "sourceVersion": "7761a29a0464e6ed0544b17567cd68539df89109",
+  "environment": "Windows, installed Chrome headless, Lighthouse13.5.0 default simulated mobile; local production Worker, noindex canonical transport; two parallel lab samples, not field data",
+  "observations": [
+    {
+      "url": "http://127.0.0.1:8800/",
+      "fetchTime": "2026-10-09T06:04:17.322Z",
+      "lighthouseVersion": "13.5.0",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "device": "mobile",
+      "throttling": "simulate",
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 69,
+      "LCPms": 2074.0575,
+      "CLS": 0,
+      "TBTms": 10,
+      "failedBinaryAudits": [
+        "is-crawlable",
+        "bf-cache"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8800/gidai/pdf-pasirasymas-plansete",
+      "fetchTime": "2026-10-09T06:04:17.923Z",
+      "lighthouseVersion": "13.5.0",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "device": "mobile",
+      "throttling": "simulate",
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 69,
+      "LCPms": 2081.7122,
+      "CLS": 0,
+      "TBTms": 8.5,
+      "failedBinaryAudits": [
+        "is-crawlable",
+        "bf-cache"
+      ]
+    }
+  ]
+}

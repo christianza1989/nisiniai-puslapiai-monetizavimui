@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-08T17:01:53.726Z",
+  "scope": "Actual current package host routing, robots, sitemap, schema, LLM and negative endpoints on local production Worker",
+  "results": [
+    {
+      "siteId": "akmenas",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: akmenas, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "auksarankiams",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: auksarankiams, 13 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: autoelektrikaivilniuje, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: fasadopastoliai, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "greitossvetaines",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: greitossvetaines, 7 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "laiptucentras",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: laiptucentras, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: miniekskavatoriai, 12 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "parasoplansetes",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: parasoplansetes, 19 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "roletaiklaipedoje",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: roletaiklaipedoje, 9 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "exit": 0,
+      "stdout": "SEO core smoke passed: traktoriupadangos, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": ""
+    }
+  ]
+}

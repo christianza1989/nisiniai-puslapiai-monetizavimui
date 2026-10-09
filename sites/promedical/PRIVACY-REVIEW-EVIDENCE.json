@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-09T15:10:55.565Z",
+  "sourceStudio": "C:/Core/promedical-core-20261009/content-studio/data/sites/promedical.json",
+  "privacyPage": {
+    "id": "fbecd4f2-ddef-4f28-b12a-97d2da359a68",
+    "slug": "privatumas",
+    "revisionHash": "d23fce299fe453e2b46a0e55b8739012e4fe6341be0374a2f3ee5df631a03045",
+    "bodyBlocks": 15
+  },
+  "sources": [
+    {
+      "path": "C:/Core/promedical-public-20261009/components/niche/promedical-inquiry.tsx",
+      "sha256": "60d489ae54e2f7ae76e2369fb58c2e3cbb79274fe5b91977487c969944c4c13b"
+    },
+    {
+      "path": "C:/Core/promedical-public-20261009/components/niche/interest-tracking.tsx",
+      "sha256": "b23cdfb3003620924e8a69c6982b8e330546ed396f5cdd89e323ff78fdd54a4a"
+    },
+    {
+      "path": "C:/Core/promedical-public-20261009/app/niche/[siteId]/lead/route.ts",
+      "sha256": "d6e0ad365126c0d3d19395d227f96b34e7a69fdbe2bc4e96d42c36057da3c5de"
+    },
+    {
+      "path": "C:/Core/promedical-public-20261009/app/niche/[siteId]/interest/route.ts",
+      "sha256": "04d2507681f80f19cefed81115c55697ca1c0e819a782629334e8942f651b78d"
+    },
+    {
+      "path": "C:/Core/promedical-public-20261009/lib/niche-mail.ts",
+      "sha256": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c"
+    },
+    {
+      "path": "C:/Core/promedical-public-20261009/lib/niche-network.ts",
+      "sha256": "57b468e47e7aad18e023c2e7e37142348e9d28ee6dcce6e634beecb84537ce14"
+    },
+    {
+      "path": "C:/Core/promedical-public-20261009/drizzle/0004_niche_leads.sql",
+      "sha256": "148c632d712964c533c5cda199438e3af51e634a4b060683cfad6bc444c70777"
+    },
+    {
+      "path": "C:/Core/promedical-public-20261009/drizzle/0005_niche_interest_daily.sql",
+      "sha256": "237c461976b66dfb6b9ff181a242f13c275d739cc32cc28391e6c788b2610e2e"
+    }
+  ],
+  "preview": {
+    "url": "http://127.0.0.1:4387/preview/promedical/fbecd4f2-ddef-4f28-b12a-97d2da359a68",
+    "status": 200,
+    "sha256": "9bea85a311b09d8aa134d3067d826dff2e68e5a5a1b1a9b12e3b23898f174551",
+    "containsLocalStorageText": true,
+    "containsCounterText": true
+  },
+  "scope": "Read-only code and exact studio preview review; no approval, mutation, delivery test or deployment.",
+  "publicChangesApplied": false
+}

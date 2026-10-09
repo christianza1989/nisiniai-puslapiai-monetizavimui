@@ -1,0 +1,15 @@
+# Patikrų radiniai ir jų patvirtinimas
+
+2026-10-09. Originalūs rezultatai išsaugomi; pataisa nepaverčia ankstesnio FAIL į istorinio PASS. Testų kontaktai ir turinys sintetiniai, ne klientų paklausa.
+
+- Public core `npm run test:core`:54/54PASS,7267,8908ms. Hash/date/revocation/cross-host projection, V1/V2, schema/author/dates/discovery ir SMTP protokolo fixture patikros. Tai nėra realaus inbox įrodymas.
+- Studio media/import/metadata/editorial-loader:10/10PASS,3970,5811ms; [MEDIA-BENCHMARK.md](MEDIA-BENCHMARK.md).
+- Studio workflow/network po scoped approval snapshot pataisos:10/10PASS,3591,4327ms; [APPROVAL-BENCHMARK.md](APPROVAL-BENCHMARK.md). Naujas domenas tarp partijų turi būti iš naujo patikrintas, nepavykusi partija išsaugo visas ankstesnes versijas.
+- Pilna Studio `node --test test/*.test.mjs` patikra, vykstant daug atminties naudojančiam Vite build:47testai,44PASS/3FAIL. Dvi generatoriaus bylos pasiekė30s timeout; V1 pariteto testas klaidingai tikėjosi fiksuotų9paketų, nors registre10. Originalus log lieka private `content-studio/tmp/promedical-studio-tests.log`.
+- Pariteto pataisa lygina tikrus dabartinius V1 package failus su compiled registry ir kiekvieno puslapio kanoniniu hash; ne tik pakeičia skaičių9į10. Įgalina aiškų `STUDIO_PUBLIC_CORE_DIR`. Faktinis selected companion `promedical-public-20261009`:5/5V2/parity/import/private-HTTPtestaiPASS29275,1004ms. Validator/schema/hash nekeičiami.
+- Generator-policy atskirai po build:2/2PASS19927,8955ms;27juodraščiai su reikiama peržiūra ir savaitinis horizontas. Deadline ir elgesio assertions nesumažinti. Private recheck log išsaugotas. Galutinis47unikalių Studio atvejų įrodymas yra pradinis44PASS ir konkrečių3FAIL patvirtinimo run; neteigiame, kad pradinis bendras run buvo žalias.
+- Workflow testo ankstesnio default companion importuoti `lib/niche-links.mjs` ir `scripts/content-package-core.mjs` baitai patikrinti lygūs fetched/main own companion. SHA atitinkamai `29d8ae699f7ee715718d31791fa1f0189dd47fa50f0fd270d9477b364c927b35` ir `bbe9a40d5fd36efeef5153f6f2e2ef41aea3f2e61d211156fe5765c82452592d`. Pariteto recheck tiesiogiai taiko own fresh companion.
+- Scoped Promedical TSX lint ir TypeScript `npx tsc --noEmit`:PASS. Bendras `app/layout.tsx` turi vieną žinomą `no-css-tags` warning dėl tik Promedical hostui pridedamo vietinio font stylesheet;0errors. Warning nėra WCAG ar performance PASS.
+- Final build:10approved packages, Vite8.0.13/vinext1.0.0-beta.5/Wrangler4.92.0; baigtas. Esamas nepalaikomos `next.config.webpack` parinkties ir kitų svetainių vienodo CSS filename perspėjimas lieka užfiksuotas, nevadinamas testų klaida ar automatiškai taisomu Promedical defektu. Kitų9paketų exact JSON struktūra išliko lygi origin/main.
+
+Package SHA-256 `32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6`;1 856pages/3 598assets,9 809 707baitų. Local production Worker binds tik DB/ASSETS ir NICHE_DEV_SITE_ID=promedical. Live promedical.lt, production DNS/DB/mail nekeičiami. Final HTTP/browser/performance rezultatai yra VERIFICATION.md ir SITE_COMPLETION.json, ne šioje unit test suvestinėje.

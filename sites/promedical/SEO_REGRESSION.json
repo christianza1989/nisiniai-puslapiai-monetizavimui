@@ -1,0 +1,68 @@
+{
+  "testedAt": "2026-10-09T17:27:17.446Z",
+  "state": "FAIL",
+  "command": "SEO_SMOKE_SITE_ID=<each compiled site> SEO_SMOKE_BASE_URL=http://127.0.0.1:8787 node tests/seo-core-smoke.mjs",
+  "environment": "local production Worker with each canonical Host header",
+  "observations": [
+    {
+      "siteId": "akmenas",
+      "pages": 11,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: akmenas, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "auksarankiams",
+      "pages": 13,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: auksarankiams, 13 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "pages": 11,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: autoelektrikaivilniuje, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "pages": 11,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: fasadopastoliai, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "greitossvetaines",
+      "pages": 7,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: greitossvetaines, 7 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "laiptucentras",
+      "pages": 11,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: laiptucentras, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "pages": 12,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: miniekskavatoriai, 12 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "promedical",
+      "pages": 1856,
+      "exitCode": 1,
+      "output": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: read ECONNRESET\r\n    at TCP.onStreamRead (node:internal/stream_base_commons:216:20) {\r\n  errno: -4077,\r\n  code: 'ECONNRESET',\r\n  syscall: 'read'\r\n}\r\n\r\nNode.js v24.21.0"
+    },
+    {
+      "siteId": "roletaiklaipedoje",
+      "pages": 9,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: roletaiklaipedoje, 9 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "pages": 11,
+      "exitCode": 0,
+      "output": "SEO core smoke passed: traktoriupadangos, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404."
+    }
+  ]
+}

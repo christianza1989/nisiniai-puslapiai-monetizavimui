@@ -11,3 +11,5 @@ Didelio katalogo papildoma pastaba: canonical vieno įrašo mutate/review perska
 Schema, hash, projection, privatumo/pašto/DNS launch vartai nesumažinti; svetimi procesai/checkout neliesti. Baigtas source pakeitimas ir live domeno veikimas atskiri.
 
 Approval IO finding: upgrade-19b3ea63-c1bb-4af8-98f8-541280a5ebf0. See APPROVAL-BENCHMARK.md; scope model.mjs plus focused workflow fixture, local10/10 PASS; reviewed PR/main/adoption still pending.
+
+Parity fixture finding: upgrade-8b0a95d5-ff38-4655-9e2f-bd684605b3f7; current V1 source packages are compared to compiled registry, fixed nine-site assumption removed. Actual5/5 PASS, no schema/hash change. Initial47-test run44PASS/3FAIL retained; two generator timeout cases confirmed2/2 after build completion (19927.8955ms), not counted as demand or deployment.

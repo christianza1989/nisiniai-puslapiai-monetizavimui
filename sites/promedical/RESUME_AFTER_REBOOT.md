@@ -1,0 +1,49 @@
+# Saugus sustabdymas prieš PC perkrovimą
+
+2026-10-09. Savininkas aiškiai paprašė sustabdyti darbą saugioje vietoje. Darbas PAUSED pagal jo pavedimą; tai nėra svetainės priėmimas ar paskelbimas. Jokių kitų užduočių / automacijų nepradėti. Tęsti tik savininkui paprašius.
+
+## Pavedimas ir kontaktai
+
+Pastatyti `promedical.lt` visą atstovaujamo Klaro medicinos produktų katalogą pagal `klaro.cz`, panašus žalias/baltas stilius Lietuvos ligoninėms / poliklinikoms / slaugos įstaigoms. Originalūs lietuviški tekstai pagal techninius faktus. Patvirtinti `sales@promedical.lt`, `+370 686 88369`; viešai tik „Promedical“, juridinio pavadinimo nereikia. Kontaktų daugiau neklausti. Dabartinis live WordPress/Signotec puslapis nepakeistas; production / DNS / SMTP / realus INBOX neprijungti.
+
+## Išsaugotos darbo vietos
+
+- Core `C:/Core/promedical-core-20261009`, šaka `codex/promedical-20261009`. Prieš checkpoint HEAD `671d19a` (initial site ir trys siauri bendro core fixes jau atskiruose commit).
+- Public `C:/Core/promedical-public-20261009`, ta pati šaka, prieš checkpoint HEAD `1e1a16a`. Pilnas renderer / duomenys / vaizdai išsaugoti diske.
+- Šaltinio subagentų katalogas `C:/Core/promedical-klaro-catalog-20261009/data/klaro-catalog/normalized-catalogue-final-v2.json`, nekintamas SHA `00d2538197a45164b5472e2cf1a4d72b2cfa862d09c3cad50debc4f37fd38cf3`. Raw privatūs failai lieka jų darbo vietoje. Kiti completed subagentai `promedical-editorial-20261009` ir Lithuanian facts; naujų agentų nereikia.
+- Private Studio root `content-studio/data`, pilni aktualūs review/approval. Release `content-studio/output/releases/promedical/5246119e-10eb-4fde-8e09-492b28ad07dc/content-package.json` ir manifest.
+- Galutinio approved paketo SHA `32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6`, 9 809 707 baitai, 1 856 puslapiai / 3 598 WebP assets. Public import/compile jau atliktas. 1 408 realūs produktai / 437 kategorijos / 11 support; 34 kategorijų šaknys (27 pagrindinės + 7 papildomos).
+
+Prieš resuming canonical core `scripts/git-freshness.mjs --phase continue --companion C:/Core/promedical-public-20261009`; prieš delivery `--phase handoff`. Sėkmingai fetchinti abu origin/main ir patikrinti ancestry; jei main pasistūmėjo, išsaugoti savo commit, integruoti ir perskaityti aktualius AGENTS/kontraktus. Jokio kito checkout reset/stash ar main force push. Paskutinis gate 17:05 UTC: core main d4ea8bf7384b70c4ea62a344001e3f8158812c56, companion main d0fd6b7d296303bfcaafadc4071945e675a72b96.
+
+## Tikri rezultatai ir neužbaigtos patikros
+
+Visi 1 408 produktų faktai / variantai / aprašymai patikrinti prieš frozen source, visų 1 856 private Studio preview HTTP200 įrodymas išsaugotas private katalogo-review JSON. Canonical `recordEditorialReview` ir `approveReviewedBatch` iki200, jokio rankinio publishedRevision. 54/54 public core unit, 10 media, 10 workflow/network, 5 parity/V2/private HTTP ir 2 generator recheck PASS. Pilnas Studio run istorijoje 44/47 PASS su dviem load timeout ir fiksuoto9count klaida; konkretūs trys FAIL atskirai pakartoti sėkmingai. [TEST_FINDINGS.md](TEST_FINDINGS.md).
+
+Galutinis `npm run build` po image sizes / Brand label pataisos PASS; ignored `.sites-runtime/promedical-final-build.log`. Ankstesnis bandymas failed EPERM dėl savo veikiančio Wrangler `dist` užrakto. Prieš kitą rebuild sustabdyti tik savo identifikuotą serverį; jokio build kartu su Wrangler. Vite8.0.13 / vinext1.0.0-beta.5 / Wrangler4.92.0; priklausomybių neupgradinti.
+
+Tikras katalogo HTTP smoke **PASS** 17:18:55 UTC: visi 59 puslapiai, tiksliai 1 408 unikalūs modeliai, last16, exact SKU paieška, empty paieška, p999999 clamp, nested category ir equivalent query filter, abu PLV150 URL. [CATALOGUE_HTTP.json](CATALOGUE_HTTP.json). Dvi ankstesnės testų prielaidos (SSR comments tarp teksto ir neteisingas slashdepth) taisytos teste, ne programoje.
+
+Tikras final Lighthouse run 17:17:31 UTC per readonly canonical-host proxy8790: performance93 / accessibility100 / best-practices100 / SEO100; LCP2.7s / CLS0 / TBT110ms. CPU calibration warning išsaugotas. Baseline96 /100 /100 /100 yra `performance/home-baseline.report.*`, dabartinis `home.report.*`. Kortelių image waste sumažėjo nuo ~261KiB iki55 492baitų. **Lieka unscored serious label-content-name-mismatch**: matomas `promedical Įranga medicinos įstaigoms`, aria label su tarpiniais brūkšniais neuždaro exact visible-string matching. Pataisa DAR NEPADARYTA: paprasčiausia pašalinti perteklinį Brand aria-label ir palikti natūralų matomą tekstą, SVG jau aria-hidden. Tada scoped lint/TS, rebuild, tikras pakartotinis LH/brand browser patvirtinimas. Nekeisti approved package dėl renderer aria atributo.
+
+Browser keturi actual pločiai1440/768/390/320: pradžia be overflow, matomos realios foto įkeltos; screenshotai `screenshots/home-*-verification.jpg`. H1 naudoja Figtree (body Arial yra outer app fallback, ne klaida). Actual du PLV150 modeliai su3/2 kiekiais išliko atskiri, standartinio kiekis pakeistas4 ir pašalintas tik sale variantas; forma native empty validation fokusavo name, consent required. Šie veiksmai patvirtinti UI. Screenshot `inquiry-local-saved.jpg` **yra klaidos būsenos, ne success proof** – failo pavadinimas klaidinantis, pervadinti!
+
+**Browser marked form FAIL / nepatvirtinta:** synthetic `qa-promedical-final@example.invalid`, marker `QA-PROMEDICAL-FINAL-20261009`, PLV1504vnt. React URLSearchParams fetch onsubmit parodė „Ryšys nutrūko...“; tikras SQLite SELECT pagal email grąžino [] (neįrašyta). Nežinome ar browser/runtime/network, ar app priežastis. Neišgalvoti success. Client kodas jau siunčia URLSearchParams, ne multipart. Native server HTTP integration ankstesniame production build PASS (vietinis D1, ne email). Reikia izoliuotai pakartoti native HTTP testą ir browser submission, sugauti own server errors / diagnostiką. Galimas paprastas progressive native form submission: onSubmit tik validuoti ir prieš browser default serialization į message lauką įrašyti combined selection+text; standartinis serveris priima URLencoded. Tai yra svarstymas, **jokio tokio pakeitimo dar nėra**. Nepradėti didesnio backend scope nepamačius priežasties. Nuoroda mailto veikia.
+
+Keli greiti press po goto buvo per anksti / jų immediate snapshot nerodė main focus ar details open; nepripažinti šio run keyboard PASS. Ankstesniame prototype focus/skip įrodymai yra, bet final reikia normalaus ready UI ir actual state patvirtinimo. Browser `Ctrl++` nepakeitė tikro zoom/DPR/text – actual200%UNVERIFIED, taip ir turi likti R2/S2. Native apps šiame įrankyje disabled. Nefalsifikuoti zoom viewport/DPR.
+
+320px cart gido DOM pilnas ~5481simboliai /5657px article, šaltiniai /h2 / tikraZVfoto; full-page screenshot nepavyko „Unable to capture screenshot“, po to vienas CDP action deadline. Guide-cart-320.jpg viewport išsaugotas. Likę ISO/procurement final browser pixels, long24spec48-20-va, catalogue/mobile/menu/focus/source/footer dar patikrinti. Ankstesnė3gidų actual text review atlikta; ISO full release foto pataisyta įZS1211.
+
+SEO regression job start prieš stop: canonical `tests/seo-core-smoke.mjs` kiekvienam10compiled site, runner ignored `.sites-runtime/promedical-seo-regression.mjs`. Sustabdžius savo serverį pagal savininko pavedimą, galutinė išvestis: **9kitųsitePASS, Promedical run nutrauktas ECONNRESET**. `SEO_REGRESSION.json` fiksuoja FAIL šio nutraukimo aplinkoje, ne programos defekto įrodymą. Reikia aktualaus Promedical recheck po reboot/finalfix. Neperrašyti partialrun kaip PASS.
+
+Canonical completion verifier bandymas per locked failed rebuild baigėsi „fetch failed“ be report, **nėra valid SITE_RENDERED/SITE_COMPLETION**. Reikia po final build pakartoti all1856HTML+3598assets `verify-site-completion.mjs --package <publicpackage> --origin http://127.0.0.1:8787/ --article-index gidai --core <public> --render-only --output sites/promedical/SITE_RENDERED.json`. Tada užpildyti85A–Z specifiniais tikrais įrodymais ir strict `--audit ... --output SITE_COMPLETION.json`, taip pat scorer `--require-local`. R2/S2/U2/U3/W1/W2/W4 ir visi production/operations gaps liekaUNVERIFIED; strict rezultatas negali būti neteisingai išvadintas10/10/local-ready.
+
+## Likęs perdavimas
+
+Užbaigti browser/form/performance ir visų niche regresijas; užrašyti VERIFICATION / ACCESSIBILITY / PHASE-1-AUDIT / actual versions. Aktualūs docs DESIGΝ, CONTENT_READINESS ir siteoverview jau diske, kai kurios nuorodos į dar nesukurtus verification report failus tyčia neužbaigtos. Actual source hashes ir screenshotai turi sutapti su patikrintu final build. Neclaiminti ghost report.
+
+Scoped safety prieš Git: tik source / patvirtintas package / responsive media / sanitized docs ir screenshots. NESTAGE `.openai/hosting.json`, `.sites-runtime`, `.wrangler`, Studio data/output/tmp, raw originalus/credentials/DB/klientų/testų įrašus. Ankstesnis import backup perkeltas į ignored `.sites-runtime/promedical-content-backups`. Git author per-command `Codex <codex@local.invalid>`, ne global change. Core approved source artefaktai lieka private ir atkurti po reboot yra būtini.
+
+Issues core52 ir public19 yra sukurtos. Portable official gh ir credential bridge private `content-studio/tmp/github-cli.mjs`; token tik child memory, neprintinti. **PR dar nesukurti, šakos dar nepastumtos** iki stop. Kai baigta, push ownbranches, draftPR su --body-file, attach abu PR per Codex artifact; tada actual PR event trims core journal entries (media upgrade-adcf564b..., approval upgrade-19b3ea63..., parity upgrade-8b0a95d5...), commit/push own journal followup ir WORKSTREAMS closure. Jokio main merge /deploy.
+
+Po perkrovimo senų exec sessionIDs nenaudoti; pirmiausia nustatyti portus/procesus ir paleisti tik savo local serverius. Local runtime DB schema migrations0004/0005 jau atliktos. `.sites-runtime/promedical-local-d1.json` yra local-only config. Production DB/SMTP neišgalvoti. Paklausos vertinimas liekaUNMEASURED.

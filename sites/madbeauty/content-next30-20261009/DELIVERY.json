@@ -1,0 +1,32 @@
+{
+  "preparedAt": "2026-10-09T19:28:56.267Z",
+  "siteId": "madbeauty",
+  "additionalWritten": 30,
+  "originalImages": 30,
+  "approvedAdditional": 19,
+  "specialistPending": [
+    "AN-gidas",
+    "BL-gidas",
+    "DP-gidas",
+    "DZ-gidas",
+    "GL-gidas",
+    "MN-gidas",
+    "NP-gidas",
+    "PD-gidas",
+    "PP-gidas",
+    "AN-korekcija-ar-dazymas",
+    "BR-kirpimas-modeliavimas"
+  ],
+  "release": {
+    "path": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next30-20261009\\output\\releases\\madbeauty\\0353894f-0a0c-47cf-86ce-cc7358429eb9\\content-package.json",
+    "pages": 58,
+    "assets": 275,
+    "manifestPath": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next30-20261009\\output\\releases\\madbeauty\\0353894f-0a0c-47cf-86ce-cc7358429eb9\\release-manifest.json",
+    "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+    "state": "exported-not-deployed"
+  },
+  "immutablePackage": "release/content-package.json",
+  "state": "EXPORTED_NOT_DEPLOYED",
+  "productionAcceptance": null,
+  "next": "Admit this exact immutable package in actual Cloudflare consumer, preserving incumbent runtime/storage/mail/DNS; expert-gated11 pages remain private."
+}

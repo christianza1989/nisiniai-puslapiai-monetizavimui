@@ -1,0 +1,505 @@
+{
+  "checkedAt": "2026-10-09T19:28:52.090Z",
+  "scope": "Real agent editorial review, not fabricated procedure-specialist credentials",
+  "pages": [
+    {
+      "planId": "AN-gidas",
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "literalRequiredScope": "Antakių specialisto terminų ir eigos review",
+      "originalChecks": [
+        "Prieš tvirtinant juodraštį reikalinga antakių specialisto peržiūra: patikrinti korekcijos, dažymo ir laminavimo terminų bei eigos aprašymą, ypač laminavimo priskyrimą plaukelių krypties ir suformavimo tikslui. Tokia peržiūra dar neatlikta.",
+        "Jei paliekami Treatwell meniu pavyzdžiai, prieš patvirtinimą patikrinti, ar teikėjų puslapiuose vis dar matomi aprašyti korekcijos, dažymo ir laminavimo deriniai; išlaikyti aiškią datą ir individualaus pavyzdžio ribą.",
+        "Pridėti šiam gidui skirtą realiai sugeneruotą, importuotą ir peržiūrėtą iliustraciją; šiuo metu v2Context.attachedMedia tuščias."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Antakių specialisto terminų ir eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "b567d5b75bdb2697eb1f3a30a0652f49b3c543dbeaed2e78077e87ac63a6363f",
+      "checkedAt": "2026-10-09T19:28:44.926Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "BL-gidas",
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "literalRequiredScope": "Blakstienų specialisto eigos review",
+      "originalChecks": [
+        "Prieš tvirtinant tekstą reikalinga blakstienų specialisto peržiūra dėl procedūrų eigos ir techninių formuluočių; ši peržiūra neatlikta.",
+        "Šiam gidui dar nėra sukurta ir prie puslapio pridėta teminė iliustracija. Reikia sugeneruoti, importuoti ir patikrinti tikruosius pikselius, mobilų kadravimą, alternatyvųjį tekstą ir teises prieš redakcinį patvirtinimą."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Blakstienų specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "41848c41ed08d6d1af79faaa7c178562617bcea804615bcfed496b78c258d0f3",
+      "checkedAt": "2026-10-09T19:28:45.222Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "BR-gidas",
+      "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+      "literalRequiredScope": "Nedubliuoti dažymo/veido/depi tekstų vien pagal lytį",
+      "originalChecks": [
+        "Šiam gidui skirtas vaizdas dar nesukurtas ir neprisegtas. Prieš tvirtinant sugeneruoti teminę iliustraciją, importuoti per bendrą medijos kelią ir patikrinti faktinius pikselius, alt tekstą bei mobilų kadravimą."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Originalus requiredScope yra nedubliuoti tekstų pagal lytį; tai redakcinė, ne neįvykdyta kvalifikuoto meistro peržiūra.",
+      "verifiedClaims": "S56 pagrindžia tik matomus barzdos darbų pavadinimus. Tekstas nepatvirtina dabartinio salono prieinamumo, kainos, rezervacijos ar klinikinio tinkamumo.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "b382787b0531e737f5dcd085bc302ace3605f237dbbbb52827a87cc48cba9727",
+      "checkedAt": "2026-10-09T19:28:45.479Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "DP-gidas",
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "literalRequiredScope": "Depiliacijos specialisto eigos review",
+      "originalChecks": [
+        "Prieš tvirtinant juodraštį, depiliacijos specialistas turi peržiūrėti procedūros eigos, komforto ir higienos formuluotes; ši peržiūra dar neatlikta.",
+        "Šiam gidui dar nesukurta ir nepriskirta teminė iliustracija. Prieš patvirtinimą reikia sugeneruoti, peržiūrėti tikrus vaizdo pikselius ir mobilų kadravimą, importuoti responsive WebP variantus ir patikrinti alt tekstą."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Depiliacijos specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "ab65f4cde32fa8f615ac36e79d42744df8ce2279cd7ca0577ceeccc913e944fe",
+      "checkedAt": "2026-10-09T19:28:45.799Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "DZ-gidas",
+      "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+      "literalRequiredScope": "Dažymo specialisto ir konkrečių sistemų review",
+      "originalChecks": [
+        "Dažymo specialisto peržiūra neatlikta. Prieš draft approval patikrinti techninius teiginius apie dažymo, šviesinimo, sruogų ir tonavimo apimtį bei tai, kaip ankstesnė dažymo istorija gali veikti individualų planą. Nepridėti dažų formulių, oksidantų ar veikimo laiko instrukcijų.",
+        "Salonų meniu pavyzdžiai peržiūrėti 2026-10-09. Prieš approval dar kartą patikrinti, ar nurodytos meniu kategorijos vis dar matomos; jos pateiktos tik kaip datuoti konkrečių teikėjų pavyzdžiai.",
+        "Teminė iliustracija dar nepridėta. Sugeneruoti ir importuoti atskirą vaizdą, patikrinti tikrus pikselius, mobilų crop bei alt tekstą ir prijungti jį prieš approval."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Dažymo specialisto ir konkrečių sistemų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "d9cb6084186560a4804bcbc46b332099beac157e6b0fbbe80d990bc899011894",
+      "checkedAt": "2026-10-09T19:28:46.044Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "GL-gidas",
+      "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+      "literalRequiredScope": "Konkrečios sistemos gamintojo protokolas ir meistro peržiūra",
+      "originalChecks": [
+        "Prieš redakcinį patvirtinimą reikia gauti konkrečios naudojamos sistemos gamintojo instrukcijas ir kvalifikuoto nagų priežiūros specialisto peržiūrą. Tekste sąmoningai nepateikiama universali sluoksnių seka, kietinimo sąlygos ar nuėmimo protokolas; šis peržiūros vartas lieka atviras.",
+        "Teminė dangos iliustracija dar turi būti sugeneruota ir patikrinta: dabartinio redakcinio kadro alt aprašo trumpus vyšninės spalvos nagus, bet ne paaiškinamąjį dangos modelį. Prieš patvirtinimą patikrinti tikrus pikselius, mobilų kadravimą ir pagal vaizdą parinktą alt tekstą, tada importuoti per bendrą responsive medijos kelią."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečios sistemos gamintojo protokolas ir meistro peržiūra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "925ec1450154ff61b946c1863afce5486c32b16438436831d8cb3202ca9238f0",
+      "checkedAt": "2026-10-09T19:28:46.282Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "MN-gidas",
+      "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+      "literalRequiredScope": "Manikiūro specialisto patikrintas eigos aprašymas",
+      "originalChecks": [
+        "Prieš juodraščio patvirtinimą reikalinga manikiūro specialisto peržiūra, ypač nagų ir odelių tvarkymo bei vizito eigos aprašo; šiame tekste pateikta tik sprendimų seka, ne techninis protokolas.",
+        "Šiam gidui nepriskirtas patikrintas teminis vaizdas. Pagal mediaBrief reikia sugeneruoti, importuoti ir peržiūrėti tikrą failą bei jo mobilų kadravimą prieš patvirtinimą."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Manikiūro specialisto patikrintas eigos aprašymas“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "2dde51544d13a655a5bc21ec7606a993eb12f426823906b5d5feba5c84d69080",
+      "checkedAt": "2026-10-09T19:28:46.528Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "NP-gidas",
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "literalRequiredScope": "Sistemų dokumentai ir nagų specialisto review",
+      "originalChecks": [
+        "Prieš juodraščio patvirtinimą reikia peržiūrėti taikytinų priauginimo sistemų ar produktų dokumentus ir gauti nagų specialisto peržiūrą dėl konstrukcijos, stiprinimo, korekcijos ir nuėmimo teiginių. Šiame kontekste tokia peržiūra neatlikta; gauti tik S01 ir S07 šaltinių snapshotai."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Sistemų dokumentai ir nagų specialisto review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "3896c1feff1066743e741cee9cf29cdc72fcbd0fe9907637c6da35b9a211294e",
+      "checkedAt": "2026-10-09T19:28:46.778Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "PD-gidas",
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "literalRequiredScope": "Pedikiūro specialisto eigos patikra",
+      "originalChecks": [
+        "Prieš patvirtinimą reikalinga pedikiūro specialisto eigos patikra: patikrinti aprašytą odos ir nagų darbų atskyrimą bei vyriško pedikiūro skiltį. Tokia specialisto peržiūra dar neatlikta.",
+        "Prieš patvirtinimą sugeneruoti ir importuoti šiam gidui skirtą vaizdą, peržiūrėti tikruosius pikselius ir mobilų kadravimą bei susieti tinkamą responsive media šeimą. Šiuo metu vaizdas nepridėtas.",
+        "Vieno salono kainos ir trukmės pateiktos tik kaip 2026 m. spalio 9 d. patikrintas pavyzdys; jos nėra rinkos vidurkis, nacionalinis kainynas ar Madbeauty pasiūlymas."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Pedikiūro specialisto eigos patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "a4b2f9a0dda50532bbaf0538c1881cbba1632945167ff60b7c7919752108108f",
+      "checkedAt": "2026-10-09T19:28:47.016Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "PP-gidas",
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "literalRequiredScope": "Konkrečių sistemų dokumentai ir kirpėjo review",
+      "originalChecks": [
+        "Prieš patvirtinant draftą reikia konkrečių naudojamų produktų ar sistemų dokumentų ir kirpėjo, susipažinusio su tais protokolais, peržiūros. Tokia peržiūra neatlikta; gide nepatvirtinami konkretūs protokolai, kainos, trukmės ar individualūs rezultatai."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečių sistemų dokumentai ir kirpėjo review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "8917b30c5a33d36372a1da46651096efc5b78c7920e671d362db0ae6d1ef565a",
+      "checkedAt": "2026-10-09T19:28:47.263Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "B-ginčas",
+      "pageId": "ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6",
+      "literalRequiredScope": "S19 aktuali LT ginčų tvarka",
+      "originalChecks": [
+        "Prieš juodraščio patvirtinimą planningBrief numato aktualios Lietuvos vartojimo ginčų tvarkos specialisto peržiūrą. VVTAT šaltinis patikrintas 2026-10-09, tačiau nurodyta kvalifikuota specialisto peržiūra dar neatlikta; ją atlikti prieš patvirtinant juodraštį."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Literal brief reikalauja S19 aktualios LT ginčų tvarkos, ne teisininko peržiūros. Modelio teiginys apie privalomą kvalifikuotą specialistą buvo per platus. Atlikta oficialaus dokumento ir bendros informacijos peržiūra; individualus teisinis vertinimas neteikiamas.",
+      "verifiedClaims": "S19 aktualus VVTAT paaiškinimas patikrintas2026-10-09: pirma raštu teikėjui,14dienų nuo gavimo, po neatsakymo arba atsisakymo VVTAT. Sprendimo rezultatas ar automatinis grąžinimas negarantuojami.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "19ec777792f935328aaa161d8c03e746a08e70409fb5bb5441b0c71f1752e8ce",
+      "checkedAt": "2026-10-09T19:28:47.506Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "B-meistrui-grafikas",
+      "pageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+      "literalRequiredScope": "Nenaudoti privačių klientų įrašų; tikrai veikiantys grafiko laukai",
+      "originalChecks": [
+        "Prieš patvirtinant tekstą patikrinti, ar Madbeauty meistro kalendoriuje iš tiesų veikia paslaugos trukmės, papildomų komponentų ir laiko rezervo laukai. Pateikta informacija jų nepatvirtina. Tekstas aprašo savarankišką anoniminio suvestinės žurnalo ruošinį, o ne veikiančią platformos funkciją."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Sąlyginė platformos grafiko laukų patikra netaikoma, nes jų buvimas ar veikimas neteigiamas. Funkcijos nėra išgalvotai patvirtintos.",
+      "verifiedClaims": "Darbo organizavimo idėja, ne realaus Madbeauty kalendoriaus laukų aprašas. Nesiūloma rinkti vardų, kontaktų ar individualių vizitų istorijų; duomenų anonimiškumo teisinė garantija nesuteikiama.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "2ff37b0eda100f1f1f0d9325ac1c8e87338dcfa58c65a112f5feee7f460f765f",
+      "checkedAt": "2026-10-09T19:28:47.736Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "B-meistrui-matavimas",
+      "pageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+      "literalRequiredScope": "Tikro Madbeauty matavimo galimybės; rodikliai dar neišmatuoti",
+      "originalChecks": [
+        "Prieš redakcinį patvirtinimą peržiūrėti prijungtos iliustracijos faktinius pikselius ir mobilų kadravimą; įsitikinti, kad ji vaizduoja tik redakcinę suvestinės temą, o ne tikrus platformos ar teikėjo duomenis. Šiame rašymo etape pikselių patikra neatlikta."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Tikro platformos matavimo vartas netaikomas šiame savarankiškos suvestinės variante, nes realaus rinkimo funkcijos ir rodikliai neteigiami.",
+      "verifiedClaims": "8/50=16%,4/8=50%. Pavyzdys aiškiai išgalvotas paaiškinimui; nėra Madbeauty statistikos ar backend matavimo pažadų. Nežinoma nesuplakama su nuliu.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "c48cab8ba32662ec03569bb3128e5236166d8dcfe1f7c1a6029c42b2bbd8bb1b",
+      "checkedAt": "2026-10-09T19:28:47.977Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "B-meistrui-meniu",
+      "pageId": "10660b33-7a51-429f-80c0-6814e8d36cc6",
+      "literalRequiredScope": "Tikros Madbeauty redagavimo funkcijos ir platformos sąlygos",
+      "originalChecks": [
+        "Prieš patvirtinant tekstą sutikrinti tikrą Madbeauty meistro meniu redagavimo funkciją ir platformos sąlygas: ar leidžiama nurodyti variantus, pasirenkamus darbus, kainos paaiškinimą ir keitimo ar avanso informaciją. Juodraštyje neteigiama, kad platforma šiuo metu turi šiuos laukus ar palaiko jų redagavimą."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Platformos redagavimo laukų buvimas neteigiamas; sąlyginis jų patikros reikalavimas netaikomas. Tikro teikėjo pasiūlymas nėra išgalvotas.",
+      "verifiedClaims": "Ruošiniai nepriskirti realiam teikėjui, programos redagavimo laukams ar fiksuotam avansui. VVTAT14dienų terminas nurodomas nuo kreipimosi gavimo; NVSC bendras higienos kontekstas ne klinikinis protokolas.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "6bd4c1cf52e30aadfb4bf6d73f791f86ba9cbb4a71adae11397bbb412756877d",
+      "checkedAt": "2026-10-09T19:28:48.223Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "B-salygos",
+      "pageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+      "literalRequiredScope": "S19 ir tikros platformos/teikėjo sąlygos; nėra visuotinio grąžinimo pažado",
+      "originalChecks": [
+        "Nėra pateiktų Madbeauty ar konkretaus teikėjo avanso, keitimo ir atšaukimo sąlygų. Tekstas jų neapibrėžia ir nežada konkretaus pinigų grąžinimo; prieš patvirtinant tekstą kaip informaciją apie platformos taisykles, būtina įtraukti ir patikrinti faktines sąlygas.",
+        "Šiam gidui nepriskirtas teminis vaizdas. Prieš įprastą redakcinį patvirtinimą reikia sugeneruoti atskirą iliustraciją, importuoti jos responsive WebP variantus ir peržiūrėti faktinius pikselius bei mobilų kadravimą."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Gidas moko skaityti konkretų susitarimą; jis nėra platformos avanso politikos dokumentas. Nežinomos sąlygos išlieka nežinomos, nereikia jų išgalvotai patvirtinti.",
+      "verifiedClaims": "S19 VVTAT terminas patvirtintas nuo kreipimosi gavimo. Konkrečios Madbeauty ar teikėjo avanso sąlygos nežinomos ir nėra pristatomos kaip veikiančios.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "5c78e574bddf18c1feb2a05ad8ce1ff0bc4dca0a21f1c61d916e45ec36fbfc73",
+      "checkedAt": "2026-10-09T19:28:48.447Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "B-sauga",
+      "pageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+      "literalRequiredScope": "S11,S28,S29,S31 aktualumas",
+      "originalChecks": [
+        "PlanningBrief nurodyta specialistų peržiūra nebuvo atlikta. Prieš tvirtinant peržiūrai, kvalifikuotas paslaugų srities specialistas turi patikrinti, ar tiksliai atskirta grožio veiklos leidimo-higienos paso ir sveikatos paslaugos įstaigos bei specialisto licencijų apimtis.",
+        "S11, S28, S29 ir S31 šaltiniai patikrinti 2026-10-09. Prieš planuojamą publikavimą 2026-11-20 dar kartą patikrinti, ar jų nurodyti reikalavimai ir patikros nuorodos tebėra aktualūs.",
+        "VVTAT 14 dienų tvarka pateikta pagal šaltinį, peržiūrėtą 2026-10-09. Prieš patvirtinant tekstą patikrinti, ar terminas ir jo skaičiavimo sąlygos tebėra tiksliai aprašytos.",
+        "Prie teksto prijungtas esamas vaizdas bdce5aba-324a-49cc-ab8a-14217e8520ea. Šiame darbe jo pikseliai nebuvo peržiūrėti; prieš patvirtinimą patikrinti tikrą vaizdą, mobilų kadrą ir ar jis nekuria įspūdžio, kad vaizduojamas patikrintas teikėjas ar dokumentas."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Literal brief reikalauja4oficialių šaltinių aktualumo, ne specialistų akreditacijos. Modelio pridėta absoliuti specialistų peržiūra nėra literal reikalavimas. Atlikta dokumentų patikra; medicininė ar individuali teisinė klasifikacija neįtraukta.",
+      "verifiedClaims": "S11/S28/S29/S31 oficialūs dokumentai iš tiesų perskaityti. Bendras leidimo-higienos paso ir sveikatos įstaigos/specialisto licencijų apimties skirtumas remiasi institucijų paaiškinimais; individuali procedūrų klasifikacija ir Madbeauty teikėjų patikra neteigiamos.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "3c4b7a2015592a529fdfa43f76103d580f81a37cdff8fb758af31babb067f62a",
+      "checkedAt": "2026-10-09T19:28:48.689Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "AN-kaina-trukme",
+      "pageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+      "literalRequiredScope": "S03,S35 meniu perpatikrinti",
+      "originalChecks": [
+        "Prieš juodraščio patvirtinimą iš naujo patikrinti S03, S24 ir S35 meniu kainas, trukmes bei darbų sudėtį: straipsnyje pateikti skaičiai atspindi 2026-10-09 puslapių peržiūrą, o iki numatyto publikavimo datos pasiūlymai gali pasikeisti."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "2026-10-09 meniu iš tikrųjų perskaityti. Datuotas pavyzdys nepateikiamas kaip garantuota būsima kaina; publikavimo ir peržiūros datos atskirtos.",
+      "verifiedClaims": "S03 korekcija30min10Eur / su dažymu40min17Eur; S24 antakių laminavimo variantai50min32Eur /55min35Eur; S35 korekcija ir dažymas40min20Eur / su blakstienų dažymu50min26Eur. Tik datuoti teikėjų meniu, ne vidurkis.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "5fd44117ab84e376242c0267c3902e58de564fd650d6c664c691a32cc0082376",
+      "checkedAt": "2026-10-09T19:28:48.932Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "BL-kaina-trukme",
+      "pageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+      "literalRequiredScope": "S24,S35 perpatikrinti; ne LT vidurkis",
+      "originalChecks": [
+        "Prieš redakcinį patvirtinimą pakartotinai patikrinti S24 ir S03 meniu, nes nurodytos kainos ir trukmės užfiksuotos 2026-10-09, o planuojama publikavimo data yra 2026-11-22. Pasikeitusius įrašus atnaujinti pagal faktinę apimtį.",
+        "Techninė ar specialisto procedūrų peržiūra neatlikta. Tekstas nevertina metodų tinkamumo ar saugumo; jei tokie teiginiai būtų pridedami, reikėtų atitinkamų šaltinių ir kvalifikuotos peržiūros.",
+        "Prieš patvirtinimą peržiūrėti pridėtos iliustracijos tikrus pikselius, mobilų kadravimą ir alt tekstą; iliustracija nėra teikėjo darbo ar kliento rezultato įrodymas. Rengiant kitą teminį vaizdą, naudoti mediaBrief ir bendrą importavimo procesą."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Tik patikrintų meniu apimties palyginimas. Individualaus tinkamumo, techninio protokolo ir saugumo teiginiai neįtraukti, tad sąlyginė jų ekspertizė nėra atlikta ar reikalinga šioje redakcijoje.",
+      "verifiedClaims": "Pašalintos antakių50min32Eur/55min35Eur kainos. Teisingi S24 blakstienų70min40Eur,120min45Eur ir95min35Eur; S03 blakstienų50min30Eur / dažymas20min10Eur. LED/UV ir botox meniu etiketės nėra saugumo ar medicininės injekcijos įrodymas.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "8df1d917c8dd7a8bec5466d141230d5b825a624b134580a3b6c423b84db95c03",
+      "checkedAt": "2026-10-09T19:28:49.165Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "BR-kaina-trukme",
+      "pageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+      "literalRequiredScope": "Aktualūs LT meniu",
+      "originalChecks": [
+        "Kainos ir trukmės pavyzdžiai užfiksuoti 2026-10-09 peržiūrėtuose „Looks“ ir „Barzdaskučiai – Europa“ meniu. Prieš straipsnio patvirtinimą sutikrinti, ar šie įrašai tebėra matomi, nes meniu informacija gali keistis.",
+        "Prieš patvirtinimą atskirai peržiūrėti priskirtos iliustracijos faktinius pikselius, mobilų kadravimą ir alt tekstą; pateiktas mediaBrief nėra atliktos vaizdo patikros įrodymas."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Aktualūs meniu iš tikrųjų peržiūrėti; profesinio kirpimo protokolo šiame kainų palyginime nėra.",
+      "verifiedClaims": "S57 barzdos modeliavimas60min30Eur ir plaukai+barzda90min45Eur; S34 plaukai+barzda60min40Eur. Ne rinkos vidurkis, ne kokybės ar greičio reitingas. S56 naudojamas tik meniu terminų pavyzdžiui.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "cb140999bf9734769a704f99c756c8b69b1e1e5d7bf42c6fd4691429290514ac",
+      "checkedAt": "2026-10-09T19:28:49.410Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "DP-kaina-trukme",
+      "pageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+      "literalRequiredScope": "S55 patikrinti prieš tekstą; jokio vidurkio iš vieno meniu",
+      "originalChecks": [
+        "Prieš patvirtinant šią tikslią redakciją, atskirai atlikti revision-bound redakcinę peržiūrą; šis juodraščio parengimas nėra review įrašas ar approval.",
+        "Prieš patvirtinimą faktiškai apžiūrėti pridėtos iliustracijos e5525ba7-663c-48a0-b146-867ae15c4ba4 pikselius, mobilų crop, alt ir teisių informaciją. Pridėtas medijos įrašas savaime neįrodo šios peržiūros."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Antro meniu trūkumas išspręstas tikru S03 dokumentu, o ne išimtimi. Procedūros tinkamumas atskiram žmogui nevertinamas.",
+      "verifiedClaims": "S03 vaškas blauzdos30min25Eur, visos kojos60min40Eur; S55 atitinkamai45min25Eur ir60min40Eur. S51 AAD vienkartinio aplikatoriaus higiena; nėra individualios vaistų ar odos tinkamumo rekomendacijos.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "e6c2a33da04e56f629fea9784f789529a87b2cb6f6b8d45359b50ade1c205cdf",
+      "checkedAt": "2026-10-09T19:28:49.652Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "DZ-kaina-trukme",
+      "pageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+      "literalRequiredScope": "Naujai patikrinti S33,S34 meniu; ne rinkos vidurkis",
+      "originalChecks": [
+        "Prieš redakcinę peržiūrą reikia sukurti šiam gidui skirtą teminę iliustraciją, importuoti ją per bendrą medijos kelią ir patikrinti tikrus pikselius, mobilų kadravimą, alt tekstą bei teises."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Datuotas meniu palyginimas ir pasirenkamos apimties kortelė; konkrečios cheminės sistemos naudojimo protokolas neįtrauktas.",
+      "verifiedClaims": "S34 Airtouch220–280Eur ir5–6val bei atskiras drėkinimo15min25Eur priedas patikrinti. S33 tonavimas atskirtas nuo visų plaukų dažymo. Nekuriami dažų receptai, procentai ar saugumo pažadai.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "8444604af6ba86d74e4949521e2be475794737167ac7079c79cf8000d77a8b1a",
+      "checkedAt": "2026-10-09T19:28:49.884Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "GL-kaina-trukme",
+      "pageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+      "literalRequiredScope": "Nauji meniu prieš tekstą; ne bendras rinkos kainų intervalas",
+      "originalChecks": [
+        "Prieš tvirtinant ar publikuojant iš naujo patikrinti abiejų salonų meniu kainas, paslaugų pavadinimus ir rezervuojamą laiką. Tekste pateikti skaičiai yra 2026-10-09 matyti pasiūlymai, ne garantuotos būsimos kainos.",
+        "Sukurti ir prijungti šiam gidui skirtą teminę iliustraciją, importuoti ją per bendrą responsive WebP kelią ir peržiūrėti faktinius pikselius, mobilų kadravimą, alt tekstą bei teises; V2 kontekste prijungtos medijos dar nėra."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Abu meniu perskaityti. Klinikinis tinkamumas ir kietinimo/nuėmimo technologinis protokolas nevertinami.",
+      "verifiedClaims": "S01 bazė be nuėmimo60min40Eur / su nuėmimu75min43Eur; vienspalvis70min43Eur /80min45Eur; maxi80min46Eur /90min50Eur. S02 lakavimo eilutės apima nuėmimą. Ne viena universali rinkos kaina.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "9e9c8942ca54d7a3bf0521993b725fca2288389c6f7c1413b19f2c4ad2bd5df1",
+      "checkedAt": "2026-10-09T19:28:50.129Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "MN-ar-gelinis",
+      "pageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+      "literalRequiredScope": "Produktų sistemos termino patikra",
+      "originalChecks": [
+        "Prieš patvirtinimą grožio paslaugų specialistui peržiūrėti terminų „gelinis lakavimas“, „nago stiprinimas“ ir „priauginimas“ ribas pagal naudojamas produktų sistemas; šiame tekste jie pateikiami kaip atskiros meniu kategorijos, bet kvalifikuota terminų peržiūra neatlikta.",
+        "Šiam gidui reikia atskiro teminio vaizdo: sprendimo pagal norimą rezultatą iliustracijos. Vaizdas dar nesukurtas, neimportuotas ir jo pikseliai neperžiūrėti."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Produkto kategorijos terminai tikrinami pagal perskaitytus meniu ir AAD informaciją. Modelio pridėta besąlyginė meistro ekspertizė netaikoma šioms paprastoms meniu kategorijų riboms; ji nėra išgalvotai atlikta.",
+      "verifiedClaims": "S01 manikiūras be dangos ir su danga atskiri; S02 stiprinimas ir priauginimas atskiri meniu variantai. S07/S08 AAD patvirtina kosmetinės dangos ribas; nėra savidiagnozės ar techninių sluoksnių instrukcijos.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "28d77ee9ecb6ab4145134cb9be163bfac6dc5e527a28866cea8d4fe86427d519",
+      "checkedAt": "2026-10-09T19:28:50.372Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "ND-akcentai-kaina",
+      "pageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+      "literalRequiredScope": "Aktualūs teikėjų meniu ir patvirtinta apimtis",
+      "originalChecks": [
+        "S01 šaltinis buvo peržiūrėtas 2026-10-09 ir pagrindžia tik datuotą Vili Nails meniu pavyzdį. Jis neapibrėžia, ką „Piešimas ant nagų“ ar „Nagų dekoravimas“ reiškia visuose teikėjų meniu, ir nepatvirtina Madbeauty pasiūlos. Jei šie pavadinimai būtų aprašomi kaip konkrečios universalios paslaugos ar technikos, prieš redakcinį patvirtinimą reikia patikrinti atitinkamų teikėjų meniu ir gauti apimties peržiūrą; jos šiame kontekste nėra.",
+        "Prieš patvirtinimą peržiūrėti priskirtos iliustracijos tikruosius pikselius ir mobilų kadravimą. Pateiktame kontekste yra pridėtas vaizdas ir jo metaduomenys, bet nėra užfiksuotos šio vaizdo pikselių patikros."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Piešimas/dekoravimas pateikiami kaip užduoties ir meniu etiketės, ne universali technika. Sąlyginis papildomos universalios paslaugos patvirtinimas nereikalingas, nes tokia apimtis neteigiama.",
+      "verifiedClaims": "S01 be nuėmimo70min43Eur vs80min46Eur; su nuėmimu80min45Eur vs90min50Eur. 3Eur/10min skirtumas taikomas tik vienam meniu variantui, ne visuotiniam akcento tarifui.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "73b847b84d2d24f869cd17e39163e4cb0eb030753a610e2f1489d636d31c143a",
+      "checkedAt": "2026-10-09T19:28:50.607Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "NP-kaina-trukme",
+      "pageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+      "literalRequiredScope": "LT meniu ir konkrečios sistemos patikra",
+      "originalChecks": [
+        "Prieš patvirtinant peržiūrėti prijungtos iliustracijos faktinius pikselius ir mobilų kadravimą; pateiktas vaizdo įrašas patvirtina prijungtą failą, bet ne šios peržiūros vizualinį patikrinimą."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Patikrintas tikras priauginimo meniu. Sąlyginė konkrečios techninės sistemos patikra netaikoma neteigiant jos sudėties, naudojimo ar saugumo.",
+      "verifiedClaims": "S02 iki3cm esamiems135min52Eur / su dizainu150min55Eur; naujiems195min60Eur /210min65Eur. Pataisyta formuluotė: kliento statusas nėra naujas rinkinys ar papildymas. Medžiagų sistemos ir nuėmimo protokolas nevertinami.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "e2dd83c394729f4b67f402a4f4a003b827e6f6dba5a1606041355f098011f4b4",
+      "checkedAt": "2026-10-09T19:28:50.851Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "PD-be-lakavimo",
+      "pageId": "91053963-6eff-408a-b26d-7eed52088b91",
+      "literalRequiredScope": "Aktualus realių pasiūlymų patikrinimas",
+      "originalChecks": [
+        "Prieš patvirtinant tekstą iš naujo patikrinti „Classic Pedicure & Manicure“ meniu: pateikti laikai ir kainos užfiksuoti 2026-10-09, o planuojama publikavimo data yra vėlesnė. Šaltinis nurodo variantų pavadinimus, laiką ir kainą, bet neišvardija viso kiekvieno varianto protokolo; pasikeitus meniu pavyzdį atnaujinti arba pašalinti.",
+        "Prieš patvirtinant sukurti, importuoti ir peržiūrėti šiam pedikiūro gidui skirtą vaizdą. v2Context šiuo metu neturi prijungtos pedikiūro iliustracijos."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Aktualus meniu perskaitytas. Konkrečios kainos tinka tik nurodytam meniu bei patikros datai.",
+      "verifiedClaims": "S32 be lakavimo75min45Eur, paprastas lakavimas90min50Eur, nuėmimas+gelinis120min60Eur. S08 AAD patarimas neslėpti pakitusio nago; nėra gydomojo pedikiūro ar individualios diagnozės.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "898cc0485b34be39f113392be917482b9d24276cf90929b7e9ec373625c37b06",
+      "checkedAt": "2026-10-09T19:28:51.095Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "PP-kaina-trukme",
+      "pageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+      "literalRequiredScope": "Tikri meniu ir identifikuoti produktai",
+      "originalChecks": [
+        "Žirmūnų 22 meniu nenurodo konkretaus „Olaplex“ produkto numerio. Tekste nevertinamas sistemos protokolas, poveikis ar saugumas; jei tokie teiginiai būtų pridedami, reikėtų konkretaus produkto dokumentų ir tinkamos kvalifikuotos peržiūros.",
+        "Prieš redakcinę peržiūrą patikrinti, ar naudojamas prisegtas vaizdas atitinka straipsnio temą; įvertinti tikrus pikselius, mobilų kadrą, teises ir alt tekstą. Jei bendras salono priemonių vaizdas netinka šiam palyginimui, sukurti ir importuoti labiau teminę iliustraciją."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Meniu produktų etiketės patikrintos; konkretaus produkto protokolas nežinomas ir nevertinamas. Sąlyginis klinikinio ar techninio veiksmingumo vartas netaikomas, nes tokių teiginių nėra.",
+      "verifiedClaims": "S34 drėkinimo priedas15min25Eur; S04 Olaplex etiketės priedas15min12Eur. Nepriskirtas nežinomas produkto numeris ar veiksmingumas. S54 FDA paaiškina ne visų glotninimo produktų formaldehido klausimą ir netaikomas LT teisės taisyklėms.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "2f8982ff966a20822602719416dce44ff371bf8dca98b3b0bbc8de83de31dfc5",
+      "checkedAt": "2026-10-09T19:28:51.330Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+      "literalRequiredScope": "Meniu ir specialisto patikra",
+      "originalChecks": [
+        "Prieš redakcinį tvirtinimą būtina atlikti planavimo apraše nurodytą meniu ir specialisto patikrą; ji neatlikta. Kadangi numatyta publikavimo data yra 2026-12-01, prieš tvirtinant patikrinti, ar šaltinyje S03 vis dar nurodyta tokia sudėtis, trukmė ir kaina. Jei duomenys pasikeitė, atnaujinti arba pašalinti datuotą pavyzdį.",
+        "Prie šio juodraščio neprijungta teminė medija. Sukurti iliustraciją pagal mediaBrief, importuoti ją, patikrinti tikruosius pikselius, alt tekstą ir mobilų kadravimą prieš redakcinę peržiūrą."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Meniu ir specialisto patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "7009cca0896a6988a863c0d53f1ef81518cc070c505693258ed3778cc07119b6",
+      "checkedAt": "2026-10-09T19:28:51.573Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "BL-laminavimas-ar-priauginimas",
+      "pageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+      "literalRequiredScope": "Konkrečių sistemų dokumentai",
+      "originalChecks": [
+        "Konkrečių sistemų šaltiniai perskaityti, tačiau paslaugos specialisto peržiūra neatlikta. Jei prieš patvirtinimą taikomas planavimo brief'e numatytas specialistų patikrinimas techniniams teiginiams, jį atlikti prieš approval.",
+        "Pridėta blakstienų iliustracija, tačiau nėra pateikto įrodymo, kad peržiūrėti jos faktiniai pikseliai, mobilus kadravimas ir alt tekstas. Patikrinti galutinį vaizdą prieš approval."
+      ],
+      "decision": "ORDINARY_EDITORIAL_SOURCE_MEDIA_REVIEW_COMPLETE",
+      "scopeDecision": "Literal brief reikalauja konkrečių sistemų dokumentų; abu iš tikrųjų pateikti ir perskaityti. Atskiro žmogaus tinkamumas ir techninis atlikimo protokolas neįtraukti; meistro peržiūra nėra išgalvotai atlikta.",
+      "verifiedClaims": "S36 LVL natūralių blakstienų liftas ir jo24val/2dienų instrukcija; S58 Extend1:1 plaukelio pridėjimas. S24 blakstienų70min40Eur / naujas120min45Eur. Pašalintos klaidingos antakių kainos. Nėra visiems universalaus papildymo intervalo,8savaičių garantijos ar saugumo pažado.",
+      "remainingChecks": [],
+      "reviewRevisionHash": "c889aed1d01397b39a5daf16c3e73319d62b25282546e37901364aa361901d18",
+      "checkedAt": "2026-10-09T19:28:51.812Z",
+      "expertReviewPerformed": false
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "literalRequiredScope": "Barberio techninių terminų review",
+      "originalChecks": [
+        "Prieš patvirtinimą reikalinga barzdaskučio techninė peržiūra: patikrinti, ar tekste vartojami terminai „kirpimas“, „modeliavimas“, „kontūras“, „augimo kryptis“ ir „tankis“ tiksliai atspindi profesinę praktiką. Vienas teikėjo meniu pagrindžia tik tame meniu matomus paslaugų pavadinimus ir variantus, ne universalią klasifikaciją.",
+        "Reikalinga barzdaskučio peržiūra, kad tekstas apie augimo kryptį ir tankį liktų paslaugos užduoties aptarimo ribose ir nebūtų suprastas kaip plaukų augimo ar sveikatos patarimas.",
+        "Planuota originali barzdos zonų iliustracija dar nėra sukurta ar pridėta. Prieš patvirtinimą sugeneruoti atskirai, peržiūrėti tikruosius pikselius, mobilų kadravimą, alt tekstą ir teises; iliustracijos nepateikti kaip kliento rezultato ar techninės instrukcijos."
+      ],
+      "decision": "EXPLICIT_SPECIALIST_PENDING",
+      "scopeDecision": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "verifiedClaims": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "remainingChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Barberio techninių terminų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "reviewRevisionHash": "5fc014d66d9a9aa408f3ab79e5f12a00c722dce61223fd170c2f061bba22c588",
+      "checkedAt": "2026-10-09T19:28:52.043Z",
+      "expertReviewPerformed": false
+    }
+  ]
+}

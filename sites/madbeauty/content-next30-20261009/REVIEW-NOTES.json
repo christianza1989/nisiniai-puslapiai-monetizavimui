@@ -1,0 +1,275 @@
+{
+  "status": "Reviewer notes from actual reading; media/layout binding still separate",
+  "pages": [
+    {
+      "planId": "AN-gidas",
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "literalRequiredScope": "Antakių specialisto terminų ir eigos review",
+      "usefulness": "Trijų skirtingų estetinių tikslų schema",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "BL-gidas",
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "literalRequiredScope": "Blakstienų specialisto eigos review",
+      "usefulness": "Trijų tikslų ir darbų komponentų schema",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "BR-gidas",
+      "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+      "literalRequiredScope": "Nedubliuoti dažymo/veido/depi tekstų vien pagal lytį",
+      "usefulness": "Norimo pokyčio planas susieja plaukus, barzdą, spalvą ir kitą priežiūrą. Tai auditorijos orientyras su nuorodomis į esamus kirpimo gidus, o ne pakartoti atskirų procedūrų straipsniai vien pagal lytį.",
+      "facts": "S56 pagrindžia tik matomus barzdos darbų pavadinimus. Tekstas nepatvirtina dabartinio salono prieinamumo, kainos, rezervacijos ar klinikinio tinkamumo.",
+      "scope": "Originalus requiredScope yra nedubliuoti tekstų pagal lytį; tai redakcinė, ne neįvykdyta kvalifikuoto meistro peržiūra.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "DP-gidas",
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "literalRequiredScope": "Depiliacijos specialisto eigos review",
+      "usefulness": "Metodo ir zonos pasirinkimų schema",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "DZ-gidas",
+      "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+      "literalRequiredScope": "Dažymo specialisto ir konkrečių sistemų review",
+      "usefulness": "Dažymo sprendimų medis pagal pradinę būklę",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "GL-gidas",
+      "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+      "literalRequiredScope": "Konkrečios sistemos gamintojo protokolas ir meistro peržiūra",
+      "usefulness": "Dangos sluoksnių iliustracija, ne procedūros mokymas",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "MN-gidas",
+      "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+      "literalRequiredScope": "Manikiūro specialisto patikrintas eigos aprašymas",
+      "usefulness": "Paslaugos komponentų schema: priežiūra, padengimas, nuėmimas",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "NP-gidas",
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "literalRequiredScope": "Sistemų dokumentai ir nagų specialisto review",
+      "usefulness": "Konstrukcijos ir dangos komponentų schema",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "PD-gidas",
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "literalRequiredScope": "Pedikiūro specialisto eigos patikra",
+      "usefulness": "Pėdų ir nagų paslaugos apimties schema",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "PP-gidas",
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "literalRequiredScope": "Konkrečių sistemų dokumentai ir kirpėjo review",
+      "usefulness": "Tikslų, komponentų ir teiginių lentelė",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "B-ginčas",
+      "pageId": "ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6",
+      "literalRequiredScope": "S19 aktuali LT ginčų tvarka",
+      "usefulness": "Originalus pildomas kreipimosi ruošinys ir įrodymų seka: susitarimas, pastebėtas neatitikimas, prašomas sprendimas, gavimo įrodymas. Atskirtas vartojimo ginčas ir NVSC higienos klausimas.",
+      "facts": "S19 aktualus VVTAT paaiškinimas patikrintas2026-10-09: pirma raštu teikėjui,14dienų nuo gavimo, po neatsakymo arba atsisakymo VVTAT. Sprendimo rezultatas ar automatinis grąžinimas negarantuojami.",
+      "scope": "Literal brief reikalauja S19 aktualios LT ginčų tvarkos, ne teisininko peržiūros. Modelio teiginys apie privalomą kvalifikuotą specialistą buvo per platus. Atlikta oficialaus dokumento ir bendros informacijos peržiūra; individualus teisinis vertinimas neteikiamas.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "B-meistrui-grafikas",
+      "pageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+      "literalRequiredScope": "Nenaudoti privačių klientų įrašų; tikrai veikiantys grafiko laukai",
+      "usefulness": "Savarankiškas trukmių žurnalo ruošinys atskiria paslaugą, pasiruošimą ir rezervą, lygina panašios apimties darbus. Nėra tikrų klientų duomenų ar menamų meistrų matavimų.",
+      "facts": "Darbo organizavimo idėja, ne realaus Madbeauty kalendoriaus laukų aprašas. Nesiūloma rinkti vardų, kontaktų ar individualių vizitų istorijų; duomenų anonimiškumo teisinė garantija nesuteikiama.",
+      "scope": "Sąlyginė platformos grafiko laukų patikra netaikoma, nes jų buvimas ar veikimas neteigiamas. Funkcijos nėra išgalvotai patvirtintos.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "B-meistrui-matavimas",
+      "pageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+      "literalRequiredScope": "Tikro Madbeauty matavimo galimybės; rodikliai dar neišmatuoti",
+      "usefulness": "Aiškiai atskirti atvėrimai, paspaudimai, tikrai gautos užklausos ir sutarti vizitai. Iliustracinis50/8/4 pavyzdys parodo įvykių santykius ir nevadina atvėrimų žmonėmis.",
+      "facts": "8/50=16%,4/8=50%. Pavyzdys aiškiai išgalvotas paaiškinimui; nėra Madbeauty statistikos ar backend matavimo pažadų. Nežinoma nesuplakama su nuliu.",
+      "scope": "Tikro platformos matavimo vartas netaikomas šiame savarankiškos suvestinės variante, nes realaus rinkimo funkcijos ir rodikliai neteigiami.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "B-meistrui-meniu",
+      "pageId": "10660b33-7a51-429f-80c0-6814e8d36cc6",
+      "literalRequiredScope": "Tikros Madbeauty redagavimo funkcijos ir platformos sąlygos",
+      "usefulness": "Du pildomi meniu ruošiniai nagams ir plaukams: pagrindinis darbas, variantas, papildomas darbas, kainos nustatymas ir susitarimo sąlygos.",
+      "facts": "Ruošiniai nepriskirti realiam teikėjui, programos redagavimo laukams ar fiksuotam avansui. VVTAT14dienų terminas nurodomas nuo kreipimosi gavimo; NVSC bendras higienos kontekstas ne klinikinis protokolas.",
+      "scope": "Platformos redagavimo laukų buvimas neteigiamas; sąlyginis jų patikros reikalavimas netaikomas. Tikro teikėjo pasiūlymas nėra išgalvotas.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "B-salygos",
+      "pageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+      "literalRequiredScope": "S19 ir tikros platformos/teikėjo sąlygos; nėra visuotinio grąžinimo pažado",
+      "usefulness": "Keturi mokėjimo klausimai ir keitimo scenarijai padeda išsaugoti rašytinį susitarimą bei mokėjimo įrodymą. Nepateikiama viena išgalvota avanso grąžinimo taisyklė.",
+      "facts": "S19 VVTAT terminas patvirtintas nuo kreipimosi gavimo. Konkrečios Madbeauty ar teikėjo avanso sąlygos nežinomos ir nėra pristatomos kaip veikiančios.",
+      "scope": "Gidas moko skaityti konkretų susitarimą; jis nėra platformos avanso politikos dokumentas. Nežinomos sąlygos išlieka nežinomos, nereikia jų išgalvotai patvirtinti.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "B-sauga",
+      "pageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+      "literalRequiredScope": "S11,S28,S29,S31 aktualumas",
+      "usefulness": "Originali3dalių kortelė: teikėjas, faktinė vieta ir konkrečiai paslaugai taikomas dokumentas. Nurodyta kur tikrinti NVSC ir VASPVT informaciją.",
+      "facts": "S11/S28/S29/S31 oficialūs dokumentai iš tiesų perskaityti. Bendras leidimo-higienos paso ir sveikatos įstaigos/specialisto licencijų apimties skirtumas remiasi institucijų paaiškinimais; individuali procedūrų klasifikacija ir Madbeauty teikėjų patikra neteigiamos.",
+      "scope": "Literal brief reikalauja4oficialių šaltinių aktualumo, ne specialistų akreditacijos. Modelio pridėta absoliuti specialistų peržiūra nėra literal reikalavimas. Atlikta dokumentų patikra; medicininė ar individuali teisinė klasifikacija neįtraukta.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "AN-kaina-trukme",
+      "pageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+      "literalRequiredScope": "S03,S35 meniu perpatikrinti",
+      "usefulness": "Trys konkretūs meniu ir užpildomas palyginimo lapas parodo, kodėl korekcijos, dažymo bei laminavimo sudėtis keičia kainą ir laiką.",
+      "facts": "S03 korekcija30min10Eur / su dažymu40min17Eur; S24 antakių laminavimo variantai50min32Eur /55min35Eur; S35 korekcija ir dažymas40min20Eur / su blakstienų dažymu50min26Eur. Tik datuoti teikėjų meniu, ne vidurkis.",
+      "scope": "2026-10-09 meniu iš tikrųjų perskaityti. Datuotas pavyzdys nepateikiamas kaip garantuota būsima kaina; publikavimo ir peržiūros datos atskirtos.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "BL-kaina-trukme",
+      "pageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+      "literalRequiredScope": "S24,S35 perpatikrinti; ne LT vidurkis",
+      "usefulness": "Dviejų teikėjų pavyzdžiai atskiria laminavimą, dažymą, naują priauginimą ir korekciją; skirtingų paslaugų kainos nėra pigumo reitingas.",
+      "facts": "Pašalintos antakių50min32Eur/55min35Eur kainos. Teisingi S24 blakstienų70min40Eur,120min45Eur ir95min35Eur; S03 blakstienų50min30Eur / dažymas20min10Eur. LED/UV ir botox meniu etiketės nėra saugumo ar medicininės injekcijos įrodymas.",
+      "scope": "Tik patikrintų meniu apimties palyginimas. Individualaus tinkamumo, techninio protokolo ir saugumo teiginiai neįtraukti, tad sąlyginė jų ekspertizė nėra atlikta ar reikalinga šioje redakcijoje.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "BR-kaina-trukme",
+      "pageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+      "literalRequiredScope": "Aktualūs LT meniu",
+      "usefulness": "Datuoti atskiros barzdos ir dviejų kombinuotų paketų pavyzdžiai atsako skaičiais; ruošinys lygina tą pačią darbų apimtį.",
+      "facts": "S57 barzdos modeliavimas60min30Eur ir plaukai+barzda90min45Eur; S34 plaukai+barzda60min40Eur. Ne rinkos vidurkis, ne kokybės ar greičio reitingas. S56 naudojamas tik meniu terminų pavyzdžiui.",
+      "scope": "Aktualūs meniu iš tikrųjų peržiūrėti; profesinio kirpimo protokolo šiame kainų palyginime nėra.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "DP-kaina-trukme",
+      "pageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+      "literalRequiredScope": "S55 patikrinti prieš tekstą; jokio vidurkio iš vieno meniu",
+      "usefulness": "Tas pats metodas ir zona dviejuose teikėjų meniu: vienoda25Eur kaina, bet skirtingos30/45min trukmės. Palyginimas iš tikrųjų apima du teikėjus.",
+      "facts": "S03 vaškas blauzdos30min25Eur, visos kojos60min40Eur; S55 atitinkamai45min25Eur ir60min40Eur. S51 AAD vienkartinio aplikatoriaus higiena; nėra individualios vaistų ar odos tinkamumo rekomendacijos.",
+      "scope": "Antro meniu trūkumas išspręstas tikru S03 dokumentu, o ne išimtimi. Procedūros tinkamumas atskiram žmogui nevertinamas.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "DZ-kaina-trukme",
+      "pageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+      "literalRequiredScope": "Naujai patikrinti S33,S34 meniu; ne rinkos vidurkis",
+      "usefulness": "Tikslaus dažymo pasiūlymo ruošinys apima techniką, plotą, ilgį, tankį, tonavimą, kirpimą ir visą rezervuojamą laiką.",
+      "facts": "S34 Airtouch220–280Eur ir5–6val bei atskiras drėkinimo15min25Eur priedas patikrinti. S33 tonavimas atskirtas nuo visų plaukų dažymo. Nekuriami dažų receptai, procentai ar saugumo pažadai.",
+      "scope": "Datuotas meniu palyginimas ir pasirenkamos apimties kortelė; konkrečios cheminės sistemos naudojimo protokolas neįtrauktas.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "GL-kaina-trukme",
+      "pageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+      "literalRequiredScope": "Nauji meniu prieš tekstą; ne bendras rinkos kainų intervalas",
+      "usefulness": "Palyginama ta pati danga su nuėmimu ir be jo, keli dizaino variantai. Parodytas konkretus3Eur/15min bazės varianto skirtumas.",
+      "facts": "S01 bazė be nuėmimo60min40Eur / su nuėmimu75min43Eur; vienspalvis70min43Eur /80min45Eur; maxi80min46Eur /90min50Eur. S02 lakavimo eilutės apima nuėmimą. Ne viena universali rinkos kaina.",
+      "scope": "Abu meniu perskaityti. Klinikinis tinkamumas ir kietinimo/nuėmimo technologinis protokolas nevertinami.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "MN-ar-gelinis",
+      "pageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+      "literalRequiredScope": "Produktų sistemos termino patikra",
+      "usefulness": "Pasirinkimo planas atskiria priežiūrą, gelinę dangą, esamos dangos nuėmimą ir papildomo ilgio kūrimą.",
+      "facts": "S01 manikiūras be dangos ir su danga atskiri; S02 stiprinimas ir priauginimas atskiri meniu variantai. S07/S08 AAD patvirtina kosmetinės dangos ribas; nėra savidiagnozės ar techninių sluoksnių instrukcijos.",
+      "scope": "Produkto kategorijos terminai tikrinami pagal perskaitytus meniu ir AAD informaciją. Modelio pridėta besąlyginė meistro ekspertizė netaikoma šioms paprastoms meniu kategorijų riboms; ji nėra išgalvotai atlikta.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "ND-akcentai-kaina",
+      "pageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+      "literalRequiredScope": "Aktualūs teikėjų meniu ir patvirtinta apimtis",
+      "usefulness": "Originalus10nagų akcentų ruošinys ir konkretus43/46Eur dizaino variantų palyginimas. Nėra menamo tarifo už vieną nagą.",
+      "facts": "S01 be nuėmimo70min43Eur vs80min46Eur; su nuėmimu80min45Eur vs90min50Eur. 3Eur/10min skirtumas taikomas tik vienam meniu variantui, ne visuotiniam akcento tarifui.",
+      "scope": "Piešimas/dekoravimas pateikiami kaip užduoties ir meniu etiketės, ne universali technika. Sąlyginis papildomos universalios paslaugos patvirtinimas nereikalingas, nes tokia apimtis neteigiama.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "NP-kaina-trukme",
+      "pageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+      "literalRequiredScope": "LT meniu ir konkrečios sistemos patikra",
+      "usefulness": "Vieno priauginimo meniu naujo/esamo kliento ir dizaino variantai palyginti su aiškia aritmetika ir užduoties kortele.",
+      "facts": "S02 iki3cm esamiems135min52Eur / su dizainu150min55Eur; naujiems195min60Eur /210min65Eur. Pataisyta formuluotė: kliento statusas nėra naujas rinkinys ar papildymas. Medžiagų sistemos ir nuėmimo protokolas nevertinami.",
+      "scope": "Patikrintas tikras priauginimo meniu. Sąlyginė konkrečios techninės sistemos patikra netaikoma neteigiant jos sudėties, naudojimo ar saugumo.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "PD-be-lakavimo",
+      "pageId": "91053963-6eff-408a-b26d-7eed52088b91",
+      "literalRequiredScope": "Aktualus realių pasiūlymų patikrinimas",
+      "usefulness": "Atskirtas pasirinkimas be dangos nuo nagų ir pėdų odos darbų apimties, įtrauktas realus datuotas meniu ir sprendimo pavyzdys.",
+      "facts": "S32 be lakavimo75min45Eur, paprastas lakavimas90min50Eur, nuėmimas+gelinis120min60Eur. S08 AAD patarimas neslėpti pakitusio nago; nėra gydomojo pedikiūro ar individualios diagnozės.",
+      "scope": "Aktualus meniu perskaitytas. Konkrečios kainos tinka tik nurodytam meniu bei patikros datai.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "PP-kaina-trukme",
+      "pageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+      "literalRequiredScope": "Tikri meniu ir identifikuoti produktai",
+      "usefulness": "Du tikri papildomų procedūrų pavyzdžiai parodo, kad vienodos15min nereiškia vienodos sistemos ar viso vizito. Priedai atskirti nuo plovimo/kirpimo.",
+      "facts": "S34 drėkinimo priedas15min25Eur; S04 Olaplex etiketės priedas15min12Eur. Nepriskirtas nežinomas produkto numeris ar veiksmingumas. S54 FDA paaiškina ne visų glotninimo produktų formaldehido klausimą ir netaikomas LT teisės taisyklėms.",
+      "scope": "Meniu produktų etiketės patikrintos; konkretaus produkto protokolas nežinomas ir nevertinamas. Sąlyginis klinikinio ar techninio veiksmingumo vartas netaikomas, nes tokių teiginių nėra.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+      "literalRequiredScope": "Meniu ir specialisto patikra",
+      "usefulness": "Rezultato ir komponentų lentelė",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    },
+    {
+      "planId": "BL-laminavimas-ar-priauginimas",
+      "pageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+      "literalRequiredScope": "Konkrečių sistemų dokumentai",
+      "usefulness": "Konkrečių LVL ir Extend sistemų rezultato palyginimas, pasirinkimo matrica, patikrinti paslaugų kainų pavyzdžiai ir konkrečios sistemos priežiūros ribos.",
+      "facts": "S36 LVL natūralių blakstienų liftas ir jo24val/2dienų instrukcija; S58 Extend1:1 plaukelio pridėjimas. S24 blakstienų70min40Eur / naujas120min45Eur. Pašalintos klaidingos antakių kainos. Nėra visiems universalaus papildymo intervalo,8savaičių garantijos ar saugumo pažado.",
+      "scope": "Literal brief reikalauja konkrečių sistemų dokumentų; abu iš tikrųjų pateikti ir perskaityti. Atskiro žmogaus tinkamumas ir techninis atlikimo protokolas neįtraukti; meistro peržiūra nėra išgalvotai atlikta.",
+      "state": "ORDINARY_SCOPE_REVIEW_NOT_YET_BOUND"
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "literalRequiredScope": "Barberio techninių terminų review",
+      "usefulness": "Originalus barzdos zonų brėžinys; Originalūs kontūrų siluetai ir užduoties kortelė",
+      "facts": "Patikrintos bendros perskaitytų šaltinių ribos. Plane aiškiai nurodyta konkrečios procedūros specialisto ar sistemos peržiūra dar neatlikta; redakcinė peržiūra jos neatstoja.",
+      "scope": "Išsaugomas aiškus konkrečios procedūros specialistų vartas. Jis negali būti pažymėtas atliktu vien todėl, kad tekstas sugeneruotas.",
+      "state": "EXPLICIT_SPECIALIST_PENDING"
+    }
+  ]
+}

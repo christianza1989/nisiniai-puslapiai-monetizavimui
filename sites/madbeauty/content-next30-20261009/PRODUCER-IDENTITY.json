@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-10-09T19:35:17.992Z",
+  "sourceRoot": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/nisiniai_puslapiai_monetizavimui",
+  "head": "8ce36cf75a63b52aa6f0a624c1a028d506614811",
+  "sourceStatus": " M content-studio/src/editorial-skill.mjs\n M content-studio/test/editorial-skill.test.mjs\n?? content-studio/scripts/seo-research.mjs\n?? content-studio/src/seo-research.mjs\n?? content-studio/test/geo-skill.test.mjs\n?? content-studio/test/seo-research.test.mjs\n",
+  "exactCommitClaim": false,
+  "scope": "Actual maintained studio bytes used. Dirty source HEAD alone is not exact producer identity. Per-job observed native model/effort and raw output hashes are in PREPARATION-CHECK.json.",
+  "files": [
+    {
+      "file": "content-studio/src/model.mjs",
+      "sha256": "4c5ff9e85e01f0eae177b0b1986285d2ea7727336642714a796550348ad3307c"
+    },
+    {
+      "file": "content-studio/src/generator.mjs",
+      "sha256": "7506f1c0f62bdca3313a33b915b54e622ddbc501808c73244a66b76da49ab056"
+    },
+    {
+      "file": "content-studio/src/draft-v2.mjs",
+      "sha256": "d8440e79c97ab1ebf7a1fd9e960d1961d940ddd6e51bc96565411ab9087c7fa9"
+    },
+    {
+      "file": "content-studio/src/editorial-cli.mjs",
+      "sha256": "9f37b86a8ce444bb96a1a6a7c48f155b17d480d871d189b79b1e335d537111aa"
+    },
+    {
+      "file": "content-studio/src/editorial-skill.mjs",
+      "sha256": "42e740632da68a672294abaf51dba160099b389c9d7dcc2b9474580633c82c4a"
+    },
+    {
+      "file": "content-studio/src/content-package-v2.mjs",
+      "sha256": "e7d6f81478a2778516d0c7f80a797b6eeac6fe27eb02ec9ed048348203a128c7"
+    },
+    {
+      "file": "content-studio/src/content-release.mjs",
+      "sha256": "60a6729fd609f108147843ef731af37b43f81f8138ab41eddb8c6f62d45e73f2"
+    },
+    {
+      "file": "content-studio/scripts/draft-page.mjs",
+      "sha256": "7c2f6ea8627d324dc53b7832b2ae0b3d532abdf8556d8d71cd8410be08d8532b"
+    },
+    {
+      "file": "content-studio/schemas/content-package.v2.schema.json",
+      "sha256": "2753d520745cba4a1fba07f624cfc2cab41bceb20bca280761dfd555cbf2cd54"
+    }
+  ]
+}

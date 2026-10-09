@@ -1,5 +1,7 @@
 # Madbeauty: nuoseklus publikavimas per pusmetį
 
+**Vėlesnė turinio būsena:** [2026-10-09 papildoma 30 straipsnių partija](../content-next30-20261009/README.md). Dabar parengti 65 gidai, 230 temų dar neparašyta. Naujoje partijoje 19 patvirtintų tekstų ir 11 tekstų, kuriems lieka konkreti specialisto patikra. Žemiau išsaugoti ankstesnio 35 gidų kalendoriaus paketo diegimo įrodymai; naujos partijos įkėlimas turi atskirą DELIVERY.json. Datos nepakeistos.
+
 2026-10-09 savininkas pakeitė grupių išleidimą į nuoseklų kalendorių visam 295 straipsnių planui. Šis dokumentas pakeičia ankstesnes penkių bangų datas; tyrimas, URL ketinimai, H2, šaltiniai, originalios naudos reikalavimai ir būsimas vidinių ryšių tinklas išlieka.
 
 [Interaktyvus visų 295 straipsnių kalendorius](MADBEAUTY-NUOSEKLUS-PUSMECIO-PLANAS.html) · [Data, valanda ir būsena lentelėje](PUBLIKAVIMO-KALENDORIUS.md) · [Visas rengimo briefas](PLAN.json) · [Kalendoriaus duomenys](PUBLICATION-CALENDAR.json).

@@ -1,0 +1,1143 @@
+{
+  "checkedAt": "2026-10-09T19:21:40.147Z",
+  "scope": "Private full graph before release selection. Deferred destinations remain planned, never live hrefs.",
+  "pages": [
+    {
+      "planId": "AN-gidas",
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "publishAt": "2026-10-29T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+          "label": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+          "reason": "Atsakymas: Keičiama forma.",
+          "targetPlanId": "AN-korekcija-ar-dazymas",
+          "targetTitle": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?"
+        },
+        {
+          "targetPageId": "e34c2b71-b289-465e-a558-eb0a675a1b19",
+          "label": "Antakių korekcija pincetu, vašku ar siūlu: metodų skirtumai",
+          "reason": "Atsakymas: Plaukelių pašalinimo būdas.",
+          "targetPlanId": null,
+          "targetTitle": "Antakių korekcija pincetu, vašku ar siūlu: metodų skirtumai"
+        },
+        {
+          "targetPageId": "a2a8a504-f1f6-4ddd-8a44-5add4f78b30a",
+          "label": "Antakių dažų spalva: ką reiškia norimas intensyvumas ir atspalvis?",
+          "reason": "Atsakymas: Atspalvis ir intensyvumas.",
+          "targetPlanId": null,
+          "targetTitle": "Antakių dažų spalva: ką reiškia norimas intensyvumas ir atspalvis?"
+        },
+        {
+          "targetPageId": "7719e970-afd1-4a79-b67f-9ba7fe7129bd",
+          "label": "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą?",
+          "reason": "Atsakymas: Produkto sudėtis ir paskirtis.",
+          "targetPlanId": null,
+          "targetTitle": "Antakių dažai ir henna: ką lyginti renkantis pasiūlymą?"
+        },
+        {
+          "targetPageId": "3f4434e3-a763-4c6e-9e5e-485053a54c36",
+          "label": "Antakių laminavimas: kaip keičiama plaukelių kryptis ir kas įeina?",
+          "reason": "Atsakymas: Laminavimo paskirtis.",
+          "targetPlanId": null,
+          "targetTitle": "Antakių laminavimas: kaip keičiama plaukelių kryptis ir kas įeina?"
+        },
+        {
+          "targetPageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+          "label": "Antakių paslaugų kaina ir trukmė: korekcija, dažymas bei laminavimas",
+          "reason": "Atsakymas: Atskiros paslaugos.",
+          "targetPlanId": "AN-kaina-trukme",
+          "targetTitle": "Antakių paslaugų kaina ir trukmė: korekcija, dažymas bei laminavimas"
+        },
+        {
+          "targetPageId": "0b74c40b-4647-4267-9a59-420834acf845",
+          "label": "Prieš antakių procedūrą: ankstesni darbai, produktai ir pageidaujama forma",
+          "reason": "Atsakymas: Esama forma ir ankstesnis dažymas.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš antakių procedūrą: ankstesni darbai, produktai ir pageidaujama forma"
+        },
+        {
+          "targetPageId": "6d35ba6d-7cf6-46f5-a247-81fe9b8d7065",
+          "label": "Priežiūra po antakių dažymo ir laminavimo: kodėl instrukcijos skiriasi?",
+          "reason": "Atsakymas: Atlikta paslauga.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po antakių dažymo ir laminavimo: kodėl instrukcijos skiriasi?"
+        },
+        {
+          "targetPageId": "2fc70301-40fc-40aa-967f-dde364f87643",
+          "label": "Permanentinis antakių makiažas ir nauja korekcija: ką galima ir ko nespręsti iš nuotraukos?",
+          "reason": "Atsakymas: Esamo pigmento istorija.",
+          "targetPlanId": null,
+          "targetTitle": "Permanentinis antakių makiažas ir nauja korekcija: ką galima ir ko nespręsti iš nuotraukos?"
+        },
+        {
+          "targetPageId": "4001d844-6da8-4778-acc3-5c632b343e2f",
+          "label": "Odos reakcija po antakių procedūros: kosmetinio vizito ir sveikatos pagalbos riba",
+          "reason": "Atsakymas: Naudota priemonė ir atlikti darbai.",
+          "targetPlanId": null,
+          "targetTitle": "Odos reakcija po antakių procedūros: kosmetinio vizito ir sveikatos pagalbos riba"
+        },
+        {
+          "targetPageId": "40e22039-917a-479f-840e-97edb71dcd55",
+          "label": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "BL-gidas",
+          "targetTitle": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas"
+        }
+      ]
+    },
+    {
+      "planId": "BL-gidas",
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "publishAt": "2026-10-30T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+          "label": "Blakstienų laminavimas ar priauginimas: rezultatų ir priežiūros skirtumai",
+          "reason": "Atsakymas: Natūralių plaukelių kryptis.",
+          "targetPlanId": "BL-laminavimas-ar-priauginimas",
+          "targetTitle": "Blakstienų laminavimas ar priauginimas: rezultatų ir priežiūros skirtumai"
+        },
+        {
+          "targetPageId": "f2d639d9-ccad-4ed9-a56e-5f358a0dbd0c",
+          "label": "Kaip atliekamas blakstienų laminavimas ir ko tikėtis iš rezultato?",
+          "reason": "Atsakymas: Konsultacija ir pasirinkta kryptis.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip atliekamas blakstienų laminavimas ir ko tikėtis iš rezultato?"
+        },
+        {
+          "targetPageId": "5b67edd7-e00c-436c-8b7b-759caa1107f9",
+          "label": "Blakstienų dažymas: ką jis keičia ir ko nesuteikia?",
+          "reason": "Atsakymas: Spalvos paryškinimas.",
+          "targetPlanId": null,
+          "targetTitle": "Blakstienų dažymas: ką jis keičia ir ko nesuteikia?"
+        },
+        {
+          "targetPageId": "731df40e-9494-4267-b920-0d23e78327b6",
+          "label": "Klasikinis ir volume priauginimas: ką reiškia 1D, 2D bei kiti pavadinimai?",
+          "reason": "Atsakymas: Pridedamų plaukelių principas.",
+          "targetPlanId": null,
+          "targetTitle": "Klasikinis ir volume priauginimas: ką reiškia 1D, 2D bei kiti pavadinimai?"
+        },
+        {
+          "targetPageId": "b67877e7-c45f-4cf9-b98a-076bf4ff9e7e",
+          "label": "Natūralus, cat-eye ir doll-eye blakstienų efektas: kuo skiriasi išdėstymas?",
+          "reason": "Atsakymas: Ilgio paskirstymas.",
+          "targetPlanId": null,
+          "targetTitle": "Natūralus, cat-eye ir doll-eye blakstienų efektas: kuo skiriasi išdėstymas?"
+        },
+        {
+          "targetPageId": "6cc5320c-52c3-43c8-8b05-3afacf3c059b",
+          "label": "Blakstienų papildymas ar pilnas nuėmimas: kada keičiasi vizito užduotis?",
+          "reason": "Atsakymas: Priauginimo būklė.",
+          "targetPlanId": null,
+          "targetTitle": "Blakstienų papildymas ar pilnas nuėmimas: kada keičiasi vizito užduotis?"
+        },
+        {
+          "targetPageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+          "label": "Blakstienų paslaugų kaina ir trukmė: naujas rinkinys, papildymas ir dažymas",
+          "reason": "Atsakymas: Skirtingi metodai.",
+          "targetPlanId": "BL-kaina-trukme",
+          "targetTitle": "Blakstienų paslaugų kaina ir trukmė: naujas rinkinys, papildymas ir dažymas"
+        },
+        {
+          "targetPageId": "81d7932f-b7fb-4eb4-a4ee-b324fc4a1ac0",
+          "label": "Prieš blakstienų vizitą: ankstesnis darbas, kontaktiniai lęšiai ir kosmetika",
+          "reason": "Atsakymas: Pradinė blakstienų būklė.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš blakstienų vizitą: ankstesnis darbas, kontaktiniai lęšiai ir kosmetika"
+        },
+        {
+          "targetPageId": "50dda186-7534-43c1-b458-80b23023394b",
+          "label": "Priežiūra po blakstienų laminavimo: ką lemia konkreti sistema?",
+          "reason": "Atsakymas: Produkto instrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po blakstienų laminavimo: ką lemia konkreti sistema?"
+        },
+        {
+          "targetPageId": "d99f8f03-a857-46df-b41a-318794e9d25a",
+          "label": "Priaugintų blakstienų priežiūra: valymas, kosmetika ir papildymo planas",
+          "reason": "Atsakymas: Sistemos valymo instrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Priaugintų blakstienų priežiūra: valymas, kosmetika ir papildymo planas"
+        },
+        {
+          "targetPageId": "b03b0005-ecca-4335-8778-f7f4a971373a",
+          "label": "Akių ar vokų reakcija po blakstienų procedūros: kada reikalinga sveikatos pagalba?",
+          "reason": "Atsakymas: Kosmetinis rezultatas ir sveikatos požymiai.",
+          "targetPlanId": null,
+          "targetTitle": "Akių ar vokų reakcija po blakstienų procedūros: kada reikalinga sveikatos pagalba?"
+        },
+        {
+          "targetPageId": "82929bc9-21c0-4401-afa3-a9ec2d51599e",
+          "label": "Antakiai ir blakstienos kartu: kaip palyginti paketo apimtį bei laiką?",
+          "reason": "Atsakymas: Keturi atskiri tikslai.",
+          "targetPlanId": null,
+          "targetTitle": "Antakiai ir blakstienos kartu: kaip palyginti paketo apimtį bei laiką?"
+        }
+      ]
+    },
+    {
+      "planId": "BR-gidas",
+      "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+      "publishAt": "2026-10-31T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+          "label": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+          "reason": "Atsakymas: Norimas kontūras.",
+          "targetPlanId": "BR-kirpimas-modeliavimas",
+          "targetTitle": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis"
+        },
+        {
+          "targetPageId": "edac36e3-f996-4513-86f2-43468d3d9f6e",
+          "label": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas",
+          "reason": "Atsakymas: Paliekamas ilgis.",
+          "targetPlanId": null,
+          "targetTitle": "Barzdos formavimas mašinėle ar švarus skutimas: skirtingas rezultatas"
+        },
+        {
+          "targetPageId": "0ff71a50-4768-48b2-a800-24b1bdab32e2",
+          "label": "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį?",
+          "reason": "Atsakymas: Plaukų kirpimo komponentai.",
+          "targetPlanId": null,
+          "targetTitle": "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį?"
+        },
+        {
+          "targetPageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+          "label": "Barzdos paslaugų kaina ir trukmė: formavimas, skutimas ir papildomi darbai",
+          "reason": "Atsakymas: Atskiras barzdos vizitas.",
+          "targetPlanId": "BR-kaina-trukme",
+          "targetTitle": "Barzdos paslaugų kaina ir trukmė: formavimas, skutimas ir papildomi darbai"
+        },
+        {
+          "targetPageId": "0f2d4cad-2826-4fc0-a466-08122c088b4b",
+          "label": "Prieš barberio vizitą: ilgis, norimas pokytis ir odos informacija",
+          "reason": "Atsakymas: Pradinė barzda.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš barberio vizitą: ilgis, norimas pokytis ir odos informacija"
+        },
+        {
+          "targetPageId": "cdbe60e4-2f55-4c41-8637-86296474edbf",
+          "label": "Barzdos priežiūra po vizito: formavimas, priemonės ir palaikymo užduotis",
+          "reason": "Atsakymas: Sutarta forma.",
+          "targetPlanId": null,
+          "targetTitle": "Barzdos priežiūra po vizito: formavimas, priemonės ir palaikymo užduotis"
+        },
+        {
+          "targetPageId": "cfa9aed7-b0e6-4001-a821-d5a952a7597f",
+          "label": "Odos sudirgimas po skutimo: kosmetinės priežiūros ir sveikatos vertinimo riba",
+          "reason": "Atsakymas: Naudota priemonė ir metodas.",
+          "targetPlanId": null,
+          "targetTitle": "Odos sudirgimas po skutimo: kosmetinės priežiūros ir sveikatos vertinimo riba"
+        },
+        {
+          "targetPageId": "83808900-d3df-4942-97c6-121bdeca5216",
+          "label": "Trumpas kirpimas: mašinėlės ilgis, kontūras ir perėjimas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Trumpas kirpimas: mašinėlės ilgis, kontūras ir perėjimas"
+        },
+        {
+          "targetPageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+          "label": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "DZ-gidas",
+          "targetTitle": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija"
+        },
+        {
+          "targetPageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+          "label": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis"
+        },
+        {
+          "targetPageId": "7da1f1ee-eca4-4d12-809c-c39f04acd989",
+          "label": "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas"
+        }
+      ]
+    },
+    {
+      "planId": "DP-gidas",
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "publishAt": "2026-11-01T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "0dedd1f4-3d67-4335-816d-8d0bd435767c",
+          "label": "Depiliacija vašku ar cukrumi: metodų ir paslaugos skirtumai",
+          "reason": "Atsakymas: Naudojama medžiaga.",
+          "targetPlanId": null,
+          "targetTitle": "Depiliacija vašku ar cukrumi: metodų ir paslaugos skirtumai"
+        },
+        {
+          "targetPageId": "26a9236d-7d71-4dc6-b282-ee3b65cd757b",
+          "label": "Kojų depiliacija: blauzdos, šlaunys ar visos kojos",
+          "reason": "Atsakymas: Zonų ribos.",
+          "targetPlanId": null,
+          "targetTitle": "Kojų depiliacija: blauzdos, šlaunys ar visos kojos"
+        },
+        {
+          "targetPageId": "2a1f5186-0066-4e13-88a2-6a8259fe3147",
+          "label": "Rankų ir pažastų depiliacija: kaip skiriasi zonos bei pasiūlymai?",
+          "reason": "Atsakymas: Rankų zonos.",
+          "targetPlanId": null,
+          "targetTitle": "Rankų ir pažastų depiliacija: kaip skiriasi zonos bei pasiūlymai?"
+        },
+        {
+          "targetPageId": "bb61c8c0-bb54-47a7-8dfd-69a2ed6478b8",
+          "label": "Bikini depiliacija: klasikinis, gilus ir kiti pasiūlymo pavadinimai",
+          "reason": "Atsakymas: Zonos ribos.",
+          "targetPlanId": null,
+          "targetTitle": "Bikini depiliacija: klasikinis, gilus ir kiti pasiūlymo pavadinimai"
+        },
+        {
+          "targetPageId": "c4627c43-19b0-4fb5-9de6-4db85f280061",
+          "label": "Veido depiliacija: zonos, metodas ir kosmetinės priežiūros ribos",
+          "reason": "Atsakymas: Ūseliai ar visas veidas.",
+          "targetPlanId": null,
+          "targetTitle": "Veido depiliacija: zonos, metodas ir kosmetinės priežiūros ribos"
+        },
+        {
+          "targetPageId": "7da1f1ee-eca4-4d12-809c-c39f04acd989",
+          "label": "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas",
+          "reason": "Atsakymas: Nugara ir kitos zonos.",
+          "targetPlanId": null,
+          "targetTitle": "Vyrų depiliacija vašku: kūno zonos, apimtis ir pirmasis vizitas"
+        },
+        {
+          "targetPageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+          "label": "Depiliacijos kaina ir trukmė: zonos, metodas bei paketai",
+          "reason": "Atsakymas: Kiek zonų apima pasiūlymas.",
+          "targetPlanId": "DP-kaina-trukme",
+          "targetTitle": "Depiliacijos kaina ir trukmė: zonos, metodas bei paketai"
+        },
+        {
+          "targetPageId": "2436bb7f-c61b-4aea-b747-0f0d94978604",
+          "label": "Kaip pasiruošti depiliacijai: plaukelių ilgis, odos produktai ir instrukcija",
+          "reason": "Atsakymas: Metodas ir teikėjo instrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti depiliacijai: plaukelių ilgis, odos produktai ir instrukcija"
+        },
+        {
+          "targetPageId": "98067b28-4461-425f-8b91-42e857f9eaca",
+          "label": "Priežiūra po depiliacijos: naudojamas metodas, oda ir tolesnis planas",
+          "reason": "Atsakymas: Naudoti produktai.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po depiliacijos: naudojamas metodas, oda ir tolesnis planas"
+        },
+        {
+          "targetPageId": "cc09f085-d9b2-45aa-b5e4-b43c398c9690",
+          "label": "Sudirgusi oda po depiliacijos: kada reikia sveikatos specialisto?",
+          "reason": "Atsakymas: Procedūros informacija.",
+          "targetPlanId": null,
+          "targetTitle": "Sudirgusi oda po depiliacijos: kada reikia sveikatos specialisto?"
+        },
+        {
+          "targetPageId": "fda5ef47-edf1-404b-9808-cc9230c5756a",
+          "label": "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtingas metodas ir vizitų planas",
+          "reason": "Atsakymas: Pašalinimas ir mažinimo principas.",
+          "targetPlanId": null,
+          "targetTitle": "Depiliacija vašku ar lazerinis plaukų šalinimas: skirtingas metodas ir vizitų planas"
+        },
+        {
+          "targetPageId": "b4c52a31-653d-4481-9d68-d6cc1d6af251",
+          "label": "Veido plaukelių šalinimas siūlu: skirtumas nuo vaško ir vizito apimtis",
+          "reason": "Atsakymas: Mechaninio metodo paaiškinimas.",
+          "targetPlanId": null,
+          "targetTitle": "Veido plaukelių šalinimas siūlu: skirtumas nuo vaško ir vizito apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "DZ-gidas",
+      "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+      "publishAt": "2026-11-02T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "208d345c-f8f7-48e6-9551-4fdd12f9fa92",
+          "label": "Šaknų ar visų plaukų dažymas: kada keičiasi darbų apimtis?",
+          "reason": "Atsakymas: Ataugusi zona.",
+          "targetPlanId": null,
+          "targetTitle": "Šaknų ar visų plaukų dažymas: kada keičiasi darbų apimtis?"
+        },
+        {
+          "targetPageId": "df0cc703-45f5-4119-a1e0-47126da17fd2",
+          "label": "Dažymas sruogomis: dalinis, visas ir prie veido",
+          "reason": "Atsakymas: Darbų zonos.",
+          "targetPlanId": null,
+          "targetTitle": "Dažymas sruogomis: dalinis, visas ir prie veido"
+        },
+        {
+          "targetPageId": "16a8706c-4c55-42ae-9681-e21c41dcc6c5",
+          "label": "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas?",
+          "reason": "Atsakymas: Spalvos paskirstymas.",
+          "targetPlanId": null,
+          "targetTitle": "Balayage ir Airtouch: kuo skiriasi technika bei rezultato planavimas?"
+        },
+        {
+          "targetPageId": "de27f293-5c7a-49c9-a749-75eccb141e9f",
+          "label": "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika?",
+          "reason": "Atsakymas: Perėjimo vieta.",
+          "targetPlanId": null,
+          "targetTitle": "Ombré, sombré ir balayage: rezultato pavadinimas ar darbo technika?"
+        },
+        {
+          "targetPageId": "67404770-1a57-4604-b391-0e5c8bcf1115",
+          "label": "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo?",
+          "reason": "Atsakymas: Atspalvio koregavimas.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų tonavimas: kam jis naudojamas ir kuo skiriasi nuo šviesinimo?"
+        },
+        {
+          "targetPageId": "a115c89d-cf77-4d8a-b835-638cee176799",
+          "label": "Plaukų šviesinimas: kodėl norimas pokytis gali būti kelių vizitų užduotis?",
+          "reason": "Atsakymas: Pradinės spalvos istorija.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų šviesinimas: kodėl norimas pokytis gali būti kelių vizitų užduotis?"
+        },
+        {
+          "targetPageId": "4f8fbdee-83b7-4555-8af8-0601d0c79c29",
+          "label": "Žilų plaukų dažymas: maskavimas, suvienodinimas ir natūralios spalvos perėjimas",
+          "reason": "Atsakymas: Žilumo pasiskirstymas.",
+          "targetPlanId": null,
+          "targetTitle": "Žilų plaukų dažymas: maskavimas, suvienodinimas ir natūralios spalvos perėjimas"
+        },
+        {
+          "targetPageId": "005c4f8e-1ee9-41f1-94a1-65dfe461be4b",
+          "label": "Plaukų spalvos korekcija: kuo ji skiriasi nuo įprasto dažymo?",
+          "reason": "Atsakymas: Ankstesnės spalvos.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų spalvos korekcija: kuo ji skiriasi nuo įprasto dažymo?"
+        },
+        {
+          "targetPageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+          "label": "Plaukų dažymo kaina ir trukmė: ilgis, tankis, tonavimas bei kirpimas",
+          "reason": "Atsakymas: Ilgis ir tankis.",
+          "targetPlanId": "DZ-kaina-trukme",
+          "targetTitle": "Plaukų dažymo kaina ir trukmė: ilgis, tankis, tonavimas bei kirpimas"
+        },
+        {
+          "targetPageId": "544dec94-c0de-4284-923f-06407450d90e",
+          "label": "Dažymo istorija prieš naują vizitą: ką perduoti spalvos specialistui?",
+          "reason": "Atsakymas: Dažai ir ankstesnis šviesinimas.",
+          "targetPlanId": null,
+          "targetTitle": "Dažymo istorija prieš naują vizitą: ką perduoti spalvos specialistui?"
+        },
+        {
+          "targetPageId": "a2f5b71f-39a9-4b12-a433-5813dfd690bd",
+          "label": "Alergijos įspėjimo ir sruogos testai prieš dažymą: skirtinga paskirtis",
+          "reason": "Atsakymas: Reakcijos įspėjimo testas.",
+          "targetPlanId": null,
+          "targetTitle": "Alergijos įspėjimo ir sruogos testai prieš dažymą: skirtinga paskirtis"
+        },
+        {
+          "targetPageId": "3f5a81bc-a343-437d-84d0-1b255cccf909",
+          "label": "Kaip pasiruošti plaukų dažymui: nuotraukos, plovimas ir vizito diena",
+          "reason": "Atsakymas: Nuotraukos vienodu apšvietimu.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti plaukų dažymui: nuotraukos, plovimas ir vizito diena"
+        },
+        {
+          "targetPageId": "ec344443-aa2f-4736-9e62-081bcb42a027",
+          "label": "Dažytų plaukų priežiūra: plovimas, formavimas ir spalvos palaikymas",
+          "reason": "Atsakymas: Naudota sistema.",
+          "targetPlanId": null,
+          "targetTitle": "Dažytų plaukų priežiūra: plovimas, formavimas ir spalvos palaikymas"
+        },
+        {
+          "targetPageId": "cb537874-7455-455f-85af-948fab2b069f",
+          "label": "Kodėl plaukų dažymo rezultatas nuotraukoje ir realybėje gali skirtis?",
+          "reason": "Atsakymas: Šviesa ir baltos spalvos balansas.",
+          "targetPlanId": null,
+          "targetTitle": "Kodėl plaukų dažymo rezultatas nuotraukoje ir realybėje gali skirtis?"
+        },
+        {
+          "targetPageId": "b67ddd5d-d18a-4d54-9a6d-ef460d829f57",
+          "label": "Reakcija po plaukų dažymo: kada grožio konsultacijos nepakanka?",
+          "reason": "Atsakymas: Kosmetinis nepasitenkinimas ir sveikatos požymiai.",
+          "targetPlanId": null,
+          "targetTitle": "Reakcija po plaukų dažymo: kada grožio konsultacijos nepakanka?"
+        }
+      ]
+    },
+    {
+      "planId": "GL-gidas",
+      "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+      "publishAt": "2026-11-03T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+          "label": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai",
+          "reason": "Atsakymas: Spalvos danga.",
+          "targetPlanId": null,
+          "targetTitle": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai"
+        },
+        {
+          "targetPageId": "7c1533fc-fa17-45d4-b76c-bb2eaa65b0a3",
+          "label": "Ką reiškia bazė ir nago išlyginimas gelinio lakavimo pasiūlyme?",
+          "reason": "Atsakymas: Bazės paskirtis sistemoje.",
+          "targetPlanId": null,
+          "targetTitle": "Ką reiškia bazė ir nago išlyginimas gelinio lakavimo pasiūlyme?"
+        },
+        {
+          "targetPageId": "d4712e01-6bc1-47ec-aa60-ac311d9438de",
+          "label": "Nagų lako nuėmimas: paprasta danga, gelinis lakas ir naujas padengimas",
+          "reason": "Atsakymas: Žinoma ir nežinoma danga.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų lako nuėmimas: paprasta danga, gelinis lakas ir naujas padengimas"
+        },
+        {
+          "targetPageId": "2cca02ae-6141-494b-90bb-a358af2c3c4f",
+          "label": "Kaip pasiruošti manikiūrui: esama danga ir norimas rezultatas",
+          "reason": "Atsakymas: Ankstesnė sistema.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti manikiūrui: esama danga ir norimas rezultatas"
+        },
+        {
+          "targetPageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+          "label": "Gelinio lakavimo kaina ir trukmė: nuėmimas, bazė bei dizainas",
+          "reason": "Atsakymas: Kainos sudėtis.",
+          "targetPlanId": "GL-kaina-trukme",
+          "targetTitle": "Gelinio lakavimo kaina ir trukmė: nuėmimas, bazė bei dizainas"
+        },
+        {
+          "targetPageId": "0d9314f4-b011-4767-b811-0c03dfb158d8",
+          "label": "Nuo ko priklauso gelinio lakavimo laikymasis ir kodėl nėra vieno termino?",
+          "reason": "Atsakymas: Pradinė būklė ir sistema.",
+          "targetPlanId": null,
+          "targetTitle": "Nuo ko priklauso gelinio lakavimo laikymasis ir kodėl nėra vieno termino?"
+        },
+        {
+          "targetPageId": "c58d63b9-8699-4c35-a4c9-b725ba42bbc7",
+          "label": "Kaip prižiūrėti gelinę dangą ir kodėl jos nekrapštyti?",
+          "reason": "Atsakymas: Tausojantys įpročiai.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip prižiūrėti gelinę dangą ir kodėl jos nekrapštyti?"
+        },
+        {
+          "targetPageId": "6e2be6f8-1a8d-4818-8747-649c3fea8814",
+          "label": "Atskilusi ar atšokusi gelinė danga: ką daryti ir ko nedaryti?",
+          "reason": "Atsakymas: Dangos defektas.",
+          "targetPlanId": null,
+          "targetTitle": "Atskilusi ar atšokusi gelinė danga: ką daryti ir ko nedaryti?"
+        },
+        {
+          "targetPageId": "d09cea39-3c5e-4246-a502-6c4571b666a8",
+          "label": "UV ir LED nagų lempos: ką reiškia šie pavadinimai?",
+          "reason": "Atsakymas: Šviesos šaltinis ir spinduliuotė.",
+          "targetPlanId": null,
+          "targetTitle": "UV ir LED nagų lempos: ką reiškia šie pavadinimai?"
+        },
+        {
+          "targetPageId": "77748cbc-2c25-43b7-986a-455669c6e8c7",
+          "label": "TPO ir HEMA nagų produktuose: taisyklės ir HEMA-free žymos ribos",
+          "reason": "Atsakymas: Skirtingos medžiagos.",
+          "targetPlanId": null,
+          "targetTitle": "TPO ir HEMA nagų produktuose: taisyklės ir HEMA-free žymos ribos"
+        },
+        {
+          "targetPageId": "e3ef7265-4770-4b86-a6be-22c1a017d3f1",
+          "label": "Galima reakcija į nagų kosmetiką: kada kreiptis į sveikatos specialistą?",
+          "reason": "Atsakymas: Reakcijos ne visada tik prie nago.",
+          "targetPlanId": null,
+          "targetTitle": "Galima reakcija į nagų kosmetiką: kada kreiptis į sveikatos specialistą?"
+        },
+        {
+          "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+          "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "MN-gidas",
+      "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+      "publishAt": "2026-11-07T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "fe463eb4-5553-4ca7-b472-11bf00581cb7",
+          "label": "Klasikinis, aparatinis ir kombinuotas manikiūras: kuo skiriasi?",
+          "reason": "Atsakymas: Kas atlieka odelių tvarkymą.",
+          "targetPlanId": null,
+          "targetTitle": "Klasikinis, aparatinis ir kombinuotas manikiūras: kuo skiriasi?"
+        },
+        {
+          "targetPageId": "6d77f5cb-8271-4e81-b446-7a0537771b86",
+          "label": "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis?",
+          "reason": "Atsakymas: Nagų forma ir paviršius.",
+          "targetPlanId": null,
+          "targetTitle": "Manikiūras be lakavimo: kas atliekama ir kokio rezultato tikėtis?"
+        },
+        {
+          "targetPageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+          "label": "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?",
+          "reason": "Atsakymas: Priežiūra ir padengimas.",
+          "targetPlanId": "MN-ar-gelinis",
+          "targetTitle": "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?"
+        },
+        {
+          "targetPageId": "bc179418-b0b9-42c9-88e7-318f86ad4227",
+          "label": "Express ar pilnas manikiūras: kaip palyginti darbų apimtį?",
+          "reason": "Atsakymas: Sutrumpinto vizito komponentai.",
+          "targetPlanId": null,
+          "targetTitle": "Express ar pilnas manikiūras: kaip palyginti darbų apimtį?"
+        },
+        {
+          "targetPageId": "b60bf94b-7bc9-4cc6-a69f-e3afb27a987a",
+          "label": "Kiek trunka manikiūras ir kas prailgina vizitą?",
+          "reason": "Atsakymas: Priežiūros laikas.",
+          "targetPlanId": null,
+          "targetTitle": "Kiek trunka manikiūras ir kas prailgina vizitą?"
+        },
+        {
+          "targetPageId": "2cca02ae-6141-494b-90bb-a358af2c3c4f",
+          "label": "Kaip pasiruošti manikiūrui: esama danga ir norimas rezultatas",
+          "reason": "Atsakymas: Dangos istorija.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti manikiūrui: esama danga ir norimas rezultatas"
+        },
+        {
+          "targetPageId": "e8ab1dc6-d38e-4a57-840d-1c3e0fd72120",
+          "label": "Odelių priežiūra: kuo skiriasi salono darbas ir kasdienė priežiūra?",
+          "reason": "Atsakymas: Odelių paskirtis.",
+          "targetPlanId": null,
+          "targetTitle": "Odelių priežiūra: kuo skiriasi salono darbas ir kasdienė priežiūra?"
+        },
+        {
+          "targetPageId": "3c2c13c8-1d8c-48dc-aab3-9badf7ce79a6",
+          "label": "Rankų ir nagų priežiūra žiemą: odos sausumas ir danga",
+          "reason": "Atsakymas: Drėkinimas ir įpročiai.",
+          "targetPlanId": null,
+          "targetTitle": "Rankų ir nagų priežiūra žiemą: odos sausumas ir danga"
+        },
+        {
+          "targetPageId": "a06cf85c-abd5-426f-b928-fdfdfba6b4a1",
+          "label": "Pakartotinis manikiūras ar korekcija: priežiūros vizitas ir defekto taisymas",
+          "reason": "Atsakymas: Reguliari kosmetinė priežiūra.",
+          "targetPlanId": null,
+          "targetTitle": "Pakartotinis manikiūras ar korekcija: priežiūros vizitas ir defekto taisymas"
+        },
+        {
+          "targetPageId": "e213c013-bc15-4404-91a4-255c52bd7af2",
+          "label": "Po manikiūro pažeistas nagas ar danga: kokia pagalba reikalinga?",
+          "reason": "Atsakymas: Kosmetinis defektas ir sveikatos požymiai.",
+          "targetPlanId": null,
+          "targetTitle": "Po manikiūro pažeistas nagas ar danga: kokia pagalba reikalinga?"
+        },
+        {
+          "targetPageId": "48a9db00-2569-4c1f-81bc-0ff5baef38a7",
+          "label": "Manikiūro įrankių higiena: dezinfekcija, sterilizacija ir vienkartinės priemonės",
+          "reason": "Atsakymas: Terminų skirtumas.",
+          "targetPlanId": null,
+          "targetTitle": "Manikiūro įrankių higiena: dezinfekcija, sterilizacija ir vienkartinės priemonės"
+        },
+        {
+          "targetPageId": "1d3c14fd-d199-456c-bcb9-e80ce7b4ae15",
+          "label": "Japoniškas manikiūras: kas tai ir kuo skiriasi nuo lakavimo?",
+          "reason": "Atsakymas: Japoniško manikiūro paskirtis ir naudojama sistema.",
+          "targetPlanId": null,
+          "targetTitle": "Japoniškas manikiūras: kas tai ir kuo skiriasi nuo lakavimo?"
+        },
+        {
+          "targetPageId": "baf25810-3318-4b27-b59c-e0c82093824d",
+          "label": "Kas įeina į manikiūro kainą",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Kas įeina į manikiūro kainą"
+        }
+      ]
+    },
+    {
+      "planId": "NP-gidas",
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "publishAt": "2026-11-09T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+          "label": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+          "reason": "Atsakymas: Skirtingos produktų sistemos.",
+          "targetPlanId": null,
+          "targetTitle": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos"
+        },
+        {
+          "targetPageId": "6571cefa-d9fb-464e-962b-a8753fa56056",
+          "label": "Nagų priauginimo formos ir tipsai: ką reiškia paslaugos metodas?",
+          "reason": "Atsakymas: Ilgio formavimo pagrindas.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų priauginimo formos ir tipsai: ką reiškia paslaugos metodas?"
+        },
+        {
+          "targetPageId": "cde5b326-6b7e-40f7-99ea-9c5967b60f1d",
+          "label": "Gelinių nagų papildymas ar pilnas nuėmimas: kaip skiriasi konstrukcijos darbai?",
+          "reason": "Atsakymas: Esama konstrukcija.",
+          "targetPlanId": null,
+          "targetTitle": "Gelinių nagų papildymas ar pilnas nuėmimas: kaip skiriasi konstrukcijos darbai?"
+        },
+        {
+          "targetPageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+          "label": "Nagų priauginimo kaina ir trukmė: ilgis, konstrukcija, dizainas bei nuėmimas",
+          "reason": "Atsakymas: Naujo darbo komponentai.",
+          "targetPlanId": "NP-kaina-trukme",
+          "targetTitle": "Nagų priauginimo kaina ir trukmė: ilgis, konstrukcija, dizainas bei nuėmimas"
+        },
+        {
+          "targetPageId": "9c8e9c9b-61d7-4d7c-a67e-da0590e4ca12",
+          "label": "Prieš nagų priauginimą: sena sistema, norimas ilgis ir kasdieniai poreikiai",
+          "reason": "Atsakymas: Pradinė danga.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš nagų priauginimą: sena sistema, norimas ilgis ir kasdieniai poreikiai"
+        },
+        {
+          "targetPageId": "846446da-8fcc-4eae-96f6-117f5397e05b",
+          "label": "Priaugintų nagų priežiūra: kasdieniai įpročiai ir tolimesnio vizito planas",
+          "reason": "Atsakymas: Konstrukcijos tausojimas.",
+          "targetPlanId": null,
+          "targetTitle": "Priaugintų nagų priežiūra: kasdieniai įpročiai ir tolimesnio vizito planas"
+        },
+        {
+          "targetPageId": "84e512ce-c68a-4174-9275-520545f9c4c1",
+          "label": "Pažeista nagų konstrukcija: korekcija, nuėmimas ir sveikatos pagalbos riba",
+          "reason": "Atsakymas: Defektas ir sveikatos požymiai.",
+          "targetPlanId": null,
+          "targetTitle": "Pažeista nagų konstrukcija: korekcija, nuėmimas ir sveikatos pagalbos riba"
+        },
+        {
+          "targetPageId": "81aac3db-1ae6-4503-8a8f-eb26ebce8ec1",
+          "label": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Gelinis lakavimas, nagų stiprinimas ir priauginimas: trys skirtingi rezultatai"
+        }
+      ]
+    },
+    {
+      "planId": "PD-gidas",
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "publishAt": "2026-11-10T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+          "label": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+          "reason": "Atsakymas: Odai ir nagams skirti darbai.",
+          "targetPlanId": null,
+          "targetTitle": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis"
+        },
+        {
+          "targetPageId": "681475ad-45fb-474f-bd5c-218e33091af0",
+          "label": "Rūgštinis pedikiūras: ką reiškia pavadinimas ir ko klausti apie priemonę?",
+          "reason": "Atsakymas: Priemonės vaidmuo.",
+          "targetPlanId": null,
+          "targetTitle": "Rūgštinis pedikiūras: ką reiškia pavadinimas ir ko klausti apie priemonę?"
+        },
+        {
+          "targetPageId": "91053963-6eff-408a-b26d-7eed52088b91",
+          "label": "Pedikiūras be lakavimo: ko tikėtis iš priežiūros vizito?",
+          "reason": "Atsakymas: Nagų sutvarkymas.",
+          "targetPlanId": "PD-be-lakavimo",
+          "targetTitle": "Pedikiūras be lakavimo: ko tikėtis iš priežiūros vizito?"
+        },
+        {
+          "targetPageId": "357fe54e-7e50-464a-82db-bef2b9df809f",
+          "label": "Gelinis ar paprastas kojų nagų lakavimas: skirtumai renkantis paslaugą",
+          "reason": "Atsakymas: Dangos tipas.",
+          "targetPlanId": null,
+          "targetTitle": "Gelinis ar paprastas kojų nagų lakavimas: skirtumai renkantis paslaugą"
+        },
+        {
+          "targetPageId": "0436fded-d9a1-4e04-a7c4-2685fcf13eb3",
+          "label": "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas",
+          "reason": "Atsakymas: Pėdų priežiūros apimtis.",
+          "targetPlanId": null,
+          "targetTitle": "Pedikiūro kaina ir trukmė: pėdos, nagai, danga bei nuėmimas"
+        },
+        {
+          "targetPageId": "7b8ed242-ce6a-42dc-a6e3-8676d00e945a",
+          "label": "Kaip pasiruošti pedikiūrui: danga, avalynė ir svarbi pradinė informacija",
+          "reason": "Atsakymas: Sena danga.",
+          "targetPlanId": null,
+          "targetTitle": "Kaip pasiruošti pedikiūrui: danga, avalynė ir svarbi pradinė informacija"
+        },
+        {
+          "targetPageId": "66b16569-bf26-40d3-9456-8739c6b4a92f",
+          "label": "Priežiūra po pedikiūro: oda ir nagų danga turi skirtingus poreikius",
+          "reason": "Atsakymas: Odos priežiūros rutina.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po pedikiūro: oda ir nagų danga turi skirtingus poreikius"
+        },
+        {
+          "targetPageId": "76203864-c54f-45f7-86ea-b3794b27a567",
+          "label": "Kosmetinis pedikiūras ar sveikatos konsultacija: kur paslaugos riba?",
+          "reason": "Atsakymas: Kodėl nuotrauka nėra diagnozė.",
+          "targetPlanId": null,
+          "targetTitle": "Kosmetinis pedikiūras ar sveikatos konsultacija: kur paslaugos riba?"
+        },
+        {
+          "targetPageId": "e32dfd62-41d8-4143-9135-2a67a0b11f7a",
+          "label": "Manikiūras ir pedikiūras vienu vizitu: laikas, darbuotojai ir paketo apimtis",
+          "reason": "Atsakymas: Vienas ar keli specialistai.",
+          "targetPlanId": null,
+          "targetTitle": "Manikiūras ir pedikiūras vienu vizitu: laikas, darbuotojai ir paketo apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "PP-gidas",
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "publishAt": "2026-11-11T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f13be7d8-026a-4039-afd3-e8711995fb9c",
+          "label": "„Plaukų atstatymas“: ką reiškia pasiūlymas ir kokiam rezultatui reikia įrodymų?",
+          "reason": "Atsakymas: Rinkodaros terminas.",
+          "targetPlanId": null,
+          "targetTitle": "„Plaukų atstatymas“: ką reiškia pasiūlymas ir kokiam rezultatui reikia įrodymų?"
+        },
+        {
+          "targetPageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+          "label": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+          "reason": "Atsakymas: Formavimas karščiu.",
+          "targetPlanId": null,
+          "targetTitle": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra"
+        },
+        {
+          "targetPageId": "efbc7013-a863-4e55-8576-79ff02b83286",
+          "label": "Keratininio tiesinimo pasiūlymas: produktas, karštis ir sudėties patikra",
+          "reason": "Atsakymas: Pavadinimas ir tikra sistema.",
+          "targetPlanId": null,
+          "targetTitle": "Keratininio tiesinimo pasiūlymas: produktas, karštis ir sudėties patikra"
+        },
+        {
+          "targetPageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+          "label": "Plaukų priežiūros procedūros kaina ir trukmė: sistema, ilgis bei priedai",
+          "reason": "Atsakymas: Naudota sistema.",
+          "targetPlanId": "PP-kaina-trukme",
+          "targetTitle": "Plaukų priežiūros procedūros kaina ir trukmė: sistema, ilgis bei priedai"
+        },
+        {
+          "targetPageId": "0b9ebb03-7d37-4a35-ab67-065421de9a3d",
+          "label": "Prieš plaukų priežiūros procedūrą: dažymo istorija ir naudojami produktai",
+          "reason": "Atsakymas: Ankstesni cheminiai darbai.",
+          "targetPlanId": null,
+          "targetTitle": "Prieš plaukų priežiūros procedūrą: dažymo istorija ir naudojami produktai"
+        },
+        {
+          "targetPageId": "9a26d211-6734-4e30-9cad-c932a85ad6f0",
+          "label": "Po plaukų priežiūros procedūros: kodėl plovimo instrukcija priklauso nuo sistemos?",
+          "reason": "Atsakymas: Kas buvo atlikta.",
+          "targetPlanId": null,
+          "targetTitle": "Po plaukų priežiūros procedūros: kodėl plovimo instrukcija priklauso nuo sistemos?"
+        },
+        {
+          "targetPageId": "77793bec-9910-43fc-af99-e0e39bb3a9d4",
+          "label": "Reakcija procedūros metu ar po jos: kosmetinės priežiūros ir sveikatos pagalbos riba",
+          "reason": "Atsakymas: Naudota sistema ir ekspozicija.",
+          "targetPlanId": null,
+          "targetTitle": "Reakcija procedūros metu ar po jos: kosmetinės priežiūros ir sveikatos pagalbos riba"
+        },
+        {
+          "targetPageId": "a71017dd-9354-4709-a610-d38c45b2b31a",
+          "label": "Galvos odos priežiūra ir šveitimas salone: kosmetinis tikslas ir dermatologo riba",
+          "reason": "Atsakymas: Kosmetinė priežiūros konsultacija.",
+          "targetPlanId": null,
+          "targetTitle": "Galvos odos priežiūra ir šveitimas salone: kosmetinis tikslas ir dermatologo riba"
+        },
+        {
+          "targetPageId": "b46fd1e4-cd5a-4e9b-b506-cb5d623c99c4",
+          "label": "Ilgalaikis garbanojimas: cheminė tekstūros procedūra ir kasdienė priežiūra",
+          "reason": "Atsakymas: Skirtumas nuo vienkartinių garbanų.",
+          "targetPlanId": null,
+          "targetTitle": "Ilgalaikis garbanojimas: cheminė tekstūros procedūra ir kasdienė priežiūra"
+        }
+      ]
+    },
+    {
+      "planId": "B-ginčas",
+      "pageId": "ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6",
+      "publishAt": "2026-11-16T14:00:00.000Z",
+      "proposals": []
+    },
+    {
+      "planId": "B-meistrui-grafikas",
+      "pageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+      "publishAt": "2026-11-18T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+          "label": "Meistrui: profilio peržiūros, užklausos ir patvirtinti vizitai",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "B-meistrui-matavimas",
+          "targetTitle": "Meistrui: profilio peržiūros, užklausos ir patvirtinti vizitai"
+        }
+      ]
+    },
+    {
+      "planId": "B-meistrui-matavimas",
+      "pageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+      "publishAt": "2026-11-18T14:00:00.000Z",
+      "proposals": []
+    },
+    {
+      "planId": "B-meistrui-meniu",
+      "pageId": "10660b33-7a51-429f-80c0-6814e8d36cc6",
+      "publishAt": "2026-11-19T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+          "label": "Meistrui: paslaugų trukmė, laiko rezervas ir vizitų duomenys",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "B-meistrui-grafikas",
+          "targetTitle": "Meistrui: paslaugų trukmė, laiko rezervas ir vizitų duomenys"
+        }
+      ]
+    },
+    {
+      "planId": "B-salygos",
+      "pageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+      "publishAt": "2026-11-19T14:00:00.000Z",
+      "proposals": []
+    },
+    {
+      "planId": "B-sauga",
+      "pageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+      "publishAt": "2026-11-20T08:00:00.000Z",
+      "proposals": []
+    },
+    {
+      "planId": "AN-kaina-trukme",
+      "pageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+      "publishAt": "2026-11-20T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+          "label": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "AN-gidas",
+          "targetTitle": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas"
+        }
+      ]
+    },
+    {
+      "planId": "BL-kaina-trukme",
+      "pageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+      "publishAt": "2026-11-22T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "40e22039-917a-479f-840e-97edb71dcd55",
+          "label": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "BL-gidas",
+          "targetTitle": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas"
+        }
+      ]
+    },
+    {
+      "planId": "BR-kaina-trukme",
+      "pageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+      "publishAt": "2026-11-23T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+          "label": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "BR-gidas",
+          "targetTitle": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija"
+        }
+      ]
+    },
+    {
+      "planId": "DP-kaina-trukme",
+      "pageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+      "publishAt": "2026-11-23T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+          "label": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "DP-gidas",
+          "targetTitle": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga"
+        }
+      ]
+    },
+    {
+      "planId": "DZ-kaina-trukme",
+      "pageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+      "publishAt": "2026-11-24T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+          "label": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "DZ-gidas",
+          "targetTitle": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija"
+        },
+        {
+          "targetPageId": "df24650a-285f-4fe6-b08a-6b0db530e38f",
+          "label": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Kirpimo kaina ir trukmė: konsultacija, plovimas bei sušukavimas"
+        }
+      ]
+    },
+    {
+      "planId": "GL-kaina-trukme",
+      "pageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+      "publishAt": "2026-11-25T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+          "label": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "GL-gidas",
+          "targetTitle": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti"
+        },
+        {
+          "targetPageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+          "label": "Nagų dizaino kaina: akcentų skaičius, technika ir nuėmimas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "ND-akcentai-kaina",
+          "targetTitle": "Nagų dizaino kaina: akcentų skaičius, technika ir nuėmimas"
+        }
+      ]
+    },
+    {
+      "planId": "MN-ar-gelinis",
+      "pageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+      "publishAt": "2026-11-26T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+          "label": "Manikiūro gidas: metodai, eiga ir paslaugos pasirinkimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "MN-gidas",
+          "targetTitle": "Manikiūro gidas: priežiūra, danga ir vizito eiga"
+        },
+        {
+          "targetPageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+          "label": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "GL-gidas",
+          "targetTitle": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti"
+        }
+      ]
+    },
+    {
+      "planId": "ND-akcentai-kaina",
+      "pageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+      "publishAt": "2026-11-27T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+          "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+        },
+        {
+          "targetPageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+          "label": "Gelinio lakavimo kaina ir trukmė: nuėmimas, bazė bei dizainas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": "GL-kaina-trukme",
+          "targetTitle": "Gelinio lakavimo kaina ir trukmė: nuėmimas, bazė bei dizainas"
+        }
+      ]
+    },
+    {
+      "planId": "NP-kaina-trukme",
+      "pageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+      "publishAt": "2026-11-28T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+          "label": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "NP-gidas",
+          "targetTitle": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas"
+        }
+      ]
+    },
+    {
+      "planId": "PD-be-lakavimo",
+      "pageId": "91053963-6eff-408a-b26d-7eed52088b91",
+      "publishAt": "2026-11-29T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+          "label": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "PD-gidas",
+          "targetTitle": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas"
+        }
+      ]
+    },
+    {
+      "planId": "PP-kaina-trukme",
+      "pageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+      "publishAt": "2026-11-30T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+          "label": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "PP-gidas",
+          "targetTitle": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos"
+        }
+      ]
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+      "publishAt": "2026-12-01T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+          "label": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "AN-gidas",
+          "targetTitle": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas"
+        }
+      ]
+    },
+    {
+      "planId": "BL-laminavimas-ar-priauginimas",
+      "pageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+      "publishAt": "2026-12-01T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "40e22039-917a-479f-840e-97edb71dcd55",
+          "label": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "BL-gidas",
+          "targetTitle": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas"
+        },
+        {
+          "targetPageId": "d99f8f03-a857-46df-b41a-318794e9d25a",
+          "label": "Priaugintų blakstienų priežiūra: valymas, kosmetika ir papildymo planas",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Priaugintų blakstienų priežiūra: valymas, kosmetika ir papildymo planas"
+        }
+      ]
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "publishAt": "2026-12-02T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+          "label": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": "BR-gidas",
+          "targetTitle": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija"
+        }
+      ]
+    }
+  ]
+}

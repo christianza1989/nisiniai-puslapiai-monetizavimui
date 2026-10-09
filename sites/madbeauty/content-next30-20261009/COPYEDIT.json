@@ -1,0 +1,246 @@
+{
+  "checkedAt": "2026-10-09T19:21:35.752Z",
+  "scope": "Native Luna drafts with editor corrections recorded per page: spacing, joined link paragraph, one featured photo, reading time, and S02 client-status wording. No model or expert-review substitution.",
+  "changes": [
+    {
+      "planId": "AN-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "BL-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "BR-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "DP-gidas",
+      "typedLinkSpacingCorrections": 1,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "DZ-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "GL-gidas",
+      "typedLinkSpacingCorrections": 3,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "MN-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "NP-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "PD-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "PP-gidas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "B-ginčas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 1,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "B-meistrui-grafikas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "B-meistrui-matavimas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "B-meistrui-meniu",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "B-salygos",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "B-sauga",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 1,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "AN-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "BL-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 1,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "BR-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "DP-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 1,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "DZ-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "GL-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "MN-ar-gelinis",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "ND-akcentai-kaina",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "NP-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 1,
+      "joinedLinkParagraphs": 1,
+      "factualCorrections": 1,
+      "basis": "S02 menu differentiates client status, not a new set versus an infill. This bounded editor correction preserves the actual menu meaning."
+    },
+    {
+      "planId": "PD-be-lakavimo",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "PP-kaina-trukme",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 1,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "BL-laminavimas-ar-priauginimas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 1,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "typedLinkSpacingCorrections": 0,
+      "duplicateInlineFeaturePhotosRemoved": 0,
+      "joinedLinkParagraphs": 0,
+      "factualCorrections": 0,
+      "basis": null
+    }
+  ]
+}

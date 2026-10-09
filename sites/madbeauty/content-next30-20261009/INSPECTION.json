@@ -1,0 +1,658 @@
+{
+  "checkedAt": "2026-10-09T19:34:21.372Z",
+  "status": "PRIVATE_DRAFT_INSPECTION_NOT_APPROVAL",
+  "pages": [
+    {
+      "planId": "AN-gidas",
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "title": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+      "publishAt": "2026-10-29T08:00:00.000Z",
+      "localDate": "2026-10-29",
+      "localTime": "10:00",
+      "blocks": 14,
+      "words": 459,
+      "bodySha256": "8786e47aa2859a58fde9b7b1dc6e79f52a6517ec7e443cfb6b1429f6c1223d97",
+      "revisionHash": "b567d5b75bdb2697eb1f3a30a0652f49b3c543dbeaed2e78077e87ac63a6363f",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Antakių specialisto terminų ir eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "BL-gidas",
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "title": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+      "publishAt": "2026-10-30T14:00:00.000Z",
+      "localDate": "2026-10-30",
+      "localTime": "16:00",
+      "blocks": 16,
+      "words": 504,
+      "bodySha256": "06853eda5479372072df67ae3c7e9ff244078b15b0c000ed46a42ee9666441fb",
+      "revisionHash": "41848c41ed08d6d1af79faaa7c178562617bcea804615bcfed496b78c258d0f3",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Blakstienų specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "BR-gidas",
+      "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+      "title": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+      "publishAt": "2026-10-31T08:00:00.000Z",
+      "localDate": "2026-10-31",
+      "localTime": "10:00",
+      "blocks": 11,
+      "words": 403,
+      "bodySha256": "35789065b66ecde70994e19b5e0da702c3cea0b923d3b937125b9bdaaf789988",
+      "revisionHash": "b382787b0531e737f5dcd085bc302ace3605f237dbbbb52827a87cc48cba9727",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "DP-gidas",
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "title": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+      "publishAt": "2026-11-01T08:00:00.000Z",
+      "localDate": "2026-11-01",
+      "localTime": "10:00",
+      "blocks": 13,
+      "words": 504,
+      "bodySha256": "4f6fe64d62aab35f3db2246360c8dd7ab3603456e24c94b59e730d1ecb228d3c",
+      "revisionHash": "ab65f4cde32fa8f615ac36e79d42744df8ce2279cd7ca0577ceeccc913e944fe",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Depiliacijos specialisto eigos review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "DZ-gidas",
+      "pageId": "88652699-aee1-4c8b-a863-2569c2ea9e9c",
+      "title": "Plaukų dažymo gidas: spalva, technika ir ankstesnio dažymo istorija",
+      "publishAt": "2026-11-02T08:00:00.000Z",
+      "localDate": "2026-11-02",
+      "localTime": "10:00",
+      "blocks": 15,
+      "words": 513,
+      "bodySha256": "6c1035cce5fbc77bd6a5086819f44f7916873c7aca970f14654839997c4a573d",
+      "revisionHash": "d9cb6084186560a4804bcbc46b332099beac157e6b0fbbe80d990bc899011894",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Dažymo specialisto ir konkrečių sistemų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "GL-gidas",
+      "pageId": "4ebc5eb7-a0a9-4efb-aaf6-5960b804cb67",
+      "title": "Gelinio lakavimo gidas: kas tai, kaip atliekamas ir kaip prižiūrėti",
+      "publishAt": "2026-11-03T14:00:00.000Z",
+      "localDate": "2026-11-03",
+      "localTime": "16:00",
+      "blocks": 12,
+      "words": 359,
+      "bodySha256": "ba02578c7dec71b8c79f40c7df3fc218053f8ff7e639344e310f58d3f1e2d1e7",
+      "revisionHash": "925ec1450154ff61b946c1863afce5486c32b16438436831d8cb3202ca9238f0",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečios sistemos gamintojo protokolas ir meistro peržiūra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "MN-gidas",
+      "pageId": "3e522d17-c49d-4f1c-9ca2-c7e8bc314fb3",
+      "title": "Manikiūro gidas: priežiūra, danga ir vizito eiga",
+      "publishAt": "2026-11-07T08:00:00.000Z",
+      "localDate": "2026-11-07",
+      "localTime": "10:00",
+      "blocks": 14,
+      "words": 452,
+      "bodySha256": "89c4b579190fa124220c40101779f9f584ad970009ade39046f9cd18f6a3f8eb",
+      "revisionHash": "2dde51544d13a655a5bc21ec7606a993eb12f426823906b5d5feba5c84d69080",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Manikiūro specialisto patikrintas eigos aprašymas“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "NP-gidas",
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "title": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+      "publishAt": "2026-11-09T08:00:00.000Z",
+      "localDate": "2026-11-09",
+      "localTime": "10:00",
+      "blocks": 19,
+      "words": 707,
+      "bodySha256": "bf2377645d150bbfdcfe51619088ae9aa8afe092c146f9083757bc4fd5226dd6",
+      "revisionHash": "3896c1feff1066743e741cee9cf29cdc72fcbd0fe9907637c6da35b9a211294e",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Sistemų dokumentai ir nagų specialisto review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "PD-gidas",
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "title": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+      "publishAt": "2026-11-10T14:00:00.000Z",
+      "localDate": "2026-11-10",
+      "localTime": "16:00",
+      "blocks": 17,
+      "words": 551,
+      "bodySha256": "481811d6734afb3bfa6a355279849c0b66f5de72b8eb060bb6bf32f45d853d74",
+      "revisionHash": "a4b2f9a0dda50532bbaf0538c1881cbba1632945167ff60b7c7919752108108f",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Pedikiūro specialisto eigos patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "PP-gidas",
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "title": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+      "publishAt": "2026-11-11T14:00:00.000Z",
+      "localDate": "2026-11-11",
+      "localTime": "16:00",
+      "blocks": 16,
+      "words": 589,
+      "bodySha256": "4cd84fcf1df572b2c4d66fa3261c9bf2f7dad06debca9221ce630bd8c2b88f09",
+      "revisionHash": "8917b30c5a33d36372a1da46651096efc5b78c7920e671d362db0ae6d1ef565a",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Konkrečių sistemų dokumentai ir kirpėjo review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "B-ginčas",
+      "pageId": "ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6",
+      "title": "Nepavykusi grožio paslauga: faktai, kreipimasis ir vartotojo ginčo kelias",
+      "publishAt": "2026-11-16T14:00:00.000Z",
+      "localDate": "2026-11-16",
+      "localTime": "16:00",
+      "blocks": 17,
+      "words": 454,
+      "bodySha256": "23a3da7187670574faf2d2373ede2594c9bdcd30edcc5c97d552047140f0c861",
+      "revisionHash": "19ec777792f935328aaa161d8c03e746a08e70409fb5bb5441b0c71f1752e8ce",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "B-meistrui-grafikas",
+      "pageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+      "title": "Meistrui: paslaugų trukmė, laiko rezervas ir vizitų duomenys",
+      "publishAt": "2026-11-18T08:00:00.000Z",
+      "localDate": "2026-11-18",
+      "localTime": "10:00",
+      "blocks": 13,
+      "words": 426,
+      "bodySha256": "87d05730058c1c734a88f5c2f68206a99a0541ca260e646db7f8dacb15c7bddc",
+      "revisionHash": "2ff37b0eda100f1f1f0d9325ac1c8e87338dcfa58c65a112f5feee7f460f765f",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "B-meistrui-matavimas",
+      "pageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+      "title": "Meistrui: profilio peržiūros, užklausos ir patvirtinti vizitai",
+      "publishAt": "2026-11-18T14:00:00.000Z",
+      "localDate": "2026-11-18",
+      "localTime": "16:00",
+      "blocks": 15,
+      "words": 482,
+      "bodySha256": "f3905e8b0ad2e57451192256af36c804d9fb8c9a2f83d4fbb9d48ad5b74d870e",
+      "revisionHash": "c48cab8ba32662ec03569bb3128e5236166d8dcfe1f7c1a6029c42b2bbd8bb1b",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "B-meistrui-meniu",
+      "pageId": "10660b33-7a51-429f-80c0-6814e8d36cc6",
+      "title": "Meistrui: kaip sudaryti aiškų paslaugų meniu, kainą ir sąlygas?",
+      "publishAt": "2026-11-19T08:00:00.000Z",
+      "localDate": "2026-11-19",
+      "localTime": "10:00",
+      "blocks": 23,
+      "words": 719,
+      "bodySha256": "5567eeab5bf37679cfcffec9f369c1d7c7daaf92c57a2be1896f2db873f6bf37",
+      "revisionHash": "6bd4c1cf52e30aadfb4bf6d73f791f86ba9cbb4a71adae11397bbb412756877d",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "B-salygos",
+      "pageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+      "title": "Avansas, vizito keitimas ir atšaukimas: kaip perskaityti teikėjo sąlygas?",
+      "publishAt": "2026-11-19T14:00:00.000Z",
+      "localDate": "2026-11-19",
+      "localTime": "16:00",
+      "blocks": 13,
+      "words": 409,
+      "bodySha256": "51ec90afa6353f9f3d3c0cc044aa4ae0b37f0f22bee6c905753c8b735b9fb1d1",
+      "revisionHash": "5c78e574bddf18c1feb2a05ad8ce1ff0bc4dca0a21f1c61d916e45ec36fbfc73",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "B-sauga",
+      "pageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+      "title": "Grožio paslaugų teikėjo patikra: vieta, higiena ir paslaugos pobūdis",
+      "publishAt": "2026-11-20T08:00:00.000Z",
+      "localDate": "2026-11-20",
+      "localTime": "10:00",
+      "blocks": 10,
+      "words": 331,
+      "bodySha256": "05852709f7429ef6461aaa3fa21bea03392a58f64f2384866cb43bd2c2f6cc1d",
+      "revisionHash": "3c4b7a2015592a529fdfa43f76103d580f81a37cdff8fb758af31babb067f62a",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "AN-kaina-trukme",
+      "pageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+      "title": "Antakių paslaugų kaina ir trukmė: korekcija, dažymas bei laminavimas",
+      "publishAt": "2026-11-20T14:00:00.000Z",
+      "localDate": "2026-11-20",
+      "localTime": "16:00",
+      "blocks": 13,
+      "words": 392,
+      "bodySha256": "f49a6e693155d4ac17266d5081de506eb0a3c57240725c650fafdd4be34e1ca4",
+      "revisionHash": "5fd44117ab84e376242c0267c3902e58de564fd650d6c664c691a32cc0082376",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "BL-kaina-trukme",
+      "pageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+      "title": "Blakstienų paslaugų kaina ir trukmė: naujas rinkinys, papildymas ir dažymas",
+      "publishAt": "2026-11-22T08:00:00.000Z",
+      "localDate": "2026-11-22",
+      "localTime": "10:00",
+      "blocks": 9,
+      "words": 304,
+      "bodySha256": "88622719a7813a31816ecb5213f48292d7378e8ee503b730db65899341000768",
+      "revisionHash": "8df1d917c8dd7a8bec5466d141230d5b825a624b134580a3b6c423b84db95c03",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "BR-kaina-trukme",
+      "pageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+      "title": "Barzdos paslaugų kaina ir trukmė: formavimas, skutimas ir papildomi darbai",
+      "publishAt": "2026-11-23T08:00:00.000Z",
+      "localDate": "2026-11-23",
+      "localTime": "10:00",
+      "blocks": 14,
+      "words": 405,
+      "bodySha256": "944c0c474b28012175cac2e87cdf65e1d95dbb5b51c581b8733a557cb174f09f",
+      "revisionHash": "cb140999bf9734769a704f99c756c8b69b1e1e5d7bf42c6fd4691429290514ac",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "DP-kaina-trukme",
+      "pageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+      "title": "Depiliacijos kaina ir trukmė: zonos, metodas bei paketai",
+      "publishAt": "2026-11-23T14:00:00.000Z",
+      "localDate": "2026-11-23",
+      "localTime": "16:00",
+      "blocks": 13,
+      "words": 345,
+      "bodySha256": "7ab22f7be95d18ccebb942e8cfb721d29423159617f44d2848f1aaab1cf93632",
+      "revisionHash": "e6c2a33da04e56f629fea9784f789529a87b2cb6f6b8d45359b50ade1c205cdf",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "DZ-kaina-trukme",
+      "pageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+      "title": "Plaukų dažymo kaina ir trukmė: ilgis, tankis, tonavimas bei kirpimas",
+      "publishAt": "2026-11-24T14:00:00.000Z",
+      "localDate": "2026-11-24",
+      "localTime": "16:00",
+      "blocks": 11,
+      "words": 356,
+      "bodySha256": "4524b4885cc670be1bfa85790bf402c7d88a557651543de0e63822d4ba3a8b25",
+      "revisionHash": "8444604af6ba86d74e4949521e2be475794737167ac7079c79cf8000d77a8b1a",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "GL-kaina-trukme",
+      "pageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+      "title": "Gelinio lakavimo kaina ir trukmė: nuėmimas, bazė bei dizainas",
+      "publishAt": "2026-11-25T08:00:00.000Z",
+      "localDate": "2026-11-25",
+      "localTime": "10:00",
+      "blocks": 12,
+      "words": 383,
+      "bodySha256": "ba1875b1cbbc51c3241a38a48b1a6e6715612cff035fd74cd55fd5d8ee3a3eec",
+      "revisionHash": "9e9c8942ca54d7a3bf0521993b725fca2288389c6f7c1413b19f2c4ad2bd5df1",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "MN-ar-gelinis",
+      "pageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+      "title": "Manikiūras ir gelinis lakavimas: kuo skiriasi paslaugos?",
+      "publishAt": "2026-11-26T14:00:00.000Z",
+      "localDate": "2026-11-26",
+      "localTime": "16:00",
+      "blocks": 11,
+      "words": 319,
+      "bodySha256": "b302e954ca6058397ce97e9039fa2144369a0baee320cfb0691fddf11514e7ea",
+      "revisionHash": "28d77ee9ecb6ab4145134cb9be163bfac6dc5e527a28866cea8d4fe86427d519",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "ND-akcentai-kaina",
+      "pageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+      "title": "Nagų dizaino kaina: akcentų skaičius, technika ir nuėmimas",
+      "publishAt": "2026-11-27T14:00:00.000Z",
+      "localDate": "2026-11-27",
+      "localTime": "16:00",
+      "blocks": 13,
+      "words": 427,
+      "bodySha256": "2c68283beb670feba687504f94474f7ec024085729a75e8fecc51e2a241f8592",
+      "revisionHash": "73b847b84d2d24f869cd17e39163e4cb0eb030753a610e2f1489d636d31c143a",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "NP-kaina-trukme",
+      "pageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+      "title": "Nagų priauginimo kaina ir trukmė: ilgis, konstrukcija, dizainas bei nuėmimas",
+      "publishAt": "2026-11-28T08:00:00.000Z",
+      "localDate": "2026-11-28",
+      "localTime": "10:00",
+      "blocks": 16,
+      "words": 418,
+      "bodySha256": "3a8d6b9f999ce3fadbc5453c558c51513c3f2420ba65fd5a45611d4154c7b3cf",
+      "revisionHash": "e2dd83c394729f4b67f402a4f4a003b827e6f6dba5a1606041355f098011f4b4",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "PD-be-lakavimo",
+      "pageId": "91053963-6eff-408a-b26d-7eed52088b91",
+      "title": "Pedikiūras be lakavimo: ko tikėtis iš priežiūros vizito?",
+      "publishAt": "2026-11-29T08:00:00.000Z",
+      "localDate": "2026-11-29",
+      "localTime": "10:00",
+      "blocks": 16,
+      "words": 480,
+      "bodySha256": "e78903c9f4bc1fdee034f034e6b5f0c208c03a1d42bffe8fb9d31aee61562d63",
+      "revisionHash": "898cc0485b34be39f113392be917482b9d24276cf90929b7e9ec373625c37b06",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "PP-kaina-trukme",
+      "pageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+      "title": "Plaukų priežiūros procedūros kaina ir trukmė: sistema, ilgis bei priedai",
+      "publishAt": "2026-11-30T08:00:00.000Z",
+      "localDate": "2026-11-30",
+      "localTime": "10:00",
+      "blocks": 12,
+      "words": 402,
+      "bodySha256": "a1b2b439e517b5476ccda29024fd63cd8a6d52978a503bb504b1164f14d5e623",
+      "revisionHash": "2f8982ff966a20822602719416dce44ff371bf8dca98b3b0bbc8de83de31dfc5",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "AN-korekcija-ar-dazymas",
+      "pageId": "929fe920-3df0-47cf-b780-d9af2d908972",
+      "title": "Antakių korekcija ar dažymas: kuo skiriasi rezultatas?",
+      "publishAt": "2026-12-01T08:00:00.000Z",
+      "localDate": "2026-12-01",
+      "localTime": "10:00",
+      "blocks": 10,
+      "words": 336,
+      "bodySha256": "637ba7078d5c7c73c399a51f860e30fad6d77be39ba1d865878c9cbf1865511f",
+      "revisionHash": "7009cca0896a6988a863c0d53f1ef81518cc070c505693258ed3778cc07119b6",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Meniu ir specialisto patikra“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    },
+    {
+      "planId": "BL-laminavimas-ar-priauginimas",
+      "pageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+      "title": "Blakstienų laminavimas ar priauginimas: rezultatų ir priežiūros skirtumai",
+      "publishAt": "2026-12-01T14:00:00.000Z",
+      "localDate": "2026-12-01",
+      "localTime": "16:00",
+      "blocks": 13,
+      "words": 389,
+      "bodySha256": "332fe69bc78ce6703e94c475f8f0968a4ee97511470f7c5403dbf483ca86318a",
+      "revisionHash": "c889aed1d01397b39a5daf16c3e73319d62b25282546e37901364aa361901d18",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": true
+    },
+    {
+      "planId": "BR-kirpimas-modeliavimas",
+      "pageId": "ce6a0067-4223-4b42-a25c-4e676da16b97",
+      "title": "Barzdos kirpimas ir modeliavimas: ilgis, kontūras ir darbo apimtis",
+      "publishAt": "2026-12-02T08:00:00.000Z",
+      "localDate": "2026-12-02",
+      "localTime": "10:00",
+      "blocks": 17,
+      "words": 559,
+      "bodySha256": "2dcdd53ab09bebf596825de328cedd73457c753f8ee35065b01e0f0bf773eeaf",
+      "revisionHash": "5fc014d66d9a9aa408f3ab79e5f12a00c722dce61223fd170c2f061bba22c588",
+      "observed": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh"
+      },
+      "factChecks": [
+        "Plane aiškiai numatyta patikra dar neatlikta: „Barberio techninių terminų review“. Reikia tikros nurodytos srities peržiūros; bendrų šaltinių skaitymas ir agento redakcinė peržiūra jos nepakeičia."
+      ],
+      "mediaVariants": 5,
+      "languageIssues": [],
+      "rawMarkdownLinks": [],
+      "hasApprovedSnapshot": false
+    }
+  ]
+}

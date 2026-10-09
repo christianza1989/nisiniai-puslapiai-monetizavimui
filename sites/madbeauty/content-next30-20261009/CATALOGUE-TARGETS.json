@@ -1,0 +1,265 @@
+{
+  "checkedAt": "2026-10-09T19:21:36.893Z",
+  "registrySha256": "493cdfb26ba3660ccc2e2ee72a547854757eecbee8cb9daa09ae44307739512f",
+  "expiresAt": "2026-10-09T20:21:36.052Z",
+  "cityTargets": 0,
+  "scope": "Actual production national information targets; no city or booking availability claimed",
+  "targets": [
+    {
+      "id": "mb:catalog:antakiai",
+      "url": "https://madbeauty.lt/paslaugos/antakiai",
+      "label": "Antakiai",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.540Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/antakiai",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "a35834fe92e5c3d6104017cadfd230bebd75938a6e4c508f3d4bf128ad29c9c9",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:blakstienu-prieziura-blakstienu-laminavimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-prieziura-blakstienu-laminavimas",
+      "label": "Blakstienų laminavimas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.595Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/blakstienu-prieziura-blakstienu-laminavimas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "609c0a07cc7a0b9350b8b3f62a32789206bf01f35ccd400f59b3d8590c1bf478",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:blakstienu-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-priauginimas",
+      "label": "Priauginimas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.586Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/blakstienu-priauginimas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "c89a003d84a11cbbfe7035a35a8480c6f38d149822482dba40a73142a731e185",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:kirpimai-vyru-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-vyru-kirpimas",
+      "label": "Vyrų kirpimas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.619Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kirpimai-vyru-kirpimas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "60e663ca10ede7522882d0bea8be45ce8f98bfd80c037bd88ed3617d79a16a44",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:barzda",
+      "url": "https://madbeauty.lt/paslaugos/barzda",
+      "label": "Barzda ir skutimas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.595Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/barzda",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "4c6cc34c26023e7b471015c364223cfcb3df77ee9822f4e50e75bb3a40238058",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku",
+      "label": "Vašku",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.605Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/depiliacija-vasku",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "4c1b1da71e9416cd7fd7a8b44209449c37c62e42c723b50766ec79e834ee90c2",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi",
+      "label": "Cukrumi",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.606Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "16adac2dde104c3e5c9bf615737542df75536611927f161436846164738e2b42",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas",
+      "label": "Dažymas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.635Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-dazymas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "66c7584747a487f2e406c37b44efc77df35081b496618542dd488034ac184aa6",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:lakavimas-gelinis-lakavimas",
+      "url": "https://madbeauty.lt/paslaugos/lakavimas-gelinis-lakavimas",
+      "label": "Gelinis lakavimas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.605Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/lakavimas-gelinis-lakavimas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "aaebea54a37abe0c881fb6e23d84d2f621fd4d913003f37cc174a2f079763b24",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras",
+      "label": "Manikiūras",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.606Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/manikiuras",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "21b0d3d671dfc9de83e5e01f9c32d4d563ac058f8d30d801ced862d4cc2bc82a",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-modeliavimas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas",
+      "label": "Priauginimas ir korekcija",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.607Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-modeliavimas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "5bd691442a2a4d03e453dd258d08c875d33d374c22e196d24eafbf3a33b07137",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras",
+      "label": "Pedikiūras",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.892Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pedikiuras",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "b4476a76bbd16e4c0c6d28ec17e6bd9037d32a4dc0f3f55f0f6ea2a71a9d9bc2",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-proceduros",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros",
+      "label": "Plaukų ir galvos odos priežiūra",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.605Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-proceduros",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "c1191fe1aac39192dc29464e2d8d56c3a9afaef7e45ad61144d8a59cd4df6907",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-dizainas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+      "label": "Dizainas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.605Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "3793a9cf13ae14ca7c6c7fd1952af167824b3d22f0c082b960b155347a3c612f",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:antakiu-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-korekcija",
+      "label": "Korekcija",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.641Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/antakiu-korekcija",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "71b58266545fabdba3640fcc9ae2224c286526978b8a406a4bfe39c7d8607f25",
+        "emptySupply": true
+      }
+    },
+    {
+      "id": "mb:catalog:antakiu-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-dazymas",
+      "label": "Dažymas",
+      "relationship": "Procedūros aprašas padeda susieti straipsnyje aptartą pasirinkimą su realia katalogo kategorija; teikėjo pasiūla ir miestas tikrinami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-09T19:21:36.619Z",
+      "evidence": {
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/antakiu-dazymas",
+        "indexEligible": false,
+        "purpose": "information",
+        "htmlSha256": "1369e666af914d641d4f0e10ffab3cff546ea6592c43c1622498235c2407020b",
+        "emptySupply": true
+      }
+    }
+  ]
+}

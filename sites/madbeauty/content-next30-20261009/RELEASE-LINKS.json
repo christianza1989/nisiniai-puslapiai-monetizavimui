@@ -1,0 +1,140 @@
+{
+  "selectedPlanIds": [
+    "BR-gidas",
+    "B-ginčas",
+    "B-meistrui-grafikas",
+    "B-meistrui-matavimas",
+    "B-meistrui-meniu",
+    "B-salygos",
+    "B-sauga",
+    "AN-kaina-trukme",
+    "BL-kaina-trukme",
+    "BR-kaina-trukme",
+    "DP-kaina-trukme",
+    "DZ-kaina-trukme",
+    "GL-kaina-trukme",
+    "MN-ar-gelinis",
+    "ND-akcentai-kaina",
+    "NP-kaina-trukme",
+    "PD-be-lakavimo",
+    "PP-kaina-trukme",
+    "BL-laminavimas-ar-priauginimas"
+  ],
+  "specialistPendingPlanIds": [
+    "AN-gidas",
+    "BL-gidas",
+    "DP-gidas",
+    "DZ-gidas",
+    "GL-gidas",
+    "MN-gidas",
+    "NP-gidas",
+    "PD-gidas",
+    "PP-gidas",
+    "AN-korekcija-ar-dazymas",
+    "BR-kirpimas-modeliavimas"
+  ],
+  "receipt": {
+    "siteId": "madbeauty",
+    "selectedAt": "2026-10-09T19:21:40.367Z",
+    "decisions": [
+      {
+        "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+        "kept": 2,
+        "deferred": 9
+      },
+      {
+        "pageId": "ab1b110f-387f-4f61-8dae-a3f1ca8ebfb6",
+        "kept": 0,
+        "deferred": 0
+      },
+      {
+        "pageId": "a19f66ae-6adb-41ff-8602-d53404278787",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "211ed200-f2dc-4acc-95dc-a08acfda4b14",
+        "kept": 0,
+        "deferred": 0
+      },
+      {
+        "pageId": "10660b33-7a51-429f-80c0-6814e8d36cc6",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "8f926c4f-792a-4dc2-8a0c-d5415c8f47bf",
+        "kept": 0,
+        "deferred": 0
+      },
+      {
+        "pageId": "1663c676-9f7e-4340-b1d6-8fe1f97e9356",
+        "kept": 0,
+        "deferred": 0
+      },
+      {
+        "pageId": "5712f9c8-16db-448e-b6f5-df8f1ac4a59c",
+        "kept": 0,
+        "deferred": 1
+      },
+      {
+        "pageId": "b06bca63-c301-42ac-bd28-5eb0dcac0792",
+        "kept": 0,
+        "deferred": 1
+      },
+      {
+        "pageId": "d1dc3aff-7737-4283-a944-2fc0bd7c858a",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "da96c6ed-4887-4ba6-ac2b-50d4b7c5b8df",
+        "kept": 0,
+        "deferred": 1
+      },
+      {
+        "pageId": "7fa3d64b-bf31-44c7-88c8-ebd9391520d0",
+        "kept": 1,
+        "deferred": 1
+      },
+      {
+        "pageId": "b781498b-b37a-4157-8fc8-45c38316dd90",
+        "kept": 1,
+        "deferred": 1
+      },
+      {
+        "pageId": "5f6624f3-ac29-4353-9159-1f5425c437a3",
+        "kept": 0,
+        "deferred": 2
+      },
+      {
+        "pageId": "5ac9fc54-9bb5-45af-9cc4-c65dd7acf49f",
+        "kept": 2,
+        "deferred": 0
+      },
+      {
+        "pageId": "a107a0f4-1675-4553-ae21-bb935f36d605",
+        "kept": 0,
+        "deferred": 1
+      },
+      {
+        "pageId": "91053963-6eff-408a-b26d-7eed52088b91",
+        "kept": 0,
+        "deferred": 1
+      },
+      {
+        "pageId": "dcd8ade5-5023-4297-84d7-9f9ec21f4118",
+        "kept": 0,
+        "deferred": 1
+      },
+      {
+        "pageId": "8e7d280c-23e5-4eee-9faa-e95d13e19802",
+        "kept": 0,
+        "deferred": 2
+      }
+    ],
+    "state": "selected-requires-final-links-and-current-review",
+    "approved": false,
+    "deployed": false
+  }
+}

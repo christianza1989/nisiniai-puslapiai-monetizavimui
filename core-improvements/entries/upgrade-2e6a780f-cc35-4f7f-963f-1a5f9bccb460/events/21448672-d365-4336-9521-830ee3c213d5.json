@@ -1,0 +1,8 @@
+{
+  "status": "fixing",
+  "note": "SourceC4 known6/new6/long3 operationalPASS but 10/10communication target not reached. SourceC5 improves observed training shortcomings: no repeated follow-up preference question, plain term explanations, same displayed/signed document version and scope-appropriate preparation/security/integrity criteria. Last agreed action and field deferral fixes retained. Original score rubric, frozencorpora and protected4case feedback unchanged.",
+  "commit": "dd25f58593ef8b8923922e46f428f9e956e767d0",
+  "eventId": "21448672-d365-4336-9521-830ee3c213d5",
+  "sequence": 3,
+  "at": "2026-10-09T20:56:57.699Z"
+}

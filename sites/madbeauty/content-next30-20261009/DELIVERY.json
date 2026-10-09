@@ -23,10 +23,14 @@
     "assets": 275,
     "manifestPath": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next30-20261009\\output\\releases\\madbeauty\\0353894f-0a0c-47cf-86ce-cc7358429eb9\\release-manifest.json",
     "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
-    "state": "exported-not-deployed"
+    "state": "deployed-scheduled"
   },
   "immutablePackage": "release/content-package.json",
-  "state": "EXPORTED_NOT_DEPLOYED",
-  "productionAcceptance": null,
-  "next": "Admit this exact immutable package in actual Cloudflare consumer, preserving incumbent runtime/storage/mail/DNS; expert-gated11 pages remain private."
+  "state": "ACTUAL_DOMAIN_VERIFIED",
+  "productionAcceptance": {
+    "receipt": "DOMAIN-ACCEPTANCE.json",
+    "checkedAt": "2026-10-09T19:47:52.803Z",
+    "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369"
+  },
+  "next": "19 additional approved articles are deployed and scheduled. Eleven written specialist-gated articles stay private pending their real required reviews."
 }

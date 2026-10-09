@@ -1,0 +1,264 @@
+{
+  "checkedAt": "2026-10-09T19:50:04.475Z",
+  "status": "PASS",
+  "imageCheck": "Lazy images explicitly loaded for full gallery decode check",
+  "indexSha256": "aa027eea1a1e2b40190a996fa615b558659953b1a1838c1ea0516a91727464bb",
+  "views": [
+    {
+      "width": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Natūralūs antakiai stambiame portreto kadre",
+          "width": 640
+        },
+        {
+          "alt": "Blakstienos iš arti užmerktos akies profilyje",
+          "width": 640
+        },
+        {
+          "alt": "Vyras aptaria kirpimą su kirpėja",
+          "width": 640
+        },
+        {
+          "alt": "Depiliacijos priemonės ant darbo vežimėlio",
+          "width": 640
+        },
+        {
+          "alt": "Dažytų plaukų spalvos perėjimai",
+          "width": 640
+        },
+        {
+          "alt": "Trumpi vyšninės spalvos geliniu laku padengti nagai",
+          "width": 640
+        },
+        {
+          "alt": "Manikiūro konsultacija prie darbo stalo",
+          "width": 640
+        },
+        {
+          "alt": "Ilgi migdolo formos nagai",
+          "width": 640
+        },
+        {
+          "alt": "Pėdos ant pedikiūro atramos",
+          "width": 640
+        },
+        {
+          "alt": "Garbanotų plaukų tekstūra natūralioje šviesoje",
+          "width": 640
+        },
+        {
+          "alt": "Vizito dokumentai ir užrašai ant stalo",
+          "width": 640
+        },
+        {
+          "alt": "Grožio salono darbo laiko planavimas",
+          "width": 640
+        },
+        {
+          "alt": "Užklausų skaičiavimo užrašai",
+          "width": 640
+        },
+        {
+          "alt": "Paslaugų meniu kortelių ruošimas",
+          "width": 640
+        },
+        {
+          "alt": "Vizito sąlygų ir kalendoriaus peržiūra",
+          "width": 640
+        },
+        {
+          "alt": "Tvarkinga grožio paslaugų darbo vieta",
+          "width": 640
+        },
+        {
+          "alt": "Antakių forma apžiūrima veidrodėlyje",
+          "width": 640
+        },
+        {
+          "alt": "Blakstienų paslaugų priemonės",
+          "width": 640
+        },
+        {
+          "alt": "Vyrų paslaugų konsultacija salone",
+          "width": 640
+        },
+        {
+          "alt": "Depiliacijos zonos aptarimas prieš vizitą",
+          "width": 640
+        },
+        {
+          "alt": "Plaukų atspalvių paletės aptarimas",
+          "width": 640
+        },
+        {
+          "alt": "Gelinio lakavimo spalvų pasirinkimas",
+          "width": 640
+        },
+        {
+          "alt": "Natūralūs ir spalvotu laku padengti nagai",
+          "width": 640
+        },
+        {
+          "alt": "Minimalus vario spalvos akcentas nagų dizaine",
+          "width": 640
+        },
+        {
+          "alt": "Priaugintų nagų ilgis ir forma iš šono",
+          "width": 640
+        },
+        {
+          "alt": "Natūralūs pėdų nagai be lakavimo",
+          "width": 640
+        },
+        {
+          "alt": "Plaukų priežiūros priemonės salone",
+          "width": 640
+        },
+        {
+          "alt": "Šviesių antakių forma ir spalva",
+          "width": 640
+        },
+        {
+          "alt": "Blakstienų ir akių profilis",
+          "width": 640
+        },
+        {
+          "alt": "Barzdos forma šoniniame portrete",
+          "width": 640
+        }
+      ],
+      "scheduled": 19,
+      "specialistPending": 11
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Natūralūs antakiai stambiame portreto kadre",
+          "width": 640
+        },
+        {
+          "alt": "Blakstienos iš arti užmerktos akies profilyje",
+          "width": 640
+        },
+        {
+          "alt": "Vyras aptaria kirpimą su kirpėja",
+          "width": 640
+        },
+        {
+          "alt": "Depiliacijos priemonės ant darbo vežimėlio",
+          "width": 640
+        },
+        {
+          "alt": "Dažytų plaukų spalvos perėjimai",
+          "width": 640
+        },
+        {
+          "alt": "Trumpi vyšninės spalvos geliniu laku padengti nagai",
+          "width": 640
+        },
+        {
+          "alt": "Manikiūro konsultacija prie darbo stalo",
+          "width": 640
+        },
+        {
+          "alt": "Ilgi migdolo formos nagai",
+          "width": 640
+        },
+        {
+          "alt": "Pėdos ant pedikiūro atramos",
+          "width": 640
+        },
+        {
+          "alt": "Garbanotų plaukų tekstūra natūralioje šviesoje",
+          "width": 640
+        },
+        {
+          "alt": "Vizito dokumentai ir užrašai ant stalo",
+          "width": 640
+        },
+        {
+          "alt": "Grožio salono darbo laiko planavimas",
+          "width": 640
+        },
+        {
+          "alt": "Užklausų skaičiavimo užrašai",
+          "width": 640
+        },
+        {
+          "alt": "Paslaugų meniu kortelių ruošimas",
+          "width": 640
+        },
+        {
+          "alt": "Vizito sąlygų ir kalendoriaus peržiūra",
+          "width": 640
+        },
+        {
+          "alt": "Tvarkinga grožio paslaugų darbo vieta",
+          "width": 640
+        },
+        {
+          "alt": "Antakių forma apžiūrima veidrodėlyje",
+          "width": 640
+        },
+        {
+          "alt": "Blakstienų paslaugų priemonės",
+          "width": 640
+        },
+        {
+          "alt": "Vyrų paslaugų konsultacija salone",
+          "width": 640
+        },
+        {
+          "alt": "Depiliacijos zonos aptarimas prieš vizitą",
+          "width": 640
+        },
+        {
+          "alt": "Plaukų atspalvių paletės aptarimas",
+          "width": 640
+        },
+        {
+          "alt": "Gelinio lakavimo spalvų pasirinkimas",
+          "width": 640
+        },
+        {
+          "alt": "Natūralūs ir spalvotu laku padengti nagai",
+          "width": 640
+        },
+        {
+          "alt": "Minimalus vario spalvos akcentas nagų dizaine",
+          "width": 640
+        },
+        {
+          "alt": "Priaugintų nagų ilgis ir forma iš šono",
+          "width": 640
+        },
+        {
+          "alt": "Natūralūs pėdų nagai be lakavimo",
+          "width": 640
+        },
+        {
+          "alt": "Plaukų priežiūros priemonės salone",
+          "width": 640
+        },
+        {
+          "alt": "Šviesių antakių forma ir spalva",
+          "width": 640
+        },
+        {
+          "alt": "Blakstienų ir akių profilis",
+          "width": 640
+        },
+        {
+          "alt": "Barzdos forma šoniniame portrete",
+          "width": 640
+        }
+      ],
+      "scheduled": 19,
+      "specialistPending": 11
+    }
+  ]
+}

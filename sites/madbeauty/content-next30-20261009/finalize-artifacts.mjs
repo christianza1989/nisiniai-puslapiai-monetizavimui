@@ -6,6 +6,7 @@ const here=new URL('.',import.meta.url);
 const read=async file=>JSON.parse(await fs.readFile(new URL(file,here),'utf8'));
 const write=async(file,data)=>fs.writeFile(new URL(file,here),JSON.stringify(data,null,2)+'\n');
 const selection=await read('SELECTION.json'), delivery=await read('DELIVERY.json');
+if(delivery.state==='ACTUAL_DOMAIN_VERIFIED')throw Error('Final domain evidence already recorded; do not revert delivery metadata to export-only.');
 const site=JSON.parse(await fs.readFile(selection.privateStudio+'/sites/madbeauty.json','utf8'));
 selection.status='30_WRITTEN_19_APPROVED_11_SPECIALIST_PENDING';selection.updatedAt=new Date().toISOString();
 const drafts=[];

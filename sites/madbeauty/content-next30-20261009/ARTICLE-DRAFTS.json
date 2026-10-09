@@ -857,7 +857,7 @@
     },
     {
       "planId": "BR-gidas",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-10-31T08:00:00.000Z",
       "localDate": "2026-10-31",
       "localTime": "10:00",
@@ -4864,7 +4864,7 @@
     },
     {
       "planId": "B-ginčas",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-16T14:00:00.000Z",
       "localDate": "2026-11-16",
       "localTime": "16:00",
@@ -5599,7 +5599,7 @@
     },
     {
       "planId": "B-meistrui-grafikas",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-18T08:00:00.000Z",
       "localDate": "2026-11-18",
       "localTime": "10:00",
@@ -6057,7 +6057,7 @@
     },
     {
       "planId": "B-meistrui-matavimas",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-18T14:00:00.000Z",
       "localDate": "2026-11-18",
       "localTime": "16:00",
@@ -6876,7 +6876,7 @@
     },
     {
       "planId": "B-meistrui-meniu",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-19T08:00:00.000Z",
       "localDate": "2026-11-19",
       "localTime": "10:00",
@@ -7879,7 +7879,7 @@
     },
     {
       "planId": "B-salygos",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-19T14:00:00.000Z",
       "localDate": "2026-11-19",
       "localTime": "16:00",
@@ -8535,7 +8535,7 @@
     },
     {
       "planId": "B-sauga",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-20T08:00:00.000Z",
       "localDate": "2026-11-20",
       "localTime": "10:00",
@@ -9325,7 +9325,7 @@
     },
     {
       "planId": "AN-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-20T14:00:00.000Z",
       "localDate": "2026-11-20",
       "localTime": "16:00",
@@ -9947,7 +9947,7 @@
     },
     {
       "planId": "BL-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-22T08:00:00.000Z",
       "localDate": "2026-11-22",
       "localTime": "10:00",
@@ -10652,7 +10652,7 @@
     },
     {
       "planId": "BR-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-23T08:00:00.000Z",
       "localDate": "2026-11-23",
       "localTime": "10:00",
@@ -11476,7 +11476,7 @@
     },
     {
       "planId": "DP-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-23T14:00:00.000Z",
       "localDate": "2026-11-23",
       "localTime": "16:00",
@@ -12158,7 +12158,7 @@
     },
     {
       "planId": "DZ-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-24T14:00:00.000Z",
       "localDate": "2026-11-24",
       "localTime": "16:00",
@@ -12727,7 +12727,7 @@
     },
     {
       "planId": "GL-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-25T08:00:00.000Z",
       "localDate": "2026-11-25",
       "localTime": "10:00",
@@ -13402,7 +13402,7 @@
     },
     {
       "planId": "MN-ar-gelinis",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-26T14:00:00.000Z",
       "localDate": "2026-11-26",
       "localTime": "16:00",
@@ -14156,7 +14156,7 @@
     },
     {
       "planId": "ND-akcentai-kaina",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-27T14:00:00.000Z",
       "localDate": "2026-11-27",
       "localTime": "16:00",
@@ -14964,7 +14964,7 @@
     },
     {
       "planId": "NP-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-28T08:00:00.000Z",
       "localDate": "2026-11-28",
       "localTime": "10:00",
@@ -15592,7 +15592,7 @@
     },
     {
       "planId": "PD-be-lakavimo",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-29T08:00:00.000Z",
       "localDate": "2026-11-29",
       "localTime": "10:00",
@@ -16187,7 +16187,7 @@
     },
     {
       "planId": "PP-kaina-trukme",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-11-30T08:00:00.000Z",
       "localDate": "2026-11-30",
       "localTime": "10:00",
@@ -17296,7 +17296,7 @@
     },
     {
       "planId": "BL-laminavimas-ar-priauginimas",
-      "status": "APPROVED_EXPORTED_NOT_DEPLOYED",
+      "status": "APPROVED_DEPLOYED_SCHEDULED",
       "publishAt": "2026-12-01T14:00:00.000Z",
       "localDate": "2026-12-01",
       "localTime": "16:00",

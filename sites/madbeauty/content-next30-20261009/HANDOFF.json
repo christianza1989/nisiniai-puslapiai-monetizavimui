@@ -7,5 +7,7 @@
   "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
   "approvedAdditional": 19,
   "specialistPending": 11,
-  "state": "HANDED_OFF_AWAITING_ACTUAL_DEPLOYMENT_RECEIPT"
+  "state": "ACTUAL_DOMAIN_VERIFIED",
+  "actualDomainReceipt": "DOMAIN-ACCEPTANCE.json",
+  "checkedAt": "2026-10-09T19:47:52.803Z"
 }

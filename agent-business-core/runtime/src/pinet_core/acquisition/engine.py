@@ -31,8 +31,9 @@ def gates(campaign: Campaign, prospect: Prospect, now: datetime):
         reasons.append('campaign_expired')
     if prospect.site_id != campaign.site_id:
         reasons.append('foreign_site')
-    if prospect.role != 'buyer':
-        reasons.append('non_buyer')
+    target = 'provider' if campaign.objective == 'provider_signup' else 'buyer'
+    if prospect.role != target:
+        reasons.append('non_target_role')
     if prospect.segment not in campaign.segments or prospect.country not in campaign.countries:
         reasons.append('outside_audience')
     if prospect.suppressed or prospect.status != 'new':

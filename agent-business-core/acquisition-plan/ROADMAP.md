@@ -2,6 +2,8 @@
 
 2026-10-10. Darbų planas, ne pažadas apie jau veikiančią produkciją. Savininko kryptis: bendras core, tada Madbeauty teikėjų pilotas.
 
+Tos pačios dienos papildomas pavedimas įgyvendino M1 objective/provider kontrakto dalį ir M5 uždaros daugelio žingsnių kalibravimo infrastruktūrą: [CALIBRATION](CALIBRATION.md). DB migracijos, protected release priėmimas ir M2 realių adapterių jungtis dar lieka roadmap; etapų pilno PASS iš dalinės implementacijos neskiriame.
+
 ## Etapai ir priėmimas
 
 | ID | Darbas ir rezultatas | Priklausomybės | Priėmimo kriterijus | Apytikris darbas |

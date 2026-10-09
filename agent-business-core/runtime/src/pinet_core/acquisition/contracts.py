@@ -27,7 +27,7 @@ class Prospect(Strict):
     site_id: str
     organization_key: str = Field(min_length=3, max_length=120)
     name: str = Field(min_length=2, max_length=200)
-    role: Literal['buyer', 'supplier', 'referral']
+    role: Literal['buyer', 'provider', 'supplier', 'referral']
     segment: str
     country: str
     evidence: list[Evidence] = Field(min_length=1, max_length=12)
@@ -57,6 +57,7 @@ class Campaign(Strict):
     site_id: str = Field(pattern=r'^[a-z0-9-]{1,64}$')
     campaign_id: str = Field(pattern=r'^[a-z0-9-]{1,64}$')
     sector: Literal['general', 'medical_equipment'] = 'general'
+    objective: Literal['product_sale', 'provider_signup'] = 'product_sale'
     mode: Literal['research_only', 'draft_only'] = 'research_only'
     timezone: str = 'Europe/Vilnius'
     segments: list[str] = Field(min_length=1, max_length=20)

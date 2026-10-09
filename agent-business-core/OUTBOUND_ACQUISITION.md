@@ -2,6 +2,8 @@
 
 2026-10-10: pilnas tolesnės sistemos [planas ir architektūra](acquisition-plan/README.md), [roadmap](acquisition-plan/ROADMAP.md) ir [Madbeauty teikėjų pilotas](../sites/madbeauty/ACQUISITION_PILOT_PLAN.md). Žemiau dokumentuojamas jau įgyvendintas vietinis research/draft parengimo etapas; planuojami production adapteriai nėra jo atliktos patikros.
 
+Papildomas 2026-10-10 savininko pavedimas: explicit `provider_signup` kampanijos tikslas su `provider` prospect role, išlaikant `product_sale`/`buyer` numatytą elgesį. Įgyvendinta uždara [daugelio žingsnių kalibravimo laboratorija](acquisition-plan/CALIBRATION.md): privatūs .test-only .eml, atskiras Codex CLI gavėjas ir vertintojas, 400 žinomų regresijos kombinacijų. Production discovery/siuntimas/atsakymų transportas ir reali Madbeauty aktyvacija vis dar yra būsimi vartai.
+
 2026-10-09. Savininko pavedimas: pagerinti bendrą sistemą aktyviai klientų paieškai, pvz. medicininės įrangos pardavėjui. Autoritetas — privatus agentų core. Viešas `niche-public-core` lieka svetainės, užklausos ir patvirtinto turinio adapteris; prospectų ir korespondencijos jame nelaikyti.
 
 ## Radiniai ir įgyvendinta apimtis

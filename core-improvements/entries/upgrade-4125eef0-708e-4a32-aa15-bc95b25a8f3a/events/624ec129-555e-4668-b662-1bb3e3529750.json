@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "First retained real model FAIL in neutral-domain run C: privacy question was classified as complaint/stop, leaving the provenance/deletion questions unanswered. Evaluator follows_corrected_need=false. Preserve the report; distinguish informational privacy questions from explicit refusal/complaint and recheck stop behavior after the smallest instruction repair.",
+  "eventId": "624ec129-555e-4668-b662-1bb3e3529750",
+  "sequence": 3,
+  "at": "2026-10-09T21:46:18.161Z"
+}

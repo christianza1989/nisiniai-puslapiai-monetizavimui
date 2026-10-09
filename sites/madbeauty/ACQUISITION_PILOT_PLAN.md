@@ -2,6 +2,8 @@
 
 2026-10-10. Savininkas pasirinko Madbeauty kaip pirmą būsimos bendros acquisition sistemos bandymą. Šiame dokumente planuojame; kampanija neįjungta. [Core roadmap](../../agent-business-core/acquisition-plan/ROADMAP.md), [architektūra](../../agent-business-core/acquisition-plan/ARCHITECTURE.md), [įrankiai](TOOLS.md).
 
+Papildomas savininko pavedimas įgyvendino uždarą Codex CLI laiškų kalibravimo laboratoriją; [actual būsena](ACQUISITION_CALIBRATION_2026-10-10.md). Tai nėra piloto launch ar realių teikėjų paklausos įrodymas.
+
 ## Tikslas ir pasiūlymas
 
 Agentas ieško tinkamų grožio paslaugų teikėjų, kuriems gali būti naudingas prisijungimas prie Madbeauty, ir fiksuoja jų tikrą atsakymą. Viešai rastas verslas yra kandidatas, ne žmogus, kuris jau nori prisijungti.

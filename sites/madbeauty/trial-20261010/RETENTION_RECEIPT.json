@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "state": "PASS",
+  "at": "2026-10-09T23:13:25.577Z",
+  "runtimeCommit": "89c5295d15ec14559ee8f3bb6aa013d6dd41f968",
+  "evidenceBaseCommit": "89c5295d15ec14559ee8f3bb6aa013d6dd41f968",
+  "sourceHashes": {
+    "sites/madbeauty/backend/retention.mjs": "83643cbbaedcac3c5963d980001879a0ebe6e9f32e9621fa5276d095c9ae0a0e",
+    "sites/madbeauty/backend/retention-policy.mjs": "33765be402dddaec7a9bb5346ab4b3f30e66a1b244b1719da2a3d46c03b06b39",
+    "sites/madbeauty/cloudflare/platform-object.mjs": "049af69d94d990c75a84f3f3a852f7b99535aed001c17f707607c833e09654b3",
+    "sites/madbeauty/trial-20261010/worker.mjs": "dc9d9641a71d91d6a9ce40d8a5d8e81959c90585c104f0fdfbfb7d9e040d9429",
+    "sites/madbeauty/trial-20261010/build.mjs": "157d5bdec743abb612122d7076c3fead7761ebd1baa3db49a528dd1274bce669",
+    "sites/madbeauty/mail-acceptance-20261010/closure-run.mjs": "c8cf399064900b3b4a68049d36bbf7c3a553c489bbd08b4fa64dbb19eb482af8"
+  },
+  "worker": "madbeauty-temporary-test-20261010",
+  "origin": "https://bandymas.madbeauty.lt",
+  "version": [
+    {
+      "version_id": "9d3ebf33-e853-4e43-9143-c6c67f58f395",
+      "percentage": 100
+    }
+  ],
+  "artifactSha256": "e3757de70b0c741f293faedf1f9a224b2ebc29741e7c8d16e6f43f6a8a539bde",
+  "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+  "namespace": "a07857f7b8414eb789f3ff639953ff1b",
+  "policyVersion": "madbeauty-2026-10-10-v1",
+  "expiresAt": "2026-10-16T21:10:47.982Z",
+  "assets": 1059,
+  "providerPreservation": {
+    "namespace": true,
+    "expiry": true,
+    "secretNames": [
+      "SESSION_SECRET"
+    ],
+    "canonicalSettings": true,
+    "canonicalDeployment": true,
+    "existingWorkerDomains": true,
+    "observedSiteMailDns": true,
+    "fullDnsInventory": false,
+    "compiledMigrationTag": "trial-v1",
+    "providerMigrationTagUnavailable": true
+  },
+  "tests": {
+    "product": 277,
+    "previousProduct": 264,
+    "metadataAdded": 4,
+    "retentionAdded": 9,
+    "removed": 0,
+    "trialNative": 3,
+    "relayPurpose": 1,
+    "actualHostedRetention": 6,
+    "actualPublicHttp": 11,
+    "regressionLogSha256": "dde2589a32f168370a3bbaf7807aeb30de4833fdcec4ade06e7d4e58080e6954",
+    "trialNativeLogSha256": "7248f745717e70b9d5e34fdb8e1620debcd1cb0b95f32831314dd1e0baa555f8"
+  },
+  "http": [
+    {
+      "pathname": "/boot.json",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "pathname": "/privatumas",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "pathname": "/bandymo-paskyros",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "pathname": "/sitemap.xml",
+      "status": 404,
+      "noindex": true
+    },
+    {
+      "pathname": "/llms.txt",
+      "status": 404,
+      "noindex": true
+    },
+    {
+      "pathname": "/content-targets.json",
+      "status": 404,
+      "noindex": true
+    },
+    {
+      "pathname": "/app.mjs",
+      "status": 200,
+      "noindex": true,
+      "sha256": "052ad7e210b2af4b20b06f12eb74e724eb194935f19a1b9cc6f1bdf73afe3163"
+    },
+    {
+      "pathname": "/customer-tools-ui.mjs",
+      "status": 200,
+      "noindex": true,
+      "sha256": "a11cf7f814baac7d505da6f0f2cd50709c04c5e923d82266fb0ac7fde03eed38"
+    },
+    {
+      "pathname": "/http-adapter.mjs",
+      "status": 200,
+      "noindex": true,
+      "sha256": "6ec5ee9671666db03913145cab6705f37bd6a9d41d5cde1bf7bf9f786c3372ac"
+    },
+    {
+      "pathname": "/content.mjs",
+      "status": 200,
+      "noindex": true,
+      "sha256": "49a3d942808dd4b121d70ce59f5994a559ec986a205dca10930509d005662c35"
+    },
+    {
+      "pathname": "/product-trust.mjs",
+      "status": 200,
+      "noindex": true,
+      "sha256": "6bb4821c06b59a037e9267ad4f006c5b3f144af71e13e9710317faac150125c2"
+    }
+  ],
+  "browser": {
+    "host": "bandymas.madbeauty.lt",
+    "widths": [
+      {
+        "width": 1440,
+        "height": 900,
+        "documentWidth": 1440,
+        "dialogWidth": 700
+      },
+      {
+        "width": 390,
+        "height": 900,
+        "documentWidth": 390,
+        "dialogWidth": 358,
+        "dialogScrollWidth": 358
+      }
+    ],
+    "actualNativeEnterSubmission": true,
+    "wrongEmailRefused": true,
+    "completedReceiptVisible": true,
+    "signedOutAccountVisible": true,
+    "screenshots": [
+      {
+        "name": "retention-confirm-1440.jpeg",
+        "format": "jpeg",
+        "width": 1440,
+        "height": 900,
+        "sha256": "05a3f0f3b5534a6c1788d89c0992a9ca4991329f7563b08ea4c10041806ae7cb",
+        "pixelsCommitted": false
+      },
+      {
+        "name": "retention-confirm-390.jpeg",
+        "format": "jpeg",
+        "width": 390,
+        "height": 900,
+        "sha256": "3386dd8b33ce000c6dddbf88a636e31390dc62c373b1a5990869dd6de8c11c66",
+        "pixelsCommitted": false
+      },
+      {
+        "name": "retention-error-390.jpeg",
+        "format": "jpeg",
+        "width": 390,
+        "height": 900,
+        "sha256": "dac9819f4d9e0010f86fab771700e68caee992360929efb9ef97948ef9d5adb9",
+        "pixelsCommitted": false
+      },
+      {
+        "name": "retention-complete-390.jpeg",
+        "format": "jpeg",
+        "width": 390,
+        "height": 900,
+        "sha256": "67de4c47c034895016b4a84d9334f15dd3b2db3ef86776b7ce403e9614660650",
+        "pixelsCommitted": false
+      },
+      {
+        "name": "retention-complete-1440.jpeg",
+        "format": "jpeg",
+        "width": 1440,
+        "height": 900,
+        "sha256": "b760e663b24626b57fd6de0fc8e5566beaf59066b66e710945396c311338ed62",
+        "pixelsCommitted": false
+      },
+      {
+        "name": "closure-inbox.jpeg",
+        "format": "jpeg",
+        "width": 1279,
+        "height": 575,
+        "sha256": "d7e785990bee1244de3a1b61c5102d04bf61b16e7a5ff3d6b8d6bbbf4786907e",
+        "pixelsCommitted": false
+      }
+    ]
+  },
+  "cleanup": {
+    "newDisposableCustomersErased": 2,
+    "existingAdvertisedAccountsRemoved": 0,
+    "ownedBookingsCanceled": true,
+    "realEmailUsedInTrial": false,
+    "smtpInTrial": false
+  },
+  "closureMail": {
+    "isolatedNativeSQL": true,
+    "exactOneNotice": true,
+    "restart": true,
+    "sharedTransportSha256": "54c41f340d04447782f2f3b152efab98ced7bc9d5401064d3cd36aa6f04dbce0",
+    "fixtureSha256": "63f5529cc92c56717799610bb767de2946f3685782e239328293e8fbc7d1ba4f",
+    "fixturePrefix": true,
+    "acceptedAttempts": 1,
+    "ownPrimaryInbox": true,
+    "exactSubject": true,
+    "actualInboxAt": "2026-10-09T23:08:12.485Z",
+    "canonicalDataWrites": 0,
+    "trialDataWrites": 0,
+    "firstFixtureFailure": "Missing fixture stub helper before retention execution; login was capture-only and no real closure message was sent. Helper corrected; one subsequent actual notice delivered."
+  },
+  "limits": [
+    "This version is active only on the separate temporary trial; canonical C02 and full platform activation remain pending.",
+    "Portable customer-data restore was proven in native isolated SQL, not an active source/target disaster rewind.",
+    "Canonical content-only deployment runs under a separate writer lease.",
+    "Unedited mailbox/screenshots/raw IDs remain private ignored output; historical receipts are unchanged."
+  ]
+}

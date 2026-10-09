@@ -1,0 +1,2369 @@
+{
+  "state": "PASS",
+  "startedAt": "2026-10-09T20:49:23.740Z",
+  "finishedAt": "2026-10-09T20:49:33.429Z",
+  "origin": "https://madbeauty.lt",
+  "baselineProductionVersion": "4e43bd2d-e5ea-491f-ae3e-ea74d260fbe9",
+  "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+  "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+  "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+  "registry": {
+    "url": "https://madbeauty.lt/content-targets.json",
+    "status": 200,
+    "cacheControl": "no-store",
+    "sha256": "a3265007aa51b5338728631b2782e410b6004804381c99c798210ef3a4991012",
+    "generatedAt": "2026-10-09T20:49:23.509Z",
+    "expiresAt": "2026-10-09T21:49:23.509Z"
+  },
+  "contextSha256": "f82bda7c0c8095449ea1c4b75f2b0ff6cf8ee5f12aeedfba1ba7854a8c649501",
+  "counts": {
+    "routes": 305,
+    "readyNational": 257,
+    "readyLocal": 0,
+    "planned": 48,
+    "cities": 103,
+    "indexEligible": 0,
+    "readyKinds": {
+      "category": 14,
+      "group": 49,
+      "treatment": 194
+    }
+  },
+  "sitemap": {
+    "status": 200,
+    "catalogueExcluded": true
+  },
+  "routes": [
+    {
+      "routeRegistryId": "mb:catalog:antakiai",
+      "url": "https://madbeauty.lt/paslaugos/antakiai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-dazymas-antakiu-dazymas-chna",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-dazymas-antakiu-dazymas-chna",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-dazymas-antakiu-dazymas-dazais",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-dazymas-antakiu-dazymas-dazais",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-korekcija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-korekcija-antakiu-formos-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-korekcija-antakiu-formos-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-korekcija-antakiu-korekcija-pincetu",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-korekcija-antakiu-korekcija-pincetu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-korekcija-antakiu-korekcija-siulu",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-korekcija-antakiu-korekcija-siulu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-korekcija-antakiu-korekcija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-korekcija-antakiu-korekcija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-laminavimas",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-laminavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-laminavimas-antakiu-laminavimas",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-laminavimas-antakiu-laminavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:antakiu-laminavimas-antakiu-laminavimas-su-korekcija-ir-dazymu",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-laminavimas-antakiu-laminavimas-su-korekcija-ir-dazymu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:barzda",
+      "url": "https://madbeauty.lt/paslaugos/barzda",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:barzda-barzdos-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/barzda-barzdos-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:barzda-barzdos-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/barzda-barzdos-kirpimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:barzda-barzdos-modeliavimas",
+      "url": "https://madbeauty.lt/paslaugos/barzda-barzdos-modeliavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:barzda-skutimas",
+      "url": "https://madbeauty.lt/paslaugos/barzda-skutimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienos",
+      "url": "https://madbeauty.lt/paslaugos/blakstienos",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-korekcija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-korekcija-blakstienu-papildymas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-korekcija-blakstienu-papildymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-korekcija-priaugintu-blakstienu-nuemimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-korekcija-priaugintu-blakstienu-nuemimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-priauginimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-priauginimas-hibridinis-blakstienu-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-priauginimas-hibridinis-blakstienu-priauginimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-priauginimas-klasikinis-blakstienu-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-priauginimas-klasikinis-blakstienu-priauginimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-priauginimas-volume-blakstienu-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-priauginimas-volume-blakstienu-priauginimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-prieziura",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-prieziura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-prieziura-blakstienu-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-prieziura-blakstienu-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-prieziura-blakstienu-laminavimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-prieziura-blakstienu-laminavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:blakstienu-prieziura-blakstienu-laminavimas-ir-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-prieziura-blakstienu-laminavimas-ir-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-cukrumi-bikini-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-bikini-depiliacija-cukrumi",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-cukrumi-braziliska-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-braziliska-depiliacija-cukrumi",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-cukrumi-koju-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-koju-depiliacija-cukrumi",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-cukrumi-pazastu-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-pazastu-depiliacija-cukrumi",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-cukrumi-ranku-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-ranku-depiliacija-cukrumi",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-cukrumi-veido-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-veido-depiliacija-cukrumi",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-kita",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-kita",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-kita-plauku-salinimo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-kita-plauku-salinimo-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-kita-veido-plaukeliu-salinimas-siulu",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-kita-veido-plaukeliu-salinimas-siulu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-bikini-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-bikini-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-braziliska-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-braziliska-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-koju-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-koju-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-krutines-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-krutines-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-nugaros-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-nugaros-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-pazastu-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-pazastu-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-ranku-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-ranku-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:depiliacija-vasku-veido-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-veido-depiliacija-vasku",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetika",
+      "url": "https://madbeauty.lt/paslaugos/estetika",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-konsultacijos",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-konsultacijos",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-proceduros",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-proceduros-biorevitalizacija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-biorevitalizacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-proceduros-estetinio-lazerio-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-estetinio-lazerio-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-proceduros-injekciniu-proceduru-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-injekciniu-proceduru-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-proceduros-mezoterapija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-mezoterapija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-proceduros-mikroadatine-procedura",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-mikroadatine-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:estetikos-proceduros-randu-prieziuros-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/estetikos-proceduros-randu-prieziuros-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:idegis",
+      "url": "https://madbeauty.lt/paslaugos/idegis",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:idegis-purskiamas-idegis",
+      "url": "https://madbeauty.lt/paslaugos/idegis-purskiamas-idegis",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:idegis-soliariumas",
+      "url": "https://madbeauty.lt/paslaugos/idegis-soliariumas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:ilgalaikis-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/ilgalaikis-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kirpimai",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kirpimai-galiuku-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-galiuku-kirpimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kirpimai-kirpciuku-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-kirpciuku-kirpimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kirpimai-moteru-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-moteru-kirpimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kirpimai-vaiku-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-vaiku-kirpimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kirpimai-vyru-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-vyru-kirpimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kunas",
+      "url": "https://madbeauty.lt/paslaugos/kunas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-aparatai",
+      "url": "https://madbeauty.lt/paslaugos/kuno-aparatai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-aparatai-aparatine-kuno-proceduros-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/kuno-aparatai-aparatine-kuno-proceduros-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-aparatai-presoterapija",
+      "url": "https://madbeauty.lt/paslaugos/kuno-aparatai-presoterapija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-aparatai-radijo-daznio-kuno-procedura",
+      "url": "https://madbeauty.lt/paslaugos/kuno-aparatai-radijo-daznio-kuno-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-aparatai-vakuumine-kuno-procedura",
+      "url": "https://madbeauty.lt/paslaugos/kuno-aparatai-vakuumine-kuno-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-ivyniojimai",
+      "url": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-ivyniojimai-dumbliu-ivyniojimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-dumbliu-ivyniojimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-ivyniojimai-kuno-ivyniojimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-kuno-ivyniojimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-ivyniojimai-purvo-ivyniojimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-ivyniojimai-purvo-ivyniojimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-aromaterapinis-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-aromaterapinis-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-atpalaiduojantis-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-atpalaiduojantis-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-giliuju-audiniu-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-giliuju-audiniu-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-klasikinis-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-klasikinis-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-masazas-karstais-akmenimis",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-masazas-karstais-akmenimis",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-sportinis-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-sportinis-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-svediskas-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-svediskas-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-masazai-tailandietiskas-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-tailandietiskas-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-sveitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-sveitimas-kuno-drekinimo-procedura",
+      "url": "https://madbeauty.lt/paslaugos/kuno-sveitimas-kuno-drekinimo-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-sveitimas-kuno-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-sveitimas-kuno-sveitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:kuno-sveitimas-nugaros-odos-prieziura",
+      "url": "https://madbeauty.lt/paslaugos/kuno-sveitimas-nugaros-odos-prieziura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:lakavimas",
+      "url": "https://madbeauty.lt/paslaugos/lakavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:lakavimas-gelinis-lakavimas",
+      "url": "https://madbeauty.lt/paslaugos/lakavimas-gelinis-lakavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:lakavimas-nagu-lakavimo-nuemimas",
+      "url": "https://madbeauty.lt/paslaugos/lakavimas-nagu-lakavimo-nuemimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:lakavimas-paprastas-nagu-lakavimas",
+      "url": "https://madbeauty.lt/paslaugos/lakavimas-paprastas-nagu-lakavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:lakavimas-prancuziskas-lakavimas",
+      "url": "https://madbeauty.lt/paslaugos/lakavimas-prancuziskas-lakavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazas",
+      "url": "https://madbeauty.lt/paslaugos/makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-mokymai",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-mokymai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-mokymai-asmenine-makiazo-pamoka",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-mokymai-asmenine-makiazo-pamoka",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-mokymai-makiazo-priemoniu-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-mokymai-makiazo-priemoniu-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai-bandomasis-nuotakos-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-bandomasis-nuotakos-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai-dieninis-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-dieninis-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai-kurybinis-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-kurybinis-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai-makiazas-fotosesijai",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-makiazas-fotosesijai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai-nuotakos-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-nuotakos-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai-proginis-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-proginis-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:makiazo-tipai-vakarinis-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/makiazo-tipai-vakarinis-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:manikiuras-aparatinis-manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras-aparatinis-manikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:manikiuras-klasikinis-manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras-klasikinis-manikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:manikiuras-kombinuotas-manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras-kombinuotas-manikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:manikiuras-manikiuras-be-lakavimo",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras-manikiuras-be-lakavimo",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:manikiuras-vyriskas-manikiuras",
+      "url": "https://madbeauty.lt/paslaugos/manikiuras-vyriskas-manikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:masazas",
+      "url": "https://madbeauty.lt/paslaugos/masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagai",
+      "url": "https://madbeauty.lt/paslaugos/nagai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-dizainas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-dizainas-nagu-daile",
+      "url": "https://madbeauty.lt/paslaugos/nagu-dizainas-nagu-daile",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-dizainas-nagu-dekoravimas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-dizainas-nagu-dekoravimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-dizainas-piesimas-ant-nagu",
+      "url": "https://madbeauty.lt/paslaugos/nagu-dizainas-piesimas-ant-nagu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas-nago-taisymas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nago-taisymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-akrilu",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-akrilu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-geliu",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-geliu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-poligeliu",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-poligeliu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-stiprinimas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-stiprinimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas-priaugintu-nagu-nuemimas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-priaugintu-nagu-nuemimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:nagu-modeliavimas-priaugintu-nagu-papildymas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-priaugintu-nagu-papildymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:papuosalu-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:papuosalu-verimas-antakio-auskaro-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-antakio-auskaro-verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:papuosalu-verimas-ausies-kremzles-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-ausies-kremzles-verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:papuosalu-verimas-ausu-speneliu-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-ausu-speneliu-verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:papuosalu-verimas-bambos-auskaro-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-bambos-auskaro-verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:papuosalu-verimas-lupos-auskaro-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-lupos-auskaro-verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:papuosalu-verimas-nosies-auskaro-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-nosies-auskaro-verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pedikiuras-aparatinis-pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-aparatinis-pedikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pedikiuras-klasikinis-pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-klasikinis-pedikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pedikiuras-kombinuotas-pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-kombinuotas-pedikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pedikiuras-pedikiuras-be-lakavimo",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-pedikiuras-be-lakavimo",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pedikiuras-pedikiuras-su-geliniu-lakavimu",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-pedikiuras-su-geliniu-lakavimu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pedikiuras-vyriskas-pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-vyriskas-pedikiuras",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmentavimas",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmentavimas-galvos-odos-mikropigmentacija",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas-galvos-odos-mikropigmentacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmentavimas-ilgalaikis-akiu-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-akiu-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmentavimas-ilgalaikis-antakiu-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-antakiu-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmentavimas-ilgalaikis-lupu-makiazas",
+      "url": "https://madbeauty.lt/paslaugos/pigmentavimas-ilgalaikis-lupu-makiazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmento-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/pigmento-korekcija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmento-korekcija-ilgalaikio-makiazo-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/pigmento-korekcija-ilgalaikio-makiazo-korekcija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pigmento-korekcija-pigmento-salinimo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/pigmento-korekcija-pigmento-salinimo-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pirtys",
+      "url": "https://madbeauty.lt/paslaugos/pirtys",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pirtys-garine-pirtis",
+      "url": "https://madbeauty.lt/paslaugos/pirtys-garine-pirtis",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pirtys-hamamas",
+      "url": "https://madbeauty.lt/paslaugos/pirtys-hamamas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pirtys-pirtis",
+      "url": "https://madbeauty.lt/paslaugos/pirtys-pirtis",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:pirtys-privatus-spa-apsilankymas",
+      "url": "https://madbeauty.lt/paslaugos/pirtys-privatus-spa-apsilankymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plaukai",
+      "url": "https://madbeauty.lt/paslaugos/plaukai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-balayage",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-balayage",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-ombre",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-ombre",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-saknu-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-saknu-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-spalvos-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-spalvos-korekcija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-sruogeliu-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-sruogeliu-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-sviesinimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-sviesinimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-tonavimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-tonavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-dazymas-visu-plauku-dazymas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-dazymas-visu-plauku-dazymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-forma",
+      "url": "https://madbeauty.lt/paslaugos/plauku-forma",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-forma-ilgalaikis-garbanojimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-forma-ilgalaikis-garbanojimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-forma-keratinine-plauku-procedura",
+      "url": "https://madbeauty.lt/paslaugos/plauku-forma-keratinine-plauku-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-forma-plauku-tiesinimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-forma-plauku-tiesinimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-priauginimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-priauginimas-plauku-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-priauginimas-plauku-priauginimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-priauginimas-priauginimo-korekcija",
+      "url": "https://madbeauty.lt/paslaugos/plauku-priauginimas-priauginimo-korekcija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-priauginimas-priaugintu-plauku-nuemimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-priauginimas-priaugintu-plauku-nuemimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-proceduros",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-proceduros-atkuriamoji-plauku-procedura",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros-atkuriamoji-plauku-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-proceduros-drekinamoji-plauku-procedura",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros-drekinamoji-plauku-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-proceduros-galvos-odos-prieziura",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros-galvos-odos-prieziura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-proceduros-galvos-odos-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros-galvos-odos-sveitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-proceduros-plauku-prieziuros-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/plauku-proceduros-plauku-prieziuros-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-salinimas-aparatu",
+      "url": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-salinimas-aparatu-elektroepiliacija",
+      "url": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu-elektroepiliacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-salinimas-aparatu-fotoepiliacija",
+      "url": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu-fotoepiliacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+      "url": "https://madbeauty.lt/paslaugos/plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:poilsio-proceduros",
+      "url": "https://madbeauty.lt/paslaugos/poilsio-proceduros",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:poilsio-proceduros-aromaterapijos-seansas",
+      "url": "https://madbeauty.lt/paslaugos/poilsio-proceduros-aromaterapijos-seansas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:poilsio-proceduros-galvos-spa",
+      "url": "https://madbeauty.lt/paslaugos/poilsio-proceduros-galvos-spa",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:rankos-pedos",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:rankos-pedos-parafino-procedura-pedoms",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-parafino-procedura-pedoms",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:rankos-pedos-parafino-procedura-rankoms",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-parafino-procedura-rankoms",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:rankos-pedos-pedu-spa",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-pedu-spa",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:rankos-pedos-ranku-spa",
+      "url": "https://madbeauty.lt/paslaugos/rankos-pedos-ranku-spa",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:spa",
+      "url": "https://madbeauty.lt/paslaugos/spa",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:spa-ritualai",
+      "url": "https://madbeauty.lt/paslaugos/spa-ritualai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:spa-ritualai-kuno-ir-veido-spa-ritualas",
+      "url": "https://madbeauty.lt/paslaugos/spa-ritualai-kuno-ir-veido-spa-ritualas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:spa-ritualai-spa-ritualas",
+      "url": "https://madbeauty.lt/paslaugos/spa-ritualai-spa-ritualas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:spa-ritualai-spa-ritualas-poroms",
+      "url": "https://madbeauty.lt/paslaugos/spa-ritualai-spa-ritualas-poroms",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:specialus-masazai",
+      "url": "https://madbeauty.lt/paslaugos/specialus-masazai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:specialus-masazai-limfodrenazinis-kuno-masazas",
+      "url": "https://madbeauty.lt/paslaugos/specialus-masazai-limfodrenazinis-kuno-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:specialus-masazai-masazas-nesciosioms",
+      "url": "https://madbeauty.lt/paslaugos/specialus-masazai-masazas-nesciosioms",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:specialus-masazai-masazas-poroms",
+      "url": "https://madbeauty.lt/paslaugos/specialus-masazai-masazas-poroms",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:srities-masazai",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:srities-masazai-galvos-masazas",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai-galvos-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:srities-masazai-kaklo-ir-peciu-masazas",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai-kaklo-ir-peciu-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:srities-masazai-nugaros-masazas",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai-nugaros-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:srities-masazai-pedu-masazas",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai-pedu-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:srities-masazai-ranku-masazas",
+      "url": "https://madbeauty.lt/paslaugos/srities-masazai-ranku-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:sukavimas",
+      "url": "https://madbeauty.lt/paslaugos/sukavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:sukavimas-garbanu-formavimas",
+      "url": "https://madbeauty.lt/paslaugos/sukavimas-garbanu-formavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:sukavimas-kasu-pynimas",
+      "url": "https://madbeauty.lt/paslaugos/sukavimas-kasu-pynimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:sukavimas-plauku-plovimas-ir-dziovinimas",
+      "url": "https://madbeauty.lt/paslaugos/sukavimas-plauku-plovimas-ir-dziovinimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:sukavimas-susukavimas",
+      "url": "https://madbeauty.lt/paslaugos/sukavimas-susukavimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:sukavimas-vakarine-sukuosena",
+      "url": "https://madbeauty.lt/paslaugos/sukavimas-vakarine-sukuosena",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:sukavimas-vestuvine-sukuosena",
+      "url": "https://madbeauty.lt/paslaugos/sukavimas-vestuvine-sukuosena",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiravimas",
+      "url": "https://madbeauty.lt/paslaugos/tatuiravimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiravimas-nauja-tatuiruote",
+      "url": "https://madbeauty.lt/paslaugos/tatuiravimas-nauja-tatuiruote",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiravimas-tatuiruotes-atnaujinimas",
+      "url": "https://madbeauty.lt/paslaugos/tatuiravimas-tatuiruotes-atnaujinimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiravimas-tatuiruotes-uzdengimas",
+      "url": "https://madbeauty.lt/paslaugos/tatuiravimas-tatuiruotes-uzdengimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiruociu-konsultacijos",
+      "url": "https://madbeauty.lt/paslaugos/tatuiruociu-konsultacijos",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiruociu-konsultacijos-tatuiruotes-salinimo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/tatuiruociu-konsultacijos-tatuiruotes-salinimo-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:tatuiruotes",
+      "url": "https://madbeauty.lt/paslaugos/tatuiruotes",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veidas",
+      "url": "https://madbeauty.lt/paslaugos/veidas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-aparatai",
+      "url": "https://madbeauty.lt/paslaugos/veido-aparatai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-aparatai-aparatine-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-aparatai-aparatine-veido-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-aparatai-led-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-aparatai-led-veido-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-aparatai-mikrosroviu-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-aparatai-mikrosroviu-veido-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-aparatai-radijo-daznio-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-aparatai-radijo-daznio-veido-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-kaukes",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-kaukes-akiu-srities-prieziura",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-akiu-srities-prieziura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-kaukes-drekinamoji-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-drekinamoji-veido-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-kaukes-maitinamoji-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-maitinamoji-veido-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-kaukes-raminamoji-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-raminamoji-veido-procedura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-kaukes-veido-kauke",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-veido-kauke",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/veido-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-konsultacija-odos-prieziuros-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/veido-konsultacija-odos-prieziuros-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-masazai",
+      "url": "https://madbeauty.lt/paslaugos/veido-masazai",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-masazai-bukalinis-veido-masazas",
+      "url": "https://madbeauty.lt/paslaugos/veido-masazai-bukalinis-veido-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-masazai-klasikinis-veido-masazas",
+      "url": "https://madbeauty.lt/paslaugos/veido-masazai-klasikinis-veido-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-masazai-kobido-veido-masazas",
+      "url": "https://madbeauty.lt/paslaugos/veido-masazai-kobido-veido-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-masazai-veido-limfodrenazinis-masazas",
+      "url": "https://madbeauty.lt/paslaugos/veido-masazai-veido-limfodrenazinis-masazas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/veido-sveitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-sveitimas-fermentinis-veido-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/veido-sveitimas-fermentinis-veido-sveitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-sveitimas-pavirsinis-veido-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/veido-sveitimas-pavirsinis-veido-sveitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-sveitimas-rugstinis-veido-sveitimas",
+      "url": "https://madbeauty.lt/paslaugos/veido-sveitimas-rugstinis-veido-sveitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-valymas",
+      "url": "https://madbeauty.lt/paslaugos/veido-valymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-valymas-kombinuotas-veido-valymas",
+      "url": "https://madbeauty.lt/paslaugos/veido-valymas-kombinuotas-veido-valymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-valymas-mechaninis-veido-valymas",
+      "url": "https://madbeauty.lt/paslaugos/veido-valymas-mechaninis-veido-valymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-valymas-ultragarsinis-veido-valymas",
+      "url": "https://madbeauty.lt/paslaugos/veido-valymas-ultragarsinis-veido-valymas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:veido-valymas-veido-valymas-be-mechaninio-poveikio",
+      "url": "https://madbeauty.lt/paslaugos/veido-valymas-veido-valymas-be-mechaninio-poveikio",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:verimas",
+      "url": "https://madbeauty.lt/paslaugos/verimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:verimo-prieziura",
+      "url": "https://madbeauty.lt/paslaugos/verimo-prieziura",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:verimo-prieziura-auskaro-verimo-konsultacija",
+      "url": "https://madbeauty.lt/paslaugos/verimo-prieziura-auskaro-verimo-konsultacija",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    },
+    {
+      "routeRegistryId": "mb:catalog:verimo-prieziura-papuosalo-pakeitimas",
+      "url": "https://madbeauty.lt/paslaugos/verimo-prieziura-papuosalo-pakeitimas",
+      "status": 200,
+      "indexEligible": false,
+      "cities": 103,
+      "providerLinks": 0,
+      "emptySupply": true
+    }
+  ],
+  "negative": [
+    {
+      "path": "/paslaugos/fizinis-aktyvumas",
+      "status": 404
+    },
+    {
+      "path": "/paslaugos/plaukai/vilnius",
+      "status": 404
+    },
+    {
+      "path": "/paslaugos/unknown",
+      "status": 404
+    },
+    {
+      "path": "/paslaugos/nagai/unknown",
+      "status": 404
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-09",
+  "source": "direct-human-request-in-this-platform-chat",
+  "instruction": "atjunk taisykles kad straipsniai lauktu specialisto perziuras, viskas turi veikti be zmogaus isikisimo",
+  "scope": "Remove mandatory specialist-human review from Madbeauty article preparation and publication; use actual autonomous agent editorial checks. Apply the existing human instruction to test and upload working updates live.",
+  "deploymentInstruction": "tesk darbus, viska autonomiskai testuoki ir kai viskas veiks ikelk atnaujinimus live",
+  "constraints": "Preserve incumbent approved snapshots and publication dates. Do not record fabricated expert reviews. Article content-only release does not activate the unfinished full platform backend."
+}

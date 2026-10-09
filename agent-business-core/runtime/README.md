@@ -173,3 +173,60 @@ owner-lab delivery. Recorded PCM over RTC does not certify a physical browser mi
 Full measured results and remaining Windows/provider/mail/hosting dependencies:
 [`sites/parasoplansetes/AGENT-CALIBRATION-20261009.md`](../../sites/parasoplansetes/AGENT-CALIBRATION-20261009.md).
 Text calibration passing does not enable voice or SMTP, raise M0, or prove inbox delivery.
+
+## OpenRouter text provider
+
+The same server-side text adapter serves chat, postcall analysis, independent
+email review and known-thread replies. Gemini remains the default. OpenRouter
+does not replace the Gemini Live voice transport or the local Codex calibration
+runner. The public widget and signed edge protocol remain unchanged.
+
+Configure the owned private `.env` (never the browser bundle or Worker vars):
+
+```dotenv
+PINET_TEXT_PROVIDER=openrouter
+PINET_OPENROUTER_API_KEY=
+PINET_OPENROUTER_MODEL=google/gemini-3.8-flash
+PINET_OPENROUTER_MAX_PROMPT_PRICE=0.75
+PINET_OPENROUTER_MAX_COMPLETION_PRICE=3.75
+```
+
+The selected model was present in the official catalog on 2026-10-10. The last
+two values are operator ceilings in USD per million tokens; they are not frozen
+provider rates. Choose an explicit model supporting `response_format` and
+`structured_outputs`; automatic model routers are not admitted. A missing key,
+model or positive price ceiling prevents chat admission. Run this metadata-only
+check, then restart only the owned API/worker when adopting the new configuration:
+
+```powershell
+uv run python scripts/text_provider_preflight.py
+```
+
+The adapter uses strict JSON-schema output, requires supported parameters,
+denies data-collecting upstreams and disables provider fallback. It performs no
+automatic retry, redirect, cross-model fallback, paid search or server tools.
+The existing core validates tools, evidence, reviewed email provenance and
+recipient authorization independently of the model response. Operator tool and
+budget policies remain mandatory; switching provider does not reset reservations.
+Chat retains its three-generation bound: the last generation uses a reply-only
+schema so repeated knowledge searches cannot consume the final response slot.
+
+OpenRouter `usage.cost` supplies the account's reported USD charge, rounded up
+to micro-USD before semantic validation. This is not an independent invoice.
+Missing or invalid cost fails closed and preserves the reservation. Truncated
+or malformed output cannot execute tools or authorize mail; available cost is
+still recorded. A cost exceeding its reservation triggers the existing pause.
+OpenRouter credit/top-up fees and Google welcome credits are outside this
+usage accounting; do not assume Google credits fund OpenRouter.
+
+Metadata success and offline tests do not prove a live conversation or inbox
+delivery. Actual provider testing needs the private key, usable account credit
+and an explicit remaining task budget. Readiness does not start background jobs,
+voice or SMTP. Existing conversations and queued mail should be finalized or
+reviewed before a provider change; active processes keep their prior settings
+until restarted. `PINET_TEXT_PROVIDER=gemini` restores the former adapter.
+
+Primary references: [API](https://openrouter.ai/docs/api/reference/overview),
+[structured output](https://openrouter.ai/docs/guides/features/structured-outputs),
+[routing](https://openrouter.ai/docs/guides/routing/provider-selection),
+[usage](https://openrouter.ai/docs/cookbook/administration/usage-accounting).

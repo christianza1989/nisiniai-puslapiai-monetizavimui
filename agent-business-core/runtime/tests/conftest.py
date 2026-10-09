@@ -4,6 +4,7 @@ from uuid import uuid4
 
 import httpx
 import pytest
+from pydantic import SecretStr
 from sqlalchemy import delete
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
@@ -22,6 +23,14 @@ from pinet_core.models import (
 )
 from pinet_core.security import edge_signature
 from pinet_core.service import business
+
+
+@pytest.fixture(autouse=True)
+def isolate_text_provider(monkeypatch):
+    # Private runtime selection must not change synthetic unit-test transport.
+    cfg = settings()
+    monkeypatch.setattr(cfg, 'text_provider', 'gemini')
+    monkeypatch.setattr(cfg, 'openrouter_api_key', SecretStr(''))
 
 
 @pytest.fixture

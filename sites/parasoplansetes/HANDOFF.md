@@ -1,4 +1,5 @@
 # Paruoštas rezultatas ir tęsinys
+Aktualus GitHub perdavimas: **private šaka įkelta, draft PR46 sukurtas; companion repo Write dar nėra**. Žr. `GIT_DELIVERY.md`. Žemiau išsaugota ankstesnio darbo ir 403 kvitų istorija; nėra merge ar production priėmimo.
 
 Vietinis StepOver F1 http://127.0.0.1:8798/ veikia šiame PC. 19 native approved puslapių /4gidai /5tikri modeliai /20media failų; parengtas komplekto pardavimo ir diegimo kelias bet kuriam tinkamam verslui. signaturepads.lt išsaugomas signotec, jo stipri kategorija neperadresuota. Naujo domeno turinys originalus. Sąlyginės penkių produktų301 nuorodos MIGRATION.md, viešas WordPress nepakeistas.
 

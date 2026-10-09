@@ -11,7 +11,7 @@
 - Visi penki nauji modeliai vietiniame tikro rendererio patikrinime grąžino 200 ir tikslų `https://parasoplansetes.lt/produktas/...` canonical. Vietinio preview noindex yra tyčinis.
 - Šiame Core kataloge nerasta `.dev.vars.hostinger` ar savininko prisijungimų failo pagal tikslinius failų vardus. Svetimos nišos `.dev.vars` neperimtas. SMTP ir INBOX bandymas neatliktas; slaptažodžių į pokalbį nereikia.
 - CUA inventoriuje tik IAB ir MCP Apps; native apps nėra. IAB palaiko viewport, tačiau tikro naršyklės mastelio valdymo galimybės neadvertizuoja. 200 % priėmimas lieka UNVERIFIED.
-- GitHub paskyros `guzhas` abiejų ankstesnių push 403 kliūtis lieka; nauja rašymo teisė nesuteikta ir credential nepakeistas.
+- GitHub nauja 2026-10-09 patikra: `guzhas` turi Write privačiame repo; šaka sėkmingai įkelta ir draft PR46 sukurtas. Viešam `niche-public-core` repo `push=false`; reikia Write būtent tam antram repo. Ankstesni 403 kvitai išsaugoti, credential nekeistas. Aktualus perdavimas — `GIT_DELIVERY.md`.
 
 Kvitai: `self-audit/migration-preview-20261009.json`, `self-audit/migration-preflight-20261009.json`, `self-audit/access-checks-20261009.json`.
 
@@ -32,7 +32,7 @@ Preview įrodė tik vietinius modelius. Preflight šiame tęsinyje teisingai bai
 ## Vykdymo tvarka, kai atsiranda prieiga
 
 1. Prisijungti prie paskyros, kuri valdo parasoplansetes.lt DNS; patikrinti registraciją / nuosavybę. Domeno nepirkti ir mokamos paslaugos neaktyvuoti automatiškai: dabartinis 2 EUR tyrimo biudžetas nėra naujos metinės paslaugos patvirtinimas.
-2. Suteikus GitHub Write esamai paskyrai arba prisijungus tinkama paskyra, pateikti abu jau paruoštus scoped PR, atlikti peržiūrą ir merge. Kitų sesijų failų ar main istorijos neperrašyti.
+2. Suteikus GitHub Write ir viešam `niche-public-core` repo, įkelti companion šaką ir pateikti jo scoped PR. Privatus draft PR46 jau pateiktas; abiejų source peržiūra ir merge lieka atskiras žingsnis. Kitų sesijų failų ar main istorijos neperrašyti.
 3. Atlikti tikrą 200 % naršyklės bandymą ir vieną aiškiai pažymėtą formos → D1 → SMTP 250 → matching Message-ID INBOX bandymą savininko dėžutei pagal MAIL_CORE. Nevykdyti hardcoded traktorių formos helperio kaip StepOver įrodymo; StepOver bandyme būtini `site_id=parasoplansetes`, tikras jo source path ir tikslus testinio įrašo ID.
 4. Tikroje produkcijoje patikrinti HTTPS, host routing, D1, pašto paslaptis, abuse/recovery ir faktinę privatumo / saugojimo tvarką. Įprasto vietinio preview SMTP lieka išjungtas.
 5. Paleisti production preflight. Tada WordPress backup ir tiksliniai pakeitimai pagal MIGRATION.md bei SIGNOTEC_WORDPRESS_DRAFT.md; įdiegti tik penkis sutartus 301. Paleisti postflight. Platus viso domeno ar kategorijos redirect nereikalingas.

@@ -84,3 +84,8 @@ Fresh core main d4ea8bf7384b70c4ea62a344001e3f8158812c56 ir companion main
 d0fd6b7d296303bfcaafadc4071945e675a72b96; savo private PR46 šaka,
 companion b2d581d šio darbo metu source nepakeistas. Backend papildymas
 reviewable PR46, ne reviewed main merge ar kito PC adoption.
+
+Runtime source `4cc7680713f295a237417ce1d878357575c3cefd` faktiškai pushed,
+remote SHA sutampa. [Draft PR46](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/46)
+aprašymas atnaujintas; staged21failų safety0findings ir handoff freshness PASS.
+Tolesnis žurnalo/perdavimo dokumentacijos commit runtime source nekeičia.

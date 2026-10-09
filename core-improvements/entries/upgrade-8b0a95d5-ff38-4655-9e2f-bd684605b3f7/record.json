@@ -1,0 +1,17 @@
+{
+  "siteId": "promedical",
+  "summary": "V1 parity fixture hard-codes nine packages and fails valid newly registered sites; bind the test to current package source files and the selected companion.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/TEST_FINDINGS.md"
+  ],
+  "paths": [
+    "content-studio/test/content-v2.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped revert of parity fixture; no public packages, validator/hash/schema or approval threshold changes.",
+  "id": "upgrade-8b0a95d5-ff38-4655-9e2f-bd684605b3f7",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "8b01c94fc2f76d9562c457bb7ce459fa7393663a",
+  "createdAt": "2026-10-09T16:42:22.346Z"
+}

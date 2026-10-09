@@ -208,12 +208,15 @@ test('Workers V2 article→catalogue registry→SSR supply; withdrawal removes l
  const v2=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[{name:'isolated-v2-package',setup(b){b.onLoad({filter:/output[\\/]content-package\.json$/},()=>({contents:JSON.stringify(articleFixture()),loader:'json'}));}}]});
  const f=await fixture({RELEASE_MODE:'production'},v2.outputFiles[0].text);try{
   const articlePath='/gidai/katalogo-nuorodos-testas',targetPath='/paslaugos/lakavimas-gelinis-lakavimas/vilnius';
+  const emptyChoice=await f.mf.dispatchFetch(origin+'/paslaugos/lakavimas-gelinis-lakavimas?miestas=vilnius',{redirect:'manual'});assert.equal(emptyChoice.status,303);assert.equal(emptyChoice.headers.get('location'),origin+'/paieska#paslauga=lakavimas-gelinis-lakavimas&miestas=vilnius');
+  const search=await f.mf.dispatchFetch(emptyChoice.headers.get('location'));assert.equal(search.status,200);assert.match(search.headers.get('x-robots-tag'),/noindex/);
   assert.doesNotMatch(await(await f.mf.dispatchFetch(origin+articlePath)).text(),/href="https:\/\/madbeauty.lt\/paslaugos\/lakavimas/);
   const owner=f.browser(),operator=f.browser();await owner.login('article-provider@example.com');await operator.login('operator@example.com');
   const org=(await owner.rpc('createOrganization',{name:'Izoliuoto testo meistrė',bio:'V2 Workers sąsajos patikra.',city:'Vilnius',kind:'solo'})).value.result,scope={role:'professional',organizationId:org.id},w=(await owner.rpc('workspace',scope)).value.result;
   await owner.rpc('createService',{organizationId:org.id,practitionerId:w.practitioners[0].id,resourceId:w.resources[0].id,taxonomyServiceId:'gelinis-lakavimas',label:'Gelinis lakavimas',durationMin:60,priceMinor:2500,bufferBeforeMin:0,bufferAfterMin:0});
   const revision=(await owner.rpc('submitRevision',{scope,name:org.name,bio:org.bio})).value.result;await operator.rpc('moderate',{id:revision.id,state:'approved'});
   const target=await f.mf.dispatchFetch(origin+targetPath);assert.equal(target.status,200);assert.match(await target.text(),new RegExp('/meistrai/'+org.id));assert.match(target.headers.get('x-robots-tag'),/noindex/);
+  const suppliedChoice=await f.mf.dispatchFetch(origin+'/paslaugos/lakavimas-gelinis-lakavimas?miestas=vilnius',{redirect:'manual'});assert.equal(suppliedChoice.status,303);assert.equal(suppliedChoice.headers.get('location'),origin+targetPath);
   const registry=await(await f.mf.dispatchFetch(origin+'/content-targets.json')).json();assert.ok(registry.targets.some(t=>t.id==='mb:catalog:lakavimas-gelinis-lakavimas:vilnius'));assert.ok(registry.routes.every(r=>r.indexEligible===false));
   const article=await f.mf.dispatchFetch(origin+articlePath);assert.equal(article.status,200);const html=await article.text();assert.match(html,/href="https:\/\/madbeauty.lt\/paslaugos\/lakavimas-gelinis-lakavimas\/vilnius"/);assert.match(html,/"@type":"Article"/);assert.doesNotMatch(html,/article-provider@example.com/);
   for(const p of ['/paslaugos/nagai','/paslaugos/kirpimai-moteru-kirpimas'])assert.equal((await f.mf.dispatchFetch(origin+p)).status,200);
@@ -225,6 +228,8 @@ test('Workers V2 article→catalogue registry→SSR supply; withdrawal removes l
   const edited=await operator.rpc('edit',{scope:{role:'operator'},table:'organizations',id:org.id,values:{approved:false}});assert.equal(edited.status,200,JSON.stringify(edited.value));
   assert.equal((await f.mf.dispatchFetch(origin+targetPath)).status,404);assert.doesNotMatch(await(await f.mf.dispatchFetch(origin+articlePath)).text(),/href="https:\/\/madbeauty.lt\/paslaugos\/lakavimas/);
   const current=await(await f.mf.dispatchFetch(origin+'/content-targets.json')).json();assert.ok(!current.targets.some(t=>t.id.endsWith(':vilnius')));
+  const withdrawnChoice=await f.mf.dispatchFetch(origin+'/paslaugos/lakavimas-gelinis-lakavimas?miestas=vilnius',{redirect:'manual'});assert.equal(withdrawnChoice.status,303);assert.equal(withdrawnChoice.headers.get('location'),emptyChoice.headers.get('location'));
+  const unknownChoice=await f.mf.dispatchFetch(origin+'/paslaugos/unknown?miestas=vilnius');assert.equal(unknownChoice.status,404);
  }finally{await f.close();}
 });
 async function fixture(bindings={},fixtureScript=script,assetService=async()=>new Response('Not found',{status:404}),durableObjectBindings={PLATFORM:{className:'MadbeautyPlatform',useSQLite:true}}){

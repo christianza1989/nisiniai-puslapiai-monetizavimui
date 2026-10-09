@@ -10,7 +10,7 @@ import release from './output/content-release-receipt.json';
 import {publicModuleEntries,moduleDiscovery,moduleSchema} from './public-modules.mjs';
 import {routeTitle} from './route-titles.mjs';
 import {activeNode,createContentTargetRegistry} from '../prototype/content-targets.mjs';
-import {catalogueRoute,renderCataloguePage} from '../prototype/catalogue-page.mjs';
+import {catalogueCityDestination,catalogueRoute,renderCataloguePage} from '../prototype/catalogue-page.mjs';
 import {sharingHtml} from '../prototype/public/sharing.mjs';
 export {MadbeautyPlatform,MadbeautyOrganizationStaging};
 const assetPaths=new Set(assets);
@@ -57,7 +57,8 @@ export default {
    const response=await env.ASSETS.fetch(target),result=new Response(response.body,response);for(const [k,v]of Object.entries(headers))result.headers.set(k,v);if(preview)result.headers.set('X-Robots-Tag','noindex');return result;
   }
   const canonical=path==='/'?'/':path.replace(/\/+$/,'');if(path!==canonical)return Response.redirect(url.origin+canonical+url.search,308);
-  if(/^\/paslaugos\/[^/]+$/.test(path)&&isCityId(url.searchParams.get('miestas'))&&activeNode(path.split('/')[2]))return Response.redirect(url.origin+path+'/'+url.searchParams.get('miestas'),303);
+  const cityDestination=catalogueCityDestination(path,url.searchParams.get('miestas'),offers);
+  if(cityDestination)return Response.redirect(url.origin+cityDestination,303);
   const catalogue=path==='/paslaugos'||path.startsWith('/paslaugos/'),cataloguePage=catalogue?catalogueRoute(path,offers):null;
   let route=matchRoute(path),page=content.pages.find(p=>(p.slug?'/'+p.slug:'/')===path),profile=null;
   if(route?.params.service&&!activeNode(route.params.service))route=null;

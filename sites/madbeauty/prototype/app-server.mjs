@@ -1,5 +1,5 @@
 import {activeNode,createContentTargetRegistry} from './content-targets.mjs';
-import {catalogueRoute,renderCataloguePage} from './catalogue-page.mjs';
+import {catalogueCityDestination,catalogueRoute,renderCataloguePage} from './catalogue-page.mjs';
 import {isCityId} from './cities.mjs';
 import {ApiError} from '../backend/primitives.mjs';
 import http from 'node:http';
@@ -64,7 +64,8 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       if(requested==='/robots.txt'){res.writeHead(200,{...headers,'Content-Type':mime['.txt']});res.end(content?content.seo.nicheRobotsText(content.pkg,!contentDiscovery,content.pages.some(p=>p.type==='home')):'User-agent: *\nDisallow: /\n');return;}
       if(['/favicon.svg','/favicon.ico'].includes(requested)){res.writeHead(200,{...headers,'Content-Type':mime['.svg']});res.end(await readFile(path.join(publicRoot,'wordmark.svg')));return;}
       if(['/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)){if(contentDiscovery&&content){const body=requested==='/sitemap.xml'?content.seo.nicheSitemapXml(content.pkg,content.pages):requested==='/llms.txt'?content.seo.nicheLlmsIndex(content.pkg,content.pages):content.seo.nicheLlmsFull(content.pkg,content.pages);res.writeHead(200,{...headers,'Content-Type':requested.endsWith('.xml')?'application/xml; charset=utf-8':'text/markdown; charset=utf-8'});res.end(req.method==='HEAD'?undefined:body);return;}res.writeHead(404,headers);res.end('Private preview: discovery disabled.');return;}
-      if(/^\/paslaugos\/[^/]+$/.test(requested)&&isCityId(url.searchParams.get('miestas'))&&activeNode(requested.split('/')[2])){res.writeHead(303,{...headers,Location:requested+'/'+url.searchParams.get('miestas')});res.end();return;}
+      const cityDestination=catalogueCityDestination(requested,url.searchParams.get('miestas'),offers);
+      if(cityDestination){res.writeHead(303,{...headers,Location:cityDestination});res.end();return;}
       const isCatalogue=catalogueRequest,cataloguePage=isCatalogue?catalogueRoute(requested,offers):null;
       const profileId=requested.match(/^\/(?:meistrai|salonai)\/(provider_[a-z0-9_-]+)\/?$/)?.[1],currentProfile=profileId&&apiHandler?await apiHandler.platform.profile(profileId):null;
       let route=resolveRoute(requested,{profileResolver:apiHandler?()=>currentProfile:null,contentResolver:slug=>!!content?.pages.some(p=>['guide','article'].includes(p.type)&&p.slug==='gidai/'+slug)});

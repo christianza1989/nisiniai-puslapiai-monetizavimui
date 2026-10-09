@@ -1,5 +1,6 @@
 import {searchSelect,bindSearchSelects} from './search-select.mjs';
 import {loadJson} from './load-json.mjs';
+import {catalogueCityDestination} from '/catalogue-page.mjs';
 import {syncSharing,syncCanonical} from './sharing.mjs';
 import {submitReport} from './moderation-ui.mjs';
 import {waitlistFields,waitlistAction} from './waitlist-ui.mjs';
@@ -60,6 +61,8 @@ let renderId=0,renderedViewKey='';
 async function render(){
   renderedViewKey=viewKey();
   const id=++renderId;clearInterval(ctx.holdTimer);ctx.candidates.clear();ctx.currentProfile=null;chrome();let path=decodeURIComponent(location.pathname).replace(/\/+$/,'')||'/';ctx.path=path;
+  const cityForm=$('#catalogue-city'),chosenCity=cityForm?.querySelector('[name="miestas"]')?.value,chosenService=cityForm?.querySelector('[name="paslauga"]')?.value;
+  if(activeNode(chosenService)&&isCityId(chosenCity))ctx.catalogueCityChoice={serviceId:activeNode(chosenService).id,cityId:chosenCity};
   $('#main').setAttribute('aria-busy','true');$('#main').innerHTML='<div class="container skeleton-page" role="status"><div class="skeleton" style="width:60%;height:36px" aria-hidden="true"></div><p style="margin-top:24px">Įkeliama…</p></div>';
   let html;
   try{
@@ -163,12 +166,12 @@ async function commonAction(action,b){
 }
 function galleryDialog(){const g=ctx.gallery;openDialog('Galerija · '+(g.index+1)+' / '+g.images.length,`${photo(ctx,g.images[g.index],'','(max-width:760px) 90vw, 650px')}<div class="toolbar">${btn('gallery-next','Ankstesnė','data-id="-1"','button outline')}${btn('gallery-next','Kita','data-id="1"','button outline')}</div>${ctx.adapter.mode==='real'?btn('report','Pranešti apie šį vaizdą',`data-id="${esc(g.images[g.index])}"`,'button outline small'):''}`);}
 async function commonForm(form,fd){
-  if(form.id==='catalogue-city'){const node=activeNode(fd.get('paslauga')),city=fd.get('miestas');if(!node||!isCityId(city))throw userError('Pasirink paslaugą ir miestą.');await navigate('/paslaugos/'+node.id+'/'+city);return true;}
+  if(form.id==='catalogue-city'){const node=activeNode(fd.get('paslauga')),city=fd.get('miestas');if(!node||!isCityId(city))throw userError('Pasirink paslaugą ir miestą.');const destination=catalogueCityDestination('/paslaugos/'+node.id,city,await ctx.adapter.catalog({}));await navigate(destination);return true;}
   if(await accountForm(ctx,form,fd))return true;
   if(['home-search','results-search'].includes(form.id)){const t=[{id:'all',label:'Visos paslaugos'},...(ctx.catalogueNodes||ctx.taxonomy)].find(t=>t.id===fd.get('paslauga')||t.label.toLocaleLowerCase('lt')===String(fd.get('paslauga')).toLocaleLowerCase('lt'));if(!t||!isCityId(fd.get('miestas')))throw userError('Pasirinkite paslaugą ir miestą iš sąrašo.');const [nuo,iki]=String(fd.get('intervalas')).split(',');state.search={...state.search,paslauga:t.id,miestas:fd.get('miestas'),diena:Number(fd.get('diena')),nuo,iki};await navigate('/paieska'+searchHash(state.search));return true;}
   if(form.id==='filters'){state.search={...state.search,...Object.fromEntries(fd)};await navigate(ctx.path+searchHash(state.search));return true;}
   if(form.id==='search-location'){const latitude=Number(fd.get('latitude')),longitude=Number(fd.get('longitude'));if(!String(fd.get('latitude')).trim()||!String(fd.get('longitude')).trim()||!Number.isFinite(latitude)||!Number.isFinite(longitude)||Math.abs(latitude)>90||Math.abs(longitude)>180)throw userError('Įvesk galiojančią platumą ir ilgumą.');ctx.searchPoint={latitude,longitude};state.search.rikiuoti='atstumas';closeDialog();await navigate(ctx.path+searchHash(state.search),{preserve:true});return true;}
-  if(form.id==='guide-cta'){const serviceId=fd.get('paslauga'),city=fd.get('miestas');state.search.paslauga=serviceId;if(city)state.search.miestas=city;await navigate('/paslaugos/'+serviceId+(city?'/'+city+searchHash(state.search):''));return true;}
+  if(form.id==='guide-cta'){const node=activeNode(fd.get('paslauga')),city=fd.get('miestas');if(!node||city&&!isCityId(city))throw userError('Pasirink paslaugą ir miestą iš sąrašo.');state.search.paslauga=node.id;if(city)state.search.miestas=city;await navigate(city?'/paieska'+searchHash(state.search):'/paslaugos/'+node.id);return true;}
   if(form.id==='demo-settings'){makeClock(fd.get('clock'));if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);state.enabled=fd.get('enabled')==='on';state.scenario=fd.get('scenario');if(state.clock!==fd.get('clock'))localStorage.removeItem(DEMO_NAMESPACE);state.clock=fd.get('clock');state.booking=null;state.favorites=[];state.session={role:fd.get('fixtureRole')||'guest',organizationId:fd.get('fixtureOrg')||'demo-org-0',clientId:fd.get('fixtureClient')||'demo-client-0'};adapter();closeDialog();const target=state.enabled?({customer:'/paskyra/vizitai',professional:'/meistrui/kalendorius',operator:'/operatorius'})[state.session.role]:null;if(target)await navigate(target);else await render();return true;}
   if(form.id==='inquiry-form'){if(fd.get('waitlist')==='true'&&ctx.adapter.mode==='real'){await ctx.adapter.createWaitlist({...Object.fromEntries(fd),from:minute(fd.get('from')),to:minute(fd.get('to')),addons:fd.getAll('addon'),idempotencyKey:ctx.waitlistKey});}else await ctx.adapter.createInquiry({...Object.fromEntries(fd),waitlist:fd.get('waitlist')==='true'});closeDialog();await navigate('/paskyra/vizitai#būsena=pageidavimai');toast('Pageidavimas išsaugotas. Laikas dar nepatvirtintas.');return true;}
   if(form.id==='report-form'){if(ctx.adapter.mode==='real'&&!ctx.realAdapter.session?.user){state.afterAuth=ctx.path;ctx.toast('Pranešimui prisijunk el. paštu, tada grįžk į šį puslapį.');await navigate('/paskyra');return true;}await submitReport(ctx,Object.fromEntries(fd));closeDialog();toast('Pranešimas išsaugotas operatoriaus eilėje.');form.reset();form.querySelector('.draft-recovery')?.remove();return true;}

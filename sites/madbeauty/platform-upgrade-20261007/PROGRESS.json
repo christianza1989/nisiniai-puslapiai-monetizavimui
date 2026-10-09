@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+  "runtimeSourceCheckpoint": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -463,6 +463,16 @@
       "hostedVersion": "cb9fda75-dd22-4a1d-acc6-b058bd9b5fed",
       "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md",
       "remaining": "Full platform real-provider/inbox/retention facts and final canonical full-backend acceptance remain separate."
+    },
+    {
+      "name": "temporary-live-21-operations-and-safe-erasure-replay",
+      "sourceCommit": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
+      "tests": 264,
+      "nativeIntegrations": 2,
+      "hostedOperations": 21,
+      "state": "accepted-temporary-fictional-host",
+      "receipt": "../trial-20261010/OPERATIONS_RECEIPT.json",
+      "remaining": "Canonical full upgrade, authorized SMTP inbox recipient and factual retention/backup execution; dummy trial no longer requires genuine salon inputs"
     }
   ],
   "tasks": [
@@ -941,15 +951,29 @@
     "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md"
   },
   "temporaryLiveTest": {
-    "status": "LIVE-TEMPORARY-FICTIONAL-TEST-ACCEPTED",
-    "sourceCommit": "fa519ecaaabf42a55fcc9f0e89a6cc986a128652",
+    "status": "LIVE-TEMPORARY-OPERATIONS-ACCEPTED",
+    "sourceCommit": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
     "origin": "https://bandymas.madbeauty.lt",
-    "version": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+    "version": "5f55df40-6ba1-4ece-8ac8-958a83529d6a",
     "expiresAt": "2026-10-16T21:10:47.982Z",
     "soloProfiles": 40,
     "publicSalons": 5,
-    "receipt": "../trial-20261010/RECEIPT.json",
+    "receipt": "../trial-20261010/OPERATIONS_RECEIPT.json",
     "smtp": false,
     "productionUpgradeDeployed": false
-  }
+  },
+  "temporaryLiveTestHistory": [
+    {
+      "status": "LIVE-TEMPORARY-FICTIONAL-TEST-ACCEPTED",
+      "sourceCommit": "fa519ecaaabf42a55fcc9f0e89a6cc986a128652",
+      "origin": "https://bandymas.madbeauty.lt",
+      "version": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+      "expiresAt": "2026-10-16T21:10:47.982Z",
+      "soloProfiles": 40,
+      "publicSalons": 5,
+      "receipt": "../trial-20261010/RECEIPT.json",
+      "smtp": false,
+      "productionUpgradeDeployed": false
+    }
+  ]
 }

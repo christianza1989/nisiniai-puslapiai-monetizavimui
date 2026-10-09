@@ -1,3 +1,9 @@
+## 2026-10-10 — viešo fiktyvaus bandymo meistro kelias
+
+Runtime7f08f8a / version5f55df40 / bandymas.madbeauty.lt / nativebrowser2tab13 / ordinarydummyowner45. [UI evidence](../trial-20261010/acceptance/operations/ui.json): paieška manikiuras be diakritikų, dvi pažymėtos procedūros, du private drafts, variantas23€/45min. ir tinkamas darbuotojas/resursas; Enter save, full reload, abi own drafts archyvuotos. Nepilnas variantas su nepasirinktu resursu nesukėlė viešos publikacijos; užpildžius resursą juodraštis išsaugotas. Pasiūlymai1440/390, editor390, kalendorius390/1440: dokumentų ir išmatuotų siaurų konteinerių client/scroll pločiai sutampa. Mobilioji darbo navigacija sąmoningai slenkama su matomu scrollbar.5 natūralūs JPEG matmenys saugomi [OPERATIONS_RECEIPT](../trial-20261010/OPERATIONS_RECEIPT.json); jų neprilyginame DOM viewport.
+
+21 API operacijos su normalia owner/client/reception/operator autentikacija priimtos atskirai nuo šio native UI kelio. Tai ne naujas visų ekranų/stale/network/UI-state PASS; ankstesni konkrečių būsenų įrodymai išlaiko savo source. Pirminis klientų login/booking/detail/cancel/search/profile aa58 kvitas taip pat nepakeistas. SMTP/inbox, faktinė retention ir canonical pilno upgrade priėmimas neįvykdyti.
+
 ## 2026-10-09 — gyvas straipsnių kalendorius ir rezervavimo patikra
 
 Straipsnių datų leidimas jau įdiegtas madbeauty.lt. PR48 receipt: production versija `4dbdf361-25c6-4496-97a5-daaed23df201`, esamas runtime `b7a34b1`, core `63cfd8c`, patvirtintas paketas `bb1b90aa`. Iš 39 puslapių 7 jau vieši, 32 gidai laukia savo datų. 260 temų tebėra neparašytas planas. Originali production PLATFORM namespace ir v1 tapatybė, pašto bei DNS nustatymai išliko. Visas platformos atnaujinimas dar nepaleistas.

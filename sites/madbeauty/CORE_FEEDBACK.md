@@ -1,3 +1,7 @@
+## 2026-10-10 — pakartotinio privataus prašymo projekcija
+
+Actual native Workers operacijų bandymas atskleidė requestErasure replay grąžinamą actions masyvą, nors pirmas atsakymas, kliento workspace ir export jį pašalino. [Pradinis FAIL](trial-20261010/acceptance/operations/privacy-before.json) išsaugotas. Siaura7f08f8a pataisa pritaiko tą pačią kliento projekciją esamam prašymui; nekeičia saugyklos audito, versijos ar operatoriaus peržiūros. Node ir Workers du esami testai papildyti patikrinti operatoriaus istorijos išlikimą ir klientui paslėptą replay po SQL restart.264/264 regresija,2native integ ir21 actual bandymas.madbeauty.lt operacija PASS. [Kvitas](trial-20261010/OPERATIONS_RECEIPT.json). Pamoka konkrečiam modulio kontraktui: idempotentinis atsakymas turi išlaikyti įprasto atsakymo rolės projekciją. Bendras core/skill neperrašytas vien dėl šio site-specific DTO defekto.
+
 ## 2026-10-09 — privatus serverio produkto kelias
 
 Aktualus runtime: 3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c. [HOSTED_UI_ACCEPTANCE.md](platform-upgrade-20261007/HOSTED_UI_ACCEPTANCE.md) fiksuoja actual source onboarding / operator / gallery / client whole booking / both roles / source restart, signed physical-media handoff ir active-target owner reschedule / restart. Vienas105min /80€vizitas išlaikėID; sourceversion1, targetversion2. Normali browser paskyra, capture-only mail, private key gate, atskiri namespaces; production deploy0.

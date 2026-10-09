@@ -14,4 +14,12 @@ Acceptance checks every future guide at T−1 ms and T: 51 future guides, 102 na
 
 `provider.mjs` reconciles the actual incumbent `4dbdf361-25c6-4496-97a5-daaed23df201` before deployment and compares migrations, compatibility, namespace/class, plain variables, secret names, domain assignments and observability after deployment. `deploy.mjs` requires fresh exact-package native/hosted/live-before receipts and repeats the provider baseline check immediately before upload.
 
-After deployment, record the actual version and canonical/native browser results in `RECEIPT.json`. Until that receipt exists, this folder describes a prepared release, not a completed production deployment. If canonical acceptance fails, restore the prior version with the provider's rollback command; do not change DNS, mail credentials or data namespaces as a workaround.
+## Accepted production release
+
+The content-only release is live at `https://madbeauty.lt`: version `1de389a7-3f36-44f5-ad57-bb3a457f2146`, deployed 2026-10-09 at 19:46 UTC, with production artifact SHA `936c635bc8b74c2fdcd947ef605b93de461aa6c958d5642496703a7ad1156ca7`. [RECEIPT.json](RECEIPT.json) records the actual provider version, immutable source identities and evidence digests.
+
+Native and isolated hosted acceptance each passed all 102 future publication states. Canonical before/after HTTP checks passed, and six ordinary native browser views cover the index, an incumbent article and the new future article rejection at 390 / 1440 pixels. All 379 production asset paths were checked: 129 current assets served; 250 future paths rejected. Provider configuration, production namespace, mail secret names, domains and migration remain unchanged. This is not a production customer-record hash audit or SMTP inbox test.
+
+Nineteen new approved guides are scheduled, not immediately visible: the first new publication is 2026-10-31 at 08:00 UTC (10:00 Lithuania). All 39 prior snapshots and publication dates remain intact. Eleven specialist-gated drafts remain private. Reviewed future body previews and native/hosted clock-boundary checks are separate from current-time canonical browser acceptance.
+
+The prior accepted production version `4dbdf361-25c6-4496-97a5-daaed23df201` remains the rollback baseline. Restore that version through the provider rollback command if canonical acceptance regresses; preserve DNS, mail credentials and data namespaces. The full platform upgrade remains a separate candidate and is not deployed by this release.

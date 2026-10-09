@@ -7,7 +7,7 @@ import { optimizeRaster } from './image-pipeline.mjs';
 import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,validateV2Package,bodyPlainText} from './content-package-v2.mjs';
 import { withStudioWriteLock } from './write-lock.mjs';
 import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
-import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
+import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent, reviewBinding } from './content-workflow.mjs';
 
 export const ROOT = path.resolve(import.meta.dirname, '..');
 export const DATA = path.resolve(process.env.STUDIO_DATA_DIR || path.join(ROOT, 'data'));
@@ -469,6 +469,22 @@ export async function recordEditorialReview(siteId, pageId, input) {
     page.editorialReview = editorialReview(site, page, revisionHash(page), input);
     await writeJson(siteFile(siteId), site);
     return page.editorialReview;
+  });
+}
+export async function recordEditorialReviewBatch(siteId, inputs) {
+  return locked(async () => {
+    if (!Array.isArray(inputs) || inputs.some(input => !input || typeof input !== 'object')) throw new Error('Reikia konkrečių per-page peržiūros įrodymų.');
+    const site = await getSite(siteId), pages = selectedPages(site, inputs.map(input => input.pageId));
+    const reviews = pages.map((page, index) => {
+      const hash = revisionHash(page), input = inputs[index];
+      if (input.expectedBinding !== reviewBinding(site, page, hash)) throw new Error('Peržiūros kontekstas pasikeitė; iš naujo perskaitykite svetainės faktus ir puslapį.');
+      return editorialReview(site, page, hash, input);
+    });
+    // Validate every supplied revision, context and evidence before one write.
+    // This records the editor's real work; it never creates evidence or approvals.
+    for (let index = 0; index < pages.length; index++) pages[index].editorialReview = reviews[index];
+    await writeJson(siteFile(siteId), site);
+    return { siteId, recorded: pages.map(page => page.id), approval: 'not-performed' };
   });
 }
 export async function getContentWorkflow(siteId) { return workflowOverview(await getSite(siteId), revisionHash); }

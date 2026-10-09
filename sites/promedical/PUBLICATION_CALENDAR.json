@@ -1,0 +1,586 @@
+{
+  "version": 1,
+  "siteId": "promedical",
+  "createdAt": "2026-10-09T20:52:52.050Z",
+  "ownerRequestedCadence": "1–2 articles every day",
+  "days": 42,
+  "articles": 57,
+  "singleDays": 27,
+  "doubleDays": 15,
+  "start": "2026-10-12",
+  "end": "2026-11-22",
+  "anchorStatus": "preparation-calendar; rebase to actual launch if needed",
+  "historicalPublishedSnapshotsPreserved": true,
+  "rows": [
+    {
+      "ordinal": 1,
+      "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+      "slug": "gidai/medicininio-vezimelio-pasirinkimas",
+      "title": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+      "publishAt": "2026-10-12T07:00:00.000Z",
+      "localDate": "2026-10-12",
+      "beforeRevision": "6ac863e720432d4d57ed42b6f458a65c4ee3a9dba4a7bbace8baa532495432ba",
+      "afterRevision": "8ea451bfec887073f558f054f564b0fa34527401fe6b00ce0b0148c25e73e80b"
+    },
+    {
+      "ordinal": 2,
+      "pageId": "eab8457c-da03-420f-a149-33ebbd30953e",
+      "slug": "gidai/iso-moduliu-sistema",
+      "title": "ISO modulių sistema: kaip suderinti laikymą ir transportavimą",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "localDate": "2026-10-13",
+      "beforeRevision": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd",
+      "afterRevision": "01ae9ed77caafbaae78588b9ec47277e9cf66465cd12744e5b365ef4b03c262e"
+    },
+    {
+      "ordinal": 3,
+      "pageId": "eb1e5df2-c357-436b-87af-642802724ce9",
+      "slug": "gidai/irangos-pirkimo-uzklausa",
+      "title": "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai",
+      "publishAt": "2026-10-14T07:00:00.000Z",
+      "localDate": "2026-10-14",
+      "beforeRevision": "6a3aa6b79e50b2dcbb82888616cadc45cebe650e23af87020b38544071ae6f1e",
+      "afterRevision": "b39f83221787e9bdab24d7dbcb447b54648cf1c4f9e3b657f919d85ae5ae2339"
+    },
+    {
+      "ordinal": 4,
+      "pageId": "9e46f186-582e-4eda-a6d8-30c5e6c903fe",
+      "slug": "gidai/bazinio-vezimelio-komplektacija",
+      "title": "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją",
+      "publishAt": "2026-10-14T11:00:00.000Z",
+      "localDate": "2026-10-14",
+      "beforeRevision": "ea2cc478c05eabd7777228b5678e676a649073c006a08002fef954aa4c05d04e",
+      "afterRevision": "cc2e4e3f1c741fb1e20b67f9bf8ff074d8bfe21cf8e90e7597cacfc4b916dfb9"
+    },
+    {
+      "ordinal": 5,
+      "pageId": "adff0071-e64c-4fd7-8e57-6db62cf6010e",
+      "slug": "gidai/vaistu-vezimelio-komplektacija",
+      "title": "Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą",
+      "publishAt": "2026-10-15T07:00:00.000Z",
+      "localDate": "2026-10-15",
+      "beforeRevision": "f04907aca6da74aad51c1c3f1459725eda0443a3e07611dbe8abfa929a7f7d65",
+      "afterRevision": "d7789ba079fd346a2c9dbee02ffb08a9897113eda90f2f79adb181dc7762b507"
+    },
+    {
+      "ordinal": 6,
+      "pageId": "09b019e6-dab0-4b50-a254-aa3892f89017",
+      "slug": "gidai/tvarstymo-vezimelio-komplektacija",
+      "title": "Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas",
+      "publishAt": "2026-10-16T07:00:00.000Z",
+      "localDate": "2026-10-16",
+      "beforeRevision": "34978e39f9568717c7638f9d644afdd5b83b733807d9abb17b61882427c5988e",
+      "afterRevision": "5530e64ea820443dbfb38cf3ddfe3106354b85044a358d73936adee0acb53f08"
+    },
+    {
+      "ordinal": 7,
+      "pageId": "be0923a8-c3de-4174-b643-98739ab43e0b",
+      "slug": "gidai/anesteziologinio-vezimelio-komplektacija",
+      "title": "Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus",
+      "publishAt": "2026-10-17T07:00:00.000Z",
+      "localDate": "2026-10-17",
+      "beforeRevision": "0a09d2f08cee8ce57cc2abe6a90c9c3f9f09d2f744ecceaae5d25567455108b0",
+      "afterRevision": "3ec739d150e6d3973586cdf883fc989611178863a2102d5ab315a7ecb51f3663"
+    },
+    {
+      "ordinal": 8,
+      "pageId": "e6f574e9-b8a0-4aab-853c-5d00277636c6",
+      "slug": "gidai/reanimacinio-vezimelio-komplektacija",
+      "title": "Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas",
+      "publishAt": "2026-10-17T11:00:00.000Z",
+      "localDate": "2026-10-17",
+      "beforeRevision": "9244ca15fc890a21f6bacae1687b56ffa97b65380e3f44fd16560e2eb0b05887",
+      "afterRevision": "00255c05c2774236012248543a03b0dce6a607190f26901e0b74098e27916b08"
+    },
+    {
+      "ordinal": 9,
+      "pageId": "e069a825-8c56-4332-9133-fb1cb2a90580",
+      "slug": "gidai/vizitu-vezimelio-pasirinkimas",
+      "title": "Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti",
+      "publishAt": "2026-10-18T07:00:00.000Z",
+      "localDate": "2026-10-18",
+      "beforeRevision": "0f42a4afdb24262a1bbfb5582142666e91f082523eca94bc446e6cce40d0be6d",
+      "afterRevision": "93796f7e311a36fa996580d31120e09a5e81f96c32d4565014d9ab3e25a92dc8"
+    },
+    {
+      "ordinal": 10,
+      "pageId": "dc9b41a3-6f3a-4010-8a60-f430eb92889b",
+      "slug": "gidai/medicininis-vezimelis-kompiuteriui",
+      "title": "Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra",
+      "publishAt": "2026-10-19T07:00:00.000Z",
+      "localDate": "2026-10-19",
+      "beforeRevision": "d3c7a1f447ca5a45338dfa5cff352752ad96ec80682ab4e7370c5d13d079c4a9",
+      "afterRevision": "b070418820221b995052e6ec62365e641c00c71f86cbcc6d278f702c82b65bfa"
+    },
+    {
+      "ordinal": 11,
+      "pageId": "46b0543a-7f52-45b3-a430-a5c304f79b6e",
+      "slug": "gidai/medicininio-vezimelio-matmenu-patikra",
+      "title": "Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra",
+      "publishAt": "2026-10-20T07:00:00.000Z",
+      "localDate": "2026-10-20",
+      "beforeRevision": "8607a8d56f80c77af0768eaa2026cd04b3d155b9d765ca1069066b551600dda9",
+      "afterRevision": "977cbc1cbc5c1e40cf8466f0b1d0280b4fd5f10f1a24d8e0695a75130f43da7c"
+    },
+    {
+      "ordinal": 12,
+      "pageId": "51c7d249-2055-4f26-997f-7cc832313fb4",
+      "slug": "gidai/medicininio-vezimelio-ratukai-ir-stabdziai",
+      "title": "Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą",
+      "publishAt": "2026-10-20T11:00:00.000Z",
+      "localDate": "2026-10-20",
+      "beforeRevision": "6d8db3213d726ada347409db11022bc2607bcdb5dac68d0df70b7e6cd6c7df0c",
+      "afterRevision": "4820c7c25166dfe355b2f245496b95834d85812494bb77482f2c42ae90e948b0"
+    },
+    {
+      "ordinal": 13,
+      "pageId": "27bb1b7d-18d2-44b0-b28f-f47f700bcd03",
+      "slug": "gidai/iso-moduliu-matmenu-patikra",
+      "title": "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas",
+      "publishAt": "2026-10-21T07:00:00.000Z",
+      "localDate": "2026-10-21",
+      "beforeRevision": "b82c136a0738306c5f1b9122f589b2256a660148d80d41b4124ba86a50f8cfd1",
+      "afterRevision": "70cc3f5c8887a015b836be3d3cccfa9c98f54f47fc6aefd3c66769aa5fd46481"
+    },
+    {
+      "ordinal": 14,
+      "pageId": "d042d62b-06a2-4a95-b742-b4d645a19984",
+      "slug": "gidai/iso-krepsio-gylis-ir-talpa",
+      "title": "ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį",
+      "publishAt": "2026-10-22T07:00:00.000Z",
+      "localDate": "2026-10-22",
+      "beforeRevision": "5ba22148ebec1795cc8699deeff25145e725be6999ad63976da5e235bd3c17c8",
+      "afterRevision": "1a86a4db3805818f619b552436a126941b1d0537cf206cbfbb24e417d9f3ccaa"
+    },
+    {
+      "ordinal": 15,
+      "pageId": "2a8c3c5b-59b0-49b0-9521-47c6940294ba",
+      "slug": "gidai/iso-krepsiu-pertvaru-planas",
+      "title": "ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas",
+      "publishAt": "2026-10-23T07:00:00.000Z",
+      "localDate": "2026-10-23",
+      "beforeRevision": "cd6a20d5a22692e5e187eb572f790e77e21a80e6cf42b8f84a0120f49466cf28",
+      "afterRevision": "168a5fa85fe0d083f431919394418d255fa87a638c48bb9e107db5add7044ef0"
+    },
+    {
+      "ordinal": 16,
+      "pageId": "ab5eb205-84ff-438b-ad55-ec4ad7e21e46",
+      "slug": "gidai/iso-moduliu-zenklinimas",
+      "title": "ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis",
+      "publishAt": "2026-10-23T11:00:00.000Z",
+      "localDate": "2026-10-23",
+      "beforeRevision": "6cf1893ef25525df74dcfe3ab49eec2880c04a7970a0e5737e61c7fe73e1fa78",
+      "afterRevision": "b5254e8d3d4023a31725424557fc89432ab5579bd34b8c52ce835ff62c0af982"
+    },
+    {
+      "ordinal": 17,
+      "pageId": "8c200256-0d2e-4947-acbd-dd364e44ab96",
+      "slug": "gidai/iso-krepsiai-ar-padeklai",
+      "title": "ISO krepšiai ar padėklai: laikymo, pasiekiamumo ir transportavimo skirtumai",
+      "publishAt": "2026-10-24T07:00:00.000Z",
+      "localDate": "2026-10-24",
+      "beforeRevision": "039cf9d96f6beb6c17ba0d46ff5d0b60ffa9cf239a8b0b1c5fd68fc568989c9c",
+      "afterRevision": "122484238ef2ae6a2203c92c3917a67cb2c1e095a6f2919c1e4d62f9dcc665d1"
+    },
+    {
+      "ordinal": 18,
+      "pageId": "9002e667-f305-4a41-8ed6-f151feb544d5",
+      "slug": "gidai/medicinines-spintos-pasirinkimas",
+      "title": "Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga",
+      "publishAt": "2026-10-25T08:00:00.000Z",
+      "localDate": "2026-10-25",
+      "beforeRevision": "3520c8199ca87eafb8833694a43f4b1d4d996dced4f4a31433cca1e9df84cb89",
+      "afterRevision": "ce105da613df8d366669987de753245f59840136c6f09edc6557cf804a5a8e63"
+    },
+    {
+      "ordinal": 19,
+      "pageId": "1f90b2be-97ba-4446-a08a-7a8cc9353737",
+      "slug": "gidai/mobili-ar-stacionari-medicinine-spinta",
+      "title": "Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas",
+      "publishAt": "2026-10-25T12:00:00.000Z",
+      "localDate": "2026-10-25",
+      "beforeRevision": "19818c06173b9b15e9b6ad16fae7f8672a1eabe10030b8d9a99940b7a30028b8",
+      "afterRevision": "7f483e3923eb62647a66f17cba05f77e981a1a1ab39338cf8dfc459857b1b2a1"
+    },
+    {
+      "ordinal": 20,
+      "pageId": "04d5918f-47e7-4482-8d8f-1bf8eaca5376",
+      "slug": "gidai/medicinines-spintos-duru-atidarymo-vieta",
+      "title": "Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas",
+      "publishAt": "2026-10-26T08:00:00.000Z",
+      "localDate": "2026-10-26",
+      "beforeRevision": "c94d9024d8309922bdceee79be6489038f1dc5b5888f21128786db050cb272e4",
+      "afterRevision": "d3fc9302cdbc33caa2c1d1ae244668ece8295b0410c9377b4ec48688327a4616"
+    },
+    {
+      "ordinal": 21,
+      "pageId": "6f1f2454-7763-40fb-817f-cb14334af75b",
+      "slug": "gidai/medicinines-spintos-uzrakto-patikra",
+      "title": "Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra",
+      "publishAt": "2026-10-27T08:00:00.000Z",
+      "localDate": "2026-10-27",
+      "beforeRevision": "49170cf3e8dfd344bc1bbe6cdba917d24f6cf7b0adc3cf30d13f82a7089b1aa6",
+      "afterRevision": "68ad75d5c5945f14a140914e4e3be6d944ecae2a12b362d35e209b34ecb94d8c"
+    },
+    {
+      "ordinal": 22,
+      "pageId": "e5f7ef5c-8c3e-4be2-8961-723aad09e37d",
+      "slug": "gidai/medicinines-spintos-lentynu-ir-stalciu-planas",
+      "title": "Medicininės spintos vidus: lentynų, stalčių ir modulių planas",
+      "publishAt": "2026-10-28T08:00:00.000Z",
+      "localDate": "2026-10-28",
+      "beforeRevision": "9c69edc36258a0ba840248b8cfe870467d22e24b3917021086394a08440537b9",
+      "afterRevision": "70003098339185bfbbd7597f6442b4b19bb4e40cac558a9da1a09150a15a4ce8"
+    },
+    {
+      "ordinal": 23,
+      "pageId": "bf06232a-d0ad-4389-bc81-6714d6ce2c97",
+      "slug": "gidai/medicinos-istaigos-baldu-planavimas",
+      "title": "Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai",
+      "publishAt": "2026-10-28T12:00:00.000Z",
+      "localDate": "2026-10-28",
+      "beforeRevision": "b7a92ea79132452ac65b198fe9a1e9e24c955db03050bf140dfeaf0675e61ecf",
+      "afterRevision": "f0329bb069b04cd1544981477d16d1529d86e732c60cb6ff6c0df125f570615c"
+    },
+    {
+      "ordinal": 24,
+      "pageId": "7fb61c62-a821-47e2-b42c-81685961c434",
+      "slug": "gidai/mayo-staliuko-pasirinkimas",
+      "title": "Kaip pasirinkti Mayo instrumentų staliuką",
+      "publishAt": "2026-10-29T08:00:00.000Z",
+      "localDate": "2026-10-29",
+      "beforeRevision": "bede07719dcfe14b4537bcc039a2f1e366c052e0a75779eec3bc4c67b02feb97",
+      "afterRevision": "a9d98ed08f80bdd2e5ea378b243b27041f8e712a6d56654e1b79104c876c5c29"
+    },
+    {
+      "ordinal": 25,
+      "pageId": "f8d3911c-3e7f-4938-ac54-6621bc18ad6f",
+      "slug": "gidai/nerudijancio-plieno-stalo-poreikis",
+      "title": "Kaip aprašyti nerūdijančio plieno stalo poreikį",
+      "publishAt": "2026-10-30T08:00:00.000Z",
+      "localDate": "2026-10-30",
+      "beforeRevision": "4bb76c4d27a2c4318d9709ddcea1d5fcbe01694496e55e73342863c21a48681d",
+      "afterRevision": "a665ddf3033d545ebc06e586c4d02419aa3796aa960994f441f72465121d85d0"
+    },
+    {
+      "ordinal": 26,
+      "pageId": "28a9913e-441d-4f5c-9f5b-cba5678c7a61",
+      "slug": "gidai/medicininiu-baldu-nerudijancio-plieno-klase",
+      "title": "Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą",
+      "publishAt": "2026-10-31T08:00:00.000Z",
+      "localDate": "2026-10-31",
+      "beforeRevision": "7abc25067287beaede9cad46e089f2e435b806d45e55a0efd347cba4cdb06dee",
+      "afterRevision": "718deb74de880b2d406e7b7ca413283be61159a302a0092bcb32cce48293293d"
+    },
+    {
+      "ordinal": 27,
+      "pageId": "b8f88ba7-7439-4d3f-b8be-54db499e993d",
+      "slug": "gidai/staliuko-prie-lovos-suderinamumas",
+      "title": "Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas",
+      "publishAt": "2026-10-31T12:00:00.000Z",
+      "localDate": "2026-10-31",
+      "beforeRevision": "0cd8a7a3f1c05887a68e6e9c2a12b607b519e25362ef41e398627e702aee7b25",
+      "afterRevision": "032cb63a543f51b5f9d0e6be93e1386b20af78074dfd54adbd2431fe3a3405e7"
+    },
+    {
+      "ordinal": 28,
+      "pageId": "6a8b051a-7002-4e7d-bf66-5a57fc2397b1",
+      "slug": "gidai/medicininiai-stovai-ir-laikikliai",
+      "title": "Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas",
+      "publishAt": "2026-11-01T08:00:00.000Z",
+      "localDate": "2026-11-01",
+      "beforeRevision": "1a508475c305511f9fe42e0d574ab805defcd35f1f250b40f2c3c3f9b885e644",
+      "afterRevision": "3466023933b697c889e7a36fe653beddaacd17a6409c766e6408a8559be1115f"
+    },
+    {
+      "ordinal": 29,
+      "pageId": "6d5cb8d8-67a0-4f05-8b71-9fa29974f359",
+      "slug": "gidai/infuziju-stovo-apkrovos-patikra",
+      "title": "Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai",
+      "publishAt": "2026-11-02T08:00:00.000Z",
+      "localDate": "2026-11-02",
+      "beforeRevision": "1e743fd69d72109b136438ca158830c6edd000dd2c9337a3cd6326d35d3cceeb",
+      "afterRevision": "f6a825bc33f71d877d6c0500f046fed543bcc76f991e5ffd47b84619eef9af9c"
+    },
+    {
+      "ordinal": 30,
+      "pageId": "838140de-f743-4e42-8dc7-f789516f6848",
+      "slug": "gidai/sulankstomo-infuziju-stovo-pasirinkimas",
+      "title": "Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra",
+      "publishAt": "2026-11-03T08:00:00.000Z",
+      "localDate": "2026-11-03",
+      "beforeRevision": "6645e738ca2a83311bb61cdbd5ff6812f24f53a5537dd591280f861ae47beafa",
+      "afterRevision": "a885030da20d340cc0c9fc5b3798bb383f67c66c8767b484ea9d72d0ceefd0ec"
+    },
+    {
+      "ordinal": 31,
+      "pageId": "e97facac-85f5-4722-ae4a-e09c76a7a9cb",
+      "slug": "gidai/medicininiu-sieniniu-laikikliu-pasirinkimas",
+      "title": "Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra",
+      "publishAt": "2026-11-03T12:00:00.000Z",
+      "localDate": "2026-11-03",
+      "beforeRevision": "9e6b0816c73626bf15163960a6d916ac015d79e78b8761f78d535a81ea9459b7",
+      "afterRevision": "176a4ebbec646f9a330ea63cc5a90f5a0a5b90c34b478ee81ce53605ec6d434b"
+    },
+    {
+      "ordinal": 32,
+      "pageId": "880b11bb-86a8-43ba-a01a-be0e522e68fc",
+      "slug": "gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "title": "Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją",
+      "publishAt": "2026-11-04T08:00:00.000Z",
+      "localDate": "2026-11-04",
+      "beforeRevision": "0b34f57b961a456093f822cf715ce35f6031d6ffc3c6027ceb14f5fe48b5b1da",
+      "afterRevision": "c525ce38ce9cdf7b5fe99462149913a3ef69f8f7470a9970343ded7b020a7654"
+    },
+    {
+      "ordinal": 33,
+      "pageId": "beb78705-8f79-4258-8e4e-4ea573a3e6b1",
+      "slug": "gidai/skalbiniu-maisui-tinkamo-remo-patikra",
+      "title": "Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas",
+      "publishAt": "2026-11-05T08:00:00.000Z",
+      "localDate": "2026-11-05",
+      "beforeRevision": "8aed27d15241311594bbab28eb1bb9eb475fafa4e93adf73d174d58e5d9af1f4",
+      "afterRevision": "27bc90b96dc5e0448674003f4951fd57120fba521e4311b3c6b68c7b2f0db44b"
+    },
+    {
+      "ordinal": 34,
+      "pageId": "5078652c-3ab2-4775-a691-8b2987d633d1",
+      "slug": "gidai/svariu-skalbiniu-transportavimo-vezimelis",
+      "title": "Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas",
+      "publishAt": "2026-11-06T08:00:00.000Z",
+      "localDate": "2026-11-06",
+      "beforeRevision": "94d8a135f18d888fe53b1c07c88faba95bfaa63175037653e6a78df36f55173d",
+      "afterRevision": "ab7b14739ea55009b0805354229601277c8aaab544d133cb732a9377df0109db"
+    },
+    {
+      "ordinal": 35,
+      "pageId": "16b77d9a-eb4c-4e22-97f1-63dfb058be29",
+      "slug": "gidai/medicininiu-atlieku-maisu-laikiklis",
+      "title": "Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas",
+      "publishAt": "2026-11-06T12:00:00.000Z",
+      "localDate": "2026-11-06",
+      "beforeRevision": "8bdce0b78c2d8942cd84081aa47f80046a408f45663a0ccff72f1f97e8567a0c",
+      "afterRevision": "7d73681060fb1ff3d3a8c417a9b69cb4c6287232b7e2faa1c761fba495c9c58b"
+    },
+    {
+      "ordinal": 36,
+      "pageId": "5c6ab15f-ad8c-47e3-a198-bc7d2af425de",
+      "slug": "gidai/skalbiniu-vezimeliu-kiekio-planas",
+      "title": "Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys",
+      "publishAt": "2026-11-07T08:00:00.000Z",
+      "localDate": "2026-11-07",
+      "beforeRevision": "c899ee35ea682764a09c3de68c7cce768338367af1735fb81552fcc9de1afa11",
+      "afterRevision": "c9cdb86691b3ab67d9a3e938e3d35b9c2513845fee4b54741fea6d522f802f48"
+    },
+    {
+      "ordinal": 37,
+      "pageId": "fe797a91-0fd8-4196-946f-5f0cab05d155",
+      "slug": "gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+      "title": "Medicinos priemonių laikymo ir transportavimo planas",
+      "publishAt": "2026-11-08T08:00:00.000Z",
+      "localDate": "2026-11-08",
+      "beforeRevision": "116a417e6c9d2b50bcf110e6ae39e355179220431cfb0a88262a59d4cd40325f",
+      "afterRevision": "89020cfef072793b2df8eff322968d3a08c9ddfa4d461075d321aa4b84016931"
+    },
+    {
+      "ordinal": 38,
+      "pageId": "9f659d54-95cd-407c-9e73-4f0784b46a95",
+      "slug": "gidai/medicininio-stelazo-apkrovos-ir-vietos-planas",
+      "title": "Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą",
+      "publishAt": "2026-11-08T12:00:00.000Z",
+      "localDate": "2026-11-08",
+      "beforeRevision": "481af60a134c19d14458d7d96535169f3f25d1bf5d1ece226d71cb1bc5ee4418",
+      "afterRevision": "12bde24238d56fd2aa6316fbf27378810489ebe2059797759b9c40fac32eb037"
+    },
+    {
+      "ordinal": 39,
+      "pageId": "84d9dbfc-3e74-46eb-aaeb-2c5fa0b8948a",
+      "slug": "gidai/rego-deziu-ir-vezimelio-suderinamumas",
+      "title": "REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas",
+      "publishAt": "2026-11-09T08:00:00.000Z",
+      "localDate": "2026-11-09",
+      "beforeRevision": "e27225c7e9ab59a22f6a479da8aefa6af3c6beb57bcd0d4cb8f06176cf78a8cb",
+      "afterRevision": "99c64d6b85c8b970dd14ba03a321bc2970d814383a595f53fdc8a0908e406f09"
+    },
+    {
+      "ordinal": 40,
+      "pageId": "9e3f497a-e66c-454a-9538-809296e34d0f",
+      "slug": "gidai/padeklu-vezimelio-formato-pasirinkimas",
+      "title": "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų",
+      "publishAt": "2026-11-10T08:00:00.000Z",
+      "localDate": "2026-11-10",
+      "beforeRevision": "7dd938dbc5ec6800397e9c4cbd28651d8c3b8f606d9ee6466a6551818d21905c",
+      "afterRevision": "a10891c73efe8c64d7c202ed6d334afcad62aa6d431c236e80dc0fc5c57b49d9"
+    },
+    {
+      "ordinal": 41,
+      "pageId": "ff9ead26-22fc-4292-850b-21f29ce4d11e",
+      "slug": "gidai/padeklu-ideklu-suderinamumas",
+      "title": "Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra",
+      "publishAt": "2026-11-11T08:00:00.000Z",
+      "localDate": "2026-11-11",
+      "beforeRevision": "07d990ff46c68c3cce7ab75cd6ad5bf0751512244b0f94ae98631e3daea09df8",
+      "afterRevision": "50f653cc59fd3400b1afd2dfdd76e3bc4945f4a7c95e3ddde1fafbc7b2d845b6"
+    },
+    {
+      "ordinal": 42,
+      "pageId": "f97260fd-040b-43e9-9d7b-260d8ef66cc0",
+      "slug": "gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas",
+      "title": "Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas",
+      "publishAt": "2026-11-11T12:00:00.000Z",
+      "localDate": "2026-11-11",
+      "beforeRevision": "ff9eccbdd0d61940681f28867a4cd0bd863dc1a8d61f4d5af82adbaf832b6aa2",
+      "afterRevision": "94bc780e3df0d056b557a7fa952f45c6f08407e8993dd609827b018a572cbb2f"
+    },
+    {
+      "ordinal": 43,
+      "pageId": "7b870e24-5f44-4d7a-b006-36492a74847b",
+      "slug": "gidai/nerudijancio-plieno-sterilizavimo-padeklo-pasirinkimas",
+      "title": "Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra",
+      "publishAt": "2026-11-12T08:00:00.000Z",
+      "localDate": "2026-11-12",
+      "beforeRevision": "56d79955f88e05f7ca86d7105294ca027442add1d0bab5f0b9e2df12e292286c",
+      "afterRevision": "66200f40f31ab8b690025f91582d2ba8e9bc7953ab78c4e35c0a060c78f87767"
+    },
+    {
+      "ordinal": 44,
+      "pageId": "aa4d1eb7-9e9a-4173-8e53-02e927f1f855",
+      "slug": "gidai/vezimelio-plovimo-masinai-suderinamumas",
+      "title": "Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra",
+      "publishAt": "2026-11-13T08:00:00.000Z",
+      "localDate": "2026-11-13",
+      "beforeRevision": "7b6528fae3a79df17f8dee3a50b8f882bc4b1bbbc1fd9aff277c6fe732b67e47",
+      "afterRevision": "dba131e5edf647447d6847f097ce5ce6907feb38c16ea35a5fcd670fcbeb5a5e"
+    },
+    {
+      "ordinal": 45,
+      "pageId": "bba2cd58-1c98-48a6-ad58-fb23033af2bf",
+      "slug": "gidai/medicininiu-baldu-prieziuros-planas",
+      "title": "Medicininių baldų priežiūros planas pagal gamintojo dokumentus",
+      "publishAt": "2026-11-14T08:00:00.000Z",
+      "localDate": "2026-11-14",
+      "beforeRevision": "105aa44813d2f50eab5a5a4d542f71ff5ee76de5afe73dfe1fe0fc6961e9e3aa",
+      "afterRevision": "ce09b216f63fcbb5c9cd0ee4886c4f037e6d4923c40d0c6fd618335c82c320a8"
+    },
+    {
+      "ordinal": 46,
+      "pageId": "1f166ace-c55b-4d5f-8502-b7e72bc84522",
+      "slug": "gidai/medicinines-irangos-valymo-dokumentai",
+      "title": "Kaip patikrinti medicininės įrangos valymo dokumentus",
+      "publishAt": "2026-11-14T12:00:00.000Z",
+      "localDate": "2026-11-14",
+      "beforeRevision": "a3717ce50dbfceaf3b43948b0e62431cc5101c7531031ff0efafb19fb92008bf",
+      "afterRevision": "66354fc3c4b1f4cac5c7d741a0e4edfa95de7a543ced989246ac92708aa18cab"
+    },
+    {
+      "ordinal": 47,
+      "pageId": "3d1a5995-d8fe-4570-8bf5-03c0f9100f52",
+      "slug": "gidai/klaro-atsargines-dalies-paieska",
+      "title": "Kaip rasti Klaro atsarginę dalį pagal įrangos kodą",
+      "publishAt": "2026-11-15T08:00:00.000Z",
+      "localDate": "2026-11-15",
+      "beforeRevision": "d7d4dc4650b158ea3eaaa87a6d4dae7b5d1ae444a8540f7981ed85f5bbfe129a",
+      "afterRevision": "b1ea901d38d042d821c8bf4e5228a83186cd5c41eaa1a4012ebdb68750557867"
+    },
+    {
+      "ordinal": 48,
+      "pageId": "2462531f-7f75-4ad6-9246-22a5d0cc1e87",
+      "slug": "gidai/valymo-vezimelio-komplektacijos-pasirinkimas",
+      "title": "Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas",
+      "publishAt": "2026-11-16T08:00:00.000Z",
+      "localDate": "2026-11-16",
+      "beforeRevision": "02c15ef242f6b525192a468069c8b8544951001675085902eb9676fe05cd2178",
+      "afterRevision": "12f11817d0bee00be7fc2f518c96ee40ab0f412c28607e160cf64afbe5511583"
+    },
+    {
+      "ordinal": 49,
+      "pageId": "059a836b-90c6-4106-ae72-166beaea7c24",
+      "slug": "gidai/irangos-komplekto-priemimo-patikra",
+      "title": "Įrangos komplekto priėmimas: ką sutikrinti su užsakymu",
+      "publishAt": "2026-11-17T08:00:00.000Z",
+      "localDate": "2026-11-17",
+      "beforeRevision": "c085f775abc353e30d537656bfe3507a3830e1484bf076a124a264b708e1c6e0",
+      "afterRevision": "d37f2f5206daa21d09409c5dae852dcf287a07d332e8863c4eadb1bc75920c73"
+    },
+    {
+      "ordinal": 50,
+      "pageId": "55dbf0cb-c7f7-4a2a-8892-ed7495bb071f",
+      "slug": "gidai/medicinines-irangos-pasiulymu-palyginimas",
+      "title": "Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos",
+      "publishAt": "2026-11-17T12:00:00.000Z",
+      "localDate": "2026-11-17",
+      "beforeRevision": "a1629ef0329dd431d85a706744b4aeab468096503ef0d607bad6134380652986",
+      "afterRevision": "e21747e3bc7810f3676f14f5883a948003d274db5a3305ce93a95ccfd0aede18"
+    },
+    {
+      "ordinal": 51,
+      "pageId": "df457deb-150e-4d60-babc-fcf6a2159771",
+      "slug": "gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+      "title": "Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys",
+      "publishAt": "2026-11-18T08:00:00.000Z",
+      "localDate": "2026-11-18",
+      "beforeRevision": "a03cbb41c3e09754300f8f0155ec7cf2bcd8fa024095acf79e39ff02abd5fd80",
+      "afterRevision": "1fc053f2c4d6d327edee3b9ea226148b030195e62c09f6cf5a53c381178b7a3d"
+    },
+    {
+      "ordinal": 52,
+      "pageId": "3aad033e-b626-4fb3-949c-33b7a417b413",
+      "slug": "gidai/medicininiu-baldu-naudojimo-islaidu-palyginimas",
+      "title": "Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą",
+      "publishAt": "2026-11-19T08:00:00.000Z",
+      "localDate": "2026-11-19",
+      "beforeRevision": "34abf55b568df6c19b89d87bd76019ef74551f136f4a543e369de9210dd17939",
+      "afterRevision": "788bb2419bd4430f4dc7e8b8f6c4063a88d639823f2ea2d471ce703a6941aff7"
+    },
+    {
+      "ordinal": 53,
+      "pageId": "e91be90d-88db-447a-a301-1de1238d6df0",
+      "slug": "gidai/medicinos-istaigos-baldu-atnaujinimo-planas",
+      "title": "Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas",
+      "publishAt": "2026-11-20T08:00:00.000Z",
+      "localDate": "2026-11-20",
+      "beforeRevision": "2d7d40e6c28a323accc53da199a8ad9b3cb9b3db9e44adc403462a5e57c3da8d",
+      "afterRevision": "ecf1800569992b180c1bf3ec23f55c6a6950a2751ab5bafad132aea70bb163c2"
+    },
+    {
+      "ordinal": 54,
+      "pageId": "8e238abd-4e45-4083-bc1e-7e079ec34eed",
+      "slug": "gidai/netipines-baldu-komplektacijos-uzklausa",
+      "title": "Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai",
+      "publishAt": "2026-11-20T12:00:00.000Z",
+      "localDate": "2026-11-20",
+      "beforeRevision": "4fcbe8c632ad9d9da6fba32c19da58c04a23e17ab1d677e38f52bf42ee273533",
+      "afterRevision": "1ff266328c41687a6445d3849f7028836412f228c7d79563c77c272e5a84afa9"
+    },
+    {
+      "ordinal": 55,
+      "pageId": "bec2ba0c-e772-415c-ad80-c9d04734dea6",
+      "slug": "gidai/laboratorijos-baldu-darbo-vietos-planas",
+      "title": "Laboratorijos baldai: fizinės darbo ir laikymo vietos planas",
+      "publishAt": "2026-11-21T08:00:00.000Z",
+      "localDate": "2026-11-21",
+      "beforeRevision": "929c828d67ea6c89acfc6dca4311ba01a3d0985171f68bc4d949ec899bcf5ca8",
+      "afterRevision": "c7ca24c071b86085395db71cc86a3dd7738096cb6474250df516375d2b1460ee"
+    },
+    {
+      "ordinal": 56,
+      "pageId": "0d835567-da53-46ab-82ab-fde3f294bff0",
+      "slug": "gidai/vaistines-baldu-ir-moduliu-planas",
+      "title": "Vaistinės baldai ir moduliai: priemonių inventoriaus ir vietų planas",
+      "publishAt": "2026-11-22T08:00:00.000Z",
+      "localDate": "2026-11-22",
+      "beforeRevision": "047ecf8e337d22d509b30c2d34753c46f57fd1b1ede6d6d6084ada41ff990d7d",
+      "afterRevision": "aaea7cb5a53ed5c1fcbe381656126329247c887ecc622a6730791e33423b46d0"
+    },
+    {
+      "ordinal": 57,
+      "pageId": "dfb4e63e-6578-463e-a4af-ed96e8aa0f15",
+      "slug": "gidai/kambariu-aptarnavimo-vezimelio-pasirinkimas",
+      "title": "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra",
+      "publishAt": "2026-11-22T12:00:00.000Z",
+      "localDate": "2026-11-22",
+      "beforeRevision": "f804257dbf685c317162f90a70ff1da3cc70d56d811254afb85f0a4066329532",
+      "afterRevision": "fccfe2db2ea9be98aaa63504c4fa202caa16605e5310aa8e8b2ef514377ea3c4"
+    }
+  ]
+}

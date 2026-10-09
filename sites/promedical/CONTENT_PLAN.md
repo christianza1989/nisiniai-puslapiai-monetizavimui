@@ -2,7 +2,7 @@
 
 2026-10-09 · Lietuvos gydymo įstaigų pirkimų ir ūkio darbuotojams · Treg tyrimas.
 
-**57 temos, 11 teminių grupių: 3 jau parengti ir lokaliai patvirtinti gidai, 54 planuojami straipsniai.** Ankstesnės 8 užduotys išsaugotos; pridėtos 46 naujos. Tai visas redakcinis žemėlapis, o ne 57 jau parašyti ar publikuoti straipsniai ir ne pasiektas reitingo rodiklis.
+**57 temos, 11 teminių grupių; 57 straipsnių tekstai parengti, 0 dar rengiami.** Visiems nustatytas 42 dienų kalendorius po 1–2 straipsnius kasdien. Tai rengimo būsena, ne 57 jau vieši straipsniai: galutinis faktų, medijos, ryšių, revizijų ir įdiegimo patvirtinimas dar vyksta.
 
 Analizė ir ribos: [TOPICAL_ANALYSIS.md](TOPICAL_ANALYSIS.md). Tikslūs 57 užduočių, 172 frazių → URL ir šaltinių duomenys: [CONTENT_MAP.json](CONTENT_MAP.json). Patikra: [CONTENT_PLAN_VERIFICATION.json](CONTENT_PLAN_VERIFICATION.json).
 
@@ -10,7 +10,7 @@ Analizė ir ribos: [TOPICAL_ANALYSIS.md](TOPICAL_ANALYSIS.md). Tikslūs 57 uždu
 
 Padėti įstaigai pasirinkti tikrą Klaro modelį, suderinti matmenis bei komplektaciją ir pateikti palyginamą užklausą. Katalogas lieka komercinių kategorijų bei konkrečių modelių paskirties vieta. Gidai atsako į sprendimus, kurių kategorijų sąrašas neišsprendžia: kas įeina į komplektą, kas tarpusavyje dera, ką išmatuoti, kokį dokumentą patikrinti.
 
-Kiekvieno naujo straipsnio nauda – užpildoma patikros lentelė, komentaruotas tikras modelių palyginimas ar iliustracinė sprendimo schema. Šiuos ruošinius ir atitinkamą vaizdą reikia realiai parengti rašant; planas jų nežada kaip jau veikiančių atsisiuntimų. Kontaktas užklausai: sales@promedical.lt, +370 686 88369.
+Kiekvieno naujo straipsnio nauda – užpildoma patikros lentelė, komentaruotas tikras modelių palyginimas ar iliustracinė sprendimo schema. Šiuos ruošinius ir atitinkamą vaizdą reikia realiai parengti rašant; planas jų nežada kaip jau veikiančių atsisiuntimų. Kontaktas užklausai: info@promedical.lt, +370 686 88369.
 
 ## Teminės grupės
 
@@ -50,24 +50,24 @@ graph TD
 
 P1: sprendimai, reikalingi konkrečiai modelio užklausai ir pagrindiniams gidams. P2: suderinamumo, inventoriaus ir taikymo detalės. P3: platesnis planavimas bei naudojimo išlaidų palyginimas. Tai redakcinės svarbos žymos; jos nėra raktažodžių sudėtingumo ar paklausos balai.
 
-Nauji pagrindiniai gidai ruošiami prieš priklausomus naujus straipsnius. Ankstesnių 8 planų datos nepakeistos. Naujos datos 2026-10-16–2027-03-22 yra privatūs orientaciniai parengimo terminai; jos neįjungia automatinio rašymo ar publikavimo. Mėnesių istorija nepatvirtino atskiro šios nišos pirkimų sezono, todėl sezoninės progos nepriskirtos.
+Savininko nurodymu visų 57 straipsnių datos perkeltos į 2026-10-12–2026-11-22: 27 dienomis po vieną ir 15 dienų po du, 10:00 ir 14:00 Europe/Vilnius. Pagrindiniai gidai numatyti prieš juos papildančius straipsnius. Tai parengimo kalendorius; jei įdiegimas vėluos, visas langas bus perkeltas vienodai. Istorinės patvirtintos revizijos ir ankstesnio plano patikros kvitas išsaugoti. Po naujos peržiūros bei įdiegimo bendras variklis kiekvieną reviziją viešina nuo publishAt be atskiro cron.
 
 Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laikiklių paskirtys, priemonių laikymas ir transportavimas, sterilizavimo skyriaus baldų planavimas, priežiūros dokumentų kelias ir jau suplanuotas bazinio vežimėlio komplektacijos gidas. Toliau – konkrečių vežimėlių paskirtys, matmenys, ratukai, ISO suderinamumas ir pirkimo palyginimo užduotys. Ši eilė remiasi priklausomybėmis bei užklausos nauda, nes daugumos frazių apimtis neprieinama.
 
 ## Vežimėlių pasirinkimas
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 1 | [Kaip pasirinkti medicininį vežimėlį įstaigai](#tema-1) | P1 | Parengta 2026-10-09 | Parengtas ir patvirtintas lokaliai |
-| 2 | [Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją](#tema-2) | P1 | 2026-10-23 | Planas; tekstas neparašytas |
-| 3 | [Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą](#tema-3) | P1 | 2026-11-02 | Planas; tekstas neparašytas |
-| 4 | [Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas](#tema-4) | P1 | 2026-11-05 | Planas; tekstas neparašytas |
-| 5 | [Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus](#tema-5) | P2 | 2026-12-07 | Planas; tekstas neparašytas |
-| 6 | [Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas](#tema-6) | P2 | 2026-12-10 | Planas; tekstas neparašytas |
-| 7 | [Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti](#tema-7) | P2 | 2026-12-14 | Planas; tekstas neparašytas |
-| 8 | [Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra](#tema-8) | P2 | 2026-12-17 | Planas; tekstas neparašytas |
-| 9 | [Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra](#tema-9) | P1 | 2026-11-09 | Planas; tekstas neparašytas |
-| 10 | [Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą](#tema-10) | P1 | 2026-11-12 | Planas; tekstas neparašytas |
+| 1 | [Kaip pasirinkti medicininį vežimėlį įstaigai](#tema-1) | P1 | 2026-10-12 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 2 | [Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją](#tema-2) | P1 | 2026-10-14 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 3 | [Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą](#tema-3) | P1 | 2026-10-15 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 4 | [Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas](#tema-4) | P1 | 2026-10-16 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 5 | [Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus](#tema-5) | P2 | 2026-10-17 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 6 | [Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas](#tema-6) | P2 | 2026-10-17 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 7 | [Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti](#tema-7) | P2 | 2026-10-18 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 8 | [Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra](#tema-8) | P2 | 2026-10-19 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 9 | [Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra](#tema-9) | P1 | 2026-10-20 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 10 | [Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą](#tema-10) | P1 | 2026-10-20 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-1"></a>
 
@@ -211,14 +211,14 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## ISO modulių sistema
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 11 | [ISO modulių sistema: kaip suderinti laikymą ir transportavimą](#tema-11) | P1 | Parengta 2026-10-09 | Parengtas ir patvirtintas lokaliai |
-| 12 | [ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas](#tema-12) | P1 | 2026-11-16 | Planas; tekstas neparašytas |
-| 13 | [ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį](#tema-13) | P1 | 2026-11-19 | Planas; tekstas neparašytas |
-| 14 | [ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas](#tema-14) | P2 | 2026-12-21 | Planas; tekstas neparašytas |
-| 15 | [ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis](#tema-15) | P2 | 2026-12-24 | Planas; tekstas neparašytas |
-| 16 | [ISO krepšiai ar padėklai: laikymo, pasiekiamumo ir transportavimo skirtumai](#tema-16) | P2 | 2026-12-28 | Planas; tekstas neparašytas |
+| 11 | [ISO modulių sistema: kaip suderinti laikymą ir transportavimą](#tema-11) | P1 | 2026-10-13 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 12 | [ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas](#tema-12) | P1 | 2026-10-21 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 13 | [ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį](#tema-13) | P1 | 2026-10-22 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 14 | [ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas](#tema-14) | P2 | 2026-10-23 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 15 | [ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis](#tema-15) | P2 | 2026-10-23 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 16 | [ISO krepšiai ar padėklai: laikymo, pasiekiamumo ir transportavimo skirtumai](#tema-16) | P2 | 2026-10-24 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-11"></a>
 
@@ -306,13 +306,13 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Medicininės spintos
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 17 | [Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga](#tema-17) | P1 | 2026-11-13 | Planas; tekstas neparašytas |
-| 18 | [Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas](#tema-18) | P2 | 2026-12-31 | Planas; tekstas neparašytas |
-| 19 | [Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas](#tema-19) | P2 | 2027-01-04 | Planas; tekstas neparašytas |
-| 20 | [Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra](#tema-20) | P2 | 2027-01-07 | Planas; tekstas neparašytas |
-| 21 | [Medicininės spintos vidus: lentynų, stalčių ir modulių planas](#tema-21) | P1 | 2026-11-23 | Planas; tekstas neparašytas |
+| 17 | [Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga](#tema-17) | P1 | 2026-10-25 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 18 | [Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas](#tema-18) | P2 | 2026-10-25 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 19 | [Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas](#tema-19) | P2 | 2026-10-26 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 20 | [Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra](#tema-20) | P2 | 2026-10-27 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 21 | [Medicininės spintos vidus: lentynų, stalčių ir modulių planas](#tema-21) | P1 | 2026-10-28 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-17"></a>
 
@@ -386,13 +386,13 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Darbo vietos ir baldų planavimas
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 22 | [Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai](#tema-22) | P1 | 2026-10-16 | Planas; tekstas neparašytas |
-| 23 | [Kaip pasirinkti Mayo instrumentų staliuką](#tema-23) | P1 | 2026-10-30 | Planas; tekstas neparašytas |
-| 24 | [Kaip aprašyti nerūdijančio plieno stalo poreikį](#tema-24) | P2 | 2026-11-20 | Planas; tekstas neparašytas |
-| 25 | [Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą](#tema-25) | P3 | 2027-02-25 | Planas; tekstas neparašytas |
-| 26 | [Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas](#tema-26) | P2 | 2027-01-11 | Planas; tekstas neparašytas |
+| 22 | [Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai](#tema-22) | P1 | 2026-10-28 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 23 | [Kaip pasirinkti Mayo instrumentų staliuką](#tema-23) | P1 | 2026-10-29 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 24 | [Kaip aprašyti nerūdijančio plieno stalo poreikį](#tema-24) | P2 | 2026-10-30 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 25 | [Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą](#tema-25) | P3 | 2026-10-31 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 26 | [Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas](#tema-26) | P2 | 2026-10-31 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-22"></a>
 
@@ -466,12 +466,12 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Stovai ir laikikliai
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 27 | [Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas](#tema-27) | P1 | 2026-10-19 | Planas; tekstas neparašytas |
-| 28 | [Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai](#tema-28) | P1 | 2026-11-26 | Planas; tekstas neparašytas |
-| 29 | [Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra](#tema-29) | P2 | 2027-01-14 | Planas; tekstas neparašytas |
-| 30 | [Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra](#tema-30) | P3 | 2027-03-01 | Planas; tekstas neparašytas |
+| 27 | [Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas](#tema-27) | P1 | 2026-11-01 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 28 | [Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai](#tema-28) | P1 | 2026-11-02 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 29 | [Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra](#tema-29) | P2 | 2026-11-03 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 30 | [Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra](#tema-30) | P3 | 2026-11-03 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-27"></a>
 
@@ -531,13 +531,13 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Skalbiniai ir atliekų įranga
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 31 | [Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją](#tema-31) | P1 | 2026-11-27 | Planas; tekstas neparašytas |
-| 32 | [Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas](#tema-32) | P2 | 2027-01-18 | Planas; tekstas neparašytas |
-| 33 | [Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas](#tema-33) | P2 | 2027-01-21 | Planas; tekstas neparašytas |
-| 34 | [Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas](#tema-34) | P2 | 2027-01-25 | Planas; tekstas neparašytas |
-| 35 | [Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys](#tema-35) | P3 | 2027-03-04 | Planas; tekstas neparašytas |
+| 31 | [Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją](#tema-31) | P1 | 2026-11-04 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 32 | [Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas](#tema-32) | P2 | 2026-11-05 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 33 | [Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas](#tema-33) | P2 | 2026-11-06 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 34 | [Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas](#tema-34) | P2 | 2026-11-06 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 35 | [Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys](#tema-35) | P3 | 2026-11-07 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-31"></a>
 
@@ -611,13 +611,13 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Laikymas ir logistika
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 36 | [Medicinos priemonių laikymo ir transportavimo planas](#tema-36) | P1 | 2026-10-22 | Planas; tekstas neparašytas |
-| 37 | [Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą](#tema-37) | P2 | 2027-01-28 | Planas; tekstas neparašytas |
-| 38 | [REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas](#tema-38) | P2 | 2027-02-01 | Planas; tekstas neparašytas |
-| 39 | [Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų](#tema-39) | P2 | 2027-02-04 | Planas; tekstas neparašytas |
-| 40 | [Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra](#tema-40) | P3 | 2027-03-08 | Planas; tekstas neparašytas |
+| 36 | [Medicinos priemonių laikymo ir transportavimo planas](#tema-36) | P1 | 2026-11-08 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 37 | [Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą](#tema-37) | P2 | 2026-11-08 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 38 | [REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas](#tema-38) | P2 | 2026-11-09 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 39 | [Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų](#tema-39) | P2 | 2026-11-10 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 40 | [Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra](#tema-40) | P3 | 2026-11-11 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-36"></a>
 
@@ -691,11 +691,11 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Sterilizavimo skyriaus logistika
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 41 | [Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas](#tema-41) | P1 | 2026-10-26 | Planas; tekstas neparašytas |
-| 42 | [Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra](#tema-42) | P2 | 2027-02-08 | Planas; tekstas neparašytas |
-| 43 | [Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra](#tema-43) | P3 | 2027-03-11 | Planas; tekstas neparašytas |
+| 41 | [Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas](#tema-41) | P1 | 2026-11-11 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 42 | [Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra](#tema-42) | P2 | 2026-11-12 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 43 | [Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra](#tema-43) | P3 | 2026-11-13 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-41"></a>
 
@@ -741,12 +741,12 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Priežiūra ir dokumentai
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 44 | [Medicininių baldų priežiūros planas pagal gamintojo dokumentus](#tema-44) | P2 | 2026-10-29 | Planas; tekstas neparašytas |
-| 45 | [Kaip patikrinti medicininės įrangos valymo dokumentus](#tema-45) | P2 | 2026-12-04 | Planas; tekstas neparašytas |
-| 46 | [Kaip rasti Klaro atsarginę dalį pagal įrangos kodą](#tema-46) | P1 | 2026-11-06 | Planas; tekstas neparašytas |
-| 47 | [Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas](#tema-47) | P2 | 2027-02-11 | Planas; tekstas neparašytas |
+| 44 | [Medicininių baldų priežiūros planas pagal gamintojo dokumentus](#tema-44) | P2 | 2026-11-14 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 45 | [Kaip patikrinti medicininės įrangos valymo dokumentus](#tema-45) | P2 | 2026-11-14 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 46 | [Kaip rasti Klaro atsarginę dalį pagal įrangos kodą](#tema-46) | P1 | 2026-11-15 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 47 | [Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas](#tema-47) | P2 | 2026-11-16 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-44"></a>
 
@@ -806,15 +806,15 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Pirkimas ir priėmimas
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 48 | [Kaip parengti įrangos pirkimo užklausą gydymo įstaigai](#tema-48) | P1 | Parengta 2026-10-09 | Parengtas ir patvirtintas lokaliai |
-| 49 | [Įrangos komplekto priėmimas: ką sutikrinti su užsakymu](#tema-49) | P1 | 2026-12-11 | Planas; tekstas neparašytas |
-| 50 | [Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos](#tema-50) | P1 | 2026-11-30 | Planas; tekstas neparašytas |
-| 51 | [Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys](#tema-51) | P1 | 2026-12-03 | Planas; tekstas neparašytas |
-| 52 | [Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą](#tema-52) | P2 | 2027-02-15 | Planas; tekstas neparašytas |
-| 53 | [Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas](#tema-53) | P3 | 2027-03-15 | Planas; tekstas neparašytas |
-| 54 | [Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai](#tema-54) | P3 | 2027-03-18 | Planas; tekstas neparašytas |
+| 48 | [Kaip parengti įrangos pirkimo užklausą gydymo įstaigai](#tema-48) | P1 | 2026-10-14 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 49 | [Įrangos komplekto priėmimas: ką sutikrinti su užsakymu](#tema-49) | P1 | 2026-11-17 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 50 | [Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos](#tema-50) | P1 | 2026-11-17 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 51 | [Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys](#tema-51) | P1 | 2026-11-18 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 52 | [Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą](#tema-52) | P2 | 2026-11-19 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 53 | [Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas](#tema-53) | P3 | 2026-11-20 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 54 | [Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai](#tema-54) | P3 | 2026-11-20 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-48"></a>
 
@@ -916,11 +916,11 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ## Patalpų paskirties sprendimai
 
-| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+| Nr. | Tema | Prioritetas | Publikavimo data ir laikas | Būsena |
 |---:|---|---|---|---|
-| 55 | [Laboratorijos baldai: fizinės darbo ir laikymo vietos planas](#tema-55) | P2 | 2027-02-18 | Planas; tekstas neparašytas |
-| 56 | [Vaistinės baldai ir moduliai: priemonių inventoriaus ir vietų planas](#tema-56) | P2 | 2027-02-22 | Planas; tekstas neparašytas |
-| 57 | [Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra](#tema-57) | P3 | 2027-03-22 | Planas; tekstas neparašytas |
+| 55 | [Laboratorijos baldai: fizinės darbo ir laikymo vietos planas](#tema-55) | P2 | 2026-11-21 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 56 | [Vaistinės baldai ir moduliai: priemonių inventoriaus ir vietų planas](#tema-56) | P2 | 2026-11-22 10:00 | Tekstas parengtas; galutinė peržiūra vyksta |
+| 57 | [Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra](#tema-57) | P3 | 2026-11-22 14:00 | Tekstas parengtas; galutinė peržiūra vyksta |
 
 <a id="tema-55"></a>
 

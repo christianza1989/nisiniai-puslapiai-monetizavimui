@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Common draft context verified with real native completed drafts; prompt reduced while preserving exact approved model/source identities. Draft approval and deployment remain separate.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/draft-context.test.mjs content-studio/test/editorial-review-batch.test.mjs content-studio/test/content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/promedical/CONTENT-AND-MAIL-CORE-CHECKS.md"
+    }
+  ],
+  "eventId": "73c133a1-f5f1-4e18-8edb-8fb6c0f9ac16",
+  "sequence": 2,
+  "at": "2026-10-09T21:56:22.351Z"
+}

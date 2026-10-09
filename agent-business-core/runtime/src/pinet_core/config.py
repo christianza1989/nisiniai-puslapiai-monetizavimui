@@ -1,6 +1,7 @@
 from functools import lru_cache
+from typing import Literal
 
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from . import pricing
@@ -34,6 +35,12 @@ class Settings(BaseSettings):
     google_api_key: str = ""
     live_model: str = "gemini-3.8-live"
     analysis_model: str = "gemini-3.8-flash"
+    text_provider: Literal['gemini', 'openrouter'] = 'gemini'
+    openrouter_api_key: SecretStr = Field(default=SecretStr(''), repr=False)
+    openrouter_model: str = ''
+    # Operator price ceilings (USD/M tokens), not a provider price card.
+    openrouter_max_prompt_price: float = Field(default=0, ge=0, allow_inf_nan=False)
+    openrouter_max_completion_price: float = Field(default=0, ge=0, allow_inf_nan=False)
     livekit_url: str = "ws://127.0.0.1:7880"
     livekit_api_key: str = ""
     livekit_api_secret: str = ""
@@ -91,10 +98,28 @@ class Settings(BaseSettings):
                     self.livekit_url.startswith('wss://')))
 
     @property
+    def text_model(self):
+        return self.openrouter_model if self.text_provider == 'openrouter' else self.analysis_model
+
+    @property
+    def text_engine(self):
+        return f'openrouter:{self.openrouter_model}' if self.text_provider == 'openrouter' else self.analysis_model
+
+    @property
+    def text_provider_ready(self):
+        if self.text_provider == 'openrouter':
+            import re
+            return bool(self.openrouter_api_key.get_secret_value()
+                and re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.:-]+', self.openrouter_model)
+                and not self.openrouter_model.startswith('openrouter/')
+                and self.openrouter_max_prompt_price > 0 and self.openrouter_max_completion_price > 0)
+        return bool(self.google_api_key and self.analysis_model == 'gemini-3.8-flash' and pricing.current())
+
+    @property
     def chat_ready(self):
-        return all((self.chat_enabled, self.google_api_key, not self.allow_simulation,
+        return all((self.chat_enabled, self.text_provider_ready, not self.allow_simulation,
                     self.global_daily_budget_microusd > 0, self.chat_turn_cost_ceiling_microusd > 0,
-                    self.analysis_model == 'gemini-3.8-flash', pricing.current()))
+                    self.text_provider in {'gemini', 'openrouter'}))
 
 
 @lru_cache

@@ -163,7 +163,9 @@ async def start(item, data: Start, simulation=False):
                              "cost_ceiling_microusd": 0 if simulation else cfg.voice_cost_ceiling_microusd,
                              "release_hash": release.hash, "instruction_sources": list(release.sources),
                              "prompt": prompt, "profile_id": profile.site_id,
-                             "model": cfg.live_model, "need": {}, "ui": None, "coverage": "text_only"})
+                             "model": cfg.text_model if chat else cfg.live_model,
+                             "text_provider": cfg.text_provider if chat else None,
+                             "need": {}, "ui": None, "coverage": "text_only"})
         tx.add(convo)
         await tx.flush()
         await add_event(tx, convo, "start", "created", {"test": simulation})

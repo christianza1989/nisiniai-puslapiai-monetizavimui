@@ -73,6 +73,7 @@ Issue [core #60](https://github.com/christianza1989/nisiniai-puslapiai-monetizav
 - Public dizaino commit `e63d3ebd9a55dc83b5ab454f756611cffeb75a8b`, [draft PR22](https://github.com/christianza1989/niche-public-core/pull/22), 8 scoped failai. Exact-staged repository-safety PASS.
 - Start/continue/handoff PASS: main core `d4ea8bf7384b70c4ea62a344001e3f8158812c56`, public `d0fd6b7d296303bfcaafadc4071945e675a72b96`. Handoff pakartojamas po galutinio core commit.
 - Draft PR bazės — esamos `codex/parasoplansetes-f1-20261008` / `codex/parasoplansetes-public-20261008`. Naujesnis core bazės OpenRouter darbas priklauso pagrindinei užduočiai; trijų taškų dizaino diff tik dokumentai.
+- Core dizaino dokumentai išsaugoti scoped commit `ff9f5bb`, tada integruotas naujausias parent `3d7997280bf6342ec1d69fdc30cf9870878b7d82`. WORKSTREAMS append konfliktas išspręstas išsaugant abu įrašus. Public source nekeitė backend. Galutinis PR diff nuo parent bazės — tik penki dizaino dokumentų / registro failai.
 
 Preview `http://localhost:5198` — nuosavas IPv6 `::1` production Wrangler. Esama studija IPv4 `127.0.0.1:5198` nepaliesta. Tas IPv4 adresas šio dizaino neparodo. Iš companion po `npm ci` ir `npm run build`:
 

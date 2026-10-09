@@ -2,12 +2,14 @@ import json
 from types import SimpleNamespace
 import pytest
 from pydantic import ValidationError
-from pinet_core import chat
+from pinet_core import chat, text_provider
 from pinet_core.text_tools import turn_schema
 
 
 @pytest.mark.asyncio
 async def test_provider_adapter_keeps_server_evidence_binding(monkeypatch):
+    from pinet_core.config import settings
+    monkeypatch.setattr(settings(), 'text_provider', 'gemini')
     captured = {}
     class Client:
         def __init__(self, **kwargs):
@@ -19,8 +21,8 @@ async def test_provider_adapter_keeps_server_evidence_binding(monkeypatch):
             captured.update(kwargs)
             return SimpleNamespace(text=json.dumps({'reply':'','calls':[{'name':'need.patch',
                 'fields':[{'field':'quantity','value':'2'}], 'query':''}]}), usage_metadata=None)
-    monkeypatch.setattr(chat.genai, 'Client', Client)
-    monkeypatch.setattr(chat.pricing, 'flash_estimate', lambda *args: 123)
+    monkeypatch.setattr(text_provider.genai, 'Client', Client)
+    monkeypatch.setattr(text_provider.pricing, 'flash_estimate', lambda *args: 123)
     bound = turn_schema('parasoplansetes', 'actual-client-event', 7)
     generated, cost = await chat.generate(bound, 'Synthetic instruction', {})
     decision = chat.decode(bound, generated)
@@ -37,3 +39,20 @@ async def test_provider_adapter_keeps_server_evidence_binding(monkeypatch):
     generated['wire_text'] = json.dumps({'reply':'','calls':[{'name':'ui.open_contact_form',
         'fields':[], 'query':'unapproved extra argument'}]})
     with pytest.raises(ValueError): chat.decode(bound, generated)
+
+
+async def test_last_generation_has_reply_only_schema_and_rejects_more_tools(monkeypatch):
+    captured = {}
+    async def generate(schema, instruction, data, **kwargs):
+        captured.update(schema=schema, instruction=instruction)
+        return text_provider.Generated('{"reply":"Patikslinkite naudojamą programą."}', 100, 'stop')
+    monkeypatch.setattr(text_provider, 'generate_json', generate)
+    bound = turn_schema('parasoplansetes', 'actual-client-event', 7)
+    generated, cost = await chat.generate(bound, 'Synthetic instruction', {'tool_budget_remaining': 0})
+    assert set(captured['schema']['properties']) == {'reply'}
+    assert captured['schema']['additionalProperties'] is False
+    decision = chat.decode(bound, generated)
+    assert cost == 100 and decision.reply and decision.calls == []
+    generated['wire_text'] = '{"reply":"","calls":[{"name":"knowledge.resolve","fields":[],"query":"repeat"}]}'
+    with pytest.raises(ValidationError):
+        chat.decode(bound, generated)

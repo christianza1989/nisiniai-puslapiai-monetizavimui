@@ -53,3 +53,5 @@ html:has(dialog[open]){overflow:hidden}
 .service-menu-nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}.service-menu-nav a{border:1px solid var(--line);border-radius:999px;padding:10px 14px;background:var(--paper,#fff);font-size:14px;max-width:100%;overflow-wrap:anywhere}.service-menu-nav a:hover{background:var(--violet-soft,#f1ebff)}.service-menu-nav a:focus-visible,.service-menu-group:focus-visible{outline:3px solid var(--accent,#7443ef);outline-offset:4px}.service-menu-group{scroll-margin-top:100px;min-width:0}.service-line h4{font-size:18px;margin:0 0 8px}
 
 @media(max-width:480px){.search-form{grid-template-columns:1fr}.search-form>.search-cell:nth-child(4){grid-column:auto}.search-cell input,.search-cell select{font-size:14px}}
+
+.service-card .card-photo-empty{display:grid;place-items:center;background:var(--soft);color:var(--muted);padding:24px;text-align:center}

@@ -939,5 +939,17 @@
     "actualNewGuides": 11,
     "remainingHumanSpecialistArticleReviews": 0,
     "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md"
+  },
+  "temporaryLiveTest": {
+    "status": "LIVE-TEMPORARY-FICTIONAL-TEST-ACCEPTED",
+    "sourceCommit": "fa519ecaaabf42a55fcc9f0e89a6cc986a128652",
+    "origin": "https://bandymas.madbeauty.lt",
+    "version": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+    "expiresAt": "2026-10-16T21:10:47.982Z",
+    "soloProfiles": 40,
+    "publicSalons": 5,
+    "receipt": "../trial-20261010/RECEIPT.json",
+    "smtp": false,
+    "productionUpgradeDeployed": false
   }
 }

@@ -1,6 +1,6 @@
 # Dabartinis pasirengimas — 2026-10-09
 
-Pagrindinis katalogo, paieškos, meistro paslaugų ir rezervavimo funkcionalumas įgyvendintas. Runtime `3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c` patikslina profilio pateikimo pranešimus; keturi produkto rinkiniai: 264/264 PASS. Aktualus patvirtintas bb paketas: 39 puslapiai, 309 assets ir atskirai priimtos 64 native HTTP publikavimo būsenos. **Visas platformos atnaujinimas dar nepaleistas ir neužbaigtas.**
+Pagrindinis katalogo, paieškos, meistro paslaugų ir rezervavimo funkcionalumas įgyvendintas. Dabartinis runtime `fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc` išsaugo ankstyvą miesto pasirinkimą, tuščią miesto paiešką nukreipia į veikiančius rezultatus, o miesto puslapiams naudoja visas aktyvias katalogo kategorijas. Keturi produkto rinkiniai: 264/264 PASS; 0 naujų / 1 papildytas / 0 pašalintų. Aktualus patvirtintas bb paketas: 39 puslapiai, 309 assets ir šiam runtime atskirai priimtos 64 native HTTP publikavimo būsenos. [CITY_SEARCH_ACCEPTANCE.md](CITY_SEARCH_ACCEPTANCE.md) atskiria gyvas nacionalines straipsnių nuorodas nuo dar nepaleisto kandidato. **Visas platformos atnaujinimas dar nepaleistas ir neužbaigtas.**
 
 Atskiras straipsnių datų leidimas jau gyvas: runtime b7a34b1 / core 63cfd8c, versija 4dbdf361, paketas bb1b90aa. Septyni puslapiai jau vieši, 32 gidai laukia datų. PR48 receipt patikrino visus 284 esamo leidimo assets, canonical 390 / 1440 naršyklės vaizdus ir nepakitusius production nustatymus. Šis turinio leidimas ir platformos kandidatas turi atskiras tapatybes bei įrodymus.
 

@@ -1,0 +1,17 @@
+# Temporary live Madbeauty test
+
+The owner's direct 2026-10-10 instruction authorizes temporarily publishing the existing dummy profiles for testing: “tai mes juk rodos turejome sukure 40 visokiu dummy profiliu testavimams, juos ir ikelk i live laikinai”. This narrowly overrides the default private-only fixture deployment rule. It does not authorize representing fictional providers, work, reviews or availability as real supply.
+
+The selected host is `https://bandymas.madbeauty.lt`. Its separate Worker `madbeauty-temporary-test-20261010` has one new SQLite Durable Object class `TemporaryTestPlatform` and a new session encryption key. It has no production storage binding, SMTP/relay configuration, organization transfer target or real recipient. The canonical `madbeauty.lt` service, original namespace, domains, mail and content package remain independently owned and preserved.
+
+The existing seed contains 40 solo practitioners and six salons. One salon remains pending as an existing test case; 40 solo profiles and five salons are public in this test catalogue. All 120 existing solo portrait/work/space image assets and their genuine responsive WebP hashes are reused. Private originals and prompts are not published.
+
+The same backend implements sessions, roles, offers, calendars and transactional booking. Testers choose existing `example.com` accounts at `/bandymo-paskyros`; a session-bound test code is shown after requesting access. This is explicitly labelled fictional testing, not email ownership verification or inbox delivery. Real email addresses are rejected at authentication. Messages use an isolated capture-only transport; no email is sent. Every page has a persistent test label; all routes are noindex and discovery outputs are disabled. Test profiles never enter the canonical article commerce registry.
+
+The build fixes an expiry seven days from the first build and preserves it on subsequent builds. At expiry the whole test host, API and assets return 410; source alarms stop. This withdraws temporary public access without claiming deletion of provider backups or real customer data. No recurring automation or production deletion is created.
+
+`build.mjs` derives this test artifact from the maintained candidate build and current exact approved package. It preserves the established application's compatibility date. `provider.mjs before/after` checks canonical configuration/deployments and existing Worker domains; the provider OAuth scope cannot read the full DNS inventory, so public A/www A/MX/TXT/NS observations are recorded separately. The only new custom domain is the test hostname.
+
+`native.test.mjs` verifies the actual Workers adapter: seeded profiles, all 40 solo identities and media, rejection of real email, session-bound access, actual durable booking in client/owner views, foreign-client isolation, restart preservation, discovery/private-original exclusions and expiry. The existing four product regression suites remain mandatory. The initial reminder regression failed because its source-injection marker no longer matched the constructor; the exact marker was updated to preserve its original controlled-clock assertions. The first failure log is retained privately.
+
+Public deployment is only recorded after successful local checks and concrete host acceptance. This test release does not by itself certify real provider participation, SMTP receipt, factual customer retention policy, or completion/deployment of the entire canonical platform upgrade.

@@ -3,7 +3,7 @@ import {createHmac,createHash,randomBytes,createCipheriv,createDecipheriv} from 
 import {SITE_ID,initialState,randomId,reject} from '../backend/primitives.mjs';
 import schema from '../backend/schema.sql';
 
-export function openDurableStore(ctx,secret,{clock=()=>Date.now()}={}){
+export function openDurableStore(ctx,secret,{clock=()=>Date.now(),fixturePreview=false}={}){
  if(typeof secret!=='string'||secret.length<32)throw Error('Production session secret required');
  const sql=ctx.storage.sql;
  const execute=(query,args=[])=>{const cursor=sql.exec(query,...args);const rows=cursor.toArray();return {rows,changes:cursor.rowsWritten};};
@@ -23,11 +23,12 @@ export function openDurableStore(ctx,secret,{clock=()=>Date.now()}={}){
  const key=createHash('sha256').update(secret+':outbox').digest();
  const seal=data=>{const iv=randomBytes(12),cipher=createCipheriv('aes-256-gcm',key,iv);return JSON.stringify({v:1,iv:iv.toString('base64'),tag:null,encrypted:Buffer.concat([cipher.update(JSON.stringify(data),'utf8'),cipher.final()]).toString('base64'),...{tag:cipher.getAuthTag().toString('base64')}});};
  const unseal=raw=>{const data=JSON.parse(raw);if(data.v!==1)throw Error('Unrecognized outbox payload');const cipher=createDecipheriv('aes-256-gcm',key,Buffer.from(data.iv,'base64'));cipher.setAuthTag(Buffer.from(data.tag,'base64'));return JSON.parse(Buffer.concat([cipher.update(Buffer.from(data.encrypted,'base64')),cipher.final()]).toString('utf8'));};
- const validate=data=>{if(data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-')))throw Error('Fixture data forbidden');};
- const store={db,siteId:SITE_ID,clock,fixturePreview:false,rowStats:rows.stats,organizationRecords:rows.rows,hash:value=>createHmac('sha256',secret).update(String(value)).digest('hex'),
+ if(rows.collections(['isDemo']).isDemo===true&&!fixturePreview)throw Error('Fixture storage cannot be opened as real');
+ const validate=data=>{const fictional=data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-'));if(fictional&&!(fixturePreview===true&&data.isDemo===true&&data.fixtureRuntime==='server-preview-v1'))throw Error('Fixture data forbidden');};
+ const store={db,siteId:SITE_ID,clock,fixturePreview:fixturePreview===true,rowStats:rows.stats,organizationRecords:rows.rows,hash:value=>createHmac('sha256',secret).update(String(value)).digest('hex'),
   read:rows.read,readCollections:rows.collections,recordById:rows.recordById,clientRecords:rows.clientRecords,ensureClient:id=>rows.ensureClient(id,validate),readClient:rows.readClient,writeClient:data=>{validate(data);rows.writeClient(data);},readOrganization:rows.readOrganization,writeOrganization:data=>{validate(data);rows.writeOrganization(data);},readCatalogue:rows.readCatalogue,writeCatalogue:data=>{validate(data);rows.writeCatalogue(data);},readDirectoryCache:rows.readDirectoryCache,writeDirectoryCache:(data,accounts)=>{validate(data);rows.writeDirectoryCache(data,accounts);},
   write:data=>{
-   if(data.isDemo!==false||data.organizations.some(o=>o.isDemo||o.id.startsWith('demo-')))throw Error('Fixture data forbidden');
+   validate(data);
    rows.write(data);
   },
   transaction,assertOrganizationWritable:rows.assertOrganizationWritable,organizationWritable:rows.organizationWritable,

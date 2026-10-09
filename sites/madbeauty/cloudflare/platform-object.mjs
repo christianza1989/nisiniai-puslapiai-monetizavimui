@@ -17,7 +17,7 @@ import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger
 // One bounded Madbeauty pilot coordination domain. Other sites use separate namespaces.
 // Booking/state transactions never await network I/O. Split per organization before scale.
 export class MadbeautyPlatform extends DurableObject{
- constructor(ctx,env){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET);this.mediaBucket=createSqlMediaBucket(this.store);this.media=createMedia({...env,MEDIA:this.mediaBucket});this.mailRunning=null;
+ constructor(ctx,env,storeOptions){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET,storeOptions);this.mediaBucket=createSqlMediaBucket(this.store);this.media=createMedia({...env,MEDIA:this.mediaBucket});this.mailRunning=null;
   this.store.onVerifiedAccount=user=>{if(env.OPERATOR_EMAIL&&user.email===env.OPERATOR_EMAIL){this.store.db.prepare('UPDATE accounts SET operator=1 WHERE id=? AND site_id=?').run(user.id,this.store.siteId);return {...user,operator:1};}return user;};
  }
  async fetch(request){

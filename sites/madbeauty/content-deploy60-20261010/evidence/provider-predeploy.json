@@ -1,0 +1,161 @@
+{
+  "at": "2026-10-09T23:13:07.544Z",
+  "state": "PASS",
+  "account": "d102163f74a45ab6d33bca786ce281ec",
+  "worker": "madbeauty-platform-preview",
+  "config": {
+    "migrationTag": "v1",
+    "compatibilityDate": "2026-05-22",
+    "compatibilityFlags": [
+      "nodejs_compat"
+    ],
+    "usageModel": "standard",
+    "bindings": [
+      {
+        "name": "APP_ORIGIN",
+        "type": "plain_text",
+        "text": "https://madbeauty.lt"
+      },
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "name": "IMAGES",
+        "type": "images"
+      },
+      {
+        "name": "LEAD_SMTP_ENABLED",
+        "type": "secret_text"
+      },
+      {
+        "name": "LEAD_SMTP_USER",
+        "type": "secret_text"
+      },
+      {
+        "name": "MAIL_RELAY_KEY",
+        "type": "secret_text"
+      },
+      {
+        "name": "MAIL_RELAY_SITE",
+        "type": "secret_text"
+      },
+      {
+        "name": "MAIL_RELAY_URL",
+        "type": "secret_text"
+      },
+      {
+        "name": "OPERATOR_EMAIL",
+        "type": "plain_text",
+        "text": "info@pinet.lt"
+      },
+      {
+        "name": "PLATFORM",
+        "type": "durable_object_namespace",
+        "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3",
+        "className": "MadbeautyPlatform"
+      },
+      {
+        "name": "RELEASE_MODE",
+        "type": "plain_text",
+        "text": "production"
+      },
+      {
+        "name": "SESSION_SECRET",
+        "type": "secret_text"
+      }
+    ],
+    "observability": {
+      "enabled": true,
+      "head_sampling_rate": 0.1,
+      "redact_query_string": false,
+      "logs": {
+        "enabled": true,
+        "head_sampling_rate": 0.1,
+        "persist": true,
+        "invocation_logs": true
+      },
+      "traces": {
+        "enabled": true,
+        "persist": true,
+        "head_sampling_rate": 0.1
+      }
+    },
+    "domains": [
+      {
+        "hostname": "madbeauty.lt",
+        "service": "madbeauty-platform-preview",
+        "environment": "production"
+      },
+      {
+        "hostname": "www.madbeauty.lt",
+        "service": "madbeauty-platform-preview",
+        "environment": "production"
+      }
+    ]
+  },
+  "currentDeployment": {
+    "id": "b4883b16-c3fd-41ec-b810-ab49b9739f44",
+    "source": "wrangler",
+    "strategy": "percentage",
+    "author_email": "phengwey5@gmail.com",
+    "annotations": {
+      "workers/message": "Madbeauty content-only autonomous articles; incumbent runtime b7a34b1 core63cfd8c; prior58 unchanged",
+      "workers/triggered_by": "deployment"
+    },
+    "versions": [
+      {
+        "version_id": "4e43bd2d-e5ea-491f-ae3e-ea74d260fbe9",
+        "percentage": 100
+      }
+    ],
+    "created_on": "2026-10-09T20:17:51.685186Z"
+  },
+  "qa": {
+    "migrationTag": "calendar-qa-v1",
+    "bindings": [
+      {
+        "name": "APP_ORIGIN",
+        "type": "plain_text"
+      },
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "name": "CALENDAR_ACCESS_KEY",
+        "type": "secret_text"
+      },
+      {
+        "name": "CALENDAR_ISOLATION",
+        "type": "plain_text"
+      },
+      {
+        "name": "CORE_SOURCE",
+        "type": "plain_text"
+      },
+      {
+        "name": "PACKAGE_SHA256",
+        "type": "plain_text"
+      },
+      {
+        "name": "PLATFORM",
+        "type": "durable_object_namespace",
+        "namespaceId": "66b5a76fd6864563b5c3248e2290e55b",
+        "className": "CalendarSource"
+      },
+      {
+        "name": "RELEASE_MODE",
+        "type": "plain_text"
+      },
+      {
+        "name": "RUNTIME_SOURCE",
+        "type": "plain_text"
+      },
+      {
+        "name": "SESSION_SECRET",
+        "type": "secret_text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "state": "PASS",
+  "mode": "live",
+  "checkedAt": "2026-10-09T23:14:03.334Z",
+  "browser": "Installed Google Chrome through Playwright",
+  "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+  "artifactSha256": "ca2bc3cadfd79abfbc581a74e883346e26f0e61c41a9881d3fc5579223f683f9",
+  "javaScriptEnabled": true,
+  "scope": "Actual canonical ordinary HTTPS browser views with client JavaScript enabled; no clock override.",
+  "views": [
+    {
+      "route": "/gidai",
+      "device": "desktop",
+      "checkedAt": "2026-10-09T23:13:56.586Z",
+      "status": 200,
+      "clock": null,
+      "htmlSha256": "356fffcfbd25587d940e92b84ebfea0011efbf689e8a45b7732fa35894303212",
+      "screenshot": "index-desktop.png",
+      "title": "Grožio gidai prieš vizitą",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "articleImages": [],
+      "canonical": "https://madbeauty.lt/gidai",
+      "description": "Paslaugų apimtis, pasirinkimas ir aiškūs klausimai meistrui.",
+      "articleLinks": [],
+      "foreign": [],
+      "rawMarkdown": false,
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "name": "Grožio gidai prieš vizitą",
+          "description": "Paslaugų apimtis, pasirinkimas ir aiškūs klausimai meistrui.",
+          "url": "https://madbeauty.lt/gidai",
+          "inLanguage": "lt-LT",
+          "@type": "CollectionPage",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Kaip pasirinkti nagų spalvą",
+                "url": "https://madbeauty.lt/gidai/kaip-pasirinkti-nagu-spalva"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Kaip vertinti meistro darbų galeriją",
+                "url": "https://madbeauty.lt/gidai/kaip-vertinti-meistro-darbu-galerija"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Kas įeina į manikiūro kainą",
+                "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "route": "/gidai/kas-ieina-i-manikiuro-kaina",
+      "device": "desktop",
+      "checkedAt": "2026-10-09T23:13:57.897Z",
+      "status": 200,
+      "clock": null,
+      "htmlSha256": "d57dd68ae9c11dc99305dc6368ddf9da8c89b96bb58c042caa694cc78702f2f7",
+      "screenshot": "current-desktop.png",
+      "title": "Kas įeina į manikiūro kainą",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "articleImages": [
+        {
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "naturalWidth": 780,
+          "currentPath": "/content-assets/madbeauty/95a97dfe-e02a-4dd4-b7d2-25b168ed8a65.webp",
+          "width": 780
+        }
+      ],
+      "canonical": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+      "description": "Palygink visą procedūrą, nuėmimą, priedus ir laiką, o ne vien didžiausiu šriftu parašytą skaičių.",
+      "byline": "Parengė Madbeauty redakcija · 2026 m. spalio 6 d.",
+      "articleLinks": [
+        {
+          "text": "Madbeauty redakcija",
+          "href": "/autoriai/redakcija"
+        },
+        {
+          "text": "Manikiūro paslaugos",
+          "href": "https://madbeauty.lt/paslaugos/manikiuras"
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "name": "Kas įeina į manikiūro kainą",
+          "description": "Palygink visą procedūrą, nuėmimą, priedus ir laiką, o ne vien didžiausiu šriftu parašytą skaičių.",
+          "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+          "inLanguage": "lt-LT",
+          "@type": "Article",
+          "headline": "Kas įeina į manikiūro kainą",
+          "articleSection": "Nagų paslaugų pasirinkimas",
+          "mainEntityOfPage": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://madbeauty.lt/#publisher",
+            "name": "Madbeauty",
+            "url": "https://madbeauty.lt"
+          },
+          "datePublished": "2026-10-06T17:09:24.272Z",
+          "author": [
+            {
+              "@type": "Organization",
+              "name": "Madbeauty redakcija",
+              "url": "https://madbeauty.lt/autoriai/redakcija"
+            }
+          ],
+          "image": [
+            "https://madbeauty.lt/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Madbeauty",
+              "item": "https://madbeauty.lt/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Gidai",
+              "item": "https://madbeauty.lt/gidai"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Kas įeina į manikiūro kainą",
+              "item": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/gidai/manikiuras-be-lakavimo",
+      "device": "desktop",
+      "checkedAt": "2026-10-09T23:13:59.081Z",
+      "status": 404,
+      "clock": null,
+      "htmlSha256": "947f1cca22baa2be4c776c85debf2c802069ee8e957f26337a7b9c3b7529d795",
+      "screenshot": "future-desktop.png",
+      "title": "Puslapis nerastas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "articleImages": [],
+      "description": "Puslapis nerastas · Grožio paslaugos, meistrai ir tavo vizitų laikas.",
+      "articleLinks": [],
+      "foreign": [],
+      "rawMarkdown": false,
+      "schema": []
+    },
+    {
+      "route": "/gidai",
+      "device": "mobile",
+      "checkedAt": "2026-10-09T23:14:00.678Z",
+      "status": 200,
+      "clock": null,
+      "htmlSha256": "356fffcfbd25587d940e92b84ebfea0011efbf689e8a45b7732fa35894303212",
+      "screenshot": "index-mobile.png",
+      "title": "Grožio gidai prieš vizitą",
+      "viewport": 390,
+      "documentWidth": 390,
+      "articleImages": [],
+      "canonical": "https://madbeauty.lt/gidai",
+      "description": "Paslaugų apimtis, pasirinkimas ir aiškūs klausimai meistrui.",
+      "articleLinks": [],
+      "foreign": [],
+      "rawMarkdown": false,
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "name": "Grožio gidai prieš vizitą",
+          "description": "Paslaugų apimtis, pasirinkimas ir aiškūs klausimai meistrui.",
+          "url": "https://madbeauty.lt/gidai",
+          "inLanguage": "lt-LT",
+          "@type": "CollectionPage",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Kaip pasirinkti nagų spalvą",
+                "url": "https://madbeauty.lt/gidai/kaip-pasirinkti-nagu-spalva"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Kaip vertinti meistro darbų galeriją",
+                "url": "https://madbeauty.lt/gidai/kaip-vertinti-meistro-darbu-galerija"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Kas įeina į manikiūro kainą",
+                "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "route": "/gidai/kas-ieina-i-manikiuro-kaina",
+      "device": "mobile",
+      "checkedAt": "2026-10-09T23:14:01.942Z",
+      "status": 200,
+      "clock": null,
+      "htmlSha256": "d57dd68ae9c11dc99305dc6368ddf9da8c89b96bb58c042caa694cc78702f2f7",
+      "screenshot": "current-mobile.png",
+      "title": "Kas įeina į manikiūro kainą",
+      "viewport": 390,
+      "documentWidth": 390,
+      "articleImages": [
+        {
+          "alt": "Manikiūro darbo vietos redakcinė iliustracija",
+          "naturalWidth": 358,
+          "currentPath": "/content-assets/madbeauty/c5b77b84-1dcb-4d94-8b56-6595883b0d32.webp",
+          "width": 358
+        }
+      ],
+      "canonical": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+      "description": "Palygink visą procedūrą, nuėmimą, priedus ir laiką, o ne vien didžiausiu šriftu parašytą skaičių.",
+      "byline": "Parengė Madbeauty redakcija · 2026 m. spalio 6 d.",
+      "articleLinks": [
+        {
+          "text": "Madbeauty redakcija",
+          "href": "/autoriai/redakcija"
+        },
+        {
+          "text": "Manikiūro paslaugos",
+          "href": "https://madbeauty.lt/paslaugos/manikiuras"
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "name": "Kas įeina į manikiūro kainą",
+          "description": "Palygink visą procedūrą, nuėmimą, priedus ir laiką, o ne vien didžiausiu šriftu parašytą skaičių.",
+          "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+          "inLanguage": "lt-LT",
+          "@type": "Article",
+          "headline": "Kas įeina į manikiūro kainą",
+          "articleSection": "Nagų paslaugų pasirinkimas",
+          "mainEntityOfPage": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://madbeauty.lt/#publisher",
+            "name": "Madbeauty",
+            "url": "https://madbeauty.lt"
+          },
+          "datePublished": "2026-10-06T17:09:24.272Z",
+          "author": [
+            {
+              "@type": "Organization",
+              "name": "Madbeauty redakcija",
+              "url": "https://madbeauty.lt/autoriai/redakcija"
+            }
+          ],
+          "image": [
+            "https://madbeauty.lt/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Madbeauty",
+              "item": "https://madbeauty.lt/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Gidai",
+              "item": "https://madbeauty.lt/gidai"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Kas įeina į manikiūro kainą",
+              "item": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/gidai/manikiuras-be-lakavimo",
+      "device": "mobile",
+      "checkedAt": "2026-10-09T23:14:03.081Z",
+      "status": 404,
+      "clock": null,
+      "htmlSha256": "947f1cca22baa2be4c776c85debf2c802069ee8e957f26337a7b9c3b7529d795",
+      "screenshot": "future-mobile.png",
+      "title": "Puslapis nerastas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "articleImages": [],
+      "description": "Puslapis nerastas · Grožio paslaugos, meistrai ir tavo vizitų laikas.",
+      "articleLinks": [],
+      "foreign": [],
+      "rawMarkdown": false,
+      "schema": []
+    }
+  ],
+  "sheets": [],
+  "pixelReview": {
+    "state": "PASS_ACTUAL_PIXELS",
+    "checkedAt": "2026-10-09T23:14:20.222Z",
+    "method": "Six actual canonical full-page screenshots opened and inspected.",
+    "observations": "Index and existing article display correct header, content, photo and footer at1440/390 with clientJS. The scheduled additional article displays the ordinary404 before its publication date. No overlap or horizontal clipping.",
+    "screenshots": [
+      {
+        "name": "index-desktop.png",
+        "sha256": "fd2b67d9ca7a677aadd37122f5a6b268b4f95a424d2b67c31a3ded7f03842009"
+      },
+      {
+        "name": "current-desktop.png",
+        "sha256": "15a11082ebb75393eb9a557d48f046ec581cad92402a27f369a6066b690695b3"
+      },
+      {
+        "name": "future-desktop.png",
+        "sha256": "a562674191aa68619c649f203edc754efa4862d8c4700bfc05c55fdcd16b5783"
+      },
+      {
+        "name": "index-mobile.png",
+        "sha256": "8dfa98170e4f33ac17d80c3b33596b3b2847dcd7cc810b37d6360c336acd50e4"
+      },
+      {
+        "name": "current-mobile.png",
+        "sha256": "f192345db0fb3ec835e6ccadfeec8ab764394800c34dff81cc97202a990542bd"
+      },
+      {
+        "name": "future-mobile.png",
+        "sha256": "41a61f02fd149351e0cc4ba90b387cefd246f1cb13f575dc306296390d87be77"
+      }
+    ]
+  }
+}

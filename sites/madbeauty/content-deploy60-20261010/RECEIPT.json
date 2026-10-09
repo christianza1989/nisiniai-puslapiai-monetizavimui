@@ -1,0 +1,189 @@
+{
+  "recordedAt": "2026-10-09T23:15:00.993Z",
+  "state": "ACTUAL_CANONICAL_129_CONTENT_RELEASE_ACCEPTED",
+  "domain": "https://madbeauty.lt",
+  "releaseSource": "e8af9903120b97d2a79e4de3fda2e84007e5ffd3",
+  "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+  "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+  "packageSource": "80f3f329b63602bd5ee6d7651e73303c6cee735c",
+  "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+  "rendererSha256": "0c48d38915c7ab442c362d292b5250a91a33f0d604eeb0564f3bcea129d61ae0",
+  "productionArtifactSha256": "ca2bc3cadfd79abfbc581a74e883346e26f0e61c41a9881d3fc5579223f683f9",
+  "productionVersion": "a492b36a-1f43-4ad3-ab5f-fb5b1c33ed22",
+  "previousProductionVersion": "4e43bd2d-e5ea-491f-ae3e-ea74d260fbe9",
+  "deployedAt": "2026-10-09T23:13:25.022262Z",
+  "fullPlatformUpgradeDeployed": false,
+  "package": {
+    "pages": 129,
+    "guides": 125,
+    "newApprovedGuides": 60,
+    "unchangedApprovedPages": 69,
+    "unchangedMedia": 330,
+    "newMedia": 300,
+    "totalMedia": 630,
+    "originalNewImages": 60,
+    "publicPages": 7,
+    "futureGuides": 122,
+    "firstNewPublishAt": "2026-10-30T08:00:00.000Z",
+    "lastNewPublishAt": "2026-12-23T14:00:00.000Z",
+    "uniqueNewPublicationMoments": 60
+  },
+  "acceptance": {
+    "native": {
+      "checkedAt": "2026-10-09T23:08:06.705Z",
+      "state": "PASS",
+      "publicationStates": 244,
+      "gateChecks": 8,
+      "pages": 7,
+      "futureBlocked": 122,
+      "assets": 734,
+      "served": 129,
+      "blocked": 605,
+      "receiptSha256": "e66b306997658e966c6b45acd276913a0a87c1b99cd17d99b320145be9080396"
+    },
+    "hosted": {
+      "checkedAt": "2026-10-09T23:12:47.667Z",
+      "state": "PASS",
+      "publicationStates": 244,
+      "gateChecks": 7,
+      "pages": 7,
+      "futureBlocked": 122,
+      "assets": 734,
+      "served": 129,
+      "blocked": 605,
+      "receiptSha256": "7194acc7b69d38b356dabc4350a6967b3ba97f4694f5ab82915de34491dbff4c"
+    },
+    "live-before": {
+      "checkedAt": "2026-10-09T23:03:21.408Z",
+      "state": "PASS",
+      "publicationStates": 0,
+      "gateChecks": 0,
+      "pages": 7,
+      "futureBlocked": 122,
+      "assets": 434,
+      "served": 129,
+      "blocked": 305,
+      "receiptSha256": "1314dc4395c1eabd8205387304ea6c2344a15ad5bd9cd06cce401e18744d5e05"
+    },
+    "live-after": {
+      "checkedAt": "2026-10-09T23:14:41.188Z",
+      "state": "PASS",
+      "publicationStates": 0,
+      "gateChecks": 0,
+      "pages": 7,
+      "futureBlocked": 122,
+      "assets": 734,
+      "served": 129,
+      "blocked": 605,
+      "receiptSha256": "ab53b46a55fc21168d92abb1f0c60377301a3051931fd60a772ba137ce230663"
+    }
+  },
+  "browsers": {
+    "hosted": {
+      "checkedAt": "2026-10-09T23:11:56.889Z",
+      "views": 120,
+      "javaScriptEnabled": false,
+      "scope": "Actual deployed isolated SSR public consumer renderer at each new guide publication time. Client JavaScript disabled because isolated content QA intentionally blocks all customer API requests. Native client behavior is separately checked on canonical ordinary HTTPS. Private bearer and synthetic clock remain outside production.",
+      "pixelReview": {
+        "state": "PASS_ACTUAL_PIXELS",
+        "checkedAt": "2026-10-09T23:12:23.742Z",
+        "method": "All eight actual Chrome contact sheets were opened and visually inspected. First folds only; complete body geometry, source links and original images were separately checked in all120 browser views.",
+        "observations": "All60 title/image/byline layouts readable at1440 and390. Distinct photographs retained. No clipping or collisions. Mobile TOC precedes article as in unchanged baseline.",
+        "sheets": [
+          {
+            "name": "contact-desktop-1.jpg",
+            "sha256": "07759ec278de970b32fd0ffeb30d9fcc66719e3e8080463a2df276765abcf0cd"
+          },
+          {
+            "name": "contact-desktop-2.jpg",
+            "sha256": "f2fc57ea4899f72d2545a54a0838bdb8f13b8f6ff290bdf8176a03ddf5a94b97"
+          },
+          {
+            "name": "contact-desktop-3.jpg",
+            "sha256": "54733ee3c50c8015905dc07bfdfeb6fe5ab2cf5e8f5201560a8e2fa0e1d2d0c9"
+          },
+          {
+            "name": "contact-desktop-4.jpg",
+            "sha256": "de1db446e69fe6f3a6748fa2f1b7120e4110ae6052bede47bd507180ecefaed8"
+          },
+          {
+            "name": "contact-mobile-1.jpg",
+            "sha256": "137e28356e53eedf21e6dd7c7d4ce4ccaf4d212acfef080b40565e4adef7c7b1"
+          },
+          {
+            "name": "contact-mobile-2.jpg",
+            "sha256": "79ac0a59ae65c8cc0882e1f35c265a8d93ad2c38c62397030288196ea91e7420"
+          },
+          {
+            "name": "contact-mobile-3.jpg",
+            "sha256": "8e4a2b358dd345ee27d2f40fe272bd9f9594b574a278f81cc75178af6c8db969"
+          },
+          {
+            "name": "contact-mobile-4.jpg",
+            "sha256": "c2ab14b6067bd9dd2280f097eae0c20dee3408632258164a4ae42e4a3fe10657"
+          }
+        ]
+      },
+      "receiptSha256": "37c989a72af01a4598c2a1b0261ee0386a45ece7e29a35bbcb36f55939e80321"
+    },
+    "live": {
+      "checkedAt": "2026-10-09T23:14:03.334Z",
+      "views": 6,
+      "javaScriptEnabled": true,
+      "scope": "Actual canonical ordinary HTTPS browser views with client JavaScript enabled; no clock override.",
+      "pixelReview": {
+        "state": "PASS_ACTUAL_PIXELS",
+        "checkedAt": "2026-10-09T23:14:20.222Z",
+        "method": "Six actual canonical full-page screenshots opened and inspected.",
+        "observations": "Index and existing article display correct header, content, photo and footer at1440/390 with clientJS. The scheduled additional article displays the ordinary404 before its publication date. No overlap or horizontal clipping.",
+        "screenshots": [
+          {
+            "name": "index-desktop.png",
+            "sha256": "fd2b67d9ca7a677aadd37122f5a6b268b4f95a424d2b67c31a3ded7f03842009"
+          },
+          {
+            "name": "current-desktop.png",
+            "sha256": "15a11082ebb75393eb9a557d48f046ec581cad92402a27f369a6066b690695b3"
+          },
+          {
+            "name": "future-desktop.png",
+            "sha256": "a562674191aa68619c649f203edc754efa4862d8c4700bfc05c55fdcd16b5783"
+          },
+          {
+            "name": "index-mobile.png",
+            "sha256": "8dfa98170e4f33ac17d80c3b33596b3b2847dcd7cc810b37d6360c336acd50e4"
+          },
+          {
+            "name": "current-mobile.png",
+            "sha256": "f192345db0fb3ec835e6ccadfeec8ab764394800c34dff81cc97202a990542bd"
+          },
+          {
+            "name": "future-mobile.png",
+            "sha256": "41a61f02fd149351e0cc4ba90b387cefd246f1cb13f575dc306296390d87be77"
+          }
+        ]
+      },
+      "receiptSha256": "98b4cc418dd3aeccac6c978cd0b839243e53a648863f077c7bd45bda21c9d465"
+    }
+  },
+  "provider": {
+    "unchangedConfiguration": true,
+    "migrationTag": "v1",
+    "productionNamespace": "2faf96eedef1425c8d4fc07444cde2f3",
+    "qaNamespace": "66b5a76fd6864563b5c3248e2290e55b"
+  },
+  "safety": {
+    "productionClockOverride": false,
+    "allCustomerMutationsExcluded": true,
+    "noSMTPTests": true,
+    "noDNSChangeRequested": true,
+    "noSecretsWritten": true,
+    "noC02Upgrade": true
+  },
+  "limitations": [
+    "Future dates verified with a private isolated QA clock, not with production time travel.",
+    "120 future guide Chrome views use the actual deployed SSR consumer with client JavaScript disabled because customer APIs are blocked in the isolated QA. Six canonical ordinary browser views separately include client JavaScript.",
+    "Live-before candidate artifact field names the earlier candidate build, not the incumbent live worker. Incumbent identity comes from actual provider version and prior verified owner receipt.",
+    "No search engine indexing or ranking guarantee."
+  ]
+}

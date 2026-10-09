@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-09T23:07:06.751Z",
+  "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+  "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+  "packageSource": "80f3f329b63602bd5ee6d7651e73303c6cee735c",
+  "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+  "rendererSha256": "0c48d38915c7ab442c362d292b5250a91a33f0d604eeb0564f3bcea129d61ae0",
+  "producerReviewedRendererSha256": "private-presentation-adapter-not-public-renderer",
+  "productionArtifactSha256": "ca2bc3cadfd79abfbc581a74e883346e26f0e61c41a9881d3fc5579223f683f9",
+  "qaArtifactSha256": "98820ae31c3e7e078a4b6999ed9db95ac7f1f4cdba353ffc245557743aacd819",
+  "assets": 734,
+  "pages": 129,
+  "qaWorker": "madbeauty-calendar-acceptance-20261009",
+  "qaOrigin": "https://madbeauty-calendar-acceptance-20261009.phonebridger-app.workers.dev",
+  "productionConfig": {
+    "$schema": "../../../../dovanos-memorycasting/node_modules/wrangler/config-schema.json",
+    "name": "madbeauty-platform-preview",
+    "account_id": "d102163f74a45ab6d33bca786ce281ec",
+    "main": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-content-release60-20261010\\sites\\madbeauty\\cloudflare\\output\\next60-private\\production-worker.mjs",
+    "compatibility_date": "2026-05-22",
+    "compatibility_flags": [
+      "nodejs_compat"
+    ],
+    "workers_dev": false,
+    "assets": {
+      "directory": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-content-release60-20261010\\sites\\madbeauty\\cloudflare\\output\\assets-release",
+      "binding": "ASSETS",
+      "run_worker_first": true
+    },
+    "durable_objects": {
+      "bindings": [
+        {
+          "name": "PLATFORM",
+          "class_name": "MadbeautyPlatform"
+        }
+      ]
+    },
+    "migrations": [
+      {
+        "tag": "v1",
+        "new_sqlite_classes": [
+          "MadbeautyPlatform"
+        ]
+      }
+    ],
+    "images": {
+      "binding": "IMAGES"
+    },
+    "rules": [
+      {
+        "type": "Text",
+        "globs": [
+          "**/*.sql",
+          "**/app.html"
+        ],
+        "fallthrough": true
+      }
+    ],
+    "vars": {
+      "APP_ORIGIN": "https://madbeauty.lt",
+      "OPERATOR_EMAIL": "info@pinet.lt",
+      "RELEASE_MODE": "production"
+    },
+    "observability": {
+      "enabled": true,
+      "head_sampling_rate": 0.1,
+      "redact_query_string": false,
+      "logs": {
+        "enabled": true,
+        "head_sampling_rate": 0.1,
+        "persist": true,
+        "invocation_logs": true
+      },
+      "traces": {
+        "enabled": true,
+        "persist": true,
+        "head_sampling_rate": 0.1
+      }
+    },
+    "routes": [
+      {
+        "pattern": "madbeauty.lt",
+        "custom_domain": true
+      },
+      {
+        "pattern": "www.madbeauty.lt",
+        "custom_domain": true
+      }
+    ],
+    "keep_vars": true,
+    "no_bundle": true
+  },
+  "scope": "Content-only autonomous-agent edition on unchanged live b7 runtime and exact63 core. Isolated QA clock hook does not enter production artifact. No upgrade/storage/mail activation."
+}

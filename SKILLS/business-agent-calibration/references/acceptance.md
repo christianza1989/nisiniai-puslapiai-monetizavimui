@@ -1,5 +1,9 @@
 # Priėmimo matrica ir perdavimas
 
+Pavedimui sukurti pokalbių agentą taikyti [create-and-calibrate](create-and-calibrate.md): prijungimas, baseline, klaidų pataisos / pakartojimai, protected patikra, autonomijos ir actual kanalų vartai yra vieno pavedimo dalys. Atskiro kalibravimo prašymo nelaukti; deklaruotą priėmimą grįsti šiomis eilutėmis.
+
+Numatytoje sukūrimo apimtyje tikras browser balsas, contact popup/save, postcall reviewed email siuntimas/gavimas ir reply tęsinys būtini, nebent savininkas aiškiai susiaurino pavedimą. Nepakankamas kodas nėra NA pagrindas: tęsti įgyvendinimą, o tikrą išorinę priklausomybę žymėti konkrečiai UNVERIFIED. Prekybos/PDF/tiekėjų vartai pagal nišos actual modelį ir mandatą.
+
 Ataskaitoje kiekvienai nišai nurodyk testuotą apimtį ir šias atskiras eilutes su PASS / FAIL / UNVERIFIED / pagrįstu NA, case/run nuoroda ir source SHA. Nesumaišyk skirtingų etapų į vieną „sukalibruota“.
 
 | Tikrinama | Pakankamas konkretaus vartų įrodymas |

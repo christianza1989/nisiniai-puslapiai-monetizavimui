@@ -1,9 +1,13 @@
 ---
 name: business-agent-calibration
-description: Prijunk ir kalibruok šio projekto verslo pokalbių, laiškų bei tiekėjų agentus naujoje ar esamoje nišoje; patikrink autonominį instrukcijų mokymąsi, versijos pritaikymą ir rollback pagal tikrus core kvitus.
+description: Sukurk, prijunk ir iš karto kalibruok šio projekto verslo pokalbių agentą naujoje ar esamoje nišoje; taikyk ir laiškų bei tiekėjų agentų kalibravimui. Patikrink autonominį instrukcijų mokymąsi, versijos pritaikymą ir rollback pagal tikrus core kvitus.
 ---
 
 # Verslo agentų kalibravimas
+
+**Sukūrimas apima kalibravimą:** savininko pavedimas „sukurk šiam verslui pokalbių agentą“ (ar analogiškas) yra pavedimas prijungti nišą ir iš karto savarankiškai kalibruoti agentą iki deklaruotos apimties priėmimo. Atskiro „dabar pakalibruok“ prašymo nelaukti. Vykdyti [sukūrimo ir kalibravimo sutartį](references/create-and-calibrate.md), tada actual runbook ir acceptance matricą. Vien prompto, profilio, valdiklio ar baseline rezultatų pateikimas neužbaigia tokio pavedimo.
+
+Numatyta sukūrimo apimtis: tikras naršyklės balso skambutis, kontaktų popup/save, konteksto tęstinumas, postcall analizė ir reviewed profesionalus email bei kliento reply tęsinys. Trūkstamą kodą įgyvendink; actual call/receipt/reply patikros privalomos. Savininko aiškiai siauresnė apimtis ir esama išlaidų/prieigų/gyvų operacijų autorizacija lieka pagrindinės.
 
 Šaltinis yra šis Git skill ir actual `agent-business-core/runtime`, ne ankstesnio Codex pokalbio atmintis. Taikyk savininko užsakytam agentų darbui; naujos svetainės F1 savaime neįjungia balso, pašto ar prekybos. Perskaityk [projekto sutartį](../PROJECT_CONTRACT.md), nišos BUSINESS bei dabartinį implementation status ir rezervuok failų ribas pagal [MULTI_MACHINE](../../docs/MULTI_MACHINE.md).
 

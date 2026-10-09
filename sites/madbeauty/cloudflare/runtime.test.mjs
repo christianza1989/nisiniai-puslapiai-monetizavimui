@@ -27,6 +27,7 @@ test('Native Workers signed terminal-mail retirement survives SQL restart withou
 
 test('The candidate production binding preserves the existing source namespace, session and booking while the real exported organization class activates after an explicit handoff',async()=>{
  const config=JSON.parse(await readFile(new URL('./wrangler.production.json',import.meta.url),'utf8'));
+ assert.equal(config.vars.RETENTION_POLICY_VERSION,'madbeauty-2026-10-10-v1');
  assert.deepEqual(config.migrations[0],{tag:'v1',new_sqlite_classes:['MadbeautyPlatform']});assert.equal(config.migrations.length,2);assert.deepEqual(config.migrations[1],{tag:'v2-organization-storage',new_sqlite_classes:['MadbeautyOrganizationStaging']});assert.equal(config.name,'madbeauty-platform-preview');assert.equal(config.account_id,'d102163f74a45ab6d33bca786ce281ec');
  const bindings=Object.fromEntries(config.durable_objects.bindings.map(b=>[b.name,{className:b.class_name,useSQLite:true}]));assert.deepEqual(bindings.PLATFORM,{className:'MadbeautyPlatform',useSQLite:true});assert.deepEqual(bindings.ORGANIZATION_STAGING,{className:'MadbeautyOrganizationStaging',useSQLite:true});
  const f=await fixture();try{

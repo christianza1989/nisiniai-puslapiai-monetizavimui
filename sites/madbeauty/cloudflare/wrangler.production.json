@@ -55,7 +55,8 @@
   "vars": {
     "APP_ORIGIN": "https://madbeauty.lt",
     "RELEASE_MODE": "production",
-    "OPERATOR_EMAIL": "info@pinet.lt"
+    "OPERATOR_EMAIL": "info@pinet.lt",
+    "RETENTION_POLICY_VERSION": "madbeauty-2026-10-10-v1"
   },
   "observability": {
     "enabled": true,

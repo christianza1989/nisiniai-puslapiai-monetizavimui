@@ -1,3 +1,11 @@
+## 2026-10-09 — gyvas straipsnių kalendorius ir rezervavimo patikra
+
+Straipsnių datų leidimas jau įdiegtas madbeauty.lt. PR48 receipt: production versija `4dbdf361-25c6-4496-97a5-daaed23df201`, esamas runtime `b7a34b1`, core `63cfd8c`, patvirtintas paketas `bb1b90aa`. Iš 39 puslapių 7 jau vieši, 32 gidai laukia savo datų. 260 temų tebėra neparašytas planas. Originali production PLATFORM namespace ir v1 tapatybė, pašto bei DNS nustatymai išliko. Visas platformos atnaujinimas dar nepaleistas.
+
+Platformos kandidatas naudoja runtime `3c16e4c`, core `c7e0c9a` ir tą patį patvirtintą bb paketą: 39 puslapiai, 309 assets, 64 native HTTP publikavimo būsenos PASS. Atnaujinus atskiros serverio aplinkos paketą, išliko visos 29 source ir 29 target read kolekcijos, trys fiziniai medijos objektai bei SQL mailbox. Normalus klientas atšaukė visą 105 min. / 80 € vizitą; laikas atsilaisvino. Per įprastą pakartojimo formą klientas patvirtino vieną naują vizitą, senasis liko atšauktas. Abi paskyros matė naują vizitą po target restart. Viename meistro lange vizitas perkeltas į spalio 14 d.; kitas, pasenęs langas atmetė jo atšaukimą, išlaikė priežastį ir nepakeitė serverio duomenų ar mailbox. Normalus atnaujinimas parodė naują datą.
+
+[HOSTED_UI_ACCEPTANCE.md](platform-upgrade-20261007/HOSTED_UI_ACCEPTANCE.md) ir `acceptance-20261009/` saugo konkrečius įrodymus. Produkto regresija lieka 264/264; 64 publikavimo būsenos skaičiuojamos atskirai. SQL capture nėra SMTP gavimas. Visas pavedimas aktyvus ir neužbaigtas: tikro teikėjo pilotas, autorizuotas rezervacijos / priminimo gavėjas, faktinė retention / backup tvarka ir galutinis pasirinkto leidimo priėmimas išlieka. Ankstesni 75aa įrodymai išsaugoti kaip istorija.
+
 ## 2026-10-09 — privatus serverio produkto kelias
 
 Aktualus runtime: 3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c. [HOSTED_UI_ACCEPTANCE.md](platform-upgrade-20261007/HOSTED_UI_ACCEPTANCE.md) fiksuoja actual source onboarding / operator / gallery / client whole booking / both roles / source restart, signed physical-media handoff ir active-target owner reschedule / restart. Vienas105min /80€vizitas išlaikėID; sourceversion1, targetversion2. Normali browser paskyra, capture-only mail, private key gate, atskiri namespaces; production deploy0.

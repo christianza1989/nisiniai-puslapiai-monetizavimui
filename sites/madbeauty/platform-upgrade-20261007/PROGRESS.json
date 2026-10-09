@@ -6,7 +6,7 @@
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
-  "productionReadOnlyCheck": "2026-10-09: provider settings before/after private UI QA deploy retain production binding/secret names and original2faf namespace. QA source45cdaa/targetecd78b distinct, no cross-script bindings/domain routes. No production writes/deploy/migration; QA deployment separately recorded.",
+  "productionReadOnlyCheck": "Historical UI QA provider checks remain. Later separately authorized dates-only production version4dbdf361 accepted on2026-10-09; runtimeb7/core63/packagebb/original2faf-v1 and mail/DNS/bindings unchanged. Full upgrade productionUpgradeDeployed=false.",
   "checkpoints": [
     {
       "name": "catalogue-offer-search-single-booking",
@@ -399,6 +399,28 @@
       "regression": "regression-99.log",
       "evidence": "HOSTED_UI_ACCEPTANCE.md / hosted-ui264 restart/handoff/cutover/preflight receipts / native screenshots",
       "remaining": "Canonical host/all applicable hosted states, factual real provider/mail/retention and existing full completion prerequisite. Capture-only transport is not SMTP."
+    },
+    {
+      "name": "candidate-bb-calendar-hosted-preservation-and-cancellation",
+      "state": "accepted-named-scopes",
+      "runtime": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+      "core": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+      "productRegressionTests": 264,
+      "publicationStates": 64,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+      "qaVersion": "cdcf8bce-85df-4978-b1a4-cfaf40c635c6",
+      "evidence": "HOSTED_UI_ACCEPTANCE.md / acceptance-20261009",
+      "remaining": "Real provider / inbox / retention, final chosen canonical release and other applicable hosted scopes; later actual signed-in booking-version conflict separately accepted."
+    },
+    {
+      "name": "hosted-whole-rebooking-and-actual-booking-version-conflict",
+      "state": "accepted-named-scopes",
+      "runtime": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+      "productRegressionTests": 264,
+      "newProductTests": 0,
+      "evidence": "acceptance-20261009/hosted-rebooking.json / hosted-booking-version.json",
+      "remaining": "Real provider / inbox / retention and final full release prerequisite remain"
     }
   ],
   "tasks": [
@@ -539,7 +561,7 @@
       "title": "Kliento paskyra ir pakartotinis vizitas",
       "phase": "3",
       "state": "implemented-isolated-acceptance",
-      "evidence": "Current-price whole sequence, removed addons, archived alternative, own account access; actual changed-price rebooking confirms new ID and preserves old price.; rebooking259 actual archived-alternative and removed-addon bookings, read-error keyboard retry and retained snapshots after restart accepted locally."
+      "evidence": "Current-price whole sequence, removed addons, archived alternative, own account access; actual changed-price rebooking confirms new ID and preserves old price.; rebooking259 actual archived-alternative and removed-addon bookings, read-error keyboard retry and retained snapshots after restart accepted locally.; normal hosted canceled whole-visit repeat creates one new confirmed booking, preserves old canceled ID, and survives target restart with both role views."
     },
     {
       "id": "C02",
@@ -630,14 +652,15 @@
       "title": "Visų svarbių kelių patikros matrica",
       "phase": "1",
       "state": "in-progress",
-      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope.; current read-only operator/professional layouts and protected hosted storage lifecycle accepted in their named scopes.; HOSTED_UI_ACCEPTANCE20261009 concrete ordinary owner/operator/client journey, whole booking, physical-media source-to-active-target handoff, reschedule and restart accepted privately.",
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope.; current read-only operator/professional layouts and protected hosted storage lifecycle accepted in their named scopes.; HOSTED_UI_ACCEPTANCE20261009 concrete ordinary owner/operator/client journey, whole booking, physical-media source-to-active-target handoff, reschedule and restart accepted privately.; bb dates preservation / normal hosted whole cancellation / freed105min slot / restart accepted in scoped receipt.; actual normal owner two-tab booking-version rejection / exact no-write / retained reason / current reread accepted separately from expired-session rejection.",
       "remaining": "Canonical release and remaining applicable hosted states, real mail / provider pilot / retention facts remain. A single concrete protected hosted journey is not an all-roles/all-states PASS."
     },
     {
       "id": "E01",
       "title": "Kategorijų ir miestų SEO bei gidų sąsaja",
       "phase": "2",
-      "state": "accepted-prior-narrow-release"
+      "state": "accepted-prior-narrow-release",
+      "evidence": "Separate canonical dates-only PR48 release4db/bb accepted; candidatebb64native states accepted;260unwritten topics remain plan."
     },
     {
       "id": "G02",
@@ -686,5 +709,14 @@
     "Resolve real pilot provider and authorized booking/reminder recipient facts; pending async question remains",
     "Factual retention/backups needed before activating destructive C02 execution; external phase4 activation dependencies separate",
     "Complete remaining applicable hosted/canonical acceptance when factual pilot/mail/retention dependencies and full completion prerequisite are satisfied; existing conditional production deployment authorization persists"
-  ]
+  ],
+  "productionCalendarRelease": {
+    "version": "4dbdf361-25c6-4496-97a5-daaed23df201",
+    "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+    "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+    "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+    "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/48",
+    "scope": "Separately authorized dates only, full upgrade not activated"
+  },
+  "candidatePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
 }

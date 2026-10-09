@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-09T12:23:27.001Z",
+  "state": "PASS",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "sourceCollections": 29,
+  "targetCollections": 29,
+  "sourceTargetMailboxAndBindingsUnchanged": true,
+  "targetBooking": {
+    "id": "booking_38f0783d-c30e-4f58-bfae-952bf0c5c3da",
+    "version": 2,
+    "startAt": "2026-10-13T06:00:00.000Z"
+  },
+  "currentPages": 7,
+  "futurePagesBlocked": 32,
+  "scope": "Exact protected hosted UI state/media/mailbox preservation across dates-only candidate update. No repeat of all earlier product paths or future hosted clock acceptance."
+}

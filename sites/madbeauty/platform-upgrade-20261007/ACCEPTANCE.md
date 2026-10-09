@@ -579,3 +579,13 @@ Source1e4f9fc462cfab9f280d6035c1a2d07cb37aa977/companionc7e0c9a. Four declared s
 Actual IAB2/tab2/http://127.0.0.1:8843, owner normal-OTP persisted session, named isolated own stores. Taxonomy treatment aliases Enter save→r1; legacy conversion repeated via keyboard; directory-globals210-catalogue-status.json proves1draft/1migrationevent per org, source and targetr1. Editor Escape focus returned. Metrics displayed13 current combined events, with real demand labels remaining unmeasured; metrics320/390/820/1440 all viewed and measured document/table widths in widths.json. Taxonomy-dialog390 viewed. Current migrated profile favorite Space→checked then reload→checked, favorite390 viewed; central-only bookmark behavior proven Node/Worker. Playwright checkbox locator did not match the native AX toggle mapping; fresh AX checked state is recovery evidence, no product failure inferred from locator alone.
 
 Accepted normal operator globals/mobile/keyboard and current favorite reload; archived bookmark, target outage and concurrent stale taxonomy browser cases remain Node-only, not full UI PASS. No production writes or true pilot/SMTP proof.
+
+## 2026-10-09 — bb kalendorius ir hosted vizito tęstinumas
+
+Patvirtintas bb1b90aa paketas sujungtas su runtime 3c16e4c / core c7e0c9a. Build: 39 puslapiai, 309 assets. Fiksuoto selectionAt native HTTP publikavimo priėmimas: 64/64 PASS. Tai nepridedama prie produkto regression-99 sumos 264/264. Atskiras siauras datų leidimas PR48 / version4dbdf361 gyvas su esamu b7 runtime / 63 core; visas platformos upgrade dar nepaleistas.
+
+Protected hosted paketo pakeitimas išsaugojo 29 source / 29 target read kolekcijas, tris fizinius medijos objektus ir mailbox. Normalus viso vizito atšaukimas, atlaisvinto intervalo pakartojimas, explicit naujas vizitas, abi rolės ir actual target restart priimti. Įprastas contact žingsnis pakelia tik esamo centralizuoto kliento version; kitos source kolekcijos, originalus booking, authority ir media saugomi tiksliai.
+
+Du normalūs owner langai patikrino actual v1→v2 perkėlimą ir pasenusio v1 atšaukimo atmetimą. Klaida išlaikė priežastį, source / target / mailbox nepakito, restart ir įprastas reload parodė aktualų v2. Tai atskiras įrodymas nuo ankstesnio expired-session / CSRF atmetimo.
+
+Tapatybės ir tikslios ribos: HOSTED_UI_ACCEPTANCE.md bei checked-in acceptance-20261009. Pradinės helper / viewport klaidos išsaugotos atskirai. Tikro teikėjo, SMTP gavimo, faktinės retention tvarkos ir viso galutinio leidimo completion šie įrodymai nesukuria.

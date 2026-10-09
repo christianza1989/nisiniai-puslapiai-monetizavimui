@@ -1,8 +1,10 @@
 # Dabartinis pasirengimas — 2026-10-09
 
-Pagrindinis katalogo, paieškos, meistro paslaugų ir rezervavimo funkcionalumas įgyvendintas. Naujausias runtime `3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c`: patikslintas profilio pateikimo pranešimas pagal esamą pasiūlymo būseną; ankstesnė source-only recovery apsauga išliko. Visi keturi rinkiniai264/264PASS; nepakeistas approved75aa paketas,39puslapiai /309assets. Gyvas visas platformos atnaujinimas **dar nepaleistas ir neužbaigtas**.
+Pagrindinis katalogo, paieškos, meistro paslaugų ir rezervavimo funkcionalumas įgyvendintas. Runtime `3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c` patikslina profilio pateikimo pranešimus; keturi produkto rinkiniai: 264/264 PASS. Aktualus patvirtintas bb paketas: 39 puslapiai, 309 assets ir atskirai priimtos 64 native HTTP publikavimo būsenos. **Visas platformos atnaujinimas dar nepaleistas ir neužbaigtas.**
 
-Naujas [HOSTED_UI_ACCEPTANCE.md](HOSTED_UI_ACCEPTANCE.md) priima konkretų private hosted kelią: normali meistro paskyra → du pasiūlymai / operatorius / galerija → kliento paieška → bendras105min /80€vizitas → abi paskyros / source restart → signed organization handoff su3fiziniais media objektais / target restart → įprastas owner reschedule į targetversion2, source originalversion1išliko. Tai sintetinės aplinkos priėmimas; realaus teikėjo, SMTP inbox, retention ir canonical release vartai išliko. Darbui su tikru teikėju parengta [PILOT_INPUTS.md](PILOT_INPUTS.md).
+Atskiras straipsnių datų leidimas jau gyvas: runtime b7a34b1 / core 63cfd8c, versija 4dbdf361, paketas bb1b90aa. Septyni puslapiai jau vieši, 32 gidai laukia datų. PR48 receipt patikrino visus 284 esamo leidimo assets, canonical 390 / 1440 naršyklės vaizdus ir nepakitusius production nustatymus. Šis turinio leidimas ir platformos kandidatas turi atskiras tapatybes bei įrodymus.
+
+[HOSTED_UI_ACCEPTANCE.md](HOSTED_UI_ACCEPTANCE.md) priima konkrečius atskiros serverio aplinkos kelius: normalus teikėjo prisijungimas, du pasiūlymai, operatoriaus sprendimai, galerija, kliento paieška ir bendras 105 min. / 80 € vizitas. Pasirašytas eilučių bei trijų fizinių medijos objektų perdavimas aktyviam target, įprastas perkėlimas, atšaukimas, pakartotinis naujas vizitas ir dviejų langų vizito versijos konfliktas priimti savo apimtyse. Tikslios kopijos išliko po serverio restart. Negrįžtamas trynimas ir SMTP inbox nepriimti. [PILOT_INPUTS.md](PILOT_INPUTS.md) nurodo likusius realaus piloto faktus.
 
 ## Parengtos ir konkrečiai tikrintos dalys
 
@@ -15,7 +17,7 @@ Naujas [HOSTED_UI_ACCEPTANCE.md](HOSTED_UI_ACCEPTANCE.md) priima konkretų priva
 | Paskyra, išsaugoti profiliai, pasirinkimai ir klientų kortelės | C01 / dalinis C02: global258 / account258 / client-card / own export / recent-OTP / audited erasure request ir withdrawal. Pats negrįžtamas trynimas neaktyvintas be faktinės retention / backup tvarkos. |
 | Komandos teisės, vietos ir dokumentų tinkamumas | W01–W03 / O02: actual receptionist/practitioner apribojimai ir grant/revoke/stale/restart, branch258 / qualification258. Sintetinė kvalifikacija nepatvirtina realaus teikėjo teisės. |
 | Operatorius, naujų procedūrų prašymai ir skundai | O01/O03: global258 / catalogue263 / publication258 actual versioned sprendimai, precommit / lost-reply errors, private media ir retained bookings. Nauji request nonce / history ir applicable taxonomy parent guards priimti. |
-| Straipsnių / kategorijų sąsaja | E01: ankstesnis siauras gyvas content infrastructure leidimas; immutable 75aa build ir editorial / core companion patikros. Šios upgrade šakos push nėra viso leidimo activation. |
+| Straipsnių / kategorijų sąsaja | E01: ankstesnis siauras gyvas content infrastructure leidimas; atskiras canonical datų leidimas4dbdf361/bb1b90aa ir editorial / core companion patikros. Šios upgrade šakos push nėra viso leidimo activation. |
 | Saugykla | [STORAGE_AUDIT.md](STORAGE_AUDIT.md): current Node dydžiai / timings, native physical media ir tikras isolated hosted source / prepared-target PITR, restart / collision / old-writer guards. Activated pair PITR, didelė hosted media apkrova ir canonical UI nėra šio fixture PASS. |
 
 Priėmimo detalės: [ACCEPTANCE.md](ACCEPTANCE.md) / [UI_MATRIX.md](UI_MATRIX.md). Senų checkpoint įrodymai neperrašomi; naujesni named receipts pakeičia tik jų faktiškai patikrintus likučius.

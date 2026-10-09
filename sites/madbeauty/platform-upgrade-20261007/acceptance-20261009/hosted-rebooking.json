@@ -1,0 +1,318 @@
+{
+  "at": "2026-10-09T13:48:56.205Z",
+  "state": "PASS",
+  "scope": "Actual protected hosted ordinary customer rebooking of a canceled whole visit, explicit new confirmation, target restart, customer reread and normal owner calendar/dialog. Synthetic capture-only accounts; not SMTP inbox or real provider.",
+  "runtimeSource": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "qaVersion": "cdcf8bce-85df-4978-b1a4-cfaf40c635c6",
+  "priorBooking": {
+    "id": "booking_38f0783d-c30e-4f58-bfae-952bf0c5c3da",
+    "status": "canceled",
+    "version": 3,
+    "unchanged": true
+  },
+  "newBooking": {
+    "id": "booking_ca8cc9ef-c382-4829-99cb-5e89874adb8a",
+    "status": "confirmed",
+    "version": 1,
+    "startAt": "2026-10-13T06:00:00.000Z",
+    "endAt": "2026-10-13T07:45:00.000Z",
+    "priceMinor": 8000,
+    "durationMin": 105,
+    "segments": 2
+  },
+  "centralSource": {
+    "changedCollections": [
+      "clients"
+    ],
+    "contactVersionChanges": [
+      {
+        "id": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120",
+        "fields": [
+          "version"
+        ],
+        "beforeVersion": 2,
+        "afterVersion": 3
+      }
+    ],
+    "otherCollectionsUnchanged": true,
+    "originalSourceBookingUnchanged": true
+  },
+  "target": {
+    "changedCollections": [
+      "clients",
+      "bookings",
+      "holds",
+      "events",
+      "idempotency"
+    ],
+    "mediaObjectsUnchanged": 3,
+    "authorityUnchanged": true,
+    "restartSnapshotsAndMailboxExact": true
+  },
+  "capturedNewBookingMessages": 1,
+  "rasters": [
+    {
+      "name": "rebook-current-offers-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/paskyra/vizitai/booking_38f0783d-c30e-4f58-bfae-952bf0c5c3da",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 358,
+          "scroll": 358,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "3cb9895452636564c565b5dd9bf007403e28861d75ddb0b24d5bd965a573c7e9"
+      }
+    },
+    {
+      "name": "rebook-services-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/registracija/paslauga",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "607f02e743cffab0160edb7d684c7eb128b880b80ba6b4168d59ff4ce1a8013d"
+      }
+    },
+    {
+      "name": "rebook-empty-time-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/registracija/laikas",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "dc8068d2f95a95baf828df5a3f156306fbe67e30d13b11ef7ad64639871ab291"
+      }
+    },
+    {
+      "name": "rebook-freed-slot-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/registracija/laikas",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "bfe152dd5119ee216f5a5752961fe606e6dadd146768d7c19f6fdea9633fc646"
+      }
+    },
+    {
+      "name": "rebook-review-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/registracija/perziura",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "66e34475c0f5e5151743a171534c4b8ad51d9b8928e876ace9769da201d32cca"
+      }
+    },
+    {
+      "name": "rebook-confirmed-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/registracija/rezultatas",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "ab86eb41845589ff5cb7e1122080abbc6606727011cd65aac655c54d9d8b2bb4"
+      }
+    },
+    {
+      "name": "rebook-client-after-restart-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/paskyra/vizitai/booking_ca8cc9ef-c382-4829-99cb-5e89874adb8a",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "b23e51e268d8b8a01707b385c846a1af544f08118d8fd22bea04ea93b8bb8001"
+      }
+    },
+    {
+      "name": "rebook-owner-calendar-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/meistrui/kalendorius",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "700929e91585c92424965cb2df04ae20a016891206520e78c13ac944ff0e777c"
+      }
+    },
+    {
+      "name": "rebook-owner-dialog-390",
+      "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/meistrui/kalendorius",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 358,
+          "scroll": 358,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "49f80c77b53a0265dfb11f4070eff3a7aed12e21c7d32fd4b3d23820f2467b63"
+      }
+    }
+  ],
+  "diagnostics": "Initial helper incorrectly expected all source read collections unchanged and referred to accounts instead of actual clients collection. Actual normal contact step advances only the existing canonical client version. Original source bookings and all other source read collections remain exact. No product change inferred from helper failures."
+}

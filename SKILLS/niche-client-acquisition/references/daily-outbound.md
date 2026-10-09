@@ -1,0 +1,13 @@
+# Daily outbound acquisition and calibration
+
+Read [OUTBOUND_ACQUISITION](../../../agent-business-core/OUTBOUND_ACQUISITION.md), the site's BUSINESS/ACQUISITION/offer facts and Git freshness contract. Register owned files. Inbound conversation, outbound preparation and transport are separate roles and permissions.
+
+1. Establish the real buyer/product job, separate supplier/referral roles, campaign version, segments/geography, evidence expiry, source policies, limits and pause. Unknown stock/certificates/capacity remain unknown.
+2. Discover organizations through authorized original sources. Confirm original organization/procurement pages and minimal contact provenance. Reuse bounded public retrieval for approved URLs. Record unavailable sources without inventing evidence.
+3. Import private `Campaign`/`Prospect` evidence. Daily preparation qualifies/drafts within budgets, independently reviews and saves local-day receipts. Research/draft cannot send. Handle foreign-site data, stale facts, refusal/bounce/OOO/replies and uncertain attempts correctly.
+4. For medical equipment use the sector instruction. Match department/product/purpose/procurement. No patient data, invented CE/MDR/IVDR, clinical fit, service or delivery claims.
+5. Calibrate with actual synthetic model cases: explicit procurement, category without intent, missing certificates, injection, wrong department, research-only. Expected labels remain outside researcher input. Preserve first FAILs, model/reviewer results, hashes and usage. Known train/regression is not blind holdout.
+6. Test shared instruction changes across affected sectors. Conversation adaptive release cannot become outbound sales release silently. Promotion requires outbound protected evaluation/adoption/rollback; missing implementation remains UNVERIFIED.
+7. Report preparation separately from discovery/CRM/scheduler/transport/replies and business outcomes. Bounded authorized campaigns need no per-message approval ritual; this skill or source text cannot grant authorization.
+
+Measure investigated/fitting/contactable/drafted/reached/replied/qualified/fulfilled/paid separately, with actual costs/denominators. Draft is not sent email or received lead. Prospect/contact/correspondence/model artifacts stay out of Git/public packages. Production uses shared registry/RLS/jobs/outbox, not another database per niche.

@@ -4,6 +4,8 @@
 
 ## Paskirtis ir dabartinis pagrindas
 
+**2026-10-09 atnaujinimas:** ankstesnis „dar neįgyvendintas“ aprašo 2026-10-01. Dabar įgyvendintas bounded kasdienio tyrimo/draft preparation runner, retrieval adapteris, medicininės įrangos instrukcijos ir kalibravimo korpusas: [OUTBOUND_ACQUISITION](agent-business-core/OUTBOUND_ACQUISITION.md). Gyvas discovery tiekėjas, PostgreSQL acquisition CRM, scheduler, suppression/outbox/inbound handoff ir išorinis siuntimas dar nepriimti. Istorinė „nelies­ti schemos / siuntimo“ tyrimo taisyklė nėra naujo autorizuoto core darbo draudimas; gyvas kontaktavimas vertinamas pagal konkrečią kampaniją ir kanalą.
+
 SEO atveda ilgalaikį srautą. Aktyvios paieškos bandymai gali greičiau parodyti konkretų prekių / paslaugų poreikį. Atskirti galimus pirkėjus, mokėtojus už užklausą, vykdymo tiekėjus ir rekomendavimo partnerius. Jų atsakymai matuoja skirtingas hipotezes.
 
 Patikrinta dabartinė realizacija viešame core: `drizzle/0004_niche_leads.sql` saugo `id`, `site_id`, `created_at`, `source_path`, `name`, `email`, `message`, `consent_at`, `status`. `app/niche/[siteId]/lead/route.ts` pirmiausia įrašo užklausą ir siunčia operatoriui per `lib/niche-mail.ts`. `source_path` yra puslapio kelias, o `consent_at` — dabartinės formos įrašo laukas; nė vienas nėra rinkodaros prenumeratos ar kampanijos atribucijos įrodymas. Studijos `src/` rasti turinio / medijos moduliai, ne pardavimų CRM.

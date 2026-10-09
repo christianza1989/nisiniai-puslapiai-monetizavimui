@@ -1,0 +1,1 @@
+Pagal campaign pasiūlymą atrink realų pirkėją ir jo darbą. Galimi signalai: viešas konkretaus produkto pirkimas, naujas projektas, plėtra, aiškiai skelbiama techninė problema. Viešas kontaktas be signalo lieka tinkamumo hipotezė. Negeneruok el. pašto adresų iš vardo ar domeno. Negali automatiškai perkelti turinio plano, SEO temos ar kitos nišos kontakto į pardavimų faktus.

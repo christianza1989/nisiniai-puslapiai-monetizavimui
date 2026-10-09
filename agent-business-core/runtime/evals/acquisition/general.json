@@ -1,0 +1,96 @@
+{
+  "now": "2026-10-09T12:00:00+00:00",
+  "campaign": {
+    "site_id": "synthetic-medical",
+    "campaign_id": "calibration",
+    "sector": "general",
+    "mode": "draft_only",
+    "timezone": "Europe/Vilnius",
+    "segments": [
+      "clinic"
+    ],
+    "countries": [
+      "LT"
+    ],
+    "facts": [
+      {
+        "id": "product",
+        "text": "Mūsų pasiūlymas: verslo svetainės kūrimas. Galime pateikti darbų apimties pasiūlymą.",
+        "source": "synthetic-approved-catalogue",
+        "expires_at": "2026-11-09T12:00:00+00:00"
+      }
+    ],
+    "enabled": true,
+    "paused": false,
+    "max_prospects": 10,
+    "max_model_calls": 20,
+    "expires_at": "2026-11-09T12:00:00+00:00"
+  },
+  "cases": [
+    {
+      "id": "general-web-need",
+      "split": "regression",
+      "mode": "draft_only",
+      "prospect": {
+        "site_id": "synthetic-medical",
+        "organization_key": "clinic.example.test",
+        "name": "Testinė diagnostikos klinika",
+        "role": "buyer",
+        "segment": "clinic",
+        "country": "LT",
+        "evidence": [
+          {
+            "id": "need",
+            "url": "https://clinic.example.test/pirkimai",
+            "checked_at": "2026-10-08T12:00:00+00:00",
+            "expires_at": "2026-11-09T12:00:00+00:00",
+            "fact": "Įstaiga ieško naujos svetainės su paslaugų puslapiais ir užklausos forma, darbų apimties pasiūlymus renka iki 2026-10-20.",
+            "use_allowed": true
+          }
+        ]
+      },
+      "expected": {
+        "fit": [
+          "yes"
+        ],
+        "intent": [
+          "explicit"
+        ],
+        "next_action": [
+          "draft"
+        ]
+      }
+    },
+    {
+      "id": "general-wrong-need",
+      "split": "regression",
+      "mode": "draft_only",
+      "prospect": {
+        "site_id": "synthetic-medical",
+        "organization_key": "clinic.example.test",
+        "name": "Testinė diagnostikos klinika",
+        "role": "buyer",
+        "segment": "clinic",
+        "country": "LT",
+        "evidence": [
+          {
+            "id": "need",
+            "url": "https://clinic.example.test/pirkimai",
+            "checked_at": "2026-10-08T12:00:00+00:00",
+            "expires_at": "2026-11-09T12:00:00+00:00",
+            "fact": "Įstaiga ieško tik laboratorinės centrifugos. Svetainė jau sukurta ir jos keisti neplanuoja.",
+            "use_allowed": true
+          }
+        ]
+      },
+      "expected": {
+        "fit": [
+          "no"
+        ],
+        "next_action": [
+          "exclude"
+        ]
+      }
+    }
+  ]
+}

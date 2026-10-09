@@ -18,6 +18,8 @@ Privatus studijos kalendorius sutikrintas bendru reconcilePrivatePlan su visais 
 
 Eksportas dar nėra actual-domain diegimas. Platformos agentas priima paketą ir atskirai patikrina faktinę produkcijos bazę, bindings, saugyklą bei domeno HTTP. Privatus release-manifest.json laikomas vietoje ir neįtraukiamas į Git ar public assets.
 
+Vietinės datos fragmentų patikros renderer SHA256 yra 52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c (platformos atnaujinimo kandidatas), projekcijos core — 37208b826fefc7bb86c65d8ce83acde72259c1dc. Tai nėra faktinės gyvos bazės priėmimas. Datų diegimui platformos savininkas išlaiko gyvą b7a34b1703060c4d8d5e426fa29347a393c32dff, core 63cfd8c2043eb2afa5eb6af638bae4dad9c86d46 ir renderer 0c48d38915c7ab442c362d292b5250a91a33f0d604eeb0564f3bcea129d61ae0; šios bazės HTTP bei pasirodymo ribų patikra fiksuojama atskiru platformos priėmimo įrašu. 284 surinkti platformos failai apima ir 180 straipsnių WebP; 309 priklauso platesniam atnaujinimo kandidatui.
+
 ## Tolimesnis turinio rengimas
 
 Šiame pokalbyje įjungta aktyvi „Madbeauty pusmečio turinio rengimas“ heartbeat automatizacija: pirmadieniais ir ketvirtadieniais 09:00 pagal vartotojo Europe/Kiev laiko juostą. Kiekvienas vykdymas užbaigia iki 6 artimiausių įvykdomų temų, tikslas — bent dviejų savaičių parengto turinio atsarga. Tai šio projekto darbo partija, ne visų nišų taisyklė. Vykdymas privalo naudoti tikrą gpt-6-luna/xhigh, ImageGen, šaltinių ir revizijų peržiūrą bei atskirą actual-domain diegimą. Pasikartojantis agento darbas nesuteikia garantijos, kad trūkstama kvalifikuota peržiūra automatiškai bus atlikta. Įvykdžius visą apimtį rengimas sustabdomas; užbaigtų tekstų, neišspręstų vartų ir diegimų žurnalas turi būti atnaujinamas kiekvieną vykdymą.

@@ -9,3 +9,5 @@ Nišos adapterio pataisos: cache/in-flight deduplikavimas ir bounded4 canonical 
 Didelio katalogo papildoma pastaba: canonical vieno įrašo mutate/review perskaito ir atominiu rename perrašo visą site JSON. Naujas universalus bulk writer šiame darbe nekurtas; tikri per-page review ir <=200 dependency approval vartai išlaikyti. Tai galimas vėlesnis išmatuoto workflow scale darbas, ne priežastis apeiti approval ar ranka konstruoti publishedRevision.
 
 Schema, hash, projection, privatumo/pašto/DNS launch vartai nesumažinti; svetimi procesai/checkout neliesti. Baigtas source pakeitimas ir live domeno veikimas atskiri.
+
+Approval IO finding: upgrade-19b3ea63-c1bb-4af8-98f8-541280a5ebf0. See APPROVAL-BENCHMARK.md; scope model.mjs plus focused workflow fixture, local10/10 PASS; reviewed PR/main/adoption still pending.

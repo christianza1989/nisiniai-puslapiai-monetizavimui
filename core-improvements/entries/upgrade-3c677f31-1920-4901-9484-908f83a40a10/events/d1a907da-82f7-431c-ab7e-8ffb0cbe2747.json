@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Invocation-local hidden URL calculation preserves exact164996703-byte output for the real1856-page catalogue; no cross-call cache or weaker acceptance predicate. Measured47,140.2609ms to47.8362ms calculation-only; full HTTP recheck separate.",
+  "checks": [
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/completion.test.mjs SKILLS/niche-site-audit/scripts/score-audit.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/promedical/INSPECTOR-BENCHMARK.md:10/10PASS667.5924ms and changing-projection/host regression"
+    },
+    {
+      "command": "bundled Python SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+      "result": "PASS",
+      "evidence": "sites/promedical/INSPECTOR-BENCHMARK.md:9/9PASS0.033s"
+    },
+    {
+      "command": "node content-studio/tmp/promedical-inspector-benchmark-report.mjs",
+      "result": "PASS",
+      "evidence": "sites/promedical/INSPECTOR_BENCHMARK.json: exact full-catalogue output hash/byte/count equality asserted"
+    }
+  ],
+  "eventId": "d1a907da-82f7-431c-ab7e-8ffb0cbe2747",
+  "sequence": 2,
+  "at": "2026-10-09T18:23:15.709Z"
+}

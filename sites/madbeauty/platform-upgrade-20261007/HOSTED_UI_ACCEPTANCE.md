@@ -64,3 +64,8 @@ Naujo candidate QA tapatybė: source HEAD 3a9ba489, runtime 3c16e4c, core c7e0c9
 Ankstesnis `cancel-stale-1280` atmetė missing / expired session su CSRF403; jis lieka atskiras nuo vėliau priimto tikro vizito versijos konflikto. Du pirmi „390“ pavadinti kadrai iš tiesų buvo 1280×720 ir atmesti kaip mobile įrodymai. Atšaukimo priimti DOM vaizdai: 390×900, document / main / dialog client=scroll; PNG matmenys saugomi atskirai. Pakartojimo ir versijos konflikto receipts taip pat skiria measured viewport nuo tikro rastrų dydžio. Trys pakartojimo ir du versijos konflikto checked-in PNG peržiūrėti vizualiai. Tai konkrečių kelių priėmimas; kitų rolių / formų būsenos neperimamos.
 
 Checked-in `acceptance-20261009/`: kalendoriaus manifest / proof, hosted preservation, cancellation, rebooking ir booking-version JSON bei septyni native PNG. Raw SQL, OTP, CSRF, session ir QA raktai lieka ignored evidence. SQL capture surenka testinį pranešimą, bet nepatvirtina SMTP inbox. Tikras teikėjas, faktinis autorizuotas gavėjas, retention / backup tvarka ir galutinis canonical upgrade priėmimas išlieka atskiri vartai.
+
+
+## Vėlesnis miesto, paskyros ir kortelių bandymas
+
+Aktualus `1ba6c7d` protected leidimas `016ae399` išsaugojo tuos pačius QA namespaces ir visus įrašus, mediją bei capture. Jo native kortelių vaizdas ir ankstesnio `fbc4bbc` normalūs miesto / kliento nustatymų / JSON atsisiuntimo / favorite restart keliai priimti atskirai [HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md](HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md). Istorinės šio dokumento versijos nepervadintos nauju runtime; realaus salono / inbox / retention vartai lieka atviri.

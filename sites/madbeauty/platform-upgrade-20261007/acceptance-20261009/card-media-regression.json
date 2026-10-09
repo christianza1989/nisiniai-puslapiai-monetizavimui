@@ -1,0 +1,46 @@
+{
+  "before": 264,
+  "expected": 264,
+  "newTests": 0,
+  "extendedTests": 3,
+  "removedTests": 0,
+  "recordedBeforeRun": "2026-10-09T19:27:18.785Z",
+  "sourceBase": "1dfad5f2abe642f062430e117a7914cf7384462d",
+  "files": [
+    {
+      "file": "sites/madbeauty/backend/platform.mjs",
+      "sha256": "6c9bf40acfb9cc69665da4ca43f4f8a9b46c1f223e3a21ab58afade90dd0ecf3"
+    },
+    {
+      "file": "sites/madbeauty/backend/backend.test.mjs",
+      "sha256": "6a06fdb47b6bba2f3157226f9237a103046a829a17e4a19960ffaaf73948c45b"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/public-views.mjs",
+      "sha256": "19ed2f5cb4b3d6c20ad35181b7ebb5ed92f03f91b05e8573194e5cfd6fd2c0c2"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/app.css",
+      "sha256": "b3e9eb54f3a927580e39a80cd90fee25d98d8e396bc2ab01127a28fb25c7b399"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/runtime.test.mjs",
+      "sha256": "1978fea60e98bcdce9ebe58f151879373d4b7c3abf0ba4f4a4f83e6680d80ca4"
+    }
+  ],
+  "suites": [
+    "sites/madbeauty/backend/*.test.mjs",
+    "sites/madbeauty/prototype/*.test.mjs",
+    "sites/madbeauty/acceptance/*.test.mjs",
+    "sites/madbeauty/cloudflare/*.test.mjs"
+  ],
+  "command": "node --test --test-concurrency=1 sites/madbeauty/backend/*.test.mjs sites/madbeauty/prototype/*.test.mjs sites/madbeauty/acceptance/*.test.mjs sites/madbeauty/cloudflare/*.test.mjs",
+  "scope": "Provider cards use only published, nonrestricted own avatar or gallery media. Existing Node and Workers checks cover draft privacy, approval, review withdrawal and removal through SQL restart; real UI shows an explicit empty image area when absent",
+  "log": "regression-102.log",
+  "actual": 264,
+  "pass": 264,
+  "fail": 0,
+  "durationMs": 75372.2375,
+  "status": "PASS",
+  "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb"
+}

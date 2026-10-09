@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active-not-complete",
   "plan": "../upgrade-plan-20261006/BACKLOG.json",
-  "runtimeSourceCheckpoint": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc",
+  "runtimeSourceCheckpoint": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
@@ -430,6 +430,17 @@
       "state": "accepted-isolated-path",
       "receipt": "acceptance-20261009/city-continuation.json",
       "remaining": "Full upgrade facts and final selected-release hosted/canonical acceptance unchanged."
+    },
+    {
+      "name": "hosted-city-customer-controls-reviewed-card-media",
+      "state": "accepted-isolated-path",
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "tests": 264,
+      "extendedTests": 3,
+      "newTests": 0,
+      "removedTests": 0,
+      "receipt": "HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md",
+      "remaining": "Actual provider pilot, authorized booking/reminder inbox, factual retention/backup policy and full canonical release acceptance; production unchanged"
     }
   ],
   "tasks": [
@@ -732,17 +743,17 @@
     "producerThreadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
     "selectionPath": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next30-20261009/sites/madbeauty/content-next30-20261009/SELECTION.json",
     "selectionSha256": "522f172c2ec8b5e62e5826dfe14538b42fe7c2d22061fc86431634d7cffebb67",
-    "status": "SELECTED_NOT_WRITTEN",
+    "status": "WRITER_REPORTED_30_DRAFTS_NOT_ADMITTED",
     "selectedPages": 30,
     "basePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
     "consumerReceipt": "acceptance-20261009/next30-consumer-baseline.json",
     "scope": "Separate writer-owned content work. Do not duplicate selected topics or alter its private studio. Planned content is not imported, approved or deployed; it is not a new full-upgrade completion prerequisite.",
-    "next": "On exact immutable handoff, verify preserved prior pages/media/dates and actual new revision-bound reviews; consume separately on live b7/core63 and upgrade3c16/corec7. Reconcile actual baseline and publication/native/hosted/canonical/provider gates for any separately authorized content release. Old PR48 deployment guards must not be replayed for a different package.",
+    "next": "On exact immutable handoff, verify preserved prior pages/media/dates and actual new revision-bound reviews; consume separately on live b7/core63 and upgrade1ba6c7d/corec7. Reconcile actual baseline and publication/native/hosted/canonical/provider gates for any separately authorized content release. Old PR48 deployment guards must not be replayed for a different package.",
     "catalogueTargetsReceipt": "acceptance-20261009/live-content-targets.json",
     "writerReportedDrafts": {
-      "count": 19,
-      "reportedAt": "2026-10-09T18:54:37.291Z",
-      "source": "madbeauty turinys commentary snapshot; not consumer-reviewed or admitted"
+      "count": 30,
+      "reportedAt": "2026-10-09T19:34:11.643Z",
+      "source": "madbeauty turinys latest commentary: all 30 native mobile/desktop previews checked. No immutable consumer handoff, editorial approval or admission inferred."
     }
   },
   "catalogueContinuation": {
@@ -832,5 +843,17 @@
       "Full final selected-release hosted/canonical acceptance and production cutover; old 3c hosted receipts retain their original identity.",
       "Writer next30 immutable package and actual revision-bound reviews are pending in its own thread; neither its drafts nor this checkpoint authorize a partial full-upgrade deployment."
     ]
+  },
+  "hostedContinuation": {
+    "checkedAt": "2026-10-09T19:34:11.642Z",
+    "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+    "version": "016ae399-bd77-4689-b9ee-b5ffd9308532",
+    "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+    "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+    "receipt": "HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md",
+    "nativeUi": "acceptance-20261009/card-media-ui.json",
+    "preservation": "acceptance-20261009/card-media-hosted-preservation.json",
+    "productionUpgradeDeployed": false,
+    "scope": "Current protected Worker exact data preservation, assets and native provider gallery cover. Earlier fbc normal client settings/export/favorite restart retain their original runtime identity."
   }
 }

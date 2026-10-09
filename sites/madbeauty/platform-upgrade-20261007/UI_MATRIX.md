@@ -171,3 +171,8 @@ Actual owner new-client creation with committed reply loss, Enter pending, reloa
 ## Directory210 / central controls
 
 Actual taxonomy aliases Enter save/r1, per-org legacy conversion/repeat, editor Escape focus, metrics13 events and favorite Space/reload checked accepted. Metrics320/390/820/1440 all viewed/measured; taxonomy dialog390 and favorite390 viewed. Evidence directory-globals210-* and ACCEPTANCE210. Table/document widths equal scrollWidths; workspace navigation remains intentionally scrollable. Archived favorite/outage and concurrent taxonomy stale/error UI remain applicable/unverified despite Node coverage. Renderer composition is otherwise unchanged.
+
+
+## Hosted city/customer/card continuation — 2026-10-09
+
+[HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md](HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md): fbc hosted guest 103 miestų / 257 katalogo įrašų (258 su „Visos paslaugos“), klaviatūros tattoo/Palanga pasirinkimas ir 14 miesto kategorijų; normalus kliento preferences save/reload/restore, actual JSON download ir favorite add/list/source restart. Naujas1ba hosted desktop1280/mobile390 patvirtintos galerijos cover bei normalus favorite removal; separate Node8852 real-adapter no-photo desktop1280×720/mobile390×900. Native DOM dimensions ir screenshot matmenys saugomi atskirai. Source/target prieš-po naujo kodo leidimo išliko tiksliai vienodi. Production4db nepakito. Šie named keliai nepriskiria naujo runtime restart, inbox, realaus teikėjo, negrįžtamo trynimo ar canonical full-upgrade priėmimo.

@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-09T11:39:39.981Z",
+  "status": "PASS_LOCAL_CALENDAR_AND_RELEASE",
+  "articlePlans": 295,
+  "preparedGuides": 35,
+  "unwritten": 260,
+  "distinctFuturePlanInstants": 292,
+  "exactHistoricalGuidesPreserved": 3,
+  "approvedPackagePages": 39,
+  "verifiedAssetBytes": 180,
+  "beforeAtProjectedStates": 64,
+  "oneNewGuidePerPreparedInstant": true,
+  "rootBeforeChild": true,
+  "DST": true,
+  "futureCanonicalExcludedFromSitemapAndLlmOutputs": true,
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "notAccepted": [
+    "Production deployment",
+    "Remaining260 unwritten guide bodies and assets",
+    "Specialist reviews not already performed",
+    "Google indexing or visibility"
+  ]
+}

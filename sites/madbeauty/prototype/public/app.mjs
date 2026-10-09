@@ -103,9 +103,10 @@ async function render(){
   const h1=$('#main h1')?.textContent||'Madbeauty';document.title=h1+' · Madbeauty';
   const contentPage=ctx.content?.pages.find(p=>'/'+p.slug===path||!p.slug&&path==='/');
   syncSharing(document,contentPage?.sharing);
-  document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>s.remove());if(contentPage?.schema&&!path.startsWith('/paslaugos')){const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(contentPage.schema).replace(/</g,'\\u003c');document.head.append(script);}
-  $('meta[name="description"]').content=contentPage?.description||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';syncCanonical(document,contentPage?.url||CATALOGUE_ORIGIN+location.pathname);
-  $('meta[name="robots"]').content=!boot.privatePrototype&&!location.search&&!path.startsWith('/paslaugos')&&(contentPage||ctx.currentProfile?.approved||trustPages[path])?'index,follow':'noindex,follow';saveUI();
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>s.remove());if(!ctx.temporaryTest&&contentPage?.schema&&!path.startsWith('/paslaugos')){const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(contentPage.schema).replace(/</g,'\\u003c');document.head.append(script);}
+  $('meta[name="description"]').content=contentPage?.description||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';
+  if(ctx.temporaryTest)document.querySelectorAll('link[rel="canonical"]').forEach(el=>el.remove());else syncCanonical(document,contentPage?.url||CATALOGUE_ORIGIN+location.pathname);
+  $('meta[name="robots"]').content=ctx.temporaryTest?'noindex,nofollow':!boot.privatePrototype&&!location.search&&!path.startsWith('/paslaugos')&&(contentPage||ctx.currentProfile?.approved||trustPages[path])?'index,follow':'noindex,follow';saveUI();
 }
 async function selectRole(role,organizationId='demo-org-0',clientId='demo-client-0',target=null){if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);state.session={role,organizationId,clientId};state.booking=null;saveUI();await navigate(target||({customer:'/paskyra/vizitai',professional:'/meistrui',operator:'/operatorius'})[role]||'/');}
 async function beginBooking(id,candidate=null,practitionerId=null){

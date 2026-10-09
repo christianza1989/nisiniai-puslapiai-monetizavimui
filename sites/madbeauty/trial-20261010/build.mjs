@@ -10,6 +10,7 @@ await mkdir(output,{recursive:true});
 const receipt=JSON.parse(await readFile(path.join(site,'cloudflare/output/content-release-receipt.json')));
 if(receipt.packageSha256!=='98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2')throw Error('Current reviewed content edition required');
 await cp(path.join(site,'cloudflare/output/assets-release'),assets,{recursive:true});
+await copyFile(path.join(site,'prototype/public/app.mjs'),path.join(assets,'app.mjs'));
 const manifest=JSON.parse(await readFile(path.join(site,'prototype/public/app-media.json')));
 const publicManifest={assets:manifest.assets.map(({id,alt,variants})=>({id,alt,variants}))};
 const categories=JSON.parse(await readFile(path.join(site,'prototype/public/media.json')));

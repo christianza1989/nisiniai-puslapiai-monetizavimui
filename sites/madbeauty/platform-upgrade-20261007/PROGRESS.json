@@ -718,5 +718,16 @@
     "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/48",
     "scope": "Separately authorized dates only, full upgrade not activated"
   },
-  "candidatePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511"
+  "candidatePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "nextContentBatch": {
+    "producerThreadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
+    "selectionPath": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next30-20261009/sites/madbeauty/content-next30-20261009/SELECTION.json",
+    "selectionSha256": "522f172c2ec8b5e62e5826dfe14538b42fe7c2d22061fc86431634d7cffebb67",
+    "status": "SELECTED_NOT_WRITTEN",
+    "selectedPages": 30,
+    "basePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+    "consumerReceipt": "acceptance-20261009/next30-consumer-baseline.json",
+    "scope": "Separate writer-owned content work. Do not duplicate selected topics or alter its private studio. Planned content is not imported, approved or deployed; it is not a new full-upgrade completion prerequisite.",
+    "next": "On exact immutable handoff, verify preserved prior pages/media/dates and actual new revision-bound reviews; consume separately on live b7/core63 and upgrade3c16/corec7. Reconcile actual baseline and publication/native/hosted/canonical/provider gates for any separately authorized content release. Old PR48 deployment guards must not be replayed for a different package."
+  }
 }

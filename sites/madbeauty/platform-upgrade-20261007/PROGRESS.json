@@ -6,7 +6,7 @@
   "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
   "productionUpgradeDeployed": false,
   "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
-  "productionReadOnlyCheck": "Separate authorized content-only next19 release1de389a7 accepted2026-10-09: unchangedruntimeb7/core63/package320a/original2faf-v1 and provider configuration. Full upgrade remains not deployed. Historical date-only4db receipt retained.",
+  "productionReadOnlyCheck": "Independent authorized autonomous article release4e43bd2d accepted2026-10-09 on unchanged incumbentb7/core63/package98882a2d/originalnamespace2faf-v1; provider configuration equality passed. Full backend upgrade remains not deployed; prior1de/4db proofs retained.",
   "checkpoints": [
     {
       "name": "catalogue-offer-search-single-booking",
@@ -452,6 +452,17 @@
       "hostedVersion": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
       "receipt": "CONTENT_NEXT19_ACCEPTANCE.md",
       "remaining": "Full platform factual pilot/inbox/retention prerequisites and final canonical full-release acceptance remain."
+    },
+    {
+      "name": "autonomous-editorial-next11-canonical-release-and-candidate",
+      "state": "accepted-named-scopes",
+      "publicationStates": 124,
+      "assets": 459,
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+      "hostedVersion": "cb9fda75-dd22-4a1d-acc6-b058bd9b5fed",
+      "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md",
+      "remaining": "Full platform real-provider/inbox/retention facts and final canonical full-backend acceptance remain separate."
     }
   ],
   "tasks": [
@@ -749,16 +760,16 @@
     "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/48",
     "scope": "Separately authorized dates only, full upgrade not activated"
   },
-  "candidatePackageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+  "candidatePackageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
   "nextContentBatch": {
     "producerThreadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
     "selectionPath": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next30-20261009/sites/madbeauty/content-next30-20261009/SELECTION.json",
     "selectionSha256": "522f172c2ec8b5e62e5826dfe14538b42fe7c2d22061fc86431634d7cffebb67",
-    "status": "APPROVED_19_SCHEDULED_CONTENT_ONLY_DEPLOYED_11_SPECIALIST_PENDING",
+    "status": "ALL_30_AGENT_REVIEWED_SCHEDULED_CONTENT_ONLY_DEPLOYED",
     "selectedPages": 30,
     "basePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
-    "consumerReceipt": "acceptance-20261009/content-next19-production.json",
-    "scope": "Writer-owned30draft batch:19actual revision-bound approved guides admitted and scheduled independently on incumbent production runtime;11expert-gated drafts excluded. Full platform upgrade remains incomplete/not deployed.",
+    "consumerReceipt": "acceptance-20261009/autonomous-production.json",
+    "scope": "All30 actual next30 drafts now reviewed and scheduled:19 via historical PR55,11 via autonomous policy PR57. Mandatory human specialist signatures removed by direct owner instruction. Next60 work is outside this package.",
     "next": "Acknowledge actual content-only receipt to writer; preserve old snapshots and dates. Any next60 handoff is separately reviewed; unwritten plans do not enter assets or add a full-upgrade prerequisite.",
     "catalogueTargetsReceipt": "acceptance-20261009/live-content-targets.json",
     "writerReportedDrafts": {
@@ -767,12 +778,12 @@
       "source": "madbeauty turinys latest commentary: all 30 native mobile/desktop previews checked. No immutable consumer handoff, editorial approval or admission inferred."
     },
     "writtenDrafts": 30,
-    "admittedNewGuides": 19,
-    "specialistPendingDrafts": 11,
-    "packageSource": "4afef698d7ba6bdc7f9269a20855b8bf3a0a5eef",
-    "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
-    "productionVersion": "1de389a7-3f36-44f5-ad57-bb3a457f2146",
-    "consumerReceiptSha256": "63af4f4c940367a2ee018f67a6d5022f973231887e2c154c157825566764ebeb"
+    "admittedNewGuides": 30,
+    "specialistPendingDrafts": 0,
+    "packageSource": "c7c3aeeb95c5abc625317560642ebe36f311673f",
+    "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+    "productionVersion": "4e43bd2d-e5ea-491f-ae3e-ea74d260fbe9",
+    "consumerReceiptSha256": "8a2a72e8ed3a669e47b6289e4b94723662b59f2b6189e0be92361e5c6d221ac8"
   },
   "catalogueContinuation": {
     "checkedAt": "2026-10-09T18:54:37.287Z",
@@ -875,24 +886,58 @@
     "scope": "Current protected Worker exact data preservation, assets and native provider gallery cover. Earlier fbc normal client settings/export/favorite restart retain their original runtime identity."
   },
   "contentContinuation": {
-    "checkedAt": "2026-10-09T19:48:39.565Z",
+    "checkedAt": "2026-10-09T20:20:20.159Z",
     "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
     "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
-    "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+    "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
     "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
-    "nativeArtifactSha256": "8e87a0c9a0fe2aea2613c0e79a3ddee41f8c1d4af855a0794aa42f4e9b041223",
-    "hostedArtifactSha256": "23133fb5f37e066322d8b904837a388eedf0d0a3249c9a4c80972c7e5fd6ada2",
-    "hostedVersion": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
-    "assets": 404,
-    "publicationStates": 102,
+    "nativeArtifactSha256": "7f4e8583e6b39ba2044ec3c20b6424bc9c91a18a89b6f969ea448e0e069c1fc4",
+    "hostedArtifactSha256": "3f8fac816c1c6b4b01a0e149948df84ecca4e7ccc0349f5e6ee1a8f538e5a966",
+    "hostedVersion": "cb9fda75-dd22-4a1d-acc6-b058bd9b5fed",
+    "assets": 459,
+    "publicationStates": 124,
     "currentPages": 7,
-    "futurePages": 51,
-    "receipt": "CONTENT_NEXT19_ACCEPTANCE.md",
-    "native": "acceptance-20261009/content-next19-candidate-calendar.json",
-    "hostedPreservation": "acceptance-20261009/content-next19-hosted-preservation.json",
-    "hostedHttp": "acceptance-20261009/content-next19-hosted-http.json",
-    "productionReceipt": "acceptance-20261009/content-next19-production.json",
+    "futurePages": 62,
+    "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md",
+    "native": "acceptance-20261009/autonomous-candidate-calendar.json",
+    "hostedPreservation": "acceptance-20261009/autonomous-hosted-preservation.json",
+    "hostedHttp": "acceptance-20261009/autonomous-hosted-http.json",
+    "productionReceipt": "acceptance-20261009/autonomous-production.json",
     "productionUpgradeDeployed": false,
-    "scope": "Exact320a edition admitted on unchanged1ba/corec7 candidate;102native publication states, hosted404assets/protected gates/empty-city selection and exact synthetic source-target-media-mail preservation. Old016/bb andfbc native UI receipts retain their tested identities. Independent content-only production1de usesb7/core63, not1ba."
+    "scope": "Exact69-page edition on unchanged1ba/corec7 candidate. Actual124native states, hosted459assets/62future and exact source-target-media-mail preservation. Old native UI proof identities remain unchanged. Canonical content-only4e usesb7/core63, not1ba."
+  },
+  "contentContinuationHistory": [
+    {
+      "checkedAt": "2026-10-09T19:48:39.565Z",
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+      "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+      "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+      "nativeArtifactSha256": "8e87a0c9a0fe2aea2613c0e79a3ddee41f8c1d4af855a0794aa42f4e9b041223",
+      "hostedArtifactSha256": "23133fb5f37e066322d8b904837a388eedf0d0a3249c9a4c80972c7e5fd6ada2",
+      "hostedVersion": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
+      "assets": 404,
+      "publicationStates": 102,
+      "currentPages": 7,
+      "futurePages": 51,
+      "receipt": "CONTENT_NEXT19_ACCEPTANCE.md",
+      "native": "acceptance-20261009/content-next19-candidate-calendar.json",
+      "hostedPreservation": "acceptance-20261009/content-next19-hosted-preservation.json",
+      "hostedHttp": "acceptance-20261009/content-next19-hosted-http.json",
+      "productionReceipt": "acceptance-20261009/content-next19-production.json",
+      "productionUpgradeDeployed": false,
+      "scope": "Exact320a edition admitted on unchanged1ba/corec7 candidate;102native publication states, hosted404assets/protected gates/empty-city selection and exact synthetic source-target-media-mail preservation. Old016/bb andfbc native UI receipts retain their tested identities. Independent content-only production1de usesb7/core63, not1ba."
+    }
+  ],
+  "autonomousEditorial": {
+    "policy": "../EDITORIAL_POLICY.json",
+    "mode": "autonomous-agent",
+    "humanSpecialistReviewRequired": false,
+    "policyAuthority": "2026-10-09 direct owner request",
+    "workflowTests": 6,
+    "workflowTestsPass": 6,
+    "actualNewGuides": 11,
+    "remainingHumanSpecialistArticleReviews": 0,
+    "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md"
   }
 }

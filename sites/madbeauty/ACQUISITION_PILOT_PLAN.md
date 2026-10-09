@@ -8,7 +8,7 @@ Papildomas savininko pavedimas įgyvendino uždarą Codex CLI laiškų kalibravi
 
 Agentas ieško tinkamų grožio paslaugų teikėjų, kuriems gali būti naudingas prisijungimas prie Madbeauty, ir fiksuoja jų tikrą atsakymą. Viešai rastas verslas yra kandidatas, ne žmogus, kuris jau nori prisijungti.
 
-Savininko 2026-10-10 patikslinimas: platforma apims visas grožio paslaugas; ankstesnis nagų paslaugų fokusas [BUSINESS](BUSINESS.md) pasenęs. Ieškome įvairių grožio sričių meistrų ir salonų. Tikslų paslaugų sąrašą sinchronizuoti su aktualiu platformos katalogu, ne išgalvoti iš seno aprašo. Siūloma pirmoji geografinė banga — Vilnius, bet visos platformos grožio kategorijos. Paieškos ir ataskaitų segmentas `paslauga × vietovė`, kad matytume kurioms kategorijoms pasiūlymas veikia. Rolė `provider`, tikslas `provider_signup`. Klientų vizitų paieška yra atskira vėlesnė kampanija, kuriai reikės realios pasiūlos.
+Savininko 2026-10-10 patikslinimas: platforma apims visas grožio paslaugas; ankstesnis nagų paslaugų fokusas [BUSINESS](BUSINESS.md) pasenęs. Ieškome įvairių grožio sričių meistrų ir salonų. Tikslų paslaugų sąrašą sinchronizuoti su aktualiu platformos katalogu, ne išgalvoti iš seno aprašo. Naujas aiškus pavedimas — **visa Lietuva**, todėl ankstesnis Vilniaus pirmos bangos pasiūlymas pakeistas. Paieškos ir ataskaitų segmentas `paslauga × vietovė`, rotuojamas pagal tikrą platformos kategorijų/miestų registrą; maži dienos limitai neriboja rinkos vienu miestu. Rolė `provider`, tikslas `provider_signup`. Klientų vizitų paieška yra atskira vėlesnė kampanija, kuriai reikės realios pasiūlos.
 
 Dabartinis verslo pasiūlymas: nemokamas piloto profilis ir naudojimas, platformos komisinis 0 €. Procedūros mokėjimas teikėjui nėra Madbeauty pajamos. Nežadėti klientų skaičiaus, papildomų pajamų, reitingo ar patvirtinto vizito. Būsimo premium kainos ir funkcijos nepridedamos prie kvietimo. Prieš siuntimą patvirtinti aktualų pasiūlymą ir tikrai hosted veikiančias profilio / registracijos funkcijas.
 
@@ -20,7 +20,7 @@ CTA: vienas realus žingsnis — susipažinti su piloto sąlygomis ir pradėti t
 |---|---|
 | site_id / objective / role | madbeauty / provider_signup / provider |
 | enabled / pradinis mode | false / research_only |
-| geography / categories / language | Pirma siūloma banga Vilnius, LT / visos aktualaus platformos katalogo grožio kategorijos / lt |
+| geography / categories / language | Visa Lietuva / visos aktualaus platformos katalogo grožio kategorijos / lt |
 | schedule | Darbo dienomis 09:00 Europe/Vilnius; due koordinatorius kas 5 min. |
 | primary discovery | Treg serper.web.search → oficialaus šaltinio patikra |
 | initial reviewed candidates | Iki 10 naujų kandidatų per darbo dieną |
@@ -37,7 +37,7 @@ Tyrėjas turi patvirtinti tikrą grožio paslaugą, jos atitikmenį aktualiame p
 
 Juridinis salonas su tinkamai pagrįstu kanalu gali patekti į peržiūrimą kontaktavimo eilę, jei tai leidžia aktuali politika ir transportas. Savarankiškas meistras / fizinis asmuo ar nežinomas statusas lieka tyrimo/juodraščio stadijoje iki tinkamo sutikimo/pagrindo. Alternatyva: taisyklių leidžiamas bendras kvietimas profesinėje bendruomenėje, savanoriška registracija ir sutiktas follow-up. Nebandyti apeiti ribojimų siųsdami tą pačią reklamą socialiniu DM. [Teisiniai ir transporto vartai](../../agent-business-core/acquisition-plan/ARCHITECTURE.md#6-siuntimas-atsakymai-ir-teisė-kontaktuoti).
 
-Nepatenka į pirmą bangą: vien grožio priemonių parduotuvės, mokymų pardavėjai be realios platformoje palaikomos grožio paslaugos, kitos bangos miesto teikėjai, nebeveikiantys salonai, duplikatai, jau atsisakę, nežinomo contact policy gavėjai. Jokio privataus grupės narių sąrašo rinkimo.
+Nepatenka į pirmą bangą: vien grožio priemonių parduotuvės, mokymų pardavėjai be realios platformoje palaikomos grožio paslaugos, už Lietuvos ribų dirbantys teikėjai, nebeveikiantys salonai, duplikatai, jau atsisakę, nežinomo contact policy gavėjai. Jokio privataus grupės narių sąrašo rinkimo.
 
 Juodraščio forma: aiškiai kas rašo ir kas yra Madbeauty; vienas patikrintas tinkamumo faktas; tikras nemokamo piloto pasiūlymas; vienas CTA; lengvas nemokamas atsisakymas. Trūkstant fakto nekurti „pastebėjome jūsų puikius darbus“ ar kitokio išgalvoto personalizavimo. Savininkas priima pirmos bangos konkrečius gavėjus ir tekstus operatoriaus GUI.
 

@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "Madbeauty and Verslomatika sessions have no executable shared invitation, lifecycle or test-transport contract; separate copies could report signup as active or accept replayed cross-tenant callbacks.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/contracts.py at 87fcf4c34a4e1b1dab488bb193a1c1716bb51627 only prepares drafts",
+    "Madbeauty adapter owner requested a versioned invitation/event/capture handshake in authorized coordination",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/interfaces.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/transport_auth.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_interfaces.py",
+    "agent-business-core/runtime/scripts/acquisition_contracts.py",
+    "agent-business-core/contracts/acquisition-v1/README.md",
+    "agent-business-core/contracts/acquisition-v1/server-auth.mjs",
+    "agent-business-core/contracts/acquisition-v1/auth.test.mjs",
+    "agent-business-core/contracts/acquisition-v1/schemas.json",
+    "agent-business-core/contracts/acquisition-v1/signature-vector.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this interface package and unmount any later adapter; retain private event receipts and pause its campaign. No existing transactional channel or foreign session source is modified.",
+  "id": "upgrade-3b00597d-b1a6-4745-8925-4348b3528c36",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "87fcf4c34a4e1b1dab488bb193a1c1716bb51627",
+  "createdAt": "2026-10-09T23:35:20.429Z"
+}

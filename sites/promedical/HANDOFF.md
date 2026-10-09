@@ -1,6 +1,6 @@
 # Promedical local source and evidence handoff
 
-2026-10-09. The owner resumed after a safe reboot checkpoint. Implemented catalogue and independent local checks are complete; the domain/operation and several manual acceptance gates remain unverified. No live WordPress, DNS, DB or mail system was changed.
+2026-10-09. The owner resumed after a safe reboot checkpoint. Implemented catalogue and independent local checks are complete; production launch and several manual acceptance gates remain unverified. At the original catalogue checkpoint no live WordPress, DNS, DB or mail system was changed. The owner-authorized later domain preparation is recorded separately in DNS_HANDOFF.md.
 
 ## Source and review
 
@@ -28,6 +28,16 @@ Final exact staged safety PASS38added/modified files/9,663,324bytes/0findings be
 Nine local unknowns: D1broader visual benchmark, F3all category-alias search-intent consolidation, R2/S2real200%browser enlargement, U2/U3SMTPacceptance/realINBOX, W1/W2/W4controller/basis/retention/processors/storageconsent. All10launch and2operations criteria remain unverified. No10/10/local-ready/domain-ready/WCAG certification/clinical sign-off or measured demand is claimed. The owner requested public Promedical brand/email/phone without legal name; do not ask the same question again or invent a company.
 
 ## Local continuation
+
+### Full owner-requested topical authority plan
+
+The subsequent owner request explicitly expanded the plan to at least 50 articles and authorized a one-time Treg research budget up to 0.40 USD. [CONTENT_PLAN.md](CONTENT_PLAN.md) now contains 57 distinct editorial jobs across 11 thematic groups; 3 guides are already approved locally, 54 are empty private plans (8 earlier plans preserved plus 46 additions). [TOPICAL_ANALYSIS.md](TOPICAL_ANALYSIS.md) records the actual analysis, differentiated reader assets, query-to-URL decisions, scope and measurement limits. This full plan supersedes the smaller follow-up below; its historical observations remain historical.
+
+62 paid calls settled at 0.33176 USD with zero paid retries/unknown settlement/reserved cost. Actual results: 46 LT mobile/Android SERP attempts, 45 observed and one provider error; 172 Ads volume rows (5 positive, 167 unavailable, no explicit zero); 4 competitor exports/337 bounded rows; 3 related-keyword calls; 4 questions across ChatGPT/Gemini, 8 Lithuanian answers with effective geography unconfirmed. GEO is unsupported_market for current-market visibility, not a market-share measurement. Backlinks/first-party launch/indexing/lead outcomes were not measured.
+
+Private request/response MCP exports, call IDs, ledger, monthly series and normalized evidence are under content-studio/data/promedical-topical-research-20261009. Canonical research import has 89 observations and evidence SHA-256 42dd50f6d7a0a8c7a9f0eaa53a73c00b538948cb627594a4aa06a2e956744dde. Rich map remains orchestration documentation; no unsupported planningBrief/schema/importer was introduced. Native supported fields plus current seoResearch were checked in 54 assembled prompts without CLI generation. New schema-compatible batches are 24 + 22; the earlier 8-page JSON is preserved.
+
+The 46 additions use existing mergePlan/editPage APIs. All 1,856 approved current/published revisions, approval snapshots and dates remain unchanged; existing eight plan IDs/reasons/sourceQueries/dates remain unchanged. Native inventory is 1,910 with 54 private plans; public projection remains 1,856 and immutable public package hash remains 32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6. All 20 other registered Studio site fingerprints matched the baseline. No new article text/media, approvals, release, deployment or automation was produced. Preparation targets run 2026-10-16 through 2027-03-22 within the existing horizon; these are planning assumptions, not automatic publication dates or a measured seasonal cycle. F3 full category-alias intent consolidation and prior local/production acceptance boundaries remain open.
 
 ### Owner-requested SEO/GEO planning follow-up
 

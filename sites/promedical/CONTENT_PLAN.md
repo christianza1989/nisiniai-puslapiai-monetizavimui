@@ -1,153 +1,975 @@
-# Promedical SEO / GEO turinio planas
+# Promedical: 57 straipsnių teminis žemėlapis
 
-2026-10-09. promedical.lt, LT / lt-LT, Europe/Vilnius. Skirta ligoninių, poliklinikų, slaugos ir kitų medicinos įstaigų pirkėjams. Artimiausias naudingas rezultatas – konkrečios Klaro įrangos modelių, kiekių ir komplektacijos užklausa; mokamas rezultatas – įrangos užsakymas. Kontaktai sales@promedical.lt, +370 686 88369. Viešas prekės ženklas / autorius Promedical, be išgalvoto juridinio asmens ar eksperto.
+2026-10-09 · Lietuvos gydymo įstaigų pirkimų ir ūkio darbuotojams · Treg tyrimas.
 
-## SEO ir GEO būsena
+**57 temos, 11 teminių grupių: 3 jau parengti ir lokaliai patvirtinti gidai, 54 planuojami straipsniai.** Ankstesnės 8 užduotys išsaugotos; pridėtos 46 naujos. Tai visas redakcinis žemėlapis, o ne 57 jau parašyti ar publikuoti straipsniai ir ne pasiektas reitingo rodiklis.
 
-| Sritis | Atlikta | Praktinė riba |
-| --- | --- | --- |
-| Techninis SEO | Canonical, title/description, H1, kalba, sitemap/robots, breadcrumbs, tikrą matomą turinį atitinkančios Product/Article/Organization schemos | Patikrinta vietinėje versijoje: [SEO_REGRESSION.json](SEO_REGRESSION.json), [SITE_RENDERED.json](SITE_RENDERED.json). |
-| Turinys | 1 408 realūs modeliai, 437 kategorijos, 34 šakos, 11 informacinių puslapių, tarp jų 3 gidai | 1 856 patvirtintos revizijos su tikrais parametrais, nuotraukomis ir šaltiniais; [CATALOGUE_IMPORT.md](CATALOGUE_IMPORT.md). |
-| GEO pagrindas | Matomi atsakymai, šaltiniai, autoriaus/metodikos puslapis, patvirtinto turinio LLM išvestys | llms.txt yra papildoma skaitymo priemonė. [Google gairės](https://developers.google.com/search/docs/appearance/ai-features) nereikalauja specialios AI bylos ar schemos ir negarantuoja indeksavimo / citavimo. |
-| Viešas matavimas | Naujoji versija dar neįdiegta viešame domene | GSC / GA4 prieiga nenustatyta; indeksavimas, pozicijos, organinės užklausos ir AI citavimas nežinomi, ne nulis. SMTP / tikras INBOX atskiras paleidimo vartas. |
-| Kategorijų ketinimų auditas | Visas inventorius sutapatintas su realiais ID / revizijomis | Neatliktas visų 437 kategorijų LT Google sinonimų / ketinimų auditas. A–Z F3 lieka UNVERIFIED; panašus vertimas savaime nėra sujungimo pagrindas. |
+Analizė ir ribos: [TOPICAL_ANALYSIS.md](TOPICAL_ANALYSIS.md). Tikslūs 57 užduočių, 172 frazių → URL ir šaltinių duomenys: [CONTENT_MAP.json](CONTENT_MAP.json). Patikra: [CONTENT_PLAN_VERIFICATION.json](CONTENT_PLAN_VERIFICATION.json).
 
-Tai vietinio įgyvendinimo ir planavimo būsena. [SITE_COMPLETION.json](SITE_COMPLETION.json) tebėra NOT_COMPLETE dėl neišspręstų audito vartų; turinio planas jų neuždaro.
+## Ką turi duoti šis turinys
 
-## Tyrimas ir svarbiausi sprendimai
+Padėti įstaigai pasirinkti tikrą Klaro modelį, suderinti matmenis bei komplektaciją ir pateikti palyginamą užklausą. Katalogas lieka komercinių kategorijų bei konkrečių modelių paskirties vieta. Gidai atsako į sprendimus, kurių kategorijų sąrašas neišsprendžia: kas įeina į komplektą, kas tarpusavyje dera, ką išmatuoti, kokį dokumentą patikrinti.
 
-Atliktos 8 nemokamos Treg `tinyfish.web.search` paieškos: 4 kontekstinės ir 4 tikslios pagrindinės („medicininiai vežimėliai“, „procedūriniai vežimėliai“, „ISO modulinė sistema“, „Mayo staliukas“). Faktinė kaina 0 USD. Atsakymai nepatvirtina efektyvaus Lithuania / lt filtro ar Google variklio: tai GLOBAL/und šaltinių / puslapio formato duomenys, ne LT Google pozicijos ar apimtis. Neužklaustos variacijos žemėlapyje pažymėtos; apimtis visur null.
+Kiekvieno naujo straipsnio nauda – užpildoma patikros lentelė, komentaruotas tikras modelių palyginimas ar iliustracinė sprendimo schema. Šiuos ruošinius ir atitinkamą vaizdą reikia realiai parengti rašant; planas jų nežada kaip jau veikiančių atsisiuntimų. Kontaktas užklausai: sales@promedical.lt, +370 686 88369.
 
-Pirminiai šaltiniai perskaityti, raw / call IDs / laikas / kainos / SHA saugomi privačiai. 27 stebėjimų SEO bundle importuotas kanoniniu `seo-research.mjs`; aktualūs source/crawl, keywords/serp/backlinks/geo/analytics neišmatuoti arba neprijungti. Tyrimo formato freshUntil 2026-11-09; konkretaus modelio ar teisinio teiginio šaltiniai tikrinami prieš tekstą. CPO tiesioginis HTTP bandymas „terminated“ išsaugotas kaip failed; atskiras tikras web įrankio eksportas saugomas atskirai, jo nevadiname tiesioginio HTTP sėkme.
+## Teminės grupės
 
-| Sprendimas | Perskaitytas pagrindas | Pasekmė planui |
-| --- | --- | --- |
-| Stiprinti katalogus ir paskirties pasirinkimą | plan-exact-0/1, [Rehastar kategorija](https://www.rehastar.com/medicinai/multifunkciniai-vezimeliai/proceduriniai-vezimeliai-su-lentynomis), [Diamedica paskirties puslapis](https://www.diamedica.lt/produktas/produktai/medicinine-iranga-ir-priemones/Vaistu-skyrimui-ir-slaugai/) | Patvirtinta modelio / komplektacijos funkcija; bendri apibrėžimų straipsniai negauna pirmo prioriteto. Konkurentų savybių neperkeliame į Klaro. |
-| Atskiras Mayo palyginimo gidas | plan-exact-3, plan-search-2, [Klaro instrumentų šeima](https://www.klaro.cz/en/kategorie-instrumentacni-voziky), [Ami produkto puslapis](https://www.amis.lt/produktas/produktai/medicinos-iranga/anestezijos-ir-operacines-iranga/mayo-staliukas/) | Katalogas randa vieną iš 8 tikrų Klaro modelių; gidas padės palyginti jų reguliavimą, padėklą ir važiuoklę pagal Klaro dokumentus. |
-| ISO aiškiai medicininio laikymo kontekste | plan-exact-2 / plan-search-1, [Klaro ISO sistema](https://www.klaro.cz/en/iso-modul-system) | Bendro termino rezultatai turi kitų prasmių. Esamą gidą papildyti krepšio perdavimo keliu; nekurti dar vieno panašaus gido. |
-| Neutralūs palyginimo ruošiniai | [CPO baldų katalogas](https://katalogas.cpo.lt/kategorijos/F23-75-KMB/), [VPT priemonių indeksas](https://vpt.lrv.lt/lt/naujienos-3/pagalbines-priemones-pirkimu-vykdytojams/) | Oficialūs pavyzdžiai padeda parinkti laukus, bet jų tolerancijos, garantija ar sutartis nėra mūsų pažadas ar universali teisės išvada. |
-| Modelio ir dokumento tapatybė | [Klaro instrukcijų paieška](https://www.klaro.cz/en/navody-pdf-2186), [medžiagų paaiškinimas](https://www.klaro.cz/en/druhy-nerezove-oceli) | Dalies identifikavimas naudingas dabar; valymo dokumentų gidas priklauso nuo tikros konkretaus modelio instrukcijos, be universalių režimų. |
+| Grupė | Straipsnių | Pagrindinis gidas |
+|---|---:|---|
+| Vežimėlių pasirinkimas | 10 | [Kaip pasirinkti medicininį vežimėlį įstaigai](#tema-1) |
+| ISO modulių sistema | 6 | [ISO modulių sistema: kaip suderinti laikymą ir transportavimą](#tema-11) |
+| Medicininės spintos | 5 | [Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga](#tema-17) |
+| Darbo vietos ir baldų planavimas | 5 | [Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai](#tema-22) |
+| Stovai ir laikikliai | 4 | [Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas](#tema-27) |
+| Skalbiniai ir atliekų įranga | 5 | [Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją](#tema-31) |
+| Laikymas ir logistika | 5 | [Medicinos priemonių laikymo ir transportavimo planas](#tema-36) |
+| Sterilizavimo skyriaus logistika | 3 | [Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas](#tema-41) |
+| Priežiūra ir dokumentai | 4 | [Medicininių baldų priežiūros planas pagal gamintojo dokumentus](#tema-44) |
+| Pirkimas ir priėmimas | 7 | [Kaip parengti įrangos pirkimo užklausą gydymo įstaigai](#tema-48) |
+| Patalpų paskirties sprendimai | 3 | [Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai](#tema-22) |
 
-## Užklausa → puslapis
+Grupė „patalpos“ turi tris taikymo scenarijus ir remiasi bendru baldų planavimo gidu, todėl 11 grupių nereikalauja 11 besidubliuojančių pagrindinių straipsnių.
 
-[CONTENT_MAP.json](CONTENT_MAP.json) saugo visą 34 šakų, 21 papildomo klausimo ir 8 naujų gidų žemėlapį su actual page IDs, pilnais dabartinės / patvirtintos revizijos hash, įrodymų būsenomis ir veiksmais. Tai pilna savininko patvirtinto katalogo apimtis, ne išmatuotas raktažodžių sąrašas.
+```mermaid
+graph TD
+  H["Gidų centras"]
+  H --> carts["Vežimėlių pasirinkimas · 10"]
+  H --> iso["ISO modulių sistema · 6"]
+  H --> cabinets["Medicininės spintos · 5"]
+  H --> workplace["Darbo vietos ir baldų planavimas · 5"]
+  H --> stands["Stovai ir laikikliai · 4"]
+  H --> laundry["Skalbiniai ir atliekų įranga · 5"]
+  H --> storage["Laikymas ir logistika · 5"]
+  H --> sterile["Sterilizavimo skyriaus logistika · 3"]
+  H --> care["Priežiūra ir dokumentai · 4"]
+  H --> buying["Pirkimas ir priėmimas · 7"]
+  H --> rooms["Patalpų paskirties sprendimai · 3"]
+```
 
-| Klausimas / skaitytojo sprendimas | Kanoninis tikslas | Veiksmas |
-| --- | --- | --- |
-| Klaro pristatymas / katalogas | / ir /produktai | Išlaikyti skirtingą pristatymo ir konkretaus modelio radimo darbą. |
-| Medicininiai vežimėliai | /kategorijos/zakladni-voziky | Papildyti šeimų atranką ir paskirties nuorodas; aiškus priemonių, ne pacientų mobilumo, kontekstas. |
-| Procedūriniai, vaistų, tvarstymo, anesteziologiniai vežimėliai | /kategorijos/voziky-s-prislusenstvim → tikros BASIC / PROFI paskirties šakos | Pasirinkimo blokai ir šeimų nuorodos; naujų sinonimo URL nereikia. |
-| Kaip pasirinkti medicininį / procedūrinį vežimėlį; BASIC ar PROFI | /gidai/medicininio-vezimelio-pasirinkimas | Papildyti esamą gidą, sujungti sinoniminius klausimus. |
-| ISO komponentai / moduliniai krepšiai | /kategorijos/iso-modul-system ir /kategorijos/iso-skrine-kose | Tikras modelio pasirinkimas, atskirai nuo sistemos paaiškinimo. |
-| ISO sistema / krepšio perkėlimas / vardinis dydis | /gidai/iso-moduliu-sistema | Papildyti esamą suderinamumo kelią; vardinis matmuo nėra universalaus suderinamumo įrodymas. |
-| Mayo staliukas / instrumentų staliukai | /kategorijos/kategorie-instrumentacni-voziky | Katalogas modeliams; naujas gidas tik palyginimo darbui. |
-| Vežimėlio techninė specifikacija / įrangos pirkimo užklausa | /gidai/irangos-pirkimo-uzklausa | Papildyti esamą neutralų ruošinį; ne dubliuojantis „viešųjų pirkimų“ straipsnis. |
-| Medicininių vežimėlių kaina | /kontaktai ir konkretaus modelio užklausa | Tikras kodų / kiekių / komplektacijos veiksmas; neišgalvoti kainoraščio ar likučių. |
-| Tikslus unikalaus modelio kodas | /produktai/<actual-slug> | Išlaikyti tikro produkto parametrus ir šaltinį. |
-| Klaro PLV150 | /produktai paieška → abu realūs modelių URL | SKU nėra unikalus; įprastas ir specialiai gamintojo pažymėtas įrašai turi skirtingus ID / URL. |
+## Rengimo eilė ir datos
 
-## Visos 34 katalogo šakos
+P1: sprendimai, reikalingi konkrečiai modelio užklausai ir pagrindiniams gidams. P2: suderinamumo, inventoriaus ir taikymo detalės. P3: platesnis planavimas bei naudojimo išlaidų palyginimas. Tai redakcinės svarbos žymos; jos nėra raktažodžių sudėtingumo ar paklausos balai.
 
-P1 – artimiausias komercinis pasirinkimo teksto darbas, P2 – kitas naudingas blokas, P3 – inventoriaus išlaikymas / konkrečių klausimų patikra. Hash čia sutrumpintas skaitymui; pilnas CONTENT_MAP.json. Privatus `all-category-reconciliation.json` sutapatina visas 437 source kategorijas pagal tikras šaltinių nuorodas; nestandartiniai URL neatspėjami. Vienas modelis gali priklausyti kelioms šakoms, todėl šakų modelių skaičiai nėra sudedami kaip unikalūs produktai.
+Nauji pagrindiniai gidai ruošiami prieš priklausomus naujus straipsnius. Ankstesnių 8 planų datos nepakeistos. Naujos datos 2026-10-16–2027-03-22 yra privatūs orientaciniai parengimo terminai; jos neįjungia automatinio rašymo ar publikavimo. Mėnesių istorija nepatvirtino atskiro šios nišos pirkimų sezono, todėl sezoninės progos nepriskirtos.
 
-| Katalogo šaka / pagrindinė užklausa | Kanoninis URL | Prioritetas | Actual page ID / public revision |
-| --- | --- | --- | --- |
-| Gamintojo specialiųjų pasiūlymų asortimentas; „Klaro gamintojo specialiųjų pasiūlymų asortimentas“ | /kategorijos/akcni-nabidky | P3 | 3ebd53df-6425-4459-89c7-efc80aa90517 / cd9e2a8aa75d |
-| Gamyba pagal individualų poreikį; „Klaro individualios gamybos pavyzdžiai“ | /kategorijos/atypicka-vyroba | P3 | 9ae5d5dc-a7a5-4e1f-bb60-e03f5b7953e0 / 92e91341b747 |
-| InfuFlex – sulankstomas infuzijų stovas gelbėjimo tarnyboms ir išvažiuojamųjų paslaugų darbuotojams; „InfuFlex infuzijų stovas“ | /kategorijos/infuflex-page | P3 | f5c15774-f5a8-406d-bd92-8be52105a5da / dfec2ab5e2b8 |
-| ISO modulių sistema; „ISO moduliai medicinos įstaigoms“ | /kategorijos/iso-modul-system | P1 | a37bd56e-e0e1-4642-98c9-380c7fe2fe1a / 490c9cd7c89b |
-| Instrumentų vežimėliai; „Mayo staliukas“ | /kategorijos/kategorie-instrumentacni-voziky | P1 | cb2d6321-e3d3-4af7-ac59-888fcadee878 / 7291f0e43cf5 |
-| Laboratorijos ir vaistinės; „Klaro laboratorijų ir vaistinių įranga“ | /kategorijos/laboratore-a-lekarny | P2 | 9f71457b-2763-4c0a-a5fc-64b37bc9f9c3 / cc6b62ce502b |
-| Skalbinių ir atliekų tvarkymas; „skalbinių ir atliekų vežimėliai“ | /kategorijos/manipulace-s-pradlem-a-odpadem | P1 | 50d9c392-b7f4-4f56-b73e-05c2fd5af502 / 4b77ce9c42cd |
-| Daugiafunkciai vežimėliai; „daugiafunkciai medicininiai vežimėliai“ | /kategorijos/multifunkcni-voziky | P2 | 512d935d-e8db-4769-8a77-9658817709e5 / 17cbaf16629a |
-| Palatų aptarnavimas ir slauga; „Klaro palatų aptarnavimo įranga“ | /kategorijos/obsluha-pokoju | P2 | 6a190b84-5d32-4303-a645-6369d3510966 / 3efbb3765c3f |
-| Vežimėliai su padėklais; „Klaro padėklų vežimėliai“ | /kategorijos/plata | P2 | b70cac62-5b36-42fa-a397-56abdf22675a / c4411f525563 |
-| Informacija; „Klaro naudojimo informacija“ | /kategorijos/pouziti | P3 | 6d22a505-c8fa-4d56-9793-ba473af6ad2f / 7048cce6167b |
-| Vežimėlių priedai; „Klaro vežimėlių priedai“ | /kategorijos/prislusenstvi | P1 | 38c2f68b-715f-496b-85a6-8336af5b1fc0 / 4417b1ffbe13 |
-| Sveikatos priežiūros skaitmenizavimo sprendimai; „Klaro skaitmenizavimo gaminiai“ | /kategorijos/produkty-pro-digitalizaci | P3 | 83bf80e0-8682-4669-85d7-cd9e2674218c / 5ca478c18a5a |
-| Operacinių įranga; „Klaro operacinių įranga“ | /kategorijos/produkty-pro-operacni-saly | P2 | 800e3137-1b0a-4146-8489-1a5abedbc065 / b903bc371e40 |
-| Sterilizavimo įranga; „Klaro sterilizavimo įranga“ | /kategorijos/produkty-pro-sterilizaci | P2 | 5bd3cd49-7d2d-4049-aa87-25816c24057e / c20d48363944 |
-| Triukšmą ir slydimą mažinantys įdėklai; „Klaro padėklų įdėklai“ | /kategorijos/protihlukove-a-protiskluzove-podlozky | P3 | 6e5ac724-77c7-4eb6-b1b2-734aee5ba1f2 / a2652eca1e4d |
-| Stelažai; „medicininiai stelažai“ | /kategorijos/regaly | P2 | ccc9e302-dba5-4962-b42c-405217a11058 / 2850be8a483f |
-| REGO laikymo sistema; „REGO laikymo sistema“ | /kategorijos/rego-cz | P2 | f1961070-587f-4828-bc3e-b7a058c95cda / eeda3a0d6296 |
-| Spintos; „medicininės spintos“ | /kategorijos/skrine | P1 | 8b824a50-5649-467a-bab0-348b50b3f0e1 / 4189705258f9 |
-| Specialios paskirties medicininiai vežimėliai; „specialios paskirties medicininiai vežimėliai“ | /kategorijos/specialni-voziky | P2 | 2e74b9ea-8bf9-4d2d-b59d-190b86da4c73 / 012909010282 |
-| Stovai, laikikliai ir pakabos; „medicininiai stovai ir laikikliai“ | /kategorijos/stojany-a-drzaky | P2 | 3d65fc86-766b-48c2-9963-8ef1e0392bb0 / 0cfeae0075cf |
-| Stalai; „nerūdijančio plieno medicininiai stalai“ | /kategorijos/stoly | P1 | 3913b8f6-c942-4a51-8c68-226fb4d587dc / 3ba002848350 |
-| Atsarginės dalys; „Klaro atsarginės dalys“ | /kategorijos/uklid-nahradni-dily | P1 | 4c81ecf1-beab-41f2-a0ca-c559c14117ba / 9e3cf6c00266 |
-| Valymo įranga; „Klaro valymo įranga“ | /kategorijos/uklidove-vybaveni | P2 | 68a80e72-c334-49aa-b8a1-3ccaba569760 / 49e2cef9e9b9 |
-| Didelės talpos plovimo mašinos; „Klaro didelės talpos plovimo mašinos“ | /kategorijos/velkokapacitni-mycky | P3 | b04f69cb-c4fb-4595-b43b-158ebdad1627 / 9d35e7133ab9 |
-| Kitų paskirčių vežimėliai; „Klaro kitų paskirčių vežimėliai“ | /kategorijos/voziky-do-ostatnich-provozu | P3 | ffe8a7e1-cbeb-4f46-8ecd-899fae156cff / 6a695b23a415 |
-| Vežimėliai su priedais; „procedūriniai vežimėliai“ | /kategorijos/voziky-s-prislusenstvim | P1 | 6733765c-7a6a-46ab-9d24-ffdc63381285 / 2bd1ba0fb966 |
-| Transportavimas ir sandėliavimas; „Klaro transportavimo ir sandėliavimo įranga“ | /kategorijos/vybaveni-pro-manipulaci-a-skladovani | P2 | b324045c-a9cf-4293-86a4-96cf295691ca / f58303c373a9 |
-| Patalpų aptarnavimas ir slauga; „Klaro patalpų aptarnavimo įranga“ | /kategorijos/vybaveni-pro-obsluhu-pokoju | P2 | 4a2d2418-3318-4a8a-af31-84a404ca5e69 / 51d60da12b4c |
-| Didelės talpos plovimo mašinų įranga; „Klaro plovimo mašinų įranga“ | /kategorijos/vybaveni-pro-velkokapacitni-mycky | P3 | 13c50626-aff6-437f-abba-41e0f2651469 / fa9cb7b67fa0 |
-| Didelės talpos plovimo įrenginių priedai; „Klaro plovimo įrenginių priedai“ | /kategorijos/vybaveni-pro-velkokapacitni-mycky-prehled | P3 | b20c1563-e4e0-49fd-8955-772c8d28665e / 1d7e72c5cad4 |
-| Gamintojo išpardavimo asortimentas; „Klaro gamintojo išpardavimo asortimentas“ | /kategorijos/vyprodej-hlavni-menu | P3 | 8ebc04dd-bcf8-43c7-8023-7493b622ee32 / d669ebb364a7 |
-| Moduliniai vežimėliai; „medicininiai vežimėliai“ | /kategorijos/zakladni-voziky | P1 | 0acac5b1-c78e-4621-9f09-aedcab129015 / 525cee411d51 |
-| Medicininiai baldai; „medicininiai baldai“ | /kategorijos/zdravotnicky-nabytek-prehled-hlavni | P2 | d6f6d553-0d3a-487e-8597-d359af5e52d0 / edb77a463c90 |
+Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laikiklių paskirtys, priemonių laikymas ir transportavimas, sterilizavimo skyriaus baldų planavimas, priežiūros dokumentų kelias ir jau suplanuotas bazinio vežimėlio komplektacijos gidas. Toliau – konkrečių vežimėlių paskirtys, matmenys, ratukai, ISO suderinamumas ir pirkimo palyginimo užduotys. Ši eilė remiasi priklausomybėmis bei užklausos nauda, nes daugumos frazių apimtis neprieinama.
 
-Pagalbinės gamintojo „akcijų“, išpardavimo, plovimo priedų ir panašiai pavadintos slaugos šakos neišnyksta iš inventoriaus ir nesukuria mūsų nuolaidų ar naujų sinonimų straipsnių. Galimam sujungimui reikia realaus modelių / funkcijos / paieškos duomenų palyginimo; ši užduotis neperadresuoja URL ir F3 neuždaro.
+## Vežimėlių pasirinkimas
 
-## Pirmasis parengimo etapas
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 1 | [Kaip pasirinkti medicininį vežimėlį įstaigai](#tema-1) | P1 | Parengta 2026-10-09 | Parengtas ir patvirtintas lokaliai |
+| 2 | [Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją](#tema-2) | P1 | 2026-10-23 | Planas; tekstas neparašytas |
+| 3 | [Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą](#tema-3) | P1 | 2026-11-02 | Planas; tekstas neparašytas |
+| 4 | [Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas](#tema-4) | P1 | 2026-11-05 | Planas; tekstas neparašytas |
+| 5 | [Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus](#tema-5) | P2 | 2026-12-07 | Planas; tekstas neparašytas |
+| 6 | [Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas](#tema-6) | P2 | 2026-12-10 | Planas; tekstas neparašytas |
+| 7 | [Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti](#tema-7) | P2 | 2026-12-14 | Planas; tekstas neparašytas |
+| 8 | [Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra](#tema-8) | P2 | 2026-12-17 | Planas; tekstas neparašytas |
+| 9 | [Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra](#tema-9) | P1 | 2026-11-09 | Planas; tekstas neparašytas |
+| 10 | [Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą](#tema-10) | P1 | 2026-11-12 | Planas; tekstas neparašytas |
 
-Pirmiau papildyti 3 jau esančius gidus ir P1 kategorijų pasirinkimo tekstus. Ši planavimo užduotis esamų tekstų neperrašo; išsaugotas jų actual ID ir patvirtintas hash. Pakeitimams reikės įprasto edit → actual review → approval → release.
+<a id="tema-1"></a>
 
-| Privataus parengimo orientyras | Naujas gidas | Originalus indėlis / prioritetas |
-| --- | --- | --- |
-| 2026-10-23 | Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją | P1. Dviejų tikrų modelių bazinių / pasirenkamų eilučių pavyzdys ir kontrolinis sąrašas. |
-| 2026-10-30 | Kaip pasirinkti Mayo instrumentų staliuką | P1. NEREZ1101 / NEREZ1120 / NEREZ1135 parametrų palyginimo pavyzdys, tikrinant matmenų tipą, reguliavimą ir apkrovų kontekstą. |
-| 2026-11-06 | Kaip rasti Klaro atsarginę dalį pagal įrangos kodą | P1. Žymėjimas → kodas / nuotrauka → modelio dokumentas → užklausa; jokio universalaus suderinamumo. |
-| 2026-11-13 | Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga | P2. Matavimo / talpos darbo lapas, atskiriant išorės matmenis nuo naudingo vidaus. |
-| 2026-11-20 | Kaip aprašyti nerūdijančio plieno stalo poreikį | P2. Stalviršio, apatinės dalies, plautuvės ir medžiagos poreikio ruošinys. |
-| 2026-11-27 | Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją | P2. Maišų / laikiklių, talpos ir logistikos palyginimo klausimai; ne įstaigos atliekų tvarkymo reglamentas. |
-| 2026-12-04 | Kaip patikrinti medicininės įrangos valymo dokumentus | P3. Dokumentų tapatybės seka; tikra modelio instrukcija būtina, dezinfekavimo receptų nėra. |
-| 2026-12-11 | Įrangos komplekto priėmimas: ką sutikrinti su užsakymu | P3. Neutralus modelio / kiekio / priedų / instrukcijų sutikrinimo ruošinys; be mūsų garantijų ir teisinių terminų. |
+### 1. Kaip pasirinkti medicininį vežimėlį įstaigai
 
-8 pilni konkrečių gidų užduočių aprašai yra native V1 [CONTENT_PLAN.json](CONTENT_PLAN.json), materializuoti kanoniniu mergePlan / editPage kaip **privatūs tušti planai**. Kiekvienas turi actual page ID, pirminio puslapio ryšį, netrumpintą reason (<1 000 ženklų), sourceQueries, tikras vidinių nuorodų tapatybes ir dar nepatvirtintus šaltinių kandidatus. Visa apimtis nėra schemos 24 puslapių partijos limitas ar rašymo kvota.
+**Skaitytojo sprendimas.** Atrinkti vežimėlio tipą pagal kabineto darbą, naudojamas priemones ir ribotą vietą.
 
-Pirmas rengiamas naujas release – tik P1 trys gidai, po tikrų modelių dokumentų / medijos / revizijos peržiūros. Jiems nereikia būsimų P2 / P3 gidų. Gidų indeksą ir susijusias kategorijų nuorodas papildyti kartu su jų publikavimui skirta peržiūrėta revizija. Būsimų ryšių grafas privatus; dabartiniuose patvirtintuose puslapiuose naujų href nėra.
+**Unikalus rezultatas.** Sprendimų medis: poreikis → vežimėlio šeima → atmestini variantai; BASIC ir PROFI skirtumai pagal konkretų modelį.
 
-Visos temos evergreen, seasonalHook tuščias. Datos – individualūs parengimo orientyrai esamame 6 mėnesių lange, ne publikavimo, indeksavimo ar pirkimų sezono pažadas. Nauja automatika neįjungta. Istorinis contentPolicy 6 mėn. / monthly 1 išlaikytas kaip suderinamumo metadata, jo autopilot nevykdomas ir papildomi tekstai kvotai užpildyti neplanuojami. Šiame V1 nėra coverage-driven policy režimo; pilną apimtį ir individualias datas apibrėžia šis konkretus planas.
+**Frazė ir URL.** „kaip pasirinkti medicininį vežimėlį“ → `/gidai/medicininio-vezimelio-pasirinkimas`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-2 (observed).
 
-## Ankstesnių idėjų suderinimas
+**Faktinis pagrindas.** [Moduliniai vežimėliai](https://www.klaro.cz/zakladni-voziky): 647 šioje šakoje susietų modelių; pavyzdžiai [ZV2234N-PZ](https://www.klaro.cz/produkt/zv2234n-pz), [ZV2278N-PZ](https://www.klaro.cz/produkt/zv2278n-pz), [ZV2279N-PZ](https://www.klaro.cz/produkt/zv2279n-pz). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
 
-Ankstesni 6 pasiūlymai buvo dokumento lentelė, ne Studio puslapiai: prieš šį darbą visi 1 856 puslapiai buvo patvirtinti ir nepatvirtintų planų nebuvo. Git istorija išsaugota; patvirtintos datos nepakeistos.
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/zakladni-voziky`, atitinkamu modeliu ir pirkimo užklausa. Esamo patvirtinto teksto nuorodos šiame etape nekeistos.
 
-| Ankstesnis pasiūlymas | Sprendimas dabar |
-| --- | --- |
-| 2026-10-23 bazinis vežimėlis / priedai | Išlaikyta data ir atskiras komplektacijos darbas. |
-| 2026-11-20 atsarginės dalies kodas | 2026-11-06 orientyras dėl tiesioginės kodo užklausos vertės ir prieinamos instrukcijų paieškos. |
-| 2026-12-18 valymo suderinamumas | 2026-12-04 orientyras, susiaurintas į dokumentų patikrą; instrukcija būtina. |
-| 2027-01-22 krepšio perkėlimas | Esamo ISO gido papildymas, naujo URL nėra. |
-| 2027-02-19 plieno stalo poreikis | 2026-11-20 orientyras: tikras katalogas ir atskiras ruošinys. |
-| 2027-03-19 komplekto priėmimas | 2026-12-11 orientyras: neutralus sutikrinimas, ne nepatvirtintos tiekimo / garantijos sąlygos. |
+<a id="tema-2"></a>
 
-## Matavimas po tikro paleidimo
+### 2. Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją
 
-SEO: tikras domenas / canonical / sitemap / robots ir GSC property prieiga, tada indekso būsena bei page/query ataskaitos su LT šalies, datų, įrenginių filtrais. Kohortos: brand, tikslus modelis, paskirties katalogas, pasirinkimo gidas. Fiksuoti faktinę deployment / revizijos datą ir duomenų apribojimus; indeksavimo termino nežadėti.
+**Skaitytojo sprendimas.** Atskirti bazinį gaminį, pasirenkamą priedą ir iliustracinę komplektaciją prieš prašant kainos.
 
-Verslas: atskirti formos išsaugojimą, tikrą pristatymą, tinkamą modelio / kiekio / paskirties užklausą, pasiūlymą ir užsakymą. Kortelės paspaudimas ar gido skaitymas nėra užsakymas. Vidiniai ir sintetiniai bandymai nėra klientų paklausa.
+**Unikalus rezultatas.** Vieno tikro bazinio modelio ir jo komplektacijos eilučių lentelė; kiekvienam priedui atskiras kodas ir patvirtinimo laukas.
 
-GEO: saugoti tikrą variklį / paviršių, requested ir effective rinką / kalbą, web-search režimą, laiką, šviežią pakartojimą, raw atsakymą ir cituotus URL. Pradiniam rankiniam palyginimui pasirinkti pirmus 4 klausimus, po 2 naujus bandymus kiekviename prieinamame variklyje. Tai siūlomas matavimo metodas; bandymų dar nėra, mokamas ar periodinis monitoringas neįjungtas. Replayed atsakymas nėra naujas mėginys. Skaičiuoti cituotus sėkmingus atsakymus / visus sėkmingus mėginius ir failures / attempts atskirai kiekvienam varikliui, ne kaip visos Lietuvos matomumą.
+**Frazė ir URL.** „medicininio vežimėlio komplektacija“ → `/gidai/bazinio-vezimelio-komplektacija`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-0 (observed).
 
-| Fiksuotas nebrand klausimas | Tikslinis skaitytojo darbas |
-| --- | --- |
-| Pagal ką pasirinkti procedūrinį vežimėlį poliklinikos kabinetui? | Esamas atrankos gidas / paskirties katalogas. |
-| Kaip patikrinti, kas įeina į medicininio vežimėlio komplektaciją? | Naujas komplektacijos gidas. |
-| Kokius parametrus palyginti renkantis Mayo instrumentų staliuką? | Naujas Mayo gidas / tikri modeliai. |
-| Kaip paruošti palyginamą medicininės įrangos pirkimo užklausą? | Esamas pirkimo ruošinys. |
-| Kaip patikrinti ISO krepšio, spintos ir vežimėlio suderinamumą? | Esamas ISO gidas. |
-| Kokią informaciją pateikti ieškant medicininio vežimėlio atsarginės dalies? | Naujas detalės tapatybės gidas. |
-| Kaip aprašyti nerūdijančio plieno darbo stalo poreikį medicinos įstaigai? | Naujas stalo poreikio ruošinys. |
-| Kaip rasti konkrečiam įrangos modeliui taikomą valymo instrukciją? | Dokumentų patikros gidas tik po priklausomybių patikros. |
+**Faktinis pagrindas.** [Vežimėliai su priedais](https://www.klaro.cz/voziky-s-prislusenstvim): 92 šioje šakoje susietų modelių; pavyzdžiai [ukazka-lv1](https://www.klaro.cz/produkt/ukazka-lv1), [ukazka-lv2](https://www.klaro.cz/produkt/ukazka-lv2), [ukazka-lv3](https://www.klaro.cz/produkt/ukazka-lv3). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
 
-Brand diagnostika atskirai: „Kur rasti Klaro PLV150 variantų techninius duomenis?“ ir „Kaip susisiekti su Promedical dėl konkrečios Klaro komplektacijos?“. Jie neįtraukiami į nebrand rekomendavimo rezultatą. Paminėjimas, citata ir rekomendacija yra skirtingi įvykiai; oficialios Google / Bing property ataskaitos tikrinamos pagal actual prieigą, nepriskiriant neegzistuojančio adapterio kaip prijungto.
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/voziky-s-prislusenstvim`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
 
-## Patikra ir perdavimas rašytojui
+<a id="tema-3"></a>
 
-[CONTENT_PLAN_VERIFICATION.json](CONTENT_PLAN_VERIFICATION.json): native laukai, 8 unikalūs URL, tikri pirminių / nuorodų puslapių ID, datos / timezone ir tušti seasonalHook / networkLinks patikrinti. Visos ankstesnės 1 856 revizijos, approval, datos ir snapshot nepakitę; viešoje projekcijoje tebėra 1 856 puslapiai. Naujų tekstų, approval, release ar deployment šis darbas neatliko.
+### 3. Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą
 
-Actual generator.mjs draftPage perduoda reason, sourceQueries, linkSuggestions ir externalLinks į bendrą buildEditorialPrompt. Patikrintas surinktas visų 8 užduočių prompt JSON: šie laukai ir aktualus seoResearch išlieka be trumpinimo. **CLI teksto rašytojas nevykdytas.** Pilno planningBrief / reconciliation adapterio šiame V1 nėra, todėl pilno kategorijų kryžminio žemėlapio nevadiname integruotu planningBrief; jo apimtis išlieka dokumente / CONTENT_MAP, o konkretūs gidai naudoja esamus native laukus. Naujo per-domain importuotojo ar publikavimo sistemos nėra.
+**Skaitytojo sprendimas.** Suskaičiuoti priemonių laikymo skyrius ir suderinti stalčius, modulius bei mechaninę prieigą.
 
-Tarp nuosavų domenų nėra būtino konkretaus šios įrangos atrankos tikslo, todėl networkLinks = []. Pirminiai šaltiniai nepakeičiami savų svetainių reklama. Tolesnis tekstas / medija / review / release naudoja CONTENT_CORE; planas neįjungia laiškų siuntimo, mokamų tyrimų ar periodinių užduočių.
+**Unikalus rezultatas.** Anoniminis priemonių inventoriaus pavyzdys → stalčių ir skyrių planas; atskirti mechaninį užraktą nuo teisinių laikymo reikalavimų.
+
+**Frazė ir URL.** „vaistų vežimėlio komplektacija“ → `/gidai/vaistu-vezimelio-komplektacija`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Vežimėliai su priedais](https://www.klaro.cz/voziky-s-prislusenstvim): 92 šioje šakoje susietų modelių; pavyzdžiai [ukazka-lv1](https://www.klaro.cz/produkt/ukazka-lv1), [ukazka-lv2](https://www.klaro.cz/produkt/ukazka-lv2), [ukazka-lv3](https://www.klaro.cz/produkt/ukazka-lv3). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/voziky-s-prislusenstvim`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-4"></a>
+
+### 4. Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas
+
+**Skaitytojo sprendimas.** Išdėstyti naudojamas priemones ir pasirinkti reikiamą darbo vietą ant vežimėlio.
+
+**Unikalus rezultatas.** Darbo vietos schema su paviršiaus, lentynų ir laikiklių zonomis; nėra tvarstymo ar infekcijų kontrolės protokolo.
+
+**Frazė ir URL.** „tvarstymo vežimėlio komplektacija“ → `/gidai/tvarstymo-vezimelio-komplektacija`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Vežimėliai su priedais](https://www.klaro.cz/voziky-s-prislusenstvim): 92 šioje šakoje susietų modelių; pavyzdžiai [ZV2263N-prevazovy-01](https://www.klaro.cz/produkt/zv2263n-prevazovy-01). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/voziky-s-prislusenstvim`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-5"></a>
+
+### 5. Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus
+
+**Skaitytojo sprendimas.** Palyginti konkrečių anesteziologinių modelių fizinę konfigūraciją su įstaigos pateiktu sąrašu.
+
+**Unikalus rezultatas.** Dviejų patikrintų BASIC / PROFI modelių konfigūracijos lentelė; nekurti privalomų klinikinių priemonių sąrašo.
+
+**Frazė ir URL.** „anesteziologinio vežimėlio komplektacija“ → `/gidai/anesteziologinio-vezimelio-komplektacija`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Anesteziologiniai vežimėliai](https://www.klaro.cz/basic-anesteziologicke): 7 šioje šakoje susietų modelių; pavyzdžiai [ukazka-av1](https://www.klaro.cz/produkt/ukazka-av1), [ukazka-av2](https://www.klaro.cz/produkt/ukazka-av2), [ukazka-av3](https://www.klaro.cz/produkt/ukazka-av3). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/basic-anesteziologicke`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-6"></a>
+
+### 6. Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas
+
+**Skaitytojo sprendimas.** Sutikrinti konkrečių priedų pasiekiamumą ir vietą pagal įstaigos patvirtintą poreikį.
+
+**Unikalus rezultatas.** Gaivinimo / reanimacinio termino bendras puslapis, fizinių priedų vietų brėžinys ir kodų patikra; be gaivinimo algoritmo.
+
+**Frazė ir URL.** „reanimacinio vežimėlio komplektacija“ → `/gidai/reanimacinio-vezimelio-komplektacija`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Gaivinimo vežimėliai](https://www.klaro.cz/basic-resuscitacni): 11 šioje šakoje susietų modelių; pavyzdžiai [ukazka-rv1](https://www.klaro.cz/produkt/ukazka-rv1), [ukazka-rv2](https://www.klaro.cz/produkt/ukazka-rv2), [ukazka-rv3](https://www.klaro.cz/produkt/ukazka-rv3). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/basic-resuscitacni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-7"></a>
+
+### 7. Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti
+
+**Skaitytojo sprendimas.** Pasirinkti dokumentams ir darbo priemonėms tinkamą mobilios darbo vietos išdėstymą.
+
+**Unikalus rezultatas.** Dokumentų formatų, darbo paviršiaus ir laikymo skyrių matavimo ruošinys; nenaudoti pacientų duomenų pavyzdžių.
+
+**Frazė ir URL.** „vizitų vežimėlis“ → `/gidai/vizitu-vezimelio-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Vizitų vežimėliai](https://www.klaro.cz/basic-vizitove): 12 šioje šakoje susietų modelių; pavyzdžiai [ukazka-vv1](https://www.klaro.cz/produkt/ukazka-vv1), [ukazka-vv2](https://www.klaro.cz/produkt/ukazka-vv2), [ukazka-vv3](https://www.klaro.cz/produkt/ukazka-vv3). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/basic-vizitove`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-8"></a>
+
+### 8. Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra
+
+**Skaitytojo sprendimas.** Patikrinti kompiuterio ir jo priedų matmenų, tvirtinimo bei laidų vietos suderinamumą.
+
+**Unikalus rezultatas.** Įrenginio matavimų lapas su gamintojo tvirtinimo ir elektros dokumentų laukais; nepažadėti programinės integracijos ar akumuliatoriaus.
+
+**Frazė ir URL.** „medicininiai vežimėliai kompiuteriams“ → `/gidai/medicininis-vezimelis-kompiuteriui`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-15 (observed).
+
+**Faktinis pagrindas.** [Sveikatos priežiūros skaitmenizavimo sprendimai](https://www.klaro.cz/produkty-pro-digitalizaci): 6 šioje šakoje susietų modelių; pavyzdžiai [ukazka-vvn1](https://www.klaro.cz/produkt/ukazka-vvn1), [5856](https://www.klaro.cz/produkt/5856), [5855](https://www.klaro.cz/produkt/5855). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/produkty-pro-digitalizaci`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-9"></a>
+
+### 9. Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra
+
+**Skaitytojo sprendimas.** Patikrinti, ar su visais numatytais priedais vežimėlis telpa į konkretų maršrutą.
+
+**Unikalus rezultatas.** Skaitytojo užpildomas maršruto matavimo lapas ir aiškiai pažymėtas iliustracinis skaičiavimo pavyzdys; skirti korpuso ir išorinius matmenis.
+
+**Frazė ir URL.** „medicininio vežimėlio matmenys“ → `/gidai/medicininio-vezimelio-matmenu-patikra`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Moduliniai vežimėliai](https://www.klaro.cz/zakladni-voziky): 647 šioje šakoje susietų modelių; pavyzdžiai [ZV2234N-PZ](https://www.klaro.cz/produkt/zv2234n-pz), [ZV2278N-PZ](https://www.klaro.cz/produkt/zv2278n-pz), [ZV2279N-PZ](https://www.klaro.cz/produkt/zv2279n-pz). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/zakladni-voziky`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-10"></a>
+
+### 10. Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą
+
+**Skaitytojo sprendimas.** Palyginti konkrečių ratukų, stabdžių ir grindų derinius pagal numatomą naudojimą.
+
+**Unikalus rezultatas.** Ratukų kodų ir gamintojo deklaruojamų savybių palyginimas; nekurti universalaus minimalaus skersmens ar antistatinių savybių reikalavimo.
+
+**Frazė ir URL.** „medicininio vežimėlio ratukai“ → `/gidai/medicininio-vezimelio-ratukai-ir-stabdziai`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Vežimėlių priedai](https://www.klaro.cz/prislusenstvi): 115 šioje šakoje susietų modelių; pavyzdžiai [system-centralni-brzda](https://www.klaro.cz/produkt/system-centralni-brzda), [system-smerova-aretace](https://www.klaro.cz/produkt/system-smerova-aretace), [system-rucni-brzda](https://www.klaro.cz/produkt/system-rucni-brzda). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininio-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/prislusenstvi`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## ISO modulių sistema
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 11 | [ISO modulių sistema: kaip suderinti laikymą ir transportavimą](#tema-11) | P1 | Parengta 2026-10-09 | Parengtas ir patvirtintas lokaliai |
+| 12 | [ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas](#tema-12) | P1 | 2026-11-16 | Planas; tekstas neparašytas |
+| 13 | [ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį](#tema-13) | P1 | 2026-11-19 | Planas; tekstas neparašytas |
+| 14 | [ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas](#tema-14) | P2 | 2026-12-21 | Planas; tekstas neparašytas |
+| 15 | [ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis](#tema-15) | P2 | 2026-12-24 | Planas; tekstas neparašytas |
+| 16 | [ISO krepšiai ar padėklai: laikymo, pasiekiamumo ir transportavimo skirtumai](#tema-16) | P2 | 2026-12-28 | Planas; tekstas neparašytas |
+
+<a id="tema-11"></a>
+
+### 11. ISO modulių sistema: kaip suderinti laikymą ir transportavimą
+
+**Skaitytojo sprendimas.** Suprasti modulių, vežimėlių ir spintų sąsajas prieš renkantis visą sistemą.
+
+**Unikalus rezultatas.** Bendra suderinamumo schema ir perdavimo tarp spintos bei vežimėlio patikra; ISO pavadinimas savaime neįrodo bet kurių dviejų modelių suderinamumo.
+
+**Frazė ir URL.** „ISO modulių suderinamumas“ → `/gidai/iso-moduliu-sistema`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [ISO modulių sistema](https://www.klaro.cz/iso-modul-system): 206 šioje šakoje susietų modelių; pavyzdžiai [3-4-S11416-M11417VAR-01](https://www.klaro.cz/produkt/3-4-S11416-M11417VAR-01), [S11416-M11417VAR-02](https://www.klaro.cz/produkt/S11416-M11417VAR-02), [S11416-M11417VAR-03](https://www.klaro.cz/produkt/S11416-M11417VAR-03). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/iso-modul-system`, atitinkamu modeliu ir pirkimo užklausa. Esamo patvirtinto teksto nuorodos šiame etape nekeistos.
+
+<a id="tema-12"></a>
+
+### 12. ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas
+
+**Skaitytojo sprendimas.** Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.
+
+**Unikalus rezultatas.** Dviejų tikrų modulių ir vieno laikymo rėmo matavimo lentelė; 600×400 ir 400×300 naudoti tik ten, kur tai patvirtinta šaltinyje.
+
+**Frazė ir URL.** „ISO 600x400 moduliai“ → `/gidai/iso-moduliu-matmenu-patikra`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-6 (observed).
+
+**Faktinis pagrindas.** [ISO modulių sistema](https://www.klaro.cz/iso-modul-system): 206 šioje šakoje susietų modelių; pavyzdžiai [3-4-S11416-M11417VAR-01](https://www.klaro.cz/produkt/3-4-S11416-M11417VAR-01), [S11416-M11417VAR-02](https://www.klaro.cz/produkt/S11416-M11417VAR-02), [S11416-M11417VAR-03](https://www.klaro.cz/produkt/S11416-M11417VAR-03). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/iso-moduliu-sistema`. Susieti su katalogu `/kategorijos/iso-modul-system`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-13"></a>
+
+### 13. ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį
+
+**Skaitytojo sprendimas.** Parinkti krepšio gylį pagal realių pakuočių matmenis ir patikrinti naudingo tūrio ribas.
+
+**Unikalus rezultatas.** Iliustracinis skirtingų aukščių pakuočių sudėjimo pavyzdys su gamintojo matmenimis; tūrio nelyginti su leistina apkrova.
+
+**Frazė ir URL.** „ISO krepšio gylis“ → `/gidai/iso-krepsio-gylis-ir-talpa`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [ISO modulių sistema](https://www.klaro.cz/iso-modul-system): 206 šioje šakoje susietų modelių; pavyzdžiai [3-4-S11416-M11417VAR-01](https://www.klaro.cz/produkt/3-4-S11416-M11417VAR-01), [S11416-M11417VAR-02](https://www.klaro.cz/produkt/S11416-M11417VAR-02), [S11416-M11417VAR-03](https://www.klaro.cz/produkt/S11416-M11417VAR-03). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/iso-moduliu-sistema`. Susieti su katalogu `/kategorijos/iso-modul-system`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-14"></a>
+
+### 14. ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas
+
+**Skaitytojo sprendimas.** Parinkti pertvarų skaičių, padėtį ir konkretaus krepšio tinkamą priedą.
+
+**Unikalus rezultatas.** Vieno krepšio skyrių brėžinys ir pertvarų kodų lentelė pagal tikras įpjovas bei gamintojo komplektaciją.
+
+**Frazė ir URL.** „ISO krepšių pertvaros“ → `/gidai/iso-krepsiu-pertvaru-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [ISO modulių sistema](https://www.klaro.cz/iso-modul-system): 206 šioje šakoje susietų modelių; pavyzdžiai [3-4-S11416-M11417VAR-01](https://www.klaro.cz/produkt/3-4-S11416-M11417VAR-01), [S11416-M11417VAR-02](https://www.klaro.cz/produkt/S11416-M11417VAR-02), [S11416-M11417VAR-03](https://www.klaro.cz/produkt/S11416-M11417VAR-03). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/iso-moduliu-sistema`. Susieti su katalogu `/kategorijos/iso-modul-system`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-15"></a>
+
+### 15. ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis
+
+**Skaitytojo sprendimas.** Sukurti priemonių vietų ir papildymo žymas taip, kad jos atitiktų fizines modulių vietas.
+
+**Unikalus rezultatas.** Neutralus vieta–modulis–priemonė žymėjimo ruošinys; be pacientų duomenų ir nepatikrintų skenavimo sistemos pažadų.
+
+**Frazė ir URL.** „ISO modulių ženklinimas“ → `/gidai/iso-moduliu-zenklinimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [ISO modulių sistema](https://www.klaro.cz/iso-modul-system): 206 šioje šakoje susietų modelių; pavyzdžiai [3-4-S11416-M11417VAR-01](https://www.klaro.cz/produkt/3-4-S11416-M11417VAR-01), [S11416-M11417VAR-02](https://www.klaro.cz/produkt/S11416-M11417VAR-02), [S11416-M11417VAR-03](https://www.klaro.cz/produkt/S11416-M11417VAR-03). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/iso-moduliu-sistema`. Susieti su katalogu `/kategorijos/iso-modul-system`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-16"></a>
+
+### 16. ISO krepšiai ar padėklai: laikymo, pasiekiamumo ir transportavimo skirtumai
+
+**Skaitytojo sprendimas.** Pasirinkti atvirą krepšį ar padėklą pagal priemonių pakuotes ir fizinį naudojimą.
+
+**Unikalus rezultatas.** Krepšio ir padėklo parinkimo lentelė su realiais modeliais; sterilizavimo ir plovimo tinkamumą tikrinti atskirai instrukcijoje.
+
+**Frazė ir URL.** „ISO krepšiai ir padėklai“ → `/gidai/iso-krepsiai-ar-padeklai`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [ISO modulių sistema](https://www.klaro.cz/iso-modul-system): 206 šioje šakoje susietų modelių; pavyzdžiai [3-4-S11416-M11417VAR-01](https://www.klaro.cz/produkt/3-4-S11416-M11417VAR-01), [S11416-M11417VAR-02](https://www.klaro.cz/produkt/S11416-M11417VAR-02), [S11416-M11417VAR-03](https://www.klaro.cz/produkt/S11416-M11417VAR-03). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/iso-moduliu-sistema`. Susieti su katalogu `/kategorijos/iso-modul-system`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Medicininės spintos
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 17 | [Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga](#tema-17) | P1 | 2026-11-13 | Planas; tekstas neparašytas |
+| 18 | [Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas](#tema-18) | P2 | 2026-12-31 | Planas; tekstas neparašytas |
+| 19 | [Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas](#tema-19) | P2 | 2027-01-04 | Planas; tekstas neparašytas |
+| 20 | [Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra](#tema-20) | P2 | 2027-01-07 | Planas; tekstas neparašytas |
+| 21 | [Medicininės spintos vidus: lentynų, stalčių ir modulių planas](#tema-21) | P1 | 2026-11-23 | Planas; tekstas neparašytas |
+
+<a id="tema-17"></a>
+
+### 17. Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga
+
+**Skaitytojo sprendimas.** Pasirinkti spintos šeimą pagal laikomas priemones, vietą ir reikalingą prieigą.
+
+**Unikalus rezultatas.** Poreikio → spintos šeimos → komplektacijos sprendimų medis; vaistų ir instrumentų sinonimus jungti pagal tikrą skaitytojo poreikį.
+
+**Frazė ir URL.** „medicininės spintos pasirinkimas“ → `/gidai/medicinines-spintos-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Spintos](https://www.klaro.cz/skrine): 55 šioje šakoje susietų modelių; pavyzdžiai [ZS1211](https://www.klaro.cz/produkt/zs1211), [ZS1211A](https://www.klaro.cz/produkt/zs1211a), [ZS1221](https://www.klaro.cz/produkt/zs1221). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/skrine`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-18"></a>
+
+### 18. Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas
+
+**Skaitytojo sprendimas.** Nuspręsti, ar laikymo vieta turi judėti tarp patalpų, ir įvertinti stovėjimo bei transportavimo vietą.
+
+**Unikalus rezultatas.** Vieno judančio ir vieno stacionaraus modelio scenarijų palyginimas; naudoti tik gamintojo deklaruotą apkrovą ir matmenis.
+
+**Frazė ir URL.** „medicininės spintos su ratukais“ → `/gidai/mobili-ar-stacionari-medicinine-spinta`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Spintos](https://www.klaro.cz/skrine): 55 šioje šakoje susietų modelių; pavyzdžiai [ATP0002](https://www.klaro.cz/produkt/atp0002), [ZS1211](https://www.klaro.cz/produkt/zs1211), [ZS1211A](https://www.klaro.cz/produkt/zs1211a). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinines-spintos-pasirinkimas`. Susieti su katalogu `/kategorijos/skrine`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-19"></a>
+
+### 19. Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas
+
+**Skaitytojo sprendimas.** Patikrinti durų atidarymo vietą ir pasiekiamumą jau suplanuotame kabinete.
+
+**Unikalus rezultatas.** Patalpos planas su uždaros ir atidarytos spintos kontūrais, lentynos išėmimo bei darbo vietos matavimo laukais.
+
+**Frazė ir URL.** „medicininės spintos durys“ → `/gidai/medicinines-spintos-duru-atidarymo-vieta`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Spintos](https://www.klaro.cz/skrine): 55 šioje šakoje susietų modelių; pavyzdžiai [ATP0002](https://www.klaro.cz/produkt/atp0002), [ZS1211](https://www.klaro.cz/produkt/zs1211), [ZS1211A](https://www.klaro.cz/produkt/zs1211a). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinines-spintos-pasirinkimas`. Susieti su katalogu `/kategorijos/skrine`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-20"></a>
+
+### 20. Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra
+
+**Skaitytojo sprendimas.** Pasirinkti realiai siūlomą užrakto variantą ir aprašyti, kas bei kaip juo naudosis.
+
+**Unikalus rezultatas.** Modelio užrakto tipo, raktų ir dalių informacijos lentelė; mechaninis užraktas nelaikomas teisinių vaistų laikymo reikalavimų patvirtinimu.
+
+**Frazė ir URL.** „medicininių spintų užraktai“ → `/gidai/medicinines-spintos-uzrakto-patikra`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Spintos](https://www.klaro.cz/skrine): 55 šioje šakoje susietų modelių; pavyzdžiai [ATP0002](https://www.klaro.cz/produkt/atp0002), [ZS1211](https://www.klaro.cz/produkt/zs1211), [ZS1211A](https://www.klaro.cz/produkt/zs1211a). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinines-spintos-pasirinkimas`. Susieti su katalogu `/kategorijos/skrine`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-21"></a>
+
+### 21. Medicininės spintos vidus: lentynų, stalčių ir modulių planas
+
+**Skaitytojo sprendimas.** Sukonfigūruoti spintos vidų pagal laikomų priemonių sąrašą ir pakuočių matmenis.
+
+**Unikalus rezultatas.** Lentynų, stalčių ir ISO modulių išdėstymo ruošinys su atskirais tūrio, apkrovos bei komplektacijos laukais.
+
+**Frazė ir URL.** „medicininės spintos stalčiai“ → `/gidai/medicinines-spintos-lentynu-ir-stalciu-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Spintos](https://www.klaro.cz/skrine): 55 šioje šakoje susietų modelių; pavyzdžiai [ZS1211](https://www.klaro.cz/produkt/zs1211), [ZS1211A](https://www.klaro.cz/produkt/zs1211a), [ZS1221](https://www.klaro.cz/produkt/zs1221). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinines-spintos-pasirinkimas`. Susieti su katalogu `/kategorijos/skrine`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Darbo vietos ir baldų planavimas
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 22 | [Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai](#tema-22) | P1 | 2026-10-16 | Planas; tekstas neparašytas |
+| 23 | [Kaip pasirinkti Mayo instrumentų staliuką](#tema-23) | P1 | 2026-10-30 | Planas; tekstas neparašytas |
+| 24 | [Kaip aprašyti nerūdijančio plieno stalo poreikį](#tema-24) | P2 | 2026-11-20 | Planas; tekstas neparašytas |
+| 25 | [Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą](#tema-25) | P3 | 2027-02-25 | Planas; tekstas neparašytas |
+| 26 | [Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas](#tema-26) | P2 | 2027-01-11 | Planas; tekstas neparašytas |
+
+<a id="tema-22"></a>
+
+### 22. Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai
+
+**Skaitytojo sprendimas.** Išmatuoti patalpą ir susieti darbo vietas su laikymo bei judėjimo poreikiais.
+
+**Unikalus rezultatas.** Kabinetų matavimo ir zonų planavimo ruošinys; pagrindinis patalpos planas prieš stalo, spintos ar logistikos įrangos atranką.
+
+**Frazė ir URL.** „medicininių baldų planavimas“ → `/gidai/medicinos-istaigos-baldu-planavimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Medicininiai baldai](https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni): 16 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1044](https://www.klaro.cz/produkt/nerez1044), [1200](https://www.klaro.cz/produkt/1200), [1100](https://www.klaro.cz/produkt/1100). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/zdravotnicky-nabytek-prehled-hlavni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-23"></a>
+
+### 23. Kaip pasirinkti Mayo instrumentų staliuką
+
+**Skaitytojo sprendimas.** Palyginti Mayo staliukų aukščio reguliavimą, paviršių, apkrovą ir pagrindą.
+
+**Unikalus rezultatas.** NEREZ1101, NEREZ1120 ir NEREZ1135 palyginimo laukų lentelė; aukščio ir apkrovos klausimai lieka šiame viename gide.
+
+**Frazė ir URL.** „Mayo staliuko pasirinkimas“ → `/gidai/mayo-staliuko-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Instrumentų vežimėliai](https://www.klaro.cz/kategorie-instrumentacni-voziky): 8 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1120](https://www.klaro.cz/produkt/nerez1120), [NEREZ1135](https://www.klaro.cz/produkt/nerez1135), [NEREZ1101](https://www.klaro.cz/produkt/nerez1101). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-istaigos-baldu-planavimas`. Susieti su katalogu `/kategorijos/kategorie-instrumentacni-voziky`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 8 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-24"></a>
+
+### 24. Kaip aprašyti nerūdijančio plieno stalo poreikį
+
+**Skaitytojo sprendimas.** Aprašyti stalo darbo paviršiaus, matmenų, apatinės vietos ir pastatymo poreikį.
+
+**Unikalus rezultatas.** Stalo poreikio ruošinys su realaus modelio laukais; nekurti maisto gamybos ar pramoninio stalo intencijos atskiro medicininio puslapio.
+
+**Frazė ir URL.** „nerūdijančio plieno medicininis stalas“ → `/gidai/nerudijancio-plieno-stalo-poreikis`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Nerūdijančiojo plieno stalai](https://www.klaro.cz/nerezove-stoly): 16 šioje šakoje susietų modelių; pavyzdžiai [ATS001](https://www.klaro.cz/produkt/ATS001), [ATS002](https://www.klaro.cz/produkt/ATS002), [ATS003](https://www.klaro.cz/produkt/ATS003). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-istaigos-baldu-planavimas`. Susieti su katalogu `/kategorijos/nerezove-stoly`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-25"></a>
+
+### 25. Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą
+
+**Skaitytojo sprendimas.** Teisingai perskaityti gamintojo nurodytą plieno klasę ir atskirti ją nuo konstrukcijos bei priežiūros savybių.
+
+**Unikalus rezultatas.** Gamintojo medžiagų nurodymo komentaruotas pavyzdys; nepasirinkti dezinfekanto ar universalios plieno klasės visoms patalpoms.
+
+**Frazė ir URL.** „medicininių baldų nerūdijančio plieno klasė“ → `/gidai/medicininiu-baldu-nerudijancio-plieno-klase`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Nerūdijančiojo plieno stalai](https://www.klaro.cz/nerezove-stoly): 16 šioje šakoje susietų modelių; pavyzdžiai [ATS001](https://www.klaro.cz/produkt/ATS001), [ATS002](https://www.klaro.cz/produkt/ATS002), [ATS003](https://www.klaro.cz/produkt/ATS003). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-istaigos-baldu-planavimas`. Susieti su katalogu `/kategorijos/nerezove-stoly`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-26"></a>
+
+### 26. Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas
+
+**Skaitytojo sprendimas.** Sutikrinti staliuko prie lovos reguliavimą ir pagrindo vietą su konkrečia lova bei darbo poreikiu.
+
+**Unikalus rezultatas.** POSTMAN konkrečių modelių aukščio, pagrindo ir lovos tarpo matavimo ruošinys; neperkelti Mayo staliukų ar klinikinės ergonomikos reikalavimų.
+
+**Frazė ir URL.** „ligonio staliukas virš lovos“ → `/gidai/staliuko-prie-lovos-suderinamumas`. 50/mėn. (istorinė bazė). Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Medicininiai baldai](https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni): 16 šioje šakoje susietų modelių; pavyzdžiai [1200](https://www.klaro.cz/produkt/1200), [1100](https://www.klaro.cz/produkt/1100). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-istaigos-baldu-planavimas`. Susieti su katalogu `/kategorijos/zdravotnicky-nabytek-prehled-hlavni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Stovai ir laikikliai
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 27 | [Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas](#tema-27) | P1 | 2026-10-19 | Planas; tekstas neparašytas |
+| 28 | [Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai](#tema-28) | P1 | 2026-11-26 | Planas; tekstas neparašytas |
+| 29 | [Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra](#tema-29) | P2 | 2027-01-14 | Planas; tekstas neparašytas |
+| 30 | [Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra](#tema-30) | P3 | 2027-03-01 | Planas; tekstas neparašytas |
+
+<a id="tema-27"></a>
+
+### 27. Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas
+
+**Skaitytojo sprendimas.** Atskirti stovų ir laikiklių paskirtis bei nuspręsti, kurį gaminių tipą lyginti.
+
+**Unikalus rezultatas.** Paskirties medis infuzijų stovams, sieniniams laikikliams ir kitiems tikriems gaminiams; nekurti nepatvirtintos monitorių ar lubinių sistemų pasiūlos.
+
+**Frazė ir URL.** „medicininiai stovai ir laikikliai“ → `/gidai/medicininiai-stovai-ir-laikikliai`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Stovai, laikikliai ir pakabos](https://www.klaro.cz/stojany-a-drzaky): 74 šioje šakoje susietų modelių; pavyzdžiai [NEREZ0005](https://www.klaro.cz/produkt/nerez0005), [NEREZ5090](https://www.klaro.cz/produkt/nerez5090), [01060](https://www.klaro.cz/produkt/01060). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/stojany-a-drzaky`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-28"></a>
+
+### 28. Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai
+
+**Skaitytojo sprendimas.** Atskirti bendrą stovo apkrovą nuo atskiro kabliuko ar priedo ribos pagal konkretaus modelio dokumentą.
+
+**Unikalus rezultatas.** Stovo ir priedų deklaruojamų ribų lentelė bei iliustracinė masių suma; be universalių saugių apkrovų ar klinikinio naudojimo nurodymų.
+
+**Frazė ir URL.** „infuzijų stovo apkrova“ → `/gidai/infuziju-stovo-apkrovos-patikra`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Infuzijų stovai ir laikikliai](https://www.klaro.cz/infuzni-stojany): 25 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1002IS-NEREZ0007](https://www.klaro.cz/produkt/nerez1002is-nerez0007), [NEREZ1002IS-NEREZ0081A](https://www.klaro.cz/produkt/nerez1002is-00081a), [NEREZ1005AIS*](https://www.klaro.cz/infuzni-stojan-nerez1005ais). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininiai-stovai-ir-laikikliai`. Susieti su katalogu `/kategorijos/infuzni-stojany`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-29"></a>
+
+### 29. Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra
+
+**Skaitytojo sprendimas.** Palyginti sulankstyto ir darbinio stovo matmenis su konkrečiu laikymo bei transportavimo poreikiu.
+
+**Unikalus rezultatas.** InfuFlex modelio dokumentų laukai ir transportavimo scenarijus; vieno produkto savybių neapibendrinti visai stovų kategorijai.
+
+**Frazė ir URL.** „sulankstomas infuzijų stovas“ → `/gidai/sulankstomo-infuziju-stovo-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [InfuFlex – sulankstomas infuzijų stovas gelbėjimo tarnyboms ir išvažiuojamųjų paslaugų darbuotojams](https://www.klaro.cz/infuflex-page): 1 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1006*](https://www.klaro.cz/nerez1006). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininiai-stovai-ir-laikikliai`. Susieti su katalogu `/kategorijos/infuflex-page`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-30"></a>
+
+### 30. Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra
+
+**Skaitytojo sprendimas.** Parinkti laikiklį realiai laikomam daiktui ir surinkti konkretaus tvirtinimo dokumentus.
+
+**Unikalus rezultatas.** Tikro Klaro laikiklio daikto matmenų ir tvirtinimo pagrindo ruošinys; apkrovą ir montavimą tikrinti pagal gamintoją bei patalpą.
+
+**Frazė ir URL.** „medicininiai sieniniai laikikliai“ → `/gidai/medicininiu-sieniniu-laikikliu-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Stovai, laikikliai ir pakabos](https://www.klaro.cz/stojany-a-drzaky): 74 šioje šakoje susietų modelių; pavyzdžiai [NEREZ5090](https://www.klaro.cz/produkt/nerez5090), [01060](https://www.klaro.cz/produkt/01060), [NEREZ5091](https://www.klaro.cz/produkt/nerez5091). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininiai-stovai-ir-laikikliai`. Susieti su katalogu `/kategorijos/stojany-a-drzaky`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Skalbiniai ir atliekų įranga
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 31 | [Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją](#tema-31) | P1 | 2026-11-27 | Planas; tekstas neparašytas |
+| 32 | [Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas](#tema-32) | P2 | 2027-01-18 | Planas; tekstas neparašytas |
+| 33 | [Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas](#tema-33) | P2 | 2027-01-21 | Planas; tekstas neparašytas |
+| 34 | [Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas](#tema-34) | P2 | 2027-01-25 | Planas; tekstas neparašytas |
+| 35 | [Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys](#tema-35) | P3 | 2027-03-04 | Planas; tekstas neparašytas |
+
+<a id="tema-31"></a>
+
+### 31. Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją
+
+**Skaitytojo sprendimas.** Pasirinkti reikiamą rėmo, maišo ir dangčio tipą pagal įstaigos aprašytą darbą.
+
+**Unikalus rezultatas.** Paskirčių ir konstrukcijų palyginimas; švarių, surenkamų skalbinių bei atliekų poreikiai atskiriami pagal įstaigos procesą.
+
+**Frazė ir URL.** „skalbinių ir atliekų vežimėliai“ → `/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Skalbinių ir atliekų tvarkymas](https://www.klaro.cz/manipulace-s-pradlem-a-odpadem): 47 šioje šakoje susietų modelių; pavyzdžiai [SERVISNISADA01](https://www.klaro.cz/produkt/servisnisada01), [12066](https://www.klaro.cz/produkt/12066), [PLV131](https://www.klaro.cz/produkt/plv131). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/manipulace-s-pradlem-a-odpadem`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-32"></a>
+
+### 32. Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas
+
+**Skaitytojo sprendimas.** Patikrinti, ar konkretaus maišo anga ir tvirtinimas tinka konkrečiam rėmui.
+
+**Unikalus rezultatas.** Žingsnių matavimo lapas su angos, tvirtinimo ir dangčio vietos laukais; nominalūs litrai neįrodo tinkamo įstatymo.
+
+**Frazė ir URL.** „skalbinių vežimėlio maišai“ → `/gidai/skalbiniu-maisui-tinkamo-remo-patikra`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Skalbinių ir atliekų tvarkymas](https://www.klaro.cz/manipulace-s-pradlem-a-odpadem): 47 šioje šakoje susietų modelių; pavyzdžiai [XVAK21](https://www.klaro.cz/produkt/xvak21), [XVAK21-pruhy](https://www.klaro.cz/produkt/xvak21-pruhy), [XVAK22](https://www.klaro.cz/produkt/xvak22). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/manipulace-s-pradlem-a-odpadem`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-33"></a>
+
+### 33. Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas
+
+**Skaitytojo sprendimas.** Parinkti skalbinių transportavimo vietų skaičių ir uždarymo konstrukciją pagal konkretų maršrutą.
+
+**Unikalus rezultatas.** Lankstytų komplektų matmenų bei išdavimo vietų ruošinys; nekurti universalaus infekcijų kontrolės ar izoliavimo protokolo.
+
+**Frazė ir URL.** „švarių skalbinių vežimėlis“ → `/gidai/svariu-skalbiniu-transportavimo-vezimelis`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Skalbinių ir atliekų tvarkymas](https://www.klaro.cz/manipulace-s-pradlem-a-odpadem): 47 šioje šakoje susietų modelių; pavyzdžiai [12066](https://www.klaro.cz/produkt/12066), [PLV131](https://www.klaro.cz/produkt/plv131), [8003N](https://www.klaro.cz/produkt/8003n). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/manipulace-s-pradlem-a-odpadem`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-34"></a>
+
+### 34. Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas
+
+**Skaitytojo sprendimas.** Palyginti maišo angą, dangčio valdymą ir maišo pakeitimą pagal konkrečią konstrukciją.
+
+**Unikalus rezultatas.** Rėmo ir maišo suderinamumo lentelė; atliekų klasifikavimo, spalvų ar privalomų talpų reikalavimų neperkelti iš katalogo.
+
+**Frazė ir URL.** „medicininių atliekų maišų laikikliai“ → `/gidai/medicininiu-atlieku-maisu-laikiklis`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-9 (observed).
+
+**Faktinis pagrindas.** [Skalbinių ir atliekų tvarkymas](https://www.klaro.cz/manipulace-s-pradlem-a-odpadem): 47 šioje šakoje susietų modelių; pavyzdžiai [SERVISNISADA01](https://www.klaro.cz/produkt/servisnisada01), [PLV131](https://www.klaro.cz/produkt/plv131), [XVAK21](https://www.klaro.cz/produkt/xvak21). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/manipulace-s-pradlem-a-odpadem`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-35"></a>
+
+### 35. Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys
+
+**Skaitytojo sprendimas.** Apskaičiuoti įrangos poreikio intervalą pagal maršrutus, komplektų kiekį ir galimą užimtumą.
+
+**Unikalus rezultatas.** Aiškiai iliustracinis skaičiavimas su keičiamais įstaigos duomenimis; nevadinti jo tikru klientų projektu ar normatyvu.
+
+**Frazė ir URL.** „skalbinių vežimėlių kiekis“ → `/gidai/skalbiniu-vezimeliu-kiekio-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Skalbinių ir atliekų tvarkymas](https://www.klaro.cz/manipulace-s-pradlem-a-odpadem): 47 šioje šakoje susietų modelių; pavyzdžiai [SERVISNISADA01](https://www.klaro.cz/produkt/servisnisada01), [12066](https://www.klaro.cz/produkt/12066), [PLV131](https://www.klaro.cz/produkt/plv131). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas`. Susieti su katalogu `/kategorijos/manipulace-s-pradlem-a-odpadem`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Laikymas ir logistika
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 36 | [Medicinos priemonių laikymo ir transportavimo planas](#tema-36) | P1 | 2026-10-22 | Planas; tekstas neparašytas |
+| 37 | [Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą](#tema-37) | P2 | 2027-01-28 | Planas; tekstas neparašytas |
+| 38 | [REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas](#tema-38) | P2 | 2027-02-01 | Planas; tekstas neparašytas |
+| 39 | [Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų](#tema-39) | P2 | 2027-02-04 | Planas; tekstas neparašytas |
+| 40 | [Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra](#tema-40) | P3 | 2027-03-08 | Planas; tekstas neparašytas |
+
+<a id="tema-36"></a>
+
+### 36. Medicinos priemonių laikymo ir transportavimo planas
+
+**Skaitytojo sprendimas.** Susieti sandėliavimo vietas ir perdavimo maršrutą prieš renkantis stelažą, dėžes ar padėklų vežimėlį.
+
+**Unikalus rezultatas.** Priemonė–vieta–perdavimo taškas schema su užpildomu inventoriaus ruošiniu; nėra klinikinių laikymo sąlygų instrukcija.
+
+**Frazė ir URL.** „medicinos priemonių laikymas ir transportavimas“ → `/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Transportavimas ir sandėliavimas](https://www.klaro.cz/vybaveni-pro-manipulaci-a-skladovani): 124 šioje šakoje susietų modelių; pavyzdžiai [NEREZ0005](https://www.klaro.cz/produkt/nerez0005), [123](https://www.klaro.cz/produkt/123), [122031](https://www.klaro.cz/produkt/122031). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/vybaveni-pro-manipulaci-a-skladovani`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-37"></a>
+
+### 37. Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą
+
+**Skaitytojo sprendimas.** Sutikrinti lentynų bei bendrą apkrovą ir stelažo vietą pagal priemonių inventorių.
+
+**Unikalus rezultatas.** Gamintojo lentynos / viso stelažo ribų lentelė ir iliustracinis svorių paskirstymas; tvirtinimas ir stabilumas tik pagal konkretų dokumentą.
+
+**Frazė ir URL.** „medicininių stelažų apkrova“ → `/gidai/medicininio-stelazo-apkrovos-ir-vietos-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Stelažai](https://www.klaro.cz/regaly): 52 šioje šakoje susietų modelių; pavyzdžiai [ZR2231KAL*](https://www.klaro.cz/zr2231kal), [ZR2231KAP*](https://www.klaro.cz/zr2231kap), [ZR2231KBL*](https://www.klaro.cz/zr2231kbl). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas`. Susieti su katalogu `/kategorijos/regaly`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-38"></a>
+
+### 38. REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas
+
+**Skaitytojo sprendimas.** Patikrinti konkrečių REGO dėžių, priedų ir vežimėlio vietų tarpusavio suderinamumą.
+
+**Unikalus rezultatas.** Vienos realios dėžės ir vežimėlio kodų poros patikra; REGO ir ISO sistemų netapatinti pagal pavadinimą.
+
+**Frazė ir URL.** „REGO laikymo sistema“ → `/gidai/rego-deziu-ir-vezimelio-suderinamumas`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-14 (observed).
+
+**Faktinis pagrindas.** [REGO laikymo sistema](https://www.klaro.cz/rego-cz): 42 šioje šakoje susietų modelių; pavyzdžiai [RB1011](https://www.klaro.cz/rb1011), [RB1011D](https://www.klaro.cz/rb1011d), [RB1011P](https://www.klaro.cz/rb1011p). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas`. Susieti su katalogu `/kategorijos/rego-cz`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-39"></a>
+
+### 39. Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų
+
+**Skaitytojo sprendimas.** Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis.
+
+**Unikalus rezultatas.** Padėklas–kreipiančiosios–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio.
+
+**Frazė ir URL.** „padėklų vežimėlio matmenys“ → `/gidai/padeklu-vezimelio-formato-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Vežimėliai su padėklais](https://www.klaro.cz/plata): 149 šioje šakoje susietų modelių; pavyzdžiai [NEREZ3100](https://www.klaro.cz/produkt/nerez3100), [NEREZ3101](https://www.klaro.cz/produkt/nerez3101), [NEREZ3104](https://www.klaro.cz/produkt/nerez3104). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas`. Susieti su katalogu `/kategorijos/plata`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-40"></a>
+
+### 40. Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra
+
+**Skaitytojo sprendimas.** Parinkti tikro padėklo įdėklą pagal jo formą, paskirtį ir gamintojo nurodomą medžiagą.
+
+**Unikalus rezultatas.** Įdėklo ir padėklo matmenų ruošinys; triukšmo mažinimo ar neslydimo savybėms nekurti nepatikrintų skaitinių rodiklių.
+
+**Frazė ir URL.** „neslystantys padėklų įdėklai“ → `/gidai/padeklu-ideklu-suderinamumas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Triukšmą ir slydimą mažinantys įdėklai](https://www.klaro.cz/protihlukove-a-protiskluzove-podlozky): 24 šioje šakoje susietų modelių; pavyzdžiai [RBVL01](https://www.klaro.cz/rbvl01), [RBVL02](https://www.klaro.cz/rbvl02), [RBVL03](https://www.klaro.cz/rbvl03). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas`. Susieti su katalogu `/kategorijos/protihlukove-a-protiskluzove-podlozky`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Sterilizavimo skyriaus logistika
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 41 | [Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas](#tema-41) | P1 | 2026-10-26 | Planas; tekstas neparašytas |
+| 42 | [Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra](#tema-42) | P2 | 2027-02-08 | Planas; tekstas neparašytas |
+| 43 | [Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra](#tema-43) | P3 | 2027-03-11 | Planas; tekstas neparašytas |
+
+<a id="tema-41"></a>
+
+### 41. Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas
+
+**Skaitytojo sprendimas.** Susieti skyriaus jau aprašytą procesą su baldų, laikymo bei transportavimo vietomis.
+
+**Unikalus rezultatas.** Įstaigos proceso žingsnių → fizinės įrangos poreikio ruošinys; neskirti sterilizavimo ciklų, zonų teisinių ribų ar proceso instrukcijos.
+
+**Frazė ir URL.** „sterilizavimo skyriaus baldai“ → `/gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Sterilizavimo įranga](https://www.klaro.cz/produkty-pro-sterilizaci): 153 šioje šakoje susietų modelių; pavyzdžiai [NEREZ2704](https://www.klaro.cz/produkt/nerez2704), [NEREZ2705](https://www.klaro.cz/produkt/nerez2705), [NEREZ2606](https://www.klaro.cz/produkt/nerez2606). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/produkty-pro-sterilizaci`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-42"></a>
+
+### 42. Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra
+
+**Skaitytojo sprendimas.** Palyginti padėklų matmenis ir numatytą laikymo bei transportavimo įrangą.
+
+**Unikalus rezultatas.** Dviejų realių padėklų ir vienos laikymo vietos matmenų palyginimas; proceso tinkamumas tik pagal konkretaus modelio instrukciją.
+
+**Frazė ir URL.** „sterilizavimo padėklai“ → `/gidai/nerudijancio-plieno-sterilizavimo-padeklo-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Nerūdijančiojo plieno padėklai](https://www.klaro.cz/nerezova-plata-sterilizace): 135 šioje šakoje susietų modelių; pavyzdžiai [NEREZ2704](https://www.klaro.cz/produkt/nerez2704), [NEREZ2705](https://www.klaro.cz/produkt/nerez2705), [NEREZ2606](https://www.klaro.cz/produkt/nerez2606). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas`. Susieti su katalogu `/kategorijos/nerezova-plata-sterilizace`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-43"></a>
+
+### 43. Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra
+
+**Skaitytojo sprendimas.** Sutikrinti tikro transportavimo vežimėlio variantą su turimos plovimo mašinos dokumentais.
+
+**Unikalus rezultatas.** ATYP_100_22_A dviejų ir ATYP_100_22_B trijų pozicijų laukų palyginimas; tai vežimėliai, ne plovimo mašinos ar universalus jų tinkamumo įrodymas.
+
+**Frazė ir URL.** „vežimėlis plovimo mašinai“ → `/gidai/vezimelio-plovimo-masinai-suderinamumas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Didelės talpos plovimo mašinos](https://www.klaro.cz/velkokapacitni-mycky): 2 šioje šakoje susietų modelių; pavyzdžiai [ATYP_100_22_A](https://www.klaro.cz/vozik-do-velkokapacitnich-mycek-var-a), [ATYP_100_22_B](https://www.klaro.cz/vozik-do-velkokapacitnich-mycek-varianta-b-tri-pozice). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas`. Susieti su katalogu `/kategorijos/velkokapacitni-mycky`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Priežiūra ir dokumentai
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 44 | [Medicininių baldų priežiūros planas pagal gamintojo dokumentus](#tema-44) | P2 | 2026-10-29 | Planas; tekstas neparašytas |
+| 45 | [Kaip patikrinti medicininės įrangos valymo dokumentus](#tema-45) | P2 | 2026-12-04 | Planas; tekstas neparašytas |
+| 46 | [Kaip rasti Klaro atsarginę dalį pagal įrangos kodą](#tema-46) | P1 | 2026-11-06 | Planas; tekstas neparašytas |
+| 47 | [Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas](#tema-47) | P2 | 2027-02-11 | Planas; tekstas neparašytas |
+
+<a id="tema-44"></a>
+
+### 44. Medicininių baldų priežiūros planas pagal gamintojo dokumentus
+
+**Skaitytojo sprendimas.** Sudaryti priežiūros darbų ir dokumentų sąrašą konkrečiam įrangos inventoriui.
+
+**Unikalus rezultatas.** Modelis–instrukcija–gamintojo nurodytas darbas–atsakingas asmuo ruošinys; nekurti savavališkų priežiūros intervalų ar mūsų serviso pažado.
+
+**Frazė ir URL.** „medicininių baldų priežiūra“ → `/gidai/medicininiu-baldu-prieziuros-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Medicininiai baldai](https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni): 16 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1044](https://www.klaro.cz/produkt/nerez1044), [1200](https://www.klaro.cz/produkt/1200), [1100](https://www.klaro.cz/produkt/1100). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/zdravotnicky-nabytek-prehled-hlavni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-45"></a>
+
+### 45. Kaip patikrinti medicininės įrangos valymo dokumentus
+
+**Skaitytojo sprendimas.** Rasti konkretaus modelio ir jo medžiagų valymui taikomą dokumentą bei trūkstamus laukus.
+
+**Unikalus rezultatas.** Modelio, paviršiaus ir instrukcijos redakcijos patikros lapas; neskirti dezinfekantų, koncentracijų, poveikio laiko ar procedūrų iš bendrų AI atsakymų.
+
+**Frazė ir URL.** „medicininio vežimėlio valymo instrukcija“ → `/gidai/medicinines-irangos-valymo-dokumentai`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-13 (observed).
+
+**Faktinis pagrindas.** [Vežimėlių priedai](https://www.klaro.cz/prislusenstvi): 115 šioje šakoje susietų modelių; pavyzdžiai [00101P](https://www.klaro.cz/produkt/00101P), [5790](https://www.klaro.cz/produkt/5790), [5791](https://www.klaro.cz/produkt/5791). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininiu-baldu-prieziuros-planas`. Susieti su katalogu `/kategorijos/prislusenstvi`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-46"></a>
+
+### 46. Kaip rasti Klaro atsarginę dalį pagal įrangos kodą
+
+**Skaitytojo sprendimas.** Tiksliai identifikuoti turimą gaminį bei detalę prieš užklausą.
+
+**Unikalus rezultatas.** Modelio etiketės, detalės nuotraukos ir kodo užklausos ruošinys; valymo įrangos dalių šakos nevadinti visų medicininių gaminių servisu.
+
+**Frazė ir URL.** „Klaro atsarginės dalys“ → `/gidai/klaro-atsargines-dalies-paieska`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-23 (observed).
+
+**Faktinis pagrindas.** [Atsarginės dalys](https://www.klaro.cz/uklid-nahradni-dily): 64 šioje šakoje susietų modelių; pavyzdžiai [5764L](https://www.klaro.cz/produkt/5764L), [5765L](https://www.klaro.cz/produkt/5765L), [01518](https://www.klaro.cz/produkt/01518). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininiu-baldu-prieziuros-planas`. Susieti su katalogu `/kategorijos/uklid-nahradni-dily`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-47"></a>
+
+### 47. Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas
+
+**Skaitytojo sprendimas.** Parinkti valymo darbo priemonių vežimėlio talpinimo vietas ir priedų komplektą.
+
+**Unikalus rezultatas.** Konkretaus valymo vežimėlio priemonių sąrašo ir vietų lentelė; tai darbo įrangos atranka, ne kitų baldų dezinfekavimo protokolas.
+
+**Frazė ir URL.** „valymo vežimėlio komplektacija“ → `/gidai/valymo-vezimelio-komplektacijos-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Valymo įranga](https://www.klaro.cz/uklidove-vybaveni): 52 šioje šakoje susietų modelių; pavyzdžiai [PLV101](https://www.klaro.cz/produkt/plv101), [PLV111](https://www.klaro.cz/produkt/plv111), [PLV141](https://www.klaro.cz/produkt/plv141). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicininiu-baldu-prieziuros-planas`. Susieti su katalogu `/kategorijos/uklidove-vybaveni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Pirkimas ir priėmimas
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 48 | [Kaip parengti įrangos pirkimo užklausą gydymo įstaigai](#tema-48) | P1 | Parengta 2026-10-09 | Parengtas ir patvirtintas lokaliai |
+| 49 | [Įrangos komplekto priėmimas: ką sutikrinti su užsakymu](#tema-49) | P1 | 2026-12-11 | Planas; tekstas neparašytas |
+| 50 | [Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos](#tema-50) | P1 | 2026-11-30 | Planas; tekstas neparašytas |
+| 51 | [Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys](#tema-51) | P1 | 2026-12-03 | Planas; tekstas neparašytas |
+| 52 | [Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą](#tema-52) | P2 | 2027-02-15 | Planas; tekstas neparašytas |
+| 53 | [Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas](#tema-53) | P3 | 2027-03-15 | Planas; tekstas neparašytas |
+| 54 | [Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai](#tema-54) | P3 | 2027-03-18 | Planas; tekstas neparašytas |
+
+<a id="tema-48"></a>
+
+### 48. Kaip parengti įrangos pirkimo užklausą gydymo įstaigai
+
+**Skaitytojo sprendimas.** Parengti tiekėjui palyginamą poreikio ir komplektacijos užklausą.
+
+**Unikalus rezultatas.** Vienas bendras pirkimo užklausos ruošinys su kodais, kiekiais, vieta ir tikslinamais dokumentais; nėra viešojo pirkimo teisinė išvada.
+
+**Frazė ir URL.** „medicininės įrangos pirkimo užklausa“ → `/gidai/irangos-pirkimo-uzklausa`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Medicininiai baldai](https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni): 16 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1044](https://www.klaro.cz/produkt/nerez1044), [1200](https://www.klaro.cz/produkt/1200), [1100](https://www.klaro.cz/produkt/1100). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Pagrindinis gidas savo temai. Susieti su katalogu `/kategorijos/zdravotnicky-nabytek-prehled-hlavni`, atitinkamu modeliu ir pirkimo užklausa. Esamo patvirtinto teksto nuorodos šiame etape nekeistos.
+
+<a id="tema-49"></a>
+
+### 49. Įrangos komplekto priėmimas: ką sutikrinti su užsakymu
+
+**Skaitytojo sprendimas.** Sutikrinti gautą komplektą su užsakymo eilutėmis ir gautais dokumentais.
+
+**Unikalus rezultatas.** Gauta–užsakyta–patvirtinti eilutėmis susietas priėmimo lapas; neimituoti techninės saugos, klinikinės tinkamumo ar teisinės atitikties sertifikavimo.
+
+**Frazė ir URL.** „medicininės įrangos priėmimas“ → `/gidai/irangos-komplekto-priemimo-patikra`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Vežimėliai su priedais](https://www.klaro.cz/voziky-s-prislusenstvim): 92 šioje šakoje susietų modelių; pavyzdžiai [ukazka-lv1](https://www.klaro.cz/produkt/ukazka-lv1), [ukazka-lv2](https://www.klaro.cz/produkt/ukazka-lv2), [ukazka-lv3](https://www.klaro.cz/produkt/ukazka-lv3). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/irangos-pirkimo-uzklausa`. Susieti su katalogu `/kategorijos/voziky-s-prislusenstvim`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 5 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-50"></a>
+
+### 50. Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos
+
+**Skaitytojo sprendimas.** Suvienodinti dviejų pasiūlymų modelių, priedų, kiekių ir dokumentų eilutes.
+
+**Unikalus rezultatas.** Iliustracinė dviejų skirtingai surašytų pasiūlymų normalizavimo lentelė su neįkainotų laukų žymėjimu; neišgalvoti kainų ar garantijų.
+
+**Frazė ir URL.** „medicininės įrangos pasiūlymų palyginimas“ → `/gidai/medicinines-irangos-pasiulymu-palyginimas`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-11 (observed).
+
+**Faktinis pagrindas.** [Vežimėliai su priedais](https://www.klaro.cz/voziky-s-prislusenstvim): 92 šioje šakoje susietų modelių; pavyzdžiai [ukazka-lv1](https://www.klaro.cz/produkt/ukazka-lv1), [ukazka-lv2](https://www.klaro.cz/produkt/ukazka-lv2), [ukazka-lv3](https://www.klaro.cz/produkt/ukazka-lv3). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/irangos-pirkimo-uzklausa`. Susieti su katalogu `/kategorijos/voziky-s-prislusenstvim`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 5 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-51"></a>
+
+### 51. Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys
+
+**Skaitytojo sprendimas.** Paversti fizinį įstaigos poreikį patikrinamais parametrais ir jų dokumentų laukais.
+
+**Unikalus rezultatas.** Poreikis–parametras–patikros dokumentas lentelė, remiantis aktualiomis VPT gairėmis; neteikti bendros teisinės atitikties garantijos ar kopijuotos diskriminuojančios specifikacijos.
+
+**Frazė ir URL.** „medicininių baldų techninė specifikacija“ → `/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys`. Nėra patikimos skaitinės apimties. Frazės SERP: full-serp-refined-12 (observed).
+
+**Faktinis pagrindas.** [Medicininiai baldai](https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni): 16 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1044](https://www.klaro.cz/produkt/nerez1044), [1200](https://www.klaro.cz/produkt/1200), [1100](https://www.klaro.cz/produkt/1100). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/irangos-pirkimo-uzklausa`. Susieti su katalogu `/kategorijos/zdravotnicky-nabytek-prehled-hlavni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 5 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-52"></a>
+
+### 52. Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą
+
+**Skaitytojo sprendimas.** Palyginti įsigijimo ir dokumentais patvirtintas papildomas išlaidas pagal pasirinktą naudojimo laiką.
+
+**Unikalus rezultatas.** Tuščias išlaidų modelis su vartotojo įrašomomis kainomis, priedais ir laikotarpiu; nekurti tarnavimo laiko, priežiūros kainų ar mūsų garantijų.
+
+**Frazė ir URL.** „medicininių baldų naudojimo išlaidos“ → `/gidai/medicininiu-baldu-naudojimo-islaidu-palyginimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Medicininiai baldai](https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni): 16 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1044](https://www.klaro.cz/produkt/nerez1044), [1200](https://www.klaro.cz/produkt/1200), [1100](https://www.klaro.cz/produkt/1100). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/irangos-pirkimo-uzklausa`. Susieti su katalogu `/kategorijos/zdravotnicky-nabytek-prehled-hlavni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 5 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-53"></a>
+
+### 53. Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas
+
+**Skaitytojo sprendimas.** Suplanuoti baldų keitimo etapus pagal turimą inventorių, naują poreikį ir priklausomas komplektacijas.
+
+**Unikalus rezultatas.** Esama–paliekama–keičiama inventoriaus matrica ir iliustracinis etapų planas; be savavališko techninės saugos įvertinimo ar pakeitimo normatyvų.
+
+**Frazė ir URL.** „medicinos įstaigos baldų atnaujinimas“ → `/gidai/medicinos-istaigos-baldu-atnaujinimo-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Medicininiai baldai](https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni): 16 šioje šakoje susietų modelių; pavyzdžiai [NEREZ1044](https://www.klaro.cz/produkt/nerez1044), [1200](https://www.klaro.cz/produkt/1200), [1100](https://www.klaro.cz/produkt/1100). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/irangos-pirkimo-uzklausa`. Susieti su katalogu `/kategorijos/zdravotnicky-nabytek-prehled-hlavni`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 5 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-54"></a>
+
+### 54. Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai
+
+**Skaitytojo sprendimas.** Parengti neįprastos komplektacijos užklausą pagal aiškius matmenis ir patikrintą gamintojo pavyzdį.
+
+**Unikalus rezultatas.** Vieno Klaro netipinės gamybos pavyzdžio komentaruotas užklausos ruošinys; nepažadėti mūsų gamybos, keitimo galimybės, kainos ar termino.
+
+**Frazė ir URL.** „individualūs medicininiai baldai“ → `/gidai/netipines-baldu-komplektacijos-uzklausa`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Gamyba pagal individualų poreikį](https://www.klaro.cz/atypicka-vyroba): 145 šioje šakoje susietų modelių; pavyzdžiai [ATP0002](https://www.klaro.cz/produkt/atp0002), [ATYPKN343](https://www.klaro.cz/produkt/ATYPKN343), [ATYPKN273](https://www.klaro.cz/produkt/ATYPKN273). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/irangos-pirkimo-uzklausa`. Susieti su katalogu `/kategorijos/atypicka-vyroba`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 5 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Patalpų paskirties sprendimai
+
+| Nr. | Tema | Prioritetas | Parengimo data | Būsena |
+|---:|---|---|---|---|
+| 55 | [Laboratorijos baldai: fizinės darbo ir laikymo vietos planas](#tema-55) | P2 | 2027-02-18 | Planas; tekstas neparašytas |
+| 56 | [Vaistinės baldai ir moduliai: priemonių inventoriaus ir vietų planas](#tema-56) | P2 | 2027-02-22 | Planas; tekstas neparašytas |
+| 57 | [Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra](#tema-57) | P3 | 2027-03-22 | Planas; tekstas neparašytas |
+
+<a id="tema-55"></a>
+
+### 55. Laboratorijos baldai: fizinės darbo ir laikymo vietos planas
+
+**Skaitytojo sprendimas.** Suderinti realių laikomų priemonių matmenis su modulinių baldų darbo bei laikymo vietomis.
+
+**Unikalus rezultatas.** MetalLine BASIC / PROFI konkrečių modelių darbo vietos schema; nekurti cheminių medžiagų laikymo ar laboratorinio proceso saugos nurodymų.
+
+**Frazė ir URL.** „laboratorijos baldų planavimas“ → `/gidai/laboratorijos-baldu-darbo-vietos-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Laboratorijos ir vaistinės](https://www.klaro.cz/laboratore-a-lekarny): 41 šioje šakoje susietų modelių; pavyzdžiai [ZS1211](https://www.klaro.cz/produkt/zs1211), [ZS1211A](https://www.klaro.cz/produkt/zs1211a), [ZS1221](https://www.klaro.cz/produkt/zs1221). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-istaigos-baldu-planavimas`. Susieti su katalogu `/kategorijos/laboratore-a-lekarny`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-56"></a>
+
+### 56. Vaistinės baldai ir moduliai: priemonių inventoriaus ir vietų planas
+
+**Skaitytojo sprendimas.** Sutikrinti pakuočių, stalčių ir laikymo modulių fizinius poreikius konkrečiai darbo vietai.
+
+**Unikalus rezultatas.** Pakuotės–modulis–vieta ruošinys su tikrais gaminių kodais; baldų pasirinkimo netapatinti su teisinių vaistų laikymo sąlygų patvirtinimu.
+
+**Frazė ir URL.** „vaistinės baldų planavimas“ → `/gidai/vaistines-baldu-ir-moduliu-planas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Laboratorijos ir vaistinės](https://www.klaro.cz/laboratore-a-lekarny): 41 šioje šakoje susietų modelių; pavyzdžiai [ZS1211](https://www.klaro.cz/produkt/zs1211), [ZS1211A](https://www.klaro.cz/produkt/zs1211a), [ZS1221](https://www.klaro.cz/produkt/zs1221). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-istaigos-baldu-planavimas`. Susieti su katalogu `/kategorijos/laboratore-a-lekarny`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+<a id="tema-57"></a>
+
+### 57. Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra
+
+**Skaitytojo sprendimas.** Pasirinkti kambarių ūkio darbo vežimėlį pagal priemonių kiekį, grindis ir uždarymo poreikį.
+
+**Unikalus rezultatas.** VAN STANDARD / MAX konkrečių kietų bei minkštų grindų ir durų variantų palyginimas; traukinio minibaras NEREZ0051 nėra medicininio gido pavyzdys.
+
+**Frazė ir URL.** „kambarių aptarnavimo vežimėlis“ → `/gidai/kambariu-aptarnavimo-vezimelio-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
+
+**Faktinis pagrindas.** [Palatų aptarnavimas ir slauga](https://www.klaro.cz/obsluha-pokoju): 13 šioje šakoje susietų modelių; pavyzdžiai [HV1001](https://www.klaro.cz/produkt/hv1001), [HV1001D](https://www.klaro.cz/produkt/hv1001d), [HV1002](https://www.klaro.cz/produkt/hv1002). Kategorijų modelių skaičiai persidengia ir nesumuojami. Prieš skaitinį, medžiagos, apkrovos, valymo ar atitikties teiginį tikrinti konkrečiam modeliui taikomą gamintojo dokumentą.
+
+**Turinio eiga.** Atsakymas į sprendimą → naudotinas ruošinys arba palyginimas → tikro modelio paaiškinimas → trūkstamų laukų patikra ir užklausa. Grįžimas į pagrindinį gidą `/gidai/medicinos-istaigos-baldu-planavimas`. Susieti su katalogu `/kategorijos/obsluha-pokoju`, atitinkamu modeliu ir pirkimo užklausa. Tikslūs 6 vidinių nuorodų pasiūlymai ir jų parengtumas saugomi JSON.
+
+## Publikavimo ir GEO patikra
+
+Rašant sukurti tikrą temos vaizdą ir lentelę ar schemą, patikrinti konkrečius šaltinius, vienetus, modelių kodus bei priedų suderinamumą. Gido pradžioje pateikti tiesioginį atsakymą; palyginime aiškiai atskirti gamintojo patvirtintus parametrus nuo dar tikslinamų. Išvadas rišti prie nurodyto modelio ir naudojimo sąlygų.
+
+Nuoroda į kitą planuojamą straipsnį kol kas yra pasiūlymas; ji tampa vieša tik parengus bei patvirtinus tinkamą tikslinį tekstą ir leidžiant bendram revizijos / domeno / datos filtrui. Užklausa turi pateikti modelių kodus, kiekius ir gide surinktus matavimus. Kainų, sandėlio likučių, pristatymo, garantijų, mūsų gamybos ar klinikinės atitikties pažadų nekurti.
+
+Privačiame Studio yra 54 tušti planai; patikrintas palaikomų reason, sourceQueries, vidinių nuorodų ir šaltinių laukų perdavimas bei dabartinis seoResearch. Du naujų užduočių V1 failai: [24 užduotys](CONTENT_PLAN_BATCH_01.json), [22 užduotys](CONTENT_PLAN_BATCH_02.json). Ankstesnis [8 užduočių failas](CONTENT_PLAN.json) paliktas istoriniam suderinamumui. Išsamus JSON žemėlapis yra redakcinė dokumentacija; šioje V1 sistemoje atskiro planningBrief įterpimo adapterio nėra.
+
+Nauji tekstai, jų iliustracijos, vieša publikacija ir matavimai po paleidimo yra tolesnis darbas. 1 856 patvirtintos katalogo bei esamų gidų revizijos, jų datos ir viešas turinio paketas išsaugoti.

@@ -18,6 +18,8 @@ Naujai pritaikytas Impeccable planavimo metodas: actual context launcher, projec
 - `node scripts/repository-safety.mjs --staged` → PASS: 12 exact staged blobs, 0 findings; tiek šaltinių, kiek leidžia mūsų dokumentų scope. Tikrina patterns ir vietinių secret reikšmių sutapimus; tai nėra universali visų asmeninių duomenų nebuvimo garantija. Runtime/source diff šiuo paketu nėra.
 - `node scripts/git-freshness.mjs --phase continue` → PASS_FRESH_BASE, main commits missing=0; main SHA nepakeistas. Galutinių index objektų safety/whitespace ir handoff freshness tikrinami dar kartą po šio QA/rezervacijos statuso papildymo.
 
+Po savininko papildymo apie kito PC Verslomatika vykdytoją pridėtas `INTEGRATION_HANDOFF.md`: konkrečios Git repo/PR/branch nuorodos, aktualaus SHA fiksavimas, esami API ir PLANNED routes, D1+D2 integracijos pavedimas bei kopijuojamas prompt. Į esamos platformos framework nespėliojame ir jo nekeičiame vien dėl seno React/TS pasiūlymo. Antro faktinio dokumentų patikrinimo rezultatas: **11MD, 91local links, 0broken, 0fence errors, 35unique screen IDs**. PASS. Pirmas plano commit `ae7cfba6703567e5a3ef4df6a486af0dd412ebbf` sėkmingai pushed į PR59 šaką; perdavimo papildymas pateikiamas atskiru to paties PR commit.
+
 Runtime suites šiame dokumentiniame pakeitime nepaleistos; ankstesni acquisition rezultatai liko [savo QA](ACQUISITION_DIALOGUE_CALIBRATION_QA_2026-10-10.md). Jų nereklasifikuojame kaip naujo dashboardo testų. 45 aprašyti platformos scenarijai nėra 45 PASS.
 
 ## Šaltinių patikra

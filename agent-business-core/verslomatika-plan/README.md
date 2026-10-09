@@ -29,6 +29,7 @@
 | [FINANCE](FINANCE.md) | Dokumentų/sąskaitų eiga, sutikrinimas, koordinuojama apskaita ir buhalterio paketas |
 | [TOOLS](TOOLS.md) | Dabartinių ir būsimų adapterių paskirtis, aprėptis, kaštų bei aktyvavimo ribos |
 | [ROADMAP](ROADMAP.md) | D0–D9 darbai, priklausomybės, priėmimo įrodymai ir testavimo matrica |
+| [INTEGRATION_HANDOFF](INTEGRATION_HANDOFF.md) | Repo/šakos, esami ir dar nesukurti API, pirmas integracijos paketas ir pavedimas kito PC agentui |
 
 ## Įgyvendinimo sprendimas
 

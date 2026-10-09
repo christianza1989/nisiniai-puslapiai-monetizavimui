@@ -12,7 +12,7 @@ Esamo [core pasirinkimas](../ARCHITECTURE.md): Python/FastAPI, PostgreSQL, versi
 
 ## Users
 
-Savininkas kaip visų verslų direktorius. Vėliau deleguoti konkrečių verslų operatoriai, buhalteris ir atskirų klientų organizacijos. Tai būsimos rolės; dabartinis operatoriaus Bearer secret nėra individualių naudotojų sistema.
+Savininkas kaip visų verslų direktorius. Vėliau deleguoti konkrečių verslų operatoriai, buhalteris ir atskirų klientų organizacijos. Tai būsimos rolės; dabartinis operatoriaus Bearer secret nėra individualių naudotojų sistema. Savininkas nurodė, kad kito PC agentas jau dirba su Verslomatika.lt ir bandys ją jungti prie šio core. Faktinis tos platformos kodas/stack šiame audite nebuvo pateiktas; integracija pritaikoma joje per bendrus kontraktus pagal [perdavimo instrukciją](INTEGRATION_HANDOFF.md).
 
 ## Product Purpose
 

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Explicit owner create-agent scope now includes immediate niche integration, archetype calibration, cause repairs, protected checks, learning decision/adoption/rollback and actual authorized channels. Instructions only; no new model/audio/mail execution or changes to protected corpus. Companion routing two documentation paths only.",
+  "checks": [
+    {
+      "command": "quick_validate.py SKILLS/business-agent-calibration",
+      "result": "PASS",
+      "evidence": "Skill is valid; updated entry SHA only"
+    },
+    {
+      "command": "selected Markdown link check",
+      "result": "PASS",
+      "evidence": "59 local links across6 instruction paths"
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs",
+      "result": "PASS",
+      "evidence": "6 profiles PASS_INPUTS; behaviour/knowledge/channels false, model_calls0"
+    },
+    {
+      "command": "git diff --check in core and companion",
+      "result": "PASS",
+      "evidence": "No whitespace errors; Windows WORKSTREAMS normalization warning only"
+    }
+  ],
+  "eventId": "21bebfd1-f41b-4b64-bf46-bda1484ee33a",
+  "sequence": 2,
+  "at": "2026-10-08T13:59:03.151Z"
+}

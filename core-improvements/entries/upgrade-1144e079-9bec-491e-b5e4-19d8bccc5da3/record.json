@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Make a conversation-agent creation request include complete niche integration and autonomous calibration by default",
+  "category": "skills",
+  "evidence": [
+    "Owner explicitly clarifies immediate creation plus calibration using the prior archetype/receipt/protected-learning method.",
+    "Current f743b1c business-agent-calibration has a detailed calibration runbook but no explicit creation-to-acceptance default contract for the short create-agent request.",
+    "Companion e578426610f067fd7a4db3574f754b8d06ef5426 routes the same skill. VoicePR32/publicPR9 remain separate OPEN draft dependencies."
+  ],
+  "paths": [
+    "AGENTS.md",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "SKILLS/business-agent-calibration/SKILL.md",
+    "SKILLS/business-agent-calibration/PROMPT.md",
+    "SKILLS/business-agent-calibration/references/create-and-calibrate.md",
+    "SKILLS/business-agent-calibration/references/acceptance.md",
+    "SKILLS/catalog.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/49",
+  "rollback": "Scoped revert of instructions/catalog/routing; retain upgrade journal. No runtime or learned release changed.",
+  "id": "upgrade-1144e079-9bec-491e-b5e4-19d8bccc5da3",
+  "branch": "codex/create-agent-calibrate-default-20261008",
+  "baseSha": "f743b1cbcb09418d733fbe3c72b6968d65a72259",
+  "createdAt": "2026-10-08T13:56:33.489Z"
+}

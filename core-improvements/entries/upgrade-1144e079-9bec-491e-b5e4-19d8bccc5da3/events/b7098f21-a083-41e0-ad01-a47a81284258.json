@@ -1,0 +1,20 @@
+{
+  "status": "pr",
+  "note": "Owner further clarifies default end-to-end website call and email flow. Updated canonical contract/skill/acceptance/AGENTS and companion docs require actual browser audio, contact save, postcall reviewed email and client replies, with autonomous implementation of missing code. Supplier/quote/PDF remain actual niche/mandate scoped. No new channel or model execution in this documentation task.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/50",
+  "checks": [
+    {
+      "command": "selected source/hash/local-link validation",
+      "result": "PASS",
+      "evidence": "59 local links, only calibration catalog SHA updated"
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs; git diff --check both repos",
+      "result": "PASS",
+      "evidence": "6 profiles input-only PASS; no whitespace errors, live/behaviour remains unverified"
+    }
+  ],
+  "eventId": "b7098f21-a083-41e0-ad01-a47a81284258",
+  "sequence": 4,
+  "at": "2026-10-08T14:03:20.092Z"
+}

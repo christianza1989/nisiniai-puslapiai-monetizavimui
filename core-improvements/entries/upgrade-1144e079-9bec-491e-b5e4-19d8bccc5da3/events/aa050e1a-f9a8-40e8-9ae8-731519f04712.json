@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Scoped source review: 11 instruction/catalog/journal paths plus this receipt, companion PR18 two documentation paths. No runtime/corpus/data changes. Local validation passed; CI/main/adoption checked separately.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/50",
+  "eventId": "aa050e1a-f9a8-40e8-9ae8-731519f04712",
+  "sequence": 3,
+  "at": "2026-10-08T14:00:40.794Z"
+}

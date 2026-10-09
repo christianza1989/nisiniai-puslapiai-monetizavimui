@@ -1,5 +1,7 @@
 # Shared skill contract for this niche network
 
+An explicit request to create a business conversation agent includes immediate autonomous niche calibration under [create-and-calibrate](business-agent-calibration/references/create-and-calibrate.md). Do not wait for a separate calibration request or stop at a profile/prompt/widget. Complete the authorized implementation, archetype runs, root-cause repairs, protected checks, learning decision/adoption/rollback and actual channel acceptance with a per-site report. Existing operation/cost/access authorization remains authoritative; a normal phase-one site request still does not enable agent runtime.
+
 Every implemented shared upgrade additionally has a unique entry in the [core journal](../core-improvements/README.md), with original evidence, owned paths, checks and Git delivery. Proven dead files may be reversibly quarantined using the exact-file helper; never bulk-delete, change imported archives or overwrite another agent's work.
 
 New BUSINESS and significant expansion decisions require [niche-business-tools](niche-business-tools/SKILL.md) under [BUSINESS_TOOLS_CORE](../BUSINESS_TOOLS_CORE.md): site TOOLS.md for the whole paid customer path and future capabilities, with live Treg discovery or explicit unavailable/fallback evidence. Plans cannot activate paid calls or operational modules; phase-one scope remains intact.

@@ -1,0 +1,23 @@
+{
+  "verifiedAt": "2026-10-09T19:41:07.940Z",
+  "sourceThreadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
+  "source": "Original local Codex response_item role:user messages, not a delegated authorization or compaction summary",
+  "messages": [
+    {
+      "id": "msg_01a114cd-c73c-76e0-8e60-279ff4f2e78d",
+      "at": "2026-10-07T05:19:52.636Z",
+      "text": "tai gerai, padaryk bent kokiu 30 straipsniu ir ikelk iskarto jau kad butu ilgam autokontento"
+    },
+    {
+      "id": "msg_01a12064-cd47-7ab0-acdf-f9d92a067d26",
+      "at": "2026-10-09T11:20:39.495Z",
+      "text": "tai daryk kad publikavimas butu nuoseklus, gerai butu gal isvis kad visi straipsniai plano per puse metu jau butu sukelti"
+    },
+    {
+      "id": "msg_01a121d2-9945-7fb3-a8df-d99d41eefed8",
+      "at": "2026-10-09T18:00:12.357Z",
+      "text": "paruodk dar 30 straipsniu i prieki, ziurek kad visos nuotraukos labai vienodai neatrodytu."
+    }
+  ],
+  "scope": "Separate approved-content upload and scheduled publication. Does not authorize unreviewed specialist-gated pages or imply full platform upgrade completion."
+}

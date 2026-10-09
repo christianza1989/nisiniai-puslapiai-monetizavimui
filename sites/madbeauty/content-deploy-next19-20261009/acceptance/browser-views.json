@@ -1,0 +1,158 @@
+{
+  "at": "2026-10-09T19:48:19.554Z",
+  "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+  "views": [
+    {
+      "document": 1425,
+      "guideLinks": [
+        "/gidai/kas-ieina-i-manikiuro-kaina",
+        "/gidai/kas-ieina-i-manikiuro-kaina",
+        "/gidai/kaip-pasirinkti-nagu-spalva",
+        "/gidai/kaip-pasirinkti-nagu-spalva",
+        "/gidai/kaip-vertinti-meistro-darbu-galerija",
+        "/gidai/kaip-vertinti-meistro-darbu-galerija"
+      ],
+      "heading": "Grožio gidai prieš vizitą",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 780,
+          "src": "/content-assets/madbeauty/858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp"
+        },
+        {
+          "complete": true,
+          "naturalWidth": 400,
+          "src": "/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp"
+        },
+        {
+          "complete": true,
+          "naturalWidth": 400,
+          "src": "/content-assets/madbeauty/e251f0d2-c7b3-471a-88fb-c014926c747d.webp"
+        },
+        {
+          "complete": true,
+          "naturalWidth": 400,
+          "src": "/content-assets/madbeauty/34710a86-f607-4bb6-aa6c-d90a0767beeb.webp"
+        }
+      ],
+      "main": 1425,
+      "url": "https://madbeauty.lt/gidai",
+      "viewport": {
+        "height": 900,
+        "width": 1440
+      }
+    },
+    {
+      "document": 375,
+      "guideLinks": [
+        "/gidai/kas-ieina-i-manikiuro-kaina",
+        "/gidai/kas-ieina-i-manikiuro-kaina",
+        "/gidai/kaip-pasirinkti-nagu-spalva",
+        "/gidai/kaip-pasirinkti-nagu-spalva",
+        "/gidai/kaip-vertinti-meistro-darbu-galerija",
+        "/gidai/kaip-vertinti-meistro-darbu-galerija"
+      ],
+      "heading": "Grožio gidai prieš vizitą",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 358,
+          "src": "/content-assets/madbeauty/858e5138-1aa3-4fb7-b0c8-4c6ddd3c7638.webp"
+        },
+        {
+          "complete": true,
+          "naturalWidth": 358,
+          "src": "/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp"
+        },
+        {
+          "complete": true,
+          "naturalWidth": 358,
+          "src": "/content-assets/madbeauty/e251f0d2-c7b3-471a-88fb-c014926c747d.webp"
+        },
+        {
+          "complete": true,
+          "naturalWidth": 358,
+          "src": "/content-assets/madbeauty/34710a86-f607-4bb6-aa6c-d90a0767beeb.webp"
+        }
+      ],
+      "main": 375,
+      "url": "https://madbeauty.lt/gidai",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      }
+    },
+    {
+      "document": 375,
+      "heading": "Kas įeina į manikiūro kainą",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 358,
+          "src": "/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp"
+        }
+      ],
+      "main": 375,
+      "times": [
+        {
+          "date": "2026-10-06T17:09:24.272Z",
+          "label": "2026 m. spalio 6 d."
+        }
+      ],
+      "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      }
+    },
+    {
+      "document": 1425,
+      "documentClient": 1425,
+      "heading": "Kas įeina į manikiūro kainą",
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 780,
+          "src": "/content-assets/madbeauty/30a54837-325e-4489-8586-e8730b6b979b.webp"
+        }
+      ],
+      "main": 1425,
+      "times": [
+        {
+          "date": "2026-10-06T17:09:24.272Z",
+          "label": "2026 m. spalio 6 d."
+        }
+      ],
+      "url": "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina",
+      "viewport": {
+        "height": 900,
+        "width": 1440
+      }
+    },
+    {
+      "document": 1425,
+      "documentClient": 1425,
+      "heading": "Puslapis nerastas",
+      "images": 0,
+      "main": 1425,
+      "url": "https://madbeauty.lt/gidai/barzda-vyrams-gidas",
+      "viewport": {
+        "height": 900,
+        "width": 1440
+      }
+    },
+    {
+      "document": 375,
+      "documentClient": 375,
+      "heading": "Puslapis nerastas",
+      "images": 0,
+      "main": 375,
+      "url": "https://madbeauty.lt/gidai/barzda-vyrams-gidas",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      }
+    }
+  ],
+  "scope": "Ordinary canonical HTTPS native browser views after content-only deployment. Three current-time page states at 1440/390 viewport widths. Future article rejection only; future body quality is covered separately by reviewed producer previews and native/hosted HTTP publication boundaries."
+}

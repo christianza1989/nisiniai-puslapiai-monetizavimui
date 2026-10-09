@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import path from 'node:path';
+const repo=path.resolve(import.meta.dirname,'../../..'),root=path.join(repo,'sites/madbeauty/cloudflare/output/next19-private'),json=async name=>JSON.parse(await readFile(path.join(root,name))),manifest=await json('manifest.json');
+for(const mode of ['native','hosted','live-before']){const proof=await json(mode+'-proof.json');assert.equal(proof.state,'PASS');assert.equal(proof.packageSha256,manifest.packageSha256);assert.equal(proof.runtimeSource,manifest.runtimeSource);assert.equal(proof.coreSource,manifest.coreSource);assert.equal(proof.currentProjection.pages,7);assert.equal(proof.currentProjection.futureBlocked,51);assert.equal(proof.currentProjection.assets,mode==='live-before'?284:379);if(mode!=='live-before')assert.equal(proof.publicationCases.length,102);assert.ok(Date.now()-Date.parse(proof.finishedAt)<30*60*1000,'Acceptance receipt expired: '+mode);}
+const source=await readFile(path.join(root,'production-worker.mjs'));assert.equal(createHash('sha256').update(source).digest('hex'),manifest.productionArtifactSha256);for(const token of ['CALENDAR_ACCESS_KEY','CALENDAR_ACCEPTANCE_NOW','CalendarSource','madbeauty-calendar-acceptance-20261009'])assert.ok(!source.includes(token),'QA code in production artifact');
+const config=await json('production-wrangler.json');assert.deepEqual(config,manifest.productionConfig);assert.equal(config.name,'madbeauty-platform-preview');assert.equal(config.account_id,'d102163f74a45ab6d33bca786ce281ec');assert.deepEqual(config.durable_objects,{bindings:[{name:'PLATFORM',class_name:'MadbeautyPlatform'}]});assert.deepEqual(config.migrations,[{tag:'v1',new_sqlite_classes:['MadbeautyPlatform']}]);assert.equal(config.no_bundle,true);
+execFileSync(process.execPath,[path.join(import.meta.dirname,'provider.mjs'),'predeploy'],{cwd:repo,stdio:'inherit'});
+execFileSync(process.execPath,[path.join(repo,'../dovanos-memorycasting/node_modules/wrangler/bin/wrangler.js'),'deploy','--config',path.join(root,'production-wrangler.json'),'--message','Madbeauty content-only next19 320a8e0f; incumbent runtime b7a34b1 core63cfd8c; prior39 unchanged'],{cwd:repo,stdio:'inherit'});

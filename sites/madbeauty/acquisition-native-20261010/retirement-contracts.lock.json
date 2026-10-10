@@ -1,0 +1,17 @@
+{
+  "source": "d78789f58b9b53f30812517dfd78218fc2c51987",
+  "retirementContractVersion": "0.1.0",
+  "immutableCanonicalSnapshots": true,
+  "files": [
+    {
+      "name": "retirement-schemas.json",
+      "path": "agent-business-core/contracts/recipient-retirement-v1/schemas.json",
+      "sha256": "dfbc193ba8ad331d57e41a2511563c7d94fedf812a38b4f09ae8c17bd6a83448"
+    },
+    {
+      "name": "retirement-README.md",
+      "path": "agent-business-core/contracts/recipient-retirement-v1/README.md",
+      "sha256": "d65be33a8e23040f359fb28ee83f7aeea9a84c9985c4896b636c73e1070dcba1"
+    }
+  ]
+}

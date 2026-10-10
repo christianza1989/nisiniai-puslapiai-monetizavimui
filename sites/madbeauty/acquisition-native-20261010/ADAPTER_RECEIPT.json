@@ -1,0 +1,66 @@
+{
+  "recordVersion": 1,
+  "date": "2026-10-10",
+  "status": "isolated-component-accepted",
+  "sourceCommit": "948ee3a87f3c11f5d1c9fe13007981a5f5fb5921",
+  "branch": "ai/madbeauty-acquisition-native-20261010",
+  "pullRequest": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/68",
+  "canonicalDependency": {
+    "source": "682cb28abf7eff888c3c27177c265ca383c6c5aa",
+    "recipientContractVersion": "0.1.0",
+    "recipientSchemaSha256": "0ef2273cf5b0ab6530862cffed1bb3fc8e3caa8d32a3a8da59e4e60dddea5ae4",
+    "acquisitionContractVersion": "0.1.1",
+    "acquisitionSchemaSha256": "35b0a87cbda836464beaff4a53acc80403ce3a97c50d02098fb23a443fff9034",
+    "byteIdenticalFiles": 7,
+    "check": "PASS",
+    "sharedSourceModified": false,
+    "mainMergeClaimed": false
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 16,
+    "failed": 0,
+    "originalRetained": 4,
+    "newNode": 10,
+    "newCompiledWorkers": 2,
+    "removed": 0,
+    "nativeSQLRestart": "PASS",
+    "actualNativeOTP": "PASS",
+    "actualDisposableNativeErasure": "PASS",
+    "sharedSyntheticVectors": 3,
+    "forwardedCandidateBeforeRepair": "FAIL_EXPECTED",
+    "forwardedCandidateBeforeBlob": "946d73f863523b87b4c28b9594c778c73d8ae7c3",
+    "forwardedCandidateRegression": "PASS"
+  },
+  "compiledCapture": {
+    "sha256": "d4185ede08029dccb6466d4c54bbf9ed183f42ecae1e7f588f5181662a7d167d",
+    "runtime": "installed Miniflare/workerd, nodejs_compat",
+    "compatibilityDate": "2026-05-22",
+    "productionArtifact": false,
+    "actualCoreHTTP": false,
+    "coreReceipts": "synthetic fixtures",
+    "externalSent": false,
+    "noPublicRoute": true
+  },
+  "scope": {
+    "canonicalDeploymentThisStep": false,
+    "productionModeAvailable": false,
+    "smtpEnabled": false,
+    "configuredKeysInstalled": false,
+    "sharedTasksRegistryModified": false,
+    "providerLifecycleInstalled": false,
+    "preProviderPrivacyRevocationInstalled": false,
+    "pendingDataRetentionAccepted": false
+  },
+  "remaining": [
+    "Actual authenticated core HTTP registration/challenge/proof/nonce and durable replay acceptance",
+    "Authenticated pre-provider privacy revocation and native pending-data cleanup/retry",
+    "Actual organization mutation/provider binding/counter/atomic lifecycle outbox before invitation expiry",
+    "Eligibility withdrawal/deactivation/deletion/stop and actual shared portal metrics",
+    "Actual core mismatched-recipient/concurrent challenge rejection semantics, bounded retry and operator failure handling"
+  ],
+  "evidence": "ADAPTER_ACCEPTANCE.md",
+  "safety": { "exactStagedBlobs": "PASS", "sourceFiles": 20, "findings": 0 },
+  "canonicalGovernanceRead": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "unmergedUniversalRuleAdoptionClaimed": false
+}

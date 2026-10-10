@@ -11,5 +11,6 @@ export function catalogueTaxonomy(d){
 export function taxonomyProjection(d){return {version:d.taxonomyVersion||TAXONOMY_VERSION,nodes:catalogueTaxonomy(d).filter(n=>!n.archived).map(n=>({...n,enabled:n.scope==='core'}))};}
 export function serviceEligible(d,s,now){
  const n=taxonomyNode(s.taxonomyServiceId,catalogueTaxonomy(d));
- return !!publicLocation(d,s.locationId)&&(!s.staffOptions||s.staffOptions.some(x=>d.practitioners.some(p=>p.id===x.practitionerId&&staffAtLocation(d,p,s.locationId))&&d.resources.some(r=>r.id===x.resourceId&&resourceAtLocation(d,r,s.locationId))))&&!!n&&n.scope==='core'&&!n.archived&&(!s.staffOptions||!n.reviewRequired||(d.qualifications||[]).some(q=>q.organizationId===s.organizationId&&q.locationId===s.locationId&&q.taxonomyNodeId===n.id&&q.state==='approved'&&Date.parse(q.expiresAt)>now));
+ const assignments=s.staffOptions||[{practitionerId:s.practitionerId,resourceId:s.resourceId}];
+ return !!publicLocation(d,s.locationId)&&assignments.some(x=>d.practitioners.some(p=>p.id===x.practitionerId&&staffAtLocation(d,p,s.locationId))&&d.resources.some(r=>r.id===x.resourceId&&resourceAtLocation(d,r,s.locationId)))&&!!n&&n.scope==='core'&&!n.archived&&(!s.staffOptions||!n.reviewRequired||(d.qualifications||[]).some(q=>q.organizationId===s.organizationId&&q.locationId===s.locationId&&q.taxonomyNodeId===n.id&&q.state==='approved'&&Date.parse(q.expiresAt)>now));
 }

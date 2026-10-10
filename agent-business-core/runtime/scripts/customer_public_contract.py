@@ -33,7 +33,7 @@ def document(title, version, schemas, actions, *, private):
                        (409, "Changed idempotency input"), (429, "Durable action limit"), (503, "Source unavailable")]}}}
         if request:
             entry["requestBody"] = {"required": True, "content": {"application/json": {"schema": ref(request)}}}
-        paths[path] = {method: entry}
+        paths.setdefault(path, {})[method] = entry
     return {"openapi": "3.1.0", "info": {"title": title, "version": "0.1.0",
         "description": "LOCAL development/testing only; default OFF. No external email/deployment/AI execution. "
             + ("Generic signup/recovery receipts; private development outbox hash-fragment links. Tokens single-use, "

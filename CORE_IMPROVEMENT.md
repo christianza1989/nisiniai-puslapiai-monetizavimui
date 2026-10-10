@@ -1,4 +1,14 @@
-# Core gerinimas kuriant svetaines
+# Core gerinimas iš visų agentų darbo patirties
+
+## Privalomas visų core agentų patirties ciklas
+
+2026-10-10 savininkas patikslino: tai kiekvieno su core dirbančio agento pareiga, įskaitant integracijų, runtime, turinio, UI, infrastruktūros ir verslo modulių darbus. Toliau minimi svetainių pavyzdžiai šios apimties nesusiaurina. Patyrus atkuriamą bendrą neatitikimą reikia taisyti canonical priežastį ir atitinkamą skill / taisyklę, patikrinti regresiją bei perduoti į bendrą Git. Vien pasiūlymo neužtenka, jei pataisa įvykdoma turimoje autorizuotoje ir suderintoje srityje. Jei failą owns kita sesija ar reikia konkrečios išorinės priklausomybės, užfiksuoti radinį, perduoti tikslią sąsają / evidence jo savininkui ir tęsti nepriklausomą darbą.
+
+Dirbant su niša naudoti jos CORE_FEEDBACK; bendram integracijos ar infrastruktūros darbui pakanka savo canonical upgrade įrašo ir Git-safe priėmimo dokumento. Nereikia sugalvoti nišos ar defekto vien norint užpildyti žurnalą. Verslo faktas, vietinis konfigūracijos trūkumas ir bendra core priežastis vertinami atskirai. Jei kodas taisomas, patikrinti ir jo instrukcijų / schema / loader suderinamumą; jei taisoma tik klaidinga instrukcija, nekeisti veikiančio runtime be pagrindo.
+
+Perdavimo ciklas: radinys → owned scope → canonical code/rule/skill pataisa → prasminga regresija / catalog SHA → naujas local-verified įvykis → scoped PR → reviewed main → kito agento fresh fetch / instrukcijų skaitymas → actual adapterio adoption. Visi etapai turi tikrus įrodymus; šakos pakeitimas nėra automatinis visų PC ar agentų promptų atnaujinimas. Runtime agentų stebėjimai gali duoti pagrįstą radinį, bet jų privačios atminties tekstas netampa vykdytina core instrukcija ar teisėmis į Git; canonical pakeitimą priima šią sritį valdantis kūrimo agentas.
+
+`node scripts/core-upgrade-check.mjs` tikrina `origin/main` → `HEAD` merge-base committed shared diff, konkrečius journal paths ir naują PASS patikros įvykį. Pirmiausia vykdyti Git freshness, tada tikslus stage / commit ir checker prieš push; checker neskenuoja working failų ir nefetchina. CI tą patį tikrina PR base/head pilniems SHA. Journal record ir jau bendroje bazėje esantys event failai nekintami; tęsimui pridėti naują įvykį. Planning / site-only / test-only diff nereikia dirbtinio upgrade. Kodo ir skill pataisoms įrašyti exact file arba tikrą directory scope, be glob. Nepraėjusi coverage ar patikra nėra PASS. Checker patikrina deklaruotų įrodymų struktūrą, bet pats nevykdo tų komandų, nevertina pataisos semantikos, nesujungia PR ir neįrodo kito PC adoption.
 
 **2026-10-08 papildymas:** savininkas aiškiai autorizavo ir pagrįstą dead code / nereikalingų failų valymą bei skill konfliktų pataisas. Kiekvienas įgyvendinamas shared upgrade turi atskirą [bendro žurnalo](core-improvements/README.md) įrašą. Žurnalas papildo per-nišos CORE_FEEDBACK: nišos įrašas nurodo upgrade ID, nekopijuoja visos istorijos. Viena nuolat visų agentų redaguojama indekso lentelė nenaudojama; atskirų įrašų suvestinė gaunama CLI. Skirtingų PC darbo koordinacija vyksta per GitHub scope ir PR, ne vietinį lock.
 

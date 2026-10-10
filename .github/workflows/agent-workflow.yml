@@ -10,9 +10,17 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
       - name: Multi-PC freshness and bootstrap regression
         run: node --test scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs
       - name: Calibration Git inputs
         run: node SKILLS/business-agent-calibration/scripts/check-inputs.mjs
       - name: Core upgrade and quarantine regression
-        run: node --test scripts/core-upgrade.test.mjs
+        run: node --test scripts/core-upgrade.test.mjs scripts/core-upgrade-check.test.mjs
+      - name: Shared change experience and check coverage
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: node scripts/core-upgrade-check.mjs --base "$BASE_SHA" --head "$HEAD_SHA"

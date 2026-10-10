@@ -1,5 +1,7 @@
 # Autonominių core patobulinimų žurnalas ir karantinas
 
+Visiems su core dirbantiems agentams taikomas [privalomas patirties ciklas](../CORE_IMPROVEMENT.md#privalomas-visų-core-agentų-patirties-ciklas). Prieš push `node scripts/core-upgrade-check.mjs` tikrina committed shared diff, exact file / real directory scope ir naują local-verified PASS įvykį. CI tą patį tikrina PR base/head. Naujam tęsimui pridėti įvykius, neperrašyti bendroje bazėje esančio record/event. Checker netikrina pataisos semantikos ar kito adapterio adoption; tai lieka actual priėmimo dalis. Vienas įrašas neturi tyliai apimti nesusijusių pataisų.
+
 Kanoninis procesas: [CORE_IMPROVEMENT](../CORE_IMPROVEMENT.md). Kiekvienam įgyvendinamam shared patobulinimui atskiras `entries/upgrade-<UUID>/record.json` ir nekintami `events/*.json`; naujas įvykis nurodo tikrą patikrą / PR / source / adoption. Kiekvienas agentas valdo savo įrašą. Suvestinė šiame procese generuojama iš įrašų, todėl skirtingi PC nekonkuruoja dėl vieno rankinio statusų failo.
 
 `node scripts/core-upgrade.mjs list` pateikia bendrą suvestinę. Tai vietinės Git kopijos įrašai; fresh fetch būtinas norint teigti, kad skaitomas aktualus main. CLI rašymo komandos pačios fetch / tikrina current main protėvį ir savo šaką; susijusio companion bei scopes patikra pagal bendrą Git workflow lieka agento pareiga. Eksportuotas helper API testų fixtures nefetchina ir nėra agentų darbo entrypoint.

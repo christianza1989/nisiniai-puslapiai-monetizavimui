@@ -2,6 +2,8 @@
 
 Read [OUTBOUND_ACQUISITION](../../../agent-business-core/OUTBOUND_ACQUISITION.md), the site's BUSINESS/ACQUISITION/offer facts and Git freshness contract. Register owned files. Inbound conversation, outbound preparation and transport are separate roles and permissions.
 
+When actual adapter or model work exposes a shared mismatch, complete the [core experience loop](../../../CORE_IMPROVEMENT.md#privalomas-visų-core-agentų-patirties-ciklas): reproduce, repair canonical code and applicable skill/schema/loader, regress, journal, Git delivery, then separately confirm native adoption. Confirm raw-body parsing/signature, ID/scope mapping, durable replay and native lifecycle against the same reviewed contract; wire fixtures alone do not prove the HTTP path. Keep initial failures and unknown dependencies visible.
+
 1. Establish the objective and real recipient job: product_sale/buyer or provider_signup/provider. Separate supplier/referral roles, campaign version, segments/geography, evidence expiry, source policies, limits and pause. Platform providers are not product buyers; activation is not a sale. Unknown stock/certificates/capacity remain unknown.
 2. Discover organizations through authorized original sources. Confirm original organization/procurement pages and minimal contact provenance. Reuse bounded public retrieval for approved URLs. Record unavailable sources without inventing evidence.
 3. Import private `Campaign`/`Prospect` evidence. Daily preparation qualifies/drafts within budgets, independently reviews and saves local-day receipts. Research/draft cannot send. Handle foreign-site data, stale facts, refusal/bounce/OOO/replies and uncertain attempts correctly.

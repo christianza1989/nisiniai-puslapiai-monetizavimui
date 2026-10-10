@@ -24,7 +24,7 @@ test('National results show published offers immediately; optional city filters 
  const all=renderCataloguePage(route);assert.equal((all.match(/class="picker-offer"/g)||[]).length,2);
  const local=renderCataloguePage(route,{selectedCityId:'vilnius'});assert.equal((local.match(/class="picker-offer"/g)||[]).length,1);assert.match(local,/href="\/meistrai\/provider_test"/);
  const empty=renderCataloguePage(route,{selectedCityId:'akmene'});assert.doesNotMatch(empty,/class="picker-offer"/);assert.match(empty,/Šiame mieste pasiūlymų dar nėra/);assert.match(empty,/miestas=vilnius/);assert.match(empty,/miestas=kaunas/);
- assert.equal(route.indexEligible,false);
+ assert.equal(route.indexEligible,true);
 });
 
 test('An empty national catalogue stays truthful and does not manufacture offered cities or providers',()=>{

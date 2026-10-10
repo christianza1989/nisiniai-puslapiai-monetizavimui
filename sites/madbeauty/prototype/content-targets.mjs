@@ -20,7 +20,7 @@ export function createContentTargetRegistry({offers=[],deployed=false,now=Date.n
  const routes=[],offeredCities=CITIES.filter(([,label])=>offers.some(s=>s.city===label&&!s.isDemo&&!s.revoked&&s.active!==false));
  for(const node of TAXONOMY_NODES){
   const national=planTarget({taxonomyNodeId:node.id}),active=node.scope==='core';
-  routes.push({...national,status:deployed&&active?'ready':'planned',deployed:deployed&&active,reachable:deployed&&active,indexEligible:false});
+  routes.push({...national,status:deployed&&active?'ready':'planned',deployed:deployed&&active,reachable:deployed&&active,indexEligible:deployed&&active&&node.kind==='category'});
   if(active)for(const [cityId]of offeredCities){if(!catalogueOffers(offers,node.id,cityId).length)continue;const local=planTarget({taxonomyNodeId:node.id,cityId});routes.push({...local,status:deployed?'ready':'planned',deployed,reachable:deployed,indexEligible:false});}
  }
  return {schemaVersion:1,siteId:'madbeauty',version:CONTENT_TARGET_VERSION,taxonomyVersion:TAXONOMY_VERSION,generatedAt:verifiedAt,expiresAt,deployed,routes,targets:routes.filter(r=>r.status==='ready').map(r=>({id:r.routeRegistryId,status:'ready',canonicalUrl:r.canonicalUrl,allowedQueryParams:[],verifiedAt,expiresAt,purpose:'information'}))};

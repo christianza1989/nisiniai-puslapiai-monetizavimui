@@ -55,3 +55,49 @@ html:has(dialog[open]){overflow:hidden}
 @media(max-width:480px){.search-form{grid-template-columns:1fr}.search-form>.search-cell:nth-child(4){grid-column:auto}.search-cell input,.search-cell select{font-size:14px}}
 
 .service-card .card-photo-empty{display:grid;place-items:center;background:var(--soft);color:var(--muted);padding:24px;text-align:center}
+
+/* Shared homepage/results picker: compact branches, direct matching procedures. */
+.public-recovery{padding-block:20px;color:var(--muted);font-size:14px}
+.search-options.combo-popup{display:flex;flex-direction:column;overflow:hidden;padding:0;border:0;box-shadow:0 14px 44px #11111426}
+.search-options.combo-popup[hidden]{display:none}
+.combo-heading{display:flex;flex-direction:column;gap:2px;flex:none;padding:17px 20px 13px;border-bottom:1px solid var(--line)}
+.combo-heading strong{font-size:16px;font-weight:700}
+.combo-heading span,.combo-status{font-size:12px;color:var(--muted)}
+.combo-items{overflow:auto;overscroll-behavior:contain;min-height:0;padding:8px;scrollbar-color:#c8b9ee transparent;scrollbar-width:thin}
+.combo-items::-webkit-scrollbar{width:6px}.combo-items::-webkit-scrollbar-thumb{background:#c8b9ee;border-radius:6px}
+.search-options .combo-row{display:flex;flex-direction:row;align-items:center;gap:12px;min-height:46px;width:100%;padding:10px 12px 10px calc(12px + var(--combo-depth)*18px);border:0;border-radius:8px;background:transparent;text-align:left;color:var(--ink);font:inherit;cursor:pointer}
+.search-options .combo-row:hover,.search-options .combo-row[data-active=true]{background:var(--soft)}
+.search-options .combo-row[aria-expanded=true]{background:#f8f6ff}
+.search-options .combo-row[aria-selected=true]{background:var(--soft);color:var(--accent)}
+.combo-row img{width:40px;height:40px;flex:none;object-fit:contain}
+.combo-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px}
+.combo-copy strong{font-size:14px;font-weight:600;line-height:1.4;overflow-wrap:anywhere}
+.combo-category .combo-copy strong{font-size:15px}
+.combo-copy small{font-size:12px;line-height:1.4;color:var(--muted);overflow-wrap:anywhere}
+.combo-row[aria-selected=true] small{color:#5931a3}
+.combo-row[data-broad=true] .combo-copy strong{font-size:13px;font-weight:500}
+.search-options .combo-row .combo-count{font-size:12px;color:var(--muted);margin:0;flex:none}
+.search-options .combo-row .combo-chevron,.search-options .combo-row .combo-check{display:flex;color:inherit;margin:0;flex:none}
+.combo-chevron svg,.combo-check svg{width:18px;height:18px}
+.combo-row[aria-expanded=true] .combo-chevron svg{transform:rotate(90deg)}
+.combo-status{flex:none;margin:0;padding:10px 20px;border-top:1px solid var(--line);line-height:1.45}
+.combo-status[hidden]{display:none}
+.combo-empty{padding:22px 12px;color:var(--ink);font-size:14px}
+.search-options .combo-empty p{font-size:13px;color:var(--muted);margin:6px 0 0;padding:0}
+.combo-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+@media(max-width:480px){.combo-heading{padding:13px 16px 10px}.search-options .combo-row{min-height:48px;padding-left:calc(10px + var(--combo-depth)*12px);gap:9px}.combo-row img{width:34px;height:34px}.combo-status{padding:9px 16px}}
+
+/* Public provider directory uses the existing cards, form controls and map surface. */
+.directory-filters{display:grid;grid-template-columns:minmax(220px,2fr) minmax(170px,1fr) minmax(120px,.65fr) auto;gap:16px;align-items:end;margin:28px 0}
+.directory-filters .field{margin:0}
+.directory-filters>button{min-height:48px}
+.directory-card h2{font-size:23px;line-height:1.25;margin:0 0 10px}
+.directory-rating{font-weight:600;color:var(--ink)}
+.directory-monogram{height:180px;display:grid;place-items:center;background:var(--soft);font-size:52px;color:var(--accent)}
+.directory-cities{display:flex;flex-wrap:wrap;gap:10px 22px}
+.directory-cities a{color:var(--accent);font-size:15px}
+.directory-cities a[aria-current]{font-weight:700;text-decoration:underline}
+.provider-directory .results-map .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+#works figure img{width:100%;height:auto;object-fit:cover}
+@media(max-width:1050px){.directory-filters{grid-template-columns:2fr 1fr}.provider-directory .results-map .cards{grid-template-columns:1fr}}
+@media(max-width:760px){.directory-filters{grid-template-columns:1fr 1fr;gap:12px}.directory-filters .field:first-child{grid-column:1/-1}.directory-filters>button{grid-column:1/-1}.provider-directory .toolbar{align-items:start;flex-wrap:wrap}.directory-card h2{font-size:21px}}

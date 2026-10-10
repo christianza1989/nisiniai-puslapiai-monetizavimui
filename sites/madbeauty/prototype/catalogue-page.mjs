@@ -11,11 +11,11 @@ export function catalogueCityDestination(path,cityId,offers=[]){
  return '/paieska#'+new URLSearchParams({paslauga:node.id,miestas:cityId});
 }
 export function catalogueRoute(path,offers=[]){
- if(path==='/paslaugos')return {path,title:'Grožio paslaugos',kind:'index',offers:[],indexEligible:false};
+ if(path==='/paslaugos')return {path,title:'Grožio paslaugos',kind:'index',offers:[],indexEligible:true};
  const m=path.match(/^\/paslaugos\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/);if(!m)return null;
  const node=activeNode(m[1]),cityId=m[2]||null;if(!node||cityId&&!isCityId(cityId))return null;
  const rows=catalogueOffers(offers,node.id,cityId);if(cityId&&!rows.length)return null;
- return {path,node,cityId,kind:cityId?'local':'national',offers:rows,title:node.label+(cityId?' · '+cityName(cityId):''),indexEligible:false};
+ return {path,node,cityId,kind:cityId?'local':'national',offers:rows,title:node.label+(cityId?' · '+cityName(cityId):''),indexEligible:!cityId&&node.kind==='category'};
 }
 const illustrationIds={veidas:'veido-prieziura',kunas:'kuno-prieziura',spa:'spa-ir-poilsis',verimas:'auskaru-verimas',estetika:'estetines-proceduros'};
 const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';

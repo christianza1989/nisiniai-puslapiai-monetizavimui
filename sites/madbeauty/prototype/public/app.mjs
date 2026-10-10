@@ -1,6 +1,9 @@
+import {profileMetadata,moduleSchema} from './profile-seo.mjs';
+import {directorySchema,directoryDescription} from './provider-directory.mjs';
 import {searchSelect,bindSearchSelects} from './search-select.mjs';
+import {captureServerPage,serverPageFor,restoreServerMetadata} from './server-recovery.mjs';
 import {loadJson} from './load-json.mjs';
-import {catalogueCityDestination,cataloguePickerDestination,bindCataloguePicker} from '/catalogue-page.mjs';
+import {catalogueCityDestination,cataloguePickerDestination,bindCataloguePicker,catalogueRoute} from '/catalogue-page.mjs';
 import {syncSharing,syncCanonical} from './sharing.mjs';
 import {submitReport} from './moderation-ui.mjs';
 import {waitlistFields,waitlistAction} from './waitlist-ui.mjs';
@@ -22,12 +25,13 @@ import {setContentData,setRetentionPolicy,trustPages} from './content.mjs';
 import {activeNode,CATALOGUE_ORIGIN} from '/content-targets.mjs';
 import {isCityId} from '/cities.mjs';
 const $=s=>document.querySelector(s),boot=await loadJson('/boot.json');
+const serverPage=captureServerPage(document,location.href,boot);
 setRetentionPolicy(boot.retentionPolicy);
 
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:'',rezultatai:'paslaugos'},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
 let state=initial(),restoredWorkspaceAccount=null;
 try{const saved=JSON.parse(sessionStorage.getItem(DEMO_NAMESPACE+':ui'));if(saved?.version===1&&saved.boot===boot.now)state={...state,...saved.state};}catch{}
-const ctx={temporaryTest:boot.temporaryTest||null,searchSelect,state,media:new Map(),taxonomy:TAXONOMY,candidates:new Map(),minute,render,navigate,toast,openDialog,closeDialog,saveUI,selectRole,beginBooking,clearDrafts,
+const ctx={privatePrototype:boot.privatePrototype,temporaryTest:boot.temporaryTest||null,searchSelect,state,media:new Map(),taxonomy:TAXONOMY,candidates:new Map(),minute,render,navigate,toast,openDialog,closeDialog,saveUI,selectRole,beginBooking,clearDrafts,
   dayLabel:i=>date(localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720)),
   dayInstant:i=>localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720),
   dayKey:i=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(localInstant(ctx.renderClock||ctx.adapter.clock,Number(i),720))),
@@ -56,16 +60,16 @@ async function navigate(url,{replace=false,preserve=false}={}){if($('#dialog').o
 function chrome(){
   $('#demo-bar').innerHTML=boot.privatePrototype?btn('demo-controls',icon('settings'),'aria-label="Peržiūros nustatymai"','preview-toggle'):'';
   $('#header').innerHTML=`<a class="brand" href="/" aria-label="Madbeauty pradžia">madbeauty<span>.</span></a><nav class="nav" aria-label="Pagrindinė navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a></nav><div class="row"><a href="/paskyra" class="button outline header-account" aria-label="${state.session.role==='guest'?'Prisijungti':'Paskyra'}">${icon('person')}<span>${state.session.role==='guest'?'Prisijungti':'Paskyra'}</span></a>${btn('mobile-menu',icon('list'),'aria-label="Atidaryti meniu" aria-expanded="false"','close menu-button')}</div><nav class="mobile-menu" aria-label="Mobilioji navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a><a href="/pagalba">Pagalba</a></nav>`;
-  $('#footer').innerHTML=`<div class="container"><div class="footer-grid"><div><a class="brand" href="/" style="color:white">madbeauty<span>.</span></a><p>Grožio laikas. Tavo ritmu.</p><p>Atrask savo meistrą ir skirk laiko sau.</p></div><div><h2>Klientams</h2>${[['/paslaugos','Paslaugos'],['/kaip-veikia','Kaip veikia'],['/gidai','Grožio idėjos'],['/pagalba','Pagalba']].map(([u,l])=>link(u,l,'')).join('')}</div><div><h2>Meistrams</h2>${[['/meistrams','Kaip pradėti'],['/meistrui/kalendorius','Darbo vieta'],['/tikrinimas','Profilių tikrinimas'],['/redakcija','Redakcija']].map(([u,l])=>link(u,l,'')).join('')}</div><div><h2>Informacija</h2>${[['/apie','Apie mus'],['/privatumas','Privatumas'],['/slapukai','Slapukai'],['/taisykles','Taisyklės'],['/kontaktai','Kontaktai']].map(([u,l])=>link(u,l,'')).join('')}<p>${icon('email')} <a href="mailto:${esc(boot.contact.email)}">${esc(boot.contact.email)}</a><br>${esc(boot.contact.operatorName)}</p></div></div><div class="footer-bottom"><span>© 2026 Madbeauty</span><span>Mūsų verslas automatizuotas su verslomatika.lt</span></div></div>`;
+  $('#footer').innerHTML=`<div class="container"><div class="footer-grid"><div><a class="brand" href="/" style="color:white">madbeauty<span>.</span></a><p>Grožio laikas. Tavo ritmu.</p><p>Atrask savo meistrą ir skirk laiko sau.</p></div><div><h2>Klientams</h2>${[['/paslaugos','Paslaugos'],['/salonai','Salonai'],['/meistrai','Meistrai'],['/kaip-veikia','Kaip veikia'],['/gidai','Grožio idėjos'],['/pagalba','Pagalba']].map(([u,l])=>link(u,l,'')).join('')}</div><div><h2>Meistrams</h2>${[['/meistrams','Kaip pradėti'],['/meistrui/kalendorius','Darbo vieta'],['/tikrinimas','Profilių tikrinimas'],['/redakcija','Redakcija']].map(([u,l])=>link(u,l,'')).join('')}</div><div><h2>Informacija</h2>${[['/apie','Apie mus'],['/privatumas','Privatumas'],['/slapukai','Slapukai'],['/taisykles','Taisyklės'],['/kontaktai','Kontaktai']].map(([u,l])=>link(u,l,'')).join('')}<p>${icon('email')} <a href="mailto:${esc(boot.contact.email)}">${esc(boot.contact.email)}</a><br>${esc(boot.contact.operatorName)}</p></div></div><div class="footer-bottom"><span>© 2026 Madbeauty</span><span>Mūsų verslas automatizuotas su verslomatika.lt</span></div></div>`;
 }
 let renderId=0,renderedViewKey='';
 async function render(){
   renderedViewKey=viewKey();
-  const id=++renderId;clearInterval(ctx.holdTimer);ctx.candidates.clear();ctx.currentProfile=null;chrome();let path=decodeURIComponent(location.pathname).replace(/\/+$/,'')||'/';ctx.path=path;
+  const id=++renderId;clearInterval(ctx.holdTimer);ctx.candidates.clear();ctx.currentProfile=null;ctx.directory=null;chrome();let path=decodeURIComponent(location.pathname).replace(/\/+$/,'')||'/';ctx.path=path;
   const cityForm=$('#catalogue-city'),chosenCity=cityForm?.querySelector('[name="miestas"]')?.value,chosenService=cityForm?.querySelector('[name="paslauga"]')?.value;
   if(activeNode(chosenService)&&isCityId(chosenCity))ctx.catalogueCityChoice={serviceId:activeNode(chosenService).id,cityId:chosenCity};
   $('#main').setAttribute('aria-busy','true');$('#main').innerHTML='<div class="container skeleton-page" role="status"><div class="skeleton" style="width:60%;height:36px" aria-hidden="true"></div><p style="margin-top:24px">Įkeliama…</p></div>';
-  let html;
+  let html,recovered=null;
   try{
     if(ctx.startupError)throw ctx.startupError;
     const privatePath=/^\/(meistrui|operatorius|paskyra)(\/|$)/.test(path),jobs=[];
@@ -91,7 +95,7 @@ async function render(){
     else if(path.startsWith('/paskyra')||path.startsWith('/meistrui')||path.startsWith('/operatorius'))html=await workspaceView(ctx,path);
     else html=await publicView(ctx,path);
     if(!html)html=`<div class="page container"><h1 class="page-title">Puslapis nerastas</h1><p>Nuoroda neteisinga, profilis nepatvirtintas arba turinys dar nepaskelbtas.</p>${link('/','Grįžti į pradžią')}</div>`;
-  }catch(e){html=`<div class="page container"><h1>Šio vaizdo atidaryti nepavyko</h1>${errorHTML(e)}${link('/paskyra','Atidaryti paskyrą','button accent')} ${btn('reload-view','Bandyti dar kartą','','button outline')}</div>`;}
+  }catch(e){recovered=serverPageFor(serverPage,location.href);html=recovered?recovered.html+`<div class="container public-recovery" role="status"><p>Interaktyvios funkcijos laikinai nepasiekiamos. Turinį gali skaityti.</p>${btn('reload-view','Bandyti dar kartą','','button outline small')}</div>`:`<div class="page container"><h1>Šio vaizdo atidaryti nepavyko</h1>${errorHTML(e)}${link('/paskyra','Atidaryti paskyrą','button accent')} ${btn('reload-view','Bandyti dar kartą','','button outline')}</div>`;}
   if(id!==renderId)return;chrome();$('#main').innerHTML=html;$('#main').setAttribute('aria-busy','false');restoreDrafts(ctx,$('#main'));bindSearchSelects($('#main'));bindCataloguePicker($('#main'));
   document.querySelectorAll('#header a[href]').forEach(a=>{if(a.pathname===path)a.setAttribute('aria-current','page');});
   const expiry=$('#hold-expiry');if(expiry){const started=Date.now(),serverNow=Date.parse(ctx.adapter.clock.now),end=Date.parse(expiry.dataset.expires);const tick=()=>{const seconds=Math.max(0,Math.ceil((end-serverNow-(Date.now()-started))/1000));expiry.textContent=seconds?'Laikas tau laikomas '+Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0')+'.':'Laiko palaikymas baigėsi. Pasirink laiką iš naujo.';if(!seconds){clearInterval(ctx.holdTimer);expiry.setAttribute('role','alert');const confirm=$('[data-action="confirm-booking"]');if(confirm)confirm.disabled=true;$('#hold-recovery')?.removeAttribute('hidden');}};tick();ctx.holdTimer=setInterval(tick,1000);}
@@ -101,13 +105,18 @@ async function render(){
   const onboardingSteps=$('#main nav[aria-label="Pradžios etapai"],#main nav[aria-label="Vizito žingsniai"]'),currentStep=onboardingSteps?.querySelector('.accent,.active');if(onboardingSteps&&currentStep&&matchMedia('(max-width:760px)').matches)onboardingSteps.scrollLeft=Math.max(0,currentStep.offsetLeft-onboardingSteps.offsetLeft-(onboardingSteps.clientWidth-currentStep.offsetWidth)/2);
   const conversationList=$('#main .conversation-list'),selectedConversation=conversationList?.querySelector('.active');if(conversationList&&selectedConversation)conversationList.scrollTop=Math.max(0,selectedConversation.offsetTop-conversationList.offsetTop-(conversationList.clientHeight-selectedConversation.offsetHeight)/2);
   document.body.classList.toggle('workspace-page',/^\/(meistrui|operatorius|paskyra)/.test(path));
-  const h1=$('#main h1')?.textContent||'Madbeauty';document.title=h1+' · Madbeauty';
+  if(recovered){restoreServerMetadata(document,recovered);saveUI();return;}
+  const h1=$('#main h1')?.textContent||'Madbeauty',profileMeta=ctx.currentProfile?profileMetadata(ctx.currentProfile):null;document.title=(profileMeta?.title||h1)+' · Madbeauty';
   const contentPage=ctx.content?.pages.find(p=>'/'+p.slug===path||!p.slug&&path==='/');
   syncSharing(document,contentPage?.sharing);
-  document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>s.remove());if(!ctx.temporaryTest&&contentPage?.schema&&!path.startsWith('/paslaugos')){const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(contentPage.schema).replace(/</g,'\\u003c');document.head.append(script);}
-  $('meta[name="description"]').content=contentPage?.description||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';
+  const description=profileMeta?.description||(ctx.directory?directoryDescription(ctx.directory.route,ctx.directory.rows):contentPage?.description)||h1+' · Grožio paslaugos, meistrai ir tavo vizitų laikas.';
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>s.remove());
+  const schema=!ctx.temporaryTest&&!boot.privatePrototype?(ctx.currentProfile?.approved?moduleSchema(path,profileMeta.title,description,ctx.currentProfile):ctx.directory&&!location.search?directorySchema(ctx.directory.route,ctx.directory.rows):contentPage?.schema&&!path.startsWith('/paslaugos')?contentPage.schema:path.startsWith('/paslaugos')&&catalogueRoute(path)?.indexEligible?moduleSchema(path,h1,description):null):null;
+  if(schema){const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(schema).replace(/</g,'\\u003c');document.head.append(script);}
+  $('meta[name="description"]').content=description;
   if(ctx.temporaryTest)document.querySelectorAll('link[rel="canonical"]').forEach(el=>el.remove());else syncCanonical(document,contentPage?.url||CATALOGUE_ORIGIN+location.pathname);
-  $('meta[name="robots"]').content=ctx.temporaryTest?'noindex,nofollow':!boot.privatePrototype&&!location.search&&!path.startsWith('/paslaugos')&&(contentPage||ctx.currentProfile?.approved||trustPages[path])?'index,follow':'noindex,follow';saveUI();
+  const publicIndexable=ctx.directory?(!ctx.directory.route.cityId||ctx.directory.rows.length>0):path.startsWith('/paslaugos')?catalogueRoute(path)?.indexEligible:!!(contentPage||ctx.currentProfile?.approved||trustPages[path]);
+  $('meta[name="robots"]').content=ctx.temporaryTest?'noindex,nofollow':!boot.privatePrototype&&!location.search&&publicIndexable?'index,follow':'noindex,follow';saveUI();
 }
 async function selectRole(role,organizationId='demo-org-0',clientId='demo-client-0',target=null){if(state.booking?.hold)await ctx.adapter.releaseHold(state.booking.hold.id);state.session={role,organizationId,clientId};state.booking=null;saveUI();await navigate(target||({customer:'/paskyra/vizitai',professional:'/meistrui',operator:'/operatorius'})[role]||'/');}
 async function beginBooking(id,candidate=null,practitionerId=null){
@@ -168,6 +177,7 @@ async function commonAction(action,b){
 }
 function galleryDialog(){const g=ctx.gallery;openDialog('Galerija · '+(g.index+1)+' / '+g.images.length,`${photo(ctx,g.images[g.index],'','(max-width:760px) 90vw, 650px')}<div class="toolbar">${btn('gallery-next','Ankstesnė','data-id="-1"','button outline')}${btn('gallery-next','Kita','data-id="1"','button outline')}</div>${ctx.adapter.mode==='real'?btn('report','Pranešti apie šį vaizdą',`data-id="${esc(g.images[g.index])}"`,'button outline small'):''}`);}
 async function commonForm(form,fd){
+  if(form.id==='provider-directory'){const params=new URLSearchParams();for(const [key,value]of fd)if(String(value).trim())params.set(key,String(value).trim());await navigate(ctx.path+'?'+params);return true;}
   if(form.id==='services-directory-search'){const q=String(fd.get('q')||'').trim().slice(0,80);await navigate('/paslaugos'+(q?'?'+new URLSearchParams({q}):'')+'#kategorijos');return true;}
   if(form.id==='catalogue-picker'){const destination=cataloguePickerDestination(fd.get('paslauga'),fd.get('miestas')||'');if(!destination)throw userError('Pasirink paslaugą ir miestą iš sąrašo.');await navigate(destination,{preserve:true});return true;}
   if(form.id==='catalogue-city'){const node=activeNode(fd.get('paslauga')),city=fd.get('miestas');if(!node||!isCityId(city))throw userError('Pasirink paslaugą ir miestą.');const destination=catalogueCityDestination('/paslaugos/'+node.id,city,await ctx.adapter.catalog({}));await navigate(destination);return true;}

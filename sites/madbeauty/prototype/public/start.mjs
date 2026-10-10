@@ -1,9 +1,11 @@
 // Recover even when app initialization fails or module transport never completes.
 let failureShown=false,previousMainRole=null;
+const initialMain=document.getElementById('main'),initialHeading=initialMain?.querySelector('h1'),initialPublicPage=!/^\/(paskyra|meistrui|operatorius|registracija)(\/|$)/.test(location.pathname)&&initialHeading&&!/Įkeliama|nerastas|nepavyko/.test(initialHeading.textContent)&&initialMain.textContent.trim()!=='Įkeliama…';
 function showFailure(title='Puslapio įkelti nepavyko',copy='Patikrink interneto ryšį ir bandyk dar kartą.'){
  if(failureShown)return;
  const main=document.getElementById('main');
  if(!main)return;
+ if(initialPublicPage){failureShown=true;main.setAttribute('aria-busy','false');const note=document.createElement('p');note.className='container public-recovery';note.setAttribute('role','status');note.textContent='Interaktyvios funkcijos laikinai nepasiekiamos. Turinį gali skaityti.';main.append(note);return;}
  failureShown=true;previousMainRole=main.getAttribute('role');
  const page=document.createElement('div'),heading=document.createElement('h1'),message=document.createElement('p'),retry=document.createElement('button');
  page.className='page container';heading.textContent=title;message.textContent=copy;

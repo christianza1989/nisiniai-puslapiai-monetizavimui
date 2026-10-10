@@ -1,3 +1,4 @@
+import {directoryRoute} from './public/provider-directory.mjs';
 import {activeNode,createContentTargetRegistry} from './content-targets.mjs';
 import {catalogueCityDestination,catalogueRoute,renderCataloguePage} from './catalogue-page.mjs';
 import {isCityId} from './cities.mjs';
@@ -55,6 +56,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       const offers=needsContent||catalogueRequest?await apiHandler?.platform.catalog({})||[]:[],registry=createContentTargetRegistry({offers,deployed:false,now:contentClock()});
       const content=needsContent?await contentProjection({registry,now:contentClock(),...(contentPackagePath?{packagePath:contentPackagePath}:{})}):null;
       const contentPage=content?.pages.find(p=>(p.slug?'/'+p.slug:'/')===requested);
+      if(requested==='/providers.json'){const rows=await apiHandler?.platform.catalog({})||[],ids=[...new Set(rows.map(r=>r.organizationId))],profiles=ids.map(id=>apiHandler.platform.profile(id)).filter(Boolean);res.writeHead(200,{...headers,'Content-Type':mime['.json']});res.end(JSON.stringify({profiles}));return;}
       if(requested==='/content-targets.json'){res.writeHead(200,{...headers,'Content-Type':mime['.json']});res.end(req.method==='HEAD'?undefined:JSON.stringify(registry));return;}
       if(requested==='/content.json'){res.writeHead(200,{...headers,'Content-Type':mime['.json']});res.end(JSON.stringify({siteId:'madbeauty',pages:content?.dto||[],operatorName:contact.operatorName}));return;}
       if(requested.startsWith('/content-assets/madbeauty/')){const filename=path.basename(requested);if(requested!=='/content-assets/madbeauty/'+filename||!/^[-a-zA-Z0-9._]+\.(webp|avif)$/.test(filename)||!content?.pages.some(p=>p.media.some(m=>m.src===requested)))throw Error('Unsafe or not public asset');const assetRoot=contentPackagePath?path.join(path.dirname(contentPackagePath),'assets'):path.join(contentAssetsRoot,'madbeauty');const body=await readFile(path.join(assetRoot,filename));res.writeHead(200,{...headers,'Content-Type':mime[path.extname(filename)],'Content-Length':body.length});res.end(req.method==='HEAD'?undefined:body);return;}
@@ -71,6 +73,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       let route=resolveRoute(requested,{profileResolver:apiHandler?()=>currentProfile:null,contentResolver:slug=>!!content?.pages.some(p=>['guide','article'].includes(p.type)&&p.slug==='gidai/'+slug)});
       if(requested.startsWith('/gidai/')&&!contentPage)route=null;
       if(isCatalogue&&!cataloguePage)route=null;
+      if(directoryRoute(requested))route={label:directoryRoute(requested).title,canonical:requested};
       if(contentPage&&!isCatalogue&&!route)route={label:contentPage.title,canonical:requested};
       if(route||!path.extname(requested)){
         const page=url.searchParams.get('page');const invalidPage=page!==null&&(!/^[1-9][0-9]?$/.test(page)||Number(page)>50);

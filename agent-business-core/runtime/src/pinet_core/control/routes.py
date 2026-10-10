@@ -37,9 +37,10 @@ class SafeRoute(APIRoute):
         async def handle(request):
             request.state.control_request_id = new_id()
             try:
-                local_guard(request)
                 if len(await request.body()) > 4096:
                     raise ControlError(400, "invalid_request")
+                from .bridge import transport_guard
+                await transport_guard(request)
                 return await original(request)
             except ControlError as error:
                 status, code = error.status, error.code
@@ -60,19 +61,26 @@ router = APIRouter(prefix="/operator/v2", route_class=SafeRoute)
 
 def local_guard(request: Request):
     cfg = settings()
-    # This slice has no hosted auth mode. Never trust forwarded headers for origin/client.
-    enabled_environment = cfg.environment == "local" or cfg.environment.startswith("test-")
+    hosted = cfg.control_mode == "hosted"
+    enabled_environment = (cfg.environment == ("production" if hosted else "local")
+                           or cfg.environment.startswith("test-"))
     try:
         loopback = ipaddress.ip_address(request.client.host).is_loopback
     except (ValueError, AttributeError):
         loopback = False
     if (not cfg.control_enabled or not enabled_environment or not loopback
-            or request.url.hostname not in {"127.0.0.1", "localhost", "::1"}
+            or cfg.control_mode not in {"local", "hosted"}
+            or (request.url.hostname != cfg.control_bridge_host if hosted else
+                request.url.hostname not in {"127.0.0.1", "localhost", "::1"})
             or request.headers.get("origin") or request.headers.get("forwarded")
             or any(key.startswith("x-forwarded-") for key in request.headers)
             or len(cfg.control_cursor_secret) < 32
             or not re.fullmatch(r"[a-f0-9]{40}", cfg.control_source_revision)
             or not 300 <= cfg.control_session_seconds <= 28800):
+        raise ControlError(403, "control_unavailable")
+    if hosted and (not getattr(request.state, "control_bridge_verified", False)
+                   or len(cfg.control_bridge_secret) < 32 or not cfg.control_owner_user_id
+                   or cfg.control_bridge_host != "control.pinet.internal"):
         raise ControlError(403, "control_unavailable")
 
 
@@ -146,6 +154,8 @@ async def login(value: Login, request: Request):
         valid = await asyncio.to_thread(password_matches, value.password, encoded)
         if not valid or not user or not user.enabled:
             raise ControlError(401, "invalid_credentials")
+        if settings().control_mode == "hosted" and user.id != settings().control_owner_user_id:
+            raise ControlError(401, "invalid_credentials")
         await tx.execute(text("SELECT set_config('pinet.control_user', :u, true), "
                               "set_config('pinet.control_login', '', true)"), {"u": user.id})
         token = secrets.token_urlsafe(48)
@@ -168,6 +178,8 @@ async def authenticated(request: Request):
                               "set_config('pinet.control_token', '', true)"), {"u": session.user_id})
         user = await tx.get(User, session.user_id)
         if not user or not user.enabled:
+            raise ControlError(401, "unauthenticated")
+        if settings().control_mode == "hosted" and user.id != settings().control_owner_user_id:
             raise ControlError(401, "unauthenticated")
         yield tx, session
 

@@ -19,7 +19,7 @@ class MessageInput(BaseModel):
 
 def envelope(request, response, data):
     response.headers["Cache-Control"] = "private, no-store"
-    return {"contract_version": "chat.v1", "environment": "test" if settings().environment.startswith("test-") else "local",
+    return {"contract_version": "chat.v1", "environment": "test" if settings().environment.startswith("test-") else settings().environment,
             "source_revision": settings().control_source_revision, "observed_at": utcnow().isoformat(),
             "request_id": request.state.control_request_id, "data": data}
 

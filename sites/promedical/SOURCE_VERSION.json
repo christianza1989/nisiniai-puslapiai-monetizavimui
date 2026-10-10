@@ -1,19 +1,23 @@
 {
-  "packageSha256": "32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6",
-  "sourceVersion": "19a2c0baf6f064bd350af4e8e9f040a389b218be",
-  "coreCommit": "a8b15a33a7b48e26aec0a240a5b32fd71d4d3a49",
+  "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+  "sourceVersion": "5c5d704774fa1d1fbfbcba57ac860e347bd64d1d",
+  "coreCommit": "e0aa27ea7a957be5d602b35a38c0462b4ffc58d8",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
-      "sha256": "8903b7e9d2e50dc46445ca5b9f8aad26e3f55593db494d94cbeeb2a4acb3d7bb"
+      "sha256": "2abce4942057e2040669be35653cff226ea1b6cba55213e8e717434069abf491"
     },
     {
       "file": "components/niche/promedical-site.module.css",
-      "sha256": "c97df2d0b3f99c379aa539aab34148e60dd477a5fb6cc3820033fec6a792a23f"
+      "sha256": "50594e42d077928689dc775346f1931a82e98c16ac14bcd8298562abdcf34ede"
     },
     {
       "file": "components/niche/promedical-inquiry.tsx",
       "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+    },
+    {
+      "file": "components/niche/article-meta.tsx",
+      "sha256": "06549387ba4fa5ab47bb77aae51300222a53378035906a80ea1f68b1f23b164e"
     },
     {
       "file": "app/layout.tsx",
@@ -25,11 +29,30 @@
     },
     {
       "file": "config/niche-network.json",
-      "sha256": "5a2d020f1c1681b10f329f42a1f34546f43d84f3dc5414f6c3a264a94cfd910c"
+      "sha256": "e017b9873f9f7a5e3394135e1ec1f89f0ae6628d8af4f186ebfd3a0c9b127c56"
     },
     {
       "file": "lib/generated/content-packages.json",
-      "sha256": "cb682f7082f8dddc3a41749c549227057682cb77edddedf1c45a3db0bcd94be8"
+      "sha256": "7ffa5f09849dc084c9148d3000cc30d7843ecd577dc5e70738c2a8a62974e3f1"
+    },
+    {
+      "file": "lib/smtp-protocol.mjs",
+      "sha256": "96127119e93d06aa26808e430acaeda30ed57a30ac89360e3c40ac9dbc3b4e23"
+    },
+    {
+      "file": "lib/niche-sites.ts",
+      "sha256": "20871662ec14d407c57fc6a91fc97964191c7fa5ccf606d1a1078f5f2c7f64f2"
+    },
+    {
+      "file": "lib/niche-seo.ts",
+      "sha256": "42212969fb49d6130fc750d8902cf986c2cf00541ecb860ea2b2337e60b99a53"
+    },
+    {
+      "file": "tests/niche-render-cache.test.mjs",
+      "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
     }
-  ]
+  ],
+  "checkedAt": "2026-10-10T06:18:56.237Z",
+  "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+  "notes": "Current source bytes and deployed Free-optimization version. Earlier reports preserve their original HEAD/date and exact file hashes; pre-commit dirty bytes are identified by their recorded hashes, not rewritten to the later commit."
 }

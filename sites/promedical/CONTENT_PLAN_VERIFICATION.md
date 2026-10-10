@@ -1,12 +1,3 @@
-# Current content and publication — 2026-10-10
-
-The final native release is c6d20d9f-bdd9-4744-a8a3-886a6714c182, package SHA-256 cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259. It contains 1,408 products, 437 categories, 57 complete approved guides and eight other pages (1,910 total), with 3,777 responsive assets. All current native review/approval/import payloads matched in the actual immutable-release proof. Historical 1,856-page/three-guide acceptance is preserved under history/acceptance-before-final-batch-20261010.
-
-The 57 guides are scheduled at 1–2 per day from October 12 to November 22, over 42 Vilnius days. At the current clock all 57 remain future; 1,853 catalogue/support pages are eligible. Publishing is request-clock driven through the shared hash/approval/host/date projection, so the deployed package does not need a new upload every day. Current hidden URLs, assets and incoming links stay excluded; the isolated Nov23 QA check passed all 57 full article bodies, visible authors/dates/breadcrumbs, schemas, sources, discovery and assets. See FINAL_BATCH_ACCEPTANCE.md and the literal canonical reports.
-
-Current public contacts are info@promedical.lt and +370 686 88369, brand Promedical, as the owner specified. No legal company name was invented. Manufacturer prices, inventory, clinical fit, warranties or delivery times are not presented as an unverified Promedical offer. Supplier subject photos, varied illustrative contexts and useful diagrams have separate provenance and native factual/media review.
-
-The domain now serves the actual Worker for owner preview. Production inspection confirmed CPU and notification failures, documented below; Free-plan optimization is being checked separately. Neither approval nor local future-clock success establishes indexing, AI recommendations, actual public passage of future dates or qualified demand. Private operation/privacy facts and unsupported browser enlargement remain explicitly unverified in the full audit.
 
 
 ## Actual production follow-through — 2026-10-10

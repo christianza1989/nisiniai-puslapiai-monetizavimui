@@ -13,8 +13,8 @@
     "existingGuides": 3,
     "newPrivateGuideProposals": 54,
     "totalArticles": 57,
-    "writtenApprovedLocal": 57,
-    "privatePlanned": 0,
+    "writtenApprovedLocal": 3,
+    "privatePlanned": 54,
     "oldPrivatePlansPreserved": 8,
     "newPrivatePlansAdded": 46,
     "clusters": 11,
@@ -1901,19 +1901,6 @@
         "publishAt": "2026-10-12T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-09T14:47:29.665Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-12T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "4ba39f780bddd81cb65a419645fe2cc8356a93d6cc218db953c90d164be06ef1",
-          "approvedAt": "2026-10-09T23:05:47.155Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 24,
-        "images": 8
       }
     },
     {
@@ -2124,19 +2111,6 @@
         "publishAt": "2026-10-14T11:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-23T07:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-14T11:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "c85805ccb91a2dde601f060f50111df026d8e0f020391e8d603cfcaa7e64b592",
-          "approvedAt": "2026-10-09T23:05:47.234Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 24,
-        "images": 6
       }
     },
     {
@@ -2347,19 +2321,6 @@
         "publishAt": "2026-10-15T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-02T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-15T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "afaa78c4bf463624f1992a915400c505599f7ab3ef3f1789e863495e7c3bb865",
-          "approvedAt": "2026-10-09T23:05:47.293Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 9
       }
     },
     {
@@ -2537,19 +2498,6 @@
         "publishAt": "2026-10-16T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-05T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-16T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "a35900d972f74dae6fb50a9bf382c1a51f1eb7d32ea646a23a847c286296f43c",
-          "approvedAt": "2026-10-09T23:05:47.298Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 30,
-        "images": 7
       }
     },
     {
@@ -2763,19 +2711,6 @@
         "publishAt": "2026-10-17T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-07T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-17T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "d42b2cb99cbf794e084b6f801e09dfc666b625f1798ff0c2672a4979ff92d301",
-          "approvedAt": "2026-10-09T23:05:47.329Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 25,
-        "images": 6
       }
     },
     {
@@ -2990,19 +2925,6 @@
         "publishAt": "2026-10-17T11:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-10T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-17T11:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "8b5f2f08bc00b3744f9e410052183e636daa0f1824b5209fa65d56697122fb97",
-          "approvedAt": "2026-10-09T23:05:47.333Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 8
       }
     },
     {
@@ -3213,19 +3135,6 @@
         "publishAt": "2026-10-18T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-14T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-18T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "ca1ea744a8304793947eae33624f9fc60f94620dbf825ddafe03db2f26a3178f",
-          "approvedAt": "2026-10-09T23:05:47.337Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 25,
-        "images": 5
       }
     },
     {
@@ -3436,19 +3345,6 @@
         "publishAt": "2026-10-19T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-17T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-19T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "156af2579eb7d52b18838355d728d809da8d0d4d06a7e377f9f7a5a798fe9d12",
-          "approvedAt": "2026-10-09T23:05:47.341Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 5
       }
     },
     {
@@ -3659,19 +3555,6 @@
         "publishAt": "2026-10-20T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-09T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-20T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "d65154f110d4ea1533f3f7fc5364584fe73753b379ae86d43d561373a18864d6",
-          "approvedAt": "2026-10-09T23:05:47.301Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 5
       }
     },
     {
@@ -3882,19 +3765,6 @@
         "publishAt": "2026-10-20T11:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-12T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-20T11:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "64f51bb2d1d1f957e01eb647efd9151379f54307957a3b477a18b19a7ca7f711",
-          "approvedAt": "2026-10-09T23:05:47.305Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 28,
-        "images": 5
       }
     },
     {
@@ -4065,19 +3935,6 @@
         "publishAt": "2026-10-13T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-09T14:47:29.665Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-13T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "1f405672f799275e8294919b269fa53db6dd3211f3bec7f47cf25e4d2ea095f9",
-          "approvedAt": "2026-10-09T23:05:47.159Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 25,
-        "images": 8
       }
     },
     {
@@ -4288,19 +4145,6 @@
         "publishAt": "2026-10-21T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-16T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-21T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "6f4a84c2c9c6c7ae4356caec5e117efce72d5d58bda12864f316b0b9a41ad0a4",
-          "approvedAt": "2026-10-09T23:05:47.308Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 6
       }
     },
     {
@@ -4511,19 +4355,6 @@
         "publishAt": "2026-10-22T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-19T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-22T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "6db967060557f82e95c74b8b0ac25847be7611aac05f42f95d0d1b9939fa2572",
-          "approvedAt": "2026-10-09T23:05:47.312Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 8
       }
     },
     {
@@ -4734,19 +4565,6 @@
         "publishAt": "2026-10-23T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-21T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-23T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "13f7408fc7c4a2b8d71dd358c213a5e5d017450fa70b355e8c47b8d231c84e79",
-          "approvedAt": "2026-10-09T23:05:47.344Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 3
       }
     },
     {
@@ -4957,19 +4775,6 @@
         "publishAt": "2026-10-23T11:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-24T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-23T11:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "c860f447cbd6c1ba85f73b08f8fcb7730d343a823d04b472923d8b2c589afbf6",
-          "approvedAt": "2026-10-09T23:05:47.348Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 24,
-        "images": 5
       }
     },
     {
@@ -5182,19 +4987,6 @@
         "publishAt": "2026-10-24T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-28T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-24T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "1ec464872072925977eafb2a7daaadf932313b93475c1fc21248d9b27d507227",
-          "approvedAt": "2026-10-09T23:05:47.352Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 6
       }
     },
     {
@@ -5409,19 +5201,6 @@
         "publishAt": "2026-10-25T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-13T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-25T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "71905616c7c1cc62ef06e5459cda81447e6bcb1ad43a5f93f2148afe649517d6",
-          "approvedAt": "2026-10-09T23:05:47.249Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 36,
-        "images": 10
       }
     },
     {
@@ -5632,19 +5411,6 @@
         "publishAt": "2026-10-25T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-31T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-25T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "64c6efb1a9183bacf1125033faacd9d807b227a6c4722cb2f04a0054b69d5a9e",
-          "approvedAt": "2026-10-09T23:05:47.356Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 24,
-        "images": 3
       }
     },
     {
@@ -5855,19 +5621,6 @@
         "publishAt": "2026-10-26T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-04T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-26T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "70cef1e4e692513fdda893b152e6ede5198ed7c59dfbc5789e0517b8984c222d",
-          "approvedAt": "2026-10-09T23:05:47.362Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 22,
-        "images": 5
       }
     },
     {
@@ -6078,19 +5831,6 @@
         "publishAt": "2026-10-27T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-07T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-27T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "58a6cbcd1a716ec4cd301832809b87e73ff92a7fc53e0fa456cdac86c3d8b5d8",
-          "approvedAt": "2026-10-09T23:05:47.366Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 3
       }
     },
     {
@@ -6303,19 +6043,6 @@
         "publishAt": "2026-10-28T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-23T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-28T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "6a7312a8f3121ad7397e5d2c4021d607221b2e38c87a4804b2980feb9e17b62d",
-          "approvedAt": "2026-10-09T23:05:47.317Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 28,
-        "images": 3
       }
     },
     {
@@ -6528,19 +6255,6 @@
         "publishAt": "2026-10-28T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-16T07:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-28T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "adaadbb77b011a2b102e7277032cdaa7e772e6a82dc01862e9c595fc809d380f",
-          "approvedAt": "2026-10-09T23:05:47.270Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 5
       }
     },
     {
@@ -6768,19 +6482,6 @@
         "publishAt": "2026-10-29T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-30T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-29T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "d0d2a03de07876be95edd269e90eeedc0cf0fe3ed0332f0f47b06b7513044a05",
-          "approvedAt": "2026-10-09T23:05:47.238Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 27,
-        "images": 9
       }
     },
     {
@@ -6993,19 +6694,6 @@
         "publishAt": "2026-10-30T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-20T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-30T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "97fa7f0f9ce6394a3797bf0d7163f39c35ac3289cedc337872b1871e1f70d36a",
-          "approvedAt": "2026-10-09T23:05:47.255Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 31,
-        "images": 8
       }
     },
     {
@@ -7221,19 +6909,6 @@
         "publishAt": "2026-10-31T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-25T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-31T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "fac4cc051383c951cb051bfdee94eefe97373d939ab388c573932878a87a680e",
-          "approvedAt": "2026-10-09T23:05:47.423Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 21,
-        "images": 5
       }
     },
     {
@@ -7426,19 +7101,6 @@
         "publishAt": "2026-10-31T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-11T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-31T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "e55b4acdf4443f2e14ca3ddc99bae68c78d4051de7d43b384736090a326ae19f",
-          "approvedAt": "2026-10-09T23:05:47.369Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 6
       }
     },
     {
@@ -7651,19 +7313,6 @@
         "publishAt": "2026-11-01T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-19T07:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-01T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "60594329f89009093e941a2846d4d8a3739f126534737b882bb743258198dd3f",
-          "approvedAt": "2026-10-09T23:05:47.279Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 28,
-        "images": 5
       }
     },
     {
@@ -7875,19 +7524,6 @@
         "publishAt": "2026-11-02T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-26T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-02T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "d81b17eb454d5fd62d00e8b53e94ae9963ac3d6a3efea6235b6d57251c4b17c7",
-          "approvedAt": "2026-10-09T23:05:47.320Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 21,
-        "images": 3
       }
     },
     {
@@ -8062,19 +7698,6 @@
         "publishAt": "2026-11-03T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-14T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-03T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "613bc340cdf86b12048604924c922134fe8c0a34e62f77ff7bae40adda486fd1",
-          "approvedAt": "2026-10-09T23:05:47.373Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 21,
-        "images": 3
       }
     },
     {
@@ -8285,19 +7908,6 @@
         "publishAt": "2026-11-03T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-03-01T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-03T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "8491cd5632057c1ba75325a00a7b35277a57174ba1c364b8ce2f39eb4e91d15a",
-          "approvedAt": "2026-10-09T23:05:47.427Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 3
       }
     },
     {
@@ -8514,19 +8124,6 @@
         "publishAt": "2026-11-04T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-27T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-04T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "fe11e6a7815cbbca7669eaed25f555bfb88f36671074ca278ca8e381b7be5d6e",
-          "approvedAt": "2026-10-09T23:05:47.259Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 27,
-        "images": 6
       }
     },
     {
@@ -8737,19 +8334,6 @@
         "publishAt": "2026-11-05T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-18T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-05T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "7b8510296e9bfd8b3b2e6e7db6fc164ff4f1ee9f59c20ed7a2516a3db8e0b3ad",
-          "approvedAt": "2026-10-09T23:05:47.378Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 28,
-        "images": 4
       }
     },
     {
@@ -8960,19 +8544,6 @@
         "publishAt": "2026-11-06T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-21T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-06T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "768e516068b5a569f81a74bb57a139fa1b5b34b97da2ae94c3bdec8271cc2f1e",
-          "approvedAt": "2026-10-09T23:05:47.382Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 23,
-        "images": 5
       }
     },
     {
@@ -9183,19 +8754,6 @@
         "publishAt": "2026-11-06T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-25T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-06T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "85832c02cbe06b2490b35ff2ee44025072b8c397d76f8f0fb35360b9538f024b",
-          "approvedAt": "2026-10-09T23:05:47.386Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 24,
-        "images": 3
       }
     },
     {
@@ -9406,19 +8964,6 @@
         "publishAt": "2026-11-07T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-03-04T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-07T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "7d86a5a6217cc37b9032bb229e6035cf2bf8212b454ec936017e1ba58482ff7f",
-          "approvedAt": "2026-10-09T23:05:47.432Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 5
       }
     },
     {
@@ -9631,19 +9176,6 @@
         "publishAt": "2026-11-08T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-22T07:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-08T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "7e2ec75b97b4f207f3eea0f75c567799239fe7c45ea47e1697482b176b1af6f2",
-          "approvedAt": "2026-10-09T23:05:47.282Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 23,
-        "images": 5
       }
     },
     {
@@ -9854,19 +9386,6 @@
         "publishAt": "2026-11-08T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-01-28T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-08T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "e509af2f6e56987cdbeaafd856ccf77a0f70f94e7df460eb543d9ba2077158d4",
-          "approvedAt": "2026-10-09T23:05:47.390Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 28,
-        "images": 4
       }
     },
     {
@@ -10077,19 +9596,6 @@
         "publishAt": "2026-11-09T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-01T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-09T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "b03682cef6813256576141108d58e9ee8917e173ddc10ea2fe9182e7e96282f0",
-          "approvedAt": "2026-10-09T23:05:47.394Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 27,
-        "images": 3
       }
     },
     {
@@ -10300,19 +9806,6 @@
         "publishAt": "2026-11-10T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-04T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-10T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "c982885c18a1f8ddc7a56011827ef15fdca4a618ba3da3f6ab2ae1273e12973d",
-          "approvedAt": "2026-10-09T23:05:47.399Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 30,
-        "images": 3
       }
     },
     {
@@ -10524,19 +10017,6 @@
         "publishAt": "2026-11-11T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-03-08T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-11T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "fcb26217d12a23d33a8591c9f582805ce43ccc69976be3e528191c558f570ec6",
-          "approvedAt": "2026-10-09T23:05:47.437Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 3
       }
     },
     {
@@ -10747,19 +10227,6 @@
         "publishAt": "2026-11-11T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-26T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-11T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "2b71629c2e1e6f6e0cd54e31555cab4917bc217c1cab67d0a1d42f2c94f8cea0",
-          "approvedAt": "2026-10-09T23:05:47.286Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 25,
-        "images": 5
       }
     },
     {
@@ -10970,19 +10437,6 @@
         "publishAt": "2026-11-12T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-08T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-12T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "f486445f67bb0af8a7daea6b93f4cf6d3d50a6af7d9c88eea9278e67fa2c66c7",
-          "approvedAt": "2026-10-09T23:05:47.403Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 22,
-        "images": 6
       }
     },
     {
@@ -11175,19 +10629,6 @@
         "publishAt": "2026-11-13T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-03-11T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-13T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "e4cfc96eb36d68640e318321a64ce634b69b62bb3045e5d7abe62c8de54dff65",
-          "approvedAt": "2026-10-09T23:05:47.441Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 19,
-        "images": 6
       }
     },
     {
@@ -11398,19 +10839,6 @@
         "publishAt": "2026-11-14T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-29T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-14T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "a224480c195be3ff856a1b7650b40bde2a55b61f1b479d2b2cc15507b44078ae",
-          "approvedAt": "2026-10-09T23:05:47.289Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 5
       }
     },
     {
@@ -11628,19 +11056,6 @@
         "publishAt": "2026-11-14T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-04T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-14T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "628f8ab7ae9581a7139b20dcfd3949ffe642427c95da32a1cbce2ca38d711c04",
-          "approvedAt": "2026-10-09T23:05:47.263Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 27,
-        "images": 5
       }
     },
     {
@@ -11852,19 +11267,6 @@
         "publishAt": "2026-11-15T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-06T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-15T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "326d6234ace8f79ab2f699ec4d013381f5a491d03935b926889a083a5c641249",
-          "approvedAt": "2026-10-09T23:05:47.243Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 29,
-        "images": 5
       }
     },
     {
@@ -12075,19 +11477,6 @@
         "publishAt": "2026-11-16T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-11T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-16T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "2548863a8ca0075c9f5b7faa9050e6872b83c440fa75b4df9f635e540c806cec",
-          "approvedAt": "2026-10-09T23:05:47.407Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 30,
-        "images": 3
       }
     },
     {
@@ -12254,19 +11643,6 @@
         "publishAt": "2026-10-14T07:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-10-09T14:47:29.665Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-10-14T07:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "c84b6fead5d6120ef378839125208fb3ca3b60369844be1f7a803c47c2c07d67",
-          "approvedAt": "2026-10-09T23:05:47.164Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 25,
-        "images": 8
       }
     },
     {
@@ -12470,19 +11846,6 @@
         "publishAt": "2026-11-17T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-11T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-17T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "ab0dfa244a8a857ae73827322e04b989ac21386e587477239e69f83f274ae45a",
-          "approvedAt": "2026-10-09T23:05:47.266Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 25,
-        "images": 5
       }
     },
     {
@@ -12687,19 +12050,6 @@
         "publishAt": "2026-11-17T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-11-30T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-17T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "488a135c377b497a609bf8f51e0e763f5b1e73a967adc3796856b93149cafc34",
-          "approvedAt": "2026-10-09T23:05:47.323Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 23,
-        "images": 5
       }
     },
     {
@@ -12910,19 +12260,6 @@
         "publishAt": "2026-11-18T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2026-12-03T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-18T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "95a9daddc4f4c5aeda61379bd0ed45651188bcb532dea0d943ad79171f3c95a3",
-          "approvedAt": "2026-10-09T23:05:47.326Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 31,
-        "images": 3
       }
     },
     {
@@ -13126,19 +12463,6 @@
         "publishAt": "2026-11-19T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-15T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-19T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "d7c7bc6db3db35a51f3618ced03e3d46dfb167c0cbba15ded2141cedde52f8ba",
-          "approvedAt": "2026-10-09T23:05:47.410Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 23,
-        "images": 5
       }
     },
     {
@@ -13344,19 +12668,6 @@
         "publishAt": "2026-11-20T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-03-15T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-20T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "dfac4025c1dce1f934b95f07b2c23d3b637d80c58542d46f3455baa9191178d5",
-          "approvedAt": "2026-10-09T23:05:47.446Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 30,
-        "images": 5
       }
     },
     {
@@ -13560,19 +12871,6 @@
         "publishAt": "2026-11-20T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-03-18T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-20T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "13a3d3b4600e7114de6d29416f93fbd82e6743228df35ae852ea9786118bf45c",
-          "approvedAt": "2026-10-09T23:05:47.449Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 24,
-        "images": 3
       }
     },
     {
@@ -13783,19 +13081,6 @@
         "publishAt": "2026-11-21T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-18T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-21T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "569d44699c0d910e81f4f996f5173978bda7e95c77bd4870da4cc2f27bf78ca4",
-          "approvedAt": "2026-10-09T23:05:47.414Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 26,
-        "images": 10
       }
     },
     {
@@ -14006,19 +13291,6 @@
         "publishAt": "2026-11-22T08:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-02-22T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-22T08:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "5cb22861951f963a7a1313d6c706101ad198015c6908c7d8b5a3ec0c4262bb69",
-          "approvedAt": "2026-10-09T23:05:47.420Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 21,
-        "images": 3
       }
     },
     {
@@ -14229,19 +13501,6 @@
         "publishAt": "2026-11-22T12:00:00.000Z",
         "status": "scheduled-private-review-required",
         "previousPublishAt": "2027-03-22T08:00:00.000Z"
-      },
-      "execution": {
-        "state": "APPROVED_SCHEDULED",
-        "checkedAt": "2026-10-10T05:42:49.702Z",
-        "publishAt": "2026-11-22T12:00:00.000Z",
-        "approval": {
-          "status": "approved",
-          "revisionHash": "386fccf7f6db6c98df2bba96e66b72a0d58492d887c08b12179d03b97194fa84",
-          "approvedAt": "2026-10-09T23:05:47.453Z",
-          "actorId": "Codex /root — actual final editorial review"
-        },
-        "bodyBlocks": 24,
-        "images": 6
       }
     }
   ],
@@ -16556,45 +15815,5 @@
     "end": "2026-11-22",
     "anchorStatus": "preparation-calendar; rebase to actual launch if needed",
     "historicalPublishedSnapshotsPreserved": true
-  },
-  "scopeAtPlanning": {
-    "products": 1408,
-    "categories": 437,
-    "rootBranches": 34,
-    "existingGuides": 3,
-    "newPrivateGuideProposals": 54,
-    "totalArticles": 57,
-    "writtenApprovedLocal": 3,
-    "privatePlanned": 54,
-    "oldPrivatePlansPreserved": 8,
-    "newPrivatePlansAdded": 46,
-    "clusters": 11,
-    "existingModels": 1408,
-    "existingCatalogueCategories": 437,
-    "catalogueRoots": 34,
-    "publication": false
-  },
-  "execution": {
-    "checkedAt": "2026-10-10T05:42:49.702Z",
-    "releaseId": "c6d20d9f-bdd9-4744-a8a3-886a6714c182",
-    "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
-    "approvedGuides": 57,
-    "packagePages": 1910,
-    "currentEligible": 1853,
-    "currentFutureGuides": 57,
-    "calendarStart": "2026-10-12",
-    "calendarEnd": "2026-11-22",
-    "days": 42,
-    "singleDays": 27,
-    "doubleDays": 15,
-    "timezone": "Europe/Vilnius",
-    "deployment": "LIVE_PREVIEW_FREE_CPU_AND_MAIL_NOT_ACCEPTED",
-    "nativeReview": "All actual current Studio review/approval/import payloads match; private proof retained.",
-    "futureHtml": "verification-20261010/future-clock-rendered-free-v1.json",
-    "browser": "verification-20261010/guides-browser-desktop-mobile.json",
-    "historicalScope": "sites/promedical/history/acceptance-before-final-batch-20261010/CONTENT_MAP.json",
-    "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
-    "productionOrigin": "https://promedical.lt",
-    "productionCheckedAt": "2026-10-10T06:15:26.816Z"
   }
 }

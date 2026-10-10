@@ -2,32 +2,40 @@
   "siteId": "promedical",
   "canonicalHost": "promedical.lt",
   "phase": 1,
-  "evaluatedAt": "2026-10-09T18:25:36.530Z",
+  "evaluatedAt": "2026-10-10T06:18:56.267Z",
   "evaluator": "Codex actual scoped source/browser/HTTP audit; no claimed human or clinical sign-off",
   "environment": {
-    "transportOrigin": "http://127.0.0.1:8790",
+    "transportOrigin": "http://127.0.0.1:8791",
     "inquiryOrigin": "http://127.0.0.1:8787",
     "lighthouseOrigin": "http://127.0.0.1:8790",
-    "runtime": "local production Workers with local D1 and ASSETS only; existing read-only canonical Host proxy for GET inspector/Lighthouse",
+    "runtime": "Actual final production bundle in isolated local bindings; controlled future clock only on the separate QA entrypoint. Production deployment evidence is separate.",
     "lighthouseVersion": "13.5.0",
-    "device": "real browser viewport tests plus mobile lab emulation; no physical device or established200%zoom"
+    "device": "real browser viewport tests plus mobile lab emulation; no physical device or established200%zoom",
+    "projectionAt": "2026-11-23T12:00:00.000Z",
+    "productionOrigin": "https://promedical.lt",
+    "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+    "productionEvidence": "verification-20261010/production-completion-v1.json; production-runtime-observations.json; production-bounded-probe-v1.json; production-redirects-v2.json; production-completion-free-v2.json; production-free-cpu-observations.json"
   },
   "version": {
-    "packageSha256": "32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6",
-    "sourceVersion": "19a2c0baf6f064bd350af4e8e9f040a389b218be",
-    "coreCommit": "a8b15a33a7b48e26aec0a240a5b32fd71d4d3a49",
+    "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+    "sourceVersion": "5c5d704774fa1d1fbfbcba57ac860e347bd64d1d",
+    "coreCommit": "e0aa27ea7a957be5d602b35a38c0462b4ffc58d8",
     "files": [
       {
         "file": "components/niche/promedical-site.tsx",
-        "sha256": "8903b7e9d2e50dc46445ca5b9f8aad26e3f55593db494d94cbeeb2a4acb3d7bb"
+        "sha256": "2abce4942057e2040669be35653cff226ea1b6cba55213e8e717434069abf491"
       },
       {
         "file": "components/niche/promedical-site.module.css",
-        "sha256": "c97df2d0b3f99c379aa539aab34148e60dd477a5fb6cc3820033fec6a792a23f"
+        "sha256": "50594e42d077928689dc775346f1931a82e98c16ac14bcd8298562abdcf34ede"
       },
       {
         "file": "components/niche/promedical-inquiry.tsx",
         "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+      },
+      {
+        "file": "components/niche/article-meta.tsx",
+        "sha256": "06549387ba4fa5ab47bb77aae51300222a53378035906a80ea1f68b1f23b164e"
       },
       {
         "file": "app/layout.tsx",
@@ -39,17 +47,36 @@
       },
       {
         "file": "config/niche-network.json",
-        "sha256": "5a2d020f1c1681b10f329f42a1f34546f43d84f3dc5414f6c3a264a94cfd910c"
+        "sha256": "e017b9873f9f7a5e3394135e1ec1f89f0ae6628d8af4f186ebfd3a0c9b127c56"
       },
       {
         "file": "lib/generated/content-packages.json",
-        "sha256": "cb682f7082f8dddc3a41749c549227057682cb77edddedf1c45a3db0bcd94be8"
+        "sha256": "7ffa5f09849dc084c9148d3000cc30d7843ecd577dc5e70738c2a8a62974e3f1"
+      },
+      {
+        "file": "lib/smtp-protocol.mjs",
+        "sha256": "96127119e93d06aa26808e430acaeda30ed57a30ac89360e3c40ac9dbc3b4e23"
+      },
+      {
+        "file": "lib/niche-sites.ts",
+        "sha256": "20871662ec14d407c57fc6a91fc97964191c7fa5ccf606d1a1078f5f2c7f64f2"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "42212969fb49d6130fc750d8902cf986c2cf00541ecb860ea2b2337e60b99a53"
+      },
+      {
+        "file": "tests/niche-render-cache.test.mjs",
+        "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
       }
-    ]
+    ],
+    "checkedAt": "2026-10-10T06:18:56.237Z",
+    "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+    "notes": "Current source bytes and deployed Free-optimization version. Earlier reports preserve their original HEAD/date and exact file hashes; pre-commit dirty bytes are identified by their recorded hashes, not rewritten to the later commit."
   },
   "verdict": {
-    "local": "IMPLEMENTED_AND_SCOPED_VERIFIED_ACCEPTANCE_INCOMPLETE",
-    "launch": "NOT_DEPLOYED_UNVERIFIED",
+    "local": "FINAL_57_GUIDES_RENDERED_PASS_FULL_AUDIT_INCOMPLETE",
+    "launch": "LIVE_FOR_PREVIEW_WITH_CONFIRMED_CPU_AND_MAIL_FAILURES",
     "demand": "UNMEASURED",
     "visual": "Coherent green/white medical B2B catalogue, original brand, true manufacturer imagery and useful model/quantity flow; broader visual benchmark incomplete."
   },
@@ -62,9 +89,14 @@
       "status": "PASS",
       "evidence": [
         "BUSINESS.md: owner-represented Klaro catalogue and product inquiry, payer/revenue hypothesis; no checkout or inventory claim",
-        "BROWSER_VERIFICATION.json: specific model quantity saved, inquiry is not an order"
+        "BROWSER_VERIFICATION.json: specific model quantity saved, inquiry is not an order",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Local functional inquiry and owner-stated representation; SMTP/inbox and production readiness are separate unknown gates."
+      "notes": "Local functional inquiry and owner-stated representation; SMTP/inbox and production readiness are separate unknown gates.",
+      "historicalEvidence": [
+        "BUSINESS.md: owner-represented Klaro catalogue and product inquiry, payer/revenue hypothesis; no checkout or inventory claim",
+        "BROWSER_VERIFICATION.json: specific model quantity saved, inquiry is not an order"
+      ]
     },
     {
       "id": "A2",
@@ -74,9 +106,14 @@
       "status": "PASS",
       "evidence": [
         "BUSINESS.md: owner-represented Klaro catalogue and product inquiry, payer/revenue hypothesis; no checkout or inventory claim",
-        "BROWSER_VERIFICATION.json: specific model quantity saved, inquiry is not an order"
+        "BROWSER_VERIFICATION.json: specific model quantity saved, inquiry is not an order",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Local functional inquiry and owner-stated representation; SMTP/inbox and production readiness are separate unknown gates."
+      "notes": "Local functional inquiry and owner-stated representation; SMTP/inbox and production readiness are separate unknown gates.",
+      "historicalEvidence": [
+        "BUSINESS.md: owner-represented Klaro catalogue and product inquiry, payer/revenue hypothesis; no checkout or inventory claim",
+        "BROWSER_VERIFICATION.json: specific model quantity saved, inquiry is not an order"
+      ]
     },
     {
       "id": "A3",
@@ -86,9 +123,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "B1",
@@ -99,9 +141,16 @@
       "evidence": [
         "CATALOGUE_IMPORT.md: owner-confirmed sales@promedical.lt, +37068688369, Promedical brand only",
         "SITE_RENDERED.json: approved package/site identity and current rendered content",
-        "VERIFICATION.md: contact config and local form recipient inspected"
+        "VERIFICATION.md: contact config and local form recipient inspected",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "Current SOURCE_VERSION/CONTENT_READINESS and immutable package: owner-selected info@promedical.lt, +37068688369, Promedical brand. Earlier sales@ contact evidence is historical only."
       ],
-      "notes": "No invented legal company, clinician, certificates, addresses, stock, prices or testimonials."
+      "notes": "No invented legal company, clinician, certificates, addresses, stock, prices or testimonials.",
+      "historicalEvidence": [
+        "CATALOGUE_IMPORT.md: owner-confirmed sales@promedical.lt, +37068688369, Promedical brand only",
+        "SITE_RENDERED.json: approved package/site identity and current rendered content",
+        "VERIFICATION.md: contact config and local form recipient inspected"
+      ]
     },
     {
       "id": "B2",
@@ -112,9 +161,16 @@
       "evidence": [
         "CATALOGUE_IMPORT.md: owner-confirmed sales@promedical.lt, +37068688369, Promedical brand only",
         "SITE_RENDERED.json: approved package/site identity and current rendered content",
-        "VERIFICATION.md: contact config and local form recipient inspected"
+        "VERIFICATION.md: contact config and local form recipient inspected",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "Current SOURCE_VERSION/CONTENT_READINESS and immutable package: owner-selected info@promedical.lt, +37068688369, Promedical brand. Earlier sales@ contact evidence is historical only."
       ],
-      "notes": "No invented legal company, clinician, certificates, addresses, stock, prices or testimonials."
+      "notes": "No invented legal company, clinician, certificates, addresses, stock, prices or testimonials.",
+      "historicalEvidence": [
+        "CATALOGUE_IMPORT.md: owner-confirmed sales@promedical.lt, +37068688369, Promedical brand only",
+        "SITE_RENDERED.json: approved package/site identity and current rendered content",
+        "VERIFICATION.md: contact config and local form recipient inspected"
+      ]
     },
     {
       "id": "B3",
@@ -124,9 +180,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "Owner Cloudflare account/domain control and Hostinger delegation are verified. A public legal entity was explicitly declined; no undisclosed legal operator facts are invented.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "C1",
@@ -137,9 +198,15 @@
       "evidence": [
         "history/ASSESSMENT.md: bounded live/archival retrieval with limits",
         "history/LIVE-INVENTORY.json: actual URL/status/content inventory",
-        "history/url-decisions.json: thirteen scoped decisions"
+        "history/url-decisions.json: thirteen scoped decisions",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Unrelated Signotec legacy URLs are not silently redirected to a new medical catalogue."
+      "notes": "Unrelated Signotec legacy URLs are not silently redirected to a new medical catalogue.",
+      "historicalEvidence": [
+        "history/ASSESSMENT.md: bounded live/archival retrieval with limits",
+        "history/LIVE-INVENTORY.json: actual URL/status/content inventory",
+        "history/url-decisions.json: thirteen scoped decisions"
+      ]
     },
     {
       "id": "C2",
@@ -150,9 +217,15 @@
       "evidence": [
         "history/ASSESSMENT.md: bounded live/archival retrieval with limits",
         "history/LIVE-INVENTORY.json: actual URL/status/content inventory",
-        "history/url-decisions.json: thirteen scoped decisions"
+        "history/url-decisions.json: thirteen scoped decisions",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Unrelated Signotec legacy URLs are not silently redirected to a new medical catalogue."
+      "notes": "Unrelated Signotec legacy URLs are not silently redirected to a new medical catalogue.",
+      "historicalEvidence": [
+        "history/ASSESSMENT.md: bounded live/archival retrieval with limits",
+        "history/LIVE-INVENTORY.json: actual URL/status/content inventory",
+        "history/url-decisions.json: thirteen scoped decisions"
+      ]
     },
     {
       "id": "C3",
@@ -161,9 +234,13 @@
       "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
       "status": "NA",
       "evidence": [
-        "history/url-decisions.json: no implemented legacy redirect"
+        "history/url-decisions.json: no implemented legacy redirect",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No legacy redirect implemented in this local build. Deferred cookie-policy decision is not a redirect claim."
+      "notes": "No legacy redirect implemented in this local build. Deferred cookie-policy decision is not a redirect claim.",
+      "historicalEvidence": [
+        "history/url-decisions.json: no implemented legacy redirect"
+      ]
     },
     {
       "id": "D1",
@@ -172,9 +249,13 @@
       "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
       "status": "UNVERIFIED",
       "evidence": [
-        "DESIGN.md: Klaro actual desktop/mobile evidence plus three local/three foreign text comparisons; limits declared"
+        "DESIGN.md: Klaro actual desktop/mobile evidence plus three local/three foreign text comparisons; limits declared",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Only the selected Klaro design reference and nearest-network reference have actual pixel evidence. Broader multi-site desktop/mobile visual comparison is incomplete."
+      "notes": "Only the selected Klaro design reference and nearest-network reference have actual pixel evidence. Broader multi-site desktop/mobile visual comparison is incomplete.",
+      "historicalEvidence": [
+        "DESIGN.md: Klaro actual desktop/mobile evidence plus three local/three foreign text comparisons; limits declared"
+      ]
     },
     {
       "id": "D2",
@@ -185,9 +266,15 @@
       "evidence": [
         "CATALOGUE_SOURCE_QA.json: immutable whole-site retrieval and technical fact invariants",
         "CATALOGUE_IMPORT.md: original Lithuanian text, five market/price omissions and 25 sparse-source introductions",
-        "ASSET_PROVENANCE.json: manufacturer photo source URLs/SHA/variants and represented-supplier basis"
+        "ASSET_PROVENANCE.json: manufacturer photo source URLs/SHA/variants and represented-supplier basis",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "User identifies Klaro as represented supplier and requests its catalogue; no competitor business facts or full copied marketing narrative."
+      "notes": "User identifies Klaro as represented supplier and requests its catalogue; no competitor business facts or full copied marketing narrative.",
+      "historicalEvidence": [
+        "CATALOGUE_SOURCE_QA.json: immutable whole-site retrieval and technical fact invariants",
+        "CATALOGUE_IMPORT.md: original Lithuanian text, five market/price omissions and 25 sparse-source introductions",
+        "ASSET_PROVENANCE.json: manufacturer photo source URLs/SHA/variants and represented-supplier basis"
+      ]
     },
     {
       "id": "D3",
@@ -198,9 +285,15 @@
       "evidence": [
         "RESEARCH.md: GLOBAL/und discovery evidence, LT effective location/volume unknown",
         "BUSINESS.md: commercial hypothesis and unknown economics",
-        "ACQUISITION.md: actual demand remains unmeasured"
+        "ACQUISITION.md: actual demand remains unmeasured",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No keyword volume, ranking, AI citation or conversion metric invented."
+      "notes": "No keyword volume, ranking, AI citation or conversion metric invented.",
+      "historicalEvidence": [
+        "RESEARCH.md: GLOBAL/und discovery evidence, LT effective location/volume unknown",
+        "BUSINESS.md: commercial hypothesis and unknown economics",
+        "ACQUISITION.md: actual demand remains unmeasured"
+      ]
     },
     {
       "id": "E1",
@@ -211,9 +304,15 @@
       "evidence": [
         "DESIGN.md: actual tokens, full page compositions and useful shortlist tool; nearest-network comparison and split-hero compromise",
         "BROWSER_VERIFICATION.json: real catalogue/guide/home pixels, loaded true model photographs",
-        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes"
+        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Distinct functional catalogue search, hierarchy, quantities and full specifications; photos preserve proportions, no fictional clinic/customer work. Visual judgment is separate from automated scores."
+      "notes": "Distinct functional catalogue search, hierarchy, quantities and full specifications; photos preserve proportions, no fictional clinic/customer work. Visual judgment is separate from automated scores.",
+      "historicalEvidence": [
+        "DESIGN.md: actual tokens, full page compositions and useful shortlist tool; nearest-network comparison and split-hero compromise",
+        "BROWSER_VERIFICATION.json: real catalogue/guide/home pixels, loaded true model photographs",
+        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes"
+      ]
     },
     {
       "id": "E2",
@@ -224,9 +323,15 @@
       "evidence": [
         "DESIGN.md: actual tokens, full page compositions and useful shortlist tool; nearest-network comparison and split-hero compromise",
         "BROWSER_VERIFICATION.json: real catalogue/guide/home pixels, loaded true model photographs",
-        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes"
+        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Distinct functional catalogue search, hierarchy, quantities and full specifications; photos preserve proportions, no fictional clinic/customer work. Visual judgment is separate from automated scores."
+      "notes": "Distinct functional catalogue search, hierarchy, quantities and full specifications; photos preserve proportions, no fictional clinic/customer work. Visual judgment is separate from automated scores.",
+      "historicalEvidence": [
+        "DESIGN.md: actual tokens, full page compositions and useful shortlist tool; nearest-network comparison and split-hero compromise",
+        "BROWSER_VERIFICATION.json: real catalogue/guide/home pixels, loaded true model photographs",
+        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes"
+      ]
     },
     {
       "id": "E3",
@@ -237,9 +342,15 @@
       "evidence": [
         "DESIGN.md: actual tokens, full page compositions and useful shortlist tool; nearest-network comparison and split-hero compromise",
         "BROWSER_VERIFICATION.json: real catalogue/guide/home pixels, loaded true model photographs",
-        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes"
+        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Distinct functional catalogue search, hierarchy, quantities and full specifications; photos preserve proportions, no fictional clinic/customer work. Visual judgment is separate from automated scores."
+      "notes": "Distinct functional catalogue search, hierarchy, quantities and full specifications; photos preserve proportions, no fictional clinic/customer work. Visual judgment is separate from automated scores.",
+      "historicalEvidence": [
+        "DESIGN.md: actual tokens, full page compositions and useful shortlist tool; nearest-network comparison and split-hero compromise",
+        "BROWSER_VERIFICATION.json: real catalogue/guide/home pixels, loaded true model photographs",
+        "ASSET_PROVENANCE.json: 3598 variants/1180 families, source/image hashes"
+      ]
     },
     {
       "id": "F1",
@@ -250,9 +361,15 @@
       "evidence": [
         "CATALOGUE_HTTP.json: all59 pages discover exact1408unique model URLs; nested filter equivalent",
         "BROWSER_VERIFICATION.json: mobile menu, header, guide hub, footer and inquiry navigation exercised",
-        "SITE_RENDERED.json: all1856approved URLs HTTP200 and links/discovery inspected"
+        "SITE_RENDERED.json: all1856approved URLs HTTP200 and links/discovery inspected",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Full approved content is reachable via catalogue pagination/root hierarchy and supporting navigation."
+      "notes": "Full approved content is reachable via catalogue pagination/root hierarchy and supporting navigation.",
+      "historicalEvidence": [
+        "CATALOGUE_HTTP.json: all59 pages discover exact1408unique model URLs; nested filter equivalent",
+        "BROWSER_VERIFICATION.json: mobile menu, header, guide hub, footer and inquiry navigation exercised",
+        "SITE_RENDERED.json: all1856approved URLs HTTP200 and links/discovery inspected"
+      ]
     },
     {
       "id": "F2",
@@ -263,9 +380,15 @@
       "evidence": [
         "CATALOGUE_HTTP.json: all59 pages discover exact1408unique model URLs; nested filter equivalent",
         "BROWSER_VERIFICATION.json: mobile menu, header, guide hub, footer and inquiry navigation exercised",
-        "SITE_RENDERED.json: all1856approved URLs HTTP200 and links/discovery inspected"
+        "SITE_RENDERED.json: all1856approved URLs HTTP200 and links/discovery inspected",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Full approved content is reachable via catalogue pagination/root hierarchy and supporting navigation."
+      "notes": "Full approved content is reachable via catalogue pagination/root hierarchy and supporting navigation.",
+      "historicalEvidence": [
+        "CATALOGUE_HTTP.json: all59 pages discover exact1408unique model URLs; nested filter equivalent",
+        "BROWSER_VERIFICATION.json: mobile menu, header, guide hub, footer and inquiry navigation exercised",
+        "SITE_RENDERED.json: all1856approved URLs HTTP200 and links/discovery inspected"
+      ]
     },
     {
       "id": "F3",
@@ -274,9 +397,13 @@
       "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
       "status": "UNVERIFIED",
       "evidence": [
-        "CATALOGUE_IMPORT.md: all437 real source categories, direct multiple memberships and34roots retained"
+        "CATALOGUE_IMPORT.md: all437 real source categories, direct multiple memberships and34roots retained",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Source hierarchy is faithfully preserved. Complete search-intent overlap/canonical consolidation across manufacturer aliases has not been established; no invented doorway geography."
+      "notes": "Source hierarchy is faithfully preserved. Complete search-intent overlap/canonical consolidation across manufacturer aliases has not been established; no invented doorway geography.",
+      "historicalEvidence": [
+        "CATALOGUE_IMPORT.md: all437 real source categories, direct multiple memberships and34roots retained"
+      ]
     },
     {
       "id": "G1",
@@ -287,9 +414,15 @@
       "evidence": [
         "DESIGN.md: institution-specific hero, eight product groups, model/quantity workflow, catalogue and three guides",
         "BROWSER_VERIFICATION.json: actual homepage/action/empty-search/native-validation and local-saved states",
-        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof"
+        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Primary action collects concrete product need; no fictional purchase/reservation success. Earlier connection error is not erased."
+      "notes": "Primary action collects concrete product need; no fictional purchase/reservation success. Earlier connection error is not erased.",
+      "historicalEvidence": [
+        "DESIGN.md: institution-specific hero, eight product groups, model/quantity workflow, catalogue and three guides",
+        "BROWSER_VERIFICATION.json: actual homepage/action/empty-search/native-validation and local-saved states",
+        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof"
+      ]
     },
     {
       "id": "G2",
@@ -300,9 +433,15 @@
       "evidence": [
         "DESIGN.md: institution-specific hero, eight product groups, model/quantity workflow, catalogue and three guides",
         "BROWSER_VERIFICATION.json: actual homepage/action/empty-search/native-validation and local-saved states",
-        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof"
+        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Primary action collects concrete product need; no fictional purchase/reservation success. Earlier connection error is not erased."
+      "notes": "Primary action collects concrete product need; no fictional purchase/reservation success. Earlier connection error is not erased.",
+      "historicalEvidence": [
+        "DESIGN.md: institution-specific hero, eight product groups, model/quantity workflow, catalogue and three guides",
+        "BROWSER_VERIFICATION.json: actual homepage/action/empty-search/native-validation and local-saved states",
+        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof"
+      ]
     },
     {
       "id": "G3",
@@ -313,9 +452,15 @@
       "evidence": [
         "DESIGN.md: institution-specific hero, eight product groups, model/quantity workflow, catalogue and three guides",
         "BROWSER_VERIFICATION.json: actual homepage/action/empty-search/native-validation and local-saved states",
-        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof"
+        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Primary action collects concrete product need; no fictional purchase/reservation success. Earlier connection error is not erased."
+      "notes": "Primary action collects concrete product need; no fictional purchase/reservation success. Earlier connection error is not erased.",
+      "historicalEvidence": [
+        "DESIGN.md: institution-specific hero, eight product groups, model/quantity workflow, catalogue and three guides",
+        "BROWSER_VERIFICATION.json: actual homepage/action/empty-search/native-validation and local-saved states",
+        "TEST_FINDINGS.md: pre-reboot connection failure retained; unchanged form succeeded after reboot and durable SQL proof"
+      ]
     },
     {
       "id": "H1",
@@ -326,9 +471,15 @@
       "evidence": [
         "RESEARCH.md: each of3guides read, primary source claims and distinct original checklists",
         "CONTENT_READINESS.md: source and exact revision-bound canonical review",
-        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections"
+        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Cart selection, ISO compatibility and procurement inquiry have distinct reader jobs and qualified examples; no universal clinical/cleaning instruction."
+      "notes": "Cart selection, ISO compatibility and procurement inquiry have distinct reader jobs and qualified examples; no universal clinical/cleaning instruction.",
+      "historicalEvidence": [
+        "RESEARCH.md: each of3guides read, primary source claims and distinct original checklists",
+        "CONTENT_READINESS.md: source and exact revision-bound canonical review",
+        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections"
+      ]
     },
     {
       "id": "H2",
@@ -339,9 +490,15 @@
       "evidence": [
         "RESEARCH.md: each of3guides read, primary source claims and distinct original checklists",
         "CONTENT_READINESS.md: source and exact revision-bound canonical review",
-        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections"
+        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Cart selection, ISO compatibility and procurement inquiry have distinct reader jobs and qualified examples; no universal clinical/cleaning instruction."
+      "notes": "Cart selection, ISO compatibility and procurement inquiry have distinct reader jobs and qualified examples; no universal clinical/cleaning instruction.",
+      "historicalEvidence": [
+        "RESEARCH.md: each of3guides read, primary source claims and distinct original checklists",
+        "CONTENT_READINESS.md: source and exact revision-bound canonical review",
+        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections"
+      ]
     },
     {
       "id": "H3",
@@ -352,9 +509,15 @@
       "evidence": [
         "RESEARCH.md: each of3guides read, primary source claims and distinct original checklists",
         "CONTENT_READINESS.md: source and exact revision-bound canonical review",
-        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections"
+        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Cart selection, ISO compatibility and procurement inquiry have distinct reader jobs and qualified examples; no universal clinical/cleaning instruction."
+      "notes": "Cart selection, ISO compatibility and procurement inquiry have distinct reader jobs and qualified examples; no universal clinical/cleaning instruction.",
+      "historicalEvidence": [
+        "RESEARCH.md: each of3guides read, primary source claims and distinct original checklists",
+        "CONTENT_READINESS.md: source and exact revision-bound canonical review",
+        "BROWSER_VERIFICATION.json: actual complete article text/h2/source sections"
+      ]
     },
     {
       "id": "H4",
@@ -365,9 +528,15 @@
       "evidence": [
         "BROWSER_VERIFICATION.json: all3guides at390 and320, full body/source sections and loaded photographs",
         "screenshots/guide-iso-moduliu-sistema-390-resumed.jpg: correct ZS1211 cabinet",
-        "SITE_RENDERED.json: full approved guide body, images and sources retained"
+        "SITE_RENDERED.json: full approved guide body, images and sources retained",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Legal/trust pages are intentionally text-focused. Single primary manufacturer image per product, no unverified gallery."
+      "notes": "Legal/trust pages are intentionally text-focused. Single primary manufacturer image per product, no unverified gallery.",
+      "historicalEvidence": [
+        "BROWSER_VERIFICATION.json: all3guides at390 and320, full body/source sections and loaded photographs",
+        "screenshots/guide-iso-moduliu-sistema-390-resumed.jpg: correct ZS1211 cabinet",
+        "SITE_RENDERED.json: full approved guide body, images and sources retained"
+      ]
     },
     {
       "id": "H5",
@@ -378,9 +547,15 @@
       "evidence": [
         "BROWSER_VERIFICATION.json: all3guides at390 and320, full body/source sections and loaded photographs",
         "screenshots/guide-iso-moduliu-sistema-390-resumed.jpg: correct ZS1211 cabinet",
-        "SITE_RENDERED.json: full approved guide body, images and sources retained"
+        "SITE_RENDERED.json: full approved guide body, images and sources retained",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Legal/trust pages are intentionally text-focused. Single primary manufacturer image per product, no unverified gallery."
+      "notes": "Legal/trust pages are intentionally text-focused. Single primary manufacturer image per product, no unverified gallery.",
+      "historicalEvidence": [
+        "BROWSER_VERIFICATION.json: all3guides at390 and320, full body/source sections and loaded photographs",
+        "screenshots/guide-iso-moduliu-sistema-390-resumed.jpg: correct ZS1211 cabinet",
+        "SITE_RENDERED.json: full approved guide body, images and sources retained"
+      ]
     },
     {
       "id": "I1",
@@ -391,9 +566,15 @@
       "evidence": [
         "SITE_RENDERED.json: article author/profile, visible dates and JSON-LD/breadcrumb agreement",
         "BROWSER_VERIFICATION.json: Promedical byline/public editorial identity and fixed2026-10-09dates",
-        "CONTENT_READINESS.md: organisation author, no fictional expert or human review"
+        "CONTENT_READINESS.md: organisation author, no fictional expert or human review",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Local publication schedules do not establish live publication; I4 remains unknown."
+      "notes": "Local publication schedules do not establish live publication; I4 remains unknown.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: article author/profile, visible dates and JSON-LD/breadcrumb agreement",
+        "BROWSER_VERIFICATION.json: Promedical byline/public editorial identity and fixed2026-10-09dates",
+        "CONTENT_READINESS.md: organisation author, no fictional expert or human review"
+      ]
     },
     {
       "id": "I2",
@@ -404,9 +585,15 @@
       "evidence": [
         "SITE_RENDERED.json: article author/profile, visible dates and JSON-LD/breadcrumb agreement",
         "BROWSER_VERIFICATION.json: Promedical byline/public editorial identity and fixed2026-10-09dates",
-        "CONTENT_READINESS.md: organisation author, no fictional expert or human review"
+        "CONTENT_READINESS.md: organisation author, no fictional expert or human review",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Local publication schedules do not establish live publication; I4 remains unknown."
+      "notes": "Local publication schedules do not establish live publication; I4 remains unknown.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: article author/profile, visible dates and JSON-LD/breadcrumb agreement",
+        "BROWSER_VERIFICATION.json: Promedical byline/public editorial identity and fixed2026-10-09dates",
+        "CONTENT_READINESS.md: organisation author, no fictional expert or human review"
+      ]
     },
     {
       "id": "I3",
@@ -417,21 +604,34 @@
       "evidence": [
         "SITE_RENDERED.json: article author/profile, visible dates and JSON-LD/breadcrumb agreement",
         "BROWSER_VERIFICATION.json: Promedical byline/public editorial identity and fixed2026-10-09dates",
-        "CONTENT_READINESS.md: organisation author, no fictional expert or human review"
+        "CONTENT_READINESS.md: organisation author, no fictional expert or human review",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Local publication schedules do not establish live publication; I4 remains unknown."
+      "notes": "Local publication schedules do not establish live publication; I4 remains unknown.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: article author/profile, visible dates and JSON-LD/breadcrumb agreement",
+        "BROWSER_VERIFICATION.json: Promedical byline/public editorial identity and fixed2026-10-09dates",
+        "CONTENT_READINESS.md: organisation author, no fictional expert or human review"
+      ]
     },
     {
       "id": "I4",
       "stage": "launch",
       "gate": true,
       "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "DEPLOYMENT.md: actual version 608be43e-ca4c-4089-af73-26448482274f uploaded 2026-10-10T05:38:33.244878Z; actual current HTTPS homepage and browser observed on 2026-10-10.",
+        "Free optimization version15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d deployed100% at2026-10-10T06:13:38.546167Z without route/DNS/secret changes."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "Actual initial deployment is recorded; this criterion does not declare operational readiness or future guides already public.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "J1",
@@ -442,9 +642,15 @@
       "evidence": [
         "CONTENT_READINESS.md: actual canonical reviews/batches/immutable release and retained private receipts",
         "SITE_RENDERED.json: about/editorial/author, corrected ISO media/privacy copy in public and LLM outputs",
-        "RESEARCH.md: AI source method and corrections contact"
+        "RESEARCH.md: AI source method and corrections contact",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual review is agent/process review, not claimed human/clinical approval."
+      "notes": "Actual review is agent/process review, not claimed human/clinical approval.",
+      "historicalEvidence": [
+        "CONTENT_READINESS.md: actual canonical reviews/batches/immutable release and retained private receipts",
+        "SITE_RENDERED.json: about/editorial/author, corrected ISO media/privacy copy in public and LLM outputs",
+        "RESEARCH.md: AI source method and corrections contact"
+      ]
     },
     {
       "id": "J2",
@@ -455,9 +661,15 @@
       "evidence": [
         "CONTENT_READINESS.md: actual canonical reviews/batches/immutable release and retained private receipts",
         "SITE_RENDERED.json: about/editorial/author, corrected ISO media/privacy copy in public and LLM outputs",
-        "RESEARCH.md: AI source method and corrections contact"
+        "RESEARCH.md: AI source method and corrections contact",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual review is agent/process review, not claimed human/clinical approval."
+      "notes": "Actual review is agent/process review, not claimed human/clinical approval.",
+      "historicalEvidence": [
+        "CONTENT_READINESS.md: actual canonical reviews/batches/immutable release and retained private receipts",
+        "SITE_RENDERED.json: about/editorial/author, corrected ISO media/privacy copy in public and LLM outputs",
+        "RESEARCH.md: AI source method and corrections contact"
+      ]
     },
     {
       "id": "J3",
@@ -468,9 +680,15 @@
       "evidence": [
         "CONTENT_READINESS.md: actual canonical reviews/batches/immutable release and retained private receipts",
         "SITE_RENDERED.json: about/editorial/author, corrected ISO media/privacy copy in public and LLM outputs",
-        "RESEARCH.md: AI source method and corrections contact"
+        "RESEARCH.md: AI source method and corrections contact",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual review is agent/process review, not claimed human/clinical approval."
+      "notes": "Actual review is agent/process review, not claimed human/clinical approval.",
+      "historicalEvidence": [
+        "CONTENT_READINESS.md: actual canonical reviews/batches/immutable release and retained private receipts",
+        "SITE_RENDERED.json: about/editorial/author, corrected ISO media/privacy copy in public and LLM outputs",
+        "RESEARCH.md: AI source method and corrections contact"
+      ]
     },
     {
       "id": "K1",
@@ -481,9 +699,15 @@
       "evidence": [
         "SITE_RENDERED.json: all1856 H1/title/description/lang/canonical/JSON-LD/OG inspected",
         "BROWSER_VERIFICATION.json: truthful per-model alt, heading order, brand and icon",
-        "SEO_REGRESSION.json: current niche-specific favicon and host isolation"
+        "SEO_REGRESSION.json: current niche-specific favicon and host isolation",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Brand aria-label mismatch corrected to native visible accessible name; final Lighthouse diagnostic is notApplicable/score:null with no failing nodes, not a numeric pass score."
+      "notes": "Brand aria-label mismatch corrected to native visible accessible name; final Lighthouse diagnostic is notApplicable/score:null with no failing nodes, not a numeric pass score.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: all1856 H1/title/description/lang/canonical/JSON-LD/OG inspected",
+        "BROWSER_VERIFICATION.json: truthful per-model alt, heading order, brand and icon",
+        "SEO_REGRESSION.json: current niche-specific favicon and host isolation"
+      ]
     },
     {
       "id": "K2",
@@ -494,9 +718,15 @@
       "evidence": [
         "SITE_RENDERED.json: all1856 H1/title/description/lang/canonical/JSON-LD/OG inspected",
         "BROWSER_VERIFICATION.json: truthful per-model alt, heading order, brand and icon",
-        "SEO_REGRESSION.json: current niche-specific favicon and host isolation"
+        "SEO_REGRESSION.json: current niche-specific favicon and host isolation",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Brand aria-label mismatch corrected to native visible accessible name; final Lighthouse diagnostic is notApplicable/score:null with no failing nodes, not a numeric pass score."
+      "notes": "Brand aria-label mismatch corrected to native visible accessible name; final Lighthouse diagnostic is notApplicable/score:null with no failing nodes, not a numeric pass score.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: all1856 H1/title/description/lang/canonical/JSON-LD/OG inspected",
+        "BROWSER_VERIFICATION.json: truthful per-model alt, heading order, brand and icon",
+        "SEO_REGRESSION.json: current niche-specific favicon and host isolation"
+      ]
     },
     {
       "id": "K3",
@@ -507,9 +737,15 @@
       "evidence": [
         "SITE_RENDERED.json: raw package/manifest/unknown paths404, private exports not served",
         "SEO_REGRESSION.json: missing URL/internal route/unknown host404 without homepage canonical",
-        "TEST_FINDINGS.md: current core future/hash/revocation negative fixtures"
+        "TEST_FINDINGS.md: current core future/hash/revocation negative fixtures",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No synthetic future page added to this all-current package; future predicates are tested in shared core fixtures, not a claimed extra site-specific controlled-clock run."
+      "notes": "No synthetic future page added to this all-current package; future predicates are tested in shared core fixtures, not a claimed extra site-specific controlled-clock run.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: raw package/manifest/unknown paths404, private exports not served",
+        "SEO_REGRESSION.json: missing URL/internal route/unknown host404 without homepage canonical",
+        "TEST_FINDINGS.md: current core future/hash/revocation negative fixtures"
+      ]
     },
     {
       "id": "L1",
@@ -519,9 +755,14 @@
       "status": "PASS",
       "evidence": [
         "SITE_RENDERED.json: parsed correct site/page/article/organisation entities and visible breadcrumb/author agreement",
-        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings"
+        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No rich-result promise, made-up sale price, aggregate rating or clinic address."
+      "notes": "No rich-result promise, made-up sale price, aggregate rating or clinic address.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: parsed correct site/page/article/organisation entities and visible breadcrumb/author agreement",
+        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings"
+      ]
     },
     {
       "id": "L2",
@@ -531,9 +772,14 @@
       "status": "PASS",
       "evidence": [
         "SITE_RENDERED.json: parsed correct site/page/article/organisation entities and visible breadcrumb/author agreement",
-        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings"
+        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No rich-result promise, made-up sale price, aggregate rating or clinic address."
+      "notes": "No rich-result promise, made-up sale price, aggregate rating or clinic address.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: parsed correct site/page/article/organisation entities and visible breadcrumb/author agreement",
+        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings"
+      ]
     },
     {
       "id": "L3",
@@ -543,9 +789,14 @@
       "status": "PASS",
       "evidence": [
         "SITE_RENDERED.json: parsed correct site/page/article/organisation entities and visible breadcrumb/author agreement",
-        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings"
+        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No rich-result promise, made-up sale price, aggregate rating or clinic address."
+      "notes": "No rich-result promise, made-up sale price, aggregate rating or clinic address.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: parsed correct site/page/article/organisation entities and visible breadcrumb/author agreement",
+        "VERIFICATION.md:1408truthful Product entities derive from approved model facts without Offers/reviews/ratings"
+      ]
     },
     {
       "id": "L4",
@@ -555,9 +806,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "M1",
@@ -568,9 +824,15 @@
       "evidence": [
         "SITE_RENDERED.json: approved same-site links and guide/source sections",
         "CATALOGUE_HTTP.json: real model/category targets and full catalogue pagination",
-        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests"
+        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual category parent/children and five source-related models; no all-to-all SEO network. Shared eligibility fixtures are explicitly distinguished from this all-current package."
+      "notes": "Actual category parent/children and five source-related models; no all-to-all SEO network. Shared eligibility fixtures are explicitly distinguished from this all-current package.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: approved same-site links and guide/source sections",
+        "CATALOGUE_HTTP.json: real model/category targets and full catalogue pagination",
+        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests"
+      ]
     },
     {
       "id": "M2",
@@ -581,9 +843,15 @@
       "evidence": [
         "SITE_RENDERED.json: approved same-site links and guide/source sections",
         "CATALOGUE_HTTP.json: real model/category targets and full catalogue pagination",
-        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests"
+        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual category parent/children and five source-related models; no all-to-all SEO network. Shared eligibility fixtures are explicitly distinguished from this all-current package."
+      "notes": "Actual category parent/children and five source-related models; no all-to-all SEO network. Shared eligibility fixtures are explicitly distinguished from this all-current package.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: approved same-site links and guide/source sections",
+        "CATALOGUE_HTTP.json: real model/category targets and full catalogue pagination",
+        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests"
+      ]
     },
     {
       "id": "M3",
@@ -594,9 +862,15 @@
       "evidence": [
         "SITE_RENDERED.json: approved same-site links and guide/source sections",
         "CATALOGUE_HTTP.json: real model/category targets and full catalogue pagination",
-        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests"
+        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual category parent/children and five source-related models; no all-to-all SEO network. Shared eligibility fixtures are explicitly distinguished from this all-current package."
+      "notes": "Actual category parent/children and five source-related models; no all-to-all SEO network. Shared eligibility fixtures are explicitly distinguished from this all-current package.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: approved same-site links and guide/source sections",
+        "CATALOGUE_HTTP.json: real model/category targets and full catalogue pagination",
+        "TEST_FINDINGS.md: date/revocation/missing-target/hash shared projection negative tests"
+      ]
     },
     {
       "id": "N1",
@@ -608,9 +882,16 @@
         "CATALOGUE_SOURCE_QA.json: actual manufacturer sitemap/category/model GET coverage, zero failures",
         "RESEARCH.md: actual primary guide target observations and retrieval dates",
         "SITE_RENDERED.json: readable real source/document panels",
-        "BROWSER_VERIFICATION.json: source panels in mobile article body"
+        "BROWSER_VERIFICATION.json: source panels in mobile article body",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Sources attribute technical information, not third-party medical approval or a fabricated partnership."
+      "notes": "Sources attribute technical information, not third-party medical approval or a fabricated partnership.",
+      "historicalEvidence": [
+        "CATALOGUE_SOURCE_QA.json: actual manufacturer sitemap/category/model GET coverage, zero failures",
+        "RESEARCH.md: actual primary guide target observations and retrieval dates",
+        "SITE_RENDERED.json: readable real source/document panels",
+        "BROWSER_VERIFICATION.json: source panels in mobile article body"
+      ]
     },
     {
       "id": "N2",
@@ -620,9 +901,14 @@
       "status": "NA",
       "evidence": [
         "CONTENT_READINESS.md: no owned editorial cross-domain links in approved content",
-        "DESIGN.md: required verslomatika footer is disclosed brand attribution"
+        "DESIGN.md: required verslomatika footer is disclosed brand attribution",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No owned editorial target link in this catalogue. Footer attribution is not claimed as a contextual editorial network link."
+      "notes": "No owned editorial target link in this catalogue. Footer attribution is not claimed as a contextual editorial network link.",
+      "historicalEvidence": [
+        "CONTENT_READINESS.md: no owned editorial cross-domain links in approved content",
+        "DESIGN.md: required verslomatika footer is disclosed brand attribution"
+      ]
     },
     {
       "id": "N3",
@@ -634,9 +920,16 @@
         "CATALOGUE_SOURCE_QA.json: actual manufacturer sitemap/category/model GET coverage, zero failures",
         "RESEARCH.md: actual primary guide target observations and retrieval dates",
         "SITE_RENDERED.json: readable real source/document panels",
-        "BROWSER_VERIFICATION.json: source panels in mobile article body"
+        "BROWSER_VERIFICATION.json: source panels in mobile article body",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Sources attribute technical information, not third-party medical approval or a fabricated partnership."
+      "notes": "Sources attribute technical information, not third-party medical approval or a fabricated partnership.",
+      "historicalEvidence": [
+        "CATALOGUE_SOURCE_QA.json: actual manufacturer sitemap/category/model GET coverage, zero failures",
+        "RESEARCH.md: actual primary guide target observations and retrieval dates",
+        "SITE_RENDERED.json: readable real source/document panels",
+        "BROWSER_VERIFICATION.json: source panels in mobile article body"
+      ]
     },
     {
       "id": "N4",
@@ -646,9 +939,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "O1",
@@ -659,9 +957,15 @@
       "evidence": [
         "SITE_RENDERED.json: exact1856eligible sitemap/LLM entries and standard robots parsing",
         "CATALOGUE_HTTP.json: query pagination/clamp/exact-search/nested path filtering",
-        "SEO_REGRESSION.json: canonical-host discovery/private/unknown isolation"
+        "SEO_REGRESSION.json: canonical-host discovery/private/unknown isolation",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual local production runtime and canonical Host tests; no legacy redirect and no production DNS/TLS conclusion."
+      "notes": "Actual local production runtime and canonical Host tests; no legacy redirect and no production DNS/TLS conclusion.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: exact1856eligible sitemap/LLM entries and standard robots parsing",
+        "CATALOGUE_HTTP.json: query pagination/clamp/exact-search/nested path filtering",
+        "SEO_REGRESSION.json: canonical-host discovery/private/unknown isolation"
+      ]
     },
     {
       "id": "O2",
@@ -672,21 +976,34 @@
       "evidence": [
         "SITE_RENDERED.json: exact1856eligible sitemap/LLM entries and standard robots parsing",
         "CATALOGUE_HTTP.json: query pagination/clamp/exact-search/nested path filtering",
-        "SEO_REGRESSION.json: canonical-host discovery/private/unknown isolation"
+        "SEO_REGRESSION.json: canonical-host discovery/private/unknown isolation",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual local production runtime and canonical Host tests; no legacy redirect and no production DNS/TLS conclusion."
+      "notes": "Actual local production runtime and canonical Host tests; no legacy redirect and no production DNS/TLS conclusion.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: exact1856eligible sitemap/LLM entries and standard robots parsing",
+        "CATALOGUE_HTTP.json: query pagination/clamp/exact-search/nested path filtering",
+        "SEO_REGRESSION.json: canonical-host discovery/private/unknown isolation"
+      ]
     },
     {
       "id": "O3",
       "stage": "launch",
       "gate": true,
       "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
-      "status": "UNVERIFIED",
+      "status": "FAIL",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "production-runtime-observations.json: actual category GET 503 / exceededCpu / 29 ms. production-completion-v1.json retains 1391 issues. DNS/TLS and canonical 308 redirects separately pass.",
+        "production-completion-free-v2.json: actual 5694 GETs/386 issues after the bounded Free optimization. Separate 12 own GETs returned200, with CPU16–66ms; these are not full availability acceptance."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "Actual HTTPS preview, isolated Worker/D1 and redirects work. Full catalogue still includes503 failures in the unchanged Free plan; the owner declined Paid. No reliable full-production claim.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "P1",
@@ -697,9 +1014,15 @@
       "evidence": [
         "CONTENT_READINESS.md: canonical recordEditorialReview/approveReviewedBatch/release/import/compile",
         "SITE_RENDERED.json: same eligible content/media/schema/discovery scope",
-        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages"
+        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Original failure history retained. No changed approved hash, hand-built approval, private draft export or controlled-clock claim."
+      "notes": "Original failure history retained. No changed approved hash, hand-built approval, private draft export or controlled-clock claim.",
+      "historicalEvidence": [
+        "CONTENT_READINESS.md: canonical recordEditorialReview/approveReviewedBatch/release/import/compile",
+        "SITE_RENDERED.json: same eligible content/media/schema/discovery scope",
+        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages"
+      ]
     },
     {
       "id": "P2",
@@ -710,9 +1033,15 @@
       "evidence": [
         "CONTENT_READINESS.md: canonical recordEditorialReview/approveReviewedBatch/release/import/compile",
         "SITE_RENDERED.json: same eligible content/media/schema/discovery scope",
-        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages"
+        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Original failure history retained. No changed approved hash, hand-built approval, private draft export or controlled-clock claim."
+      "notes": "Original failure history retained. No changed approved hash, hand-built approval, private draft export or controlled-clock claim.",
+      "historicalEvidence": [
+        "CONTENT_READINESS.md: canonical recordEditorialReview/approveReviewedBatch/release/import/compile",
+        "SITE_RENDERED.json: same eligible content/media/schema/discovery scope",
+        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages"
+      ]
     },
     {
       "id": "P3",
@@ -723,9 +1052,15 @@
       "evidence": [
         "CONTENT_READINESS.md: canonical recordEditorialReview/approveReviewedBatch/release/import/compile",
         "SITE_RENDERED.json: same eligible content/media/schema/discovery scope",
-        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages"
+        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Original failure history retained. No changed approved hash, hand-built approval, private draft export or controlled-clock claim."
+      "notes": "Original failure history retained. No changed approved hash, hand-built approval, private draft export or controlled-clock claim.",
+      "historicalEvidence": [
+        "CONTENT_READINESS.md: canonical recordEditorialReview/approveReviewedBatch/release/import/compile",
+        "SITE_RENDERED.json: same eligible content/media/schema/discovery scope",
+        "TEST_FINDINGS.md:54public core and47unique Studio cases through original run plus specific rechecks; exact unchanged other9packages"
+      ]
     },
     {
       "id": "Q1",
@@ -736,9 +1071,15 @@
       "evidence": [
         "SITE_RENDERED.json: eligible LLM URLs and full guide body/date/profile/source checks",
         "CATALOGUE_SOURCE_QA.json and CONTENT_READINESS.md: exact imported model facts and same approved-body export/renderer path",
-        "RESEARCH.md: no traffic/ranking/AI visibility claim"
+        "RESEARCH.md: no traffic/ranking/AI visibility claim",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "The canonical V1 full-body predicate is article/guide-scoped; product fidelity uses source/package reconciliation and inspected shared renderer, not an invented per-product full-body parser assertion. llms exports are supplementary, not a promise of AI search distribution."
+      "notes": "The canonical V1 full-body predicate is article/guide-scoped; product fidelity uses source/package reconciliation and inspected shared renderer, not an invented per-product full-body parser assertion. llms exports are supplementary, not a promise of AI search distribution.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: eligible LLM URLs and full guide body/date/profile/source checks",
+        "CATALOGUE_SOURCE_QA.json and CONTENT_READINESS.md: exact imported model facts and same approved-body export/renderer path",
+        "RESEARCH.md: no traffic/ranking/AI visibility claim"
+      ]
     },
     {
       "id": "Q2",
@@ -749,9 +1090,15 @@
       "evidence": [
         "SITE_RENDERED.json: eligible LLM URLs and full guide body/date/profile/source checks",
         "CATALOGUE_SOURCE_QA.json and CONTENT_READINESS.md: exact imported model facts and same approved-body export/renderer path",
-        "RESEARCH.md: no traffic/ranking/AI visibility claim"
+        "RESEARCH.md: no traffic/ranking/AI visibility claim",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "The canonical V1 full-body predicate is article/guide-scoped; product fidelity uses source/package reconciliation and inspected shared renderer, not an invented per-product full-body parser assertion. llms exports are supplementary, not a promise of AI search distribution."
+      "notes": "The canonical V1 full-body predicate is article/guide-scoped; product fidelity uses source/package reconciliation and inspected shared renderer, not an invented per-product full-body parser assertion. llms exports are supplementary, not a promise of AI search distribution.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: eligible LLM URLs and full guide body/date/profile/source checks",
+        "CATALOGUE_SOURCE_QA.json and CONTENT_READINESS.md: exact imported model facts and same approved-body export/renderer path",
+        "RESEARCH.md: no traffic/ranking/AI visibility claim"
+      ]
     },
     {
       "id": "Q3",
@@ -762,9 +1109,15 @@
       "evidence": [
         "SITE_RENDERED.json: eligible LLM URLs and full guide body/date/profile/source checks",
         "CATALOGUE_SOURCE_QA.json and CONTENT_READINESS.md: exact imported model facts and same approved-body export/renderer path",
-        "RESEARCH.md: no traffic/ranking/AI visibility claim"
+        "RESEARCH.md: no traffic/ranking/AI visibility claim",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "The canonical V1 full-body predicate is article/guide-scoped; product fidelity uses source/package reconciliation and inspected shared renderer, not an invented per-product full-body parser assertion. llms exports are supplementary, not a promise of AI search distribution."
+      "notes": "The canonical V1 full-body predicate is article/guide-scoped; product fidelity uses source/package reconciliation and inspected shared renderer, not an invented per-product full-body parser assertion. llms exports are supplementary, not a promise of AI search distribution.",
+      "historicalEvidence": [
+        "SITE_RENDERED.json: eligible LLM URLs and full guide body/date/profile/source checks",
+        "CATALOGUE_SOURCE_QA.json and CONTENT_READINESS.md: exact imported model facts and same approved-body export/renderer path",
+        "RESEARCH.md: no traffic/ranking/AI visibility claim"
+      ]
     },
     {
       "id": "R1",
@@ -775,9 +1128,15 @@
       "evidence": [
         "BROWSER_VERIFICATION.json: actual keyboard/skip/mainfocus/mobile-details/labels/native-validation/image states",
         "ACCESSIBILITY-VERIFICATION.md: contrast/focus/touch target and reduced-motion CSS inspection",
-        "performance/home.report.json: label-content-name mismatch notApplicable/score:null after redundant aria-label removal, no failing nodes"
+        "performance/home.report.json: label-content-name mismatch notApplicable/score:null after redundant aria-label removal, no failing nodes",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Scoped browser/code checks and actual natural accessible text; no full WCAG certification."
+      "notes": "Scoped browser/code checks and actual natural accessible text; no full WCAG certification.",
+      "historicalEvidence": [
+        "BROWSER_VERIFICATION.json: actual keyboard/skip/mainfocus/mobile-details/labels/native-validation/image states",
+        "ACCESSIBILITY-VERIFICATION.md: contrast/focus/touch target and reduced-motion CSS inspection",
+        "performance/home.report.json: label-content-name mismatch notApplicable/score:null after redundant aria-label removal, no failing nodes"
+      ]
     },
     {
       "id": "R2",
@@ -787,9 +1146,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "ACCESSIBILITY-VERIFICATION.md: real320/390reflow, full guide body/sources/footer/form inspected",
-        "BROWSER_VERIFICATION.json: supported shortcut did not change viewport1265/DPR1/text17px"
+        "BROWSER_VERIFICATION.json: supported shortcut did not change viewport1265/DPR1/text17px",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual browser200% enlargement remains unsupported/unestablished. Narrow viewport and accessibility100 do not close this criterion."
+      "notes": "Actual browser200% enlargement remains unsupported/unestablished. Narrow viewport and accessibility100 do not close this criterion.",
+      "historicalEvidence": [
+        "ACCESSIBILITY-VERIFICATION.md: real320/390reflow, full guide body/sources/footer/form inspected",
+        "BROWSER_VERIFICATION.json: supported shortcut did not change viewport1265/DPR1/text17px"
+      ]
     },
     {
       "id": "R3",
@@ -800,9 +1164,15 @@
       "evidence": [
         "BROWSER_VERIFICATION.json: actual keyboard/skip/mainfocus/mobile-details/labels/native-validation/image states",
         "ACCESSIBILITY-VERIFICATION.md: contrast/focus/touch target and reduced-motion CSS inspection",
-        "performance/home.report.json: label-content-name mismatch notApplicable/score:null after redundant aria-label removal, no failing nodes"
+        "performance/home.report.json: label-content-name mismatch notApplicable/score:null after redundant aria-label removal, no failing nodes",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Scoped browser/code checks and actual natural accessible text; no full WCAG certification."
+      "notes": "Scoped browser/code checks and actual natural accessible text; no full WCAG certification.",
+      "historicalEvidence": [
+        "BROWSER_VERIFICATION.json: actual keyboard/skip/mainfocus/mobile-details/labels/native-validation/image states",
+        "ACCESSIBILITY-VERIFICATION.md: contrast/focus/touch target and reduced-motion CSS inspection",
+        "performance/home.report.json: label-content-name mismatch notApplicable/score:null after redundant aria-label removal, no failing nodes"
+      ]
     },
     {
       "id": "S1",
@@ -812,9 +1182,14 @@
       "status": "PASS",
       "evidence": [
         "BROWSER_VERIFICATION.json: actual1440/768/390/320viewport observations and screenshots",
-        "ACCESSIBILITY-VERIFICATION.md: actual browser viewport tests, not physical-device/touch hardware claims"
+        "ACCESSIBILITY-VERIFICATION.md: actual browser viewport tests, not physical-device/touch hardware claims",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No horizontal paragraph/control overflow in inspected responsive surfaces; source media remains proportional."
+      "notes": "No horizontal paragraph/control overflow in inspected responsive surfaces; source media remains proportional.",
+      "historicalEvidence": [
+        "BROWSER_VERIFICATION.json: actual1440/768/390/320viewport observations and screenshots",
+        "ACCESSIBILITY-VERIFICATION.md: actual browser viewport tests, not physical-device/touch hardware claims"
+      ]
     },
     {
       "id": "S2",
@@ -824,9 +1199,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "ACCESSIBILITY-VERIFICATION.md: real320/390reflow, full guide body/sources/footer/form inspected",
-        "BROWSER_VERIFICATION.json: supported shortcut did not change viewport1265/DPR1/text17px"
+        "BROWSER_VERIFICATION.json: supported shortcut did not change viewport1265/DPR1/text17px",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual browser200% enlargement remains unsupported/unestablished. Narrow viewport and accessibility100 do not close this criterion."
+      "notes": "Actual browser200% enlargement remains unsupported/unestablished. Narrow viewport and accessibility100 do not close this criterion.",
+      "historicalEvidence": [
+        "ACCESSIBILITY-VERIFICATION.md: real320/390reflow, full guide body/sources/footer/form inspected",
+        "BROWSER_VERIFICATION.json: supported shortcut did not change viewport1265/DPR1/text17px"
+      ]
     },
     {
       "id": "S3",
@@ -836,9 +1216,14 @@
       "status": "PASS",
       "evidence": [
         "BROWSER_VERIFICATION.json: actual1440/768/390/320viewport observations and screenshots",
-        "ACCESSIBILITY-VERIFICATION.md: actual browser viewport tests, not physical-device/touch hardware claims"
+        "ACCESSIBILITY-VERIFICATION.md: actual browser viewport tests, not physical-device/touch hardware claims",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No horizontal paragraph/control overflow in inspected responsive surfaces; source media remains proportional."
+      "notes": "No horizontal paragraph/control overflow in inspected responsive surfaces; source media remains proportional.",
+      "historicalEvidence": [
+        "BROWSER_VERIFICATION.json: actual1440/768/390/320viewport observations and screenshots",
+        "ACCESSIBILITY-VERIFICATION.md: actual browser viewport tests, not physical-device/touch hardware claims"
+      ]
     },
     {
       "id": "T1",
@@ -849,9 +1234,15 @@
       "evidence": [
         "performance/home.report.json: actual final mobile lab metrics/date/environment",
         "performance/home-baseline.report.json: preserved original96baseline",
-        "PERFORMANCE.md: specific aria and responsive-sizes repair, CPU/throttling limits"
+        "PERFORMANCE.md: specific aria and responsive-sizes repair, CPU/throttling limits",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Real1408catalogue build, real source photos, local canonical-host production transport. No field-CWV or visual-score claim."
+      "notes": "Real1408catalogue build, real source photos, local canonical-host production transport. No field-CWV or visual-score claim.",
+      "historicalEvidence": [
+        "performance/home.report.json: actual final mobile lab metrics/date/environment",
+        "performance/home-baseline.report.json: preserved original96baseline",
+        "PERFORMANCE.md: specific aria and responsive-sizes repair, CPU/throttling limits"
+      ]
     },
     {
       "id": "T2",
@@ -862,9 +1253,16 @@
       "evidence": [
         "performance/home.report.json: actual final mobile lab metrics/date/environment",
         "performance/home-baseline.report.json: preserved original96baseline",
-        "PERFORMANCE.md: specific aria and responsive-sizes repair, CPU/throttling limits"
+        "PERFORMANCE.md: specific aria and responsive-sizes repair, CPU/throttling limits",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "Final current production homepage mobile Lighthouse13.5:99/100/100/100,LCP1988.97ms,CLS0,TBT19.5ms; future QA guide94/100/96/100,LCP2724.302ms,CLS0,TBT2.5ms. Single lab samples, not field/Core Web Vitals or whole-site availability."
       ],
-      "notes": "Real1408catalogue build, real source photos, local canonical-host production transport. No field-CWV or visual-score claim."
+      "notes": "Real1408catalogue build, real source photos, local canonical-host production transport. No field-CWV or visual-score claim.",
+      "historicalEvidence": [
+        "performance/home.report.json: actual final mobile lab metrics/date/environment",
+        "performance/home-baseline.report.json: preserved original96baseline",
+        "PERFORMANCE.md: specific aria and responsive-sizes repair, CPU/throttling limits"
+      ]
     },
     {
       "id": "T3",
@@ -874,9 +1272,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "U1",
@@ -887,45 +1290,65 @@
       "evidence": [
         "VERIFICATION.md: actual native HTTP validation/origin/payload/isolation and durable local D1",
         "BROWSER_VERIFICATION.json: marked model/quantity browser submission and matching SQLite record, no email sent",
-        "TEST_FINDINGS.md: pre-reboot error and resumed success both retained"
+        "TEST_FINDINGS.md: pre-reboot error and resumed success both retained",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Notification failure does not erase the durable request. Marked synthetic records removed, no customer mail."
+      "notes": "Notification failure does not erase the durable request. Marked synthetic records removed, no customer mail.",
+      "historicalEvidence": [
+        "VERIFICATION.md: actual native HTTP validation/origin/payload/isolation and durable local D1",
+        "BROWSER_VERIFICATION.json: marked model/quantity browser submission and matching SQLite record, no email sent",
+        "TEST_FINDINGS.md: pre-reboot error and resumed success both retained"
+      ]
     },
     {
       "id": "U2",
       "stage": "local",
       "gate": true,
       "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
+        "CONTENT-AND-MAIL-CORE-CHECKS.md: actual synthetic Hostinger SMTP acceptance and targeted exact Message-ID INBOX receipt, no client send; private raw receipts retained.",
+        "FINAL_BATCH_ACCEPTANCE.md: scoped current SMTP sender identity source/tests, production form evidence tracked separately."
+      ],
+      "notes": "Actual transport and receipt are proven; production full workflow and recovery remain a separate U4 criterion.",
+      "historicalEvidence": [
         "PRIVACY-LAUNCH-GAPS.md: actual SMTP recipient/config/acceptance and matching Message-ID INBOX not established",
         "VERIFICATION.md: local D1 only; no real mail sent"
-      ],
-      "notes": "Public sales email confirmed by owner, but mailbox/server delivery cannot be inferred."
+      ]
     },
     {
       "id": "U3",
       "stage": "local",
       "gate": true,
       "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
+        "CONTENT-AND-MAIL-CORE-CHECKS.md: actual synthetic Hostinger SMTP acceptance and targeted exact Message-ID INBOX receipt, no client send; private raw receipts retained.",
+        "FINAL_BATCH_ACCEPTANCE.md: scoped current SMTP sender identity source/tests, production form evidence tracked separately."
+      ],
+      "notes": "Actual transport and receipt are proven; production full workflow and recovery remain a separate U4 criterion.",
+      "historicalEvidence": [
         "PRIVACY-LAUNCH-GAPS.md: actual SMTP recipient/config/acceptance and matching Message-ID INBOX not established",
         "VERIFICATION.md: local D1 only; no real mail sent"
-      ],
-      "notes": "Public sales email confirmed by owner, but mailbox/server delivery cannot be inferred."
+      ]
     },
     {
       "id": "U4",
       "stage": "launch",
       "gate": true,
       "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
-      "status": "UNVERIFIED",
+      "status": "FAIL",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "production-inquiry-saved-mail-failed.png and production-runtime-observations.json: actual browser form saved one marked own test to isolated remote D1 with status new; notification failed. Four invalid/honeypot probes returned expected HTTP statuses and created zero matching rows."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "Actual marked production D1 inquiry remains status new after SMTP failure. CPU optimization does not fix the TCP delivery restriction. Matching production INBOX, recovery/rate/backup acceptance remain unverified.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "V1",
@@ -936,9 +1359,15 @@
       "evidence": [
         "VERIFICATION.md: native integration actual bots/DNT/GPC/origin/draft/path/size guards and per-site aggregates",
         "PRIVACY-REVIEW-ADDENDUM.json: current storage metadata/text alignment",
-        "CONTENT_READINESS.md: model-only localStorage and truthful postsubmit persistence"
+        "CONTENT_READINESS.md: model-only localStorage and truthful postsubmit persistence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Native server signal checks plus frontend source inspection; no claim of a separate physical-browser DNT/GPC network-capture experiment. Local test counters are not measured market demand."
+      "notes": "Native server signal checks plus frontend source inspection; no claim of a separate physical-browser DNT/GPC network-capture experiment. Local test counters are not measured market demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: native integration actual bots/DNT/GPC/origin/draft/path/size guards and per-site aggregates",
+        "PRIVACY-REVIEW-ADDENDUM.json: current storage metadata/text alignment",
+        "CONTENT_READINESS.md: model-only localStorage and truthful postsubmit persistence"
+      ]
     },
     {
       "id": "V2",
@@ -949,9 +1378,15 @@
       "evidence": [
         "VERIFICATION.md: native integration actual bots/DNT/GPC/origin/draft/path/size guards and per-site aggregates",
         "PRIVACY-REVIEW-ADDENDUM.json: current storage metadata/text alignment",
-        "CONTENT_READINESS.md: model-only localStorage and truthful postsubmit persistence"
+        "CONTENT_READINESS.md: model-only localStorage and truthful postsubmit persistence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Native server signal checks plus frontend source inspection; no claim of a separate physical-browser DNT/GPC network-capture experiment. Local test counters are not measured market demand."
+      "notes": "Native server signal checks plus frontend source inspection; no claim of a separate physical-browser DNT/GPC network-capture experiment. Local test counters are not measured market demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: native integration actual bots/DNT/GPC/origin/draft/path/size guards and per-site aggregates",
+        "PRIVACY-REVIEW-ADDENDUM.json: current storage metadata/text alignment",
+        "CONTENT_READINESS.md: model-only localStorage and truthful postsubmit persistence"
+      ]
     },
     {
       "id": "V3",
@@ -961,9 +1396,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "W1",
@@ -973,9 +1413,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
-        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval"
+        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent."
+      "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent.",
+      "historicalEvidence": [
+        "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
+        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval"
+      ]
     },
     {
       "id": "W2",
@@ -985,9 +1430,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
-        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval"
+        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent."
+      "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent.",
+      "historicalEvidence": [
+        "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
+        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval"
+      ]
     },
     {
       "id": "W3",
@@ -997,9 +1447,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "W4",
@@ -1009,9 +1464,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
-        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval"
+        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent."
+      "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent.",
+      "historicalEvidence": [
+        "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
+        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval"
+      ]
     },
     {
       "id": "X1",
@@ -1022,9 +1482,15 @@
       "evidence": [
         "VERIFICATION.md: exact-staged safety scans and local/private/unknown/tenant/payload HTTP guards",
         "SITE_RENDERED.json: no private package/manifest export and no draft URLs",
-        "PRIVACY-LAUNCH-GAPS.md: SMTP/core/recovery/log/rate-control gaps assessed"
+        "PRIVACY-LAUNCH-GAPS.md: SMTP/core/recovery/log/rate-control gaps assessed",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Safety pattern scans have explicit limits. No private raw sources, secrets, live leads, DB or .openai config staged; voice remains off. Production protections are unverified."
+      "notes": "Safety pattern scans have explicit limits. No private raw sources, secrets, live leads, DB or .openai config staged; voice remains off. Production protections are unverified.",
+      "historicalEvidence": [
+        "VERIFICATION.md: exact-staged safety scans and local/private/unknown/tenant/payload HTTP guards",
+        "SITE_RENDERED.json: no private package/manifest export and no draft URLs",
+        "PRIVACY-LAUNCH-GAPS.md: SMTP/core/recovery/log/rate-control gaps assessed"
+      ]
     },
     {
       "id": "X2",
@@ -1035,9 +1501,15 @@
       "evidence": [
         "VERIFICATION.md: exact-staged safety scans and local/private/unknown/tenant/payload HTTP guards",
         "SITE_RENDERED.json: no private package/manifest export and no draft URLs",
-        "PRIVACY-LAUNCH-GAPS.md: SMTP/core/recovery/log/rate-control gaps assessed"
+        "PRIVACY-LAUNCH-GAPS.md: SMTP/core/recovery/log/rate-control gaps assessed",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Safety pattern scans have explicit limits. No private raw sources, secrets, live leads, DB or .openai config staged; voice remains off. Production protections are unverified."
+      "notes": "Safety pattern scans have explicit limits. No private raw sources, secrets, live leads, DB or .openai config staged; voice remains off. Production protections are unverified.",
+      "historicalEvidence": [
+        "VERIFICATION.md: exact-staged safety scans and local/private/unknown/tenant/payload HTTP guards",
+        "SITE_RENDERED.json: no private package/manifest export and no draft URLs",
+        "PRIVACY-LAUNCH-GAPS.md: SMTP/core/recovery/log/rate-control gaps assessed"
+      ]
     },
     {
       "id": "X3",
@@ -1047,9 +1519,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     },
     {
       "id": "Y1",
@@ -1061,9 +1538,16 @@
         "CORE_FEEDBACK.md: four distinct scoped shared upgrade journals/commits, no per-site hash or validator bypass",
         "TEST_FINDINGS.md: actual54core and47unique Studio checks plus10completion/scoring and9Python cases, preserved failure/recheck history",
         "SEO_REGRESSION.json: all10 current niche Host-aware actual HTTP smokes",
-        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints"
+        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Schema unchanged; actual fetched core/companion SHAs recorded. Unsynced draft PRs are not main adoption."
+      "notes": "Schema unchanged; actual fetched core/companion SHAs recorded. Unsynced draft PRs are not main adoption.",
+      "historicalEvidence": [
+        "CORE_FEEDBACK.md: four distinct scoped shared upgrade journals/commits, no per-site hash or validator bypass",
+        "TEST_FINDINGS.md: actual54core and47unique Studio checks plus10completion/scoring and9Python cases, preserved failure/recheck history",
+        "SEO_REGRESSION.json: all10 current niche Host-aware actual HTTP smokes",
+        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints"
+      ]
     },
     {
       "id": "Y2",
@@ -1075,9 +1559,16 @@
         "CORE_FEEDBACK.md: four distinct scoped shared upgrade journals/commits, no per-site hash or validator bypass",
         "TEST_FINDINGS.md: actual54core and47unique Studio checks plus10completion/scoring and9Python cases, preserved failure/recheck history",
         "SEO_REGRESSION.json: all10 current niche Host-aware actual HTTP smokes",
-        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints"
+        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Schema unchanged; actual fetched core/companion SHAs recorded. Unsynced draft PRs are not main adoption."
+      "notes": "Schema unchanged; actual fetched core/companion SHAs recorded. Unsynced draft PRs are not main adoption.",
+      "historicalEvidence": [
+        "CORE_FEEDBACK.md: four distinct scoped shared upgrade journals/commits, no per-site hash or validator bypass",
+        "TEST_FINDINGS.md: actual54core and47unique Studio checks plus10completion/scoring and9Python cases, preserved failure/recheck history",
+        "SEO_REGRESSION.json: all10 current niche Host-aware actual HTTP smokes",
+        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints"
+      ]
     },
     {
       "id": "Y3",
@@ -1089,9 +1580,16 @@
         "CORE_FEEDBACK.md: four distinct scoped shared upgrade journals/commits, no per-site hash or validator bypass",
         "TEST_FINDINGS.md: actual54core and47unique Studio checks plus10completion/scoring and9Python cases, preserved failure/recheck history",
         "SEO_REGRESSION.json: all10 current niche Host-aware actual HTTP smokes",
-        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints"
+        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Schema unchanged; actual fetched core/companion SHAs recorded. Unsynced draft PRs are not main adoption."
+      "notes": "Schema unchanged; actual fetched core/companion SHAs recorded. Unsynced draft PRs are not main adoption.",
+      "historicalEvidence": [
+        "CORE_FEEDBACK.md: four distinct scoped shared upgrade journals/commits, no per-site hash or validator bypass",
+        "TEST_FINDINGS.md: actual54core and47unique Studio checks plus10completion/scoring and9Python cases, preserved failure/recheck history",
+        "SEO_REGRESSION.json: all10 current niche Host-aware actual HTTP smokes",
+        "sites/promedical.md: fresh checkout continuation/acceptance entrypoints"
+      ]
     },
     {
       "id": "Z1",
@@ -1102,9 +1600,15 @@
       "evidence": [
         "VERIFICATION.md: bound current release/source/browser/lab/HTTP/testing limits",
         "PHASE-1-AUDIT.json: all85criteria and explicit unresolved checks",
-        "TEST_FINDINGS.md: baseline, actual failures, repairs and rechecks"
+        "TEST_FINDINGS.md: baseline, actual failures, repairs and rechecks",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Completed local implementation/evidence work is distinct from achieving every acceptance gate; no10/10/local-ready/domain-ready claim."
+      "notes": "Completed local implementation/evidence work is distinct from achieving every acceptance gate; no10/10/local-ready/domain-ready claim.",
+      "historicalEvidence": [
+        "VERIFICATION.md: bound current release/source/browser/lab/HTTP/testing limits",
+        "PHASE-1-AUDIT.json: all85criteria and explicit unresolved checks",
+        "TEST_FINDINGS.md: baseline, actual failures, repairs and rechecks"
+      ]
     },
     {
       "id": "Z2",
@@ -1115,9 +1619,15 @@
       "evidence": [
         "VERIFICATION.md: bound current release/source/browser/lab/HTTP/testing limits",
         "PHASE-1-AUDIT.json: all85criteria and explicit unresolved checks",
-        "TEST_FINDINGS.md: baseline, actual failures, repairs and rechecks"
+        "TEST_FINDINGS.md: baseline, actual failures, repairs and rechecks",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Completed local implementation/evidence work is distinct from achieving every acceptance gate; no10/10/local-ready/domain-ready claim."
+      "notes": "Completed local implementation/evidence work is distinct from achieving every acceptance gate; no10/10/local-ready/domain-ready claim.",
+      "historicalEvidence": [
+        "VERIFICATION.md: bound current release/source/browser/lab/HTTP/testing limits",
+        "PHASE-1-AUDIT.json: all85criteria and explicit unresolved checks",
+        "TEST_FINDINGS.md: baseline, actual failures, repairs and rechecks"
+      ]
     },
     {
       "id": "Z3",
@@ -1127,9 +1637,14 @@
       "status": "UNVERIFIED",
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
+      "historicalEvidence": [
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
+      ]
     }
   ]
 }

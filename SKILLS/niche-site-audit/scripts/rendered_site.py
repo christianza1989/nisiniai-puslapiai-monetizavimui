@@ -14,6 +14,13 @@ from urllib.robotparser import RobotFileParser
 
 
 class Element:
+    BLOCK_TAGS = frozenset((
+        'address', 'article', 'aside', 'blockquote', 'dd', 'div', 'dl', 'dt',
+        'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2', 'h3',
+        'h4', 'h5', 'h6', 'header', 'hr', 'li', 'main', 'nav', 'ol', 'p', 'pre',
+        'section', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul',
+    ))
+
     def __init__(self, tag, attrs=(), parent=None):
         self.tag, self.attrs, self.parent, self.children = tag, dict(attrs), parent, []
 
@@ -32,7 +39,12 @@ class Element:
     def text(self, visible=True):
         if visible and self.hidden():
             return ''
-        return ' '.join(c.text(visible) if isinstance(c, Element) else c for c in self.children)
+        # Inline markup must not invent spaces before punctuation or inside codes.
+        # Block boundaries and explicit line breaks still separate visible words.
+        if self.tag == 'br':
+            return '\n'
+        value = ''.join(c.text(visible) if isinstance(c, Element) else c for c in self.children)
+        return '\n' + value + '\n' if self.tag in self.BLOCK_TAGS else value
 
 
 class Document(HTMLParser):

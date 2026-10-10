@@ -1,11 +1,11 @@
 {
-  "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
-  "sourceVersion": "83817beaea4b4d5e18993cac28da7abdf7d27264",
-  "coreCommit": "d0734f7eb9c43d657256ff45995a6041d95d4a27",
+  "packageSha256": "93ba997821ac71837872a2d6c1be1d252eafcc760cc5005211e061e5858e0a0b",
+  "sourceVersion": "6ffc4eb43c87aa42d22f97ae3b84d00ef84288fd",
+  "coreCommit": "bdab02d7282a48ebd2e68fcee9c5d70128882711",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
-      "sha256": "4521e37e0f08b7431dc199b5eeb3c343e856352666d07dd49ad941b52a8b066a"
+      "sha256": "030628e2ec3526bf7df957e05dd58c6c3639f6beffb4a5bd8f00e2cd59e2f722"
     },
     {
       "file": "components/niche/promedical-site.module.css",
@@ -33,7 +33,7 @@
     },
     {
       "file": "lib/generated/content-packages.json",
-      "sha256": "7ffa5f09849dc084c9148d3000cc30d7843ecd577dc5e70738c2a8a62974e3f1"
+      "sha256": "00b4892239c33fae0be0cd357208725e33c2bc801c0efd0113eacb965ed53836"
     },
     {
       "file": "lib/smtp-protocol.mjs",
@@ -45,7 +45,7 @@
     },
     {
       "file": "lib/niche-seo.ts",
-      "sha256": "42212969fb49d6130fc750d8902cf986c2cf00541ecb860ea2b2337e60b99a53"
+      "sha256": "6f412f42a0b48317170c7e1f61070fe5d6a80b5a8792d913b5d49e6b94263aa8"
     },
     {
       "file": "tests/niche-render-cache.test.mjs",
@@ -80,10 +80,11 @@
       "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
     }
   ],
-  "checkedAt": "2026-10-10T19:57:57.907Z",
-  "productionVersion": "6596546c-7f5d-49b1-b68e-92b4f7666cd3",
-  "notes": "Current owner-selected red variant 6 and caption removal; exact prior manifest archived in logo-change-v2.json. Core commit identifies the baseline before this evidence update. No QA clock in production.",
-  "productionDeployment": "0081fe34-8d16-4e82-9031-3537b74edb53",
+  "checkedAt": "2026-10-10T20:27:08.829Z",
+  "productionVersion": "fe782168-8426-4aac-bcda-4af54fb35771",
+  "notes": "65 owner-rewritten editorial pages deployed with bounded factual/link corrections and visible Home/catalogue bodies; 57 guides remain scheduled Oct12–Nov22. Selected red logo6 and established typography retained. Prior complete manifest archived in editorial-release-v1.json. Core commit identifies the baseline before this evidence update. No QA clock in production.",
+  "productionDeployment": "b3f4b29f-011b-4868-8080-f60d64721b9b",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
-  "logoEvidence": "verification-20261010/logo-change-v2.json"
+  "logoEvidence": "verification-20261010/logo-change-v2.json",
+  "editorialEvidence": "verification-20261010/editorial-release-v1.json"
 }

@@ -69,6 +69,45 @@ class Brand(Strict):
     rationale: str = Field(min_length=20, max_length=600)
 
 
+class ContentPlanItem(Strict):
+    path: str = Field(pattern=r"^/[a-z0-9][a-z0-9-]{0,69}/$")
+    title: str = Field(min_length=10, max_length=160)
+    intent: str = Field(min_length=20, max_length=300)
+    head_query: str = Field(min_length=5, max_length=160)
+    audience_problem: str = Field(min_length=20, max_length=1000)
+    business_goal: str = Field(min_length=20, max_length=1000)
+    primary_topic: str = Field(min_length=5, max_length=120)
+    reason: str = Field(min_length=30, max_length=1000)
+    month: str = Field(pattern=r"^(?:|[0-9]{4}-(?:0[1-9]|1[0-2]))$")
+    seasonal_hook: str = Field(max_length=300)
+    pillar_path: str = Field(pattern=r"^(?:|/[a-z0-9][a-z0-9-]{0,69}/)$")
+    outline: list[str] = Field(min_length=3, max_length=8)
+    source_queries: list[str] = Field(max_length=6)
+    source_urls: list[str] = Field(max_length=6)
+    internal_links: list[str] = Field(max_length=8)
+    media_brief: str = Field(min_length=40, max_length=1000)
+    media_alt: str = Field(min_length=10, max_length=250)
+    priority: Literal["initial", "later"]
+
+    @field_validator("source_urls")
+    @classmethod
+    def sources(cls, values):
+        return [public_url(value) for value in values]
+
+    @model_validator(mode="after")
+    def meaningful(self):
+        if not self.month and self.seasonal_hook:
+            raise ValueError("Unscheduled evergreen plan cannot invent a seasonal hook")
+        for values in (self.outline, self.source_queries):
+            if any(not text.strip() or len(text) > 500 for text in values):
+                raise ValueError("Meaningful bounded planning briefs required")
+        if any(not re.fullmatch(r"/(?:[a-z0-9][a-z0-9-]{0,69}/)?", target) for target in self.internal_links):
+            raise ValueError("Same-site canonical paths required")
+        if len(self.internal_links) != len(set(self.internal_links)) or self.path in self.internal_links:
+            raise ValueError("Distinct useful non-self links required")
+        return self
+
+
 class Draft(Strict):
     business_name: str = Field(min_length=1, max_length=100)
     tagline: str = Field(min_length=10, max_length=200)
@@ -81,6 +120,8 @@ class Draft(Strict):
     tools: list[ToolPlan] = Field(min_length=2, max_length=8)
     brand: Brand
     pages: list[Page] = Field(min_length=3, max_length=8)
+    # Historical immutable v1 payloads had no plan. New creator schema below requires it.
+    content_plan: list[ContentPlanItem] = Field(default_factory=list, max_length=12)
     language_review: str = Field(min_length=30, max_length=1000)
     remaining_gates: list[str] = Field(min_length=3, max_length=15)
 
@@ -89,6 +130,18 @@ class Draft(Strict):
         paths = [p.path for p in self.pages]
         if paths[0] != "/" or len(paths) != len(set(paths)):
             raise ValueError("A distinct page system starting with homepage required")
+        plan_paths = [item.path for item in self.content_plan]
+        if len(plan_paths) != len(set(plan_paths)):
+            raise ValueError("Distinct content-plan destinations required")
+        known = set(paths + plan_paths)
+        positions = {path: index for index, path in enumerate(plan_paths)}
+        for item in self.content_plan:
+            if any(target not in known for target in item.internal_links):
+                raise ValueError("Plan links require actual draft or planned destinations")
+            parent = item.pillar_path
+            if parent and (parent == item.path or parent not in known
+                    or parent in positions and positions[parent] >= positions[item.path]):
+                raise ValueError("Broad parent must exist and precede its support; no cycles")
         for collection in (self.confirmed_facts, self.assumptions, self.open_questions, self.remaining_gates,
                 self.business.alternatives, self.business.execution_steps, self.business.expansion_criteria,
                 *[s.items for p in self.pages for s in p.sections]):
@@ -99,9 +152,20 @@ class Draft(Strict):
         return self
 
 
+class CreatorDraft(Draft):
+    content_plan: list[ContentPlanItem] = Field(min_length=3, max_length=12)
+
+
 def normalize(value):
     try:
         return Draft.model_validate(value).model_dump(mode="json")
+    except (ValueError, TypeError):
+        raise RunnerError("output_invalid") from None
+
+
+def normalize_creator(value):
+    try:
+        return CreatorDraft.model_validate(value).model_dump(mode="json")
     except (ValueError, TypeError):
         raise RunnerError("output_invalid") from None
 
@@ -118,13 +182,14 @@ def language_detector():
 def language_screening(value):
     draft = Draft.model_validate(value)
     names = [draft.business_name, *[r.title for r in draft.research], *[t.tool for t in draft.tools]]
-    excluded = {"business_name", "url", "title", "tool", "path", "accent", "composition", "phase", "layout"}
+    excluded = {"business_name", "url", "title", "tool", "path", "accent", "composition", "phase", "layout",
+                "month", "pillar_path", "internal_links", "source_urls", "priority"}
 
     def prose(item, key=""):
         if isinstance(item, dict):
             for name, child in item.items():
                 # Page titles are prose; official research titles are names.
-                if name not in excluded or (name == "title" and "sections" in item):
+                if name not in excluded or (name == "title" and "intent" in item):
                     yield from prose(child, name)
         elif isinstance(item, list):
             for child in item:
@@ -254,6 +319,18 @@ def plan_markdown(value, research_receipt):
     for source in draft.research:
         title = source.title.replace('[', '').replace(']', '')
         parts.append(f"- [{title}]({source.url}) ({source.market}). {source.finding}")
+    parts.extend(["## Turinio planas", "Tai privačios puslapių užduotys; šaltinių kandidatai nėra patikros įrodymas, o mėnuo nėra publikavimo data."])
+    if not draft.content_plan:
+        parts.append("Šioje ankstesnėje versijoje turinio planas dar neparengtas.")
+    for item in draft.content_plan:
+        parts.extend(["### " + item.title, "URL: " + item.path + "\n\nKlausimas: " + item.head_query,
+            item.intent + "\n\n" + item.audience_problem, "Verslo tikslas: " + item.business_goal,
+            "Sprendimo priežastis: " + item.reason, "\n".join("- " + text for text in item.outline),
+            "Šaltinių patikros užklausos: " + "; ".join(item.source_queries),
+            "Šaltinių kandidatai: " + "; ".join(item.source_urls),
+            "Vidiniai ryšiai: " + ", ".join(item.internal_links),
+            "Planavimo mėnuo: " + (item.month or "neparinktas") + "; sezoniškumas: " + (item.seasonal_hook or "nėra"),
+            "Vaizdo užduotis: " + item.media_brief + "\n\nAlt: " + item.media_alt])
     parts.extend(["## Įrankių planas", "\n".join(f"- {t.area}: {t.tool}. {t.purpose} Etapas: {t.phase}. {t.limitation}" for t in draft.tools),
                   "## Dizaino pasirinkimas", draft.brand.rationale, "## Kalbos saviredakcija", draft.language_review,
                   "Šis rezultatas yra privatus verslo ir svetainės juodraštis. Viešas paleidimas ir pilnas pirmos fazės priėmimas dar neatlikti."])
@@ -263,7 +340,7 @@ def plan_markdown(value, research_receipt):
 def artifacts(value, *, creation_id, revision, receipt):
     value = normalize(value)
     research = ("Atlikta " + str(receipt.get("web_search_count", 0)) + " paieškos veiksmų. Atskirų šaltinių pilna peržiūra nepatvirtinta.") if receipt.get("web_search_count") else "Šiame vykdyme interneto tyrimas neatliktas; šaltinių teiginius reikia patikrinti."
-    package = {"schemaVersion": "verslomatika.business-draft.v1", "creationId": creation_id, "revision": revision,
+    package = {"schemaVersion": "verslomatika.business-draft.v2" if value["content_plan"] else "verslomatika.business-draft.v1", "creationId": creation_id, "revision": revision,
                "publicationApproved": False, "draft": value, "researchReceipt": research}
     outputs = [("business_plan", "Verslo pasiūlymas.md", "text/markdown", plan_markdown(value, research)),
                ("website_preview", "Svetainės peržiūra.html", "text/html", preview(value)),

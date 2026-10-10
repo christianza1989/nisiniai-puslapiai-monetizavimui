@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Typed plan compatibility, current canonical prompt snapshot and dependency/language gates verified. Initial Ruff import-format finding corrected. This checkpoint has no real provider or publication acceptance; shared intake and native V2 writer continue separately.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest offline_tests/test_creation_content_plan.py offline_tests/test_creation_review.py offline_tests/test_creation_adapter.py -q",
+      "result": "PASS",
+      "evidence": "76 passed in 3.61s; new plan graph and legacy compatibility scenarios included"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check --fix offline_tests/test_creation_content_plan.py",
+      "result": "PASS",
+      "evidence": "One own import-format finding corrected; no behavior change"
+    }
+  ],
+  "eventId": "f51209c2-1205-401c-91bf-b745c1136c15",
+  "sequence": 2,
+  "at": "2026-10-10T11:53:26.834Z"
+}

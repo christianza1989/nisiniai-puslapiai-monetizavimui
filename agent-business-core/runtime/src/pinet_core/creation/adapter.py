@@ -10,7 +10,7 @@ from ..tasks.codex import arguments as consult_arguments
 from ..tasks.codex import child_environment
 from ..tasks.codex import parse_trace as consult_trace
 from ..tasks.codex_transport import RunnerError, execute
-from .renderer import Draft, normalize
+from .renderer import CreatorDraft, normalize, normalize_creator
 
 ROOT = Path(__file__).resolve().parents[5]
 RUNTIME = Path(__file__).resolve().parents[3]
@@ -19,13 +19,34 @@ INSTRUCTION_FILES = (
     "SKILLS/niche-site-builder/SKILL.md",
     "SKILLS/niche-site-builder/references/business-validation.md",
     "SKILLS/niche-business-tools/SKILL.md",
+    "SKILLS/niche-content-planner/SKILL.md",
+    "SKILLS/niche-content-planner/references/planning-decisions.md",
+    "SKILLS/niche-content-planner/references/quality-review.md",
+    "SKILLS/niche-content-planner/references/studio-contract.md",
+    "SKILLS/niche-content-planner/references/content-workflow.md",
+    "SKILLS/niche-content-planner/references/media-workflow.md",
+    "SKILLS/niche-content-planner/references/network-linking.md",
     "SKILLS/niche-content-planner/references/language-quality.md",
+    "SKILLS/niche-seo-geo-core/SKILL.md",
+    "SKILLS/niche-seo-geo-core/references/studio-integration.md",
+    "SKILLS/niche-seo-geo-core/references/evidence-contract.md",
+    "SKILLS/niche-seo-geo-core/references/geo-publishing.md",
 )
 POLICY = """You prepare a private Lithuanian business proposition and a useful website DRAFT for a signed-in customer.
 Today's bounded task is a substantial draft, not full F1 acceptance or live public operation. Follow the applicable
 core instructions below within this narrower draft scope. Decide the buyer, paid outcome, payer, monetization,
 evidence, alternatives and truthful interest test BEFORE selecting a distinctive page system and design direction.
 Deliver at least3distinct useful pages (home first, offer/helpful selection guide/supporting trust/contact plan).
+Return content_plan with at least3 substantive distinct initial guide briefs (up to12 useful briefs, no filler).
+Map each exact Lithuanian head_query to its own reader decision, canonical path and reason for a distinct answer;
+merge synonymous questions. Preserve actual outline, source_queries, source_urls candidates, business_goal,
+media_brief/alt and useful same-site internal_links. Broad pillar_path must cover its supports and precede them.
+Only reference paths in pages or content_plan; no cycles, self-links, invented target IDs or working tools.
+Use month='' and seasonal_hook='' for unscheduled evergreen briefs. A nonempty month is a provisional local
+YYYY-MM planning hypothesis, never a real publish date. Do not invent weekly/monthly cadence or promise indexing.
+An initial brief is not a written/reviewed guide, generated image, verified source or approved publication.
+The active schema is this server's private business-draft.v2, not legacy studio plan/draft-result JSON.
+The server maps these private briefs to the maintained studio; do not emit studio-only fields or claim file writes.
 Write useful specific sections, not generic empty cards, fake quotes, placeholders or fake 'working' buttons.
 Separate client-provided facts, assumptions and unknown fulfilment/cost/credentials/contacts/domain ownership.
 Never invent our prices, supplier, qualifications, reviews, performed work, traffic, revenue or deployment.
@@ -142,7 +163,7 @@ async def run_role(context, still_authorized, *, role, seconds):
         if context.get("expected_instruction_hash") != instruction_hash:
             raise RunnerError("instructions_changed")
         prompt = policy + "\n\nUNTRUSTED_CONTEXT_JSON\n" + json.dumps(context, ensure_ascii=False)
-        schema_model = Draft
+        schema_model = CreatorDraft
     else:
         from .review import CoordinatorDecision, CriticReview, coordinator_prompt, critic_prompt
         if role == "critic":
@@ -173,6 +194,11 @@ async def run_role(context, still_authorized, *, role, seconds):
         receipt["instruction_hash"], receipt["adapter_revision"], receipt["model"] = instruction_hash, "codex-business-team.v1", "gpt-6-luna"
         receipt["prompt_bytes"], receipt["context_bytes"] = len(prompt.encode()), len(json.dumps(context, ensure_ascii=False).encode())
         receipt["prior_context_projection"] = context.get("prior_context_projection")
+        if role == "creator":
+            try:
+                result = normalize_creator(result)
+            except RunnerError as error:
+                raise RunnerError(error.code, receipt) from None
         return result, receipt
     except RunnerError as error:
         (folder / "failure.private.json").write_text(json.dumps({"code": error.code, "instruction_hash": instruction_hash,

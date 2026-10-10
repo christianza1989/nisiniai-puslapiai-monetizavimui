@@ -41,6 +41,7 @@ async def context_for(tx, creation, job):
     except ImportError:
         pass  # Domain catalogue is an optional separate source integration, not fabricated candidates.
     return {"display_name": creation.display_name, "idea": creation.idea, "canonical_host": creation.canonical_host,
+            "current_date": utcnow().date().isoformat(), "locale": "lt-LT", "timezone": "Europe/Vilnius",
             "history": history, "current_draft": prior, "feedback": job.message, "base_revision": job.base_revision,
             "prior_context_projection": projection, "previous_artifacts_preserved": bool(revisions),
             "permitted_web_actions": 2 if revisions else 6,

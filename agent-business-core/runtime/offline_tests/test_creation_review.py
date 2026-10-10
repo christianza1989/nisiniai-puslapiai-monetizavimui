@@ -1,3 +1,4 @@
+import json
 from copy import deepcopy
 
 import pytest
@@ -14,6 +15,7 @@ from pinet_core.creation.review import (
     draft_sha256,
     normalize_coordinator,
     normalize_critic,
+    output_schema,
     role_instruction_hash,
 )
 from pinet_core.tasks.codex_transport import RunnerError
@@ -314,3 +316,55 @@ def test_prompts_use_only_bounded_current_context_and_validate_before_provider(d
         critic_prompt(draft=draft, stage="unbounded_tool", round_number=1)
     with pytest.raises(RunnerError, match="review_invalid"):
         role_instruction_hash("creator_override")
+
+
+@pytest.mark.parametrize("reference", ["draft:/business.alternatives[3]", "draft:/pages[0].sections[1].body",
+                                      "draft:/pages/0/sections/1/body"])
+def test_provider_schema_rejects_actual_dot_bracket_reference_defect(draft, reference):
+    import re
+    context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": []}
+    schema = output_schema("critic", context)
+    constraint = schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]
+    valid = reference == "draft:/pages/0/sections/1/body"
+    assert bool(re.fullmatch(constraint["pattern"], reference)) == valid
+    assert (reference in constraint["enum"]) == valid
+    assert schema["properties"]["draft_sha256"]["const"] == draft_sha256(draft)
+
+
+def test_failed_prose_projection_preserves_original_hash_and_every_index(draft):
+    original = "Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto."
+    draft["business"]["alternatives"] = [original, "Palyginti individualų konsultavimą ir komandos mokymą."]
+    draft["pages"][0]["sections"][0]["body"] = original
+    saved = deepcopy(draft)
+    evidence = receipt(draft, status="FAIL")
+    context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": [evidence]}
+    prompt = critic_prompt(**context)
+    projected = json.loads(prompt.split("NEPATIKIMI_DUOMENYS_JSON\n", 1)[1])
+    assert original not in prompt
+    assert draft == saved and projected["draft_sha256"] == draft_sha256(saved)
+    assert len(projected["draft"]["business"]["alternatives"]) == 2
+    assert projected["draft"]["business"]["alternatives"][1] == saved["business"]["alternatives"][1]
+    assert set(projected["context_projection"]["omitted_fields"]) == {
+        "draft:/business/alternatives/0", "draft:/pages/0/sections/0/body"}
+    assert "receipt:r_language" in projected["allowed_finding_refs"]
+    critic = report(draft)
+    critic["findings"][0]["evidence_refs"] = ["draft:/business/alternatives/0", "receipt:r_language"]
+    bind(critic, evidence)
+    critic = verify(critic, draft, [evidence])
+    coordinator = coordinator_prompt(critic=critic, **context)
+    assert original not in coordinator and draft_sha256(saved) in coordinator
+    schema = output_schema("coordinator", {**context, "critic": critic})
+    assert schema["properties"]["critic_sha256"]["const"] == critic_sha256(critic)
+    assert schema["properties"]["decision"]["const"] == "revise"
+
+
+def test_schema_and_projection_do_not_launder_unknown_reference_or_fail(draft):
+    evidence = receipt(draft, status="FAIL")
+    context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": [evidence]}
+    schema = output_schema("critic", context)
+    refs = schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"]
+    assert "draft:/pages/99/title" not in refs and "receipt:r_unknown" not in refs
+    critic = report(draft, "accept_draft")
+    bind(critic, evidence)
+    with pytest.raises(RunnerError, match="review_invalid"):
+        verify(critic, draft, [evidence])

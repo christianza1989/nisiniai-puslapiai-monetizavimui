@@ -183,7 +183,7 @@ def language_screening(value):
     draft = Draft.model_validate(value)
     names = [draft.business_name, *[r.title for r in draft.research], *[t.tool for t in draft.tools]]
     excluded = {"business_name", "url", "title", "tool", "path", "accent", "composition", "phase", "layout",
-                "month", "pillar_path", "internal_links", "source_urls", "priority"}
+                "month", "pillar_path", "internal_links", "source_urls", "source_queries", "priority"}
 
     def prose(item, key=""):
         if isinstance(item, dict):
@@ -244,7 +244,7 @@ def context_projection(value):
             return [result for i, child in enumerate(item) if (result := project(child, path + f"[{i}]")) is not None]
         if isinstance(item, str):
             # These are official names, identifiers or validated URLs, not prose.
-            if path.endswith((".business_name", ".title", ".tool", ".path", ".url", ".accent", ".composition", ".phase", ".layout")):
+            if (".source_queries[" in path or path.endswith((".business_name", ".title", ".tool", ".path", ".url", ".accent", ".composition", ".phase", ".layout"))):
                 return item
             try:
                 screen_language([item], names)

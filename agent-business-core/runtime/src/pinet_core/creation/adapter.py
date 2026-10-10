@@ -181,7 +181,12 @@ async def run_role(context, still_authorized, *, role, seconds):
         if folder.resolve().parent != workspace.resolve():
             raise RunnerError("runner_unavailable")
         schema, output = folder / "output.schema.json", folder / "output.private.json"
-        schema.write_text(json.dumps(schema_model.model_json_schema()), encoding="utf-8")
+        if role == "creator":
+            output_schema = schema_model.model_json_schema()
+        else:
+            from .review import output_schema as review_output_schema
+            output_schema = review_output_schema(role, context)
+        schema.write_text(json.dumps(output_schema), encoding="utf-8")
         web = role == "creator" and cfg.creation_web_search_enabled and context.get("permitted_web_actions", 6) > 0
         trace = Trace(web, context.get("permitted_web_actions", 0))
         remaining_seconds = min(seconds, cfg.creation_runner_seconds) - (monotonic() - started)

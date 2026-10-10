@@ -7,6 +7,7 @@ from test_creation_review import draft as draft_fixture
 from pinet_core.creation.adapter import INSTRUCTION_FILES, instructions
 from pinet_core.creation.renderer import (
     artifacts,
+    context_projection,
     language_screening,
     normalize,
     normalize_creator,
@@ -102,3 +103,21 @@ def test_actual_creator_snapshot_contains_canonical_planner_and_common_handover(
     for reference in ("planning-decisions.md", "studio-contract.md", "media-workflow.md", "studio-integration.md", "geo-publishing.md"):
         assert reference in value
     assert "month=''" in value and "business-draft.v2" in value
+
+
+def test_private_international_search_queries_are_not_lithuanian_public_prose(draft):
+    import json
+
+    from pinet_core.creation.review import critic_prompt
+    value = normalize_creator(planned(draft))
+    query = "generative AI training for businesses team workshop price Europe"
+    value["content_plan"][0]["source_queries"] = [query]
+    assert language_screening(value)["status"] == "PASS"
+    prior, _ = context_projection(value)
+    assert prior["content_plan"][0]["source_queries"] == [query]
+    prompt = critic_prompt(draft=value, stage="private_draft", round_number=1)
+    projected = json.loads(prompt.split("NEPATIKIMI_DUOMENYS_JSON\n", 1)[1])
+    assert projected["draft"]["content_plan"][0]["source_queries"] == [query]
+    value["content_plan"][0]["business_goal"] = query
+    with pytest.raises(RunnerError, match="language_quality_failed"):
+        language_screening(value)

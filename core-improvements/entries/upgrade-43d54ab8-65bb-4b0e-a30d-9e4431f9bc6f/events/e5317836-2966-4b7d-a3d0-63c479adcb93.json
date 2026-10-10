@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "48 new helper cases plus126 existing renderer/plan/review/adapter/team-controller cases PASS174/0skip. Initial43 helper PASS retained, five availability/schema-negative cases then added. Independent final language rejection remains tested; this helper is not semantic/F1/launch/provider acceptance. Own uv locked dependency setup only; no root/source/runtime/provider/DB/browser changes.",
+  "checks": [
+    {
+      "command": "uv run pytest offline_tests/test_creation_language_patch.py offline_tests/test_creation_adapter.py offline_tests/test_creation_content_plan.py offline_tests/test_creation_review.py offline_tests/test_creation_team_controller.py -q",
+      "result": "PASS",
+      "evidence": "174 passed in10.54s, own ignored agent-business-core/runtime/output/language-patch/regression.txt;48new tests cover tiny-word exact unrelated field preservation, both stale hashes, whole target union/mixed receipt references, unsafe/non-string/unknown targets, malformed response, actual field bounds, max8, canonical originals, Unicode and independent language rejection."
+    },
+    {
+      "command": "uv run ruff check src/pinet_core/creation/language_patch.py offline_tests/test_creation_language_patch.py",
+      "result": "PASS",
+      "evidence": "All checks passed; git diff --check PASS."
+    },
+    {
+      "command": "uv run python instructions profile inspection",
+      "result": "PASS",
+      "evidence": "7554bytes instruction SHA01fd108ec40e4624900e18c379ddbe69485a7575a9c3d0bc3267fc0fee212152. Actual canonical reference loaded, no paid/provider call."
+    }
+  ],
+  "eventId": "e5317836-2966-4b7d-a3d0-63c479adcb93",
+  "sequence": 3,
+  "at": "2026-10-10T14:03:00.019Z"
+}

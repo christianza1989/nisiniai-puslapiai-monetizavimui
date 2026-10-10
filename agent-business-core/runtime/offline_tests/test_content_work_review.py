@@ -4,7 +4,12 @@ from copy import deepcopy
 import pytest
 
 from pinet_core.content_work import adapter, review
-from pinet_core.creation.review import canonical_sha256
+from pinet_core.creation.review import (
+    CoordinatorDecision,
+    CriticReview,
+    canonical_sha256,
+    model_output_schema,
+)
 from pinet_core.tasks.codex_transport import RunnerError
 
 
@@ -136,6 +141,35 @@ def test_native_schema_pins_exact_refs_hash_round_and_instructions():
     assert report["findings"][0]["correction"] in choices
     assert coordinator_schema["properties"]["next_actions"]["items"]["enum"] == choices
     assert len(choices) == 9  # One correction plus eight factually unverified checks.
+
+
+@pytest.mark.parametrize("role", ["critic", "coordinator"])
+def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding(role):
+    original_models = (CriticReview.model_json_schema(), CoordinatorDecision.model_json_schema())
+    candidate = output()
+    saved = deepcopy(candidate)
+    receipts = review.observations(candidate)
+    report = critic(candidate, receipts, "revise")
+    prepared = {"pageData": {"planningBrief": {"head_query": "Kaip pasirinkti užduotį?"}}, "siteData": {}}
+    ctx = review.context(candidate, 1, receipts, prepared, report if role == "coordinator" else None)
+    schema = review.output_schema(role, ctx)
+    expected = model_output_schema(role)
+    if role == "critic":
+        expected["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = ctx["allowed_finding_refs"]
+        finding = schema["$defs"]["Finding"]["properties"]
+        assert finding["explanation"]["maxLength"] == finding["correction"]["maxLength"] == 240
+        assert schema["$defs"]["ReviewCheck"]["properties"]["summary"]["maxLength"] == 100
+        assert "draft:/body/0/content/0/text" in finding["evidence_refs"]["items"]["enum"]
+    else:
+        expected["properties"]["critic_sha256"]["const"] = canonical_sha256(report)
+        expected["properties"]["decision"]["const"] = "revise"
+        expected["properties"]["next_actions"]["items"]["enum"] = ctx["allowed_next_actions"]
+    for key in ("draft_sha256", "stage", "round_number"):
+        expected["properties"][key]["const"] = ctx[key]
+    assert schema == expected and schema["properties"]["summary"]["maxLength"] == 360
+    assert schema["properties"]["draft_sha256"]["const"] == canonical_sha256(saved)
+    assert ctx["draft"]["body"][0]["type"] == "richParagraph" and candidate == saved
+    assert (CriticReview.model_json_schema(), CoordinatorDecision.model_json_schema()) == original_models
 
 
 async def test_guide_adapter_uses_fixed_no_tools_transport_and_native_schema(tmp_path, monkeypatch):

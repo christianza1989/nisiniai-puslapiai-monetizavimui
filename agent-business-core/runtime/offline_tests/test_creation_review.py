@@ -14,6 +14,7 @@ from pinet_core.creation.review import (
     critic_prompt,
     critic_sha256,
     draft_sha256,
+    model_output_schema,
     normalize_coordinator,
     normalize_critic,
     output_schema,
@@ -383,3 +384,83 @@ def test_schema_and_projection_do_not_launder_unknown_reference_or_fail(draft):
     bind(critic, evidence)
     with pytest.raises(RunnerError, match="review_invalid"):
         verify(critic, draft, [evidence])
+
+
+@pytest.mark.parametrize("role,model", [("critic", CriticReview), ("coordinator", CoordinatorDecision)])
+def test_compact_model_schema_changes_only_provider_prose_limits(role, model):
+    original = model.model_json_schema()
+    expected = deepcopy(original)
+    expected["properties"]["summary"]["maxLength"] = 360
+    if role == "critic":
+        finding = expected["$defs"]["Finding"]["properties"]
+        for field in ("explanation", "correction"):
+            finding[field]["maxLength"] = 240
+        expected["$defs"]["ReviewCheck"]["properties"]["summary"]["maxLength"] = 100
+    compact = model_output_schema(role)
+    assert compact == expected
+    assert model.model_json_schema() == original  # Historical stored/API models stay unchanged.
+    compact["properties"]["summary"]["maxLength"] = 1
+    assert model_output_schema(role) == expected  # A caller cannot mutate a later job's schema.
+    assert original["properties"]["summary"]["maxLength"] == 900
+
+
+def test_compact_critic_preserves_twelve_corrections_nine_checks_and_known_fail(draft):
+    value = report(draft)
+    value["findings"] = [{**deepcopy(value["findings"][0]), "id": "f_" + str(i)} for i in range(1, 13)]
+    receipts = [receipt(draft, kind=kind, status=("FAIL" if kind == "source" else
+                    "PASS" if kind == "language_quality" else "UNVERIFIED"), identifier="r_" + kind)
+                for kind in CHECK_KINDS]
+    for evidence in receipts:
+        bind(value, evidence)
+    context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": receipts}
+    schema = output_schema("critic", context)
+    report_value = verify(value, draft, receipts)
+    assert len(report_value["findings"]) == schema["properties"]["findings"]["maxItems"] == 12
+    assert len(report_value["checks"]) == schema["properties"]["checks"]["minItems"] == 9
+    assert schema["properties"]["checks"]["maxItems"] == 9
+    assert len(report_value["summary"]) <= schema["properties"]["summary"]["maxLength"]
+    for finding in report_value["findings"]:
+        for field in ("explanation", "correction"):
+            assert len(finding[field]) <= schema["$defs"]["Finding"]["properties"][field]["maxLength"]
+    assert all(len(check["summary"]) <= 100 for check in report_value["checks"])
+    final = verify_decision(decision(draft, report_value), draft, report_value, receipts)
+    assert final["correction_ids"] == ["f_" + str(i) for i in range(1, 13)]
+    assert "source" in final["remaining_checks"] and final["decision"] == "revise"
+    assert final["full_f1_status"] == final["launch_status"] == "UNVERIFIED"
+    with pytest.raises(RunnerError, match="review_invalid"):
+        verify({**report_value, "verdict": "accept_draft", "findings": []}, draft, receipts)
+
+
+def test_compact_provider_schema_keeps_historical_text_and_exact_coordinator_actions(draft):
+    value = report(draft)
+    value["summary"] = "Pasiūlymo kryptis aiški, tačiau dar reikia patikrinti vykdymo sąlygas. " * 7
+    value["findings"][0]["correction"] = "Pateikti mokymo būdų palyginimą pagal tikrą komandos poreikį. " * 6
+    value["checks"][0]["summary"] = "Šios patikros faktinių stebėjimų kvitas dar nepateiktas. " * 3
+    legacy = verify(value, draft)
+    assert len(legacy["summary"]) > 360 and len(legacy["findings"][0]["correction"]) > 240
+    assert len(legacy["checks"][0]["summary"]) > 100
+    context = {"draft": draft, "critic": legacy, "stage": "private_draft", "round_number": 1, "receipts": []}
+    schema = output_schema("coordinator", context)
+    assert schema["properties"]["critic_sha256"]["const"] == critic_sha256(legacy)
+    assert legacy["findings"][0]["correction"] in schema["properties"]["next_actions"]["items"]["enum"]
+    assert schema["properties"]["next_actions"]["items"]["maxLength"] == 700
+    final = decision(draft, legacy)
+    final["next_actions"] = [legacy["findings"][0]["correction"]]
+    assert verify_decision(final, draft, legacy)["next_actions"] == final["next_actions"]
+
+
+def test_provider_prose_capacity_is_lower_without_reducing_findings_or_checks():
+    original = CriticReview.model_json_schema()
+    compact = model_output_schema("critic")
+    def capacity(schema):
+        finding = schema["$defs"]["Finding"]["properties"]
+        return (schema["properties"]["summary"]["maxLength"]
+            + schema["properties"]["findings"]["maxItems"] * sum(
+                finding[field]["maxLength"] for field in ("explanation", "correction"))
+            + schema["properties"]["checks"]["maxItems"]
+                * schema["$defs"]["ReviewCheck"]["properties"]["summary"]["maxLength"])
+    assert capacity(original) == 24000 and capacity(compact) == 7020
+    assert compact["properties"]["findings"] == original["properties"]["findings"]
+    assert compact["properties"]["checks"] == original["properties"]["checks"]
+    with pytest.raises(RunnerError, match="review_invalid"):
+        model_output_schema("creator_override")

@@ -168,10 +168,10 @@ def policy(role):
 
 def output_schema(role, value):
     if role == "critic":
-        schema = shared.CriticReview.model_json_schema()
+        schema = shared.model_output_schema("critic")
         schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = value["allowed_finding_refs"]
     else:
-        schema = shared.CoordinatorDecision.model_json_schema()
+        schema = shared.model_output_schema("coordinator")
         schema["properties"]["critic_sha256"]["const"] = value["critic_sha256"]
         schema["properties"]["decision"]["const"] = value["critic"]["verdict"]
         schema["properties"]["next_actions"]["items"]["enum"] = shared.coordinator_actions(value["critic"])

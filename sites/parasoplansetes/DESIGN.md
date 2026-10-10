@@ -13,19 +13,19 @@ colors:
 typography:
   display:
     fontFamily: "StepOver Manrope, sans-serif"
-    fontSize: "clamp(36px, 4.4vw, 60px)"
+    fontSize: "clamp(2rem, 1.75rem + 1.3vw, 3rem)"
     fontWeight: 650
-    lineHeight: 1.14
-    letterSpacing: "-0.035em"
+    lineHeight: 1.2
+    letterSpacing: "-0.02em"
   body:
     fontFamily: "StepOver Manrope, sans-serif"
     fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.65
   label:
     fontFamily: "StepOver Manrope, sans-serif"
-    fontSize: "13px"
-    fontWeight: 700
+    fontSize: "15px"
+    fontWeight: 600
 rounded:
   field: "7px"
   action: "8px"
@@ -78,7 +78,7 @@ Primary žymi veiksmą, aktyvią navigaciją, fokusą ir eigos taškus. Ink naud
 
 Manrope laikomas lokaliai su OFL ir lotynų bei išplėstiniu lotynų poaibiais. Lietuviškos raidės palaikomos. Viešas puslapis nedaro Google Fonts užklausų. Šaltinis ir hash: companion `public/fonts/parasoplansetes/provenance.json`.
 
-Desktop H1 iki 60 px, produkto iki 54 px; mobile 39 px / produkto 37 px, iki 360 px — 34 px. Prozos H2 29 px desktop / 27 px mobile. Kūno tekstas 17 px desktop, 16 px mobile su 1.8 eilutės aukščiu. Įvestys 16 px. Etiketės mažesnės; valdikliai lieka bent 44 px aukščio.
+2026-10-10 tekstų sistema: vienas Manrope, tekstas 400, valdikliai 600, antraštės 650. Pradžios H1 32–48 px (1280 px ekrane 44,64 px), vidinių puslapių H1 32–44 px (1280 px ekrane 36,48 px). Prozos H2 26 px / telefone 24 px, H3 22/20 px. Pagrindinis tekstas 17/16 px, įžanga 18/17 px, eilučių aukštis 1,65. Įvestys 16 px; navigacija, etiketės, veiksmai ir savybės 15 px; pagalbiniai paaiškinimai, datos bei poraštė 14 px; trumpi nuotraukų kreditai 13 px. H1 eilutė 1,2 ir raidžių tarpas -0,02 em; pagrindinio teksto raidžių tarpas normalus. Vaidmenys valdomi vienais CSS kintamaisiais, o ne skirtingais atsitiktiniais dydžiais. Prozos plotis iki 65ch; pastraipų tarpas 18/16 px, skyrių tarpas 40/36 px. Patikra ir viešas diegimas: [TYPOGRAPHY_PUBLICATION_20261010.md](TYPOGRAPHY_PUBLICATION_20261010.md).
 
 **The Plain Heading Rule.** H1 įvardija patvirtintą turinį; reklaminė frazė jo nepakeičia.
 

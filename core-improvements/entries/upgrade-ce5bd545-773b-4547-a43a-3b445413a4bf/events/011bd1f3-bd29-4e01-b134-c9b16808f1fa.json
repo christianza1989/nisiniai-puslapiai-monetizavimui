@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "The owner approved the exact saved-filter screenshot for the existing Hostinger support case. One file-chooser upload attempt was refused by Chrome because the ChatGPT extension lacks local-file URL access; no attachment was uploaded or sent and no extension permission changed. Full unchanged filter values were posted in the existing case at 14:01 Vilnius with visible confirmation. The separate extension permission decision and technical review remain pending. No new native test or automatic Inbox fix; historical seven Junk receipts, real Gmail Inbox reply and approved alias are retained. Source and production unchanged.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53",
+  "eventId": "011bd1f3-bd29-4e01-b134-c9b16808f1fa",
+  "sequence": 11,
+  "at": "2026-10-10T11:03:55.870Z"
+}

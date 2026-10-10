@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-10T11:03:46.110Z",
+  "state": "SCREENSHOT_APPROVED_UPLOAD_BLOCKED_BY_CHROME_FILE_ACCESS",
+  "previousReceipt": "production-hostinger-alias-gmail-native-v9.json",
+  "mailbox": "info@promedical.lt",
+  "websiteSender": "uzklausos@promedical.lt",
+  "ownerScreenshotApproval": {
+    "received": true,
+    "file": "content-studio/tmp/promedical-exact-filter-for-hostinger-20261010.png",
+    "destination": "Existing Hostinger support conversation with Fausta"
+  },
+  "upload": {
+    "fileChooserOpened": true,
+    "setFilesAttemptedOnce": true,
+    "failedReason": "Chrome extension Allow access to file URLs is not enabled",
+    "uploaded": false,
+    "attachmentSent": false,
+    "extensionPermissionChanged": false,
+    "separateSpecificPermissionQuestionPending": true
+  },
+  "support": {
+    "specialist": "Fausta",
+    "latestObservedSubstantiveReplyAtVilnius": "2026-10-10 13:35",
+    "latestReply": "Requests the saved filter screenshot for visual review.",
+    "completeFilterValuesSentAtVilnius": "2026-10-10 14:01",
+    "postedTextVisiblyVerified": true,
+    "filterReadBack": {
+      "name": "Promedical svetainės užklausos",
+      "scope": "Match all rules",
+      "enabled": true,
+      "conditions": [
+        {
+          "field": "From",
+          "operator": "is equal",
+          "value": "uzklausos@promedical.lt"
+        },
+        {
+          "field": "Subject",
+          "operator": "contains",
+          "value": "[promedical.lt] Poreikio užklausa"
+        },
+        {
+          "field": "Authentication-Results",
+          "operator": "contains",
+          "value": "dkim=pass header.d=promedical.lt"
+        }
+      ],
+      "action": "Move message to Inbox",
+      "readOnly": true,
+      "noSaveClicked": true
+    },
+    "privatePostedTextProof": "content-studio/tmp/promedical-filter-full-values-sent-20261010.png",
+    "formalCaseId": null,
+    "authenticationResultsAtFilterTimeConfirmed": false,
+    "inboxActionPrecedenceConfirmed": false,
+    "particularReputationCauseConfirmed": false,
+    "newFullHeaderPacketSent": false,
+    "privateGmailAddressSentToVendor": false
+  },
+  "nativeMail": {
+    "ownTestCount": 7,
+    "initialJunkCount": 7,
+    "manualOwnTrainingTests": [
+      1,
+      5
+    ],
+    "automaticWebsiteInboxProved": false
+  },
+  "noNewNativeTest": true,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "mailSettingsDnsBindingsBillingOrSourceChanged": false,
+  "summary": "The owner specifically approved the exact saved-filter screenshot for the existing Hostinger case. The file chooser opened, but Chrome refused setFiles because the ChatGPT extension lacks Allow access to file URLs; no screenshot attachment was uploaded or sent. Full unchanged filter values were sent in the existing case at 14:01 Vilnius and the posted message is visibly verified. Specific approval for the separate extension permission is pending; no extension setting was changed. All seven native website tests still have initial Junk receipts; ordinary Gmail bidirectional Inbox and saved Promedical alias remain proved at their original observation times. No automatic website Inbox fix or formal case ID.",
+  "remaining": "Obtain the specific local-file permission decision or owner manual upload; then verify actual attachment transmission and continue vendor technical review. Do not count chooser selection or full-text sending as screenshot upload. Whole-site acceptance gaps remain separate.",
+  "privacy": "Only sanitized metadata and public business mail addresses are versioned. Private recipient, reply body, raw headers and UI images remain local."
+}

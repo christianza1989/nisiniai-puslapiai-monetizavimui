@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-10T10:38:38.284Z",
+  "observedAt": "2026-10-10T11:03:46.110Z",
   "state": "GMAIL_BIDIRECTIONAL_INBOX_ALIAS_CREATED_NATIVE_WEBSITE_STILL_JUNK",
   "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
   "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
@@ -207,8 +207,8 @@
     "Cloudflare own Message-ID fetch returned raw MIME text, not a delivery-status object; no Delivered status claimed from that API.",
     "First read-only helper produced a saved negative receipt and process exit1; actual folder evidence is Junk, not an unavailable mailbox or positiveInbox."
   ],
-  "supportReceipt": "verification-20261010/production-hostinger-alias-gmail-native-v9.json",
-  "supportOutcome": "The owner reports the13:27 Gmail test arrived directly in Inbox and sent a genuine reply; that reply is visibly in info@promedical.lt Inbox at13:30 without a manual folder move. A natural acknowledgement from info@ was sent at13:33, completing two authorized outbound Gmail messages. With specific owner approval, uzklausos@promedical.lt was created as an alias of the existing Hostinger info@promedical.lt mailbox and the saved alias row shows1/5 usage. A seventh NEW native website form after the reply and alias creation was saved/notified but again initially reached Junk with SPF/DKIM/DMARC pass; it remains unmoved. Incoming Allow stays empty because the vendor confirms its exclusive semantics. Hostinger at13:35 requested a visual screenshot of the unchanged three-condition filter; a private copy is prepared pending specific owner file-upload approval. No confirmed spam-score cause, automatic website Inbox fix or technical case ID.",
+  "supportReceipt": "verification-20261010/production-hostinger-filter-upload-v10.json",
+  "supportOutcome": "The owner specifically approved the exact saved-filter screenshot for the existing Hostinger case. The file chooser opened, but Chrome refused setFiles because the ChatGPT extension lacks Allow access to file URLs; no screenshot attachment was uploaded or sent. Full unchanged filter values were sent in the existing case at 14:01 Vilnius and the posted message is visibly verified. Specific approval for the separate extension permission is pending; no extension setting was changed. All seven native website tests still have initial Junk receipts; ordinary Gmail bidirectional Inbox and saved Promedical alias remain proved at their original observation times. No automatic website Inbox fix or formal case ID.",
   "supportHumanTicket": {
     "confirmedTicketId": null,
     "reviewedBy": [
@@ -216,6 +216,6 @@
       "Airida",
       "Fausta"
     ],
-    "status": "GMAIL_REPLY_AND_ALIAS_CONFIRMED_NATIVE_INBOX_FAILED_SCREENSHOT_UPLOAD_APPROVAL_PENDING"
+    "status": "SCREENSHOT_APPROVED_CHROME_FILE_ACCESS_PENDING_NATIVE_INBOX_FAILED"
   }
 }

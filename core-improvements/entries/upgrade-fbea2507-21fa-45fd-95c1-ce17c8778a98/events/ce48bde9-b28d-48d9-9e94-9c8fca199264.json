@@ -1,0 +1,35 @@
+{
+  "status": "local-verified",
+  "commit": "b9a648cda3d7358b1f20b2f85042350aa6edd545",
+  "note": "Core implementation locally verified; paired portal recovery/final source handoff pending. No deployment or all-PC adoption.",
+  "checks": [
+    {
+      "command": "pytest tests/test_control_operations.py tests/test_control_bridge.py tests/test_control_portfolio.py tests/test_control_tasks.py offline_tests/test_control_codex.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DASHBOARD_ACCEPTANCE.md:55PASS72.13s at initial implementation"
+    },
+    {
+      "command": "pytest offline_tests/test_control_portable.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DASHBOARD_ACCEPTANCE.md:5PASS1.81s"
+    },
+    {
+      "command": "pytest tests/test_control_operations.py tests/test_control_tasks.py tests/test_control_bridge.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DASHBOARD_ACCEPTANCE.md:26PASS27.57s after paused-read fix"
+    },
+    {
+      "command": "private fresh-empty PostgreSQL role/Alembic head/bootstrap/control preflight and corrected HTTP v2 rehearsal",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DASHBOARD_ACCEPTANCE.md; original invalid receipt labels retained"
+    },
+    {
+      "command": "scoped Ruff and node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DASHBOARD_ACCEPTANCE.md"
+    }
+  ],
+  "eventId": "ce48bde9-b28d-48d9-9e94-9c8fca199264",
+  "sequence": 4,
+  "at": "2026-10-10T05:51:38.150Z"
+}

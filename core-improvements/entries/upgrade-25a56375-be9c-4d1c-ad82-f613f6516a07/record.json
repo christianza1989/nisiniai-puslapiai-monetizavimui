@@ -1,0 +1,30 @@
+{
+  "evidence": [
+    "PR59 source53599fd277581a4e469bd43a9989d770143e7ec7 has pure contracts only; native PR68 source948ee3a87f3c11f5d1c9fe13007981a5f5fb5921 discloses actualCoreHTTP=false",
+    "docs/ACQUISITION_RECIPIENT_BINDING_QA_2026-10-10.md; issue66 reservation6092427840"
+  ],
+  "category": "code",
+  "summary": "Native recipient adapter now exists but canonical core still lacks mounted authenticated nonce, byte replay and account-before-provider retirement; cannot accept actual pipeline",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/models.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/ledger.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/routes.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/revocation.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/ledger_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/identity.py",
+    "agent-business-core/runtime/scripts/acquisition_retirement_contracts.py",
+    "agent-business-core/runtime/scripts/acquisition_canonical_recipient.mjs",
+    "agent-business-core/contracts/recipient-retirement-v1",
+    "ACQUISITION_CORE.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this disabled capture-only ledger/protocol; native production source and earlier contracts untouched",
+  "siteId": "core",
+  "id": "upgrade-25a56375-be9c-4d1c-ad82-f613f6516a07",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "53599fd277581a4e469bd43a9989d770143e7ec7",
+  "createdAt": "2026-10-10T01:58:59.344Z"
+}

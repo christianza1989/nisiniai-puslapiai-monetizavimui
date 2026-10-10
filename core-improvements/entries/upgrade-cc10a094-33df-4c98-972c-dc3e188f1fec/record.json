@@ -1,0 +1,18 @@
+{
+  "category": "workflow",
+  "summary": "Run actual PostgreSQL acquisition acceptance in CI so durable nonce/replay/retirement regressions are not reduced to offline metadata coverage",
+  "rollback": "Scoped revert the isolated acceptance job; preserve preflight and provenance gates",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Actual local13PostgreSQL/ASGI groups and50offline tests passed; first terminal-stale FAIL retained",
+    "Existing agent-workflow only runs JavaScript metadata/bootstrap tests"
+  ],
+  "siteId": "core",
+  "paths": [
+    ".github/workflows/agent-workflow.yml"
+  ],
+  "id": "upgrade-cc10a094-33df-4c98-972c-dc3e188f1fec",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "53599fd277581a4e469bd43a9989d770143e7ec7",
+  "createdAt": "2026-10-10T02:21:23.264Z"
+}

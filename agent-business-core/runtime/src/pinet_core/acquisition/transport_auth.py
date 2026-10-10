@@ -9,7 +9,9 @@ from .interfaces import Scope
 
 MAX_BODY_BYTES = 65536
 MAX_CLOCK_SKEW_SECONDS = 300
-WEBHOOK_PERMISSIONS = frozenset({'resolve', 'events', 'capture', 'recipient-challenge', 'verify-recipient'})
+WEBHOOK_PERMISSIONS = frozenset({
+    'resolve', 'events', 'capture', 'recipient-challenge', 'verify-recipient', 'retire-recipient',
+})
 
 
 @dataclass(frozen=True)
@@ -18,7 +20,9 @@ class WebhookGrant:
     secret: bytes = field(repr=False)
     adapter_id: str
     scope: Scope
-    permissions: frozenset[Literal['resolve', 'events', 'capture', 'recipient-challenge', 'verify-recipient']]
+    permissions: frozenset[Literal[
+        'resolve', 'events', 'capture', 'recipient-challenge', 'verify-recipient', 'retire-recipient',
+    ]]
 
     def __post_init__(self):
         if (not re.fullmatch(r'[A-Za-z0-9_-]{1,100}', self.key_id) or len(self.secret) < 32

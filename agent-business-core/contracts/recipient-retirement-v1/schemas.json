@@ -1,0 +1,333 @@
+{
+  "retirement_contract_version": "0.1.0",
+  "schemas": {
+    "RecipientRetirement": {
+      "$defs": {
+        "RecipientProofRequest": {
+          "additionalProperties": false,
+          "properties": {
+            "adapter_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Adapter Id",
+              "type": "string"
+            },
+            "address_rule": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Address Rule",
+              "type": "string"
+            },
+            "challenge_nonce": {
+              "maxLength": 32,
+              "minLength": 32,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Challenge Nonce",
+              "type": "string"
+            },
+            "invitation_ref": {
+              "maxLength": 96,
+              "minLength": 32,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Invitation Ref",
+              "type": "string"
+            },
+            "native_account_ref": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Native Account Ref",
+              "type": "string"
+            },
+            "native_verified_at": {
+              "format": "date-time",
+              "title": "Native Verified At",
+              "type": "string"
+            },
+            "recipient_contract_version": {
+              "const": "0.1.0",
+              "default": "0.1.0",
+              "title": "Recipient Contract Version",
+              "type": "string"
+            },
+            "recipient_digest": {
+              "maxLength": 67,
+              "minLength": 67,
+              "pattern": "^v1=[a-f0-9]{64}$",
+              "title": "Recipient Digest",
+              "type": "string"
+            },
+            "recipient_key_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Recipient Key Id",
+              "type": "string"
+            },
+            "request_id": {
+              "format": "uuid",
+              "title": "Request Id",
+              "type": "string"
+            },
+            "scope": {
+              "$ref": "#/$defs/Scope"
+            },
+            "source_release": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Source Release",
+              "type": "string"
+            }
+          },
+          "required": [
+            "scope",
+            "adapter_id",
+            "invitation_ref",
+            "request_id",
+            "challenge_nonce",
+            "recipient_key_id",
+            "address_rule",
+            "recipient_digest",
+            "native_account_ref",
+            "native_verified_at",
+            "source_release"
+          ],
+          "title": "RecipientProofRequest",
+          "type": "object"
+        },
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "invitation_ref": {
+          "maxLength": 96,
+          "minLength": 32,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Invitation Ref",
+          "type": "string"
+        },
+        "native_account_ref": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Native Account Ref",
+          "type": "string"
+        },
+        "occurred_at": {
+          "format": "date-time",
+          "title": "Occurred At",
+          "type": "string"
+        },
+        "reason": {
+          "enum": [
+            "account_erasure",
+            "retention_erasure"
+          ],
+          "title": "Reason",
+          "type": "string"
+        },
+        "recipient_proof": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RecipientProofRequest"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "retirement_contract_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Retirement Contract Version",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "source_release": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Source Release",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope",
+        "adapter_id",
+        "invitation_ref",
+        "request_id",
+        "native_account_ref",
+        "occurred_at",
+        "source_release",
+        "reason"
+      ],
+      "title": "RecipientRetirement",
+      "type": "object"
+    },
+    "RetirementReceipt": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "external_sent": {
+          "const": false,
+          "default": false,
+          "title": "External Sent",
+          "type": "boolean"
+        },
+        "invitation_ref": {
+          "maxLength": 96,
+          "minLength": 32,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Invitation Ref",
+          "type": "string"
+        },
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "retired_at": {
+          "format": "date-time",
+          "title": "Retired At",
+          "type": "string"
+        },
+        "retirement_contract_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Retirement Contract Version",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "state": {
+          "enum": [
+            "recipient_retired",
+            "candidate_retired"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope",
+        "adapter_id",
+        "invitation_ref",
+        "request_id",
+        "state",
+        "retired_at"
+      ],
+      "title": "RetirementReceipt",
+      "type": "object"
+    }
+  }
+}

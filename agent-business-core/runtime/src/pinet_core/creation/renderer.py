@@ -17,6 +17,8 @@ from ..tasks.codex import RunnerError
 PAGE_PATH_PATTERN = r"^/(?:[a-z0-9]+(?:[-/][a-z0-9]+)*/?)?$"
 GUIDE_PATH_PATTERN = r"^/[a-z0-9]+(?:[-/][a-z0-9]+)*/?$"
 CanonicalPath = Annotated[str, Field(pattern=PAGE_PATH_PATTERN, max_length=150)]
+# Provider schema only: historical readers retain the exact authoritative public_url validation.
+PublicSourceURL = Annotated[str, Field(json_schema_extra={"pattern": r"^[hH][tT][tT][pP][sS]://[^\s?#\\]+$"})]
 
 
 def canonical_path(value):
@@ -49,7 +51,7 @@ class BusinessPlan(Strict):
 
 class Research(Strict):
     title: str = Field(min_length=1, max_length=160)
-    url: str = Field(max_length=1024)
+    url: PublicSourceURL = Field(max_length=1024)
     market: str = Field(min_length=1, max_length=100)
     finding: str = Field(min_length=20, max_length=700)
     is_counterevidence: bool
@@ -101,7 +103,7 @@ class ContentPlanItem(Strict):
     pillar_path: str = Field(pattern=r"^(?:|/[a-z0-9]+(?:[-/][a-z0-9]+)*/?)$", max_length=150)
     outline: list[str] = Field(min_length=3, max_length=8)
     source_queries: list[str] = Field(max_length=6)
-    source_urls: list[str] = Field(max_length=6)
+    source_urls: list[PublicSourceURL] = Field(max_length=6)
     internal_links: list[CanonicalPath] = Field(max_length=8)
     media_brief: str = Field(min_length=40, max_length=1000)
     media_alt: str = Field(min_length=10, max_length=250)

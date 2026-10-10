@@ -1,4 +1,5 @@
 """Native plan admission, dependency graph and historical draft compatibility; no provider."""
+import re
 from copy import deepcopy
 
 import pytest
@@ -6,6 +7,9 @@ from test_creation_review import draft as draft_fixture
 
 from pinet_core.creation.adapter import INSTRUCTION_FILES, instructions
 from pinet_core.creation.renderer import (
+    ContentPlanItem,
+    CreatorDraft,
+    Research,
     artifacts,
     context_projection,
     language_screening,
@@ -17,6 +21,44 @@ from pinet_core.creation.renderer import (
 from pinet_core.tasks.codex_transport import RunnerError
 
 draft = draft_fixture
+
+
+@pytest.mark.parametrize('url', ['https://example.com/event?autoRsvp=true', 'https://example.com/event#join',
+                                'http://example.com/event', 'https://example.com/a b'])
+def test_provider_source_schema_exposes_existing_url_shape_rejections(url):
+    definitions = CreatorDraft.model_json_schema()['$defs']
+    research = definitions['Research']['properties']['url']
+    plan = definitions['ContentPlanItem']['properties']['source_urls']['items']
+    assert research['pattern'] == plan['pattern']
+    assert re.fullmatch(research['pattern'], url) is None
+
+
+@pytest.mark.parametrize('url', ['https://example.com/event?', 'https://example.com/event#'])
+def test_provider_schema_does_not_add_constraints_to_historical_readers(url):
+    from pinet_core.public_projects.projection import public_url
+    assert public_url(url) == url
+    value = {'title': 'Synthetic primary source', 'url': url, 'market': 'Lietuva',
+             'finding': 'Tai sintetinis šaltinio nuorodos tikrinimo atvejis.', 'is_counterevidence': False}
+    assert Research.model_validate(value).url == url
+    plan = brief('/uzduotis/', 'Kaip pasirinkti darbo užduotį?')
+    plan['source_urls'] = [url]
+    assert ContentPlanItem.model_validate(plan).source_urls == [url]
+
+
+@pytest.mark.parametrize('url', ['https://example.com/event', 'HTTPS://example.com/event'])
+def test_provider_source_schema_retains_previously_valid_url_and_full_server_validation(draft, url):
+    definitions = CreatorDraft.model_json_schema()['$defs']
+    value = planned(draft)
+    value['research'] = [{'title': 'Synthetic primary source', 'url': url, 'market': 'Lietuva',
+                          'finding': 'Tai sintetinis šaltinio nuorodos tikrinimo atvejis.',
+                          'is_counterevidence': False}]
+    value['content_plan'][0]['source_urls'] = [url]
+    assert re.fullmatch(definitions['Research']['properties']['url']['pattern'], url)
+    assert normalize_creator(value)['research'][0]['url'] == url
+    for unsafe in ('https://user:secret@example.com/event', 'https://127.0.0.1/event'):
+        value['research'][0]['url'] = unsafe
+        with pytest.raises(RunnerError):
+            normalize_creator(value)
 
 
 def brief(path, question):

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual877b job08c1aa7b original creator45701bytes/terminal usage23charged calls retained: research[3].url and content_plan[2].source_urls rejected autoRsvp query by correct public_url. Baseline6FAIL/52deselected2.81s comprises4absent provider-schema patterns plus2incorrect empty-research fixtures. After fixture correction initial200PASS11.56s; review then identified potential stricter historical reads for bare trailing?/#, reproduced2FAIL/58deselected1.78s. Final annotation uses json_schema_extra pattern ONLY, preserving exact runtime public_url behavior; no data/URL rewriting. Original provider output and failures retained, no real effectiveness inferred.",
+  "eventId": "3ea0d81f-6311-489c-8a35-b82484dd8456",
+  "sequence": 2,
+  "at": "2026-10-10T19:29:25.848Z"
+}

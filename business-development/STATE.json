@@ -4,10 +4,10 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-10T06:06:06.722Z",
+  "lastResearchAt": "2026-10-10T14:07:33.839Z",
   "lastResearchDateLocal": "2026-10-10",
-  "lastResearchFile": "research/2026-10-10-tyre-rolling-data/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-10-tyre-rolling-data/QA.json",
+  "lastResearchFile": "research/2026-10-10-small-jobs-minimum/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-10-small-jobs-minimum/QA.json",
   "lastCycleOutcome": "existing_requirement_evidence_updated",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
@@ -85,11 +85,11 @@
     }
   ],
   "researchContinuity": {
-    "completed": "Four primary HTML pages read for tractor tyre rolling-data qualification, including DLG 2023 Table4 and Firestone formula/context. Existing niche instructions already require 4WD RC and actual axle-ratio checks; no new idea or demonstrated runtime defect. Six synthetic cases documented, not executed. Two Treg catalog searches had no relevant matches, no provider calls. Latest direct owner turns reviewed; no registry pilot approval. Root integration pause and core roletai completion remain their executor scopes.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision",
-    "nextCandidateQuestion": "Read fresh main, PR1 and direct owner decisions before choosing work. BI and P1-P4 remain proposed. Do not repeat tyre rolling qualification or take over active roletai implementation. Prefer actual demand or fulfilment evidence over another standalone lab proposal.",
+    "completed": "Small-jobs provider pricing semantics reviewed: IKEA arrival plus assembly minimum versus curtain-installer whole-visit minimum. US general-market minimum agreement and UK material-expense policy read separately. Existing BUSINESS and three niche instructions already require quote category separation. Four primary HTML sources read, one price page failed; one Treg catalogue query had no relevant matches and no provider calls. Six checks documented, not executed; no new idea or pilot. Latest direct owner turns reviewed; no registry approval. Current main integrated without conflicts; canonical language policy read and private research text self-edited.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision",
+    "nextCandidateQuestion": "Read fresh main, PR1 and owner decisions. BI/P1-P4 still proposed. Seek actual offer/demand/fulfilment evidence rather than another standalone lab. Existing small-jobs partner quote remains unconfirmed; no outreach or tariff authorized.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
-    "executionScope": "Research/private registry only. No lab, parser, runtime or site changes. No personal inbox, SMTP, client messages, purchases, DNS or campaigns. Companion dirty working tree belongs to another executor and is preserved."
+    "executionScope": "Private research and state only. Own branch integrates current main. Fresh owned companion worktree replaces stale/dirty companion for read-only checks; former executor checkout preserved. No site/runtime, private inbox, SMTP, campaigns, account/DNS changes or paid provider calls."
   },
   "approvedWork": [
     {
@@ -114,8 +114,10 @@
     "localBranch": "codex/bdev-research-20261008-main",
     "prUrl": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/1",
     "remotePrBranch": "ai/bdev-scaffold-fee-20261005",
-    "coreMainSha": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
-    "companionMainSha": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
-    "note": "Fresh worktree integrates original PR history. Prior owned checkout preserved; future work uses this current worktree. No companion source edits."
+    "coreMainSha": "13c9649c76dd48cdf426604cb721e1ccd58a9854",
+    "companionMainSha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "note": "Core own branch integrated current main with a conflict-free merge e79205e. Current read-only companion is fresh owned worktree at main, no source edits; former dirty executor checkout and prior owned core checkout preserved.",
+    "companionWorktree": "C:/Users/lenovo/.codex/worktrees/bdev-current/dovanos-memorycasting",
+    "companionBranch": "codex/bdev-public-research-20261010"
   }
 }

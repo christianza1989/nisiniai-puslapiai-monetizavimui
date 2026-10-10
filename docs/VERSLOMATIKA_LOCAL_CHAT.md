@@ -1,5 +1,7 @@
 # Vietinis Verslomatikos operatoriaus pokalbis — I2
 
+Core [PR69](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/69) stacked on [I1 PR65](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/65); paired portal [PR64](https://github.com/christianza1989/verslomatika/pull/64) stacked on PR63. Vietinio slice source/review perduoti; main merge ir hosted adoption atskiri. Runtime pinbbe86a06ef8b03d7803af9ee2c954c7a346299e9; vėlesni perdavimo commit tik docs/journal.
+
 Vykdomas atskiras issue67 / [koordinavimas](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66), ant vietiškai priimto I1 PR65. Savininko tęsti pavedimą patvirtina koordinatoriaus žmogaus turn01a12316-8c34-7492-8197-8fcd7deb6a8b. Tai dar nėra I2 priėmimas ar visa platforma.
 
 Vienas core išduotas prisijungimas, dabartiniai organization membership ir business grant; serverio konfigūracijoje vienas operatorius gali pateikti konsultacinę užduotį. Naujas pokalbis, užduotis, vykdymas ir įvykiai patvarūs ir nesusieti su legacy Conversation/Job/Outbox. Browser pateikia tik žinutę ir UUID idempotency_key. Tas pats raktas su tuo pačiu turiniu grąžina tą pačią užduotį; pakeistas turinys409. Vienas aktyvus posūkis pokalbyje, daugiausia20posūkių; naujas pokalbis yra aiškus atskiras veiksmas. Rezultatas tik plain text, ne HTML.

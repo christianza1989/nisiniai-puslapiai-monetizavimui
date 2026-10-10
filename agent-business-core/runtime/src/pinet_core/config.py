@@ -18,6 +18,15 @@ class Settings(BaseSettings):
     control_cursor_secret: str = ""
     control_source_revision: str = ""
     control_session_seconds: int = 28800
+    chat_enabled: bool = False
+    chat_operator_user_id: str = ""
+    chat_daily_limit: int = 20
+    chat_runner_enabled: bool = False
+    chat_codex_executable: str = ""
+    chat_codex_sha256: str = ""
+    chat_workspace: str = ""
+    chat_runner_seconds: int = 120
+    chat_model: str = "gpt-6-luna"
     jev_api_key: SecretStr = SecretStr('')
     jev_budget_microusd: int = 150000
     jev_max_calls: int = 50

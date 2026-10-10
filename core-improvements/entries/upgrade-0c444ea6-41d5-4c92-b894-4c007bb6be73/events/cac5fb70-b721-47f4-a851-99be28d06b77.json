@@ -1,0 +1,8 @@
+{
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/24",
+  "status": "pr",
+  "note": "Actual public source6f4dbe8f58f324bf63b10e5636afff56111813c7 pushed and PR24 created/read back/attached. Exactly AGENTS.md and docs/CORE_UPGRADES.md. Canonical journal remains in private companion; no public CI gate or main/PC adoption inherited from private CI.",
+  "eventId": "cac5fb70-b721-47f4-a851-99be28d06b77",
+  "sequence": 3,
+  "at": "2026-10-10T00:34:54.378Z"
+}

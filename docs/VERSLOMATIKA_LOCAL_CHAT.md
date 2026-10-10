@@ -1,0 +1,15 @@
+# Vietinis Verslomatikos operatoriaus pokalbis — I2
+
+Vykdomas atskiras issue67 / [koordinavimas](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66), ant vietiškai priimto I1 PR65. Savininko tęsti pavedimą patvirtina koordinatoriaus žmogaus turn01a12316-8c34-7492-8197-8fcd7deb6a8b. Tai dar nėra I2 priėmimas ar visa platforma.
+
+Vienas core išduotas prisijungimas, dabartiniai organization membership ir business grant; serverio konfigūracijoje vienas operatorius gali pateikti konsultacinę užduotį. Naujas pokalbis, užduotis, vykdymas ir įvykiai patvarūs ir nesusieti su legacy Conversation/Job/Outbox. Browser pateikia tik žinutę ir UUID idempotency_key. Tas pats raktas su tuo pačiu turiniu grąžina tą pačią užduotį; pakeistas turinys409. Vienas aktyvus posūkis pokalbyje, daugiausia20posūkių; naujas pokalbis yra aiškus atskiras veiksmas. Rezultatas tik plain text, ne HTML.
+
+Kanoninis [chat.v1 OpenAPI](contracts/verslomatika-chat.openapi.json) generuojamas `agent-business-core/runtime/scripts/control_chat_contract.py`. Portfolio.v1 nekeičiamas. Šeši API apima start/send/read thread bei read/events/cancel task. Navigacijos `?thread=` nėra autorizacija: core tikrina scope, portalas papildomai lygina gautą business_id su pasirinktu verslu. Kiekvienas atsakymas private/no-store, error tik sanitizuotas code/message/request_id.
+
+Worker vykdymas ir admission numatytai OFF. Prieš claim, vykdymo metu ir prieš rezultatą tikrinama pradinė galiojanti sesija, dabartinis naudotojas, owner membership ir grant. Atšaukimas patvarus ir aptvertas run ID; miręs lease neperduodamas kitam modeliui automatiškai, nes tikro provider užklausos rezultatas/sąnaudos gali būti nežinomi. Operator-only CLI naudoja savininko esamą prisijungimą, ne klientų auth pool. Serveris pasirenka vykdytoją, modelį ir darbo katalogą; shell/apps/plugins/hooks/browser/multiagent išjungiami, procesas gauna ribotą env ir bounded JSON išvestį. Šios CLI sąlygos savaime neįrodo OS ar būsimos kliento izoliacijos.
+
+Prašytas modelis gpt-6-luna / medium turi gauti vieno tikro riboto probe įrodymą. Ankstesnė0.139klaida ir dabartinis modelio katalogas yra atskiri šaltiniai; tylus modelio ar mokamo provider pakeitimas negalimas. Provider klaida nėra išgalvotas atsakymas. Kaina nežinoma, kai nėra actual billing šaltinio; tokenų usage saugomas tik gavus actual provider įvykį.
+
+Fresh private main d4ea8bf7384b70c4ea62a344001e3f8158812c56 / public d0fd6b7d296303bfcaafadc4071945e675a72b96; I1 base9e82b6387b6fe8ce9d24bb4f0901d4615fc38e34. Nauja migracija0011_control_tasks down0010_control; viešas companion read-only. Atskirame vietiniame DB išlaikomi pilotiniai UUID, ne istorinių production mapping priėmimas. Hosted/public/customer/SMTP/voice/acquisition integracijos nepriimtos. Rollback išjungia claim ir grąžina pinned source; additive DB istorija paliekama, o destruktyvus downgrade tik atskiras synthetic rehearsal.
+
+Actual source, probe, DB/HTTP/restart ir porinis UI priėmimas bus papildyti po vykdymo. Dabartinė būsena: sutartis pateikta integracijai, runtime dar nepatikrintas.

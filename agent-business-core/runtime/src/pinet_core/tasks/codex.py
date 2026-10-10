@@ -51,28 +51,45 @@ def arguments(executable, workspace, schema, output):
     return args
 
 
+def check_trace_event(event):
+    """Reject actual tools and terminal provider errors before CLI reconnections."""
+    if not isinstance(event, dict):
+        raise RunnerError("output_invalid")
+    item = event.get("item", {})
+    if not isinstance(item, dict):
+        raise RunnerError("output_invalid")
+    kind = item.get("type")
+    if item and kind not in {"agent_message", "reasoning", "error"}:
+        raise RunnerError("tool_attempted")
+    if kind == "error" or event.get("type") in {"error", "turn.failed"}:
+        message = json.dumps(event).lower()
+        if "not supported" in message:
+            raise RunnerError("model_unavailable")
+        # An incomplete output cannot become a valid candidate by reconnecting.
+        # Generic top-level network reconnect notices may still recover normally.
+        if kind == "error" or event.get("type") == "turn.failed" or "max_output_tokens" in message:
+            raise RunnerError("provider_error")
+
+
 def parse_trace(raw):
     usage = None
     completed = False
-    model_unavailable = False
     for line in raw.splitlines():
         try:
             event = json.loads(line)
         except ValueError:
             raise RunnerError("output_invalid") from None
-        item = event.get("item", {})
-        if item and item.get("type") not in {"agent_message", "reasoning"}:
-            raise RunnerError("tool_attempted")
-        if event.get("type") in {"error", "turn.failed"}:
-            model_unavailable |= "not supported" in json.dumps(event).lower()
+        try:
+            check_trace_event(event)
+        except RunnerError as error:
+            error.receipt = usage or error.receipt
+            raise
         if event.get("type") == "turn.completed":
             completed = True
             candidate = event.get("usage")
             if isinstance(candidate, dict):
                 usage = {k: v for k, v in candidate.items() if k.endswith("_tokens")
                          and type(v) is int and 0 <= v <= 1_000_000_000}
-    if model_unavailable:
-        raise RunnerError("model_unavailable")
     if not completed:
         raise RunnerError("provider_error")
     return usage
@@ -104,5 +121,5 @@ async def run(context, still_authorized):
         schema.write_text(json.dumps(wire_schema), encoding="utf-8")
         value, usage = await execute(arguments(executable, run_dir, schema, output), prompt=prompt, cwd=run_dir,
             env=child_environment(), output=output, seconds=cfg.chat_runner_seconds, still_authorized=still_authorized,
-            parse_trace=parse_trace)
+            parse_trace=parse_trace, on_event=check_trace_event)
         return normalize_answer(value), usage

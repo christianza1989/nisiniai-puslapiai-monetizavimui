@@ -129,6 +129,18 @@ def test_revision_trace_rejects_unnecessary_third_web_action():
     assert error.value.code == 'research_limit'
 
 
+@pytest.mark.parametrize("web", [True, False])
+def test_shared_business_and_native_guide_trace_classifies_cli_errors(web):
+    trace = Trace(web)
+    with pytest.raises(RunnerError, match="provider_error"):
+        trace.event({"type": "item.completed", "item": {"type": "error", "message": "stream disconnected"}})
+    with pytest.raises(RunnerError, match="provider_error"):
+        trace.parse(json.dumps({"type": "error", "message": "Incomplete response returned, reason: max_output_tokens"}))
+    with pytest.raises(RunnerError, match="model_unavailable"):
+        trace.event({"type": "item.completed", "item": {"type": "error", "message": "Model not supported"}})
+    assert trace.searches == set()
+
+
 def test_missing_or_untyped_draft_rejected():
     with pytest.raises(RunnerError) as error:
         normalize({'html': '<script>alert(1)</script>', 'publicationApproved': True})

@@ -36,7 +36,9 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
             return None
         try:
             return parse_trace(prefix[0].decode("utf-8", errors="replace"))
-        except (RunnerError, ValueError):
+        except RunnerError as error:
+            return error.receipt or None
+        except ValueError:
             return None
 
     async def bounded(stream, cap, inspect=False):

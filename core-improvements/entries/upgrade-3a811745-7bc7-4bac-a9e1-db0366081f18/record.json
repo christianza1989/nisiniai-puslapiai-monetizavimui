@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "Actual critic max-output incomplete response misclassified as forbidden tool; stop terminal incomplete stream without accepting partial output and constrain model-facing review prose.",
+  "category": "code",
+  "evidence": [
+    "Source427d70cd actual job316fd780: two reserved role dispatches, creator language FAIL; critic trace has incomplete max_output_tokens reconnect errors and item.error, no forbidden tool event/complete usage. Historical failure tool_attempted remains immutable; candidate unaccepted.",
+    "Canonical shared tasks/codex.py and creation/adapter.py allow only agent_message/reasoning and misclassify ordinary item.error. Native GUIDE imports the same Trace."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/offline_tests/test_control_codex.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review.py",
+    "agent-business-core/runtime/offline_tests/test_content_work_review.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert source changes; retain original raw outputs, immutable attempt history and charged quota. No runtime/history rewrite.",
+  "id": "upgrade-3a811745-7bc7-4bac-a9e1-db0366081f18",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "427d70cd68c6c39462bb9a81e201f19c20df8719",
+  "createdAt": "2026-10-10T14:31:41.215Z"
+}

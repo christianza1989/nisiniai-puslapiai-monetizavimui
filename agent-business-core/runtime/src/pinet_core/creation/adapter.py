@@ -7,7 +7,7 @@ from uuid import uuid4
 
 from ..config import settings
 from ..tasks.codex import arguments as consult_arguments
-from ..tasks.codex import child_environment
+from ..tasks.codex import check_trace_event, child_environment
 from ..tasks.codex import parse_trace as consult_trace
 from ..tasks.codex_transport import RunnerError, execute
 from . import language_patch
@@ -127,8 +127,11 @@ class Trace:
     def __init__(self, web, limit=6):
         self.web, self.searches = web, set()
         self.limit = limit
+        self.usage = None
 
     def event(self, value):
+        if not isinstance(value, dict) or not isinstance(value.get("item", {}), dict):
+            raise RunnerError("output_invalid")
         item = value.get("item", {})
         kind = item.get("type")
         if kind in {"web_search", "web_search_call"} and self.web:
@@ -136,8 +139,15 @@ class Trace:
             self.searches.add(key)
             if len(self.searches) > self.limit:
                 raise RunnerError("research_limit")
-        elif item and kind not in {"reasoning", "agent_message"}:
-            raise RunnerError("tool_attempted")
+        else:
+            try:
+                check_trace_event(value)
+            except RunnerError as error:
+                if self.usage is not None:
+                    error.receipt = {"usage": self.usage, "web_search_count": len(self.searches)}
+                raise
+            if value.get("type") == "turn.completed":
+                self.usage = consult_trace(json.dumps(value))
 
     def parse(self, raw):
         permitted = []

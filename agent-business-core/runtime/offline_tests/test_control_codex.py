@@ -12,6 +12,7 @@ from pinet_core.tasks.codex import (
     DISABLED,
     RunnerError,
     arguments,
+    check_trace_event,
     child_environment,
     normalize_answer,
     parse_trace,
@@ -44,6 +45,38 @@ def test_usage_unknown_and_model_failure_are_truthful():
     with pytest.raises(RunnerError) as error:
         parse_trace('{"type":"error","message":"Model not supported"}')
     assert error.value.code == "model_unavailable"
+
+
+@pytest.mark.parametrize("event,code", [
+    ({"type": "item.completed", "item": {"type": "error", "message": "stream disconnected"}}, "provider_error"),
+    ({"type": "item.completed", "item": {"type": "error", "message": "Model not supported"}}, "model_unavailable"),
+    ({"type": "error", "message": "Reconnecting... reason: max_output_tokens"}, "provider_error"),
+    ({"type": "turn.failed", "error": {"message": "stream disconnected"}}, "provider_error"),
+])
+def test_cli_error_is_not_a_tool_and_never_accepts_partial_completion(event, code):
+    with pytest.raises(RunnerError) as error:
+        parse_trace(json.dumps(event))
+    assert error.value.code == code and error.value.receipt == {}
+    with pytest.raises(RunnerError) as error:
+        parse_trace(json.dumps({"type": "turn.completed", "usage": {"input_tokens": 12}}) + "\n" + json.dumps(event))
+    assert error.value.code == code and error.value.receipt == {"input_tokens": 12}
+
+
+def test_network_reconnect_notice_can_finish_without_fabricated_usage():
+    raw = '\n'.join(json.dumps(event) for event in [
+        {"type": "error", "message": "Reconnecting... connection reset"},
+        {"type": "item.completed", "item": {"type": "agent_message", "text": "Complete response"}},
+        {"type": "turn.completed"},
+    ])
+    assert parse_trace(raw) is None
+    with pytest.raises(RunnerError, match="tool_attempted"):
+        check_trace_event({"type": "error", "item": {"type": "command_execution", "message": "not supported"}})
+
+
+@pytest.mark.parametrize("event", [[], {"item": None}, {"item": []}])
+def test_malformed_trace_is_bounded_output_failure(event):
+    with pytest.raises(RunnerError, match="output_invalid"):
+        parse_trace(json.dumps(event))
 
 
 @pytest.mark.parametrize("value", [{"answer": " ", "limitations": []}, {"answer": "x", "limitations": [], "shell": "x"},

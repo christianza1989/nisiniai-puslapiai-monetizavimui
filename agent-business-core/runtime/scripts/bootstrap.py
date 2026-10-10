@@ -1,4 +1,5 @@
 """Local runtime role; migration owner and application role stay distinct."""
+import argparse
 import asyncio
 import os
 
@@ -10,6 +11,9 @@ from pinet_core.models import Business, new_id
 
 
 async def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--role-only", action="store_true", help="Provision restricted role before fresh migrations.")
+    args = parser.parse_args()
     cfg = settings()
     engine = create_async_engine(cfg.admin_database_url)
     password = os.environ.get("PINET_DB_RUNTIME_PASSWORD")
@@ -24,15 +28,21 @@ async def main():
             await tx.execute(text(f"CREATE ROLE pinet_runtime LOGIN PASSWORD '{password}' "
                                   "NOSUPERUSER NOBYPASSRLS NOCREATEDB NOCREATEROLE"))
         await tx.execute(text("GRANT USAGE ON SCHEMA public TO pinet_runtime"))
-        await tx.execute(text("GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO pinet_runtime"))
-        await tx.execute(text("REVOKE ALL ON alembic_version FROM pinet_runtime"))
-        await tx.execute(text("REVOKE INSERT, UPDATE, DELETE ON businesses FROM pinet_runtime"))
-        for site, host in [("traktoriupadangos", "traktoriupadangos.lt"),
-                           ("greitossvetaines", "greitossvetaines.lt")]:
-            if not await tx.scalar(text("SELECT id FROM businesses WHERE site_id=:s"), {"s": site}):
-                await tx.execute(Business.__table__.insert().values(id=new_id(), site_id=site, canonical_host=host))
+        if not args.role_only:
+            # Control tables have their own least-privilege migration grants; never broaden them here.
+            tables = (await tx.execute(text("SELECT tablename FROM pg_tables WHERE schemaname='public' "
+                                           "AND tablename NOT LIKE 'control_%'"))).scalars()
+            for table in tables:
+                quoted = engine.dialect.identifier_preparer.quote(table)
+                await tx.execute(text(f"GRANT SELECT,INSERT,UPDATE,DELETE ON {quoted} TO pinet_runtime"))
+            await tx.execute(text("REVOKE ALL ON alembic_version FROM pinet_runtime"))
+            await tx.execute(text("REVOKE INSERT, UPDATE, DELETE ON businesses FROM pinet_runtime"))
+            for site, host in [("traktoriupadangos", "traktoriupadangos.lt"),
+                               ("greitossvetaines", "greitossvetaines.lt")]:
+                if not await tx.scalar(text("SELECT id FROM businesses WHERE site_id=:s"), {"s": site}):
+                    await tx.execute(Business.__table__.insert().values(id=new_id(), site_id=site, canonical_host=host))
     await engine.dispose()
-    print("Runtime role and stable site mappings ready; no customer data seeded.")
+    print("Restricted role ready." if args.role_only else "Runtime role and stable site mappings ready; no customer data seeded.")
 
 
 asyncio.run(main())

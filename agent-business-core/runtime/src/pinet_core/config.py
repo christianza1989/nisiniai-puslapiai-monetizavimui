@@ -13,6 +13,11 @@ class Settings(BaseSettings):
     edge_secret: str = ""
     worker_secret: str = ""
     operator_secret: str = ""
+    # Local-only pilot: never enabled implicitly by legacy operator/worker secrets.
+    control_enabled: bool = False
+    control_cursor_secret: str = ""
+    control_source_revision: str = ""
+    control_session_seconds: int = 28800
     jev_api_key: SecretStr = SecretStr('')
     jev_budget_microusd: int = 150000
     jev_max_calls: int = 50

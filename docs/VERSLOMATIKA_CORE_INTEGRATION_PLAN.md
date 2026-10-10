@@ -1,12 +1,12 @@
 # Verslomatika prijungimas prie bendro core
 
-2026-10-10. **Rezultatas: integracijos planas ir siūloma pirmo API sąsaja. Paskyrų, dashboardo ar naujo runtime šiame pakeitime neįgyvendinome.** Savininkas pavedė šiai core sesijai planuoti kartu su „Kordinatorius A“ (`01a0dcf8-8ade-7883-877b-8d5dba4e8c79`). Koordinavimo sritis — [issue64](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/64); [portalo pusės PR62](https://github.com/christianza1989/verslomatika/pull/62). [Inventorius ir QA](VERSLOMATIKA_CORE_INTEGRATION_EVIDENCE.md), [pirmo API OpenAPI pasiūlymas](contracts/verslomatika-portfolio.openapi.json).
+2026-10-10. **Aktuali apimtis: planas ir autorizuotas vietinis I1a/I1b įgyvendinimas.** Po pirmo dokumentų commit savininkas „Kordinatorius A“ pokalbyje tiesiogiai pavedė „tai teskit darbus ir nestokit“ (turn01a12316-8c34-7492-8197-8fcd7deb6a8b). Ši sesija valdo core identity/registry/API; direktorius (`01a0dcf8-8ade-7883-877b-8d5dba4e8c79`) — portalo login/BFF/dashboard. [Vietinės realizacijos ir patikrų įrašas](VERSLOMATIKA_LOCAL_PORTFOLIO.md), [istorinis planavimo inventorius](VERSLOMATIKA_CORE_INTEGRATION_EVIDENCE.md), [canonical OpenAPI0.2.0](contracts/verslomatika-portfolio.openapi.json), [issue64](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/64). PR62 yra ankstesnis portalo planas; implementation PR nurodomas naujame įraše. Visas D1/D2 ir hosted paleidimas tuo neužbaigiami.
 
 ## 1. Sprendimas ir santykis su ankstesniu planu
 
 Verslomatika.lt tampa viena pagrindine prisijungimo ir verslų valdymo aplinka. Mūsų organizacija mato jai priskirtą esamų nišinių verslų portfelį; klientas — tik savo organizacijos leistinus verslus. Vėliau tame pačiame portale jis kalbasi su pasirinktais agentais, prijungia turimą verslą ir užsako naujo verslo kūrimą pagal aktualias core taisykles.
 
-Platesnis agentų, ataskaitų, ekranų ir apskaitos projektas jau yra [PR59, pinned planas](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/tree/87fcf4c34a4e1b1dab488bb193a1c1716bb51627/agent-business-core/verslomatika-plan). Jo D1+D2 kryptį pernaudojame. Šis dokumentas konkretina tik pirmą portalas→identity→portfelis jungtį ir jos priklausomybes. D1 skaidomas į ankstyvą skaitymo kelią ir vėlesnį agentų/darbų pamatą; vien skaitymo kelias neužbaigia D1 ar D2. PR59 nėra sujungtas į tikrintą main, o jo `/operator/v2` keliai dar neegzistuoja.
+Platesnis agentų, ataskaitų, ekranų ir apskaitos projektas jau yra [PR59, pinned planas](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/tree/87fcf4c34a4e1b1dab488bb193a1c1716bb51627/agent-business-core/verslomatika-plan). Jo D1+D2 kryptį pernaudojame. Šis dokumentas konkretina pirmą portalas→identity→portfelis jungtį ir jos priklausomybes. D1 skaidomas į ankstyvą skaitymo kelią ir vėlesnį agentų/darbų pamatą; vien skaitymo kelias neužbaigia D1 ar D2. PR59 nėra sujungtas į tikrintą main. Šios šakos keturi portfolio GET ir du local auth POST aprašyti canonical kontrakte; generic agent/task/chat keliai dar nepridėti.
 
 Nekuriame antro klientų/užduočių/pašto core Verslomatika repo. Jos esamą domeno auditą ir konsultaciją išlaikome kaip produkto įėjimo kelią. Registracija neprijungia visų agentų ar išorinių kanalų automatiškai.
 
@@ -39,7 +39,7 @@ flowchart LR
 
 | Objektas | Vienas autoritetingas šaltinis |
 | --- | --- |
-| Asmens autentifikacija | Vienas pasirinktas identity provider; portalas įgyvendina login/session adapterį. Nekopijuoti slaptažodžių į dvi sistemas |
+| Asmens autentifikacija | Vietinis pilotas: core scrypt credentials ir opaque atšaukiama DB sesija. Portalas įgyvendina login/BFF/HttpOnly cookie, neturi antro password store. Hosted identity provider bus atskiras adapteris |
 | Vidinis naudotojas | Core susiejimas `(identity_issuer, identity_subject) → user_id`; el. paštas nėra nuosavybės raktas |
 | Organizacija, narystė, portfelis, verslo grant | Core PostgreSQL. Portalas skaito šį modelį, nesaugo konkuruojančios leistinų verslų kopijos |
 | Verslas | Esamas `Business.id`. Organizacija yra prieigų riba; juridinis asmuo — atskiras finansinis/teisinis objektas |
@@ -51,11 +51,11 @@ Pilotui išlaikome esamą Business 1:1 site ryšį. Kelių domenų `business_sit
 
 ### Autentifikuotas kelias
 
-Naršyklė kviečia tik to paties origin Verslomatikos endpointą. BFF patikrina serverinę sesiją ir perduoda trumpai galiojantį, pasirašytą actor assertion su atskiru portalui skirtu issuer/audience/key. Core tikrina signature, allowlisted issuer, audience, expiration, session binding ir request binding; tada DB sprendžia `(identity_issuer,identity_subject)` ir **dabartines** narystes bei grants. Assertion pasirašančio portalo `iss` yra atskiras nuo asmenį autentifikavusio provider `identity_issuer`; šių dviejų tapatybių nesutapatiname. Pasirinktas portfolio/org ID yra tik užklausos objektas; serveryje jis vėl tikrinamas.
+**Aktualus vietinis režimas:** naršyklė kviečia tik to paties origin portalo BFF. Login perduoda bounded `{username,password}` į fiksuotą loopback core adresą. Core išduoda atsitiktinį opaque Bearer tokeną iki8h ir DB saugo tik jo SHA256; portalas laiko tokeną HttpOnly/SameSite=Strict cookie. Core kas request tikrina persisted session, expiry/revocation/user-enabled ir aktualias memberships/grants. Naršyklės actor/org claims, global operator/worker/edge raktai šiame kelyje netinka. Logout atšaukia DB sesiją. Core ir portalas pagal nutylėjimą OFF; vietinis režimas negali veikti viešame/Vercel hoste. Tikslios guard/rate-limit/pagination taisyklės ir įrodymai — [implementation įraše](VERSLOMATIKA_LOCAL_PORTFOLIO.md).
 
-Siūlomas assertion TTL ≤60s, vienkartinis `jti`, method + exact path + canonical query + body hash, gateway ir login-session tapatybė; nonce/revocation audit lieka core. Kiekvienam transporto retry BFF išduoda naują assertion/jti; business/job idempotency raktas lieka tas pats. Vien service credential ar kliento atsiųstas subject/org header nesuteikia actor prieigos. BFF yra patikimas assertion išdavėjas: jo kompromitavimas yra reali privilegijų rizika, todėl raktas laikomas serverio secret store, izoliuojamas nuo jobs ir rotuojamas. Identity-provider pasirinkimas, jo issuer/audience, logout/session-revocation adapteris ir signing key provisioning yra I1 užduotys, ne dabar veikianti konfigūracija.
+**Vėlesnio hosted IdP adapterio pasiūlymas, šiame pilote neįgyvendintas:** verified provider session → dedicated portal-signed actor assertion TTL≤60s, single-use jti, method/path/query/body hash, audience/issuer/session binding ir current core grants. Portalo signing issuer atskiras nuo `(identity_issuer,identity_subject)`. Kiekvienam retry naujas assertion/jti, business idempotency raktas tas pats. Tam reikės atskiro threat review, issuer/key provisioning, nonce ir session-revocation adapterio; nereikia įsigyti išorinio auth provider vietiniam slice.
 
-Core tokenas negali pasikliauti tokeno roles/grants snapshot. Narystės atšaukimas tikrinamas kiekvienam API read/download, srauto pradžiai/tęsimui ir job execution. Po portalo logout BFF nebeišduoda assertion; core atšaukia session binding, kad jau išduoto assertion nepakaktų. `PINET_OPERATOR_SECRET` lieka esamo operatoriaus keliui; jis nėra customer login ir portalas juo neproxyina arbitrary site ID. Viešo core `oai-authenticated-*` header helperis nelaikomas Verslomatikos tapatybės įrodymu.
+Core tokenas negali pasikliauti tokeno roles/grants snapshot. `PINET_OPERATOR_SECRET` lieka esamo operatoriaus keliui; jis nėra customer login ir portalas juo neproxyina arbitrary site ID. Viešo core `oai-authenticated-*` helperis nėra šio login autoritetas. Būsimų streams/download/jobs current-grant enforcement dar yra I2 darbas, ne dabartinių keturių skaitymo endpointų testų išvada.
 
 ## 4. Esamų verslų prijungimas
 
@@ -67,9 +67,9 @@ Core tokenas negali pasikliauti tokeno roles/grants snapshot. Narystės atšauki
 
 Žinomi main V1 IDs: `akmenas`, `auksarankiams`, `autoelektrikaivilniuje`, `fasadopastoliai`, `greitossvetaines`, `laiptucentras`, `miniekskavatoriai`, `roletaiklaipedoje`, `traktoriupadangos`. Vykdytojas ima inventorių iš machine-readable šaltinio, ID iš domeno negeneruoja iš naujo. Dovanos123 staging nėra live admission. Naujos kitų sesijų nišos įtraukiamos po jų atskiro aktualumo patikrinimo.
 
-## 5. Pirmas API kontraktas — PLANNED
+## 5. Pirmas API kontraktas — vietinis portfolio.v1
 
-Siūlomas contract ID `portfolio.v1`; URL šeima sutampa su PR59 `/operator/v2`. [OpenAPI JSON](contracts/verslomatika-portfolio.openapi.json) yra vienas reviewable pasiūlymas; jo negalima vadinti įdiegtu endpointu ar automatiškai generuoti production klientą prieš I1 sutarties priėmimą.
+Contract ID `portfolio.v1`, OpenAPI info0.2.0; URL šeima sutampa su PR59 `/operator/v2`. [OpenAPI JSON](contracts/verslomatika-portfolio.openapi.json) yra canonical local sutartis. Immutable auth schema checkpoint7e476e4ae58297579c3044a2b08f2bf0e0a0d11a perduotas portalo type generatoriui. Actual runtime/source/HTTP/UI priėmimas atskirai — [implementation įraše](VERSLOMATIKA_LOCAL_PORTFOLIO.md). Tai nesuteikia production/hosted kliento konfigūracijos.
 
 | Siūlomas GET | Rezultatas |
 | --- | --- |
@@ -109,7 +109,9 @@ Privalomos brokerio ribos: core user/org/business/environment/thread binding; le
 
 Operacijos turi current grant/mandate, idempotency fingerprint, lease/fencing, kvotą/biudžetą, timeout, checkpoint, redacted event ir rezultato kvitą. Promptas negali pakelti leidimų ar pats pažymėti darbo succeeded. Užduotis negali prarasti DB būsenos uždarius chat; pasenusio worker rezultatas atmetamas. Esamų operatoriaus CLI auth failų klientams nekopijuojame. Customer inference finansavimui pasirenkamas serverinis service credential arba faktinę aplikacijos eligibility patvirtinantis per-user OAuth kelias. Oficialus SIWC app-server token-sharing kelias egzistuoja, tačiau Verslomatikos app teisės/entitlements ir jų kainos dar nepatvirtintos. [SIWC integration](https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server).
 
-## 8. Priėmimo scenarijai — visi runtime bandymai dar PLANNED
+## 8. Visos platformos priėmimo scenarijai
+
+Ši lentelė saugo visą darbų eilę; konkretūs I1 scenarijų PASS/PARTIAL/PLANNED ir testų kvitai pateikti [vietiniame įraše](VERSLOMATIKA_LOCAL_PORTFOLIO.md). Istorinis21a59d5 planavimo rezultatas neturėjo runtime įrodymų ir lieka istorijoje. P13–P19 dar nepradėti šiame slice.
 
 | ID | Tikras vėlesnio bandymo kriterijus |
 | --- | --- |
@@ -133,12 +135,12 @@ Operacijos turi current grant/mandate, idempotency fingerprint, lease/fencing, k
 | P18 | Viena idėja/domenas→research/BUSINESS/TOOLS→F1→auditas/release su canonical source; availability/ownership ir publish permission tikrinami atskirai |
 | P19 | Actual hosted TLS/login/portfolio, 24/7 supervision ir backup/restore į kitą izoliuotą aplinką; kanalai atkūrimo metu OFF; rollback į pinned release |
 
-I1 minimalios privalomos suite prieš testą užfiksuojamos iš actual PR: nauji control/auth/registry PostgreSQL testai, esami `runtime/tests/test_core.py`, `test_policy.py` ir paveikti legacy rinkiniai, portalų `npm test`, `npm run typecheck`, `npm run build` ir browser acceptance. Esamus suite vardus vykdytojas dar kartą tikrina `rg --files`; auth/isolation atvejai dabartiniame source yra `test_core.py`, atskiro `test_security.py` nėra. Public-core `test:core` ir tikro runtime `test:seo-smoke` privalomi tik jį keičiant. Šiame dokumentiniame pakeitime šios runtime suite nepaleistos.
+I1 minimalios suite: `test_control_portfolio.py`, esami `test_core.py`, `test_policy.py`, paveikti legacy rinkiniai ir portalų test/typecheck/build/browser acceptance. Atskiro legacy `test_security.py` nėra. Public-core test:core/seo-smoke taikomi jį keičiant; šio slice public source read-only. Tikslios vykdytos komandos ir rezultatai pateikti implementation įraše.
 
 ## 9. Rizikos, nežinomybės ir grįžimas
 
-Neįgyvendinti konkretūs vartai: I1 provider/session-key/revocation, faktinis DB inventory/bootstrap, org-aware RLS/API, portfelio routes ir dashboardas; I2 generic non-conversation jobs/agent registry/broker; I4 tikras backend adresas/regionas/hosting planas, backup/restore ir eksploatavimo biudžetas. Apmokėjimai, klientų laiškai, išorinių paskyrų valdymas ir visa apskaita turi savo konkrečius vėlesnius mandatus/priemimą; jų nebuvimas netrukdo dokumentuoti ar vietoje kurti pirmo skaitymo kelio.
+Likę konkretūs vartai: esamos/shared DB UUID inventory ir adoption (atskiras pilotas nėra istorinių UUID migracija); hosted IdP sesija; I2 generic non-conversation jobs/agent registry/broker; I4 TLS/backend/regionas/hosting, backup/restore ir eksploatavimo biudžetas. I1 local DB/API/UI įgyvendinimo būsena pateikta atskirai. Apmokėjimai, klientų laiškai, išorinių paskyrų valdymas ir apskaita turi vėlesnius mandatus/priemimą.
 
 Perjungimas feature flag vienam read adapteriui. Iki acceptance esamos konsolės/core API lieka pagrindinis operatoriaus kelias; nenaudoti jų kaip tylaus customer auth fallback. Rollback išjungia portalų tiltą ir naujus worker claim, grąžina pinned app/API versijas; additive mapping paliekamas audituotas, klientų istorija ar UUID netrinami. DB destruktyvus downgrade galimas tik po atskiro suderinamumo/backup rehearsal, ne kartu su UI revert.
 
-Šis Git perdavimas pateikia reviewable planą. Jis nereiškia main merge, runtime deploy, veikiamos klientų registracijos ar įrodytos visų verslų autonomijos.
+Šis Git perdavimas pateikia planą ir scoped local implementation. Main merge, hosted deploy, vieša klientų registracija ir visų verslų autonomija yra atskiri įvykiai.

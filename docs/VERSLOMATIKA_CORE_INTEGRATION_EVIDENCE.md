@@ -1,6 +1,6 @@
 # Verslomatika integration: source evidence and planning QA
 
-Date: 2026-10-10, Europe/Vilnius. Scope: the owner's request for a correct integration plan jointly with the existing Verslomatika coordinator. No new runtime, auth provider, DB migration, app UI, paid inference, deployment or customer operation was executed. [Core plan](VERSLOMATIKA_CORE_INTEGRATION_PLAN.md), [proposed contract](contracts/verslomatika-portfolio.openapi.json), [scope issue64](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/64).
+Date: 2026-10-10, Europe/Vilnius. **Historical planning receipt at21a59d5:** the original documentation-only scope executed no new runtime/auth/DB/UI/deployment. The owner's subsequent explicit continuation expanded issue64/PR65 to local I1a/I1b; its actual implementation evidence is in [VERSLOMATIKA_LOCAL_PORTFOLIO](VERSLOMATIKA_LOCAL_PORTFOLIO.md). Source findings below describe the pinned original main; they are not current implementation claims. [Core plan](VERSLOMATIKA_CORE_INTEGRATION_PLAN.md), [current canonical contract](contracts/verslomatika-portfolio.openapi.json), [scope issue64](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/64).
 
 ## Sources and freshness
 

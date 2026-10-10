@@ -1,0 +1,14 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const dir=import.meta.dirname,out=path.resolve(dir,'../cloudflare/output/services-release-20261010');
+const json=async name=>JSON.parse(await readFile(path.join(out,name),'utf8'));
+const deployment=await json('deployment.json'),native=await json('native.json'),live=await json('live-http.json');
+assert.equal(native.state,'PASS');assert.equal(live.state,'PASS');assert.equal(live.version,deployment.version);
+const hash=b=>createHash('sha256').update(b).digest('hex');
+const captures={};
+for(const name of ['desktop-final.jpeg','mobile-final.jpeg','narrow-final.jpeg','tablet-final.jpeg','desktop-round1.jpeg','live-desktop.jpeg','live-mobile.jpeg'])captures[name]=hash(await readFile(path.join(out,name)));
+const receipt={schemaVersion:1,siteId:'madbeauty',scope:'human-selected illustrated services index and search',state:'LIVE_ACCEPTED',acceptedAt:new Date().toISOString(),canonicalUrl:'https://madbeauty.lt/paslaugos',sourceCommit:deployment.sourceCommit,coreSource:deployment.coreSource,worker:'madbeauty-platform-preview',version:deployment.version,previousVersion:deployment.previousVersion,artifactSha256:deployment.artifactSha256,packageSha256:deployment.packageSha256,approvedPages:129,totalAssets:deployment.assets,transparentIllustrations:16,responsiveVariants:76,validation:{productTests:36,nativeChecks:native.checks,canonicalHttpsChecks:live.checks,all14CategoryRoutes:true,all76LiveVariantHashes:true,liveModuleHashes:4,nativeFutureHidden:native.futureHidden,liveFutureSamplesHidden:2,visibleEditorialPages:live.visiblePages,liveChromeIndexAndSearch:true,sampledConsoleErrors:0,visualReviewerDisposition:'ship',visualScope:'four configured viewport content areas and earlier desktop full-page; 15px capture/content offset; no full mobile page or whole-platform certification'},preservation:{ordinaryOwnAccountAndCustomerCollections:true,allNamespacesAndVariableSecretBindings:true,observability:true,protectedQA:true,independentDummyTrial:true,editorialDates:true},provenance:{pngMasters:'exact prompt embedded',webp:'versioned prompt sidecars, excluded from public build',binaryWebpEmbedding:false,assetManifestSha256:hash(await readFile(path.join(dir,'ASSET_MANIFEST.json')))},localEvidence:{directory:'../cloudflare/output/services-release-20261010',captures},limitations:['320px search placeholder clips slightly; accessible label intact','First post-upload asset request returned transient404; diagnosed same path200 and entire acceptance rerun passed without redeploy','No new platform capacity, market supply, accessibility certification or performance score claimed']};
+await writeFile(path.join(dir,'RECEIPT.json'),JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({state:receipt.state,version:receipt.version,checks:live.checks}));

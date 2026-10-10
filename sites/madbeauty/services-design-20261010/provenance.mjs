@@ -21,7 +21,7 @@ for(const a of manifest.assets){
  }
  media.assets.find(i=>i.id==='service-illustration-'+a.id).variants=a.variants;
 }
-manifest.provenance='Exact generation prompt embedded in each original and WebP derivative; pixels and alpha unchanged.';
+manifest.provenance='Exact prompts embedded in original PNG masters. Pinned embed-prompt records WebP prompts in adjacent versioned JSON sidecars; no binary WebP embedding claimed. Pixels and alpha unchanged; sidecars excluded from published assets.';
 await writeFile(path.join(dir,'ASSET_MANIFEST.json'),JSON.stringify(manifest,null,2)+'\n');
 await writeFile(mediaFile,JSON.stringify(media,null,2)+'\n');
-console.log(JSON.stringify({state:'PROVENANCE_EMBEDDED',assets:manifest.assets.length,variants:manifest.assets.reduce((n,a)=>n+a.variants.length,0)}));
+console.log(JSON.stringify({state:'PROVENANCE_RECORDED',pngEmbedding:true,webpSidecars:true,assets:manifest.assets.length,variants:manifest.assets.reduce((n,a)=>n+a.variants.length,0)}));

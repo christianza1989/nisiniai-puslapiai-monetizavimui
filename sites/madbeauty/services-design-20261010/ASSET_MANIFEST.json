@@ -727,5 +727,5 @@
       ]
     }
   ],
-  "provenance": "Exact generation prompt embedded in each original and WebP derivative; pixels and alpha unchanged."
+  "provenance": "Exact prompts embedded in original PNG masters. Pinned embed-prompt records WebP prompts in adjacent versioned JSON sidecars; no binary WebP embedding claimed. Pixels and alpha unchanged; sidecars excluded from published assets."
 }

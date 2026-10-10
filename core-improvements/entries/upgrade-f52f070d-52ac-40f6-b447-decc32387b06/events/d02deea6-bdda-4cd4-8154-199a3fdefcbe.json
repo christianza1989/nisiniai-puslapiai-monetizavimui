@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Mandatory canonical reference bytes now enter initial business and both shared studio plan/draft snapshots; native GUIDE calls the same maintained loader. Actual mock CLI prompt captures contain the full canonical reference in both modes. Old loaded snapshot stays immutable, next read records changed fingerprint, missing/empty/unfinished editor references fail closed; creation missing/empty/edited source stops before mock dispatch and artifact folder creation. Canonical reference remains authoritative and independent of custom planner test fixture directory. No source/style template/schema/history rewrite or actual provider/UI design acceptance; API8860 stillcbc7. Original FAIL retained in prior fixing event.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_creation_adapter.py offline_tests/test_creation_review.py offline_tests/test_creation_language_patch.py -q",
+      "result": "PASS",
+      "evidence": "131passed7.34s; existing compact review and bounded repair/language-patch profiles preserved"
+    },
+    {
+      "command": "node --test test/editorial-skill.test.mjs test/customer-content-write.test.mjs",
+      "result": "PASS",
+      "evidence": "19passed20.75s; actual synthetic generator prompt capture and native prepare/write/CAS tests, no provider"
+    },
+    {
+      "command": "ruff check src/pinet_core/creation/adapter.py offline_tests/test_creation_adapter.py",
+      "result": "PASS",
+      "evidence": "All scoped Python checks passed"
+    }
+  ],
+  "eventId": "d02deea6-bdda-4cd4-8154-199a3fdefcbe",
+  "sequence": 3,
+  "at": "2026-10-10T16:44:05.290Z"
+}

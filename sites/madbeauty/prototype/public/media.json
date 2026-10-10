@@ -1579,6 +1579,81 @@
           "sha256": "37d7ee5d43f5f74541f71a62af773f122003afc08638541009ad5cc5972c974b"
         }
       ]
+    },
+    {
+      "id": "auth-friends-violet",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/auth-friends-violet-1086.webp",
+          "width": 1086,
+          "height": 1448,
+          "bytes": 64138,
+          "sha256": "fd7682198a585e2d9479f13ee0a18b5f0b67aa8d88349eec962f4cfb4d760a09"
+        },
+        {
+          "file": "images/auth-friends-violet-800.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 43758,
+          "sha256": "03133388a230bac7b8962ebbf325337dfaa313c1a49a5d6948b76cd99d03dd11"
+        },
+        {
+          "file": "images/auth-friends-violet-640.webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 31966,
+          "sha256": "14cb7f428954fdc1594c1c7a887845927426d310a546d3cdb4d6f4ae5ee53a55"
+        },
+        {
+          "file": "images/auth-friends-violet-360.webp",
+          "width": 360,
+          "height": 480,
+          "bytes": 15060,
+          "sha256": "0fffa0c4aa46ae2c5edd9db0fba8a56218cdf193994ddc69edc1dc4d6f406f94"
+        }
+      ]
+    },
+    {
+      "id": "auth-beauty-kit",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/auth-beauty-kit-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 210678,
+          "sha256": "4a1cfc6e61cdd43fed2ffb08f249fa9fd5870643a341efc2c40d136e798de19a"
+        },
+        {
+          "file": "images/auth-beauty-kit-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 146924,
+          "sha256": "d5e262e26291c2b17b4716c786486b8da4b98ee61fbbd434e0ea6c3f3ed29b4c"
+        },
+        {
+          "file": "images/auth-beauty-kit-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 72426,
+          "sha256": "feaf32a2badacbe31e9bc6dab267cb22f9c6d1424690693c23133d38b03baaa5"
+        },
+        {
+          "file": "images/auth-beauty-kit-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 50528,
+          "sha256": "70a69a7adf080948ce239bdaba424bdc4714c0fc065da72f525a1a2a74a90a97"
+        },
+        {
+          "file": "images/auth-beauty-kit-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 20668,
+          "sha256": "63ce3ee8c03f64ca342b72b2a8f5b4ff6076450596a50e9136ad2905a58f594d"
+        }
+      ]
     }
   ]
 }

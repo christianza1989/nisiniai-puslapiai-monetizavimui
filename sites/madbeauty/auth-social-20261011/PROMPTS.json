@@ -1,0 +1,16 @@
+[
+  {
+    "name": "auth-friends-violet",
+    "path": "C:/Users/Lenovo/.codex/generated_images/01a11268-7ab2-7a23-973c-598322dba15a/exec-0564c94c-2536-4ae2-8a86-1e268ea893f9.png",
+    "prompt": "Use case: photorealistic-natural. Asset type: portrait editorial photograph for Madbeauty Lithuanian beauty marketplace login/register page. Two adult female friends in their late 20s/30s sitting together in a beautiful contemporary Lithuanian beauty salon, relaxed candid smiles and natural conversation, understated stylish clothes, one holding a small lavender cosmetic pouch. Realistic skin texture, believable hands, no posed commercial grin. Beautiful rich violet/lavender upholstery, warm cream walls, brushed chrome mirror and soft daylight, high-end tasteful photographic composition, gentle grain, editorial magazine quality. Vertical 3:4 composition, friends and salon in upper 70 percent, softly darker violet seat and surroundings in bottom quarter where real HTML white headline will sit. No typography, letters, logo, watermark, mock UI or artificial ratings. This is editorial illustration, not an actual provider or customer testimonial.",
+    "role": "Editorial authentication side photo; synthetic, not provider work",
+    "transparent": false
+  },
+  {
+    "name": "auth-beauty-kit",
+    "path": "C:/Users/Lenovo/.codex/generated_images/01a11268-7ab2-7a23-973c-598322dba15a/exec-a5f98116-8041-4dd4-bf1f-12c08334dd69.png",
+    "prompt": "Use case: stylized-concept. Asset type: transparent original decorative cutout for Madbeauty beauty marketplace login code screen and invite-a-friend dialog. A very beautiful premium small still-life: one open lavender leather cosmetic pouch, elegant brushed silver compact mirror reflecting soft white, a violet glass nail polish bottle and slim black-handled powder brush lying beside it. Fine detailed materials, tasteful photorealistic 3D product editorial finish with gentle black ink-like outline accents consistent with beauty category illustrations. Tight balanced horizontal composition, each object distinct and believable, limited quantity, generous clear outer margin. Rich violet #7040E8, pale lavender and silver highlights. True transparent alpha background, isolated objects, restrained small contact shadows only, no flat background, no checkerboard, no text, letters, logos, watermark, user interface, heart symbols or people.",
+    "role": "Decorative auth/invite cutout",
+    "transparent": true
+  }
+]

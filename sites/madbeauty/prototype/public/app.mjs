@@ -1,3 +1,4 @@
+import {invitationAction} from './profile-invite.mjs';
 import {renderFooter} from './footer.mjs';
 import {profileMetadata,moduleSchema} from './profile-seo.mjs';
 import {directorySchema,directoryDescription} from './provider-directory.mjs';
@@ -132,6 +133,7 @@ async function commonAction(action,b){
   const id=b.dataset.id;
   if(action==='discard-form-draft'){const form=b.closest('form');discardDraft(ctx,form);if(form.id==='service-editor')await workspaceAction(ctx,'edit-service',{dataset:{id:ctx.editing.entity.id}});toast('Neįrašytas juodraštis atmestas.');return true;}
   if(action==='close-dialog'){closeDialog();return true;}
+  if(await invitationAction(ctx,action))return true;
   if(await accountAction(ctx,action))return true;
   if(action==='mobile-menu'){const header=$('#header');header.classList.toggle('menu-open');b.setAttribute('aria-expanded',header.classList.contains('menu-open'));return true;}
   if(action==='reload-view'){if(ctx.startupError){try{await ctx.realAdapter.refreshSession();ctx.startupError=null;adapter();}catch(e){ctx.startupError=e;}}await render();$('#main').focus({preventScroll:true});return true;}

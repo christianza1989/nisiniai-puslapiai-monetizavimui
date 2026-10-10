@@ -4,11 +4,11 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-09T15:00:47.457Z",
-  "lastResearchDateLocal": "2026-10-09",
-  "lastResearchFile": "research/2026-10-09-mail-dsn/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-09-mail-dsn/QA.json",
-  "lastCycleOutcome": "new_experiment_proposed",
+  "lastResearchAt": "2026-10-10T06:06:06.722Z",
+  "lastResearchDateLocal": "2026-10-10",
+  "lastResearchFile": "research/2026-10-10-tyre-rolling-data/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-10-tyre-rolling-data/QA.json",
+  "lastCycleOutcome": "existing_requirement_evidence_updated",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003"
@@ -85,11 +85,11 @@
     }
   ],
   "researchContinuity": {
-    "completed": "Four primary RFC sources read; existing SMTP states and scoped customer reply reader reviewed in current main. No dedicated DSN processor found in targeted paths; PR32 mail_reader diff empty. One Treg catalog query returned none, no provider calls. Proposed BDEV-0003-P4 is a bounded synthetic offline lab, not runtime integration or operational approval. No parser code or cases executed. Root/core latest direct owner turns reviewed; current source executor remains separate.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision",
-    "nextCandidateQuestion": "Read fresh main, PR1 and direct owner decisions before choosing work. P1/P2/P3/P4 and BI remain proposed. Implement only specifically approved scope, coordinate any later mail-runtime path with its owner, and preserve existing reply sender and tenant guards.",
+    "completed": "Four primary HTML pages read for tractor tyre rolling-data qualification, including DLG 2023 Table4 and Firestone formula/context. Existing niche instructions already require 4WD RC and actual axle-ratio checks; no new idea or demonstrated runtime defect. Six synthetic cases documented, not executed. Two Treg catalog searches had no relevant matches, no provider calls. Latest direct owner turns reviewed; no registry pilot approval. Root integration pause and core roletai completion remain their executor scopes.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision",
+    "nextCandidateQuestion": "Read fresh main, PR1 and direct owner decisions before choosing work. BI and P1-P4 remain proposed. Do not repeat tyre rolling qualification or take over active roletai implementation. Prefer actual demand or fulfilment evidence over another standalone lab proposal.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
-    "executionScope": "Research/private registry only. P4 documented, no lab executed. No live inbox, SMTP, client messages, runtime, purchases, DNS or campaigns."
+    "executionScope": "Research/private registry only. No lab, parser, runtime or site changes. No personal inbox, SMTP, client messages, purchases, DNS or campaigns. Companion dirty working tree belongs to another executor and is preserved."
   },
   "approvedWork": [
     {

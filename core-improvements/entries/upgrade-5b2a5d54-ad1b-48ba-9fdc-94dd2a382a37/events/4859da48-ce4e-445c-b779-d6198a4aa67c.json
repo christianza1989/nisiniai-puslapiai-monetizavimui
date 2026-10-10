@@ -1,0 +1,44 @@
+{
+  "status": "local-verified",
+  "note": "Preserved 2 sentinel first FAIL; retained refused/complaint status now stops before model even without suppression boolean. Actual after probe2/2 PASS/0 model calls, final-D post-stop guards correct. Marketing terminal state is separate from real inbound rights Case processing.",
+  "checks": [
+    {
+      "command": "tmp/probe-terminal-reply-20261010.py before / after",
+      "result": "PASS",
+      "evidence": "Before2FAIL retained; after2PASS with model_calls0 and suppression required. Offline regression confirms no reset to new. docs/ACQUISITION_COPY_REVIEW_QA_2026-10-10.md / docs/ACQUISITION_COPY_REVIEW_RECEIPT_2026-10-10.json"
+    },
+    {
+      "command": "acquisition_dialogue_lab.py final-D six declared cases + tmp/audit-final-dialogue-copy-20261010.py",
+      "result": "PASS",
+      "evidence": "Actual final-D6/6/40CLI calls; all runtime snapshots match; root read all6 conversations, 11 .eml decoded subjects/bodies match, all .test/external_sentfalse. docs/ACQUISITION_COPY_REVIEW_QA_2026-10-10.md / docs/ACQUISITION_COPY_REVIEW_RECEIPT_2026-10-10.json"
+    },
+    {
+      "command": "uv run --locked pytest offline_tests -q -k acquisition",
+      "result": "PASS",
+      "evidence": "Actual latest run 78 passed/33 subtests after final instructions; includes 8 new typed handoff/stop/conditional hold regressions."
+    },
+    {
+      "command": "uv run --locked ruff check src/pinet_core/acquisition/dialogue.py src/pinet_core/acquisition/dialogue_lab.py offline_tests/test_acquisition_dialogue.py",
+      "result": "PASS",
+      "evidence": "Actual owned source/test scoped lint passed."
+    },
+    {
+      "command": "uv run --locked python scripts/acquisition_contracts.py --check",
+      "result": "PASS",
+      "evidence": "All four external schema/vector exact checks passed; contract hashes unchanged."
+    },
+    {
+      "command": "uv run --no-project python -X utf8 tmp/lt-discovery-doc-check.py",
+      "result": "PASS",
+      "evidence": "53 actual local links and catalog acquisition entrySHA c00811a2a2a41a00b284f5e698152f1a8bbba3b9e4b596892710f828f62df625 match."
+    },
+    {
+      "command": "skill-creator/scripts/quick_validate.py SKILLS/niche-client-acquisition",
+      "result": "PASS",
+      "evidence": "Actual skill validator passed; canonical instructions changed with code, archived fingerprints untouched."
+    }
+  ],
+  "eventId": "4859da48-ce4e-445c-b779-d6198a4aa67c",
+  "sequence": 2,
+  "at": "2026-10-10T06:35:43.063Z"
+}

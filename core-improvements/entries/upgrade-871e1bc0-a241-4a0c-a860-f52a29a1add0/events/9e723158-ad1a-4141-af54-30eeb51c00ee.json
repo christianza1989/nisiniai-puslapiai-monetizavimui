@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Final-C a04 preserved FAIL: first direct current price question plus decision deferral was misread as future-contact permission, yielding interest/hold before answering. Independent grade true did not erase class mismatch; root exact-dialogue review found the unanswered current question. Refine the same conditional-hold upgrade instruction to distinguish decision condition from explicit future-contact limit; do not widen labels or rewrite C. Let C finish unchanged, then final-D same six declared cases and exact first-price replay under bounded calls.",
+  "eventId": "9e723158-ad1a-4141-af54-30eeb51c00ee",
+  "sequence": 2,
+  "at": "2026-10-10T06:21:02.670Z"
+}

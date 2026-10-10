@@ -20,6 +20,8 @@ Atradimo įvestis šiame etape — sintetiniai imported prospect/public-source k
 
 ## Situacijų mastas ir prasminga įvairovė
 
+2026-10-10 exact-copy bandymas atskleidė atskirą ribą: klinika atsisakė prisijungti ir paklausė apie savo pavadinimo publikavimą bei galimą pašalinimą mūsų platformoje. Viešas klinikos paslaugų šaltinis tokios actual būsenos nepatvirtina. `privacy_handoff` parengia tuščią subject/body su tikslia inbound prašymo citata, stabdo reklamą atsisakius arba sulaiko informacinio klausimo seką ir palieka operator-required kvitą su `handoff_executed=false`. Tai ne Case sukūrimas ar ištrynimo vykdymas. `privacy_reply` provenance vartas nesusilpnintas; blocked atsakymas taip pat išsaugo marketing suppression reikalavimą. Normal M6 inbound Case ir kampanijos pause/expiry nepriklausomybė lieka atskiras integracijos priėmimas.
+
 Generatorius `runtime/src/pinet_core/acquisition/dialogue_corpus.py` sudaro **400 žinomų sintetinių regresijos scenarijų**. Pradinė 384 kombinacijų matrica papildyta atskiru privatumo klausimo + aiškaus opt-out archetipu:
 
 - 25 archetipai: susidomėjęs, užimtas, mokesčių bijantis, skeptikas, konkurento klientas, informaciniai privatumo klausimai, privatumo klausimai kartu su atsisakymu, aiškus atsisakymas, skundas, automatinis išvykimo atsakymas, tyla, netinkamas gavėjas, nuotraukų teisės, pakeistas poreikis, pilnas kalendorius, sezoniškumas, techniškai nepasitikintis, anglų kalba, garantijų reikalavimas, prompt injection, nepagrįstos nuolaidos, jau registruotas, fizinis asmuo be sutikimo, duplikato kontekstas ir kita šalis.
@@ -31,6 +33,8 @@ Generatorius `runtime/src/pinet_core/acquisition/dialogue_corpus.py` sudaro **40
 Pridėti naujas situacijas pagal first FAIL ir tikras būsimo piloto kliūtis: kelios darbo vietos/kategorijos, individuali veikla/juridinis salonas, klaidingas kontaktas, kolegos persiuntimas, neaiškus sutikimas, pasikeitęs offer, kalbos, neveikiantis CTA, socialinio kanalo taisyklės, webhook replay, unknown submit ir registracijos nutrūkimas. Vien didinti kombinacijų skaičių nepakeičia trūkstamos rizikos.
 
 ## Paleidimas
+
+Sąlyginis ateities kontaktas taip pat turi serverinį sprendimą: gavėjui leidus rašyti tik patvirtinus kainas / funkciją, `interest/hold` saugo tikslią inbound `resume_condition_quote`, tuščią laišką ir `marketing_hold_required=true`. Lab `held` kvitas turi `resume_authorized=false`; citata pati netvirtina sąlygos įvykdymo. Įrašytos refused/complaint būsenos stabdo marketingo helper prieš modelį net be atskiro suppression boolean. M6 tikrų rights Case apdorojimas po stop lieka atskiras, nepriklausomas nuo kampanijos.
 
 Iš `agent-business-core/runtime`:
 

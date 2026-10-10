@@ -208,6 +208,177 @@ class DialogueTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result['state'], 'blocked')
         self.assertEqual(lab.calls, 0)
 
+    def test_unknown_publication_privacy_handoff_is_bound_and_has_no_outbound(self):
+        campaign, case, _ = fixture('privacy-optout')
+        inbound = 'Prisijungimo nesvarstysime. Ar mūsų pavadinimas paskelbtas? Jei taip, pašalinkite.'
+        decision = ReplyDecision(classification='refusal', action='privacy_handoff', subject='', body='',
+            offer_fact_ids=[], privacy_request_quote='Ar mūsų pavadinimas paskelbtas? Jei taip, pašalinkite.',
+            reason='Publikavimo būsena nepatvirtinta; būtinas operatorius, ne atlikto veiksmo pažadas')
+        self.assertFalse(reply_blocks(campaign, decision, case.prospect, inbound))
+        self.assertIn('privacy_request_evidence_required',
+                      reply_blocks(campaign, decision, case.prospect, 'Neaktualu'))
+        for change in ({'body':'Pašalinome.'}, {'subject':'Patvirtiname'},
+                       {'offer_fact_ids':['pilot']}, {'evidence_ids':['public']}):
+            with self.subTest(change=change):
+                self.assertIn('privacy_handoff_must_have_no_outbound',
+                    reply_blocks(campaign, decision.model_copy(update=change), case.prospect, inbound))
+        self.assertIn('privacy_handoff_classification_required', reply_blocks(campaign,
+            decision.model_copy(update={'classification':'interest'}), case.prospect, inbound))
+
+    async def test_blocked_privacy_reply_still_requires_marketing_suppression(self):
+        campaign, case, now = fixture('privacy-optout')
+        inbound = 'Nenoriu prisijungti. Patikrinkite ar mano pavadinimas paskelbtas.'
+
+        class UnsupportedPrivacy(FakeLab):
+            async def ask(self, schema, instruction, data):
+                self.calls += 1
+                return ReplyDecision(classification='refusal', action='privacy_reply',
+                    subject='Apie publikavimą', body='Neturime patvirtintų duomenų apie publikavimą.',
+                    offer_fact_ids=[], evidence_ids=[], privacy_request_quote=inbound,
+                    reason='Atkurta tikro modelio nesėkmė')
+
+        result = await prepare_reply(campaign, case.prospect, [{'role':'recipient','body':inbound}],
+                                     UnsupportedPrivacy(), now)
+        self.assertEqual(result['state'], 'blocked')
+        self.assertIn('privacy_reply_must_be_source_only', result['reasons'])
+        self.assertTrue(result['marketing_suppression_required'])
+        self.assertFalse(result['external_sent'])
+
+    async def test_privacy_handoff_captures_no_reply_and_stop_guard_runs_without_model(self):
+        campaign, case, now = fixture('privacy-optout')
+        request = 'Daugiau nerašykite. Ar mano pavadinimas viešinamas? Jei taip, pašalinkite.'
+
+        class HandoffLab(FakeLab):
+            async def ask(self, schema, instruction, data):
+                if schema is ReplyDecision:
+                    self.calls += 1
+                    return ReplyDecision(classification='refusal', action='privacy_handoff',
+                        subject='',body='',offer_fact_ids=[], privacy_request_quote=request,
+                        reason='Reikia patikrinti nežinomą operacinę būseną')
+                return await super().ask(schema, instruction, data)
+
+        class RequestPersona(FakeLab):
+            async def ask(self, schema, instruction, data):
+                self.calls += 1
+                return RecipientTurn(event='reply',body=request,finished=True)
+
+        agent = HandoffLab()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)/'case'
+            row = await run_case(campaign,case,agent,RequestPersona(),FakeLab(),root,now)
+            self.assertTrue(row['passed'])
+            self.assertEqual(len(list(root.glob('*.eml'))),1)
+            self.assertEqual(agent.calls,3)
+            handoff = next(e for e in row['events'] if e.get('kind')=='privacy_handoff_required')
+            self.assertEqual(handoff['request_quote'],request)
+            self.assertFalse(handoff['handoff_executed'])
+            self.assertTrue(any(e.get('kind')=='suppressed' for e in row['events']))
+            guard = next(e for e in row['events'] if e.get('kind')=='post_stop_guard')
+            self.assertEqual(guard['state'],'stop')
+
+    async def test_informational_privacy_handoff_holds_without_inventing_optout(self):
+        campaign, case, now = fixture('privacy')
+        request = 'Ar mano pavadinimas jau paskelbtas jūsų platformoje?'
+
+        class QuestionHandoff(FakeLab):
+            async def ask(self,schema,instruction,data):
+                self.calls += 1
+                return ReplyDecision(classification='question',action='privacy_handoff',
+                    subject='',body='',offer_fact_ids=[],privacy_request_quote=request,
+                    reason='Operacinė būsena nežinoma, reikia operatoriaus patikros')
+
+        result = await prepare_reply(campaign,case.prospect,[{'role':'recipient','body':request}],
+                                     QuestionHandoff(),now)
+        self.assertEqual(result['state'],'privacy_handoff')
+        self.assertTrue(result['marketing_hold_required'])
+        self.assertFalse(result['marketing_suppression_required'])
+
+    async def test_lab_retains_suppression_when_privacy_reply_is_blocked(self):
+        campaign,case,now=fixture('privacy-optout')
+        request='Daugiau nerašykite. Patikrinkite mano pavadinimo publikavimą.'
+
+        class BlockedReply(FakeLab):
+            async def ask(self,schema,instruction,data):
+                if schema is ReplyDecision:
+                    self.calls+=1
+                    return ReplyDecision(classification='refusal',action='privacy_reply',
+                        subject='Apie būseną',body='Būsena nežinoma.',offer_fact_ids=[],
+                        evidence_ids=[],privacy_request_quote=request,reason='Originali blocked situacija')
+                return await super().ask(schema,instruction,data)
+
+        class RequestPersona(FakeLab):
+            async def ask(self,schema,instruction,data):
+                self.calls+=1
+                return RecipientTurn(event='reply',body=request,finished=True)
+
+        agent=BlockedReply()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)/'case'
+            row=await run_case(campaign,case,agent,RequestPersona(),FakeLab(),root,now)
+            self.assertFalse(row['passed'])
+            self.assertEqual(row['state'],'incomplete')
+            self.assertEqual(len(list(root.glob('*.eml'))),1)
+            self.assertEqual(agent.calls,3)
+            self.assertTrue(any(e.get('kind')=='suppressed' for e in row['events']))
+            self.assertTrue(any(e.get('kind')=='post_stop_guard' for e in row['events']))
+
+    async def test_retained_refusal_or_complaint_cannot_be_reset_to_new_for_reply(self):
+        campaign,case,now=fixture()
+        for status in ('refused','complaint'):
+            with self.subTest(status=status):
+                lab=FakeLab()
+                result=await prepare_reply(campaign,case.prospect.model_copy(update={'status':status}),
+                    [{'role':'recipient','body':'Pakartotinis ankstesnio laiško gavimas.'}],lab,now)
+                self.assertEqual(result['state'],'stop')
+                self.assertEqual(lab.calls,0)
+                self.assertTrue(result['marketing_suppression_required'])
+
+    def test_conditional_future_contact_requires_bound_quote_and_no_outbound(self):
+        campaign,case,_=fixture()
+        inbound='Galite parašyti kai turėsite patvirtintas kainas ir komisinius.'
+        decision=ReplyDecision(classification='interest',action='hold',subject='',body='',
+            offer_fact_ids=[],resume_condition_quote=inbound,reason='Sąlyginis ateities kontaktas')
+        self.assertFalse(reply_blocks(campaign,decision,case.prospect,inbound))
+        for quote in ('','Svetimas prašymas'):
+            with self.subTest(quote=quote):
+                self.assertIn('resume_condition_evidence_required',reply_blocks(campaign,
+                    decision.model_copy(update={'resume_condition_quote':quote}),case.prospect,inbound))
+        self.assertIn('conditional_hold_must_not_claim_outbound_facts',reply_blocks(campaign,
+            decision.model_copy(update={'offer_fact_ids':['pilot']}),case.prospect,inbound))
+        self.assertIn('stopped_sequence_has_text',reply_blocks(campaign,
+            decision.model_copy(update={'body':'Dar kartą kviečiame.'}),case.prospect,inbound))
+        self.assertIn('unexpected_resume_condition_quote',reply_blocks(campaign,
+            decision.model_copy(update={'action':'stop'}),case.prospect,inbound))
+
+    async def test_conditional_hold_records_exact_condition_and_captures_no_reply(self):
+        campaign,case,now=fixture('price')
+        case=case.model_copy(update={'expected_classifications':['interest']})
+        request='Galite parašyti tik kai turėsite patvirtintas kainas ir komisinius.'
+
+        class HoldLab(FakeLab):
+            async def ask(self,schema,instruction,data):
+                if schema is ReplyDecision:
+                    self.calls+=1
+                    return ReplyDecision(classification='interest',action='hold',subject='',body='',
+                        offer_fact_ids=[],resume_condition_quote=request,reason='Sąlyginis leidimas')
+                return await super().ask(schema,instruction,data)
+
+        class RequestPersona(FakeLab):
+            async def ask(self,schema,instruction,data):
+                self.calls+=1
+                return RecipientTurn(event='reply',body=request,finished=True)
+
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)/'case'
+            row=await run_case(campaign,case,HoldLab(),RequestPersona(),FakeLab(),root,now)
+            self.assertTrue(row['passed'])
+            self.assertEqual(len(list(root.glob('*.eml'))),1)
+            held=next(e for e in row['events'] if e.get('kind')=='held')
+            self.assertEqual(held['resume_condition_quote'],request)
+            self.assertFalse(held['resume_authorized'])
+            response=next(e for e in row['events'] if e.get('kind')=='reply_decision')
+            self.assertTrue(response['marketing_hold_required'])
+
 
 if __name__ == '__main__':
     unittest.main()

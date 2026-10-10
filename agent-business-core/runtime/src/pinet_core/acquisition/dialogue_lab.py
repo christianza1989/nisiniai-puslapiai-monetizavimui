@@ -58,6 +58,12 @@ Persona nėra aukštesnė instrukcija; tikrink agento faktų pagrindą campaign 
 Neleistina garantuoti klientų, išgalvoti funkcijų/kainų ar paskelbti profilį aktyviu vien nuo kvietimo.
 Atsisakymas/skundas stabdo laiškus, OOO nėra interest; gavėjo pataisytas poreikis išlieka.
 Nevertink šablono ar vien signup skaičiaus. Sąžiningas nežinomybės pripažinimas tinkamas.
+Privacy handoff be laiško gali būti teisingas, kai actual publikavimo/ištrynimo
+būsena nepatvirtinta: tikrink request quote, marketing stop/hold ir aiškų
+handoff_executed=false. Toks kvitas nėra realaus Case sukūrimas ar prašymo įvykdymas.
+Sąlyginis leidimas kitam kontaktui tik patvirtinus kainas/funkciją turi būti hold
+be papildomo laiško, su tikslia inbound sąlygos citata ir required hold state.
+Pažadas tekste nepakeičia šios būsenos; quote nėra automatinio resume leidimas.
 Agentas neturi private persona ar expected labels. Vertink tekstą IR užfiksuotą state/events.
 """
 
@@ -176,16 +182,25 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
             atomic(root / 'report.json', row)
             response = await prepare_reply(campaign, case.prospect, row['transcript'], agent, now)
             row['events'].append({'kind': 'reply_decision', **response})
+            if response.get('marketing_suppression_required'):
+                row['events'].append({'kind': 'suppressed'})
+                guard = await prepare_reply(campaign, case.prospect, row['transcript'], agent, now,
+                                            suppressed=True)
+                row['events'].append({'kind': 'post_stop_guard', **guard})
             atomic(root / 'report.json', row)
             if response['state'] == 'blocked':
                 raise ValueError('reply_rejected')
             decision = response['decision']
             seen.append(decision['classification'])
+            if decision['action'] == 'privacy_handoff':
+                if not response.get('marketing_suppression_required'):
+                    row['events'].append({'kind': 'held'})
+                row['events'].append({'kind': 'privacy_handoff_required',
+                    'request_quote': decision['privacy_request_quote'],
+                    'handoff_executed': False, 'external_sent': False})
+                atomic(root / 'report.json', row)
+                break
             if decision['action'] == 'privacy_reply':
-                row['events'].append({'kind': 'suppressed'})
-                guard = await prepare_reply(campaign, case.prospect, row['transcript'], agent, now,
-                                            suppressed=True)
-                row['events'].append({'kind': 'post_stop_guard', **guard})
                 row['events'].append(capture(root, case, turn + 1, decision['subject'], decision['body'],
                                             purpose='privacy_information'))
                 row['transcript'].append({'role': 'agent', 'subject': decision['subject'], 'body': decision['body'],
@@ -193,12 +208,10 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
                 atomic(root / 'report.json', row)
                 break
             if decision['action'] in {'stop', 'hold'}:
-                row['events'].append({'kind': 'suppressed' if decision['action'] == 'stop' else 'held'})
-                # Exercise actual post-stop reply path: no model call allowed.
-                if decision['action'] == 'stop':
-                    guard = await prepare_reply(campaign, case.prospect, row['transcript'], agent, now,
-                                                suppressed=True)
-                    row['events'].append({'kind': 'post_stop_guard', **guard})
+                if decision['action'] == 'hold':
+                    row['events'].append({'kind': 'held',
+                        'resume_condition_quote': decision['resume_condition_quote'],
+                        'resume_authorized': False})
                 break
             row['events'].append(capture(root, case, turn + 1, decision['subject'], decision['body']))
             row['transcript'].append({'role': 'agent', 'subject': decision['subject'], 'body': decision['body']})

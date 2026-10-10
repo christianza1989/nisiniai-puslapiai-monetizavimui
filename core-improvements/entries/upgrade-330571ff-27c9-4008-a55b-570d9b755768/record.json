@@ -1,0 +1,23 @@
+{
+  "category": "workflow",
+  "summary": "Exact exported manual outreach was not reviewed: internal qualification notes leaked into two letters and all20 used one weak template without opt-out",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/output.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json"
+  ],
+  "evidence": [
+    "At source3e28b48904dc7a5081ec9676177a2bfe37d75e01, original immutable private15-packageSHA00785ef150a55a3e4db2da4902f2ffea1e47e1b2192fa9ce501aae5b684d8367 and5-packageSHAd1447cd5658e53e48a8b16d1563adb4feec20301638b0b8a5e005cb0237e7186 contain20manual drafts using identical subject/body wrapper and no opt-out",
+    "Full actual recipient-copy review found two internal geography notes in c13/c15 email bodies and internal service uncertainty in c17; first FAIL text remains in original packages and private review-v1",
+    "Cause is the root manual wrapper fact interpolation plus missed exact-copy review, not demonstrated failure of maintained acquisition researcher/reviewer prompts which already require personalization, benefit, one step and opt-out",
+    "Human requested personally inspecting all candidate letters and fresh bounded calibration. Copy quality, source fit/intent, contact/source rights, engine review and production transport acceptance are separate"
+  ],
+  "rollback": "Scoped revert this workflow instruction if contradicted by evidence; keep immutable original FAIL bodies/hashes and actual copy-review/calibration receipts. Never relabel20manual drafts as engine-ready or reenable sending from a content review",
+  "id": "upgrade-330571ff-27c9-4008-a55b-570d9b755768",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+  "createdAt": "2026-10-10T05:51:22.493Z"
+}

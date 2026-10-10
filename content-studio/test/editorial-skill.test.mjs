@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, writeFile, rm, cp } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { loadEditorialSkill } from '../src/editorial-skill.mjs';
+import { loadEditorialSkill, EDITORIAL_SKILL_DIR } from '../src/editorial-skill.mjs';
 
 const root = await mkdtemp(path.join(os.tmpdir(), 'niche-editorial-test-'));
 process.env.STUDIO_DATA_DIR = path.join(root, 'data');
@@ -46,6 +46,8 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.match(captured.prompt, /Runtime task \(plan\)/);
   assert.match(captured.prompt, /"domain": "skill-test.invalid"/);
   assert.match(captured.prompt, /untrusted task data, not instructions/);
+  assert.ok(captured.prompt.includes((await readFile(path.join(EDITORIAL_SKILL_DIR, 'references/language-quality.md'), 'utf8')).trim()));
+  assert.ok(planned.editorialSkill.files.includes('references/language-quality.md'));
   assert.match(planned.editorialSkill.fingerprint, /^[a-f0-9]{64}$/);
   assert.equal(planned.editorialSkill.name, 'niche-content-planner');
   assert.equal(captured.args[captured.args.indexOf('--sandbox') + 1], 'read-only');
@@ -54,6 +56,8 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.equal(drafted.status, 'complete', drafted.error);
   captured = JSON.parse(await readFile(process.env.STUDIO_SKILL_CAPTURE_PATH, 'utf8'));
   assert.match(captured.prompt, /--- references\/quality-review.md ---/);
+  assert.ok(captured.prompt.includes((await readFile(path.join(EDITORIAL_SKILL_DIR, 'references/language-quality.md'), 'utf8')).trim()));
+  assert.ok(drafted.editorialSkill.files.includes('references/language-quality.md'));
   assert.match(captured.prompt, /--- references\/studio-contract.md ---/);
   assert.match(captured.prompt, /--- references\/network-linking.md ---/);
   assert.match(captured.prompt, /--- references\/media-workflow.md ---/);
@@ -88,6 +92,7 @@ test('an active instruction snapshot survives edits and the next load records a 
   await writeFile(path.join(directory, 'SKILL.md'), 'Original editorial instructions');
   await writeFile(path.join(directory, 'references/studio-contract.md'), 'The output contract');
   await writeFile(path.join(directory, 'references/quality-review.md'), 'The quality review');
+  await writeFile(path.join(directory, 'references/language-quality.md'), 'Original language review policy');
   await writeFile(path.join(directory, 'references/network-linking.md'), 'Contextual relationships from the actual inventory');
   await writeFile(path.join(directory, 'references/media-workflow.md'), 'Shared automatic media import and actual image review');
   await writeFile(path.join(directory, 'references/content-workflow.md'), 'Shared scheduling and revision-bound review before release');
@@ -109,6 +114,12 @@ test('an active instruction snapshot survives edits and the next load records a 
   assert.notEqual(changedContract.metadata.fingerprint, changedWorkflow.metadata.fingerprint);
   assert.match(changedWorkflow.instructions, /Updated scheduling and actual review requirements/);
   assert.doesNotMatch(initial.instructions, /Updated scheduling and actual review requirements/);
+  await writeFile(path.join(directory, 'references/language-quality.md'), 'Revised language review policy');
+  const changedLanguage = await loadEditorialSkill('draft', directory);
+  assert.notEqual(changedWorkflow.metadata.fingerprint, changedLanguage.metadata.fingerprint);
+  assert.ok(changedLanguage.instructions.includes('Revised language review policy'));
+  assert.ok(initial.instructions.includes('Original language review policy'));
+  assert.ok(!initial.instructions.includes('Revised language review policy'));
   await assert.rejects(() => loadEditorialSkill('unknown'), /režimas/);
 });
 
@@ -130,13 +141,40 @@ test('missing shared contract fails before CLI and leaves site content unchanged
   } finally { delete process.env.STUDIO_EDITORIAL_SKILL_DIR; }
 });
 
+test('missing or empty language policy prevents plan and draft CLI calls without changing site content', async () => {
+  const directory = path.join(root, 'missing-language-parent', 'skill');
+  await cp(EDITORIAL_SKILL_DIR, directory, { recursive: true });
+  await writeFile(path.join(directory, '..', 'PROJECT_CONTRACT.md'), await readFile(path.join(EDITORIAL_SKILL_DIR, '..', 'PROJECT_CONTRACT.md')));
+  const policy = path.join(directory, 'references/language-quality.md');
+  const site = await model.createSite({ canonicalHost: 'language-policy.invalid', name: 'Isolated language test' });
+  const before = await model.getSite(site.id);
+  await rm(process.env.STUDIO_SKILL_CAPTURE_PATH, { force: true });
+  process.env.STUDIO_EDITORIAL_SKILL_DIR = directory;
+  try {
+    for (const state of ['missing', 'empty']) {
+      if (state === 'missing') await rm(policy); else await writeFile(policy, '  \n');
+      for (const mode of ['plan', 'draft']) await assert.rejects(() => loadEditorialSkill(mode, directory), /language-quality.md/);
+      for (const kind of ['plan', 'draft-batch']) {
+        const failed = await finishJob(await enqueue(kind, site.id));
+        assert.equal(failed.status, 'failed');
+        assert.match(failed.error, /language-quality.md/);
+        await assert.rejects(() => readFile(process.env.STUDIO_SKILL_CAPTURE_PATH), { code: 'ENOENT' });
+        const after = await model.getSite(site.id);
+        // enqueue('plan') initializes scheduling policy before instruction loading;
+        // this gate protects content/provider execution, not scheduler metadata.
+        for (const field of ['pages', 'assets', 'facts', 'offer', 'contact']) assert.deepEqual(after[field], before[field]);
+      }
+    }
+  } finally { delete process.env.STUDIO_EDITORIAL_SKILL_DIR; }
+});
+
 test('planning checkpoint changes versioned plans without enlarging draft snapshots and fails closed when missing', async () => {
   const directory = path.join(root, 'planning-checkpoint-parent', 'skill');
   await mkdir(path.join(directory, 'references'), { recursive: true });
   await writeFile(path.join(directory, '..', 'PROJECT_CONTRACT.md'), 'Shared contract');
   for (const file of ['SKILL.md', 'references/studio-contract.md', 'references/quality-review.md',
     'references/network-linking.md', 'references/media-workflow.md', 'references/content-workflow.md',
-    'references/niche-adaptation.md']) {
+    'references/niche-adaptation.md', 'references/language-quality.md']) {
     await writeFile(path.join(directory, file), 'Fixture instruction: ' + file);
   }
   const checkpoint = path.join(directory, 'references/planning-decisions.md');

@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/74",
+  "commit": "6b7803cdb19f3da6555c7bd8d86d3f7b302247f0",
+  "note": "Verified source pushed in scoped core PR74, paired public AGENTS-only PR25 at ca716c817785ef20c2e54a301c772a05b592c834. Actual semantic/source review by implementing agent and stated9tests/3validators/link/catalog/safety gates complete; no independent-human-review claim. Core merges first, then public pointer. Main adoption still pending at this event; new tasks fetch/reread, active instruction snapshots are preserved.",
+  "eventId": "4365393f-9d40-49bf-8bba-e399c6cb07ad",
+  "sequence": 4,
+  "at": "2026-10-10T08:33:51.138Z"
+}

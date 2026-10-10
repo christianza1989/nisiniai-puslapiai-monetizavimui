@@ -1,0 +1,28 @@
+# Privaloma viešų tekstų kalbos kokybė
+
+Taikoma visų naujų verslų ir esamų svetainių tekstų kūrimui bei redagavimui: puslapių ir straipsnių pavadinimams, aprašams, pastraipoms, sąrašams, nuorodoms, paveikslų aprašams, navigacijai, mygtukams, formoms ir viešiems sąsajos pranešimams. Rašymo kalbą ir adresatą nustato konkrečios svetainės locale, verslo faktai ir vartotojo pavedimas. Lietuviško verslo tekstai turi būti taisyklingi, rišlūs, natūralūs ir įtraukiantys lietuviškai; kitoms kalboms taikoma jų įprasta sintaksė bei terminija.
+
+Tai autoriaus pareiga nuo pirmo juodraščio, ne papildoma paslauga po savininko pastabų. **Tas pats agentas pats parašo, atlieka atskirą redagavimo peržiūrą ir ištaiso tekstą. Antro agento ar naujos sesijos nereikia.** Rašymo ir patikros instrukcijos nepakeičia verslo faktų, publikavimo, išlaidų ar veiksmų autorizacijos.
+
+## Kaip rašyti
+
+1. Pirmiausia suprask skaitytojo klausimą ir paaiškink, ką jis sužinos arba galės padaryti. Rašyk tiesiogiai pasirinkta kalba. Remdamasis kitos kalbos šaltiniu, perteik jo prasmę savais žodžiais; nekopijuok žodžių tvarkos, idiomų ar abstrakčių daiktavardžių konstrukcijų.
+2. Kiekvienas sakinys turi aiškų veikėją, veiksmą ir jo objektą, kur jų reikia. Patikrink linksnius, prielinksnius, giminės ir skaičiaus derinimą, šalutinius sakinius bei skyrybą. Išvardijimas turi tęsti tą patį klausimą: po „kur“ negalima sumaišyti vietos ir dokumentų kiekio. Įvardžiai „tai“, „šis“ ir „jis“ turi aiškiai nurodyti, apie ką kalbama.
+3. Neaiškias frazes keisk konkrečiu paaiškinimu. „Programinis kelias“, „archyvo paskirties vieta“ ar „kokybės peržiūra“ be konteksto nepaaiškina, kokia programa naudojama, kaip perduodamas dokumentas, kur saugomas failas ar kas vertinama. Keisk visą sakinį, jei vien žodžių pakeitimas palieka netaisyklingą konstrukciją.
+4. Rinkis įprastus lietuviškus atitikmenis, kai jie tikslūs: „bandomasis diegimas“, „prijungimas“, „ekrano raiška“, „nešiojamasis kompiuteris“, „DI konsultantas“. Be reikalo nevartok svetimybių ir netaisyklingų vertinių. Tikrus produktų pavadinimus, modelių žymėjimą, reikalingas santrumpas ir nustatytus profesinius terminus išsaugok; prireikus trumpai paaiškink. Sąrašas nėra aklas draudžiamų žodžių filtras: „užkertamas kelias“ ir „kelias parašo vietas“ turi taisyklingą reikšmę.
+5. Kvietimas veikti turi skambėti kaip žmogaus kalba ir atitikti tikrą veiksmą. Pavyzdžiui, parašo planšečių atrankoje „Aptarkime tinkamą komplektą“ galima keisti į „Padėsime išsirinkti parašo planšetę“, o formoje rašyti „Kaip galime padėti?“. Tai situacijos pavyzdžiai, ne visų verslų šablonas. Netinkančio kvietimo nekartok kiekviename straipsnyje.
+6. Pastraipos turi tęsti mintį ir suteikti naujos informacijos. Atsisakyk tuščių įžangų, pompastikos, bendrinių pažadų ir mechaniškai kartojamų aprašų. Kiekvienas produktas ar straipsnis turi savą paaiškinimą pagal tikrą skirtumą. Įtraukiantis tekstas atsiranda iš aiškumo, naudingo pavyzdžio ir suprantamos eigos, ne iš nepagrįstų superlatyvų.
+7. Trumpindamas nekeisk faktų. Išsaugok skaičius, vienetus, sąlygas, neiginius, modelių ir programų skirtumus, versijas, licencijų skaičiavimo prasmę, terminus ir teisinius ribojimus. Darbo vietų skaičiaus negalima pakeisti žmonių ar įrenginių skaičiumi, jei nuo jo priklauso licencija. Iliustracija netampa atliktu kliento projektu. Nepatvirtinta galimybė netampa besąlygiu pažadu.
+8. SEO ir GEO tekstai turi tą pačią kalbos kokybę. Natūralūs raktažodžių linksniai ir sakinio sandara svarbesni už pažodinį paieškos frazės kartojimą. Metadata turi tiksliai apibūdinti puslapį; nuorodos tekstas turi derėti su visu sakiniu ir tikslo turiniu. Pakeitus antraštę patikrink ją kartojančias etiketes, nekeisdamas URL, ID ar publikavimo datos vien dėl kalbos.
+
+## Privaloma saviredakcija prieš grąžinant ar tvirtinant
+
+Perskaityk **visą galutinį tekstą**, ne vien pirmą pastraipą ar pakeistų žodžių sąrašą. Straipsnių partijoje peržiūrėk kiekvieną tvirtinamą straipsnį. Pirma tikrink prasmę ir minties tęstinumą, paskui sakinių sandarą, terminiją, skyrybą ir pasikartojimus. Klausk: ar taip situaciją paaiškintų taisyklingai kalbantis žmogus; ar skaitytojas supras veiksmą iš pirmo karto; ar neliko šaltinio kalbos konstrukcijos?
+
+Po pataisų palygink su šaltiniu: ar neprarastas neiginys, sąlyga, skaičius arba apribojimas? Skaitinius ir techninės prasmės skirtumus tikrink atskirai. Pakartotinai perskaityk pataisytą pastraipą bei į ją vedančias nuorodas. Vien gramatikos įrankio, regex, instrukcijų SHA, testų ar SEO balo nepakanka kalbos priėmimui.
+
+Patikrink ir galutinėje sąsajoje matomą tekstą, nes rendereris gali sutrumpinti, padalyti sakinį ar naudoti seną hardcoded frazę. Kai užduotis apima realizavimą, prieš diegimą peržiūrėk pakeistas sąsajas kompiuterio ir telefono ekrane; nedeklaruok naršyklės patikros, jei skaitei tik šaltinį.
+
+**Žinomos kalbos klaidos yra redakcinės kliūtys.** Ištaisyk jas prieš `recordEditorialReview` ir patvirtinimą. Jei tikrai neišspręsta prasmė ar terminija, įrašyk konkrečią privačią `factChecks` pastabą, laikyk paveiktą puslapį juodraščiu ir tęsk nepriklausomus darbus. Neprašyk savininko patvirtinti įprastų kalbos pasirinkimų ir nesukurk fiktyvaus PASS.
+
+Esamame peržiūros įraše, `presentation` paaiškinime, nurodyk tikrai atliktą pilno teksto kalbos patikrą, taisytų problemų pobūdį, nuorodų ir techninės prasmės kontrolę bei faktinės sąsajos peržiūros apimtį ar ribą. Planui, kuriam šio įrašo nėra, pataisyk visus grąžinamus viešus tekstus tame pačiame plane; nepridėk schemos nepalaikomų laukų. Po vėlesnių teksto pakeitimų peržiūrėk naują reviziją. Senų svetainių ar ankstesnių auditų kokybės nepatvirtink atgaline data vien dėl naujos taisyklės.

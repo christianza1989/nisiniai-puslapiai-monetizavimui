@@ -1,5 +1,7 @@
 # Bendra visų svetainių turinio sistema
 
+**Privaloma teksto saviredakcija — 2026-10-10:** visoms nišoms nuo pirmo juodraščio taikomos [kalbos kokybės taisyklės](SKILLS/niche-content-planner/references/language-quality.md). Autorius pats perskaito visą galutinį tekstą, pataiso sintaksę, vertinius ir neaiškias formuluotes, patikrina nuorodas bei išsaugotą faktinę prasmę; atskiro agento ar sesijos nereikia. Žinomos neištaisytos kalbos klaidos laikomos privačiomis redakcinėmis kliūtimis iki patvirtinimo. Esamo `recordEditorialReview.evidence.presentation` paaiškinime fiksuojama faktinė kalbos ir sąsajos peržiūros apimtis, ne automatiškai įrašytas PASS. Schema ir senų patvirtinimų istorija nekeičiama.
+
 2026-10-05. Vienas workflow visoms nišoms pagal siteId, įskaitant Madbeauty. Viešos V1/V2 schemos, publikavimo filtrai ir medijos importas nekopijuojami kiekvienai svetainei.
 
 ## Veikiantis kelias

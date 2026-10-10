@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original loader tests6PASS/1FAIL retained privately: initial new assertion incorrectly expected enqueue scheduling metadata unchanged; corrected invariant to unchanged pages/assets/facts/offer/contact while still proving no CLI invocation. No product gate weakened. Windows python alias absent and bundled Python lacked PyYAML; used existing project venv validator instead, no runtime/provider change.",
+  "eventId": "9f1b5a79-1ddd-4d97-91d7-d0ed34dcb876",
+  "sequence": 2,
+  "at": "2026-10-10T08:31:49.235Z"
+}

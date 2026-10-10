@@ -104,6 +104,27 @@ test('native useful rich content is applied losslessly and retains actual unreso
   assert.deepEqual(await Promise.all(originalNames.map(name => readFile(path.join(fixture.revisionDir, name)))), originals);
 });
 
+test('validate returns exact normalized native candidate and never mutates any intake or site bytes', async t => {
+  const fixture = await sandbox(t), prepared = fixture.prepare(), current = await readFile(fixture.filename);
+  const names = ['intake-manifest.json', 'intake-context.json', 'source-draft.json'];
+  const originals = await Promise.all(names.map(name => readFile(path.join(fixture.revisionDir, name))));
+  const output = richOutput();
+  const request = { command: 'validate', expectedRevisionHash: prepared.expectedRevisionHash,
+    expectedPlanningHash: prepared.expectedPlanningHash, expectedContextHash: prepared.expectedContextHash, output };
+  const result = fixture.call(request);
+  assert.equal(result.status, 0); assert.equal(result.value.state, 'validated');
+  assert.deepEqual(result.value.output, output); assert.equal(result.value.outputHash, digest(output));
+  assert.deepEqual(await readFile(fixture.filename), current);
+  assert.deepEqual(await Promise.all(names.map(name => readFile(path.join(fixture.revisionDir, name)))), originals);
+  const invented = richOutput('page-' + 'f'.repeat(24));
+  assert.equal(fixture.call({ ...request, output: invented }).value.code, 'writer_unknown_link');
+  assert.deepEqual(await readFile(fixture.filename), current);
+  assert.equal(fixture.call({ ...request, expectedContextHash: '0'.repeat(64) }).value.code, 'writer_context_stale');
+  assert.deepEqual(await readFile(fixture.filename), current);
+  const applied = fixture.apply(prepared, result.value.output);
+  assert.equal(applied.status, 0); assert.equal(applied.value.outputHash, result.value.outputHash);
+});
+
 for (const mutation of ['content', 'planning', 'site']) test(`stale ${mutation} context cannot overwrite the accepted current private draft`, async t => {
   const fixture = await sandbox(t), prepared = fixture.prepare();
   fixture.mutate({ content: `await m.editPage(siteId,pageId,{title:'Naujas jau išsaugotas puslapio pavadinimas'});`,

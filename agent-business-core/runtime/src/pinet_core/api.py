@@ -32,6 +32,7 @@ from .contracts import (
     WorkerEvent,
 )
 from .control.routes import router as control_router
+from .content_work.routes import router as content_work_router
 from .creation.routes import router as creation_router
 from .customer.routes import router as customer_router
 from .db import db
@@ -66,6 +67,7 @@ app.include_router(task_router)
 app.include_router(operations_router)
 app.include_router(customer_router)
 app.include_router(creation_router)
+app.include_router(content_work_router)
 app.include_router(public_router)
 
 

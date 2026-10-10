@@ -9,6 +9,7 @@ from pinet_core.creation.review import (
     CoordinatorDecision,
     CriticReview,
     EvidenceReceipt,
+    coordinator_actions,
     coordinator_prompt,
     critic_prompt,
     critic_sha256,
@@ -121,6 +122,20 @@ def test_actual_corrections_and_unknown_checks_survive_coordinator(draft):
     assert final["decision"] == "revise" and final["correction_ids"] == ["f_1"]
     assert set(final["remaining_checks"]) == set(CHECK_KINDS)
     assert final["full_f1_status"] == final["launch_status"] == "UNVERIFIED"
+
+
+def test_coordinator_provider_selects_only_exact_corrections_and_remaining_checks(draft):
+    critic = verify(report(draft), draft)
+    actions = coordinator_actions(critic)
+    assert critic["findings"][0]["correction"] in actions
+    assert len(actions) == 10 and len(set(actions)) == 10
+    context = {"draft": draft, "critic": critic, "stage": "private_draft", "round_number": 1, "receipts": []}
+    schema = output_schema("coordinator", context)
+    assert schema["properties"]["next_actions"]["items"]["enum"] == actions
+    prompt = coordinator_prompt(**context)
+    assert 'allowed_next_actions' in prompt and all(action in prompt for action in actions)
+    assert "проверить" not in json.dumps(schema, ensure_ascii=False)
+    assert draft_sha256(draft) == schema["properties"]["draft_sha256"]["const"]
 
 
 def test_private_draft_acceptance_preserves_separate_real_world_gates(draft):

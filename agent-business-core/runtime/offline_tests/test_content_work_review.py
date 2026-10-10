@@ -129,6 +129,14 @@ def test_native_schema_pins_exact_refs_hash_round_and_instructions():
     modified["instructionHash"] = "b" * 64
     assert adapter.instruction_hash("critic", prepared) != adapter.instruction_hash("critic", modified)
 
+    report = critic(candidate, receipts, "revise")
+    coordinator_context = review.context(candidate, 1, receipts, prepared, report)
+    coordinator_schema = review.output_schema("coordinator", coordinator_context)
+    choices = coordinator_context["allowed_next_actions"]
+    assert report["findings"][0]["correction"] in choices
+    assert coordinator_schema["properties"]["next_actions"]["items"]["enum"] == choices
+    assert len(choices) == 9  # One correction plus eight factually unverified checks.
+
 
 async def test_guide_adapter_uses_fixed_no_tools_transport_and_native_schema(tmp_path, monkeypatch):
     import json

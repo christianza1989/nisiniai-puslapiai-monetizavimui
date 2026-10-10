@@ -12,7 +12,7 @@ from test_customer_public import customers, verified  # noqa: F401
 from pinet_core.config import settings
 from pinet_core.control.models import Membership
 from pinet_core.control.routes import scope
-from pinet_core.creation import adapter, team, worker
+from pinet_core.creation import adapter, renderer, team, worker
 from pinet_core.creation.models import Artifact, Attempt, Job, Revision, TeamEvent
 from pinet_core.creation.review import critic_sha256, draft_sha256
 from pinet_core.models import utcnow
@@ -288,6 +288,70 @@ def structural_runner(calls, *, always_broken=False):
         return value, {"usage": {"input_tokens": 100, "output_tokens": 20},
                        "web_search_count": 2 if len(calls) == 1 else 0}
     return run
+
+
+@pytest.mark.parametrize("defect", [None, "stale", "foreign"])
+async def test_targeted_language_round_preserves_unrelated_fields_and_real_review(creation, defect):
+    from copy import deepcopy
+
+    c = creation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    original = graph_candidate(broken=False)
+    original["research"] = [{"title": "Sintetinis tyrimo šaltinis", "url": "https://example.org/tyrimas",
+        "market": "Lietuva", "finding": "Osa mokymų gali būti naudingi mažoms komandoms; vykdymas dar nepatvirtintas.",
+        "is_counterevidence": False}]
+    original = renderer.normalize_creator(original)
+    saved, calls = deepcopy(original), []
+    expected = deepcopy(original)
+    expected["research"][0]["finding"] = "Dalis mokymų gali būti naudingi mažoms komandoms; vykdymas dar nepatvirtintas."
+
+    async def run(context, authorized, *, role, seconds):
+        assert await authorized() and 0 < seconds <= settings().creation_runner_seconds
+        calls.append(role)
+        if role == "creator" and len(calls) == 1:
+            value = deepcopy(original)
+        elif role == "creator":
+            assert context["language_repair"] is True and context["permitted_web_actions"] == 0
+            assert "current_draft" not in context and "idea" not in context
+            assert context["expected_instruction_hash"] == adapter.role_instruction_hash("creator", language_repair=True)
+            bound = context["language_patch_context"]
+            assert bound["allowed_refs"] == ["draft:/research/0/finding"]
+            value = {"candidate_sha256": bound["candidate_sha256"], "critic_sha256": bound["critic_sha256"],
+                "edits": [{"field": "draft:/research/0/finding", "value": expected["research"][0]["finding"]}]}
+            if defect == "stale":
+                value["critic_sha256"] = "b" * 64
+            elif defect == "foreign":
+                value["edits"][0]["value"] = "Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto."
+        elif role == "critic":
+            if context["round_number"] == 1:
+                value = critic(context, "revise")
+                value["findings"][0].update(evidence_refs=["draft:/research/0/finding", "receipt:r_language_quality"],
+                    explanation="Tyrimo išvadoje liko netaisyklingas kalbos žodis.",
+                    correction="Pakeisti svetimą žodį lietuvišku atitikmeniu, išsaugant sakinio prasmę.")
+            else:
+                failed = any(check["status"] == "FAIL" for check in context["receipts"])
+                value = critic(context, "revise" if failed else "accept_draft")
+                if not failed:
+                    assert context["draft"] == expected
+        else:
+            value = coordinator(context)
+        return value, {"usage": {"input_tokens": 31, "output_tokens": 14}, "web_search_count": 0}
+
+    assert await worker.execute_once(role_runner=run)
+    assert original == saved
+    view = await team_read(c, auth, row["creation_id"])
+    assert calls[:4] == ["creator", "critic", "coordinator", "creator"]
+    assert len(calls) == (4 if defect == "stale" else 6)
+    assert view["attempts"][3]["instruction_hash"] == adapter.role_instruction_hash("creator", language_repair=True)
+    assert view["attempts"][0]["instruction_hash"] != view["attempts"][3]["instruction_hash"]
+    assert view["accepted_candidate_sha256"] == (draft_sha256(expected) if defect is None else None)
+    async with scope(user=me["user_id"]) as tx:
+        job = await tx.scalar(select(Job).where(Job.creation_id == row["creation_id"]))
+        assert len(job.usage["attempts"]) == len(calls)
+        assert job.failure_code == (None if defect is None else "output_invalid" if defect == "stale" else "review_limit")
+        assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"),
+            {"e": c["environment"], "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}) == len(calls)
 
 
 @pytest.mark.parametrize("always_broken", [False, True])

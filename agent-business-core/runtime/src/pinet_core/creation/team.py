@@ -6,7 +6,7 @@ from sqlalchemy import func, select, text
 from ..config import settings
 from ..control.routes import scope
 from ..models import new_id, utcnow
-from . import adapter, renderer
+from . import adapter, language_patch, renderer
 from .models import Attempt, Job, Revision, TeamEvent
 from .service import authority, binding
 from .team_wire import AttemptView, EventData, TeamEventView, TeamView, TokenUsage
@@ -34,7 +34,7 @@ async def _event(tx, creation, job, attempt, state, summary, payload):
     await tx.flush()
 
 
-async def reserve(claimed, role, round_number, *, structure_repair=False):
+async def reserve(claimed, role, round_number, *, structure_repair=False, language_repair=False):
     from .worker import locked
     if role not in START or round_number not in (1, 2):
         raise adapter.RunnerError("review_invalid")
@@ -57,7 +57,8 @@ async def reserve(claimed, role, round_number, *, structure_repair=False):
             raise adapter.RunnerError("review_limit")
         attempt = Attempt(id=new_id(), creation_id=creation.id, job_id=job.id, run_id=job.run_id, sequence=sequence + 1,
             role=role, round_number=round_number, stage="private_draft", source_revision=job.source_revision,
-            instruction_hash=adapter.role_instruction_hash(role, structure_repair=structure_repair), model="gpt-6-luna", **binding(creation))
+            instruction_hash=adapter.role_instruction_hash(role, structure_repair=structure_repair,
+                language_repair=language_repair), model="gpt-6-luna", **binding(creation))
         tx.add(attempt)
         await tx.flush()
         await _event(tx, creation, job, attempt, "reserved", START[role], {})
@@ -119,7 +120,8 @@ async def run(claimed, still_authorized, role_runner=None):
             raise TeamError("authorization_revoked", receipts)
         try:
             attempt_id = await reserve(claimed, role, round_number,
-                structure_repair=role == "creator" and data.get("structure_repair") is True)
+                structure_repair=role == "creator" and data.get("structure_repair") is True,
+                language_repair=role == "creator" and data.get("language_repair") is True)
         except adapter.RunnerError as error:
             raise TeamError(error.code, receipts) from None
         seconds = deadline - monotonic()
@@ -171,6 +173,7 @@ async def run(claimed, still_authorized, role_runner=None):
         return value, receipt
 
     for round_number in (1, 2):
+        normalize_candidate = renderer.normalize
         creator_context = {**context, "permitted_web_actions": remaining_web,
                            "expected_instruction_hash": adapter.role_instruction_hash("creator")}
         if repair:
@@ -180,11 +183,20 @@ async def run(claimed, still_authorized, role_runner=None):
                 expected_instruction_hash=adapter.role_instruction_hash("creator", structure_repair=True),
                 feedback="Įgyvendink tikslias serverio struktūros patikros pataisas ir grąžink visą naują juodraštį.")
         if candidate:
-            prior, projection = renderer.context_projection(candidate)
-            creator_context.update(current_draft=prior, prior_context_projection=projection,
-                critic_feedback=critic, feedback="Įgyvendink tikslias kritiko pataisas ir grąžink visą naują juodraštį.")
+            if patch := language_patch.context(candidate, critic):
+                # Only exact criticized string values, not a whole business rewrite or new research.
+                original_candidate, original_critic = candidate, critic
+                creator_context = {"language_repair": True, "language_patch_context": patch,
+                    "permitted_web_actions": 0,
+                    "expected_instruction_hash": adapter.role_instruction_hash("creator", language_repair=True)}
+                def normalize_candidate(value):
+                    return language_patch.apply(original_candidate, original_critic, value)
+            else:
+                prior, projection = renderer.context_projection(candidate)
+                creator_context.update(current_draft=prior, prior_context_projection=projection,
+                    critic_feedback=critic, feedback="Įgyvendink tikslias kritiko pataisas ir grąžink visą naują juodraštį.")
         try:
-            candidate, receipt = await call("creator", round_number, creator_context, renderer.normalize)
+            candidate, receipt = await call("creator", round_number, creator_context, normalize_candidate)
         except TeamError as error:
             last = error.receipt["attempts"][-1] if error.receipt.get("attempts") else {}
             if (round_number == 1 and error.code == "output_invalid" and last.get("creator_repair_context")):

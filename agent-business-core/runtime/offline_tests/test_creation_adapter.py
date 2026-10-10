@@ -27,6 +27,47 @@ def test_structure_only_profile_is_smaller_exact_canonical_context_and_disables_
     assert digest != role_instruction_hash("creator")
 
 
+async def test_language_patch_profile_uses_exact_schema_no_web_and_retains_raw_edits(tmp_path, monkeypatch):
+    import sys
+    from pathlib import Path
+
+    from test_creation_language_patch import candidate as candidate_fixture
+    from test_creation_language_patch import critic, response
+    from test_creation_review import draft as draft_fixture
+
+    from pinet_core.config import settings
+    from pinet_core.creation import adapter, language_patch
+
+    candidate = candidate_fixture.__wrapped__(draft_fixture.__wrapped__())
+    bound = language_patch.context(candidate, critic(candidate))
+    raw = response(bound)
+    policy, digest = adapter.instructions(language_repair=True)
+    assert len(policy.encode()) < 10000 and digest == language_patch.instructions()[1]
+    assert digest != adapter.role_instruction_hash("creator")
+    monkeypatch.setattr(adapter, "available", lambda: (Path(sys.executable), tmp_path))
+    monkeypatch.setattr(settings(), "creation_web_search_enabled", True)
+    calls = []
+    async def execute(args, **kwargs):
+        assert 'web_search="disabled"' in args
+        assert json.loads((kwargs["cwd"] / "output.schema.json").read_text("utf-8")) == language_patch.output_schema(bound)
+        assert len(kwargs["prompt"].encode()) < 20000
+        calls.append(args)
+        kwargs["output"].write_text(json.dumps(raw), encoding="utf-8")
+        return raw, {"usage": {"input_tokens": 20, "output_tokens": 8}, "web_search_count": 0}
+    monkeypatch.setattr(adapter, "execute", execute)
+    async def authorized():
+        return True
+    context = {"language_repair": True, "language_patch_context": bound, "permitted_web_actions": 0,
+               "expected_instruction_hash": digest}
+    value, receipt = await adapter.run_role(context, authorized, role="creator", seconds=30)
+    assert value == raw and receipt["instruction_hash"] == digest and len(calls) == 1
+    with pytest.raises(RunnerError, match="review_invalid"):
+        await adapter.run_role({**context, "permitted_web_actions": 1}, authorized, role="creator", seconds=30)
+    with pytest.raises(RunnerError, match="review_invalid"):
+        adapter.instructions(language_repair=True, structure_repair=True)
+    assert len(calls) == 1
+
+
 async def test_adapter_preserves_graph_failed_original_and_bounded_repair_context(tmp_path, monkeypatch):
     import sys
     from copy import deepcopy

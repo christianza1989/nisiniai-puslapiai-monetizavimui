@@ -19,6 +19,7 @@ from . import (
 )
 from .agent_preparation.routes import router as agent_preparation_router
 from .config import settings
+from .content_work.routes import router as content_work_router
 from .contracts import (
     Candidate,
     ContactInput,
@@ -27,13 +28,13 @@ from .contracts import (
     PolicyUpdate,
     RoutingUpdate,
     Start,
+    StartV2,
     Strict,
     ToolCall,
     UsageReceipt,
     WorkerEvent,
 )
 from .control.routes import router as control_router
-from .content_work.routes import router as content_work_router
 from .creation.routes import router as creation_router
 from .customer.routes import router as customer_router
 from .db import db
@@ -414,6 +415,11 @@ async def ui_ack(site_id: str, cid: str, request: Request, data: UIAck):
 async def simulation(site_id: str, data: Start):
     if not settings().allow_simulation or data.mode != "simulation":
         raise HTTPException(403, "local simulation only")
+    return await service.start(await service.business(site_id), data, simulation=True)
+
+
+@app.post("/internal/sites/{site_id}/simulation/v2", dependencies=[Depends(worker_auth)])
+async def simulation_v2(site_id: str, data: StartV2):
     return await service.start(await service.business(site_id), data, simulation=True)
 
 

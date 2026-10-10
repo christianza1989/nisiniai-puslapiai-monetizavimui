@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Approved-snapshot fixture reached a real successful canonical release, then the focused assertion failed because it used nonexistent release.packageFile; maintained releaseContent returns path. Corrected the assertion to exact actual path and manifestPath bytes, without changing release/public code. Original7PASS2FAIL and subsequent fixture-field FAIL remain recorded.",
+  "eventId": "e23156c8-67b7-4373-b7ea-64ac1205b31b",
+  "sequence": 3,
+  "at": "2026-10-10T12:34:59.677Z"
+}

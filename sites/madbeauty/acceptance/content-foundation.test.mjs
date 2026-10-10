@@ -78,12 +78,13 @@ test('Functional CTA readiness is independent of indexing, public supply, deploy
   assert.ok(!JSON.stringify(registry).includes('content-fixture@example.com'));
  }finally{f.store.close();}
 });
-test('SSR national→city→real provider, empty-city404, unknown and inactive extensions never become supply',async()=>{
+test('SSR national offers and one-page city filtering retain real provider links, legacy city routes and empty-city404 gates',async()=>{
  const f=fixture(),server=createAppServer({apiHandler:f.handler,contentClock:()=>now});await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port;
  try{
   assert.equal(f.handler.platform.catalog({taxonomyServiceId:'nagai',city:'Vilnius'})[0].id,f.service.id);
   assert.equal(f.handler.platform.catalog({taxonomyServiceId:'kirpimai-moteru-kirpimas'}).length,0);
-  const national=await fetch(origin+'/paslaugos/nagai');assert.equal(national.status,200);const html=await national.text();assert.match(html,/href="\/paslaugos\/nagai\/vilnius"/);assert.match(html,/id="catalogue-city"/);assert.equal((html.match(/<option value="/g)||[]).length,104);assert.match(national.headers.get('x-robots-tag'),/noindex/);
+  const national=await fetch(origin+'/paslaugos/nagai');assert.equal(national.status,200);const html=await national.text();assert.match(html,new RegExp('/meistrai/'+f.org.id));assert.match(html,/id="catalogue-picker"/);assert.equal((html.match(/<option value="/g)||[]).length,104);assert.match(national.headers.get('x-robots-tag'),/noindex/);
+  const filtered=await fetch(origin+'/paslaugos/nagai?rodyti=1&miestas=kaunas',{redirect:'manual'});assert.equal(filtered.status,200);const filteredHtml=await filtered.text();assert.match(filteredHtml,/Šiame mieste pasiūlymų dar nėra/);assert.match(filteredHtml,/miestas=vilnius/);assert.match(filteredHtml,/value="kaunas" selected/);assert.doesNotMatch(filteredHtml,/class="picker-offer"/);
   const local=await fetch(origin+'/paslaugos/lakavimas-gelinis-lakavimas/vilnius');assert.equal(local.status,200);assert.match(await local.text(),new RegExp('/meistrai/'+f.org.id));
   for(const url of ['/paslaugos/lakavimas-gelinis-lakavimas/kaunas','/paslaugos/unknown','/paslaugos/nagai/unknown'])assert.equal((await fetch(origin+url)).status,404,url);
   const ext=TAXONOMY_NODES.find(n=>n.scope==='extension');assert.equal((await fetch(origin+'/paslaugos/'+ext.id)).status,404);

@@ -1,0 +1,11 @@
+import path from 'node:path';
+import {createAppServer} from '../prototype/app-server.mjs';
+import {openStore} from '../backend/store.mjs';
+import {createApiHandler} from '../backend/http.mjs';
+import {initializeFixtureRuntime} from '../backend/fixture-runtime.mjs';
+const port=8940;
+const store=openStore({filename:path.join(import.meta.dirname,'private-runtime/platform-preview.sqlite'),fixturePreview:true});
+initializeFixtureRuntime(store);
+const server=createAppServer({apiHandler:createApiHandler(store,{origin:'http://127.0.0.1:'+port}),enabled:false});
+server.on('close',()=>store.close());
+server.listen(port,'127.0.0.1',()=>console.log('Service picker preview: http://127.0.0.1:'+port+'/paslaugos/veido-kaukes'));

@@ -71,6 +71,50 @@ async def result(context, authorized):
     return draft(), {'usage': {'input_tokens': 123, 'output_tokens': 45}, 'web_search_count': 0}
 
 
+async def test_language_failure_preserves_provider_usage_without_accepting_revision(creation):
+    c = creation
+    _, auth, me = await verified(c)
+    item, _ = await start(c, auth, me)
+    cid = item['creation_id']
+
+    async def mixed(context, authorized):
+        assert await authorized()
+        value = draft()
+        value['pages'][1]['sections'][0]['body'] = (
+            'Apskaičiuoti mokymų ettevalmistus- ja toteutuskustannukset sekä päättää hinta ennen ensimmäistä toteutusta.')
+        return value, {'usage': {'input_tokens': 143, 'output_tokens': 56}, 'web_search_count': 1}
+
+    assert await worker.execute_once(mixed)
+    read = (await c['client'].get('/customer/v2/creations/'+cid, headers=auth)).json()['data']
+    assert read['status'] == 'failed' and read['failure_code'] == 'language_quality_failed'
+    assert read['current_revision'] is None
+    assert not (await c['client'].get('/customer/v2/creations/'+cid+'/artifacts', headers=auth)).json()['data']['items']
+    async with scope(user=me['user_id']) as tx:
+        job = await tx.scalar(select(Job).where(Job.creation_id == cid))
+        assert job.usage['usage']['input_tokens'] == 143
+        assert job.usage['language_screening']['status'] == 'FAIL'
+
+
+@pytest.mark.parametrize('field', ['assistant_reply', 'remaining_gates', 'page_title', 'research_finding', 'tool_purpose'])
+def test_language_screen_covers_all_customer_facing_output_fields(field):
+    value = draft()
+    mixed = 'Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto.'
+    if field == 'assistant_reply':
+        value['assistant_reply'] = mixed
+    elif field == 'remaining_gates':
+        value['remaining_gates'][0] = mixed
+    elif field == 'page_title':
+        value['pages'][0]['title'] = mixed
+    elif field == 'research_finding':
+        value['research'] = [{'title': 'Official Research', 'url': 'https://example.com/research',
+                              'market': 'Užsienio rinka', 'finding': mixed, 'is_counterevidence': False}]
+    else:
+        value['tools'][0]['purpose'] = mixed
+    with pytest.raises(RunnerError) as error:
+        renderer.language_screening(value)
+    assert error.value.code == 'language_quality_failed'
+
+
 async def test_durable_queue_private_artifacts_and_exact_revision(creation):
     c = creation
     _, auth, me = await verified(c)

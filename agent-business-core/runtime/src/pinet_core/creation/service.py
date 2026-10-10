@@ -115,7 +115,9 @@ async def expire(tx, creation):
 async def fail(tx, creation, job, code):
     job.status, job.failure_code, job.lease_until, job.finished_at = "failed", code, None, utcnow()
     creation.status, creation.stage, creation.failure_code, creation.active_job_id = "failed", "failed", code, None
-    await event(tx, creation, job, "Rengimo užbaigti nepavyko. Ankstesnės rezultato versijos išsaugotos.")
+    message = ("Juodraštyje aptiktas kalbų maišymasis. Nauja versija nepriimta; ankstesni rezultatai išsaugoti."
+               if code == "language_quality_failed" else "Rengimo užbaigti nepavyko. Ankstesnės rezultato versijos išsaugotos.")
+    await event(tx, creation, job, message)
 
 
 def view(row):

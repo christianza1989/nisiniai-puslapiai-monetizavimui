@@ -2,8 +2,12 @@
 import hashlib
 import html
 import json
+import re
+import unicodedata
+from functools import lru_cache
 from typing import Literal
 
+from lingua import Language, LanguageDetectorBuilder
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from ..public_projects.projection import public_url
@@ -100,6 +104,57 @@ def normalize(value):
         return Draft.model_validate(value).model_dump(mode="json")
     except (ValueError, TypeError):
         raise RunnerError("output_invalid") from None
+
+
+@lru_cache(maxsize=1)
+def language_detector():
+    # The first real output mixed Finnish/Estonian with Lithuanian. This is an
+    # independent screen for obvious drift, not grammar or editorial acceptance.
+    return LanguageDetectorBuilder.from_languages(Language.LITHUANIAN, Language.ENGLISH,
+        Language.FINNISH, Language.ESTONIAN, Language.LATVIAN, Language.POLISH,
+        Language.RUSSIAN, Language.GERMAN).build()
+
+
+def language_screening(value):
+    draft = Draft.model_validate(value)
+    names = [draft.business_name, *[r.title for r in draft.research], *[t.tool for t in draft.tools]]
+    excluded = {"business_name", "url", "title", "tool", "path", "accent", "composition", "phase", "layout"}
+
+    def prose(item, key=""):
+        if isinstance(item, dict):
+            for name, child in item.items():
+                # Page titles are prose; official research titles are names.
+                if name not in excluded or (name == "title" and "sections" in item):
+                    yield from prose(child, name)
+        elif isinstance(item, list):
+            for child in item:
+                yield from prose(child, key)
+        elif isinstance(item, str):
+            yield item
+
+    return screen_language(prose(draft.model_dump()), names)
+
+
+def screen_language(texts, names=()):
+    count = 0
+    for original in texts:
+        text = re.sub(r"https?://\S+|[\w.+-]+@[\w.-]+", " ", original)
+        for name in names:
+            text = text.replace(name, " ")
+        words = re.findall(r"[^\W\d_]+", text)
+        if any(len(word) >= 2 and any("LATIN" not in unicodedata.name(c, "") for c in word) for word in words):
+            raise RunnerError("language_quality_failed")
+        for sentence in [text, *re.split(r"(?<=[.!?;])\s+|\n+", text)]:
+            words = re.findall(r"[^\W\d_]+", sentence)
+            if len(words) < 5 or sum(map(len, words)) < 24:
+                continue
+            count += 1
+            scores = language_detector().compute_language_confidence_values(sentence)
+            if (scores[0].language != Language.LITHUANIAN and scores[0].value >= .80
+                    and scores[0].value - scores[1].value >= .45):
+                raise RunnerError("language_quality_failed")
+    return {"status": "PASS", "check": "obvious_language_drift.v1", "locale": "lt",
+            "detector": "lingua-2.2.0", "segments": count, "editorial_acceptance": "UNVERIFIED"}
 
 
 COLORS = {"indigo": "#3730a3", "teal": "#115e59", "clay": "#9a3412", "forest": "#166534", "cobalt": "#1e40af", "plum": "#6b21a8"}

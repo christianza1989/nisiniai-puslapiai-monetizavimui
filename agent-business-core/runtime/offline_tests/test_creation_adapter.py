@@ -3,7 +3,7 @@ import json
 import pytest
 
 from pinet_core.creation.adapter import Trace, arguments, instructions
-from pinet_core.creation.renderer import normalize, preview
+from pinet_core.creation.renderer import normalize, preview, screen_language
 from pinet_core.tasks.codex import RunnerError
 
 
@@ -46,3 +46,27 @@ def test_preview_source_has_no_remote_resource_or_executable_sink():
     source = inspect.getsource(preview)
     assert 'html.escape' in source and 'default-src' in source and 'form-action' in source
     assert '<script' not in source and '<iframe' not in source and '<form' not in source
+
+
+@pytest.mark.parametrize('text', [
+    'Patikrinau teiginius. Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto.',
+    'Apskaičiuoti mokymų ettevalmistus- ja toteutuskustannukset sekä päättää hinta ennen ensimmäistä toteutusta.',
+    'We reviewed every page and all metadata before preparing the final business plan.',
+    'Kliento įrankių хэрэгцээ dar nepatikrintas.',
+    'Pasirinktas pirmasis mūsų ял pasiūlymas.',
+])
+def test_obvious_foreign_prose_rejected_even_when_self_review_claims_success(text):
+    with pytest.raises(RunnerError) as error:
+        screen_language(['Peržiūrėjau visą galutinį tekstą lietuviškai.', text])
+    assert error.value.code == 'language_quality_failed'
+
+
+def test_language_screen_preserves_product_names_urls_and_does_not_certify_editorial_quality():
+    result = screen_language([
+        'OpenAI API padės parengti užklausos juodraštį. Galutinį tekstą reikia patikrinti pagal tikrus verslo faktus.',
+        'Šaltinis https://example.com/foreign-training ir kontaktas info@example.com išlieka nepakitę.',
+        'Komanda „学校“ nori patikrinti savo darbo eigą.',
+        'Pasirinkti pasiūlymą.',
+    ], names=['学校'])
+    assert result['status'] == 'PASS' and result['editorial_acceptance'] == 'UNVERIFIED'
+    assert result['segments'] > 0

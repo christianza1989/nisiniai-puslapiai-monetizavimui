@@ -97,9 +97,12 @@ async def execute_once(runner=None):
         result, receipt = await (runner or adapter.run)(claimed["context"],
             lambda: heartbeat(claimed["job_id"], claimed["user_id"], claimed["run_id"]))
         result = renderer.normalize(result)
+        receipt["language_screening"] = renderer.language_screening(result)
         outputs = renderer.artifacts(result, creation_id=claimed["creation_id"], revision=claimed["revision"], receipt=receipt)
     except adapter.RunnerError as error:
         failure = error.code
+        if failure == "language_quality_failed":
+            receipt["language_screening"] = {"status": "FAIL", "check": "obvious_language_drift.v1"}
     except Exception:
         failure = "provider_error"
     async with scope(user=claimed["user_id"]) as tx:
@@ -119,7 +122,7 @@ async def execute_once(runner=None):
             await fail(tx, creation, job, failure)
             return True
         creation.stage = "validation"
-        await event(tx, creation, job, "Tikrinama juodraščio struktūra ir ruošiami peržiūros failai.")
+        await event(tx, creation, job, "Patikrinta juodraščio struktūra ir kalbų maišymasis; ruošiami peržiūros failai. Pilnas redakcinis priėmimas dar neatliktas.")
         sequence = creation.current_revision + 1
         revision = Revision(id=new_id(), creation_id=creation.id, job_id=job.id, sequence=sequence, payload=result,
             material_hash=digest(result), source_revision=job.source_revision, **binding(creation))

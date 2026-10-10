@@ -39,13 +39,21 @@ In another owned terminal run `scripts/customer_creation_worker.py worker`. Back
 | Isolated actual PG queue, immutable files, idempotency, feedback/history, foreign scope, revoked actor, cancel/late result, timeout/no retry, flags/quota, catalogue HTTP | PASS | First focused8tests, private `artifacts/creation-first.private.log` |
 | Existing consultation transport + whole catalogue offline | PASS | 53tests before final HTTP wiring changes |
 | Instruction pin, trace/tool bounds, invalid typed result, fixed preview sink | PASS | First4offline tests; empty-match warning removed |
-| Combined relevant prior/new suite | Original FAIL retained; corrected retest running | First duplicate basename collection error; second111PASS/22FAIL/41teardownERROR: omitted existing post-migration bootstrap business SELECT/seed in our new DB. Existing `scripts/bootstrap.py` applied, control privileges unchanged. Third receipt separately retained |
+| Combined relevant prior/new suite | PASS133; original FAILs retained | Third combined run133PASS194.41s. First duplicate basename collection error; second111PASS/22FAIL/41teardownERROR: omitted existing post-migration bootstrap business SELECT/seed in our new DB. Existing `scripts/bootstrap.py` applied, control privileges unchanged |
 | Ruff | PASS | Scoped runtime/tests/scripts check after import fixes |
 | Fresh migration downgrade/re-upgrade | PASS | Own empty `pinet_customer_creation_rehearsal_20261010`: head →0012→head, all exit0; private migration receipts |
-| Real CLI model/business research/draft | UNVERIFIED | Explicit next acceptance, no provider pass inferred from synthetic adapters |
-| Actual customer UI creation/preview/critique/revision/reload | UNVERIFIED | Paired3019/8860 test next |
+| Real CLI model/business research/draft | Delivery PASS; first content quality FAIL | Source506c048, modelgpt-6-luna, input59634/output8192/cached25344/reasoning99, one observed web action; revision1/three immutable artifacts. Costs unknown. Multiple foreign-language fragments contradict its Lithuanian self-review claim |
+| Actual customer UI creation/preview/reload | PASS in the bounded scope | Existing verified fixture login, real UI POST, durable revision1/messages/three files visible3019/8860. Independent browser preview confirms mixed-language FAIL. Critique/new revision still pending |
 | Full UI signup/reset password mutation | UNVERIFIED | Browser automation credential-entry handoff restriction; HTTP lifecycle independently tested |
 | Full shared F1 publishing/contact/media/audit/business readiness | UNVERIFIED | Draft slice does not satisfy these remaining gates |
 | Public/other-PC hosting, real delivery, operational worker uptime | UNVERIFIED | Loopback alone is inaccessible to a hosted portal/customer |
 
 Keep the first model FAIL, raw private bounded output/trace, exact source/model/instruction/usage and intervention history. Private receipts never enter public artifacts/Git. Finite test cases cannot prove an ideal system or commercial demand. Issue77/journal `upgrade-8487ac2f-6c9a-4487-8bfe-e7e9c70c95ec` track this source increment; the platform task continues after it.
+
+## First observed language defect and correction
+
+Upgrade `upgrade-f4744a2c-ceda-47e5-8933-937b8e6f4fad` preserves the original revision1 FAIL. The model delivered Finnish/Estonian clauses and non-Latin fragments in the assistant reply, business plan and research findings while claiming a full Lithuanian edit. The typed schema checked structure, not that claim.
+
+Before accepting a new revision, the worker independently screens all customer-facing prose for obvious language drift using bounded Unicode/Lingua checks, preserving official product/source names and URLs. A rejection records `language_quality_failed`, retains observed provider usage and earlier revisions, and creates no accepted revision/artifacts. It does not silently fix the model output or automatically retry the provider. The fixed prompt requires a complete Lithuanian final-text edit and separates repeated internal readiness limitations from useful commercial paragraphs.
+
+Focused language/creation regression24PASS92.32s and scoped RuffPASS. The preserved real revision1 reproduces the new rejection. This automated screen is **not** a grammar certificate or complete editorial acceptance; facts, sources, meaning and actual rendered content still require review. The next real immutable revision and full ordered research/content/upload/SEO workflow remain separate acceptance work.

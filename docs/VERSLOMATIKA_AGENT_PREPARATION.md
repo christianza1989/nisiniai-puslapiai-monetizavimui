@@ -74,7 +74,19 @@ su17:51:46Z priešmigraciniu kvitu; pridėta tik tuščia Registration lentelė.
 Pats skaitymas DB state nepakeitė. Patikrintas quota20/20/0left, current
 revision null ir cost unknown. Nėra provider/provision/public/profile/session/
 channel aktyvavimo. Naujos README/journal versijos nehotloadinamos į serverį;
-jo snapshot tebėra594e179. Dashboard V2 priėmimas dar atskiras.
+jo snapshot tebėra594e179.
+
+Dashboard3019 V2 vietinis priėmimas atliktas su director source
+`9f28c9e4f73d118c2a836f1c455391fd016e062b`: atskiri tikslūs V2 pins ir tipai,
+nepakeisti V1 pins, tas pats privatus frontend BFF. Director19focused tests,
+TypeScript, build ir atskira read-only peržiūra PASS. Root actual Chrome21:06LT
+nepriklausomai matė tikrą missing registraciją, keturias grupes,14blokatorių ir
+jokio agentų įjungimo. Nauja panel screenshot saugoma ignoruojamame runtime
+`artifacts/screenshots-20261010/mokymai-ai-preparation-v2-panel-root-20261010.png`.
+Root actual API18:09:51Z kvitas vėl patvirtino tą pačią594/0016/typedV2 būseną,
+visus šešis nepakeistus kliento paviršius ir visų ankstesnių DB lentelių hash/count
+pagal originalų priešmigracinį kvitą. Nėra provider, provision ar kanalo veiksmų.
+Šis UI priėmimas nepatvirtina naujo verslo, dinaminio profilio, sesijos ar paleidimo.
 
 ## Ankstesnio V1 inkremento priėmimas
 

@@ -1,20 +1,20 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Verslomatika core portfolio bridge — proposal",
-    "version": "0.1.0",
-    "description": "PROPOSED, NOT IMPLEMENTED. Read-only registry contract portfolio.v1. No route in this proposal is claimed to exist. Core derives actor, grants and environment; browser-supplied tenant IDs do not authorize access."
+    "title": "Verslomatika local core portfolio bridge",
+    "version": "0.2.0",
+    "description": "Local-only I1a/I1b implementation contract, portfolio.v1. Runtime acceptance is recorded separately in VERSLOMATIKA_LOCAL_PORTFOLIO.md. Core opaque persisted revocable session replaces proposed portal actor assertion for this local slice. No hosted/signup mode."
   },
-  "x-status": "proposed-not-implemented",
+  "x-status": "local-implementation-in-progress",
   "servers": [
     {
-      "url": "https://core.example.invalid",
-      "description": "Placeholder only; no actual hosted core endpoint verified."
+      "url": "http://127.0.0.1:8846",
+      "description": "Dedicated local pilot only; disabled by default, rejects non-loopback clients/hosts, Origin and forwarded headers. Never configure this mode on hosted Vercel."
     }
   ],
   "security": [
     {
-      "PortalActorAssertion": []
+      "CoreSession": []
     }
   ],
   "paths": {
@@ -236,15 +236,85 @@
           }
         }
       }
+    },
+    "/operator/v2/auth/login": {
+      "post": {
+        "operationId": "createLocalSession",
+        "security": [],
+        "description": "Local BFF server-only bounded credential request. Ten username attempts and30 IP attempts per15min durable bucket; success included. No default public password/signup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocalLogin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Core-issued session; private,no-store.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocalSession"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "429": {
+            "description": "Durable login rate limit; Retry-After900.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
+    },
+    "/operator/v2/auth/logout": {
+      "post": {
+        "operationId": "revokeLocalSession",
+        "responses": {
+          "204": {
+            "description": "DB session revocation committed."
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
     }
   },
   "components": {
     "securitySchemes": {
-      "PortalActorAssertion": {
+      "CoreSession": {
         "type": "http",
         "scheme": "bearer",
-        "bearerFormat": "JWS",
-        "description": "Dedicated trusted portal issuer/key and audience pinet-core-portal; <=60s expiry, method/path/canonical-query/body-hash binding, single-use jti and revocable login session. Core resolves (identity issuer, subject) to a user and checks current DB grants. Existing global operator secret or service credential alone does not authorize customer access. Assertion signing issuer is the portal; identity_issuer/identity_subject are separately verified provider-session claims."
+        "bearerFormat": "opaque",
+        "description": "64-character cryptographically random core-issued token; only SHA256 in DB. TTL8h max, explicit server revocation/expiry/user-disabled/current memberships/grants checked each request. Legacy operator, edge, worker and browser actor claims are not valid here. BFF stores opaque token in HttpOnly/SameSite=Strict local cookie; credentials/session JSON never sent to browser."
       }
     },
     "schemas": {
@@ -368,6 +438,7 @@
         "additionalProperties": false,
         "required": [
           "code",
+          "message",
           "request_id"
         ],
         "properties": {
@@ -377,18 +448,23 @@
               "invalid_request",
               "invalid_cursor",
               "unauthenticated",
-              "forbidden",
               "not_found",
               "snapshot_expired",
-              "contract_unavailable",
               "source_unavailable",
-              "replayed_request"
+              "control_unavailable",
+              "invalid_credentials",
+              "login_rate_limited"
             ]
           },
           "request_id": {
             "type": "string",
             "minLength": 1,
             "maxLength": 128
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Sanitized stable code only; no raw DB, credential or stack message."
           }
         }
       },
@@ -631,6 +707,51 @@
           },
           "data": {
             "$ref": "#/components/schemas/Business"
+          }
+        }
+      },
+      "LocalLogin": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "username": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$"
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "writeOnly": true
+          }
+        }
+      },
+      "LocalSession": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "access_token",
+          "token_type",
+          "expires_at"
+        ],
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{64}$",
+            "description": "BFF server-only; do not render or log."
+          },
+          "token_type": {
+            "const": "Bearer"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       }

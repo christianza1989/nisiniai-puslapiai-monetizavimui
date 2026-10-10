@@ -34,6 +34,15 @@ def test_web_trace_is_bounded_and_other_tools_rejected():
     assert error.value.code == 'tool_attempted'
 
 
+def test_revision_trace_rejects_unnecessary_third_web_action():
+    trace = Trace(True, limit=2)
+    for i in range(2):
+        trace.event({'item': {'type': 'web_search', 'id': str(i)}})
+    with pytest.raises(RunnerError) as error:
+        trace.event({'item': {'type': 'web_search', 'id': 'third'}})
+    assert error.value.code == 'research_limit'
+
+
 def test_missing_or_untyped_draft_rejected():
     with pytest.raises(RunnerError) as error:
         normalize({'html': '<script>alert(1)</script>', 'publicationApproved': True})

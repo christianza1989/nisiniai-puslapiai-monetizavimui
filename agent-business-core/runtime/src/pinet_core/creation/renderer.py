@@ -157,6 +157,41 @@ def screen_language(texts, names=()):
             "detector": "lingua-2.2.0", "segments": count, "editorial_acceptance": "UNVERIFIED"}
 
 
+def context_projection(value):
+    """Partial model context, never an edited replacement for immutable source."""
+    draft = Draft.model_validate(value)
+    names = [draft.business_name, *[r.title for r in draft.research], *[t.tool for t in draft.tools]]
+    omitted = []
+
+    def project(item, path=""):
+        if isinstance(item, dict):
+            output = {}
+            for key, child in item.items():
+                child_path = path + "." + key
+                if key in {"assistant_reply", "language_review"}:
+                    omitted.append(child_path)
+                    continue
+                result = project(child, child_path)
+                if result is not None:
+                    output[key] = result
+            return output
+        if isinstance(item, list):
+            return [result for i, child in enumerate(item) if (result := project(child, path + f"[{i}]")) is not None]
+        if isinstance(item, str):
+            # These are official names, identifiers or validated URLs, not prose.
+            if path.endswith((".business_name", ".title", ".tool", ".path", ".url", ".accent", ".composition", ".phase", ".layout")):
+                return item
+            try:
+                screen_language([item], names)
+            except RunnerError:
+                omitted.append(path)
+                return None
+        return item
+
+    return project(draft.model_dump()), {"projection": "prior-draft-context.v1", "omitted_fields": omitted,
+        "reason": "Self-review claims and demonstrably invalid language are omitted from model input only; original revision unchanged."}
+
+
 COLORS = {"indigo": "#3730a3", "teal": "#115e59", "clay": "#9a3412", "forest": "#166534", "cobalt": "#1e40af", "plum": "#6b21a8"}
 CSS = """
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f9f8f4;color:#202323;font:17px/1.7 system-ui,sans-serif}

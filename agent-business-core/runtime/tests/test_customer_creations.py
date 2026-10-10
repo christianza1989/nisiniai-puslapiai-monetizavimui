@@ -115,6 +115,19 @@ def test_language_screen_covers_all_customer_facing_output_fields(field):
     assert error.value.code == 'language_quality_failed'
 
 
+def test_model_context_projection_omits_invalid_prose_without_mutating_source():
+    value = draft()
+    value['business']['execution_steps'][0] = 'Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto.'
+    before = json.dumps(value, ensure_ascii=False)
+    projected, receipt = renderer.context_projection(value)
+    assert json.dumps(value, ensure_ascii=False) == before
+    assert 'assistant_reply' not in projected and 'language_review' not in projected
+    assert len(projected['business']['execution_steps']) == 2
+    assert projected['business']['customer'] == value['business']['customer']
+    assert projected['pages'] == value['pages']
+    assert '.business.execution_steps[0]' in receipt['omitted_fields']
+
+
 async def test_durable_queue_private_artifacts_and_exact_revision(creation):
     c = creation
     _, auth, me = await verified(c)
@@ -141,6 +154,8 @@ async def test_durable_queue_private_artifacts_and_exact_revision(creation):
     assert (await c['client'].post('/customer/v2/creations/'+cid+'/revisions', json=feedback, headers=auth)).status_code == 202
     async def revised(context, authorized):
         assert context['base_revision'] == 1 and context['current_draft'] and len(context['history']) == 2
+        assert context['previous_artifacts_preserved'] is True and context['permitted_web_actions'] == 2
+        assert context['prior_context_projection']['projection'] == 'prior-draft-context.v1'
         assert await authorized()
         return draft('Patikslinau vykdytojo ir kontaktų ribas. Ankstesni patvirtinti faktai išsaugoti.'), {}
     assert await worker.execute_once(revised)

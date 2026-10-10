@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Second real sourcee7d2039 call failed independent language screen, preserved original revision1 and provider usage. Possible prior-context contamination is an inference. Candidate excludes rejected prose/self-review without mutating originals and bounds revision research to2actions; real recovery unverified. Next real run awaits human-requested three-role workflow.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest tests/test_customer_creations.py offline_tests/test_creation_adapter.py -q",
+      "result": "PASS",
+      "evidence": "26passed50.98s; immutable prior projection and revision research-cap regressions"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/creation tests/test_customer_creations.py offline_tests/test_creation_adapter.py",
+      "result": "PASS",
+      "evidence": "All checks passed after scoped context changes"
+    }
+  ],
+  "eventId": "f6f14674-7e05-4812-be35-a3e67e116705",
+  "sequence": 3,
+  "at": "2026-10-10T11:04:44.480Z"
+}

@@ -27,6 +27,9 @@ async def locked(tx, job_id, user_id):
 async def context_for(tx, creation, job):
     revisions = list(await tx.scalars(select(Revision).where(Revision.creation_id == creation.id).order_by(Revision.sequence)))
     prior = revisions[-1].payload if revisions else None
+    projection = None
+    if prior:
+        prior, projection = renderer.context_projection(prior)
     jobs = list(await tx.scalars(select(Job).where(Job.creation_id == creation.id).order_by(Job.sequence).limit(20)))
     history = [{"role": "user", "content": j.message, "base_revision": j.base_revision} for j in jobs]
     recommendations = []
@@ -39,6 +42,8 @@ async def context_for(tx, creation, job):
         pass  # Domain catalogue is an optional separate source integration, not fabricated candidates.
     return {"display_name": creation.display_name, "idea": creation.idea, "canonical_host": creation.canonical_host,
             "history": history, "current_draft": prior, "feedback": job.message, "base_revision": job.base_revision,
+            "prior_context_projection": projection, "previous_artifacts_preserved": bool(revisions),
+            "permitted_web_actions": 2 if revisions else 6,
             "domain_candidates": recommendations, "domain_ownership_verified": False,
             "scope": "private_business_and_website_draft", "expected_instruction_hash": job.instruction_hash}
 

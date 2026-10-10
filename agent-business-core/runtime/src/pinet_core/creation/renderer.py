@@ -132,7 +132,7 @@ class ContentPlanItem(Strict):
         return self
 
 
-class Draft(Strict):
+class DraftFields(Strict):
     business_name: str = Field(min_length=1, max_length=100)
     tagline: str = Field(min_length=10, max_length=200)
     assistant_reply: str = Field(min_length=30, max_length=2500)
@@ -150,22 +150,7 @@ class Draft(Strict):
     remaining_gates: list[str] = Field(min_length=3, max_length=15)
 
     @model_validator(mode="after")
-    def bounded(self):
-        paths = [p.path for p in self.pages]
-        if paths[0] != "/" or len(paths) != len(set(paths)):
-            raise ValueError("A distinct page system starting with homepage required")
-        plan_paths = [item.path for item in self.content_plan]
-        if len(plan_paths) != len(set(plan_paths)):
-            raise ValueError("Distinct content-plan destinations required")
-        known = set(paths + plan_paths)
-        positions = {path: index for index, path in enumerate(plan_paths)}
-        for item in self.content_plan:
-            if any(target not in known for target in item.internal_links):
-                raise ValueError("Plan links require actual draft or planned destinations")
-            parent = item.pillar_path
-            if parent and (parent == item.path or parent not in known
-                    or parent in positions and positions[parent] >= positions[item.path]):
-                raise ValueError("Broad parent must exist and precede its support; no cycles")
+    def meaningful(self):
         for collection in (self.confirmed_facts, self.assumptions, self.open_questions, self.remaining_gates,
                 self.business.alternatives, self.business.execution_steps, self.business.expansion_criteria,
                 *[s.items for p in self.pages for s in p.sections]):
@@ -174,6 +159,45 @@ class Draft(Strict):
         if len(self.model_dump_json().encode()) > 200000:
             raise ValueError("Draft too large")
         return self
+
+
+def graph_issues(draft):
+    """Deterministic feedback on a typed, bounded candidate; never a mutation."""
+    issues = []
+
+    def issue(field, message):
+        if len(issues) < 8:
+            issues.append({"field": "draft:/" + field, "message": message})
+
+    paths = [page.path for page in draft.pages]
+    if paths[0] != "/" or len(paths) != len(set(paths)):
+        issue("pages", "Pirmas puslapis turi būti pradžios puslapis; kiekvienas puslapis turi turėti atskirą adresą.")
+    plan_paths = [item.path for item in draft.content_plan]
+    if len(plan_paths) != len(set(plan_paths)):
+        issue("content_plan", "Kiekvienam skirtingam gidui reikia atskiro pilno adreso; vieno adreso kartoti negalima.")
+    known = set(paths + plan_paths)
+    positions = {path: index for index, path in enumerate(plan_paths)}
+    for index, item in enumerate(draft.content_plan):
+        if any(target not in known for target in item.internal_links):
+            issue(f"content_plan/{index}/internal_links", "Nuorodos turi vesti į tikrai pateiktą puslapį arba planuojamą gidą.")
+        parent = item.pillar_path
+        if parent and (parent == item.path or parent not in known
+                or parent in positions and positions[parent] >= positions[item.path]):
+            issue(f"content_plan/{index}/pillar_path", "Plataus pagrindinio gido tėvinis adresas turi būti tuščias. Kitų gidų tėvinis puslapis turi egzistuoti ir būti pateiktas anksčiau; savęs ar vėlesnio gido nurodyti negalima.")
+    return issues
+
+
+class Draft(DraftFields):
+    @model_validator(mode="after")
+    def bounded(self):
+        if issues := graph_issues(self):
+            raise ValueError(issues[0]["message"])
+        return self
+
+
+class CreatorCandidate(DraftFields):
+    """Private repair context only. This type cannot authorize artifacts/intake/promotion."""
+    content_plan: list[ContentPlanItem] = Field(min_length=3, max_length=12)
 
 
 class CreatorDraft(Draft):
@@ -248,7 +272,24 @@ def screen_language(texts, names=()):
 
 def context_projection(value):
     """Partial model context, never an edited replacement for immutable source."""
-    draft = Draft.model_validate(value)
+    return _context_projection(Draft.model_validate(value))
+
+
+def structural_repair_context(value):
+    """Only a well-shaped candidate with graph issues qualifies for one bounded correction."""
+    try:
+        candidate = CreatorCandidate.model_validate(value)
+        if not (issues := graph_issues(candidate)):
+            return None
+        projected, projection = _context_projection(candidate)
+        return {"check": "creator-graph.v1", "issues": issues, "candidate": projected, "projection": projection,
+                "unaccepted_candidate_sha256": hashlib.sha256(json.dumps(candidate.model_dump(mode="json"),
+                    ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()}
+    except (ValueError, TypeError):
+        return None
+
+
+def _context_projection(draft):
     names = [draft.business_name, *[r.title for r in draft.research], *[t.tool for t in draft.tools]]
     omitted = []
 

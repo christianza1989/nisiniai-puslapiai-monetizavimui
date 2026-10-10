@@ -34,7 +34,7 @@ async def _event(tx, creation, job, attempt, state, summary, payload):
     await tx.flush()
 
 
-async def reserve(claimed, role, round_number):
+async def reserve(claimed, role, round_number, *, structure_repair=False):
     from .worker import locked
     if role not in START or round_number not in (1, 2):
         raise adapter.RunnerError("review_invalid")
@@ -57,7 +57,7 @@ async def reserve(claimed, role, round_number):
             raise adapter.RunnerError("review_limit")
         attempt = Attempt(id=new_id(), creation_id=creation.id, job_id=job.id, run_id=job.run_id, sequence=sequence + 1,
             role=role, round_number=round_number, stage="private_draft", source_revision=job.source_revision,
-            instruction_hash=adapter.role_instruction_hash(role), model="gpt-6-luna", **binding(creation))
+            instruction_hash=adapter.role_instruction_hash(role, structure_repair=structure_repair), model="gpt-6-luna", **binding(creation))
         tx.add(attempt)
         await tx.flush()
         await _event(tx, creation, job, attempt, "reserved", START[role], {})
@@ -109,7 +109,7 @@ async def run(claimed, still_authorized, role_runner=None):
     run_role = role_runner or adapter.run_role
     deadline = monotonic() + settings().creation_runner_seconds
     remaining_web = context["permitted_web_actions"]
-    receipts, candidate, critic = [], None, None
+    receipts, candidate, critic, repair = [], None, None, None
 
     async def call(role, round_number, data, normalize_role):
         seconds = deadline - monotonic()
@@ -118,11 +118,12 @@ async def run(claimed, still_authorized, role_runner=None):
         if not await still_authorized():
             raise TeamError("authorization_revoked", receipts)
         try:
-            attempt_id = await reserve(claimed, role, round_number)
+            attempt_id = await reserve(claimed, role, round_number,
+                structure_repair=role == "creator" and data.get("structure_repair") is True)
         except adapter.RunnerError as error:
             raise TeamError(error.code, receipts) from None
         seconds = deadline - monotonic()
-        receipt = {}
+        receipt, value = {}, None
         try:
             if seconds < 1:
                 raise adapter.RunnerError("run_timeout")
@@ -150,14 +151,21 @@ async def run(claimed, still_authorized, role_runner=None):
             receipts.append({"attempt_id": attempt_id, "role": role, "round_number": round_number, **receipt})
         except adapter.RunnerError as error:
             receipt = error.receipt or receipt
-            failed_receipts = [*receipts, {"attempt_id": attempt_id, "role": role, "round_number": round_number,
-                                          "failure_code": error.code, **receipt}]
+            if role == "creator" and error.code == "output_invalid" and value is not None:
+                if correction := renderer.structural_repair_context(value):
+                    receipt["creator_repair_context"] = correction
+            receipts.append({"attempt_id": attempt_id, "role": role, "round_number": round_number,
+                             "failure_code": error.code, **receipt})
             try:
-                await finish(claimed, attempt_id, "failed", "Šios rolės bandymas nebaigtas; patvirtintas rezultatas nesukurtas.",
-                             {"failure_code": error.code, "usage": usage_view(receipt), "cost_microusd": None})
+                summary = ("Kūrėjo plano struktūros patikra nepraėjo; užregistruotos konkrečios klaidos pataisymui."
+                    if role == "creator" and round_number == 1 and receipt.get("creator_repair_context") else
+                    "Šio agento bandymas nebaigtas; patvirtintas rezultatas nesukurtas.")
+                await finish(claimed, attempt_id, "failed", summary,
+                             {"failure_code": error.code, "usage": usage_view(receipt),
+                              "web_search_count": receipt.get("web_search_count"), "cost_microusd": None})
             except adapter.RunnerError:
                 pass  # Current revocation fences public writes; retain observed accounting in the raised private receipt.
-            raise TeamError(error.code, failed_receipts) from None
+            raise TeamError(error.code, receipts) from None
         if monotonic() >= deadline:
             raise TeamError("run_timeout", receipts)
         return value, receipt
@@ -165,11 +173,25 @@ async def run(claimed, still_authorized, role_runner=None):
     for round_number in (1, 2):
         creator_context = {**context, "permitted_web_actions": remaining_web,
                            "expected_instruction_hash": adapter.role_instruction_hash("creator")}
+        if repair:
+            creator_context.update(current_draft=repair["candidate"], prior_context_projection=repair["projection"],
+                structural_feedback={key: repair[key] for key in ("check", "issues", "unaccepted_candidate_sha256")},
+                structure_repair=True, permitted_web_actions=0,
+                expected_instruction_hash=adapter.role_instruction_hash("creator", structure_repair=True),
+                feedback="Įgyvendink tikslias serverio struktūros patikros pataisas ir grąžink visą naują juodraštį.")
         if candidate:
             prior, projection = renderer.context_projection(candidate)
             creator_context.update(current_draft=prior, prior_context_projection=projection,
                 critic_feedback=critic, feedback="Įgyvendink tikslias kritiko pataisas ir grąžink visą naują juodraštį.")
-        candidate, receipt = await call("creator", round_number, creator_context, renderer.normalize)
+        try:
+            candidate, receipt = await call("creator", round_number, creator_context, renderer.normalize)
+        except TeamError as error:
+            last = error.receipt["attempts"][-1] if error.receipt.get("attempts") else {}
+            if (round_number == 1 and error.code == "output_invalid" and last.get("creator_repair_context")):
+                repair = last["creator_repair_context"]
+                remaining_web = max(0, remaining_web - last.get("web_search_count", 0))
+                continue
+            raise
         remaining_web = max(0, remaining_web - receipt.get("web_search_count", 0))
         checks, language = observed_checks(candidate)
         review_context = {"draft": candidate, "stage": "private_draft", "round_number": round_number, "receipts": checks}

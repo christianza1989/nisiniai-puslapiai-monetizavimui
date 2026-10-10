@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Public source window closed at 0b784a2e6bd8d9e839fa7ddc36d8ceb8c845badf (17 scoped files), public base ec8a9c032fe926d1d9722802d8eb26fa8bd02937. Actual HTTP real wall-clock before/after/retired 31/32/31 requests; native/gift/peer and unchanged V1 smoke checked on own isolated production Worker. Original admission14PASS1FAIL, wrong-wrapper-cwd startupFAIL, initial UI list/heading defect screenshots and original receipts retained. The initial before/after receipt packageSha256 was parsed JSON digest; an exact immutable-original binding sidecar preserves and explains it, maintained harness now records raw and canonical digests separately. Native contact is approved mailto only; native POST405, unknown operator/email remain export gates. No schema/packages/DNS/deploy/provider/mail/main merge or full F1/launch claim. Owned browser and Worker processes stopped.",
+  "checks": [
+    {
+      "command": "public npm run test:core",
+      "result": "PASS",
+      "evidence": "58 PASS, 0 skipped, output/task-notes/core-tests-final.txt"
+    },
+    {
+      "command": "public npm run build (isolated output/native-v2-http-r2/dovanos-memorycasting)",
+      "result": "PASS",
+      "evidence": "output/native-final-build.txt; native/gift/V1 admitted test fixtures"
+    },
+    {
+      "command": "public node tests/native-niche-v2-http.mjs check isolated-sandbox before/after/retired",
+      "result": "PASS",
+      "evidence": "31/32/31 requests, dated http-*.json and immutable original package/marker under isolated output"
+    },
+    {
+      "command": "public npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "existing greitossvetaines7pages on same isolated Worker; output/seo-smoke-final.txt"
+    },
+    {
+      "command": "Playwright named native-niche-v2 actual desktop/mobile review",
+      "result": "PASS",
+      "evidence": "own output/playwright homepage/guide original+fixed screens and DOM;1440x1000/390x844; final390px scrollWidth390, loaded images, h2 24px700 and ol decimal"
+    },
+    {
+      "command": "canonical repository-safety public --staged + both-repo freshness handoff",
+      "result": "PASS",
+      "evidence": "exact17blobs,0findings; private13c/publicec8 main ancestors"
+    }
+  ],
+  "eventId": "26202a5f-4391-4b45-9c0f-4a8f429b421e",
+  "sequence": 5,
+  "at": "2026-10-10T13:21:28.299Z"
+}

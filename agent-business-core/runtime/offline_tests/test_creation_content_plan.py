@@ -12,6 +12,7 @@ from pinet_core.creation.renderer import (
     normalize,
     normalize_creator,
     plan_markdown,
+    structural_repair_context,
 )
 from pinet_core.tasks.codex_transport import RunnerError
 
@@ -122,6 +123,26 @@ def test_unknown_nested_destination_still_fails_closed(draft):
     value["content_plan"][0]["internal_links"] = ["/gidai/neparengtas/"]
     with pytest.raises(RunnerError):
         normalize_creator(value)
+
+
+def test_actual_self_parent_shape_yields_feedback_without_mutation_or_promotion(draft):
+    value = planned(draft)
+    value["content_plan"][0]["pillar_path"] = value["content_plan"][0]["path"]
+    original = deepcopy(value)
+    with pytest.raises(RunnerError):
+        normalize_creator(value)
+    correction = structural_repair_context(value)
+    assert value == original
+    assert correction["issues"][0]["field"] == "draft:/content_plan/0/pillar_path"
+    assert correction["candidate"]["content_plan"][0]["pillar_path"] == value["content_plan"][0]["path"]
+    assert len(correction["unaccepted_candidate_sha256"]) == 64
+    assert "assistant_reply" not in correction["candidate"]
+    with pytest.raises(RunnerError):
+        normalize_creator(value)
+    value["content_plan"][0]["pillar_path"] = ""
+    assert structural_repair_context(value) is None
+    value["content_plan"][0]["path"] = "/api/private/"
+    assert structural_repair_context(value) is None
 
 
 def test_plan_prose_and_titles_are_included_in_independent_language_screen(draft):

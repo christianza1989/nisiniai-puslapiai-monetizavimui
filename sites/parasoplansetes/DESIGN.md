@@ -59,7 +59,7 @@ components:
 
 2026-10-10 StepOver redesign. Dokumento eiga, tikras įrenginys, palyginamos savybės ir konkretus kitas veiksmas. Šaltos šviesios plokštumos, mėlyni veiksmai ir tamsus rašalas jungia katalogą su skaitmeniniu dokumentų procesu. Tai agento pasirinkimas pagal deleguotą pavedimą ir PROJECT_ADAPTATION, ne žmogaus dizaino approval. Ankstesnis 2026-10-08 DESIGN išsaugotas Git istorijoje.
 
-Originalus parašo ženklas, patvirtintos nuotraukos, gamintojo kreditai ir turinio tiesa išlieka. Tyrimas ir priėmimo ribos: [DESIGN-REFRESH-20261010](DESIGN-REFRESH-20261010.md).
+2026-10-10 savininkas pasirinko naują planšetės ir rašiklio logotipą: dvi kairėje sulygiuotos eilutės „parašo“ / „planšetės.lt“, planšetės apačia ties apatinės „p“ apačia. Papildomas „StepOver sprendimai“ po logotipu pašalinamas. Brand taikomas antraštėje ir poraštėje; dydžiai ir patikra dokumentuojami [LOGO_PUBLICATION_20261010](LOGO_PUBLICATION_20261010.md). Patvirtintos nuotraukos, gamintojo kreditai ir turinio tiesa išlieka. Tyrimas ir priėmimo ribos: [DESIGN-REFRESH-20261010](DESIGN-REFRESH-20261010.md).
 
 **Key Characteristics:**
 

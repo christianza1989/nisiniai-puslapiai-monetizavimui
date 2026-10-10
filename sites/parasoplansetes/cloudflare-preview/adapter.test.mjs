@@ -68,3 +68,16 @@ test('Public framework assets use the binding; publication-controlled media keep
   assert.equal(assetCalls, 2);
   assert.equal(applicationCalls, 1);
 });
+
+test('Only the selected site logo bypasses native page routing, retaining preview and host guards', async () => {
+  let assetCalls = 0;
+  const handler = createPreviewHandler({ fetch() { return new Response('Not found', { status: 404 }); } });
+  const boundEnv = { ...env, ASSETS: { fetch() { assetCalls++; return new Response('png', { headers: { 'content-type': 'image/png' } }); } } };
+  const logo = await handler.fetch(new Request(`https://${host}/branding/parasoplansetes-logo-20261010.png`), boundEnv);
+  assert.equal(logo.status, 200);
+  assert.equal(logo.headers.get('content-type'), 'image/png');
+  assert.equal(logo.headers.get('x-robots-tag'), 'noindex, nofollow');
+  assert.equal((await handler.fetch(new Request(`https://${host}/branding/other-private.png`), boundEnv)).status, 404);
+  assert.equal((await handler.fetch(new Request('https://other.example/branding/parasoplansetes-logo-20261010.png'), boundEnv)).status, 404);
+  assert.equal(assetCalls, 1);
+});

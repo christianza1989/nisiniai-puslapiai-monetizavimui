@@ -54,7 +54,8 @@ export function createPreviewHandler(application) {
       // Vite normally lets Cloudflare serve these public framework files before
       // invoking the application. run_worker_first=true requires that handoff
       // here so every response still gets the preview/noindex boundary.
-      const frameworkAsset = incoming.pathname.startsWith('/_next/static/') || incoming.pathname.startsWith('/fonts/');
+      const frameworkAsset = incoming.pathname.startsWith('/_next/static/') || incoming.pathname.startsWith('/fonts/')
+        || incoming.pathname === '/branding/parasoplansetes-logo-20261010.png';
       const response = frameworkAsset
         ? await env.ASSETS.fetch(request)
         : await application.fetch(forwarded, env, ctx);

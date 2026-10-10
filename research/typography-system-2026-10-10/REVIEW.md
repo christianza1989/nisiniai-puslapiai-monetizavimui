@@ -29,7 +29,8 @@ Tai vienas prižiūrimas projekto tekstų stilių šaltinis ir patikros eiga, o 
 - [x] Tikslus staged diff / whitespace peržiūrėtas; `repository-safety.mjs . --staged` PASS: 12 tikrų staged tekstinių blob, 0 findings.
 - [x] Fresh handoff gate PASS, main bazė išliko `13c9649c76dd48cdf426604cb721e1ccd58a9854`.
 - [x] Scoped commit `2a979531a1760dcdb37440ff04070ba4e4da0717`, push ir [PR84](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/84) atlikti; faktinis Git perdavimas fiksuojamas atskiru journal įvykiu. Pirmas commit bandymas sustojo be author identity; sėkmingas commit naudojo tik komandos `-c user.name=Codex -c user.email=codex@local.invalid`, nekeisdamas bendros Git konfigūracijos ar žmogaus tapatybės.
-- [ ] Atskiro reviewer / merger sprendimas; atviras PR dar nėra visiems taikomas main ar kitų PC adoption.
+- [x] Parent reviewer nepriklausomai perskaitė visą diff, reference ir REVIEW tiksliai `5716783c00979d03950bfe3ecde1929b7a03cf82` HEAD: defektų nerado, review PASS ir paskyrė vykdytoją merger šiam head po checks. GitHub Agent workflow run `38067670295` completed/success; naujas handoff gate clean/PASS, main bazė nepasikeitė. Review užrašytas [PR komentare](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/84#issuecomment-6099685353).
+- [x] GitHub patvirtino PR84 `merged: true`, actual main merge SHA `8e5411d8c1df20f385fadc48b8a609de80e331fc`; tik own worktree fetched ir fast-forwarded į šį main. Perskaitytos integruotos aktualios AGENTS / Git / typography taisyklės. Šis append-only merge kvitas yra atskiras nuo pirmo PR source; kitų PC ar senų svetainių adoption neteigiama.
 
 Patikros skirtos instrukcijų struktūrai ir nuoseklumui. Šiame core darbe nepakeistas UI, todėl nekurti papildomi runtime, Lighthouse ar svetainės screenshot PASS. Originalūs svetainių auditai ir ankstesnė agentų instrukcijų istorija neliečiami. Naujas kontraktas pats neįrodo, kad visos senos svetainės jau jį atitinka.
 

@@ -5,6 +5,9 @@ import {RETENTION_POLICY,policyPublic} from '../backend/retention-policy.mjs';
 import trialAssets from './output/trial-assets.json';
 import trialMedia from './output/trial-media.json';
 import template from '../prototype/public/app.html';
+import {directoryRoute,directoryRows,renderDirectory} from '../prototype/public/provider-directory.mjs';
+import {renderPublicProfile} from '../prototype/public/profile-seo.mjs';
+import {renderFooter} from '../prototype/public/footer.mjs';
 const origin='https://bandymas.madbeauty.lt';
 const assetPaths=new Set(trialAssets);
 const mediaPaths=new Map(trialMedia.assets.flatMap(a=>a.variants.map(v=>[v.file.split('/').at(-1),'/'+v.file])));
@@ -90,6 +93,7 @@ export default {async fetch(request,env){
  if(url.pathname==='/robots.txt')return new Response('User-agent: *\nDisallow: /\n',{headers:{'Content-Type':'text/plain','X-Robots-Tag':'noindex'}});
  if(['/sitemap.xml','/llms.txt','/llms-full.txt','/content-targets.json'].includes(url.pathname))return deny();
  if(url.pathname==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'temporary-live-test',enabled:false,privatePrototype:false,apiAvailable:true,retentionPolicy:env.RETENTION_POLICY_VERSION===RETENTION_POLICY.version?policyPublic():null,temporaryTest:{profiles:40,expiresAt:env.TRIAL_EXPIRES_AT},contact:{operatorName:'MB Pinet',email:'info@pinet.lt'}});
+ if(url.pathname==='/providers.json')return ['GET','HEAD'].includes(request.method)?json({profiles:await source.publicProfiles()}):deny();
  if(url.pathname==='/bandymo-paskyros'){
   if(!['GET','HEAD'].includes(request.method))return deny();
   const profiles=await source.trialProfiles();
@@ -101,14 +105,18 @@ export default {async fetch(request,env){
   const r=await env.ASSETS.fetch(request),result=new Response(r.body,r);result.headers.set('X-Robots-Tag','noindex, nofollow');return result;
  }
  let response;
+ const directory=directoryRoute(url.pathname);
  const match=url.pathname.match(/^\/(meistrai|salonai)\/(demo-org-\d+)$/);
- if(match&&['GET','HEAD'].includes(request.method)){
+ if(directory&&['GET','HEAD'].includes(request.method)){
+  const rows=directoryRows(directory,await source.publicProfiles(),{allowDemo:true});
+  response=htmlResponse(template.replace('<p class="container">Įkeliama…</p>',renderDirectory(directory,rows,url.searchParams)).replace(/<title>[^<]*<\/title>/,`<title>${escape(directory.title)} · Madbeauty bandymas</title>`));
+ }else if(match&&['GET','HEAD'].includes(request.method)){
   const profile=await source.profile(match[2]);if(!profile||profile.kind!==(match[1]==='meistrai'?'solo':'salon'))return deny();
-  const body=`<article class="page container"><h1>${escape(profile.name)}</h1><p>Testinis profilis · ${escape(profile.city)}</p><p>${escape(profile.bio)}</p><h2>Paslaugos</h2>${profile.services.map(s=>`<section><h3>${escape(s.label)}</h3><p>${s.durationMin} min. · ${(s.priceMinor/100).toFixed(2)} € · testinė kaina</p></section>`).join('')}</article>`;
+  const body=renderPublicProfile(profile);
   response=htmlResponse(template.replace('<p class="container">Įkeliama…</p>',body));
  }else response=await app.fetch(request,env);
  const headers=new Headers(response.headers);headers.set('X-Robots-Tag','noindex, nofollow');headers.set('Cache-Control','no-store');
  response=new Response(response.body,{status:response.status,headers});
- if(headers.get('Content-Type')?.includes('text/html'))return new HTMLRewriter().on('body',{element(e){e.prepend(labelHtml(env.TRIAL_EXPIRES_AT),{html:true});}}).on('link[rel="canonical"],script[type="application/ld+json"]',{element(e){e.remove();}}).transform(response);
+ if(headers.get('Content-Type')?.includes('text/html'))return new HTMLRewriter().on('body',{element(e){e.prepend(labelHtml(env.TRIAL_EXPIRES_AT),{html:true});}}).on('#footer',{element(e){e.setInnerContent(renderFooter(),{html:true});}}).on('link[rel="canonical"],script[type="application/ld+json"]',{element(e){e.remove();}}).transform(response);
  return response;
 }};

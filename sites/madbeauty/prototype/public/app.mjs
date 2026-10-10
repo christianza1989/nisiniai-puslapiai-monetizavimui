@@ -1,3 +1,4 @@
+import {renderFooter} from './footer.mjs';
 import {profileMetadata,moduleSchema} from './profile-seo.mjs';
 import {directorySchema,directoryDescription} from './provider-directory.mjs';
 import {searchSelect,bindSearchSelects} from './search-select.mjs';
@@ -60,7 +61,7 @@ async function navigate(url,{replace=false,preserve=false}={}){if($('#dialog').o
 function chrome(){
   $('#demo-bar').innerHTML=boot.privatePrototype?btn('demo-controls',icon('settings'),'aria-label="Peržiūros nustatymai"','preview-toggle'):'';
   $('#header').innerHTML=`<a class="brand" href="/" aria-label="Madbeauty pradžia">madbeauty<span>.</span></a><nav class="nav" aria-label="Pagrindinė navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a></nav><div class="row"><a href="/paskyra" class="button outline header-account" aria-label="${state.session.role==='guest'?'Prisijungti':'Paskyra'}">${icon('person')}<span>${state.session.role==='guest'?'Prisijungti':'Paskyra'}</span></a>${btn('mobile-menu',icon('list'),'aria-label="Atidaryti meniu" aria-expanded="false"','close menu-button')}</div><nav class="mobile-menu" aria-label="Mobilioji navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a><a href="/pagalba">Pagalba</a></nav>`;
-  $('#footer').innerHTML=`<div class="container"><div class="footer-grid"><div><a class="brand" href="/" style="color:white">madbeauty<span>.</span></a><p>Grožio laikas. Tavo ritmu.</p><p>Atrask savo meistrą ir skirk laiko sau.</p></div><div><h2>Klientams</h2>${[['/paslaugos','Paslaugos'],['/salonai','Salonai'],['/meistrai','Meistrai'],['/kaip-veikia','Kaip veikia'],['/gidai','Grožio idėjos'],['/pagalba','Pagalba']].map(([u,l])=>link(u,l,'')).join('')}</div><div><h2>Meistrams</h2>${[['/meistrams','Kaip pradėti'],['/meistrui/kalendorius','Darbo vieta'],['/tikrinimas','Profilių tikrinimas'],['/redakcija','Redakcija']].map(([u,l])=>link(u,l,'')).join('')}</div><div><h2>Informacija</h2>${[['/apie','Apie mus'],['/privatumas','Privatumas'],['/slapukai','Slapukai'],['/taisykles','Taisyklės'],['/kontaktai','Kontaktai']].map(([u,l])=>link(u,l,'')).join('')}<p>${icon('email')} <a href="mailto:${esc(boot.contact.email)}">${esc(boot.contact.email)}</a><br>${esc(boot.contact.operatorName)}</p></div></div><div class="footer-bottom"><span>© 2026 Madbeauty</span><span>Mūsų verslas automatizuotas su verslomatika.lt</span></div></div>`;
+  $('#footer').innerHTML=renderFooter(boot.contact);
 }
 let renderId=0,renderedViewKey='';
 async function render(){

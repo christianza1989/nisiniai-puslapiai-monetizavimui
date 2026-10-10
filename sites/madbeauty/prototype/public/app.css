@@ -101,3 +101,24 @@ html:has(dialog[open]){overflow:hidden}
 #works figure img{width:100%;height:auto;object-fit:cover}
 @media(max-width:1050px){.directory-filters{grid-template-columns:2fr 1fr}.provider-directory .results-map .cards{grid-template-columns:1fr}}
 @media(max-width:760px){.directory-filters{grid-template-columns:1fr 1fr;gap:12px}.directory-filters .field:first-child{grid-column:1/-1}.directory-filters>button{grid-column:1/-1}.provider-directory .toolbar{align-items:start;flex-wrap:wrap}.directory-card h2{font-size:21px}}
+/* Shared public footer: navigation, support and legal details. */
+#footer{background:#111114;color:#fff;padding:64px 0 0;margin-top:72px}
+#footer .mb-footer-top{display:grid;grid-template-columns:minmax(240px,1.1fr) 2fr;gap:72px;padding-bottom:48px}
+#footer .mb-footer-brand .brand{color:#fff;font-size:38px;line-height:1.2;letter-spacing:-.035em;display:inline-block}
+#footer .mb-footer-tagline{color:#fff;font-size:28px;line-height:1.3;letter-spacing:-.025em;margin:24px 0}
+#footer .mb-footer-cta{display:inline-flex;align-items:center;gap:24px;background:#fff;color:#17171c;padding:14px 20px;border-radius:12px;font-weight:700;min-height:48px;text-decoration:none}
+#footer .mb-footer-cta svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#footer .mb-footer-cta:hover{background:#eee8ff;color:#5930bf}
+#footer .mb-footer-nav{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:32px}
+#footer .mb-footer-group h2{font-size:16px;line-height:1.5;margin:0 0 16px;color:#fff;font-weight:700}
+#footer .mb-footer-group ul{list-style:none;padding:0;margin:0}
+#footer .mb-footer-group a{display:inline-flex;align-items:center;min-height:40px;color:#c9c9d3;font-size:15px;line-height:1.5;text-decoration:none}
+#footer a:hover{text-decoration:underline;text-underline-offset:5px;color:#fff}
+#footer a:focus-visible{outline:2px solid #b89aff;outline-offset:5px;border-radius:3px}
+#footer .mb-footer-contact{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;border-top:1px solid #303038;color:#c9c9d3;font-size:15px}
+#footer .mb-footer-contact p{margin:0;color:inherit}#footer .mb-footer-contact a{display:inline-block;margin-left:12px;color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+#footer .mb-footer-bottom{border-top:1px solid #303038;display:flex;align-items:center;flex-wrap:wrap;gap:20px 32px;padding:24px 0 28px;font-size:13px;line-height:1.6;color:#b4b4c2}
+#footer .mb-footer-bottom nav{display:flex;gap:24px}#footer .mb-footer-bottom a{color:inherit;text-decoration:none}#footer .mb-footer-credit{margin-left:auto}
+@media(max-width:1000px){#footer .mb-footer-top{grid-template-columns:1fr;gap:44px}#footer .mb-footer-brand{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px 32px}#footer .mb-footer-tagline{grid-row:2;margin:0;font-size:24px}#footer .mb-footer-cta{grid-column:2;grid-row:1 / 3}#footer .mb-footer-credit{margin-left:0;width:100%}}
+@media(max-width:600px){#footer{padding-top:40px;margin-top:48px}#footer .mb-footer-top{gap:40px;padding-bottom:32px}#footer .mb-footer-brand{display:block}#footer .mb-footer-brand .brand{font-size:34px}#footer .mb-footer-tagline{margin:18px 0 22px;font-size:25px}#footer .mb-footer-nav{grid-template-columns:1fr 1fr;gap:28px 24px}#footer .mb-footer-group:last-child{grid-column:1 / -1}#footer .mb-footer-group:last-child ul{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}#footer .mb-footer-group h2{margin-bottom:8px}#footer .mb-footer-group a{min-height:44px;font-size:14px}#footer .mb-footer-contact{align-items:flex-start;flex-direction:column;gap:8px;padding:20px 0}#footer .mb-footer-contact a{margin:6px 0 0;display:block}#footer .mb-footer-bottom{align-items:flex-start;gap:8px;padding:20px 0 28px}#footer .mb-footer-bottom>span{width:100%}#footer .mb-footer-bottom nav{gap:20px;order:-1;width:100%}#footer .mb-footer-bottom nav a{min-height:44px;display:flex;align-items:center}#footer .mb-footer-credit{margin-top:12px;max-width:34ch}}
+#footer .mb-footer-brand .brand{min-height:44px}#footer .mb-footer-contact a{min-height:44px;display:inline-flex;align-items:center}@media(max-width:600px){#footer .mb-footer-contact a{display:flex;margin-top:0}}

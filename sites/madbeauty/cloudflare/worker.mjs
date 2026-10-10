@@ -3,6 +3,7 @@ import {MadbeautyPlatform} from './platform-object.mjs';
 import {MadbeautyOrganizationStaging} from './organization-object.mjs';
 import {contentProjection,contact,escape} from './content.mjs';
 import template from '../prototype/public/app.html';
+import {renderFooter} from '../prototype/public/footer.mjs';
 import {trustPages as baseTrustPages,withRetentionPolicy} from '../prototype/public/product-trust.mjs';
 import {RETENTION_POLICY,policyPublic} from '../backend/retention-policy.mjs';
 import inventory from '../SCREEN_INVENTORY.json';
@@ -83,7 +84,7 @@ export default {
   html=html.replace(/<title>[^<]*<\/title>/,`<title>${escape(title)} · Madbeauty</title>`).replace(/<meta name="description"[^>]+>/,`<meta name="description" content="${escape(description)}">`);
   html=html.replace('</head>',`${found?`<link rel="canonical" href="https://madbeauty.lt${escape(path)}">`:''}${page&&!catalogue?sharingHtml(content.metadata?.(page)):''}${publicPage?'<script type="application/ld+json">'+JSON.stringify(page&&!catalogue?content.schema(page):directory&&!url.search?directorySchema(directory,directoryProfiles):moduleSchema(path,title,description,profile)).replace(/</g,'\\u003c')+'</script>':''}</head>`);
   let body=directory?renderDirectory(directory,directoryProfiles,url.searchParams):cataloguePage?renderCataloguePage(cataloguePage,{query:url.searchParams.get('q')||'',selectedCityId:url.searchParams.get('rodyti')==='1'?url.searchParams.get('miestas'):null}):page?content.html(page):trust?`<article class="page container"><h1>${escape(trust.title)}</h1>${trust.body}</article>`:profile?renderPublicProfile(profile):found?'<div class="page container"><h1>'+escape(title)+'</h1><p>Įkeliama…</p></div>':'<div class="page container"><h1>Puslapis nerastas</h1><a href="/">Grįžti į pradžią</a></div>';
-  html=html.replace('<p class="container">Įkeliama…</p>',body);
+  html=html.replace('<p class="container">Įkeliama…</p>',body).replace('<footer id="footer"></footer>',`<footer id="footer">${renderFooter(contact)}</footer>`);
   return new Response(request.method==='HEAD'?null:html,{status:found?200:404,headers:{...headers,'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store',...(!indexable?{'X-Robots-Tag':'noindex'}:{})}});
  },
 };

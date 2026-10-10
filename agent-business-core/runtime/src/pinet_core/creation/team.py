@@ -194,7 +194,7 @@ async def run(claimed, still_authorized, role_runner=None):
                 feedback="Įgyvendink tikslias serverio struktūros patikros pataisas ir grąžink visą naują juodraštį.")
         if candidate:
             if patch := language_patch.context(candidate, critic):
-                # Only exact criticized string values, not a whole business rewrite or new research.
+                # Exact criticized language/content prose leaves; no full reroll or new research.
                 original_candidate, original_critic = candidate, critic
                 creator_context = {"language_repair": True, "language_patch_context": patch,
                     "permitted_web_actions": 0,

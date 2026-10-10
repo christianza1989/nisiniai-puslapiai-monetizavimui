@@ -1,4 +1,4 @@
-"""Exact private language edits after an authoritative critic; no provider or approval.
+"""Exact private prose edits after an authoritative critic; no provider or approval.
 
 The caller must already have verified the critic against observed receipts. This
 helper rechecks draft/critic shape and binding, but cannot create evidence authority.
@@ -35,12 +35,13 @@ PROSE_PATH = re.compile(
     r"content_plan/[0-9]+/(?:title|intent|head_query|audience_problem|business_goal|"
     r"primary_topic|reason|seasonal_hook|media_brief|media_alt|outline/[0-9]+))$"
 )
-POLICY = """Esi tos pačios Verslomatikos užduoties kūrėjas, atliekantis tik nurodytas kalbos pataisas.
+POLICY = """Esi tos pačios Verslomatikos užduoties kūrėjas, atliekantis tik nurodytas kalbos ir turinio teksto pataisas.
 Pilnas verslo instrukcijas šioje užduotyje jau gavai; nekeisk verslo sprendimų ar tyrimo.
 Taisyk tik allowed_refs nurodytus teksto laukus pagal patikrintas kritiko pastabas. Pateik kiekvieną
 leidžiamą lauką tik vieną kartą ir visą jo pataisytą tekstą. Kitų laukų negrąžink. Tikro produkto,
 žmogaus ar organizacijos pavadinimo neversk ir nekeisk. Išsaugok faktus, skaičius, vienetus, neiginius,
 sąlygas, ribojimus ir nepatvirtintų prielaidų pobūdį. Nepridėk naujų faktų, pažadų ar išvadų.
+Užbaik tik nurodytą nepilną temos ar turinio aprašą pagal esamą užduotį; nekeisk pasiūlymo ar puslapių sistemos.
 Nenaudok vietaženklių, nekurk trūkstamų faktų ir nepakeisk tikro teksto techniniu pranešimu.
 semantic_context yra tik dalinis, nekeičiamas reikšmės kontekstas; jis nesuteikia publikavimo leidimo.
 Rašyk natūralia taisyklinga lietuvių kalba, naudok įprastus vientisus Unicode NFC lietuviškus rašmenis.
@@ -66,7 +67,7 @@ class Patch(BaseModel):
 
 
 def instructions():
-    """Compact canonical language profile and its exact loaded SHA-256."""
+    """Compact canonical prose-repair profile and its exact loaded SHA-256."""
     try:
         raw = (ROOT / LANGUAGE_REFERENCE).read_bytes()
         if not raw.strip() or len(raw) > 20000:
@@ -125,7 +126,7 @@ def context(candidate, verified_critic):
     try:
         normalized = normalize_creator(candidate)
         # Server-owned input must already be canonical. Never change omitted defaults
-        # or path spellings in unrelated fields as a side effect of a language edit.
+        # or path spellings in unrelated fields as a side effect of a prose edit.
         if not isinstance(candidate, dict) or normalized != candidate:
             return None
         report = CriticReview.model_validate(verified_critic)
@@ -138,7 +139,7 @@ def context(candidate, verified_critic):
         for finding in report.findings:
             if finding.severity == "suggestion":
                 continue
-            if finding.severity != "required" or finding.area != "language":
+            if finding.severity != "required" or finding.area not in ("language", "content"):
                 return None
             found = False
             if len(finding.evidence_refs) != len(set(finding.evidence_refs)):
@@ -160,7 +161,9 @@ def context(candidate, verified_critic):
             "stage": report.stage, "round_number": report.round_number,
             "allowed_refs": list(targets), "targets": list(targets.values()),
             "business_context": {key: normalized["business"][key] for key in ("customer", "paid_result", "offer")},
-            "scope": "private_language_edits_only", "semantic_acceptance": "UNVERIFIED"}
+            "scope": ("private_prose_edits_only" if any(finding.area == "content" and finding.severity == "required"
+                       for finding in report.findings) else "private_language_edits_only"),
+            "semantic_acceptance": "UNVERIFIED"}
         if len(json.dumps(result, ensure_ascii=False).encode("utf-8")) > MAX_CONTEXT_BYTES:
             return None
         return result
@@ -197,7 +200,7 @@ def apply(candidate, verified_critic, response):
     try:
         bound = context(candidate, verified_critic)
         if bound is None:
-            raise ValueError("Unsupported language-only correction")
+            raise ValueError("Unsupported exact prose correction")
         patch = Patch.model_validate(response)
         fields = [edit.field for edit in patch.edits]
         if (patch.candidate_sha256 != bound["candidate_sha256"] or patch.critic_sha256 != bound["critic_sha256"]

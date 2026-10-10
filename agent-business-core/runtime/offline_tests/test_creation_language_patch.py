@@ -1,15 +1,16 @@
-"""Exact pure-language correction regression; synthetic source candidates, no provider/DB."""
+"""Exact prose correction regressions; synthetic source candidates, no provider/DB."""
 
 import hashlib
 import unicodedata
 from copy import deepcopy
+from types import SimpleNamespace
 
 import pytest
 from test_creation_content_plan import planned
+from test_creation_review import decision, receipt, report
 from test_creation_review import draft as draft_fixture
-from test_creation_review import receipt, report
 
-from pinet_core.creation import language_patch
+from pinet_core.creation import language_patch, review, team
 from pinet_core.creation.renderer import language_screening, normalize_creator
 from pinet_core.creation.review import CHECK_KINDS, normalize_critic
 from pinet_core.tasks.codex_transport import RunnerError
@@ -61,6 +62,114 @@ def test_actual_like_tiny_word_patch_keeps_every_unrelated_field_exact(candidate
     assert result["research"][6]["finding"] == FIXED and language_screening(result)["status"] == "PASS"
     result["research"][6]["finding"] = original["research"][6]["finding"]
     assert result == original == candidate  # No assumption, plan, URL or self-review reroll.
+
+
+@pytest.mark.parametrize("field", ["primary_topic", "reason"])
+def test_mixed_language_and_content_leaf_repairs_preserve_every_unrelated_value(candidate, field):
+    reference = "draft:/content_plan/0/" + field
+    extra = deepcopy(report(candidate)["findings"][0])
+    extra.update(id="f_2", area="content", explanation="Šios turinio užduoties aprašas nepilnas.",
+                 correction="Užbaikite šio lauko tekstą, išsaugodami esamą temos prasmę.",
+                 evidence_refs=[reference])
+    verified = critic(candidate, extra_findings=[extra])
+    bound = language_patch.context(candidate, verified)
+    assert bound is not None and bound["scope"] == "private_prose_edits_only"
+    assert bound["allowed_refs"] == [FIELD, reference]
+    fixed_content = "Vienos darbo užduoties pasirinkimas ir saugus mokymo pavyzdžio paruošimas."
+    values = {FIELD: FIXED, reference: fixed_content}
+    original = deepcopy(candidate)
+    repaired = language_patch.apply(candidate, verified, response(bound, values))
+    assert repaired["research"][6]["finding"] == FIXED
+    assert repaired["content_plan"][0][field] == fixed_content
+    repaired["research"][6]["finding"] = original["research"][6]["finding"]
+    repaired["content_plan"][0][field] = original["content_plan"][0][field]
+    assert repaired == candidate == original
+    assert bound["semantic_acceptance"] == "UNVERIFIED"
+
+
+def test_content_only_prose_repair_still_requires_every_exact_target(candidate):
+    verified = critic(candidate)
+    verified["findings"][0].update(area="content", evidence_refs=["draft:/pages/1/sections/1/body"])
+    verified["draft_sha256"] = language_patch.canonical_sha256(candidate)
+    bound = language_patch.context(candidate, verified)
+    assert bound is not None and bound["scope"] == "private_prose_edits_only"
+    assert bound["allowed_refs"] == ["draft:/pages/1/sections/1/body"]
+    incomplete = {"candidate_sha256": bound["candidate_sha256"], "critic_sha256": bound["critic_sha256"], "edits": []}
+    with pytest.raises(RunnerError, match="output_invalid"):
+        language_patch.apply(candidate, verified, incomplete)
+
+
+@pytest.mark.parametrize("area", ["business", "research", "design", "seo_geo", "contact_delivery",
+                                  "publication", "launch", "demand"])
+def test_substantive_nonprose_areas_keep_the_full_creator_path(candidate, area):
+    verified = critic(candidate)
+    verified["findings"][0]["area"] = area
+    assert language_patch.context(candidate, verified) is None
+
+
+@pytest.mark.parametrize("reference", ["draft:/content_plan/0", "draft:/content_plan/0/path",
+    "draft:/content_plan/0/source_urls/0", "draft:/pages/1/sections", "draft:/research/0/url"])
+def test_content_area_does_not_expand_allowed_fields_or_bypass_full_review(candidate, reference):
+    verified = critic(candidate)
+    verified["findings"][0].update(area="content", evidence_refs=[reference])
+    assert language_patch.context(candidate, verified) is None
+
+
+async def test_team_uses_exact_mixed_patch_then_independent_second_review(candidate, monkeypatch):
+    calls, reservations, completions = [], [], []
+    original = deepcopy(candidate)
+    target = "draft:/content_plan/0/primary_topic"
+    fixed_topic = "Vienos darbo užduoties pasirinkimas ir saugus mokymo pavyzdžio paruošimas."
+    monkeypatch.setattr(team, "settings", lambda: SimpleNamespace(creation_runner_seconds=30))
+
+    async def reserve(claimed, role, round_number, **flags):
+        reservations.append((role, round_number, flags))
+        return f"synthetic_attempt_{len(reservations)}"
+
+    async def finish(claimed, attempt_id, state, summary, payload):
+        completions.append((attempt_id, state, payload))
+
+    async def authorized():
+        return True
+
+    async def runner(data, still_authorized, *, role, seconds):
+        calls.append(role)
+        if role == "creator":
+            if calls.count(role) == 1:
+                value = deepcopy(candidate)
+            else:
+                assert data["language_repair"] is True and data["permitted_web_actions"] == 0
+                assert "current_draft" not in data and "critic_feedback" not in data
+                bound = data["language_patch_context"]
+                assert bound["scope"] == "private_prose_edits_only" and bound["allowed_refs"] == [FIELD, target]
+                value = response(bound, {FIELD: FIXED, target: fixed_topic})
+        elif role == "critic":
+            value = report(data["draft"], "revise" if calls.count(role) == 1 else "accept_draft")
+            if value["findings"]:
+                value["findings"][0].update(area="language", evidence_refs=[FIELD])
+                extra = deepcopy(value["findings"][0])
+                extra.update(id="f_2", area="content", evidence_refs=[target])
+                value["findings"].append(extra)
+            value["round_number"] = data["round_number"]
+            value["checks"] = [{"kind": item["kind"], "status": item["status"],
+                "evidence_refs": [item["id"]], "summary": item["summary"]} for item in data["receipts"]]
+        else:
+            value = decision(data["draft"], data["critic"])
+            value["round_number"] = data["round_number"]
+            value["next_actions"] = review.coordinator_actions(data["critic"])[:5]
+        return value, {"usage": {"input_tokens": 1, "output_tokens": 1}, "web_search_count": 0}
+
+    monkeypatch.setattr(team, "reserve", reserve)
+    monkeypatch.setattr(team, "finish", finish)
+    result, evidence = await team.run({"context": {"permitted_web_actions": 6}}, authorized, role_runner=runner)
+    assert calls == ["creator", "critic", "coordinator"] * 2 and len(completions) == 6
+    assert all(state == "succeeded" for _, state, _ in completions)
+    assert reservations[3][2]["language_repair"] is True
+    assert evidence["critic"]["verdict"] == "accept_draft" and evidence["coordinator"]["decision"] == "accept_draft"
+    assert result["research"][6]["finding"] == FIXED and result["content_plan"][0]["primary_topic"] == fixed_topic
+    result["research"][6]["finding"] = original["research"][6]["finding"]
+    result["content_plan"][0]["primary_topic"] = original["content_plan"][0]["primary_topic"]
+    assert result == candidate == original
 
 
 def test_compact_exact_canonical_instruction_profile_and_schema(candidate):

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Scoped CI command extension only; hosted outcome must be recorded after exact source push. New projection file passed five actual PostgreSQL tests independently; final schema --check passed. Original capture job/CC10 receipts preserved.",
+  "checks": [
+    {
+      "command": "PyYAML safe_load .github/workflows/agent-workflow.yml and assert projection pytest/schema commands in acquisition-capture job",
+      "result": "PASS",
+      "evidence": "Workflow YAML and projection commands PASS at03:04UTC"
+    },
+    {
+      "command": "uv run --locked python scripts/acquisition_projection_contracts.py --check",
+      "result": "PASS",
+      "evidence": "Final schema d21b8eac48714b16d9227c93cd4a3fb038ccf7ded39cea39e82a94ec4b392b38 matched generated source bytes"
+    }
+  ],
+  "eventId": "36890c9e-d1ad-43be-ab54-d38ffbd5c928",
+  "sequence": 2,
+  "at": "2026-10-10T03:04:58.100Z"
+}

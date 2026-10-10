@@ -1,0 +1,355 @@
+{
+  "projection_contract_version": "0.1.0",
+  "schemas": {
+    "CaptureLedgerSnapshot": {
+      "$defs": {
+        "LedgerCounts": {
+          "additionalProperties": false,
+          "properties": {
+            "active_providers_in_core": {
+              "minimum": 0,
+              "title": "Active Providers In Core",
+              "type": "integer"
+            },
+            "available_unbound_invitations": {
+              "minimum": 0,
+              "title": "Available Unbound Invitations",
+              "type": "integer"
+            },
+            "campaigns": {
+              "minimum": 0,
+              "title": "Campaigns",
+              "type": "integer"
+            },
+            "committed_commands": {
+              "minimum": 0,
+              "title": "Committed Commands",
+              "type": "integer"
+            },
+            "cost_microusd": {
+              "default": null,
+              "title": "Cost Microusd",
+              "type": "null"
+            },
+            "currently_attributed_providers": {
+              "minimum": 0,
+              "title": "Currently Attributed Providers",
+              "type": "integer"
+            },
+            "currently_bound_recipients": {
+              "minimum": 0,
+              "title": "Currently Bound Recipients",
+              "type": "integer"
+            },
+            "discovered_prospects": {
+              "default": null,
+              "title": "Discovered Prospects",
+              "type": "null"
+            },
+            "expired_unbound_invitations": {
+              "minimum": 0,
+              "title": "Expired Unbound Invitations",
+              "type": "integer"
+            },
+            "failed_attempts": {
+              "default": null,
+              "title": "Failed Attempts",
+              "type": "null"
+            },
+            "historical_active_providers_in_core": {
+              "minimum": 0,
+              "title": "Historical Active Providers In Core",
+              "type": "integer"
+            },
+            "historical_recipient_bindings": {
+              "minimum": 0,
+              "title": "Historical Recipient Bindings",
+              "type": "integer"
+            },
+            "invitations": {
+              "minimum": 0,
+              "title": "Invitations",
+              "type": "integer"
+            },
+            "native_pending_outbox": {
+              "default": null,
+              "title": "Native Pending Outbox",
+              "type": "null"
+            },
+            "outreach_sent": {
+              "default": null,
+              "title": "Outreach Sent",
+              "type": "null"
+            },
+            "received_replies": {
+              "default": null,
+              "title": "Received Replies",
+              "type": "null"
+            },
+            "retired_invitations": {
+              "minimum": 0,
+              "title": "Retired Invitations",
+              "type": "integer"
+            },
+            "stopped_campaigns": {
+              "minimum": 0,
+              "title": "Stopped Campaigns",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "campaigns",
+            "stopped_campaigns",
+            "invitations",
+            "available_unbound_invitations",
+            "expired_unbound_invitations",
+            "retired_invitations",
+            "currently_bound_recipients",
+            "currently_attributed_providers",
+            "active_providers_in_core",
+            "historical_recipient_bindings",
+            "historical_active_providers_in_core",
+            "committed_commands"
+          ],
+          "title": "LedgerCounts",
+          "type": "object"
+        },
+        "ReceiptActivity": {
+          "additionalProperties": false,
+          "properties": {
+            "committed_at": {
+              "format": "date-time",
+              "title": "Committed At",
+              "type": "string"
+            },
+            "operation": {
+              "enum": [
+                "resolve",
+                "recipient-challenge",
+                "verify-recipient",
+                "events",
+                "retire-recipient"
+              ],
+              "title": "Operation",
+              "type": "string"
+            },
+            "outcome": {
+              "enum": [
+                "available",
+                "expired",
+                "stopped",
+                "already_attributed",
+                "issued",
+                "already_bound",
+                "recipient_bound",
+                "applied",
+                "duplicate",
+                "stale",
+                "recipient_retired",
+                "candidate_retired"
+              ],
+              "title": "Outcome",
+              "type": "string"
+            },
+            "request_id": {
+              "format": "uuid",
+              "title": "Request Id",
+              "type": "string"
+            },
+            "source_revision": {
+              "anyOf": [
+                {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Revision"
+            }
+          },
+          "required": [
+            "operation",
+            "request_id",
+            "committed_at",
+            "outcome"
+          ],
+          "title": "ReceiptActivity",
+          "type": "object"
+        },
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "activity_truncated": {
+          "title": "Activity Truncated",
+          "type": "boolean"
+        },
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "content_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Content Sha256",
+          "type": "string"
+        },
+        "counts": {
+          "$ref": "#/$defs/LedgerCounts"
+        },
+        "coverage": {
+          "const": "committed_core_ledger_only",
+          "default": "committed_core_ledger_only",
+          "title": "Coverage",
+          "type": "string"
+        },
+        "data_as_of": {
+          "format": "date-time",
+          "title": "Data As Of",
+          "type": "string"
+        },
+        "expiry_evaluated_at": {
+          "format": "date-time",
+          "title": "Expiry Evaluated At",
+          "type": "string"
+        },
+        "external_sent": {
+          "const": false,
+          "default": false,
+          "title": "External Sent",
+          "type": "boolean"
+        },
+        "full_pipeline_accepted": {
+          "const": false,
+          "default": false,
+          "title": "Full Pipeline Accepted",
+          "type": "boolean"
+        },
+        "last_committed_receipt_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Last Committed Receipt At"
+        },
+        "metric_definition": {
+          "const": "acquisition-capture-ledger-v1",
+          "default": "acquisition-capture-ledger-v1",
+          "title": "Metric Definition",
+          "type": "string"
+        },
+        "missing_sources": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Sources",
+          "type": "array"
+        },
+        "mode": {
+          "const": "capture_only",
+          "default": "capture_only",
+          "title": "Mode",
+          "type": "string"
+        },
+        "period_basis": {
+          "const": "current_and_all_time_ledger",
+          "default": "current_and_all_time_ledger",
+          "title": "Period Basis",
+          "type": "string"
+        },
+        "projection_contract_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Projection Contract Version",
+          "type": "string"
+        },
+        "recent_committed_activity": {
+          "items": {
+            "$ref": "#/$defs/ReceiptActivity"
+          },
+          "title": "Recent Committed Activity",
+          "type": "array"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope",
+          "allOf": [
+            {
+              "properties": {
+                "environment_class": {
+                  "const": "test"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "scope",
+        "adapter_id",
+        "data_as_of",
+        "expiry_evaluated_at",
+        "last_committed_receipt_at",
+        "missing_sources",
+        "counts",
+        "recent_committed_activity",
+        "activity_truncated",
+        "content_sha256"
+      ],
+      "title": "CaptureLedgerSnapshot",
+      "type": "object"
+    }
+  }
+}

@@ -83,6 +83,9 @@ async def test_success_and_failed_private_evidence_match_actual_cli_model(tmp_pa
         assert args[args.index("--model") + 1] == "gpt-6.1-sol"
         if failed:
             raise RunnerError("provider_error")
+        if role == "critic":
+            from test_creation_compact_review import compact
+            return compact(context["draft"]), {"usage": {"input_tokens": 3, "output_tokens": 1}}
         return {}, {"usage": {"input_tokens": 3, "output_tokens": 1}}
 
     monkeypatch.setattr(adapter, "execute", execute)

@@ -1,0 +1,27 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual Sol critic report remains incomplete; production CLI has no supported output-budget key and repeats authoritative check state in verbose provider output.",
+  "category": "code",
+  "evidence": [
+    "Actual source07417e05 job80cdde99 ended genuine incomplete/max_output_tokens after2962UTF8B/60newlines/partial fifth finding, no checks or terminal usage;32charged preserved/noaccepted/intake.",
+    "Pinned official Codex rust-v0.156.1 ResponsesApiRequest has no max_output_tokens/extra_body; incomplete SSE branch publishes reason only. Independent read-only source review confirms bounded complete-report candidate, not proved recovery."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_compact_review.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6102093192",
+  "rollback": "Scoped revert business-only provider representation, keeping original failures/attempts/Sol history/catalogue/schema18 and full stored/HTTP review contract. No quota reset or partial report acceptance.",
+  "id": "upgrade-b654e6fd-2d9f-4bee-b847-5aac49a21562",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "07417e05eac7054c578ec84b095af09959039905",
+  "createdAt": "2026-10-10T20:56:59.617Z"
+}

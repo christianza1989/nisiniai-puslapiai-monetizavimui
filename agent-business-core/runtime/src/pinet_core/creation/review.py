@@ -125,6 +125,39 @@ class CoordinatorDecision(Strict):
     launch_status: Literal["UNVERIFIED"]
 
 
+class CheckSummaries(Strict):
+    """Every observation kind remains mandatory in the business provider output."""
+
+    language_quality: Annotated[str, Field(min_length=10, max_length=100)]
+    source: Annotated[str, Field(min_length=10, max_length=100)]
+    browser: Annotated[str, Field(min_length=10, max_length=100)]
+    seo_geo: Annotated[str, Field(min_length=10, max_length=100)]
+    media: Annotated[str, Field(min_length=10, max_length=100)]
+    contact_delivery: Annotated[str, Field(min_length=10, max_length=100)]
+    publication: Annotated[str, Field(min_length=10, max_length=100)]
+    launch: Annotated[str, Field(min_length=10, max_length=100)]
+    demand: Annotated[str, Field(min_length=10, max_length=100)]
+
+
+class BusinessFinding(Finding):
+    explanation: Annotated[str, Field(min_length=10, max_length=240)]
+    correction: Annotated[str, Field(min_length=10, max_length=240)]
+
+
+class BusinessCriticOutput(Strict):
+    """Internal provider representation; never a stored or customer HTTP review."""
+
+    schema_version: Literal["creation.business-critic-output.v1"]
+    role: Literal["critic"]
+    draft_sha256: Digest
+    stage: Stage
+    round_number: int = Field(ge=1, le=5)
+    verdict: Literal["accept_draft", "revise", "blocked"]
+    summary: str = Field(min_length=20, max_length=360)
+    findings: list[BusinessFinding] = Field(max_length=12)
+    check_summaries: CheckSummaries
+
+
 def canonical_sha256(value):
     """Stable UTF-8, sorted-key, compact JSON digest; not the hash of rendered artifact bytes."""
     raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
@@ -167,6 +200,12 @@ def _draft_reference(reference, draft):
         raise ValueError("An actionable reference requires actual draft content")
 
 
+def _receipt_status(observations):
+    statuses = {item.status for item in observations}
+    return ("FAIL" if "FAIL" in statuses else "UNVERIFIED" if not statuses or "UNVERIFIED" in statuses
+            else "PASS" if statuses == {"PASS"} else "NA" if statuses == {"NA"} else "UNVERIFIED")
+
+
 def _check_evidence(check, receipts):
     ids = check.evidence_refs
     if (len(ids) != len(set(ids))
@@ -175,11 +214,8 @@ def _check_evidence(check, receipts):
     observations = [receipts[reference] for reference in ids]
     if any(item.kind != check.kind for item in observations):
         raise ValueError("Observation kind does not match check")
-    statuses = {item.status for item in observations}
     # Deterministic aggregation: never turn mixed/unknown or failed evidence into PASS.
-    expected = ("FAIL" if "FAIL" in statuses else "UNVERIFIED" if not statuses or "UNVERIFIED" in statuses
-                else "PASS" if statuses == {"PASS"} else "NA" if statuses == {"NA"} else "UNVERIFIED")
-    if check.status != expected:
+    if check.status != _receipt_status(observations):
         raise ValueError("Check is not supported by supplied observations")
 
 
@@ -271,6 +307,17 @@ iki 100. Vienu aiškiu sakiniu įvardyk trūkumą, kitu – konkrečią pataisą
 Šios ribos nemažina radinių skaičiaus (iki 12) ar devynių patikrų; išsaugok jų būsenas ir visas nuorodas.
 """
 
+BUSINESS_CRITIC_POLICY = CRITIC_POLICY.replace(
+    "Kiekvienai iš devynių schemos patikrų grąžink vieną būseną, visus tos rūšies kvitų ID ir tikrą jos apimtį.",
+    "check_summaries privalomai pateik visas devynias schemos patikrų rūšis ir kiekvienos tikrą apimtį. "
+    "Būsenų ir kvitų ID nekartok: serveris juos išsaugo pagal šios versijos patikrintus receipts. "
+    "Santrauka ar tavo sprendimas negali pakeisti jų būsenos.",
+) + """Grąžink kompaktišką vienos eilutės JSON, be įtraukų ar naujų eilučių tarp laukų.
+Tik tos pačios priežasties ir tos pačios konkrečios pataisos radinius sujunk, išsaugodamas visas tikslias
+nuorodas. Daugiau nei šešioms nuorodoms pateik papildomą radinį. Skirtingų trūkumų ar pataisų nepraleisk.
+Privaloma pataisa ir žinoma FAIL būsena vis tiek neleidžia accept_draft; visos devynios patikros privalomos.
+"""
+
 COORDINATOR_POLICY = """Esi Verslomatikos koordinatorius. Pagal pateiktą konkretų privatų juodraštį,
 jo kritiko išvadą ir tos versijos stebėjimų kvitus pateik trumpą klientui suprantamą sprendimą lietuviškai.
 Nerašyk vidinės minčių eigos ir nepratęsk tariamų derybų. Paaiškink, kas priimta, ką reikia pataisyti ir ką
@@ -316,6 +363,12 @@ def role_instruction_hash(role):
     if role not in policies:
         raise RunnerError("review_invalid")
     return hashlib.sha256(policies[role].encode("utf-8")).hexdigest()
+
+
+def business_role_instruction_hash(role):
+    if role == "critic":
+        return hashlib.sha256(BUSINESS_CRITIC_POLICY.encode("utf-8")).hexdigest()
+    return role_instruction_hash(role)
 
 
 def _review_projection(normalized):
@@ -374,7 +427,7 @@ def _prompt_context(draft, stage, round_number, receipts):
 def critic_prompt(*, draft, stage, round_number, receipts=()):
     try:
         context = _prompt_context(draft, stage, round_number, receipts)
-        return CRITIC_POLICY + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
+        return BUSINESS_CRITIC_POLICY + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
     except (ValueError, TypeError, KeyError, IndexError):
         raise RunnerError("review_invalid") from None
 
@@ -409,9 +462,10 @@ def model_output_schema(role):
 def output_schema(role, context):
     """Constrain provider references and hashes; authoritative post-check stays strict."""
     bound = _prompt_context(context["draft"], context["stage"], context["round_number"], context["receipts"])
-    schema = model_output_schema(role)
+    schema = BusinessCriticOutput.model_json_schema() if role == "critic" else model_output_schema(role)
     if role == "critic":
-        schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = bound["allowed_finding_refs"]
+        finding = schema["$defs"]["BusinessFinding"]["properties"]
+        finding["evidence_refs"]["items"]["enum"] = bound["allowed_finding_refs"]
     elif role == "coordinator":
         critic = _normalize_critic(context["critic"], context["draft"], context["stage"],
                                   context["round_number"], context["receipts"])
@@ -421,3 +475,25 @@ def output_schema(role, context):
     for key in ("draft_sha256", "stage", "round_number"):
         schema["properties"][key]["const"] = bound[key]
     return schema
+
+
+def hydrate_business_critic(value, context):
+    """Restore only trusted receipt fields, then run every existing full-review gate."""
+    try:
+        bound = _prompt_context(context["draft"], context["stage"], context["round_number"], context["receipts"])
+        compact = BusinessCriticOutput.model_validate(value)
+        if any(getattr(compact, key) != bound[key] for key in ("draft_sha256", "stage", "round_number")):
+            raise ValueError("Exact current candidate binding required")
+        observations = _receipts(context["receipts"], bound["draft_sha256"])
+        summaries = compact.check_summaries.model_dump()
+        full = compact.model_dump(mode="json", exclude={"check_summaries"})
+        full["schema_version"] = "creation.critic.v1"
+        full["checks"] = []
+        for kind in CHECK_KINDS:
+            matching = [item for item in observations.values() if item.kind == kind]
+            full["checks"].append({"kind": kind, "status": _receipt_status(matching),
+                "evidence_refs": [item.id for item in matching], "summary": summaries[kind]})
+        return normalize_critic(full, draft=context["draft"], expected_stage=context["stage"],
+                                expected_round=context["round_number"], receipts=context["receipts"])
+    except (ValueError, TypeError, KeyError, IndexError):
+        raise RunnerError("review_invalid") from None

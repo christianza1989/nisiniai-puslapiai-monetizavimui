@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Independent review identified a real P2: provider schema240 text limits were not enforced by internal hydration using stored Finding700. Added business-only BusinessFinding10..240 and four240/241 direct hydration cases, preserving stored/legacy Finding700. An intermediate broad patch reversed shared/business schema definition lookup and caused14FAIL202PASS7SKIP20.62s; original output retained, builders corrected with explicit function context. Final216PASS7SKIP20.88s, scoped RuffPASS; native GUIDE exact policy/schema hashes unchanged. No actual provider/adoption yet.",
+  "eventId": "b9722741-1e3d-4d17-80a5-e7f451656e3e",
+  "sequence": 3,
+  "at": "2026-10-10T21:04:00.349Z"
+}

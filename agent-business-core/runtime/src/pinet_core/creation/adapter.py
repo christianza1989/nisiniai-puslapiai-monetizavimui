@@ -229,7 +229,7 @@ def role_instruction_hash(role, *, structure_repair=False, language_repair=False
         return instructions(structure_repair=structure_repair, language_repair=language_repair)[1]
     if structure_repair or language_repair:
         raise RunnerError("review_invalid")
-    from .review import role_instruction_hash as review_hash
+    from .review import business_role_instruction_hash as review_hash
     return review_hash(role)
 
 
@@ -295,13 +295,17 @@ async def run_role(context, still_authorized, *, role, seconds):
         receipt["instruction_hash"], receipt["adapter_revision"], receipt["model"] = instruction_hash, "codex-business-team.v1", model
         receipt["prompt_bytes"], receipt["context_bytes"] = len(prompt.encode()), len(json.dumps(context, ensure_ascii=False).encode())
         receipt["prior_context_projection"] = context.get("prior_context_projection")
-        if role == "creator" and not language_repair:
-            try:
+        try:
+            if role == "creator" and not language_repair:
                 result = normalize_creator(result)
-            except RunnerError as error:
+            elif role == "critic":
+                from .review import hydrate_business_critic
+                result = hydrate_business_critic(result, context)
+        except RunnerError as error:
+            if role == "creator":
                 if repair := structural_repair_context(result):
                     receipt["creator_repair_context"] = repair
-                raise RunnerError(error.code, receipt) from None
+            raise RunnerError(error.code, receipt) from None
         return result, receipt
     except RunnerError as error:
         error.receipt = {**(error.receipt or {}), "instruction_hash": instruction_hash,

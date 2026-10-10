@@ -340,7 +340,7 @@ def test_provider_schema_rejects_actual_dot_bracket_reference_defect(draft, refe
     import re
     context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": []}
     schema = output_schema("critic", context)
-    constraint = schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]
+    constraint = schema["$defs"]["BusinessFinding"]["properties"]["evidence_refs"]["items"]
     valid = reference == "draft:/pages/0/sections/1/body"
     assert bool(re.fullmatch(constraint["pattern"], reference)) == valid
     assert (reference in constraint["enum"]) == valid
@@ -378,7 +378,7 @@ def test_schema_and_projection_do_not_launder_unknown_reference_or_fail(draft):
     evidence = receipt(draft, status="FAIL")
     context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": [evidence]}
     schema = output_schema("critic", context)
-    refs = schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"]
+    refs = schema["$defs"]["BusinessFinding"]["properties"]["evidence_refs"]["items"]["enum"]
     assert "draft:/pages/99/title" not in refs and "receipt:r_unknown" not in refs
     critic = report(draft, "accept_draft")
     bind(critic, evidence)
@@ -416,12 +416,12 @@ def test_compact_critic_preserves_twelve_corrections_nine_checks_and_known_fail(
     schema = output_schema("critic", context)
     report_value = verify(value, draft, receipts)
     assert len(report_value["findings"]) == schema["properties"]["findings"]["maxItems"] == 12
-    assert len(report_value["checks"]) == schema["properties"]["checks"]["minItems"] == 9
-    assert schema["properties"]["checks"]["maxItems"] == 9
+    assert len(report_value["checks"]) == len(schema["$defs"]["CheckSummaries"]["required"]) == 9
+    assert set(schema["$defs"]["CheckSummaries"]["properties"]) == set(CHECK_KINDS)
     assert len(report_value["summary"]) <= schema["properties"]["summary"]["maxLength"]
     for finding in report_value["findings"]:
         for field in ("explanation", "correction"):
-            assert len(finding[field]) <= schema["$defs"]["Finding"]["properties"][field]["maxLength"]
+            assert len(finding[field]) <= schema["$defs"]["BusinessFinding"]["properties"][field]["maxLength"]
     assert all(len(check["summary"]) <= 100 for check in report_value["checks"])
     final = verify_decision(decision(draft, report_value), draft, report_value, receipts)
     assert final["correction_ids"] == ["f_" + str(i) for i in range(1, 13)]

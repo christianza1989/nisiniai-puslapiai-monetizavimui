@@ -1,0 +1,24 @@
+{
+  "category": "code",
+  "summary": "Actual discovery provider ignored requested domain exclusions; enforce URL exclusions locally and keep source relevance unverified",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/discovery_urls.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_discovery_urls.py",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json",
+    "agent-business-core/OUTBOUND_ACQUISITION.md"
+  ],
+  "evidence": [
+    "Actual tinyfish.web.search Treg call903a58517ea84da1be43ca0534b79bfa used catalog-documented exclude_domains but returned forbidden Treatwell/Facebook URLs; status200/cost_usd0",
+    "Actual preceding refined Alytus result included unrelated software/cars/furniture; Utena query found Kaunas studio on Utenos street. Search city/HTTP200/row count cannot establish provider fit or city coverage",
+    "Existing source retrieval is bounded/explicit and behaved correctly; the new guard enforces the discovery provider boundary rather than pretending the downstream invitation/native pipeline failed"
+  ],
+  "rollback": "Scoped revert owned discovery URL guard/skill lesson; retain provider mismatch/first failures/private minimal source metadata and deny unverified discovery readiness",
+  "id": "upgrade-e803acd2-763a-4822-aa88-a2a96bee08cf",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "e8e5bcbfb4d5c962f15d04c0bc5b47e1d77a3fdd",
+  "createdAt": "2026-10-10T04:58:36.698Z"
+}

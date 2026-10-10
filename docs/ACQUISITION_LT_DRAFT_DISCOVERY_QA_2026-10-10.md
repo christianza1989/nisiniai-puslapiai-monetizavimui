@@ -1,0 +1,37 @@
+# Madbeauty LT source research and discovery-filter repair — 2026-10-10
+
+Actual bounded research produced **15 source-backed provider candidates and 15 manual operator-review drafts**. None is a received lead, an interested provider, an independently reviewed engine draft or a sent message. The campaign remains disabled/draft-only; engine `draft_ready=0`, model calls, collected recipient contacts, created accounts/jobs and external sends are all0. The private candidate/source/draft files stay in ignored `tmp/`; this report publishes only aggregate evidence and hashes.
+
+## Scope and ordering
+
+Source baseline `e8e5bcbfb4d5c962f15d04c0bc5b47e1d77a3fdd`; root/public freshness passed before this batch. Reservations [6093920950](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6093920950) and [6093989788](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6093989788). Human scope is all beauty services/all Lithuania/provider signup. The actual native→isolated core→current read capture acceptance was already completed. The latest human continuation allows real LT draft-only selection after that capture acceptance, alongside later normal portal acceptance. Earlier root state/QA wording had unnecessarily deferred all discovery until portal acceptance; this section corrects that ordering without changing the remaining normal integration gates.
+
+No normal bootstrap/control/tasks/0010/0011/0012/native/portal source was edited. Both owned PostgreSQL containers15439/15541 and API8851 remain stopped/retained; no worker, scheduler, model calibration, mail transport or runtime job was started.
+
+## Actual search failure and owned core repair
+
+Treg catalogue identified `tinyfish.web.search` as free USD0, with no overflow price and raw provider caching forbidden. Actual16 calls returned150 raw rows at total actual USD0: initial10 city queries90 rows (one Tauragė query0), five refined queries50 rows, one controlled query10 rows. These are search-response denominators, not150 leads or complete national coverage. No full provider response/snippet cache was written; only minimal call/query/status/count/cost receipts were retained.
+
+Some refined results had unrelated software/cars/furniture activity or confused a city query with another city's similarly named street. Controlled call `903a58517ea84da1be43ca0534b79bfa` used documented `exclude_domains` but still returned three forbidden-domain URLs. Provider HTTP200/filter parameters therefore cannot establish actual local exclusion, location or provider fit. Catalogue and primary documentation were checked: [search API](https://docs.tinyfish.ai/api-reference/search-the-web), [provider pricing](https://www.tinyfish.ai/pricing).
+
+New acquisition-owned `review_discovery_urls()` enforces caller-owned exclusions for domains/subdomains, rejects unsafe/credential/query/duplicate URLs and normalizes eligible URLs. It performs no network/model/contact operation. Every remaining URL is `primary_read_required`, with `read_allowed=false` and `qualified_provider=false`; explicit source approval and original service/location evidence are still required. An actual URL-only check of the controlled response excluded3, retained7 for primary verification, qualified0. No production Treg adapter/scheduler/automatic city classifier was implemented by this helper.
+
+Canonical acquisition SKILL/daily-outbound instructions and only that skill's catalog hash were updated. Distinct immutable improvement `upgrade-e803acd2-763a-4822-aa88-a2a96bee08cf` preserves the provider mismatch and local verification; no global skill installation, main merge or other-PC adapter adoption is claimed.
+
+## First-party evidence and limits
+
+Actual shared bounded public retrieval checked21 explicit original HTTPS URLs:17 readable and4 unavailable. Unavailability includes403, connection and DNS failures; no challenge/login/redirect bypass was attempted. The first private wrapper attempt failed after one attempted read because Windows cp1252 stdout could not print Lithuanian text; its first status was not retained. That first failure is preserved separately. The corrected wrapper used UTF-8 and wrote each minimal receipt before printing; the accepted17+4 checks are distinct from that failed attempt. Full page bodies/visible text were not retained.
+
+15 deduplicated domain-key candidates have first-party service/location evidence. A multi-city organization remains one candidate; domain keys do not establish verified legal entities. Six sources are held: four unavailable and two needing operator review of actual training-service or mixed clinical/cosmetic eligibility. Training activity alone was not used to deny an institution's documented services. Qualification flags for permanent makeup/tattoo/piercing remain unverified.
+
+The immutable native catalogue snapshot is `2e4d1ea874326f6862e2f45d98a48fdf3463a267`, taxonomy version `2026-10-06-v1`,305 nodes/14 core categories plus7 extensions. It is not current hosted/operator-override adoption. Source-backed candidates cover13/14 core category IDs and six source-proven cities: Alytus, Kaunas, Klaipėda, Marijampolė, Vilnius, Šiauliai. `estetika` and source-backed candidates for Panevėžys, Utena, Telšiai, Tauragė remain gaps. A city/street word in the search query cannot fill those gaps.
+
+All15 private `Prospect` objects validated against the existing strict core model and actual `prepare()` returned blocked under disabled campaign/unverified source-use. A no-model sentinel would fail any call; none occurred. Each manual draft uses one minimal original-source fact and one invitation-information question. No price/0€ pilot promise, verified hosted signup CTA, recipient, transport Message-ID or willingness to join was inferred from old business text. Source reading, source reuse and contacting rights remain separate.
+
+## Verification and next action
+
+20 new discovery regressions passed; the full relevant offline suite passed70 tests/25 subtests. Scoped Ruff and skill validation passed. Four existing exact acquisition/binding/retirement/projection schema checks passed unchanged; PostgreSQL was not restarted for this pure helper change. New exact-head CI is reported separately after publication; prior bootstrap19Pg evidence is not relabelled as a new local run. Documentation links/catalog hash and staged safety are checked before Git handoff.
+
+The [redacted receipt](ACQUISITION_LT_DRAFT_DISCOVERY_RECEIPT_2026-10-10.json) records aggregate results and private evidence hashes. Research evidence requests recheck after2026-10-11T05:03:44.774098+00:00; this is a research TTL, not renewal of any invitation expiry. Raw provider/page caches and candidate/contact/letter lists are absent from Git.
+
+**Next integration action:** core/portal owners still need to accept [the tested grant-repair proposal6093879544](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6093879544), the0012/down0011 normal migration/API/config window, one server-authorized acquisition projection/tool and the generic typed daily execution owner. Native→normal core→portal/director acceptance and hosted release remain open. This research batch does not authorize real outreach or certify the35-screen dashboard, full national/category discovery, independent draft review or a running autonomous agent. Full human objective/continuity automation remains open.

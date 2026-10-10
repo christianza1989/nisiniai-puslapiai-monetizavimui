@@ -124,18 +124,30 @@ def instructions(*, structure_repair=False, language_repair=False):
     return value, hashlib.sha256(value.encode()).hexdigest()
 
 
-def arguments(executable, workspace, schema, output, *, web, role="creator"):
+def role_model(role):
+    """Server-owned execution choice; customer data cannot select a model."""
     if role not in {"creator", "critic", "coordinator"}:
         raise RunnerError("review_invalid")
+    return "gpt-6-luna" if role == "creator" else "gpt-6.1-sol"
+
+
+def role_profile(role):
+    return {"model": role_model(role), "reasoning_effort": "medium" if role == "creator" else "low",
+            "verbosity": None if role == "creator" else "medium"}
+
+
+def arguments(executable, workspace, schema, output, *, web, role="creator"):
+    profile = role_profile(role)
     result = consult_arguments(executable, workspace, schema, output)
+    result[result.index("--model") + 1] = profile["model"]
     at = result.index('web_search="disabled"')
     result[at] = 'web_search="live"' if web else 'web_search="disabled"'
     # These two roles review one supplied draft and have no tools or research.
     # Keep the complete review checks while reserving output for their typed report.
     if role != "creator":
         at = result.index('model_reasoning_effort="medium"')
-        result[at] = 'model_reasoning_effort="low"'
-        result += ['-c', 'model_verbosity="medium"']
+        result[at] = f'model_reasoning_effort="{profile["reasoning_effort"]}"'
+        result += ['-c', f'model_verbosity="{profile["verbosity"]}"']
     return result
 
 
@@ -207,11 +219,13 @@ def team_instruction_hash():
     value = {role: role_instruction_hash(role) for role in ("creator", "critic", "coordinator")}
     value["creator_structure_repair"] = role_instruction_hash("creator", structure_repair=True)
     value["creator_language_repair"] = role_instruction_hash("creator", language_repair=True)
+    value["execution_profiles"] = {role: role_profile(role) for role in ("creator", "critic", "coordinator")}
     return hashlib.sha256(json.dumps(value, sort_keys=True).encode()).hexdigest()
 
 
 async def run_role(context, still_authorized, *, role, seconds):
     started = monotonic()
+    model = role_model(role)
     binary, workspace = available()
     cfg = settings()
     structure_repair = role == "creator" and context.get("structure_repair") is True
@@ -254,11 +268,13 @@ async def run_role(context, still_authorized, *, role, seconds):
         remaining_seconds = min(seconds, cfg.creation_runner_seconds) - (monotonic() - started)
         if remaining_seconds <= 0:
             raise RunnerError("run_timeout")
-        result, receipt = await execute(arguments(binary, folder, schema, output, web=web, role=role),
+        argv = arguments(binary, folder, schema, output, web=web, role=role)
+        model = argv[argv.index("--model") + 1]
+        result, receipt = await execute(argv,
             prompt=prompt, cwd=folder, env=child_environment(), output=output, seconds=remaining_seconds,
             still_authorized=still_authorized, parse_trace=trace.parse, on_event=trace.event,
             stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl")
-        receipt["instruction_hash"], receipt["adapter_revision"], receipt["model"] = instruction_hash, "codex-business-team.v1", "gpt-6-luna"
+        receipt["instruction_hash"], receipt["adapter_revision"], receipt["model"] = instruction_hash, "codex-business-team.v1", model
         receipt["prompt_bytes"], receipt["context_bytes"] = len(prompt.encode()), len(json.dumps(context, ensure_ascii=False).encode())
         receipt["prior_context_projection"] = context.get("prior_context_projection")
         if role == "creator" and not language_repair:
@@ -270,8 +286,10 @@ async def run_role(context, still_authorized, *, role, seconds):
                 raise RunnerError(error.code, receipt) from None
         return result, receipt
     except RunnerError as error:
+        error.receipt = {**(error.receipt or {}), "instruction_hash": instruction_hash,
+                         "adapter_revision": "codex-business-team.v1", "model": model}
         (folder / "failure.private.json").write_text(json.dumps({"code": error.code, "instruction_hash": instruction_hash,
-            "adapter_revision": "codex-business-team.v1", "model": "gpt-6-luna", "receipt": error.receipt}), encoding="utf-8")
+            "adapter_revision": "codex-business-team.v1", "model": model, "receipt": error.receipt}), encoding="utf-8")
         raise
 
 

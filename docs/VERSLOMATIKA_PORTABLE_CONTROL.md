@@ -1,5 +1,7 @@
 # Verslomatika kūrimas ir testavimas kitame PC
 
+Dabartinis source parengimas apima0017 kliento profilio admission ir additive0018 verslo peržiūros modelio CHECK. Naujas target PC vykdo `alembic upgrade head`, ne seną0016 komandą. Verslo kūrėjas, konsultacija ir native GUIDE naudoja Luna; tik verslo kritikas ir koordinatorius fiksuotai naudoja Sol. Prieš Sol rezervaciją portalas turi perimti tikslų atnaujintą team kontraktą. Tikras kito PC modelio veikimas, hosted ryšys ir kliento pipeline priėmimas lieka atskiros patikros. Jau esančios Sol istorijos downgrade į0017 atmetamas; grąžinant vykdymą į Luna reikia išlaikyti jos skaitymo suderinamumą.
+
 2026-10-10 aktualus savininko sprendimas: dar kuriame ir testuojame, tęsiame su PostgreSQL be Supabase. Paruošti kitam PC; viešo paleidimo dabar nėra. Šis dokumentas yra paleidimo eiga, ne jau atlikto perkėlimo ar hosted priėmimo pažyma.
 
 ## Kas perkeliama

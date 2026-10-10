@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Private customer creation team timeline",
-    "version": "0.1.0",
-    "description": "Actual separate creator/critic/coordinator dispatch reservations and bounded summaries. No raw reasoning/trace; exact candidate-bound review and observed check receipts. Two rounds/six calls/overall deadline per job, each call charged before dispatch. draft_ready is private reviewed draft only; fullF1 and launch remain UNVERIFIED. needs_review is a sidecar projection; existing creation.v1 remains unchanged."
+    "version": "0.2.0",
+    "description": "Actual separate creator/critic/coordinator dispatch reservations and bounded summaries. No raw reasoning/trace; exact candidate-bound review and observed check receipts. Two rounds/six calls/overall deadline per job, each call charged before dispatch. draft_ready is private reviewed draft only; fullF1 and launch remain UNVERIFIED. needs_review is a sidecar projection; existing creation.v1 remains unchanged. Creator remains Luna; new business critic/coordinator use fixed Sol. Historical Luna review attempts remain readable with exact recorded model identities."
   },
   "paths": {
     "/customer/v2/creations/{creation_id}/team": {
@@ -141,6 +141,24 @@
       },
       "AttemptView": {
         "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "creator"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "model": {
+                  "const": "gpt-6-luna"
+                }
+              }
+            }
+          }
+        ],
         "properties": {
           "attempt_id": {
             "format": "uuid",
@@ -199,7 +217,10 @@
             "type": "string"
           },
           "model": {
-            "const": "gpt-6-luna",
+            "enum": [
+              "gpt-6-luna",
+              "gpt-6.1-sol"
+            ],
             "title": "Model",
             "type": "string"
           },

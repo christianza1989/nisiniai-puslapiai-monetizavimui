@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Retained follow-up harness failures: pinned empty-auth CLI5FAIL2PASS39.95s because bundled old metadata omitted Sol verbosity; explicit exact nonsensitive model catalogue added, then7FAIL9.30s from mistaken supports_verbosity key corrected to actual support_verbosity. Final catalogue-backed7PASS27.82s, onePOST/no auth for Sol completed/coordinator/incomplete/503/truncated and Luna web/incomplete. PG first20PASS3fixtureERROR135.10s fixed missing explicit customers fixture; next22PASS1FAIL149.06s fixed test assuming array append after copying an equal created_at, now exact attempt-ID comparison. Independent review found missing0018 readiness check before paid creator; team reservation and worker preflight now both reject old constraint before any attempt. Final24-test restrictedPG group active; no provider/adoption or gate relaxation.",
+  "eventId": "19d59f17-ab07-47ff-87b4-c5802f02f8b6",
+  "sequence": 3,
+  "at": "2026-10-10T20:18:19.470Z"
+}

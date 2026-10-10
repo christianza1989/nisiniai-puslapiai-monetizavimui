@@ -34,6 +34,14 @@ async def _event(tx, creation, job, attempt, state, summary, payload):
     await tx.flush()
 
 
+async def review_schema_ready(tx):
+    return bool(await tx.scalar(text("""SELECT count(*)=1 FROM pg_constraint
+      WHERE conrelid='control_creation_attempts'::regclass AND contype='c' AND convalidated
+        AND conname='control_creation_attempts_review_model_check'"""))) and not bool(await tx.scalar(text("""
+      SELECT count(*) FROM pg_constraint WHERE conrelid='control_creation_attempts'::regclass
+        AND conname='control_creation_attempts_model_check'""")))
+
+
 async def reserve(claimed, role, round_number, *, structure_repair=False, language_repair=False):
     from .worker import locked
     if role not in START or round_number not in (1, 2):
@@ -45,6 +53,8 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
             raise adapter.RunnerError("authorization_revoked")
         if adapter.team_instruction_hash() != job.instruction_hash:
             raise adapter.RunnerError("instructions_changed")
+        if not await review_schema_ready(tx):
+            raise adapter.RunnerError("runner_unavailable")
         await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                          {"k": "creation-admission:" + settings().environment})
         start = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
@@ -58,7 +68,7 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
         attempt = Attempt(id=new_id(), creation_id=creation.id, job_id=job.id, run_id=job.run_id, sequence=sequence + 1,
             role=role, round_number=round_number, stage="private_draft", source_revision=job.source_revision,
             instruction_hash=adapter.role_instruction_hash(role, structure_repair=structure_repair,
-                language_repair=language_repair), model="gpt-6-luna", **binding(creation))
+                language_repair=language_repair), model=adapter.role_model(role), **binding(creation))
         tx.add(attempt)
         await tx.flush()
         await _event(tx, creation, job, attempt, "reserved", START[role], {})

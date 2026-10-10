@@ -1,5 +1,7 @@
 # Verslomatika integration feedback
 
+2026-10-10 actual review-profile outcome: source0fe77a7 trial d3e051d8 critic again failed incomplete/max_output_tokens after creator structure success/languageFAIL.27immutable charged calls, no accepted revision/intake; medium verbosity did not fix the real failure. Upgrade4f4a225d / scope6101622725 replaces only fixed business review model with Sol, with exact pre-dispatch/success/failure identities, execution-profile snapshot, additive0018 DB CHECK and intentionally widened team read contract. Existing Luna history and all review/authority/language gates remain; provider cap unknown. No smaller report or partial acceptance invented. Source verification and actual provider retry are separate evidence.
+
 ## P3/P4 customer/public integration — 2026-10-10
 
 Issue73 / upgrade-22251602-e55f-4318-8e1b-cd31b53fe350; actual path supplement upgrade-e1ca879a-0057-4244-afbb-e3c6fc58458c; final runbook scope upgrade-8b2df3e3-79f0-4e07-95de-28a36b0696b5. Source checkpointdb23aee, wire191ed795, main13c9649/publicec8a9c0.

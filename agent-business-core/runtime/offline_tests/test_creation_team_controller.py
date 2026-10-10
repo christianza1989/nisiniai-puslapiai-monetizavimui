@@ -69,8 +69,10 @@ async def test_owned_child_stops_on_terminal_error_before_later_output(monkeypat
     assert not trace.searches
 
 
-@pytest.mark.parametrize("mode", ["completed", "completed_web", "incomplete", "http503", "truncated_stream"])
-def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_path, mode):
+@pytest.mark.parametrize("mode,role", [("completed", "critic"), ("completed", "coordinator"),
+    ("completed_web", "creator"), ("incomplete", "critic"), ("http503", "critic"),
+    ("truncated_stream", "critic"), ("incomplete", "creator")])
+def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_path, mode, role):
     """Opt-in pinned CLI integration; empty auth home and synthetic loopback SSE only."""
     executable = os.environ.get("PINET_TEST_CODEX_EXECUTABLE")
     expected_sha = os.environ.get("PINET_TEST_CODEX_SHA256")
@@ -79,6 +81,13 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
     binary = Path(executable)
     assert binary.is_absolute() and binary.is_file()
     assert hashlib.sha256(binary.read_bytes()).hexdigest() == expected_sha
+    catalogue = os.environ.get("PINET_TEST_CODEX_MODEL_CATALOG_JSON")
+    if not catalogue:
+        pytest.skip("Explicit nonsensitive model catalogue required for the empty-home Sol probe")
+    model_catalogue = Path(catalogue)
+    assert model_catalogue.is_absolute() and model_catalogue.is_file()
+    advertised = {item["slug"]: item for item in json.loads(model_catalogue.read_bytes())["models"]}
+    assert all(advertised[model]["support_verbosity"] is True for model in ("gpt-6-luna", "gpt-6.1-sol"))
     requests = []
 
     class Handler(BaseHTTPRequestHandler):
@@ -98,7 +107,7 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
                 item = {"id": "msg_local", "type": "message", "role": "assistant", "status": "completed",
                         "content": [{"type": "output_text", "text": text, "annotations": []}]}
                 response = {"id": "resp_local", "object": "response", "created_at": 1,
-                            "model": "gpt-6-luna", "status": "in_progress", "output": []}
+                            "model": body["model"], "status": "in_progress", "output": []}
                 events = [
                     {"type": "response.created", "response": response},
                     {"type": "response.output_item.added", "output_index": 0,
@@ -137,8 +146,8 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         schema, output, home = tmp_path / "schema.json", tmp_path / "output.json", tmp_path / "empty-home"
         home.mkdir()
         schema.write_text(json.dumps(Answer.model_json_schema()), encoding="utf-8")
-        role = "critic" if mode == "completed" else "creator"
         args = arguments(binary, tmp_path, schema, output, web=mode == "completed_web", role=role)
+        args += ["-c", "model_catalog_json=" + json.dumps(str(model_catalogue))]
         # Only this test directs the process to a local unauthenticated fake server.
         args += ["-c", f'model_providers.pinet-bounded-openai.base_url="http://127.0.0.1:{server.server_port}/v1"',
                  "-c", "model_providers.pinet-bounded-openai.requires_openai_auth=false"]
@@ -151,9 +160,9 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         (tmp_path / "cli.stderr.txt").write_bytes(result.stderr.encode("utf-8"))
         (tmp_path / "request.private.json").write_text(json.dumps(requests), encoding="utf-8")
         events = [json.loads(line) for line in result.stdout.splitlines()]
-        assert len(requests) == 1 and requests[0]["model"] == "gpt-6-luna"
-        assert requests[0]["reasoning"]["effort"] == ("low" if role == "critic" else "medium")
-        assert requests[0]["text"]["verbosity"] == ("medium" if role == "critic" else "low")
+        assert len(requests) == 1 and requests[0]["model"] == ("gpt-6-luna" if role == "creator" else "gpt-6.1-sol")
+        assert requests[0]["reasoning"]["effort"] == ("medium" if role == "creator" else "low")
+        assert requests[0]["text"]["verbosity"] == ("low" if role == "creator" else "medium")
         assert "max_output_tokens" not in requests[0]
         tools = [tool["type"] for tool in requests[0].get("tools", [])]
         # gpt-6-luna uses Responses Lite: tools are declared in input messages,

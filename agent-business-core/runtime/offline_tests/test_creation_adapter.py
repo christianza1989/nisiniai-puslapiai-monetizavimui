@@ -30,6 +30,7 @@ def test_review_role_profile_retains_exact_process_policy(role, effort):
     else:
         assert not any(value.startswith('model_verbosity=') for value in args)
     unchanged = args[:-2] if expected_verbosity else args
+    unchanged[unchanged.index('--model')+1] = baseline[baseline.index('--model')+1]
     assert [value for value in unchanged if not value.startswith('model_reasoning_effort=')] == [
         value for value in baseline if not value.startswith('model_reasoning_effort=')]
     assert not any('max_output_tokens' in value for value in args)

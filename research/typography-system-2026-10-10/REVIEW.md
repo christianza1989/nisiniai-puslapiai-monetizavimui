@@ -28,7 +28,8 @@ Tai vienas prižiūrimas projekto tekstų stilių šaltinis ir patikros eiga, o 
 - [x] `git diff --check` PASS; mažas routing diff ir visas naujas reference perskaityti.
 - [x] Tikslus staged diff / whitespace peržiūrėtas; `repository-safety.mjs . --staged` PASS: 12 tikrų staged tekstinių blob, 0 findings.
 - [x] Fresh handoff gate PASS, main bazė išliko `13c9649c76dd48cdf426604cb721e1ccd58a9854`.
-- [ ] Scoped commit / push / PR ir atskiro reviewer / merger sprendimas; faktinis Git perdavimas fiksuojamas atskiru journal įvykiu.
+- [x] Scoped commit `2a979531a1760dcdb37440ff04070ba4e4da0717`, push ir [PR84](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/84) atlikti; faktinis Git perdavimas fiksuojamas atskiru journal įvykiu. Pirmas commit bandymas sustojo be author identity; sėkmingas commit naudojo tik komandos `-c user.name=Codex -c user.email=codex@local.invalid`, nekeisdamas bendros Git konfigūracijos ar žmogaus tapatybės.
+- [ ] Atskiro reviewer / merger sprendimas; atviras PR dar nėra visiems taikomas main ar kitų PC adoption.
 
 Patikros skirtos instrukcijų struktūrai ir nuoseklumui. Šiame core darbe nepakeistas UI, todėl nekurti papildomi runtime, Lighthouse ar svetainės screenshot PASS. Originalūs svetainių auditai ir ankstesnė agentų instrukcijų istorija neliečiami. Naujas kontraktas pats neįrodo, kad visos senos svetainės jau jį atitinka.
 

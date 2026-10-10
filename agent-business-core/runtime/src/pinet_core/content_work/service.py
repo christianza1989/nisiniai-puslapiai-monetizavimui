@@ -8,7 +8,7 @@ from ..control.models import Session, User
 from ..control.routes import ControlError
 from ..creation.models import Creation, Revision
 from ..creation.review import canonical_sha256
-from ..creation.service import ACTIVE, binding, current_actor
+from ..creation.service import ACTIVE, binding, current_actor, daily_limit_reached
 from ..creation.service import authority as creation_authority
 from ..models import new_id, utcnow
 from .models import GuideAttempt, GuideEvent, GuideJob
@@ -19,7 +19,7 @@ def enabled():
     cfg = settings()
     if (not cfg.creation_enabled or not cfg.creation_runner_enabled or not cfg.customer_enabled
             or cfg.control_mode != "local" or not (cfg.environment == "local" or cfg.environment.startswith("test-"))
-            or not 1 <= cfg.creation_daily_limit <= 20 or not 1 <= cfg.creation_global_daily_limit <= 20
+            or cfg.creation_daily_limit < 0 or cfg.creation_global_daily_limit < 0
             or not 30 <= cfg.creation_runner_seconds <= 300
             or not re.fullmatch("[a-f0-9]{40}", cfg.control_source_revision)):
         raise ControlError(503, "content_work_unavailable")
@@ -84,7 +84,7 @@ async def quota(tx):
     args = {"e": settings().environment, "s": start}
     own = await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), args)
     total = await tx.scalar(text("SELECT control_creation_attempt_count(:e,:s)"), args)
-    if own >= settings().creation_daily_limit or total >= settings().creation_global_daily_limit:
+    if daily_limit_reached(own, total):
         raise ControlError(429, "creation_daily_limit")
 
 
@@ -102,7 +102,7 @@ async def job_quota(tx):
     args = {"e": settings().environment, "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}
     own = await tx.scalar(text("SELECT control_content_work_job_count(:e,:s,true)"), args)
     total = await tx.scalar(text("SELECT control_content_work_job_count(:e,:s,false)"), args)
-    if own >= settings().creation_daily_limit or total >= settings().creation_global_daily_limit:
+    if daily_limit_reached(own, total):
         raise ControlError(429, "content_work_daily_limit")
 
 

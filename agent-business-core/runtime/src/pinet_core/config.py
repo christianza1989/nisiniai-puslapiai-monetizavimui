@@ -1,6 +1,6 @@
 from functools import lru_cache
 
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from . import pricing
@@ -28,8 +28,9 @@ class Settings(BaseSettings):
     public_projects_enabled: bool = False
     creation_enabled: bool = False
     creation_runner_enabled: bool = False
-    creation_daily_limit: int = 10
-    creation_global_daily_limit: int = 20
+    # Zero disables the operator's daily ceiling; all attempts are still recorded.
+    creation_daily_limit: int = Field(default=0, ge=0)
+    creation_global_daily_limit: int = Field(default=0, ge=0)
     creation_runner_seconds: int = 180
     creation_workspace: str = ""
     creation_web_search_enabled: bool = False

@@ -142,6 +142,39 @@ async def test_customer_call_budget_stops_before_third_dispatch(creation, monkey
     assert not await worker.execute_once(role_runner=runner([]))
 
 
+async def test_disabled_daily_ceiling_preserves_twenty_one_role_calls_and_original_history(creation, monkeypatch):
+    c = creation
+    monkeypatch.setattr(settings(), "creation_daily_limit", 0)
+    monkeypatch.setattr(settings(), "creation_global_daily_limit", 0)
+    _, auth, me = await verified(c)
+    row, original_request = await start(c, auth, me)
+    cid, calls = row["creation_id"], []
+    first_history = None
+    for sequence in range(1, 8):
+        if sequence > 1:
+            response = await c["client"].post("/customer/v2/creations/" + cid + "/revisions", headers=auth,
+                json={"base_revision": sequence - 1, "message": "Patikslink bandomojo verslo pasiūlymą.",
+                      "idempotency_key": str(uuid4())})
+            assert response.status_code == 202, response.text
+        job_calls = []
+        assert await worker.execute_once(role_runner=runner(job_calls))
+        calls.extend(job_calls)
+        view = await team_read(c, auth, cid)
+        assert view["status"] == "draft_ready" and view["current_revision"] == sequence
+        if sequence == 1:
+            first_history = (view["attempts"], view["events"])
+    assert len(calls) == len(view["attempts"]) == 21
+    assert view["attempts"][:3] == first_history[0] and view["events"][:6] == first_history[1]
+    async with scope(user=me["user_id"]) as tx:
+        start_day = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+        assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"),
+            {"e": c["environment"], "s": start_day}) == 21
+        assert len(list(await tx.scalars(select(Job)))) == 7
+    replay = await c["client"].post("/customer/v2/creations", json=original_request, headers=auth)
+    assert replay.status_code == 202 and replay.json()["data"]["creation_id"] == cid
+    assert await team_read(c, auth, cid) == view
+
+
 async def test_revoked_history_stays_charged_and_foreign_team_hidden(creation, monkeypatch):
     c = creation
     monkeypatch.setattr(settings(), "creation_global_daily_limit", 3)

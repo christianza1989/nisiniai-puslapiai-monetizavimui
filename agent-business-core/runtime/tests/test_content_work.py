@@ -113,8 +113,11 @@ def roles(revise_first=False):
     return role
 
 
-async def test_actual_native_guide_two_rounds_live_projection_and_immutable_history(creation):
+@pytest.mark.parametrize("daily_limits", [(10, 20), (0, 0), (100, 1000)])
+async def test_actual_native_guide_two_rounds_live_projection_and_immutable_history(creation, monkeypatch, daily_limits):
     c = creation
+    monkeypatch.setattr(settings(), "creation_daily_limit", daily_limits[0])
+    monkeypatch.setattr(settings(), "creation_global_daily_limit", daily_limits[1])
     f = await prepared(c)
     before = f["site_file"].read_bytes()
     response, body = await enqueue(c, f)

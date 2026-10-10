@@ -74,8 +74,8 @@ PINET_CREATION_ENABLED=true
 PINET_CREATION_RUNNER_ENABLED=true
 PINET_CREATION_WORKSPACE=<esamas absolute katalogas runtime/artifacts viduje>
 PINET_CREATION_RUNNER_SECONDS=300
-PINET_CREATION_DAILY_LIMIT=20
-PINET_CREATION_GLOBAL_DAILY_LIMIT=20
+PINET_CREATION_DAILY_LIMIT=0
+PINET_CREATION_GLOBAL_DAILY_LIMIT=0
 PINET_CREATION_WEB_SEARCH_ENABLED=true
 PINET_CHAT_MODEL=gpt-6-luna
 PINET_CHAT_CODEX_EXECUTABLE=<patikrintas absolute executable tame PC>
@@ -84,7 +84,7 @@ PINET_CHAT_ENABLED=false
 PINET_CHAT_RUNNER_ENABLED=false
 ```
 
-20 yra bendras riboto bandymo pavyzdys, ne naujas leidimas didinti išnaudotą limitą. Whole GUIDE kelias priima customer/global1..20 ir30..300s; draft-only kūrimo atskiras global1..100 nereiškia, kad tokia konfigūracija tinka GUIDE. Ankstesni legacy/team/GUIDE vykdymai lieka bendroje dienos apskaitoje ir po nesėkmės. Nauja aplinka ar DB negali būti naudojama tos pačios paskyros bandymo biudžetui apeiti.
+Savininkas2026-10-10 aiškiai pašalino dirbtinį dienos testinių kvietimų limitą.0 išjungia atitinkamas dienos lubas; teigiamą reikšmę pasirinkus jos lieka taikomos. Kūrimui ir GUIDE galioja ta pati konfigūracija be ankstesnių20/100 maksimumų, išlaikant30..300s vieno vykdymo terminą. Ankstesni legacy/team/GUIDE vykdymai lieka bendroje apskaitoje ir po nesėkmės; ji nenulinama ir neperkeliama į kitą aplinką ar DB. Esama private `.env` reikšmė turi būti aiškiai atnaujinta: vien naujas source default nepakeičia anksčiau įrašyto20.
 
 Kai source švarus, private pin sutampa su HEAD ir API/portal origin sutampa, runtime kataloge:
 

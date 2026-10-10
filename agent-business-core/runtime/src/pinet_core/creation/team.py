@@ -8,7 +8,7 @@ from ..control.routes import scope
 from ..models import new_id, utcnow
 from . import adapter, language_patch, renderer
 from .models import Attempt, Job, Revision, TeamEvent
-from .service import authority, binding
+from .service import authority, binding, daily_limit_reached
 from .team_wire import AttemptView, EventData, TeamEventView, TeamView, TokenUsage
 
 TEAM_ADAPTER = "codex-business-team.v1"
@@ -50,7 +50,7 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
         start = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
         own = await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), {"e": settings().environment, "s": start})
         total = await tx.scalar(text("SELECT control_creation_attempt_count(:e,:s)"), {"e": settings().environment, "s": start})
-        if own >= settings().creation_daily_limit or total >= settings().creation_global_daily_limit:
+        if daily_limit_reached(own, total):
             raise adapter.RunnerError("draft_budget_exhausted")
         sequence = (await tx.scalar(select(func.max(Attempt.sequence)).where(Attempt.job_id == job.id))) or 0
         if sequence >= 6:

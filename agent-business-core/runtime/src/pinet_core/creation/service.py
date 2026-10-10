@@ -25,8 +25,15 @@ def binding(row):
 
 def admission_enabled():
     cfg = settings()
-    if not cfg.creation_enabled or not cfg.creation_runner_enabled or not 1 <= cfg.creation_daily_limit <= 20 or not 1 <= cfg.creation_global_daily_limit <= 100:
+    if (not cfg.creation_enabled or not cfg.creation_runner_enabled
+            or cfg.creation_daily_limit < 0 or cfg.creation_global_daily_limit < 0):
         raise ControlError(503, "creation_unavailable")
+
+
+def daily_limit_reached(own, total):
+    cfg = settings()
+    return ((cfg.creation_daily_limit > 0 and own >= cfg.creation_daily_limit)
+            or (cfg.creation_global_daily_limit > 0 and total >= cfg.creation_global_daily_limit))
 
 
 async def current_actor(tx, session, portfolio_id=None, *, lock=False):
@@ -61,12 +68,12 @@ async def quota(tx, user_id):
     args = {"e": settings().environment, "s": start}
     attempted = await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), args)
     all_attempted = await tx.scalar(text("SELECT control_creation_attempt_count(:e,:s)"), args)
-    if attempted >= settings().creation_daily_limit or all_attempted >= settings().creation_global_daily_limit:
+    if daily_limit_reached(attempted, all_attempted):
         raise ControlError(429, "creation_daily_limit")
     own = await tx.scalar(select(func.count()).select_from(Job).where(Job.user_id == user_id, Job.created_at >= start))
     # Fixed definer aggregate returns a count, never another customer's rows/content.
     total = await tx.scalar(text("SELECT control_creation_daily_count(:e,:s)"), {"e": settings().environment, "s": start})
-    if own >= settings().creation_daily_limit or total >= settings().creation_global_daily_limit:
+    if daily_limit_reached(own, total):
         raise ControlError(429, "creation_daily_limit")
 
 

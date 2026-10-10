@@ -73,6 +73,11 @@ async def execute_once(adapter=None):
         result = codex.normalize_answer(result)
     except codex.RunnerError as error:
         failure = error.code
+        if isinstance(error.receipt, dict):
+            observed = {key: value for key, value in error.receipt.items()
+                        if isinstance(key, str) and key.endswith("_tokens")
+                        and type(value) is int and 0 <= value <= 1_000_000_000}
+            usage = observed or usage
     except Exception:
         # Unknown provider/OS diagnostics never become public task content.
         failure = "provider_error"

@@ -122,4 +122,7 @@ async def run(context, still_authorized):
         value, usage = await execute(arguments(executable, run_dir, schema, output), prompt=prompt, cwd=run_dir,
             env=child_environment(), output=output, seconds=cfg.chat_runner_seconds, still_authorized=still_authorized,
             parse_trace=parse_trace, on_event=check_trace_event)
-        return normalize_answer(value), usage
+        try:
+            return normalize_answer(value), usage
+        except RunnerError as error:
+            raise RunnerError(error.code, usage) from None

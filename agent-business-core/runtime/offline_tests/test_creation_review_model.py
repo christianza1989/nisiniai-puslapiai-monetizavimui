@@ -11,8 +11,8 @@ from pinet_core.creation.team_wire import AttemptView
 from pinet_core.tasks.codex_transport import RunnerError
 
 
-@pytest.mark.parametrize("role,model", [("creator", "gpt-6-luna"), ("critic", "gpt-6.1-sol"),
-                                       ("coordinator", "gpt-6.1-sol")])
+@pytest.mark.parametrize("role,model", [("creator", "gpt-6-luna"), ("critic", "gpt-6-luna"),
+                                       ("coordinator", "gpt-6-luna")])
 def test_fixed_model_is_selected_by_server_role(role, model):
     args = adapter.arguments("fixed", "workspace", "schema", "output", web=False, role=role)
     assert adapter.role_model(role) == args[args.index("--model") + 1] == model
@@ -25,12 +25,12 @@ def test_execution_profile_is_part_of_claimed_snapshot(monkeypatch):
     assert adapter.team_instruction_hash() != before
 
 
-def test_fixed_catalogue_has_original_single_model_and_actual_review_arguments():
+def test_fixed_catalogue_preserves_both_original_models_and_actual_review_arguments():
     from pinet_core.tasks.codex import arguments as consultation_arguments
     path = adapter.review_model_catalogue()
     data = json.loads(path.read_bytes())
-    assert [item['slug'] for item in data['models']] == ['gpt-6.1-sol']
-    assert data['models'][0]['support_verbosity'] is True
+    assert [item['slug'] for item in data['models']] == ['gpt-6-luna', 'gpt-6.1-sol']
+    assert all(item['support_verbosity'] is True for item in data['models'])
     assert adapter.role_profile('critic')['model_catalogue_sha256'] == adapter.REVIEW_MODEL_CATALOGUE_SHA256
     for role in ('critic', 'coordinator'):
         args = adapter.arguments('fixed', 'workspace', 'schema', 'output', web=False, role=role)
@@ -80,7 +80,7 @@ async def test_success_and_failed_private_evidence_match_actual_cli_model(tmp_pa
         context["critic"] = report(context["draft"])
 
     async def execute(args, **kwargs):
-        assert args[args.index("--model") + 1] == "gpt-6.1-sol"
+        assert args[args.index("--model") + 1] == "gpt-6-luna"
         if failed:
             raise RunnerError("provider_error")
         if role == "critic":
@@ -95,10 +95,10 @@ async def test_success_and_failed_private_evidence_match_actual_cli_model(tmp_pa
         with pytest.raises(RunnerError, match="provider_error"):
             await adapter.run_role(context, authorized, role=role, seconds=30)
         evidence = json.loads(next(tmp_path.glob("business-*/failure.private.json")).read_bytes())
-        assert evidence["model"] == "gpt-6.1-sol"
+        assert evidence["model"] == "gpt-6-luna"
     else:
         _, receipt = await adapter.run_role(context, authorized, role=role, seconds=30)
-        assert receipt["model"] == "gpt-6.1-sol"
+        assert receipt["model"] == "gpt-6-luna"
 
 
 def test_additive_wire_reads_history_but_rejects_sol_creator():

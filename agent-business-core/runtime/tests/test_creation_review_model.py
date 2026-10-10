@@ -40,17 +40,18 @@ async def test_mixed_model_history_and_disabled_ceiling_keep_exact_reservations(
     calls = []
     assert await worker.execute_once(role_runner=runner(calls))
     view = await team_read(c, auth, row["creation_id"])
-    assert [a["model"] for a in view["attempts"]] == ["gpt-6-luna", "gpt-6.1-sol", "gpt-6.1-sol"]
+    assert [a["model"] for a in view["attempts"]] == ["gpt-6-luna"] * 3
     async with scope(user=me["user_id"]) as tx:
         first = await tx.get(Attempt, str(view["attempts"][0]["attempt_id"]))
         legacy = {column.name: getattr(first, column.name) for column in Attempt.__table__.columns}
-        legacy.update(id=str(uuid4()), sequence=4, role="critic", round_number=2, model="gpt-6-luna")
+        # Labelled synthetic historical Sol reservation, separate from new Luna dispatches.
+        legacy.update(id=str(uuid4()), sequence=4, role="critic", round_number=2, model="gpt-6.1-sol")
         tx.add(Attempt(**legacy))
     original = await snapshot(c)
     mixed = await team_read(c, auth, row["creation_id"])
     by_id = {attempt["attempt_id"]: attempt for attempt in mixed["attempts"]}
     assert all(by_id[attempt["attempt_id"]] == attempt for attempt in view["attempts"])
-    assert by_id[legacy["id"]]["model"] == "gpt-6-luna"
+    assert by_id[legacy["id"]]["model"] == "gpt-6.1-sol"
     assert mixed["current_revision"] == 1
     for role, model in [("creator", "gpt-6.1-sol"), ("critic", "customer-selected")]:
         with pytest.raises(DBAPIError):
@@ -109,6 +110,12 @@ async def test_populated_sol_history_blocks_downgrade_without_row_changes(creati
     _, auth, me = await verified(c)
     row, _ = await start(c, auth, me)
     assert await worker.execute_once(role_runner=runner([]))
+    view = await team_read(c, auth, row["creation_id"])
+    async with scope(user=me["user_id"]) as tx:
+        first = await tx.get(Attempt, str(view["attempts"][0]["attempt_id"]))
+        historical_sol = {column.name: getattr(first, column.name) for column in Attempt.__table__.columns}
+        historical_sol.update(id=str(uuid4()), sequence=4, role="critic", round_number=2, model="gpt-6.1-sol")
+        tx.add(Attempt(**historical_sol))
     before = await snapshot(c)
     proc = await asyncio.create_subprocess_exec(sys.executable, "-m", "alembic", "downgrade", "0017_customer_profile",
         stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.STDOUT)

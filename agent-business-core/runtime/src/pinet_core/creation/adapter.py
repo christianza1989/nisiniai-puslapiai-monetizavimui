@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[5]
 RUNTIME = Path(__file__).resolve().parents[3]
 ADAPTER_REVISION = "codex-business-draft.v1"
 REVIEW_MODEL_CATALOGUE = RUNTIME / "config/creation-review-models.json"
-REVIEW_MODEL_CATALOGUE_SHA256 = "5e8c7834be0785d8bf9ff9be02b0b13c82904bbbcc3b712ba079a1d32ca06b25"
+REVIEW_MODEL_CATALOGUE_SHA256 = "7a555cf9d10d7220e75ed7409575aa3fe3f503306f41206f7d3109185efb1a98"
 INSTRUCTION_FILES = (
     "SKILLS/niche-site-builder/SKILL.md",
     "SKILLS/niche-site-builder/references/business-validation.md",
@@ -130,7 +130,7 @@ def role_model(role):
     """Server-owned execution choice; customer data cannot select a model."""
     if role not in {"creator", "critic", "coordinator"}:
         raise RunnerError("review_invalid")
-    return "gpt-6-luna" if role == "creator" else "gpt-6.1-sol"
+    return "gpt-6-luna"
 
 
 def review_model_catalogue():
@@ -145,8 +145,7 @@ def review_model_catalogue():
 
 
 def role_profile(role):
-    profile = {"model": role_model(role), "reasoning_effort": "medium" if role == "creator" else "low",
-               "verbosity": None if role == "creator" else "medium"}
+    profile = {"model": role_model(role), "reasoning_effort": "medium", "verbosity": None}
     if role != "creator":
         review_model_catalogue()
         profile["model_catalogue_sha256"] = REVIEW_MODEL_CATALOGUE_SHA256
@@ -160,12 +159,13 @@ def arguments(executable, workspace, schema, output, *, web, role="creator"):
     at = result.index('web_search="disabled"')
     result[at] = 'web_search="live"' if web else 'web_search="disabled"'
     # These two roles review one supplied draft and have no tools or research.
-    # Keep the complete review checks while reserving output for their typed report.
+    # Use the historical completed Luna profile; the fixed catalogue supplies metadata.
     if role != "creator":
         at = result.index('model_reasoning_effort="medium"')
         result[at] = f'model_reasoning_effort="{profile["reasoning_effort"]}"'
-        result += ['-c', f'model_verbosity="{profile["verbosity"]}"',
-                   '-c', 'model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
+        if profile["verbosity"] is not None:
+            result += ['-c', f'model_verbosity="{profile["verbosity"]}"']
+        result += ['-c', 'model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
     return result
 
 

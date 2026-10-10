@@ -18,20 +18,21 @@ def test_actual_instruction_fingerprint_and_fixed_tool_policy():
     assert args[args.index('--sandbox')+1] == 'read-only' and '--ignore-rules' in args
 
 
-@pytest.mark.parametrize('role,effort', [('creator', 'medium'), ('critic', 'low'), ('coordinator', 'low')])
+@pytest.mark.parametrize('role,effort', [('creator', 'medium'), ('critic', 'medium'), ('coordinator', 'medium')])
 def test_review_role_profile_retains_exact_process_policy(role, effort):
     baseline = arguments('fixed.exe', 'fixed', 'schema', 'output', web=False)
     args = arguments('fixed.exe', 'fixed', 'schema', 'output', web=False, role=role)
     setting = next(value for value in args if value.startswith('model_reasoning_effort='))
     assert setting == f'model_reasoning_effort="{effort}"'
     from pinet_core.creation.adapter import review_model_catalogue
-    expected_profile = [] if role == 'creator' else ['-c', 'model_verbosity="medium"',
-        '-c', 'model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
+    expected_profile = [] if role == 'creator' else ['-c',
+        'model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
     if expected_profile:
-        assert args[-4:] == expected_profile
+        assert args[-2:] == expected_profile
     else:
         assert not any(value.startswith('model_verbosity=') for value in args)
-    unchanged = args[:-4] if expected_profile else args
+    assert not any(value.startswith('model_verbosity=') for value in args)
+    unchanged = args[:-2] if expected_profile else args
     unchanged[unchanged.index('--model')+1] = baseline[baseline.index('--model')+1]
     assert [value for value in unchanged if not value.startswith('model_reasoning_effort=')] == [
         value for value in baseline if not value.startswith('model_reasoning_effort=')]

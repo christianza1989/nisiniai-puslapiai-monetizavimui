@@ -1,5 +1,6 @@
 import app,{MadbeautyPlatform} from '../cloudflare/worker.mjs';
 import {initializeFixtureRuntime} from '../backend/fixture-runtime.mjs';
+import {initializeTrialReviews} from './trial-reviews.mjs';
 import {escape} from '../cloudflare/content.mjs';
 import {RETENTION_POLICY,policyPublic} from '../backend/retention-policy.mjs';
 import trialAssets from './output/trial-assets.json';
@@ -36,6 +37,7 @@ export class TemporaryTestPlatform extends MadbeautyPlatform{
   localStore=this.store;this.store.db.prepare('CREATE TABLE IF NOT EXISTS trial_login_codes(id TEXT PRIMARY KEY,code TEXT NOT NULL,expires_at INTEGER NOT NULL)').run();
   if(!expired(env)){
    initializeFixtureRuntime(this.store);
+   initializeTrialReviews(this.store);
    if(!this.store.db.prepare("SELECT value FROM release_metadata WHERE key='trial-responsive-media-v1'").get())this.store.transaction(()=>{
     const d=this.store.read(),sourceMedia=new Map(trialMedia.assets.map(a=>[a.id,a]));
     for(const o of d.organizations){

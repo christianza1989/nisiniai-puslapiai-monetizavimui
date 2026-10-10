@@ -1333,6 +1333,211 @@
           "sha256": "cb98a3b8b06d24da325178fac46345ae1d1585dd9e3b8a09fd5adbf8853c8d0d"
         }
       ]
+    },
+    {
+      "id": "hero-manikiuras-violet",
+      "alt": "Originali redakcinė grožio iliustracija · manikiuras",
+      "variants": [
+        {
+          "file": "images/manikiuras-violet-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 67748,
+          "sha256": "3f63d97a6f101200c41d15cb2b5313b4a4622118ddca77f2124c9a41c9b13808"
+        },
+        {
+          "file": "images/manikiuras-violet-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 45224,
+          "sha256": "bab68e793c6dfc01419773b6c781cbffa5570be9d2f4b0579cdc990f1adaafa7"
+        },
+        {
+          "file": "images/manikiuras-violet-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 25038,
+          "sha256": "eef22a3ccda4e34da877760f35099fe577ce5bdbf380998aa347e4eb8929e570"
+        },
+        {
+          "file": "images/manikiuras-violet-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 18480,
+          "sha256": "0d564e65b5349b76e5627cb5dfe2ebfc1d9ec36a95c79c766553724d45c1eeec"
+        },
+        {
+          "file": "images/manikiuras-violet-360.webp",
+          "width": 360,
+          "height": 203,
+          "bytes": 8380,
+          "sha256": "afb04a5d79f7177e701dbdbfef9a65b1a8234bfa8224504891cf0a851822625a"
+        }
+      ]
+    },
+    {
+      "id": "hero-plaukai-violet",
+      "alt": "Originali redakcinė grožio iliustracija · plaukai",
+      "variants": [
+        {
+          "file": "images/plaukai-violet-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 49490,
+          "sha256": "56ac28def5543c54ab37f2d7cf1c0cafed07402cf85cc700e85861c39324af5e"
+        },
+        {
+          "file": "images/plaukai-violet-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 33304,
+          "sha256": "2cf928ea51299094a6c739418fef3534e6954675da0463b520ed6bdf70b0ca7c"
+        },
+        {
+          "file": "images/plaukai-violet-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 19048,
+          "sha256": "699878b111a25284fa70c932b1c0698d7a5ecb18b9762614fc6c59a52929a4cb"
+        },
+        {
+          "file": "images/plaukai-violet-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 14408,
+          "sha256": "ac85ff95b38ca482a5b5c13f6ab5397515ec918e1f40ced8d704b19ee6a03498"
+        },
+        {
+          "file": "images/plaukai-violet-360.webp",
+          "width": 360,
+          "height": 203,
+          "bytes": 6852,
+          "sha256": "f90dfdda40e0dd761b9cee43fd69b17941a0d8024cdb14a4b176083ee7b950fb"
+        }
+      ]
+    },
+    {
+      "id": "hero-veidas-violet",
+      "alt": "Originali redakcinė grožio iliustracija · veidas",
+      "variants": [
+        {
+          "file": "images/veidas-violet-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 53400,
+          "sha256": "c5a38d93219dba0b1311c546bf4a98cc59812936262c3731c1296280771ede7e"
+        },
+        {
+          "file": "images/veidas-violet-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 37142,
+          "sha256": "eab985483f12709948d30116476d36b16bff5e068b151673bcce3068630642b8"
+        },
+        {
+          "file": "images/veidas-violet-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 20480,
+          "sha256": "b6d2344499d743a44523e5545410eec02285b2c94cd5193dc3385e7cf915a9f8"
+        },
+        {
+          "file": "images/veidas-violet-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 14390,
+          "sha256": "440e9c4644e0cadb9eb55e9014d37b9b0bd07d5d7bf7c67b1535955e1b3b6a0f"
+        },
+        {
+          "file": "images/veidas-violet-360.webp",
+          "width": 360,
+          "height": 202,
+          "bytes": 6274,
+          "sha256": "0dc2fcb5637e3c4ed84864e8955e64951780ca1faea5141e47dfad39f3b0b5d4"
+        }
+      ]
+    },
+    {
+      "id": "hero-spa-violet",
+      "alt": "Originali redakcinė grožio iliustracija · spa",
+      "variants": [
+        {
+          "file": "images/spa-violet-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 71570,
+          "sha256": "b550d1abf2990f9d04f7af28ee29af4b7a1ebfb43275f01342abb8552d2b62b9"
+        },
+        {
+          "file": "images/spa-violet-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 48940,
+          "sha256": "ae13d6e187ac40fdbb2bee6f840c774cc28469756963f1719707d0eb9916aab7"
+        },
+        {
+          "file": "images/spa-violet-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 27018,
+          "sha256": "0b48bb474f267b9c193ad9f79ebc6593f8ffddc18bc01bdd7a21168dfc564d54"
+        },
+        {
+          "file": "images/spa-violet-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 19174,
+          "sha256": "7c9ad6a347242dacea2c1cee55ee0f56ea9009e9496b658859d088717ea24a5e"
+        },
+        {
+          "file": "images/spa-violet-360.webp",
+          "width": 360,
+          "height": 203,
+          "bytes": 7600,
+          "sha256": "b6dd1820d41fa9de871ae157c5feb1db5357d554d3dfb5f52fbf0abbf8aaa488"
+        }
+      ]
+    },
+    {
+      "id": "hero-salonas-violet",
+      "alt": "Originali redakcinė grožio iliustracija · salonas",
+      "variants": [
+        {
+          "file": "images/salonas-violet-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 64210,
+          "sha256": "e3ca5c6044a2b9c588d80992cf4b13a4ac0e8f0abe3fadaf8ef781fb9c1f4f74"
+        },
+        {
+          "file": "images/salonas-violet-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 44318,
+          "sha256": "3c2cdbf0123a05a3cf035cda8d6201324fa66a985e65c25806e28b2f3d9a5617"
+        },
+        {
+          "file": "images/salonas-violet-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 24800,
+          "sha256": "76b85ac0df16fa505df34d7030213d25314c37a4c72117f4b5521def749b36f3"
+        },
+        {
+          "file": "images/salonas-violet-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 17770,
+          "sha256": "3e8a2ed8912bbf5bf9ccd8dd5a9a09bf359a34599e3e6e495a72609b175c8809"
+        },
+        {
+          "file": "images/salonas-violet-360.webp",
+          "width": 360,
+          "height": 203,
+          "bytes": 7310,
+          "sha256": "9c989319c77f480d71123d495bc4b91e5d7668197b17a11499a7e11ebe0e1682"
+        }
+      ]
     }
   ]
 }

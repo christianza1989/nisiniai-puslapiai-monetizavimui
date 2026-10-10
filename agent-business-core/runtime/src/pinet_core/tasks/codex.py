@@ -114,17 +114,12 @@ async def run(context, still_authorized):
               "answer/limitations JSON.\n" + json.dumps(context, ensure_ascii=False))
     with tempfile.TemporaryDirectory(prefix="consult-", dir=workspace) as temporary:
         run_dir = Path(temporary)
+        if run_dir.resolve().parent != workspace.resolve():
+            raise RunnerError("runner_unavailable")
         schema, output = run_dir / "answer.schema.json", run_dir / "answer.private.json"
         wire_schema = Answer.model_json_schema()
         wire_schema["properties"]["limitations"]["items"]["maxLength"] = 300
         schema.write_text(json.dumps(wire_schema), encoding="utf-8")
-        process = await asyncio.create_subprocess_exec(*arguments(executable, run_dir, schema, output),
-                    stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
-                    env=child_environment(), cwd=run_dir)
-        process.stdin.write(prompt.encode())
-        await process.stdin.drain()
-        process.stdin.close()
-
         async def bounded(stream, cap):
             chunks, size = [], 0
             while chunk := await stream.read(8192):
@@ -134,19 +129,32 @@ async def run(context, still_authorized):
                 chunks.append(chunk)
             return b"".join(chunks).decode("utf-8", errors="replace")
 
-        async def supervise():
-            while process.returncode is None:
-                if not await still_authorized():
-                    raise RunnerError("authorization_revoked")
-                await asyncio.sleep(1)
-
-        stdout, stderr = asyncio.create_task(bounded(process.stdout, 131072)), asyncio.create_task(bounded(process.stderr, 65536))
-        watcher = asyncio.create_task(supervise())
-        waited = asyncio.create_task(process.wait())
+        process, tasks = None, []
         try:
+            # Spawn, pipe backpressure, output pumps and authorization all share the same deadline.
             async with asyncio.timeout(cfg.chat_runner_seconds):
-                pending = {stdout, stderr, watcher, waited}
-                while not waited.done() or not stdout.done() or not stderr.done():
+                process = await asyncio.create_subprocess_exec(*arguments(executable, run_dir, schema, output),
+                    stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+                    env=child_environment(), cwd=run_dir)
+
+                async def feed():
+                    process.stdin.write(prompt.encode())
+                    await process.stdin.drain()
+                    process.stdin.close()
+
+                async def supervise():
+                    while process.returncode is None:
+                        if not await still_authorized():
+                            raise RunnerError("authorization_revoked")
+                        await asyncio.sleep(1)
+
+                stdout = asyncio.create_task(bounded(process.stdout, 131072))
+                stderr = asyncio.create_task(bounded(process.stderr, 65536))
+                watcher = asyncio.create_task(supervise())
+                waited, feeding = asyncio.create_task(process.wait()), asyncio.create_task(feed())
+                tasks = [stdout, stderr, watcher, waited, feeding]
+                pending = set(tasks)
+                while any(not item.done() for item in (waited, stdout, stderr, feeding)):
                     done, _ = await asyncio.wait(pending, return_when=asyncio.FIRST_COMPLETED)
                     for item in done:
                         pending.discard(item)
@@ -165,7 +173,8 @@ async def run(context, still_authorized):
         except (OSError, ValueError):
             raise RunnerError("output_invalid") from None
         finally:
-            await stop_process(process)
-            for item in (stdout, stderr, watcher, waited):
+            if process:
+                await stop_process(process)
+            for item in tasks:
                 item.cancel()
-            await asyncio.gather(stdout, stderr, watcher, waited, return_exceptions=True)
+            await asyncio.gather(*tasks, return_exceptions=True)

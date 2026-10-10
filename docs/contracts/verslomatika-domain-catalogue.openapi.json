@@ -1,0 +1,1565 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Verslomatika historical domain catalogue",
+    "version": "0.1.0",
+    "description": "domains.v1 LOCAL/TEST only. Same opaque core bearer session; verified customer or original operator required by parent adapter. Full historical45324 inventory, preserved9200 screening rows and frozenTOP200. No live availability/ownership/registrar purchase/DNS. Source ranks and inference are explicit; recommendations never promise demand or economics."
+  },
+  "paths": {
+    "/customer/v2/domains": {
+      "get": {
+        "operationId": "searchCustomerDomains",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 120,
+              "default": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "construction",
+                "home",
+                "energy",
+                "property",
+                "auto",
+                "finance",
+                "legal",
+                "business",
+                "tech",
+                "marketing",
+                "health",
+                "beauty",
+                "sport",
+                "food",
+                "tourism",
+                "events",
+                "education",
+                "jobs",
+                "family",
+                "pets",
+                "agriculture",
+                "industry",
+                "logistics",
+                "commerce",
+                "fashion",
+                "gifts",
+                "electronics",
+                "cleaning",
+                "security",
+                "entertainment",
+                "media",
+                "community",
+                "adult",
+                "gambling",
+                "other",
+                "unclear",
+                "unclassified"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "top200_only",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100000,
+              "default": 0
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "source",
+                "queue",
+                "screening",
+                "research_priority",
+                "potential"
+              ],
+              "default": "research_priority"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Historical catalogue projection; availability and ownership unverified",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "private, no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_SearchData_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid bounded request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No current core session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or account not verified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Pinned catalogue source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/domains/facets": {
+      "get": {
+        "operationId": "getCustomerDomainFacets",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Historical catalogue projection; availability and ownership unverified",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "private, no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_FacetData_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid bounded request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No current core session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or account not verified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Pinned catalogue source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/domains/recommendations": {
+      "post": {
+        "operationId": "recommendCustomerDomains",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Historical catalogue projection; availability and ownership unverified",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "const": "private, no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_RecommendationData_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid bounded request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No current core session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or account not verified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Pinned catalogue source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommendationInput"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "CatalogueMetadata": {
+        "additionalProperties": false,
+        "properties": {
+          "snapshot_date": {
+            "format": "date",
+            "title": "Snapshot Date",
+            "type": "string"
+          },
+          "inventory_count": {
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Inventory Count",
+            "type": "integer"
+          },
+          "screening_count": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Screening Count",
+            "type": "integer"
+          },
+          "top200_count": {
+            "const": 200,
+            "title": "Top200 Count",
+            "type": "integer"
+          },
+          "top200_research_complete_count": {
+            "maximum": 200,
+            "minimum": 0,
+            "title": "Top200 Research Complete Count",
+            "type": "integer"
+          },
+          "top200_research_pending_count": {
+            "maximum": 200,
+            "minimum": 0,
+            "title": "Top200 Research Pending Count",
+            "type": "integer"
+          },
+          "source_documents": {
+            "items": {
+              "$ref": "#/components/schemas/SourceDocument"
+            },
+            "maxItems": 5,
+            "minItems": 5,
+            "title": "Source Documents",
+            "type": "array"
+          },
+          "original_inventory_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Original Inventory Sha256",
+            "type": "string"
+          },
+          "classification_counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "propertyNames": {
+              "enum": [
+                "source_ai_screening",
+                "lexical_inference",
+                "unclassified"
+              ]
+            },
+            "title": "Classification Counts",
+            "type": "object"
+          },
+          "screening_models": {
+            "items": {
+              "maxLength": 180,
+              "type": "string"
+            },
+            "maxItems": 10,
+            "title": "Screening Models",
+            "type": "array"
+          },
+          "screening_versions": {
+            "items": {
+              "maxLength": 180,
+              "type": "string"
+            },
+            "maxItems": 10,
+            "title": "Screening Versions",
+            "type": "array"
+          },
+          "taxonomy_version": {
+            "const": "lexical-v1",
+            "title": "Taxonomy Version",
+            "type": "string"
+          },
+          "selection_created_at": {
+            "format": "date-time",
+            "title": "Selection Created At",
+            "type": "string"
+          },
+          "selection_priority_updated_at": {
+            "format": "date-time",
+            "title": "Selection Priority Updated At",
+            "type": "string"
+          },
+          "rank_comparison": {
+            "$ref": "#/components/schemas/RankComparison"
+          },
+          "availability": {
+            "const": "unknown",
+            "title": "Availability",
+            "type": "string"
+          },
+          "availability_checked_at": {
+            "title": "Availability Checked At",
+            "type": "null"
+          },
+          "notice": {
+            "maxLength": 300,
+            "title": "Notice",
+            "type": "string"
+          },
+          "score_notice": {
+            "maxLength": 300,
+            "title": "Score Notice",
+            "type": "string"
+          },
+          "catalogue_version": {
+            "const": "domains.v1",
+            "title": "Catalogue Version",
+            "type": "string"
+          },
+          "snapshot_id": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Snapshot Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "snapshot_date",
+          "inventory_count",
+          "screening_count",
+          "top200_count",
+          "top200_research_complete_count",
+          "top200_research_pending_count",
+          "source_documents",
+          "original_inventory_sha256",
+          "classification_counts",
+          "screening_models",
+          "screening_versions",
+          "taxonomy_version",
+          "selection_created_at",
+          "selection_priority_updated_at",
+          "rank_comparison",
+          "availability",
+          "availability_checked_at",
+          "notice",
+          "score_notice",
+          "catalogue_version",
+          "snapshot_id"
+        ],
+        "title": "CatalogueMetadata",
+        "type": "object"
+      },
+      "DomainView": {
+        "additionalProperties": false,
+        "properties": {
+          "domain": {
+            "maxLength": 253,
+            "title": "Domain",
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "construction",
+              "home",
+              "energy",
+              "property",
+              "auto",
+              "finance",
+              "legal",
+              "business",
+              "tech",
+              "marketing",
+              "health",
+              "beauty",
+              "sport",
+              "food",
+              "tourism",
+              "events",
+              "education",
+              "jobs",
+              "family",
+              "pets",
+              "agriculture",
+              "industry",
+              "logistics",
+              "commerce",
+              "fashion",
+              "gifts",
+              "electronics",
+              "cleaning",
+              "security",
+              "entertainment",
+              "media",
+              "community",
+              "adult",
+              "gambling",
+              "other",
+              "unclear",
+              "unclassified"
+            ],
+            "title": "Category",
+            "type": "string"
+          },
+          "classification_source": {
+            "enum": [
+              "source_ai_screening",
+              "lexical_inference",
+              "unclassified"
+            ],
+            "title": "Classification Source",
+            "type": "string"
+          },
+          "category_evidence": {
+            "items": {
+              "maxLength": 180,
+              "type": "string"
+            },
+            "maxItems": 8,
+            "title": "Category Evidence",
+            "type": "array"
+          },
+          "niche": {
+            "anyOf": [
+              {
+                "maxLength": 180,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Niche"
+          },
+          "keyword": {
+            "anyOf": [
+              {
+                "maxLength": 180,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Keyword"
+          },
+          "risk": {
+            "enum": [
+              "none",
+              "brand",
+              "regulated",
+              "ambiguous",
+              "adult",
+              "gambling",
+              "unknown"
+            ],
+            "title": "Risk",
+            "type": "string"
+          },
+          "source_index": {
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Source Index",
+            "type": "integer"
+          },
+          "queue_rank": {
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Queue Rank",
+            "type": "integer"
+          },
+          "queue_score": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Queue Score",
+            "type": "number"
+          },
+          "screening_rank": {
+            "anyOf": [
+              {
+                "maximum": 100000,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Screening Rank"
+          },
+          "screening_score": {
+            "anyOf": [
+              {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Screening Score"
+          },
+          "screening_evaluated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Screening Evaluated At"
+          },
+          "top200": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TopSelection"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "category_label": {
+            "maxLength": 180,
+            "title": "Category Label",
+            "type": "string"
+          },
+          "risk_label": {
+            "maxLength": 180,
+            "title": "Risk Label",
+            "type": "string"
+          },
+          "availability": {
+            "const": "unknown",
+            "title": "Availability",
+            "type": "string"
+          },
+          "availability_checked_at": {
+            "title": "Availability Checked At",
+            "type": "null"
+          }
+        },
+        "required": [
+          "domain",
+          "category",
+          "classification_source",
+          "category_evidence",
+          "niche",
+          "keyword",
+          "risk",
+          "source_index",
+          "queue_rank",
+          "queue_score",
+          "screening_rank",
+          "screening_score",
+          "screening_evaluated_at",
+          "top200",
+          "category_label",
+          "risk_label",
+          "availability",
+          "availability_checked_at"
+        ],
+        "title": "DomainView",
+        "type": "object"
+      },
+      "Envelope_FacetData_": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "domains.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/FacetData"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "Envelope[FacetData]",
+        "type": "object"
+      },
+      "Envelope_RecommendationData_": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "domains.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/RecommendationData"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "Envelope[RecommendationData]",
+        "type": "object"
+      },
+      "Envelope_SearchData_": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "domains.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SearchData"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "Envelope[SearchData]",
+        "type": "object"
+      },
+      "Error": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 80,
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "maxLength": 300,
+            "title": "Message",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ],
+        "title": "Error",
+        "type": "object"
+      },
+      "Facet": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "enum": [
+              "construction",
+              "home",
+              "energy",
+              "property",
+              "auto",
+              "finance",
+              "legal",
+              "business",
+              "tech",
+              "marketing",
+              "health",
+              "beauty",
+              "sport",
+              "food",
+              "tourism",
+              "events",
+              "education",
+              "jobs",
+              "family",
+              "pets",
+              "agriculture",
+              "industry",
+              "logistics",
+              "commerce",
+              "fashion",
+              "gifts",
+              "electronics",
+              "cleaning",
+              "security",
+              "entertainment",
+              "media",
+              "community",
+              "adult",
+              "gambling",
+              "other",
+              "unclear",
+              "unclassified"
+            ],
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 180,
+            "title": "Label",
+            "type": "string"
+          },
+          "count": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "top200_count": {
+            "maximum": 200,
+            "minimum": 0,
+            "title": "Top200 Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "count",
+          "top200_count"
+        ],
+        "title": "Facet",
+        "type": "object"
+      },
+      "FacetData": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Facet"
+            },
+            "maxItems": 37,
+            "title": "Items",
+            "type": "array"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/CatalogueMetadata"
+          }
+        },
+        "required": [
+          "items",
+          "metadata"
+        ],
+        "title": "FacetData",
+        "type": "object"
+      },
+      "RankComparison": {
+        "additionalProperties": false,
+        "properties": {
+          "research_priority_differences": {
+            "maximum": 200,
+            "minimum": 0,
+            "title": "Research Priority Differences",
+            "type": "integer"
+          },
+          "initial_rank_differences": {
+            "maximum": 200,
+            "minimum": 0,
+            "title": "Initial Rank Differences",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "research_priority_differences",
+          "initial_rank_differences"
+        ],
+        "title": "RankComparison",
+        "type": "object"
+      },
+      "Recommendation": {
+        "additionalProperties": false,
+        "properties": {
+          "domain": {
+            "$ref": "#/components/schemas/DomainView"
+          },
+          "match_kind": {
+            "enum": [
+              "exact_name",
+              "keyword",
+              "category"
+            ],
+            "title": "Match Kind",
+            "type": "string"
+          },
+          "matched_terms": {
+            "items": {
+              "maxLength": 180,
+              "type": "string"
+            },
+            "maxItems": 8,
+            "title": "Matched Terms",
+            "type": "array"
+          },
+          "reason": {
+            "maxLength": 240,
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "domain",
+          "match_kind",
+          "matched_terms",
+          "reason"
+        ],
+        "title": "Recommendation",
+        "type": "object"
+      },
+      "RecommendationData": {
+        "additionalProperties": false,
+        "properties": {
+          "catalogue_version": {
+            "const": "domains.v1",
+            "title": "Catalogue Version",
+            "type": "string"
+          },
+          "snapshot_id": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Snapshot Id",
+            "type": "string"
+          },
+          "niche": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Niche",
+            "type": "string"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "enum": [
+                  "construction",
+                  "home",
+                  "energy",
+                  "property",
+                  "auto",
+                  "finance",
+                  "legal",
+                  "business",
+                  "tech",
+                  "marketing",
+                  "health",
+                  "beauty",
+                  "sport",
+                  "food",
+                  "tourism",
+                  "events",
+                  "education",
+                  "jobs",
+                  "family",
+                  "pets",
+                  "agriculture",
+                  "industry",
+                  "logistics",
+                  "commerce",
+                  "fashion",
+                  "gifts",
+                  "electronics",
+                  "cleaning",
+                  "security",
+                  "entertainment",
+                  "media",
+                  "community",
+                  "adult",
+                  "gambling",
+                  "other",
+                  "unclear",
+                  "unclassified"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "matched_categories": {
+            "items": {
+              "enum": [
+                "construction",
+                "home",
+                "energy",
+                "property",
+                "auto",
+                "finance",
+                "legal",
+                "business",
+                "tech",
+                "marketing",
+                "health",
+                "beauty",
+                "sport",
+                "food",
+                "tourism",
+                "events",
+                "education",
+                "jobs",
+                "family",
+                "pets",
+                "agriculture",
+                "industry",
+                "logistics",
+                "commerce",
+                "fashion",
+                "gifts",
+                "electronics",
+                "cleaning",
+                "security",
+                "entertainment",
+                "media",
+                "community",
+                "adult",
+                "gambling",
+                "other",
+                "unclear",
+                "unclassified"
+              ],
+              "type": "string"
+            },
+            "maxItems": 37,
+            "title": "Matched Categories",
+            "type": "array"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Recommendation"
+            },
+            "maxItems": 10,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "catalogue_version",
+          "snapshot_id",
+          "niche",
+          "category",
+          "matched_categories",
+          "items"
+        ],
+        "title": "RecommendationData",
+        "type": "object"
+      },
+      "RecommendationInput": {
+        "additionalProperties": false,
+        "properties": {
+          "niche": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Niche",
+            "type": "string"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "enum": [
+                  "construction",
+                  "home",
+                  "energy",
+                  "property",
+                  "auto",
+                  "finance",
+                  "legal",
+                  "business",
+                  "tech",
+                  "marketing",
+                  "health",
+                  "beauty",
+                  "sport",
+                  "food",
+                  "tourism",
+                  "events",
+                  "education",
+                  "jobs",
+                  "family",
+                  "pets",
+                  "agriculture",
+                  "industry",
+                  "logistics",
+                  "commerce",
+                  "fashion",
+                  "gifts",
+                  "electronics",
+                  "cleaning",
+                  "security",
+                  "entertainment",
+                  "media",
+                  "community",
+                  "adult",
+                  "gambling",
+                  "other",
+                  "unclear",
+                  "unclassified"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "limit": {
+            "maximum": 10,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "niche",
+          "category",
+          "limit"
+        ],
+        "title": "RecommendationInput",
+        "type": "object"
+      },
+      "SearchData": {
+        "additionalProperties": false,
+        "properties": {
+          "catalogue_version": {
+            "const": "domains.v1",
+            "title": "Catalogue Version",
+            "type": "string"
+          },
+          "snapshot_id": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Snapshot Id",
+            "type": "string"
+          },
+          "query": {
+            "maxLength": 120,
+            "title": "Query",
+            "type": "string"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "enum": [
+                  "construction",
+                  "home",
+                  "energy",
+                  "property",
+                  "auto",
+                  "finance",
+                  "legal",
+                  "business",
+                  "tech",
+                  "marketing",
+                  "health",
+                  "beauty",
+                  "sport",
+                  "food",
+                  "tourism",
+                  "events",
+                  "education",
+                  "jobs",
+                  "family",
+                  "pets",
+                  "agriculture",
+                  "industry",
+                  "logistics",
+                  "commerce",
+                  "fashion",
+                  "gifts",
+                  "electronics",
+                  "cleaning",
+                  "security",
+                  "entertainment",
+                  "media",
+                  "community",
+                  "adult",
+                  "gambling",
+                  "other",
+                  "unclear",
+                  "unclassified"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "top200_only": {
+            "title": "Top200 Only",
+            "type": "boolean"
+          },
+          "sort": {
+            "enum": [
+              "source",
+              "queue",
+              "screening",
+              "research_priority",
+              "potential"
+            ],
+            "title": "Sort",
+            "type": "string"
+          },
+          "offset": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "limit": {
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "total": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Total",
+            "type": "integer"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DomainView"
+            },
+            "maxItems": 100,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "catalogue_version",
+          "snapshot_id",
+          "query",
+          "category",
+          "top200_only",
+          "sort",
+          "offset",
+          "limit",
+          "total",
+          "items"
+        ],
+        "title": "SearchData",
+        "type": "object"
+      },
+      "SourceDocument": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_.-]+$",
+            "title": "Name",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "sha256"
+        ],
+        "title": "SourceDocument",
+        "type": "object"
+      },
+      "TopSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "research_priority": {
+            "maximum": 200,
+            "minimum": 1,
+            "title": "Research Priority",
+            "type": "integer"
+          },
+          "potential_priority": {
+            "maximum": 200,
+            "minimum": 1,
+            "title": "Potential Priority",
+            "type": "integer"
+          },
+          "initial_selection_rank": {
+            "maximum": 200,
+            "minimum": 1,
+            "title": "Initial Selection Rank",
+            "type": "integer"
+          },
+          "selection_value_heuristic": {
+            "maximum": 150,
+            "minimum": 0,
+            "title": "Selection Value Heuristic",
+            "type": "number"
+          },
+          "source_niche_key": {
+            "maxLength": 180,
+            "title": "Source Niche Key",
+            "type": "string"
+          },
+          "potential_tier": {
+            "maxLength": 180,
+            "title": "Potential Tier",
+            "type": "string"
+          },
+          "research_source_priority": {
+            "maximum": 200,
+            "minimum": 1,
+            "title": "Research Source Priority",
+            "type": "integer"
+          },
+          "research_source_initial_rank": {
+            "maximum": 200,
+            "minimum": 1,
+            "title": "Research Source Initial Rank",
+            "type": "integer"
+          },
+          "ahrefs_dr": {
+            "anyOf": [
+              {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ahrefs Dr"
+          },
+          "ahrefs_dr_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ahrefs Dr Checked At"
+          },
+          "ahrefs_dr_source": {
+            "anyOf": [
+              {
+                "const": "https://api.ahrefs.com/v3/public/domain-rating-free",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ahrefs Dr Source"
+          },
+          "research_score": {
+            "anyOf": [
+              {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Research Score"
+          },
+          "research_evaluated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Research Evaluated At"
+          }
+        },
+        "required": [
+          "research_priority",
+          "potential_priority",
+          "initial_selection_rank",
+          "selection_value_heuristic",
+          "source_niche_key",
+          "potential_tier",
+          "research_source_priority",
+          "research_source_initial_rank",
+          "ahrefs_dr",
+          "ahrefs_dr_checked_at",
+          "ahrefs_dr_source",
+          "research_score",
+          "research_evaluated_at"
+        ],
+        "title": "TopSelection",
+        "type": "object"
+      }
+    }
+  },
+  "x-catalogue-snapshot": "52c232970da67024ae1e3cca551a6fe19f6600f71452e2b572ac8a9989a811cb",
+  "x-shared-session": {
+    "login": "/customer/v1/auth/login",
+    "logout": "/operator/v2/auth/logout"
+  }
+}

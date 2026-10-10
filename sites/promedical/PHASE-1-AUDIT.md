@@ -1,10 +1,14 @@
+> Support update 2026-10-10T08:26:40.000Z: Owner-authorized technical support request sent through signed-in Hostinger chat. Hostinger support confirms spam/Junk outcomes at both test times but cannot establish filter match or execution precedence from its available diagnostics. The visible human-review action accepted the technical case; Ian is reviewing it. No formal ticket ID or resolution is shown yet. Exact3ANDfilter remains enabled; automaticInboxFAIL persists. No broader spam/allow-list/DNS/source/package/calendar/deployment change. See verification-20261010/production-hostinger-filter-support-v1.json. Earlier support-not-sent notes are historical. U4 remains FAIL; source/renderer/local score unchanged.
+
+> Launch update 2026-10-10T08:16:57.802Z: the exact owner-approved filter is now saved/enabled. Both new independent messages still reached Junk. See production-native-mail-v2.json and MAIL_FILTER_SUPPORT.md; U4 remains FAIL and the local audit/renderer version and score are unchanged. No broad spam or allow-list change. The initial approval-pending notes below are historical.
+
 # Promedical acceptance audit — current Paid deployment
 
 Evaluated 2026-10-10T07:43:35.554Z. Public source fa176690be28cbe502137462e0ff5a35efcc4a47; normal production version 03f65927-d62f-45c1-8ccd-f125c5f2c8bc; package cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259.
 
 Historical baseline: exact previous acceptance saved in [history/acceptance-before-paid-20261010](history/acceptance-before-paid-20261010/PHASE-1-AUDIT.md). Original Free CPU/SMTP failures are retained. Current availability succeeds; automatic Inbox and other genuine operating facts remain open.
 
-P0: receiving Hostinger mailbox puts two authenticated native test notifications in Junk. Narrow authenticated sender/subject filter awaits owner confirmation. P1: controller/retention/deletion/restore/abuse operating facts and true200%zoom proof remain unverified. P2: complete multi-site visual and category-intent comparisons remain partial.
+P0: exact owner-approved3ANDfilter is saved/enabled, but both new authenticated test notifications still reach Junk. Hostinger support has received the technical case; automatic Inbox remains unresolved. P1: controller/retention/deletion/restore/abuse operating facts and true200%zoom proof remain unverified. P2: complete multi-site visual and category-intent comparisons remain partial.
 
 Local rendering: all57 future guides/1910pages/5694GET/zeroissues under controlled local clock; this is not current public publication or full acceptance. Current production1853pages/3777assets/5694GET has no availability error; zero currently public guides is intentional before October12.
 

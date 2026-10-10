@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/20",
+  "commit": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "note": "Owner action-time approval received for the exact Hostinger3AND Inboxfilter. Actual UI saved/enabled and persisted fields read back. Two NEW own browser/D1/native event/IMAP marker checks still receive authenticated messages in Junk, not Inbox; final DKIM fragment matches. No manual move, no broadened rule/allowlist/spamdisable, no source/deployment/package/calendar change or deletion. Site-only filter receipts and cumulative production-native-mail-v2.json preserve previous history under corePR53. Concrete MAIL_FILTER_SUPPORT.md prepared, notsent; outbound authorization pending. Native source/build tests remain verified, automaticInbox/operating acceptance remain failed/unverified. No merged/adopted claim.",
+  "eventId": "97efc40e-65b6-4128-99ff-e78cb5740d96",
+  "sequence": 4,
+  "at": "2026-10-10T08:18:02.894Z"
+}

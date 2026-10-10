@@ -89,7 +89,7 @@
   },
   "verdict": {
     "local": "FINAL_57_GUIDES_RENDERED_PASS_FULL_AUDIT_INCOMPLETE",
-    "launch": "LIVE_CRAWL_AND_AVAILABILITY_VERIFIED_MAIL_DELIVERED_TO_JUNK_FILTER_APPROVAL_PENDING_OPERATING_GATES_OPEN",
+    "launch": "LIVE_CRAWL_AND_AVAILABILITY_VERIFIED_FILTER_ENABLED_AUTOMATIC_INBOX_FAILED_OPERATING_GATES_OPEN",
     "demand": "UNMEASURED",
     "visual": "Coherent green/white medical B2B catalogue, original brand, true manufacturer imagery and useful model/quantity flow; broader visual benchmark incomplete."
   },
@@ -1374,9 +1374,11 @@
       "evidence": [
         "verification-20261010/production-native-mail-v1.json: two marked browser forms saved in actual isolatedD1, notified native acceptance, recipient-server Delivered and exact receiving mailbox Junk/authentication pass",
         "verification-20261010/production-paid-native-version-v1.json: restricted sender/destination and actualD1/native bindings",
-        "verification-20261010/production-native-second-inbox-v2.json: second new independent test still Junk; first manual Not spam is not automaticInbox evidence"
+        "verification-20261010/production-native-second-inbox-v2.json: second new independent test still Junk; first manual Not spam is not automaticInbox evidence",
+        "verification-20261010/production-native-mail-v2.json: owner-approved exact3ANDfilter saved/enabled/readback; two new independent native form/D1/notified/receivingJunk/authpass checks retain automaticInboxFAIL",
+        "verification-20261010/production-hostinger-filter-support-v1.json: approved technical case sent; Hostinger confirms both spam classifications; support outcome recorded without changing broader settings"
       ],
-      "notes": "Cloudflare native transport fixes production TCP SMTP failure. Automatic Inbox routing remains unresolved; narrow3ANDcondition filter is prepared but not enabled pending owner action-time confirmation. Recovery/reconciliation/rate/backup evidence remains separate. No historical D1/message deletion.",
+      "notes": "Native transport, production D1 and authenticated receiving-mailbox delivery work. Exact approved filter is enabled, but two new own messages still reach Junk; no manual move counted as automatic receipt. Owner-authorized Hostinger technical request has been sent. Hostinger support confirms spam/Junk outcomes at both test times but cannot establish filter match or execution precedence from its available diagnostics. The visible human-review action accepted the technical case; Ian is reviewing it. No formal ticket ID or resolution is shown yet. Recovery/reconciliation/rate/backup evidence remains separately unverified. Earlier filter-approval-pending/support-not-sent notes are historical.",
       "historicalEvidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
@@ -1700,5 +1702,6 @@
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
       ]
     }
-  ]
+  ],
+  "launchUpdatedAt": "2026-10-10T08:26:40.000Z"
 }

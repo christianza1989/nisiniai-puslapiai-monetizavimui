@@ -16588,7 +16588,7 @@
     "singleDays": 27,
     "doubleDays": 15,
     "timezone": "Europe/Vilnius",
-    "deployment": "LIVE_PAID_AVAILABILITY_AND_GOOGLE_CRAWL_VERIFIED_MAIL_JUNK_FILTER_PENDING",
+    "deployment": "LIVE_PAID_GOOGLE_CRAWL_VERIFIED_FILTER_ENABLED_AUTOMATIC_INBOX_FAILED",
     "nativeReview": "All actual current Studio review/approval/import payloads match; private proof retained.",
     "futureHtml": "verification-20261010/future-completion-paid-v1.json",
     "browser": "verification-20261010/guides-browser-desktop-mobile.json",
@@ -16598,9 +16598,11 @@
     "productionCheckedAt": "2026-10-10T07:22:00.719Z",
     "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
     "googleSearchConsole": "verification-20261010/production-google-search-console-v1.json",
-    "mail": "verification-20261010/production-native-mail-v1.json",
+    "mail": "verification-20261010/production-native-mail-v2.json",
     "allGuidesDeployed": true,
     "publicGuidesAtCheck": 0,
-    "publicationNeedsDailyRedeploy": false
+    "publicationNeedsDailyRedeploy": false,
+    "mailUpdatedAt": "2026-10-10T08:26:40.000Z",
+    "mailSupport": "verification-20261010/production-hostinger-filter-support-v1.json"
   }
 }

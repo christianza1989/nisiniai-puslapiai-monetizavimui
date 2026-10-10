@@ -1,3 +1,7 @@
+> Support update 2026-10-10T08:26:40.000Z: Owner-authorized technical support request sent through signed-in Hostinger chat. Hostinger support confirms spam/Junk outcomes at both test times but cannot establish filter match or execution precedence from its available diagnostics. The visible human-review action accepted the technical case; Ian is reviewing it. No formal ticket ID or resolution is shown yet. Exact3ANDfilter remains enabled; automaticInboxFAIL persists. No broader spam/allow-list/DNS/source/package/calendar/deployment change. See verification-20261010/production-hostinger-filter-support-v1.json. Earlier support-not-sent notes are historical.
+
+> Mail update 2026-10-10T08:16:57.802Z: the approved3ANDcondition filter is enabled and its saved fields read back. Two new own marked native forms still reach HostingerJunk withSPF/DKIM/DMARCpass; automaticInboxFAIL. See verification-20261010/production-native-mail-v2.json. MAIL_FILTER_SUPPORT.md is prepared, not sent. Earlier filter-approval-pending statements below are historical. Source/version/calendar/DNS are unchanged.
+
 # Promedical search and AI-search verification — 2026-10-10
 
 Current deployed source fa176690be28cbe502137462e0ff5a35efcc4a47, normal Workers Paid version 03f65927-d62f-45c1-8ccd-f125c5f2c8bc. The full1853eligible page/3777asset scan made5694GET with no availability defect; the sole remaining inspector issue is no public guide before October12. Historical Free503 failures are preserved in history/acceptance-before-paid-20261010 and earlier receipts.

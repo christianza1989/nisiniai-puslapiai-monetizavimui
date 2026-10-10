@@ -17,6 +17,7 @@ from . import (
     routing,
     service,
 )
+from .agent_preparation.routes import router as agent_preparation_router
 from .config import settings
 from .contracts import (
     Candidate,
@@ -68,6 +69,7 @@ app.include_router(operations_router)
 app.include_router(customer_router)
 app.include_router(creation_router)
 app.include_router(content_work_router)
+app.include_router(agent_preparation_router)
 app.include_router(public_router)
 
 

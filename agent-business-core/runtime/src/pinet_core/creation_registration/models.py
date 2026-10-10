@@ -29,6 +29,10 @@ class Registration(Owned, Base):
     revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     __table_args__ = (
         UniqueConstraint("creation_id", "accepted_revision", "environment_id"),
+        # Migration0017 provides the exact immutable identity referenced by profile history.
+        UniqueConstraint("id", "creation_id", "user_id", "organization_id", "portfolio_id", "environment_id",
+            "business_id", "grant_id", "site_id", "canonical_host", "accepted_revision", "candidate_sha256",
+            "accepted_source_revision", "fingerprint", name="uq_profile_registration_identity"),
         ForeignKeyConstraint(["revision_id", "creation_id", "accepted_revision", "candidate_sha256",
             "accepted_source_revision", *BINDING[1:]], ["control_creation_revisions." + c for c in
             ["id", "creation_id", "sequence", "material_hash", "source_revision", *BINDING[1:]]],

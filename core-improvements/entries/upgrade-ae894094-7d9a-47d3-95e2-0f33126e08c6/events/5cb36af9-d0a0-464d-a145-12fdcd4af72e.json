@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Final peer review3140 exposed stdin.drain before asyncio.timeout/cleanup. Actual synthetic no-stdin-reading Pythonchild reproduced1FAIL/14.91s: outertimeout+WindowsTempDirlocked because ownedchild remainedalive; testfinallykilledownchild. NoCLI/model. Moveddeadlinebefore spawn/write/drain andconcurrentpumps/supervision, ownedchildfinallystop beforeworkspacecleanup; preciseprivateworkspacepathverified. Correctedsource targeted12offline tests running. Existingoneprovideranswer/DB/pinnedAPI remainunchanged.",
+  "eventId": "5cb36af9-d0a0-464d-a145-12fdcd4af72e",
+  "sequence": 3,
+  "at": "2026-10-10T01:10:00.047Z"
+}

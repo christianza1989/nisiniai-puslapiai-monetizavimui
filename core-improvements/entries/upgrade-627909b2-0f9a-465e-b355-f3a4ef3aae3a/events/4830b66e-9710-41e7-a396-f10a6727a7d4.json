@@ -1,0 +1,36 @@
+{
+  "status": "pr",
+  "note": "PR81 source window closed after own merge of fetched parent8a9fe74154e60d754be448636adce4985d6ce027, with both WORKSTREAMS reservations preserved and no functional conflict. Functional7ba0d05760431ee601c13bbbb724003b9f76173e stays minimal delivery; canonical content-work.v1 remains49387 Git bytes/b301e9a820c4beb2497ac0a3acb81c9dfbdb76f42fc3fa89c048cbba4dc8511f. Tests do not call provider. Parent owns migration, clean source pin, worker/BFF/UI and all actual public acceptance. Private studio file and DB durability can leave uncertain completion requiring evidence reconciliation; no automatic replay/approval/public claim.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/81",
+  "commit": "7ba0d05760431ee601c13bbbb724003b9f76173e",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_content_work_review.py offline_tests/test_creation_review.py offline_tests/test_creation_adapter.py -q",
+      "result": "PASS",
+      "evidence": "After parent8a9fe7 integration:88 passed in5.42s; actual tool receipt99400f."
+    },
+    {
+      "command": "pytest tests/test_content_work.py -q",
+      "result": "PASS",
+      "evidence": "After parent8a9fe7 integration, isolated restricted real PostgreSQL/native Node:12 passed in114.67s; tool receiptb427f6."
+    },
+    {
+      "command": "node --test test/customer-content-write.test.mjs",
+      "result": "PASS",
+      "evidence": "All12 passed/0skip; tool receipt6d7f4a. Exact nonmutating validate, private CAS and unchanged prior public snapshot covered."
+    },
+    {
+      "command": "ruff check content_work/ scripts tests migration; customer_content_work_contract.py",
+      "result": "PASS",
+      "evidence": "Scoped Ruff and canonical generation passed; no contract diff, exact Git SHA b301e9a820c4beb2497ac0a3acb81c9dfbdb76f42fc3fa89c048cbba4dc8511f; tool receipts25d02e/9cf31c."
+    },
+    {
+      "command": "git diff --cached --check; node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Merge19 staged blobs287498 bytes/0findings, both WORKSTREAMS owners preserved; tool receipt26cc0c. Original functional21 blobs safety is already recorded."
+    }
+  ],
+  "eventId": "4830b66e-9710-41e7-a396-f10a6727a7d4",
+  "sequence": 5,
+  "at": "2026-10-10T13:52:11.351Z"
+}

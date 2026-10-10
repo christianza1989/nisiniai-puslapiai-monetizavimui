@@ -1,0 +1,784 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Private customer creation team timeline",
+    "version": "0.1.0",
+    "description": "Actual separate creator/critic/coordinator dispatch reservations and bounded summaries. No raw reasoning/trace; exact candidate-bound review and observed check receipts. Two rounds/six calls/overall deadline per job, each call charged before dispatch. draft_ready is private reviewed draft only; fullF1 and launch remain UNVERIFIED. needs_review is a sidecar projection; existing creation.v1 remains unchanged."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/team": {
+      "get": {
+        "operationId": "getCustomerCreationTeam",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "AttemptView": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt_id": {
+            "format": "uuid",
+            "title": "Attempt Id",
+            "type": "string"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 6,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "role": {
+            "enum": [
+              "creator",
+              "critic",
+              "coordinator"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "round_number": {
+            "maximum": 2,
+            "minimum": 1,
+            "title": "Round Number",
+            "type": "integer"
+          },
+          "stage": {
+            "const": "private_draft",
+            "title": "Stage",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "reserved",
+              "succeeded",
+              "failed",
+              "interrupted"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "instruction_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Instruction Hash",
+            "type": "string"
+          },
+          "model": {
+            "const": "gpt-6-luna",
+            "title": "Model",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attempt_id",
+          "job_id",
+          "sequence",
+          "role",
+          "round_number",
+          "stage",
+          "state",
+          "source_revision",
+          "instruction_hash",
+          "model",
+          "created_at"
+        ],
+        "title": "AttemptView",
+        "type": "object"
+      },
+      "CheckView": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "pattern": "^r_[a-z0-9][a-z0-9_-]{0,63}$",
+            "title": "Id",
+            "type": "string"
+          },
+          "draft_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Draft Sha256",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "language_quality",
+              "source",
+              "browser",
+              "seo_geo",
+              "media",
+              "contact_delivery",
+              "publication",
+              "launch",
+              "demand"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNVERIFIED",
+              "NA"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "observed": {
+            "title": "Observed",
+            "type": "boolean"
+          },
+          "summary": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Summary",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "draft_sha256",
+          "kind",
+          "status",
+          "observed",
+          "summary"
+        ],
+        "title": "CheckView",
+        "type": "object"
+      },
+      "EventData": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Candidate Sha256"
+          },
+          "critic_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Critic Sha256"
+          },
+          "decision": {
+            "anyOf": [
+              {
+                "enum": [
+                  "accept_draft",
+                  "revise",
+                  "blocked"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Decision"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/FindingView"
+            },
+            "maxItems": 12,
+            "title": "Findings",
+            "type": "array"
+          },
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/CheckView"
+            },
+            "maxItems": 9,
+            "title": "Checks",
+            "type": "array"
+          },
+          "next_actions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 5,
+            "title": "Next Actions",
+            "type": "array"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z_]{1,64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Failure Code"
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TokenUsage"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "web_search_count": {
+            "anyOf": [
+              {
+                "maximum": 6,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Web Search Count"
+          },
+          "cost_microusd": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Cost Microusd"
+          }
+        },
+        "title": "EventData",
+        "type": "object"
+      },
+      "FindingView": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "blocker",
+              "required",
+              "suggestion"
+            ],
+            "title": "Severity",
+            "type": "string"
+          },
+          "area": {
+            "title": "Area",
+            "type": "string"
+          },
+          "explanation": {
+            "maxLength": 700,
+            "title": "Explanation",
+            "type": "string"
+          },
+          "correction": {
+            "maxLength": 700,
+            "title": "Correction",
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 6,
+            "title": "Evidence Refs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "severity",
+          "area",
+          "explanation",
+          "correction",
+          "evidence_refs"
+        ],
+        "title": "FindingView",
+        "type": "object"
+      },
+      "TeamEventView": {
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "format": "uuid",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 300,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "attempt_id": {
+            "format": "uuid",
+            "title": "Attempt Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "creator",
+              "critic",
+              "coordinator"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "round_number": {
+            "maximum": 2,
+            "minimum": 1,
+            "title": "Round Number",
+            "type": "integer"
+          },
+          "stage": {
+            "const": "private_draft",
+            "title": "Stage",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "reserved",
+              "succeeded",
+              "failed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 900,
+            "minLength": 10,
+            "title": "Summary",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventData"
+          }
+        },
+        "required": [
+          "event_id",
+          "sequence",
+          "job_id",
+          "attempt_id",
+          "role",
+          "round_number",
+          "stage",
+          "state",
+          "summary",
+          "created_at",
+          "data"
+        ],
+        "title": "TeamEventView",
+        "type": "object"
+      },
+      "TokenUsage": {
+        "additionalProperties": false,
+        "properties": {
+          "input_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Input Tokens"
+          },
+          "output_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Tokens"
+          },
+          "cached_input_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Cached Input Tokens"
+          },
+          "reasoning_output_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Reasoning Output Tokens"
+          }
+        },
+        "title": "TokenUsage",
+        "type": "object"
+      },
+      "TeamView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "draft_ready",
+              "needs_review",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "scope": {
+            "const": "private_business_and_website_draft",
+            "title": "Scope",
+            "type": "string"
+          },
+          "current_revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Revision"
+          },
+          "active_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Job Id"
+          },
+          "latest_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Job Id"
+          },
+          "creation_updated_at": {
+            "format": "date-time",
+            "title": "Creation Updated At",
+            "type": "string"
+          },
+          "accepted_candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Candidate Sha256"
+          },
+          "max_rounds": {
+            "const": 2,
+            "title": "Max Rounds",
+            "type": "integer"
+          },
+          "max_calls_per_job": {
+            "const": 6,
+            "title": "Max Calls Per Job",
+            "type": "integer"
+          },
+          "deadline_seconds": {
+            "maximum": 300,
+            "minimum": 30,
+            "title": "Deadline Seconds",
+            "type": "integer"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "attempts": {
+            "items": {
+              "$ref": "#/components/schemas/AttemptView"
+            },
+            "maxItems": 120,
+            "title": "Attempts",
+            "type": "array"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/TeamEventView"
+            },
+            "maxItems": 300,
+            "title": "Events",
+            "type": "array"
+          }
+        },
+        "required": [
+          "creation_id",
+          "status",
+          "scope",
+          "current_revision",
+          "active_job_id",
+          "latest_job_id",
+          "creation_updated_at",
+          "accepted_candidate_sha256",
+          "max_rounds",
+          "max_calls_per_job",
+          "deadline_seconds",
+          "full_f1_status",
+          "launch_status",
+          "attempts",
+          "events"
+        ],
+        "title": "TeamView",
+        "type": "object"
+      },
+      "TeamViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "team.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/TeamView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

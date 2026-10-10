@@ -6,8 +6,9 @@ import subprocess
 
 
 class RunnerError(Exception):
-    def __init__(self, code):
+    def __init__(self, code, receipt=None):
         self.code = code
+        self.receipt = receipt or {}
 
 
 async def stop_process(process):
@@ -23,6 +24,21 @@ async def stop_process(process):
 
 async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, parse_trace,
                   stdout_limit=131072, output_limit=32768, on_event=None, trace_file=None):
+    observed_stdout = []
+
+    def observed_receipt():
+        if receipt is not None:
+            return receipt
+        # EOF may never arrive even after a terminal usage event was already received.
+        # Parse complete bounded lines only; absent/invalid evidence remains unknown.
+        prefix = b"".join(observed_stdout).rsplit(b"\n", 1)
+        if len(prefix) != 2:
+            return None
+        try:
+            return parse_trace(prefix[0].decode("utf-8", errors="replace"))
+        except (RunnerError, ValueError):
+            return None
+
     async def bounded(stream, cap, inspect=False):
         chunks, size, pending = [], 0, b""
         while chunk := await stream.read(8192):
@@ -30,6 +46,8 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
             if size > cap:
                 raise RunnerError("output_invalid")
             chunks.append(chunk)
+            if inspect:
+                observed_stdout.append(chunk)
             if inspect and trace_file:
                 with trace_file.open("ab") as private_trace:
                     private_trace.write(chunk)
@@ -43,7 +61,7 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
             on_event(json.loads(pending))
         return b"".join(chunks).decode("utf-8", errors="replace")
 
-    process, tasks = None, []
+    process, tasks, receipt = None, [], None
     try:
         async with asyncio.timeout(seconds):
             process = await asyncio.create_subprocess_exec(*args, stdin=asyncio.subprocess.PIPE,
@@ -80,10 +98,13 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
             if not output.is_file() or output.stat().st_size > output_limit:
                 raise RunnerError("output_invalid")
             return json.loads(output.read_text(encoding="utf-8")), receipt
+    except RunnerError as error:
+        error.receipt = observed_receipt() or error.receipt
+        raise
     except TimeoutError:
-        raise RunnerError("run_timeout") from None
+        raise RunnerError("run_timeout", observed_receipt()) from None
     except (OSError, ValueError):
-        raise RunnerError("output_invalid") from None
+        raise RunnerError("output_invalid", observed_receipt()) from None
     finally:
         if process:
             await stop_process(process)

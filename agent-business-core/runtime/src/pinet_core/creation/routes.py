@@ -98,6 +98,17 @@ async def detail(creation_id: str, request: Request, context=Depends(authenticat
     return envelope(request, view(row))
 
 
+@router.get("/creations/{creation_id}/team")
+async def team_detail(creation_id: str, request: Request, context=Depends(authenticated, scope="function")):
+    from .team import projection
+    tx, session = context
+    row = await owned(tx, session, creation_id, lock=True)
+    await expire(tx, row)
+    value = core_envelope(request, await projection(tx, row))
+    value["contract_version"] = "team.v1"
+    return value
+
+
 @router.post("/creations/{creation_id}/revisions", status_code=202)
 async def revise(creation_id: str, value: Revise, request: Request, context=Depends(authenticated, scope="function")):
     tx, session = context

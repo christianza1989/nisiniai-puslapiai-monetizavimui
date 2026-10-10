@@ -48,7 +48,7 @@ async def context_for(tx, creation, job):
             "scope": "private_business_and_website_draft", "expected_instruction_hash": job.instruction_hash}
 
 
-async def claim():
+async def claim(*, team_enabled=True):
     cfg = settings()
     if not cfg.creation_enabled or not cfg.creation_runner_enabled or cfg.control_mode != "local":
         return None
@@ -70,9 +70,10 @@ async def claim():
                 if not await authority(tx, job):
                     await fail(tx, creation, job, "authorization_revoked")
                     continue
-                _, instruction_hash = adapter.instructions()
+                instruction_hash = adapter.team_instruction_hash() if team_enabled else adapter.instructions()[1]
                 job.status, job.run_id, job.lease_until = "running", new_id(), lease_deadline()
-                job.instruction_hash, job.model, job.adapter_revision = instruction_hash, "gpt-6-luna", adapter.ADAPTER_REVISION
+                job.instruction_hash, job.model, job.adapter_revision = instruction_hash, "gpt-6-luna", (
+                    "codex-business-team.v1" if team_enabled else adapter.ADAPTER_REVISION)
                 creation.status, creation.stage = "running", "drafting"
                 await event(tx, creation, job, "AI rengia verslo pasiūlymą ir svetainės juodraštį.")
                 return {"job_id": job.id, "user_id": job.user_id, "run_id": job.run_id,
@@ -93,19 +94,36 @@ async def heartbeat(job_id, user_id, run_id):
         return True
 
 
-async def execute_once(runner=None):
-    claimed = await claim()
+async def execute_once(runner=None, *, role_runner=None):
+    # Keep a database mutex until the owned child is stopped and completion is fenced.
+    # An API cancellation can clear task state but cannot release this execution barrier.
+    async with scope() as execution_scope:
+        acquired = await execution_scope.scalar(text("SELECT pg_try_advisory_xact_lock(hashtextextended(:k,0))"),
+                                               {"k": "creation-execution:" + settings().environment})
+        if not acquired:
+            return False
+        return await _execute_once(runner, role_runner=role_runner)
+
+
+async def _execute_once(runner=None, *, role_runner=None):
+    # Explicit single-run injection is an existing offline test seam, never a customer/runtime switch.
+    claimed = await claim(team_enabled=runner is None)
     if not claimed:
         return False
     result, receipt, failure, outputs = None, {}, None, []
     try:
-        result, receipt = await (runner or adapter.run)(claimed["context"],
-            lambda: heartbeat(claimed["job_id"], claimed["user_id"], claimed["run_id"]))
+        authorized = lambda: heartbeat(claimed["job_id"], claimed["user_id"], claimed["run_id"])  # noqa: E731
+        if runner:
+            result, receipt = await runner(claimed["context"], authorized)
+        else:
+            from .team import run
+            result, receipt = await run(claimed, authorized, role_runner)
         result = renderer.normalize(result)
         receipt["language_screening"] = renderer.language_screening(result)
         outputs = renderer.artifacts(result, creation_id=claimed["creation_id"], revision=claimed["revision"], receipt=receipt)
     except adapter.RunnerError as error:
         failure = error.code
+        receipt = error.receipt or receipt
         if failure == "language_quality_failed":
             receipt["language_screening"] = {"status": "FAIL", "check": "obvious_language_drift.v1"}
     except Exception:
@@ -123,6 +141,10 @@ async def execute_once(runner=None):
             failure = "worker_interrupted"
         if job.base_revision != creation.current_revision:
             failure = "stale_revision"
+        if receipt.get("deadline_monotonic") is not None:
+            from .team import monotonic
+            if monotonic() >= receipt["deadline_monotonic"]:
+                failure = "run_timeout"
         if failure:
             await fail(tx, creation, job, failure)
             return True

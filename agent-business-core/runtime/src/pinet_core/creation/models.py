@@ -109,3 +109,35 @@ class Event(Owned, Base):
     message: Mapped[str] = mapped_column(String)
     __table_args__ = (UniqueConstraint("creation_id", "sequence"),
         parent("control_creations", "creation_id"), parent("control_creation_jobs", "job_id"))
+
+
+class Attempt(Owned, Base):
+    """Immutable budget reservation; a failed/revoked dispatch never refunds an attempt."""
+    __tablename__ = "control_creation_attempts"
+    creation_id: Mapped[str] = mapped_column(String)
+    job_id: Mapped[str] = mapped_column(String)
+    run_id: Mapped[str] = mapped_column(String)
+    sequence: Mapped[int] = mapped_column(Integer)
+    role: Mapped[str] = mapped_column(String)
+    round_number: Mapped[int] = mapped_column(Integer)
+    stage: Mapped[str] = mapped_column(String)
+    source_revision: Mapped[str] = mapped_column(String)
+    instruction_hash: Mapped[str] = mapped_column(String)
+    model: Mapped[str] = mapped_column(String)
+    __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("job_id", "sequence"),
+        parent("control_creations", "creation_id"), parent("control_creation_jobs", "job_id"))
+
+
+class TeamEvent(Owned, Base):
+    """Client-visible decision summaries, never raw provider reasoning or trace."""
+    __tablename__ = "control_creation_team_events"
+    creation_id: Mapped[str] = mapped_column(String)
+    job_id: Mapped[str] = mapped_column(String)
+    attempt_id: Mapped[str] = mapped_column(String)
+    sequence: Mapped[int] = mapped_column(Integer)
+    state: Mapped[str] = mapped_column(String)
+    summary: Mapped[str] = mapped_column(String)
+    payload: Mapped[dict] = mapped_column(JSONB)
+    __table_args__ = (UniqueConstraint("creation_id", "sequence"), UniqueConstraint("attempt_id", "state"),
+        parent("control_creations", "creation_id"), parent("control_creation_jobs", "job_id"),
+        parent("control_creation_attempts", "attempt_id"))

@@ -55,6 +55,14 @@ async def quota(tx, user_id):
                      {"k": "creation-admission:" + settings().environment})
     now = utcnow()
     start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    # Admission and each later role reservation use the same charged union:
+    # legacy executions, creator/reviewer roles and native GUIDE attempts.
+    # Keep the independent job-rate bound below for queued, unexecuted work.
+    args = {"e": settings().environment, "s": start}
+    attempted = await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), args)
+    all_attempted = await tx.scalar(text("SELECT control_creation_attempt_count(:e,:s)"), args)
+    if attempted >= settings().creation_daily_limit or all_attempted >= settings().creation_global_daily_limit:
+        raise ControlError(429, "creation_daily_limit")
     own = await tx.scalar(select(func.count()).select_from(Job).where(Job.user_id == user_id, Job.created_at >= start))
     # Fixed definer aggregate returns a count, never another customer's rows/content.
     total = await tx.scalar(text("SELECT control_creation_daily_count(:e,:s)"), {"e": settings().environment, "s": start})

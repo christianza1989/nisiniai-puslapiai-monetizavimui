@@ -1538,6 +1538,47 @@
           "sha256": "9c989319c77f480d71123d495bc4b91e5d7668197b17a11499a7e11ebe0e1682"
         }
       ]
+    },
+    {
+      "id": "hero-pedikiuras-violet",
+      "alt": "Originali redakcinė pedikiūro iliustracija",
+      "variants": [
+        {
+          "file": "images/pedikiuras-violet-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 76394,
+          "sha256": "fe5b3f4345b75aa675b1c26ece779d6b156722f7952f0fb15783fa6de1dd2216"
+        },
+        {
+          "file": "images/pedikiuras-violet-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 52150,
+          "sha256": "d25ce594148914df11fb1848617f88bfebdc09485be5fc9a5ba3d29183ba1a46"
+        },
+        {
+          "file": "images/pedikiuras-violet-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 28478,
+          "sha256": "92fbb90ceb8a08d49aa63cb349e36be51e35514e4c0ae7136aee8bec6718d0f3"
+        },
+        {
+          "file": "images/pedikiuras-violet-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 20084,
+          "sha256": "a26af7e3b8d31cfde673d6cd06ea8c4137d514af9f6f651922ea30b2f84e66ea"
+        },
+        {
+          "file": "images/pedikiuras-violet-360.webp",
+          "width": 360,
+          "height": 203,
+          "bytes": 7898,
+          "sha256": "37d7ee5d43f5f74541f71a62af773f122003afc08638541009ad5cc5972c974b"
+        }
+      ]
     }
   ]
 }

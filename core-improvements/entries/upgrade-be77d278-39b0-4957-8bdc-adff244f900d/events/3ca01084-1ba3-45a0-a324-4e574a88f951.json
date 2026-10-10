@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Canonical contract and five routing entrypoints verified. Initial quick_validate blocked by missing PyYAML; isolated ignored tmp dependency restored the actual validator. No UI/runtime change or historical site PASS claimed.",
+  "checks": [
+    {
+      "command": "quick_validate.py SKILLS/niche-site-builder; quick_validate.py SKILLS/niche-content-planner; quick_validate.py SKILLS/niche-site-audit",
+      "result": "PASS",
+      "evidence": "research/typography-system-2026-10-10/REVIEW.md — 3/3 Skill is valid! after isolated PyYAML dependency install."
+    },
+    {
+      "command": "node tmp/verify-typography.mjs",
+      "result": "PASS",
+      "evidence": "research/typography-system-2026-10-10/REVIEW.md — local links, fences, frontmatter/routing and only three entry SHA updates; unrelated catalog entries preserved."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "research/typography-system-2026-10-10/REVIEW.md — no whitespace errors; complete changed instruction diff reviewed."
+    }
+  ],
+  "eventId": "3ca01084-1ba3-45a0-a324-4e574a88f951",
+  "sequence": 2,
+  "at": "2026-10-10T16:24:52.559Z"
+}

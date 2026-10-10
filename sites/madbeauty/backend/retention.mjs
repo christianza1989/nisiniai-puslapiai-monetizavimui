@@ -15,6 +15,7 @@ export function createRetention(store){
  db.exec('CREATE TABLE IF NOT EXISTS retention_receipt_access(site_id TEXT NOT NULL,token_hash TEXT NOT NULL,client_id TEXT NOT NULL,expires_at INTEGER NOT NULL,PRIMARY KEY(site_id,token_hash));');
  if(!db.prepare('PRAGMA table_info(retention_activity)').all().some(c=>c.name==='notice_mail_id'))db.exec('ALTER TABLE retention_activity ADD COLUMN notice_mail_id TEXT');
  const active=()=>{if(!policyActive(store))reject('RETENTION_NOT_ACTIVE','Duomenų šalinimas dar neaktyvintas.',503);};
+ const accountErasure=event=>{const result=store.onAccountErasure?.(Object.freeze(event));if(result?.then)throw Error('Native account erasure hook must be synchronous');};
  const get=id=>db.prepare('SELECT * FROM retention_tombstones WHERE site_id=? AND client_id=?').get(siteId,id);
  const key=Buffer.from(store.hash('retention-backup-key-v1'),'hex');
  const protect=bytes=>{const iv=randomBytes(12),c=createCipheriv('aes-256-gcm',key,iv),encrypted=Buffer.concat([c.update(bytes),c.final()]);return json({v:1,iv:iv.toString('base64'),tag:c.getAuthTag().toString('base64'),encrypted:encrypted.toString('base64')});};
@@ -89,7 +90,7 @@ export function createRetention(store){
   }finally{db.prepare('DELETE FROM retention_writer_permits WHERE site_id=?').run(siteId);db.prepare('DELETE FROM retention_mail_permits WHERE site_id=?').run(siteId);}
   return counts;
  }
- function begin(user,input,targets=[]){return store.transaction(()=>{
+ function begin(user,input,targets=[],reason='account_erasure'){return store.transaction(()=>{
   active();fresh(store,user);const old=get(user.id);if(old)return receipt(old);
   inspect(user);if(input?.confirmEmail!==user.email||input?.policyVersion!==policy.version)reject('INVALID_INPUT','Patvirtinkite el. paštą ir dabartinę saugojimo tvarką.');
   if(targets.some(t=>t.state!=='sealed'))reject('ORGANIZATION_UNAVAILABLE','Organizacijos perkėlimas dar nebaigtas. Bandykite vėliau.',503);
@@ -98,10 +99,11 @@ export function createRetention(store){
   backup({force:true});const now=store.clock(),requestId=randomId('erasure'),aliasId='erased_'+randomId('client').slice(7);
   db.prepare('INSERT INTO retention_tombstones VALUES(?,?,?,?,?,?,0,?,?)').run(siteId,user.id,requestId,aliasId,policy.version,now,'processing','{}');
   for(const t of targets)db.prepare('INSERT INTO retention_target_queue VALUES(?,?,?,?,?)').run(siteId,user.id,t.organization_id,t.epoch,'pending');
+  accountErasure({clientId:user.id,requestId,occurredAt:now,reason});
   const counts=scrub(user.id,aliasId);db.prepare('UPDATE retention_tombstones SET counts=? WHERE site_id=? AND client_id=?').run(json(counts),siteId,user.id);
   if(!targets.length)complete(user.id);return receipt(get(user.id));
  });}
- function apply(input){return store.transaction(()=>{active();if(!valid(input?.clientId)||!valid(input?.requestId)||!valid(input?.aliasId)||input.policyVersion!==policy.version)reject('INVALID_INPUT','Netinkamas duomenų pašalinimo patvirtinimas.');const old=get(input.clientId);if(old){if(old.request_id!==input.requestId||old.alias_id!==input.aliasId)reject('VERSION_CONFLICT','Pašalinimo tapatybė pasikeitė.',409);return receipt(old);}backup({force:true});db.prepare('INSERT INTO retention_tombstones VALUES(?,?,?,?,?,?,0,?,?)').run(siteId,input.clientId,input.requestId,input.aliasId,policy.version,store.clock(),'processing','{}');const counts=scrub(input.clientId,input.aliasId);db.prepare('UPDATE retention_tombstones SET counts=? WHERE site_id=? AND client_id=?').run(json(counts),siteId,input.clientId);complete(input.clientId);return receipt(get(input.clientId));});}
+ function apply(input){return store.transaction(()=>{active();if(!valid(input?.clientId)||!valid(input?.requestId)||!valid(input?.aliasId)||input.policyVersion!==policy.version)reject('INVALID_INPUT','Netinkamas duomenų pašalinimo patvirtinimas.');const old=get(input.clientId);if(old){if(old.request_id!==input.requestId||old.alias_id!==input.aliasId)reject('VERSION_CONFLICT','Pašalinimo tapatybė pasikeitė.',409);return receipt(old);}backup({force:true});db.prepare('INSERT INTO retention_tombstones VALUES(?,?,?,?,?,?,0,?,?)').run(siteId,input.clientId,input.requestId,input.aliasId,policy.version,store.clock(),'processing','{}');accountErasure({clientId:input.clientId,requestId:input.requestId,occurredAt:store.clock(),reason:'account_erasure'});const counts=scrub(input.clientId,input.aliasId);db.prepare('UPDATE retention_tombstones SET counts=? WHERE site_id=? AND client_id=?').run(json(counts),siteId,input.clientId);complete(input.clientId);return receipt(get(input.clientId));});}
  function complete(clientId){db.prepare("UPDATE retention_tombstones SET state='completed',completed_at=? WHERE site_id=? AND client_id=?").run(store.clock(),siteId,clientId);}
  function sweep({confirmedSourceCopies=[]}={}){return store.transaction(()=>{
   active();backup();const now=store.clock(),d=store.read(),historyBefore=monthsBefore(now,policy.historyMonths),textBefore=monthsBefore(now,policy.messagesMonths),allowed=o=>!o||store.organizationWritable(o)||confirmedSourceCopies.includes(o),ended=b=>Date.parse(b.cancelledAt||b.endAt),futureClient=new Set(d.bookings.filter(b=>b.status==='confirmed'&&Date.parse(b.endAt)>now).map(b=>b.organizationId+':'+b.clientId)),expiredBookings=new Set(),changedOrganizations=new Set();let removed=0;
@@ -136,7 +138,7 @@ export function createRetention(store){
  });}
  function closeInactive(account,targets){
   const current=db.prepare('SELECT * FROM retention_activity WHERE site_id=? AND account_id=?').get(siteId,account.id);if(!current||!current.notice_at||current.notice_at>store.clock()-policy.noticeDays*day||current.touched_at>monthsBefore(store.clock(),policy.inactiveMonths)||db.prepare('SELECT state FROM mail_outbox WHERE site_id=? AND id=?').get(siteId,current.notice_mail_id)?.state!=='accepted')return null;
-  return begin({...account,verifiedAt:store.clock()},{confirmEmail:account.email,policyVersion:policy.version},targets);
+  return begin({...account,verifiedAt:store.clock()},{confirmEmail:account.email,policyVersion:policy.version},targets,'retention_erasure');
  }
  function restoreEmpty(snapshot,journal,expectedJournalSha256){return store.transaction(()=>{
   active();if(!Array.isArray(journal)||createHash('sha256').update(json(journal)).digest('hex')!==expectedJournalSha256)reject('RESTORE_JOURNAL','Atkūrimui reikia naujausio patvirtinto pašalinimų žurnalo.',409);

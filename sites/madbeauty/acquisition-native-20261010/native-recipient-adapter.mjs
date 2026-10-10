@@ -4,16 +4,20 @@ import {createAuth} from '../backend/auth.mjs';
 import {canonicalNativeEmail,createRecipientCodec,ADDRESS_RULE,RECIPIENT_VERSION} from './contracts/recipient-binding.mjs';
 import {signRequest} from './contracts/server-auth.mjs';
 import {validateWire} from './wire.mjs';
+import {createNativeRecipientPrivacy} from './native-recipient-privacy.mjs';
+import {createNativeLifecycleCapture} from './native-lifecycle.mjs';
 const encode=value=>JSON.stringify(value);
 const timestamp=ms=>new Date(ms).toISOString();
 const bytesEqual=(a,b)=>a instanceof Uint8Array&&b instanceof Uint8Array&&a.length===b.length&&timingSafeEqual(a,b);
 const identifier=v=>typeof v==='string'&&/^[A-Za-z0-9_-]{1,100}$/.test(v)&&!v.endsWith('\n');
 
-export async function createNativeRecipientCapture({store,scope,adapterId,sourceRelease,recipientKeyId,recipientSecret,transportKeyId,transportSecret,captureOnly}){
+export async function createNativeRecipientCapture({store,scope,adapterId,sourceRelease,recipientKeyId,recipientSecret,transportKeyId,transportSecret,transportPermissions=['recipient-challenge','verify-recipient'],captureOnly}){
  if(captureOnly!==true||scope?.site_id!==store.siteId||scope?.site_id!=='madbeauty'||scope?.environment_class!=='test')throw Error('isolated_capture_scope_required');
  if(!identifier(sourceRelease)||!identifier(transportKeyId)||!(transportSecret instanceof Uint8Array)||transportSecret.length<32||bytesEqual(recipientSecret,transportSecret))throw Error('separate_transport_grant_required');
  const trustedScope=Object.freeze({...scope}),scopeKey=encode({scope:Object.fromEntries(Object.keys(trustedScope).sort().map(k=>[k,trustedScope[k]])),adapter_id:adapterId}),transportKey=transportSecret.slice();
  const codec=await createRecipientCodec({secret:recipientSecret,scope:trustedScope,adapterId,keyId:recipientKeyId});
+ if(!Array.isArray(transportPermissions)||transportPermissions.some(p=>!['recipient-challenge','verify-recipient','retire-recipient','events','resolve'].includes(p)))throw Error('invalid_native_transport_permissions');
+ const permissions=new Set(transportPermissions);
  const auth=createAuth(store),{db}=store;
  store.transaction(()=>{
   db.exec(`CREATE TABLE IF NOT EXISTS native_recipient_challenges(scope_key TEXT NOT NULL,challenge_id TEXT NOT NULL,invitation_ref TEXT NOT NULL,PRIMARY KEY(scope_key,challenge_id));
@@ -40,8 +44,15 @@ CREATE TABLE IF NOT EXISTS native_recipient_requests(scope_key TEXT NOT NULL,req
   if(!account||canonicalNativeEmail(account.email)!==account.email)throw Error('native_account_unavailable');
   return account;
  }
+ const privacy=createNativeRecipientPrivacy({store,scopeKey,adapterId,sourceRelease,codec,recipientKeyId,recipientKey:recipientSecret.slice(),transportKeyId,transportKey,permissions});
  return Object.freeze({
   auth,
+  lifecycle:createNativeLifecycleCapture({store,scopeKey,scope:trustedScope,adapterId,sourceRelease,transportKeyId,transportKey,permissions}),
+  eraseAccount:privacy.eraseAccount,
+  retirementPacket:privacy.packet,
+  dispatchRetirement:privacy.dispatch,
+  retirementStatus:privacy.status,
+  sweepRetirements:privacy.sweep,
   startInvitation(session,{invitationRef,email,ip}){
    validateWire('RecipientChallengeRequest',context(invitationRef,randomUUID()));
    return store.transaction(()=>{
@@ -100,6 +111,7 @@ CREATE TABLE IF NOT EXISTS native_recipient_requests(scope_key TEXT NOT NULL,req
   },
   async packet(requestId){
    const row=request(requestId);if(!row||row.state!=='ready')return null;
+   if(!permissions.has(row.operation))throw Error('recipient_permission_required');
    if(createHash('sha256').update(row.body).digest('hex')!==row.body_sha256)throw Error('immutable_request_corrupt');
    const current=pending(row.invitation_ref,row.account_ref);if(!current)throw Error('native_attribution_unavailable');const account=assertNative(current);
    const path='/integrations/acquisition/v1/sites/madbeauty/'+row.operation;

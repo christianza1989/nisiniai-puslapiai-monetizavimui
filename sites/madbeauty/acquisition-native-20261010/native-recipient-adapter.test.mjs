@@ -94,13 +94,14 @@ test('Expiry/stop preserve ordinary actual provider signup without attribution e
   const org=createPlatform(f.store).createOrganization(actual.user,{name:'Synthetic ordinary provider',bio:'Capture only',kind:'solo',city:'Vilnius'});assert.match(org.id,/^provider_/);assert.equal(f.store.db.prepare('SELECT COUNT(*) n FROM native_recipient_requests').get().n,1);
  }finally{f.close();}}
 });
-test('Deleted native account blocks proof; authenticated privacy revocation remains a dependency',async()=>{
+test('Actual native erasure removes pending proof and atomically queues retirement',async()=>{
  const f=await fixture();try{
   const actual=verified(f),id=await f.adapter.prepare(invitationRef);f.adapter.acceptReceipt(id,challengeReceipt(f,id));
   f.store.retentionPolicyVersion=RETENTION_POLICY.version;
   assert.equal(createRetention(f.store).begin(actual.user,{confirmEmail:actual.user.email,policyVersion:RETENTION_POLICY.version}).state,'completed');
   assert.equal(f.store.db.prepare('SELECT id FROM accounts WHERE id=?').get(actual.user.id),undefined);
-  await assert.rejects(f.adapter.prepare(invitationRef),/native_account_unavailable/);assert.equal(f.store.db.prepare('SELECT COUNT(*) n FROM native_recipient_requests').get().n,1);assert.equal(f.adapter.state(invitationRef),'challenge_issued');
+  assert.equal(await f.adapter.prepare(invitationRef),null);assert.equal(f.store.db.prepare('SELECT COUNT(*) n FROM native_recipient_requests').get().n,0);assert.equal(f.adapter.state(invitationRef),null);
+  assert.equal(f.store.db.prepare('SELECT COUNT(*) n FROM native_recipient_privacy').get().n,1);assert.equal(f.store.db.prepare('SELECT state FROM native_recipient_privacy').get().state,'ready');
  }finally{f.close();}
 });
 test('Production/cross-site/reused key configuration unavailable',async()=>{

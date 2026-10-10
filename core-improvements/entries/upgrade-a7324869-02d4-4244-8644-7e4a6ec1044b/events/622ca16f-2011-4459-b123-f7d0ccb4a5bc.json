@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Agreed local I1a/I1b actual gate accepted bilaterally at runtime e466bd16178ed467cd050bc7756c6149ef89b756 and portal PR63 implementation5b7535e7f9ed7ba19a7e421077344cd23befa73d / receipt db908af9c5fd480846ca39fea469ba601cb83dd6. Original migration/setup/path/actualTCPlogout failures remain in docs. No main/deployment/productionUUID/hosted/task adoption claim.",
+  "checks": [
+    {
+      "command": "uv run pytest tests/test_control_portfolio.py tests/test_core.py tests/test_policy.py tests/test_mailbox.py tests/test_facebook.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "68PASS/96.27s; docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md"
+    },
+    {
+      "command": "uv run pytest tests/test_control_portfolio.py -k authorized_empty -q --tb=short",
+      "result": "PASS",
+      "evidence": "1PASS/1.77s additional boundary, runtime unchanged"
+    },
+    {
+      "command": "Scoped Ruff and isolated PostgreSQL migration/head->0009->head",
+      "result": "PASS",
+      "evidence": "Seven forced-RLS tables; original downgrade dependency defect repaired/rehearsed; docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md"
+    },
+    {
+      "command": "Actual loopback TCP HTTP, dedicated API+DB restart, pg_dump->fresh DB/new restricted API",
+      "result": "PASS",
+      "evidence": "Same9UUID/user/portfolio/session retained, foreign404, logout204/immediate401; sanitized receipt in docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md"
+    },
+    {
+      "command": "Paired production Next/BFF/core/DB browser gate + portal build/typecheck/tests",
+      "result": "PASS",
+      "evidence": "Portal PR63 db908af9c5fd480846ca39fea469ba601cb83dd6,119PASS/1unrelatedSKIP, focused10PASS, both-orgAPI404/deniedUI, desktop/mobile/focus/noindex/restart/logout; bilateral source/visual review, noP0/P1"
+    }
+  ],
+  "eventId": "622ca16f-2011-4459-b123-f7d0ccb4a5bc",
+  "sequence": 4,
+  "at": "2026-10-10T00:32:36.611Z"
+}

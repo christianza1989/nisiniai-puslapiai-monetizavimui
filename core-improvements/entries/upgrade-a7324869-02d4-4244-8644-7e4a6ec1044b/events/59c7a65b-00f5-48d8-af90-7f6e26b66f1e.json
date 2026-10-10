@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/65",
+  "commit": "e466bd16178ed467cd050bc7756c6149ef89b756",
+  "note": "Local I1a/I1b actual gate and bilateral review complete, Git source delivery for review. Main adoption/production UUIDs/hosted/generic task/chat remain separate. Final paired portal code PR63 5b7535e / receipt db908af; initial dev mobile evidence distinguished from final production HTTP/desktop/logout/meta checks.",
+  "eventId": "59c7a65b-00f5-48d8-af90-7f6e26b66f1e",
+  "sequence": 5,
+  "at": "2026-10-10T00:33:46.998Z"
+}

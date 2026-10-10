@@ -257,6 +257,18 @@ async def test_actual_response_shapes_match_canonical_schema(pilot):
     assert set(item) == set(schemas["Business"]["required"])
 
 
+async def test_authorized_empty_portfolio_is_not_foreign_or_outage_success(pilot):
+    headers = await login(pilot)
+    async with AsyncSession(pilot["admin"]) as tx, tx.begin():
+        await tx.execute(update(BusinessGrant).where(BusinessGrant.environment_id == settings().environment,
+                         BusinessGrant.organization_id == pilot["receipts"][0]["organization_id"]).values(enabled=False))
+    result = await pilot["client"].get(endpoint(pilot), headers=headers)
+    assert result.status_code == 200
+    assert result.json()["data"]["items"] == [] and result.json()["data"]["next_cursor"] is None
+    assert (await pilot["client"].get(endpoint(pilot, 1), headers=headers)).status_code == 404
+    assert (await pilot["client"].get(endpoint(pilot))).status_code == 401
+
+
 async def test_actual_tcp_logout_commits_before_response(pilot):
     # ASGITransport waits for after-response dependency cleanup; it hides the network race.
     cfg = settings()

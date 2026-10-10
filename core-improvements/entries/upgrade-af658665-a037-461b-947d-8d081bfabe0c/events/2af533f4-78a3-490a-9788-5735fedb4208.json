@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Fixed per-process OpenAI-named alias has request/stream retries0 and no WebSocket fallback. Original519 actual FAIL16/20 remains unchanged. First integrated248PASS/1FAIL incorrectly assumed classic top-level web tool; corrected actual ResponsesLite input declaration test. Original local evidence logical-LF digest mismatch retained; separate151237 write_bytes receipts all8 exact hashes verified. Production alias owner auth is still UNVERIFIED; no actual provider calls in this local repair.",
+  "checks": [
+    {
+      "command": "Pinned installed codex0.156.1 loopback SSE: completed, completed_web, max_output_tokens incomplete, HTTP503, truncated_stream, emptyCODEX_HOME/noauth",
+      "result": "PASS",
+      "evidence": "Five tracked opt-in tests in test_creation_team_controller.py passed; each one localPOST, no externalprovider. Web declaration present only forwebtrue ResponsesLite. Separate private151237 fourcase receipt files all8 byte hashes exact. Incomplete usage stays unknown/no output acceptance."
+    },
+    {
+      "command": "pytest eight focused consultation/creation/team/review/language-patch/content-plan/studio/native-guide suites with pinned CLI loopback opt-in",
+      "result": "PASS",
+      "evidence": "249PASS35.46s including three consultation normalization-accounting cases and five actual no-providerCLI cases. RootrestrictedPG consultation20PASS41.16s was run before latest transport-only args patch; no DB contract changed."
+    },
+    {
+      "command": "Ruff scoped tasks/codex.py tasks/worker.py consultation/team/PGtests; git diff --check",
+      "result": "PASS",
+      "evidence": "All scoped checks passed; no global auth/config/history/HTTP schema mutation."
+    }
+  ],
+  "eventId": "2af533f4-78a3-490a-9788-5735fedb4208",
+  "sequence": 2,
+  "at": "2026-10-10T15:15:36.892Z"
+}

@@ -30,6 +30,11 @@ def test_owner_runner_arguments_and_environment_strip_secrets(monkeypatch):
     assert args[args.index("--sandbox")+1] == "read-only"
     assert "--ignore-user-config" in args and "--ignore-rules" in args and "--ephemeral" in args
     assert {args[i+1] for i, a in enumerate(args[:-1]) if a == "--disable"} == set(DISABLED)
+    assert 'model_provider="pinet-bounded-openai"' in args
+    assert 'model_providers.pinet-bounded-openai.requires_openai_auth=true' in args
+    assert 'model_providers.pinet-bounded-openai.request_max_retries=0' in args
+    assert 'model_providers.pinet-bounded-openai.stream_max_retries=0' in args
+    assert not any('base_url=' in arg or 'env_key=' in arg for arg in args)
 
 
 @pytest.mark.parametrize("kind", ["command_execution", "mcp_tool_call", "web_search", "file_change", "unknown"])

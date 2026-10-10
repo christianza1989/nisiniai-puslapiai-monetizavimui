@@ -44,7 +44,18 @@ def arguments(executable, workspace, schema, output):
             "--skip-git-repo-check", "--sandbox", "read-only", "--model", "gpt-6-luna", "--json",
             "--output-schema", str(schema), "--output-last-message", str(output), "-C", str(workspace)]
     for key, value in (("approval_policy", '"never"'), ("model_reasoning_effort", '"medium"'),
-                       ("web_search", '"disabled"'), ("project_doc_max_bytes", "0")):
+                       ("web_search", '"disabled"'), ("project_doc_max_bytes", "0"),
+                       # A reserved dispatch must not silently replay incomplete responses.
+                       # Built-in provider overrides are forbidden by Codex; this fixed alias
+                       # keeps the same OpenAI auth-selected endpoint without a key fallback.
+                       ("model_provider", '"pinet-bounded-openai"'),
+                       ("model_providers.pinet-bounded-openai.name", '"OpenAI"'),
+                       ("model_providers.pinet-bounded-openai.wire_api", '"responses"'),
+                       ("model_providers.pinet-bounded-openai.requires_openai_auth", "true"),
+                       ("model_providers.pinet-bounded-openai.supports_websockets", "false"),
+                       ("model_providers.pinet-bounded-openai.supports_standalone_web_search", "true"),
+                       ("model_providers.pinet-bounded-openai.request_max_retries", "0"),
+                       ("model_providers.pinet-bounded-openai.stream_max_retries", "0")):
         args += ["-c", f"{key}={value}"]
     for feature in DISABLED:
         args += ["--disable", feature]

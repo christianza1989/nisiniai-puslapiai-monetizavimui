@@ -1,0 +1,44 @@
+{
+  "status": "local-verified",
+  "note": "Functional b3bf7d1c270df44da893a2109a7b07e101e0ba9b exact21 pushed; root independently reviewed no additional concrete P0-P2 and approved final source. Root isolated synthetic two-URL wrapper executed final61PG and supplemental11 with exact21 unchanged; child did not access/copy credentials or customer/operational DB. Original20 and regression21 manifests retained; originals51FAIL/2PASS199.41s,51FAIL/2PASS205.26s isolated harness, actual fixture1FAIL9.30s and regression4FAIL/4PASS104.79s preserved in prior fixing events/private root receipts. Exactly three regression logic failures (admin finalTTL, read finalTTL, superseded replay), fourth test API misuse; three-party baseline and final both PASS, no actual deadlock claimed. Final source binds immutable dedicated SELECT-only FORCE-RLS history, lifetime-before-actor exact pin with409 identity change, final exact-source TTL, latest-only replay, current independent V2 source and fixed no-fallback instructions. Root migration rehearsal preserved existing tables with empty Registration/GUIDE; not a populated migration proof. No activation/calibration/public/channel/provider/client operations and no old legacy profile/hash changes. Latest human removed artificial daily test ceilings, root independent correction/adoption remains its scope; no finite-budget wait condition. Operational API594/schema0016 held until combined adoption; overall platform OPEN. Only own metadata/PR handoff remains.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_customer_profile.py offline_tests/test_creation_registration.py -q",
+      "result": "PASS",
+      "evidence": "Own66PASS2.56s;39newprofile and27existingregistration offline cases."
+    },
+    {
+      "command": "root two-URL isolated wrapper: python -m pytest tests/test_customer_profile.py tests/test_creation_registration.py -q",
+      "result": "PASS",
+      "evidence": "Parent terminal61PASS470.88s;25profile+36registration; customer-profile-final-20261010T183802204211Z.private.json/log, exact21 unchanged."
+    },
+    {
+      "command": "root two-URL isolated wrapper: final11 supplemental PG nodes",
+      "result": "PASS",
+      "evidence": "Parent terminal11PASS133.37s; customer-profile-supplemental-20261010T183452181663Z.private.json/log, final21 unchanged."
+    },
+    {
+      "command": "root isolated0016→0017→0016→0017 and canonical bootstrap",
+      "result": "PASS",
+      "evidence": "Parent rehearsal PASS existing tables unchanged; emptyRegistration/GUIDE explicitly not populated migration proof;0017 SQL frozen unchanged through final source."
+    },
+    {
+      "command": "python -m ruff check scoped profile/registration/tests/generator/migration files",
+      "result": "PASS",
+      "evidence": "Final scoped RuffPASS18:31Z; source21 preserved subsequently."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --staged; git diff --cached --check",
+      "result": "PASS",
+      "evidence": "Exact21 staged text blobs155529B,0findings; diffcheckPASS before b3bf7d1 commit."
+    },
+    {
+      "command": "node scripts/git-freshness.mjs --phase handoff --companion canonical public evidence checkout",
+      "result": "PASS",
+      "evidence": "Fetched private7af6b9641012a30c5f95eac38a66daeff8f8cb39/publicec8a9c032fe926d1d9722802d8eb26fa8bd02937 PASS18:47:49–51Z; both current main ancestors."
+    }
+  ],
+  "eventId": "433a227c-a833-4ebd-b03c-dde2cde7b744",
+  "sequence": 5,
+  "at": "2026-10-10T18:49:23.000Z"
+}

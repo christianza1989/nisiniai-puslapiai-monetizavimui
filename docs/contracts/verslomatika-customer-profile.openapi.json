@@ -1,0 +1,591 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Customer profile admission observations",
+    "version": "0.1.0",
+    "description": "Read-only verified current owner/session/tenant projection of actual immutable admin admission history. Current profile requires exact idle current Registration, enabled Grant, current execution source, fixed packaged role hashes and independently admitted current complete V2 knowledge reference/receipt/TTL. Historical accepted source is retained distinctly from execution source. Unknown and revoked gates never pass. All session/provider/voice/email/acquisition/learning activation remains false; calibration UNVERIFIED. No contacts, raw knowledge, authorizing sessions, prompts or provider capability in this DTO; no writes, refresh, TTL renewal, public source admission or legacy six-site contract changes."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/agent-profile": {
+      "get": {
+        "operationId": "getCustomerAgentProfile",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "query",
+            "name": "accepted_revision",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "description": "Optional exact current revision; stale explicit input returns409; no accepted revision returns200 blocked."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Explicit accepted revision is stale",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-unknown-query-parameters": "rejected",
+        "x-duplicate-query-parameters": "rejected"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "AdmittedProfile": {
+        "additionalProperties": false,
+        "properties": {
+          "admission_id": {
+            "format": "uuid",
+            "title": "Admission Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "registration_id": {
+            "format": "uuid",
+            "title": "Registration Id",
+            "type": "string"
+          },
+          "business_id": {
+            "format": "uuid",
+            "title": "Business Id",
+            "type": "string"
+          },
+          "site_id": {
+            "pattern": "^creation-[a-f0-9]{32}$",
+            "title": "Site Id",
+            "type": "string"
+          },
+          "canonical_host": {
+            "maxLength": 253,
+            "minLength": 1,
+            "title": "Canonical Host",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "candidate_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Candidate Sha256",
+            "type": "string"
+          },
+          "accepted_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Accepted Source Revision",
+            "type": "string"
+          },
+          "execution_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Execution Source Revision",
+            "type": "string"
+          },
+          "knowledge_ref": {
+            "$ref": "#/components/schemas/KnowledgeReferenceV2"
+          },
+          "index_receipt_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Index Receipt Sha256",
+            "type": "string"
+          },
+          "profile_version": {
+            "const": "customer-profile.v1",
+            "title": "Profile Version",
+            "type": "string"
+          },
+          "need_fields": {
+            "default": [
+              "goal",
+              "requirements",
+              "deadline",
+              "budget",
+              "location"
+            ],
+            "maxItems": 5,
+            "minItems": 5,
+            "prefixItems": [
+              {
+                "const": "goal",
+                "type": "string"
+              },
+              {
+                "const": "requirements",
+                "type": "string"
+              },
+              {
+                "const": "deadline",
+                "type": "string"
+              },
+              {
+                "const": "budget",
+                "type": "string"
+              },
+              {
+                "const": "location",
+                "type": "string"
+              }
+            ],
+            "title": "Need Fields",
+            "type": "array"
+          },
+          "conversation_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Conversation Sha256",
+            "type": "string"
+          },
+          "quality_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Quality Sha256",
+            "type": "string"
+          },
+          "admitted_at": {
+            "format": "date-time",
+            "title": "Admitted At",
+            "type": "string"
+          },
+          "revoked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revoked At"
+          }
+        },
+        "required": [
+          "admission_id",
+          "sequence",
+          "registration_id",
+          "business_id",
+          "site_id",
+          "canonical_host",
+          "accepted_revision",
+          "candidate_sha256",
+          "accepted_source_revision",
+          "execution_source_revision",
+          "knowledge_ref",
+          "index_receipt_sha256",
+          "profile_version",
+          "conversation_sha256",
+          "quality_sha256",
+          "admitted_at",
+          "revoked_at"
+        ],
+        "title": "AdmittedProfile",
+        "type": "object"
+      },
+      "KnowledgeReferenceV2": {
+        "additionalProperties": false,
+        "description": "Server-owned complete public index identity, never customer-supplied facts.",
+        "properties": {
+          "schema_version": {
+            "const": 2,
+            "title": "Schema Version",
+            "type": "integer"
+          },
+          "knowledge_revision": {
+            "minimum": 1,
+            "title": "Knowledge Revision",
+            "type": "integer"
+          },
+          "knowledge_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Knowledge Hash",
+            "type": "string"
+          },
+          "deployment_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Deployment Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "knowledge_revision",
+          "knowledge_hash",
+          "deployment_id"
+        ],
+        "title": "KnowledgeReferenceV2",
+        "type": "object"
+      },
+      "ProfileView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "current_revision": {
+            "anyOf": [
+              {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Revision"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "observation_scope": {
+            "const": "current_database_and_code",
+            "default": "current_database_and_code",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "facts_scope": {
+            "const": "current_admitted_v2",
+            "default": "current_admitted_v2",
+            "title": "Facts Scope",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "missing",
+              "current",
+              "stale",
+              "revoked",
+              "blocked"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "registration_state": {
+            "enum": [
+              "missing",
+              "current",
+              "stale",
+              "revoked",
+              "grant_revoked"
+            ],
+            "title": "Registration State",
+            "type": "string"
+          },
+          "source_state": {
+            "enum": [
+              "unobserved",
+              "not_admitted",
+              "unavailable",
+              "current"
+            ],
+            "title": "Source State",
+            "type": "string"
+          },
+          "admission": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AdmittedProfile"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "blockers": {
+            "items": {
+              "enum": [
+                "accepted_revision_missing",
+                "registration_missing",
+                "registration_stale",
+                "registration_revoked",
+                "grant_revoked",
+                "creation_revision_pending",
+                "profile_missing",
+                "profile_revoked",
+                "profile_registration_stale",
+                "execution_source_changed",
+                "instructions_changed",
+                "public_source_not_admitted",
+                "public_source_unavailable",
+                "public_source_expired",
+                "public_source_changed"
+              ],
+              "type": "string"
+            },
+            "maxItems": 16,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "profile_current": {
+            "title": "Profile Current",
+            "type": "boolean"
+          },
+          "need_fields": {
+            "default": [
+              "goal",
+              "requirements",
+              "deadline",
+              "budget",
+              "location"
+            ],
+            "maxItems": 5,
+            "minItems": 5,
+            "prefixItems": [
+              {
+                "const": "goal",
+                "type": "string"
+              },
+              {
+                "const": "requirements",
+                "type": "string"
+              },
+              {
+                "const": "deadline",
+                "type": "string"
+              },
+              {
+                "const": "budget",
+                "type": "string"
+              },
+              {
+                "const": "location",
+                "type": "string"
+              }
+            ],
+            "title": "Need Fields",
+            "type": "array"
+          },
+          "can_start_text_session": {
+            "const": false,
+            "default": false,
+            "title": "Can Start Text Session",
+            "type": "boolean"
+          },
+          "can_call_provider": {
+            "const": false,
+            "default": false,
+            "title": "Can Call Provider",
+            "type": "boolean"
+          },
+          "voice_enabled": {
+            "const": false,
+            "default": false,
+            "title": "Voice Enabled",
+            "type": "boolean"
+          },
+          "email_enabled": {
+            "const": false,
+            "default": false,
+            "title": "Email Enabled",
+            "type": "boolean"
+          },
+          "acquisition_enabled": {
+            "const": false,
+            "default": false,
+            "title": "Acquisition Enabled",
+            "type": "boolean"
+          },
+          "learning_enabled": {
+            "const": false,
+            "default": false,
+            "title": "Learning Enabled",
+            "type": "boolean"
+          },
+          "calibration_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Calibration Status",
+            "type": "string"
+          },
+          "channel_activation": {
+            "const": "not_performed",
+            "default": "not_performed",
+            "title": "Channel Activation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "creation_id",
+          "current_revision",
+          "observed_at",
+          "state",
+          "registration_state",
+          "source_state",
+          "admission",
+          "blockers",
+          "profile_current"
+        ],
+        "title": "ProfileView",
+        "type": "object"
+      },
+      "ProfileViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "agent-profile.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ProfileView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

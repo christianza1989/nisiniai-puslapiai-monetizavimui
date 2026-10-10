@@ -9,6 +9,7 @@ from pinet_core.control import models as control_models  # noqa: F401
 from pinet_core.creation import models as creation_models  # noqa: F401
 from pinet_core.creation_registration import models as creation_registration_models  # noqa: F401
 from pinet_core.customer import models as customer_models  # noqa: F401
+from pinet_core.customer_profile import models as customer_profile_models  # noqa: F401
 from pinet_core.facebook import models as facebook_models  # noqa: F401
 from pinet_core.models import Base
 from pinet_core.public_projects import models as public_models  # noqa: F401

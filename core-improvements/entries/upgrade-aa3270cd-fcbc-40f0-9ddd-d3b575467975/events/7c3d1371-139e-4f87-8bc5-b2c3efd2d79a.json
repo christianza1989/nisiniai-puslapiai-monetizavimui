@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "OriginalactualFAIL retained: three translation domains for autoelektriko matched only paslaugos. New recommendation helper excludes genericword/inflection evidence before keyword and category inference; explicit category filters but cannot invent relevance. Correct actualresult2autoelektrikai, no filler. No sourceinventory/wire/router changes.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_domain_catalogue.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "47passed/39.82s; original39regressions plus actual autoelektriko null/auto/business category, generic/unknown no-match, meaningful education/exactdomain"
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/domain_catalogue/service.py src/pinet_core/domain_catalogue/taxonomy.py offline_tests/test_domain_catalogue.py",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    },
+    {
+      "command": "Actual catalogue recommend Autoelektriko paslaugos,categorynull,limit5; original data/wire hashes",
+      "result": "PASS",
+      "evidence": "Onlyautoelektrikaivilniuje.lt and autoelektrikaslinas.lt, both matched_terms autoelektriko; generic+unknownselectedcategoryempty. CatalogueSHA b1571269bb0cf664fe0b4e63639c49de0656312f0a1215c5dd4cf52b13493e7d and OpenAPISHA731e8ac26cc63575f7ce4f07e970a88b3e14a568a5ddb3abf35e8722d25a8402 unchanged"
+    }
+  ],
+  "eventId": "7c3d1371-139e-4f87-8bc5-b2c3efd2d79a",
+  "sequence": 2,
+  "at": "2026-10-10T10:44:12.630Z"
+}

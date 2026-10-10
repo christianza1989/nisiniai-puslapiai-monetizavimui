@@ -389,11 +389,16 @@ export async function mergePlan(siteId, proposals, months = 0) {
     return { added, total: site.pages.length };
   });
 }
-export async function editPage(siteId, pageId, input) {
+export const studioContextHash = site => createHash('sha256').update(stable(site), 'utf8').digest('hex');
+export async function editPage(siteId, pageId, input, expected = null) {
   return locked(async () => {
     const site = await getSite(siteId);
     const page = site.pages.find(item => item.id === pageId);
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
+    if (expected && (page.status === 'revoked' || expected.expectedRevisionHash !== revisionHash(page)
+        || expected.expectedPlanningHash !== planningContextHash(page) || expected.expectedSiteHash !== studioContextHash(site))) {
+      throw Object.assign(new Error('Pasikeitė puslapis, planavimo užduotis arba svetainės kontekstas; paruoškite naują rašymo užduotį.'), { code: 'writer_context_stale' });
+    }
     const v2=site.schemaVersion===2;
     const type = input.type && (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : page.type;
     const slug = 'slug' in input || type !== page.type ? normalizeSlug(input.slug ?? page.slug, type) : page.slug;

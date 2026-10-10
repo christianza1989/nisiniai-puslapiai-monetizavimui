@@ -1,0 +1,31 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual customer creation currently uses one generator and only final structural/language gates; human explicitly requests separate creator, critic and coordinator with visible evidenced correction cycles. Existing job-count quota would undercount new multiple provider calls.",
+  "category": "code",
+  "evidence": [
+    "creation worker at4586c4f invokes one generator; first and second actual model language failures preserved",
+    "Direct human request2026-10-10 for real three-role collaboration and clear dashboard, then new mokymai-ai.lt case"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team_wire.py",
+    "agent-business-core/runtime/src/pinet_core/creation/models.py",
+    "agent-business-core/runtime/src/pinet_core/creation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/migrations/versions/0014_creation_team.py",
+    "agent-business-core/runtime/scripts/customer_team_contract.py",
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "docs/contracts/verslomatika-customer-team.openapi.json",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert with data-preserving forward migration; never delete original revisions, attempt reservations or timeline receipts. Existing creation.v1 and local services remain separately source pinned.",
+  "id": "upgrade-32aeba52-1f8f-48c8-ae9a-5a36c27648a5",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "4586c4f04f5096731db559d355a172dbaab54d91",
+  "createdAt": "2026-10-10T11:06:35.746Z"
+}

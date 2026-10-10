@@ -115,11 +115,17 @@ def test_content_area_does_not_expand_allowed_fields_or_bypass_full_review(candi
     assert language_patch.context(candidate, verified) is None
 
 
-async def test_team_uses_exact_mixed_patch_then_independent_second_review(candidate, monkeypatch):
+@pytest.mark.parametrize("nine_fields", [False, True])
+async def test_team_uses_exact_mixed_patch_then_independent_second_review(candidate, monkeypatch, nine_fields):
     calls, reservations, completions = [], [], []
     original = deepcopy(candidate)
     target = "draft:/content_plan/0/primary_topic"
     fixed_topic = "Vienos darbo užduoties pasirinkimas ir saugus mokymo pavyzdžio paruošimas."
+    extra_refs = [f"draft:/research/{i}/finding" for i in range(6)] + ["draft:/business/interest_test"]
+    expected_refs = [FIELD, target] + (extra_refs if nine_fields else [])
+    values = {FIELD: FIXED, target: fixed_topic}
+    if nine_fields:
+        values.update({ref: language_patch._leaf(candidate, ref)[2] for ref in extra_refs})
     monkeypatch.setattr(team, "settings", lambda: SimpleNamespace(creation_runner_seconds=30))
 
     async def reserve(claimed, role, round_number, **flags):
@@ -141,8 +147,8 @@ async def test_team_uses_exact_mixed_patch_then_independent_second_review(candid
                 assert data["language_repair"] is True and data["permitted_web_actions"] == 0
                 assert "current_draft" not in data and "critic_feedback" not in data
                 bound = data["language_patch_context"]
-                assert bound["scope"] == "private_prose_edits_only" and bound["allowed_refs"] == [FIELD, target]
-                value = response(bound, {FIELD: FIXED, target: fixed_topic})
+                assert bound["scope"] == "private_prose_edits_only" and bound["allowed_refs"] == expected_refs
+                value = response(bound, values)
         elif role == "critic":
             value = report(data["draft"], "revise" if calls.count(role) == 1 else "accept_draft")
             if value["findings"]:
@@ -150,6 +156,11 @@ async def test_team_uses_exact_mixed_patch_then_independent_second_review(candid
                 extra = deepcopy(value["findings"][0])
                 extra.update(id="f_2", area="content", evidence_refs=[target])
                 value["findings"].append(extra)
+                if nine_fields:
+                    for index, refs in enumerate((extra_refs[:6], extra_refs[6:]), start=3):
+                        extra = deepcopy(value["findings"][0])
+                        extra.update(id=f"f_{index}", evidence_refs=refs)
+                        value["findings"].append(extra)
             value["round_number"] = data["round_number"]
             value["checks"] = [{"kind": item["kind"], "status": item["status"],
                 "evidence_refs": [item["id"]], "summary": item["summary"]} for item in data["receipts"]]
@@ -299,7 +310,8 @@ def test_only_supported_final_field_bounds_can_pass_and_old_unrelated_prose_is_u
     assert candidate["research"][6]["finding"].startswith("Osa ")
 
 
-def test_more_than_eight_targets_and_noncanonical_originals_fall_back(candidate):
+def test_nine_mandatory_fields_are_exact_and_omission_is_rejected(candidate):
+    original = deepcopy(candidate)
     value = critic(candidate)
     refs = [f"draft:/research/{i}/finding" for i in range(7)]
     refs += ["draft:/assumptions/0", "draft:/business/offer"]
@@ -307,10 +319,39 @@ def test_more_than_eight_targets_and_noncanonical_originals_fall_back(candidate)
     extra = deepcopy(value["findings"][0])
     extra.update(id="f_2", evidence_refs=refs[6:])
     value["findings"].append(extra)
-    assert language_patch.context(candidate, value) is None
+    bound = language_patch.context(candidate, value)
+    assert bound is not None and bound["allowed_refs"] == refs
+    schema = language_patch.output_schema(bound)
+    assert schema["properties"]["edits"]["minItems"] == schema["properties"]["edits"]["maxItems"] == 9
+    values = {ref: language_patch._leaf(candidate, ref)[2] for ref in refs}
+    values[FIELD] = FIXED
+    output = response(bound, values)
+    repaired = language_patch.apply(candidate, value, output)
+    assert repaired["research"][6]["finding"] == FIXED
+    repaired["research"][6]["finding"] = original["research"][6]["finding"]
+    assert repaired == candidate == original
+    output["edits"].pop()
+    with pytest.raises(RunnerError, match="output_invalid"):
+        language_patch.apply(candidate, value, output)
+    assert candidate == original
+
+
+def test_noncanonical_original_still_falls_back(candidate):
     raw = deepcopy(candidate)
     raw["pages"][1]["path"] = raw["pages"][1]["path"].rstrip("/")
     assert language_patch.context(raw, critic(normalize_creator(raw))) is None
+
+
+def test_context_byte_budget_still_falls_back_without_mutating_original(candidate):
+    original = deepcopy(candidate)
+    value = critic(candidate)
+    refs = [f"draft:/research/{i}/finding" for i in range(6)]
+    template = deepcopy(value["findings"][0])
+    value["findings"] = [{**deepcopy(template), "id": f"f_{i + 1}", "evidence_refs": refs,
+        "explanation": "Taisyklingas sakinys. " * 30, "correction": "Išsaugok prasmę. " * 40} for i in range(12)]
+    review.CriticReview.model_validate(value)  # Valid protocol; repeated correction context is too large.
+    assert language_patch.context(candidate, value) is None
+    assert candidate == original
 
 
 def test_patch_is_not_a_language_or_semantics_acceptance_gate(candidate):

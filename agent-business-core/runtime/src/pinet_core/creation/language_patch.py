@@ -19,7 +19,9 @@ from .review import CriticReview, canonical_sha256
 
 ROOT = Path(__file__).resolve().parents[5]
 LANGUAGE_REFERENCE = "SKILLS/niche-content-planner/references/language-quality.md"
-MAX_TARGETS = 8
+# The validated critic allows at most 12 findings with 6 references each.
+# The byte budget below still bounds the complete target and correction context.
+MAX_TARGETS = 12 * 6
 MAX_VALUE = 2500
 MAX_CONTEXT_BYTES = 32768
 # A whitelist of prose leaves in the existing CreatorDraft contract. Names,

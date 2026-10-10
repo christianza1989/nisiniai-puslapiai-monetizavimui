@@ -1,5 +1,12 @@
 # Privataus kūrimo kritikas ir koordinatorius
 
+2026-10-11 exact prose capacity source checkpoint. Actual clean da871786 trial d906734c completed all six roles, then review_limit with 54 charged calls and no accepted revision/intake/artifact/GUIDE. Receipt SHA256 13a6e6a765c48ef094eb8f963ea4ce43010388e8cd4b370b313436c328ac7aa3. Independent exact-hash review confirmed stage calibration no longer repeats working-name/future-form/planned-guide demands. Both mandatory prose unions contain nine fields; the arbitrary eight-field ceiling forced a full reroll, changing 141 scalar values and introducing nine real foreign-language fields. Known FAIL remains genuine.
+
+Upgrade1682b639 / [capacity scope](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103388414) raises only target capacity to the existing validated critic protocol maximum (12 findings x 6 references). The 32768-byte context budget, 2500-character leaves, exact candidate/critic hashes, all target coverage, whitelist, NFC and independent final review remain. Nine-field omission rejects without original mutation; six-role controller preserves all unrelated fields. Valid oversized correction context still falls back. Source verification:297 offline PASS / 7 optional CLI SKIP in23.52s, scoped Ruff PASS. Initial two nine-field FAIL / three PASS are preserved; one guessed suite path failed collection before any tests, then the discovered seven suites ran. No provider/DB/source-pin change in this window.
+
+Latest human steering supersedes blocking language acceptance for the development pilot: temporarily disable language corrections/checks and later introduce a Gemini content writer. This is a separate explicit mode implementation, not a language PASS or public acceptance. Full platform remains OPEN; current packet does not certify an accepted business or public launch.
+
+
 2026-10-11 business-stage calibration source window CLOSED.
 
 Actual clean1fc2415 trial ba053d50 completed all6 creator/critic/coordinator calls over2rounds, then review_limit48charged/noaccepted/intake0/artifacts0/GUIDE0. Terminal receipt SHA 90be0f3636ed0561200079486ffb1761f5ec189b92d4a51bf76322b5131a114d. Read-only reconstruction matched both immutable candidate and hydrated critic hashes; the second exact language patch changed only business/monetization and preserved all266 other compared values.

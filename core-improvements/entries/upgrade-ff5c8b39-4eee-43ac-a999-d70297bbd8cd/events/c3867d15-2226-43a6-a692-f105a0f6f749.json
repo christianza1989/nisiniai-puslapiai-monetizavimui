@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Complete45324-domain catalogue preserves9200screening rows and frozenTOP200. Original test-tail assumption FAIL30PASS/1FAIL and first exact-rebuild CRLF FAIL retained in module doc/private receipt; corrected requirements/portable byte writer32PASS. No availability/ownership/purchase claims. Parent HTTP/UI integration is separate.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_domain_catalogue.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "32passed/11.09s on actual packaged inventory; full membership/rank/filter/bounds/tamper/research source checks"
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/domain_catalogue offline_tests/test_domain_catalogue.py",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    },
+    {
+      "command": "Full five-input build() then encode_snapshot() exact-byte comparison",
+      "result": "PASS",
+      "evidence": "snapshot52c232970da67024ae1e3cca551a6fe19f6600f71452e2b572ac8a9989a811cb;5314004bytes;SHA b1571269bb0cf664fe0b4e63639c49de0656312f0a1215c5dd4cf52b13493e7d;source counts45324/9200/200; no email metadata"
+    },
+    {
+      "command": "uv build --wheel --out-dir artifacts/domain-catalogue and isolated module extraction/load",
+      "result": "PASS",
+      "evidence": "Wheel catalogue bytes identical; separate process loaded45324inventory/200TOP from wheel-extracted package"
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Initial11exact staged blobs/5510094bytes/0findings; final staged verification repeated after final documentation/event"
+    }
+  ],
+  "eventId": "c3867d15-2226-43a6-a692-f105a0f6f749",
+  "sequence": 2,
+  "at": "2026-10-10T09:45:46.112Z"
+}

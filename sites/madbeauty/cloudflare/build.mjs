@@ -32,7 +32,7 @@ const categoryMedia=JSON.parse(await readFile(path.join(publicRoot,'media.json')
 await writeFile(path.join(assets,'media.json'),JSON.stringify({assets:categoryMedia.assets.map(({id,alt,variants})=>({id,alt,variants}))}));
 await writeFile(path.join(assets,'app-media.json'),JSON.stringify({assets:media.assets.map(({id,alt,variants})=>({id,alt,variants}))}));
 for(const file of new Set([...media.assets,...categoryMedia.assets].flatMap(a=>a.variants.map(v=>v.file)))){await mkdir(path.dirname(path.join(assets,file)),{recursive:true});await copyFile(path.join(publicRoot,file),path.join(assets,file));}
-for(const name of ['cities.mjs','taxonomy-data.mjs','taxonomy.mjs','content-targets.mjs','catalogue-page.mjs','config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs'])await copyFile(path.join(site,'prototype',name),path.join(assets,name));
+for(const name of ['cities.mjs','taxonomy-data.mjs','taxonomy.mjs','content-targets.mjs','catalogue-page.mjs','services-media.mjs','config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs'])await copyFile(path.join(site,'prototype',name),path.join(assets,name));
 await mkdir(path.join(assets,'content-assets/madbeauty'),{recursive:true});
 for(const file of new Set(pkg.pages.flatMap(p=>p.media.map(m=>path.basename(m.src)))))await copyFile(path.join(path.dirname(packagePath),'assets',file),path.join(assets,'content-assets/madbeauty',file));
 const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js')));

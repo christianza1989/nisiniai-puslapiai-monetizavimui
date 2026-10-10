@@ -705,6 +705,634 @@
       "policy": "responsive-webp-v1",
       "reviewer": "root sequential visual review",
       "reviewNote": "Appropriate original illustration for stated slot; actual mobile crop reviewed in UI kit where used."
+    },
+    {
+      "id": "service-illustration-plaukai",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-plaukai-1242.webp",
+          "width": 1242,
+          "height": 1266,
+          "bytes": 264740,
+          "sha256": "40690fd7a50d2a9e2fed256f26374ae3cb754053fd40772df4bccb8e2471f028"
+        },
+        {
+          "file": "images/service-illustration-plaukai-1200.webp",
+          "width": 1200,
+          "height": 1223,
+          "bytes": 257840,
+          "sha256": "1752a960a8aaab5f56254f684eb152a967846ef95a2422361e7582ce2c0eb058"
+        },
+        {
+          "file": "images/service-illustration-plaukai-800.webp",
+          "width": 800,
+          "height": 815,
+          "bytes": 134682,
+          "sha256": "7c9273dea1760ec27b111595ffe15f1bddc1203fd443686236fd2c6ea58399a4"
+        },
+        {
+          "file": "images/service-illustration-plaukai-640.webp",
+          "width": 640,
+          "height": 652,
+          "bytes": 91758,
+          "sha256": "9b7f3070fd5d079fd8136265008e127328cbfda13782c6af079003b05b3271c1"
+        },
+        {
+          "file": "images/service-illustration-plaukai-360.webp",
+          "width": 360,
+          "height": 367,
+          "bytes": 36128,
+          "sha256": "a746a9b090bbfc133a958a1b67de4ec3fd0441744cef55ba83fd704b16d05870"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-nagai",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-nagai-1145.webp",
+          "width": 1145,
+          "height": 1374,
+          "bytes": 113252,
+          "sha256": "b03add39493919b663424ec0b8dce0ee81e0255cfbaac4a8e1d5f1e1579d533d"
+        },
+        {
+          "file": "images/service-illustration-nagai-800.webp",
+          "width": 800,
+          "height": 960,
+          "bytes": 66800,
+          "sha256": "007f1e808d6b3acebbd80862e4c7e8ef98e92ab65b2e3b31f22b90b8232f99a3"
+        },
+        {
+          "file": "images/service-illustration-nagai-640.webp",
+          "width": 640,
+          "height": 768,
+          "bytes": 45926,
+          "sha256": "70649a9c2760b403d0762a79c623517e7b3f08af93f9d949466cf86b81ec0504"
+        },
+        {
+          "file": "images/service-illustration-nagai-360.webp",
+          "width": 360,
+          "height": 432,
+          "bytes": 19008,
+          "sha256": "cf2816ce87d9ca4f70b57412af1bdff8192be480f89cd8ab7a9393a8b3c2a0a9"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-antakiai",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-antakiai-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 255130,
+          "sha256": "db822cb3aa576799f3127acb07bfa0b49e70360701439a35b71e1756da6f7ce8"
+        },
+        {
+          "file": "images/service-illustration-antakiai-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 166442,
+          "sha256": "5136a5bc31c9de515fc813bc0cd94766857be8fe4d2e1a3a9f498d188fa48f06"
+        },
+        {
+          "file": "images/service-illustration-antakiai-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 80208,
+          "sha256": "abcdc5a642a3710fc6673ba55752445049ed8f023a96e58e6b612a5f83e4cc89"
+        },
+        {
+          "file": "images/service-illustration-antakiai-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 54902,
+          "sha256": "0cfcdbe0925e087ed0ac2749cbacb23d4fcfea743f8127b534f02423d83c1f30"
+        },
+        {
+          "file": "images/service-illustration-antakiai-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 21348,
+          "sha256": "9b65ab6909d1bf250a6c16070d5a47a1d737fd11e8f6a7c9363f49e41f92faec"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-blakstienos",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-blakstienos-1254.webp",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 153912,
+          "sha256": "0a1d2b2977cdd6dd905f12cebac38bd153da39237b2a54b544025bf36fba1b0c"
+        },
+        {
+          "file": "images/service-illustration-blakstienos-1200.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 143486,
+          "sha256": "0d0767f3d34501fcf25b028dc1e9000706ba48c944fa52ff2e0b2f65dfb59e53"
+        },
+        {
+          "file": "images/service-illustration-blakstienos-800.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 71266,
+          "sha256": "d626474c0b67b6b5e00c3197e8358c18171f8f3300df0abd6a1e69db47b7e4f1"
+        },
+        {
+          "file": "images/service-illustration-blakstienos-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 48692,
+          "sha256": "87c0c25370dcc32a046a06c07ad4c93e562f1d0c77dccf5d8dc1f122adad95c4"
+        },
+        {
+          "file": "images/service-illustration-blakstienos-360.webp",
+          "width": 360,
+          "height": 360,
+          "bytes": 18616,
+          "sha256": "d2c0d542253cc60c902a0f05fff29af7234c4bbaeb90f830da8bb40ee1088762"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-makiazas",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-makiazas-1254.webp",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 220804,
+          "sha256": "4f1e74f0ea27a79b122f44930f16f1e9542faa7f20eb4b7541fce7ced73a8723"
+        },
+        {
+          "file": "images/service-illustration-makiazas-1200.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 208168,
+          "sha256": "536f5f3b29d231d0163b6187bda3c3b882dc6edb82d94e714ad2a05001344a2a"
+        },
+        {
+          "file": "images/service-illustration-makiazas-800.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 107666,
+          "sha256": "fb1e8d9d6f3dc3c1e68382c8497c72239f93698730c6ed3400f1f3aef888bd30"
+        },
+        {
+          "file": "images/service-illustration-makiazas-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 74216,
+          "sha256": "680bf8ce090b78668d30c64dedd871d92fa922ee7aafaa34e6027cbbf6b004e3"
+        },
+        {
+          "file": "images/service-illustration-makiazas-360.webp",
+          "width": 360,
+          "height": 360,
+          "bytes": 30382,
+          "sha256": "6088fe27717381e2e67cb526cdf5f9eb21ff80ad9cbee6975f362740353a67db"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-depiliacija",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-depiliacija-1222.webp",
+          "width": 1222,
+          "height": 1287,
+          "bytes": 190706,
+          "sha256": "2d0f448b69bbf0d01031d68ab251ff47f18f171c10b6c94d533892ce5fd5e5bd"
+        },
+        {
+          "file": "images/service-illustration-depiliacija-1200.webp",
+          "width": 1200,
+          "height": 1264,
+          "bytes": 184052,
+          "sha256": "e4ce205c700f99aa0b4a52c70791baeefbba1311ef67182e201fbd59a25873ff"
+        },
+        {
+          "file": "images/service-illustration-depiliacija-800.webp",
+          "width": 800,
+          "height": 843,
+          "bytes": 94986,
+          "sha256": "f32ba2364a4ece632f823d01e725b6c58431a36eb36e1abcee2cbd0a7e434f7b"
+        },
+        {
+          "file": "images/service-illustration-depiliacija-640.webp",
+          "width": 640,
+          "height": 674,
+          "bytes": 63890,
+          "sha256": "ea60d3bf3cf7e237374c4155c461df0a57a68326a2ae967cd2eb12056977844d"
+        },
+        {
+          "file": "images/service-illustration-depiliacija-360.webp",
+          "width": 360,
+          "height": 379,
+          "bytes": 25368,
+          "sha256": "e0628aa6fb098201ccf8786ecd576608c9914d4a21cc32c3c5e1ab5a612fce2a"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-veido-prieziura",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-veido-prieziura-1214.webp",
+          "width": 1214,
+          "height": 1295,
+          "bytes": 219374,
+          "sha256": "02641ae7459404a2bf34a1e98377c66c573d14b879ed37aed76dec845d3cd10b"
+        },
+        {
+          "file": "images/service-illustration-veido-prieziura-1200.webp",
+          "width": 1200,
+          "height": 1280,
+          "bytes": 215202,
+          "sha256": "bb7b755703556e25cabacabf5c553465a198d031fa27ac9b11818cf0c748596d"
+        },
+        {
+          "file": "images/service-illustration-veido-prieziura-800.webp",
+          "width": 800,
+          "height": 853,
+          "bytes": 112214,
+          "sha256": "500a1b7f339b0412d31bdbd6a57f0eab48780f1a36a34d95bc6b101a27f7aaca"
+        },
+        {
+          "file": "images/service-illustration-veido-prieziura-640.webp",
+          "width": 640,
+          "height": 683,
+          "bytes": 76104,
+          "sha256": "8d4a75f12a7adc1807070c470b92c5b304d72ad45b83f07564294971778dcb21"
+        },
+        {
+          "file": "images/service-illustration-veido-prieziura-360.webp",
+          "width": 360,
+          "height": 384,
+          "bytes": 30784,
+          "sha256": "3b8ff8958a92097247d6a1f0a5b5aeca8c8829992a2697461b207b5e12e0c579"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-kuno-prieziura",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-kuno-prieziura-1145.webp",
+          "width": 1145,
+          "height": 1374,
+          "bytes": 250970,
+          "sha256": "0551e519ee8c8ce6b3d527e695a03db02ad3c72df7bf495e548697539e5b0a84"
+        },
+        {
+          "file": "images/service-illustration-kuno-prieziura-800.webp",
+          "width": 800,
+          "height": 960,
+          "bytes": 139770,
+          "sha256": "402d1ce93976492671d72a88bd7c08fee925a2313b8d29b19e0cef8c643b798a"
+        },
+        {
+          "file": "images/service-illustration-kuno-prieziura-640.webp",
+          "width": 640,
+          "height": 768,
+          "bytes": 93346,
+          "sha256": "eb92818c3cd8326025a875153eebbf4ff3cb5748cf1df38dda44a5e81d77294f"
+        },
+        {
+          "file": "images/service-illustration-kuno-prieziura-360.webp",
+          "width": 360,
+          "height": 432,
+          "bytes": 35970,
+          "sha256": "7c25b9f9f5955514042b61939ad081d630147e483cfe00efa9e520ce7e9e5411"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-masazas",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-masazas-1412.webp",
+          "width": 1412,
+          "height": 1114,
+          "bytes": 498904,
+          "sha256": "ccc71c2e8cd404f5df1054e9a03b1e62d255fea227d51ae611859756f95107cb"
+        },
+        {
+          "file": "images/service-illustration-masazas-1200.webp",
+          "width": 1200,
+          "height": 947,
+          "bytes": 381560,
+          "sha256": "863f64eead6f28f650646531fcdeeec02c03bf59494917727e48db49a51f8fe3"
+        },
+        {
+          "file": "images/service-illustration-masazas-800.webp",
+          "width": 800,
+          "height": 631,
+          "bytes": 179078,
+          "sha256": "2ed13b5b05748ab3180c8875c515c7efe80facc478b44349d628ef93d5352a5a"
+        },
+        {
+          "file": "images/service-illustration-masazas-640.webp",
+          "width": 640,
+          "height": 505,
+          "bytes": 118208,
+          "sha256": "a276ca3a009e6f9cc0675ec2e76eea23675f78fc05d71f8ac2e495f5bc3b41bc"
+        },
+        {
+          "file": "images/service-illustration-masazas-360.webp",
+          "width": 360,
+          "height": 284,
+          "bytes": 45772,
+          "sha256": "e9ce64d84f7dc4cfd712e792aaef1bc95c762815b7a9c079893003122b407ee6"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-spa-ir-poilsis",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-spa-ir-poilsis-1402.webp",
+          "width": 1402,
+          "height": 1122,
+          "bytes": 319170,
+          "sha256": "9d24321da5a58fa85774a802377ee04ec7f43ea8ada666d8df29dc8841250834"
+        },
+        {
+          "file": "images/service-illustration-spa-ir-poilsis-1200.webp",
+          "width": 1200,
+          "height": 960,
+          "bytes": 253452,
+          "sha256": "3d648cc8579032d93148da6a36fa29e113a8dc8179a0a3e8b7af607585b75a13"
+        },
+        {
+          "file": "images/service-illustration-spa-ir-poilsis-800.webp",
+          "width": 800,
+          "height": 640,
+          "bytes": 122834,
+          "sha256": "cb30baf45060f29feea8b25f5ea560d4c057b041deaf00f5f630d8e3ff1a3a94"
+        },
+        {
+          "file": "images/service-illustration-spa-ir-poilsis-640.webp",
+          "width": 640,
+          "height": 512,
+          "bytes": 82270,
+          "sha256": "6a6170e2ab84537ba1bf9135b65b386a1d8153382786bfad68f76a5e6b42aa05"
+        },
+        {
+          "file": "images/service-illustration-spa-ir-poilsis-360.webp",
+          "width": 360,
+          "height": 288,
+          "bytes": 30266,
+          "sha256": "5ba2f430d69b0424e04855f2e65434cebd3cd508f328fbfacffb0728a767360d"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-ilgalaikis-makiazas",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-ilgalaikis-makiazas-1226.webp",
+          "width": 1226,
+          "height": 1283,
+          "bytes": 62034,
+          "sha256": "5917a09b5d9aa4ec7b744c635a0a839b91fa944981adb110ee75cfccb5b7d60c"
+        },
+        {
+          "file": "images/service-illustration-ilgalaikis-makiazas-1200.webp",
+          "width": 1200,
+          "height": 1256,
+          "bytes": 61232,
+          "sha256": "fe5f2b90f1d41ba1134923e1133ee4f86b93bf6651457710497a3a568d1bbda7"
+        },
+        {
+          "file": "images/service-illustration-ilgalaikis-makiazas-800.webp",
+          "width": 800,
+          "height": 837,
+          "bytes": 34260,
+          "sha256": "ee29c555821357368e9a2885f09a65ce7709d6f457bc35c259b130b584bf9930"
+        },
+        {
+          "file": "images/service-illustration-ilgalaikis-makiazas-640.webp",
+          "width": 640,
+          "height": 670,
+          "bytes": 24480,
+          "sha256": "813707e8dd9d168d896e86e78089cf6ab766cecd21b52788d474488376132b45"
+        },
+        {
+          "file": "images/service-illustration-ilgalaikis-makiazas-360.webp",
+          "width": 360,
+          "height": 377,
+          "bytes": 10952,
+          "sha256": "ec8dfb3abe448ce44d63239430b94922ecfca3aa16e77ec9dd11b672902fdc24"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-tatuiruotes",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-tatuiruotes-1214.webp",
+          "width": 1214,
+          "height": 1295,
+          "bytes": 210500,
+          "sha256": "23f0114173fa929a910bd9b27b3bf124bee463cf31bb114fdb69539a5c12a6f3"
+        },
+        {
+          "file": "images/service-illustration-tatuiruotes-1200.webp",
+          "width": 1200,
+          "height": 1280,
+          "bytes": 204758,
+          "sha256": "9a5b83c449de2be0fc820846f72e4afa2dc8761e056e619c2de35b0a9ce0c002"
+        },
+        {
+          "file": "images/service-illustration-tatuiruotes-800.webp",
+          "width": 800,
+          "height": 853,
+          "bytes": 109910,
+          "sha256": "8e25e08d75813338b7623227cfece3cfd38bf7b973f4b84e33c36b7baa2d254f"
+        },
+        {
+          "file": "images/service-illustration-tatuiruotes-640.webp",
+          "width": 640,
+          "height": 683,
+          "bytes": 75214,
+          "sha256": "24f3690c08a489aac598dbaca3191f3f48de9da4cba36ed2ef132235ef9ccfaf"
+        },
+        {
+          "file": "images/service-illustration-tatuiruotes-360.webp",
+          "width": 360,
+          "height": 384,
+          "bytes": 29162,
+          "sha256": "f91b39826b7e0bbfe2b107d5ff2ce2c1a3b5b397275d8ae4a40ad48c12910abd"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-auskaru-verimas",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-auskaru-verimas-1024.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 143692,
+          "sha256": "e7fd9e8fe777ae822d92adac53a8105e3ab0dcd884fcce207ba8b370bd5ce1a8"
+        },
+        {
+          "file": "images/service-illustration-auskaru-verimas-800.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 99632,
+          "sha256": "dd39c6ab55b8c8feb4d94f51656466e368b898700490f32ea24b4bb4996141d8"
+        },
+        {
+          "file": "images/service-illustration-auskaru-verimas-640.webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 67180,
+          "sha256": "a94cce23340e3d00e4dbeed3a712f03df046c9db25cef265bab96cd4c10da44a"
+        },
+        {
+          "file": "images/service-illustration-auskaru-verimas-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 24900,
+          "sha256": "fb7d66b3da08caa2e45cdc6c2f4de7dd651e03e94e3968645c0836aa70e2dcca"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-estetines-proceduros",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-estetines-proceduros-1175.webp",
+          "width": 1175,
+          "height": 1338,
+          "bytes": 189130,
+          "sha256": "2850299f25b181938909fbc35d98e8b2f190086f7785a56204823a93f1904405"
+        },
+        {
+          "file": "images/service-illustration-estetines-proceduros-800.webp",
+          "width": 800,
+          "height": 911,
+          "bytes": 106148,
+          "sha256": "b3370978b5a9b60a84506050f23f2b26945e1f305a87d690d2067b7e0c68fedb"
+        },
+        {
+          "file": "images/service-illustration-estetines-proceduros-640.webp",
+          "width": 640,
+          "height": 729,
+          "bytes": 73898,
+          "sha256": "fa7990febf20c9ec4a468d21690f1d79f33805bd557876b636006b7e74bd662f"
+        },
+        {
+          "file": "images/service-illustration-estetines-proceduros-360.webp",
+          "width": 360,
+          "height": 410,
+          "bytes": 30314,
+          "sha256": "6d3c00f4448be8b022a24697e6ef06c3142d2854e74088d237287722e51083c6"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-services-hero",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-services-hero-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 210888,
+          "sha256": "68e101e82673e164e091bd2c3010300bb83ff84842bf7932056ec15504c0d8eb"
+        },
+        {
+          "file": "images/service-illustration-services-hero-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 152212,
+          "sha256": "d722ae9885b0a503101d424a71b9ed1f3f0905f4a93b1d2726204c721abe501c"
+        },
+        {
+          "file": "images/service-illustration-services-hero-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 76272,
+          "sha256": "31ead74a3dc284286f01d7a85dbea8c95227470219b2d89d241ae7b755f30905"
+        },
+        {
+          "file": "images/service-illustration-services-hero-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 53360,
+          "sha256": "5f9d07d54eb8893f5c6732a83cc29cf6f49578c4a6258d4850e12b75dc894583"
+        },
+        {
+          "file": "images/service-illustration-services-hero-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 22846,
+          "sha256": "12b4eb8c9e0ad2bb5d76fd3bb724a1275ccc0eef306928b44a29e95f88feaf14"
+        }
+      ]
+    },
+    {
+      "id": "service-illustration-services-guide",
+      "alt": "",
+      "variants": [
+        {
+          "file": "images/service-illustration-services-guide-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "bytes": 139142,
+          "sha256": "412d6283208bc78fcccffb072fd035d955135fd9f9c7a9bb16fb17fdb393a8cc"
+        },
+        {
+          "file": "images/service-illustration-services-guide-1200.webp",
+          "width": 1200,
+          "height": 600,
+          "bytes": 87826,
+          "sha256": "324573a371d6f34928a47a123a705bf6579c97abe89d8356d070230337063b05"
+        },
+        {
+          "file": "images/service-illustration-services-guide-800.webp",
+          "width": 800,
+          "height": 400,
+          "bytes": 44734,
+          "sha256": "7f618f2fe1b0060993726452395a150d25252cab140cc2dfff3a103019d2fc24"
+        },
+        {
+          "file": "images/service-illustration-services-guide-640.webp",
+          "width": 640,
+          "height": 320,
+          "bytes": 31310,
+          "sha256": "23b9af723d47aaa6887d69872e32f2b98518dc3d86a08dbb6d796fe969c65d05"
+        },
+        {
+          "file": "images/service-illustration-services-guide-360.webp",
+          "width": 360,
+          "height": 180,
+          "bytes": 13686,
+          "sha256": "cb98a3b8b06d24da325178fac46345ae1d1585dd9e3b8a09fd5adbf8853c8d0d"
+        }
+      ]
     }
   ]
 }

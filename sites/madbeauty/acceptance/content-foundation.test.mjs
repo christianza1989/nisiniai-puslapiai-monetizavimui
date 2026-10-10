@@ -95,7 +95,7 @@ test('SSR national→city→real provider, empty-city404, unknown and inactive e
 });
 test('The current service catalogue remains available when an unrelated editorial package cannot be read',async()=>{
  const f=fixture(),dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-catalogue-content-failure-')),packagePath=path.join(dir,'content-package.json');await writeFile(packagePath,'{"incomplete":');const server=createAppServer({apiHandler:f.handler,contentClock:()=>now,contentPackagePath:packagePath});await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port;
- try{for(const url of ['/paslaugos','/paslaugos/nagai','/paslaugos/lakavimas-gelinis-lakavimas/vilnius']){const response=await fetch(origin+url);assert.equal(response.status,200,url);assert.match(await response.text(),/<h1 class="page-title">/);}assert.equal((await fetch(origin+'/paslaugos/nagai/kaunas')).status,404);assert.equal((await fetch(origin+'/gidai/nezinomas-gidas')).status,404);}
+ try{for(const url of ['/paslaugos','/paslaugos/nagai','/paslaugos/lakavimas-gelinis-lakavimas/vilnius']){const response=await fetch(origin+url);assert.equal(response.status,200,url);assert.match(await response.text(),/<h1[^>]*>[^<]+<\/h1>/);}assert.equal((await fetch(origin+'/paslaugos/nagai/kaunas')).status,404);assert.equal((await fetch(origin+'/gidai/nezinomas-gidas')).status,404);}
  finally{await new Promise(r=>server.close(r));f.store.close();const absolute=path.resolve(dir);if(absolute.startsWith(path.resolve(os.tmpdir())+path.sep+'madbeauty-catalogue-content-failure-'))await rm(absolute,{recursive:true,force:true});}
 });
 

@@ -1,6 +1,7 @@
 import asyncio
 
 from sqlalchemy import select, text
+from sqlalchemy.exc import SQLAlchemyError
 
 from ..config import settings
 from ..control.routes import scope
@@ -96,5 +97,9 @@ async def execute_once(adapter=None):
 
 async def loop():
     while True:
-        if not await execute_once():
-            await asyncio.sleep(1)
+        try:
+            if not await execute_once():
+                await asyncio.sleep(1)
+        except SQLAlchemyError:
+            # A DB outage cannot authorize a blind provider retry. Expired runs fail on the next claim.
+            await asyncio.sleep(5)

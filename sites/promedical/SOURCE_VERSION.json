@@ -1,15 +1,15 @@
 {
   "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
-  "sourceVersion": "c43b506b0b3885069ff567405db09338efc6709c",
-  "coreCommit": "d23a026205a3f81729247b4aceed51d23102d4b0",
+  "sourceVersion": "83817beaea4b4d5e18993cac28da7abdf7d27264",
+  "coreCommit": "d0734f7eb9c43d657256ff45995a6041d95d4a27",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
-      "sha256": "474531adf521e9c512acd8c339f1a78311c8a9f1226a6baebf378c0035c87522"
+      "sha256": "4521e37e0f08b7431dc199b5eeb3c343e856352666d07dd49ad941b52a8b066a"
     },
     {
       "file": "components/niche/promedical-site.module.css",
-      "sha256": "7ff65b2e8d02489ec4c85c3d0db166328f5812a0cf9d4f7d5df01e0a90710df2"
+      "sha256": "9de6eb5a7d7dbc813a812b3737ad594f4a73f9fc42e78f6b64ccf4197acba889"
     },
     {
       "file": "components/niche/promedical-inquiry.tsx",
@@ -25,7 +25,7 @@
     },
     {
       "file": "app/niche/[siteId]/brand-icon/route.ts",
-      "sha256": "ae28147575a6a13d2343ec83793e15e2f5b97894dcbeaf82903653405d53a7ff"
+      "sha256": "65bd4be6df2f69bb090aad666d8b4184b2023ac9205b8084e05939efd63660cf"
     },
     {
       "file": "config/niche-network.json",
@@ -70,12 +70,20 @@
     {
       "file": "public/brand/promedical/logo-v1-640.webp",
       "sha256": "fb296e2ecf7483c1c1e80249a0aa9d76a71b1e2885165fac9014150efb07a8e1"
+    },
+    {
+      "file": "public/brand/promedical/logo-v2-360.webp",
+      "sha256": "d37155984dc68b78c3b6d3660cf369e7448d84e6d05c2830e0e9e779da9b86ba"
+    },
+    {
+      "file": "public/brand/promedical/logo-v2-640.webp",
+      "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
     }
   ],
-  "checkedAt": "2026-10-10T19:06:52.454Z",
-  "productionVersion": "8d23fcb5-7ae5-473a-bd4e-4bda16736dd3",
-  "notes": "Current selected-logo public source and actual active version; earlier source manifest archived inside logo evidence. Core commit is baseline before this evidence-only update. Production has no QA clock.",
-  "productionDeployment": "8d9c8bbf-01db-4b43-8947-d3878a62628b",
+  "checkedAt": "2026-10-10T19:57:57.907Z",
+  "productionVersion": "6596546c-7f5d-49b1-b68e-92b4f7666cd3",
+  "notes": "Current owner-selected red variant 6 and caption removal; exact prior manifest archived in logo-change-v2.json. Core commit identifies the baseline before this evidence update. No QA clock in production.",
+  "productionDeployment": "0081fe34-8d16-4e82-9031-3537b74edb53",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
-  "logoEvidence": "verification-20261010/logo-change-v1.json"
+  "logoEvidence": "verification-20261010/logo-change-v2.json"
 }

@@ -109,6 +109,19 @@ async def test_invalid_agent_extra_fields_and_limits(chat):
         assert (await chat["client"].get(path, params=params, headers=chat["headers"])).status_code == 400
 
 
+async def test_paused_executor_keeps_authorized_history_report_events_and_cancel(chat, monkeypatch):
+    task = (await launch(chat)).json()["data"]["task"]
+    monkeypatch.setattr(settings(), "chat_enabled", False)
+    monkeypatch.setattr(settings(), "chat_runner_enabled", False)
+    assert (await launch(chat)).status_code == 403
+    for path in [f"/operator/v2/businesses/{chat['business']}/tasks", f"/operator/v2/tasks/{task['task_id']}",
+                 f"/operator/v2/tasks/{task['task_id']}/events", f"/operator/v2/tasks/{task['task_id']}/report",
+                 f"/operator/v2/chat/threads/{task['thread_id']}"]:
+        assert (await chat["client"].get(path, headers=chat["headers"])).status_code == 200
+    result = await chat["client"].post(f"/operator/v2/tasks/{task['task_id']}/cancel", headers=chat["headers"])
+    assert result.status_code == 200 and result.json()["data"]["status"] == "cancelled"
+
+
 def test_canonical_operations_schema_is_exact_generator():
     import importlib.util
     import sys

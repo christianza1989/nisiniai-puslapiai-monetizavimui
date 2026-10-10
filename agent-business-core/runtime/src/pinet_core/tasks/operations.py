@@ -17,7 +17,7 @@ from ..control.routes import (
 )
 from ..models import utcnow
 from .models import Task, TaskRun
-from .service import chat_guard, get_task, grant_for, submit, task_view
+from .service import get_task, grant_for, submit, task_view
 
 router = APIRouter(prefix="/operator/v2", route_class=SafeRoute)
 AGENT_ID = "business-planner"
@@ -95,7 +95,6 @@ async def history(business_id: str, request: Request, response: Response, limit:
                   cursor: str | None = Query(None, min_length=1, max_length=2048),
                   status: str | None = Query(None, pattern=r"^(queued|running|succeeded|failed|cancelled)$"),
                   context=Depends(authenticated, scope="function")):
-    chat_guard()
     tx, session = context
     business_id = identifier(business_id)
     await grant_for(tx, business_id, session.user_id)
@@ -141,7 +140,6 @@ async def overview(business_id: str, request: Request, response: Response,
 @router.get("/tasks/{task_id}/report")
 async def report(task_id: str, request: Request, response: Response,
                  context=Depends(authenticated, scope="function")):
-    chat_guard()
     tx, _ = context
     task = await get_task(tx, identifier(task_id))
     run = await tx.scalar(select(TaskRun).where(TaskRun.task_id == task.id, TaskRun.id == task.run_id)) if task.run_id else None

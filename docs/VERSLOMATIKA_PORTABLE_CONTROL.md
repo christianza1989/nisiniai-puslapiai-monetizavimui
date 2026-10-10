@@ -34,7 +34,7 @@ Portalo savininko paruoštas vietinis BFF turi jungtis į `http://127.0.0.1:8854
 
 ## Tikras konsultanto worker
 
-Pradinis setup palieka `PINET_CHAT_ENABLED=false` ir `PINET_CHAT_RUNNER_ENABLED=false`. Viena realizuota capability — `business-planner` / `chat.consult`; kitos agentų rolės nėra sukuriamos katalogo tekstais. Konsultantas teikia planą, neturi tools ir nevykdo klientų sistemų pakeitimų. Katalogo availability aprašo serverio konfigūraciją; worker health yra `unknown`, o ne išgalvotas „online“.
+Pradinis setup palieka `PINET_CHAT_ENABLED=false` ir `PINET_CHAT_RUNNER_ENABLED=false`. Sustabdytas executor neblokuoja savo istorijos, įvykių ir ataskaitų skaitymo ar queued task atšaukimo; sesija ir aktualūs grants lieka būtini. Viena realizuota capability — `business-planner` / `chat.consult`; kitos agentų rolės nėra sukuriamos katalogo tekstais. Konsultantas teikia planą, neturi tools ir nevykdo klientų sistemų pakeitimų. Katalogo availability aprašo serverio konfigūraciją; worker health yra `unknown`, o ne išgalvotas „online“.
 
 Target PC patikrinti Codex versiją, oficialaus paketo integrity ir faktinio executable SHA256. Ankstesnis vietinis priėmimas naudojo side-by-side CLI0.156.1, gpt-6-luna / medium; global0.139 netiko. To nepakanka kito PC actual priėmimui. Faktinio absolute executable ir SHA256 bei privataus tuščio workspace kelias įrašomi tik jo `.env`:
 

@@ -6,7 +6,7 @@ from ..config import settings
 from ..control.routes import ControlError, SafeRoute, authenticated, identifier
 from ..models import utcnow
 from .models import Task, TaskEvent, Thread
-from .service import TERMINAL, append_event, chat_guard, get_task, grant_for, submit, task_view
+from .service import TERMINAL, append_event, get_task, grant_for, submit, task_view
 
 router = APIRouter(prefix="/operator/v2", route_class=SafeRoute)
 
@@ -48,7 +48,6 @@ async def message(thread_id: str, value: MessageInput, request: Request, respons
 @router.get("/chat/threads/{thread_id}")
 async def read_thread(thread_id: str, request: Request, response: Response,
                       context=Depends(authenticated, scope="function")):
-    chat_guard()
     tx, session = context
     thread = await tx.get(Thread, identifier(thread_id))
     if not thread:
@@ -62,7 +61,6 @@ async def read_thread(thread_id: str, request: Request, response: Response,
 @router.get("/tasks/{task_id}")
 async def read_task(task_id: str, request: Request, response: Response,
                     context=Depends(authenticated, scope="function")):
-    chat_guard()
     task = await get_task(context[0], identifier(task_id))
     return envelope(request, response, task_view(task))
 
@@ -70,7 +68,6 @@ async def read_task(task_id: str, request: Request, response: Response,
 @router.get("/tasks/{task_id}/events")
 async def events(task_id: str, request: Request, response: Response, after_sequence: int = Query(0, ge=0),
                  context=Depends(authenticated, scope="function")):
-    chat_guard()
     tx, _ = context
     task = await get_task(tx, identifier(task_id))
     items = list(await tx.scalars(select(TaskEvent).where(TaskEvent.task_id == task.id,
@@ -83,7 +80,6 @@ async def events(task_id: str, request: Request, response: Response, after_seque
 @router.post("/tasks/{task_id}/cancel")
 async def cancel(task_id: str, request: Request, response: Response,
                  context=Depends(authenticated, scope="function")):
-    chat_guard()
     tx, _ = context
     task = await get_task(tx, identifier(task_id), lock=True)
     if task.status not in TERMINAL:

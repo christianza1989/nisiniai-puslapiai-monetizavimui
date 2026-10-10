@@ -17,6 +17,7 @@ def contract():
     value["info"]["description"] = ("Authenticated own accepted-revision shared studio intake observation. "
         "Exact source identity and real blockers; observed_at is the intake time, not a live publication certificate. "
         "Private plans and body drafts remain unapproved; month hypotheses are not publication dates. "
+        "Same-site intent paths support bounded safe nested slugs; references resolve to distinct canonical destinations. "
         "No filesystem paths, raw model traces, approval or deployment capability. "
         "Existing creation.v1 and team.v1 bytes remain unchanged; fullF1/launch/scheduling stay UNVERIFIED.")
     return value

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Safe nested paths now match the maintained native planner/importer. Original actual provider output_invalid and initial Node10PASS/1FAIL remain documented; bad raw output was not promoted. These checks cover source behavior, not future AI quality or full F1/launch.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_creation_content_plan.py offline_tests/test_creation_review.py offline_tests/test_creation_adapter.py -q",
+      "result": "PASS",
+      "evidence": "Actual own Python3.13 runtime:120PASS in3.84s; unknown/reserved/query/traversal/duplicate/cycle/length paths fail closed."
+    },
+    {
+      "command": "python -m ruff check changed creation/schema/test files",
+      "result": "PASS",
+      "evidence": "Actual final Ruff all checks passed; initial2import order errors repaired."
+    },
+    {
+      "command": "node --test content-studio/test/customer-creation-intake.test.mjs content-studio/test/customer-content-write.test.mjs",
+      "result": "PASS",
+      "evidence": "Actual native Node22 processes:23PASS/0FAIL/0SKIP in18.866s. Distinct nested pages, real parent IDs/planning briefs/linkSuggestions preserved; immutable originals/approvals/release and writer CAS remain protected."
+    }
+  ],
+  "eventId": "949ca195-af03-4aba-ae5e-353b5c7edadf",
+  "sequence": 3,
+  "at": "2026-10-10T12:55:12.229Z"
+}

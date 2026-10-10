@@ -5,13 +5,30 @@ import json
 import re
 import unicodedata
 from functools import lru_cache
-from typing import Literal
+from typing import Annotated, Literal
 
 from lingua import Language, LanguageDetectorBuilder
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from ..public_projects.projection import public_url
 from ..tasks.codex import RunnerError
+
+# Match the maintained studio's safe nested slug grammar, bounded by its 150-char path.
+PAGE_PATH_PATTERN = r"^/(?:[a-z0-9]+(?:[-/][a-z0-9]+)*/?)?$"
+GUIDE_PATH_PATTERN = r"^/[a-z0-9]+(?:[-/][a-z0-9]+)*/?$"
+CanonicalPath = Annotated[str, Field(pattern=PAGE_PATH_PATTERN, max_length=150)]
+
+
+def canonical_path(value):
+    if not value:
+        return value
+    slug = value.strip("/")
+    if slug.split("/", 1)[0] in {"api", "niche"}:
+        raise ValueError("Reserved application path")
+    result = "/" + slug + "/" if slug else "/"
+    if len(result) > 150:
+        raise ValueError("Canonical path too long")
+    return result
 
 
 class Strict(BaseModel):
@@ -55,12 +72,13 @@ class Section(Strict):
 
 
 class Page(Strict):
-    path: str = Field(pattern=r"^/(?:[a-z0-9][a-z0-9-]{0,69}/)?$")
+    path: CanonicalPath
     title: str = Field(min_length=1, max_length=160)
     navigation_label: str = Field(min_length=1, max_length=50)
     meta_description: str = Field(min_length=30, max_length=220)
     intent: str = Field(min_length=10, max_length=300)
     sections: list[Section] = Field(min_length=2, max_length=7)
+    _path = field_validator("path")(canonical_path)
 
 
 class Brand(Strict):
@@ -70,7 +88,7 @@ class Brand(Strict):
 
 
 class ContentPlanItem(Strict):
-    path: str = Field(pattern=r"^/[a-z0-9][a-z0-9-]{0,69}/$")
+    path: str = Field(pattern=GUIDE_PATH_PATTERN, max_length=150)
     title: str = Field(min_length=10, max_length=160)
     intent: str = Field(min_length=20, max_length=300)
     head_query: str = Field(min_length=5, max_length=160)
@@ -80,14 +98,20 @@ class ContentPlanItem(Strict):
     reason: str = Field(min_length=30, max_length=1000)
     month: str = Field(pattern=r"^(?:|[0-9]{4}-(?:0[1-9]|1[0-2]))$")
     seasonal_hook: str = Field(max_length=300)
-    pillar_path: str = Field(pattern=r"^(?:|/[a-z0-9][a-z0-9-]{0,69}/)$")
+    pillar_path: str = Field(pattern=r"^(?:|/[a-z0-9]+(?:[-/][a-z0-9]+)*/?)$", max_length=150)
     outline: list[str] = Field(min_length=3, max_length=8)
     source_queries: list[str] = Field(max_length=6)
     source_urls: list[str] = Field(max_length=6)
-    internal_links: list[str] = Field(max_length=8)
+    internal_links: list[CanonicalPath] = Field(max_length=8)
     media_brief: str = Field(min_length=40, max_length=1000)
     media_alt: str = Field(min_length=10, max_length=250)
     priority: Literal["initial", "later"]
+    _paths = field_validator("path", "pillar_path")(canonical_path)
+
+    @field_validator("internal_links")
+    @classmethod
+    def links(cls, values):
+        return [canonical_path(value) for value in values]
 
     @field_validator("source_urls")
     @classmethod
@@ -101,7 +125,7 @@ class ContentPlanItem(Strict):
         for values in (self.outline, self.source_queries):
             if any(not text.strip() or len(text) > 500 for text in values):
                 raise ValueError("Meaningful bounded planning briefs required")
-        if any(not re.fullmatch(r"/(?:[a-z0-9][a-z0-9-]{0,69}/)?", target) for target in self.internal_links):
+        if any(not re.fullmatch(PAGE_PATH_PATTERN, target) for target in self.internal_links):
             raise ValueError("Same-site canonical paths required")
         if len(self.internal_links) != len(set(self.internal_links)) or self.path in self.internal_links:
             raise ValueError("Distinct useful non-self links required")

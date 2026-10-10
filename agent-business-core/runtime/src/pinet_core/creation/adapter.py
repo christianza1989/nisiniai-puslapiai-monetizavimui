@@ -41,6 +41,9 @@ Return content_plan with at least3 substantive distinct initial guide briefs (up
 Map each exact Lithuanian head_query to its own reader decision, canonical path and reason for a distinct answer;
 merge synonymous questions. Preserve actual outline, source_queries, source_urls candidates, business_goal,
 media_brief/alt and useful same-site internal_links. Broad pillar_path must cover its supports and precede them.
+Use full safe intent URLs, e.g. /gidai/uzduoties-pasirinkimas/, with a final slash. Each distinct guide has its own
+full path; a shared /gidai/ index is not three different guides. Use the identical full path in pillar_path and
+internal_links. Nested paths are allowed; api/niche routes, queries, fragments and external paths are forbidden.
 Only reference paths in pages or content_plan; no cycles, self-links, invented target IDs or working tools.
 Use month='' and seasonal_hook='' for unscheduled evergreen briefs. A nonempty month is a provisional local
 YYYY-MM planning hypothesis, never a real publish date. Do not invent weekly/monthly cadence or promise indexing.

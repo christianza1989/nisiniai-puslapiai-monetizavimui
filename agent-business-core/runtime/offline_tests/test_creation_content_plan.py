@@ -87,6 +87,43 @@ def test_real_broad_root_precedes_support_and_plan_is_not_public_package(draft):
     assert '"publicationApproved": false' in output[2]["content"]
 
 
+def test_nested_intent_paths_normalize_before_identity_and_dependency_checks(draft):
+    value = planned(draft)
+    paths = ["/gidai/uzduotis", "/gidai/duomenys/", "/gidai/rezultatas"]
+    for item, path in zip(value["content_plan"], paths):
+        item["path"] = path
+    value["content_plan"][1]["pillar_path"] = paths[0]
+    value["content_plan"][1]["internal_links"].append(paths[0])
+    result = normalize_creator(value)
+    assert [item["path"] for item in result["content_plan"]] == [path.rstrip("/") + "/" for path in paths]
+    assert result["content_plan"][1]["pillar_path"] == "/gidai/uzduotis/"
+    assert result["content_plan"][1]["internal_links"] == ["/", "/gidai/uzduotis/"]
+    value["content_plan"][1]["path"] = paths[0] + "/"
+    with pytest.raises(RunnerError):
+        normalize_creator(value)
+
+
+@pytest.mark.parametrize("path", ["/api/uzduotis/", "/niche/uzduotis/", "/../uzduotis/",
+    "/gidai//uzduotis/", "/gidai/uzduotis?x=1", "/gidai/uzduotis#tema", "https://example.org/uzduotis/",
+    "/gidai/" + "a" * 145 + "/", "/" + "a" * 149])
+@pytest.mark.parametrize("field", ["path", "pillar_path", "internal_links", "page_path"])
+def test_unsafe_or_reserved_paths_never_enter_shared_studio(draft, path, field):
+    value = planned(draft)
+    if field == "page_path":
+        value["pages"][1]["path"] = path
+    else:
+        value["content_plan"][0][field] = [path] if field == "internal_links" else path
+    with pytest.raises(RunnerError):
+        normalize_creator(value)
+
+
+def test_unknown_nested_destination_still_fails_closed(draft):
+    value = planned(draft)
+    value["content_plan"][0]["internal_links"] = ["/gidai/neparengtas/"]
+    with pytest.raises(RunnerError):
+        normalize_creator(value)
+
+
 def test_plan_prose_and_titles_are_included_in_independent_language_screen(draft):
     value = normalize_creator(planned(draft))
     assert language_screening(value)["status"] == "PASS"

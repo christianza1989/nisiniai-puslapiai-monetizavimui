@@ -11,7 +11,8 @@ const fail = code => { throw Object.assign(new Error(code), { code }); };
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const text = (value, max, empty = false) => typeof value === 'string' && value.length <= max && (empty || value.trim().length > 0);
 const pageId = pathname => 'page-' + sha(pathname).slice(0, 24);
-const pagePath = value => typeof value === 'string' && /^\/(?:[a-z0-9][a-z0-9-]{0,69}\/)?$/.test(value) && !['/api/', '/niche/'].includes(value);
+const pagePath = value => typeof value === 'string' && value.length <= 150
+  && /^\/(?:[a-z0-9]+(?:[-/][a-z0-9]+)*\/)?$/.test(value) && !/^\/(?:api|niche)(?:\/|$)/.test(value);
 const json = value => Buffer.from(stableV2(value), 'utf8');
 const accent = { indigo: '#3730a3', teal: '#115e59', clay: '#9a3412', forest: '#166534', cobalt: '#1e40af', plum: '#6b21a8' };
 

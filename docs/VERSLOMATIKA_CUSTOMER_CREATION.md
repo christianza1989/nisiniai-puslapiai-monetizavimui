@@ -34,6 +34,14 @@ In another owned terminal run `scripts/customer_creation_worker.py worker`. Back
 
 ## Acceptance record
 
+### Actual nested-guide failure and scoped repair, 2026-10-10
+
+Actual customer UI retry at source `0c850dab9e354dc5a2faca3e844609b52f3ca0e8` ended after one creator call with `output_invalid`, before critic/coordinator/intake. Original private candidate and trace remain preserved; there was no accepted revision. The candidate collapsed three different guide briefs onto `/gidai/` and emitted nested reference URLs. The private schema allowed only one path segment although maintained native V2 supports safe nested intent slugs.
+
+Creator page/plan paths and content DTO now use the native bounded nested grammar (150 characters), normalize the final slash before identity checks and reject reserved application routes, external/query/fragment/traversal paths. Prompt requires a distinct full URL for each distinct reader question. Duplicate aliases, self-links, unknown destinations, invalid parent ordering/cycles still fail closed. The malformed original output is not repaired or promoted. This changes canonical `content.v1` schema bytes; consumers must refresh their exact source/hash pin. Creation/team wire bytes stay unchanged. Focused schema and actual native intake tests cover the alignment; they do not prove a future provider response or full phase-one acceptance.
+
+Actual checks: initial Python116PASS/Ruff2import errors, native Node10PASS/1FAIL `invalid_server_page` revealed the same stale path predicate inside the intake. After scoped intake alignment/import ordering and an assertion correction to maintained `linkSuggestions`, final Python120PASS/RuffPASS and actual Node intake+writer23PASS/0FAIL/0SKIP. Canonical content JSON regenerated from the actual typed DTO. Source verification does not constitute provider recovery.
+
 | Evidence | State | Receipt |
 | --- | --- | --- |
 | Isolated actual PG queue, immutable files, idempotency, feedback/history, foreign scope, revoked actor, cancel/late result, timeout/no retry, flags/quota, catalogue HTTP | PASS | First focused8tests, private `artifacts/creation-first.private.log` |

@@ -5,7 +5,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from .renderer import ContentPlanItem
+from .renderer import PAGE_PATH_PATTERN, ContentPlanItem
 
 
 class Strict(BaseModel):
@@ -14,7 +14,7 @@ class Strict(BaseModel):
 
 class ContentPage(Strict):
     page_id: str = Field(pattern=r"^page-[a-f0-9]{24}$")
-    path: str = Field(pattern=r"^/(?:[a-z0-9][a-z0-9-]{0,69}/)?$")
+    path: str = Field(pattern=PAGE_PATH_PATTERN, max_length=150)
     title: str = Field(min_length=1, max_length=160)
     revision_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     state: Literal["blocked", "reviewed"]

@@ -169,6 +169,30 @@ test('real plan parent precedes existing draft support even when inventory was c
   assert.deepEqual(child.planningBrief, input.contentPlan[1]);
 });
 
+test('nested intent destinations retain exact canonical identity, parents and briefs in native V2', async t => {
+  const { input, call, sitePath } = await sandbox(t);
+  const paths = ['/gidai/uzduoties-pasirinkimas/', '/gidai/bandymo-duomenys/', '/gidai/rezultato-patikra/'];
+  input.draft.pages[1].path = paths[0];
+  input.contentPlan = paths.map((pathname, index) => ({ path: pathname, title: 'Praktinio mokymo klausimas ' + index,
+    intent: 'Padėti komandai išsiaiškinti vieną mokymo pasirinkimo klausimą.', head_query: 'Kaip pasirinkti komandos mokymą',
+    audience_problem: 'Komandai reikia aiškaus atsakymo apie praktinio mokymo pasirinkimą.', business_goal: 'Patikrinti vieną tikrą komandos mokymo poreikį.',
+    primary_topic: 'Praktinis komandos mokymas', reason: 'Atskiras pasirinkimo klausimas su aiškiais vykdymo ir šaltinių tikrinimo poreikiais.', month: '', seasonal_hook: '',
+    pillar_path: index ? paths[0] : '', outline: ['Pasirinkti užduotį.', 'Paruošti bandymą.', 'Patikrinti rezultatą.'],
+    source_queries: ['Praktinio mokymo pasirinkimas'], source_urls: [], internal_links: index ? ['/', paths[0]] : ['/'],
+    media_brief: 'Parengti schemą, paaiškinančią pasirinktą komandos mokymo klausimą.', media_alt: 'Komandos mokymo klausimo schema', priority: 'initial' }));
+  update(input); const result = call(); assert.equal(result.status, 0, JSON.stringify(result.value));
+  assert.equal(result.value.planImported, 3); assert.equal(result.value.planningBriefState, 'attached');
+  const site = JSON.parse(await readFile(sitePath(), 'utf8'));
+  const parent = site.pages.find(page => page.slug === 'gidai/uzduoties-pasirinkimas');
+  for (let index = 0; index < paths.length; index++) {
+    const page = site.pages.find(page => page.slug === paths[index].slice(1, -1));
+    assert.ok(page); assert.deepEqual(page.planningBrief, input.contentPlan[index]);
+    if (index) { assert.equal(page.pillarPageId, parent.id); assert.ok(page.linkSuggestions.some(link => link.targetPageId === parent.id)); }
+    assert.equal(page.approval, null);
+  }
+  assert.equal(result.value.fullF1, 'UNVERIFIED'); assert.equal(result.value.launch, 'UNVERIFIED');
+});
+
 test('partial malformed plan is preserved as original and produces shared publication blockers', async t => {
   const { input, call, sitePath } = await sandbox(t);
   input.contentPlan = [{ path: '../../outside', title: 'Netinkamas planas' }];
@@ -177,6 +201,16 @@ test('partial malformed plan is preserved as original and produces shared public
   const site = JSON.parse(await readFile(sitePath(), 'utf8')); assert.equal(site.pages.length, 3);
   assert.ok(site.pages.every(page => page.factChecks.some(note => note.includes('Turinio plano įrašas 1'))));
   assert.deepEqual(JSON.parse(await readFile(path.join(path.dirname(input.dataDir), 'intake-context.json'), 'utf8')).contentPlan, input.contentPlan);
+});
+
+test('nested path alignment keeps reserved, traversal, alias and excessive server paths rejected before writes', async t => {
+  const { input, call } = await sandbox(t);
+  for (const pathname of ['/api/guide/', '/niche/guide/', '/gidai//guide/', '/gidai/../guide/', '/gidai/guide?x=1',
+    '/gidai/guide#section', '/gidai/guide', 'https://example.org/guide/', '/' + 'a'.repeat(150) + '/']) {
+    input.draft.pages[1].path = pathname; update(input);
+    assert.equal(call().value.code, 'invalid_server_page');
+    assert.deepEqual(await readdir(input.artifactsRoot), []);
+  }
 });
 
 test('foreign lock stays intact and missing companion settings do not claim an immutable revision', async t => {

@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     operator_secret: str = ""
     # Local-only pilot: never enabled implicitly by legacy operator/worker secrets.
     control_enabled: bool = False
+    control_mode: str = "local"
+    control_bridge_secret: str = ""
+    control_bridge_host: str = "control.pinet.internal"
+    control_owner_user_id: str = ""
     control_cursor_secret: str = ""
     control_source_revision: str = ""
     control_session_seconds: int = 28800

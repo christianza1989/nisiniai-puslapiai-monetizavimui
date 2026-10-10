@@ -1,6 +1,7 @@
 """Create an isolated local pilot configuration without touching an existing runtime."""
 import argparse
 import json
+import re
 import secrets
 import subprocess
 from pathlib import Path
@@ -9,7 +10,13 @@ from pathlib import Path
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--public-core", required=True)
+    parser.add_argument("--db-port", type=int, default=15438)
+    parser.add_argument("--api-port", type=int, default=8846)
+    parser.add_argument("--name", default="pinet-portfolio-i1-20261010")
     args = parser.parse_args()
+    if (not 1024 <= args.db_port <= 65535 or not 1024 <= args.api_port <= 65535
+            or args.api_port == args.db_port or not re.fullmatch(r"pinet-[a-z0-9-]{1,48}", args.name)):
+        raise SystemExit("Invalid private instance name or loopback ports.")
     root = Path(__file__).resolve().parents[1]
     public = Path(args.public_core).resolve()
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=public, text=True).strip()
@@ -27,26 +34,27 @@ def main():
     admin, runtime = secrets.token_hex(24), secrets.token_hex(24)
     values = {
         "PINET_DB_ADMIN_PASSWORD": admin, "PINET_DB_RUNTIME_PASSWORD": runtime,
-        "PINET_ADMIN_DATABASE_URL": f"postgresql+asyncpg://pinet_admin:{admin}@127.0.0.1:15438/pinet",
-        "PINET_DATABASE_URL": f"postgresql+asyncpg://pinet_runtime:{runtime}@127.0.0.1:15438/pinet",
+        "PINET_ADMIN_DATABASE_URL": f"postgresql+asyncpg://pinet_admin:{admin}@127.0.0.1:{args.db_port}/pinet",
+        "PINET_DATABASE_URL": f"postgresql+asyncpg://pinet_runtime:{runtime}@127.0.0.1:{args.db_port}/pinet",
         "PINET_EDGE_SECRET": secrets.token_hex(32), "PINET_WORKER_SECRET": secrets.token_hex(32),
         "PINET_OPERATOR_SECRET": secrets.token_hex(32), "PINET_ENVIRONMENT": "local",
         "PINET_CONTROL_ENABLED": "true", "PINET_CONTROL_CURSOR_SECRET": secrets.token_hex(32),
         "PINET_CONTROL_SOURCE_REVISION": source, "PINET_CONTROL_SESSION_SECONDS": "28800",
+        "PINET_CONTROL_MODE": "local", "PINET_CHAT_ENABLED": "false", "PINET_CHAT_RUNNER_ENABLED": "false",
         "PINET_VOICE_ENABLED": "false", "PINET_SMTP_ENABLED": "false", "PINET_LAB_MAIL_ENABLED": "false",
         "PINET_KNOWLEDGE_REFRESH_ENABLED": "false", "PINET_LEARNING_ENABLED": "false",
-        "PINET_ALLOW_SIMULATION": "true", "PINET_CORE_URL": "http://127.0.0.1:8846",
+        "PINET_ALLOW_SIMULATION": "true", "PINET_CORE_URL": f"http://127.0.0.1:{args.api_port}",
     }
     (root / ".env").write_text("\n".join(f"{k}={v}" for k, v in values.items()) + "\n", encoding="utf-8")
     (target / "compose.private.yaml").write_text('''services:
   postgres:
     image: postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
-    container_name: pinet-portfolio-i1-20261010
+    container_name: __INSTANCE__
     environment:
       POSTGRES_DB: pinet
       POSTGRES_USER: pinet_admin
       POSTGRES_PASSWORD: ${PINET_DB_ADMIN_PASSWORD:?private env required}
-    ports: ["127.0.0.1:15438:5432"]
+    ports: ["127.0.0.1:__PORT__:5432"]
     volumes: ["portfolio_i1_pg:/var/lib/postgresql/data"]
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U pinet_admin -d pinet"]
@@ -55,7 +63,7 @@ def main():
       retries: 20
 volumes:
   portfolio_i1_pg:
-''', encoding="utf-8")
+'''.replace("__INSTANCE__", args.name).replace("__PORT__", str(args.db_port)), encoding="utf-8")
     credentials = {"username": "pinet-owner-local", "password": secrets.token_urlsafe(32)}
     (target / "credentials.private.json").write_text(json.dumps(credentials), encoding="utf-8")
     # Exact source inventory only. No DNS/ownership/actual runtime inference.
@@ -64,7 +72,7 @@ volumes:
                 "credential_file": "credentials.private.json"}
     (target / "operator-manifest.private.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2),
                                                          encoding="utf-8")
-    print("Private isolated pilot configuration created; no secrets printed. Ports15438/8846, channels OFF.")
+    print(f"Private isolated configuration created; no secrets printed. Ports{args.db_port}/{args.api_port}, channels OFF.")
 
 
 if __name__ == "__main__":

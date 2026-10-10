@@ -2,10 +2,10 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Verslomatika local core portfolio bridge",
-    "version": "0.2.0",
-    "description": "Local-only I1a/I1b implementation contract, portfolio.v1. Runtime acceptance is recorded separately in VERSLOMATIKA_LOCAL_PORTFOLIO.md. Core opaque persisted revocable session replaces proposed portal actor assertion for this local slice. No hosted/signup mode."
+    "version": "0.3.0",
+    "description": "portfolio.v1. Accepted local opaque persisted revocable session and current grants; production envelope prepared for separately signed hosted transport. Hosted deployment and customer signup are not accepted. Historical local acceptance remains unchanged."
   },
-  "x-status": "local-implementation-in-progress",
+  "x-status": "local-accepted-hosted-preparation",
   "servers": [
     {
       "url": "http://127.0.0.1:8846",
@@ -562,7 +562,6 @@
             "enum": [
               "local",
               "test",
-              "staging",
               "production"
             ]
           },
@@ -604,7 +603,6 @@
             "enum": [
               "local",
               "test",
-              "staging",
               "production"
             ]
           },
@@ -646,7 +644,6 @@
             "enum": [
               "local",
               "test",
-              "staging",
               "production"
             ]
           },
@@ -688,7 +685,6 @@
             "enum": [
               "local",
               "test",
-              "staging",
               "production"
             ]
           },

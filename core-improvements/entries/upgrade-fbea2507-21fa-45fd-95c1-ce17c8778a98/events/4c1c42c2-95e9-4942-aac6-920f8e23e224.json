@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Canonical contract checkpoint a0402e53; preparing implementation checkpoint after actual55 combined PostgreSQL/control/chat/offline PASS and5 portable helper PASS. Portable scope additionally touches existing scripts/control_local_setup.py and offline_tests/test_control_portable.py within issue70 and WORKSTREAMS. Initial private rehearsal copy failed because the old helper assumed PostgreSQL admin username postgres; resolved by reading the existing private URL username, preserving source DB and empty target. No provider inference, public tunnel, deployment, or Supabase project.",
+  "eventId": "4c1c42c2-95e9-4942-aac6-920f8e23e224",
+  "sequence": 2,
+  "at": "2026-10-10T05:42:06.862Z"
+}

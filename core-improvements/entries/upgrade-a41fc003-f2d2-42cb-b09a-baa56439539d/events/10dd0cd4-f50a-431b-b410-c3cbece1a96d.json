@@ -1,0 +1,30 @@
+{
+  "status": "local-verified",
+  "note": "Functional source 23be0a72450682e6c38637a6349a5c9b456d64ad pushed; parent integrated as b0f35e3 after terminal trial, not main merge. Exact 5196350 baseline 2FAIL/1PASS remains in fixing event. Parent executed actual restricted/admin PG regression via its approved ignored wrapper: ONLY two DB URL environment values and PYTHONPATH to this isolated child source, existing schema0015 and unique random synthetic fixture environments; child never loaded/copied parent .env/secrets. 20PG PASS41.16s, 26 offline PASS11.45s, Ruff/diff/exact4blob safety PASS. Only known strict integer *_tokens in0..1e9 persisted, zero remains known, unknown/non-receipts remain None; private diagnostics/USD dropped, cost unknown, original failure/no-result events retained. No provider/SMTP/retries/tools/quota/auth/history rewrites; original incomplete customer usage remains unknown. Source window closed; metadata separate. Parent owns future arguments() transport changes.",
+  "commit": "23be0a72450682e6c38637a6349a5c9b456d64ad",
+  "checks": [
+    {
+      "command": "uv run pytest -q offline_tests/test_control_codex.py",
+      "result": "PASS",
+      "evidence": "Child own isolated runtime, source23be0a7: 26PASS11.45s/0skip. Actual synthetic subprocess emits completed known/zero/unknown usage then invalid Answer; rejection retains only observed usage and temporary directory removed."
+    },
+    {
+      "command": "uv run pytest -q tests/test_control_tasks.py (parent approved ignored wrapper; isolated child source via PYTHONPATH)",
+      "result": "PASS",
+      "evidence": "Parent reported actual restricted/admin PG on source23be0a7: 20PASS41.16s/0skip, existing DB schema0015, random synthetic environments only. Six added cases assert actual TaskRun usage/status/finished_at/USD unknown plus queued/running/failed events and no task result; existing RLS/revocation/cancel/lease/no-retry gates PASS. Executed by parent, not a child direct run."
+    },
+    {
+      "command": "uv run ruff check src/pinet_core/tasks/codex.py src/pinet_core/tasks/worker.py offline_tests/test_control_codex.py tests/test_control_tasks.py",
+      "result": "PASS",
+      "evidence": "All checks passed on exact four functional files."
+    },
+    {
+      "command": "git diff --check; node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "No whitespace errors; exact four staged blobs/34561 bytes, zero safety findings before functional commit. Only synthetic no-provider test text and scoped source/test files."
+    }
+  ],
+  "eventId": "10dd0cd4-f50a-431b-b410-c3cbece1a96d",
+  "sequence": 3,
+  "at": "2026-10-10T14:56:46.829Z"
+}

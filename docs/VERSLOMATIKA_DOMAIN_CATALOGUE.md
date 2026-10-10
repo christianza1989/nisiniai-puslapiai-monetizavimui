@@ -77,3 +77,17 @@ Galutinė modulio vietinė patikra: **32 offline testai PASS**, scoped Ruff PASS
 `uv build --wheel` PASS: wheel turi modulio JSON su tais pačiais baitais. Iš wheel iškelto modulio atskiras procesas sėkmingai įkėlė visus45 324 domenus ir TOP 200 iš savo paketo, nepriklausydamas nuo pirminio `domain-sorter/output` katalogo. Vietiniai kvitai `artifacts/domain-catalogue/rebuild-acceptance.json` ir `wheel-install-acceptance.json` į Git nekeliami. Visos šio modulio parašytos kategorijų etiketės, paaiškinimai, rizikų pavadinimai ir notices perskaityti bei suredaguoti; faktinis desktop/mobile dashboardo tekstų ir išdėstymo patikrinimas lieka UI adapterio priėmimui.
 
 Šio paketo bazė `db23aee6ea446574b582ab7b88bf49391d0e7404`, fetched private main `13c9649c76dd48cdf426604cb721e1ccd58a9854`, companion `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`. Issue [76](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/76), upgrade `upgrade-ff5c8b39-4eee-43ac-a999-d70297bbd8cd`. Modulio source priėmimas nesuteikia visos platformos UI, viešo paleidimo ar kliento verslo kūrimo priėmimo. Atšaukimas – tik šio naujo modulio scoped revert ir atskiro API adapterio montavimo atšaukimas.
+
+## Kanoninė HTTP sutartis
+
+Integravimo papildymas rezervuotas issue76 ir upgrade `upgrade-a4801c93-17db-4f65-9209-61326cafe24f`. `scripts/domain_catalogue_contract.py` generuoja [domains.v1 OpenAPI](contracts/verslomatika-domain-catalogue.openapi.json) iš tų pačių griežtų request/response modelių, kuriais tikrinamos faktinės katalogo išvestys. Ankstesnės operatoriaus ir customer.v1 sutartys nekinta.
+
+- `GET /customer/v2/domains`: pirmiau aprašyti `query`, `category`, `top200_only`, `offset`, `limit`, `sort`; išvestis `SearchData`.
+- `GET /customer/v2/domains/facets`: išvestis `{items:catalogue.facets(),metadata:catalogue.metadata()}`.
+- `POST /customer/v2/domains/recommendations`: privalomas JSON `{niche,category,limit}`, `niche` 1–120 ženklų, `category` galiojantis kategorijos ID arba `null`, HTTP `limit` 1–10. Python helperis leidžia iki20, bet HTTP adapteris naudoja siauresnę sutarties ribą. Išvestis `RecommendationData`.
+
+Visi trys maršrutai reikalauja tos pačios Bearer sesijos. Tėvinis adapteris tikrina faktinę patvirtintą kliento arba operatoriaus paskyrą ir vietinę aplinką. Envelope: `{contract_version:"domains.v1",environment:"local"|"test",source_revision:<SHA40>,observed_at:<UTC ISO>,request_id:<UUID>,data:<projection>}`. Sėkmingas atsakymas 200, `Cache-Control: private, no-store`; neteisinga ribota įvestis400, nėra sesijos401, neįjungtas vietinis modulis ar nepatvirtinta paskyra403, veiksmo limitas429, nepasiekiamas/netinkamas katalogas503. Generatorius nepaleidžia ir nemontuoja HTTP maršrutų.
+
+Pirmas sutarties testų surinkimas FAIL dėl pytest rezervuoto parametro pavadinimo `request`; pakeistas testinio parametro pavadinimas, produkto ribos ir sutartis nesušvelnintos. Originalus bandymas išlieka darbo istorijoje. Sutarties baitų sutapimas, visų schemų `$ref`, trijų operacijų autentifikacija, tikrų helperio išvesčių validacija ir griežtos request ribos tikrinamos atskirai.
+
+Galutinė papildymo patikra **39 offline testai PASS /14.43s**, scoped Ruff PASS. Sutartis generuojama tiesioginiais UTF-8/LF baitais; visi `$ref` išsprendžiami, nėra prarastų operacijų. Request modelis `RecommendationInput`, data modeliai `SearchData`, `FacetData`, `RecommendationData`; bendras `Envelope[T]` yra tas pats dokumentui ir API adapteriui. Katalogo snapshot ir jo source duomenys dėl sutarties papildymo nekito.

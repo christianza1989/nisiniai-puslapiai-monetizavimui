@@ -3,6 +3,7 @@
 import re
 from datetime import date, datetime
 from typing import Annotated, Literal
+from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -140,3 +141,97 @@ class DomainRecord(StrictModel):
 
 
 COLUMNS = list(DomainRecord.model_fields)
+
+# The HTTP generator and parent adapter share these actual request/response models.
+Category = Literal[*tuple(CATEGORIES)]
+SnapshotID = Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
+Sort = Literal["source", "queue", "screening", "research_priority", "potential"]
+
+
+class DomainView(DomainRecord):
+    category: Category
+    category_label: Short
+    risk_label: Short
+    availability: Literal["unknown"]
+    availability_checked_at: None
+
+
+class CatalogueMetadata(Metadata):
+    catalogue_version: Literal["domains.v1"]
+    snapshot_id: SnapshotID
+
+
+class Facet(StrictModel):
+    id: Category
+    label: Short
+    count: Annotated[int, Field(ge=0, le=100_000, strict=True)]
+    top200_count: Annotated[int, Field(ge=0, le=200, strict=True)]
+
+
+class FacetData(StrictModel):
+    items: Annotated[list[Facet], Field(max_length=len(CATEGORIES))]
+    metadata: CatalogueMetadata
+
+
+class SearchData(StrictModel):
+    catalogue_version: Literal["domains.v1"]
+    snapshot_id: SnapshotID
+    query: Annotated[str, Field(max_length=120)]
+    category: Category | None
+    top200_only: bool
+    sort: Sort
+    offset: Annotated[int, Field(ge=0, le=100_000, strict=True)]
+    limit: Annotated[int, Field(ge=1, le=100, strict=True)]
+    total: Annotated[int, Field(ge=0, le=100_000, strict=True)]
+    items: Annotated[list[DomainView], Field(max_length=100)]
+
+
+class RecommendationInput(StrictModel):
+    niche: Annotated[str, Field(min_length=1, max_length=120)]
+    category: Category | None
+    limit: Annotated[int, Field(ge=1, le=10, strict=True)]
+
+    @field_validator("niche")
+    @classmethod
+    def meaningful_niche(cls, value):
+        if not value.strip() or any(ord(char) < 32 for char in value):
+            raise ValueError("invalid_niche")
+        return value.strip()
+
+
+class Recommendation(StrictModel):
+    domain: DomainView
+    match_kind: Literal["exact_name", "keyword", "category"]
+    matched_terms: Annotated[list[Short], Field(max_length=8)]
+    reason: Annotated[str, Field(max_length=240)]
+
+
+class RecommendationData(StrictModel):
+    catalogue_version: Literal["domains.v1"]
+    snapshot_id: SnapshotID
+    niche: Annotated[str, Field(min_length=1, max_length=120)]
+    category: Category | None
+    matched_categories: Annotated[list[Category], Field(max_length=37)]
+    items: Annotated[list[Recommendation], Field(max_length=10)]
+
+
+class Envelope[T](StrictModel):
+    contract_version: Literal["domains.v1"]
+    environment: Literal["local", "test"]
+    source_revision: Annotated[str, Field(pattern=r"^[a-f0-9]{40}$")]
+    observed_at: datetime
+    request_id: UUID
+    data: T
+
+    @field_validator("observed_at")
+    @classmethod
+    def aware_observation(cls, value):
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("timezone_required")
+        return value
+
+
+class Error(StrictModel):
+    code: Annotated[str, Field(max_length=80)]
+    message: Annotated[str, Field(max_length=300)]
+    request_id: UUID

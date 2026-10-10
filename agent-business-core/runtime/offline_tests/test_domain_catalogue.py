@@ -2,6 +2,7 @@
 
 import copy
 import csv
+import importlib.util
 import io
 import json
 from pathlib import Path
@@ -10,7 +11,14 @@ import pytest
 
 from pinet_core.domain_catalogue import CatalogueError, DomainCatalogue
 from pinet_core.domain_catalogue.build import build, encode_snapshot
-from pinet_core.domain_catalogue.models import COLUMNS
+from pinet_core.domain_catalogue.models import (
+    COLUMNS,
+    Envelope,
+    FacetData,
+    RecommendationData,
+    RecommendationInput,
+    SearchData,
+)
 from pinet_core.domain_catalogue.service import snapshot_hash
 from pinet_core.domain_catalogue.taxonomy import infer_category
 
@@ -188,3 +196,65 @@ def test_tracked_top200_membership_and_research_scores_match(catalogue):
         assert item["top200"]["research_score"] == score
         assert item["top200"]["research_source_priority"] == int(row["Tyrimo prioritetas 1–200"])
     assert len(selected) == 200
+
+
+def test_exact_http_models_validate_actual_module_outputs(catalogue):
+    search = SearchData.model_validate(catalogue.search(limit=100))
+    facets = FacetData.model_validate({"items": catalogue.facets(), "metadata": catalogue.metadata()})
+    recommendations = RecommendationData.model_validate(catalogue.recommend("mokytojas", limit=10))
+    assert search.total == 45324 and len(search.items) == 100
+    assert facets.metadata.top200_count == 200 and len(facets.items) == 37
+    assert 1 <= len(recommendations.items) <= 10
+    request = RecommendationInput.model_validate({"niche": "mokytojas", "category": None, "limit": 5})
+    assert request.niche == "mokytojas"
+    receipt = {"contract_version": "domains.v1", "environment": "test", "source_revision": "a" * 40,
+               "observed_at": "2026-10-10T09:00:00Z", "request_id": "00000000-0000-0000-0000-000000000001",
+               "data": catalogue.search(limit=1)}
+    assert Envelope[SearchData].model_validate(receipt).data.items[0].availability == "unknown"
+    receipt["environment"] = "production"
+    with pytest.raises(ValueError):
+        Envelope[SearchData].model_validate(receipt)
+
+
+@pytest.mark.parametrize("payload", [
+    {"niche": " ", "category": None, "limit": 1},
+    {"niche": "mokytojas", "category": None, "limit": 11},
+    {"niche": "mokytojas", "category": "invented", "limit": 1},
+    {"niche": "mokytojas", "category": None, "limit": True},
+    {"niche": "mokytojas", "category": None, "limit": 1, "tool_path": "anything"},
+])
+def test_http_request_model_rejects_unbounded_or_extra_input(payload):
+    with pytest.raises(ValueError):
+        RecommendationInput.model_validate(payload)
+
+
+def test_canonical_http_document_bytes_and_all_refs():
+    runtime = Path(__file__).parents[1]
+    spec = importlib.util.spec_from_file_location("domain_catalogue_contract", runtime / "scripts/domain_catalogue_contract.py")
+    generator = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(generator)
+    contract = runtime.parents[1] / "docs/contracts/verslomatika-domain-catalogue.openapi.json"
+    assert generator.encoded() == contract.read_bytes()
+    doc = generator.document()
+    assert set(doc["paths"]) == {"/customer/v2/domains", "/customer/v2/domains/facets",
+                                 "/customer/v2/domains/recommendations"}
+    schemas = doc["components"]["schemas"]
+    refs = []
+
+    def walk(value):
+        if isinstance(value, dict):
+            if "$ref" in value:
+                refs.append(value["$ref"])
+            for item in value.values():
+                walk(item)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+
+    walk(doc)
+    assert refs and all(ref.startswith("#/components/schemas/") and ref.rsplit("/", 1)[1] in schemas for ref in refs)
+    for methods in doc["paths"].values():
+        for operation in methods.values():
+            assert operation["security"] == [{"CoreSession": []}]
+    assert schemas["RecommendationInput"]["properties"]["limit"]["maximum"] == 10
+    assert schemas["DomainView"]["properties"]["availability"]["const"] == "unknown"

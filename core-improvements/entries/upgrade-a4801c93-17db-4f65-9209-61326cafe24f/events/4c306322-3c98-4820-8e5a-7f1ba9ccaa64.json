@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Three-operation domains.v1 generated from actual strict module models. First pytest reserved-name collectionFAIL preserved in doc; parameter rename only, no product gate reduction. Parent mounts auth/HTTP separately; no sharedapi/config/migration/operator/customer-v1 edits.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_domain_catalogue.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "39passed/14.43s includes all32inventory regressions + actual model outputs/request guards/envelope localonly + canonicalcontractbytes/allrefs/3authenticatedoperations"
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/domain_catalogue offline_tests/test_domain_catalogue.py scripts/domain_catalogue_contract.py",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    },
+    {
+      "command": "python scripts/domain_catalogue_contract.py",
+      "result": "PASS",
+      "evidence": "OpenAPI3.1 domains.v1 generatedUTF8LF from Pydanticmodels; snapshot52c232970da67024ae1e3cca551a6fe19f6600f71452e2b572ac8a9989a811cb unchanged"
+    }
+  ],
+  "eventId": "4c306322-3c98-4820-8e5a-7f1ba9ccaa64",
+  "sequence": 2,
+  "at": "2026-10-10T09:52:25.098Z"
+}

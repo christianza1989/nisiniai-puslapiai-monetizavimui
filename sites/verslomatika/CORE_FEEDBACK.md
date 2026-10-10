@@ -1,5 +1,7 @@
 # Verslomatika integration feedback
 
+2026-10-10 actual production/probe mismatch:555026d/0cf86191 creator succeeded/languagePASS, but Sol review stopped at a missing model metadata event before report.30charged/noaccepted/intake0. Upgrade6168e28f/scope6101939582 now passes one exact fixed public Sol catalogue only to business review roles and binds its digest to the claimed profile; no fatal trace weakening or owner auth/config copying.76 offline,7 production-argument pinnedCLI and7 focusedPG PASS; actual patch effectiveness pending. Original failures and stronger-model adoption remain preserved in the preceding upgrade4f4a225d evidence. This is a common adapter gap, not a Mokymai-specific exception.
+
 2026-10-10 actual review-profile outcome: source0fe77a7 trial d3e051d8 critic again failed incomplete/max_output_tokens after creator structure success/languageFAIL.27immutable charged calls, no accepted revision/intake; medium verbosity did not fix the real failure. Upgrade4f4a225d / scope6101622725 replaces only fixed business review model with Sol, with exact pre-dispatch/success/failure identities, execution-profile snapshot, additive0018 DB CHECK and intentionally widened team read contract. Existing Luna history and all review/authority/language gates remain; provider cap unknown. No smaller report or partial acceptance invented. Source verification and actual provider retry are separate evidence.
 
 ## P3/P4 customer/public integration — 2026-10-10

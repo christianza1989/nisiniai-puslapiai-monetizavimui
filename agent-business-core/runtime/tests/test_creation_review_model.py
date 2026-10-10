@@ -80,6 +80,29 @@ async def test_changed_execution_profile_stops_before_next_reservation(creation,
     assert (await team_read(c, auth, row["creation_id"]))["attempts"] == []
 
 
+@pytest.mark.parametrize('mode', ['missing', 'modified', 'changed_hash'])
+async def test_catalogue_dependency_stops_without_a_reserved_provider_attempt(creation, monkeypatch, tmp_path, mode):
+    import hashlib
+
+    from pinet_core.creation import team
+
+    c = creation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    claim = await worker.claim()
+    original = adapter.REVIEW_MODEL_CATALOGUE.read_bytes()
+    changed = tmp_path / 'catalogue.json'
+    if mode != 'missing':
+        changed.write_bytes(original + b'\n')
+    monkeypatch.setattr(adapter, 'REVIEW_MODEL_CATALOGUE', changed)
+    if mode == 'changed_hash':
+        monkeypatch.setattr(adapter, 'REVIEW_MODEL_CATALOGUE_SHA256', hashlib.sha256(changed.read_bytes()).hexdigest())
+    code = 'instructions_changed' if mode == 'changed_hash' else 'runner_unavailable'
+    with pytest.raises(adapter.RunnerError, match=code):
+        await team.reserve(claim, 'creator', 1)
+    assert (await team_read(c, auth, row['creation_id']))['attempts'] == []
+
+
 async def test_populated_sol_history_blocks_downgrade_without_row_changes(creation):
     c = creation
     assert c["admin"].url.database.startswith("pinet_review_model_qa_")

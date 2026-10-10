@@ -24,12 +24,14 @@ def test_review_role_profile_retains_exact_process_policy(role, effort):
     args = arguments('fixed.exe', 'fixed', 'schema', 'output', web=False, role=role)
     setting = next(value for value in args if value.startswith('model_reasoning_effort='))
     assert setting == f'model_reasoning_effort="{effort}"'
-    expected_verbosity = [] if role == 'creator' else ['-c', 'model_verbosity="medium"']
-    if expected_verbosity:
-        assert args[-2:] == expected_verbosity
+    from pinet_core.creation.adapter import review_model_catalogue
+    expected_profile = [] if role == 'creator' else ['-c', 'model_verbosity="medium"',
+        '-c', 'model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
+    if expected_profile:
+        assert args[-4:] == expected_profile
     else:
         assert not any(value.startswith('model_verbosity=') for value in args)
-    unchanged = args[:-2] if expected_verbosity else args
+    unchanged = args[:-4] if expected_profile else args
     unchanged[unchanged.index('--model')+1] = baseline[baseline.index('--model')+1]
     assert [value for value in unchanged if not value.startswith('model_reasoning_effort=')] == [
         value for value in baseline if not value.startswith('model_reasoning_effort=')]

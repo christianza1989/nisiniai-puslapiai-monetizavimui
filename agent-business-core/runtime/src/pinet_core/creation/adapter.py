@@ -16,6 +16,8 @@ from .renderer import CreatorDraft, normalize, normalize_creator, structural_rep
 ROOT = Path(__file__).resolve().parents[5]
 RUNTIME = Path(__file__).resolve().parents[3]
 ADAPTER_REVISION = "codex-business-draft.v1"
+REVIEW_MODEL_CATALOGUE = RUNTIME / "config/creation-review-models.json"
+REVIEW_MODEL_CATALOGUE_SHA256 = "5e8c7834be0785d8bf9ff9be02b0b13c82904bbbcc3b712ba079a1d32ca06b25"
 INSTRUCTION_FILES = (
     "SKILLS/niche-site-builder/SKILL.md",
     "SKILLS/niche-site-builder/references/business-validation.md",
@@ -131,9 +133,24 @@ def role_model(role):
     return "gpt-6-luna" if role == "creator" else "gpt-6.1-sol"
 
 
+def review_model_catalogue():
+    """A fixed public catalogue, independent of owner config, cache and auth."""
+    try:
+        raw = REVIEW_MODEL_CATALOGUE.read_bytes()
+    except OSError:
+        raise RunnerError("runner_unavailable") from None
+    if hashlib.sha256(raw).hexdigest() != REVIEW_MODEL_CATALOGUE_SHA256:
+        raise RunnerError("runner_unavailable")
+    return REVIEW_MODEL_CATALOGUE
+
+
 def role_profile(role):
-    return {"model": role_model(role), "reasoning_effort": "medium" if role == "creator" else "low",
-            "verbosity": None if role == "creator" else "medium"}
+    profile = {"model": role_model(role), "reasoning_effort": "medium" if role == "creator" else "low",
+               "verbosity": None if role == "creator" else "medium"}
+    if role != "creator":
+        review_model_catalogue()
+        profile["model_catalogue_sha256"] = REVIEW_MODEL_CATALOGUE_SHA256
+    return profile
 
 
 def arguments(executable, workspace, schema, output, *, web, role="creator"):
@@ -147,7 +164,8 @@ def arguments(executable, workspace, schema, output, *, web, role="creator"):
     if role != "creator":
         at = result.index('model_reasoning_effort="medium"')
         result[at] = f'model_reasoning_effort="{profile["reasoning_effort"]}"'
-        result += ['-c', f'model_verbosity="{profile["verbosity"]}"']
+        result += ['-c', f'model_verbosity="{profile["verbosity"]}"',
+                   '-c', 'model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
     return result
 
 

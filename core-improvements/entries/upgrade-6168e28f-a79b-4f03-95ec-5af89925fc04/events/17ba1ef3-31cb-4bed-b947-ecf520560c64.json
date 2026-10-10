@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Exact production/test metadata gap fixed under scope6101939582/amendment6101961229. Original actual0cfFAIL30charged and noaccepted preserved. No schema/canonical contract/Luna/shared available/trace/auth change. Initial command selected a nonexistent offline test file and ran0tests; retained output, corrected explicit existing-file76test run. Actual patch adoption/report pending.",
+  "checks": [
+    {
+      "command": "scoped creation model/adapter/controller/controlCodex offline tests",
+      "result": "PASS",
+      "evidence": "76 passed/7 opt-in skipped23.20s; missing/modified/hash-change, exact fixed args, unchanged creator/defaultargs covered."
+    },
+    {
+      "command": "pinnedCLI0.156.1 empty-auth loopback with production Sol arguments",
+      "result": "PASS",
+      "evidence": "7passed34.13s, onePOST/exactmodel-effort-verbosity/no metadata warning/no test Sol catalogue override; logSHA5eddc2e1891f6e8e970938d025f9c278fa4b73a6f82fdc7155240f1862db5c06."
+    },
+    {
+      "command": "distinct restrictedPG focused model/catalogue cases +migrations/bootstrap",
+      "result": "PASS",
+      "evidence": "7passed38.30s;8sourcehashes unchanged;0reservation missing/modified/changeddigest afterclaim; no operationalDB/provider calls."
+    },
+    {
+      "command": "scopedRuff and independent read-only delta review",
+      "result": "PASS",
+      "evidence": "No P0-P2 blocker; exact66719B/SHA5e8c7834be0785d8bf9ff9be02b0b13c82904bbbcc3b712ba079a1d32ca06b25 and deep equality of entire public Sol entry confirmed."
+    }
+  ],
+  "eventId": "17ba1ef3-31cb-4bed-b947-ecf520560c64",
+  "sequence": 3,
+  "at": "2026-10-10T20:44:25.094Z"
+}

@@ -81,13 +81,15 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
     binary = Path(executable)
     assert binary.is_absolute() and binary.is_file()
     assert hashlib.sha256(binary.read_bytes()).hexdigest() == expected_sha
-    catalogue = os.environ.get("PINET_TEST_CODEX_MODEL_CATALOG_JSON")
-    if not catalogue:
-        pytest.skip("Explicit nonsensitive model catalogue required for the empty-home Sol probe")
-    model_catalogue = Path(catalogue)
-    assert model_catalogue.is_absolute() and model_catalogue.is_file()
-    advertised = {item["slug"]: item for item in json.loads(model_catalogue.read_bytes())["models"]}
-    assert all(advertised[model]["support_verbosity"] is True for model in ("gpt-6-luna", "gpt-6.1-sol"))
+    model_catalogue = None
+    if role == "creator":
+        catalogue = os.environ.get("PINET_TEST_CODEX_MODEL_CATALOG_JSON")
+        if not catalogue:
+            pytest.skip("Explicit nonsensitive Luna catalogue required for the empty-home creator probe")
+        model_catalogue = Path(catalogue)
+        assert model_catalogue.is_absolute() and model_catalogue.is_file()
+        advertised = {item["slug"]: item for item in json.loads(model_catalogue.read_bytes())["models"]}
+        assert advertised["gpt-6-luna"]["support_verbosity"] is True
     requests = []
 
     class Handler(BaseHTTPRequestHandler):
@@ -147,7 +149,12 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         home.mkdir()
         schema.write_text(json.dumps(Answer.model_json_schema()), encoding="utf-8")
         args = arguments(binary, tmp_path, schema, output, web=mode == "completed_web", role=role)
-        args += ["-c", "model_catalog_json=" + json.dumps(str(model_catalogue))]
+        if role == "creator":
+            args += ["-c", "model_catalog_json=" + json.dumps(str(model_catalogue))]
+        else:
+            from pinet_core.creation.adapter import review_model_catalogue
+            catalogue_args = [arg for arg in args if arg.startswith('model_catalog_json=')]
+            assert catalogue_args == ['model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
         # Only this test directs the process to a local unauthenticated fake server.
         args += ["-c", f'model_providers.pinet-bounded-openai.base_url="http://127.0.0.1:{server.server_port}/v1"',
                  "-c", "model_providers.pinet-bounded-openai.requires_openai_auth=false"]
@@ -160,6 +167,7 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         (tmp_path / "cli.stderr.txt").write_bytes(result.stderr.encode("utf-8"))
         (tmp_path / "request.private.json").write_text(json.dumps(requests), encoding="utf-8")
         events = [json.loads(line) for line in result.stdout.splitlines()]
+        assert "Model metadata for" not in result.stdout
         assert len(requests) == 1 and requests[0]["model"] == ("gpt-6-luna" if role == "creator" else "gpt-6.1-sol")
         assert requests[0]["reasoning"]["effort"] == ("medium" if role == "creator" else "low")
         assert requests[0]["text"]["verbosity"] == ("low" if role == "creator" else "medium")

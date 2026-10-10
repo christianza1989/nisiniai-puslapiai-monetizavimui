@@ -25,6 +25,47 @@ def test_execution_profile_is_part_of_claimed_snapshot(monkeypatch):
     assert adapter.team_instruction_hash() != before
 
 
+def test_fixed_catalogue_has_original_single_model_and_actual_review_arguments():
+    from pinet_core.tasks.codex import arguments as consultation_arguments
+    path = adapter.review_model_catalogue()
+    data = json.loads(path.read_bytes())
+    assert [item['slug'] for item in data['models']] == ['gpt-6.1-sol']
+    assert data['models'][0]['support_verbosity'] is True
+    assert adapter.role_profile('critic')['model_catalogue_sha256'] == adapter.REVIEW_MODEL_CATALOGUE_SHA256
+    for role in ('critic', 'coordinator'):
+        args = adapter.arguments('fixed', 'workspace', 'schema', 'output', web=False, role=role)
+        assert [arg for arg in args if arg.startswith('model_catalog_json=')] == [
+            'model_catalog_json=' + json.dumps(str(path))]
+    assert adapter.arguments('fixed', 'workspace', 'schema', 'output', web=False) == consultation_arguments(
+        'fixed', 'workspace', 'schema', 'output')
+
+
+@pytest.mark.parametrize('missing', [False, True])
+def test_catalogue_not_present_or_modified_blocks_team_snapshot_and_review_arguments(tmp_path, monkeypatch, missing):
+    path = tmp_path / 'catalogue.json'
+    if not missing:
+        path.write_bytes(adapter.REVIEW_MODEL_CATALOGUE.read_bytes() + b' ')
+    monkeypatch.setattr(adapter, 'REVIEW_MODEL_CATALOGUE', path)
+    for call in (adapter.team_instruction_hash,
+                 lambda: adapter.arguments('fixed', 'workspace', 'schema', 'output', web=False, role='critic')):
+        with pytest.raises(RunnerError, match='runner_unavailable'):
+            call()
+    # The native GUIDE imports default arguments; a review catalogue is not its dependency.
+    assert not any(arg.startswith('model_catalog_json=') for arg in adapter.arguments(
+        'fixed', 'workspace', 'schema', 'output', web=False))
+
+
+def test_changed_exact_catalogue_hash_changes_claimed_snapshot(tmp_path, monkeypatch):
+    import hashlib
+    before = adapter.team_instruction_hash()
+    raw = adapter.REVIEW_MODEL_CATALOGUE.read_bytes() + b'\n'
+    path = tmp_path / 'review.json'
+    path.write_bytes(raw)
+    monkeypatch.setattr(adapter, 'REVIEW_MODEL_CATALOGUE', path)
+    monkeypatch.setattr(adapter, 'REVIEW_MODEL_CATALOGUE_SHA256', hashlib.sha256(raw).hexdigest())
+    assert adapter.team_instruction_hash() != before
+
+
 @pytest.mark.parametrize("role", ["critic", "coordinator"])
 @pytest.mark.parametrize("failed", [False, True])
 async def test_success_and_failed_private_evidence_match_actual_cli_model(tmp_path, monkeypatch, role, failed):

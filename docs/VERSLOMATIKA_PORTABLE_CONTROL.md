@@ -1,5 +1,7 @@
 # Verslomatika kūrimas ir testavimas kitame PC
 
+Verslo review vykdytojas kartu su source turi `runtime/config/creation-review-models.json` ir jo fiksuotą SHA. Nepakeistą source-owned katalogą parenka adapteris; owner config/auth/cache nekopijuojami. Naujo PC creation preflight patikrina ir katalogą prieš pirmą rezervaciją. Tiksliai įdiegtos CLI0.156.1 production-argument loopback patikra su tuščiu auth katalogu7PASS; actual kito PC autentifikacija ir verslo rezultatas dar nepatikrinti. [Katalogo kilmė ir ribos](../agent-business-core/runtime/config/CREATION_REVIEW_MODELS.md).
+
 Dabartinis source parengimas apima0017 kliento profilio admission ir additive0018 verslo peržiūros modelio CHECK. Naujas target PC vykdo `alembic upgrade head`, ne seną0016 komandą. Verslo kūrėjas, konsultacija ir native GUIDE naudoja Luna; tik verslo kritikas ir koordinatorius fiksuotai naudoja Sol. Prieš Sol rezervaciją portalas turi perimti tikslų atnaujintą team kontraktą. Tikras kito PC modelio veikimas, hosted ryšys ir kliento pipeline priėmimas lieka atskiros patikros. Jau esančios Sol istorijos downgrade į0017 atmetamas; grąžinant vykdymą į Luna reikia išlaikyti jos skaitymo suderinamumą.
 
 2026-10-10 aktualus savininko sprendimas: dar kuriame ir testuojame, tęsiame su PostgreSQL be Supabase. Paruošti kitam PC; viešo paleidimo dabar nėra. Šis dokumentas yra paleidimo eiga, ne jau atlikto perkėlimo ar hosted priėmimo pažyma.

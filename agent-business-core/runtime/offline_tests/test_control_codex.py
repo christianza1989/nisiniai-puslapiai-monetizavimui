@@ -146,3 +146,28 @@ async def test_process_pumps_structured_completion_and_authority_stop(monkeypatc
             await codex.run({"message": "x"*262144}, authorized)
         assert error.value.code == "authorization_revoked"
     assert not list(tmp_path.glob("consult-*"))
+
+
+@pytest.mark.parametrize("usage", [{"input_tokens": 7, "output_tokens": 3},
+                                    {"input_tokens": 0}, None])
+async def test_completed_process_usage_survives_answer_rejection(monkeypatch, tmp_path, usage):
+    cfg = settings()
+    for key, value in {"chat_runner_enabled": True, "chat_codex_executable": sys.executable,
+                       "chat_codex_sha256": hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest(),
+                       "chat_workspace": str(tmp_path), "chat_runner_seconds": 10}.items():
+        monkeypatch.setattr(cfg, key, value)
+    script = ("import sys,json; from pathlib import Path; sys.stdin.read(); "
+              "Path(sys.argv[1]).write_text(json.dumps({'answer':3,'limitations':[]})); "
+              "print(json.dumps({'type':'turn.completed','usage':json.loads(sys.argv[2])}))")
+    monkeypatch.setattr(codex, "arguments", lambda _e, _w, _s, output:
+                        [sys.executable, "-c", script, str(output), json.dumps(usage)])
+
+    async def authorized():
+        return True
+
+    # Actual synthetic process completion; malformed answer remains rejected, no provider involved.
+    with pytest.raises(RunnerError) as error:
+        await codex.run({"message": "Sintetinis naudojimo apskaitos testas."}, authorized)
+    assert error.value.code == "output_invalid"
+    assert error.value.receipt == (usage or {})
+    assert not list(tmp_path.glob("consult-*"))

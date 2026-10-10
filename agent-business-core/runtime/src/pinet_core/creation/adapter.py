@@ -121,10 +121,17 @@ def instructions(*, structure_repair=False, language_repair=False):
     return value, hashlib.sha256(value.encode()).hexdigest()
 
 
-def arguments(executable, workspace, schema, output, *, web):
+def arguments(executable, workspace, schema, output, *, web, role="creator"):
+    if role not in {"creator", "critic", "coordinator"}:
+        raise RunnerError("review_invalid")
     result = consult_arguments(executable, workspace, schema, output)
     at = result.index('web_search="disabled"')
     result[at] = 'web_search="live"' if web else 'web_search="disabled"'
+    # These two roles review one supplied draft and have no tools or research.
+    # Keep the complete review checks while reserving output for their typed report.
+    if role != "creator":
+        at = result.index('model_reasoning_effort="medium"')
+        result[at] = 'model_reasoning_effort="low"'
     return result
 
 
@@ -243,7 +250,7 @@ async def run_role(context, still_authorized, *, role, seconds):
         remaining_seconds = min(seconds, cfg.creation_runner_seconds) - (monotonic() - started)
         if remaining_seconds <= 0:
             raise RunnerError("run_timeout")
-        result, receipt = await execute(arguments(binary, folder, schema, output, web=web),
+        result, receipt = await execute(arguments(binary, folder, schema, output, web=web, role=role),
             prompt=prompt, cwd=folder, env=child_environment(), output=output, seconds=remaining_seconds,
             still_authorized=still_authorized, parse_trace=trace.parse, on_event=trace.event,
             stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl")

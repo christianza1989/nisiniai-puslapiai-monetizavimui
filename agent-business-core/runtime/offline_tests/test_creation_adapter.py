@@ -18,6 +18,22 @@ def test_actual_instruction_fingerprint_and_fixed_tool_policy():
     assert args[args.index('--sandbox')+1] == 'read-only' and '--ignore-rules' in args
 
 
+@pytest.mark.parametrize('role,effort', [('creator', 'medium'), ('critic', 'low'), ('coordinator', 'low')])
+def test_review_role_profile_retains_exact_process_policy(role, effort):
+    baseline = arguments('fixed.exe', 'fixed', 'schema', 'output', web=False)
+    args = arguments('fixed.exe', 'fixed', 'schema', 'output', web=False, role=role)
+    setting = next(value for value in args if value.startswith('model_reasoning_effort='))
+    assert setting == f'model_reasoning_effort="{effort}"'
+    assert [value for value in args if not value.startswith('model_reasoning_effort=')] == [
+        value for value in baseline if not value.startswith('model_reasoning_effort=')]
+    assert not any('max_output_tokens' in value for value in args)
+
+
+def test_unknown_role_cannot_select_a_process_profile():
+    with pytest.raises(RunnerError, match='review_invalid'):
+        arguments('fixed.exe', 'fixed', 'schema', 'output', web=False, role='customer-selected')
+
+
 @pytest.mark.parametrize('change', ['missing', 'empty', 'edited'])
 async def test_typography_snapshot_change_stops_creator_before_dispatch(tmp_path, monkeypatch, change):
     import sys

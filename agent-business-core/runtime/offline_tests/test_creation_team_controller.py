@@ -137,7 +137,8 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         schema, output, home = tmp_path / "schema.json", tmp_path / "output.json", tmp_path / "empty-home"
         home.mkdir()
         schema.write_text(json.dumps(Answer.model_json_schema()), encoding="utf-8")
-        args = arguments(binary, tmp_path, schema, output, web=mode == "completed_web")
+        role = "critic" if mode == "completed" else "creator"
+        args = arguments(binary, tmp_path, schema, output, web=mode == "completed_web", role=role)
         # Only this test directs the process to a local unauthenticated fake server.
         args += ["-c", f'model_providers.pinet-bounded-openai.base_url="http://127.0.0.1:{server.server_port}/v1"',
                  "-c", "model_providers.pinet-bounded-openai.requires_openai_auth=false"]
@@ -151,6 +152,7 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         (tmp_path / "request.private.json").write_text(json.dumps(requests), encoding="utf-8")
         events = [json.loads(line) for line in result.stdout.splitlines()]
         assert len(requests) == 1 and requests[0]["model"] == "gpt-6-luna"
+        assert requests[0]["reasoning"]["effort"] == ("low" if role == "critic" else "medium")
         tools = [tool["type"] for tool in requests[0].get("tools", [])]
         # gpt-6-luna uses Responses Lite: tools are declared in input messages,
         # rather than the classic API's top-level hosted tools array.

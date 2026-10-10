@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Structured critic response is truncated before nine mandatory checks; test a role-specific execution profile without relaxing acceptance.",
+  "category": "code",
+  "evidence": [
+    "Actual source546e545 UI job44058d2e: creator succeeded, critic partial JSON/max_output_tokens, no terminal usage or accepted revision; original private receipt retained. Scope issue77 comment6101157030."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6101157030",
+  "rollback": "Scoped revert of the role-specific execution profile; retain immutable earlier attempts and diagnostic receipts.",
+  "id": "upgrade-6a42bff1-6b15-4739-a1c3-82d57df98f5b",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "546e545a0785d97bc2011ca88ee217e7f19e44d2",
+  "createdAt": "2026-10-10T19:09:34.633Z"
+}

@@ -12,8 +12,8 @@ from test_customer_public import customers, verified  # noqa: F401
 from pinet_core.config import settings
 from pinet_core.control.models import Membership
 from pinet_core.control.routes import scope
-from pinet_core.creation import team, worker
-from pinet_core.creation.models import Attempt, Job, TeamEvent
+from pinet_core.creation import adapter, team, worker
+from pinet_core.creation.models import Artifact, Attempt, Job, Revision, TeamEvent
 from pinet_core.creation.review import critic_sha256, draft_sha256
 from pinet_core.models import utcnow
 from pinet_core.tasks.codex_transport import RunnerError
@@ -240,3 +240,123 @@ async def test_final_receipt_storage_delay_cannot_promote_after_deadline(creatio
     async with scope(user=me["user_id"]) as tx:
         job = await tx.scalar(select(Job).where(Job.creation_id == row["creation_id"]))
         assert job.failure_code == "run_timeout" and len(job.usage["attempts"]) == 3
+
+
+def graph_candidate(*, broken):
+    value = draft()
+    value["content_plan"] = [{
+        "path": "/gidai/" + path + "/", "title": title, "head_query": title,
+        "intent": "Padėti komandai pasirinkti tinkamą praktinio mokymo veiksmą.",
+        "audience_problem": "Komanda nori saugiai išbandyti naują darbo būdą ir įvertinti jo naudą.",
+        "business_goal": "Patikrinti tikrą tinkamų komandų susidomėjimą siauru mokymo pasiūlymu.",
+        "primary_topic": "Praktinis komandos mokymas", "reason": "Atskiras skaitytojo klausimas reikalauja atskiro atsakymo.",
+        "month": "", "seasonal_hook": "", "pillar_path": "",
+        "outline": ["Pasirinkti užduotį.", "Saugiai pasirengti bandymui.", "Palyginti bandymo rezultatą."],
+        "source_queries": ["Praktinio komandos mokymo užduoties pasirinkimas"], "source_urls": [],
+        "internal_links": ["/"], "media_brief": "Parodyti tris darbo užduoties pasirinkimo žingsnius, be fiktyvių rezultatų.",
+        "media_alt": "Trys komandos darbo užduoties pasirinkimo žingsniai", "priority": "initial",
+    } for path, title in (("uzduotis", "Kaip pasirinkti mokymo užduotį?"),
+        ("duomenys", "Kokius duomenis naudoti mokymo metu?"), ("rezultatas", "Kaip įvertinti mokymo rezultatą?"))]
+    root = value["content_plan"][0]["path"]
+    for support in value["content_plan"][1:]:
+        support["pillar_path"] = root
+        support["internal_links"].append(root)
+    if broken:
+        value["content_plan"][0]["pillar_path"] = root
+    return value
+
+
+def structural_runner(calls, *, always_broken=False):
+    async def run(context, authorized, *, role, seconds):
+        assert await authorized() and seconds > 0
+        calls.append(role)
+        if role == "creator":
+            if len(calls) == 1:
+                assert not context.get("structure_repair")
+                value = graph_candidate(broken=True)
+            else:
+                assert context["structure_repair"] is True and context["permitted_web_actions"] == 0
+                assert context["structural_feedback"]["check"] == "creator-graph.v1"
+                assert context["structural_feedback"]["issues"][0]["field"] == "draft:/content_plan/0/pillar_path"
+                assert context["current_draft"]["content_plan"][0]["pillar_path"] == "/gidai/uzduotis/"
+                assert "assistant_reply" not in context["current_draft"]
+                assert context["expected_instruction_hash"] == adapter.role_instruction_hash("creator", structure_repair=True)
+                value = graph_candidate(broken=always_broken)
+        else:
+            assert context["round_number"] == 2
+            value = critic(context) if role == "critic" else coordinator(context)
+        return value, {"usage": {"input_tokens": 100, "output_tokens": 20},
+                       "web_search_count": 2 if len(calls) == 1 else 0}
+    return run
+
+
+@pytest.mark.parametrize("always_broken", [False, True])
+async def test_structural_failure_charged_visible_and_only_one_correction(creation, always_broken):
+    c = creation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    cid, calls = row["creation_id"], []
+    assert await worker.execute_once(role_runner=structural_runner(calls, always_broken=always_broken))
+    view = await team_read(c, auth, cid)
+    assert calls == (["creator", "creator"] if always_broken else ["creator", "creator", "critic", "coordinator"])
+    assert len(view["events"]) == len(calls) * 2
+    first = view["events"][1]
+    assert first["state"] == "failed" and first["data"]["failure_code"] == "output_invalid"
+    assert first["data"]["web_search_count"] == 2 and first["data"]["usage"]["input_tokens"] == 100
+    assert first["data"]["candidate_sha256"] is None  # An invalid candidate is never accepted.
+    assert view["attempts"][0]["instruction_hash"] != view["attempts"][1]["instruction_hash"]
+    assert [a["round_number"] for a in view["attempts"][:2]] == [1, 2]
+    assert view["current_revision"] == (None if always_broken else 1)
+    assert bool(view["accepted_candidate_sha256"]) is (not always_broken)
+    files = (await c["client"].get("/customer/v2/creations/"+cid+"/artifacts", headers=auth)).json()["data"]["items"]
+    assert len(files) == (0 if always_broken else 3)
+    async with scope(user=me["user_id"]) as tx:
+        job = await tx.scalar(select(Job).where(Job.creation_id == cid))
+        assert job.usage["web_search_count"] == 2 and len(job.usage["attempts"]) == len(calls)
+        assert job.usage["attempts"][0]["creator_repair_context"]["candidate"]["content_plan"][0]["pillar_path"] == "/gidai/uzduotis/"
+
+
+@pytest.mark.parametrize("barrier", ["budget", "cancel", "revoke", "deadline"])
+async def test_structural_correction_cannot_bypass_current_barriers(creation, monkeypatch, barrier):
+    c = creation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    cid, calls = row["creation_id"], []
+    if barrier == "budget":
+        monkeypatch.setattr(settings(), "creation_daily_limit", 1)
+    clock = [0]
+    monkeypatch.setattr(team, "monotonic", lambda: clock[0])
+    base = structural_runner(calls)
+    async def fenced(context, authorized, *, role, seconds):
+        value, receipt = await base(context, authorized, role=role, seconds=seconds)
+        if barrier == "cancel":
+            assert (await c["client"].post("/customer/v2/creations/"+cid+"/cancel", headers=auth)).status_code == 200
+        elif barrier == "revoke":
+            async with AsyncSession(c["admin"]) as tx, tx.begin():
+                await tx.execute(update(Membership).where(Membership.user_id == me["user_id"]).values(enabled=False))
+        elif barrier == "deadline":
+            clock[0] = settings().creation_runner_seconds + 1
+        return value, receipt
+    assert await worker.execute_once(role_runner=fenced)
+    assert calls == ["creator"]
+    # Administrative evidence inspects this synthetic case even after current RLS authority is revoked.
+    async with AsyncSession(c["admin"]) as tx:
+        job = await tx.scalar(select(Job).where(Job.creation_id == cid))
+        attempts = list(await tx.scalars(select(Attempt).where(Attempt.creation_id == cid)))
+        assert len(attempts) == 1
+        assert not list(await tx.scalars(select(Revision).where(Revision.creation_id == cid)))
+        assert not list(await tx.scalars(select(Artifact).where(Artifact.creation_id == cid)))
+        if barrier == "revoke":
+            assert job.usage is None  # Current RLS fences even a late accounting write; original provider files remain private.
+        else:
+            assert len(job.usage["attempts"]) == 1 and job.usage["attempts"][0]["usage"]["input_tokens"] == 100
+            assert job.usage["web_search_count"] == 2
+    if barrier == "revoke":
+        assert (await c["client"].get("/customer/v2/creations/"+cid+"/team", headers=auth)).status_code == 404
+        async with scope(user=me["user_id"]) as tx:
+            start_day = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+            assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"),
+                {"e": c["environment"], "s": start_day}) == 1
+    if barrier != "revoke":
+        view = await team_read(c, auth, cid)
+        assert view["current_revision"] is None and view["accepted_candidate_sha256"] is None

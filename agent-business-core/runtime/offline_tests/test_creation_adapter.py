@@ -15,6 +15,51 @@ def test_actual_instruction_fingerprint_and_fixed_tool_policy():
     assert args[args.index('--sandbox')+1] == 'read-only' and '--ignore-rules' in args
 
 
+def test_structure_only_profile_is_smaller_exact_canonical_context_and_disables_repeat_research():
+    from pinet_core.creation.adapter import REPAIR_INSTRUCTION_FILES, role_instruction_hash
+    initial, _ = instructions()
+    repair, digest = instructions(structure_repair=True)
+    assert len(repair.encode()) < len(initial.encode()) * .4
+    assert "No new market research or web actions" in repair
+    assert "pillar_path=''" in repair
+    assert all(path in repair for path in REPAIR_INSTRUCTION_FILES)
+    assert digest == role_instruction_hash("creator", structure_repair=True)
+    assert digest != role_instruction_hash("creator")
+
+
+async def test_adapter_preserves_graph_failed_original_and_bounded_repair_context(tmp_path, monkeypatch):
+    import sys
+    from copy import deepcopy
+    from pathlib import Path
+
+    from test_creation_content_plan import planned
+    from test_creation_review import draft as fixture
+
+    from pinet_core.config import settings
+    from pinet_core.creation import adapter
+    # Invoke the registered fixture's value, with no fixture bypass in production.
+    value = planned(fixture.__wrapped__())
+    value["content_plan"][0]["pillar_path"] = value["content_plan"][0]["path"]
+    original = deepcopy(value)
+    monkeypatch.setattr(adapter, "available", lambda: (Path(sys.executable), tmp_path))
+    monkeypatch.setattr(settings(), "creation_web_search_enabled", True)
+    async def executed(args, **kwargs):
+        kwargs["output"].write_text(json.dumps(value), encoding="utf-8")
+        return value, {"usage": {"input_tokens": 17,"output_tokens":4},"web_search_count":2}
+    monkeypatch.setattr(adapter, "execute", executed)
+    async def authorized():
+        return True
+    with pytest.raises(RunnerError) as error:
+        await adapter.run_role({"expected_instruction_hash":adapter.role_instruction_hash("creator"),
+            "permitted_web_actions":2}, authorized, role="creator", seconds=30)
+    assert error.value.code == "output_invalid" and value == original
+    assert error.value.receipt["web_search_count"] == 2
+    assert error.value.receipt["creator_repair_context"]["issues"][0]["field"].endswith("/pillar_path")
+    folder = next(tmp_path.iterdir())
+    assert json.loads((folder/"output.private.json").read_text("utf-8")) == original
+    assert json.loads((folder/"failure.private.json").read_text("utf-8"))["code"] == "output_invalid"
+
+
 def test_web_trace_is_bounded_and_other_tools_rejected():
     trace = Trace(True)
     for i in range(6):

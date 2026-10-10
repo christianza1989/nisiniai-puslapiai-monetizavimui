@@ -32,10 +32,12 @@ from .contracts import (
     WorkerEvent,
 )
 from .control.routes import router as control_router
+from .customer.routes import router as customer_router
 from .db import db
 from .facebook.routes import router as facebook_router
 from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, utcnow
 from .order_tests import Confirmation, QuoteInput
+from .public_projects.routes import router as public_router
 from .security import digest, operator_auth, signed_edge, worker_auth
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
@@ -61,6 +63,8 @@ app.include_router(facebook_router)
 app.include_router(control_router)
 app.include_router(task_router)
 app.include_router(operations_router)
+app.include_router(customer_router)
+app.include_router(public_router)
 
 
 @app.post("/operator/sites/{site_id}/order-tests", dependencies=[Depends(operator_auth)])

@@ -27,7 +27,10 @@ class Organization(ControlScope, Base):
     __tablename__ = "control_organizations"
     key: Mapped[str] = mapped_column(String)
     display_name: Mapped[str] = mapped_column(String)
-    __table_args__ = (UniqueConstraint("id", "environment_id"), UniqueConstraint("key", "environment_id"))
+    creator_user_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    __table_args__ = (UniqueConstraint("id", "environment_id"), UniqueConstraint("key", "environment_id"),
+        ForeignKeyConstraint(["creator_user_id", "environment_id"], ["control_users.id", "control_users.environment_id"],
+                             name="control_org_creator_fk"))
 
 
 class Membership(ControlScope, Base):

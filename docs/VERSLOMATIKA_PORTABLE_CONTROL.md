@@ -32,6 +32,34 @@ Windows sistemoje apriboti `.env` ir `artifacts/control-local` teises savo pasky
 
 Portalo savininko paruoštas vietinis BFF turi jungtis į `http://127.0.0.1:8854`, dirbti vietiniu režimu ir klausytis loopback. Jo konkreti paleidimo instrukcija saugoma portalo repo. Prisijungus tikrinti: savo portfolio → verslas → katalogas → užduotis → jos istorija / ataskaita → reload → logout. Kito verslo / organizacijos UUID ir atšaukta sesija nesuteikia prieigos.
 
+## Vietinės klientų paskyros ir viešų projektų katalogas
+
+P3/P4 prideda migraciją0012 ir bendros tapatybės klientų paskyras. Po `alembic upgrade head`, švaraus source patikros ir private source pin atnaujinimo sąmoningai įjungti tik vietiniam bandymui:
+
+```text
+PINET_CUSTOMER_ENABLED=true
+PINET_CUSTOMER_PORTAL_ORIGIN=http://127.0.0.1:3017
+PINET_CUSTOMER_OUTBOX_DIRECTORY=artifacts/customer-outbox
+PINET_PUBLIC_PROJECTS_ENABLED=true
+PINET_CHAT_ENABLED=false
+PINET_CHAT_RUNNER_ENABLED=false
+```
+
+Portalas ir BFF turi naudoti tą patį exact loopback origin bei core portą. Šiame PC naujas P3/P4 core yra8855, portalas3017; setup kitame PC leidžia pasirinkti kitus laisvus portus. Kitame PC bazė pradeda be testinių paskyrų, intakes ir viešų projektų. Registracija → private outbox nuoroda → el. pašto patvirtinimas → atskiras login → tuščias portfolio → verslo užklausa → atkūrimas → sena sesija401. Vien domeno įvedimas nesuteikia esamo verslo teisių. Atkūrimo ir patvirtinimo raw token nenurodyti žurnale, URL query, API atsakyme, ekrano įraše ar Git; nuorodos fragmentą portalas pašalina ir veiksmą atlieka same-origin POST.
+
+`artifacts/customer-outbox` yra privati vietinė pranešimų saugykla, ne pristatymas į inbox. Taikyti tokias pačias OS teises kaip `.env`; katalogas turi likti runtime `artifacts` viduje. Neperkelti jo į public assets. Storage gedimas grąžina503 ir paskyros pakeitimo transakcija atšaukiama.
+
+Admin procedūra nėra klientui prieinama HTTP funkcija. Privatus JSON `draft` įvesties failas turi `project`, `evidence`, timezone turintį `publish_at`; `approve` — `slug` ir exact dabartinį `expected_revision`; `revoke` — `slug`. `intake-decision` turi `intake_id`, `approve`, peržiūrėtą `note`, private `evidence_reference` ir tik patvirtinant explicit esamo registruoto `business_id`. Būtina local/test administracinė jungtis. Paleisti vieną pasirinktą veiksmą:
+
+```powershell
+uv run python scripts/customer_public_admin.py draft --input artifacts/private-review/draft.json
+uv run python scripts/customer_public_admin.py approve --input artifacts/private-review/approve.json
+uv run python scripts/customer_public_admin.py revoke --input artifacts/private-review/revoke.json
+uv run python scripts/customer_public_admin.py intake-decision --input artifacts/private-review/intake-decision.json
+```
+
+Tai atskirų veiksmų pavyzdžiai, ne visų keturių iš eilės vykdymo nurodymas. Materialus projekto pakeitimas panaikina ankstesnį approval; public skaitymas grąžina tik patvirtintą, jau publikuotiną, neatšauktą reviziją. Viešo katalogo įrašas neperima private portfolio/grants ir nesuteikia automatizacijos veikimo įrodymo. AI verslo kūrimo vykdytojas nėra šio P3/P4 setup dalis. [Faktiniai bandymai ir ribos](VERSLOMATIKA_CUSTOMER_PUBLIC.md).
+
 ## Tikras konsultanto worker
 
 Pradinis setup palieka `PINET_CHAT_ENABLED=false` ir `PINET_CHAT_RUNNER_ENABLED=false`. Sustabdytas executor neblokuoja savo istorijos, įvykių ir ataskaitų skaitymo ar queued task atšaukimo; sesija ir aktualūs grants lieka būtini. Viena realizuota capability — `business-planner` / `chat.consult`; kitos agentų rolės nėra sukuriamos katalogo tekstais. Konsultantas teikia planą, neturi tools ir nevykdo klientų sistemų pakeitimų. Katalogo availability aprašo serverio konfigūraciją; worker health yra `unknown`, o ne išgalvotas „online“.

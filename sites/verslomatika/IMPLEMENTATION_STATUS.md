@@ -1,4 +1,24 @@
-# Verslomatika dashboard and portable backend
+# Verslomatika customer accounts, public projects and dashboard
+
+## Current priority — autonomous test-customer creation today
+
+2026-10-10 direct human steering in this core chat: continue autonomously while the owner is away and have a working platform for a test customer by evening. Required next deliverable is a real customer idea → AI business proposition/site draft → delivered artifact/preview → critique/change request → revised artifact journey. Also add a dashboard domain search/filter over our expired-domain inventory and AI recommendations for the chosen niche; list membership is not verified current availability or ownership. Concrete creation execution and domain catalogue are **not implemented yet**. Continue after P3/P4 delivery; do not stop at the bounded account packet. Public/server/domain reachability and external mail remain actual launch dependencies to verify, not invented readiness.
+
+P3/P4 backend bounded acceptance is locally verified: prior combined80PASS, follow-up21PASS, actual migration rehearsal,9approved public projects and director BFF customer lifecycle. Full browser password mutations and final frontend build/mobile are separate outstanding evidence. [Current P3/P4 receipt](../../docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md). The earlier deferred deployment/dashboard entries below are historical context, not a claim that today's expanded creation task is complete.
+
+## Latest pipeline test instruction — 2026-10-10
+
+The human directly asked in this core chat to test the complete customer UI pipeline once the current system is prepared: register, speak with AI about exact `mokyai-ai.lt`, let AI prepare the business, inspect its delivered work, criticize it/request changes, repair missing core behavior and repeat with other synthetic businesses. Private test fixture may use the owner's `info@pinet.lt`; other details must be synthetic and are not public business facts. This expands the next local implementation beyond the existing read-only operator planner. The full client creation/review/revision executor is **not yet implemented or accepted**. First complete the in-progress P3/P4 paired path, then implement its concrete missing execution contract and test it through UI with real core persistence/AI receipts. Do not convert this future full-pipeline test into a claim that the current planner already builds businesses.
+
+Shared calibration method: `SKILLS/business-agent-calibration/SKILL.md` and create-and-calibrate/runbook, adapted to the expressly requested text UI creation flow. Preserve original FAIL and intervention history; separate regression/train from new cases; private fixtures, bounded calls and actual per-business source/model/instruction/receipt versions. No public deployment, voice channel, live SMTP, payments or customer-system writes are activated by this entry. Earlier dashboard and P3/P4 packets remain bounded checkpoints; completing one does not finish this expanded pipeline.
+
+## Active expanded instruction — 2026-10-10
+
+**Mode: DEVELOPMENT/TESTING. Full local website implementation continues; P3/P4 core work is in progress.** Human authority was verified directly in director chat01a0dcf8-8ade-7883-877b-8d5dba4e8c79 turns01a124e1-b3ea-7591-a18d-ab3071f8a31d ("igyvendinkite viska") and01a1248e-c9d9-7040-b5b2-13ecbafb5dc6. Earlier owner dashboard/portable acceptance below remains historical and does not complete this expanded instruction. The owner in this chat reaffirms that we are still developing/testing.
+
+Current core branch `codex/verslomatika-customer-public-core-20261010`, managed worktree `verslomatika-customer-core`; portal/BFF/UI remain with Kordinatorius A in its own repository. New core8855 and portal3017 are reserved; old services untouched. Canonical customer/public checkpoint191ed795e6d4aa5c67d8e1abf849dcaf00cea857 follows integrated private main13c9649/publicec8a9c0. [P3/P4 scope and pending acceptance](../../docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md), [issue73](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/73).
+
+Authorized now: local verified customer signup/login/recovery, real persisted claim/create intake with reviewed grants, and a separate revision-approved public project projection. Local private development outbox only. No Supabase, external email, public deployment/tunnel, autonomous worker execution, domain-derived ownership, payments or client-system writes. PostgreSQL actual storage/RLS, deny/revoke/race and paired browser tests are required before acceptance. Runtime source is being implemented; no new PASS or complete product claim yet.
 
 ## Current owner instruction — 2026-10-10
 

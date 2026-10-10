@@ -1,0 +1,30 @@
+{
+  "siteId": "verslomatika",
+  "summary": "P3/P4 actual implementation names and regression scope supplement the initial planned path reservation. Explicit public_projects projection/admin and combined customer/security tests, metadata mounting and current platform status.",
+  "category": "workflow",
+  "evidence": [
+    "upgrade-22251602-e55f-4318-8e1b-cd31b53fe350 initial planned public_portfolio names differ from actual public_projects modules",
+    "Own issue73 actual scoped source and fresh current main13c9649/publicec8a9c0; prior failure receipts preserved privately"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/public_projects/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/public_projects/models.py",
+    "agent-business-core/runtime/src/pinet_core/public_projects/projection.py",
+    "agent-business-core/runtime/src/pinet_core/public_projects/routes.py",
+    "agent-business-core/runtime/src/pinet_core/public_projects/admin.py",
+    "agent-business-core/runtime/src/pinet_core/customer/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/customer/admin.py",
+    "agent-business-core/runtime/scripts/customer_public_admin.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/tests/test_customer_public.py",
+    "agent-business-core/runtime/tests/test_control_operations.py",
+    "agent-business-core/runtime/tests/test_control_portfolio.py",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/73",
+  "rollback": "Scoped revert; no private data or foreign services changed.",
+  "id": "upgrade-e1ca879a-0057-4244-afbb-e3c6fc58458c",
+  "branch": "codex/verslomatika-customer-public-core-20261010",
+  "baseSha": "191ed795e6d4aa5c67d8e1abf849dcaf00cea857",
+  "createdAt": "2026-10-10T09:02:39.189Z"
+}

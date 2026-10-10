@@ -1,0 +1,39 @@
+{
+  "siteId": "verslomatika",
+  "summary": "P3/P4 lack a publication-safe public project projection and verified customer email/signup/recovery/intake over the accepted core identity/grant registry.",
+  "category": "code",
+  "evidence": [
+    "docs/VERSLOMATIKA_DASHBOARD_ACCEPTANCE.md at ae03e6f2657d567a64c3aa597e5db76f12a39b0c",
+    "Human turns01a124e1-b3ea-7591-a18d-ab3071f8a31d and01a1248e-c9d9-7040-b5b2-13ecbafb5dc6 in authorized director chat",
+    "Current main content-package contracts do not define public operational portfolio approval"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer/models.py",
+    "agent-business-core/runtime/src/pinet_core/customer/routes.py",
+    "agent-business-core/runtime/src/pinet_core/customer/service.py",
+    "agent-business-core/runtime/src/pinet_core/public_portfolio/models.py",
+    "agent-business-core/runtime/src/pinet_core/public_portfolio/routes.py",
+    "agent-business-core/runtime/src/pinet_core/public_portfolio/service.py",
+    "agent-business-core/runtime/migrations/versions/0012_customer_public.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/src/pinet_core/control/models.py",
+    "agent-business-core/runtime/src/pinet_core/control/routes.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/scripts/customer_public_contract.py",
+    "agent-business-core/runtime/scripts/public_portfolio_admin.py",
+    "agent-business-core/runtime/scripts/customer_intake_admin.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/tests/test_customer_accounts.py",
+    "agent-business-core/runtime/tests/test_public_portfolio.py",
+    "docs/contracts/verslomatika-customer.openapi.json",
+    "docs/contracts/verslomatika-public-portfolio.openapi.json",
+    "docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/73",
+  "rollback": "Scoped revert and own rehearsal-only migration downgrade; preserve existing8854 and source71 pilots. Keep customer/public flags defaultOFF, never copy private outbox/credentials/database into Git.",
+  "id": "upgrade-22251602-e55f-4318-8e1b-cd31b53fe350",
+  "branch": "codex/verslomatika-customer-public-core-20261010",
+  "baseSha": "ae03e6f2657d567a64c3aa597e5db76f12a39b0c",
+  "createdAt": "2026-10-10T08:30:49.581Z"
+}

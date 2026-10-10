@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-10T09:25:43.000Z",
+  "state": "VENDOR_REPORTS_REPUTATION_FIFTH_NATIVE_TEST_JUNK_BIDIRECTIONAL_TEST_REQUESTED",
+  "previousReceipt": "production-hostinger-filter-support-v4.json",
+  "mailbox": "info@promedical.lt",
+  "websiteSender": "uzklausos@promedical.lt",
+  "websiteTransport": "cloudflare_email",
+  "specialist": {
+    "name": "Fausta",
+    "reportedAtVilnius": "2026-10-10 12:16",
+    "finding": "Hostinger reports correct configuration/authentication and attributes Spam classification to sender reputation; recommends low consistent expected sending and individual Not spam training.",
+    "attributionScopeConfirmed": false,
+    "specificReputationSignalOrScore": null,
+    "filterExecutionOrderEstablished": false,
+    "incomingAllowListRejectsUnlistedSendersEstablished": false,
+    "incomingAllowListAuthenticatesSenderEstablished": false,
+    "formalTicketId": null,
+    "confirmedFix": false
+  },
+  "fifthNativeTest": {
+    "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-1",
+    "leadId": "c3bcd836-ed29-43d5-bdb4-b31f3519cf1a",
+    "sourcePath": "/kontaktai",
+    "createdAtMs": 1791623875873,
+    "messageLength": 173,
+    "d1Status": "notified",
+    "nativeLog": {
+      "event": "niche_lead_notified",
+      "siteId": "promedical",
+      "leadId": "c3bcd836-ed29-43d5-bdb4-b31f3519cf1a",
+      "transport": "cloudflare_email",
+      "timestampMs": 1791623877455
+    },
+    "receiverReceipt": "production-native-support-learning-inbox-v1.json",
+    "receivedMessageId": "<nQVw5qwAaZz1S4L7u9JnQkW1iGacrXZWDGOe@promedical.lt>",
+    "inboxMatches": 0,
+    "junkMatches": 1,
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass",
+    "approvedDkimFragmentPresent": true,
+    "spamFlag": "Yes",
+    "manualFolderOrFlagChange": false,
+    "automaticInbox": false,
+    "reasonForNewTest": "Independent delayed-learning check almost two hours after the first own message was marked Not spam; no sending burst or mailbox-setting change. Waiting and one prior learning action have not yet proved automatic Inbox routing."
+  },
+  "followup": {
+    "sentAtVilnius": "2026-10-10 12:19",
+    "scope": "Reported fifth own test's saved/notified/Junk/authentication result, requested domain versus shared sending-IP reputation finding, safe supported action, unresolved allow-list semantics and formal email technical escalation if needed. Existing approved original headers referenced; no new complete-header packet transmitted."
+  },
+  "bidirectionalTest": {
+    "vendorRequestedAtVilnius": "2026-10-10 12:24",
+    "agentReplyAtVilnius": "2026-10-10 12:25",
+    "incomingMarker": "PROMEDICAL-HOSTINGER-20261010-BIDIR-1",
+    "request": "Specialist to send one ordinary marked email from an official Hostinger test address to info@promedical.lt, and provide that address for one non-sensitive test reply. Inspect only the exact requested marker in Inbox/Junk. No other user's account or customer data involved.",
+    "vendorAddressProvided": false,
+    "incomingTestConfirmedSent": false,
+    "outgoingTestSent": false,
+    "result": "PENDING_VENDOR_TEST_ADDRESS_AND_SEND_CONFIRMATION"
+  },
+  "automaticInboxProved": false,
+  "mailboxSettingsChangedByAgent": false,
+  "appSourceChanged": false,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "privacy": "Only the new own marked test's minimal saved/notified/folder/authentication facts and public business addresses were discussed. No credentials, new full headers, unrelated mail or customer data transmitted. Own D1 query and telemetry were exact-marker/UUID-scoped read-only checks. Incoming external support test requested with a unique marker.",
+  "limits": [
+    "New receiving mailbox, new sender domain and transport-server reputation are separate possibilities. Vendor attribution to reputation is recorded as vendor-reported, not independent proof of a particular signal.",
+    "Manual Not spam moves and server acceptance do not satisfy automatic Inbox acceptance.",
+    "No broad allow-list, filter loosening, spam disablement or DNS change. Other customer inbound mail must remain accepted. Wider security changes require specific owner action-time approval.",
+    "Existing failed receipts and historical mailbox records are preserved. Site recovery/rate/privacy/backup acceptance remains separate."
+  ]
+}

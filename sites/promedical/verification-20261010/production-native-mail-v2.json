@@ -1,6 +1,6 @@
 {
-  "observedAt": "2026-10-10T08:48:47.476Z",
-  "state": "APPROVED_FILTER_ENABLED_AUTOMATIC_INBOX_FAILED_TWO_NEW_TESTS",
+  "observedAt": "2026-10-10T09:54:07.811Z",
+  "state": "ORDINARY_BIDIRECTIONAL_INBOX_CONFIRMED_ALIAS_PREPARED_OWNER_CONFIRMATION_PENDING",
   "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
   "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
   "recipient": "info@promedical.lt",
@@ -91,6 +91,54 @@
       "dmarc": "pass",
       "approvedDkimFragmentPresent": true,
       "laterAction": "None; not moved manually. New automatic Inbox check failed after filter enabled and persisted conditions verified."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-1",
+      "leadId": "c3bcd836-ed29-43d5-bdb4-b31f3519cf1a",
+      "createdAtMs": 1791623875873,
+      "sourcePath": "/kontaktai",
+      "messageLength": 173,
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "siteId": "promedical",
+        "leadId": "c3bcd836-ed29-43d5-bdb4-b31f3519cf1a",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791623877455
+      },
+      "cloudflareMessageId": "<nQVw5qwAaZz1S4L7u9JnQkW1iGacrXZWDGOe@promedical.lt>",
+      "recipientReceipt": "Verified in receiving mailbox",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "approvedDkimFragmentPresent": true,
+      "receipt": "production-native-support-learning-inbox-v1.json",
+      "laterAction": "After the recorded initial Junk check, only this exact own message was marked Not spam under the owner warm-up request; UI confirmed manual move to Inbox. This is not an automatic Inbox pass."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-2",
+      "leadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+      "createdAtMs": 1791624877071,
+      "sourcePath": "/kontaktai",
+      "messageLength": 176,
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "siteId": "promedical",
+        "leadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791624878322
+      },
+      "cloudflareMessageId": "<0z8WMnuGTlrpCs0jbmo8wFg15WCBfN25CRHF@promedical.lt>",
+      "recipientReceipt": "Verified in receiving mailbox",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "approvedDkimFragmentPresent": true,
+      "receipt": "production-native-warmup-inbox-v1.json",
+      "laterAction": "None; new independent test after natural Reply and own Not spam training still Junk. No manual move or flag change."
     }
   ],
   "receiptFiles": [
@@ -102,7 +150,9 @@
     "production-native-second-inbox-v1.json",
     "production-native-second-inbox-v2.json",
     "production-native-filter-inbox-v1.json",
-    "production-native-filter-recheck-v1.json"
+    "production-native-filter-recheck-v1.json",
+    "production-native-support-learning-inbox-v1.json",
+    "production-native-warmup-inbox-v1.json"
   ],
   "formProof": "screenshots/final-batch-20261010/production-native-inquiry-success.png",
   "privacy": "Only exact own markers and Message-IDs queried. Read-only EXAMINE/targeted headers; credentials and unrelated mail bodies never copied into evidence. No historical D1 row/message removed.",
@@ -135,14 +185,15 @@
     "Cloudflare own Message-ID fetch returned raw MIME text, not a delivery-status object; no Delivered status claimed from that API.",
     "First read-only helper produced a saved negative receipt and process exit1; actual folder evidence is Junk, not an unavailable mailbox or positiveInbox."
   ],
-  "supportReceipt": "verification-20261010/production-hostinger-filter-support-v3.json",
-  "supportOutcome": "The complete original headers of one own marked test were sent to Hostinger with specific owner approval. Hostinger Agent confirms all three filter values and SPF/DKIM/DMARC pass in the delivered copy, alongside X-Spam: Yes and Junk receipt, but cannot establish rule matching, evaluation order or root cause. Further technical review accepted; Airida is reviewing the existing case. No setting change or confirmed fix; automatic Inbox remains unproved.",
+  "supportReceipt": "verification-20261010/production-hostinger-bidir-alias-prepared-v7.json",
+  "supportOutcome": "Fausta confirmed at12:45 Vilnius that the ordinary Hostinger diagnostic message and our natural Reply both reached Inbox. The new receiving mailbox therefore handles ordinary bidirectional mail. All six native website inquiries initially reached Junk despite authentication pass; test5 was later manually Not spam, and independent test6 remains Junk. Hostinger cannot manually override classification and recommends sender/format review and continued legitimate training. The absence of a Hostinger mailbox for uzklausos@ is not a proved cause. An alias uzklausos@promedical.lt to the existing info@promedical.lt mailbox is fully prepared but NOT created, pending the plugin-required specific owner confirmation. Filter timing and Incoming Allow list exclusivity are still being clarified; no verified automatic website Inbox fix or formal case ID.",
   "supportHumanTicket": {
     "confirmedTicketId": null,
     "reviewedBy": [
       "Ian",
-      "Airida"
+      "Airida",
+      "Fausta"
     ],
-    "status": "HUMAN_REVIEW_IN_PROGRESS"
+    "status": "ORDINARY_INBOX_CONFIRMED_FILTER_FUNCTIONS_AND_ALIAS_APPROVAL_PENDING"
   }
 }

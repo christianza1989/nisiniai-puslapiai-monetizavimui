@@ -1,0 +1,20 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53",
+  "note": "Fausta confirmed at12:45 Vilnius that the ordinary Hostinger diagnostic message and our natural Reply both reached Inbox. The new receiving mailbox therefore handles ordinary bidirectional mail. All six native website inquiries initially reached Junk despite authentication pass; test5 was later manually Not spam, and independent test6 remains Junk. Hostinger cannot manually override classification and recommends sender/format review and continued legitimate training. The absence of a Hostinger mailbox for uzklausos@ is not a proved cause. An alias uzklausos@promedical.lt to the existing info@promedical.lt mailbox is fully prepared but NOT created, pending the plugin-required specific owner confirmation. Filter timing and Incoming Allow list exclusivity are still being clarified; no verified automatic website Inbox fix or formal case ID. Production remains normal fa176690be28cbe502137462e0ff5a35efcc4a47/version03f65927-d62f-45c1-8ccd-f125c5f2c8bc. New scoped mail/support evidence only; audit/source/calendar unchanged. Existing paired own branches remain drafts; no main merge/adoption claim.",
+  "checks": [
+    {
+      "command": "Exact own native test6 D1 and telemetry, read-only receiving mailbox",
+      "result": "FAIL_AUTOMATIC_INBOX",
+      "evidence": "Own form saved/notified and authenticated but receiving Inbox0/Junk1; production-native-warmup-inbox-v1.json."
+    },
+    {
+      "command": "Scoped staged repository safety and exact private secret comparison",
+      "result": "PASS",
+      "evidence": "Private repository-safety and secret receipts, 14 scoped documentation/evidence files, zero findings/matches before new v7 receipt; repeat after final staging."
+    }
+  ],
+  "eventId": "e42385a2-1968-42fc-a951-aec905637773",
+  "sequence": 8,
+  "at": "2026-10-10T09:54:26.048Z"
+}

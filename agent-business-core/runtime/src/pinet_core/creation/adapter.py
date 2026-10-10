@@ -131,7 +131,8 @@ class Trace:
 
     def event(self, value):
         if not isinstance(value, dict) or not isinstance(value.get("item", {}), dict):
-            raise RunnerError("output_invalid")
+            raise RunnerError("output_invalid", {"usage": self.usage, "web_search_count": len(self.searches)}
+                              if self.usage is not None else None)
         item = value.get("item", {})
         kind = item.get("type")
         if kind in {"web_search", "web_search_call"} and self.web:
@@ -155,7 +156,8 @@ class Trace:
             try:
                 value = json.loads(line)
             except ValueError:
-                raise RunnerError("output_invalid") from None
+                raise RunnerError("output_invalid", {"usage": self.usage, "web_search_count": len(self.searches)}
+                                  if self.usage is not None else None) from None
             self.event(value)
             if value.get("item", {}).get("type") in {"web_search", "web_search_call"}:
                 continue

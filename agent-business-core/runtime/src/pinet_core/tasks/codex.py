@@ -78,7 +78,7 @@ def parse_trace(raw):
         try:
             event = json.loads(line)
         except ValueError:
-            raise RunnerError("output_invalid") from None
+            raise RunnerError("output_invalid", usage) from None
         try:
             check_trace_event(event)
         except RunnerError as error:

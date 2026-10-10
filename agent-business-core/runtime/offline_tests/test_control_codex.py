@@ -79,6 +79,14 @@ def test_malformed_trace_is_bounded_output_failure(event):
         parse_trace(json.dumps(event))
 
 
+def test_known_usage_survives_malformed_later_trace_line():
+    raw = json.dumps({"type":"turn.completed","usage":{"input_tokens":12,"output_tokens":4}}) + '\n{invalid}\n'
+    with pytest.raises(RunnerError) as error:
+        parse_trace(raw)
+    assert error.value.code == "output_invalid"
+    assert error.value.receipt == {"input_tokens":12,"output_tokens":4}
+
+
 @pytest.mark.parametrize("value", [{"answer": " ", "limitations": []}, {"answer": "x", "limitations": [], "shell": "x"},
                                    {"answer": 3, "limitations": []}, {"answer": "x", "limitations": ["x"*301]}])
 def test_structured_result_bounds(value):

@@ -32,12 +32,13 @@ async def test_failed_owned_process_preserves_terminal_usage(tmp_path, mode):
     ({"type": "item.completed", "item": {"type": "error", "message": "stream disconnected"}}, "provider_error"),
     ({"type": "item.completed", "item": {"type": "error", "message": "Model not supported"}}, "model_unavailable"),
     ({"type": "item.started", "item": {"type": "command_execution"}}, "tool_attempted"),
+    ("{invalid}", "output_invalid"),
 ])
 @pytest.mark.parametrize("completed_usage", [False, True])
 async def test_owned_child_stops_on_terminal_error_before_later_output(monkeypatch, tmp_path, event, code, completed_usage):
     output, trace_file = tmp_path / "output.private.json", tmp_path / "trace.private.jsonl"
     prior = {"type":"turn.completed", "usage":{"input_tokens":17,"output_tokens":4}}
-    encoded = (json.dumps(prior) + "\n" if completed_usage else "") + json.dumps(event)
+    encoded = (json.dumps(prior) + "\n" if completed_usage else "") + (event if isinstance(event, str) else json.dumps(event))
     script = ("import sys,time;from pathlib import Path;sys.stdin.read();"
               "print(sys.argv[1],flush=True);time.sleep(8);Path(sys.argv[2]).write_text('{}')")
     children, create = [], asyncio.create_subprocess_exec
@@ -57,5 +58,5 @@ async def test_owned_child_stops_on_terminal_error_before_later_output(monkeypat
     assert error.value.receipt == ({"usage":{"input_tokens":17,"output_tokens":4},"web_search_count":0}
                                   if completed_usage else {})
     assert children and children[0].returncode is not None and not output.exists()
-    assert [json.loads(line) for line in trace_file.read_text("utf-8").splitlines()] == ([prior,event] if completed_usage else [event])
+    assert trace_file.read_text("utf-8").strip() == encoded
     assert not trace.searches

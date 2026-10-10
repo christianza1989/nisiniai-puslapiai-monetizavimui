@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,writeFile,readFile,mkdir,copyFile} from 'node:fs/promises';
+import {mkdtemp,writeFile,readFile,mkdir,copyFile,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {TAXONOMY_NODES,taxonomyNode,matchesTaxonomy} from '../prototype/taxonomy.mjs';
@@ -14,6 +14,34 @@ import {contentProjection} from '../content/adapter.mjs';
 import {articleFixture,signFixture,createApprovedOffer,FIXTURE_NOW} from '../content-foundation-20261006/fixture.mjs';
 import {commerceDestination} from '../../../../dovanos-memorycasting/lib/content-projection-v2.mjs';
 const now=FIXTURE_NOW;
+
+test('SSR sharing and GEO are projected from reviewed content, disappear before due time and use uncached HTTP responses',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-sharing-')),packagePath=path.join(dir,'content-package.json'),pkg=articleFixture(),article=pkg.pages[1];
+ article.title='Manikiūras "pagal apimtį" & laiką';article.media=[{id:'share-image',src:'/content-assets/madbeauty/share.webp',width:1200,height:800,alt:'Nagų priežiūros iliustracija',rights:'Testinė iliustracija'}];article.editorial.featuredImageId='share-image';
+ const author={...structuredClone(pkg.pages[0]),id:'fixture-author',type:'author',slug:'autoriai/fixture-editor',title:'Testinė redakcija'};pkg.pages.push(author);signFixture(pkg);await writeFile(packagePath,JSON.stringify(pkg));
+ let current=now;const server=createAppServer({contentClock:()=>current,contentPackagePath:packagePath,contentDiscovery:true});await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port;
+ try{
+  const response=await fetch(origin+'/'+article.slug),html=await response.text();assert.equal(response.status,200);assert.equal(response.headers.get('cache-control'),'no-store');
+  assert.match(html,/property="og:title" content="Manikiūras &quot;pagal apimtį&quot; &amp; laiką"/);assert.match(html,/property="og:url" content="https:\/\/madbeauty.lt\/gidai\/katalogo-nuorodos-testas"/);assert.match(html,/property="og:image" content="https:\/\/madbeauty.lt\/content-assets\/madbeauty\/share.webp"/);assert.match(html,/article:published_time" content="2026-10-06T08:00:00Z/);assert.match(html,/twitter:image:alt" content="Nagų priežiūros iliustracija/);
+  const full=await fetch(origin+'/llms-full.txt'),text=await full.text();assert.equal(full.headers.get('cache-control'),'no-store');assert.match(text,/Publikavimo data: 2026-10-06T08:00:00Z/);assert.match(text,/Autoriaus profilis: .*https:\/\/madbeauty.lt\/autoriai\/fixture-editor/);
+  current=Date.parse(article.publishAt)-1;const future=await fetch(origin+'/'+article.slug);assert.equal(future.status,404);assert.doesNotMatch(await future.text(),/og:title|twitter:image|share.webp|article:published_time/);assert.doesNotMatch(await fetch(origin+'/llms-full.txt').then(r=>r.text()),/katalogo-nuorodos-testas|Autoriaus profilis:/);
+  current=now;author.publishAt='2026-10-07T08:00:00Z';signFixture(pkg);await writeFile(packagePath,JSON.stringify(pkg));assert.doesNotMatch(await fetch(origin+'/llms-full.txt').then(r=>r.text()),/Autoriaus profilis:/);
+  assert.doesNotMatch(await fetch(origin+'/paskyra').then(r=>r.text()),/og:image|article:published_time/);
+ }finally{await new Promise(r=>server.close(r));await rm(dir,{recursive:true,force:true});}
+});
+
+test('Madbeauty V2 shared schemas and visible breadcrumbs use the projected Gidai index and reviewed editorial dates',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-editorial-')),packagePath=path.join(dir,'content-package.json'),pkg=articleFixture();
+ try{
+  const index={...structuredClone(pkg.pages[0]),id:'fixture-index',type:'index',slug:'gidai',title:'Gidai'};pkg.pages.push(index);pkg.pages[1].editorial.datePublished='2026-10-06T22:35:02.542Z';pkg.pages[1].editorial.dateModified='2026-10-07T01:00:00Z';signFixture(pkg);await writeFile(packagePath,JSON.stringify(pkg));
+  const content=await contentProjection({packagePath,now,registry:{targets:[]}}),article=content.pages.find(p=>p.id==='fixture-guide'),schemas=content.schema(article);
+  assert.equal(schemas[0].datePublished,pkg.pages[1].editorial.datePublished);assert.equal(schemas[0].dateModified,pkg.pages[1].editorial.dateModified);assert.equal(schemas[0].author[0]['@type'],'Organization');assert.equal(schemas[0].reviewedBy,undefined);
+  assert.deepEqual(schemas[1].itemListElement.map(x=>x.name),['Madbeauty','Gidai',article.title]);assert.equal(schemas[1].itemListElement[1].item,'https://madbeauty.lt/gidai');assert.match(content.html(article),/href="\/gidai">Gidai<\/a>/);assert.match(content.html(article),/datetime="2026-10-06T22:35:02.542Z">2026 m. spalio 7 d./);assert.match(content.html(article),/Atnaujinta <time datetime="2026-10-07T01:00:00Z">2026 m. spalio 7 d./);
+  const collection=content.schema(content.pages.find(p=>p.id===index.id))[0];assert.equal(collection['@type'],'CollectionPage');assert.equal(collection.mainEntity.itemListElement.length,1);
+  index.publishAt='2026-10-07T08:00:00Z';signFixture(pkg);await writeFile(packagePath,JSON.stringify(pkg));const future=await contentProjection({packagePath,now,registry:{targets:[]}}),due=future.pages.find(p=>p.id===article.id);
+  assert.equal(future.schema(due)[1].itemListElement.length,2);assert.doesNotMatch(future.html(due),/href="\/gidai">Gidai<\/a>/);
+ }finally{if(path.resolve(dir).startsWith(path.resolve(os.tmpdir())+path.sep+'madbeauty-editorial-'))await rm(dir,{recursive:true,force:true});}
+});
 test('New V2 release media is served from its immutable release, and future/unknown media stays404',async()=>{
  const f=fixture(),dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-v2-media-')),packagePath=path.join(dir,'content-package.json'),pkg=articleFixture();
  const initial=JSON.parse(await readFile(new URL('../content/initial-release/content-package.json',import.meta.url),'utf8')),m=initial.pages.find(p=>p.type==='guide').media[0],filename=path.basename(m.src);
@@ -65,6 +93,12 @@ test('SSR national→city→real provider, empty-city404, unknown and inactive e
   assert.equal((await fetch(origin+'/paslaugos/nagai/vilnius')).status,404);
  }finally{await new Promise(r=>server.close(r));f.store.close();}
 });
+test('The current service catalogue remains available when an unrelated editorial package cannot be read',async()=>{
+ const f=fixture(),dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-catalogue-content-failure-')),packagePath=path.join(dir,'content-package.json');await writeFile(packagePath,'{"incomplete":');const server=createAppServer({apiHandler:f.handler,contentClock:()=>now,contentPackagePath:packagePath});await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port;
+ try{for(const url of ['/paslaugos','/paslaugos/nagai','/paslaugos/lakavimas-gelinis-lakavimas/vilnius']){const response=await fetch(origin+url);assert.equal(response.status,200,url);assert.match(await response.text(),/<h1[^>]*>[^<]+<\/h1>/);}assert.equal((await fetch(origin+'/paslaugos/nagai/kaunas')).status,404);assert.equal((await fetch(origin+'/gidai/nezinomas-gidas')).status,404);}
+ finally{await new Promise(r=>server.close(r));f.store.close();const absolute=path.resolve(dir);if(absolute.startsWith(path.resolve(os.tmpdir())+path.sep+'madbeauty-catalogue-content-failure-'))await rm(absolute,{recursive:true,force:true});}
+});
+
 test('V2 immutable intake, shared projection and HTML/schema/discovery use the same current targets',async()=>{
  const f=fixture(),dir=await mkdtemp(path.join(os.tmpdir(),'madbeauty-content-')),packagePath=path.join(dir,'content-package.json'),pkg=articleFixture();
  try{

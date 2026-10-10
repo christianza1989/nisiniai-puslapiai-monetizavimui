@@ -1,0 +1,150 @@
+{
+  "at": "2026-10-09T13:54:49.111Z",
+  "state": "PASS",
+  "scope": "Protected hosted ordinary owner in two concurrently signed-in tabs. Actual current reschedule v1->v2; old v1 cancellation rejected with version-change UI, retained reason and focused error; exact no-write; target restart and explicit old-tab reread. Independent raw HTTP status was not captured.",
+  "runtimeSource": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "qaVersion": "cdcf8bce-85df-4978-b1a4-cfaf40c635c6",
+  "booking": {
+    "id": "booking_ca8cc9ef-c382-4829-99cb-5e89874adb8a",
+    "version": 2,
+    "status": "confirmed",
+    "startAt": "2026-10-14T06:00:00.000Z",
+    "endAt": "2026-10-14T07:45:00.000Z",
+    "priceMinor": 8000,
+    "durationMin": 105,
+    "segments": 2
+  },
+  "checks": {
+    "sourceReadCollectionsUnchanged": true,
+    "targetChangedReadCollections": [
+      "bookings",
+      "events"
+    ],
+    "onlyOneCapturedRescheduleMessage": true,
+    "rejectedActionSnapshotAndMailboxExact": true,
+    "threeMediaObjectsUnchanged": true,
+    "targetRestartExact": true,
+    "ordinaryOldTabRereadShowsNewDate": true
+  },
+  "ui": {
+    "error": "Vizitas pasikeitė. Atnaujinkite.",
+    "reasonRetained": "Versijos konflikto bandymas.",
+    "errorFocused": true
+  },
+  "rasters": [
+    {
+      "name": "booking-version-current-offer",
+      "viewport": {
+        "height": 720,
+        "width": 1280
+      },
+      "document": {
+        "client": 1280,
+        "scroll": 1280
+      },
+      "containers": [
+        {
+          "client": 1280,
+          "scroll": 1280,
+          "tag": "MAIN"
+        },
+        {
+          "client": 700,
+          "scroll": 700,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 1280,
+        "height": 720,
+        "sha256": "3aa7587ca5b3dd36347aefa1c7f6edc8e50e1715f5c2140aaab252b182bc78ba"
+      }
+    },
+    {
+      "name": "booking-version-old-form",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 358,
+          "scroll": 358,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "a236438b494bc154d4b5329d5ea1947634f851a8c06eb65fdc64cc50e8322776"
+      }
+    },
+    {
+      "name": "booking-version-rejected-390",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 358,
+          "scroll": 358,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "c8caa67c5745204aa56b34fd600d2acf20b29396c1947595d07488bf77d51fe1"
+      }
+    },
+    {
+      "name": "booking-version-recovered-390",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 358,
+          "scroll": 358,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "5b9525a510ffdb524035211d3a7f423fb63b452d74a7be35ef05bac117725a6d"
+      }
+    }
+  ],
+  "historicalDistinction": "Earlier cancel-stale-1280 belongs to expired-session/CSRF rejection. This separate normal signed-in old booking version acceptance does not relabel or replace that earlier receipt."
+}

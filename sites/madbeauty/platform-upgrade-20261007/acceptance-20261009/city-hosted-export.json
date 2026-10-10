@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-09T19:17:29.697Z",
+  "status": "PASS",
+  "runtime": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc",
+  "downloadSha256": "b356097f28df8234cb9901043c8b21283ec0d6dcc35c942a8492068abd2e6935",
+  "bytes": 16558,
+  "keys": [
+    "schemaVersion",
+    "siteId",
+    "exportedAt",
+    "client",
+    "bookings",
+    "messages",
+    "reviews",
+    "reports",
+    "inquiries",
+    "waitlist",
+    "preferences",
+    "organizationCards",
+    "dataRequests"
+  ],
+  "bookings": [
+    {
+      "id": "booking_38f0783d-c30e-4f58-bfae-952bf0c5c3da",
+      "status": "canceled",
+      "version": 3
+    },
+    {
+      "id": "booking_ca8cc9ef-c382-4829-99cb-5e89874adb8a",
+      "status": "confirmed",
+      "version": 2
+    }
+  ],
+  "currentTargetRecordsMatched": true,
+  "preferencesMatched": true,
+  "otherSyntheticClientAbsent": true,
+  "noAppSessionHttpStatus": 401,
+  "scope": "Actual file downloaded by native browser through same fresh synthetic customer session. Central preference and current active-target bookings verified; no real customer or irreversible erasure."
+}

@@ -1,0 +1,95 @@
+{
+  "state": "FAIL",
+  "startedAt": "2026-10-09T21:40:45.961Z",
+  "finishedAt": "2026-10-09T21:40:48.722Z",
+  "origin": "https://bandymas.madbeauty.lt",
+  "checks": [
+    {
+      "name": "Existing fictional client/owner/operator sessions",
+      "state": "PASS"
+    },
+    {
+      "name": "Guest mutations and missing CSRF rejected",
+      "state": "PASS"
+    },
+    {
+      "name": "Foreign provider cannot read or mutate another workspace",
+      "state": "PASS"
+    },
+    {
+      "name": "Procedure selection replay returns one private draft",
+      "state": "PASS"
+    },
+    {
+      "name": "Offer price/duration/staff validation and stale version",
+      "state": "PASS"
+    },
+    {
+      "name": "Operator review publishes eligible provider offer",
+      "state": "PASS"
+    },
+    {
+      "name": "Single slot cannot be held by two customers",
+      "state": "PASS"
+    },
+    {
+      "name": "Confirmation replay returns one durable booking and snapshot",
+      "state": "PASS"
+    },
+    {
+      "name": "Service draft cannot change current quote or saved booking",
+      "state": "PASS"
+    },
+    {
+      "name": "Move booking updates both roles and rejects stale cancellation",
+      "state": "PASS"
+    },
+    {
+      "name": "Reception access is scoped and revocation affects existing session",
+      "state": "PASS"
+    },
+    {
+      "name": "Private client card is scoped; stale write cannot replace it",
+      "state": "PASS"
+    },
+    {
+      "name": "Notification preferences stay separate from marketing",
+      "state": "PASS"
+    },
+    {
+      "name": "Own data export excludes another client and internal card actor",
+      "state": "PASS"
+    },
+    {
+      "name": "Repeated erasure request keeps the same safe customer projection",
+      "state": "FAIL",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ [\n+   {\n+     at: '2026-10-09T21:40:48.544Z',\n+     state: 'pending'\n+   }\n+ ]\n- undefined\n"
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "Cancel own test booking",
+      "state": "PASS"
+    },
+    {
+      "name": "Archive own test offer",
+      "state": "PASS"
+    },
+    {
+      "name": "Withdraw own erasure request",
+      "state": "PASS"
+    }
+  ],
+  "bookingId": "booking_bc1f209f-07cb-4949-ae1a-8c3457c3648b",
+  "offerId": "offer_8ba9b73b-012a-43e7-9d24-0f6d7c14e73d",
+  "bookingState": "canceled",
+  "offerState": "archived",
+  "smtp": false,
+  "erasureExecuted": false,
+  "error": {
+    "name": "AssertionError",
+    "code": "ERR_ASSERTION",
+    "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ [\n+   {\n+     at: '2026-10-09T21:40:48.544Z',\n+     state: 'pending'\n+   }\n+ ]\n- undefined\n"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "before": 264,
+  "expected": 264,
+  "newTests": 0,
+  "extendedTests": 1,
+  "removedTests": 0,
+  "recordedBeforeRun": "2026-10-09T18:50:22.271Z",
+  "sourceBase": "b3cfab74b41d4219431b34f66414253f93562ad0",
+  "files": [
+    {
+      "file": "sites/madbeauty/prototype/catalogue-page.mjs",
+      "sha256": "b2bae6cc1dadb0856f0f1006933d886211281f82f6c7545a588918a466852e08"
+    },
+    {
+      "file": "sites/madbeauty/prototype/app-server.mjs",
+      "sha256": "1a860293a4d419124484822c6aef1dfb2e1df7462e7acc7dc54a9738e064597b"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/app.mjs",
+      "sha256": "d4af090eb28481905c8b399b37d2bf5a46d31907a6e0abde5e1c0b89279e5094"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/public-views.mjs",
+      "sha256": "77f7e4918f1d96ef3e0891308d5b775f9885fe4822048f82195073688a5b58db"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/worker.mjs",
+      "sha256": "529f86be0855e9e42bef59ce728f3d647f8d54adc1563d6ce1000b039d8ca240"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/runtime.test.mjs",
+      "sha256": "dbcf19927ce60e12f5fc3798a202a61f9bd39a7e1e82140effee197089f66c6f"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/verify-catalogue.mjs",
+      "sha256": "5449758709fb3e15512e2fd99f1846541e6ef0ca22bc60990cba2de5d59f9b48"
+    }
+  ],
+  "suites": [
+    "sites/madbeauty/backend/*.test.mjs",
+    "sites/madbeauty/prototype/*.test.mjs",
+    "sites/madbeauty/acceptance/*.test.mjs",
+    "sites/madbeauty/cloudflare/*.test.mjs"
+  ],
+  "command": "node --test --test-concurrency=1 sites/madbeauty/backend/*.test.mjs sites/madbeauty/prototype/*.test.mjs sites/madbeauty/acceptance/*.test.mjs sites/madbeauty/cloudflare/*.test.mjs",
+  "scope": "Catalogue city submission without approved supply routes to search with procedure/city retained; supplied city remains a registered catalogue destination and withdrawal removes the commerce link. Native client and city-card entry points use search rather than unavailable city URLs. City pages consume active catalogue categories and initial catalogue form city choices survive client rendering.",
+  "log": "regression-101.log",
+  "actual": 264,
+  "pass": 264,
+  "fail": 0,
+  "durationMs": 114415.3025,
+  "status": "PASS",
+  "acceptedRuntimeSource": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc"
+}

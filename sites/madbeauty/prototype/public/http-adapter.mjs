@@ -1,5 +1,9 @@
+import {createMediaUploadIntents,mediaUploadFingerprint} from './media-upload-intent.mjs';
 export function createHttpAdapter(){
-  let session=null;
+  let session=null,refreshPending=null;
+  let uploadStorage=null;try{uploadStorage=globalThis.sessionStorage;}catch{}
+  const uploads=createMediaUploadIntents(uploadStorage);
+  const readMethods=new Set(['taxonomy','search','searchResults','visitAvailability','catalog','profile','option','workspace','availability','organizationReport','erasureCase','erasurePreview','erasureStatus','rebooking','exportCustomer','metrics']);
   const adapter={mode:'real',clock:{now:new Date().toISOString(),timezone:'Europe/Vilnius'}};
   async function request(path,data){
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);let r,result;
@@ -8,20 +12,36 @@ export function createHttpAdapter(){
     finally{clearTimeout(timer);}
     if(!r.ok){const e=Error(result.error?.message||'Užklausos įvykdyti nepavyko.');e.code=result.error?.code||'SERVER_ERROR';e.status=r.status;throw e;}return result;
   }
-  async function rpc(method,input={}){if(!session)await adapter.refreshSession();return(await request('rpc',{method,input,siteId:'madbeauty'})).result;}
-  adapter.refreshSession=async()=>{session=await request('session');adapter.clock=session.clock;adapter.session=session;return session;};
+  async function rpc(method,input={}){const previousUser=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();if(previousUser&&previousUser!==session.user?.id&&!readMethods.has(method))throw Object.assign(Error('Paskyros sesija pasikeitė. Prisijunk iš naujo ir patikrink veiksmą prieš jį kartodamas.'),{code:'SESSION_CHANGED',status:409});return(await request('rpc',{method,input,siteId:'madbeauty'})).result;}
+  adapter.refreshSession=()=>{if(!refreshPending)refreshPending=request('session').then(value=>{session=value;adapter.clock=session.clock;adapter.session=session;return session;}).finally(()=>{refreshPending=null;});return refreshPending;};
   adapter.authStart=async email=>request('auth/start',{email});
   adapter.authVerify=async(challengeId,code)=>{session=await request('auth/verify',{challengeId,code});adapter.clock=session.clock;adapter.session=session;return session;};
   adapter.logout=async()=>{session=await request('logout',{});adapter.session=session;return session;};
   adapter.demoIdentities=async()=>({organizations:session?.organizations||[],clients:session?.user?[{id:session.user.id,name:session.user.name||session.user.email}]:[]});
+  adapter.taxonomy=()=>rpc('taxonomy');
+  adapter.search=input=>rpc('search',input);
+  adapter.searchResults=input=>rpc('searchResults',input);
+  adapter.visitAvailability=input=>rpc('visitAvailability',input);
+  adapter.holdVisit=input=>rpc('holdVisit',input);
   adapter.catalog=input=>rpc('catalog',input);
   adapter.profile=id=>rpc('profile',{id});
-  adapter.option=(id,addons=[])=>rpc('option',{id,addons});
+  adapter.option=(id,addons=[],practitionerId)=>rpc('option',{id,addons,practitionerId});
   adapter.workspace=scope=>rpc('workspace',scope);
   adapter.availability=input=>rpc('availability',input);
   adapter.hold=candidate=>rpc('hold',candidate);
   adapter.releaseHold=id=>rpc('releaseHold',{id});
-  adapter.upload=async(file,{organizationId,alt,rights,usage})=>{const r=await fetch('/api/madbeauty/upload',{method:'POST',credentials:'same-origin',headers:{origin:location.origin,'content-type':file.type,'x-csrf-token':session.csrf,'x-organization-id':organizationId,'x-asset-alt':encodeURIComponent(alt),'x-asset-rights':encodeURIComponent(rights),'x-asset-usage':usage},body:file});const value=await r.json();if(!r.ok){const e=Error(value.error?.message||'Vaizdo įkelti nepavyko.');e.code=value.error?.code;throw e;}return value.result;};
-  for(const method of ['confirm','changeBooking','cancelBooking','manualVisit','createInquiry','edit','submitRevision','moderate','moderateReview','message','review','report','preferences','metrics','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','retryOutbox','completeBooking','favorite'])adapter[method]=input=>rpc(method,input);
+  adapter.upload=async(file,metadata)=>{
+   const previousUser=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();
+   if(!session.user?.id||previousUser&&previousUser!==session.user.id)throw Object.assign(Error('Paskyros sesija pasikeitė. Prisijunk iš naujo.'),{code:'SESSION_CHANGED',status:409});
+   if(!file?.size||file.size>12*1024*1024)throw Object.assign(Error('Pasirink vaizdą iki 12 MB.'),{code:'INVALID_INPUT'});
+   const {organizationId,alt,rights,usage}=metadata,intent=uploads.reserve(session.user.id,organizationId,await mediaUploadFingerprint(file,metadata)),controller=new AbortController(),timer=setTimeout(()=>controller.abort(),60000);let r,value;
+   try{r=await fetch('/api/madbeauty/upload',{signal:controller.signal,method:'POST',credentials:'same-origin',headers:{origin:location.origin,'content-type':file.type,'x-csrf-token':session.csrf,'x-organization-id':organizationId,'x-asset-alt':encodeURIComponent(alt),'x-asset-rights':encodeURIComponent(rights),'x-asset-rights-confirmed':'true','x-asset-usage':usage,'x-asset-operation':intent.idempotencyKey},body:file});value=await r.json();if(!value||typeof value!=='object')throw Error('Invalid upload response');}
+   catch{throw Object.assign(Error('Atsakymas nepasiekiamas. Patikrink galeriją, prieš bandydamas dar kartą.'),{code:'NETWORK_ERROR'});}
+   finally{clearTimeout(timer);}
+   if(!r.ok){const e=Error(value.error?.message||'Vaizdo įkelti nepavyko.');e.code=value.error?.code;e.status=r.status;throw e;}
+   if(!value.result?.id)throw Object.assign(Error('Įkėlimo rezultatas nepasiekiamas. Patikrink galeriją.'),{code:'NETWORK_ERROR'});
+   uploads.complete(intent);return value.result;
+  };
+  for(const method of ['saveGallery','reviewReport','organizationReport','saveBookingRules','erasureCase','erasurePreview','erasureStatus','reviewErasure','rebooking','saveClientCard','exportCustomer','requestErasure','withdrawErasure','createWaitlist','acceptWaitlist','closeWaitlist','confirmVisit','changeVisit','saveLocation','submitLocation','moderateLocation','setLocationActive','assignStaffLocations','grantMembership','revokeMembership','bulkOfferPrices','saveMenuGroup','selectProcedures','saveOffer','submitOffer','moderateOffer','archiveOffer','requestProcedure','moderateProcedure','changeTaxonomy','assessQualification','migrateCatalogue','confirm','changeBooking','cancelBooking','manualVisit','createInquiry','edit','submitRevision','moderate','moderateReview','message','review','report','preferences','metrics','createOrganization','createService','createStaff','createResource','createClient','createBusyBlock','releaseBusyBlock','retryOutbox','completeBooking','favorite'])adapter[method]=input=>rpc(method,input);
   return adapter;
 }

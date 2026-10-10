@@ -5,11 +5,18 @@ import {makeClock,localInstant} from './demo-model.mjs';
 import {createPlatformAdapter} from './platform-adapter.mjs';
 import {createAppServer,resolveRoute} from './app-server.mjs';
 import {catalogTarget,boundedFilters,publicProjection} from './seo-contract.mjs';
+import {ApiError} from '../backend/primitives.mjs';
 const clock=makeClock('2026-10-05T08:00:00Z');
 const pro={role:'professional',organizationId:'demo-org-0'},customer={role:'customer',clientId:'demo-client-0'},operator={role:'operator'};
 const adapter=(options={})=>createPlatformAdapter({enabled:true,deployment:'local-preview',clock,...options});
 const input={providerServiceId:'demo-service-0-0',dayOffset:1,from:1020,to:1200};
 const candidate=async a=>(await a.availability(input)).slots[0];
+
+test('Async authoritative public reads decide profile existence; a calendar outage leaves static assets and private page shells accessible',async()=>{
+ let approved=true,outage=false,calls=0;const apiHandler={handle:async()=>false,platform:{catalog:async()=>{calls++;if(outage)throw new ApiError('ORGANIZATION_UNAVAILABLE','Isolated directory outage',503);return [];},profile:async()=>approved?{kind:'salon'}:null}},s=createAppServer({apiHandler});await new Promise(r=>s.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+s.address().port;
+ try{assert.equal((await fetch(base+'/salonai/provider_async_fixture')).status,200);approved=false;assert.equal((await fetch(base+'/salonai/provider_async_fixture')).status,404);outage=true;assert.equal((await fetch(base+'/paslaugos')).status,503);const before=calls;for(const url of ['/app.mjs','/boot.json','/meistrui/kalendorius'])assert.equal((await fetch(base+url)).status,200,url);assert.equal(calls,before);}
+ finally{await new Promise(r=>s.close(r));}
+});
 
 test('Whole duration, add-ons and resource buffers: 19:00 start is rejected when 20:00 shift needs cleanup',async()=>{
   const a=adapter(),plain=await a.availability(input),added=await a.availability({...input,addons:['demo-addon-removal']});
@@ -118,7 +125,7 @@ test('Bounded URL filters exclude PII and unknown facets; article resolver gates
 test('All declared routes resolve; unknown service/city/guide and unavailable default profile do not',async()=>{
   const inv=JSON.parse(await readFile(new URL('../SCREEN_INVENTORY.json',import.meta.url),'utf8'));
   const {contentProjection}=await import('../content/adapter.mjs'),content=await contentProjection(),contentResolver=slug=>content.pages.some(p=>p.type==='guide'&&p.slug==='gidai/'+slug);
-  assert.equal(inv.screens.length,70);
+  assert.equal(inv.screens.length,72);
   for(const s of inv.screens.filter(s=>s.route)){const route=s.route.replace(':service','manikiuras').replace(':city','vilnius').replace(':slug',s.id==='content-guide'?'kaip-pasirinkti-nagu-spalva':s.id==='content-author'?'mb-pinet':s.id==='public-venue'?'demo-org-24':'demo-org-0').replace(':id',s.id==='professional-client-detail'?'demo-client-0':'demo-booking-210');assert.ok(resolveRoute(route,{contentResolver}),s.id);}
   for(const path of ['/paslaugos/fake/vilnius','/paslaugos/manikiuras/fake','/gidai/future','/meistrai/demo-org-29'])assert.equal(resolveRoute(path,{contentResolver}),null);
   assert.equal(resolveRoute('/gidai/kaip-pasirinkti-nagu-spalva'),null,'Missing content binding fails closed');

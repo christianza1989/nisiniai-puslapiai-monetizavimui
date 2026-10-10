@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-09T13:38:09.199Z",
+  "selectionAt": "2026-10-09T12:00:00.000Z",
+  "runtimeSource": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+  "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+  "artifactSha256": "3d359b407d21a4248d709ade54ee194488a41281a79a57d722733aefcbaef418",
+  "assets": 309,
+  "plannedPublicationStates": 64,
+  "scope": "Native compiled candidate HTTP publication clock only. Does not enter production or certify hosted product, SMTP, real pilot or final upgrade."
+}

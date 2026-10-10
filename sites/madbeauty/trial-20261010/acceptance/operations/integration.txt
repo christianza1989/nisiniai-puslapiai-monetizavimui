@@ -1,0 +1,10 @@
+✔ Temporary live fixtures reuse server booking, separate fictional identities, noindex and actual expiry (2296.195ms)
+✔ Native temporary server operations use real offers, calendars, roles and customer controls (3211.6283ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6318.4518

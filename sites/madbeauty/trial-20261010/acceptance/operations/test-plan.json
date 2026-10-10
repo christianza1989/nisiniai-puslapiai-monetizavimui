@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-09T21:47:49.6161630Z",
+  "product": [
+    "sites/madbeauty/backend/*.test.mjs",
+    "sites/madbeauty/prototype/*.test.mjs",
+    "sites/madbeauty/acceptance/*.test.mjs",
+    "sites/madbeauty/cloudflare/*.test.mjs"
+  ],
+  "source": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
+  "extendedProduct": 2,
+  "newProduct": 0,
+  "additionalIntegration": [
+    "sites/madbeauty/trial-20261010/native.test.mjs",
+    "sites/madbeauty/trial-20261010/operations.test.mjs"
+  ],
+  "removedProduct": 0,
+  "expectedProductCount": 264
+}

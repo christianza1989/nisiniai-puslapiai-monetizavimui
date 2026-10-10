@@ -5,6 +5,7 @@ import {createHash} from 'node:crypto';
 import {TAXONOMY_NODES} from '../prototype/taxonomy.mjs';
 import {CITIES} from '../prototype/cities.mjs';
 import {planTarget,resolveContentTarget} from '../prototype/content-targets.mjs';
+import {catalogueCityDestination} from '../prototype/catalogue-page.mjs';
 const origin=process.argv[2]||'https://madbeauty.lt';assert.equal(origin,'https://madbeauty.lt');
 const receipt=JSON.parse(await readFile(new URL('output/content-release-receipt.json',import.meta.url)));
 async function get(path){const r=await fetch(origin+path,{redirect:'manual'});if(![301,303,307,308].includes(r.status))assert.equal(r.headers.get('x-madbeauty-content-sha256'),receipt.packageSha256,path);return {status:r.status,headers:r.headers,text:await r.text()};}
@@ -19,6 +20,8 @@ for(let i=0;i<routes.length;i+=6){await Promise.all(routes.slice(i,i+6).map(asyn
 for(const path of ['/paslaugos/unknown','/paslaugos/nagai/unknown','/content-assets/madbeauty/unknown.webp','/content-package.json','/runtime/platform.sqlite','/content-execution-20261007/DRAFT-V2.json']){const r=await get(path);assert.equal(r.status,404,path);assert.ok(!r.text.includes('rel="canonical"'));proof.negative.push({path,status:404});}
 const absent=TAXONOMY_NODES.find(n=>n.kind==='treatment'&&n.scope==='core'&&!registry.routes.some(r=>r.taxonomyNodeId===n.id&&r.cityId));if(absent){const path='/paslaugos/'+absent.id+'/vilnius',r=await get(path);assert.equal(r.status,404,path);proof.negative.push({path,status:404});}
 const extension=TAXONOMY_NODES.find(n=>n.scope==='extension'),ext=await get('/paslaugos/'+extension.id);assert.equal(ext.status,404);
-const form=await get('/paslaugos/nagai?miestas=vilnius');assert.equal(form.status,303);assert.equal(form.headers.get('location'),origin+'/paslaugos/nagai/vilnius');
+const localReady=registry.routes.some(r=>r.taxonomyNodeId==='nagai'&&r.cityId==='vilnius'&&r.status==='ready');
+const form=await get('/paslaugos/nagai?miestas=vilnius');assert.equal(form.status,303);const expectedCityDestination=localReady?'/paslaugos/nagai/vilnius':catalogueCityDestination('/paslaugos/nagai','vilnius',[]);assert.equal(form.headers.get('location'),origin+expectedCityDestination);
+const cityDestinationPage=await get(expectedCityDestination);assert.equal(cityDestinationPage.status,200);proof.citySelection={city:'vilnius',hasPublishedSupply:localReady,destination:expectedCityDestination,status:200};
 const privateIndex=process.argv.indexOf('--private-path');if(privateIndex>=0){const privatePath=process.argv[privateIndex+1];assert.match(privatePath,/^\/gidai\/[a-z0-9-]+$/);const privateArticle=await get(privatePath);assert.equal(privateArticle.status,404);assert.ok(!sitemap.text.includes(origin+privatePath));proof.privatePilot={path:privatePath,state:'not-approved-not-public'};}
 await mkdir(new URL('output/',import.meta.url),{recursive:true});await writeFile(new URL('output/catalogue-verification.json',import.meta.url),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify({...proof,registryHash:proof.registryHash,routes:proof.routes.length,negative:proof.negative.length,pass:true}));

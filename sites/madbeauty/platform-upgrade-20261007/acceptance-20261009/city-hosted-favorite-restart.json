@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-09T19:20:16.792Z",
+  "phase": "after-restart",
+  "status": "PASS",
+  "runtime": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc",
+  "clientId": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120",
+  "favoriteIds": [
+    "provider_6267a38c-81d0-401a-bb7e-ba25212b5180"
+  ],
+  "sourceHash": "a79f99eca760228e391daa45502cfea2cc1c08bcfab57b01ac552d649cd46d65",
+  "targetHash": "02d0512e915ef232a1bb77873fdc5430cc85e1caef0034fd31c06a3ffb4239d1",
+  "mailboxHash": "36bfa6a737b629b82c9ab373214df600e585e20b1149bbd35ac0d4883f86973d",
+  "scope": "Synthetic normal browser customer favorite add/list/remove. Exact source-target snapshots and mailbox after owned isolated source restart; no real provider, SMTP or production writes."
+}

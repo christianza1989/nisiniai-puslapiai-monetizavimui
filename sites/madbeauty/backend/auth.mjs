@@ -1,8 +1,10 @@
 import {randomBytes,randomInt,timingSafeEqual} from 'node:crypto';
 import {randomId,reject} from './primitives.mjs';
+import {createRetention} from './retention.mjs';
 const equal=(a,b)=>{const x=Buffer.from(String(a)),y=Buffer.from(String(b));return x.length===y.length&&timingSafeEqual(x,y);};
 export function createAuth(store){
   const {db,siteId,clock}=store;
+  const retention=createRetention(store);
   const session=(token,{create=true}={})=>{
     const now=clock(),h=store.hash(token||'');
     let row=token?db.prepare('SELECT * FROM sessions WHERE token_hash=? AND site_id=?').get(h,siteId):null;
@@ -11,9 +13,9 @@ export function createAuth(store){
     if(!create)return null;
     const fresh=randomBytes(32).toString('base64url'),csrf=randomBytes(24).toString('base64url');
     db.prepare('INSERT INTO sessions(token_hash,site_id,account_id,csrf,created_at,touched_at,expires_at) VALUES(?,?,NULL,?,?,?,?)').run(store.hash(fresh),siteId,csrf,now,now,now+8*60*60*1000);
-    return {token_hash:store.hash(fresh),site_id:siteId,account_id:null,csrf,token:fresh,expires_at:now+8*60*60*1000};
+    return {token_hash:store.hash(fresh),site_id:siteId,account_id:null,csrf,token:fresh,created_at:now,expires_at:now+8*60*60*1000};
   };
-  const account=s=>s?.account_id?db.prepare('SELECT id,email,name,operator FROM accounts WHERE id=? AND site_id=?').get(s.account_id,siteId):null;
+  const account=s=>{const u=s?.account_id?db.prepare('SELECT id,email,name,operator FROM accounts WHERE id=? AND site_id=?').get(s.account_id,siteId):null;if(u&&retention.blocked(u.id))return null;if(u)db.prepare('INSERT INTO retention_activity(site_id,account_id,touched_at,notice_at) VALUES(?,?,?,0) ON CONFLICT(site_id,account_id) DO UPDATE SET touched_at=excluded.touched_at,notice_at=0').run(siteId,u.id,clock());return u?{...u,verifiedAt:s.created_at}:null;};
   const requireAccount=s=>{const u=account(s);if(!u)reject('UNAUTHENTICATED','Prisijunkite el. paštu.',401);return u;};
   const csrf=(s,value)=>{if(!s||!equal(s.csrf,value||''))reject('CSRF','Sesija pasikeitė. Atnaujinkite puslapį.',403);};
   const start=(s,email,ip)=>{
@@ -38,11 +40,14 @@ export function createAuth(store){
       if(!/^\d{6}$/.test(String(code||''))||!equal(store.hash(c.id+':'+code),c.code_hash))return {error:true};
       db.prepare('UPDATE email_challenges SET consumed=1 WHERE id=?').run(c.id);
       let u=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND email=?').get(siteId,c.email);
-      if(!u){u={id:randomId('account'),email:c.email,name:'',operator:0};db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(u.id,siteId,u.email,u.name,clock());const d=store.read();d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
+      if(!u){u={id:randomId('account'),email:c.email,name:'',operator:0};db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(u.id,siteId,u.email,u.name,clock());}
+      // Imported or administrator-created accounts need the same client identity as new sign-ins.
+      if(store.ensureClient)store.ensureClient(u.id);
+      else if(!(store.recordById?store.recordById('clients',u.id):store.read().clients.find(x=>x.id===u.id))){const d=store.read();d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
       if(store.onVerifiedAccount)u=store.onVerifiedAccount(u);
       db.prepare('DELETE FROM sessions WHERE token_hash=? AND site_id=?').run(s.token_hash,siteId);
       const fresh=session(null);db.prepare('UPDATE sessions SET account_id=? WHERE token_hash=?').run(u.id,fresh.token_hash);fresh.account_id=u.id;
-      return {session:fresh,user:u};
+      return {session:fresh,user:{...u,verifiedAt:clock()}};
     });
     if(result.error)reject('INVALID_CODE','Kodas neteisingas arba nebegalioja. Gaukite naują kodą.',400);
     return result;

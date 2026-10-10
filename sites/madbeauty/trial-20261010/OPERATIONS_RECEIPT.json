@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "status": "LIVE-TEMPORARY-OPERATIONS-ACCEPTED",
+  "recordedAt": "2026-10-09T21:56:30.326Z",
+  "authorization": "Owner asks to continue autonomous platform testing; prior direct authorization temporarily publishes existing40dummy profiles",
+  "sourceCommit": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
+  "origin": "https://bandymas.madbeauty.lt",
+  "worker": "madbeauty-temporary-test-20261010",
+  "version": "5f55df40-6ba1-4ece-8ac8-958a83529d6a",
+  "previousVersion": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+  "workerArtifactSha256": "9ca76e3d756b4294e5c4cb837bc5f9459b26d2a329927189c51d63885818a35f",
+  "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+  "appAssetSha256": "b9a0b538c76fe41d8e4986ed6cc6fd425830433408b7c70ffea0f3e9daa470ed",
+  "assets": {
+    "count": 1059,
+    "allBytesUnchangedSinceInitialReceipt": true,
+    "previousEvidence": "acceptance/assets.json"
+  },
+  "expiresAt": "2026-10-16T21:10:47.982Z",
+  "expiryExtended": false,
+  "namespace": "a07857f7b8414eb789f3ff639953ff1b",
+  "storageBindingsUnchanged": true,
+  "migrationUnchanged": true,
+  "secretNames": [
+    "SESSION_SECRET"
+  ],
+  "smtp": false,
+  "erasureExecuted": false,
+  "fix": "Repeat erasure request omits internal actions just like initial response, customer workspace and export; operator journal preserved",
+  "tests": {
+    "product": {
+      "pass": 264,
+      "fail": 0,
+      "durationMs": 80676.362,
+      "new": 0,
+      "extended": 2,
+      "removed": 0,
+      "plan": "acceptance/operations/test-plan.json"
+    },
+    "nativeIntegration": {
+      "pass": 2,
+      "fail": 0,
+      "durationMs": 6318.4518
+    },
+    "nativeOperations": 21,
+    "hostedOperations": 21,
+    "nativeBrowser": "acceptance/operations/ui.json"
+  },
+  "cleanup": "API test cancels both new visits, archives its offer, revokes reception membership, releases busy block and withdraws erasure request; native browser archives both of its new private drafts. Fictional history retained; no purge.",
+  "screenshots": [
+    {
+      "file": "calendar-desktop-native.jpg",
+      "width": 1425,
+      "height": 968,
+      "bytes": 94477,
+      "sha256": "7de7c5565b6bad35f8345dececf81115d390f004e704df94c47cd038569683f8",
+      "edited": false
+    },
+    {
+      "file": "calendar-mobile-native.jpg",
+      "width": 375,
+      "height": 865,
+      "bytes": 49547,
+      "sha256": "8b0b527cca3822802f8d5751fdeb4b08d4441d21b75d217284358ec6275cb25a",
+      "edited": false
+    },
+    {
+      "file": "offer-editor-mobile-native.jpg",
+      "width": 390,
+      "height": 900,
+      "bytes": 32846,
+      "sha256": "faec338eb4dc777e0dedbaca816c99158917fa517a7b159c6fc2aec8fb9057c9",
+      "edited": false
+    },
+    {
+      "file": "offers-desktop-native.jpg",
+      "width": 1425,
+      "height": 968,
+      "bytes": 101001,
+      "sha256": "d0d8a2b5f7f7b0286849797fd188bc74dd4a55dbeb40ea526c528312c06e7987",
+      "edited": false
+    },
+    {
+      "file": "offers-mobile-native.jpg",
+      "width": 375,
+      "height": 865,
+      "bytes": 47491,
+      "sha256": "e878642e86078374600a486b82b7ca72f3e464faa2331cea19abacfaeaa75d68",
+      "edited": false
+    }
+  ],
+  "canonical": {
+    "origin": "https://madbeauty.lt",
+    "version": "4e43bd2d-e5ea-491f-ae3e-ea74d260fbe9",
+    "namespace": "2faf96eedef1425c8d4fc07444cde2f3",
+    "settingsUnchanged": true,
+    "deploymentsUnchanged": true,
+    "existingDomainsUnchanged": true,
+    "observedSiteMailDnsUnchanged": true,
+    "dnsScope": "Public DoH A/www A/MX/TXT/NS; OAuth cannot read full zone record inventory",
+    "fullPlatformUpgradeDeployed": false
+  },
+  "rollback": {
+    "workerOnlyPreviousVersion": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+    "scope": "Trial source projection only; no new schema/namespace. Compare current state before rolling back; version rollback does not undo test records or secrets."
+  },
+  "limits": [
+    "Fictional trial; no genuine provider or email ownership/inbox proof",
+    "No invented customer retention/backup policy or irreversible erasure execution",
+    "Current browser scope is owner offers/editor/calendar; historical client/search/profile proof keeps its original release identity",
+    "No canonical full-upgrade activation or phase-four external services"
+  ]
+}

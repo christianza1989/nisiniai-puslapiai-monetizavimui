@@ -1,0 +1,88 @@
+{
+  "checkedAt": "2026-10-09T18:54:37.287Z",
+  "runtimeSource": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc",
+  "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+  "artifactSha256": "2975859764babda23a0ff1af1f181b509c4fc3d951b4703bded0e9a5b0cc2108",
+  "scope": "Candidate source and isolated guest UI only. No production activation, real pilot, SMTP inbox or factual retention execution.",
+  "changes": [
+    "Absent-supply catalogue city submission goes to search with exact procedure/city, supplied city retains its current catalogue destination.",
+    "City landing pages enumerate active catalogue categories instead of the legacy ten-entry list.",
+    "Early SSR catalogue city choice is captured before client rendering and restored to the same national procedure form."
+  ],
+  "productRegression": {
+    "tests": 264,
+    "pass": 264,
+    "newTests": 0,
+    "extendedTests": 1,
+    "removedTests": 0,
+    "durationMs": 114415.3025,
+    "receipt": "city-selection-regression.json"
+  },
+  "publication": {
+    "states": 64,
+    "assets": 309,
+    "receipt": "city-calendar-proof.json"
+  },
+  "nativeUi": {
+    "receipt": "city-selection-ui.json",
+    "initialRetentionReceipt": "city-initial-selection.json",
+    "categories": 14,
+    "mobileViewport": {
+      "width": 390,
+      "height": 900
+    },
+    "horizontalOverflow": false,
+    "screenshots": [
+      {
+        "file": "city-selection-empty-desktop-full.jpg",
+        "sha256": "50eb6bd389d456d6ab7537e21a59bead8e3191803a12f907c3dd32cc6c2723dc",
+        "mimeType": "image/jpeg",
+        "width": 1264,
+        "height": 1726
+      },
+      {
+        "file": "city-selection-empty-390.jpg",
+        "sha256": "17dc8a34cb088bceab7f98e6be1441ef24b617a2025de12c8c25a11d6013bed4",
+        "mimeType": "image/jpeg",
+        "width": 374,
+        "height": 2254
+      },
+      {
+        "file": "city-categories-14.jpg",
+        "sha256": "5ebe6150cd62fb387848c18edcc3c911d076c61ba3bc9249131f5205da1c7adf",
+        "mimeType": "image/jpeg",
+        "width": 1265,
+        "height": 712
+      },
+      {
+        "file": "city-categories-14-mobile.jpg",
+        "sha256": "ba04cafaa59d38ca20a5938d48f9335ecc00b96c19c74a558b1c6041460b6002",
+        "mimeType": "image/jpeg",
+        "width": 374,
+        "height": 2456
+      },
+      {
+        "file": "city-initial-selection-retained.jpg",
+        "sha256": "b88aa95061a525b3417ee4833a82435dc44e18da04b7cfc10f669c385e3d3fb3",
+        "mimeType": "image/jpeg",
+        "width": 1264,
+        "height": 1573
+      }
+    ]
+  },
+  "liveCatalogue": {
+    "receipt": "live-content-targets.json",
+    "checkedAt": "2026-10-09T18:39:23.237Z",
+    "nationalHrefChecks": 22,
+    "cityTargets": 0,
+    "currentCityDestinationStatus": 404,
+    "fullUpgradeDeployed": false
+  },
+  "remaining": [
+    "Real provider pilot, authorized reservation/reminder inbox recipient and factual retention/backup policy.",
+    "Full final selected-release hosted/canonical acceptance and production cutover; old 3c hosted receipts retain their original identity.",
+    "Writer next30 immutable package and actual revision-bound reviews are pending in its own thread; neither its drafts nor this checkpoint authorize a partial full-upgrade deployment."
+  ]
+}

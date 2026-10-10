@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "status": "active-not-complete",
+  "plan": "../upgrade-plan-20261006/BACKLOG.json",
+  "runtimeSourceCheckpoint": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
+  "companionSchema": "niche-public-core c7e0c9a (63cfd8c schemas + f27547c GEO) / PR6",
+  "productionUpgradeDeployed": false,
+  "deploymentAuthorization": "2026-10-08 direct human: deploy when the full upgrade is completed. Prerequisite remains unsatisfied; no partial completion inferred.",
+  "productionReadOnlyCheck": "Independent authorized autonomous article release4e43bd2d accepted2026-10-09 on unchanged incumbentb7/core63/package98882a2d/originalnamespace2faf-v1; provider configuration equality passed. Full backend upgrade remains not deployed; prior1de/4db proofs retained.",
+  "checkpoints": [
+    {
+      "name": "catalogue-offer-search-single-booking",
+      "tests": 102,
+      "state": "accepted-isolated-path"
+    },
+    {
+      "name": "roles-catalogue-admin-editorial-schema",
+      "tests": 106,
+      "state": "accepted-isolated-path",
+      "remaining": "Full UI state matrix and later plan modules"
+    },
+    {
+      "name": "reviewed-places-staff-shifts-address-snapshots",
+      "tests": 110,
+      "state": "accepted-isolated-path",
+      "remaining": "Browser complete branch booking and full state matrix; later plan modules"
+    },
+    {
+      "name": "normalized-sql-rows-and-scoped-public-reads",
+      "tests": 114,
+      "state": "accepted-isolated-path",
+      "remaining": "Whole-state mutation serialization and per-organization routing; production migration not applied"
+    },
+    {
+      "name": "typed-search-results-and-public-coordinate-map",
+      "tests": 117,
+      "state": "accepted-isolated-path",
+      "remaining": "Geolocation permission handoff and full UI error/stale/conflict matrix; production not deployed"
+    },
+    {
+      "name": "atomic-multi-service-visit-and-segment-calendar",
+      "tests": 122,
+      "state": "accepted-isolated-path",
+      "remaining": "Full state matrix, phased occupancy and later modules; production not deployed"
+    },
+    {
+      "name": "phased-staff-chair-occupancy-and-editor",
+      "tests": 126,
+      "state": "accepted-isolated-path",
+      "remaining": "Full UI state matrix and later modules; production not deployed"
+    },
+    {
+      "name": "sharing-metadata-and-reviewed-geo",
+      "tests": 128,
+      "state": "accepted-isolated-path",
+      "remaining": "Production unchanged"
+    },
+    {
+      "name": "durable-reminders-and-structured-waitlist",
+      "tests": 137,
+      "state": "accepted-isolated-path",
+      "remaining": "Actual SMTP inbox and full UI state matrix not accepted; production unchanged"
+    },
+    {
+      "name": "current-price-rebooking-private-cards-and-identity-bound-export",
+      "tests": 141,
+      "state": "accepted-isolated-path",
+      "remaining": "Erasure execution requires reviewed retention policy and backup handling; full UI matrix and production activation remain"
+    },
+    {
+      "name": "organization-rules-scoped-reports-complaint-journal",
+      "tests": 147,
+      "state": "accepted-isolated-path",
+      "remaining": "Full state matrix; organization routing/scoped writes; media scaling; factual activation"
+    },
+    {
+      "name": "reviewed-work-gallery-staff-portraits-and-working-hours",
+      "tests": 150,
+      "state": "accepted-isolated-path",
+      "remaining": "Full state matrix; media capacity/scaling; scoped mutations and organization routing; factual activation"
+    },
+    {
+      "name": "atomic-bounded-media-storage-integrity-and-load",
+      "tests": 154,
+      "state": "accepted-isolated-pilot-path",
+      "remaining": "Larger media adapter activation/migration requires reviewed account/cost; organization routing and full state matrix remain"
+    },
+    {
+      "name": "indexed-organization-booking-patch-and-actual-branch-browser",
+      "tests": 157,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical tenant routing and remaining global operations; full UI matrix and factual activation"
+    },
+    {
+      "name": "keyboard-menu-groups-reviewed-snapshots-and-authenticated-price-csv",
+      "tests": 159,
+      "state": "accepted-isolated-path",
+      "remaining": "Full UI state matrix, physical tenant routing, larger-adapter and factual activation"
+    },
+    {
+      "name": "indexed-provider-mutations-private-workspaces-and-browser-conflict-recovery",
+      "tests": 160,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing, remaining global operations and full actual UI matrix; activation facts"
+    },
+    {
+      "name": "indexed-client-controls-access-eligibility-and-per-organization-automation",
+      "tests": 163,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing, new identities/creation/global operator paths, full actual UI matrix and activation facts"
+    },
+    {
+      "name": "expired-hold-selection-marker",
+      "tests": 164,
+      "state": "accepted-isolated-path",
+      "remaining": "Expired hold/recovery actual390 accepted; other expiry widths and full matrix, physical organization routing and activation facts remain"
+    },
+    {
+      "name": "search-dropdown-usable-widths-keyboard-network-recovery-and-related-guides",
+      "tests": 165,
+      "state": "accepted-isolated-path",
+      "remaining": "Cold-start failure diagnosis, other full UI paths and physical organization routing; factual activation"
+    },
+    {
+      "name": "indexed-new-and-imported-verified-client-identities",
+      "tests": 166,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing, organization creation/global operator paths, full actual UI matrix and activation facts"
+    },
+    {
+      "name": "bounded-public-startup-reads-and-keyboard-recovery",
+      "tests": 167,
+      "state": "accepted-isolated-path",
+      "remaining": "Original transient cold-start cause remains unverified; remaining UI paths, physical routing and factual activation"
+    },
+    {
+      "name": "indexed-organization-onboarding-manual-clients-and-scoped-mail-retry",
+      "tests": 168,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical organization routing and global operator paths, remaining UI matrix and activation facts"
+    },
+    {
+      "name": "reception-and-practitioner-calendar-states-keyboard-recovery",
+      "tests": 168,
+      "state": "accepted-isolated-path",
+      "remaining": "Remaining offer, waitlist, CSV, branch, phase and whole-cancellation actual states; physical routing and factual activation"
+    },
+    {
+      "name": "sql-writer-fence-bounded-read-only-organization-transfer-and-independent-catalogue",
+      "tests": 175,
+      "state": "accepted-isolated-foundation",
+      "remaining": "Target write authority, worker routing/directory, global identity/preferences/replay ownership, mail and projection activation are not implemented; full UI and factual activation remain"
+    },
+    {
+      "name": "coalesced-session-recovery-offer-review-required-addons-and-qualification-expiry",
+      "tests": 182,
+      "state": "accepted-isolated-path",
+      "remaining": "Physical target write authority/routing/global paths and remaining actual UI states; factual activation remains."
+    },
+    {
+      "name": "prepared-target-source-seal-immutable-context-and-single-private-calendar-authority",
+      "tests": 187,
+      "state": "accepted-isolated-authority-path",
+      "remaining": "Browser/directory/new ID routing, global identity/preferences/customer fanout, public projections, target mail/media activation and remaining UI states."
+    },
+    {
+      "name": "signed-directory-http-current-roles-and-two-store-browser",
+      "tests": 194,
+      "state": "accepted-bounded-isolated-path",
+      "remaining": "New central identity/cache/preferences/taxonomy/name admission, global controls, mail/media activation, production binding/migration and full UI matrix"
+    },
+    {
+      "name": "fresh-directory-identity-cache-and-confirmed-name-effects",
+      "tests": 198,
+      "state": "accepted-isolated-path",
+      "remaining": "Migrated-client preference reconciliation, manual identity/membership admission, globals, target mail/media and full UI matrix; production unchanged"
+    },
+    {
+      "name": "central-preferences-durable-customer-controls-and-target-reminder-reconciliation",
+      "tests": 200,
+      "state": "accepted-isolated-path",
+      "remaining": "Manual identity/membership, globals, target mail/media/binding and full UI matrix; production unchanged"
+    },
+    {
+      "name": "central-existing-email-recipient-client-links-team-access-and-workspace-reload",
+      "tests": 203,
+      "state": "accepted-isolated-path",
+      "remaining": "New manual identity admission, globals, target mail/media/binding and full UI states; production unchanged"
+    },
+    {
+      "name": "central-new-manual-client-durable-admission-receipt-and-ui-recovery",
+      "tests": 207,
+      "state": "accepted-isolated-path",
+      "remaining": "Globals, target mail/media/binding and full UI states; production unchanged"
+    },
+    {
+      "name": "current-favorites-central-indexed-taxonomy-global-metrics-and-per-org-catalogue-recovery",
+      "tests": 210,
+      "state": "accepted-isolated-path",
+      "remaining": "Target mail/media/binding and full UI states; production unchanged"
+    },
+    {
+      "name": "central-delegated-organization-mail-admission-and-alarm-recovery",
+      "tests": 216,
+      "state": "accepted-isolated-path",
+      "remaining": "Actual SMTP/inbox and real provider pilot; media transfer/production binding and outstanding I04 states. Receipt bounds remain; factual C02 retention/backups not activated."
+    },
+    {
+      "name": "private-physical-organization-sql-media-transfer",
+      "tests": 222,
+      "state": "accepted-isolated-path",
+      "remaining": "Current HTTP media read/new target upload; Node filesystem import, production binding/migration, I04 and factual launch gates."
+    },
+    {
+      "name": "current-target-public-private-media-http-read",
+      "tests": 224,
+      "state": "accepted-isolated-path",
+      "remaining": "Target upload, Node filesystem import, production binding/migration, actual raster/UI and factual launch gates."
+    },
+    {
+      "name": "archived-procedure-private-draft-and-accessible-canonical-label",
+      "tests": 224,
+      "state": "accepted-isolated-browser-and-node-path",
+      "remaining": "Target upload, Node filesystem import, production binding/migration, remaining I04 and factual launch gates."
+    },
+    {
+      "name": "current-target-image-upload-and-durable-uncertain-reply-recovery",
+      "tests": 232,
+      "state": "accepted-isolated-node-workers-raster-path",
+      "remaining": "Native Worker browser upload states, local source upload dedup, Node filesystem import, production binding/migration, remaining I04 and factual launch gates."
+    },
+    {
+      "name": "candidate-organization-binding-with-existing-pilot-persistence",
+      "tests": 233,
+      "state": "accepted-local-worker-and-config-dry-run",
+      "remaining": "Remote migration/deploy remain unexecuted; native Worker browser upload, local source dedup, Node filesystem import, I04 and factual/hosted restore gates."
+    },
+    {
+      "name": "source-upload-atomic-durable-retry-and-physical-handoff-recovery",
+      "tests": 238,
+      "state": "accepted-isolated-node-workers-and-native-gallery-paths",
+      "remaining": "Node filesystem import, remaining I04 states and hosted/factual launch gates; source browser is separate from Worker HTTP acceptance; production not deployed."
+    },
+    {
+      "name": "private-filesystem-media-import-and-node-to-native-worker-transfer",
+      "tests": 244,
+      "state": "accepted-isolated-node-cli-and-native-worker-transfer",
+      "remaining": "Remaining applicable I04 UI states, hosted restore/fence/load and factual SMTP/pilot/retention gates; no production deployment."
+    },
+    {
+      "name": "idempotent-menu-save-and-native-menu-csv-gallery-states",
+      "tests": 246,
+      "state": "accepted-isolated-path",
+      "remaining": "Other named I04, hosted lifecycle/load and factual launch gates"
+    },
+    {
+      "name": "csv-preview-confirmation-rules-report-native",
+      "tests": 249,
+      "state": "accepted-isolated-path",
+      "source": "91d1c87c0b709a3f431b4e8bd40f99f5073f8fc9",
+      "remaining": "Other named applicable I04, hosted lifecycle/load and factual launch gates"
+    },
+    {
+      "name": "correctable-report-date-ranges-and-mobile-year-readability",
+      "tests": 252,
+      "state": "accepted-isolated-path",
+      "evidence": "ACCEPTANCE252 / report252-browser.md;3new,1extended,0removed; exact75aa39page308asset; native invalid bookmark/form,93day reject/exact92 accept/four final widths",
+      "remaining": "Other applicable I04; hosted restore/fence/load and factual inbox/pilot/retention gates"
+    },
+    {
+      "name": "platform-contact-report-queue-and-native-version-recovery",
+      "tests": 255,
+      "state": "accepted-isolated-path",
+      "evidence": "ACCEPTANCE255/contact255-browser.md;3new/1extended/0removed; exact75aa39/308; native contact/review/reporting-customer states",
+      "remaining": "Other publication-action and applicable I04; hosted and factual launch gates"
+    },
+    {
+      "name": "whole-cancellation-saved-summary-native-stale-and-uncertain-recovery",
+      "tests": 256,
+      "state": "accepted-isolated-path",
+      "evidence": "ACCEPTANCE256/cancel256-browser.md;1new/1extended/0removed; exact75aa39/308; native Node directory two-store whole cancellation states",
+      "remaining": "Other applicable I04, hosted and factual launch gates"
+    },
+    {
+      "name": "phase-focus-confirmation-recovery-and-per-tab-ui",
+      "tests": 256,
+      "state": "accepted-isolated-path",
+      "source": "ef79fa2fb21b666774daebbfefa30db9270c273f",
+      "remaining": "Other applicable UI states and hosted/factual launch gates"
+    },
+    {
+      "name": "waitlist-stale-claim-focused-context-and-natural-expiry",
+      "tests": 256,
+      "state": "accepted-isolated-path",
+      "source": "b00eeb8a34706b1e64fc53c247558ff57a6ae3fd",
+      "remaining": "Other applicable UI states and hosted/factual launch gates"
+    },
+    {
+      "name": "account-bound-restoration-and-native-client-privacy-recovery",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "ffa1874adc039fe1a7d2796bd1bb8eab721e0871",
+      "accountSource": "d9c61b01b583e0eee41f18efdd448b1efd8eb9ec",
+      "newTests": 2,
+      "remaining": "Other applicable UI states; hosted/factual launch gates; irreversible erasure disabled"
+    },
+    {
+      "name": "native-owner-location-errors-versioned-archive-and-private-restoration",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
+      "newTests": 0,
+      "remaining": "Operator/staff location states, other applicable UI, hosted/factual launch gates"
+    },
+    {
+      "name": "native-location-review-and-staff-places-outage-stale-restart",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "c8cae50af057319fbdae11353bd5ffdf8eb5d139",
+      "newTests": 0,
+      "remaining": "Other applicable UI, hosted/factual launch gates"
+    },
+    {
+      "name": "native-qualification-context-and-team-access-errors-stale-restart",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "970913fca9fc77d6b3d6e05bf0d9eee21053e3ab",
+      "newTests": 0,
+      "remaining": "Global taxonomy, other applicable UI, hosted/factual launch gates"
+    },
+    {
+      "name": "native-incomplete-module-timeout-retry-and-late-completion",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "81999fe",
+      "newTests": 0,
+      "remaining": "Original transient cause and hosted/factual gates separate"
+    },
+    {
+      "name": "native-global-catalogue-favorite-intent-and-concurrent-preference-recovery",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "ca8c7da8f107ae1ef22d02674eb7088d540ba7e6",
+      "newTests": 0,
+      "extendedTests": 1,
+      "evidence": "module258-proof.json/global258-proof.json; regression-86 allfour258; approved75aa39/309; 6 source safety PASS",
+      "remaining": "Other applicable UI, storage audit, hosted/factual gates"
+    },
+    {
+      "name": "complaint-publication-and-unavailable-profile",
+      "tests": 258,
+      "state": "accepted-isolated-path",
+      "source": "319ebd519e3494b4c97ca0cd71993507a7e6084d",
+      "proof": "publication258-proof.json: 58 checks; 3 resolved targets; 2 unchanged bookings; full shared native-selection context, canonical404 repair, private bytes and restart",
+      "regression": "regression-90.log 258/258, 31992.3175ms, 0 new/2 extended/0 removed; all four suites",
+      "remaining": "Full upgrade ACTIVE; rebooking archived/addon choices, broader booking error/expiry widths, catalogue applicability, storage audit and hosted/factual gates remain"
+    },
+    {
+      "name": "rebooking-current-alternatives-removed-addon-retry",
+      "state": "accepted-isolated-path",
+      "runtime": "0f667fe26afb9feb1120db138db8156dd20448fb",
+      "tests": 259,
+      "regression": "regression-92.log",
+      "evidence": "ACCEPTANCE.md / rebooking259-proof.json",
+      "remaining": "Broader booking error/expiry widths and other applicable I04 surfaces; no hosted or real pilot acceptance"
+    },
+    {
+      "name": "booking-hold-errors-natural-expiry-widths",
+      "state": "accepted-isolated-path",
+      "runtime": "20d24e5b06f6588ec26cf8c7aa1d919021d779ea",
+      "tests": 260,
+      "regression": "regression-94.log",
+      "evidence": "ACCEPTANCE.md / booking260-proof.json",
+      "remaining": "Catalogue-add/procedure-request applicability, storage audit and factual/hosted gates"
+    },
+    {
+      "name": "catalogue-hierarchy-persistent-procedure-requests",
+      "state": "accepted-isolated-path",
+      "runtime": "8d3d88c03bd123824683de0503762b1bbec33bb8",
+      "tests": 263,
+      "regression": "regression-96.log",
+      "evidence": "ACCEPTANCE.md / catalogue263-proof.json",
+      "remaining": "Current storage/launch audit, hosted restore/fence/load and factual SMTP/pilot/retention gates"
+    },
+    {
+      "name": "storage-recovery-authority-lifecycle-readiness-audit",
+      "state": "accepted-isolated-path",
+      "runtime": "39b71b18bd535eeb8d231fe497d26ca254b108d3",
+      "tests": 263,
+      "regression": "regression-98.log",
+      "evidence": "STORAGE_AUDIT.md / CURRENT_READINESS.md / storage263-hosted-proof.json / storage263-hosted-lifecycle-proof.json",
+      "remaining": "Factual real provider/mail/retention and chosen hosted product/canonical release gates; active-pair coordinated PITR not accepted"
+    },
+    {
+      "name": "hosted-ui-onboarding-whole-booking-physical-cutover",
+      "state": "accepted-isolated-path",
+      "runtime": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+      "tests": 264,
+      "regression": "regression-99.log",
+      "evidence": "HOSTED_UI_ACCEPTANCE.md / hosted-ui264 restart/handoff/cutover/preflight receipts / native screenshots",
+      "remaining": "Canonical host/all applicable hosted states, factual real provider/mail/retention and existing full completion prerequisite. Capture-only transport is not SMTP."
+    },
+    {
+      "name": "candidate-bb-calendar-hosted-preservation-and-cancellation",
+      "state": "accepted-named-scopes",
+      "runtime": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+      "core": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+      "productRegressionTests": 264,
+      "publicationStates": 64,
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+      "qaVersion": "cdcf8bce-85df-4978-b1a4-cfaf40c635c6",
+      "evidence": "HOSTED_UI_ACCEPTANCE.md / acceptance-20261009",
+      "remaining": "Real provider / inbox / retention, final chosen canonical release and other applicable hosted scopes; later actual signed-in booking-version conflict separately accepted."
+    },
+    {
+      "name": "hosted-whole-rebooking-and-actual-booking-version-conflict",
+      "state": "accepted-named-scopes",
+      "runtime": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+      "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+      "productRegressionTests": 264,
+      "newProductTests": 0,
+      "evidence": "acceptance-20261009/hosted-rebooking.json / hosted-booking-version.json",
+      "remaining": "Real provider / inbox / retention and final full release prerequisite remain"
+    },
+    {
+      "name": "catalogue-city-search-and-current-city-categories",
+      "tests": 264,
+      "newTests": 0,
+      "extendedTests": 1,
+      "state": "accepted-isolated-path",
+      "receipt": "acceptance-20261009/city-continuation.json",
+      "remaining": "Full upgrade facts and final selected-release hosted/canonical acceptance unchanged."
+    },
+    {
+      "name": "hosted-city-customer-controls-reviewed-card-media",
+      "state": "accepted-isolated-path",
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "tests": 264,
+      "extendedTests": 3,
+      "newTests": 0,
+      "removedTests": 0,
+      "receipt": "HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md",
+      "remaining": "Actual provider pilot, authorized booking/reminder inbox, factual retention/backup policy and full canonical release acceptance; production unchanged"
+    },
+    {
+      "name": "approved-next19-content-admission-and-preserved-hosted-candidate",
+      "state": "accepted-named-scopes",
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+      "publicationStates": 102,
+      "assets": 404,
+      "hostedVersion": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
+      "receipt": "CONTENT_NEXT19_ACCEPTANCE.md",
+      "remaining": "Full platform factual pilot/inbox/retention prerequisites and final canonical full-release acceptance remain."
+    },
+    {
+      "name": "autonomous-editorial-next11-canonical-release-and-candidate",
+      "state": "accepted-named-scopes",
+      "publicationStates": 124,
+      "assets": 459,
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+      "hostedVersion": "cb9fda75-dd22-4a1d-acc6-b058bd9b5fed",
+      "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md",
+      "remaining": "Full platform real-provider/inbox/retention facts and final canonical full-backend acceptance remain separate."
+    },
+    {
+      "name": "temporary-live-21-operations-and-safe-erasure-replay",
+      "sourceCommit": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
+      "tests": 264,
+      "nativeIntegrations": 2,
+      "hostedOperations": 21,
+      "state": "accepted-temporary-fictional-host",
+      "receipt": "../trial-20261010/OPERATIONS_RECEIPT.json",
+      "remaining": "Canonical full upgrade, authorized SMTP inbox recipient and factual retention/backup execution; dummy trial no longer requires genuine salon inputs"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "G01",
+      "title": "Aktuali platformos apimtis ir inventorius",
+      "phase": "0",
+      "state": "in-progress",
+      "evidence": "SCREEN_INVENTORY and CURRENT_READINESS distinguish implemented/source/isolated/hosted/live facts and name remaining dependencies."
+    },
+    {
+      "id": "D01",
+      "title": "Hierarchinė taksonomija ir versijavimas",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Shared versioned taxonomy, ancestry/aliases/archive integrity and global258/catalogue263 named local guards."
+    },
+    {
+      "id": "D02",
+      "title": "Senų kategorijų ir paslaugų migracija",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Retained legacy URLs, deterministic private conversion and exact old/new booking/service/price IDs; migration and archived224 named checks."
+    },
+    {
+      "id": "D03",
+      "title": "Meistro kelių paslaugų pasirinkimas",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Multi-procedure draft/restore and required price/duration/qualification guards; offers and catalogue forms named actual checks."
+    },
+    {
+      "id": "D04",
+      "title": "Pasiūlymai, variantai ir keli meistrai",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Reviewed variants/per-staff prices/durations and unchanged booking snapshots; whole/phase/branch/rebooking named acceptance."
+    },
+    {
+      "id": "D05",
+      "title": "Salono grupės ir paslaugų meniu tvarka",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "ACCEPTANCE.md: owner group creation/assignment, two-tab stale409, immutable reviewed group and resubmit; actual native keyboard group focus at320/390/820/1440, taxonomy ID preserved."
+    },
+    {
+      "id": "D06",
+      "title": "Priedų grupės ir pasirinkimo taisyklės",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Addon group min/max/foreign option guards, actual mandatory-addon recovery and removed-addon rebooking259."
+    },
+    {
+      "id": "D07",
+      "title": "CSV importas ir masinis redagavimas",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "ACCEPTANCE249 / csv249-browser.md: fresh read-only owned ID/version/duplicate preview with safe before/after labels, separate atomic confirmation; native no-write invalid/corrected preview, concurrent33EUR/v4 stale protection, fresh33->32 committed lost reply exact v5 retry/reload; prior scoped export/publish tests retain scope. No reload-persistent CSV intent guarantee."
+    },
+    {
+      "id": "S01",
+      "title": "Paieškos meniu su kategorijomis ir sinonimais",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "ACCEPTANCE.md165: enabled menu259 entries, exact synonyms/no-diacritic, Home/End/Arrow/Enter/Escape, all URL, empty/error/retry, popup/input320/390/820/1440. Full view cold-start failure remains I04 UNVERIFIED."
+    },
+    {
+      "id": "S02",
+      "title": "Miestų ir vietos paieška",
+      "phase": "1",
+      "state": "in-progress",
+      "evidence": "103 exact canonical cities and manual/no-diacritic/dropdown/local location paths accepted; geography data type remains separate.",
+      "remaining": "Real device granted geolocation and physical consent flow not certified; manual input remains usable."
+    },
+    {
+      "id": "S03",
+      "title": "Rezultatai pagal tikrą laisvą viso vizito laiką",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Actual whole-window, latest time ordering, no-full-slot recovery, phase/branch rules and booking260 stale/error/expiry scopes."
+    },
+    {
+      "id": "S04",
+      "title": "Salonų ir meistrų atskiri paieškos rezultatai",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance"
+    },
+    {
+      "id": "S05",
+      "title": "Žemėlapis, atstumai ir adresai",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance"
+    },
+    {
+      "id": "P01",
+      "title": "Išsamus profilis ir tikrų darbų galerija",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: ordered reviewed work/service links, caption and staff portraits, private provenance, stale/restricted snapshots, actual upload/review/public mobile work CTA and Node/Workers restart."
+    },
+    {
+      "id": "B01",
+      "title": "Kelių paslaugų vienas vizitas",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md and ACCEPTANCE.md: Node/Workers concurrency, SQL restart, one booking/mail, secondary staff scope and actual browser whole sequence/whole reschedule/calendar"
+    },
+    {
+      "id": "B02",
+      "title": "Procedūros fazės ir resursų rezervavimas",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: independent phase occupancies, immutable saved phase snapshots, active break protection, Node/Workers processing overlap, actual phase editor error/recovery and staff/chair calendar filters"
+    },
+    {
+      "id": "B03",
+      "title": "Paslaugų prieinamumo taisyklės",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: rules and current-schedule report denominators, authenticated CSV, typed public reports, versioned audited decisions, private image retention; actual desktop/mobile error/recovery/reload and consultation request."
+    },
+    {
+      "id": "B04",
+      "title": "Priminimai prieš vizitą",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: exact reminder clocks, version suppression and SQL rollback/restart; structured criteria, expiring offers, atomic concurrent claim and explicit confirmation; actual customer settings, error/recovery and mobile phase booking"
+    },
+    {
+      "id": "B05",
+      "title": "Automatinis laukiančiųjų pasiūlymas",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: exact reminder clocks, version suppression and SQL rollback/restart; structured criteria, expiring offers, atomic concurrent claim and explicit confirmation; actual customer settings, error/recovery and mobile phase booking"
+    },
+    {
+      "id": "C01",
+      "title": "Kliento paskyra ir pakartotinis vizitas",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Current-price whole sequence, removed addons, archived alternative, own account access; actual changed-price rebooking confirms new ID and preserves old price.; rebooking259 actual archived-alternative and removed-addon bookings, read-error keyboard retry and retained snapshots after restart accepted locally.; normal hosted canceled whole-visit repeat creates one new confirmed booking, preserves old canceled ID, and survives target restart with both role views."
+    },
+    {
+      "id": "C02",
+      "title": "Klientų kortelės ir duomenų teisės",
+      "phase": "3",
+      "state": "in-progress",
+      "evidence": "Private own-organization cards, version guard, recent OTP export, own-customer JSON attachment, retained audited erasure requests and operator case review.",
+      "remaining": "Actual erasure execution, reviewed factual retention schedule and legacy checkpoint/backups handling are not activated or accepted."
+    },
+    {
+      "id": "C03",
+      "title": "Anketos ir sutikimų versijos",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "W01",
+      "title": "Darbuotojų prieigos ir kompetencijos",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Server role/capability scope and actual role168/access258 grant/revoke/stale/restart."
+    },
+    {
+      "id": "W02",
+      "title": "Keli adresai ir komandos grafikas",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: reviewed branches and staff/resources/schedules, same staff transfer protection; actual browser branch booking, no-whole-slot recovery, explicit confirmation and versioned reschedule/reload at320/390/820/1440."
+    },
+    {
+      "id": "W03",
+      "title": "Veiklos rodikliai ir CSV",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "API.md/ACCEPTANCE.md: rules and current-schedule report denominators, authenticated CSV, typed public reports, versioned audited decisions, private image retention; actual desktop/mobile error/recovery/reload and consultation request."
+    },
+    {
+      "id": "W04",
+      "title": "Kalendorių ir išorinių sistemų integracijos",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "O01",
+      "title": "Taksonomijos administravimas ir naujų paslaugų prašymai",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "global258 and catalogue263 versioned changes, conditional parent/kind, requests/rejection/mapping/history/uncertain replay."
+    },
+    {
+      "id": "O02",
+      "title": "Teikėjo tinkamumas ir dokumentų patikra",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "Actual expiry182/qualification258 append-only assessments/private fields and separate profile vs procedure gates."
+    },
+    {
+      "id": "O03",
+      "title": "Skundai ir atsiliepimų priežiūra",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "ACCEPTANCE.md publication258: 3 actual UI publication decisions, queue/form failures, stale/lost replies, private byte retention and 2 retained bookings, both-store restart; named local scope."
+    },
+    {
+      "id": "I01",
+      "title": "Saugojimo migracijos projektas ir operacijų rodikliai",
+      "phase": "1",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "STORAGE_AUDIT: measured local state size/latency, normalized rows/index/idempotency; actual isolated hosted source PITR/undo and exact read/restart. Named scope, not active-pair recovery."
+    },
+    {
+      "id": "I02",
+      "title": "Katalogo projekcija ir organizacijų izoliacija",
+      "phase": "2",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "STORAGE_AUDIT: indexed current projections, signed source/target writer authority and public/customer/media/mail routing; native and isolated hosted old-writer rejection, source-only PITR guard."
+    },
+    {
+      "id": "I03",
+      "title": "Medijos saugojimas ir apkrova",
+      "phase": "3",
+      "state": "implemented-isolated-acceptance",
+      "evidence": "MEDIA/STORAGE_AUDIT: bounded SQL media selected after size/cost review, native4000booking/24image diagnostic, exact private bytes/restart and public boundary. No R2 or large hosted population claim.",
+      "remaining": "Future optional R2/scaling/large-hosted-load is a separate factual/account decision; bounded SQL pilot implemented."
+    },
+    {
+      "id": "I04",
+      "title": "Visų svarbių kelių patikros matrica",
+      "phase": "1",
+      "state": "in-progress",
+      "evidence": "UI_MATRIX.md / ACCEPTANCE258: named account-change/same-account/guest recovery, client-card keyboard/network, own native export and request/withdrawal error/stale/restart accepted. Prior waitlist/phase/cancellation/contact/report/CSV/rules/menu/gallery/upload retain scope; other applicable states remain.; publication258 complaint/unavailable-profile scope accepted locally.; rebooking259 archived/current alternatives, removed-addon/read-error four widths and actual confirmation/restart scope accepted locally.; booking260 single focused hold error/retry and confirmation-error/natural-expiry four widths accepted in named local scope.; catalogue263 new-entry/procedure-request/moderation applicability, retained errors, authoritative mapping, uncertain-request replay and final history accepted in named local scope.; current read-only operator/professional layouts and protected hosted storage lifecycle accepted in their named scopes.; HOSTED_UI_ACCEPTANCE20261009 concrete ordinary owner/operator/client journey, whole booking, physical-media source-to-active-target handoff, reschedule and restart accepted privately.; bb dates preservation / normal hosted whole cancellation / freed105min slot / restart accepted in scoped receipt.; actual normal owner two-tab booking-version rejection / exact no-write / retained reason / current reread accepted separately from expired-session rejection.",
+      "remaining": "Canonical release and remaining applicable hosted states, real mail / provider pilot / retention facts remain. A single concrete protected hosted journey is not an all-roles/all-states PASS."
+    },
+    {
+      "id": "E01",
+      "title": "Kategorijų ir miestų SEO bei gidų sąsaja",
+      "phase": "2",
+      "state": "accepted-prior-narrow-release",
+      "evidence": "Separate canonical dates-only PR48 release4db/bb accepted; candidatebb64native states accepted;260unwritten topics remain plan. New independent content-only next19 PR55 production1de/320a accepted; current candidate1ba/corec7/320a102native and hosted404assets passed. Historical PR48 retained."
+    },
+    {
+      "id": "G02",
+      "title": "Paslaugų teisės, duomenų ir taisyklių matrica",
+      "phase": "0",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "G03",
+      "title": "Realus meistrų pilotas ir produkto rodikliai",
+      "phase": "0",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X01",
+      "title": "Sveikatos, sporto ir gyvūnų plėtiniai",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X02",
+      "title": "Grupės, kursai ir paketai",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X03",
+      "title": "Mokėjimai, avansai ir neatvykimas",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X04",
+      "title": "Dovanų kuponai, lojalumas ir rinkodara",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    },
+    {
+      "id": "X05",
+      "title": "Mobilioji patirtis ir pranešimai",
+      "phase": "4",
+      "state": "factual-activation-gate"
+    }
+  ],
+  "next": [
+    "Resolve real pilot provider and authorized booking/reminder recipient facts; pending async question remains",
+    "Factual retention/backups needed before activating destructive C02 execution; external phase4 activation dependencies separate",
+    "Complete remaining applicable hosted/canonical acceptance when factual pilot/mail/retention dependencies and full completion prerequisite are satisfied; existing conditional production deployment authorization persists"
+  ],
+  "productionCalendarRelease": {
+    "version": "4dbdf361-25c6-4496-97a5-daaed23df201",
+    "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+    "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+    "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+    "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/48",
+    "scope": "Separately authorized dates only, full upgrade not activated"
+  },
+  "candidatePackageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+  "nextContentBatch": {
+    "producerThreadId": "01a11146-e1d2-78b1-ae76-081e812c0ca0",
+    "selectionPath": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next30-20261009/sites/madbeauty/content-next30-20261009/SELECTION.json",
+    "selectionSha256": "522f172c2ec8b5e62e5826dfe14538b42fe7c2d22061fc86431634d7cffebb67",
+    "status": "ALL_30_AGENT_REVIEWED_SCHEDULED_CONTENT_ONLY_DEPLOYED",
+    "selectedPages": 30,
+    "basePackageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+    "consumerReceipt": "acceptance-20261009/autonomous-production.json",
+    "scope": "All30 actual next30 drafts now reviewed and scheduled:19 via historical PR55,11 via autonomous policy PR57. Mandatory human specialist signatures removed by direct owner instruction. Next60 work is outside this package.",
+    "next": "Acknowledge actual content-only receipt to writer; preserve old snapshots and dates. Any next60 handoff is separately reviewed; unwritten plans do not enter assets or add a full-upgrade prerequisite.",
+    "catalogueTargetsReceipt": "acceptance-20261009/live-content-targets.json",
+    "writerReportedDrafts": {
+      "count": 30,
+      "reportedAt": "2026-10-09T19:34:11.643Z",
+      "source": "madbeauty turinys latest commentary: all 30 native mobile/desktop previews checked. No immutable consumer handoff, editorial approval or admission inferred."
+    },
+    "writtenDrafts": 30,
+    "admittedNewGuides": 30,
+    "specialistPendingDrafts": 0,
+    "packageSource": "c7c3aeeb95c5abc625317560642ebe36f311673f",
+    "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+    "productionVersion": "4e43bd2d-e5ea-491f-ae3e-ea74d260fbe9",
+    "consumerReceiptSha256": "8a2a72e8ed3a669e47b6289e4b94723662b59f2b6189e0be92361e5c6d221ac8"
+  },
+  "catalogueContinuation": {
+    "checkedAt": "2026-10-09T18:54:37.287Z",
+    "runtimeSource": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc",
+    "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+    "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+    "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+    "artifactSha256": "2975859764babda23a0ff1af1f181b509c4fc3d951b4703bded0e9a5b0cc2108",
+    "scope": "Candidate source and isolated guest UI only. No production activation, real pilot, SMTP inbox or factual retention execution.",
+    "changes": [
+      "Absent-supply catalogue city submission goes to search with exact procedure/city, supplied city retains its current catalogue destination.",
+      "City landing pages enumerate active catalogue categories instead of the legacy ten-entry list.",
+      "Early SSR catalogue city choice is captured before client rendering and restored to the same national procedure form."
+    ],
+    "productRegression": {
+      "tests": 264,
+      "pass": 264,
+      "newTests": 0,
+      "extendedTests": 1,
+      "removedTests": 0,
+      "durationMs": 114415.3025,
+      "receipt": "city-selection-regression.json"
+    },
+    "publication": {
+      "states": 64,
+      "assets": 309,
+      "receipt": "city-calendar-proof.json"
+    },
+    "nativeUi": {
+      "receipt": "city-selection-ui.json",
+      "initialRetentionReceipt": "city-initial-selection.json",
+      "categories": 14,
+      "mobileViewport": {
+        "width": 390,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "screenshots": [
+        {
+          "file": "city-selection-empty-desktop-full.jpg",
+          "sha256": "50eb6bd389d456d6ab7537e21a59bead8e3191803a12f907c3dd32cc6c2723dc",
+          "mimeType": "image/jpeg",
+          "width": 1264,
+          "height": 1726
+        },
+        {
+          "file": "city-selection-empty-390.jpg",
+          "sha256": "17dc8a34cb088bceab7f98e6be1441ef24b617a2025de12c8c25a11d6013bed4",
+          "mimeType": "image/jpeg",
+          "width": 374,
+          "height": 2254
+        },
+        {
+          "file": "city-categories-14.jpg",
+          "sha256": "5ebe6150cd62fb387848c18edcc3c911d076c61ba3bc9249131f5205da1c7adf",
+          "mimeType": "image/jpeg",
+          "width": 1265,
+          "height": 712
+        },
+        {
+          "file": "city-categories-14-mobile.jpg",
+          "sha256": "ba04cafaa59d38ca20a5938d48f9335ecc00b96c19c74a558b1c6041460b6002",
+          "mimeType": "image/jpeg",
+          "width": 374,
+          "height": 2456
+        },
+        {
+          "file": "city-initial-selection-retained.jpg",
+          "sha256": "b88aa95061a525b3417ee4833a82435dc44e18da04b7cfc10f669c385e3d3fb3",
+          "mimeType": "image/jpeg",
+          "width": 1264,
+          "height": 1573
+        }
+      ]
+    },
+    "liveCatalogue": {
+      "receipt": "live-content-targets.json",
+      "checkedAt": "2026-10-09T18:39:23.237Z",
+      "nationalHrefChecks": 22,
+      "cityTargets": 0,
+      "currentCityDestinationStatus": 404,
+      "fullUpgradeDeployed": false
+    },
+    "remaining": [
+      "Real provider pilot, authorized reservation/reminder inbox recipient and factual retention/backup policy.",
+      "Full final selected-release hosted/canonical acceptance and production cutover; old 3c hosted receipts retain their original identity.",
+      "Writer next30 immutable package and actual revision-bound reviews are pending in its own thread; neither its drafts nor this checkpoint authorize a partial full-upgrade deployment."
+    ]
+  },
+  "hostedContinuation": {
+    "checkedAt": "2026-10-09T19:34:11.642Z",
+    "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+    "version": "016ae399-bd77-4689-b9ee-b5ffd9308532",
+    "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+    "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+    "receipt": "HOSTED_CITY_ACCOUNT_MEDIA_ACCEPTANCE.md",
+    "nativeUi": "acceptance-20261009/card-media-ui.json",
+    "preservation": "acceptance-20261009/card-media-hosted-preservation.json",
+    "productionUpgradeDeployed": false,
+    "scope": "Current protected Worker exact data preservation, assets and native provider gallery cover. Earlier fbc normal client settings/export/favorite restart retain their original runtime identity."
+  },
+  "contentContinuation": {
+    "checkedAt": "2026-10-09T20:20:20.159Z",
+    "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+    "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+    "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+    "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+    "nativeArtifactSha256": "7f4e8583e6b39ba2044ec3c20b6424bc9c91a18a89b6f969ea448e0e069c1fc4",
+    "hostedArtifactSha256": "3f8fac816c1c6b4b01a0e149948df84ecca4e7ccc0349f5e6ee1a8f538e5a966",
+    "hostedVersion": "cb9fda75-dd22-4a1d-acc6-b058bd9b5fed",
+    "assets": 459,
+    "publicationStates": 124,
+    "currentPages": 7,
+    "futurePages": 62,
+    "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md",
+    "native": "acceptance-20261009/autonomous-candidate-calendar.json",
+    "hostedPreservation": "acceptance-20261009/autonomous-hosted-preservation.json",
+    "hostedHttp": "acceptance-20261009/autonomous-hosted-http.json",
+    "productionReceipt": "acceptance-20261009/autonomous-production.json",
+    "productionUpgradeDeployed": false,
+    "scope": "Exact69-page edition on unchanged1ba/corec7 candidate. Actual124native states, hosted459assets/62future and exact source-target-media-mail preservation. Old native UI proof identities remain unchanged. Canonical content-only4e usesb7/core63, not1ba."
+  },
+  "contentContinuationHistory": [
+    {
+      "checkedAt": "2026-10-09T19:48:39.565Z",
+      "runtimeSource": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+      "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+      "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+      "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+      "nativeArtifactSha256": "8e87a0c9a0fe2aea2613c0e79a3ddee41f8c1d4af855a0794aa42f4e9b041223",
+      "hostedArtifactSha256": "23133fb5f37e066322d8b904837a388eedf0d0a3249c9a4c80972c7e5fd6ada2",
+      "hostedVersion": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
+      "assets": 404,
+      "publicationStates": 102,
+      "currentPages": 7,
+      "futurePages": 51,
+      "receipt": "CONTENT_NEXT19_ACCEPTANCE.md",
+      "native": "acceptance-20261009/content-next19-candidate-calendar.json",
+      "hostedPreservation": "acceptance-20261009/content-next19-hosted-preservation.json",
+      "hostedHttp": "acceptance-20261009/content-next19-hosted-http.json",
+      "productionReceipt": "acceptance-20261009/content-next19-production.json",
+      "productionUpgradeDeployed": false,
+      "scope": "Exact320a edition admitted on unchanged1ba/corec7 candidate;102native publication states, hosted404assets/protected gates/empty-city selection and exact synthetic source-target-media-mail preservation. Old016/bb andfbc native UI receipts retain their tested identities. Independent content-only production1de usesb7/core63, not1ba."
+    }
+  ],
+  "autonomousEditorial": {
+    "policy": "../EDITORIAL_POLICY.json",
+    "mode": "autonomous-agent",
+    "humanSpecialistReviewRequired": false,
+    "policyAuthority": "2026-10-09 direct owner request",
+    "workflowTests": 6,
+    "workflowTestsPass": 6,
+    "actualNewGuides": 11,
+    "remainingHumanSpecialistArticleReviews": 0,
+    "receipt": "AUTONOMOUS_EDITORIAL_ACCEPTANCE.md"
+  },
+  "temporaryLiveTest": {
+    "status": "LIVE-TEMPORARY-OPERATIONS-ACCEPTED",
+    "sourceCommit": "7f08f8a5fb0cf1faeaebc7f241ccc21cd697598b",
+    "origin": "https://bandymas.madbeauty.lt",
+    "version": "5f55df40-6ba1-4ece-8ac8-958a83529d6a",
+    "expiresAt": "2026-10-16T21:10:47.982Z",
+    "soloProfiles": 40,
+    "publicSalons": 5,
+    "receipt": "../trial-20261010/OPERATIONS_RECEIPT.json",
+    "smtp": false,
+    "productionUpgradeDeployed": false
+  },
+  "temporaryLiveTestHistory": [
+    {
+      "status": "LIVE-TEMPORARY-FICTIONAL-TEST-ACCEPTED",
+      "sourceCommit": "fa519ecaaabf42a55fcc9f0e89a6cc986a128652",
+      "origin": "https://bandymas.madbeauty.lt",
+      "version": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+      "expiresAt": "2026-10-16T21:10:47.982Z",
+      "soloProfiles": 40,
+      "publicSalons": 5,
+      "receipt": "../trial-20261010/RECEIPT.json",
+      "smtp": false,
+      "productionUpgradeDeployed": false
+    }
+  ]
+}

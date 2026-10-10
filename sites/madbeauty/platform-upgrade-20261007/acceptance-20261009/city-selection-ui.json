@@ -1,0 +1,114 @@
+{
+  "checkedAt": "2026-10-09T18:48:29.527Z",
+  "scope": "Isolated Node guest UI with empty catalogue; production unchanged.",
+  "browserId": "2",
+  "tabId": "7",
+  "origin": "http://127.0.0.1:8850",
+  "desktop": {
+    "metrics": {
+      "documentScrollWidth": 1265,
+      "documentWidth": 1265,
+      "height": 720,
+      "mainScrollWidth": 1265,
+      "mainWidth": 1265,
+      "url": "http://127.0.0.1:8850/paieska#paslauga=antakiai&miestas=ziezmariai",
+      "width": 1280
+    },
+    "procedureLabel": "Antakiai",
+    "cityLabel": "Žiežmariai",
+    "emptyMessage": "Šiame pasirinkime pasiūlymų nėra"
+  },
+  "mobile": {
+    "metrics": {
+      "documentScrollWidth": 375,
+      "documentWidth": 375,
+      "height": 900,
+      "mainScrollWidth": 375,
+      "mainWidth": 375,
+      "url": "http://127.0.0.1:8850/paieska#paslauga=antakiai&miestas=vilnius",
+      "width": 390
+    },
+    "procedureLabel": "Antakiai",
+    "cityLabel": "Vilnius",
+    "emptyMessage": "Šiame pasirinkime pasiūlymų nėra"
+  },
+  "cityCategories": {
+    "metrics": {
+      "documentScrollWidth": 375,
+      "documentWidth": 375,
+      "height": 900,
+      "mainScrollWidth": 375,
+      "mainWidth": 375,
+      "url": "http://127.0.0.1:8850/miestai/ziezmariai",
+      "width": 390
+    },
+    "count": 14,
+    "links": [
+      {
+        "href": "/paieska#paslauga=plaukai&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Plaukai"
+      },
+      {
+        "href": "/paieska#paslauga=nagai&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Nagai"
+      },
+      {
+        "href": "/paieska#paslauga=antakiai&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Antakiai"
+      },
+      {
+        "href": "/paieska#paslauga=blakstienos&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Blakstienos"
+      },
+      {
+        "href": "/paieska#paslauga=makiazas&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Makiažas"
+      },
+      {
+        "href": "/paieska#paslauga=depiliacija&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Depiliacija ir plaukų šalinimas"
+      },
+      {
+        "href": "/paieska#paslauga=veidas&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Veido priežiūra"
+      },
+      {
+        "href": "/paieska#paslauga=kunas&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Kūno priežiūra"
+      },
+      {
+        "href": "/paieska#paslauga=masazas&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Masažas"
+      },
+      {
+        "href": "/paieska#paslauga=spa&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "SPA ir poilsis"
+      },
+      {
+        "href": "/paieska#paslauga=ilgalaikis-makiazas&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Ilgalaikis makiažas"
+      },
+      {
+        "href": "/paieska#paslauga=tatuiruotes&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Tatuiruotės"
+      },
+      {
+        "href": "/paieska#paslauga=verimas&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Auskarų vėrimas"
+      },
+      {
+        "href": "/paieska#paslauga=estetika&miestas=ziezmariai&diena=1&nuo=17%3A00&iki=20%3A00&rikiuoti=laikas&vaizdas=sarasas&rezultatai=paslaugos",
+        "label": "Estetinės procedūros"
+      }
+    ],
+    "clicked": "SPA ir poilsis",
+    "resultCity": "Žiežmariai",
+    "resultProcedure": "SPA ir poilsis",
+    "resultEmpty": true
+  },
+  "diagnostics": [
+    "The first mobile attempt overlapped initial client rendering and reset the selected city. It was not accepted as PASS. The final mobile action used the visibly ready form. Initial-render form retention is not established by this receipt.",
+    "The first desktop viewport screenshot cuts off the empty-result heading; full-page and mobile evidence separately show it."
+  ],
+  "productionUpgradeDeployed": false
+}

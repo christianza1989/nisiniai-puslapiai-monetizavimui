@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-09T18:15:28.064Z",
+  "state": "PASS",
+  "scope": "Read-only current production identity/settings/package and next30 planned ID/slug uniqueness; no import, writing, publishing, namespace mutation or deployment.",
+  "productionVersion": "4dbdf361-25c6-4496-97a5-daaed23df201",
+  "runtimeSource": "b7a34b1703060c4d8d5e426fa29347a393c32dff",
+  "coreSource": "63cfd8c2043eb2afa5eb6af638bae4dad9c86d46",
+  "rendererSha256": "0c48d38915c7ab442c362d292b5250a91a33f0d604eeb0564f3bcea129d61ae0",
+  "compiledArtifactSha256": "1898da08cc32f5e23f6dcf9c89fa5f04601a28f63cd5b8bb21afd47b00b98245",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "currentPublicPages": 7,
+  "priorTotalPages": 39,
+  "priorGuides": 35,
+  "configurationUnchanged": true,
+  "productionNamespace": "2faf96eedef1425c8d4fc07444cde2f3",
+  "migrationTag": "v1",
+  "selection": {
+    "status": "SELECTED_NOT_WRITTEN",
+    "pages": 30,
+    "sha256": "522f172c2ec8b5e62e5826dfe14538b42fe7c2d22061fc86431634d7cffebb67",
+    "noPriorIdOrSlugOverlap": true
+  },
+  "message": "Madbeauty date-only bb1b90aa; incumbent runtime b7a34b1 core63cfd8c; 25 future dates"
+}

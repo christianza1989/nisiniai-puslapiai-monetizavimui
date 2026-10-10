@@ -1,0 +1,17 @@
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {openStore} from '../backend/store.mjs';
+import {initializeFixtureRuntime} from '../backend/fixture-runtime.mjs';
+import {createApiHandler} from '../backend/http.mjs';
+import {createAppServer} from '../prototype/app-server.mjs';
+const root=path.dirname(fileURLToPath(import.meta.url)),port=8841;
+const contentPackagePath=process.argv[2],expected=process.argv[3];
+if(!contentPackagePath||!expected)throw Error('Supply the approved content package path and exact SHA-256.');
+if(createHash('sha256').update(await readFile(contentPackagePath)).digest('hex')!==expected)throw Error('Content package hash mismatch.');
+const store=openStore({filename:path.join(root,'evidence','platform-preview.sqlite'),fixturePreview:true,secret:'isolated-upgrade-fixture-only-'.repeat(3)});
+initializeFixtureRuntime(store);
+const handler=createApiHandler(store,{origin:'http://127.0.0.1:'+port});
+const server=createAppServer({deployment:'local-preview',apiHandler:handler,enabled:false,contentPackagePath});
+server.on('close',()=>store.close());server.listen(port,'127.0.0.1',()=>console.log('Isolated upgrade preview: http://127.0.0.1:'+port));

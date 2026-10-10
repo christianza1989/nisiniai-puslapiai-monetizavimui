@@ -5,9 +5,10 @@ import {pathToFileURL} from 'node:url';
 import {admitMadbeautyPackage} from '../content/intake.mjs';
 import {verifyContentRelease} from '../../../content-studio/src/content-release.mjs';
 import {admitPublicationRelease} from '../content/release-admission.mjs';
-const site=path.resolve(import.meta.dirname,'..'),core=path.resolve(site,'../../../dovanos-memorycasting'),output=path.join(import.meta.dirname,'output');
-const {validateContentPackage}=await import(pathToFileURL(path.join(core,'scripts/content-package-core.mjs')));
+const site=path.resolve(import.meta.dirname,'..'),output=path.join(import.meta.dirname,'output');
 const args=process.argv.slice(2),arg=name=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
+const core=arg('--core-root')?path.resolve(arg('--core-root')):path.resolve(site,'../../../dovanos-memorycasting');
+const {validateContentPackage}=await import(pathToFileURL(path.join(core,'scripts/content-package-core.mjs')));
 const packagePath=arg('--content-package')?path.resolve(arg('--content-package')):path.join(site,'content/initial-release/content-package.json');
 const raw=await readFile(packagePath),expectedSha=arg('--expected-sha256')||(arg('--content-package')?null:'dba452bae4c613cc91b2da0d67addd221e405f30c594992553f3009bfc809579');
 if(!expectedSha||createHash('sha256').update(raw).digest('hex')!==expectedSha)throw Error('Exact approved immutable release SHA required');
@@ -31,10 +32,11 @@ const categoryMedia=JSON.parse(await readFile(path.join(publicRoot,'media.json')
 await writeFile(path.join(assets,'media.json'),JSON.stringify({assets:categoryMedia.assets.map(({id,alt,variants})=>({id,alt,variants}))}));
 await writeFile(path.join(assets,'app-media.json'),JSON.stringify({assets:media.assets.map(({id,alt,variants})=>({id,alt,variants}))}));
 for(const file of new Set([...media.assets,...categoryMedia.assets].flatMap(a=>a.variants.map(v=>v.file)))){await mkdir(path.dirname(path.join(assets,file)),{recursive:true});await copyFile(path.join(publicRoot,file),path.join(assets,file));}
-for(const name of ['cities.mjs','taxonomy-data.mjs','taxonomy.mjs','content-targets.mjs','catalogue-page.mjs','config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs'])await copyFile(path.join(site,'prototype',name),path.join(assets,name));
+for(const name of ['cities.mjs','taxonomy-data.mjs','taxonomy.mjs','content-targets.mjs','catalogue-page.mjs','services-media.mjs','config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs'])await copyFile(path.join(site,'prototype',name),path.join(assets,name));
 await mkdir(path.join(assets,'content-assets/madbeauty'),{recursive:true});
 for(const file of new Set(pkg.pages.flatMap(p=>p.media.map(m=>path.basename(m.src)))))await copyFile(path.join(path.dirname(packagePath),'assets',file),path.join(assets,'content-assets/madbeauty',file));
 const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js')));
+await build({stdin:{contents:`export {projectContentPagesV2} from ${JSON.stringify(path.join(core,'lib/content-projection-v2.mjs'))};export {contentSeoV2} from ${JSON.stringify(path.join(core,'lib/content-seo-v2.mjs'))};`,resolveDir:core,sourcefile:'madbeauty-shared-content.mjs'},outfile:path.join(output,'content-core.mjs'),bundle:true,platform:'neutral',format:'esm'});
 await build({entryPoints:[path.join(core,'lib/gift-seo.ts')],outfile:path.join(output,'gift-seo.mjs'),bundle:true,platform:'neutral',format:'esm'});
 await build({entryPoints:[path.join(core,'lib/niche-seo.ts')],outfile:path.join(output,'seo.mjs'),bundle:true,platform:'neutral',format:'esm',plugins:[{name:'site-bindings',setup(b){
  b.onResolve({filter:/^@\/lib\/niche-sites$/},()=>({path:'sites',namespace:'site'}));b.onResolve({filter:/^@\/lib\/niche-network$/},()=>({path:'network',namespace:'site'}));

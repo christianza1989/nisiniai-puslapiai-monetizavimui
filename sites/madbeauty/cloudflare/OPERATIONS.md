@@ -1,3 +1,19 @@
+## Private hosted UI acceptance — 2026-10-09
+
+Current runtime 3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c. The isolated full-app QA Worker uses new namespaces, a Bearer/HttpOnly access gate and allowlisted SQL mail capture. Actual browser onboarding, two offers, gallery transform, operator review, whole booking, both roles, source restart, signed physical media transfer, active target reschedule and restart passed in the named [HOSTED_UI_ACCEPTANCE](../platform-upgrade-20261007/HOSTED_UI_ACCEPTANCE.md) scope. This is an actual QA deployment; no production deployment or migration. It does not accept canonical host, real provider, SMTP inbox, all hosted UI states, active-pair PITR or retention policy. Prior storage-only QA and all production identities remain unchanged. Existing conditional full-release authorization still waits for CURRENT_READINESS completion prerequisites.
+
+## Candidate upgrade operations — 2026-10-08
+
+Current candidate 39b71b18bd535eeb8d231fe497d26ca254b108d3; original production service/namespace/site/instance identity stays unchanged. The candidate appends ORGANIZATION_STAGING / v2-organization-storage; no remote production migration is applied yet. Both existing wrangler.json and wrangler.production.json name the SAME live Worker and include madbeauty.lt/www routes. wrangler.json is NOT isolated staging and must not be deployed for QA. The protected disposable storage acceptance Worker/config lives in ignored upgrade evidence, with separate namespaces and no live routes/mail/assets.
+
+Current rows-v2 / directory/media/mail model and measured boundaries: [STORAGE_AUDIT](../platform-upgrade-20261007/STORAGE_AUDIT.md). The historic1MiB JSON paragraph below describes the old live edition; it is not the new normalized rows-v2 boundary. SQL512MiB /24assets media pilot remains, R2 is not activated here. Never restore the first legacy checkpoint as a current post-migration copy.
+
+Current source scheduleRecovery rejects ANY handoff history, including aborted receipts/epochs. Expected refusal occurs outside blockConcurrencyWhile callback and leaves the running source instance intact. Target production class has no PITR/abort maintenance RPC. Single-object rewind of an active directory pair is unsupported: preserve current source/target identity, live bookmarks/key and writes, then fix forward or prepare a separately reviewed coordinated maintenance operation. Before a legitimate pre-handoff source recovery, pause incoming writes/jobs, preserve current/undo bookmarks privately, use the exact reviewed bookmark and encryption key, restart the session and verify current identities/tenants/bookings/roles/mail/media before resuming. Source-only guard is not a substitute for that pause.
+
+Actual isolated hosted source/undo recovery before handoff and prepared-target recovery while source frozen passed at d58c7fd. Current39b71b1 isolated hosted refusal/lifecycle and exact retained rows passed; no production destructive rehearsal or active-pair PITR acceptance. See named receipts/scope in STORAGE_AUDIT. Canonical full-upgrade release remains conditional on CURRENT_READINESS gates. Preserve existing MAIL_RELAY secrets, original namespace and v1 migration. Migration addition uses the installed supported atomic deploy path after live configuration reconciliation; do not provision through an unrelated default Preview environment.
+
+---
+
 # Madbeauty Cloudflare release — 2026-10-06
 
 Canonical origin: https://madbeauty.lt. The existing Worker service remains `madbeauty-platform-preview`; its name does not describe its current production mode. Production configuration disables workers.dev and binds apex + www. Account `d102163f74a45ab6d33bca786ce281ec`; SQLite Durable Object class `MadbeautyPlatform`, instance name `madbeauty-pilot-v1`. Keep this identity across releases or existing accounts/bookings will appear missing.

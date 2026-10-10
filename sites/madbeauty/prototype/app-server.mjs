@@ -1,6 +1,7 @@
 import {activeNode,createContentTargetRegistry} from './content-targets.mjs';
-import {catalogueRoute,renderCataloguePage} from './catalogue-page.mjs';
+import {catalogueCityDestination,catalogueRoute,renderCataloguePage} from './catalogue-page.mjs';
 import {isCityId} from './cities.mjs';
+import {ApiError} from '../backend/primitives.mjs';
 import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
@@ -11,6 +12,8 @@ import {openStore} from '../backend/store.mjs';
 import {createApiHandler} from '../backend/http.mjs';
 import {initializeFixtureRuntime} from '../backend/fixture-runtime.mjs';
 import {contentProjection,contentAssetsRoot} from '../content/adapter.mjs';
+import {sharingHtml} from './public/sharing.mjs';
+import {routeTitle} from '../cloudflare/route-titles.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),publicRoot=path.join(root,'public');
 const network=JSON.parse(await readFile(process.env.MB_NETWORK_CONFIG||path.resolve(root,'../../../../dovanos-memorycasting/config/niche-network.json'),'utf8'));
 const siteContact=network.contactsBySite?.madbeauty||{},contact={operatorName:siteContact.operatorName||network.operatorName,email:siteContact.email||network.defaultEmail};
@@ -18,7 +21,7 @@ if(!contact.operatorName||!contact.email)throw Error('Approved central contact r
 const inventory=JSON.parse(await readFile(path.join(root,'../SCREEN_INVENTORY.json'),'utf8'));
 const heroMedia=JSON.parse(await readFile(path.join(publicRoot,'app-media.json'),'utf8')).assets.find(a=>a.id==='hero-violet');
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.avif':'image/avif','.ttf':'font/ttf','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8'};
-const modules=new Set(['cities.mjs','taxonomy-data.mjs','taxonomy.mjs','content-targets.mjs','catalogue-page.mjs','config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs']);
+const modules=new Set(['cities.mjs','taxonomy-data.mjs','taxonomy.mjs','content-targets.mjs','catalogue-page.mjs','services-media.mjs','config.mjs','demo-model.mjs','demo-adapter.mjs','platform-domain.mjs','platform-adapter.mjs','seo-contract.mjs','profile-fixtures-v2.mjs']);
 export function resolveRoute(pathname,{profileResolver=null,contentResolver=null}={}){
   const canonical=pathname==='/'?'/':pathname.replace(/\/+$/,'');
   for(const s of inventory.screens.filter(s=>s.route)){
@@ -43,12 +46,13 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
     const requestHost=String(req.headers.host||'').split(':')[0].toLowerCase();
     if(!['127.0.0.1','localhost','madbeauty.lt','www.madbeauty.lt'].includes(requestHost)){res.writeHead(404,{'X-Robots-Tag':'noindex, nofollow','Content-Type':'text/plain; charset=utf-8'});res.end('Not found');return;}
     if(apiHandler&&await apiHandler.handle(req,res))return;
-    const headers={'X-Robots-Tag':'noindex, nofollow, noarchive','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"};
+    const headers={'X-Robots-Tag':'noindex, nofollow, noarchive','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-src https://www.openstreetmap.org; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"};
     if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405,headers);res.end();return;}
     try{
       const url=new URL(req.url,'http://127.0.0.1'),requested=decodeURIComponent(url.pathname);
-      const needsContent=requested==='/content.json'||requested.startsWith('/content-assets/')||['/robots.txt','/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)||(!path.extname(requested)&&!/^\/(meistrui|operatorius|paskyra|registracija)(\/|$)/.test(requested));
-      const offers=apiHandler?.platform.catalog({})||[],registry=createContentTargetRegistry({offers,deployed:false,now:contentClock()});
+      const catalogueRequest=requested==='/paslaugos'||requested.startsWith('/paslaugos/');
+      const needsContent=requested==='/content.json'||requested.startsWith('/content-assets/')||['/robots.txt','/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)||(!catalogueRequest&&!path.extname(requested)&&!/^\/(meistrui|operatorius|paskyra|registracija)(\/|$)/.test(requested));
+      const offers=needsContent||catalogueRequest?await apiHandler?.platform.catalog({})||[]:[],registry=createContentTargetRegistry({offers,deployed:false,now:contentClock()});
       const content=needsContent?await contentProjection({registry,now:contentClock(),...(contentPackagePath?{packagePath:contentPackagePath}:{})}):null;
       const contentPage=content?.pages.find(p=>(p.slug?'/'+p.slug:'/')===requested);
       if(requested==='/content-targets.json'){res.writeHead(200,{...headers,'Content-Type':mime['.json']});res.end(req.method==='HEAD'?undefined:JSON.stringify(registry));return;}
@@ -60,9 +64,11 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       if(requested==='/robots.txt'){res.writeHead(200,{...headers,'Content-Type':mime['.txt']});res.end(content?content.seo.nicheRobotsText(content.pkg,!contentDiscovery,content.pages.some(p=>p.type==='home')):'User-agent: *\nDisallow: /\n');return;}
       if(['/favicon.svg','/favicon.ico'].includes(requested)){res.writeHead(200,{...headers,'Content-Type':mime['.svg']});res.end(await readFile(path.join(publicRoot,'wordmark.svg')));return;}
       if(['/sitemap.xml','/llms.txt','/llms-full.txt'].includes(requested)){if(contentDiscovery&&content){const body=requested==='/sitemap.xml'?content.seo.nicheSitemapXml(content.pkg,content.pages):requested==='/llms.txt'?content.seo.nicheLlmsIndex(content.pkg,content.pages):content.seo.nicheLlmsFull(content.pkg,content.pages);res.writeHead(200,{...headers,'Content-Type':requested.endsWith('.xml')?'application/xml; charset=utf-8':'text/markdown; charset=utf-8'});res.end(req.method==='HEAD'?undefined:body);return;}res.writeHead(404,headers);res.end('Private preview: discovery disabled.');return;}
-      if(/^\/paslaugos\/[^/]+$/.test(requested)&&isCityId(url.searchParams.get('miestas'))&&activeNode(requested.split('/')[2])){res.writeHead(303,{...headers,Location:requested+'/'+url.searchParams.get('miestas')});res.end();return;}
-      const isCatalogue=requested==='/paslaugos'||requested.startsWith('/paslaugos/'),cataloguePage=isCatalogue?catalogueRoute(requested,offers):null;
-      let route=resolveRoute(requested,{profileResolver:apiHandler?apiHandler.platform.profile:null,contentResolver:slug=>!!content?.pages.some(p=>['guide','article'].includes(p.type)&&p.slug==='gidai/'+slug)});
+      const cityDestination=catalogueCityDestination(requested,url.searchParams.get('miestas'),offers);
+      if(cityDestination){res.writeHead(303,{...headers,Location:cityDestination});res.end();return;}
+      const isCatalogue=catalogueRequest,cataloguePage=isCatalogue?catalogueRoute(requested,offers):null;
+      const profileId=requested.match(/^\/(?:meistrai|salonai)\/(provider_[a-z0-9_-]+)\/?$/)?.[1],currentProfile=profileId&&apiHandler?await apiHandler.platform.profile(profileId):null;
+      let route=resolveRoute(requested,{profileResolver:apiHandler?()=>currentProfile:null,contentResolver:slug=>!!content?.pages.some(p=>['guide','article'].includes(p.type)&&p.slug==='gidai/'+slug)});
       if(requested.startsWith('/gidai/')&&!contentPage)route=null;
       if(isCatalogue&&!cataloguePage)route=null;
       if(contentPage&&!isCatalogue&&!route)route={label:contentPage.title,canonical:requested};
@@ -70,10 +76,10 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
         const page=url.searchParams.get('page');const invalidPage=page!==null&&(!/^[1-9][0-9]?$/.test(page)||Number(page)>50);
         let html=await readFile(path.join(publicRoot,'app.html'),'utf8');
         if(requested==='/')html=html.replace('</head>',`<link rel="preload" as="image" href="/${heroMedia.variants.find(v=>v.width===640).file}" imagesrcset="${heroMedia.variants.map(v=>'/'+v.file+' '+v.width+'w').join(', ')}" imagesizes="(max-width:760px) 100vw, 82vw" fetchpriority="high"></head>`);
-        html=html.replace(/<title>[^<]*<\/title>/,'<title>'+(route?.label||'Puslapis nerastas')+' · Madbeauty</title>');
+        html=html.replace(/<title>[^<]*<\/title>/,'<title>'+(route?routeTitle(route):'Puslapis nerastas')+' · Madbeauty</title>');
         const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-        if(cataloguePage){html=html.replace(/<title>[^<]*<\/title>/,'<title>'+escape(cataloguePage.title)+' · Madbeauty</title>').replace('</head>',`<link rel="canonical" href="https://madbeauty.lt${escape(requested)}"></head>`).replace('<p class="container">Įkeliama…</p>',renderCataloguePage(cataloguePage));}
-        else if(contentPage&&!isCatalogue){html=html.replace(/<title>[^<]*<\/title>/,'<title>'+escape(contentPage.title)+' · Madbeauty</title>').replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+escape(contentPage.description)+'">');html=html.replace('</head>',`<link rel="canonical" href="${escape(content.seo.nichePageUrl(content.pkg,contentPage))}"><script type="application/ld+json">${JSON.stringify(content.schema(contentPage)).replace(/</g,'\\u003c')}</script></head>`);html=html.replace('<p class="container">Įkeliama…</p>',content.html(contentPage));}
+        if(cataloguePage){html=html.replace(/<title>[^<]*<\/title>/,'<title>'+escape(cataloguePage.title)+' · Madbeauty</title>').replace('</head>',`<link rel="canonical" href="https://madbeauty.lt${escape(requested)}"></head>`).replace('<p class="container">Įkeliama…</p>',renderCataloguePage(cataloguePage,{query:url.searchParams.get('q')||''}));}
+        else if(contentPage&&!isCatalogue&&!invalidPage){html=html.replace(/<title>[^<]*<\/title>/,'<title>'+escape(contentPage.title)+' · Madbeauty</title>').replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+escape(contentPage.description)+'">');html=html.replace('</head>',`<link rel="canonical" href="${escape(content.seo.nichePageUrl(content.pkg,contentPage))}">${sharingHtml(content.metadata?.(contentPage))}<script type="application/ld+json">${JSON.stringify(content.schema(contentPage)).replace(/</g,'\\u003c')}</script></head>`);html=html.replace('<p class="container">Įkeliama…</p>',content.html(contentPage));}
         else if(route)html=html.replace('</head>',`<link rel="canonical" href="http://127.0.0.1:${req.socket.localPort}${route.canonical}"></head>`);
         res.writeHead(route&&!invalidPage?200:404,{...headers,'Content-Type':mime['.html']});res.end(req.method==='HEAD'?undefined:html);return;
       }
@@ -83,7 +89,7 @@ export function createAppServer({deployment='local-preview',now=new Date().toISO
       const compressed=body.length>1000&&/text|json|svg/.test(type)&&(req.headers['accept-encoding']||'').includes('gzip');
       if(compressed)body=gzipSync(body);
       res.writeHead(200,{...headers,'Content-Type':type,'Vary':'Accept-Encoding',...(compressed?{'Content-Encoding':'gzip'}:{}),'Content-Length':body.length});res.end(req.method==='HEAD'?undefined:body);
-    }catch{res.writeHead(404,{...headers,'Content-Type':mime['.txt']});res.end('Not found');}
+    }catch(error){const status=error instanceof ApiError?error.status:404;res.writeHead(status,{...headers,'Content-Type':mime['.txt']});res.end(status===404?'Not found':'Duomenys laikinai nepasiekiami. Bandykite dar kartą.');}
   });
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){

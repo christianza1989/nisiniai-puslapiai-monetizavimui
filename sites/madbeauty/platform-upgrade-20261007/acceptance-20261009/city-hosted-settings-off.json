@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-09T19:14:51.065Z",
+  "phase": "off",
+  "status": "PASS",
+  "runtime": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc",
+  "clientId": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120",
+  "sourcePreference": {
+    "id": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120-preferences",
+    "clientId": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120",
+    "service": false,
+    "marketing": false,
+    "reminderLeadMin": 0,
+    "updatedAt": "2026-10-09T19:14:32.726Z"
+  },
+  "targetPreference": {
+    "id": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120-preferences",
+    "clientId": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120",
+    "service": false,
+    "marketing": false,
+    "reminderLeadMin": 0,
+    "updatedAt": "2026-10-09T19:14:32.726Z"
+  },
+  "sourceBookingsHash": "f2e8896dcb63b5a454ed44ac66fffa720701593470d685f2cdaa447cc05cc72a",
+  "targetBookingsHash": "0daaec5a8fa6965c71508aa997b157d14ae748a9d829d37086fcd08baf7fcec3",
+  "mediaHash": "13485802b385b788ca4340b83904536b6f05a03afcb9011b629e541421c1e79a",
+  "mailboxHash": "36bfa6a737b629b82c9ab373214df600e585e20b1149bbd35ac0d4883f86973d",
+  "scope": "Normal hosted client settings UI save reflected in central and active organization stores. Synthetic account, capture-only mail; no inbox claim or irreversible erasure."
+}

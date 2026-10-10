@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "mode": "exact-staged-blobs",
+  "files": 6,
+  "textFiles": 6,
+  "bytes": 240879,
+  "findings": [],
+  "largest": [
+    {
+      "file": "WORKSTREAMS.md",
+      "bytes": 138909
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/runtime.test.mjs",
+      "bytes": 62753
+    },
+    {
+      "file": "sites/madbeauty/trial-20261010/operations-accept.mjs",
+      "bytes": 19519
+    },
+    {
+      "file": "sites/madbeauty/backend/customer-tools.mjs",
+      "bytes": 9060
+    },
+    {
+      "file": "sites/madbeauty/backend/customer-tools.test.mjs",
+      "bytes": 8955
+    },
+    {
+      "file": "sites/madbeauty/trial-20261010/operations.test.mjs",
+      "bytes": 1683
+    }
+  ],
+  "limitations": "Pattern checks and exact local-secret matches; not a proof that arbitrary customer data is absent. Ignore-policy and scope review are separate."
+}

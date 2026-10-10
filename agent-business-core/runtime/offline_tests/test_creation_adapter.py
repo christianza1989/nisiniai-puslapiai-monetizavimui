@@ -10,9 +10,48 @@ from pinet_core.tasks.codex import RunnerError
 def test_actual_instruction_fingerprint_and_fixed_tool_policy():
     value, fingerprint = instructions()
     assert len(fingerprint) == 64 and 'language-quality.md' in value and 'business-validation.md' in value
+    from pinet_core.creation import adapter
+    typography = adapter.ROOT / 'SKILLS/niche-site-builder/references/typography-system.md'
+    assert typography.read_bytes().decode('utf-8-sig') in value
     args = arguments('fixed.exe', 'fixed', 'schema', 'output', web=True)
     assert 'web_search="live"' in args and args[args.index('--model')+1] == 'gpt-6-luna'
     assert args[args.index('--sandbox')+1] == 'read-only' and '--ignore-rules' in args
+
+
+@pytest.mark.parametrize('change', ['missing', 'empty', 'edited'])
+async def test_typography_snapshot_change_stops_creator_before_dispatch(tmp_path, monkeypatch, change):
+    import sys
+    from pathlib import Path
+
+    from pinet_core.creation import adapter
+
+    root, workspace = tmp_path / 'core', tmp_path / 'output'
+    workspace.mkdir()
+    for relative in adapter.INSTRUCTION_FILES:
+        target = root / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((adapter.ROOT / relative).read_bytes())
+    policy = root / 'SKILLS/niche-site-builder/references/typography-system.md'
+    policy.write_text('Original canonical typography contract', encoding='utf-8')
+    monkeypatch.setattr(adapter, 'ROOT', root)
+    monkeypatch.setattr(adapter, 'available', lambda: (Path(sys.executable), workspace))
+    initial, digest = adapter.instructions()
+    if change == 'missing':
+        policy.unlink()
+    else:
+        policy.write_text('  ' if change == 'empty' else 'Revised canonical typography contract', encoding='utf-8')
+    async def dispatched(*args, **kwargs):
+        pytest.fail('Instruction mismatch must stop before model dispatch')
+    monkeypatch.setattr(adapter, 'execute', dispatched)
+    async def authorized():
+        return True
+    expected = 'instructions_changed' if change == 'edited' else 'instructions_unavailable'
+    with pytest.raises(RunnerError, match=expected):
+        await adapter.run_role({'expected_instruction_hash': digest, 'permitted_web_actions': 0},
+                               authorized, role='creator', seconds=30)
+    assert 'Original canonical typography contract' in initial
+    assert 'Revised canonical typography contract' not in initial
+    assert list(workspace.iterdir()) == []
 
 
 def test_structure_only_profile_is_smaller_exact_canonical_context_and_disables_repeat_research():

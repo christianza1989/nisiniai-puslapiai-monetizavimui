@@ -19,6 +19,7 @@ ADAPTER_REVISION = "codex-business-draft.v1"
 INSTRUCTION_FILES = (
     "SKILLS/niche-site-builder/SKILL.md",
     "SKILLS/niche-site-builder/references/business-validation.md",
+    "SKILLS/niche-site-builder/references/typography-system.md",
     "SKILLS/niche-business-tools/SKILL.md",
     "SKILLS/niche-content-planner/SKILL.md",
     "SKILLS/niche-content-planner/references/planning-decisions.md",
@@ -108,10 +109,14 @@ def instructions(*, structure_repair=False, language_repair=False):
             "the exact repair profile below covers graph, intake, language and honest evidence boundaries.")
     for relative in REPAIR_INSTRUCTION_FILES if structure_repair else INSTRUCTION_FILES:
         path = ROOT / relative
-        raw = path.read_bytes()
+        try:
+            raw = path.read_bytes()
+            content = raw.decode("utf-8-sig")
+        except (OSError, UnicodeDecodeError):
+            raise RunnerError("instructions_unavailable") from None
         if not raw.strip() or len(raw) > 40000:
             raise RunnerError("instructions_unavailable")
-        fragments.append(relative + "\n" + raw.decode("utf-8-sig"))
+        fragments.append(relative + "\n" + content)
     value = "\n\n".join(fragments)
     return value, hashlib.sha256(value.encode()).hexdigest()
 

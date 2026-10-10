@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Human specialist Mantas reports at 15:49 Vilnius that registered technical case #23926736 was transferred to a colleague for deeper investigation. Vendor message and case number visibly verified; our 15:50 acknowledgement asks to confirm complete existing diagnostic handoff and response estimate. The exact approved filter image had already been posted at 15:44. Registration is not a mail repair: seven native initial Junk receipts and automatic Inbox failure remain, with no new test or configuration change. Historical no-case-ID and queue snapshots remain intact. Private recipient/raw headers/UI pixels are excluded from Git.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53",
+  "eventId": "cfe36c79-5f53-4e04-9732-874b649da9bc",
+  "sequence": 13,
+  "at": "2026-10-10T12:51:49.100Z"
+}

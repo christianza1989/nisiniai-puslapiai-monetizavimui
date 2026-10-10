@@ -1,0 +1,42 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Read-only operator consultation cannot fulfill the human-authorized customer idea-to-business-draft, private preview, critique and immutable revision workflow.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py at4db56be is typed answer-only/no-tools consultation",
+    "Direct human core-chat instruction2026-10-10 full customer UI pipeline and autonomous usable test-customer creation by evening",
+    "docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md bounded P3 acceptance does not include creation"
+  ],
+  "paths": [
+    "agent-business-core/runtime/migrations/versions/0013_customer_creations.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/src/pinet_core/control/routes.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/codex_transport.py",
+    "agent-business-core/runtime/scripts/customer_creation_contract.py",
+    "agent-business-core/runtime/scripts/customer_creation_worker.py",
+    "agent-business-core/runtime/tests/test_customer_creations.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "docs/contracts/verslomatika-customer-creation.openapi.json",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "agent-business-core/runtime/src/pinet_core/creation/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/creation/models.py",
+    "agent-business-core/runtime/src/pinet_core/creation/wire.py",
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped source revert; own freshDB migration downgrade only. Keep stable8855 P3 and legacy pilots unchanged. Retain private immutable FAIL/artifact/model receipts, never grant existing domain ownership or public release.",
+  "id": "upgrade-8487ac2f-6c9a-4487-8bfe-e7e9c70c95ec",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "4db56beae0704b817700130a1af91d0fba584927",
+  "createdAt": "2026-10-10T09:33:32.893Z"
+}

@@ -135,6 +135,17 @@ rinkinys 12 PASS. Galutinis papildytas source/host rinkinys **14 PASS per
 neperrašyti. Tai vietiniai read-path ir synthetic worker patikrinimai, ne
 actual provider, balso, acquisition, mail delivery/reply ar kalibravimo PASS.
 
+Po tikslaus parent `c8bc851` admission inkremento integravimo į savo branch,
+WORKSTREAMS konfliktas išspręstas išsaugant abu įrašus. Papildomas actual PG
+bandymas įrodo: išnaudojus leistiną bandymo kvietimų ribą, nauja revision POST
+atmetama `429`, tačiau jau išsaugotos versijos agent-preparation GET lieka
+`200 blocked` ir nekeičia Job/session. Šios integracijos atskiras rinkinys
+**15 PASS per 61,90 s**, offline **22 PASS per 4,37 s**. Source peržiūroje rastas
+aprašo netikslumas, kai neturint importo buvo sakoma „matomas importas“;
+aprašai dabar atskiria missing/failed/imported ir kartoja tikrą check reikšmę.
+Viešų sąsajos frazių kalba peržiūrėta šaltinyje; dashboard renderinimą ir
+naršyklės priėmimą atskirai atlieka parent/director.
+
 Atkūrimas: revert tik additive modules/router import+mount, generator,
 contract ir šio inkremento tests/doc. Persistent migracijos, agento/channel
 aktyvavimo ar klientų duomenų pakeitimų nėra. Parent/director atskirai valdo

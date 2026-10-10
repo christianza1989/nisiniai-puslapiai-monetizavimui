@@ -1,11 +1,11 @@
 {
-  "packageSha256": "93ba997821ac71837872a2d6c1be1d252eafcc760cc5005211e061e5858e0a0b",
-  "sourceVersion": "6ffc4eb43c87aa42d22f97ae3b84d00ef84288fd",
-  "coreCommit": "bdab02d7282a48ebd2e68fcee9c5d70128882711",
+  "packageSha256": "7ce29ed99c6a20a6fe3eac4ea651e1d7d39ca137e1c74c31f0397e202461fba9",
+  "sourceVersion": "7f0a5d447b7c923e55eb094c98ae3d39684296b5",
+  "coreCommit": "5ec90e469b02207487c5d7833009a6f46be28ed1",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
-      "sha256": "030628e2ec3526bf7df957e05dd58c6c3639f6beffb4a5bd8f00e2cd59e2f722"
+      "sha256": "d647b623694515e57594f48eec0b73ad016cb97156a684fc9efaac4338ad0b49"
     },
     {
       "file": "components/niche/promedical-site.module.css",
@@ -33,7 +33,7 @@
     },
     {
       "file": "lib/generated/content-packages.json",
-      "sha256": "00b4892239c33fae0be0cd357208725e33c2bc801c0efd0113eacb965ed53836"
+      "sha256": "86b9a47b9df2d30d7f4fc98fbdf1687fbefb3f838a291b67bf286424b4b065a2"
     },
     {
       "file": "lib/smtp-protocol.mjs",
@@ -80,11 +80,12 @@
       "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
     }
   ],
-  "checkedAt": "2026-10-10T20:27:08.829Z",
-  "productionVersion": "fe782168-8426-4aac-bcda-4af54fb35771",
-  "notes": "65 owner-rewritten editorial pages deployed with bounded factual/link corrections and visible Home/catalogue bodies; 57 guides remain scheduled Oct12–Nov22. Selected red logo6 and established typography retained. Prior complete manifest archived in editorial-release-v1.json. Core commit identifies the baseline before this evidence update. No QA clock in production.",
-  "productionDeployment": "b3f4b29f-011b-4868-8080-f60d64721b9b",
+  "checkedAt": "2026-10-10T20:52:37.974Z",
+  "productionVersion": "dc031a6e-623f-451c-9ee7-5a932233ccfc",
+  "notes": "Owner-requested manufacturer-neutral Home and common navigation/footer deployed. All1909 other pages and publication dates unchanged; Home image alt metadata changed, files/rights preserved. Prior complete manifest archived in generic-home-v1.json. Earlier editorial/logo/typography receipts retained. Core commit identifies baseline before this evidence update.",
+  "productionDeployment": "6a3ff47a-372a-4148-ba5e-d2a3c7685147",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
   "logoEvidence": "verification-20261010/logo-change-v2.json",
-  "editorialEvidence": "verification-20261010/editorial-release-v1.json"
+  "editorialEvidence": "verification-20261010/editorial-release-v1.json",
+  "homeEvidence": "verification-20261010/generic-home-v1.json"
 }

@@ -1,3 +1,5 @@
+> Aktualus savininko pozicionavimas 2026-10-10T20:52:37.974Z: „Promedical“ pradžios puslapis pristato medicininę įrangą ir baldus gydymo įstaigoms bendriniais tekstais, be gamintojų pavadinimų ar vieno tiekėjo atstovavimo žymų. Dabartinis Klaro katalogas ir faktiniai gamintojo duomenys produktų puslapiuose išsaugoti; kitų tiekėjų atstovavimas dar nėra paskelbtas faktas. Aktyvus source 7f0a5d447b7c923e55eb094c98ae3d39684296b5, Worker versija dc031a6e-623f-451c-9ee7-5a932233ccfc; aktualus manifestas sites/promedical/SOURCE_VERSION.json. Žemiau esantys ankstesni būsenų skaičiai ir Free plano duomenys yra istorinis įrašas.
+
 # Promedical
 
 Savininko atstovaujamo Klaro tiekėjo lietuviškas medicinos įrangos katalogas ligoninėms, poliklinikoms ir slaugos įstaigoms. Patvirtinti dabartiniai kontaktai: info@promedical.lt ir +37068688369; viešas vardas Promedical, juridinio pavadinimo nerodyti.

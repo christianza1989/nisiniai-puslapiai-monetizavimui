@@ -8,8 +8,9 @@
 `creation_registration.service.projection` / `RegistrationView` projekciją.
 Naujo DTO `registration` pakeičia seną `mapping`; to paties domeno kandidatas
 nesuteikia teisės stebėti verslo agento duomenų. Reikalinga source migracija0016.
-Ši migracija ir klientų verslo registravimas veikiančioje API8860 bazėje kol kas
-neatlikti. API8860 ir dashboard3019 tebenaudoja ankstesnį V1 kelią.
+Migracija0016 veikiančioje vietinėje API8860 bazėje atlikta su source594e179;
+actual kliento verslo provision neatliktas. Papildomas V2 API veikia, o
+dashboard3019 reader prijungimas derinamas atskirai; V1 kelias išsaugotas.
 
 Tik `registration.binding_current=true` leidžia `runtime.scope=current_registered_business`.
 Tai reiškia tikslų dabartinį savininką, priimtą versiją, candidate hash, istorinį
@@ -60,7 +61,20 @@ Visų aštuonių vykdymo source failų SHA prieš/po nepakito. Tikrinti
 same-host-without-binding, exact current registration/native V2 žinios,
 pending/stale/revoked/grant-revoked ir actual committed revoke/payload/intake
 pakeitimai skaitymo metu; read-only state/session snapshot ir svetimo
-savininko atmetimas. Ši patikra nėra naujo tikro verslo ar actual API adoption.
+savininko atmetimas. Ši source patikra nėra naujo tikro verslo priėmimas.
+
+Actual vietinis API priėmimas2026-10-10T17:53:51Z: clean source
+`594e179f48fbca4584d0249b8eb1506af8ba9d57`, own8860,0016 schema po explicit
+upgrade ir canonical bootstrap (abu exit0). Control/business/GUIDE preflights
+PASS, provider0 ir workers nestartavo. Dabartinės NEW creation authenticated
+V2 GET200: `missing`, `binding_current=false`, `no_revision`, `not_imported`,
+`unmapped`, `blocked`,14checks/14blockers, false activation. Visi šeši kliento
+paviršiai ir kiekvienos ankstesnės DB lentelės row count/hash tiksliai sutapo
+su17:51:46Z priešmigraciniu kvitu; pridėta tik tuščia Registration lentelė.
+Pats skaitymas DB state nepakeitė. Patikrintas quota20/20/0left, current
+revision null ir cost unknown. Nėra provider/provision/public/profile/session/
+channel aktyvavimo. Naujos README/journal versijos nehotloadinamos į serverį;
+jo snapshot tebėra594e179. Dashboard V2 priėmimas dar atskiras.
 
 ## Ankstesnio V1 inkremento priėmimas
 

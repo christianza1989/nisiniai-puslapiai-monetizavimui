@@ -43,4 +43,6 @@ For a real answer, preserve Message-ID / site / requested purpose; stop obsolete
 
 ## Deliver and measure
 
+For provider-platform invitation integration read the [recipient binding contract](../../agent-business-core/contracts/recipient-binding-v1/README.md). Use the actual native verified-account canonicalization and stable organization ID; preserve pre-provider verification privately until real creation. A recipient proof is not active supply. Track a dedicated atomic lifecycle counter/outbox, original invite expiry and current native eligibility. Shared schema/vector acceptance and actual HTTP/DB/replay/restart acceptance are separate; do not add unknown fields to an older strict contract or assume Python/JS identity normalization parity.
+
 Use [the output guide](references/output.md) for the requested mode. Record buyer and partner tests separately. Measure specific needs, accepted / fulfilled outcomes, costs, refusal and delivery failures; clicks and email opens are not the success criterion. State what is implemented, proposed and UNVERIFIED. New niches remain phase one until demand and execution economics justify expansion.

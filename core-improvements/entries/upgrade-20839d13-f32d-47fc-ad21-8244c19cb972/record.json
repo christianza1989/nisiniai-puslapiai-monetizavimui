@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/interfaces.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_interfaces.py",
+    "docs/ACQUISITION_RECIPIENT_BINDING_QA_2026-10-10.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "summary": "A native pending profile submission is wrongly rejected after an approved/deactivated publication",
+  "rollback": "Scoped reducer/test revert, preserve firstfail and journal. Strict0.1.1 schema/activation/identity/deletion guards stay unchanged; no native or production mutation.",
+  "category": "code",
+  "evidence": [
+    "Native PR68/7f9a47b documents a new pending draft must preserve existing published eligibility",
+    "Actual first12test interface suite:11PASS/1ERROR; pending-profile submission raised lifecycle_regression in project_conversion before repair"
+  ],
+  "id": "upgrade-20839d13-f32d-47fc-ad21-8244c19cb972",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "f319b4311faa914ce7e8aff182ce1b65ad864010",
+  "createdAt": "2026-10-10T01:33:41.108Z"
+}

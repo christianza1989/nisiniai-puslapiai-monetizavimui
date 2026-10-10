@@ -153,14 +153,18 @@ def project_conversion(current: Conversion | None, event: LifecycleEvent):
         if current.profile_ref and event.profile_ref and current.profile_ref != event.profile_ref:
             raise ValueError('profile_binding_mismatch')
         if current.state in {'profile_active', 'profile_deactivated'} and event.kind in {
-            'signup_started', 'account_verified', 'profile_submitted',
+            'signup_started', 'account_verified',
         }:
             raise ValueError('lifecycle_regression')
+    # Submission is activity, not a withdrawal/approval of the published profile.
+    preserves_publication = (current is not None and event.kind == 'profile_submitted'
+                             and current.state in {'profile_active', 'profile_deactivated'})
     value = Conversion(
         scope=event.scope, invitation_ref=event.invitation_ref, provider_ref=event.provider_ref,
         profile_ref=event.profile_ref or (current.profile_ref if current else None),
-        source_revision=event.source_revision, state=event.kind,
-        profile_active=event.kind == 'profile_active', last_event_id=event.event_id,
+        source_revision=event.source_revision, state=current.state if preserves_publication else event.kind,
+        profile_active=current.profile_active if preserves_publication else event.kind == 'profile_active',
+        last_event_id=event.event_id,
     )
     return value, 'applied'
 

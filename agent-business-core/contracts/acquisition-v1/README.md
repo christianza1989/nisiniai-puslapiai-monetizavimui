@@ -1,5 +1,7 @@
 # Acquisition adapter contract 0.1.1
 
+Additive [recipient binding sub-contract0.1.0](../recipient-binding-v1/README.md) supplies separate strict challenge/proof shapes and native canonical MAC vectors. Existing0.1.1 schema/vector remain unchanged; new routes/storage and actual native adoption have separate acceptance.
+
 2026-10-10. Candidate interface for the shared core, Madbeauty backend and Verslomatika. [Coordination issue66](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66), dependency [PR59](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/59), [dashboard handoff](../../verslomatika-plan/INTEGRATION_HANDOFF.md).
 
 **Implemented here:** strict Python contracts, generated JSON schemas, a pure conversion reducer, Python scoped HMAC verification, server Web Crypto signing/verification, and executable synthetic cross-language checks. **Not implemented by this package:** mounted HTTP routes, PostgreSQL replay ledger/outbox, scheduler, transport, production keys, Madbeauty binding or hosted acceptance. Do not advertise these endpoints as available until actual deployment capabilities confirm them.

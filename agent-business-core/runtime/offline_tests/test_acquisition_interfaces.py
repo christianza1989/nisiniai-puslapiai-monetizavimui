@@ -132,6 +132,22 @@ class AcquisitionInterfaceTests(unittest.TestCase):
         reactivated, _ = project_conversion(inactive, self.event('profile_active', 6))
         self.assertTrue(reactivated.profile_active)
 
+    def test_pending_draft_preserves_current_published_eligibility(self):
+        active, _ = project_conversion(None, self.event('profile_active', 4))
+        submitted = self.event('profile_submitted', 5)
+        updated, state = project_conversion(active, submitted)
+        self.assertEqual(state, 'applied')
+        self.assertTrue(updated.profile_active)
+        self.assertEqual(updated.state, 'profile_active')
+        self.assertEqual(updated.source_revision, 5)
+        self.assertEqual(updated.last_event_id, submitted.event_id)
+        inactive, _ = project_conversion(updated, self.event('profile_deactivated', 6))
+        pending, _ = project_conversion(inactive, self.event('profile_submitted', 7))
+        self.assertFalse(pending.profile_active)
+        self.assertEqual(pending.state, 'profile_deactivated')
+        stale, status = project_conversion(pending, self.event('profile_submitted', 3))
+        self.assertEqual((stale, status), (pending, 'stale'))
+
     def test_binding_regression_and_deletion_are_enforced(self):
         active, _ = project_conversion(None, self.event('profile_active', 4))
         for event in [

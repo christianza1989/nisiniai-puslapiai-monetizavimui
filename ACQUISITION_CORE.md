@@ -98,3 +98,5 @@ Po mažo bandymo ir meaningful patikros leidimus plėsti iki autorizuotų atsaky
 - [ ] Pirmo bandymo rezultatas įrašytas kaip actual; pelningumas ir kita verslo fazė tvirtinami tik pagal įvykdytų poreikių / ekonomikos įrodymus.
 
 Šios sutarties checkboxai dar nėra runtime PASS. Automatinių žinučių, skambučių, pirkimų, DNS ar naujo heartbeat ši dokumentacija pati neįjungia.
+
+Provider_signup native integracijai naudoti [recipient-binding0.1.0](agent-business-core/contracts/recipient-binding-v1/README.md) greta nepakeisto acquisition0.1.1. Gavėjo proof tik susieja tikrą patvirtintą paskyrą; aktyviam teikėjui reikia actual organizacijos/publikuoto profilio ir dabartinių tinkamų pasiūlymų. Canonical native normalizer, OTP-before-provider buffer, original invite expiry ir atskiras atomic native counter/outbox saugomi pagal kontraktą. Šis naujas schemų/codec sluoksnis dar nemountina route ar durable ledger ir neįrodo hosted veikimo.

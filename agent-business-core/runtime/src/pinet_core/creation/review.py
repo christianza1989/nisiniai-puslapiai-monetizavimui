@@ -340,6 +340,18 @@ BUSINESS_CRITIC_POLICY = CRITIC_POLICY.replace(
 Tik tos pačios priežasties ir tos pačios konkrečios pataisos radinius sujunk, išsaugodamas visas tikslias
 nuorodas. Daugiau nei šešioms nuorodoms pateik papildomą radinį. Skirtingų trūkumų ar pataisų nepraleisk.
 Privaloma pataisa ir žinoma FAIL būsena vis tiek neleidžia accept_draft; visos devynios patikros privalomos.
+Privataus verslo juodraščio etapo ribos:
+Vertini pasiūlymo hipotezę, puslapių tekstų juodraštį ir turinio planą, ne jau veikiančio verslo priėmimą.
+Vien nežinomi vykdytojas, kaina, paklausa ar vėlesnių etapų kvitai nėra dabartinio teksto klaida.
+Palik tokią patikrą UNVERIFIED ir vėlesnę užduotį; nekurk PASS ir nepraleisk žinomos FAIL būsenos.
+Prieš privalomą pataisą perskaityk visą nurodytą tekstą ir jo ribas. Nereikalauk jau aiškiai įrašyto
+sąlyginio būsimo veiksmo, neveikiančios formos, darbinio vardo, tikrintino pranašumo ar paklausos įrodymų
+nebuvimo. Darbinio vardo stiliaus pasirinkimas savaime nėra privaloma kalbos klaida; vardus išsaugok.
+Privalomą radinį pagrįsk tikru likusiu netikslumu, neaiškumu, prieštaravimu ar nepagrįstu pažadu.
+Kvietimas dabar skaityti tik suplanuotą gidą ar naudotis neveikiančiu kanalu lieka taisytinas neatitikimas.
+Nepatikrintą faktinį teiginį atskirk nuo aiškiai apribotos tyrimo apžvalgos, prielaidos ir tikrinimo plano.
+Konkurento pasiūlymas neįrodo mokios paklausos ar mūsų pajėgumo. Pirmame rate vertink visą matomą tekstą;
+kitame tikrink pataisas ir galutinį variantą. Nauji tikri trūkumai leidžiami, visos priėmimo patikros lieka.
 """
 
 COORDINATOR_POLICY = """Esi Verslomatikos koordinatorius. Pagal pateiktą konkretų privatų juodraštį,

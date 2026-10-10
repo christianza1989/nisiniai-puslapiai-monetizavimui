@@ -50,6 +50,7 @@ class SafeRoute(APIRoute):
             return JSONResponse({"code": code, "message": code,
                                  "request_id": request.state.control_request_id}, status_code=status,
                                 headers={"Cache-Control": "private, no-store",
+                                         **({"WWW-Authenticate": "Bearer"} if status == 401 else {}),
                                          **({"Retry-After": "900"} if status == 429 else {})})
         return handle
 
@@ -172,7 +173,7 @@ async def authenticated(request: Request):
 
 
 @router.post("/auth/logout", status_code=204)
-async def logout(context=Depends(authenticated)):
+async def logout(context=Depends(authenticated, scope="function")):
     tx, session = context
     session.revoked_at = utcnow()
     await tx.flush()
@@ -194,7 +195,7 @@ def identifier(value):
 
 
 @router.get("/me")
-async def me(request: Request, context=Depends(authenticated)):
+async def me(request: Request, context=Depends(authenticated, scope="function")):
     tx, session = context
     portfolios = list(await tx.scalars(select(Portfolio).join(Membership, Membership.organization_id ==
                      Portfolio.organization_id).where(Membership.user_id == session.user_id, Membership.enabled)
@@ -205,7 +206,7 @@ async def me(request: Request, context=Depends(authenticated)):
 
 
 @router.get("/capabilities")
-async def capabilities(request: Request, context=Depends(authenticated)):
+async def capabilities(request: Request, context=Depends(authenticated, scope="function")):
     tx, _ = context
     exists = await tx.scalar(select(Portfolio.id).limit(1))
     return envelope(request, {"capabilities": ["portfolio.read"] if exists else []})
@@ -245,7 +246,8 @@ def open_cursor(value, session, portfolio, snapshot):
 
 @router.get("/portfolios/{portfolio_id}/businesses")
 async def listing(portfolio_id: str, request: Request, limit: int = Query(25, ge=1, le=100),
-                  cursor: str | None = Query(None, min_length=1, max_length=2048), context=Depends(authenticated)):
+                  cursor: str | None = Query(None, min_length=1, max_length=2048),
+                  context=Depends(authenticated, scope="function")):
     tx, session = context
     portfolio_id = identifier(portfolio_id)
     if not await tx.get(Portfolio, portfolio_id):
@@ -270,7 +272,7 @@ async def listing(portfolio_id: str, request: Request, limit: int = Query(25, ge
 
 
 @router.get("/businesses/{business_id}")
-async def detail(business_id: str, request: Request, context=Depends(authenticated)):
+async def detail(business_id: str, request: Request, context=Depends(authenticated, scope="function")):
     tx, _ = context
     row = (await tx.execute(select(BusinessGrant, Business).join(Business, Business.id == BusinessGrant.business_id)
                            .where(BusinessGrant.business_id == identifier(business_id), BusinessGrant.enabled))).first()

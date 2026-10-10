@@ -1,7 +1,11 @@
 """Real PostgreSQL acceptance: auth, tenant RLS, revocation and atomic bootstrap."""
 import asyncio
 import json
+import os
 import secrets
+import socket
+import subprocess
+import sys
 from datetime import timedelta
 from pathlib import Path
 from uuid import uuid4
@@ -94,6 +98,7 @@ async def test_legacy_secrets_and_forged_claims_cannot_authorize(pilot):
         result = await client.get("/operator/v2/me", headers={"Authorization": f"Bearer {token}",
                                                             "x-pinet-user": pilot["receipts"][0]["user_id"]})
         assert result.status_code == 401
+        assert result.headers["www-authenticate"] == "Bearer"
     headers = await login(pilot)
     headers["x-pinet-organization"] = pilot["receipts"][1]["organization_id"]
     assert (await client.get(endpoint(pilot, 1), headers=headers)).status_code == 404
@@ -250,3 +255,52 @@ async def test_actual_response_shapes_match_canonical_schema(pilot):
         assert set(response["data"]) == set(data_schema["required"])
     item = (await pilot["client"].get(endpoint(pilot), headers=headers)).json()["data"]["items"][0]
     assert set(item) == set(schemas["Business"]["required"])
+
+
+async def test_actual_tcp_logout_commits_before_response(pilot):
+    # ASGITransport waits for after-response dependency cleanup; it hides the network race.
+    cfg = settings()
+    with socket.socket() as reservation:
+        reservation.bind(("127.0.0.1", 0))
+        port = reservation.getsockname()[1]
+    env = {**os.environ, "PINET_DATABASE_URL": cfg.database_url, "PINET_ENVIRONMENT": cfg.environment,
+           "PINET_CONTROL_ENABLED": "true", "PINET_CONTROL_CURSOR_SECRET": cfg.control_cursor_secret,
+           "PINET_CONTROL_SOURCE_REVISION": cfg.control_source_revision,
+           "PINET_VOICE_ENABLED": "false", "PINET_SMTP_ENABLED": "false",
+           "PINET_KNOWLEDGE_REFRESH_ENABLED": "false", "PINET_LEARNING_ENABLED": "false"}
+    process = subprocess.Popen([sys.executable, "-m", "uvicorn", "pinet_core.api:app", "--host", "127.0.0.1",
+                                "--port", str(port), "--no-access-log"], env=env,
+                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                               creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
+    try:
+        async with httpx.AsyncClient(base_url=f"http://127.0.0.1:{port}", timeout=3, trust_env=False) as client:
+            ready = False
+            for _ in range(80):
+                if process.poll() is not None:
+                    break
+                try:
+                    ready = (await client.get("/health")).status_code == 200
+                except httpx.TransportError:
+                    pass
+                if ready:
+                    break
+                await asyncio.sleep(0.1)
+            assert ready, "Dedicated TCP regression API did not start"
+            value = pilot["inputs"][0]
+            for _ in range(3):
+                response = await client.post("/operator/v2/auth/login", json={k: value[k] for k in ("username", "password")})
+                assert response.status_code == 200
+                headers = {"Authorization": "Bearer " + response.json()["access_token"]}
+                assert (await client.post("/operator/v2/auth/logout", headers=headers)).status_code == 204
+                # New independent connection immediately after204 sees committed revocation.
+                async with httpx.AsyncClient(base_url=client.base_url, timeout=3, trust_env=False) as next_client:
+                    assert (await next_client.get("/operator/v2/me", headers=headers)).status_code == 401
+    finally:
+        if os.name == "nt":
+            # Windows venv launcher spawns the interpreter; terminate only our own process tree.
+            await asyncio.to_thread(subprocess.run, ["taskkill", "/PID", str(process.pid), "/T", "/F"],
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                    creationflags=subprocess.CREATE_NO_WINDOW, check=False)
+        else:
+            process.terminate()
+        await asyncio.to_thread(process.wait, timeout=10)

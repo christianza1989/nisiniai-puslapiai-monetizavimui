@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual TCP HTTP at78f1aae detected logout204-before-commit race masked by ASGITransport. All authenticated control dependencies now use function scope to commit before response. Added real separate uvicorn/TCP regression,15PASS/29.97s including three immediate new-connection post-logout401 checks. Peer401WWW-Authenticate canonical header mismatch fixed/tested. Repaired-source HTTP/browser and dedicated DB restart/restore next; originalFAIL retained in docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md.",
+  "eventId": "91b22904-28ca-483f-bccd-577ef11027f6",
+  "sequence": 3,
+  "at": "2026-10-10T00:24:26.103Z"
+}

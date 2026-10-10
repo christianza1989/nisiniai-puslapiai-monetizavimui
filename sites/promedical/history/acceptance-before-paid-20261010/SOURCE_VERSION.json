@@ -1,7 +1,7 @@
 {
   "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
-  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
-  "coreCommit": "9bb808e7881d4001e33d878e935120ce16d624db",
+  "sourceVersion": "5c5d704774fa1d1fbfbcba57ac860e347bd64d1d",
+  "coreCommit": "e0aa27ea7a957be5d602b35a38c0462b4ffc58d8",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
@@ -50,21 +50,9 @@
     {
       "file": "tests/niche-render-cache.test.mjs",
       "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
-    },
-    {
-      "file": "lib/niche-mail.ts",
-      "sha256": "335e8aed06cc36dbf5a82dd8722556f685f6d55e75023362337b830ff825b67c"
-    },
-    {
-      "file": "app/niche/[siteId]/lead/route.ts",
-      "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
-    },
-    {
-      "file": "tests/niche-mail.test.mjs",
-      "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
     }
   ],
-  "checkedAt": "2026-10-10T07:43:35.554Z",
-  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
-  "notes": "Current committed public source and deployed normal production bytes. Core commit is the source baseline before this evidence-only update, not an impossible self-referential future commit. Previous acceptance files are exact archived copies under history/acceptance-before-paid-20261010. No QA clock in production."
+  "checkedAt": "2026-10-10T06:18:56.237Z",
+  "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+  "notes": "Current source bytes and deployed Free-optimization version. Earlier reports preserve their original HEAD/date and exact file hashes; pre-commit dirty bytes are identified by their recorded hashes, not rewritten to the later commit."
 }

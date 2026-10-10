@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-10T07:22:56.845Z",
+  "tlsVerified": true,
+  "imapAuthenticated": true,
+  "mailbox": "INBOX",
+  "search": "exact own Message-ID then exact unique own UUID subject if provider rewrites ID; read-only EXAMINE, no unrelated messages fetched",
+  "testId": "cc4aee75-7f5e-4cf5-b036-9689e5ace6cd",
+  "exactMessageId": false,
+  "ownSubject": false,
+  "received": false
+}

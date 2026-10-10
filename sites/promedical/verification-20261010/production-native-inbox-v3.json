@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-10-10T07:24:19.895Z",
+  "tlsVerified": true,
+  "imapAuthenticated": true,
+  "mailbox": "INBOX",
+  "search": "exact own Message-ID, exact own UUID subject, then authoritative own Cloudflare rewritten Message-ID; read-only EXAMINE, no unrelated messages fetched",
+  "testId": "cc4aee75-7f5e-4cf5-b036-9689e5ace6cd",
+  "providerId": "<33LCglfPk8fEA3O94GxNJaW3hz004cai9DBH@promedical.lt>",
+  "exactMessageId": false,
+  "ownSubject": false,
+  "providerMessageId": false,
+  "received": false
+}

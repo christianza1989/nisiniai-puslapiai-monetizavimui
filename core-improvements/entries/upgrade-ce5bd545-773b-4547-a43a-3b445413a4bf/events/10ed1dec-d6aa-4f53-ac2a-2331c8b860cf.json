@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/20",
+  "commit": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "note": "Actual REST readback confirms public draftPR20 open at committed/pushed source fa176690be28cbe502137462e0ff5a35efcc4a47. Core draftPR53 retains matching current receipts and exact prior acceptance. Source/build checks passed; active normal production version03f65927-d62f-45c1-8ccd-f125c5f2c8bc has restricted native sender/destination and two receiving Hostinger Junk messages with native Delivered and SPF/DKIM/DMARCpass. AutomaticInbox needs the prepared narrow3ANDcondition filter approval; not claimed complete. Historical QA packaging attempt caught before upload, unknown originalMessage-ID probes and failed fixing-event CLI extra-key input remain documented. No main merge/adoption, new subscription, secret/customerbody publication or message/lead deletion.",
+  "eventId": "10ed1dec-d6aa-4f53-ac2a-2331c8b860cf",
+  "sequence": 3,
+  "at": "2026-10-10T07:46:12.277Z"
+}

@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-10T07:22:29.988Z",
+  "tlsVerified": true,
+  "imapAuthenticated": true,
+  "mailbox": "INBOX",
+  "search": "exact own synthetic Message-ID only; read-only EXAMINE",
+  "testId": "cc4aee75-7f5e-4cf5-b036-9689e5ace6cd",
+  "received": false
+}

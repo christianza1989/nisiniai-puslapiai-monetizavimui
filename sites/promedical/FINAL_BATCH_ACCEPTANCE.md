@@ -1,3 +1,5 @@
+> Current checkpoint 2026-10-10T07:43:35.554Z: [DEPLOYMENT.md](DEPLOYMENT.md), [GEO_VERIFICATION.md](GEO_VERIFICATION.md), [PHASE-1-AUDIT.json](PHASE-1-AUDIT.json) and SOURCE_VERSION.json supersede earlier Free/SMTP/contact/media state below. Current contact info@promedical.lt; source fa176690be28cbe502137462e0ff5a35efcc4a47; Paid version 03f65927-d62f-45c1-8ccd-f125c5f2c8bc;57scheduled guides include20AI illustrations and15SVG figures. Native delivery reaches authenticated receiving-mailbox Junk; filter approval pending. Earlier observations remain historical.
+
 # Final article batch — 2026-10-10
 
 Current immutable Studio release: `c6d20d9f-bdd9-4744-a8a3-886a6714c182`; installed package SHA-256 `cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259` (10,581,213 bytes). Public source commit `aa21f4d1542902d8608e0da8d74bc029d901fdb1`. The inspected production build was produced from these same renderer/package bytes before their scoped commit; no QA clock is present in production configuration.

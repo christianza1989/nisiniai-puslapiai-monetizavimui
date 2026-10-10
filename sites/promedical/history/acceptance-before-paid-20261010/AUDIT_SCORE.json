@@ -1,28 +1,33 @@
 {
   "siteId": "promedical",
-  "evaluatedAt": "2026-10-10T07:43:35.554Z",
+  "evaluatedAt": "2026-10-09T18:25:36.530Z",
   "stages": {
     "local": {
-      "passed": 65,
+      "passed": 62,
       "applicable": 71,
-      "score": 9.15,
+      "score": 8.73,
       "perfect": false,
       "gateReady": false,
       "blockers": [
         "R2",
         "S2",
+        "U2",
+        "U3",
         "W1",
-        "W2"
+        "W2",
+        "W4"
       ]
     },
     "launch": {
-      "passed": 3,
+      "passed": 0,
       "applicable": 10,
-      "score": 3,
+      "score": 0,
       "perfect": false,
       "gateReady": false,
       "blockers": [
         "B3",
+        "I4",
+        "O3",
         "U4",
         "W3",
         "X3",
@@ -111,12 +116,14 @@
       "blockers": []
     },
     "I": {
-      "passed": 4,
+      "passed": 3,
       "applicable": 4,
-      "score": 10,
-      "perfect": true,
-      "gateReady": true,
-      "blockers": []
+      "score": 7.5,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "I4"
+      ]
     },
     "J": {
       "passed": 3,
@@ -135,10 +142,10 @@
       "blockers": []
     },
     "L": {
-      "passed": 4,
+      "passed": 3,
       "applicable": 4,
-      "score": 10,
-      "perfect": true,
+      "score": 7.5,
+      "perfect": false,
       "gateReady": true,
       "blockers": []
     },
@@ -159,12 +166,14 @@
       "blockers": []
     },
     "O": {
-      "passed": 3,
+      "passed": 2,
       "applicable": 3,
-      "score": 10,
-      "perfect": true,
-      "gateReady": true,
-      "blockers": []
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "O3"
+      ]
     },
     "P": {
       "passed": 3,
@@ -211,12 +220,14 @@
       "blockers": []
     },
     "U": {
-      "passed": 3,
+      "passed": 1,
       "applicable": 4,
-      "score": 7.5,
+      "score": 2.5,
       "perfect": false,
       "gateReady": false,
       "blockers": [
+        "U2",
+        "U3",
         "U4"
       ]
     },
@@ -231,15 +242,16 @@
       ]
     },
     "W": {
-      "passed": 1,
+      "passed": 0,
       "applicable": 4,
-      "score": 2.5,
+      "score": 0,
       "perfect": false,
       "gateReady": false,
       "blockers": [
         "W1",
         "W2",
-        "W3"
+        "W3",
+        "W4"
       ]
     },
     "X": {

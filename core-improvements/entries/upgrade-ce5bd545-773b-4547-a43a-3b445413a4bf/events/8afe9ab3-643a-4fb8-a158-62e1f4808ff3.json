@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "Native dispatcher + SMTP focused regression",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261010/paid-source-build-checks-v1.json"
+    },
+    {
+      "command": "npm run test:core; TypeScript; focused lint; normal build; types; clean dry run",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261010/paid-source-build-checks-v1.json"
+    },
+    {
+      "command": "All10SEO + full future5694GET",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261010/all-site-seo-paid-v1.json; sites/promedical/verification-20261010/future-completion-paid-v1.json"
+    }
+  ],
+  "note": "Source fa176690be28cbe502137462e0ff5a35efcc4a47. This event accepts scoped shared mail dispatch source, not automatic Inbox classification, all-stage site acceptance or main adoption.",
+  "eventId": "8afe9ab3-643a-4fb8-a158-62e1f4808ff3",
+  "sequence": 2,
+  "at": "2026-10-10T07:35:52.663Z"
+}

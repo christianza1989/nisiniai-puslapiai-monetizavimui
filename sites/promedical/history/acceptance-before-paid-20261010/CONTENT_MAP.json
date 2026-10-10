@@ -1661,7 +1661,7 @@
     "Full rich map remains orchestration documentation; this V1 has no injected planningBrief adapter. Compact native fields and private seoResearch are verified separately.",
     "Preparation dates fit the existing private calendar and preserve earlier targets; no autonomous publication or writing schedule is enabled."
   ],
-  "updatedAt": "2026-10-10T07:43:35.554Z",
+  "updatedAt": "2026-10-09T20:56:37.450Z",
   "clusters": [
     {
       "id": "carts",
@@ -16575,7 +16575,7 @@
     "publication": false
   },
   "execution": {
-    "checkedAt": "2026-10-10T07:43:35.554Z",
+    "checkedAt": "2026-10-10T05:42:49.702Z",
     "releaseId": "c6d20d9f-bdd9-4744-a8a3-886a6714c182",
     "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
     "approvedGuides": 57,
@@ -16588,19 +16588,13 @@
     "singleDays": 27,
     "doubleDays": 15,
     "timezone": "Europe/Vilnius",
-    "deployment": "LIVE_PAID_AVAILABILITY_AND_GOOGLE_CRAWL_VERIFIED_MAIL_JUNK_FILTER_PENDING",
+    "deployment": "LIVE_PREVIEW_FREE_CPU_AND_MAIL_NOT_ACCEPTED",
     "nativeReview": "All actual current Studio review/approval/import payloads match; private proof retained.",
-    "futureHtml": "verification-20261010/future-completion-paid-v1.json",
+    "futureHtml": "verification-20261010/future-clock-rendered-free-v1.json",
     "browser": "verification-20261010/guides-browser-desktop-mobile.json",
     "historicalScope": "sites/promedical/history/acceptance-before-final-batch-20261010/CONTENT_MAP.json",
-    "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+    "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
     "productionOrigin": "https://promedical.lt",
-    "productionCheckedAt": "2026-10-10T07:22:00.719Z",
-    "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
-    "googleSearchConsole": "verification-20261010/production-google-search-console-v1.json",
-    "mail": "verification-20261010/production-native-mail-v1.json",
-    "allGuidesDeployed": true,
-    "publicGuidesAtCheck": 0,
-    "publicationNeedsDailyRedeploy": false
+    "productionCheckedAt": "2026-10-10T06:15:26.816Z"
   }
 }

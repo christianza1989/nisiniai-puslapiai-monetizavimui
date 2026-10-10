@@ -1,0 +1,21 @@
+{
+  "siteId": "promedical",
+  "category": "code",
+  "summary": "Production inquiry persists in D1 but Hostinger TCP SMTP fails from Workers. The configured native email fallback is unreachable when SMTP throws. Prefer an explicitly bound Cloudflare Email transport, reuse the validated MIME formatter, and retain SMTP for unbound tenants.",
+  "evidence": [
+    "sites/promedical/verification-20261010/production-runtime-observations.json",
+    "sites/promedical/DEPLOYMENT.md",
+    "https://developers.cloudflare.com/email-service/api/send-emails/workers-api/"
+  ],
+  "paths": [
+    "lib/niche-mail.ts",
+    "app/niche/[siteId]/lead/route.ts",
+    "tests/niche-mail.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/19",
+  "rollback": "Scoped revert of optional binding-first mail dispatch and route handoff only; restore prior Worker version without deleting D1 rows or changing Hostinger MX. Preserve all historical failures and approval/package hashes.",
+  "id": "upgrade-ce5bd545-773b-4547-a43a-3b445413a4bf",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "9bb808e7881d4001e33d878e935120ce16d624db",
+  "createdAt": "2026-10-10T07:05:46.096Z"
+}

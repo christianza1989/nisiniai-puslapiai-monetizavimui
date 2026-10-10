@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-10T07:29:31.930Z",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "rows": [
+    {
+      "path": "/",
+      "status": 200,
+      "setCookiePresent": false,
+      "externalScripts": [],
+      "scriptCount": 12,
+      "bodySha256": "af6139502e4d50ced428040aea3b85984dd84b80d0e8f6ad2ab40bf5486b47de",
+      "marketingStringsPresent": false
+    },
+    {
+      "path": "/kontaktai",
+      "status": 200,
+      "setCookiePresent": false,
+      "externalScripts": [],
+      "scriptCount": 12,
+      "bodySha256": "a2d3bf7bea46f4ea3ede5775e787308a4f82652f9c0033594fe4cb4978f1d291",
+      "marketingStringsPresent": false
+    },
+    {
+      "path": "/produktai/zs1333",
+      "status": 200,
+      "setCookiePresent": false,
+      "externalScripts": [],
+      "scriptCount": 12,
+      "bodySha256": "254af9c95ba7e85bb756bc3b50599e34bf43c9dca11ac2bfc2676564089b56d5",
+      "marketingStringsPresent": false
+    },
+    {
+      "path": "/privatumas",
+      "status": 200,
+      "setCookiePresent": false,
+      "externalScripts": [],
+      "scriptCount": 12,
+      "bodySha256": "4be6ce4ac524955a1d06fea2c9fefb1f18dc874ca983209d196e29d834c20fdd",
+      "marketingStringsPresent": false
+    }
+  ],
+  "source": [
+    {
+      "file": "components/niche/interest-tracking.tsx",
+      "sha256": "b23cdfb3003620924e8a69c6982b8e330546ed396f5cdd89e323ff78fdd54a4a"
+    },
+    {
+      "file": "components/niche/promedical-inquiry.tsx",
+      "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+    },
+    {
+      "file": "app/niche/[siteId]/lead/route.ts",
+      "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
+    }
+  ],
+  "sourceFindings": [
+    "Interest counters send only event/path, credentials omit, honor DNT/GPC; no visitor identifier or cookie write.",
+    "Only Promedical cart localStorage stores user-selected product code/title/path/quantity; no name/email/patient data.",
+    "Inquiry consent controls reply to one inquiry; no marketing subscription or campaign sender enabled."
+  ],
+  "pass": true,
+  "limitations": [
+    "This is a current deployed source/HTML/header inventory, not a legal opinion.",
+    "Retention/controller/processor operating facts remain separately unverified.",
+    "No browser cookie database or unrelated account cookies read."
+  ]
+}

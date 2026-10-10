@@ -1,3 +1,5 @@
+> Current checkpoint 2026-10-10T07:43:35.554Z: [DEPLOYMENT.md](DEPLOYMENT.md), [GEO_VERIFICATION.md](GEO_VERIFICATION.md), [PHASE-1-AUDIT.json](PHASE-1-AUDIT.json) and SOURCE_VERSION.json supersede earlier Free/SMTP/contact/media state below. Current contact info@promedical.lt; source fa176690be28cbe502137462e0ff5a35efcc4a47; Paid version 03f65927-d62f-45c1-8ccd-f125c5f2c8bc;57scheduled guides include20AI illustrations and15SVG figures. Native delivery reaches authenticated receiving-mailbox Junk; filter approval pending. Earlier observations remain historical.
+
 # Promedical dizaino sprendimas
 
 2026-10-09. Savininko kryptis: panašus į Klaro medicinos įrangos katalogas ligoninėms, poliklinikoms ir slaugos įstaigoms. Operate paviršius – modelių paieška ir atranka; Persuade – pradžia; Read – parametrai ir gidai. Pagrindinis rezultatas – konkretus įstaigos poreikis, ne fiktyvus apmokėjimas.

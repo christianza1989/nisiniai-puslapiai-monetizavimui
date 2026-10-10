@@ -2,7 +2,7 @@
   "siteId": "promedical",
   "canonicalHost": "promedical.lt",
   "phase": 1,
-  "evaluatedAt": "2026-10-10T07:43:35.554Z",
+  "evaluatedAt": "2026-10-10T06:18:56.267Z",
   "evaluator": "Codex actual scoped source/browser/HTTP audit; no claimed human or clinical sign-off",
   "environment": {
     "transportOrigin": "http://127.0.0.1:8791",
@@ -13,14 +13,13 @@
     "device": "real browser viewport tests plus mobile lab emulation; no physical device or established200%zoom",
     "projectionAt": "2026-11-23T12:00:00.000Z",
     "productionOrigin": "https://promedical.lt",
-    "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
-    "productionEvidence": "verification-20261010/production-completion-paid-native-v1.json; production-paid-native-version-v1.json; production-native-mail-v1.json; production-google-search-console-v1.json; production-storage-consent-v1.json",
-    "notes": "Normal Workers Paid production and separately controlled future local renderer. No local QA clock deployed. Real source/build, Google crawl and receiving mailbox evidence are distinct."
+    "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+    "productionEvidence": "verification-20261010/production-completion-v1.json; production-runtime-observations.json; production-bounded-probe-v1.json; production-redirects-v2.json; production-completion-free-v2.json; production-free-cpu-observations.json"
   },
   "version": {
     "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
-    "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
-    "coreCommit": "9bb808e7881d4001e33d878e935120ce16d624db",
+    "sourceVersion": "5c5d704774fa1d1fbfbcba57ac860e347bd64d1d",
+    "coreCommit": "e0aa27ea7a957be5d602b35a38c0462b4ffc58d8",
     "files": [
       {
         "file": "components/niche/promedical-site.tsx",
@@ -69,27 +68,15 @@
       {
         "file": "tests/niche-render-cache.test.mjs",
         "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
-      },
-      {
-        "file": "lib/niche-mail.ts",
-        "sha256": "335e8aed06cc36dbf5a82dd8722556f685f6d55e75023362337b830ff825b67c"
-      },
-      {
-        "file": "app/niche/[siteId]/lead/route.ts",
-        "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
-      },
-      {
-        "file": "tests/niche-mail.test.mjs",
-        "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
       }
     ],
-    "checkedAt": "2026-10-10T07:43:35.554Z",
-    "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
-    "notes": "Current committed public source and deployed normal production bytes. Core commit is the source baseline before this evidence-only update, not an impossible self-referential future commit. Previous acceptance files are exact archived copies under history/acceptance-before-paid-20261010. No QA clock in production."
+    "checkedAt": "2026-10-10T06:18:56.237Z",
+    "productionVersion": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+    "notes": "Current source bytes and deployed Free-optimization version. Earlier reports preserve their original HEAD/date and exact file hashes; pre-commit dirty bytes are identified by their recorded hashes, not rewritten to the later commit."
   },
   "verdict": {
     "local": "FINAL_57_GUIDES_RENDERED_PASS_FULL_AUDIT_INCOMPLETE",
-    "launch": "LIVE_CRAWL_AND_AVAILABILITY_VERIFIED_MAIL_DELIVERED_TO_JUNK_FILTER_APPROVAL_PENDING_OPERATING_GATES_OPEN",
+    "launch": "LIVE_FOR_PREVIEW_WITH_CONFIRMED_CPU_AND_MAIL_FAILURES",
     "demand": "UNMEASURED",
     "visual": "Coherent green/white medical B2B catalogue, original brand, true manufacturer imagery and useful model/quantity flow; broader visual benchmark incomplete."
   },
@@ -194,10 +181,9 @@
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-        "DEPLOYMENT.md and verification-20261010/production-google-search-console-v1.json: current actual launch facts; earlier no-deployment statements above are historical evidence only."
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Actual domain control and GSC ownership verified. Owner explicitly declined a public legal entity; missing controller/legal-operating facts remain unverified, not invented or re-requested.",
+      "notes": "Owner Cloudflare account/domain control and Hostinger delegation are verified. A public legal entity was explicitly declined; no undisclosed legal operator facts are invented.",
       "historicalEvidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
@@ -266,7 +252,7 @@
         "DESIGN.md: Klaro actual desktop/mobile evidence plus three local/three foreign text comparisons; limits declared",
         "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Klaro desktop/mobile and nearest-network pixels plus later TEIDA desktop/mobile and Diamedica desktop evidence exist. Complete3local/3foreign desktop/mobile design comparison remains incomplete; do not dismiss observed references or promote partial coverage.",
+      "notes": "Only the selected Klaro design reference and nearest-network reference have actual pixel evidence. Broader multi-site desktop/mobile visual comparison is incomplete.",
       "historicalEvidence": [
         "DESIGN.md: Klaro actual desktop/mobile evidence plus three local/three foreign text comparisons; limits declared"
       ]
@@ -817,25 +803,17 @@
       "stage": "launch",
       "gate": false,
       "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
-      "status": "PASS",
+      "status": "UNVERIFIED",
       "evidence": [
-        "verification-20261010/production-google-search-console-v1.json: actual Google home/product Live Test and sitemap findings",
-        "screenshots/final-batch-20261010/google-product-live-test.png: valid breadcrumb, product snippet requires offers/review/aggregateRating"
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "Official findings recorded after crawlable deployment. B2B quote catalogue has no confirmed public price or genuine rating; Product rich-result ineligibility is explicit. No fabricated offer or eligibility promise. Future57article official Google tests cannot precede their publication.",
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
       "historicalEvidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
-      ],
-      "previousCheck": {
-        "status": "UNVERIFIED",
-        "evidence": [
-          "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-          "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-          "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
-        ],
-        "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand."
-      }
+      ]
     },
     {
       "id": "M1",
@@ -1013,29 +991,19 @@
       "stage": "launch",
       "gate": true,
       "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
-      "status": "PASS",
+      "status": "FAIL",
       "evidence": [
-        "verification-20261010/production-completion-paid-native-v1.json: 5694 actual GET, all1853 eligible pages and3777assets, no HTTP/CPU availability issue; sole issue is no guide public before Oct12",
-        "verification-20261010/production-paid-native-version-v1.json: actual100% deployed version, isolatedD1, clean build and1000msCPU cap",
-        "verification-20261010/production-redirects-v2.json: actual HTTP/www308 path/query-preserving redirects",
-        "verification-20261010/production-google-search-console-v1.json: domain ownership and actual Google live home/product crawl eligible"
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "production-runtime-observations.json: actual category GET 503 / exceededCpu / 29 ms. production-completion-v1.json retains 1391 issues. DNS/TLS and canonical 308 redirects separately pass.",
+        "production-completion-free-v2.json: actual 5694 GETs/386 issues after the bounded Free optimization. Separate 12 own GETs returned200, with CPU16–66ms; these are not full availability acceptance."
       ],
-      "notes": "Owner-purchased Workers Paid confirmed Active. TLS/domain/isolation/indexing directives verified. Historical Free503 reports remain retained, not rewritten. Sitemap discovery is not indexed-page count.",
+      "notes": "Actual HTTPS preview, isolated Worker/D1 and redirects work. Full catalogue still includes503 failures in the unchanged Free plan; the owner declined Paid. No reliable full-production claim.",
       "historicalEvidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
-      ],
-      "previousCheck": {
-        "status": "FAIL",
-        "evidence": [
-          "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-          "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-          "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-          "production-runtime-observations.json: actual category GET 503 / exceededCpu / 29 ms. production-completion-v1.json retains 1391 issues. DNS/TLS and canonical 308 redirects separately pass.",
-          "production-completion-free-v2.json: actual 5694 GETs/386 issues after the bounded Free optimization. Separate 12 own GETs returned200, with CPU16–66ms; these are not full availability acceptance."
-        ],
-        "notes": "Actual HTTPS preview, isolated Worker/D1 and redirects work. Full catalogue still includes503 failures in the unchanged Free plan; the owner declined Paid. No reliable full-production claim."
-      }
+      ]
     },
     {
       "id": "P1",
@@ -1305,8 +1273,7 @@
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-        "DEPLOYMENT.md and verification-20261010/production-google-search-console-v1.json: current actual launch facts; earlier no-deployment statements above are historical evidence only."
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
       "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
       "historicalEvidence": [
@@ -1372,25 +1339,16 @@
       "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
       "status": "FAIL",
       "evidence": [
-        "verification-20261010/production-native-mail-v1.json: two marked browser forms saved in actual isolatedD1, notified native acceptance, recipient-server Delivered and exact receiving mailbox Junk/authentication pass",
-        "verification-20261010/production-paid-native-version-v1.json: restricted sender/destination and actualD1/native bindings",
-        "verification-20261010/production-native-second-inbox-v2.json: second new independent test still Junk; first manual Not spam is not automaticInbox evidence"
+        "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
+        "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
+        "production-inquiry-saved-mail-failed.png and production-runtime-observations.json: actual browser form saved one marked own test to isolated remote D1 with status new; notification failed. Four invalid/honeypot probes returned expected HTTP statuses and created zero matching rows."
       ],
-      "notes": "Cloudflare native transport fixes production TCP SMTP failure. Automatic Inbox routing remains unresolved; narrow3ANDcondition filter is prepared but not enabled pending owner action-time confirmation. Recovery/reconciliation/rate/backup evidence remains separate. No historical D1/message deletion.",
+      "notes": "Actual marked production D1 inquiry remains status new after SMTP failure. CPU optimization does not fix the TCP delivery restriction. Matching production INBOX, recovery/rate/backup acceptance remain unverified.",
       "historicalEvidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
-      ],
-      "previousCheck": {
-        "status": "FAIL",
-        "evidence": [
-          "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
-          "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-          "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-          "production-inquiry-saved-mail-failed.png and production-runtime-observations.json: actual browser form saved one marked own test to isolated remote D1 with status new; notification failed. Four invalid/honeypot probes returned expected HTTP statuses and created zero matching rows."
-        ],
-        "notes": "Actual marked production D1 inquiry remains status new after SMTP failure. CPU optimization does not fix the TCP delivery restriction. Matching production INBOX, recovery/rate/backup acceptance remain unverified."
-      }
+      ]
     },
     {
       "id": "V1",
@@ -1439,10 +1397,9 @@
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-        "DEPLOYMENT.md and verification-20261010/production-google-search-console-v1.json: current actual launch facts; earlier no-deployment statements above are historical evidence only."
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "GSC connected and sitemap processed; actual rankings/traffic and qualified real inquiries/value remain unmeasured. Own synthetic tests are not demand.",
+      "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
       "historicalEvidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
@@ -1491,8 +1448,7 @@
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-        "DEPLOYMENT.md and verification-20261010/production-google-search-console-v1.json: current actual launch facts; earlier no-deployment statements above are historical evidence only."
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
       "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
       "historicalEvidence": [
@@ -1505,25 +1461,17 @@
       "stage": "local",
       "gate": true,
       "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
-      "status": "PASS",
+      "status": "UNVERIFIED",
       "evidence": [
-        "verification-20261010/production-storage-consent-v1.json: current deployed source and four actual HTML/header inventories; no marketing tags/Set-Cookie; only user-selected product cart localStorage",
-        "PRIVACY-REVIEW-ADDENDUM.json: inquiry checkbox is one inquiry response, not a marketing subscription"
+        "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
+        "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval",
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
-      "notes": "No nonessential marketing cookie/provider enabled, so no unsupported consent banner invented. DNT/GPC honored and first-party aggregate event/path has no visitor ID. This technical consent criterion does not establish controller/retention/processors/legal approval.",
+      "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent.",
       "historicalEvidence": [
         "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
         "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval"
-      ],
-      "previousCheck": {
-        "status": "UNVERIFIED",
-        "evidence": [
-          "PRIVACY-LAUNCH-GAPS.md: nine specific controller/basis/processors/retention/consent/log/storage gaps",
-          "PRIVACY-REVIEW-ADDENDUM.json: actual code/text corrections, not legal approval",
-          "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
-        ],
-        "notes": "Notice reflects current technical flow and owner-chosen brand; unknown operation/legal facts are not invented or blanket-NA. Inquiry checkbox is not marketing consent."
-      }
+      ]
     },
     {
       "id": "X1",
@@ -1572,8 +1520,7 @@
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-        "DEPLOYMENT.md and verification-20261010/production-google-search-console-v1.json: current actual launch facts; earlier no-deployment statements above are historical evidence only."
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
       "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
       "historicalEvidence": [
@@ -1691,8 +1638,7 @@
       "evidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence",
-        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope.",
-        "DEPLOYMENT.md and verification-20261010/production-google-search-console-v1.json: current actual launch facts; earlier no-deployment statements above are historical evidence only."
+        "FINAL_BATCH_ACCEPTANCE.md: exact current package, source, native approvals, calendar, parser and runtime checks; historical evidence retains its actual scope."
       ],
       "notes": "This stage requires actual production/operation evidence, not available in local build; no claim of completed launch or demand.",
       "historicalEvidence": [

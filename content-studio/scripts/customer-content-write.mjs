@@ -54,7 +54,7 @@ async function noLinks(root, target) {
   }
 }
 async function loadContext(input) {
-  if (!object(input) || !['prepare', 'apply'].includes(input.command)
+  if (!object(input) || !['prepare', 'validate', 'apply'].includes(input.command)
       || !/^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(input.creationId)
       || !Number.isSafeInteger(input.acceptedRevision) || input.acceptedRevision < 1 || !hash(input.sourceHash)
       || !/^page-[a-f0-9]{24}$/.test(input.pageId) || !boundedText(input.canonicalHost, 1, 253)) fail('writer_invalid_identity');
@@ -170,6 +170,11 @@ export async function customerContentWrite(input) {
       || input.expectedRevisionHash !== context.expectedRevisionHash || input.expectedPlanningHash !== context.expectedPlanningHash
       || input.expectedContextHash !== context.expectedContextHash) fail('writer_context_stale');
   const output = validateOutput(input.output, context);
+  if (input.command === 'validate') {
+    // The caller reviews these exact normalized bytes before any private mutation.
+    const candidate = { ...output, factChecks: input.output.factChecks };
+    return { ...binding, state: 'validated', output: candidate, outputHash: digest(candidate) };
+  }
   const updated = await model.editPage(site.id, page.id, output, { expectedRevisionHash: context.expectedRevisionHash,
     expectedPlanningHash: context.expectedPlanningHash, expectedSiteHash: context.expectedSiteHash });
   return { ...binding, state: 'private-draft-written', observedAt: new Date().toISOString(), outputHash: digest(input.output),

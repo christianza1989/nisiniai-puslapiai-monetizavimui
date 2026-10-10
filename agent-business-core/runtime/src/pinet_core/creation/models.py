@@ -81,6 +81,8 @@ class Revision(Owned, Base):
     material_hash: Mapped[str] = mapped_column(String)
     source_revision: Mapped[str] = mapped_column(String)
     __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("creation_id", "sequence"),
+        UniqueConstraint("id", "creation_id", "sequence", "material_hash", "source_revision", *BINDING[1:],
+                         name="uq_registration_revision_identity"),
         UniqueConstraint("job_id"), parent("control_creations", "creation_id"), parent("control_creation_jobs", "job_id"))
 
 

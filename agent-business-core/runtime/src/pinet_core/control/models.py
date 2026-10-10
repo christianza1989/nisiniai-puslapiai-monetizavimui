@@ -74,6 +74,8 @@ class BusinessGrant(ControlScope, Base):
     enabled: Mapped[bool] = mapped_column(Boolean, default=True)
     __table_args__ = (
         UniqueConstraint("business_id", "environment_id"),
+        UniqueConstraint("id", "business_id", "organization_id", "portfolio_id", "environment_id",
+                         name="uq_registration_grant_identity"),
         ForeignKeyConstraint(["business_id"], ["businesses.id"]),
         ForeignKeyConstraint(["portfolio_id", "organization_id", "environment_id"],
                              ["control_portfolios.id", "control_portfolios.organization_id",
@@ -89,6 +91,7 @@ class Session(ControlScope, Base):
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     __table_args__ = (
+        UniqueConstraint("id", "user_id", "environment_id", name="uq_registration_session_identity"),
         ForeignKeyConstraint(["user_id", "environment_id"], ["control_users.id", "control_users.environment_id"],
                              ondelete="CASCADE"),
     )

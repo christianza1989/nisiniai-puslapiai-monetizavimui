@@ -20,7 +20,7 @@ async function provider(){
 }
 const clean=commit=>assert.equal(execFileSync('git',['diff','--name-only',commit,'--','sites/madbeauty/prototype','sites/madbeauty/cloudflare','sites/madbeauty/content','sites/madbeauty/backend','sites/madbeauty/trial-20261010/worker.mjs'],{cwd:repo,encoding:'utf8'}).trim(),'','Runtime source must stay committed');
 if(phase==='before'){
- const records=await provider(),expected=kind==='main'?'5a5304f8-0eb1-4cd6-9dd3-63986d4ea949':'0e5aa85a-908e-4412-b48a-eaaedcd8553f';assert.equal(records[index].deployments.deployments[0].versions[0].version_id,expected);
+ const records=await provider(),expected=kind==='main'?'cc89ca68-5783-4b9c-94f4-5f2f93df00c4':'0e5aa85a-908e-4412-b48a-eaaedcd8553f';assert.equal(records[index].deployments.deployments[0].versions[0].version_id,expected);
  await writeFile(path.join(dir,'before.private.json'),JSON.stringify({at:new Date().toISOString(),records},null,2));console.log(JSON.stringify({state:'BEFORE_CAPTURED',kind,version:expected}));
 }
 if(phase==='build'){

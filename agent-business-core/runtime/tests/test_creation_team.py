@@ -118,7 +118,7 @@ async def test_customer_call_budget_stops_before_third_dispatch(creation, monkey
     c = creation
     monkeypatch.setattr(settings(), "creation_daily_limit", 2)
     _, auth, me = await verified(c)
-    row, _ = await start(c, auth, me)
+    row, original_request = await start(c, auth, me)
     calls = []
     await worker.execute_once(role_runner=runner(calls))
     view = await team_read(c, auth, row["creation_id"])
@@ -127,13 +127,26 @@ async def test_customer_call_budget_stops_before_third_dispatch(creation, monkey
     async with scope(user=me["user_id"]) as tx:
         job = await tx.scalar(select(Job).where(Job.creation_id == row["creation_id"]))
         assert job.failure_code == "draft_budget_exhausted" and len(job.usage["attempts"]) == 2
+    path = "/customer/v2/creations"
+    revision = {"base_revision": 0, "message": "Parenk pataisytą bandymo versiją.", "idempotency_key": str(uuid4())}
+    rejected_revision = await c["client"].post(path + "/" + row["creation_id"] + "/revisions", json=revision, headers=auth)
+    rejected_creation = await c["client"].post(path, json={**original_request, "idempotency_key": str(uuid4())}, headers=auth)
+    for response in (rejected_revision, rejected_creation):
+        assert response.status_code == 429 and response.json()["code"] == "creation_daily_limit", response.text
+    # An exact existing request remains replayable; exhaustion must not rewrite history.
+    replay = await c["client"].post(path, json=original_request, headers=auth)
+    assert replay.status_code == 202 and replay.json()["data"]["creation_id"] == row["creation_id"]
+    assert await team_read(c, auth, row["creation_id"]) == view
+    async with scope(user=me["user_id"]) as tx:
+        assert len(list(await tx.scalars(select(Job)))) == 1
+    assert not await worker.execute_once(role_runner=runner([]))
 
 
 async def test_revoked_history_stays_charged_and_foreign_team_hidden(creation, monkeypatch):
     c = creation
     monkeypatch.setattr(settings(), "creation_global_daily_limit", 3)
     _, auth, me = await verified(c)
-    row, _ = await start(c, auth, me)
+    row, original_request = await start(c, auth, me)
     await worker.execute_once(role_runner=runner([]))
     async with AsyncSession(c["admin"]) as tx, tx.begin():
         await tx.execute(update(Membership).where(Membership.user_id == me["user_id"]).values(enabled=False))
@@ -143,10 +156,12 @@ async def test_revoked_history_stays_charged_and_foreign_team_hidden(creation, m
         assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), {"e": c["environment"], "s": start_day}) == 3
     _, other_auth, other = await verified(c)
     assert (await c["client"].get("/customer/v2/creations/"+row["creation_id"]+"/team", headers=other_auth)).status_code == 404
-    next_row, _ = await start(c, other_auth, other)
-    calls = []
-    await worker.execute_once(role_runner=runner(calls))
-    assert calls == [] and (await team_read(c, other_auth, next_row["creation_id"]))["status"] == "needs_review"
+    rejected = await c["client"].post("/customer/v2/creations", json={**original_request,
+        "portfolio_id": other["portfolios"][0]["portfolio_id"], "idempotency_key": str(uuid4())}, headers=other_auth)
+    assert rejected.status_code == 429 and rejected.json()["code"] == "creation_daily_limit", rejected.text
+    async with scope(user=other["user_id"]) as tx:
+        assert not list(await tx.scalars(select(Job)))
+    assert not await worker.execute_once(role_runner=runner([]))
 
 
 async def test_cancel_preserves_observed_usage_and_rejects_late_result(creation):

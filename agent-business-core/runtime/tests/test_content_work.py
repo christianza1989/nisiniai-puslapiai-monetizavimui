@@ -188,6 +188,14 @@ async def test_shared_mutex_and_old_attempts_limit_guide_before_second_provider_
     assert len(value["attempts"]) == 1 and f["site_file"].read_bytes() == original
     rejected, _ = await enqueue(c, f)
     assert rejected.status_code == 429
+    # Native GUIDE reservations must also block new business work, not only guides.
+    creation_path = "/customer/v2/creations/" + f["creation_id"] + "/revisions"
+    revision = {"base_revision": 1, "message": "Patikslink bandomąjį pasiūlymą.", "idempotency_key": str(uuid4())}
+    rejected_business = await c["client"].post(creation_path, json=revision, headers=f["auth"])
+    assert rejected_business.status_code == 429 and rejected_business.json()["code"] == "creation_daily_limit"
+    async with scope(user=f["me"]["user_id"]) as tx:
+        assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), {
+            "e": c["environment"], "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}) == 2
 
 
 async def test_actual_cas_stale_before_apply_preserves_current_native_data(creation):

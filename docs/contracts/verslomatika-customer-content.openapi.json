@@ -1,0 +1,581 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Private customer content intake snapshot",
+    "version": "0.1.0",
+    "description": "Authenticated own accepted-revision shared studio intake observation. Exact source identity and real blockers; observed_at is the intake time, not a live publication certificate. Private plans and body drafts remain unapproved; month hypotheses are not publication dates. No filesystem paths, raw model traces, approval or deployment capability. Existing creation.v1 and team.v1 bytes remain unchanged; fullF1/launch/scheduling stay UNVERIFIED."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/content": {
+      "get": {
+        "operationId": "getCustomerCreationContent",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "ContentPage": {
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "pattern": "^page-[a-f0-9]{24}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "path": {
+            "pattern": "^/(?:[a-z0-9][a-z0-9-]{0,69}/)?$",
+            "title": "Path",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 160,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "revision_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision Sha256",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "blocked",
+              "reviewed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "has_approved_revision": {
+            "title": "Has Approved Revision",
+            "type": "boolean"
+          },
+          "review_current": {
+            "title": "Review Current",
+            "type": "boolean"
+          },
+          "blocker_count": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Blocker Count",
+            "type": "integer"
+          },
+          "blockers": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "hidden_blocker_count": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Hidden Blocker Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "page_id",
+          "path",
+          "title",
+          "revision_sha256",
+          "state",
+          "has_approved_revision",
+          "review_current",
+          "blocker_count",
+          "blockers",
+          "hidden_blocker_count"
+        ],
+        "title": "ContentPage",
+        "type": "object"
+      },
+      "ContentPlanItem": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "pattern": "^/[a-z0-9][a-z0-9-]{0,69}/$",
+            "title": "Path",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 160,
+            "minLength": 10,
+            "title": "Title",
+            "type": "string"
+          },
+          "intent": {
+            "maxLength": 300,
+            "minLength": 20,
+            "title": "Intent",
+            "type": "string"
+          },
+          "head_query": {
+            "maxLength": 160,
+            "minLength": 5,
+            "title": "Head Query",
+            "type": "string"
+          },
+          "audience_problem": {
+            "maxLength": 1000,
+            "minLength": 20,
+            "title": "Audience Problem",
+            "type": "string"
+          },
+          "business_goal": {
+            "maxLength": 1000,
+            "minLength": 20,
+            "title": "Business Goal",
+            "type": "string"
+          },
+          "primary_topic": {
+            "maxLength": 120,
+            "minLength": 5,
+            "title": "Primary Topic",
+            "type": "string"
+          },
+          "reason": {
+            "maxLength": 1000,
+            "minLength": 30,
+            "title": "Reason",
+            "type": "string"
+          },
+          "month": {
+            "pattern": "^(?:|[0-9]{4}-(?:0[1-9]|1[0-2]))$",
+            "title": "Month",
+            "type": "string"
+          },
+          "seasonal_hook": {
+            "maxLength": 300,
+            "title": "Seasonal Hook",
+            "type": "string"
+          },
+          "pillar_path": {
+            "pattern": "^(?:|/[a-z0-9][a-z0-9-]{0,69}/)$",
+            "title": "Pillar Path",
+            "type": "string"
+          },
+          "outline": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 8,
+            "minItems": 3,
+            "title": "Outline",
+            "type": "array"
+          },
+          "source_queries": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 6,
+            "title": "Source Queries",
+            "type": "array"
+          },
+          "source_urls": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 6,
+            "title": "Source Urls",
+            "type": "array"
+          },
+          "internal_links": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 8,
+            "title": "Internal Links",
+            "type": "array"
+          },
+          "media_brief": {
+            "maxLength": 1000,
+            "minLength": 40,
+            "title": "Media Brief",
+            "type": "string"
+          },
+          "media_alt": {
+            "maxLength": 250,
+            "minLength": 10,
+            "title": "Media Alt",
+            "type": "string"
+          },
+          "priority": {
+            "enum": [
+              "initial",
+              "later"
+            ],
+            "title": "Priority",
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "title",
+          "intent",
+          "head_query",
+          "audience_problem",
+          "business_goal",
+          "primary_topic",
+          "reason",
+          "month",
+          "seasonal_hook",
+          "pillar_path",
+          "outline",
+          "source_queries",
+          "source_urls",
+          "internal_links",
+          "media_brief",
+          "media_alt",
+          "priority"
+        ],
+        "title": "ContentPlanItem",
+        "type": "object"
+      },
+      "ContentView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "current_revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Revision"
+          },
+          "active_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Job Id"
+          },
+          "creation_updated_at": {
+            "format": "date-time",
+            "title": "Creation Updated At",
+            "type": "string"
+          },
+          "import_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Import Job Id"
+          },
+          "source_revision": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{40}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Revision"
+          },
+          "candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Sha256"
+          },
+          "state": {
+            "enum": [
+              "not_imported",
+              "private_draft_imported",
+              "intake_failed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z_]{1,80}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At"
+          },
+          "observation_scope": {
+            "const": "intake_snapshot",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "content_plan_state": {
+            "enum": [
+              "not_provided",
+              "partial",
+              "imported_unscheduled"
+            ],
+            "title": "Content Plan State",
+            "type": "string"
+          },
+          "scheduling": {
+            "const": "UNVERIFIED",
+            "title": "Scheduling",
+            "type": "string"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "plan": {
+            "items": {
+              "$ref": "#/components/schemas/ContentPlanItem"
+            },
+            "maxItems": 12,
+            "title": "Plan",
+            "type": "array"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/ContentPage"
+            },
+            "maxItems": 20,
+            "title": "Pages",
+            "type": "array"
+          },
+          "plan_issues": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 24,
+            "title": "Plan Issues",
+            "type": "array"
+          }
+        },
+        "required": [
+          "creation_id",
+          "current_revision",
+          "active_job_id",
+          "creation_updated_at",
+          "import_job_id",
+          "source_revision",
+          "candidate_sha256",
+          "state",
+          "failure_code",
+          "observed_at",
+          "observation_scope",
+          "content_plan_state",
+          "scheduling",
+          "full_f1_status",
+          "launch_status",
+          "plan",
+          "pages",
+          "plan_issues"
+        ],
+        "title": "ContentView",
+        "type": "object"
+      },
+      "ContentViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "content.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ContentView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

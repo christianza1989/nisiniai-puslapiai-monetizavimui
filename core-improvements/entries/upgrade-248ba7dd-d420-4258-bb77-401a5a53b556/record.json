@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Private customer content intake has real shared blockers but no authenticated revision-bound dashboard projection.",
+  "category": "code",
+  "evidence": [
+    "docs/VERSLOMATIKA_CONTENT_INTAKE.md",
+    "docs/contracts/verslomatika-customer-team.openapi.json"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/content_wire.py",
+    "agent-business-core/runtime/src/pinet_core/creation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/scripts/customer_content_contract.py",
+    "agent-business-core/runtime/tests/test_creation_content.py",
+    "agent-business-core/runtime/offline_tests/test_creation_studio.py",
+    "docs/contracts/verslomatika-customer-content.openapi.json",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert additive private content projection and intake adapter; retain original drafts and ignored intake evidence.",
+  "id": "upgrade-248ba7dd-d420-4258-bb77-401a5a53b556",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "ae838913858b4ede8af2d77514052ee01677205d",
+  "createdAt": "2026-10-10T11:58:26.708Z"
+}

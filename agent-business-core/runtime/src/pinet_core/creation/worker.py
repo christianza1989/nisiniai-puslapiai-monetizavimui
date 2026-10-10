@@ -95,7 +95,7 @@ async def heartbeat(job_id, user_id, run_id):
         return True
 
 
-async def execute_once(runner=None, *, role_runner=None):
+async def execute_once(runner=None, *, role_runner=None, intake_runner=None):
     # Keep a database mutex until the owned child is stopped and completion is fenced.
     # An API cancellation can clear task state but cannot release this execution barrier.
     async with scope() as execution_scope:
@@ -103,10 +103,10 @@ async def execute_once(runner=None, *, role_runner=None):
                                                {"k": "creation-execution:" + settings().environment})
         if not acquired:
             return False
-        return await _execute_once(runner, role_runner=role_runner)
+        return await _execute_once(runner, role_runner=role_runner, intake_runner=intake_runner)
 
 
-async def _execute_once(runner=None, *, role_runner=None):
+async def _execute_once(runner=None, *, role_runner=None, intake_runner=None):
     # Explicit single-run injection is an existing offline test seam, never a customer/runtime switch.
     claimed = await claim(team_enabled=runner is None)
     if not claimed:
@@ -121,6 +121,20 @@ async def _execute_once(runner=None, *, role_runner=None):
             result, receipt = await run(claimed, authorized, role_runner)
         result = renderer.normalize(result)
         receipt["language_screening"] = renderer.language_screening(result)
+        if intake_runner or runner is None and role_runner is None:
+            from .studio import import_draft
+            from .team import monotonic
+            remaining = receipt.get("deadline_monotonic", monotonic() + 20) - monotonic()
+            try:
+                receipt["content_intake"] = await (intake_runner or import_draft)(result,
+                    creation_id=claimed["creation_id"], revision=claimed["revision"],
+                    canonical_host=claimed["context"]["canonical_host"], still_authorized=authorized, seconds=remaining)
+            except adapter.RunnerError as error:
+                if error.code in {"authorization_revoked", "run_timeout"}:
+                    raise
+                # A usable accepted draft is distinct from the shared intake's readiness.
+                # Failed/partial files remain private and the customer sees an explicit dependency.
+                receipt["content_intake"] = {"version": "customer-content-intake.v1", "state": "failed", "code": error.code}
         outputs = renderer.artifacts(result, creation_id=claimed["creation_id"], revision=claimed["revision"], receipt=receipt)
     except adapter.RunnerError as error:
         failure = error.code
@@ -162,6 +176,13 @@ async def _execute_once(runner=None, *, role_runner=None):
         creation.status, creation.stage, creation.active_job_id, creation.failure_code = "draft_ready", "ready", None, None
         job.status, job.lease_until, job.finished_at = "succeeded", None, utcnow()
         await event(tx, creation, job, "Verslo pasiūlymas ir svetainės juodraštis parengti. Galite juos peržiūrėti ir paprašyti pataisymų.")
+        intake = receipt.get("content_intake")
+        if intake:
+            message = (f"Į bendrą turinio studiją privačiai perduota {len(intake['workflow']['pages'])} puslapių užduočių. "
+                "Turinio, šaltinių, vaizdų ir publikavimo patikros dar neužbaigtos."
+                if intake.get("state") == "private-draft-imported" else
+                "Juodraštis išsaugotas, tačiau jo perdavimas į turinio studiją nepavyko. Šis žingsnis dar neužbaigtas.")
+            await event(tx, creation, job, message)
     return True
 
 

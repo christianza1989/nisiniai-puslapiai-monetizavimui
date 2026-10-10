@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Native GUIDE vertical slice verified with restricted isolated PostgreSQL and maintained Node prepare/validate/apply; exact rich content, source/owner/revision binding, role review, cancellation, shared provider mutex, union old+new charged counts and finite admissions. Original content/creation/team wires unchanged. New content-work.v1 UTF8 LF49387bytes SHA b301e9a820c4beb2497ac0a3acb81c9dfbdb76f42fc3fa89c048cbba4dc8511f. Private source adoption, actual provider/UI, sources/media/editorial/F1/deployment remain separate parent gates.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_content_work_review.py test_creation_review.py test_creation_adapter.py",
+      "result": "PASS",
+      "evidence": "85 combined PASS; final new native17 PASS including fragmented rich sentence and fixed no-tools adapter."
+    },
+    {
+      "command": "pytest tests/test_content_work.py tests/test_creation_team.py tests/test_creation_content.py",
+      "result": "PASS",
+      "evidence": "23 combined actual PG/native Node PASS; final exact source/owner FK migration rehearsal and10 GUIDE PASS; completion hash corruption and repairable native link error each1 PASS."
+    },
+    {
+      "command": "node --test content-studio/test/customer-content-write.test.mjs",
+      "result": "PASS",
+      "evidence": "12 PASS/0skip including nonmutating validate, stale content/planning/site CAS and unchanged approved/public release snapshots."
+    },
+    {
+      "command": "alembic downgrade0014 then upgradehead in own stopped isolated DB",
+      "result": "PASS",
+      "evidence": "Final0015 actual restricted schema recreated; runtime immutable writes and source-hash FK rejection tested."
+    },
+    {
+      "command": "ruff scoped source/tests/scripts/migration and canonical generator",
+      "result": "PASS",
+      "evidence": "All checks passed; generator exact native V2 definitions and separate new contract; old wire Git diff empty."
+    }
+  ],
+  "eventId": "e91ba4e7-853f-4466-8c46-638df1a25190",
+  "sequence": 3,
+  "at": "2026-10-10T13:42:09.293Z"
+}

@@ -1,0 +1,31 @@
+{
+  "siteId": "core",
+  "summary": "Generic natural-language guidance did not prevent literal translations, vague CTAs and syntax defects; add a mandatory whole-text author self-editing policy to every niche writing/build/review entrypoint and studio instruction snapshot.",
+  "category": "skills",
+  "evidence": [
+    "Owner request 2026-10-10; StepOver editorial correction recorded in PR46 comment6095600960 and public PR17 comment6095601051",
+    "Prior quality-review.md had only a single natural-local-language sentence; editorial-skill.mjs did not load a dedicated language policy",
+    "Fresh core d4ea8bf7384b70c4ea62a344001e3f8158812c56 and companion d0fd6b7d296303bfcaafadc4071945e675a72b96; separate worktrees preserve existing site work"
+  ],
+  "paths": [
+    "AGENTS.md",
+    "START_HERE.md",
+    "CONTENT_CORE.md",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "SKILLS/niche-site-builder/SKILL.md",
+    "SKILLS/niche-site-audit/SKILL.md",
+    "SKILLS/niche-content-planner/SKILL.md",
+    "SKILLS/niche-content-planner/references/language-quality.md",
+    "SKILLS/niche-content-planner/references/quality-review.md",
+    "SKILLS/niche-content-planner/references/content-workflow.md",
+    "SKILLS/catalog.json",
+    "content-studio/src/editorial-skill.mjs",
+    "content-studio/test/editorial-skill.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/72",
+  "rollback": "Revert only this policy/loader/routing/catalog/test commit and the paired public AGENTS pointer; preserve original site approvals, release/media/runtime data and historic instruction snapshots.",
+  "id": "upgrade-e10fb246-a00f-48a4-8f5e-62b346acda70",
+  "branch": "codex/natural-language-core-20261010",
+  "baseSha": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "createdAt": "2026-10-10T08:29:32.489Z"
+}

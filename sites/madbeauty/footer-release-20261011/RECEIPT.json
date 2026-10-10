@@ -1,0 +1,56 @@
+{
+  "state": "LIVE_ACCEPTED",
+  "at": "2026-10-10T22:22:10.944Z",
+  "releases": [
+    {
+      "kind": "main",
+      "version": "a3e1e766-e1d7-48e6-a20f-e431e7171773",
+      "sourceCommit": "b693b72f9997aa6492b27364ad5db51684bb70b8",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "artifactSha256": "b0e31895cf4c5bb9fb18a8733ed03193a2950b381d0bae891bd7aae145c5f483",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "pages": 129,
+      "assets": 841,
+      "previousVersion": "c7fe3d2c-bd49-4ab9-8a11-7631f017cc4d",
+      "expiresAt": null,
+      "nativeChecks": 19,
+      "liveChecks": 28,
+      "publicProfilesPreserved": null,
+      "allBindingsPreserved": true,
+      "otherWorkersPreservedAtEachDeployment": true
+    },
+    {
+      "kind": "trial",
+      "version": "de570fb1-4b49-4ab0-b98c-0757ae72d17e",
+      "sourceCommit": "b693b72f9997aa6492b27364ad5db51684bb70b8",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "artifactSha256": "5545af4e33bfba338672e9705ed71e60786eb46ccf45bc64ce8e6f98742f6d36",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "pages": 129,
+      "assets": 1441,
+      "previousVersion": "9d3ebf33-e853-4e43-9143-c6c67f58f395",
+      "expiresAt": "2026-10-16T21:10:47.982Z",
+      "nativeChecks": 66,
+      "liveChecks": 83,
+      "publicProfilesPreserved": 45,
+      "allBindingsPreserved": true,
+      "otherWorkersPreservedAtEachDeployment": true
+    }
+  ],
+  "productTests": 14,
+  "trialBookingRestartIntegration": "PASS",
+  "backendMigrations": 0,
+  "realMail": 0,
+  "paymentWrites": 0,
+  "screenshotDirectory": "screenshots",
+  "browser": {
+    "mobile": 390,
+    "ownerLoginWorkspaceGallery": "PASS",
+    "loggedOut": true,
+    "profileGallery": "PASS",
+    "trialDirectory": "PASS",
+    "desktop": 1440,
+    "trialTree": "PASS",
+    "footer": "PASS"
+  }
+}

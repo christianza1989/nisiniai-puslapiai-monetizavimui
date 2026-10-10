@@ -1,0 +1,17 @@
+# Authentication design and public profile invitations accepted
+
+Runtime source: `e2d9f8c8ccb9653c70f0b1d376b6ba7dd405de61`. Canonical version: `96af1b12-52cc-48cb-820e-1580f4b7c860`; trial version: `2292c0bd-b302-40cc-8d7c-e1eb9de0b033`.
+
+Canonical artifact SHA256: `9234aec665dbe7f753185d53aa7b12a6a1746329331f42157274b25e773d85b2`. Trial artifact SHA256: `54d7124e33de503e3ce524511e77869794b24baf7f617dd4e272977f71a03660`. Both retain pinned core `5661d5d6907d6f5d11514ae69c0decc6130d65e2e` and immutable content129 `e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953`.
+
+The existing passwordless email registration/sign-in and OTP recovery receive a new responsive two-column design. Two generated assets have private originals, exact prompts and source metadata in PROMPTS.json / ASSET_MANIFEST.json; nine optimized WebP variants are public, including a true-alpha beauty-kit cutout. Existing identity, email-code verification, sessions, role membership and booking return behavior are preserved. Final desktop/mobile spacing accounts for the existing in-flow sticky workspace header.
+
+Approved public solo/salon profiles have an explicit invitation dialog: a public profile URL, Facebook sharing link, optional device sharing and clipboard copying with recoverable fallback. Opening does not send messages or publish anything. Existing saved providers remain private; public friendship/following is not fabricated.
+
+Validation: 37 focused auth/invitation + existing backend tests pass. Exact compiled native checks: canonical 83, trial 129; hosted checks: canonical 83, trial 129. Canonical/trial bindings, secrets, namespaces and observability stayed exact; other workers unchanged at each sequential activation. Trial preservation comparison: 45 public profiles, zero added public reviews, original reviews/services/galleries/identities retained. The unpublished sixth salon remains unpublished and the original expiry remains 2026-10-16T21:10:47.982Z.
+
+Actual browser acceptance: canonical desktop and 390px mobile login/register views; trial provided client email-code flow rejects an incorrect code and then accepts the valid displayed test code; authenticated account opens and logout works. No real email sent. Actual live approved trial profile invitation opens; copy reads back the correct public URL and shows success. Chrome opens a Facebook create-post dialog from the same URL; the tab was closed without publishing. Device-sharing chooser completion and actual message delivery are not claimed. Facebook Login was not performed.
+
+Final local visual evidence, deliberately excluded from Git: `sites/madbeauty/cloudflare/output/auth-social-20261011/auth-desktop-live.png`, `auth-mobile-live.png`, `invitation-live.png`. Earlier unsuffixed screenshots record the pre-spacing-fix candidate and are not final acceptance evidence. Provider/native/hosted manifests and preservation output are in that private output directory.
+
+Owner confirms no Meta application exists. No fake Facebook login button, App ID, app secret, contacts import or automatic messaging is shipped. Full primary-source research and the future implementation gates are documented in FACEBOOK_INTEGRATION_PLAN.md; 14 official Meta sources were inspected in Chrome on 2026-10-11. That plan is not a Facebook OAuth release. This receipt accepts the scoped auth/invitation update, not all remaining platform upgrades or payment features.

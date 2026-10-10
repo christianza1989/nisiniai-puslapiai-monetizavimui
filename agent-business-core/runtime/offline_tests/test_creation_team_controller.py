@@ -153,6 +153,8 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         events = [json.loads(line) for line in result.stdout.splitlines()]
         assert len(requests) == 1 and requests[0]["model"] == "gpt-6-luna"
         assert requests[0]["reasoning"]["effort"] == ("low" if role == "critic" else "medium")
+        assert requests[0]["text"]["verbosity"] == ("medium" if role == "critic" else "low")
+        assert "max_output_tokens" not in requests[0]
         tools = [tool["type"] for tool in requests[0].get("tools", [])]
         # gpt-6-luna uses Responses Lite: tools are declared in input messages,
         # rather than the classic API's top-level hosted tools array.

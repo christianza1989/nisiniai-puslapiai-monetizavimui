@@ -135,6 +135,7 @@ def arguments(executable, workspace, schema, output, *, web, role="creator"):
     if role != "creator":
         at = result.index('model_reasoning_effort="medium"')
         result[at] = 'model_reasoning_effort="low"'
+        result += ['-c', 'model_verbosity="medium"']
     return result
 
 

@@ -24,7 +24,13 @@ def test_review_role_profile_retains_exact_process_policy(role, effort):
     args = arguments('fixed.exe', 'fixed', 'schema', 'output', web=False, role=role)
     setting = next(value for value in args if value.startswith('model_reasoning_effort='))
     assert setting == f'model_reasoning_effort="{effort}"'
-    assert [value for value in args if not value.startswith('model_reasoning_effort=')] == [
+    expected_verbosity = [] if role == 'creator' else ['-c', 'model_verbosity="medium"']
+    if expected_verbosity:
+        assert args[-2:] == expected_verbosity
+    else:
+        assert not any(value.startswith('model_verbosity=') for value in args)
+    unchanged = args[:-2] if expected_verbosity else args
+    assert [value for value in unchanged if not value.startswith('model_reasoning_effort=')] == [
         value for value in baseline if not value.startswith('model_reasoning_effort=')]
     assert not any('max_output_tokens' in value for value in args)
 

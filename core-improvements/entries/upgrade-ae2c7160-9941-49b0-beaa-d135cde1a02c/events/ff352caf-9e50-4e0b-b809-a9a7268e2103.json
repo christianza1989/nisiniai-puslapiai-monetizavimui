@@ -1,0 +1,19 @@
+{
+  "status": "fixing",
+  "note": "Approved immutable profile source implemented and frozen as20 functional files on3d3ecf0 for root-only isolated restricted-PG/migration rehearsal. Own65offlinePASS3.40s and RuffPASS; no real customer/admin/provider/channel operations. Source freezeSHA0997489a08804eddf599c531b7c36c6a05f56f3777c65afdc575094ad22d6a7d, contractSHA98020e687e861938e079e6b38d29e5696a42ec97baad908cca578f0ab634db9a. Root review aligned current source/row/barrier boundaries; final wall-clock TTL recheck identified for a bounded supplemental regression after frozen run, preserving original failure if reproduced. No active/calibrated/full platform claim.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_customer_profile.py offline_tests/test_creation_registration.py -q",
+      "result": "PASS",
+      "evidence": "65 passed in3.40s; source-only/offline"
+    },
+    {
+      "command": "ruff check exact scoped profile source/tests/migration and additive hooks",
+      "result": "PASS",
+      "evidence": "Final lint passed before source freeze; initial imported-fixture F811 was corrected before freeze"
+    }
+  ],
+  "eventId": "ff352caf-9e50-4e0b-b809-a9a7268e2103",
+  "sequence": 2,
+  "at": "2026-10-10T18:03:50.811Z"
+}

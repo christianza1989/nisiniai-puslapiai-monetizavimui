@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original20 freeze unchanged through root synthetic rehearsal. Preserved initial51FAIL/2PASS199.41s and second51FAIL/2PASS205.26s before profile logic (missing canonical sibling configuration and content-studio npm dependencies); canonical dependency correction did not change source. Focused actual fixture1FAIL9.30s rejected synthetic-owner@example.test via maintained EmailStr. Root released freeze for example.com synthetic fixture and precise per-case malformed blocker corrections, then TTL/replay/three-party wait-cycle regressions against original logic. No deadlock receipt exists; queue ordering finding is P2 avoidable wait-cycle only. Root approved additional creation_registration/models.py matching0017 composite UniqueConstraint metadata, reserved in WORKSTREAMS/issue77. Original manifest0997489a08804eddf599c531b7c36c6a05f56f3777c65afdc575094ad22d6a7d preserved. No operational DB, provider, credentials, mail or capability activation; same3d3/private7af6/publicec8.",
+  "eventId": "66563ca1-29b5-454a-bc22-9272fb4890ee",
+  "sequence": 3,
+  "at": "2026-10-10T18:20:40.618Z"
+}

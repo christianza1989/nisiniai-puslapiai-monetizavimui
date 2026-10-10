@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-10T11:03:46.110Z",
+  "observedAt": "2026-10-10T12:47:59.270Z",
   "state": "GMAIL_BIDIRECTIONAL_INBOX_ALIAS_CREATED_NATIVE_WEBSITE_STILL_JUNK",
   "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
   "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
@@ -207,8 +207,8 @@
     "Cloudflare own Message-ID fetch returned raw MIME text, not a delivery-status object; no Delivered status claimed from that API.",
     "First read-only helper produced a saved negative receipt and process exit1; actual folder evidence is Junk, not an unavailable mailbox or positiveInbox."
   ],
-  "supportReceipt": "verification-20261010/production-hostinger-filter-upload-v10.json",
-  "supportOutcome": "The owner specifically approved the exact saved-filter screenshot for the existing Hostinger case. The file chooser opened, but Chrome refused setFiles because the ChatGPT extension lacks Allow access to file URLs; no screenshot attachment was uploaded or sent. Full unchanged filter values were sent in the existing case at 14:01 Vilnius and the posted message is visibly verified. Specific approval for the separate extension permission is pending; no extension setting was changed. All seven native website tests still have initial Junk receipts; ordinary Gmail bidirectional Inbox and saved Promedical alias remain proved at their original observation times. No automatic website Inbox fix or formal case ID.",
+  "supportReceipt": "verification-20261010/production-hostinger-filter-image-sent-v11.json",
+  "supportOutcome": "After specific approval for local-file access, the owner reports enabling the Chrome extension permission. The supported file chooser then accepted the exact approved filter PNG, and the image plus complete unchanged rule values were sent in the same Hostinger conversation at 15:44 Vilnius. The posted attachment is visibly verified as Attachment_6aca3332d9bab9.21404329.jpg after Hostinger conversion. Fausta previously found no obvious rule-condition errors at 14:06, could not inspect filter order or header availability, and closed the inactive chat at 15:05. The new continuation briefly showed human queue position 3; no new specialist finding or formal case ID is yet verified. All seven native website messages retain initial Junk receipts; ordinary Gmail bidirectional Inbox and saved alias remain separate positive results. No automatic website Inbox repair.",
   "supportHumanTicket": {
     "confirmedTicketId": null,
     "reviewedBy": [
@@ -216,6 +216,6 @@
       "Airida",
       "Fausta"
     ],
-    "status": "SCREENSHOT_APPROVED_CHROME_FILE_ACCESS_PENDING_NATIVE_INBOX_FAILED"
+    "status": "FILTER_IMAGE_SENT_SAME_CASE_TECHNICAL_REVIEW_PENDING_NATIVE_INBOX_FAILED"
   }
 }

@@ -1,0 +1,90 @@
+{
+  "observedAt": "2026-10-10T12:47:59.270Z",
+  "state": "FILTER_IMAGE_SENT_SAME_CASE_TECHNICAL_REVIEW_PENDING",
+  "previousReceipt": "production-hostinger-filter-upload-v10.json",
+  "mailbox": "info@promedical.lt",
+  "websiteSender": "uzklausos@promedical.lt",
+  "permission": {
+    "specificOwnerExtensionApprovalReceived": true,
+    "agentExtensionsNavigationRejectedByUrlPolicy": true,
+    "ownerReportsManualEnablement": true,
+    "supportedFileChooserSucceeded": true,
+    "agentDidNotChangeExtensionSetting": true,
+    "noPolicyWorkaroundAttempted": true
+  },
+  "upload": {
+    "sourceImage": "content-studio/tmp/promedical-exact-filter-for-hostinger-20261010.png",
+    "sourceImageBytes": 71160,
+    "sourceImageSha256": "c6e28f2cf1995b9af5a7b6e672b60564d3e742aa3086e34af69bf823cbdb7844",
+    "specificOwnerApprovalForSameImageAndDestination": true,
+    "fileChooserSelectedExactApprovedPath": true,
+    "composerThumbnailAndFilenameObserved": true,
+    "composerDisplayedSize": "174.26 KB",
+    "sendSubmittedOnce": true,
+    "sentAtVilnius": "2026-10-10 15:44",
+    "postedImageAndTextVisiblyVerified": true,
+    "vendorAttachmentName": "Attachment_6aca3332d9bab9.21404329.jpg",
+    "hostingerConvertedImage": true,
+    "privateSentProof": "content-studio/tmp/promedical-filter-image-sent-hostinger-20261010.png"
+  },
+  "support": {
+    "existingConversationTitle": "Hostinger Mail filter not working",
+    "previousSpecialist": "Fausta",
+    "previousReplyAtVilnius": "2026-10-10 14:06",
+    "previousReply": "No obvious issues with supplied rule conditions; support cannot inspect execution order or Authentication-Results availability and has no additional technical findings. Suggests reputation improves, without a case-specific signal.",
+    "inactiveClosureAtVilnius": "2026-10-10 15:05",
+    "continuationSentAtVilnius": "2026-10-10 15:44",
+    "completeRuleValuesIncluded": true,
+    "filterReadBack": {
+      "name": "Promedical svetainės užklausos",
+      "scope": "Match all rules",
+      "enabled": true,
+      "conditions": [
+        {
+          "field": "From",
+          "operator": "is equal",
+          "value": "uzklausos@promedical.lt"
+        },
+        {
+          "field": "Subject",
+          "operator": "contains",
+          "value": "[promedical.lt] Poreikio užklausa"
+        },
+        {
+          "field": "Authentication-Results",
+          "operator": "contains",
+          "value": "dkim=pass header.d=promedical.lt"
+        }
+      ],
+      "action": "Move message to Inbox",
+      "readOnly": true,
+      "noSaveClicked": true
+    },
+    "initialHumanQueuePositionObserved": 3,
+    "laterQueueIndicatorNoLongerPresent": true,
+    "newAssignedSpecialistNotYetVerified": true,
+    "formalCaseId": null,
+    "authenticationResultsAtFilterTimeConfirmed": false,
+    "inboxActionPrecedenceConfirmed": false,
+    "particularReputationCauseConfirmed": false,
+    "newFullHeaderPacketSent": false,
+    "privateGmailAddressSentToVendor": false,
+    "request": "Visual review and supported narrow correction or registered technical investigation, retaining empty Incoming Allow and general spam protection."
+  },
+  "nativeMail": {
+    "ownTestCount": 7,
+    "initialJunkCount": 7,
+    "manualOwnTrainingTests": [
+      1,
+      5
+    ],
+    "automaticWebsiteInboxProved": false
+  },
+  "noNewNativeTest": true,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "mailSettingsDnsBindingsBillingOrSourceChanged": false,
+  "summary": "After specific approval for local-file access, the owner reports enabling the Chrome extension permission. The supported file chooser then accepted the exact approved filter PNG, and the image plus complete unchanged rule values were sent in the same Hostinger conversation at 15:44 Vilnius. The posted attachment is visibly verified as Attachment_6aca3332d9bab9.21404329.jpg after Hostinger conversion. Fausta previously found no obvious rule-condition errors at 14:06, could not inspect filter order or header availability, and closed the inactive chat at 15:05. The new continuation briefly showed human queue position 3; no new specialist finding or formal case ID is yet verified. All seven native website messages retain initial Junk receipts; ordinary Gmail bidirectional Inbox and saved alias remain separate positive results. No automatic website Inbox repair.",
+  "remaining": "Continue the resumed support case. Apply only supported authorized fixes; require an independent new native automatic Inbox receipt before claiming repair. No repeated self-tests solely because a screenshot was sent. Whole-site acceptance gaps remain separate.",
+  "privacy": "Only sanitized evidence and public business addresses are versioned; screenshot pixels, raw headers, personal recipient and genuine reply body remain private."
+}

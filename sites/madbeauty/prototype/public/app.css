@@ -186,5 +186,5 @@ html:has(dialog[open]){overflow:hidden}
 .invite-copy input{min-width:0;flex:1;font-size:13px}
 @media(max-width:1050px){.auth-page{gap:24px}.auth-visual-copy{left:28px;bottom:32px}.auth-form-area{padding:24px 8px}}
 @media(max-width:760px){.auth-page{display:flex;flex-direction:column;gap:0;padding-top:88px;padding-bottom:40px;min-height:0}.auth-visual{min-height:190px;height:190px}.auth-portrait img{object-position:center 35%}.auth-visual:after{inset:0;background:linear-gradient(90deg,rgba(26,12,37,.68),rgba(26,12,37,.15))}.auth-visual-copy{left:24px;right:20px;bottom:24px}.auth-visual-copy h2{font-size:32px}.auth-visual-copy p{font-size:13px;margin-top:10px;max-width:220px}.auth-form-area{padding:32px 6px 0;justify-content:flex-start}.auth-form-content{max-width:none}.auth-form-content h1{font-size:32px}.auth-description{font-size:15px;margin-bottom:24px}.auth-code-art{height:80px;width:120px;margin-bottom:18px}.invite-copy{flex-wrap:wrap}.invite-copy input{width:100%;flex-basis:100%}.invite-copy .button{width:100%}}
-.workspace-page #main:has(>.auth-page){padding-top:0}
-@media(max-width:760px){.auth-page .auth-portrait img{object-position:center 15%}}
+.workspace-page .auth-page{padding-top:40px}
+@media(max-width:760px){.workspace-page .auth-page{padding-top:24px}.auth-page .auth-portrait img{object-position:center 15%}}

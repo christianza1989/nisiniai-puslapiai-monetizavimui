@@ -1,0 +1,764 @@
+{
+  "contract_version": "0.1.1",
+  "schemas": {
+    "CaptureHandshake": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "0.1.1",
+          "default": "0.1.1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "external_sent": {
+          "const": false,
+          "default": false,
+          "title": "External Sent",
+          "type": "boolean"
+        },
+        "mode": {
+          "const": "capture_only",
+          "default": "capture_only",
+          "title": "Mode",
+          "type": "string"
+        },
+        "recipient_domain": {
+          "const": "example.test",
+          "default": "example.test",
+          "title": "Recipient Domain",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        }
+      },
+      "required": [
+        "scope",
+        "adapter_id"
+      ],
+      "title": "CaptureHandshake",
+      "type": "object"
+    },
+    "Conversion": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "invitation_ref": {
+          "maxLength": 96,
+          "minLength": 32,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Invitation Ref",
+          "type": "string"
+        },
+        "last_event_id": {
+          "format": "uuid",
+          "title": "Last Event Id",
+          "type": "string"
+        },
+        "profile_active": {
+          "title": "Profile Active",
+          "type": "boolean"
+        },
+        "profile_ref": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Profile Ref"
+        },
+        "provider_ref": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Provider Ref",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "source_revision": {
+          "minimum": 1,
+          "title": "Source Revision",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "signup_started",
+            "account_verified",
+            "profile_submitted",
+            "profile_active",
+            "profile_deactivated",
+            "account_deleted"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope",
+        "invitation_ref",
+        "provider_ref",
+        "source_revision",
+        "state",
+        "profile_active",
+        "last_event_id"
+      ],
+      "title": "Conversion",
+      "type": "object"
+    },
+    "EventReceipt": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "0.1.1",
+          "default": "0.1.1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "external_sent": {
+          "const": false,
+          "default": false,
+          "title": "External Sent",
+          "type": "boolean"
+        },
+        "profile_active": {
+          "title": "Profile Active",
+          "type": "boolean"
+        },
+        "source_revision": {
+          "minimum": 1,
+          "title": "Source Revision",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "applied",
+            "duplicate",
+            "stale"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "state",
+        "source_revision",
+        "profile_active"
+      ],
+      "title": "EventReceipt",
+      "type": "object"
+    },
+    "Invitation": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "campaign_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Campaign Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "0.1.1",
+          "default": "0.1.1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "invitation_ref": {
+          "maxLength": 96,
+          "minLength": 32,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Invitation Ref",
+          "type": "string"
+        },
+        "issued_at": {
+          "format": "date-time",
+          "title": "Issued At",
+          "type": "string"
+        },
+        "objective": {
+          "const": "provider_signup",
+          "default": "provider_signup",
+          "title": "Objective",
+          "type": "string"
+        },
+        "offer_revision": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Offer Revision",
+          "type": "string"
+        },
+        "prospect_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Prospect Id",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        }
+      },
+      "required": [
+        "scope",
+        "invitation_ref",
+        "campaign_id",
+        "prospect_id",
+        "offer_revision",
+        "issued_at",
+        "expires_at"
+      ],
+      "title": "Invitation",
+      "type": "object"
+    },
+    "LifecycleEvent": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "0.1.1",
+          "default": "0.1.1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "eligibility_revision": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Eligibility Revision"
+        },
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "invitation_ref": {
+          "maxLength": 96,
+          "minLength": 32,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Invitation Ref",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "signup_started",
+            "account_verified",
+            "profile_submitted",
+            "profile_active",
+            "profile_deactivated",
+            "account_deleted"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "occurred_at": {
+          "format": "date-time",
+          "title": "Occurred At",
+          "type": "string"
+        },
+        "operator_approved": {
+          "default": false,
+          "title": "Operator Approved",
+          "type": "boolean"
+        },
+        "profile_ref": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Profile Ref"
+        },
+        "provider_ref": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Provider Ref",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "source_release": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Source Release",
+          "type": "string"
+        },
+        "source_revision": {
+          "minimum": 1,
+          "title": "Source Revision",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "event_id",
+        "scope",
+        "adapter_id",
+        "invitation_ref",
+        "provider_ref",
+        "source_revision",
+        "source_release",
+        "occurred_at",
+        "kind"
+      ],
+      "title": "LifecycleEvent",
+      "type": "object"
+    },
+    "Resolution": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Server-to-server minimal projection; never public prospect/contact data.",
+      "properties": {
+        "contract_version": {
+          "const": "0.1.1",
+          "default": "0.1.1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "invitation_ref": {
+          "maxLength": 96,
+          "minLength": 32,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Invitation Ref",
+          "type": "string"
+        },
+        "objective": {
+          "const": "provider_signup",
+          "default": "provider_signup",
+          "title": "Objective",
+          "type": "string"
+        },
+        "offer_revision": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Offer Revision",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "state": {
+          "enum": [
+            "available",
+            "expired",
+            "stopped",
+            "already_attributed"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope",
+        "invitation_ref",
+        "offer_revision",
+        "expires_at",
+        "state"
+      ],
+      "title": "Resolution",
+      "type": "object"
+    },
+    "ResolveRequest": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "0.1.1",
+          "default": "0.1.1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "invitation_ref": {
+          "maxLength": 96,
+          "minLength": 32,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Invitation Ref",
+          "type": "string"
+        },
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        }
+      },
+      "required": [
+        "scope",
+        "adapter_id",
+        "invitation_ref",
+        "request_id"
+      ],
+      "title": "ResolveRequest",
+      "type": "object"
+    },
+    "Scope": {
+      "additionalProperties": false,
+      "properties": {
+        "business_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Business Id",
+          "type": "string"
+        },
+        "environment_class": {
+          "enum": [
+            "test",
+            "production"
+          ],
+          "title": "Environment Class",
+          "type": "string"
+        },
+        "environment_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Environment Id",
+          "type": "string"
+        },
+        "site_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Site Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "business_id",
+        "site_id",
+        "environment_id",
+        "environment_class"
+      ],
+      "title": "Scope",
+      "type": "object"
+    }
+  }
+}

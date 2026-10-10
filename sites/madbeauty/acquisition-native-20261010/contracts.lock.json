@@ -1,0 +1,43 @@
+{
+  "source": "682cb28abf7eff888c3c27177c265ca383c6c5aa",
+  "recipientContractVersion": "0.1.0",
+  "acquisitionContractVersion": "0.1.1",
+  "immutableCanonicalSnapshots": true,
+  "files": [
+    {
+      "name": "recipient-schemas.json",
+      "path": "agent-business-core/contracts/recipient-binding-v1/schemas.json",
+      "sha256": "0ef2273cf5b0ab6530862cffed1bb3fc8e3caa8d32a3a8da59e4e60dddea5ae4"
+    },
+    {
+      "name": "recipient-binding.mjs",
+      "path": "agent-business-core/contracts/recipient-binding-v1/recipient-binding.mjs",
+      "sha256": "eebe010f525d9cd01ffead06c7aa158dd48c6c99b60f04a3fc57fe1be195b6f8"
+    },
+    {
+      "name": "recipient-vector.json",
+      "path": "agent-business-core/contracts/recipient-binding-v1/recipient-vector.json",
+      "sha256": "5cfb9a96f793a3aaf1b86d9acea23b4f044cd7c6f99d72fed6a96d53ba4d6591"
+    },
+    {
+      "name": "recipient-README.md",
+      "path": "agent-business-core/contracts/recipient-binding-v1/README.md",
+      "sha256": "5eb4fea5db0bfc8d6a4f409b107071bb1dd244367a3417854aea7fe8b39a45ac"
+    },
+    {
+      "name": "acquisition-schemas.json",
+      "path": "agent-business-core/contracts/acquisition-v1/schemas.json",
+      "sha256": "35b0a87cbda836464beaff4a53acc80403ce3a97c50d02098fb23a443fff9034"
+    },
+    {
+      "name": "server-auth.mjs",
+      "path": "agent-business-core/contracts/acquisition-v1/server-auth.mjs",
+      "sha256": "dfbfcb25e8099de97de3a18aa833bd641b2d87995fc7c984e17a183f81ee232e"
+    },
+    {
+      "name": "acquisition-README.md",
+      "path": "agent-business-core/contracts/acquisition-v1/README.md",
+      "sha256": "1993a0ef670ac8db2a34b4d43a38b68c2f21c26f205eb174ff7841facc16e381"
+    }
+  ]
+}

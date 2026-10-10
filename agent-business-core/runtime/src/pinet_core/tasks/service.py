@@ -33,10 +33,13 @@ async def grant_for(tx, business_id, user_id):
 
 async def authority(tx, task):
     cfg = settings()
-    if not cfg.chat_enabled or task.user_id != cfg.chat_operator_user_id or task.source_revision != cfg.control_source_revision:
+    if (not cfg.control_enabled or not cfg.chat_enabled or not cfg.chat_runner_enabled
+            or task.user_id != cfg.chat_operator_user_id or task.source_revision != cfg.control_source_revision):
         return False
     user = await tx.get(User, task.user_id)
-    session = await tx.get(Session, task.session_id)
+    # Runtime may update sessions, so FOR SHARE can serialize logout with the final result commit.
+    # Do not broaden write privileges on read-only membership/grant/identity tables to acquire locks.
+    session = await tx.scalar(select(Session).where(Session.id == task.session_id).with_for_update(read=True))
     if not user or not user.enabled or not session or session.user_id != task.user_id or session.revoked_at or session.expires_at <= utcnow():
         return False
     try:

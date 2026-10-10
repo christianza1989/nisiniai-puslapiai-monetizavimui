@@ -15,6 +15,7 @@ from pinet_core.control.routes import scope
 from pinet_core.models import utcnow
 from pinet_core.tasks import worker
 from pinet_core.tasks.models import Task, TaskEvent, TaskRun, Thread
+from pinet_core.tasks.service import authority
 
 pilot = portfolio_pilot
 
@@ -197,3 +198,29 @@ async def test_single_claim_source_change_and_bounded_thread(chat):
     response = await chat["client"].post(f"/operator/v2/chat/threads/{item['thread_id']}/messages",
              json={"message": "Virš ribos", "idempotency_key": str(uuid4())}, headers=chat["headers"])
     assert response.status_code == 409 and response.json()["code"] == "thread_full"
+
+
+async def test_final_authority_session_lock_serializes_revocation(chat):
+    item = (await start(chat)).json()["data"]
+    async with scope(user=settings().chat_operator_user_id) as tx:
+        task = await tx.get(Task, item["task"]["task_id"])
+        assert await authority(tx, task)
+        async def revoke():
+            async with AsyncSession(chat["admin"]) as admin, admin.begin():
+                await admin.execute(update(Session).where(Session.id == task.session_id).values(revoked_at=utcnow()))
+        pending = asyncio.create_task(revoke())
+        await asyncio.sleep(0.05)
+        assert not pending.done()  # Actual PostgreSQL row lock, not a mocked race.
+    await asyncio.wait_for(pending, 5)
+    assert (await chat["client"].get(f"/operator/v2/tasks/{task.id}", headers=chat["headers"])).status_code == 401
+
+
+async def test_runner_off_during_execution_prevents_result(chat, monkeypatch):
+    item = (await start(chat)).json()["data"]
+    async def pause(context, heartbeat):
+        monkeypatch.setattr(settings(), "chat_runner_enabled", False)
+        assert not await heartbeat()
+        return {"answer": "Paused result must never persist", "limitations": []}, None
+    assert await worker.execute_once(pause)
+    result = (await chat["client"].get(f"/operator/v2/tasks/{item['task']['task_id']}", headers=chat["headers"])).json()["data"]
+    assert result["status"] == "failed" and result["failure_code"] == "authorization_revoked" and result["result"] is None

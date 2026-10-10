@@ -6,6 +6,7 @@ from ..control.routes import envelope as core_envelope
 from ..creation.routes import owned
 from ..customer.service import customer_guard
 from .service import projection
+from .v2_service import projection as projection_v2
 
 router = APIRouter(prefix="/customer/v2/creations", route_class=SafeRoute,
     dependencies=[Depends(customer_guard)])
@@ -25,4 +26,18 @@ async def readiness(creation_id: str, request: Request,
     data = await projection(tx, session, creation, accepted_revision)
     value = core_envelope(request, data)
     value["contract_version"] = "agent-preparation.v1"
+    return value
+
+
+@router.get("/{creation_id}/agent-preparation-v2")
+async def readiness_v2(creation_id: str, request: Request,
+                       accepted_revision: int | None = Query(default=None, ge=1, le=20),
+                       context=Depends(authenticated, scope="function")):
+    pairs = list(request.query_params.multi_items())
+    if any(key != "accepted_revision" for key, _ in pairs) or len(pairs) > 1:
+        raise ControlError(400, "invalid_request")
+    tx, session = context
+    creation = await owned(tx, session, creation_id, lock=True)
+    value = core_envelope(request, await projection_v2(tx, session, creation, accepted_revision))
+    value["contract_version"] = "agent-preparation.v2"
     return value

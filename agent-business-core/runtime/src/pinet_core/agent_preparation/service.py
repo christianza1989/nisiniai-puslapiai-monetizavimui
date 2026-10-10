@@ -163,24 +163,15 @@ def checks_for(*, creation, revision, team_review, intake, mapping, runtime, now
     add("email_reply", "UNVERIFIED", "not_observed", "email_reply_channel_unverified",
         "Kliento atsakymo gavimas ir to paties pokalbio tęsinys dar nepatikrinti.")
     add("calibration", "UNVERIFIED", "not_observed", "agent_calibration_unverified",
-        "Šiai priimtai versijai nėra scenarijų, tikrų kanalų ir kalibravimo priėmimo įrodymų.")
+        "Šiam verslo juodraščiui nėra scenarijų, tikrų kanalų ir kalibravimo priėmimo įrodymų.")
     return checks
 
 
-async def projection(tx, session, creation, requested_revision=None):
-    now = utcnow()
-    if requested_revision is not None and requested_revision != creation.current_revision:
-        raise ControlError(409, "stale_revision")
-    # Membership/grant tables are SELECT-only. Recheck current authority before
-    # returning; do not demand UPDATE privileges merely to observe row locks.
-    member = await tx.scalar(select(Membership).where(Membership.user_id == session.user_id,
-        Membership.organization_id == creation.organization_id, Membership.environment_id == settings().environment,
-        Membership.enabled, Membership.role == "owner"))
-    if not member:
-        raise ControlError(404, "not_found")
+async def revision_observations(tx, creation):
+    """Shared exact private revision/team/intake observations; no registry authority."""
     revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id,
-        Revision.sequence == creation.current_revision)) if creation.current_revision else None
-    job = await tx.get(Job, revision.job_id) if revision else None
+        Revision.sequence == creation.current_revision).execution_options(populate_existing=True)) if creation.current_revision else None
+    job = await tx.get(Job, revision.job_id, populate_existing=True) if revision else None
     if creation.current_revision and (not revision or not job or job.creation_id != creation.id
             or job.status != "succeeded" or revision.source_revision != job.source_revision
             or not SOURCE.fullmatch(revision.source_revision) or digest(revision.payload) != revision.material_hash):
@@ -202,6 +193,21 @@ async def projection(tx, session, creation, requested_revision=None):
         observed_at=content["observed_at"], page_count=len(content["pages"]),
         approved_page_count=sum(p["has_approved_revision"] for p in content["pages"]),
         failure_code=content["failure_code"])
+    return revision, team_review, intake
+
+
+async def projection(tx, session, creation, requested_revision=None):
+    now = utcnow()
+    if requested_revision is not None and requested_revision != creation.current_revision:
+        raise ControlError(409, "stale_revision")
+    # Membership/grant tables are SELECT-only. Recheck current authority before
+    # returning; do not demand UPDATE privileges merely to observe row locks.
+    member = await tx.scalar(select(Membership).where(Membership.user_id == session.user_id,
+        Membership.organization_id == creation.organization_id, Membership.environment_id == settings().environment,
+        Membership.enabled, Membership.role == "owner"))
+    if not member:
+        raise ControlError(404, "not_found")
+    revision, team_review, intake = await revision_observations(tx, creation)
     row = (await tx.execute(select(BusinessGrant, Business).join(Business, Business.id == BusinessGrant.business_id)
         .where(BusinessGrant.portfolio_id == creation.portfolio_id,
             BusinessGrant.organization_id == creation.organization_id, BusinessGrant.environment_id == settings().environment,

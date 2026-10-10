@@ -1,5 +1,69 @@
 # Kliento verslo agentų paruošimo stebėjimas
 
+## Dabartinis papildomas V2 kelias
+
+2026-10-10 source inkrementas prideda atskirą
+`GET /customer/v2/creations/{creation_id}/agent-preparation-v2` ir
+`contract_version=agent-preparation.v2`. Jis naudoja kanoninę
+`creation_registration.service.projection` / `RegistrationView` projekciją.
+Naujo DTO `registration` pakeičia seną `mapping`; to paties domeno kandidatas
+nesuteikia teisės stebėti verslo agento duomenų. Reikalinga source migracija0016.
+Ši migracija ir klientų verslo registravimas veikiančioje API8860 bazėje kol kas
+neatlikti. API8860 ir dashboard3019 tebenaudoja ankstesnį V1 kelią.
+
+Tik `registration.binding_current=true` leidžia `runtime.scope=current_registered_business`.
+Tai reiškia tikslų dabartinį savininką, priimtą versiją, candidate hash, istorinį
+source SHA, native intake ir patvarų administratoriaus patikrintą Registration.
+`missing`, `stale`, `revoked`, `grant_revoked` ar vykstanti naujos versijos
+užduotis palieka `runtime.scope=unmapped`. Tada profilio/instrukcijų/žinių ir
+verslo politikos stebėjimų nėra. Bendri SMTP/voice konfigūracijos booleans
+nesuteikia kanalo leidimo. Prieš grąžinant vėl skaitomi exact private Revision/Job
+ir kanoninė dabartinė registracija; per užklausą atšaukus ryšį arba grant,
+ankstesni runtime stebėjimai pašalinami, o tikra atšaukimo būsena išlieka matoma.
+
+Abu `business_registration` ir `creation_business_binding` checks dabar remiasi
+dabartine duomenų baze ir PASS tik esant tiksliam galiojančiam susiejimui.
+Likę 12 vartų išlaiko atskirus source/config/intake/channel įrodymus.
+`source_pin` tebevertinamas konservatyviai: istorinis priimtos versijos SHA
+nesikeičia, skirtingas dabartinio vykdymo envelope SHA palieka
+`FAIL/accepted_source_outdated`. Tai nepanaikina istorinės Registration
+tapatybės ir nesuteikia jai naujo priėmimo. `v2_current` žinių registras savaime
+neįrodo šio juodraščio patvirtinto viešo leidimo; jo vartas lieka UNVERIFIED.
+Naujiems `creation-<UUID>` verslams esamas šešių statinių profilių registras
+nesuteikia automatinio profilio. Atskirai ruošiama profilio priėmimo realizacija.
+
+Visi atsakymai tebėra `state=blocked`, `can_activate=false`,
+`activation=not_performed`, calibration/full F1/launch UNVERIFIED. Nėra provider,
+pašto, voice, acquisition, learning, session extension ar patvaraus SQL/file
+rašymo. Tas pats query/auth/opaque deny/cache kontraktas taikomas abiem keliams.
+
+Kanoninis naujas JSON:
+[verslomatika-customer-agent-preparation-v2.openapi.json](contracts/verslomatika-customer-agent-preparation-v2.openapi.json),
+generuojamas iš actual `AgentPreparationViewV2` per
+`runtime/scripts/customer_agent_preparation_v2_contract.py`. UTF-8/LF ilgis
+**25 333 baitai**, SHA-256
+`0d71d925b3cb454f688548388948680753fcf738104bb22c7396e08e47b3c273`.
+V1 DTO ir JSON
+baitai išsaugoti. Portal reader pereina į V2 tik gavęs tikslią functional source
+versiją, JSON hash ir patikrintą READY. Rollback: pirmiau grąžinti portal reader
+į originalų V1 endpoint/DTO, tada atšaukti tik papildomą V2 source paketą.
+Registration istorijos ir0016 duomenų trinti ar perrašyti nereikia. V1
+`mapping.binding=not_implemented` yra senos projekcijos ribotumas; aktualiai
+patvaraus ryšio būsenai naudoti kanoninį registration/V2 kelią.
+
+Source priėmimas:82focused offline PASS6.24s (nauji V2, ankstesni V1 ir
+registracijos offline testai),27restricted PostgreSQL PASS170.15s
+(ankstesnis V1 ir naujas V2), scoped Ruff/diff PASS. PG naudojo tik root
+atskirą anksčiau bootstrapped sintetinę bazę ir random test-* aplinkas, tikrą
+native Node importą bei sintetinius role atsakymus; provider/channel calls0.
+Visų aštuonių vykdymo source failų SHA prieš/po nepakito. Tikrinti
+same-host-without-binding, exact current registration/native V2 žinios,
+pending/stale/revoked/grant-revoked ir actual committed revoke/payload/intake
+pakeitimai skaitymo metu; read-only state/session snapshot ir svetimo
+savininko atmetimas. Ši patikra nėra naujo tikro verslo ar actual API adoption.
+
+## Ankstesnio V1 inkremento priėmimas
+
 2026-10-10. `agent-preparation.v1` yra veikiantis tik skaitymo API inkrementas,
 rodantis dabartines kliūtis kliento sukurtam verslui prijungti prie bendro agentų
 core. Jis nėra agento aktyvavimas ar kalibravimo priėmimas. Platesnis savininko
@@ -55,7 +119,7 @@ yra UNVERIFIED. `blocker_keys` yra tiksliai visi ne-PASS checks.
 | source_pin | Priimtos privačios versijos SHA palygintas su dabartiniu API SHA. |
 | private_intake | Esamas istorinis native Node importo receipt; puslapių ir approved revision skaičiai. Tai `intake_snapshot`, ne gyvo turinio/publikavimo patikra. |
 | business_registration | RLS matomas enabled grant tik tam pačiam portfeliui, organizacijai, aplinkai ir exact domenui. |
-| creation_business_binding | FAIL: dabartinė schema neturi patvaraus creation/revision/hash → Business ryšio. |
+| creation_business_binding | V1 FAIL: ši projekcija negrąžina vėliau pridėto patvaraus creation/revision/hash → Business ryšio; aktualiai būsenai naudoti V2. |
 | business_profile | Kandidato exact siteId/host pagal esamą `profiles.get`; tai source-code stebėjimas. |
 | role_instructions | Esamo `agent_instructions.compose` conversation/sales/supplier/quality fragmentų hash; ne modelio/kanalo bandymas. |
 | v2_knowledge | Kandidato dabartinis V2 registras: exact metadata/pages/receipt/content hash, revision, TTL ir revocation. Net `v2_current` lieka UNVERIFIED šios creation versijos atžvilgiu. |

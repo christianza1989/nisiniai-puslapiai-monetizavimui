@@ -1,0 +1,11 @@
+# Homepage release accepted
+
+Runtime source: `75536d2a0a6caf941520beaf4f5eca410123d1ff`. Canonical version: `a0d86902-8d61-40b9-84fe-eb3c4ea63357`. Trial version: `17d75d4e-e9de-4008-bc11-5af6aaa78b4b`.
+
+All 14 category cards immediately follow the hero in three desktop columns; the fifteenth violet card links to the actual guide hub. Six optimized violet hero photographs include pedicure, with five-second cadence, one-second crossfade, pause/resume and a reduced-motion first-image fallback. Approved homepage prose moved below guides without changing the 129-page content package (`e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953`).
+
+Compiled native and hosted checks passed: canonical 69, trial 115 each. Actual live browser confirmed all six decoded images, a 30-second cycle, pause/resume, 15 cards, the working guide destination, three desktop columns and one mobile column without horizontal overflow. Screenshots: `sites/madbeauty/cloudflare/output/home-services-20261011/homepage-guide-card.png` and `homepage-mobile-final.png` (private local evidence). The mobile screenshot includes the focused pause control and first category row. Reduced-motion behavior was inspected in CSS, not by changing the user's OS preference.
+
+Trial-only additive reviews have explicit synthetic labels; all 45 published fixture profiles (40 solo and five salons) have 11–21 approved trial reviews. The sixth salon remains unpublished. Preservation comparison passed: 719 added public reviews, all original reviews, identities, offers and galleries retained. All bindings, secrets, namespaces and observability remained exact; the other workers were unchanged at each activation. Original expiry remains `2026-10-16T21:10:47.982Z`. No real provider ratings were fabricated or added to structured data.
+
+The original neutral five, stronger violet five and four extra generated photographs have private originals and responsive derivatives in the release output's `hero-candidates` directory. Prompts are versioned alongside this receipt. Only the six selected responsive WebP families are public. This receipt accepts the scoped homepage/trial change, not future social login or payment features.

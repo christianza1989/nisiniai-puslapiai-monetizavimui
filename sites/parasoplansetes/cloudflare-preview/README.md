@@ -18,6 +18,8 @@ Autorizacijos callback problema išspręsta: originali CLI funkcija po120sekund�
 
 ## Tikslas ir ribos
 
+2026-10-10 turinio atnaujinimas: ankstesnis žemiau nurodytas ed39 paketas yra istorinis. Dabartinis verified immutable release `924b8844-749e-41ba-828e-3c2ee3494806`, SHA `78bb031a0c2686bc01a448ef6619d4534400f1ba7411d5f3a5e48b1f09163678`, 46 approved puslapiai / 170 variantų. `prepare.mjs` papildomai priima `PARASOPLANSETES_CONTENT_RELEASE_DIR`, tikrina jį bendru release verifier ir lygina tiksliai importuoto paketo bytes. Be šio įrodymo kitoks paketas atmetamas. Worker version `8534e038-e884-49e3-99db-0991573677d4`; 241 actual HTTP PASS, publication-aware checker atskiria due200 / future404 ir tik jų mediją bei indeksus. Visos naujos partijos iki lapkričio14; tikras pilotas private. Ataskaita: [CONTENT_PRODUCTION_20261010](../CONTENT_PRODUCTION_20261010.md). Noindex peržiūra ir ankstesni chat/voice jungikliai išlaikyti; tai nėra production domeno ar hosted chat priėmimas.
+
 - Paskyra: `1c0a7407abfb959d5ff46540f5f7009d`, esama `Info@azprekyba.lt's Account`.
 - Worker ir atskira D1: `parasoplansetes-preview`; jokio kito Worker ar DB perrašymo.
 - Tik patvirtintas native paketas SHA `ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b` / public source `7761a29a0464e6ed0544b17567cd68539df89109`.

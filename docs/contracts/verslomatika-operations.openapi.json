@@ -1,14 +1,117 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Verslomatika operator business chat",
-    "version": "0.2.0",
-    "description": "chat.v1. Operator-only; hosted bridge preparation is separate from actual deployment. Maximum request body4096bytes, 20turns/thread. No customer CLI, arbitrary workspace/tools or HTML. Unknown costs stay unknown."
+    "title": "Verslomatika owner dashboard operations",
+    "version": "0.1.0",
+    "description": "operations.v1. Existing session/grant/RLS and task executor. Availability describes configuration, worker health remains unknown. No invented agents or business metrics. History cursors bind actor/session/business/filter/environment/source and the visible creation set; insertions or filtered membership changes require reload (409). Hosted mode is preparation only."
   },
   "paths": {
-    "/operator/v2/businesses/{business_id}/chat/threads": {
+    "/operator/v2/businesses/{business_id}/agents": {
+      "get": {
+        "operationId": "listBusinessAgents",
+        "security": [
+          {
+            "OperatorSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "business_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current authorized persisted projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No current session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Control or executor disabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Cursor snapshot or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Daily task limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/operator/v2/businesses/{business_id}/tasks": {
       "post": {
-        "operationId": "startChat",
+        "operationId": "startBusinessTask",
         "security": [
           {
             "OperatorSession": []
@@ -27,7 +130,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Committed durable state",
+            "description": "Current authorized persisted projection",
             "content": {
               "application/json": {
                 "schema": {
@@ -57,7 +160,7 @@
             }
           },
           "403": {
-            "description": "Local operator disabled",
+            "description": "Control or executor disabled",
             "content": {
               "application/json": {
                 "schema": {
@@ -77,7 +180,7 @@
             }
           },
           "409": {
-            "description": "Idempotency conflict or thread busy/full",
+            "description": "Cursor snapshot or idempotency conflict",
             "content": {
               "application/json": {
                 "schema": {
@@ -87,7 +190,7 @@
             }
           },
           "429": {
-            "description": "Daily admission limit",
+            "description": "Daily task limit",
             "content": {
               "application/json": {
                 "schema": {
@@ -112,129 +215,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MessageInput"
+                "$ref": "#/components/schemas/TaskInput"
               }
             }
           }
         }
-      }
-    },
-    "/operator/v2/chat/threads/{thread_id}/messages": {
-      "post": {
-        "operationId": "sendChatMessage",
-        "security": [
-          {
-            "OperatorSession": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "thread_id",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Committed durable state",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedEnvelope"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "No current session",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Local operator disabled",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "No scoped object",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Idempotency conflict or thread busy/full",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Daily admission limit",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Source unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MessageInput"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/operator/v2/chat/threads/{thread_id}": {
+      },
       "get": {
-        "operationId": "readChat",
+        "operationId": "listBusinessTasks",
         "security": [
           {
             "OperatorSession": []
@@ -243,213 +231,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "thread_id",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Committed durable state",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ThreadEnvelope"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "No current session",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Local operator disabled",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "No scoped object",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Idempotency conflict or thread busy/full",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Daily admission limit",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Source unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/operator/v2/tasks/{task_id}": {
-      "get": {
-        "operationId": "readTask",
-        "security": [
-          {
-            "OperatorSession": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "task_id",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Committed durable state",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TaskEnvelope"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "No current session",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Local operator disabled",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "No scoped object",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Idempotency conflict or thread busy/full",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Daily admission limit",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Source unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/operator/v2/tasks/{task_id}/events": {
-      "get": {
-        "operationId": "readTaskEvents",
-        "security": [
-          {
-            "OperatorSession": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "task_id",
+            "name": "business_id",
             "required": true,
             "schema": {
               "type": "string",
@@ -458,22 +240,43 @@
           },
           {
             "in": "query",
-            "name": "after_sequence",
-            "required": false,
+            "name": "limit",
             "schema": {
               "type": "integer",
-              "minimum": 0,
-              "default": 0
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "schema": {
+              "type": "string",
+              "maxLength": 2048
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "enum": [
+                "queued",
+                "running",
+                "succeeded",
+                "failed",
+                "cancelled"
+              ]
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Committed durable state",
+            "description": "Current authorized persisted projection",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EventsEnvelope"
+                  "$ref": "#/components/schemas/HistoryEnvelope"
                 }
               }
             }
@@ -499,7 +302,7 @@
             }
           },
           "403": {
-            "description": "Local operator disabled",
+            "description": "Control or executor disabled",
             "content": {
               "application/json": {
                 "schema": {
@@ -519,7 +322,7 @@
             }
           },
           "409": {
-            "description": "Idempotency conflict or thread busy/full",
+            "description": "Cursor snapshot or idempotency conflict",
             "content": {
               "application/json": {
                 "schema": {
@@ -529,7 +332,7 @@
             }
           },
           "429": {
-            "description": "Daily admission limit",
+            "description": "Daily task limit",
             "content": {
               "application/json": {
                 "schema": {
@@ -551,9 +354,9 @@
         }
       }
     },
-    "/operator/v2/tasks/{task_id}/cancel": {
-      "post": {
-        "operationId": "cancelTask",
+    "/operator/v2/businesses/{business_id}/overview": {
+      "get": {
+        "operationId": "getBusinessOverview",
         "security": [
           {
             "OperatorSession": []
@@ -562,7 +365,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "task_id",
+            "name": "business_id",
             "required": true,
             "schema": {
               "type": "string",
@@ -572,11 +375,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Committed durable state",
+            "description": "Current authorized persisted projection",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TaskEnvelope"
+                  "$ref": "#/components/schemas/OverviewEnvelope"
                 }
               }
             }
@@ -602,7 +405,7 @@
             }
           },
           "403": {
-            "description": "Local operator disabled",
+            "description": "Control or executor disabled",
             "content": {
               "application/json": {
                 "schema": {
@@ -622,7 +425,7 @@
             }
           },
           "409": {
-            "description": "Idempotency conflict or thread busy/full",
+            "description": "Cursor snapshot or idempotency conflict",
             "content": {
               "application/json": {
                 "schema": {
@@ -632,7 +435,110 @@
             }
           },
           "429": {
-            "description": "Daily admission limit",
+            "description": "Daily task limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/operator/v2/tasks/{task_id}/report": {
+      "get": {
+        "operationId": "getTaskReport",
+        "security": [
+          {
+            "OperatorSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "task_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current authorized persisted projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No current session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Control or executor disabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Cursor snapshot or idempotency conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Daily task limit",
             "content": {
               "application/json": {
                 "schema": {
@@ -663,48 +569,6 @@
       }
     },
     "schemas": {
-      "MessageInput": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "message": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 1000
-          },
-          "idempotency_key": {
-            "type": "string",
-            "format": "uuid"
-          }
-        },
-        "required": [
-          "message",
-          "idempotency_key"
-        ]
-      },
-      "Answer": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "answer": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 8000
-          },
-          "limitations": {
-            "type": "array",
-            "maxItems": 5,
-            "items": {
-              "type": "string",
-              "maxLength": 300
-            }
-          }
-        },
-        "required": [
-          "answer",
-          "limitations"
-        ]
-      },
       "Task": {
         "type": "object",
         "additionalProperties": false,
@@ -794,138 +658,27 @@
           "failure_code"
         ]
       },
-      "Accepted": {
+      "Answer": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "thread_id": {
+          "answer": {
             "type": "string",
-            "format": "uuid"
+            "minLength": 1,
+            "maxLength": 8000
           },
-          "business_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "task": {
-            "$ref": "#/components/schemas/Task"
-          }
-        },
-        "required": [
-          "thread_id",
-          "business_id",
-          "task"
-        ]
-      },
-      "Thread": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "thread_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "business_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "tasks": {
+          "limitations": {
             "type": "array",
-            "maxItems": 20,
+            "maxItems": 5,
             "items": {
-              "$ref": "#/components/schemas/Task"
+              "type": "string",
+              "maxLength": 300
             }
           }
         },
         "required": [
-          "thread_id",
-          "business_id",
-          "created_at",
-          "tasks"
-        ]
-      },
-      "Event": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "sequence": {
-            "type": "integer",
-            "minimum": 1
-          },
-          "task_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "queued",
-              "running",
-              "succeeded",
-              "failed",
-              "cancelled"
-            ]
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "failure_code": {
-            "anyOf": [
-              {
-                "type": "string",
-                "enum": [
-                  "runner_unavailable",
-                  "model_unavailable",
-                  "provider_error",
-                  "output_invalid",
-                  "run_timeout",
-                  "authorization_revoked",
-                  "worker_interrupted",
-                  "tool_attempted"
-                ]
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "sequence",
-          "task_id",
-          "status",
-          "created_at",
-          "failure_code"
-        ]
-      },
-      "Events": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "task_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "items": {
-            "type": "array",
-            "maxItems": 50,
-            "items": {
-              "$ref": "#/components/schemas/Event"
-            }
-          },
-          "next_sequence": {
-            "type": "integer",
-            "minimum": 0
-          }
-        },
-        "required": [
-          "task_id",
-          "items",
-          "next_sequence"
+          "answer",
+          "limitations"
         ]
       },
       "Error": {
@@ -949,12 +702,403 @@
           "request_id"
         ]
       },
+      "Agent": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "agent_id": {
+            "const": "business-planner"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "kind": {
+            "const": "chat.consult"
+          },
+          "description": {
+            "type": "string"
+          },
+          "availability": {
+            "enum": [
+              "available",
+              "unavailable"
+            ]
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "chat_unavailable",
+                  "operator_required",
+                  "runner_unavailable",
+                  "runner_not_configured"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "model": {
+            "type": "string"
+          },
+          "effort": {
+            "const": "medium"
+          },
+          "tools": {
+            "type": "array",
+            "maxItems": 0
+          },
+          "system_writes": {
+            "const": false
+          },
+          "worker_health": {
+            "const": "unknown"
+          },
+          "daily_task_limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "agent_id",
+          "display_name",
+          "kind",
+          "description",
+          "availability",
+          "unavailable_reason",
+          "model",
+          "effort",
+          "tools",
+          "system_writes",
+          "worker_health",
+          "daily_task_limit"
+        ]
+      },
+      "Agents": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "business_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "items": {
+            "type": "array",
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/components/schemas/Agent"
+            }
+          }
+        },
+        "required": [
+          "business_id",
+          "items"
+        ]
+      },
+      "TaskInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "agent_id": {
+            "const": "business-planner"
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "idempotency_key": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "agent_id",
+          "message",
+          "idempotency_key"
+        ]
+      },
+      "Accepted": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "business_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "agent_id": {
+            "const": "business-planner"
+          },
+          "thread_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "task": {
+            "$ref": "#/components/schemas/Task"
+          }
+        },
+        "required": [
+          "business_id",
+          "agent_id",
+          "thread_id",
+          "task"
+        ]
+      },
+      "History": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "business_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "items": {
+            "type": "array",
+            "maxItems": 50,
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "snapshot_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "business_id",
+          "items",
+          "next_cursor",
+          "snapshot_id"
+        ]
+      },
+      "Overview": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "business_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "task_counts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "queued": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "running": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "succeeded": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "failed": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cancelled": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled"
+            ]
+          },
+          "last_task_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "agent": {
+            "$ref": "#/components/schemas/Agent"
+          }
+        },
+        "required": [
+          "business_id",
+          "task_counts",
+          "last_task_at",
+          "agent"
+        ]
+      },
+      "Execution": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "enum": [
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled"
+            ]
+          },
+          "model": {
+            "type": "string"
+          },
+          "effort": {
+            "type": "string"
+          },
+          "adapter_revision": {
+            "type": "string"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "propertyNames": {
+                  "pattern": "_tokens$"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "cost_microusd": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "run_id",
+          "status",
+          "model",
+          "effort",
+          "adapter_revision",
+          "started_at",
+          "finished_at",
+          "usage",
+          "cost_microusd"
+        ]
+      },
+      "Report": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "agent_id": {
+            "const": "business-planner"
+          },
+          "task": {
+            "$ref": "#/components/schemas/Task"
+          },
+          "execution": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Execution"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "agent_id",
+          "task",
+          "execution",
+          "source_revision"
+        ]
+      },
+      "AgentsEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "operations.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test",
+              "production"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Agents"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      },
       "AcceptedEnvelope": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "contract_version": {
-            "const": "chat.v1"
+            "const": "operations.v1"
           },
           "environment": {
             "enum": [
@@ -987,12 +1131,12 @@
           "data"
         ]
       },
-      "ThreadEnvelope": {
+      "HistoryEnvelope": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "contract_version": {
-            "const": "chat.v1"
+            "const": "operations.v1"
           },
           "environment": {
             "enum": [
@@ -1013,7 +1157,7 @@
             "format": "uuid"
           },
           "data": {
-            "$ref": "#/components/schemas/Thread"
+            "$ref": "#/components/schemas/History"
           }
         },
         "required": [
@@ -1025,12 +1169,12 @@
           "data"
         ]
       },
-      "TaskEnvelope": {
+      "OverviewEnvelope": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "contract_version": {
-            "const": "chat.v1"
+            "const": "operations.v1"
           },
           "environment": {
             "enum": [
@@ -1051,7 +1195,7 @@
             "format": "uuid"
           },
           "data": {
-            "$ref": "#/components/schemas/Task"
+            "$ref": "#/components/schemas/Overview"
           }
         },
         "required": [
@@ -1063,12 +1207,12 @@
           "data"
         ]
       },
-      "EventsEnvelope": {
+      "ReportEnvelope": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "contract_version": {
-            "const": "chat.v1"
+            "const": "operations.v1"
           },
           "environment": {
             "enum": [
@@ -1089,7 +1233,7 @@
             "format": "uuid"
           },
           "data": {
-            "$ref": "#/components/schemas/Events"
+            "$ref": "#/components/schemas/Report"
           }
         },
         "required": [

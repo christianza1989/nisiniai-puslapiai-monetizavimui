@@ -54,7 +54,7 @@ def build():
     for method, path, operation, response, code in actions:
         envelope = response + "Envelope"
         schemas[envelope] = obj({"contract_version": {"const": "chat.v1"},
-                                "environment": {"enum": ["local", "test"]}, "source_revision": string,
+                                "environment": {"enum": ["local", "test", "production"]}, "source_revision": string,
                                 "observed_at": timestamp, "request_id": uid, "data": ref(response)})
         params = [{"in": "path", "name": part[1:-1], "required": True, "schema": uid}
                   for part in path.split("/") if part.startswith("{")]
@@ -72,8 +72,8 @@ def build():
         if response == "Accepted":
             entry["requestBody"] = {"required": True, "content": {"application/json": {"schema": ref("MessageInput")}}}
         paths["/operator/v2" + path] = {method: entry}
-    return {"openapi": "3.1.0", "info": {"title": "Verslomatika local operator business chat", "version": "0.1.0",
-             "description": "chat.v1. Operator-only local pilot. Maximum request body4096bytes, 20turns/thread. "
+    return {"openapi": "3.1.0", "info": {"title": "Verslomatika operator business chat", "version": "0.2.0",
+             "description": "chat.v1. Operator-only; hosted bridge preparation is separate from actual deployment. Maximum request body4096bytes, 20turns/thread. "
                             "No customer CLI, arbitrary workspace/tools or HTML. Unknown costs stay unknown."},
             "paths": paths, "components": {"securitySchemes": {"OperatorSession": {"type": "http", "scheme": "bearer"}},
                                              "schemas": schemas}}

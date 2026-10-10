@@ -60,6 +60,50 @@ uv run python scripts/customer_public_admin.py intake-decision --input artifacts
 
 Tai atskirų veiksmų pavyzdžiai, ne visų keturių iš eilės vykdymo nurodymas. Materialus projekto pakeitimas panaikina ankstesnį approval; public skaitymas grąžina tik patvirtintą, jau publikuotiną, neatšauktą reviziją. Viešo katalogo įrašas neperima private portfolio/grants ir nesuteikia automatizacijos veikimo įrodymo. AI verslo kūrimo vykdytojas nėra šio P3/P4 setup dalis. [Faktiniai bandymai ir ribos](VERSLOMATIKA_CUSTOMER_PUBLIC.md).
 
+## Trijų agentų verslo kūrimas ir native GUIDE
+
+Vėlesnis savininko pavedimas išplečia P3/P4 iki kliento idėjos, kūrėjo/kritiko/koordinatoriaus darbo, peržiūros ir pataisytos versijos. [Kūrimo eiga ir faktiniai bandymai](VERSLOMATIKA_CUSTOMER_CREATION.md), [trijų rolių patikra](VERSLOMATIKA_CREATION_REVIEW.md), [native GUIDE rašymas](VERSLOMATIKA_CONTENT_WORK.md), [pasiruošimo vartai](VERSLOMATIKA_AGENT_PREPARATION.md). Šios papildomos dalys turi būti gautos toje pačioje peržiūrėtoje source šakoje; vien P3/P4 setup jų nesukuria. Source PR nėra kito PC ar viešo paleidimo priėmimas.
+
+Iš core repo šaknies įdiegti prisegtas studijos priklausomybes `npm ci --prefix content-studio`. Native intake turi rasti gretimo `dovanos-memorycasting/config/niche-network.json`; bendro viešo rendererio pataisas ir jų priėmimą tikrinti atskirai pagal jo PR. Toliau vykdyti aukščiau pateiktą restricted-role → `alembic upgrade head` → canonical bootstrap eigą. Dabartinis kūrimo source turi0013creation,0014team ir0015GUIDE migracijas. Ruošiama0016 kliento verslo registracija kol kas nėra šio aprašymo PASS.
+
+Privati target PC konfigūracija, kai pasirinktas konkretus autorizuotas ribotas bandymas:
+
+```text
+PINET_CUSTOMER_ENABLED=true
+PINET_CREATION_ENABLED=true
+PINET_CREATION_RUNNER_ENABLED=true
+PINET_CREATION_WORKSPACE=<esamas absolute katalogas runtime/artifacts viduje>
+PINET_CREATION_RUNNER_SECONDS=300
+PINET_CREATION_DAILY_LIMIT=20
+PINET_CREATION_GLOBAL_DAILY_LIMIT=20
+PINET_CREATION_WEB_SEARCH_ENABLED=true
+PINET_CHAT_MODEL=gpt-6-luna
+PINET_CHAT_CODEX_EXECUTABLE=<patikrintas absolute executable tame PC>
+PINET_CHAT_CODEX_SHA256=<tikras executable 64hex>
+PINET_CHAT_ENABLED=false
+PINET_CHAT_RUNNER_ENABLED=false
+```
+
+20 yra bendras riboto bandymo pavyzdys, ne naujas leidimas didinti išnaudotą limitą. Whole GUIDE kelias priima customer/global1..20 ir30..300s; draft-only kūrimo atskiras global1..100 nereiškia, kad tokia konfigūracija tinka GUIDE. Ankstesni legacy/team/GUIDE vykdymai lieka bendroje dienos apskaitoje ir po nesėkmės. Nauja aplinka ar DB negali būti naudojama tos pačios paskyros bandymo biudžetui apeiti.
+
+Kai source švarus, private pin sutampa su HEAD ir API/portal origin sutampa, runtime kataloge:
+
+```powershell
+uv run python scripts/control_portable.py check
+uv run python scripts/customer_creation_worker.py check
+uv run python scripts/customer_content_work_worker.py check
+```
+
+Šios patikros tikrina tapatybės/RLS/source/binary/instrukcijų ribas ir nekviečia modelio. Po kliento UI užklausos atskirame savo terminale paleisti tik pasirinktą vieno darbo komandą:
+
+```powershell
+uv run python scripts/customer_creation_worker.py once
+```
+
+Priėmus tikslią dabartinę verslo reviziją ir patikrinus jos native intake, klientas gali parengti vieno GUIDE užduotį; tik jai paleisti `uv run python scripts/customer_content_work_worker.py once`. Abiejų komandų `worker` režimas yra aiškiai paleidžiamas tęstinis vykdytojas, ne instaliuojama tarnyba. Shared mutex ir dienos apskaita galioja abiem. Keisti source tik tarp darbų ir sąmoningai sustabdyti savo procesus; senas gyvas darbas instrukcijų pats neatnaujina.
+
+Target PC priėmimo kelias: nauja testinė kliento paskyra → private patvirtinimo nuoroda → login → atskira verslo idėja → tikri trijų rolių kvitai → priimtas juodraštis/peržiūra → kliento kritika → nauja priimta revizija → vienas pilnai parašytas ir peržiūrėtas native GUIDE. Kiekvieno originalo nesėkmė, modelis/instrukcijų hash, usage ir tikslus source išsaugomi. Tai nepatvirtina viešos medijos/editorial/release/SEO-GEO/kontaktų/paklausos ir paleidimo vartų. Dabartinis NEW `mokymai-ai.lt` vis dar neturi priimtos revizijos; kitame PC šio rezultato neišgalvoti.
+
 ## Tikras konsultanto worker
 
 Pradinis setup palieka `PINET_CHAT_ENABLED=false` ir `PINET_CHAT_RUNNER_ENABLED=false`. Sustabdytas executor neblokuoja savo istorijos, įvykių ir ataskaitų skaitymo ar queued task atšaukimo; sesija ir aktualūs grants lieka būtini. Viena realizuota capability — `business-planner` / `chat.consult`; kitos agentų rolės nėra sukuriamos katalogo tekstais. Konsultantas teikia planą, neturi tools ir nevykdo klientų sistemų pakeitimų. Katalogo availability aprašo serverio konfigūraciją; worker health yra `unknown`, o ne išgalvotas „online“.

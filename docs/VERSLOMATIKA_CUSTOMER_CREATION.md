@@ -20,17 +20,18 @@ Typed output is rendered by escaped server-owned text/theme enums into a **priva
 
 ## Local runbook
 
-Use the existing portable PostgreSQL/restricted-role/bootstrap runbook, migrate through0013 and configure a separate private database/outbox/workspace. Do not copy another PC's authentication, DB or customer data into Git. Set `PINET_CUSTOMER_ENABLED=true`, `PINET_CREATION_ENABLED=true`, `PINET_CREATION_RUNNER_ENABLED=true`, `PINET_CREATION_WORKSPACE` to an absolute existing directory inside this runtime's ignored `artifacts/`, `PINET_CREATION_RUNNER_SECONDS`30..300, daily customer1..20/global1..100. Existing `PINET_CHAT_CODEX_EXECUTABLE`, SHA256 and `PINET_CHAT_MODEL=gpt-6-luna` pin the target PC's verified CLI. Original consultation flags can remain OFF. Optional `PINET_CREATION_WEB_SEARCH_ENABLED=true` enables the bounded source research; it is not permission for other tools.
+Use the [portable PostgreSQL/restricted-role/bootstrap runbook](VERSLOMATIKA_PORTABLE_CONTROL.md), run `alembic upgrade head` from the exact reviewed source and configure a separate private database/outbox/workspace. Current delivered schema is0013creation/0014three-role accounting/0015nativeGUIDE; registration0016 is still under isolated source acceptance. Retain the canonical post-migration `scripts/bootstrap.py` step for stable business SELECT/seed; control table privileges are owned by their migrations. Do not copy another PC's authentication, DB or customer data into Git. Set `PINET_CUSTOMER_ENABLED=true`, `PINET_CREATION_ENABLED=true`, `PINET_CREATION_RUNNER_ENABLED=true`, `PINET_CREATION_WORKSPACE` to an absolute existing directory inside this runtime's ignored `artifacts/`, `PINET_CREATION_RUNNER_SECONDS`30..300 and an explicitly approved finite daily call budget. Customer limit is1..20; the whole creation+GUIDE path requires global1..20 (draft-only creation separately allows1..100). These roles share charged legacy/team/GUIDE accounting, and failed attempts remain charged. Existing `PINET_CHAT_CODEX_EXECUTABLE`, SHA256 and `PINET_CHAT_MODEL=gpt-6-luna` pin the target PC's verified CLI. Original consultation flags can remain OFF. Optional `PINET_CREATION_WEB_SEARCH_ENABLED=true` enables the bounded source research; it is not permission for other tools.
 
 With a clean exact Git source pin, run from runtime:
 
 ```powershell
 .venv/Scripts/python.exe scripts/control_portable.py check
 .venv/Scripts/python.exe scripts/customer_creation_worker.py check
+.venv/Scripts/python.exe scripts/customer_content_work_worker.py check
 .venv/Scripts/python.exe scripts/control_portable.py api --port 8860
 ```
 
-In another owned terminal run `scripts/customer_creation_worker.py worker`. Backend stays loopback. Source is rechecked between jobs; changing code while the worker is live requires a deliberate clean checkpoint/restart. No unattended installer/tunnel/production route is created.
+Both worker checks make zero provider calls. In a separate owned terminal, `scripts/customer_creation_worker.py once` executes at most one admitted business job, and `scripts/customer_content_work_worker.py once` executes at most one admitted native GUIDE job. `worker` is an explicit ongoing loop for the selected executor. Start them only for the concrete bounded test; their shared execution mutex serializes cooperating creation/GUIDE dispatches. Backend stays loopback. Source is rechecked between jobs; changing code while the worker is live requires a deliberate clean checkpoint/restart. A private accepted draft, written GUIDE and full F1/public release are separate acceptance stages. No unattended installer/tunnel/production route is created.
 
 ## Acceptance record
 

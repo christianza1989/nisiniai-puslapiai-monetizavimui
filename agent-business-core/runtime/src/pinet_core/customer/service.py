@@ -48,11 +48,15 @@ def host(value):
 def customer_guard(request: Request):
     local_guard(request)
     cfg = settings()
-    origin = urlsplit(cfg.customer_portal_origin)
+    try:
+        origin = urlsplit(cfg.customer_portal_origin)
+        port = origin.port
+    except ValueError:
+        raise ControlError(403, "customer_unavailable") from None
     directory = Path(cfg.customer_outbox_directory).resolve()
     if (not cfg.customer_enabled or cfg.control_mode != "local" or cfg.environment == "production"
             or origin.scheme != "http" or origin.hostname not in {"127.0.0.1", "localhost", "::1"}
-            or not origin.port or origin.username or origin.password or origin.path or origin.query or origin.fragment
+            or not port or origin.username or origin.password or origin.path or origin.query or origin.fragment
             or not directory.is_relative_to((ROOT / "artifacts").resolve())):
         raise ControlError(403, "customer_unavailable")
 
@@ -80,7 +84,11 @@ async def customer_scope(*, user="", email="", token=""):
     except BaseException:
         # DB rollback must not leave a usable-looking mail receipt behind.
         for path in files:
-            path.unlink(missing_ok=True)
+            try:
+                path.unlink(missing_ok=True)
+            except OSError:
+                # An orphan stays private and its rolled-back token cannot be used. Preserve the original error.
+                pass
         raise
 
 
@@ -135,9 +143,21 @@ async def generic_floor(start):
     await asyncio.sleep(max(0, 0.6 - (asyncio.get_running_loop().time() - start)))
 
 
+def delivery_ready():
+    # Run before the email lookup, so an unavailable outbox fails equally for known/unknown addresses.
+    directory = Path(settings().customer_outbox_directory).resolve()
+    probe = directory / (".probe-" + new_id() + ".tmp")
+    try:
+        directory.mkdir(parents=True, exist_ok=True)
+        with probe.open("x", encoding="utf-8") as stream:
+            stream.write("")
+        probe.unlink()
+    except OSError:
+        raise ControlError(503, "development_delivery_unavailable") from None
+
+
 def outbox(tx, account, purpose, token=None):
     directory = Path(settings().customer_outbox_directory).resolve()
-    directory.mkdir(parents=True, exist_ok=True)
     path = directory / (new_id() + ".json")
     route = "/patvirtinti-el-pasta" if purpose == "verify" else "/naujas-slaptazodis"
     payload = {"transport": "development_outbox", "environment": settings().environment,
@@ -146,9 +166,13 @@ def outbox(tx, account, purpose, token=None):
         payload["link"] = settings().customer_portal_origin + route + "#token=" + token
     # Private local operator artifact. Never return it from HTTP or log its body/path.
     tx.info["customer_outbox_files"].append(path)
-    with path.open("x", encoding="utf-8") as stream:
-        json.dump(payload, stream, ensure_ascii=False)
-        stream.write("\n")
+    try:
+        directory.mkdir(parents=True, exist_ok=True)
+        with path.open("x", encoding="utf-8") as stream:
+            json.dump(payload, stream, ensure_ascii=False)
+            stream.write("\n")
+    except OSError:
+        raise ControlError(503, "development_delivery_unavailable") from None
 
 
 async def issue(tx, account, purpose):

@@ -1,0 +1,19 @@
+{
+  "siteId": "verslomatika",
+  "summary": "P3/P4 tested failure handling and portable local configuration need explicit final acceptance and feedback beyond the initial runtime reservation.",
+  "category": "workflow",
+  "evidence": [
+    "docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md runtime checkpoint80PASS; retained private seventh-security21PASS",
+    "Director actual BFF signup/verification/login/intake/recovery/reset receipts at coredb23aee on8855 and portal3017; browser credentials separately UNVERIFIED"
+  ],
+  "paths": [
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/73",
+  "rollback": "Scoped documentation revert; preserve private original receipts and all existing services/data.",
+  "id": "upgrade-8b2df3e3-79f0-4e07-95de-28a36b0696b5",
+  "branch": "codex/verslomatika-customer-public-core-20261010",
+  "baseSha": "db23aee6ea446574b582ab7b88bf49391d0e7404",
+  "createdAt": "2026-10-10T09:20:20.309Z"
+}

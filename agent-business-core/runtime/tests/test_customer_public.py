@@ -425,3 +425,47 @@ async def test_public_unsafe_fields_fail_before_publication(customers,field,valu
     with pytest.raises(ValueError):
         await draft(customers,project,evidence)
     assert (await customers['client'].get('/public/v1/projects')).json()['data']['items']==[]
+
+
+async def test_outbox_unavailable_generic_and_atomic_token_rollback(customers,monkeypatch):
+    c,client=customers,customers['client']
+    value,token=await registered(c)
+    original=Path.open
+    def fail_messages(path,*args,**kwargs):
+        if path.parent.resolve()==c['outbox'].resolve() and path.suffix=='.json':
+            raise OSError('Synthetic private delivery error')
+        return original(path,*args,**kwargs)
+    monkeypatch.setattr(Path,'open',fail_messages)
+    failed=await client.post('/customer/v1/auth/resend-verification',json={'email':value['email']})
+    assert failed.status_code==503 and failed.json()['code']=='development_delivery_unavailable'
+    # A failed write must preserve the prior token and leave no newly committed row.
+    assert (await client.post('/customer/v1/auth/verify-email',json={'token':token})).status_code==200
+    monkeypatch.setattr(Path,'open',original)
+    headers=await logged(c,value)
+    await client.post('/customer/v1/auth/request-recovery',json={'email':value['email']})
+    recovery=action_token(c,value['email'],'recover')
+    monkeypatch.setattr(Path,'open',fail_messages)
+    replacement=secrets.token_urlsafe(30)
+    failed=await client.post('/customer/v1/auth/reset-password',json={'token':recovery,'password':replacement,'password_confirm':replacement})
+    assert failed.status_code==503
+    assert (await client.get('/customer/v1/me',headers=headers)).status_code==200
+    await logged(c,value)  # old password/session remain unchanged after failed notification commit
+    def fail_probe(path,*args,**kwargs):
+        if path.parent.resolve()==c['outbox'].resolve() and path.name.startswith('.probe-'):
+            raise OSError('Synthetic unavailable outbox')
+        return original(path,*args,**kwargs)
+    monkeypatch.setattr(Path,'open',fail_probe)
+    known=await client.post('/customer/v1/auth/request-recovery',json={'email':value['email']})
+    unknown=await client.post('/customer/v1/auth/request-recovery',json={'email':uuid4().hex+'@example.com'})
+    assert known.status_code==unknown.status_code==503 and known.json()['code']==unknown.json()['code']
+
+
+async def test_public_corrupt_source_is_unavailable_not_empty(customers):
+    record=await draft(customers)
+    await review(customers,record)
+    async with AsyncSession(customers['admin']) as tx,tx.begin():
+        await tx.execute(update(Project).where(Project.environment_id==customers['environment']).values(
+            public_payload={'private_unapproved_data':'Must never be serialized'}))
+    response=await customers['client'].get('/public/v1/projects')
+    assert response.status_code==503 and response.json()['code']=='invalid_public_source'
+    assert 'private_unapproved_data' not in response.text and 'data' not in response.json()

@@ -23,6 +23,7 @@ from .service import (
     consume_context,
     customer_guard,
     customer_scope,
+    delivery_ready,
     email_hash,
     generic_floor,
     hash_password,
@@ -125,6 +126,7 @@ async def register(value: Register, request: Request):
     start = asyncio.get_running_loop().time()
     validate_password(value.password, value.password_confirm)
     await admit("register", request, value.email)
+    delivery_ready()
     encoded = await asyncio.to_thread(hash_password, value.password)
     digest = email_hash(value.email)
     async with customer_scope(email=digest) as tx:
@@ -148,6 +150,7 @@ async def register(value: Register, request: Request):
 async def send_link(value, request, purpose):
     start = asyncio.get_running_loop().time()
     await admit("resend" if purpose == "verify" else "recover", request, value.email)
+    delivery_ready()
     async with customer_scope(email=email_hash(value.email)) as tx:
         account = await tx.scalar(select(Account).where(Account.email_hash == email_hash(value.email)))
         if account:
@@ -216,6 +219,7 @@ async def login(value: Login, request: Request):
 async def reset(value: Reset, request: Request):
     validate_password(value.password, value.password_confirm)
     await admit("reset", request)
+    delivery_ready()
     encoded = await asyncio.to_thread(hash_password, value.password)
     async with customer_scope(token=token_hash(value.token)) as tx:
         user, account, _ = await consume_context(tx, value.token, "recover")

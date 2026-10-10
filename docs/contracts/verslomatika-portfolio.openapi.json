@@ -1,0 +1,883 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Verslomatika local core portfolio bridge",
+    "version": "0.2.0",
+    "description": "Local-only I1a/I1b implementation contract, portfolio.v1. Runtime acceptance is recorded separately in VERSLOMATIKA_LOCAL_PORTFOLIO.md. Core opaque persisted revocable session replaces proposed portal actor assertion for this local slice. No hosted/signup mode."
+  },
+  "x-status": "local-implementation-in-progress",
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8846",
+      "description": "Dedicated local pilot only; disabled by default, rejects non-loopback clients/hosts, Origin and forwarded headers. Never configure this mode on hosted Vercel."
+    }
+  ],
+  "security": [
+    {
+      "CoreSession": []
+    }
+  ],
+  "paths": {
+    "/operator/v2/me": {
+      "get": {
+        "operationId": "getCurrentActor",
+        "description": "Returns mapped core user and allowed organization/portfolio IDs; no OAuth tokens.",
+        "responses": {
+          "200": {
+            "description": "Authenticated, current-grant projection.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "const": "private, no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "409": {
+            "$ref": "#/components/responses/Error409"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
+    },
+    "/operator/v2/capabilities": {
+      "get": {
+        "operationId": "getPortfolioCapabilities",
+        "description": "Advertises only capabilities actually implemented and granted to this actor.",
+        "responses": {
+          "200": {
+            "description": "Authenticated, current-grant projection.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "const": "private, no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CapabilitiesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "409": {
+            "$ref": "#/components/responses/Error409"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
+    },
+    "/operator/v2/portfolios/{portfolio_id}/businesses": {
+      "get": {
+        "operationId": "listPortfolioBusinesses",
+        "description": "Recheck current membership and business grants. Opaque cursors bind actor, portfolio, environment and snapshot; sort by stable business_id. Do not import all domains as live businesses.",
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Identifier"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 25
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authenticated, current-grant projection.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "const": "private, no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessPageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "409": {
+            "$ref": "#/components/responses/Error409"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
+    },
+    "/operator/v2/businesses/{business_id}": {
+      "get": {
+        "operationId": "getPortfolioBusiness",
+        "description": "The same authorized registry projection; no contacts, transcripts, finances, unpublished content or raw worker output.",
+        "parameters": [
+          {
+            "name": "business_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Identifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authenticated, current-grant projection.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "const": "private, no-store"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "409": {
+            "$ref": "#/components/responses/Error409"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
+    },
+    "/operator/v2/auth/login": {
+      "post": {
+        "operationId": "createLocalSession",
+        "security": [],
+        "description": "Local BFF server-only bounded credential request. Ten username attempts and30 IP attempts per15min durable bucket; success included. No default public password/signup.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocalLogin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Core-issued session; private,no-store.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocalSession"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "429": {
+            "description": "Durable login rate limit; Retry-After900.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
+    },
+    "/operator/v2/auth/logout": {
+      "post": {
+        "operationId": "revokeLocalSession",
+        "responses": {
+          "204": {
+            "description": "DB session revocation committed."
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "opaque",
+        "description": "64-character cryptographically random core-issued token; only SHA256 in DB. TTL8h max, explicit server revocation/expiry/user-disabled/current memberships/grants checked each request. Legacy operator, edge, worker and browser actor claims are not valid here. BFF stores opaque token in HttpOnly/SameSite=Strict local cookie; credentials/session JSON never sent to browser."
+      }
+    },
+    "schemas": {
+      "Identifier": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "Site": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "site_id",
+          "canonical_host"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,59}$"
+          },
+          "canonical_host": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 253
+          }
+        }
+      },
+      "Portfolio": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "organization_id",
+          "portfolio_id",
+          "display_name"
+        ],
+        "properties": {
+          "organization_id": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "portfolio_id": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      },
+      "Business": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "business_id",
+          "display_name",
+          "sites",
+          "stage",
+          "connection_status",
+          "runtime_status",
+          "last_verified_activity_at"
+        ],
+        "properties": {
+          "business_id": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "sites": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/Site"
+            }
+          },
+          "stage": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "phase_one",
+              "expanded",
+              null
+            ],
+            "description": "Null means not verified; never infer the business stage from a source commit."
+          },
+          "connection_status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "registered",
+              "connected",
+              "stale",
+              "conflict",
+              "unavailable"
+            ]
+          },
+          "runtime_status": {
+            "type": "string",
+            "enum": [
+              "registered",
+              "not_connected",
+              "unknown"
+            ]
+          },
+          "last_verified_activity_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time",
+            "description": "Only a verified activity receipt; source/deployment timestamps do not substitute for it."
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "invalid_request",
+              "invalid_cursor",
+              "unauthenticated",
+              "not_found",
+              "snapshot_expired",
+              "source_unavailable",
+              "control_unavailable",
+              "invalid_credentials",
+              "login_rate_limited"
+            ]
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Sanitized stable code only; no raw DB, credential or stack message."
+          }
+        }
+      },
+      "ActorProjection": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "user_id",
+          "portfolios"
+        ],
+        "properties": {
+          "user_id": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "portfolios": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/Portfolio"
+            }
+          }
+        }
+      },
+      "Capabilities": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "capabilities"
+        ],
+        "properties": {
+          "capabilities": {
+            "type": "array",
+            "maxItems": 20,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "portfolio.read"
+              ]
+            }
+          }
+        }
+      },
+      "BusinessPage": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "portfolio_id",
+          "items",
+          "next_cursor",
+          "snapshot_id"
+        ],
+        "properties": {
+          "portfolio_id": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "items": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/Business"
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2048
+          },
+          "snapshot_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        }
+      },
+      "MeResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "properties": {
+          "contract_version": {
+            "const": "portfolio.v1"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test",
+              "staging",
+              "production"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "data": {
+            "$ref": "#/components/schemas/ActorProjection"
+          }
+        }
+      },
+      "CapabilitiesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "properties": {
+          "contract_version": {
+            "const": "portfolio.v1"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test",
+              "staging",
+              "production"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "data": {
+            "$ref": "#/components/schemas/Capabilities"
+          }
+        }
+      },
+      "BusinessPageResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "properties": {
+          "contract_version": {
+            "const": "portfolio.v1"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test",
+              "staging",
+              "production"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "data": {
+            "$ref": "#/components/schemas/BusinessPage"
+          }
+        }
+      },
+      "BusinessResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "properties": {
+          "contract_version": {
+            "const": "portfolio.v1"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test",
+              "staging",
+              "production"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "data": {
+            "$ref": "#/components/schemas/Business"
+          }
+        }
+      },
+      "LocalLogin": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "username": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$"
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "writeOnly": true
+          }
+        }
+      },
+      "LocalSession": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "access_token",
+          "token_type",
+          "expires_at"
+        ],
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{64}$",
+            "description": "BFF server-only; do not render or log."
+          },
+          "token_type": {
+            "const": "Bearer"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "responses": {
+      "Error400": {
+        "description": "Invalid input/cursor.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "private, no-store"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Error401": {
+        "description": "Invalid, expired, revoked or replayed actor assertion.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "private, no-store"
+            }
+          },
+          "WWW-Authenticate": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "Bearer"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Error403": {
+        "description": "No required read capability.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "private, no-store"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Error404": {
+        "description": "Unknown or inaccessible object; no existence disclosure.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "private, no-store"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Error409": {
+        "description": "Pagination snapshot expired; restart authorized listing.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "private, no-store"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Error503": {
+        "description": "Contract/source unavailable; never substitute synthetic success.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "private, no-store"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Core has no individual identity/current membership-bound portfolio API; existing global operator bearer cannot safely back the local Verslomatika dashboard.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/security.py at d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+    "docs/VERSLOMATIKA_CORE_INTEGRATION_EVIDENCE.md",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/64#issuecomment-6091345258"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/control/routes.py",
+    "agent-business-core/runtime/migrations/versions/0010_control.py",
+    "agent-business-core/runtime/tests/test_control_portfolio.py",
+    "docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/64",
+  "rollback": "Disable PINET_CONTROL_ENABLED; scoped source revert. Stop only the dedicated local pilot processes. Preserve its DB; downgrade0010 only on a separately backed-up disposable database, never shared runtime.",
+  "id": "upgrade-a7324869-02d4-4244-8644-7e4a6ec1044b",
+  "branch": "codex/verslomatika-core-integration-plan-20261010",
+  "baseSha": "21a59d594bd9e6934487b1d557c78c12e0e67119",
+  "createdAt": "2026-10-10T00:04:32.692Z"
+}

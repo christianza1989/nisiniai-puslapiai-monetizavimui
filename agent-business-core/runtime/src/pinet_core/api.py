@@ -31,6 +31,7 @@ from .contracts import (
     UsageReceipt,
     WorkerEvent,
 )
+from .control.routes import router as control_router
 from .db import db
 from .facebook.routes import router as facebook_router
 from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, utcnow
@@ -55,6 +56,7 @@ async def lifespan(app):
 
 app = FastAPI(title="Pinet business core", lifespan=lifespan)
 app.include_router(facebook_router)
+app.include_router(control_router)
 
 
 @app.post("/operator/sites/{site_id}/order-tests", dependencies=[Depends(operator_auth)])

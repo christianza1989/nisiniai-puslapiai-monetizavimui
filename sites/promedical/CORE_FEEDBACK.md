@@ -32,3 +32,5 @@ Actual native draft prompt for the first empty guide is3,561,966bytes /3,518,328
 
 
 Free CPU repair upgrade-cd4fc042-6c6f-40ea-9d68-b263ceb3f38a: source 5c5d704774fa1d1fbfbcba57ac860e347bd64d1d. Request-local RSC reuse, same schema public list and equivalent parent Set locally verified; deployed full scan still NOT_COMPLETE. Preserve previous failures. Static-delivery architecture and notification relay need separate scope; no Paid or new sending provider activated.
+
+2026-10-10 typography: domain-specific CSS inconsistency (mobile10px code/12px description/11px action and four narrow tablet product columns) corrected in public 523dcc607cf417f2c47ac2309380d72844bfddd5. Established Figtree/palette/copy retained; same-author sequential visual and mechanical review. Detector returned[] yet actual768px screen revealed the narrow-column reading issue, fixed in one repair batch. Shared engine rules did not need an invented upgrade/journal. Final checks in typography-refinement-v1.json;200%browser zoom and old operational audit gates remain separate.

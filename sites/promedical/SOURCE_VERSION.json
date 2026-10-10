@@ -1,15 +1,15 @@
 {
   "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
-  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
-  "coreCommit": "9bb808e7881d4001e33d878e935120ce16d624db",
+  "sourceVersion": "523dcc607cf417f2c47ac2309380d72844bfddd5",
+  "coreCommit": "c4db43228122d6a1aaf2373e698964b846236996",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
-      "sha256": "2abce4942057e2040669be35653cff226ea1b6cba55213e8e717434069abf491"
+      "sha256": "e1172ce19ff571b825b65ef03d27108aea351e6bb00a62e85eced48c29d3367b"
     },
     {
       "file": "components/niche/promedical-site.module.css",
-      "sha256": "50594e42d077928689dc775346f1931a82e98c16ac14bcd8298562abdcf34ede"
+      "sha256": "58558bcad88366018a125ea0d68505af4bb92a914e921d431d5c787ef11ffa62"
     },
     {
       "file": "components/niche/promedical-inquiry.tsx",
@@ -64,7 +64,9 @@
       "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
     }
   ],
-  "checkedAt": "2026-10-10T07:43:35.554Z",
-  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
-  "notes": "Current committed public source and deployed normal production bytes. Core commit is the source baseline before this evidence-only update, not an impossible self-referential future commit. Previous acceptance files are exact archived copies under history/acceptance-before-paid-20261010. No QA clock in production."
+  "checkedAt": "2026-10-10T13:50:59.489Z",
+  "productionVersion": "780b04d1-8ac5-4b41-ab73-e5a38f858dc2",
+  "notes": "Current committed public source and deployed normal production bytes. Core commit is the source baseline before this evidence-only update, not an impossible self-referential future commit. Previous acceptance files are exact archived copies under history/acceptance-before-paid-20261010. No QA clock in production.",
+  "productionDeployment": "e9504d3c-f252-4812-9a60-e9ee0e41f161",
+  "typographyEvidence": "verification-20261010/typography-refinement-v1.json"
 }

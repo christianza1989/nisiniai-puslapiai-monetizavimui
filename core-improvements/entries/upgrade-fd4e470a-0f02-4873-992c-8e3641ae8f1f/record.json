@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "New customer creations have no truthful revision-bound agent preparation projection; same-host registry/profile observations must not imply active or calibrated agents.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/creation/models.py",
+    "agent-business-core/runtime/src/pinet_core/service.py",
+    "agent-business-core/runtime/src/pinet_core/onboarding.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/agent_preparation",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/scripts/customer_agent_preparation_contract.py",
+    "agent-business-core/runtime/offline_tests/test_agent_preparation.py",
+    "agent-business-core/runtime/tests/test_agent_preparation.py",
+    "docs/contracts/verslomatika-customer-agent-preparation.openapi.json",
+    "docs/VERSLOMATIKA_AGENT_PREPARATION.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only additive read-only preparation source/router mounts and canonical contract; no persistent agent, channel or migration state is changed.",
+  "id": "upgrade-fd4e470a-0f02-4873-992c-8e3641ae8f1f",
+  "branch": "codex/verslomatika-agent-preparation-20261010",
+  "baseSha": "90fbd2d100e14ada7209d7efc79727bd17fbf1ac",
+  "createdAt": "2026-10-10T15:26:53.434Z"
+}

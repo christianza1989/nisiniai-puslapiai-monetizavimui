@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "New readonly route and truthful typed projection implemented in own source only. Initial17 offline cases PASS2.72s; scoped Ruff initially failed two multiline-import formatting checks, corrected without semantic gate changes. Current shared Creation schema has no durable creation/revision Business binding; same-host own grant stays candidate. V2 indexing exists but actual Start/service admission consumes V1 and register rejects V2 downgrade. No provider, parent runtime/config or channel calls. QA uses a NEW isolated database and only this agent's prior GUIDE DB credentials, never parent .env; all synthetic secrets and data ignored.",
+  "eventId": "c4850e18-c23c-4f6b-be0a-6526459275bb",
+  "sequence": 2,
+  "at": "2026-10-10T15:33:23.245Z"
+}

@@ -1376,9 +1376,10 @@
         "verification-20261010/production-paid-native-version-v1.json: restricted sender/destination and actualD1/native bindings",
         "verification-20261010/production-native-second-inbox-v2.json: second new independent test still Junk; first manual Not spam is not automaticInbox evidence",
         "verification-20261010/production-native-mail-v2.json: owner-approved exact3ANDfilter saved/enabled/readback; two new independent native form/D1/notified/receivingJunk/authpass checks retain automaticInboxFAIL",
-        "verification-20261010/production-hostinger-filter-support-v1.json: approved technical case sent; Hostinger confirms both spam classifications; support outcome recorded without changing broader settings"
+        "verification-20261010/production-hostinger-filter-support-v1.json: approved technical case sent; Hostinger confirms both spam classifications; support outcome recorded without changing broader settings",
+        "verification-20261010/production-hostinger-filter-support-v2.json: human-reviewed recommendation conflicts with the actual incoming-list UI warning; clarification accepted, no setting change or positive Inbox claim"
       ],
-      "notes": "Native transport, production D1 and authenticated receiving-mailbox delivery work. Exact approved filter is enabled, but two new own messages still reach Junk; no manual move counted as automatic receipt. Owner-authorized Hostinger technical request has been sent. Hostinger support confirms spam/Junk outcomes at both test times but cannot establish filter match or execution precedence from its available diagnostics. The visible human-review action accepted the technical case; Ian is reviewing it. No formal ticket ID or resolution is shown yet. Recovery/reconciliation/rate/backup evidence remains separately unverified. Earlier filter-approval-pending/support-not-sent notes are historical.",
+      "notes": "Native D1/transport/authenticated receipt work, but both new post-filter messages still reached Junk. Ian-reviewed Hostinger reply recommends Not spam and the exact-sender incoming allow list, without a filter-execution finding or confirmed fix. Actual mailbox UI says the allow list accepts only listed senders. No entry added. Public technical clarification sent in the existing owner-authorized case; Airida is reviewing it. Automatic Inbox remains unproved. Recovery/reconciliation/rate/backup evidence remains separately unverified. Earlier pending/support-not-sent states are historical.",
       "historicalEvidence": [
         "VERIFICATION.md: no production deployment, actual domain/mail/control proof or qualified demand measurement",
         "PRIVACY-LAUNCH-GAPS.md: exact remaining operation/launch evidence"
@@ -1703,5 +1704,5 @@
       ]
     }
   ],
-  "launchUpdatedAt": "2026-10-10T08:26:40.000Z"
+  "launchUpdatedAt": "2026-10-10T08:37:07.126Z"
 }

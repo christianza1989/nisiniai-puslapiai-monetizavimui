@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-10T08:26:40.000Z",
+  "observedAt": "2026-10-10T08:37:07.126Z",
   "state": "APPROVED_FILTER_ENABLED_AUTOMATIC_INBOX_FAILED_TWO_NEW_TESTS",
   "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
   "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
@@ -135,14 +135,13 @@
     "Cloudflare own Message-ID fetch returned raw MIME text, not a delivery-status object; no Delivered status claimed from that API.",
     "First read-only helper produced a saved negative receipt and process exit1; actual folder evidence is Junk, not an unavailable mailbox or positiveInbox."
   ],
-  "supportReceipt": "verification-20261010/production-hostinger-filter-support-v1.json",
-  "supportOutcome": "Hostinger support confirms spam/Junk outcomes at both test times but cannot establish filter match or execution precedence from its available diagnostics. The visible human-review action accepted the technical case; Ian is reviewing it. No formal ticket ID or resolution is shown yet.",
+  "supportReceipt": "verification-20261010/production-hostinger-filter-support-v2.json",
+  "supportOutcome": "Ian-reviewed Hostinger reply recommends Not spam and the exact-sender incoming allow list, without a filter-execution finding or confirmed fix. Actual mailbox UI says the allow list accepts only listed senders. No entry added. Public technical clarification sent in the existing owner-authorized case; Airida is reviewing it. Automatic Inbox remains unproved.",
   "supportHumanTicket": {
     "confirmedTicketId": null,
-    "reviewAccepted": true,
-    "reviewer": "Ian",
-    "status": "HUMAN_REVIEW_IN_PROGRESS",
-    "technicalNoteSubmitted": true,
-    "visibleSignal": "Ian peržiūri tavo užklausą / Tavo užklausa peržiūrima"
+    "reviewedBy": "Ian",
+    "clarificationReviewAccepted": true,
+    "reviewer": "Airida",
+    "status": "CLARIFICATION_REVIEW_IN_PROGRESS"
   }
 }

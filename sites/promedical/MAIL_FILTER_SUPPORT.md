@@ -32,3 +32,9 @@ Hostinger support confirms spam/Junk outcomes at both test times but cannot esta
 Human ticket: {"confirmedTicketId":null,"reviewAccepted":true,"reviewer":"Ian","status":"HUMAN_REVIEW_IN_PROGRESS","technicalNoteSubmitted":true,"visibleSignal":"Ian peržiūri tavo užklausą / Tavo užklausa peržiūrima"}. Await the human review in the preserved signed-in support tab. Apply only a concretely supported change within the authorized scope; broader security changes need a specific approval. Retest a new own marked form only after a relevant change or new diagnostic reason.
 
 Sanitized receipt: [verification-20261010/production-hostinger-filter-support-v1.json](verification-20261010/production-hostinger-filter-support-v1.json). The exact sent message above is retained; no credentials or unrelated inbox content included.
+
+## Peržiūrėtas atsakymas ir patikslinimas — 2026-10-10T08:37:07.126Z
+
+Ian-reviewed Hostinger reply recommends Not spam and the exact-sender incoming allow list, without a filter-execution finding or confirmed fix. Actual mailbox UI says the allow list accepts only listed senders. No entry added. Public technical clarification sent in the existing owner-authorized case; Airida is reviewing it. Automatic Inbox remains unproved.
+
+Hostinger UI warning: “Only accept incoming email from these addresses or domains. Leave empty to accept mail from anyone.” Full original headers requested by the vendor were not sent. Current receipt: [verification-20261010/production-hostinger-filter-support-v2.json](verification-20261010/production-hostinger-filter-support-v2.json). Prior pending-Ian entry is historical.

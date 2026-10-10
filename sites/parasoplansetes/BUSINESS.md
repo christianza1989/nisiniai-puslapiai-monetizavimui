@@ -1,4 +1,7 @@
 # Verslo sprendimas
+
+Svetainės ir naujų straipsnių lietuvišką kalbą deriname pagal [LANGUAGE_STYLE.md](LANGUAGE_STYLE.md). 2026-10-10 visų 46 puslapių redakcija ir faktinės publikavimo patikros: [LANGUAGE_REVIEW_20261010.md](LANGUAGE_REVIEW_20261010.md).
+
 2026-10-08. parasoplansetes.lt / parasoplansetes / LT / lt. Core f743b1cbcb09418d733fbe3c72b6968d65a72259; public e578426610f067fd7a4db3574f754b8d06ef5426.
 Savininkas patvirtino tiekėją StepOver, esamo signaturepads.lt nuosavybę ir dviejų gamintojų atskyrimą. Ankstesnio stepover-lt tyrimo prielaida apie signaturepads.lt kaip konkurentą nebetaikoma. Oficialaus / išskirtinio atstovo statusas, sutartis, kainoraštis ir įgaliojimas naudoti gamintojo ženklą nepateikti.
 

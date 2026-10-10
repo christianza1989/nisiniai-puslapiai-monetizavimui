@@ -5,6 +5,8 @@ description: "Research or refresh a niche's complete topical plan: evidence-back
 
 # Niche content planner
 
+Before writing any returned title, description, brief or full draft, read and apply [mandatory language quality and self-editing](references/language-quality.md). Write naturally in the site's locale and perform a separate complete-text editing pass yourself; no second agent/session is required. Correct known language defects before returning output or recording approval evidence. This applies to every page in a batch and to source labels/anchors/alts, not only the opening paragraph.
+
 Use [niche-seo-geo-core](../niche-seo-geo-core/SKILL.md) and its [automation/evidence contract](../niche-seo-geo-core/references/studio-integration.md) for demand/intent research, current Treg observations and SEO/GEO refresh. This planner retains the JSON/editorial workflow. Reuse current evidence per site, refresh what can change the decision, and mark unsupported/unmeasured facts instead of inventing demand. The studio loads this module directly and supplies private `siteData.seoResearch`.
 
 For this network read [the shared project skill contract](../PROJECT_CONTRACT.md). The studio injects this contract into both CLI modes with the instruction SHA-256; specialist helpers contribute to this workflow without replacing its JSON/publication boundaries.

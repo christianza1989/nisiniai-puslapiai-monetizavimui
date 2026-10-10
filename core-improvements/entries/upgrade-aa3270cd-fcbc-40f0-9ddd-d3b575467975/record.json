@@ -1,0 +1,22 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Generic paslaugos token admits unrelated translation domains for autoelektriko niche recommendation",
+  "category": "code",
+  "evidence": [
+    "Source9600f9b actualrecommend Autoelektriko paslaugos/categorynull/limit5: autoelektrikaivilniuje,autoelektrikaslinas,vertimaikaune,vertimai-kedainiuose,vertimaiklaipedoje; translations match only paslaugos",
+    "OriginalFAIL receipt artifacts/domain-catalogue/autoelektriko-generic-before-fail.json preserved in original own catalogue worktree; no contacts/secrets"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/service.py",
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/taxonomy.py",
+    "agent-business-core/runtime/offline_tests/test_domain_catalogue.py",
+    "docs/VERSLOMATIKA_DOMAIN_CATALOGUE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/76",
+  "rollback": "Scoped revert of recommendation token/candidate patch; original inventory/ranks/snapshot/OpenAPI/HTTP routes preserved",
+  "id": "upgrade-aa3270cd-fcbc-40f0-9ddd-d3b575467975",
+  "branch": "codex/verslomatika-domain-relevance-20261010",
+  "baseSha": "9600f9bdb3b3c1b2ce409369dbfa2e44c5f9c8de",
+  "createdAt": "2026-10-10T10:40:36.732Z"
+}

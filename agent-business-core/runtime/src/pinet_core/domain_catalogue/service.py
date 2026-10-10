@@ -7,7 +7,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from .models import COLUMNS, DomainRecord, Metadata, normalized_host
-from .taxonomy import CATEGORIES, folded, niche_categories, tokens
+from .taxonomy import CATEGORIES, folded, niche_categories, recommendation_terms, tokens
 
 SORTS = ("source", "queue", "screening", "research_priority", "potential")
 VERSION = "domains.v1"
@@ -178,11 +178,11 @@ class DomainCatalogue:
             raise CatalogueError("niche_required")
         category = self._category(category)
         self._bounds(limit, 1, 20)
-        inferred = niche_categories(niche)
-        categories = {category} if category else set(inferred)
-        terms = [word for word in tokens(niche) if len(word) >= 3 and word not in {
-            "noriu", "versla", "verslas", "sukurti", "domenas", "domena", "nisa", "the", "for", "and",
-        }]
+        terms = recommendation_terms(niche)
+        # "Paslaugos" must not infer business merely through the category's label.
+        inferred = niche_categories(" ".join(terms))
+        # The supplied category narrows candidates; it cannot make an unrelated niche relevant.
+        categories = set(inferred) & {category} if category else set(inferred)
         candidates = []
         exact = folded(niche)
         for row in self._records:

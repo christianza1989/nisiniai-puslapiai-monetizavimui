@@ -92,6 +92,28 @@ def tokens(value: str) -> list[str]:
     return list(dict.fromkeys(re.findall(r"[a-z0-9]+", folded(value))))
 
 
+# Generic request/business wording is not evidence of a customer's specific niche.
+# Keep this separate from inventory classification: historical data must not change.
+GENERIC_RECOMMENDATION_TERMS = frozenset("""
+noriu reikia ieskau pasirinkti pradeti sukurti kurti tureti mano musu jusu tavo
+versla verslas verslo verslui verslu veikla veiklos veiklai
+domenas domena domeno domenui domenai domenu nisa nisos nisai
+imone imones imonei imoniu preke prekes prekiu prekiems produktas produktai produktu
+geras gera geri geros geriausias geriausia geriausi geriausios
+profesionalus profesionali profesionalios profesionaliu
+naujas nauja nauji naujos naujo nauju pasiulymas pasiulymai pasiulymu
+the for and want need create business company companies service services product products
+offer offers professional best new online internet internetu internetine internetines
+internetinis internetiniu internetiniai
+""".split())
+
+
+def recommendation_terms(value: str) -> list[str]:
+    return [word for word in tokens(value) if len(word) >= 3
+            and word not in GENERIC_RECOMMENDATION_TERMS
+            and not word.startswith("paslaug")]
+
+
 def infer_category(domain: str) -> tuple[str, list[str]]:
     label = folded(domain.rsplit(".", 1)[0])
     matches = {key: [word for word in words.split() if len(word) >= 6 and word in label]

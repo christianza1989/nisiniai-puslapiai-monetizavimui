@@ -118,6 +118,24 @@ def test_no_accepted_revision_is_a_complete_truthful_blocked_dto():
     assert gates["email_reply"].scope == "not_observed" and gates["email_reply"].observed_at is None
 
 
+@pytest.mark.parametrize("state,status,phrase", [
+    ("not_imported", "FAIL", "neimportuotas"),
+    ("intake_failed", "FAIL", "nepavyko"),
+    ("private_draft_imported", "PASS", "istorinis"),
+])
+def test_intake_summary_cannot_claim_import_when_source_is_missing_or_failed(state, status, phrase):
+    value = view()
+    observed = state != "not_imported"
+    intake = IntakeObservation(state=state, import_job_id=uuid4() if observed else None,
+        observed_at=value.observed_at if observed else None, page_count=3 if state == "private_draft_imported" else 0,
+        approved_page_count=0, failure_code="studio_unavailable" if state == "intake_failed" else None)
+    checks = checks_for(creation=SimpleNamespace(status="failed", active_job_id=None), revision=None,
+        team_review=value.team_review, intake=intake, mapping=value.mapping, runtime=value.runtime, now=value.observed_at)
+    check = next(c for c in checks if c.key == "private_intake")
+    assert check.status == status and phrase in check.summary
+    assert ("Matomas" in check.summary) == (state == "private_draft_imported")
+
+
 @pytest.mark.parametrize("damage", ["can_activate", "calibration", "blocker_keys", "duplicate_check", "candidate_hash"])
 def test_wire_rejects_false_acceptance_missing_gates_and_inconsistent_revision(damage):
     value = view().model_dump(mode="json")

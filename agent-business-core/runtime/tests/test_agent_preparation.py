@@ -104,6 +104,24 @@ async def test_no_revision_read_is_blocked_and_does_not_mutate_jobs_or_session(p
     assert await snapshot(c, identity, me["user_id"]) == before
 
 
+async def test_exhausted_attempt_budget_keeps_readonly_preparation_available(preparation, monkeypatch):
+    c = preparation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    identity = row["creation_id"]
+    monkeypatch.setattr(settings(), "creation_daily_limit", 1)
+    assert await worker.execute_once(result)
+    before = await snapshot(c, identity, me["user_id"])
+    denied = await c["client"].post(f"/customer/v2/creations/{identity}/revisions", headers=auth,
+        json={"base_revision": 1, "message": "Patikrink pirmą išsaugotą versiją.", "idempotency_key": str(uuid4())})
+    assert denied.status_code == 429 and denied.json()["code"] == "creation_daily_limit"
+    response = await read(c, auth, identity, accepted_revision=1)
+    assert response.status_code == 200, response.text
+    assert response.json()["data"]["state"] == "blocked"
+    assert response.json()["data"]["team_review"]["state"] == "unreviewed"
+    assert await snapshot(c, identity, me["user_id"]) == before
+
+
 async def test_legacy_intake_revision_and_source_identity_are_not_team_acceptance(preparation, monkeypatch):
     c = preparation
     _, auth, me = await verified(c)

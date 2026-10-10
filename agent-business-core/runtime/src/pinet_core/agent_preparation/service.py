@@ -106,7 +106,8 @@ def checks_for(*, creation, revision, team_review, intake, mapping, runtime, now
         same = revision.source_revision == settings().control_source_revision
         add("source_pin", "PASS" if same else "FAIL", "current_database",
             "accepted_source_current" if same else "accepted_source_outdated",
-            "Priimtos versijos kodo SHA palygintas su šios API kodo versija.")
+            "Juodraščio kodo versija sutampa su dabartine platformos versija." if same else
+            "Juodraščio ir dabartinės platformos kodo versijos nesutampa; reikia naujos patikros.")
     else:
         add("source_pin", "UNVERIFIED", "not_observed", "accepted_source_missing",
             "Kodo ir rezultato susiejimą bus galima vertinti priėmus versiją.")
@@ -114,7 +115,9 @@ def checks_for(*, creation, revision, team_review, intake, mapping, runtime, now
     add("private_intake", "PASS" if imported else "FAIL", "intake_snapshot" if intake.observed_at
         else "current_database", "private_intake_observed" if imported else "private_intake_failed"
         if intake.state == "intake_failed" else "private_intake_missing",
-        "Matomas istorinis privataus turinio importas; jis nepatvirtina dabartinio publikavimo.",
+        "Matomas istorinis privataus turinio importas; jis nepatvirtina dabartinio publikavimo." if imported else
+        "Privataus juodraščio importas nepavyko; išsaugota konkreti klaida." if intake.state == "intake_failed" else
+        "Šio verslo juodraštis dar neimportuotas į turinio studiją.",
         intake.observed_at or now)
     candidate = mapping.candidate is not None
     add("business_registration", "PASS" if candidate else "FAIL", "current_database",
@@ -142,7 +145,7 @@ def checks_for(*, creation, revision, team_review, intake, mapping, runtime, now
             add(key, "UNVERIFIED", "not_observed", code,
                 "Šį vartą bus galima vertinti pagal konkretų autorizuotą verslo įrašą.")
     add("v2_session", "FAIL", "source_code", "v2_session_admission_missing",
-        "Kliento sukūrimo versijos prijungimas prie native V2 agento sesijos neįgyvendintas.")
+        "Šio verslo juodraštis dar neprijungtas prie kliento aptarnavimo agento.")
     voice_site = bool(candidate and mapping.candidate.site_id == "traktoriupadangos")
     add("site_voice", "FAIL" if not voice_site or not runtime.voice_configured else "UNVERIFIED",
         "source_code" if not voice_site else "runtime_configuration",

@@ -38,3 +38,9 @@ Sanitized receipt: [verification-20261010/production-hostinger-filter-support-v1
 Ian-reviewed Hostinger reply recommends Not spam and the exact-sender incoming allow list, without a filter-execution finding or confirmed fix. Actual mailbox UI says the allow list accepts only listed senders. No entry added. Public technical clarification sent in the existing owner-authorized case; Airida is reviewing it. Automatic Inbox remains unproved.
 
 Hostinger UI warning: “Only accept incoming email from these addresses or domains. Leave empty to accept mail from anyone.” Full original headers requested by the vendor were not sent. Current receipt: [verification-20261010/production-hostinger-filter-support-v2.json](verification-20261010/production-hostinger-filter-support-v2.json). Prior pending-Ian entry is historical.
+
+## Pilnos bandomojo laiško antraštės — 2026-10-10T08:48:47.476Z
+
+The complete original headers of one own marked test were sent to Hostinger with specific owner approval. Hostinger Agent confirms all three filter values and SPF/DKIM/DMARC pass in the delivered copy, alongside X-Spam: Yes and Junk receipt, but cannot establish rule matching, evaluation order or root cause. Further technical review accepted; Airida is reviewing the existing case. No setting change or confirmed fix; automatic Inbox remains unproved.
+
+Explicit owner consent received for the complete 4,950-byte original headers of the qcoq self-test. Submitted in the same Hostinger conversation at 11:46 Vilnius; UI converted the text into an attachment, and the response confirms it read the supplied headers. Body, credentials, unrelated mail and customer data were excluded. Raw headers/screenshots remain private; no mailbox/filter/allow-list/DNS settings changed. Current receipt: [verification-20261010/production-hostinger-filter-support-v3.json](verification-20261010/production-hostinger-filter-support-v3.json). Earlier not-sent and pending-review notes are historical.

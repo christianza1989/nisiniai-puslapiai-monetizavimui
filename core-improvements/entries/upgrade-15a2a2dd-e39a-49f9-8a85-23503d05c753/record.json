@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Pure language correction rewrote the whole business and introduced new drift; coordinator generated foreign prose in a next action. Bind correction to exact string targets and supplied action choices.",
+  "category": "code",
+  "evidence": [
+    "Actual source8a9 six-call customer trial: one required language finding led to a full second candidate with new language failure; coordinator next action independently rejected. Private immutable trial evidence retained, no accepted revision or imported content."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review.py",
+    "agent-business-core/runtime/offline_tests/test_content_work_review.py",
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "agent-business-core/runtime/docs/CUSTOMER_CREATION_TEAM.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of integration commit, preserve original raw outputs and immutable attempt history. No runtime history rewrite.",
+  "id": "upgrade-15a2a2dd-e39a-49f9-8a85-23503d05c753",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "7bdcc0393a3e5d1a6b917680ec6aede53a9b3c5c",
+  "createdAt": "2026-10-10T14:00:56.024Z"
+}

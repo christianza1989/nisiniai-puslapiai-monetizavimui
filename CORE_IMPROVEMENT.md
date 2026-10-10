@@ -12,6 +12,8 @@ Perdavimo ciklas: radinys → owned scope → canonical code/rule/skill pataisa 
 
 **2026-10-08 papildymas:** savininkas aiškiai autorizavo ir pagrįstą dead code / nereikalingų failų valymą bei skill konfliktų pataisas. Kiekvienas įgyvendinamas shared upgrade turi atskirą [bendro žurnalo](core-improvements/README.md) įrašą. Žurnalas papildo per-nišos CORE_FEEDBACK: nišos įrašas nurodo upgrade ID, nekopijuoja visos istorijos. Viena nuolat visų agentų redaguojama indekso lentelė nenaudojama; atskirų įrašų suvestinė gaunama CLI. Skirtingų PC darbo koordinacija vyksta per GitHub scope ir PR, ne vietinį lock.
 
+**Peer review pamoka — 2026-10-10:** bendro repo root, content-studio ir agent-business-core/runtime dependency manifest / lock pakeitimas taip pat keičia core vykdymo įvestis ir turi exact scope / actual relevant checks; vien source failų patikros nepakanka. Upgrade `issue` naudoti canonical šių dviejų repo GitHub issue/pull URL be trailing slash, query ar fragment. Checker tokį netikslų URL atmeta, o valid public įrašas niekada nepadengia private source. Senų record ar pirmų FAIL neperrašyti; papildomą trūkstamą scope įrašyti nauju teisingu upgrade.
+
 ## Autonominis upgrade ir karantinas
 
 Agentas gali pats diagnozuoti ir pataisyti konkrečią spragą, instrukcijų konfliktą, nereikalingą kodą ar dubliavimą, atnaujinti savo pakeistų skills katalogo SHA ir perduoti patikrintą scoped PR. Prieš pataisą fiksuoti radinį, evidence, bendrą ar nišinę priežastį, exact source SHA, GitHub issue/failų ribas ir atkūrimą. Nesukurti fiktyvios patirties ar privalomo „patobulinimo“ kiekvienai svetainei.

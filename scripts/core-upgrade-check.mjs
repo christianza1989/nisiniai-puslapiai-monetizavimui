@@ -8,6 +8,9 @@ const uuid = '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}';
 const entryPattern = new RegExp(`^core-improvements/entries/(upgrade-${uuid})/(record\\.json|events/(${uuid})\\.json)$`);
 const shaPattern = /^[a-f0-9]{40}$/;
 const statuses = new Set(['finding', 'fixing', 'local-verified', 'pr', 'merged', 'adopted']);
+const dependencyManifests = new Set(['package.json', 'package-lock.json', 'npm-shrinkwrap.json',
+  'pnpm-lock.yaml', 'yarn.lock', 'bun.lock', 'bun.lockb', 'pyproject.toml', 'uv.lock',
+  'poetry.lock', 'Pipfile', 'Pipfile.lock', 'pdm.lock', 'setup.py', 'setup.cfg']);
 
 function git(root, args, allowMissing = false) {
   const result = spawnSync('git', args, { cwd: root, encoding: 'utf8', windowsHide: true,
@@ -23,7 +26,10 @@ export function requiresUpgrade(file) {
   if (file === 'WORKSTREAMS.md' || /(?:^|\/)SOURCE_[^/]+$/.test(file)
       || /(?:^|\/)(?:tests?|offline_tests|evals|fixtures)(?:\/|$)/.test(file)
       || /\.(?:test|spec)\.[^.]+$/.test(file)) return false;
-  return /(?:^|\/)AGENTS(?:\.override)?\.md$/.test(file)
+  const name = file.slice(file.lastIndexOf('/') + 1);
+  const sharedManifest = (!file.includes('/') || /^(?:content-studio|agent-business-core\/runtime)\//.test(file))
+    && (dependencyManifests.has(name) || /^requirements(?:[-.][a-z0-9_-]+)?\.txt$/.test(name));
+  return sharedManifest || /(?:^|\/)AGENTS(?:\.override)?\.md$/.test(file)
     || /^(?:CORE_[A-Z_]+|[A-Z_]+_CORE|CORE_IMPROVEMENT|START_HERE|PLATFORM_BUILD_CONTRACT)\.md$/.test(file)
     || file.startsWith('SKILLS/')
     || file.startsWith('scripts/')
@@ -74,6 +80,9 @@ export function checkUpgradeCoverage(root, base, head) {
       const record = jsonBlob(root, head, `${directory}/record.json`);
       const { id: storedId, branch, baseSha, createdAt, ...input } = record;
       validateRecord(input);
+      const issueMatch = record.issue.match(/^https:\/\/github\.com\/(christianza1989\/(?:nisiniai-puslapiai-monetizavimui|niche-public-core))\/(?:issues|pull)\/[1-9]\d*$/);
+      if (!issueMatch || issueMatch[0] !== record.issue) throw new Error('canonical_issue_url_required');
+      const repository = issueMatch[1];
       if (storedId !== id || !branch || branch === 'main' || !shaPattern.test(baseSha ?? '')
           || !Number.isFinite(Date.parse(createdAt))) throw new Error('invalid_record_identity');
       if (record.paths.some(p => /[*?\[\]]/.test(p))) throw new Error('scope_must_be_exact_path_or_directory');
@@ -97,8 +106,7 @@ export function checkUpgradeCoverage(root, base, head) {
         throw new Error('fresh_verification_event_required');
       if (['finding', 'fixing'].includes(events.at(-1).status)) throw new Error('upgrade_still_unverified');
       // A public renderer record with the same relative filenames cannot attest a private-core patch.
-      const repository = record.issue.match(/^https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:issues|pull)\/\d+$/)?.[1];
-      if (!repository || repository === 'christianza1989/nisiniai-puslapiai-monetizavimui') records.push(record);
+      if (repository === 'christianza1989/nisiniai-puslapiai-monetizavimui') records.push(record);
     } catch (e) { errors.push({ path: directory, reason: e.message }); }
   }
   const uncovered = required.filter(file => !records.some(r => r.paths.some(scope => covers(root, head, scope, file))));

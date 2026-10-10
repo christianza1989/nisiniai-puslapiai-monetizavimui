@@ -28,7 +28,7 @@ async function fixture(t) {
   git('config', 'user.email', 'fixture@example.invalid');
   await write('scripts/tool.mjs', 'export const v = 1;\n');
   const base = commit();
-  const record = async (paths = ['scripts/tool.mjs'], issue = 'fixture-issue') => createRecord(root, {
+  const record = async (paths = ['scripts/tool.mjs'], issue = 'https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/1') => createRecord(root, {
     siteId: 'core', summary: 'Synthetic shared defect with a regression', category: 'code',
     evidence: ['isolated fixture only'], paths, issue, rollback: 'scoped fixture revert',
   });
@@ -127,4 +127,31 @@ test('a companion record with identical filenames cannot attest a private core c
   const result = checkUpgradeCoverage(f.root, f.base, f.commit());
   assert.equal(result.status, 'BLOCKED');
   assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+});
+
+test('shared dependency manifests need verified provenance in the actual committed diff', async t => {
+  const f = await fixture(t);
+  const files = ['package.json', 'content-studio/package-lock.json',
+    'agent-business-core/runtime/pyproject.toml', 'agent-business-core/runtime/uv.lock'];
+  for (const file of files) await f.write(file, 'synthetic changed dependency\n');
+  const uncovered = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert.equal(uncovered.status, 'BLOCKED');
+  assert.deepEqual(uncovered.uncovered_paths.sort(), [...files].sort());
+  const r = await f.record(files); await f.verify(r);
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'PASS');
+  assert.equal(requiresUpgrade('sites/fixture/package.json'), false);
+});
+
+test('noncanonical issue URLs fail closed instead of reclassifying public records as private', async t => {
+  for (const suffix of ['/', '?source=review', '#finding', '\n']) {
+    const f = await fixture(t);
+    await f.write('scripts/tool.mjs', 'export const v = 2;\n');
+    const r = await f.record(['scripts/tool.mjs'],
+      'https://github.com/christianza1989/niche-public-core/issues/1' + suffix);
+    await f.verify(r);
+    const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+    assert.equal(result.status, 'BLOCKED', suffix);
+    assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+    assert(result.errors.some(e => e.reason === 'canonical_issue_url_required'), suffix);
+  }
 });

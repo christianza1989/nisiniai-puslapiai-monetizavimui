@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs scripts/core-upgrade-check.test.mjs scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs",
+      "result": "PASS",
+      "evidence": "21/21,0FAIL/skip/removal; preserves7pre-existing checker cases, adds2real Git fixture regressions"
+    }
+  ],
+  "note": "Independent peer review P2 faults reproduced as7PASS/2FAIL then repaired; all21combined tests PASS including actual manifest diff and three malformed companion URL variants. First falsePASS results remain in QA; metadata gate does not infer runtime adoption.",
+  "status": "local-verified",
+  "eventId": "4ecf1445-ee73-476b-b234-84c3ce059def",
+  "sequence": 2,
+  "at": "2026-10-10T01:11:28.109Z"
+}

@@ -26,6 +26,8 @@ Prieš taisymą reserve issue / WORKSTREAMS, skaityti naujausią šaltinį. Savo
 
 `node scripts/core-upgrade.mjs record --input <input.json>` grąžina ID. Kategorijos rules / skills / prompt / code / cleanup / workflow. Sanitizuoti evidence; klientų pokalbių, asmens kontaktų, raw duomenų ir credentials nekopijuoti į įrašą. Laukai yra agento teiginiai, jų semantikos helperis neįrodo.
 
+Committed-diff checker reikalauja canonical `https://github.com/christianza1989/<vienas-iš-dviejų-core-repo>/issues/<id>` arba `/pull/<id>` be papildomo slash/query/fragment. Valid public issue nepadengia private failo tuo pačiu vardu. Core root, content-studio ir runtime dependency manifests / locks taip pat turi patekti į tikslų upgrade scope ir prasmingą patikrą. Jei senas record jų neįvardijo, pridėti naują teisingą papildantį įrašą, neperrašyti istorijos. Tai dvi actual peer review pamokos, ne deklaracija, kad visi ankstesni PR jau perpatikrinti.
+
 `node scripts/core-upgrade.mjs event --id <ID> --input <event.json>` prideda įvykį. Statusai finding / fixing / local-verified / pr / merged / adopted. local-verified reikalauja `checks: [{command, result:"PASS", evidence}]`; ankstesnį FAIL palikti fixing įvykio note / atskirame kvite. PR ir vėlesniems įvykiams reikalingas tikras GitHub PR URL; merged/adopted ir tikslus40hex commit. Helperis nepatvirtina GitHub būsenos: prieš įrašant patikrinti faktinį merge, o adoption turi įvardyti konkretų checkout / adapterį ir bandymą. Nebūtinas „adopted“ visiems PC.
 
 ## Tikslus karantinas

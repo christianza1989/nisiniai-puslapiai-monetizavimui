@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "command": "uv lock --check",
+      "result": "PASS",
+      "evidence": "108packages resolved/check in2ms; existing project dependency files unchanged"
+    },
+    {
+      "command": "uv run --locked python -c ZoneInfo-Europe-Vilnius-and-tzdata-version-assertion",
+      "result": "PASS",
+      "evidence": "ActualZoneInfo Europe/Vilnius import/assertion PASS; tzdata2026.5"
+    }
+  ],
+  "note": "Historical Windows tzdata manifest/lock scope now has truthful supplemental provenance. Manifests unchanged in this repair; current locked graph and Europe/Vilnius import actually checked. Historical ZoneInfo FAIL and previous14/42regression receipts preserved, no new model/live/native test claimed.",
+  "status": "local-verified",
+  "eventId": "2bc6ff9a-188f-435e-ac1d-a39970533e0a",
+  "sequence": 2,
+  "at": "2026-10-10T01:11:29.263Z"
+}

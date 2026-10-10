@@ -38,6 +38,7 @@ from .control.routes import router as control_router
 from .creation.routes import router as creation_router
 from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
+from .customer_profile.routes import router as customer_profile_router
 from .db import db
 from .facebook.routes import router as facebook_router
 from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, utcnow
@@ -71,6 +72,7 @@ app.include_router(operations_router)
 app.include_router(customer_router)
 app.include_router(creation_router)
 app.include_router(creation_registration_router)
+app.include_router(customer_profile_router)
 app.include_router(content_work_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)

@@ -10,6 +10,7 @@ from ..creation.service import ACTIVE, binding, current_actor, digest
 from ..customer.models import Account
 from ..models import Business, new_id, utcnow
 from ..public_projects.admin import administrative
+from .locks import lifetime
 from .models import Registration
 from .service import accepted_proof, material, stored_material
 from .wire import Provision, Revoke
@@ -104,9 +105,18 @@ async def provision(tx, *, environment, **request):
 async def revoke(tx, *, environment, **request):
     value = Revoke.model_validate(request).model_dump(mode="json")
     await guard(tx, environment)
-    row = await tx.scalar(select(Registration).where(Registration.id == value["registration_id"],
-        Registration.environment_id == environment).with_for_update())
+    statement = select(Registration).where(Registration.id == value["registration_id"],
+        Registration.environment_id == environment)
+    row = await tx.scalar(statement)
     if not row or row.candidate_sha256 != value["candidate_sha256"]:
+        raise ValueError("registration_identity_mismatch")
+    if digest(stored_material(row)) != row.fingerprint:
+        raise ControlError(503, "invalid_registration_source")
+    original = row.fingerprint
+    # Lifetime barriers precede row locks in all dependent admissions and terminal revokes.
+    await lifetime(tx, environment, row.id, exclusive=True)
+    row = await tx.scalar(statement.with_for_update().execution_options(populate_existing=True))
+    if not row or row.candidate_sha256 != value["candidate_sha256"] or row.fingerprint != original:
         raise ValueError("registration_identity_mismatch")
     if digest(stored_material(row)) != row.fingerprint:
         raise ControlError(503, "invalid_registration_source")

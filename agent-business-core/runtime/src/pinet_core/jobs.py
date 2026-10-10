@@ -381,6 +381,8 @@ async def deliver_authorized(business_id, authority):
         row.state = "dispatched"
         message_id = f"<{row.id}@pinet.lt>"
         row.payload = {**row.payload, "message_id": message_id}
+        from .conversation_mail import bind_dispatch
+        await bind_dispatch(tx, row, contact, artifact, current_sources, recipient, message_id)
         oid, content = row.id, artifact.payload
     try:
         await asyncio.to_thread(smtp_send, recipient, content, message_id)
@@ -395,6 +397,8 @@ async def deliver_authorized(business_id, authority):
     async with db.transaction(business_id, cfg.environment) as tx:
         row = await tx.get(Outbox, oid)
         if row and row.state == "dispatched":
+            from .conversation_mail import record_transport
+            await record_transport(tx, row, state, failure_class)
             row.state = state
             row.payload = {**row.payload, "transport_failure_class": failure_class}
     return True

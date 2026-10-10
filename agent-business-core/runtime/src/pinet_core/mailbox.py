@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 
 from fastapi import HTTPException
 from pydantic import EmailStr, Field, field_validator
-from sqlalchemy import select
+from sqlalchemy import select, text
 
 from .config import settings
 from .contracts import Strict
@@ -175,13 +175,29 @@ async def send_test(business_id, message_id):
         return public(message)
 
 
-async def receive_reply(tx, original, provider_id, sender, subject, body):
+async def receive_reply(tx, original, provider_id, sender, subject, body, *, references=None, recipient=None):
     """Called only by authenticated mailbox connector after header/thread matching."""
-    existing = await tx.scalar(select(MailMessage).where(MailMessage.message_id == provider_id))
-    if existing:
-        return existing
+    from . import conversation_mail
+    if original and conversation_mail.binding(original.payload):
+        return await conversation_mail.receive_reply(tx, original, provider_id, sender, subject, body,
+            references=references, recipient=recipient)
+    if not original or not conversation_mail.valid_message_id(provider_id):
+        raise ValueError("reply_identity_invalid")
     if sender.casefold() != original.payload["recipient"].casefold():
         raise ValueError("reply_sender_not_case_participant")
+    await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:key, 0))"),
+        {"key": f"mail-reply:{original.business_id}:{original.environment_id}:{provider_id}"})
+    existing = await tx.scalar(select(MailMessage).where(MailMessage.message_id == provider_id))
+    if existing:
+        expected = {"sender": sender, "recipient": original.payload["sender"], "subject": subject[:200],
+            "body": body[:16000], "in_reply_to": original.message_id,
+            "synthetic": original.payload["synthetic"],
+            "customer_facing": original.payload.get("customer_facing", False),
+            "source_ref": "authenticated_imap_reply"}
+        if (existing.direction != "inbound" or existing.case_id != original.case_id
+                or any(existing.payload.get(k) != v for k, v in expected.items())):
+            raise ValueError("reply_idempotency_conflict")
+        return existing
     message = MailMessage(id=new_id(), business_id=original.business_id, environment_id=original.environment_id,
         case_id=original.case_id, message_id=provider_id, direction="inbound", state="received",
         payload={"sender": sender, "recipient": original.payload["sender"], "subject": subject[:200],

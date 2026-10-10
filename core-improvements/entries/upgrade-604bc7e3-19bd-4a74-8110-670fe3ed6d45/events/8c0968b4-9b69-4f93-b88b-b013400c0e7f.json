@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Scope6100032645 preserves before-fix actual canonical-file regression:1FAIL/19deselected2.13s, private artifacts/instruction-snapshot-baseline.private.log. Source reads creator prompt/hash once; no dispatch/provider operation, historical fingerprints and APIcbc7 retained.",
+  "eventId": "8c0968b4-9b69-4f93-b88b-b013400c0e7f",
+  "sequence": 2,
+  "at": "2026-10-10T17:07:20.806Z"
+}

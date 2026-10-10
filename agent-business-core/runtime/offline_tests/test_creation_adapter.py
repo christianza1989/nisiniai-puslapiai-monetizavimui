@@ -66,6 +66,52 @@ def test_structure_only_profile_is_smaller_exact_canonical_context_and_disables_
     assert digest != role_instruction_hash("creator")
 
 
+async def test_dispatched_creator_prompt_and_receipt_share_one_actual_instruction_snapshot(tmp_path, monkeypatch):
+    import sys
+    from pathlib import Path
+
+    from test_creation_content_plan import planned
+    from test_creation_review import draft as fixture
+
+    from pinet_core.creation import adapter
+
+    root, workspace = tmp_path / 'core', tmp_path / 'output'
+    workspace.mkdir()
+    for relative in adapter.INSTRUCTION_FILES:
+        target = root / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((adapter.ROOT / relative).read_bytes())
+    typography = root / 'SKILLS/niche-site-builder/references/typography-system.md'
+    typography.write_text('Original immutable typography snapshot', encoding='utf-8')
+    monkeypatch.setattr(adapter, 'ROOT', root)
+    monkeypatch.setattr(adapter, 'available', lambda: (Path(sys.executable), workspace))
+    original_loader = adapter.instructions
+    original_policy, original_hash = original_loader()
+    loads = []
+
+    def changed_after_read(**kwargs):
+        snapshot = original_loader(**kwargs)
+        loads.append(snapshot[1])
+        typography.write_text('Changed typography after the completed snapshot read', encoding='utf-8')
+        return snapshot
+
+    monkeypatch.setattr(adapter, 'instructions', changed_after_read)
+
+    async def execute(args, **kwargs):
+        assert kwargs['prompt'].startswith(original_policy + '\n\nUNTRUSTED_CONTEXT_JSON\n')
+        assert 'Changed typography after the completed snapshot read' not in kwargs['prompt']
+        return planned(fixture.__wrapped__()), {'usage': {'input_tokens': 1, 'output_tokens': 1}}
+
+    monkeypatch.setattr(adapter, 'execute', execute)
+
+    async def authorized():
+        return True
+
+    _, receipt = await adapter.run_role({'expected_instruction_hash': original_hash, 'permitted_web_actions': 0},
+                                       authorized, role='creator', seconds=30)
+    assert receipt['instruction_hash'] == original_hash and loads == [original_hash]
+
+
 async def test_language_patch_profile_uses_exact_schema_no_web_and_retains_raw_edits(tmp_path, monkeypatch):
     import sys
     from pathlib import Path

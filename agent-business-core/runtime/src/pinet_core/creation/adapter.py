@@ -205,9 +205,8 @@ async def run_role(context, still_authorized, *, role, seconds):
     cfg = settings()
     structure_repair = role == "creator" and context.get("structure_repair") is True
     language_repair = role == "creator" and context.get("language_repair") is True
-    instruction_hash = role_instruction_hash(role, structure_repair=structure_repair, language_repair=language_repair)
     if role == "creator":
-        policy, _ = instructions(structure_repair=structure_repair, language_repair=language_repair)
+        policy, instruction_hash = instructions(structure_repair=structure_repair, language_repair=language_repair)
         if context.get("expected_instruction_hash") != instruction_hash:
             raise RunnerError("instructions_changed")
         if language_repair and context.get("permitted_web_actions") != 0:
@@ -215,6 +214,7 @@ async def run_role(context, still_authorized, *, role, seconds):
         prompt = policy + "\n\nUNTRUSTED_CONTEXT_JSON\n" + json.dumps(context, ensure_ascii=False)
         schema_model = CreatorDraft
     else:
+        instruction_hash = role_instruction_hash(role, structure_repair=structure_repair, language_repair=language_repair)
         from .review import CoordinatorDecision, CriticReview, coordinator_prompt, critic_prompt
         if role == "critic":
             prompt, schema_model = critic_prompt(**context), CriticReview

@@ -1,0 +1,5 @@
+# Domeno istorijos sprendimas
+2026-10-08. Canonical audit checkedAt 2026-10-08T15:24:35.521Z. [Actual report](REPORT.md), [raw audit](audit.json).
+Istorijos tęstinumas UNKNOWN: inventory, years ir latest Archive užklausos baigėsi archive_timeout, content neturi skaitomų captures. Nėra pagrindo teigti, kad domenas naujas, švarus, turi autoritetą ar niekada neveikė. Ankstesnis operatorius, tematika, parking ar įtartina veikla nenustatyti.
+Verdiktas: savininko pasirinktas naujas StepOver pasiūlymas rengiamas dabartiniais pirminiais šaltiniais ir originaliu tekstu. Archyvo turinys / asset / kontaktai neatkuriami. Nėra archyvu pagrįstų redirectų; tikslus esamos savininko signaturepads.lt StepOver produktų perkėlimas atskirai aprašytas MIGRATION.md, aktyvavimas tik į gyvus tinkamus tikslus.
+SEO recovery / ankstesni backlink / sankcijos / GSC istorija neįvertinti. Papildoma archive užklausa dabar neturi sprendimą keičiančio prioriteto; po realaus domeno / GSC parengimo galima atnaujinti ribotą mėginį, laikantis cooldown.

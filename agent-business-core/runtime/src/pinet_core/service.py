@@ -92,7 +92,13 @@ async def start(item, data: Start, simulation=False):
     knowledge_store.validate(item, knowledge)
     if data.mode == "simulation" and not simulation:
         raise HTTPException(403, "simulation is internal only")
-    if not simulation and (item.site_id != "traktoriupadangos" or not cfg.voice_ready):
+    chat = data.mode == 'chat'
+    pilot = data.mode == 'voice_pilot'
+    if not simulation and chat and (item.site_id not in cfg.chat_sites or not cfg.chat_ready):
+        raise HTTPException(503, 'chat_not_ready')
+    if pilot and (simulation or item.site_id not in cfg.voice_pilot_sites or not cfg.voice_pilot_ready):
+        raise HTTPException(503, 'voice_pilot_not_ready')
+    if not simulation and not chat and (item.site_id not in cfg.voice_sites or not (cfg.voice_pilot_ready if pilot else cfg.voice_ready)):
         raise HTTPException(503, "voice_not_ready")
     if not simulation and cfg.allow_simulation:
         raise HTTPException(503, "disable_simulation_before_live_voice")
@@ -134,14 +140,16 @@ async def start(item, data: Start, simulation=False):
             midnight = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
             reserved = (await tx.scalars(select(Admission).where(Admission.environment_id == cfg.environment,
                                                                  Admission.created_at >= midnight))).all()
-            if (sum(a.reserved_seconds for a in reserved) + cfg.session_seconds > cfg.global_daily_reserved_seconds or
-                sum(a.reserved_seconds for a in reserved if a.business_id == item.id) + cfg.session_seconds >
+            reserved_seconds = 0 if chat else cfg.session_seconds
+            if (sum(a.reserved_seconds for a in reserved) + reserved_seconds > cfg.global_daily_reserved_seconds or
+                sum(a.reserved_seconds for a in reserved if a.business_id == item.id) + reserved_seconds >
                     min(cfg.per_site_daily_reserved_seconds, authority.daily_reserved_seconds)):
                 raise HTTPException(429, "session_budget")
-            tx.add(Admission(id=cid, **scope(item), expires_at=utcnow() + timedelta(seconds=cfg.session_seconds),
-                             reserved_seconds=cfg.session_seconds))
-            await budget.reserve(tx, item.id, authority, f"voice:{cid}", cfg.voice_cost_ceiling_microusd)
-        tx.add(Case(id=case_id, **scope(item), payload={"source": "voice", "test": simulation}))
+            tx.add(Admission(id=cid, **scope(item), expires_at=utcnow() + timedelta(seconds=1800 if chat else cfg.session_seconds),
+                             reserved_seconds=reserved_seconds))
+            if not chat:
+                await budget.reserve(tx, item.id, authority, f"voice:{cid}", cfg.voice_cost_ceiling_microusd)
+        tx.add(Case(id=case_id, **scope(item), payload={"source": "chat" if chat else "voice", "test": simulation}))
         await tx.flush()
         tx.add(CaseSource(**scope(item), case_id=case_id, source_system="voice_core",
                           site_id=item.site_id, source_record_id=cid))
@@ -149,13 +157,15 @@ async def start(item, data: Start, simulation=False):
                              visitor_id=visitor.id if visitor else None,
                              expires_at=utcnow() + timedelta(seconds=cfg.session_seconds + 1800),
                              state="created", payload={"knowledge": knowledge.model_dump(mode="json"),
-                             "notice_version": data.notice_version, "test": simulation,
+                             "notice_version": data.notice_version, "test": simulation, "mode": data.mode, "voice_pilot": pilot,
                              "start_request_id": request_id, "start_fingerprint": fingerprint,
                              "policy_revision": policy_revision,
                              "cost_ceiling_microusd": 0 if simulation else cfg.voice_cost_ceiling_microusd,
                              "release_hash": release.hash, "instruction_sources": list(release.sources),
                              "prompt": prompt, "profile_id": profile.site_id,
-                             "model": cfg.live_model, "need": {}, "ui": None, "coverage": "text_only"})
+                             "model": cfg.text_model if chat else cfg.live_model,
+                             "text_provider": cfg.text_provider if chat else None,
+                             "need": {}, "ui": None, "coverage": "text_only"})
         tx.add(convo)
         await tx.flush()
         await add_event(tx, convo, "start", "created", {"test": simulation})
@@ -175,6 +185,18 @@ async def finalize(tx, convo):
     slot = await tx.get(Admission, convo.id)
     if slot:
         slot.expires_at = utcnow()
+
+
+async def request_end(tx, convo):
+    """Let a live owner flush its final audio transcript before queuing post-call jobs."""
+    live_transport = convo.payload.get('mode') != 'chat' and (not convo.payload["test"] or convo.payload.get("m0_probe") is True)
+    if (live_transport and convo.state == "active" and convo.owner
+            and convo.lease_until and convo.lease_until > utcnow()):
+        convo.payload = {**convo.payload, "stop_requested": True}
+        await add_event(tx, convo, "end-requested", "end_requested", {})
+        return "ending"
+    await finalize(tx, convo)
+    return "finalized"
 
 
 async def submit_contact(tx, convo, data: ContactInput):

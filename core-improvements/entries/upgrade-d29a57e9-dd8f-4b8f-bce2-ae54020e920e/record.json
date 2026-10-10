@@ -1,0 +1,24 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "A real inquiry-reply writer and independent reviewer wrongly excluded duraSign Pad 5.0 for document display based on screen size. Manufacturer documents document view; the 4.3 limitation cannot be extended to 5.0. Preserve the delivered original, correct the same thread, and reject this unsupported exclusion before future followup publication.",
+  "category": "code",
+  "evidence": [
+    "https://stepover.com/en/products/signature-pads/durasign-pad-5-0/",
+    "sites/parasoplansetes/AGENT-RESUME-20261009.md",
+    "agent-business-core/runtime/tests/test_quality_guards.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/quality_guards.py",
+    "agent-business-core/runtime/src/pinet_core/followup_projection.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/instructions/niches/parasoplansetes/conversation.md",
+    "agent-business-core/runtime/src/pinet_core/instructions/niches/parasoplansetes/sales.md",
+    "agent-business-core/runtime/tests/test_quality_guards.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Disable the site's mail sending first; revert this scoped procedural/guard patch while retaining original and corrective mail receipts. No deletion of delivered mail, no knowledge approval or protected corpus rewrite.",
+  "id": "upgrade-d29a57e9-dd8f-4b8f-bce2-ae54020e920e",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "b432fa544af3609453b4ff918c326a859c7d1bac",
+  "createdAt": "2026-10-09T19:32:30.078Z"
+}

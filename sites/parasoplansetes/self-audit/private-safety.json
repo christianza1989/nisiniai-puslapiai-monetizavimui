@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "mode": "exact-staged-blobs",
+  "files": 56,
+  "textFiles": 54,
+  "bytes": 2284025,
+  "findings": [],
+  "largest": [
+    {
+      "file": "sites/parasoplansetes/self-audit/lighthouse-pdf.report.json",
+      "bytes": 908382
+    },
+    {
+      "file": "sites/parasoplansetes/self-audit/lighthouse-home.report.json",
+      "bytes": 788975
+    },
+    {
+      "file": "WORKSTREAMS.md",
+      "bytes": 132161
+    },
+    {
+      "file": "sites/parasoplansetes/self-audit/cards730.jpg",
+      "bytes": 65520
+    },
+    {
+      "file": "sites/parasoplansetes/PHASE-1-AUDIT.json",
+      "bytes": 42248
+    },
+    {
+      "file": "sites/parasoplansetes/self-audit/guide390.jpg",
+      "bytes": 41637
+    },
+    {
+      "file": "sites/parasoplansetes/self-audit/initial-PHASE-1-AUDIT.json",
+      "bytes": 40075
+    },
+    {
+      "file": "sites/parasoplansetes/SITE_COMPLETION.json",
+      "bytes": 20048
+    }
+  ],
+  "limitations": "Pattern checks and exact local-secret matches; not a proof that arbitrary customer data is absent. Ignore-policy and scope review are separate."
+}

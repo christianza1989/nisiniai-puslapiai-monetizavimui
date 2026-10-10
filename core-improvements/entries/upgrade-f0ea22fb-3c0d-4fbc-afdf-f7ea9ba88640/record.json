@@ -1,0 +1,22 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Shared rendered HTML inspector inserts spaces between inline nodes, falsely rejecting approved guide bodies that contain contextual links next to punctuation. Preserve text adjacency and distinguish block boundaries without weakening hidden/lost-content checks.",
+  "category": "code",
+  "evidence": [
+    "sites/parasoplansetes/self-audit/render-only-before-parser-fix.json",
+    "sites/parasoplansetes/self-audit/semantic-after.json",
+    "Actual browser guide paragraph textContent and inline anchor inspection 2026-10-09"
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/rendered_site.py",
+    "SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+    "sites/parasoplansetes/self-audit",
+    "sites/parasoplansetes/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Scoped revert of the two inspector/test source paths; retain original failed audit receipt and all native content/review/package history.",
+  "id": "upgrade-f0ea22fb-3c0d-4fbc-afdf-f7ea9ba88640",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "d8e4e802d127fbf94aa5d20500b3af38a0f5159d",
+  "createdAt": "2026-10-09T05:58:30.968Z"
+}

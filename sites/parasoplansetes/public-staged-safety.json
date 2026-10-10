@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "mode": "exact-staged-blobs",
+  "files": 49,
+  "textFiles": 8,
+  "bytes": 1264783,
+  "findings": [],
+  "largest": [
+    {
+      "file": "lib/generated/content-packages.json",
+      "bytes": 574224
+    },
+    {
+      "file": "content-packages/parasoplansetes/content-package.json",
+      "bytes": 103944
+    },
+    {
+      "file": "content-packages/parasoplansetes/assets/246323f5-171a-469b-b4fd-403870ef722f.webp",
+      "bytes": 38660
+    },
+    {
+      "file": "content-packages/parasoplansetes/assets/cb64f6da-31e1-4032-a004-bc7c68df0d45.webp",
+      "bytes": 38660
+    },
+    {
+      "file": "public/content-assets/parasoplansetes/246323f5-171a-469b-b4fd-403870ef722f.webp",
+      "bytes": 38660
+    },
+    {
+      "file": "public/content-assets/parasoplansetes/cb64f6da-31e1-4032-a004-bc7c68df0d45.webp",
+      "bytes": 38660
+    },
+    {
+      "file": "content-packages/parasoplansetes/assets/c5530e22-0c75-46ad-8973-f71e1aac10a9.webp",
+      "bytes": 29902
+    },
+    {
+      "file": "public/content-assets/parasoplansetes/c5530e22-0c75-46ad-8973-f71e1aac10a9.webp",
+      "bytes": 29902
+    }
+  ],
+  "limitations": "Pattern checks and exact local-secret matches; not a proof that arbitrary customer data is absent. Ignore-policy and scope review are separate."
+}

@@ -11,6 +11,18 @@ PHOTO_COUNT = re.compile(r'\b(\d{1,3}(?:\s*[-–]\s*\d{1,3})?)\s+'
     r'(?:photos?\b|images?\b|nuotrauk\w*)', re.I)
 
 
+def unsupported_model_exclusion(text, knowledge):
+    if knowledge.get('site_id') != 'parasoplansetes' or not any(
+            '/paraso-plansete-stepover-durasign-pad-5-0' in p.get('url', '') for p in knowledge.get('pages', [])):
+        return False
+    for sentence in re.split(r'[.!?]\s+|\n+', text):
+        if (re.search(r'5[.,]0', sentence) and re.search(r'dokument|document|ekran|screen', sentence, re.I)
+                and re.search(r'netiks|netinka|cannot.{0,30}(?:show|display)|negal\w*.{0,30}(?:rody|parody|atvaiz)', sentence, re.I)
+                and not re.search(r'nepagrįst|perkategor|incorrect|negalima atmesti|nereiškia|not justified', sentence, re.I)):
+            return True
+    return False
+
+
 def findings(data):
     saved, issues = set(), []
     for event in data.get('timeline', []):

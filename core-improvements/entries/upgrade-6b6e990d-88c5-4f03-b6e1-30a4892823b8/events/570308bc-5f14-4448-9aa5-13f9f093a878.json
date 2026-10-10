@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Implemented explicit shared OpenRouter text adapter and protected provenance/cost gates. Initial full suite 369 PASS; private OpenRouter configuration exposed one legacy Gemini-default test isolation FAIL, preserved and corrected with autouse fixture (65 targeted PASS, 371 full PASS). Actual owner-authorized Chrome/OpenRouter request then exposed repeated knowledge.resolve exhausting the fixed three-generation loop: no model reply, observed 26046 microUSD retained under 40000 reservation. Bounded repair makes generation three use reply-only schema and original validated tools/evidence remain mandatory; no extra paid steps, automatic retry or budget increase. Two regressions added (37 targeted PASS). Report/navigation/CORE_FEEDBACK are own niche documentation scope extensions; original finding and private failure receipt retained.",
+  "eventId": "570308bc-5f14-4448-9aa5-13f9f093a878",
+  "sequence": 2,
+  "at": "2026-10-09T22:32:16.209Z"
+}

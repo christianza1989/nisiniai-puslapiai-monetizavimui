@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Code and stable deployed HTTP verified. Post-fix actual browser navigation remains UNVERIFIED: Chrome control stopped responding after new real session connected; no model message sent. Empty owned test sessions closed through operator, not represented as browser-end proof. Private Codex candidates rejected separately; current packaged instructions unchanged.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs (public)",
+      "result": "PASS",
+      "evidence": "66/66; includes3checkpoint regressions, isolation/expiry/idempotency/storage failure. Ignored public-core-tests.log."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "result": "PASS",
+      "evidence": "Exit0 final source, ignored typecheck.log."
+    },
+    {
+      "command": "node scripts/run-framework.mjs build through canonical freshness wrapper",
+      "result": "PASS",
+      "evidence": "Final5-stage build exit0; ignored continuity-build.log."
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=parasoplansetes SEO_SMOKE_BASE_URL=http://127.0.0.1:5197 node tests/seo-core-smoke.mjs",
+      "result": "PASS",
+      "evidence": "19pages/robots/sitemap/llms/schema/host-isolation404; ignored seo-smoke.log."
+    },
+    {
+      "command": "node sites/parasoplansetes/cloudflare-preview/check.mjs <ownworkerspreview>",
+      "result": "PASS",
+      "evidence": "Stable final remote-stable-continuity.json pass=true. Original4old-chunk404 checks during deployment transition retained; no post-fix browser-model acceptance inferred."
+    },
+    {
+      "command": "node --test sites/parasoplansetes/cloudflare-preview/adapter.test.mjs",
+      "result": "PASS",
+      "evidence": "5/5 preview host/origin/noindex/media gates; same existing Worker/D1, voice0/chat1."
+    }
+  ],
+  "eventId": "0d3617da-b34e-41bb-b6ea-15af2be1a72f",
+  "sequence": 3,
+  "at": "2026-10-09T23:24:30.025Z"
+}

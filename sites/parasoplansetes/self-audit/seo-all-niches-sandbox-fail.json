@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-09T04:17:39.892Z",
+  "scope": "Actual current package host routing, robots, sitemap, schema, LLM and negative endpoints on local production Worker",
+  "results": [
+    {
+      "siteId": "akmenas",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "auksarankiams",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "greitossvetaines",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "laiptucentras",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "parasoplansetes",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "roletaiklaipedoje",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError: connect EACCES 127.0.0.1:8798\r\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2021:16) {\r\n  errno: -4092,\r\n  code: 'EACCES',\r\n  syscall: 'connect',\r\n  address: '127.0.0.1',\r\n  port: 8798\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    }
+  ]
+}

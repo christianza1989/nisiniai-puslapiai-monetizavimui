@@ -1,0 +1,27 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Configured parasoplansetes profile cannot enter voice: service, voice worker and public adapter hard-code traktoriupadangos. Adopt reviewed outstanding readiness/transcript/follow-up prerequisites and make voice admission explicitly site-scoped.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/service.py",
+    "agent-business-core/runtime/src/pinet_core/voice_worker.py",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/32",
+    "https://github.com/christianza1989/niche-public-core/pull/9"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/service.py",
+    "agent-business-core/runtime/src/pinet_core/voice_worker.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/tests",
+    "sites/parasoplansetes/AGENT-CALIBRATION-20261009.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Disable own site voice admission and widget first; revert scoped source changes. Preserve historical receipts and isolated DB; do not modify foreign processes or data.",
+  "id": "upgrade-1b8f0be3-2c9a-4550-b966-49e1817d9326",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "370fad62199cf9bac4c4b3a1b8b07f4723205f24",
+  "createdAt": "2026-10-09T15:02:34.761Z"
+}

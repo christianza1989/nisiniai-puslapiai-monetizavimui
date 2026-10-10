@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "note": "Exact approved numeric model retrieval repaired without widening approval. Canonical sourceC1/C2 screen_5_not_automatic_exclusion resolves the 5.0 page first and passes; original baseline FAIL preserved. Model quality is separately scored.",
+  "checks": [
+    {
+      "command": "pytest tests/test_knowledge_ranking.py with existing knowledge regressions",
+      "result": "PASS",
+      "evidence": "21PASS; private ranking-fixed.log; original11FAIL3PASS preserved."
+    },
+    {
+      "command": "network_lab sourceC2 text-service-v2 train",
+      "result": "PASS",
+      "evidence": "screen_5_not_automatic_exclusion actual knowledge.resolve first title duraSign Pad5.0, all10checksPASS; private immutable candidate2report."
+    }
+  ],
+  "commit": "f45854333dd92743fa2cb9527168de5796adf5b3",
+  "eventId": "9946372a-67a7-416b-8476-b302ab5c3255",
+  "sequence": 2,
+  "at": "2026-10-09T20:35:57.125Z"
+}

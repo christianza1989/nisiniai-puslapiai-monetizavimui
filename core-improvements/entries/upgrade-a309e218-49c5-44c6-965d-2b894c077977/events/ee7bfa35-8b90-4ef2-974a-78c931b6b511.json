@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "note": "SourceC4 actual canonical15training cases all10service gatesPASS; the long case that falsely demanded future draft acknowledgement now passes. No change to scalar score rubric or>=4thresholds. Paired simplified evaluator diagnostic remains8/8 correct under old/new prompts, including4/4 fabricated sending rejection, and does not itself reproduce the original complex false-positive.",
+  "checks": [
+    {
+      "command": "pytest full runtime sourceC4",
+      "result": "PASS",
+      "evidence": "342PASS143.89s, private full-core-candidate4.log."
+    },
+    {
+      "command": "network_lab sourceC4 text-service-long-v1",
+      "result": "PASS",
+      "evidence": "3/3 complete,37CLIcalls, all service gatestrue; originalC3needs_review preserved."
+    },
+    {
+      "command": "CodexLab paired frozen quality-sourceC3 prompt diagnostic",
+      "result": "PASS",
+      "evidence": "8/8 correct positive/negative outcomes across2repetitions; retryreport retained; initial3call Windows encoding interruption separately preserved."
+    }
+  ],
+  "commit": "dd25f58593ef8b8923922e46f428f9e956e767d0",
+  "eventId": "ee7bfa35-8b90-4ef2-974a-78c931b6b511",
+  "sequence": 3,
+  "at": "2026-10-09T20:56:56.015Z"
+}

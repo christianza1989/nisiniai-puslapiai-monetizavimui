@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Inline-adjacency parser fix passes positive punctuation/word-split/block-br cases and preserves negative hidden/truncated/author/date/schema checks. Original4false-fail HTTP receipt and2failing regressions retained. No skill entry/catalog change or relaxed acceptance threshold. Full site completion still correctly rejects4UNVERIFIED local gates.",
+  "checks": [
+    {
+      "command": "bundled Python SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+      "result": "PASS",
+      "evidence": "sites/parasoplansetes/self-audit/parser-tests-after.txt:12tests; parser-tests-before.txt retains2failures"
+    },
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/completion.test.mjs SKILLS/niche-site-audit/scripts/score-audit.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/parasoplansetes/self-audit/completion-tests.txt:9tests"
+    },
+    {
+      "command": "node SKILLS/niche-site-audit/scripts/verify-site-completion.mjs --render-only (package ed39a276, companion7761a29, canonical8800)",
+      "result": "PASS",
+      "evidence": "sites/parasoplansetes/self-audit/render-only.json:19public/4articles/46HTTP/0issues; original render-only-before-parser-fix.json retained"
+    }
+  ],
+  "eventId": "d23f2e88-6f1d-46fc-bcde-617eaac3e160",
+  "sequence": 2,
+  "at": "2026-10-09T06:13:36.973Z"
+}

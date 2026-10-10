@@ -1,0 +1,20 @@
+{
+  "siteId": "parasoplansetes",
+  "category": "code",
+  "summary": "Active text chat and saved-contact revision are lost on same-site page navigation",
+  "evidence": [
+    "Actual Chrome on Worker215f59ff: consent created active chat, owner test email saved; navigating / to /integracija then opening widget displayed Pokalbis nepradėtas. No model call used.",
+    "Public source b2d581ddc312a1431992806d0dd591d77c1e83d0: session/transcript/contact revisions only live in widget refs and React state, remount loses them."
+  ],
+  "paths": [
+    "components/niche/voice-widget.tsx",
+    "lib/chat-session.ts",
+    "tests/chat-session.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/17#issuecomment-6090785763",
+  "rollback": "Revert scoped public chat-session helper/widget integration. Server conversations, authorization, private contact data and reservation history remain untouched. Storage failure degrades to existing in-memory behavior.",
+  "id": "upgrade-4ac64a4e-7e85-4884-be82-98d488ce2de1",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "3d7997280bf6342ec1d69fdc30cf9870878b7d82",
+  "createdAt": "2026-10-09T23:08:07.873Z"
+}

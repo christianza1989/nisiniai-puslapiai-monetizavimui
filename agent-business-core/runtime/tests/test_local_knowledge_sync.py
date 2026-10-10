@@ -56,7 +56,7 @@ async def test_all_sites_validated_before_any_registration(monkeypatch, tmp_path
                 'operator': 'MB Pinet', 'deployment_id': 'approved', 'generated_at': '2026-10-03T00:00:00Z',
                 'pages': [{'id': 'home', 'title': 'Approved page', 'url': 'https://' + site + '.lt/', 'text': 'approved',
                     'revision_hash': 'a' * 64, 'projection_hash': 'b' * 64}]}
-            if site == list(sync.agent_instructions.SITES)[-1]:
+            if site == sorted(sync.agent_instructions.SITES & sync.onboarding.LEGACY_SITES)[-1]:
                 manifest['canonical_host'] = 'other.lt'
             (directory / (site + '.json')).write_text(json.dumps(manifest))
     async def business(site):

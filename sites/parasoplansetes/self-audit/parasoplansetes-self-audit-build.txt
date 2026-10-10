@@ -1,0 +1,21 @@
+Original local log SHA-256: 287cc595db1a35bdd754ab51edcda26842496f4d1940c2d5d2d480f033babe36
+Normalization: ANSI styling and trailing whitespace only; original .log remains local.
+
+
+> site-creator-vinext-starter@0.1.0 build
+> node scripts/compile-content-packages.mjs && node scripts/run-framework.mjs build
+
+Validated 10 approved site package(s).
+
+  vinext build  (Vite 8.0.13)
+
+[vinext] next.config option "webpack" is not yet supported and will be ignored
+Error: EPERM, Permission denied: \\?\C:\Core\parasoplansetes-workspace-20261008\dovanos-memorycasting\dist '\\?\C:\Core\parasoplansetes-workspace-20261008\dovanos-memorycasting\dist'
+    at Object.rmSync (node:fs:1282:18)
+    at cleanBuildOutput (file:///C:/Core/parasoplansetes-workspace-20261008/dovanos-memorycasting/node_modules/vinext/dist/build/clean-output.js:24:5)
+    at buildApp (file:///C:/Core/parasoplansetes-workspace-20261008/dovanos-memorycasting/node_modules/vinext/dist/cli.js:319:2) {
+  errno: 1,
+  code: 'EPERM',
+  path: '\\\\?\\C:\\Core\\parasoplansetes-workspace-20261008\\dovanos-memorycasting\\dist',
+  syscall: 'rm'
+}

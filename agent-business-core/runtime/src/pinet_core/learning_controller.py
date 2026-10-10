@@ -245,7 +245,8 @@ async def run(bid, task):
                         '--include-holdout', '--run-id', run_id, '--corpus-dir', str(job_corpus),
                         '--pin-release-file', str(pin), '--max-calls', '90', '--followup-attempts', '3',
                         '--knowledge-file', str(knowledge_pin),
-                        '--timeout-retries', '1', '--as-of', '2026-10-03', '--observe-learning']
+                        '--timeout-retries', '1', '--as-of', utcnow().date().isoformat(),
+                        '--admit-source', '--observe-learning']
                     with (directory / (name + f'-r{replicate}.log')).open('w', encoding='utf-8') as output:
                         process = await asyncio.create_subprocess_exec(*args, cwd=ROOT, stdout=output,
                             stderr=asyncio.subprocess.STDOUT,

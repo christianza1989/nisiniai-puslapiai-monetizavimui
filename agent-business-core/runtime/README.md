@@ -2,6 +2,8 @@
 
 Pirmas įgyvendinimas 2026-09-30. Vienas FastAPI/PostgreSQL core, atskiri gyvo balso ir patvarių užduočių procesai. Pirmoji balso niša — `traktoriupadangos`. Tai vietinis pagrindas; gamybiniai M0/M6 vartai dar nepraeiti.
 
+Native voice readiness, transcript-drain and reviewed follow-up prerequisites were adopted from [PR32](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/32). Its historical other-site channel results are not this site's acceptance. The local voice launcher is `scripts/start_voice_background.ps1`; site-scoped measured results are linked below.
+
 ## 2026-10-01 tekstinis ir pašto papildymas
 
 Galutinis suite po PDF ir retail integracijos: 118 PASS; paskutinės nuorodų / presentation pataisos 12 tikslinių PASS; Ruff PASS. Metaduomenų ir tikro HTTP PDF QA 10/10. Nepridėti senų 112/23/36 skaičių prie naujo suite: tai persidengiantys istoriniai paleidimai.
@@ -24,6 +26,7 @@ Reikia Python 3.13, `uv`, veikiančio Docker ir Node. Priklausomybės užfiksuot
 uv sync --locked
 uv run python scripts/setup_local.py
 docker compose up -d postgres
+uv run python scripts/bootstrap.py --role-only
 uv run alembic upgrade head
 uv run python scripts/bootstrap.py
 ```
@@ -152,3 +155,78 @@ Užbaigtas vietinis ratas: originalus34/36, abi vėlesnės žinomų klaidų regr
 ## Žinių V2 ir mokymosi parengtis — 2026-10-04/05
 
 Atskiras tenant-scoped paged ingest priima pilną viešą projekciją atominiu commit, be 30 puslapių ar ilgo teksto nukirpimo. Naujas profilis automatiškai negauna source/learning admission; prieš sesiją, learning enqueue ir controller tikrinami atskiri vartai. Actual M2 emitter version dispatch nekeičia v1 kelio. [Payload/API sutartis](../../voice-agent-plan/PAGED_KNOWLEDGE_V2_API_2026-10-04.md), [275 PASS, galutinės 2 regresijos ir actual HTTP/šešių šaltinių įrodymai](../../voice-agent-plan/M4_RUNTIME_VALIDATION_2026-10-04.md). V2 Start/protected evaluator ir legacy gift D1 mapping dar nepriimti; gift neįjungtas.
+## parasoplansetes local calibration
+
+The profile, role fragments and protected corpus are versioned; registration,
+approved-source admission, learning admission and live channel gates remain separate.
+Set private `PINET_VOICE_SITES=["parasoplansetes"]` only in the owned runtime;
+public activation also requires `VOICE_SITE_IDS=parasoplansetes` and the global widget switch.
+The default legacy site allowlist is preserved. Never copy another site's credentials.
+
+Use `scripts/start_site_preview.py --site parasoplansetes --port 5197` and
+`scripts/prelive_doctor.py --site parasoplansetes`. Native M0 probes accept `--site`;
+new-site speech generation requires `--input-text-file`, resumption requires
+`--fixture-file` with two prompts and expected fragments. Artifacts live in ignored
+`artifacts/parasoplansetes-voice/`; an audio draft must match its site and host before
+owner-lab delivery. Recorded PCM over RTC does not certify a physical browser microphone.
+
+Full measured results and remaining Windows/provider/mail/hosting dependencies:
+[`sites/parasoplansetes/AGENT-CALIBRATION-20261009.md`](../../sites/parasoplansetes/AGENT-CALIBRATION-20261009.md).
+Text calibration passing does not enable voice or SMTP, raise M0, or prove inbox delivery.
+
+## OpenRouter text provider
+
+The same server-side text adapter serves chat, postcall analysis, independent
+email review and known-thread replies. Gemini remains the default. OpenRouter
+does not replace the Gemini Live voice transport or the local Codex calibration
+runner. The public widget and signed edge protocol remain unchanged.
+
+Configure the owned private `.env` (never the browser bundle or Worker vars):
+
+```dotenv
+PINET_TEXT_PROVIDER=openrouter
+PINET_OPENROUTER_API_KEY=
+PINET_OPENROUTER_MODEL=google/gemini-3.8-flash
+PINET_OPENROUTER_MAX_PROMPT_PRICE=0.75
+PINET_OPENROUTER_MAX_COMPLETION_PRICE=3.75
+```
+
+The selected model was present in the official catalog on 2026-10-10. The last
+two values are operator ceilings in USD per million tokens; they are not frozen
+provider rates. Choose an explicit model supporting `response_format` and
+`structured_outputs`; automatic model routers are not admitted. A missing key,
+model or positive price ceiling prevents chat admission. Run this metadata-only
+check, then restart only the owned API/worker when adopting the new configuration:
+
+```powershell
+uv run python scripts/text_provider_preflight.py
+```
+
+The adapter uses strict JSON-schema output, requires supported parameters,
+denies data-collecting upstreams and disables provider fallback. It performs no
+automatic retry, redirect, cross-model fallback, paid search or server tools.
+The existing core validates tools, evidence, reviewed email provenance and
+recipient authorization independently of the model response. Operator tool and
+budget policies remain mandatory; switching provider does not reset reservations.
+Chat retains its three-generation bound: the last generation uses a reply-only
+schema so repeated knowledge searches cannot consume the final response slot.
+
+OpenRouter `usage.cost` supplies the account's reported USD charge, rounded up
+to micro-USD before semantic validation. This is not an independent invoice.
+Missing or invalid cost fails closed and preserves the reservation. Truncated
+or malformed output cannot execute tools or authorize mail; available cost is
+still recorded. A cost exceeding its reservation triggers the existing pause.
+OpenRouter credit/top-up fees and Google welcome credits are outside this
+usage accounting; do not assume Google credits fund OpenRouter.
+
+Metadata success and offline tests do not prove a live conversation or inbox
+delivery. Actual provider testing needs the private key, usable account credit
+and an explicit remaining task budget. Readiness does not start background jobs,
+voice or SMTP. Existing conversations and queued mail should be finalized or
+reviewed before a provider change; active processes keep their prior settings
+until restarted. `PINET_TEXT_PROVIDER=gemini` restores the former adapter.
+
+Primary references: [API](https://openrouter.ai/docs/api/reference/overview),
+[structured output](https://openrouter.ai/docs/guides/features/structured-outputs),
+[routing](https://openrouter.ai/docs/guides/routing/provider-selection),
+[usage](https://openrouter.ai/docs/cookbook/administration/usage-accounting).

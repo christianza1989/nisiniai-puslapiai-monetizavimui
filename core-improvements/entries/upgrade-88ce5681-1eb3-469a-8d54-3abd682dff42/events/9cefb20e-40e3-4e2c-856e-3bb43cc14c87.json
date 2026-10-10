@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Companion commit7761a29 fixes visible native-home body omission while keeping legacy custom-home exclusion and common eligibility. Current19page semantic parity has missingHtml0/missingFullText0. Site acceptance remains incomplete; local source only, no PR/merge/adoption/deploy.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "sites/parasoplansetes/self-audit/parasoplansetes-self-audit-core-tests.txt:57tests including3reading regressions"
+    },
+    {
+      "command": "node content-studio/tmp/parasoplansetes-research/semantic-audit.mjs",
+      "result": "PASS",
+      "evidence": "sites/parasoplansetes/self-audit/semantic-after.json; compare original semantic-before.json with10homepage omissions"
+    },
+    {
+      "command": "node content-studio/tmp/parasoplansetes-research/seo-all-niches.mjs",
+      "result": "PASS",
+      "evidence": "sites/parasoplansetes/self-audit/seo-all-niches.json:10actual niche Host smoke checks"
+    }
+  ],
+  "eventId": "9cefb20e-40e3-4e2c-856e-3bb43cc14c87",
+  "sequence": 2,
+  "at": "2026-10-09T06:13:34.212Z"
+}

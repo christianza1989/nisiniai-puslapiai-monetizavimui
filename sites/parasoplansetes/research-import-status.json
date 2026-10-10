@@ -1,0 +1,1026 @@
+{
+  "siteId": "parasoplansetes",
+  "domain": "parasoplansetes.lt",
+  "assessedAt": "2026-10-08T16:55:40.861Z",
+  "paidExecution": "disabled-in-generation",
+  "budgetUsd": 0,
+  "observations": [
+    {
+      "id": "treg-source-discovery-20261008",
+      "kind": "source",
+      "status": "observed",
+      "observedAt": "2026-10-08T15:24:59.266Z",
+      "freshUntil": "2026-10-15T15:24:59.266Z",
+      "country": "GLOBAL",
+      "language": "und",
+      "query": "parašo planšetės StepOver signotec Lietuva",
+      "endpoint": "tinyfish.web.search",
+      "provider": "tinyfish",
+      "callId": "be12143f50d14d4fa64bc2c9eeb0cd37",
+      "chargedUsd": 0,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/tinyfish-current.json",
+        "sha256": "125f418c2e6064eb0cf8f55f041d73b22a1b56cfbfe5b860b54a3b4ee9aa9574"
+      },
+      "limitations": "2026-10-08 current-task actual Treg call. Requested LT/lt, effective Google locale not established. Source discovery only, not SERP ranks or volumes. observedAt is the actual enclosing tool return timestamp from this own session journal; provider underlying data timestamp unavailable.",
+      "value": {
+        "requestedCountry": "LT",
+        "requestedLanguage": "lt",
+        "results": [
+          {
+            "position": 1,
+            "site_name": "signaturepads.lt",
+            "snippet": "Parašo planšetė StepOver naturaSign Pad Classic. 169,00€ be PVM. Parašo planšetė signotec Sigma Greita peržiūra.",
+            "title": "Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/iranga/paraso-plansetes/"
+          },
+          {
+            "position": 2,
+            "site_name": "signaturepads.lt",
+            "snippet": "Parašo planšetė StepOver duraSign Pad 5.0. 289,00 ; Parašo planšetė signotec Omega. 299,00 ; Monitoriaus išplėtimas pasirašymui signotec Delta Pen Display. 399,00 ...",
+            "title": "Prekės - Page 2 of 2 - - Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/prekes/page/2/"
+          },
+          {
+            "position": 3,
+            "site_name": "signaturepads.lt",
+            "snippet": "Parašo planšetės · Parašo planšetė StepOver naturaSign Pad Classic. 169,00€ be PVM. Parašo planšetė signotec Sigma Greita peržiūra.",
+            "title": "Prekės - - Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/prekes/"
+          },
+          {
+            "position": 4,
+            "site_name": "barkoduiranga.lt",
+            "snippet": "Profesionalios parašo planšetės saugiam skaitmeniniam pasirašymui. Wacom, StepOver ir kiti sprendimai. Biometrinio parašo fiksavimas. Geriausia kaina!",
+            "title": "Elektroninio parašo planšetės ir padai - Barkoduiranga.lt",
+            "url": "https://barkoduiranga.lt/220-paraso-plansetes"
+          },
+          {
+            "position": 5,
+            "site_name": "www.signotec.com",
+            "snippet": "Unterzeichnen Sie so einfacheinfach wie noch nie. Ob vor Ort oder remote: Mit signotec signieren Sie Dokumente rechtskonform, prozesssicher und medienbruchfrei.",
+            "title": "signotec GmbH – Lösungen für elektronische Signaturen",
+            "url": "https://www.signotec.com/de/"
+          },
+          {
+            "position": 6,
+            "site_name": "www.signotec-shop.com",
+            "snippet": "By choosing signotec, you get a robust, durable and technologically advanced solution that is unmatched in this market. Our products offer the highest security, ...",
+            "title": "Our Signature Pads - Made in Germany! - signotec Webstore",
+            "url": "https://www.signotec-shop.com/en/"
+          },
+          {
+            "position": 7,
+            "site_name": "signaturepads.lt",
+            "snippet": "Ši 4,3 colių (10,9 cm) įstrižainės planšetė sukurta intensyviam naudojimui tiek stacionariose darbo vietose, tiek mobilioje aplinkoje. duraSign Pad 4.3 ...",
+            "title": "Parašo planšetė StepOver duraSign Pad 4.3",
+            "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3/"
+          },
+          {
+            "position": 8,
+            "site_name": "www.raso.lt",
+            "snippet": "Parašo planšetė. Planšetiniai kompiuteriai UAB ・ 67A, Vilnius, LT-09112 ・ 8.30 – 17.30, V- 8.30 – 16.15 +370 5 210 9260 info@raso.lt Pardavimų skyrius +370 5 ...",
+            "title": "Planšetiniai kompiuteriai – RASO.lt – Parduotuvių įranga ir ...",
+            "url": "https://www.raso.lt/iranga/auto-id/plansetiniai-kompiuteriai/"
+          },
+          {
+            "position": 9,
+            "site_name": "www.atea.lt",
+            "snippet": "No information is available for this page. ·",
+            "title": "https://www.atea.lt/eshop/products/monitoriai-proj...",
+            "url": "https://www.atea.lt/eshop/products/monitoriai-projektoriai/projektoriai/trumpo-atstumo-projektoriai/?filters=A4_187%7EC_1070_515555"
+          },
+          {
+            "position": 10,
+            "site_name": "www.vssistemos.lt",
+            "snippet": "No information is available for this page. ·",
+            "title": "https://www.vssistemos.lt/apsaugos-sistemos/signal...",
+            "url": "https://www.vssistemos.lt/apsaugos-sistemos/signalizacija-namams?sort=p.model&order=ASC&limit=30"
+          }
+        ],
+        "positionMeaning": "source result order, not Google organic rank"
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-0-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:16:26Z",
+      "freshUntil": "2026-10-09T16:16:26.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "parašo planšetės",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "d52369616f244f969e1fbe7157cbf3c9",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/iranga/paraso-plansetes/"
+          },
+          {
+            "position": 2,
+            "title": "Elektroninio parašo planšetės ir padai",
+            "url": "https://barkoduiranga.lt/220-paraso-plansetes"
+          },
+          {
+            "position": 3,
+            "title": "Skaitmeninio parašo planšetės | signaturepads.lt -",
+            "url": "https://signaturepads.lt/"
+          },
+          {
+            "position": 4,
+            "title": "Parašo planšetė SIG100 LITE - Vilnius",
+            "url": "https://www.raso.lt/produktas/paraso-plansete-sig100-lite/"
+          },
+          {
+            "position": 5,
+            "title": "Prekės - - Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/prekes/"
+          },
+          {
+            "position": 6,
+            "title": "Planšetės | Kaina gera internetu | Akcijos",
+            "url": "https://www.varle.lt/plansetiniai-kompiuteriai/"
+          },
+          {
+            "position": 7,
+            "title": "Planšetės - žemos kainos internetu | Technikos ekspertai",
+            "url": "https://www.technorama.lt/2635-plansetes"
+          },
+          {
+            "position": 8,
+            "title": "Planšetiniai kompiuteriai | Planšetės už gerą kainą",
+            "url": "https://www.telia.lt/prekes/plansetiniai-kompiuteriai-ir-skaitykles/plansetes"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-1-20261008",
+      "kind": "serp",
+      "status": "failed",
+      "observedAt": "2026-10-08T16:17:32Z",
+      "freshUntil": "2026-10-09T16:17:32.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "parašo planšetės",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "b31879699761426db305e9153e085349",
+      "chargedUsd": 0,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "mobile",
+        "organic": [],
+        "error": "We couldn't get valid results for this search. Please try again later."
+      },
+      "state": "failed",
+      "usable": false,
+      "freshSample": false
+    },
+    {
+      "id": "treg-serp-2-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:19:04Z",
+      "freshUntil": "2026-10-09T16:19:04.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "parašo planšetė",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "42a9aa24aece43f8933024b8a2e66ffe",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "Elektroninio parašo kainos ir planai",
+            "url": "https://marksign.lt/el-parasas/planai/"
+          },
+          {
+            "position": 2,
+            "title": "Biometrinis parašas – pasirašymas planšetėje su ZebraSign",
+            "url": "https://zebrasign.com/lt/naujienos/biometrinis-parasas-pasirasymas-planseteje-su-zebrasign/"
+          },
+          {
+            "position": 3,
+            "title": "Dokobit: Dokumentų pasirašymas kvalifikuotu elektroniniu ...",
+            "url": "https://www.dokobit.com/lt"
+          },
+          {
+            "position": 4,
+            "title": "Planšetiniai kompiuteriai už gerą kainą - Lenovo, Samsung ...",
+            "url": "https://pigu.lt/lt/plansetiniai-kompiuteriai/plansetes-tablets"
+          },
+          {
+            "position": 5,
+            "title": "Skaitmeninių parašų įgalinimas arba išjungimas",
+            "url": "https://support.microsoft.com/lt-lt/infopath/enable-or-disable-digital-signatures"
+          },
+          {
+            "position": 6,
+            "title": "Elektroninio dokumento sudarymas ir pasirašymas",
+            "url": "https://www.epaslaugos.lt/adoc/signer"
+          },
+          {
+            "position": 7,
+            "title": "Ink Plansete kainos nuo 3.65 € (347)",
+            "url": "https://www.kaina24.lt/s/ink-plansete/"
+          },
+          {
+            "position": 8,
+            "title": "Planšetė verslui - 10 naudingiausių programėlių",
+            "url": "https://www.lrytas.lt/it/techno/2013/03/20/news/plansete-verslui---10-naudingiausiu-programeliu-5076631"
+          },
+          {
+            "position": 9,
+            "title": "8 colių planšetiniai kompiuteriai. Xperia Z3, Galaxy Tab S ir ...",
+            "url": "https://www.youtube.com/watch?v=WRtYFYqkLBQ"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-3-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:19:15Z",
+      "freshUntil": "2026-10-09T16:19:15.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "parašo planšetė",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "90fc8d97e85e401986169bf63677453e",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "mobile",
+        "organic": [
+          {
+            "position": 1,
+            "title": "Elektroninio parašo kainos ir planai",
+            "url": "https://marksign.lt/el-parasas/planai/"
+          },
+          {
+            "position": 2,
+            "title": "Biometrinis parašas – pasirašymas planšetėje su ZebraSign",
+            "url": "https://zebrasign.com/lt/naujienos/biometrinis-parasas-pasirasymas-planseteje-su-zebrasign/"
+          },
+          {
+            "position": 3,
+            "title": "Dokobit: Dokumentų pasirašymas kvalifikuotu elektroniniu parašu",
+            "url": "https://www.dokobit.com/lt"
+          },
+          {
+            "position": 4,
+            "title": "Planšetiniai kompiuteriai už gerą kainą - Lenovo, Samsung, Apple",
+            "url": "https://pigu.lt/lt/plansetiniai-kompiuteriai/plansetes-tablets"
+          },
+          {
+            "position": 5,
+            "title": "Ink Plansete kainos nuo 3.65 € (347)",
+            "url": "https://www.kaina24.lt/s/ink-plansete/"
+          },
+          {
+            "position": 6,
+            "title": "Skaitmeninių parašų įgalinimas arba išjungimas",
+            "url": "https://support.microsoft.com/lt-lt/infopath/enable-or-disable-digital-signatures"
+          },
+          {
+            "position": 7,
+            "title": "Planšetė verslui - 10 naudingiausių programėlių",
+            "url": "https://www.lrytas.lt/it/techno/2013/03/20/news/plansete-verslui---10-naudingiausiu-programeliu-5076631"
+          },
+          {
+            "position": 8,
+            "title": "8 colių planšetiniai kompiuteriai. Xperia Z3, Galaxy Tab S ir eSTAR Gemini. © Poryt.lt",
+            "url": "https://www.youtube.com/watch?v=WRtYFYqkLBQ&xstg=CAMSBhUDze3xHw%3D%3D"
+          },
+          {
+            "position": 9,
+            "title": "Elektroninis parašas | PPTX",
+            "url": "https://www.slideshare.net/slideshow/new-microsoft-office-power-point-presentation-22075720/22075720"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-4-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:19:16Z",
+      "freshUntil": "2026-10-09T16:19:16.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "skaitmeninio parašo planšetės",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "a98e784c2511434699a70ef4b121d2e0",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "https://vaga.lt/index.php?route=product/product&pr...",
+            "url": "https://vaga.lt/index.php?route=product/product&product_id=180125&srsltid=AU7gw4XRXvUU7pMKzMsQWvI-1hESjAmt6aMx8RB-haE6nb3nOLyb4O3H"
+          },
+          {
+            "position": 2,
+            "title": "Planšetės, el. skaitytuvai",
+            "url": "https://pirk.lt/kompiuterija/plansetiniai-kompiuteriai-ir-priedai/plansetes-el-skaitytuvai/"
+          },
+          {
+            "position": 3,
+            "title": "https://pigu.lt/lt/sq?q=plansetei",
+            "url": "https://pigu.lt/lt/sq?q=plansetei"
+          },
+          {
+            "position": 4,
+            "title": "Planšetiniai kompiuteriai, elektroniniai skaitytuvai ir priedai",
+            "url": "https://www.1a.lt/c/telefonai-plansetiniai-kompiuteriai/plansetiniai-kompiuteriai-elektroniniai-skaitytuvai-ir-priedai/2sc"
+          },
+          {
+            "position": 5,
+            "title": "https://www.kaina24.lt/ru/s/plansete-10/www/155983/",
+            "url": "https://www.kaina24.lt/ru/s/plansete-10/www/155983/"
+          },
+          {
+            "position": 6,
+            "title": "Geriausias planšetinis kompiuteris skaitymui lauke saulėje",
+            "url": "https://www.sinsmarts.com/lt/blog/best-tablet-for-reading-in-the-sun-outside/?srsltid=AU7gw4U3t6WqJI1x53ZMPJY_rhDI_1jMVe70CYlelAitEUOnROCrJopc"
+          },
+          {
+            "position": 7,
+            "title": "Intop.lt piešimo planšetės - kainos nuo 10.10 €",
+            "url": "https://www.kaina24.lt/c/piesimo-plansetes/www/156362/"
+          },
+          {
+            "position": 8,
+            "title": "plansete skelbimai (8 psl.)",
+            "url": "https://www.skelbiu.lt/paieska/plansete/8"
+          },
+          {
+            "position": 9,
+            "title": "Planšetinis Kompiuteris Piešimui kainos nuo 2.91 € (108)",
+            "url": "https://www.kaina24.lt/s/plansetinis-kompiuteris-piesimui/"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-5-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:19:17Z",
+      "freshUntil": "2026-10-09T16:19:17.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "StepOver parašo planšetės",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "c9377c2718f24932bacc1542b57bc4ca",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/iranga/paraso-plansetes/"
+          },
+          {
+            "position": 2,
+            "title": "Prekės - Page 2 of 2 - - Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/prekes/page/2/"
+          },
+          {
+            "position": 3,
+            "title": "Elektroninio parašo planšetės ir padai",
+            "url": "https://barkoduiranga.lt/220-paraso-plansetes"
+          },
+          {
+            "position": 4,
+            "title": "Parašo planšetė StepOver duraSign Pad 4.3",
+            "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3/"
+          },
+          {
+            "position": 5,
+            "title": "Parašo planšetė StepOver duraSign Pad 5.0",
+            "url": "https://signaturepads.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0/"
+          },
+          {
+            "position": 6,
+            "title": "Parašo planšetė SIG100 LITE - Vilnius",
+            "url": "https://www.raso.lt/produktas/paraso-plansete-sig100-lite/"
+          },
+          {
+            "position": 7,
+            "title": "Planšetiniai kompiuteriai (planšetės) | Kainos",
+            "url": "https://www.bite.lt/plansetiniai-kompiuteriai-plansetes"
+          },
+          {
+            "position": 8,
+            "title": "Planšetės",
+            "url": "https://teledema.lt/42-plansetes"
+          },
+          {
+            "position": 9,
+            "title": "Planšetės už gerą kainą internetu, akcijos",
+            "url": "https://www.technorama.lt/1652-plansetes"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-6-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:19:36Z",
+      "freshUntil": "2026-10-09T16:19:36.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "signotec parašo planšetės",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "5f8190ab501444c4af25aaf5a9d2d6fe",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/iranga/paraso-plansetes/"
+          },
+          {
+            "position": 2,
+            "title": "Prekės - Page 2 of 2 - - Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/prekes/page/2/"
+          },
+          {
+            "position": 3,
+            "title": "Prekės - - Skaitmeninio parašo planšetės",
+            "url": "https://signaturepads.lt/prekes/"
+          },
+          {
+            "position": 4,
+            "title": "Elektroninio parašo planšetės ir padai",
+            "url": "https://barkoduiranga.lt/220-paraso-plansetes"
+          },
+          {
+            "position": 5,
+            "title": "Skaitmeninio parašo planšetės | signaturepads.lt -",
+            "url": "https://signaturepads.lt/"
+          },
+          {
+            "position": 6,
+            "title": "Parašo planšetė SIG100 LITE - Vilnius",
+            "url": "https://www.raso.lt/produktas/paraso-plansete-sig100-lite/"
+          },
+          {
+            "position": 7,
+            "title": "signotec Gamma - user manual",
+            "url": "https://docs.signotec.com/en/signotec-gamma/latest"
+          },
+          {
+            "position": 8,
+            "title": "Parašo planšetė signotec Delta",
+            "url": "https://signaturepads.lt/produktas/paraso-plansete-signotec-delta/"
+          },
+          {
+            "position": 9,
+            "title": "Sign on Tab",
+            "url": "https://skaitmeninisknygnesys.lt/projektai/verslas-ir-komercija/sign-on-tab-2/"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-7-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:20:47Z",
+      "freshUntil": "2026-10-09T16:20:47.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "PDF pasirašymas planšete",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "f21812e3b06d48b685f53dc15b2ff31e",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "El. parašas planšetėje – kodėl tai geriau už popierių?",
+            "url": "https://zebrasign.com/lt/naujienos/kodel-elektroninis-parasas-planseteje-pranasesnis-uz-popierini-zebrasign-rekomendacijos/"
+          },
+          {
+            "position": 2,
+            "title": "3 pasiūlymai, ką dar galima nuveikti su planšete",
+            "url": "https://www.lrytas.lt/it/ismanyk/2018/09/26/news/3-pasiulymai-ka-dar-galima-nuveikti-su-plansete-7690652"
+          },
+          {
+            "position": 3,
+            "title": "Pasukti PDF",
+            "url": "https://pdfaid.com/lt/pdf-to-rotate"
+          },
+          {
+            "position": 4,
+            "title": "V-42 Dėl Elektroniniu parašu pasirašyto kompiuterio skaitomo ...",
+            "url": "https://www.e-tar.lt/portal/en/legalAct/TAR.993F6FB323AA"
+          },
+          {
+            "position": 5,
+            "title": "Užpildykite paraiškos formą (Word dokumentas). ...",
+            "url": "https://www.siauliai.lt/upload/media/user/175/failai/1_Priedas_instrukcija_1.pdf"
+          },
+          {
+            "position": 6,
+            "title": "Kurti PDF",
+            "url": "https://eais-pub.archyvai.lt/eais/help/Documents/kurtipdf.htm"
+          },
+          {
+            "position": 7,
+            "title": "NextPDF – nemokamas atsisiuntimas ir diegimas sistemoje ...",
+            "url": "https://apps.microsoft.com/detail/9p04xh5wv3wl?hl=lt-LT&gl=LT"
+          },
+          {
+            "position": 8,
+            "title": "Nexus PDF Workspace",
+            "url": "https://apps.microsoft.com/detail/9n4ch9wv6f8p?hl=lt-LT&gl=LT"
+          },
+          {
+            "position": 9,
+            "title": "Bluebeam Revu – PDF redaktorius projektuojantiems - InfoEra",
+            "url": "https://www.infoera.lt/blog/bluebeam-revu-pdf-redaktorius-projektuojantiems/"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-8-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:20:48Z",
+      "freshUntil": "2026-10-09T16:20:48.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "parašo planšetės kaina",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "f2a055131fce4aa28350a4d835406b05",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "https://pigu.lt/lt/sq?q=samsung+plansete",
+            "url": "https://pigu.lt/lt/sq?q=samsung+plansete"
+          },
+          {
+            "position": 2,
+            "title": "7\" Planšetinis kainos nuo 1.30 € (3979)",
+            "url": "https://www.kaina24.lt/s/7-plansetinis/"
+          },
+          {
+            "position": 3,
+            "title": "Atsparus Planšetinis Kompiuteris kainos nuo 4.69 € (514)",
+            "url": "https://www.kaina24.lt/s/atsparus-plansetinis-kompiuteris/?sort=top&page=26"
+          },
+          {
+            "position": 4,
+            "title": "ARCHOS planšetiniai kompiuteriai",
+            "url": "https://pigu.lt/lt/plansetiniai-kompiuteriai/plansetes-tablets/f/archos"
+          },
+          {
+            "position": 5,
+            "title": "Plansetiniai Kompiuteriai Pro kaina nuo 21.18 € (67 pard.)",
+            "url": "https://www.kainos.lt/paieska/plansetiniai-kompiuteriai-pro-kaina"
+          },
+          {
+            "position": 6,
+            "title": "http://www.kilobaitas.lt/kompiuteriai_ir_komponent...",
+            "url": "http://www.kilobaitas.lt/kompiuteriai_ir_komponentai/plansetiniai_kompiuteriai/plansetiniai_kompiuteriai_tablet/kategorija.aspx?v=344&groupfilterid=72"
+          },
+          {
+            "position": 7,
+            "title": "https://www.alio.lt/en/kompiuterija/plansetiniai_d...",
+            "url": "https://www.alio.lt/en/kompiuterija/plansetiniai_delniniai_kompiuteriai/parduoda.html"
+          },
+          {
+            "position": 8,
+            "title": "7\" Planšetinis kainos nuo 1.30 € (3827) | puslapis 103",
+            "url": "https://www.kaina24.lt/s/7-plansetinis/?sort=top&page=103"
+          },
+          {
+            "position": 9,
+            "title": "Planšetiniai Kompiuteriai 10 kainos nuo 1.98 € (3461)",
+            "url": "https://www.kaina24.lt/s/plansetiniai-kompiuteriai-10/?page=85"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-serp-9-20261008",
+      "kind": "serp",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:20:50Z",
+      "freshUntil": "2026-10-09T16:20:50.000Z",
+      "country": "LT",
+      "language": "lt",
+      "query": "parasoplansetes.lt",
+      "endpoint": "serpapi.google.serp.organic",
+      "provider": "serpapi",
+      "callId": "cb5b8adf608e4689a2122bb2e72f8b52",
+      "chargedUsd": 0.015,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-serp.json",
+        "sha256": "de70cc15bfca265cad03a1273afe143a8335b0cff9ffb06e2f15e55c4a81d49a"
+      },
+      "limitations": "Actual provider-echoed google.lt/gl=lt/hl=lt. Device-specific, single point-in-time sample; organic position is not absolute SERP slot. No guarantee across devices or future searches. HTTP 503 mobile result is failed, not zero demand.",
+      "value": {
+        "device": "desktop",
+        "organic": [
+          {
+            "position": 1,
+            "title": "Patalyne",
+            "url": "https://www.facebook.com/p/Patalyne-100083270442519/"
+          },
+          {
+            "position": 2,
+            "title": "Patalynės komplektai vietoje ✔️",
+            "url": "https://www.facebook.com/groups/948373235727698/posts/1979966752568336/"
+          },
+          {
+            "position": 3,
+            "title": "ARPORA, UAB – įmonės kodas 125044450, rekvizitai",
+            "url": "https://info123.lt/imones/125044450"
+          },
+          {
+            "position": 4,
+            "title": "Patalynė > mūsų kontaktai.",
+            "url": "https://patalyne.narod.ru/lit/rekvizitai.htm"
+          },
+          {
+            "position": 5,
+            "title": "Matro - patalynės komplektai",
+            "url": "https://www.facebook.com/100094227985937/"
+          },
+          {
+            "position": 6,
+            "title": "Apartment Parko Pakrantes Apartamentai Klaipeda, Lithuania ...",
+            "url": "https://parko-pakrants-apartamentai.allklaipedahotels.com/en/"
+          },
+          {
+            "position": 7,
+            "title": "Staltiesės",
+            "url": "https://www.patalyne.narod.ru/lit/prekes/staltieses.htm"
+          },
+          {
+            "position": 8,
+            "title": "Риелторы - OPPA nekilnojamojo turto ...",
+            "url": "https://www.oppa.lt/ru/rieltory/?o=pza"
+          },
+          {
+            "position": 9,
+            "title": "Patalynė > mūsų asortimentas.",
+            "url": "https://patalyne.narod.ru/lit/asortimentas.htm"
+          }
+        ],
+        "error": null
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-keywords-lt-20261008",
+      "kind": "keywords",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:26:11.661Z",
+      "freshUntil": "2026-11-07T16:26:11.661Z",
+      "country": "LT",
+      "language": "lt",
+      "endpoint": "dataforseo.google.keywords.volume",
+      "provider": "dataforseo",
+      "callId": "dc6dc5902e2349d79395525c82c52587",
+      "chargedUsd": 0.09,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-volume-crosscheck.json",
+        "sha256": "92a38cd0d857277fcae76acfb7e43999cf06bf5daa418642303df234bd2a4d8e"
+      },
+      "limitations": "Google Ads estimate, location 2440 Lithuania and lt echoed by task/results. Latest monthly row is August 2026, not live October demand. 13 null values are missing estimates, not zero. StepOver term includes non-manufacturer meanings; Ads competition is not organic SEO difficulty.",
+      "value": [
+        {
+          "keyword": "parašo planšetės",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "parašo planšetė",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "paraso plansetes",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "paraso plansete",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "skaitmeninio parašo planšetės",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "elektroninio parašo planšetė",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "biometrinis parašas",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "StepOver",
+          "searchVolume": 10,
+          "cpcUsd": null,
+          "competition": "LOW",
+          "latestMonth": {
+            "year": 2026,
+            "month": 8,
+            "search_volume": 10
+          }
+        },
+        {
+          "keyword": "StepOver parašo planšetės",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "signotec",
+          "searchVolume": 10,
+          "cpcUsd": null,
+          "competition": "LOW",
+          "latestMonth": {
+            "year": 2026,
+            "month": 8,
+            "search_volume": 10
+          }
+        },
+        {
+          "keyword": "signotec parašo planšetės",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "PDF pasirašymas",
+          "searchVolume": 260,
+          "cpcUsd": 0.79,
+          "competition": "LOW",
+          "latestMonth": {
+            "year": 2026,
+            "month": 8,
+            "search_volume": 260
+          }
+        },
+        {
+          "keyword": "pasirašymas planšete",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "parašo planšetės kaina",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "duraSign Pad 4.3",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        },
+        {
+          "keyword": "naturaSign Pad Classic",
+          "searchVolume": null,
+          "cpcUsd": null,
+          "competition": null,
+          "latestMonth": null
+        }
+      ],
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-independent-source-0-20261008",
+      "kind": "source",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:26:22.747Z",
+      "freshUntil": "2026-10-09T16:26:22.747Z",
+      "country": "GLOBAL",
+      "language": "und",
+      "endpoint": "cloro.google.serp.organic",
+      "provider": "cloro",
+      "callId": "c4097c3733ef4892acba82e9e4577795",
+      "chargedUsd": 0.002,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-volume-crosscheck.json",
+        "sha256": "92a38cd0d857277fcae76acfb7e43999cf06bf5daa418642303df234bd2a4d8e"
+      },
+      "limitations": "Independent cross-check requested gl=LT/hl=lt; response does not echo effective locale. Not promoted to verified LT mobile ranking evidence. Desktop plural corroborates first five organic URLs; mobile output is irrelevant and unreliable.",
+      "value": {
+        "crossCheckOnly": true,
+        "rawResultPath": "alternateSerps[0].body.result"
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-independent-source-1-20261008",
+      "kind": "source",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:52:54.494Z",
+      "freshUntil": "2026-10-09T16:52:54.494Z",
+      "country": "GLOBAL",
+      "language": "und",
+      "endpoint": "cloro.google.serp.organic",
+      "provider": "cloro",
+      "callId": "6558787e8def4edab6c0c412eb46f56f",
+      "chargedUsd": 0.002,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-volume-crosscheck.json",
+        "sha256": "92a38cd0d857277fcae76acfb7e43999cf06bf5daa418642303df234bd2a4d8e"
+      },
+      "limitations": "Independent cross-check requested gl=LT/hl=lt; response does not echo effective locale. Not promoted to verified LT mobile ranking evidence. Desktop plural corroborates first five organic URLs; mobile output is irrelevant and unreliable.",
+      "value": {
+        "crossCheckOnly": true,
+        "rawResultPath": "alternateSerps[1].body.result"
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    },
+    {
+      "id": "treg-independent-source-2-20261008",
+      "kind": "source",
+      "status": "observed",
+      "observedAt": "2026-10-08T16:52:54.494Z",
+      "freshUntil": "2026-10-09T16:52:54.494Z",
+      "country": "GLOBAL",
+      "language": "und",
+      "endpoint": "cloro.google.serp.organic",
+      "provider": "cloro",
+      "callId": "ca0763ddbd9f47a9877440cbf7d37778",
+      "chargedUsd": 0.002,
+      "source": {
+        "artifact": "snapshots/ab21bf30-92a6-49c5-b8e8-fbb386a837d9/treg-paid-volume-crosscheck.json",
+        "sha256": "92a38cd0d857277fcae76acfb7e43999cf06bf5daa418642303df234bd2a4d8e"
+      },
+      "limitations": "Independent cross-check requested gl=LT/hl=lt; response does not echo effective locale. Not promoted to verified LT mobile ranking evidence. Desktop plural corroborates first five organic URLs; mobile output is irrelevant and unreliable.",
+      "value": {
+        "crossCheckOnly": true,
+        "rawResultPath": "alternateSerps[2].body.result"
+      },
+      "state": "current",
+      "usable": true,
+      "freshSample": true
+    }
+  ],
+  "currentKinds": [
+    "source",
+    "serp",
+    "keywords"
+  ],
+  "refreshKinds": [],
+  "missingKinds": [
+    "backlinks",
+    "geo",
+    "analytics",
+    "crawl"
+  ],
+  "limitation": "Private evidence and source hashes support review; they do not certify semantic truth, indexing, revenue or completed research.",
+  "status": "available",
+  "country": "LT",
+  "language": "lt",
+  "evidenceSha256": "9808ae906130f273f2af329486292fde26230a8514342a952d67e3ad6e98bd48"
+}

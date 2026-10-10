@@ -1,6 +1,17 @@
 import pytest
 
 from pinet_core.quality_guards import findings, reconcile
+from pinet_core.quality_guards import unsupported_model_exclusion
+
+
+def test_document_view_exclusion_is_not_proved_by_screen_size():
+    knowledge = {'site_id': 'parasoplansetes', 'pages': [{'url':
+        'https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0'}]}
+    assert unsupported_model_exclusion('Dokumentui mažesni 4.3 ir 5.0 ekranai netiks.', knowledge)
+    assert unsupported_model_exclusion('Pad 5.0 cannot display the document.', knowledge)
+    assert not unsupported_model_exclusion('5.0 atmetimas dokumento peržiūrai buvo nepagrįstas.', knowledge)
+    assert not unsupported_model_exclusion('Palyginkime 5.0 ir 10.0 ekrano skaitomumą su jūsų dokumentu.', knowledge)
+    assert not unsupported_model_exclusion('Pad 5.0 ekranas netiks.', {'site_id': 'other', 'pages': []})
 
 
 def timeline(reply, channel='email', after=False):

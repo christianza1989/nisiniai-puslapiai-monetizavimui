@@ -1,0 +1,399 @@
+{
+  "checkedAt": "2026-10-09T04:17:33.626Z",
+  "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "siteId": "parasoplansetes",
+  "scope": "actual local Worker with canonical Host; not live domain or real bot access",
+  "rows": [
+    {
+      "path": "/",
+      "type": "home",
+      "status": 200,
+      "bodyFacts": 10,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "wordCount": 133
+    },
+    {
+      "path": "/gidai/kaip-pasirinkti-paraso-plansete",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 31,
+      "missingHtml": [
+        "Peržiūrėkite StepOver modelius, o jei programos kelias dar neaiškus — pirmiausia aptarkite procesą. Užklausa nėra įrangos užsakymas ar galutinė kainos sąmata."
+      ],
+      "missingFullText": [],
+      "contextualAnchors": [
+        {
+          "href": "/programine-iranga",
+          "label": "eSignatureOffice"
+        },
+        {
+          "href": "/paraso-plansetes",
+          "label": "StepOver modelius"
+        }
+      ],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 632
+    },
+    {
+      "path": "/paraso-plansetes",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 9,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 125
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 137
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 143
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 138
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 131
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 159
+    },
+    {
+      "path": "/programine-iranga",
+      "type": "product",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 212
+    },
+    {
+      "path": "/integracija",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 16,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "wordCount": 190
+    },
+    {
+      "path": "/gidai/pdf-pasirasymas-plansete",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 25,
+      "missingHtml": [
+        "Parašykite dokumento formatą, iš kurios programos jis gaunamas, darbo vietų skaičių ir galutinio failo paskirties vietą. Jei dar tik planuojate procesą, taip ir nurodykite. Pradėkite nuo programinės įrangos kelio, o gilesnę integraciją vertinkite turėdami aiškų dokumento maršrutą."
+      ],
+      "missingFullText": [],
+      "contextualAnchors": [
+        {
+          "href": "https://stepover.com/produkte/software/esignatureoffice/",
+          "label": "StepOver eSignatureOffice"
+        },
+        {
+          "href": "/programine-iranga",
+          "label": "programinės įrangos kelio"
+        },
+        {
+          "href": "/gidai/paraso-plansetes-integracija",
+          "label": "gilesnę integraciją"
+        }
+      ],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 505
+    },
+    {
+      "path": "/gidai/paraso-plansetes-integracija",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 29,
+      "missingHtml": [
+        "Užrašykite operacinę sistemą ir versiją, kur paleidžiama dokumentų programa bei kas turi įrenginio prijungimo teises. Įvertinkite, ar tai vietinis kompiuteris, terminalinis serveris, Citrix ar naršyklės programa. Tas pats darbuotojo ekranas dar nereiškia, kad programa vykdoma tame pačiame kompiuteryje kaip USB įrenginys."
+      ],
+      "missingFullText": [],
+      "contextualAnchors": [
+        {
+          "href": "/gidai/terminalinis-serveris-paraso-plansete",
+          "label": "terminalinis serveris"
+        },
+        {
+          "href": "/integracija",
+          "label": "Integracijos užklausoje"
+        }
+      ],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 508
+    },
+    {
+      "path": "/gidai/terminalinis-serveris-paraso-plansete",
+      "type": "guide",
+      "status": 200,
+      "bodyFacts": 19,
+      "missingHtml": [
+        "Nurodykite nuotolinio darbalaukio aplinką, programų versijas, įrenginio modelį, serverių bei darbo vietų skaičių ir norimą dokumento kelią. Pradiniam aptarimui pakanka struktūrinio aprašymo be klientų asmens duomenų. Platesnį diegimą pradėkite po riboto piloto."
+      ],
+      "missingFullText": [],
+      "contextualAnchors": [
+        {
+          "href": "/programine-iranga",
+          "label": "eSignatureOffice"
+        },
+        {
+          "href": "/gidai/paraso-plansetes-integracija",
+          "label": "norimą dokumento kelią"
+        }
+      ],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "wordCount": 267
+    },
+    {
+      "path": "/gidai",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 3,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 63
+    },
+    {
+      "path": "/kontaktai",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 5,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 72
+    },
+    {
+      "path": "/apie-projekta",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 7,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 121
+    },
+    {
+      "path": "/redakcija",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 9,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ProfilePage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 173
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 9,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 131
+    },
+    {
+      "path": "/privatumas",
+      "type": "service",
+      "status": 200,
+      "bodyFacts": 14,
+      "missingHtml": [],
+      "missingFullText": [],
+      "contextualAnchors": [],
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "wordCount": 320
+    }
+  ],
+  "controls": {
+    "parasoplansetes.lt": {
+      "status": 200,
+      "body": "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /uzklausa\nSitemap: https://parasoplansetes.lt/sitemap.xml\n",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-type": "text/plain; charset=utf-8",
+        "cache-control": "private, no-store",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Next-Url, X-Vinext-Interception-Context, X-Vinext-Mounted-Slots, X-Vinext-Rsc-Render-Mode"
+      }
+    },
+    "localhost:8798": {
+      "status": 200,
+      "body": "User-agent: *\nDisallow: /\n",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-type": "text/plain; charset=utf-8",
+        "cache-control": "private, no-store",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Next-Url, X-Vinext-Interception-Context, X-Vinext-Mounted-Slots, X-Vinext-Rsc-Render-Mode",
+        "x-robots-tag": "noindex, nofollow"
+      }
+    }
+  },
+  "fullText": {
+    "status": 200,
+    "headers": {
+      "transfer-encoding": "chunked",
+      "content-type": "text/markdown; charset=utf-8",
+      "cache-control": "private, no-store",
+      "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Next-Url, X-Vinext-Interception-Context, X-Vinext-Mounted-Slots, X-Vinext-Rsc-Render-Mode",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  "missingHtml": 4,
+  "missingFullText": 0
+}

@@ -1,0 +1,20 @@
+✔ dry plan preserves source; quarantine and restore preserve exact bytes and provenance (1910.5158ms)
+✔ reject traversal, outside scope, dirty/protected/untracked files without deleting anything (1434.6417ms)
+✔ stale plan, restored-path collision and payload tampering all block safely (3017.4188ms)
+✔ journal entries are unique; events append in order and require actual checks / delivery references (1298.5513ms)
+✔ prepared-state recovery preserves bytes after interruption before payload or after unlink (2083.7305ms)
+✔ quarantine commit cloned to another PC retains original CRLF bytes and restores there (3449.8972ms)
+✔ symlink paths never escape workspace (skip only if host denies symlink creation) (926.3376ms)
+✔ detects another computer main change and preserves in-progress source (4277.2193ms)
+✔ own feature commits are allowed; dirty start fails and continue allows own work (5056.7962ms)
+✔ failed fetch rejects cached main and unexpected origins fail closed (2464.4743ms)
+✔ preserves personal guidance, replaces only managed block, remains idempotent (2.5161ms)
+✔ installs into effective nonempty global override and does not replace base (28.2653ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14291.979

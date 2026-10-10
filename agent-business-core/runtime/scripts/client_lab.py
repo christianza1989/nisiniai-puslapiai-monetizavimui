@@ -167,6 +167,7 @@ async def dialogue(client, lab, persona, manifest, directory, patch=""):
             "expected_contact_channels": persona.get('contact_channels', ['email']) if persona['contact'] else [],
             "expected_need": persona["expected_need"],
             'refusal_at': persona.get('refusal_at', 0),
+            'refusal': persona.get('refusal', False),
             "conversation_id": session["conversation_id"], "history": history, "tools": tools, "errors": errors,
             'received_release_hash': received_release_hash}
 

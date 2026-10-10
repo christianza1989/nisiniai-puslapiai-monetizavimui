@@ -1,0 +1,18 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Studio V2 compatibility test hardcodes nine live packages and fails when the valid StepOver package makes ten; compare compiled inventory with source directories while retaining validator/hash checks.",
+  "category": "code",
+  "evidence": [
+    "content-studio/test/content-v2.test.mjs:22 original failure 10 !== 9 after shared compiler validated 10 packages.",
+    "sites/parasoplansetes/CONTENT_PRODUCTION_20261010.md records original failure and subsequent checks."
+  ],
+  "paths": [
+    "content-studio/test/content-v2.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Revert only this test change; no runtime/schema/publication behavior changes.",
+  "id": "upgrade-dc15fb58-f132-4232-b0a4-3e3a705f13e1",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "960655342c88834d04f53a1e59ad55790eb2a462",
+  "createdAt": "2026-10-10T06:38:53.139Z"
+}

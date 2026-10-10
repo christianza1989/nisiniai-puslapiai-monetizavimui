@@ -121,6 +121,37 @@ def test_recommendation_has_actual_members_and_explainable_relevance(catalogue):
     assert catalogue.recommend("zzzznonexistentzzzz")["items"] == []
 
 
+@pytest.mark.parametrize("category", [None, "auto"])
+def test_autoelektriko_service_does_not_fill_limit_with_unrelated_services(catalogue, category):
+    result = catalogue.recommend("Autoelektriko paslaugos", category=category, limit=5)
+    assert {item["domain"]["domain"] for item in result["items"]} == {
+        "autoelektrikaivilniuje.lt", "autoelektrikaslinas.lt",
+    }
+    assert all(item["domain"]["category"] == "auto" for item in result["items"])
+    assert all(item["matched_terms"] == ["autoelektriko"] for item in result["items"])
+    assert "business" not in result["matched_categories"]
+    assert catalogue.recommend("Autoelektriko paslaugos", category="business")["items"] == []
+
+
+@pytest.mark.parametrize("niche,category", [
+    ("profesionalios paslaugos ir naujas verslas", None),
+    ("profesionalios paslaugos ir naujas verslas", "auto"),
+    ("zzzznonexistentzzzz paslaugos", "education"),
+    ("services for a new business", "business"),
+    ("services for a new business", None),
+])
+def test_generic_or_unknown_niche_never_uses_category_as_match_evidence(catalogue, niche, category):
+    result = catalogue.recommend(niche, category=category)
+    assert result["items"] == [] and result["matched_categories"] == []
+
+
+def test_meaningful_category_inference_and_exact_domain_still_work(catalogue):
+    result = catalogue.recommend("Mokytojas ir mokymai", category="education", limit=5)
+    assert result["matched_categories"] == ["education"] and len(result["items"]) == 5
+    assert all(item["domain"]["category"] == "education" for item in result["items"])
+    assert catalogue.recommend("autoelektrikaivilniuje.lt", limit=1)["items"][0]["match_kind"] == "exact_name"
+
+
 def test_inferred_category_never_invents_source_scores():
     assert infer_category("rekuperacija-specialistai.lt") == ("energy", ["rekuperacija"])
     assert infer_category("rekuperacija-kirpykla.lt") == ("unclassified", [])

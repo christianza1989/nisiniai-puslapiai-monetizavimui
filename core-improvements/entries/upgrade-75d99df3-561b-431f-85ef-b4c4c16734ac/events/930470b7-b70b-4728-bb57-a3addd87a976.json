@@ -1,0 +1,35 @@
+{
+  "status": "local-verified",
+  "commit": "1a2d1bc7c95d22a28f81ff42d85879b183155e9f",
+  "checks": [
+    {
+      "command": "Parent-owned approved PG wrapper: pytest -q tests/test_conversation_v2_start.py tests/test_knowledge_index.py tests/test_knowledge.py tests/test_policy.py with child PYTHONPATH/cwd and only two DB URL injection",
+      "result": "PASS",
+      "evidence": "Root reported 61 PASS in 66.79s on actual restricted PostgreSQL/schema0015; random test-* fixtures only, no provider, child source unchanged throughout. Root executed wrapper; this agent did not read/copy parent credentials."
+    },
+    {
+      "command": "uv run python -m pytest -q tests/test_conversation_v2_start.py -k 'request_cannot or exact_positive or legacy_start_contract'",
+      "result": "PASS",
+      "evidence": "Own execution:12 passed21deselected in4.72s without DB/provider."
+    },
+    {
+      "command": "uv run python -m pytest -q offline_tests/test_agent_preparation.py",
+      "result": "PASS",
+      "evidence": "Own execution:22 passed in2.66s; preparation reader preserved."
+    },
+    {
+      "command": "uv run ruff check src/pinet_core/api.py src/pinet_core/contracts.py src/pinet_core/knowledge.py src/pinet_core/service.py tests/test_conversation_v2_start.py; git diff --cached --check",
+      "result": "PASS",
+      "evidence": "Own scoped Ruff and exact staged diff passed; functional commit includes only6 files."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Exact6 staged blobs/88279bytes/0findings; no config/runtime/client artifacts staged."
+    }
+  ],
+  "note": "Functional1a2d1bc implements worker-only local/test simulation/v2 request over current complete native public knowledge index. Verified31pages+longtail, stale hash/revision/deployment, complete receipt and actual host, source_ready independence, expired TTL even replay/cached tool, revocation and fully empty rejection, current source lookup, policy/tool pause, memory/idempotency, concurrent commit fencing, V1 DTO/downgrade preservation, no voice dispatch/admission budget. No arbitrary customer Business/profile/grant mapping, public/customer session, learning, provider/mail activation or full calibration claim. Source window closed after functional commit; metadata separate for parent cherry-pick into reviewed existing platform PR. Earlier failures/usage/budget history unchanged.",
+  "eventId": "930470b7-b70b-4728-bb57-a3addd87a976",
+  "sequence": 3,
+  "at": "2026-10-10T16:10:43.544Z"
+}

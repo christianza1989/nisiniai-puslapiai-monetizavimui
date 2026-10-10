@@ -37,11 +37,20 @@ class SafeRoute(APIRoute):
         async def handle(request):
             request.state.control_request_id = new_id()
             try:
-                if len(await request.body()) > 4096:
-                    raise ControlError(400, "invalid_request")
+                # Stop reading oversized streams before FastAPI/bridge parse or retain their full body.
+                size, chunks = 0, []
+                async for chunk in request.stream():
+                    size += len(chunk)
+                    if size > 4096:
+                        raise ControlError(400, "invalid_request")
+                    chunks.append(chunk)
+                request._body = b"".join(chunks)
                 from .bridge import transport_guard
                 await transport_guard(request)
-                return await original(request)
+                response = await original(request)
+                response.headers["Cache-Control"] = "private, no-store"
+                response.headers["X-Content-Type-Options"] = "nosniff"
+                return response
             except ControlError as error:
                 status, code = error.status, error.code
             except RequestValidationError:
@@ -104,9 +113,10 @@ def password_hash(password: str) -> str:
 def password_matches(password, encoded):
     try:
         algorithm, n, r, p, salt, expected = encoded.split(":")
-        if algorithm != "scrypt" or (n, r, p) != ("16384", "8", "1"):
+        if algorithm != "scrypt" or n not in {"16384", "131072"} or (r, p) != ("8", "1"):
             return False
-        actual = hashlib.scrypt(password.encode(), salt=bytes.fromhex(salt), n=16384, r=8, p=1, dklen=32)
+        actual = hashlib.scrypt(password.encode(), salt=bytes.fromhex(salt), n=int(n), r=8, p=1,
+                                dklen=32, maxmem=256 * 1024 * 1024)
         return hmac.compare_digest(actual.hex(), expected)
     except (ValueError, TypeError):
         return False
@@ -152,7 +162,7 @@ async def login(value: Login, request: Request):
         user = await tx.scalar(select(User).where(User.username == value.username))
         encoded = user.password_hash if user else DUMMY_HASH
         valid = await asyncio.to_thread(password_matches, value.password, encoded)
-        if not valid or not user or not user.enabled:
+        if not valid or not user or not user.enabled or user.identity_issuer == "pinet-customer":
             raise ControlError(401, "invalid_credentials")
         if settings().control_mode == "hosted" and user.id != settings().control_owner_user_id:
             raise ControlError(401, "invalid_credentials")

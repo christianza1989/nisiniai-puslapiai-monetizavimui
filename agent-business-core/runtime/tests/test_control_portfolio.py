@@ -172,7 +172,10 @@ async def test_direct_sql_rls_and_transaction_pool_scope(pilot):
         assert not list(await tx.scalars(select(BusinessGrant)))
         assert not list(await tx.scalars(select(User)))
         assert not await tx.scalar(text("SELECT has_table_privilege(current_user,'control_memberships','UPDATE')"))
-        assert not await tx.scalar(text("SELECT has_table_privilege(current_user,'control_users','INSERT')"))
+        # Local customer onboarding now has INSERT subject to disabled/self/customer-issuer RLS.
+        # Registry grants and memberships remain read-only after their controlled INSERT.
+        assert not await tx.scalar(text("SELECT has_table_privilege(current_user,'control_users','DELETE')"))
+        assert not await tx.scalar(text("SELECT has_table_privilege(current_user,'control_business_grants','INSERT')"))
     async with scope(user=receipt["user_id"]) as tx:
         rows = list(await tx.scalars(select(BusinessGrant)))
         assert len(rows) == 2 and all(r.organization_id == receipt["organization_id"] for r in rows)

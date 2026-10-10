@@ -1,11 +1,13 @@
-"""Separate minimal owner API entry point. Never mount the legacy business/channel API publicly."""
+"""Minimal control/account API. New customer/public features are opt-in local-only."""
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from sqlalchemy import text
 
 from .control.routes import router as control_router
+from .customer.routes import router as customer_router
 from .db import db
+from .public_projects.routes import router as public_router
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
 
@@ -26,3 +28,5 @@ app = FastAPI(title="Pinet owner control", lifespan=lifespan, docs_url=None, red
 app.include_router(control_router)
 app.include_router(task_router)
 app.include_router(operations_router)
+app.include_router(customer_router)
+app.include_router(public_router)

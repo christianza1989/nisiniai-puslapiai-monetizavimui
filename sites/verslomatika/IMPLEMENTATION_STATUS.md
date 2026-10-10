@@ -1,4 +1,12 @@
-# Verslomatika dashboard and portable backend
+# Verslomatika customer accounts, public projects and dashboard
+
+## Active expanded instruction — 2026-10-10
+
+**Mode: DEVELOPMENT/TESTING. Full local website implementation continues; P3/P4 core work is in progress.** Human authority was verified directly in director chat01a0dcf8-8ade-7883-877b-8d5dba4e8c79 turns01a124e1-b3ea-7591-a18d-ab3071f8a31d ("igyvendinkite viska") and01a1248e-c9d9-7040-b5b2-13ecbafb5dc6. Earlier owner dashboard/portable acceptance below remains historical and does not complete this expanded instruction. The owner in this chat reaffirms that we are still developing/testing.
+
+Current core branch `codex/verslomatika-customer-public-core-20261010`, managed worktree `verslomatika-customer-core`; portal/BFF/UI remain with Kordinatorius A in its own repository. New core8855 and portal3017 are reserved; old services untouched. Canonical customer/public checkpoint191ed795e6d4aa5c67d8e1abf849dcaf00cea857 follows integrated private main13c9649/publicec8a9c0. [P3/P4 scope and pending acceptance](../../docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md), [issue73](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/73).
+
+Authorized now: local verified customer signup/login/recovery, real persisted claim/create intake with reviewed grants, and a separate revision-approved public project projection. Local private development outbox only. No Supabase, external email, public deployment/tunnel, autonomous worker execution, domain-derived ownership, payments or client-system writes. PostgreSQL actual storage/RLS, deny/revoke/race and paired browser tests are required before acceptance. Runtime source is being implemented; no new PASS or complete product claim yet.
 
 ## Current owner instruction — 2026-10-10
 

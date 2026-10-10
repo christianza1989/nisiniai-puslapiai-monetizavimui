@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from uuid import uuid4
 
+import pytest
 from sqlalchemy import update
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_control_portfolio import login
@@ -17,6 +18,15 @@ from pinet_core.tasks import worker
 
 chat = task_chat
 pilot = task_pilot
+
+
+@pytest.fixture(autouse=True)
+def synthetic_runner_configuration(monkeypatch):
+    # These tests call only the synthetic adapter, independent of an operator's private .env.
+    cfg = settings()
+    monkeypatch.setattr(cfg, "chat_codex_executable", "synthetic-not-executed")
+    monkeypatch.setattr(cfg, "chat_codex_sha256", "a" * 64)
+    monkeypatch.setattr(cfg, "chat_workspace", "synthetic-not-executed")
 
 
 async def launch(chat, key=None, message="Sintetinė dashboardo užduotis."):

@@ -98,6 +98,13 @@ Laukai lengvai užapvalinti, veiksmai kompaktiški, modelių ir gidų konteineri
 
 ## Components
 
+### Footer completion — 2026-10-10
+
+- [x] Replace the loose six-link footer with grouped solution, guide and site-information navigation, each generated only from eligible live pages.
+- [x] Show the core operator, package email / verified phone if available, copyright, privacy / terms and the required verslomatika.lt attribution. Owner explicitly requested keeping Pinet for now; no unverified identifiers/address were added.
+- [x] Use the existing text roles, a calm full-width surface and aligned inner content; photographic homepage footer matches the header / hero width. Stack columns at narrow widths with readable labels and usable link targets.
+- [x] Review every footer string and destination, real desktop/mobile homepage and guide, then build / publish / verify the hosted footer. Results: [FOOTER_PUBLICATION_20261010](FOOTER_PUBLICATION_20261010.md).
+
 Pagrindinis veiksmas mėlynas su baltu tekstu ir rodykle; hover tamsėja. Focus-visible turi 3 px kontūrą su tarpu. Fono perėjimas 180 ms išjungiamas per prefers-reduced-motion.
 
 Modelio konteineris rodo tikrą nuotrauką, pavadinimą, originalų aprašymą, savybių definition list ir realią nuorodą. Tai produkto vienetas, ne kiekvienos pastraipos dekoratyvinė kortelė.

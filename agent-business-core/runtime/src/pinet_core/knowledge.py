@@ -10,10 +10,11 @@ from uuid import uuid4
 
 import httpx
 from fastapi import HTTPException
+from pydantic import ValidationError
 from sqlalchemy import select, text
 
 from .config import settings
-from .contracts import Knowledge, KnowledgeQuery, KnowledgeRevocation
+from .contracts import Knowledge, KnowledgeQuery, KnowledgeReferenceV2, KnowledgeRevocation
 from .models import Conversation, Event, KnowledgeState, utcnow
 from .security import digest
 
@@ -29,6 +30,60 @@ def validate(item, data: Knowledge):
 
 async def current(tx):
     return await tx.scalar(select(KnowledgeState))
+
+
+async def reference_v2(tx, item, reference: KnowledgeReferenceV2):
+    """Read under the existing index lock; never import, renew TTL or admit source.
+
+    A revocation advances state.revision without changing the immutable complete
+    receipt or content hash. The caller must pin that *current* revision too.
+    Conversation metadata deliberately omits page bodies; tools read the current
+    scoped index, including revocations, rather than a per-session facts cache.
+    """
+    from . import knowledge_index as index
+
+    state = await index.locked(tx, item)
+    value = state.payload.get('knowledge', {}) if state else {}
+    receipt = state.payload.get('index_receipt', {}) if state else {}
+    if (value.get('schema_version') != 2 or receipt.get('schema_version') != 2
+            or receipt.get('status') != 'complete'
+            or type(receipt.get('revision')) is not int
+            or not 1 <= receipt['revision'] <= state.revision):
+        raise HTTPException(409, 'knowledge_v2_source_unavailable')
+    if state.refreshed_at + timedelta(seconds=settings().knowledge_ttl_seconds) < utcnow():
+        raise HTTPException(409, 'knowledge_snapshot_expired')
+    if (reference.knowledge_revision != state.revision
+            or reference.knowledge_hash != state.payload.get('hash')
+            or reference.deployment_id != value.get('deployment_id')):
+        raise HTTPException(409, 'knowledge_reference_conflict')
+    try:
+        metadata = index.Metadata.model_validate({
+            k: v for k, v in value.items() if k not in {'schema_version', 'pages'}
+        }).model_dump(mode='json')
+    except ValidationError:
+        raise HTTPException(409, 'knowledge_mapping_conflict') from None
+    if metadata['site_id'] != item.site_id or metadata['canonical_host'] != item.canonical_host:
+        raise HTTPException(409, 'knowledge_mapping_conflict')
+    pages = value.get('pages')
+    if (not isinstance(pages, list) or not pages or len(pages) > 1000
+            or any(not isinstance(p, dict) or not isinstance(p.get('id'), str)
+                   or not isinstance(p.get('text'), str) or not isinstance(p.get('url'), str)
+                   or not isinstance(p.get('revision_hash'), str) for p in pages)
+            or len({p['id'] for p in pages}) != len(pages)):
+        raise HTTPException(409, 'knowledge_v2_source_unavailable')
+    if any(urlparse(p['url']).scheme != 'https' or urlparse(p['url']).netloc != item.canonical_host
+           for p in pages):
+        raise HTTPException(409, 'knowledge_provenance_conflict')
+    if (type(receipt.get('page_count')) is not int or receipt['page_count'] != len(pages)
+            or index.content_hash(metadata, pages) != receipt.get('content_hash')
+            or index.content_hash({k: v for k, v in metadata.items() if k != 'generated_at'}, pages)
+            != reference.knowledge_hash):
+        raise HTTPException(409, 'knowledge_index_receipt_conflict')
+    active_count = sum(p['revision_hash'] not in state.payload.get('revoked', []) for p in pages)
+    if not active_count:
+        raise HTTPException(409, 'knowledge_projection_empty')
+    return {'knowledge': {**metadata, 'schema_version': 2, 'pages': []},
+            'knowledge_ref': reference.model_dump(mode='json'), 'active_page_count': active_count}
 
 
 async def register(tx, item, data):

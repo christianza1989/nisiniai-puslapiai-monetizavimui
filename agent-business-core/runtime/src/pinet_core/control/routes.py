@@ -31,6 +31,7 @@ class ControlError(Exception):
 
 
 class SafeRoute(APIRoute):
+    body_limit = 4096
     def get_route_handler(self):
         original = super().get_route_handler()
 
@@ -41,7 +42,7 @@ class SafeRoute(APIRoute):
                 size, chunks = 0, []
                 async for chunk in request.stream():
                     size += len(chunk)
-                    if size > 4096:
+                    if size > self.body_limit:
                         raise ControlError(400, "invalid_request")
                     chunks.append(chunk)
                 request._body = b"".join(chunks)

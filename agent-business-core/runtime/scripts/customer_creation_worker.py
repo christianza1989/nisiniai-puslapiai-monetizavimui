@@ -1,0 +1,44 @@
+"""Explicit local creation worker preflight/start, no service install or provider probe."""
+import argparse
+import asyncio
+
+from control_portable import preflight, source_check
+from sqlalchemy import text
+
+from pinet_core.config import settings
+from pinet_core.creation.adapter import available, instructions
+from pinet_core.creation.worker import execute_once, loop
+from pinet_core.db import db
+
+
+async def main(action):
+    try:
+        await preflight()
+        cfg = settings()
+        if not cfg.creation_enabled or not cfg.customer_enabled or cfg.control_mode != "local" or cfg.environment == "production":
+            raise ValueError("creation_disabled")
+        available()
+        async with db.registry() as tx:
+            count = await tx.scalar(text("SELECT count(*) FROM pg_class WHERE relnamespace='public'::regnamespace "
+                "AND relname IN ('control_creations','control_creation_jobs','control_creation_revisions',"
+                "'control_creation_artifacts','control_creation_events') AND relrowsecurity AND relforcerowsecurity"))
+            if count != 5 or not await tx.scalar(text("SELECT has_function_privilege(current_user,"
+                    "'control_creation_candidates(varchar)','EXECUTE')")):
+                raise ValueError('creation_schema_not_ready')
+        _, digest = instructions()
+        print({"source_revision": cfg.control_source_revision, "instruction_hash": digest, "model": "gpt-6-luna",
+               "web_search_enabled": cfg.creation_web_search_enabled, "global_daily_limit": cfg.creation_global_daily_limit,
+               "provider_calls": 0, "mode": "local"})
+        if action == "once":
+            await execute_once()
+        elif action == "worker":
+            await loop(source_check)
+    finally:
+        await db.engine.dispose()
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("action", choices=["check", "once", "worker"])
+    args = parser.parse_args()
+    asyncio.run(main(args.action))

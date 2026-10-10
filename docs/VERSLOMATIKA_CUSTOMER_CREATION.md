@@ -1,19 +1,51 @@
-# Customer business draft creation and calibration
+# Customer creation acceptance and portable execution
 
-Direct human scope2026-10-10: autonomous customer UI registration/conversation → exact mokyai-ai.lt business preparation → delivered work → critique/revision and further synthetic businesses. Today's minimum is a usable test customer creation slice; continue broader business acceptance afterward. Domain dashboard categorization/top200 explicitly delegated under issue76. Creation scope [issue77](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77), upgrade-8487ac2f-6c9a-4487-8bfe-e7e9c70c95ec.
+2026-10-10 human scope: autonomously finish the usable test-customer idea → AI business/site draft → delivered preview/downloads → criticism → immutable revised draft journey, then continue wider core/platform calibration. The initial bounded draft slice is not a full phase-one accepted/public business. Customer UI belongs to the director chat; this branch owns the shared HTTP/storage/executor adapter.
 
-Separate own branch codex/verslomatika-customer-creation-20261010 from P3 source4db56be; actual start gate private13c9649/publicec8a9c0. Stable P3 API8855 and earlier pilots preserved; new creation API8860/portal3019 reserved. Frontend remains director-owned. Same User/Session/Organization/Portfolio and PostgreSQL; no second auth database and no grant of an existing Business merely from a entered hostname.
+## Exact interfaces
 
-## Current implementation status
+- Creation wire: [OpenAPI](contracts/verslomatika-customer-creation.openapi.json), canonical Git bytes at `c6b29f93b8396a7e839b3dd65c1a17cc6d2ff284`, SHA256 `f6e6258a3ae501af9522f623a08381e8c5585d5a631fc38d83238601283260fb`.
+- Domain wire: [OpenAPI](contracts/verslomatika-domain-catalogue.openapi.json), source `bf6a0291ffedfa1129068ffea0ff1fe7d37f3ccb`, SHA256 `731e8ac26cc63575f7ce4f07e970a88b3e14a568a5ddb3abf35e8722d25a8402`. Source PR78 is integrated by scoped cherry-picks; it is not merged main.
+- Existing opaque verified customer session and current own portfolio remain authoritative. No email/domain-derived grant or existing Business binding is created by a draft.
 
-Canonical creation.v1 wire is specified at `docs/contracts/verslomatika-customer-creation.openapi.json`; runtime, migration, actual generation and UI acceptance are **in progress, not yet PASS**. First slice provides an actual AI business proposition and private website draft with immutable artifacts and revision feedback. `draft_ready` means this bounded draft is ready to inspect; it does not mean audited F1 site/public deployment, supplier/checkout/service execution, established demand or verified domain availability.
+## Implemented mechanism
 
-## Workflow and boundary
+Migration0013 adds five FORCE-RLS tables. Current verified identity, enabled owner membership and exact portfolio/environment apply to every row. Delivered revisions/artifacts/events have SELECT/INSERT only. API admission locks current User before session/creation, serializes global daily admission, bounds20jobs/creation and100creations/customer, preserves idempotency before admission checks, rejects stale base revisions. Unknown availability remains unknown for all45324 inventory rows; TOP200/source ranks and classification provenance are retained.
 
-POST customer/v2/creations starts an idempotent persisted job in a currently owned verified customer portfolio. Status/events and private artifacts use the same current session/membership. A revision request names the exact delivered base revision and creates a separate job; late/conflicting feedback is409. Cancellation, session reset/logout, disabled user/membership, source mismatch or expired lease prevent late results from becoming a new revision. Failed revisions preserve prior drafts. Reads do not require runner admission to stay enabled.
+The explicit local worker reserves one provider execution across cooperating workers, leases the current task, checks live authorization each second, and stores three files atomically only after typed validation/current authorization/base revision. Cancel/reset/revoke/timeout cannot promote a late result. Failures preserve earlier delivered files and require an explicit new retry key; there is no blind provider retry. Queue discovery excludes inaccessible stale jobs while reserving any unexpired running lease. Fixed SECURITY DEFINER discovery exposes only IDs/status/lease and daily aggregate count; it has no arbitrary query/write capability.
 
-The browser cannot choose executable/workspace/model/tool/provider permissions or arbitrary fetch/file paths. Codex adapter is fixed, instruction/source snapshot and budget bounded; structured data is validated and rendered by controlled preview components. All text escaped; no generated scripts/HTML execution, remote preview assets, forms, top navigation or same-origin iframe access. Downloads are exact owned artifact IDs, not a generic proxy. Content JSON is explicitly a private business draft, **not an approved shared content-package release**. Shared studio/release/public renderer/F1 audit integration is a separate remaining acceptance step.
+One bounded CLI transport is shared with existing consultation. The creation adapter pins server model/executable/hash, ignores user configuration/rules, uses read-only sandbox and denies shell/MCP/apps/plugins/browser/image/multi-agent tools. Optional live web search has at most6 distinct actions. Actual web items and usage are observed from the bounded private CLI trace. Model source claims are not proof each complete page was reviewed. Costs remain unknown, never fabricated zero. Prompt loads current canonical builder/business-validation/business-tools/language-quality files and stores its exact instruction hash. Customer text cannot choose paths/tools/model.
 
-## Required evidence
+Typed output is rendered by escaped server-owned text/theme enums into a **private preview**, with restrictive CSP/no script/forms/remote resources. The frontend must additionally use a sandboxed iframe with no allow tokens and verify actual UTF8 byte length/SHA256. The JSON download uses `verslomatika.business-draft.v1` and `publicationApproved:false`; it is not the approved shared content-package release or a second public SEO/media engine. Full replacement revisions preserve old files/messages and state the changes.
 
-PostgreSQL fresh migration/downgrade/reapply; verified/foreign/current/revoked ownership; idempotency/content conflict/busy/stale revision; atomic artifact publication and persistence across process restart; cancel/lease/session revocation during execution; no tool/path override; unsafe output/schema rejection and escaped preview; real pinned CLI source/model/instruction/usage receipts. Actual paired frontend and test customer business/critique/revision, original FAILs and corrections retained. No test PII/token/outbox/DB contents in Git. Known-case regressions separate from new protected calibration cases; voice/SMTP outside expressly requested text UI slice. Bounded scenarios do not prove ideal behavior for every business.
+## Local runbook
+
+Use the existing portable PostgreSQL/restricted-role/bootstrap runbook, migrate through0013 and configure a separate private database/outbox/workspace. Do not copy another PC's authentication, DB or customer data into Git. Set `PINET_CUSTOMER_ENABLED=true`, `PINET_CREATION_ENABLED=true`, `PINET_CREATION_RUNNER_ENABLED=true`, `PINET_CREATION_WORKSPACE` to an absolute existing directory inside this runtime's ignored `artifacts/`, `PINET_CREATION_RUNNER_SECONDS`30..300, daily customer1..20/global1..100. Existing `PINET_CHAT_CODEX_EXECUTABLE`, SHA256 and `PINET_CHAT_MODEL=gpt-6-luna` pin the target PC's verified CLI. Original consultation flags can remain OFF. Optional `PINET_CREATION_WEB_SEARCH_ENABLED=true` enables the bounded source research; it is not permission for other tools.
+
+With a clean exact Git source pin, run from runtime:
+
+```powershell
+.venv/Scripts/python.exe scripts/control_portable.py check
+.venv/Scripts/python.exe scripts/customer_creation_worker.py check
+.venv/Scripts/python.exe scripts/control_portable.py api --port 8860
+```
+
+In another owned terminal run `scripts/customer_creation_worker.py worker`. Backend stays loopback. Source is rechecked between jobs; changing code while the worker is live requires a deliberate clean checkpoint/restart. No unattended installer/tunnel/production route is created.
+
+## Acceptance record
+
+| Evidence | State | Receipt |
+| --- | --- | --- |
+| Isolated actual PG queue, immutable files, idempotency, feedback/history, foreign scope, revoked actor, cancel/late result, timeout/no retry, flags/quota, catalogue HTTP | PASS | First focused8tests, private `artifacts/creation-first.private.log` |
+| Existing consultation transport + whole catalogue offline | PASS | 53tests before final HTTP wiring changes |
+| Instruction pin, trace/tool bounds, invalid typed result, fixed preview sink | PASS | First4offline tests; empty-match warning removed |
+| Combined relevant prior/new suite | Original FAIL retained; corrected retest running | First duplicate basename collection error; second111PASS/22FAIL/41teardownERROR: omitted existing post-migration bootstrap business SELECT/seed in our new DB. Existing `scripts/bootstrap.py` applied, control privileges unchanged. Third receipt separately retained |
+| Ruff | PASS | Scoped runtime/tests/scripts check after import fixes |
+| Fresh migration downgrade/re-upgrade | PASS | Own empty `pinet_customer_creation_rehearsal_20261010`: head →0012→head, all exit0; private migration receipts |
+| Real CLI model/business research/draft | UNVERIFIED | Explicit next acceptance, no provider pass inferred from synthetic adapters |
+| Actual customer UI creation/preview/critique/revision/reload | UNVERIFIED | Paired3019/8860 test next |
+| Full UI signup/reset password mutation | UNVERIFIED | Browser automation credential-entry handoff restriction; HTTP lifecycle independently tested |
+| Full shared F1 publishing/contact/media/audit/business readiness | UNVERIFIED | Draft slice does not satisfy these remaining gates |
+| Public/other-PC hosting, real delivery, operational worker uptime | UNVERIFIED | Loopback alone is inaccessible to a hosted portal/customer |
+
+Keep the first model FAIL, raw private bounded output/trace, exact source/model/instruction/usage and intervention history. Private receipts never enter public artifacts/Git. Finite test cases cannot prove an ideal system or commercial demand. Issue77/journal `upgrade-8487ac2f-6c9a-4487-8bfe-e7e9c70c95ec` track this source increment; the platform task continues after it.

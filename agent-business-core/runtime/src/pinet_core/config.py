@@ -26,6 +26,13 @@ class Settings(BaseSettings):
     customer_portal_origin: str = "http://127.0.0.1:3017"
     customer_outbox_directory: str = "artifacts/customer-outbox"
     public_projects_enabled: bool = False
+    creation_enabled: bool = False
+    creation_runner_enabled: bool = False
+    creation_daily_limit: int = 10
+    creation_global_daily_limit: int = 20
+    creation_runner_seconds: int = 180
+    creation_workspace: str = ""
+    creation_web_search_enabled: bool = False
     chat_enabled: bool = False
     chat_operator_user_id: str = ""
     chat_daily_limit: int = 20

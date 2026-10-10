@@ -1,6 +1,6 @@
 {
-  "observedAt": "2026-10-10T09:54:07.811Z",
-  "state": "ORDINARY_BIDIRECTIONAL_INBOX_CONFIRMED_ALIAS_PREPARED_OWNER_CONFIRMATION_PENDING",
+  "observedAt": "2026-10-10T10:30:08.999Z",
+  "state": "ALLOW_LIST_EXCLUSIVITY_CONFIRMED_GMAIL_SENT_REPLY_AND_ALIAS_APPROVAL_PENDING",
   "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
   "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
   "recipient": "info@promedical.lt",
@@ -185,8 +185,8 @@
     "Cloudflare own Message-ID fetch returned raw MIME text, not a delivery-status object; no Delivered status claimed from that API.",
     "First read-only helper produced a saved negative receipt and process exit1; actual folder evidence is Junk, not an unavailable mailbox or positiveInbox."
   ],
-  "supportReceipt": "verification-20261010/production-hostinger-bidir-alias-prepared-v7.json",
-  "supportOutcome": "Fausta confirmed at12:45 Vilnius that the ordinary Hostinger diagnostic message and our natural Reply both reached Inbox. The new receiving mailbox therefore handles ordinary bidirectional mail. All six native website inquiries initially reached Junk despite authentication pass; test5 was later manually Not spam, and independent test6 remains Junk. Hostinger cannot manually override classification and recommends sender/format review and continued legitimate training. The absence of a Hostinger mailbox for uzklausos@ is not a proved cause. An alias uzklausos@promedical.lt to the existing info@promedical.lt mailbox is fully prepared but NOT created, pending the plugin-required specific owner confirmation. Filter timing and Incoming Allow list exclusivity are still being clarified; no verified automatic website Inbox fix or formal case ID.",
+  "supportReceipt": "verification-20261010/production-hostinger-gmail-test-v8.json",
+  "supportOutcome": "At13:00 Vilnius Fausta confirmed that Incoming Allow accepts only listed senders, so the list remains empty to preserve customer mail. She cannot confirm filter timing or a case-specific reputation cause. One owner-authorized ordinary message from info@promedical.lt to the owner-provided Gmail address was sent at13:27 and verified in Sent; Gmail arrival/folder and genuine reply are still pending. All six native Cloudflare website messages initially reached Junk; the latest remains unmoved. The prepared uzklausos@ alias to the existing Hostinger info@promedical.lt mailbox is still not created or approved. The owner clarified that info@azprekyba.lt mail is hosted by Google Workspace; it was mentioned only as the hPanel login identity and is not the alias target. No automatic website Inbox fix or formal technical case ID is proved.",
   "supportHumanTicket": {
     "confirmedTicketId": null,
     "reviewedBy": [
@@ -194,6 +194,6 @@
       "Airida",
       "Fausta"
     ],
-    "status": "ORDINARY_INBOX_CONFIRMED_FILTER_FUNCTIONS_AND_ALIAS_APPROVAL_PENDING"
+    "status": "ALLOW_LIST_EXCLUSIVITY_CONFIRMED_GMAIL_REPLY_AND_ALIAS_APPROVAL_PENDING"
   }
 }

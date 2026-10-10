@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Hostinger confirms exclusive Incoming Allow behavior, which would reject unlisted customers; keep it empty. One specifically authorized ordinary Gmail test is verified in Sent; recipient arrival and real reply remain pending. Clarified hPanel login identity versus Google Workspace mail hosting, and requested exact Promedical-only alias approval; alias is not submitted. Six initial native website Junk outcomes and all acceptance failures remain unchanged. Sanitized V8 receipt records source-format inspection and technical escalation request without publishing the private recipient.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53",
+  "eventId": "3987fecc-6769-42e2-b02f-564cbf8c4d48",
+  "sequence": 9,
+  "at": "2026-10-10T10:31:01.808Z"
+}

@@ -77,9 +77,11 @@ function validate(input) {
     siteId: 'creation-' + input.creationId.replaceAll('-', '') };
 }
 
-function planProjection(items, importedAt) {
+function planProjection(items, importedAt, normalizeBrief) {
   const proposals = [], issues = [], byPath = new Map();
-  for (const [index, item] of items.entries()) {
+  for (const [index, source] of items.entries()) {
+    let item;
+    try { item = normalizeBrief(source); } catch { issues.push(`Turinio plano įrašas ${index + 1} neturi pilnos palaikomos planavimo užduoties; reikia peržiūrėti jo laukus ir ribas.`); continue; }
     if (!object(item) || !pagePath(item.path) || item.path === '/' || byPath.has(item.path)
         || !text(item.title, 160) || !text(item.intent, 300) || !text(item.audience_problem, 1000)
         || !text(item.business_goal, 1000) || !text(item.primary_topic, 120)
@@ -95,7 +97,8 @@ function planProjection(items, importedAt) {
     byPath.set(item.path, item);
     proposals.push({ id: pageId(item.path), type: 'guide', slug: item.path.slice(1, -1), title: item.title,
       description: item.audience_problem, intent: item.intent, reason: item.reason, cluster: item.primary_topic,
-      pillarSlug: '', sourceQueries: [], seasonalHook: item.seasonal_hook ?? item.seasonalHook ?? '', networkLinks: [], body: [], publishAt: importedAt });
+      pillarSlug: item.pillar_path.slice(1, -1), sourceQueries: item.source_queries, planningBrief: item,
+      seasonalHook: item.seasonal_hook, networkLinks: [], body: [], publishAt: importedAt });
   }
   if (!items.length) issues.push('Dar nėra tikro turinio plano su atskirais klausimais, šaltinių poreikiais, ryšiais ir medijos užduotimis.');
   else if (items.length < 3) issues.push('Pradinis platformos turinio planas dalinis; dar trūksta atskirų pagrįstų gidų užduočių.');
@@ -153,18 +156,21 @@ export async function intakeCreationDraft(input) {
     await model.editSite(siteId, { audience: draft.business.customer, facts: context.verifiedFacts.join('\n'),
       contact: context.contact, operatorName: context.operatorName, stage: 'planning', brand: { accent: accent[draft.brand.accent] }, contentPolicy: {} });
     const importedAt = new Date().toISOString();
-    const plan = planProjection(context.contentPlan, importedAt);
+    const plan = planProjection(context.contentPlan, importedAt, model.normalizePlanningBrief);
     const pageMappings = [];
     for (const page of draft.pages) {
+      const item = plan.byPath.get(page.path);
       const body = page.sections.flatMap(section => [{ type: 'heading', level: 2, text: section.heading },
         { type: 'paragraph', text: section.body }, ...(section.items.length ? [{ type: 'list', items: section.items }] : [])]);
       await model.addPage(siteId, { id: pageId(page.path), type: page.path === '/' ? 'home' : 'guide', slug: page.path.slice(1, -1),
-        title: page.title, description: page.meta_description, intent: page.intent, body: normalizeV2Blocks(body), publishAt: importedAt });
+        title: page.title, description: page.meta_description, intent: page.intent, body: normalizeV2Blocks(body), publishAt: importedAt,
+        ...(item ? { planningBrief: item, sourceQueries: item.source_queries, reason: item.reason, cluster: item.primary_topic } : {}) });
       pageMappings.push({ path: page.path, pageId: pageId(page.path), origin: 'draft' });
     }
     // mergePlan's un-timed transport limit is 12; chunks do not invent a planning cadence.
     for (let index = 0; index < plan.proposals.length; index += 12) await model.mergePlan(siteId, plan.proposals.slice(index, index + 12), 0);
     const importedSite = await model.getSite(siteId);
+    const planningBriefs = [];
     for (const page of importedSite.pages) {
       const pathname = page.type === 'home' ? '/' : '/' + page.slug + '/';
       const item = plan.byPath.get(pathname);
@@ -173,6 +179,7 @@ export async function intakeCreationDraft(input) {
         'Privatus importas dar neįrodo puslapio faktų, autoriaus, dizaino, vaizdų ar SEO / GEO patikros.',
         'Publikavimo laikas yra importo žyma; tikras kalendorius ir turinio politika dar nepatvirtinti.',
         'Puslapio teiginiai dar nesusieti su iš tikrųjų perskaitytais ir patikrintais šaltiniais.',
+        'Native V2 rašytojo prijungimas dar nepatikrintas; legacy generatorius V2 juodraščių nekuria.',
         ...(!context.verifiedFacts.length ? ['Nėra nepriklausomai patvirtintų verslo faktų; AI įvardyti faktai lieka kandidatais.'] : []),
         ...(!context.contact.email ? ['Nežinomas patvirtintas kliento kontaktinis el. pašto adresas.'] : ['Kontaktinio laiško pristatymas dar nepatikrintas.']),
         ...plan.issues,
@@ -193,6 +200,20 @@ export async function intakeCreationDraft(input) {
       if (factChecks.length > 40 || factChecks.some(note => note.length > 600)) fail('intake_notes_overflow');
       await model.editPage(siteId, page.id, { factChecks, externalLinks, linkSuggestions, ...(item ? { cluster: item.primary_topic } : {}) });
     }
+    // The typed plan places broad parents before supports; draft inventory can have a different order.
+    for (const [pathname, item] of plan.byPath) {
+      const page = (await model.getSite(siteId)).pages.find(candidate => candidate.id === pageId(pathname));
+      try {
+        const receipt = await model.reconcilePlanningBrief(siteId, page.id, { expectedRevisionHash: model.revisionHash(page),
+          expectedPlanningHash: model.planningContextHash(page), planningBrief: item });
+        planningBriefs.push({ pageId: page.id, state: 'attached', planningHash: receipt.planningHash });
+      } catch {
+        const factChecks = [...page.factChecks, 'Pilnai planavimo užduočiai dar trūksta tinkamų tikrų šios svetainės ryšių; writer negali laikyti jos suderinta.'];
+        if (factChecks.length > 40) fail('intake_notes_overflow');
+        await model.editPage(siteId, page.id, { factChecks });
+        planningBriefs.push({ pageId: page.id, state: 'blocked' });
+      }
+    }
     const finalSite = await model.getSite(siteId);
     if (finalSite.contentWorkflowVersion !== 1 || finalSite.pages.some(page => page.approval || page.publishedRevision)) fail('unexpected_public_approval');
     const workflow = await model.getContentWorkflow(siteId);
@@ -200,6 +221,8 @@ export async function intakeCreationDraft(input) {
       sourceHash: input.sourceHash, requestHash, importerHash, siteId, canonicalHost: input.canonicalHost, importedAt,
       siteFileHash: sha(await readFile(path.join(dataDir, 'sites', siteId + '.json'))),
       contentPlanState: plan.state, planItems: context.contentPlan.length, planImported: plan.proposals.length, planIssues: plan.issues,
+      planningBriefState: !context.contentPlan.length ? 'not-provided' : plan.issues.length || planningBriefs.some(item => item.state === 'blocked') ? 'partial' : 'attached',
+      planningBriefs, writer: 'not-executed', dependencies: ['native-v2-writer-integration-unverified'],
       scheduling: 'unverified-import-placeholder', policyDecision: 'unverified-studio-defaults', pageMappings,
       fullF1: 'UNVERIFIED', launch: 'UNVERIFIED', deployment: 'not-performed' };
     await exclusive(manifestPath, json(manifest));

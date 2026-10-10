@@ -29,7 +29,7 @@ Prieš procesą nustatyti `STUDIO_NETWORK_SETTINGS` į kanoninio companion `conf
 
 Svetainės ID yra `creation-` ir UUID be brūkšnelių. Jis nepriklauso nuo verslo pavadinimo, domeno, URL teksto ar būsimo domeno pakeitimo. Puslapių ID stabiliai išvedami iš patikrinto puslapio kelio; revizijos importuojamos į skirtingus katalogus su tais pačiais loginiais ID.
 
-Naudojami tik kanoniniai `createSite`, `editSite`, `addPage`, tikro plano `mergePlan`, `editPage` ir `getContentWorkflow`. `initialize` nekviečiamas: tuščiame kataloge jis sukurtų istorinių dvidešimties nišų registrą. Naujoje izoliuotoje studijoje yra tik šio kliento svetainė, be darbo eilės, senų nišų ir viešų paketų.
+Naudojami tik kanoniniai `createSite`, `editSite`, `addPage`, tikro plano `mergePlan`, `editPage`, revizijai pririštas `reconcilePlanningBrief` ir `getContentWorkflow`. `initialize` nekviečiamas: tuščiame kataloge jis sukurtų istorinių dvidešimties nišų registrą. Naujoje izoliuotoje studijoje yra tik šio kliento svetainė, be darbo eilės, senų nišų ir viešų paketų.
 
 Verslo pavadinimas patenka į `name`, trumpa `tagline` – į `offer`, klientas – į `audience`; visas detalesnis verslo planas nepakeistas lieka `source-draft.json`. Taip ilgas verslo pasiūlymas neprarandamas dėl modelio trumpesnio summary lauko. Faktai ir kontaktai perduodami atskirai. Kiekviena sekcija virsta V2 heading / paragraph / list blokais be teksto trumpinimo. Pradinis puslapis yra `home`, kiti pradiniame importe laikomi `guide`, kol tikra redakcinė patikra patvirtina jų paskirtį. Nėra išgalvoto autoriaus ar medijos ID.
 
@@ -39,13 +39,23 @@ Pirmas gidas patikrinamas su visu perdavimo keliu: nepakitę tekstai, tikra V2 s
 
 ## Plano perdavimas ir kalendoriaus ribos
 
-Platformos planas gali pateikti `path`, `title`, `intent`, `month` (`YYYY-MM` arba tuščias), `audience_problem`, `business_goal`, `primary_topic`, `reason`, `outline`, `source_urls`, `internal_links`, `media_brief`, `media_alt`, `priority` ir `seasonal_hook` / `seasonalHook`. Visas objektas išsaugomas nekintamas. Bendram modeliui perduodama tik jo palaikoma dalis; outline ir medijos užduotys netampa sukurto teksto ar vaizdų įrodymais.
+Normalizuoto platformos plano laukai: `path`, `title`, `intent`, `head_query`, `audience_problem`, `business_goal`, `primary_topic`, `reason`, `month` (`YYYY-MM` arba tuščias), `seasonal_hook`, `pillar_path`, `outline`, `source_queries`, `source_urls`, `internal_links`, `media_brief`, `media_alt`, `priority` (`initial` arba `later`). Visas objektas išsaugomas nekintamas originale ir palaikomame privačiame `page.planningBrief`; outline ir medijos užduotys netampa sukurto teksto ar vaizdų įrodymais.
 
 Nauji tikro plano URL sukuriami per `mergePlan(..., months=0)`. Vienas transportas turi iki12 įrašų; didesnis pateiktas planas suskaidomas nekeičiant apimties. Jau egzistuojantis URL nedubliuojamas. Naujo planinio puslapio body lieka tuščias, o jo readiness turi „Turinys neparengtas“. Turimas juodraštis nekeičiamas vien dėl nesutampančio plano: neatitikimas tampa faktų patikros pastaba.
 
 `publishAt` yra privataus importo laiko žyma. Pateiktas mėnuo lieka planavimo hipoteze, o tuščias mėnuo nereiškia parinktos publikavimo dienos. Helperis nekuria kito schedulerio ir neįrodo bendros studijos numatyto dažnio tinkamumo. `policyDecision` aiškiai lieka `unverified-studio-defaults`, ir visiems puslapiams išsaugoma tikro planavimo sprendimo kliūtis. Evergreen `seasonalHook` turi būti tuščias.
 
 Kvitui galimos `contentPlanState` reikšmės: `not-provided`, `partial`, `imported-unscheduled`. Netaisyklingi įrašai paliekami originale, jų tikslios pozicijos pateikiamos `planIssues` ir faktinėse puslapių `factChecks`. Pradinis platformos planas turi bent tris prasmingas gidų užduotis; mažesnė pateikta apimtis laikoma daline. Tai nėra universali mėnesinė straipsnių kvota. Nežinomi ar savo puslapį nurodantys ryšių tikslai lieka konkrečiomis kliūtimis, o žinomi ID – `linkSuggestions`, be automatinio visų puslapių tarpusavio jungimo.
+
+## Palaikomas privatus planningBrief ir rašytojo priklausomybė
+
+Modelio `normalizePlanningBrief(value)` tikrina visą normalizuotą snake_case užduotį ir jos ribas, atmeta nežinomus laukus bei nesuderintą evergreen sezoniškumą. `makePage` išsaugo V2 `planningBrief`, o jo pilnos `source_queries` (iki6 užklausų po500 simbolių) lieka `sourceQueries` be legacy200 simbolių trumpinimo. Šie privatūs laukai neįeina į viešo paketo ar publikacijos revision payload.
+
+Po visų planinių ID sukūrimo importerio `reconcilePlanningBrief(siteId,pageId,{expectedRevisionHash,expectedPlanningHash,planningBrief})` nustato pilną privačią užduotį ir susieja `pillar_path` su tikru aktyviu tos pačios svetainės `pillarPageId`. Tuščias parent neperima automatiškai pagal klasterio pavadinimą parinkto tikslo. Nežinomas, svetimos nišos, savo puslapio ar ciklinis tėvinis ryšys atmetamas. Prieš kvietimą `expectedRevisionHash` imamas iš `revisionHash(page)`, o `expectedPlanningHash` – iš `planningContextHash(page)`; pastarasis apima ir dabartinį privatų briefą, sourceQueries bei pillarPageId. Net nepakitus puslapio tekstui kitas planavimo pakeitimas neleidžia perrašyti senos perskaitytos užduoties. Toks pat tikslus pakartojimas nekeičia failo.
+
+Ši API nekeičia parašyto body, pavadinimo, publishAt, approval, redakcinės peržiūros ar publishedRevision. Ji nėra naujo teksto patvirtinimas. Rašytojas vėliau turi naudoti dabartinį `page.planningBrief`, jo head_query, outline, source/media poreikius, priority ir business_goal, ir naują tekstą išsaugoti įprastu juodraščio keliu su nauja tikra peržiūra. Importo `planningBriefState` yra `attached`, `partial` arba `not-provided`; nesuderintas ryšys lieka konkrečia `factChecks` kliūtimi.
+
+Patikrintame core bazės13c generatoriuje `enqueue` aiškiai atmeta V2, o legacy writer pageData neturi pilno planningBrief. Šis paketas įgyvendina modelio perdavimo sąsają; actual native V2 rašytojo prijungimas dar priklauso pagrindinei sesijai. Todėl kvite `writer` yra `not-executed`, dependency – `native-v2-writer-integration-unverified`, o tikroje turinio eigoje paliekama šio prijungimo kliūtis. Tai konkretus trūkstamas adapteris, o ne leidimas naudoti legacy generatorių ar antrą plannerį. Jo užbaigimą turi įrodyti tikras rašytojo įvesties ir naujo V2 rezultato bandymas, ne vien šio helperio PASS.
 
 ## Nekintami originalai, replay ir klaidos
 
@@ -59,4 +69,4 @@ Grąžintas kvitas yra serverio vidaus artefaktas su absoliučiais keliais. Į k
 
 ## Patikra
 
-`node --test content-studio/test/customer-creation-intake.test.mjs` vykdo tikrus modelio importus izoliuotuose sintetiniuose kataloguose. Tikrinami nepakitę ilgi V2 tekstai, tikras readiness, istorinių seed nebuvimas, nežinomų kontaktų atskyrimas, tikslus replay, hash ir revizijų konfliktai, senos revizijos išsaugojimas, path / junction ribos, neištrinti nutraukti importai, tikro plano pending kūrimas ir source / link / media / review / fact kliūtys. Modelio ar providerio imitacija šiems readiness bandymams nenaudojama. Ši patikra neįrodo klientų UI, tikro tyrimo, rašytojo, medijos, publikavimo ar SEO / GEO priėmimo.
+`node --test content-studio/test/customer-creation-intake.test.mjs content-studio/test/planning-brief.test.mjs` vykdo tikrus modelio importus izoliuotuose sintetiniuose kataloguose. Tikrinami nepakitę ilgi V2 tekstai ir500 simbolių sourceQueries, pilnas planningBrief, tikri pillar ID, revision/private-context CAS bei nepakitęs parašytas body, datos, approval ir public snapshot. Taip pat tikras readiness, istorinių seed nebuvimas, nežinomų kontaktų atskyrimas, tikslus replay, hash ir revizijų konfliktai, senos revizijos išsaugojimas, path / junction ribos, neištrinti nutraukti importai, pending planas ir source / link / media / review / fact kliūtys. Modelio ar providerio imitacija šiems readiness bandymams nenaudojama. Ši patikra neįrodo klientų UI, tikro tyrimo, rašytojo, medijos, publikavimo ar SEO / GEO priėmimo.

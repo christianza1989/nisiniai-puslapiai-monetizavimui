@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "28combined actual-model tests PASS. Initial planningBrief snapshot test FAIL dėl fixture neturimo home: tikras V2 approved package reikalauja homepage. Pridėtas tikras home su review ir įtrauktas į tą pačią batch; vartai nepalengvinti, FAIL išsaugotas šiame įvykyje. Pilnas normalized planningBrief/sourceQueries500 ir tikri pillar ID palaikomi, CAS neleidžia stale/concurrent overwrite, body/dates/approval/public snapshot nekinta. Importer reconcile seka normalized plano tvarką, todėl naujas parent neišsaugo mergePlan hipotetinio fallback ryšio į senesnį support. Native V2 writer integracija lieka UNVERIFIED ir reali factChecks kliūtis, generator/source schemas nekeičiami.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/planning-brief.test.mjs content-studio/test/customer-creation-intake.test.mjs content-studio/test/content-workflow.test.mjs content-studio/test/write-lock.test.mjs content-studio/test/content-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "28 tests,0fail,0skip; full private brief/CAS/unchanged approved snapshot/sourceQueries500, inventory-opposite-plan parent mapping plus exact V2/workflow/lock regressions"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Only explicitly reserved additive model, intake script/tests/doc and own journal/WORKSTREAMS"
+    }
+  ],
+  "eventId": "386c1f03-e96b-4034-b5fc-523940025df1",
+  "sequence": 2,
+  "at": "2026-10-10T12:07:35.941Z"
+}

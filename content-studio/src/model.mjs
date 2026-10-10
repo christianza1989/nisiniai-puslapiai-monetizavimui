@@ -104,6 +104,63 @@ export function revisionPayload(page) {
   return payload;
 }
 export function revisionHash(page) { return page.contentVersion===2?v2RevisionHash(page):createHash('sha256').update(stable(revisionPayload(page))).digest('hex'); }
+/** Private writer handover; it is excluded from every public revision/package. */
+export function normalizePlanningBrief(value) {
+  const ranges = { path:[1,150], title:[10,160], intent:[20,300], head_query:[5,160], audience_problem:[20,1000],
+    business_goal:[20,1000], primary_topic:[5,120], reason:[30,1000], month:[0,7], seasonal_hook:[0,300],
+    pillar_path:[0,150], media_brief:[40,1000], media_alt:[10,250], priority:[5,7] };
+  const lists = { outline:[3,8,500], source_queries:[0,6,500], source_urls:[0,6,1024], internal_links:[0,8,150] };
+  const keys = [...Object.keys(ranges), ...Object.keys(lists)];
+  const invalid = () => { throw new Error('Netaisyklinga privataus planavimo užduotis.'); };
+  if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).length !== keys.length || Object.keys(value).some(key => !keys.includes(key))) invalid();
+  for (const [key,[minimum,maximum]] of Object.entries(ranges)) if (typeof value[key] !== 'string' || value[key].trim().length < minimum || value[key].length > maximum) invalid();
+  for (const [key,[minimum,maximum,length]] of Object.entries(lists)) if (!Array.isArray(value[key]) || value[key].length < minimum || value[key].length > maximum || value[key].some(item => typeof item !== 'string' || !item.trim() || item.length > length)) invalid();
+  const canonicalPath = input => /^\/[a-z0-9]+(?:[-/][a-z0-9]+)*\/$/.test(input) && !/^\/(?:api|niche)(?:\/|$)/.test(input);
+  if (!canonicalPath(value.path) || value.pillar_path && !canonicalPath(value.pillar_path)
+      || !/^(?:|[0-9]{4}-(?:0[1-9]|1[0-2]))$/.test(value.month)
+      || !value.month && value.seasonal_hook || !['initial','later'].includes(value.priority)
+      || value.pillar_path === value.path || new Set(value.internal_links).size !== value.internal_links.length
+      || value.internal_links.some(target => target !== '/' && !canonicalPath(target) || target === value.path)) invalid();
+  for (const source of value.source_urls) {
+    let url; try { url = new URL(source); } catch { invalid(); }
+    if (!source.startsWith('https://') || url.protocol !== 'https:' || url.username || url.password || url.port || !/^([a-z0-9-]+\.)+[a-z]{2,}$/i.test(url.hostname)) invalid();
+  }
+  return structuredClone(value);
+}
+export function planningContextHash(page) {
+  return createHash('sha256').update(stable({ revisionHash:revisionHash(page), planningBrief:page.planningBrief ?? null,
+    sourceQueries:page.sourceQueries || [], pillarPageId:page.pillarPageId || '' }), 'utf8').digest('hex');
+}
+export async function reconcilePlanningBrief(siteId, pageId, input) {
+  return locked(async () => {
+    const site = await getSite(siteId), page = site.pages.find(item => item.id === pageId && item.siteId === site.id && item.status !== 'revoked');
+    if (site.schemaVersion !== 2 || !page || page.contentVersion !== 2) throw new Error('Planavimo perdavimui reikia tikro šios svetainės V2 puslapio.');
+    if (input?.expectedRevisionHash !== revisionHash(page) || input?.expectedPlanningHash !== planningContextHash(page)) throw new Error('Pasikeitė puslapio revizija arba privati planavimo užduotis; perskaitykite dabartinę versiją.');
+    const brief = normalizePlanningBrief(input.planningBrief);
+    const pathname = candidate => candidate.type === 'home' ? '/' : '/' + candidate.slug + '/';
+    if (brief.path !== pathname(page)) throw new Error('Planavimo užduoties URL neatitinka šio puslapio.');
+    const target = pathnameValue => site.pages.find(candidate => candidate.siteId === site.id && candidate.status !== 'revoked' && pathname(candidate) === pathnameValue);
+    if (brief.internal_links.some(value => !target(value))) throw new Error('Planavimo nuorodai trūksta tikro šios svetainės puslapio.');
+    const parent = brief.pillar_path ? target(brief.pillar_path) : null;
+    if (brief.pillar_path && !parent) throw new Error('Klasterio pagrindiniam puslapiui trūksta tikro šios svetainės ID.');
+    const seen = new Set([page.id]); let ancestor = parent;
+    while (ancestor) {
+      if (seen.has(ancestor.id)) throw new Error('Planavimo klasteryje negali būti ciklo.');
+      seen.add(ancestor.id);
+      const parentId = ancestor.pillarPageId;
+      ancestor = parentId ? site.pages.find(candidate => candidate.id === parentId && candidate.siteId === site.id && candidate.status !== 'revoked') : null;
+      if (parentId && !ancestor) throw new Error('Klasterio pagrindinio puslapio ryšys neparengtas.');
+    }
+    const pillarPageId = parent?.id || '';
+    const changed = stable(page.planningBrief ?? null) !== stable(brief) || stable(page.sourceQueries || []) !== stable(brief.source_queries) || (page.pillarPageId || '') !== pillarPageId;
+    if (changed) {
+      page.planningBrief = brief; page.sourceQueries = structuredClone(brief.source_queries); page.pillarPageId = pillarPageId;
+      page.updatedAt = new Date().toISOString();
+      await writeJson(siteFile(siteId), site);
+    }
+    return { siteId, pageId, changed, revisionHash:revisionHash(page), planningHash:planningContextHash(page), state:'private-planning-brief', writer:'not-executed' };
+  });
+}
 export function isPublic(page, now = Date.now()) {
   return page?.approval?.status === 'approved'
     && page.approval.revisionHash === page.revisionHash
@@ -278,17 +335,21 @@ export async function migrateSiteDomain(id, { expectedCanonicalHost, canonicalHo
 }
 const makePage = (site, input) => {
   const v2=site.schemaVersion===2;
+  if (!v2 && input.planningBrief !== undefined) throw new Error('Pilnos privačios planavimo užduoties perdavimui reikia V2 puslapio.');
   const type = (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : 'guide';
+  const planningBrief = v2 && input.planningBrief !== undefined ? normalizePlanningBrief(input.planningBrief) : null;
+  if (planningBrief && planningBrief.path !== '/' + normalizeSlug(input.slug, type) + '/') throw new Error('Planavimo užduoties URL neatitinka kuriamo puslapio.');
+  if (planningBrief && input.sourceQueries !== undefined && stable(input.sourceQueries) !== stable(planningBrief.source_queries)) throw new Error('Šaltinių užklausos nesutampa su pilna planavimo užduotimi.');
   if(v2&&input.id!==undefined&&!/^[a-zA-Z0-9][a-zA-Z0-9._-]{0,99}$/.test(input.id))throw new Error('Neteisingas stabilus puslapio ID.');
   return {
     id: v2&&input.id?input.id:randomUUID(), siteId: site.id, type, slug: normalizeSlug(input.slug, type),
     title: v2?losslessString(input.title,1000):plain(input.title, 180), description: v2?losslessString(input.description,1000):plain(input.description, 300),
     intent: v2?losslessString(input.intent,1000):plain(input.intent, 300), body: v2?normalizeV2Blocks(input.body||[]):normalizeBlocks(input.body || []),
-    ...(v2?{contentVersion:2,editorial:structuredClone(input.editorial||emptyEditorial()),siteSnapshot:structuredClone(publicSite(site))}:{}),
+    ...(v2?{contentVersion:2,editorial:structuredClone(input.editorial||emptyEditorial()),siteSnapshot:structuredClone(publicSite(site)),...(planningBrief?{planningBrief}:{})}:{}),
     publishAt: iso(input.publishAt || new Date().toISOString()), media: [], links: [],
     externalLinks: [], linkSuggestions: [], networkLinkSuggestions: normalizeNetworkSuggestions(input.networkLinks), cluster: plain(input.cluster, 120), seasonalHook: plain(input.seasonalHook, 300),
     pillarPageId: site.pages.some(item => item.id === input.pillarPageId) ? input.pillarPageId : '',
-    editorialReason: plain(input.reason, 1000), sourceQueries: (Array.isArray(input.sourceQueries) ? input.sourceQueries : []).slice(0, 8).map(item => plain(item, 200)),
+    editorialReason: plain(input.reason, 1000), sourceQueries: planningBrief ? structuredClone(planningBrief.source_queries) : (Array.isArray(input.sourceQueries) ? input.sourceQueries : []).slice(0, 8).map(item => plain(item, 200)),
     status: 'draft', factChecks: [], approval: null, publishedRevision: null,
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()
   };

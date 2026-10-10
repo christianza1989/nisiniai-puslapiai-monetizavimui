@@ -129,19 +129,44 @@ test('interrupted or changed imports are preserved and never overwritten or sile
 test('actual month-only plan uses shared mergePlan with empty future bodies and unresolved dependency checks', async t => {
   const { input, call, sitePath } = await sandbox(t);
   input.draft.content_plan = ['uzduoties-pasirinkimas', 'pirmas-bandymas', 'rezultato-patikra'].map((slug, index) => ({ path: '/' + slug + '/',
-    title: 'Praktinio mokymo klausimas ' + (index + 1), intent: 'Padėti komandai patikrinti vieną praktinio mokymo sprendimą.', month: index ? '' : '2026-12',
+    title: 'Praktinio mokymo klausimas ' + (index + 1), intent: 'Padėti komandai patikrinti vieną praktinio mokymo sprendimą.', head_query: 'Kaip komandai pasirinkti praktinį mokymą', month: index ? '' : '2026-12',
     audience_problem: 'Komandai reikia suprasti, ar pasirinkta darbo užduotis tinka praktiniam mokymui.', business_goal: 'Prieš mokamą vykdymą patikrinti vieną aiškų poreikį.',
     primary_topic: 'Praktinis komandos mokymas', reason: 'Atskiras klausimas su tikrais vykdymo ir šaltinių priklausomybių poreikiais.',
-    outline: ['Pasirinkti užduotį.', 'Paruošti bandymą.', 'Patikrinti rezultatą.'], source_urls: ['https://example.org/guide'],
-    internal_links: index === 2 ? ['/nerastas-gidas/'] : ['/'], media_brief: 'Sukurti temos paaiškinimo vaizdą.', media_alt: 'Praktinio mokymo užduoties schema.', priority: 'high', seasonal_hook: '' }));
+    outline: ['Pasirinkti užduotį.', 'Paruošti bandymą.', 'Patikrinti rezultatą.'], source_queries: ['Ž'.repeat(500)], source_urls: ['https://example.org/guide'],
+    pillar_path: index ? '/uzduoties-pasirinkimas/' : '', internal_links: index === 2 ? ['/nerastas-gidas/'] : ['/'],
+    media_brief: 'Sukurti konkrečios temos paaiškinimo schemą apie praktinį komandos mokymą.', media_alt: 'Praktinio mokymo užduoties schema.', priority: 'initial', seasonal_hook: '' }));
   update(input); const result = call(); assert.equal(result.status, 0, JSON.stringify(result.value));
   assert.equal(result.value.contentPlanState, 'imported-unscheduled'); assert.equal(result.value.planImported, 3);
   const site = JSON.parse(await readFile(sitePath(), 'utf8')); assert.equal(site.pages.length, 5);
+  const rootGuide = site.pages.find(page => page.slug === 'uzduoties-pasirinkimas');
+  const supportGuide = site.pages.find(page => page.slug === 'pirmas-bandymas');
+  assert.equal(supportGuide.pillarPageId, rootGuide.id); assert.deepEqual(supportGuide.sourceQueries, ['Ž'.repeat(500)]);
+  assert.deepEqual(supportGuide.planningBrief, input.draft.content_plan[1]);
+  assert.equal(result.value.planningBriefState, 'partial'); assert.equal(result.value.writer, 'not-executed');
+  assert.ok(result.value.dependencies.includes('native-v2-writer-integration-unverified'));
   const planned = site.pages.find(page => page.slug === 'rezultato-patikra');
   assert.deepEqual(planned.body, []); assert.equal(planned.publishAt, result.value.importedAt);
   assert.ok(planned.factChecks.some(note => note.includes('/nerastas-gidas/')));
   assert.equal(planned.externalLinks[0].verified, false); assert.equal(planned.approval, null);
   assert.ok(result.value.workflow.pages.find(page => page.pageId === planned.id).blockers.includes('Turinys neparengtas.'));
+});
+
+test('real plan parent precedes existing draft support even when inventory was created in the opposite order', async t => {
+  const { input, call, sitePath } = await sandbox(t);
+  const paths = ['/platesnis-gidas/', '/uzduoties-pasirinkimas/', '/praktinis-bandymas/'];
+  input.contentPlan = paths.map((pathname, index) => ({ path: pathname, title: 'Praktinio mokymo klausimas ' + index,
+    intent: 'Padėti komandai išsiaiškinti vieną mokymo pasirinkimo klausimą.', head_query: 'Kaip pasirinkti komandos mokymą',
+    audience_problem: 'Komandai reikia aiškaus atsakymo apie praktinio mokymo pasirinkimą.', business_goal: 'Patikrinti vieną tikrą komandos mokymo poreikį.',
+    primary_topic: 'Praktinis komandos mokymas', reason: 'Atskiras pasirinkimo klausimas su aiškiais vykdymo ir šaltinių tikrinimo poreikiais.', month: '', seasonal_hook: '',
+    pillar_path: index ? paths[0] : '', outline: ['Pasirinkti užduotį.', 'Paruošti bandymą.', 'Patikrinti rezultatą.'],
+    source_queries: ['Praktinio mokymo pasirinkimas'], source_urls: [], internal_links: ['/'],
+    media_brief: 'Parengti schemą, paaiškinančią pasirinktą komandos mokymo klausimą.', media_alt: 'Komandos mokymo klausimo schema', priority: 'initial' }));
+  const result = call(); assert.equal(result.status, 0, JSON.stringify(result.value)); assert.equal(result.value.planningBriefState, 'attached');
+  const site = JSON.parse(await readFile(sitePath(), 'utf8'));
+  const parent = site.pages.find(page => page.slug === 'platesnis-gidas'), child = site.pages.find(page => page.slug === 'uzduoties-pasirinkimas');
+  assert.equal(parent.pillarPageId, ''); assert.equal(child.pillarPageId, parent.id);
+  assert.ok(site.pages.indexOf(child) < site.pages.indexOf(parent));
+  assert.deepEqual(child.planningBrief, input.contentPlan[1]);
 });
 
 test('partial malformed plan is preserved as original and produces shared publication blockers', async t => {

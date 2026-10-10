@@ -117,6 +117,13 @@ Pokalbis pasirenkamas tik `appearance="stepover"`. Panelė iki 430 px, mobile ik
 
 ## Photographic update — 2026-10-10
 
+### Header / hero alignment correction
+
+- [x] Inspect the wide 1904 px baseline: full-viewport photo and 1248 px text container create a visually heavy right edge.
+- [x] Give the header and photographic hero a shared centered 1600 px maximum width and matching 24 px inner gutters. Keep the approved logo, copy, type roles and photograph; allow the lead and heading a little more horizontal room.
+- [x] Confirm 1904, 1280, 1024, 768 and 320 px views, narrow expanded menu and an unaffected guide header. Check equal outer margins, shared logo/text edge, wrapping and horizontal overflow.
+- [x] Build, publish to the existing preview Worker with runtime settings preserved, and save public screenshot / deployment evidence. Results: [HEADER_HERO_ALIGNMENT_20261010](HEADER_HERO_ALIGNMENT_20261010.md).
+
 Devynios skirtingos kompozicijos: priėmimas, klientų aptarnavimas, sveikatos įstaigos priėmimas, biuro padalinys, pasirašymo eiga ir keturi gidų vaizdai. Šeši vaizdai su įrenginiu koreguoti naudojant tikrą StepOver duraSign Pad 4.3 gamintojo nuotrauką. Tikrinti korpuso siluetas, ekrano padėtis, rašiklio vieta, rankos ir pasirašymo paviršius; trys tarpiniai variantai atmesti ir pakeisti. Situacijos iliustracinės, ne klientų diegimo įrodymai. Modelių kataloge lieka originalios gamintojo nuotraukos.
 
 Visi vaizdai pateikiami per bendrą Content Studio responsive media importą: 45 nauji WebP variantai, devynių šeimų ID parinkti `config/parasoplansetes-homepage-media.json`. Hero kraštinių santykis 2:1; mobilus vaizdas nepridengia teksto. Tiksli laida, patikros ir ribos: [DESIGN_DEPLOYMENT_20261010.md](DESIGN_DEPLOYMENT_20261010.md).

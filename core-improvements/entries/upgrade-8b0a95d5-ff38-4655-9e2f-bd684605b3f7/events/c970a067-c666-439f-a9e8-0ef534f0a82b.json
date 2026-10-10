@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Current V1 source set equals compiled registry, every package and page hash preserved; selected fresh companion supported. No validator/schema or acceptance gate relaxed.",
+  "checks": [
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR=C:/Core/promedical-public-20261009 node --test test/content-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "5/5 PASS29275.1004ms: current10package parity including1408product catalogue; V2 fields/hash/UTC/contact negatives, shadow import private and HTTP HTML escaping."
+    }
+  ],
+  "eventId": "c970a067-c666-439f-a9e8-0ef534f0a82b",
+  "sequence": 2,
+  "at": "2026-10-09T16:51:57.988Z"
+}

@@ -33,6 +33,8 @@ Privati loopback API su esamais Host/origin/X-Studio-Request vartais:
 
 Agento CLI: `node content-studio/scripts/content-workflow.mjs <status|policy|finalize|review|approve|release> <siteId> [JSON-file] [pageId]`. Status/release failo nereikia. Policy failas = policy objektas; finalize/approve = pageIds objektas; review = tikras įrodymų objektas ir paskutinis pageId argumentas. `STUDIO_DATA_DIR` / `STUDIO_OUTPUT_DIR` leidžia izoliuotus testus. Nekurti fiktyvių review pastabų automatinio pildytojo.
 
+Dideliam jau perskaitytų puslapių rinkiniui naudoti bendrą `recordEditorialReviewBatch(siteId, reviews)` arba CLI `review-batch <siteId> <JSON-file>`, kur failas yra `{reviews:[{pageId,reviewer,revisionHash,expectedBinding,evidence}]}`. `expectedBinding` apskaičiuoti `reviewBinding(site,page,revisionHash)` iš to paties peržiūrėto konteksto. Iki200 unikalių tos svetainės puslapių; visos šešios konkrečios per-page įrodymų sritys tikrinamos prieš vieną atominį įrašą. Stale revizija/kontekstas, foreign/duplicate ID ar trūkstamas įrodymas neišsaugo jokios partijos dalies. Tai tik realios atliktos peržiūros įrašymas, ne automatinis evidence pildymas ar approval. Individualus recorder ir immutable istorija išlieka.
+
 Prieš importą paleisti `node content-studio/scripts/verify-content-release.mjs <release-directory>`: tikrina tikrus paketo/visų media baitus, public validator, puslapių/revizijų inventorių. Kito checkout public core keliui naudoti `STUDIO_PUBLIC_CORE_DIR`. Manifestą laikyti privačiai; SHA sutapimas nėra atliktos šaltinių patikros ar deployment įrodymas.
 
 ## Migracija ir adapteriai

@@ -1,0 +1,18 @@
+{
+  "siteId": "promedical",
+  "summary": "Atomic catalogue approval rereads unchanged persisted network files per model; scope snapshot to one locked batch.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/APPROVAL-BENCHMARK.md"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/test/content-workflow.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped revert of private approvalNetworkSnapshot reuse and focused fixture; preserved approval hashes and immutable releases are not rewritten.",
+  "id": "upgrade-19b3ea63-c1bb-4af8-98f8-541280a5ebf0",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "3fe14ff4861dc478a9f37c21abd09807f4f793a7",
+  "createdAt": "2026-10-09T16:32:12.712Z"
+}

@@ -48,7 +48,8 @@ function pythonInspect(observations,python='python'){
   });
 }
 export function articleExpectations(pkg,pages,indexSlug,allowNoindex=false){
-  const origin='https://'+pkg.canonicalHost,publicUrls=pages.map(p=>urlFor(pkg,p));
+  const origin='https://'+pkg.canonicalHost,publicUrls=pages.map(p=>urlFor(pkg,p)),publicIds=new Set(pages.map(p=>p.id));
+  const hiddenUrls=pkg.pages.filter(p=>!publicIds.has(p.id)).map(p=>urlFor(pkg,p));
   return pages.map(p=>{
     const authors=(p.editorial?.authors||[]).map(a=>{
       const profiles=pages.filter(p=>p.type==='author'&&p.editorial?.authors?.some(identity=>identity.id===a.id));
@@ -57,7 +58,7 @@ export function articleExpectations(pkg,pages,indexSlug,allowNoindex=false){
     const bodyTexts=p.body.flatMap(b=>b.text?[b.text]:b.content?[b.content.map(n=>n.text).join('')]:b.items?b.items.map(row=>typeof row==='string'?row:row.map(n=>n.text).join('')):[]);
     return {id:p.id,type:p.type,contentVersion:p.contentVersion||1,title:p.title,description:p.description,locale:pkg.locale,origin,url:urlFor(pkg,p),
       isArticleIndex:p.slug===indexSlug,articleIndexUrl:origin+'/'+indexSlug,publicUrls,authors,allowNoindex,
-      hiddenUrls:pkg.pages.filter(p=>!pages.some(l=>l.id===p.id)).map(p=>urlFor(pkg,p)),
+      hiddenUrls,
       datePublished:p.editorial?.datePublished||null,dateModified:p.editorial?.dateModified||null,
       mediaUrls:p.media.map(m=>new URL(m.src,origin).href),bodyTexts};
   });

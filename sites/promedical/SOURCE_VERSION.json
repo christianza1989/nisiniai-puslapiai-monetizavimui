@@ -1,0 +1,91 @@
+{
+  "packageSha256": "7ce29ed99c6a20a6fe3eac4ea651e1d7d39ca137e1c74c31f0397e202461fba9",
+  "sourceVersion": "7f0a5d447b7c923e55eb094c98ae3d39684296b5",
+  "coreCommit": "5ec90e469b02207487c5d7833009a6f46be28ed1",
+  "files": [
+    {
+      "file": "components/niche/promedical-site.tsx",
+      "sha256": "d647b623694515e57594f48eec0b73ad016cb97156a684fc9efaac4338ad0b49"
+    },
+    {
+      "file": "components/niche/promedical-site.module.css",
+      "sha256": "9de6eb5a7d7dbc813a812b3737ad594f4a73f9fc42e78f6b64ccf4197acba889"
+    },
+    {
+      "file": "components/niche/promedical-inquiry.tsx",
+      "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+    },
+    {
+      "file": "components/niche/article-meta.tsx",
+      "sha256": "06549387ba4fa5ab47bb77aae51300222a53378035906a80ea1f68b1f23b164e"
+    },
+    {
+      "file": "app/layout.tsx",
+      "sha256": "da8209d06baccb14229569ff5f14c2e87ddbebc0b4b6b400847116df6b1eebfa"
+    },
+    {
+      "file": "app/niche/[siteId]/brand-icon/route.ts",
+      "sha256": "65bd4be6df2f69bb090aad666d8b4184b2023ac9205b8084e05939efd63660cf"
+    },
+    {
+      "file": "config/niche-network.json",
+      "sha256": "e017b9873f9f7a5e3394135e1ec1f89f0ae6628d8af4f186ebfd3a0c9b127c56"
+    },
+    {
+      "file": "lib/generated/content-packages.json",
+      "sha256": "86b9a47b9df2d30d7f4fc98fbdf1687fbefb3f838a291b67bf286424b4b065a2"
+    },
+    {
+      "file": "lib/smtp-protocol.mjs",
+      "sha256": "96127119e93d06aa26808e430acaeda30ed57a30ac89360e3c40ac9dbc3b4e23"
+    },
+    {
+      "file": "lib/niche-sites.ts",
+      "sha256": "20871662ec14d407c57fc6a91fc97964191c7fa5ccf606d1a1078f5f2c7f64f2"
+    },
+    {
+      "file": "lib/niche-seo.ts",
+      "sha256": "6f412f42a0b48317170c7e1f61070fe5d6a80b5a8792d913b5d49e6b94263aa8"
+    },
+    {
+      "file": "tests/niche-render-cache.test.mjs",
+      "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
+    },
+    {
+      "file": "lib/niche-mail.ts",
+      "sha256": "335e8aed06cc36dbf5a82dd8722556f685f6d55e75023362337b830ff825b67c"
+    },
+    {
+      "file": "app/niche/[siteId]/lead/route.ts",
+      "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
+    },
+    {
+      "file": "tests/niche-mail.test.mjs",
+      "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
+    },
+    {
+      "file": "public/brand/promedical/logo-v1-360.webp",
+      "sha256": "19cf7453972bbb326f0d9c3c71338e1d5d2e8f7290090c6b4f26f06638d609ba"
+    },
+    {
+      "file": "public/brand/promedical/logo-v1-640.webp",
+      "sha256": "fb296e2ecf7483c1c1e80249a0aa9d76a71b1e2885165fac9014150efb07a8e1"
+    },
+    {
+      "file": "public/brand/promedical/logo-v2-360.webp",
+      "sha256": "d37155984dc68b78c3b6d3660cf369e7448d84e6d05c2830e0e9e779da9b86ba"
+    },
+    {
+      "file": "public/brand/promedical/logo-v2-640.webp",
+      "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
+    }
+  ],
+  "checkedAt": "2026-10-10T20:52:37.974Z",
+  "productionVersion": "dc031a6e-623f-451c-9ee7-5a932233ccfc",
+  "notes": "Owner-requested manufacturer-neutral Home and common navigation/footer deployed. All1909 other pages and publication dates unchanged; Home image alt metadata changed, files/rights preserved. Prior complete manifest archived in generic-home-v1.json. Earlier editorial/logo/typography receipts retained. Core commit identifies baseline before this evidence update.",
+  "productionDeployment": "6a3ff47a-372a-4148-ba5e-d2a3c7685147",
+  "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
+  "logoEvidence": "verification-20261010/logo-change-v2.json",
+  "editorialEvidence": "verification-20261010/editorial-release-v1.json",
+  "homeEvidence": "verification-20261010/generic-home-v1.json"
+}

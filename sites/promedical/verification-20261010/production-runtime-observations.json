@@ -1,0 +1,79 @@
+{
+  "observedAt": "2026-10-10T05:56:27.906Z",
+  "scope": "Own synthetic test and exact own category probes; no customers/mailbox content or secrets",
+  "worker": "promedical",
+  "version": "608be43e-ca4c-4089-af73-26448482274f",
+  "cpu": {
+    "status": 200,
+    "events": [
+      {
+        "at": 1791611318392,
+        "message": "GET https://promedical.lt/kategorijos/profi-maxi-vysoke",
+        "script": "promedical",
+        "version": "608be43e-ca4c-4089-af73-26448482274f",
+        "outcome": "ok",
+        "cpuMs": 40,
+        "wallMs": 46,
+        "status": 200,
+        "path": "/kategorijos/profi-maxi-vysoke"
+      },
+      {
+        "at": 1791611060119,
+        "message": "GET https://promedical.lt/kategorijos/profi-maxi-vysoke",
+        "script": "promedical",
+        "version": "608be43e-ca4c-4089-af73-26448482274f",
+        "outcome": "exceededCpu",
+        "cpuMs": 29,
+        "wallMs": 32,
+        "status": 503,
+        "path": "/kategorijos/profi-maxi-vysoke"
+      },
+      {
+        "at": 1791611060119,
+        "message": "Worker exceeded CPU time limit.",
+        "script": "promedical",
+        "version": "608be43e-ca4c-4089-af73-26448482274f",
+        "path": "/kategorijos/profi-maxi-vysoke"
+      }
+    ]
+  },
+  "inquiry": {
+    "status": 200,
+    "rows": [
+      {
+        "id": "82125ead-0979-4482-8d54-4a9a59e5bac8",
+        "site_id": "promedical",
+        "source_path": "/kontaktai",
+        "status": "new",
+        "created_at": 1791611283717,
+        "message_length": 154
+      }
+    ]
+  },
+  "rejectedForms": {
+    "status": 200,
+    "rows": [
+      {
+        "rejected_own_rows": 0
+      }
+    ]
+  },
+  "bots": {
+    "status": 200,
+    "config": {
+      "enable_js": false,
+      "fight_mode": false,
+      "ai_bots_protection": "disabled",
+      "content_bots_protection": "disabled",
+      "crawler_protection": "disabled",
+      "ai_training": "disabled",
+      "ai_search": "disabled",
+      "ai_user": "disabled",
+      "is_robots_txt_managed": false,
+      "bot_preference_sync_enabled": false,
+      "cf_robots_variant": "policy_only",
+      "ai_bots_migration_opt_out": false,
+      "using_latest_model": true
+    }
+  }
+}

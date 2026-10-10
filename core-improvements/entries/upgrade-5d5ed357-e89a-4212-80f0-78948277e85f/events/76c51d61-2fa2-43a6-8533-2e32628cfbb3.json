@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Replaced future-clamped review label with publication date and a separate actual-update label only when modified differs.",
+  "eventId": "76c51d61-2fa2-43a6-8533-2e32628cfbb3",
+  "sequence": 2,
+  "at": "2026-10-10T05:58:16.406Z"
+}

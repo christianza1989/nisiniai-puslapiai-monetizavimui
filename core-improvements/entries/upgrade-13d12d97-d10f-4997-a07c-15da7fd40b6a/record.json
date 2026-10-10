@@ -1,0 +1,20 @@
+{
+  "siteId": "promedical",
+  "summary": "Shared SMTP helper hardcodes From:MB Pinet and EHLO pinet.lt for every niche, including the owner's independent Promedical mailbox. Pass the actual operator display name with validated headers and derive EHLO from the authenticated mailbox domain; preserve default MB Pinet behavior for existing callers.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/CORE_FEEDBACK.md"
+  ],
+  "paths": [
+    "lib/smtp-protocol.mjs",
+    "lib/niche-mail.ts",
+    "app/niche/[siteId]/lead/route.ts",
+    "tests/smtp.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/19",
+  "rollback": "Scoped revert of optional display-name/derived-EHLO integration; credentials and mail DNS are private operations outside this source repair.",
+  "id": "upgrade-13d12d97-d10f-4997-a07c-15da7fd40b6a",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "0cd50bd65a7d3c43382c40a81f1a6d84968f8211",
+  "createdAt": "2026-10-09T20:59:28.359Z"
+}

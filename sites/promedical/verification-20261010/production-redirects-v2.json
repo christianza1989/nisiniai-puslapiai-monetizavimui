@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-10T05:56:09.495Z",
+  "scope": "Actual current canonical redirects; no POST/customer writes",
+  "rows": [
+    {
+      "url": "http://promedical.lt/produktai?qa=redirect-check",
+      "status": 308,
+      "location": "https://promedical.lt/produktai?qa=redirect-check"
+    },
+    {
+      "url": "https://www.promedical.lt/produktai?qa=redirect-check",
+      "status": 308,
+      "location": "https://promedical.lt/produktai?qa=redirect-check"
+    },
+    {
+      "url": "http://www.promedical.lt/produktai?qa=redirect-check",
+      "status": 308,
+      "location": "https://promedical.lt/produktai?qa=redirect-check"
+    }
+  ],
+  "pass": true
+}

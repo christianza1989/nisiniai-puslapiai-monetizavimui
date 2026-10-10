@@ -7,7 +7,7 @@ import { optimizeRaster } from './image-pipeline.mjs';
 import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,validateV2Package,bodyPlainText} from './content-package-v2.mjs';
 import { withStudioWriteLock } from './write-lock.mjs';
 import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
-import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
+import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent, reviewBinding } from './content-workflow.mjs';
 
 export const ROOT = path.resolve(import.meta.dirname, '..');
 export const DATA = path.resolve(process.env.STUDIO_DATA_DIR || path.join(ROOT, 'data'));
@@ -388,7 +388,11 @@ export async function deleteDraftPage(siteId, pageId) {
     return { deleted: pageId };
   });
 }
-async function approveDraft(site, page, actorId, batchIds = new Set()) {
+async function approvalNetworkSnapshot() {
+  const sites = await networkSites();
+  return { networkIndex: targetCatalog(sites, isPublic), networkDomains: new Set(sites.map(item => item.canonicalHost)) };
+}
+async function approveDraft(site, page, actorId, batchIds = new Set(), networkSnapshot = null) {
     const siteId = site.id;
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
     if (page.factChecks?.length) throw new Error('Išspręskite faktų patikros pastabas ir išsaugokite naują versiją prieš tvirtinimą.');
@@ -410,8 +414,7 @@ async function approveDraft(site, page, actorId, batchIds = new Set()) {
     for (const item of page.media) if (!item.alt || !item.rights || !item.width || !item.height) throw new Error('Vaizdams reikia alt teksto, matmenų ir naudojimo teisių.');
     for (const block of page.body) if (block.type === 'image' && !page.media.some(item => item.id === block.assetId)) throw new Error('Turinio vaizdas nėra priskirtas puslapio medijai.');
     for (const link of page.links) if (!link.label || !site.pages.some(item => item.id === link.targetPageId && (page.contentVersion===2||item.publishedRevision||batchIds.has(item.id)))) throw new Error('Vidinė nuoroda nurodo nepatvirtintą arba nežinomą puslapį.');
-    const networkIndex = await networkCatalog();
-    const networkDomains = new Set((await listSites()).map(item => item.canonicalHost));
+    const { networkIndex, networkDomains } = networkSnapshot || await approvalNetworkSnapshot();
     for (const source of page.externalLinks || []) {
       let url;
       try { url = new URL(source.url); } catch { throw new Error('Išorinio šaltinio URL neteisingas.'); }
@@ -468,6 +471,22 @@ export async function recordEditorialReview(siteId, pageId, input) {
     return page.editorialReview;
   });
 }
+export async function recordEditorialReviewBatch(siteId, inputs) {
+  return locked(async () => {
+    if (!Array.isArray(inputs) || inputs.some(input => !input || typeof input !== 'object')) throw new Error('Reikia konkrečių per-page peržiūros įrodymų.');
+    const site = await getSite(siteId), pages = selectedPages(site, inputs.map(input => input.pageId));
+    const reviews = pages.map((page, index) => {
+      const hash = revisionHash(page), input = inputs[index];
+      if (input.expectedBinding !== reviewBinding(site, page, hash)) throw new Error('Peržiūros kontekstas pasikeitė; iš naujo perskaitykite svetainės faktus ir puslapį.');
+      return editorialReview(site, page, hash, input);
+    });
+    // Validate every supplied revision, context and evidence before one write.
+    // This records the editor's real work; it never creates evidence or approvals.
+    for (let index = 0; index < pages.length; index++) pages[index].editorialReview = reviews[index];
+    await writeJson(siteFile(siteId), site);
+    return { siteId, recorded: pages.map(page => page.id), approval: 'not-performed' };
+  });
+}
 export async function getContentWorkflow(siteId) { return workflowOverview(await getSite(siteId), revisionHash); }
 export async function approveReviewedBatch(siteId, pageIds, actorId) {
   return locked(async () => {
@@ -477,7 +496,10 @@ export async function approveReviewedBatch(siteId, pageIds, actorId) {
       if (ready.blockers.length) throw new Error(`${page.slug || '/'}: ${ready.blockers.join(' ')}`);
       for (const item of page.media) await stat(path.join(MEDIA_DIR, site.id, path.basename(item.src)));
     }
-    for (const page of pages) await approveDraft(site, page, actorId, ids);
+    // The write lock holds persisted network files constant until the one atomic
+    // write below. Reuse this batch's snapshot, never a cache across operations.
+    const networkSnapshot = await approvalNetworkSnapshot();
+    for (const page of pages) await approveDraft(site, page, actorId, ids, networkSnapshot);
     // All validation, including v2 inline dependency closure, happens before one atomic write.
     packageForSite(site);
     await writeJson(siteFile(siteId), site);

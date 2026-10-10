@@ -1,0 +1,625 @@
+{
+  "state": "SCOPED_BROWSER_CHECKS_PASS_ENLARGEMENT_UNVERIFIED",
+  "evaluatedAt": "2026-10-09T18:04:29.536Z",
+  "packageSha256": "32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6",
+  "publicCommit": "19a2c0baf6f064bd350af4e8e9f040a389b218be",
+  "environment": "Codex in-app Chromium browser, local production Workers transport 8787; supported viewport overrides, no physical device or established browser200%zoom",
+  "observations": [
+    {
+      "page": "/kontaktai",
+      "action": "resumed marked browser fetch form",
+      "observedAt": "2026-10-09T17:48:37.977Z",
+      "status": "Tai vietinės peržiūros bandymas: žinutė išsaugota tik šiame kompiuteryje, o tikras el. laiškas neišsiųstas.",
+      "sqlRecordId": "90f6a7d6-9f2d-4d14-a67f-aa39e7914ff1",
+      "sku": "PLV150",
+      "quantity": 4,
+      "server": "local D1 only, no email"
+    },
+    {
+      "page": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "width": 390,
+      "observedAt": "2026-10-09T17:49:00.280Z",
+      "dom": {
+        "bodyCharacters": 5481,
+        "h1": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+        "headings": [
+          "1. Aprašykite vieną pagrindinę paskirtį",
+          "2. Patikrinkite visą judėjimo kelią",
+          "3. Sudarykite priemonių ir laikymo vietų sąrašą",
+          "4. Palyginkite korpusą su priežiūros tvarka",
+          "5. Įvertinkite ratukus ir stabdymą",
+          "6. Atskirai patikrinkite kiekvieną priedą",
+          "Pavyzdys: procedūrų kabinetas",
+          "Prieš išsiunčiant užklausą",
+          "Šaltiniai ir dokumentai"
+        ],
+        "images": [
+          {
+            "alt": "Klaro Medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true,
+            "src": "http://127.0.0.1:8787/content-assets/promedical/20e50921-b610-4a83-b86a-245df79ad78d.webp"
+          }
+        ],
+        "scrollWidth": 375,
+        "sources": [
+          {
+            "text": "Klaro: moduliniai vežimėliai ",
+            "url": "https://www.klaro.cz/en/zakladni-voziky"
+          },
+          {
+            "text": "Klaro: vežimėliai su priedais ",
+            "url": "https://www.klaro.cz/en/voziky-s-prislusenstvim"
+          },
+          {
+            "text": "Klaro: nerūdijančio plieno rūšys ",
+            "url": "https://www.klaro.cz/en/druhy-nerezove-oceli"
+          },
+          {
+            "text": "Klaro: produktų instrukcijų paieška ",
+            "url": "https://www.klaro.cz/en/navody-pdf-2186"
+          }
+        ],
+        "viewport": 375
+      }
+    },
+    {
+      "page": "/gidai/iso-moduliu-sistema",
+      "width": 390,
+      "observedAt": "2026-10-09T17:49:02.108Z",
+      "dom": {
+        "bodyCharacters": 5953,
+        "h1": "ISO modulių sistema: kaip suderinti laikymą ir transportavimą",
+        "headings": [
+          "1. Nupieškite priemonių kelią",
+          "2. Pradėkite nuo laikomų priemonių",
+          "3. Suderinamumą tikrinkite kodas su kodu",
+          "4. Spintą rinkitės pagal patalpą ir prieigą",
+          "5. Atskirkite saugojimą nuo transportavimo",
+          "6. Suplanuokite žymėjimą ir papildymą",
+          "Pavyzdys: spinta ir vienas papildymo vežimėlis",
+          "Ką perduoti tiekėjui",
+          "Šaltiniai ir dokumentai"
+        ],
+        "images": [
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "loaded": true,
+            "src": "http://127.0.0.1:8787/content-assets/promedical/abc16777-192d-498e-8f1f-14cf2a815729.webp"
+          }
+        ],
+        "scrollWidth": 375,
+        "sources": [
+          {
+            "text": "Klaro: ISO modulių sistema ",
+            "url": "https://www.klaro.cz/en/iso-modul-system"
+          },
+          {
+            "text": "Klaro: moduliniai krepšiai ir kreipiančiosios ",
+            "url": "https://www.klaro.cz/en/iso-skrine-kose"
+          },
+          {
+            "text": "Klaro: daugiafunkcės spintos ",
+            "url": "https://www.klaro.cz/en/iso-skrine-prehled"
+          },
+          {
+            "text": "Klaro: stelažų sistema ",
+            "url": "https://www.klaro.cz/en/regalovy-system"
+          },
+          {
+            "text": "Klaro: produktų instrukcijų paieška ",
+            "url": "https://www.klaro.cz/en/navody-pdf-2186"
+          }
+        ],
+        "viewport": 375
+      }
+    },
+    {
+      "page": "/gidai/irangos-pirkimo-uzklausa",
+      "width": 390,
+      "observedAt": "2026-10-09T17:49:03.943Z",
+      "dom": {
+        "bodyCharacters": 5632,
+        "h1": "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai",
+        "headings": [
+          "1. Vienu sakiniu paaiškinkite darbo vietą",
+          "2. Sudarykite prekių eilučių sąrašą",
+          "3. Privalomus reikalavimus atskirkite nuo pageidavimų",
+          "4. Paprašykite atitiktį pagrindžiančių dokumentų",
+          "5. Sulyginkite kainos apimtį",
+          "6. Nurodykite terminą ir priėmimo vietą",
+          "Trumpas ruošinys el. laiškui ar formai",
+          "Gauto pasiūlymo patikra",
+          "Šaltiniai ir dokumentai"
+        ],
+        "images": [
+          {
+            "alt": "Klaro Infuzinis stovas NEREZ1002IS",
+            "loaded": true,
+            "src": "http://127.0.0.1:8787/content-assets/promedical/1c07dc69-c857-4bc5-b7f1-85e1a7977c28.webp"
+          }
+        ],
+        "scrollWidth": 375,
+        "sources": [
+          {
+            "text": "VPT: pagalbinės priemonės pirkimų vykdytojams ",
+            "url": "https://vpt.lrv.lt/lt/naujienos-3/pagalbines-priemones-pirkimu-vykdytojams/"
+          },
+          {
+            "text": "Klaro: produktų instrukcijų paieška ",
+            "url": "https://www.klaro.cz/en/navody-pdf-2186"
+          }
+        ],
+        "viewport": 375
+      }
+    },
+    {
+      "page": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "width": 320,
+      "build": "19a2c0b",
+      "observedAt": "2026-10-09T17:56:35.099Z",
+      "dom": {
+        "byline": [],
+        "images": [],
+        "scrollWidth": 320,
+        "viewport": 320
+      }
+    },
+    {
+      "page": "/gidai/iso-moduliu-sistema",
+      "width": 320,
+      "build": "19a2c0b",
+      "observedAt": "2026-10-09T17:56:35.716Z",
+      "dom": {
+        "articleHeight": 6554.625,
+        "bodyCharacters": 5953,
+        "byline": [
+          "Promedical"
+        ],
+        "images": [
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "loaded": true
+          }
+        ],
+        "scrollWidth": 305,
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/gidai/irangos-pirkimo-uzklausa",
+      "width": 320,
+      "build": "19a2c0b",
+      "observedAt": "2026-10-09T17:56:37.905Z",
+      "dom": {
+        "articleHeight": 6358,
+        "bodyCharacters": 5632,
+        "byline": [
+          "Promedical"
+        ],
+        "images": [
+          {
+            "alt": "Klaro Infuzinis stovas NEREZ1002IS",
+            "loaded": true
+          }
+        ],
+        "scrollWidth": 305,
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "width": 320,
+      "action": "confirm full loaded article after initial early empty observation",
+      "dom": {
+        "articleHeight": 5945.625,
+        "bodyCharacters": 5481,
+        "h1": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+        "images": [
+          {
+            "alt": "Klaro Medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true
+          }
+        ],
+        "scrollWidth": 305,
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "action": "keyboard skip and native details",
+      "observedAt": "2026-10-09T17:57:25.908Z",
+      "skipMainFocus": true,
+      "detailsOpenedByEnter": true,
+      "dom": {
+        "focusVisible": true,
+        "menuLinks": [
+          {
+            "text": "Produktų katalogas",
+            "url": "/produktai"
+          },
+          {
+            "text": "Pasirinkimo gidai",
+            "url": "/gidai"
+          },
+          {
+            "text": "Apie mus",
+            "url": "/apie-projekta"
+          },
+          {
+            "text": "Kontaktai ir užklausa",
+            "url": "/kontaktai"
+          }
+        ],
+        "outline": "rgb(8, 122, 77) solid 3px"
+      }
+    },
+    {
+      "page": "/produktai/48-20-va",
+      "width": 320,
+      "dom": {
+        "h1": "Spintų komplektas CN 48/20 VA",
+        "headings": [
+          "Techniniai duomenys",
+          "Poreikio užklausa",
+          "Šaltiniai ir dokumentai"
+        ],
+        "images": [
+          {
+            "alt": "Klaro Spintų komplektas CN 48/20 VA",
+            "loaded": false
+          }
+        ],
+        "items": [
+          "Savybės: Spinta MS moduliniams krepšiams.",
+          "Medžiaga: plienas su milteline dažų danga.",
+          "Korpusas ir šonų apdaila: pilka spalva RAL 7042.",
+          "Durys ir matomosios pusės apdaila: spalva pagal pasirinkimą.",
+          "Savybės: Viduje įrengtos plastikinės šoninės sienelės MS moduliniams krepšiams laikyti; iš viso 37 pozicijų.",
+          "Savybės: Viršutinis trečdalis pritaikytas krepšiams ištraukti kampu, kad būtų geriau matomas jų turinys.",
+          "Savybės: Rakinamos vienvėrės aklinos durys, apsaugotos nuo dulkių; galimas dešininis arba kairinis atidarymas.",
+          "Reguliuojamo aukščio kojelės su cokolio uždengimo galimybe: 4 vnt.; cokoliai įskaičiuoti į atskirų komplektacijų kainą.",
+          "Savybės: Spinta su lentynomis / stalčiais.",
+          "Medžiaga: plienas su milteline dažų danga.",
+          "Korpusas ir šonų apdaila: pilka spalva RAL 7042.",
+          "Durys ir matomosios pusės apdaila: spalva pagal pasirinkimą.",
+          "Reguliuojamos lentynos: 4 vnt.; medžiaga – nerūdijantysis plienas AISI304.",
+          "Negilūs stalčiai: 2 vnt.; gilūs stalčiai: 2 vnt.; medžiaga – plienas su pilka milteline dažų danga RAL7042; teleskopiniai rutuliniai bėgeliai su pritraukimu ir švelniu uždarymu.",
+          "Savybės: Rakinamos dvivėrės aklinos durys, apsaugotos nuo dulkių.",
+          "Reguliuojamo aukščio kojelės su cokolio uždengimo galimybe: 4 vnt.; cokoliai įskaičiuoti į atskirų komplektacijų kainą.",
+          "Savybės: Viršutinis spintų antstatas.",
+          "Medžiaga: plienas su milteline dažų danga.",
+          "Korpusas ir šonų apdaila: pilka spalva RAL 7042.",
+          "Durys ir matomosios pusės apdaila: spalva pagal pasirinkimą.",
+          "Savybės: Rakinamos dvivėrės stumdomos durys be apsaugos nuo dulkių.",
+          "Komplekto sudėtis: spintos MS moduliniams krepšiams – 2 vnt.",
+          "Savybės: Spintos su lentynomis / stalčiais – 1 vnt.; išorinis spintos plotis – 1100 mm.",
+          "Spintų antstatai: 1 vnt."
+        ],
+        "scrollWidth": 305,
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/produktai/48-20-va",
+      "action": "loaded media confirmation",
+      "images": [
+        {
+          "alt": "Klaro Spintų komplektas CN 48/20 VA",
+          "loaded": true,
+          "naturalWidth": 280
+        }
+      ]
+    },
+    {
+      "page": "catalogue search",
+      "observedAt": "2026-10-09T17:57:51.764Z",
+      "dom": {
+        "cards": [
+          "Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+          "Medicininis vežimėlis su 3 vonelėmis ir vieliniu krepšiu pagal kainos pasiūlymą 51/22 – nestandartinis"
+        ],
+        "h1": "Klaro produktų katalogas",
+        "resultHeadings": [
+          "Produktų grupės",
+          "Produktų paieškos rezultatai"
+        ],
+        "scrollWidth": 305,
+        "url": "http://127.0.0.1:8787/produktai?q=ZV1253N-PZ",
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/",
+      "width": 1440,
+      "build": "19a2c0b",
+      "observedAt": "2026-10-09T17:58:57.947Z",
+      "dom": {
+        "brandNames": [
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          },
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          }
+        ],
+        "font": "Figtree, Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "scrollWidth": 1425,
+        "viewport": 1425,
+        "visibleImages": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE PROFI COMBI ZV2334N su vieta dokumentams – žema versija",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+            "loaded": false
+          }
+        ]
+      }
+    },
+    {
+      "page": "/",
+      "width": 768,
+      "build": "19a2c0b",
+      "observedAt": "2026-10-09T17:58:58.115Z",
+      "dom": {
+        "brandNames": [
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          },
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          }
+        ],
+        "font": "Figtree, Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "scrollWidth": 753,
+        "viewport": 753,
+        "visibleImages": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE PROFI COMBI ZV2334N su vieta dokumentams – žema versija",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+            "loaded": false
+          }
+        ]
+      }
+    },
+    {
+      "page": "/",
+      "width": 390,
+      "build": "19a2c0b",
+      "observedAt": "2026-10-09T17:58:58.258Z",
+      "dom": {
+        "brandNames": [
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          },
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          }
+        ],
+        "font": "Figtree, Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "scrollWidth": 375,
+        "viewport": 375,
+        "visibleImages": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "/",
+      "width": 320,
+      "build": "19a2c0b",
+      "observedAt": "2026-10-09T17:58:58.366Z",
+      "dom": {
+        "brandNames": [
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          },
+          {
+            "aria": null,
+            "text": "promedicalĮranga medicinos įstaigoms"
+          }
+        ],
+        "font": "Figtree, Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "scrollWidth": 305,
+        "viewport": 305,
+        "visibleImages": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "/",
+      "width": 1440,
+      "action": "loaded final desktop media confirmation",
+      "dom": {
+        "scrollWidth": 1425,
+        "viewport": 1425,
+        "visibleImages": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE PROFI COMBI ZV2334N su vieta dokumentams – žema versija",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+            "loaded": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "/kontaktai",
+      "width": 320,
+      "action": "native validation, persistent quantity and final reflow",
+      "dom": {
+        "focusName": "name",
+        "inputs": [
+          {
+            "name": "name",
+            "valid": false
+          },
+          {
+            "name": "email",
+            "valid": false
+          },
+          {
+            "name": "consent",
+            "valid": false
+          }
+        ],
+        "quantity": [
+          "4"
+        ],
+        "scrollWidth": 305,
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/kontaktai",
+      "action": "remove owned QA selection, leave clean empty list",
+      "dom": {
+        "headerCount": "0",
+        "listPresent": false
+      }
+    },
+    {
+      "page": "/",
+      "observedAt": "2026-10-09T18:04:29.536Z",
+      "action": "final normal viewport deliverable",
+      "dom": {
+        "brand": "promedicalĮranga medicinos įstaigoms",
+        "images": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE PROFI COMBI ZV2334N su vieta dokumentams – žema versija",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro NEREZ1113 – MAYO INSTRUMAN HYDRAULIC TOP I",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno padėklas 2704 – NEREZ2704",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno dviejų pakopų laipteliai su ratukais ir stabdžiu NEREZ1044",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Plastikinis skyrelių įdėklas skardiniam stalčiui - M ir L stalčiams",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis UNI-TRANS BASIC – UT5201",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Infuzijų stovas NEREZ1002IS",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno stelažas NEREZ2201 su 5 lentynomis",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "loaded": false
+          },
+          {
+            "alt": "Klaro Infuzinis stovas NEREZ1002IS",
+            "loaded": false
+          }
+        ],
+        "scrollWidth": 1265,
+        "width": 1265
+      },
+      "screenshot": "screenshots/home-desktop-deliverable.jpg"
+    }
+  ],
+  "limits": [
+    "Early pending image observations retained; later network-idle observations confirm inspected images.",
+    "Ctrl+plus attempt did not change viewport/DPR/text; true200% enlargement remains UNVERIFIED.",
+    "Pre-reboot connection error retained separately in BROWSER_PARTIAL_BEFORE_REBOOT.json; resumed unchanged form succeeded in local D1 only.",
+    "No SMTP acceptance or real INBOX delivery proof."
+  ]
+}

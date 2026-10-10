@@ -1,0 +1,357 @@
+{
+  "pages": [
+    {
+      "type": "guide",
+      "slug": "gidai/medicinines-spintos-uzrakto-patikra",
+      "title": "Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra",
+      "description": "Pasirinkti realiai siūlomą užrakto variantą ir aprašyti, kas bei kaip juo naudosis.",
+      "intent": "Pasirinkti realiai siūlomą užrakto variantą ir aprašyti, kas bei kaip juo naudosis.",
+      "reason": "Skaitytojo sprendimas: Pasirinkti realiai siūlomą užrakto variantą ir aprašyti, kas bei kaip juo naudosis. Unikalus rezultatas: Modelio užrakto tipo, raktų ir dalių informacijos lentelė; mechaninis užraktas nelaikomas teisinių vaistų laikymo reikalavimų patvirtinimu. Šaltinis: https://www.klaro.cz/skrine. Pavyzdžiai: ATP0002, ZS1211, ZS1211A. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Medicininės spintos",
+      "pillarSlug": "gidai/medicinines-spintos-pasirinkimas",
+      "sourceQueries": [
+        "medicininių spintų užraktai"
+      ],
+      "publishDate": "2027-01-07",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/staliuko-prie-lovos-suderinamumas",
+      "title": "Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas",
+      "description": "Sutikrinti staliuko prie lovos reguliavimą ir pagrindo vietą su konkrečia lova bei darbo poreikiu.",
+      "intent": "Sutikrinti staliuko prie lovos reguliavimą ir pagrindo vietą su konkrečia lova bei darbo poreikiu.",
+      "reason": "Skaitytojo sprendimas: Sutikrinti staliuko prie lovos reguliavimą ir pagrindo vietą su konkrečia lova bei darbo poreikiu. Unikalus rezultatas: POSTMAN konkrečių modelių aukščio, pagrindo ir lovos tarpo matavimo ruošinys; neperkelti Mayo staliukų ar klinikinės ergonomikos reikalavimų. Šaltinis: https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni. Pavyzdžiai: 1200, 1100. Parametrus tikrinti konkretaus modelio instrukcijoje. Paklausos duomenų ir rinkos ribos pateiktos privačiame seoResearch. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Darbo vietos ir baldų planavimas",
+      "pillarSlug": "gidai/medicinos-istaigos-baldu-planavimas",
+      "sourceQueries": [
+        "ligonio staliukas virš lovos"
+      ],
+      "publishDate": "2027-01-11",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/sulankstomo-infuziju-stovo-pasirinkimas",
+      "title": "Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra",
+      "description": "Palyginti sulankstyto ir darbinio stovo matmenis su konkrečiu laikymo bei transportavimo poreikiu.",
+      "intent": "Palyginti sulankstyto ir darbinio stovo matmenis su konkrečiu laikymo bei transportavimo poreikiu.",
+      "reason": "Skaitytojo sprendimas: Palyginti sulankstyto ir darbinio stovo matmenis su konkrečiu laikymo bei transportavimo poreikiu. Unikalus rezultatas: InfuFlex modelio dokumentų laukai ir transportavimo scenarijus; vieno produkto savybių neapibendrinti visai stovų kategorijai. Šaltinis: https://www.klaro.cz/infuflex-page. Pavyzdžiai: NEREZ1006*. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Stovai ir laikikliai",
+      "pillarSlug": "gidai/medicininiai-stovai-ir-laikikliai",
+      "sourceQueries": [
+        "sulankstomas infuzijų stovas"
+      ],
+      "publishDate": "2027-01-14",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/skalbiniu-maisui-tinkamo-remo-patikra",
+      "title": "Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas",
+      "description": "Patikrinti, ar konkretaus maišo anga ir tvirtinimas tinka konkrečiam rėmui.",
+      "intent": "Patikrinti, ar konkretaus maišo anga ir tvirtinimas tinka konkrečiam rėmui.",
+      "reason": "Skaitytojo sprendimas: Patikrinti, ar konkretaus maišo anga ir tvirtinimas tinka konkrečiam rėmui. Unikalus rezultatas: Žingsnių matavimo lapas su angos, tvirtinimo ir dangčio vietos laukais; nominalūs litrai neįrodo tinkamo įstatymo. Šaltinis: https://www.klaro.cz/manipulace-s-pradlem-a-odpadem. Pavyzdžiai: XVAK21, XVAK21-pruhy, XVAK22. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Skalbiniai ir atliekų įranga",
+      "pillarSlug": "gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "sourceQueries": [
+        "skalbinių vežimėlio maišai"
+      ],
+      "publishDate": "2027-01-18",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/svariu-skalbiniu-transportavimo-vezimelis",
+      "title": "Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas",
+      "description": "Parinkti skalbinių transportavimo vietų skaičių ir uždarymo konstrukciją pagal konkretų maršrutą.",
+      "intent": "Parinkti skalbinių transportavimo vietų skaičių ir uždarymo konstrukciją pagal konkretų maršrutą.",
+      "reason": "Skaitytojo sprendimas: Parinkti skalbinių transportavimo vietų skaičių ir uždarymo konstrukciją pagal konkretų maršrutą. Unikalus rezultatas: Lankstytų komplektų matmenų bei išdavimo vietų ruošinys; nekurti universalaus infekcijų kontrolės ar izoliavimo protokolo. Šaltinis: https://www.klaro.cz/manipulace-s-pradlem-a-odpadem. Pavyzdžiai: 12066, PLV131, 8003N. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Skalbiniai ir atliekų įranga",
+      "pillarSlug": "gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "sourceQueries": [
+        "švarių skalbinių vežimėlis"
+      ],
+      "publishDate": "2027-01-21",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicininiu-atlieku-maisu-laikiklis",
+      "title": "Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas",
+      "description": "Palyginti maišo angą, dangčio valdymą ir maišo pakeitimą pagal konkrečią konstrukciją.",
+      "intent": "Palyginti maišo angą, dangčio valdymą ir maišo pakeitimą pagal konkrečią konstrukciją.",
+      "reason": "Skaitytojo sprendimas: Palyginti maišo angą, dangčio valdymą ir maišo pakeitimą pagal konkrečią konstrukciją. Unikalus rezultatas: Rėmo ir maišo suderinamumo lentelė; atliekų klasifikavimo, spalvų ar privalomų talpų reikalavimų neperkelti iš katalogo. Šaltinis: https://www.klaro.cz/manipulace-s-pradlem-a-odpadem. Pavyzdžiai: SERVISNISADA01, PLV131, XVAK21. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Skalbiniai ir atliekų įranga",
+      "pillarSlug": "gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "sourceQueries": [
+        "medicininių atliekų maišų laikikliai"
+      ],
+      "publishDate": "2027-01-25",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicininio-stelazo-apkrovos-ir-vietos-planas",
+      "title": "Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą",
+      "description": "Sutikrinti lentynų bei bendrą apkrovą ir stelažo vietą pagal priemonių inventorių.",
+      "intent": "Sutikrinti lentynų bei bendrą apkrovą ir stelažo vietą pagal priemonių inventorių.",
+      "reason": "Skaitytojo sprendimas: Sutikrinti lentynų bei bendrą apkrovą ir stelažo vietą pagal priemonių inventorių. Unikalus rezultatas: Gamintojo lentynos / viso stelažo ribų lentelė ir iliustracinis svorių paskirstymas; tvirtinimas ir stabilumas tik pagal konkretų dokumentą. Šaltinis: https://www.klaro.cz/regaly. Pavyzdžiai: ZR2231KAL*, ZR2231KAP*, ZR2231KBL*. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Laikymas ir logistika",
+      "pillarSlug": "gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+      "sourceQueries": [
+        "medicininių stelažų apkrova"
+      ],
+      "publishDate": "2027-01-28",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/rego-deziu-ir-vezimelio-suderinamumas",
+      "title": "REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas",
+      "description": "Patikrinti konkrečių REGO dėžių, priedų ir vežimėlio vietų tarpusavio suderinamumą.",
+      "intent": "Patikrinti konkrečių REGO dėžių, priedų ir vežimėlio vietų tarpusavio suderinamumą.",
+      "reason": "Skaitytojo sprendimas: Patikrinti konkrečių REGO dėžių, priedų ir vežimėlio vietų tarpusavio suderinamumą. Unikalus rezultatas: Vienos realios dėžės ir vežimėlio kodų poros patikra; REGO ir ISO sistemų netapatinti pagal pavadinimą. Šaltinis: https://www.klaro.cz/rego-cz. Pavyzdžiai: RB1011, RB1011D, RB1011P. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Laikymas ir logistika",
+      "pillarSlug": "gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+      "sourceQueries": [
+        "REGO laikymo sistema"
+      ],
+      "publishDate": "2027-02-01",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/padeklu-vezimelio-formato-pasirinkimas",
+      "title": "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų",
+      "description": "Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis.",
+      "intent": "Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis.",
+      "reason": "Skaitytojo sprendimas: Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis. Unikalus rezultatas: Padėklas–kreipiančiosios–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio. Šaltinis: https://www.klaro.cz/plata. Pavyzdžiai: NEREZ3100, NEREZ3101, NEREZ3104. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Laikymas ir logistika",
+      "pillarSlug": "gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+      "sourceQueries": [
+        "padėklų vežimėlio matmenys"
+      ],
+      "publishDate": "2027-02-04",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/nerudijancio-plieno-sterilizavimo-padeklo-pasirinkimas",
+      "title": "Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra",
+      "description": "Palyginti padėklų matmenis ir numatytą laikymo bei transportavimo įrangą.",
+      "intent": "Palyginti padėklų matmenis ir numatytą laikymo bei transportavimo įrangą.",
+      "reason": "Skaitytojo sprendimas: Palyginti padėklų matmenis ir numatytą laikymo bei transportavimo įrangą. Unikalus rezultatas: Dviejų realių padėklų ir vienos laikymo vietos matmenų palyginimas; proceso tinkamumas tik pagal konkretaus modelio instrukciją. Šaltinis: https://www.klaro.cz/nerezova-plata-sterilizace. Pavyzdžiai: NEREZ2704, NEREZ2705, NEREZ2606. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Sterilizavimo skyriaus logistika",
+      "pillarSlug": "gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas",
+      "sourceQueries": [
+        "sterilizavimo padėklai"
+      ],
+      "publishDate": "2027-02-08",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/valymo-vezimelio-komplektacijos-pasirinkimas",
+      "title": "Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas",
+      "description": "Parinkti valymo darbo priemonių vežimėlio talpinimo vietas ir priedų komplektą.",
+      "intent": "Parinkti valymo darbo priemonių vežimėlio talpinimo vietas ir priedų komplektą.",
+      "reason": "Skaitytojo sprendimas: Parinkti valymo darbo priemonių vežimėlio talpinimo vietas ir priedų komplektą. Unikalus rezultatas: Konkretaus valymo vežimėlio priemonių sąrašo ir vietų lentelė; tai darbo įrangos atranka, ne kitų baldų dezinfekavimo protokolas. Šaltinis: https://www.klaro.cz/uklidove-vybaveni. Pavyzdžiai: PLV101, PLV111, PLV141. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Priežiūra ir dokumentai",
+      "pillarSlug": "gidai/medicininiu-baldu-prieziuros-planas",
+      "sourceQueries": [
+        "valymo vežimėlio komplektacija"
+      ],
+      "publishDate": "2027-02-11",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicininiu-baldu-naudojimo-islaidu-palyginimas",
+      "title": "Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą",
+      "description": "Palyginti įsigijimo ir dokumentais patvirtintas papildomas išlaidas pagal pasirinktą naudojimo laiką.",
+      "intent": "Palyginti įsigijimo ir dokumentais patvirtintas papildomas išlaidas pagal pasirinktą naudojimo laiką.",
+      "reason": "Skaitytojo sprendimas: Palyginti įsigijimo ir dokumentais patvirtintas papildomas išlaidas pagal pasirinktą naudojimo laiką. Unikalus rezultatas: Tuščias išlaidų modelis su vartotojo įrašomomis kainomis, priedais ir laikotarpiu; nekurti tarnavimo laiko, priežiūros kainų ar mūsų garantijų. Šaltinis: https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni. Pavyzdžiai: NEREZ1044, 1200, 1100. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Pirkimas ir priėmimas",
+      "pillarSlug": "gidai/irangos-pirkimo-uzklausa",
+      "sourceQueries": [
+        "medicininių baldų naudojimo išlaidos"
+      ],
+      "publishDate": "2027-02-15",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/laboratorijos-baldu-darbo-vietos-planas",
+      "title": "Laboratorijos baldai: fizinės darbo ir laikymo vietos planas",
+      "description": "Suderinti realių laikomų priemonių matmenis su modulinių baldų darbo bei laikymo vietomis.",
+      "intent": "Suderinti realių laikomų priemonių matmenis su modulinių baldų darbo bei laikymo vietomis.",
+      "reason": "Skaitytojo sprendimas: Suderinti realių laikomų priemonių matmenis su modulinių baldų darbo bei laikymo vietomis. Unikalus rezultatas: MetalLine BASIC / PROFI konkrečių modelių darbo vietos schema; nekurti cheminių medžiagų laikymo ar laboratorinio proceso saugos nurodymų. Šaltinis: https://www.klaro.cz/laboratore-a-lekarny. Pavyzdžiai: ZS1211, ZS1211A, ZS1221. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Patalpų paskirties sprendimai",
+      "pillarSlug": "gidai/medicinos-istaigos-baldu-planavimas",
+      "sourceQueries": [
+        "laboratorijos baldų planavimas"
+      ],
+      "publishDate": "2027-02-18",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/vaistines-baldu-ir-moduliu-planas",
+      "title": "Vaistinės baldai ir moduliai: priemonių inventoriaus ir vietų planas",
+      "description": "Sutikrinti pakuočių, stalčių ir laikymo modulių fizinius poreikius konkrečiai darbo vietai.",
+      "intent": "Sutikrinti pakuočių, stalčių ir laikymo modulių fizinius poreikius konkrečiai darbo vietai.",
+      "reason": "Skaitytojo sprendimas: Sutikrinti pakuočių, stalčių ir laikymo modulių fizinius poreikius konkrečiai darbo vietai. Unikalus rezultatas: Pakuotės–modulis–vieta ruošinys su tikrais gaminių kodais; baldų pasirinkimo netapatinti su teisinių vaistų laikymo sąlygų patvirtinimu. Šaltinis: https://www.klaro.cz/laboratore-a-lekarny. Pavyzdžiai: ZS1211, ZS1211A, ZS1221. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Patalpų paskirties sprendimai",
+      "pillarSlug": "gidai/medicinos-istaigos-baldu-planavimas",
+      "sourceQueries": [
+        "vaistinės baldų planavimas"
+      ],
+      "publishDate": "2027-02-22",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicininiu-baldu-nerudijancio-plieno-klase",
+      "title": "Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą",
+      "description": "Teisingai perskaityti gamintojo nurodytą plieno klasę ir atskirti ją nuo konstrukcijos bei priežiūros savybių.",
+      "intent": "Teisingai perskaityti gamintojo nurodytą plieno klasę ir atskirti ją nuo konstrukcijos bei priežiūros savybių.",
+      "reason": "Skaitytojo sprendimas: Teisingai perskaityti gamintojo nurodytą plieno klasę ir atskirti ją nuo konstrukcijos bei priežiūros savybių. Unikalus rezultatas: Gamintojo medžiagų nurodymo komentaruotas pavyzdys; nepasirinkti dezinfekanto ar universalios plieno klasės visoms patalpoms. Šaltinis: https://www.klaro.cz/nerezove-stoly. Pavyzdžiai: ATS001, ATS002, ATS003. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Darbo vietos ir baldų planavimas",
+      "pillarSlug": "gidai/medicinos-istaigos-baldu-planavimas",
+      "sourceQueries": [
+        "medicininių baldų nerūdijančio plieno klasė"
+      ],
+      "publishDate": "2027-02-25",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicininiu-sieniniu-laikikliu-pasirinkimas",
+      "title": "Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra",
+      "description": "Parinkti laikiklį realiai laikomam daiktui ir surinkti konkretaus tvirtinimo dokumentus.",
+      "intent": "Parinkti laikiklį realiai laikomam daiktui ir surinkti konkretaus tvirtinimo dokumentus.",
+      "reason": "Skaitytojo sprendimas: Parinkti laikiklį realiai laikomam daiktui ir surinkti konkretaus tvirtinimo dokumentus. Unikalus rezultatas: Tikro Klaro laikiklio daikto matmenų ir tvirtinimo pagrindo ruošinys; apkrovą ir montavimą tikrinti pagal gamintoją bei patalpą. Šaltinis: https://www.klaro.cz/stojany-a-drzaky. Pavyzdžiai: NEREZ5090, 01060, NEREZ5091. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Stovai ir laikikliai",
+      "pillarSlug": "gidai/medicininiai-stovai-ir-laikikliai",
+      "sourceQueries": [
+        "medicininiai sieniniai laikikliai"
+      ],
+      "publishDate": "2027-03-01",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/skalbiniu-vezimeliu-kiekio-planas",
+      "title": "Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys",
+      "description": "Apskaičiuoti įrangos poreikio intervalą pagal maršrutus, komplektų kiekį ir galimą užimtumą.",
+      "intent": "Apskaičiuoti įrangos poreikio intervalą pagal maršrutus, komplektų kiekį ir galimą užimtumą.",
+      "reason": "Skaitytojo sprendimas: Apskaičiuoti įrangos poreikio intervalą pagal maršrutus, komplektų kiekį ir galimą užimtumą. Unikalus rezultatas: Aiškiai iliustracinis skaičiavimas su keičiamais įstaigos duomenimis; nevadinti jo tikru klientų projektu ar normatyvu. Šaltinis: https://www.klaro.cz/manipulace-s-pradlem-a-odpadem. Pavyzdžiai: SERVISNISADA01, 12066, PLV131. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Skalbiniai ir atliekų įranga",
+      "pillarSlug": "gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "sourceQueries": [
+        "skalbinių vežimėlių kiekis"
+      ],
+      "publishDate": "2027-03-04",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/padeklu-ideklu-suderinamumas",
+      "title": "Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra",
+      "description": "Parinkti tikro padėklo įdėklą pagal jo formą, paskirtį ir gamintojo nurodomą medžiagą.",
+      "intent": "Parinkti tikro padėklo įdėklą pagal jo formą, paskirtį ir gamintojo nurodomą medžiagą.",
+      "reason": "Skaitytojo sprendimas: Parinkti tikro padėklo įdėklą pagal jo formą, paskirtį ir gamintojo nurodomą medžiagą. Unikalus rezultatas: Įdėklo ir padėklo matmenų ruošinys; triukšmo mažinimo ar neslydimo savybėms nekurti nepatikrintų skaitinių rodiklių. Šaltinis: https://www.klaro.cz/protihlukove-a-protiskluzove-podlozky. Pavyzdžiai: RBVL01, RBVL02, RBVL03. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Laikymas ir logistika",
+      "pillarSlug": "gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+      "sourceQueries": [
+        "neslystantys padėklų įdėklai",
+        "triukšmą mažinantys padėklų įdėklai"
+      ],
+      "publishDate": "2027-03-08",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/vezimelio-plovimo-masinai-suderinamumas",
+      "title": "Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra",
+      "description": "Sutikrinti tikro transportavimo vežimėlio variantą su turimos plovimo mašinos dokumentais.",
+      "intent": "Sutikrinti tikro transportavimo vežimėlio variantą su turimos plovimo mašinos dokumentais.",
+      "reason": "Skaitytojo sprendimas: Sutikrinti tikro transportavimo vežimėlio variantą su turimos plovimo mašinos dokumentais. Unikalus rezultatas: ATYP_100_22_A dviejų ir ATYP_100_22_B trijų pozicijų laukų palyginimas; tai vežimėliai, ne plovimo mašinos ar universalus jų tinkamumo įrodymas. Šaltinis: https://www.klaro.cz/velkokapacitni-mycky. Pavyzdžiai: ATYP_100_22_A, ATYP_100_22_B. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Sterilizavimo skyriaus logistika",
+      "pillarSlug": "gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas",
+      "sourceQueries": [
+        "vežimėlis plovimo mašinai"
+      ],
+      "publishDate": "2027-03-11",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/medicinos-istaigos-baldu-atnaujinimo-planas",
+      "title": "Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas",
+      "description": "Suplanuoti baldų keitimo etapus pagal turimą inventorių, naują poreikį ir priklausomas komplektacijas.",
+      "intent": "Suplanuoti baldų keitimo etapus pagal turimą inventorių, naują poreikį ir priklausomas komplektacijas.",
+      "reason": "Skaitytojo sprendimas: Suplanuoti baldų keitimo etapus pagal turimą inventorių, naują poreikį ir priklausomas komplektacijas. Unikalus rezultatas: Esama–paliekama–keičiama inventoriaus matrica ir iliustracinis etapų planas; be savavališko techninės saugos įvertinimo ar pakeitimo normatyvų. Šaltinis: https://www.klaro.cz/zdravotnicky-nabytek-prehled-hlavni. Pavyzdžiai: NEREZ1044, 1200, 1100. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Pirkimas ir priėmimas",
+      "pillarSlug": "gidai/irangos-pirkimo-uzklausa",
+      "sourceQueries": [
+        "medicinos įstaigos baldų atnaujinimas"
+      ],
+      "publishDate": "2027-03-15",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/netipines-baldu-komplektacijos-uzklausa",
+      "title": "Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai",
+      "description": "Parengti neįprastos komplektacijos užklausą pagal aiškius matmenis ir patikrintą gamintojo pavyzdį.",
+      "intent": "Parengti neįprastos komplektacijos užklausą pagal aiškius matmenis ir patikrintą gamintojo pavyzdį.",
+      "reason": "Skaitytojo sprendimas: Parengti neįprastos komplektacijos užklausą pagal aiškius matmenis ir patikrintą gamintojo pavyzdį. Unikalus rezultatas: Vieno Klaro netipinės gamybos pavyzdžio komentaruotas užklausos ruošinys; nepažadėti mūsų gamybos, keitimo galimybės, kainos ar termino. Šaltinis: https://www.klaro.cz/atypicka-vyroba. Pavyzdžiai: ATP0002, ATYPKN343, ATYPKN273. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Pirkimas ir priėmimas",
+      "pillarSlug": "gidai/irangos-pirkimo-uzklausa",
+      "sourceQueries": [
+        "individualūs medicininiai baldai"
+      ],
+      "publishDate": "2027-03-18",
+      "seasonalHook": "",
+      "networkLinks": []
+    },
+    {
+      "type": "guide",
+      "slug": "gidai/kambariu-aptarnavimo-vezimelio-pasirinkimas",
+      "title": "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra",
+      "description": "Pasirinkti kambarių ūkio darbo vežimėlį pagal priemonių kiekį, grindis ir uždarymo poreikį.",
+      "intent": "Pasirinkti kambarių ūkio darbo vežimėlį pagal priemonių kiekį, grindis ir uždarymo poreikį.",
+      "reason": "Skaitytojo sprendimas: Pasirinkti kambarių ūkio darbo vežimėlį pagal priemonių kiekį, grindis ir uždarymo poreikį. Unikalus rezultatas: VAN STANDARD / MAX konkrečių kietų bei minkštų grindų ir durų variantų palyginimas; traukinio minibaras NEREZ0051 nėra medicininio gido pavyzdys. Šaltinis: https://www.klaro.cz/obsluha-pokoju. Pavyzdžiai: HV1001, HV1001D, HV1002. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "cluster": "Patalpų paskirties sprendimai",
+      "pillarSlug": "gidai/medicinos-istaigos-baldu-planavimas",
+      "sourceQueries": [
+        "kambarių aptarnavimo vežimėlis"
+      ],
+      "publishDate": "2027-03-22",
+      "seasonalHook": "",
+      "networkLinks": []
+    }
+  ]
+}

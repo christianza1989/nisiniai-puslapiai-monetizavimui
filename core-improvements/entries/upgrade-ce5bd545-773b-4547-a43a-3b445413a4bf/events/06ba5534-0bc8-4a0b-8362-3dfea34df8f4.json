@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Ian-reviewed Hostinger reply recommends Not spam and the exact-sender incoming allow list, without a filter-execution finding or confirmed fix. Actual mailbox UI says the allow list accepts only listed senders. No entry added. Public technical clarification sent in the existing owner-authorized case; Airida is reviewing it. Automatic Inbox remains unproved. Vendor human review does not prove actual automatic Inbox. Exact3ANDfilter remains active; no incoming allow-list entry or full original header transmission. Actual receipts preserve prior outcome and no app source changes. 2026-10-10 Git continuation: upstream language-policy mains moved during the evidence batch. Freshness correctly blocked the journal append. Preserved exact12own evidence files in0803fc2, then integrated core main13c9649c76dd48cdf426604cb721e1ccd58a9854 and public main ec8a9c032fe926d1d9722802d8eb26fa8bd02937 in own branches; WORKSTREAMS conflict resolved retaining both full sections. Post-integration paired gate PASS with heads a25e17fee5172fe9c8916975c425a12390bd7682 / 9e224eb8f87c63dab03a837a19ce9e24eb9b3825. Actual updated AGENTS/content/skill routes and canonical language-quality reference read; six editorial-policy loader tests PASS. Existing approvals and production source/version are not retroactively certified or redeployed by this instruction-only upstream integration.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53",
+  "commit": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "eventId": "06ba5534-0bc8-4a0b-8362-3dfea34df8f4",
+  "sequence": 6,
+  "at": "2026-10-10T08:40:19.874Z"
+}

@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-10T07:21:38Z",
+  "state": "ACTIVE_VERSION_BINDINGS_VERIFIED_MAIL_RECEIPT_PENDING",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+  "worker": "promedical",
+  "versionId": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "deploymentId": "744d1e3c-f630-4c6b-b825-c509ec31a0de",
+  "deploymentCreatedAt": "2026-10-10T07:19:43.639225Z",
+  "percentage": 100,
+  "cpuMs": 1000,
+  "compatibilityDate": "2026-05-15",
+  "flags": ["nodejs_compat"],
+  "databaseId": "083a8bd9-8989-4fc9-a9bc-3211067b629d",
+  "emailBinding": {
+    "name": "LEAD_EMAIL",
+    "type": "send_email",
+    "allowedDestinationAddresses": ["info@promedical.lt"],
+    "allowedSenderAddresses": ["uzklausos@promedical.lt"]
+  },
+  "observability": { "logsEnabled": true, "invocationLogs": true, "traceSamplingRate": 0.01 },
+  "secretValuesRead": false,
+  "qaClockInProduction": false,
+  "attempts": [
+    {"name":"private dry run v1","result":"CLI exit0; unused QA module detected in package; never uploaded"},
+    {"name":"clean normal dry run v2","result":"CLI exit0; no QA module"},
+    {"name":"versions upload v2","result":"exit0, 126 normal server modules, 8 changed assets"},
+    {"name":"versions deploy v2","result":"exit0; native readback verifies active100% and restricted bindings"}
+  ]
+}

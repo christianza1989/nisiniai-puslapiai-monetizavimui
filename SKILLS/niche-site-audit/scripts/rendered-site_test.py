@@ -28,6 +28,27 @@ def fixture(host='beauty.example', name='Beauty editorial', kind='Organization',
 
 
 class RenderedSiteTests(unittest.TestCase):
+    def test_inline_punctuation_preserves_the_real_visible_approved_text(self):
+        o, _, _ = fixture()
+        sentence = 'Modelis ZV1253N, jo priedai. „Klaro“ kodas ABC-1.'
+        o['expected']['bodyTexts'] = [sentence]
+        paragraph = '<p>Modelis <a href="/guides">ZV1253N</a>, jo <em>priedai</em>. „<span>Klaro</span>“ kodas <a href="/guides">ABC</a><!-- -->-1.</p>'
+        o['html'] = o['html'].replace('<p>A specific useful answer.</p>', paragraph)
+        self.assertNotIn('APPROVED_BODY_RENDERED', inspect_page(o))
+        for mutation in [paragraph.replace('priedai', 'taisykles'), paragraph.replace('<em>', '<em hidden>'), paragraph.replace('<p>', '<p hidden>')]:
+            changed = copy.deepcopy(o)
+            changed['html'] = changed['html'].replace(paragraph, mutation)
+            self.assertIn('APPROVED_BODY_RENDERED', inspect_page(changed))
+
+    def test_block_and_line_breaks_cannot_fabricate_adjacent_words(self):
+        for paragraph in ['<p>Alpha</p><p>Beta</p>', '<p>Alpha<br>Beta</p>']:
+            o, _, _ = fixture()
+            o['html'] = o['html'].replace('<p>A specific useful answer.</p>', paragraph)
+            o['expected']['bodyTexts'] = ['Alpha Beta']
+            self.assertNotIn('APPROVED_BODY_RENDERED', inspect_page(o))
+            o['expected']['bodyTexts'] = ['AlphaBeta']
+            self.assertIn('APPROVED_BODY_RENDERED', inspect_page(o))
+
     def test_training_block_does_not_block_search_agents(self):
         text = 'User-agent: GPTBot\nDisallow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\n'
         urls = ['https://beauty.example/guide']

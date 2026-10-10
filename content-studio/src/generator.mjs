@@ -6,6 +6,7 @@ import { randomUUID } from 'node:crypto';
 import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
+import { draftContext } from './draft-context.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -72,14 +73,16 @@ async function draftPage(siteId, pageId, skill) {
   const site = await getSite(siteId);
   const page = site.pages.find(item => item.id === pageId);
   if (!page) throw new Error('Puslapis nerastas.');
+  const context = draftContext(site, page, await networkCatalog());
   const prompt = buildEditorialPrompt(skill, { mode: 'draft',
     instruction: 'Write an original useful first draft for this page in the site locale. Honour its specific intent and actual deliverables. Source candidates remain unverified. Return draft-result.schema.json fields only; self-review and identify precise remaining fact/asset dependencies.',
-    siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() },
+    siteData: { ...contextForSite({ ...site, pages: context.pages }), networkCatalog: context.network,
+      approvedSourceSnapshots: context.sourceSnapshots, draftContextCoverage: context.coverage },
     pageData: { id: page.id, type: page.type, slug: page.slug, title: page.title, description: page.description,
       intent: page.intent, reason: page.editorialReason || '', cluster: page.cluster || '', pillarPageId: page.pillarPageId || '',
       sourceQueries: page.sourceQueries || [], plannedInternalLinks: page.linkSuggestions || [], sourceCandidates: page.externalLinks || [],
       plannedNetworkLinks: page.networkLinkSuggestions || [],
-      availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) }
+      availableAssets: context.assets }
   });
   const result = await codexJson(prompt, 'draft-result.schema.json');
   if (!Array.isArray(result.blocks)) throw new Error('Codex negrąžino teksto blokų.');

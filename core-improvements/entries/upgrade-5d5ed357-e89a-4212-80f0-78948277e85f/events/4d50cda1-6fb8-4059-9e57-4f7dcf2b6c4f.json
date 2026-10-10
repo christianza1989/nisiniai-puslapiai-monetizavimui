@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual local/future runtime checks pass in their scoped evidence; production whole-site CPU/mail acceptance remains incomplete.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "FINAL_BATCH_ACCEPTANCE.md:55/55actual public core cases"
+    },
+    {
+      "command": "normal framework build and Wrangler dry-run",
+      "result": "PASS",
+      "evidence": "FINAL_BATCH_ACCEPTANCE.md:actual finalCbuild/dryrun"
+    },
+    {
+      "command": "Actual all57guide browser desktop/mobile date and body check",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261010/guides-browser-desktop-mobile.json:114observations"
+    }
+  ],
+  "eventId": "4d50cda1-6fb8-4059-9e57-4f7dcf2b6c4f",
+  "sequence": 3,
+  "at": "2026-10-10T05:58:17.998Z"
+}

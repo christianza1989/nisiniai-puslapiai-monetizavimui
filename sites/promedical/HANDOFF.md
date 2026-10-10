@@ -1,0 +1,52 @@
+# Promedical local source and evidence handoff
+
+2026-10-09. The owner resumed after a safe reboot checkpoint. Implemented catalogue and independent local checks are complete; production launch and several manual acceptance gates remain unverified. At the original catalogue checkpoint no live WordPress, DNS, DB or mail system was changed. The owner-authorized later domain preparation is recorded separately in DNS_HANDOFF.md.
+
+## Source and review
+
+Own core/public worktrees: `C:/Core/promedical-core-20261009`, `C:/Core/promedical-public-20261009`, branch `codex/promedical-20261009`. Fresh main bases: core `d4ea8bf7384b70c4ea62a344001e3f8158812c56`, public `d0fd6b7d296303bfcaafadc4071945e675a72b96`. Canonical continue/handoff gates fetch both and verify ancestry; no other checkout reset/stash, no force-push main.
+
+Public evaluated source `19a2c0baf6f064bd350af4e8e9f040a389b218be`; core evaluated code includes inspector fix `a8b15a3`. SOURCE_VERSION.json, SITE_RENDERED.json and SITE_COMPLETION.json bind actual source/package/parser hashes. Frozen source `00d2538197a45164b5472e2cf1a4d72b2cfa862d09c3cad50debc4f37fd38cf3`; canonical approved package `32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6`,1856pages/3598assets. Private raw sources, Studio state, release originals and local DB/config remain on this PC and are excluded from Git.
+
+Public draft PR [20](https://github.com/christianza1989/niche-public-core/pull/20), core draft PR [53](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53), both created and attached to this chat. Evaluated code/report commit6e10b8866cd37e21718b6bea1b79689d4dc224a9 was pushed after the actual2026-10-09T18:31handoff gate passed for both unchanged main bases. Neither branch push nor draft PR establishes review/merge/main adoption. Four separate shared upgrade journals record actual PR53status; no runtime redeployment or private-history rewrite follows automatically.
+
+## Actual evidence
+
+- 1,408 model fact/variant reconciliations and1,856 private current-revision previews/reviews/approvals; canonical immutable release/import/compile.
+- Actual59-page catalogue/exact1,408unique model URLs, nested categories/code/empty search/clamp/duplicatePLV150; all10-site native canonical-Host SEO smokes PASS.
+- 54core tests,10media,10workflow/network,5parity/V2/private-HTTP and2generator rechecks PASS. The original Studio47-case44PASS/3FAIL history is preserved; three specific failures passed rechecks. Inspector10completion/scoring plus9Pythoncases PASS and exact full-input output parity.
+- Actual desktop/mobile browser, full three guides/24-spec model, keyboard/menu/native-validation/quantity-persistence; resumed unchanged client inquiry matches local D1. Only own synthetic rows removed; no real email sent. Earlier failed browser connection remains preserved.
+- Final mobile lab95/100/100/100, LCP2.6s/CLS0/TBT50ms, CPU warning; original baseline/intermediate retained. Brand accessible name is natural visible text; specific diagnostic is score:null/notApplicable with no failing nodes.
+- Canonical render-only5,461GET /1,856public pages /3,598assets /7discovery-private-unknown paths:0issues. A–Z85criteria:62PASS/21UNVERIFIED/2NA; local62/71=8.73. Actual require-local scorer exits1. Strict acceptance remains separate and authoritative.
+
+Actual strict verifier also completed5,461requests with the same eligible pages/assets and only `LOCAL_AUDIT_INCOMPLETE`; exit1/stateNOT_COMPLETE. No rendering/discovery/media issue was suppressed, and render-only is not substituted for full acceptance. AUDIT_SCORE.json lists the nine actual local unknowns; final implementation delivery is explicitly bounded by them.
+
+Final exact staged safety PASS38added/modified files/9,663,324bytes/0findings before6e10b88; source/doc whitespace PASS. Raw intermediate Lighthouse HTML retains two original trailing-whitespace warnings, so its blanket diff check exits2. Local document links and report/package/source/parser bindings were asserted:25Markdownfiles/28local links before adding this actual core PR link; updated links are checked before the follow-up commit. Pattern scans do not prove arbitrary customer data absence; scoped review excludes private raw/DB/credentials/runtime artifacts.
+
+## Remaining boundaries
+
+Nine local unknowns: D1broader visual benchmark, F3all category-alias search-intent consolidation, R2/S2real200%browser enlargement, U2/U3SMTPacceptance/realINBOX, W1/W2/W4controller/basis/retention/processors/storageconsent. All10launch and2operations criteria remain unverified. No10/10/local-ready/domain-ready/WCAG certification/clinical sign-off or measured demand is claimed. The owner requested public Promedical brand/email/phone without legal name; do not ask the same question again or invent a company.
+
+## Local continuation
+
+### Full owner-requested topical authority plan
+
+The subsequent owner request explicitly expanded the plan to at least 50 articles and authorized a one-time Treg research budget up to 0.40 USD. [CONTENT_PLAN.md](CONTENT_PLAN.md) now contains 57 distinct editorial jobs across 11 thematic groups; 3 guides are already approved locally, 54 are empty private plans (8 earlier plans preserved plus 46 additions). [TOPICAL_ANALYSIS.md](TOPICAL_ANALYSIS.md) records the actual analysis, differentiated reader assets, query-to-URL decisions, scope and measurement limits. This full plan supersedes the smaller follow-up below; its historical observations remain historical.
+
+62 paid calls settled at 0.33176 USD with zero paid retries/unknown settlement/reserved cost. Actual results: 46 LT mobile/Android SERP attempts, 45 observed and one provider error; 172 Ads volume rows (5 positive, 167 unavailable, no explicit zero); 4 competitor exports/337 bounded rows; 3 related-keyword calls; 4 questions across ChatGPT/Gemini, 8 Lithuanian answers with effective geography unconfirmed. GEO is unsupported_market for current-market visibility, not a market-share measurement. Backlinks/first-party launch/indexing/lead outcomes were not measured.
+
+Private request/response MCP exports, call IDs, ledger, monthly series and normalized evidence are under content-studio/data/promedical-topical-research-20261009. Canonical research import has 89 observations and evidence SHA-256 42dd50f6d7a0a8c7a9f0eaa53a73c00b538948cb627594a4aa06a2e956744dde. Rich map remains orchestration documentation; no unsupported planningBrief/schema/importer was introduced. Native supported fields plus current seoResearch were checked in 54 assembled prompts without CLI generation. New schema-compatible batches are 24 + 22; the earlier 8-page JSON is preserved.
+
+The 46 additions use existing mergePlan/editPage APIs. All 1,856 approved current/published revisions, approval snapshots and dates remain unchanged; existing eight plan IDs/reasons/sourceQueries/dates remain unchanged. Native inventory is 1,910 with 54 private plans; public projection remains 1,856 and immutable public package hash remains 32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6. All 20 other registered Studio site fingerprints matched the baseline. No new article text/media, approvals, release, deployment or automation was produced. Preparation targets run 2026-10-16 through 2027-03-22 within the existing horizon; these are planning assumptions, not automatic publication dates or a measured seasonal cycle. F3 full category-alias intent consolidation and prior local/production acceptance boundaries remain open.
+
+### Owner-requested SEO/GEO planning follow-up
+
+2026-10-09 after the owner asked about SEO/GEO and a content plan, current main was fetched again for both repositories (18:49 and18:55UTC continue gates PASS, unchanged bases). [CONTENT_PLAN.md](CONTENT_PLAN.md), [CONTENT_MAP.json](CONTENT_MAP.json), [CONTENT_PLAN.json](CONTENT_PLAN.json) and [CONTENT_PLAN_VERIFICATION.json](CONTENT_PLAN_VERIFICATION.json) supersede the preliminary six-idea document for future planning. The full map covers34roots,21additional head questions and8distinct guide jobs; private source-URL reconciliation binds all437categories to actual IDs/revisions.
+
+Eight new empty private plans were created through common mergePlan/editPage; all1856prior approved bodies/revisions/dates/approval snapshots remained unchanged and the public projection still has1856pages. No new draft text, approval, release, deployment or paid/scheduled work. Eight actual free Treg searches cost0USD; imported private research has27observations, usable source/crawl only. Effective LT Google SERP, volume, citations and first-party indexing/performance remain unmeasured/unconnected. The failed direct CPO HTTP acquisition and separate actual web export are preserved distinctly.
+
+Supported V1 brief fields and current seoResearch were checked in the assembled prompt; no CLI draft executed. Full planningBrief/reconciliation and coverage-driven policy adapters are absent in this checkout; no new schema/importer was invented. Full cross-map remains orchestration documentation; eight compact complete guide briefs use existing supported fields without truncation. Historical contentPolicy is not an activated writing quota. Wider F3intent consolidation and all existing acceptance/launch unknowns remain unverified. The previously tested public source/package and historical reports below are unchanged by this planning follow-up.
+
+Normal browser preview http://127.0.0.1:8787/ uses the local production server with NICHE_DEV_SITE_ID=promedical and local DB/ASSETS. On this PC the current dist/local DB/config are preserved. Before a future build stop only the identified own Wrangler server, then npm run build; do not build into a live Windows-locked dist. A new clone needs the existing core local-hosting/D1 setup, not production credentials copied from this PC. See VERIFICATION.md and RESUME_AFTER_REBOOT.md (historical checkpoint, superseded by current reports).
+
+For actual inspector calls use bundled Python rather than the WindowsApps shortcut and the existing read-only canonical Host proxy8790. It is GET/HEAD only, not the inquiry path. Native all-site SEO/inquiry tests use8787direct with real Host headers. On a future meaningful batch/resume/handoff run the fresh canonical gate first and reread any newly integrated instructions. Approved package hashes are not hand-edited; source rollback is scoped Git review/revert and a separate explicitly controlled release/deployment decision.

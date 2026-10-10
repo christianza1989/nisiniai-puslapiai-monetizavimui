@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Measured catalogue projection median4.3233ms in Node and93,923nested category identity comparisons. Scoped companion tests/niche-render-cache.test.mjs added to exercise the actual TS source under real React server rendering. Historical actual exceededCpu503 preserved.",
+  "eventId": "8c10528c-9292-4960-af04-bb9a3c97b249",
+  "sequence": 2,
+  "at": "2026-10-10T06:18:57.646Z"
+}

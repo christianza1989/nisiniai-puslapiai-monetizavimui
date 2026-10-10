@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "One persisted network snapshot per locked atomic batch, refreshed per operation. Approval/review/date/link gates and one atomic write retained.",
+  "checks": [
+    {
+      "command": "node --test test/content-workflow.test.mjs test/network-links.test.mjs",
+      "result": "PASS",
+      "evidence": "10/10 PASS, duration3591.4327ms; reciprocal dependency closure, incomplete review, missing media, changed facts, revocation, V2 snapshots, cross-host/date/canonical negatives and newly registered network boundary between batches."
+    }
+  ],
+  "eventId": "7a9aed26-0457-4f45-a506-2e9afa593d00",
+  "sequence": 2,
+  "at": "2026-10-09T16:32:12.748Z"
+}

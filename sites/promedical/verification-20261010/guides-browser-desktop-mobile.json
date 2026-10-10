@@ -1,0 +1,3024 @@
+{
+  "checkedAt": "2026-10-10T05:34:26.749Z",
+  "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+  "scope": "Actual 57 pages at each 1440/390 viewport; visible H1/size/overflow/date/alt properties; separate asset/pixel/full prose acceptance.",
+  "observations": [
+    {
+      "articleHeight": 3478.125,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-12T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip pasirinkti medicininį vežimėlį įstaigai"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė procedūrų kabineto erdvė ir bendro tipo priemonių vežimėlis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a13d3750-1fbc-4e28-b261-2b593e7690ef.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-vezimelio-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:05.396Z"
+    },
+    {
+      "articleHeight": 3592.125,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-13T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "ISO modulių sistema: kaip suderinti laikymą ir transportavimą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė skirtingų krepšių, kreipiklio ir matavimo priemonių patikra",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/fc33c70e-64c5-4380-b28e-c432a17c32b6.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/iso-moduliu-sistema",
+      "viewport": 1440,
+      "expectedTitle": "ISO modulių sistema: kaip suderinti laikymą ir transportavimą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:06.101Z"
+    },
+    {
+      "articleHeight": 3411.90625,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-14T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė įrangos pirkimo dokumentų palyginimo darbo vieta",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b80754a1-ffd8-4ea2-afd6-b2191bd7e718.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/irangos-pirkimo-uzklausa",
+      "viewport": 1440,
+      "expectedTitle": "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:06.833Z"
+    },
+    {
+      "articleHeight": 4485.0625,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-14T11:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją"
+      ],
+      "images": [
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/73e8473b-63de-47e5-a024-ed96659ae740.webp",
+          "width": 760
+        },
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 02",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/7a02510b-427a-433f-9d65-8f5f44838631.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/bazinio-vezimelio-komplektacija",
+      "viewport": 1440,
+      "expectedTitle": "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:07.545Z"
+    },
+    {
+      "articleHeight": 4891.5,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-15T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis priemonių pakuočių vietų planavimas stalčiuje",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/3993c14f-ae82-41dc-ab17-163ee6b17faf.webp",
+          "width": 760
+        },
+        {
+          "alt": "Iliustracinis šešių vietų planas: A1 ir A2 viršuje, B1 ir B2 viduryje, C ir D apačioje",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/00a57f6f-a4f8-4f70-b70d-1b03039e8e95.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/vaistu-vezimelio-komplektacija",
+      "viewport": 1440,
+      "expectedTitle": "Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:08.388Z"
+    },
+    {
+      "articleHeight": 4563.890625,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-16T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Tvarstymo vežimėlis METAL LINE BASIC COMBI ZV2263N su priedais",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6a82fd59-26da-4462-9687-ad05e622c079.webp",
+          "width": 760
+        },
+        {
+          "alt": "Iliustracinis vežimėlio planas su viršutine, vidine ir šonine darbo vietos zonomis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/98784c80-a652-4962-b2f6-91d383de68fb.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/tvarstymo-vezimelio-komplektacija",
+      "viewport": 1440,
+      "expectedTitle": "Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:09.321Z"
+    },
+    {
+      "articleHeight": 4263.09375,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-17T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus"
+      ],
+      "images": [
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – anesteziologinis vežimėlis 01",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/1c5a3d8b-7ec6-4369-9988-cf09c1c14576.webp",
+          "width": 760
+        },
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – anesteziologinis vežimėlis 03",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/66736734-441a-4827-92e9-d6de22e7e823.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/anesteziologinio-vezimelio-komplektacija",
+      "viewport": 1440,
+      "expectedTitle": "Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:10.135Z"
+    },
+    {
+      "articleHeight": 4934.8125,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-17T11:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – gaivinimo vežimėlis 01",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e9fd0e12-e192-42bc-841f-9c1803f1ca09.webp",
+          "width": 760
+        },
+        {
+          "alt": "Iliustracinis fizinių vietų eskizas: A prietaiso vieta, B laikiklis, C laidų vieta ir stūmimo pusė",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/069787b1-55f0-4a88-87da-7b82a2d4659d.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/reanimacinio-vezimelio-komplektacija",
+      "viewport": 1440,
+      "expectedTitle": "Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:10.983Z"
+    },
+    {
+      "articleHeight": 3966.8125,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-18T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis dokumentų aplankų dydžio tikrinimas prie darbo paviršiaus",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b5ac0aa3-d6dd-499b-b49e-6af836f6fb50.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/vizitu-vezimelio-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:12.024Z"
+    },
+    {
+      "articleHeight": 4398.8125,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-19T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė kompiuterio, klaviatūros ir laidų vietos planavimo aplinka",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/44de25b1-2579-4220-ba9c-09f05f9b440a.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininis-vezimelis-kompiuteriui",
+      "viewport": 1440,
+      "expectedTitle": "Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:14.062Z"
+    },
+    {
+      "articleHeight": 3716.390625,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-20T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis 820 mm durų ir 780 mm vežimėlio komplektacijos pločio skaičiavimas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/947bb182-31ec-4ddf-a238-daf75691fabc.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-vezimelio-matmenu-patikra",
+      "viewport": 1440,
+      "expectedTitle": "Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:15.420Z"
+    },
+    {
+      "articleHeight": 4474.390625,
+      "byline": "Promedical",
+      "dates": [
+        "2026-10-20T11:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė vežimėlio ratukų ir grindų sandūros patikra",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/71c34609-1fd2-4ede-9d87-5d986281a331.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-vezimelio-ratukai-ir-stabdziai",
+      "viewport": 1440,
+      "expectedTitle": "Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:16.471Z"
+    },
+    {
+      "articleHeight": 5238.3125,
+      "dates": [
+        "2026-10-21T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, negilus (60 x 40 x 5 cm), S dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/cbc7943d-85ea-4728-8fa1-91befdf019de.webp",
+          "width": 760
+        },
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, vidutinio gylio (60 x 40 x 10 cm), M dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/de6d7525-74c7-4918-9f98-f80e488111cc.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/iso-moduliu-matmenu-patikra",
+      "viewport": 1440,
+      "expectedTitle": "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:37.592Z"
+    },
+    {
+      "articleHeight": 4307.046875,
+      "dates": [
+        "2026-10-22T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, gilus (60 x 40 x 20 cm), L dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/12dd5036-b256-466a-a848-982edf2d182c.webp",
+          "width": 760
+        },
+        {
+          "alt": "Klaro 11419, 11420 ir 11421 katalogo aukščių palyginimas su aiškiai iliustracinėmis pakuotėmis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e312a874-ddca-4f8f-9a7c-b1522e79d2b2.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/iso-krepsio-gylis-ir-talpa",
+      "viewport": 1440,
+      "expectedTitle": "ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:28.245Z",
+      "repeatedAfter": "The earlier harness inspected before navigation loaded. Original observation retained privately."
+    },
+    {
+      "articleHeight": 4451.9375,
+      "dates": [
+        "2026-10-23T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Modulinio krepšio MINI padalijimas pertvaromis – S, M dydžiai – 1 variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/d3727acb-7daf-4c73-b3a6-462a0c5e6c3d.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/iso-krepsiu-pertvaru-planas",
+      "viewport": 1440,
+      "expectedTitle": "ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:38.534Z"
+    },
+    {
+      "articleHeight": 3463.9375,
+      "dates": [
+        "2026-10-23T11:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinės atskiros krepšio ir lentynos vietos žymos",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/070a48a5-5004-48d5-ba27-b3900377bdea.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/iso-moduliu-zenklinimas",
+      "viewport": 1440,
+      "expectedTitle": "ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:39.152Z"
+    },
+    {
+      "articleHeight": 4999.8125,
+      "dates": [
+        "2026-10-24T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "ISO krepšiai ar padėklai: kaip pasirinkti pagal pakuotes ir naudojimą"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno išimamas XL serijos padėklas – 03100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c3371b47-24ed-4267-9c91-979ef0a3f850.webp",
+          "width": 760
+        },
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, negilus (60 x 40 x 5 cm), S dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/cbc7943d-85ea-4728-8fa1-91befdf019de.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/iso-krepsiai-ar-padeklai",
+      "viewport": 1440,
+      "expectedTitle": "ISO krepšiai ar padėklai: kaip pasirinkti pagal pakuotes ir naudojimą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:39.587Z"
+    },
+    {
+      "articleHeight": 5889.25,
+      "dates": [
+        "2026-10-25T08:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė priemonių spintos aplinka su atvertomis lentynomis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/dfff7666-e955-456a-ae42-1fa9d880cd69.webp",
+          "width": 760
+        },
+        {
+          "alt": "Iliustracinės atskiros spintos durų atidarymo ir modulio ištraukimo erdvės",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/72506362-f206-4b02-a414-fdb3cad95a2c.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:52.342Z"
+    },
+    {
+      "articleHeight": 4153.515625,
+      "dates": [
+        "2026-10-25T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro spintinis vežimėlis su uždaromis dvivėrėmis durimis, šoniniais stūmimo laikikliais ir ratukais",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/9d03d6cf-b0f8-469f-86f2-cc76486748b9.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/mobili-ar-stacionari-medicinine-spinta",
+      "viewport": 1440,
+      "expectedTitle": "Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:52.997Z"
+    },
+    {
+      "articleHeight": 3427.671875,
+      "dates": [
+        "2026-10-26T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis spintos planas su uždaru korpusu, durų lanku, talpos ištraukimo ir darbuotojo vieta",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/7293dd8f-3112-4ff7-90e5-8f2362abde43.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-duru-atidarymo-vieta",
+      "viewport": 1440,
+      "expectedTitle": "Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:53.606Z"
+    },
+    {
+      "articleHeight": 4143.90625,
+      "dates": [
+        "2026-10-27T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211A – žemas variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/5d6c1ffa-dd20-4342-bbe4-ba2dee6f1b80.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-uzrakto-patikra",
+      "viewport": 1440,
+      "expectedTitle": "Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:54.433Z"
+    },
+    {
+      "articleHeight": 4065.234375,
+      "dates": [
+        "2026-10-28T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės spintos vidus: lentynų, stalčių ir modulių planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1221 – vidutinio aukščio variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c9ef35d0-bebc-4e46-9afb-fd6d933034ad.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-lentynu-ir-stalciu-planas",
+      "viewport": 1440,
+      "expectedTitle": "Medicininės spintos vidus: lentynų, stalčių ir modulių planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:55.239Z"
+    },
+    {
+      "articleHeight": 3666.8125,
+      "dates": [
+        "2026-10-28T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis kabineto išdėstymas su matomu judėjimo taku",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e629ad84-4559-4c3c-8451-6e8263880e2a.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinos-istaigos-baldu-planavimas",
+      "viewport": 1440,
+      "expectedTitle": "Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:55.944Z"
+    },
+    {
+      "articleHeight": 4290.328125,
+      "dates": [
+        "2026-10-29T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip pasirinkti Mayo instrumentų staliuką"
+      ],
+      "images": [
+        {
+          "alt": "Klaro NEREZ1120 – instrumentų stalelis MAYO INSTRUMAN HYDRAULIC CLASSIC",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/9399f55b-ee97-4d69-96a4-546fddc52f1d.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/mayo-staliuko-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Kaip pasirinkti Mayo instrumentų staliuką",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:56.773Z"
+    },
+    {
+      "articleHeight": 4734.328125,
+      "dates": [
+        "2026-10-30T08:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Kaip aprašyti nerūdijančio plieno stalo poreikį"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno darbo stalas su kojų jungiamąja atrama, kodas ATS001",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/4198f946-6bef-497b-9475-ac5102395c00.webp",
+          "width": 760
+        },
+        {
+          "alt": "Iliustracinis stalo matavimo pavyzdys su 1250 ir 650 mm išorinėmis ribomis, 1200 × 600 mm darbo plotu ir 850 mm aukščiu",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a63863b8-b475-4350-823d-085f4086c151.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/nerudijancio-plieno-stalo-poreikis",
+      "viewport": 1440,
+      "expectedTitle": "Kaip aprašyti nerūdijančio plieno stalo poreikį",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:57.484Z"
+    },
+    {
+      "articleHeight": 3002.4375,
+      "dates": [
+        "2026-10-31T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą"
+      ],
+      "images": [
+        {
+          "alt": "Mokomasis AISI 304 ir 1.4301 stalviršio įrašas: medžiaga nurodyta, rėmas, apkrova ir priežiūra tikslinami atskirai",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/f96da06a-f38f-48ff-aab9-cb9e1a948cc5.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-nerudijancio-plieno-klase",
+      "viewport": 1440,
+      "expectedTitle": "Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:31:58.126Z"
+    },
+    {
+      "articleHeight": 4277.421875,
+      "dates": [
+        "2026-10-31T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Valgymo staliukas prie lovos POSTMAN 1 – pakreipiamas stalviršis – 1100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/84c3b9be-5c9a-44e1-a1b2-1e4456d8a7e8.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/staliuko-prie-lovos-suderinamumas",
+      "viewport": 1440,
+      "expectedTitle": "Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:58.948Z"
+    },
+    {
+      "articleHeight": 4180.671875,
+      "dates": [
+        "2026-11-01T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė dviejų bendro tipo infuzijų stovų pagrindų kompozicija",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b1828e27-c7e8-4ea9-9c34-9e32b0a3fe0b.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininiai-stovai-ir-laikikliai",
+      "viewport": 1440,
+      "expectedTitle": "Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:31:59.683Z"
+    },
+    {
+      "articleHeight": 3083.21875,
+      "dates": [
+        "2026-11-02T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai"
+      ],
+      "images": [
+        {
+          "alt": "Klaro infuzijų stovas su penkių atramų pagrindu, ratukais, kabliukais ir butelių laikikliais",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/d63ae972-c5b8-4575-b6fa-0a4907138a00.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/infuziju-stovo-apkrovos-patikra",
+      "viewport": 1440,
+      "expectedTitle": "Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:00.417Z"
+    },
+    {
+      "articleHeight": 3209.203125,
+      "dates": [
+        "2026-11-03T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro InfuFlex – nešiojamasis sulankstomas infuzijų stovas gelbėtojams ir slaugos tarnyboms",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/2b5b0375-f551-41a9-942e-e2c6db7b14a3.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/sulankstomo-infuziju-stovo-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:01.083Z"
+    },
+    {
+      "articleHeight": 3812.53125,
+      "dates": [
+        "2026-11-03T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Pakabinamas batų stovas NEREZ5090 – 10 porų batų",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/0462ca41-c6d7-424b-8689-36a8cd23601d.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-sieniniu-laikikliu-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:01.847Z"
+    },
+    {
+      "articleHeight": 3898.984375,
+      "dates": [
+        "2026-11-04T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Skalbinių vežimėlis VAKO 80 l – valdomas koja",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/27c03c73-cf8f-4b6a-a859-600fdafa34dd.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:02.536Z"
+    },
+    {
+      "articleHeight": 3986.296875,
+      "dates": [
+        "2026-11-05T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro balto tekstilinio skalbinių maišo katalogo iliustracija; konkretaus tūrio nuotrauka nepatvirtina",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b8dfbb51-2c8e-4fa7-9eb7-32df5b4e0a1f.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/skalbiniu-maisui-tinkamo-remo-patikra",
+      "viewport": 1440,
+      "expectedTitle": "Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:03.151Z"
+    },
+    {
+      "articleHeight": 3196.875,
+      "dates": [
+        "2026-11-06T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis vieno reiso dvylikos skalbinių komplektų planas: penki, keturi ir trys komplektai trims išdavimo vietoms",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a20806ec-5164-4a91-8137-0a0ec2eb98c7.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/svariu-skalbiniu-transportavimo-vezimelis",
+      "viewport": 1440,
+      "expectedTitle": "Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:32:03.758Z"
+    },
+    {
+      "articleHeight": 3513.1875,
+      "dates": [
+        "2026-11-06T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno VAKO NEREZ4001 infekuotoms atliekoms",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/14f7725d-8454-41bd-98f3-5f9fb1212eb8.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-atlieku-maisu-laikiklis",
+      "viewport": 1440,
+      "expectedTitle": "Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:04.428Z"
+    },
+    {
+      "articleHeight": 3288.1875,
+      "dates": [
+        "2026-11-07T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis trijų reisų 60 minučių langas: 30 minučių ciklams pakanka dviejų vežimėlių, 40 minučių ciklams reikia trijų, kai visi reisai turi baigtis laiku",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/17094b78-a70e-48f6-8f10-deda02134d60.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/skalbiniu-vezimeliu-kiekio-planas",
+      "viewport": 1440,
+      "expectedTitle": "Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:32:05.028Z"
+    },
+    {
+      "articleHeight": 3604.984375,
+      "dates": [
+        "2026-11-08T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicinos priemonių laikymo ir transportavimo planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė priemonių sandėlio erdvė su lentynomis ir transportavimo vežimėliu",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/177ef923-cbb7-4795-aecf-c4da6d8edcba.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+      "viewport": 1440,
+      "expectedTitle": "Medicinos priemonių laikymo ir transportavimo planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:05.603Z"
+    },
+    {
+      "articleHeight": 4133,
+      "dates": [
+        "2026-11-08T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno stelažas NEREZ2201 su 5 lentynomis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/fd2a178d-a2f6-410c-88f7-d0795fe80b1f.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-stelazo-apkrovos-ir-vietos-planas",
+      "viewport": 1440,
+      "expectedTitle": "Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:50.502Z"
+    },
+    {
+      "articleHeight": 3764.3125,
+      "dates": [
+        "2026-11-09T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro REGO Box – RB1011 – perforuotos sienelės, vientisas dugnas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/69cec026-e304-445a-9b5f-b6af1dbca23c.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/rego-deziu-ir-vezimelio-suderinamumas",
+      "viewport": 1440,
+      "expectedTitle": "REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:50.879Z"
+    },
+    {
+      "articleHeight": 4270.953125,
+      "dates": [
+        "2026-11-10T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno vežimėlis su išimamais padėklais 3100 – NEREZ3100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/46024667-cca7-44ac-a7a5-8d96c9050eba.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/padeklu-vezimelio-formato-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:51.231Z"
+    },
+    {
+      "articleHeight": 3894.3125,
+      "dates": [
+        "2026-11-11T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Silikoninis kilimėlis padėklų vežimėliui L ir medicininiam vežimėliui be apsauginio bortelio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/da802a85-2383-4fda-aed3-f29d5ac81942.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/padeklu-ideklu-suderinamumas",
+      "viewport": 1440,
+      "expectedTitle": "Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:51.584Z"
+    },
+    {
+      "articleHeight": 3809.421875,
+      "dates": [
+        "2026-11-11T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė uždarytų pakuočių ir transportavimo vežimėlio aplinka",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/0356938f-dff5-4ddf-bb0a-97692f4324c6.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas",
+      "viewport": 1440,
+      "expectedTitle": "Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:51.963Z"
+    },
+    {
+      "articleHeight": 3545.203125,
+      "dates": [
+        "2026-11-12T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno išimamas XL serijos padėklas – 03100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c3371b47-24ed-4267-9c91-979ef0a3f850.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/nerudijancio-plieno-sterilizavimo-padeklo-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:52.431Z"
+    },
+    {
+      "articleHeight": 3215.21875,
+      "dates": [
+        "2026-11-13T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Vežimėlis didelės talpos plovimo mašinoms – A variantas (dvi pozicijos)",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6daf6a72-b391-4fce-825a-495d92fe28d9.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/vezimelio-plovimo-masinai-suderinamumas",
+      "viewport": 1440,
+      "expectedTitle": "Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:52.876Z"
+    },
+    {
+      "articleHeight": 3857.0625,
+      "dates": [
+        "2026-11-14T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininių baldų priežiūros planas pagal gamintojo dokumentus"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė baldų ratuko ir rėmo jungties apžiūra ant darbo stalo",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b1cd0092-751e-4d72-a800-9b71ae6a18bc.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-prieziuros-planas",
+      "viewport": 1440,
+      "expectedTitle": "Medicininių baldų priežiūros planas pagal gamintojo dokumentus",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:53.295Z"
+    },
+    {
+      "articleHeight": 3981.84375,
+      "dates": [
+        "2026-11-14T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip patikrinti medicininės įrangos valymo dokumentus"
+      ],
+      "images": [
+        {
+          "alt": "Priežiūros dokumentų patikros seka: tikslus modelis, dokumento redakcija, taikomas paviršius, aprašytos ribos ir raštu užduodamas klausimas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a894531b-f963-4fda-a6ef-d5c781b1c43d.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-irangos-valymo-dokumentai",
+      "viewport": 1440,
+      "expectedTitle": "Kaip patikrinti medicininės įrangos valymo dokumentus",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:32:53.712Z"
+    },
+    {
+      "articleHeight": 4253.421875,
+      "dates": [
+        "2026-11-15T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip rasti Klaro atsarginę dalį pagal įrangos kodą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis atskiros baldo detalės ir matavimo priemonių vaizdas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c10dd8c0-813a-490f-818b-80659159354a.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/klaro-atsargines-dalies-paieska",
+      "viewport": 1440,
+      "expectedTitle": "Kaip rasti Klaro atsarginę dalį pagal įrangos kodą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:54.157Z"
+    },
+    {
+      "articleHeight": 3990.96875,
+      "dates": [
+        "2026-11-16T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Ekologiškas „BLACK IS GREEN“ serijos valymo vežimėlis su 2 kibirais – PLV111",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/145e2a1b-97d7-43cf-aa1f-d2dfeae027fd.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/valymo-vezimelio-komplektacijos-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:54.541Z"
+    },
+    {
+      "articleHeight": 3620.390625,
+      "dates": [
+        "2026-11-17T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Įrangos komplekto priėmimas: ką sutikrinti su užsakymu"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė įrangos pakuotės ir komplektacijos priėmimo patikra",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/ae18fa2a-eeea-4bad-aaa2-b198686d5777.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/irangos-komplekto-priemimo-patikra",
+      "viewport": 1440,
+      "expectedTitle": "Įrangos komplekto priėmimas: ką sutikrinti su užsakymu",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:54.958Z"
+    },
+    {
+      "articleHeight": 3439.046875,
+      "dates": [
+        "2026-11-17T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė dviejų įrangos pasiūlymų palyginimo darbo vieta",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6df56f0f-8d53-495b-b3ff-476696c7c100.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-irangos-pasiulymu-palyginimas",
+      "viewport": 1440,
+      "expectedTitle": "Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:55.407Z"
+    },
+    {
+      "articleHeight": 4300.140625,
+      "dates": [
+        "2026-11-18T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Valgymo staliukas prie lovos POSTMAN 2 – fiksuotas stalviršis – 1200",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/4aceae56-5a2c-4448-ac02-f3cf5bf71e69.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+      "viewport": 1440,
+      "expectedTitle": "Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:55.792Z"
+    },
+    {
+      "articleHeight": 3325.96875,
+      "dates": [
+        "2026-11-19T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą"
+      ],
+      "images": [
+        {
+          "alt": "Naudojimo išlaidų ruošinys be kainų: vienodas kiekis ir laikotarpis, patvirtintos eilutės, atskiros prielaidos bei neįvertintos išlaidos",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6fb56e7e-d3fa-4525-bcae-51eeefae5b52.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-naudojimo-islaidu-palyginimas",
+      "viewport": 1440,
+      "expectedTitle": "Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:32:56.230Z"
+    },
+    {
+      "articleHeight": 4044.421875,
+      "dates": [
+        "2026-11-20T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas"
+      ],
+      "images": [
+        {
+          "alt": "Baldų atnaujinimo inventoriaus ruošinys: paliekama įranga, klausimai atsakingam specialistui ir keičiamų gaminių poreikis susiejami su konkrečiu pirkimo etapu",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/8a49e955-d50f-416f-978c-31246143158d.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/medicinos-istaigos-baldu-atnaujinimo-planas",
+      "viewport": 1440,
+      "expectedTitle": "Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:32:56.653Z"
+    },
+    {
+      "articleHeight": 3850.125,
+      "dates": [
+        "2026-11-20T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e6f54f18-7658-4443-8b1a-b3231df0d260.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/netipines-baldu-komplektacijos-uzklausa",
+      "viewport": 1440,
+      "expectedTitle": "Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:57.183Z"
+    },
+    {
+      "articleHeight": 4127.859375,
+      "dates": [
+        "2026-11-21T08:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Laboratorijos baldai: fizinės darbo ir laikymo vietos planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė laboratorijos baldų darbo vieta su spintelėmis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a91af336-dd02-4689-9e5e-af6e1454678b.webp",
+          "width": 760
+        },
+        {
+          "alt": "ZS1211 BASIC ir ZS1311 PROFI palyginimas: abiejų išorė 48 × 72 × 81 cm ir 12 MS pozicijų; BASIC dažytas plienas, PROFI AISI304; prieigos ir naudingi vidaus matmenys tikslinami",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/ac162285-544f-4f8c-a15d-bf152b32bdbe.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/laboratorijos-baldu-darbo-vietos-planas",
+      "viewport": 1440,
+      "expectedTitle": "Laboratorijos baldai: fizinės darbo ir laikymo vietos planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:32:57.654Z"
+    },
+    {
+      "articleHeight": 3313,
+      "dates": [
+        "2026-11-22T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Vaistinės baldai ir moduliai: pakuočių, stalčių ir laikymo vietų planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/2f6699b6-228f-495a-b812-78092cb05830.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/vaistines-baldu-ir-moduliu-planas",
+      "viewport": 1440,
+      "expectedTitle": "Vaistinės baldai ir moduliai: pakuočių, stalčių ir laikymo vietų planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:58.309Z"
+    },
+    {
+      "articleHeight": 3896.546875,
+      "dates": [
+        "2026-11-22T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Kambarių tvarkymo vežimėlis VAN STANDARD HV1001D su durelėmis, ratukai kietoms grindims",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/cbcf619d-a7e9-4b30-b31c-2ecb5f49ed06.webp",
+          "width": 760
+        }
+      ],
+      "scrollWidth": 1425,
+      "url": "http://127.0.0.1:8791/gidai/kambariu-aptarnavimo-vezimelio-pasirinkimas",
+      "viewport": 1440,
+      "expectedTitle": "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:32:58.708Z"
+    },
+    {
+      "articleHeight": 5011.8125,
+      "dates": [
+        "2026-10-12T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip pasirinkti medicininį vežimėlį įstaigai"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė procedūrų kabineto erdvė ir bendro tipo priemonių vežimėlis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a13d3750-1fbc-4e28-b261-2b593e7690ef.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-vezimelio-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:28.692Z"
+    },
+    {
+      "articleHeight": 5411.875,
+      "dates": [
+        "2026-10-13T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "ISO modulių sistema: kaip suderinti laikymą ir transportavimą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė skirtingų krepšių, kreipiklio ir matavimo priemonių patikra",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/fc33c70e-64c5-4380-b28e-c432a17c32b6.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/iso-moduliu-sistema",
+      "viewport": 390,
+      "expectedTitle": "ISO modulių sistema: kaip suderinti laikymą ir transportavimą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:29.153Z"
+    },
+    {
+      "articleHeight": 5142.5625,
+      "dates": [
+        "2026-10-14T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė įrangos pirkimo dokumentų palyginimo darbo vieta",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b80754a1-ffd8-4ea2-afd6-b2191bd7e718.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/irangos-pirkimo-uzklausa",
+      "viewport": 390,
+      "expectedTitle": "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:29.524Z"
+    },
+    {
+      "articleHeight": 6330.203125,
+      "dates": [
+        "2026-10-14T11:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją"
+      ],
+      "images": [
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/73e8473b-63de-47e5-a024-ed96659ae740.webp",
+          "width": 335
+        },
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 02",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/7a02510b-427a-433f-9d65-8f5f44838631.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/bazinio-vezimelio-komplektacija",
+      "viewport": 390,
+      "expectedTitle": "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:29.991Z"
+    },
+    {
+      "articleHeight": 7056.765625,
+      "dates": [
+        "2026-10-15T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis priemonių pakuočių vietų planavimas stalčiuje",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/3993c14f-ae82-41dc-ab17-163ee6b17faf.webp",
+          "width": 335
+        },
+        {
+          "alt": "Iliustracinis šešių vietų planas: A1 ir A2 viršuje, B1 ir B2 viduryje, C ir D apačioje",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/00a57f6f-a4f8-4f70-b70d-1b03039e8e95.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/vaistu-vezimelio-komplektacija",
+      "viewport": 390,
+      "expectedTitle": "Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:30.413Z"
+    },
+    {
+      "articleHeight": 6601.015625,
+      "dates": [
+        "2026-10-16T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Tvarstymo vežimėlis METAL LINE BASIC COMBI ZV2263N su priedais",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6a82fd59-26da-4462-9687-ad05e622c079.webp",
+          "width": 335
+        },
+        {
+          "alt": "Iliustracinis vežimėlio planas su viršutine, vidine ir šonine darbo vietos zonomis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/98784c80-a652-4962-b2f6-91d383de68fb.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/tvarstymo-vezimelio-komplektacija",
+      "viewport": 390,
+      "expectedTitle": "Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:30.861Z"
+    },
+    {
+      "articleHeight": 5901.34375,
+      "dates": [
+        "2026-10-17T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus"
+      ],
+      "images": [
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – anesteziologinis vežimėlis 01",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/1c5a3d8b-7ec6-4369-9988-cf09c1c14576.webp",
+          "width": 335
+        },
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – anesteziologinis vežimėlis 03",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/66736734-441a-4827-92e9-d6de22e7e823.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/anesteziologinio-vezimelio-komplektacija",
+      "viewport": 390,
+      "expectedTitle": "Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:31.374Z"
+    },
+    {
+      "articleHeight": 7113.203125,
+      "dates": [
+        "2026-10-17T11:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – gaivinimo vežimėlis 01",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e9fd0e12-e192-42bc-841f-9c1803f1ca09.webp",
+          "width": 335
+        },
+        {
+          "alt": "Iliustracinis fizinių vietų eskizas: A prietaiso vieta, B laikiklis, C laidų vieta ir stūmimo pusė",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/069787b1-55f0-4a88-87da-7b82a2d4659d.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/reanimacinio-vezimelio-komplektacija",
+      "viewport": 390,
+      "expectedTitle": "Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:31.832Z"
+    },
+    {
+      "articleHeight": 6005.5,
+      "dates": [
+        "2026-10-18T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis dokumentų aplankų dydžio tikrinimas prie darbo paviršiaus",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b5ac0aa3-d6dd-499b-b49e-6af836f6fb50.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/vizitu-vezimelio-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:32.318Z"
+    },
+    {
+      "articleHeight": 6958.4375,
+      "dates": [
+        "2026-10-19T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė kompiuterio, klaviatūros ir laidų vietos planavimo aplinka",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/44de25b1-2579-4220-ba9c-09f05f9b440a.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininis-vezimelis-kompiuteriui",
+      "viewport": 390,
+      "expectedTitle": "Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:32.732Z"
+    },
+    {
+      "articleHeight": 5678.09375,
+      "dates": [
+        "2026-10-20T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis 820 mm durų ir 780 mm vežimėlio komplektacijos pločio skaičiavimas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/947bb182-31ec-4ddf-a238-daf75691fabc.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-vezimelio-matmenu-patikra",
+      "viewport": 390,
+      "expectedTitle": "Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:33.122Z"
+    },
+    {
+      "articleHeight": 6914.6875,
+      "dates": [
+        "2026-10-20T11:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė vežimėlio ratukų ir grindų sandūros patikra",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/71c34609-1fd2-4ede-9d87-5d986281a331.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-vezimelio-ratukai-ir-stabdziai",
+      "viewport": 390,
+      "expectedTitle": "Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:33.550Z"
+    },
+    {
+      "articleHeight": 7607.1875,
+      "dates": [
+        "2026-10-21T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, negilus (60 x 40 x 5 cm), S dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/cbc7943d-85ea-4728-8fa1-91befdf019de.webp",
+          "width": 335
+        },
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, vidutinio gylio (60 x 40 x 10 cm), M dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/de6d7525-74c7-4918-9f98-f80e488111cc.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/iso-moduliu-matmenu-patikra",
+      "viewport": 390,
+      "expectedTitle": "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:34.013Z"
+    },
+    {
+      "articleHeight": 5997.28125,
+      "dates": [
+        "2026-10-22T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, gilus (60 x 40 x 20 cm), L dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/12dd5036-b256-466a-a848-982edf2d182c.webp",
+          "width": 335
+        },
+        {
+          "alt": "Klaro 11419, 11420 ir 11421 katalogo aukščių palyginimas su aiškiai iliustracinėmis pakuotėmis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e312a874-ddca-4f8f-9a7c-b1522e79d2b2.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/iso-krepsio-gylis-ir-talpa",
+      "viewport": 390,
+      "expectedTitle": "ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:34.425Z"
+    },
+    {
+      "articleHeight": 6756.234375,
+      "dates": [
+        "2026-10-23T07:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Modulinio krepšio MINI padalijimas pertvaromis – S, M dydžiai – 1 variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/d3727acb-7daf-4c73-b3a6-462a0c5e6c3d.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/iso-krepsiu-pertvaru-planas",
+      "viewport": 390,
+      "expectedTitle": "ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:34.900Z"
+    },
+    {
+      "articleHeight": 5277.75,
+      "dates": [
+        "2026-10-23T11:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinės atskiros krepšio ir lentynos vietos žymos",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/070a48a5-5004-48d5-ba27-b3900377bdea.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/iso-moduliu-zenklinimas",
+      "viewport": 390,
+      "expectedTitle": "ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:35.348Z"
+    },
+    {
+      "articleHeight": 7419.5625,
+      "dates": [
+        "2026-10-24T07:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "ISO krepšiai ar padėklai: kaip pasirinkti pagal pakuotes ir naudojimą"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno išimamas XL serijos padėklas – 03100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c3371b47-24ed-4267-9c91-979ef0a3f850.webp",
+          "width": 335
+        },
+        {
+          "alt": "Klaro Standartinis pilkas MS krepšys, negilus (60 x 40 x 5 cm), S dydžio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/cbc7943d-85ea-4728-8fa1-91befdf019de.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/iso-krepsiai-ar-padeklai",
+      "viewport": 390,
+      "expectedTitle": "ISO krepšiai ar padėklai: kaip pasirinkti pagal pakuotes ir naudojimą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:35.823Z"
+    },
+    {
+      "articleHeight": 8300.734375,
+      "dates": [
+        "2026-10-25T08:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė priemonių spintos aplinka su atvertomis lentynomis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/dfff7666-e955-456a-ae42-1fa9d880cd69.webp",
+          "width": 335
+        },
+        {
+          "alt": "Iliustracinės atskiros spintos durų atidarymo ir modulio ištraukimo erdvės",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/72506362-f206-4b02-a414-fdb3cad95a2c.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:36.314Z"
+    },
+    {
+      "articleHeight": 6530.875,
+      "dates": [
+        "2026-10-25T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro spintinis vežimėlis su uždaromis dvivėrėmis durimis, šoniniais stūmimo laikikliais ir ratukais",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/9d03d6cf-b0f8-469f-86f2-cc76486748b9.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/mobili-ar-stacionari-medicinine-spinta",
+      "viewport": 390,
+      "expectedTitle": "Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:36.748Z"
+    },
+    {
+      "articleHeight": 5013,
+      "dates": [
+        "2026-10-26T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis spintos planas su uždaru korpusu, durų lanku, talpos ištraukimo ir darbuotojo vieta",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/7293dd8f-3112-4ff7-90e5-8f2362abde43.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-duru-atidarymo-vieta",
+      "viewport": 390,
+      "expectedTitle": "Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:37.167Z"
+    },
+    {
+      "articleHeight": 6157.875,
+      "dates": [
+        "2026-10-27T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211A – žemas variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/5d6c1ffa-dd20-4342-bbe4-ba2dee6f1b80.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-uzrakto-patikra",
+      "viewport": 390,
+      "expectedTitle": "Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:37.561Z"
+    },
+    {
+      "articleHeight": 6041.1875,
+      "dates": [
+        "2026-10-28T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės spintos vidus: lentynų, stalčių ir modulių planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1221 – vidutinio aukščio variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c9ef35d0-bebc-4e46-9afb-fd6d933034ad.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-spintos-lentynu-ir-stalciu-planas",
+      "viewport": 390,
+      "expectedTitle": "Medicininės spintos vidus: lentynų, stalčių ir modulių planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:37.940Z"
+    },
+    {
+      "articleHeight": 5790,
+      "dates": [
+        "2026-10-28T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis kabineto išdėstymas su matomu judėjimo taku",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e629ad84-4559-4c3c-8451-6e8263880e2a.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinos-istaigos-baldu-planavimas",
+      "viewport": 390,
+      "expectedTitle": "Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:38.304Z"
+    },
+    {
+      "articleHeight": 6809,
+      "dates": [
+        "2026-10-29T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip pasirinkti Mayo instrumentų staliuką"
+      ],
+      "images": [
+        {
+          "alt": "Klaro NEREZ1120 – instrumentų stalelis MAYO INSTRUMAN HYDRAULIC CLASSIC",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/9399f55b-ee97-4d69-96a4-546fddc52f1d.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/mayo-staliuko-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Kaip pasirinkti Mayo instrumentų staliuką",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:33:38.782Z"
+    },
+    {
+      "articleHeight": 6870.59375,
+      "dates": [
+        "2026-10-30T08:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Kaip aprašyti nerūdijančio plieno stalo poreikį"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno darbo stalas su kojų jungiamąja atrama, kodas ATS001",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/4198f946-6bef-497b-9475-ac5102395c00.webp",
+          "width": 335
+        },
+        {
+          "alt": "Iliustracinis stalo matavimo pavyzdys su 1250 ir 650 mm išorinėmis ribomis, 1200 × 600 mm darbo plotu ir 850 mm aukščiu",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a63863b8-b475-4350-823d-085f4086c151.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/nerudijancio-plieno-stalo-poreikis",
+      "viewport": 390,
+      "expectedTitle": "Kaip aprašyti nerūdijančio plieno stalo poreikį",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:33:39.271Z"
+    },
+    {
+      "articleHeight": 4515.53125,
+      "dates": [
+        "2026-10-31T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą"
+      ],
+      "images": [
+        {
+          "alt": "Mokomasis AISI 304 ir 1.4301 stalviršio įrašas: medžiaga nurodyta, rėmas, apkrova ir priežiūra tikslinami atskirai",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/f96da06a-f38f-48ff-aab9-cb9e1a948cc5.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-nerudijancio-plieno-klase",
+      "viewport": 390,
+      "expectedTitle": "Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:34:12.700Z"
+    },
+    {
+      "articleHeight": 6285.5625,
+      "dates": [
+        "2026-10-31T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Valgymo staliukas prie lovos POSTMAN 1 – pakreipiamas stalviršis – 1100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/84c3b9be-5c9a-44e1-a1b2-1e4456d8a7e8.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/staliuko-prie-lovos-suderinamumas",
+      "viewport": 390,
+      "expectedTitle": "Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:13.124Z"
+    },
+    {
+      "articleHeight": 6082.546875,
+      "dates": [
+        "2026-11-01T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė dviejų bendro tipo infuzijų stovų pagrindų kompozicija",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b1828e27-c7e8-4ea9-9c34-9e32b0a3fe0b.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininiai-stovai-ir-laikikliai",
+      "viewport": 390,
+      "expectedTitle": "Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:13.598Z"
+    },
+    {
+      "articleHeight": 4665.25,
+      "dates": [
+        "2026-11-02T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai"
+      ],
+      "images": [
+        {
+          "alt": "Klaro infuzijų stovas su penkių atramų pagrindu, ratukais, kabliukais ir butelių laikikliais",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/d63ae972-c5b8-4575-b6fa-0a4907138a00.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/infuziju-stovo-apkrovos-patikra",
+      "viewport": 390,
+      "expectedTitle": "Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:14.021Z"
+    },
+    {
+      "articleHeight": 4825.125,
+      "dates": [
+        "2026-11-03T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro InfuFlex – nešiojamasis sulankstomas infuzijų stovas gelbėtojams ir slaugos tarnyboms",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/2b5b0375-f551-41a9-942e-e2c6db7b14a3.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/sulankstomo-infuziju-stovo-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:14.427Z"
+    },
+    {
+      "articleHeight": 5741.75,
+      "dates": [
+        "2026-11-03T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Pakabinamas batų stovas NEREZ5090 – 10 porų batų",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/0462ca41-c6d7-424b-8689-36a8cd23601d.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-sieniniu-laikikliu-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:14.838Z"
+    },
+    {
+      "articleHeight": 5924.875,
+      "dates": [
+        "2026-11-04T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Skalbinių vežimėlis VAKO 80 l – valdomas koja",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/27c03c73-cf8f-4b6a-a859-600fdafa34dd.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:15.236Z"
+    },
+    {
+      "articleHeight": 5823.0625,
+      "dates": [
+        "2026-11-05T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro balto tekstilinio skalbinių maišo katalogo iliustracija; konkretaus tūrio nuotrauka nepatvirtina",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b8dfbb51-2c8e-4fa7-9eb7-32df5b4e0a1f.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/skalbiniu-maisui-tinkamo-remo-patikra",
+      "viewport": 390,
+      "expectedTitle": "Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:15.663Z"
+    },
+    {
+      "articleHeight": 4935.46875,
+      "dates": [
+        "2026-11-06T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis vieno reiso dvylikos skalbinių komplektų planas: penki, keturi ir trys komplektai trims išdavimo vietoms",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a20806ec-5164-4a91-8137-0a0ec2eb98c7.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/svariu-skalbiniu-transportavimo-vezimelis",
+      "viewport": 390,
+      "expectedTitle": "Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:34:16.058Z"
+    },
+    {
+      "articleHeight": 5253.4375,
+      "dates": [
+        "2026-11-06T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno VAKO NEREZ4001 infekuotoms atliekoms",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/14f7725d-8454-41bd-98f3-5f9fb1212eb8.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-atlieku-maisu-laikiklis",
+      "viewport": 390,
+      "expectedTitle": "Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:16.473Z"
+    },
+    {
+      "articleHeight": 5060.46875,
+      "dates": [
+        "2026-11-07T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis trijų reisų 60 minučių langas: 30 minučių ciklams pakanka dviejų vežimėlių, 40 minučių ciklams reikia trijų, kai visi reisai turi baigtis laiku",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/17094b78-a70e-48f6-8f10-deda02134d60.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/skalbiniu-vezimeliu-kiekio-planas",
+      "viewport": 390,
+      "expectedTitle": "Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:34:16.845Z"
+    },
+    {
+      "articleHeight": 5327.4375,
+      "dates": [
+        "2026-11-08T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicinos priemonių laikymo ir transportavimo planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė priemonių sandėlio erdvė su lentynomis ir transportavimo vežimėliu",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/177ef923-cbb7-4795-aecf-c4da6d8edcba.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+      "viewport": 390,
+      "expectedTitle": "Medicinos priemonių laikymo ir transportavimo planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:17.205Z"
+    },
+    {
+      "articleHeight": 6363.4375,
+      "dates": [
+        "2026-11-08T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno stelažas NEREZ2201 su 5 lentynomis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/fd2a178d-a2f6-410c-88f7-d0795fe80b1f.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininio-stelazo-apkrovos-ir-vietos-planas",
+      "viewport": 390,
+      "expectedTitle": "Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:17.596Z"
+    },
+    {
+      "articleHeight": 5735.625,
+      "dates": [
+        "2026-11-09T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro REGO Box – RB1011 – perforuotos sienelės, vientisas dugnas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/69cec026-e304-445a-9b5f-b6af1dbca23c.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/rego-deziu-ir-vezimelio-suderinamumas",
+      "viewport": 390,
+      "expectedTitle": "REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:17.988Z"
+    },
+    {
+      "articleHeight": 6472.28125,
+      "dates": [
+        "2026-11-10T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno vežimėlis su išimamais padėklais 3100 – NEREZ3100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/46024667-cca7-44ac-a7a5-8d96c9050eba.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/padeklu-vezimelio-formato-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:18.381Z"
+    },
+    {
+      "articleHeight": 5727.3125,
+      "dates": [
+        "2026-11-11T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Silikoninis kilimėlis padėklų vežimėliui L ir medicininiam vežimėliui be apsauginio bortelio",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/da802a85-2383-4fda-aed3-f29d5ac81942.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/padeklu-ideklu-suderinamumas",
+      "viewport": 390,
+      "expectedTitle": "Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:18.749Z"
+    },
+    {
+      "articleHeight": 5698.5,
+      "dates": [
+        "2026-11-11T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė uždarytų pakuočių ir transportavimo vežimėlio aplinka",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/0356938f-dff5-4ddf-bb0a-97692f4324c6.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas",
+      "viewport": 390,
+      "expectedTitle": "Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:19.133Z"
+    },
+    {
+      "articleHeight": 5125.0625,
+      "dates": [
+        "2026-11-12T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno išimamas XL serijos padėklas – 03100",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c3371b47-24ed-4267-9c91-979ef0a3f850.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/nerudijancio-plieno-sterilizavimo-padeklo-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:19.570Z"
+    },
+    {
+      "articleHeight": 4846.875,
+      "dates": [
+        "2026-11-13T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Vežimėlis didelės talpos plovimo mašinoms – A variantas (dvi pozicijos)",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6daf6a72-b391-4fce-825a-495d92fe28d9.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/vezimelio-plovimo-masinai-suderinamumas",
+      "viewport": 390,
+      "expectedTitle": "Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:19.967Z"
+    },
+    {
+      "articleHeight": 6143.375,
+      "dates": [
+        "2026-11-14T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininių baldų priežiūros planas pagal gamintojo dokumentus"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė baldų ratuko ir rėmo jungties apžiūra ant darbo stalo",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/b1cd0092-751e-4d72-a800-9b71ae6a18bc.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-prieziuros-planas",
+      "viewport": 390,
+      "expectedTitle": "Medicininių baldų priežiūros planas pagal gamintojo dokumentus",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:20.467Z"
+    },
+    {
+      "articleHeight": 6195.96875,
+      "dates": [
+        "2026-11-14T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip patikrinti medicininės įrangos valymo dokumentus"
+      ],
+      "images": [
+        {
+          "alt": "Priežiūros dokumentų patikros seka: tikslus modelis, dokumento redakcija, taikomas paviršius, aprašytos ribos ir raštu užduodamas klausimas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a894531b-f963-4fda-a6ef-d5c781b1c43d.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-irangos-valymo-dokumentai",
+      "viewport": 390,
+      "expectedTitle": "Kaip patikrinti medicininės įrangos valymo dokumentus",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:34:20.965Z"
+    },
+    {
+      "articleHeight": 6544.0625,
+      "dates": [
+        "2026-11-15T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kaip rasti Klaro atsarginę dalį pagal įrangos kodą"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinis atskiros baldo detalės ir matavimo priemonių vaizdas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/c10dd8c0-813a-490f-818b-80659159354a.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/klaro-atsargines-dalies-paieska",
+      "viewport": 390,
+      "expectedTitle": "Kaip rasti Klaro atsarginę dalį pagal įrangos kodą",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:21.887Z"
+    },
+    {
+      "articleHeight": 6129.375,
+      "dates": [
+        "2026-11-16T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Ekologiškas „BLACK IS GREEN“ serijos valymo vežimėlis su 2 kibirais – PLV111",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/145e2a1b-97d7-43cf-aa1f-d2dfeae027fd.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/valymo-vezimelio-komplektacijos-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:22.442Z"
+    },
+    {
+      "articleHeight": 5371.3125,
+      "dates": [
+        "2026-11-17T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Įrangos komplekto priėmimas: ką sutikrinti su užsakymu"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė įrangos pakuotės ir komplektacijos priėmimo patikra",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/ae18fa2a-eeea-4bad-aaa2-b198686d5777.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/irangos-komplekto-priemimo-patikra",
+      "viewport": 390,
+      "expectedTitle": "Įrangos komplekto priėmimas: ką sutikrinti su užsakymu",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:22.958Z"
+    },
+    {
+      "articleHeight": 5259.875,
+      "dates": [
+        "2026-11-17T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė dviejų įrangos pasiūlymų palyginimo darbo vieta",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6df56f0f-8d53-495b-b3ff-476696c7c100.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinines-irangos-pasiulymu-palyginimas",
+      "viewport": 390,
+      "expectedTitle": "Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:23.435Z"
+    },
+    {
+      "articleHeight": 6578.265625,
+      "dates": [
+        "2026-11-18T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Valgymo staliukas prie lovos POSTMAN 2 – fiksuotas stalviršis – 1200",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/4aceae56-5a2c-4448-ac02-f3cf5bf71e69.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+      "viewport": 390,
+      "expectedTitle": "Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:23.872Z"
+    },
+    {
+      "articleHeight": 5035.15625,
+      "dates": [
+        "2026-11-19T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą"
+      ],
+      "images": [
+        {
+          "alt": "Naudojimo išlaidų ruošinys be kainų: vienodas kiekis ir laikotarpis, patvirtintos eilutės, atskiros prielaidos bei neįvertintos išlaidos",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/6fb56e7e-d3fa-4525-bcae-51eeefae5b52.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicininiu-baldu-naudojimo-islaidu-palyginimas",
+      "viewport": 390,
+      "expectedTitle": "Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:34:24.542Z"
+    },
+    {
+      "articleHeight": 6117.09375,
+      "dates": [
+        "2026-11-20T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas"
+      ],
+      "images": [
+        {
+          "alt": "Baldų atnaujinimo inventoriaus ruošinys: paliekama įranga, klausimai atsakingam specialistui ir keičiamų gaminių poreikis susiejami su konkrečiu pirkimo etapu",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/8a49e955-d50f-416f-978c-31246143158d.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/medicinos-istaigos-baldu-atnaujinimo-planas",
+      "viewport": 390,
+      "expectedTitle": "Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:34:25.021Z"
+    },
+    {
+      "articleHeight": 5895.875,
+      "dates": [
+        "2026-11-20T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/e6f54f18-7658-4443-8b1a-b3231df0d260.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/netipines-baldu-komplektacijos-uzklausa",
+      "viewport": 390,
+      "expectedTitle": "Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:25.406Z"
+    },
+    {
+      "articleHeight": 6050.96875,
+      "dates": [
+        "2026-11-21T08:00:00.000Z"
+      ],
+      "figures": 2,
+      "h1": [
+        "Laboratorijos baldai: fizinės darbo ir laikymo vietos planas"
+      ],
+      "images": [
+        {
+          "alt": "Iliustracinė laboratorijos baldų darbo vieta su spintelėmis",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/a91af336-dd02-4689-9e5e-af6e1454678b.webp",
+          "width": 335
+        },
+        {
+          "alt": "ZS1211 BASIC ir ZS1311 PROFI palyginimas: abiejų išorė 48 × 72 × 81 cm ir 12 MS pozicijų; BASIC dažytas plienas, PROFI AISI304; prieigos ir naudingi vidaus matmenys tikslinami",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/ac162285-544f-4f8c-a15d-bf152b32bdbe.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/laboratorijos-baldu-darbo-vietos-planas",
+      "viewport": 390,
+      "expectedTitle": "Laboratorijos baldai: fizinės darbo ir laikymo vietos planas",
+      "expectedBodyImages": 1,
+      "checkedAt": "2026-10-10T05:34:25.852Z"
+    },
+    {
+      "articleHeight": 4854.375,
+      "dates": [
+        "2026-11-22T08:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Vaistinės baldai ir moduliai: pakuočių, stalčių ir laikymo vietų planas"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/2f6699b6-228f-495a-b812-78092cb05830.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/vaistines-baldu-ir-moduliu-planas",
+      "viewport": 390,
+      "expectedTitle": "Vaistinės baldai ir moduliai: pakuočių, stalčių ir laikymo vietų planas",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:26.230Z"
+    },
+    {
+      "articleHeight": 5703.1875,
+      "dates": [
+        "2026-11-22T12:00:00.000Z"
+      ],
+      "figures": 1,
+      "h1": [
+        "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra"
+      ],
+      "images": [
+        {
+          "alt": "Klaro Kambarių tvarkymo vežimėlis VAN STANDARD HV1001D su durelėmis, ratukai kietoms grindims",
+          "display": "block",
+          "fit": "contain",
+          "src": "/content-assets/promedical/cbcf619d-a7e9-4b30-b31c-2ecb5f49ed06.webp",
+          "width": 335
+        }
+      ],
+      "scrollWidth": 375,
+      "url": "http://127.0.0.1:8791/gidai/kambariu-aptarnavimo-vezimelio-pasirinkimas",
+      "viewport": 390,
+      "expectedTitle": "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra",
+      "expectedBodyImages": 0,
+      "checkedAt": "2026-10-10T05:34:26.748Z"
+    }
+  ]
+}

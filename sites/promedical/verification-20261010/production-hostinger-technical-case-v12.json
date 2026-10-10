@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-10-10T12:51:45.605Z",
+  "state": "REGISTERED_TECHNICAL_CASE_PENDING_NATIVE_INBOX_FIX",
+  "previousReceipt": "production-hostinger-filter-image-sent-v11.json",
+  "mailbox": "info@promedical.lt",
+  "websiteSender": "uzklausos@promedical.lt",
+  "imageSentReceipt": "production-hostinger-filter-image-sent-v11.json",
+  "support": {
+    "specialist": "Mantas",
+    "vendorReplyAtVilnius": "2026-10-10 15:49",
+    "caseId": "23926736",
+    "caseNumberAndVendorReplyVisiblyVerified": true,
+    "vendorReportsTransferToColleagueForDeeperInvestigation": true,
+    "escalationBackendNotIndependentlyInspected": true,
+    "vendorSaysProgressInSameChat": true,
+    "vendorSaysOfflineCopyToEmail": true,
+    "privateCaseProof": "content-studio/tmp/promedical-hostinger-mantas-case-confirmed-20261010.png",
+    "ourAcknowledgementSentAtVilnius": "2026-10-10 15:50",
+    "acknowledgementVisiblyPosted": true,
+    "earlierFollowupCoincidedWithSpecialistArrival": true,
+    "askedForCompleteExistingDiagnosticHandoff": true,
+    "askedForFirstResponseEstimate": true,
+    "responseEstimate": null,
+    "concreteCorrection": null,
+    "attachmentReviewSeparatelyConfirmedByVendor": false,
+    "particularReputationCauseConfirmed": false,
+    "authenticationResultsAtFilterTimeConfirmed": false,
+    "inboxActionPrecedenceConfirmed": false,
+    "newFullHeaderPacketSent": false,
+    "privateGmailAddressSentToVendor": false
+  },
+  "nativeMail": {
+    "ownTestCount": 7,
+    "initialJunkCount": 7,
+    "manualOwnTrainingTests": [
+      1,
+      5
+    ],
+    "automaticWebsiteInboxProved": false
+  },
+  "noNewNativeTest": true,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "mailSettingsDnsBindingsBillingOrSourceChanged": false,
+  "summary": "The exact owner-approved filter image and complete rule values were sent in the existing Hostinger case at 15:44 Vilnius. At 15:49 specialist Mantas reports that the conversation was transferred to him and technical request #23926736 was passed to a colleague for deeper investigation. The actual vendor message and case number are visibly verified. Progress will be provided in this chat and, according to the vendor, copied to email when offline. Our acknowledgement at 15:50 asks to confirm the colleague has the image, full values and previously approved qcoq headers, and requests a first-response estimate and supported correction. No estimate, concrete fix or separate vendor confirmation of attachment review is yet received. All seven native website tests retain initial Junk receipts; ordinary mailbox Gmail replies and the saved alias remain separate positives. Automatic website Inbox is not repaired; filter, allow lists, protections, DNS, binding, source and billing unchanged.",
+  "remaining": "Await and review the registered case technical findings; then apply a supported authorized correction and check one new marked native form for actual automatic Inbox. Do not equate a registered case, sender acceptance or earlier manual moves with repair. Whole-site acceptance gaps remain separate.",
+  "privacy": "Only sanitized case metadata and public business addresses are versioned. Personal recipient, message bodies, raw headers and screenshot pixels remain private."
+}

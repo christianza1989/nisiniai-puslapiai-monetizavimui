@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Owner-approved exact saved-filter screenshot was successfully uploaded with the supported Chrome file chooser after the owner reports enabling the separately approved local-file permission. Posted image and complete rule values are verified in the existing Hostinger case at 15:44 Vilnius; Hostinger renamed/converts the attachment to JPG. Prior Fausta reply at 14:06 found no obvious condition errors but did not inspect rule timing or establish a specific spam cause; inactive case closed at 15:05 and is now continued with a briefly observed human queue position 3. No new native test, configuration change, technical case ID or automatic Inbox repair. Historical blocked-upload V10 is retained. Personal Gmail, raw headers and UI pixels remain private.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53",
+  "eventId": "7d6d9851-427a-40e1-b91b-716006700860",
+  "sequence": 12,
+  "at": "2026-10-10T12:48:02.710Z"
+}

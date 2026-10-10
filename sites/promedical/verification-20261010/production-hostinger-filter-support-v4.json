@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-10-10T09:11:50.000Z",
+  "state": "HUMAN_SPECIALIST_CHECKING_LOGS",
+  "previousReceipt": "production-hostinger-filter-support-v3.json",
+  "mailbox": "info@promedical.lt",
+  "sender": "uzklausos@promedical.lt",
+  "ownerAuthorization": "Continue the existing Hostinger conversation as needed until the mail problem is resolved; specific prior approval for one own complete-header packet remains scoped to that packet.",
+  "specialist": {
+    "name": "Fausta",
+    "joinedAtVilnius": "2026-10-10 11:56",
+    "checkingLogsAtVilnius": "2026-10-10 12:03",
+    "checkingLogsMessage": "Tikrinu žurnalus, vieną akimirką",
+    "formalTicketId": null,
+    "rootCauseConfirmed": false,
+    "fixSupplied": false
+  },
+  "continuation": {
+    "sentAtVilnius": "2026-10-10 12:01",
+    "scope": "Requested concrete spam classification/reputation findings, filter evaluation and safe Inbox routing for authenticated website notices while retaining normal customer mail and general spam protection. Existing original headers referenced, not retransmitted. Requested escalation/case reference if required, and prohibited unapproved setting changes.",
+    "supplementSentAtVilnius": "2026-10-10 12:09",
+    "supplement": "Provided the public Hostinger allow/block-list guide and explained the contradiction with the actual incoming-list UI wording. Asked about unlisted sender acceptance and authenticated sender checking rather than only spoofable From text.",
+    "privateScreenshot": "content-studio/tmp/promedical-hostinger-allowlist-documentation-question-20261010.png"
+  },
+  "officialSourcesRead": [
+    {
+      "url": "https://www.hostinger.com/support/1583508-how-to-block-unwanted-incoming-emails-on-hostinger-email/",
+      "retrievedAtDate": "2026-10-10",
+      "finding": "Guide describes allowed sender mail reaching Inbox instead of Spam, but does not resolve the actual mailbox UI's wording about accepting only listed senders or establish authentication checks. Specialist clarification required."
+    },
+    {
+      "url": "https://www.hostinger.com/support/4469173-how-to-set-up-email-filters-with-hostinger-email/",
+      "retrievedAtDate": "2026-10-10",
+      "finding": "Filters apply to new mail once saved. Both failed post-filter tests were new. Guide does not establish spam/filter precedence or Authentication-Results availability."
+    },
+    {
+      "url": "https://www.hostinger.com/support/5240863-what-happens-to-emails-in-the-spam-folder/",
+      "retrievedAtDate": "2026-10-10",
+      "finding": "Spam learning may take time; general spam protection cannot be disabled. This is guidance, not proof of a case-specific cause or successful Inbox routing."
+    }
+  ],
+  "nextTest": {
+    "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-1",
+    "realFormUrl": "https://promedical.lt/kontaktai",
+    "prepared": true,
+    "submittedByAgent": false,
+    "ownD1MatchesBeforeSubmission": 0,
+    "d1RowsWrittenByBaselineQuery": 0,
+    "privateBaselineReceipt": "content-studio/tmp/promedical-support-fix-prepared-baseline-20261010.json",
+    "imapCheckPreparedAndSyntaxChecked": true,
+    "acceptance": "A new own marked website form must be saved to the actual isolated D1, accepted by transport, and found automatically in receiving INBOX rather than Junk. No manual move counts as an automatic Inbox pass."
+  },
+  "automaticInboxProved": false,
+  "mailboxSettingsChangedByAgent": false,
+  "appSourceChanged": false,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "privacy": "Only public official guide URLs and already-approved own-message facts were discussed. No new full headers, credentials, unrelated mail or customer data sent. Read-only D1 query selected only the exact future synthetic marker; no rows returned or written.",
+  "nextStep": "Await the specialist's concrete log findings; implement only a supported owner-authorized change and test a genuinely new marked inquiry. Wider security/allow-list changes need specific action-time approval. Preserve old failed receipts and normal inbound mail."
+}

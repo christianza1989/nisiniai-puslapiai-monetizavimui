@@ -1,0 +1,88 @@
+{
+  "checkedAt": "2026-10-10T05:25:01.281Z",
+  "state": "FAIL",
+  "origin": "http://127.0.0.1:8787",
+  "transport": "Native node:http with exact per-site canonical Host; real current production bundle/local bindings.",
+  "rows": [
+    {
+      "siteId": "akmenas",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: akmenas, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "auksarankiams",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: auksarankiams, 13 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: autoelektrikaivilniuje, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: fasadopastoliai, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "greitossvetaines",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: greitossvetaines, 7 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "laiptucentras",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: laiptucentras, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: miniekskavatoriai, 12 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "promedical",
+      "exitCode": null,
+      "signal": "SIGTERM",
+      "stdout": "",
+      "stderr": "",
+      "error": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "siteId": "roletaiklaipedoje",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: roletaiklaipedoje, 9 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "exitCode": 0,
+      "signal": null,
+      "stdout": "SEO core smoke passed: traktoriupadangos, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.\n",
+      "stderr": "",
+      "error": null
+    }
+  ]
+}

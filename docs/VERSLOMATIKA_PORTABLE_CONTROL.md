@@ -1,5 +1,7 @@
 # Verslomatika kūrimas ir testavimas kitame PC
 
+Business vertintojo vidinis transportas v2 (`evidence_ref_indices`) yra source-owned serializavimas: klientui ir saugojimui lieka pilnas `creation.critic.v1`, canonical team kontraktas ir0018 schema. Jokio naujo env, CLI token limito, papildomo serverio ar DB migracijos šiai pataisai nereikia. Guide/koordinatoriaus transportas išlieka ankstesnis. Upgrade79078582 source/adoption/actual recovery vertinami atskirai;8b0d317 tikras Luna bandymas9d091aca dar buvo FAILED/36charged/noaccepted. Dar nepriimta viso verslo eiga ir kito PC actual paleidimas. Senų bundle/handoff SHA neperrašyti.
+
 Naujo Luna review profilio pinnedCLI local no-auth užklausos7PASS29.53s ir izoliuota restrictedPG istorijos/schema patikra7PASS47.25s. Perkeliamo source suderinamumas patikrintas; realus target PC ir faktinis modelio rezultatas lieka nepatikrinti.
 
 Aktualus business review pasirinkimas: kūrėjas/kritikas/koordinatorius Luna, medium reasoning, be verbosity override. Originalūs Luna ir Sol metaduomenys pateikiami source kataloge; Sol istorija ir schema0018 išlieka. Ankstesnis8958c87 actual compact Sol bandymas0f245510 nutrūko max_output_tokens/34charged; trumpesnis formatas nepateikė priimto rezultato. Upgradebe8f6771 source regresija216PASS/7opt-inSKIP21.24s; kito PC ir actual modelio sėkmė dar nepatvirtinta. Perkelti galutinį švarų reviewed source, tada paleisti source/hash/schema preflight, o ne istorinių checkpointų profilį.

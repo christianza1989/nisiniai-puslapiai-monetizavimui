@@ -1,5 +1,11 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+Indexed-reference source checks complete:230focusedofflinePASS7opt-inSKIP25.04s/scopedRuff/diffPASS; paid invalid-index usage/private-failure evidence and≥337-reference regression included. Pinned empty-auth CLI production critic argv sends one local POST with exact current schema3153compactB and every original337 reference preserved through mapping;9explicitly syntheticUNVERIFIED receipt states remain unverified. Initial auxiliary import/receipt-count/web-argument probe errors retained and corrected. Source adoption/actual provider recovery still separate;36charged/noaccepted/overallOPEN at this checkpoint.
+
+2026-10-11 latest actual: source8b0d317/schema18/servedportal76, UI job9d091aca, all roles selected Luna. Creator structurally completed with observed languageFAIL; critic again true incomplete/max_output_tokens at first string reference.36charged preserved; no terminal critic usage/coordinator/accepted revision/intake/artifacts/GUIDE. Root worker ended and owned API stopped. Director terminal UI/full canonical BFF equality/private-no-store PASS records the failure faithfully. Source adoption is accepted; model-only recovery is disproven, full platform OPEN.
+
+Upgrade79078582/scope6102450469 tests a business-only v2 indexed-reference transport hypothesis. Every selected integer maps to the exact current hash/stage/round-bound pointer/receipt before unchanged full critic normalization. All findings/corrections/nine evidence states remain required; native GUIDE/coordinator/profile/HTTP/schema18 and charged history unchanged. Before implementation19FAIL92PASS12.76s; focused post-change111PASS12.53s. Remaining source verification and actual customer UI recovery are separate pending gates.
+
 ## Current priority — autonomous test-customer creation today
 
 Luna review source final checks:216offlinePASS7SKIP21.24s,7pinned no-auth productionCLI PASS29.53s,7isolated restrictedPG PASS47.25s/migration/bootstrap/sourcefreezePASS/RuffPASS. Canonical team Git blob/LF text unchanged20329B/SHA97c7555e; original guessed-name/CRLF comparison errors retained and corrected. Independent source review and clean adoption/actual UI trial follow; this packet does not close the platform task.

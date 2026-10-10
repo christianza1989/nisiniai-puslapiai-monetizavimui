@@ -19,9 +19,20 @@ def context(candidate, receipts=()):
 
 def compact(candidate, verdict="revise"):
     value = report(candidate, verdict)
-    value["schema_version"] = "creation.business-critic-output.v1"
+    value["schema_version"] = "creation.business-critic-output.v2"
     value["check_summaries"] = {item["kind"]: item["summary"] for item in value.pop("checks")}
+    references = review._prompt_context(**context(candidate))["allowed_finding_refs"]
+    for finding in value["findings"]:
+        finding["evidence_ref_indices"] = [references.index(ref) for ref in finding.pop("evidence_refs")]
     return value
+
+
+def selected_findings(candidate, value, receipts=()):
+    findings = deepcopy(value["findings"])
+    references = review._prompt_context(**context(candidate, receipts))["allowed_finding_refs"]
+    for finding in findings:
+        finding["evidence_refs"] = [references[index] for index in finding.pop("evidence_ref_indices")]
+    return findings
 
 
 @pytest.mark.parametrize("statuses,expected", [
@@ -34,7 +45,7 @@ def test_complete_hydration_retains_every_observation_and_exact_model_findings(d
                 for i, status in enumerate(statuses)]
     value = compact(draft)
     full = review.hydrate_business_critic(value, context(draft, evidence))
-    assert full["findings"] == value["findings"] and full["verdict"] == value["verdict"]
+    assert full["findings"] == report(draft)["findings"] and full["verdict"] == value["verdict"]
     assert full["draft_sha256"] == value["draft_sha256"]
     assert [item["kind"] for item in full["checks"]] == list(review.CHECK_KINDS)
     check = next(item for item in full["checks"] if item["kind"] == "source")
@@ -61,7 +72,7 @@ def test_compact_output_cannot_hide_checks_or_change_candidate_authority(draft, 
     elif defect == "round":
         value["round_number"] = 2
     elif defect == "unknown_ref":
-        value["findings"][0]["evidence_refs"] = ["draft:/unknown"]
+        value["findings"][0]["evidence_ref_indices"] = [1000000]
     elif defect == "duplicate_finding":
         value["findings"].append(deepcopy(value["findings"][0]))
     elif defect == "foreign_receipt":
@@ -91,7 +102,7 @@ def test_twelve_distinct_model_findings_are_retained_without_a_new_ceiling(draft
     value = compact(draft)
     value["findings"] = [{**deepcopy(value["findings"][0]), "id": f"f_{i}"} for i in range(1, 13)]
     full = review.hydrate_business_critic(value, context(draft))
-    assert full["findings"] == value["findings"] and len(full["checks"]) == 9
+    assert full["findings"] == selected_findings(draft, value) and len(full["checks"]) == 9
 
 
 @pytest.mark.parametrize("field", ["explanation", "correction"])
@@ -101,7 +112,7 @@ def test_business_provider_prose_bounds_are_also_authoritative_on_hydration(draf
     value["findings"][0][field] = ("Palyginti mokymo būdus pagal konkretų komandos poreikį. " * 6)[:length]
     assert len(value["findings"][0][field]) == length
     if length == 240:
-        assert review.hydrate_business_critic(value, context(draft))["findings"] == value["findings"]
+        assert review.hydrate_business_critic(value, context(draft))["findings"] == selected_findings(draft, value)
     else:
         with pytest.raises(RunnerError, match="review_invalid"):
             review.hydrate_business_critic(value, context(draft))
@@ -129,14 +140,17 @@ def test_business_wire_is_complete_and_native_guide_profiles_remain_exact(draft)
         assert hashlib.sha256(json.dumps(review.model_output_schema(role), sort_keys=True).encode()).hexdigest() == schema_hash
 
 
-@pytest.mark.parametrize("valid", [True, False])
-async def test_actual_adapter_hydrates_provider_output_and_retains_paid_failure_usage(draft, tmp_path, monkeypatch, valid):
+@pytest.mark.parametrize("mode", ["valid", "missing_summary", "invalid_index"])
+async def test_actual_adapter_hydrates_provider_output_and_retains_paid_failure_usage(draft, tmp_path, monkeypatch, mode):
     monkeypatch.setattr(adapter, "available", lambda: (Path(sys.executable), tmp_path))
     monkeypatch.setattr(adapter, "settings", lambda: SimpleNamespace(
         creation_runner_seconds=30, creation_web_search_enabled=False))
     value = compact(draft)
-    if not valid:
+    if mode == "missing_summary":
         del value["check_summaries"]["launch"]
+    elif mode == "invalid_index":
+        value["findings"][0]["evidence_ref_indices"] = [
+            len(review._prompt_context(**context(draft))["allowed_finding_refs"])]
     usage = {"input_tokens": 42, "output_tokens": 19}
 
     async def execute(args, **kwargs):
@@ -149,11 +163,94 @@ async def test_actual_adapter_hydrates_provider_output_and_retains_paid_failure_
         return True
 
     monkeypatch.setattr(adapter, "execute", execute)
-    if valid:
+    if mode == "valid":
         full, evidence = await adapter.run_role(context(draft), authorized, role="critic", seconds=30)
-        assert len(full["checks"]) == 9 and full["findings"] == value["findings"]
+        assert len(full["checks"]) == 9 and full["findings"] == report(draft)["findings"]
         assert evidence["usage"] == usage and evidence["model"] == "gpt-6-luna"
     else:
         with pytest.raises(RunnerError, match="review_invalid") as error:
             await adapter.run_role(context(draft), authorized, role="critic", seconds=30)
         assert error.value.receipt["usage"] == usage
+        failures = list(tmp_path.glob("**/failure.private.json"))
+        assert len(failures) == 1
+        assert json.loads(failures[0].read_bytes())["receipt"]["usage"] == usage
+
+
+@pytest.mark.parametrize("index", [True, False, 1.5, "0", -1, 1000000, None])
+def test_reference_indices_require_strict_current_bounded_integers(draft, index):
+    value = compact(draft)
+    value["findings"][0]["evidence_ref_indices"] = [index]
+    with pytest.raises(RunnerError, match="review_invalid"):
+        review.hydrate_business_critic(value, context(draft))
+
+
+def test_duplicate_indices_and_legacy_string_transport_are_rejected(draft):
+    value = compact(draft)
+    index = value["findings"][0]["evidence_ref_indices"][0]
+    value["findings"][0]["evidence_ref_indices"] = [index, index]
+    with pytest.raises(RunnerError, match="review_invalid"):
+        review.hydrate_business_critic(value, context(draft))
+    legacy = report(draft)
+    legacy["schema_version"] = "creation.business-critic-output.v1"
+    legacy["check_summaries"] = {item["kind"]: item["summary"] for item in legacy.pop("checks")}
+    with pytest.raises(RunnerError, match="review_invalid"):
+        review.hydrate_business_critic(legacy, context(draft))
+    # Historical full reviews remain valid and readable.
+    assert review.normalize_critic(report(draft), draft=draft, expected_stage="private_draft",
+                                  expected_round=1)["findings"] == report(draft)["findings"]
+
+
+def test_selected_indices_restore_all_exact_draft_and_receipt_references(draft):
+    evidence = [receipt(draft, status="FAIL")]
+    value = compact(draft)
+    selected = ["draft:/pages/1/sections/0/body", "draft:/business/alternatives/0",
+                "draft:/pages/0/sections", "receipt:r_language"]
+    prompt = review.critic_prompt(**context(draft, evidence))
+    payload = json.loads(prompt.split("NEPATIKIMI_DUOMENYS_JSON\n", 1)[1])
+    table = payload["finding_reference_table"]
+    assert "allowed_finding_refs" not in payload
+    assert [entry["index"] for entry in table] == list(range(len(table)))
+    assert len({entry["reference"] for entry in table}) == len(table)
+    value["findings"][0]["evidence_ref_indices"] = [
+        next(entry["index"] for entry in table if entry["reference"] == ref) for ref in selected]
+    full = review.hydrate_business_critic(value, context(draft, evidence))
+    assert full["findings"][0]["evidence_refs"] == selected
+    assert "evidence_ref_indices" not in full["findings"][0]
+    assert full["verdict"] == "revise" and full["checks"][0]["status"] == "FAIL"
+    schema = review.output_schema("critic", context(draft, evidence))
+    fields = schema["$defs"]["BusinessFinding"]["properties"]
+    assert "evidence_refs" not in fields
+    assert fields["evidence_ref_indices"]["items"] == {
+        "type": "integer", "minimum": 0, "maximum": len(table) - 1}
+    assert schema["properties"]["schema_version"]["const"] == "creation.business-critic-output.v2"
+
+
+@pytest.mark.parametrize("defect", ["missing_required", "accept_with_required", "blocked_without_blocker"])
+def test_index_transport_retains_every_mandatory_correction_gate(draft, defect):
+    value = compact(draft)
+    if defect == "missing_required":
+        value["findings"] = []
+    elif defect == "accept_with_required":
+        value["verdict"] = "accept_draft"
+    else:
+        value["verdict"] = "blocked"
+    with pytest.raises(RunnerError, match="review_invalid"):
+        review.hydrate_business_critic(value, context(draft))
+
+
+def test_large_reference_table_restores_first_middle_and_last_selected_paths(draft):
+    for page in draft["pages"]:
+        section = deepcopy(page["sections"][0])
+        section["items"] = ["Palyginti konkrečios darbo užduoties atlikimo būdus." for _ in range(8)]
+        page["sections"] = [deepcopy(section) for _ in range(7)]
+    value = compact(draft)
+    payload = json.loads(review.critic_prompt(**context(draft)).split("NEPATIKIMI_DUOMENYS_JSON\n", 1)[1])
+    table = payload["finding_reference_table"]
+    assert len(table) >= 337
+    indices = [0, len(table) // 2, len(table) - 1]
+    value["findings"][0]["evidence_ref_indices"] = indices
+    full = review.hydrate_business_critic(value, context(draft))
+    assert full["findings"][0]["evidence_refs"] == [table[index]["reference"] for index in indices]
+    schema = review.output_schema("critic", context(draft))
+    assert schema["$defs"]["BusinessFinding"]["properties"]["evidence_ref_indices"]["items"]["maximum"] == len(table) - 1
+    assert len(json.dumps(schema, separators=(",", ":")).encode()) < 4000

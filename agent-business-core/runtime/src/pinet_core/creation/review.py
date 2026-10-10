@@ -139,15 +139,29 @@ class CheckSummaries(Strict):
     demand: Annotated[str, Field(min_length=10, max_length=100)]
 
 
-class BusinessFinding(Finding):
+class BusinessFinding(Strict):
+    id: FindingId
+    severity: Literal["blocker", "required", "suggestion"]
+    area: Literal[
+        "business", "research", "language", "content", "design", "seo_geo", "contact_delivery",
+        "publication", "launch", "demand",
+    ]
     explanation: Annotated[str, Field(min_length=10, max_length=240)]
     correction: Annotated[str, Field(min_length=10, max_length=240)]
+    evidence_ref_indices: list[Annotated[int, Field(ge=0)]] = Field(min_length=1, max_length=6)
+
+    @field_validator("evidence_ref_indices")
+    @classmethod
+    def distinct_selections(cls, value):
+        if len(set(value)) != len(value):
+            raise ValueError("Distinct reference selections required")
+        return value
 
 
 class BusinessCriticOutput(Strict):
     """Internal provider representation; never a stored or customer HTTP review."""
 
-    schema_version: Literal["creation.business-critic-output.v1"]
+    schema_version: Literal["creation.business-critic-output.v2"]
     role: Literal["critic"]
     draft_sha256: Digest
     stage: Stage
@@ -308,6 +322,16 @@ iki 100. Vienu aiškiu sakiniu įvardyk trūkumą, kitu – konkrečią pataisą
 """
 
 BUSINESS_CRITIC_POLICY = CRITIC_POLICY.replace(
+    "pataisas su tikslaus lauko nuoroda draft:/ arba pateikto kvito nuoroda receipt:. Nerašyk vidinės minčių eigos.\n"
+    "Lauko nuoroda yra JSON pointer, kuriame kiekvieną lauką ir masyvo indeksą skiria pasvirasis brūkšnys:\n"
+    "draft:/business/alternatives/3 arba draft:/pages/0/sections/1/body. Taškai ir laužtiniai skliaustai netinka.\n"
+    "Naudok pateiktus allowed_finding_refs; receipt:r_language_quality nurodo automatinės kalbos patikros kvitą.",
+    "pataisas su tikslaus lauko arba pateikto kvito nuoroda. Nerašyk vidinės minčių eigos.\n"
+    "Kiekvienas finding_reference_table įrašas susieja index su tikslia reference nuoroda.\n"
+    "evidence_ref_indices pateik pasirinktų nuorodų index sveikuosius skaičius, ne nuorodų tekstą.\n"
+    "Pasirink tik tinkamus šios lentelės indeksus; serveris atkurs būtent tavo pasirinktas tikslias nuorodas.\n"
+    "receipt:r_language_quality lentelėje nurodo automatinės kalbos patikros kvitą.",
+).replace(
     "Kiekvienai iš devynių schemos patikrų grąžink vieną būseną, visus tos rūšies kvitų ID ir tikrą jos apimtį.",
     "check_summaries privalomai pateik visas devynias schemos patikrų rūšis ir kiekvienos tikrą apimtį. "
     "Būsenų ir kvitų ID nekartok: serveris juos išsaugo pagal šios versijos patikrintus receipts. "
@@ -427,6 +451,9 @@ def _prompt_context(draft, stage, round_number, receipts):
 def critic_prompt(*, draft, stage, round_number, receipts=()):
     try:
         context = _prompt_context(draft, stage, round_number, receipts)
+        context["finding_reference_table"] = [
+            {"index": index, "reference": reference}
+            for index, reference in enumerate(context.pop("allowed_finding_refs"))]
         return BUSINESS_CRITIC_POLICY + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
     except (ValueError, TypeError, KeyError, IndexError):
         raise RunnerError("review_invalid") from None
@@ -465,7 +492,7 @@ def output_schema(role, context):
     schema = BusinessCriticOutput.model_json_schema() if role == "critic" else model_output_schema(role)
     if role == "critic":
         finding = schema["$defs"]["BusinessFinding"]["properties"]
-        finding["evidence_refs"]["items"]["enum"] = bound["allowed_finding_refs"]
+        finding["evidence_ref_indices"]["items"]["maximum"] = len(bound["allowed_finding_refs"]) - 1
     elif role == "coordinator":
         critic = _normalize_critic(context["critic"], context["draft"], context["stage"],
                                   context["round_number"], context["receipts"])
@@ -488,6 +515,9 @@ def hydrate_business_critic(value, context):
         summaries = compact.check_summaries.model_dump()
         full = compact.model_dump(mode="json", exclude={"check_summaries"})
         full["schema_version"] = "creation.critic.v1"
+        references = bound["allowed_finding_refs"]
+        for finding in full["findings"]:
+            finding["evidence_refs"] = [references[index] for index in finding.pop("evidence_ref_indices")]
         full["checks"] = []
         for kind in CHECK_KINDS:
             matching = [item for item in observations.values() if item.kind == kind]

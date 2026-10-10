@@ -337,13 +337,14 @@ def test_prompts_use_only_bounded_current_context_and_validate_before_provider(d
 @pytest.mark.parametrize("reference", ["draft:/business.alternatives[3]", "draft:/pages[0].sections[1].body",
                                       "draft:/pages/0/sections/1/body"])
 def test_provider_schema_rejects_actual_dot_bracket_reference_defect(draft, reference):
-    import re
     context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": []}
     schema = output_schema("critic", context)
-    constraint = schema["$defs"]["BusinessFinding"]["properties"]["evidence_refs"]["items"]
+    prompt = critic_prompt(**context)
+    table = json.loads(prompt.split("NEPATIKIMI_DUOMENYS_JSON\n", 1)[1])["finding_reference_table"]
+    constraint = schema["$defs"]["BusinessFinding"]["properties"]["evidence_ref_indices"]["items"]
     valid = reference == "draft:/pages/0/sections/1/body"
-    assert bool(re.fullmatch(constraint["pattern"], reference)) == valid
-    assert (reference in constraint["enum"]) == valid
+    assert (reference in [entry["reference"] for entry in table]) == valid
+    assert constraint == {"type": "integer", "minimum": 0, "maximum": len(table) - 1}
     assert schema["properties"]["draft_sha256"]["const"] == draft_sha256(draft)
 
 
@@ -362,7 +363,7 @@ def test_failed_prose_projection_preserves_original_hash_and_every_index(draft):
     assert projected["draft"]["business"]["alternatives"][1] == saved["business"]["alternatives"][1]
     assert set(projected["context_projection"]["omitted_fields"]) == {
         "draft:/business/alternatives/0", "draft:/pages/0/sections/0/body"}
-    assert "receipt:r_language" in projected["allowed_finding_refs"]
+    assert "receipt:r_language" in [entry["reference"] for entry in projected["finding_reference_table"]]
     critic = report(draft)
     critic["findings"][0]["evidence_refs"] = ["draft:/business/alternatives/0", "receipt:r_language"]
     bind(critic, evidence)
@@ -378,8 +379,10 @@ def test_schema_and_projection_do_not_launder_unknown_reference_or_fail(draft):
     evidence = receipt(draft, status="FAIL")
     context = {"draft": draft, "stage": "private_draft", "round_number": 1, "receipts": [evidence]}
     schema = output_schema("critic", context)
-    refs = schema["$defs"]["BusinessFinding"]["properties"]["evidence_refs"]["items"]["enum"]
+    payload = json.loads(critic_prompt(**context).split("NEPATIKIMI_DUOMENYS_JSON\n", 1)[1])
+    refs = [entry["reference"] for entry in payload["finding_reference_table"]]
     assert "draft:/pages/99/title" not in refs and "receipt:r_unknown" not in refs
+    assert schema["$defs"]["BusinessFinding"]["properties"]["evidence_ref_indices"]["items"]["maximum"] == len(refs) - 1
     critic = report(draft, "accept_draft")
     bind(critic, evidence)
     with pytest.raises(RunnerError, match="review_invalid"):

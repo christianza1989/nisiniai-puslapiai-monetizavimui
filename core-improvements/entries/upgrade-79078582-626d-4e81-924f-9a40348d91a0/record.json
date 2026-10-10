@@ -1,0 +1,25 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual Luna and Sol critic streams repeatedly end at the large string-reference enum prefix; preserve full authoritative review while testing indexed reference transport.",
+  "category": "code",
+  "evidence": [
+    "Actual source8b0d317 job9d091aca ended true incomplete/max_output_tokens at first evidence_refs draft prefix;36charged preserved, no accepted revision or terminal critic usage. Receipt SHA a77f693248cdd4f1b29bb87eda5c5fec7c310cc7eb40d7a2aaddf0f52a9482a6.",
+    "Independent original trace/schema and official pinned ResponsesLite request review:337 valid refs, same incomplete prefix predates compact DTO; client output budget absent, server numeric limit unknown. Indexed grammar is an experiment, not proven recovery."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_compact_review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert business-only v2 provider transport. Preserve original private streams, full stored critic.v1/HTTP, all check/finding/hash gates, schema18 and charged history; no partial report acceptance or hidden retry.",
+  "id": "upgrade-79078582-626d-4e81-924f-9a40348d91a0",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "8b0d3170955f6335972cd1c32e8b6a2c245089ca",
+  "createdAt": "2026-10-10T21:39:05.096Z"
+}

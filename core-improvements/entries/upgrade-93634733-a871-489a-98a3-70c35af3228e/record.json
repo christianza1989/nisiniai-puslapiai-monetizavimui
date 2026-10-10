@@ -1,0 +1,27 @@
+{
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6091674362",
+    "Root candidate checker cd9ce882a7614cf2741a136d6107eb415e76e978 detects9uncovered paths at9e82b6387b6fe8ce9d24bb4f0901d4615fc38e34",
+    "docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md"
+  ],
+  "rollback": "Supplement is append-only provenance; preserve original journal and errors. Source rollback follows I1 feature OFF/pinned runtime runbook, no DB deletion.",
+  "siteId": "core",
+  "summary": "Supplemental provenance for9I1 shared source paths omitted by the original journal record; root checker identified exact coverage gap, runtime tests remain valid.",
+  "paths": [
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/scripts/control_bootstrap.py",
+    "agent-business-core/runtime/scripts/control_local_setup.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/control/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/control/bootstrap.py",
+    "agent-business-core/runtime/src/pinet_core/control/models.py"
+  ],
+  "category": "workflow",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/64",
+  "id": "upgrade-93634733-a871-489a-98a3-70c35af3228e",
+  "branch": "codex/verslomatika-core-integration-plan-20261010",
+  "baseSha": "9e82b6387b6fe8ce9d24bb4f0901d4615fc38e34",
+  "createdAt": "2026-10-10T00:54:23.951Z"
+}

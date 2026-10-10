@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "Actual authenticated Chrome client revision submit at shared day20/20; read six customer surfaces before/after",
+      "result": "PASS",
+      "evidence": "Core source581 includes c8 gate; visible specific agent-day-limit/no-new-job alert, entered critique exact preserved, six-surface SHA2569deb71d6477b908f1d761f849d8356981ddf7a9c25983a2bf4cf9aca12a82799 identical. Historical18attempts36events/latestf702/current_revisionnull unchanged, no provider/worker/newjob. Sealed ignored admission-ui-5810096-specific-limit before/after receipts."
+    },
+    {
+      "command": "Actual read-only viewport proof after rejection, native scroll+freshAX+screenshot",
+      "result": "PASS",
+      "evidence": "Original generic429/retained-input screenshot preserved. Separate mokymai-ai-specific-day-limit-visible-20261010.jpg visibly shows exact specific message with business/status/no-accepted context; director independently inspected original viewport gap and corrected proof. No resubmit during screenshot correction."
+    }
+  ],
+  "note": "Actual UI gate acceptance supplements source46PG proof; original quota baseline failures, historical creation results and unknown costs remain immutable. UI generic too-many-attempts wording corrected by director only for actual429 creation_daily_limit. No quota increase/reset/refund/environment split/provider or automatic model retry. Overall customer business/pipeline remains OPEN at actual20/20 with no accepted NEW revision.",
+  "eventId": "1e4256bf-cf18-45d9-ba94-8cd74fbf2d03",
+  "sequence": 4,
+  "at": "2026-10-10T16:19:45.125Z"
+}

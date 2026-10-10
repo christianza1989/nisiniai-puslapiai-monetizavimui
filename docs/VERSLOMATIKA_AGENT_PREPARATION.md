@@ -146,6 +146,22 @@ aprašai dabar atskiria missing/failed/imported ir kartoja tikrą check reikšm�
 Viešų sąsajos frazių kalba peržiūrėta šaltinyje; dashboard renderinimą ir
 naršyklės priėmimą atskirai atlieka parent/director.
 
+Root integracija: `5466b771` perkeltas kaip `5810096`, `bcea07f6` kaip
+`008439b`. Nepriklausomai paleista 22 offline patikros PASS per 3,05 s ir
+14 restricted PG patikrų PASS per 67,16 s. Pirma bendra offline/PG komanda
+sustojo rinkimo metu dėl vienodų testų failų pavadinimų; nei vienas testas
+nebuvo paleistas. Atskiros numatytos komandos šią vykdymo problemą išsprendė
+be kodo pakeitimo. Galutinė aprašų pataisa atskirai patikrinta: 25 offline
+PASS per 4,12 s, 3 reikšmingos PG delta patikros PASS per 15,09 s, Ruff PASS.
+
+Faktinis esamo kliento GET ties API `5810096` grąžino `200 blocked`, visas
+14 patikrų ir 14 kliūčių, `no_revision`, `not_imported` bei `can_activate=false`.
+Šešių kitų kliento paviršių duomenys prieš ir po tiksliai sutapo; provideris
+nekviestas. Šis originalus kvitas taip pat išsaugo klaidingą teigiamą importo
+aprašą prieš `008439b` pataisą. Pataisyto sujungto API ir dashboardo actual
+priėmimas fiksuojamas atskirai; nei šis skaitymas, nei source testai neįjungė
+aptarnavimo, klientų paieškos, pašto ar kalibravimo.
+
 Atkūrimas: revert tik additive modules/router import+mount, generator,
 contract ir šio inkremento tests/doc. Persistent migracijos, agento/channel
 aktyvavimo ar klientų duomenų pakeitimų nėra. Parent/director atskirai valdo

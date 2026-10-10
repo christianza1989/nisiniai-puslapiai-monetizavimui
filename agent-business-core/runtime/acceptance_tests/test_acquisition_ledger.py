@@ -340,3 +340,50 @@ async def test_capture_refuses_widened_receipt_grants(lane):
     finally:
         async with lane.admin.begin() as tx:
             await tx.execute(text('REVOKE UPDATE ON acquisition_receipts FROM pinet_runtime'))
+
+
+@pytest.mark.asyncio
+async def test_module_grant_repair_preserves_receipts_and_refuses_runtime_delete(lane):
+    from sqlalchemy.exc import DBAPIError
+
+    from pinet_core.acquisition.ledger_schema import TABLES, runtime_grants_sql
+
+    app = capture_app(lane.runtime)
+    body = {**request(lane), 'contract_version': '0.1.1'}
+    del body['recipient_contract_version']
+    original = await post(lane, 'resolve-invitation', body)
+    assert original.status_code == 200
+    async with lane.admin.begin() as tx:
+        before = (await tx.execute(text("SELECT relname,relrowsecurity,relforcerowsecurity FROM pg_class "
+            "WHERE relname IN ('acquisition_campaigns','acquisition_invitations',"
+            "'acquisition_challenges','acquisition_receipts') ORDER BY relname"))).all()
+        for table in TABLES:
+            await tx.execute(text(f'GRANT UPDATE,DELETE ON {table} TO pinet_runtime'))
+    try:
+        with pytest.raises(RuntimeError, match='immutable receipt privileges'):
+            async with app.router.lifespan_context(app):
+                pass
+        for _ in range(2):
+            async with lane.admin.begin() as tx:
+                for statement in runtime_grants_sql():
+                    await tx.execute(text(statement))
+                after = (await tx.execute(text("SELECT relname,relrowsecurity,relforcerowsecurity FROM pg_class "
+                    "WHERE relname IN ('acquisition_campaigns','acquisition_invitations',"
+                    "'acquisition_challenges','acquisition_receipts') ORDER BY relname"))).all()
+                assert after == before
+            async with app.router.lifespan_context(app):
+                async with lane.database.registry() as tx:
+                    for table in TABLES:
+                        assert not await tx.scalar(text(f"SELECT has_table_privilege(current_user,'{table}','DELETE')"))
+                    assert not await tx.scalar(text("SELECT has_table_privilege(current_user,'acquisition_receipts','UPDATE')"))
+        with pytest.raises(DBAPIError) as error:
+            async with lane.database.registry() as tx:
+                await apply_scope(tx, lane.scope, lane.adapter)
+                await tx.execute(text('DELETE FROM acquisition_receipts WHERE business_id=:business'),
+                                 {'business': lane.scope.business_id})
+        assert error.value.orig.sqlstate == '42501'
+        assert (await post(lane, 'resolve-invitation', body)).content == original.content
+    finally:
+        async with lane.admin.begin() as tx:
+            for statement in runtime_grants_sql():
+                await tx.execute(text(statement))

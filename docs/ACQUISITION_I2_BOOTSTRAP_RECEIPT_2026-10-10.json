@@ -1,0 +1,94 @@
+{
+  "version": "0.1.0",
+  "recorded_at": "2026-10-10T04:39:52Z",
+  "status": "OWNED_MODULE_REPAIR_AND_PROPOSED_BOOTSTRAP_PASS",
+  "root_baseline": "ec99263ddb1105963d2d58acae8940cf3dfa5e4d",
+  "i2_source": "120a84ac6afc5b642b71735c2cba0d39acdf6650",
+  "root_pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/59",
+  "i2_pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/69",
+  "export_sha256": {
+    "i2": "1d5822cfb8debf63328da049ee8ecfc95b3f255f8d9599c206f6db4f5023a4bc",
+    "acquisition": "d1facea22cfb6732ea165f7a7e7fa96711ed4946a8a8887a418a3c5b6956c45a"
+  },
+  "original_bootstrap_sha256": "4e41ad5ac23838819d11d152c0244c805128ea762a8053fdaac866c1dfb7f0df",
+  "final_proposed_bootstrap_sha256": "433ad6b5c5c5be785aea25e744ccd367a0bf2b8a7cba0389af45bdd49e860a9b",
+  "final_module_grants_sha256": "278435f1bf366ef2ace1d3dbd922cd686fde3147fcedd72deab744a736cc869e",
+  "final_proposed_patch_sha256": "12734a6ee8a3352c3f89b982c9e7509fa2d1630b711556b6a1fe2064333d3b33",
+  "skill_sha256": "07b9ac55e5b31ca4cbc803d1a8ba021dd34cb5b46e25f3d5bc6b207ea8b6a104",
+  "actual_migration_tip": "0011_control_tasks",
+  "actual_acquisition_ddl": true,
+  "actual_postgresql": true,
+  "actual_0012_migration": false,
+  "normal_shared_bootstrap_changed": false,
+  "owner_adoption": false,
+  "normal_api_mounted": false,
+  "portal_director_adoption": false,
+  "external_sent": false,
+  "control_tables_unchanged": 11,
+  "forced_rls_unchanged": true,
+  "repeated_repair_unchanged": true,
+  "partial_schema_refused": true,
+  "partial_schema_rename_restored": true,
+  "no_dropped_tables": true,
+  "evidence": {
+    "baseline.json": {
+      "sha256": "4eabb41921c815e8f150d16889de2e8f12e7bd7b41268efa57c072f4c598bd14",
+      "status": "REPRODUCED_BLOCKING_GRANT_REGRESSION"
+    },
+    "exclusion-only.json": {
+      "sha256": "43ba523be6880203636cb4974d0fc4fa6a365a9d9ad531dd4c73989ba93aac7b",
+      "status": "EXCLUSION_ONLY_DOES_NOT_REPAIR_EXISTING_GRANTS"
+    },
+    "proposal.json": {
+      "sha256": "2026a8fd752db9da836cb39015e5599650d42ea49c66c7975eded67902c00998",
+      "status": "PROPOSED_COPY_PASS_NOT_OWNER_ADOPTION"
+    },
+    "partial.json": {
+      "sha256": "a8bd7087ad325d4156ef95b67d1f96cc92bf102d312bc9a73fbeff18c634558d",
+      "status": "PARTIAL_SCHEMA_REFUSED_AND_RENAME_RESTORED"
+    },
+    "final-regression-preparation.json": {
+      "sha256": "ed46c14540ac26f230969ef008d18202a36091e9a0ca3d38a375e5968e1ee0c4",
+      "status": "FINAL_REGRESSION_PREPARATION"
+    },
+    "proposal-final.json": {
+      "sha256": "164c7692cb68aff64cda86a41863549da40bfa50d9a760c3ec5c88dcd01c59b7",
+      "status": "PROPOSED_COPY_PASS_NOT_OWNER_ADOPTION"
+    },
+    "partial-final.json": {
+      "sha256": "7ca3b6f9dbdea9afdb18f5cc86151d64804ae29f4389feb56f6351e860b792e4",
+      "status": "PARTIAL_SCHEMA_REFUSED_AND_RENAME_RESTORED"
+    }
+  },
+  "checks": {
+    "targeted_postgresql_tests": 1,
+    "full_postgresql_http_tests": 19,
+    "offline_tests": 50,
+    "offline_subtests": 25,
+    "exact_schema_checks": 4,
+    "scoped_ruff": "PASS",
+    "skill_validation": "PASS",
+    "actual_runtime_receipt_delete_sqlstate": "42501",
+    "byte_identical_receipt_replay": true
+  },
+  "first_failures_preserved": [
+    "Original I2 bootstrap widened receipt grants and blocked startup",
+    "Exclusion-only bootstrap left prior grants and startup blocked",
+    "New regression fixture initially used nonexistent lane.app; corrected test construction",
+    "Proposal RuffI001 import formatting corrected before final actual DB regression"
+  ],
+  "resources": {
+    "capture_postgresql_15439": "STOPPED_RETAINED_RESTART_NO",
+    "review_postgresql_15541": "STOPPED_RETAINED_RESTART_NO",
+    "api_8851": "NO_LISTENER_NOT_STARTED_IN_THIS_BATCH",
+    "daily_worker_started": false
+  },
+  "upgrade_id": "upgrade-c5ebe633-5eb2-44ad-b9fd-5ff417be25ef",
+  "remaining": [
+    "Reserved owner acceptance/application of bootstrap proposal",
+    "Agreed0012 down0011 and normal scoped API/config mount",
+    "One authoritative server-authorized portal/director projection adoption",
+    "Full normal site/core/portal acceptance and typed daily execution",
+    "Ordered LT all-services draft-only discovery and hosted acceptance"
+  ]
+}

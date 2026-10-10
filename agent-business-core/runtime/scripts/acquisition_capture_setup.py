@@ -9,7 +9,7 @@ from sqlalchemy.engine import make_url
 from sqlalchemy.ext.asyncio import create_async_engine
 
 from pinet_core.acquisition.capture_config import capture_config
-from pinet_core.acquisition.ledger_schema import DDL, TABLES, isolation_sql
+from pinet_core.acquisition.ledger_schema import DDL, TABLES, isolation_sql, runtime_grants_sql
 
 
 async def initialize(config):
@@ -32,7 +32,10 @@ async def initialize(config):
             if not present:
                 for statement in (*DDL, *isolation_sql()):
                     await tx.execute(text(statement))
-            await tx.execute(text('REVOKE UPDATE,DELETE ON acquisition_receipts FROM pinet_runtime'))
+            # Namespace exclusion prevents new widening; replay the exact module
+            # policy as well to repair a prior legacy bootstrap on existing tables.
+            for statement in runtime_grants_sql():
+                await tx.execute(text(statement))
             # Full base schema is authoritative; no miniature replacement businesses table.
             await tx.execute(text('GRANT SELECT ON businesses TO pinet_runtime'))
         print('Capture setup PASS: existing migrations through0009 + isolated acquisition DDL; no0012/main mount claim')

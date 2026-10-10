@@ -28,16 +28,27 @@ DDL = (
 )
 
 
+def runtime_grants_sql():
+    """Restore module-owned privileges, including already broadened bootstrap grants.
+
+    Run only for the complete acquisition schema through the trusted migration or
+    bootstrap owner. Does not create tables/policies or authorize an application.
+    """
+    statements = []
+    for table in TABLES:
+        privileges = 'SELECT,INSERT' if table == 'acquisition_receipts' else 'SELECT,INSERT,UPDATE'
+        statements.extend((f'REVOKE ALL ON {table} FROM pinet_runtime',
+                           f'GRANT {privileges} ON {table} TO pinet_runtime'))
+    return statements
+
+
 def isolation_sql():
     statements = []
     for table in TABLES:
         predicate = ' AND '.join(f"{column}=current_setting('pinet.acq_{column}',true)"
                                  for column in ('business_id', 'environment_id', 'site_id',
                                                 'environment_class', 'adapter_id'))
-        privileges = 'SELECT,INSERT' if table == 'acquisition_receipts' else 'SELECT,INSERT,UPDATE'
         statements.extend((f'ALTER TABLE {table} ENABLE ROW LEVEL SECURITY',
                            f'ALTER TABLE {table} FORCE ROW LEVEL SECURITY',
-                           f'CREATE POLICY acquisition_scope ON {table} USING ({predicate}) WITH CHECK ({predicate})',
-                           f'REVOKE ALL ON {table} FROM pinet_runtime',
-                           f'GRANT {privileges} ON {table} TO pinet_runtime'))
-    return statements
+                           f'CREATE POLICY acquisition_scope ON {table} USING ({predicate}) WITH CHECK ({predicate})'))
+    return [*statements, *runtime_grants_sql()]

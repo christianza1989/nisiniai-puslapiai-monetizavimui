@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual isolated current-owner GET with paid runnerOFF reproduces403 customer_text_unavailable. Baseline1FAIL9.36s, logSHA8a10a8d73bb829b3310ff6ea7f3133a5a591fb4032dc3e801936843addc812b5, frozen source unchanged/provider0/channel0/operationalDB untouched. Separate execution flag in guard only for retained historical_authority; all actual owner/source/identity/locks remain. Positive idle/pending history/end and actual auth/module/source/SMTP/voice denial tests added. One multi-file doc-anchor patch attempt rejected without changing source; corrected separate exact patch. Final frozen regression and independent source review pending, API/studio held and full platform OPEN.",
+  "eventId": "3700faf4-cff5-465d-91ce-8b12ae51db1e",
+  "sequence": 2,
+  "at": "2026-10-11T08:25:50.500Z"
+}

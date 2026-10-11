@@ -31,11 +31,11 @@ from ..text_tools import core_arguments
 from . import adapter
 
 
-def guard():
+def guard(*, execution=True):
     cfg = settings()
     if (cfg.control_mode != "local" or not (cfg.environment in {"local", "test"}
             or cfg.environment.startswith("test-")) or not cfg.customer_enabled
-            or not cfg.customer_text_enabled or not cfg.customer_text_runner_enabled
+            or not cfg.customer_text_enabled or (execution and not cfg.customer_text_runner_enabled)
             or cfg.voice_enabled or cfg.smtp_enabled):
         raise ControlError(403, "customer_text_unavailable")
 
@@ -122,7 +122,7 @@ async def historical_identity(tx, session, creation, row, frozen):
 @asynccontextmanager
 async def historical_authority(token, creation_id, conversation_id):
     """Current owner may inspect/end retained history; this grants no provider authority."""
-    guard()
+    guard(execution=False)
     if not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "source_unavailable")
     async with scope(token=token_hash(token)) as tx:

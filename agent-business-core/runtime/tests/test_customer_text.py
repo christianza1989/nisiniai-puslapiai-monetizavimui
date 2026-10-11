@@ -171,6 +171,79 @@ async def test_actual_full_http_start_turn_correction_replay_restart_and_no_chan
     await assert_no_channels(c)
 
 
+@pytest.mark.parametrize("pending", [False, True])
+async def test_retained_history_and_end_work_with_paid_runner_disabled(text_customer, monkeypatch, pending):
+    c = text_customer
+    first = await begin(c)
+    cid, creation_id = first["conversation_id"], c["request"]["creation_id"]
+    if pending:
+        await service.prepare(c["token"], creation_id, cid, turn_value())
+    before, before_events = await stored(c, cid)
+    binding = before.payload["customer_text_binding"]
+    event_ids = {event.id for event in before_events}
+    async with AsyncSession(c["admin"]) as tx:
+        source = await tx.scalar(select(KnowledgeState).where(KnowledgeState.business_id == c["saved"]["business_id"]))
+        source_before = source.refreshed_at, source.payload
+    monkeypatch.setattr(settings(), "customer_text_runner_enabled", False)
+    monkeypatch.setattr(adapter, "runner_ready", lambda: False)
+
+    async def forbidden_provider(*args, **kwargs):
+        raise AssertionError("History and disabled execution must not dispatch a model")
+
+    monkeypatch.setattr(adapter, "run", forbidden_provider)
+    base = f"/customer/v2/creations/{creation_id}"
+    path = f"{base}/text-sessions/{cid}"
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://127.0.0.1:8855") as client:
+        history = await client.get(path, headers=c["auth"])
+        assert history.status_code == 200, history.text
+        assert {event["event_id"] for event in history.json()["data"]["events"]} == event_ids
+        assert history.json()["data"]["need"] == before.payload["need"]
+        unchanged, events = await stored(c, cid)
+        assert (unchanged.payload, unchanged.state, unchanged.owner, unchanged.epoch) == (before.payload, before.state, before.owner, before.epoch)
+        assert {event.id for event in events} == event_ids
+        for method, route, value in (("GET", f"{base}/text-capability", None),
+                ("POST", f"{base}/text-sessions", c["start"].model_dump(mode="json")),
+                ("POST", f"{path}/turns", turn_value().model_dump(mode="json"))):
+            denied = await client.request(method, route, headers=c["auth"], json=value)
+            assert denied.status_code in {403, 503}, denied.text
+            assert denied.json()["code"] != "control_unavailable"
+        ended = await client.post(path + "/end", headers=c["auth"])
+        assert ended.status_code == 200, ended.text
+        assert ended.json()["data"]["state"] == "finalized"
+        assert (await client.get(path, headers=c["auth"])).json()["data"]["state"] == "finalized"
+    after, events = await stored(c, cid)
+    assert after.payload["customer_text_binding"] == binding and after.payload["need"] == before.payload["need"]
+    assert after.state == "finalized" and after.owner is None and after.epoch > before.epoch
+    assert event_ids <= {event.id for event in events}
+    assert not any(event.kind == "provider_usage" for event in events)
+    assert sum(event.kind == "provider_attempt" for event in events) == int(pending)
+    async with AsyncSession(c["admin"]) as tx:
+        source = await tx.scalar(select(KnowledgeState).where(KnowledgeState.business_id == c["saved"]["business_id"]))
+        assert (source.refreshed_at, source.payload) == source_before
+    await assert_no_channels(c)
+
+
+@pytest.mark.parametrize("change", ["module", "smtp", "voice", "source"])
+async def test_runner_disabled_history_still_requires_local_module_and_current_source(text_customer, monkeypatch, change):
+    c = text_customer
+    first = await begin(c)
+    before, before_events = await stored(c, first["conversation_id"])
+    monkeypatch.setattr(settings(), "customer_text_runner_enabled", False)
+    if change == "source":
+        monkeypatch.setattr(adapter, "source_current", lambda: False)
+    else:
+        monkeypatch.setattr(settings(), {"module": "customer_text_enabled", "smtp": "smtp_enabled", "voice": "voice_enabled"}[change], change != "module")
+    path = f"/customer/v2/creations/{c['request']['creation_id']}/text-sessions/{first['conversation_id']}"
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://127.0.0.1:8855") as client:
+        for method, suffix in (("GET", ""), ("POST", "/end")):
+            denied = await client.request(method, path + suffix, headers=c["auth"])
+            assert denied.status_code == (503 if change == "source" else 403), denied.text
+            assert denied.json()["code"] == ("source_unavailable" if change == "source" else "customer_text_unavailable")
+    after, events = await stored(c, first["conversation_id"])
+    assert (after.payload, after.state, after.epoch, [(event.id, event.payload) for event in events]) == (before.payload, before.state, before.epoch, [(event.id, event.payload) for event in before_events])
+    await assert_no_channels(c)
+
+
 @pytest.mark.parametrize("change", ["login", "knowledge_expiry", "conversation_expiry", "readmit",
     "profile_revoke", "registration_revoke", "execution_source", "instructions"])
 async def test_current_owner_history_end_survive_execution_change_without_resuming(text_customer, monkeypatch, change):
@@ -234,10 +307,12 @@ async def test_current_owner_history_end_survive_execution_change_without_resumi
     await assert_no_channels(c)
 
 
+@pytest.mark.parametrize("runner_enabled", [True, False])
 @pytest.mark.parametrize("change", ["foreign_owner", "unknown_conversation", "grant", "membership", "session", "account"])
-async def test_historical_read_and_end_still_deny_foreign_or_revoked_owner(text_customer, change):
+async def test_historical_read_and_end_still_deny_foreign_or_revoked_owner(text_customer, monkeypatch, change, runner_enabled):
     c = text_customer
     first = await begin(c)
+    monkeypatch.setattr(settings(), "customer_text_runner_enabled", runner_enabled)
     cid, auth = first["conversation_id"], c["auth"]
     if change == "foreign_owner":
         _, auth, _ = await verified(c)
@@ -261,6 +336,7 @@ async def test_historical_read_and_end_still_deny_foreign_or_revoked_owner(text_
         for method, suffix in (("GET", ""), ("POST", "/end")):
             reply = await client.request(method, path + suffix, headers=auth)
             assert reply.status_code in {401, 403, 404}, reply.text
+            assert reply.json()["code"] != "customer_text_unavailable"
             assert reply.json()["code"] != "control_unavailable", reply.text
     after, events = await stored(c, first["conversation_id"])
     assert snapshot == (after.payload, after.state, after.epoch, [(e.id, e.payload) for e in events])

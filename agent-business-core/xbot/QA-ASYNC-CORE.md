@@ -26,3 +26,11 @@ Fake price await metu atšauktas grant neleidžia dispatch ar sąnaudų rezervav
 `AsyncModuleAdapter` yra bibliotekos serverio sąsaja; serverio tikrintojas atsakingas už tikras current Session/worker grants ir owned/pin_registration/projection transakcijas. Biblioteka nedubliuoja root auth/CRM/PG/portal. Source blocker po current read grant nėra current evidence patvirtinimas; unavailable/revoked authority negrąžina seno rezultato. Atomic PG↔SQLite lifecycle/commit koordinacija ir actual BFF/customer e2e lieka root priėmimui.
 
 Scope pratęstas į xbot/agent.py per issue91/WORKSTREAMS, nes išorinis Service check negalėtų sustabdyti review kvietimo po pirmo modelio revokacijos. Upgrade `upgrade-241285ea-9d1f-476d-9ae9-9df2d0c3e52a` saugo originalias nesėkmes, šaltinius ir atskirą Git perdavimą. Sinchroninis standalone kelias paliktas; DefaultOFF/liveOFF/biudžetai0 ir nišos kalibravimo bei gyvo kanalo vartai nesikeičia.
+
+## Nepriklausoma siaura peržiūra
+
+2026-10-11 savininko autorizuota platformos sesija `01a122ec-9cfa-79b3-966b-43aa3f39ab58` pranešė užbaigusi read-only implementation `8533b9cc02d389592d5f33f1ce1792b167dc10d1` delta prieš PR90/`4c7fc375338ae3b538a0001226d66da8d11a3e96` peržiūrą, su clean journal HEAD `d2176642216cd983e69c4c21803224a535f6d315`. Jos įvertinimas: papildomų P0–P2 radinių peržiūrėtuose module/service/Agent pakeitimuose nerasta.
+
+Peržiūrėta awaited current resolver sąsaja, po await paimamas laikas ir profilio lygybė, sync-slot/managed-unbound vartai, per-call modelio pre/post patikra ir known usage/provider receipt saugojimas prieš source atmetimą bei SQLite transakcijos nebuvimas per await. Reviewer testų, SQL ir provider veiksmų nevykdė, šaltinio neredagavo. 87 injected testų rezultatas lieka vykdančio agento įrodymas; tai nėra nepriklausomai pakartoti testai ar PG/BFF priėmimas.
+
+Root mapper turi serverio pusėje nustatyti current principal/worker teises, užbaigti PG transakcijas prieš callback grįžimą, išvesti tikslius approved facts/instruction hash ir per-module admission bei atskirai išspręsti authority/commit koordinaciją tarp saugyklų. Main merge, source adoption, kalibravimas ir live kanalas nepriimti. Po šios peržiūros keisti tik jos dokumentavimo ir žurnalo failai; runtime tebėra `8533b9c` turinys.

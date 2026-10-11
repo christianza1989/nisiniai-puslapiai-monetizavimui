@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original missing-route1FAIL6.37s/SHAa8db673e6084b440147c53deb33523dc2fe838ea19ac850c6a8bd0633d5e844b retained. First strict response1FAIL5.96s/SHA8d29c5c943cc88d91f2ee446690763786db9f0c26065cc37675f7182fca18a51 omitted existing safe environment envelope field; corrected only new DTO. Intermediate narrow1PG/26offlinePASS. Independent P2 hidden retained UUID reproduced with actual two same-owner registered businesses, revoked first grant: original1FAIL12.65s/SHAe639c5bc43ca16793d1f089b4fa4fdc60db245ffc5fab608acf1d716b3a0148b returns503 instead409. Added named invariant and exact asyncpg unique-constraint translation after rollback, without hidden row access. Additive0022 private QA empty downgrade/reupgrade PASS; full expanded frozen restrictedPG and offline checks now running, original operationalDB untouched/provider-channel0. New registry drafts/specs never confer module/calibration/execution/channel authority. No final source/adoption/UI PASS yet; fullplatformOPEN.",
+  "eventId": "786b5e30-8652-44ca-9714-11c0731a9b7c",
+  "sequence": 2,
+  "at": "2026-10-11T11:23:03.685Z"
+}

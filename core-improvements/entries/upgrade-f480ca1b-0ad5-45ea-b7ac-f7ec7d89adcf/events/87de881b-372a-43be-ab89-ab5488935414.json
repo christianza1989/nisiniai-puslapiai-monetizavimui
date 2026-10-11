@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "First frozen PG2FAIL34PASS113.04s(logSHAf560e7e09a63c814f6f7667cfd96018694277f89042ec4f797517dd2c272df49) had incorrect fixture revision2 expectation: identical semantic content keeps revision1 while refresh receipt changes; only fixture corrected. Intermediate36PGPASS/46offlinePASS qualified before review. Independent review P2 finalGitwait reproduced two clock-only expiry FAIL15.71s/SHA037d5809cfa4bb27457c1d50c9f0fa82ba80e3a3bd9359193807b40a3c87cb85. Canonical exact admission replay after finalGit closed that gap (38PGPASS71.39s/SHAf4ad96c5062ca94174020db62a849756ee76a6a3255e24b775929254bc525b96). Further prepared-markerfsync expiry reproduced two actual-DB FAIL9.46s/SHA0ff66e7aadf2163989bfecfd0a1f218a8d59ba71e8f6a6ed64f97d7f86905f02. verify_profile now repeats canonical exact admission/actor/Grant/source receipt/TTL after finalGit and after both prepared writes immediately beforecommit; sameID/fingerprint/no extraadmission/noTTL renewal/immutablepreparedbytes. Final40PG+46offline frozenQA/review pending. All original failures/receipts retained; provider/channel0/operationalDB untouched; no full platform/ordinaryUI/targetPC claim.",
+  "eventId": "87de881b-372a-43be-ab89-ab5488935414",
+  "sequence": 3,
+  "at": "2026-10-11T10:35:36.282Z"
+}

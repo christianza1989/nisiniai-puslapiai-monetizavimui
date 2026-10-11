@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original two FAIL receipts dab57dda and4fc1de4f retained; old Request shape preserved via explicit private ScoredRequest, new fixture converts IDs to public service's strings. Exact Scores/instruction/tenchecks legacy hashes unchanged; old default fingerprint/HTTP/corpus/controller/thresholds unchanged. Read-only source review and narrow parser recheck noP0-P2; scoped lint/diff PASS. No actual model or admission claim.",
+  "checks": [
+    {
+      "command": "python -m pytest selected customer offline tests -q",
+      "result": "PASS",
+      "evidence": "170passed5.98s; frozen377inputs/source unchanged; receipt5d9f7f4995f229aeb5f6a53286e0b13261c375d575a05ee96d45e9e54c2c7d08"
+    },
+    {
+      "command": "python -m pytest tests/test_customer_competence.py -q",
+      "result": "PASS",
+      "evidence": "9restrictedPG87.95s; low/critical/replay/default/protected/attribution/revoked/invalid/cancelled; log4302abace11a8478163434cb14b9caec10b8e8ef010de49a7853d50f9f6f0964"
+    },
+    {
+      "command": "python -m pytest tests/test_customer_review.py tests/test_customer_agent_protection.py -q (separate stages)",
+      "result": "PASS",
+      "evidence": "15reviewPG145.19s+12protectionPG115.87s; source unchanged/provider-channel0/opDB untouched; logs2dcda2e1/da864cda"
+    }
+  ],
+  "eventId": "995d5cb1-482b-496e-9424-480f8d923929",
+  "sequence": 4,
+  "at": "2026-10-11T18:46:37.184Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Pirmi 7, po artifact/lock/preflight papildymo 9 nauji actual-model intake testai PASS. Pirmas 2 esamų content-workflow/write-lock regresijų paleidimas FAIL dėl trūkstamo gretimo companion šio naujo worktree konteineryje (ERR_MODULE_NOT_FOUND / ENOENT config); source netaisytas ir FAIL neištrintas. Savas workspace gretimas junction dabar rodo tik į patikrintą canonical companionec8a9c03; regresija kartojama per freshness gate.",
+  "eventId": "861a9811-63ef-4e47-a61f-e51e7e9f7140",
+  "sequence": 2,
+  "at": "2026-10-10T11:45:19.203Z"
+}

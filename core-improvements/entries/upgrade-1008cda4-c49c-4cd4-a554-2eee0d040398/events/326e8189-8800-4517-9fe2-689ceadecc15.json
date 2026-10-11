@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Read-only reviewer P2 at score_evidence.py:32 independently reproduced all list/null/string malformed JSONB artifact roots raising AttributeError; original3FAIL retained in private witness receipt7d38494eb6e68417f7a7e6f686725dce3b898bfe398984438a6713f354e8e489 on source8d7d3a58c0884726dc0a5f07790da8d5db369df1bd75ce4b86a6e1ac93501de5. Frozen first QA completed236offline/43restrictedPG PASS on exact382inputs receipt61eef9738be982156a53abeadf02dd23dae50b85e2e08eae6ffa55aa18a70afe, but does not cover reviewed P2. Source now guards object shape and bounds original paid-input refs before Quality request. Added offline3malformed+guard-only+future-ref and actual PG3malformed HTTP readonly regressions; reserved exact old route inventory now6paths/8methods, old5paths/24schemas unchanged compatibility3d781234. Focused final265offline/11newPG planned; existing35PG cases retain original receipt and unchanged sources. Format moved existing new-test noqa and Ruff initially failed; comment restored to configured argument, no execution changes. No model/channel/opDB calls or old judgment/criteria/corpus/controller/admission changes. Platform OPEN.",
+  "eventId": "326e8189-8800-4517-9fe2-689ceadecc15",
+  "sequence": 3,
+  "at": "2026-10-11T20:29:31.079Z"
+}

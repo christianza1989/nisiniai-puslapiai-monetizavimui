@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Additive preparation.v2 observes canonical RegistrationView and permits runtime observations only for exact binding_current. Missing/stale/revoked/grant_revoked/pending remain unmapped; final concurrent terminal revoke discards prior runtime, changed private payload/intake fails sanitized. Shared revision/intake observation extraction preserves V1 DTO/JSON bytes and source-pin conservatism; calibration wording no longer invents acceptance. Current execution envelope SHA and historical accepted source stay separate. Source window CLOSED for review/safety/commit. No operational migration/binding, profile/session/public-source/channel/provider/budget or launch acceptance. API8860 stillcbc7/schema0015, portal3019 stillV1; new dynamic profile0017 remains separately scoped.",
+  "checks": [
+    {
+      "command": "pytest -q offline_tests/test_agent_preparation_v2.py offline_tests/test_agent_preparation.py offline_tests/test_creation_registration.py",
+      "result": "PASS",
+      "evidence": "82PASS6.24s, strict exact identity/bounds/no unbound observations, native hash/receipt and unchanged V1 JSON SHA89c02974; new V2 contract exact reproducibility/hash0d71d925/25333B."
+    },
+    {
+      "command": "root own isolated two-URL wrapper: pytest -q tests/test_agent_preparation.py tests/test_agent_preparation_v2.py",
+      "result": "PASS",
+      "evidence": "27PASS170.15s; immutable preparation-v2-pg-20261010T174413774493Z.private.json/log, eight source files unchanged, previously bootstrapped distinct synthetic DB/random test environments, native Node intake/synthetic role outputs, provider/channel0. Actual concurrent committed binding/grant revokes return truthful unmapped, changed payload/intake503; legacy V1 remains usable."
+    },
+    {
+      "command": "ruff check src/pinet_core/agent_preparation scripts/customer_agent_preparation_v2_contract.py offline_tests/test_agent_preparation_v2.py tests/test_agent_preparation_v2.py",
+      "result": "PASS",
+      "evidence": "Scoped Ruff all changed/new Python PASS."
+    },
+    {
+      "command": "node agent-business-core/runtime/artifacts/verify_portable_creation_docs.private.mjs; git diff --check",
+      "result": "PASS",
+      "evidence": "3docs/27local links/4actual scripts and source bounds PASS; diff PASS. Setup now documents delivered0016 without operational/target-PC migration claim. Pattern safety follows staged review before commit."
+    }
+  ],
+  "eventId": "9410a9a1-d7d5-49f4-b858-eb2460a22043",
+  "sequence": 2,
+  "at": "2026-10-10T17:49:09.042Z"
+}

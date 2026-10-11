@@ -1,0 +1,26 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/82",
+  "commit": "bcea07f6adbe792c8937306735605c326c9c5f46",
+  "note": "PR82 stacked on PR80 is created and attached. Functional5466b771 delivered separately; root reports independent22offlinePASS3.05s/14restrictedPGPASS67.16s/Ruff and cherry-pick5810096, not main merge. Root actual read200 reproduced original wrong not_imported prose; its immutable ignored receipt preparation-read-20261010T161041692455Z.private.json preserved, 14checks/14blockers/no_revision/not_imported/activationfalse and 6 surfaces unchanged, provider0 (root-owned evidence, not child execution). Minimal supplementalbcea07f corrects only service summaries and adds own regression/budget-read tests/doc; API/contract/auth/gates unchanged. Current parent c8bc851 integrated in own merge8533672, only WORKSTREAMS conflict resolved preserving both histories. Final source paths api.py/control_api.py window remains CLOSED for peer's internal simulation. Journal and WORKSTREAMS metadata separately delivered; no root checkout/runtime/.env/provider/mail/public writes or activation/calibration/launch claim.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_agent_preparation.py -q",
+      "result": "PASS",
+      "evidence": "Final25 PASS2.27s including truth of missing/failed/imported summary vs status; strict exact source/team/scope and both GET-only mount checks retained."
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest tests/test_agent_preparation.py -q (after c8 parent integration); then -k 'no_revision_read or legacy_intake or exhausted_attempt_budget' after summary-only repair",
+      "result": "PASS",
+      "evidence": "Whole15 actual restricted PostgreSQL/RLS PASS61.90s; final3 focused PASS11.36s/12 deselected. Actual native Node intake/shared V2 transport plus synthetic role lifecycle; no provider/channel calls. Exhausted writer429 leaves reader200blocked and Job/session unchanged."
+    },
+    {
+      "command": "Scoped Ruff; git diff --cached --check; node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Supplemental exact4 staged blobs57575B, zero findings; only own service/tests/doc. Canonical unchanged22958LF Git bytes SHA25689c02974b120c164dabc3a29eef5d0f36f974b0119ca6420269c66c6f36c6e0c; old four contracts unchanged."
+    }
+  ],
+  "eventId": "94f74634-ab1c-401f-b552-47cf4dd12881",
+  "sequence": 7,
+  "at": "2026-10-10T16:14:21.247Z"
+}

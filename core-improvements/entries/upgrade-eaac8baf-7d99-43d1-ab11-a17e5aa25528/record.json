@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual ordinary UI reply recognizes explicit synthetic customer wishes but leaves all proposed need fields empty; clarify mandatory changed-field need.patch in the local text prompt",
+  "category": "prompt",
+  "evidence": [
+    "Ordinary ef6161af/e90 actual one-provider-call witness SHA81231e3414876c575f878f1220018d39a4848d11b81f454c3f56c883aff209e6 preserves need_revision0/empty; model reply distinguishes wishes from business promises",
+    "Current customer_text/adapter.py makes need.patch optional even for explicit current client fields; fixed customer-profile conversation instruction says record only client-supplied information"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_text/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_customer_text.py",
+    "agent-business-core/runtime/docs/CUSTOMER_TEXT.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped local prompt revert and clean source re-pin; actual empty-need result remains unchanged. No handwritten need, model switch, language correction or shared profile mutation.",
+  "id": "upgrade-eaac8baf-7d99-43d1-ab11-a17e5aa25528",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "e90e3f1315accaddb459f3ac5934b3befae02bcd",
+  "createdAt": "2026-10-11T07:13:07.287Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final provider-only URL schema/policy correction,202relatedofflinePASS7.62s/scopedRuffPASS. Correct source URL format is exposed to model while exact existing public_url/host/credential/port and historical bare?/# behavior remain unchanged. Creator medium/reviewlow candidate/no retry/auth/tool/receipt/language gates remain; original job08c1aa7b completed creator but failed before reviewer. No provider/live adoption in this event; next actual UI trial determines effectiveness.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest -q offline_tests/test_creation_content_plan.py offline_tests/test_creation_adapter.py offline_tests/test_creation_review.py offline_tests/test_creation_language_patch.py offline_tests/test_creation_studio.py",
+      "result": "PASS",
+      "evidence": "Final202PASS7.62s; original6FAIL, pre-refinement200PASS and historical-compatibility2FAIL retained separately."
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/creation/renderer.py src/pinet_core/creation/adapter.py offline_tests/test_creation_content_plan.py",
+      "result": "PASS",
+      "evidence": "Import order corrected; all checks passed, no DB/API or historical payload mutation."
+    }
+  ],
+  "eventId": "25752899-da05-4a40-aaa6-62d9989ebaac",
+  "sequence": 3,
+  "at": "2026-10-10T19:29:32.976Z"
+}

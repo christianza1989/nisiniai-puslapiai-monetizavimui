@@ -21,11 +21,34 @@ test('HTTP upload optimizes once, attaching one image includes all variants, and
   const page=await model.addPage(site.id,{type:'home',slug:'',title:'Privatus bandymas',description:'Bandymo turinys',intent:'Test',body:[{type:'paragraph',text:'Tai tik izoliuotas turinio sistemos testas. Vaizdų importas nepatvirtina turinio, nuosavybės ar viešo publikavimo. Šis tekstas nepatenka į tikrą svetainę.'}]});
   await model.editPage(site.id,page.id,{media:[{id:imported.id}]});
   assert.equal((await model.getSite(site.id)).pages[0].media.length,5);
+  for(const variant of [imported.id,imported.variants.find(v=>v.width===360).id]){
+   await model.editPage(site.id,page.id,{body:[...page.body,{type:'image',assetId:variant}]});
+   const before=JSON.stringify(await model.getSite(site.id));
+   const preview=await fetch(`http://127.0.0.1:4326/preview/${site.id}/${page.id}`);
+   assert.equal(preview.status,200);assert.equal(preview.headers.get('x-robots-tag'),'noindex, nofollow');assert.equal(preview.headers.get('cache-control'),'no-store');
+   const html=await preview.text();assert.equal((html.match(/<img /g)||[]).length,1,'body family must not also become hero');
+   assert.match(html,/srcset="[^"]*360w[^"]*1600w/);assert.match(html,/loading="eager" fetchpriority="high"/);
+   assert.equal(JSON.stringify(await model.getSite(site.id)),before,'preview cannot mutate draft or approval');
+  }
+  const duplicate=await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:'Originalus bandomasis vaizdas',rights:'Synthetic test only'},bytes);
+  await model.editPage(site.id,page.id,{media:[{id:imported.id},{id:duplicate.id}]});
+  const duplicateBefore=JSON.stringify(await model.getSite(site.id));
+  const duplicateHtml=await (await fetch(`http://127.0.0.1:4326/preview/${site.id}/${page.id}`)).text();
+  assert.equal((duplicateHtml.match(/<img /g)||[]).length,1,'reimported same-alt/aspect family must not become another hero');
+  assert.equal(JSON.stringify(await model.getSite(site.id)),duplicateBefore);
+  await model.editPage(site.id,page.id,{media:[{id:imported.id}]});
   const other=await model.addPage(second.id,{type:'home',slug:'',title:'Kitas',description:'Kitas',intent:'Test'});
   await assert.rejects(()=>model.editPage(second.id,other.id,{media:[{id:imported.id}]}),/nepriklauso/);
   assert.equal(model.packageForSite(await model.getSite(site.id)).pages.length,0);
   await model.approvePage(site.id,page.id,'test-asset-review');const before=model.packageForSite(await model.getSite(site.id)).pages[0].revisionHash;
   const extra=[await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:'Kita kompozicija',rights:'Synthetic test only'},bytes)];
+  const inline=await model.addPage(site.id,{type:'guide',slug:'/inline-preview',title:'Inline test',description:'Private preview only',intent:'Test',body:[{type:'image',assetId:imported.id},{type:'image',assetId:extra[0].id}]});
+  await model.editPage(site.id,inline.id,{media:[{id:imported.id},{id:extra[0].id}]});
+  const inlineHtml=await (await fetch(`http://127.0.0.1:4326/preview/${site.id}/${inline.id}`)).text();
+  assert.equal((inlineHtml.match(/<img /g)||[]).length,2);assert.equal((inlineHtml.match(/loading="eager"/g)||[]).length,1);assert.equal((inlineHtml.match(/loading="lazy"/g)||[]).length,1);
+  await model.editPage(site.id,inline.id,{body:[{type:'image',assetId:imported.id}]});
+  const distinctHero=await (await fetch(`http://127.0.0.1:4326/preview/${site.id}/${inline.id}`)).text();
+  assert.equal((distinctHero.match(/<img /g)||[]).length,2);assert.equal((distinctHero.match(/loading="eager"/g)||[]).length,1);assert.equal((distinctHero.match(/loading="lazy"/g)||[]).length,1);
   assert.equal(model.packageForSite(await model.getSite(site.id)).pages[0].revisionHash,before);
   for(let i=0;i<3;i++)extra.push(await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:`Limitų kompozicija ${i}`,rights:'Synthetic test only'},bytes));
   const exported=await model.exportPackage(site.id),pkg=JSON.parse(await readFile(exported.path,'utf8'));validateContentPackage(pkg);
@@ -39,14 +62,14 @@ test('HTTP upload optimizes once, attaching one image includes all variants, and
   await model.editPage(site.id,rich.id,{media:[{id:imported.id},...extra.map(a=>({id:a.id}))]});
   await model.approvePage(site.id,rich.id,'test-rich-media-review');
   const richExport=await model.exportPackage(site.id),richPackage=JSON.parse(await readFile(richExport.path,'utf8'));
-  validateContentPackage(richPackage);assert.equal(richPackage.pages[1].media.length,25);assert.equal(richExport.assets,25);
+  validateContentPackage(richPackage);assert.equal(richPackage.pages.find(p=>p.id===rich.id).media.length,25);assert.equal(richExport.assets,25);
   const schema=JSON.parse(await readFile(new URL('../schemas/content-package.schema.json',import.meta.url),'utf8'));
   assert.equal(schema.$defs.page.properties.media.maxItems,model.MAX_PAGE_MEDIA);assert.equal(model.MAX_PAGE_MEDIA,60);
-  const richHash=richPackage.pages[1].revisionHash;
+  const richHash=richPackage.pages.find(p=>p.id===rich.id).revisionHash;
   for(let i=0;i<8;i++)extra.push(await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:`Ribos kompozicija ${i}`,rights:'Synthetic test only'},bytes));
   await assert.rejects(()=>model.editPage(site.id,rich.id,{media:[{id:imported.id},...extra.map(a=>({id:a.id}))]}),/60/);
-  assert.equal((await model.getSite(site.id)).pages[1].media.length,25);
-  assert.equal(model.packageForSite(await model.getSite(site.id)).pages[1].revisionHash,richHash);
+  assert.equal((await model.getSite(site.id)).pages.find(p=>p.id===rich.id).media.length,25);
+  assert.equal(model.packageForSite(await model.getSite(site.id)).pages.find(p=>p.id===rich.id).revisionHash,richHash);
  }finally{await new Promise(r=>server.close(r));}
 });
 test.after(async()=>{await rm(root,{recursive:true,force:true});});

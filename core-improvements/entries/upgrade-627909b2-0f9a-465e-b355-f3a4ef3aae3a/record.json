@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Native V2 writer exists but accepted customer creation has no bounded authenticated GUIDE job, real content critic/coordinator or live projection.",
+  "category": "code",
+  "evidence": [
+    "content-studio/scripts/customer-content-write.mjs",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_work",
+    "agent-business-core/runtime/migrations/versions/0015_content_work.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/scripts/customer_content_work_contract.py",
+    "agent-business-core/runtime/scripts/customer_content_work_worker.py",
+    "agent-business-core/runtime/offline_tests/test_content_work_review.py",
+    "agent-business-core/runtime/tests/test_content_work.py",
+    "content-studio/scripts/customer-content-write.mjs",
+    "content-studio/test/customer-content-write.test.mjs",
+    "docs/contracts/verslomatika-customer-content-work.openapi.json",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert own scoped GUIDE source; downgrade0015 only in stopped isolated DB after preserving private job evidence.",
+  "id": "upgrade-627909b2-0f9a-465e-b355-f3a4ef3aae3a",
+  "branch": "codex/verslomatika-guide-work-20261010",
+  "baseSha": "59ab28418c59ee82267386f54feddcefc1f42609",
+  "createdAt": "2026-10-10T13:11:23.686Z"
+}

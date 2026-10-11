@@ -1,0 +1,29 @@
+{
+  "summary": "Priimta kliento sukūrimo versija neturi patvaraus administratoriaus patikrinto ryšio su Business ir portfelio teise",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6099793550",
+  "category": "code",
+  "rollback": "Scoped functional revert and administrative0016 downgrade after stopping new reader; preserve Business/Grant and all0015 history.",
+  "evidence": [
+    "cbc7ad139b800eea82c126d590bd46babe9e3350 creation/models.py:75; bootstrap.py:39; agent_preparation/wire.py:50 and service.py:127; fresh merged base7341a77a95eaf4b5d7c345cccf38181be4d86b16"
+  ],
+  "siteId": "core",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation_registration",
+    "agent-business-core/runtime/migrations/versions/0016_creation_registration.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/src/pinet_core/control/models.py",
+    "agent-business-core/runtime/src/pinet_core/models.py",
+    "agent-business-core/runtime/src/pinet_core/creation/models.py",
+    "agent-business-core/runtime/src/pinet_core/control/bootstrap.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/scripts/customer_creation_registration.py",
+    "agent-business-core/runtime/tests/test_creation_registration.py",
+    "agent-business-core/runtime/offline_tests/test_creation_registration.py",
+    "agent-business-core/runtime/docs/CUSTOMER_CREATION_REGISTRATION.md"
+  ],
+  "id": "upgrade-ae1e89f0-6fcb-4883-bfcc-8c3614d3fa76",
+  "branch": "codex/verslomatika-creation-registration-20261010",
+  "baseSha": "7341a77a95eaf4b5d7c345cccf38181be4d86b16",
+  "createdAt": "2026-10-10T16:39:50.265Z"
+}

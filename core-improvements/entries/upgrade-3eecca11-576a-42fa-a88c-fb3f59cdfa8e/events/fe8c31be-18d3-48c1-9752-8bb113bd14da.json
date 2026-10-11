@@ -1,0 +1,21 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/86",
+  "commit": "5704f3dc6148429183a016c6fa47371ee40ed27a",
+  "note": "Draft PR86 created and attached, GitHub observed OPEN/MERGEABLE/CLEAN at head5704f3dc. Functional f82157d and metadata e32aa30 remain separate. Parent completed read-only exact-source review with no remaining material matcher issue and owns the functional integration. To avoid a broad multiple-merge-base PR comparison, own checkout integrated only the frozen agreed parent4e53a8e, resolving only WORKSTREAMS by retaining both histories. All seven functional blobs remain identical to f82157d; no moving root ref merged. Canonical handoff successful at 2026-10-10T16:59:49Z private main7af6b964/public main ec8a9c0, clean source. PR diff independently inspected: exact seven functional paths plus own five journal files and WORKSTREAMS append. Source review/branch delivery is not main merge, live deployment, NEW customer mapping, inbox or calibration acceptance. Parent runtime credentials/processes and provider/mail activation remain untouched.",
+  "checks": [
+    {
+      "command": "git diff --name-only f82157d HEAD -- <the seven scoped functional paths>",
+      "result": "PASS",
+      "evidence": "No differences after frozen-parent integration; Git source identity preserved."
+    },
+    {
+      "command": "gh pr view 86 --json url,state,isDraft,headRefOid,baseRefName,mergeable,mergeStateStatus,files",
+      "result": "PASS",
+      "evidence": "Observed OPEN, draft, MERGEABLE/CLEAN, exact head5704f3dc6148429183a016c6fa47371ee40ed27a, base codex/verslomatika-customer-creation-20261010; 13 scoped paths with only own WORKSTREAMS additions and new journal files beyond seven functional paths."
+    }
+  ],
+  "eventId": "fe8c31be-18d3-48c1-9752-8bb113bd14da",
+  "sequence": 5,
+  "at": "2026-10-10T17:01:39.587Z"
+}

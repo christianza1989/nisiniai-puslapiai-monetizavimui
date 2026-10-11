@@ -11,7 +11,7 @@ from sqlalchemy import func, select, text
 from . import agent_instructions, budget, customer_language, memory, policy, profiles
 from . import knowledge as knowledge_store
 from .config import settings
-from .contracts import ContactInput, KnowledgeQuery, MemoryRecall, NeedPatch, Start, ToolCall
+from .contracts import ContactInput, KnowledgeQuery, MemoryRecall, NeedPatch, Start, StartV2, ToolCall
 from .db import db
 from .models import (
     Admission,
@@ -50,6 +50,8 @@ async def conversation(tx, conversation_id, token=None, epoch=None):
     item = await tx.scalar(select(Conversation).where(Conversation.id == conversation_id).with_for_update())
     if not item:
         raise HTTPException(404, "conversation unavailable")
+    if item.payload.get("transport") == "customer-text.v1":
+        raise HTTPException(409, "customer_text_transport_required")
     if token is not None and (not hmac.compare_digest(item.token_hash, digest(token)) or item.expires_at < utcnow()):
         raise HTTPException(401, "session expired or invalid")
     if epoch is not None and (item.epoch != epoch or not item.lease_until or item.lease_until < utcnow()):
@@ -82,14 +84,19 @@ async def enqueue(tx, convo, kind):
                    conversation_id=convo.id, kind=kind))
 
 
-async def start(item, data: Start, simulation=False):
+async def start(item, data: Start | StartV2, simulation=False):
     cfg = settings()
-    knowledge = data.knowledge
+    v2 = isinstance(data, StartV2)
+    if v2 and (not simulation or not cfg.allow_simulation
+               or not (cfg.environment in {'local', 'test'} or cfg.environment.startswith('test-'))):
+        raise HTTPException(403, 'local simulation only')
+    knowledge = None if v2 else data.knowledge
     profile = profiles.get(item.site_id, item.canonical_host)
     from .adaptive_instructions import selected
     release = selected(item.site_id)
     prompt = release.prompt
-    knowledge_store.validate(item, knowledge)
+    if not v2:
+        knowledge_store.validate(item, knowledge)
     if data.mode == "simulation" and not simulation:
         raise HTTPException(403, "simulation is internal only")
     if not simulation and (item.site_id != "traktoriupadangos" or not cfg.voice_ready):
@@ -98,7 +105,9 @@ async def start(item, data: Start, simulation=False):
         raise HTTPException(503, "disable_simulation_before_live_voice")
     request_id = str(data.request_id)
     token = hmac.new(cfg.worker_secret.encode(), f"{item.id}:{cfg.environment}:{request_id}".encode(), hashlib.sha256).hexdigest()
-    fingerprint = digest(json.dumps({"pages": [p.projection_hash for p in knowledge.pages],
+    source_identity = ({'knowledge_ref': data.knowledge_ref.model_dump(mode='json')} if v2
+                       else {"pages": [p.projection_hash for p in knowledge.pages]})
+    fingerprint = digest(json.dumps({**source_identity,
                                     "profile_hash": digest(prompt),
                                     "notice": data.notice_version, "mode": data.mode, "remember": data.remember,
                                     "memory": digest(data.memory_token or "")}, sort_keys=True))
@@ -110,6 +119,7 @@ async def start(item, data: Start, simulation=False):
             raise HTTPException(409, 'site_source_not_admitted')
         await tx.execute(text("SELECT pg_advisory_xact_lock(724930)"))
         authority, policy_revision = await policy.require(tx, simulation=simulation)
+        v2_source = await knowledge_store.reference_v2(tx, item, data.knowledge_ref) if v2 else None
         previous = await tx.scalar(select(Conversation).where(Conversation.payload["start_request_id"].astext == request_id))
         if previous:
             if previous.payload["start_fingerprint"] != fingerprint or previous.state == "finalized":
@@ -123,7 +133,8 @@ async def start(item, data: Start, simulation=False):
             return {"conversation_id": previous.id, "session_token": token, "state": previous.state,
                     "test": simulation, "memory_token": memory_token, "memory_max_age": cfg.retention_days * 86400}
         visitor, memory_token = await memory.attach(tx, item, data, request_id)
-        await knowledge_store.register(tx, item, knowledge)
+        if not v2:
+            await knowledge_store.register(tx, item, knowledge)
         if not simulation:
             active = select(Admission).where(Admission.environment_id == cfg.environment,
                                               Admission.expires_at > utcnow())
@@ -148,7 +159,8 @@ async def start(item, data: Start, simulation=False):
         convo = Conversation(id=cid, **scope(item), case_id=case_id, token_hash=digest(token),
                              visitor_id=visitor.id if visitor else None,
                              expires_at=utcnow() + timedelta(seconds=cfg.session_seconds + 1800),
-                             state="created", payload={"knowledge": knowledge.model_dump(mode="json"),
+                             state="created", payload={**(v2_source or {
+                                 "knowledge": knowledge.model_dump(mode="json")}),
                              "notice_version": data.notice_version, "test": simulation,
                              "start_request_id": request_id, "start_fingerprint": fingerprint,
                              "policy_revision": policy_revision,
@@ -169,8 +181,9 @@ async def finalize(tx, convo):
     convo.state = "finalized"
     convo.lease_until = utcnow()
     await add_event(tx, convo, "finalized", "finalized", {})
-    await enqueue(tx, convo, "analysis")
-    await enqueue(tx, convo, "quality")
+    if convo.payload.get("transport") != "customer-text.v1":
+        await enqueue(tx, convo, "analysis")
+        await enqueue(tx, convo, "quality")
     # End only the live slot; daily inference reservation remains conservative.
     slot = await tx.get(Admission, convo.id)
     if slot:
@@ -226,8 +239,15 @@ async def submit_contact(tx, convo, data: ContactInput):
 
 
 async def patch_need(tx, convo, data: NeedPatch):
-    profile = profiles.get(convo.payload["knowledge"]["site_id"], convo.payload["knowledge"]["canonical_host"])
-    if set(data.fields) - profile.need_fields:
+    if convo.payload.get("transport") == "customer-text.v1":
+        from .customer_profile.instructions import NEED_FIELDS
+        if tuple(convo.payload.get("need_fields", ())) != NEED_FIELDS:
+            raise HTTPException(409, "invalid_customer_text_profile")
+        allowed = frozenset(NEED_FIELDS)
+    else:
+        profile = profiles.get(convo.payload["knowledge"]["site_id"], convo.payload["knowledge"]["canonical_host"])
+        allowed = profile.need_fields
+    if set(data.fields) - allowed:
         raise HTTPException(422, "field_not_allowed_for_business_profile")
     if data.base_revision != convo.need_revision:
         raise HTTPException(409, "stale_need_revision")

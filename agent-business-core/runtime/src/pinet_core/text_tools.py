@@ -31,15 +31,20 @@ class ContactCall(Strict):
     arguments: Strict
 
 
-def turn_schema(site_id, event_id, revision):
+def need_call_schema(need_fields, event_id, revision):
+    """Schema fields supplied by a maintained server profile, never by a client."""
     field = create_model('NeedField', __base__=Strict,
-        field=(Literal[tuple(sorted(PROFILES[site_id].need_fields))], ...),
+        field=(Literal[tuple(sorted(need_fields))], ...),
         value=(str, Field(max_length=500)))
     arguments = create_model('NeedArguments', __base__=Strict,
         base_revision=(Literal[revision], ...), evidence_event_id=(Literal[event_id], ...),
         fields=(list[field], Field(min_length=1, max_length=20)))
-    need_call = create_model('NeedCall', __base__=Strict,
+    return create_model('NeedCall', __base__=Strict,
         name=(Literal['need.patch'], ...), arguments=(arguments, ...))
+
+
+def turn_schema(site_id, event_id, revision):
+    need_call = need_call_schema(PROFILES[site_id].need_fields, event_id, revision)
     return create_model('TextTurn', __base__=Strict,
         reply=(str, Field(max_length=4000)),
         calls=(list[need_call | KnowledgeCall | ContactCall | MemoryCall], Field(max_length=3)))

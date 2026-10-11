@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Native GUIDE calibration source acceptance:73 offline PASS0.30s, scoped Ruff PASS, independent readonly noP0–P2; isolated restricted PostgreSQL/native Node25PASS156.68s, migration/bootstrap PASS, frozen source unchanged/provider0/operational DB untouched. Receipt guide-continuation-pg-20261011T032832881655Z.private.json. Initial nonexistent language-test invocation ran no tests; an immutable witness read during intentionally stopped API failed connection refused and will be retried after adoption. Actual third-guide acceptance, editorial release and native customer render remain pending; language paused/UNVERIFIED, no history/counter reset or malformed-output repair. Overall platform OPEN.",
+  "checks": [
+    {
+      "command": "python -m pytest -q tests/test_native_guide_protocol.py tests/test_content_continuation_offline.py",
+      "result": "PASS",
+      "evidence": "73PASS0.30s; canonical duplicate/unknown/wrong-kind/wrong-status/missing rejection preserves raw reports, exact changed instruction hash blocks old continuation."
+    },
+    {
+      "command": "Scoped Ruff and git diff --check",
+      "result": "PASS",
+      "evidence": "Four exact native Python source/test paths clean; no unrelated source change."
+    },
+    {
+      "command": "artifacts/run_guide_continuation_pg.private.py",
+      "result": "PASS",
+      "evidence": "25PASS156.68s in distinct empty restricted QA DB; migration/bootstrap and sourcefreeze PASS; provider0 and operational DB untouched."
+    },
+    {
+      "command": "Independent exact source diff review",
+      "result": "PASS",
+      "evidence": "No additional P0–P2; canonical evidence and bounded prompt/roles/gates retained. Semantic actual provider result remains UNVERIFIED."
+    }
+  ],
+  "eventId": "3be686e5-67c6-4db9-933c-88eb0ab3a7db",
+  "sequence": 2,
+  "at": "2026-10-11T03:31:59.719Z"
+}

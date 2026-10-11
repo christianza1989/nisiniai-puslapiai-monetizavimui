@@ -1,0 +1,164 @@
+// Server-only prepare/apply bridge. It never invokes a model, verifies evidence or publishes.
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { pathToFileURL } from 'node:url';
+import path from 'node:path';
+import { stableV2, normalizeV2Blocks, inlineNodes, bodyPlainText } from '../src/content-package-v2.mjs';
+import { loadEditorialSkill, buildEditorialPrompt } from '../src/editorial-skill.mjs';
+import { workflowOverview } from '../src/content-workflow.mjs';
+import { researchContext } from '../src/seo-research.mjs';
+import { loadCustomerContentContext } from './customer-content-context.mjs';
+
+const VERSION = 'customer-content-write.v1';
+const sha = value => createHash('sha256').update(value).digest('hex');
+const digest = value => sha(stableV2(value));
+const fail = code => { throw Object.assign(new Error(code), { code }); };
+const object = value => value && typeof value === 'object' && !Array.isArray(value);
+const hash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
+const boundedText = (value, minimum, maximum) => typeof value === 'string' && value.trim().length >= minimum && value.length <= maximum;
+const native = JSON.parse(readFileSync(new URL('../schemas/content-package.v2.schema.json', import.meta.url), 'utf8'));
+
+// The provider supports nested anyOf, not native oneOf. Required singleton tags
+// make these branches disjoint, so this transport projection preserves their set.
+// The canonical native validator below remains authoritative for actual writes.
+function nativeUnion(name, tag, allowed = null) {
+  const branches = native.$defs[name].oneOf.filter(branch => !allowed || allowed.includes(branch.properties[tag].const));
+  const tags = branches.map(branch => branch.properties[tag]?.const);
+  if (tags.some(value => typeof value !== 'string') || new Set(tags).size !== branches.length
+      || branches.some(branch => !branch.required.includes(tag))) fail('writer_native_union_invalid');
+  const projected = structuredClone(branches);
+  for (const branch of projected) {
+    branch.properties[tag].type = 'string';
+    if (branch.properties.level) {
+      if (!branch.properties.level.enum?.every(Number.isInteger)) fail('writer_native_union_invalid');
+      branch.properties.level.type = 'integer';
+    }
+  }
+  return { anyOf: projected };
+}
+const target = nativeUnion('target', 'kind', ['page', 'external']);
+// uri is outside the provider's supported formats. Preserve the native HTTPS
+// pattern/lengths; normalizeV2Blocks and verified-URL admission still validate it.
+delete target.anyOf.find(branch => branch.properties.kind.const === 'external').properties.url.format;
+export const writerOutputSchema = {
+  type: 'object', additionalProperties: false, required: ['title', 'description', 'intent', 'body', 'factChecks'],
+  properties: {
+    title: { type: 'string', minLength: 1, maxLength: 160 },
+    description: { type: 'string', minLength: 30, maxLength: 220 },
+    intent: { type: 'string', minLength: 10, maxLength: 300 },
+    body: { type: 'array', minItems: 1, maxItems: 300, items: { $ref: '#/$defs/block' } },
+    factChecks: { type: 'array', maxItems: 30, items: { type: 'string', minLength: 1, maxLength: 600 } },
+  },
+  $defs: { block: nativeUnion('block', 'type'), inline: nativeUnion('inline', 'type'), target },
+};
+const task = `Parenk pilną naudingą šio puslapio juodraštį svetainės kalba pagal jo konkretų klausimą ir visą planningBrief.
+Grąžink tik pateiktos native V2 JSON schemos title, description, intent, body ir factChecks. Leidžiami tik tikros V2 schemos blokai; neatkurk V1 blocks formato, HTML, JS ar tariamų įrankių.
+Pradėk aiškiu atsakymu, pateik konkrečius pasirinkimo kriterijus ar aiškiai pažymėtą pavyzdį, paaiškink ribas. Neišgalvok vykdymo, kainų, ekspertų, klientų, kontaktų, datų ar atsisiuntimų.
+businessProposal ir sourceCandidates yra hipotezės bei nepatikrinti kandidatai. verifiedFacts – tik atskirai pateikti verslo duomenys, o ne nepriklausomas išorinių teiginių įrodymas. Neišspręstą faktą praleisk tekste ir tiksliai nurodyk factChecks.
+Vidinės rich nuorodos naudoja tik pateiktus tikrus tos pačios svetainės pageId. Išorinė rich nuoroda galima tik į existingVerifiedExternalUrls. Kandidato URL nėra perskaityto šaltinio įrodymas. Naujos commerce nuorodos neleidžiamos. Image blokas gali naudoti tik jau priskirtą page.media assetId; promptas nėra vaizdas.
+Neįrašyk atliktos šaltinių, vaizdų, redakcinės, SEO/GEO ar publikavimo patikros, kurios neatlikai. Nekelk publikavimo, approval, release ar deployment laukų. Po rašymo atskirai perskaityk visą tekstą, pataisyk kalbą ir išsaugok faktinę prasmę. Ši saviredakcija nesukuria bendro workflow review ar PASS.`;
+
+async function loadContext(input) {
+  if (!object(input) || !['prepare', 'validate', 'apply'].includes(input.command)) fail('writer_invalid_identity');
+  const { site, page, model, proposal, intake, manifest, manifestBytes, mapping, siteId } = await loadCustomerContentContext(input, { requirePage: true, intakePageOnly: true });
+  if (!page.planningBrief) fail('writer_planning_brief_required');
+  const brief = model.normalizePlanningBrief(page.planningBrief);
+  if (brief.path !== mapping.path) fail('writer_page_binding_mismatch');
+  const skill = await loadEditorialSkill('draft');
+  const research = researchContext(site);
+  // Assessment time is volatile; exact evidence bytes and actual usable/stale
+  // states are context. A changed research snapshot requires fresh preparation.
+  const { assessedAt, ...researchSnapshot } = research;
+  // The prompt and its exact creator hash use the same meaningful snapshot.
+  // Every prepare still evaluates freshness; wall-clock assessment metadata
+  // must not invalidate otherwise identical retained content feedback.
+  skill.researchSnapshots.set(`${site.id}:${site.canonicalHost}:${site.locale}`, researchSnapshot);
+  const researchSnapshotHash = digest(researchSnapshot);
+  const instructionHash = sha(skill.instructions + '\n' + task + '\n' + stableV2(writerOutputSchema));
+  const expectedRevisionHash = model.revisionHash(page), expectedPlanningHash = model.planningContextHash(page), expectedSiteHash = model.studioContextHash(site);
+  const expectedContextHash = digest({ manifestHash: sha(manifestBytes), siteId, pageId: page.id,
+    expectedRevisionHash, expectedPlanningHash, expectedSiteHash, researchSnapshotHash, instructionHash });
+  return { model, site, page, brief, intake, proposal, manifest, skill, instructionHash,
+    expectedRevisionHash, expectedPlanningHash, expectedSiteHash, expectedContextHash, researchSnapshotHash };
+}
+
+function validateOutput(value, context) {
+  const { site, page } = context;
+  if (!object(value) || Object.keys(value).length !== 5 || ['title', 'description', 'intent', 'body', 'factChecks'].some(key => !(key in value))
+      || !boundedText(value.title, 1, 160) || !boundedText(value.description, 30, 220) || !boundedText(value.intent, 10, 300)
+      || !Array.isArray(value.body) || !value.body.length || value.body.length > 300 || Buffer.byteLength(stableV2(value)) > 200000
+      || !Array.isArray(value.factChecks) || value.factChecks.length > 30 || value.factChecks.some(note => !boundedText(note, 1, 600))) fail('writer_output_invalid');
+  let body;
+  try { body = normalizeV2Blocks(value.body); } catch { fail('writer_output_invalid'); }
+  if (!bodyPlainText(body).trim()) fail('writer_output_invalid');
+  const verified = new Set((page.externalLinks || []).filter(item => item.verified === true).map(item => item.url));
+  for (const node of inlineNodes({ body })) {
+    if (node.type !== 'link') continue;
+    if (node.target.kind === 'page') {
+      if (node.target.pageId === page.id || !site.pages.some(item => item.id === node.target.pageId && item.siteId === site.id && item.status !== 'revoked')) fail('writer_unknown_link');
+    } else if (node.target.kind !== 'external' || !verified.has(node.target.url)) fail('writer_unverified_external_link');
+  }
+  if (body.some(block => block.type === 'image' && !page.media.some(asset => asset.id === block.assetId))) fail('writer_unknown_asset');
+  // The full public page validator also requires a known operator/contact snapshot.
+  // Private writing may proceed with those unknowns; native rich/body and real IDs
+  // are validated here, and canonical review/approval retains every public gate.
+  const factChecks = [...new Set([...(page.factChecks || []), ...value.factChecks])];
+  if (factChecks.length > 40 || factChecks.some(note => !boundedText(note, 1, 600))) fail('writer_notes_overflow');
+  return { ...value, body, factChecks };
+}
+
+export async function customerContentWrite(input) {
+  // Authentication, current creation/job/lease fencing and provider budgets are caller responsibilities.
+  const context = await loadContext(input);
+  const { model, site, page, brief } = context;
+  const binding = { version: VERSION, creationId: input.creationId, acceptedRevision: input.acceptedRevision,
+    sourceHash: input.sourceHash, canonicalHost: input.canonicalHost, siteId: site.id, pageId: page.id,
+    expectedRevisionHash: context.expectedRevisionHash, expectedPlanningHash: context.expectedPlanningHash,
+    expectedContextHash: context.expectedContextHash, instructionHash: context.instructionHash,
+    researchSnapshotHash: context.researchSnapshotHash,
+    fullF1: 'UNVERIFIED', launch: 'UNVERIFIED', deployment: 'not-performed' };
+  if (input.command === 'prepare') {
+    const siteData = { id: site.id, domain: site.canonicalHost, locale: site.locale, timezone: site.timezone,
+      name: site.name, offer: site.offer, audience: site.audience, verifiedFacts: context.intake.verifiedFacts,
+      currentSiteFacts: site.facts, contact: site.contact, operatorName: site.operatorName,
+      businessProposal: context.proposal.business, assumptions: context.proposal.assumptions,
+      openQuestions: context.proposal.open_questions, sourceCandidates: context.proposal.research,
+      inventory: site.pages.filter(item => item.status !== 'revoked').map(item => ({ pageId: item.id, type: item.type,
+        path: item.type === 'home' ? '/' : '/' + item.slug + '/', title: item.title, intent: item.intent,
+        hasApprovedRevision: Boolean(item.publishedRevision), revisionHash: model.revisionHash(item) })) };
+    const pageData = { pageId: page.id, title: page.title, description: page.description, intent: page.intent, body: page.body,
+      planningBrief: brief, sourceQueries: page.sourceQueries, sourceCandidates: brief.source_urls,
+      existingVerifiedExternalUrls: (page.externalLinks || []).filter(item => item.verified).map(item => item.url),
+      externalLinks: page.externalLinks, media: page.media, editorial: page.editorial, factChecks: page.factChecks,
+      pillarPageId: page.pillarPageId, linkSuggestions: page.linkSuggestions, links: page.links };
+    return { ...binding, state: 'prepared', siteData, pageData, outputSchema: writerOutputSchema,
+      instructions: buildEditorialPrompt(context.skill, { mode: 'draft', instruction: task, siteData, pageData }),
+      instructionMetadata: context.skill.metadata, workflow: workflowOverview(site, model.revisionHash) };
+  }
+  if (!hash(input.expectedRevisionHash) || !hash(input.expectedPlanningHash) || !hash(input.expectedContextHash)
+      || input.expectedRevisionHash !== context.expectedRevisionHash || input.expectedPlanningHash !== context.expectedPlanningHash
+      || input.expectedContextHash !== context.expectedContextHash) fail('writer_context_stale');
+  const output = validateOutput(input.output, context);
+  if (input.command === 'validate') {
+    // The caller reviews these exact normalized bytes before any private mutation.
+    const candidate = { ...output, factChecks: input.output.factChecks };
+    return { ...binding, state: 'validated', output: candidate, outputHash: digest(candidate) };
+  }
+  const updated = await model.editPage(site.id, page.id, output, { expectedRevisionHash: context.expectedRevisionHash,
+    expectedPlanningHash: context.expectedPlanningHash, expectedSiteHash: context.expectedSiteHash });
+  return { ...binding, state: 'private-draft-written', observedAt: new Date().toISOString(), outputHash: digest(input.output),
+    appliedRevisionHash: model.revisionHash(updated), appliedPlanningHash: model.planningContextHash(updated),
+    approval: 'not-performed', sourceVerification: 'not-performed', mediaVerification: 'not-performed',
+    workflow: await model.getContentWorkflow(site.id) };
+}
+
+if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
+  try {
+    const chunks = []; let size = 0;
+    for await (const chunk of process.stdin) { size += chunk.length; if (size > 500000) fail('writer_input_too_large'); chunks.push(chunk); }
+    process.stdout.write(JSON.stringify(await customerContentWrite(JSON.parse(Buffer.concat(chunks).toString('utf8')))) + '\n');
+  } catch (error) {
+    process.stderr.write(JSON.stringify({ version: VERSION, state: 'failed', code: /^[a-z_]{1,80}$/.test(error.code || '') ? error.code : 'writer_failed' }) + '\n');
+    process.exitCode = 1;
+  }
+}

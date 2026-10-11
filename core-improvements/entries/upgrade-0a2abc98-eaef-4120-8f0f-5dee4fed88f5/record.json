@@ -1,0 +1,21 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Studio preview duplicates a responsive image by picking a sibling variant as hero when the family is already used in the body.",
+  "category": "code",
+  "evidence": [
+    "Actual native customer operator DOM18861 on clean47fe6f7 contained two loaded identical images; public native renderer showed one. Preserved private screenshots and exact release286aee89."
+  ],
+  "paths": [
+    "content-studio/src/server.mjs",
+    "content-studio/test/media-import.test.mjs",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6105478667",
+  "rollback": "Scoped revert and clean owned studio restart; original customer packages and approvals untouched.",
+  "id": "upgrade-0a2abc98-eaef-4120-8f0f-5dee4fed88f5",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "47fe6f7172c17bca5867c9942a1fa5882817352c",
+  "createdAt": "2026-10-11T04:35:44.365Z"
+}

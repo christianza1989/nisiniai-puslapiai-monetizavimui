@@ -1,0 +1,8 @@
+{
+  "status": "fixing",
+  "note": "Final source language review found a real summary defect in functional5466b771: checks_for emits private_intake FAIL/not_imported or intake_failed but reused the positive 'Matomas istorinis ... importas' summary. Status/code/scope remain correct, yet visible prose could imply a nonexistent import. Original source retained in5466 and root's first read may preserve that observation; no raw/old evidence changed. Correct only own service summary branches to missing/failed/imported truth and readable source/session language. Add meaningful summary/status regression and post-parent-c8 exhausted-budget reader case. Contract fields/bytes, API mounts, eligibility/auth/gates and all existing source remain unchanged. c8 parent integration conflicted only WORKSTREAMS and both entries retained in merge8533672; no parent checkout/runtime edits. No provider/channel/source activation.",
+  "checks": [],
+  "eventId": "07acbc77-bf02-4421-86a1-e34720247e9d",
+  "sequence": 6,
+  "at": "2026-10-10T16:11:06.639Z"
+}

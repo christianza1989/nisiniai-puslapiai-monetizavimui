@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Frozen first customer review source QA:68offlinePASS7.53s/logSHAbd6a891fc473782b5d82d2343959364194978ca246d74185c7eb3a20552bb2aa; PG15PASS4FAIL187.88s/logSHAec9eec653783008dea8f60d143f4a69563d5a7088761d31d9414d34360fffc21. Four fake successful output constructors omitted required improvement_hint, corrected only fixture; original assertions retained. Independent readonly review identified two P2: Sol catalogue metadata missing, cancellation during known usage settlement. Reproduced separately before fixes: catalogue1FAIL3.14s/SHA18e10aefe6df453559d1e4da07da14c1d1d51dd3ccf6f26edf6163c2c8281fa2; settlement1FAIL17.04s/SHA2cbb70b5d204fd112c8483e87d80207fe177ef358f86f8c69d7df619831f1798. First combined baseline collection failed import-name mismatch(exit4, zero tests/provider) SHA12dda35cba5384c9a577ee8c3f314d7bc6b7002818691c573f1d34b06c7972ce; separated processes without source/gate change. Fix reuse pinned creation review arguments/profile and freeze/recheck profile/hash before attempts; one shielded settlement finishes known usage on cancellation, no model retry. Added catalogue/evaluator changed-during-wait and final-source-wait Session expiry regressions. All original receipts retained, isolated QA only/provider-channel0/operationalDB untouched. Final frozen regression in progress; not actual model/activation/calibration/UI/platform acceptance.",
+  "eventId": "c02c9ef4-a220-4f63-a611-ac69316a011d",
+  "sequence": 2,
+  "at": "2026-10-11T14:50:42.545Z"
+}

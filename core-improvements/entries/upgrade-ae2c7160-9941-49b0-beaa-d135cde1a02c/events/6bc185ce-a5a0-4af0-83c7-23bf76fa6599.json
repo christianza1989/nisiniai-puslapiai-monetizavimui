@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Draft stacked PR87 created against codex/verslomatika-customer-creation-20261010 and attached to task. Functional exact21 b3bf7d1c270df44da893a2109a7b07e101e0ba9b pushed after final root61PG+11suppPASS, own66offline/Ruff/diff/safetyPASS. Own append-only metadata follows separately; no functional source mutation. Parent owns source cherry-pick and combined operational adoption; no profile/customer/channel/calibration or platform-completion claim.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/87",
+  "commit": "b3bf7d1c270df44da893a2109a7b07e101e0ba9b",
+  "eventId": "6bc185ce-a5a0-4af0-83c7-23bf76fa6599",
+  "sequence": 6,
+  "at": "2026-10-10T18:50:07.300Z"
+}

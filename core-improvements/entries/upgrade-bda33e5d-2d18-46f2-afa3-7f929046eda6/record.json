@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Customer creator returns website draft without a typed query-to-URL content plan or a shared studio handover; subsequent content readiness cannot be inspected.",
+  "category": "workflow",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py@23e01b2",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/offline_tests/test_creation_content_plan.py",
+    "agent-business-core/runtime/offline_tests/test_creation_studio.py",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of customer plan and studio adapter; preserve all original revisions, private intake artifacts and actual failure receipts.",
+  "id": "upgrade-bda33e5d-2d18-46f2-afa3-7f929046eda6",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "23e01b22b375463674651b5b52c1bd8f9133ec34",
+  "createdAt": "2026-10-10T11:47:35.101Z"
+}

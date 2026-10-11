@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original changed-profile assertions against895:5FAIL2PASS2.54s (critic/coordinator model/effort and missing Luna metadata). Restored all three new dispatch roles Luna/medium with absent verbosity override and exact original Luna+Sol catalogue; Sol object unchanged. Explicit labelled historical Sol QA attempts retain mixed-history/downgrade gates. No0018/HTTP/hydration/sharedGUIDE changes; owned operational API stopped,34charged history preserved.",
+  "eventId": "36efdc29-1466-4baa-9429-a2632fbdfcfb",
+  "sequence": 2,
+  "at": "2026-10-10T21:23:04.495Z"
+}

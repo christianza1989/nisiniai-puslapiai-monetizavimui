@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Scoped implementation commit 2a979531a1760dcdb37440ff04070ba4e4da0717 pushed and PR84 created, attached to task; independent parent review precedes main merge. Docs-only, no companion interfaces or runtime changes.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/84",
+  "eventId": "fabba8b7-f15c-478b-b95d-0d9d86cd561c",
+  "sequence": 3,
+  "at": "2026-10-10T16:26:20.486Z"
+}

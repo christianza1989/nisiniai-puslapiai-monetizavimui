@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Read-only exact current owner/tenant/session/source/revision preparation projection implemented with shared native intake/team/profile/knowledge/onboarding helpers. Legacy private Revision is explicitly unreviewed, not three-role accepted. Same-host owned grant remains unbound candidate. Final actual checks use only own fresh QA database and fixed synthetic role outputs: no provider/mail/live operations, migration, default client facts, activation or calibration claims. Initial Ruff import-format failure, first 10 actual PG failures (SELECT-only row locks and fresh bootstrap grants), and later WORKSTREAMS trailing blank-line diff failure retained; fixed only own files/new QA maintained bootstrap without expanding runtime privileges. Parent/root runtime and all historical failures remain untouched. Source code observations of customer V2 session admission stay separate from a future internal-only simulation transport.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_agent_preparation.py -q",
+      "result": "PASS",
+      "evidence": "18 PASS in 2.68s; native exact hash/receipt/host, expiry/revocation/V1, actual profile/role fragments, strict unknown/false readiness and exact team hash checks; docs/VERSLOMATIKA_AGENT_PREPARATION.md"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest tests/test_agent_preparation.py -q",
+      "result": "PASS",
+      "evidence": "14 PASS in 76.89s on separate isolated PostgreSQL restricted runtime/RLS, maintained native Node intake and V2 begin/batch/commit. Tests prove legacy vs actual synthetic three-role/language exact acceptance, revision transition/stale/source/receipt, account/session/owner/tenant isolation and in-flight grant/source/host changes; docs/VERSLOMATIKA_AGENT_PREPARATION.md"
+    },
+    {
+      "command": "PYTHONPATH=src python -m ruff check src/pinet_core/agent_preparation offline_tests/test_agent_preparation.py tests/test_agent_preparation.py scripts/customer_agent_preparation_contract.py src/pinet_core/control_api.py",
+      "result": "PASS",
+      "evidence": "All scoped checks passed; central full api.py change is only one additive import and router mount, existing source unchanged otherwise. Canonical contract generated from actual Pydantic model, LF22958 bytes SHA256 89c02974b120c164dabc3a29eef5d0f36f974b0119ca6420269c66c6f36c6e0c. Existing customer creation/team/content/content-work wire bytes unchanged."
+    }
+  ],
+  "eventId": "92071e9e-cfd7-4cf2-80c9-a960d4f51586",
+  "sequence": 4,
+  "at": "2026-10-10T15:54:17.382Z"
+}

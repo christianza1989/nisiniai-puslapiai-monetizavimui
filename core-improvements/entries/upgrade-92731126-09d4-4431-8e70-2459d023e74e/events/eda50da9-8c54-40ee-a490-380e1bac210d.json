@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual native customer prose href escaped localhost; initial presentation regression6PASS1FAIL1979ms retained. First changed full public62PASS5157ms; independent review then found //pathname could change a validated commerce destination. Maintained projected-commerce regression0PASS1FAIL770ms retained; final guard preserves such URLs absolute. Full public63PASS2592ms after fix; canonical projection/package remains untouched. Clean source build/current-customer navigation and SEO smoke follow separately.",
+  "eventId": "eda50da9-8c54-40ee-a490-380e1bac210d",
+  "sequence": 2,
+  "at": "2026-10-11T04:43:44.663Z"
+}

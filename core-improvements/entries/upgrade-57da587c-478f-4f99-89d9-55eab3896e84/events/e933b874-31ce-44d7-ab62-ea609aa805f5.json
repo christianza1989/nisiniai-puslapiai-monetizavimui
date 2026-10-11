@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "After verified draftPR80 delivery32c930a and metadata-only own adoption7592a19583f93dc04a105684bbc4716bde61b38ebccf4dca4aed8cc252407d18, first actual holdout preflight failed before any preparation/DB/model. Original frozen manifestbb17339c has corpusSHA1114c42a computed by original helper sorted UTF8 spaced JSON, whereas compact canonical cases digest0c24cf14 differs for identical six case objects. Original actual preflightFAIL witnessSHAe18fce63c7d8dd65ccd5679c3fd9c76c1ba5ac9aece6ad787c35996aeb9afa46 proves every operational row/schema unchanged, providers/channels0. Focused source compatibility test failed before fix1FAIL4.13s/logSHA87cf323ddd2a6d5aac9f62f221749589e36b97560b3c249f32a613fa0b1ff042/receiptSHA59826966abca9ec7198a90808d95e870b074ad74b4770cb1e1027a8f7f9e0757. Narrow scope6111629721 reopens only private manifest digest-scheme compatibility + focused tests/own evidence. Explicit supported spaced scheme preserves original cases/splits/corpusSHA; compact default unchanged and unknown/changed schemes reject. No original bytes/fingerprints/events/accounting/criteria/controller change. Corrected frozen compatibility QA pending; actual holdouts still0, no automatic paid retry or calibration/admission/activation claim.",
+  "eventId": "e933b874-31ce-44d7-ab62-ea609aa805f5",
+  "sequence": 7,
+  "at": "2026-10-11T17:23:57.122Z"
+}

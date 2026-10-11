@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "First actual isolated PostgreSQL run10 FAIL46.37s: source_unavailable from SELECT-only registry row-lock attempts, and fresh DB lacked maintained bootstrap grants for businesses. Corrected new readiness code to retain SELECT-only membership/grant privileges with final current-authority/grant rereads; no authorization grant or migration broadening. Own fresh QA runs existing bootstrap.py after migrations, restricted app role/no parent DB touched. Corrupt native candidate policy/source errors remain explicit503, no empty/ready fallback. Original offline17PASS and actual10FAIL tool receipts retained; canonical version and behavior unchanged.",
+  "eventId": "845f291f-cc7f-4a1b-9a34-344ddf6e7afe",
+  "sequence": 3,
+  "at": "2026-10-10T15:39:24.729Z"
+}

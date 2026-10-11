@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Conversation postcall Outbox Message-ID is absent from the maintained mail reply registry, so replies cannot continue in the same Conversation/Case",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/jobs.py:381 durable Outbox dispatch and Message-ID only",
+    "agent-business-core/runtime/src/pinet_core/mail_reader.py:70 accepted outbound MailMessage-only matcher",
+    "agent-business-core/runtime/src/pinet_core/mailbox.py:178 inbound receipt updates Case but not Conversation",
+    "root source cbc7ad139b800eea82c126d590bd46babe9e3350 read-only audit; no live mail"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/conversation_mail.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/mail_reader.py",
+    "agent-business-core/runtime/src/pinet_core/mailbox.py",
+    "agent-business-core/runtime/tests/test_conversation_mail.py",
+    "agent-business-core/runtime/offline_tests/test_mail_thread_matching.py",
+    "docs/VERSLOMATIKA_CONVERSATION_MAIL.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only the scoped functional commit; preserve immutable historical mail and reply receipts, never resend uncertain deliveries",
+  "id": "upgrade-3eecca11-576a-42fa-a88c-fb3f59cdfa8e",
+  "branch": "codex/verslomatika-conversation-mail-20261010",
+  "baseSha": "b7118d80cc91f3a1425a8a775f91dcb2e1d85b6d",
+  "createdAt": "2026-10-10T16:30:50.629Z"
+}

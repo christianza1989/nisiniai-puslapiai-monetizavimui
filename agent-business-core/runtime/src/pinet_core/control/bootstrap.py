@@ -8,6 +8,43 @@ from .models import BusinessGrant, Membership, Organization, Portfolio, User
 from .routes import password_hash, password_matches
 
 
+async def registration_lock(tx):
+    """One database transaction lock for the maintained administrative registry writers."""
+    await tx.execute(text("SELECT pg_advisory_xact_lock(618234819)"))
+
+
+async def registered_business(tx, *, site_id, canonical_host, allow_new=False, business_id=None):
+    business = await tx.scalar(select(Business).where(Business.site_id == site_id))
+    if not business:
+        if not allow_new or business_id:
+            raise ValueError("business_mapping_unverified")
+        business = Business(site_id=site_id, canonical_host=canonical_host)
+        tx.add(business)
+        await tx.flush()
+    elif business.canonical_host != canonical_host or (business_id and business_id != business.id):
+        raise ValueError("business_mapping_conflict")
+    return business
+
+
+async def registered_grant(tx, *, environment, organization_id, portfolio_id, business_id,
+                           display_name, evidence_revision):
+    grant = await tx.scalar(select(BusinessGrant).where(BusinessGrant.environment_id == environment,
+                                                      BusinessGrant.business_id == business_id))
+    if grant:
+        if (grant.organization_id != organization_id or grant.portfolio_id != portfolio_id
+                or not grant.enabled or grant.display_name != display_name
+                or grant.evidence_revision != evidence_revision):
+            raise ValueError("business_grant_conflict")
+    else:
+        grant = BusinessGrant(environment_id=environment, organization_id=organization_id,
+            portfolio_id=portfolio_id, business_id=business_id, display_name=display_name,
+            evidence_revision=evidence_revision, stage=None, connection_status="registered",
+            runtime_status="not_connected", last_verified_activity_at=None, enabled=True)
+        tx.add(grant)
+        await tx.flush()
+    return grant
+
+
 async def bootstrap(tx, *, environment, username, password, organization_key, organization_name,
                     portfolio_name, entries, allow_new_businesses=False):
     if environment != "local" and not environment.startswith("test-"):
@@ -18,7 +55,7 @@ async def bootstrap(tx, *, environment, username, password, organization_key, or
             or len(portfolio_name) > 200 or len(entries) > 100):
         raise ValueError("invalid_bootstrap")
     # Serialize all bootstrap writers in this database. No distributed file lock or UUID replacement.
-    await tx.execute(text("SELECT pg_advisory_xact_lock(618234819)"))
+    await registration_lock(tx)
     user = await tx.scalar(select(User).where(User.environment_id == environment, User.username == username))
     if user and (not user.enabled or not password_matches(password, user.password_hash)):
         raise ValueError("credential_conflict")
@@ -59,28 +96,12 @@ async def bootstrap(tx, *, environment, username, password, organization_key, or
                 or not re.fullmatch(r"[a-f0-9]{40}", entry["evidence_revision"])):
             raise ValueError("invalid_registry_entry")
         seen.add(site)
-        business = await tx.scalar(select(Business).where(Business.site_id == site))
-        if not business:
-            if not allow_new_businesses or entry.get("business_id"):
-                raise ValueError("business_mapping_unverified")
-            business = Business(site_id=site, canonical_host=host)
-            tx.add(business)
-            await tx.flush()
-        elif business.canonical_host != host or (entry.get("business_id") and entry["business_id"] != business.id):
-            raise ValueError("business_mapping_conflict")
-        grant = await tx.scalar(select(BusinessGrant).where(BusinessGrant.environment_id == environment,
-                                                            BusinessGrant.business_id == business.id))
-        if grant:
-            if (grant.organization_id != organization.id or grant.portfolio_id != portfolio.id
-                    or not grant.enabled or grant.display_name != entry["display_name"]
-                    or grant.evidence_revision != entry["evidence_revision"]):
-                raise ValueError("business_grant_conflict")
-        else:
-            # Source evidence proves registration, not deployment/runtime/activity/business stage.
-            tx.add(BusinessGrant(environment_id=environment, organization_id=organization.id,
-                                portfolio_id=portfolio.id, business_id=business.id, display_name=entry["display_name"],
-                                evidence_revision=entry["evidence_revision"], stage=None, connection_status="registered",
-                                runtime_status="not_connected", last_verified_activity_at=None, enabled=True))
+        business = await registered_business(tx, site_id=site, canonical_host=host,
+            allow_new=allow_new_businesses, business_id=entry.get("business_id"))
+        # Registration evidence is distinct from deployment/runtime/activity/business stage.
+        await registered_grant(tx, environment=environment, organization_id=organization.id,
+            portfolio_id=portfolio.id, business_id=business.id, display_name=entry["display_name"],
+            evidence_revision=entry["evidence_revision"])
         ids.append(business.id)
     await tx.flush()
     return {"user_id": user.id, "organization_id": organization.id, "portfolio_id": portfolio.id,

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Approved native V2 niche packages cannot be admitted or rendered on their host: admission accepts only gift lt-LT and proxy rejects niche V2 after V1 lookup.",
+  "category": "code",
+  "evidence": [
+    "public ec8a9c032fe926d1d9722802d8eb26fa8bd02937 scripts/content-v2-admission.mjs gift-only guard; proxy.ts Unsupported content renderer; lib/niche-sites.ts schemaVersion1 filter"
+  ],
+  "paths": [
+    "proxy.ts",
+    "scripts/content-v2-admission.mjs",
+    "app/niche/[siteId]/[[...slug]]/page.tsx",
+    "components/content/rich-content.tsx",
+    "lib/content-page-seo.ts"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/26",
+  "rollback": "Scoped public PR revert; existing gift/V1 compatibility wrappers preserve original APIs. No package activation or migration.",
+  "id": "upgrade-435d81b9-7250-4323-83b4-c0569f33639b",
+  "branch": "codex/verslomatika-content-writer-20261010",
+  "baseSha": "2a8abe03e9e6d7d8842be324b187244061cbfe1d",
+  "createdAt": "2026-10-10T12:49:35.480Z"
+}

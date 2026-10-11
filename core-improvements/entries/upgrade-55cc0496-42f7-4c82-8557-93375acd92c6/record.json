@@ -1,0 +1,22 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Disabling paid customer text runner also hides retained owned history and blocks finalization",
+  "category": "code",
+  "evidence": [
+    "Clean ba891b1 customer_text/service.py historical_authority calls paid guard, which rejects customer_text_runner_enabled=false before current-owner history checks; scope6107077410"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/tests/test_customer_text.py",
+    "agent-business-core/runtime/docs/CUSTOMER_TEXT.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of separated history guard; preserve every conversation, event, need, source receipt and usage. No capability, provider or channel activation.",
+  "id": "upgrade-55cc0496-42f7-4c82-8557-93375acd92c6",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "ba891b1aaebcc65d72b5248eaaf59e6bf82822a7",
+  "createdAt": "2026-10-11T08:21:45.399Z"
+}

@@ -1,0 +1,27 @@
+{
+  "siteId": "verslomatika",
+  "category": "code",
+  "summary": "Continue the latest exact-context failed native GUIDE candidate with fresh bounded independent review",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104281576",
+  "evidence": [
+    "Actual customer UI native GUIDE d205 completed six successful roles across two rounds but retained review_limit/no apply. A repeated ordinary job currently resets previous_candidate and critic_feedback to null instead of using retained practical content feedback.",
+    "Base d87762f99521ccc397801c3367a0dad73398d95a; paired fresh main7af6b964/publicec8a9c03. Terminal receipt SHAaa8ab76156891bd3785a127119db85d7c5fc34f4940759d34d3537a16d3762ef; independent six raw output/trace hash matches. Paused language is UNVERIFIED, not acceptance."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_work/worker.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/continuation.py",
+    "agent-business-core/runtime/tests/test_content_work.py",
+    "agent-business-core/runtime/tests/test_content_continuation_offline.py",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md",
+    "agent-business-core/runtime/src/pinet_core/content_work/adapter.py"
+  ],
+  "rollback": "Scoped revert between jobs. Existing failed jobs, candidates, traces, immutable accepted revisions and charged history stay intact; no manual acceptance or DB downgrade.",
+  "id": "upgrade-3556fa4b-28fe-4a15-8a40-c22b86003e70",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "d87762f99521ccc397801c3367a0dad73398d95a",
+  "createdAt": "2026-10-11T01:41:05.250Z"
+}

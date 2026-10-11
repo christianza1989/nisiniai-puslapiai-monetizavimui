@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Real separate-role executor adapter and immutable per-attempt quota/timeline implemented; actual Codex3role/UI trial not yet started. Original98PASS/3FAIL then105PASS/1FAIL retained: UUID/string reviewed-revision binding, empty-error receipt fallback and missing FAIL tuple element fixed. Independent audit cancellationmutex/deadline/observed-usage findings reproduced and fixed. No external deployment, domain or mail enabled.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest tests/test_creation_team.py tests/test_customer_creations.py offline_tests/test_creation_review.py offline_tests/test_creation_adapter.py offline_tests/test_control_codex.py offline_tests/test_creation_team_controller.py -q",
+      "result": "PASS",
+      "evidence": "106passed101.49s; actual isolated PG/RLS lifecycle plus synthetic owned child-process transport"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/creation src/pinet_core/tasks/codex_transport.py migrations/versions/0014_creation_team.py scripts/customer_team_contract.py scripts/customer_creation_worker.py tests/test_creation_team.py offline_tests/test_creation_team_controller.py",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/migration_creation.private.py",
+      "result": "PASS",
+      "evidence": "Own empty rehearsal head→0012→head exit0; private logs kept"
+    }
+  ],
+  "eventId": "408efd16-ced0-4e62-aed1-7d9dc02bf512",
+  "sequence": 2,
+  "at": "2026-10-10T11:33:03.694Z"
+}

@@ -1,0 +1,18 @@
+{
+  "siteId": "verslomatika",
+  "category": "code",
+  "summary": "Export the strict current content-completion wire for the isolated customer UI",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104532556",
+  "evidence": [
+    "Director source-only gap inspection requested provisional OpenAPI instead of a duplicated hand-authored validator. Root current DTO distinguishes live current workflow from immutable intake/write and keeps file/count observations from quality claims."
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/customer_content_completion_contract.py",
+    "docs/contracts/verslomatika-customer-content-completion.openapi.json"
+  ],
+  "rollback": "Remove this scoped exporter and contract; existing historical DTO contracts and runtime data remain unchanged.",
+  "id": "upgrade-33b028e5-f92c-4166-abf6-46ff99835cc0",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "5062b0040a634065e1ef746e7428b5dd8c1a811c",
+  "createdAt": "2026-10-11T02:16:19.797Z"
+}

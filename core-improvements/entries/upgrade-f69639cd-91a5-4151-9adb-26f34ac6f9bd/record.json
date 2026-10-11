@@ -1,0 +1,35 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Customer add-agent discovery has no durable purpose/config/revision/idempotent save and reopen surface; operator business-planner API cannot install a customer module",
+  "category": "code",
+  "evidence": [
+    "Owner direct2026-10-11 add-agent question; authorized portal actual add-agent API inventory on23967db4",
+    "Source7997d31 customer control routes have no customer agent configuration endpoint; baseline to be preserved before implementation"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/models.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/wire.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/routes.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/contract.py",
+    "agent-business-core/runtime/migrations/versions/0022_customer_agent_configs.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/tests/test_customer_agents.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agents.py",
+    "docs/contracts/verslomatika-customer-agents.openapi.json",
+    "docs/CUSTOMER_AGENTS.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Disable new default-OFF module config flag; scoped source revert. Populated additive migration downgrade must refuse retained config loss; no historical/provider/other-agent changes.",
+  "id": "upgrade-f69639cd-91a5-4151-9adb-26f34ac6f9bd",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "7997d31d15ab277e2cb63d4294b4f070f88b84f1",
+  "createdAt": "2026-10-11T11:00:22.985Z"
+}

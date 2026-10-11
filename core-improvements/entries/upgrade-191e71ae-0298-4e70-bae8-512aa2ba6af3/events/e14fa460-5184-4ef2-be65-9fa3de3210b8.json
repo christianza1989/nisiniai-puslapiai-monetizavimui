@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original actual GET404 retained. New fullAPI inventory regression failed1test5.17s before fix, missing maintained GETcompletion route. Fixed only import/include; control-only routes and source/approval/read authority unchanged.",
+  "eventId": "e14fa460-5184-4ef2-be65-9fa3de3210b8",
+  "sequence": 2,
+  "at": "2026-10-11T05:59:19.967Z"
+}

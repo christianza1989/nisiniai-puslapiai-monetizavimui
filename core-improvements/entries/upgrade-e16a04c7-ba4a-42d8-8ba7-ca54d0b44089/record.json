@@ -1,0 +1,25 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Retained customer text history and end cannot be accessed after a legitimate login or execution snapshot expiry; separate current-owner history authority without enabling paid execution",
+  "category": "code",
+  "evidence": [
+    "Clean e90 source customer_text/service.py authority/binding/locked/status/end and customer_profile/service.py receipt TTL behavior; independent read-only review2026-10-11",
+    "Ordinary ef6161af one-call UI/reload/end scoped witness SHA81231e3414876c575f878f1220018d39a4848d11b81f454c3f56c883aff209e6; expired-profile409 retained separately"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/tests/test_customer_text.py",
+    "agent-business-core/runtime/docs/CUSTOMER_TEXT.md",
+    "docs/VERSLOMATIKA_CUSTOMER_PROFILE.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert and clean owned source pin; preserve every original conversation/binding/event/admission and usage receipt. No paid authority relaxation.",
+  "id": "upgrade-e16a04c7-ba4a-42d8-8ba7-ca54d0b44089",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "e90e3f1315accaddb459f3ac5934b3befae02bcd",
+  "createdAt": "2026-10-11T07:13:01.345Z"
+}

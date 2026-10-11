@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Final immutable original-Event discovery/privacy gates locally verified. All original protection failures retained. Final ordinary1FAIL4PASS and diagnostic212fc0885e7edac9ed515ce7d60195fd641d30cff814cce35650cb3ee5a9c483 prove all10ID/payload maps equal, original transcripts unchanged, canonical sequences unique. Only test_customer_review.py replay witness ordering corrected under scope6111524252; production exactly unchanged. Final independent readonly noP0-P2; no reviewer tests/models. HTTP/OpenAPI unchanged, providers-channels0, operationalDB untouched, source/protected inputs exact. Clean delivery/own adoption/actual model/UI separate; Scores/comparison/admission/activation/fullplatform remain OPEN.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_customer_agent_protection.py offline_tests/test_customer_agent_lab.py offline_tests/test_customer_quality.py offline_tests/test_customer_review.py offline_tests/test_customer_text.py offline_tests/test_customer_agent_evidence.py -q",
+      "result": "PASS",
+      "evidence": "150passed8.44s; logSHA48386198b2bebb7e30b6af0a8c878847f4dacee26484479453aebb2e148f12e5; final frozen receiptSHA9cd498b1931c8b76f42dc0852ad08f064cea92f4214e9c3d2b58fbeb3468c328"
+    },
+    {
+      "command": "python -m pytest tests/test_customer_agent_protection.py -q",
+      "result": "PASS",
+      "evidence": "11passed182.36s; logSHA6cd202fbcdec49d7a87d3884f8cce4d9da46a3a3820c6e5da0e7ae227dddf9bb; same final frozen receipt"
+    },
+    {
+      "command": "python -m pytest tests/test_customer_quality.py::test_existing_quality_issue_candidate_static_lifecycle_is_reused_without_learning tests/test_customer_review.py::test_actual_existing_quality_lifecycle_and_exact_replay_have_no_extra_model_calls tests/test_customer_review.py::test_existing_optional_attribution_is_accounted_as_a_second_fixed_call tests/test_customer_agent_lab.py::test_exact_saved_task_drives_local_episode_and_replay_has_no_extra_attempt tests/test_customer_text_history.py::test_server_discovers_original_history_after_fresh_login_with_runner_off -q",
+      "result": "PASS",
+      "evidence": "5passed90.71s; logSHA3a3bbb1c22adfe23a78d22aee0778033b6beffcbe06615169cbebf54abb48df3; receiptSHA4c4d76efe88c55b1338d22dcc91ed1cc6d41d378828f94b51cfa79c8012a1d28 verifies120files/source exact"
+    },
+    {
+      "command": "python -m ruff check 11 exact scoped Python files; git diff --check",
+      "result": "PASS",
+      "evidence": "Actual scoped11Python paths passed; source record plus issue77 scope6111524252. No mutation/models."
+    }
+  ],
+  "eventId": "b5cf4b81-1f69-4c4b-bdd4-d9b4744ef09c",
+  "sequence": 6,
+  "at": "2026-10-11T17:14:49.698Z"
+}

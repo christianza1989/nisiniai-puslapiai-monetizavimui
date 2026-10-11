@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Independent review reproduced two actual PG P2: final-second-fence TTL accepted stale quality and Artifact FK/policy lock deadlock; 2FAIL29.58s/SHA6d95478591601f4f4746b3cc3bb97c04cb308c1ecdb196e469a361a804eae1ed. Canonical source locks now precede artifact flush; final fence precedes current source/TTL and synchronous lease check. Replacement9PG/23offline/28legacy PASS preserved separately. Parent semantic review then reproduced3offlineFAIL8.82s/SHAe22df7595b4c81ee6383441215b78c3ac718bc79709a1657fad9d868b103863d: full Session/episode/script fingerprint changed parent for same Config/Profile. Unpublished customer parent now derives retained immutable behavior/source material, excludes Session/script/episode identities; full execution Binding untouched. New final26offline/9PG/28legacy frozen QA running. Every original failure preserved, provider/channel0, operationalDB untouched. Private QA first incorrectly compared pre-network_lab-acceptance historic guard snapshot; failed before tests/DB/provider, corrected accepted-HEAD protected path guard without changing old snapshot.",
+  "eventId": "773b1d1e-c5fa-4064-b23a-b4b91703fd6f",
+  "sequence": 3,
+  "at": "2026-10-11T14:20:46.661Z"
+}

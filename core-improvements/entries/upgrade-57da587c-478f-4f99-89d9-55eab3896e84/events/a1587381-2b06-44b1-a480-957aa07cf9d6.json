@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Source finding before changes: held-out Quality currently enters the same tuning branch as train. Existing a849 six-case manifest retained three withheld cases with zero calls; no held-out model result claimed. Bind a private frozen case before first turn and deny issue/candidate/editorial/learning for holdout, preserving Quality and accounting. Inspection also found text history selecting non-TextEvent Quality events, incompatible with the existing strict HTTP wire; filter both existing history queries to their current wire kinds, without adding HTTP fields. Existing Snapshot/Episode, parent math, protected corpus, controllers and scoring criteria remain unchanged. API/studio held; QA isolated and injected only.",
+  "eventId": "a1587381-2b06-44b1-a480-957aa07cf9d6",
+  "sequence": 2,
+  "at": "2026-10-11T16:27:39.094Z"
+}

@@ -1,0 +1,1933 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Private native V2 GUIDE work",
+    "version": "0.1.0",
+    "description": "Authenticated own current accepted creation revision and actual page planningBrief. Separate bounded native V2 GUIDE jobs, immutable exact candidate/critic/coordinator attempts and events; live job state, not an intake snapshot or live publication certificate. Two rounds, six actual calls and 300-second maximum including prepare/validate/apply; no automatic job retry. Same shared provider mutex and charged customer/global daily attempt budget including old creation attempts. Read-only fixed CLI roles use the fixed Luna creator and Sol critic/coordinator execution profiles; historical Luna reviews remain readable. Migration0020 is required before any new queue/claim/reservation, and exact execution profiles are bound into role hashes and continuation. Roles cannot verify sources, media, approve or release; accepted text only writes a private canonical studio draft with current content/planning/site CAS. No raw trace/private filesystem path. source_verification/media_verification/approval remain not_performed and fullF1/launch UNVERIFIED. EventPayload.language_review_mode defaults to required for history. Explicit paused_local_pilot permits same-output language_quality UNVERIFIED/observed=false for private write only; all other FAIL, exact candidate/critic/coordinator identities and current native CAS remain enforced. No language certification. Legacy creation.v1/content.v1 wire bytes unchanged; team sidecar adds the same explicit mode."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/content-work": {
+      "post": {
+        "operationId": "startCustomerGuideWork",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartGuide"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "listCustomerGuideWork",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobsViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/content-work/{job_id}": {
+      "get": {
+        "operationId": "getCustomerGuideWork",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/content-work/{job_id}/cancel": {
+      "post": {
+        "operationId": "cancelCustomerGuideWork",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "StartGuide": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "page_id": {
+            "pattern": "^page-[a-f0-9]{24}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "accepted_revision",
+          "page_id",
+          "idempotency_key"
+        ],
+        "title": "StartGuide",
+        "type": "object"
+      },
+      "AttemptView": {
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "creator"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "model": {
+                  "const": "gpt-6-luna"
+                }
+              }
+            }
+          }
+        ],
+        "properties": {
+          "attempt_id": {
+            "format": "uuid",
+            "title": "Attempt Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 6,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "role": {
+            "enum": [
+              "creator",
+              "critic",
+              "coordinator"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "round_number": {
+            "maximum": 2,
+            "minimum": 1,
+            "title": "Round Number",
+            "type": "integer"
+          },
+          "stage": {
+            "const": "content",
+            "title": "Stage",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "instruction_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Instruction Sha256",
+            "type": "string"
+          },
+          "model": {
+            "enum": [
+              "gpt-6-luna",
+              "gpt-6.1-sol"
+            ],
+            "title": "Model",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attempt_id",
+          "sequence",
+          "role",
+          "round_number",
+          "stage",
+          "source_revision",
+          "instruction_sha256",
+          "model",
+          "created_at"
+        ],
+        "title": "AttemptView",
+        "type": "object"
+      },
+      "CoordinatorDecision": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_version": {
+            "const": "creation.coordinator.v1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "role": {
+            "const": "coordinator",
+            "title": "Role",
+            "type": "string"
+          },
+          "draft_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Draft Sha256",
+            "type": "string"
+          },
+          "critic_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Critic Sha256",
+            "type": "string"
+          },
+          "stage": {
+            "enum": [
+              "private_draft",
+              "discovery",
+              "research",
+              "business",
+              "drafting",
+              "content_plan",
+              "content",
+              "design",
+              "publication",
+              "validation",
+              "seo_geo",
+              "final_review"
+            ],
+            "title": "Stage",
+            "type": "string"
+          },
+          "round_number": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Round Number",
+            "type": "integer"
+          },
+          "decision": {
+            "enum": [
+              "accept_draft",
+              "revise",
+              "blocked"
+            ],
+            "title": "Decision",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 900,
+            "minLength": 20,
+            "title": "Summary",
+            "type": "string"
+          },
+          "correction_ids": {
+            "items": {
+              "maxLength": 4,
+              "pattern": "^f_[1-9][0-9]?$",
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Correction Ids",
+            "type": "array"
+          },
+          "remaining_checks": {
+            "items": {
+              "enum": [
+                "language_quality",
+                "source",
+                "browser",
+                "seo_geo",
+                "media",
+                "contact_delivery",
+                "publication",
+                "launch",
+                "demand"
+              ],
+              "type": "string"
+            },
+            "maxItems": 9,
+            "title": "Remaining Checks",
+            "type": "array"
+          },
+          "next_actions": {
+            "items": {
+              "maxLength": 700,
+              "minLength": 10,
+              "type": "string"
+            },
+            "maxItems": 5,
+            "minItems": 1,
+            "title": "Next Actions",
+            "type": "array"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "role",
+          "draft_sha256",
+          "critic_sha256",
+          "stage",
+          "round_number",
+          "decision",
+          "summary",
+          "correction_ids",
+          "remaining_checks",
+          "next_actions",
+          "full_f1_status",
+          "launch_status"
+        ],
+        "title": "CoordinatorDecision",
+        "type": "object"
+      },
+      "CriticReview": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_version": {
+            "const": "creation.critic.v1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "role": {
+            "const": "critic",
+            "title": "Role",
+            "type": "string"
+          },
+          "draft_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Draft Sha256",
+            "type": "string"
+          },
+          "stage": {
+            "enum": [
+              "private_draft",
+              "discovery",
+              "research",
+              "business",
+              "drafting",
+              "content_plan",
+              "content",
+              "design",
+              "publication",
+              "validation",
+              "seo_geo",
+              "final_review"
+            ],
+            "title": "Stage",
+            "type": "string"
+          },
+          "round_number": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Round Number",
+            "type": "integer"
+          },
+          "verdict": {
+            "enum": [
+              "accept_draft",
+              "revise",
+              "blocked"
+            ],
+            "title": "Verdict",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 900,
+            "minLength": 20,
+            "title": "Summary",
+            "type": "string"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "maxItems": 12,
+            "title": "Findings",
+            "type": "array"
+          },
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/ReviewCheck"
+            },
+            "maxItems": 9,
+            "minItems": 9,
+            "title": "Checks",
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "role",
+          "draft_sha256",
+          "stage",
+          "round_number",
+          "verdict",
+          "summary",
+          "findings",
+          "checks"
+        ],
+        "title": "CriticReview",
+        "type": "object"
+      },
+      "EventPayload": {
+        "additionalProperties": false,
+        "properties": {
+          "language_review_mode": {
+            "default": "required",
+            "enum": [
+              "required",
+              "paused_local_pilot"
+            ],
+            "title": "Language Review Mode",
+            "type": "string"
+          },
+          "output_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Sha256"
+          },
+          "candidate": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NativeOutput"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "checks": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/EvidenceReceipt"
+                },
+                "maxItems": 9,
+                "minItems": 9,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Checks"
+          },
+          "critic": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CriticReview"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "coordinator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CoordinatorDecision"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "usage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TokenUsage"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "trace_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Trace Sha256"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z_]{1,80}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Failure Code"
+          },
+          "cost_microusd": {
+            "const": null,
+            "default": null,
+            "title": "Cost Microusd",
+            "type": "null"
+          }
+        },
+        "title": "EventPayload",
+        "type": "object"
+      },
+      "EventView": {
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "format": "uuid",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "attempt_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Attempt Id"
+          },
+          "sequence": {
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "state": {
+            "enum": [
+              "queued",
+              "reserved",
+              "succeeded",
+              "failed",
+              "cancelled",
+              "applied"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 900,
+            "minLength": 10,
+            "title": "Summary",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventPayload"
+          }
+        },
+        "required": [
+          "event_id",
+          "attempt_id",
+          "sequence",
+          "state",
+          "summary",
+          "created_at",
+          "data"
+        ],
+        "title": "EventView",
+        "type": "object"
+      },
+      "EvidenceReceipt": {
+        "additionalProperties": false,
+        "description": "Caller-owned observed result; never populate from model assertions or cross-revision results.",
+        "properties": {
+          "id": {
+            "pattern": "^r_[a-z0-9][a-z0-9_-]{0,63}$",
+            "title": "Id",
+            "type": "string"
+          },
+          "draft_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Draft Sha256",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "language_quality",
+              "source",
+              "browser",
+              "seo_geo",
+              "media",
+              "contact_delivery",
+              "publication",
+              "launch",
+              "demand"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNVERIFIED",
+              "NA"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "observed": {
+            "title": "Observed",
+            "type": "boolean"
+          },
+          "summary": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Summary",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "draft_sha256",
+          "kind",
+          "status",
+          "observed",
+          "summary"
+        ],
+        "title": "EvidenceReceipt",
+        "type": "object"
+      },
+      "Finding": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "maxLength": 4,
+            "pattern": "^f_[1-9][0-9]?$",
+            "title": "Id",
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "blocker",
+              "required",
+              "suggestion"
+            ],
+            "title": "Severity",
+            "type": "string"
+          },
+          "area": {
+            "enum": [
+              "business",
+              "research",
+              "language",
+              "content",
+              "design",
+              "seo_geo",
+              "contact_delivery",
+              "publication",
+              "launch",
+              "demand"
+            ],
+            "title": "Area",
+            "type": "string"
+          },
+          "explanation": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Explanation",
+            "type": "string"
+          },
+          "correction": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Correction",
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "maxLength": 240,
+              "minLength": 4,
+              "pattern": "^(?:draft:/(?:[a-z_]+|0|[1-9][0-9]*)(?:/(?:[a-z_]+|0|[1-9][0-9]*))*|receipt:r_[a-z0-9][a-z0-9_-]{0,63})$",
+              "type": "string"
+            },
+            "maxItems": 6,
+            "minItems": 1,
+            "title": "Evidence Refs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "severity",
+          "area",
+          "explanation",
+          "correction",
+          "evidence_refs"
+        ],
+        "title": "Finding",
+        "type": "object"
+      },
+      "NativeOutput": {
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "maxLength": 160,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 220,
+            "minLength": 30,
+            "title": "Description",
+            "type": "string"
+          },
+          "intent": {
+            "maxLength": 300,
+            "minLength": 10,
+            "title": "Intent",
+            "type": "string"
+          },
+          "body": {
+            "items": {
+              "$ref": "#/components/schemas/NativeV2_block"
+            },
+            "maxItems": 300,
+            "minItems": 1,
+            "title": "Body",
+            "type": "array"
+          },
+          "factChecks": {
+            "items": {
+              "maxLength": 600,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Factchecks",
+            "type": "array"
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "intent",
+          "body",
+          "factChecks"
+        ],
+        "title": "NativeOutput",
+        "type": "object"
+      },
+      "PageObservation": {
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "pattern": "^page-[a-f0-9]{24}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "revision_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision Sha256",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "blocked",
+              "reviewed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "review_current": {
+            "title": "Review Current",
+            "type": "boolean"
+          },
+          "has_approved_revision": {
+            "title": "Has Approved Revision",
+            "type": "boolean"
+          },
+          "blocker_count": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Blocker Count",
+            "type": "integer"
+          },
+          "blockers": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "hidden_blocker_count": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Hidden Blocker Count",
+            "type": "integer"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "observation_scope": {
+            "const": "private_write_snapshot",
+            "default": "private_write_snapshot",
+            "title": "Observation Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "page_id",
+          "revision_sha256",
+          "state",
+          "review_current",
+          "has_approved_revision",
+          "blocker_count",
+          "blockers",
+          "hidden_blocker_count",
+          "observed_at"
+        ],
+        "title": "PageObservation",
+        "type": "object"
+      },
+      "ReviewCheck": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "language_quality",
+              "source",
+              "browser",
+              "seo_geo",
+              "media",
+              "contact_delivery",
+              "publication",
+              "launch",
+              "demand"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNVERIFIED",
+              "NA"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "pattern": "^r_[a-z0-9][a-z0-9_-]{0,63}$",
+              "type": "string"
+            },
+            "maxItems": 8,
+            "title": "Evidence Refs",
+            "type": "array"
+          },
+          "summary": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Summary",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "status",
+          "evidence_refs",
+          "summary"
+        ],
+        "title": "ReviewCheck",
+        "type": "object"
+      },
+      "TokenUsage": {
+        "additionalProperties": false,
+        "properties": {
+          "input_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Input Tokens"
+          },
+          "output_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Tokens"
+          },
+          "cached_input_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Cached Input Tokens"
+          },
+          "reasoning_output_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Reasoning Output Tokens"
+          }
+        },
+        "title": "TokenUsage",
+        "type": "object"
+      },
+      "JobView": {
+        "additionalProperties": false,
+        "properties": {
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "source_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Source Sha256",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "page_id": {
+            "pattern": "^page-[a-f0-9]{24}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "stage": {
+            "const": "content",
+            "default": "content",
+            "title": "Stage",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "deadline_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deadline At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "can_cancel": {
+            "title": "Can Cancel",
+            "type": "boolean"
+          },
+          "output_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Output Sha256"
+          },
+          "applied_revision_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Applied Revision Sha256"
+          },
+          "page_observation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PageObservation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "observation_scope": {
+            "const": "live_job",
+            "default": "live_job",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "approval": {
+            "const": "not_performed",
+            "default": "not_performed",
+            "title": "Approval",
+            "type": "string"
+          },
+          "source_verification": {
+            "const": "not_performed",
+            "default": "not_performed",
+            "title": "Source Verification",
+            "type": "string"
+          },
+          "media_verification": {
+            "const": "not_performed",
+            "default": "not_performed",
+            "title": "Media Verification",
+            "type": "string"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "attempts": {
+            "items": {
+              "$ref": "#/components/schemas/AttemptView"
+            },
+            "maxItems": 6,
+            "title": "Attempts",
+            "type": "array"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/EventView"
+            },
+            "maxItems": 100,
+            "title": "Events",
+            "type": "array"
+          }
+        },
+        "required": [
+          "job_id",
+          "creation_id",
+          "accepted_revision",
+          "source_sha256",
+          "source_revision",
+          "page_id",
+          "status",
+          "sequence",
+          "created_at",
+          "deadline_at",
+          "finished_at",
+          "failure_code",
+          "can_cancel",
+          "output_sha256",
+          "applied_revision_sha256",
+          "page_observation",
+          "attempts",
+          "events"
+        ],
+        "title": "JobView",
+        "type": "object"
+      },
+      "JobsView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "observation_scope": {
+            "const": "live_job",
+            "default": "live_job",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/JobView"
+            },
+            "maxItems": 20,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "creation_id",
+          "items"
+        ],
+        "title": "JobsView",
+        "type": "object"
+      },
+      "NativeV2_block": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "text"
+            ],
+            "properties": {
+              "type": {
+                "const": "paragraph"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "level",
+              "text"
+            ],
+            "properties": {
+              "type": {
+                "const": "heading"
+              },
+              "level": {
+                "enum": [
+                  2,
+                  3
+                ]
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "items"
+            ],
+            "properties": {
+              "type": {
+                "const": "list"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "assetId"
+            ],
+            "properties": {
+              "type": {
+                "const": "image"
+              },
+              "assetId": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "const": "richParagraph"
+              },
+              "content": {
+                "type": "array",
+                "maxItems": 500,
+                "items": {
+                  "$ref": "#/components/schemas/NativeV2_inline"
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "level",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "const": "richHeading"
+              },
+              "level": {
+                "enum": [
+                  2,
+                  3
+                ]
+              },
+              "content": {
+                "type": "array",
+                "maxItems": 500,
+                "items": {
+                  "$ref": "#/components/schemas/NativeV2_inline"
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "ordered",
+              "items"
+            ],
+            "properties": {
+              "type": {
+                "const": "richList"
+              },
+              "ordered": {
+                "type": "boolean"
+              },
+              "items": {
+                "type": "array",
+                "maxItems": 100,
+                "items": {
+                  "type": "array",
+                  "maxItems": 500,
+                  "items": {
+                    "$ref": "#/components/schemas/NativeV2_inline"
+                  },
+                  "minItems": 1
+                },
+                "minItems": 1
+              }
+            }
+          }
+        ]
+      },
+      "NativeV2_inline": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "text"
+            ],
+            "properties": {
+              "type": {
+                "const": "text"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "text",
+              "target"
+            ],
+            "properties": {
+              "type": {
+                "const": "link"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "target": {
+                "$ref": "#/components/schemas/NativeV2_target"
+              }
+            }
+          }
+        ]
+      },
+      "NativeV2_target": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "pageId"
+            ],
+            "properties": {
+              "kind": {
+                "const": "page"
+              },
+              "pageId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "url"
+            ],
+            "properties": {
+              "kind": {
+                "const": "external"
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048,
+                "format": "uri",
+                "pattern": "^https://"
+              }
+            }
+          }
+        ]
+      },
+      "JobViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "content-work.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/JobView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      },
+      "JobsViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "content-work.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/JobsView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

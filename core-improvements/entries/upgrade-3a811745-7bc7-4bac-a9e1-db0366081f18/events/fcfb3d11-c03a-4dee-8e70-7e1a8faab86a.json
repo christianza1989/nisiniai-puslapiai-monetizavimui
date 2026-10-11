@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root classification/owned-process patch231offlinePASS26.31s, Ruff/diffPASS. All8 synthetic owned child error/usage variants stop before delayed partial output; true tools remain forbidden, existing unknown usage/network recovery/authority/deadline retained. Original427d replay13events first max-output index4,0 forbidden tools, no completedusage: provider_error, original bytes/historicaltool_attempted unchanged,zero provider. Initial one import-order issue and nonexistent test_content_work_wire.py command/no tests ran preserved; corrected discovered-file command passed. Compact review child pending integration; no actual provider recovery/accepted revision/F1/public launch claim.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest offline_tests/test_control_codex.py offline_tests/test_creation_adapter.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_review.py offline_tests/test_creation_language_patch.py offline_tests/test_creation_content_plan.py offline_tests/test_creation_studio.py offline_tests/test_content_work_review.py -q",
+      "result": "PASS",
+      "evidence": "231passed26.31s; no paid provider or DB mutation."
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/cli_error_original_replay.private.py",
+      "result": "PASS",
+      "evidence": "Private immutable cli-error-original-replay-427d.private.json records original3file hashes and rejection; no output/history mutation."
+    },
+    {
+      "command": "Scoped Ruff and git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; fixed one initial test import ordering issue."
+    }
+  ],
+  "eventId": "fcfb3d11-c03a-4dee-8e70-7e1a8faab86a",
+  "sequence": 3,
+  "at": "2026-10-10T14:37:25.410Z"
+}

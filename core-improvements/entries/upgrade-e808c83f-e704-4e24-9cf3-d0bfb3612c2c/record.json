@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Creation admission counts jobs but ignores exhausted shared charged role attempts, so a doomed new job can be persisted at the real daily call limit.",
+  "category": "code",
+  "evidence": [
+    "creation/service.py quota versus creation/team.py reserve and content_work/service.py quota; actual f702 job ended draft_budget_exhausted20/20 with no accepted revision."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "agent-business-core/runtime/tests/test_content_work.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of attempt-admission source/tests, preserving charged attempt rows and all earlier actual outputs/history.",
+  "id": "upgrade-e808c83f-e704-4e24-9cf3-d0bfb3612c2c",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "2f07cf0c1357b88b2ed1a0c0e1248b79143fea08",
+  "createdAt": "2026-10-10T15:46:00.893Z"
+}

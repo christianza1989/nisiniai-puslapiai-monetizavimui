@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Director portal9f28c9e4 adopted exact additive V2 contract25333B/SHA0d71 with original V1 pins retained. Root independently observed actual local3019 Chrome missing-registration/four groups/14blocked gates/noactivation at21:06LT against held API594/schema0016. Actual read again preserved six customer surfaces and all preexisting table count/hash against original before-migration receipt. Functional source remains594; metadata does not hotload server. Separate profile0017 remains source work; no NEW accepted business or activation/F1/public launch.",
+  "checks": [
+    {
+      "command": "Actual Chrome root tab reload and Agentu parengimas anchor",
+      "result": "PASS",
+      "evidence": "screenshots-20261010/mokymai-ai-preparation-v2-panel-root-20261010.png; canonical missing registration/current no_revision/not_imported/14checks14blockers"
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/preparation_v2_actual.private.py --phase after --baseline artifacts/preparation-v2-actual-before-20261010T175146649475Z.private.json",
+      "result": "PASS",
+      "evidence": "preparation-v2-actual-after-20261010T180951072585Z.private.json; API594/schema0016/HTTP200/typedV2, current read and full original baseline unchanged, provider0"
+    },
+    {
+      "command": "Director portal focused tests, TypeScript, production build and independent read-only review",
+      "result": "PASS",
+      "evidence": "Director9f28c9e4f73d118c2a836f1c455391fd016e062b:19focused PASS, BFF/query/no-cookie negative checks; source clean, actual adapter identity/pins PASS; root independent browser acceptance separate"
+    }
+  ],
+  "eventId": "43f83d4a-5437-4496-abdb-a5902244d794",
+  "sequence": 4,
+  "at": "2026-10-10T18:22:00.491Z"
+}

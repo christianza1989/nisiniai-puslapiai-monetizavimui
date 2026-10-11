@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual normal-owner CLI auth under fixedalias onsource90fbd2d: UI jobf702 four reserved role executions succeeded, creator3webactions, compact critic/coordinator revise and targeted creator patch FAIL→PASS language. Overalljob FAILEDdraft_budget_exhausted20/20, no round2critic/coordinator/noacceptedrevision/nointake/GUIDE. Originaloutputs/traces retained. Additionalfinitebudget question pending; no newprovider duringreplay or metadata.",
+  "checks": [
+    {
+      "command": "Actual UI3019 retry18:19:25LT → source90fbd2d freshness-wrapped owned worker session35339 → actual authenticated creation/team/content GET",
+      "result": "PASS",
+      "evidence": "Transport/role-format/auth only: creator222740/12262/web3, critic33195/731, coordinator31150/410, languagepatch17184/288. All4role states succeeded; fulljob FAILEDdraft_budget_exhausted20/20, revisionnull, content0/GUIDE0. No generalpipeline acceptance."
+    },
+    {
+      "command": "artifacts/replay_f702_patch.private.py",
+      "result": "PASS",
+      "evidence": "Original candidate802693ce→revised9f333216, exactlyresearch/2/finding + pages/0/sections/3/items/0 changed, all other fields exact;8original output/trace byte hashes unchanged; languageFAIL→PASS, context3113bytes. No provider, independent re-review, DB write or promotion."
+    },
+    {
+      "command": "CompareHEAD/customer four HTTP contracts with5196350 via Git blobs; authenticated readiness/counts afteractualtrial",
+      "result": "PASS",
+      "evidence": "Allfour byte hashes unchanged; actual API8860source90fbd2d GET200failed/currentrevisionnull/day20/20. Initial wrong-cwd contract check had zero files and was corrected by root-cwd exact4blob proof."
+    }
+  ],
+  "eventId": "41fce114-2526-4aad-9117-91142a265275",
+  "sequence": 3,
+  "at": "2026-10-10T15:31:58.820Z"
+}

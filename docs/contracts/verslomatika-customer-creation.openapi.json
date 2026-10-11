@@ -1,0 +1,1704 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Private customer business draft creation",
+    "version": "0.1.0",
+    "description": "Local/test customer draft generation over existing core identity/portfolio. Immutable private revisions; draft_ready is a business proposition and website draft, not public deployment/F1 acceptance. HTML content requires a sandboxed iframe without scripts/same-origin/forms/navigation/network. Request bodies bounded16KiB. Existing v1 auth, intake and operator contracts unchanged."
+  },
+  "paths": {
+    "/customer/v2/creations": {
+      "post": {
+        "operationId": "startCustomerCreation",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreationViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Start"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "listCustomerCreations",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreationsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}": {
+      "get": {
+        "operationId": "getCustomerCreation",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreationViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/events": {
+      "get": {
+        "operationId": "getCustomerCreationEvents",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/messages": {
+      "get": {
+        "operationId": "getCustomerCreationMessages",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessagesEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/revisions": {
+      "post": {
+        "operationId": "reviseCustomerCreation",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreationViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Revise"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/cancel": {
+      "post": {
+        "operationId": "cancelCustomerCreation",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreationViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/artifacts": {
+      "get": {
+        "operationId": "listCustomerArtifacts",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArtifactsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/artifacts/{artifact_id}": {
+      "get": {
+        "operationId": "getCustomerArtifact",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "path",
+            "name": "artifact_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArtifactContentEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "Start": {
+        "additionalProperties": false,
+        "properties": {
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "display_name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Display Name",
+            "type": "string"
+          },
+          "idea": {
+            "maxLength": 2500,
+            "minLength": 20,
+            "title": "Idea",
+            "type": "string"
+          },
+          "canonical_host": {
+            "anyOf": [
+              {
+                "maxLength": 253,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Host"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "portfolio_id",
+          "display_name",
+          "idea",
+          "canonical_host",
+          "idempotency_key"
+        ],
+        "title": "Start",
+        "type": "object"
+      },
+      "Revise": {
+        "additionalProperties": false,
+        "properties": {
+          "base_revision": {
+            "maximum": 20,
+            "minimum": 0,
+            "title": "Base Revision",
+            "type": "integer"
+          },
+          "message": {
+            "maxLength": 2500,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base_revision",
+          "message",
+          "idempotency_key"
+        ],
+        "title": "Revise",
+        "type": "object"
+      },
+      "Capabilities": {
+        "additionalProperties": false,
+        "properties": {
+          "can_revise": {
+            "title": "Can Revise",
+            "type": "boolean"
+          },
+          "can_cancel": {
+            "title": "Can Cancel",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "can_revise",
+          "can_cancel"
+        ],
+        "title": "Capabilities",
+        "type": "object"
+      },
+      "CreationView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "idea": {
+            "title": "Idea",
+            "type": "string"
+          },
+          "canonical_host": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Host"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "draft_ready",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "stage": {
+            "enum": [
+              "queued",
+              "research",
+              "drafting",
+              "validation",
+              "ready",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Stage",
+            "type": "string"
+          },
+          "current_revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Revision"
+          },
+          "active_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Job Id"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "capabilities": {
+            "$ref": "#/components/schemas/Capabilities"
+          },
+          "latest_summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Summary"
+          }
+        },
+        "required": [
+          "creation_id",
+          "portfolio_id",
+          "display_name",
+          "idea",
+          "canonical_host",
+          "status",
+          "stage",
+          "current_revision",
+          "active_job_id",
+          "failure_code",
+          "created_at",
+          "updated_at",
+          "source_revision",
+          "capabilities",
+          "latest_summary"
+        ],
+        "title": "CreationView",
+        "type": "object"
+      },
+      "Creations": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CreationView"
+            },
+            "maxItems": 100,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Creations",
+        "type": "object"
+      },
+      "EventView": {
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "format": "uuid",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "draft_ready",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "stage": {
+            "enum": [
+              "queued",
+              "research",
+              "drafting",
+              "validation",
+              "ready",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Stage",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id",
+          "sequence",
+          "job_id",
+          "status",
+          "stage",
+          "message",
+          "created_at"
+        ],
+        "title": "EventView",
+        "type": "object"
+      },
+      "Events": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/EventView"
+            },
+            "maxItems": 200,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Events",
+        "type": "object"
+      },
+      "MessageView": {
+        "additionalProperties": false,
+        "properties": {
+          "message_id": {
+            "format": "uuid",
+            "title": "Message Id",
+            "type": "string"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "user",
+              "assistant"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string"
+          },
+          "revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revision"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "message_id",
+          "job_id",
+          "role",
+          "content",
+          "revision",
+          "created_at"
+        ],
+        "title": "MessageView",
+        "type": "object"
+      },
+      "Messages": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/MessageView"
+            },
+            "maxItems": 40,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Messages",
+        "type": "object"
+      },
+      "ArtifactView": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "format": "uuid",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "business_plan",
+              "website_preview",
+              "content_package"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "media_type": {
+            "enum": [
+              "text/html",
+              "text/markdown",
+              "application/json"
+            ],
+            "title": "Media Type",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "bytes": {
+            "maximum": 524288,
+            "minimum": 0,
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "revision",
+          "kind",
+          "display_name",
+          "media_type",
+          "sha256",
+          "bytes",
+          "created_at"
+        ],
+        "title": "ArtifactView",
+        "type": "object"
+      },
+      "Artifacts": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ArtifactView"
+            },
+            "maxItems": 60,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Artifacts",
+        "type": "object"
+      },
+      "ArtifactContent": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/components/schemas/ArtifactView"
+          },
+          "content": {
+            "maxLength": 524288,
+            "title": "Content",
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact",
+          "content"
+        ],
+        "title": "ArtifactContent",
+        "type": "object"
+      },
+      "CreationViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "creation.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CreationView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      },
+      "CreationsEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "creation.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Creations"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      },
+      "EventsEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "creation.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Events"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      },
+      "MessagesEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "creation.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Messages"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      },
+      "ArtifactsEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "creation.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Artifacts"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      },
+      "ArtifactContentEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "creation.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ArtifactContent"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

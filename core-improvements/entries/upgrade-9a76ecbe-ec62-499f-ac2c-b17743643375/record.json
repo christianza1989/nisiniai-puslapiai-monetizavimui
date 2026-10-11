@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Priimtas kliento verslo juodraštis neturi saugaus izoliuoto perdavimo į bendros studijos tikrą turinio eigą.",
+  "category": "code",
+  "evidence": [
+    "content-studio/src/model.mjs: initialize tuščiame kataloge sukuria istorinių nišų registrą; createSite/editSite/addPage/getContentWorkflow yra palaikomas izoliuoto perdavimo kelias",
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py: Draft yra privatus verslo ir puslapių juodraštis, o ne patvirtinta publikacija"
+  ],
+  "paths": [
+    "content-studio/scripts/customer-creation-intake.mjs",
+    "content-studio/test/customer-creation-intake.test.mjs",
+    "docs/VERSLOMATIKA_CONTENT_INTAKE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Atšaukti tik izoliuoto intake helperio, jo testo, dokumentacijos ir savo workstream pakeitimus. Neliečiami modelis, schemos ar privatūs duomenys.",
+  "id": "upgrade-9a76ecbe-ec62-499f-ac2c-b17743643375",
+  "branch": "codex/verslomatika-creation-intake-20261010",
+  "baseSha": "3a9ba814672ef4960ae04bb1955019c6c1959063",
+  "createdAt": "2026-10-10T11:34:41.748Z"
+}

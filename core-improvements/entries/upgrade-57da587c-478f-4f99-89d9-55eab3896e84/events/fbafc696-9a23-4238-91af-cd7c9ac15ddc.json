@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original preflightFAIL/e18fce63 and compatibility1FAIL/59826966 retained. Explicit private spaced digest scheme preserves original corpusSHA/cases/splits/manifest bytes; compact default unchanged and unknown/null/wrong scheme fails closed. No Proof/Binding/parent/HTTP/SQL/controller/criteria change.121frozen source paths/all other prior finalQA inputs exact, providers/channels0, operationalDB untouched. Final readonly noP0-P2 and scoped3Python lint/diff PASS; reviewer ran no tests/models. Clean compatibility delivery/adoption/three actual original holdouts next; no model/comparison/admission/activation/fullplatform acceptance.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_customer_agent_protection.py offline_tests/test_customer_agent_lab.py offline_tests/test_customer_quality.py offline_tests/test_customer_review.py offline_tests/test_customer_text.py offline_tests/test_customer_agent_evidence.py -q",
+      "result": "PASS",
+      "evidence": "154passed9.41s; logSHA7f7fbc7dbd59300ba371087b80e1665220a4c3dc38865d958f25ccf90b74fd63; receiptSHA280197546ee3daf19efe7d36d2612ecd2b32903526f35ca1d192ed76ac8f67bc"
+    },
+    {
+      "command": "python -m pytest tests/test_customer_agent_protection.py::test_train_uses_existing_lifecycle_holdout_keeps_quality_and_usage_only -q",
+      "result": "PASS",
+      "evidence": "3passed60.95s; logSHA216639c2449fbf0580dc93fcf0078c88ca8d858b24d752690ff9980f8ba6b62f; same frozen receipt"
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/customer_agents/protection.py offline_tests/test_customer_agent_protection.py tests/test_customer_agent_protection.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Exact scoped lint and diff passed; no mutation/models"
+    }
+  ],
+  "eventId": "fbafc696-9a23-4238-91af-cd7c9ac15ddc",
+  "sequence": 8,
+  "at": "2026-10-11T17:28:28.932Z"
+}

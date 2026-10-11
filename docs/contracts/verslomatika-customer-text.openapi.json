@@ -1,0 +1,1569 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Owned local customer text",
+    "version": "0.1.0",
+    "description": "Local authenticated testing only. Current Registration/Profile/V2 receipt/TTL, actor grants, source and policy are checked before/after fixed Luna execution. Explicit consent starts a session; each durable UUID turn is dispatched once, with no tools except server knowledge.resolve and typed need.patch. Revocation denies late output and preserves observed token usage. Read does not renew TTL. Need values remain proposed, with actual client-event provenance. No live channel, contact, email, voice, acquisition, postcall, learning or deployment activation; calibration remains UNVERIFIED."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/text-capability": {
+      "get": {
+        "summary": "Capability",
+        "operationId": "getCustomerTextCapability",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CapabilityEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/text-sessions": {
+      "post": {
+        "summary": "Start",
+        "operationId": "startCustomerText",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Start"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      },
+      "get": {
+        "summary": "Sessions",
+        "operationId": "listCustomerTextSessions",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}/events": {
+      "get": {
+        "summary": "Events",
+        "operationId": "listCustomerTextEvents",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Conversation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}": {
+      "get": {
+        "summary": "Status",
+        "operationId": "getCustomerText",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Conversation Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}/turns": {
+      "post": {
+        "summary": "Turn",
+        "operationId": "postCustomerTextTurn",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Conversation Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Turn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}/end": {
+      "post": {
+        "summary": "End",
+        "operationId": "endCustomerText",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Conversation Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Capability": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "admission_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Admission Id"
+          },
+          "transport": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Transport"
+          },
+          "model": {
+            "type": "string",
+            "const": "gpt-6-luna",
+            "title": "Model"
+          },
+          "scope": {
+            "type": "string",
+            "const": "local_authenticated_test",
+            "title": "Scope"
+          },
+          "can_start_text_session": {
+            "type": "boolean",
+            "const": true,
+            "title": "Can Start Text Session"
+          },
+          "can_call_provider": {
+            "type": "boolean",
+            "const": true,
+            "title": "Can Call Provider"
+          },
+          "consent_required": {
+            "type": "boolean",
+            "const": true,
+            "title": "Consent Required"
+          },
+          "notice_version": {
+            "type": "string",
+            "const": "customer-text.local.v1",
+            "title": "Notice Version"
+          },
+          "need_fields": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "goal",
+                "requirements",
+                "deadline",
+                "budget",
+                "location"
+              ]
+            },
+            "type": "array",
+            "maxItems": 5,
+            "minItems": 5,
+            "title": "Need Fields"
+          },
+          "channel_activation": {
+            "type": "string",
+            "const": "not_performed",
+            "title": "Channel Activation"
+          },
+          "calibration_status": {
+            "type": "string",
+            "const": "UNVERIFIED",
+            "title": "Calibration Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "admission_id",
+          "transport",
+          "model",
+          "scope",
+          "can_start_text_session",
+          "can_call_provider",
+          "consent_required",
+          "notice_version",
+          "need_fields",
+          "channel_activation",
+          "calibration_status"
+        ],
+        "title": "Capability"
+      },
+      "CapabilityEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Capability"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "CapabilityEnvelope"
+      },
+      "Envelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SessionView"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "Envelope"
+      },
+      "Error": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ],
+        "title": "Error"
+      },
+      "EventsEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventsPage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "EventsEnvelope"
+      },
+      "EventsPage": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "conversation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Conversation Id"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/TextEvent"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Events"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2048,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          },
+          "transport": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Transport"
+          },
+          "scope": {
+            "type": "string",
+            "const": "local_authenticated_test",
+            "title": "Scope"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "conversation_id",
+          "events",
+          "has_more",
+          "transport",
+          "scope"
+        ],
+        "title": "EventsPage"
+      },
+      "NeedValue": {
+        "properties": {
+          "value": {
+            "type": "string",
+            "maxLength": 1000,
+            "title": "Value"
+          },
+          "status": {
+            "type": "string",
+            "const": "proposed",
+            "title": "Status"
+          },
+          "evidence": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Evidence"
+          },
+          "raw_value": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw Value"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "value",
+          "status",
+          "evidence"
+        ],
+        "title": "NeedValue"
+      },
+      "SessionSummary": {
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Conversation Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "created",
+              "finalized"
+            ],
+            "title": "State"
+          },
+          "need_revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Need Revision"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "conversation_id",
+          "created_at",
+          "state",
+          "need_revision"
+        ],
+        "title": "SessionSummary"
+      },
+      "SessionView": {
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Conversation Id"
+          },
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "created",
+              "finalized"
+            ],
+            "title": "State"
+          },
+          "need_revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Need Revision"
+          },
+          "need": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/NeedValue"
+            },
+            "propertyNames": {
+              "enum": [
+                "goal",
+                "requirements",
+                "deadline",
+                "budget",
+                "location"
+              ]
+            },
+            "type": "object",
+            "title": "Need"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/TextEvent"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Events"
+          },
+          "history_truncated": {
+            "type": "boolean",
+            "title": "History Truncated"
+          },
+          "transport": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Transport"
+          },
+          "model": {
+            "type": "string",
+            "const": "gpt-6-luna",
+            "title": "Model"
+          },
+          "scope": {
+            "type": "string",
+            "const": "local_authenticated_test",
+            "title": "Scope"
+          },
+          "channel_activation": {
+            "type": "string",
+            "const": "not_performed",
+            "title": "Channel Activation"
+          },
+          "calibration_status": {
+            "type": "string",
+            "const": "UNVERIFIED",
+            "title": "Calibration Status"
+          },
+          "turn": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TurnResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "conversation_id",
+          "creation_id",
+          "state",
+          "need_revision",
+          "need",
+          "events",
+          "history_truncated",
+          "transport",
+          "model",
+          "scope",
+          "channel_activation",
+          "calibration_status"
+        ],
+        "title": "SessionView"
+      },
+      "SessionsEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SessionsPage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "SessionsEnvelope"
+      },
+      "SessionsPage": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "sessions": {
+            "items": {
+              "$ref": "#/components/schemas/SessionSummary"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "title": "Sessions"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2048,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          },
+          "transport": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Transport"
+          },
+          "scope": {
+            "type": "string",
+            "const": "local_authenticated_test",
+            "title": "Scope"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "sessions",
+          "has_more",
+          "transport",
+          "scope"
+        ],
+        "title": "SessionsPage"
+      },
+      "Start": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "admission_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Admission Id"
+          },
+          "notice_version": {
+            "type": "string",
+            "const": "customer-text.local.v1",
+            "title": "Notice Version"
+          },
+          "consent": {
+            "type": "boolean",
+            "const": true,
+            "title": "Consent"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "request_id",
+          "admission_id",
+          "notice_version",
+          "consent"
+        ],
+        "title": "Start"
+      },
+      "TextEvent": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Event Id"
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Sequence"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "created",
+              "client_transcript",
+              "tool",
+              "provider_attempt",
+              "provider_usage",
+              "customer_text_result",
+              "finalized"
+            ],
+            "title": "Kind"
+          },
+          "data": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_id",
+          "sequence",
+          "kind",
+          "data"
+        ],
+        "title": "TextEvent"
+      },
+      "Turn": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "base_need_revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Base Need Revision"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Message"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "request_id",
+          "base_need_revision",
+          "message"
+        ],
+        "title": "Turn"
+      },
+      "TurnResult": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "running",
+              "interrupted",
+              "failed",
+              "succeeded"
+            ],
+            "title": "Status"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 80,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "provider_replayed": {
+            "anyOf": [
+              {
+                "type": "boolean",
+                "const": false
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider Replayed"
+          },
+          "reply": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reply"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "request_id",
+          "status"
+        ],
+        "title": "TurnResult"
+      }
+    },
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

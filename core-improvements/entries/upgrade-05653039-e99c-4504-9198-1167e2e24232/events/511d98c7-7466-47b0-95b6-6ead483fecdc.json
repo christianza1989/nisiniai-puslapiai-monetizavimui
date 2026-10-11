@@ -1,0 +1,30 @@
+{
+  "status": "local-verified",
+  "commit": "594e179f48fbca4584d0249b8eb1506af8ba9d57",
+  "note": "Actual own loopback API8860 clean adoption594e179/schema0016 verified; verified own prior31440 stopped, new server31240/session10019. Explicit0015→0016/canonical bootstrap each exit0, no actual customer provision. Immutable before17:51:46Z/after17:53:51Z receipts compare all existing table row counts/hashes and six customer surfaces exactly; only empty Registration table added, read itself persistent state unchanged. Current quota20own/20global/0left, NEW current_revision null, no intake/GUIDE and costunknown retained. Original actual cbc7 receipt remains; metadata does not hotload into594 snapshot. Director V2 frontend adoption is separately pending, full customer/F1/launch OPEN. No provider/channel/budget/default business facts operation.",
+  "checks": [
+    {
+      "command": "Own verified database/schema upgrade0016 and scripts/bootstrap.py",
+      "result": "PASS",
+      "evidence": "Only exact local pinet_customer_creation_20261010 on loopback15438; both exit0, immutable private logs/receipts, no role broadening or customer provision. Preexisting all-table snapshots unchanged; new registration table empty."
+    },
+    {
+      "command": "control_portable.py check; customer_creation_worker.py check; customer_content_work_worker.py check",
+      "result": "PASS",
+      "evidence": "Exact clean594e179 current restricted role/control schema; actual initial instruction hash6987bde5e886310c54b4ee95eb58e44be51b270cd32748204a92087debf48fa8; native GUIDE adapter verified, provider0, no workers started."
+    },
+    {
+      "command": "Authenticated actual GET agent-preparation-v2 plus before/after six-surface and all-table snapshots",
+      "result": "PASS",
+      "evidence": "HTTP200 typed agent-preparation.v2/14checks14blockers/missing/no_revision/not_imported/unmapped/falseactivation; preparation-v2-actual-before-20261010T175146649475Z and after-20261010T175351275701Z private receipts exclusive/sanitized. Data exact before/after, provider/channel0."
+    },
+    {
+      "command": "creation_ready_budget.private.py",
+      "result": "PASS",
+      "evidence": "Actual charged own/global20/20, remaining0, current revisionnull and unknown cost; read only, no quota reset/refund/alternate namespace or new provider dispatch."
+    }
+  ],
+  "eventId": "511d98c7-7466-47b0-95b6-6ead483fecdc",
+  "sequence": 3,
+  "at": "2026-10-10T17:56:25.578Z"
+}

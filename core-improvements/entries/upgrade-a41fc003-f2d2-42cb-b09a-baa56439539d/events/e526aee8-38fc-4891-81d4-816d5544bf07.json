@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original exact5196350 failure reproduced before code edits: uv run pytest -q offline_tests/test_control_codex.py -k completed_process_usage_survives_answer_rejection: 2FAIL/1PASS in2.13s. Synthetic owned subprocess emits completed input/output or known-zero tokens then invalid Answer; RunnerError receipt becomes empty. Unknown-usage control PASS. Initial journal event attempt returned invalid_event because an unsupported evidence property was supplied; corrected to supported note-only event. Scope6098733475 remains narrow, no provider/root runtime/history changes.",
+  "eventId": "e526aee8-38fc-4891-81d4-816d5544bf07",
+  "sequence": 2,
+  "at": "2026-10-10T14:52:47.798Z"
+}

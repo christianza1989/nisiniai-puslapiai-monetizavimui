@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Independent review found legacy worker transport bypass, duplicate need late validation and cancellation usage loss. Actual before-fix restrictedPG legacy/events200FAIL logSHAe2ef91865c55339deb4de1768230375955fda1890c4bafbf98ce3a85967a506e. Shared legacy conversation guard, adapter normalization before settlement and canonical completed usage on CancelledError are implemented; first frozen18PGPASS128.89s+17offlinePASS2.50s. Extra actual escaped4000astralJSON400vs401FAIL SHAaecb9df9c36d57e92d8a5302eeca38ef71160c5ec4b883a2120f951025bddfde; text-only64KiB bound fixes full semantic4000range. Supplement issue77comment6106191864 adds typed canonical wire, separate no-write capability and minimal portable app router. Final typed frozen18PGPASS170.61s+19offlinePASS5.71s source unchanged; broader affected legacy regressions/review pending. No provider/channel/operational DB in QA, no acceptance gate weakened; clean adoption/actual provider/UI separate pending, overallOPEN.",
+  "eventId": "66467745-3453-4be8-8ce9-4a14144836c6",
+  "sequence": 2,
+  "at": "2026-10-11T06:28:47.046Z"
+}

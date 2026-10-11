@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual0c850 customer retry failed one creator output_invalid; no accepted/imported revision. Initial offline116PASS then Ruff2import errors (fixed); initial actual Node intake10PASS/1FAIL invalid_server_page reveals the same stale one-segment predicate inside intake. Root also corrected the new assertion to inspect maintained linkSuggestions, not a nonexistent internalLinks field. Raw failed candidate/trace retained, not transformed or promoted.",
+  "eventId": "a640c2e9-7e9f-4a46-beca-e52ea0cfb180",
+  "sequence": 2,
+  "at": "2026-10-10T12:53:47.247Z"
+}

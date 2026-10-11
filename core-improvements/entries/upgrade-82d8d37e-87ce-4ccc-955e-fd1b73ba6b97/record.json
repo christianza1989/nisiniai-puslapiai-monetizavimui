@@ -1,0 +1,25 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Native GUIDE models incompletely reconcile required corrections and can duplicate a trusted observation reference in provider output",
+  "category": "prompt",
+  "evidence": [
+    "docs/VERSLOMATIKA_CONTENT_WORK.md: actual local failed jobs remain private; repeated revision drift and a duplicate language receipt correctly rejected before native apply",
+    "Source base28a5d7d7df59d03792f381fa24351804cb23e2db; source-only regression retains canonical malformed-reference rejection"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_work/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/review.py",
+    "agent-business-core/runtime/tests/test_native_guide_protocol.py",
+    "agent-business-core/runtime/tests/test_content_continuation_offline.py",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of native prompt and provider receipt bounds; do not rewrite historical jobs or reviews.",
+  "id": "upgrade-82d8d37e-87ce-4ccc-955e-fd1b73ba6b97",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "28a5d7d7df59d03792f381fa24351804cb23e2db",
+  "createdAt": "2026-10-11T03:23:06.282Z"
+}

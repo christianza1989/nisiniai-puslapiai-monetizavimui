@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original restricted-PG baseline2FAIL20.98s: own exhausted two-role budget and global three-role budget retained after membership revocation both still admitted new creation/revision202. Fix reuses maintained shared own/global charged-attempt counts under the existing admission advisory lock, before queue mutation; independent job-rate bounds remain. Tests also cover exact prior idempotency and GUIDE-to-business shared budget. No actual provider/live budget or history modification.",
+  "eventId": "ba4b9431-e709-41df-a8e9-1fe9d9f9cd2b",
+  "sequence": 2,
+  "at": "2026-10-10T15:48:41.360Z"
+}

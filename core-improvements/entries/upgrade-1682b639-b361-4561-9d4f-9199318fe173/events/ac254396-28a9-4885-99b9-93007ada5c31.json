@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial nine-field regressions2FAIL3PASS63deselected; target ceiling8 forced full creator path. Raise only validated critic upper bound to72, preserve byte/leaf/exact all-field/hash/gate checks. First guessed native-suite path produced no-tests collection failure, corrected to discovered existing suites.",
+  "eventId": "ac254396-28a9-4885-99b9-93007ada5c31",
+  "sequence": 2,
+  "at": "2026-10-10T23:43:40.212Z"
+}

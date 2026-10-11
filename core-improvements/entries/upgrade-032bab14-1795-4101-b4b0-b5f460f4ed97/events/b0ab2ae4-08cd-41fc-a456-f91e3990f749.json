@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "pytest offline_tests/test_customer_review.py offline_tests/test_customer_quality.py offline_tests/test_customer_agent_lab.py -q",
+      "evidence": "71PASS4.86s/SHAa7986b68372031551acf6a4c0141aedd2417a19301c2fe7f8067c542c43f8835"
+    },
+    {
+      "result": "PASS",
+      "command": "pytest tests/test_customer_review.py tests/test_customer_quality.py -q; corrected Config-mutation case separately",
+      "evidence": "23PASS plus1fixtureFAIL276.19s/SHA36b9b99b33f6c1f87e3b9a24abad774f9f148011e3ffb812a01cfe58163775b1 then corrected expected_revision fixture1PASS11.14s/SHAe529baf5b8a3fdc602d66c31b5d0ca613d4f624b4431c3314e83a44228985155; production source unchanged"
+    },
+    {
+      "result": "PASS",
+      "command": "pytest tests/test_local_semantics.py tests/test_quality_context.py tests/test_quality_guards.py tests/test_calibration.py tests/test_learning_controller.py tests/test_core.py tests/test_budget.py -q",
+      "evidence": "55PASS65.49s/SHAe0510f976e899d54805562a3a7d6dbf82ccbd91e8c7c9916bb9561c58715bd05; frozen source/protected inputs exact"
+    }
+  ],
+  "note": "Existing Quality lifecycle reused with exact local customer authority, fixed maintained Sol catalogue/profile and cancellation-safe known usage settlement. Production source frozen, protected corpus/controller/criteria exact; all original FAILs retained in fixing and docs. Final independent readonly noP0-P2 is separate from tests. Source QA uses injected provider0/channel0/operationalDB untouched; actual model/protected calibration/module admission/activation/ordinaryUI/targetPC/public remain OPEN.",
+  "status": "local-verified",
+  "eventId": "b0ab2ae4-08cd-41fc-a456-f91e3990f749",
+  "sequence": 3,
+  "at": "2026-10-11T14:58:15.070Z"
+}

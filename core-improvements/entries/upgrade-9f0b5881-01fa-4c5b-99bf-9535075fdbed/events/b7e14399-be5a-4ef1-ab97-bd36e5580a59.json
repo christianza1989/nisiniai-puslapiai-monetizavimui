@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original actual provider rejection and0PASS1FAIL regression retained. Provider-only nested disjoint anyOf projection replaces unsupported oneOf; URI format removed while HTTPS/native validated URL/verified external admission remain. No public schema/SQL/HTTP/wire/model/cap/history change.",
+  "eventId": "b7e14399-be5a-4ef1-ab97-bd36e5580a59",
+  "sequence": 3,
+  "at": "2026-10-11T01:25:18.167Z"
+}

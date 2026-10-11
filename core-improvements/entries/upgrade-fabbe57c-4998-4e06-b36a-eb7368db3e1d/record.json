@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Preserve actually observed completed usage on subsequent terminal CLI error and connect native GUIDE to compact model schema.",
+  "category": "code",
+  "evidence": [
+    "Terminal failfast error classification needs prior completed usage retained by shared transport observed_receipt; the actual427d critic trace has no completed usage and remains unknown.",
+    "Child source inspection: content_work/review.py builds shared stored schemas directly and must call compact provider-only shared helper while preserving native digest/actions."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex_transport.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/review.py",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert only these changes; no raw or immutable runtime history rewrite.",
+  "id": "upgrade-fabbe57c-4998-4e06-b36a-eb7368db3e1d",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "427d70cd68c6c39462bb9a81e201f19c20df8719",
+  "createdAt": "2026-10-10T14:35:59.570Z"
+}

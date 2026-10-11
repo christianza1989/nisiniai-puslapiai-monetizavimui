@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "A one-word critic language correction currently rerolls the full creator draft and can introduce unrelated defects; add an exact targeted immutable patch contract.",
+  "category": "code",
+  "evidence": [
+    "Root sanitized observation: six actual role calls on source8a9fe74; first critic required only one research finding language correction, full creator replacement introduced unrelated assumption language drift; final review rejected.",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py rounds1..2 full creator replacement",
+    "Exact base8a9fe74154e60d754be448636adce4985d6ce027; private main13c9649c76dd48cdf426604cb721e1ccd58a9854; companion0b784a2e6bd8d9e839fa7ddc36d8ceb8c845badf/main ec8a9c032fe926d1d9722802d8eb26fa8bd02937"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/language_patch.py",
+    "agent-business-core/runtime/offline_tests/test_creation_language_patch.py",
+    "docs/VERSLOMATIKA_LANGUAGE_PATCH.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only the scoped helper/test/doc commit before parent integration; existing full creator fallback and authoritative gates are unchanged.",
+  "id": "upgrade-43d54ab8-65bb-4b0e-a30d-9e4431f9bc6f",
+  "branch": "codex/verslomatika-language-patch-20261010",
+  "baseSha": "8a9fe74154e60d754be448636adce4985d6ce027",
+  "createdAt": "2026-10-10T13:52:43.405Z"
+}

@@ -64,6 +64,39 @@ async def test_durable_worker_history_events_and_usage(chat):
         assert run.usage == {"input_tokens": 12} and run.cost_microusd is None
 
 
+@pytest.mark.parametrize("code,receipt,expected", [
+    ("output_invalid", {"input_tokens": 12, "output_tokens": 4}, {"input_tokens": 12, "output_tokens": 4}),
+    ("provider_error", {"input_tokens": 0, "output_tokens": 1_000_000_000},
+     {"input_tokens": 0, "output_tokens": 1_000_000_000}),
+    ("tool_attempted", {"input_tokens": 7, "output_tokens": True, "cached_input_tokens": "12",
+                        "private_diagnostic": "synthetic-private-text", "usd": 9}, {"input_tokens": 7}),
+    ("output_invalid", {"input_tokens": True, "output_tokens": -1, "cached_input_tokens": 1_000_000_001}, None),
+    ("provider_error", None, None),
+    ("provider_error", "synthetic-non-receipt", None),
+])
+async def test_failed_run_persists_only_known_usage(chat, code, receipt, expected):
+    accepted = await start(chat)
+    assert accepted.status_code == 202
+    task_id = accepted.json()["data"]["task"]["task_id"]
+
+    async def rejected_adapter(context, heartbeat):
+        assert await heartbeat()
+        raise worker.codex.RunnerError(code, receipt)
+
+    assert await worker.execute_once(rejected_adapter)
+    response = await chat["client"].get(f"/operator/v2/tasks/{task_id}", headers=chat["headers"])
+    assert response.status_code == 200
+    assert response.json()["data"]["status"] == "failed"
+    assert response.json()["data"]["failure_code"] == code
+    assert response.json()["data"]["result"] is None
+    events = await chat["client"].get(f"/operator/v2/tasks/{task_id}/events", headers=chat["headers"])
+    assert [event["status"] for event in events.json()["data"]["items"]] == ["queued", "running", "failed"]
+    async with scope(user=settings().chat_operator_user_id) as tx:
+        run = await tx.scalar(select(TaskRun).where(TaskRun.task_id == task_id))
+        assert run.status == "failed" and run.finished_at is not None
+        assert run.usage == expected and run.cost_microusd is None
+
+
 async def test_duplicate_concurrent_key_and_changed_payload(chat):
     key = str(uuid4())
     a, b = await asyncio.gather(start(chat, key=key), start(chat, key=key))

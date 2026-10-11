@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original isolated read-only evidence QA32offlinePASS/7PGFAIL1PASS retained (empty listing lacked canonical server-owned business RLS scope), PGlogSHA5fa048e89d1243385b654161017922a8ac3056bc76361bd27f302200bbbfa403; diagnostic1FAIL18.07s/SHAfd040b483dd73b51ee558f48a9423268701e3a3b76fc15e607815f293e3ff4ae. Two independent review P2 reproduced without DB/providers, receiptSHA1f1fb5d578ca11dc9fc70358c99065a7982ea4b186f739049decb1ee6c0dd135: vacuous zero-reservation succeeded Quality, truncated token prefix presented as aggregate. Initial added test had missing future truncated parameter and missing optional Quality field; original1FAIL9PASS logSHA465a2525035271aef2273060f1ff390b7015d141a10e922f6883c98b24a72808 retained, corrected reproduction proved both P2 before production fix. Fix scopes verified registry business, exact reservations and settlement before Quality outcome, all truncated aggregates unknown. Canonical stored OpenAPI supplement scope6110655811; no new scheduler/controller/corpus/criteria, migration or operational edits.",
+  "eventId": "c19e72bc-a735-4a35-9ba1-6a1986d9e6c5",
+  "sequence": 3,
+  "at": "2026-10-11T16:04:10.380Z"
+}

@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Bounded role dispatch does not bound Codex CLI internal incomplete-stream retries; use same official OpenAI auth transport with zero retries.",
+  "category": "code",
+  "evidence": [
+    "Actual519job5f26 critic3partialJSON messages then first max-output error; original failure preserved, no complete usage,16reservations/4remaining.",
+    "OfficialCodexissue38831/currentprimarysource converts response.incomplete to retryable stream error, losing provider usage. Installedcodex0.156.1 builtinopenai retryoverrides rejected offline; fixed custom OpenAI alias accepted by no-providerfeatureslist."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+    "agent-business-core/runtime/offline_tests/test_control_codex.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert per-owned-process arguments only; no global auth/config/attempt history rewrite.",
+  "id": "upgrade-af658665-a037-461b-947d-8d081bfabe0c",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "b0f35e3a7ecc91dba09649d0954b86261ffb3614",
+  "createdAt": "2026-10-10T14:57:06.529Z"
+}

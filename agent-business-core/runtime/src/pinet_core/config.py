@@ -28,6 +28,8 @@ class Settings(BaseSettings):
     customer_text_runner_enabled: bool = False
     customer_portal_origin: str = "http://127.0.0.1:3017"
     customer_outbox_directory: str = "artifacts/customer-outbox"
+    acquisition_capture_enabled: bool = False
+    acquisition_capture_config: str = ""
     public_projects_enabled: bool = False
     creation_enabled: bool = False
     creation_runner_enabled: bool = False

@@ -4,6 +4,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from sqlalchemy import text
 
+from .acquisition.control_routes import router as acquisition_control_router
+from .acquisition.routes import acquisition_router
 from .agent_preparation.routes import router as agent_preparation_router
 from .content_completion.routes import router as content_completion_router
 from .content_work.routes import router as content_work_router
@@ -26,6 +28,8 @@ async def lifespan(app):
         role = (await tx.execute(text("SELECT rolsuper, rolbypassrls FROM pg_roles WHERE rolname=current_user"))).one()
         if role.rolsuper or role.rolbypassrls:
             raise RuntimeError("Application must use a restricted RLS role")
+    from .acquisition import normal as acquisition_normal
+    await acquisition_normal.start(app, db)
     try:
         yield
     finally:
@@ -34,6 +38,8 @@ async def lifespan(app):
 
 app = FastAPI(title="Pinet owner control", lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
 app.include_router(control_router)
+app.include_router(acquisition_control_router)
+app.include_router(acquisition_router())
 app.include_router(task_router)
 app.include_router(operations_router)
 app.include_router(customer_router)

@@ -61,8 +61,9 @@ def account_hash(scope, adapter_id, account_ref):
 
 
 class AcquisitionLedger:
-    def __init__(self, database: Database, recipient_keys: dict):
+    def __init__(self, database: Database, recipient_keys: dict, *, fresh_authorize=None):
         self.database, self.recipient_keys = database, dict(recipient_keys)
+        self.fresh_authorize = fresh_authorize
 
     def recipient_key(self, scope, adapter_id, key_id):
         key = self.recipient_keys.get((scope, adapter_id, key_id))
@@ -152,6 +153,10 @@ class AcquisitionLedger:
             invite = await tx.scalar(select(AcquisitionInvitation).where(
                 *conditions(AcquisitionInvitation, values),
                 AcquisitionInvitation.invitation_ref == value.invitation_ref).with_for_update())
+            if self.fresh_authorize is not None:
+                # Exact historical ACKs above stay immutable. New normal commands
+                # recheck their module and DB clock after the last lock wait.
+                now = await self.fresh_authorize(tx, operation, value)
             common = {'scope': scope, 'adapter_id': adapter_id, 'invitation_ref': invite.invitation_ref,
                       'request_id': value.request_id} if operation != 'events' else {}
             extra = {}

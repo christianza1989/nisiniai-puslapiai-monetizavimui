@@ -49,7 +49,16 @@ def acquisition_router(runtime: CaptureRuntime | None = None):
 
     @router.post('/integrations/acquisition/v1/sites/{site_id}/{endpoint}')
     async def callback(site_id: str, endpoint: str, request: Request):
-        if runtime is None:
+        active = runtime
+        if active is None and getattr(request.app.state, 'acquisition_runtime', None) is not None:
+            from ..control.routes import ControlError
+            from .normal import ready
+            try:
+                ready(request.app)
+                active = request.app.state.acquisition_runtime
+            except ControlError:
+                pass
+        if active is None:
             return JSONResponse({'detail': 'acquisition_disabled'}, status_code=503)
         if endpoint not in OPERATIONS or request.url.query:
             return JSONResponse({'detail': 'invalid_acquisition_target'}, status_code=404)
@@ -64,12 +73,12 @@ def acquisition_router(runtime: CaptureRuntime | None = None):
             raw = b''.join(chunks)
             operation, model = OPERATIONS[endpoint]
             value = model.model_validate_json(raw)
-            now = runtime.clock()
+            now = active.clock()
             signed_headers = [name.lower() for name, _ in request.scope['headers']
                               if name.lower().startswith(b'x-acq-')]
             if len(signed_headers) != len(set(signed_headers)) or site_id != value.scope.site_id:
                 raise ValueError('callback_target_or_header_mismatch')
-            verify_request(runtime.grants, dict(request.headers), 'POST', request.url.path, raw,
+            verify_request(active.grants, dict(request.headers), 'POST', request.url.path, raw,
                            int(now.timestamp()), value.scope, value.adapter_id, operation)
         except ValidationError:
             return JSONResponse({'detail': 'invalid_acquisition_payload'}, status_code=422)
@@ -79,7 +88,7 @@ def acquisition_router(runtime: CaptureRuntime | None = None):
             if operation == 'capture':
                 return Response(value.model_dump_json(), media_type='application/json',
                                 headers={'Cache-Control': 'no-store'})
-            reply = await runtime.ledger.execute(operation, value, raw, now)
+            reply = await active.ledger.execute(operation, value, raw, now)
             return Response(reply.body, status_code=reply.status, media_type='application/json',
                             headers={'Cache-Control': 'no-store'})
         except LedgerError as exc:
@@ -93,23 +102,27 @@ def capture_app(runtime: CaptureRuntime):
     """Separate local acceptance host; normal API remains unmodified/disabled."""
     @asynccontextmanager
     async def lifespan(app):
-        async with runtime.ledger.database.registry() as tx:
-            role = (await tx.execute(text(
-                'SELECT rolsuper,rolbypassrls FROM pg_roles WHERE rolname=current_user'))).one()
-            if role.rolsuper or role.rolbypassrls:
-                raise RuntimeError('Acquisition capture requires a restricted RLS role')
-            immutable = await tx.scalar(text(
-                "SELECT NOT has_table_privilege(current_user,'acquisition_receipts','UPDATE') "
-                "AND NOT has_table_privilege(current_user,'acquisition_receipts','DELETE')"))
-            tables = (await tx.execute(text(
-                "SELECT relrowsecurity,relforcerowsecurity FROM pg_class WHERE relkind='r' "
-                "AND relnamespace='public'::regnamespace AND relname IN "
-                "('acquisition_campaigns','acquisition_invitations','acquisition_challenges','acquisition_receipts')"))).all()
-            if not immutable or len(tables) != 4 or not all(enabled and forced for enabled, forced in tables):
-                raise RuntimeError('Acquisition capture requires forced RLS and immutable receipt privileges')
+        await validate_capture_storage(runtime.ledger.database)
         yield
         await runtime.ledger.database.engine.dispose()
 
     app = FastAPI(title='Acquisition isolated capture acceptance', lifespan=lifespan)
     app.include_router(acquisition_router(runtime))
     return app
+
+
+async def validate_capture_storage(database):
+    async with database.registry() as tx:
+        role = (await tx.execute(text(
+            'SELECT rolsuper,rolbypassrls FROM pg_roles WHERE rolname=current_user'))).one()
+        if role.rolsuper or role.rolbypassrls:
+            raise RuntimeError('Acquisition capture requires a restricted RLS role')
+        immutable = await tx.scalar(text(
+            "SELECT NOT has_table_privilege(current_user,'acquisition_receipts','UPDATE') "
+            "AND NOT has_table_privilege(current_user,'acquisition_receipts','DELETE')"))
+        tables = (await tx.execute(text(
+            "SELECT relrowsecurity,relforcerowsecurity FROM pg_class WHERE relkind='r' "
+            "AND relnamespace='public'::regnamespace AND relname IN "
+            "('acquisition_campaigns','acquisition_invitations','acquisition_challenges','acquisition_receipts')"))).all()
+        if not immutable or len(tables) != 4 or not all(enabled and forced for enabled, forced in tables):
+            raise RuntimeError('Acquisition capture requires forced RLS and immutable receipt privileges')

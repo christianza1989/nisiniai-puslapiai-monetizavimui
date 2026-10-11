@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {spawn} from 'node:child_process';
+import {createHash} from 'node:crypto';
+const repo=path.resolve(import.meta.dirname,'../../..'),dir=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011/trial'),artifact=path.join(dir,'worker.mjs');
+const manifest=JSON.parse(await readFile(path.join(dir,'manifest.json')));
+assert.equal(createHash('sha256').update(await readFile(artifact)).digest('hex'),manifest.artifactSha256);
+const child=spawn(process.execPath,['--test','sites/madbeauty/cloudflare/community-trial-runtime.test.mjs'],{cwd:repo,env:{...process.env,MADBEAUTY_COMMUNITY_ARTIFACT:artifact},stdio:['ignore','pipe','pipe']});let output='';child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>output+=b);
+const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});await writeFile(path.join(dir,'community-native.txt'),output);assert.equal(code,0,'Exact trial community artifact failed; inspect saved test output');
+await writeFile(path.join(dir,'community-native.json'),JSON.stringify({state:'PASS',artifactSha256:manifest.artifactSha256,sourceCommit:manifest.sourceCommit,at:new Date().toISOString(),checks:'45 existing profiles and reviews preserved, 90 paged actors, 45 idempotent posts, actual gallery and service authorization, SQL restart'}));
+console.log(JSON.stringify({state:'PASS',kind:'trial',exactArtifact:true}));

@@ -1,18 +1,18 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T23:03:22.546Z",
+  "generatedAt": "2026-10-11T06:00:15.820Z",
   "title": "Design System: parasoplansetes.lt",
   "extensions": {
     "shadows": [
       {
-        "name": "workbench",
-        "value": "0 18px 55px #213b6810",
-        "purpose": "Dokumento proceso paviršius."
-      },
-      {
         "name": "conversation",
         "value": "0 16px 60px #172b4938",
         "purpose": "Iškeltas pokalbio sluoksnis."
+      },
+      {
+        "name": "conversation-launcher",
+        "value": "0 8px 26px #173c6e30",
+        "purpose": "Pokalbio paleidiklis; mobile 52 px apskritimas."
       }
     ],
     "motion": [
@@ -20,6 +20,11 @@
         "name": "action-background",
         "value": "background .18s ease",
         "purpose": "Veiksmo hover; išjungtas prefers-reduced-motion."
+      },
+      {
+        "name": "signature-ink",
+        "value": "stroke-dashoffset 88 → 0, 1.4s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Vienas hero parašo SVG judesys; išjungtas prefers-reduced-motion."
       }
     ],
     "breakpoints": [
@@ -39,7 +44,20 @@
         "name": "small-phone",
         "value": "360px"
       }
-    ]
+    ],
+    "typographyRoles": {
+      "display": "clamp(2rem,1.75rem + 1.3vw,3rem); 650; 1.2; -.02em",
+      "body": "17px / mobile 16px; 400; 1.65; normal",
+      "control": "15px; 600",
+      "detail": "14px; 400",
+      "caption": "13px; 400"
+    },
+    "layout": {
+      "homepageFirstScreenMaxWidth": "1600px",
+      "sectionMaxWidth": "1248px",
+      "gutter": "24px",
+      "readingMeasure": "65ch"
+    }
   },
   "components": [
     {
@@ -48,14 +66,14 @@
       "refersTo": "button-primary",
       "description": "Mėlynas realios kelionės veiksmas.",
       "html": "<a class=\"ds-primary\" href=\"#\">Palyginti modelius <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
-      "css": ".ds-primary{display:inline-flex;align-items:center;gap:20px;min-height:52px;padding:14px 22px;background:#185de5;color:white;border-radius:8px;font:700 14px/1.7 'StepOver Manrope',sans-serif;text-decoration:none;transition:background .18s ease}.ds-primary svg{width:22px;height:22px}.ds-primary:hover{background:#124cc0}.ds-primary:focus-visible{outline:3px solid #185de5;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:20px;min-height:52px;padding:14px 22px;background:#185de5;color:white;border-radius:8px;font:600 15px/1.7 'StepOver Manrope',sans-serif;text-decoration:none;transition:background .18s ease}.ds-primary svg{width:22px;height:22px}.ds-primary:hover{background:#124cc0}.ds-primary:focus-visible{outline:3px solid #185de5;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
     },
     {
       "name": "Teksto veiksmas",
       "kind": "button",
       "description": "Antrinė nuoroda be dekoratyvinio paviršiaus.",
       "html": "<a class=\"ds-link\" href=\"#\">Visi modeliai</a>",
-      "css": ".ds-link{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;font:700 14px/1.7 'StepOver Manrope',sans-serif;color:#185de5;text-decoration:none}.ds-link:hover{text-decoration:underline;text-underline-offset:.23em}.ds-link:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
+      "css": ".ds-link{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;font:600 15px/1.7 'StepOver Manrope',sans-serif;color:#185de5;text-decoration:none}.ds-link:hover{text-decoration:underline;text-underline-offset:.23em}.ds-link:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
     },
     {
       "name": "Užklausos laukas",
@@ -63,31 +81,31 @@
       "refersTo": "field",
       "description": "Matoma etiketė ir 16 px įvestis.",
       "html": "<label class=\"ds-field\">El. paštas<input type=\"email\" placeholder=\"vardas@imone.lt\"></label>",
-      "css": ".ds-field{display:grid;gap:8px;font:700 13px/1.7 'StepOver Manrope',sans-serif;color:#172b49}.ds-field input{font:400 16px/1.6 'StepOver Manrope',sans-serif;padding:12px 14px;border:1px solid #aebcd1;border-radius:7px;background:white;color:#172b49}.ds-field input:hover{border-color:#718bac}.ds-field input:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
+      "css": ".ds-field{display:grid;gap:8px;font:600 15px/1.7 'StepOver Manrope',sans-serif;color:#172b49}.ds-field input{font:400 16px/1.6 'StepOver Manrope',sans-serif;padding:12px 14px;border:1px solid #aebcd1;border-radius:7px;background:white;color:#172b49}.ds-field input:hover{border-color:#718bac}.ds-field input:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
     },
     {
       "name": "Navigacija",
       "kind": "nav",
       "description": "Aiškus aktyvus kelias.",
       "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Modeliai</a><a href=\"#\">Programinė įranga</a><a href=\"#\">Integracija</a><a href=\"#\">Gidai</a></nav>",
-      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:24px;font:600 13px/1.7 'StepOver Manrope',sans-serif}.ds-nav a{display:flex;align-items:center;min-height:44px;color:#172b49;text-decoration:none}.ds-nav a[aria-current]{color:#185de5;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:24px;font:600 15px/1.7 'StepOver Manrope',sans-serif}.ds-nav a{display:flex;align-items:center;min-height:44px;color:#172b49;text-decoration:none}.ds-nav a[aria-current]{color:#185de5;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
     },
     {
       "name": "Dokumento eiga",
       "kind": "custom",
-      "description": "Natyvi keturių žingsnių schema.",
-      "html": "<ol class=\"ds-workflow\"><li>Dokumentas</li><li>Peržiūra</li><li>Parašas</li><li>Archyvas</li></ol>",
-      "css": ".ds-workflow{list-style:none;padding:22px 0 0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;font:600 11px/1.7 'StepOver Manrope',sans-serif;color:#172b49}.ds-workflow li{position:relative;padding-top:17px}.ds-workflow li:before{content:'';position:absolute;top:0;width:7px;height:7px;border-radius:50%;background:#185de5}.ds-workflow li:after{content:'';position:absolute;top:3px;left:12px;right:0;height:1px;background:#dce3ee}.ds-workflow li:last-child:after{display:none}"
+      "description": "Natyvi keturių žingsnių SVG schema. Dokumentas, akis, rašiklis, archyvas; 24×24, vienas 1,6 px brūkšnys.",
+      "html": "<ol class=\"ds-workflow\" aria-label=\"Dokumento pasirašymo eiga\"><li><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Zm0 0v5h5M9 12h6m-6 4h4\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>Dokumentas</span><svg aria-hidden=\"true\" class=\"ds-flow-arrow\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></li><li><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Zm13 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>Peržiūra</span><svg aria-hidden=\"true\" class=\"ds-flow-arrow\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></li><li><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"m14.5 5.5 4 4M4 20l1.5-6.5L16 3a2.8 2.8 0 0 1 4 4L9.5 17.5 4 20Zm1.5-6.5 4 4M13 21h8\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>Parašas</span><svg aria-hidden=\"true\" class=\"ds-flow-arrow\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></li><li><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M20 6c0 2-3.6 3-8 3S4 8 4 6s3.6-3 8-3 8 1 8 3ZM4 6v12c0 2 3.6 3 8 3s8-1 8-3V6M4 12c0 2 3.6 3 8 3s8-1 8-3\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>Archyvas</span></li></ol>",
+      "css": ".ds-workflow{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:38px 0 0;padding:21px 12px;background:#ffffffed;border-radius:12px;max-width:540px;font-family:'StepOver Manrope',sans-serif}.ds-workflow li{position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;color:#233b5b;font-size:14px;font-weight:600;line-height:1.45}.ds-workflow li>svg{width:27px;height:27px;color:#185de5}.ds-workflow li>.ds-flow-arrow{position:absolute;right:-8px;top:6px;width:17px;height:17px;color:#4776d0}"
     }
   ],
   "narrative": {
-    "northStar": "Dokumento darbo stalas",
-    "overview": "2026-10-10 StepOver redesign. Dokumento eiga, tikras įrenginys, palyginamos savybės ir konkretus kitas veiksmas. Šaltos šviesios plokštumos, mėlyni veiksmai ir tamsus rašalas jungia katalogą su skaitmeniniu dokumentų procesu.",
+    "northStar": "Parašas darbo aplinkoje",
+    "overview": "Savininko pasirinktas ImageGen homepage konceptas: žmonių darbo situacijos, tikri StepOver modeliai, dokumento eiga ir konkreti užklausa. Naujesnė peržiūrėta laida išsaugo pasirinktą logotipą, lietuviškus tekstus, vieną Manrope vaidmenų sistemą ir sutvarkytą poraštę.",
     "keyCharacteristics": [
+      "Devynios iliustracinės fotografijų kompozicijos ir natyvios SVG ikonos.",
       "Vienas mėlynas veiksmo akcentas.",
-      "Matoma dokumento eiga ir modelio savybės.",
-      "Bendra katalogo, skaitymo ir pokalbio tipografija.",
-      "Platus desktop išdėstymas tampa viena mobile seka."
+      "Bendra tipografijos vaidmenų sistema.",
+      "Centruotas 1600 px pirmas ekranas ir aiški vertikali telefono seka."
     ],
     "rules": [
       {
@@ -103,7 +121,7 @@
     ],
     "dos": [
       "Do išlaikyti paketo faktus, tikrus vaizdus, kreditus ir nuorodas.",
-      "Do aiškiai skirti įrenginį, programinį kelią ir užklausą.",
+      "Do aiškiai skirti įrenginį, pasirašymo programą ir dokumento perdavimą ir užklausą.",
       "Do jungti visus puslapius ta pačia veiksmų kalba."
     ],
     "donts": [

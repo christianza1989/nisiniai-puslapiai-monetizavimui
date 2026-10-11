@@ -10,6 +10,9 @@ colors:
   muted: "#53647c"
   line: "#dce3ee"
   inquiry: "#eaf0fb"
+  homepage-inquiry: "#edf4ff"
+  model-band: "#f0f5fc"
+  process-copy: "#dce6f5"
 typography:
   display:
     fontFamily: "StepOver Manrope, sans-serif"
@@ -55,15 +58,16 @@ components:
 
 ## Overview
 
-**Creative North Star: "Dokumento darbo stalas"**
+**Creative North Star: "Parašas darbo aplinkoje"**
 
-2026-10-10 StepOver redesign. Dokumento eiga, tikras įrenginys, palyginamos savybės ir konkretus kitas veiksmas. Šaltos šviesios plokštumos, mėlyni veiksmai ir tamsus rašalas jungia katalogą su skaitmeniniu dokumentų procesu. Tai agento pasirinkimas pagal deleguotą pavedimą ir PROJECT_ADAPTATION, ne žmogaus dizaino approval. Ankstesnis 2026-10-08 DESIGN išsaugotas Git istorijoje.
+Savininkas pasirinko su ImageGen sukurtą viso homepage konceptą ir paprašė jį įgyvendinti dar gražiau. Kryptį kuria žmonių darbo situacijos, tikri StepOver modeliai, aiški dokumento eiga ir konkretus kitas veiksmas. Šviesios plokštumos, mėlyni veiksmai ir tamsus proceso blokas jungia fotografijas su skaitmeniniu dokumentų pasirašymu. 2026-10-10 pirmoji „Dokumento darbo stalo“ kryptis ir jos patikros išsaugotos istorijoje; dabartinis homepage tęsia savininko pasirinktą fotografijų konceptą.
 
 2026-10-10 savininkas pasirinko naują planšetės ir rašiklio logotipą: dvi kairėje sulygiuotos eilutės „parašo“ / „planšetės.lt“, planšetės apačia ties apatinės „p“ apačia. Papildomas „StepOver sprendimai“ po logotipu pašalinamas. Brand taikomas antraštėje ir poraštėje; dydžiai ir patikra dokumentuojami [LOGO_PUBLICATION_20261010](LOGO_PUBLICATION_20261010.md). Patvirtintos nuotraukos, gamintojo kreditai ir turinio tiesa išlieka. Tyrimas ir priėmimo ribos: [DESIGN-REFRESH-20261010](DESIGN-REFRESH-20261010.md).
 
 **Key Characteristics:**
 
 - Vienas mėlynas veiksmo akcentas.
+- Devynios iliustracinės fotografijų kompozicijos ir vientisos natyvios SVG ikonos.
 - Matoma dokumento eiga ir modelio savybės.
 - Bendra katalogo, skaitymo ir pokalbio tipografija.
 - Platus desktop išdėstymas tampa viena mobile seka.
@@ -84,13 +88,13 @@ Manrope laikomas lokaliai su OFL ir lotynų bei išplėstiniu lotynų poaibiais.
 
 ## Layout
 
-Konteineris iki 1248 px, vidinis iki 1200 px, šonai 24 px. Skaitymo tekstas iki 720 px. Homepage: plati iliustracinė priėmimo nuotrauka su tekstu kairėje, dokumento kelio piktogramos, trys skirtingos darbo situacijos, trys gamintojo modeliai, tamsus proceso blokas, keturi gidai su nuotraukomis, patvirtintos kontekstinės nuorodos ir užklausa. Telefone hero tekstas ir nuotrauka išdėstomi vertikaliai. Katalogo modeliai ir kontaktų forma rodomi prieš papildomą paaiškinimą.
+Homepage antraštė, hero ir poraštė dalijasi centruotu 1600 px konteineriu; sekcijų konteineris iki 1248 px, vidinis iki 1200 px, šonai 24 px. Skaitymo tekstas iki 65ch. Homepage: plati iliustracinė priėmimo nuotrauka su tekstu kairėje, dokumento kelio piktogramos, trys skirtingos darbo situacijos, trys gamintojo modeliai, tamsus proceso blokas, keturi gidai su nuotraukomis, patvirtintos kontekstinės nuorodos ir užklausa. Telefone hero tekstas ir nuotrauka išdėstomi vertikaliai. Katalogo modeliai ir kontaktų forma rodomi prieš papildomą paaiškinimą.
 
 Desktop katalogas dviejų stulpelių; gidai keturių, ties 1100 px — dviejų. Ties 900 px navigacija tampa native details meniu. Ties 700 px puslapis ir forma pereina į vieną stulpelį. Ties 360 px modelių savybės rodomos vertikaliai. Gido turinys desktop turi sticky nuorodų stulpelį, mobile — išskleidžiamą bloką prieš tekstą.
 
 ## Elevation & Depth
 
-Tekstas ir savybės atskiriami tonu bei linijomis. Šešėliai: darbo stalas `0 18px 55px #213b6810`, pokalbis `0 16px 60px #172b4938`. Tai sluoksnio atskyrimas, ne įrenginio 3D imitacija.
+Tekstas ir savybės atskiriami tonu bei linijomis. Fotografijų homepage buvęs darbo stalo komponentas neberodomas. Pokalbio sluoksnio šešėlis `0 16px 60px #172b4938`, paleidiklio `0 8px 26px #173c6e30`; tai sluoksnio atskyrimas, ne įrenginio 3D imitacija.
 
 ## Shapes
 
@@ -116,7 +120,7 @@ Pokalbis pasirenkamas tik `appearance="stepover"`. Panelė iki 430 px, mobile ik
 ## Do's and Don'ts
 
 - **Do** išlaikyti paketo faktus, tikrus vaizdus, kreditus ir nuorodas.
-- **Do** aiškiai skirti įrenginį, programinį kelią ir užklausą.
+- **Do** aiškiai skirti įrenginį, pasirašymo programą, dokumento perdavimą ir užklausą.
 - **Do** jungti visus puslapius ta pačia veiksmų kalba.
 - **Don't** kurti kainų, klientų, įvertinimų, tiekimo ar sertifikavimo įrodymų.
 - **Don't** perpiešti įrenginio ar kopijuoti Dribbble vaizdo.
@@ -136,3 +140,5 @@ Devynios skirtingos kompozicijos: priėmimas, klientų aptarnavimas, sveikatos �
 Visi vaizdai pateikiami per bendrą Content Studio responsive media importą: 45 nauji WebP variantai, devynių šeimų ID parinkti `config/parasoplansetes-homepage-media.json`. Hero kraštinių santykis 2:1; mobilus vaizdas nepridengia teksto. Tiksli laida, patikros ir ribos: [DESIGN_DEPLOYMENT_20261010.md](DESIGN_DEPLOYMENT_20261010.md).
 
 Mobilus AI paleidiklis yra 52 px apskritimas su aiškiu prieinamumo pavadinimu. Pokalbio tęstinumo, sutikimų, kontaktų ir serverio autorizacijos logika išsaugota.
+
+2026-10-11 dizaino šaka suderinta su naujesniais savininko teksto, logotipo, fotografijų, tipografijos ir poraštės pakeitimais. Pirmojo vaizdų rinkinio istorija ir dabartinės laidos atskyrimas, patikros bei naršyklės ryšio ribos: [HOMEPAGE-PHOTOGRAPHIC-20261011](HOMEPAGE-PHOTOGRAPHIC-20261011.md). Senas vienkartinis media importas neleidžia perrašyti dabartinio patvirtinto paketo.

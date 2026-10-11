@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "uv run pytest -q; Ruff format/check; JS syntax; unchanged four DTO schemas",
+      "evidence": "agent-business-core/xbot/QA-ASYNC-CORE.md"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Final87PASS/19.85s (55baseline+32async); post-await clock regression fixed, original clock and fixture failures retained. No new paid/model/X/PG tests; same async source-only scope. Root real BFF/PG/admission/dashboard wiring and independent review pending.",
+  "eventId": "48c651ef-c0fd-48a1-979a-419cc306a849",
+  "sequence": 5,
+  "at": "2026-10-11T08:25:59.258Z"
+}

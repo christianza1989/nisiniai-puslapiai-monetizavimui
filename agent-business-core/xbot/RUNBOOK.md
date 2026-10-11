@@ -62,3 +62,14 @@ Worker pats neįjungiamas ir nėra scheduler paslauga. Jis naudoja kiekvieno ver
 Vietinis UI/API klausosi tik loopback. Neskelbti jo viešai ir neperduoti operatoriaus rakto klientų dashboardui. Produkcijos auth, revokacija ir bendras CRM priklauso maintained core. UI, CLI ir mokamos funkcijos nėra to paties priėmimo įrodymai.
 
 Prijungiant prie platformos naudoti vieną DB kiekvienai environment. Susietos organization/business/environment/site tapatybės negalima pakeisti ar pašalinti įprastu policy/rebind. Nesusieto profilio ankstesnių darbų automatiškai neperkelti klientui: sukurti švarią instanciją arba atskirai audituoti migraciją. Tos pačios tapatybės rebind atšaukia laukiančias užduotis ir reikalauja iš naujo įjungti vietinį ruošimą. Maintained async resolverio ir customer sesijos patikros laidai turi atskirą e2e priėmimą.
+
+Maintained async integracijai naudoti `AsyncModuleAdapter`, ne sinchroninį `ModuleAdapter`:
+
+```python
+adapter = AsyncModuleAdapter(service, resolve_current)
+await adapter.bind(server_authority, approved_public_profile, expected_revision)
+snapshot = await adapter.snapshot(server_authority)
+receipt = await adapter.command(server_authority, command)
+```
+
+`resolve_current` yra serverio injektuotas async `(authority, permission) -> Binding` tikrintojas pagal [PLATFORM_CONTRACT](PLATFORM_CONTRACT.md). Jis nėra jau įgyvendintas šiame kataloge. Jokio cached ProfileView, `asyncio.run` aktyviame loop ar DB transakcijos per modelio/provider laukimą. Biblioteka laukia kiekvienos patikros; neprieinama authority ir nesusietas managed profilis blokuojami. Source blocker snapshot nesuteikia vykdymo teisės. Šio pakeitimo priėmimas naudoja tik injected testinius tikrintojus; mokamų ar tikrų core/PG bandymų nevykdyti vien dėl kodo clone.

@@ -1,6 +1,7 @@
 import asyncio
 import base64
 import hashlib
+import inspect
 import re
 import sqlite3
 import time
@@ -16,11 +17,14 @@ from .treg import Treg
 
 
 class Service:
-    def __init__(self, store, config, transport=None, agent_factory=None, context_validator=None):
+    def __init__(
+        self, store, config, transport=None, agent_factory=None, context_validator=None, async_context_validator=None
+    ):
         self.store, self.config = store, config
         self.transport = transport
         self.transports = {}
         self.context_validator = context_validator
+        self.async_context_validator = async_context_validator
         self.agent_factory = agent_factory or (lambda: Agent(model=config.codex_model or None))
 
     def transport_for(self, profile):
@@ -33,10 +37,36 @@ class Service:
         return self.transports[key]
 
     def check_context(self, profile):
+        if self.async_context_validator is not None:
+            raise Conflict("async_context_check_required")
         if profile.get("source_binding"):
             if self.context_validator is None:
                 raise Conflict("core_context_resolver_required")
-            self.context_validator(profile)
+            result = self.context_validator(profile)
+            if inspect.isawaitable(result):
+                if inspect.iscoroutine(result):
+                    result.close()
+                raise Conflict("async_context_check_required")
+
+    async def check_context_async(self, profile):
+        if not profile.get("source_binding"):
+            if self.async_context_validator is not None:
+                raise Conflict("core_binding_required")
+            return
+        if self.async_context_validator is not None:
+            pending = self.async_context_validator(profile)
+            if not inspect.isawaitable(pending):
+                raise Conflict("async_context_check_required")
+            await pending
+        else:
+            self.check_context(profile)
+        if self.store.profile(profile["site_id"])["profile"] != profile:
+            raise Conflict("context_changed_during_resolution")
+
+    async def gate_async(self, job):
+        p = self.store.profile(job["site"])["profile"]
+        await self.check_context_async(p)
+        return self._local_gate(job, time.time())
 
     def pause(self, site, reason):
         current = self.store.profile(site)
@@ -49,9 +79,12 @@ class Service:
         spend = next((r for r in self.store.spending(site) if r["job_id"] == job_id and r["call_id"]), None)
         if not spend:
             raise Conflict("call_id_missing_manual_provider_verification_required")
-        value = await self.transport_for(self.store.profile(site)["profile"]).audit(spend["call_id"])
+        p = self.store.profile(site)["profile"]
+        await self.check_context_async(p)
+        value = await self.transport_for(p).audit(spend["call_id"])
         # Evidence retrieval does not resend the action or guess what an own-tool response contained.
         self.store.record(site, "reconciliation", job_id, value)
+        await self.check_context_async(p)
         return {
             "job_id": job_id,
             "state": "uncertain",
@@ -62,7 +95,7 @@ class Service:
 
     async def paid(self, site, operation, payload, job_id, key, job=None, on_reserved=None):
         p = self.store.profile(site)["profile"]
-        self.check_context(p)
+        await self.check_context_async(p)
         transport = self.transport_for(p)
         if (
             not p["enabled"]
@@ -72,12 +105,12 @@ class Service:
             raise Conflict("live_action_disabled")
         amount = await transport.price(operation, payload)
         if job:
-            p = self.gate(job, time.time())
+            p = await self.gate_async(job)
         else:
             latest = self.store.profile(site)["profile"]
             if latest != p:
                 raise Conflict("context_changed_before_dispatch")
-            self.check_context(latest)
+            await self.check_context_async(latest)
         reservation = self.store.reserve(site, self.store.account_key(p), amount, job_id, operation=operation, job=job)
         if on_reserved:
             try:
@@ -112,6 +145,11 @@ class Service:
                 "body": receipt.body,
             },
         )
+        try:
+            await self.check_context_async(p)
+        except (Exception, asyncio.CancelledError):
+            self.pause(site, "Authority/source changed after provider result; receipt retained")
+            raise
         if receipt.status in {401, 402, 403, 429} or receipt.charged_micro is None or receipt.uncertain:
             current = self.store.profile(site)
             self.store.update_profile(
@@ -155,12 +193,15 @@ class Service:
         )
 
     def gate(self, job, now):
+        self.check_context(self.store.profile(job["site"])["profile"])
+        return self._local_gate(job, now)
+
+    def _local_gate(self, job, now):
         current = self.store.profile(job["site"])
         p, payload = current["profile"], job["payload"]
         from .contracts import validate_payload
 
         validate_payload(job["kind"], payload)
-        self.check_context(p)
         if not p["enabled"] or p["paused"]:
             raise Conflict("module_disabled_or_paused")
         if job["policy_revision"] != current["revision"]:
@@ -302,7 +343,7 @@ class Service:
         if not job:
             return {"state": "idle"}
         try:
-            p = self.gate(job, time.time())
+            p = await self.gate_async(job)
             if job["kind"] in {"plan", "draft", "summary", "qualify"}:
                 if not self.config.codex_enabled:
                     raise Conflict("codex_generation_disabled")
@@ -341,6 +382,12 @@ class Service:
                     agent = self.agent_factory()
                     if hasattr(agent, "set_usage_sink"):
                         agent.set_usage_sink(save_usage)
+                    if hasattr(agent, "set_context_validator"):
+
+                        async def validate_generation_context():
+                            await self.gate_async(job)
+
+                        agent.set_context_validator(validate_generation_context)
                     result = await agent.run(job["kind"], p, job["payload"], evidence)
                     outcome = "completed"
                 except asyncio.CancelledError:
@@ -363,7 +410,7 @@ class Service:
                 current = self.store.profile(site)
                 if current["revision"] != job["policy_revision"] or current["profile"]["paused"]:
                     raise Conflict("context_changed_during_generation")
-                self.check_context(current["profile"])
+                await self.gate_async(job)
                 self.store.record(
                     site,
                     job["kind"],
@@ -553,6 +600,7 @@ class Service:
 
     async def upload(self, site, asset_id, alt):
         p = self.store.profile(site)["profile"]
+        await self.check_context_async(p)
         if not p["media_enabled"] or not p["live_write"]:
             raise Conflict("media_transport_not_enabled")
         if not re.fullmatch(r"[a-z0-9-]{3,100}\.(png|jpg|webp)", asset_id) or not 5 <= len(alt) <= 900:
@@ -614,6 +662,7 @@ class Service:
         # Preflight can reject without consuming the durable attempt. After reservation,
         # any ambiguous upload remains blocked until evidence is reconciled.
         await self.transport_for(p).price("media_upload", {})
+        await self.check_context_async(p)
         if not p["enabled"] or p["paused"] or self.store.budgets()["daily"] == 0 or p["daily_cap_micro"] == 0:
             raise Conflict("live_action_disabled_or_budget_missing")
         result = await self.paid(

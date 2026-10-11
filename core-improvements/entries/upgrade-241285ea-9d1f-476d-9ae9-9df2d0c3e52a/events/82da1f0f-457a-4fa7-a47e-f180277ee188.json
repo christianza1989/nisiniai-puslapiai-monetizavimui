@@ -1,0 +1,14 @@
+{
+  "note": "86local tests (55baseline+31async) PASS/24.69s; no new paid CLI/X/core-PG tests. Async authority/module and each model/price/provider result awaited; retained usage/receipt and no resend; defaultOFF unchanged. Root32b2/ba891 contracts read-only. Shared PG/BFF/dashboard/e2e/main adoption pending. agent.py scope extension recorded in issue91 and fixing note.",
+  "checks": [
+    {
+      "evidence": "agent-business-core/xbot/QA-ASYNC-CORE.md",
+      "command": "uv run pytest -q; Ruff format/check; node --check public/app.js; four exported schema equality check",
+      "result": "PASS"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "82da1f0f-457a-4fa7-a47e-f180277ee188",
+  "sequence": 3,
+  "at": "2026-10-11T08:22:06.479Z"
+}

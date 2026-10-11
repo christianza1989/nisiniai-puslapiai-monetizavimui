@@ -23,6 +23,8 @@ class Settings(BaseSettings):
     control_source_revision: str = ""
     control_session_seconds: int = 28800
     customer_enabled: bool = False
+    customer_text_enabled: bool = False
+    customer_text_runner_enabled: bool = False
     customer_portal_origin: str = "http://127.0.0.1:3017"
     customer_outbox_directory: str = "artifacts/customer-outbox"
     public_projects_enabled: bool = False

@@ -19,6 +19,7 @@ from . import (
 )
 from .agent_preparation.routes import router as agent_preparation_router
 from .config import settings
+from .content_completion.routes import router as content_completion_router
 from .content_work.routes import router as content_work_router
 from .contracts import (
     Candidate,
@@ -39,6 +40,7 @@ from .creation.routes import router as creation_router
 from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
 from .customer_profile.routes import router as customer_profile_router
+from .customer_text.routes import router as customer_text_router
 from .db import db
 from .facebook.routes import router as facebook_router
 from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, utcnow
@@ -73,7 +75,9 @@ app.include_router(customer_router)
 app.include_router(creation_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
+app.include_router(customer_text_router)
 app.include_router(content_work_router)
+app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)
 

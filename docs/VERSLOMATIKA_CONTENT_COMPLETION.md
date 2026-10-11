@@ -2,6 +2,8 @@
 
 Scope: private local/test pilot. Full platform, full F1, production launch and Gemini writer remain OPEN. The owner temporarily paused language checking and corrections; this is explicit UNVERIFIED evidence, never language PASS.
 
+2026-10-11 actual ordinary dashboard against full API8860 received404: the maintained router was mounted only in minimal control_api. Upgrade191e71ae adds the missing full-api import/include. Expanded actual OpenAPI inventory now passes in final frozen20offline suite; original404 and incorrect flat lazy-router test failures retained. Independent mounting review noP0-P2/Ruff/diffPASS. Clean source adoption and real reopened HTTP/ordinary UI confirmation remain separate pending; no content/SQL/history/approval change.
+
 The two actual native customer writes on `5062b0040a634065e1ef746e7428b5dd8c1a811c` are intermediate results. First `9882fd84-da4f-455f-9966-8b98816b949c` succeeded with three roles in round1. Second `69ff29ad-6c26-4f6f-a484-663e495ac95d` succeeded with six roles in rounds1–2. Both retained five genuine source/media/link/editorial blockers and no approval or public release. New live continuation was not exercised. The failed jobs and charged history remain immutable.
 
 The existing `content.v1` is an intake snapshot; `content-work.v1` carries live jobs and an immutable write-time page snapshot. Neither can describe later editorial work by relabelling its historical fields. The new read-only `content-completion.v1` observes the CURRENT canonical studio draft for the exact currently accepted business revision.

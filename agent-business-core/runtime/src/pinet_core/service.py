@@ -50,6 +50,8 @@ async def conversation(tx, conversation_id, token=None, epoch=None):
     item = await tx.scalar(select(Conversation).where(Conversation.id == conversation_id).with_for_update())
     if not item:
         raise HTTPException(404, "conversation unavailable")
+    if item.payload.get("transport") == "customer-text.v1":
+        raise HTTPException(409, "customer_text_transport_required")
     if token is not None and (not hmac.compare_digest(item.token_hash, digest(token)) or item.expires_at < utcnow()):
         raise HTTPException(401, "session expired or invalid")
     if epoch is not None and (item.epoch != epoch or not item.lease_until or item.lease_until < utcnow()):
@@ -179,8 +181,9 @@ async def finalize(tx, convo):
     convo.state = "finalized"
     convo.lease_until = utcnow()
     await add_event(tx, convo, "finalized", "finalized", {})
-    await enqueue(tx, convo, "analysis")
-    await enqueue(tx, convo, "quality")
+    if convo.payload.get("transport") != "customer-text.v1":
+        await enqueue(tx, convo, "analysis")
+        await enqueue(tx, convo, "quality")
     # End only the live slot; daily inference reservation remains conservative.
     slot = await tx.get(Admission, convo.id)
     if slot:
@@ -236,8 +239,15 @@ async def submit_contact(tx, convo, data: ContactInput):
 
 
 async def patch_need(tx, convo, data: NeedPatch):
-    profile = profiles.get(convo.payload["knowledge"]["site_id"], convo.payload["knowledge"]["canonical_host"])
-    if set(data.fields) - profile.need_fields:
+    if convo.payload.get("transport") == "customer-text.v1":
+        from .customer_profile.instructions import NEED_FIELDS
+        if tuple(convo.payload.get("need_fields", ())) != NEED_FIELDS:
+            raise HTTPException(409, "invalid_customer_text_profile")
+        allowed = frozenset(NEED_FIELDS)
+    else:
+        profile = profiles.get(convo.payload["knowledge"]["site_id"], convo.payload["knowledge"]["canonical_host"])
+        allowed = profile.need_fields
+    if set(data.fields) - allowed:
         raise HTTPException(422, "field_not_allowed_for_business_profile")
     if data.base_revision != convo.need_revision:
         raise HTTPException(409, "stale_need_revision")

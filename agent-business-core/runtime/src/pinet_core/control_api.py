@@ -12,6 +12,7 @@ from .creation.routes import router as creation_router
 from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
 from .customer_profile.routes import router as customer_profile_router
+from .customer_text.routes import router as customer_text_router
 from .db import db
 from .public_projects.routes import router as public_router
 from .tasks.operations import router as operations_router
@@ -38,6 +39,7 @@ app.include_router(customer_router)
 app.include_router(creation_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
+app.include_router(customer_text_router)
 app.include_router(content_work_router)
 app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)

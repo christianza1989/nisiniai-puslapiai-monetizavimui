@@ -208,6 +208,12 @@ pinet-control-bridge-v1
 
 Core priima tik45s laikrodžio langą ir patvariai užregistruoja nonce90s prieš veiksmą. Replay409, netinkamas host/origin/signature403; HMAC nesuteikia aktoriaus teisių: tikra core sesija ir aktuali narystė/grants tikrinami atskirai. Origin/Forwarded/X-Forwarded headers į core neperduodami. Privatūs error details neskelbiami. Actual TLS, restarto atkūrimas, target PC, produkcinė duomenų izoliacija, provider ir hosted naršyklės kelias lieka atskiri būsimo paleidimo vartai.
 
+## Vietinis kliento tekstinis vartotojas
+
+Naujas [customer-text.v1](../agent-business-core/runtime/docs/CUSTOMER_TEXT.md) turi atskirus default-OFF `PINET_CUSTOMER_TEXT_ENABLED` ir `PINET_CUSTOMER_TEXT_RUNNER_ENABLED`. Jis nevykdo senos owner konsultacijų eilės, todėl jos `PINET_CHAT_ENABLED` / `PINET_CHAT_RUNNER_ENABLED` gali likti false. Patikrintas `PINET_CHAT_CODEX_EXECUTABLE`/SHA256, privatus absolute `PINET_CHAT_WORKSPACE`, fixed gpt-6-luna ir10..180s bound pernaudojami naujo vartotojo tiesioginiam vykdymui. Nauji jungikliai suteikia tik vietinės konfigūracijos galimybę: aktualus serverinis Registration/Profile/V2 receipt/source/TTL ir aiškus kliento sutikimas vis tiek būtini. Hosted režimas neįjungiamas.
+
+Target PC po atskiro binary/source/schema/auth priėmimo operatorius sąmoningai nustato naujus jungiklius ir bendrus binary/workspace parametrus; pasenęs profilis neatnaujinamas vien skaitymu. Approved V2 šaltiniui ir Profile priimti naudoti maintained customer_knowledge_sync.py/customer_profile_admin.py pagal [bridge sutartį](../agent-business-core/runtime/docs/CUSTOMER_PROFILE_SOURCE_BRIDGE.md). Tada naujas no-write capability → explicit local-test consent start → actual text turn → client correction → cached UUID replay → end. Tokenų usage ir nežinoma kaina saugomi atskirai, aktyvus mokamas kvietimas nelaiko DB užrakto. Minimalus `control_api` montuoja tą patį tekstinį router. Šaltinio QA nėra actual target PC/provider/UI priėmimas; esami local credentials/DB niekur nekopijuojami.
+
 ## Supabase vėliau
 
 Esamas PostgreSQL, SQLAlchemy, Alembic ir RLS lieka dabartinis testavimo backend. Supabase CLI nereikalingas šiai eigai. Jei vėliau pasirinksime managed PostgreSQL, reikės ištestuoto restricted-role/private-schema/TLS adapterio ir migracijos bei backup/restore. Vien URL pakeitimas ar CLI buvimas neįrodo tokio priėmimo. Supabase Auth naudotinas tik po atskiro identity adapterio, ne kaip antras nesusietas dashboard login. Duomenų bazės hostingas nepakeičia Python API ir Codex worker.

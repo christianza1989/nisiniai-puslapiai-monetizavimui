@@ -54,6 +54,23 @@ def view():
         "blockers": [], "profile_current": True}
 
 
+@pytest.mark.parametrize("sequence", [21, 2147483647])
+def test_retained_profile_sequence_uses_actual_postgres_integer_range(sequence):
+    value = view()
+    value["admission"]["sequence"] = sequence
+    current = ProfileView.model_validate(value)
+    assert current.admission.sequence == sequence
+    assert not current.can_start_text_session and not current.can_call_provider
+
+
+@pytest.mark.parametrize("sequence", [0, -1, True, "21", 2147483648])
+def test_profile_history_sequence_stays_strict_positive_durable_integer(sequence):
+    value = view()
+    value["admission"]["sequence"] = sequence
+    with pytest.raises(ValidationError):
+        ProfileView.model_validate(value)
+
+
 @pytest.mark.parametrize("change", [{"can_start_text_session": True}, {"can_call_provider": True},
     {"voice_enabled": True}, {"email_enabled": True}, {"acquisition_enabled": True}, {"learning_enabled": True},
     {"calibration_status": "PASS"}, {"channel_activation": "enabled"}, {"profile_current": False},

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Scoped6106876876 baseline reproduces21st actual explicit synthetic Profile admission rejection at old admin lifetime20 guard, after20 real persisted admissions. Baseline1FAIL8.75s logSHA45757a29a10aaa8fc0632cbe89280c954fe676743570b1d2c0cbd9265962cb17; first harness1FAIL5.61s logSHA221b94c74e6f329ea84a4c360501e774f440b239938c5bde67c4e4bb89a12070 was nonexistent sequence key in admin acknowledgment, corrected to actual DB sequence observation. Both original failures retained. Additive0021 positive integer sequence check/admin32-bit exhaustion/compatible typed read bound; historical0017 and source fingerprint/replay/revoke/TTL/current owner/false channel grants untouched. API/studio held; isolatedQA only, provider/channel0, operationalDB untouched. Migration/runtime/contract/source checks and actual clean adoption pending.",
+  "eventId": "82947cb1-131b-4c52-af3b-e709423ba052",
+  "sequence": 2,
+  "at": "2026-10-11T07:59:54.595Z"
+}

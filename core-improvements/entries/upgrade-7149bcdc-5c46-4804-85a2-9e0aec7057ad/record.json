@@ -1,0 +1,28 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Arbitrary lifetime20 Profile admissions prevent repeated explicit source/Profile preparations and continued calibration; preserve immutable history and remove only this operational ceiling",
+  "category": "code",
+  "evidence": [
+    "Clean32b2 customer_profile/admin.py sequence>20 rejects profile_admission_limit; wire AdmittedProfile.sequence le20 and immutable0017 SQL CHECK sequence BETWEEN1AND20 independently block further preparations",
+    "Actual local source/Profile bridges create preserved successive admissions as source and V2 receipt change; latest explicit maintained bridge receiptSHA9ee5011105d0baad91441c0bf227c529839aecce0c54212b30ceaa112b314ec5. This is source diagnosis, not an actual production21st admission failure."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_profile/admin.py",
+    "agent-business-core/runtime/src/pinet_core/customer_profile/wire.py",
+    "agent-business-core/runtime/migrations/versions/0021_customer_profile_history.py",
+    "agent-business-core/runtime/tests/test_customer_profile.py",
+    "agent-business-core/runtime/offline_tests/test_customer_profile.py",
+    "docs/contracts/verslomatika-customer-profile.openapi.json",
+    "docs/VERSLOMATIKA_CUSTOMER_PROFILE.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped source revert; database downgrade only if every retained admission fits old20 bound. Refuse unsafe narrowing and preserve all rows/fingerprints/events/usage; never truncate history or grant additional execution/channel authority.",
+  "id": "upgrade-7149bcdc-5c46-4804-85a2-9e0aec7057ad",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "32b2dda8d9b8dde6847a98299ae8345fec276d4e",
+  "createdAt": "2026-10-11T07:54:46.204Z"
+}

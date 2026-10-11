@@ -1,11 +1,15 @@
 """Synthetic restricted-PG profile lifecycle. No real customer, provider or network operations."""
 import asyncio
+import os
+import sys
 from datetime import timedelta
+from pathlib import Path
 from uuid import uuid4
 
 import pytest
 from fastapi import HTTPException
 from sqlalchemy import delete, func, select, text, update
+from sqlalchemy.engine import make_url
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_creation_registration import (  # noqa: F401
@@ -109,6 +113,77 @@ async def counts(c):
     async with AsyncSession(c["admin"]) as tx:
         return tuple([await tx.scalar(select(func.count()).select_from(model).where(model.environment_id == c["environment"]))
             for model in (Admission, Registration, BusinessGrant, Job, Attempt, KnowledgeState, BusinessPolicy, Conversation)])
+
+
+async def profile_history_schema(c):
+    async with AsyncSession(c["admin"]) as tx:
+        version = await tx.scalar(text("SELECT version_num FROM alembic_version"))
+        rows = list(await tx.scalars(text("SELECT to_jsonb(p)::text FROM control_customer_profile_admissions p ORDER BY id")))
+        return version, rows
+
+
+async def profile_history_migrate(direction, revision):
+    database = make_url(settings().admin_database_url).database
+    assert settings().environment.startswith("test-") and any(label in database for label in ("test", "qa"))
+    process = await asyncio.create_subprocess_exec(sys.executable, "-m", "alembic", direction, revision,
+        cwd=Path(__file__).resolve().parents[1],
+        env={**os.environ, "PINET_ADMIN_DATABASE_URL": settings().admin_database_url},
+        stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+    try:
+        _, errors = await asyncio.wait_for(process.communicate(), timeout=30)
+    except BaseException:
+        process.kill()
+        await process.wait()
+        raise
+    return process.returncode, errors.decode("utf-8", errors="replace")
+
+
+async def test_repeated_explicit_profile_admissions_preserve_history_beyond_twenty(profile, monkeypatch):
+    c = profile
+    creation_request, _, request, _, auth, _ = await prepared(c)
+    admitted_ids = []
+    for sequence in range(1, 22):
+        execution_source = f"{sequence:040x}"
+        monkeypatch.setattr(settings(), "control_source_revision", execution_source)
+        result = await admit(c, {**request, "execution_source_revision": execution_source})
+        assert not result["replayed"]
+        async with AsyncSession(c["admin"]) as tx:
+            assert (await tx.get(Admission, result["admission_id"])).sequence == sequence
+        admitted_ids.append(result["admission_id"])
+    async with AsyncSession(c["admin"]) as tx:
+        rows = list(await tx.scalars(select(Admission).where(Admission.environment_id == c["environment"])
+            .order_by(Admission.sequence)))
+        assert [r.id for r in rows] == admitted_ids
+        assert all(r.revoked_at is None and digest(service.material(r)) == r.fingerprint for r in rows)
+    current = await read(c, creation_request, auth)
+    assert current.status_code == 200, current.text
+    data = current.json()["data"]
+    assert data["profile_current"] and data["admission"]["sequence"] == 21
+    assert not data["can_start_text_session"] and not data["can_call_provider"]
+    assert not any(data[k] for k in ("voice_enabled", "email_enabled", "acquisition_enabled", "learning_enabled"))
+    replay = await admit(c, {**request, "execution_source_revision": execution_source})
+    assert replay["replayed"] and replay["admission_id"] == admitted_ids[-1]
+    before = await profile_history_schema(c)
+    assert before[0] == "0021_customer_profile_history"
+    code, errors = await profile_history_migrate("downgrade", "0020_native_review_model")
+    assert code != 0 and "control_customer_profile_admissions_sequence_check" in errors
+    assert await profile_history_schema(c) == before
+
+
+async def test_profile_history_actual_downgrade_reupgrade_preserves_bounded_rows(profile, monkeypatch):
+    c = profile
+    _, _, request, _, _, _ = await prepared(c)
+    await admit(c, request)
+    monkeypatch.setattr(settings(), "control_source_revision", "b" * 40)
+    await admit(c, {**request, "execution_source_revision": "b" * 40})
+    before = await profile_history_schema(c)
+    assert before[0] == "0021_customer_profile_history" and len(before[1]) == 2
+    code, _ = await profile_history_migrate("downgrade", "0020_native_review_model")
+    assert code == 0
+    after = await profile_history_schema(c)
+    assert after[0] == "0020_native_review_model" and after[1] == before[1]
+    code, _ = await profile_history_migrate("upgrade", "head")
+    assert code == 0 and await profile_history_schema(c) == before
 
 
 async def test_missing_truthful_200_query_bounds_and_no_persistence_writes(profile):

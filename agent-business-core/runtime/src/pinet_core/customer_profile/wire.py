@@ -10,6 +10,7 @@ from ..creation_registration.wire import Digest, RevisionNumber, Source, Strict
 
 NeedFields = tuple[Literal["goal"], Literal["requirements"], Literal["deadline"], Literal["budget"], Literal["location"]]
 ProfileVersion = Literal["customer-profile.v1"]
+SEQUENCE_MAX = 2147483647
 Blocker = Literal["accepted_revision_missing", "registration_missing", "registration_stale", "registration_revoked",
     "grant_revoked", "creation_revision_pending", "profile_missing", "profile_revoked", "profile_registration_stale",
     "execution_source_changed", "instructions_changed", "public_source_not_admitted", "public_source_unavailable",
@@ -39,7 +40,7 @@ class Revoke(Strict):
 
 class AdmittedProfile(Strict):
     admission_id: UUID
-    sequence: Annotated[int, Field(strict=True, ge=1, le=20)]
+    sequence: Annotated[int, Field(strict=True, ge=1, le=SEQUENCE_MAX)]
     registration_id: UUID
     business_id: UUID
     site_id: str = Field(pattern=r"^creation-[a-f0-9]{32}$")

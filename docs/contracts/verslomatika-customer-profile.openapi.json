@@ -161,7 +161,7 @@
             "type": "string"
           },
           "sequence": {
-            "maximum": 20,
+            "maximum": 2147483647,
             "minimum": 1,
             "title": "Sequence",
             "type": "integer"

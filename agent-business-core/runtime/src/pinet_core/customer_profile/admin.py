@@ -12,7 +12,7 @@ from ..creation_registration.models import Registration
 from ..models import Business, new_id, utcnow
 from . import instructions, service
 from .models import REGISTRATION_KEYS, Admission
-from .wire import Admit, Revoke
+from .wire import SEQUENCE_MAX, Admit, Revoke
 
 
 async def guard(tx, environment):
@@ -88,8 +88,8 @@ async def admit(tx, *, environment, **request):
     else:
         sequence = (await tx.scalar(select(func.max(Admission.sequence)).where(Admission.creation_id == creation.id,
             Admission.environment_id == environment)) or 0) + 1
-        if sequence > 20:
-            raise ValueError("profile_admission_limit")
+        if sequence > SEQUENCE_MAX:
+            raise ValueError("profile_admission_sequence_exhausted")
         old = Admission(id=new_id(), **metadata, sequence=sequence, fingerprint=fingerprint,
             authorizing_session_id=session.id, revoked_at=None)
         tx.add(old)

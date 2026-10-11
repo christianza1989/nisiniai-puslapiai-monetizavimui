@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Only Profile admission sequence lifetime20 is removed. Frozen source unchanged, isolated synthetic PostgreSQL only, provider/channel0 and operational DB untouched. Independent review found no P0-P2. Original baseline admission_limit and harness/lint failures remain retained. Clean source/schema0021 adoption and ordinary updated portal acceptance are separate pending steps; full platform OPEN.",
+  "checks": [
+    {
+      "command": "Isolated maintained Alembic upgrade head and four affected PostgreSQL profile/index/CLI/text suites",
+      "result": "PASS",
+      "evidence": "81PASS372.98s; logSHA c87d2cdcdcf49922b6f499abad7d56758057c621cbf0506a5e79b94ed18a2d73. Actual21 admin admissions, latest replay, all false channel rights, preserved history; actual unsafe downgrade refuses without row/version loss and bounded downgrade/reupgrade preserves rows."
+    },
+    {
+      "command": "Affected offline Profile, customer-text and full-api route suites",
+      "result": "PASS",
+      "evidence": "67PASS4.01s; logSHA425b8923afecefde3e74c6f7131e63791765735b99bd079a1ef755767d943565. Strict positive 32-bit sequence rejects bool/string/overflow; other capabilities/contracts unchanged."
+    }
+  ],
+  "eventId": "30d26762-f01f-4731-88ed-81c6fcc43a3f",
+  "sequence": 3,
+  "at": "2026-10-11T08:12:42.958Z"
+}

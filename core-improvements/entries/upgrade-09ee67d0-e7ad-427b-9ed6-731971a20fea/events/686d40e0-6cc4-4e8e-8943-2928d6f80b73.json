@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Add a deterministic exclusive-open fault regression plus actual model contention checks. Do not label a later retry PASS as disappearance of the earlier defect. Never steal or unlink another token; preserve original permanent permission error at the deadline.",
+  "eventId": "686d40e0-6cc4-4e8e-8943-2928d6f80b73",
+  "sequence": 2,
+  "at": "2026-10-11T02:33:11.720Z"
+}

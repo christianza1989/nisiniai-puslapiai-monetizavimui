@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Keep the exact canonical private/public V2 helper mirror when exposing its existing editorial validator",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104605840",
+  "evidence": [
+    "Actual frozen private workflow suite 88 PASS / 1 FAIL: content-v2.test.mjs exact helper mirror assertion. Private validator wrapper delegates unchanged existing $defs.editorial, while public ec8a9c032fe926d1d9722802d8eb26fa8bd02937 lacks the export. No test, schema or approval gate change is proposed."
+  ],
+  "paths": [
+    "scripts/content-package-v2.mjs"
+  ],
+  "rollback": "Scoped public export revert together with its private caller; preserve V1/V2 schemas, hashes and all stored data.",
+  "id": "upgrade-7c979c86-64bb-4815-925d-c5d45e2e491b",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "5062b0040a634065e1ef746e7428b5dd8c1a811c",
+  "createdAt": "2026-10-11T02:27:22.943Z"
+}

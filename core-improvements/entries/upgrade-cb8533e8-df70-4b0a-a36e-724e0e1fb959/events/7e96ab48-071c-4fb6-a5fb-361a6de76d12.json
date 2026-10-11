@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial broad restricted-PG/native run:66 PASS/2 new-test-only FAIL422.21s, frozen source unchanged, receipt SHAaa75b16dfc17151cc04d6b2a0ebc2150567fb609f64ae3e14f28e64a44abaf50. All unaffected native/registration cases passed. Corrected only assertions: compare immutable intake data/bindings separately from per-request envelope time/ID, and use the existing SafeRoute code field/private cache contract. Runtime source/gates unchanged; final five completion cases rerun separately, no invented aggregate.",
+  "eventId": "7e96ab48-071c-4fb6-a5fb-361a6de76d12",
+  "sequence": 3,
+  "at": "2026-10-11T02:46:13.631Z"
+}

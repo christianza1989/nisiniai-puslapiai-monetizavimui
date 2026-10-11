@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actual strict DTO exporter, source-only frontend preparation; clean adoption remains separate.",
+  "checks": [
+    {
+      "command": "customer_content_completion_contract.py + strict DTO offline/PG checks",
+      "result": "PASS",
+      "evidence": "Actual exporter SHA93ed2398f70ddc1ff4ed1dc0bbbefa3c174fc09222d7e999a78d67711594b603;20offlinePASS and 5 passed in 25.23s; no hand-authored duplicate validator."
+    }
+  ],
+  "eventId": "955fcf01-2264-40bd-ba79-59faaf0aa142",
+  "sequence": 3,
+  "at": "2026-10-11T02:46:13.648Z"
+}

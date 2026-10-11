@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "commit": "5062b0040a634065e1ef746e7428b5dd8c1a811c",
+  "note": "Clean5062 served/API exactpin/direct+BFF verified. Real first9882 succeeded3roles/round1 privatewrite and second69ff succeeded6roles/rounds1-2 privatewrite. Oldd205 remains failed/review_limit, old immutable rev1 witnesses exact, charged history today37/prior54 retained. New exact-context continuation not exercised because both fresh jobs accepted withintheir own rounds. Five genuine workflow blockers remain, no F1/release/publication.",
+  "eventId": "b21fea91-4b95-4d7f-8cfe-a714569e73d0",
+  "sequence": 6,
+  "at": "2026-10-11T02:10:53.981Z"
+}

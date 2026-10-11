@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Export directly from actual strict Pydantic DTO via existing common/document helpers. Provisional source-only UI preparation; no adoption or runtime/sourcepin claim.",
+  "eventId": "f8073ed5-97b8-4da5-8ee1-8a7e08a568f2",
+  "sequence": 2,
+  "at": "2026-10-11T02:16:19.812Z"
+}

@@ -1,0 +1,30 @@
+{
+  "siteId": "verslomatika",
+  "category": "code",
+  "summary": "Expose current owned native content readiness separately from historical intake and write snapshots",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104483272",
+  "evidence": [
+    "Actual9882 and69ff native GUIDEs accepted and privately written on5062, but both retained5source/media/link/editorial blockers; current dashboard only owns historical intake/write snapshots.",
+    "First receipt SHA4c36900210836796747e4242e87ad3033f047296d51e713f25c42a6585716d0b; second receipt SHA51e3908c36f7214bbcf0355935e4a35e65d11671b520183a78d3741e8a979ac1. All observed roles and hashes independently checked; no publication or livecontinuation claim."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_completion/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/content_completion/wire.py",
+    "agent-business-core/runtime/src/pinet_core/content_completion/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_completion/routes.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/tests/test_content_completion.py",
+    "agent-business-core/runtime/tests/test_content_completion_pg.py",
+    "docs/VERSLOMATIKA_CONTENT_COMPLETION.md",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "rollback": "Revert this scoped read-only route while preserving private canonical site changes and immutable intake/job/release histories. No DB downgrade or acceptance bypass.",
+  "id": "upgrade-cb8533e8-df70-4b0a-a36e-724e0e1fb959",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "5062b0040a634065e1ef746e7428b5dd8c1a811c",
+  "createdAt": "2026-10-11T02:10:53.913Z"
+}

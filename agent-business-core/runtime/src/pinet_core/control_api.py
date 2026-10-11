@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from sqlalchemy import text
 
 from .agent_preparation.routes import router as agent_preparation_router
+from .content_completion.routes import router as content_completion_router
 from .content_work.routes import router as content_work_router
 from .control.routes import router as control_router
 from .creation.routes import router as creation_router
@@ -38,5 +39,6 @@ app.include_router(creation_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
 app.include_router(content_work_router)
+app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)

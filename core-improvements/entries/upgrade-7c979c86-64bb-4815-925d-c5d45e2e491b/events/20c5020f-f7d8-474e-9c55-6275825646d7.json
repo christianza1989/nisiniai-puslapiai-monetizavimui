@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/29",
+  "commit": "dc3e3bb42e00e7b1b24ec6074922e3381b8a5e43",
+  "note": "Own reviewed clean pushed export branch; public main ec8 unchanged. Branch source, not main merge or deployment.",
+  "eventId": "20c5020f-f7d8-474e-9c55-6275825646d7",
+  "sequence": 4,
+  "at": "2026-10-11T02:46:13.668Z"
+}

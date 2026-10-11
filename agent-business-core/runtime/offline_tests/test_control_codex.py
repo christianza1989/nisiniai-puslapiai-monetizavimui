@@ -12,6 +12,7 @@ from pinet_core.tasks.codex import (
     DISABLED,
     RunnerError,
     arguments,
+    check_trace_event,
     child_environment,
     normalize_answer,
     parse_trace,
@@ -29,6 +30,11 @@ def test_owner_runner_arguments_and_environment_strip_secrets(monkeypatch):
     assert args[args.index("--sandbox")+1] == "read-only"
     assert "--ignore-user-config" in args and "--ignore-rules" in args and "--ephemeral" in args
     assert {args[i+1] for i, a in enumerate(args[:-1]) if a == "--disable"} == set(DISABLED)
+    assert 'model_provider="pinet-bounded-openai"' in args
+    assert 'model_providers.pinet-bounded-openai.requires_openai_auth=true' in args
+    assert 'model_providers.pinet-bounded-openai.request_max_retries=0' in args
+    assert 'model_providers.pinet-bounded-openai.stream_max_retries=0' in args
+    assert not any('base_url=' in arg or 'env_key=' in arg for arg in args)
 
 
 @pytest.mark.parametrize("kind", ["command_execution", "mcp_tool_call", "web_search", "file_change", "unknown"])
@@ -44,6 +50,46 @@ def test_usage_unknown_and_model_failure_are_truthful():
     with pytest.raises(RunnerError) as error:
         parse_trace('{"type":"error","message":"Model not supported"}')
     assert error.value.code == "model_unavailable"
+
+
+@pytest.mark.parametrize("event,code", [
+    ({"type": "item.completed", "item": {"type": "error", "message": "stream disconnected"}}, "provider_error"),
+    ({"type": "item.completed", "item": {"type": "error", "message": "Model not supported"}}, "model_unavailable"),
+    ({"type": "error", "message": "Reconnecting... reason: max_output_tokens"}, "provider_error"),
+    ({"type": "turn.failed", "error": {"message": "stream disconnected"}}, "provider_error"),
+])
+def test_cli_error_is_not_a_tool_and_never_accepts_partial_completion(event, code):
+    with pytest.raises(RunnerError) as error:
+        parse_trace(json.dumps(event))
+    assert error.value.code == code and error.value.receipt == {}
+    with pytest.raises(RunnerError) as error:
+        parse_trace(json.dumps({"type": "turn.completed", "usage": {"input_tokens": 12}}) + "\n" + json.dumps(event))
+    assert error.value.code == code and error.value.receipt == {"input_tokens": 12}
+
+
+def test_network_reconnect_notice_can_finish_without_fabricated_usage():
+    raw = '\n'.join(json.dumps(event) for event in [
+        {"type": "error", "message": "Reconnecting... connection reset"},
+        {"type": "item.completed", "item": {"type": "agent_message", "text": "Complete response"}},
+        {"type": "turn.completed"},
+    ])
+    assert parse_trace(raw) is None
+    with pytest.raises(RunnerError, match="tool_attempted"):
+        check_trace_event({"type": "error", "item": {"type": "command_execution", "message": "not supported"}})
+
+
+@pytest.mark.parametrize("event", [[], {"item": None}, {"item": []}])
+def test_malformed_trace_is_bounded_output_failure(event):
+    with pytest.raises(RunnerError, match="output_invalid"):
+        parse_trace(json.dumps(event))
+
+
+def test_known_usage_survives_malformed_later_trace_line():
+    raw = json.dumps({"type":"turn.completed","usage":{"input_tokens":12,"output_tokens":4}}) + '\n{invalid}\n'
+    with pytest.raises(RunnerError) as error:
+        parse_trace(raw)
+    assert error.value.code == "output_invalid"
+    assert error.value.receipt == {"input_tokens":12,"output_tokens":4}
 
 
 @pytest.mark.parametrize("value", [{"answer": " ", "limitations": []}, {"answer": "x", "limitations": [], "shell": "x"},
@@ -104,4 +150,29 @@ async def test_process_pumps_structured_completion_and_authority_stop(monkeypatc
         with pytest.raises(RunnerError) as error:
             await codex.run({"message": "x"*262144}, authorized)
         assert error.value.code == "authorization_revoked"
+    assert not list(tmp_path.glob("consult-*"))
+
+
+@pytest.mark.parametrize("usage", [{"input_tokens": 7, "output_tokens": 3},
+                                    {"input_tokens": 0}, None])
+async def test_completed_process_usage_survives_answer_rejection(monkeypatch, tmp_path, usage):
+    cfg = settings()
+    for key, value in {"chat_runner_enabled": True, "chat_codex_executable": sys.executable,
+                       "chat_codex_sha256": hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest(),
+                       "chat_workspace": str(tmp_path), "chat_runner_seconds": 10}.items():
+        monkeypatch.setattr(cfg, key, value)
+    script = ("import sys,json; from pathlib import Path; sys.stdin.read(); "
+              "Path(sys.argv[1]).write_text(json.dumps({'answer':3,'limitations':[]})); "
+              "print(json.dumps({'type':'turn.completed','usage':json.loads(sys.argv[2])}))")
+    monkeypatch.setattr(codex, "arguments", lambda _e, _w, _s, output:
+                        [sys.executable, "-c", script, str(output), json.dumps(usage)])
+
+    async def authorized():
+        return True
+
+    # Actual synthetic process completion; malformed answer remains rejected, no provider involved.
+    with pytest.raises(RunnerError) as error:
+        await codex.run({"message": "Sintetinis naudojimo apskaitos testas."}, authorized)
+    assert error.value.code == "output_invalid"
+    assert error.value.receipt == (usage or {})
     assert not list(tmp_path.glob("consult-*"))

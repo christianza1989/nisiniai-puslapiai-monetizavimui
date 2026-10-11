@@ -1,6 +1,6 @@
 from functools import lru_cache
 
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from . import pricing
@@ -26,6 +26,16 @@ class Settings(BaseSettings):
     customer_portal_origin: str = "http://127.0.0.1:3017"
     customer_outbox_directory: str = "artifacts/customer-outbox"
     public_projects_enabled: bool = False
+    creation_enabled: bool = False
+    creation_runner_enabled: bool = False
+    # Zero disables the operator's daily ceiling; all attempts are still recorded.
+    creation_daily_limit: int = Field(default=0, ge=0)
+    creation_global_daily_limit: int = Field(default=0, ge=0)
+    creation_job_limit: int = Field(default=0, ge=0)
+    creation_runner_seconds: int = 180
+    creation_workspace: str = ""
+    creation_web_search_enabled: bool = False
+    creation_language_review_enabled: bool = True
     chat_enabled: bool = False
     chat_operator_user_id: str = ""
     chat_daily_limit: int = 20

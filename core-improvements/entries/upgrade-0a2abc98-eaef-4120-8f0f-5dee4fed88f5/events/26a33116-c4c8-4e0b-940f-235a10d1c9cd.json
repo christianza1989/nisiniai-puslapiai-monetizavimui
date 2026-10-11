@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Final studio family/priority source preserves existing alt/aspect/srcset/import rules, approval and export. Original duplicate baseline, test-only fixture-index failure and independent reimport P2 baseline retained; final whole studio91PASS82362ms and independent corrected noP0-P2. No actual runtime/source adoption, provider, customer history or publication change claimed.",
+  "checks": [
+    {
+      "command": "npm test (content-studio)",
+      "result": "PASS",
+      "evidence": "91PASS82362.2722ms; ignored runtime/artifacts/studio-preview-reimport-final.private.log, original failing logs retained."
+    },
+    {
+      "command": "Independent whole and incremental scoped source review",
+      "result": "PASS",
+      "evidence": "Existing creation_review final review closed singleton-family/reimport P2; no remaining actionable P0-P2."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Exact own preview source and docs diff checked; staged safety follows."
+    }
+  ],
+  "eventId": "26a33116-c4c8-4e0b-940f-235a10d1c9cd",
+  "sequence": 3,
+  "at": "2026-10-11T04:46:12.665Z"
+}

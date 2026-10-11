@@ -37,6 +37,27 @@ class Start(Strict):
     memory_token: str | None = Field(default=None, max_length=100)
 
 
+class KnowledgeReferenceV2(Strict):
+    """Server-owned complete public index identity, never customer-supplied facts."""
+
+    schema_version: Literal[2]
+    knowledge_revision: int = Field(ge=1, strict=True)
+    knowledge_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
+    deployment_id: str = Field(min_length=1, max_length=100)
+
+
+class StartV2(Strict):
+    """Additive worker-only simulation request; legacy Start stays unchanged."""
+
+    request_id: UUID = Field(default_factory=uuid4)
+    knowledge_ref: KnowledgeReferenceV2
+    notice_version: str = Field(min_length=1, max_length=80)
+    consent: Literal[True]
+    mode: Literal["simulation"] = "simulation"
+    remember: bool = False
+    memory_token: str | None = Field(default=None, max_length=100)
+
+
 class NeedPatch(Strict):
     base_revision: int = Field(ge=0)
     fields: dict[str, str] = Field(max_length=20)

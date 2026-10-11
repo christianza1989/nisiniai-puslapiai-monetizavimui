@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Business generator schema omits existing public-source URL restrictions, causing a completed draft to fail on an autoRsvp query URL.",
+  "category": "code",
+  "evidence": [
+    "Actual877b job08c1aa7b output_invalid at research[3].url and content_plan[2].source_urls; original output45701bytes/terminal usage preserved privately. Existing validator rejects parameters; emitted URL schema lacks pattern. Parameter-free primary Academy event page read without RSVP."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_content_plan.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of provider schema/policy clarification; existing server validator and immutable historical attempts remain unchanged.",
+  "id": "upgrade-a01b7669-94e2-4cd6-b5a4-684f6e477638",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "877b7b123aabaf37d364c3872a69e881a776a17a",
+  "createdAt": "2026-10-10T19:24:53.539Z"
+}

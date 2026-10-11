@@ -1,0 +1,26 @@
+{
+  "siteId": "verslomatika",
+  "category": "code",
+  "summary": "Calibrate indexed business critic/coordinator with fixed Sol profile after actual unsupported Luna required findings",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103946445",
+  "evidence": [
+    "Actual clean bb2e84c job17fc4044 completed all six roles then review_limit; receipt SHA53efecdacb170750162fc2970cac38aadf9be9b5e2cf94b606b664277cf4b0cb. No accepted revision/intake/artifacts/GUIDE. Ten charged today; prior54 retained.",
+    "Read-only job21-canonical-analysis.private.json matched all candidate/critic hashes. Critic1 demanded an already literal future-channel condition; critic2 demanded language-only editing in paused mode and referenced an unrelated paragraph. Independent review confirms both unsupported demands. Previous Sol failure preceded current compact numeric-index schema; effectiveness of this new one-variable experiment UNVERIFIED."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review_model.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "agent-business-core/runtime/tests/test_creation_review_model.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "rollback": "Revert this scoped model selection commit between jobs; preserve every immutable historical Luna/Sol receipt and existing0018/19 model/history schema. No downgrade, relabeling, hidden retry or manual promotion.",
+  "id": "upgrade-0df19d27-667f-4b54-9486-bb9c9d0945b3",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "bb2e84c148ba25df4ad914414a74e0ce1fda68f7",
+  "createdAt": "2026-10-11T00:57:03.949Z"
+}

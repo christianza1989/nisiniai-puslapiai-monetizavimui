@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Actual native intake regression rejects safe nested creator paths before the maintained V2 model, because its private page predicate still assumes one segment.",
+  "category": "code",
+  "evidence": [
+    "2026-10-10 actual Node intake suite:10PASS/1FAIL invalid_server_page for /gidai/uzduoties-pasirinkimas/; original failed run retained in URL-repair checks.",
+    "Canonical normalizePlanningBrief supports bounded safe nested intent paths; intake should admit exact normalized server paths with the same reserved-route exclusions."
+  ],
+  "paths": [
+    "content-studio/scripts/customer-creation-intake.mjs",
+    "content-studio/test/customer-creation-intake.test.mjs",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped predicate revert; preserve immutable input and current source-bound intake receipts.",
+  "id": "upgrade-d7de963b-cc11-4a1a-9694-7c5a6c64bc3e",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "465c157ec8e1b2ce79d48e5c30c6854aa54534e2",
+  "createdAt": "2026-10-10T12:53:45.669Z"
+}

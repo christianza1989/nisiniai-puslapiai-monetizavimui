@@ -23,6 +23,8 @@ class Business(Base):
     id: Mapped[str] = mapped_column(String, primary_key=True, default=new_id)
     site_id: Mapped[str] = mapped_column(String, unique=True)
     canonical_host: Mapped[str] = mapped_column(String, unique=True)
+    __table_args__ = (UniqueConstraint("id", "site_id", "canonical_host",
+                                      name="uq_registration_business_identity"),)
 
 
 class Scoped:

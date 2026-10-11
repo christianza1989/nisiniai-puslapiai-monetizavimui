@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "First isolated HTTP preview startup FAIL: expected sandbox dist/server/wrangler.json absent. Freshness -- executable wrapper intentionally executes at --repo rather than caller cwd, so it built the owned source checkout instead of the isolated fixture checkout. That build passed but is not fixture HTTP evidence. Preserve initial sandbox; next batch runs freshness first, then direct maintained build inside a NEW isolated sandbox.",
+  "eventId": "0c01f460-f1cd-4a18-81f4-b90dbeda8282",
+  "sequence": 3,
+  "at": "2026-10-10T13:03:06.686Z"
+}

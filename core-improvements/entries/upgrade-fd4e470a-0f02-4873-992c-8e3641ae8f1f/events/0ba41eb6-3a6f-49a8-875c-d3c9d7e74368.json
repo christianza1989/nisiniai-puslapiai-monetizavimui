@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Functional source 5466b7713d9b5afac9d50937efcdf4994df5d738 from90fbd2d, fresh private13c9649c76dd48cdf426604cb721e1ccd58a9854/publicec8a9c032fe926d1d9722802d8eb26fa8bd02937. Source window in api.py/control_api.py is CLOSED after only additive import+mount. Current readiness is always blocked, no activation/calibration/live/provider claim. Legacy identity is preserved but accepted_revision PASS requires shared exact coordinator accept_draft with observed language PASS; native V2 simulation is separate from missing customer creation/revision admission. Initial failures retained in prior events. Final in-flight committed grant revocation denies404; registration source/Business host changes deny409 with no DTO; no SELECT-only privilege expansion. Parent/director own actual UI/provider/agent integration acceptance.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_agent_preparation.py -q",
+      "result": "PASS",
+      "evidence": "22 PASS2.33s after strict revision/source/team/scope validation and both full/control GET-only mount coverage. Original18 PASS and21 PASS retained. docs/VERSLOMATIKA_AGENT_PREPARATION.md"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest tests/test_agent_preparation.py -q",
+      "result": "PASS",
+      "evidence": "Final14 actual restricted PostgreSQL/RLS PASS57.39s on own isolated QA DB after final strict wire validation. Earlier14 PASS76.89s and12 PASS64.89s/10 PASS54.39s retained. Includes real maintained native Node private intake, actual V2 begin/batch/commit, synthetic fixed 3-role acceptance/revision transition, current auth/account/session/owner/tenant and in-flight grant/source/host deny. No provider/mail/channel calls."
+    },
+    {
+      "command": "Scoped Ruff; git diff --cached --check; node scripts/repository-safety.mjs . --staged; scripts/git-freshness.mjs --phase handoff --companion clean current public core",
+      "result": "PASS",
+      "evidence": "Exact11 functional staged blobs118200B safetyPASS; no credentials/DB/runtime artifacts staged. Fresh currentmain is in HEAD in both repos; public unchanged. Canonical generated from actual model is exactly22958 LF Git bytes, SHA25689c02974b120c164dabc3a29eef5d0f36f974b0119ca6420269c66c6f36c6e0c; existing creation/team/content/content-work contract bytes unchanged."
+    }
+  ],
+  "eventId": "0ba41eb6-3a6f-49a8-875c-d3c9d7e74368",
+  "sequence": 5,
+  "at": "2026-10-10T16:00:31.371Z"
+}

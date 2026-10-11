@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Localf139a05 was committed after the initial safety invocation incorrectly treated --report's path as root and failed; no push occurred before correction. The first separate committed-index mirror also hit Windows path length and is retained. Corrected short temporary mirror disables line-ending conversion and compares every index blob to its exact original Git SHA256 before scanning; original commits/history not rewritten.",
+  "checks": [
+    {
+      "command": "python artifacts/safety_committed_snapshot.private.py",
+      "result": "PASS",
+      "evidence": "Exactf139a057a9c8d05a259a40d22264f8b1cee9ce91:8committed blobs/233527bytes/0findings. Immutable timestamped committed-safety and SHA256 receipt in ignored runtime/artifacts. Original command/path failures retained separately; no runtime/provider operation."
+    }
+  ],
+  "eventId": "978b6f03-3232-4d0b-8fb4-9c55f3daf5c0",
+  "sequence": 4,
+  "at": "2026-10-10T17:19:28.405Z"
+}

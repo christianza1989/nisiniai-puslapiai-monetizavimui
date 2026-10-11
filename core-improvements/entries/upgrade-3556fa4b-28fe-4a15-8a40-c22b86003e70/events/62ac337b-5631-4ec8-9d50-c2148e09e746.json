@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Supplement6104352757 before adapter edits adds exact content_work/adapter.py; original9-path reservation event retained. Independent P2: valid~191KB retained candidate plus canonical instructions exceeds262144B assembled creator prompt after reservation. Extract exact existing assembly helper, reject oversize seed before any new reservation, fresh generation otherwise. Preserve original oversized regression and every prompt/model/source/auth/hash/wire/DB/cap gate; full frozenQA must terminate before edits.",
+  "eventId": "62ac337b-5631-4ec8-9d50-c2148e09e746",
+  "sequence": 3,
+  "at": "2026-10-11T01:51:46.553Z"
+}

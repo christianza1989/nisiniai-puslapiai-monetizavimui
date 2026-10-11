@@ -17,7 +17,9 @@ from . import (
     routing,
     service,
 )
+from .agent_preparation.routes import router as agent_preparation_router
 from .config import settings
+from .content_work.routes import router as content_work_router
 from .contracts import (
     Candidate,
     ContactInput,
@@ -26,13 +28,17 @@ from .contracts import (
     PolicyUpdate,
     RoutingUpdate,
     Start,
+    StartV2,
     Strict,
     ToolCall,
     UsageReceipt,
     WorkerEvent,
 )
 from .control.routes import router as control_router
+from .creation.routes import router as creation_router
+from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
+from .customer_profile.routes import router as customer_profile_router
 from .db import db
 from .facebook.routes import router as facebook_router
 from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, utcnow
@@ -64,6 +70,11 @@ app.include_router(control_router)
 app.include_router(task_router)
 app.include_router(operations_router)
 app.include_router(customer_router)
+app.include_router(creation_router)
+app.include_router(creation_registration_router)
+app.include_router(customer_profile_router)
+app.include_router(content_work_router)
+app.include_router(agent_preparation_router)
 app.include_router(public_router)
 
 
@@ -408,6 +419,11 @@ async def ui_ack(site_id: str, cid: str, request: Request, data: UIAck):
 async def simulation(site_id: str, data: Start):
     if not settings().allow_simulation or data.mode != "simulation":
         raise HTTPException(403, "local simulation only")
+    return await service.start(await service.business(site_id), data, simulation=True)
+
+
+@app.post("/internal/sites/{site_id}/simulation/v2", dependencies=[Depends(worker_auth)])
+async def simulation_v2(site_id: str, data: StartV2):
     return await service.start(await service.business(site_id), data, simulation=True)
 
 

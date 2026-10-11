@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "New isolated helper uses canonical CreatorDraft and verified-critic digests, prose-only exact JSON pointers, union coverage and deepcopy; compact canonical LT profile7554bytes. Receipt references remain noneditable authority. Added critic SHA to response to reject stale reports even when candidate and refs are unchanged. No existing adapter/team/review source edits, provider or DB.",
+  "eventId": "de8870c9-203a-4214-9313-7830d1a125d1",
+  "sequence": 2,
+  "at": "2026-10-10T14:02:58.185Z"
+}

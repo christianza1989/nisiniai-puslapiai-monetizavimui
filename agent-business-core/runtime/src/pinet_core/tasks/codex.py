@@ -1,15 +1,14 @@
 """Single owner consultation adapter. No browser-selected executable or tool arguments."""
-import asyncio
 import hashlib
 import json
 import os
-import subprocess
 import tempfile
 from pathlib import Path
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from ..config import settings
+from .codex_transport import RunnerError, execute, stop_process  # noqa: F401
 
 DISABLED = ("shell_tool", "unified_exec", "apps", "plugins", "hooks", "browser_use", "browser_use_external",
             "computer_use", "in_app_browser", "multi_agent", "image_generation", "workspace_dependencies",
@@ -23,11 +22,6 @@ class Answer(BaseModel):
     model_config = ConfigDict(strict=True, extra="forbid")
     answer: str = Field(min_length=1, max_length=8000)
     limitations: list[str] = Field(max_length=5)
-
-
-class RunnerError(Exception):
-    def __init__(self, code):
-        self.code = code
 
 
 def normalize_answer(value):
@@ -50,50 +44,66 @@ def arguments(executable, workspace, schema, output):
             "--skip-git-repo-check", "--sandbox", "read-only", "--model", "gpt-6-luna", "--json",
             "--output-schema", str(schema), "--output-last-message", str(output), "-C", str(workspace)]
     for key, value in (("approval_policy", '"never"'), ("model_reasoning_effort", '"medium"'),
-                       ("web_search", '"disabled"'), ("project_doc_max_bytes", "0")):
+                       ("web_search", '"disabled"'), ("project_doc_max_bytes", "0"),
+                       # A reserved dispatch must not silently replay incomplete responses.
+                       # Built-in provider overrides are forbidden by Codex; this fixed alias
+                       # keeps the same OpenAI auth-selected endpoint without a key fallback.
+                       ("model_provider", '"pinet-bounded-openai"'),
+                       ("model_providers.pinet-bounded-openai.name", '"OpenAI"'),
+                       ("model_providers.pinet-bounded-openai.wire_api", '"responses"'),
+                       ("model_providers.pinet-bounded-openai.requires_openai_auth", "true"),
+                       ("model_providers.pinet-bounded-openai.supports_websockets", "false"),
+                       ("model_providers.pinet-bounded-openai.supports_standalone_web_search", "true"),
+                       ("model_providers.pinet-bounded-openai.request_max_retries", "0"),
+                       ("model_providers.pinet-bounded-openai.stream_max_retries", "0")):
         args += ["-c", f"{key}={value}"]
     for feature in DISABLED:
         args += ["--disable", feature]
     return args
 
 
+def check_trace_event(event):
+    """Reject actual tools and terminal provider errors before CLI reconnections."""
+    if not isinstance(event, dict):
+        raise RunnerError("output_invalid")
+    item = event.get("item", {})
+    if not isinstance(item, dict):
+        raise RunnerError("output_invalid")
+    kind = item.get("type")
+    if item and kind not in {"agent_message", "reasoning", "error"}:
+        raise RunnerError("tool_attempted")
+    if kind == "error" or event.get("type") in {"error", "turn.failed"}:
+        message = json.dumps(event).lower()
+        if "not supported" in message:
+            raise RunnerError("model_unavailable")
+        # An incomplete output cannot become a valid candidate by reconnecting.
+        # Generic top-level network reconnect notices may still recover normally.
+        if kind == "error" or event.get("type") == "turn.failed" or "max_output_tokens" in message:
+            raise RunnerError("provider_error")
+
+
 def parse_trace(raw):
     usage = None
     completed = False
-    model_unavailable = False
     for line in raw.splitlines():
         try:
             event = json.loads(line)
         except ValueError:
-            raise RunnerError("output_invalid") from None
-        item = event.get("item", {})
-        if item and item.get("type") not in {"agent_message", "reasoning"}:
-            raise RunnerError("tool_attempted")
-        if event.get("type") in {"error", "turn.failed"}:
-            model_unavailable |= "not supported" in json.dumps(event).lower()
+            raise RunnerError("output_invalid", usage) from None
+        try:
+            check_trace_event(event)
+        except RunnerError as error:
+            error.receipt = usage or error.receipt
+            raise
         if event.get("type") == "turn.completed":
             completed = True
             candidate = event.get("usage")
             if isinstance(candidate, dict):
                 usage = {k: v for k, v in candidate.items() if k.endswith("_tokens")
                          and type(v) is int and 0 <= v <= 1_000_000_000}
-    if model_unavailable:
-        raise RunnerError("model_unavailable")
     if not completed:
         raise RunnerError("provider_error")
     return usage
-
-
-async def stop_process(process):
-    if process.returncode is not None:
-        return
-    if os.name == "nt":
-        # Only this owned child; tool launch is disabled. Kill its own tree on cancel/timeout.
-        await asyncio.to_thread(subprocess.run, ["taskkill", "/PID", str(process.pid), "/T", "/F"],
-                                capture_output=True, creationflags=subprocess.CREATE_NO_WINDOW)
-    else:
-        process.kill()
-    await process.wait()
 
 
 async def run(context, still_authorized):
@@ -120,61 +130,10 @@ async def run(context, still_authorized):
         wire_schema = Answer.model_json_schema()
         wire_schema["properties"]["limitations"]["items"]["maxLength"] = 300
         schema.write_text(json.dumps(wire_schema), encoding="utf-8")
-        async def bounded(stream, cap):
-            chunks, size = [], 0
-            while chunk := await stream.read(8192):
-                size += len(chunk)
-                if size > cap:
-                    raise RunnerError("output_invalid")
-                chunks.append(chunk)
-            return b"".join(chunks).decode("utf-8", errors="replace")
-
-        process, tasks = None, []
+        value, usage = await execute(arguments(executable, run_dir, schema, output), prompt=prompt, cwd=run_dir,
+            env=child_environment(), output=output, seconds=cfg.chat_runner_seconds, still_authorized=still_authorized,
+            parse_trace=parse_trace, on_event=check_trace_event)
         try:
-            # Spawn, pipe backpressure, output pumps and authorization all share the same deadline.
-            async with asyncio.timeout(cfg.chat_runner_seconds):
-                process = await asyncio.create_subprocess_exec(*arguments(executable, run_dir, schema, output),
-                    stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
-                    env=child_environment(), cwd=run_dir)
-
-                async def feed():
-                    process.stdin.write(prompt.encode())
-                    await process.stdin.drain()
-                    process.stdin.close()
-
-                async def supervise():
-                    while process.returncode is None:
-                        if not await still_authorized():
-                            raise RunnerError("authorization_revoked")
-                        await asyncio.sleep(1)
-
-                stdout = asyncio.create_task(bounded(process.stdout, 131072))
-                stderr = asyncio.create_task(bounded(process.stderr, 65536))
-                watcher = asyncio.create_task(supervise())
-                waited, feeding = asyncio.create_task(process.wait()), asyncio.create_task(feed())
-                tasks = [stdout, stderr, watcher, waited, feeding]
-                pending = set(tasks)
-                while any(not item.done() for item in (waited, stdout, stderr, feeding)):
-                    done, _ = await asyncio.wait(pending, return_when=asyncio.FIRST_COMPLETED)
-                    for item in done:
-                        pending.discard(item)
-                        item.result()
-                watcher.cancel()
-                await asyncio.gather(watcher, return_exceptions=True)
-                # Provider diagnostics stay private/in memory; wire errors are fixed server codes.
-                usage = parse_trace(stdout.result())
-                if process.returncode:
-                    raise RunnerError("provider_error")
-                if not output.is_file() or output.stat().st_size > 32768:
-                    raise RunnerError("output_invalid")
-                return normalize_answer(json.loads(output.read_text(encoding="utf-8"))), usage
-        except TimeoutError:
-            raise RunnerError("run_timeout") from None
-        except (OSError, ValueError):
-            raise RunnerError("output_invalid") from None
-        finally:
-            if process:
-                await stop_process(process)
-            for item in tasks:
-                item.cancel()
-            await asyncio.gather(*tasks, return_exceptions=True)
+            return normalize_answer(value), usage
+        except RunnerError as error:
+            raise RunnerError(error.code, usage) from None

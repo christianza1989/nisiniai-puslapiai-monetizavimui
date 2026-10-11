@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial native-writer test run:7PASS/2FAIL. Full validateV2Draft rejected private unknown operatorName ('page.siteSnapshot.operatorName length'), blocking valid private rich output; the approved fixture also lacked its explicit synthetic operator. Keep native rich/body schema and real target/media validation for narrow private edits, preserve unknown business data, and retain full public validation in canonical review/approval. Fixture supplies only explicit synthetic operator/contact before real test approval/release. No public schema or approval gate weakened.",
+  "eventId": "4b3ae1fd-6bd1-491e-8bba-55200d9df0d2",
+  "sequence": 2,
+  "at": "2026-10-10T12:33:04.796Z"
+}

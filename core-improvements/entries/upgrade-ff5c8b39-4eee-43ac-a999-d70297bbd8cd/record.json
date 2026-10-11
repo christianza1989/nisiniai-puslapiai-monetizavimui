@@ -1,0 +1,26 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Domenų inventorius ir esama TOP 200 atranka neturi ribotos dashboard paieškos ar domenų siūlymo sąsajos",
+  "category": "code",
+  "evidence": [
+    "domain-sorter/TOP200_RESEARCH.md identifies selected/selection.json as frozen authority",
+    "Complete normalized inventory45324 / existing screening9200 / frozen selected200 observed2026-10-10; exact hashes recorded in catalogue provenance"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/models.py",
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/taxonomy.py",
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/service.py",
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/build.py",
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/catalogue.json",
+    "agent-business-core/runtime/offline_tests/test_domain_catalogue.py",
+    "docs/VERSLOMATIKA_DOMAIN_CATALOGUE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/76",
+  "rollback": "Revert only this module, its new tests and documentation; parent removes separate read route mounts. Original source inventories/ranks/SQLite stay unchanged.",
+  "id": "upgrade-ff5c8b39-4eee-43ac-a999-d70297bbd8cd",
+  "branch": "codex/verslomatika-domain-catalogue-20261010",
+  "baseSha": "db23aee6ea446574b582ab7b88bf49391d0e7404",
+  "createdAt": "2026-10-10T09:30:56.170Z"
+}

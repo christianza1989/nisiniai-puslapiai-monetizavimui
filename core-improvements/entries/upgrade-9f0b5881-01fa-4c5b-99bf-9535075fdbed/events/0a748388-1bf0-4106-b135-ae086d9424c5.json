@@ -1,0 +1,8 @@
+{
+  "status": "fixing",
+  "commit": "5e30484dfecabe886cef545cd5257df4412d846f",
+  "note": "Actual ordinaryUI GUIDE retry from clean5e30484 failed deeper provider schema admission: anyOf0/properties/type must have explicit type. Original trace089ad0a8e0d05266dc2aa659556ee2b58a9dfb6c39fca5a992f22e7d28dce120 retained; one more charged creator, today22/prior54/noGUIDEwrite/currentrev2 unchanged. Previous13NodePASS/CLIloopback proved source and transmission only, not provider acceptance. Scope supplement6104205213: exact same writer/test/docs paths; add provider-only explicit string tag and integer level types. API8860/provider stopped; director3bc/helper91026 held. Original native public schema/normalizer and all gates/models/caps/history/languagepause unchanged.",
+  "eventId": "0a748388-1bf0-4106-b135-ae086d9424c5",
+  "sequence": 6,
+  "at": "2026-10-11T01:30:01.814Z"
+}

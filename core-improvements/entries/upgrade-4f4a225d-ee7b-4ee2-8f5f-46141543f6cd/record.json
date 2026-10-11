@@ -1,0 +1,31 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual business critic repeatedly returns incomplete output; introduce a fixed stronger review model with truthful immutable identities and historical read compatibility.",
+  "category": "code",
+  "evidence": [
+    "Actual source0fe77a7 customer trial d3e051d8 creator succeeded structurally, languageFAIL, critic incomplete/max_output_tokens despite low effort/medium verbosity.27 charged calls preserved; no accepted draft/intake. Scope6101622725. Local CLI advertises Sol; actual effectiveness remains unverified."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team_wire.py",
+    "agent-business-core/runtime/scripts/customer_creation_worker.py",
+    "agent-business-core/runtime/migrations/versions/0018_creation_review_model.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review_model.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "agent-business-core/runtime/tests/test_creation_review_model.py",
+    "docs/contracts/verslomatika-customer-team.openapi.json",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6101622725",
+  "rollback": "Restore fixed review execution to Luna while retaining additive schema/model read compatibility and immutable Sol history. Downgrade0018 only without Sol history; never relabel/delete attempts.",
+  "id": "upgrade-4f4a225d-ee7b-4ee2-8f5f-46141543f6cd",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "0fe77a79946284f59f9f13fc5c6f8032e952e9d2",
+  "createdAt": "2026-10-10T20:04:55.170Z"
+}

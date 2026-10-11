@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Historical completed Luna review profile restored only for new business critic/coordinator dispatch, source catalogue exact original two entries; no partial report acceptance, new fallback subsystem, quota reset or history changes. Actual new compact Luna effectiveness pending clean source adoption/UI trial. First5profile assertions FAIL preserved; all nine check/finding/hydration gates and native GUIDE hashes remain unchanged. Independent review and handoff follow.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest -q offline_tests/test_creation_compact_review.py offline_tests/test_creation_review.py offline_tests/test_creation_adapter.py offline_tests/test_content_work_review.py offline_tests/test_creation_language_patch.py offline_tests/test_creation_review_model.py offline_tests/test_creation_team_controller.py",
+      "result": "PASS",
+      "evidence": "216PASS7opt-inSKIP21.24s, session86332exit0; no provider."
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/check_review_effort_cli.private.py",
+      "result": "PASS",
+      "evidence": "7pinned installedCLI production-argument loopback PASS29.53s, session50460exit0; empty auth/no provider, exactLuna/medium/defaultlowverbosity, onePOST on complete/incomplete/503/truncated, metadata warning absent. Receipt log SHA010e2f63f907f86d30f3b961da160f01a1cd544c7534a8c2c99fe3c5db66be97."
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/run_review_model_pg.private.py --focused",
+      "result": "PASS",
+      "evidence": "7restricted isolatedPG PASS47.25s, session21258exit0, migration/head/emptydowngrade/reupgrade/bootstrapPASS; explicit historicalSol populateddowngrade failure leaves rows unchanged, missing/modified/cataloguechange stops before reservation. Own operational DB untouched, source frozen."
+    },
+    {
+      "command": ".venv/Scripts/ruff.exe check scoped six adapter/test Python files",
+      "result": "PASS",
+      "evidence": "Actual Allchecks passed; no source/schema/provider mutation."
+    }
+  ],
+  "eventId": "5412ff86-88a2-44d0-a7d7-6a4a529a8a73",
+  "sequence": 3,
+  "at": "2026-10-10T21:23:10.470Z"
+}

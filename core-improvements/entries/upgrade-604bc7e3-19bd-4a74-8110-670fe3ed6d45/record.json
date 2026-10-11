@@ -1,0 +1,20 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Keep the dispatched creator policy and recorded instruction hash in one immutable read snapshot",
+  "category": "code",
+  "evidence": [
+    "Source review at f923fdf: run_role reads creator instructions once for role_instruction_hash and again for the actual prompt; a reference change between reads can bind the original hash to different prompt bytes. Controlled actual canonical-file regression will preserve the baseline failure."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only the scoped source/test change and retain the original failure and immutable existing instruction/attempt receipts. No provider, budget or runtime reset.",
+  "id": "upgrade-604bc7e3-19bd-4a74-8110-670fe3ed6d45",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "f923fdf69593ae52ab81c218a870d3a71f4181de",
+  "createdAt": "2026-10-10T17:04:56.840Z"
+}

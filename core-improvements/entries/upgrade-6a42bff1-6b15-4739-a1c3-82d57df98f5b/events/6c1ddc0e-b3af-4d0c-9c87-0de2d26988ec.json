@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Supported medium text verbosity for critic/coordinator is source/request verified only; actual completion effectiveness remains UNVERIFIED. Original actual292 failure,25charged calls, six diagnosis receipts and2preimplementation test FAIL retained. No provider/channel/API adoption or numeric-cap claim.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest -q offline_tests/test_creation_adapter.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_review.py offline_tests/test_creation_language_patch.py offline_tests/test_creation_content_plan.py offline_tests/test_creation_studio.py",
+      "result": "PASS",
+      "evidence": "215PASS/5optional installedCLI SKIP36.10s"
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/check_review_effort_cli.private.py",
+      "result": "PASS",
+      "evidence": "Pinned empty-auth loopback5PASS23.25s; critic low reasoning/medium verbosity, creator medium reasoning/defaultlow verbosity, onePOST and no requested max_output_tokens. Private log SHA d591bcba97b1b39075b7101186bc702932b9b571cf251b9e82d20de596db91da."
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/creation/adapter.py offline_tests/test_creation_adapter.py offline_tests/test_creation_team_controller.py",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    }
+  ],
+  "eventId": "6c1ddc0e-b3af-4d0c-9c87-0de2d26988ec",
+  "sequence": 5,
+  "at": "2026-10-10T19:49:03.509Z"
+}

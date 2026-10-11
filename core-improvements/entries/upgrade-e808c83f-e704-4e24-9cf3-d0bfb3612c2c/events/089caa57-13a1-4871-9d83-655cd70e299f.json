@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Queue admission now rejects exhausted shared role budget before persisting a doomed job. Original2FAIL20.98s retained; actual provider/20charged daily counts/history were not changed. Fullplatform/NEW business remains unaccepted.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest tests/test_customer_creations.py tests/test_creation_team.py tests/test_content_work.py -q",
+      "result": "PASS",
+      "evidence": "46 actual restrictedPG/nativeNode tests PASS220.55s; synthetic zero-provider role outputs. Own/global/revoked charges,429 beforejob, exact existing idempotency, unchanged team history, no extraqueuedjob and GUIDE-to-business shared budget."
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/creation/service.py tests/test_creation_team.py tests/test_content_work.py",
+      "result": "PASS",
+      "evidence": "Scoped source/test checks passed. Existing advisory lock, job-rate cap and per-role reservation retained; no HTTP/model/quota or provider change."
+    }
+  ],
+  "eventId": "089caa57-13a1-4871-9d83-655cd70e299f",
+  "sequence": 3,
+  "at": "2026-10-10T15:55:02.947Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "9 nauji actual-model intake testai ir9 esamų bendros turinio eigos/write-lock regresijų PASS. Nekintami originalai ir manifestas, kanoninis hash/replay/revision konfliktas, realios source/media/fact/review/link kliūtys, jokių seed/approval/release/deploy. Ankstesnis legacy regresijų FAIL dėl naujo workspace trūkstamo sibling companion paliktas fixing įvykyje; nuoroda į fetched companion atkurta be source pataisų. Root normalized content_plan snake_case ir min3/max12; helper transport max24 nesukuria kvotos. Parent Python autorizacijos/lease/orchestration ir actual klientų priėmimas dar atskiri darbai.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-creation-intake.test.mjs",
+      "result": "PASS",
+      "evidence": "9 tests,0 fail,0 skip; real isolated model/getContentWorkflow with canonical V2 conversion and exact originals"
+    },
+    {
+      "command": "node scripts/git-freshness.mjs --phase continue --companion canonical-public -- node --test content-studio/test/content-workflow.test.mjs content-studio/test/write-lock.test.mjs",
+      "result": "PASS",
+      "evidence": "9 tests,0 fail,0 skip; fetched private13c9649c/publicec8a9c03 ancestry PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Only new intake script/test/doc and own journal/WORKSTREAMS; no whitespace errors"
+    }
+  ],
+  "eventId": "e37354ae-2115-42b7-926c-7f1d08e657e9",
+  "sequence": 3,
+  "at": "2026-10-10T11:48:06.394Z"
+}

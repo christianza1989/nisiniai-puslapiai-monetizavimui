@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Scope6101939582 catalogue correction implemented with unchanged exact public Sol metadata66719B/SHA5e8c7834be0785d8bf9ff9be02b0b13c82904bbbcc3b712ba079a1d32ca06b25, fixed review-only path/hash/profile, no shared available/trace/auth change. Before exact policy test edit an issue-scope amendment reserves additional offline_tests/test_creation_adapter.py, inadvertently omitted from immutable record.paths, to assert only the exact extra catalogue flag. RestrictedPG zero-reservation cases cover missing/modified catalogue and a changed pinned hash after claim. Installed Sol probes now use actual production args without test catalogue override; checks pending/noactualadoption.",
+  "eventId": "33fe3d76-6adc-4548-99bf-33ef58ffad8f",
+  "sequence": 2,
+  "at": "2026-10-10T20:40:59.384Z"
+}

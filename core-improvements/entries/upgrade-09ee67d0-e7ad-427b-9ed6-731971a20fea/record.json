@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Windows transient exclusive-open errors abort valid concurrent studio writers before canonical CAS",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104647020",
+  "evidence": [
+    "Actual strict cross-process customer workflow regression intermittently reports EPERM instead of workflow_context_stale, while unchanged source also passes other runs. Existing write-lock exclusive open retries only EEXIST; its release path already identifies transient Windows EPERM/EACCES/EBUSY. Original failing log preserved by child."
+  ],
+  "paths": [
+    "content-studio/src/write-lock.mjs",
+    "content-studio/test/write-lock.test.mjs"
+  ],
+  "rollback": "Scoped revert the bounded Windows acquisition retry; exclusive wx/token checks and runtime data remain unchanged.",
+  "id": "upgrade-09ee67d0-e7ad-427b-9ed6-731971a20fea",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "5062b0040a634065e1ef746e7428b5dd8c1a811c",
+  "createdAt": "2026-10-11T02:33:11.659Z"
+}

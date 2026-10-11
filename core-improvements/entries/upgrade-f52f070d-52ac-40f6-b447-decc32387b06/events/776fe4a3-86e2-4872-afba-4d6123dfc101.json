@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original baseline reproduced the missing actual canonical typography text: creation adapter 4 FAIL/15 PASS in3.53s, editorial loader/generator2 FAIL/5 PASS in1.58s. Missing/empty/edited reference did not stop the mock creation dispatcher. Initial UI v1 inspection separately confirms real no-revision/no-import/14blockers; no typography rendered acceptance or provider run. Add initial business and shared studio snapshot loading with explicit internal test path; sanitize missing/unreadable/invalid UTF8 source as existing instructions_unavailable before dispatch. Preserve bounded repair snapshot profiles and earlier immutable instruction hashes.",
+  "eventId": "776fe4a3-86e2-4872-afba-4d6123dfc101",
+  "sequence": 2,
+  "at": "2026-10-10T16:43:33.009Z"
+}

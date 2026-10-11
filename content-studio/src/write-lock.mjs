@@ -8,8 +8,14 @@ export async function withStudioWriteLock(data, task, timeout = 30000) {
   while(!handle){
     try{handle=await open(filename,'wx',0o600);}
     catch(error){
-      if(error.code!=='EEXIST')throw error;
-      if(Date.now()>=deadline)throw new Error('Studijos rašymo užraktas užimtas. Kito proceso nestabdykite ir užrakto netrinkite; patikrinkite jo savininką.');
+      // Windows can deny an exclusive open while another handle or pending
+      // removal briefly owns this path. Retry acquisition; never steal the lock.
+      const transientWindows=process.platform==='win32'&&['EPERM','EACCES','EBUSY'].includes(error.code);
+      if(error.code!=='EEXIST'&&!transientWindows)throw error;
+      if(Date.now()>=deadline){
+        if(error.code!=='EEXIST')throw error;
+        throw new Error('Studijos rašymo užraktas užimtas. Kito proceso nestabdykite ir užrakto netrinkite; patikrinkite jo savininką.');
+      }
       await new Promise(resolve=>setTimeout(resolve,25));
     }
   }

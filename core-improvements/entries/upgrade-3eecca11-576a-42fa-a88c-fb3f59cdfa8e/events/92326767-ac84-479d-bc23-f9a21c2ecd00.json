@@ -1,0 +1,8 @@
+{
+  "status": "fixing",
+  "note": "Original actual restricted PG baseline preserved: test_postcall_outbound_is_in_exact_conversation_case_reply_registry failed in8.96s because outbound MailMessage was None after mocked SMTP acceptance. No mail/provider network occurred. First journal record attempts blocked correctly on new main8e5411d/7af6b964; own branch integrated both and re-read current instructions, no stale source writes.",
+  "checks": [],
+  "eventId": "92326767-ac84-479d-bc23-f9a21c2ecd00",
+  "sequence": 2,
+  "at": "2026-10-10T16:36:09.511Z"
+}

@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Actual well-shaped creator output with self-parented root aborts before critique; bounded orchestrator needs one explicit charged structural correction round without weakening final graph gates.",
+  "category": "code",
+  "evidence": [
+    "Actual59ab UIretry job a31d68b6 ended1creator output_invalid: three nested intent paths valid but first pillar_path=self; no accepted revision/import; original raw36KiB/trace preserved.",
+    "Actual usage148817input/11563output/91648cached/157reasoning,2web actions; prompt125066bytes/context6299. Aggregate turn usage spans2web actions, not a single148817-token prompt. Structural-only repair should reuse bounded candidate and disable repeat research."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/offline_tests/test_creation_content_plan.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of repair profile/orchestration; preserve charged attempts, all failed original outputs and earlier accepted immutable revisions.",
+  "id": "upgrade-7a456e67-944e-4700-ab06-0bf62b24df22",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "59ab28418c59ee82267386f54feddcefc1f42609",
+  "createdAt": "2026-10-10T13:15:34.607Z"
+}

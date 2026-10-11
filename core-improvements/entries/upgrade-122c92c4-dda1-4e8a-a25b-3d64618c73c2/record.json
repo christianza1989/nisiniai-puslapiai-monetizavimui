@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Actual customer generation cannot express canonical nested guide URLs in the private one-segment schema; plan collapsed three distinct briefs into one route and emitted invalid reference paths.",
+  "category": "code",
+  "evidence": [
+    "Actual0c850 customer UI retry produced one creator output_invalid, no accepted revision/import; original raw41KiB candidate/trace preserved privately.",
+    "Shared canonical V2 normalizePlanningBrief and normalizeSlug support nested safe intent URLs; private creation/schema DTO still limited them to one segment."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/content_wire.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_content_plan.py",
+    "agent-business-core/runtime/scripts/customer_content_contract.py",
+    "docs/contracts/verslomatika-customer-content.openapi.json",
+    "content-studio/test/customer-creation-intake.test.mjs",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert; restore prior pinned content schema in both core and portal, preserving all immutable failed private outputs and revisions.",
+  "id": "upgrade-122c92c4-dda1-4e8a-a25b-3d64618c73c2",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "465c157ec8e1b2ce79d48e5c30c6854aa54534e2",
+  "createdAt": "2026-10-10T12:43:53.828Z"
+}

@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Bridge current registered customer V2 knowledge and packaged profile to truthful preparation without rewriting historical accepted source",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6105677736",
+  "evidence": [
+    "Actual synthetic customer provision/GET on d49 PASS; exact accepted revision2/candidate/historical751 source retained. Read-only child audit proves missing owned customer V2 transfer, thin profile CLI and preparation.v2 static profile/current-source assumptions. Existing ProfileView independently binds historical acceptance and current execution; admission is not session/channel activation."
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/customer_profile_admin.py",
+    "agent-business-core/runtime/scripts/customer_knowledge_projection.mjs",
+    "agent-business-core/runtime/scripts/customer_knowledge_sync.py",
+    "agent-business-core/runtime/src/pinet_core/agent_preparation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/agent_preparation/v2_service.py",
+    "agent-business-core/runtime/tests/test_agent_preparation_v2.py",
+    "agent-business-core/runtime/tests/test_customer_knowledge_sync.py",
+    "agent-business-core/runtime/tests/test_customer_profile_cli.py",
+    "agent-business-core/runtime/docs/CUSTOMER_PROFILE_SOURCE_BRIDGE.md"
+  ],
+  "rollback": "Revert this bounded adapter increment; preserve all historical Registration/Admission/knowledge/intake/release evidence. Disable local source permission through maintained operator path if needed; no production activation or V1 schema change.",
+  "id": "upgrade-71470f90-a9f9-4340-a619-7c1b1c776ef6",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "d49f476a9ad5b5c51f750a2618781f364873fbe8",
+  "createdAt": "2026-10-11T05:05:23.104Z"
+}

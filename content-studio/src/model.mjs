@@ -104,6 +104,63 @@ export function revisionPayload(page) {
   return payload;
 }
 export function revisionHash(page) { return page.contentVersion===2?v2RevisionHash(page):createHash('sha256').update(stable(revisionPayload(page))).digest('hex'); }
+/** Private writer handover; it is excluded from every public revision/package. */
+export function normalizePlanningBrief(value) {
+  const ranges = { path:[1,150], title:[10,160], intent:[20,300], head_query:[5,160], audience_problem:[20,1000],
+    business_goal:[20,1000], primary_topic:[5,120], reason:[30,1000], month:[0,7], seasonal_hook:[0,300],
+    pillar_path:[0,150], media_brief:[40,1000], media_alt:[10,250], priority:[5,7] };
+  const lists = { outline:[3,8,500], source_queries:[0,6,500], source_urls:[0,6,1024], internal_links:[0,8,150] };
+  const keys = [...Object.keys(ranges), ...Object.keys(lists)];
+  const invalid = () => { throw new Error('Netaisyklinga privataus planavimo užduotis.'); };
+  if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).length !== keys.length || Object.keys(value).some(key => !keys.includes(key))) invalid();
+  for (const [key,[minimum,maximum]] of Object.entries(ranges)) if (typeof value[key] !== 'string' || value[key].trim().length < minimum || value[key].length > maximum) invalid();
+  for (const [key,[minimum,maximum,length]] of Object.entries(lists)) if (!Array.isArray(value[key]) || value[key].length < minimum || value[key].length > maximum || value[key].some(item => typeof item !== 'string' || !item.trim() || item.length > length)) invalid();
+  const canonicalPath = input => /^\/[a-z0-9]+(?:[-/][a-z0-9]+)*\/$/.test(input) && !/^\/(?:api|niche)(?:\/|$)/.test(input);
+  if (!canonicalPath(value.path) || value.pillar_path && !canonicalPath(value.pillar_path)
+      || !/^(?:|[0-9]{4}-(?:0[1-9]|1[0-2]))$/.test(value.month)
+      || !value.month && value.seasonal_hook || !['initial','later'].includes(value.priority)
+      || value.pillar_path === value.path || new Set(value.internal_links).size !== value.internal_links.length
+      || value.internal_links.some(target => target !== '/' && !canonicalPath(target) || target === value.path)) invalid();
+  for (const source of value.source_urls) {
+    let url; try { url = new URL(source); } catch { invalid(); }
+    if (!source.startsWith('https://') || url.protocol !== 'https:' || url.username || url.password || url.port || !/^([a-z0-9-]+\.)+[a-z]{2,}$/i.test(url.hostname)) invalid();
+  }
+  return structuredClone(value);
+}
+export function planningContextHash(page) {
+  return createHash('sha256').update(stable({ revisionHash:revisionHash(page), planningBrief:page.planningBrief ?? null,
+    sourceQueries:page.sourceQueries || [], pillarPageId:page.pillarPageId || '' }), 'utf8').digest('hex');
+}
+export async function reconcilePlanningBrief(siteId, pageId, input) {
+  return locked(async () => {
+    const site = await getSite(siteId), page = site.pages.find(item => item.id === pageId && item.siteId === site.id && item.status !== 'revoked');
+    if (site.schemaVersion !== 2 || !page || page.contentVersion !== 2) throw new Error('Planavimo perdavimui reikia tikro šios svetainės V2 puslapio.');
+    if (input?.expectedRevisionHash !== revisionHash(page) || input?.expectedPlanningHash !== planningContextHash(page)) throw new Error('Pasikeitė puslapio revizija arba privati planavimo užduotis; perskaitykite dabartinę versiją.');
+    const brief = normalizePlanningBrief(input.planningBrief);
+    const pathname = candidate => candidate.type === 'home' ? '/' : '/' + candidate.slug + '/';
+    if (brief.path !== pathname(page)) throw new Error('Planavimo užduoties URL neatitinka šio puslapio.');
+    const target = pathnameValue => site.pages.find(candidate => candidate.siteId === site.id && candidate.status !== 'revoked' && pathname(candidate) === pathnameValue);
+    if (brief.internal_links.some(value => !target(value))) throw new Error('Planavimo nuorodai trūksta tikro šios svetainės puslapio.');
+    const parent = brief.pillar_path ? target(brief.pillar_path) : null;
+    if (brief.pillar_path && !parent) throw new Error('Klasterio pagrindiniam puslapiui trūksta tikro šios svetainės ID.');
+    const seen = new Set([page.id]); let ancestor = parent;
+    while (ancestor) {
+      if (seen.has(ancestor.id)) throw new Error('Planavimo klasteryje negali būti ciklo.');
+      seen.add(ancestor.id);
+      const parentId = ancestor.pillarPageId;
+      ancestor = parentId ? site.pages.find(candidate => candidate.id === parentId && candidate.siteId === site.id && candidate.status !== 'revoked') : null;
+      if (parentId && !ancestor) throw new Error('Klasterio pagrindinio puslapio ryšys neparengtas.');
+    }
+    const pillarPageId = parent?.id || '';
+    const changed = stable(page.planningBrief ?? null) !== stable(brief) || stable(page.sourceQueries || []) !== stable(brief.source_queries) || (page.pillarPageId || '') !== pillarPageId;
+    if (changed) {
+      page.planningBrief = brief; page.sourceQueries = structuredClone(brief.source_queries); page.pillarPageId = pillarPageId;
+      page.updatedAt = new Date().toISOString();
+      await writeJson(siteFile(siteId), site);
+    }
+    return { siteId, pageId, changed, revisionHash:revisionHash(page), planningHash:planningContextHash(page), state:'private-planning-brief', writer:'not-executed' };
+  });
+}
 export function isPublic(page, now = Date.now()) {
   return page?.approval?.status === 'approved'
     && page.approval.revisionHash === page.revisionHash
@@ -235,9 +292,10 @@ export async function createSite(input) {
     return site;
   });
 }
-export async function editSite(id, input) {
+export async function editSite(id, input, expected = null) {
   return locked(async () => {
     const site = await getSite(id);
+    assertExpectedSite(site, expected);
     if (input.canonicalHost && normalizedHost(input.canonicalHost) !== site.canonicalHost) throw new Error('Pirminio domeno keitimui sukurkite naują svetainės įrašą.');
     for (const key of ['name', 'offer', 'audience', 'facts']) if (key in input) site[key] = plain(input[key], key === 'facts' ? 12000 : 1000);
     if(site.schemaVersion===2&&'operatorName'in input)site.operatorName=losslessString(input.operatorName,300);
@@ -278,17 +336,21 @@ export async function migrateSiteDomain(id, { expectedCanonicalHost, canonicalHo
 }
 const makePage = (site, input) => {
   const v2=site.schemaVersion===2;
+  if (!v2 && input.planningBrief !== undefined) throw new Error('Pilnos privačios planavimo užduoties perdavimui reikia V2 puslapio.');
   const type = (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : 'guide';
+  const planningBrief = v2 && input.planningBrief !== undefined ? normalizePlanningBrief(input.planningBrief) : null;
+  if (planningBrief && planningBrief.path !== '/' + normalizeSlug(input.slug, type) + '/') throw new Error('Planavimo užduoties URL neatitinka kuriamo puslapio.');
+  if (planningBrief && input.sourceQueries !== undefined && stable(input.sourceQueries) !== stable(planningBrief.source_queries)) throw new Error('Šaltinių užklausos nesutampa su pilna planavimo užduotimi.');
   if(v2&&input.id!==undefined&&!/^[a-zA-Z0-9][a-zA-Z0-9._-]{0,99}$/.test(input.id))throw new Error('Neteisingas stabilus puslapio ID.');
   return {
     id: v2&&input.id?input.id:randomUUID(), siteId: site.id, type, slug: normalizeSlug(input.slug, type),
     title: v2?losslessString(input.title,1000):plain(input.title, 180), description: v2?losslessString(input.description,1000):plain(input.description, 300),
     intent: v2?losslessString(input.intent,1000):plain(input.intent, 300), body: v2?normalizeV2Blocks(input.body||[]):normalizeBlocks(input.body || []),
-    ...(v2?{contentVersion:2,editorial:structuredClone(input.editorial||emptyEditorial()),siteSnapshot:structuredClone(publicSite(site))}:{}),
+    ...(v2?{contentVersion:2,editorial:structuredClone(input.editorial||emptyEditorial()),siteSnapshot:structuredClone(publicSite(site)),...(planningBrief?{planningBrief}:{})}:{}),
     publishAt: iso(input.publishAt || new Date().toISOString()), media: [], links: [],
     externalLinks: [], linkSuggestions: [], networkLinkSuggestions: normalizeNetworkSuggestions(input.networkLinks), cluster: plain(input.cluster, 120), seasonalHook: plain(input.seasonalHook, 300),
     pillarPageId: site.pages.some(item => item.id === input.pillarPageId) ? input.pillarPageId : '',
-    editorialReason: plain(input.reason, 1000), sourceQueries: (Array.isArray(input.sourceQueries) ? input.sourceQueries : []).slice(0, 8).map(item => plain(item, 200)),
+    editorialReason: plain(input.reason, 1000), sourceQueries: planningBrief ? structuredClone(planningBrief.source_queries) : (Array.isArray(input.sourceQueries) ? input.sourceQueries : []).slice(0, 8).map(item => plain(item, 200)),
     status: 'draft', factChecks: [], approval: null, publishedRevision: null,
     createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()
   };
@@ -328,11 +390,19 @@ export async function mergePlan(siteId, proposals, months = 0) {
     return { added, total: site.pages.length };
   });
 }
-export async function editPage(siteId, pageId, input) {
+function assertExpectedSite(site, expected) {
+  if (expected && expected.expectedSiteHash !== studioContextHash(site)) throw Object.assign(new Error('Pasikeitė svetainės kontekstas; perskaitykite dabartinę versiją.'), { code: 'workflow_context_stale' });
+}
+export const studioContextHash = site => createHash('sha256').update(stable(site), 'utf8').digest('hex');
+export async function editPage(siteId, pageId, input, expected = null) {
   return locked(async () => {
     const site = await getSite(siteId);
     const page = site.pages.find(item => item.id === pageId);
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
+    if (expected && (page.status === 'revoked' || expected.expectedRevisionHash !== revisionHash(page)
+        || expected.expectedPlanningHash !== planningContextHash(page) || expected.expectedSiteHash !== studioContextHash(site))) {
+      throw Object.assign(new Error('Pasikeitė puslapis, planavimo užduotis arba svetainės kontekstas; paruoškite naują rašymo užduotį.'), { code: 'writer_context_stale' });
+    }
     const v2=site.schemaVersion===2;
     const type = input.type && (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : page.type;
     const slug = 'slug' in input || type !== page.type ? normalizeSlug(input.slug ?? page.slug, type) : page.slug;
@@ -448,9 +518,10 @@ const selectedPages = (site, ids) => {
   if (!Array.isArray(ids) || !ids.length || ids.length > 200 || new Set(ids).size !== ids.length) throw new Error('Reikia 1–200 unikalių šios svetainės puslapių ID.');
   return ids.map(id => { const page = site.pages.find(p => p.id === id && p.siteId === site.id && p.status !== 'revoked'); if (!page) throw new Error('Puslapis nepriklauso šiai svetainei arba atšauktas.'); return page; });
 };
-export async function finalizeInternalLinks(siteId, pageIds) {
+export async function finalizeInternalLinks(siteId, pageIds, expected = null) {
   return locked(async () => {
-    const site = await getSite(siteId), pages = selectedPages(site, pageIds);
+    const site = await getSite(siteId); assertExpectedSite(site, expected);
+    const pages = selectedPages(site, pageIds);
     let changed = 0;
     for (const page of pages) {
       const links = draftLinks(site, page);
@@ -460,18 +531,20 @@ export async function finalizeInternalLinks(siteId, pageIds) {
     return { siteId, changed, next: 'Review unchanged drafts before batch approval; approved snapshots were not edited.' };
   });
 }
-export async function recordEditorialReview(siteId, pageId, input) {
+export async function recordEditorialReview(siteId, pageId, input, expected = null) {
   return locked(async () => {
-    const site = await getSite(siteId), [page] = selectedPages(site, [pageId]);
+    const site = await getSite(siteId); assertExpectedSite(site, expected);
+    const [page] = selectedPages(site, [pageId]);
     page.editorialReview = editorialReview(site, page, revisionHash(page), input);
     await writeJson(siteFile(siteId), site);
     return page.editorialReview;
   });
 }
 export async function getContentWorkflow(siteId) { return workflowOverview(await getSite(siteId), revisionHash); }
-export async function approveReviewedBatch(siteId, pageIds, actorId) {
+export async function approveReviewedBatch(siteId, pageIds, actorId, expected = null) {
   return locked(async () => {
-    const site = await getSite(siteId), pages = selectedPages(site, pageIds), ids = new Set(pageIds);
+    const site = await getSite(siteId); assertExpectedSite(site, expected);
+    const pages = selectedPages(site, pageIds), ids = new Set(pageIds);
     for (const page of pages) {
       const ready = pageReadiness(site, page, revisionHash(page), ids);
       if (ready.blockers.length) throw new Error(`${page.slug || '/'}: ${ready.blockers.join(' ')}`);
@@ -484,8 +557,10 @@ export async function approveReviewedBatch(siteId, pageIds, actorId) {
     return { siteId, approved: pageIds, deployment: 'not-performed' };
   });
 }
-export async function releaseContent(siteId) {
-  const site = await getSite(siteId), approved = site.pages.filter(p => p.publishedRevision);
+export async function releaseContent(siteId, expected = null) {
+  return locked(async () => {
+  const site = await getSite(siteId); assertExpectedSite(site, expected);
+  const approved = site.pages.filter(p => p.publishedRevision);
   assertReviewedSnapshot(site);
   const result = await exportSiteSnapshot(site, path.join(OUTPUT, 'releases', siteId, randomUUID()));
   const bytes = await readFile(result.path);
@@ -500,6 +575,7 @@ export async function releaseContent(siteId) {
   const manifestPath = path.join(path.dirname(result.path), 'release-manifest.json');
   await writeJson(manifestPath, manifest);
   return { ...result, manifestPath, packageSha256: manifest.packageSha256, state: manifest.state };
+  });
 }
 function assertReviewedSnapshot(site) {
   const approved = site.pages.filter(p => p.publishedRevision);
@@ -588,13 +664,13 @@ export async function saveAsset(siteId, asset, bytes) {
 }
 // Default for all new image imports, including agents and the studio GUI.
 // saveAsset above remains a low-level legacy adapter for already-optimized bytes.
-export async function saveResponsiveAsset(siteId, input, bytes) {
+export async function saveResponsiveAsset(siteId, input, bytes, expected = null) {
   await getSite(siteId);
   const alt=plain(input.alt,300),rights=plain(input.rights,300);
   if(!alt||!rights)throw new Error('Vaizdui reikia alt teksto ir naudojimo teisių.');
   const optimized=await optimizeRaster(bytes,input.mime);
   return locked(async()=>{
-    const site=await getSite(siteId),groupId=randomUUID();
+    const site=await getSite(siteId);assertExpectedSite(site,expected);const groupId=randomUUID();
     const mediaDir=path.join(MEDIA_DIR,siteId),sourceDir=path.join(DATA,'media-originals',siteId);
     await mkdir(mediaDir,{recursive:true});await mkdir(sourceDir,{recursive:true});
     const ext={'image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[input.mime];

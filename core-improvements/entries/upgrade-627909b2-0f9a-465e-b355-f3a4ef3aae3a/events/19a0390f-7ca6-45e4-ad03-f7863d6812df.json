@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original failures retained in private tool/test receipts: all11 initial Node tests failed with missing locked sharp dependency (npm ci corrected environment);15 review tests failed from invalid FieldInfo pattern introspection (TypeAdapter corrected without relaxed refs); one adapter assertion assumed nonexistent mcp_servers flag (now asserts real strict ignored config and disabled capabilities); intermediate unpublished0015 downgrade lacked later job-count function (final isolated downgrade/upgrade restored). Parent approved supplemental full api.py import/mount in issue77 comment6097995085. No root checkout/provider/runtime edited.",
+  "eventId": "19a0390f-7ca6-45e4-ad03-f7863d6812df",
+  "sequence": 2,
+  "at": "2026-10-10T13:42:07.615Z"
+}

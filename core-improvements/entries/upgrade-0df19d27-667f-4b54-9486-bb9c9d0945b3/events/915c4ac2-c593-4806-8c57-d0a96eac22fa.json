@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Supplements6103970859/6103991218 reserve production CLI/model PG and exact compact receipt test in addition to original record paths. First offline old model expectation and PG wrong API code corrected; original failures retained. Misplaced own WORKSTREAMS entry was moved into root, its sole temporary file removed; no foreign files touched. Shell helper edit SyntaxError/stale model assertion corrected; local synthetic logs retained.",
+  "eventId": "915c4ac2-c593-4806-8c57-d0a96eac22fa",
+  "sequence": 3,
+  "at": "2026-10-11T01:03:05.731Z"
+}

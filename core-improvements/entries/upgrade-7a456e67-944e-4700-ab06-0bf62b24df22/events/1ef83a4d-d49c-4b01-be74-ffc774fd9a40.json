@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual provider recovery remains pending. Both creator instruction profiles pinned; repair consumes existing second round with no web, all final graph/language/critic/coordinator gates remain. Original failures/usage/private outputs unchanged; creation/team/content canonical wire fields and Git bytes unchanged. Current RLS can block post-revocation usage write; reserved attempt remains charged, unknown usage is never zero.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest offline_tests/test_creation_content_plan.py offline_tests/test_creation_adapter.py offline_tests/test_creation_review.py offline_tests/test_creation_studio.py offline_tests/test_creation_team_controller.py -q",
+      "result": "PASS",
+      "evidence": "132PASS9.91s, no provider; initial filename typo preserved."
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m pytest tests/test_creation_team.py -q",
+      "result": "PASS",
+      "evidence": "Actual PG16PASS105.43s; original15PASS1FAIL retained; runtime/artifacts/structural-repair-pg-final.private.log."
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check scoped creation renderer/adapter/team and edited tests",
+      "result": "PASS",
+      "evidence": "All checks passed after test import ordering correction."
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/structural_replay.private.py",
+      "result": "PASS",
+      "evidence": "Original36345bytes SHA890bf610093f2592af130870113ff7bf669c7e565a9078031b6147adc6607192 still rejected/unchanged; exact one self-parent pointer; initial118951bytes versus compact28538bytes, provider_calls0."
+    }
+  ],
+  "eventId": "1ef83a4d-d49c-4b01-be74-ffc774fd9a40",
+  "sequence": 3,
+  "at": "2026-10-10T13:36:45.366Z"
+}

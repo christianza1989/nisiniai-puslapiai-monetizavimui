@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual desktop/mobile Playwright review found shared legacy/Tailwind reset suppresses native rich heading emphasis and ordered-list visible markers, although semantic h2/ol survived and all HTTP/core checks passed. Original guide screenshots retained in own ignored output/playwright. Scope correction adds explicit heading sizes/weights and list styles only in the new native CSS module; no gift/V1 style edit. Rebuild and repeat actual UI before delivery.",
+  "eventId": "dd2f507c-a282-4fdc-ad03-96e0e499b2d7",
+  "sequence": 4,
+  "at": "2026-10-10T13:13:02.495Z"
+}

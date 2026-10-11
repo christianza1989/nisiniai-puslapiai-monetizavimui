@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "category": "code",
+  "summary": "Exclude volatile assessment timestamp from native GUIDE creator prompt while preserving evaluated research context",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104320548",
+  "evidence": [
+    "Repeated exact-context restricted PG continuation still fails because creator instruction hash changes, while all5bindings and critic/coordinator hashes match. Debug reports only booleans, not source data.",
+    "Original new actual repeated Node prepare test0PASS1FAIL: prepared context hashes identical but prompts differ at seoResearch.assessedAt. Canonical researchSnapshotHash already excludes this timestamp."
+  ],
+  "paths": [
+    "content-studio/scripts/customer-content-write.mjs",
+    "content-studio/test/customer-content-write.test.mjs",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "rollback": "Scoped revert between jobs. Prior timestamp-bearing creator hashes remain immutable/incompatible; no historical hash retrofit or acceptance.",
+  "id": "upgrade-f5a345d3-90f5-4eed-97be-f48876e2fc3f",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "d87762f99521ccc397801c3367a0dad73398d95a",
+  "createdAt": "2026-10-11T01:46:34.348Z"
+}

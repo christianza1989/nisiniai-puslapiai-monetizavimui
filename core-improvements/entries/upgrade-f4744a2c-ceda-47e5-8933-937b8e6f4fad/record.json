@@ -1,0 +1,25 @@
+{
+  "siteId": "verslomatika",
+  "summary": "First real Lithuanian creation run passed typed JSON while client prose mixed Finnish, Estonian and Cyrillic fragments and falsely claimed a complete language self-edit.",
+  "category": "code",
+  "evidence": [
+    "Creation runtime source506c048641cc2b193db5d7d31c695105a427d899; immutable revision1 private operator review and actual browser preview FAIL",
+    "Typed Draft validates structure but no output-language admission; original provider trace and artifacts retained privately"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/tests/test_customer_creations.py",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped source revert; preserve immutable original revision and private failed outputs. Automated language screening is not editorial acceptance; no publication or external sending enabled.",
+  "id": "upgrade-f4744a2c-ceda-47e5-8933-937b8e6f4fad",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "506c048641cc2b193db5d7d31c695105a427d899",
+  "createdAt": "2026-10-10T10:33:34.104Z"
+}

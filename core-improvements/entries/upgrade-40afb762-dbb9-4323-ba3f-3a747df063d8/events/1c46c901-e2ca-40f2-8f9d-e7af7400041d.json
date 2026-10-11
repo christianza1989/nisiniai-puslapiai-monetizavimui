@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Booking original isolated2FAIL1PASS ae6404f96e97e13b1068dcb0b08a38332d478f280619967e996826a0422d8895. Earlier44696a fixture omitted memory filename, created a new owned ignored madbeauty/runtime/platform.sqlite on this date; retained its synthetic rows and failure, corrected isolation before production repair. No foreign or operational core database changed.",
+  "eventId": "1c46c901-e2ca-40f2-8f9d-e7af7400041d",
+  "sequence": 2,
+  "at": "2026-10-11T23:39:35.204Z"
+}

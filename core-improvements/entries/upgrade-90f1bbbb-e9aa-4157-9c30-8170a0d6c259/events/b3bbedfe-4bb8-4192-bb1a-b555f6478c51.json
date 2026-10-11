@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Withdrawal original FAIL with null dispatch. Corrected shared fixture96b0b805b3f150c0cd6edc90e53f37729145e67918032fa60d8c1f5d60277e23 preserves2realFAIL1PASS; earlier591e log also preserves no-service test fixture failure.",
+  "eventId": "b3bbedfe-4bb8-4192-bb1a-b555f6478c51",
+  "sequence": 2,
+  "at": "2026-10-11T23:39:37.932Z"
+}

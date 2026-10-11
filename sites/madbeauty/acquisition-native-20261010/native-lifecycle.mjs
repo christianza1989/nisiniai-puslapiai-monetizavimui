@@ -73,10 +73,23 @@ CREATE TABLE IF NOT EXISTS native_acquisition_events(scope_key TEXT NOT NULL,eve
   db.prepare("UPDATE native_acquisition_events SET state='accepted',receipt=?,lease_until=0,lease_token=NULL,error_code=NULL WHERE scope_key=? AND event_id=?").run(raw,scopeKey,id);return receipt;
  });}
  function fail(id,lease,code,permanent=false){store.transaction(()=>{const row=event(id);if(row?.lease_token!==lease||row.state!=='sending')return;db.prepare('UPDATE native_acquisition_events SET state=?,error_code=?,next_at=?,lease_until=0,lease_token=NULL WHERE scope_key=? AND event_id=?').run(permanent||row.attempts>=10?'permanent':'retry',code,store.clock()+Math.min(3600000,1000*2**row.attempts),scopeKey,id);});}
+ function acknowledgedAttribution(row){
+  const initial=db.prepare('SELECT * FROM native_acquisition_events WHERE scope_key=? AND provider_ref=? AND source_revision=1').get(scopeKey,row.provider_ref),b=binding(row.provider_ref);
+  if(!b||initial?.state!=='accepted'||hash(initial.body)!==initial.body_sha256)return false;
+  const body=validateWire('LifecycleEvent',JSON.parse(initial.body)),ack=validateWire('EventReceipt',JSON.parse(initial.receipt));
+  return body.kind==='signup_started'&&body.event_id===initial.event_id&&body.source_revision===1&&body.provider_ref===row.provider_ref&&body.invitation_ref===b.invitation_ref&&body.adapter_id===adapterId&&Object.entries(scope).every(([k,v])=>body.scope[k]===v)&&ack.contract_version==='0.1.1'&&ack.event_id===initial.event_id&&ack.source_revision===1&&['applied','duplicate'].includes(ack.state)&&ack.external_sent===false;
+ }
+ function withdrawalCanPass(row){
+  if(hash(row.body)!==row.body_sha256)throw Error('immutable_lifecycle_event_corrupt');
+  const body=validateWire('LifecycleEvent',JSON.parse(row.body));
+  // A higher inactive revision makes a late lower activity stale at core. Keep
+  // all blocked bytes and ACKs; never skip an unknown initial attribution.
+  return ['profile_deactivated','account_deleted'].includes(body.kind)&&acknowledgedAttribution(row);
+ }
  async function dispatch(id,exchange){
   if(typeof exchange!=='function')throw Error('registered_lifecycle_exchange_required');
   const lease=store.transaction(()=>{const row=event(id);if(!row||['accepted','permanent'].includes(row.state)||row.next_at>store.clock()||row.state==='sending'&&row.lease_until>store.clock())return null;
-   if(db.prepare("SELECT event_id FROM native_acquisition_events WHERE scope_key=? AND provider_ref=? AND source_revision<? AND state!='accepted'").get(scopeKey,row.provider_ref,row.source_revision))return null;
+   if(db.prepare("SELECT event_id FROM native_acquisition_events WHERE scope_key=? AND provider_ref=? AND source_revision<? AND state!='accepted'").get(scopeKey,row.provider_ref,row.source_revision)&&!withdrawalCanPass(row))return null;
    if(row.attempts>=10){fail(id,row.lease_token,'RETRY_EXHAUSTED',true);return null;}const token=randomUUID();db.prepare("UPDATE native_acquisition_events SET state='sending',attempts=attempts+1,lease_until=?,lease_token=? WHERE scope_key=? AND event_id=?").run(store.clock()+30000,token,scopeKey,id);return token;});
   if(!lease)return null;const controller=new AbortController();let timer;
   try{return await Promise.race([(async()=>{const p=await packet(id);if(!p||controller.signal.aborted)throw Error('lifecycle_packet_unavailable');const response=await exchange({...p,signal:controller.signal});if(!(response instanceof Response))throw Error('invalid_lifecycle_response');if(response.status!==200){fail(id,lease,'HTTP_'+response.status,[400,401,403,404,409,410,422].includes(response.status));return null;}

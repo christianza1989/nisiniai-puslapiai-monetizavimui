@@ -12,6 +12,38 @@ async function attributed(f){const user=login(f).user,p=await proof(f,user);f.ad
 function operator(f){const user=login(f,'operator@example.test','O'.repeat(32)).user;f.store.db.prepare('UPDATE accounts SET operator=1 WHERE id=?').run(user.id);return user;}
 function published(f,a,op){const w=a.l.workspace(a.user,a.scope),[offer]=a.l.execute('selectProcedures',a.user,{organizationId:a.org.id,procedureIds:['kirpimai-vyru-kirpimas'],version:0,idempotencyKey:'selection'}),saved=a.l.execute('saveOffer',a.user,{id:offer.id,version:offer.version,label:'Native service',variants:[{id:'native-variant',label:'Native variant',priceMinor:2200,durationMin:30,staffOptions:[{practitionerId:w.practitioners[0].id,resourceId:w.resources[0].id}]}]}),pending=a.l.execute('submitOffer',a.user,{id:saved.id,version:saved.version});a.l.execute('moderateOffer',op,{id:pending.id,version:pending.version,state:'approved'});return {w,offer:pending};}
 const receipt=(row,active=false)=>({contract_version:'0.1.1',event_id:row.event_id,state:'applied',source_revision:row.source_revision,profile_active:active,external_sent:false});
+
+test('Acknowledged active provider withdraws after stopped or expired module rejects an intervening activity',async()=>{
+ for(const status of [403,409]){const f=await captureFixture();try{
+  const a=await attributed(f),op=operator(f);published(f,a,op);
+  const revision=a.l.execute('submitRevision',a.user,{scope:a.scope,name:a.org.name,bio:a.org.bio});a.l.execute('moderate',op,{id:revision.id,state:'approved'});
+  for(const row of a.l.status())assert.ok(await a.l.dispatch(row.event_id,async()=>Response.json(receipt(row,row.source_revision===4))));
+  a.l.execute('submitRevision',a.user,{scope:a.scope,name:'Pending after module stop',bio:a.org.bio});
+  const blocked=a.l.status().at(-1);assert.equal(await a.l.dispatch(blocked.event_id,async()=>new Response('{}',{status})),null);
+  const before=f.store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(blocked.event_id);
+  const offer=a.l.workspace(a.user,a.scope).offers[0];a.l.execute('archiveOffer',a.user,{id:offer.id,version:offer.version});
+  const withdrawal=a.l.status().at(-1);let calls=0;
+  assert.ok(await a.l.dispatch(withdrawal.event_id,async p=>{calls++;assert.equal(JSON.parse(p.body).kind,'profile_deactivated');return Response.json(receipt(withdrawal));}));
+  assert.equal(calls,1);assert.equal(a.l.current(a.org.id).profile_active,false);
+  assert.deepEqual(f.store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(blocked.event_id),before);
+  assert.equal(await a.l.dispatch(withdrawal.event_id,async()=>{throw Error('No accepted withdrawal resend');}),null);
+ }finally{f.close();}}
+});
+
+test('Withdrawal cannot skip an unknown initial attribution or allow ordinary activity out of order',async()=>{
+ const f=await captureFixture();try{
+  const a=await attributed(f),op=operator(f);published(f,a,op);const revision=a.l.execute('submitRevision',a.user,{scope:a.scope,name:a.org.name,bio:a.org.bio});a.l.execute('moderate',op,{id:revision.id,state:'approved'});
+  const initial=a.l.status()[0];await a.l.dispatch(initial.event_id,async()=>new Response('{}',{status:403}));
+  const offer=a.l.workspace(a.user,a.scope).offers[0];a.l.execute('archiveOffer',a.user,{id:offer.id,version:offer.version});
+  let calls=0;assert.equal(await a.l.dispatch(a.l.status().at(-1).event_id,async()=>{calls++;throw Error('Unknown attribution');}),null);assert.equal(calls,0);
+ }finally{f.close();}
+ const g=await captureFixture();try{
+  const a=await attributed(g);published(g,a,operator(g));for(const row of a.l.status())assert.ok(await a.l.dispatch(row.event_id,async()=>Response.json(receipt(row))));
+  a.l.execute('submitRevision',a.user,{scope:a.scope,name:a.org.name,bio:a.org.bio});const blocked=a.l.status().at(-1);await a.l.dispatch(blocked.event_id,async()=>new Response('{}',{status:403}));
+  a.l.execute('submitRevision',a.user,{scope:a.scope,name:'Another pending revision',bio:a.org.bio});
+  assert.equal(await a.l.dispatch(a.l.status().at(-1).event_id,async()=>{throw Error('Ordinary activity remains ordered');}),null);
+ }finally{g.close();}
+});
 test('Actual native provider has stable identity, all-city mapping, atomic monotonic counter and one-ref binding',async()=>{const f=await captureFixture();try{
  const a=await attributed(f);assert.match(a.org.id,/^provider_/);assert.equal(a.org.city,'Vilnius');assert.deepEqual(a.l.status().map(x=>x.source_revision),[1,2]);
  for(const row of a.l.status()){const body=JSON.parse((await a.l.packet(row.event_id)).body);assert.equal(body.provider_ref,a.org.id);assert.ok(!JSON.stringify(body).includes(a.user.email));}

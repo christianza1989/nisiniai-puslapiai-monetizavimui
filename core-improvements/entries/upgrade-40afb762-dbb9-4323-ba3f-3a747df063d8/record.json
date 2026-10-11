@@ -1,0 +1,22 @@
+{
+  "siteId": "madbeauty",
+  "category": "code",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert with normal/native workers held; preserve original failed tests, outbox bytes/status/ACKs and privacy history. No database erasure, automatic activation or main merge.",
+  "summary": "Bind the selected practitioner consistently through receiving HTTP/browser quote and booking review for multi-staff native variants",
+  "paths": [
+    "sites/madbeauty/backend/http.mjs",
+    "sites/madbeauty/prototype/public/http-adapter.mjs",
+    "sites/madbeauty/prototype/public/booking-ui.mjs",
+    "sites/madbeauty/backend/booking-consumer.test.mjs",
+    "sites/madbeauty/backend/browser-module-loader.mjs"
+  ],
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6115008470",
+    "Independent read-only a355 review P2: legacy view quotes staff A while confirmed candidate belongs to B; original root34/36 tests omit this consumer. Reproduce before repair."
+  ],
+  "id": "upgrade-40afb762-dbb9-4323-ba3f-3a747df063d8",
+  "branch": "codex/madbeauty-acquisition-adoption-20261012",
+  "baseSha": "e88a332647d6106a2a9f490c2ad12f7719607e4e",
+  "createdAt": "2026-10-11T23:22:25.191Z"
+}

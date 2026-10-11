@@ -37,7 +37,7 @@ export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=fa
       if(input.method==='catalog')result=platform.catalog(v);
       else if(input.method==='profile')result=platform.profile(v.id);
       else if(input.method==='availability')result=platform.availability(v,user);
-      else if(input.method==='option')result=platform.option(v.id,v.addons);
+      else if(input.method==='option')result=platform.option(v.id,v.addons,v.practitionerId);
       else if(input.method==='workspace')result=platform.workspace(user,v);
       else if(input.method==='releaseHold')result=platform.releaseHold(user,v.id);
       else if(input.method==='metrics')result=platform.metrics(user);

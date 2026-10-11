@@ -62,6 +62,11 @@ export function createNativeRecipientPrivacy({store,scopeKey,adapterId,sourceRel
    const raw=json(body);if(Buffer.byteLength(raw)>65536)throw Error('retirement_body_too_large');
    db.prepare('INSERT INTO native_recipient_privacy(scope_key,request_id,invitation_ref,account_key,payload,body_sha256,state,erasure_id,created_at,expires_at) VALUES(?,?,?,?,?,?,?,?,?,?)').run(candidate.scope_key,body.request_id,candidate.invitation_ref,accountKey(event.clientId),seal(raw),hash(raw),'ready',event.requestId,store.clock(),monthsBefore(store.clock(),-RETENTION_POLICY.receiptMonths));
   }
+  // Identity cleanup is durable data work, independent of which purpose-specific
+  // signers were reloaded. Loaded lifecycle hooks already queued their deletion;
+  // unloaded scopes retain the encrypted recipient retirement staged above.
+  // Do not fabricate their lifecycle event, source release or transport grant.
+  if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='native_acquisition_providers'").get())db.prepare('UPDATE native_acquisition_providers SET account_ref=NULL,terminal=1,current_active=0,eligibility_revision=NULL WHERE account_ref=?').run(event.clientId);
   if(account)db.prepare('DELETE FROM native_recipient_challenges WHERE challenge_id IN (SELECT id FROM email_challenges WHERE site_id=? AND email=?)').run(store.siteId,account.email);
   db.prepare('DELETE FROM native_recipient_requests WHERE account_ref=?').run(event.clientId);
   db.prepare('DELETE FROM native_recipient_pending WHERE account_ref=?').run(event.clientId);

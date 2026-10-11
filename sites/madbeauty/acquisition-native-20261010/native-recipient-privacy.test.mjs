@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
-import {join} from 'node:path';
+import {join,resolve,sep} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {createRetention} from '../backend/retention.mjs';
 import {createPlatform} from '../backend/platform.mjs';
@@ -11,6 +11,30 @@ import {verifySignature} from './contracts/server-auth.mjs';
 import {validateWire} from './wire.mjs';
 import {captureFixture,configuration,epoch,scope,ref,login,proof,challengeReceipt,boundReceipt,privacyReceipt,eraseInput} from './capture-fixture.mjs';
 const count=(f,name)=>f.store.db.prepare('SELECT COUNT(*) n FROM '+name).get().n;
+
+test('Restarted unloaded provider scope loses account binding and active supply atomically with durable retirement',async()=>{
+ const dir=mkdtempSync(join(tmpdir(),'madbeauty-provider-privacy-')),filename=join(dir,'native.sqlite'),otherScope={...scope,environment_id:'capture-other'};let f=await captureFixture(filename);
+ try{
+  const other=await createNativeRecipientCapture({store:f.store,...configuration,scope:otherScope}),g={...f,adapter:other},user=login(g).user;
+  const challenge=await other.prepare(ref,user.id);other.acceptReceipt(challenge,{...challengeReceipt(f,challenge),scope:otherScope});
+  const proofId=await other.prepare(ref,user.id),original=(await other.packet(proofId)).body;other.acceptReceipt(proofId,{...boundReceipt(f,proofId),scope:otherScope});
+  const l=other.lifecycle;l.acceptResolution(ref,{contract_version:'0.1.1',scope:otherScope,invitation_ref:ref,objective:'provider_signup',offer_revision:'offer-test',expires_at:new Date(f.clock()+3600000).toISOString(),state:'available'});
+  const org=l.createOrganization(user,{name:'Other scope provider',bio:'Synthetic native privacy case',kind:'solo',city:'vilnius'},ref),professional={role:'professional',organizationId:org.id},w=l.workspace(user,professional);
+  const op=login(f,'operator@example.test','O'.repeat(32)).user;f.store.db.prepare('UPDATE accounts SET operator=1 WHERE id=?').run(op.id);
+  const [offer]=l.execute('selectProcedures',user,{organizationId:org.id,procedureIds:['kirpimai-vyru-kirpimas'],version:0,idempotencyKey:'privacy-offer'}),saved=l.execute('saveOffer',user,{id:offer.id,version:offer.version,label:'Synthetic privacy service',variants:[{id:'privacy-variant',label:'Variant',priceMinor:2200,durationMin:30,staffOptions:[{practitionerId:w.practitioners[0].id,resourceId:w.resources[0].id}]}]}),pending=l.execute('submitOffer',user,{id:saved.id,version:saved.version});l.execute('moderateOffer',op,{id:pending.id,version:pending.version,state:'approved'});
+  const rev=l.execute('submitRevision',user,{scope:professional,name:org.name,bio:org.bio});l.execute('moderate',op,{id:rev.id,state:'approved'});assert.equal(l.current(org.id).profile_active,true);
+  const events=f.store.db.prepare('SELECT * FROM native_acquisition_events WHERE provider_ref=? ORDER BY source_revision').all(org.id);
+  f.close();f=await captureFixture(filename);assert.throws(()=>f.adapter.eraseAccount(user,eraseInput(user)),e=>e.code==='PROFESSIONAL_ACCOUNT');
+  createRetention(f.store).apply({clientId:user.id,requestId:'erasure_unloaded_provider',aliasId:'erased_unloaded_provider',policyVersion:f.store.retentionPolicyVersion});
+  const binding=f.store.db.prepare('SELECT * FROM native_acquisition_providers WHERE provider_ref=?').get(org.id);
+  assert.equal(binding.account_ref,null);assert.equal(binding.terminal,1);assert.equal(binding.current_active,0);assert.equal(binding.eligibility_revision,null);
+  assert.deepEqual(f.store.db.prepare('SELECT * FROM native_acquisition_events WHERE provider_ref=? ORDER BY source_revision').all(org.id),events);
+  const restored=await createNativeRecipientCapture({store:f.store,...configuration,scope:otherScope}),[queued]=restored.retirementStatus(),packet=await restored.retirementPacket(queued.request_id),body=JSON.parse(packet.body);
+  assert.deepEqual(body.recipient_proof,JSON.parse(original));assert.deepEqual(body.scope,otherScope);assert.equal(body.native_account_ref,user.id);
+  assert.equal(await verifySignature({keyId:configuration.transportKeyId,secret:configuration.transportSecret,method:'POST',path:packet.path,body:packet.body,headers:packet.headers,now:f.clock()/1000}),true);
+  assert.equal(restored.lifecycle.current(org.id).terminal,true);assert.equal(f.store.db.prepare('SELECT COUNT(*) n FROM native_recipient_pending WHERE account_ref=?').get(user.id).n,0);
+ }finally{f.close();const target=resolve(dir),root=resolve(tmpdir())+sep;assert.ok(target.startsWith(root)&&target.slice(root.length).startsWith('madbeauty-provider-privacy-'));rmSync(target,{recursive:true,force:true});}
+});
 test('Restarted privacy cleanup preserves another configured scope prepared proof without reloading its signer',async()=>{
  const dir=mkdtempSync(join(tmpdir(),'madbeauty-privacy-context-')),filename=join(dir,'native.sqlite'),otherScope={...scope,environment_id:'capture-other'};let f=await captureFixture(filename);
  try{

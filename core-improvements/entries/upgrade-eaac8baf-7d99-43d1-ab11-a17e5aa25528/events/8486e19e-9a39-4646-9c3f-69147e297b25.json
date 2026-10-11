@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Frozen source scoped follow-up QA complete under6106561965. Registration lifetime/current owner/history/end and unchanged paid gates checked in restricted synthetic PostgreSQL; unknown/foreign/revoked current owner denied, expired/re-admitted immutable original binding retained, no source TTL renewal, one mocked provider attempt/usage only. Independent source review noP0-P2. Original forbidden-host24PASS/8FAILSHAf72bf2e9 retained; corrected only harness and added negative transport-denial rejection. Canonical Git wire0a0845208feb48ddecf8710cd8e6ca4502e4bfc6413a30a05167c5f7dc72a08d unchanged, no SQL/DTO/model/legacy profiles. API/studio held, operational DB/provider/channel untouched. Actual clean adoption/new-login/history/UI acceptance pending; prompt regression does not prove actual model effectiveness.",
+  "checks": [
+    {
+      "command": "isolated artifacts/run_customer_text_pg.private.py tests/test_customer_text.py",
+      "result": "PASS",
+      "evidence": "32PASS235.11s, PG logSHA08b9e52b63b1dba535c46ffd22500f22b590ae09c073d26aab805d3a6e4625b5; frozen source unchanged receipt customer-text-qa-20261011T072644409460Z"
+    },
+    {
+      "command": "same frozen helper offline_tests/test_customer_text.py offline_tests/test_full_api_routes.py",
+      "result": "PASS",
+      "evidence": "21PASS4.51s logSHA9bdd48c8c30f69e02747c588884a049f4b2765457b06e0b4be4c55f99b0fed66; prompt/profiles/canonical DTO/full-portable mount/synthetic cancellation"
+    },
+    {
+      "command": "scoped Ruff; git diff --check; artifacts/check_customer_continuity_delivery.private.py",
+      "result": "PASS",
+      "evidence": "Ruff clean; diff clean;36 tracked relative doc links0missing; canonical Gitwire SHA unchanged"
+    }
+  ],
+  "eventId": "8486e19e-9a39-4646-9c3f-69147e297b25",
+  "sequence": 3,
+  "at": "2026-10-11T07:32:25.444Z"
+}

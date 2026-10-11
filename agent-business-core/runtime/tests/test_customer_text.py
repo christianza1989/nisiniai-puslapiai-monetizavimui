@@ -19,13 +19,15 @@ from test_customer_profile import (  # noqa: F401 - canonical shared fixture cha
     revoke,
 )
 from test_customer_profile import profile as profile_fixture
+from test_customer_public import logged, verified
 
 from pinet_core import knowledge, policy
 from pinet_core.api import app
 from pinet_core.config import settings
 from pinet_core.contracts import KnowledgeRevocation, Policy, PolicyUpdate
-from pinet_core.control.models import BusinessGrant, Membership, Session
+from pinet_core.control.models import BusinessGrant, Membership, Session, User
 from pinet_core.control.routes import ControlError
+from pinet_core.creation_registration.models import Registration
 from pinet_core.customer_text import adapter, service
 from pinet_core.customer_text.wire import Start, Turn
 from pinet_core.db import db
@@ -45,14 +47,15 @@ async def text_customer(profile, monkeypatch):
     monkeypatch.setattr(adapter, "source_current", lambda: True)
     monkeypatch.setattr(adapter, "runner_ready", lambda: True)
     c = profile
-    request, saved, admission_request, _, auth, _ = await prepared(c)
+    request, saved, admission_request, account, auth, _ = await prepared(c)
     admitted = await admit(c, admission_request)
     token = auth["Authorization"][7:]
     value = Start(request_id=uuid4(), admission_id=admitted["admission_id"],
         notice_version="customer-text.local.v1", consent=True)
     try:
         yield {**c, "request": request, "saved": saved, "admitted": admitted,
-            "auth": auth, "token": token, "start": value}
+            "auth": auth, "token": token, "start": value, "account": account,
+            "admission_request": admission_request}
     finally:
         async with AsyncSession(c["admin"]) as tx, tx.begin():
             await tx.execute(delete(Case).where(Case.environment_id == c["environment"]))
@@ -96,7 +99,7 @@ async def test_legacy_worker_cannot_read_or_mutate_customer_text(text_customer):
         ("POST", "/end", {"epoch": dispatch.epoch}), ("GET", "", None)]
     probes.append(("POST", "/usage", {"epoch": dispatch.epoch, "report_id": str(uuid4()),
         "total_microusd": 0}))
-    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://core.test") as client:
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://127.0.0.1:8855") as client:
         for method, suffix, body in probes:
             response = await client.request(method, prefix + suffix, headers=headers, json=body)
             assert response.status_code == 409, (suffix, response.status_code)
@@ -165,6 +168,102 @@ async def test_actual_full_http_start_turn_correction_replay_restart_and_no_chan
         assert (await client.get(path, headers=c["auth"])).json()["data"]["need_revision"] == 2
         assert (await client.post(path + "/end", headers=c["auth"])).json()["data"]["state"] == "finalized"
         assert (await client.post(path + "/turns", headers=c["auth"], json=turn_value(2).model_dump(mode="json"))).status_code == 409
+    await assert_no_channels(c)
+
+
+@pytest.mark.parametrize("change", ["login", "knowledge_expiry", "conversation_expiry", "readmit",
+    "profile_revoke", "registration_revoke", "execution_source", "instructions"])
+async def test_current_owner_history_end_survive_execution_change_without_resuming(text_customer, monkeypatch, change):
+    c = text_customer
+    calls = []
+
+    async def run(context, event, revision, authorized):
+        assert await authorized()
+        calls.append(context)
+        return adapter.schema(event, revision).model_validate({"reply": "Synthetic persisted reply", "calls": []}), {"input_tokens": 11}
+
+    monkeypatch.setattr(adapter, "run", run)
+    first = await begin(c)
+    cid, creation_id = first["conversation_id"], c["request"]["creation_id"]
+    await service.turn(c["token"], creation_id, cid, turn_value())
+    original, _ = await stored(c, cid)
+    frozen = original.payload["customer_text_binding"]
+    auth = c["auth"]
+    if change == "login":
+        auth = await logged(c, c["account"])
+    elif change == "readmit":
+        reference = await public_source(c, c["saved"])
+        fresh = await admit(c, {**c["admission_request"], "knowledge_ref": reference})
+        assert fresh["admission_id"] != c["admitted"]["admission_id"]
+    elif change == "profile_revoke":
+        await revoke(c, c["admitted"])
+    elif change in {"knowledge_expiry", "conversation_expiry", "registration_revoke"}:
+        async with AsyncSession(c["admin"]) as tx, tx.begin():
+            if change == "knowledge_expiry":
+                await tx.execute(update(KnowledgeState).where(KnowledgeState.business_id == c["saved"]["business_id"])
+                    .values(refreshed_at=utcnow() - timedelta(seconds=settings().knowledge_ttl_seconds + 1)))
+            elif change == "conversation_expiry":
+                await tx.execute(update(Conversation).where(Conversation.id == cid).values(expires_at=utcnow() - timedelta(seconds=1)))
+            else:
+                await tx.execute(update(Registration).where(Registration.id == c["saved"]["registration_id"]).values(revoked_at=utcnow()))
+    elif change == "execution_source":
+        monkeypatch.setattr(settings(), "control_source_revision", "b" * 40)
+    else:
+        monkeypatch.setattr(service.instructions, "manifest", lambda: (_ for _ in ()).throw(ValueError("Changed instructions")))
+    async with AsyncSession(c["admin"]) as tx:
+        state = await tx.scalar(select(KnowledgeState).where(KnowledgeState.business_id == c["saved"]["business_id"]))
+        source_before = state.refreshed_at, state.payload
+    path = f"/customer/v2/creations/{creation_id}/text-sessions/{cid}"
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://127.0.0.1:8855") as client:
+        history = await client.get(path, headers=auth)
+        assert history.status_code == 200, history.text
+        assert history.json()["data"]["state"] == "created"
+        assert any(e["data"].get("reply") == "Synthetic persisted reply" for e in history.json()["data"]["events"])
+        # Historical access must not convert this stale/original-session binding into execution authority.
+        assert (await client.post(path + "/turns", headers=auth, json=turn_value().model_dump(mode="json"))).status_code in {404, 409}
+        ended = await client.post(path + "/end", headers=auth)
+        assert ended.status_code == 200, ended.text
+        assert ended.json()["data"]["state"] == "finalized"
+        assert (await client.get(path, headers=auth)).json()["data"]["state"] == "finalized"
+    after, events = await stored(c, cid)
+    assert after.payload["customer_text_binding"] == frozen and after.owner is None
+    assert sum(e.kind == "provider_attempt" for e in events) == sum(e.kind == "provider_usage" for e in events) == len(calls) == 1
+    async with AsyncSession(c["admin"]) as tx:
+        state = await tx.scalar(select(KnowledgeState).where(KnowledgeState.business_id == c["saved"]["business_id"]))
+        assert source_before == (state.refreshed_at, state.payload)
+    await assert_no_channels(c)
+
+
+@pytest.mark.parametrize("change", ["foreign_owner", "unknown_conversation", "grant", "membership", "session", "account"])
+async def test_historical_read_and_end_still_deny_foreign_or_revoked_owner(text_customer, change):
+    c = text_customer
+    first = await begin(c)
+    cid, auth = first["conversation_id"], c["auth"]
+    if change == "foreign_owner":
+        _, auth, _ = await verified(c)
+    elif change == "unknown_conversation":
+        cid = str(uuid4())
+    else:
+        async with AsyncSession(c["admin"]) as tx, tx.begin():
+            if change == "grant":
+                await tx.execute(update(BusinessGrant).where(BusinessGrant.business_id == c["saved"]["business_id"]).values(enabled=False))
+            elif change == "membership":
+                await tx.execute(update(Membership).where(Membership.environment_id == c["environment"]).values(enabled=False))
+            elif change == "session":
+                await tx.execute(update(Session).where(Session.id == c["request"]["authorizing_session_id"]).values(revoked_at=utcnow()))
+            else:
+                user_id = (await tx.get(Session, c["request"]["authorizing_session_id"])).user_id
+                await tx.execute(update(User).where(User.id == user_id).values(enabled=False))
+    before, before_events = await stored(c, first["conversation_id"])
+    snapshot = before.payload, before.state, before.epoch, [(e.id, e.payload) for e in before_events]
+    path = f"/customer/v2/creations/{c['request']['creation_id']}/text-sessions/{cid}"
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://127.0.0.1:8855") as client:
+        for method, suffix in (("GET", ""), ("POST", "/end")):
+            reply = await client.request(method, path + suffix, headers=auth)
+            assert reply.status_code in {401, 403, 404}, reply.text
+            assert reply.json()["code"] != "control_unavailable", reply.text
+    after, events = await stored(c, first["conversation_id"])
+    assert snapshot == (after.payload, after.state, after.epoch, [(e.id, e.payload) for e in events])
     await assert_no_channels(c)
 
 

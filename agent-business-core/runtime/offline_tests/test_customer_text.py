@@ -130,3 +130,15 @@ def test_new_text_flags_are_default_off_and_do_not_depend_on_owner_queue(monkeyp
         with pytest.raises(ControlError):
             service.guard()
         monkeypatch.setattr(cfg, key, True)
+
+
+def test_local_need_guidance_preserves_proposed_preferences_and_exact_original_material():
+    context = {"client_message": "Synthetic client preference100EUR nextweek", "need": {}, "knowledge": {"sources": []}}
+    typed, prompt, schema = adapter.material(context, "client-evidence", 7)
+    assert "do not leave them only in the reply" in prompt
+    assert "eligible proposed needs, never confirmed business facts" in prompt
+    assert "do not invent a calendar date, unknown field" in prompt
+    assert "If the latest message supplies no new explicit need information" in prompt
+    assert prompt.endswith(json.dumps(context, ensure_ascii=False, sort_keys=True))
+    assert schema == json.dumps(typed.model_json_schema())
+    assert typed.model_validate({"reply": "Synthetic", "calls": []})

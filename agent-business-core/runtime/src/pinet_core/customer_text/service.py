@@ -13,10 +13,13 @@ from .. import knowledge, policy
 from .. import service as core
 from ..config import settings
 from ..contracts import KnowledgeQuery, NeedPatch
-from ..control.models import Session
+from ..control.models import BusinessGrant, Session
 from ..control.routes import ControlError, identifier, scope, token_hash
 from ..creation.routes import owned
-from ..creation.service import digest
+from ..creation.service import binding as owner_binding
+from ..creation.service import current_actor, digest
+from ..creation_registration import service as registrations
+from ..creation_registration.locks import lifetime
 from ..creation_registration.models import Registration
 from ..customer_profile import instructions
 from ..customer_profile import service as profiles
@@ -43,17 +46,22 @@ def bearer_token(value):
     return value[7:]
 
 
+async def customer_session(tx, token):
+    session = await tx.scalar(select(Session).where(Session.token_hash == token_hash(token)))
+    if not session or session.revoked_at or session.expires_at <= utcnow():
+        raise ControlError(401, "unauthenticated")
+    await tx.execute(text("SELECT set_config('pinet.control_user', :u, true), "
+        "set_config('pinet.control_token', '', true)"), {"u": session.user_id})
+    return session
+
+
 @asynccontextmanager
 async def authority(token, creation_id):
     guard()
     if not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "source_unavailable")
     async with scope(token=token_hash(token)) as tx:
-        session = await tx.scalar(select(Session).where(Session.token_hash == token_hash(token)))
-        if not session or session.revoked_at or session.expires_at <= utcnow():
-            raise ControlError(401, "unauthenticated")
-        await tx.execute(text("SELECT set_config('pinet.control_user', :u, true), "
-            "set_config('pinet.control_token', '', true)"), {"u": session.user_id})
+        session = await customer_session(tx, token)
         identity = await profiles.pin_registration(tx, creation_id)
         creation = await owned(tx, session, creation_id, lock=True)
         current = await profiles.projection(tx, session, creation, registration_identity=identity)
@@ -76,6 +84,79 @@ async def authority(token, creation_id):
             "profile": admitted, "adapter": adapter.VERSION,
             "model": adapter.MODEL}
         yield tx, session, creation, identity, business, binding
+
+
+async def historical_identity(tx, session, creation, row, frozen):
+    """Validate retained immutable identity and fresh ownership, never execution freshness."""
+    registry = await tx.scalar(select(Registration).where(Registration.id == frozen["registration_id"])
+        .execution_options(populate_existing=True))
+    admission = await tx.scalar(select(Admission).where(Admission.id == frozen["admission_id"])
+        .execution_options(populate_existing=True))
+    if (not registry or not admission or owner_binding(registry) != owner_binding(creation)
+            or digest(registrations.stored_material(registry)) != registry.fingerprint
+            or registry.fingerprint != frozen["registration_fingerprint"]
+            or admission.fingerprint != frozen["admission_fingerprint"]
+            or admission.registration_id != registry.id
+            or admission.registration_fingerprint != registry.fingerprint
+            or owner_binding(admission) != owner_binding(creation)):
+        raise ControlError(404, "not_found")
+    retained = profiles.admitted(admission).model_dump(mode="json")
+    # Revocation is mutable terminal metadata; the original binding remains immutable.
+    retained["revoked_at"] = None
+    if (retained != frozen["profile"] or row.business_id != registry.business_id
+            or row.environment_id != registry.environment_id
+            or frozen["environment_id"] != registry.environment_id
+            or frozen["creation_id"] != creation.id or frozen["user_id"] != session.user_id):
+        raise ControlError(404, "not_found")
+    pair = (await tx.execute(select(BusinessGrant, Business).join(Business, Business.id == BusinessGrant.business_id)
+        .where(BusinessGrant.id == registry.grant_id, BusinessGrant.enabled,
+            BusinessGrant.business_id == registry.business_id, BusinessGrant.portfolio_id == creation.portfolio_id,
+            BusinessGrant.organization_id == creation.organization_id,
+            BusinessGrant.environment_id == settings().environment)
+        .execution_options(populate_existing=True))).first()
+    if not pair or (pair[1].site_id, pair[1].canonical_host) != (registry.site_id, registry.canonical_host):
+        raise ControlError(404, "not_found")
+    await current_actor(tx, session, creation.portfolio_id)
+
+
+@asynccontextmanager
+async def historical_authority(token, creation_id, conversation_id):
+    """Current owner may inspect/end retained history; this grants no provider authority."""
+    guard()
+    if not await asyncio.to_thread(adapter.source_current):
+        raise ControlError(503, "source_unavailable")
+    async with scope(token=token_hash(token)) as tx:
+        session = await customer_session(tx, token)
+        creation_id, conversation_id = identifier(creation_id), identifier(conversation_id)
+        candidate = await profiles.registry_row(tx, creation_id)
+        if not candidate or digest(registrations.stored_material(candidate)) != candidate.fingerprint:
+            raise ControlError(404, "not_found")
+        # RLS-visible server registration supplies the business, never a browser scope.
+        await tx.execute(text("SELECT set_config('pinet.business', :b, true)"), {"b": candidate.business_id})
+        preliminary = await tx.get(Conversation, conversation_id)
+        frozen = preliminary.payload.get("customer_text_binding") if preliminary else None
+        if (not preliminary or preliminary.payload.get("transport") != adapter.VERSION
+                or not isinstance(frozen, dict) or frozen.get("creation_id") != creation_id
+                or frozen.get("user_id") != session.user_id or frozen.get("environment_id") != settings().environment
+                or frozen.get("adapter") != adapter.VERSION or frozen.get("model") != adapter.MODEL
+                or not all(key in frozen for key in ("registration_id", "registration_fingerprint",
+                    "admission_id", "admission_fingerprint", "profile"))):
+            raise ControlError(404, "not_found")
+        registry = await tx.get(Registration, frozen["registration_id"])
+        if not registry or registry.creation_id != creation_id or registry.business_id != candidate.business_id:
+            raise ControlError(404, "not_found")
+        # Pin the actual historical registration before actor/Creation/Conversation locks.
+        await lifetime(tx, settings().environment, registry.id)
+        creation = await owned(tx, session, creation_id, lock=True)
+        row = await tx.scalar(select(Conversation).where(Conversation.id == conversation_id)
+            .with_for_update().execution_options(populate_existing=True))
+        if not row or row.payload.get("transport") != adapter.VERSION or row.payload.get("customer_text_binding") != frozen:
+            raise ControlError(404, "not_found")
+        await historical_identity(tx, session, creation, row, frozen)
+        yield tx, row
+        await historical_identity(tx, session, creation, row, frozen)
+        if not await asyncio.to_thread(adapter.source_current):
+            raise ControlError(503, "source_unavailable")
 
 
 async def final_authority(tx, session, creation, identity, expected):
@@ -163,22 +244,16 @@ async def capability(token, creation_id):
 
 
 async def status(token, creation_id, conversation_id):
-    async with authority(token, creation_id) as (tx, session, creation, identity, _, binding):
-        row = await locked(tx, conversation_id, binding)
-        result = await view(tx, row)
-        await final_authority(tx, session, creation, identity, binding)
-        return result
+    async with historical_authority(token, creation_id, conversation_id) as (tx, row):
+        return await view(tx, row)
 
 
 async def end(token, creation_id, conversation_id):
-    async with authority(token, creation_id) as (tx, session, creation, identity, _, binding):
-        row = await locked(tx, conversation_id, binding)
+    async with historical_authority(token, creation_id, conversation_id) as (tx, row):
         await core.finalize(tx, row)
         row.owner = None
         row.epoch += 1
-        result = await view(tx, row)
-        await final_authority(tx, session, creation, identity, binding)
-        return result
+        return await view(tx, row)
 
 
 @dataclass(frozen=True)

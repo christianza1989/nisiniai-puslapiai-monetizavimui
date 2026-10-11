@@ -32,7 +32,7 @@ from pinet_core.models import Artifact, Conversation, Job, Outbox, new_id
 from pinet_core.security import digest as instruction_digest
 
 
-def manifest(c, tmp_path, monkeypatch, case_id="case3", messages=None):
+def manifest(c, tmp_path, monkeypatch, case_id="case3", messages=None, scheme="json-sorted-utf8-compact.v1"):
     messages = messages or ["Synthetic frozen request"]
     cases = [{"case_id": "case" + str(i), "split": "train" if i < 3 else "holdout",
         "archetype": "synthetic" + str(i), "messages": messages if "case" + str(i) == case_id else ["Synthetic " + str(i)]}
@@ -41,6 +41,8 @@ def manifest(c, tmp_path, monkeypatch, case_id="case3", messages=None):
         snapshot=c["frozen"], snapshot_sha256=digest(c["frozen"]), evaluator_sha256=evaluation_contract.fingerprint(),
         model_profile=evaluator.profile(), customer_model=adapter.MODEL, cases=cases, corpus_sha256=digest(cases),
         split={"train": 3, "holdout": 3})
+    value["corpus_digest_scheme"] = scheme
+    value["corpus_sha256"] = protection.corpus_digest(value)
     monkeypatch.setattr(protection, "ROOT", tmp_path)
     path = tmp_path / "manifest.private.json"
     path.write_text(json.dumps(value), encoding="utf-8")
@@ -48,20 +50,21 @@ def manifest(c, tmp_path, monkeypatch, case_id="case3", messages=None):
     return ref, messages
 
 
-async def episode(c, tmp_path, monkeypatch, case_id="case3"):
+async def episode(c, tmp_path, monkeypatch, case_id="case3", scheme="json-sorted-utf8-compact.v1"):
     captures = []
     fake(monkeypatch, captures)
-    ref, messages = manifest(c, tmp_path, monkeypatch, case_id)
+    ref, messages = manifest(c, tmp_path, monkeypatch, case_id, scheme=scheme)
     result = await lab.episode(c["token"], c["frozen"], messages, uuid4(), protected_case=ref)
     rq = review.Request(bearer=c["token"], conversation_id=result["conversation"]["conversation_id"],
         request_id=uuid4(), episode=result["snapshot"])
     return result, rq, ref, messages, captures
 
 
-@pytest.mark.parametrize("case_id", ["case0", "case3"])
-async def test_train_uses_existing_lifecycle_holdout_keeps_quality_and_usage_only(configured, tmp_path, monkeypatch, case_id):  # noqa: F811
+@pytest.mark.parametrize("case_id,scheme", [("case0", "json-sorted-utf8-compact.v1"),
+    ("case3", "json-sorted-utf8-compact.v1"), ("case3", "json-sorted-utf8-spaced.v1")])
+async def test_train_uses_existing_lifecycle_holdout_keeps_quality_and_usage_only(configured, tmp_path, monkeypatch, case_id, scheme):  # noqa: F811
     c, calls = configured, []
-    result, rq, ref, messages, captures = await episode(c, tmp_path, monkeypatch, case_id)
+    result, rq, ref, messages, captures = await episode(c, tmp_path, monkeypatch, case_id, scheme)
     row, before = await stored(c, str(rq.conversation_id))
     proof = protection.retained(row, before)
     assert before[0].kind == "created" and proof["case_id"] == case_id

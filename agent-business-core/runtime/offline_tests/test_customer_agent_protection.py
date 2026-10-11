@@ -143,6 +143,32 @@ def test_cross_split_duplicate_script_cannot_be_frozen_as_unseen(tmp_path, monke
         protection.freeze(ref, snapshot, messages)
 
 
+def test_explicit_spaced_digest_preserves_existing_frozen_corpus(tmp_path, monkeypatch):
+    path, manifest, ref, snapshot, messages = fixture_manifest(tmp_path, monkeypatch)
+    manifest["cases"][4]["archetype"] = "Synthetic français"
+    manifest["corpus_digest_scheme"] = "json-sorted-utf8-spaced.v1"
+    manifest["corpus_sha256"] = hashlib.sha256(json.dumps(
+        manifest["cases"], sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    before = path.read_bytes()
+    ref["manifest_sha256"] = hashlib.sha256(before).hexdigest()
+    proof = protection.freeze(ref, snapshot, messages)
+    assert proof["corpus_sha256"] == manifest["corpus_sha256"] != digest(manifest["cases"])
+    assert proof["split"] == "holdout" and path.read_bytes() == before
+
+
+@pytest.mark.parametrize("scheme", ["unknown", "json-sorted-utf8-spaced.v1", None])
+def test_declared_digest_scheme_never_accepts_wrong_or_unknown_hash(tmp_path, monkeypatch, scheme):
+    path, manifest, ref, snapshot, messages = fixture_manifest(tmp_path, monkeypatch)
+    manifest["corpus_digest_scheme"] = scheme
+    if scheme is None:
+        manifest["corpus_sha256"] = "0" * 64
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    ref["manifest_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    with pytest.raises(ControlError, match="protected_manifest_conflict"):
+        protection.freeze(ref, snapshot, messages)
+
+
 async def test_holdout_tuning_gate_does_not_depend_on_model_root_cause(monkeypatch):
     async def observe(*_):
         return {"split": "holdout"}

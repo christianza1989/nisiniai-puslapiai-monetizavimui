@@ -45,6 +45,16 @@ class Proof(Strict):
     execution_source_revision: Source
 
 
+def corpus_digest(manifest):
+    """Declared private encoding preserves an existing corpus hash, not new cases."""
+    scheme = manifest.get("corpus_digest_scheme", "json-sorted-utf8-compact.v1")
+    if scheme == "json-sorted-utf8-spaced.v1":
+        return hashlib.sha256(json.dumps(manifest.get("cases"), sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    if scheme != "json-sorted-utf8-compact.v1":
+        raise ControlError(409, "protected_manifest_conflict")
+    return digest(manifest.get("cases"))
+
+
 def freeze(reference, snapshot, messages):
     """Read exact private bytes once, before start; do not rewrite/relabel a case."""
     from . import evaluator
@@ -70,7 +80,7 @@ def freeze(reference, snapshot, messages):
             or manifest.get("model_profile") != evaluator.profile()
             or manifest.get("customer_model") != adapter.MODEL
             or not isinstance(cases, list) or not 6 <= len(cases) <= 100
-            or manifest.get("corpus_sha256") != digest(cases)):
+            or manifest.get("corpus_sha256") != corpus_digest(manifest)):
         raise ControlError(409, "protected_manifest_conflict")
     selected, ids, scripts, counts = None, set(), {}, {"train": 0, "holdout": 0}
     for case in cases:

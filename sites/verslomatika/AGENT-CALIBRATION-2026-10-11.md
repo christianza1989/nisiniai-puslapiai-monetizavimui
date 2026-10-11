@@ -1,5 +1,7 @@
 # Local customer conversation-agent evidence — 2026-10-11
 
+Latest17:26Z: clean source32c930a own adoption preserved all rows/schema0023; first protected holdout preflight failed before preparation/DB/model due to original spaced-vs-new-compact corpus digest. Original preflightFAIL/e18fce63 and source1FAIL/59826966 retained, holdout executions remain0. Explicit private scheme compatibility now preserves original manifest bytes/cases/splits/corpusSHA; frozen154offline/3PG PASS/28019754, unchanged other finalQA inputs and zero providers/channels. Exact receipts in CUSTOMER_AGENT_LAB. New clean compatibility source delivery/adoption and original three actual holdouts follow; these QA checks are not model calibration or protected comparison.
+
 Owner scope: continue the existing saved-agent configuration and local conversation/calibration path autonomously. Docker/PostgreSQL and loopback only. SMTP, voice, live outreach, public deployment and domain purchase remain off; Supabase and language-only blocking paused, language UNVERIFIED, Gemini deferred. This report does not declare the full agent or platform accepted.
 
 Functional source `a84957e34c5c6c54b175221645ba8706e7a237cf`, public companion `5924a2eb858cf45e736bc5e79a2f07cfbbc39af2`; fetched main `7af6b9641012a30c5f95eac38a66daeff8f8cb39` / `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`. Both draft PR80 and PR29 are unmerged. Metadata-only owned adoption preserved schema0023 and every operational row, receipt SHA `85f55ee647fc5481d103b412516e8afacb6ab1aff7f624ff3560a55c224325c2`.

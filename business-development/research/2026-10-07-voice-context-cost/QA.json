@@ -1,0 +1,49 @@
+{
+  "checkedOn": "2026-10-07",
+  "status": "PASS_bounded_source_and_arithmetic_review",
+  "jsonParsed": 3,
+  "localMarkdownRefs": 2,
+  "brokenLocalRefs": 0,
+  "primaryOpenedUsed": 3,
+  "failedPrimaryOpen": 1,
+  "cases": [
+    {
+      "newAudioTokens": 1000,
+      "turns": [
+        500,
+        500
+      ],
+      "processedInputTokens": 1500,
+      "componentMicroUSD": 4500
+    },
+    {
+      "newAudioTokens": 1000,
+      "turns": [
+        250,
+        250,
+        250,
+        250
+      ],
+      "processedInputTokens": 2500,
+      "componentMicroUSD": 7500
+    }
+  ],
+  "snapshots": [
+    4500,
+    7500,
+    7500
+  ],
+  "finalCumulativeMicroUSD": 7500,
+  "invariantsUnchanged": true,
+  "newProposal": false,
+  "actualUsageReceiptReconciliation": "NOT_EXECUTED",
+  "runtimeTestsAudioProviderBilling": "NOT_EXECUTED",
+  "otherExecutorWrites": false,
+  "limits": [
+    "Synthetic partial input-history component only,not call price",
+    "No SDK end-to-end audit or real invoice",
+    "Existing code/test source reading not test execution",
+    "Transport,totalCost,payer/demand unknown"
+  ],
+  "toolingObservation": "Initial rg assumed wrong runtime package path; corrected from actual file inventory to pinet_core. No missing-module conclusion from failed search."
+}

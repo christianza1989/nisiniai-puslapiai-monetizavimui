@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-10",
+  "sources": [
+    {"id":"S1","url":"https://www.firestone-agriculture.eu/blog/what-affects-my-agricultural-tyres-lead-ratio","kind":"manufacturer_technical_explanation","publishedOn":"2022-06-30","verified":"opened_primary_html","fact":"Wear, pressure, load and technology affect effective rolling circumference; nominal match not sufficient","limit":"Generic guidance, not specific machine approval"},
+    {"id":"S2","url":"https://www.firestone-agriculture.eu/blog/how-to-change-the-size-of-my-tractor-tyres","kind":"manufacturer_technical_explanation","publishedOn":"2025-06-12","verified":"opened_primary_html","fact":"Lead formula uses front/rear RC and mechanical axle ratio; sample about 2.19 percent","limit":"Article has differing generic ranges, no universal OEM interval derived"},
+    {"id":"S3","url":"https://www.dlg.org/en/tests/agricultural-technology-and-farm-inputs/test-reports/test-balkrishna-industries-ltd-vf-reifen-fuer-traktoren-bkt-agrimax-v-flecto","kind":"primary_test_report","testYear":2023,"verified":"opened_primary_html_table_4","fact":"Nominally matching sizes have different RC; theoretical and measured lead separated at specified test conditions","limit":"One test setup, no market demand, machine-specific interchangeability or profit proof"},
+    {"id":"S4","url":"https://www.firestone-agriculture.eu/en/technical-datasheets/firestone-maxi-traction-if","kind":"manufacturer_product_technical_page","verified":"opened_html_no_readable_rc_table","fact":"HTML extract did not expose a rolling circumference table","limit":"No catalogue row imported, PDF and dealer tools not inspected"}
+  ],
+  "catalogDiscovery": {"queries":2,"relevantMatches":0,"verdict":"keyword near results unsuitable","providerCalls":0,"limit":"Two narrow searches, not exhaustive catalogue audit"},
+  "excludedDiscovery": "Passenger winter tyre search results excluded after local tractor-niche scope check; not used for recommendations"
+}

@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-10T14:09:18.380Z",
+  "status": "PASS_documentary_validation",
+  "outcome": "existing_requirement_evidence_updated",
+  "coreMainSha": "13c9649c76dd48cdf426604cb721e1ccd58a9854",
+  "companionMainSha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+  "checks": {
+    "freshnessInitial": "BLOCKED_main_not_in_current_base_resolved",
+    "coreIntegrationMerge": "e79205ef6c75fb3921b255a63ae6aa55f3485678",
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-10T14:07:55.685Z",
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber"
+    ],
+    "primaryHtmlRead": 4,
+    "sourceRetrievalErrors": 1,
+    "tregQueries": 1,
+    "providerCalls": 0,
+    "newIdeaIds": 0,
+    "newPendingExperiments": 0,
+    "casesDocumented": 6,
+    "casesExecuted": 0,
+    "ikeaComponentArithmetic": 107,
+    "editorialSkillTests": {
+      "command": "node --test content-studio/test/editorial-skill.test.mjs",
+      "passed": 6,
+      "failed": 0,
+      "initialFailure": "Missing local sharp dependency before test execution",
+      "repair": "npm ci --prefix content-studio --no-audit --no-fund;8 packages; locked dependency files unchanged"
+    },
+    "languageReview": "Complete final private research text read and self-edited; no public UI or content approval claimed",
+    "jsonParsed": 4,
+    "localReferences": 8,
+    "brokenReferences": 0,
+    "exactStagedDiffReviewed": true,
+    "diffCheck": "PASS",
+    "repositorySafety": "PASS: five exact staged documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootUserMessage": "01a122ed-e9c2-7302-b3cd-bb55b09a25fd",
+    "coreUserMessages": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApproval": false
+  },
+  "scope": {
+    "authoredRuntimeEdits": 0,
+    "siteEdits": 0,
+    "companionSourceEdits": 0,
+    "liveInboxReads": 0,
+    "smtpCalls": 0,
+    "messagesSent": 0,
+    "purchases": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0
+  },
+  "limits": [
+    "Synthetic business cases documented only, no actual agent case run or provider quote",
+    "Published rates do not prove partnership, demand, MB Pinet revenue or profit",
+    "US minimum and UK expense policies kept separate; no foreign contract adopted",
+    "No browser UI checks, full runtime audit or real customer data reviewed",
+    "Missing niche ACQUISITION noted from current Git inventory, not rewritten",
+    "Former dirty companion executor checkout preserved; fresh owned companion used"
+  ]
+}

@@ -4,19 +4,21 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-05T07:34:33Z",
-  "lastResearchDateLocal": "2026-10-05",
-  "lastResearchFile": "research/2026-10-05-accounting-input/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-05-accounting-input/QA.json",
-  "lastCycleOutcome": "evidence_only_no_new_proposal",
+  "lastResearchAt": "2026-10-11T06:06:30.942Z",
+  "lastResearchDateLocal": "2026-10-11",
+  "lastResearchFile": "research/2026-10-11-excavation-haulage/RESEARCH.md",
+  "lastResearchValidation": "research/2026-10-11-excavation-haulage/QA.json",
+  "lastCycleOutcome": "existing_requirement_evidence_updated",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003"
   ],
-  "lastNotifiedExperimentId": "BDEV-0003-P2",
+  "lastNotifiedExperimentId": "BDEV-0003-P4",
   "notifiedExperimentIds": [
     "BDEV-0003-P1",
-    "BDEV-0003-P2"
+    "BDEV-0003-P2",
+    "BDEV-0003-P3",
+    "BDEV-0003-P4"
   ],
   "nextIdeaNumber": 4,
   "ownerVision": {
@@ -62,14 +64,32 @@
       "requestedScope": "Up to 4 agent-work hours in an isolated private local lab: synthetic two-site leads/interest export and restore with tenant exclusion checks; no shared runtime, actual data, accounts, DNS or subscriptions",
       "approvalSource": null,
       "approvalScope": null
+    },
+    {
+      "id": "BDEV-0003",
+      "experimentId": "BDEV-0003-P3",
+      "status": "proposed",
+      "file": "research/2026-10-08-lt-availability/PILOT.md",
+      "requestedScope": "Up to1 agent-work hour private status-only DAS lab:5synthetic cases,max10selected.lt names once,sequential,no faster1/sec,no purchase/WHOIS personal data/daemon/domain-sorter integration",
+      "approvalSource": null,
+      "approvalScope": null
+    },
+    {
+      "id": "BDEV-0003",
+      "experimentId": "BDEV-0003-P4",
+      "status": "proposed",
+      "file": "research/2026-10-09-mail-dsn/PILOT.md",
+      "requestedScope": "Up to 2 agent-work hours: isolated offline MIME/DSN observations and candidate correlation, 12 synthetic cases across two sites; no network, live inbox, SMTP, DB or shared runtime changes; no resend, suppression or trusted-delivery state transitions",
+      "approvalSource": null,
+      "approvalScope": null
     }
   ],
   "researchContinuity": {
-    "completed": "Three VMI primary HTML sources examined for i.SAF suitability as an accounting input. Payment data optional, e-invoice issuance differs by entity type, and SVS Lithuania register-reporting exception is explicitly stated. Actual MB Pinet VAT/SVS status unknown. Existing VISION/ARCHITECTURE already require originals, payment reconciliation and entity-specific adapter rules. Four future synthetic cases described, not executed; no new proposal/runtime. Latest accessible owner messages reviewed in root/core; pending scopes unchanged. Dovanos123 reports belong to other executors; histories preserved.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision",
-    "nextCandidateQuestion": "Review direct owner decisions first. Resume only explicitly approved work. Otherwise select one concrete demand or monetization question in an existing niche, with potential to change its experiment decision; avoid repeating generic supplier and accounting checklists. Preserve metalo-tvoros deferral and core executor ownership.",
+    "completed": "Reviewed mini-excavator geometric volume versus soil haulage: manufacturer definitions and local operator/machine transport offer. Existing BUSINESS/PRODUCT and current companion tool already separate geometry from loosened soil; no new proposal. Two primary HTML pages read, three failed opens, one catalogue query without relevant matches, no provider calls. Six cases documented only. Latest human root X-agent completion/platform coordination instruction is assigned to root and does not approve registry pilots. Current main typography rules integrated and read; private prose self-edited.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision",
+    "nextCandidateQuestion": "Read fresh main and owner decisions; leave root X-agent/platform work to its executor. Prefer actual offer, demand or fulfilment evidence. BI and P1-P4 remain proposed; do not repeat another generic qualification module.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
-    "executionScope": "Research and private registry only; BDEV-0003-P1 and P2 remain proposed. Strategic autonomy direction does not approve these experiment scopes; no local export/restore prototype executed"
+    "executionScope": "Private research and state only. Own branch integrates current main. Fresh owned companion worktree replaces stale/dirty companion for read-only checks; former executor checkout preserved. No site/runtime, private inbox, SMTP, campaigns, account/DNS changes or paid provider calls."
   },
   "approvedWork": [
     {
@@ -88,5 +108,16 @@
       ]
     }
   ],
-  "scope": "Private business-development registry; no blanket permission for proposed changes"
+  "scope": "Private business-development registry; no blanket permission for proposed changes",
+  "gitContinuity": {
+    "worktree": "C:/Users/lenovo/.codex/worktrees/bdev-current/nisiniai_puslapiai_monetizavimui",
+    "localBranch": "codex/bdev-research-20261008-main",
+    "prUrl": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/1",
+    "remotePrBranch": "ai/bdev-scaffold-fee-20261005",
+    "coreMainSha": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+    "companionMainSha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "note": "Core own branch integrated current main without conflicts in merge dd6123836d88aff0490118774b7f297390ef1b9e. Fresh owned companion at ec8a9c0 remains read-only and clean; other checkouts preserved.",
+    "companionWorktree": "C:/Users/lenovo/.codex/worktrees/bdev-current/dovanos-memorycasting",
+    "companionBranch": "codex/bdev-public-research-20261010"
+  }
 }

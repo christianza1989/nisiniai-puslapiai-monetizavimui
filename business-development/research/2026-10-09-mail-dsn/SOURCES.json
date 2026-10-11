@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-09",
+  "primarySources": [
+    {"url": "https://www.rfc-editor.org/rfc/rfc5321", "sections": "4.2.5, 6.1", "status": "opened", "use": "SMTP responsibility handoff and later failure notification"},
+    {"url": "https://www.rfc-editor.org/rfc/rfc3464.txt", "sections": "2, 2.3.3, 4.1", "status": "opened", "use": "DSN format, action versus status, forgery limitations; no real transport claim"},
+    {"url": "https://www.rfc-editor.org/rfc/rfc3463.txt", "sections": "2, 3.2, 3.3", "status": "opened", "use": "4/5 classes, bad destination and full mailbox"},
+    {"url": "https://www.rfc-editor.org/rfc/rfc6533.txt", "sections": "Abstract, 1, 4", "status": "opened", "use": "Internationalized variants outside initial ASCII lab support"}
+  ],
+  "discovery": {"tool": "mcp__treg__catalog_search", "query": "parse SMTP delivery status notification bounce enhanced status code", "verdict": "none", "matches": 0, "catalogGetCalls": 0, "providerCalls": 0, "limit": "One query, not exhaustive catalog coverage"},
+  "localVersion": {"coreMainSha": "d4ea8bf7384b70c4ea62a344001e3f8158812c56", "ownHeadAtRead": "d2f32326aec9f380fe93266a6f51a0083467da6b", "voicePr32Head": "bc34e9b9491aff159216bceb19f93e7e4b6ddf5c", "mailReaderDiffBetweenMainAndPr32": "empty", "testsExecuted": false, "limit": "Targeted read and searches; not every branch or production audit"},
+  "toolLimits": ["Some RFC HTML find/open calls returned internal errors; substantive sections read from successful plain-text sources", "Initial nonexistent mail/delivery.py path corrected to actual mail_reader.py, mailbox.py and jobs.py; no code modified"]
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-06",
+  "outcome": "evidence_only_no_new_proposal",
+  "checks": {
+    "jsonRecordsParsed": 3,
+    "localResearchReferencesChecked": 4,
+    "brokenReferences": 0,
+    "openedPrimaryHtmlUrls": 4,
+    "primarySourcesUsedForClaims": 3,
+    "futureCasesDocumented": 3,
+    "futureCasesExecuted": 0,
+    "newIdeaIdsAllocated": 0,
+    "newApprovalsFound": 0
+  },
+  "limits": [
+    "No customer records, supplier agreement or actual demand",
+    "Free tests outside pilot geography not a Vilnius market claim",
+    "Current source scan is not a renderer/runtime audit"
+  ],
+  "actions": {
+    "siteChanges": 0,
+    "runtimeChanges": 0,
+    "customerOrSupplierMessages": 0,
+    "formsSubmitted": 0,
+    "purchases": 0,
+    "newSubscriptions": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0,
+    "ownerNotifications": 0
+  }
+}

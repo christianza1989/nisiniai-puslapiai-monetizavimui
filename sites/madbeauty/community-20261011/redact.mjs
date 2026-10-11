@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
 import path from 'node:path';
-const kind=process.argv[2];assert.ok(['main','trial'].includes(kind));
-const repo=path.resolve(import.meta.dirname,'../../..'),dir=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011',kind),index=kind==='main'?0:2;
+const kind=process.argv[2];assert.ok(['main','trial','review'].includes(kind));
+const repo=path.resolve(import.meta.dirname,'../../..'),dir=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011',kind),index={main:0,trial:2,review:3}[kind];
 const token=(await readFile('C:/Users/Lenovo/AppData/Roaming/xdg.config/.wrangler/config/default.toml','utf8')).match(/^oauth_token\s*=\s*"([^"]+)"/m)?.[1];assert.ok(token);
 const base='https://api.cloudflare.com/client/v4/accounts/d102163f74a45ab6d33bca786ce281ec/workers/scripts/';
 const api=async(suffix,options={})=>{const r=await fetch(base+suffix,{...options,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'}}),v=await r.json();assert.ok(v.success,'Cloudflare privacy setting outcome '+r.status);return v.result;};
-const names=['madbeauty-platform-preview','madbeauty-ui-acceptance-20261009','madbeauty-temporary-test-20261010'];
+const names=['madbeauty-platform-preview','madbeauty-ui-acceptance-20261009','madbeauty-temporary-test-20261010','madbeauty-meta-review-20261011'];
 const snapshot=async()=>{const records=[];for(const name of names)records.push({name,settings:await api(name+'/settings'),deployments:await api(name+'/deployments')});return records;};
 const before=await snapshot(),deployment=JSON.parse(await readFile(path.join(dir,'deployment.json')));assert.equal(before[index].deployments.deployments[0].versions[0].version_id,deployment.version);
 const observability={...before[index].settings.observability,redact_query_string:true};

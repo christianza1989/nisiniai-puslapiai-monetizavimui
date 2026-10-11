@@ -9,7 +9,13 @@ import {prepareReview,origin,expiresAt,output} from './review-build.mjs';
 const {Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
 
 test('Isolated review candidate preserves trial boundaries, OTP, restart and original expiry',async()=>{
- const {config,proof,script}=await prepareReview();
+ let config,proof,script;
+ if(process.env.MADBEAUTY_REVIEW_ARTIFACT){
+  assert.equal(path.resolve(process.env.MADBEAUTY_REVIEW_ARTIFACT),path.join(output,'worker.mjs'));
+  config=JSON.parse(await readFile(path.join(output,'wrangler.json')));proof=JSON.parse(await readFile(path.join(output,'manifest.json')));script=await readFile(path.join(output,'worker.mjs'),'utf8');
+  const {createHash}=await import('node:crypto');assert.equal(createHash('sha256').update(script).digest('hex'),proof.artifactSha256);
+  assert.equal(config.name,'madbeauty-meta-review-20261011');assert.equal(config.vars.APP_ORIGIN,origin);assert.equal(config.vars.TRIAL_EXPIRES_AT,expiresAt);assert.equal(config.vars.FACEBOOK_LOGIN_ENABLED,'false');assert.equal(config.vars.COMMUNITY_ENABLED,'true');
+ }else ({config,proof,script}=await prepareReview());
  const persistence=await mkdtemp(path.join(os.tmpdir(),'madbeauty-meta-review-'));
  let mf;
  const start=expiry=>new Miniflare({modules:true,script,compatibilityDate:config.compatibility_date,compatibilityFlags:config.compatibility_flags,
@@ -54,6 +60,7 @@ test('Isolated review candidate preserves trial boundaries, OTP, restart and ori
   assert.equal((await ns.get(ns.idFromName('madbeauty-pilot-v1')).fetch(origin+'/api/madbeauty/session')).status,410);
   const trial=JSON.parse(await readFile(path.join(output,'../trial/wrangler.json'),'utf8'));
   assert.equal(trial.vars.TRIAL_EXPIRES_AT,'2026-10-16T21:10:47.982Z');
-  await writeFile(path.join(output,'native.json'),JSON.stringify({state:'PASS',artifactSha256:proof.artifactSha256,at:new Date().toISOString(),scope:'Local isolated review candidate only; no live deployment, provider credentials or actual Facebook OAuth',scenarios:['new origin only','45 synthetic profiles','noindex/no sitemap','real email denied','OTP session','community post','persisted session and community restart','handler and DO expiry','existing trial expiry preserved']},null,2));
+  const evidence=JSON.stringify({state:'PASS',artifactSha256:proof.artifactSha256,at:new Date().toISOString(),scope:'Local isolated review candidate only; no live deployment, provider credentials or actual Facebook OAuth',scenarios:['new origin only','45 synthetic profiles','noindex/no sitemap','real email denied','OTP session','community post','persisted session and community restart','handler and DO expiry','existing trial expiry preserved']},null,2);
+  await writeFile(path.join(output,'native.json'),evidence);await writeFile(path.join(output,'review-boundaries.json'),evidence);
  }finally{await mf?.dispose();}
 });

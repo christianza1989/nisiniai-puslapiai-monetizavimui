@@ -50,6 +50,17 @@ class Agent:
     def __init__(self, runner=None, model=None):
         self.runner = runner or CodexRunner(max_calls=2, timeout=100, model=model)
 
+    @property
+    def usage(self):
+        return self.runner.usage
+
+    @property
+    def calls(self):
+        return self.runner.calls
+
+    def set_usage_sink(self, sink):
+        self.runner.receipt_sink = sink
+
     async def run(self, kind, profile, payload, signals):
         instructions = (Path(__file__).resolve().parents[1] / "instructions" / "AGENT.md").read_text(encoding="utf-8")
         evidence = {

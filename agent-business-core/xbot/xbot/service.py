@@ -1,3 +1,4 @@
+import asyncio
 import base64
 import hashlib
 import re
@@ -88,12 +89,14 @@ class Service:
             job["provider_started"] = True
         try:
             receipt = await transport.call(operation, p, payload, key)
-        except Exception:
+        except (Exception, asyncio.CancelledError) as error:
             self.store.settle(reservation, None, None)
             current = self.store.profile(site)
             self.store.update_profile(
                 {**current["profile"], "paused": True}, current["revision"], "Unknown transport exception"
             )
+            if isinstance(error, asyncio.CancelledError):
+                raise
             raise Conflict("transport_outcome_unknown") from None
         self.store.settle(reservation, receipt.charged_micro, receipt.call_id)
         self.store.record(
@@ -328,7 +331,35 @@ class Service:
                 self.store.reserve_model(
                     site, job["id"], 2 if job["kind"] == "draft" else 1, self.config.codex_calls_per_day
                 )
-                result = await self.agent_factory().run(job["kind"], p, job["payload"], evidence)
+                agent, result, observed, outcome = None, None, set(), "failed"
+
+                def save_usage(receipt):
+                    self.store.record_model_usage(site, job["id"], receipt)
+                    observed.add(receipt["attempt"])
+
+                try:
+                    agent = self.agent_factory()
+                    if hasattr(agent, "set_usage_sink"):
+                        agent.set_usage_sink(save_usage)
+                    result = await agent.run(job["kind"], p, job["payload"], evidence)
+                    outcome = "completed"
+                except asyncio.CancelledError:
+                    outcome = "cancelled"
+                    raise
+                finally:
+                    # Compatibility for injected adapters: persist known partial results
+                    # even if a later review call or output acceptance fails.
+                    known = result.get("usage", []) if result else getattr(agent, "usage", [])
+                    attempts = max(len(known), getattr(agent, "calls", 0))
+                    for attempt in range(1, attempts + 1):
+                        if attempt not in observed:
+                            save_usage(
+                                {
+                                    "attempt": attempt,
+                                    "usage": known[attempt - 1] if attempt <= len(known) else {},
+                                    "outcome": outcome,
+                                }
+                            )
                 current = self.store.profile(site)
                 if current["revision"] != job["policy_revision"] or current["profile"]["paused"]:
                     raise Conflict("context_changed_during_generation")
@@ -486,6 +517,14 @@ class Service:
                 },
             )
             return {"state": "completed", "kind": job["kind"], "job_id": job["id"]}
+        except asyncio.CancelledError:
+            uncertain = job.get("provider_started") and job["kind"] in WRITES
+            self.store.finish(
+                job,
+                "uncertain" if uncertain else "cancelled",
+                {"reason": "worker_cancelled", "provider_started": bool(job.get("provider_started"))},
+            )
+            raise
         except (ValueError, RuntimeError, KeyError, sqlite3.Error, OSError) as error:
             # Controlled errors only; raw provider/CLI logs are never echoed to UI.
             controlled = {

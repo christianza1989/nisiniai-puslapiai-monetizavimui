@@ -26,6 +26,47 @@ class CodexRunner:
     def __init__(self, model=None, max_calls=2, timeout=100):
         self.model, self.max_calls, self.timeout = model, max_calls, timeout
         self.calls, self.usage = 0, []
+        self.receipt_sink = None
+
+    def observe(self, stdout, outcome):
+        """Keep known CLI usage independently from output/schema/context acceptance."""
+        usage, forbidden = {}, False
+        for line in stdout.decode(errors="replace").splitlines():
+            try:
+                event = json.loads(line)
+            except ValueError:
+                continue
+            if not isinstance(event, dict):
+                continue
+            if event.get("type") == "turn.completed":
+                values = event.get("usage")
+                for key, value in (values if isinstance(values, dict) else {}).items():
+                    if (
+                        key in {"input_tokens", "cached_input_tokens", "output_tokens", "reasoning_output_tokens"}
+                        and type(value) is int
+                        and value >= 0
+                    ):
+                        usage[key] = usage.get(key, 0) + value
+            item = event.get("item") or {}
+            if (
+                isinstance(event.get("type"), str)
+                and event["type"].startswith("item.")
+                and isinstance(item, dict)
+                and item.get("type")
+                in {
+                    "command_execution",
+                    "mcp_tool_call",
+                    "web_search",
+                    "image_generation",
+                    "tool_call",
+                }
+            ):
+                forbidden = True
+        if usage:
+            self.usage.append(usage)
+        if self.receipt_sink:
+            self.receipt_sink({"attempt": self.calls, "usage": usage, "tokens_known": bool(usage), "outcome": outcome})
+        return forbidden
 
     def command(self, schema, output):
         # Explicit executable override is an operator setting, never model evidence.
@@ -101,8 +142,9 @@ class CodexRunner:
                 creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
                 start_new_session=os.name != "nt",
             )
+            communication = asyncio.create_task(proc.communicate(prompt.encode()))
             try:
-                stdout, stderr = await asyncio.wait_for(proc.communicate(prompt.encode()), self.timeout)
+                stdout, stderr = await asyncio.wait_for(asyncio.shield(communication), self.timeout)
             except (TimeoutError, asyncio.CancelledError) as error:
                 if os.name == "nt":
                     killer = await asyncio.create_subprocess_exec(
@@ -117,31 +159,29 @@ class CodexRunner:
                     )
                     await killer.wait()
                 else:
-                    os.killpg(proc.pid, signal.SIGKILL)
+                    try:
+                        os.killpg(proc.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
                 await proc.wait()
+                try:
+                    stdout, _ = await asyncio.wait_for(asyncio.shield(communication), 3)
+                except TimeoutError:
+                    communication.cancel()
+                    await asyncio.gather(communication, return_exceptions=True)
+                    stdout = b""
+                self.observe(stdout, "cancelled" if isinstance(error, asyncio.CancelledError) else "timeout")
                 if isinstance(error, asyncio.CancelledError):
                     raise
                 raise RuntimeError("codex_lab_timeout") from None
+            forbidden = self.observe(stdout, "failed" if proc.returncode else "completed")
             if proc.returncode or not output.exists():
                 logs = (stdout + stderr).lower()
                 if b"not supported" in logs or b"unsupported model" in logs:
                     raise RuntimeError("codex_model_unavailable")
                 raise RuntimeError("codex_lab_failed_no_private_log")
-            for line in stdout.decode(errors="replace").splitlines():
-                try:
-                    event = json.loads(line)
-                except ValueError:
-                    continue
-                if event.get("type") == "turn.completed":
-                    self.usage.append(event.get("usage", {}))
-                if event.get("type", "").startswith("item.") and event.get("item", {}).get("type") in {
-                    "command_execution",
-                    "mcp_tool_call",
-                    "web_search",
-                    "image_generation",
-                    "tool_call",
-                }:
-                    raise RuntimeError("unexpected_cli_tool_execution")
+            if forbidden:
+                raise RuntimeError("unexpected_cli_tool_execution")
             try:
                 return schema.model_validate_json(output.read_text(encoding="utf-8"))
             except ValueError:

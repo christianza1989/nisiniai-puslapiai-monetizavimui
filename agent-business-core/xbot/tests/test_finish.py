@@ -1,9 +1,12 @@
+import asyncio
 import base64
 import io
 import json
 import sqlite3
+import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
+from dataclasses import replace
 
 import httpx
 import pytest
@@ -270,6 +273,7 @@ def test_codex_runner_is_independent_of_old_shared_constructor():
 
 async def test_assets_are_scoped_and_bound_profile_policy_cannot_escape(env):
     store, config = env
+    adapter, auth, _ = bound(env)
     blob = io.BytesIO()
     Image.new("RGB", (20, 20), (20, 40, 60)).save(blob, format="PNG")
     value = import_asset(
@@ -281,7 +285,6 @@ async def test_assets_are_scoped_and_bound_profile_policy_cannot_escape(env):
         True,
         "An illustrative test square",
     )
-    adapter, auth, _ = bound(env)
     app = create_app(config, store, adapter.service)
     async with httpx.AsyncClient(
         transport=httpx.ASGITransport(app=app),
@@ -351,3 +354,218 @@ async def test_media_budget_rejection_does_not_poison_attempt_then_accepted_uplo
     assert (await service.upload("phonebridger", value["asset_id"], value["alt"]))["media_id"] == "456"
     assert (await service.upload("phonebridger", value["asset_id"], value["alt"]))["reused"]
     assert len(transport.calls) == 2
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [("organization_id", "other-org"), ("business_id", "other-business"), ("environment_id", "production")],
+)
+def test_bound_site_identity_cannot_be_reassigned(env, field, value):
+    adapter, auth, fresh = bound(env)
+    other_auth = replace(auth, **{field: value})
+    adapter.resolver = lambda authority: fresh.model_copy(update={field: value}).model_dump()
+    current = adapter.store.profile(auth.site_id)
+    with pytest.raises(Conflict, match="module_bound_scope_immutable"):
+        adapter.bind(other_auth, current["profile"], current["revision"])
+    assert adapter.store.profile(auth.site_id) == current
+
+
+def test_store_environment_pin_serializes_different_site_first_binds(env):
+    store, config = env
+    base_profile = store.profile("phonebridger")["profile"]
+    adapter = ModuleAdapter(
+        Service(store, config, FakeTransport()),
+        lambda authority: binding(
+            {**base_profile, "site_id": authority.site_id}, environment_id=authority.environment_id
+        ).model_dump(),
+    )
+    authorities = [
+        Authority("org-one", "business-one", environment, site, frozenset({"xbot.configure"}))
+        for environment, site in [("test", "first-site"), ("production", "second-site")]
+    ]
+
+    def bind_once(authority):
+        try:
+            adapter.bind(authority, {**base_profile, "site_id": authority.site_id}, 0)
+            return "accepted"
+        except Conflict as error:
+            return str(error)
+
+    with ThreadPoolExecutor(2) as pool:
+        assert sorted(pool.map(bind_once, authorities)) == ["accepted", "module_store_environment_conflict"]
+    assert sum(site in store.sites() for site in ["first-site", "second-site"]) == 1
+
+
+def test_first_binding_cannot_adopt_unscoped_prior_work(env):
+    store, config = env
+    original = store.profile("phonebridger")
+    queue(store)
+    fresh = binding(original["profile"])
+    adapter = ModuleAdapter(Service(store, config, FakeTransport()), lambda authority: fresh.model_dump())
+    auth = Authority("org-one", "business-one", "test", "phonebridger", frozenset({"xbot.configure"}))
+    with pytest.raises(Conflict, match="module_unscoped_history_requires_migration"):
+        adapter.bind(auth, original["profile"], original["revision"])
+    assert store.profile(auth.site_id) == original
+    assert store.jobs(auth.site_id)[0]["state"] == "queued"
+
+
+def test_same_scope_rebind_cancels_prior_queue_preserving_history(env):
+    adapter, auth, fresh = bound(env)
+    queued = queue(adapter.store, "draft", payload={"title": "A previous scope draft"}, review=False)
+    adapter.store.record(auth.site_id, "signal", "fixture-history", {"source": "owned scope fixture"})
+    adapter.resolver = lambda authority: fresh.model_copy(
+        update={"admission_id": "admission-two", "accepted_revision": 2}
+    ).model_dump()
+    before = adapter.store.profile(auth.site_id)
+    new = adapter.bind(auth, before["profile"], before["revision"])
+    assert new["revision"] == before["revision"] + 1 and not new["profile"]["enabled"]
+    old_job = next(job for job in adapter.store.jobs(auth.site_id) if job["id"] == queued["id"])
+    assert old_job["state"] == "cancelled" and old_job["result"]["reason"] == "core_profile_rebound"
+    assert adapter.store.records(auth.site_id, "signal")[0]["key"] == "fixture-history"
+
+
+async def test_known_usage_survives_post_generation_revocation(env):
+    adapter, auth, fresh = bound(env)
+    current = adapter.store.profile(auth.site_id)
+    adapter.command(
+        auth, Command(request_id="usage-revoke-0000001", expected_revision=current["revision"], action="enable")
+    )
+
+    class RevokingAgent:
+        async def run(self, *args):
+            adapter.resolver = lambda authority: fresh.model_copy(update={"profile_current": False}).model_dump()
+            return {
+                "draft": {"text": "Known fixture content", "fact_indices": [0]},
+                "review": {"approved": True, "unsupported_claims": []},
+                "usage": [{"input_tokens": 17, "output_tokens": 3}],
+            }
+
+    adapter.service.agent_factory = RevokingAgent
+    queue(adapter.store, "draft", payload={"title": "Useful fixture"}, review=False)
+    assert (await adapter.service.run_once(auth.site_id))["state"] == "blocked"
+    assert not adapter.store.records(auth.site_id, "draft")
+    assert adapter.store.records(auth.site_id, "model_usage")[0]["payload"]["usage"]["input_tokens"] == 17
+
+
+@pytest.mark.parametrize("cancel", [False, True])
+async def test_first_call_usage_survives_second_failure_or_cancel(env, cancel):
+    store, config = env
+
+    class PartialRunner:
+        calls = 0
+        usage = []
+
+        async def ask(self, schema, *args):
+            self.calls += 1
+            if self.calls == 1:
+                self.usage = [{"input_tokens": 19, "output_tokens": 4}]
+                return schema.model_validate({"text": "A useful fixture", "media_brief": "", "fact_indices": [0]})
+            if cancel:
+                raise asyncio.CancelledError()
+            raise RuntimeError("codex_lab_schema_rejected")
+
+    queue(store, "draft", payload={"title": "Useful fixture"}, review=False)
+    service = Service(store, config, FakeTransport(), lambda: Agent(runner=PartialRunner()))
+    if cancel:
+        with pytest.raises(asyncio.CancelledError):
+            await service.run_once("phonebridger")
+        assert store.jobs("phonebridger")[0]["state"] == "cancelled"
+    else:
+        assert (await service.run_once("phonebridger"))["state"] == "blocked"
+    receipts = store.records("phonebridger", "model_usage")
+    assert sum(r["payload"]["usage"].get("input_tokens", 0) for r in receipts) == 19
+    assert not store.records("phonebridger", "draft")
+
+
+async def test_cli_completed_usage_is_preserved_on_nonzero_exit(monkeypatch):
+    runner = CodexRunner()
+    observed = []
+    runner.receipt_sink = observed.append
+    event = json.dumps({"type": "turn.completed", "usage": {"input_tokens": 23, "output_tokens": 5}})
+    monkeypatch.setattr(
+        runner, "command", lambda *args: [sys.executable, "-c", f"print({event!r},flush=True);raise SystemExit(1)"]
+    )
+    from xbot.agent import Review
+
+    with pytest.raises(RuntimeError, match="failed"):
+        await runner.ask(Review, "Synthetic instructions", {})
+    assert runner.usage[0]["input_tokens"] == 23
+    assert observed[0]["usage"]["output_tokens"] == 5
+
+
+def test_snapshot_known_usage_is_not_truncated_by_other_records(env):
+    adapter, auth, _ = bound(env)
+    with adapter.store.tx() as tx:
+        adapter.store.record(
+            auth.site_id,
+            "model_usage",
+            "old-call",
+            {"usage": {"input_tokens": 29, "output_tokens": 6}, "tokens_known": True, "outcome": "completed"},
+            tx,
+        )
+        for n in range(1005):
+            adapter.store.record(auth.site_id, "audit", f"unrelated-{n}", {"event": "fixture"}, tx)
+    assert adapter.snapshot(auth).usage.model_token_usage["input_tokens"] == 29
+
+
+@pytest.mark.parametrize("cancel", [False, True])
+async def test_real_cli_buffered_usage_survives_timeout_or_cancel(tmp_path, monkeypatch, cancel):
+    runner = CodexRunner(timeout=1 if not cancel else 10)
+    observed = []
+    runner.receipt_sink = observed.append
+    ready = tmp_path / "child-ready"
+    event = json.dumps({"type": "turn.completed", "usage": {"input_tokens": 31, "output_tokens": 7}})
+    script = f"import pathlib,time;print({event!r},flush=True);pathlib.Path({str(ready)!r}).touch();time.sleep(30)"
+    monkeypatch.setattr(runner, "command", lambda *args: [sys.executable, "-c", script])
+    from xbot.agent import Review
+
+    task = asyncio.create_task(runner.ask(Review, "Synthetic instructions", {}))
+    if cancel:
+        for _ in range(500):
+            if ready.exists() or task.done():
+                break
+            await asyncio.sleep(0.01)
+        task.cancel()
+        with pytest.raises(asyncio.CancelledError):
+            await task
+        assert ready.exists()
+    else:
+        with pytest.raises(RuntimeError, match="timeout"):
+            await task
+    assert runner.usage == [{"input_tokens": 31, "output_tokens": 7}]
+    assert observed[0]["outcome"] == ("cancelled" if cancel else "timeout")
+
+
+def test_usage_preserves_legacy_without_double_counting_new_receipts(env):
+    adapter, auth, _ = bound(env)
+    store = adapter.store
+    store.record(auth.site_id, "draft", "old-job", {"usage": [{"input_tokens": 11}]})
+    store.record(auth.site_id, "draft", "new-job", {"usage": [{"input_tokens": 13}]})
+    store.record_model_usage(
+        auth.site_id, "new-job", {"attempt": 1, "usage": {"input_tokens": 13}, "outcome": "completed"}
+    )
+    store.record_model_usage(auth.site_id, "new-job", {"attempt": 2, "usage": {}, "outcome": "failed"})
+    usage = adapter.snapshot(auth).usage
+    assert usage.period == "store_lifetime" and usage.model_token_usage == {"input_tokens": 24}
+    assert usage.model_known_usage_receipts == 2 and usage.model_unknown_usage_receipts == 1
+    assert not usage.model_cost_verified
+
+
+async def test_cancelled_outbound_holds_budget_and_never_resends(env):
+    store, config = env
+    queue(store)
+
+    class CancelledTransport(FakeTransport):
+        async def call(self, *args):
+            self.calls.append(args)
+            raise asyncio.CancelledError()
+
+    transport = CancelledTransport()
+    service = Service(store, config, transport)
+    with pytest.raises(asyncio.CancelledError):
+        await service.run_once("phonebridger")
+    assert store.jobs("phonebridger")[0]["state"] == "uncertain"
+    assert store.profile("phonebridger")["profile"]["paused"]
+    assert store.spending("phonebridger")[0]["state"] == "unknown"
+    assert (await service.run_once("phonebridger"))["state"] == "idle"
+    assert len(transport.calls) == 1

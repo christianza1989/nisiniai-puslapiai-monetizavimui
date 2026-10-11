@@ -79,6 +79,10 @@ class Usage(Strict):
     unknown_receipts: int = Field(ge=0)
     provider_attempts: int = Field(ge=0)
     model_attempts_reserved: int = Field(ge=0)
+    period: Literal["store_lifetime"] = "store_lifetime"
+    model_known_usage_receipts: int = Field(ge=0)
+    model_unknown_usage_receipts: int = Field(ge=0)
+    model_reserved_calls_without_known_usage: int = Field(ge=0)
     model_token_usage: dict[str, int]
     model_cost_verified: Literal[False] = False
     daily_cap_micro: int = Field(ge=0)
@@ -147,7 +151,9 @@ class ModuleAdapter:
             "dm_enabled": False,
             "media_enabled": False,
         }
-        return self.store.update_profile(payload, expected_revision, "Authenticated core current public projection")
+        return self.store.update_profile(
+            payload, expected_revision, "Authenticated core current public projection", module_bind=True
+        )
 
     def check_profile(self, profile):
         stored = Binding.model_validate(profile["source_binding"])
@@ -209,13 +215,7 @@ class ModuleAdapter:
                 "SELECT COALESCE(SUM(actual),0),COALESCE(SUM(CASE WHEN state IN ('reserved','unknown') THEN reserved ELSE 0 END),0),SUM(CASE WHEN state IN ('reserved','unknown') THEN 1 ELSE 0 END) FROM spend WHERE site=?",
                 (authority.site_id,),
             ).fetchone()
-        usage = {}
-        for record in records:
-            for call in (
-                record["payload"].get("usage", []) if record["kind"] in {"draft", "plan", "summary", "qualify"} else []
-            ):
-                for key in ("input_tokens", "cached_input_tokens", "output_tokens"):
-                    usage[key] = usage.get(key, 0) + max(0, int(call.get(key, 0)))
+        model_usage = self.store.model_usage_totals(authority.site_id)
         research = [r for r in records if r["kind"] == "signal"]
         running = next((j for j in jobs if j["state"] == "running"), None)
         if counts.get("uncertain", 0):
@@ -250,7 +250,10 @@ class ModuleAdapter:
                 unknown_receipts=spent[2] or 0,
                 provider_attempts=attempts,
                 model_attempts_reserved=reserved,
-                model_token_usage=usage,
+                model_known_usage_receipts=model_usage["known_receipts"],
+                model_unknown_usage_receipts=model_usage["unknown_receipts"],
+                model_reserved_calls_without_known_usage=max(0, reserved - model_usage["known_receipts"]),
+                model_token_usage=model_usage["usage"],
                 daily_cap_micro=p["daily_cap_micro"],
                 monthly_cap_micro=p["monthly_cap_micro"],
             ),

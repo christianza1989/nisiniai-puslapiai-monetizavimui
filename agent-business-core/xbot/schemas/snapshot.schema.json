@@ -180,6 +180,27 @@
           "title": "Model Attempts Reserved",
           "type": "integer"
         },
+        "period": {
+          "const": "store_lifetime",
+          "default": "store_lifetime",
+          "title": "Period",
+          "type": "string"
+        },
+        "model_known_usage_receipts": {
+          "minimum": 0,
+          "title": "Model Known Usage Receipts",
+          "type": "integer"
+        },
+        "model_unknown_usage_receipts": {
+          "minimum": 0,
+          "title": "Model Unknown Usage Receipts",
+          "type": "integer"
+        },
+        "model_reserved_calls_without_known_usage": {
+          "minimum": 0,
+          "title": "Model Reserved Calls Without Known Usage",
+          "type": "integer"
+        },
         "model_token_usage": {
           "additionalProperties": {
             "type": "integer"
@@ -210,6 +231,9 @@
         "unknown_receipts",
         "provider_attempts",
         "model_attempts_reserved",
+        "model_known_usage_receipts",
+        "model_unknown_usage_receipts",
+        "model_reserved_calls_without_known_usage",
         "model_token_usage",
         "daily_cap_micro",
         "monthly_cap_micro"

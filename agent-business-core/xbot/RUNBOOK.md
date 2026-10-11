@@ -26,6 +26,8 @@ Kopijuoti tik `.env.example` struktūrą į ignored `.env`. `XBOT_CODEX_MODEL` y
 
 `XBOT_CODEX_ENABLED=false` numatyta. Įjungus tik vietinį ruošimą, per-nišos profilis papildomai turi būti enabled/nepaused su patvirtintais tos nišos faktais, jų šaltiniu ir data. `XBOT_CODEX_CALLS_PER_DAY` riboja visų verslų bandymus vienoje DB; draft rezervuoja dvi užklausas. Timeout ir klaida taip pat sunaudoja bandymą. Token usage nėra patvirtinta piniginė kaina.
 
+Kiekvieno CLI bandymo kvitas saugo tik žinomus žetonų skaičius, net jei paskesnė peržiūra, source tikrinimas ar proceso baigtis nepraeina. Apskaita apima DB gyvavimo laiką; nežinomas kvitas ir rezervuoti kvietimai be žinomos usage rodomi atskirai. CLI timeout/cancel sunaikina savo proceso medį ir išsaugo jau gautą usage; gyvo outbound nutraukimas palieka nežinomą rezervą, pristabdo profilį ir nekartoja siuntimo.
+
 ```powershell
 uv run xbot day --site mano-verslas
 uv run xbot tick --site mano-verslas
@@ -58,3 +60,5 @@ uv run python tests/probe_codex.py
 Worker pats neįjungiamas ir nėra scheduler paslauga. Jis naudoja kiekvieno verslo darbo valandas ir viena DB saugomus paskyros lock/kvotas. Nevykdyti paraleliai dviejuose PC su kopijuotomis DB. Probe_codex naudoja sintetinius faktus ir du actual modelio kvietimus; jokio Treg ar publikavimo.
 
 Vietinis UI/API klausosi tik loopback. Neskelbti jo viešai ir neperduoti operatoriaus rakto klientų dashboardui. Produkcijos auth, revokacija ir bendras CRM priklauso maintained core. UI, CLI ir mokamos funkcijos nėra to paties priėmimo įrodymai.
+
+Prijungiant prie platformos naudoti vieną DB kiekvienai environment. Susietos organization/business/environment/site tapatybės negalima pakeisti ar pašalinti įprastu policy/rebind. Nesusieto profilio ankstesnių darbų automatiškai neperkelti klientui: sukurti švarią instanciją arba atskirai audituoti migraciją. Tos pačios tapatybės rebind atšaukia laukiančias užduotis ir reikalauja iš naujo įjungti vietinį ruošimą. Maintained async resolverio ir customer sesijos patikros laidai turi atskirą e2e priėmimą.

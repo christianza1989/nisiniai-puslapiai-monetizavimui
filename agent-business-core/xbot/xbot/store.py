@@ -76,13 +76,54 @@ class Store:
         with self.tx() as tx:
             return [r["site"] for r in tx.execute("SELECT site FROM profiles ORDER BY site")]
 
-    def update_profile(self, profile, revision, reason):
+    def update_profile(self, profile, revision, reason, module_bind=False):
         profile = Profile.model_validate(profile).model_dump()
         site = profile["site_id"]
         with self.tx() as tx:
-            row = tx.execute("SELECT revision FROM profiles WHERE site=?", (site,)).fetchone()
+            row = tx.execute("SELECT revision,payload FROM profiles WHERE site=?", (site,)).fetchone()
             if (row[0] if row else 0) != revision:
                 raise Conflict("policy_revision_conflict")
+            old = json.loads(row[1]) if row else {}
+            previous_binding = old.get("source_binding", {})
+            incoming_binding = profile["source_binding"]
+            scope_fields = ("organization_id", "business_id", "environment_id", "site_id")
+            if previous_binding and tuple(previous_binding.get(k) for k in scope_fields) != tuple(
+                incoming_binding.get(k) for k in scope_fields
+            ):
+                raise Conflict("module_bound_scope_immutable")
+            if incoming_binding:
+                if not module_bind and not previous_binding:
+                    raise Conflict("module_binding_adapter_required")
+                environment = incoming_binding["environment_id"]
+                pin = tx.execute("SELECT payload FROM settings WHERE key='module_environment'").fetchone()
+                if pin and json.loads(pin[0]) != environment:
+                    raise Conflict("module_store_environment_conflict")
+                # Also fail closed on a pre-guard DB containing inconsistent bindings.
+                for item in tx.execute("SELECT payload FROM profiles"):
+                    other = json.loads(item[0]).get("source_binding", {})
+                    if other and other.get("environment_id") != environment:
+                        raise Conflict("module_store_environment_conflict")
+                if module_bind and not previous_binding:
+                    history = any(
+                        tx.execute(query, (site,)).fetchone()
+                        for query in (
+                            "SELECT 1 FROM jobs WHERE site=? LIMIT 1",
+                            "SELECT 1 FROM records WHERE site=? AND kind!='audit' LIMIT 1",
+                            "SELECT 1 FROM spend WHERE site=? LIMIT 1",
+                            "SELECT 1 FROM model_reservations WHERE site=? LIMIT 1",
+                        )
+                    )
+                    if history:
+                        raise Conflict("module_unscoped_history_requires_migration")
+                tx.execute(
+                    "INSERT OR IGNORE INTO settings(key,payload) VALUES('module_environment',?)",
+                    (json.dumps(environment),),
+                )
+            if module_bind and previous_binding:
+                tx.execute(
+                    "UPDATE jobs SET state='cancelled',review_hash=NULL,result=? WHERE site=? AND state='queued'",
+                    (json.dumps({"reason": "core_profile_rebound"}), site),
+                )
             tx.execute(
                 "INSERT INTO profiles VALUES(?,?,?) ON CONFLICT(site) DO UPDATE SET "
                 "revision=excluded.revision,payload=excluded.payload",
@@ -122,6 +163,73 @@ class Store:
                 (site, kind, kind, limit),
             ).fetchall()
             return [{**dict(r), "payload": json.loads(r["payload"])} for r in rows]
+
+    def record_model_usage(self, site, job_id, receipt):
+        attempt = receipt["attempt"]
+        if type(attempt) is not int or not 1 <= attempt <= 2:
+            raise Conflict("model_usage_attempt_invalid")
+        usage = self.known_usage(receipt.get("usage", {}))
+        self.record(
+            site,
+            "model_usage",
+            f"{job_id}:{attempt}",
+            {
+                "job_id": job_id,
+                "attempt": attempt,
+                "usage": usage,
+                "tokens_known": bool(usage),
+                "outcome": receipt["outcome"],
+                "currency_cost_verified": False,
+            },
+        )
+
+    @staticmethod
+    def known_usage(value):
+        return (
+            {
+                k: v
+                for k, v in value.items()
+                if k
+                in {
+                    "input_tokens",
+                    "cached_input_tokens",
+                    "output_tokens",
+                    "reasoning_output_tokens",
+                }
+                and type(v) is int
+                and v >= 0
+            }
+            if isinstance(value, dict)
+            else {}
+        )
+
+    def model_usage_totals(self, site):
+        """Lifetime receipts; bounded activity feeds are never accounting inputs."""
+        with self.tx() as tx:
+            rows = tx.execute(
+                "SELECT kind,key,payload FROM records WHERE site=? AND kind IN ('model_usage','draft','plan','summary','qualify')",
+                (site,),
+            ).fetchall()
+        calls, covered = [], set()
+        for row in rows:
+            if row["kind"] == "model_usage":
+                value = json.loads(row["payload"])
+                calls.append(self.known_usage(value.get("usage", {})))
+                if value.get("job_id"):
+                    covered.add(value["job_id"])
+        # Preserve historical known usage without rewriting or double counting it.
+        for row in rows:
+            if row["kind"] != "model_usage" and row["key"] not in covered:
+                calls.extend(self.known_usage(v) for v in json.loads(row["payload"]).get("usage", []))
+        totals = {}
+        for call in calls:
+            for key, value in call.items():
+                totals[key] = totals.get(key, 0) + value
+        return {
+            "usage": totals,
+            "known_receipts": sum(bool(c) for c in calls),
+            "unknown_receipts": sum(not c for c in calls),
+        }
 
     def enqueue(self, site, kind, key, payload, run_at, review_hash=None):
         from .contracts import validate_payload

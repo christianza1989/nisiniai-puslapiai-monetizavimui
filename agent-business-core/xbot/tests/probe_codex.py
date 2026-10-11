@@ -56,23 +56,34 @@ async def probe():
             if result["state"] != "completed":
                 raise RuntimeError(result.get("reason", "unexpected_service_state"))
             draft = store.records(p.site_id, "draft")[0]["payload"]
+            model_usage = store.model_usage_totals(p.site_id)
+            usage_receipts = store.records(p.site_id, "model_usage")
+            assert len(usage_receipts) == 2 and model_usage["known_receipts"] == 2
+            assert model_usage["unknown_receipts"] == 0
+            assert model_usage["usage"]["input_tokens"] == sum(c["input_tokens"] for c in draft["usage"])
             assert store.jobs(p.site_id)[0]["id"] == job["id"]
-            assert draft["review"]["approved"] and draft["instruction_hash"] == evidence["instruction_fingerprint"]
+            assert draft["instruction_hash"] == evidence["instruction_fingerprint"]
             validate_text(draft["draft"]["text"], [])
         evidence.update(
             state="PASS",
             draft_sha256=hashlib.sha256(draft["draft"]["text"].encode()).hexdigest(),
             review_approved=draft["review"]["approved"],
             unsupported_claims=draft["review"]["unsupported_claims"],
+            review_reasons=draft["review"]["reasons"],
+            publish_eligible=draft["review"]["approved"] and not draft["review"]["unsupported_claims"],
             facts_hash=draft["facts_hash"],
             usage=draft["usage"],
+            model_usage_totals=model_usage,
+            usage_receipts_count=len(usage_receipts),
         )
-    except (ValueError, RuntimeError) as error:
+    except (ValueError, RuntimeError, AssertionError) as error:
         evidence.update(
             state="BLOCKED",
             reason=str(error) if str(error).startswith(("codex_", "lab_", "unexpected_")) else type(error).__name__,
         )
-    print(json.dumps(evidence, ensure_ascii=False))
+    # Sanitized metadata survives a console encoding failure; no draft text or credentials.
+    (config.data / "qa-cli-probe.json").write_text(json.dumps(evidence, indent=2), encoding="utf-8")
+    print(json.dumps(evidence))
 
 
 asyncio.run(probe())

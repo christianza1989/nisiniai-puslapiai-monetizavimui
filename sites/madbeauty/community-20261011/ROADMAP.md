@@ -6,11 +6,11 @@ Atnaujinta 2026-10-11. Aktyvi apimtis: pradėti nuo Facebook, įgyvendinti C0–
 
 Checkout: `madbeauty-service-picker-20261010`, šaka `ai/madbeauty-service-picker-20261010`, PR88. Plano commit `c8f7d1e`; šis dokumentas gali turėti naujesnius dar necommitintus checkpointus. Pirmiausia `git status`, tada šis failas ir jo naujausias checkpoint. Kitų failų pakeitimų nenurašyti ar reset'inti.
 
-Dabartinis žingsnis: **C0–C2 bandomoji bendruomenė gyvai; Facebook savininko sutikimas laukiamas**. Meta programėlė1827877621543839, Basic/callback/email/ikona išsaugoti, Unpublished. App Secret įdiegtas kaip Workers secret abiem hostams, jo vertė nepateikta source/artifacts/screenshots. Trial Facebook mygtukas pasiekė tikrą Meta leidimo langą, ContinueasChristian nepaspaustas be atskiro savininko sutikimo. Pagrindinis domenas turi FBprivacy/deletion/deauthorization sutartis, bet publicFBlogin ir bendruomenė ten išjungti.
+Dabartinis žingsnis: **C0–C2 ir tikras savininko Facebook bandymas priimti; viešas Meta paleidimas laukia peržiūros**. Savininkas pats užbaigė pradinį Facebook prisijungimą. Chrome paskyroje patvirtintas susiejimas, actual Meta pakartotinis login, atsiejimas su Facebook sesijos panaikinimu, naujas OAuth → trial OTP → relink į tą pačią demo-client-0 paskyrą. Visi8 ankstesni vizitų ID išliko. Galutinis susiejimas ir prisijungimas atkurti. [Kvitas](RECEIPT.json).
 
-OAuth state galioja5min.; gavus vėlesnį sutikimą pirmiausia iš naujo pradėti trial Facebook mygtuko kelią, kad sena consent kortelė negrąžintų expired state.
+Meta programėlė1827877621543839 vis dar Unpublished. App Review nauji prašymai email/public_profile yra Not submitted; konkretus submission1827877654877169 turi Verification, App settings, Allowed usage, Data handling ir Reviewer instructions žingsnius, Submit for review disabled. Pagrindinio domeno community/publicFBlogin tebėra išjungti. Pradinis owner-consent klausimas nebelaukia atsakymo.
 
-Kitas veiksmas: gavus konkrečios Facebook paskyros sutikimą, užbaigti admin OAuth → trialOTPfirstlink → logout/relogin → unlink. Tada tikrinti faktinius Meta App Review / business verification / external public activation reikalavimus. Savininkas jau gali bandyti C0–C2 per /bandymo-paskyros → /bendruomene. Pagrindinio domeno community activation ir WebSocket hibernation dar nepriimti; grupės ir renginiai C3–C4 tik planuoti.
+Kitas veiksmas: paruošti tikras Meta peržiūros instrukcijas ir faktinius verification/data-handling atsakymus; nedaryti nepatvirtintų verslo ar saugumo deklaracijų. Išorinės paskyros priėmimas lieka atskiras nuo savininko/admin prisijungimo. Trial galiojimas nekeičiamas; peržiūros aplinka turi išlikti pasiekiama per visą Meta peržiūrą. C3–C4 grupės/renginiai neįgyvendinti.
 
 Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f767e9-9bba-4ddb-96bc-3feaac299535`, trial `8e4da6de-9e07-4c4b-8f37-b42bd4474a30`. [Aktualus kvitas](RECEIPT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
 
@@ -32,7 +32,8 @@ Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f76
 - [x] F3 Paskyros susiejimas / atsiejimas, deauthorization ir signed deletion callback.
 - [x] F4 Tikras login mygtukas ir grįžimas į pradėtą kelią; neįjungti viešai be veikiančios konfigūracijos.
 - [x] F5 Vietiniai + native replay / expiry / wrong app / concurrency / role / restart testai.
-- [ ] F6 Tikras Meta vartotojo login bandymas; administratoriaus ir išorinio vartotojo prieigą vertinti atskirai.
+- [x] F6a Tikras savininko/admin Meta login, logout/relogin, unlink ir OTP relink; aktualus RECEIPT.json.
+- [ ] F6b Išorinis vartotojas po Meta peržiūros ir publikavimo; admin bandymas šio vartų nepakeičia.
 
 ## C0 Pagrindas
 
@@ -107,3 +108,13 @@ Rasta reali HTMLFormElement.id shadowing klaida dėl hidden name=id. Pataisyta g
 ### 2026-10-11 hosted checkpoint
 
 Trial5d2173cb-fff3-4902-83b9-021b56f61889 su IMAGES/COMMUNITY, canonical776ac16c-c67b-41bb-8630-3145509fe57c su COMMUNITYdisabled ir FBlogin disabled/callback configured. Runtime d539271. [RECEIPT.md](RECEIPT.md) ir JSON nurodo source/hash/native/public/live19/browser bei incidentus. Meta consent actualChrome atviras, savininkui konkretus ContinueasChristian leidimas pateiktas, dar negautas. CheckboxF0–F5 reiškia configured/native įgyvendinimą, ne publicFacebookOAuth. C0–C2 patikros nurodytam ribotam trial ir5s polling; main bendruomenė dar neaktyvinta, WShibernation vėlesnė transporto plėtra. Grupės/events/conferences C3–C4 neįgyvendinti. Kelias bandymui /bandymo-paskyros → /bendruomene. Trial data protected QA/content/mail/expiry išsaugoti.
+
+### 2026-10-11 Tikras savininko Facebook bandymas
+
+Savininkas pranešė, kad pats prisijungė per Facebook. Actual Chrome account UI patvirtino demo-client-0 susiejimą. Agentas pereitas existing-authorized Meta login → ta pati paskyra → unlink (sesija panaikinta) → actual OAuth → būtinas trial OTP → relink. Sutikimų ar Meta leidimų apimtis nedidinta, joks realus laiškas nesiųstas.8 esami vizitų URL prieš/po vienodi. Susiejimas atkurtas. Kodo/deployment šiame bandyme nekeista. Meta App Review juodraštis perskaitytas, Not submitted, išorinė prieiga nepriimta.
+
+### 2026-10-11 Meta peržiūros pasiruošimas
+
+Faktinė App Review submission1827877654877169 reikalauja patvirtinto verslo portfelio; turimi3kitų projektų portfeliai Unverified, MB Pinet savininko faktas paklaustas. Website platform prieš tai trūko, pridėtas Site URL https://madbeauty.lt/ ir Save Changes/readback PASS. Testing instructions for Web išsaugotos ir pakartotinai atidarius perskaitytos: actual trialOAuth/OTP/relogin/unlink ir no fees/no geo, aiškiai trialexpiry disclosed, nėra1year access claim. Reviewer target /paskyra trial yra tik juodraštis, ne ilgalaikės Meta peržiūros priėmimas. Programėlė Unpublished, Submit disabled, jokių bendrovių duomenų ar atitikties faktų neišgalvota.
+
+Aktualūs užlaikantys faktai: verified MB Pinet portfolio; atskiras email/public_profile Allowedusage sutikimas; controllercountry/national-security history/processes; provider processing/remoteaccess countries ir durablereview target. Savininkui3konkretūs klausimai pateikti. Datahandling nėra patvirtinta anketa, tik iš dalies technicaldraft. Main publicFB/community false, trialexpiry nekeistas. Gavus Allowedusage atsakymą nebekartoti patvirtinimo klausimo tai pačiai apimčiai, priimti abudu konkretūs Save.

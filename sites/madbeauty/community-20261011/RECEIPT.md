@@ -1,6 +1,6 @@
 # Facebook ir bendruomenės C0–C2 bandymo leidimas
 
-2026-10-11. Būsena **C0–C2 trial hosted accepted; Facebook owner consent pending**. Runtime source ced9559130e41c3cede6288fa9e94308c689ffe8; push į PR88, dar ne merge. Canonical 09f767e9-9bba-4ddb-96bc-3feaac299535; trial 8e4da6de-9e07-4c4b-8f37-b42bd4474a30. Tikslūs artifact/core/content/binding įrodymai [RECEIPT.json](RECEIPT.json). Frozen129 e20c3b95 ir core566 nepakeisti.
+2026-10-11. Būsena **C0–C2 trial hosted and Facebook owner accepted; public Meta review pending**. Runtime source ced9559130e41c3cede6288fa9e94308c689ffe8; push į PR88, dar ne merge. Canonical 09f767e9-9bba-4ddb-96bc-3feaac299535; trial 8e4da6de-9e07-4c4b-8f37-b42bd4474a30. Tikslūs artifact/core/content/binding įrodymai [RECEIPT.json](RECEIPT.json). Frozen129 e20c3b95 ir core566 nepakeisti.
 
 ## Kaip bandyti
 
@@ -27,3 +27,13 @@ Rollback nėra duomenų atkūrimas. Esant bendruomenės incidentui išjungti COM
 ## Galutinis dizaino ir išleidimo pataisymas
 
 Runtime source ced9559130e41c3cede6288fa9e94308c689ffe8. Atskiras paskutinio leidimo native/hosted main84 ir trial130 PASS, exact compiled trial community acceptance PASS. Pataisytas savo privačios nuotraukos lygiavimas; actual hosted1440 vaizdas: private photo loaded, right edge matches container, dokumento plotis1425 ≤ viewport1440. Screenshot `cloudflare/output/community-20261011/trial-chat-desktop-final.jpg`.19 mutation scenarijaus kvitas sąžiningai paliktas savo ankstesnio5d2173cb leidimo; bendruomenės runtime/API source po jo nekeistas, todėl operacijos dėl CSS nekartotos. Ankstesni main776/trial5d leidimai ir jų priėmimas išsaugoti JSON. Deploy helper dabar automatiškai pritaiko redact_query_string=true prieš provider after patikrą.
+
+## Tikras Facebook savininko bandymas
+
+Savininkas pats užbaigė pradinį Facebook prisijungimą; actual Chrome į demo-client-0@example.com parodė susietą paskyrą. Patikrinti realūs Meta relogin, unlink su Facebook sesijos panaikinimu, naujas OAuth → pending identity → trial OTP → relink. Galutinė būsena susieta ir prisijungta;8 buvę vizitų detalės URL išliko. Screenshot `cloudflare/output/community-20261011/facebook-owner-linked-final.jpg`. Nenaudotas sintetinis Graph provider šiam bandymui; secret/token/code neįrašyti į kvitą. App Review dar Not submitted, public_profile/email requests; programėlė Unpublished. Išorinio vartotojo ir canonical public login priėmimo nėra. Ankstesni consent pending įrašai žemiau yra istorija.
+
+## Meta App Review juodraštis ir likę vartai
+
+Website platform/Site URL https://madbeauty.lt/ Save Changes/readback PASS. Testing instructions for Web saved/reopened PASS (screenshot meta-web-instructions-saved.jpg). Submission1827877654877169 Not submitted; Verification reikalauja verifiedbusinessportfolio,3matomi kiti Unverified, jokio jų susiejimo. Allowedusage email/public_profile konkretūs sutikimai perskaityti, atskiras savininko patvirtinimas paklaustas, nepriimti. Datahandling processors Yes faktiškai pažymėtas, tiekėjų ir šalių sąrašas dar nebaigtas. Duomenų valdytojo šalies, nacionalinio saugumo užklausų istorijos ir esamos tvarkos faktai palikti neužpildyti, paklausti savininko. Nė vieno nepatvirtinto compliance claim. Peržiūros aplinka turi būti ilgaamžė prieš finalsubmission, originalus trialexpiry nekeistas.
+
+Techninis šalies deklaravimo pagrindas: [Cloudflare Workers localization](https://developers.cloudflare.com/data-localization/how-to/workers/) nurodo, kad kodas ir secrets platinami globaliai; [Cloudflare privacy](https://www.cloudflare.com/privacypolicy/) aprašo globalias operacijas. Negalima iš serverio europinio pasiekiamumo teigti EU-only processing. [Hostinger DPA](https://www.hostinger.com/uk/legal/dpa) apima EmailServices, bet faktinė mūsų pašto apdorojimo / remoteaccess geografinė apimtis šiame lange nepatvirtinta. Meta reikalauja visų processing ir remoteaccess šalių, todėl vien juridinės buveinės šalies nepakanka.

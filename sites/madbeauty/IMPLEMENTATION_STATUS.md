@@ -1,3 +1,7 @@
+## 2026-10-11 — Tikras Facebook savininko bandymas priimtas
+
+Actual Chrome savininko jau susieta demo-client-0 paskyra patikrinta per tikrą Meta pakartotinį login, unlink/session revocation ir fresh OAuth → OTP → relink.8 esami vizitų URL išliko, susiejimas/prisijungimas atkurti. Runtime ced9559/main09f767e9/trial8e4da6de nekeisti. [Kvitas](community-20261011/RECEIPT.json), [ROADMAP](community-20261011/ROADMAP.md). Owner-consent nebelaukia atsakymo. Meta App Review Not submitted ir Unpublished; išorinė prieiga bei maincommunity/publicFBactivation dar nepriimti. Kitas konkretus darbas – tikros peržiūros instrukcijos ir verification/data-handling faktai.
+
 ## 2026-10-11 — C0–C2 bandomoji bendruomenė gyvai
 
 [bandymas.madbeauty.lt/bendruomene](https://bandymas.madbeauty.lt/bendruomene) turi įrašus su optimized photos, likes/comments/replies, private albums/follows/friendships, personal/salon chat/privatephotos, role/audience/block/moderation/retention/erasure. Hosted trial8e4da6de; canonical09f767e9 paruošti FBpolicy/callback, maincommunity/publicFBlogin disabled. Runtime ced9559; [kvitas](community-20261011/RECEIPT.md) atskiria native84/130, hosted84/130 ir community19 checks bei actualbrowser priėmimą.40solo+5salons/11–21reviews/expiry preserved. Meta icon/app1827877621543839 saved Unpublished, actualOAuthpasiekė ownerconsent; savininko ContinueasChristian leidimas ir MetaReview/public activation PENDING. CheckboxROADMAPaktuali. C3–C4 groups/events/conferences tik planuoti; nėra visos platformos completion claim.

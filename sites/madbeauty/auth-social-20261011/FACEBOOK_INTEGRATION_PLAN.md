@@ -1,3 +1,7 @@
+## Aktualus įgyvendinimo checkpoint — 2026-10-11
+
+Facebook OAuth jau įdiegtas ir tikru Meta savininko prisijungimu patikrintas trial: relogin, unlink/session revocation, freshOAuth → OTP → relink,8visits preserved. App1827877621543839 Unpublished, Website platform ir test instructions saved. [Aktualus ROADMAP](../community-20261011/ROADMAP.md) ir [kvitas](../community-20261011/RECEIPT.json) pakeičia žemiau esančio pradinio tyrimo būsenų lentelę. AppReview submission1827877654877169 Not submitted; verifiedbusinessportfolio ir factualdatahandling atsakymai reikalingi, konkretūs Allowedusage sutikimai laukia savininko. PublicFBmain disabled; user_friends nepridėtas, pilnoFacebookdraugų sąrašo nėra. Toliau išsaugotas pradinis tyrimas.
+
 # Madbeauty Facebook integracija: tyrimas ir įgyvendinimo planas
 
 Tyrimas: 2026-10-11. Remtasi 14 tiesiogiai Chrome perskaitytų oficialių Meta dokumentų. Tai siūlomas produkto ir techninis planas. Savininkas patvirtino, kad Meta programėlės dar nėra; Facebook Login ir draugų atradimas dar neįdiegti. Meta leidimų patvirtinimas ir jo trukmė nežinomi.

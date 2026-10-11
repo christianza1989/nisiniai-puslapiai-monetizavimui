@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "at": "2026-10-11T01:39:21.398Z",
-  "state": "C0_C2_TRIAL_HOSTED_ACCEPTED_FACEBOOK_OWNER_CONSENT_PENDING",
+  "at": "2026-10-11T02:17:26.958Z",
+  "state": "C0_C2_TRIAL_HOSTED_AND_FACEBOOK_OWNER_ACCEPTED_PUBLIC_META_REVIEW_PENDING",
   "editions": {
     "main": {
       "sourceCommit": "ced9559130e41c3cede6288fa9e94308c689ffe8",
@@ -88,8 +88,55 @@
     "appId": "1827877621543839",
     "status": "Unpublished",
     "iconSaved": true,
-    "realOwnerConsent": "pending",
-    "publicExternalLogin": "pending App Review"
+    "realOwnerConsent": "completed by owner; actual existing-permission relogin verified in Chrome",
+    "publicExternalLogin": "pending App Review",
+    "ownerTrialAcceptance": {
+      "state": "PASS",
+      "at": "2026-10-11T02:17:26.958Z",
+      "sourceCommit": "ced9559130e41c3cede6288fa9e94308c689ffe8",
+      "trialVersion": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
+      "linkedAccount": "demo-client-0@example.com",
+      "scenarios": [
+        "Owner-completed initial Facebook identity present in account UI",
+        "Actual Meta previously-authorized login -> same existing account",
+        "Unlink revokes Facebook session and returns to sign-in",
+        "Fresh OAuth after unlink -> pending identity asks for OTP",
+        "Actual trial OTP completes re-link to same existing account",
+        "Eight existing visit detail IDs preserved"
+      ],
+      "finalState": "Facebook linked; owner session signed in",
+      "screenshot": "cloudflare/output/community-20261011/facebook-owner-linked-final.jpg"
+    },
+    "websitePlatform": {
+      "siteUrl": "https://madbeauty.lt/",
+      "saved": true,
+      "testingInstructionsSaved": true,
+      "testingInstructionsReadback": true,
+      "reviewTarget": "https://bandymas.madbeauty.lt/paskyra",
+      "trialExpiryDisclosed": true
+    },
+    "metaReview": {
+      "submissionId": "1827877654877169",
+      "state": "Not submitted",
+      "verification": "Verified business portfolio required; available three existing portfolios are unverified and belong to other projects",
+      "pendingOwnerFact": "Which Meta business portfolio belongs to MB Pinet",
+      "instructionDraft": "Website test instructions saved with trial expiry disclosure; permanent reviewer access not claimed",
+      "allowedUsage": "email/public_profile agreement text inspected; specific owner confirmation requested, not accepted yet",
+      "dataHandling": "Processors Yes selected (Cloudflare receives Meta ID, email, tokens during exchange and app secret); processor countries, controller and public-authority facts incomplete; owner facts requested",
+      "pending": [
+        "Verified MB Pinet business portfolio",
+        "Owner action-time confirmation for both Allowed usage agreements",
+        "Controller country, national-security requests history and actual procedures",
+        "Provider processing/remote-access country declaration",
+        "Review environment available throughout review; trial expiry unchanged",
+        "External account acceptance after Meta approval/publishing"
+      ],
+      "sources": [
+        "https://developers.cloudflare.com/data-localization/how-to/workers/",
+        "https://www.cloudflare.com/privacypolicy/",
+        "https://www.hostinger.com/uk/legal/dpa"
+      ]
+    }
   },
   "limitations": [
     "5-second visible-tab polling with retry backoff; WebSocket transport deferred",

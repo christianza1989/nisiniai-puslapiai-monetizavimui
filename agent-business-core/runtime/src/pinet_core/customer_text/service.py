@@ -56,7 +56,7 @@ async def customer_session(tx, token):
 
 
 @asynccontextmanager
-async def authority(token, creation_id):
+async def authority(token, creation_id, *, calibration=None):
     guard()
     if not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "source_unavailable")
@@ -64,6 +64,10 @@ async def authority(token, creation_id):
         session = await customer_session(tx, token)
         identity = await profiles.pin_registration(tx, creation_id)
         creation = await owned(tx, session, creation_id, lock=True)
+        task = None
+        if calibration is not None:
+            from ..customer_agents import lab
+            task = await lab.observe(tx, session, creation, identity, calibration)
         current = await profiles.projection(tx, session, creation, registration_identity=identity)
         if not current["profile_current"]:
             raise ControlError(409, "customer_profile_not_current")
@@ -73,6 +77,8 @@ async def authority(token, creation_id):
         business = await tx.get(Business, admitted["business_id"])
         if not registry or not admission or not business:
             raise ControlError(409, "customer_profile_not_current")
+        if task:
+            lab.profile_matches(task, admission)
         await tx.execute(text("SELECT set_config('pinet.business', :b, true)"), {"b": business.id})
         # Explicit local testing authority, separate from live channel activation.
         await policy.require(tx, simulation=True, tool="knowledge.resolve")
@@ -83,6 +89,8 @@ async def authority(token, creation_id):
             "admission_id": admission.id, "admission_fingerprint": admission.fingerprint,
             "profile": admitted, "adapter": adapter.VERSION,
             "model": adapter.MODEL}
+        if task:
+            binding["task_calibration"] = task
         yield tx, session, creation, identity, business, binding
 
 
@@ -271,6 +279,10 @@ async def events(token, creation_id, conversation_id, *, limit=100, cursor=None)
 async def final_authority(tx, session, creation, identity, expected):
     if not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "source_unavailable")
+    if "task_calibration" in expected:
+        from ..customer_agents import lab
+        if await lab.observe(tx, session, creation, identity, expected["task_calibration"]) != expected["task_calibration"]:
+            raise ControlError(409, "conversation_task_not_current")
     value = await profiles.projection(tx, session, creation, registration_identity=identity)
     if not value["profile_current"] or value["admission"] != expected["profile"]:
         raise ControlError(409, "customer_profile_not_current")
@@ -303,10 +315,10 @@ async def view(tx, row):
         "calibration_status": "UNVERIFIED"}
 
 
-async def start(token, creation_id, value):
+async def start(token, creation_id, value, *, calibration=None):
     if not adapter.runner_ready() or not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "runner_unavailable")
-    async with authority(token, creation_id) as (tx, session, creation, identity, business, binding):
+    async with authority(token, creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
         if str(value.admission_id) != binding["admission_id"]:
             raise ControlError(409, "profile_admission_conflict")
         fingerprint = digest({"request": value.model_dump(mode="json"), "binding": binding})
@@ -384,8 +396,8 @@ async def result_event(tx, row, key):
     return await tx.scalar(select(Event).where(Event.conversation_id == row.id, Event.event_key == "result:" + key))
 
 
-async def prepare(token, creation_id, conversation_id, value):
-    async with authority(token, creation_id) as (tx, session, creation, identity, business, binding):
+async def prepare(token, creation_id, conversation_id, value, *, calibration=None):
+    async with authority(token, creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
         row = await locked(tx, conversation_id, binding)
         request = str(value.request_id)
         fingerprint = digest(value.model_dump(mode="json"))
@@ -420,6 +432,10 @@ async def prepare(token, creation_id, conversation_id, value):
         context = {"client_message": value.message, "need_revision": row.need_revision, "need": row.payload["need"],
             "knowledge": resolved, "history": [e for e in events if e["kind"] in
                 {"client_transcript", "customer_text_result"}][-20:], "evidence_event_id": event.id}
+        if "task_calibration" in binding:
+            # The model needs the task data/version, never principal/session IDs.
+            context["agent_task"] = {key: binding["task_calibration"][key] for key in
+                ("agent_id", "config_revision", "config_sha256", "specification")}
         row.owner, row.epoch = new_id(), row.epoch + 1
         row.lease_until = utcnow() + timedelta(seconds=settings().chat_runner_seconds + 10)
         _, input_text, schema_text = adapter.material(context, event.id, row.need_revision)
@@ -444,7 +460,7 @@ async def authorized(token, dispatch):
     try:
         if not await asyncio.to_thread(adapter.source_current):
             return False
-        async with authority(token, dispatch.creation_id) as (tx, session, creation, identity, _, binding):
+        async with authority(token, dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
             row = await locked(tx, dispatch.conversation_id, binding)
             result = binding == dispatch.binding and live(row, dispatch)
             await final_authority(tx, session, creation, identity, binding)
@@ -477,7 +493,7 @@ async def settle(dispatch, usage, failure):
 
 
 async def finish(token, dispatch, output, failure):
-    async with authority(token, dispatch.creation_id) as (tx, session, creation, identity, _, binding):
+    async with authority(token, dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
         row = await locked(tx, dispatch.conversation_id, binding)
         if binding != dispatch.binding or not live(row, dispatch):
             raise ControlError(409, "stale_text_attempt")
@@ -496,8 +512,8 @@ async def finish(token, dispatch, output, failure):
         return result
 
 
-async def turn(token, creation_id, conversation_id, value):
-    reserved = await prepare(token, creation_id, conversation_id, value)
+async def turn(token, creation_id, conversation_id, value, *, calibration=None):
+    reserved = await prepare(token, creation_id, conversation_id, value, calibration=calibration)
     if not isinstance(reserved, Dispatch):
         return reserved
     output, usage, failure = None, None, None

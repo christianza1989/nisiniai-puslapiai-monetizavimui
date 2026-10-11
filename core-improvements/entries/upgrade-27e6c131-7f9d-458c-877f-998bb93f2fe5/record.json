@@ -1,0 +1,27 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Saved customer conversation-agent task configuration is durable but the local text executor cannot bind it to calibration conversations; add exact Config-bound local laboratory episodes before calibration admission",
+  "category": "code",
+  "evidence": [
+    "Current customer_text.service start/prepare bind only generic Profile and adapter prompt does not include any saved Agent/Config; agent readiness intentionally calibration_not_implemented",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6109307081"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/lab.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/adapter.py",
+    "agent-business-core/runtime/scripts/customer_agent_lab.py",
+    "agent-business-core/runtime/tests/test_customer_agent_lab.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agent_lab.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped local-lab source revert; preserve exact configurations, existing conversation/provider/accounting history. No new activation or schema.",
+  "id": "upgrade-27e6c131-7f9d-458c-877f-998bb93f2fe5",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "dfeeaada52cffcc5771ac85d376469f0e9ea7739",
+  "createdAt": "2026-10-11T13:04:21.263Z"
+}

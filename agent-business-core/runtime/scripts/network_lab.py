@@ -219,13 +219,18 @@ async def postcall(lab, item, row, directory, max_attempts=2):
     }
 
 
-async def main():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--site', required=True, choices=sorted(agent_instructions.SITES))
+    target = parser.add_mutually_exclusive_group(required=True)
+    target.add_argument('--site', choices=sorted(agent_instructions.SITES))
+    target.add_argument('--customer-task-input', type=Path,
+        help='Private exact saved-task episode request; execution witness, not learning admission.')
+    parser.add_argument('--customer-task-receipt', type=Path,
+        help='New private episode receipt under runtime artifacts; no quality/promotion claim.')
     parser.add_argument('--jev-mode', choices=['off', 'on'], default='off')
     parser.add_argument('--corpus-dir', type=Path, default=ROOT / 'evals/network')
     parser.add_argument('--phase', choices=['baseline', 'candidate', 'blind', 'evaluation'], default='baseline')
-    parser.add_argument('--run-id', required=True)
+    parser.add_argument('--run-id')
     parser.add_argument('--patch-file', type=Path)
     parser.add_argument('--max-calls', type=int, default=200)
     parser.add_argument('--timeout-retries', type=int, choices=[0, 1], default=0)
@@ -238,7 +243,53 @@ async def main():
     parser.add_argument('--include-holdout', action='store_true')
     parser.add_argument('--pin-release-file', type=Path)
     parser.add_argument('--knowledge-file', type=Path)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
+    if args.customer_task_input:
+        if not args.customer_task_receipt:
+            parser.error('--customer-task-receipt is required for a customer task')
+        defaults = parser.parse_args(['--customer-task-input', 'input', '--customer-task-receipt', 'receipt'])
+        if any(value != getattr(defaults, key) for key, value in vars(args).items()
+                if key not in {'customer_task_input', 'customer_task_receipt'}):
+            parser.error('customer task mode cannot enable legacy evaluation or learning options')
+    elif not args.run_id or args.customer_task_receipt:
+        parser.error('static site mode requires --run-id and cannot use a customer task receipt')
+    return args
+
+
+async def customer_task(args):
+    """V2/Config adapter only; return before the legacy lab's mutation and cleanup."""
+    from customer_profile_admin import read_request
+
+    from pinet_core.customer_agents import lab as customer_lab
+
+    try:
+        try:
+            private_root = (ROOT / 'artifacts').resolve()
+            for path in (args.customer_task_input, args.customer_task_receipt):
+                if path.is_symlink() or not path.resolve().is_relative_to(private_root):
+                    raise ValueError('private_task_paths_required')
+            request = customer_lab.Request.model_validate(read_request(args.customer_task_input))
+            # Reserve the output before authority/DB/provider work. A lost local receipt
+            # never rolls back accepted turns or their existing durable usage records.
+            with args.customer_task_receipt.open('x', encoding='utf-8') as output:
+                frozen = await customer_lab.snapshot(request.bearer, str(request.creation_id),
+                    str(request.agent_id), request.expected_revision)
+                result = await customer_lab.episode(request.bearer, frozen, request.messages, request.request_id)
+                json.dump(result, output, indent=2, ensure_ascii=False)
+        finally:
+            await db.engine.dispose()
+    except Exception:
+        raise SystemExit('Local configured episode failed; inspect retained conversation/usage and current task/source authority.') from None
+    print(json.dumps({'scope': result['scope'], 'script_complete': result['script_complete'],
+        'turns': len(result['turns']), 'calibration_status': 'UNVERIFIED',
+        'module_admission': 'not_admitted', 'activation': 'not_performed'}))
+
+
+async def main(argv=None):
+    args = parse_args(argv)
+    if args.customer_task_input:
+        await customer_task(args)
+        return
     if not re.fullmatch(r'[a-z0-9-]{1,80}', args.run_id) or not 10 <= args.max_calls <= 300:
         raise ValueError('bounded_run_required')
     cfg = settings()

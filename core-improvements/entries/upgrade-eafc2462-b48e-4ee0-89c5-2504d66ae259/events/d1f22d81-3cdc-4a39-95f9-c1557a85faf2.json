@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Reserved current V2 evidence bridge. Original actual restricted PG reproduction 1 FAIL 41.48s, log SHA2048f020fc3eb30e1f6d66fe519ab41ab14392f7cae738bde86a975dcec7b78f; source unchanged, provider/channel0, operational DB untouched. Canonical evaluator fingerprint will include new nested adapter. First private harness path was wrong for its cwd and child did not start; corrected exact owned path, no DB/provider effects. Original retained privately.",
+  "eventId": "d1f22d81-3cdc-4a39-95f9-c1557a85faf2",
+  "sequence": 2,
+  "at": "2026-10-11T13:58:32.145Z"
+}

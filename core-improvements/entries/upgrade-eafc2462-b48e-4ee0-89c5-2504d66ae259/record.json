@@ -1,0 +1,27 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Customer text events and Config-bound V2 conversations are not consumable by the existing quality input and candidate lifecycle",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/jobs.py load_input expects legacy knowledge/coverage/release_hash and projects only agent_transcript",
+    "docs/CUSTOMER_AGENT_LAB.md records configured episode acceptance separately from independent quality"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/quality.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/local_semantics.py",
+    "agent-business-core/runtime/src/pinet_core/calibration.py",
+    "agent-business-core/runtime/tests/test_customer_quality.py",
+    "agent-business-core/runtime/offline_tests/test_customer_quality.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6109753493",
+  "rollback": "Scoped revert of this isolated customer quality input adapter; retained operational history and prior receipts remain immutable",
+  "id": "upgrade-eafc2462-b48e-4ee0-89c5-2504d66ae259",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "1d80746694424038f745b019dcda5c7ba6ce3f42",
+  "createdAt": "2026-10-11T13:54:55.020Z"
+}

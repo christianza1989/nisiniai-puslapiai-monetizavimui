@@ -16,6 +16,9 @@ class Review(Strict):
 
 
 async def evaluate(kind, data, lab=None):
+    customer = "customer_quality" in data
+    if customer and (kind != "quality" or lab is None):
+        raise RuntimeError("customer_quality_authority_required")
     site = data['knowledge']['site_id']
     lab = lab or CodexLab(max_calls=6, timeout=180, max_timeout_retries=1)
     # Contact values are deliberately absent from load_input; receipts describe
@@ -25,6 +28,11 @@ async def evaluate(kind, data, lab=None):
     safe['capabilities'] = {'order': False, 'supplier_outreach': False, 'sms': False,
         'callback': False, 'followup': 'local_draft'}
     safe['contact_states'] = contact_states(data)
+    if customer:
+        safe['capabilities']['followup'] = False
+        safe['agent_task'] = data['agent_task']
+        safe['evaluation_scope'] = {'language_quality': 'UNVERIFIED', 'calibration': 'UNVERIFIED',
+            'activation': 'not_performed'}
     if kind == 'analysis':
         instruction = agent_instructions.compose(site, 'sales').prompt + language_instruction(data['language_hint'])
         instruction += ('\nProduce the useful customer email agreed during the conversation, including its '
@@ -51,7 +59,12 @@ async def evaluate(kind, data, lab=None):
             result['validated_followup'] = bind(data, analysis.subject, analysis.body, review.model_dump(), 'codex_cli_text_lab')
     else:
         schema = bound_schema(Quality, data)
-        instruction = agent_instructions.compose(site, 'quality').prompt + CONTACT_INSTRUCTION + (
+        if customer:
+            from .customer_agents.quality import instruction as customer_instruction
+            role = customer_instruction(data)
+        else:
+            role = agent_instructions.compose(site, 'quality').prompt
+        instruction = role + CONTACT_INSTRUCTION + (
             '\nAssess the actual dialogue and actual core email. Use contact receipt chronology: shown is '
             'different from saved; do not flag future after-call entry as unacknowledged during the call. '
             'Issues contain actual defects only. A scope/behavior improvement is a proposal, not permission '
@@ -59,5 +72,7 @@ async def evaluate(kind, data, lab=None):
         result = (await lab.ask(schema, instruction, safe)).model_dump()
         result = await attribute(lab, result, data)
         result.update(engine='codex_cli_text_lab', release_hash=data['release_hash'], coverage=data['coverage'])
+        if customer:
+            result['customer_quality'] = data['customer_quality']
     return {**result, 'cli_calls': lab.calls, 'cli_usage': lab.usage,
         'cli_timeout_recoveries': lab.timeout_recoveries}

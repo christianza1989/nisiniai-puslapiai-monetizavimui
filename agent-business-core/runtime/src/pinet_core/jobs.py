@@ -53,15 +53,26 @@ async def fenced_job(tx, task):
 
 async def load_input(business_id, cid):
     async with db.transaction(business_id, settings().environment) as tx:
-        convo = await tx.get(Conversation, cid)
-        events = (await tx.scalars(select(Event).where(Event.conversation_id == cid).order_by(Event.sequence))).all()
+        environment = settings().environment
+        convo = await tx.scalar(select(Conversation).where(Conversation.id == cid,
+            Conversation.business_id == business_id, Conversation.environment_id == environment))
+        if not convo:
+            raise ValueError("conversation_unavailable")
+        events = (await tx.scalars(select(Event).where(Event.conversation_id == cid,
+            Event.business_id == business_id, Event.environment_id == environment).order_by(Event.sequence))).all()
+        recorded = list(await tx.scalars(select(Artifact).where(Artifact.conversation_id == cid,
+            Artifact.business_id == business_id, Artifact.environment_id == environment)))
+        channels = list(await tx.scalars(select(Contact.channel).where(Contact.conversation_id == cid,
+            Contact.business_id == business_id, Contact.environment_id == environment)))
+        from .customer_text.adapter import VERSION as customer_transport
+        if convo.payload.get("transport") == customer_transport:
+            from .customer_agents.quality import projection
+            return await projection(tx, convo, events, recorded, channels)
         # Contacts never enter model input. Transcript is untrusted evidence, not instructions.
         evidence = [{"id": e.id, "speaker": "client" if e.kind == "client_transcript" else "agent",
                      "text": e.payload["text"]} for e in events if e.kind in {"client_transcript", "agent_transcript"}]
         current_knowledge = await knowledge.projection(tx)
-        recorded = list(await tx.scalars(select(Artifact).where(Artifact.conversation_id == convo.id)))
         actual_email = next((a.payload for a in recorded if a.kind == 'followup'), None)
-        channels = list(await tx.scalars(select(Contact.channel).where(Contact.conversation_id == convo.id)))
         timeline = []
         for e in events:
             if e.kind in {'client_transcript', 'agent_transcript'}:
@@ -107,6 +118,10 @@ def check_evidence(result, data, client_only=False):
 
 
 async def evaluate(kind, data, action_key=None):
+    if "customer_quality" in data:
+        # Read-only evidence is not authority for a worker/provider invocation.
+        # An exact-binding, durable/accounted customer quality dispatch is separate.
+        raise RuntimeError("customer_quality_authority_required")
     clients = [e for e in data["evidence"] if e["speaker"] == "client"]
     from .learning_controller import environment_allowed
     if settings().learning_enabled and environment_allowed(settings().environment) and clients:
@@ -179,6 +194,18 @@ async def complete_artifact(business_id, task, result):
         result = quality_guards.reconcile(result, await load_input(business_id, task['conversation_id']))
     async with db.transaction(business_id, settings().environment) as tx:
         job = await fenced_job(tx, task)
+        from .customer_text.adapter import VERSION as customer_transport
+        convo = await tx.scalar(select(Conversation).where(Conversation.id == task["conversation_id"],
+            Conversation.business_id == business_id, Conversation.environment_id == settings().environment))
+        if not convo or job.conversation_id != convo.id:
+            raise ValueError("conversation_unavailable")
+        if convo.payload.get("transport") == customer_transport:
+            from .customer_agents.quality import current_source, parent
+            if task["kind"] != "quality" or result.get("release_hash") != parent(convo):
+                raise ValueError("customer_quality_parent_conflict")
+            # Policy/index before artifact flush and its Conversation FK lock:
+            # disable/revoke use that same ordering, including their row lock.
+            await current_source(tx, convo)
         existing = await tx.scalar(select(Artifact).where(Artifact.conversation_id == task["conversation_id"],
                                                           Artifact.kind == task["kind"]))
         if not existing:
@@ -212,6 +239,13 @@ async def complete_artifact(business_id, task, result):
                     tx.add(Artifact(id=review_id, **common, kind=f"content_review:{review_id}",
                         payload={"quality_ref": artifact_id, "evidence_refs": result["evidence_event_ids"],
                                  "state": "awaiting_editorial_review", "publishes_content": False}))
+        if convo.payload.get("transport") == customer_transport:
+            # Last source/TTL observation is inside the acceptance transaction.
+            # Existing history is not repaired, renewed or granted execution here.
+            await fenced_job(tx, task)
+            await current_source(tx, convo)
+            if job.lease_until <= utcnow():
+                raise RuntimeError("stale_job_lease")
         job.state = "succeeded"
 
 

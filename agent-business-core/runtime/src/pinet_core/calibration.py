@@ -43,7 +43,13 @@ async def static_check(tx, candidate_id):
     if (not quality or quality.conversation_id != convo.id or quality.kind != "quality"
             or quality.payload.get("root_cause") != "communication"):
         issues.append("communication_quality_provenance_required")
-    if value.get("parent_hash") != convo.payload["release_hash"]:
+    from .customer_text.adapter import VERSION as customer_transport
+    if convo.payload.get("transport") == customer_transport:
+        from .customer_agents.quality import parent
+        parent_hash = parent(convo)
+    else:
+        parent_hash = convo.payload["release_hash"]
+    if value.get("parent_hash") != parent_hash:
         issues.append("parent_release_conflict")
     instruction = value.get("instruction", "")
     if not isinstance(instruction, str) or not 10 <= len(instruction) <= 1000:

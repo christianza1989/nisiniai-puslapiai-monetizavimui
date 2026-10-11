@@ -61,3 +61,9 @@ Faktinė App Verification ir submission grid jau rodo šį portfelį kaip Connec
 Nauji privatūs įrodymai: `meta-memocasting-details-saved.jpg`, `meta-controller-memocasting-saved.jpg`, `meta-verification-captcha.jpg`; review `deployment.json`, `provider.json`, `live.json`, `community-live.json`, `browser.json`, `community-iab.jpg`. Browser būsena PARTIAL: IAB PASS, Chrome login issue unresolved. Naujo reviewer callback neišsaugotas ir app secret neįdiegtas. Anketos esamas trial URL nepakeistas.
 
 Viešas Facebook ir pagrindinio domeno bendruomenė išjungti; C3–C4 grupės / renginiai lieka kitu etapu. Šis paruošimas nekeičia esamo bandymo galiojimo ar priimtų gyvų versijų.
+
+## Dabartinis savininko atidėtas žingsnis
+
+Savininkas pateikė „Confirm phone number“ ekraną ir aiškiai atidėjo patvirtinimą, nes dabar negali gauti kodo. Tai pakeičia ankstesnį CAPTCHA handoff kaip aktualų darbą. SMS nesiunčiame, screenshot rodomo kito numerio nenaudojame ir CAPTCHA nebekartojame. Verified business, galutinis App Review pateikimas ir public Facebook aktyvinimas lieka nepriimti. Abu jau išsaugoti Allowed usage sutikimai ir Memocasting rekvizitai nekartojami.
+
+Nepriklausomi techniniai darbai tęsiami. Po savininko Cloudflare plano apmokėjimo visi trys domenai ir jų sesijos API vėl atsako200. Reviewer b2e96aa4 trys auth moduliai ir hosted130 patikra PASS; IAB OTP/reload/feed/logout PASS, Chrome ERR_BLOCKED_BY_CLIENT tebėra atskiras PARTIAL priėmimas. [Incidento ir atkūrimo įrodymai](QUOTA_INCIDENT.md). Tai ne reviewer Facebook OAuth ar Meta publikavimo įrodymas.

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "at": "2026-10-11T02:17:26.958Z",
-  "state": "C0_C2_TRIAL_HOSTED_AND_FACEBOOK_OWNER_ACCEPTED_PUBLIC_META_REVIEW_PENDING",
+  "at": "2026-10-11T07:36:04.185Z",
+  "state": "C0_C2_TRIAL_ACCEPTED_QUOTA_RECOVERED_PUBLIC_META_REVIEW_PENDING",
   "editions": {
     "main": {
-      "sourceCommit": "ced9559130e41c3cede6288fa9e94308c689ffe8",
-      "version": "09f767e9-9bba-4ddb-96bc-3feaac299535",
-      "artifactSha256": "189e8c2b297ca001eadded8731a813c8e2671325320dba6c1697f67a9058c20d",
-      "previousVersion": "776ac16c-c67b-41bb-8630-3145509fe57c",
+      "sourceCommit": "1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9",
+      "version": "90760306-9aec-4af0-a675-9ed747442915",
+      "artifactSha256": "9e4f3738d849c042031bce08da13c3ba603661c7e3e39902409961ec9a81983f",
+      "previousVersion": "09f767e9-9bba-4ddb-96bc-3feaac299535",
       "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
       "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
       "communityEnabled": false,
@@ -28,13 +28,31 @@
       ],
       "nativeChecks": 84,
       "hostedChecks": 84,
-      "queryRedaction": true
+      "queryRedaction": true,
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+          "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+          "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        }
+      ],
+      "acceptanceAt": "2026-10-11T07:29:04.891Z"
     },
     "trial": {
-      "sourceCommit": "ced9559130e41c3cede6288fa9e94308c689ffe8",
-      "version": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
-      "artifactSha256": "f6a477fc9b348da2340899f3f81205cb7e4ca7e42acceabc9b9d46cdf4a8190d",
-      "previousVersion": "5d2173cb-fff3-4902-83b9-021b56f61889",
+      "sourceCommit": "1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9",
+      "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+      "artifactSha256": "931d085ff7cacc24c291200eaec637f14cd53ce4f6af422983fafaedcb2b4c8c",
+      "previousVersion": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
       "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
       "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
       "communityEnabled": true,
@@ -51,15 +69,33 @@
       ],
       "nativeChecks": 130,
       "hostedChecks": 130,
-      "queryRedaction": true
+      "queryRedaction": true,
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+          "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+          "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        }
+      ],
+      "acceptanceAt": "2026-10-11T07:26:34.764Z"
     }
   },
   "communityLive": {
     "state": "PASS",
-    "at": "2026-10-11T01:26:42.116Z",
+    "at": "2026-10-11T07:26:50.087Z",
     "checks": 19,
-    "version": "5d2173cb-fff3-4902-83b9-021b56f61889",
-    "artifactSha256": "4587dd4ab6ba163f08f1e147102fa7a0f71e4e413d5583c89a6d961a20b91ed2",
+    "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+    "artifactSha256": "931d085ff7cacc24c291200eaec637f14cd53ce4f6af422983fafaedcb2b4c8c",
     "seed": {
       "providers": 45,
       "members": 90
@@ -71,12 +107,7 @@
     "salon": true,
     "moderation": true,
     "logout": true,
-    "providerProjectionPreserved": true,
-    "carriedForward": {
-      "fromSource": "d539271295c04fe9523795b6b3abd9c40e992c20",
-      "toSource": "ced9559130e41c3cede6288fa9e94308c689ffe8",
-      "reason": "Only app.css photo alignment, deployment query-redaction enforcement and release documentation changed; community runtime and API source unchanged. Exact compiled trial community/native and hosted public checks repeated. The 19 hosted mutation operations remain evidence of their original version, not relabelled as new operations."
-    }
+    "providerProjectionPreserved": true
   },
   "trialExpiry": "2026-10-16T21:10:47.982Z",
   "publicProfiles": {
@@ -118,9 +149,9 @@
     "metaReview": {
       "submissionId": "1827877654877169",
       "state": "Not submitted",
-      "updatedAt": "2026-10-11T06:36:42.417Z",
-      "verification": "Connected business portfolio readback shows Memocasting, MB / 900173107610943 / Unverified / Remove. Agent Connect action not proved or repeated. Owner-provided business details saved/read back. Verification wizard paused at reCAPTCHA.",
-      "pendingOwnerFact": "Complete Meta verification reCAPTCHA; any later requested verification documents or contact code are not yet received",
+      "updatedAt": "2026-10-11T07:36:04.185Z",
+      "verification": "Connected Memocasting, MB portfolio remains unverified; owner deferred phone/SMS confirmation. No SMS or repeat CAPTCHA attempted.",
+      "pendingOwnerFact": "Owner-deferred Meta phone confirmation; no current request to repeat it",
       "instructionDraft": "Website test instructions saved with trial expiry disclosure; permanent reviewer access not claimed",
       "allowedUsage": "Both email and public_profile specific owner-approved agreements saved; both completion/Edit states read back. This does not mean Meta permissions approved",
       "allowedUsageAccepted": {
@@ -163,11 +194,11 @@
         ],
         "intermediateName": "MB Pinet",
         "registrationCode": "306026827",
-        "verificationWorkflow": "CAPTCHA_WAITING_OWNER",
+        "verificationWorkflow": "PHONE_CONFIRMATION_DEFERRED_BY_OWNER",
         "connectClickByAgentConfirmed": false
       },
       "pending": [
-        "Business verification reCAPTCHA / remaining verification steps",
+        "Owner-deferred business phone verification / later Meta steps",
         "Provider processing/remote-access country declaration",
         "Review Chrome OTP login issue unresolved",
         "Reviewer callback approval, new environment app secret and actual OAuth acceptance",
@@ -181,13 +212,11 @@
     },
     "reviewCandidate": {
       "state": "DEPLOYED_HOSTED_PASS_BROWSER_PARTIAL_FACEBOOK_DISABLED",
-      "sourceCommit": "cd5e4d024514b058bc62515ca2acd4e6c0cbd313",
+      "sourceCommit": "eb30a67b0fcd6993b896f14f48f37ede372b4835",
       "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
       "origin": "https://perziura.madbeauty.lt",
       "expiresAt": "2027-10-12T00:00:00.000Z",
-      "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
-      "acceptedTrialArtifactSha256": "f6a477fc9b348da2340899f3f81205cb7e4ca7e42acceabc9b9d46cdf4a8190d",
-      "entrySourceSha256": "218962d620fc24949424d3f0fb1e70b64c7c65ecb0bff34e0f98cbb5eb14c743",
+      "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
       "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
       "compatibilityDate": "2026-05-22",
       "facebookEnabled": false,
@@ -195,9 +224,9 @@
       "queryRedaction": true,
       "nativeAcceptance": {
         "state": "PASS",
-        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
-        "at": "2026-10-11T06:19:23.891Z",
-        "scope": "Isolated native review artifact, not actual Facebook OAuth",
+        "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
+        "at": "2026-10-11T07:29:35.671Z",
+        "scope": "Local isolated review candidate only; no live deployment, provider credentials or actual Facebook OAuth",
         "scenarios": [
           "new origin only",
           "45 synthetic profiles",
@@ -211,13 +240,14 @@
         ]
       },
       "preparationSources": [
-        "review-build.mjs",
+        "release.mjs",
         "review-native.test.mjs",
-        "review-release.mjs"
+        "verify.mjs",
+        "live.mjs"
       ],
       "deploymentState": "DEPLOYED_BROWSER_PARTIAL",
       "instructions": "META_REVIEW.md",
-      "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
+      "version": "cd397c44-6eb8-4e2f-8d2c-e3ad954371fd",
       "sessionSecretCreated": true,
       "facebookAppSecretInstalled": false,
       "bindings": [
@@ -235,18 +265,18 @@
         "state": "PASS",
         "kind": "review",
         "checks": 130,
-        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
-        "at": "2026-10-11T06:27:12.167Z",
+        "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
+        "at": "2026-10-11T07:31:08.056Z",
         "link": "https://verslomatika.lt",
         "rel": null,
         "trialRobotsPreserved": true
       },
       "communityAcceptance": {
         "state": "PASS",
-        "at": "2026-10-11T06:28:27.424Z",
+        "at": "2026-10-11T07:31:06.344Z",
         "checks": 19,
-        "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
-        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+        "version": "cd397c44-6eb8-4e2f-8d2c-e3ad954371fd",
+        "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
         "seed": {
           "providers": 45,
           "members": 90
@@ -262,25 +292,46 @@
       },
       "browserAcceptance": {
         "state": "PARTIAL",
-        "at": "2026-10-11T06:34:17.340Z",
+        "at": "2026-10-11T07:36:04.185Z",
         "origin": "https://perziura.madbeauty.lt",
+        "version": "cd397c44-6eb8-4e2f-8d2c-e3ad954371fd",
         "iab": {
+          "state": "PASS",
           "ordinaryHttps": true,
           "otp": true,
-          "profileSettings": true,
-          "feed": true,
           "sessionSurvivesReload": true,
-          "screenshot": "community-iab.jpg"
+          "feed": true,
+          "existingProfilePreserved": true,
+          "screenshot": "read-budget-browser.jpg"
         },
         "chrome": {
+          "state": "UNVERIFIED_ON_CURRENT_VERSION",
+          "lastTestVersion": "b2e96aa4-5788-4403-bc40-35dea865b542",
           "otpReturnsToLogin": true,
-          "attempts": 2,
           "apiDocumentNavigation": "ERR_BLOCKED_BY_CLIENT",
           "cause": "UNVERIFIED",
           "securitySettingsChanged": false
         },
         "facebook": false
-      }
+      },
+      "previousVersion": "b2e96aa4-5788-4403-bc40-35dea865b542",
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6",
+          "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989",
+          "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        }
+      ]
     }
   },
   "limitations": [
@@ -350,5 +401,264 @@
     "documentWidth": 1425,
     "privatePhotoLoaded": true,
     "ownPhotoAlignedRight": true
+  },
+  "releaseHistory": [
+    {
+      "at": "2026-10-11T02:17:26.958Z",
+      "editions": {
+        "main": {
+          "sourceCommit": "1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9",
+          "version": "90760306-9aec-4af0-a675-9ed747442915",
+          "artifactSha256": "9e4f3738d849c042031bce08da13c3ba603661c7e3e39902409961ec9a81983f",
+          "previousVersion": "09f767e9-9bba-4ddb-96bc-3feaac299535",
+          "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+          "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+          "communityEnabled": false,
+          "facebookEnabled": false,
+          "bindings": [
+            {
+              "name": "COMMUNITY",
+              "namespaceId": "c8a5705c5a3d41bd81c191b01bedaa63"
+            },
+            {
+              "name": "ORGANIZATION_STAGING",
+              "namespaceId": "bc3a1745ab314150b06c5ada1a71d125"
+            },
+            {
+              "name": "PLATFORM",
+              "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3"
+            }
+          ],
+          "nativeChecks": 84,
+          "hostedChecks": 84,
+          "queryRedaction": true,
+          "authAssets": [
+            {
+              "file": "http-adapter.mjs",
+              "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+              "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+            },
+            {
+              "file": "account-ui.mjs",
+              "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+              "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+            },
+            {
+              "file": "auth-entry.mjs",
+              "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+              "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+            }
+          ],
+          "acceptanceAt": "2026-10-11T07:29:04.891Z"
+        },
+        "trial": {
+          "sourceCommit": "1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9",
+          "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+          "artifactSha256": "931d085ff7cacc24c291200eaec637f14cd53ce4f6af422983fafaedcb2b4c8c",
+          "previousVersion": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
+          "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+          "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+          "communityEnabled": true,
+          "facebookEnabled": true,
+          "bindings": [
+            {
+              "name": "COMMUNITY",
+              "namespaceId": "f05f8135a7b54df5963269e354752e6a"
+            },
+            {
+              "name": "PLATFORM",
+              "namespaceId": "a07857f7b8414eb789f3ff639953ff1b"
+            }
+          ],
+          "nativeChecks": 130,
+          "hostedChecks": 130,
+          "queryRedaction": true,
+          "authAssets": [
+            {
+              "file": "http-adapter.mjs",
+              "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+              "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+            },
+            {
+              "file": "account-ui.mjs",
+              "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+              "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+            },
+            {
+              "file": "auth-entry.mjs",
+              "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+              "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+            }
+          ],
+          "acceptanceAt": "2026-10-11T07:26:34.764Z"
+        }
+      },
+      "communityLive": {
+        "state": "PASS",
+        "at": "2026-10-11T01:26:42.116Z",
+        "checks": 19,
+        "version": "5d2173cb-fff3-4902-83b9-021b56f61889",
+        "artifactSha256": "4587dd4ab6ba163f08f1e147102fa7a0f71e4e413d5583c89a6d961a20b91ed2",
+        "seed": {
+          "providers": 45,
+          "members": 90
+        },
+        "photos": true,
+        "albums": true,
+        "comments": true,
+        "friends": true,
+        "salon": true,
+        "moderation": true,
+        "logout": true,
+        "providerProjectionPreserved": true,
+        "carriedForward": {
+          "fromSource": "d539271295c04fe9523795b6b3abd9c40e992c20",
+          "toSource": "ced9559130e41c3cede6288fa9e94308c689ffe8",
+          "reason": "Only app.css photo alignment, deployment query-redaction enforcement and release documentation changed; community runtime and API source unchanged. Exact compiled trial community/native and hosted public checks repeated. The 19 hosted mutation operations remain evidence of their original version, not relabelled as new operations."
+        }
+      },
+      "reviewCandidate": {
+        "state": "DEPLOYED_HOSTED_PASS_BROWSER_PARTIAL_FACEBOOK_DISABLED",
+        "sourceCommit": "cd5e4d024514b058bc62515ca2acd4e6c0cbd313",
+        "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+        "origin": "https://perziura.madbeauty.lt",
+        "expiresAt": "2027-10-12T00:00:00.000Z",
+        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+        "acceptedTrialArtifactSha256": "f6a477fc9b348da2340899f3f81205cb7e4ca7e42acceabc9b9d46cdf4a8190d",
+        "entrySourceSha256": "218962d620fc24949424d3f0fb1e70b64c7c65ecb0bff34e0f98cbb5eb14c743",
+        "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+        "compatibilityDate": "2026-05-22",
+        "facebookEnabled": false,
+        "secretsCreated": true,
+        "queryRedaction": true,
+        "nativeAcceptance": {
+          "state": "PASS",
+          "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+          "at": "2026-10-11T06:19:23.891Z",
+          "scope": "Isolated native review artifact, not actual Facebook OAuth",
+          "scenarios": [
+            "new origin only",
+            "45 synthetic profiles",
+            "noindex/no sitemap",
+            "real email denied",
+            "OTP session",
+            "community post",
+            "persisted session and community restart",
+            "handler and DO expiry",
+            "existing trial expiry preserved"
+          ]
+        },
+        "preparationSources": [
+          "review-build.mjs",
+          "review-native.test.mjs",
+          "review-release.mjs"
+        ],
+        "deploymentState": "DEPLOYED_BROWSER_PARTIAL",
+        "instructions": "META_REVIEW.md",
+        "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
+        "sessionSecretCreated": true,
+        "facebookAppSecretInstalled": false,
+        "bindings": [
+          {
+            "name": "COMMUNITY",
+            "id": "5e656ebc90cc4fe9881363db7b288593"
+          },
+          {
+            "name": "PLATFORM",
+            "id": "70b71d4c3a584b579a007568d8c514ff"
+          }
+        ],
+        "protectedWorkersUnchanged": true,
+        "hostedAcceptance": {
+          "state": "PASS",
+          "kind": "review",
+          "checks": 130,
+          "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+          "at": "2026-10-11T06:27:12.167Z",
+          "link": "https://verslomatika.lt",
+          "rel": null,
+          "trialRobotsPreserved": true
+        },
+        "communityAcceptance": {
+          "state": "PASS",
+          "at": "2026-10-11T06:28:27.424Z",
+          "checks": 19,
+          "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
+          "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+          "seed": {
+            "providers": 45,
+            "members": 90
+          },
+          "photos": true,
+          "albums": true,
+          "comments": true,
+          "friends": true,
+          "salon": true,
+          "moderation": true,
+          "logout": true,
+          "providerProjectionPreserved": true
+        },
+        "browserAcceptance": {
+          "state": "PARTIAL",
+          "at": "2026-10-11T06:34:17.340Z",
+          "origin": "https://perziura.madbeauty.lt",
+          "iab": {
+            "ordinaryHttps": true,
+            "otp": true,
+            "profileSettings": true,
+            "feed": true,
+            "sessionSurvivesReload": true,
+            "screenshot": "community-iab.jpg"
+          },
+          "chrome": {
+            "otpReturnsToLogin": true,
+            "attempts": 2,
+            "apiDocumentNavigation": "ERR_BLOCKED_BY_CLIENT",
+            "cause": "UNVERIFIED",
+            "securitySettingsChanged": false
+          },
+          "facebook": false
+        }
+      }
+    }
+  ],
+  "incrementalBrowser": {
+    "trial": {
+      "state": "PASS",
+      "at": "2026-10-11T07:36:04.185Z",
+      "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+      "origin": "https://bandymas.madbeauty.lt",
+      "iab": {
+        "otp": true,
+        "communityReturnPath": true,
+        "profileSettings": true,
+        "feed": true,
+        "sessionSurvivesReload": true,
+        "screenshot": "read-budget-browser.jpg"
+      },
+      "scope": "Synthetic email login and community journey on IAB; not actual external Facebook OAuth"
+    },
+    "main": {
+      "state": "PASS",
+      "version": "90760306-9aec-4af0-a675-9ed747442915",
+      "chromeHomepage": true,
+      "screenshot": "cloudflare/output/community-20261011/main/read-budget-chrome.jpg",
+      "scope": "Public homepage renders interactively in Chrome; no real customer login attempted"
+    }
+  },
+  "quotaRecovery": {
+    "state": "SERVICE_RECOVERED",
+    "at": "2026-10-11T07:36:04.185Z",
+    "ownerReportsPlanPaid": true,
+    "financialActionByAgent": false,
+    "planBillingReadback": "Subscription GET connector denied; no access expansion or financial action",
+    "origins": [
+      "https://madbeauty.lt",
+      "https://bandymas.madbeauty.lt",
+      "https://perziura.madbeauty.lt"
+    ],
+    "rootAndSessionStatus": 200,
+    "incident": "QUOTA_INCIDENT.md",
+    "optimizationsDeployed": true
   }
 }

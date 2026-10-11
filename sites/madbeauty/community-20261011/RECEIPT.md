@@ -1,6 +1,12 @@
 # Facebook ir bendruomenės C0–C2 bandymo leidimas
 
-2026-10-11. Būsena **C0–C2 trial hosted and Facebook owner accepted; public Meta review pending**. Runtime source ced9559130e41c3cede6288fa9e94308c689ffe8; push į PR88, dar ne merge. Canonical 09f767e9-9bba-4ddb-96bc-3feaac299535; trial 8e4da6de-9e07-4c4b-8f37-b42bd4474a30. Tikslūs artifact/core/content/binding įrodymai [RECEIPT.json](RECEIPT.json). Frozen129 e20c3b95 ir core566 nepakeisti.
+2026-10-11. Būsena **C0–C2 trial hosted; kvotos incidentas išspręstas, Meta peržiūra ir Chrome reviewer priėmimas daliniai**. Canonical `90760306-9aec-4af0-a675-9ed747442915`, trial `f608921e-f68a-4faa-9b13-66aa15c29e4d`, abiejų source `1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9`. Reviewer `cd397c44-6eb8-4e2f-8d2c-e3ad954371fd`, source `eb30a67b0fcd6993b896f14f48f37ede372b4835`. PR88 lieka draft, ne merge. Tikslūs artifact/core/content/binding įrodymai [RECEIPT.json](RECEIPT.json). Frozen129 e20c3b95 ir core566 nepakeisti. Žemiau senų versijų priėmimas yra istorija, ne naujai pervadinti bandymai.
+
+Naujos versijos: native ir hosted main84 / trial130 / review130 PASS. Trial tikslus compiled bendruomenės restart ir esamų45profilių/90narių testas PASS; reviewer9saugumo/host/restart/expiry scenarijų PASS. Realūs HTTPS community19 testai atskirai pakartoti naujoms trial ir reviewer versijoms PASS, įskaitant nuotraukas, privatumą, komentarus, draugystę, salonų teises, žinutes, moderavimą ir logout. Config/namespace/secret/expiry/query-redaction ir kitų worker lease išsaugojimas PASS. Main publicFacebook ir community tebėra false, reviewFBfalse, trialFB/community true.
+
+Skaitymų optimizacijos: vienam24įrašų autoriaus sąrašui1person dokumento read vietoje25; anoniminė platformos sesija nebeskenuoja memberships/organizations/practitioners. Tai konkrečių funkcijų įrodymas, ne viso mėnesio sąnaudų garantija. Po accepted OTP reikalaujamas atskiras to paties user cookie-backed sesijos patvirtinimas.19auth testų,8community/media/read-budget ir37backend/native testų PASS. [Tikslus incidentas](QUOTA_INCIDENT.md). Savininkas pats apmokėjo planą; agentas finansinio veiksmo neatliko.
+
+Naujas trial IAB bandymas: community login → OTP → grįžimas į bendruomenę → testinio profilio sukūrimas → feed → reload PASS. Chrome reviewer OTP bandymas b2e96aa4 grąžino login ir tiesioginis API puslapis ERR_BLOCKED_BY_CLIENT, konkreti priežastis UNVERIFIED; šio rezultatų negalima vadinti visų naršyklių PASS. Meta telefono patvirtinimas savininko atidėtas, public App Review vis dar nepateiktas.
 
 ## Kaip bandyti
 

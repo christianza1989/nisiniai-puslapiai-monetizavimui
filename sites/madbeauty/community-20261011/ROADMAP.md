@@ -10,9 +10,9 @@ Dabartinis žingsnis: **C0–C2 ir tikras savininko Facebook bandymas priimti; v
 
 Meta programėlė1827877621543839 vis dar Unpublished. App Review nauji prašymai email/public_profile yra Not submitted; konkretus submission1827877654877169 turi Verification, App settings, Allowed usage, Data handling ir Reviewer instructions žingsnius, Submit for review disabled. Pagrindinio domeno community/publicFBlogin tebėra išjungti. Pradinis owner-consent klausimas nebelaukia atsakymo.
 
-Kitas veiksmas: užbaigti Meta įmonės verification nuo reCAPTCHA, tiekėjų faktinę geografiją ir išaiškinti Chrome reviewer OTP problemą. Susiejimas / pateikti rekvizitai / abu sutikimai jau turi readback; jų nekartoti. Reviewer OAuth ir galutinis Submit dar nepriimti; [aktualus planas](META_REVIEW.md).
+Kitas veiksmas: išaiškinti Chrome reviewer OTP / ERR_BLOCKED_BY_CLIENT problemą ir užbaigti tiekėjų faktinę geografiją. Meta telefono patvirtinimą savininkas aiškiai atidėjo, SMS / CAPTCHA nekartoti. Susiejimas / pateikti rekvizitai / abu sutikimai jau turi readback; jų nekartoti. Reviewer OAuth ir galutinis Submit dar nepriimti; [aktualus planas](META_REVIEW.md).
 
-Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f767e9-9bba-4ddb-96bc-3feaac299535`, trial `8e4da6de-9e07-4c4b-8f37-b42bd4474a30`. [Aktualus kvitas](RECEIPT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
+Gyvas pagrindas: main `90760306-9aec-4af0-a675-9ed747442915`, trial `f608921e-f68a-4faa-9b13-66aa15c29e4d`, abiejų source `1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9`; reviewer `cd397c44-6eb8-4e2f-8d2c-e3ad954371fd`, source `eb30a67b0fcd6993b896f14f48f37ede372b4835`. Skaitymų ir auth pataisos įdiegtos. Po savininko plano apmokėjimo visi trys domenai ir sesijos API atsako200. [Aktualus kvitas](RECEIPT.md), [limito incidentas](QUOTA_INCIDENT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
 
 ## Užbaigtas pasiruošimas
 
@@ -36,7 +36,7 @@ Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f76
 - [x] F6-review-a Abu Allowed usage sutikimai ir savininko Data handling faktai išsaugoti Meta; readback PASS.
 - [x] F6-review-b Savininko skirtas portfelis900173107610943 pervadintas į Memocasting, MB; juridiniai rekvizitai ir controller vardas saved/readback PASS.
 - [x] F6-review-c Connected business portfolio grid / Remove readback; agento Connect paspaudimas neįrodytas, nekartoti.
-- [ ] F6-review-d Verified business: vedlys sustojo ties reCAPTCHA. Tiekėjų geografija, reviewer OAuth ir galutinis Submit dar nepriimti.
+- [ ] F6-review-d Verified business: telefono/SMS patvirtinimą savininkas atidėjo. Tiekėjų geografija, reviewer OAuth ir galutinis Submit dar nepriimti.
 - [x] F6-review-e Izoliuotas reviewer Worker / namespaces / session secret / query redaction / protected provider preservation, hosted130 / community19 ir IAB feed/reload PASS.
 - [ ] F6-review-f Chrome OTP grįžimo į login diagnostika; bendras browser priėmimas PARTIAL.
 - [ ] F6b Išorinis vartotojas po Meta peržiūros ir publikavimo; admin bandymas šio vartų nepakeičia.
@@ -141,3 +141,17 @@ Meta naujo Business kūrimą blokavo paskyros limitu.3prieinamų portfelių juri
 ### 2026-10-11 Memocasting rekvizitai ir reviewer deployment
 
 Savininko pataisyti Memocasting, MB rekvizitai išsaugoti ir readback PASS; kodas306026827, privatus telefonas tik Meta / vietiniuose įrodymuose. Data handling valdytojo vardas pataisytas ir reopened readback PASS. App Verification / submission grid jau rodo Connected business portfolio900173107610943 / Memocasting, MB / Unverified / Remove; agento Connect paspaudimas neįrodytas ir nekartotas. Verification vedlys Lithuania / Private Company / rekvizitai pradėtas; sustota ties reCAPTCHA, savininko handoff paklaustas. App vis dar Unpublished / Not submitted. Tiekėjų šalių deklaracija nebaigta. Perziura.madbeauty.lt įdiegta, version b46dfaab-ce7c-4407-a400-bc3ea57cff84 / source cd5e4d0 / artifact ea02b98a. Naujos PLATFORM ir COMMUNITY namespaces, naujas session secret, query redaction readback ir main/trial/QA išsaugojimas PASS. Native ribos/restart/expiry PASS; public hosted130 ir community19 scenarijų PASS; IAB OTP→profilis→feed→reload PASS. Chrome2OTP grįžo į login, priežastis UNVERIFIED, browser acceptance PARTIAL. FB išjungtas, review callback/appsecret/actualOAuth ir anketa dar neaktyvinti. Originalus trialexpiry ir main/trial runtime nepakitę.
+
+### 2026-10-11 Plano apmokėjimas, kvotos atkūrimas ir skaitymų leidimas
+
+- [x] Klasifikuotas actual provider `Exceeded allowed rows read in Durable Objects free tier.` ir visų3domenų root/session500. Nekartotas deploy / DBrestore incidentui gydyti.
+- [x] Savininkas pats pranešė apie plano apmokėjimą; įprastas HTTPS root/session200 visuose3domenuose ir platesnis priėmimas atkurti. Subscription connector GET atsisakė prieigos; billing prieiga nedidinta, finansinis veiksmas agento neatliktas.
+- [x] Source71e3fb4: OTP patvirtinimas prieš navigate reikalauja atskiros tos pačios sesijos patikros; klaidos recover su nauju kodu ir išsaugotu tikslu.19auth/adapter/account-state PASS.
+- [x] Source2c1b41d: autoriaus24įrašų projekcijai1person read vietoje25, anoniminė platformos sesija neskaito vidinių komandų kolekcijų.8community/media/read-budget ir37backend/native PASS. Ne visa dienos billable suma ar neriboto mastelio pažadas.
+- [x] Maintained release išsaugo tikrą ankstesnį artifact/proofs ir3pakeičiamus auth modulius; saugo papildomą reviewer worker, nieko neprovisionina iš naujo. Main1579cf1/90760306, trial1579cf1/f608921e ir revieweb30a67/cd397c44 įkelti. Esami namespaces/secrets/flags/content/core/expiry/query-redaction ir kitų worker lease PASS.
+- [x] Exact native+hosted main84, trial130, review130 PASS. Exact compiled trial community restart/profiles PASS; reviewer9host/OTP/restart/expiry scenarijų PASS. Nauji HTTPS community19 atskirai trial ir review PASS; seni įrodymai nepervadinti naujo leidimo patikromis.
+- [x] Actual IAB trial OTP→community return→testinis profilis→feed→reload PASS; reviewcd397c44 naujas OTP→account→reload→feed PASS. Main90760306 homepage interaktyviai atsidaro Chrome.
+- [ ] Chrome reviewer: naujas b2e96aa4 OTP vėl grąžino login, directsession ERR_BLOCKED_BY_CLIENT. Konkreti priežastis UNVERIFIED, apsaugos nešvelnintos. cd397c44 Chrome auth dar nekartotas; PARTIAL priėmimas lieka.
+- [ ] Meta telefono/SMS patvirtinimas savininko atidėtas. Negalima siųsti SMS ar naudoti screenshot kitą numerį. Tiekėjų geografija, reviewer actualFacebookOAuth ir finalSubmit / publicactivation dar nepriimti.
+
+Aktualūs [RECEIPT.json](RECEIPT.json), [QUOTA_INCIDENT.md](QUOTA_INCIDENT.md). Source1579cf1 main/trial; revieweb30a67. Native / hosted / community / provider / browser evidence laikomi privačiame cloudflare/output/community-20261011, ne Git. Originalus trialexpiry2026-10-16T21:10:47.982Z išlaikytas. Neskelbti publicFacebook ar visos platformos baigta. Kitas įvykdomas darbas: konkreti Chrome blokavimo diagnostika; Meta telefono žingsnis laukia vėlesnio savininko grįžimo.

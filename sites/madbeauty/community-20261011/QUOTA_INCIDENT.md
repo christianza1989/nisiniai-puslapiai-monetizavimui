@@ -1,6 +1,6 @@
 # 2026-10-11 — Durable Objects skaitymų limitas
 
-Aktuali būsena: **gyvas API priėmimas sustabdytas dėl paskyros limito**. Tai atskira problema nuo savininko atidėto Meta telefono patvirtinimo. Istoriniai priėmimai lieka savo versijų įrodymai, ne dabartinio veikimo garantija.
+Aktuali būsena: **paslauga atkurta po savininko plano apmokėjimo**. Savininkas pranešė „sumokejau uz plana katik“. Pakartotinė įprastų HTTPS užklausų patikra gavo200 ties `/` ir `/api/madbeauty/session` visuose trijuose domenuose: madbeauty.lt, bandymas.madbeauty.lt ir perziura.madbeauty.lt. Tai faktinis paslaugos atkūrimas; mokėjimo kvito ar galutinės sąskaitos netikrinome. Ankstesnio incidento ir versijų įrodymai lieka istorija.
 
 ## Faktinis įrodymas
 
@@ -23,7 +23,11 @@ Savininko paprašyta pačiam pasirinkti / įjungti Workers Paid. Mokamo plano ne
 - Vietinis anoniminės platformos sesijos pataisymas: nebeskaitomos memberships / organizations / practitioners kolekcijos. Prisijungusių naudotojų teisės tikrinamos kaip anksčiau.
 -19auth/adapter/account-state testų PASS.8Node community/media/read-budget testų PASS.37backend ir native community / trial / salon testų PASS,0fail,0removed. Komandos ROADMAP checkpointe.
 
-Paskutinės dvi optimizacijos dar nėra gyvos main/trial/reviewer Worker. Šios sumažintos konkrečių funkcijų užklausos neįrodo visos dienos billable rows sumos ar to, kad Free planas pakaks viešai platformai.
+Optimizacijų įkėlimas ir kiekvienos gyvos versijos priėmimas fiksuojami naujausiame ROADMAP checkpointe ir RECEIPT.json. Šios sumažintos konkrečių funkcijų užklausos neįrodo visos dienos billable rows sumos ar to, kad Free planas pakaks viešai platformai.
+
+## Priėmimas po atkūrimo
+
+Reviewer b2e96aa4 trijų auth modulių leidimas: viešas hosted130 PASS; IAB naujas OTP → cookie-backed sesija → puslapio perkrovimas → bendruomenės srautas → atsijungimas PASS. Tik testinis example.com adresas, tikras laiškas nesiųstas. Ekrano įrodymas `review/quota-recovered-iab.jpg`. Chrome naujas OTP vis dar grąžina login, tiesioginė API navigacija vėl ERR_BLOCKED_BY_CLIENT. Browser acceptance PARTIAL; konkretus Chrome blokavimo mechanizmas UNVERIFIED, apsaugos nekeistos. Šis Chrome rezultatas nėra dabartinio bendro API limito įrodymas.
 
 ## Kur tęsti
 

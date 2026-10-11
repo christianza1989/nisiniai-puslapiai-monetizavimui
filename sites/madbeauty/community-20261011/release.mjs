@@ -20,7 +20,7 @@ async function provider(){
 }
 const clean=commit=>assert.equal(execFileSync('git',['diff','--name-only',commit,'--','sites/madbeauty/prototype','sites/madbeauty/cloudflare','sites/madbeauty/content','sites/madbeauty/backend','sites/madbeauty/trial-20261010/worker.mjs'],{cwd:repo,encoding:'utf8'}).trim(),'','Runtime source must stay committed');
 if(phase==='before'){
- const records=await provider(),previousDeployment=await json(path.join(dir,'deployment.json')).catch(()=>null),authUpdate=kind==='review'?await json(path.join(dir,'auth-update.json')).catch(()=>null):null,expected=authUpdate?.version||previousDeployment?.version||(kind==='main'?'96af1b12-52cc-48cb-820e-1580f4b7c860':'2292c0bd-b302-40cc-8d7c-e1eb9de0b033');assert.equal(records[index].deployments.deployments[0].versions[0].version_id,expected);
+ const records=await provider(),previousDeployment=await json(path.join(dir,'deployment.json')).catch(()=>null),authUpdate=kind==='review'?await json(path.join(dir,'auth-update.json')).catch(()=>null):null,latestAuth=authUpdate?.version&&Date.parse(authUpdate.at)>Date.parse(previousDeployment?.at||'1970-01-01'),expected=(latestAuth?authUpdate.version:previousDeployment?.version)||(kind==='main'?'96af1b12-52cc-48cb-820e-1580f4b7c860':'2292c0bd-b302-40cc-8d7c-e1eb9de0b033');assert.equal(records[index].deployments.deployments[0].versions[0].version_id,expected);
  // Preserve the actual previous artifact and evidence before candidate preparation.
  // Never rewrite a historical hosted proof as evidence for a new deployment.
  const archive=path.join(dir,'previous',expected);await mkdir(archive,{recursive:true});

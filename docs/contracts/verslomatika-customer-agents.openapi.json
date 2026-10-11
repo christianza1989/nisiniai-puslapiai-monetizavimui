@@ -1,0 +1,1615 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Owned customer agent task drafts",
+    "version": "0.1.0",
+    "description": "Local-only current verified customer owner/grant and exact registered business. Data-only purpose/task configuration, immutable versions, UUID idempotency, optimistic conflict and bounded signed history. A saved specification is not runtime/module admission. Calibration remains UNVERIFIED; all provider, calibration and channel activation capabilities are false. No model, tools, connector, mail or live channel."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/agents": {
+      "get": {
+        "summary": "Listing",
+        "operationId": "listCustomerAgentDrafts",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create",
+        "operationId": "createCustomerAgentDraft",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Create"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/agents/{agent_id}": {
+      "get": {
+        "summary": "Detail",
+        "operationId": "getCustomerAgentDraft",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Agent Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions": {
+      "post": {
+        "summary": "Revise",
+        "operationId": "reviseCustomerAgentDraft",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Agent Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Revise"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      },
+      "get": {
+        "summary": "Revisions",
+        "operationId": "listCustomerAgentDraftRevisions",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Agent Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RevisionsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions/{revision}": {
+      "get": {
+        "summary": "Revision",
+        "operationId": "getCustomerAgentDraftRevision",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Agent Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 2147483647,
+              "minimum": 1,
+              "title": "Revision"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfigEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Agent": {
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Agent Id"
+          },
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "business_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Business Id"
+          },
+          "registration_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Registration Id"
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "site_chat",
+              "customer_research",
+              "email",
+              "custom"
+            ],
+            "title": "Purpose"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "current_revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Current Revision"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          },
+          "configuration_state": {
+            "type": "string",
+            "const": "draft",
+            "title": "Configuration State",
+            "default": "draft"
+          },
+          "enabled": {
+            "type": "boolean",
+            "const": false,
+            "title": "Enabled",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "agent_id",
+          "creation_id",
+          "business_id",
+          "registration_id",
+          "purpose",
+          "name",
+          "current_revision",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "Agent"
+      },
+      "Config": {
+        "properties": {
+          "revision_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Revision Id"
+          },
+          "agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Agent Id"
+          },
+          "revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Revision"
+          },
+          "specification": {
+            "$ref": "#/components/schemas/Specification"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Sha256"
+          },
+          "saved_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Saved At"
+          },
+          "saved_source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Saved Source Revision"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "revision_id",
+          "agent_id",
+          "revision",
+          "specification",
+          "sha256",
+          "saved_at",
+          "saved_source_revision"
+        ],
+        "title": "Config"
+      },
+      "ConfigEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-agents.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Config"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "observed_at",
+          "source_revision",
+          "data"
+        ],
+        "title": "ConfigEnvelope"
+      },
+      "Create": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "site_chat",
+              "customer_research",
+              "email",
+              "custom"
+            ],
+            "title": "Purpose"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Specification"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "request_id",
+          "purpose",
+          "configuration"
+        ],
+        "title": "Create"
+      },
+      "Detail": {
+        "properties": {
+          "agent": {
+            "$ref": "#/components/schemas/Agent"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Config"
+          },
+          "readiness": {
+            "$ref": "#/components/schemas/Readiness"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "agent",
+          "configuration",
+          "readiness"
+        ],
+        "title": "Detail"
+      },
+      "Envelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-agents.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Detail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "observed_at",
+          "source_revision",
+          "data"
+        ],
+        "title": "Envelope"
+      },
+      "Error": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Message"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ],
+        "title": "Error"
+      },
+      "Example": {
+        "properties": {
+          "input": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Input"
+          },
+          "expected": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Expected"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "input",
+          "expected"
+        ],
+        "title": "Example"
+      },
+      "Listing": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Agent"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "title": "Items"
+          },
+          "purposes": {
+            "items": {
+              "$ref": "#/components/schemas/PurposeCapability"
+            },
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 4,
+            "title": "Purposes"
+          },
+          "can_create_draft": {
+            "type": "boolean",
+            "title": "Can Create Draft"
+          },
+          "configuration_blockers": {
+            "items": {
+              "type": "string",
+              "const": "agent_business_not_current"
+            },
+            "type": "array",
+            "maxItems": 1,
+            "title": "Configuration Blockers"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2048
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "items",
+          "purposes",
+          "can_create_draft",
+          "configuration_blockers",
+          "has_more"
+        ],
+        "title": "Listing"
+      },
+      "ListingEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-agents.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Listing"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "observed_at",
+          "source_revision",
+          "data"
+        ],
+        "title": "ListingEnvelope"
+      },
+      "PurposeCapability": {
+        "properties": {
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "site_chat",
+              "customer_research",
+              "email",
+              "custom"
+            ],
+            "title": "Purpose"
+          },
+          "configuration_supported": {
+            "type": "boolean",
+            "const": true,
+            "title": "Configuration Supported",
+            "default": true
+          },
+          "calibration_supported": {
+            "type": "boolean",
+            "const": false,
+            "title": "Calibration Supported",
+            "default": false
+          },
+          "activation_supported": {
+            "type": "boolean",
+            "const": false,
+            "title": "Activation Supported",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "purpose"
+        ],
+        "title": "PurposeCapability"
+      },
+      "Readiness": {
+        "properties": {
+          "configuration_saved": {
+            "type": "boolean",
+            "const": true,
+            "title": "Configuration Saved",
+            "default": true
+          },
+          "can_edit_configuration": {
+            "type": "boolean",
+            "title": "Can Edit Configuration"
+          },
+          "calibration_status": {
+            "type": "string",
+            "const": "UNVERIFIED",
+            "title": "Calibration Status",
+            "default": "UNVERIFIED"
+          },
+          "module_admission": {
+            "type": "string",
+            "const": "not_admitted",
+            "title": "Module Admission",
+            "default": "not_admitted"
+          },
+          "can_calibrate": {
+            "type": "boolean",
+            "const": false,
+            "title": "Can Calibrate",
+            "default": false
+          },
+          "can_activate": {
+            "type": "boolean",
+            "const": false,
+            "title": "Can Activate",
+            "default": false
+          },
+          "channel_activation": {
+            "type": "string",
+            "const": "not_performed",
+            "title": "Channel Activation",
+            "default": "not_performed"
+          },
+          "provider_execution": {
+            "type": "boolean",
+            "const": false,
+            "title": "Provider Execution",
+            "default": false
+          },
+          "blockers": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "calibration_not_implemented",
+                "module_admission_missing",
+                "agent_business_not_current"
+              ]
+            },
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 2,
+            "title": "Blockers"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "can_edit_configuration",
+          "blockers"
+        ],
+        "title": "Readiness"
+      },
+      "Revise": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "expected_revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Expected Revision"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Specification"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "request_id",
+          "expected_revision",
+          "configuration"
+        ],
+        "title": "Revise"
+      },
+      "RevisionSummary": {
+        "properties": {
+          "revision_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Revision Id"
+          },
+          "revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Revision"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Sha256"
+          },
+          "saved_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Saved At"
+          },
+          "saved_source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Saved Source Revision"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "revision_id",
+          "revision",
+          "sha256",
+          "saved_at",
+          "saved_source_revision"
+        ],
+        "title": "RevisionSummary"
+      },
+      "Revisions": {
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Agent Id"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/RevisionSummary"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "title": "Items"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2048
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "agent_id",
+          "items",
+          "has_more"
+        ],
+        "title": "Revisions"
+      },
+      "RevisionsEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-agents.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Revisions"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "observed_at",
+          "source_revision",
+          "data"
+        ],
+        "title": "RevisionsEnvelope"
+      },
+      "Saved": {
+        "properties": {
+          "agent": {
+            "$ref": "#/components/schemas/Agent"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Config"
+          },
+          "readiness": {
+            "$ref": "#/components/schemas/Readiness"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "created",
+              "revised",
+              "replayed"
+            ],
+            "title": "Action"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "agent",
+          "configuration",
+          "readiness",
+          "action",
+          "request_id"
+        ],
+        "title": "Saved"
+      },
+      "SavedEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-agents.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Saved"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "observed_at",
+          "source_revision",
+          "data"
+        ],
+        "title": "SavedEnvelope"
+      },
+      "Specification": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "goal": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Goal"
+          },
+          "audience": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Audience"
+          },
+          "inputs": {
+            "items": {
+              "type": "string",
+              "maxLength": 1000,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Inputs"
+          },
+          "outputs": {
+            "items": {
+              "type": "string",
+              "maxLength": 1000,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Outputs"
+          },
+          "boundaries": {
+            "items": {
+              "type": "string",
+              "maxLength": 1000,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Boundaries"
+          },
+          "escalation": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Escalation"
+          },
+          "autonomy": {
+            "type": "string",
+            "enum": [
+              "recommendations_only",
+              "drafts_for_review"
+            ],
+            "title": "Autonomy"
+          },
+          "sources": {
+            "items": {
+              "type": "string",
+              "maxLength": 1000,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Sources"
+          },
+          "examples": {
+            "items": {
+              "$ref": "#/components/schemas/Example"
+            },
+            "type": "array",
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Examples"
+          },
+          "unknowns": {
+            "items": {
+              "type": "string",
+              "maxLength": 1000,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Unknowns"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "goal",
+          "audience",
+          "inputs",
+          "outputs",
+          "boundaries",
+          "escalation",
+          "autonomy",
+          "sources",
+          "examples",
+          "unknowns"
+        ],
+        "title": "Specification"
+      }
+    },
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

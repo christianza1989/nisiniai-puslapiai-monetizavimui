@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "uv run --locked python -m unittest discover -s offline_tests -p 'test_acquisition*.py' -q",
+      "result": "PASS",
+      "evidence": "Final50/50; pending-active/pending-inactive/stale plus original terminal/scope/operator guards"
+    },
+    {
+      "command": "uv run --locked python scripts/acquisition_contracts.py --check",
+      "result": "PASS",
+      "evidence": "0.1.1schemas/vector byte-identical after reducer-only repair"
+    },
+    {
+      "command": "uv run --locked ruff check src/pinet_core/acquisition/interfaces.py offline_tests/test_acquisition_interfaces.py",
+      "result": "PASS",
+      "evidence": "Both included in actual6file scoped Ruff run"
+    }
+  ],
+  "note": "First targeted12test11PASS/1ERROR lifecycle_regression preserved. Legitimate pending submission now advances revision/receipt while retaining active or deactivated publication eligibility; original mismatchedbinding/signup/deletion/approval guards remain tested. No wire shape/version changes.",
+  "eventId": "ebaa9604-3db9-459d-87eb-a3dabaf4144d",
+  "sequence": 2,
+  "at": "2026-10-10T01:37:41.211Z"
+}

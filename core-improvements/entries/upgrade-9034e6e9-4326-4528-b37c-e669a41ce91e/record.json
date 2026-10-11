@@ -1,0 +1,20 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "category": "workflow",
+  "evidence": [
+    "Own PostgreSQL18.6 container acq-core-capture-20261010 is isolated on127.0.0.1:15439, restart=no; Windows standalone init blocked by Application Control without policy changes",
+    "First actual test runner9errors from scripts namespace import; use packaged capture config and retain first failure"
+  ],
+  "siteId": "core",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/capture_config.py",
+    "agent-business-core/runtime/scripts/acquisition_capture_setup.py",
+    "agent-business-core/runtime/scripts/acquisition_capture_server.py"
+  ],
+  "rollback": "Scoped revert disabled acceptance helpers; do not reset or remove foreign DBs",
+  "summary": "Actual DB acceptance needs an explicit isolated capture binding and bootstrap instead of shared destructive fixture/.env fallback",
+  "id": "upgrade-9034e6e9-4326-4528-b37c-e669a41ce91e",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "53599fd277581a4e469bd43a9989d770143e7ec7",
+  "createdAt": "2026-10-10T02:09:33.363Z"
+}

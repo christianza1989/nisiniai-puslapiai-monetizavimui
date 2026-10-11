@@ -4,6 +4,8 @@
 
 ## Paskirtis ir dabartinis pagrindas
 
+**2026-10-09 atnaujinimas:** ankstesnis „dar neįgyvendintas“ aprašo 2026-10-01. Dabar įgyvendintas bounded kasdienio tyrimo/draft preparation runner, retrieval adapteris, medicininės įrangos instrukcijos ir kalibravimo korpusas: [OUTBOUND_ACQUISITION](agent-business-core/OUTBOUND_ACQUISITION.md). Gyvas discovery tiekėjas, PostgreSQL acquisition CRM, scheduler, suppression/outbox/inbound handoff ir išorinis siuntimas dar nepriimti. Istorinė „nelies­ti schemos / siuntimo“ tyrimo taisyklė nėra naujo autorizuoto core darbo draudimas; gyvas kontaktavimas vertinamas pagal konkrečią kampaniją ir kanalą.
+
 SEO atveda ilgalaikį srautą. Aktyvios paieškos bandymai gali greičiau parodyti konkretų prekių / paslaugų poreikį. Atskirti galimus pirkėjus, mokėtojus už užklausą, vykdymo tiekėjus ir rekomendavimo partnerius. Jų atsakymai matuoja skirtingas hipotezes.
 
 Patikrinta dabartinė realizacija viešame core: `drizzle/0004_niche_leads.sql` saugo `id`, `site_id`, `created_at`, `source_path`, `name`, `email`, `message`, `consent_at`, `status`. `app/niche/[siteId]/lead/route.ts` pirmiausia įrašo užklausą ir siunčia operatoriui per `lib/niche-mail.ts`. `source_path` yra puslapio kelias, o `consent_at` — dabartinės formos įrašo laukas; nė vienas nėra rinkodaros prenumeratos ar kampanijos atribucijos įrodymas. Studijos `src/` rasti turinio / medijos moduliai, ne pardavimų CRM.
@@ -96,3 +98,7 @@ Po mažo bandymo ir meaningful patikros leidimus plėsti iki autorizuotų atsaky
 - [ ] Pirmo bandymo rezultatas įrašytas kaip actual; pelningumas ir kita verslo fazė tvirtinami tik pagal įvykdytų poreikių / ekonomikos įrodymus.
 
 Šios sutarties checkboxai dar nėra runtime PASS. Automatinių žinučių, skambučių, pirkimų, DNS ar naujo heartbeat ši dokumentacija pati neįjungia.
+
+Provider_signup native integracijai naudoti [recipient-binding0.1.0](agent-business-core/contracts/recipient-binding-v1/README.md) greta nepakeisto acquisition0.1.1 ir atskirą [recipient-retirement0.1.0](agent-business-core/contracts/recipient-retirement-v1/README.md). Gavėjo proof tik susieja tikrą patvirtintą paskyrą; aktyviam teikėjui reikia actual organizacijos/publikuoto profilio ir dabartinių tinkamų pasiūlymų. Canonical native normalizer, OTP-before-provider buffer, original invite expiry ir atskiras atomic native counter/outbox saugomi pagal kontraktą. [Izoliuotas capture ledger/API](docs/ACQUISITION_DURABLE_CAPTURE_QA_2026-10-10.md) jau tikrinamas su tikru native OTP→TCP→PostgreSQL, exact replay ir privacy; normalus runtime mount,0011→0012 migracija, native atomic privacy/lifecycle outbox ir portalas turi savo pending priėmimą. Tai dar ne hosted pipeline ar autonominis naujų klientų paieškos paleidimas.
+
+Dashboard ir direktoriaus ataskaita naudoja tą patį [acquisition-projection0.1.0](agent-business-core/contracts/acquisition-projection-v1/README.md) current snapshot: current/historical atskirai, žinomos ledger coverage ir period basis, neprijungti šaltiniai null. Bibliotekos realios DB patikros nėra generic tool/RBAC/route ar portalo adoption; šias būsenas priima jų savininkai. Scope gauna autorizuotas serveris, ne browser/model input.

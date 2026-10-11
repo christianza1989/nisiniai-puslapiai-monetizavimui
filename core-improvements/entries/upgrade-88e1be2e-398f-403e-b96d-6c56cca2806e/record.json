@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "The new shared-change checker finds missing journal scope for the earlier outbound preparation rules and three CLI entrypoints; backfill verified provenance without changing historical receipts.",
+  "category": "workflow",
+  "evidence": [
+    "core-upgrade-check on main d4ea8bf to head cb410ac97e5eaab5896378b4ded240d79064693f: BLOCKED, nine uncovered paths, no malformed journal errors.",
+    "docs/OUTBOUND_ACQUISITION_QA_2026-10-09.md retains the original preparation and actual synthetic CLI evidence and its operational limits.",
+    "This record is a retrospective provenance correction, not a new execution of the historical model cases or a live scheduler/transport acceptance."
+  ],
+  "paths": [
+    "ACQUISITION_CORE.md",
+    "AGENTS.md",
+    "SKILLS/catalog.json",
+    "SKILLS/niche-client-acquisition/PROMPT.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "agent-business-core/runtime/scripts/acquisition_calibrate.py",
+    "agent-business-core/runtime/scripts/acquisition_daily.py",
+    "agent-business-core/runtime/scripts/acquisition_sources.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Retain this truthful retrospective finding and checks; reverting the original preparation source is a separate scoped code decision. No historical receipt or existing record is rewritten.",
+  "id": "upgrade-88e1be2e-398f-403e-b96d-6c56cca2806e",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "cb410ac97e5eaab5896378b4ded240d79064693f",
+  "createdAt": "2026-10-10T00:19:04.619Z"
+}

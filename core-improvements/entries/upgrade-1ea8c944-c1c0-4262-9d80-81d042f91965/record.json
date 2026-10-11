@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Additive recipient retirement needs an explicit transport permission while existing receipt/schema bytes stay pinned",
+  "evidence": [
+    "Native PR68 actual retention deletes account but pending acquisition reference remains; issue66 native handoff6092423685",
+    "New recipient-retirement-v1 is separate from locked recipient-binding-v1/0.1.0"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/transport_auth.py"
+  ],
+  "rollback": "Remove additive retire-recipient grant only after disabling its adapter; existing purposes unchanged",
+  "id": "upgrade-1ea8c944-c1c0-4262-9d80-81d042f91965",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "53599fd277581a4e469bd43a9989d770143e7ec7",
+  "createdAt": "2026-10-10T02:04:08.031Z"
+}

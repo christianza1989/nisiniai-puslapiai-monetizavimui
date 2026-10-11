@@ -1,0 +1,30 @@
+{
+  "category": "code",
+  "evidence": [
+    "Native PR68/7f9a47b6ef09ac1f8e2f22377827a61d6800faa0 proves actual OTP occurs before provider organization exists;0.1.1 lifecycle always requires provider_ref",
+    "Native dedicated HMAC vector a39e8497 and exact JS trim/lower source reviewed; organization.version does not track every lifecycle mutation",
+    "Issue66#6092144585 agrees separate recipient sub-contract, fixed invite expiry, real organization buffer/counter and preserved0.1.1 shapes",
+    "Actual local Node Unicode17 and Python15.1 differ; MAC must consume authoritative privately stored canonical bytes rather than assume normalization parity"
+  ],
+  "summary": "Native verified-recipient binding has no strict shared challenge/proof contract before actual provider creation",
+  "rollback": "Scoped sub-contract/codec revert; keep acquisition0.1.1 schemas byte-identical and immutable evidence. No mounted route/native backend/keys/production transport changes.",
+  "siteId": "core",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/recipient_binding.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/transport_auth.py",
+    "agent-business-core/runtime/scripts/acquisition_recipient_contracts.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_recipient_binding.py",
+    "agent-business-core/contracts/recipient-binding-v1",
+    "agent-business-core/contracts/acquisition-v1/README.md",
+    "ACQUISITION_CORE.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json",
+    "docs/ACQUISITION_RECIPIENT_BINDING_QA_2026-10-10.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "id": "upgrade-970c53a2-902c-47f5-b7c6-f6b47c52a2db",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "f319b4311faa914ce7e8aff182ce1b65ad864010",
+  "createdAt": "2026-10-10T01:26:16.967Z"
+}

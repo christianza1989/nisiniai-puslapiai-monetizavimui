@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Unmounted internal capture-only reader, not control/portal authentication or full pipeline acceptance. Final schema d21b8eac48714b16d9227c93cd4a3fb038ccf7ded39cea39e82a94ec4b392b38. First4FAIL preserved in projection QA; five actual tests pass on owned isolated SCRAM PostgreSQL. Live native resource and immutable old source receipts untouched.",
+  "checks": [
+    {
+      "command": "uv run --locked pytest acceptance_tests/test_acquisition_projection.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "5 passed in3.88s; actual current/history/redaction/scope/expiry/pause/51commands/scoped join and interleaved committed transaction"
+    },
+    {
+      "command": "uv run --locked ruff check src/pinet_core/acquisition/projection.py scripts/acquisition_projection_contracts.py acceptance_tests/test_acquisition_projection.py",
+      "result": "PASS",
+      "evidence": "All checks passed on final code"
+    },
+    {
+      "command": "uv run --locked python scripts/acquisition_projection_contracts.py",
+      "result": "PASS",
+      "evidence": "Final generated schema d21b8eac48714b16d9227c93cd4a3fb038ccf7ded39cea39e82a94ec4b392b38"
+    }
+  ],
+  "eventId": "1816efb6-7fa0-4cac-b624-a1f18cfc37a7",
+  "sequence": 2,
+  "at": "2026-10-10T03:02:39.158Z"
+}

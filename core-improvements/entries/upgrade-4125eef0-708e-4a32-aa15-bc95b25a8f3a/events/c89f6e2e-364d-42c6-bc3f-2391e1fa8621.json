@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Preserved first actual dialogue attempt as INVALID_FIXTURE: synthetic public domains encoded archetype IDs and could leak expected behavior. Replaced them with neutral hashed organization IDs before acceptance runs. No live recipient or release was involved.",
+  "eventId": "c89f6e2e-364d-42c6-bc3f-2391e1fa8621",
+  "sequence": 2,
+  "at": "2026-10-09T21:41:59.132Z"
+}

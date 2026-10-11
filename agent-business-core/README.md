@@ -1,5 +1,7 @@
 # Agentinių verslų core planas
 
+**Aktualu 2026-10-10:** [Verslomatika.lt platformos planas](verslomatika-plan/README.md) konkretina vieną visų verslų valdymo aplinką, esamų ir būsimų agentų registrą, direktoriaus pokalbį su kiekvienu agentu, faktais pagrįstas ataskaitas ir buhalteriui paruoštą apskaitos paketą. [Faktinis inventorius](verslomatika-plan/AUDIT.md) atskiria jau sukurtas runtime dalis nuo neįgyvendinto dashboardo bei viso gyvo klientų paieškos pipeline. Žemiau esantis 2026-09-30 tekstas yra istorinis pradinis planas; jo „runtime dar nėra“ statusas neaprašo vėlesnių dalinių įgyvendinimų.
+
 Parengta 2026-09-30. Tai įgyvendinimo planas vieno savininko prižiūrimai nišinių verslų grupei: keturi skirtingi simuliuojami verslai, jų direktoriai ir specialistai, bendros paslaugos ir automatinis sistemos tobulinimas. Šiame kataloge dar nėra veikiančio core, paleistų simuliacijų ar realių verslo operacijų.
 
 Rekomenduojama kurti vieną Python core su patvaria PostgreSQL būsena, atskirais vykdytojais ir įrankių valdymu. MD failai aprašo agentų darbą; duomenų bazė, programinės taisyklės ir izoliuota vykdymo aplinka užtikrina veiksmų teises. Kiekvienas verslas turi savo direktorių, specialistus ir duomenis. Apskaita, programavimas, integracijos ir vertinimas aptarnauja visą portfelį.

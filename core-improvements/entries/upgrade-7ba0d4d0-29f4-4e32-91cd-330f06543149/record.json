@@ -1,0 +1,24 @@
+{
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/projection.py",
+    "agent-business-core/runtime/scripts/acquisition_projection_contracts.py",
+    "agent-business-core/contracts/acquisition-projection-v1",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json",
+    "ACQUISITION_CORE.md"
+  ],
+  "category": "code",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "siteId": "core",
+  "summary": "Director and dashboard have no shared authoritative acquisition read projection; immutable replay ACKs cannot be used as current metrics",
+  "evidence": [
+    "Actual d78789f privacy/replay tests show historical recipient_bound ACK after source is retired; docs/ACQUISITION_DURABLE_CAPTURE_QA_2026-10-10.md",
+    "Native/current core and portal pipeline remains partial; planDIRECTOR_CHAT requires same current backend report with explicit missing coverage"
+  ],
+  "rollback": "Scoped revert unmounted capture read contract/library; preserve old literal receipts/current privacy state",
+  "id": "upgrade-7ba0d4d0-29f4-4e32-91cd-330f06543149",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "86b05d770ba9d0e5df34dba6fa252624d9a22523",
+  "createdAt": "2026-10-10T02:45:59.955Z"
+}

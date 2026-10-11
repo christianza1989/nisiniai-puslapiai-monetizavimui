@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "F preserved INCOMPLETE: ordinary privacy answer classified question/reply correctly but server rejected unsupported_reply because only commercial offer references were admitted. Implement explicit scoped evidence_ids for informational replies; invite still requires approved offer facts. Add foreign-source and source-only-vs-invite regressions; combine base/reply instruction receipt hash. Retest same privacy and mixed opt-out cases without rewriting F.",
+  "eventId": "5b8239c0-97cc-4962-af5e-a3f77501cbe1",
+  "sequence": 5,
+  "at": "2026-10-09T22:00:51.248Z"
+}

@@ -1,0 +1,40 @@
+{
+  "adapter_id": "madbeauty-native",
+  "address_rule": "madbeauty-email-v1-js-trim-lower",
+  "cases": [
+    {
+      "canonical_email": "owner@example.test",
+      "input_utf8": "[\"madbeauty-recipient-binding-v1\",\"madbeauty-email-v1-js-trim-lower\",\"business-test\",\"madbeauty\",\"capture-native\",\"test\",\"madbeauty-native\",\"recipient-test-v1\",\"IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII\",\"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\",\"owner@example.test\"]",
+      "name": "native-fixed",
+      "native_input": "Owner@example.test",
+      "recipient_digest": "v1=a39e849704152919e268adec4d97256611429ed7ed9f0eae2ac678615476bdf4"
+    },
+    {
+      "canonical_email": "a.b+tag@example.test",
+      "input_utf8": "[\"madbeauty-recipient-binding-v1\",\"madbeauty-email-v1-js-trim-lower\",\"business-test\",\"madbeauty\",\"capture-native\",\"test\",\"madbeauty-native\",\"recipient-test-v1\",\"IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII\",\"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\",\"a.b+tag@example.test\"]",
+      "name": "native-alias",
+      "native_input": " A.B+tag@EXAMPLE.TEST ",
+      "recipient_digest": "v1=a14ccb5fa83a64a14cb78a501e469d7fa810e2713427355e4de577d66fe1e368"
+    },
+    {
+      "canonical_email": "i̇@example.test",
+      "input_utf8": "[\"madbeauty-recipient-binding-v1\",\"madbeauty-email-v1-js-trim-lower\",\"business-test\",\"madbeauty\",\"capture-native\",\"test\",\"madbeauty-native\",\"recipient-test-v1\",\"IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII\",\"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\",\"i̇@example.test\"]",
+      "name": "native-dotted-i",
+      "native_input": "İ@EXAMPLE.TEST",
+      "recipient_digest": "v1=321bc8de47e6faad9a7b419c5b647623d3b3b1a25e2da748005f1ef3388f4fb3"
+    }
+  ],
+  "challenge_nonce": "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+  "fixture_only": true,
+  "invitation_ref": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "key_hex": "0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
+  "key_id": "recipient-test-v1",
+  "mac_domain": "madbeauty-recipient-binding-v1",
+  "recipient_contract_version": "0.1.0",
+  "scope": {
+    "business_id": "business-test",
+    "environment_class": "test",
+    "environment_id": "capture-native",
+    "site_id": "madbeauty"
+  }
+}

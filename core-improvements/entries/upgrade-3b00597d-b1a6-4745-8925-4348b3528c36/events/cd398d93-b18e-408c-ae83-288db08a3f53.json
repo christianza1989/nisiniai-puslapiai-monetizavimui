@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Reproduced in candidate0.1.0: numeric_false_accepted=True for external_sent=0 despite JSON schema boolean/false. Wire strict/frozen validation and explicit boolean false pre-validator fix the primitive mismatch; original2082c6ba remains in Git. Site owner received0.1.0; patch0.1.1 requires explicit adapter version update.",
+  "eventId": "cd398d93-b18e-408c-ae83-288db08a3f53",
+  "sequence": 3,
+  "at": "2026-10-09T23:45:57.817Z"
+}

@@ -1,0 +1,22 @@
+{
+  "summary": "Actual capture ledger incorrectly rejects older native lifecycle after account deletion instead of retaining stale no-resurrection receipt",
+  "siteId": "core",
+  "evidence": [
+    "Actual PostgreSQL/ASGI lifecycle test firstFAIL1/11deselected: late profile_submitted source_revision3 after account_deleted7 got409 not200stale",
+    "Existing acquisition0.1.1 canonical pure reducer records older revision stale before terminal guard; storage wrapper diverged"
+  ],
+  "rollback": "Scoped revert after disabling the capture ledger; preserve the first failing regression and terminal privacy protections",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/ledger.py",
+    "agent-business-core/contracts/recipient-retirement-v1/README.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json"
+  ],
+  "id": "upgrade-a0a53bf9-af36-48e5-80c9-f794cf1ef720",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "53599fd277581a4e469bd43a9989d770143e7ec7",
+  "createdAt": "2026-10-10T02:17:11.921Z"
+}

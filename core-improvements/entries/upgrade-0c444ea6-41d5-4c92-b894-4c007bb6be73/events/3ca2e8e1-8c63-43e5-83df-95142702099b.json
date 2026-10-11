@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Public-core two-document routing update uses canonical private rules/journal; public/runtime/PC adoption is not inferred from private gate. No public code/package/renderer modification.",
+  "checks": [
+    {
+      "command": "public git diff --check and exact two-path source review",
+      "result": "PASS",
+      "evidence": "AGENTS.md and docs/CORE_UPGRADES.md only; all-role duty and separate public issue/PR/checks/adoption explicit"
+    },
+    {
+      "command": "canonical git-freshness --repo public --companion private --phase continue",
+      "result": "PASS",
+      "evidence": "Public d0fd6b7d296303bfcaafadc4071945e675a72b96 and private d4ea8bf7384b70c4ea62a344001e3f8158812c56 both current in own bases"
+    },
+    {
+      "command": "node --test scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "Seventh regression rejects a public journal record as private same-filename coverage; final combined19/19 PASS"
+    }
+  ],
+  "eventId": "3ca2e8e1-8c63-43e5-83df-95142702099b",
+  "sequence": 2,
+  "at": "2026-10-10T00:25:48.533Z"
+}

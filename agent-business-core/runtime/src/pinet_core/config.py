@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     control_session_seconds: int = 28800
     customer_enabled: bool = False
     customer_agents_enabled: bool = False
+    xbot_bridge_enabled: bool = False
     customer_text_enabled: bool = False
     customer_text_runner_enabled: bool = False
     customer_portal_origin: str = "http://127.0.0.1:3017"

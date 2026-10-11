@@ -1,0 +1,7 @@
+{
+  "note": "Reproduced original 780bd36:6 failing scope/first-bind/rebind regressions. Added immutable scope + one-environment DB pin + prior-history adoption guard + queued-job cancellation. First full rerun:1FAIL/45PASS because old asset fixture created unscoped history before binding; fixture reordered to bind before asset import without weakening guard. Original evidence retained in follow-up QA.",
+  "status": "fixing",
+  "eventId": "162da6ec-8560-4ab3-90c5-14e0a68738d7",
+  "sequence": 2,
+  "at": "2026-10-11T07:06:55.808Z"
+}

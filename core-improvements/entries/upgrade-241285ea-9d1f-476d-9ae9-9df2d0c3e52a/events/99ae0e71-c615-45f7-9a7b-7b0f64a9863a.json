@@ -1,0 +1,7 @@
+{
+  "note": "Additional await policy-clock check: first fixture failure used queue snapshot before separate review, corrected by refetching the reviewed row. Actual next1FAIL reproduced stale pre-await timestamp (DIDNOTRAISE after actor verification expired). gate_async now samples wall clock after awaited source validation; new API takes only job. Existing86PASS/local-verified preserved;87-case final run follows. No new scope/provider/DB changes.",
+  "status": "fixing",
+  "eventId": "99ae0e71-c615-45f7-9a7b-7b0f64a9863a",
+  "sequence": 4,
+  "at": "2026-10-11T08:24:35.391Z"
+}

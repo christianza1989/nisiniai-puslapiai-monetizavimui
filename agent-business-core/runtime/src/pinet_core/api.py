@@ -52,6 +52,7 @@ from .public_projects.routes import router as public_router
 from .security import digest, operator_auth, signed_edge, worker_auth
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
+from .xbot_bridge.routes import router as xbot_bridge_router
 
 
 @asynccontextmanager
@@ -84,6 +85,7 @@ app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
 app.include_router(customer_text_router)
 app.include_router(customer_agents_router)
+app.include_router(xbot_bridge_router)
 app.include_router(content_work_router)
 app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)

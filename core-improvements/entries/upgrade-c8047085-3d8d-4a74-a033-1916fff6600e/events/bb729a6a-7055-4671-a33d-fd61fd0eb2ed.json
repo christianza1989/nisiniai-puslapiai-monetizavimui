@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "note": "Latest local synthetic bridge accepted at frozen4e2d0a9 with post-run clean Git; three reviewed P2 corrected and original FAILs/old25+25 receipts retained. Shared0024/API/config/dependency windows released; portal/calibration/live/operational adoption not performed.",
+  "commit": "4e2d0a9127105c18b86846ffc7f192de3158c910",
+  "checks": [
+    {
+      "command": "XBOT_QA_FROZEN=1 uv run pytest tests/test_xbot_bridge.py -q --tb=short",
+      "evidence": "agent-business-core/xbot/QA-PG-BRIDGE.json",
+      "result": "PASS"
+    },
+    {
+      "command": "uv run ruff check and ruff format --check scoped bridge/migration/tests",
+      "evidence": "agent-business-core/xbot/QA-PG-BRIDGE.md",
+      "result": "PASS"
+    }
+  ],
+  "eventId": "bb729a6a-7055-4671-a33d-fd61fd0eb2ed",
+  "sequence": 5,
+  "at": "2026-10-11T22:07:58.031Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Exact frozen source d3aa5ab:25actual clean-Git restricted-PG synthetic-local cases PASS365.01s plus25unchanged root customer_agents regression PASS189.72s (existing fake/source fixtures), separately scoped. DefaultOFF and canonical calibration/module/live admission remainUNVERIFIED/false. InitialFAILs retained. No operational15438/API8860/main/public/BFF/adoption. Subsequent delivery edits docs-only.",
+  "checks": [
+    {
+      "command": "XBOT_QA_FROZEN=1 uv run pytest tests/test_xbot_bridge.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "agent-business-core/xbot/QA-PG-BRIDGE.json"
+    },
+    {
+      "command": "uv run pytest tests/test_customer_agents.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "agent-business-core/xbot/QA-PG-BRIDGE.json"
+    },
+    {
+      "command": "ruff check/format, strictGET-only API, WindowsIANA, exact-staged20 and fullcandidate3366 plus84file credential-exclusion",
+      "result": "PASS",
+      "evidence": "agent-business-core/xbot/QA-PG-BRIDGE.md"
+    }
+  ],
+  "eventId": "d1c06e20-9f45-4ba6-b360-ed771cd6a622",
+  "sequence": 3,
+  "at": "2026-10-11T21:38:49.890Z"
+}

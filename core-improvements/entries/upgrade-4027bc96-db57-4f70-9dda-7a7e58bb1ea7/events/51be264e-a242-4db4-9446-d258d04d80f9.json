@@ -1,0 +1,7 @@
+{
+  "note": "Platform review reproduced5FAIL on known usage after revocation, second-call failure/cancel, actual CLI failed exit and last1000 truncation. Usage entry recorded after initial patch; original 780bd36 and failed checks preserved. Added per-call receipts before output acceptance, buffered cancellation/error accounting, lifetime totals and explicit unknown/reserved counts. First combined rerun51PASS; further buffered timeout/cancel/legacy/outbound cancellation checks now running.",
+  "status": "fixing",
+  "eventId": "51be264e-a242-4db4-9446-d258d04d80f9",
+  "sequence": 2,
+  "at": "2026-10-11T07:06:57.323Z"
+}

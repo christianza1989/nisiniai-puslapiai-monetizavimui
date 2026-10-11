@@ -1,0 +1,9 @@
+{
+  "note": "Scoped Xbot delivery opened for review as PR90. Tested implementation source commit2a62d7aed8111c3a46710e51f23ee5725fed7c93; maintained dashboard/auth/CRM integration and later niche calibration/live admission remain separately owned. Exact staged safety PASS42files; private credentials/DB/screenshots excluded.",
+  "commit": "2a62d7aed8111c3a46710e51f23ee5725fed7c93",
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/90",
+  "eventId": "b16de583-b1c0-4360-a797-d9d7ff45676a",
+  "sequence": 4,
+  "at": "2026-10-11T06:45:12.980Z"
+}

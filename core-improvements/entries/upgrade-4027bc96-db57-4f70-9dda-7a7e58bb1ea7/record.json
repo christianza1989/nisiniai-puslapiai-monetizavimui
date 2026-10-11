@@ -1,0 +1,24 @@
+{
+  "rollback": "Scoped revert of follow-up commits; keep module off; baseline and failed evidence preserved.",
+  "evidence": [
+    "agent-business-core/xbot/QA-REVIEW-FOLLOWUP.md",
+    "agent-business-core/xbot/tests/test_finish.py"
+  ],
+  "paths": [
+    "agent-business-core/xbot/xbot/codex.py",
+    "agent-business-core/xbot/xbot/agent.py",
+    "agent-business-core/xbot/xbot/service.py",
+    "agent-business-core/xbot/xbot/store.py",
+    "agent-business-core/xbot/xbot/module.py",
+    "agent-business-core/xbot/tests/test_finish.py",
+    "agent-business-core/xbot/tests/probe_codex.py"
+  ],
+  "summary": "PR90 review showed known CLI usage lost on rejected output, failed exit, second-call failure/cancel and totals truncated by last1000 unrelated records.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/90",
+  "category": "code",
+  "siteId": "core",
+  "id": "upgrade-4027bc96-db57-4f70-9dda-7a7e58bb1ea7",
+  "branch": "codex/xbot-finish-20261011",
+  "baseSha": "780bd36f1e39b19b6fb53129be228ea7483dfa19",
+  "createdAt": "2026-10-11T07:05:42.316Z"
+}

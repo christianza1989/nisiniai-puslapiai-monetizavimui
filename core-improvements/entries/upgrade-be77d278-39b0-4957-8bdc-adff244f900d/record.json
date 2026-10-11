@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "Savininko užsakytam visos tekstų sistemos auditui trūksta vienos privalomos, nuolat taikomos tipografikos sutarties builder/planner/audit įėjimo taškuose; esami art-direction ir R2/S2 reikalavimai išskaidyti.",
+  "category": "rules",
+  "evidence": [
+    "AGENTS.md ir SKILLS/PROJECT_CONTRACT.md source 13c9649c76dd48cdf426604cb721e1ccd58a9854 neturi atskiro visos tekstų sistemos priežiūros reikalavimo.",
+    "SKILLS/niche-site-builder/references/art-direction.md aprašo tipografiką ir DESIGN; SKILLS/niche-site-audit/references/checklist.md R2/S2 apima įskaitomumą ir enlargement, bet nesujungia kasdienės tekstų kūrimo ir visų textroles priežiūros.",
+    "Savininko 2026-10-10 tiesioginis pavedimas: į core taisykles įtraukti nuolatinę visos šriftų sutvarkymo sistemos priežiūrą."
+  ],
+  "paths": [
+    "AGENTS.md",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "SKILLS/niche-site-builder/SKILL.md",
+    "SKILLS/niche-site-builder/references/typography-system.md",
+    "SKILLS/niche-content-planner/SKILL.md",
+    "SKILLS/niche-site-audit/SKILL.md",
+    "SKILLS/catalog.json",
+    "WORKSTREAMS.md",
+    "research/typography-system-2026-10-10/REVIEW.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/83",
+  "rollback": "Scoped revert of this typography rules PR; no runtime or historical audit changes.",
+  "id": "upgrade-be77d278-39b0-4957-8bdc-adff244f900d",
+  "branch": "codex/typography-system-20261010",
+  "baseSha": "13c9649c76dd48cdf426604cb721e1ccd58a9854",
+  "createdAt": "2026-10-10T16:21:57.697Z"
+}

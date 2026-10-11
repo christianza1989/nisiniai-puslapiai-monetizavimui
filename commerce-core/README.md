@@ -28,9 +28,11 @@ npm run demo:seed
 
 Atskiras `npm run dev:worker` reikalauja vietinės D1 migracijos ir testinio katalogo; greičiausias atkuriamas D1 bandymas — `npm run test:worker`. UI serviravimas dabar tik Node dev adapteryje; Worker assets ir production identity dar neaktyvūs.
 
-`verify` patikrina formatą, 39 domeno/HTTP testus, atskirą workerd/D1 integracijos kelią ir Wrangler dry-run build. Testai nesikreipia į Stripe ar vežėjo realų API. `build:worker` nieko neišleidžia į Cloudflare. Miniflare 5 alpha yra užfiksuota vietinio testavimo priklausomybė; production patikra lieka atskiras vartas.
+`verify` patikrina formatą, 42 domeno/HTTP testus, atskirą workerd/D1 integracijos kelią ir Wrangler dry-run build. Testai nesikreipia į Stripe ar vežėjo realų API. `build:worker` nieko neišleidžia į Cloudflare. Miniflare 5 alpha yra užfiksuota vietinio testavimo priklausomybė; production patikra lieka atskiras vartas.
 
 Node adapteris taiko numeruotas migracijas transakcijomis; bendras `applyMigrations` naudojamas native D1 bandyme. Taikytos SQL migracijos tikrinamos pagal SHA256 ir neturi būti perrašomos. Senas 0001 duomenų failas priimamas be istorijos ar likučių ištrynimo.
 
 Viešame runtime naudoti `src/worker.mjs`, o ne `test/worker-harness.mjs`. Testinis įėjimas turi dirbtinį checkout/vežėją/operatorių ir niekada neturi būti diegiamas. Production aplinką dabartinis Worker atmeta.
 
+
+0.4 prideda audituojamą medžiagų partijų karantiną/grąžinimą ir inventorizaciją, atominius stale/race vartus ir operatoriaus ekraną. [Naujas priėmimo kvitas](docs/CONTINUATION_2026_10_12_LOTS.md). Svetainę ir turinį savininkas dabar pavedė atskirai lygiagrečiai sesijai.

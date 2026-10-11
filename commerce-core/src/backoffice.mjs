@@ -99,7 +99,7 @@ export class Backoffice {
       'component_lots',
       p.id,
       h,
-      'INSERT INTO component_lots VALUES(?,?,?,?,?,?,?,?,?,?)',
+      'INSERT INTO component_lots(store_id,id,component_id,supplier_ref,received,available,expires_at,payload_hash,actor_ref,created_at) VALUES(?,?,?,?,?,?,?,?,?,?)',
       [
         store,
         p.id,
@@ -115,6 +115,70 @@ export class Backoffice {
       actor,
       'ComponentReceived',
     );
+  }
+  async controlLot(store, env, input, actor) {
+    await this.guard(store, env, actor);
+    requireValue(
+      input &&
+        identifier(input.id) &&
+        identifier(input.lotId) &&
+        ['adjust', 'quarantine', 'release'].includes(input.kind) &&
+        integer(input.delta, -100000000, 100000000) &&
+        integer(input.expectedAvailable, 0) &&
+        integer(input.expectedVersion, 0) &&
+        text(input.reason) &&
+        input.reason.trim().length >= 3 &&
+        (input.kind === 'adjust' ? input.delta !== 0 : input.delta === 0),
+      'invalid_lot_control',
+    );
+    requireValue(
+      await this.s.one(
+        'SELECT id FROM component_lots WHERE store_id=? AND id=?',
+        store,
+        input.lotId,
+      ),
+      'lot_not_found',
+      404,
+    );
+    const p = {
+        id: input.id,
+        lotId: input.lotId,
+        kind: input.kind,
+        delta: input.delta,
+        expectedAvailable: input.expectedAvailable,
+        expectedVersion: input.expectedVersion,
+        reason: input.reason.trim(),
+        actor,
+      },
+      h = await hash(p);
+    try {
+      return await this.immutableInsert(
+        store,
+        'lot_controls',
+        p.id,
+        h,
+        'INSERT INTO lot_controls VALUES(?,?,?,?,?,?,?,?,?,?,?)',
+        [
+          store,
+          p.id,
+          p.lotId,
+          p.kind,
+          p.delta,
+          p.expectedAvailable,
+          p.expectedVersion,
+          p.reason,
+          h,
+          actor,
+          this.s.now(),
+        ],
+        actor,
+        'MaterialLotControlled',
+      );
+    } catch (error) {
+      if (String(error.message).includes('lot_state_conflict'))
+        throw new CommerceError('lot_state_conflict', 409);
+      throw error;
+    }
   }
   async recipe(store, env, input, actor) {
     await this.guard(store, env, actor);
@@ -193,7 +257,7 @@ export class Backoffice {
       let left = line.quantity * p.quantity;
       requireValue(integer(left, 1), 'invalid_assembly');
       const lots = await this.s.rows(
-        'SELECT * FROM component_lots WHERE store_id=? AND component_id=? AND available>0 AND (expires_at IS NULL OR expires_at>?) ORDER BY expires_at IS NULL,expires_at,created_at,id',
+        'SELECT * FROM component_lots WHERE store_id=? AND component_id=? AND available>0 AND quarantined=0 AND (expires_at IS NULL OR expires_at>?) ORDER BY expires_at IS NULL,expires_at,created_at,id',
         store,
         line.id,
         at,
@@ -250,6 +314,10 @@ export class Backoffice {
       components: await this.s.rows('SELECT * FROM components WHERE store_id=? ORDER BY id', store),
       lots: await this.s.rows(
         'SELECT * FROM component_lots WHERE store_id=? ORDER BY created_at DESC,id LIMIT 100',
+        store,
+      ),
+      lotControls: await this.s.rows(
+        'SELECT * FROM lot_controls WHERE store_id=? ORDER BY created_at DESC,id DESC LIMIT 100',
         store,
       ),
       recipes: (await this.s.rows('SELECT * FROM recipes WHERE store_id=? ORDER BY id', store)).map(

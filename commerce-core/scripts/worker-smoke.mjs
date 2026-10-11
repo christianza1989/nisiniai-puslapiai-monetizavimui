@@ -347,6 +347,65 @@ try {
   assert.equal(assemblies.filter((r) => r.status === 'fulfilled').length, 1);
   assert.equal((await back.inventory('store_a', 'sandbox')).assemblies.length, 1);
   assert.equal((await back.inventory('store_a', 'sandbox')).lots[0].available, 0);
+  const count = {
+    id: 'count_d1',
+    lotId: 'lot',
+    kind: 'adjust',
+    delta: 1,
+    expectedAvailable: 0,
+    expectedVersion: 1,
+    reason: 'Testinė native D1 inventorizacija',
+  };
+  await Promise.all([
+    back.controlLot('store_a', 'sandbox', count, actor),
+    back.controlLot('store_a', 'sandbox', count, actor),
+  ]);
+  const lotPause = {
+    id: 'lot_pause_d1',
+    lotId: 'lot',
+    kind: 'quarantine',
+    delta: 0,
+    expectedAvailable: 1,
+    expectedVersion: 2,
+    reason: 'Testinis native D1 karantinas',
+  };
+  await back.controlLot('store_a', 'sandbox', lotPause, actor);
+  await assert.rejects(
+    back.controlLot('store_a', 'sandbox', { ...lotPause, id: 'stale_lot_d1' }, actor),
+    /lot_state_conflict/,
+  );
+  await assert.rejects(
+    back.assemble(
+      'store_a',
+      'sandbox',
+      { id: 'paused_assembly_d1', recipeId: 'recipe_couple', quantity: 1 },
+      actor,
+    ),
+    /component_stock_conflict/,
+  );
+  assert.equal((await back.inventory('store_a', 'sandbox')).assemblies.length, 1);
+  await back.controlLot(
+    'store_a',
+    'sandbox',
+    {
+      ...lotPause,
+      id: 'lot_release_d1',
+      kind: 'release',
+      expectedVersion: 3,
+      reason: 'Baigta native D1 patikra',
+    },
+    actor,
+  );
+  await back.assemble(
+    'store_a',
+    'sandbox',
+    { id: 'released_assembly_d1', recipeId: 'recipe_couple', quantity: 1 },
+    actor,
+  );
+  const controlled = (await back.inventory('store_a', 'sandbox')).lots[0];
+  assert.equal(controlled.available, 0);
+  assert.equal(controlled.control_version, 5);
+  await assert.rejects(service.stmt('DELETE FROM lot_controls').run(), /lot_control_immutable/);
   const finance = {
     origin: 'test_stripe',
     rows: [

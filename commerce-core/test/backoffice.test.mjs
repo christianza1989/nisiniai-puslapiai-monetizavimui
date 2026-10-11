@@ -118,6 +118,261 @@ test('assembly consumes shared lots once and rolls back output, lot lines and ev
   db.close();
 });
 
+test('material lot controls preserve receipt, audit, replay and versioned inventory state', async () => {
+  const { db, s, back: b } = await setup();
+  await materials(b);
+  const pause = {
+    id: 'lot_pause',
+    lotId: 'a_lot',
+    kind: 'quarantine',
+    delta: 0,
+    expectedAvailable: 2,
+    expectedVersion: 0,
+    reason: 'Testinis defekto tyrimas',
+  };
+  await Promise.all([
+    b.controlLot(store, env, pause, actor),
+    b.controlLot(store, env, pause, actor),
+  ]);
+  let a = (await b.inventory(store, env)).lots.find((l) => l.id === 'a_lot');
+  assert.equal(a.quarantined, 1);
+  assert.equal(a.control_version, 1);
+  assert.equal(a.available, 2);
+  assert.equal((await b.inventory(store, env)).lotControls.length, 1);
+  await b.receive(
+    store,
+    env,
+    { id: 'a_lot', componentId: 'a', supplierRef: 'TEST-a', quantity: 2 },
+    actor,
+  );
+  assert.equal((await b.inventory(store, env)).lots.find((l) => l.id === 'a_lot').quarantined, 1);
+  await assert.rejects(
+    b.controlLot(store, env, { ...pause, id: 'stale' }, actor),
+    /lot_state_conflict/,
+  );
+  await assert.rejects(b.controlLot('store_b', env, pause, actor), /lot_not_found/);
+  await assert.rejects(
+    b.controlLot(store, env, { ...pause, kind: 'adjust', delta: 0 }, actor),
+    /invalid_lot_control/,
+  );
+  await assert.rejects(
+    b.controlLot(
+      store,
+      env,
+      { ...pause, id: 'negative', kind: 'adjust', delta: -3, expectedVersion: 1 },
+      actor,
+    ),
+    /lot_state_conflict/,
+  );
+  assert.equal((await b.inventory(store, env)).lotControls.length, 1);
+  const release = {
+    ...pause,
+    id: 'lot_release',
+    kind: 'release',
+    expectedVersion: 1,
+    reason: 'Patikrinta testinė partija',
+  };
+  await b.controlLot(store, env, release, actor);
+  const count = {
+    ...pause,
+    id: 'lot_count',
+    kind: 'adjust',
+    delta: 1,
+    expectedVersion: 2,
+    reason: 'Testinė inventorizacija',
+  };
+  const race = await Promise.allSettled([
+    b.controlLot(store, env, count, actor),
+    b.controlLot(store, env, { ...count, id: 'second_count' }, actor),
+  ]);
+  assert.equal(race.filter((r) => r.status === 'fulfilled').length, 1);
+  assert.equal(race.find((r) => r.status === 'rejected').reason.code, 'lot_state_conflict');
+  a = (await b.inventory(store, env)).lots.find((l) => l.id === 'a_lot');
+  assert.equal(a.available, 3);
+  assert.equal(a.received, 2);
+  assert.equal(a.quarantined, 0);
+  assert.equal(a.control_version, 3);
+  assert.equal((await s.rows("SELECT * FROM audit WHERE kind='MaterialLotControlled'")).length, 3);
+  await assert.rejects(
+    s.stmt("UPDATE component_lots SET received=99 WHERE id='a_lot'").run(),
+    /lot_receipt_immutable/,
+  );
+  await assert.rejects(s.stmt('DELETE FROM lot_controls').run(), /lot_control_immutable/);
+  db.close();
+});
+
+test('quarantine between assembly selection and batch rolls back SKU, consumed lots and audit', async () => {
+  const { db, s, back: b } = await setup();
+  await materials(b);
+  const stock = (await s.catalog(store, env)).find((p) => p.sku === 'couple').available;
+  const batch = db.batch.bind(db);
+  let intercepted = false;
+  db.batch = async (statements) => {
+    if (!intercepted) {
+      intercepted = true;
+      db.batch = batch;
+      await b.controlLot(
+        store,
+        env,
+        {
+          id: 'pause_race',
+          lotId: 'a_lot',
+          kind: 'quarantine',
+          delta: 0,
+          expectedAvailable: 2,
+          expectedVersion: 0,
+          reason: 'Testinė karantino lenktynė',
+        },
+        actor,
+      );
+    }
+    return batch(statements);
+  };
+  await assert.rejects(
+    b.assemble(
+      store,
+      env,
+      { id: 'quarantine_assembly', recipeId: 'couple_recipe', quantity: 1 },
+      actor,
+    ),
+    /component_stock_conflict/,
+  );
+  let data = await b.inventory(store, env);
+  assert.equal(data.assemblies.length, 0);
+  assert.equal(
+    data.lots.every((l) => l.available === 2),
+    true,
+  );
+  assert.equal((await s.catalog(store, env)).find((p) => p.sku === 'couple').available, stock);
+  assert.equal((await s.rows('SELECT * FROM assembly_lots')).length, 0);
+  assert.equal((await s.rows("SELECT * FROM audit WHERE kind='KitsAssembled'")).length, 0);
+  await assert.rejects(
+    b.assemble(store, env, { id: 'still_paused', recipeId: 'couple_recipe', quantity: 1 }, actor),
+    /component_stock_conflict/,
+  );
+  await b.controlLot(
+    store,
+    env,
+    {
+      id: 'release_race',
+      lotId: 'a_lot',
+      kind: 'release',
+      delta: 0,
+      expectedAvailable: 2,
+      expectedVersion: 1,
+      reason: 'Baigta testinė patikra',
+    },
+    actor,
+  );
+  await b.assemble(
+    store,
+    env,
+    { id: 'after_release', recipeId: 'couple_recipe', quantity: 1 },
+    actor,
+  );
+  data = await b.inventory(store, env);
+  assert.equal(data.lots.find((l) => l.id === 'a_lot').control_version, 3);
+  await assert.rejects(
+    b.controlLot(
+      store,
+      env,
+      {
+        id: 'stale_after_assembly',
+        lotId: 'a_lot',
+        kind: 'adjust',
+        delta: -1,
+        expectedAvailable: 2,
+        expectedVersion: 2,
+        reason: 'Pasenęs skaičiavimas',
+      },
+      actor,
+    ),
+    /lot_state_conflict/,
+  );
+  db.close();
+});
+
+test('lot controls use private stock grants and releasing an expired lot does not make it eligible', async () => {
+  const { db, s, back: b } = await setup();
+  await b.component(
+    store,
+    env,
+    { id: 'expired_component', name: 'Testinė pasibaigusi medžiaga', unit: 'unit' },
+    actor,
+  );
+  await b.receive(
+    store,
+    env,
+    {
+      id: 'expired_control',
+      componentId: 'expired_component',
+      supplierRef: 'TEST-expired',
+      quantity: 2,
+      expiresAt: Date.now() - 1000,
+    },
+    actor,
+  );
+  await b.recipe(
+    store,
+    env,
+    {
+      id: 'expired_recipe',
+      sku: 'couple',
+      components: [{ id: 'expired_component', unit: 'unit', quantity: 1 }],
+    },
+    actor,
+  );
+  const handler = createHandler({
+    service: s,
+    environment: env,
+    operatorAuthorize: async () => ({ id: actor, storeId: store, permissions: ['read'] }),
+  });
+  const input = {
+    id: 'expired_pause',
+    lotId: 'expired_control',
+    kind: 'quarantine',
+    delta: 0,
+    expectedAvailable: 2,
+    expectedVersion: 0,
+    reason: 'Pasibaigęs galiojimas',
+  };
+  assert.equal(
+    (
+      await handler(
+        new Request('https://store-a.example/api/operator/lot-controls', {
+          method: 'POST',
+          body: JSON.stringify(input),
+        }),
+      )
+    ).status,
+    403,
+  );
+  await b.controlLot(store, env, input, actor);
+  await b.controlLot(
+    store,
+    env,
+    {
+      ...input,
+      id: 'expired_release',
+      kind: 'release',
+      expectedVersion: 1,
+      reason: 'Testinis būsenos grąžinimas',
+    },
+    actor,
+  );
+  await assert.rejects(
+    b.assemble(
+      store,
+      env,
+      { id: 'expired_output', recipeId: 'expired_recipe', quantity: 1 },
+      actor,
+    ),
+    /component_stock_conflict/,
+  );
+  assert.equal((await b.inventory(store, env)).lots[0].available, 2);
+  db.close();
+});
+
 test('lot receipt/recipe replay is immutable; FEFO skips expired lots and enforces the unit', async () => {
   const { db, s, back: b } = await setup();
   await b.component(store, env, { id: 'a', name: 'Testinė medžiaga', unit: 'g' }, actor);

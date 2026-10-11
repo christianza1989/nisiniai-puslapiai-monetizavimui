@@ -45,3 +45,5 @@ Viešo runtime pritaikymas per companion repo, su tuo pačiu siteId ir dabartini
 
 
 2026-10-12 tęsiant įgyvendintas 0.3 vietinis komponentų/surinkimo, finansinių source import/reconcile ir B2B partnerio/kainyno/MOQ/casepack/quote/accept/reorder pagrindas. Operatorius šiuos duomenis mato per Medžiagos/Sutikrinimas/Didmena ekranus. 39 Node ir native D1 įrodymai; originalių finansinių failų adapteriai, pilnas M5/M6, realūs teikėjai ir visas roadmap neužbaigti. Ankstesnė artimiausia darbų eilė lieka istorinis 0.2 taškas; pradėti nuo aktualios IMPLEMENTATION_STATUS lentelės, o ne kartoti baigtus domenus.
+
+2026-10-12 tęsinys0.4: partijų karantinas/grąžinimas ir inventorizacija su immutable actor/reason/versija įgyvendinti.42Node/nativeD1 ir realus IAB kelias. Savininkas leido S1/S2 vietinį įgyvendinimą lygiagrečiai naujai sesijai; ankstesnė nuosekli svetainės seka dabar atnaujinta pagal [perdavimą](STOREFRONT_HANDOFF_2026_10_12.md). Parent išlieka commerce-core savininkas; realus activation nepaspartinamas vien sesijos sukūrimu.

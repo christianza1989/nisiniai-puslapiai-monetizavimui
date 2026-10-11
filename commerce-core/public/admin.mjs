@@ -28,8 +28,12 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  lot_state_conflict:
+    'Partijos likutis arba būsena pasikeitė. Atnaujinkite sąrašą, patikrinkite kiekį ir pradėkite naują veiksmą.',
+  invalid_lot_control: 'Likučio korekcijai įrašykite kitą kiekį ir bent 3 simbolių priežastį.',
+  lot_not_found: 'Partija nerasta. Atnaujinkite partijų sąrašą.',
   component_stock_conflict:
-    'Nepakanka galiojančių medžiagų arba likutis pasikeitė. Atnaujinkite partijų sąrašą ir patikrinkite sudėtį.',
+    'Nepakanka tinkamų medžiagų arba likutis pasikeitė. Patikrinkite likučius, galiojimą ir karantino būseną.',
   invalid_recipe: 'Rinkinio sudėčiai pasirinkite bent vieną medžiagą ir įrašykite teigiamą kiekį.',
   financial_source_conflict:
     'Šaltinio ID jau įrašytas su kitais duomenimis. Originalas išsaugotas; patikrinkite šaltinį.',

@@ -88,6 +88,10 @@ export function createHandler({
           return json(await reads[path]());
         }
         const writes = {
+          '/api/operator/lot-controls': [
+            'stock',
+            (input, actor) => backoffice.controlLot(store.id, environment, input, actor),
+          ],
           '/api/operator/wholesale-approvals': [
             'wholesale',
             (input, actor) => wholesale.approval(store.id, environment, input, actor),

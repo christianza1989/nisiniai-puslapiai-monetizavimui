@@ -1,6 +1,6 @@
 # Vietinio prekybos API sutartis
 
-Versija 0.2. Tai įgyvendinti endpointai, ne visas roadmap. Visos JSON išvestys turi `no-store`, `noindex` ir `nosniff`. Nežinomas host — 404. Parduotuvę ir aplinką nustato serveris; kliento `storeId`, kainos ar įmonės laukai jų nekeičia. Pinigai yra sveiki mažiausi valiutos vienetai. POST Origin, kai pateiktas, turi sutapti su request origin. JSON/webhook body riba 64 KiB.
+Versija 0.4. Tai įgyvendinti endpointai, ne visas roadmap. Visos JSON išvestys turi `no-store`, `noindex` ir `nosniff`. Nežinomas host — 404. Parduotuvę ir aplinką nustato serveris; kliento `storeId`, kainos ar įmonės laukai jų nekeičia. Pinigai yra sveiki mažiausi valiutos vienetai. POST Origin, kai pateiktas, turi sutapti su request origin. JSON/webhook body riba 64 KiB.
 
 | Endpointas | Įvestis / leidimas | Rezultatas |
 |---|---|---|
@@ -81,6 +81,14 @@ Visi šie endpointai privatūs, pagal host parduotuvę ir serverio principal. GE
 
 Suma visada sveikais mažiausiais valiutos vienetais. Payment suma teigiama; refund, fee, payout — neigiama; bank gali būti abiejų ženklų. Origin+reference dedup ir hash neleidžia perrašyti šaltinio. Payout/bank pora privalo sutapti pagal išmokos ID, valiutą ir priešingas sumas; abu šaltiniai sunaudojami tik vieną kartą. Importuojami normalizuoti faktai; originalių banko failų/Stripe balance API adapteris ir jų išsamumo kontrolė dar neprijungti.
 
-Surinkimas padidina tik paruoštų rinkinių likutį; pardavimas nerezervuoja nepagamintų rinkinių. Unit yra explicit matavimo vienetas. Galiojimo neturinti partija laikoma tinkama, kol operatorius jos nekarantinuoja kitu priimtu procesu; atskiro karantino/inventorizacijos domeno šiame pakete nėra. Memocasting tikrų sudėčių, dažų savikainos ir šeimos pakuotės faktų fixture nepakeičia.
+Surinkimas padidina tik paruoštų rinkinių likutį; pardavimas nerezervuoja nepagamintų rinkinių. Unit yra explicit matavimo vienetas. Galiojimo neturinti partija laikoma tinkama, jei nėra karantine.0.4 operatorius gali ją karantinuoti arba patikslinti likutį per audituojamą kontrolės API. Pirminis priėmimas nekeičiamas. Memocasting tikrų sudėčių, dažų savikainos ir šeimos pakuotės faktų fixture nepakeičia.
 
 Didmenos UI leidžia kurti kainyno versiją, įrašyti nepatvirtintą partnerį, patvirtinti/stabdyti prekybą, rengti, priimti ir pakartoti pasiūlymą. Migracija 0005 saugo approval versiją ir nekeičiamą jos istoriją. Partnerio patvirtinimas tikrinamas dar kartą užsakymo transakcijoje: sustabdymas tarp skaitymo ir batch nesukuria užsakymo ar dalinių rezervacijų. Jau priimto pasiūlymo replay grąžina jo istorinį užsakymą. Pirminio partnerio apibrėžties replay neatšaukia vėlesnio prekybos sustabdymo. Esamo partnerio adreso/kainyno pakeitimas, partnerio portalas, credit terms, mėginiai, oficiali proforma ir sutartys lieka plėtra. Production core identity, queue/consumer ir storefront neprijungti.
+
+## Medžiagų partijos kontrolė — 0.4
+
+POST /api/operator/lot-controls reikia serverio stock teisės. Body: id,lotId,kind (adjust/quarantine/release),delta,expectedAvailable,expectedVersion,reason. Delta sveikais pirminio matavimo vienetais; adjust nenulinis, karantino/grąžinimo0. Reason3–160simbolių. Serverio actor įrašomas automatiškai. GET /api/operator/components papildomai grąžina lotControls (100naujausių), o lots turi quarantined/control_version.
+
+Pakartotas tas pats id ir payload grąžina tą pačią kontrolę; pakeistas payload —409. Likutis ir versija tikrinami SQL transakcijoje; kiekio/neigiamos sumos/stale/būsenos konfliktas409. Kontrolė, pirminis priėmimas ir actor/reason istorija nekintantys. Surinkimas padidina partijos versiją, todėl sena inventorizacija negali perrašyti naujo sunaudojimo. Partijos išleidimas iš karantino nepakeičia expiresAt: expired vis tiek netinka. Surinkimo transakcijos triggeris dar kartą tikrina karantiną ir galiojimą pagal assembly timestamp; sustabdžius partiją tarp pasirinkimo ir batch gatavas SKU, lot lines ir audit visi rollback.
+
+UI skaičiuotą likutį paverčia delta nuo matyto serverio likučio.0korekcija atmetama; po konflikto reikia atnaujinto sąrašo ir naujo veiksmo. Kontrolė dar nėra platesnis laboratorinis kokybės/certification, supplier recalls ar naujas galiojimo datos keitimas.

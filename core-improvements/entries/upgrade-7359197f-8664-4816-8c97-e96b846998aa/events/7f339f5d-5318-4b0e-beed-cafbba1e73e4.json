@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Exact public baseline9090007 (0b784a2 plus reviewed dc3 helper) reproduced index self/two-index/nested-nearest/unrelated breadcrumb bug:0PASS3FAIL1.674s. Original immutable own output/native-index-review/baseline.private.log SHA25694a9d295dd89b5a3cd3e3e9210f60727266f24beb0bdf73721580646b6433332. New native source selects current identity or longest eligible slug prefix without global fallback; same maintained projection/schema/gates; 6native testsPASS1.336s. Child source reservation PR27comment6104790941. Full core/build/SEO/isolated Workers HTTP pending, no customer/provider/DNS/deploy/runtime writes.",
+  "eventId": "7f339f5d-5318-4b0e-beed-cafbba1e73e4",
+  "sequence": 2,
+  "at": "2026-10-11T02:56:34.098Z"
+}

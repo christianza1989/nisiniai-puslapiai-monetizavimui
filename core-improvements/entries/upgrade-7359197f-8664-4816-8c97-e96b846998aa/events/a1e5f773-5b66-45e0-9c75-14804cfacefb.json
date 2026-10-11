@@ -1,0 +1,40 @@
+{
+  "status": "local-verified",
+  "commit": "6d5991b77b3d02efec5857ec541070a18352c1ed",
+  "note": "Public P2 source6d5991b is clean/pushed on own codex/native-niche-index-selection-20261011 and fast-forwarded existing PR27; original0b784a2 preserved, dc3 helper integrated as90900076. Root public-evidence has dc3 already, so original0b plus6d is sufficient. Current/self and longest eligible prefix indexes fix schema+visible breadcrumbs; no unrelated fallback, publication/schema/host/gift/V1/media gates unchanged. Root independent frozen review found no additional P0-P2. After actual HTTP phases ended root approved existing test-only const module -> loadedModule naming fix; final scoped lint PASS. Original0PASS3FAIL1.674s, old lint line20FAIL (confirmed on committed0b), and one prematurely invoked AFTER clock-guardFAIL remain immutable own output evidence. No tests/gates weakened. Own production Workers70707/82670/76423 exited; root8855 untouched. Exact testOnly synthetic package receipts, not customer content or production adoption/quality/contact/delivery/launch proof. Full platform OPEN; no provider/SMTP/DNS/customer/operational DB/public deploy or main merge.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "Final61PASS0FAIL2.968s after loadedModule rename; own public output/native-index-review/core-final-lintfix.private.log. Initial fixed61PASS2.508s and stronger visible-breadcrumb61PASS3.099s preserved."
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "Own public canonical production build PASS; isolated native testOnly before and retired production builds PASS. output/native-index-review/build.private.log and isolated sandbox output/http-build-{before,retired}.private.log."
+    },
+    {
+      "command": "SEO_SMOKE_BASE_URL=http://127.0.0.1:8898 npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "Actual own Workers production V1 greitossvetaines7pages/robots/sitemap/llms/schema/favicon/unknown-host404 PASS; own output/native-index-review/seo-smoke.private.log."
+    },
+    {
+      "command": "node tests/native-niche-v2-http.mjs check output/native-index-http-20261011/dovanos-memorycasting before|after|retired http://127.0.0.1:8899",
+      "result": "PASS",
+      "evidence": "Actual isolated Workers before31 requests, after32, retired31 PASS with real wall-clock boundary2026-10-11T03:01:25.746Z. Responsive640/1280/1600WebP, rich links, future/revoked page+asset+alias exclusion, exact package digests, gift and peer hosts, native POST405/no contact default, localhost-only preview and real previewhost404; dated immutable phase receipts under own ignored sandbox/output. Original early AFTER clockFAIL retained."
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js components/niche/native-content-site.tsx tests/native-niche-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "Final scoped lint PASS after approved test-only loadedModule rename; original and committed0b lint FAIL preserved, same helper semantics tested by final61PASS."
+    },
+    {
+      "command": "git diff --cached --check; node scripts/repository-safety.mjs <own-public-checkout> --staged",
+      "result": "PASS",
+      "evidence": "Exact2staged blobs13731bytes PASS; component6147B/test7584B, no safety findings. Final paired handoff PASS2026-10-11T03:04:43-45Z, current private7af6b964/publicec8a9c03, no other checkout mutated."
+    }
+  ],
+  "eventId": "a1e5f773-5b66-45e0-9c75-14804cfacefb",
+  "sequence": 3,
+  "at": "2026-10-11T03:06:03.133Z"
+}

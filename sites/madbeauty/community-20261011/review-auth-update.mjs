@@ -7,7 +7,7 @@ import {core,repo} from '../release-20261010/pinned-core.mjs';
 
 // Updates three browser modules on the existing isolated reviewer only.
 // Does not rebuild the Worker, provision namespaces/secrets, or activate Facebook.
-const phase=process.argv[2];assert.ok(['prepare','before','deploy','after'].includes(phase));
+const phase=process.argv[2];assert.ok(['prepare','before','deploy','after','after-connector'].includes(phase));
 const dir=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011/review');
 const accepted=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011/trial/assets');
 const files=['account-ui.mjs','auth-entry.mjs','http-adapter.mjs'];
@@ -68,8 +68,13 @@ if(phase==='deploy'){
  const actual=await settings();if(!actual.observability.redact_query_string)await api(workers+'scripts/'+name+'/script-settings',{method:'PATCH',body:JSON.stringify({observability:before.review.settings.observability})});
  console.log(JSON.stringify({state:'DEPLOYED_ACCEPTANCE_PENDING',version,workerUnchanged:true}));
 }
-if(phase==='after'){
- assert.equal(candidate.state,'DEPLOYED_ACCEPTANCE_PENDING');const before=await json('auth-update-before.private.json'),after=await snapshot();
+if(phase==='after'||phase==='after-connector'){
+ assert.equal(candidate.state,'DEPLOYED_ACCEPTANCE_PENDING');const before=await json('auth-update-before.private.json');let after;
+ if(phase==='after-connector'){
+  // Existing CLI OAuth expired after upload. This is a read-only bridge through
+  // the already-authorized connector, not a credential or privilege change.
+  const proof=await json('auth-update-after-connector.private.json');assert.equal(proof.source,'Cloudflare connector scoped GET settings/deployments/domains');assert.equal(proof.account,account);const age=Date.now()-Date.parse(proof.at);assert.ok(age>=0&&age<=120_000,'Refresh connector readback');after=proof.readback;
+ }else after=await snapshot();
  assert.deepEqual(after.protectedWorkers,before.protectedWorkers);assert.deepEqual(after.domain,before.domain);
  const normalize=s=>({bindings:s.bindings.filter(b=>b.name!=='ASSETS').sort((a,b)=>a.name.localeCompare(b.name)),compatibility_date:s.compatibility_date,compatibility_flags:s.compatibility_flags,observability:s.observability,limits:s.limits});
  assert.deepEqual(normalize(after.review.settings),normalize(before.review.settings),'Reviewer settings changed');
